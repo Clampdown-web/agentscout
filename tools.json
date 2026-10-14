@@ -1,0 +1,1704 @@
+[
+  {
+    "name": "Hermes Agent (Nous Research)",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "description": "Open-source agent harness; v0.21.7 stable shipped Oct 12, v0.22.0 RCs Oct 13-14.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Active, frequent releases",
+    "audience": "builders",
+    "id": 1,
+    "featured": true,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "github_stars": 253590,
+    "repo": "NousResearch/hermes-agent",
+    "use_cases": [
+      "build an agent",
+      "research the web"
+    ],
+    "slug": "hermes-agent-nous-research"
+  },
+  {
+    "name": "OpenAI Agents SDK (Python)",
+    "url": "https://github.com/openai/openai-agents-python",
+    "description": "OpenAI's Python SDK for building multi-agent workflows; v0.23.0/0.23.1 released Oct 1-2.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Mature, official SDK",
+    "audience": "builders",
+    "id": 2,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "github_stars": 30023,
+    "repo": "openai/openai-agents-python",
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent",
+      "automate workflows"
+    ],
+    "slug": "openai-agents-sdk-python"
+  },
+  {
+    "name": "LangChain Deep Agents",
+    "url": "https://github.com/langchain-ai/deepagents",
+    "description": "Library for long-running agents with subagents and skills; 0.7.23 (Oct 7) adds pinned_skills.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "id": 3,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "github_stars": 30236,
+    "repo": "langchain-ai/deepagents",
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent"
+    ],
+    "slug": "langchain-deep-agents"
+  },
+  {
+    "name": "GitHub Agentic Workflows (gh-aw)",
+    "url": "https://github.com/github/gh-aw",
+    "description": "Run AI agents in GitHub Actions workflows; v0.91.10 pre-release (Oct 13) defaults read-only workflows to no network.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Pre-release",
+    "audience": "builders",
+    "id": 4,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "github_stars": 5390,
+    "repo": "github/gh-aw",
+    "use_cases": [
+      "write code",
+      "automate workflows"
+    ],
+    "slug": "github-agentic-workflows-gh-aw"
+  },
+  {
+    "name": "Jevgrep",
+    "url": "https://github.com/dzhng/jevgrep",
+    "description": "CLI that finds relevant repo files and excerpts from natural-language questions for coding agents; claims ~40% cheaper agent runs.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Early (v0.1.x)",
+    "audience": "builders",
+    "id": 5,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source (MIT); needs a model provider key",
+    "github_stars": 2675,
+    "repo": "dzhng/jevgrep",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "jevgrep"
+  },
+  {
+    "name": "NVIDIA OpenShell",
+    "url": "https://github.com/nvidia/openShell",
+    "description": "Sandboxed runtime for autonomous agents with declarative YAML policies on file, network and credential access.",
+    "category": "MCP & infra",
+    "pricing": "Open source",
+    "maturity": "Active; part of newly announced Open Agent Safety Platform",
+    "audience": "builders",
+    "id": 6,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source (Apache 2.0)",
+    "github_stars": 16156,
+    "repo": "nvidia/openShell",
+    "use_cases": [
+      "connect tools via MCP",
+      "run code safely"
+    ],
+    "slug": "nvidia-openshell"
+  },
+  {
+    "name": "NVIDIA Open Agent Safety Platform",
+    "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+    "description": "Reference stack pairing OpenShell with NVIDIA Sentry on BlueField-4 DPUs for hardware-level agent monitoring.",
+    "category": "MCP & infra",
+    "pricing": "Open source",
+    "maturity": "Newly announced reference",
+    "audience": "builders",
+    "id": 7,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "OpenShell open source; hardware layer needs NVIDIA systems",
+    "use_cases": [
+      "connect tools via MCP",
+      "monitor & evaluate agents"
+    ],
+    "slug": "nvidia-open-agent-safety-platform"
+  },
+  {
+    "name": "CoreWeave Forge",
+    "url": "https://forge.coreweave.com",
+    "description": "One product to run, observe, evaluate and post-train agents (W&B, OpenPipe, sandboxes).",
+    "category": "evals & observability",
+    "pricing": "Freemium",
+    "maturity": "Newly launched",
+    "audience": "builders",
+    "id": 8,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Free tier; Pro from $60/mo",
+    "use_cases": [
+      "run code safely",
+      "monitor & evaluate agents"
+    ],
+    "slug": "coreweave-forge"
+  },
+  {
+    "name": "Roboflow Agent",
+    "url": "https://roboflow.com/blog/roboflow-agent",
+    "description": "Computer-vision agent that picks models and builds/deploys vision apps; plugs into Claude Code, Codex, Cursor via MCP.",
+    "category": "vision",
+    "pricing": "Paid",
+    "maturity": "Launched Oct 14",
+    "audience": "builders",
+    "id": 9,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Paid platform (see site)",
+    "use_cases": [
+      "automate workflows",
+      "connect tools via MCP",
+      "computer vision"
+    ],
+    "slug": "roboflow-agent"
+  },
+  {
+    "name": "Voiceloop",
+    "url": "https://github.com/todoforai/voiceloop",
+    "description": "Zero-dependency JS library for an interruptible in-browser voice loop (VAD, STT, LLM, TTS).",
+    "category": "voice",
+    "pricing": "Open source",
+    "maturity": "Early",
+    "audience": "builders",
+    "id": 10,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source (MIT)",
+    "github_stars": 6,
+    "repo": "todoforai/voiceloop",
+    "use_cases": [
+      "automate the browser",
+      "build an agent",
+      "voice & phone calls"
+    ],
+    "slug": "voiceloop"
+  },
+  {
+    "name": "Cicero",
+    "url": "https://github.com/5uck1ess/cicero",
+    "description": "Self-hosted voice interface for coding agents (Claude Code, Codex, ACP); talk from a browser or Telegram call.",
+    "category": "voice",
+    "pricing": "Open source",
+    "maturity": "Early",
+    "audience": "builders",
+    "id": 11,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "github_stars": 64,
+    "repo": "5uck1ess/cicero",
+    "use_cases": [
+      "write code",
+      "automate the browser",
+      "voice & phone calls"
+    ],
+    "slug": "cicero"
+  },
+  {
+    "name": "TryVoice",
+    "url": "https://github.com/AaronZ021/tryvoice-oss",
+    "description": "Hands-free voice runtime for coding agents with wake word, push-to-talk and streaming replies.",
+    "category": "voice",
+    "pricing": "Open source",
+    "maturity": "Early",
+    "audience": "builders",
+    "id": 12,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "github_stars": 160,
+    "repo": "AaronZ021/tryvoice-oss",
+    "use_cases": [
+      "write code",
+      "voice & phone calls"
+    ],
+    "slug": "tryvoice"
+  },
+  {
+    "name": "Holo4 (H Company)",
+    "url": "https://huggingface.co/Hcompany",
+    "description": "Open-weight computer-use models (27B and 35B-A3B) released Oct 1.",
+    "category": "browser/computer use",
+    "pricing": "Open weights",
+    "maturity": "New release",
+    "audience": "builders",
+    "id": 13,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open weights",
+    "use_cases": [
+      "automate the browser",
+      "control a computer"
+    ],
+    "slug": "holo4-h-company"
+  },
+  {
+    "name": "Manifold MCP",
+    "url": "https://manifoldmcp.com",
+    "description": "Hosted MCP server giving agents SEO, AI-answer, social, ad and leads data.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Launched Oct 12 (Product Hunt #5)",
+    "audience": "builders",
+    "id": 14,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Free to start",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "slug": "manifold-mcp"
+  },
+  {
+    "name": "NanoMuse",
+    "url": "https://github.com/nano-muse",
+    "description": "Open-source AI agent for your phone and computer (Show HN, Oct 7).",
+    "category": "personal agents",
+    "pricing": "Open source",
+    "maturity": "Early",
+    "audience": "builders",
+    "id": 15,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source",
+    "use_cases": [
+      "voice & phone calls"
+    ],
+    "slug": "nanomuse"
+  },
+  {
+    "name": "OpenPilot",
+    "url": "https://github.com/ibmshaikh/OpenPilot",
+    "description": "Free desktop agent for any OpenAI-compatible model; edits files and runs commands in a folder with approvals.",
+    "category": "personal agents",
+    "pricing": "Open source",
+    "maturity": "Windows; macOS early beta",
+    "audience": "ready to use",
+    "id": 16,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Free, open source (MIT)",
+    "github_stars": 16,
+    "repo": "ibmshaikh/OpenPilot",
+    "use_cases": [
+      "control a computer"
+    ],
+    "slug": "openpilot"
+  },
+  {
+    "name": "OpenSwarm",
+    "url": "https://www.hunted.space/product/openswarm-3",
+    "description": "AI-first 'operating system' where swarms of agents run apps and browsers in parallel.",
+    "category": "browser/computer use",
+    "pricing": "See site",
+    "maturity": "Launched Oct 8 (Product Hunt #1 of day)",
+    "audience": "ready to use",
+    "id": 17,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "See site",
+    "use_cases": [
+      "automate the browser",
+      "control a computer",
+      "build multi-agent systems"
+    ],
+    "slug": "openswarm"
+  },
+  {
+    "name": "ExcaliClaw",
+    "url": "https://excaliclaw.com",
+    "description": "Hand-drawn diagram workspace your agent can draw in via MCP (Claude, Cursor, VS Code).",
+    "category": "productivity",
+    "pricing": "Freemium",
+    "maturity": "Launched Oct 12",
+    "audience": "ready to use",
+    "id": 18,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Free plan; paid from EUR 9/mo",
+    "use_cases": [
+      "connect tools via MCP",
+      "make diagrams"
+    ],
+    "slug": "excaliclaw"
+  },
+  {
+    "name": "kōdlo",
+    "url": "https://hunted.space/dashboard/kodlo",
+    "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
+    "category": "business agents",
+    "pricing": "See site",
+    "maturity": "Launched Oct 11 (Product Hunt #2 of day)",
+    "audience": "ready to use",
+    "id": 19,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "See site",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP",
+      "sales & support"
+    ],
+    "slug": "k-dlo"
+  },
+  {
+    "name": "Trig",
+    "url": "https://www.trig.ai/blog/a-new-way-to-manage-your-customers",
+    "description": "Rebuilt as an agent workspace for account managers: agents follow up, prep renewals, build expansion cases.",
+    "category": "business agents",
+    "pricing": "Paid",
+    "maturity": "Relaunched Oct 13",
+    "audience": "ready to use",
+    "id": 20,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Paid (see site)",
+    "use_cases": [
+      "sales & support"
+    ],
+    "slug": "trig"
+  },
+  {
+    "name": "Cresta Deputy Agent",
+    "url": "https://cresta.com/deputy-agent",
+    "description": "Long-running agent that finishes customer-service back-office workflows, pausing for approvals or documents.",
+    "category": "business agents",
+    "pricing": "Enterprise",
+    "maturity": "Launched Oct 13",
+    "audience": "ready to use",
+    "id": 21,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Enterprise, paid",
+    "use_cases": [
+      "automate workflows",
+      "sales & support"
+    ],
+    "slug": "cresta-deputy-agent"
+  },
+  {
+    "name": "Meta Muse Wonder",
+    "url": "https://research.meta.ai/blog/muse-wonder",
+    "description": "Meta's new models for personal and professional agent tasks, available via Meta Model API and Muse Code.",
+    "category": "models",
+    "pricing": "Paid",
+    "maturity": "Released Oct 12",
+    "audience": "ready to use",
+    "id": 22,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Paid API / subscription",
+    "use_cases": [
+      "models"
+    ],
+    "slug": "meta-muse-wonder"
+  },
+  {
+    "name": "Claude Code",
+    "url": "https://github.com/anthropics/claude-code",
+    "description": "Anthropic's terminal coding agent that edits code, runs commands and handles git.",
+    "category": "coding",
+    "pricing": "Paid",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 23,
+    "pricing_detail": "Paid (Claude plan or API)",
+    "github_stars": 150707,
+    "repo": "anthropics/claude-code",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "claude-code"
+  },
+  {
+    "name": "OpenAI Codex CLI",
+    "url": "https://github.com/openai/codex",
+    "description": "OpenAI's open-source coding agent for the terminal; also runs in the cloud.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 24,
+    "pricing_detail": "Open source; uses ChatGPT plan or API",
+    "github_stars": 129112,
+    "repo": "openai/codex",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "openai-codex-cli"
+  },
+  {
+    "name": "Cursor",
+    "url": "https://cursor.com",
+    "description": "AI code editor with an agent mode and background agents.",
+    "category": "coding",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 25,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "cursor"
+  },
+  {
+    "name": "Devin",
+    "url": "https://devin.ai",
+    "description": "Cognition's autonomous software engineer that takes tickets and opens PRs.",
+    "category": "coding",
+    "pricing": "Paid",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 26,
+    "pricing_detail": "Paid",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "devin"
+  },
+  {
+    "name": "OpenHands",
+    "url": "https://github.com/All-Hands-AI/OpenHands",
+    "description": "Open-source platform for autonomous coding agents.",
+    "category": "coding",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 27,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 90845,
+    "repo": "All-Hands-AI/OpenHands",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "openhands"
+  },
+  {
+    "name": "Aider",
+    "url": "https://aider.chat",
+    "description": "Pair-programming agent in your terminal that commits changes to git.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 28,
+    "pricing_detail": "Open source",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "aider"
+  },
+  {
+    "name": "Cline",
+    "url": "https://github.com/cline/cline",
+    "description": "Autonomous coding agent inside VS Code with step-by-step approvals.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 29,
+    "pricing_detail": "Open source",
+    "github_stars": 70289,
+    "repo": "cline/cline",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "cline"
+  },
+  {
+    "name": "Roo Code",
+    "url": "https://github.com/RooCodeInc/Roo-Code",
+    "description": "VS Code agent with custom modes (architect, code, debug).",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 30,
+    "pricing_detail": "Open source",
+    "github_stars": 24281,
+    "repo": "RooCodeInc/Roo-Code",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "roo-code"
+  },
+  {
+    "name": "Windsurf",
+    "url": "https://windsurf.com",
+    "description": "AI IDE with the Cascade agent.",
+    "category": "coding",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 31,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "windsurf"
+  },
+  {
+    "name": "opencode",
+    "url": "https://github.com/sst/opencode",
+    "description": "Open-source terminal coding agent that works with many model providers.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 32,
+    "pricing_detail": "Open source",
+    "github_stars": 213329,
+    "repo": "sst/opencode",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "opencode"
+  },
+  {
+    "name": "Amp",
+    "url": "https://ampcode.com",
+    "description": "Agentic coding tool for the terminal and editor.",
+    "category": "coding",
+    "pricing": "Usage-based",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 33,
+    "pricing_detail": "Paid (usage-based)",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "amp"
+  },
+  {
+    "name": "Gemini CLI",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "description": "Google's open-source terminal agent powered by Gemini.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 34,
+    "pricing_detail": "Open source; free tier",
+    "github_stars": 107334,
+    "repo": "google-gemini/gemini-cli",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "gemini-cli"
+  },
+  {
+    "name": "GitHub Copilot",
+    "url": "https://github.com/features/copilot",
+    "description": "AI pair programmer with a coding agent that works from issues.",
+    "category": "coding",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 35,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code"
+    ],
+    "slug": "github-copilot"
+  },
+  {
+    "name": "Replit Agent",
+    "url": "https://replit.com",
+    "description": "Builds and deploys full apps from a prompt in the browser.",
+    "category": "app builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 36,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "automate the browser",
+      "automate workflows",
+      "build apps without code"
+    ],
+    "slug": "replit-agent"
+  },
+  {
+    "name": "Bolt",
+    "url": "https://bolt.new",
+    "description": "Prompt-to-app builder that runs full-stack apps in the browser.",
+    "category": "app builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 37,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "automate the browser",
+      "automate workflows"
+    ],
+    "slug": "bolt"
+  },
+  {
+    "name": "v0",
+    "url": "https://v0.app",
+    "description": "Vercel's agent that generates and deploys web apps and UI.",
+    "category": "app builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 38,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "automate workflows",
+      "build apps without code"
+    ],
+    "slug": "v0"
+  },
+  {
+    "name": "Browser Use",
+    "url": "https://github.com/browser-use/browser-use",
+    "description": "Library that lets AI agents control a web browser.",
+    "category": "browser/computer use",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 39,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 117912,
+    "repo": "browser-use/browser-use",
+    "use_cases": [
+      "automate the browser"
+    ],
+    "slug": "browser-use"
+  },
+  {
+    "name": "Browserbase",
+    "url": "https://www.browserbase.com",
+    "description": "Hosted headless browsers built for agents.",
+    "category": "browser/computer use",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 40,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "automate the browser"
+    ],
+    "slug": "browserbase"
+  },
+  {
+    "name": "Stagehand",
+    "url": "https://github.com/browserbase/stagehand",
+    "description": "Browser automation framework mixing code with natural-language actions.",
+    "category": "browser/computer use",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 41,
+    "pricing_detail": "Open source",
+    "github_stars": 25660,
+    "repo": "browserbase/stagehand",
+    "use_cases": [
+      "write code",
+      "automate the browser",
+      "build an agent"
+    ],
+    "slug": "stagehand"
+  },
+  {
+    "name": "Playwright MCP",
+    "url": "https://github.com/microsoft/playwright-mcp",
+    "description": "Microsoft's MCP server giving agents browser control via Playwright.",
+    "category": "browser/computer use",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 42,
+    "pricing_detail": "Open source",
+    "github_stars": 38115,
+    "repo": "microsoft/playwright-mcp",
+    "use_cases": [
+      "automate the browser",
+      "connect tools via MCP"
+    ],
+    "slug": "playwright-mcp"
+  },
+  {
+    "name": "Skyvern",
+    "url": "https://www.skyvern.com",
+    "description": "Automates browser workflows with vision + LLMs.",
+    "category": "browser/computer use",
+    "pricing": "Open source + cloud",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 43,
+    "pricing_detail": "Open source + paid cloud",
+    "use_cases": [
+      "automate the browser",
+      "automate workflows",
+      "computer vision"
+    ],
+    "slug": "skyvern"
+  },
+  {
+    "name": "Manus",
+    "url": "https://manus.im",
+    "description": "General-purpose autonomous agent that does research and tasks in a cloud computer.",
+    "category": "personal agents",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 44,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "control a computer",
+      "research the web"
+    ],
+    "slug": "manus"
+  },
+  {
+    "name": "OpenClaw",
+    "url": "https://github.com/openclaw/openclaw",
+    "description": "Open-source personal agent you run yourself and reach over chat apps.",
+    "category": "personal agents",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 45,
+    "pricing_detail": "Open source",
+    "github_stars": 391938,
+    "repo": "openclaw/openclaw",
+    "use_cases": [
+      "automate workflows"
+    ],
+    "slug": "openclaw"
+  },
+  {
+    "name": "LangGraph",
+    "url": "https://github.com/langchain-ai/langgraph",
+    "description": "Framework for stateful, graph-based agent workflows.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 46,
+    "pricing_detail": "Open source",
+    "github_stars": 43237,
+    "repo": "langchain-ai/langgraph",
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
+    "slug": "langgraph"
+  },
+  {
+    "name": "CrewAI",
+    "url": "https://github.com/crewAIInc/crewAI",
+    "description": "Framework for role-based multi-agent crews.",
+    "category": "frameworks",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 47,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 59675,
+    "repo": "crewAIInc/crewAI",
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent"
+    ],
+    "slug": "crewai"
+  },
+  {
+    "name": "AutoGen",
+    "url": "https://github.com/microsoft/autogen",
+    "description": "Microsoft's framework for multi-agent conversations.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 48,
+    "pricing_detail": "Open source",
+    "github_stars": 61395,
+    "repo": "microsoft/autogen",
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent"
+    ],
+    "slug": "autogen"
+  },
+  {
+    "name": "Pydantic AI",
+    "url": "https://github.com/pydantic/pydantic-ai",
+    "description": "Type-safe Python agent framework from the Pydantic team.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 49,
+    "pricing_detail": "Open source",
+    "github_stars": 20604,
+    "repo": "pydantic/pydantic-ai",
+    "use_cases": [
+      "build an agent"
+    ],
+    "slug": "pydantic-ai"
+  },
+  {
+    "name": "Google ADK",
+    "url": "https://github.com/google/adk-python",
+    "description": "Google's Agent Development Kit for building and deploying agents.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 50,
+    "pricing_detail": "Open source",
+    "github_stars": 21826,
+    "repo": "google/adk-python",
+    "use_cases": [
+      "build an agent"
+    ],
+    "slug": "google-adk"
+  },
+  {
+    "name": "Mastra",
+    "url": "https://mastra.ai",
+    "description": "TypeScript framework for agents, workflows and RAG.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 51,
+    "pricing_detail": "Open source",
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
+    "slug": "mastra"
+  },
+  {
+    "name": "smolagents",
+    "url": "https://github.com/huggingface/smolagents",
+    "description": "Hugging Face's minimal library for code-writing agents.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 52,
+    "pricing_detail": "Open source",
+    "github_stars": 29832,
+    "repo": "huggingface/smolagents",
+    "use_cases": [
+      "write code",
+      "build an agent"
+    ],
+    "slug": "smolagents"
+  },
+  {
+    "name": "LlamaIndex",
+    "url": "https://github.com/run-llama/llama_index",
+    "description": "Framework for agents over your data (RAG, document agents).",
+    "category": "frameworks",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 53,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 52485,
+    "repo": "run-llama/llama_index",
+    "use_cases": [
+      "build an agent"
+    ],
+    "slug": "llamaindex"
+  },
+  {
+    "name": "Vercel AI SDK",
+    "url": "https://ai-sdk.dev",
+    "description": "TypeScript toolkit for building AI apps and agents.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 54,
+    "pricing_detail": "Open source",
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
+    "slug": "vercel-ai-sdk"
+  },
+  {
+    "name": "GPT Researcher",
+    "url": "https://github.com/assafelovic/gpt-researcher",
+    "description": "Autonomous agent that researches the web and writes cited reports.",
+    "category": "research",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 55,
+    "pricing_detail": "Open source",
+    "github_stars": 30082,
+    "repo": "assafelovic/gpt-researcher",
+    "use_cases": [
+      "write code",
+      "research the web"
+    ],
+    "slug": "gpt-researcher"
+  },
+  {
+    "name": "Elicit",
+    "url": "https://elicit.com",
+    "description": "Research assistant that finds and summarizes academic papers.",
+    "category": "research",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 56,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "research the web"
+    ],
+    "slug": "elicit"
+  },
+  {
+    "name": "STORM",
+    "url": "https://github.com/stanford-oval/storm",
+    "description": "Stanford system that writes Wikipedia-style articles from web research.",
+    "category": "research",
+    "pricing": "Open source",
+    "maturity": "Research project",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 57,
+    "pricing_detail": "Open source",
+    "github_stars": 31627,
+    "repo": "stanford-oval/storm",
+    "use_cases": [
+      "research the web"
+    ],
+    "slug": "storm"
+  },
+  {
+    "name": "Firecrawl",
+    "url": "https://firecrawl.dev",
+    "description": "Turns websites into clean, LLM-ready data for agents.",
+    "category": "research",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 58,
+    "pricing_detail": "Open source + paid cloud",
+    "use_cases": [
+      "research the web"
+    ],
+    "slug": "firecrawl"
+  },
+  {
+    "name": "Exa",
+    "url": "https://exa.ai",
+    "description": "Search API built for AI agents.",
+    "category": "research",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 59,
+    "pricing_detail": "Paid API with free credits",
+    "use_cases": [
+      "research the web"
+    ],
+    "slug": "exa"
+  },
+  {
+    "name": "Tavily",
+    "url": "https://tavily.com",
+    "description": "Search and extraction API tuned for agents.",
+    "category": "research",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 60,
+    "pricing_detail": "Paid API with free tier",
+    "use_cases": [
+      "research the web",
+      "monitor & evaluate agents"
+    ],
+    "slug": "tavily"
+  },
+  {
+    "name": "LiveKit Agents",
+    "url": "https://www.livekit.io",
+    "description": "Real-time voice and video infrastructure with an agents framework.",
+    "category": "voice",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 61,
+    "pricing_detail": "Open source + paid cloud",
+    "use_cases": [
+      "build an agent",
+      "voice & phone calls"
+    ],
+    "slug": "livekit-agents"
+  },
+  {
+    "name": "Pipecat",
+    "url": "https://github.com/pipecat-ai/pipecat",
+    "description": "Open-source framework for voice and multimodal conversational agents.",
+    "category": "voice",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 62,
+    "pricing_detail": "Open source",
+    "github_stars": 16446,
+    "repo": "pipecat-ai/pipecat",
+    "use_cases": [
+      "build an agent",
+      "voice & phone calls"
+    ],
+    "slug": "pipecat"
+  },
+  {
+    "name": "Vapi",
+    "url": "https://vapi.ai",
+    "description": "Platform for building and deploying phone voice agents.",
+    "category": "voice",
+    "pricing": "Usage-based",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 63,
+    "pricing_detail": "Usage-based",
+    "use_cases": [
+      "voice & phone calls"
+    ],
+    "slug": "vapi"
+  },
+  {
+    "name": "ElevenLabs Agents",
+    "url": "https://elevenlabs.io",
+    "description": "Voice AI platform with conversational agents and TTS.",
+    "category": "voice",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 64,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "voice & phone calls"
+    ],
+    "slug": "elevenlabs-agents"
+  },
+  {
+    "name": "Retell AI",
+    "url": "https://www.retellai.com",
+    "description": "Builds AI phone agents for calls and support.",
+    "category": "voice",
+    "pricing": "Usage-based",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 65,
+    "pricing_detail": "Usage-based",
+    "use_cases": [
+      "voice & phone calls"
+    ],
+    "slug": "retell-ai"
+  },
+  {
+    "name": "n8n",
+    "url": "https://n8n.io",
+    "description": "Workflow automation with AI agent nodes; self-host or cloud.",
+    "category": "no-code builders",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 66,
+    "pricing_detail": "Self-host free; paid cloud",
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
+    "slug": "n8n"
+  },
+  {
+    "name": "Make",
+    "url": "https://www.make.com",
+    "description": "Visual automation platform with AI agents.",
+    "category": "no-code builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 67,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
+    "slug": "make"
+  },
+  {
+    "name": "Zapier Agents",
+    "url": "https://zapier.com/agents",
+    "description": "AI agents that act across 7,000+ Zapier apps.",
+    "category": "no-code builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 68,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
+    "slug": "zapier-agents"
+  },
+  {
+    "name": "Lindy",
+    "url": "https://www.lindy.ai",
+    "description": "No-code AI assistants for email, meetings and ops.",
+    "category": "no-code builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 69,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code",
+      "build apps without code"
+    ],
+    "slug": "lindy"
+  },
+  {
+    "name": "Relevance AI",
+    "url": "https://www.relevanceai.com",
+    "description": "No-code platform to build AI agent teams for business work.",
+    "category": "no-code builders",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 70,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "write code",
+      "build apps without code"
+    ],
+    "slug": "relevance-ai"
+  },
+  {
+    "name": "Dify",
+    "url": "https://github.com/langgenius/dify",
+    "description": "Open-source platform for building LLM apps and agents visually.",
+    "category": "no-code builders",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 71,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 158410,
+    "repo": "langgenius/dify",
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
+    "slug": "dify"
+  },
+  {
+    "name": "Flowise",
+    "url": "https://github.com/FlowiseAI/Flowise",
+    "description": "Drag-and-drop builder for agents and LLM flows.",
+    "category": "no-code builders",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "ready to use",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 72,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 55500,
+    "repo": "FlowiseAI/Flowise",
+    "use_cases": [
+      "write code",
+      "build apps without code"
+    ],
+    "slug": "flowise"
+  },
+  {
+    "name": "Model Context Protocol",
+    "url": "https://modelcontextprotocol.io",
+    "description": "Open standard for connecting agents to tools and data.",
+    "category": "MCP & infra",
+    "pricing": "Open standard",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 73,
+    "pricing_detail": "Open standard",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "slug": "model-context-protocol"
+  },
+  {
+    "name": "MCP reference servers",
+    "url": "https://github.com/modelcontextprotocol/servers",
+    "description": "Official collection of reference MCP servers.",
+    "category": "MCP & infra",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 74,
+    "pricing_detail": "Open source",
+    "github_stars": 91237,
+    "repo": "modelcontextprotocol/servers",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "slug": "mcp-reference-servers"
+  },
+  {
+    "name": "Smithery",
+    "url": "https://smithery.ai",
+    "description": "Registry for finding and installing MCP servers.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 75,
+    "pricing_detail": "Free + paid",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "slug": "smithery"
+  },
+  {
+    "name": "E2B",
+    "url": "https://e2b.dev",
+    "description": "Secure cloud sandboxes for running agent-generated code.",
+    "category": "MCP & infra",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 76,
+    "pricing_detail": "Open source + paid cloud",
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "run code safely"
+    ],
+    "slug": "e2b"
+  },
+  {
+    "name": "Modal",
+    "url": "https://modal.com",
+    "description": "Serverless compute and sandboxes for AI workloads.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 77,
+    "pricing_detail": "Usage-based, free credits",
+    "use_cases": [
+      "connect tools via MCP",
+      "run code safely"
+    ],
+    "slug": "modal"
+  },
+  {
+    "name": "Composio",
+    "url": "https://composio.dev",
+    "description": "Tool integrations and auth for agents across hundreds of apps.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 78,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "automate workflows",
+      "connect tools via MCP"
+    ],
+    "slug": "composio"
+  },
+  {
+    "name": "Mem0",
+    "url": "https://github.com/mem0ai/mem0",
+    "description": "Memory layer for AI agents.",
+    "category": "MCP & infra",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 79,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 67147,
+    "repo": "mem0ai/mem0",
+    "use_cases": [
+      "connect tools via MCP",
+      "give agents memory"
+    ],
+    "slug": "mem0"
+  },
+  {
+    "name": "Letta",
+    "url": "https://github.com/letta-ai/letta",
+    "description": "Framework for stateful agents with long-term memory (formerly MemGPT).",
+    "category": "frameworks",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 80,
+    "pricing_detail": "Open source + paid cloud",
+    "github_stars": 25125,
+    "repo": "letta-ai/letta",
+    "use_cases": [
+      "build an agent",
+      "give agents memory"
+    ],
+    "slug": "letta"
+  },
+  {
+    "name": "LangSmith",
+    "url": "https://www.langchain.com/langsmith",
+    "description": "Tracing, evals and monitoring for LLM apps and agents.",
+    "category": "evals & observability",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 81,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "automate workflows",
+      "monitor & evaluate agents"
+    ],
+    "slug": "langsmith"
+  },
+  {
+    "name": "Langfuse",
+    "url": "https://langfuse.com",
+    "description": "Open-source LLM observability, tracing and evals.",
+    "category": "evals & observability",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 82,
+    "pricing_detail": "Open source + paid cloud",
+    "use_cases": [
+      "monitor & evaluate agents"
+    ],
+    "slug": "langfuse"
+  },
+  {
+    "name": "Braintrust",
+    "url": "https://www.braintrust.dev",
+    "description": "Evals and observability platform for AI products.",
+    "category": "evals & observability",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 83,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "monitor & evaluate agents"
+    ],
+    "slug": "braintrust"
+  },
+  {
+    "name": "Arize Phoenix",
+    "url": "https://github.com/Arize-ai/phoenix",
+    "description": "Open-source tracing and evaluation for LLM apps.",
+    "category": "evals & observability",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 84,
+    "pricing_detail": "Open source",
+    "github_stars": 11828,
+    "repo": "Arize-ai/phoenix",
+    "use_cases": [
+      "automate workflows",
+      "monitor & evaluate agents"
+    ],
+    "slug": "arize-phoenix"
+  },
+  {
+    "name": "W&B Weave",
+    "url": "https://wandb.ai/site/weave",
+    "description": "Weights & Biases toolkit for tracing and evaluating agents.",
+    "category": "evals & observability",
+    "pricing": "Freemium",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 85,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "build an agent",
+      "monitor & evaluate agents"
+    ],
+    "slug": "w-b-weave"
+  },
+  {
+    "name": "AgentOps",
+    "url": "https://agentops.ai",
+    "description": "Monitoring and session replay for AI agents.",
+    "category": "evals & observability",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 86,
+    "pricing_detail": "Free tier + paid plans",
+    "use_cases": [
+      "monitor & evaluate agents"
+    ],
+    "slug": "agentops"
+  },
+  {
+    "name": "Helicone",
+    "url": "https://www.helicone.ai",
+    "description": "Open-source LLM observability and gateway.",
+    "category": "evals & observability",
+    "pricing": "Open source + cloud",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": false,
+    "verified": "2026-10-14",
+    "id": 87,
+    "pricing_detail": "Open source + paid cloud",
+    "use_cases": [
+      "monitor & evaluate agents"
+    ],
+    "slug": "helicone"
+  }
+]
