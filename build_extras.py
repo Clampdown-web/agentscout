@@ -76,7 +76,60 @@ def build(t):
 <p class="disclose">Badges are SVG files hosted on this site. Please don't change the wording. Featured placements that are paid are always labeled as sponsored on AgentScout.</p></section>'''
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("badges.html","w").write(shell("",title,desc,canon,body,ld).replace('href="index.html#','href="index.html#')); urls.insert(0,canon)
+    urls+=seo(t,urls)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B,B+"llms.txt"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))
     print(len(PAIRS),"comparisons, badges page, sitemap",len(sm)-2,"urls")
+
+# ---- SEO pages: categories, best-of guides, 404, llms.txt ----
+def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
+def meta(x,n=155):
+    s=f'{x["name"]}: {x["description"].rstrip(".")}. {x["category"]} tool; pricing: {x.get("pricing_detail",x["pricing"])}.'
+    if len(s)<120: s+=" Alternatives and facts on AgentScout."
+    if len(s)>n: s=s[:n-1].rsplit(" ",1)[0].rstrip(",;:")+"…"
+    return s
+def card(x,d="../"): return f'<a class="card" href="{d}tools/{x["slug"]}.html"><div class="ct"><h3>{e(x["name"])}</h3></div><p>{e(x["description"])}</p><div class="badges"><span class="b">{e(x["pricing"])}</span></div></a>'
+def listing_page(path,title,desc,h1,lede,items,crumb,extra=""):
+    canon=B+path
+    ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
+        {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
+        {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p><div class="grid">{"".join(card(x) for x in items)}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
+def seo(t,urls):
+    import os,collections
+    os.makedirs("categories",exist_ok=True); os.makedirs("best",exist_ok=True)
+    cats=collections.Counter(x["category"] for x in t); out=[]
+    nav='<h2 style="font-size:16px;margin:32px 0 10px">All categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="{catslug(c)}.html">{e(c)} ({n})</a>' for c,n in cats.most_common())+'</div>'
+    for c,n in cats.most_common():
+        items=[x for x in t if x["category"]==c]
+        title=f"{n} best {c} AI agent tools (2026) · AgentScout"[:70]
+        desc=f"{n} link-checked {c} AI agent tools, including {', '.join(x['name'] for x in items[:3])}. Pricing as stated by makers, audience and maturity."[:158]
+        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c.capitalize()} AI agent tools",f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing.",items,c.capitalize(),nav))
+    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3>{e(c.capitalize())}</h3></div><p>{n} tools</p></a>' for c,n in cats.most_common())
+    canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
+    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
+    out.insert(0,canon)
+    mcp=[x for x in t if x["category"]=="MCP & infra" or "connect tools via MCP" in x["use_cases"]]
+    guides=' · '.join(f'<a href="mcp-servers-for-{s}.html">Best MCP servers for {c}</a>' for s,c in [("claude-code","Claude Code"),("cursor","Cursor"),("codex","Codex")])
+    for s,client,keys in [("claude-code","Claude Code",["Claude"]),("cursor","Cursor",["Cursor"]),("codex","Codex",["Codex"])]:
+        named=[x for x in mcp if any(k in x["description"] for k in keys)]; rest=[x for x in mcp if x not in named]
+        note=f" Listings whose descriptions name {client} come first: {', '.join(e(x['name']) for x in named)}." if named else ""
+        cl=[x for x in t if x["name"] in {"Claude Code":["Claude Code"],"Cursor":["Cursor"],"Codex":["OpenAI Codex CLI"]}[client]]
+        cll=f' See our <a href="../tools/{cl[0]["slug"]}.html">{e(cl[0]["name"])} listing</a>.' if cl else ""
+        out.append(listing_page(f"best/mcp-servers-for-{s}.html",f"Best MCP servers for {client} (2026) · AgentScout",
+            f"{len(mcp)} MCP servers and MCP tools from our directory you can try with {client}, including {', '.join(x['name'] for x in (named+rest)[:3])}. Pricing as stated."[:158],
+            f"Best MCP servers for {client}",f"{client} is an MCP client, so it can connect to MCP servers. These are the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory.{note} Check each tool's docs for {e(client)} setup.{cll}",named+rest,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: '+guides+'</p>'))
+    alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
+    out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
+        f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
+        "Cursor alternatives (2026)",f'{len(alt)} other coding agents and AI editors in the AgentScout directory. See also our <a href="../tools/cursor.html">Cursor listing</a> and <a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>.',alt,"Cursor alternatives"))
+    # 404
+    s=shell("/agentscout/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section style="padding-top:40px"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/agentscout/index.html#directory">directory</a> or <a href="/agentscout/categories/index.html">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
+    open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
+    # llms.txt
+    L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t)} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: agentscout@mail.grokbot.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)","","## Categories",""]
+    L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tools" for c,n in cats.most_common()]
+    L+=["","## Guides","",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
+    open("llms.txt","w").write("\n".join(L)); return out
