@@ -92,3 +92,6 @@ dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:
 @media(max-width:640px){.cats{grid-template-columns:1fr 1fr;gap:8px}.cattile{padding:12px}.row{grid-template-columns:22px 1fr;}.row .acts{grid-column:2}.logo img{height:28px}}
 
 .b{line-height:1.5;align-self:flex-start}.ucsel{height:34px;font-size:13px}
+
+.embeds{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}.embed{border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;background:#fff}.embed img{max-width:100%;height:auto}.embed label{font-size:12px;color:var(--faint);font-weight:600}.embed textarea{width:100%;font:12px ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:8px;padding:8px;resize:vertical;box-sizing:border-box}.embed .btn{align-self:flex-start}
+.tablewrap{overflow-x:auto;margin:20px 0}table.cmp{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}table.cmp tbody th{color:var(--faint);font-weight:500;width:22%}table.cmp thead th{font-size:16px}

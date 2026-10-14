@@ -1,5 +1,5 @@
 """Generates use-case tags, slugs and static detail pages from tools.json."""
-import json,re,html,os
+import json,re,html,os,build_extras
 t=json.load(open("tools.json"))
 RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",r"browser|web browser|headless"),("control a computer",r"computer-use|desktop|operating system|cloud computer"),
 ("build multi-agent systems",r"multi-agent|crew|swarm|subagent"),("build an agent",r"framework|SDK|library|toolkit|harness|Development Kit"),("research the web",r"research|search|web data|website|cited|papers"),
@@ -24,7 +24,8 @@ for x in t:
     uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
     host=re.sub(r"^https?://(www\.)?","",x["url"]).split("/")[0]
     out=tpl
-    for k,v in {"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(x["url"]),"HOST":e(host),"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"NEW":'<span class="b new">New this week</span>' if x["new"] else ""}.items():
+    for k,v in {"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(x["url"]),"HOST":e(host),"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":'<span class="b new">New this week</span>' if x["new"] else ""}.items():
         out=out.replace("{{"+k+"}}",v)
     open(f"tools/{x['slug']}.html","w").write(out)
 print(len(t),"pages")
+build_extras.build(t)
