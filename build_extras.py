@@ -77,6 +77,6 @@ def build(t):
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("badges.html","w").write(shell("",title,desc,canon,body,ld).replace('href="index.html#','href="index.html#')); urls.insert(0,canon)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in [B]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
+    for u in [B,B+"llms.txt"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))
     print(len(PAIRS),"comparisons, badges page, sitemap",len(sm)-2,"urls")

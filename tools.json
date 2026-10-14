@@ -1,5 +1,83 @@
 [
   {
+    "name": "Siena Social Agent",
+    "url": "https://www.siena.cx/blog/siena-social-agent-social-media-management",
+    "description": "AI agent for social media that converts comments/DMs, moderates, resolves support, and turns conversations into intelligence; launched Oct 13, 2026.",
+    "category": "business agents",
+    "pricing": "Enterprise",
+    "maturity": "Launched Oct 13",
+    "audience": "ready to use",
+    "id": 88,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Enterprise / book a demo",
+    "use_cases": [
+      "business agents"
+    ],
+    "slug": "siena-social-agent"
+  },
+  {
+    "name": "Orca Agent Engine",
+    "url": "https://github.com/orca-ae/orca-agent-engine",
+    "description": "Open Apache-2.0 runtime to build, run, and govern managed agents with choice of harness (Claude Agent SDK, Codex, Pi) and model; open-sourced Oct 6, 2026 (Developer Preview).",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Developer Preview",
+    "audience": "builders",
+    "id": 89,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source (Apache 2.0)",
+    "github_stars": 6,
+    "repo": "orca-ae/orca-agent-engine",
+    "use_cases": [
+      "build an agent"
+    ],
+    "slug": "orca-agent-engine"
+  },
+  {
+    "name": "Ruflo",
+    "url": "https://github.com/ruvnet/ruflo",
+    "description": "Open-source multi-agent meta-harness for Claude Code, Codex, and MCP clients; Oct 13 release adds Mods (mission workflows) and a single control plane with human approval.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "id": 90,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Open source (MIT); model costs still apply",
+    "github_stars": 74609,
+    "repo": "ruvnet/ruflo",
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent",
+      "automate workflows"
+    ],
+    "slug": "ruflo"
+  },
+  {
+    "name": "Kore.ai Autoloop",
+    "url": "https://www.kore.ai/blog/autoloop-continuous-ai-agent-optimization-for-production",
+    "description": "Optimization engine in Kore.ai Agent Platform Artemis that evaluates agents against business goals, diagnoses failures from traces, applies targeted fixes, and re-verifies; GA Oct 2026.",
+    "category": "evals & observability",
+    "pricing": "Enterprise",
+    "maturity": "Generally available",
+    "audience": "builders",
+    "id": 91,
+    "featured": false,
+    "verified": "2026-10-14",
+    "new": true,
+    "pricing_detail": "Enterprise (part of Kore.ai Agent Platform Artemis)",
+    "use_cases": [
+      "monitor & evaluate agents"
+    ],
+    "slug": "kore-ai-autoloop"
+  },
+  {
     "name": "Hermes Agent (Nous Research)",
     "url": "https://github.com/NousResearch/hermes-agent",
     "description": "Open-source agent harness; v0.21.7 stable shipped Oct 12, v0.22.0 RCs Oct 13-14.",
