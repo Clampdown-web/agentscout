@@ -36,3 +36,5 @@ for x in t:
     open(f"tools/{x['slug']}.html","w").write(out)
 print(len(t),"pages")
 build_extras.build(t)
+import build_api
+build_api.build(t)
