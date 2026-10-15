@@ -1778,5 +1778,63 @@
       "monitor & evaluate agents"
     ],
     "slug": "helicone"
+  },
+  {
+    "name": "Agent-Native (Builder.io)",
+    "url": "https://github.com/BuilderIO/agent-native",
+    "description": "Open-source TypeScript framework for building agents that come with their own app UI; each action is shared by the UI, agent, API, CLI, MCP and A2A.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Beta, launched Oct 14",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-15",
+    "pricing_detail": "Open-source framework; optional hosted building on Builder.io",
+    "github_stars": 7262,
+    "repo": "BuilderIO/agent-native",
+    "id": 92,
+    "use_cases": [
+      "build an agent",
+      "connect tools via MCP"
+    ],
+    "slug": "agent-native-builder-io"
+  },
+  {
+    "name": "Google Deep Review",
+    "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+    "description": "Google Research's multi-agent system that checks research papers, design docs, and legal or financial documents for logical gaps and unsupported claims.",
+    "category": "research",
+    "pricing": "Freemium",
+    "maturity": "Launched publicly Oct 14",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-15",
+    "pricing_detail": "2 free document reviews per week; higher limits and API with your Gemini API key",
+    "id": 93,
+    "use_cases": [
+      "build multi-agent systems",
+      "research the web"
+    ],
+    "slug": "google-deep-review"
+  },
+  {
+    "name": "MetaMask Agent Wallet",
+    "url": "https://metamask.io/agent-wallet",
+    "description": "Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.",
+    "category": "MCP & infra",
+    "pricing": "See site",
+    "maturity": "Live; Grok Bot launch Oct 14",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-15",
+    "pricing_detail": "Pricing not stated on product page",
+    "id": 94,
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "slug": "metamask-agent-wallet"
   }
 ]

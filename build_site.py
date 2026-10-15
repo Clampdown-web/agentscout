@@ -28,6 +28,11 @@ for x in t:
     out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{ABOUT}}",about).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
     for k,v in {"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(x["url"]),"HOST":e(host),"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":'<span class="b new">New this week</span>' if x["new"] else ""}.items():
         out=out.replace("{{"+k+"}}",v)
+    B="https://clampdown-web.github.io/agentscout/";pg=f"{B}tools/{x['slug']}.html"
+    ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":pg,"url":pg,"name":f"{x['name']}: what it does, pricing and alternatives","dateModified":x["verified"],"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
+        "about":{"@type":"SoftwareApplication","name":x["name"],"description":x["description"],"url":x["url"],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","keywords":", ".join([x["category"]]+x["use_cases"])}},
+        {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":x["category"],"item":f"{B}categories/{build_extras.catslug(x['category'])}.html"},{"@type":"ListItem","position":3,"name":x["name"],"item":pg}]}]}
+    out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
     open(f"tools/{x['slug']}.html","w").write(out)
 print(len(t),"pages")
 build_extras.build(t)
