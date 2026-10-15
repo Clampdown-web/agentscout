@@ -10,6 +10,13 @@ def platforms(x):
     a=x.get("audience","");c=x["category"]
     if a!="ready to use" or c in("frameworks","MCP & infra","evals & observability"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
     return ["Web"]
+GOALS={"coding":["coding","app builders"],"research":["research","browser/computer use"],"crypto":[],"writing":["productivity","models"],"media":["voice","vision"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP & infra"],"support":["business agents"]}
+KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["support","customer","helpdesk"],"writing":["writ","content","copy"],"media":["video","voice","image","speech"]}
+def goals(x):
+    txt=(x["name"]+" "+x["description"]).lower()
+    return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
+def skill(x):
+    return "no-code" if x.get("audience")=="ready to use" or x["category"] in("no-code builders","app builders","personal agents","business agents") else "developer"
 def build(t):
     os.makedirs("api",exist_ok=True)
     tools=[]
@@ -21,7 +28,7 @@ def build(t):
         tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
           "price_tag":tag(x["pricing"]),"platforms":platforms(x),"date_added":x.get("verified"),
-          "weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"repo":x.get("repo"),
+          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"repo":x.get("repo"),
           "page":f"https://clampdown-web.github.io/agentscout/tools/{x['slug']}.html"})
     json.dump({"version":1,"generated":datetime.datetime.utcnow().isoformat()+"Z","count":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
 if __name__=="__main__": build(json.load(open("tools.json")))
