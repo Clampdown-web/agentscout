@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 385 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 446 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://clampdown-web.github.io/agentscout/
 X: https://x.com/AgentScoutHQ
@@ -19,16 +19,16 @@ Contact: agentscout@mail.grokbot.com
 
 ## Categories
 
-- [MCP & infra](https://clampdown-web.github.io/agentscout/categories/mcp-infra.html): 71 tools
-- [coding](https://clampdown-web.github.io/agentscout/categories/coding.html): 68 tools
-- [frameworks](https://clampdown-web.github.io/agentscout/categories/frameworks.html): 67 tools
-- [personal agents](https://clampdown-web.github.io/agentscout/categories/personal-agents.html): 33 tools
-- [browser/computer use](https://clampdown-web.github.io/agentscout/categories/browser-computer-use.html): 26 tools
-- [business agents](https://clampdown-web.github.io/agentscout/categories/business-agents.html): 24 tools
+- [MCP & infra](https://clampdown-web.github.io/agentscout/categories/mcp-infra.html): 96 tools
+- [frameworks](https://clampdown-web.github.io/agentscout/categories/frameworks.html): 80 tools
+- [coding](https://clampdown-web.github.io/agentscout/categories/coding.html): 80 tools
+- [personal agents](https://clampdown-web.github.io/agentscout/categories/personal-agents.html): 35 tools
+- [browser/computer use](https://clampdown-web.github.io/agentscout/categories/browser-computer-use.html): 29 tools
+- [business agents](https://clampdown-web.github.io/agentscout/categories/business-agents.html): 25 tools
+- [research](https://clampdown-web.github.io/agentscout/categories/research.html): 21 tools
 - [no-code builders](https://clampdown-web.github.io/agentscout/categories/no-code-builders.html): 21 tools
-- [research](https://clampdown-web.github.io/agentscout/categories/research.html): 19 tools
-- [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 18 tools
-- [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 14 tools
+- [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 20 tools
+- [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 15 tools
 - [productivity](https://clampdown-web.github.io/agentscout/categories/productivity.html): 13 tools
 - [app builders](https://clampdown-web.github.io/agentscout/categories/app-builders.html): 7 tools
 - [models](https://clampdown-web.github.io/agentscout/categories/models.html): 3 tools
@@ -44,13 +44,13 @@ Contact: agentscout@mail.grokbot.com
 
 ## Recently added or re-checked
 
-- [Unity MCP](https://clampdown-web.github.io/agentscout/tools/unity-mcp.html): MCP tools and CLI that let AI agents develop and test inside the Unity engine.
-- [Judge0](https://clampdown-web.github.io/agentscout/tools/judge0.html): Sandboxed code execution system for running untrusted code from people and AI.
-- [Embabel](https://clampdown-web.github.io/agentscout/tools/embabel.html): Agent framework for the JVM from the creator of Spring.
-- [Agent Service Toolkit](https://clampdown-web.github.io/agentscout/tools/agent-service-toolkit.html): Toolkit for running an agent service with LangGraph, FastAPI and Streamlit.
-- [nono](https://clampdown-web.github.io/agentscout/tools/nono.html): Zero-trust sandboxing for agent runtimes.
-- [Docker Agent](https://clampdown-web.github.io/agentscout/tools/docker-agent.html): Docker's agent builder and runtime for defining and running agents.
-- [MCP C# SDK](https://clampdown-web.github.io/agentscout/tools/mcp-c-sdk.html): Official C# SDK for building MCP servers and clients, maintained with Microsoft.
-- [Koog](https://clampdown-web.github.io/agentscout/tools/koog.html): JetBrains' Kotlin framework for building predictable, enterprise-ready AI agents on the JVM.
-- [ContextForge](https://clampdown-web.github.io/agentscout/tools/contextforge.html): IBM's gateway and registry that fronts MCP, A2A and REST APIs with one endpoint.
-- [Deep Research (u14)](https://clampdown-web.github.io/agentscout/tools/deep-research-u14.html): Deep research app that works with any LLM and exposes an API and MCP server.
+- [Nanocoder](https://clampdown-web.github.io/agentscout/tools/nanocoder.html): Community-built open coding agent for your terminal.
+- [BoxLite](https://clampdown-web.github.io/agentscout/tools/boxlite.html): Embeddable micro-VM for running AI agents.
+- [MCPHub](https://clampdown-web.github.io/agentscout/tools/mcphub.html): Self-hosted MCP gateway for managing many servers.
+- [CodeBoarding](https://clampdown-web.github.io/agentscout/tools/codeboarding.html): Generates interactive architecture diagrams of codebases.
+- [Agentic Context Engine](https://clampdown-web.github.io/agentscout/tools/agentic-context-engine.html): Engine that lets agents learn from their own experience.
+- [AgentField](https://clampdown-web.github.io/agentscout/tools/agentfield.html): Build, run and scale AI agents like APIs and microservices.
+- [Bright Data MCP](https://clampdown-web.github.io/agentscout/tools/bright-data-mcp.html): Bright Data's MCP server for web search, scraping and browsing.
+- [MetaMCP](https://clampdown-web.github.io/agentscout/tools/metamcp.html): Aggregator and gateway that combines many MCP servers into one.
+- [jCodeMunch MCP](https://clampdown-web.github.io/agentscout/tools/jcodemunch-mcp.html): MCP server for symbol-level code exploration that cuts token use.
+- [Spider](https://clampdown-web.github.io/agentscout/tools/spider.html): Fast Rust web crawler for collecting data for agents and LLMs.
