@@ -14,7 +14,7 @@ function render(){var a=parse(),i=step(a),n=Q.questions.length;
  res.innerHTML='<h2>'+(r.length?"Your top "+r.length+" matches":"No close matches")+'</h2><p class="muted">'+(r.length?"Ranked from "+T.length+" link-checked tools by what you need, your technical level, budget and open-source preference.":"Try a different budget or technical level.")+'</p><div class="grid">'+r.map(function(t,k){return AS.card(t,'<span class="qrank">#'+(k+1)+'</span>')}).join("")+'</div>';
  AS.fixImgs(res);if(window.ASHearts)ASHearts(res)}
 box.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var a=parse();
- if(b.hasAttribute("data-k")){a[b.dataset.k]=b.dataset.v;go(a)}
+ if(b.hasAttribute("data-k")){a[b.dataset.k]=b.dataset.v;go(a);if(step(a)>=Q.questions.length&&window.ASTrack)ASTrack("quiz_complete",a.goal)}
  else if(b.hasAttribute("data-back")){var i=step(a);if(i>0)delete a[Q.questions[i-1].key];go(a)}
  else if(b.hasAttribute("data-retake")){go({})}
  else if(b.hasAttribute("data-share")){var u=location.href,m=document.getElementById("qshared");(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){m.textContent="Link copied"},function(){m.textContent=u})}});

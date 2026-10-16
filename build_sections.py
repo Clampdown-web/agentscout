@@ -40,7 +40,11 @@ def build(t):
     generate={"title":first(r'<h1[^>]*>(.*?)</h1>',gm,"Free AI Image Generator"),"lede":first(r'<p class="lede"[^>]*>(.*?)</p>',gm),"url":B+"generate.html"}
     submit={"endpoint":"https://agentscout-image.agentscouthq.workers.dev/submit","fields":["name","website","github","category","pricing","desc","email","x","company"],
         "categories":[c for c,_ in cats.most_common()],"pricing":["Open source","Free","Freemium","Paid","Open source + cloud","Enterprise / contact sales"],"url":B+"submit.html"}
-    out={"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"categories":categories,"tasks":tasks,"compare":compare,"best":best,"news":news,"generate":generate,"submit":submit,
+    free_tools=[{"name":"AI Image Generator","badges":["Free","image"],"description":"Type a prompt and get an image in seconds. Powered by FLUX.1 [schnell].","screen":"Generate","url":B+"generate.html"}]
+    badges={"title":"Badges for makers","lede":"If your tool is on AgentScout, you can show it. Badges are free and link to your tool's page, so readers can see how it compares.",
+        "kinds":[{"id":"listed","label":"Listed","desc":"for any tool in the directory."},{"id":"featured","label":"Featured","desc":"for tools we've picked as featured."}],
+        "variants":["light","dark"],"svg":B+"badges/{id}-{variant}.svg","png":B+"badges/{id}-{variant}.png","link":B}
+    out={"free_tools":free_tools,"badges":badges,"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"categories":categories,"tasks":tasks,"compare":compare,"best":best,"news":news,"generate":generate,"submit":submit,
         "newsletter":{"url":"https://agentscout.beehiiv.com/","subscribe":"https://agentscout.beehiiv.com/subscribe","latest":{"title":"AgentScout Weekly #1: 5 agent tools worth trying","date":"2026-10-16","summary":"Labeled for builders and everyday users"}}}
     # Daily generator background: same file + version the site's generate.css uses (daily routine bumps ?v=)
     css=open("generate.css").read(); mv=re.search(r"--gen-art:url\((assets/gen-art\.webp\?v=[^)]+)\)",css)

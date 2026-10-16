@@ -108,7 +108,7 @@ fetch(SUBMIT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("submit.html","w").write(shell("",title,desc,canon,body,ld)); return canon
 NL='<section id="nlblock" class="band" style="border-bottom:0;padding:32px 0"><div class="wrap" style="text-align:center;max-width:620px"><h2 style="font-size:18px;margin:0 0 6px">Get the best new AI agents, weekly</h2><p style="margin:0 0 14px;color:var(--muted)">One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p><form class="sub" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform style="max-width:460px;margin:0 auto"><label for="nl-email" class="hide" style="position:absolute;left:-9999px">Email</label><input id="nl-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email"><button class="btn primary" type="submit">Subscribe</button></form></div></section>\n'
-ASSET_V="202610170100"  # bump when app.js/styles.css change
+ASSET_V="202610170400"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html","detail.tpl.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
@@ -125,5 +125,7 @@ def sitewide(t):
             x=bys.get(os.path.basename(f)[:-5]); s=re.sub(r'<p class="goodfor".*?</p>','',s)
             ts=tasks_for(x,m) if x else []
             if ts: s=s.replace('style="display:contents"></span></div>','style="display:contents"></span></div><p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+", ".join(f'<a href="../tasks/{T[0]}.html">{e(T[1])}</a>' for T in ts[:8])+'</p>',1)
-        s=re.sub(r'(app\.js|styles\.css)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
+        # Anonymous analytics (track.js) on every page, right after app.js
+        if "track.js" not in s and "app.js?v=" in s: s=re.sub(r'(<script src="[^"]*?)app\.js\?v=\d+"></script>',lambda mm:mm.group(0)+mm.group(1)+'track.js?v='+ASSET_V+'" defer></script>',s,count=1)
+        s=re.sub(r'(app\.js|styles\.css|track\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)

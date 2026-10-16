@@ -263,3 +263,12 @@ nav+.nlpanel .nlin{max-width:620px;margin:0 auto;padding:22px 20px}
 .nlmsg:empty{display:none}.nlmsg{margin:10px 0 0;font-size:14px}
 @keyframes nlin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.nlpanel{animation:none}}
+/* Editor's Pick (daily) */
+#epick{padding:24px 0 0}
+.card.epick{flex-direction:row;align-items:center;gap:18px;padding:20px;border:1px solid var(--accent);background:linear-gradient(135deg,var(--accent-soft),var(--card) 75%);text-decoration:none;color:inherit}
+.card.epick .ico{flex:0 0 72px;width:72px;height:72px;border-radius:16px}.card.epick .ico img{width:56px;height:56px;border-radius:10px}
+.eptext{min-width:0}.eptext h3{margin:4px 0 4px;font-size:20px}
+.eplabel{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--accent)}.eplabel .muted{font-weight:500}
+.epbadge{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px}
+.epwhy{margin:0 0 10px;color:var(--text);font-size:15px}
+@media(max-width:640px){.card.epick{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}}
