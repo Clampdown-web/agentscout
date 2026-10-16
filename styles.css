@@ -191,3 +191,5 @@ html[data-theme=light]{color-scheme:light}
 .homegen .ig-out img{max-width:260px}.homegen .ig-ex button:nth-child(n+5){display:none}.homegen .ig-note{margin:10px 0 0;font-size:12.5px;max-width:none}
 .homegen .ig-label{display:flex;justify-content:space-between;font-weight:600;font-size:14px;margin-bottom:6px}.homegen .ig-ex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
 @media(max-width:760px){.hg-body{grid-template-columns:minmax(0,1fr)}.homegen .ig-out img{max-width:100%}.homegen{padding:14px}}
+
+.gencall{position:relative;z-index:5;display:flex;align-items:center;min-height:44px;box-sizing:border-box;width:fit-content;max-width:100%;touch-action:manipulation;-webkit-tap-highlight-color:rgba(91,91,247,.2);cursor:pointer}
