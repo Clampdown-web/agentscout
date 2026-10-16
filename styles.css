@@ -180,3 +180,5 @@ html[data-theme=light]{color-scheme:light}
 .genbanner:hover{box-shadow:0 4px 16px rgba(91,91,247,.18)}.genbanner:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .gb-t{display:flex;flex-direction:column;gap:2px}.gb-t b{font-size:16px;color:var(--accent)}.gb-t span{color:var(--muted);font-size:14px}.gb-b{flex:none}
 @media(max-width:640px){.genbanner{flex-direction:column;align-items:stretch;text-align:center;padding:14px}.gb-b{width:100%}}
+
+.gencall{display:inline-block;margin:4px 0 16px;padding:6px 12px;border-radius:8px;border:1px dashed var(--accent);background:var(--accent-soft);color:var(--accent);font-size:13.5px;font-weight:500;text-decoration:none}.gencall:hover{border-style:solid}

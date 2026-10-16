@@ -146,7 +146,7 @@ def seo(t,urls):
     out.append(listing_page("best/mcp-servers.html","Best MCP Servers (2026): curated list · AgentScout",
         f"Best MCP servers in 2026: {len(mcp)} link-checked MCP servers and MCP tools, including {', '.join(x['name'] for x in mcp[:3])}. Pricing as stated by makers."[:158],
         "Best MCP Servers (2026)",f'A curated list of the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory. MCP (Model Context Protocol) lets agents like Claude Code, Cursor and Codex connect to tools and data. See also the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.',mcp,"Best MCP servers",'<p style="margin-top:24px">Guides by client: '+guides+'</p>'))
-    out.append(news_page(t))
+    out.append(news_page(t)); out.append(free_tools())
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
         f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
@@ -182,3 +182,13 @@ def news_page(t):
     desc="Daily AI agent news: new agent launches, coding agents, MCP servers and agent frameworks, summarized in plain words with links to the original sources."
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":x["url"],"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
     open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
+
+def free_tools():
+    canon=B+"free-tools.html"; title="Free AI Tools from AgentScout: Image Generator & More | AgentScout"
+    desc="Free tools from AgentScout, starting with a free AI image generator that needs no sign-up."
+    body='<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free tools</h1><p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout. No sign-up needed.</p><div class="grid"><div class="card tile"><div class="ct"><span class="ico"><span aria-hidden="true">✨</span></span><div class="tn"><h3>AI Image Generator</h3><div class="badges"><span class="b new">Free</span><span class="b cat">image</span></div></div></div><p class="hook">Type a prompt and get an image in seconds. Powered by FLUX.1 [schnell].</p><a class="btn primary" href="generate.html">Open</a></div></div></section>'
+    ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebApplication","name":"AgentScout AI Image Generator","url":B+"generate.html","isAccessibleForFree":True,"applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}
+    open("free-tools.html","w").write(shell("",title,desc,canon,body,ld))
+    p="categories/vision.html"; v=open(p).read()
+    if "gencall" not in v: v=v.replace('</p><div class="grid">','</p><a class="gencall" href="../generate.html">✨ Try AgentScout\'s free AI image generator →</a><div class="grid">',1); open(p,"w").write(v)
+    return canon
