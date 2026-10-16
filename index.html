@@ -136,5 +136,5 @@ fetch("news.json",{cache:"no-cache"}).then(r=>r.json()).then(n=>{if(!n.items||!n
  $("newslist").innerHTML=n.items.slice(0,8).map(x=>`<li><a class="nt" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a><span class="nm">${esc(x.source)} · <time datetime="${esc(x.date)}">${rel(x.date)}</time>${x.tool?` · <a href="tools/${encodeURIComponent(x.tool)}.html">On AgentScout →</a>`:""}</span></li>`).join("");
  $("newsup").textContent="Last updated "+new Date(n.updated).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});$("news").hidden=false}).catch(()=>{});
 </script>
-<script src="generate.js?v=202610162045" defer></script>
+<script src="generate.js?v=202610170200" defer></script>
 </body></html>

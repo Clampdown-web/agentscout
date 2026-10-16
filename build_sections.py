@@ -42,6 +42,13 @@ def build(t):
         "categories":[c for c,_ in cats.most_common()],"pricing":["Open source","Free","Freemium","Paid","Open source + cloud","Enterprise / contact sales"],"url":B+"submit.html"}
     out={"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"categories":categories,"tasks":tasks,"compare":compare,"best":best,"news":news,"generate":generate,"submit":submit,
         "newsletter":{"url":"https://agentscout.beehiiv.com/","subscribe":"https://agentscout.beehiiv.com/subscribe","latest":{"title":"AgentScout Weekly #1: 5 agent tools worth trying","date":"2026-10-16","summary":"Labeled for builders and everyday users"}}}
+    # Daily generator background: same file + version the site's generate.css uses (daily routine bumps ?v=)
+    css=open("generate.css").read(); mv=re.search(r"--gen-art:url\((assets/gen-art\.webp\?v=[^)]+)\)",css)
+    rel=mv.group(1) if mv else "assets/gen-art.webp"
+    daily={"image":B+rel,"path":rel,"overlay":{"light":"rgba(239,239,254,0.5)","dark":"rgba(37,38,77,0.55)"},"base":{"light":"#EFEFFE","dark":"#25264D"},
+        "border":{"light":"#5B5BF7","dark":"#9393FF"},"radius":12,"updated":out["updated"]}
+    json.dump(daily,open("api/generator-daily.json","w"),indent=1)
+    out["generate"]["daily"]=daily
     json.dump(out,open("api/sections.json","w"),ensure_ascii=False,separators=(",",":"))
     print("sections.json:",len(categories),"categories",len(tasks),"tasks",len(compare),"compare",len(best),"best",len(news),"news")
 if __name__=="__main__":

@@ -1,4 +1,6 @@
 (function(){
+  /* Daily art: read the live manifest (also used by the app) so site and app show the same image URL. */
+  fetch("api/generator-daily.json?t="+Math.floor(Date.now()/3e5),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.path)document.documentElement.style.setProperty("--gen-art","url("+d.path+")")}).catch(function(){});
   var WORKER_URL="https://agentscout-image.agentscouthq.workers.dev/generate";
   var TURNSTILE_SITEKEY=""; // optional; set with TURNSTILE_ENABLED=true on the Worker
   var EX=["A friendly robot agent sorting a toolbox of glowing app icons","A team of tiny AI agents building a website, isometric illustration","A coding agent typing at a futuristic terminal, neon blue","A voice AI assistant as a glowing sound wave character","An AI browser agent surfing the web on a paper airplane"];
