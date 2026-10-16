@@ -68,12 +68,10 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch{return""}};
 const k=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1)+"k":String(n);
 const page=t=>"tools/"+t.slug+".html";
-const card=t=>`<div class="card"><a class="stretch" href="${page(t)}" aria-label="${esc(t.name)} details"></a>
- <div class="ct"><h3>${esc(t.name)}</h3><div class="acts">${AS.saveBtn(t.slug)}</div></div>
- <p>${esc(t.description)}</p>
- <div class="badges"><span class="b cat">${esc(t.category)}</span><span class="b">${t.audience==="builders"?"For builders":"Ready to use"}</span><span class="b" title="${esc(t.pricing_detail)}">${esc(t.pricing)}</span>${t.new?'<span class="b new">New</span>':""}</div>
- <div class="badges">${t.use_cases.map(u=>`<a class="b uc" href="?uc=${encodeURIComponent(u)}#directory" data-uc="${esc(u)}">${esc(u)}</a>`).join("")}</div>
- <div class="cardfoot"><span class="meta">${esc(host(t.url))}${t.github_stars!=null?` · ★ ${k(t.github_stars)}`:""}</span></div></div>`;
+const card=t=>`<div class="card tile"><a class="stretch" href="${page(t)}" aria-label="${esc(t.name)} details"></a>
+ <div class="ct"><span class="ico" aria-hidden="true">${esc(t.name.trim().charAt(0).toUpperCase())}</span><div class="tn"><h3>${esc(t.name)}</h3><div class="badges"><span class="b cat">${esc(t.category)}</span><span class="b" title="${esc(t.pricing_detail)}">${esc(t.pricing)}</span>${t.new?'<span class="b new">New</span>':""}</div></div><div class="acts">${AS.saveBtn(t.slug)}</div></div>
+ <p class="hook" title="${esc(t.description)}">${esc(t.description)}</p>
+ <div class="cardfoot"><span class="meta">${t.audience==="builders"?"For builders":"Ready to use"} · ${esc(host(t.url))}${t.github_stars!=null?` · ★ ${k(t.github_stars)}`:""}</span></div></div>`;
 const row=(t,i)=>`<div class="row"><span class="n">${i+1}</span><a href="${page(t)}"><h3>${esc(t.name)} <span class="b cat" style="margin-left:6px;vertical-align:2px">${esc(t.category)}</span></h3><p>${esc(t.description)}</p></a><div class="acts">${AS.saveBtn(t.slug)}${AS.voteBtn(t.slug)}</div></div>`;
 function renderRank(){
  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));

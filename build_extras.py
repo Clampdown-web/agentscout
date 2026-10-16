@@ -108,7 +108,7 @@ def meta(x,n=155):
     if len(s)<120: s+=" Alternatives and facts on AgentScout."
     if len(s)>n: s=s[:n-1].rsplit(" ",1)[0].rstrip(",;:")+"…"
     return s
-def card(x,d="../"): return f'<a class="card" href="{d}tools/{x["slug"]}.html"><div class="ct"><h3>{e(x["name"])}</h3></div><p>{e(x["description"])}</p><div class="badges"><span class="b">{e(x["pricing"])}</span></div></a>'
+def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct"><span class="ico" aria-hidden="true">{e(x["name"].strip()[:1].upper())}</span><div class="tn"><h3>{e(x["name"])}</h3><div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
 def listing_page(path,title,desc,h1,lede,items,crumb,extra=""):
     canon=B+path
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
