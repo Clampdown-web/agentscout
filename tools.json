@@ -59,7 +59,8 @@
       "build an agent",
       "automate workflows"
     ],
-    "slug": "ruflo"
+    "slug": "ruflo",
+    "logo": "assets/logos/ruflo.png"
   },
   {
     "name": "Kore.ai Autoloop",
@@ -314,11 +315,12 @@
       "automate the browser",
       "voice & phone calls"
     ],
-    "slug": "cicero"
+    "slug": "cicero",
+    "logo": "assets/logos/cicero.png"
   },
   {
     "name": "TryVoice",
-    "url": "https://github.com/AaronZ021/tryvoice-oss",
+    "url": "https://github.com/TryAILab/tryvoice-oss",
     "description": "Hands-free voice runtime for coding agents with wake word, push-to-talk and streaming replies.",
     "category": "voice",
     "pricing": "Open source",
@@ -330,12 +332,13 @@
     "new": true,
     "pricing_detail": "Open source",
     "github_stars": 160,
-    "repo": "AaronZ021/tryvoice-oss",
+    "repo": "TryAILab/tryvoice-oss",
     "use_cases": [
       "write code",
       "voice & phone calls"
     ],
-    "slug": "tryvoice"
+    "slug": "tryvoice",
+    "logo": "assets/logos/tryvoice.png"
   },
   {
     "name": "Holo4 (H Company)",
@@ -413,11 +416,12 @@
     "use_cases": [
       "control a computer"
     ],
-    "slug": "openpilot"
+    "slug": "openpilot",
+    "logo": "assets/logos/openpilot.png"
   },
   {
     "name": "OpenSwarm",
-    "url": "https://www.hunted.space/product/openswarm-3",
+    "url": "https://openswarm.com",
     "description": "AI-first 'operating system' where swarms of agents run apps and browsers in parallel.",
     "category": "browser/computer use",
     "pricing": "See site",
@@ -433,7 +437,8 @@
       "control a computer",
       "build multi-agent systems"
     ],
-    "slug": "openswarm"
+    "slug": "openswarm",
+    "logo": "assets/logos/openswarm.png"
   },
   {
     "name": "ExcaliClaw",
@@ -457,7 +462,7 @@
   },
   {
     "name": "kōdlo",
-    "url": "https://hunted.space/dashboard/kodlo",
+    "url": "https://kodlo.ai",
     "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
     "category": "business agents",
     "pricing": "See site",
@@ -473,7 +478,8 @@
       "connect tools via MCP",
       "sales & support"
     ],
-    "slug": "k-dlo"
+    "slug": "k-dlo",
+    "logo": "assets/logos/k-dlo.png"
   },
   {
     "name": "Trig",
@@ -615,7 +621,7 @@
   },
   {
     "name": "OpenHands",
-    "url": "https://github.com/All-Hands-AI/OpenHands",
+    "url": "https://github.com/OpenHands/OpenHands",
     "description": "Open-source platform for autonomous coding agents.",
     "category": "coding",
     "pricing": "Open source + cloud",
@@ -627,7 +633,7 @@
     "id": 27,
     "pricing_detail": "Open source + paid cloud",
     "github_stars": 90845,
-    "repo": "All-Hands-AI/OpenHands",
+    "repo": "OpenHands/OpenHands",
     "use_cases": [
       "write code"
     ],
@@ -650,7 +656,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "aider"
+    "slug": "aider",
+    "logo": "assets/logos/aider.png"
   },
   {
     "name": "Cline",
@@ -696,8 +703,8 @@
   },
   {
     "name": "Windsurf",
-    "url": "https://windsurf.com",
-    "description": "AI IDE with the Cascade agent.",
+    "url": "https://devin.ai/desktop",
+    "description": "AI IDE with the Cascade agent, now rebranded as Devin Desktop after Cognition acquired Windsurf (windsurf.com redirects there).",
     "category": "coding",
     "pricing": "Freemium",
     "maturity": "Mature",
@@ -710,11 +717,12 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "windsurf"
+    "slug": "windsurf",
+    "logo": "assets/logos/windsurf.png"
   },
   {
     "name": "opencode",
-    "url": "https://github.com/sst/opencode",
+    "url": "https://github.com/anomalyco/opencode",
     "description": "Open-source terminal coding agent that works with many model providers.",
     "category": "coding",
     "pricing": "Open source",
@@ -726,11 +734,12 @@
     "id": 32,
     "pricing_detail": "Open source",
     "github_stars": 213329,
-    "repo": "sst/opencode",
+    "repo": "anomalyco/opencode",
     "use_cases": [
       "write code"
     ],
-    "slug": "opencode"
+    "slug": "opencode",
+    "logo": "assets/logos/opencode.png"
   },
   {
     "name": "Amp",
@@ -788,7 +797,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "github-copilot"
+    "slug": "github-copilot",
+    "logo": "assets/logos/github-copilot.png"
   },
   {
     "name": "Replit Agent",
@@ -808,7 +818,8 @@
       "automate workflows",
       "build apps without code"
     ],
-    "slug": "replit-agent"
+    "slug": "replit-agent",
+    "logo": "assets/logos/replit-agent.png"
   },
   {
     "name": "Bolt",
@@ -1207,7 +1218,8 @@
       "write code",
       "research the web"
     ],
-    "slug": "gpt-researcher"
+    "slug": "gpt-researcher",
+    "logo": "assets/logos/gpt-researcher.png"
   },
   {
     "name": "Elicit",
@@ -1309,7 +1321,7 @@
   },
   {
     "name": "LiveKit Agents",
-    "url": "https://www.livekit.io",
+    "url": "https://livekit.com",
     "description": "Real-time voice and video infrastructure with an agents framework.",
     "category": "voice",
     "pricing": "Open source + cloud",
@@ -1466,7 +1478,8 @@
       "automate workflows",
       "build apps without code"
     ],
-    "slug": "zapier-agents"
+    "slug": "zapier-agents",
+    "logo": "assets/logos/zapier-agents.png"
   },
   {
     "name": "Lindy",
