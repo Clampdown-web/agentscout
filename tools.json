@@ -15,7 +15,8 @@
     "use_cases": [
       "business agents"
     ],
-    "slug": "siena-social-agent"
+    "slug": "siena-social-agent",
+    "logo": "assets/logos/siena-social-agent.png"
   },
   {
     "name": "Orca Agent Engine",
@@ -35,7 +36,8 @@
     "use_cases": [
       "build an agent"
     ],
-    "slug": "orca-agent-engine"
+    "slug": "orca-agent-engine",
+    "logo": "assets/logos/orca-agent-engine.png"
   },
   {
     "name": "Ruflo",
@@ -75,7 +77,8 @@
     "use_cases": [
       "monitor & evaluate agents"
     ],
-    "slug": "kore-ai-autoloop"
+    "slug": "kore-ai-autoloop",
+    "logo": "assets/logos/kore-ai-autoloop.png"
   },
   {
     "name": "Hermes Agent (Nous Research)",
@@ -96,7 +99,8 @@
       "build an agent",
       "research the web"
     ],
-    "slug": "hermes-agent-nous-research"
+    "slug": "hermes-agent-nous-research",
+    "logo": "assets/logos/hermes-agent-nous-research.png"
   },
   {
     "name": "OpenAI Agents SDK (Python)",
@@ -118,7 +122,8 @@
       "build an agent",
       "automate workflows"
     ],
-    "slug": "openai-agents-sdk-python"
+    "slug": "openai-agents-sdk-python",
+    "logo": "assets/logos/openai-agents-sdk-python.png"
   },
   {
     "name": "LangChain Deep Agents",
@@ -139,7 +144,8 @@
       "build multi-agent systems",
       "build an agent"
     ],
-    "slug": "langchain-deep-agents"
+    "slug": "langchain-deep-agents",
+    "logo": "assets/logos/langchain-deep-agents.png"
   },
   {
     "name": "GitHub Agentic Workflows (gh-aw)",
@@ -160,7 +166,8 @@
       "write code",
       "automate workflows"
     ],
-    "slug": "github-agentic-workflows-gh-aw"
+    "slug": "github-agentic-workflows-gh-aw",
+    "logo": "assets/logos/github-agentic-workflows-gh-aw.png"
   },
   {
     "name": "Jevgrep",
@@ -201,7 +208,8 @@
       "connect tools via MCP",
       "run code safely"
     ],
-    "slug": "nvidia-openshell"
+    "slug": "nvidia-openshell",
+    "logo": "assets/logos/nvidia-openshell.png"
   },
   {
     "name": "NVIDIA Open Agent Safety Platform",
@@ -220,7 +228,8 @@
       "connect tools via MCP",
       "monitor & evaluate agents"
     ],
-    "slug": "nvidia-open-agent-safety-platform"
+    "slug": "nvidia-open-agent-safety-platform",
+    "logo": "assets/logos/nvidia-open-agent-safety-platform.png"
   },
   {
     "name": "CoreWeave Forge",
@@ -239,7 +248,8 @@
       "run code safely",
       "monitor & evaluate agents"
     ],
-    "slug": "coreweave-forge"
+    "slug": "coreweave-forge",
+    "logo": "assets/logos/coreweave-forge.png"
   },
   {
     "name": "Roboflow Agent",
@@ -259,7 +269,8 @@
       "connect tools via MCP",
       "computer vision"
     ],
-    "slug": "roboflow-agent"
+    "slug": "roboflow-agent",
+    "logo": "assets/logos/roboflow-agent.png"
   },
   {
     "name": "Voiceloop",
@@ -343,7 +354,8 @@
       "automate the browser",
       "control a computer"
     ],
-    "slug": "holo4-h-company"
+    "slug": "holo4-h-company",
+    "logo": "assets/logos/holo4-h-company.png"
   },
   {
     "name": "Manifold MCP",
@@ -361,7 +373,8 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "slug": "manifold-mcp"
+    "slug": "manifold-mcp",
+    "logo": "assets/logos/manifold-mcp.png"
   },
   {
     "name": "NanoMuse",
@@ -379,7 +392,8 @@
     "use_cases": [
       "voice & phone calls"
     ],
-    "slug": "nanomuse"
+    "slug": "nanomuse",
+    "logo": "assets/logos/nanomuse.png"
   },
   {
     "name": "OpenPilot",
@@ -438,7 +452,8 @@
       "connect tools via MCP",
       "make diagrams"
     ],
-    "slug": "excaliclaw"
+    "slug": "excaliclaw",
+    "logo": "assets/logos/excaliclaw.png"
   },
   {
     "name": "kōdlo",
@@ -476,7 +491,8 @@
     "use_cases": [
       "sales & support"
     ],
-    "slug": "trig"
+    "slug": "trig",
+    "logo": "assets/logos/trig.png"
   },
   {
     "name": "Cresta Deputy Agent",
@@ -495,7 +511,8 @@
       "automate workflows",
       "sales & support"
     ],
-    "slug": "cresta-deputy-agent"
+    "slug": "cresta-deputy-agent",
+    "logo": "assets/logos/cresta-deputy-agent.png"
   },
   {
     "name": "Meta Muse Wonder",
@@ -513,7 +530,8 @@
     "use_cases": [
       "models"
     ],
-    "slug": "meta-muse-wonder"
+    "slug": "meta-muse-wonder",
+    "logo": "assets/logos/meta-muse-wonder.png"
   },
   {
     "name": "Claude Code",
@@ -533,7 +551,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "claude-code"
+    "slug": "claude-code",
+    "logo": "assets/logos/claude-code.png"
   },
   {
     "name": "OpenAI Codex CLI",
@@ -553,7 +572,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "openai-codex-cli"
+    "slug": "openai-codex-cli",
+    "logo": "assets/logos/openai-codex-cli.png"
   },
   {
     "name": "Cursor",
@@ -571,7 +591,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "cursor"
+    "slug": "cursor",
+    "logo": "assets/logos/cursor.png"
   },
   {
     "name": "Devin",
@@ -589,7 +610,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "devin"
+    "slug": "devin",
+    "logo": "assets/logos/devin.png"
   },
   {
     "name": "OpenHands",
@@ -609,7 +631,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "openhands"
+    "slug": "openhands",
+    "logo": "assets/logos/openhands.png"
   },
   {
     "name": "Aider",
@@ -647,7 +670,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "cline"
+    "slug": "cline",
+    "logo": "assets/logos/cline.png"
   },
   {
     "name": "Roo Code",
@@ -667,7 +691,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "roo-code"
+    "slug": "roo-code",
+    "logo": "assets/logos/roo-code.png"
   },
   {
     "name": "Windsurf",
@@ -723,7 +748,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "amp"
+    "slug": "amp",
+    "logo": "assets/logos/amp.png"
   },
   {
     "name": "Gemini CLI",
@@ -743,7 +769,8 @@
     "use_cases": [
       "write code"
     ],
-    "slug": "gemini-cli"
+    "slug": "gemini-cli",
+    "logo": "assets/logos/gemini-cli.png"
   },
   {
     "name": "GitHub Copilot",
@@ -800,7 +827,8 @@
       "automate the browser",
       "automate workflows"
     ],
-    "slug": "bolt"
+    "slug": "bolt",
+    "logo": "assets/logos/bolt.png"
   },
   {
     "name": "v0",
@@ -819,7 +847,8 @@
       "automate workflows",
       "build apps without code"
     ],
-    "slug": "v0"
+    "slug": "v0",
+    "logo": "assets/logos/v0.png"
   },
   {
     "name": "Browser Use",
@@ -839,7 +868,8 @@
     "use_cases": [
       "automate the browser"
     ],
-    "slug": "browser-use"
+    "slug": "browser-use",
+    "logo": "assets/logos/browser-use.png"
   },
   {
     "name": "Browserbase",
@@ -857,7 +887,8 @@
     "use_cases": [
       "automate the browser"
     ],
-    "slug": "browserbase"
+    "slug": "browserbase",
+    "logo": "assets/logos/browserbase.png"
   },
   {
     "name": "Stagehand",
@@ -879,7 +910,8 @@
       "automate the browser",
       "build an agent"
     ],
-    "slug": "stagehand"
+    "slug": "stagehand",
+    "logo": "assets/logos/stagehand.png"
   },
   {
     "name": "Playwright MCP",
@@ -900,7 +932,8 @@
       "automate the browser",
       "connect tools via MCP"
     ],
-    "slug": "playwright-mcp"
+    "slug": "playwright-mcp",
+    "logo": "assets/logos/playwright-mcp.png"
   },
   {
     "name": "Skyvern",
@@ -920,7 +953,8 @@
       "automate workflows",
       "computer vision"
     ],
-    "slug": "skyvern"
+    "slug": "skyvern",
+    "logo": "assets/logos/skyvern.png"
   },
   {
     "name": "Manus",
@@ -939,7 +973,8 @@
       "control a computer",
       "research the web"
     ],
-    "slug": "manus"
+    "slug": "manus",
+    "logo": "assets/logos/manus.png"
   },
   {
     "name": "OpenClaw",
@@ -959,7 +994,8 @@
     "use_cases": [
       "automate workflows"
     ],
-    "slug": "openclaw"
+    "slug": "openclaw",
+    "logo": "assets/logos/openclaw.png"
   },
   {
     "name": "LangGraph",
@@ -980,7 +1016,8 @@
       "build an agent",
       "automate workflows"
     ],
-    "slug": "langgraph"
+    "slug": "langgraph",
+    "logo": "assets/logos/langgraph.png"
   },
   {
     "name": "CrewAI",
@@ -1001,7 +1038,8 @@
       "build multi-agent systems",
       "build an agent"
     ],
-    "slug": "crewai"
+    "slug": "crewai",
+    "logo": "assets/logos/crewai.png"
   },
   {
     "name": "AutoGen",
@@ -1022,7 +1060,8 @@
       "build multi-agent systems",
       "build an agent"
     ],
-    "slug": "autogen"
+    "slug": "autogen",
+    "logo": "assets/logos/autogen.png"
   },
   {
     "name": "Pydantic AI",
@@ -1042,7 +1081,8 @@
     "use_cases": [
       "build an agent"
     ],
-    "slug": "pydantic-ai"
+    "slug": "pydantic-ai",
+    "logo": "assets/logos/pydantic-ai.png"
   },
   {
     "name": "Google ADK",
@@ -1062,7 +1102,8 @@
     "use_cases": [
       "build an agent"
     ],
-    "slug": "google-adk"
+    "slug": "google-adk",
+    "logo": "assets/logos/google-adk.png"
   },
   {
     "name": "Mastra",
@@ -1081,7 +1122,8 @@
       "build an agent",
       "automate workflows"
     ],
-    "slug": "mastra"
+    "slug": "mastra",
+    "logo": "assets/logos/mastra.png"
   },
   {
     "name": "smolagents",
@@ -1102,7 +1144,8 @@
       "write code",
       "build an agent"
     ],
-    "slug": "smolagents"
+    "slug": "smolagents",
+    "logo": "assets/logos/smolagents.png"
   },
   {
     "name": "LlamaIndex",
@@ -1122,7 +1165,8 @@
     "use_cases": [
       "build an agent"
     ],
-    "slug": "llamaindex"
+    "slug": "llamaindex",
+    "logo": "assets/logos/llamaindex.png"
   },
   {
     "name": "Vercel AI SDK",
@@ -1141,7 +1185,8 @@
       "build an agent",
       "automate workflows"
     ],
-    "slug": "vercel-ai-sdk"
+    "slug": "vercel-ai-sdk",
+    "logo": "assets/logos/vercel-ai-sdk.png"
   },
   {
     "name": "GPT Researcher",
@@ -1180,7 +1225,8 @@
     "use_cases": [
       "research the web"
     ],
-    "slug": "elicit"
+    "slug": "elicit",
+    "logo": "assets/logos/elicit.png"
   },
   {
     "name": "STORM",
@@ -1200,7 +1246,8 @@
     "use_cases": [
       "research the web"
     ],
-    "slug": "storm"
+    "slug": "storm",
+    "logo": "assets/logos/storm.png"
   },
   {
     "name": "Firecrawl",
@@ -1218,7 +1265,8 @@
     "use_cases": [
       "research the web"
     ],
-    "slug": "firecrawl"
+    "slug": "firecrawl",
+    "logo": "assets/logos/firecrawl.png"
   },
   {
     "name": "Exa",
@@ -1236,7 +1284,8 @@
     "use_cases": [
       "research the web"
     ],
-    "slug": "exa"
+    "slug": "exa",
+    "logo": "assets/logos/exa.png"
   },
   {
     "name": "Tavily",
@@ -1255,7 +1304,8 @@
       "research the web",
       "monitor & evaluate agents"
     ],
-    "slug": "tavily"
+    "slug": "tavily",
+    "logo": "assets/logos/tavily.png"
   },
   {
     "name": "LiveKit Agents",
@@ -1274,7 +1324,8 @@
       "build an agent",
       "voice & phone calls"
     ],
-    "slug": "livekit-agents"
+    "slug": "livekit-agents",
+    "logo": "assets/logos/livekit-agents.png"
   },
   {
     "name": "Pipecat",
@@ -1295,7 +1346,8 @@
       "build an agent",
       "voice & phone calls"
     ],
-    "slug": "pipecat"
+    "slug": "pipecat",
+    "logo": "assets/logos/pipecat.png"
   },
   {
     "name": "Vapi",
@@ -1313,7 +1365,8 @@
     "use_cases": [
       "voice & phone calls"
     ],
-    "slug": "vapi"
+    "slug": "vapi",
+    "logo": "assets/logos/vapi.png"
   },
   {
     "name": "ElevenLabs Agents",
@@ -1331,7 +1384,8 @@
     "use_cases": [
       "voice & phone calls"
     ],
-    "slug": "elevenlabs-agents"
+    "slug": "elevenlabs-agents",
+    "logo": "assets/logos/elevenlabs-agents.png"
   },
   {
     "name": "Retell AI",
@@ -1349,7 +1403,8 @@
     "use_cases": [
       "voice & phone calls"
     ],
-    "slug": "retell-ai"
+    "slug": "retell-ai",
+    "logo": "assets/logos/retell-ai.png"
   },
   {
     "name": "n8n",
@@ -1369,7 +1424,8 @@
       "automate workflows",
       "build apps without code"
     ],
-    "slug": "n8n"
+    "slug": "n8n",
+    "logo": "assets/logos/n8n.png"
   },
   {
     "name": "Make",
@@ -1389,7 +1445,8 @@
       "automate workflows",
       "build apps without code"
     ],
-    "slug": "make"
+    "slug": "make",
+    "logo": "assets/logos/make.png"
   },
   {
     "name": "Zapier Agents",
@@ -1428,7 +1485,8 @@
       "write code",
       "build apps without code"
     ],
-    "slug": "lindy"
+    "slug": "lindy",
+    "logo": "assets/logos/lindy.png"
   },
   {
     "name": "Relevance AI",
@@ -1447,7 +1505,8 @@
       "write code",
       "build apps without code"
     ],
-    "slug": "relevance-ai"
+    "slug": "relevance-ai",
+    "logo": "assets/logos/relevance-ai.png"
   },
   {
     "name": "Dify",
@@ -1469,7 +1528,8 @@
       "automate workflows",
       "build apps without code"
     ],
-    "slug": "dify"
+    "slug": "dify",
+    "logo": "assets/logos/dify.png"
   },
   {
     "name": "Flowise",
@@ -1490,7 +1550,8 @@
       "write code",
       "build apps without code"
     ],
-    "slug": "flowise"
+    "slug": "flowise",
+    "logo": "assets/logos/flowise.png"
   },
   {
     "name": "Model Context Protocol",
@@ -1508,7 +1569,8 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "slug": "model-context-protocol"
+    "slug": "model-context-protocol",
+    "logo": "assets/logos/model-context-protocol.png"
   },
   {
     "name": "MCP reference servers",
@@ -1528,7 +1590,8 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "slug": "mcp-reference-servers"
+    "slug": "mcp-reference-servers",
+    "logo": "assets/logos/mcp-reference-servers.png"
   },
   {
     "name": "Smithery",
@@ -1546,7 +1609,8 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "slug": "smithery"
+    "slug": "smithery",
+    "logo": "assets/logos/smithery.png"
   },
   {
     "name": "E2B",
@@ -1566,7 +1630,8 @@
       "connect tools via MCP",
       "run code safely"
     ],
-    "slug": "e2b"
+    "slug": "e2b",
+    "logo": "assets/logos/e2b.png"
   },
   {
     "name": "Modal",
@@ -1585,7 +1650,8 @@
       "connect tools via MCP",
       "run code safely"
     ],
-    "slug": "modal"
+    "slug": "modal",
+    "logo": "assets/logos/modal.png"
   },
   {
     "name": "Composio",
@@ -1604,7 +1670,8 @@
       "automate workflows",
       "connect tools via MCP"
     ],
-    "slug": "composio"
+    "slug": "composio",
+    "logo": "assets/logos/composio.png"
   },
   {
     "name": "Mem0",
@@ -1625,7 +1692,8 @@
       "connect tools via MCP",
       "give agents memory"
     ],
-    "slug": "mem0"
+    "slug": "mem0",
+    "logo": "assets/logos/mem0.png"
   },
   {
     "name": "Letta",
@@ -1646,7 +1714,8 @@
       "build an agent",
       "give agents memory"
     ],
-    "slug": "letta"
+    "slug": "letta",
+    "logo": "assets/logos/letta.png"
   },
   {
     "name": "LangSmith",
@@ -1665,7 +1734,8 @@
       "automate workflows",
       "monitor & evaluate agents"
     ],
-    "slug": "langsmith"
+    "slug": "langsmith",
+    "logo": "assets/logos/langsmith.png"
   },
   {
     "name": "Langfuse",
@@ -1683,7 +1753,8 @@
     "use_cases": [
       "monitor & evaluate agents"
     ],
-    "slug": "langfuse"
+    "slug": "langfuse",
+    "logo": "assets/logos/langfuse.png"
   },
   {
     "name": "Braintrust",
@@ -1701,7 +1772,8 @@
     "use_cases": [
       "monitor & evaluate agents"
     ],
-    "slug": "braintrust"
+    "slug": "braintrust",
+    "logo": "assets/logos/braintrust.png"
   },
   {
     "name": "Arize Phoenix",
@@ -1722,7 +1794,8 @@
       "automate workflows",
       "monitor & evaluate agents"
     ],
-    "slug": "arize-phoenix"
+    "slug": "arize-phoenix",
+    "logo": "assets/logos/arize-phoenix.png"
   },
   {
     "name": "W&B Weave",
@@ -1741,7 +1814,8 @@
       "build an agent",
       "monitor & evaluate agents"
     ],
-    "slug": "w-b-weave"
+    "slug": "w-b-weave",
+    "logo": "assets/logos/w-b-weave.png"
   },
   {
     "name": "AgentOps",
@@ -1759,7 +1833,8 @@
     "use_cases": [
       "monitor & evaluate agents"
     ],
-    "slug": "agentops"
+    "slug": "agentops",
+    "logo": "assets/logos/agentops.png"
   },
   {
     "name": "Helicone",
@@ -1777,7 +1852,8 @@
     "use_cases": [
       "monitor & evaluate agents"
     ],
-    "slug": "helicone"
+    "slug": "helicone",
+    "logo": "assets/logos/helicone.png"
   },
   {
     "name": "Agent-Native (Builder.io)",
@@ -1798,7 +1874,8 @@
       "build an agent",
       "connect tools via MCP"
     ],
-    "slug": "agent-native-builder-io"
+    "slug": "agent-native-builder-io",
+    "logo": "assets/logos/agent-native-builder-io.png"
   },
   {
     "name": "Google Deep Review",
@@ -1817,7 +1894,8 @@
       "build multi-agent systems",
       "research the web"
     ],
-    "slug": "google-deep-review"
+    "slug": "google-deep-review",
+    "logo": "assets/logos/google-deep-review.png"
   },
   {
     "name": "MetaMask Agent Wallet",
@@ -1835,7 +1913,8 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "slug": "metamask-agent-wallet"
+    "slug": "metamask-agent-wallet",
+    "logo": "assets/logos/metamask-agent-wallet.png"
   },
   {
     "name": "Self Agent Vault",
@@ -1853,7 +1932,8 @@
     "use_cases": [
       "connect tools via MCP"
     ],
-    "slug": "self-agent-vault"
+    "slug": "self-agent-vault",
+    "logo": "assets/logos/self-agent-vault.png"
   },
   {
     "name": "Anchor Action Index",
@@ -1873,7 +1953,8 @@
       "automate the browser",
       "control a computer"
     ],
-    "slug": "anchor-action-index"
+    "slug": "anchor-action-index",
+    "logo": "assets/logos/anchor-action-index.png"
   },
   {
     "name": "Proof x401",
@@ -1893,6 +1974,7 @@
       "voice & phone calls",
       "connect tools via MCP"
     ],
-    "slug": "proof-x401"
+    "slug": "proof-x401",
+    "logo": "assets/logos/proof-x401.png"
   }
 ]

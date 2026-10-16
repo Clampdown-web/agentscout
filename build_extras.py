@@ -5,6 +5,9 @@ e=lambda s:html.escape(str(s or ""))
 PAIRS=[("claude-code","openai-codex-cli"),("cursor","windsurf"),("cline","roo-code"),("langgraph","crewai"),("crewai","autogen"),
 ("browser-use","stagehand"),("exa","tavily"),("livekit-agents","pipecat"),("vapi","retell-ai"),("n8n","make"),("dify","flowise"),
 ("langfuse","langsmith"),("e2b","modal"),("bolt","v0")]
+def ico(x,d="../",cls=""):
+    L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" onerror="this.remove()">' if x.get("logo") else ""
+    return f'<span class="ico {cls}"><span aria-hidden="true">{L}</span>{im}</span>'
 def cslug(a,b): return f"{a}-vs-{b}"
 def badge_html(x,depth="../"):
     url=f"{B}tools/{x['slug']}.html"; kind="featured" if x.get("featured") else "listed"; lab=kind.title()
@@ -69,7 +72,7 @@ def build(t):
         body=f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Compare</a> / {e(A["name"])} vs {e(Bt["name"])}</div>
 <section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>
 <p class="lede" style="margin-left:0;text-align:left">Two closely related {e(A["category"])} tools, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
-<div class="tablewrap"><table class="cmp"><thead><tr><th></th><th><a href="../tools/{a}.html">{e(A["name"])}</a></th><th><a href="../tools/{b}.html">{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
+<div class="tablewrap"><table class="cmp"><thead><tr><th></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a></th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
 <tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener">Visit ↗</a></td></tr></tbody></table></div>
 <p class="disclose">We don't benchmark tools or rank one above the other here. Check each official site for current pricing and features before you choose.</p>
 {faqh}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
@@ -78,7 +81,7 @@ def build(t):
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Compare","item":B+"compare/"},{"@type":"ListItem","position":3,"name":f"{A['name']} vs {Bt['name']}","item":canon}]}]}
         if faq: ld["@graph"].append({"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a_}} for q,a_ in faq]})
         open(f"compare/{s}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
-    cards="".join(f'<a class="card" href="{cslug(a,b)}.html"><div class="ct"><h3>{e(bs[a]["name"])} vs {e(bs[b]["name"])}</h3></div><p>{e(bs[a]["category"])}: {e(bs[a]["description"])}</p></a>' for a,b in PAIRS)
+    cards="".join(f'<a class="card" href="{cslug(a,b)}.html"><div class="ct"><span class="icopair">{ico(bs[a],"../","sm")}{ico(bs[b],"../","sm")}</span><h3 style="flex:1">{e(bs[a]["name"])} vs {e(bs[b]["name"])}</h3></div><p>{e(bs[a]["category"])}: {e(bs[a]["description"])}</p></a>' for a,b in PAIRS)
     canon=B+"compare/"; title="Compare AI agent tools side by side · AgentScout"; desc="Side-by-side comparisons of closely related AI agent tools: coding agents, frameworks, browser automation, voice, search APIs, no-code builders and observability."
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","url":f"{B}compare/{cslug(a,b)}.html","name":f"{bs[a]['name']} vs {bs[b]['name']}"} for a,b in PAIRS]}
     open("compare/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Compare</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Compare AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">Closely related tools, side by side, using only facts from our listings.</p><div class="grid">{cards}</div></section>',ld)); urls.insert(0,canon)
@@ -108,7 +111,7 @@ def meta(x,n=155):
     if len(s)<120: s+=" Alternatives and facts on AgentScout."
     if len(s)>n: s=s[:n-1].rsplit(" ",1)[0].rstrip(",;:")+"…"
     return s
-def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct"><span class="ico" aria-hidden="true">{e(x["name"].strip()[:1].upper())}</span><div class="tn"><h3>{e(x["name"])}</h3><div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
+def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
 def listing_page(path,title,desc,h1,lede,items,crumb,extra=""):
     canon=B+path
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
