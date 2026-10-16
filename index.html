@@ -9,7 +9,7 @@
 <meta property="og:site_name" content="AgentScout"><meta property="og:image" content="https://clampdown-web.github.io/agentscout/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@AgentScoutHQ"><meta name="twitter:creator" content="@AgentScoutHQ"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AgentScout", "url": "https://clampdown-web.github.io/agentscout/", "logo": "https://clampdown-web.github.io/agentscout/logo-square.png", "sameAs": ["https://x.com/AgentScoutHQ"], "contactPoint": {"@type": "ContactPoint", "contactType": "sponsorships and submissions", "email": "agentscout@mail.grokbot.com"}}</script><meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202610161222">
+<link rel="stylesheet" href="styles.css?v=202610162045">
 <link rel="stylesheet" href="generate.css?v=202610161222">
 <title>AI Agents Directory: 97 AI Agent Tools, MCP Servers &amp; Frameworks (2026)</title>
 <meta name="description" content="Directory of 97 link-checked AI agent tools: coding agents, MCP servers, agent frameworks, browser use, voice agents and no-code builders, with pricing as stated.">
@@ -27,16 +27,11 @@
   <form class="sub" style="max-width:560px;margin:0 auto" onsubmit="event.preventDefault();document.getElementById('q').value=this.h.value;render();location.hash='directory'"><input name="h" type="search" placeholder="What do you want an agent to do? e.g. “voice”, “browser”, “MCP”" aria-label="Search"><button class="btn primary">Search</button></form>
   <div class="stats"><span><b id="s-total">–</b> tools</span><span><b id="s-new">–</b> new this week</span><span><b id="s-cats">–</b> categories</span><span>Every link checked</span></div>
 </div></header>
-<div class="wrap"><section class="homegen" aria-labelledby="hg-h"><div class="hg-head"><h2 id="hg-h">✨ Free AI Image Generator</h2><a href="generate.html">Full-page version →</a></div>
-<p class="hg-sub">Turn a prompt into an image in seconds. Free, no sign-up.</p>
-<div class="hg-body"><form id="ig-form" class="ig-form">
-<label for="ig-prompt" class="ig-label">Prompt <span id="ig-count">0/300</span></label>
-<textarea id="ig-prompt" maxlength="300" rows="2" required placeholder="A friendly robot agent organizing a toolbox of glowing apps"></textarea>
-<div class="ig-ex" id="ig-ex"></div>
-<button class="btn primary" id="ig-go" type="submit">Generate</button> <span id="ig-status" class="ig-status" aria-live="polite"></span>
-</form>
-<div id="ig-out" class="ig-out" hidden><img id="ig-img" alt="Generated image" width="1024" height="1024"><p><a id="ig-open" href="#" download="agentscout-image.jpg">Download image</a> · <a id="ig-new" href="#" target="_blank" rel="noopener">Open in new tab</a></p></div></div>
-<p class="ig-note">FLUX.1 [schnell] (Apache 2.0): use your images however you like. About 150 free images a day across all visitors. Keep prompts safe for work.</p></section></div>
+<div class="wrap"><section class="homegen" aria-labelledby="hg-h"><div class="hg-head"><h2 id="hg-h">✨ Free AI Image Generator</h2><a href="generate.html">Full-page →</a></div>
+<form id="ig-form" class="ig-form hg-form"><label for="ig-prompt" class="sr-only">Prompt</label><div class="hg-row"><input id="ig-prompt" type="text" maxlength="300" required placeholder="Describe an image…"><button class="btn primary" id="ig-go" type="submit">Generate</button></div>
+<div class="ig-ex" id="ig-ex" data-short></div><span id="ig-status" class="ig-status" aria-live="polite"></span></form>
+<div id="ig-out" class="ig-out" hidden><img id="ig-img" alt="Generated image" width="1024" height="1024"><p><a id="ig-open" href="#" download="agentscout-image.jpg">Download</a> · <a id="ig-new" href="#" target="_blank" rel="noopener">Open in new tab</a></p></div>
+<p class="ig-note">FLUX.1 [schnell], Apache 2.0 · free to use · keep it SFW</p></section></div>
 
 <div class="layout"><div class="mainc">
 <section id="feed"><div class="wrap">
@@ -134,5 +129,5 @@ fetch("news.json",{cache:"no-cache"}).then(r=>r.json()).then(n=>{if(!n.items||!n
  $("newslist").innerHTML=n.items.slice(0,8).map(x=>`<li><a class="nt" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="nm">${esc(x.source)} · <time datetime="${esc(x.date)}">${rel(x.date)}</time>${x.tool?` · <a href="tools/${esc(x.tool)}.html">On AgentScout →</a>`:""}</span></li>`).join("");
  $("newsup").textContent="Last updated "+new Date(n.updated).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});$("news").hidden=false}).catch(()=>{});
 </script>
-<script src="generate.js?v=202610161222" defer></script>
+<script src="generate.js?v=202610162045" defer></script>
 </body></html>

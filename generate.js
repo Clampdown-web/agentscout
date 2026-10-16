@@ -7,8 +7,9 @@
       out=document.getElementById("ig-out"),img=document.getElementById("ig-img"),op=document.getElementById("ig-open"),nw=document.getElementById("ig-new"),
       ex=document.getElementById("ig-ex"),busy=false,t,last,tsToken="";
   if(TURNSTILE_SITEKEY){var d=document.createElement("div");d.className="cf-turnstile";d.dataset.sitekey=TURNSTILE_SITEKEY;d.dataset.callback="asTs";window.asTs=function(k){tsToken=k};go.parentNode.insertBefore(d,go);var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js";s.async=true;document.head.appendChild(s)}
-  EX.forEach(function(s){var b=document.createElement("button");b.type="button";b.textContent=s;b.onclick=function(){p.value=s;upd()};ex.appendChild(b)});
-  function upd(){cnt.textContent=p.value.length+"/300"}
+  var SH=["Robot toolbox","Tiny agents","Neon coder","Voice wave","Paper plane"],short=ex.hasAttribute("data-short");
+  EX.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=short?SH[i]:s;b.title=s;b.onclick=function(){p.value=s;upd()};ex.appendChild(b)});
+  function upd(){if(cnt)cnt.textContent=p.value.length+"/300"}
   p.addEventListener("input",upd);
   function left(){var l=+localStorage.getItem(KEY)||0;return Math.max(0,COOL-(Date.now()-l))}
   function tick(){clearTimeout(t);if(busy)return;var r=left();if(r>0){go.disabled=true;st.textContent="Next image in "+Math.ceil(r/1000)+"s";t=setTimeout(tick,1000)}else{go.disabled=false;st.textContent=""}}
