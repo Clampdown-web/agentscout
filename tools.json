@@ -3737,7 +3737,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "voice & phone calls",
+      "automate workflows"
+    ],
     "website": "",
     "github": "https://github.com/langflow-ai/langflow",
     "repo": "langflow-ai/langflow",
@@ -3758,7 +3762,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://graphify.com/",
     "github": "https://github.com/Graphify-Labs/graphify",
     "repo": "Graphify-Labs/graphify",
@@ -3768,7 +3774,7 @@
     "logo": "assets/logos/graphify.png"
   },
   {
-    "name": "Claude Mem",
+    "name": "Claude-Mem",
     "url": "https://cmem.ai/",
     "description": "Gives coding agents memory across sessions by capturing what they do, compressing it and feeding the relevant context back in later.",
     "category": "coding",
@@ -3779,7 +3785,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "give agents memory"
+    ],
     "website": "https://cmem.ai/",
     "github": "https://github.com/thedotmack/claude-mem",
     "repo": "thedotmack/claude-mem",
@@ -3800,7 +3809,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "research the web"
+    ],
     "website": "",
     "github": "https://github.com/Panniantong/Agent-Reach",
     "repo": "Panniantong/Agent-Reach",
@@ -3821,7 +3833,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://www.onorca.dev/",
     "github": "https://github.com/stablyai/orca",
     "repo": "stablyai/orca",
@@ -3831,7 +3845,7 @@
     "logo": "assets/logos/orca.png"
   },
   {
-    "name": "Ragflow",
+    "name": "RAGFlow",
     "url": "https://ragflow.io/",
     "description": "Open-source RAG engine with deep document parsing and agent features for building grounded question-answering over your files.",
     "category": "frameworks",
@@ -3842,7 +3856,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://ragflow.io/",
     "github": "https://github.com/infiniflow/ragflow",
     "repo": "infiniflow/ragflow",
@@ -3852,7 +3868,7 @@
     "logo": "assets/logos/ragflow.png"
   },
   {
-    "name": "Crawl4Ai",
+    "name": "Crawl4AI",
     "url": "https://crawl4ai.com/",
     "description": "Open-source crawler that turns websites into clean, LLM-ready Markdown for agents and RAG pipelines.",
     "category": "browser/computer use",
@@ -3863,7 +3879,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "research the web"
+    ],
     "website": "https://crawl4ai.com/",
     "github": "https://github.com/unclecode/crawl4ai",
     "repo": "unclecode/crawl4ai",
@@ -3884,7 +3903,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build an agent",
+      "research the web"
+    ],
     "website": "https://deerflow.tech/",
     "github": "https://github.com/bytedance/deer-flow",
     "repo": "bytedance/deer-flow",
@@ -3905,7 +3928,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "https://career-ops.org/",
     "github": "https://github.com/career-ops-hq/career-ops",
     "repo": "career-ops-hq/career-ops",
@@ -3926,7 +3951,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://www.strix.ai/",
     "github": "https://github.com/usestrix/strix",
     "repo": "usestrix/strix",
@@ -3947,7 +3974,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "productivity"
+    ],
     "website": "https://www.openmontage.video/",
     "github": "https://github.com/calesthio/OpenMontage",
     "repo": "calesthio/OpenMontage",
@@ -3957,28 +3986,7 @@
     "logo": "assets/logos/openmontage.png"
   },
   {
-    "name": "Openinterpreter",
-    "url": "https://github.com/openinterpreter/openinterpreter",
-    "description": "Open Interpreter, a terminal coding agent focused on running open models to write and execute code on your machine.",
-    "category": "coding",
-    "pricing": "Open source",
-    "maturity": "Mature",
-    "audience": "builders",
-    "featured": false,
-    "new": true,
-    "verified": "2026-10-16",
-    "pricing_detail": "",
-    "use_cases": [],
-    "website": "",
-    "github": "https://github.com/openinterpreter/openinterpreter",
-    "repo": "openinterpreter/openinterpreter",
-    "github_stars": 68588,
-    "id": 179,
-    "slug": "openinterpreter",
-    "logo": "assets/logos/openinterpreter.png"
-  },
-  {
-    "name": "Anything Llm",
+    "name": "AnythingLLM",
     "url": "https://anythingllm.com/",
     "description": "Local-first desktop and server app for chatting with your documents, running agents and connecting any LLM.",
     "category": "personal agents",
@@ -3989,14 +3997,16 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "control a computer"
+    ],
     "website": "https://anythingllm.com/",
     "github": "https://github.com/Mintplex-Labs/anything-llm",
     "repo": "Mintplex-Labs/anything-llm",
     "github_stars": 67210,
     "id": 180,
-    "slug": "anything-llm",
-    "logo": "assets/logos/anything-llm.png"
+    "slug": "anythingllm",
+    "logo": "assets/logos/anythingllm.png"
   },
   {
     "name": "Context7",
@@ -4010,7 +4020,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build an agent",
+      "connect tools via MCP"
+    ],
     "website": "https://context7.com/",
     "github": "https://github.com/upstash/context7",
     "repo": "upstash/context7",
@@ -4031,7 +4045,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP"
+    ],
     "website": "https://goose-docs.ai/",
     "github": "https://github.com/aaif-goose/goose",
     "repo": "aaif-goose/goose",
@@ -4041,7 +4058,7 @@
     "logo": "assets/logos/goose.png"
   },
   {
-    "name": "Chrome Devtools Mcp",
+    "name": "Chrome DevTools MCP",
     "url": "https://developer.chrome.com/docs/devtools/agents",
     "description": "Official MCP server that lets coding agents control and inspect a live Chrome browser through DevTools for debugging and performance work.",
     "category": "browser/computer use",
@@ -4052,7 +4069,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "automate the browser",
+      "connect tools via MCP"
+    ],
     "website": "https://developer.chrome.com/docs/devtools/agents",
     "github": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
     "repo": "ChromeDevTools/chrome-devtools-mcp",
@@ -4073,7 +4094,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "personal agents"
+    ],
     "website": "https://cherryai.com/",
     "github": "https://github.com/CherryHQ/cherry-studio",
     "repo": "CherryHQ/cherry-studio",
@@ -4094,7 +4117,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://hindsight.vectorize.io/",
     "github": "https://github.com/vectorize-io/hindsight",
     "repo": "vectorize-io/hindsight",
@@ -4115,7 +4141,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "voice & phone calls",
+      "connect tools via MCP",
+      "computer vision"
+    ],
     "website": "https://localai.io/",
     "github": "https://github.com/mudler/LocalAI",
     "repo": "mudler/LocalAI",
@@ -4136,7 +4166,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://nanobot.wiki/",
     "github": "https://github.com/HKUDS/nanobot",
     "repo": "HKUDS/nanobot",
@@ -4157,7 +4191,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "https://cowagent.ai/",
     "github": "https://github.com/zhayujie/CowAgent",
     "repo": "zhayujie/CowAgent",
@@ -4167,7 +4204,7 @@
     "logo": "assets/logos/cowagent.png"
   },
   {
-    "name": "Codebase Memory Mcp",
+    "name": "Codebase Memory MCP",
     "url": "https://deusdata.github.io/codebase-memory-mcp/",
     "description": "MCP server that indexes codebases into a persistent knowledge graph so coding agents can look up structure quickly.",
     "category": "MCP & infra",
@@ -4178,7 +4215,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://deusdata.github.io/codebase-memory-mcp/",
     "github": "https://github.com/DeusData/codebase-memory-mcp",
     "repo": "DeusData/codebase-memory-mcp",
@@ -4199,7 +4240,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://herdr.dev/",
     "github": "https://github.com/herdrdev/herdr",
     "repo": "herdrdev/herdr",
@@ -4220,7 +4263,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent",
+      "give agents memory"
+    ],
     "website": "https://docs.agno.com/",
     "github": "https://github.com/agno-agi/agno",
     "repo": "agno-agi/agno",
@@ -4230,7 +4277,7 @@
     "logo": "assets/logos/agno.png"
   },
   {
-    "name": "Openhuman",
+    "name": "OpenHuman",
     "url": "https://tinyhumans.ai/openhuman",
     "description": "Lightweight open-source agent harness designed to run many agents cheaply on small servers.",
     "category": "frameworks",
@@ -4241,7 +4288,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://tinyhumans.ai/openhuman",
     "github": "https://github.com/tinyhumansai/openhuman",
     "repo": "tinyhumansai/openhuman",
@@ -4262,7 +4311,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://codewhale.net/en",
     "github": "https://github.com/codewhale-hq/Codewhale",
     "repo": "codewhale-hq/Codewhale",
@@ -4283,7 +4334,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://oh-my-claudecode.dev/",
     "github": "https://github.com/Yeachan-Heo/oh-my-claudecode",
     "repo": "Yeachan-Heo/oh-my-claudecode",
@@ -4304,7 +4357,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "control a computer"
+    ],
     "website": "",
     "github": "https://github.com/bytedance/UI-TARS-desktop",
     "repo": "bytedance/UI-TARS-desktop",
@@ -4325,7 +4381,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://pageindex.ai/",
     "github": "https://github.com/VectifyAI/PageIndex",
     "repo": "VectifyAI/PageIndex",
@@ -4346,7 +4404,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "https://docs.copilotkit.ai/",
     "github": "https://github.com/CopilotKit/CopilotKit",
     "repo": "CopilotKit/CopilotKit",
@@ -4367,7 +4428,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "",
     "github": "https://github.com/ItzCrazyKns/Vane",
     "repo": "ItzCrazyKns/Vane",
@@ -4377,7 +4440,7 @@
     "logo": "assets/logos/vane.png"
   },
   {
-    "name": "Next Ai Draw Io",
+    "name": "Next AI Draw.io",
     "url": "https://next-ai-drawio.jiang.jp/en",
     "description": "Create and edit draw.io diagrams by chatting with AI, as a web app, desktop app or MCP server.",
     "category": "productivity",
@@ -4388,7 +4451,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "control a computer",
+      "connect tools via MCP",
+      "make diagrams"
+    ],
     "website": "https://next-ai-drawio.jiang.jp/en",
     "github": "https://github.com/DayuanJiang/next-ai-draw-io",
     "repo": "DayuanJiang/next-ai-draw-io",
@@ -4409,7 +4476,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "",
     "github": "https://github.com/esengine/DeepSeek-Reasonix",
     "repo": "esengine/DeepSeek-Reasonix",
@@ -4430,7 +4499,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "voice & phone calls"
+    ],
     "website": "",
     "github": "https://github.com/agentscope-ai/QwenPaw",
     "repo": "agentscope-ai/QwenPaw",
@@ -4451,7 +4522,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://omp.sh/",
     "github": "https://github.com/can1357/oh-my-pi",
     "repo": "can1357/oh-my-pi",
@@ -4472,7 +4545,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "https://vibetrading.wiki/home/",
     "github": "https://github.com/HKUDS/Vibe-Trading",
     "repo": "HKUDS/Vibe-Trading",
@@ -4482,7 +4557,7 @@
     "logo": "assets/logos/vibe-trading.png"
   },
   {
-    "name": "Github Mcp Server",
+    "name": "GitHub MCP Server",
     "url": "https://github.com/github/github-mcp-server",
     "description": "GitHub's official MCP server for letting agents work with repositories, issues, pull requests and Actions.",
     "category": "MCP & infra",
@@ -4493,7 +4568,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP"
+    ],
     "website": "",
     "github": "https://github.com/github/github-mcp-server",
     "repo": "github/github-mcp-server",
@@ -4514,7 +4592,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "control a computer"
+    ],
     "website": "https://www.aionui.com/",
     "github": "https://github.com/iOfficeAI/AionUi",
     "repo": "iOfficeAI/AionUi",
@@ -4524,7 +4604,7 @@
     "logo": "assets/logos/aionui.png"
   },
   {
-    "name": "Agentscope",
+    "name": "AgentScope",
     "url": "https://docs.agentscope.io/en/versions/2.0.10",
     "description": "Framework for building and running transparent multi-agent applications with visual debugging.",
     "category": "frameworks",
@@ -4535,7 +4615,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent"
+    ],
     "website": "https://docs.agentscope.io/en/versions/2.0.10",
     "github": "https://github.com/agentscope-ai/agentscope",
     "repo": "agentscope-ai/agentscope",
@@ -4556,7 +4639,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://www.cognee.ai/",
     "github": "https://github.com/topoteretes/cognee",
     "repo": "topoteretes/cognee",
@@ -4577,7 +4663,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://help.getzep.com/graphiti/getting-started/welcome",
     "github": "https://github.com/getzep/graphiti",
     "repo": "getzep/graphiti",
@@ -4587,7 +4676,7 @@
     "logo": "assets/logos/graphiti.png"
   },
   {
-    "name": "Cli",
+    "name": "Google Workspace CLI",
     "url": "https://developers.google.com/workspace",
     "description": "Official Google Workspace command-line tool for Drive, Gmail, Calendar, Docs and more, usable by agents.",
     "category": "MCP & infra",
@@ -4598,17 +4687,19 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "https://developers.google.com/workspace",
     "github": "https://github.com/googleworkspace/cli",
     "repo": "googleworkspace/cli",
     "github_stars": 31557,
     "id": 209,
-    "slug": "cli",
-    "logo": "assets/logos/cli.png"
+    "slug": "google-workspace-cli",
+    "logo": "assets/logos/google-workspace-cli.png"
   },
   {
-    "name": "Nanoclaw",
+    "name": "NanoClaw",
     "url": "https://nanoclaw.dev/",
     "description": "Lightweight personal agent that runs in containers and connects to WhatsApp, Telegram and Slack.",
     "category": "personal agents",
@@ -4619,7 +4710,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "personal agents"
+    ],
     "website": "https://nanoclaw.dev/",
     "github": "https://github.com/nanocoai/nanoclaw",
     "repo": "nanocoai/nanoclaw",
@@ -4629,7 +4722,7 @@
     "logo": "assets/logos/nanoclaw.png"
   },
   {
-    "name": "Pentagi",
+    "name": "PentAGI",
     "url": "https://pentagi.com/",
     "description": "Autonomous multi-agent system for running penetration testing tasks.",
     "category": "coding",
@@ -4640,7 +4733,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build multi-agent systems"
+    ],
     "website": "https://pentagi.com/",
     "github": "https://github.com/vxcontrol/pentagi",
     "repo": "vxcontrol/pentagi",
@@ -4661,7 +4757,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "research the web"
+    ],
     "website": "https://opencli.info/",
     "github": "https://github.com/jackwener/OpenCLI",
     "repo": "jackwener/OpenCLI",
@@ -4682,7 +4781,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build an agent",
+      "connect tools via MCP"
+    ],
     "website": "https://oraios.github.io/serena/",
     "github": "https://github.com/oraios/serena",
     "repo": "oraios/serena",
@@ -4703,7 +4806,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "run code safely",
+      "give agents memory"
+    ],
     "website": "https://context-mode.com/",
     "github": "https://github.com/mksglu/context-mode",
     "repo": "mksglu/context-mode",
@@ -4724,7 +4831,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "control a computer",
+      "run code safely"
+    ],
     "website": "https://cua.ai/",
     "github": "https://github.com/trycua/cua",
     "repo": "trycua/cua",
@@ -4734,7 +4845,7 @@
     "logo": "assets/logos/cua.png"
   },
   {
-    "name": "Sim",
+    "name": "Sim Studio",
     "url": "https://www.sim.ai/",
     "description": "Workspace for visually building, deploying and monitoring AI agents and workflows.",
     "category": "no-code builders",
@@ -4745,17 +4856,21 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
     "website": "https://www.sim.ai/",
     "github": "https://github.com/simstudioai/sim",
     "repo": "simstudioai/sim",
     "github_stars": 29835,
     "id": 216,
-    "slug": "sim",
-    "logo": "assets/logos/sim.png"
+    "slug": "sim-studio",
+    "logo": "assets/logos/sim-studio.png"
   },
   {
-    "name": "Agentmemory",
+    "name": "AgentMemory",
     "url": "https://www.agent-memory.dev/",
     "description": "Persistent memory layer for AI coding agents.",
     "category": "coding",
@@ -4766,7 +4881,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "give agents memory"
+    ],
     "website": "https://www.agent-memory.dev/",
     "github": "https://github.com/rohitg00/agentmemory",
     "repo": "rohitg00/agentmemory",
@@ -4787,7 +4905,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://www.trychroma.com/",
     "github": "https://github.com/chroma-core/chroma",
     "repo": "chroma-core/chroma",
@@ -4808,7 +4930,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser"
+    ],
     "website": "https://alibaba.github.io/page-agent/",
     "github": "https://github.com/alibaba/page-agent",
     "repo": "alibaba/page-agent",
@@ -4829,7 +4953,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://tencentcloud.github.io/TencentDB-Agent-Memory/",
     "github": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
     "repo": "TencentCloud/TencentDB-Agent-Memory",
@@ -4850,7 +4978,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP"
+    ],
     "website": "",
     "github": "https://github.com/charmbracelet/crush",
     "repo": "charmbracelet/crush",
@@ -4871,7 +5002,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://qwenlm.github.io/qwen-code-docs/en/users/overview/",
     "github": "https://github.com/QwenLM/qwen-code",
     "repo": "QwenLM/qwen-code",
@@ -4881,7 +5014,7 @@
     "logo": "assets/logos/qwen-code.png"
   },
   {
-    "name": "Mlflow",
+    "name": "MLflow",
     "url": "https://mlflow.org/",
     "description": "Open-source platform for tracing, evaluating and managing agents, LLM apps and ML models.",
     "category": "evals & observability",
@@ -4892,7 +5025,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate workflows",
+      "monitor & evaluate agents"
+    ],
     "website": "https://mlflow.org/",
     "github": "https://github.com/mlflow/mlflow",
     "repo": "mlflow/mlflow",
@@ -4913,7 +5049,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://www.vibekanban.com/",
     "github": "https://github.com/BloopAI/vibe-kanban",
     "repo": "BloopAI/vibe-kanban",
@@ -4923,7 +5061,7 @@
     "logo": "assets/logos/vibe-kanban.png"
   },
   {
-    "name": "Fastmcp",
+    "name": "FastMCP",
     "url": "https://gofastmcp.com/getting-started/welcome",
     "description": "Pythonic framework for building MCP servers and clients quickly.",
     "category": "MCP & infra",
@@ -4934,7 +5072,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "connect tools via MCP"
+    ],
     "website": "https://gofastmcp.com/getting-started/welcome",
     "github": "https://github.com/PrefectHQ/fastmcp",
     "repo": "PrefectHQ/fastmcp",
@@ -4955,7 +5096,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "monitor & evaluate agents",
+      "give agents memory"
+    ],
     "website": "https://beads.gascity.com/",
     "github": "https://github.com/gastownhall/beads",
     "repo": "gastownhall/beads",
@@ -4976,7 +5121,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "",
     "github": "https://github.com/Fosowl/agenticSeek",
     "repo": "Fosowl/agenticSeek",
@@ -4997,7 +5144,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://gilded-laurel-c7nj.here.now/",
     "github": "https://github.com/OthmanAdi/planning-with-files",
     "repo": "OthmanAdi/planning-with-files",
@@ -5018,7 +5167,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "https://haystack.deepset.ai/",
     "github": "https://github.com/deepset-ai/haystack",
     "repo": "deepset-ai/haystack",
@@ -5039,7 +5191,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://a2a-protocol.org/",
     "github": "https://github.com/a2aproject/A2A",
     "repo": "a2aproject/A2A",
@@ -5060,7 +5214,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
     "website": "https://www.activepieces.com/",
     "github": "https://github.com/activepieces/activepieces",
     "repo": "activepieces/activepieces",
@@ -5070,7 +5228,7 @@
     "logo": "assets/logos/activepieces.png"
   },
   {
-    "name": "Nocobase",
+    "name": "NocoBase",
     "url": "https://www.nocobase.com/",
     "description": "Open-source no-code platform with AI employees for building business systems.",
     "category": "app builders",
@@ -5081,7 +5239,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build apps without code"
+    ],
     "website": "https://www.nocobase.com/",
     "github": "https://github.com/nocobase/nocobase",
     "repo": "nocobase/nocobase",
@@ -5091,7 +5252,7 @@
     "logo": "assets/logos/nocobase.png"
   },
   {
-    "name": "Python Sdk",
+    "name": "MCP Python SDK",
     "url": "https://py.sdk.modelcontextprotocol.io/",
     "description": "Official Python SDK for building Model Context Protocol servers and clients.",
     "category": "MCP & infra",
@@ -5102,17 +5263,20 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "connect tools via MCP"
+    ],
     "website": "https://py.sdk.modelcontextprotocol.io/",
     "github": "https://github.com/modelcontextprotocol/python-sdk",
     "repo": "modelcontextprotocol/python-sdk",
     "github_stars": 24595,
     "id": 233,
-    "slug": "python-sdk",
-    "logo": "assets/logos/python-sdk.png"
+    "slug": "mcp-python-sdk",
+    "logo": "assets/logos/mcp-python-sdk.png"
   },
   {
-    "name": "Happy",
+    "name": "Happy Coder",
     "url": "https://happy.engineering/",
     "description": "Mobile and desktop app to run and control Claude Code, Codex and other agents using your own subscriptions.",
     "category": "coding",
@@ -5123,17 +5287,20 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "control a computer"
+    ],
     "website": "https://happy.engineering/",
     "github": "https://github.com/slopus/happy",
     "repo": "slopus/happy",
     "github_stars": 24180,
     "id": 234,
-    "slug": "happy",
-    "logo": "assets/logos/happy.png"
+    "slug": "happy-coder",
+    "logo": "assets/logos/happy-coder.png"
   },
   {
-    "name": "N8N Mcp",
+    "name": "n8n-MCP",
     "url": "https://www.n8n-mcp.com/",
     "description": "MCP server that lets Claude, Cursor and other agents build n8n workflows for you.",
     "category": "MCP & infra",
@@ -5144,7 +5311,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate workflows",
+      "connect tools via MCP"
+    ],
     "website": "https://www.n8n-mcp.com/",
     "github": "https://github.com/czlonkowski/n8n-mcp",
     "repo": "czlonkowski/n8n-mcp",
@@ -5165,7 +5335,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build apps without code"
+    ],
     "website": "https://maxkb.cn/",
     "github": "https://github.com/1Panel-dev/MaxKB",
     "repo": "1Panel-dev/MaxKB",
@@ -5186,7 +5359,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web",
+      "voice & phone calls"
+    ],
     "website": "https://screenpipe.com/",
     "github": "https://github.com/screenpipe/screenpipe",
     "repo": "screenpipe/screenpipe",
@@ -5207,7 +5383,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "productivity"
+    ],
     "website": "https://teable.ai/",
     "github": "https://github.com/teableio/teable",
     "repo": "teableio/teable",
@@ -5228,7 +5406,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "control a computer"
+    ],
     "website": "https://paseo.sh/",
     "github": "https://github.com/getpaseo/paseo",
     "repo": "getpaseo/paseo",
@@ -5238,7 +5419,7 @@
     "logo": "assets/logos/paseo.png"
   },
   {
-    "name": "Text To Cad",
+    "name": "Text-to-CAD",
     "url": "https://www.texttocad.dev/",
     "description": "Gives agents tools to create CAD models from text.",
     "category": "productivity",
@@ -5249,7 +5430,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "productivity"
+    ],
     "website": "https://www.texttocad.dev/",
     "github": "https://github.com/earthtojake/text-to-cad",
     "repo": "earthtojake/text-to-cad",
@@ -5259,7 +5442,7 @@
     "logo": "assets/logos/text-to-cad.png"
   },
   {
-    "name": "Jcode",
+    "name": "jcode",
     "url": "https://jcode.sh/",
     "description": "High-performance coding agent harness written in Rust.",
     "category": "coding",
@@ -5270,7 +5453,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build an agent"
+    ],
     "website": "https://jcode.sh/",
     "github": "https://github.com/1jehuang/jcode",
     "repo": "1jehuang/jcode",
@@ -5280,7 +5466,7 @@
     "logo": "assets/logos/jcode.png"
   },
   {
-    "name": "Suna",
+    "name": "Kortix Suna",
     "url": "https://github.com/kortix-ai/suna",
     "description": "Kortix, an open-source platform for building and running general-purpose AI agents.",
     "category": "personal agents",
@@ -5291,14 +5477,16 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "personal agents"
+    ],
     "website": "",
     "github": "https://github.com/kortix-ai/suna",
     "repo": "kortix-ai/suna",
     "github_stars": 20278,
     "id": 242,
-    "slug": "suna",
-    "logo": "assets/logos/suna.png"
+    "slug": "kortix-suna",
+    "logo": "assets/logos/kortix-suna.png"
   },
   {
     "name": "DB-GPT",
@@ -5312,7 +5500,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "",
     "github": "https://github.com/eosphoros-ai/DB-GPT",
     "repo": "eosphoros-ai/DB-GPT",
@@ -5333,7 +5523,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "https://app.docsgpt.cloud/",
     "github": "https://github.com/arc53/DocsGPT",
     "repo": "arc53/DocsGPT",
@@ -5354,7 +5546,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "sales & support"
+    ],
     "website": "https://www.parlant.io/",
     "github": "https://github.com/emcie-co/parlant",
     "repo": "emcie-co/parlant",
@@ -5364,7 +5559,7 @@
     "logo": "assets/logos/parlant.png"
   },
   {
-    "name": "Openfang",
+    "name": "OpenFang",
     "url": "https://www.openfang.sh/",
     "description": "Open-source agent operating system for running autonomous agents.",
     "category": "frameworks",
@@ -5375,7 +5570,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "control a computer",
+      "build an agent"
+    ],
     "website": "https://www.openfang.sh/",
     "github": "https://github.com/RightNow-AI/openfang",
     "repo": "RightNow-AI/openfang",
@@ -5396,7 +5594,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "give agents memory"
+    ],
     "website": "https://www.rowboatlabs.com/",
     "github": "https://github.com/rowboatlabs/rowboat",
     "repo": "rowboatlabs/rowboat",
@@ -5417,7 +5617,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "https://www.getwren.ai/en/open-core",
     "github": "https://github.com/Canner/WrenAI",
     "repo": "Canner/WrenAI",
@@ -5438,7 +5640,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "automate the browser",
+      "research the web"
+    ],
     "website": "https://maxun.dev/",
     "github": "https://github.com/getmaxun/maxun",
     "repo": "getmaxun/maxun",
@@ -5459,7 +5665,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "personal agents"
+    ],
     "website": "https://getleon.ai/",
     "github": "https://github.com/leon-ai/leon",
     "repo": "leon-ai/leon",
@@ -5480,7 +5688,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://coder.com/",
     "github": "https://github.com/coder/coder",
     "repo": "coder/coder",
@@ -5501,7 +5711,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "build multi-agent systems",
+      "research the web"
+    ],
     "website": "",
     "github": "https://github.com/HKUDS/DeepCode",
     "repo": "HKUDS/DeepCode",
@@ -5511,7 +5725,7 @@
     "logo": "assets/logos/deepcode.png"
   },
   {
-    "name": "Mcp Toolbox",
+    "name": "MCP Toolbox for Databases",
     "url": "https://mcp-toolbox.dev/documentation/introduction/",
     "description": "Open-source MCP server from Google for connecting agents to databases.",
     "category": "MCP & infra",
@@ -5522,17 +5736,19 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "https://mcp-toolbox.dev/documentation/introduction/",
     "github": "https://github.com/googleapis/mcp-toolbox",
     "repo": "googleapis/mcp-toolbox",
     "github_stars": 16669,
     "id": 253,
-    "slug": "mcp-toolbox",
-    "logo": "assets/logos/mcp-toolbox.png"
+    "slug": "mcp-toolbox-for-databases",
+    "logo": "assets/logos/mcp-toolbox-for-databases.png"
   },
   {
-    "name": "Ag Ui",
+    "name": "AG-UI",
     "url": "https://docs.ag-ui.com/introduction",
     "description": "Agent-User Interaction protocol for streaming agent state and events into frontend apps.",
     "category": "frameworks",
@@ -5543,7 +5759,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "https://docs.ag-ui.com/introduction",
     "github": "https://github.com/ag-ui-protocol/ag-ui",
     "repo": "ag-ui-protocol/ag-ui",
@@ -5553,7 +5772,7 @@
     "logo": "assets/logos/ag-ui.png"
   },
   {
-    "name": "Trigger.Dev",
+    "name": "Trigger.dev",
     "url": "https://trigger.dev/changelog",
     "description": "Platform for building and deploying durable background AI agents and workflows in TypeScript.",
     "category": "frameworks",
@@ -5564,7 +5783,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "https://trigger.dev/changelog",
     "github": "https://github.com/triggerdotdev/trigger.dev",
     "repo": "triggerdotdev/trigger.dev",
@@ -5585,7 +5807,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web"
+    ],
     "website": "https://www.surfsense.com/",
     "github": "https://github.com/MODSetter/SurfSense",
     "repo": "MODSetter/SurfSense",
@@ -5606,7 +5830,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "run code safely"
+    ],
     "website": "https://open-sandbox.ai/",
     "github": "https://github.com/opensandbox-group/OpenSandbox",
     "repo": "opensandbox-group/OpenSandbox",
@@ -5627,7 +5855,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "control a computer",
+      "build multi-agent systems",
+      "voice & phone calls"
+    ],
     "website": "https://www.eigent.ai/",
     "github": "https://github.com/eigent-ai/eigent",
     "repo": "eigent-ai/eigent",
@@ -5648,7 +5880,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://superset.sh/",
     "github": "https://github.com/superset-sh/superset",
     "repo": "superset-sh/superset",
@@ -5669,7 +5903,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate workflows",
+      "connect tools via MCP"
+    ],
     "website": "https://corsair.dev/",
     "github": "https://github.com/corsairdev/corsair",
     "repo": "corsairdev/corsair",
@@ -5690,7 +5927,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "https://casdoor.ai/",
     "github": "https://github.com/casdoor/casdoor",
     "repo": "casdoor/casdoor",
@@ -5711,7 +5950,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "personal agents"
+    ],
     "website": "",
     "github": "https://github.com/lsdefine/GenericAgent",
     "repo": "lsdefine/GenericAgent",
@@ -5721,7 +5962,7 @@
     "logo": "assets/logos/genericagent.png"
   },
   {
-    "name": "Agent Framework",
+    "name": "Microsoft Agent Framework",
     "url": "https://github.com/microsoft/agent-framework",
     "description": "Microsoft's framework for building and orchestrating agents and multi-agent workflows in Python and .NET.",
     "category": "frameworks",
@@ -5732,14 +5973,18 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "",
     "github": "https://github.com/microsoft/agent-framework",
     "repo": "microsoft/agent-framework",
     "github_stars": 14169,
     "id": 263,
-    "slug": "agent-framework",
-    "logo": "assets/logos/agent-framework.png"
+    "slug": "microsoft-agent-framework",
+    "logo": "assets/logos/microsoft-agent-framework.png"
   },
   {
     "name": "Nanobrowser",
@@ -5753,7 +5998,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "automate workflows"
+    ],
     "website": "https://nanobrowser.ai/",
     "github": "https://github.com/nanobrowser/nanobrowser",
     "repo": "nanobrowser/nanobrowser",
@@ -5774,7 +6022,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "voice & phone calls"
+    ],
     "website": "https://browseros.com/",
     "github": "https://github.com/browseros-ai/BrowserOS",
     "repo": "browseros-ai/BrowserOS",
@@ -5784,7 +6035,7 @@
     "logo": "assets/logos/browseros.png"
   },
   {
-    "name": "Typescript Sdk",
+    "name": "MCP TypeScript SDK",
     "url": "https://ts.sdk.modelcontextprotocol.io/v2/",
     "description": "Official TypeScript SDK for building MCP servers and clients.",
     "category": "MCP & infra",
@@ -5795,14 +6046,17 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "connect tools via MCP"
+    ],
     "website": "https://ts.sdk.modelcontextprotocol.io/v2/",
     "github": "https://github.com/modelcontextprotocol/typescript-sdk",
     "repo": "modelcontextprotocol/typescript-sdk",
     "github_stars": 13595,
     "id": 266,
-    "slug": "typescript-sdk",
-    "logo": "assets/logos/typescript-sdk.png"
+    "slug": "mcp-typescript-sdk",
+    "logo": "assets/logos/mcp-typescript-sdk.png"
   },
   {
     "name": "EverOS",
@@ -5816,7 +6070,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://evermind.ai/everos",
     "github": "https://github.com/EverMind-AI/EverOS",
     "repo": "EverMind-AI/EverOS",
@@ -5837,7 +6094,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://orchestrator.inc/",
     "github": "https://github.com/OrchestratorInc/agent-orchestrator",
     "repo": "OrchestratorInc/agent-orchestrator",
@@ -5858,7 +6117,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://insforge.dev/",
     "github": "https://github.com/InsForge/InsForge",
     "repo": "InsForge/InsForge",
@@ -5879,7 +6140,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "run code safely"
+    ],
     "website": "",
     "github": "https://github.com/TencentCloud/CubeSandbox",
     "repo": "TencentCloud/CubeSandbox",
@@ -5889,7 +6154,7 @@
     "logo": "assets/logos/cubesandbox.png"
   },
   {
-    "name": "Ida Pro Mcp",
+    "name": "IDA Pro MCP",
     "url": "https://plugins.hex-rays.com/mrexodia/ida-pro-mcp",
     "description": "MCP server connecting IDA Pro to language models for AI-assisted reverse engineering.",
     "category": "MCP & infra",
@@ -5900,7 +6165,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "https://plugins.hex-rays.com/mrexodia/ida-pro-mcp",
     "github": "https://github.com/mrexodia/ida-pro-mcp",
     "repo": "mrexodia/ida-pro-mcp",
@@ -5921,7 +6188,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "build an agent"
+    ],
     "website": "https://www.simular.ai/",
     "github": "https://github.com/simular-ai/Agent-S",
     "repo": "simular-ai/Agent-S",
@@ -5931,7 +6201,7 @@
     "logo": "assets/logos/agent-s.png"
   },
   {
-    "name": "Artemis",
+    "name": "Google ARTEMIS",
     "url": "https://github.com/google/artemis",
     "description": "Google's tool that turns natural-language instructions into Android automation.",
     "category": "browser/computer use",
@@ -5942,14 +6212,17 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "automate the browser",
+      "automate workflows"
+    ],
     "website": "",
     "github": "https://github.com/google/artemis",
     "repo": "google/artemis",
     "github_stars": 12038,
     "id": 273,
-    "slug": "artemis",
-    "logo": "assets/logos/artemis.png"
+    "slug": "google-artemis",
+    "logo": "assets/logos/google-artemis.png"
   },
   {
     "name": "MemOS",
@@ -5963,7 +6236,11 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "control a computer",
+      "connect tools via MCP",
+      "give agents memory"
+    ],
     "website": "https://memos.openmem.net/",
     "github": "https://github.com/MemTensor/MemOS",
     "repo": "MemTensor/MemOS",
@@ -5973,7 +6250,7 @@
     "logo": "assets/logos/memos.png"
   },
   {
-    "name": "Cocoindex",
+    "name": "CocoIndex",
     "url": "https://cocoindex.io/",
     "description": "Incremental data engine for keeping agent context and indexes fresh.",
     "category": "MCP & infra",
@@ -5984,7 +6261,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "connect tools via MCP"
+    ],
     "website": "https://cocoindex.io/",
     "github": "https://github.com/cocoindex-io/cocoindex",
     "repo": "cocoindex-io/cocoindex",
@@ -5994,7 +6273,7 @@
     "logo": "assets/logos/cocoindex.png"
   },
   {
-    "name": "Humanlayer",
+    "name": "HumanLayer",
     "url": "https://www.humanlayer.dev/",
     "description": "Tools for getting coding agents to solve hard problems in complex codebases.",
     "category": "coding",
@@ -6005,7 +6284,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://www.humanlayer.dev/",
     "github": "https://github.com/humanlayer/humanlayer",
     "repo": "humanlayer/humanlayer",
@@ -6015,7 +6296,7 @@
     "logo": "assets/logos/humanlayer.png"
   },
   {
-    "name": "Openchamber",
+    "name": "OpenChamber",
     "url": "https://openchamber.dev/",
     "description": "Agentic development environment built around the OpenCode agent.",
     "category": "coding",
@@ -6026,7 +6307,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "write code"
+    ],
     "website": "https://openchamber.dev/",
     "github": "https://github.com/openchamber/openchamber",
     "repo": "openchamber/openchamber",
@@ -6036,7 +6319,7 @@
     "logo": "assets/logos/openchamber.png"
   },
   {
-    "name": "Apify Mcp Server",
+    "name": "Apify MCP Server",
     "url": "https://github.com/apify/apify-mcp-server",
     "description": "Apify's MCP server giving agents access to thousands of scrapers for social media, search and maps.",
     "category": "MCP & infra",
@@ -6047,7 +6330,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP"
+    ],
     "website": "",
     "github": "https://github.com/apify/apify-mcp-server",
     "repo": "apify/apify-mcp-server",
@@ -6068,7 +6354,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "business agents"
+    ],
     "website": "https://www.holaboss.ai/",
     "github": "https://github.com/holaboss-ai/holaOS",
     "repo": "holaboss-ai/holaOS",
@@ -6089,7 +6377,10 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent",
+      "automate workflows"
+    ],
     "website": "https://the-pocket.github.io/PocketFlow/",
     "github": "https://github.com/The-Pocket/PocketFlow",
     "repo": "The-Pocket/PocketFlow",
@@ -6110,7 +6401,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://tambo.co/",
     "github": "https://github.com/tambo-ai/tambo",
     "repo": "tambo-ai/tambo",
@@ -6131,7 +6424,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "productivity"
+    ],
     "website": "https://presenton.ai/",
     "github": "https://github.com/presenton/presenton",
     "repo": "presenton/presenton",
@@ -6141,7 +6436,7 @@
     "logo": "assets/logos/presenton.png"
   },
   {
-    "name": "Hive",
+    "name": "Aden Hive",
     "url": "https://github.com/aden-hive/hive",
     "description": "Multi-agent harness for production AI.",
     "category": "frameworks",
@@ -6152,17 +6447,19 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "",
     "github": "https://github.com/aden-hive/hive",
     "repo": "aden-hive/hive",
     "github_stars": 11107,
     "id": 283,
-    "slug": "hive",
-    "logo": "assets/logos/hive.png"
+    "slug": "aden-hive",
+    "logo": "assets/logos/aden-hive.png"
   },
   {
-    "name": "Spring Ai Alibaba",
+    "name": "Spring AI Alibaba",
     "url": "https://java2ai.com/",
     "description": "Agentic AI framework for Java developers built on Spring AI.",
     "category": "frameworks",
@@ -6173,7 +6470,9 @@
     "new": true,
     "verified": "2026-10-16",
     "pricing_detail": "",
-    "use_cases": [],
+    "use_cases": [
+      "build an agent"
+    ],
     "website": "https://java2ai.com/",
     "github": "https://github.com/alibaba/spring-ai-alibaba",
     "repo": "alibaba/spring-ai-alibaba",
