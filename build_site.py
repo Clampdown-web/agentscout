@@ -24,10 +24,10 @@ for x in t:
     facts.append(("Link checked",x["verified"]))
     fh="".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a,b in facts)
     uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
-    prim=x.get("website") or x["url"]
+    prim=build_extras.su(x.get("website") or x["url"])
     host=re.sub(r"^https?://(www\.)?","",prim).split("/")[0]
-    gh=x.get("github","")
-    ghb=f' <a class="btn" href="{e(gh)}" target="_blank" rel="noopener">GitHub ↗</a>' if gh and gh!=prim else ""
+    gh=build_extras.su(x.get("github","")) if x.get("github") else ""
+    ghb=f' <a class="btn" href="{e(gh)}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>' if gh and gh!=prim else ""
     aud="builders" if x["audience"]=="builders" else "people who want a ready-to-use product"
     about=f'<h2 style="font-size:16px;margin-bottom:10px">About {e(x["name"])}</h2><p style="margin:0 0 28px">{e(x["name"])} is listed in our {e(x["category"])} category and is aimed at {aud}. {e(x["description"])} Pricing, as the maker states it: {e(x.get("pricing_detail",x["pricing"]))}. Maturity: {e(x["maturity"])}. We last checked the official link on {e(x["verified"])}.</p>'
     out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{ABOUT}}",about).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))

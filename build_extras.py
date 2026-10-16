@@ -2,6 +2,9 @@
 import html,json,re,datetime
 B="https://clampdown-web.github.io/agentscout/"
 e=lambda s:html.escape(str(s or ""))
+def su(u):
+    u=str(u or "").strip()
+    return u if re.match(r"(?i)^https?://",u) else "#"
 PAIRS=[("claude-code","openai-codex-cli"),("cursor","windsurf"),("cline","roo-code"),("langgraph","crewai"),("crewai","autogen"),
 ("browser-use","stagehand"),("exa","tavily"),("livekit-agents","pipecat"),("vapi","retell-ai"),("n8n","make"),("dify","flowise"),
 ("langfuse","langsmith"),("e2b","modal"),("bolt","v0")]
@@ -14,7 +17,7 @@ def badge_html(x,depth="../"):
     out=""
     for th in ["light","dark"]:
         img=f"{B}badges/{kind}-{th}.svg"
-        h=f'<a href="{url}" target="_blank" rel="noopener"><img src="{img}" alt="{lab} on AgentScout" width="220" height="54"></a>'
+        h=f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="{lab} on AgentScout" width="220" height="54"></a>'
         m=f"[![{lab} on AgentScout]({img})]({url})"
         out+=f'<div class="embed"><img src="{depth}badges/{kind}-{th}.svg" alt="{lab} on AgentScout ({th})" width="220" height="54"><label>HTML</label><textarea readonly rows="3" onclick="this.select()">{e(h)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button><label>Markdown</label><textarea readonly rows="2" onclick="this.select()">{e(m)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy Markdown</button></div>'
     return f'<h2 style="font-size:16px;margin:36px 0 6px">Badge for makers</h2><p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? Add this badge to your README or site. It links back to this page. <a href="../badges.html">About badges</a></p><div class="embeds">{out}</div>'
@@ -33,7 +36,7 @@ def shell(depth,title,desc,canon,body,ld):
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canon}">
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}">
-<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False).replace("</","<\\/")}</script>
 </head>{nav}<main class="wrap">{body}</main>
 {foot}'''
 def facts(x):
@@ -73,7 +76,7 @@ def build(t):
 <section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>
 <p class="lede" style="margin-left:0;text-align:left">Two closely related {e(A["category"])} tools, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
 <div class="tablewrap"><table class="cmp"><thead><tr><th></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a></th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
-<tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener">Visit ↗</a></td></tr></tbody></table></div>
+<tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td></tr></tbody></table></div>
 <p class="disclose">We don't benchmark tools or rank one above the other here. Check each official site for current pricing and features before you choose.</p>
 {faqh}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
         ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
@@ -93,7 +96,7 @@ def build(t):
 <div class="embeds"><div class="embed"><img src="badges/listed-light.svg" alt="Listed on AgentScout (light)" width="220" height="54"><img src="badges/listed-dark.svg" alt="Listed on AgentScout (dark)" width="220" height="54"><p><b>Listed</b>: for any tool in the directory.</p></div>
 <div class="embed"><img src="badges/featured-light.svg" alt="Featured on AgentScout (light)" width="220" height="54"><img src="badges/featured-dark.svg" alt="Featured on AgentScout (dark)" width="220" height="54"><p><b>Featured</b>: for tools we've picked as featured.</p></div></div>
 <h2 style="font-size:18px;margin:32px 0 8px">How to get your snippet</h2><ol><li>Find your tool in the <a href="index.html#directory">directory</a> and open its page.</li><li>Scroll to "Badge for makers" and copy the HTML or Markdown, in light or dark.</li><li>Paste it into your README, docs or site footer.</li></ol>
-<p>Not listed yet? <a href="https://github.com/Clampdown-web/agentscout/issues/new?labels=submission&amp;title=Tool%20submission%3A%20" target="_blank" rel="noopener">Submit your tool</a>. Example from the {e(ex["name"])} page:</p>
+<p>Not listed yet? <a href="https://github.com/Clampdown-web/agentscout/issues/new?labels=submission&amp;title=Tool%20submission%3A%20" target="_blank" rel="noopener noreferrer">Submit your tool</a>. Example from the {e(ex["name"])} page:</p>
 {badge_html(ex,"").replace('<a href="../badges.html">About badges</a>','')}
 <p class="disclose">Badges are SVG files hosted on this site. Please don't change the wording. Featured placements that are paid are always labeled as sponsored on AgentScout.</p></section>'''
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
@@ -171,7 +174,7 @@ def news_page(t):
     def item(x):
         tl=f' · <a href="tools/{e(x["tool"])}.html">On AgentScout →</a>' if x.get("tool") in bs else ""
         sm=f'<p class="nsum">{e(x["summary"])}</p>' if x.get("summary") else ""
-        return f'<li class="nitem"><h3><a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["title"])}</a></h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(x["date"][:16].replace("T"," "))} UTC</time> · <a href="{e(x["url"])}" target="_blank" rel="noopener">Source ↗</a>{tl}</span></li>'
+        return f'<li class="nitem"><h3><a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a></h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(x["date"][:16].replace("T"," "))} UTC</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'
     body='<div class="crumb"><a href="index.html">AgentScout</a> / Agent news</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(arc.get("updated","")[:16].replace("T"," "))+' UTC.</p>'
     for d in sorted(days,reverse=True):
         dd=datetime.date.fromisoformat(d).strftime("%A, %B %-d, %Y")
