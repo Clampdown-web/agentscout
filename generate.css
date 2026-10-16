@@ -1,0 +1,11 @@
+.ig-form{max-width:768px;margin:16px 0}
+.ig-label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.ig-form textarea{width:100%;box-sizing:border-box;font:inherit;padding:10px;border:1px solid #d0d5dd;border-radius:10px;resize:vertical}
+.ig-ex{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.ig-ex button{font:inherit;font-size:13px;border:1px solid #d0d5dd;background:#f8f9fb;border-radius:999px;padding:5px 10px;cursor:pointer}
+.ig-status{margin-left:10px;color:#555}
+#ig-go[disabled]{opacity:.55;cursor:not-allowed}
+.ig-out{max-width:768px;margin:16px 0}
+.ig-out img{width:100%;height:auto;border-radius:12px;background:#f2f4f7;display:block}
+.ig-note{font-size:13px;color:#667085;max-width:768px}
+.ig-cta{max-width:768px;margin:20px 0;padding:14px;border-radius:12px;background:#f2f4ff}
