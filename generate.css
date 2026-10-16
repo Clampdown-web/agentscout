@@ -15,3 +15,21 @@ html[data-theme=dark] .ig-ex button{background:var(--soft);color:var(--text);bor
 html[data-theme=dark] .ig-status,html[data-theme=dark] .ig-note{color:var(--muted)}
 html[data-theme=dark] .ig-out img{background:var(--soft)}
 html[data-theme=dark] .ig-cta{background:var(--accent-soft)}
+
+/* Full-page generator hero (generate.html only; scoped to .gen-hero) */
+.gen-hero{position:relative;margin:8px 0 24px;padding:56px 32px;border-radius:20px;overflow:hidden;background:#1c1f5a url(assets/gen-bg.webp) center/cover no-repeat;isolation:isolate}
+.gen-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.18) 55%,rgba(255,255,255,0) 100%)}
+html[data-theme=dark] .gen-hero::before{background:linear-gradient(180deg,rgba(10,13,35,.72),rgba(10,13,35,.45))}
+.gen-card{max-width:760px;margin:0 auto;padding:28px;border-radius:16px;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.6);box-shadow:0 12px 40px rgba(30,27,90,.25)}
+html[data-theme=dark] .gen-card{background:rgba(23,26,34,.62);border-color:rgba(147,147,255,.22);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.gen-card h1{margin-top:0}
+.gen-card .ig-form,.gen-card .ig-out{max-width:none;margin:14px 0 0}
+.gen-card .ig-form textarea{background:rgba(255,255,255,.9);transition:border-color .2s,box-shadow .2s}
+.gen-card .ig-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(91,91,247,.18),0 0 24px rgba(91,91,247,.25)}
+html[data-theme=dark] .gen-card .ig-form textarea{background:rgba(14,16,21,.7)}
+html[data-theme=dark] .gen-card .ig-form textarea:focus{box-shadow:0 0 0 4px rgba(147,147,255,.2),0 0 24px rgba(147,147,255,.3)}
+.gen-card .ig-ex button{background:rgba(255,255,255,.8)}
+html[data-theme=dark] .gen-card .ig-ex button{background:rgba(21,24,33,.75)}
+.gen-card #ig-go{transition:transform .18s,box-shadow .18s}
+.gen-card #ig-go:not([disabled]):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(91,91,247,.35)}
+@media(max-width:640px){.gen-hero{margin:8px 0 20px;padding:16px 10px;border-radius:16px}.gen-card{padding:18px;border-radius:14px}.gen-card h1{font-size:26px}}
