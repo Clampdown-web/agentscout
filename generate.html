@@ -12,7 +12,7 @@
 <title>Free AI Image Generator: No Sign-up | AgentScout</title>
 <meta name="description" content="Free AI image generator with no sign-up: type a prompt and get an image in seconds. Powered by FLUX.1 [schnell] (Apache 2.0), so you can use your images however you like.">
 <link rel="canonical" href="https://clampdown-web.github.io/agentscout/generate.html">
-<link rel="stylesheet" href="generate.css?v=202610162050">
+<link rel="stylesheet" href="generate.css?v=202610162100">
 </head><body>
 <nav><div class="wrap">
   <a class="logo" href="index.html"><img src="logo-wordmark.svg" alt="AgentScout" width="168" height="32"></a><button class="themebtn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode" onclick="asToggleTheme()"><span class="moon" aria-hidden="true">☾</span><span class="sun" aria-hidden="true">☀</span></button>
@@ -20,11 +20,11 @@
 </div></nav>
 <main class="wrap"><div class="crumb"><a href="index.html">AgentScout</a> / AI image generator</div>
 <section class="ig" style="padding-top:20px;text-align:left">
-<div class="gen-hero"><div class="gen-card">
+<div class="gen-hero"><div class="gen-pills"><span>Free</span><span>No sign-up</span><span>Commercial use OK</span></div><div class="gen-card">
 <h1 style="text-align:left">Free AI Image Generator: No Sign-up</h1>
 <p class="lede" style="margin-left:0;text-align:left">Describe an image and generate it. Try one of the AI agent prompts below.</p>
 <form id="ig-form" class="ig-form">
-<label for="ig-prompt" class="ig-label">Prompt <span id="ig-count">0/300</span></label>
+<label for="ig-prompt" class="ig-label">Prompt <span><a href="#" id="ig-surprise" class="ig-surprise">✦ Surprise me</a> · <span id="ig-count">0/300</span></span></label>
 <textarea id="ig-prompt" maxlength="300" rows="3" required placeholder="A friendly robot agent organizing a toolbox of glowing apps"></textarea>
 <div class="ig-ex" id="ig-ex"></div>
 <button class="btn primary" id="ig-go" type="submit">Generate</button> <span id="ig-status" class="ig-status" aria-live="polite"></span>
@@ -42,4 +42,5 @@
 <script src="app.js?v=202610161222"></script>
 <script src="generate.js"></script>
 <script>document.querySelectorAll("[data-saved-count]").forEach(n=>n.textContent=AS.savedCount());</script>
+<script>document.getElementById("ig-surprise").onclick=function(e){e.preventDefault();var b=document.querySelectorAll("#ig-ex button");if(b.length)b[Math.floor(Math.random()*b.length)].click();document.getElementById("ig-prompt").focus()};</script>
 </body></html>

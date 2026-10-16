@@ -33,3 +33,7 @@ html[data-theme=dark] .gen-card .ig-ex button{background:rgba(21,24,33,.75)}
 .gen-card #ig-go{transition:transform .18s,box-shadow .18s}
 .gen-card #ig-go:not([disabled]):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(91,91,247,.35)}
 @media(max-width:640px){.gen-hero{margin:8px 0 20px;padding:16px 10px;border-radius:16px}.gen-card{padding:18px;border-radius:14px}.gen-card h1{font-size:26px}}
+.gen-hero::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;z-index:-1;background:linear-gradient(180deg,transparent,rgba(12,14,40,.45))}
+.gen-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:0 auto 14px}
+.gen-pills span{font-size:12.5px;font-weight:600;color:#86efac;border:1px solid #4ade80;background:rgba(6,40,22,.55);padding:3px 11px;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ig-surprise{font-weight:500;font-size:13px;color:var(--accent)}
