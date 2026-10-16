@@ -17,6 +17,12 @@ def goals(x):
     return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
 def skill(x):
     return "no-code" if x.get("audience")=="ready to use" or x["category"] in("no-code builders","app builders","personal agents","business agents") else "developer"
+LIC=__import__("re").compile(r"\b(AGPL[- ]?v?3(?:\.0)?|LGPL[- ]?v?[23](?:\.\d)?|GPL[- ]?v?[23](?:\.0)?|Apache[- ]?2(?:\.0)?|MIT|BSD[- ]?[23]-?Clause|BSD|MPL[- ]?2(?:\.0)?|Elastic License(?: 2\.0)?|SSPL)\b",2)
+def lic(x):
+    m=LIC.search((x.get("pricing_detail") or "")+" "+x.get("description",""))
+    if not m: return ""
+    v=m.group(1).replace(" ","-")
+    return "Apache-2.0" if v.lower().startswith("apache") else v
 def build(t):
     os.makedirs("api",exist_ok=True)
     tools=[]
@@ -28,7 +34,7 @@ def build(t):
         tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"website":x.get("website",""),"github":x.get("github",""),"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
           "price_tag":tag(x["pricing"]),"platforms":platforms(x),"date_added":x.get("added") or x.get("verified"),"added":x.get("added"),"source":x.get("source"),
-          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"new_this_week":(x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"logo":(f"https://clampdown-web.github.io/agentscout/{x['logo']}" if x.get("logo") else None),
+          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"new_this_week":(x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"github_stars":x.get("github_stars"),"open_source":x["pricing"].lower().startswith("open"),"license":lic(x),"tags":x.get("use_cases",[]),"logo":(f"https://clampdown-web.github.io/agentscout/{x['logo']}" if x.get("logo") else None),
           "page":f"https://clampdown-web.github.io/agentscout/tools/{x['slug']}.html"})
     lc=max((x.get("verified") or "") for x in t)
     json.dump({"version":1,"generated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"last_checked":lc,"count":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
