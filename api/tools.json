@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-15T20:24:59.638119Z",
- "count": 94,
+ "generated": "2026-10-16T09:34:17.448203Z",
+ "count": 97,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -2594,6 +2594,91 @@
    "new": true,
    "repo": null,
    "page": "https://clampdown-web.github.io/agentscout/tools/metamask-agent-wallet.html"
+  },
+  {
+   "name": "Self Agent Vault",
+   "slug": "self-agent-vault",
+   "url": "https://agentvault.io",
+   "category": "MCP & infra",
+   "description": "Payment and login layer for AI agents: agents check out and sign in using mock tokens, while real card numbers and passwords are swapped in out of the agent's view, with spending caps, merchant allowlists and a kill switch.",
+   "key_features": [
+    "Free, Plus and Enterprise tiers; first 1,000 sign-ups get Plus free for three months",
+    "Live; launched Oct 15, 2026 by Self Labs",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free, Plus and Enterprise tiers; first 1,000 sign-ups get Plus free for three months",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "page": "https://clampdown-web.github.io/agentscout/tools/self-agent-vault.html"
+  },
+  {
+   "name": "Anchor Action Index",
+   "slug": "anchor-action-index",
+   "url": "https://anchorbrowser.io",
+   "category": "browser/computer use",
+   "description": "Shared memory of web workflows for Anchor's cloud browsers: computer-use agents replay proven paths as deterministic code and the model only steps in where a page has changed, exposed as tools on Anchor's MCP server and REST API.",
+   "key_features": [
+    "Available on all Anchor accounts including the free tier; usage-based paid plans",
+    "Live; launched Oct 15, 2026",
+    "Write code",
+    "Automate the browser",
+    "Control a computer"
+   ],
+   "pricing": "Available on all Anchor accounts including the free tier; usage-based paid plans",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "page": "https://clampdown-web.github.io/agentscout/tools/anchor-action-index.html"
+  },
+  {
+   "name": "Proof x401",
+   "slug": "proof-x401",
+   "url": "https://proof.com/x401",
+   "category": "MCP & infra",
+   "description": "Open HTTP protocol and MCP server that let a website ask an AI agent to prove who it is acting for and have the person cryptographically sign the exact transaction terms, using Proof's agent identity wallet.",
+   "key_features": [
+    "Open protocol; websites can pay per verified identity claim over x402, basic claims need no sales process",
+    "Live; production launch Oct 15, 2026",
+    "Research the web",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open protocol; websites can pay per verified identity claim over x402, basic claims need no sales process",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "page": "https://clampdown-web.github.io/agentscout/tools/proof-x401.html"
   }
  ]
 }

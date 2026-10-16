@@ -1836,5 +1836,63 @@
       "connect tools via MCP"
     ],
     "slug": "metamask-agent-wallet"
+  },
+  {
+    "name": "Self Agent Vault",
+    "url": "https://agentvault.io",
+    "description": "Payment and login layer for AI agents: agents check out and sign in using mock tokens, while real card numbers and passwords are swapped in out of the agent's view, with spending caps, merchant allowlists and a kill switch.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Live; launched Oct 15, 2026 by Self Labs",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-16",
+    "pricing_detail": "Free, Plus and Enterprise tiers; first 1,000 sign-ups get Plus free for three months",
+    "id": 95,
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "slug": "self-agent-vault"
+  },
+  {
+    "name": "Anchor Action Index",
+    "url": "https://anchorbrowser.io",
+    "description": "Shared memory of web workflows for Anchor's cloud browsers: computer-use agents replay proven paths as deterministic code and the model only steps in where a page has changed, exposed as tools on Anchor's MCP server and REST API.",
+    "category": "browser/computer use",
+    "pricing": "Freemium",
+    "maturity": "Live; launched Oct 15, 2026",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-16",
+    "pricing_detail": "Available on all Anchor accounts including the free tier; usage-based paid plans",
+    "id": 96,
+    "use_cases": [
+      "write code",
+      "automate the browser",
+      "control a computer"
+    ],
+    "slug": "anchor-action-index"
+  },
+  {
+    "name": "Proof x401",
+    "url": "https://proof.com/x401",
+    "description": "Open HTTP protocol and MCP server that let a website ask an AI agent to prove who it is acting for and have the person cryptographically sign the exact transaction terms, using Proof's agent identity wallet.",
+    "category": "MCP & infra",
+    "pricing": "Usage-based",
+    "maturity": "Live; production launch Oct 15, 2026",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-16",
+    "pricing_detail": "Open protocol; websites can pay per verified identity claim over x402, basic claims need no sales process",
+    "id": 97,
+    "use_cases": [
+      "research the web",
+      "voice & phone calls",
+      "connect tools via MCP"
+    ],
+    "slug": "proof-x401"
   }
 ]

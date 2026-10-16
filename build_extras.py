@@ -107,7 +107,7 @@ def seo(t,urls):
         title=f"{n} best {c} AI agent tools (2026) · AgentScout"[:70]
         desc=f"{n} link-checked {c} AI agent tools, including {', '.join(x['name'] for x in items[:3])}. Pricing as stated by makers, audience and maturity."[:158]
         out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c.capitalize()} AI agent tools",f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing.",items,c.capitalize(),nav))
-    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3>{e(c.capitalize())}</h3></div><p>{n} tools</p></a>' for c,n in cats.most_common())
+    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3>{e(c.capitalize())}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)
@@ -130,6 +130,8 @@ def seo(t,urls):
     open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
     # llms.txt
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t)} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: agentscout@mail.grokbot.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)","","## Categories",""]
-    L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tools" for c,n in cats.most_common()]
+    L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     L+=["","## Guides","",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
+    rec=sorted(t,key=lambda x:(x.get("verified",""),x.get("id",0)),reverse=True)[:10]
+    L+=["## Recently added or re-checked",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
