@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 502 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 549 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://clampdown-web.github.io/agentscout/
 X: https://x.com/AgentScoutHQ
@@ -19,16 +19,16 @@ Contact: agentscout@mail.grokbot.com
 
 ## Categories
 
-- [MCP & infra](https://clampdown-web.github.io/agentscout/categories/mcp-infra.html): 148 tools
-- [frameworks](https://clampdown-web.github.io/agentscout/categories/frameworks.html): 80 tools
-- [coding](https://clampdown-web.github.io/agentscout/categories/coding.html): 80 tools
-- [personal agents](https://clampdown-web.github.io/agentscout/categories/personal-agents.html): 35 tools
-- [browser/computer use](https://clampdown-web.github.io/agentscout/categories/browser-computer-use.html): 30 tools
-- [business agents](https://clampdown-web.github.io/agentscout/categories/business-agents.html): 25 tools
-- [research](https://clampdown-web.github.io/agentscout/categories/research.html): 22 tools
-- [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 21 tools
-- [no-code builders](https://clampdown-web.github.io/agentscout/categories/no-code-builders.html): 21 tools
-- [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 16 tools
+- [MCP & infra](https://clampdown-web.github.io/agentscout/categories/mcp-infra.html): 152 tools
+- [coding](https://clampdown-web.github.io/agentscout/categories/coding.html): 85 tools
+- [frameworks](https://clampdown-web.github.io/agentscout/categories/frameworks.html): 84 tools
+- [personal agents](https://clampdown-web.github.io/agentscout/categories/personal-agents.html): 42 tools
+- [business agents](https://clampdown-web.github.io/agentscout/categories/business-agents.html): 37 tools
+- [browser/computer use](https://clampdown-web.github.io/agentscout/categories/browser-computer-use.html): 32 tools
+- [research](https://clampdown-web.github.io/agentscout/categories/research.html): 27 tools
+- [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 24 tools
+- [no-code builders](https://clampdown-web.github.io/agentscout/categories/no-code-builders.html): 22 tools
+- [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 20 tools
 - [productivity](https://clampdown-web.github.io/agentscout/categories/productivity.html): 13 tools
 - [app builders](https://clampdown-web.github.io/agentscout/categories/app-builders.html): 7 tools
 - [models](https://clampdown-web.github.io/agentscout/categories/models.html): 3 tools
@@ -44,13 +44,13 @@ Contact: agentscout@mail.grokbot.com
 
 ## Recently added or re-checked
 
-- [pg-aiguide](https://clampdown-web.github.io/agentscout/tools/pg-aiguide.html): Timescale's MCP server with PostgreSQL docs and best practices for agents.
-- [Anytype MCP](https://clampdown-web.github.io/agentscout/tools/anytype-mcp.html): Official MCP server for the Anytype knowledge app.
-- [SearXNG MCP](https://clampdown-web.github.io/agentscout/tools/searxng-mcp.html): MCP server for private web search through SearXNG.
-- [arXiv MCP Server](https://clampdown-web.github.io/agentscout/tools/arxiv-mcp-server.html): MCP server for searching and reading arXiv papers.
-- [InfraNodus MCP](https://clampdown-web.github.io/agentscout/tools/infranodus-mcp.html): Turns text into knowledge graphs for agents.
-- [ToolUniverse](https://clampdown-web.github.io/agentscout/tools/tooluniverse.html): Harvard's collection of scientific tools for AI scientist agents.
-- [Unbrowse](https://clampdown-web.github.io/agentscout/tools/unbrowse.html): Turns websites into APIs agents can call.
-- [VoiceMode](https://clampdown-web.github.io/agentscout/tools/voicemode.html): Adds natural voice conversations to Claude Code and other assistants.
-- [Testkube MCP](https://clampdown-web.github.io/agentscout/tools/testkube-mcp.html): Testkube MCP server for managing test workflows and executions.
-- [Mux MCP](https://clampdown-web.github.io/agentscout/tools/mux-mcp.html): Mux's official MCP server for video and the Mux API.
+- [CAMEL](https://clampdown-web.github.io/agentscout/tools/camel.html): CAMEL, one of the first multi-agent frameworks, for building role-playing agents and large agent societies.
+- [Galileo Agent Leaderboard](https://clampdown-web.github.io/agentscout/tools/galileo-agent-leaderboard.html): Galileo's leaderboard that ranks how well LLMs perform as agents on tool use and multi-step tasks.
+- [TEN Framework](https://clampdown-web.github.io/agentscout/tools/ten-framework.html): Open-source framework for real-time multimodal voice agents, including the TEN Agent demo.
+- [AgentFlow](https://clampdown-web.github.io/agentscout/tools/agentflow.html): Stanford's trainable agentic system where planner, executor, verifier and generator modules coordinate, with a Hugging Face demo.
+- [IBM CUGA](https://clampdown-web.github.io/agentscout/tools/ibm-cuga.html): IBM Research's configurable generalist agent (CUGA) for enterprise web and API tasks, with a live demo on Hugging Face Spaces.
+- [Querri](https://clampdown-web.github.io/agentscout/tools/querri.html): AI data analyst that cleans scattered data and answers questions in plain English.
+- [Crewdle](https://clampdown-web.github.io/agentscout/tools/crewdle.html): Hire autonomous agents and teams for support, sales, bookkeeping and research, paid per task.
+- [Coldtea](https://clampdown-web.github.io/agentscout/tools/coldtea.html): Agents that test every pull request on real devices, watch production and file issues before users hit them.
+- [CoChat](https://clampdown-web.github.io/agentscout/tools/cochat.html): AI research agents that gather verified sources and organize findings.
+- [Clara AI SDR](https://clampdown-web.github.io/agentscout/tools/clara-ai-sdr.html): Face-to-face video AI SDR that talks to website visitors, qualifies leads and books meetings.

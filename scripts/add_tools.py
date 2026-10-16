@@ -17,7 +17,10 @@ def getimg(u):
   try:
     r=requests.get(u,headers=UA,timeout=12)
     if r.status_code!=200: return None
-    im=Image.open(io.BytesIO(r.content))
+    data=r.content
+    if u.split('?')[0].endswith('.svg') or data.lstrip()[:5] in (b'<svg ',b'<?xml'):
+      import cairosvg; data=cairosvg.svg2png(bytestring=data,output_width=128,output_height=128)
+    im=Image.open(io.BytesIO(data))
     if im.format=='ICO': im.size=max(im.ico.sizes())
     im.load()
     if min(im.size)<64: return None
@@ -53,11 +56,12 @@ def verify(row):
     t=m.group(0)
     if re.search(r'rel=["\'][^"\']*(apple-touch-icon|icon)',t,re.I):
       h=re.search(r'href=["\']([^"\']+)',t)
-      if h and not h.group(1).endswith('.svg'): cands.append(urljoin(site,h.group(1)))
+      if h: cands.append(urljoin(site,h.group(1)))
   cands.sort(key=lambda u:0 if 'apple' in u else 1)
   if site: cands+= [urljoin(site,'/apple-touch-icon.png'),urljoin(site,'/favicon.ico')]
   if owner_avatar: cands.append(owner_avatar)
   logo=None
+  if re.search(r'hf\.space|huggingface\.co/spaces',site): cands=[c for c in cands if 'huggingface' not in c and 'hf.space' not in c]
   cands=[c for c in cands if not re.search(r'github\.com/fluidicon|githubassets|figma\.com|google\.com/favicon',c)]
   for c in cands:
     im=getimg(c)
