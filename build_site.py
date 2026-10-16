@@ -7,7 +7,8 @@ RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",
 ("connect tools via MCP",r"MCP"),("run code safely",r"sandbox|Sandbox|secure|policies"),("monitor & evaluate agents",r"observab|trac|evals|monitor|Evals|evaluat"),
 ("give agents memory",r"memory|Memory"),("sales & support",r"sales|prospect|customer|account"),("make diagrams",r"diagram"),("computer vision",r"vision")]
 import datetime as _dt
-_c=(_dt.date.today()-_dt.timedelta(days=14)).isoformat()
+from zoneinfo import ZoneInfo as _Z
+_c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 for x in t:
     x["new"]=x.get("added","")>=_c
     d=x["name"]+" "+x["description"]+" "+x["category"]

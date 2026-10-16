@@ -125,7 +125,8 @@ def meta(x,n=155):
     if len(s)>n: s=s[:n-1].rsplit(" ",1)[0].rstrip(",;:")+"…"
     return s
 import datetime as _dt
-def week_new(x): return x.get("added","")>=(_dt.date.today()-_dt.timedelta(days=7)).isoformat()
+from zoneinfo import ZoneInfo as _Z
+def week_new(x): return x.get("added","")>=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=6)).isoformat()
 def newfirst(items): return sorted(items,key=lambda x:(not week_new(x),"" if not week_new(x) else "~"+"".join(chr(255-ord(c)) for c in x.get("added",""))))
 def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
 def listing_page(path,title,desc,h1,lede,items,crumb,extra=""):

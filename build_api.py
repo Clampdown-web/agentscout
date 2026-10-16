@@ -28,7 +28,7 @@ def build(t):
         tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"website":x.get("website",""),"github":x.get("github",""),"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
           "price_tag":tag(x["pricing"]),"platforms":platforms(x),"date_added":x.get("added") or x.get("verified"),"added":x.get("added"),"source":x.get("source"),
-          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"new_this_week":(x.get("added") or "")>=(datetime.date.today()-datetime.timedelta(days=7)).isoformat(),"repo":x.get("repo"),"logo":(f"https://clampdown-web.github.io/agentscout/{x['logo']}" if x.get("logo") else None),
+          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"new_this_week":(x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"logo":(f"https://clampdown-web.github.io/agentscout/{x['logo']}" if x.get("logo") else None),
           "page":f"https://clampdown-web.github.io/agentscout/tools/{x['slug']}.html"})
     json.dump({"version":1,"generated":datetime.datetime.utcnow().isoformat()+"Z","count":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
 if __name__=="__main__": build(json.load(open("tools.json")))
