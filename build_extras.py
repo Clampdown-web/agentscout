@@ -113,7 +113,7 @@ def build(t):
     urls+=seo(t,urls)
     import build_tasks; urls+=build_tasks.pages(t)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in [B,B+"new.html",B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
+    for u in [B,B+"new.html",B+"quiz.html",B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))
     print(len(PAIRS),"comparisons, badges page, sitemap",len(sm)-2,"urls")
 

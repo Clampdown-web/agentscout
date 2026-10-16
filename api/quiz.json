@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "about": "AgentScout Agent Finder Quiz. Questions and scoring weights; scored against api/tools.json fields (category, goals, skill, price_tag, github). Reused by the app.",
+  "results": {"min": 5, "max": 8},
+  "questions": [
+    {"key": "goal", "q": "What do you need an agent to do?", "options": [
+      {"id": "coding", "label": "Write and fix code", "hint": "Coding agents, AI IDEs", "goals": ["coding"], "categories": ["coding", "app builders"], "tasks": ["coding-agents"]},
+      {"id": "research", "label": "Research and summarize", "hint": "Deep research, web answers", "goals": ["research"], "categories": ["research"]},
+      {"id": "automation", "label": "Automate workflows", "hint": "Zaps, ops, back office", "goals": ["automation"], "categories": ["no-code builders", "business agents", "productivity"]},
+      {"id": "support", "label": "Support and sales", "hint": "Chat, voice, SDR agents", "goals": ["support"], "categories": ["business agents", "voice"]},
+      {"id": "writing", "label": "Write and create media", "hint": "Docs, slides, images, audio", "goals": ["writing", "media"], "categories": ["productivity", "vision", "voice"]},
+      {"id": "browse", "label": "Use the web or my computer", "hint": "Browser and computer use", "goals": ["automation"], "categories": ["browser/computer use", "personal agents"]},
+      {"id": "build", "label": "Build my own agents", "hint": "Frameworks, MCP, evals", "goals": ["coding", "automation"], "categories": ["frameworks", "MCP & infra", "evals & observability"]}
+    ]},
+    {"key": "skill", "q": "How technical are you?", "options": [
+      {"id": "no-code", "label": "No code, please", "hint": "Point-and-click only"},
+      {"id": "some", "label": "A little", "hint": "I can follow setup docs"},
+      {"id": "developer", "label": "I'm a developer", "hint": "CLI, SDKs, self-hosting"}
+    ]},
+    {"key": "budget", "q": "What's your budget?", "options": [
+      {"id": "free", "label": "Free only", "hint": "Free or open source"},
+      {"id": "freemium", "label": "Free to start", "hint": "May pay later"},
+      {"id": "paid", "label": "Paid is fine", "hint": "Best tool wins"}
+    ]},
+    {"key": "oss", "q": "Prefer open source?", "optional": true, "options": [
+      {"id": "yes", "label": "Yes, open source", "hint": "Has a public GitHub repo"},
+      {"id": "any", "label": "Doesn't matter", "hint": ""}
+    ]}
+  ],
+  "weights": {
+    "goal": {"category": 5, "goals": 3, "requireMatch": true},
+    "skill": {"no-code": {"no-code": 4, "developer": -4}, "some": {"no-code": 2, "developer": 1}, "developer": {"no-code": 0, "developer": 2}},
+    "budget": {"free": {"free": 3, "freemium": 1, "paid": -5, "unknown": -1}, "freemium": {"free": 2, "freemium": 3, "paid": 0, "unknown": 0}, "paid": {"free": 1, "freemium": 1, "paid": 2, "unknown": 0}},
+    "oss": {"yes": {"github": 3, "none": -2}, "any": {"github": 0, "none": 0}},
+    "bonus": {"weekly_pick": 1, "logo": 0.5}
+  }
+}
