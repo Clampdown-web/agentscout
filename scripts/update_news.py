@@ -30,7 +30,7 @@ def short(t,src):
     t=re.sub(r"^(Show|Launch|Ask) HN:\s*","",t)
     return t if len(t)<=90 else t[:87].rsplit(" ",1)[0]+"…"
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--x",default=None); ap.add_argument("--hours",type=int,default=72); ap.add_argument("--n",type=int,default=8); a=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument("--x",default=None); ap.add_argument("--hours",type=int,default=72); ap.add_argument("--n",type=int,default=8); ap.add_argument("--summaries",default="scripts/news_summaries.json"); ap.add_argument("--days",type=int,default=30); a=ap.parse_args()
     root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     tools=json.load(open(os.path.join(root,"tools.json")))
     names=sorted(((x["name"],x["slug"]) for x in tools if len(x["name"])>3),key=lambda z:-len(z[0]))
@@ -54,8 +54,24 @@ def main():
         k=re.sub(r"[^a-z0-9]","",x["title"].lower())[:40]
         if k in seen or x["url"] in seen: continue
         seen|={k,x["url"]}; res.append(x)
+    sm=json.load(open(os.path.join(root,a.summaries))) if os.path.exists(os.path.join(root,a.summaries)) else {}
+    for x in res:
+        o=sm.get(x["url"],{}); x.pop("score",None)
+        if o.get("title"): x["title"]=o["title"]
+        if o.get("summary"): x["summary"]=o["summary"]
+    # rolling archive (top 20 per run, deduped by url, last N days)
+    ap_=os.path.join(root,"news-archive.json")
+    arc=json.load(open(ap_))["items"] if os.path.exists(ap_) else []
+    byu={x["url"]:x for x in arc}
+    for x in res[:a.n]: byu[x["url"]]={**byu.get(x["url"],{}),**x}
+    for u,x in byu.items():
+        o=sm.get(u,{})
+        if o.get("summary"): x["summary"]=o["summary"]
+        if o.get("title"): x["title"]=o["title"]
+    acut=(now-dt.timedelta(days=a.days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    arc=sorted([x for x in byu.values() if x["date"]>=acut],key=lambda x:x["date"],reverse=True)
+    json.dump({"updated":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"days":a.days,"items":arc},open(ap_,"w"),indent=1,ensure_ascii=False)
     res=sorted(res[:a.n],key=lambda x:x["date"],reverse=True)
-    for x in res: x.pop("score",None)
     json.dump({"updated":now.strftime("%Y-%m-%dT%H:%M:%SZ"),"sources":used,"items":res},open(os.path.join(root,"news.json"),"w"),indent=1,ensure_ascii=False)
     print(len(res),"items from",used)
 if __name__=="__main__": main()

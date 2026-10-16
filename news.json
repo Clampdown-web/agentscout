@@ -1,9 +1,8 @@
 {
- "updated": "2026-10-16T19:06:25Z",
+ "updated": "2026-10-16T19:16:12Z",
  "sources": [
   "TechCrunch",
   "The Verge",
-  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
@@ -14,56 +13,63 @@
    "source": "X",
    "url": "https://x.com/i/trending/2110897852666757597",
    "date": "2026-10-16T01:03:39Z",
-   "tool": "self-agent-vault"
-  },
-  {
-   "title": "Manus returns to China's AI agent race with US$500 million reset",
-   "source": "digitimes",
-   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdXNfejVzWDc4R0JOLVRNRGZ2Mkc3Q3lQTDRUeGVoSDY0ckxuMjBILUZ4bjkwMVZZZHhBZGl5aGxISE95eEJBZ2hUQzFHSHFhbUtfbDVyVXNQNWJIR0JOM1ZIQnY0eENuM3dxemdYYUl1S2hzenI4dlFOc3VBOF9oS1hOQVduOF9vb1pUM0IzdXdMSjBXbXl4bA?oc=5",
-   "date": "2026-10-15T23:51:43Z",
-   "tool": "manus"
+   "tool": "self-agent-vault",
+   "summary": "Self Labs released Agent Vault, which gives AI agents stand-in tokens for logins and payments and swaps in the real credentials only at the moment of use. Users set spending caps, allowed merchants and a kill switch."
   },
   {
    "title": "Ledger adds Agent Intent: AI agents propose, your hardware wallet approves",
    "source": "X",
    "url": "https://x.com/i/trending/2110781583531606136",
    "date": "2026-10-15T17:23:41Z",
-   "tool": null
+   "tool": null,
+   "summary": "Ledger introduced Agent Intent at its Paris event: AI agents can propose actions such as payments, but each one has to be approved on the user's hardware wallet. Private keys stay with the user, and the beta is free on compatible devices."
   },
   {
    "title": "Figma Specs feeds design decisions to coding agents over MCP (open beta)",
    "source": "X",
    "url": "https://x.com/MisterSnowCrash/status/2110765908264095951",
    "date": "2026-10-15T16:13:03Z",
+   "tool": null,
+   "summary": "Figma Specs keeps written design decisions next to the frames and code they describe, and passes that context to coding agents over MCP. The open beta is rolling out now."
+  },
+  {
+   "title": "AI agents are coming to Rivian’s cars",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars/",
+   "date": "2026-10-15T15:02:36Z",
    "tool": null
   },
   {
-   "title": "Model Context Protocol Server and AI Agent Government Hackathon",
+   "title": "GSA hosts a government hackathon on MCP servers and AI agents",
    "source": "GSA (.gov)",
    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRHlZRzVtNlV4ZWl6ZUFodUoxNjdGbFFPSDJ4Q2szU1hEMXB1dHFPY1VkYU5kMlVhSEdzSThBT1NVeXN0bFRUVnlvRlBFVzE4eGIzZFpfT3NUcHBxOFJoejNhbC1MWjZVaXptT1RXQVY0ZGlQa29DZEl1YVlJZVlremZxMHVzQXhHXzExSm1vWGw1X3o4R1NIcGU4ckFKcXJqcTZYdEZxMW02ZjFEZEt4SERsRWdBTlM3ODhoN2pMS09GN3FTNTIzdG5HeHRIdw?oc=5",
    "date": "2026-10-15T10:06:22Z",
-   "tool": "model-context-protocol"
+   "tool": "model-context-protocol",
+   "summary": "The US General Services Administration has posted a government hackathon focused on Model Context Protocol servers and AI agents."
   },
   {
-   "title": "Figma announces new features to define how agents work on its platform",
+   "title": "Figma sets rules for how AI agents work inside its platform",
    "source": "TechCrunch",
    "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
    "date": "2026-10-15T04:30:00Z",
-   "tool": null
+   "tool": null,
+   "summary": "TechCrunch reports that Figma announced new features defining how AI agents can work on its platform."
   },
   {
    "title": "Attio launches a CRM built for humans and AI agents side by side",
    "source": "X",
    "url": "https://x.com/i/trending/2110482190140321896",
    "date": "2026-10-14T21:33:52Z",
-   "tool": null
+   "tool": null,
+   "summary": "Attio launched a CRM design where people and AI agents work from the same data, with SQL queries over up to 100 million records per object and permissions still enforced."
   },
   {
    "title": "TasteSkill v2 gives coding agents art direction and a browser self-check",
    "source": "X",
    "url": "https://x.com/LexnLin/status/2110122106537050584",
    "date": "2026-10-13T21:34:49Z",
-   "tool": null
+   "tool": null,
+   "summary": "TasteSkill v2 was rebuilt from scratch and gives coding agents an art direction, assets and a browser check so they can verify their own work."
   }
  ]
 }

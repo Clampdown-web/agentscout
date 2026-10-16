@@ -146,6 +146,7 @@ def seo(t,urls):
     out.append(listing_page("best/mcp-servers.html","Best MCP Servers (2026): curated list · AgentScout",
         f"Best MCP servers in 2026: {len(mcp)} link-checked MCP servers and MCP tools, including {', '.join(x['name'] for x in mcp[:3])}. Pricing as stated by makers."[:158],
         "Best MCP Servers (2026)",f'A curated list of the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory. MCP (Model Context Protocol) lets agents like Claude Code, Cursor and Codex connect to tools and data. See also the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.',mcp,"Best MCP servers",'<p style="margin-top:24px">Guides by client: '+guides+'</p>'))
+    out.append(news_page(t))
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
         f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
@@ -160,3 +161,24 @@ def seo(t,urls):
     rec=sorted(t,key=lambda x:(x.get("verified",""),x.get("id",0)),reverse=True)[:10]
     L+=["## Recently added or re-checked",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
+
+def news_page(t):
+    import os
+    bs={x["slug"]:x for x in t}; canon=B+"news.html"
+    arc=json.load(open("news-archive.json")) if os.path.exists("news-archive.json") else {"items":[],"updated":""}
+    days={}
+    for x in arc["items"]: days.setdefault(x["date"][:10],[]).append(x)
+    def item(x):
+        tl=f' · <a href="tools/{e(x["tool"])}.html">On AgentScout →</a>' if x.get("tool") in bs else ""
+        sm=f'<p class="nsum">{e(x["summary"])}</p>' if x.get("summary") else ""
+        return f'<li class="nitem"><h3><a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["title"])}</a></h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(x["date"][:16].replace("T"," "))} UTC</time> · <a href="{e(x["url"])}" target="_blank" rel="noopener">Source ↗</a>{tl}</span></li>'
+    body='<div class="crumb"><a href="index.html">AgentScout</a> / Agent news</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(arc.get("updated","")[:16].replace("T"," "))+' UTC.</p>'
+    for d in sorted(days,reverse=True):
+        dd=datetime.date.fromisoformat(d).strftime("%A, %B %-d, %Y")
+        body+=f'<h2 class="nday">{dd}</h2><ol class="nlist">'+"".join(item(x) for x in days[d])+'</ol>'
+    if not days: body+='<p>No agent news yet.</p>'
+    body+='<p class="disclose">Headlines and summaries are written by AgentScout from each source; follow the source link for the full story. Rolling 30-day archive.</p></section>'
+    title="AI Agent News Today: Daily Agent Launches & Updates | AgentScout"
+    desc="Daily AI agent news: new agent launches, coding agents, MCP servers and agent frameworks, summarized in plain words with links to the original sources."
+    ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":x["url"],"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
+    open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
