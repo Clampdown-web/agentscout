@@ -113,7 +113,7 @@ def build(t):
     urls+=seo(t,urls)
     import build_tasks; urls+=build_tasks.pages(t)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in [B,B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
+    for u in [B,B+"new.html",B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls: sm.append(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))
     print(len(PAIRS),"comparisons, badges page, sitemap",len(sm)-2,"urls")
 
@@ -124,13 +124,16 @@ def meta(x,n=155):
     if len(s)<120: s+=" Alternatives and facts on AgentScout."
     if len(s)>n: s=s[:n-1].rsplit(" ",1)[0].rstrip(",;:")+"…"
     return s
-def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
+import datetime as _dt
+def week_new(x): return x.get("added","")>=(_dt.date.today()-_dt.timedelta(days=7)).isoformat()
+def newfirst(items): return sorted(items,key=lambda x:(not week_new(x),"" if not week_new(x) else "~"+"".join(chr(255-ord(c)) for c in x.get("added",""))))
+def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
 def listing_page(path,title,desc,h1,lede,items,crumb,extra=""):
     canon=B+path
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p><div class="grid">{"".join(card(x) for x in items)}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p><div class="grid">{"".join(card(x) for x in newfirst(items))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 def seo(t,urls):
     import os,collections
@@ -171,8 +174,8 @@ def seo(t,urls):
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t)} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: agentscout@mail.grokbot.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     L+=["","## Guides","",f"- [Best MCP servers 2026]({B}best/mcp-servers.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
-    rec=sorted(t,key=lambda x:(x.get("verified",""),x.get("id",0)),reverse=True)[:10]
-    L+=["## Recently added or re-checked",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html): {x['description']}" for x in rec]+[""]
+    rec=sorted(t,key=lambda x:(x.get("added",""),x.get("id",0)),reverse=True)[:12]
+    L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
 
 def news_page(t):

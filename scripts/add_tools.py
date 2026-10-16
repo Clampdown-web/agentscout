@@ -3,7 +3,9 @@ Input TSV columns: repo_or_blank  category  pricing  audience  description  [nam
   - repo: owner/name on GitHub (or blank for closed products; then name+website required)
 Checks: GitHub repo exists & not archived, website returns 200 (bot-blocked 403 => website dropped, github kept),
 logo = site apple-touch-icon / icon >=64px, else GitHub owner avatar; dedupe by name/domain/repo against tools.json.
-Usage: python3 scripts/add_tools.py batch.tsv [--dry] [--cache=discovered.json from discover_github.py]"""
+Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"Product Hunt"|"Hugging Face"|"Futurepedia"|...] [--dry]
+Each new tool is stamped added=today and source; build_site.py then refreshes the homepage Recently added section, new.html and llms.txt.
+ [--cache=discovered.json from discover_github.py]"""
 import sys,json,re,io,requests,concurrent.futures as cf
 from urllib.parse import urljoin,urlparse
 from PIL import Image
@@ -70,12 +72,15 @@ def verify(row):
   pretty=name if (not repo or row[5] or any(ch.isupper() for ch in name)) else name.replace('-',' ').replace('_',' ').title()
   e={"name":pretty,"url":site or f"https://github.com/{repo}","description":desc,"category":cat,"pricing":pr,
      "maturity":"Mature" if (stars or 0)>=5000 else "Active","audience":aud,"featured":False,"new":True,
-     "verified":__import__('datetime').date.today().isoformat(),"pricing_detail":"","use_cases":[],
+     "verified":__import__('datetime').date.today().isoformat(),"added":__import__('datetime').date.today().isoformat(),"source":SOURCE,"pricing_detail":"","use_cases":[],
      "website":site,"github":f"https://github.com/{repo}" if repo else ""}
   if repo: e["repo"]=repo; e["github_stars"]=stars
   return {"err":None,"e":e,"logo":logo}
-CACHE={}
+CACHE={};SOURCE="manual"
 if __name__=="__main__":
+  for a in sys.argv:
+    if a.startswith("--source="): SOURCE=a[9:]
+    elif a.startswith("--cache=") and SOURCE=="manual": SOURCE="GitHub"
   for a in sys.argv:
     if a.startswith("--cache="): CACHE={i["full_name"].lower():i for i in json.load(open(a[8:]))}
   rows=[l.rstrip('\n').split('\t') for l in open(sys.argv[1]) if l.strip() and not l.startswith('#')]

@@ -6,7 +6,10 @@ RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",
 ("voice & phone calls",r"voice|phone|call|speech|TTS|talk"),("automate workflows",r"workflow|automation|automate|Zapier|apps"),("build apps without code",r"prompt-to-app|full apps|web apps|No-code|no-code|Drag-and-drop|visually"),
 ("connect tools via MCP",r"MCP"),("run code safely",r"sandbox|Sandbox|secure|policies"),("monitor & evaluate agents",r"observab|trac|evals|monitor|Evals|evaluat"),
 ("give agents memory",r"memory|Memory"),("sales & support",r"sales|prospect|customer|account"),("make diagrams",r"diagram"),("computer vision",r"vision")]
+import datetime as _dt
+_c=(_dt.date.today()-_dt.timedelta(days=14)).isoformat()
 for x in t:
+    x["new"]=x.get("added","")>=_c
     d=x["name"]+" "+x["description"]+" "+x["category"]
     x["use_cases"]=[u for u,p in RULES if re.search(p,d)][:3] or [x["category"]]
     x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
@@ -21,6 +24,7 @@ for x in t:
     relh="".join(f'<a class="card" href="{y["slug"]}.html"><div class="ct">{build_extras.ico(y,"../","sm")}<h3 style="flex:1">{e(y["name"])}</h3></div><p>{e(y["description"])}</p></a>' for y in rel)
     facts=[("Category",x["category"]),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),("Pricing",x.get("pricing_detail",x["pricing"])),("Maturity",x["maturity"])]
     if x.get("github_stars") is not None: facts.append(("GitHub stars",f'{x["github_stars"]:,} (as of {x["verified"]})'))
+    if x.get("added"): facts.append(("Added",x["added"]))
     facts.append(("Link checked",x["verified"]))
     fh="".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a,b in facts)
     uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
@@ -31,7 +35,7 @@ for x in t:
     aud="builders" if x["audience"]=="builders" else "people who want a ready-to-use product"
     about=f'<h2 style="font-size:16px;margin-bottom:10px">About {e(x["name"])}</h2><p style="margin:0 0 28px">{e(x["name"])} is listed in our {e(x["category"])} category and is aimed at {aud}. {e(x["description"])} Pricing, as the maker states it: {e(x.get("pricing_detail",x["pricing"]))}. Maturity: {e(x["maturity"])}. We last checked the official link on {e(x["verified"])}.</p>'
     out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{ABOUT}}",about).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
-    for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(prim),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":'<span class="b new">New this week</span>' if x["new"] else ""}.items():
+    for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(prim),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
         out=out.replace("{{"+k+"}}",v)
     B="https://clampdown-web.github.io/agentscout/";pg=f"{B}tools/{x['slug']}.html"
     ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":pg,"url":pg,"name":f"{x['name']}: what it does, pricing and alternatives","dateModified":x["verified"],"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
@@ -56,6 +60,8 @@ def _sync_index_counts():
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
     open("index.html", "w").write(s)
 _sync_index_counts()
+import build_recent
+build_recent.build(t)
 
 import build_tasks
 build_tasks.sitewide(t)
