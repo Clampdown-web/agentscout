@@ -66,3 +66,5 @@ build_recent.build(t)
 
 import build_tasks
 build_tasks.sitewide(t)
+import build_sections
+build_sections.build(t)
