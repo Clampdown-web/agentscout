@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-16T22:13:40.057973Z",
- "count": 283,
+ "generated": "2026-10-16T22:14:08.737593Z",
+ "count": 385,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -8734,6 +8734,3213 @@
    "repo": "alibaba/spring-ai-alibaba",
    "logo": "https://clampdown-web.github.io/agentscout/assets/logos/spring-ai-alibaba.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/spring-ai-alibaba.html"
+  },
+  {
+   "name": "Omnigent",
+   "slug": "omnigent",
+   "url": "https://omnigent.ai/",
+   "website": "https://omnigent.ai/",
+   "github": "https://github.com/omnigent-ai/omnigent",
+   "category": "frameworks",
+   "description": "Open-source agent framework and meta-harness that orchestrates Claude Code, Codex, Cursor and other agents together.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "10854 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "omnigent-ai/omnigent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/omnigent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/omnigent.html"
+  },
+  {
+   "name": "VoltAgent",
+   "slug": "voltagent",
+   "url": "https://voltagent.dev/",
+   "website": "https://voltagent.dev/",
+   "github": "https://github.com/VoltAgent/voltagent",
+   "category": "frameworks",
+   "description": "TypeScript agent framework plus an engineering platform for building, observing and deploying AI agents.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "10819 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "VoltAgent/voltagent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/voltagent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/voltagent.html"
+  },
+  {
+   "name": "mcp-use",
+   "slug": "mcp-use",
+   "url": "https://manufact.com/",
+   "website": "https://manufact.com/",
+   "github": "https://github.com/mcp-use/mcp-use",
+   "category": "MCP & infra",
+   "description": "Full-stack MCP framework for building MCP servers, MCP apps and agents that connect to them.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "10772 GitHub stars",
+    "Build an agent",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "mcp-use/mcp-use",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mcp-use.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mcp-use.html"
+  },
+  {
+   "name": "Electric",
+   "slug": "electric",
+   "url": "https://electric.ax/",
+   "website": "https://electric.ax/",
+   "github": "https://github.com/electric-sql/electric",
+   "category": "MCP & infra",
+   "description": "Sync engine and agent platform that keeps data in sync between Postgres, apps and agents in real time.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "10400 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "electric-sql/electric",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/electric.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/electric.html"
+  },
+  {
+   "name": "InkOS",
+   "slug": "inkos",
+   "url": "https://github.com/Narcooo/inkos",
+   "website": "",
+   "github": "https://github.com/Narcooo/inkos",
+   "category": "productivity",
+   "description": "Story-writing agent for novels, scripts, translations and interactive fiction.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "10345 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Narcooo/inkos",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/inkos.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/inkos.html"
+  },
+  {
+   "name": "Trail Code",
+   "slug": "trail-code",
+   "url": "https://trailhq.com/trail-code",
+   "website": "https://trailhq.com/trail-code",
+   "github": "https://github.com/trailhq/Trail-Code",
+   "category": "coding",
+   "description": "Context layer that makes Claude Code, Cursor, Codex and other coding agents faster and cheaper on large codebases.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "10211 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "trailhq/Trail-Code",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/trail-code.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/trail-code.html"
+  },
+  {
+   "name": "Magentic-UI",
+   "slug": "magentic-ui",
+   "url": "https://www.microsoft.com/en-us/research/blog/magenticlite-magenticbrain-fara1-5-an-agentic-experience-optimized-for-small-models/",
+   "website": "https://www.microsoft.com/en-us/research/blog/magenticlite-magenticbrain-fara1-5-an-agentic-experience-optimized-for-small-models/",
+   "github": "https://github.com/microsoft/magentic-ui",
+   "category": "browser/computer use",
+   "description": "Microsoft Research's experimental human-in-the-loop agent that works across the browser and local files.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "10097 GitHub stars",
+    "Automate the browser",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "microsoft/magentic-ui",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/magentic-ui.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/magentic-ui.html"
+  },
+  {
+   "name": "Bindu",
+   "slug": "bindu",
+   "url": "https://docs.getbindu.com/",
+   "website": "https://docs.getbindu.com/",
+   "github": "https://github.com/GetBindu/Bindu",
+   "category": "MCP & infra",
+   "description": "Identity, communication and payments layer that lets AI agents talk to and pay each other.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "10056 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "GetBindu/Bindu",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/bindu.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/bindu.html"
+  },
+  {
+   "name": "Feynman",
+   "slug": "feynman",
+   "url": "https://feynman.is/",
+   "website": "https://feynman.is/",
+   "github": "https://github.com/Companion-Inc/feynman",
+   "category": "research",
+   "description": "Open-source research agent that searches, reads papers and writes cited reports.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9976 GitHub stars",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Companion-Inc/feynman",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/feynman.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/feynman.html"
+  },
+  {
+   "name": "Moltworker",
+   "slug": "moltworker",
+   "url": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/",
+   "website": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/",
+   "github": "https://github.com/cloudflare/moltworker",
+   "category": "personal agents",
+   "description": "Cloudflare's project for running the OpenClaw personal agent on Cloudflare Workers.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9950 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "cloudflare/moltworker",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/moltworker.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/moltworker.html"
+  },
+  {
+   "name": "GenOffice",
+   "slug": "genoffice",
+   "url": "https://genoffice.ai/",
+   "website": "https://genoffice.ai/",
+   "github": "https://github.com/genspark-ai/genoffice",
+   "category": "productivity",
+   "description": "Free, open-source office suite with docs, sheets and slides editors and a built-in AI agent.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9843 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "genspark-ai/genoffice",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/genoffice.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/genoffice.html"
+  },
+  {
+   "name": "AWS MCP Servers",
+   "slug": "aws-mcp-servers",
+   "url": "https://awslabs.github.io/mcp/",
+   "website": "https://awslabs.github.io/mcp/",
+   "github": "https://github.com/awslabs/mcp",
+   "category": "MCP & infra",
+   "description": "Collection of official open-source MCP servers for working with AWS services from agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9782 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "awslabs/mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/aws-mcp-servers.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/aws-mcp-servers.html"
+  },
+  {
+   "name": "Ralph for Claude Code",
+   "slug": "ralph-for-claude-code",
+   "url": "https://github.com/frankbria/ralph-claude-code",
+   "website": "",
+   "github": "https://github.com/frankbria/ralph-claude-code",
+   "category": "coding",
+   "description": "Autonomous development loop for Claude Code that keeps iterating until the task is done.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9703 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "frankbria/ralph-claude-code",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ralph-for-claude-code.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ralph-for-claude-code.html"
+  },
+  {
+   "name": "Octop",
+   "slug": "octop",
+   "url": "https://octop.cloud/",
+   "website": "https://octop.cloud/",
+   "github": "https://github.com/TencentCloud/Octop",
+   "category": "personal agents",
+   "description": "Self-hosted, multi-user AI assistant with multiple agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9685 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "TencentCloud/Octop",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/octop.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/octop.html"
+  },
+  {
+   "name": "Mobilerun",
+   "slug": "mobilerun",
+   "url": "https://mobilerun.ai/framework/",
+   "website": "https://mobilerun.ai/framework/",
+   "github": "https://github.com/droidrun/mobilerun",
+   "category": "browser/computer use",
+   "description": "LLM-agnostic agent framework for controlling Android and iOS devices with natural language.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "9676 GitHub stars",
+    "Automate the browser",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "droidrun/mobilerun",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mobilerun.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mobilerun.html"
+  },
+  {
+   "name": "Hunk",
+   "slug": "hunk",
+   "url": "https://www.hunk.dev/",
+   "website": "https://www.hunk.dev/",
+   "github": "https://github.com/modem-dev/hunk",
+   "category": "coding",
+   "description": "Review-first terminal diff viewer for checking what coding agents changed.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9615 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "modem-dev/hunk",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/hunk.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/hunk.html"
+  },
+  {
+   "name": "Oh My OpenCode Slim",
+   "slug": "oh-my-opencode-slim",
+   "url": "https://ohmyopencodeslim.com/",
+   "website": "https://ohmyopencodeslim.com/",
+   "github": "https://github.com/alvinunreal/oh-my-opencode-slim",
+   "category": "coding",
+   "description": "Lean multi-agent suite for OpenCode that mixes models and delegates tasks automatically.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9588 GitHub stars",
+    "Write code",
+    "Build multi-agent systems",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "alvinunreal/oh-my-opencode-slim",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/oh-my-opencode-slim.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/oh-my-opencode-slim.html"
+  },
+  {
+   "name": "Nasiko",
+   "slug": "nasiko",
+   "url": "https://www.nasiko.com/",
+   "website": "https://www.nasiko.com/",
+   "github": "https://github.com/Nasiko-Labs/nasiko",
+   "category": "MCP & infra",
+   "description": "Open runtime for deploying and operating AI agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9479 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Nasiko-Labs/nasiko",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/nasiko.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/nasiko.html"
+  },
+  {
+   "name": "Plannotator",
+   "slug": "plannotator",
+   "url": "https://plannotator.ai/",
+   "website": "https://plannotator.ai/",
+   "github": "https://github.com/backnotprop/plannotator",
+   "category": "coding",
+   "description": "Visually annotate and review coding-agent plans and diffs, then send feedback back to the agent.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9468 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "backnotprop/plannotator",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/plannotator.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/plannotator.html"
+  },
+  {
+   "name": "Oumi",
+   "slug": "oumi",
+   "url": "https://oumi.ai/",
+   "website": "https://oumi.ai/",
+   "github": "https://github.com/oumi-ai/oumi",
+   "category": "models",
+   "description": "Open platform for fine-tuning, evaluating and deploying open agentic LLMs and VLMs.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9400 GitHub stars",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "oumi-ai/oumi",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/oumi.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/oumi.html"
+  },
+  {
+   "name": "Terax",
+   "slug": "terax",
+   "url": "https://terax.app/",
+   "website": "https://terax.app/",
+   "github": "https://github.com/crynta/terax-ai",
+   "category": "coding",
+   "description": "Lightweight terminal-first AI development environment.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9324 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "crynta/terax-ai",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/terax.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/terax.html"
+  },
+  {
+   "name": "Worktrunk",
+   "slug": "worktrunk",
+   "url": "https://worktrunk.dev/",
+   "website": "https://worktrunk.dev/",
+   "github": "https://github.com/max-sixty/worktrunk",
+   "category": "coding",
+   "description": "CLI for managing Git worktrees so several AI agents can work in parallel.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9263 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "max-sixty/worktrunk",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/worktrunk.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/worktrunk.html"
+  },
+  {
+   "name": "PraisonAI",
+   "slug": "praisonai",
+   "url": "https://praison.ai/docs",
+   "website": "https://praison.ai/docs",
+   "github": "https://github.com/MervinPraison/PraisonAI",
+   "category": "frameworks",
+   "description": "Multi-agent framework for building a self-improving AI workforce with little code.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "9243 GitHub stars",
+    "Write code",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "MervinPraison/PraisonAI",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/praisonai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/praisonai.html"
+  },
+  {
+   "name": "Astron Agent",
+   "slug": "astron-agent",
+   "url": "https://github.com/iflytek/astron-agent",
+   "website": "",
+   "github": "https://github.com/iflytek/astron-agent",
+   "category": "no-code builders",
+   "description": "iFlytek's enterprise agentic workflow platform for building super agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8910 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "iflytek/astron-agent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/astron-agent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/astron-agent.html"
+  },
+  {
+   "name": "Strands Agents",
+   "slug": "strands-agents",
+   "url": "https://github.com/strands-agents/harness-sdk",
+   "website": "",
+   "github": "https://github.com/strands-agents/harness-sdk",
+   "category": "frameworks",
+   "description": "Strands open-source SDK for building production agent harnesses in Python and TypeScript.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8841 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "strands-agents/harness-sdk",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/strands-agents.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/strands-agents.html"
+  },
+  {
+   "name": "microsandbox",
+   "slug": "microsandbox",
+   "url": "https://docs.microsandbox.dev/getting-started/introduction",
+   "website": "https://docs.microsandbox.dev/getting-started/introduction",
+   "github": "https://github.com/superradcompany/microsandbox",
+   "category": "MCP & infra",
+   "description": "Local-first microVM runtime for running untrusted agent code safely.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8717 GitHub stars",
+    "Write code",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "superradcompany/microsandbox",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/microsandbox.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/microsandbox.html"
+  },
+  {
+   "name": "Evolver",
+   "slug": "evolver",
+   "url": "https://evomap.ai/",
+   "website": "https://evomap.ai/",
+   "github": "https://github.com/EvoMap/evolver",
+   "category": "frameworks",
+   "description": "Self-evolving engine for AI agents with auditable genes, capsules and events.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8688 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "EvoMap/evolver",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/evolver.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/evolver.html"
+  },
+  {
+   "name": "mini-SWE-agent",
+   "slug": "mini-swe-agent",
+   "url": "https://mini-swe-agent.com/",
+   "website": "https://mini-swe-agent.com/",
+   "github": "https://github.com/SWE-agent/mini-swe-agent",
+   "category": "coding",
+   "description": "Tiny 100-line agent that solves GitHub issues or helps on the command line, from the SWE-agent team.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8580 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "SWE-agent/mini-swe-agent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mini-swe-agent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mini-swe-agent.html"
+  },
+  {
+   "name": "GitMCP",
+   "slug": "gitmcp",
+   "url": "https://gitmcp.io/",
+   "website": "https://gitmcp.io/",
+   "github": "https://github.com/idosal/git-mcp",
+   "category": "MCP & infra",
+   "description": "Free remote MCP server that gives agents up-to-date docs and code for any GitHub project.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8465 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "idosal/git-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/gitmcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/gitmcp.html"
+  },
+  {
+   "name": "MiroThinker",
+   "slug": "mirothinker",
+   "url": "https://www.miromind.ai/",
+   "website": "https://www.miromind.ai/",
+   "github": "https://github.com/MiroMindAI/MiroThinker",
+   "category": "research",
+   "description": "Deep research agent and open models tuned for complex research and forecasting tasks.",
+   "key_features": [
+    "Open weights",
+    "Mature",
+    "8420 GitHub stars",
+    "Research the web"
+   ],
+   "pricing": "Open weights",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "MiroMindAI/MiroThinker",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mirothinker.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mirothinker.html"
+  },
+  {
+   "name": "Vision Agents",
+   "slug": "vision-agents",
+   "url": "https://visionagents.ai/",
+   "website": "https://visionagents.ai/",
+   "github": "https://github.com/GetStream/Vision-Agents",
+   "category": "voice",
+   "description": "Stream's open framework for building real-time voice and video agents with any model.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8171 GitHub stars",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "GetStream/Vision-Agents",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/vision-agents.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/vision-agents.html"
+  },
+  {
+   "name": "Yao",
+   "slug": "yao",
+   "url": "https://yaoagents.com/",
+   "website": "https://yaoagents.com/",
+   "github": "https://github.com/YaoApp/yao",
+   "category": "personal agents",
+   "description": "Workspace for running and tracking all your agents and tasks across devices.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8134 GitHub stars",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "YaoApp/yao",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/yao.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/yao.html"
+  },
+  {
+   "name": "Osaurus",
+   "slug": "osaurus",
+   "url": "https://osaurus.ai/",
+   "website": "https://osaurus.ai/",
+   "github": "https://github.com/osaurus-ai/osaurus",
+   "category": "personal agents",
+   "description": "Native macOS harness for AI agents with any model, memory and autonomous execution.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8052 GitHub stars",
+    "Build an agent",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "osaurus-ai/osaurus",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/osaurus.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/osaurus.html"
+  },
+  {
+   "name": "Upsonic",
+   "slug": "upsonic",
+   "url": "https://docs.upsonic.ai/get-started/introduction",
+   "website": "https://docs.upsonic.ai/get-started/introduction",
+   "github": "https://github.com/Upsonic/Upsonic",
+   "category": "frameworks",
+   "description": "Python framework for building autonomous AI agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7957 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Upsonic/Upsonic",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/upsonic.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/upsonic.html"
+  },
+  {
+   "name": "SuperPlane",
+   "slug": "superplane",
+   "url": "https://superplane.com/",
+   "website": "https://superplane.com/",
+   "github": "https://github.com/superplanehq/superplane",
+   "category": "coding",
+   "description": "Open-source platform for orchestrating one-shot engineering work with agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7825 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "superplanehq/superplane",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/superplane.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/superplane.html"
+  },
+  {
+   "name": "Steel",
+   "slug": "steel",
+   "url": "https://steel.dev/",
+   "website": "https://steel.dev/",
+   "github": "https://github.com/steel-dev/steel-browser",
+   "category": "browser/computer use",
+   "description": "Open-source browser API and sandbox for AI agents to control web browsers at scale.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7821 GitHub stars",
+    "Automate the browser",
+    "Run code safely"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "steel-dev/steel-browser",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/steel.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/steel.html"
+  },
+  {
+   "name": "Gentle AI",
+   "slug": "gentle-ai",
+   "url": "https://gentle-ai.gentlemanprogramming.com/",
+   "website": "https://gentle-ai.gentlemanprogramming.com/",
+   "github": "https://github.com/Gentleman-Programming/gentle-ai",
+   "category": "coding",
+   "description": "Configures the coding agents you already use with shared rules, skills and settings.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7813 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Gentleman-Programming/gentle-ai",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/gentle-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/gentle-ai.html"
+  },
+  {
+   "name": "Agent Squad",
+   "slug": "agent-squad",
+   "url": "https://2fastlabs.github.io/agent-squad/",
+   "website": "https://2fastlabs.github.io/agent-squad/",
+   "github": "https://github.com/2FastLabs/agent-squad",
+   "category": "frameworks",
+   "description": "Framework for routing conversations across multiple specialized AI agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7789 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "2FastLabs/agent-squad",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agent-squad.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agent-squad.html"
+  },
+  {
+   "name": "Flyte",
+   "slug": "flyte",
+   "url": "https://flyte.org/",
+   "website": "https://flyte.org/",
+   "github": "https://github.com/flyteorg/flyte",
+   "category": "frameworks",
+   "description": "Type-safe orchestration for agents, ML pipelines and inference on Kubernetes.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7712 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "flyteorg/flyte",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/flyte.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/flyte.html"
+  },
+  {
+   "name": "Honcho",
+   "slug": "honcho",
+   "url": "https://honcho.dev/docs/v3/documentation/introduction/overview",
+   "website": "https://honcho.dev/docs/v3/documentation/introduction/overview",
+   "github": "https://github.com/plastic-labs/honcho",
+   "category": "MCP & infra",
+   "description": "Memory library and service for building stateful agents that remember users.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7648 GitHub stars",
+    "Build an agent",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "plastic-labs/honcho",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/honcho.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/honcho.html"
+  },
+  {
+   "name": "Reef",
+   "slug": "reef",
+   "url": "https://www.reefinfra.ai/",
+   "website": "https://www.reefinfra.ai/",
+   "github": "https://github.com/Human-Agent-Society/reef",
+   "category": "MCP & infra",
+   "description": "Infrastructure for continually self-improving agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7612 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Human-Agent-Society/reef",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/reef.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/reef.html"
+  },
+  {
+   "name": "OpenEvolve",
+   "slug": "openevolve",
+   "url": "https://github.com/algorithmicsuperintelligence/openevolve",
+   "website": "",
+   "github": "https://github.com/algorithmicsuperintelligence/openevolve",
+   "category": "frameworks",
+   "description": "Open-source take on AlphaEvolve that uses LLM agents to evolve better code and algorithms.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7567 GitHub stars",
+    "Write code",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "algorithmicsuperintelligence/openevolve",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openevolve.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/openevolve.html"
+  },
+  {
+   "name": "OpenRig",
+   "slug": "openrig",
+   "url": "https://openrig.dev/",
+   "website": "https://openrig.dev/",
+   "github": "https://github.com/mvschwarz/openrig",
+   "category": "coding",
+   "description": "Builds persistent teams of Claude Code, Codex and Pi agents with roles and shared context.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7541 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "mvschwarz/openrig",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openrig.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/openrig.html"
+  },
+  {
+   "name": "BrowserTools MCP",
+   "slug": "browsertools-mcp",
+   "url": "https://www.agentdesk.ai/",
+   "website": "https://www.agentdesk.ai/",
+   "github": "https://github.com/AgentDeskAI/browser-tools-mcp",
+   "category": "MCP & infra",
+   "description": "MCP server that lets Cursor and other agents read browser console logs and network activity.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7328 GitHub stars",
+    "Automate the browser",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "AgentDeskAI/browser-tools-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/browsertools-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/browsertools-mcp.html"
+  },
+  {
+   "name": "Unstract",
+   "slug": "unstract",
+   "url": "https://unstract.com/",
+   "website": "https://unstract.com/",
+   "github": "https://github.com/Zipstack/unstract",
+   "category": "no-code builders",
+   "description": "LLM-powered platform for extracting structured data from documents via APIs and ETL pipelines.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7285 GitHub stars",
+    "Write code",
+    "Build apps without code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Zipstack/unstract",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/unstract.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/unstract.html"
+  },
+  {
+   "name": "Swarms",
+   "slug": "swarms",
+   "url": "https://docs.swarms.world/introduction",
+   "website": "https://docs.swarms.world/introduction",
+   "github": "https://github.com/kyegomez/swarms",
+   "category": "frameworks",
+   "description": "Enterprise multi-agent orchestration framework.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7271 GitHub stars",
+    "Build multi-agent systems",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "kyegomez/swarms",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/swarms.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/swarms.html"
+  },
+  {
+   "name": "big-AGI",
+   "slug": "big-agi",
+   "url": "https://big-agi.com/",
+   "website": "https://big-agi.com/",
+   "github": "https://github.com/enricoros/big-AGI",
+   "category": "personal agents",
+   "description": "AI suite for power users with personas, multi-model chats and agent features.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7150 GitHub stars"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "enricoros/big-AGI",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/big-agi.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/big-agi.html"
+  },
+  {
+   "name": "Talk to Figma MCP",
+   "slug": "talk-to-figma-mcp",
+   "url": "https://www.figma.com/community/plugin/1485687494525374295/talk-to-figma-mcp-plugin",
+   "website": "https://www.figma.com/community/plugin/1485687494525374295/talk-to-figma-mcp-plugin",
+   "github": "https://github.com/grab/cursor-talk-to-figma-mcp",
+   "category": "MCP & infra",
+   "description": "MCP integration that lets coding agents read and edit Figma designs.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7059 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "grab/cursor-talk-to-figma-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/talk-to-figma-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/talk-to-figma-mcp.html"
+  },
+  {
+   "name": "Backlog.md",
+   "slug": "backlog-md",
+   "url": "https://github.com/MrLesk/Backlog.md",
+   "website": "https://github.com/MrLesk/Backlog.md",
+   "github": "https://github.com/MrLesk/Backlog.md",
+   "category": "coding",
+   "description": "Markdown task board in your Git repo for coordinating work between people and AI agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7055 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "MrLesk/Backlog.md",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/backlog-md.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/backlog-md.html"
+  },
+  {
+   "name": "Open Multi-Agent",
+   "slug": "open-multi-agent",
+   "url": "https://open-multi-agent.com/?utm_source=github&utm_medium=repo_about",
+   "website": "https://open-multi-agent.com/?utm_source=github&utm_medium=repo_about",
+   "github": "https://github.com/open-multi-agent/open-multi-agent",
+   "category": "frameworks",
+   "description": "Self-hosted TypeScript agent runtime with durable approvals and verifiable run records.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7001 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "open-multi-agent/open-multi-agent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/open-multi-agent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/open-multi-agent.html"
+  },
+  {
+   "name": "AI-Infra-Guard",
+   "slug": "ai-infra-guard",
+   "url": "https://tencent.github.io/AI-Infra-Guard/",
+   "website": "https://tencent.github.io/AI-Infra-Guard/",
+   "github": "https://github.com/Tencent/AI-Infra-Guard",
+   "category": "evals & observability",
+   "description": "Tencent's AI red-teaming platform that scans agents, skills and MCP servers for risks.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6887 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Tencent/AI-Infra-Guard",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ai-infra-guard.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ai-infra-guard.html"
+  },
+  {
+   "name": "smolvm",
+   "slug": "smolvm",
+   "url": "https://smolmachines.com/",
+   "website": "https://smolmachines.com/",
+   "github": "https://github.com/smol-machines/smolvm",
+   "category": "MCP & infra",
+   "description": "Portable, branchable virtual machine for running agents safely on your computer.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6746 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "smol-machines/smolvm",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/smolvm.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/smolvm.html"
+  },
+  {
+   "name": "Julep",
+   "slug": "julep",
+   "url": "https://docs.julep.ai/introduction/julep",
+   "website": "https://docs.julep.ai/introduction/julep",
+   "github": "https://github.com/julep-ai/julep",
+   "category": "frameworks",
+   "description": "Platform for durable AI agent workflows that can crash, resume and retry safely.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "6576 GitHub stars",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "julep-ai/julep",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/julep.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/julep.html"
+  },
+  {
+   "name": "OpenBot",
+   "slug": "openbot",
+   "url": "https://www.copilotkit.ai/openbot",
+   "website": "https://www.copilotkit.ai/openbot",
+   "github": "https://github.com/CopilotKit/OpenBot",
+   "category": "personal agents",
+   "description": "Open-source AI coworkers that each get their own computer with a browser, files and tools.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6556 GitHub stars",
+    "Automate the browser"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "CopilotKit/OpenBot",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openbot.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/openbot.html"
+  },
+  {
+   "name": "Genkit",
+   "slug": "genkit",
+   "url": "https://genkit.dev/",
+   "website": "https://genkit.dev/",
+   "github": "https://github.com/genkit-ai/genkit",
+   "category": "frameworks",
+   "description": "Google's open-source framework for building agentic apps in JavaScript, Go, Dart and Python.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6525 GitHub stars",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "genkit-ai/genkit",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/genkit.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/genkit.html"
+  },
+  {
+   "name": "IntentKit",
+   "slug": "intentkit",
+   "url": "https://intentcat.com/docs/",
+   "website": "https://intentcat.com/docs/",
+   "github": "https://github.com/crestalnetwork/intentkit",
+   "category": "frameworks",
+   "description": "Self-hosted cloud cluster for running a team of collaborating AI agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6519 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "crestalnetwork/intentkit",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/intentkit.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/intentkit.html"
+  },
+  {
+   "name": "Agent Governance Toolkit",
+   "slug": "agent-governance-toolkit",
+   "url": "https://github.com/microsoft/agent-governance-toolkit",
+   "website": "",
+   "github": "https://github.com/microsoft/agent-governance-toolkit",
+   "category": "evals & observability",
+   "description": "Microsoft toolkit for policy enforcement, identity and sandboxing for AI agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6435 GitHub stars",
+    "Build an agent",
+    "Run code safely",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "microsoft/agent-governance-toolkit",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agent-governance-toolkit.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agent-governance-toolkit.html"
+  },
+  {
+   "name": "Mission Control",
+   "slug": "mission-control",
+   "url": "https://mc.builderz.dev/",
+   "website": "https://mc.builderz.dev/",
+   "github": "https://github.com/builderz-labs/mission-control",
+   "category": "coding",
+   "description": "Self-hosted control plane for dispatching tasks to agents, reviewing runs and tracking spend.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6358 GitHub stars",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "builderz-labs/mission-control",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mission-control.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mission-control.html"
+  },
+  {
+   "name": "Everywhere",
+   "slug": "everywhere",
+   "url": "https://everywhere.sylinko.com/en",
+   "website": "https://everywhere.sylinko.com/en",
+   "github": "https://github.com/Sylinko/Everywhere",
+   "category": "personal agents",
+   "description": "Desktop assistant that sees what is on your screen and helps using LLMs and MCP tools.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6319 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Sylinko/Everywhere",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/everywhere.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/everywhere.html"
+  },
+  {
+   "name": "Kun",
+   "slug": "kun",
+   "url": "https://www.kun-agent.com/",
+   "website": "https://www.kun-agent.com/",
+   "github": "https://github.com/KunAgent/Kun",
+   "category": "personal agents",
+   "description": "Local-first agent workspace for coding, writing, design, research and automation.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6313 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "KunAgent/Kun",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/kun.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/kun.html"
+  },
+  {
+   "name": "TrueForge",
+   "slug": "trueforge",
+   "url": "https://trueforge.dev/introduction",
+   "website": "https://trueforge.dev/introduction",
+   "github": "https://github.com/truefoundry/trueforge",
+   "category": "frameworks",
+   "description": "Open-source agent harness runtime that turns an LLM into a working agent.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6247 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "truefoundry/trueforge",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/trueforge.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/trueforge.html"
+  },
+  {
+   "name": "Semble",
+   "slug": "semble",
+   "url": "https://minish.ai/packages/semble/introduction/",
+   "website": "https://minish.ai/packages/semble/introduction/",
+   "github": "https://github.com/MinishLab/semble",
+   "category": "coding",
+   "description": "Fast code search for agents that uses far fewer tokens than grep and file reads.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6218 GitHub stars",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "MinishLab/semble",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/semble.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/semble.html"
+  },
+  {
+   "name": "Marvin",
+   "slug": "marvin",
+   "url": "https://marvin.mintlify.app/welcome",
+   "website": "https://marvin.mintlify.app/welcome",
+   "github": "https://github.com/PrefectHQ/marvin",
+   "category": "frameworks",
+   "description": "Python library from Prefect for building AI agents and structured LLM workflows.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6206 GitHub stars",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "PrefectHQ/marvin",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/marvin.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/marvin.html"
+  },
+  {
+   "name": "LobsterAI",
+   "slug": "lobsterai",
+   "url": "https://lobsterai.youdao.com/",
+   "website": "https://lobsterai.youdao.com/",
+   "github": "https://github.com/netease-youdao/LobsterAI",
+   "category": "personal agents",
+   "description": "NetEase Youdao's desktop agent for data analysis, slides, documents and web research.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6119 GitHub stars",
+    "Control a computer",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "netease-youdao/LobsterAI",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/lobsterai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/lobsterai.html"
+  },
+  {
+   "name": "Open Connector",
+   "slug": "open-connector",
+   "url": "https://oomol.com/",
+   "website": "https://oomol.com/",
+   "github": "https://github.com/oomol-lab/open-connector",
+   "category": "MCP & infra",
+   "description": "Open-source auth gateway connecting SaaS apps to AI agents via SDK, CLI and MCP.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6031 GitHub stars",
+    "Build an agent",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "oomol-lab/open-connector",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/open-connector.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/open-connector.html"
+  },
+  {
+   "name": "AgentScope Java",
+   "slug": "agentscope-java",
+   "url": "https://java.agentscope.io/v2/en/intro",
+   "website": "https://java.agentscope.io/v2/en/intro",
+   "github": "https://github.com/agentscope-ai/agentscope-java",
+   "category": "frameworks",
+   "description": "Java version of AgentScope for building distributed, long-running agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "6013 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "agentscope-ai/agentscope-java",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agentscope-java.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agentscope-java.html"
+  },
+  {
+   "name": "Nexent",
+   "slug": "nexent",
+   "url": "https://github.com/ModelEngine-Group/nexent",
+   "website": "",
+   "github": "https://github.com/ModelEngine-Group/nexent",
+   "category": "no-code builders",
+   "description": "Zero-code platform that generates AI agents from plain-language descriptions.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5954 GitHub stars",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "ModelEngine-Group/nexent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/nexent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/nexent.html"
+  },
+  {
+   "name": "Lemonade",
+   "slug": "lemonade",
+   "url": "https://lemonade-server.ai/",
+   "website": "https://lemonade-server.ai/",
+   "github": "https://github.com/lemonade-sdk/lemonade",
+   "category": "MCP & infra",
+   "description": "Local server that runs optimized LLMs on your GPU or NPU for local AI apps and agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5915 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "lemonade-sdk/lemonade",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/lemonade.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/lemonade.html"
+  },
+  {
+   "name": "Open Agents",
+   "slug": "open-agents",
+   "url": "https://open-agents.dev/",
+   "website": "https://open-agents.dev/",
+   "github": "https://github.com/vercel-labs/open-agents",
+   "category": "frameworks",
+   "description": "Vercel's open-source template for building cloud agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5847 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "vercel-labs/open-agents",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/open-agents.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/open-agents.html"
+  },
+  {
+   "name": "Cloudflare Agents",
+   "slug": "cloudflare-agents",
+   "url": "https://developers.cloudflare.com/agents/",
+   "website": "https://developers.cloudflare.com/agents/",
+   "github": "https://github.com/cloudflare/agents",
+   "category": "frameworks",
+   "description": "Cloudflare's SDK for building and deploying stateful AI agents on Workers.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5841 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "cloudflare/agents",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/cloudflare-agents.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/cloudflare-agents.html"
+  },
+  {
+   "name": "AReaL",
+   "slug": "areal",
+   "url": "https://areal-ai.io/",
+   "website": "https://areal-ai.io/",
+   "github": "https://github.com/areal-project/AReaL",
+   "category": "frameworks",
+   "description": "Reinforcement learning system for training LLM-based agents.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5839 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "areal-project/AReaL",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/areal.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/areal.html"
+  },
+  {
+   "name": "Klavis AI",
+   "slug": "klavis-ai",
+   "url": "https://www.klavis.ai/",
+   "website": "https://www.klavis.ai/",
+   "github": "https://github.com/Klavis-AI/klavis",
+   "category": "MCP & infra",
+   "description": "MCP integration platform that lets agents use many tools reliably at scale.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "5812 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Klavis-AI/klavis",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/klavis-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/klavis-ai.html"
+  },
+  {
+   "name": "PySpur",
+   "slug": "pyspur",
+   "url": "https://www.pyspur.dev/",
+   "website": "https://www.pyspur.dev/",
+   "github": "https://github.com/PySpur-Dev/pyspur",
+   "category": "no-code builders",
+   "description": "Visual playground for building and iterating on agent workflows.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5793 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "PySpur-Dev/pyspur",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/pyspur.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/pyspur.html"
+  },
+  {
+   "name": "Potpie",
+   "slug": "potpie",
+   "url": "https://potpie.ai/",
+   "website": "https://potpie.ai/",
+   "github": "https://github.com/potpie-ai/potpie",
+   "category": "coding",
+   "description": "Builds a knowledge graph of your codebase so agents can help across the software lifecycle.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "5743 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "potpie-ai/potpie",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/potpie.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/potpie.html"
+  },
+  {
+   "name": "Tokscale",
+   "slug": "tokscale",
+   "url": "https://tokscale.ai/",
+   "website": "https://tokscale.ai/",
+   "github": "https://github.com/junhoyeo/tokscale",
+   "category": "coding",
+   "description": "Tracks token usage across AI coding agents from your terminal.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5695 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "junhoyeo/tokscale",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/tokscale.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/tokscale.html"
+  },
+  {
+   "name": "ZenML",
+   "slug": "zenml",
+   "url": "https://www.zenml.io/",
+   "website": "https://www.zenml.io/",
+   "github": "https://github.com/zenml-io/zenml",
+   "category": "frameworks",
+   "description": "MLOps and agent platform for building pipelines and deploying agents.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "5616 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "zenml-io/zenml",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/zenml.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/zenml.html"
+  },
+  {
+   "name": "Failproof AI",
+   "slug": "failproof-ai",
+   "url": "https://befailproof.ai/",
+   "website": "https://befailproof.ai/",
+   "github": "https://github.com/FailproofAI/failproofai",
+   "category": "evals & observability",
+   "description": "Observability and policy enforcement for AI agent harnesses.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5560 GitHub stars",
+    "Build an agent",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "FailproofAI/failproofai",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/failproof-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/failproof-ai.html"
+  },
+  {
+   "name": "Wigolo",
+   "slug": "wigolo",
+   "url": "https://wigolo.app/",
+   "website": "https://wigolo.app/",
+   "github": "https://github.com/KnockOutEZ/wigolo",
+   "category": "MCP & infra",
+   "description": "Local-first web search, fetch and crawl for coding agents over MCP, with no API keys.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5479 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "KnockOutEZ/wigolo",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/wigolo.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/wigolo.html"
+  },
+  {
+   "name": "Zotero MCP",
+   "slug": "zotero-mcp",
+   "url": "https://stevenyuyy.com/zotero-mcp/",
+   "website": "https://stevenyuyy.com/zotero-mcp/",
+   "github": "https://github.com/54yyyu/zotero-mcp",
+   "category": "MCP & infra",
+   "description": "MCP server that connects your Zotero research library to Claude and other assistants.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5433 GitHub stars",
+    "Build an agent",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "54yyyu/zotero-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/zotero-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/zotero-mcp.html"
+  },
+  {
+   "name": "VibeSDK",
+   "slug": "vibesdk",
+   "url": "https://build.cloudflare.dev/",
+   "website": "https://build.cloudflare.dev/",
+   "github": "https://github.com/cloudflare/vibesdk",
+   "category": "app builders",
+   "description": "Cloudflare's open-source kit for running your own vibe-coding platform.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5409 GitHub stars",
+    "Write code",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "cloudflare/vibesdk",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/vibesdk.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/vibesdk.html"
+  },
+  {
+   "name": "agentgateway",
+   "slug": "agentgateway",
+   "url": "https://agentgateway.dev/",
+   "website": "https://agentgateway.dev/",
+   "github": "https://github.com/agentgateway/agentgateway",
+   "category": "MCP & infra",
+   "description": "Proxy for AI agents and MCP servers with security and observability.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5373 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "agentgateway/agentgateway",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agentgateway.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agentgateway.html"
+  },
+  {
+   "name": "Olares",
+   "slug": "olares",
+   "url": "https://www.olares.com/",
+   "website": "https://www.olares.com/",
+   "github": "https://github.com/beclab/Olares",
+   "category": "MCP & infra",
+   "description": "Open-source personal cloud OS for running always-on agents at home.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5310 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "beclab/Olares",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/olares.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/olares.html"
+  },
+  {
+   "name": "CADAM",
+   "slug": "cadam",
+   "url": "https://adam.new/cadam/",
+   "website": "https://adam.new/cadam/",
+   "github": "https://github.com/Adam-CAD/CADAM",
+   "category": "productivity",
+   "description": "Open-source text-to-CAD web app.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5280 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Adam-CAD/CADAM",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/cadam.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/cadam.html"
+  },
+  {
+   "name": "Code-Graph-RAG",
+   "slug": "code-graph-rag",
+   "url": "https://code-graph-rag.com/",
+   "website": "https://code-graph-rag.com/",
+   "github": "https://github.com/vitali87/code-graph-rag",
+   "category": "coding",
+   "description": "Graph-based RAG for monorepos that lets agents query and edit multi-language code.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5259 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "vitali87/code-graph-rag",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/code-graph-rag.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/code-graph-rag.html"
+  },
+  {
+   "name": "Entire CLI",
+   "slug": "entire-cli",
+   "url": "https://entire.io/",
+   "website": "https://entire.io/",
+   "github": "https://github.com/entireio/cli",
+   "category": "coding",
+   "description": "CLI that captures AI agent sessions alongside your Git commits.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5187 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "entireio/cli",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/entire-cli.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/entire-cli.html"
+  },
+  {
+   "name": "PPTAgent",
+   "slug": "pptagent",
+   "url": "https://github.com/icip-cas/PPTAgent",
+   "website": "",
+   "github": "https://github.com/icip-cas/PPTAgent",
+   "category": "productivity",
+   "description": "Agentic framework that generates and refines PowerPoint presentations.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5122 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "icip-cas/PPTAgent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/pptagent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/pptagent.html"
+  },
+  {
+   "name": "Agent Device",
+   "slug": "agent-device",
+   "url": "https://agent-device.dev/",
+   "website": "https://agent-device.dev/",
+   "github": "https://github.com/callstack/agent-device",
+   "category": "browser/computer use",
+   "description": "Mobile app automation and verification for coding agents on iOS and Android.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5051 GitHub stars",
+    "Write code",
+    "Automate the browser",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "callstack/agent-device",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agent-device.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agent-device.html"
+  },
+  {
+   "name": "AG2",
+   "slug": "ag2",
+   "url": "https://www.ag2.ai/",
+   "website": "https://www.ag2.ai/",
+   "github": "https://github.com/ag2ai/ag2",
+   "category": "frameworks",
+   "description": "AG2, the community continuation of AutoGen, an open-source framework for multi-agent systems.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4999 GitHub stars",
+    "Build multi-agent systems",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "ag2ai/ag2",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ag2.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ag2.html"
+  },
+  {
+   "name": "ACI.dev",
+   "slug": "aci-dev",
+   "url": "https://www.aci.dev/",
+   "website": "https://www.aci.dev/",
+   "github": "https://github.com/aipotheosis-labs/aci",
+   "category": "MCP & infra",
+   "description": "Open-source tool-calling platform connecting hundreds of tools to agents.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "4911 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "aipotheosis-labs/aci",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/aci-dev.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/aci-dev.html"
+  },
+  {
+   "name": "Agenta",
+   "slug": "agenta",
+   "url": "https://github.com/Agenta-AI/agenta",
+   "website": "",
+   "github": "https://github.com/Agenta-AI/agenta",
+   "category": "evals & observability",
+   "description": "Open-source LLMOps platform for prompt management, evaluation and observability.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "4840 GitHub stars",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Agenta-AI/agenta",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agenta.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agenta.html"
+  },
+  {
+   "name": "Integuru",
+   "slug": "integuru",
+   "url": "https://www.integuru.com/",
+   "website": "https://www.integuru.com/",
+   "github": "https://github.com/Integuru-AI/Integuru",
+   "category": "coding",
+   "description": "Agent that builds integrations by reverse engineering platforms' internal APIs.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4781 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Integuru-AI/Integuru",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/integuru.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/integuru.html"
+  },
+  {
+   "name": "Liveblocks",
+   "slug": "liveblocks",
+   "url": "https://liveblocks.io/",
+   "website": "https://liveblocks.io/",
+   "github": "https://github.com/liveblocks/liveblocks",
+   "category": "MCP & infra",
+   "description": "Realtime collaboration infrastructure for multiplayer apps and AI agents.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "4756 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "liveblocks/liveblocks",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/liveblocks.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/liveblocks.html"
+  },
+  {
+   "name": "Deep Research (u14)",
+   "slug": "deep-research-u14",
+   "url": "https://research.u14.app/",
+   "website": "https://research.u14.app/",
+   "github": "https://github.com/u14app/deep-research",
+   "category": "research",
+   "description": "Deep research app that works with any LLM and exposes an API and MCP server.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4695 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "u14app/deep-research",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/deep-research-u14.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/deep-research-u14.html"
+  },
+  {
+   "name": "ContextForge",
+   "slug": "contextforge",
+   "url": "https://ibm.github.io/mcp-context-forge/",
+   "website": "https://ibm.github.io/mcp-context-forge/",
+   "github": "https://github.com/IBM/mcp-context-forge",
+   "category": "MCP & infra",
+   "description": "IBM's gateway and registry that fronts MCP, A2A and REST APIs with one endpoint.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4646 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "IBM/mcp-context-forge",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/contextforge.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/contextforge.html"
+  },
+  {
+   "name": "Koog",
+   "slug": "koog",
+   "url": "https://docs.koog.ai/",
+   "website": "https://docs.koog.ai/",
+   "github": "https://github.com/JetBrains/koog",
+   "category": "frameworks",
+   "description": "JetBrains' Kotlin framework for building predictable, enterprise-ready AI agents on the JVM.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4615 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "JetBrains/koog",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/koog.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/koog.html"
+  },
+  {
+   "name": "MCP C# SDK",
+   "slug": "mcp-c-sdk",
+   "url": "https://csharp.sdk.modelcontextprotocol.io/",
+   "website": "https://csharp.sdk.modelcontextprotocol.io/",
+   "github": "https://github.com/modelcontextprotocol/csharp-sdk",
+   "category": "MCP & infra",
+   "description": "Official C# SDK for building MCP servers and clients, maintained with Microsoft.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4586 GitHub stars",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "modelcontextprotocol/csharp-sdk",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mcp-c-sdk.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mcp-c-sdk.html"
+  },
+  {
+   "name": "Docker Agent",
+   "slug": "docker-agent",
+   "url": "https://docker.github.io/docker-agent/",
+   "website": "https://docker.github.io/docker-agent/",
+   "github": "https://github.com/docker/docker-agent",
+   "category": "frameworks",
+   "description": "Docker's agent builder and runtime for defining and running agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4546 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "docker/docker-agent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/docker-agent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/docker-agent.html"
+  },
+  {
+   "name": "nono",
+   "slug": "nono",
+   "url": "https://nono.sh/",
+   "website": "https://nono.sh/",
+   "github": "https://github.com/nolabs-ai/nono",
+   "category": "MCP & infra",
+   "description": "Zero-trust sandboxing for agent runtimes.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4535 GitHub stars",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "nolabs-ai/nono",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/nono.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/nono.html"
+  },
+  {
+   "name": "Agent Service Toolkit",
+   "slug": "agent-service-toolkit",
+   "url": "https://agent-service-toolkit.streamlit.app/",
+   "website": "https://agent-service-toolkit.streamlit.app/",
+   "github": "https://github.com/JoshuaC215/agent-service-toolkit",
+   "category": "frameworks",
+   "description": "Toolkit for running an agent service with LangGraph, FastAPI and Streamlit.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4530 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "JoshuaC215/agent-service-toolkit",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agent-service-toolkit.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agent-service-toolkit.html"
+  },
+  {
+   "name": "Embabel",
+   "slug": "embabel",
+   "url": "https://hub.embabel.com/",
+   "website": "https://hub.embabel.com/",
+   "github": "https://github.com/embabel/embabel-agent",
+   "category": "frameworks",
+   "description": "Agent framework for the JVM from the creator of Spring.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4519 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "embabel/embabel-agent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/embabel.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/embabel.html"
+  },
+  {
+   "name": "Judge0",
+   "slug": "judge0",
+   "url": "https://judge0.com/",
+   "website": "https://judge0.com/",
+   "github": "https://github.com/judge0/judge0",
+   "category": "MCP & infra",
+   "description": "Sandboxed code execution system for running untrusted code from people and AI.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "4482 GitHub stars",
+    "Write code",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "judge0/judge0",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/judge0.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/judge0.html"
+  },
+  {
+   "name": "Unity MCP",
+   "slug": "unity-mcp",
+   "url": "https://ai-game.dev/",
+   "website": "https://ai-game.dev/",
+   "github": "https://github.com/IvanMurzak/Unity-MCP",
+   "category": "MCP & infra",
+   "description": "MCP tools and CLI that let AI agents develop and test inside the Unity engine.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4482 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "IvanMurzak/Unity-MCP",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/unity-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/unity-mcp.html"
   }
  ]
 }

@@ -58,11 +58,12 @@ def verify(row):
   if site: cands+= [urljoin(site,'/apple-touch-icon.png'),urljoin(site,'/favicon.ico')]
   if owner_avatar: cands.append(owner_avatar)
   logo=None
+  cands=[c for c in cands if not re.search(r'github\.com/fluidicon|githubassets|figma\.com|google\.com/favicon',c)]
   for c in cands:
     im=getimg(c)
     if im: logo=(im,c);break
   if not logo: return {"err":"no logo","name":name}
-  pretty=name if (not repo or any(ch.isupper() for ch in name)) else name.replace('-',' ').replace('_',' ').title()
+  pretty=name if (not repo or row[5] or any(ch.isupper() for ch in name)) else name.replace('-',' ').replace('_',' ').title()
   e={"name":pretty,"url":site or f"https://github.com/{repo}","description":desc,"category":cat,"pricing":pr,
      "maturity":"Mature" if (stars or 0)>=5000 else "Active","audience":aud,"featured":False,"new":True,
      "verified":__import__('datetime').date.today().isoformat(),"pricing_detail":"","use_cases":[],
