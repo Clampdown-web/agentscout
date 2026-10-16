@@ -44,7 +44,7 @@ function render(push){
    row("Best for",function(t){var g=(t.tags&&t.tags.length?t.tags:t.goals)||[];return g.length?g.map(function(x){return '<span class="b">'+E(x)+'</span>'}).join(" "):"–"})+
    row("Added",function(t){return fmt(t.added)})+
    row("Links",btns)+'</tbody></table></div>';
-  if(push){var u=location.pathname+"?a="+encodeURIComponent(a.slug)+"&b="+encodeURIComponent(b.slug);history.replaceState(null,"",u);if(window.ASTrack)ASTrack("compare_pick",a.slug+"|"+b.slug)}
+  if(push){var u=location.pathname+"?a="+encodeURIComponent(a.slug)+"&b="+encodeURIComponent(b.slug);history.replaceState(null,"",u);if(window.ASTrack)ASTrack("compare_pick",a.slug+":"+b.slug)}
 }
 document.getElementById("cp-go").addEventListener("click",function(){render(true)});
 document.getElementById("cp-swap").addEventListener("click",function(){var x=sel.a;A.set(sel.b);Bx.set(x);render(!!(BS[sel.a]&&BS[sel.b]))});
