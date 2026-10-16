@@ -16,11 +16,13 @@
       "business agents"
     ],
     "slug": "siena-social-agent",
-    "logo": "assets/logos/siena-social-agent.png"
+    "logo": "assets/logos/siena-social-agent.png",
+    "github": "",
+    "website": "https://www.siena.cx"
   },
   {
     "name": "Orca Agent Engine",
-    "url": "https://github.com/orca-ae/orca-agent-engine",
+    "url": "https://www.runorca.ai",
     "description": "Open Apache-2.0 runtime to build, run, and govern managed agents with choice of harness (Claude Agent SDK, Codex, Pi) and model; open-sourced Oct 6, 2026 (Developer Preview).",
     "category": "frameworks",
     "pricing": "Open source",
@@ -37,7 +39,9 @@
       "build an agent"
     ],
     "slug": "orca-agent-engine",
-    "logo": "assets/logos/orca-agent-engine.png"
+    "logo": "assets/logos/orca-agent-engine.png",
+    "github": "https://github.com/orca-ae/orca-agent-engine",
+    "website": "https://www.runorca.ai"
   },
   {
     "name": "Ruflo",
@@ -60,7 +64,9 @@
       "automate workflows"
     ],
     "slug": "ruflo",
-    "logo": "assets/logos/ruflo.png"
+    "logo": "assets/logos/ruflo.png",
+    "github": "https://github.com/ruvnet/ruflo",
+    "website": ""
   },
   {
     "name": "Kore.ai Autoloop",
@@ -79,11 +85,13 @@
       "monitor & evaluate agents"
     ],
     "slug": "kore-ai-autoloop",
-    "logo": "assets/logos/kore-ai-autoloop.png"
+    "logo": "assets/logos/kore-ai-autoloop.png",
+    "github": "",
+    "website": "https://www.kore.ai"
   },
   {
     "name": "Hermes Agent (Nous Research)",
-    "url": "https://github.com/NousResearch/hermes-agent",
+    "url": "https://hermes-agent.nousresearch.com",
     "description": "Open-source agent harness; v0.21.7 stable shipped Oct 12, v0.22.0 RCs Oct 13-14.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -101,11 +109,13 @@
       "research the web"
     ],
     "slug": "hermes-agent-nous-research",
-    "logo": "assets/logos/hermes-agent-nous-research.png"
+    "logo": "assets/logos/hermes-agent-nous-research.png",
+    "github": "https://github.com/NousResearch/hermes-agent",
+    "website": "https://hermes-agent.nousresearch.com"
   },
   {
     "name": "OpenAI Agents SDK (Python)",
-    "url": "https://github.com/openai/openai-agents-python",
+    "url": "https://openai.github.io/openai-agents-python/",
     "description": "OpenAI's Python SDK for building multi-agent workflows; v0.23.0/0.23.1 released Oct 1-2.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -124,11 +134,13 @@
       "automate workflows"
     ],
     "slug": "openai-agents-sdk-python",
-    "logo": "assets/logos/openai-agents-sdk-python.png"
+    "logo": "assets/logos/openai-agents-sdk-python.png",
+    "github": "https://github.com/openai/openai-agents-python",
+    "website": "https://openai.github.io/openai-agents-python/"
   },
   {
     "name": "LangChain Deep Agents",
-    "url": "https://github.com/langchain-ai/deepagents",
+    "url": "https://docs.langchain.com/deepagents",
     "description": "Library for long-running agents with subagents and skills; 0.7.23 (Oct 7) adds pinned_skills.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -146,11 +158,13 @@
       "build an agent"
     ],
     "slug": "langchain-deep-agents",
-    "logo": "assets/logos/langchain-deep-agents.png"
+    "logo": "assets/logos/langchain-deep-agents.png",
+    "github": "https://github.com/langchain-ai/deepagents",
+    "website": "https://docs.langchain.com/deepagents"
   },
   {
     "name": "GitHub Agentic Workflows (gh-aw)",
-    "url": "https://github.com/github/gh-aw",
+    "url": "https://github.github.com/gh-aw/",
     "description": "Run AI agents in GitHub Actions workflows; v0.91.10 pre-release (Oct 13) defaults read-only workflows to no network.",
     "category": "coding",
     "pricing": "Open source",
@@ -168,7 +182,9 @@
       "automate workflows"
     ],
     "slug": "github-agentic-workflows-gh-aw",
-    "logo": "assets/logos/github-agentic-workflows-gh-aw.png"
+    "logo": "assets/logos/github-agentic-workflows-gh-aw.png",
+    "github": "https://github.com/github/gh-aw",
+    "website": "https://github.github.com/gh-aw/"
   },
   {
     "name": "Jevgrep",
@@ -189,11 +205,13 @@
       "write code"
     ],
     "slug": "jevgrep",
-    "logo": "assets/logos/jevgrep.png"
+    "logo": "assets/logos/jevgrep.png",
+    "github": "https://github.com/dzhng/jevgrep",
+    "website": ""
   },
   {
     "name": "NVIDIA OpenShell",
-    "url": "https://github.com/nvidia/openShell",
+    "url": "https://docs.nvidia.com/openshell/latest/",
     "description": "Sandboxed runtime for autonomous agents with declarative YAML policies on file, network and credential access.",
     "category": "MCP & infra",
     "pricing": "Open source",
@@ -211,7 +229,9 @@
       "run code safely"
     ],
     "slug": "nvidia-openshell",
-    "logo": "assets/logos/nvidia-openshell.png"
+    "logo": "assets/logos/nvidia-openshell.png",
+    "github": "https://github.com/nvidia/openShell",
+    "website": "https://docs.nvidia.com/openshell/latest/"
   },
   {
     "name": "NVIDIA Open Agent Safety Platform",
@@ -231,7 +251,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "nvidia-open-agent-safety-platform",
-    "logo": "assets/logos/nvidia-open-agent-safety-platform.png"
+    "logo": "assets/logos/nvidia-open-agent-safety-platform.png",
+    "github": "",
+    "website": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
   },
   {
     "name": "CoreWeave Forge",
@@ -251,7 +273,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "coreweave-forge",
-    "logo": "assets/logos/coreweave-forge.png"
+    "logo": "assets/logos/coreweave-forge.png",
+    "github": "",
+    "website": "https://forge.coreweave.com"
   },
   {
     "name": "Roboflow Agent",
@@ -272,11 +296,13 @@
       "computer vision"
     ],
     "slug": "roboflow-agent",
-    "logo": "assets/logos/roboflow-agent.png"
+    "logo": "assets/logos/roboflow-agent.png",
+    "github": "",
+    "website": "https://roboflow.com"
   },
   {
     "name": "Voiceloop",
-    "url": "https://github.com/todoforai/voiceloop",
+    "url": "https://todoforai.github.io/voiceloop/",
     "description": "Zero-dependency JS library for an interruptible in-browser voice loop (VAD, STT, LLM, TTS).",
     "category": "voice",
     "pricing": "Open source",
@@ -295,7 +321,9 @@
       "voice & phone calls"
     ],
     "slug": "voiceloop",
-    "logo": "assets/logos/voiceloop.png"
+    "logo": "assets/logos/voiceloop.png",
+    "github": "https://github.com/todoforai/voiceloop",
+    "website": "https://todoforai.github.io/voiceloop/"
   },
   {
     "name": "Cicero",
@@ -318,7 +346,9 @@
       "voice & phone calls"
     ],
     "slug": "cicero",
-    "logo": "assets/logos/cicero.png"
+    "logo": "assets/logos/cicero.png",
+    "github": "https://github.com/5uck1ess/cicero",
+    "website": ""
   },
   {
     "name": "TryVoice",
@@ -340,7 +370,9 @@
       "voice & phone calls"
     ],
     "slug": "tryvoice",
-    "logo": "assets/logos/tryvoice.png"
+    "logo": "assets/logos/tryvoice.png",
+    "github": "https://github.com/TryAILab/tryvoice-oss",
+    "website": ""
   },
   {
     "name": "Holo4 (H Company)",
@@ -360,7 +392,9 @@
       "control a computer"
     ],
     "slug": "holo4-h-company",
-    "logo": "assets/logos/holo4-h-company.png"
+    "logo": "assets/logos/holo4-h-company.png",
+    "github": "",
+    "website": "https://www.hcompany.ai"
   },
   {
     "name": "Manifold MCP",
@@ -379,7 +413,9 @@
       "connect tools via MCP"
     ],
     "slug": "manifold-mcp",
-    "logo": "assets/logos/manifold-mcp.png"
+    "logo": "assets/logos/manifold-mcp.png",
+    "github": "",
+    "website": "https://manifoldmcp.com"
   },
   {
     "name": "NanoMuse",
@@ -398,11 +434,13 @@
       "voice & phone calls"
     ],
     "slug": "nanomuse",
-    "logo": "assets/logos/nanomuse.png"
+    "logo": "assets/logos/nanomuse.png",
+    "github": "https://github.com/nano-muse",
+    "website": ""
   },
   {
     "name": "OpenPilot",
-    "url": "https://github.com/ibmshaikh/OpenPilot",
+    "url": "https://openpilot.in/",
     "description": "Free desktop agent for any OpenAI-compatible model; edits files and runs commands in a folder with approvals.",
     "category": "personal agents",
     "pricing": "Open source",
@@ -419,7 +457,9 @@
       "control a computer"
     ],
     "slug": "openpilot",
-    "logo": "assets/logos/openpilot.png"
+    "logo": "assets/logos/openpilot.png",
+    "github": "https://github.com/ibmshaikh/OpenPilot",
+    "website": "https://openpilot.in/"
   },
   {
     "name": "OpenSwarm",
@@ -440,7 +480,9 @@
       "build multi-agent systems"
     ],
     "slug": "openswarm",
-    "logo": "assets/logos/openswarm.png"
+    "logo": "assets/logos/openswarm.png",
+    "github": "",
+    "website": "https://openswarm.com"
   },
   {
     "name": "ExcaliClaw",
@@ -460,7 +502,9 @@
       "make diagrams"
     ],
     "slug": "excaliclaw",
-    "logo": "assets/logos/excaliclaw.png"
+    "logo": "assets/logos/excaliclaw.png",
+    "github": "",
+    "website": "https://excaliclaw.com"
   },
   {
     "name": "kōdlo",
@@ -481,7 +525,9 @@
       "sales & support"
     ],
     "slug": "k-dlo",
-    "logo": "assets/logos/k-dlo.png"
+    "logo": "assets/logos/k-dlo.png",
+    "github": "",
+    "website": "https://kodlo.ai"
   },
   {
     "name": "Trig",
@@ -500,7 +546,9 @@
       "sales & support"
     ],
     "slug": "trig",
-    "logo": "assets/logos/trig.png"
+    "logo": "assets/logos/trig.png",
+    "github": "",
+    "website": "https://www.trig.ai"
   },
   {
     "name": "Cresta Deputy Agent",
@@ -520,7 +568,9 @@
       "sales & support"
     ],
     "slug": "cresta-deputy-agent",
-    "logo": "assets/logos/cresta-deputy-agent.png"
+    "logo": "assets/logos/cresta-deputy-agent.png",
+    "github": "",
+    "website": "https://cresta.com/deputy-agent"
   },
   {
     "name": "Meta Muse Wonder",
@@ -539,11 +589,13 @@
       "models"
     ],
     "slug": "meta-muse-wonder",
-    "logo": "assets/logos/meta-muse-wonder.png"
+    "logo": "assets/logos/meta-muse-wonder.png",
+    "github": "",
+    "website": "https://research.meta.ai/blog/muse-wonder"
   },
   {
     "name": "Claude Code",
-    "url": "https://github.com/anthropics/claude-code",
+    "url": "https://www.claude.com/product/claude-code",
     "description": "Anthropic's terminal coding agent that edits code, runs commands and handles git.",
     "category": "coding",
     "pricing": "Paid",
@@ -560,11 +612,13 @@
       "write code"
     ],
     "slug": "claude-code",
-    "logo": "assets/logos/claude-code.png"
+    "logo": "assets/logos/claude-code.png",
+    "github": "https://github.com/anthropics/claude-code",
+    "website": "https://www.claude.com/product/claude-code"
   },
   {
     "name": "OpenAI Codex CLI",
-    "url": "https://github.com/openai/codex",
+    "url": "https://developers.openai.com/codex/cli",
     "description": "OpenAI's open-source coding agent for the terminal; also runs in the cloud.",
     "category": "coding",
     "pricing": "Open source",
@@ -581,7 +635,9 @@
       "write code"
     ],
     "slug": "openai-codex-cli",
-    "logo": "assets/logos/openai-codex-cli.png"
+    "logo": "assets/logos/openai-codex-cli.png",
+    "github": "https://github.com/openai/codex",
+    "website": "https://developers.openai.com/codex/cli"
   },
   {
     "name": "Cursor",
@@ -600,7 +656,9 @@
       "write code"
     ],
     "slug": "cursor",
-    "logo": "assets/logos/cursor.png"
+    "logo": "assets/logos/cursor.png",
+    "github": "",
+    "website": "https://cursor.com"
   },
   {
     "name": "Devin",
@@ -619,11 +677,13 @@
       "write code"
     ],
     "slug": "devin",
-    "logo": "assets/logos/devin.png"
+    "logo": "assets/logos/devin.png",
+    "github": "",
+    "website": "https://devin.ai"
   },
   {
     "name": "OpenHands",
-    "url": "https://github.com/OpenHands/OpenHands",
+    "url": "https://openhands.dev",
     "description": "Open-source platform for autonomous coding agents.",
     "category": "coding",
     "pricing": "Open source + cloud",
@@ -640,7 +700,9 @@
       "write code"
     ],
     "slug": "openhands",
-    "logo": "assets/logos/openhands.png"
+    "logo": "assets/logos/openhands.png",
+    "github": "https://github.com/OpenHands/OpenHands",
+    "website": "https://openhands.dev"
   },
   {
     "name": "Aider",
@@ -659,11 +721,13 @@
       "write code"
     ],
     "slug": "aider",
-    "logo": "assets/logos/aider.png"
+    "logo": "assets/logos/aider.png",
+    "github": "https://github.com/Aider-AI/aider",
+    "website": "https://aider.chat"
   },
   {
     "name": "Cline",
-    "url": "https://github.com/cline/cline",
+    "url": "https://cline.bot",
     "description": "Autonomous coding agent inside VS Code with step-by-step approvals.",
     "category": "coding",
     "pricing": "Open source",
@@ -680,11 +744,13 @@
       "write code"
     ],
     "slug": "cline",
-    "logo": "assets/logos/cline.png"
+    "logo": "assets/logos/cline.png",
+    "github": "https://github.com/cline/cline",
+    "website": "https://cline.bot"
   },
   {
     "name": "Roo Code",
-    "url": "https://github.com/RooCodeInc/Roo-Code",
+    "url": "https://roocode.com",
     "description": "VS Code agent with custom modes (architect, code, debug).",
     "category": "coding",
     "pricing": "Open source",
@@ -701,7 +767,9 @@
       "write code"
     ],
     "slug": "roo-code",
-    "logo": "assets/logos/roo-code.png"
+    "logo": "assets/logos/roo-code.png",
+    "github": "https://github.com/RooCodeInc/Roo-Code",
+    "website": "https://roocode.com"
   },
   {
     "name": "Windsurf",
@@ -720,11 +788,13 @@
       "write code"
     ],
     "slug": "windsurf",
-    "logo": "assets/logos/windsurf.png"
+    "logo": "assets/logos/windsurf.png",
+    "github": "",
+    "website": "https://devin.ai/desktop"
   },
   {
     "name": "opencode",
-    "url": "https://github.com/anomalyco/opencode",
+    "url": "https://opencode.ai",
     "description": "Open-source terminal coding agent that works with many model providers.",
     "category": "coding",
     "pricing": "Open source",
@@ -741,7 +811,9 @@
       "write code"
     ],
     "slug": "opencode",
-    "logo": "assets/logos/opencode.png"
+    "logo": "assets/logos/opencode.png",
+    "github": "https://github.com/anomalyco/opencode",
+    "website": "https://opencode.ai"
   },
   {
     "name": "Amp",
@@ -760,11 +832,13 @@
       "write code"
     ],
     "slug": "amp",
-    "logo": "assets/logos/amp.png"
+    "logo": "assets/logos/amp.png",
+    "github": "",
+    "website": "https://ampcode.com"
   },
   {
     "name": "Gemini CLI",
-    "url": "https://github.com/google-gemini/gemini-cli",
+    "url": "https://geminicli.com",
     "description": "Google's open-source terminal agent powered by Gemini.",
     "category": "coding",
     "pricing": "Open source",
@@ -781,7 +855,9 @@
       "write code"
     ],
     "slug": "gemini-cli",
-    "logo": "assets/logos/gemini-cli.png"
+    "logo": "assets/logos/gemini-cli.png",
+    "github": "https://github.com/google-gemini/gemini-cli",
+    "website": "https://geminicli.com"
   },
   {
     "name": "GitHub Copilot",
@@ -800,7 +876,9 @@
       "write code"
     ],
     "slug": "github-copilot",
-    "logo": "assets/logos/github-copilot.png"
+    "logo": "assets/logos/github-copilot.png",
+    "github": "",
+    "website": "https://github.com/features/copilot"
   },
   {
     "name": "Replit Agent",
@@ -821,7 +899,9 @@
       "build apps without code"
     ],
     "slug": "replit-agent",
-    "logo": "assets/logos/replit-agent.png"
+    "logo": "assets/logos/replit-agent.png",
+    "github": "",
+    "website": "https://replit.com"
   },
   {
     "name": "Bolt",
@@ -841,7 +921,9 @@
       "automate workflows"
     ],
     "slug": "bolt",
-    "logo": "assets/logos/bolt.png"
+    "logo": "assets/logos/bolt.png",
+    "github": "https://github.com/stackblitz/bolt.new",
+    "website": "https://bolt.new"
   },
   {
     "name": "v0",
@@ -861,11 +943,13 @@
       "build apps without code"
     ],
     "slug": "v0",
-    "logo": "assets/logos/v0.png"
+    "logo": "assets/logos/v0.png",
+    "github": "",
+    "website": "https://v0.app"
   },
   {
     "name": "Browser Use",
-    "url": "https://github.com/browser-use/browser-use",
+    "url": "https://browser-use.com",
     "description": "Library that lets AI agents control a web browser.",
     "category": "browser/computer use",
     "pricing": "Open source + cloud",
@@ -882,7 +966,9 @@
       "automate the browser"
     ],
     "slug": "browser-use",
-    "logo": "assets/logos/browser-use.png"
+    "logo": "assets/logos/browser-use.png",
+    "github": "https://github.com/browser-use/browser-use",
+    "website": "https://browser-use.com"
   },
   {
     "name": "Browserbase",
@@ -901,11 +987,13 @@
       "automate the browser"
     ],
     "slug": "browserbase",
-    "logo": "assets/logos/browserbase.png"
+    "logo": "assets/logos/browserbase.png",
+    "github": "",
+    "website": "https://www.browserbase.com"
   },
   {
     "name": "Stagehand",
-    "url": "https://github.com/browserbase/stagehand",
+    "url": "https://stagehand.dev",
     "description": "Browser automation framework mixing code with natural-language actions.",
     "category": "browser/computer use",
     "pricing": "Open source",
@@ -924,7 +1012,9 @@
       "build an agent"
     ],
     "slug": "stagehand",
-    "logo": "assets/logos/stagehand.png"
+    "logo": "assets/logos/stagehand.png",
+    "github": "https://github.com/browserbase/stagehand",
+    "website": "https://stagehand.dev"
   },
   {
     "name": "Playwright MCP",
@@ -946,7 +1036,9 @@
       "connect tools via MCP"
     ],
     "slug": "playwright-mcp",
-    "logo": "assets/logos/playwright-mcp.png"
+    "logo": "assets/logos/playwright-mcp.png",
+    "github": "https://github.com/microsoft/playwright-mcp",
+    "website": ""
   },
   {
     "name": "Skyvern",
@@ -967,7 +1059,9 @@
       "computer vision"
     ],
     "slug": "skyvern",
-    "logo": "assets/logos/skyvern.png"
+    "logo": "assets/logos/skyvern.png",
+    "github": "https://github.com/Skyvern-AI/skyvern",
+    "website": "https://www.skyvern.com"
   },
   {
     "name": "Manus",
@@ -987,11 +1081,13 @@
       "research the web"
     ],
     "slug": "manus",
-    "logo": "assets/logos/manus.png"
+    "logo": "assets/logos/manus.png",
+    "github": "",
+    "website": "https://manus.im"
   },
   {
     "name": "OpenClaw",
-    "url": "https://github.com/openclaw/openclaw",
+    "url": "https://openclaw.ai",
     "description": "Open-source personal agent you run yourself and reach over chat apps.",
     "category": "personal agents",
     "pricing": "Open source",
@@ -1008,11 +1104,13 @@
       "automate workflows"
     ],
     "slug": "openclaw",
-    "logo": "assets/logos/openclaw.png"
+    "logo": "assets/logos/openclaw.png",
+    "github": "https://github.com/openclaw/openclaw",
+    "website": "https://openclaw.ai"
   },
   {
     "name": "LangGraph",
-    "url": "https://github.com/langchain-ai/langgraph",
+    "url": "https://www.langchain.com/langgraph",
     "description": "Framework for stateful, graph-based agent workflows.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -1030,11 +1128,13 @@
       "automate workflows"
     ],
     "slug": "langgraph",
-    "logo": "assets/logos/langgraph.png"
+    "logo": "assets/logos/langgraph.png",
+    "github": "https://github.com/langchain-ai/langgraph",
+    "website": "https://www.langchain.com/langgraph"
   },
   {
     "name": "CrewAI",
-    "url": "https://github.com/crewAIInc/crewAI",
+    "url": "https://crewai.com",
     "description": "Framework for role-based multi-agent crews.",
     "category": "frameworks",
     "pricing": "Open source + cloud",
@@ -1052,11 +1152,13 @@
       "build an agent"
     ],
     "slug": "crewai",
-    "logo": "assets/logos/crewai.png"
+    "logo": "assets/logos/crewai.png",
+    "github": "https://github.com/crewAIInc/crewAI",
+    "website": "https://crewai.com"
   },
   {
     "name": "AutoGen",
-    "url": "https://github.com/microsoft/autogen",
+    "url": "https://microsoft.github.io/autogen/",
     "description": "Microsoft's framework for multi-agent conversations.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -1074,11 +1176,13 @@
       "build an agent"
     ],
     "slug": "autogen",
-    "logo": "assets/logos/autogen.png"
+    "logo": "assets/logos/autogen.png",
+    "github": "https://github.com/microsoft/autogen",
+    "website": "https://microsoft.github.io/autogen/"
   },
   {
     "name": "Pydantic AI",
-    "url": "https://github.com/pydantic/pydantic-ai",
+    "url": "https://pydantic.dev/pydantic-ai",
     "description": "Type-safe Python agent framework from the Pydantic team.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -1095,11 +1199,13 @@
       "build an agent"
     ],
     "slug": "pydantic-ai",
-    "logo": "assets/logos/pydantic-ai.png"
+    "logo": "assets/logos/pydantic-ai.png",
+    "github": "https://github.com/pydantic/pydantic-ai",
+    "website": "https://pydantic.dev/pydantic-ai"
   },
   {
     "name": "Google ADK",
-    "url": "https://github.com/google/adk-python",
+    "url": "https://google.github.io/adk-docs/",
     "description": "Google's Agent Development Kit for building and deploying agents.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -1116,7 +1222,9 @@
       "build an agent"
     ],
     "slug": "google-adk",
-    "logo": "assets/logos/google-adk.png"
+    "logo": "assets/logos/google-adk.png",
+    "github": "https://github.com/google/adk-python",
+    "website": "https://google.github.io/adk-docs/"
   },
   {
     "name": "Mastra",
@@ -1136,11 +1244,13 @@
       "automate workflows"
     ],
     "slug": "mastra",
-    "logo": "assets/logos/mastra.png"
+    "logo": "assets/logos/mastra.png",
+    "github": "https://github.com/mastra-ai/mastra",
+    "website": "https://mastra.ai"
   },
   {
     "name": "smolagents",
-    "url": "https://github.com/huggingface/smolagents",
+    "url": "https://huggingface.co/docs/smolagents",
     "description": "Hugging Face's minimal library for code-writing agents.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -1158,11 +1268,13 @@
       "build an agent"
     ],
     "slug": "smolagents",
-    "logo": "assets/logos/smolagents.png"
+    "logo": "assets/logos/smolagents.png",
+    "github": "https://github.com/huggingface/smolagents",
+    "website": "https://huggingface.co/docs/smolagents"
   },
   {
     "name": "LlamaIndex",
-    "url": "https://github.com/run-llama/llama_index",
+    "url": "https://www.llamaindex.ai",
     "description": "Framework for agents over your data (RAG, document agents).",
     "category": "frameworks",
     "pricing": "Open source + cloud",
@@ -1179,7 +1291,9 @@
       "build an agent"
     ],
     "slug": "llamaindex",
-    "logo": "assets/logos/llamaindex.png"
+    "logo": "assets/logos/llamaindex.png",
+    "github": "https://github.com/run-llama/llama_index",
+    "website": "https://www.llamaindex.ai"
   },
   {
     "name": "Vercel AI SDK",
@@ -1199,11 +1313,13 @@
       "automate workflows"
     ],
     "slug": "vercel-ai-sdk",
-    "logo": "assets/logos/vercel-ai-sdk.png"
+    "logo": "assets/logos/vercel-ai-sdk.png",
+    "github": "https://github.com/vercel/ai",
+    "website": "https://ai-sdk.dev"
   },
   {
     "name": "GPT Researcher",
-    "url": "https://github.com/assafelovic/gpt-researcher",
+    "url": "https://gptr.dev",
     "description": "Autonomous agent that researches the web and writes cited reports.",
     "category": "research",
     "pricing": "Open source",
@@ -1221,7 +1337,9 @@
       "research the web"
     ],
     "slug": "gpt-researcher",
-    "logo": "assets/logos/gpt-researcher.png"
+    "logo": "assets/logos/gpt-researcher.png",
+    "github": "https://github.com/assafelovic/gpt-researcher",
+    "website": "https://gptr.dev"
   },
   {
     "name": "Elicit",
@@ -1240,11 +1358,13 @@
       "research the web"
     ],
     "slug": "elicit",
-    "logo": "assets/logos/elicit.png"
+    "logo": "assets/logos/elicit.png",
+    "github": "",
+    "website": "https://elicit.com"
   },
   {
     "name": "STORM",
-    "url": "https://github.com/stanford-oval/storm",
+    "url": "https://storm.genie.stanford.edu",
     "description": "Stanford system that writes Wikipedia-style articles from web research.",
     "category": "research",
     "pricing": "Open source",
@@ -1261,7 +1381,9 @@
       "research the web"
     ],
     "slug": "storm",
-    "logo": "assets/logos/storm.png"
+    "logo": "assets/logos/storm.png",
+    "github": "https://github.com/stanford-oval/storm",
+    "website": "https://storm.genie.stanford.edu"
   },
   {
     "name": "Firecrawl",
@@ -1280,7 +1402,9 @@
       "research the web"
     ],
     "slug": "firecrawl",
-    "logo": "assets/logos/firecrawl.png"
+    "logo": "assets/logos/firecrawl.png",
+    "github": "https://github.com/firecrawl/firecrawl",
+    "website": "https://firecrawl.dev"
   },
   {
     "name": "Exa",
@@ -1299,7 +1423,9 @@
       "research the web"
     ],
     "slug": "exa",
-    "logo": "assets/logos/exa.png"
+    "logo": "assets/logos/exa.png",
+    "github": "",
+    "website": "https://exa.ai"
   },
   {
     "name": "Tavily",
@@ -1319,7 +1445,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "tavily",
-    "logo": "assets/logos/tavily.png"
+    "logo": "assets/logos/tavily.png",
+    "github": "",
+    "website": "https://tavily.com"
   },
   {
     "name": "LiveKit Agents",
@@ -1339,11 +1467,13 @@
       "voice & phone calls"
     ],
     "slug": "livekit-agents",
-    "logo": "assets/logos/livekit-agents.png"
+    "logo": "assets/logos/livekit-agents.png",
+    "github": "https://github.com/livekit/agents",
+    "website": "https://livekit.com"
   },
   {
     "name": "Pipecat",
-    "url": "https://github.com/pipecat-ai/pipecat",
+    "url": "https://pipecat.ai",
     "description": "Open-source framework for voice and multimodal conversational agents.",
     "category": "voice",
     "pricing": "Open source",
@@ -1361,7 +1491,9 @@
       "voice & phone calls"
     ],
     "slug": "pipecat",
-    "logo": "assets/logos/pipecat.png"
+    "logo": "assets/logos/pipecat.png",
+    "github": "https://github.com/pipecat-ai/pipecat",
+    "website": "https://pipecat.ai"
   },
   {
     "name": "Vapi",
@@ -1380,7 +1512,9 @@
       "voice & phone calls"
     ],
     "slug": "vapi",
-    "logo": "assets/logos/vapi.png"
+    "logo": "assets/logos/vapi.png",
+    "github": "",
+    "website": "https://vapi.ai"
   },
   {
     "name": "ElevenLabs Agents",
@@ -1399,7 +1533,9 @@
       "voice & phone calls"
     ],
     "slug": "elevenlabs-agents",
-    "logo": "assets/logos/elevenlabs-agents.png"
+    "logo": "assets/logos/elevenlabs-agents.png",
+    "github": "",
+    "website": "https://elevenlabs.io"
   },
   {
     "name": "Retell AI",
@@ -1418,7 +1554,9 @@
       "voice & phone calls"
     ],
     "slug": "retell-ai",
-    "logo": "assets/logos/retell-ai.png"
+    "logo": "assets/logos/retell-ai.png",
+    "github": "",
+    "website": "https://www.retellai.com"
   },
   {
     "name": "n8n",
@@ -1439,7 +1577,9 @@
       "build apps without code"
     ],
     "slug": "n8n",
-    "logo": "assets/logos/n8n.png"
+    "logo": "assets/logos/n8n.png",
+    "github": "https://github.com/n8n-io/n8n",
+    "website": "https://n8n.io"
   },
   {
     "name": "Make",
@@ -1460,7 +1600,9 @@
       "build apps without code"
     ],
     "slug": "make",
-    "logo": "assets/logos/make.png"
+    "logo": "assets/logos/make.png",
+    "github": "",
+    "website": "https://www.make.com"
   },
   {
     "name": "Zapier Agents",
@@ -1481,7 +1623,9 @@
       "build apps without code"
     ],
     "slug": "zapier-agents",
-    "logo": "assets/logos/zapier-agents.png"
+    "logo": "assets/logos/zapier-agents.png",
+    "github": "",
+    "website": "https://zapier.com/agents"
   },
   {
     "name": "Lindy",
@@ -1501,7 +1645,9 @@
       "build apps without code"
     ],
     "slug": "lindy",
-    "logo": "assets/logos/lindy.png"
+    "logo": "assets/logos/lindy.png",
+    "github": "",
+    "website": "https://www.lindy.ai"
   },
   {
     "name": "Relevance AI",
@@ -1521,11 +1667,13 @@
       "build apps without code"
     ],
     "slug": "relevance-ai",
-    "logo": "assets/logos/relevance-ai.png"
+    "logo": "assets/logos/relevance-ai.png",
+    "github": "",
+    "website": "https://www.relevanceai.com"
   },
   {
     "name": "Dify",
-    "url": "https://github.com/langgenius/dify",
+    "url": "https://dify.ai",
     "description": "Open-source platform for building LLM apps and agents visually.",
     "category": "no-code builders",
     "pricing": "Open source + cloud",
@@ -1544,11 +1692,13 @@
       "build apps without code"
     ],
     "slug": "dify",
-    "logo": "assets/logos/dify.png"
+    "logo": "assets/logos/dify.png",
+    "github": "https://github.com/langgenius/dify",
+    "website": "https://dify.ai"
   },
   {
     "name": "Flowise",
-    "url": "https://github.com/FlowiseAI/Flowise",
+    "url": "https://flowiseai.com",
     "description": "Drag-and-drop builder for agents and LLM flows.",
     "category": "no-code builders",
     "pricing": "Open source + cloud",
@@ -1566,7 +1716,9 @@
       "build apps without code"
     ],
     "slug": "flowise",
-    "logo": "assets/logos/flowise.png"
+    "logo": "assets/logos/flowise.png",
+    "github": "https://github.com/FlowiseAI/Flowise",
+    "website": "https://flowiseai.com"
   },
   {
     "name": "Model Context Protocol",
@@ -1585,11 +1737,13 @@
       "connect tools via MCP"
     ],
     "slug": "model-context-protocol",
-    "logo": "assets/logos/model-context-protocol.png"
+    "logo": "assets/logos/model-context-protocol.png",
+    "github": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+    "website": "https://modelcontextprotocol.io"
   },
   {
     "name": "MCP reference servers",
-    "url": "https://github.com/modelcontextprotocol/servers",
+    "url": "https://modelcontextprotocol.io",
     "description": "Official collection of reference MCP servers.",
     "category": "MCP & infra",
     "pricing": "Open source",
@@ -1606,7 +1760,9 @@
       "connect tools via MCP"
     ],
     "slug": "mcp-reference-servers",
-    "logo": "assets/logos/mcp-reference-servers.png"
+    "logo": "assets/logos/mcp-reference-servers.png",
+    "github": "https://github.com/modelcontextprotocol/servers",
+    "website": "https://modelcontextprotocol.io"
   },
   {
     "name": "Smithery",
@@ -1625,7 +1781,9 @@
       "connect tools via MCP"
     ],
     "slug": "smithery",
-    "logo": "assets/logos/smithery.png"
+    "logo": "assets/logos/smithery.png",
+    "github": "",
+    "website": "https://smithery.ai"
   },
   {
     "name": "E2B",
@@ -1646,7 +1804,9 @@
       "run code safely"
     ],
     "slug": "e2b",
-    "logo": "assets/logos/e2b.png"
+    "logo": "assets/logos/e2b.png",
+    "github": "https://github.com/e2b-dev/E2B",
+    "website": "https://e2b.dev"
   },
   {
     "name": "Modal",
@@ -1666,7 +1826,9 @@
       "run code safely"
     ],
     "slug": "modal",
-    "logo": "assets/logos/modal.png"
+    "logo": "assets/logos/modal.png",
+    "github": "",
+    "website": "https://modal.com"
   },
   {
     "name": "Composio",
@@ -1686,11 +1848,13 @@
       "connect tools via MCP"
     ],
     "slug": "composio",
-    "logo": "assets/logos/composio.png"
+    "logo": "assets/logos/composio.png",
+    "github": "https://github.com/ComposioHQ/composio",
+    "website": "https://composio.dev"
   },
   {
     "name": "Mem0",
-    "url": "https://github.com/mem0ai/mem0",
+    "url": "https://mem0.ai",
     "description": "Memory layer for AI agents.",
     "category": "MCP & infra",
     "pricing": "Open source + cloud",
@@ -1708,11 +1872,13 @@
       "give agents memory"
     ],
     "slug": "mem0",
-    "logo": "assets/logos/mem0.png"
+    "logo": "assets/logos/mem0.png",
+    "github": "https://github.com/mem0ai/mem0",
+    "website": "https://mem0.ai"
   },
   {
     "name": "Letta",
-    "url": "https://github.com/letta-ai/letta",
+    "url": "https://www.letta.com",
     "description": "Framework for stateful agents with long-term memory (formerly MemGPT).",
     "category": "frameworks",
     "pricing": "Open source + cloud",
@@ -1730,7 +1896,9 @@
       "give agents memory"
     ],
     "slug": "letta",
-    "logo": "assets/logos/letta.png"
+    "logo": "assets/logos/letta.png",
+    "github": "https://github.com/letta-ai/letta",
+    "website": "https://www.letta.com"
   },
   {
     "name": "LangSmith",
@@ -1750,7 +1918,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "langsmith",
-    "logo": "assets/logos/langsmith.png"
+    "logo": "assets/logos/langsmith.png",
+    "github": "https://github.com/langchain-ai/langsmith-sdk",
+    "website": "https://www.langchain.com/langsmith"
   },
   {
     "name": "Langfuse",
@@ -1769,7 +1939,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "langfuse",
-    "logo": "assets/logos/langfuse.png"
+    "logo": "assets/logos/langfuse.png",
+    "github": "https://github.com/langfuse/langfuse",
+    "website": "https://langfuse.com"
   },
   {
     "name": "Braintrust",
@@ -1788,11 +1960,13 @@
       "monitor & evaluate agents"
     ],
     "slug": "braintrust",
-    "logo": "assets/logos/braintrust.png"
+    "logo": "assets/logos/braintrust.png",
+    "github": "",
+    "website": "https://www.braintrust.dev"
   },
   {
     "name": "Arize Phoenix",
-    "url": "https://github.com/Arize-ai/phoenix",
+    "url": "https://phoenix.arize.com",
     "description": "Open-source tracing and evaluation for LLM apps.",
     "category": "evals & observability",
     "pricing": "Open source",
@@ -1810,7 +1984,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "arize-phoenix",
-    "logo": "assets/logos/arize-phoenix.png"
+    "logo": "assets/logos/arize-phoenix.png",
+    "github": "https://github.com/Arize-ai/phoenix",
+    "website": "https://phoenix.arize.com"
   },
   {
     "name": "W&B Weave",
@@ -1830,7 +2006,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "w-b-weave",
-    "logo": "assets/logos/w-b-weave.png"
+    "logo": "assets/logos/w-b-weave.png",
+    "github": "https://github.com/wandb/weave",
+    "website": "https://wandb.ai/site/weave"
   },
   {
     "name": "AgentOps",
@@ -1849,7 +2027,9 @@
       "monitor & evaluate agents"
     ],
     "slug": "agentops",
-    "logo": "assets/logos/agentops.png"
+    "logo": "assets/logos/agentops.png",
+    "github": "https://github.com/AgentOps-AI/agentops",
+    "website": "https://agentops.ai"
   },
   {
     "name": "Helicone",
@@ -1868,11 +2048,13 @@
       "monitor & evaluate agents"
     ],
     "slug": "helicone",
-    "logo": "assets/logos/helicone.png"
+    "logo": "assets/logos/helicone.png",
+    "github": "https://github.com/Helicone/helicone",
+    "website": "https://www.helicone.ai"
   },
   {
     "name": "Agent-Native (Builder.io)",
-    "url": "https://github.com/BuilderIO/agent-native",
+    "url": "https://www.agent-native.com",
     "description": "Open-source TypeScript framework for building agents that come with their own app UI; each action is shared by the UI, agent, API, CLI, MCP and A2A.",
     "category": "frameworks",
     "pricing": "Open source",
@@ -1890,7 +2072,9 @@
       "connect tools via MCP"
     ],
     "slug": "agent-native-builder-io",
-    "logo": "assets/logos/agent-native-builder-io.png"
+    "logo": "assets/logos/agent-native-builder-io.png",
+    "github": "https://github.com/BuilderIO/agent-native",
+    "website": "https://www.agent-native.com"
   },
   {
     "name": "Google Deep Review",
@@ -1910,7 +2094,9 @@
       "research the web"
     ],
     "slug": "google-deep-review",
-    "logo": "assets/logos/google-deep-review.png"
+    "logo": "assets/logos/google-deep-review.png",
+    "github": "",
+    "website": "https://research.google/blog/analyzing-technical-documents-with-deep-review/"
   },
   {
     "name": "MetaMask Agent Wallet",
@@ -1929,7 +2115,9 @@
       "connect tools via MCP"
     ],
     "slug": "metamask-agent-wallet",
-    "logo": "assets/logos/metamask-agent-wallet.png"
+    "logo": "assets/logos/metamask-agent-wallet.png",
+    "github": "",
+    "website": "https://metamask.io/agent-wallet"
   },
   {
     "name": "Self Agent Vault",
@@ -1948,7 +2136,9 @@
       "connect tools via MCP"
     ],
     "slug": "self-agent-vault",
-    "logo": "assets/logos/self-agent-vault.png"
+    "logo": "assets/logos/self-agent-vault.png",
+    "github": "",
+    "website": "https://agentvault.io"
   },
   {
     "name": "Anchor Action Index",
@@ -1969,7 +2159,9 @@
       "control a computer"
     ],
     "slug": "anchor-action-index",
-    "logo": "assets/logos/anchor-action-index.png"
+    "logo": "assets/logos/anchor-action-index.png",
+    "github": "",
+    "website": "https://anchorbrowser.io"
   },
   {
     "name": "Proof x401",
@@ -1990,6 +2182,8 @@
       "connect tools via MCP"
     ],
     "slug": "proof-x401",
-    "logo": "assets/logos/proof-x401.png"
+    "logo": "assets/logos/proof-x401.png",
+    "github": "",
+    "website": "https://proof.com/x401"
   }
 ]

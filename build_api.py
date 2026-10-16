@@ -25,7 +25,7 @@ def build(t):
         if x.get("maturity"): f.append(x["maturity"])
         if x.get("github_stars"): f.append(f"{x['github_stars']} GitHub stars")
         f+= [u.capitalize() for u in x.get("use_cases",[]) if u!=x["category"]]
-        tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"category":x["category"],
+        tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"website":x.get("website",""),"github":x.get("github",""),"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
           "price_tag":tag(x["pricing"]),"platforms":platforms(x),"date_added":x.get("verified"),
           "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"repo":x.get("repo"),"logo":(f"https://clampdown-web.github.io/agentscout/{x['logo']}" if x.get("logo") else None),

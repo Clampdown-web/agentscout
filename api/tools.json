@@ -1,12 +1,14 @@
 {
  "version": 1,
- "generated": "2026-10-16T21:27:39.362328Z",
+ "generated": "2026-10-16T21:49:09.812265Z",
  "count": 97,
  "tools": [
   {
    "name": "Siena Social Agent",
    "slug": "siena-social-agent",
    "url": "https://www.siena.cx/blog/siena-social-agent-social-media-management",
+   "website": "https://www.siena.cx",
+   "github": "",
    "category": "business agents",
    "description": "AI agent for social media that converts comments/DMs, moderates, resolves support, and turns conversations into intelligence; launched Oct 13, 2026.",
    "key_features": [
@@ -32,7 +34,9 @@
   {
    "name": "Orca Agent Engine",
    "slug": "orca-agent-engine",
-   "url": "https://github.com/orca-ae/orca-agent-engine",
+   "url": "https://www.runorca.ai",
+   "website": "https://www.runorca.ai",
+   "github": "https://github.com/orca-ae/orca-agent-engine",
    "category": "frameworks",
    "description": "Open Apache-2.0 runtime to build, run, and govern managed agents with choice of harness (Claude Agent SDK, Codex, Pi) and model; open-sourced Oct 6, 2026 (Developer Preview).",
    "key_features": [
@@ -62,6 +66,8 @@
    "name": "Ruflo",
    "slug": "ruflo",
    "url": "https://github.com/ruvnet/ruflo",
+   "website": "",
+   "github": "https://github.com/ruvnet/ruflo",
    "category": "frameworks",
    "description": "Open-source multi-agent meta-harness for Claude Code, Codex, and MCP clients; Oct 13 release adds Mods (mission workflows) and a single control plane with human approval.",
    "key_features": [
@@ -93,6 +99,8 @@
    "name": "Kore.ai Autoloop",
    "slug": "kore-ai-autoloop",
    "url": "https://www.kore.ai/blog/autoloop-continuous-ai-agent-optimization-for-production",
+   "website": "https://www.kore.ai",
+   "github": "",
    "category": "evals & observability",
    "description": "Optimization engine in Kore.ai Agent Platform Artemis that evaluates agents against business goals, diagnoses failures from traces, applies targeted fixes, and re-verifies; GA Oct 2026.",
    "key_features": [
@@ -117,7 +125,9 @@
   {
    "name": "Hermes Agent (Nous Research)",
    "slug": "hermes-agent-nous-research",
-   "url": "https://github.com/NousResearch/hermes-agent",
+   "url": "https://hermes-agent.nousresearch.com",
+   "website": "https://hermes-agent.nousresearch.com",
+   "github": "https://github.com/NousResearch/hermes-agent",
    "category": "frameworks",
    "description": "Open-source agent harness; v0.21.7 stable shipped Oct 12, v0.22.0 RCs Oct 13-14.",
    "key_features": [
@@ -147,7 +157,9 @@
   {
    "name": "OpenAI Agents SDK (Python)",
    "slug": "openai-agents-sdk-python",
-   "url": "https://github.com/openai/openai-agents-python",
+   "url": "https://openai.github.io/openai-agents-python/",
+   "website": "https://openai.github.io/openai-agents-python/",
+   "github": "https://github.com/openai/openai-agents-python",
    "category": "frameworks",
    "description": "OpenAI's Python SDK for building multi-agent workflows; v0.23.0/0.23.1 released Oct 1-2.",
    "key_features": [
@@ -178,7 +190,9 @@
   {
    "name": "LangChain Deep Agents",
    "slug": "langchain-deep-agents",
-   "url": "https://github.com/langchain-ai/deepagents",
+   "url": "https://docs.langchain.com/deepagents",
+   "website": "https://docs.langchain.com/deepagents",
+   "github": "https://github.com/langchain-ai/deepagents",
    "category": "frameworks",
    "description": "Library for long-running agents with subagents and skills; 0.7.23 (Oct 7) adds pinned_skills.",
    "key_features": [
@@ -208,7 +222,9 @@
   {
    "name": "GitHub Agentic Workflows (gh-aw)",
    "slug": "github-agentic-workflows-gh-aw",
-   "url": "https://github.com/github/gh-aw",
+   "url": "https://github.github.com/gh-aw/",
+   "website": "https://github.github.com/gh-aw/",
+   "github": "https://github.com/github/gh-aw",
    "category": "coding",
    "description": "Run AI agents in GitHub Actions workflows; v0.91.10 pre-release (Oct 13) defaults read-only workflows to no network.",
    "key_features": [
@@ -239,6 +255,8 @@
    "name": "Jevgrep",
    "slug": "jevgrep",
    "url": "https://github.com/dzhng/jevgrep",
+   "website": "",
+   "github": "https://github.com/dzhng/jevgrep",
    "category": "coding",
    "description": "CLI that finds relevant repo files and excerpts from natural-language questions for coding agents; claims ~40% cheaper agent runs.",
    "key_features": [
@@ -267,7 +285,9 @@
   {
    "name": "NVIDIA OpenShell",
    "slug": "nvidia-openshell",
-   "url": "https://github.com/nvidia/openShell",
+   "url": "https://docs.nvidia.com/openshell/latest/",
+   "website": "https://docs.nvidia.com/openshell/latest/",
+   "github": "https://github.com/nvidia/openShell",
    "category": "MCP & infra",
    "description": "Sandboxed runtime for autonomous agents with declarative YAML policies on file, network and credential access.",
    "key_features": [
@@ -298,6 +318,8 @@
    "name": "NVIDIA Open Agent Safety Platform",
    "slug": "nvidia-open-agent-safety-platform",
    "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+   "website": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+   "github": "",
    "category": "MCP & infra",
    "description": "Reference stack pairing OpenShell with NVIDIA Sentry on BlueField-4 DPUs for hardware-level agent monitoring.",
    "key_features": [
@@ -327,6 +349,8 @@
    "name": "CoreWeave Forge",
    "slug": "coreweave-forge",
    "url": "https://forge.coreweave.com",
+   "website": "https://forge.coreweave.com",
+   "github": "",
    "category": "evals & observability",
    "description": "One product to run, observe, evaluate and post-train agents (W&B, OpenPipe, sandboxes).",
    "key_features": [
@@ -353,6 +377,8 @@
    "name": "Roboflow Agent",
    "slug": "roboflow-agent",
    "url": "https://roboflow.com/blog/roboflow-agent",
+   "website": "https://roboflow.com",
+   "github": "",
    "category": "vision",
    "description": "Computer-vision agent that picks models and builds/deploys vision apps; plugs into Claude Code, Codex, Cursor via MCP.",
    "key_features": [
@@ -381,7 +407,9 @@
   {
    "name": "Voiceloop",
    "slug": "voiceloop",
-   "url": "https://github.com/todoforai/voiceloop",
+   "url": "https://todoforai.github.io/voiceloop/",
+   "website": "https://todoforai.github.io/voiceloop/",
+   "github": "https://github.com/todoforai/voiceloop",
    "category": "voice",
    "description": "Zero-dependency JS library for an interruptible in-browser voice loop (VAD, STT, LLM, TTS).",
    "key_features": [
@@ -413,6 +441,8 @@
    "name": "Cicero",
    "slug": "cicero",
    "url": "https://github.com/5uck1ess/cicero",
+   "website": "",
+   "github": "https://github.com/5uck1ess/cicero",
    "category": "voice",
    "description": "Self-hosted voice interface for coding agents (Claude Code, Codex, ACP); talk from a browser or Telegram call.",
    "key_features": [
@@ -444,6 +474,8 @@
    "name": "TryVoice",
    "slug": "tryvoice",
    "url": "https://github.com/TryAILab/tryvoice-oss",
+   "website": "",
+   "github": "https://github.com/TryAILab/tryvoice-oss",
    "category": "voice",
    "description": "Hands-free voice runtime for coding agents with wake word, push-to-talk and streaming replies.",
    "key_features": [
@@ -474,6 +506,8 @@
    "name": "Holo4 (H Company)",
    "slug": "holo4-h-company",
    "url": "https://huggingface.co/Hcompany",
+   "website": "https://www.hcompany.ai",
+   "github": "",
    "category": "browser/computer use",
    "description": "Open-weight computer-use models (27B and 35B-A3B) released Oct 1.",
    "key_features": [
@@ -504,6 +538,8 @@
    "name": "Manifold MCP",
    "slug": "manifold-mcp",
    "url": "https://manifoldmcp.com",
+   "website": "https://manifoldmcp.com",
+   "github": "",
    "category": "MCP & infra",
    "description": "Hosted MCP server giving agents SEO, AI-answer, social, ad and leads data.",
    "key_features": [
@@ -531,6 +567,8 @@
    "name": "NanoMuse",
    "slug": "nanomuse",
    "url": "https://github.com/nano-muse",
+   "website": "",
+   "github": "https://github.com/nano-muse",
    "category": "personal agents",
    "description": "Open-source AI agent for your phone and computer (Show HN, Oct 7).",
    "key_features": [
@@ -558,7 +596,9 @@
   {
    "name": "OpenPilot",
    "slug": "openpilot",
-   "url": "https://github.com/ibmshaikh/OpenPilot",
+   "url": "https://openpilot.in/",
+   "website": "https://openpilot.in/",
+   "github": "https://github.com/ibmshaikh/OpenPilot",
    "category": "personal agents",
    "description": "Free desktop agent for any OpenAI-compatible model; edits files and runs commands in a folder with approvals.",
    "key_features": [
@@ -587,6 +627,8 @@
    "name": "OpenSwarm",
    "slug": "openswarm",
    "url": "https://openswarm.com",
+   "website": "https://openswarm.com",
+   "github": "",
    "category": "browser/computer use",
    "description": "AI-first 'operating system' where swarms of agents run apps and browsers in parallel.",
    "key_features": [
@@ -617,6 +659,8 @@
    "name": "ExcaliClaw",
    "slug": "excaliclaw",
    "url": "https://excaliclaw.com",
+   "website": "https://excaliclaw.com",
+   "github": "",
    "category": "productivity",
    "description": "Hand-drawn diagram workspace your agent can draw in via MCP (Claude, Cursor, VS Code).",
    "key_features": [
@@ -645,6 +689,8 @@
    "name": "kōdlo",
    "slug": "k-dlo",
    "url": "https://kodlo.ai",
+   "website": "https://kodlo.ai",
+   "github": "",
    "category": "business agents",
    "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
    "key_features": [
@@ -674,6 +720,8 @@
    "name": "Trig",
    "slug": "trig",
    "url": "https://www.trig.ai/blog/a-new-way-to-manage-your-customers",
+   "website": "https://www.trig.ai",
+   "github": "",
    "category": "business agents",
    "description": "Rebuilt as an agent workspace for account managers: agents follow up, prep renewals, build expansion cases.",
    "key_features": [
@@ -701,6 +749,8 @@
    "name": "Cresta Deputy Agent",
    "slug": "cresta-deputy-agent",
    "url": "https://cresta.com/deputy-agent",
+   "website": "https://cresta.com/deputy-agent",
+   "github": "",
    "category": "business agents",
    "description": "Long-running agent that finishes customer-service back-office workflows, pausing for approvals or documents.",
    "key_features": [
@@ -729,6 +779,8 @@
    "name": "Meta Muse Wonder",
    "slug": "meta-muse-wonder",
    "url": "https://research.meta.ai/blog/muse-wonder",
+   "website": "https://research.meta.ai/blog/muse-wonder",
+   "github": "",
    "category": "models",
    "description": "Meta's new models for personal and professional agent tasks, available via Meta Model API and Muse Code.",
    "key_features": [
@@ -754,7 +806,9 @@
   {
    "name": "Claude Code",
    "slug": "claude-code",
-   "url": "https://github.com/anthropics/claude-code",
+   "url": "https://www.claude.com/product/claude-code",
+   "website": "https://www.claude.com/product/claude-code",
+   "github": "https://github.com/anthropics/claude-code",
    "category": "coding",
    "description": "Anthropic's terminal coding agent that edits code, runs commands and handles git.",
    "key_features": [
@@ -782,7 +836,9 @@
   {
    "name": "OpenAI Codex CLI",
    "slug": "openai-codex-cli",
-   "url": "https://github.com/openai/codex",
+   "url": "https://developers.openai.com/codex/cli",
+   "website": "https://developers.openai.com/codex/cli",
+   "github": "https://github.com/openai/codex",
    "category": "coding",
    "description": "OpenAI's open-source coding agent for the terminal; also runs in the cloud.",
    "key_features": [
@@ -812,6 +868,8 @@
    "name": "Cursor",
    "slug": "cursor",
    "url": "https://cursor.com",
+   "website": "https://cursor.com",
+   "github": "",
    "category": "coding",
    "description": "AI code editor with an agent mode and background agents.",
    "key_features": [
@@ -839,6 +897,8 @@
    "name": "Devin",
    "slug": "devin",
    "url": "https://devin.ai",
+   "website": "https://devin.ai",
+   "github": "",
    "category": "coding",
    "description": "Cognition's autonomous software engineer that takes tickets and opens PRs.",
    "key_features": [
@@ -865,7 +925,9 @@
   {
    "name": "OpenHands",
    "slug": "openhands",
-   "url": "https://github.com/OpenHands/OpenHands",
+   "url": "https://openhands.dev",
+   "website": "https://openhands.dev",
+   "github": "https://github.com/OpenHands/OpenHands",
    "category": "coding",
    "description": "Open-source platform for autonomous coding agents.",
    "key_features": [
@@ -895,6 +957,8 @@
    "name": "Aider",
    "slug": "aider",
    "url": "https://aider.chat",
+   "website": "https://aider.chat",
+   "github": "https://github.com/Aider-AI/aider",
    "category": "coding",
    "description": "Pair-programming agent in your terminal that commits changes to git.",
    "key_features": [
@@ -922,7 +986,9 @@
   {
    "name": "Cline",
    "slug": "cline",
-   "url": "https://github.com/cline/cline",
+   "url": "https://cline.bot",
+   "website": "https://cline.bot",
+   "github": "https://github.com/cline/cline",
    "category": "coding",
    "description": "Autonomous coding agent inside VS Code with step-by-step approvals.",
    "key_features": [
@@ -951,7 +1017,9 @@
   {
    "name": "Roo Code",
    "slug": "roo-code",
-   "url": "https://github.com/RooCodeInc/Roo-Code",
+   "url": "https://roocode.com",
+   "website": "https://roocode.com",
+   "github": "https://github.com/RooCodeInc/Roo-Code",
    "category": "coding",
    "description": "VS Code agent with custom modes (architect, code, debug).",
    "key_features": [
@@ -981,6 +1049,8 @@
    "name": "Windsurf",
    "slug": "windsurf",
    "url": "https://devin.ai/desktop",
+   "website": "https://devin.ai/desktop",
+   "github": "",
    "category": "coding",
    "description": "AI IDE with the Cascade agent, now rebranded as Devin Desktop after Cognition acquired Windsurf (windsurf.com redirects there).",
    "key_features": [
@@ -1007,7 +1077,9 @@
   {
    "name": "opencode",
    "slug": "opencode",
-   "url": "https://github.com/anomalyco/opencode",
+   "url": "https://opencode.ai",
+   "website": "https://opencode.ai",
+   "github": "https://github.com/anomalyco/opencode",
    "category": "coding",
    "description": "Open-source terminal coding agent that works with many model providers.",
    "key_features": [
@@ -1037,6 +1109,8 @@
    "name": "Amp",
    "slug": "amp",
    "url": "https://ampcode.com",
+   "website": "https://ampcode.com",
+   "github": "",
    "category": "coding",
    "description": "Agentic coding tool for the terminal and editor.",
    "key_features": [
@@ -1063,7 +1137,9 @@
   {
    "name": "Gemini CLI",
    "slug": "gemini-cli",
-   "url": "https://github.com/google-gemini/gemini-cli",
+   "url": "https://geminicli.com",
+   "website": "https://geminicli.com",
+   "github": "https://github.com/google-gemini/gemini-cli",
    "category": "coding",
    "description": "Google's open-source terminal agent powered by Gemini.",
    "key_features": [
@@ -1093,6 +1169,8 @@
    "name": "GitHub Copilot",
    "slug": "github-copilot",
    "url": "https://github.com/features/copilot",
+   "website": "https://github.com/features/copilot",
+   "github": "",
    "category": "coding",
    "description": "AI pair programmer with a coding agent that works from issues.",
    "key_features": [
@@ -1120,6 +1198,8 @@
    "name": "Replit Agent",
    "slug": "replit-agent",
    "url": "https://replit.com",
+   "website": "https://replit.com",
+   "github": "",
    "category": "app builders",
    "description": "Builds and deploys full apps from a prompt in the browser.",
    "key_features": [
@@ -1149,6 +1229,8 @@
    "name": "Bolt",
    "slug": "bolt",
    "url": "https://bolt.new",
+   "website": "https://bolt.new",
+   "github": "https://github.com/stackblitz/bolt.new",
    "category": "app builders",
    "description": "Prompt-to-app builder that runs full-stack apps in the browser.",
    "key_features": [
@@ -1177,6 +1259,8 @@
    "name": "v0",
    "slug": "v0",
    "url": "https://v0.app",
+   "website": "https://v0.app",
+   "github": "",
    "category": "app builders",
    "description": "Vercel's agent that generates and deploys web apps and UI.",
    "key_features": [
@@ -1204,7 +1288,9 @@
   {
    "name": "Browser Use",
    "slug": "browser-use",
-   "url": "https://github.com/browser-use/browser-use",
+   "url": "https://browser-use.com",
+   "website": "https://browser-use.com",
+   "github": "https://github.com/browser-use/browser-use",
    "category": "browser/computer use",
    "description": "Library that lets AI agents control a web browser.",
    "key_features": [
@@ -1235,6 +1321,8 @@
    "name": "Browserbase",
    "slug": "browserbase",
    "url": "https://www.browserbase.com",
+   "website": "https://www.browserbase.com",
+   "github": "",
    "category": "browser/computer use",
    "description": "Hosted headless browsers built for agents.",
    "key_features": [
@@ -1262,7 +1350,9 @@
   {
    "name": "Stagehand",
    "slug": "stagehand",
-   "url": "https://github.com/browserbase/stagehand",
+   "url": "https://stagehand.dev",
+   "website": "https://stagehand.dev",
+   "github": "https://github.com/browserbase/stagehand",
    "category": "browser/computer use",
    "description": "Browser automation framework mixing code with natural-language actions.",
    "key_features": [
@@ -1295,6 +1385,8 @@
    "name": "Playwright MCP",
    "slug": "playwright-mcp",
    "url": "https://github.com/microsoft/playwright-mcp",
+   "website": "",
+   "github": "https://github.com/microsoft/playwright-mcp",
    "category": "browser/computer use",
    "description": "Microsoft's MCP server giving agents browser control via Playwright.",
    "key_features": [
@@ -1326,6 +1418,8 @@
    "name": "Skyvern",
    "slug": "skyvern",
    "url": "https://www.skyvern.com",
+   "website": "https://www.skyvern.com",
+   "github": "https://github.com/Skyvern-AI/skyvern",
    "category": "browser/computer use",
    "description": "Automates browser workflows with vision + LLMs.",
    "key_features": [
@@ -1357,6 +1451,8 @@
    "name": "Manus",
    "slug": "manus",
    "url": "https://manus.im",
+   "website": "https://manus.im",
+   "github": "",
    "category": "personal agents",
    "description": "General-purpose autonomous agent that does research and tasks in a cloud computer.",
    "key_features": [
@@ -1384,7 +1480,9 @@
   {
    "name": "OpenClaw",
    "slug": "openclaw",
-   "url": "https://github.com/openclaw/openclaw",
+   "url": "https://openclaw.ai",
+   "website": "https://openclaw.ai",
+   "github": "https://github.com/openclaw/openclaw",
    "category": "personal agents",
    "description": "Open-source personal agent you run yourself and reach over chat apps.",
    "key_features": [
@@ -1413,7 +1511,9 @@
   {
    "name": "LangGraph",
    "slug": "langgraph",
-   "url": "https://github.com/langchain-ai/langgraph",
+   "url": "https://www.langchain.com/langgraph",
+   "website": "https://www.langchain.com/langgraph",
+   "github": "https://github.com/langchain-ai/langgraph",
    "category": "frameworks",
    "description": "Framework for stateful, graph-based agent workflows.",
    "key_features": [
@@ -1443,7 +1543,9 @@
   {
    "name": "CrewAI",
    "slug": "crewai",
-   "url": "https://github.com/crewAIInc/crewAI",
+   "url": "https://crewai.com",
+   "website": "https://crewai.com",
+   "github": "https://github.com/crewAIInc/crewAI",
    "category": "frameworks",
    "description": "Framework for role-based multi-agent crews.",
    "key_features": [
@@ -1473,7 +1575,9 @@
   {
    "name": "AutoGen",
    "slug": "autogen",
-   "url": "https://github.com/microsoft/autogen",
+   "url": "https://microsoft.github.io/autogen/",
+   "website": "https://microsoft.github.io/autogen/",
+   "github": "https://github.com/microsoft/autogen",
    "category": "frameworks",
    "description": "Microsoft's framework for multi-agent conversations.",
    "key_features": [
@@ -1503,7 +1607,9 @@
   {
    "name": "Pydantic AI",
    "slug": "pydantic-ai",
-   "url": "https://github.com/pydantic/pydantic-ai",
+   "url": "https://pydantic.dev/pydantic-ai",
+   "website": "https://pydantic.dev/pydantic-ai",
+   "github": "https://github.com/pydantic/pydantic-ai",
    "category": "frameworks",
    "description": "Type-safe Python agent framework from the Pydantic team.",
    "key_features": [
@@ -1532,7 +1638,9 @@
   {
    "name": "Google ADK",
    "slug": "google-adk",
-   "url": "https://github.com/google/adk-python",
+   "url": "https://google.github.io/adk-docs/",
+   "website": "https://google.github.io/adk-docs/",
+   "github": "https://github.com/google/adk-python",
    "category": "frameworks",
    "description": "Google's Agent Development Kit for building and deploying agents.",
    "key_features": [
@@ -1562,6 +1670,8 @@
    "name": "Mastra",
    "slug": "mastra",
    "url": "https://mastra.ai",
+   "website": "https://mastra.ai",
+   "github": "https://github.com/mastra-ai/mastra",
    "category": "frameworks",
    "description": "TypeScript framework for agents, workflows and RAG.",
    "key_features": [
@@ -1590,7 +1700,9 @@
   {
    "name": "smolagents",
    "slug": "smolagents",
-   "url": "https://github.com/huggingface/smolagents",
+   "url": "https://huggingface.co/docs/smolagents",
+   "website": "https://huggingface.co/docs/smolagents",
+   "github": "https://github.com/huggingface/smolagents",
    "category": "frameworks",
    "description": "Hugging Face's minimal library for code-writing agents.",
    "key_features": [
@@ -1621,7 +1733,9 @@
   {
    "name": "LlamaIndex",
    "slug": "llamaindex",
-   "url": "https://github.com/run-llama/llama_index",
+   "url": "https://www.llamaindex.ai",
+   "website": "https://www.llamaindex.ai",
+   "github": "https://github.com/run-llama/llama_index",
    "category": "frameworks",
    "description": "Framework for agents over your data (RAG, document agents).",
    "key_features": [
@@ -1651,6 +1765,8 @@
    "name": "Vercel AI SDK",
    "slug": "vercel-ai-sdk",
    "url": "https://ai-sdk.dev",
+   "website": "https://ai-sdk.dev",
+   "github": "https://github.com/vercel/ai",
    "category": "frameworks",
    "description": "TypeScript toolkit for building AI apps and agents.",
    "key_features": [
@@ -1679,7 +1795,9 @@
   {
    "name": "GPT Researcher",
    "slug": "gpt-researcher",
-   "url": "https://github.com/assafelovic/gpt-researcher",
+   "url": "https://gptr.dev",
+   "website": "https://gptr.dev",
+   "github": "https://github.com/assafelovic/gpt-researcher",
    "category": "research",
    "description": "Autonomous agent that researches the web and writes cited reports.",
    "key_features": [
@@ -1711,6 +1829,8 @@
    "name": "Elicit",
    "slug": "elicit",
    "url": "https://elicit.com",
+   "website": "https://elicit.com",
+   "github": "",
    "category": "research",
    "description": "Research assistant that finds and summarizes academic papers.",
    "key_features": [
@@ -1737,7 +1857,9 @@
   {
    "name": "STORM",
    "slug": "storm",
-   "url": "https://github.com/stanford-oval/storm",
+   "url": "https://storm.genie.stanford.edu",
+   "website": "https://storm.genie.stanford.edu",
+   "github": "https://github.com/stanford-oval/storm",
    "category": "research",
    "description": "Stanford system that writes Wikipedia-style articles from web research.",
    "key_features": [
@@ -1768,6 +1890,8 @@
    "name": "Firecrawl",
    "slug": "firecrawl",
    "url": "https://firecrawl.dev",
+   "website": "https://firecrawl.dev",
+   "github": "https://github.com/firecrawl/firecrawl",
    "category": "research",
    "description": "Turns websites into clean, LLM-ready data for agents.",
    "key_features": [
@@ -1796,6 +1920,8 @@
    "name": "Exa",
    "slug": "exa",
    "url": "https://exa.ai",
+   "website": "https://exa.ai",
+   "github": "",
    "category": "research",
    "description": "Search API built for AI agents.",
    "key_features": [
@@ -1823,6 +1949,8 @@
    "name": "Tavily",
    "slug": "tavily",
    "url": "https://tavily.com",
+   "website": "https://tavily.com",
+   "github": "",
    "category": "research",
    "description": "Search and extraction API tuned for agents.",
    "key_features": [
@@ -1851,6 +1979,8 @@
    "name": "LiveKit Agents",
    "slug": "livekit-agents",
    "url": "https://livekit.com",
+   "website": "https://livekit.com",
+   "github": "https://github.com/livekit/agents",
    "category": "voice",
    "description": "Real-time voice and video infrastructure with an agents framework.",
    "key_features": [
@@ -1879,7 +2009,9 @@
   {
    "name": "Pipecat",
    "slug": "pipecat",
-   "url": "https://github.com/pipecat-ai/pipecat",
+   "url": "https://pipecat.ai",
+   "website": "https://pipecat.ai",
+   "github": "https://github.com/pipecat-ai/pipecat",
    "category": "voice",
    "description": "Open-source framework for voice and multimodal conversational agents.",
    "key_features": [
@@ -1910,6 +2042,8 @@
    "name": "Vapi",
    "slug": "vapi",
    "url": "https://vapi.ai",
+   "website": "https://vapi.ai",
+   "github": "",
    "category": "voice",
    "description": "Platform for building and deploying phone voice agents.",
    "key_features": [
@@ -1937,6 +2071,8 @@
    "name": "ElevenLabs Agents",
    "slug": "elevenlabs-agents",
    "url": "https://elevenlabs.io",
+   "website": "https://elevenlabs.io",
+   "github": "",
    "category": "voice",
    "description": "Voice AI platform with conversational agents and TTS.",
    "key_features": [
@@ -1964,6 +2100,8 @@
    "name": "Retell AI",
    "slug": "retell-ai",
    "url": "https://www.retellai.com",
+   "website": "https://www.retellai.com",
+   "github": "",
    "category": "voice",
    "description": "Builds AI phone agents for calls and support.",
    "key_features": [
@@ -1992,6 +2130,8 @@
    "name": "n8n",
    "slug": "n8n",
    "url": "https://n8n.io",
+   "website": "https://n8n.io",
+   "github": "https://github.com/n8n-io/n8n",
    "category": "no-code builders",
    "description": "Workflow automation with AI agent nodes; self-host or cloud.",
    "key_features": [
@@ -2021,6 +2161,8 @@
    "name": "Make",
    "slug": "make",
    "url": "https://www.make.com",
+   "website": "https://www.make.com",
+   "github": "",
    "category": "no-code builders",
    "description": "Visual automation platform with AI agents.",
    "key_features": [
@@ -2050,6 +2192,8 @@
    "name": "Zapier Agents",
    "slug": "zapier-agents",
    "url": "https://zapier.com/agents",
+   "website": "https://zapier.com/agents",
+   "github": "",
    "category": "no-code builders",
    "description": "AI agents that act across 7,000+ Zapier apps.",
    "key_features": [
@@ -2079,6 +2223,8 @@
    "name": "Lindy",
    "slug": "lindy",
    "url": "https://www.lindy.ai",
+   "website": "https://www.lindy.ai",
+   "github": "",
    "category": "no-code builders",
    "description": "No-code AI assistants for email, meetings and ops.",
    "key_features": [
@@ -2107,6 +2253,8 @@
    "name": "Relevance AI",
    "slug": "relevance-ai",
    "url": "https://www.relevanceai.com",
+   "website": "https://www.relevanceai.com",
+   "github": "",
    "category": "no-code builders",
    "description": "No-code platform to build AI agent teams for business work.",
    "key_features": [
@@ -2134,7 +2282,9 @@
   {
    "name": "Dify",
    "slug": "dify",
-   "url": "https://github.com/langgenius/dify",
+   "url": "https://dify.ai",
+   "website": "https://dify.ai",
+   "github": "https://github.com/langgenius/dify",
    "category": "no-code builders",
    "description": "Open-source platform for building LLM apps and agents visually.",
    "key_features": [
@@ -2164,7 +2314,9 @@
   {
    "name": "Flowise",
    "slug": "flowise",
-   "url": "https://github.com/FlowiseAI/Flowise",
+   "url": "https://flowiseai.com",
+   "website": "https://flowiseai.com",
+   "github": "https://github.com/FlowiseAI/Flowise",
    "category": "no-code builders",
    "description": "Drag-and-drop builder for agents and LLM flows.",
    "key_features": [
@@ -2194,6 +2346,8 @@
    "name": "Model Context Protocol",
    "slug": "model-context-protocol",
    "url": "https://modelcontextprotocol.io",
+   "website": "https://modelcontextprotocol.io",
+   "github": "https://github.com/modelcontextprotocol/modelcontextprotocol",
    "category": "MCP & infra",
    "description": "Open standard for connecting agents to tools and data.",
    "key_features": [
@@ -2221,7 +2375,9 @@
   {
    "name": "MCP reference servers",
    "slug": "mcp-reference-servers",
-   "url": "https://github.com/modelcontextprotocol/servers",
+   "url": "https://modelcontextprotocol.io",
+   "website": "https://modelcontextprotocol.io",
+   "github": "https://github.com/modelcontextprotocol/servers",
    "category": "MCP & infra",
    "description": "Official collection of reference MCP servers.",
    "key_features": [
@@ -2251,6 +2407,8 @@
    "name": "Smithery",
    "slug": "smithery",
    "url": "https://smithery.ai",
+   "website": "https://smithery.ai",
+   "github": "",
    "category": "MCP & infra",
    "description": "Registry for finding and installing MCP servers.",
    "key_features": [
@@ -2278,6 +2436,8 @@
    "name": "E2B",
    "slug": "e2b",
    "url": "https://e2b.dev",
+   "website": "https://e2b.dev",
+   "github": "https://github.com/e2b-dev/E2B",
    "category": "MCP & infra",
    "description": "Secure cloud sandboxes for running agent-generated code.",
    "key_features": [
@@ -2308,6 +2468,8 @@
    "name": "Modal",
    "slug": "modal",
    "url": "https://modal.com",
+   "website": "https://modal.com",
+   "github": "",
    "category": "MCP & infra",
    "description": "Serverless compute and sandboxes for AI workloads.",
    "key_features": [
@@ -2336,6 +2498,8 @@
    "name": "Composio",
    "slug": "composio",
    "url": "https://composio.dev",
+   "website": "https://composio.dev",
+   "github": "https://github.com/ComposioHQ/composio",
    "category": "MCP & infra",
    "description": "Tool integrations and auth for agents across hundreds of apps.",
    "key_features": [
@@ -2363,7 +2527,9 @@
   {
    "name": "Mem0",
    "slug": "mem0",
-   "url": "https://github.com/mem0ai/mem0",
+   "url": "https://mem0.ai",
+   "website": "https://mem0.ai",
+   "github": "https://github.com/mem0ai/mem0",
    "category": "MCP & infra",
    "description": "Memory layer for AI agents.",
    "key_features": [
@@ -2393,7 +2559,9 @@
   {
    "name": "Letta",
    "slug": "letta",
-   "url": "https://github.com/letta-ai/letta",
+   "url": "https://www.letta.com",
+   "website": "https://www.letta.com",
+   "github": "https://github.com/letta-ai/letta",
    "category": "frameworks",
    "description": "Framework for stateful agents with long-term memory (formerly MemGPT).",
    "key_features": [
@@ -2424,6 +2592,8 @@
    "name": "LangSmith",
    "slug": "langsmith",
    "url": "https://www.langchain.com/langsmith",
+   "website": "https://www.langchain.com/langsmith",
+   "github": "https://github.com/langchain-ai/langsmith-sdk",
    "category": "evals & observability",
    "description": "Tracing, evals and monitoring for LLM apps and agents.",
    "key_features": [
@@ -2450,6 +2620,8 @@
    "name": "Langfuse",
    "slug": "langfuse",
    "url": "https://langfuse.com",
+   "website": "https://langfuse.com",
+   "github": "https://github.com/langfuse/langfuse",
    "category": "evals & observability",
    "description": "Open-source LLM observability, tracing and evals.",
    "key_features": [
@@ -2476,6 +2648,8 @@
    "name": "Braintrust",
    "slug": "braintrust",
    "url": "https://www.braintrust.dev",
+   "website": "https://www.braintrust.dev",
+   "github": "",
    "category": "evals & observability",
    "description": "Evals and observability platform for AI products.",
    "key_features": [
@@ -2500,7 +2674,9 @@
   {
    "name": "Arize Phoenix",
    "slug": "arize-phoenix",
-   "url": "https://github.com/Arize-ai/phoenix",
+   "url": "https://phoenix.arize.com",
+   "website": "https://phoenix.arize.com",
+   "github": "https://github.com/Arize-ai/phoenix",
    "category": "evals & observability",
    "description": "Open-source tracing and evaluation for LLM apps.",
    "key_features": [
@@ -2529,6 +2705,8 @@
    "name": "W&B Weave",
    "slug": "w-b-weave",
    "url": "https://wandb.ai/site/weave",
+   "website": "https://wandb.ai/site/weave",
+   "github": "https://github.com/wandb/weave",
    "category": "evals & observability",
    "description": "Weights & Biases toolkit for tracing and evaluating agents.",
    "key_features": [
@@ -2555,6 +2733,8 @@
    "name": "AgentOps",
    "slug": "agentops",
    "url": "https://agentops.ai",
+   "website": "https://agentops.ai",
+   "github": "https://github.com/AgentOps-AI/agentops",
    "category": "evals & observability",
    "description": "Monitoring and session replay for AI agents.",
    "key_features": [
@@ -2580,6 +2760,8 @@
    "name": "Helicone",
    "slug": "helicone",
    "url": "https://www.helicone.ai",
+   "website": "https://www.helicone.ai",
+   "github": "https://github.com/Helicone/helicone",
    "category": "evals & observability",
    "description": "Open-source LLM observability and gateway.",
    "key_features": [
@@ -2605,7 +2787,9 @@
   {
    "name": "Agent-Native (Builder.io)",
    "slug": "agent-native-builder-io",
-   "url": "https://github.com/BuilderIO/agent-native",
+   "url": "https://www.agent-native.com",
+   "website": "https://www.agent-native.com",
+   "github": "https://github.com/BuilderIO/agent-native",
    "category": "frameworks",
    "description": "Open-source TypeScript framework for building agents that come with their own app UI; each action is shared by the UI, agent, API, CLI, MCP and A2A.",
    "key_features": [
@@ -2636,6 +2820,8 @@
    "name": "Google Deep Review",
    "slug": "google-deep-review",
    "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+   "website": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+   "github": "",
    "category": "research",
    "description": "Google Research's multi-agent system that checks research papers, design docs, and legal or financial documents for logical gaps and unsupported claims.",
    "key_features": [
@@ -2665,6 +2851,8 @@
    "name": "MetaMask Agent Wallet",
    "slug": "metamask-agent-wallet",
    "url": "https://metamask.io/agent-wallet",
+   "website": "https://metamask.io/agent-wallet",
+   "github": "",
    "category": "MCP & infra",
    "description": "Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.",
    "key_features": [
@@ -2693,6 +2881,8 @@
    "name": "Self Agent Vault",
    "slug": "self-agent-vault",
    "url": "https://agentvault.io",
+   "website": "https://agentvault.io",
+   "github": "",
    "category": "MCP & infra",
    "description": "Payment and login layer for AI agents: agents check out and sign in using mock tokens, while real card numbers and passwords are swapped in out of the agent's view, with spending caps, merchant allowlists and a kill switch.",
    "key_features": [
@@ -2721,6 +2911,8 @@
    "name": "Anchor Action Index",
    "slug": "anchor-action-index",
    "url": "https://anchorbrowser.io",
+   "website": "https://anchorbrowser.io",
+   "github": "",
    "category": "browser/computer use",
    "description": "Shared memory of web workflows for Anchor's cloud browsers: computer-use agents replay proven paths as deterministic code and the model only steps in where a page has changed, exposed as tools on Anchor's MCP server and REST API.",
    "key_features": [
@@ -2751,6 +2943,8 @@
    "name": "Proof x401",
    "slug": "proof-x401",
    "url": "https://proof.com/x401",
+   "website": "https://proof.com/x401",
+   "github": "",
    "category": "MCP & infra",
    "description": "Open HTTP protocol and MCP server that let a website ask an AI agent to prove who it is acting for and have the person cryptographically sign the exact transaction terms, using Proof's agent identity wallet.",
    "key_features": [
