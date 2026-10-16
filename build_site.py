@@ -56,3 +56,6 @@ def _sync_index_counts():
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
     open("index.html", "w").write(s)
 _sync_index_counts()
+
+import build_tasks
+build_tasks.sitewide(t)
