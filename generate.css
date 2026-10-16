@@ -9,3 +9,9 @@
 .ig-out img{width:100%;height:auto;border-radius:12px;background:#f2f4f7;display:block}
 .ig-note{font-size:13px;color:#667085;max-width:768px}
 .ig-cta{max-width:768px;margin:20px 0;padding:14px;border-radius:12px;background:#f2f4ff}
+
+html[data-theme=dark] .ig-form textarea{background:var(--card);color:var(--text);border-color:var(--line)}
+html[data-theme=dark] .ig-ex button{background:var(--soft);color:var(--text);border-color:var(--line)}
+html[data-theme=dark] .ig-status,html[data-theme=dark] .ig-note{color:var(--muted)}
+html[data-theme=dark] .ig-out img{background:var(--soft)}
+html[data-theme=dark] .ig-cta{background:var(--accent-soft)}
