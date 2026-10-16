@@ -37,8 +37,8 @@ TASKS=[
 ("making-images-and-design","images and design",{"vision"},{"computer vision","make diagrams"},r"\bimage|design|diagram|vision|visual","Agents for visual work: generating images, diagrams and designs, or understanding what's in a picture."),
 ("crypto-and-wallets","crypto and wallets",set(),set(),r"crypto|wallet|blockchain|onchain|stablecoin|x402|web3","Wallets, payment rails and tools that let agents hold funds and pay for things on their own."),
 ("agent-payments","agent payments",set(),set(),r"payment|pay for|checkout|billing|x40[12]","Tools that let agents pay, get paid and handle checkout without a human clicking buy."),
-("deploying-agents","deploying and hosting agents",set(),set(),r"deploy|hosting|serverless|\bcloud\b|infrastructure|GPU","Infrastructure for running agents in production: hosting, scaling, GPUs and serverless runtimes."),
-("open-source-agents","open-source agents",set(),set(),r"open[- ]source","Open-source agent tools you can self-host, inspect and extend."),
+("deploying-agents","deploying and hosting agents",set(),set(),r"\bdeploy(s|ing)? (\w+ ){0,3}agents\b|\bagent (hosting|runtime|cloud)\b|\bhost(s|ing)? (AI )?agents\b|\bagents? in production\b|\bserverless\b","Infrastructure for running agents in production: hosting, scaling and serverless runtimes."),
+("open-source-agents","open-source agents",set(),set(),r"\bopen[- ]source (\w+[- ]){0,2}(AI )?(agent|assistant)s?\b(?! (framework|platform|SDK|library|memory|infrastructure))","Open-source agents you can run yourself, inspect and extend, from coding agents to personal assistants."),
 ]
 def match(x,T):
     _,_,cats,ucs,rx,_=T

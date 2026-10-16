@@ -21,6 +21,15 @@ def badge_html(x,depth="../"):
         m=f"[![{lab} on AgentScout]({img})]({url})"
         out+=f'<div class="embed"><img src="{depth}badges/{kind}-{th}.svg" alt="{lab} on AgentScout ({th})" width="220" height="54"><label>HTML</label><textarea readonly rows="3" onclick="this.select()">{e(h)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button><label>Markdown</label><textarea readonly rows="2" onclick="this.select()">{e(m)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy Markdown</button></div>'
     return f'<h2 style="font-size:16px;margin:36px 0 6px">Badge for makers</h2><p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? Add this badge to your README or site. It links back to this page. <a href="../badges.html">About badges</a></p><div class="embeds">{out}</div>'
+def featured_generic():
+    out=""
+    for th in ["light","dark"]:
+        img=f"{B}badges/featured-{th}.svg"
+        h=f'<a href="{B}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="Featured on AgentScout" width="220" height="54"></a>'
+        m=f"[![Featured on AgentScout]({img})]({B})"
+        cp=lambda kind:f'<button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy {kind}</button>'
+        out+=f'<div class="embed"><img src="badges/featured-{th}.svg" alt="Featured on AgentScout ({th})" width="220" height="54"><label>HTML ({th})</label><textarea readonly rows="3" onclick="this.select()">{e(h)}</textarea>{cp("HTML")}<label>Markdown ({th})</label><textarea readonly rows="2" onclick="this.select()">{e(m)}</textarea>{cp("Markdown")}</div>'
+    return f'<h2 id="featured-badge" style="font-size:18px;margin:32px 0 8px">Featured on AgentScout badge</h2><p style="margin:0 0 14px">Copy a ready-made snippet. It links to the AgentScout homepage.</p><div class="embeds">{out}</div>'
 def cmp_links(x,t):
     ps=[(a,b) for a,b in PAIRS if x["slug"] in (a,b)]
     if not ps: return ""
@@ -94,8 +103,8 @@ def build(t):
     body=f'''<div class="crumb"><a href="index.html">AgentScout</a> / Badges</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Badges for makers</h1>
 <p class="lede" style="margin-left:0;text-align:left">If your tool is on AgentScout, you can show it. Badges are free and link to your tool's page, so readers can see how it compares.</p>
 <div class="embeds"><div class="embed"><img src="badges/listed-light.svg" alt="Listed on AgentScout (light)" width="220" height="54"><img src="badges/listed-dark.svg" alt="Listed on AgentScout (dark)" width="220" height="54"><p><b>Listed</b>: for any tool in the directory.</p></div>
-<div class="embed" id="featured-badge"><img src="badges/featured-light.svg" alt="Featured on AgentScout (light)" width="220" height="54"><img src="badges/featured-dark.svg" alt="Featured on AgentScout (dark)" width="220" height="54"><p><b>Featured</b>: for tools we've picked as featured.</p></div></div>
-<h2 style="font-size:18px;margin:32px 0 8px">How to get your snippet</h2><ol><li>Find your tool in the <a href="index.html#directory">directory</a> and open its page.</li><li>Scroll to "Badge for makers" and copy the HTML or Markdown, in light or dark.</li><li>Paste it into your README, docs or site footer.</li></ol>
+<div class="embed"><img src="badges/featured-light.svg" alt="Featured on AgentScout (light)" width="220" height="54"><img src="badges/featured-dark.svg" alt="Featured on AgentScout (dark)" width="220" height="54"><p><b>Featured</b>: for tools we've picked as featured.</p></div></div>
+{featured_generic()}<h2 style="font-size:18px;margin:32px 0 8px">How to get your snippet</h2><ol><li>Find your tool in the <a href="index.html#directory">directory</a> and open its page.</li><li>Scroll to "Badge for makers" and copy the HTML or Markdown, in light or dark.</li><li>Paste it into your README, docs or site footer.</li></ol>
 <p>Not listed yet? <a href="https://github.com/Clampdown-web/agentscout/issues/new?labels=submission&amp;title=Tool%20submission%3A%20" target="_blank" rel="noopener noreferrer">Submit your tool</a>. Example from the {e(ex["name"])} page:</p>
 {badge_html(ex,"").replace('<a href="../badges.html">About badges</a>','')}
 <p class="disclose">Badges are SVG files hosted on this site. Please don't change the wording. Featured placements that are paid are always labeled as sponsored on AgentScout.</p></section>'''
