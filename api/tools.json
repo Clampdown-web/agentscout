@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-16T18:56:21.469840Z",
+ "generated": "2026-10-16T19:22:28.151314Z",
  "count": 97,
  "tools": [
   {
@@ -86,7 +86,7 @@
    "weekly_pick": false,
    "new": true,
    "repo": "ruvnet/ruflo",
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ruflo.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/ruflo.html"
   },
   {
@@ -437,13 +437,13 @@
    "weekly_pick": false,
    "new": true,
    "repo": "5uck1ess/cicero",
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/cicero.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/cicero.html"
   },
   {
    "name": "TryVoice",
    "slug": "tryvoice",
-   "url": "https://github.com/AaronZ021/tryvoice-oss",
+   "url": "https://github.com/TryAILab/tryvoice-oss",
    "category": "voice",
    "description": "Hands-free voice runtime for coding agents with wake word, push-to-talk and streaming replies.",
    "key_features": [
@@ -466,8 +466,8 @@
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
-   "repo": "AaronZ021/tryvoice-oss",
-   "logo": null,
+   "repo": "TryAILab/tryvoice-oss",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/tryvoice.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/tryvoice.html"
   },
   {
@@ -580,13 +580,13 @@
    "weekly_pick": false,
    "new": true,
    "repo": "ibmshaikh/OpenPilot",
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openpilot.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/openpilot.html"
   },
   {
    "name": "OpenSwarm",
    "slug": "openswarm",
-   "url": "https://www.hunted.space/product/openswarm-3",
+   "url": "https://openswarm.com",
    "category": "browser/computer use",
    "description": "AI-first 'operating system' where swarms of agents run apps and browsers in parallel.",
    "key_features": [
@@ -610,7 +610,7 @@
    "weekly_pick": false,
    "new": true,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openswarm.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/openswarm.html"
   },
   {
@@ -644,7 +644,7 @@
   {
    "name": "kōdlo",
    "slug": "k-dlo",
-   "url": "https://hunted.space/dashboard/kodlo",
+   "url": "https://kodlo.ai",
    "category": "business agents",
    "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
    "key_features": [
@@ -667,7 +667,7 @@
    "weekly_pick": false,
    "new": true,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/k-dlo.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/k-dlo.html"
   },
   {
@@ -865,7 +865,7 @@
   {
    "name": "OpenHands",
    "slug": "openhands",
-   "url": "https://github.com/All-Hands-AI/OpenHands",
+   "url": "https://github.com/OpenHands/OpenHands",
    "category": "coding",
    "description": "Open-source platform for autonomous coding agents.",
    "key_features": [
@@ -887,7 +887,7 @@
    "skill": "developer",
    "weekly_pick": false,
    "new": false,
-   "repo": "All-Hands-AI/OpenHands",
+   "repo": "OpenHands/OpenHands",
    "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openhands.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/openhands.html"
   },
@@ -916,7 +916,7 @@
    "weekly_pick": false,
    "new": false,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/aider.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/aider.html"
   },
   {
@@ -980,9 +980,9 @@
   {
    "name": "Windsurf",
    "slug": "windsurf",
-   "url": "https://windsurf.com",
+   "url": "https://devin.ai/desktop",
    "category": "coding",
-   "description": "AI IDE with the Cascade agent.",
+   "description": "AI IDE with the Cascade agent, now rebranded as Devin Desktop after Cognition acquired Windsurf (windsurf.com redirects there).",
    "key_features": [
     "Free tier + paid plans",
     "Mature",
@@ -1001,13 +1001,13 @@
    "weekly_pick": false,
    "new": false,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/windsurf.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/windsurf.html"
   },
   {
    "name": "opencode",
    "slug": "opencode",
-   "url": "https://github.com/sst/opencode",
+   "url": "https://github.com/anomalyco/opencode",
    "category": "coding",
    "description": "Open-source terminal coding agent that works with many model providers.",
    "key_features": [
@@ -1029,8 +1029,8 @@
    "skill": "developer",
    "weekly_pick": false,
    "new": false,
-   "repo": "sst/opencode",
-   "logo": null,
+   "repo": "anomalyco/opencode",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/opencode.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/opencode.html"
   },
   {
@@ -1113,7 +1113,7 @@
    "weekly_pick": false,
    "new": false,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/github-copilot.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/github-copilot.html"
   },
   {
@@ -1142,7 +1142,7 @@
    "weekly_pick": false,
    "new": false,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/replit-agent.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/replit-agent.html"
   },
   {
@@ -1704,7 +1704,7 @@
    "weekly_pick": false,
    "new": false,
    "repo": "assafelovic/gpt-researcher",
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/gpt-researcher.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/gpt-researcher.html"
   },
   {
@@ -1850,7 +1850,7 @@
   {
    "name": "LiveKit Agents",
    "slug": "livekit-agents",
-   "url": "https://www.livekit.io",
+   "url": "https://livekit.com",
    "category": "voice",
    "description": "Real-time voice and video infrastructure with an agents framework.",
    "key_features": [
@@ -2072,7 +2072,7 @@
    "weekly_pick": false,
    "new": false,
    "repo": null,
-   "logo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/zapier-agents.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/zapier-agents.html"
   },
   {
