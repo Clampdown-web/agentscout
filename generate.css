@@ -50,3 +50,13 @@ html[data-theme=dark] .gen-inner{background-color:#25264D}
 html[data-theme=dark] .homegen{background:linear-gradient(rgba(37,38,77,.55),rgba(37,38,77,.55)),#25264D var(--gen-art) center/cover no-repeat}
 html:not([data-theme=dark]) .homegen .hg-head a,html:not([data-theme=dark]) .homegen .ig-note{color:#2e2a6b;background:rgba(255,255,255,.72);padding:1px 8px;border-radius:999px;text-shadow:0 0 2px rgba(255,255,255,.6)}
 html:not([data-theme=dark]) .homegen .ig-note{display:inline-block;max-width:100%;box-sizing:border-box}
+/* Match homepage card: 1px accent frame, 12px radius, art panel with flat 50%/55% overlay, no fades */
+.gen-hero{padding:0;background:none;border:1px solid var(--accent);border-radius:12px;overflow:hidden}
+.gen-inner{border-radius:0;background:#EFEFFE var(--gen-art) center/cover no-repeat}
+.gen-inner::before{background:rgba(239,239,254,.5)}
+html[data-theme=dark] .gen-inner{background:#25264D var(--gen-art) center/cover no-repeat}
+html[data-theme=dark] .gen-inner::before{background:rgba(37,38,77,.55)}
+.gen-card h1{color:var(--accent)}
+.gen-card .ig-ex button{background:#f8f9fb;border:1px solid #d0d5dd}
+html[data-theme=dark] .gen-card .ig-ex button{background:var(--soft);border-color:var(--line)}
+@media(max-width:640px){.gen-hero{padding:0;border-radius:12px}.gen-inner{padding:12px 10px;border-radius:0}}
