@@ -44,20 +44,39 @@ def build(t):
         A,Bt=bs[a],bs[b]; s=cslug(a,b); canon=f"{B}compare/{s}.html"
         title=f"{A['name']} vs {Bt['name']}: side-by-side comparison · AgentScout"
         desc=f"{A['name']} vs {Bt['name']} compared: pricing as stated by the makers, audience, maturity and use cases. {A['description']}"[:158]
+        h1=f"{A['name']} vs {Bt['name']}"; faq=[]
+        if s=="claude-code-vs-openai-codex-cli":
+            h1="Codex vs Claude Code (2026)"; title="Codex vs Claude Code (2026): OpenAI Codex CLI vs Claude Code compared · AgentScout"
+            desc="Codex vs Claude Code in 2026: OpenAI's open-source Codex CLI vs Anthropic's Claude Code, compared on pricing as stated, audience and maturity."
+            faq=[("What is the difference between Codex and Claude Code?",f"Claude Code is {A['description'][0].lower()+A['description'][1:]} OpenAI Codex CLI is {Bt['description'][0].lower()+Bt['description'][1:]}"),
+                 ("Is Codex CLI open source?",f"Yes. Our listing for OpenAI Codex CLI states its pricing as: {Bt['pricing_detail']}."),
+                 ("How much does Claude Code cost?",f"As Anthropic states it: {A['pricing_detail']}. Check the official site for current plans."),
+                 ("Which one should I choose?","We don't benchmark or rank them. Both are mature terminal coding agents aimed at builders; compare pricing and try each on your own repo.")]
+        if s=="n8n-vs-make":
+            h1="n8n vs Make (2026)"; title="n8n vs Make (2026): pricing, self-hosting and features compared · AgentScout"
+            desc="n8n vs Make in 2026: pricing as each maker states it (n8n: self-host free, paid cloud; Make: free tier + paid plans), plus audience and maturity."
+            faq=[("How much does n8n cost?",f"As n8n states it: {A['pricing_detail']}. Check n8n's official pricing page for current cloud plans."),
+                 ("Does Make have a free plan?",f"As Make states it: {Bt['pricing_detail']}. Check Make's official pricing page for current limits."),
+                 ("Can I self-host n8n or Make?","Our n8n listing says it can be self-hosted or used in the cloud. Our Make listing describes it as a visual automation platform and doesn't list a self-host option.")]
+        faqh="".join(f"<h3 style=\"font-size:15px;margin:18px 0 4px\">{e(q)}</h3><p style=\"margin:0\">{e(a_)}</p>" for q,a_ in faq)
+        faqh=f'<h2 style="font-size:18px;margin:32px 0 4px">FAQ</h2>{faqh}' if faq else ""
+        rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · <a href="../categories/{catslug(A["category"])}.html">More {e(A["category"])} tools</a> · <a href="../best/mcp-servers.html">Best MCP servers</a></p>'
+
         fa,fb=facts(A),facts(Bt)
         rows="".join(f"<tr><th>{e(k)}</th><td>{e(va)}</td><td>{e(vb)}</td></tr>" for (k,va),(_,vb) in zip(fa,fb))
         shared=sorted(set(A["use_cases"])&set(Bt["use_cases"]))
         sh=f"Both are listed for: {', '.join(shared)}." if shared else "They're listed under different use cases, so check which fits your job."
         body=f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Compare</a> / {e(A["name"])} vs {e(Bt["name"])}</div>
-<section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(A["name"])} vs {e(Bt["name"])}</h1>
+<section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>
 <p class="lede" style="margin-left:0;text-align:left">Two closely related {e(A["category"])} tools, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
 <div class="tablewrap"><table class="cmp"><thead><tr><th></th><th><a href="../tools/{a}.html">{e(A["name"])}</a></th><th><a href="../tools/{b}.html">{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
 <tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener">Visit ↗</a></td></tr></tbody></table></div>
 <p class="disclose">We don't benchmark tools or rank one above the other here. Check each official site for current pricing and features before you choose.</p>
-<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
+{faqh}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
         ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
             "about":[{"@type":"SoftwareApplication","name":x["name"],"url":x["url"],"applicationCategory":x["category"]} for x in (A,Bt)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Compare","item":B+"compare/"},{"@type":"ListItem","position":3,"name":f"{A['name']} vs {Bt['name']}","item":canon}]}]}
+        if faq: ld["@graph"].append({"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a_}} for q,a_ in faq]})
         open(f"compare/{s}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
     cards="".join(f'<a class="card" href="{cslug(a,b)}.html"><div class="ct"><h3>{e(bs[a]["name"])} vs {e(bs[b]["name"])}</h3></div><p>{e(bs[a]["category"])}: {e(bs[a]["description"])}</p></a>' for a,b in PAIRS)
     canon=B+"compare/"; title="Compare AI agent tools side by side · AgentScout"; desc="Side-by-side comparisons of closely related AI agent tools: coding agents, frameworks, browser automation, voice, search APIs, no-code builders and observability."
@@ -120,7 +139,10 @@ def seo(t,urls):
         cll=f' See our <a href="../tools/{cl[0]["slug"]}.html">{e(cl[0]["name"])} listing</a>.' if cl else ""
         out.append(listing_page(f"best/mcp-servers-for-{s}.html",f"Best MCP servers for {client} (2026) · AgentScout",
             f"{len(mcp)} MCP servers and MCP tools from our directory you can try with {client}, including {', '.join(x['name'] for x in (named+rest)[:3])}. Pricing as stated."[:158],
-            f"Best MCP servers for {client}",f"{client} is an MCP client, so it can connect to MCP servers. These are the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory.{note} Check each tool's docs for {e(client)} setup.{cll}",named+rest,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: '+guides+'</p>'))
+            f"Best MCP servers for {client}",f"{client} is an MCP client, so it can connect to MCP servers. These are the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory.{note} Check each tool's docs for {e(client)} setup.{cll}",named+rest,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: <a href="mcp-servers.html">Best MCP servers (all)</a> · '+guides+'</p>'))
+    out.append(listing_page("best/mcp-servers.html","Best MCP Servers (2026): curated list · AgentScout",
+        f"Best MCP servers in 2026: {len(mcp)} link-checked MCP servers and MCP tools, including {', '.join(x['name'] for x in mcp[:3])}. Pricing as stated by makers."[:158],
+        "Best MCP Servers (2026)",f'A curated list of the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory. MCP (Model Context Protocol) lets agents like Claude Code, Cursor and Codex connect to tools and data. See also the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.',mcp,"Best MCP servers",'<p style="margin-top:24px">Guides by client: '+guides+'</p>'))
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
         f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
@@ -131,7 +153,7 @@ def seo(t,urls):
     # llms.txt
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t)} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: agentscout@mail.grokbot.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
-    L+=["","## Guides","",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
+    L+=["","## Guides","",f"- [Best MCP servers 2026]({B}best/mcp-servers.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
     rec=sorted(t,key=lambda x:(x.get("verified",""),x.get("id",0)),reverse=True)[:10]
     L+=["## Recently added or re-checked",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
