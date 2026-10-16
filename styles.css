@@ -194,3 +194,13 @@ html[data-theme=light]{color-scheme:light}
 @media(max-width:760px){.homegen .ig-out img{max-width:100%}}
 
 .gencall{position:relative;z-index:5;display:flex;align-items:center;min-height:44px;box-sizing:border-box;width:fit-content;max-width:100%;touch-action:manipulation;-webkit-tap-highlight-color:rgba(91,91,247,.2);cursor:pointer}
+/* Site-wide generator entry points: match homepage generator card (1px accent frame, 12px radius, lavender) */
+.gencall{border:1px solid var(--accent);border-radius:12px;background:linear-gradient(135deg,var(--accent-soft),var(--card) 80%)}
+.gencall:hover{border-style:solid;background:var(--accent-soft)}
+/* free-tools.html: centred column like generate.html */
+.ft-pg .crumb,.ft-pg .ig>*{max-width:760px;margin-left:auto;margin-right:auto;box-sizing:border-box}
+.ft-pg .crumb,.ft-pg .ig>h1,.ft-pg .ig>.lede{text-align:center}
+.ft-pg .ft-grid{display:block}
+.ft-pg .ft-card{border:1px solid var(--accent);border-radius:12px;background:linear-gradient(rgba(239,239,254,.6),rgba(239,239,254,.6)),#EFEFFE url(assets/gen-art.webp) center/cover no-repeat}
+html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.6),rgba(37,38,77,.6)),#25264D url(assets/gen-art.webp) center/cover no-repeat}
+@media(max-width:640px){.ft-pg .ig>h1{font-size:28px}}
