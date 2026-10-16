@@ -37,3 +37,8 @@ html[data-theme=dark] .gen-card .ig-ex button{background:rgba(21,24,33,.75)}
 .gen-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:0 auto 14px}
 .gen-pills span{font-size:12.5px;font-weight:600;color:#86efac;border:1px solid #4ade80;background:rgba(6,40,22,.55);padding:3px 11px;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .ig-surprise{font-weight:500;font-size:13px;color:var(--accent)}
+/* Light lavender result/preview panel (homepage compact + generate.html); hero frame #1c1f5a unchanged */
+.ig-out{background:var(--accent-soft);border:1px solid rgba(91,91,247,.15);border-radius:14px;padding:10px}
+.ig-out img{background:var(--accent-soft)}
+html[data-theme=dark] .ig-out{border-color:rgba(147,147,255,.18)}
+html[data-theme=dark] .ig-out img{background:var(--accent-soft)}
