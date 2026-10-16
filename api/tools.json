@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-16T21:53:49.237536Z",
- "count": 97,
+ "generated": "2026-10-16T21:56:05.373603Z",
+ "count": 167,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -2970,6 +2970,2095 @@
    "repo": null,
    "logo": "https://clampdown-web.github.io/agentscout/assets/logos/proof-x401.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/proof-x401.html"
+  },
+  {
+   "name": "11x",
+   "slug": "11x",
+   "url": "https://www.11x.ai",
+   "website": "https://www.11x.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "Digital AI workers for go-to-market teams, including an SDR agent that researches prospects and runs outbound and a phone agent that handles calls.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Research the web",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/11x.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/11x.html"
+  },
+  {
+   "name": "ASI:One",
+   "slug": "asi-one",
+   "url": "https://asi1.ai",
+   "website": "https://asi1.ai",
+   "github": "",
+   "category": "models",
+   "description": "Agentic LLM and chat app from Fetch.ai built to reason, plan and call other agents on the ASI Alliance network.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/asi-one.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/asi-one.html"
+  },
+  {
+   "name": "Activeloop",
+   "slug": "activeloop",
+   "url": "https://www.activeloop.ai",
+   "website": "https://www.activeloop.ai",
+   "github": "https://github.com/activeloopai/deeplake",
+   "category": "MCP & infra",
+   "description": "Deep Lake, a multimodal database for AI that stores vectors, images, text and video so agents and RAG apps can search and retrieve them.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "9252 GitHub stars",
+    "Research the web",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "activeloopai/deeplake",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/activeloop.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/activeloop.html"
+  },
+  {
+   "name": "AgentGPT",
+   "slug": "agentgpt",
+   "url": "https://agentgpt.reworkd.ai",
+   "website": "https://agentgpt.reworkd.ai",
+   "github": "https://github.com/reworkd/AgentGPT",
+   "category": "personal agents",
+   "description": "Browser-based app that lets you name an agent, give it a goal, and watch it plan and work through tasks on its own.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "36279 GitHub stars"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "reworkd/AgentGPT",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/agentgpt.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/agentgpt.html"
+  },
+  {
+   "name": "AutoGPT",
+   "slug": "autogpt",
+   "url": "https://agpt.co",
+   "website": "https://agpt.co",
+   "github": "https://github.com/Significant-Gravitas/AutoGPT",
+   "category": "frameworks",
+   "description": "One of the first autonomous agent projects, now a platform for building, deploying and running continuous AI agents that automate workflows.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "187612 GitHub stars",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Significant-Gravitas/AutoGPT",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/autogpt.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/autogpt.html"
+  },
+  {
+   "name": "BabyAGI",
+   "slug": "babyagi",
+   "url": "https://babyagi.org",
+   "website": "https://babyagi.org",
+   "github": "https://github.com/yoheinakajima/babyagi",
+   "category": "frameworks",
+   "description": "Yohei Nakajima's experimental self-building agent framework that creates, stores and runs its own functions.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "22357 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "yoheinakajima/babyagi",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/babyagi.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/babyagi.html"
+  },
+  {
+   "name": "Circleback",
+   "slug": "circleback",
+   "url": "https://circleback.ai",
+   "website": "https://circleback.ai",
+   "github": "",
+   "category": "productivity",
+   "description": "AI meeting notes and action items that can trigger follow-up workflows and integrations automatically after each call.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/circleback.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/circleback.html"
+  },
+  {
+   "name": "CustomGPT.ai",
+   "slug": "customgpt-ai",
+   "url": "https://customgpt.ai",
+   "website": "https://customgpt.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "No-code platform for building AI agents grounded in your business content, with citations and anti-hallucination controls.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/customgpt-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/customgpt-ai.html"
+  },
+  {
+   "name": "Convai",
+   "slug": "convai",
+   "url": "https://convai.com",
+   "website": "https://convai.com",
+   "github": "",
+   "category": "voice",
+   "description": "Conversational AI for virtual worlds: voice-enabled characters and agents that perceive, speak and act inside games and 3D scenes.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/convai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/convai.html"
+  },
+  {
+   "name": "Inworld",
+   "slug": "inworld",
+   "url": "https://inworld.ai",
+   "website": "https://inworld.ai",
+   "github": "",
+   "category": "voice",
+   "description": "Platform and runtime for real-time voice AI and interactive characters, including text-to-speech and agent orchestration for consumer apps.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/inworld.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/inworld.html"
+  },
+  {
+   "name": "Qodo",
+   "slug": "qodo",
+   "url": "https://www.qodo.ai",
+   "website": "https://www.qodo.ai",
+   "github": "https://github.com/The-PR-Agent/pr-agent",
+   "category": "coding",
+   "description": "AI code review and testing agents that work in the IDE, the terminal and pull requests to catch issues before merge.",
+   "key_features": [
+    "Freemium",
+    "Mature",
+    "13415 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "The-PR-Agent/pr-agent",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/qodo.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/qodo.html"
+  },
+  {
+   "name": "Artisan",
+   "slug": "artisan",
+   "url": "https://www.artisan.co",
+   "website": "https://www.artisan.co",
+   "github": "",
+   "category": "business agents",
+   "description": "AI employees for sales, led by Ava, an outbound SDR agent that finds leads, writes emails and books meetings.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/artisan.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/artisan.html"
+  },
+  {
+   "name": "Appian",
+   "slug": "appian",
+   "url": "https://appian.com",
+   "website": "https://appian.com",
+   "github": "",
+   "category": "business agents",
+   "description": "Low-code process automation platform with AI agents built into enterprise workflows.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/appian.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/appian.html"
+  },
+  {
+   "name": "Cassidy",
+   "slug": "cassidy",
+   "url": "https://www.cassidyai.com",
+   "website": "https://www.cassidyai.com",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Build AI assistants and workflows trained on company knowledge for teams.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/cassidy.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/cassidy.html"
+  },
+  {
+   "name": "Comet",
+   "slug": "comet",
+   "url": "https://www.perplexity.ai/comet",
+   "website": "https://www.perplexity.ai/comet",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Perplexity's AI browser with a built-in assistant that can browse, summarize and complete tasks on web pages for you.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate the browser"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/comet.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/comet.html"
+  },
+  {
+   "name": "Dart",
+   "slug": "dart",
+   "url": "https://dartai.com",
+   "website": "https://dartai.com",
+   "github": "",
+   "category": "productivity",
+   "description": "Project management tool where AI agents can be assigned tasks, plan projects and do work.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/dart.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/dart.html"
+  },
+  {
+   "name": "Dashworks",
+   "slug": "dashworks",
+   "url": "https://www.dashworks.ai",
+   "website": "https://www.dashworks.ai",
+   "github": "",
+   "category": "research",
+   "description": "AI assistant that answers questions from your company's apps and knowledge.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/dashworks.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/dashworks.html"
+  },
+  {
+   "name": "Dropzone AI",
+   "slug": "dropzone-ai",
+   "url": "https://www.dropzone.ai",
+   "website": "https://www.dropzone.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "AI SOC analyst agents that investigate security alerts autonomously.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/dropzone-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/dropzone-ai.html"
+  },
+  {
+   "name": "Ema",
+   "slug": "ema",
+   "url": "https://www.ema.ai",
+   "website": "https://www.ema.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "Universal AI employee platform with prebuilt agentic workers for enterprise functions.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ema.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ema.html"
+  },
+  {
+   "name": "Gradient Labs",
+   "slug": "gradient-labs",
+   "url": "https://gradient-labs.ai",
+   "website": "https://gradient-labs.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "AI customer support agent for regulated financial services companies.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/gradient-labs.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/gradient-labs.html"
+  },
+  {
+   "name": "Groq",
+   "slug": "groq",
+   "url": "https://groq.com",
+   "website": "https://groq.com",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Fast inference cloud running open models on custom LPU chips, used for low-latency agents.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/groq.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/groq.html"
+  },
+  {
+   "name": "Guardrails AI",
+   "slug": "guardrails-ai",
+   "url": "https://www.guardrailsai.com",
+   "website": "https://www.guardrailsai.com",
+   "github": "https://github.com/guardrails-ai/guardrails",
+   "category": "evals & observability",
+   "description": "Open-source framework for validating LLM inputs and outputs with configurable guardrails.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7529 GitHub stars",
+    "Build an agent",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "guardrails-ai/guardrails",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/guardrails-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/guardrails-ai.html"
+  },
+  {
+   "name": "Hebbia",
+   "slug": "hebbia",
+   "url": "https://www.hebbia.com",
+   "website": "https://www.hebbia.com",
+   "github": "",
+   "category": "research",
+   "description": "AI platform for finance and legal teams that runs agents across large document sets.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/hebbia.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/hebbia.html"
+  },
+  {
+   "name": "Imbue",
+   "slug": "imbue",
+   "url": "https://imbue.com",
+   "website": "https://imbue.com",
+   "github": "https://github.com/imbue-ai/sculptor",
+   "category": "coding",
+   "description": "AI research company building tools for coding agents, including Sculptor for running parallel agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "239 GitHub stars",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "imbue-ai/sculptor",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/imbue.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/imbue.html"
+  },
+  {
+   "name": "Intercom Fin",
+   "slug": "intercom-fin",
+   "url": "https://fin.ai",
+   "website": "https://fin.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "Intercom's Fin AI agent that resolves customer support conversations across channels.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/intercom-fin.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/intercom-fin.html"
+  },
+  {
+   "name": "Jotform AI Agents",
+   "slug": "jotform-ai-agents",
+   "url": "https://www.jotform.com/ai/agents/",
+   "website": "https://www.jotform.com/ai/agents/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Build AI agents from forms and docs that answer customers via chat, voice and messaging.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Voice & phone calls",
+    "Build apps without code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/jotform-ai-agents.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/jotform-ai-agents.html"
+  },
+  {
+   "name": "KaneAI",
+   "slug": "kaneai",
+   "url": "https://www.testmuai.com/kane-ai/",
+   "website": "https://www.testmuai.com/kane-ai/",
+   "github": "",
+   "category": "coding",
+   "description": "AI testing agent that plans, writes and evolves end-to-end tests from natural language.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/kaneai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/kaneai.html"
+  },
+  {
+   "name": "LanceDB",
+   "slug": "lancedb",
+   "url": "https://lancedb.com",
+   "website": "https://lancedb.com",
+   "github": "https://github.com/lancedb/lancedb",
+   "category": "MCP & infra",
+   "description": "Open-source multimodal vector database for search, RAG and agent memory.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "11684 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "lancedb/lancedb",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/lancedb.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/lancedb.html"
+  },
+  {
+   "name": "Lutra AI",
+   "slug": "lutra-ai",
+   "url": "https://lutra.ai",
+   "website": "https://lutra.ai",
+   "github": "",
+   "category": "personal agents",
+   "description": "AI agent that automates work across your apps from a chat prompt.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/lutra-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/lutra-ai.html"
+  },
+  {
+   "name": "Lyzr",
+   "slug": "lyzr",
+   "url": "https://www.lyzr.ai",
+   "website": "https://www.lyzr.ai",
+   "github": "https://github.com/LyzrCore/lyzr-automata",
+   "category": "frameworks",
+   "description": "Enterprise agent studio and framework for building secure AI agents.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "276 GitHub stars",
+    "Build an agent",
+    "Run code safely"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "LyzrCore/lyzr-automata",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/lyzr.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/lyzr.html"
+  },
+  {
+   "name": "MetaGPT",
+   "slug": "metagpt",
+   "url": "https://atoms.dev/metagpt",
+   "website": "https://atoms.dev/metagpt",
+   "github": "https://github.com/FoundationAgents/MetaGPT",
+   "category": "frameworks",
+   "description": "Multi-agent framework that assigns roles like product manager and engineer to LLM agents to build software.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "70885 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "FoundationAgents/MetaGPT",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/metagpt.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/metagpt.html"
+  },
+  {
+   "name": "Mindflow",
+   "slug": "mindflow",
+   "url": "https://mindflow.io",
+   "website": "https://mindflow.io",
+   "github": "",
+   "category": "business agents",
+   "description": "No-code automation and AI agents for security and IT operations.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mindflow.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mindflow.html"
+  },
+  {
+   "name": "Minion AI",
+   "slug": "minion-ai",
+   "url": "https://minion.ai",
+   "website": "https://minion.ai",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Browser agent that completes web tasks for you.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate the browser"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/minion-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/minion-ai.html"
+  },
+  {
+   "name": "MyShell",
+   "slug": "myshell",
+   "url": "https://myshell.ai",
+   "website": "https://myshell.ai",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Platform to build, share and use AI agents and apps.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/myshell.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/myshell.html"
+  },
+  {
+   "name": "Ninja AI",
+   "slug": "ninja-ai",
+   "url": "https://www.ninjatech.ai",
+   "website": "https://www.ninjatech.ai",
+   "github": "",
+   "category": "personal agents",
+   "description": "All-in-one AI assistant with research, coding and writing agents.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ninja-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ninja-ai.html"
+  },
+  {
+   "name": "OpenPipe",
+   "slug": "openpipe",
+   "url": "https://openpipe.ai",
+   "website": "https://openpipe.ai",
+   "github": "https://github.com/OpenPipe/ART",
+   "category": "frameworks",
+   "description": "Reinforcement learning tooling, including the ART library, to train better agents.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "10802 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "OpenPipe/ART",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/openpipe.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/openpipe.html"
+  },
+  {
+   "name": "Orkes",
+   "slug": "orkes",
+   "url": "https://orkes.io",
+   "website": "https://orkes.io",
+   "github": "https://github.com/conductor-oss/conductor",
+   "category": "frameworks",
+   "description": "Orchestration platform built on Conductor for durable workflows and AI agents.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "32319 GitHub stars",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "conductor-oss/conductor",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/orkes.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/orkes.html"
+  },
+  {
+   "name": "Prime Intellect",
+   "slug": "prime-intellect",
+   "url": "https://www.primeintellect.ai",
+   "website": "https://www.primeintellect.ai",
+   "github": "https://github.com/PrimeIntellect-ai/verifiers",
+   "category": "frameworks",
+   "description": "Decentralized compute and open RL environment hub for training agentic models.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "4713 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "PrimeIntellect-ai/verifiers",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/prime-intellect.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/prime-intellect.html"
+  },
+  {
+   "name": "Recall.ai",
+   "slug": "recall-ai",
+   "url": "https://www.recall.ai",
+   "website": "https://www.recall.ai",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "API for meeting bots that join Zoom, Meet and Teams to record and transcribe.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/recall-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/recall-ai.html"
+  },
+  {
+   "name": "Replicate",
+   "slug": "replicate",
+   "url": "https://replicate.com",
+   "website": "https://replicate.com",
+   "github": "https://github.com/replicate/cog",
+   "category": "MCP & infra",
+   "description": "Run and deploy open models through an API, with Cog for packaging models.",
+   "key_features": [
+    "Usage-based",
+    "Mature",
+    "9490 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "replicate/cog",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/replicate.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/replicate.html"
+  },
+  {
+   "name": "Sema4.ai",
+   "slug": "sema4-ai",
+   "url": "https://sema4.ai",
+   "website": "https://sema4.ai",
+   "github": "https://github.com/Sema4AI/actions",
+   "category": "business agents",
+   "description": "Enterprise AI agents platform, with open-source actions for connecting agents to systems.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "140 GitHub stars"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "Sema4AI/actions",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/sema4-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/sema4-ai.html"
+  },
+  {
+   "name": "Simple Phones",
+   "slug": "simple-phones",
+   "url": "https://www.simplephones.ai",
+   "website": "https://www.simplephones.ai",
+   "github": "",
+   "category": "voice",
+   "description": "AI phone agent that answers business calls, takes messages and books appointments.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/simple-phones.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/simple-phones.html"
+  },
+  {
+   "name": "Sourcetable",
+   "slug": "sourcetable",
+   "url": "https://sourcetable.com",
+   "website": "https://sourcetable.com",
+   "github": "",
+   "category": "productivity",
+   "description": "AI spreadsheet that analyzes data, builds models and charts from prompts.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/sourcetable.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/sourcetable.html"
+  },
+  {
+   "name": "Thoughtly",
+   "slug": "thoughtly",
+   "url": "https://www.thoughtly.com",
+   "website": "https://www.thoughtly.com",
+   "github": "",
+   "category": "voice",
+   "description": "AI voice agents for inbound and outbound calls for businesses.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/thoughtly.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/thoughtly.html"
+  },
+  {
+   "name": "TinyFish",
+   "slug": "tinyfish",
+   "url": "https://www.tinyfish.ai",
+   "website": "https://www.tinyfish.ai",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Enterprise web agents that run at scale across websites to gather data and take actions.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Automate the browser",
+    "Research the web"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/tinyfish.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/tinyfish.html"
+  },
+  {
+   "name": "Together AI",
+   "slug": "together-ai",
+   "url": "https://www.together.ai",
+   "website": "https://www.together.ai",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "AI cloud for running, fine-tuning and serving open models.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/together-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/together-ai.html"
+  },
+  {
+   "name": "Tray.ai",
+   "slug": "tray-ai",
+   "url": "https://tray.ai",
+   "website": "https://tray.ai",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Integration and automation platform for building enterprise AI agents.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/tray-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/tray-ai.html"
+  },
+  {
+   "name": "Verdent",
+   "slug": "verdent",
+   "url": "https://www.verdent.ai",
+   "website": "https://www.verdent.ai",
+   "github": "",
+   "category": "coding",
+   "description": "AI coding agent that plans, codes and verifies tasks in parallel.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/verdent.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/verdent.html"
+  },
+  {
+   "name": "Viam",
+   "slug": "viam",
+   "url": "https://www.viam.com",
+   "website": "https://www.viam.com",
+   "github": "https://github.com/viamrobotics/rdk",
+   "category": "frameworks",
+   "description": "Software platform for building and operating robots and smart machines.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "178 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "viamrobotics/rdk",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/viam.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/viam.html"
+  },
+  {
+   "name": "Zenity",
+   "slug": "zenity",
+   "url": "https://zenity.io",
+   "website": "https://zenity.io",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Security and governance for AI agents across enterprise platforms.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/zenity.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/zenity.html"
+  },
+  {
+   "name": "vocode",
+   "slug": "vocode",
+   "url": "https://github.com/vocodedev/vocode-core",
+   "website": "",
+   "github": "https://github.com/vocodedev/vocode-core",
+   "category": "voice",
+   "description": "Open-source library for building voice-based LLM agents for phone calls and apps.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "3804 GitHub stars",
+    "Write code",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "vocodedev/vocode-core",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/vocode.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/vocode.html"
+  },
+  {
+   "name": "Kognitos",
+   "slug": "kognitos",
+   "url": "https://www.kognitos.com",
+   "website": "https://www.kognitos.com",
+   "github": "",
+   "category": "business agents",
+   "description": "Automation platform where business processes are written in plain English and run by AI.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/kognitos.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/kognitos.html"
+  },
+  {
+   "name": "Moveworks",
+   "slug": "moveworks",
+   "url": "https://www.moveworks.com",
+   "website": "https://www.moveworks.com",
+   "github": "",
+   "category": "business agents",
+   "description": "Enterprise AI assistant that resolves employee IT and HR requests.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/moveworks.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/moveworks.html"
+  },
+  {
+   "name": "Cleric",
+   "slug": "cleric",
+   "url": "https://cleric.ai",
+   "website": "https://cleric.ai",
+   "github": "",
+   "category": "coding",
+   "description": "AI SRE agent that investigates production alerts and finds root causes.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/cleric.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/cleric.html"
+  },
+  {
+   "name": "Duckie",
+   "slug": "duckie",
+   "url": "https://www.duckie.ai",
+   "website": "https://www.duckie.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "AI support agent for technical products that resolves tickets.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/duckie.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/duckie.html"
+  },
+  {
+   "name": "Hatz AI",
+   "slug": "hatz-ai",
+   "url": "https://www.hatz.ai",
+   "website": "https://www.hatz.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "Secure AI agents and workflows platform for managed service providers.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/hatz-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/hatz-ai.html"
+  },
+  {
+   "name": "Momen",
+   "slug": "momen",
+   "url": "https://momen.app",
+   "website": "https://momen.app",
+   "github": "",
+   "category": "app builders",
+   "description": "No-code full-stack app builder with AI agent features.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/momen.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/momen.html"
+  },
+  {
+   "name": "Nimbalyst",
+   "slug": "nimbalyst",
+   "url": "https://nimbalyst.com",
+   "website": "https://nimbalyst.com",
+   "github": "",
+   "category": "coding",
+   "description": "Visual workspace for working with coding agents like Claude Code on docs, code and plans.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/nimbalyst.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/nimbalyst.html"
+  },
+  {
+   "name": "Runcell",
+   "slug": "runcell",
+   "url": "https://www.runcell.dev",
+   "website": "https://www.runcell.dev",
+   "github": "",
+   "category": "coding",
+   "description": "AI agent for Jupyter notebooks that writes and runs code cells.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/runcell.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/runcell.html"
+  },
+  {
+   "name": "Respan",
+   "slug": "respan",
+   "url": "https://www.respan.ai",
+   "website": "https://www.respan.ai",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Observability and evaluation platform for LLM apps and agents.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate workflows",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/respan.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/respan.html"
+  },
+  {
+   "name": "TollBit",
+   "slug": "tollbit",
+   "url": "https://tollbit.com",
+   "website": "https://tollbit.com",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Lets publishers charge AI agents and bots for accessing their content.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/tollbit.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/tollbit.html"
+  },
+  {
+   "name": "Wand AI",
+   "slug": "wand-ai",
+   "url": "https://wand.ai",
+   "website": "https://wand.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "Enterprise platform for managing a hybrid workforce of AI agents and people.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/wand-ai.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/wand-ai.html"
+  },
+  {
+   "name": "Mixus",
+   "slug": "mixus",
+   "url": "https://mixus.ai",
+   "website": "https://mixus.ai",
+   "github": "",
+   "category": "personal agents",
+   "description": "AI agents with human verification built into multi-step workflows.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mixus.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mixus.html"
+  },
+  {
+   "name": "Simbian",
+   "slug": "simbian",
+   "url": "https://simbian.ai",
+   "website": "https://simbian.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "AI agents for security operations, threat hunting and response.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/simbian.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/simbian.html"
+  },
+  {
+   "name": "Prophet Security",
+   "slug": "prophet-security",
+   "url": "https://www.prophetsecurity.ai",
+   "website": "https://www.prophetsecurity.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "Agentic AI SOC analyst that triages and investigates alerts.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/prophet-security.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/prophet-security.html"
+  },
+  {
+   "name": "Token Security",
+   "slug": "token-security",
+   "url": "https://www.token.security",
+   "website": "https://www.token.security",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Security for non-human and AI agent identities.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/token-security.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/token-security.html"
+  },
+  {
+   "name": "SnapLogic",
+   "slug": "snaplogic",
+   "url": "https://www.snaplogic.com",
+   "website": "https://www.snaplogic.com",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Integration platform with AgentCreator for building enterprise agents.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/snaplogic.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/snaplogic.html"
+  },
+  {
+   "name": "Boomi",
+   "slug": "boomi",
+   "url": "https://boomi.com",
+   "website": "https://boomi.com",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Integration platform with Boomi AI agents and agent management.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/boomi.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/boomi.html"
+  },
+  {
+   "name": "Kater",
+   "slug": "kater",
+   "url": "https://www.kater.ai",
+   "website": "https://www.kater.ai",
+   "github": "",
+   "category": "research",
+   "description": "AI data analyst that answers business questions from your data warehouse.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/kater.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/kater.html"
+  },
+  {
+   "name": "Hiver",
+   "slug": "hiver",
+   "url": "https://hiverhq.com",
+   "website": "https://hiverhq.com",
+   "github": "",
+   "category": "business agents",
+   "description": "Customer service helpdesk in Gmail with AI agents.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/hiver.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/hiver.html"
   }
  ]
 }

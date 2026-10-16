@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 97 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 167 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://clampdown-web.github.io/agentscout/
 X: https://x.com/AgentScoutHQ
@@ -19,20 +19,20 @@ Contact: agentscout@mail.grokbot.com
 
 ## Categories
 
-- [frameworks](https://clampdown-web.github.io/agentscout/categories/frameworks.html): 16 tools
-- [coding](https://clampdown-web.github.io/agentscout/categories/coding.html): 15 tools
-- [MCP & infra](https://clampdown-web.github.io/agentscout/categories/mcp-infra.html): 13 tools
-- [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 9 tools
-- [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 8 tools
-- [browser/computer use](https://clampdown-web.github.io/agentscout/categories/browser-computer-use.html): 8 tools
-- [research](https://clampdown-web.github.io/agentscout/categories/research.html): 7 tools
-- [no-code builders](https://clampdown-web.github.io/agentscout/categories/no-code-builders.html): 7 tools
-- [business agents](https://clampdown-web.github.io/agentscout/categories/business-agents.html): 4 tools
-- [personal agents](https://clampdown-web.github.io/agentscout/categories/personal-agents.html): 4 tools
-- [app builders](https://clampdown-web.github.io/agentscout/categories/app-builders.html): 3 tools
+- [frameworks](https://clampdown-web.github.io/agentscout/categories/frameworks.html): 24 tools
+- [business agents](https://clampdown-web.github.io/agentscout/categories/business-agents.html): 22 tools
+- [coding](https://clampdown-web.github.io/agentscout/categories/coding.html): 22 tools
+- [MCP & infra](https://clampdown-web.github.io/agentscout/categories/mcp-infra.html): 20 tools
+- [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 13 tools
+- [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 13 tools
+- [no-code builders](https://clampdown-web.github.io/agentscout/categories/no-code-builders.html): 13 tools
+- [browser/computer use](https://clampdown-web.github.io/agentscout/categories/browser-computer-use.html): 11 tools
+- [research](https://clampdown-web.github.io/agentscout/categories/research.html): 10 tools
+- [personal agents](https://clampdown-web.github.io/agentscout/categories/personal-agents.html): 8 tools
+- [productivity](https://clampdown-web.github.io/agentscout/categories/productivity.html): 4 tools
+- [app builders](https://clampdown-web.github.io/agentscout/categories/app-builders.html): 4 tools
+- [models](https://clampdown-web.github.io/agentscout/categories/models.html): 2 tools
 - [vision](https://clampdown-web.github.io/agentscout/categories/vision.html): 1 tool
-- [productivity](https://clampdown-web.github.io/agentscout/categories/productivity.html): 1 tool
-- [models](https://clampdown-web.github.io/agentscout/categories/models.html): 1 tool
 
 ## Guides
 
@@ -44,13 +44,13 @@ Contact: agentscout@mail.grokbot.com
 
 ## Recently added or re-checked
 
-- [Proof x401](https://clampdown-web.github.io/agentscout/tools/proof-x401.html): Open HTTP protocol and MCP server that let a website ask an AI agent to prove who it is acting for and have the person cryptographically sign the exact transaction terms, using Proof's agent identity wallet.
-- [Anchor Action Index](https://clampdown-web.github.io/agentscout/tools/anchor-action-index.html): Shared memory of web workflows for Anchor's cloud browsers: computer-use agents replay proven paths as deterministic code and the model only steps in where a page has changed, exposed as tools on Anchor's MCP server and REST API.
-- [Self Agent Vault](https://clampdown-web.github.io/agentscout/tools/self-agent-vault.html): Payment and login layer for AI agents: agents check out and sign in using mock tokens, while real card numbers and passwords are swapped in out of the agent's view, with spending caps, merchant allowlists and a kill switch.
-- [MetaMask Agent Wallet](https://clampdown-web.github.io/agentscout/tools/metamask-agent-wallet.html): Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.
-- [Google Deep Review](https://clampdown-web.github.io/agentscout/tools/google-deep-review.html): Google Research's multi-agent system that checks research papers, design docs, and legal or financial documents for logical gaps and unsupported claims.
-- [Agent-Native (Builder.io)](https://clampdown-web.github.io/agentscout/tools/agent-native-builder-io.html): Open-source TypeScript framework for building agents that come with their own app UI; each action is shared by the UI, agent, API, CLI, MCP and A2A.
-- [Kore.ai Autoloop](https://clampdown-web.github.io/agentscout/tools/kore-ai-autoloop.html): Optimization engine in Kore.ai Agent Platform Artemis that evaluates agents against business goals, diagnoses failures from traces, applies targeted fixes, and re-verifies; GA Oct 2026.
-- [Ruflo](https://clampdown-web.github.io/agentscout/tools/ruflo.html): Open-source multi-agent meta-harness for Claude Code, Codex, and MCP clients; Oct 13 release adds Mods (mission workflows) and a single control plane with human approval.
-- [Orca Agent Engine](https://clampdown-web.github.io/agentscout/tools/orca-agent-engine.html): Open Apache-2.0 runtime to build, run, and govern managed agents with choice of harness (Claude Agent SDK, Codex, Pi) and model; open-sourced Oct 6, 2026 (Developer Preview).
-- [Siena Social Agent](https://clampdown-web.github.io/agentscout/tools/siena-social-agent.html): AI agent for social media that converts comments/DMs, moderates, resolves support, and turns conversations into intelligence; launched Oct 13, 2026.
+- [Hiver](https://clampdown-web.github.io/agentscout/tools/hiver.html): Customer service helpdesk in Gmail with AI agents.
+- [Kater](https://clampdown-web.github.io/agentscout/tools/kater.html): AI data analyst that answers business questions from your data warehouse.
+- [Boomi](https://clampdown-web.github.io/agentscout/tools/boomi.html): Integration platform with Boomi AI agents and agent management.
+- [SnapLogic](https://clampdown-web.github.io/agentscout/tools/snaplogic.html): Integration platform with AgentCreator for building enterprise agents.
+- [Token Security](https://clampdown-web.github.io/agentscout/tools/token-security.html): Security for non-human and AI agent identities.
+- [Prophet Security](https://clampdown-web.github.io/agentscout/tools/prophet-security.html): Agentic AI SOC analyst that triages and investigates alerts.
+- [Simbian](https://clampdown-web.github.io/agentscout/tools/simbian.html): AI agents for security operations, threat hunting and response.
+- [Mixus](https://clampdown-web.github.io/agentscout/tools/mixus.html): AI agents with human verification built into multi-step workflows.
+- [Wand AI](https://clampdown-web.github.io/agentscout/tools/wand-ai.html): Enterprise platform for managing a hybrid workforce of AI agents and people.
+- [TollBit](https://clampdown-web.github.io/agentscout/tools/tollbit.html): Lets publishers charge AI agents and bots for accessing their content.
