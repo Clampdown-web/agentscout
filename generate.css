@@ -60,3 +60,6 @@ html[data-theme=dark] .gen-inner::before{background:rgba(37,38,77,.55)}
 .gen-card .ig-ex button{background:#f8f9fb;border:1px solid #d0d5dd}
 html[data-theme=dark] .gen-card .ig-ex button{background:var(--soft);border-color:var(--line)}
 @media(max-width:640px){.gen-hero{padding:0;border-radius:12px}.gen-inner{padding:12px 10px;border-radius:0}}
+/* generate.html uses the homepage .homegen card markup, centred and wider */
+.homegen.gen-page{max-width:760px;margin:0 auto 20px;box-sizing:border-box}
+.homegen.gen-page .ig-out img{max-width:420px}
