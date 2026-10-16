@@ -48,3 +48,5 @@ html[data-theme=dark] .gen-inner{background-color:#25264D}
 /* Homepage compact card: daily art inside the card, lavender overlay; border unchanged */
 .homegen{background:linear-gradient(rgba(239,239,254,.5),rgba(239,239,254,.5)),#EFEFFE var(--gen-art) center/cover no-repeat}
 html[data-theme=dark] .homegen{background:linear-gradient(rgba(37,38,77,.55),rgba(37,38,77,.55)),#25264D var(--gen-art) center/cover no-repeat}
+html:not([data-theme=dark]) .homegen .hg-head a,html:not([data-theme=dark]) .homegen .ig-note{color:#2e2a6b;background:rgba(255,255,255,.72);padding:1px 8px;border-radius:999px;text-shadow:0 0 2px rgba(255,255,255,.6)}
+html:not([data-theme=dark]) .homegen .ig-note{display:inline-block;max-width:100%;box-sizing:border-box}
