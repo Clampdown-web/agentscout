@@ -15,7 +15,7 @@ def build(t):
     top=newest(t)[:12]
     nw=sum(1 for x in t if x.get('added','')>=(pt_today()-datetime.timedelta(days=6)).isoformat())
     sec=('<!--RECENT-START--><section id="recent" aria-labelledby="recent-h"><div class="wrap"><div class="rhead"><h2 id="recent-h">Recently added</h2>'
-         f'<a href="new.html">See all new tools →</a></div><div class="rstats" id="rstats" aria-live="polite"></div><p class="muted rsub"><span id="rweek">{nw}</span> added this week (Pacific time) · newest first</p><div class="grid rgrid">'+"".join(card(x,"") for x in top)+'</div></div></section>'+STATS_JS+'<!--RECENT-END-->')
+         f'<a href="new.html">See all new tools →</a></div><div class="rstats" id="rstats" aria-live="polite"></div><p class="muted rsub"><span id="rsum">{len(t)} tools · {nw} new this week · every link checked</span><br><span id="rchecked"></span></p><div class="grid rgrid">'+"".join(card(x,"") for x in top)+'</div></div></section>'+STATS_JS+'<!--RECENT-END-->')
     s=open("index.html").read()
     if "<!--RECENT-START-->" in s: s=re.sub(r"<!--RECENT-START-->.*?<!--RECENT-END-->",lambda m:sec,s,flags=re.S)
     else: s=s.replace('<section id="feed">',sec+'\n<section id="feed">',1)
