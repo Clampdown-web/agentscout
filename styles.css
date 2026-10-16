@@ -141,3 +141,13 @@ dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:
 .news .disclose{margin:10px 0 0}
 @media(max-width:760px){.news ol{grid-template-columns:minmax(0,1fr)}.news{padding:14px 14px}.news .nt{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
 .news .nt{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* sidebar layout */
+.layout{max-width:1200px;margin:0 auto}
+@media(min-width:1100px){.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;padding:0 24px;align-items:start}
+.layout .mainc .wrap{max-width:none;padding-left:0;padding-right:0}
+.layout .mainc .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.side{padding-top:40px}.news.sticky{position:sticky;top:76px;max-height:calc(100vh - 92px);overflow:auto}
+.side .news ol{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:1099px){.side{padding:0 24px 32px;max-width:1100px;margin:0 auto}.news.sticky{position:static}}
+@media(max-width:640px){.side{padding:0 16px 24px}}
