@@ -26,6 +26,7 @@
 </div></header>
 
 <section id="feed"><div class="wrap">
+  <section class="news" id="news" aria-labelledby="newsh" hidden><div class="newshead"><h2 id="newsh">Agent news</h2><span class="muted" id="newsup"></span></div><ol id="newslist"></ol><p class="disclose">Headlines link to the original source. Agent-only, last 72 hours.</p></section>
   <div id="featured"></div>
   <div class="tabs" id="tabs"><button class="on" data-t="new">New this week</button><button data-t="stars">Most-starred on GitHub</button><button data-t="votes">Your upvotes</button></div>
   <div class="rank" id="rank"></div>
@@ -110,5 +111,10 @@ fetch("tools.json").then(r=>r.json()).then(d=>{
  $("q").oninput=render;$("sort").onchange=render;renderRank();render();
  document.querySelectorAll("[data-saved-count]").forEach(n=>n.textContent=AS.savedCount());
 }).catch(()=>{$("list").innerHTML='<div class="empty">Could not load tools.json. Serve this folder over HTTP.</div>'});
+
+fetch("news.json",{cache:"no-cache"}).then(r=>r.json()).then(n=>{if(!n.items||!n.items.length)return;
+ const rel=d=>{const h=Math.round((Date.now()-new Date(d))/36e5);return h<1?"just now":h<24?h+"h ago":Math.round(h/24)+"d ago"};
+ $("newslist").innerHTML=n.items.slice(0,8).map(x=>`<li><a class="nt" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a><span class="nm">${esc(x.source)} · <time datetime="${esc(x.date)}">${rel(x.date)}</time>${x.tool?` · <a href="tools/${esc(x.tool)}.html">On AgentScout →</a>`:""}</span></li>`).join("");
+ $("newsup").textContent="Last updated "+new Date(n.updated).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});$("news").hidden=false}).catch(()=>{});
 </script>
 </body></html>
