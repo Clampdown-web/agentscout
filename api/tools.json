@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-16T22:15:16.418571Z",
- "count": 446,
+ "generated": "2026-10-16T22:22:50.330876Z",
+ "count": 502,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -13865,6 +13865,1756 @@
    "repo": "Nano-Collective/nanocoder",
    "logo": "https://clampdown-web.github.io/agentscout/assets/logos/nanocoder.png",
    "page": "https://clampdown-web.github.io/agentscout/tools/nanocoder.html"
+  },
+  {
+   "name": "Notion MCP",
+   "slug": "notion-mcp",
+   "url": "https://developers.notion.com/guides/mcp/overview",
+   "website": "https://developers.notion.com/guides/mcp/overview",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Notion's official hosted MCP server that lets AI agents search, read and update pages and databases in your workspace.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/notion-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/notion-mcp.html"
+  },
+  {
+   "name": "Linear MCP",
+   "slug": "linear-mcp",
+   "url": "https://linear.app/docs/mcp",
+   "website": "https://linear.app/docs/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Linear's official remote MCP server for letting agents find, create and update issues, projects and comments.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/linear-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/linear-mcp.html"
+  },
+  {
+   "name": "Atlassian Rovo MCP Server",
+   "slug": "atlassian-rovo-mcp-server",
+   "url": "https://www.atlassian.com/platform/rovo-mcp",
+   "website": "https://www.atlassian.com/platform/rovo-mcp",
+   "github": "https://github.com/atlassian/atlassian-mcp-server",
+   "category": "MCP & infra",
+   "description": "Atlassian's Rovo MCP server that connects agents to Jira, Confluence and other Atlassian cloud apps.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "1101 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "atlassian/atlassian-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/atlassian-rovo-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/atlassian-rovo-mcp-server.html"
+  },
+  {
+   "name": "Auth0 MCP Server",
+   "slug": "auth0-mcp-server",
+   "url": "https://github.com/auth0/auth0-mcp-server",
+   "website": "",
+   "github": "https://github.com/auth0/auth0-mcp-server",
+   "category": "MCP & infra",
+   "description": "Auth0's MCP server for managing applications, APIs, actions and logs in an Auth0 tenant through an agent.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "122 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "auth0/auth0-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/auth0-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/auth0-mcp-server.html"
+  },
+  {
+   "name": "Blockscout MCP",
+   "slug": "blockscout-mcp",
+   "url": "https://github.com/blockscout/mcp-server",
+   "website": "",
+   "github": "https://github.com/blockscout/mcp-server",
+   "category": "MCP & infra",
+   "description": "Blockscout's MCP server giving agents contextual access to blockchain data across many EVM chains.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "46 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "blockscout/mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/blockscout-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/blockscout-mcp.html"
+  },
+  {
+   "name": "Brave Search MCP",
+   "slug": "brave-search-mcp",
+   "url": "https://github.com/brave/brave-search-mcp-server",
+   "website": "",
+   "github": "https://github.com/brave/brave-search-mcp-server",
+   "category": "MCP & infra",
+   "description": "Brave's official MCP server for web, image, video, news and local search through the Brave Search API.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1504 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "brave/brave-search-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/brave-search-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/brave-search-mcp.html"
+  },
+  {
+   "name": "Buildkite MCP",
+   "slug": "buildkite-mcp",
+   "url": "https://github.com/buildkite/buildkite-mcp-server",
+   "website": "",
+   "github": "https://github.com/buildkite/buildkite-mcp-server",
+   "category": "MCP & infra",
+   "description": "Buildkite's MCP server exposing pipelines, builds, jobs and logs to coding agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "54 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "buildkite/buildkite-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/buildkite-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/buildkite-mcp.html"
+  },
+  {
+   "name": "ClickHouse MCP",
+   "slug": "clickhouse-mcp",
+   "url": "https://github.com/ClickHouse/mcp-clickhouse",
+   "website": "",
+   "github": "https://github.com/ClickHouse/mcp-clickhouse",
+   "category": "MCP & infra",
+   "description": "Official ClickHouse MCP server for querying and exploring ClickHouse databases.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "888 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "ClickHouse/mcp-clickhouse",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/clickhouse-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/clickhouse-mcp.html"
+  },
+  {
+   "name": "Cloudflare MCP Servers",
+   "slug": "cloudflare-mcp-servers",
+   "url": "https://github.com/cloudflare/mcp-server-cloudflare",
+   "website": "",
+   "github": "https://github.com/cloudflare/mcp-server-cloudflare",
+   "category": "MCP & infra",
+   "description": "Cloudflare's collection of MCP servers for Workers, observability, DNS analytics and other Cloudflare services.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4387 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "cloudflare/mcp-server-cloudflare",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/cloudflare-mcp-servers.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/cloudflare-mcp-servers.html"
+  },
+  {
+   "name": "Hugging Face MCP Server",
+   "slug": "hugging-face-mcp-server",
+   "url": "https://huggingface.co/mcp",
+   "website": "https://huggingface.co/mcp",
+   "github": "https://github.com/huggingface/hf-mcp-server",
+   "category": "MCP & infra",
+   "description": "Hugging Face's MCP server connecting agents to the Hub's models, datasets, papers and Gradio Spaces.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "304 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "huggingface/hf-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/hugging-face-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/hugging-face-mcp-server.html"
+  },
+  {
+   "name": "Airtable MCP",
+   "slug": "airtable-mcp",
+   "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
+   "website": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Airtable's official MCP server that lets agents read and write bases, tables and records.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/airtable-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/airtable-mcp.html"
+  },
+  {
+   "name": "Amplitude MCP",
+   "slug": "amplitude-mcp",
+   "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
+   "website": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Amplitude's MCP server for searching and analyzing product analytics data from an agent.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/amplitude-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/amplitude-mcp.html"
+  },
+  {
+   "name": "Canva MCP",
+   "slug": "canva-mcp",
+   "url": "https://www.canva.dev/docs/apps/mcp/",
+   "website": "https://www.canva.dev/docs/apps/mcp/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Canva's MCP server for creating, searching, editing and exporting designs from AI assistants.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/canva-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/canva-mcp.html"
+  },
+  {
+   "name": "CircleCI MCP",
+   "slug": "circleci-mcp",
+   "url": "https://circleci.com/docs/guides/toolkit/using-the-circleci-mcp-server/",
+   "website": "https://circleci.com/docs/guides/toolkit/using-the-circleci-mcp-server/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "CircleCI's MCP server for inspecting projects, pipelines, failed jobs and test results from coding agents.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/circleci-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/circleci-mcp.html"
+  },
+  {
+   "name": "GitLab MCP",
+   "slug": "gitlab-mcp",
+   "url": "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
+   "website": "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "GitLab's official MCP server for letting agents work with projects, issues and merge requests.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/gitlab-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/gitlab-mcp.html"
+  },
+  {
+   "name": "New Relic MCP",
+   "slug": "new-relic-mcp",
+   "url": "https://docs.newrelic.com/docs/agentic-ai/mcp/overview/",
+   "website": "https://docs.newrelic.com/docs/agentic-ai/mcp/overview/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "New Relic's MCP server for querying metrics, logs, traces and alerts through an agent.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/new-relic-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/new-relic-mcp.html"
+  },
+  {
+   "name": "PayPal MCP",
+   "slug": "paypal-mcp",
+   "url": "https://github.com/paypal/paypal-mcp-server",
+   "website": "",
+   "github": "https://github.com/paypal/paypal-mcp-server",
+   "category": "MCP & infra",
+   "description": "PayPal's MCP server for invoices, orders, payments and other PayPal operations from agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "13 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "paypal/paypal-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/paypal-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/paypal-mcp.html"
+  },
+  {
+   "name": "Figma MCP Server",
+   "slug": "figma-mcp-server",
+   "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+   "website": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+   "github": "https://github.com/figma/mcp-server-guide",
+   "category": "MCP & infra",
+   "description": "Figma's MCP server that brings design context from Figma files into coding agents.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "2079 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "figma/mcp-server-guide",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/figma-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/figma-mcp-server.html"
+  },
+  {
+   "name": "Grafana MCP",
+   "slug": "grafana-mcp",
+   "url": "https://github.com/grafana/mcp-grafana",
+   "website": "",
+   "github": "https://github.com/grafana/mcp-grafana",
+   "category": "MCP & infra",
+   "description": "Grafana's MCP server giving agents access to dashboards, data sources and incidents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "3568 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "grafana/mcp-grafana",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/grafana-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/grafana-mcp.html"
+  },
+  {
+   "name": "Terraform MCP Server",
+   "slug": "terraform-mcp-server",
+   "url": "https://github.com/hashicorp/terraform-mcp-server",
+   "website": "",
+   "github": "https://github.com/hashicorp/terraform-mcp-server",
+   "category": "MCP & infra",
+   "description": "HashiCorp's Terraform MCP server for looking up providers and modules and automating workflows.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1550 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "hashicorp/terraform-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/terraform-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/terraform-mcp-server.html"
+  },
+  {
+   "name": "Linkup MCP",
+   "slug": "linkup-mcp",
+   "url": "https://www.linkup.so/",
+   "website": "https://www.linkup.so/",
+   "github": "https://github.com/LinkupPlatform/linkup-mcp-server",
+   "category": "MCP & infra",
+   "description": "Linkup's MCP server for real-time, source-backed web search.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "29 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "LinkupPlatform/linkup-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/linkup-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/linkup-mcp.html"
+  },
+  {
+   "name": "MATLAB MCP Server",
+   "slug": "matlab-mcp-server",
+   "url": "https://github.com/matlab/matlab-mcp-server",
+   "website": "",
+   "github": "https://github.com/matlab/matlab-mcp-server",
+   "category": "MCP & infra",
+   "description": "MathWorks' MCP server that lets coding agents run MATLAB code and tests.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1672 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "matlab/matlab-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/matlab-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/matlab-mcp-server.html"
+  },
+  {
+   "name": "Azure MCP Server",
+   "slug": "azure-mcp-server",
+   "url": "https://github.com/microsoft/mcp",
+   "website": "",
+   "github": "https://github.com/microsoft/mcp",
+   "category": "MCP & infra",
+   "description": "Microsoft's Azure MCP server connecting agents to Azure services.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "3777 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "microsoft/mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/azure-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/azure-mcp-server.html"
+  },
+  {
+   "name": "Microsoft Learn MCP",
+   "slug": "microsoft-learn-mcp",
+   "url": "https://learn.microsoft.com/en-us/",
+   "website": "https://learn.microsoft.com/en-us/",
+   "github": "https://github.com/MicrosoftDocs/mcp",
+   "category": "MCP & infra",
+   "description": "Official Microsoft Learn MCP server giving agents up-to-date Microsoft documentation.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1950 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "MicrosoftDocs/mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/microsoft-learn-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/microsoft-learn-mcp.html"
+  },
+  {
+   "name": "Power BI Modeling MCP",
+   "slug": "power-bi-modeling-mcp",
+   "url": "https://github.com/microsoft/powerbi-modeling-mcp",
+   "website": "",
+   "github": "https://github.com/microsoft/powerbi-modeling-mcp",
+   "category": "MCP & infra",
+   "description": "Microsoft's MCP server that lets agents build and edit Power BI semantic models.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1224 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "microsoft/powerbi-modeling-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/power-bi-modeling-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/power-bi-modeling-mcp.html"
+  },
+  {
+   "name": "monday.com MCP",
+   "slug": "monday-com-mcp",
+   "url": "https://monday.com/",
+   "website": "https://monday.com/",
+   "github": "https://github.com/mondaycom/mcp",
+   "category": "MCP & infra",
+   "description": "monday.com's MCP server for managing boards, items and workflows.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "431 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "mondaycom/mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/monday-com-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/monday-com-mcp.html"
+  },
+  {
+   "name": "MongoDB MCP Server",
+   "slug": "mongodb-mcp-server",
+   "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+   "website": "",
+   "github": "https://github.com/mongodb-js/mongodb-mcp-server",
+   "category": "MCP & infra",
+   "description": "MongoDB's official MCP server for querying databases and managing Atlas.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1143 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "mongodb-js/mongodb-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mongodb-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mongodb-mcp-server.html"
+  },
+  {
+   "name": "Neo4j MCP",
+   "slug": "neo4j-mcp",
+   "url": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/",
+   "website": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/",
+   "github": "https://github.com/neo4j-contrib/mcp-neo4j",
+   "category": "MCP & infra",
+   "description": "Neo4j MCP servers for querying graphs, managing Aura instances and graph memory.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "988 GitHub stars",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "neo4j-contrib/mcp-neo4j",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/neo4j-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/neo4j-mcp.html"
+  },
+  {
+   "name": "Neon MCP",
+   "slug": "neon-mcp",
+   "url": "https://neon.com/docs/ai/neon-mcp-server",
+   "website": "https://neon.com/docs/ai/neon-mcp-server",
+   "github": "https://github.com/neondatabase/mcp-server-neon",
+   "category": "MCP & infra",
+   "description": "Neon's official MCP server for managing Postgres projects, branches and queries.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "652 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "neondatabase/mcp-server-neon",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/neon-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/neon-mcp.html"
+  },
+  {
+   "name": "Oxylabs MCP",
+   "slug": "oxylabs-mcp",
+   "url": "https://oxylabs.io/",
+   "website": "https://oxylabs.io/",
+   "github": "https://github.com/oxylabs/oxylabs-mcp",
+   "category": "MCP & infra",
+   "description": "Oxylabs' MCP server for fetching and parsing web content at scale.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "104 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "oxylabs/oxylabs-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/oxylabs-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/oxylabs-mcp.html"
+  },
+  {
+   "name": "PlanetScale MCP",
+   "slug": "planetscale-mcp",
+   "url": "https://planetscale.com/docs/mcp-server",
+   "website": "https://planetscale.com/docs/mcp-server",
+   "github": "https://github.com/planetscale/mcp-server",
+   "category": "MCP & infra",
+   "description": "PlanetScale's MCP server for databases, branches, schemas and query insights.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "5 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "planetscale/mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/planetscale-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/planetscale-mcp.html"
+  },
+  {
+   "name": "Postman MCP Server",
+   "slug": "postman-mcp-server",
+   "url": "https://www.postman.com/product/mcp-server/",
+   "website": "https://www.postman.com/product/mcp-server/",
+   "github": "https://github.com/postmanlabs/postman-mcp-server",
+   "category": "MCP & infra",
+   "description": "Postman's MCP server giving agents access to workspaces, collections and APIs.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "321 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "postmanlabs/postman-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/postman-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/postman-mcp-server.html"
+  },
+  {
+   "name": "Redis MCP Server",
+   "slug": "redis-mcp-server",
+   "url": "https://redis.io/docs/latest/integrate/redis-mcp/",
+   "website": "https://redis.io/docs/latest/integrate/redis-mcp/",
+   "github": "https://github.com/redis/mcp-redis",
+   "category": "MCP & infra",
+   "description": "Redis' official MCP server for working with data in Redis through natural language.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "637 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "redis/mcp-redis",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/redis-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/redis-mcp-server.html"
+  },
+  {
+   "name": "Ref",
+   "slug": "ref",
+   "url": "https://github.com/ref-tools/ref-tools-mcp",
+   "website": "",
+   "github": "https://github.com/ref-tools/ref-tools-mcp",
+   "category": "MCP & infra",
+   "description": "Token-efficient documentation search for coding agents.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "1183 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "ref-tools/ref-tools-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ref.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ref.html"
+  },
+  {
+   "name": "ROS MCP Server",
+   "slug": "ros-mcp-server",
+   "url": "https://robotmcp.ai/",
+   "website": "https://robotmcp.ai/",
+   "github": "https://github.com/robotmcp/ros-mcp-server",
+   "category": "MCP & infra",
+   "description": "Connects Claude and other models to ROS robots.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1499 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "robotmcp/ros-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/ros-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/ros-mcp-server.html"
+  },
+  {
+   "name": "ScrapeGraph MCP",
+   "slug": "scrapegraph-mcp",
+   "url": "https://github.com/ScrapeGraphAI/scrapegraph-mcp",
+   "website": "",
+   "github": "https://github.com/ScrapeGraphAI/scrapegraph-mcp",
+   "category": "MCP & infra",
+   "description": "ScrapeGraphAI's MCP server for AI-powered web scraping.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "115 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "ScrapeGraphAI/scrapegraph-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/scrapegraph-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/scrapegraph-mcp.html"
+  },
+  {
+   "name": "Snyk Agent Scan",
+   "slug": "snyk-agent-scan",
+   "url": "https://github.com/snyk/agent-scan",
+   "website": "",
+   "github": "https://github.com/snyk/agent-scan",
+   "category": "evals & observability",
+   "description": "Snyk's scanner for security risks in MCP servers and agent skills.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "3142 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "snyk/agent-scan",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/snyk-agent-scan.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/snyk-agent-scan.html"
+  },
+  {
+   "name": "SonarQube MCP Server",
+   "slug": "sonarqube-mcp-server",
+   "url": "https://www.sonarsource.com/products/sonarqube/mcp-server/",
+   "website": "https://www.sonarsource.com/products/sonarqube/mcp-server/",
+   "github": "https://github.com/SonarSource/sonarqube-mcp-server",
+   "category": "MCP & infra",
+   "description": "SonarQube MCP server for code quality and security analysis from agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "665 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "SonarSource/sonarqube-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/sonarqube-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/sonarqube-mcp-server.html"
+  },
+  {
+   "name": "StackQL",
+   "slug": "stackql",
+   "url": "https://stackql.io/",
+   "website": "https://stackql.io/",
+   "github": "https://github.com/stackql/stackql",
+   "category": "MCP & infra",
+   "description": "SQL engine with an MCP server for querying and provisioning cloud resources.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1070 GitHub stars",
+    "Connect tools via mcp",
+    "Computer vision"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "stackql/stackql",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/stackql.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/stackql.html"
+  },
+  {
+   "name": "Stripe Agent Toolkit",
+   "slug": "stripe-agent-toolkit",
+   "url": "https://docs.stripe.com/agents",
+   "website": "https://docs.stripe.com/agents",
+   "github": "https://github.com/stripe/ai",
+   "category": "MCP & infra",
+   "description": "Stripe's agent toolkit and MCP server for customers, payments and billing.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1953 GitHub stars",
+    "Build an agent",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "stripe/ai",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/stripe-agent-toolkit.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/stripe-agent-toolkit.html"
+  },
+  {
+   "name": "Supabase MCP",
+   "slug": "supabase-mcp",
+   "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+   "website": "https://supabase.com/docs/guides/ai-tools/mcp",
+   "github": "https://github.com/supabase/mcp",
+   "category": "MCP & infra",
+   "description": "Supabase's MCP server for managing databases, migrations and projects.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2955 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "supabase/mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/supabase-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/supabase-mcp.html"
+  },
+  {
+   "name": "Upstash MCP",
+   "slug": "upstash-mcp",
+   "url": "https://github.com/upstash/mcp-server",
+   "website": "",
+   "github": "https://github.com/upstash/mcp-server",
+   "category": "MCP & infra",
+   "description": "Upstash's MCP server for managing Redis and other Upstash resources.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "60 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "upstash/mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/upstash-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/upstash-mcp.html"
+  },
+  {
+   "name": "Vercel MCP",
+   "slug": "vercel-mcp",
+   "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+   "website": "https://vercel.com/docs/agent-resources/vercel-mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Vercel's official MCP server for searching docs and managing projects and deployments.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": null,
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/vercel-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/vercel-mcp.html"
+  },
+  {
+   "name": "Webflow MCP",
+   "slug": "webflow-mcp",
+   "url": "https://github.com/webflow/mcp-server",
+   "website": "",
+   "github": "https://github.com/webflow/mcp-server",
+   "category": "MCP & infra",
+   "description": "Webflow's MCP server for designing and managing Webflow sites.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "141 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "webflow/mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/webflow-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/webflow-mcp.html"
+  },
+  {
+   "name": "Wix MCP",
+   "slug": "wix-mcp",
+   "url": "https://github.com/wix/wix-mcp",
+   "website": "",
+   "github": "https://github.com/wix/wix-mcp",
+   "category": "MCP & infra",
+   "description": "Wix's MCP server for building and managing Wix sites and business data.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "15 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "wix/wix-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/wix-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/wix-mcp.html"
+  },
+  {
+   "name": "Zapier MCP",
+   "slug": "zapier-mcp",
+   "url": "https://docs.zapier.com/mcp",
+   "website": "https://docs.zapier.com/mcp",
+   "github": "https://github.com/zapier/zapier-mcp",
+   "category": "MCP & infra",
+   "description": "Zapier's hosted MCP server that connects agents to thousands of apps.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "439 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "zapier/zapier-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/zapier-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/zapier-mcp.html"
+  },
+  {
+   "name": "Mux MCP",
+   "slug": "mux-mcp",
+   "url": "https://github.com/muxinc/mux-ts",
+   "website": "",
+   "github": "https://github.com/muxinc/mux-ts",
+   "category": "MCP & infra",
+   "description": "Mux's official MCP server for video and the Mux API.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "182 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "muxinc/mux-ts",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/mux-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/mux-mcp.html"
+  },
+  {
+   "name": "Testkube MCP",
+   "slug": "testkube-mcp",
+   "url": "https://testkube.io/",
+   "website": "https://testkube.io/",
+   "github": "https://github.com/kubeshop/testkube",
+   "category": "MCP & infra",
+   "description": "Testkube MCP server for managing test workflows and executions.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1669 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "kubeshop/testkube",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/testkube-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/testkube-mcp.html"
+  },
+  {
+   "name": "VoiceMode",
+   "slug": "voicemode",
+   "url": "https://voicemode.dev/",
+   "website": "https://voicemode.dev/",
+   "github": "https://github.com/mbailey/voicemode",
+   "category": "voice",
+   "description": "Adds natural voice conversations to Claude Code and other assistants.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1401 GitHub stars",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "mbailey/voicemode",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/voicemode.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/voicemode.html"
+  },
+  {
+   "name": "Unbrowse",
+   "slug": "unbrowse",
+   "url": "https://unbrowse.ai/",
+   "website": "https://unbrowse.ai/",
+   "github": "https://github.com/unbrowse-ai/unbrowse",
+   "category": "browser/computer use",
+   "description": "Turns websites into APIs agents can call.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "797 GitHub stars",
+    "Automate the browser",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "unbrowse-ai/unbrowse",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/unbrowse.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/unbrowse.html"
+  },
+  {
+   "name": "ToolUniverse",
+   "slug": "tooluniverse",
+   "url": "https://aiscientist.tools/",
+   "website": "https://aiscientist.tools/",
+   "github": "https://github.com/mims-harvard/ToolUniverse",
+   "category": "research",
+   "description": "Harvard's collection of scientific tools for AI scientist agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1744 GitHub stars",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "mims-harvard/ToolUniverse",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/tooluniverse.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/tooluniverse.html"
+  },
+  {
+   "name": "InfraNodus MCP",
+   "slug": "infranodus-mcp",
+   "url": "https://github.com/infranodus/mcp-server-infranodus",
+   "website": "",
+   "github": "https://github.com/infranodus/mcp-server-infranodus",
+   "category": "MCP & infra",
+   "description": "Turns text into knowledge graphs for agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "104 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "infranodus/mcp-server-infranodus",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/infranodus-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/infranodus-mcp.html"
+  },
+  {
+   "name": "arXiv MCP Server",
+   "slug": "arxiv-mcp-server",
+   "url": "https://github.com/blazickjp/arxiv-mcp-server",
+   "website": "",
+   "github": "https://github.com/blazickjp/arxiv-mcp-server",
+   "category": "MCP & infra",
+   "description": "MCP server for searching and reading arXiv papers.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "3221 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "blazickjp/arxiv-mcp-server",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/arxiv-mcp-server.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/arxiv-mcp-server.html"
+  },
+  {
+   "name": "SearXNG MCP",
+   "slug": "searxng-mcp",
+   "url": "https://github.com/ihor-sokoliuk/mcp-searxng",
+   "website": "",
+   "github": "https://github.com/ihor-sokoliuk/mcp-searxng",
+   "category": "MCP & infra",
+   "description": "MCP server for private web search through SearXNG.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1312 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "ihor-sokoliuk/mcp-searxng",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/searxng-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/searxng-mcp.html"
+  },
+  {
+   "name": "Anytype MCP",
+   "slug": "anytype-mcp",
+   "url": "https://github.com/anyproto/anytype-mcp",
+   "website": "",
+   "github": "https://github.com/anyproto/anytype-mcp",
+   "category": "MCP & infra",
+   "description": "Official MCP server for the Anytype knowledge app.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "533 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "anyproto/anytype-mcp",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/anytype-mcp.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/anytype-mcp.html"
+  },
+  {
+   "name": "pg-aiguide",
+   "slug": "pg-aiguide",
+   "url": "https://github.com/timescale/pg-aiguide",
+   "website": "",
+   "github": "https://github.com/timescale/pg-aiguide",
+   "category": "MCP & infra",
+   "description": "Timescale's MCP server with PostgreSQL docs and best practices for agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1870 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "repo": "timescale/pg-aiguide",
+   "logo": "https://clampdown-web.github.io/agentscout/assets/logos/pg-aiguide.png",
+   "page": "https://clampdown-web.github.io/agentscout/tools/pg-aiguide.html"
   }
  ]
 }
