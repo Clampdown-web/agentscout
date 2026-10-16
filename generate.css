@@ -20,8 +20,8 @@ html[data-theme=dark] .ig-cta{background:var(--accent-soft)}
 :root{--gen-art:url(assets/gen-art.webp?v=20261016b)}
 .gen-hero{position:relative;margin:8px 0 24px;padding:14px;border-radius:20px;background:#1c1f5a}
 .gen-inner{position:relative;padding:42px 24px;border-radius:14px;overflow:hidden;isolation:isolate;background:#EFEFFE var(--gen-art) center/cover no-repeat}
-.gen-inner::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(239,239,254,.62),rgba(239,239,254,.3))}
-html[data-theme=dark] .gen-inner::before{background:linear-gradient(180deg,rgba(37,38,77,.72),rgba(37,38,77,.5))}
+.gen-inner::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(239,239,254,.3)}
+html[data-theme=dark] .gen-inner::before{background:rgba(37,38,77,.35)}
 .gen-card{max-width:760px;margin:0 auto;padding:28px;border-radius:16px;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.6);box-shadow:0 12px 40px rgba(30,27,90,.25)}
 html[data-theme=dark] .gen-card{background:rgba(23,26,34,.62);border-color:rgba(147,147,255,.22);box-shadow:0 12px 40px rgba(0,0,0,.5)}
 .gen-card h1{margin-top:0}
@@ -35,7 +35,6 @@ html[data-theme=dark] .gen-card .ig-ex button{background:rgba(21,24,33,.75)}
 .gen-card #ig-go{transition:transform .18s,box-shadow .18s}
 .gen-card #ig-go:not([disabled]):hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(91,91,247,.35)}
 @media(max-width:640px){.gen-hero{margin:8px 0 20px;padding:16px 10px;border-radius:16px}.gen-card{padding:18px;border-radius:14px}.gen-card h1{font-size:26px}}
-.gen-inner::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;z-index:-1;background:linear-gradient(180deg,transparent,rgba(12,14,40,.45))}
 .gen-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:0 auto 14px}
 .gen-pills span{font-size:12.5px;font-weight:600;color:#86efac;border:1px solid #4ade80;background:rgba(6,40,22,.55);padding:3px 11px;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .ig-surprise{font-weight:500;font-size:13px;color:var(--accent)}
@@ -47,5 +46,5 @@ html[data-theme=dark] .ig-out img{background:var(--accent-soft)}
 html[data-theme=dark] .gen-inner{background-color:#25264D}
 @media(max-width:640px){.gen-hero{padding:8px}.gen-inner{padding:14px 8px;border-radius:12px}}
 /* Homepage compact card: daily art inside the card, lavender overlay; border unchanged */
-.homegen{background:linear-gradient(rgba(239,239,254,.84),rgba(239,239,254,.84)),#EFEFFE var(--gen-art) center/cover no-repeat}
-html[data-theme=dark] .homegen{background:linear-gradient(rgba(37,38,77,.86),rgba(37,38,77,.86)),#25264D var(--gen-art) center/cover no-repeat}
+.homegen{background:linear-gradient(rgba(239,239,254,.5),rgba(239,239,254,.5)),#EFEFFE var(--gen-art) center/cover no-repeat}
+html[data-theme=dark] .homegen{background:linear-gradient(rgba(37,38,77,.55),rgba(37,38,77,.55)),#25264D var(--gen-art) center/cover no-repeat}
