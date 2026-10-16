@@ -15,3 +15,16 @@ const AS={
     if(s){const on=AS.toggle("as_saves",s.dataset.save);document.querySelectorAll(`[data-save="${CSS.escape(s.dataset.save)}"]`).forEach(b=>{b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);const sp=b.querySelector("span");if(sp)sp.textContent=on?"Saved":"Save"})}
     document.querySelectorAll("[data-saved-count]").forEach(n=>n.textContent=AS.savedCount());onchange&&onchange()})}
 };
+/* Scroll buttons (top + bottom). Injected on every page that loads app.js; no inline script needed. */
+(function(){if(window.__asScroll)return;window.__asScroll=1;
+function init(){var w=document.createElement("div");w.className="scrollbtns";
+w.innerHTML='<button type="button" class="scrollbtn up" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button><button type="button" class="scrollbtn down" aria-label="Scroll to bottom" title="Scroll to bottom"><span aria-hidden="true">↓</span></button>';
+document.body.appendChild(w);var up=w.querySelector(".up"),dn=w.querySelector(".down"),q=0;
+up.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
+dn.onclick=function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:"smooth"})};
+function upd(){q=0;var y=window.scrollY||0,h=document.documentElement.scrollHeight,v=window.innerHeight,fromBottom=h-(y+v);
+up.classList.toggle("show",y>400);dn.classList.toggle("show",h>v+300&&fromBottom>300)}
+function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
+addEventListener("scroll",sch,{passive:true});addEventListener("resize",sch);addEventListener("load",sch);
+if(window.ResizeObserver)new ResizeObserver(sch).observe(document.body);upd()}
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
