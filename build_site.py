@@ -43,3 +43,16 @@ print(len(t),"pages")
 build_extras.build(t)
 import build_api
 build_api.build(t)
+
+# Keep homepage static counts in sync with tools.json
+def _sync_index_counts():
+    import re, json as _j, datetime as _dt
+    n = len(_j.load(open("tools.json")))
+    s = open("index.html").read()
+    s = re.sub(r"\b\d+ AI Agent Tools", f"{n} AI Agent Tools", s)
+    s = re.sub(r"Directory of \d+ link-checked", f"Directory of {n} link-checked", s)
+    s = re.sub(r'(id="s-eyebrow">)\d+ tools · Links checked [^<]+', lambda m: m.group(1) + f"{n} tools · Links checked " + _dt.date.today().strftime("%b %-d, %Y"), s)
+    s = re.sub(r'(id="s-total">)\d+', lambda m: m.group(1) + str(n), s)
+    s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
+    open("index.html", "w").write(s)
+_sync_index_counts()
