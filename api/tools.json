@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-17T05:16:33Z",
- "updated": "2026-10-17T05:16:33Z",
+ "generated": "2026-10-17T05:49:44Z",
+ "updated": "2026-10-17T05:49:44Z",
  "last_checked": "2026-10-16",
- "count": 567,
+ "count": 616,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -23510,6 +23510,1931 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tradeos-ai.png",
    "page": "https://agentscouthq.com/tools/tradeos-ai.html"
+  },
+  {
+   "name": "ElizaOS",
+   "slug": "elizaos",
+   "url": "https://docs.elizaos.ai",
+   "website": "https://docs.elizaos.ai",
+   "github": "https://github.com/elizaOS/eliza",
+   "category": "crypto",
+   "description": "Open-source TypeScript agent operating system with wallet and on-chain plugins, maintained by Eliza Research.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Control a computer",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "elizaOS/eliza",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/elizaos.png",
+   "page": "https://agentscouthq.com/tools/elizaos.html"
+  },
+  {
+   "name": "Coinbase AgentKit",
+   "slug": "coinbase-agentkit",
+   "url": "https://github.com/coinbase/agentkit",
+   "website": "",
+   "github": "https://github.com/coinbase/agentkit",
+   "category": "crypto",
+   "description": "Coinbase's toolkit that gives any AI agent a crypto wallet and on-chain actions.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "coinbase/agentkit",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coinbase-agentkit.png",
+   "page": "https://agentscouthq.com/tools/coinbase-agentkit.html"
+  },
+  {
+   "name": "Solana Agent Kit",
+   "slug": "solana-agent-kit",
+   "url": "https://kit.sendai.fun",
+   "website": "https://kit.sendai.fun",
+   "github": "https://github.com/sendaifun/solana-agent-kit",
+   "category": "crypto",
+   "description": "SendAI's open-source kit letting agents trade, launch tokens and use Solana protocols.",
+   "key_features": [
+    "Open source",
+    "Active"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "sendaifun/solana-agent-kit",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/solana-agent-kit.png",
+   "page": "https://agentscouthq.com/tools/solana-agent-kit.html"
+  },
+  {
+   "name": "Virtuals Protocol",
+   "slug": "virtuals-protocol",
+   "url": "https://www.virtuals.io",
+   "website": "https://www.virtuals.io",
+   "github": "https://github.com/Virtual-Protocol",
+   "category": "crypto",
+   "description": "Platform to launch, co-own and run tokenized AI agents that transact with each other.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/virtuals-protocol.png",
+   "page": "https://agentscouthq.com/tools/virtuals-protocol.html"
+  },
+  {
+   "name": "Olas (Autonolas)",
+   "slug": "olas-autonolas",
+   "url": "https://olas.network",
+   "website": "https://olas.network",
+   "github": "https://github.com/valory-xyz",
+   "category": "crypto",
+   "description": "Network and open-source stack (Open Autonomy, Pearl app) for running and co-owning autonomous on-chain agents.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/olas-autonolas.png",
+   "page": "https://agentscouthq.com/tools/olas-autonolas.html"
+  },
+  {
+   "name": "Daydreams",
+   "slug": "daydreams",
+   "url": "https://www.daydreams.systems",
+   "website": "https://www.daydreams.systems",
+   "github": "https://github.com/daydreamsai/daydreams",
+   "category": "crypto",
+   "description": "Open-source tools, payment rails and markets for building agents that buy, sell and coordinate work on-chain.",
+   "key_features": [
+    "Open source",
+    "Active"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "daydreamsai/daydreams",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/daydreams.png",
+   "page": "https://agentscouthq.com/tools/daydreams.html"
+  },
+  {
+   "name": "SpoonOS",
+   "slug": "spoonos",
+   "url": "https://spoonai.io",
+   "website": "https://spoonai.io",
+   "github": "https://github.com/XSpoonAi/spoon-core",
+   "category": "crypto",
+   "description": "Agent operating system for building Web3-native AI agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Control a computer"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "XSpoonAi/spoon-core",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/spoonos.png",
+   "page": "https://agentscouthq.com/tools/spoonos.html"
+  },
+  {
+   "name": "Fetch.ai",
+   "slug": "fetch-ai",
+   "url": "https://fetch.ai",
+   "website": "https://fetch.ai",
+   "github": "https://github.com/fetchai/uAgents",
+   "category": "crypto",
+   "description": "Platform and Agentverse marketplace for autonomous agents that can transact on-chain.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "fetchai/uAgents",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fetch-ai.png",
+   "page": "https://agentscouthq.com/tools/fetch-ai.html"
+  },
+  {
+   "name": "Theoriq",
+   "slug": "theoriq",
+   "url": "https://www.theoriq.ai",
+   "website": "https://www.theoriq.ai",
+   "github": "https://github.com/theoriqai",
+   "category": "crypto",
+   "description": "DeFi strategy curator that uses autonomous AI to run risk-managed on-chain yield vaults for tokenized assets (AlphaVault ETH, Gold Vault).",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/theoriq.png",
+   "page": "https://agentscouthq.com/tools/theoriq.html"
+  },
+  {
+   "name": "x402",
+   "slug": "x402",
+   "url": "https://www.x402.org",
+   "website": "https://www.x402.org",
+   "github": "https://github.com/x402-foundation/x402",
+   "category": "crypto",
+   "description": "Open HTTP payment standard so agents can pay for APIs per request in stablecoins.",
+   "key_features": [
+    "Open standard",
+    "Active"
+   ],
+   "pricing": "Open standard",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "x402-foundation/x402",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/x402.png",
+   "page": "https://agentscouthq.com/tools/x402.html"
+  },
+  {
+   "name": "Skyfire",
+   "slug": "skyfire",
+   "url": "https://www.skyfire.xyz",
+   "website": "https://www.skyfire.xyz",
+   "github": "https://github.com/skyfire-xyz",
+   "category": "crypto",
+   "description": "Gives AI agents verified identity and payment credentials so they can access and pay for services across the web.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/skyfire.png",
+   "page": "https://agentscouthq.com/tools/skyfire.html"
+  },
+  {
+   "name": "Crossmint for AI Agents",
+   "slug": "crossmint-for-ai-agents",
+   "url": "https://www.crossmint.com/solutions/agentic-payments",
+   "website": "https://www.crossmint.com/solutions/agentic-payments",
+   "github": "https://github.com/Crossmint",
+   "category": "crypto",
+   "description": "Wallets, stablecoin payments and checkout APIs built for AI agents.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/crossmint-for-ai-agents.png",
+   "page": "https://agentscouthq.com/tools/crossmint-for-ai-agents.html"
+  },
+  {
+   "name": "Privy",
+   "slug": "privy",
+   "url": "https://www.privy.io",
+   "website": "https://www.privy.io",
+   "github": "https://github.com/privy-io",
+   "category": "crypto",
+   "description": "Embedded and server wallets developers can hand to agents with policy controls.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/privy.png",
+   "page": "https://agentscouthq.com/tools/privy.html"
+  },
+  {
+   "name": "Turnkey",
+   "slug": "turnkey",
+   "url": "https://www.turnkey.com",
+   "website": "https://www.turnkey.com",
+   "github": "https://github.com/tkhq",
+   "category": "crypto",
+   "description": "Secure key infrastructure for programmatic and agent-controlled wallets.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/turnkey.png",
+   "page": "https://agentscouthq.com/tools/turnkey.html"
+  },
+  {
+   "name": "Bankr",
+   "slug": "bankr",
+   "url": "https://bankr.bot",
+   "website": "https://bankr.bot",
+   "github": "https://github.com/BankrBot",
+   "category": "crypto",
+   "description": "AI agent that trades, swaps and manages crypto from chat and X.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bankr.png",
+   "page": "https://agentscouthq.com/tools/bankr.html"
+  },
+  {
+   "name": "HeyAnon",
+   "slug": "heyanon",
+   "url": "https://heyanon.ai",
+   "website": "https://heyanon.ai",
+   "github": "",
+   "category": "crypto",
+   "description": "Conversational DeFi agent that executes swaps, bridges and research across chains.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/heyanon.png",
+   "page": "https://agentscouthq.com/tools/heyanon.html"
+  },
+  {
+   "name": "Almanak",
+   "slug": "almanak",
+   "url": "https://almanak.co",
+   "website": "https://almanak.co",
+   "github": "https://github.com/almanak-co/sdk",
+   "category": "crypto",
+   "description": "Agentic hedge-fund platform to design and deploy non-custodial strategies across crypto, stocks and commodities.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "almanak-co/sdk",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/almanak.png",
+   "page": "https://agentscouthq.com/tools/almanak.html"
+  },
+  {
+   "name": "Giza",
+   "slug": "giza",
+   "url": "https://www.gizatech.xyz",
+   "website": "https://www.gizatech.xyz",
+   "github": "https://github.com/gizatechxyz",
+   "category": "crypto",
+   "description": "Self-custodial autonomous agents that evaluate markets and execute on-chain capital strategies (Giza World, ARMA).",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/giza.png",
+   "page": "https://agentscouthq.com/tools/giza.html"
+  },
+  {
+   "name": "Wayfinder",
+   "slug": "wayfinder",
+   "url": "https://wayfinder.ai",
+   "website": "https://wayfinder.ai",
+   "github": "https://github.com/WayfinderFoundation",
+   "category": "crypto",
+   "description": "Autonomous agents for cross-chain execution that you deploy, monitor and earn with, no scripting.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wayfinder.png",
+   "page": "https://agentscouthq.com/tools/wayfinder.html"
+  },
+  {
+   "name": "Cod3x",
+   "slug": "cod3x",
+   "url": "https://cod3x.org",
+   "website": "https://cod3x.org",
+   "github": "https://github.com/Cod3x-Labs",
+   "category": "crypto",
+   "description": "No-code AI trading agent: describe a strategy in plain English and it trades 24/7.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cod3x.png",
+   "page": "https://agentscouthq.com/tools/cod3x.html"
+  },
+  {
+   "name": "Questflow",
+   "slug": "questflow",
+   "url": "https://questflow.ai",
+   "website": "https://questflow.ai",
+   "github": "https://github.com/questflowai",
+   "category": "crypto",
+   "description": "AI finance agent that connects wallets, exchanges and brokers to invest alongside top investors across crypto and other markets.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/questflow.png",
+   "page": "https://agentscouthq.com/tools/questflow.html"
+  },
+  {
+   "name": "Griffin AI",
+   "slug": "griffin-ai",
+   "url": "https://www.griffinai.io",
+   "website": "https://www.griffinai.io",
+   "github": "",
+   "category": "crypto",
+   "description": "Platform to build and launch DeFi agents without code.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/griffin-ai.png",
+   "page": "https://agentscouthq.com/tools/griffin-ai.html"
+  },
+  {
+   "name": "Surf AI",
+   "slug": "surf-ai",
+   "url": "https://asksurf.ai",
+   "website": "https://asksurf.ai",
+   "github": "https://github.com/asksurf-ai",
+   "category": "crypto",
+   "description": "AI research assistant for crypto (and now US equities) built on on-chain, market and social data.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/surf-ai.png",
+   "page": "https://agentscouthq.com/tools/surf-ai.html"
+  },
+  {
+   "name": "aixbt",
+   "slug": "aixbt",
+   "url": "https://aixbt.tech",
+   "website": "https://aixbt.tech",
+   "github": "https://github.com/aixbt",
+   "category": "crypto",
+   "description": "Autonomous agent tracking crypto narratives and mindshare from X.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aixbt.png",
+   "page": "https://agentscouthq.com/tools/aixbt.html"
+  },
+  {
+   "name": "Nansen AI",
+   "slug": "nansen-ai",
+   "url": "https://www.nansen.ai",
+   "website": "https://www.nansen.ai",
+   "github": "https://github.com/nansen-ai",
+   "category": "crypto",
+   "description": "On-chain analytics with an AI agent that researches tokens and wallets and can execute trades, powered by 500M+ labeled addresses.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nansen-ai.png",
+   "page": "https://agentscouthq.com/tools/nansen-ai.html"
+  },
+  {
+   "name": "ChainGPT",
+   "slug": "chaingpt",
+   "url": "https://www.chaingpt.org",
+   "website": "https://www.chaingpt.org",
+   "github": "https://github.com/ChainGPT-org",
+   "category": "crypto",
+   "description": "Suite of crypto AI tools: chatbot, smart-contract generator and auditor.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/chaingpt.png",
+   "page": "https://agentscouthq.com/tools/chaingpt.html"
+  },
+  {
+   "name": "Blockscope",
+   "slug": "blockscope",
+   "url": "https://chat.blockscope.co",
+   "website": "https://chat.blockscope.co",
+   "github": "",
+   "category": "crypto",
+   "description": "AI on-chain investigator that decodes transactions, profiles wallets and traces stolen funds across 8 chains.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Hacker News",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/blockscope.png",
+   "page": "https://agentscouthq.com/tools/blockscope.html"
+  },
+  {
+   "name": "Alchemy MCP Server",
+   "slug": "alchemy-mcp-server",
+   "url": "https://github.com/alchemyplatform/alchemy-mcp-server",
+   "website": "",
+   "github": "https://github.com/alchemyplatform/alchemy-mcp-server",
+   "category": "crypto",
+   "description": "Official MCP server exposing Alchemy's multi-chain blockchain APIs to agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "alchemyplatform/alchemy-mcp-server",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/alchemy-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/alchemy-mcp-server.html"
+  },
+  {
+   "name": "CoinGecko MCP Server",
+   "slug": "coingecko-mcp-server",
+   "url": "https://docs.coingecko.com/ai-integration/mcp-server",
+   "website": "https://docs.coingecko.com/ai-integration/mcp-server",
+   "github": "https://github.com/coingecko/coingecko-typescript",
+   "category": "crypto",
+   "description": "Official MCP server for crypto prices, market and on-chain data.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "coingecko/coingecko-typescript",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coingecko-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/coingecko-mcp-server.html"
+  },
+  {
+   "name": "EVM MCP Server",
+   "slug": "evm-mcp-server",
+   "url": "https://github.com/mcpdotdirect/evm-mcp-server",
+   "website": "",
+   "github": "https://github.com/mcpdotdirect/evm-mcp-server",
+   "category": "crypto",
+   "description": "Open-source MCP server for reading and transacting on 30+ EVM chains.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "mcpdotdirect/evm-mcp-server",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/evm-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/evm-mcp-server.html"
+  },
+  {
+   "name": "BICScan MCP",
+   "slug": "bicscan-mcp",
+   "url": "https://github.com/ahnlabio/bicscan-mcp",
+   "website": "",
+   "github": "https://github.com/ahnlabio/bicscan-mcp",
+   "category": "crypto",
+   "description": "AhnLab's MCP server for BICScan risk scores of blockchain addresses and domains.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "awesome-mcp-servers",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "ahnlabio/bicscan-mcp",
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bicscan-mcp.png",
+   "page": "https://agentscouthq.com/tools/bicscan-mcp.html"
+  },
+  {
+   "name": "Almanax",
+   "slug": "almanax",
+   "url": "https://www.almanax.ai",
+   "website": "https://www.almanax.ai",
+   "github": "https://github.com/almanax-ai",
+   "category": "crypto",
+   "description": "AI security agent that finds vulnerabilities in smart contracts.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/almanax.png",
+   "page": "https://agentscouthq.com/tools/almanax.html"
+  },
+  {
+   "name": "Octane",
+   "slug": "octane",
+   "url": "https://www.octane.security",
+   "website": "https://www.octane.security",
+   "github": "https://github.com/octane-security",
+   "category": "crypto",
+   "description": "Agentic security analysis that finds exploitable vulnerabilities in mission-critical code, including DeFi smart contracts.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/octane.png",
+   "page": "https://agentscouthq.com/tools/octane.html"
+  },
+  {
+   "name": "Sherlock AI",
+   "slug": "sherlock-ai",
+   "url": "https://sherlock.xyz/solutions/ai",
+   "website": "https://sherlock.xyz/solutions/ai",
+   "github": "https://github.com/sherlock-protocol",
+   "category": "crypto",
+   "description": "Sherlock's AI auditor for smart-contract vulnerabilities.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sherlock-ai.png",
+   "page": "https://agentscouthq.com/tools/sherlock-ai.html"
+  },
+  {
+   "name": "Binance Agent OS",
+   "slug": "binance-agent-os",
+   "url": "https://www.binance.com/en/agent-os",
+   "website": "https://www.binance.com/en/agent-os",
+   "github": "https://github.com/binance/binance-skills-hub",
+   "category": "crypto",
+   "description": "Binance developer platform connecting AI agents to trading, market data, Agentic Wallet, x402 payments and on-chain services via MCP, APIs and skills.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "binance/binance-skills-hub",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/binance-agent-os.png",
+   "page": "https://agentscouthq.com/tools/binance-agent-os.html"
+  },
+  {
+   "name": "Hedera AI Studio",
+   "slug": "hedera-ai-studio",
+   "url": "https://hedera.com/product/ai-studio/",
+   "website": "https://hedera.com/product/ai-studio/",
+   "github": "https://github.com/hashgraph/hedera-agent-kit-js",
+   "category": "crypto",
+   "description": "Open-source toolkit (Agent Kit, MCP server) for building verifiable AI agents on Hedera.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "hashgraph/hedera-agent-kit-js",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hedera-ai-studio.png",
+   "page": "https://agentscouthq.com/tools/hedera-ai-studio.html"
+  },
+  {
+   "name": "MiDash AI",
+   "slug": "midash-ai",
+   "url": "https://www.midash.ai",
+   "website": "https://www.midash.ai",
+   "github": "",
+   "category": "crypto",
+   "description": "Conversational AI trading copilot that turns plain-language strategies into backtested, broker-executed trades across stocks, crypto and forex.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/midash-ai.png",
+   "page": "https://agentscouthq.com/tools/midash-ai.html"
+  },
+  {
+   "name": "Magia Trade",
+   "slug": "magia-trade",
+   "url": "https://magiatrade.com",
+   "website": "https://magiatrade.com",
+   "github": "https://github.com/magiatrade",
+   "category": "crypto",
+   "description": "No-code visual strategy lab with AI agents that send signals and deploy live trading on Binance and B3.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/magia-trade.png",
+   "page": "https://agentscouthq.com/tools/magia-trade.html"
+  },
+  {
+   "name": "OneClick",
+   "slug": "oneclick",
+   "url": "https://defi.oneclick.fi",
+   "website": "https://defi.oneclick.fi",
+   "github": "https://github.com/one-click-crypto",
+   "category": "crypto",
+   "description": "AI recommendation engine that builds a personalized DeFi yield portfolio from your wallet history and risk quiz.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/oneclick.png",
+   "page": "https://agentscouthq.com/tools/oneclick.html"
+  },
+  {
+   "name": "Chainaware",
+   "slug": "chainaware",
+   "url": "https://chainaware.ai",
+   "website": "https://chainaware.ai",
+   "github": "https://github.com/ChainAware/behavioral-prediction-mcp",
+   "category": "crypto",
+   "description": "AI wallet auditor, fraud and rug-pull detector with a prediction MCP server for agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "ChainAware/behavioral-prediction-mcp",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/chainaware.png",
+   "page": "https://agentscouthq.com/tools/chainaware.html"
+  },
+  {
+   "name": "Dataline",
+   "slug": "dataline",
+   "url": "https://www.dataline.xyz",
+   "website": "https://www.dataline.xyz",
+   "github": "https://github.com/dataline-xyz",
+   "category": "crypto",
+   "description": "Turns natural-language intent into structured, confidence-scored Web3 market data for AI agents (formerly Tearline).",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Toolify",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dataline.png",
+   "page": "https://agentscouthq.com/tools/dataline.html"
+  },
+  {
+   "name": "Laika AI",
+   "slug": "laika-ai",
+   "url": "https://laikalabs.ai",
+   "website": "https://laikalabs.ai",
+   "github": "",
+   "category": "crypto",
+   "description": "Web3 browser extension for AI research, token and contract analysis, wallet monitoring and phishing detection.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate the browser",
+    "Research the web",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Toolify",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/laika-ai.png",
+   "page": "https://agentscouthq.com/tools/laika-ai.html"
+  },
+  {
+   "name": "Fere AI",
+   "slug": "fere-ai",
+   "url": "https://www.fereai.xyz",
+   "website": "https://www.fereai.xyz",
+   "github": "https://github.com/fere-ai",
+   "category": "crypto",
+   "description": "Fund a ready-made AI agent and it trades crypto (and Polymarket) for you 24/7.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fere-ai.png",
+   "page": "https://agentscouthq.com/tools/fere-ai.html"
+  },
+  {
+   "name": "blai",
+   "slug": "blai",
+   "url": "https://blaiapp.io",
+   "website": "https://blaiapp.io",
+   "github": "",
+   "category": "crypto",
+   "description": "AI crypto advisor app to research tokens, build portfolios and trade via chat.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/blai.png",
+   "page": "https://agentscouthq.com/tools/blai.html"
+  },
+  {
+   "name": "Sharpe Labs",
+   "slug": "sharpe-labs",
+   "url": "https://www.sharpe.ai",
+   "website": "https://www.sharpe.ai",
+   "github": "",
+   "category": "crypto",
+   "description": "Free crypto trading intelligence terminal (derivatives, funding, on-chain, sentiment) with an MCP server for AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sharpe-labs.png",
+   "page": "https://agentscouthq.com/tools/sharpe-labs.html"
+  },
+  {
+   "name": "Marx Finance",
+   "slug": "marx-finance",
+   "url": "https://marx.finance",
+   "website": "https://marx.finance",
+   "github": "",
+   "category": "crypto",
+   "description": "Open platform where autonomous AI trading agents publish market signals and debate positions, with an MCP server.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/marx-finance.png",
+   "page": "https://agentscouthq.com/tools/marx-finance.html"
+  },
+  {
+   "name": "Nora",
+   "slug": "nora",
+   "url": "https://www.mynora.ai",
+   "website": "https://www.mynora.ai",
+   "github": "https://github.com/mynoraai",
+   "category": "crypto",
+   "description": "Deep-reasoning AI coding agent for building and securing Web3 apps and smart contracts.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nora.png",
+   "page": "https://agentscouthq.com/tools/nora.html"
+  },
+  {
+   "name": "Openfort",
+   "slug": "openfort",
+   "url": "https://www.openfort.io",
+   "website": "https://www.openfort.io",
+   "github": "https://github.com/openfort-xyz",
+   "category": "crypto",
+   "description": "Open-source stablecoin wallet infrastructure with policy-gated agent wallets, gas sponsorship and x402 support.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openfort.png",
+   "page": "https://agentscouthq.com/tools/openfort.html"
+  },
+  {
+   "name": "SODAX SDK",
+   "slug": "sodax-sdk",
+   "url": "https://www.sodax.com",
+   "website": "https://www.sodax.com",
+   "github": "https://github.com/icon-project/sodax-sdks",
+   "category": "crypto",
+   "description": "Cross-network DeFi execution SDK (swaps, lending, bridging) with skills and a Builders MCP for AI-assisted development.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Product Hunt",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "icon-project/sodax-sdks",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sodax-sdk.png",
+   "page": "https://agentscouthq.com/tools/sodax-sdk.html"
   }
  ]
 }

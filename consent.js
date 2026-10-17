@@ -16,30 +16,34 @@
 
   // ---- styles (theme variables from styles.css) ----
   var css='.as-ph{border:1px dashed var(--line);border-radius:10px;padding:14px;text-align:left;font-size:14px;color:var(--muted);max-width:460px;margin:0 auto}.as-ph p{margin:0 0 10px}html:not(.as-noembed) .as-ph{display:none}html.as-noembed form[action*="beehiiv.com"]{display:none!important}'+
-  '.as-bar{position:fixed;z-index:1000;left:16px;right:16px;bottom:16px;max-width:640px;margin:0 auto;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.18);padding:16px 18px;font-size:14px;line-height:1.5}'+
-  '.as-bar h2{font-size:15px;margin:0 0 4px}.as-bar p{margin:0 0 12px;color:var(--muted)}.as-bar .as-row{display:flex;flex-wrap:wrap;gap:8px}.as-bar a{color:var(--accent)}'+
-  '.as-note{max-width:420px;left:16px;right:auto;padding:10px 40px 10px 14px}.as-note p{margin:0}.as-note .as-x{position:absolute;top:6px;right:6px;width:30px;height:30px;border:0;background:none;color:var(--muted);font-size:20px;cursor:pointer;border-radius:6px}'+
+  '.as-bar{position:fixed;z-index:999;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:calc(100% - 24px);max-width:760px;box-sizing:border-box;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.14);padding:10px 14px;font-size:13px;line-height:1.45;display:flex;align-items:center;gap:12px}'+
+  '.as-bar p{margin:0;color:var(--muted);flex:1;min-width:0}.as-bar p b{color:var(--text)}.as-bar .as-row{display:flex;flex-wrap:nowrap;gap:6px;flex:none}.as-bar .btn{height:32px;padding:0 12px;font-size:13px}.as-bar a{color:var(--accent)}'+
+  '.as-note{left:16px;transform:none;width:auto;max-width:340px;padding:7px 34px 7px 12px;font-size:12.5px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.12)}.as-note .as-x{position:absolute;top:50%;right:4px;transform:translateY(-50%);width:28px;height:28px;border:0;background:none;color:var(--muted);font-size:18px;line-height:1;cursor:pointer;border-radius:50%}'+
+  'html.as-pad body{padding-bottom:var(--as-pad,0px)}html.as-pad .scrollbtns{bottom:calc(var(--as-pad,0px) + 12px + env(safe-area-inset-bottom))}'+
   '.as-link{background:none;border:0;padding:0;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline}'+
   '.as-ov{position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px}'+
   '.as-dlg{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:14px;max-width:520px;width:100%;max-height:90vh;overflow:auto;padding:20px;font-size:14px;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.3)}'+
   '.as-dlg h2{font-size:18px;margin:0 0 6px}.as-dlg>p{color:var(--muted);margin:0 0 14px}.as-dlg a{color:var(--accent)}.as-cat{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);padding:12px 0}.as-cat div{flex:1}.as-cat b{display:block}.as-cat span{color:var(--muted);font-size:13px}'+
   '.as-sw{appearance:none;-webkit-appearance:none;flex:none;width:42px;height:24px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;margin:2px 0 0;transition:background .15s}.as-sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}.as-sw:checked{background:var(--accent)}.as-sw:checked::after{left:21px}.as-sw:disabled{opacity:.6;cursor:not-allowed}.as-sw:focus-visible,.as-bar .btn:focus-visible,.as-dlg .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}'+
-  '.as-dlg .as-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}@media(max-width:640px){.as-bar{left:10px;right:10px;bottom:10px}.as-note{right:10px}.as-bar .as-row .btn,.as-dlg .as-row .btn{flex:1}}';
+  '.as-dlg .as-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}@media(max-width:640px){.as-bar{flex-wrap:wrap;gap:8px;bottom:calc(8px + env(safe-area-inset-bottom));width:calc(100% - 16px);padding:9px 12px}.as-bar .as-row{width:100%}.as-bar .as-row .btn,.as-dlg .as-row .btn{flex:1}.as-note{left:8px;width:auto;max-width:calc(100% - 88px);border-radius:12px}}';
   var st=document.createElement("style");st.textContent=css;document.head.appendChild(st);
 
   function el(h){var d=document.createElement("div");d.innerHTML=h.trim();return d.firstChild}
   var bar=null,lastFocus=null;
-  function closeBar(){if(bar){bar.remove();bar=null}}
+  var ro=null;
+  function pad(){var r=document.documentElement;if(!bar){r.classList.remove("as-pad");r.style.removeProperty("--as-pad");return}r.style.setProperty("--as-pad",(bar.offsetHeight+24)+"px");r.classList.add("as-pad")}
+  function mount(){document.body.appendChild(bar);pad();if(window.ResizeObserver){ro=new ResizeObserver(pad);ro.observe(bar)}else window.addEventListener("resize",pad)}
+  function closeBar(){if(ro){ro.disconnect();ro=null}window.removeEventListener("resize",pad);if(bar){bar.remove();bar=null}pad()}
   var PRIV=relRoot()+"privacy.html";
   function relRoot(){var s=document.querySelector('script[src*="consent.js"]');return s?s.getAttribute("src").replace(/consent\.js.*$/,""):""}
   function showBanner(){closeBar();
-    bar=el('<div class="as-bar" role="region" aria-labelledby="as-bt"><h2 id="as-bt">Your privacy choices</h2><p>We\'d like to count anonymous visits (no cookies, nothing that identifies you) and load the newsletter sign-up from Beehiiv, which may set its own cookies. Nothing optional runs until you choose. <a href="'+PRIV+'">Privacy policy</a></p><div class="as-row"><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button><button type="button" class="btn" data-a="custom">Customize</button></div></div>');
+    bar=el('<div class="as-bar" role="region" aria-labelledby="as-bt"><p><b id="as-bt">Privacy choices:</b> we\'d like to count anonymous visits (no cookies, nothing that identifies you) and load Beehiiv\'s newsletter sign-up, which may set its own cookies. Nothing optional runs until you choose. <a href="'+PRIV+'">Privacy policy</a></p><div class="as-row"><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button><button type="button" class="btn" data-a="custom">Customize</button></div></div>');
     bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="all")set(1,1);else if(a==="none")set(0,0);else if(a==="custom")openPicker()});
-    document.body.appendChild(bar)}
+    mount()}
   function showNotice(){closeBar();
-    bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>We count anonymous visits to improve AgentScout. No cookies. <button type="button" class="as-link" data-a="opt">Opt out</button> · <button type="button" class="as-link" data-a="custom">Privacy choices</button></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
+    bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>Anonymous visit counts, no cookies. <button type="button" class="as-link" data-a="opt">Opt out</button> · <button type="button" class="as-link" data-a="custom">Privacy choices</button></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
     bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="ok")set(S.analytics,S.embeds);else if(a==="opt")set(0,S.embeds);else if(a==="custom")openPicker()});
-    document.body.appendChild(bar)}
+    mount()}
   function openPicker(){
     if(document.querySelector(".as-ov"))return;lastFocus=document.activeElement;
     var ov=el('<div class="as-ov"><div class="as-dlg" role="dialog" aria-modal="true" aria-labelledby="as-pt" aria-describedby="as-pd"><h2 id="as-pt">Privacy choices</h2><p id="as-pd">Choose what AgentScout may use. You can change this anytime from "Privacy choices" in the footer. <a href="'+PRIV+'">Privacy policy</a></p>'+

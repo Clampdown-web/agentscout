@@ -77,6 +77,7 @@ def main():
         if ok is not None and slug not in ok and slugify(name) not in ok: continue
         if x.get("include") is False or x.get("exclude"): skipped.setdefault("excluded in audit",[]).append(name); continue
         site=first(x,"website","url","listing_url"); gh=first(x,"github","gh","repo","gh_candidates")
+        if gh and not re.match(r"^(https?://github\.com/)?[A-Za-z0-9_.-]+(/[A-Za-z0-9_.-]+)?/?$",gh): gh=""  # audit placeholders like "N/A (closed-source ...)" or "none found"
         if gh and not gh.startswith("http"): gh="https://github.com/"+gh
         if site and "github.com" in site and not gh: gh=site
         desc=(x.get("description") or "").strip()
@@ -96,7 +97,7 @@ def main():
         im=load_logo(x,slug) or (fetch_logo(site,gh) if opt.get("--fetch-missing-logos") else None)
         if im is None: skipped.setdefault("no logo",[]).append(name); continue
         for k in K: K[k]|=ks[k]
-        nid+=1; e["id"]=nid; e["slug"]=slugify(name); e["logo"]=f"assets/logos/{e['slug']}.png"
+        nid+=1; e["id"]=nid; e["slug"]=x.get("site_slug") or slugify(name); e["logo"]=f"assets/logos/{e['slug']}.png"
         if not opt.get("--dry"):
             im=im.convert("RGBA"); im.thumbnail((128,128)); im.save(e["logo"])
         added.append(e)
