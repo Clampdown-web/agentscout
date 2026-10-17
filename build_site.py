@@ -54,9 +54,14 @@ def _sync_index_counts():
     import re, json as _j, datetime as _dt
     n = len(_j.load(open("tools.json")))
     s = open("index.html").read()
+    try:
+        _y,_m,_d = map(int, _j.load(open("api/tools.json")).get("last_checked","").split("-"))
+        _lc = _dt.date(_y,_m,_d).strftime("%b %-d, %Y")
+    except Exception:
+        _lc = _dt.date.today().strftime("%b %-d, %Y")
     s = re.sub(r"\b\d+ AI Agent Tools", f"{n} AI Agent Tools", s)
     s = re.sub(r"Directory of \d+ link-checked", f"Directory of {n} link-checked", s)
-    s = re.sub(r'(id="s-eyebrow">)\d+ tools · Links checked [^<]+', lambda m: m.group(1) + f"{n} tools · Links checked " + _dt.date.today().strftime("%b %-d, %Y"), s)
+    s = re.sub(r'(id="s-eyebrow">)\d+ tools · Links checked [^<]+', lambda m: m.group(1) + f"{n} tools · Links checked " + _lc, s)
     s = re.sub(r'(id="s-total">)\d+', lambda m: m.group(1) + str(n), s)
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
     open("index.html", "w").write(s)
