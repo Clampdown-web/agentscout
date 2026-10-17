@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-17T07:39:53Z",
- "updated": "2026-10-17T07:39:53Z",
- "last_checked": "2026-10-16",
- "count": 616,
+ "generated": "2026-10-17T15:15:48Z",
+ "updated": "2026-10-17T15:15:48Z",
+ "last_checked": "2026-10-17",
+ "count": 617,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -1159,8 +1159,8 @@
   {
    "name": "OpenAI Codex CLI",
    "slug": "openai-codex-cli",
-   "url": "https://developers.openai.com/codex/cli",
-   "website": "https://developers.openai.com/codex/cli",
+   "url": "https://learn.chatgpt.com/docs/codex/cli",
+   "website": "https://learn.chatgpt.com/docs/codex/cli",
    "github": "https://github.com/openai/codex",
    "category": "coding",
    "description": "OpenAI's open-source coding agent for the terminal; also runs in the cloud.",
@@ -1406,18 +1406,18 @@
   {
    "name": "Roo Code",
    "slug": "roo-code",
-   "url": "https://roocode.com",
-   "website": "https://roocode.com",
+   "url": "https://github.com/RooCodeInc/Roo-Code",
+   "website": "https://github.com/RooCodeInc/Roo-Code",
    "github": "https://github.com/RooCodeInc/Roo-Code",
    "category": "coding",
-   "description": "VS Code agent with custom modes (architect, code, debug).",
+   "description": "Discontinued: the open-source VS Code agent with custom modes (architect, code, debug) was shut down on May 15, 2026 and its repo archived; the team now builds Roomote, and roocode.com redirects there. Cline and the community fork ZooCode are the suggested alternatives.",
    "key_features": [
-    "Open source",
-    "Mature",
+    "Open source (archived)",
+    "Discontinued (shut down May 15, 2026)",
     "24281 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Open source (archived)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -2260,8 +2260,8 @@
   {
    "name": "Google ADK",
    "slug": "google-adk",
-   "url": "https://google.github.io/adk-docs/",
-   "website": "https://google.github.io/adk-docs/",
+   "url": "https://adk.dev/",
+   "website": "https://adk.dev/",
    "github": "https://github.com/google/adk-python",
    "category": "frameworks",
    "description": "Google's Agent Development Kit for building and deploying agents.",
@@ -24043,7 +24043,7 @@
    "slug": "tradeos-ai",
    "url": "https://www.tradeos.xyz",
    "website": "https://www.tradeos.xyz",
-   "github": "https://github.com/N/A (closed-source; no public repo linked on site or found by GitHub org lookup)",
+   "github": "",
    "category": "crypto",
    "description": "Build AI trading agents from your own technical-analysis rules that monitor markets 24/7 and flag setups (stocks, forex, commodities; crypto secondary).",
    "key_features": [
@@ -24067,7 +24067,7 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "N/A (closed-source; no public repo linked on site or found by GitHub org lookup)",
+   "repo": "",
    "github_stars": null,
    "open_source": false,
    "license": "",
@@ -26051,6 +26051,47 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/sodax-sdk.png",
    "page": "https://agentscouthq.com/tools/sodax-sdk.html"
+  },
+  {
+   "name": "Roomote",
+   "slug": "roomote",
+   "url": "https://roomote.dev/",
+   "website": "https://roomote.dev/",
+   "github": "https://github.com/RooCodeInc/Roomote",
+   "category": "coding",
+   "description": "Cloud coding agent from the Roo Code team that runs your real dev environment, verifies its work, reviews code with a second model and hands back PRs with live previews; works from Slack, Teams, GitHub and Linear, self-hosted or on its cloud.",
+   "key_features": [
+    "Self-host free up to 10 users; Roomote Cloud from $49/mo after a 7-day trial; bring your own model key",
+    "Active",
+    "288 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Self-host free up to 10 users; Roomote Cloud from $49/mo after a 7-day trial; bring your own model key",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-17",
+   "added": "2026-10-17",
+   "source": "News",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "RooCodeInc/Roomote",
+   "github_stars": 288,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/roomote.png",
+   "page": "https://agentscouthq.com/tools/roomote.html"
   }
  ]
 }
