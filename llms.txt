@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 636 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 656 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -32,12 +32,12 @@ Contact: support@agentscouthq.com
 - [research](https://agentscouthq.com/categories/research.html): 29 tools
 - [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 25 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 22 tools
+- [vision](https://agentscouthq.com/categories/vision.html): 21 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 21 tools
 - [productivity](https://agentscouthq.com/categories/productivity.html): 15 tools
 - [games](https://agentscouthq.com/categories/games.html): 15 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 7 tools
 - [models](https://agentscouthq.com/categories/models.html): 3 tools
-- [vision](https://agentscouthq.com/categories/vision.html): 1 tool
 
 ## Guides
 
@@ -50,15 +50,15 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
-- [Etherscan MCP](https://agentscouthq.com/tools/etherscan-mcp.html) (added 2026-10-17): Etherscan's official MCP server for read-only onchain data across EVM chains, such as balances, transactions, token transfers, contracts and logs, usable with or without an API key.
-- [CoinMarketCap MCP](https://agentscouthq.com/tools/coinmarketcap-mcp.html) (added 2026-10-17): Official CoinMarketCap MCP server that feeds agents live crypto prices, market caps, rankings and exchange data through your CMC API plan.
-- [Stack Overflow MCP](https://agentscouthq.com/tools/stack-overflow-mcp.html) (added 2026-10-17): Official remote MCP server that lets coding agents search and pull vetted Stack Overflow questions and answers, with a free daily call allowance per user.
-- [Wolfram MCP](https://agentscouthq.com/tools/wolfram-mcp.html) (added 2026-10-17): Wolfram's official MCP service that gives agents computed answers from Wolfram Language and Wolfram|Alpha, with local, cloud and enterprise deployment options.
-- [Paper2Agent](https://agentscouthq.com/tools/paper2agent.html) (added 2026-10-17): Multi-agent system that turns a research paper and its code into a working MCP server and agent skills you can query and run.
-- [Agent Memory Leaderboard](https://agentscouthq.com/tools/agent-memory-leaderboard.html) (added 2026-10-17): Public leaderboard and open evaluation protocol, run by a group of universities and labs, for comparing long-term memory systems for agents in recurring submission rounds.
-- [Craft Agents](https://agentscouthq.com/tools/craft-agents.html) (added 2026-10-17): Desktop app from the makers of Craft for working with agents in a document-first way; the agent sets up APIs and MCP servers for you and sessions can be shared.
-- [OpenScience](https://agentscouthq.com/tools/openscience.html) (added 2026-10-17): Research agent workbench that reads the literature, writes and runs code and experiments and logs every step, with skills and connectors for databases like PubMed, UniProt and arXiv.
-- [Dograh](https://agentscouthq.com/tools/dograh.html) (added 2026-10-17): Self-hostable voice agent platform with a visual call-flow builder, bring-your-own speech and LLM providers and MCP control, pitched as an open alternative to Vapi and Retell.
-- [NitroStack](https://agentscouthq.com/tools/nitrostack.html) (added 2026-10-17): TypeScript framework with decorators and dependency injection for building, testing and deploying MCP servers and MCP apps, with a companion desktop studio.
-- [MindsHub](https://agentscouthq.com/tools/mindshub.html) (added 2026-10-17): MindsDB's agent workspace for research, analysis, documents and coding, with a model router, a scoped vault for connected data and swappable open-source agent harnesses.
-- [MiMo Code](https://agentscouthq.com/tools/mimo-code.html) (added 2026-10-17): Xiaomi's terminal coding agent with persistent project memory across sessions; works with any major model provider and is tuned for Xiaomi's MiMo models.
+- [Picsellia MCP Server](https://agentscouthq.com/tools/picsellia-mcp-server.html) (added 2026-10-17): Official MCP server for Picsellia's computer vision MLOps platform, giving AI assistants access to datasets, experiments, models, deployments and monitoring.
+- [Valossa Assistant MCP](https://agentscouthq.com/tools/valossa-assistant-mcp.html) (added 2026-10-17): EU-based video AI MCP server that lets Claude and other agents upload and search videos and pull transcripts, visual scenes, soundbites and ready-made clips.
+- [YRIKKA Text-to-Model](https://agentscouthq.com/tools/yrikka-text-to-model.html) (added 2026-10-17): YRIKKA's ORION workflow that turns a plain-language mission description and a few unlabeled images into generated training data, candidate models and an evaluated, selected vision model.
+- [ImageSorcery MCP](https://agentscouthq.com/tools/imagesorcery-mcp.html) (added 2026-10-17): Local MCP server that gives AI assistants object detection, OCR, cropping, background removal and drawing tools, running computer vision models on your own machine.
+- [Bubbaloop](https://agentscouthq.com/tools/bubbaloop.html) (added 2026-10-17): Kornia's open-source single-binary agent runtime with an MCP server that orchestrates cameras, sensors and robots on Jetson, Raspberry Pi or Linux through chat.
+- [Telekinesis Agentic Skill Library](https://agentscouthq.com/tools/telekinesis-agentic-skill-library.html) (added 2026-10-17): Python library of 250+ perception, vision and robotics skills plus a Physical AI agent that turns natural-language prompts into reviewable robot code.
+- [EyePop.ai](https://agentscouthq.com/tools/eyepop-ai.html) (added 2026-10-17): SDK-first vision platform where you define what to detect and it builds detection, tracking, OCR and VLM pipelines, with a Video Agent and agent skills, deployable to cloud, edge or on-prem.
+- [Groundlight](https://agentscouthq.com/tools/groundlight.html) (added 2026-10-17): Turns any camera into a vision sensor: you ask a yes/no question in plain English and Groundlight builds and tunes the model, backed by human review, with edge deployment.
+- [VideoDB Director](https://agentscouthq.com/tools/videodb-director.html) (added 2026-10-17): Open-source framework of 20+ video agents that search, summarize, clip, edit and stream video from natural-language commands, built on VideoDB.
+- [TwelveLabs Jockey MCP](https://agentscouthq.com/tools/twelvelabs-jockey-mcp.html) (added 2026-10-17): TwelveLabs' hosted MCP server for Jockey, a video-understanding agent that searches, tracks entities and answers questions across your videos and images with clip citations.
+- [CVAT AI Agents](https://agentscouthq.com/tools/cvat-ai-agents.html) (added 2026-10-17): CVAT feature that runs your own detection, segmentation or tracking model as an agent on your infrastructure and feeds its auto-annotations back into CVAT tasks.
+- [Label Studio MCP Server](https://agentscouthq.com/tools/label-studio-mcp-server.html) (added 2026-10-17): HumanSignal's MCP server that lets AI assistants create Label Studio labeling projects, import tasks, read annotations and add model predictions.
