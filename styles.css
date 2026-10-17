@@ -283,3 +283,4 @@ nav+.nlpanel .nlin{max-width:620px;margin:0 auto;padding:22px 20px}
 h3.has-cico>.cico{width:18px;height:18px;color:var(--accent);margin-right:8px;vertical-align:-3px}
 h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;vertical-align:-.08em}
 .cattile.has-cico{justify-content:flex-start}.cattile.has-cico>span{margin-left:auto}
+.cats{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:900px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}.cattile{min-width:0;overflow-wrap:anywhere}
