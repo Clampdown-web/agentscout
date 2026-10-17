@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-17T05:13:15Z",
- "updated": "2026-10-17T05:13:15Z",
+ "generated": "2026-10-17T05:16:33Z",
+ "updated": "2026-10-17T05:16:33Z",
  "last_checked": "2026-10-16",
- "count": 564,
+ "count": 567,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -23394,6 +23394,122 @@
    "hybrid": true,
    "logo": "https://agentscouthq.com/assets/logos/dungeon-alchemist.png",
    "page": "https://agentscouthq.com/tools/dungeon-alchemist.html"
+  },
+  {
+   "name": "Payman",
+   "slug": "payman",
+   "url": "https://paymanai.com",
+   "website": "https://paymanai.com",
+   "github": "https://github.com/PaymanAI",
+   "category": "business agents",
+   "description": "AI agents for banks and credit unions that execute real banking payments and transfers under institution-set controls.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "vendor/GitHub (direct)",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "PaymanAI",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/payman.png",
+   "page": "https://agentscouthq.com/tools/payman.html"
+  },
+  {
+   "name": "Slash",
+   "slug": "slash",
+   "url": "https://www.slash.com/platform/agents",
+   "website": "https://www.slash.com/platform/agents",
+   "github": "https://github.com/slashfi",
+   "category": "MCP & infra",
+   "description": "Business-banking MCP server that lets AI agents create cards, set spend limits and send payments, including stablecoins.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "There's An AI For That",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "slashfi",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/slash.png",
+   "page": "https://agentscouthq.com/tools/slash.html"
+  },
+  {
+   "name": "TradeOS AI",
+   "slug": "tradeos-ai",
+   "url": "https://www.tradeos.xyz",
+   "website": "https://www.tradeos.xyz",
+   "github": "https://github.com/N/A (closed-source; no public repo linked on site or found by GitHub org lookup)",
+   "category": "crypto",
+   "description": "Build AI trading agents from your own technical-analysis rules that monitor markets 24/7 and flag setups (stocks, forex, commodities; crypto secondary).",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-16",
+   "added": "2026-10-16",
+   "source": "Toolify",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "new_this_week": true,
+   "repo": "N/A (closed-source; no public repo linked on site or found by GitHub org lookup)",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tradeos-ai.png",
+   "page": "https://agentscouthq.com/tools/tradeos-ai.html"
   }
  ]
 }
