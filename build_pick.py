@@ -4,7 +4,9 @@ import json,os,hashlib,datetime,re,html
 from zoneinfo import ZoneInfo
 import build_extras
 B=build_extras.B; e=html.escape
-def today(): return datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+def today():
+    # Pick day rolls over at 8 AM Pacific (before 8 AM it is still the previous day's pick)
+    return (datetime.datetime.now(ZoneInfo("America/Los_Angeles"))-datetime.timedelta(hours=8)).date()
 def quality(x):
     return bool(x.get("logo")) and os.path.exists(x["logo"]) and bool(x.get("verified")) and bool(x.get("website") or x.get("url")) and len(x.get("description",""))>=40
 def why(x):
