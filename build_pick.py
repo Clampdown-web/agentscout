@@ -39,7 +39,7 @@ def pick(t):
     sec=(f'<!--PICK-START--><section id="epick" aria-labelledby="epick-h"><div class="wrap"><a class="card epick" href="tools/{x["slug"]}.html" data-pick="{x["slug"]}">'
          f'<span class="ico">{build_extras.ico(x,"")[17:-7] if False else ""}<img src="{x["logo"]}" alt="{e(x["name"])} logo" width="56" height="56" loading="lazy" decoding="async"></span>'
          f'<div class="eptext"><div class="eplabel"><span class="epbadge" aria-hidden="true">★</span><span id="epick-h">Editor\'s Pick</span><span class="muted">· {ds}</span></div>'
-         f'<h3>{e(x["name"])}</h3><p class="epwhy">{e(cur["why"])}</p><div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></a></div></section><!--PICK-END-->')
+         f'<h3>{e(x["name"])}</h3><p class="epwhy">{e(cur["why"])}</p><div class="badges"><span class="b cat has-cico">{build_extras.cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></a></div></section><!--PICK-END-->')
     s=open("index.html").read()
     s=re.sub(r'<!--PICK-START-->.*?<!--PICK-END-->','',s,flags=re.S)
     s=s.replace('<!--RECENT-START-->',sec+'<!--RECENT-START-->',1)

@@ -61,13 +61,13 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",ini
 var S={};Object.keys(P).forEach(function(k){S[k.replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")]=k});
 function svg(c){c=(c||"").trim().toLowerCase();return '<svg class="cico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+(P[c]||FB)+'</svg>'}
 window.AS=window.AS||{};AS.catIcon=svg;
-function slugCat(h){var m=/categories\/([a-z0-9-]+)\.html/.exec(h||"");return m&&m[1]!=="index"?(S[m[1]]||m[1].replace(/-/g," ")):null}
-function add(el,c){if(!el||el.querySelector(":scope > .cico"))return;el.insertAdjacentHTML("afterbegin",svg(c));el.classList.add("has-cico")}
+function slugCat(h,abs){var m=/categories\/([a-z0-9-]+)\.html/.exec(abs||h||"");return m&&m[1]!=="index"?(S[m[1]]||m[1].replace(/-/g," ")):null}
+function add(el,c){if(!el)return;for(var i=0;i<el.children.length;i++)if((el.children[i].getAttribute("class")||"").indexOf("cico")>-1)return;el.insertAdjacentHTML("afterbegin",svg(c));el.classList.add("has-cico")}
 function run(root){root=root||document;
  root.querySelectorAll(".b.cat").forEach(function(b){add(b,b.textContent)});
  root.querySelectorAll(".chip[data-c]").forEach(function(b){if(b.dataset.c!=="all")add(b,b.dataset.c)});
  root.querySelectorAll(".cattile[data-cat]").forEach(function(a){add(a,a.dataset.cat)});
- root.querySelectorAll('a[href*="categories/"]').forEach(function(a){var c=slugCat(a.getAttribute("href"));if(!c)return;if(a.classList.contains("b")||a.classList.contains("chip"))add(a,c);else if(a.classList.contains("card"))add(a.querySelector(".ct h3"),c)})}
+ root.querySelectorAll('a[href$=".html"]').forEach(function(a){var c=slugCat(null,a.href);if(!c)return;if(a.classList.contains("b")||a.classList.contains("chip"))add(a,c);else if(a.classList.contains("card"))add(a.querySelector(".ct h3"),c)})}
 function hdr(){var c=slugCat(location.pathname);if(c){var h=document.querySelector("main h1, section h1, h1");add(h,c)}}
 function init(){run();hdr();new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)run(n.parentNode||n)})})}).observe(document.body,{childList:true,subtree:true})}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
