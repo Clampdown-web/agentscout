@@ -1,7 +1,39 @@
 {
- "updated": "2026-10-16T19:16:12Z",
+ "updated": "2026-10-17T14:08:00Z",
  "days": 30,
  "items": [
+  {
+   "title": "Big US banks restrict third-party AI agents from customer accounts",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111386343414862262",
+   "date": "2026-10-17T09:27:45Z",
+   "tool": null,
+   "summary": "JPMorgan Chase, Citi, Bank of America and other large US banks are limiting outside AI agents to read-only access, so they can't log in or move customer money. The banks are building their own controlled AI tools instead."
+  },
+  {
+   "title": "OpenAI's always-on dots agents take overnight on-call pages for engineers",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111266734019899600",
+   "date": "2026-10-17T01:30:19Z",
+   "tool": null,
+   "summary": "OpenAI's dots are always-on agents that handle on-call incidents, watch channels and open investigation threads. One engineer used his dot from the ChatGPT app to deal with a 3 a.m. page without getting out of bed."
+  },
+  {
+   "title": "NVIDIA App update turns on AI agent control by default, prompting privacy warnings",
+   "source": "X",
+   "url": "https://x.com/i/trending/2110944950703808743",
+   "date": "2026-10-16T23:27:01Z",
+   "tool": null,
+   "summary": "NVIDIA App 11.0.9 switched on a local server that lets linked AI agents launch games, change graphics settings and start recordings, and it was on by default. Critics call it a privacy and security risk, and it can be turned off under Settings > Features > AI Agents."
+  },
+  {
+   "title": "OpenUI 1.0 lets AI agents answer with interactive maps, charts and forms",
+   "source": "X",
+   "url": "https://x.com/i/trending/2110753248026284494",
+   "date": "2026-10-16T18:27:59Z",
+   "tool": null,
+   "summary": "Thesys released OpenUI 1.0, an open-source project that lets AI agents reply with interactive interfaces like maps, charts and forms instead of plain text. It works with any model and supports React, Vue and other frameworks."
+  },
   {
    "title": "Self Labs ships Agent Vault so agents can pay and log in without real credentials",
    "source": "X",
@@ -35,11 +67,12 @@
    "summary": "Figma Specs keeps written design decisions next to the frames and code they describe, and passes that context to coding agents over MCP. The open beta is rolling out now."
   },
   {
-   "title": "AI agents are coming to Rivian’s cars",
+   "title": "Rivian is bringing AI agents into its cars",
    "source": "TechCrunch",
    "url": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars/",
    "date": "2026-10-15T15:02:36Z",
-   "tool": null
+   "tool": null,
+   "summary": "Rivian plans to put AI agents inside its vehicles, according to TechCrunch."
   },
   {
    "title": "GSA hosts a government hackathon on MCP servers and AI agents",

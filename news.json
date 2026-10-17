@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T19:16:12Z",
+ "updated": "2026-10-17T14:08:00Z",
  "sources": [
   "TechCrunch",
   "The Verge",
@@ -8,6 +8,38 @@
   "X"
  ],
  "items": [
+  {
+   "title": "Big US banks restrict third-party AI agents from customer accounts",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111386343414862262",
+   "date": "2026-10-17T09:27:45Z",
+   "tool": null,
+   "summary": "JPMorgan Chase, Citi, Bank of America and other large US banks are limiting outside AI agents to read-only access, so they can't log in or move customer money. The banks are building their own controlled AI tools instead."
+  },
+  {
+   "title": "OpenAI's always-on dots agents take overnight on-call pages for engineers",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111266734019899600",
+   "date": "2026-10-17T01:30:19Z",
+   "tool": null,
+   "summary": "OpenAI's dots are always-on agents that handle on-call incidents, watch channels and open investigation threads. One engineer used his dot from the ChatGPT app to deal with a 3 a.m. page without getting out of bed."
+  },
+  {
+   "title": "NVIDIA App update turns on AI agent control by default, prompting privacy warnings",
+   "source": "X",
+   "url": "https://x.com/i/trending/2110944950703808743",
+   "date": "2026-10-16T23:27:01Z",
+   "tool": null,
+   "summary": "NVIDIA App 11.0.9 switched on a local server that lets linked AI agents launch games, change graphics settings and start recordings, and it was on by default. Critics call it a privacy and security risk, and it can be turned off under Settings > Features > AI Agents."
+  },
+  {
+   "title": "OpenUI 1.0 lets AI agents answer with interactive maps, charts and forms",
+   "source": "X",
+   "url": "https://x.com/i/trending/2110753248026284494",
+   "date": "2026-10-16T18:27:59Z",
+   "tool": null,
+   "summary": "Thesys released OpenUI 1.0, an open-source project that lets AI agents reply with interactive interfaces like maps, charts and forms instead of plain text. It works with any model and supports React, Vue and other frameworks."
+  },
   {
    "title": "Self Labs ships Agent Vault so agents can pay and log in without real credentials",
    "source": "X",
@@ -33,43 +65,12 @@
    "summary": "Figma Specs keeps written design decisions next to the frames and code they describe, and passes that context to coding agents over MCP. The open beta is rolling out now."
   },
   {
-   "title": "AI agents are coming to Rivian’s cars",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars/",
-   "date": "2026-10-15T15:02:36Z",
-   "tool": null
-  },
-  {
    "title": "GSA hosts a government hackathon on MCP servers and AI agents",
    "source": "GSA (.gov)",
    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRHlZRzVtNlV4ZWl6ZUFodUoxNjdGbFFPSDJ4Q2szU1hEMXB1dHFPY1VkYU5kMlVhSEdzSThBT1NVeXN0bFRUVnlvRlBFVzE4eGIzZFpfT3NUcHBxOFJoejNhbC1MWjZVaXptT1RXQVY0ZGlQa29DZEl1YVlJZVlremZxMHVzQXhHXzExSm1vWGw1X3o4R1NIcGU4ckFKcXJqcTZYdEZxMW02ZjFEZEt4SERsRWdBTlM3ODhoN2pMS09GN3FTNTIzdG5HeHRIdw?oc=5",
    "date": "2026-10-15T10:06:22Z",
    "tool": "model-context-protocol",
    "summary": "The US General Services Administration has posted a government hackathon focused on Model Context Protocol servers and AI agents."
-  },
-  {
-   "title": "Figma sets rules for how AI agents work inside its platform",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
-   "date": "2026-10-15T04:30:00Z",
-   "tool": null,
-   "summary": "TechCrunch reports that Figma announced new features defining how AI agents can work on its platform."
-  },
-  {
-   "title": "Attio launches a CRM built for humans and AI agents side by side",
-   "source": "X",
-   "url": "https://x.com/i/trending/2110482190140321896",
-   "date": "2026-10-14T21:33:52Z",
-   "tool": null,
-   "summary": "Attio launched a CRM design where people and AI agents work from the same data, with SQL queries over up to 100 million records per object and permissions still enforced."
-  },
-  {
-   "title": "TasteSkill v2 gives coding agents art direction and a browser self-check",
-   "source": "X",
-   "url": "https://x.com/LexnLin/status/2110122106537050584",
-   "date": "2026-10-13T21:34:49Z",
-   "tool": null,
-   "summary": "TasteSkill v2 was rebuilt from scratch and gives coding agents an art direction, assets and a browser check so they can verify their own work."
   }
  ]
 }
