@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-17T05:06:02Z",
- "updated": "2026-10-17T05:06:02Z",
+ "generated": "2026-10-17T05:13:15Z",
+ "updated": "2026-10-17T05:13:15Z",
  "last_checked": "2026-10-16",
  "count": 564,
  "tools": [
@@ -3855,7 +3855,7 @@
    "description": "Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.",
    "key_features": [
     "Pricing not stated on product page",
-    "Live; Grok Bot launch Oct 14"
+    "Live (generally available Aug 6, 2026)"
    ],
    "pricing": "Pricing not stated on product page",
    "price_tag": "unknown",
@@ -8284,7 +8284,7 @@
    "url": "https://vibetrading.wiki/home/",
    "website": "https://vibetrading.wiki/home/",
    "github": "https://github.com/HKUDS/Vibe-Trading",
-   "category": "personal agents",
+   "category": "crypto",
    "description": "Open-source personal trading agent for researching markets and testing strategies in natural language.",
    "key_features": [
     "Open source",
@@ -8302,10 +8302,9 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation",
     "crypto"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "new_this_week": true,
