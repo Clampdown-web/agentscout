@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-17T02:17:24Z",
- "updated": "2026-10-17T02:17:24Z",
+ "generated": "2026-10-17T05:06:02Z",
+ "updated": "2026-10-17T05:06:02Z",
  "last_checked": "2026-10-16",
  "count": 564,
  "tools": [
@@ -3851,12 +3851,11 @@
    "url": "https://metamask.io/agent-wallet",
    "website": "https://metamask.io/agent-wallet",
    "github": "",
-   "category": "MCP & infra",
+   "category": "crypto",
    "description": "Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.",
    "key_features": [
     "Pricing not stated on product page",
-    "Live; Grok Bot launch Oct 14",
-    "Connect tools via mcp"
+    "Live; Grok Bot launch Oct 14"
    ],
    "pricing": "Pricing not stated on product page",
    "price_tag": "unknown",
@@ -3867,7 +3866,6 @@
    "added": "2026-10-15",
    "source": "original",
    "goals": [
-    "automation",
     "crypto"
    ],
    "skill": "developer",
@@ -3879,7 +3877,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "crypto"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/metamask-agent-wallet.png",
@@ -3975,7 +3973,7 @@
    "url": "https://proof.com/x401",
    "website": "https://proof.com/x401",
    "github": "",
-   "category": "MCP & infra",
+   "category": "crypto",
    "description": "Open HTTP protocol and MCP server that let a website ask an AI agent to prove who it is acting for and have the person cryptographically sign the exact transaction terms, using Proof's agent identity wallet.",
    "key_features": [
     "Open protocol; websites can pay per verified identity claim over x402, basic claims need no sales process",
@@ -3993,7 +3991,6 @@
    "added": "2026-10-16",
    "source": "original",
    "goals": [
-    "automation",
     "crypto"
    ],
    "skill": "developer",
@@ -18780,7 +18777,7 @@
    "url": "https://github.com/blockscout/mcp-server",
    "website": "",
    "github": "https://github.com/blockscout/mcp-server",
-   "category": "MCP & infra",
+   "category": "crypto",
    "description": "Blockscout's MCP server giving agents contextual access to blockchain data across many EVM chains.",
    "key_features": [
     "Open source",
@@ -18798,7 +18795,7 @@
    "added": "2026-10-16",
    "source": "MCP registry",
    "goals": [
-    "automation"
+    "crypto"
    ],
    "skill": "developer",
    "weekly_pick": false,

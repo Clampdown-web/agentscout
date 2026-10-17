@@ -10,7 +10,7 @@ def platforms(x):
     a=x.get("audience","");c=x["category"]
     if a!="ready to use" or c in("frameworks","MCP & infra","evals & observability"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
     return ["Web"]
-GOALS={"coding":["coding","app builders"],"research":["research","browser/computer use"],"crypto":[],"writing":["productivity","models"],"media":["voice","vision"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP & infra"],"support":["business agents"]}
+GOALS={"coding":["coding","app builders"],"research":["research","browser/computer use"],"crypto":["crypto"],"writing":["productivity","models"],"media":["voice","vision"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP & infra"],"support":["business agents"]}
 KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["support","customer","helpdesk"],"writing":["writ","content","copy"],"media":["video","voice","image","speech"]}
 def goals(x):
     txt=(x["name"]+" "+x["description"]).lower()

@@ -2288,7 +2288,7 @@
     "name": "MetaMask Agent Wallet",
     "url": "https://metamask.io/agent-wallet",
     "description": "Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.",
-    "category": "MCP & infra",
+    "category": "crypto",
     "pricing": "See site",
     "maturity": "Live; Grok Bot launch Oct 14",
     "audience": "builders",
@@ -2298,7 +2298,7 @@
     "pricing_detail": "Pricing not stated on product page",
     "id": 94,
     "use_cases": [
-      "connect tools via MCP"
+      "crypto"
     ],
     "slug": "metamask-agent-wallet",
     "logo": "assets/logos/metamask-agent-wallet.png",
@@ -2359,7 +2359,7 @@
     "name": "Proof x401",
     "url": "https://proof.com/x401",
     "description": "Open HTTP protocol and MCP server that let a website ask an AI agent to prove who it is acting for and have the person cryptographically sign the exact transaction terms, using Proof's agent identity wallet.",
-    "category": "MCP & infra",
+    "category": "crypto",
     "pricing": "Usage-based",
     "maturity": "Live; production launch Oct 15, 2026",
     "audience": "builders",
@@ -11314,7 +11314,7 @@
     "name": "Blockscout MCP",
     "url": "https://github.com/blockscout/mcp-server",
     "description": "Blockscout's MCP server giving agents contextual access to blockchain data across many EVM chains.",
-    "category": "MCP & infra",
+    "category": "crypto",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
