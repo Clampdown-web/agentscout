@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 549 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 564 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://clampdown-web.github.io/agentscout/
 X: https://x.com/AgentScoutHQ
@@ -29,6 +29,7 @@ Contact: agentscout@mail.grokbot.com
 - [evals & observability](https://clampdown-web.github.io/agentscout/categories/evals-observability.html): 24 tools
 - [no-code builders](https://clampdown-web.github.io/agentscout/categories/no-code-builders.html): 22 tools
 - [voice](https://clampdown-web.github.io/agentscout/categories/voice.html): 20 tools
+- [games](https://clampdown-web.github.io/agentscout/categories/games.html): 15 tools
 - [productivity](https://clampdown-web.github.io/agentscout/categories/productivity.html): 13 tools
 - [app builders](https://clampdown-web.github.io/agentscout/categories/app-builders.html): 7 tools
 - [models](https://clampdown-web.github.io/agentscout/categories/models.html): 3 tools
@@ -45,15 +46,15 @@ Contact: agentscout@mail.grokbot.com
 ## Recently added
 - [All new tools, last 30 days](https://clampdown-web.github.io/agentscout/new.html)
 
-- [CAMEL](https://clampdown-web.github.io/agentscout/tools/camel.html) (added 2026-10-16): CAMEL, one of the first multi-agent frameworks, for building role-playing agents and large agent societies.
-- [Galileo Agent Leaderboard](https://clampdown-web.github.io/agentscout/tools/galileo-agent-leaderboard.html) (added 2026-10-16): Galileo's leaderboard that ranks how well LLMs perform as agents on tool use and multi-step tasks.
-- [TEN Framework](https://clampdown-web.github.io/agentscout/tools/ten-framework.html) (added 2026-10-16): Open-source framework for real-time multimodal voice agents, including the TEN Agent demo.
-- [AgentFlow](https://clampdown-web.github.io/agentscout/tools/agentflow.html) (added 2026-10-16): Stanford's trainable agentic system where planner, executor, verifier and generator modules coordinate, with a Hugging Face demo.
-- [IBM CUGA](https://clampdown-web.github.io/agentscout/tools/ibm-cuga.html) (added 2026-10-16): IBM Research's configurable generalist agent (CUGA) for enterprise web and API tasks, with a live demo on Hugging Face Spaces.
-- [Querri](https://clampdown-web.github.io/agentscout/tools/querri.html) (added 2026-10-16): AI data analyst that cleans scattered data and answers questions in plain English.
-- [Crewdle](https://clampdown-web.github.io/agentscout/tools/crewdle.html) (added 2026-10-16): Hire autonomous agents and teams for support, sales, bookkeeping and research, paid per task.
-- [Coldtea](https://clampdown-web.github.io/agentscout/tools/coldtea.html) (added 2026-10-16): Agents that test every pull request on real devices, watch production and file issues before users hit them.
-- [CoChat](https://clampdown-web.github.io/agentscout/tools/cochat.html) (added 2026-10-16): AI research agents that gather verified sources and organize findings.
-- [Clara AI SDR](https://clampdown-web.github.io/agentscout/tools/clara-ai-sdr.html) (added 2026-10-16): Face-to-face video AI SDR that talks to website visitors, qualifies leads and books meetings.
-- [BackAnt Kairos](https://clampdown-web.github.io/agentscout/tools/backant-kairos.html) (added 2026-10-16): Backant's Kairos, an autonomous developer that runs Claude Code against your repository.
-- [AirJelly](https://clampdown-web.github.io/agentscout/tools/airjelly.html) (added 2026-10-16): Always-on desktop assistant that watches your workflow, remembers context and acts proactively.
+- [Dungeon Alchemist](https://clampdown-web.github.io/agentscout/tools/dungeon-alchemist.html) (added 2026-10-16): AI-assisted map maker that builds detailed 3D battle maps for tabletop RPGs, for play on screen or printed.
+- [Friends & Fables](https://clampdown-web.github.io/agentscout/tools/friends-fables.html) (added 2026-10-16): AI game master for tabletop-style RPGs that plays with groups on Discord and the web, tracking characters, rules and world lore.
+- [Open Dungeon Master](https://clampdown-web.github.io/agentscout/tools/open-dungeon-master.html) (added 2026-10-16): Free multiplayer D&D 5e app with app-enforced rules, where an AI or human runs the table using a local model, API key or CLI agent.
+- [Lorekeeper](https://clampdown-web.github.io/agentscout/tools/lorekeeper.html) (added 2026-10-16): Voiced AI game master that narrates tabletop RPG adventures aloud, rolls dice and keeps a running campaign for solo or group play.
+- [Questwright](https://clampdown-web.github.io/agentscout/tools/questwright.html) (added 2026-10-16): AI dungeon master for tabletop RPGs that runs D&D 5e campaigns with dice, combat, battle maps and NPC memory, solo or with friends.
+- [Astrocade](https://clampdown-web.github.io/agentscout/tools/astrocade.html) (added 2026-10-16): Make and play small games by describing them to AI, then share them with a community of players.
+- [Scenario](https://clampdown-web.github.io/agentscout/tools/scenario.html) (added 2026-10-16): Generates consistent game art, sprites, textures and 3D assets from models trained on your own style.
+- [Ludo.ai](https://clampdown-web.github.io/agentscout/tools/ludo-ai.html) (added 2026-10-16): AI assistant for game designers: market research, concept ideas, game design docs and asset generation.
+- [Suck Up!](https://clampdown-web.github.io/agentscout/tools/suck-up.html) (added 2026-10-16): Party game where you play a vampire who has to talk your way past AI-voiced residents to get invited inside.
+- [Hidden Door](https://clampdown-web.github.io/agentscout/tools/hidden-door.html) (added 2026-10-16): Narrative game platform where an AI game master runs story adventures set in licensed and original worlds.
+- [AI Dungeon](https://clampdown-web.github.io/agentscout/tools/ai-dungeon.html) (added 2026-10-16): Text adventure game where an AI narrator responds to anything you type, with community-made worlds and multiplayer.
+- [Wolfcha](https://clampdown-web.github.io/agentscout/tools/wolfcha.html) (added 2026-10-16): Werewolf social deduction game where you take one seat and LLM players fill the rest.

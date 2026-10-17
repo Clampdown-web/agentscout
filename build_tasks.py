@@ -36,6 +36,7 @@ TASKS=[
 ("testing-apps","testing apps",set(),set(),r"\bQA\b|\btest(s|ing)?\b|end-to-end|\bE2E\b","Agents that write and run tests, click through your app and report what breaks."),
 ("making-videos","making videos",set(),set(),r"video","AI agents and tools that script, edit or generate video."),
 ("making-images-and-design","images and design",{"vision"},{"computer vision","make diagrams"},r"\bimage|design|diagram|vision|visual","Agents for visual work: generating images, diagrams and designs, or understanding what's in a picture."),
+("games","AI games and game makers",{"games"},set(),r"\bgames?\b|game master|dungeon|NPC|Minecraft","AI-made and AI-driven games: text adventures, AI game masters for tabletop, games against AI agents, AI NPC engines and tools that make games."),
 ("crypto-and-wallets","crypto and wallets",set(),set(),r"crypto|wallet|blockchain|onchain|stablecoin|x402|web3","Wallets, payment rails and tools that let agents hold funds and pay for things on their own."),
 ("agent-payments","agent payments",set(),set(),r"payment|pay for|checkout|billing|x40[12]","Tools that let agents pay, get paid and handle checkout without a human clicking buy."),
 ("deploying-agents","deploying and hosting agents",set(),set(),r"\bdeploy(s|ing)? (\w+ ){0,3}agents\b|\bagent (hosting|runtime|cloud)\b|\bhost(s|ing)? (AI )?agents\b|\bagents? in production\b|\bserverless\b","Infrastructure for running agents in production: hosting, scaling and serverless runtimes."),

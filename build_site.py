@@ -23,7 +23,7 @@ tpl=open("detail.tpl.html").read()
 for x in t:
     rel=[y for y in t if y is not x and y["category"]==x["category"]][:6]
     relh="".join(f'<a class="card" href="{y["slug"]}.html"><div class="ct">{build_extras.ico(y,"../","sm")}<h3 style="flex:1">{e(y["name"])}</h3></div><p>{e(y["description"])}</p></a>' for y in rel)
-    facts=[("Category",x["category"]),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),("Pricing",x.get("pricing_detail",x["pricing"])),("Maturity",x["maturity"])]
+    facts=[("Category",x["category"]+(" · "+", ".join(x["tags"]) if x.get("tags") else "")),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),("Pricing",x.get("pricing_detail",x["pricing"])),("Maturity",x["maturity"])]
     if x.get("github_stars") is not None: facts.append(("GitHub stars",f'{x["github_stars"]:,} (as of {x["verified"]})'))
     if x.get("added"): facts.append(("Added",x["added"]))
     facts.append(("Link checked",x["verified"]))
