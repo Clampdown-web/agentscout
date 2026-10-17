@@ -34,8 +34,8 @@ def build(t):
         tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"website":x.get("website",""),"github":x.get("github",""),"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
           "price_tag":tag(x["pricing"]),"platforms":platforms(x),"date_added":x.get("added") or x.get("verified"),"added":x.get("added"),"source":x.get("source"),
-          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"new_this_week":(x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"github_stars":x.get("github_stars"),"open_source":x["pricing"].lower().startswith("open"),"license":lic(x),"tags":x.get("use_cases",[])+x.get("tags",[]),"hybrid":"hybrid" in x.get("tags",[]),"logo":(f"https://clampdown-web.github.io/agentscout/{x['logo']}" if x.get("logo") else None),
-          "page":f"https://clampdown-web.github.io/agentscout/tools/{x['slug']}.html"})
+          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"new_this_week":(x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"github_stars":x.get("github_stars"),"open_source":x["pricing"].lower().startswith("open"),"license":lic(x),"tags":x.get("use_cases",[])+x.get("tags",[]),"hybrid":"hybrid" in x.get("tags",[]),"logo":(f"https://agentscouthq.com/{x['logo']}" if x.get("logo") else None),
+          "page":f"https://agentscouthq.com/tools/{x['slug']}.html"})
     lc=max((x.get("verified") or "") for x in t)
     json.dump({"version":1,"generated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"last_checked":lc,"count":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
 if __name__=="__main__": build(json.load(open("tools.json")))

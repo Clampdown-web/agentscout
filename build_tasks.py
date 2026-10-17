@@ -117,7 +117,7 @@ def sitewide(t):
         if os.path.basename(f) in SKIP or f.startswith(("node_modules","app/")): continue
         s=open(f).read(); o=s
         s=re.sub(r'<section class="nlband".*?</section>\n?',"",s,flags=re.S)  # dark "5 agent tools" strip removed sitewide
-        d="/agentscout/" if f=="404.html" else "../"*f.count("/")
+        d="/" if f=="404.html" else "../"*f.count("/")
         s=re.sub(r'<a([^>]*?) href="https://github\.com/Clampdown-web/agentscout/issues/new\?[^"]*?[Ss]ubmission[^"]*"(?: target="_blank")?(?: rel="noopener(?: noreferrer)?")?',lambda mm:f'<a{mm.group(1)} href="{d}submit.html"',s)
         s=re.sub(r'(<div class="links"><a href="[^"]*categories/index\.html">Categories</a>)(?!<a href="[^"]*tasks/)',lambda mm:mm.group(1)+f'<a href="{d}tasks/index.html">Tasks</a>',s)
         s=re.sub(r'(<p><a href="[^"]*categories/index\.html">Categories</a>)(?! · <a href="[^"]*tasks/)',lambda mm:mm.group(1)+f' · <a href="{d}tasks/index.html">AI agents by task</a>',s)

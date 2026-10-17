@@ -1,6 +1,6 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
 import html,json,re,datetime
-B="https://clampdown-web.github.io/agentscout/"
+B="https://agentscouthq.com/"
 e=lambda s:html.escape(str(s or ""))
 def su(u):
     u=str(u or "").strip()
@@ -182,7 +182,7 @@ def seo(t,urls):
         f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
         "Cursor alternatives (2026)",f'{len(alt)} other coding agents and AI editors in the AgentScout directory. See also our <a href="../tools/cursor.html">Cursor listing</a> and <a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>.',alt,"Cursor alternatives"))
     # 404
-    s=shell("/agentscout/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section style="padding-top:40px"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/agentscout/index.html#directory">directory</a> or <a href="/agentscout/categories/index.html">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
+    s=shell("/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section style="padding-top:40px"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/index.html#directory">directory</a> or <a href="/categories/index.html">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
     open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
     # llms.txt
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t)} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: agentscout@mail.grokbot.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]

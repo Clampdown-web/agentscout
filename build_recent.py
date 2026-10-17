@@ -3,7 +3,7 @@ import json,re,html,datetime,build_extras
 from zoneinfo import ZoneInfo
 def pt_today(): return datetime.datetime.now(ZoneInfo('America/Los_Angeles')).date()
 e=lambda s:html.escape(str(s or ""))
-B="https://clampdown-web.github.io/agentscout/"
+B="https://agentscouthq.com/"
 STATS_JS=open("stats.js.html").read()  # shared PT stats logic (mirrored in the app: src/api/tools.js stats())
 def newest(t): return sorted(t,key=lambda x:(x.get("added",""),x.get("id",0)),reverse=True)
 def fmt(d): return datetime.date.fromisoformat(d).strftime("%b %-d, %Y")
