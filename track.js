@@ -1,17 +1,21 @@
 /* AgentScout anonymous analytics. No cookies, no personal data, no IP storage (the Worker only keeps daily
-   aggregate counters). A random per-tab id lives in sessionStorage and is used only to drop duplicate page views.
+   aggregate counters). Runs only with analytics consent (consent.js / window.ASConsent): in strict regions nothing is
+   sent until the visitor accepts; elsewhere it's on by default and can be turned off under "Privacy choices".
+   sessionStorage is used only (after consent) to count each page once per tab.
    Events: page_view, search, tool_click, outbound_link, button_click, quiz_complete, favorite_add, submit_tool, image_generate. */
 (function(){
   var URL_="https://agentscout-image.agentscouthq.workers.dev/track",q=[],t=null;
-  try{var sid=sessionStorage.getItem("as_sid");if(!sid){sid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem("as_sid",sid)}}catch(e){}
-  function flush(){if(!q.length)return;var body=JSON.stringify({source:"web",events:q.splice(0,50)});
+  // null = no decision yet (hold events in memory, send nothing); false = drop; true = send
+  function ok(){var C=window.ASConsent;if(!C)return false;var s=C.get();if(!s.ready||(s.strict&&!s.decided))return null;return s.analytics}
+  function flush(){if(!q.length)return;var a=ok();if(a===null)return;if(!a){q.length=0;return}var body=JSON.stringify({source:"web",events:q.splice(0,50)});
     try{if(navigator.sendBeacon&&navigator.sendBeacon(URL_,new Blob([body],{type:"text/plain"})))return}catch(e){}
     try{fetch(URL_,{method:"POST",body:body,keepalive:true,headers:{"Content-Type":"text/plain"}}).catch(function(){})}catch(e){}}
   function track(e,k,qq){var ev={e:e};if(k)ev.k=String(k).slice(0,80);if(qq)ev.q=String(qq).slice(0,60);q.push(ev);clearTimeout(t);t=setTimeout(flush,2000)}
   window.ASTrack=track;
   addEventListener("pagehide",flush);document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")flush()});
   // page_view by path (once per tab per path)
-  try{var pk="as_pv:"+location.pathname;if(!sessionStorage.getItem(pk)){sessionStorage.setItem(pk,"1");track("page_view",location.pathname)}}catch(e){track("page_view",location.pathname)}
+  var pv=false;function pageView(){if(pv)return;pv=true;try{var pk="as_pv:"+location.pathname;if(!sessionStorage.getItem(pk)){sessionStorage.setItem(pk,"1");track("page_view",location.pathname)}}catch(e){track("page_view",location.pathname)}}
+  if(window.ASConsent)ASConsent.on(function(s){if(ok()===true){pageView();flush()}else if(ok()===false)q.length=0});
   var here=(location.pathname.match(/\/tools\/([^\/]+)\.html$/)||[])[1]||"";
   // clicks
   document.addEventListener("click",function(ev){
