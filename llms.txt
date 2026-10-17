@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 617 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 636 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,19 +22,19 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 150 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 86 tools
-- [frameworks](https://agentscouthq.com/categories/frameworks.html): 84 tools
-- [crypto](https://agentscouthq.com/categories/crypto.html): 54 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 41 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 38 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 32 tools
-- [research](https://agentscouthq.com/categories/research.html): 27 tools
-- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 24 tools
+- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 154 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 89 tools
+- [frameworks](https://agentscouthq.com/categories/frameworks.html): 86 tools
+- [crypto](https://agentscouthq.com/categories/crypto.html): 56 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 40 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 39 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 34 tools
+- [research](https://agentscouthq.com/categories/research.html): 29 tools
+- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 25 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 22 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 20 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 21 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 15 tools
 - [games](https://agentscouthq.com/categories/games.html): 15 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 13 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 7 tools
 - [models](https://agentscouthq.com/categories/models.html): 3 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 1 tool
@@ -50,15 +50,15 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
-- [Roomote](https://agentscouthq.com/tools/roomote.html) (added 2026-10-17): Cloud coding agent from the Roo Code team that runs your real dev environment, verifies its work, reviews code with a second model and hands back PRs with live previews; works from Slack, Teams, GitHub and Linear, self-hosted or on its cloud.
-- [MetaMask Agent Wallet](https://agentscouthq.com/tools/metamask-agent-wallet.html) (added 2026-10-15): Self-custodial crypto wallet for AI agents: swaps, cross-chain transfers, perps and prediction markets within spend limits you set, with every transaction security-checked.
-- [Google Deep Review](https://agentscouthq.com/tools/google-deep-review.html) (added 2026-10-15): Google Research's multi-agent system that checks research papers, design docs, and legal or financial documents for logical gaps and unsupported claims.
-- [Agent-Native (Builder.io)](https://agentscouthq.com/tools/agent-native-builder-io.html) (added 2026-10-15): Open-source TypeScript framework for building agents that come with their own app UI; each action is shared by the UI, agent, API, CLI, MCP and A2A.
-- [SODAX SDK](https://agentscouthq.com/tools/sodax-sdk.html) (added 2026-10-16): Cross-network DeFi execution SDK (swaps, lending, bridging) with skills and a Builders MCP for AI-assisted development.
-- [Openfort](https://agentscouthq.com/tools/openfort.html) (added 2026-10-16): Open-source stablecoin wallet infrastructure with policy-gated agent wallets, gas sponsorship and x402 support.
-- [Nora](https://agentscouthq.com/tools/nora.html) (added 2026-10-16): Deep-reasoning AI coding agent for building and securing Web3 apps and smart contracts.
-- [Marx Finance](https://agentscouthq.com/tools/marx-finance.html) (added 2026-10-16): Open platform where autonomous AI trading agents publish market signals and debate positions, with an MCP server.
-- [Sharpe Labs](https://agentscouthq.com/tools/sharpe-labs.html) (added 2026-10-16): Free crypto trading intelligence terminal (derivatives, funding, on-chain, sentiment) with an MCP server for AI agents.
-- [blai](https://agentscouthq.com/tools/blai.html) (added 2026-10-16): AI crypto advisor app to research tokens, build portfolios and trade via chat.
-- [Fere AI](https://agentscouthq.com/tools/fere-ai.html) (added 2026-10-16): Fund a ready-made AI agent and it trades crypto (and Polymarket) for you 24/7.
-- [Laika AI](https://agentscouthq.com/tools/laika-ai.html) (added 2026-10-16): Web3 browser extension for AI research, token and contract analysis, wallet monitoring and phishing detection.
+- [Etherscan MCP](https://agentscouthq.com/tools/etherscan-mcp.html) (added 2026-10-17): Etherscan's official MCP server for read-only onchain data across EVM chains, such as balances, transactions, token transfers, contracts and logs, usable with or without an API key.
+- [CoinMarketCap MCP](https://agentscouthq.com/tools/coinmarketcap-mcp.html) (added 2026-10-17): Official CoinMarketCap MCP server that feeds agents live crypto prices, market caps, rankings and exchange data through your CMC API plan.
+- [Stack Overflow MCP](https://agentscouthq.com/tools/stack-overflow-mcp.html) (added 2026-10-17): Official remote MCP server that lets coding agents search and pull vetted Stack Overflow questions and answers, with a free daily call allowance per user.
+- [Wolfram MCP](https://agentscouthq.com/tools/wolfram-mcp.html) (added 2026-10-17): Wolfram's official MCP service that gives agents computed answers from Wolfram Language and Wolfram|Alpha, with local, cloud and enterprise deployment options.
+- [Paper2Agent](https://agentscouthq.com/tools/paper2agent.html) (added 2026-10-17): Multi-agent system that turns a research paper and its code into a working MCP server and agent skills you can query and run.
+- [Agent Memory Leaderboard](https://agentscouthq.com/tools/agent-memory-leaderboard.html) (added 2026-10-17): Public leaderboard and open evaluation protocol, run by a group of universities and labs, for comparing long-term memory systems for agents in recurring submission rounds.
+- [Craft Agents](https://agentscouthq.com/tools/craft-agents.html) (added 2026-10-17): Desktop app from the makers of Craft for working with agents in a document-first way; the agent sets up APIs and MCP servers for you and sessions can be shared.
+- [OpenScience](https://agentscouthq.com/tools/openscience.html) (added 2026-10-17): Research agent workbench that reads the literature, writes and runs code and experiments and logs every step, with skills and connectors for databases like PubMed, UniProt and arXiv.
+- [Dograh](https://agentscouthq.com/tools/dograh.html) (added 2026-10-17): Self-hostable voice agent platform with a visual call-flow builder, bring-your-own speech and LLM providers and MCP control, pitched as an open alternative to Vapi and Retell.
+- [NitroStack](https://agentscouthq.com/tools/nitrostack.html) (added 2026-10-17): TypeScript framework with decorators and dependency injection for building, testing and deploying MCP servers and MCP apps, with a companion desktop studio.
+- [MindsHub](https://agentscouthq.com/tools/mindshub.html) (added 2026-10-17): MindsDB's agent workspace for research, analysis, documents and coding, with a model router, a scoped vault for connected data and swappable open-source agent harnesses.
+- [MiMo Code](https://agentscouthq.com/tools/mimo-code.html) (added 2026-10-17): Xiaomi's terminal coding agent with persistent project memory across sessions; works with any major model provider and is tuned for Xiaomi's MiMo models.
