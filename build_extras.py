@@ -126,7 +126,7 @@ def meta(x,n=155):
     return s
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
-def week_new(x): return x.get("added","")>=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=6)).isoformat()
+def week_new(x): return (not x.get("seed")) and x.get("added","")>=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=6)).isoformat()
 def newfirst(items): return sorted(items,key=lambda x:(not week_new(x),"" if not week_new(x) else "~"+"".join(chr(255-ord(c)) for c in x.get("added",""))))
 def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
 
@@ -188,7 +188,7 @@ def seo(t,urls):
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t)} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: support@agentscouthq.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     L+=["","## Guides","",f"- [Best MCP servers 2026]({B}best/mcp-servers.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
-    rec=sorted(t,key=lambda x:(x.get("added",""),x.get("id",0)),reverse=True)[:12]
+    rec=sorted(t,key=lambda x:(not x.get("seed"),x.get("added",""),x.get("id",0)),reverse=True)[:12]
     L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
 

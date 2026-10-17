@@ -10,7 +10,7 @@ import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 for x in t:
-    x["new"]=x.get("added","")>=_c
+    x["new"]=(not x.get("seed")) and x.get("added","")>=_c  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
     d=x["name"]+" "+x["description"]+" "+x["category"]
     x["use_cases"]=[u for u,p in RULES if re.search(p,d)][:3] or [x["category"]]
     x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
