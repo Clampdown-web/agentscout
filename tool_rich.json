@@ -9098,5 +9098,935 @@
    "https://github.com/CopilotKit/OpenBot"
   ],
   "updated": "2026-10-18"
+ },
+ "everywhere": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Everywhere (\"Your AI - Everywhere\") is an open-source desktop assistant built with .NET and Avalonia.",
+   "Our listing notes it sees what is on your screen and helps using LLMs and MCP tools."
+  ],
+  "who": "Desktop users who want context-aware AI help in any app.",
+  "features": [
+   "Screen-aware assistance",
+   "LLM and MCP tools",
+   "Open source desktop app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Sylinko/Everywhere"
+  ],
+  "updated": "2026-10-18"
+ },
+ "kun": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kun is a desktop app that runs on your computer: code, documents and agent conversations share one local runtime, and sessions, memory and settings stay on your machine. You connect your own model.",
+   "Its README (in Chinese) also lists a plugin and skills marketplace (MCP/Skills), reminders and scheduled tasks, a terminal TUI and remote access from your phone; it supports OpenAI- and Anthropic-compatible APIs."
+  ],
+  "who": "People who want a local-first agent workspace for coding, writing and research.",
+  "features": [
+   "Local-first runtime",
+   "Bring your own model",
+   "MCP and skills marketplace",
+   "Scheduled tasks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/KunAgent/Kun",
+   "https://www.kun-agent.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lobsterai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LobsterAI, from NetEase Youdao, is an open-source desktop agent that can operate in your real working environment, including local files.",
+   "Our listing notes data analysis, slides, documents and web research."
+  ],
+  "who": "Desktop users who want an agent to produce documents and analysis.",
+  "features": [
+   "Desktop agent",
+   "Works with local files",
+   "Slides, docs and analysis"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/netease-youdao/LobsterAI"
+  ],
+  "updated": "2026-10-18"
+ },
+ "chatollama": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ChatOllama is an open-source agentic app for running AI agents with hosted or local models.",
+   "You set an API key for any provider you want to use."
+  ],
+  "who": "People who want an open-source chat app for local and hosted models.",
+  "features": [
+   "Local and hosted models",
+   "Agents",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/sugarforever/chat-ollama"
+  ],
+  "updated": "2026-10-18"
+ },
+ "moltis": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Moltis is a secure, persistent personal agent server written in Rust.",
+   "Our listing notes sandboxed execution."
+  ],
+  "who": "Developers who want a self-hosted, security-focused personal agent.",
+  "features": [
+   "Rust server",
+   "Persistent agent",
+   "Sandboxed execution"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/moltis-org/moltis"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openpilot": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenPilot is an open-source AI agent harness for your laptop. Bring your own LLM API key and let an agent read, edit and run tools against a real folder.",
+   "You can optionally plug in TinyFish for live web search; our listing notes approvals for edits and commands."
+  ],
+  "who": "People who want a free local agent with any OpenAI-compatible model.",
+  "features": [
+   "Bring your own key",
+   "File edits and commands with approvals",
+   "Optional web search",
+   "MIT license"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ibmshaikh/OpenPilot"
+  ],
+  "updated": "2026-10-18"
+ },
+ "airjelly": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "AirJelly is an always-on desktop AI that watches your workflow, remembers everything and acts before you ask.",
+   "It keeps a timeline of what it observed across apps and auto-captures tasks."
+  ],
+  "who": "People who want a proactive assistant with memory of their work.",
+  "features": [
+   "Always-on",
+   "Activity timeline",
+   "Auto-captured tasks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.airjelly.ai/en"
+  ],
+  "updated": "2026-10-18"
+ },
+ "boss-console": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "BOSS Console is a tiny OS for your always-on agents: create your own agent with real tools and chat with it."
+  ],
+  "who": "People who want to build and run always-on agents with a chat interface.",
+  "features": [
+   "Always-on agents",
+   "Real tools",
+   "Chat interface"
+  ],
+  "faq": [],
+  "sources": [
+   "https://bossconsole.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "clawapp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ClawApp, from Sahara AI, lets you build a team of always-on AI agents on your Mac, each with its own model, tools and limits. It runs OpenClaw for you.",
+   "It offers GPT, Claude, Gemini and Grok through one account and is free to download with no card needed."
+  ],
+  "who": "Mac users who want OpenClaw agents without self-hosting setup.",
+  "features": [
+   "Team of always-on agents",
+   "Per-agent model and limits",
+   "Runs OpenClaw",
+   "Many models, one account"
+  ],
+  "faq": [],
+  "sources": [
+   "https://clawapp.saharaai.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "clawsimple": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ClawSimple offers managed OpenClaw and Hermes Agent hosting for Telegram bots, with platform AI, managed search and server maintenance.",
+   "Higher plans include more AI credits and search/crawl headroom."
+  ],
+  "who": "People who want a hosted OpenClaw or Hermes bot on Telegram.",
+  "features": [
+   "Managed hosting",
+   "Telegram bots",
+   "Managed search",
+   "Maintenance handled"
+  ],
+  "faq": [],
+  "sources": [
+   "https://clawsimple.com/en"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lutra-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Lutra is a productivity agent that connects your work apps, integrating with Outlook, Gmail, spreadsheets and docs.",
+   "Lutra also offers MintMCP for securely connecting enterprise data and apps to AI."
+  ],
+  "who": "People who want to automate work across their apps by chat.",
+  "features": [
+   "Email, spreadsheet and doc integrations",
+   "Chat-prompt automation",
+   "MintMCP for enterprises"
+  ],
+  "faq": [],
+  "sources": [
+   "https://lutra.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "manus": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Manus is an action engine that goes beyond answers to execute tasks, automate workflows and extend your reach.",
+   "Our listing notes it does research and tasks in a cloud computer."
+  ],
+  "who": "People who want a general-purpose agent to complete tasks for them.",
+  "features": [
+   "Executes tasks",
+   "Workflow automation",
+   "Cloud computer"
+  ],
+  "faq": [],
+  "sources": [
+   "https://manus.im"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mixus": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Mixus offers email-based agents for legal work in email and Word.",
+   "Redlines, analysis, drafts and models come back with attorney-in-the-loop control."
+  ],
+  "who": "Legal teams who want agent help with human review.",
+  "features": [
+   "Email-based agents",
+   "Redlines and drafts in Word",
+   "Attorney-in-the-loop"
+  ],
+  "faq": [],
+  "sources": [
+   "https://mixus.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ninja-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Ninja AI is an all-in-one AI assistant with research, coding and writing agents.",
+   "Its site describes long-running adaptive agents powered by proprietary and open-weight models, which can be deployed in a customer's own cloud account."
+  ],
+  "who": "People and teams wanting one assistant for research, coding and writing.",
+  "features": [
+   "Research, coding and writing agents",
+   "Proprietary and open models",
+   "Customer-cloud deployment"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.ninjatech.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "paperclip": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Paperclip is open-source orchestration for teams of AI agents: \"If OpenClaw is an employee, Paperclip is the company.\"",
+   "It is a self-hosted Node.js app; our listing notes org charts, goals, budgets and approval gates across Claude Code, Codex, OpenClaw and other harnesses."
+  ],
+  "who": "Teams running many agents who want structure and oversight.",
+  "features": [
+   "Agent org charts",
+   "Goals and budgets",
+   "Approval gates",
+   "Many harnesses"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/paperclipai/paperclip"
+  ],
+  "updated": "2026-10-18"
+ },
+ "docsgpt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DocsGPT provides open-source AI agents grounded in your docs: private, self-hosted and any model.",
+   "You can self-host in one command; a cloud version is also available."
+  ],
+  "who": "Teams who want private document Q&A and agents.",
+  "features": [
+   "Agents grounded in your docs",
+   "Self-hosted",
+   "Any model",
+   "Agent builder"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/arc53/DocsGPT"
+  ],
+  "updated": "2026-10-18"
+ },
+ "holaos": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "holaOS is an agentic workspace where your apps and your agent sit side by side.",
+   "You shape it to fit how your company works, connecting the systems and chat tools you already run."
+  ],
+  "who": "Companies who want a customizable agent workspace.",
+  "features": [
+   "Apps and agent side by side",
+   "Many integrations",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/holaboss-ai/holaOS"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tracecat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Tracecat is an open-source security automation platform for teams and AI agents.",
+   "It gives AI-native security teams one platform to build agents and automate cyber defense."
+  ],
+  "who": "Security teams automating response.",
+  "features": [
+   "Security automation",
+   "Build security agents",
+   "Open source + cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TracecatHQ/tracecat"
+  ],
+  "updated": "2026-10-18"
+ },
+ "sema4-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Sema4.ai is an enterprise AI agents platform; its open-source Actions project connects agents to systems.",
+   "The project started as Robocorp Action Server and is being migrated under the Sema4.ai organization."
+  ],
+  "who": "Enterprises building agents that act on business systems.",
+  "features": [
+   "Open-source actions",
+   "Enterprise agents",
+   "Formerly Robocorp Action Server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Sema4AI/actions"
+  ],
+  "updated": "2026-10-18"
+ },
+ "11x": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "11x provides digital AI workers for go-to-market teams.",
+   "Our listing notes an SDR agent that researches prospects and runs outbound, and a phone agent that handles calls; customers cite time saved on cadences, research and messaging."
+  ],
+  "who": "Sales teams automating outbound.",
+  "features": [
+   "AI SDR",
+   "Phone agent",
+   "Prospect research"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.11x.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "accordio-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Accordio AI adds the tools Claude is missing: track time, sign contracts, send invoices and get paid.",
+   "It is a free MCP connector for Claude, Claude Code and any agent, with no trial clock or card required."
+  ],
+  "who": "Freelancers and small businesses who run work through Claude.",
+  "features": [
+   "Time tracking",
+   "Contract signing",
+   "Invoicing and payments",
+   "Free MCP connector"
+  ],
+  "faq": [],
+  "sources": [
+   "https://accordio.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agently": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Agently is an AI chief of staff that learns how your company runs from your connected tools, then handles work with your approval."
+  ],
+  "who": "Leaders who want routine work handled by an agent.",
+  "features": [
+   "Learns from connected tools",
+   "Handles routine work",
+   "Approval-based"
+  ],
+  "faq": [],
+  "sources": [
+   "https://agently.dev/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentplace": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Agentplace lets you build AI agents that answer questions, book appointments, handle customer service and deliver services online."
+  ],
+  "who": "Businesses that want customer-facing agents.",
+  "features": [
+   "Customer Q&A",
+   "Appointment booking",
+   "Customer service"
+  ],
+  "faq": [],
+  "sources": [
+   "https://agentplace.io/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentsdr": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "AgentSDR is an open-source, self-hosted AI SDR: email sequences, LinkedIn campaigns and WhatsApp calls.",
+   "Its AI CRM classifies every reply and drafts the answer."
+  ],
+  "who": "Sales teams who want a self-hosted outbound agent.",
+  "features": [
+   "Email, LinkedIn, WhatsApp outreach",
+   "AI CRM",
+   "Self-hosted"
+  ],
+  "faq": [],
+  "sources": [
+   "https://agentsdr.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ami-by-aisdr": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Ami, from AiSDR, is an AI go-to-market agent: give it your website and 20 minutes, and you get a targeted list and a live campaign.",
+   "Ami keeps working to fix what stalls and scale what works."
+  ],
+  "who": "Companies that want outbound running quickly.",
+  "features": [
+   "Builds target list",
+   "Launches outbound campaigns",
+   "Ongoing optimization"
+  ],
+  "faq": [],
+  "sources": [
+   "https://aisdr.com/ai-gtm-agent-ami/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "appian": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Appian is an enterprise platform for AI process automation that orchestrates AI agents, systems and people without replacing your systems."
+  ],
+  "who": "Enterprises automating critical processes.",
+  "features": [
+   "Agent orchestration",
+   "Low-code process automation",
+   "Enterprise workflows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://appian.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "artisan": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Artisan automates outbound with an AI-first platform powered by AI employees, led by Ava, an AI BDR.",
+   "Ava 2.0 gives you control over outbound working alongside your team."
+  ],
+  "who": "Sales teams automating outbound prospecting.",
+  "features": [
+   "AI BDR (Ava)",
+   "Lead finding and emails",
+   "Meeting booking"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.artisan.co"
+  ],
+  "updated": "2026-10-18"
+ },
+ "brev": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Brev understands execution across your company, connecting goals, meetings, metrics and updates to surface risk early.",
+   "It aims to save leaders hours spent chasing updates."
+  ],
+  "who": "Leaders tracking company execution.",
+  "features": [
+   "Connects goals, meetings and metrics",
+   "Early risk detection",
+   "Status without chasing"
+  ],
+  "faq": [],
+  "sources": [
+   "https://brev.io/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "clara-ai-sdr": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Clara is a face-to-face video AI SDR that engages website visitors in real time, qualifies leads and books meetings."
+  ],
+  "who": "B2B companies turning site traffic into pipeline.",
+  "features": [
+   "Video AI SDR",
+   "Real-time visitor engagement",
+   "Lead qualification and booking"
+  ],
+  "faq": [],
+  "sources": [
+   "https://clarasdr.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "close": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Close is a CRM with a built-in AI teammate that calls leads, qualifies prospects, books meetings and keeps the CRM up to date automatically."
+  ],
+  "who": "Sales teams who want CRM plus an AI teammate.",
+  "features": [
+   "CRM",
+   "AI calls leads",
+   "Meeting booking",
+   "Auto-updated records"
+  ],
+  "faq": [],
+  "sources": [
+   "https://close.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cockpit-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Cockpit AI is one AI go-to-market team covering outbound, studio, paid, organic, lifecycle, sales and web, run by an agent called Mira and reported every Monday.",
+   "You talk to Mira; your people close."
+  ],
+  "who": "Companies who want AI to run GTM work.",
+  "features": [
+   "Outbound, content, paid, lifecycle",
+   "Weekly reports",
+   "Single AI lead (Mira)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://oncockpit.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cresta-deputy-agent": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Cresta Deputy Agent is a long-running agent built for customer-experience operations that automates work from intent to completion.",
+   "Our listing notes it pauses for approvals or documents in back-office workflows."
+  ],
+  "who": "Contact-center and CX operations teams.",
+  "features": [
+   "Long-running CX agent",
+   "Back-office workflows",
+   "Pauses for approvals"
+  ],
+  "faq": [],
+  "sources": [
+   "https://cresta.com/deputy-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "crewdle": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Crewdle lets you hire 24/7 autonomous AI agents and teams for support, sales, bookkeeping and research.",
+   "You pay per task with no subscription, and get $10 of credit to start."
+  ],
+  "who": "Small businesses that want work done by agents on demand.",
+  "features": [
+   "Support, sales, bookkeeping, research",
+   "Pay per task",
+   "$10 starting credit"
+  ],
+  "faq": [],
+  "sources": [
+   "https://crewdle.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "crono": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Crono is an AI sales execution platform where reps and AI agents work side by side: identify signals, prioritize accounts and run multichannel outreach.",
+   "Crono says it is used by 300+ B2B teams."
+  ],
+  "who": "B2B sales teams.",
+  "features": [
+   "Signal detection",
+   "Account prioritization",
+   "Multichannel outreach"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.crono.one/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "customgpt-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "CustomGPT.ai lets businesses build custom GPTs, AI agents built from their own content, for customer experience and employee efficiency.",
+   "Our listing notes no-code building, citations and anti-hallucination controls."
+  ],
+  "who": "Businesses wanting agents grounded in their content.",
+  "features": [
+   "No-code agent builder",
+   "Grounded in your content",
+   "Citations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://customgpt.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dropzone-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Dropzone AI provides AI SOC analyst agents for alert triage and threat hunting.",
+   "Its AI SOC analyst aims to show what happened, with evidence in hand."
+  ],
+  "who": "Security operations teams.",
+  "features": [
+   "Autonomous alert triage",
+   "Threat hunting",
+   "Evidence-backed investigations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.dropzone.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "duckie": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Duckie provides AI support agents that resolve tickets end to end, learning from your knowledge base to respond 24/7."
+  ],
+  "who": "Support teams for technical products.",
+  "features": [
+   "End-to-end ticket resolution",
+   "Learns from knowledge base",
+   "24/7"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.duckie.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ema": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Ema, a \"Universal AI Employee\", is an enterprise platform for building and deploying AI agents across roles and industries."
+  ],
+  "who": "Enterprises automating business functions.",
+  "features": [
+   "Prebuilt AI employees",
+   "Enterprise deployment",
+   "Across roles and industries"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.ema.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "gradient-labs": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Gradient Labs builds AI agents for financial services, automating disputes, KYC, lending, customer support and the back-office work in between."
+  ],
+  "who": "Regulated financial services companies.",
+  "features": [
+   "Customer support",
+   "Disputes and KYC",
+   "Lending and back office"
+  ],
+  "faq": [],
+  "sources": [
+   "https://gradient-labs.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hatz-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Hatz AI lets you build, deploy and manage secure AI agents and workflows across your organization.",
+   "It says it is SOC 2 Type 2 compliant and built for SMBs and MSPs."
+  ],
+  "who": "Managed service providers and SMBs.",
+  "features": [
+   "Secure agents and workflows",
+   "SOC 2 Type 2 (per Hatz)",
+   "Built for MSPs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.hatz.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hiver": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Hiver is an agentic omnichannel customer service platform used by more than 10,000 teams.",
+   "It combines AI, cross-team collaboration, ticketing and workflows; our listing notes it works inside Gmail."
+  ],
+  "who": "Support teams who want a helpdesk in Gmail with AI.",
+  "features": [
+   "AI agents",
+   "Ticketing",
+   "Omnichannel",
+   "Gmail-based"
+  ],
+  "faq": [],
+  "sources": [
+   "https://hiverhq.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "intercom-fin": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Fin is Intercom's AI customer agent, used by over 12,000 brands across the customer journey."
+  ],
+  "who": "Companies automating customer support conversations.",
+  "features": [
+   "Resolves support conversations",
+   "Multi-channel",
+   "Customer-journey coverage"
+  ],
+  "faq": [],
+  "sources": [
+   "https://fin.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "kognitos": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Kognitos is a neurosymbolic agentic AI platform that automates finance, AP, healthcare and IT workflows in plain English.",
+   "It focuses on handling exceptions, not just the happy path."
+  ],
+  "who": "Enterprises automating back-office processes.",
+  "features": [
+   "Plain-English automation",
+   "Exception handling",
+   "Finance, AP, healthcare, IT"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.kognitos.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "k-dlo": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "kōdlo finds prospects, tells you how to warm them up, and writes the offer and deck from your docs.",
+   "Lead discovery fills your campaigns and deep research prepares cited briefs. It has a Free plan with no card required; our listing notes an MCP server."
+  ],
+  "who": "Sales people who want an agent for prospecting and outreach.",
+  "features": [
+   "Lead discovery",
+   "Cited research briefs",
+   "Offers and decks from your docs",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://kodlo.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mindflow": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Mindflow is a no-code and agentic automation and orchestration platform for enterprise cyber and IT professionals to automate mundane tasks and deploy AI agents at scale."
+  ],
+  "who": "Security and IT operations teams.",
+  "features": [
+   "No-code automation",
+   "AI agents at scale",
+   "Security and IT focus"
+  ],
+  "faq": [],
+  "sources": [
+   "https://mindflow.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "moveworks": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Moveworks is an AI assistant platform for your workforce to find answers instantly and automate tasks across business apps."
+  ],
+  "who": "Enterprises resolving employee IT and HR requests.",
+  "features": [
+   "Employee answers",
+   "Task automation",
+   "Across business apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.moveworks.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "payman": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Payman deploys AI that executes real banking transactions, such as payments, transfers and account analysis, through voice or text on existing rails.",
+   "It offers full visibility, configurable controls and complete audit trails."
+  ],
+  "who": "Banks and credit unions.",
+  "features": [
+   "Real banking transactions",
+   "Voice or text",
+   "Configurable controls",
+   "Audit trails"
+  ],
+  "faq": [],
+  "sources": [
+   "https://paymanai.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "prophet-security": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Prophet Security is an agentic AI SOC analyst for AI-driven triage and investigation that resolves alerts in seconds.",
+   "It also offers proactive threat hunting and visibility into detection coverage."
+  ],
+  "who": "Security operations teams.",
+  "features": [
+   "Alert triage and investigation",
+   "Threat hunting",
+   "Detection coverage insight"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.prophetsecurity.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "riff-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Riff is a platform for AI agents that understand your operations, act across your systems and work alongside your people, focused on industrial operations."
+  ],
+  "who": "Industrial and operations-heavy businesses.",
+  "features": [
+   "Operational agents",
+   "Acts across systems",
+   "Industrial focus"
+  ],
+  "faq": [],
+  "sources": [
+   "https://riff.ai/"
+  ],
+  "updated": "2026-10-18"
  }
 }
