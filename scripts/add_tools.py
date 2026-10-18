@@ -15,6 +15,18 @@ GH={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
 BADHOST=re.compile(r'(linkedin|discord|deepwiki|arxiv|twitter|x\.com|youtube|aka\.ms|bilibili|notion\.site|go\.novu)',re.I)
 CATS={"frameworks","coding","MCP & infra","evals & observability","voice","browser/computer use","research","no-code builders","business agents","personal agents","app builders","vision","games","crypto","productivity","models"}
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
+def is_identicon(im):
+  """GitHub default avatar: #f0f0f0 background + one flat colour in a 5x5 grid."""
+  import collections
+  px=list(im.convert('RGB').resize((64,64),Image.NEAREST).getdata())
+  near=lambda a,b,d:all(abs(p-q)<=d for p,q in zip(a,b))
+  if sum(near(p,(240,240,240),8) for p in px)<0.2*len(px): return False
+  rest=[p for p in px if not near(p,(240,240,240),14)]
+  if not rest: return False
+  fg=collections.Counter(rest).most_common(1)[0][0]
+  if sum(near(p,fg,30) for p in rest)<0.85*len(rest): return False
+  g=im.convert('L').resize((64,64)); f=g.transpose(Image.FLIP_LEFT_RIGHT)  # identicons are mirror-symmetric
+  return sum(abs(a-b)<24 for a,b in zip(g.getdata(),f.getdata()))>=0.95*64*64
 def getimg(u):
   try:
     r=requests.get(u,headers=UA,timeout=12)
@@ -27,7 +39,8 @@ def getimg(u):
     im.load()
     if min(im.size)<64: return None
     ex=im.convert('RGB').getextrema()
-    return None if all(a==b for a,b in ex) else im  # reject blank single-color images
+    if all(a==b for a,b in ex): return None  # reject blank single-color images
+    return None if is_identicon(im) else im  # reject GitHub default identicons (logo audit Oct 18 2026)
   except Exception: return None
 def verify(row):
   row+=['']*(7-len(row)); repo,cat,pr,aud,desc,name,site=row[:7]; o={"err":None}
