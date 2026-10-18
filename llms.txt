@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 753 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 808 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,20 +22,20 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 182 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 107 tools
-- [frameworks](https://agentscouthq.com/categories/frameworks.html): 99 tools
+- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 194 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 119 tools
+- [frameworks](https://agentscouthq.com/categories/frameworks.html): 106 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 63 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 57 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 53 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 43 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 42 tools
-- [research](https://agentscouthq.com/categories/research.html): 32 tools
-- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 28 tools
-- [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 23 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 47 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 43 tools
+- [research](https://agentscouthq.com/categories/research.html): 33 tools
+- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 31 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 25 tools
+- [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 24 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 22 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 22 tools
 - [productivity](https://agentscouthq.com/categories/productivity.html): 17 tools
-- [games](https://agentscouthq.com/categories/games.html): 15 tools
+- [games](https://agentscouthq.com/categories/games.html): 16 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 7 tools
 - [models](https://agentscouthq.com/categories/models.html): 4 tools
 
@@ -72,15 +72,15 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
-- [Sidekick](https://agentscouthq.com/tools/sidekick.html) (added 2026-10-18): Native macOS app for chatting offline with a local LLM that can draw on your files, folders and websites.
-- [OpenOutreach](https://agentscouthq.com/tools/openoutreach.html) (added 2026-10-18): Self-hosted AI agent for B2B lead generation that finds people matching your market, explains the fit and emails them from your mailbox.
-- [SocratiCode](https://agentscouthq.com/tools/socraticode.html) (added 2026-10-18): Codebase context engine for AI agents with hybrid semantic search, dependency graphs and impact analysis, available as MCP, plugin or skill.
-- [Google Workspace MCP](https://agentscouthq.com/tools/google-workspace-mcp.html) (added 2026-10-18): MCP server and CLI that gives AI assistants natural-language control of Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Tasks and Chat.
-- [Metorial](https://agentscouthq.com/tools/metorial.html) (added 2026-10-18): Open-source identity and access layer that connects AI agents to 1,200+ integrations via MCP, CLI or API with auth, permissions and observability.
-- [Open Terminal](https://agentscouthq.com/tools/open-terminal.html) (added 2026-10-18): Self-hosted terminal service from the Open WebUI team that gives AI agents an API to run commands, manage files and execute code.
-- [EvoAgentX](https://agentscouthq.com/tools/evoagentx.html) (added 2026-10-18): Framework for building, evaluating and automatically evolving LLM agents and agentic workflows.
-- [Atomic Agent](https://agentscouthq.com/tools/atomic-agent.html) (added 2026-10-18): Local-first AI agent that drives your browser, edits files and runs approved commands using local open-weight or cloud models.
-- [II-Agent](https://agentscouthq.com/tools/ii-agent.html) (added 2026-10-18): Open-source AI agent for real work from Intelligent Internet that you can run, fork and extend with your own API keys.
-- [Laminar](https://agentscouthq.com/tools/laminar.html) (added 2026-10-18): Open-source observability platform for AI agents with OpenTelemetry tracing, plain-English behavior tracking and alerts.
-- [Mercury Agent](https://agentscouthq.com/tools/mercury-agent.html) (added 2026-10-18): Self-hosted personal AI agent with a written personality, local memory, permission-gated tools and token budgets, reachable via CLI or Telegram.
-- [BeeAI Framework](https://agentscouthq.com/tools/beeai-framework.html) (added 2026-10-18): Framework for building production-ready agents and multi-agent systems in Python or TypeScript.
+- [Langchain.rb](https://agentscouthq.com/tools/langchain-rb.html) (added 2026-10-18): Ruby library for building LLM-powered applications, RAG and assistants.
+- [Ante](https://agentscouthq.com/tools/ante.html) (added 2026-10-18): Self-contained Rust terminal coding agent from Antigma Labs that works with any model and has no runtime dependencies.
+- [LangGraph4j](https://agentscouthq.com/tools/langgraph4j.html) (added 2026-10-18): Java library for building stateful multi-agent applications as graphs, working with LangChain4j and Spring AI.
+- [Intelligent Terminal](https://agentscouthq.com/tools/intelligent-terminal.html) (added 2026-10-18): Experimental fork of Windows Terminal with native integration for ACP-compatible agent CLIs.
+- [ElatoAI](https://agentscouthq.com/tools/elatoai.html) (added 2026-10-18): Realtime voice AI for ESP32 devices and toys with 100+ speech and LLM model options.
+- [ADR](https://agentscouthq.com/tools/adr.html) (added 2026-10-18): Uber's Agentic AI Detection and Response system that secures employee and customer-facing AI agents with observability and threat detection.
+- [superglue](https://agentscouthq.com/tools/superglue.html) (added 2026-10-18): AI agents that connect, migrate and implement enterprise systems like NetSuite and SAP, cloud-hosted or self-hosted.
+- [Ui.Vision RPA](https://agentscouthq.com/tools/ui-vision-rpa.html) (added 2026-10-18): Browser and desktop automation extension with OCR and image recognition, plus an MCP server so AI agents can create and run macros.
+- [Jarvis](https://agentscouthq.com/tools/jarvis.html) (added 2026-10-18): Private, local-first desktop AI assistant with voice and text chat, personal memory, dictation and MCP tools.
+- [Agent Safehouse](https://agentscouthq.com/tools/agent-safehouse.html) (added 2026-10-18): macOS sandbox for local coding agents that limits file and integration access with deny-first policy profiles.
+- [Neuron AI](https://agentscouthq.com/tools/neuron-ai.html) (added 2026-10-18): PHP framework for creating and orchestrating AI agents with LLMs, tools, vector stores and memory.
+- [Skybridge](https://agentscouthq.com/tools/skybridge.html) (added 2026-10-18): Full-stack TypeScript and React framework for building MCP Apps and ChatGPT Apps.

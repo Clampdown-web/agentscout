@@ -2623,5 +2623,225 @@
 ],
 "sidekick": [
 "local-models"
+],
+"zeron": [
+"parallel-orchestration",
+"observability",
+"local-models"
+],
+"squad": [
+"sales-agents"
+],
+"nexu": [
+"chat-app-agents",
+"computer-use"
+],
+"mobile-use": [
+"mobile"
+],
+"cindy": [
+"local-models"
+],
+"cheshire-cat": [
+"agent-memory",
+"images-design"
+],
+"shadcn-ui-mcp-server": [
+"mcp-servers"
+],
+"godot-ai": [
+"mcp-servers",
+"games",
+"rules-config"
+],
+"opengap": [
+"agent-frameworks",
+"terminal-agents"
+],
+"mcp-apps": [
+"mcp-servers",
+"agent-frameworks"
+],
+"qwen-audio-agent": [
+"voice-phone"
+],
+"forkd": [
+"sandboxes"
+],
+"holyclaude": [
+"browser-automation"
+],
+"pinvou-agent": [
+"computer-use",
+"images-design"
+],
+"figma-console-mcp": [
+"mcp-servers",
+"images-design"
+],
+"shippie": [
+"code-review",
+"testing-qa",
+"codebase-context"
+],
+"claude-scientific-writer": [
+"vector-rag",
+"research-agents"
+],
+"workflow-sdk": [
+"observability",
+"workflow-automation",
+"agent-frameworks"
+],
+"mantis": [
+"penetration-testing",
+"sandboxes",
+"agent-frameworks"
+],
+"ripwire": [
+"voice-phone",
+"mcp-servers",
+"terminal-agents"
+],
+"elevenlabs-ui": [
+"voice-phone",
+"agent-frameworks"
+],
+"qwen-ui-agent": [
+"browser-automation",
+"evals",
+"mobile"
+],
+"bionic": [],
+"agentuniverse": [
+"multi-agent",
+"agent-frameworks"
+],
+"webclaw": [
+"web-scraping",
+"mcp-servers",
+"terminal-agents"
+],
+"yuanjing-wanwu": [
+"vector-rag",
+"workflow-automation"
+],
+"agent-vault": [
+"voice-phone",
+"agent-auth"
+],
+"agentsmesh": [],
+"conduit": [
+"mobile"
+],
+"memanto": [
+"agent-memory"
+],
+"toolhive": [
+"sandboxes",
+"guardrails",
+"agent-auth",
+"observability",
+"mcp-servers"
+],
+"gemini-mcp-tool": [
+"codebase-context",
+"voice-phone",
+"mcp-servers",
+"terminal-agents"
+],
+"agent-teams": [
+"planning-tasks",
+"computer-use"
+],
+"mcpjam-inspector": [
+"evals",
+"mcp-servers"
+],
+"justhireme": [
+"computer-use",
+"local-models"
+],
+"unla": [
+"mcp-gateways",
+"mcp-servers",
+"no-code-apps"
+],
+"chatmcp": [
+"computer-use",
+"mobile"
+],
+"open-cowork": [
+"computer-use",
+"sandboxes",
+"rules-config"
+],
+"orkas": [
+"computer-use",
+"multi-agent",
+"local-models"
+],
+"skales": [
+"browser-automation",
+"computer-use",
+"local-models",
+"mobile"
+],
+"future-agi": [
+"observability",
+"evals"
+],
+"eigenflux": [],
+"kubernetes-mcp-server": [
+"mcp-servers"
+],
+"skybridge": [
+"agent-frameworks"
+],
+"neuron-ai": [
+"agent-memory",
+"vector-rag",
+"multi-agent",
+"agent-frameworks"
+],
+"agent-safehouse": [
+"sandboxes",
+"guardrails",
+"local-models"
+],
+"jarvis": [
+"agent-memory",
+"voice-phone",
+"computer-use",
+"local-models"
+],
+"ui-vision-rpa": [
+"browser-automation",
+"computer-use",
+"mcp-servers",
+"images-design"
+],
+"superglue": [
+"local-models"
+],
+"adr": [
+"observability"
+],
+"elatoai": [
+"voice-phone"
+],
+"intelligent-terminal": [
+"terminal-agents"
+],
+"langgraph4j": [
+"multi-agent",
+"agent-frameworks"
+],
+"ante": [
+"terminal-agents"
+],
+"langchain-rb": [
+"vector-rag",
+"agent-frameworks"
 ]
 }
