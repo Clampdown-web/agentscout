@@ -4,6 +4,8 @@ Data: featured.json (list). Each entry:
 scope: "homepage" and/or category slugs (as in categories/<slug>.html). Omit scope = homepage + the tool's own category.
 expires: optional ISO date (Pacific); the entry stops showing after that day.
 paid: true makes outbound links rel="sponsored noopener" and the label reads "Sponsored".
+reason: why it's featured: "badge_backlink" (maker shows our AgentScout badge or a link; check with scripts/check_badge.py),
+"editorial" or "paid". Add/remove entries with scripts/feature_tool.py. Not shown on the page; kept for our records.
 With no active entries for a page, the block (and its markers) is removed entirely: no empty box.
 Run after the other generators (idempotent)."""
 import json,os,re,glob,html,datetime

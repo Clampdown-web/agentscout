@@ -59,6 +59,11 @@ for x in t:
         _arch=x.get("maturity","").lower().startswith(("archived","discontinued"))
         out=out.replace('<div class="badges">','<div class="badges"><span class="b" style="border-color:#b45309;color:#b45309">'+("Archived" if _arch else "No recent updates")+'</span>',1)
         out=out.replace('<p class="lede">'+e(x["description"])+'</p>','<p class="lede">'+e(x["description"])+'</p><p class="statusnote" role="note" style="margin:-6px 0 16px;padding:10px 14px;border:1px solid #b45309;border-radius:10px;font-size:14px">⚠️ '+e(x["status_note"])+'</p>',1)
+    # Maker-submitted listings (tools.json "maker_submitted": true + "submitted": YYYY-MM-DD, Pacific): small badge by the name (standing perk, Oct 18 2026)
+    if x.get("maker_submitted"):
+        _sd=x.get("submitted") or x.get("added","")
+        _sdt=_dt.date.fromisoformat(_sd).strftime("%b %-d, %Y") if _sd else ""
+        out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+f'<span class="b maker" style="color:#059669;border-color:#059669" title="The maker submitted this tool through our submit form{(" on "+_sdt) if _sdt else ""}. We reviewed and wrote the listing.">✓ Submitted by maker</span>'+m.group(2),out,count=1,flags=re.S)
     B="https://agentscouthq.com/";pg=f"{B}tools/{x['slug']}.html"
     out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)
     if _rich: out=out.replace(about,(about+_rich[0]) if _rich[4:]==("lite",) else _rich[0],1)  # lite entries keep the About paragraph (additive)

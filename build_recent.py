@@ -32,6 +32,11 @@ def build(t):
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section style="padding-top:20px;text-align:left">'
           f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{len(recent)} tool{"s" if len(recent)!=1 else ""} added in the last 30 days, newest first. Every link is checked when it is added.{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
+    mk=sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)))  # first submissions first (orke)
+    if mk:
+        body+=(f'<h2 class="rgroup" id="makers">Submitted by makers <span class="muted">· {len(mk)} tool{"s" if len(mk)!=1 else ""}</span></h2>'
+               '<p class="muted" style="margin:0 0 12px;font-size:14px">Tools their makers sent us through the <a href="submit.html">submit form</a>. We review each one and write the listing ourselves.</p>'
+               '<div class="grid rgrid">'+"".join(card(x,"") for x in mk)+'</div>')
     for label,cond in (("This week",lambda d:d>=wk),("Earlier this month",lambda d:d<wk)):
       ds=[d for d in days if cond(d)]
       if not ds: continue
