@@ -10,7 +10,7 @@ def _file(u):
     if p.endswith("/"): p+="index.html"
     return p
 _V=[(re.compile(r"\?v=\d+"),""),(re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?(\.\d+)?Z?"),""),
-    (re.compile(r"Links checked [A-Z][a-z]{2} \d{1,2}, \d{4}"),""),(re.compile(r'"dateModified":"[^"]*"'),""),
+    (re.compile(r"Links checked [A-Z][a-z]{2} \d{1,2}, \d{4}"),""),(re.compile(r'"dateModified": ?"[^"]*"'),""),
     (re.compile(r'<section id="nlblock".*?</section>',re.S),"")]  # sitewide signup box is page chrome, not content (Oct 18 2026)
 def _hash(p):
     s=open(p,encoding="utf-8",errors="replace").read()
