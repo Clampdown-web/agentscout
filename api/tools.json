@@ -1,8 +1,8 @@
 {
  "version": 1,
- "generated": "2026-10-18T04:37:53Z",
- "updated": "2026-10-18T04:37:53Z",
- "last_checked": "2026-10-17",
+ "generated": "2026-10-18T05:33:18Z",
+ "updated": "2026-10-18T05:33:18Z",
+ "last_checked": "2026-10-18",
  "count": 656,
  "tools": [
   {
@@ -6444,18 +6444,20 @@
    "slug": "nimbalyst",
    "url": "https://nimbalyst.com",
    "website": "https://nimbalyst.com",
-   "github": "",
+   "github": "https://github.com/Nimbalyst/nimbalyst",
    "category": "coding",
    "description": "Visual workspace for working with coding agents like Claude Code on docs, code and plans.",
    "key_features": [
-    "Freemium",
+    "Free and open source (MIT) for individuals; Wiki Teams is a paid plan (free during beta)",
     "Active",
+    "1920 GitHub stars",
     "Write code"
    ],
-   "pricing": "Freemium",
-   "price_tag": "freemium",
+   "pricing": "Free and open source (MIT) for individuals; Wiki Teams is a paid plan (free during beta)",
+   "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -6468,10 +6470,10 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": null,
-   "github_stars": null,
-   "open_source": false,
-   "license": "",
+   "repo": "Nimbalyst/nimbalyst",
+   "github_stars": 1920,
+   "open_source": true,
+   "license": "MIT",
    "tags": [
     "write code"
    ],
@@ -19569,11 +19571,11 @@
   {
    "name": "CircleCI MCP",
    "slug": "circleci-mcp",
-   "url": "https://circleci.com/docs/guides/toolkit/using-the-circleci-mcp-server/",
-   "website": "https://circleci.com/docs/guides/toolkit/using-the-circleci-mcp-server/",
+   "url": "https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/",
+   "website": "https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/",
    "github": "",
    "category": "MCP & infra",
-   "description": "CircleCI's MCP server for inspecting projects, pipelines, failed jobs and test results from coding agents.",
+   "description": "CircleCI's MCP servers (hosted and CLI) for diagnosing build failures, inspecting runs and managing CI pipelines from coding agents.",
    "key_features": [
     "Freemium",
     "Active",
@@ -22889,11 +22891,11 @@
    "category": "coding",
    "description": "Backant's Kairos, an autonomous developer that runs Claude Code against your repository.",
    "key_features": [
-    "Paid",
+    "Free; uses your existing Claude Code or other coding-agent subscription",
     "Active",
     "Write code"
    ],
-   "pricing": "Paid",
+   "pricing": "Free; uses your existing Claude Code or other coding-agent subscription",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"

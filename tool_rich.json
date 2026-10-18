@@ -12559,5 +12559,147 @@
    "https://wayfinder.ai"
   ],
   "updated": "2026-10-18"
+ },
+ "x402": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "x402 is an open standard for internet-native payments. It uses HTTP 402 so clients and servers can settle payments inside a normal request flow, aiming to support crypto and fiat networks and forms of value such as stablecoins, tokens and fiat.",
+   "The project ships reference SDKs in TypeScript, Python and Go. Sellers add payment middleware to an endpoint; unpaid requests get HTTP 402 and can pay (commonly in stablecoins) and retry. Principles on the official README include remaining an open standard, staying HTTP-native, and staying network-, token- and currency-agnostic."
+  ],
+  "who": "Developers and agent builders who want APIs or digital services paid per request without accounts, API keys or prepaid credits.",
+  "features": [
+   "Open HTTP payment standard (HTTP 402)",
+   "Reference SDKs in TypeScript, Python and Go",
+   "Network-, token- and currency-agnostic design",
+   "Aimed at API monetization and agentic commerce"
+  ],
+  "faq": [
+   [
+    "What is x402?",
+    "An open standard for internet-native payments that builds on HTTP 402 so clients, including AI agents, can pay for APIs and digital services per request."
+   ],
+   [
+    "Is x402 free to use?",
+    "The protocol itself is an open standard with zero protocol fees; you still pay the underlying payment-network fees for each transfer."
+   ],
+   [
+    "Which languages have SDKs?",
+    "Official reference packages are available for TypeScript, Python and Go, with middleware examples for common web frameworks."
+   ],
+   [
+    "What is it used for?",
+    "The project docs name API monetization, agentic commerce, paywalled content and other cases where traditional checkout is too slow or heavy."
+   ]
+  ],
+  "sources": [
+   "https://github.com/x402-foundation/x402"
+  ],
+  "updated": "2026-10-18"
+ },
+ "backant-kairos": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "BackAnt Kairos is an autonomous developer that runs Claude Code (or another coding harness you already use) against your repository continuously. It picks work, ships small pull requests, remembers what failed before and can watch production after deploys; what it is allowed to do is set in a config file.",
+   "The maker states Kairos is free: sign in at backant.io, run npx backant-kairos, with no tier to buy and no card to enter. You still pay for your existing AI subscription or usage. A companion package, backant-memory, provides local-first memory that can also be used with other MCP agents."
+  ],
+  "who": "Teams who want a coding agent to keep working on a repo with persistent memory, permission gates and PR-sized changes, without babysitting every session.",
+  "features": [
+   "Runs Claude Code (or similar) against your repo continuously",
+   "Persistent per-repo memory of failures and conventions",
+   "Permission gates and cost caps in .backant.toml",
+   "Free product; uses your existing AI subscription"
+  ],
+  "faq": [
+   [
+    "Is Kairos free?",
+    "Yes. BackAnt states Kairos is free with no subscription tier; you sign in, run one command, and still pay only for the coding agent or model usage you already use."
+   ],
+   [
+    "What does Kairos add on top of Claude Code?",
+    "Planning what to work on next, memory that persists across sessions, verification after merges and configurable gates for actions like merging PRs."
+   ],
+   [
+    "Where does my code go?",
+    "BackAnt says Kairos drives the same Claude Code you already use, so code goes to Anthropic as it does today, while memory, journal and embeddings stay local."
+   ]
+  ],
+  "sources": [
+   "https://backant.io/",
+   "https://backant.io/blog/kairos-free-any-agent",
+   "https://docs.backant.io/kairos/overview"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nimbalyst": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Nimbalyst is an open-source visual workspace for building with Claude Code, Codex, OpenCode and other coding agents. It puts sessions, worktrees, tasks, docs, diagrams, mockups, commits and code in one desktop app that is free and MIT licensed for macOS, Windows and Linux, with an iOS companion.",
+   "You and the agent edit the same files in WYSIWYG editors (markdown, mockups, Mermaid, Excalidraw, CSV, data models and Monaco code), with red/green diff review. Parallel sessions can each use a git worktree; a session kanban and task trackers keep work organized. The site also offers a free local wiki plugin for agents, with Wiki Teams as a paid plan for sharing (free during beta)."
+  ],
+  "who": "Builders who run Claude Code, Codex or similar agents and want a visual desktop workspace for parallel sessions, diffs, docs and tasks instead of only a terminal.",
+  "features": [
+   "Open source (MIT), free for individuals",
+   "Visual editors with red/green agent diff review",
+   "Parallel sessions with optional git worktrees",
+   "Session kanban and task tracking",
+   "Works with Claude Code, Codex and other agents",
+   "iOS companion app"
+  ],
+  "faq": [
+   [
+    "Is Nimbalyst open source?",
+    "Yes. The desktop and iOS apps are MIT licensed on GitHub at Nimbalyst/nimbalyst; the wiki plugin is also MIT."
+   ],
+   [
+    "Does it cost money?",
+    "The maker states it is free for individuals and open source. Wiki Teams is a paid plan for sharing a wiki with teammates and is free during beta. You still need your own Claude, Codex or other agent subscription or API key."
+   ],
+   [
+    "Which agents does it support?",
+    "Claude Code and Codex are supported; OpenCode and GitHub Copilot are listed in alpha, with a Gemini provider also mentioned."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Nimbalyst/nimbalyst",
+   "https://nimbalyst.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "circleci-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CircleCI's MCP servers let coding agents diagnose build failures, inspect runs and manage CI pipelines through natural language without leaving the IDE. CircleCI offers a hosted MCP server at mcp.circleci.com and a CircleCI CLI MCP that runs locally with your CLI credentials.",
+   "The older local npm package (@circleci/mcp-server-circleci) is deprecated in favor of the hosted server and CLI MCP. Hosted tools cover listing runs, workflows and jobs, reading logs and tests, and rerunning or canceling workflows. The CLI MCP exposes the wider CircleCI CLI, including config authoring and orb tooling. Cloud plans listed on the docs page include Free, Performance and Scale."
+  ],
+  "who": "Developers who use CircleCI and want an AI coding assistant to investigate failed builds, read logs and act on workflows from the editor.",
+  "features": [
+   "Hosted MCP server and CircleCI CLI MCP",
+   "Inspect runs, workflows, jobs, logs and tests",
+   "Rerun or cancel workflows from the assistant",
+   "Natural-language CI diagnostics in the IDE"
+  ],
+  "faq": [
+   [
+    "What happened to the old CircleCI MCP npm package?",
+    "CircleCI deprecated the local @circleci/mcp-server-circleci package and points users to the hosted MCP server and the CircleCI CLI MCP instead."
+   ],
+   [
+    "Hosted server or CLI MCP?",
+    "Use the hosted server for day-to-day diagnostics (failures, logs, reruns). Use the CLI MCP when you also need config authoring, orbs or other admin CLI tasks."
+   ],
+   [
+    "Which CircleCI plans support it?",
+    "The overview docs list Cloud plans Free, Performance and Scale."
+   ]
+  ],
+  "sources": [
+   "https://CircleCI-Public/mcp-server-circleci",
+   "https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/"
+  ],
+  "updated": "2026-10-18"
  }
 }
