@@ -10921,5 +10921,849 @@
    "https://aidungeon.com/"
   ],
   "updated": "2026-10-18"
+ },
+ "astrocade": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Astrocade is a social gaming platform where anyone can build, share and play AI-made games, with no coding or downloads."
+  ],
+  "who": "Players and hobbyists who want to make quick games by describing them.",
+  "features": [
+   "Make games by describing them",
+   "Share with a community",
+   "Play free in the browser"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.astrocade.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dungeon-alchemist": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Dungeon Alchemist is a mapmaking application for tabletop RPGs that makes high-quality maps in seconds.",
+   "Our listing notes AI-assisted, detailed 3D battle maps for play on screen or printed."
+  ],
+  "who": "Game masters preparing tabletop sessions.",
+  "features": [
+   "AI-assisted map making",
+   "3D battle maps",
+   "Screen or print"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.dungeonalchemist.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "friends-fables": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Friends & Fables is an AI RPG text adventure inspired by D&D, with an AI Game Master and tools for building dungeons, characters and worlds.",
+   "Our listing notes group play on Discord and the web, with tracking of characters, rules and world lore."
+  ],
+  "who": "Tabletop RPG players and dungeon masters.",
+  "features": [
+   "AI Game Master",
+   "World and character building",
+   "Discord and web play"
+  ],
+  "faq": [],
+  "sources": [
+   "https://fables.gg/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hidden-door": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Hidden Door is where roleplay meets fan fiction: create characters and stories in which you can do anything.",
+   "Our listing notes an AI game master running adventures in licensed and original worlds."
+  ],
+  "who": "Fans who want story games in worlds they love.",
+  "features": [
+   "AI game master",
+   "Licensed and original worlds",
+   "Character creation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.hiddendoor.co/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lorekeeper": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Lorekeeper is an AI game master that runs a tabletop role-playing adventure for you out loud, any time, solo or with friends.",
+   "It narrates in a characterful voice, rolls the dice and keeps a running campaign."
+  ],
+  "who": "Tabletop players without a regular game master.",
+  "features": [
+   "Voiced narration",
+   "Dice rolling",
+   "Persistent campaigns",
+   "Solo or group"
+  ],
+  "faq": [],
+  "sources": [
+   "https://lorekeeper.tech/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ludo-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Ludo.ai generates production-ready game assets with AI, including sprites, icons, UI, textures, music, 3D and video, ready to drop into your engine.",
+   "Our listing also notes market research, concept ideas and game design docs."
+  ],
+  "who": "Game designers and indie developers.",
+  "features": [
+   "Game asset generation",
+   "Animations (idle, walk, run, attack)",
+   "Design research and docs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://ludo.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "open-dungeon-master": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Open Dungeon Master runs multiplayer D&D 5e campaigns with an AI Dungeon Master on a local model, an API key or a CLI agent subscription you already have (Claude Code, Codex), or with a human DM.",
+   "Our listing notes it is free and that the app enforces the rules."
+  ],
+  "who": "D&D groups who want an AI or human DM with rules enforcement.",
+  "features": [
+   "Multiplayer D&D 5e",
+   "Local model, API key or CLI agent",
+   "App-enforced rules"
+  ],
+  "faq": [],
+  "sources": [
+   "https://opendungeonmaster.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "questwright": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Questwright lets you play D&D 5e, Spacewright and more with an AI Dungeon Master, with procedural worlds, tactical combat, living NPCs and persistent campaigns.",
+   "You can play solo or multiplayer."
+  ],
+  "who": "Tabletop RPG players.",
+  "features": [
+   "AI Dungeon Master",
+   "Tactical combat and maps",
+   "NPC memory",
+   "Persistent campaigns"
+  ],
+  "faq": [],
+  "sources": [
+   "https://questwright.app/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "scenario": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Scenario brings leading AI models into one place for creative production and game assets, so you can build image, video, 3D and audio pipelines with workflows and agents.",
+   "Our listing notes style-consistent art from models trained on your own style."
+  ],
+  "who": "Game studios and creative teams.",
+  "features": [
+   "Game art and 3D assets",
+   "Custom-style models",
+   "Workflows and agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.scenario.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "suck-up": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Suck Up! is a party game where you play a vampire who has to talk your way past AI-voiced residents to get invited inside.",
+   "Once redeemed it appears in your library; it is available in English, French, Spanish, Portuguese and more."
+  ],
+  "who": "Players who enjoy improvised conversation games.",
+  "features": [
+   "AI-voiced characters",
+   "Talk your way in",
+   "Multiple languages"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.playsuckup.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "oumi": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Oumi is an open platform for building foundation models end to end: fine-tuning, evaluating and deploying LLMs and VLMs.",
+   "Oumi v0.9 (September 2026) added an end-to-end stack for agentic, tool-using models, including tool-calling training."
+  ],
+  "who": "ML teams training open agentic models.",
+  "features": [
+   "Fine-tuning",
+   "Evaluation",
+   "Deployment",
+   "Tool-calling training"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/oumi-ai/oumi"
+  ],
+  "updated": "2026-10-18"
+ },
+ "asi-one": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ASI:One is a customizable personal AI from Fetch.ai designed to learn, socialize and take action on everyday tasks.",
+   "Our listing notes an agentic LLM built to reason, plan and call other agents on the ASI Alliance network."
+  ],
+  "who": "People and developers exploring agent networks.",
+  "features": [
+   "Personalizable AI",
+   "Agentic LLM",
+   "Calls other agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://asi1.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "meta-muse-wonder": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Muse Wonder is Meta's frontier AI model that keeps track of what matters to you, with Active Memory and Active Focus, to work toward your goals at work and in life.",
+   "Our listing notes availability via Meta Model API and Muse Code."
+  ],
+  "who": "People and developers using Meta's models for agent tasks.",
+  "features": [
+   "Active Memory",
+   "Active Focus",
+   "API access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://research.meta.ai/blog/muse-wonder"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cvat-ai-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CVAT is one of the most widely used platforms for image, video, audio and 3D annotation; CVAT Community is its free, self-hosted open-source edition.",
+   "Our listing notes the AI agents feature runs your own detection, segmentation or tracking model as an agent on your infrastructure and feeds auto-annotations back into CVAT tasks."
+  ],
+  "who": "Computer-vision teams labeling data.",
+  "features": [
+   "Bring your own model as an agent",
+   "Auto-annotation",
+   "Image, video, audio and 3D"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cvat-ai/cvat"
+  ],
+  "updated": "2026-10-18"
+ },
+ "autodistill": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Autodistill uses big, slower foundation models to train small, faster supervised models, taking you from unlabeled images to a deployable model.",
+   "Our listing notes it is Roboflow's open-source library, Apache-2.0."
+  ],
+  "who": "Developers building custom detection or classification models quickly.",
+  "features": [
+   "Auto-labeling with foundation models",
+   "Trains small deployable models",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/autodistill/autodistill"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nvidia-vss-blueprint": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The NVIDIA AI Blueprint for Video Search and Summarization (VSS) helps you build GPU-accelerated video AI agents that search, analyze, summarize and reason over video.",
+   "Our listing notes Q&A and alerts over live or recorded video."
+  ],
+  "who": "Developers building video analytics agents.",
+  "features": [
+   "Video search and summarization",
+   "Q&A over video",
+   "GPU-accelerated reference"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization"
+  ],
+  "updated": "2026-10-18"
+ },
+ "videodb-director": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Director is a framework to build video agents that reason through complex video tasks such as search, editing, compilation and generation, and instantly stream the results.",
+   "It is built on VideoDB's \"video-as-data\" infrastructure; a command like \"Upload this video and send the highlights to my Slack\" orchestrates multiple agents."
+  ],
+  "who": "Developers building video workflows.",
+  "features": [
+   "20+ video agents",
+   "Natural-language commands",
+   "Instant streaming"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/video-db/Director"
+  ],
+  "updated": "2026-10-18"
+ },
+ "imagesorcery-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ImageSorcery MCP gives AI assistants local, computer-vision-based image recognition and editing tools.",
+   "Our listing notes object detection, OCR, cropping, background removal and drawing, with models running locally."
+  ],
+  "who": "People who want their assistant to process images locally.",
+  "features": [
+   "Object detection",
+   "OCR",
+   "Crop and background removal",
+   "Runs locally"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/sunriseapps/imagesorcery-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nvidia-tao-agent-skills": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "NVIDIA TAO Agent Skills are portable agent skills for training, evaluating and running inference on NVIDIA TAO vision models.",
+   "They work with Claude Code, Codex, Gemini CLI or any coding agent that supports agent skills."
+  ],
+  "who": "Developers fine-tuning vision models with coding agents.",
+  "features": [
+   "Train and evaluate TAO models",
+   "Inference",
+   "Works with many coding agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/NVIDIA-TAO/tao-skills-bank"
+  ],
+  "updated": "2026-10-18"
+ },
+ "telekinesis-agentic-skill-library": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Telekinesis describes itself as the agentic OS for general-purpose robots: one Python library that brings the Physical AI stack together.",
+   "Our listing notes 250+ perception, vision and robotics skills and a Physical AI agent driven by natural-language prompts."
+  ],
+  "who": "Robotics developers.",
+  "features": [
+   "250+ skills",
+   "Perception and vision",
+   "Physical AI agent"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/telekinesis-ai/telekinesis-examples",
+   "https://www.telekinesis.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "label-studio-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Label Studio MCP Server lets AI assistants interact with a Label Studio instance through the label-studio-sdk.",
+   "Our listing notes creating labeling projects, importing tasks and reading annotations."
+  ],
+  "who": "Data-labeling teams using AI assistants.",
+  "features": [
+   "Create projects",
+   "Import tasks",
+   "Read annotations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/HumanSignal/label-studio-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ultralytics-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Ultralytics publishes agent skills for Ultralytics Platform, the ultralytics Python package and the yolo CLI, teaching coding agents like Claude Code, Codex and Cursor to use them.",
+   "Our listing notes a visual canvas that chains YOLO models, vision-language models, conditions and actions such as Slack alerts."
+  ],
+  "who": "Developers building YOLO-based vision apps.",
+  "features": [
+   "Agent skills for YOLO",
+   "Visual canvas",
+   "Alerts and actions"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ultralytics/skills"
+  ],
+  "updated": "2026-10-18"
+ },
+ "bubbaloop": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Bubbaloop is Kornia's open-source hardware AI agent: talk to your cameras, sensors and robots.",
+   "Our listing notes a single-binary runtime with an MCP server for Jetson, Raspberry Pi or Linux."
+  ],
+  "who": "Developers working with cameras and robots on edge devices.",
+  "features": [
+   "Single binary",
+   "MCP server",
+   "Cameras, sensors, robots"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/kornia/bubbaloop"
+  ],
+  "updated": "2026-10-18"
+ },
+ "fiftyone-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The FiftyOne MCP Server lets you control FiftyOne datasets through AI assistants using MCP, so agents can explore data.",
+   "Voxel51 also publishes FiftyOne Skills and Plugins."
+  ],
+  "who": "Computer-vision teams curating datasets.",
+  "features": [
+   "Load and explore datasets",
+   "Curate and evaluate",
+   "Skills and plugins"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/voxel51/fiftyone-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "encord-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Encord Agents lets you build agents for the Encord ecosystem with just a few lines of code, with template agents to adapt.",
+   "Our listing notes pre-labeling, segmentation, tracking, routing and QA on image, video and multimodal data."
+  ],
+  "who": "Teams automating labeling workflows in Encord.",
+  "features": [
+   "Template agents",
+   "Pre-labeling",
+   "QA and routing"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/encord-team/encord-agents",
+   "https://encord.com/data-agents/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "encord-merlin": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Merlin is Encord's in-app AI agent, in beta. You ask it questions from the home page, the sidebar or global search, and it searches across your projects, data and documentation.",
+   "Our listing notes an MCP server that creates annotation projects, ontologies and workflows and reports label-quality analytics."
+  ],
+  "who": "Encord users.",
+  "features": [
+   "In-app agent (beta)",
+   "Searches projects and docs",
+   "MCP access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://docs.encord.com/platform-documentation/GettingStarted/encord-merlin"
+  ],
+  "updated": "2026-10-18"
+ },
+ "eyepop-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "EyePop.ai is a vision platform where you upload or connect images, videos or live streams and train an \"Ability\" to detect what you need.",
+   "Our listing notes it is SDK-first, with detection, tracking, OCR and VLM pipelines, a Video Agent and agent skills."
+  ],
+  "who": "Developers adding vision to products.",
+  "features": [
+   "Custom detection Abilities",
+   "Video and live streams",
+   "SDK-first"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.eyepop.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "groundlight": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Groundlight turns any camera into a vision sensor that starts delivering answers on day one, without a pre-existing dataset.",
+   "Our listing notes you ask yes/no questions in plain English and the model is built and tuned with human review, with edge deployment."
+  ],
+  "who": "Operations teams monitoring with cameras.",
+  "features": [
+   "Plain-English questions",
+   "No dataset needed",
+   "Human-reviewed",
+   "Edge deployment"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.groundlight.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "picsellia-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Picsellia MCP Server wraps the Picsellia Python SDK, giving AI assistants access to your computer vision platform.",
+   "That covers datasets, experiments, models, deployments and monitoring."
+  ],
+  "who": "Picsellia users.",
+  "features": [
+   "Datasets and experiments",
+   "Models and deployments",
+   "Monitoring"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/picselliahq/picsellia-mcp",
+   "https://www.picsellia.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "roboflow-agent": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Roboflow is a vision AI platform for companies in the physical world, turning images, videos and streams into intelligence.",
+   "Our listing notes its agent picks models and builds and deploys vision apps, and plugs into Claude Code, Codex and Cursor via MCP."
+  ],
+  "who": "Teams building vision apps.",
+  "features": [
+   "Model selection",
+   "Build and deploy vision apps",
+   "MCP for coding agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://roboflow.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "twelvelabs-jockey-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "TwelveLabs lets you connect any MCP client to Jockey, its video-understanding agent, for cross-video reasoning.",
+   "Our listing notes search, entity tracking and Q&A across your videos."
+  ],
+  "who": "Developers working with large video libraries.",
+  "features": [
+   "Cross-video reasoning",
+   "Hosted MCP",
+   "Search and Q&A"
+  ],
+  "faq": [],
+  "sources": [
+   "https://docs.twelvelabs.io/docs/advanced/model-context-protocol"
+  ],
+  "updated": "2026-10-18"
+ },
+ "valossa-assistant-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Valossa Assistant connects Valossa's video AI to Claude and other agents through MCP. Ask your video library anything and get answers, soundbites, transcripts and ready-to-use clips.",
+   "Valossa is EU-based."
+  ],
+  "who": "Media teams searching video archives.",
+  "features": [
+   "Video Q&A",
+   "Transcripts and soundbites",
+   "Clips",
+   "EU-based"
+  ],
+  "faq": [],
+  "sources": [
+   "https://valossa.com/mcp/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "viso-now": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Viso Now lets you build an AI vision system in minutes: type what to watch for in plain language or drop in a clip, with no datasets, labelling or model selection.",
+   "It connects the feed, recognizes the scene, writes the detection logic and wires up the alerts."
+  ],
+  "who": "Teams wanting quick camera-based alerts.",
+  "features": [
+   "Plain-language setup",
+   "No training needed",
+   "Alerts and integrations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://viso.ai/viso-now/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "yrikka-text-to-model": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "YRIKKA's ORION workflow automates data generation and training: it personalizes a generator with parameter-efficient fine-tuning on about 10-50 examples and auto-annotates the generated data.",
+   "The output is labeled, multimodal (e.g. EO/IR) data matched to your optics and environment; our listing notes it starts from a plain-language mission description."
+  ],
+  "who": "Defense and industrial teams needing custom detection models.",
+  "features": [
+   "Generated training data",
+   "Auto-annotation",
+   "Candidate models"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.yrikka.com/text-to-model"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vibe-trading": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Vibe-Trading is an open-source package that gives your agent comprehensive trading capabilities with one command.",
+   "The maintainers warn that certain X accounts, projects and token contracts using the name are not official."
+  ],
+  "who": "Developers researching markets and testing strategies with agents.",
+  "features": [
+   "Market research",
+   "Strategy testing",
+   "Natural language"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/HKUDS/Vibe-Trading"
+  ],
+  "updated": "2026-10-18"
+ },
+ "blockscout-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Blockscout MCP is Blockscout's MCP server for AI agents, IDEs and automation tools to query and analyze blockchain data.",
+   "Our listing notes coverage across many EVM chains."
+  ],
+  "who": "Developers and analysts working with on-chain data.",
+  "features": [
+   "Blockchain data access",
+   "Many EVM chains",
+   "Context-aware"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/blockscout/mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "aixbt": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "aixbt ranks the crypto market entities drawing the most attention, hourly.",
+   "Its site offers topic rankings, alerts and digests, and AIXBT for ChatGPT."
+  ],
+  "who": "Crypto traders tracking narratives.",
+  "features": [
+   "Hourly attention rankings",
+   "Alerts and digests",
+   "ChatGPT app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://aixbt.tech"
+  ],
+  "updated": "2026-10-18"
+ },
+ "alchemy-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Alchemy MCP Server gives AI agents access to Alchemy's blockchain APIs and on-chain data. It is hosted, authenticates via OAuth and needs no API key or local install.",
+   "The legacy local server has been retired; the @alchemy/mcp-server npm package stops working on September 30, 2026."
+  ],
+  "who": "Developers whose agents need blockchain data.",
+  "features": [
+   "Hosted MCP server",
+   "OAuth sign-in",
+   "Multi-chain APIs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/alchemyplatform/alchemy-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "almanak": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Almanak is an intent-based Python framework for developing, testing and deploying autonomous DeFi strategies.",
+   "Our listing describes an agentic hedge-fund platform for non-custodial strategies across crypto, stocks and commodities."
+  ],
+  "who": "Quants building automated strategies.",
+  "features": [
+   "Intent-based strategies",
+   "Testing and deployment",
+   "Non-custodial"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/almanak-co/sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "bankr": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Bankr is an AI agent that can buy, sell and swap coins and place limit orders.",
+   "Our listing notes it works from chat and X."
+  ],
+  "who": "Crypto users who want to trade via chat.",
+  "features": [
+   "Buy, sell, swap",
+   "Limit orders",
+   "Chat and X"
+  ],
+  "faq": [],
+  "sources": [
+   "https://bankr.bot"
+  ],
+  "updated": "2026-10-18"
+ },
+ "bicscan-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BICScan MCP, from AhnLab, is an MCP server for the BICScan API that provides risk scores and asset information for blockchain addresses.",
+   "Our listing notes domains are covered too."
+  ],
+  "who": "Crypto teams checking address risk.",
+  "features": [
+   "Address risk scores",
+   "Asset information",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ahnlabio/bicscan-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "binance-agent-os": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Binance Skills Hub is an open skills marketplace that gives AI agents native access to centralized and decentralized crypto: search tokens, execute trades and track wallets.",
+   "Our listing notes the broader platform connects agents to trading, market data, Agentic Wallet, x402 payments and on-chain services via MCP, APIs and skills."
+  ],
+  "who": "Developers building crypto agents.",
+  "features": [
+   "Skills marketplace",
+   "Trading and market data",
+   "Wallets and payments"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/binance/binance-skills-hub"
+  ],
+  "updated": "2026-10-18"
+ },
+ "blai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Blai is an AI crypto advisor that analyzes the market, from Bitcoin to emerging tokens, and delivers insights to your dashboard.",
+   "Our listing notes token research, portfolio building and trading via chat."
+  ],
+  "who": "Retail crypto investors.",
+  "features": [
+   "Market analysis",
+   "Portfolio building",
+   "Chat trading"
+  ],
+  "faq": [],
+  "sources": [
+   "https://blaiapp.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "blockscope": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "BlockscopeChat lets you ask questions in plain English: it decodes transactions, profiles wallets and traces stolen funds across 8 chains."
+  ],
+  "who": "Investigators and crypto users looking into transactions.",
+  "features": [
+   "Transaction decoding",
+   "Wallet profiling",
+   "Fund tracing",
+   "8 chains"
+  ],
+  "faq": [],
+  "sources": [
+   "https://chat.blockscope.co"
+  ],
+  "updated": "2026-10-18"
  }
 }
