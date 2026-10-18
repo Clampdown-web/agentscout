@@ -52,6 +52,8 @@ print(len(t),"pages")
 build_extras.build(t)
 import build_api
 build_api.build(t)
+import build_reviews
+build_reviews.run(t)  # ratings & reviews section + JSON-LD (real data only)
 
 # Keep homepage static counts in sync with tools.json
 def _sync_index_counts():

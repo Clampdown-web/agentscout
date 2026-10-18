@@ -277,3 +277,29 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .sharemenu a,.sharemenu button{display:block;width:100%;text-align:left;padding:9px 10px;border-radius:6px;font:inherit;font-size:14px;color:var(--text);background:none;border:0;cursor:pointer;text-decoration:none;box-sizing:border-box}
 .sharemenu a:hover,.sharemenu button:hover,.sharemenu a:focus-visible,.sharemenu button:focus-visible{background:var(--line);outline:none}
 .shareacts{display:flex;margin:4px 0 18px}
+
+/* Ratings & reviews (reviews.js, build_reviews.py) */
+.rv{margin:0 0 32px;padding:20px;border:1px solid var(--line,rgba(127,127,127,.25));border-radius:12px;min-height:300px}
+.rv h2{margin-top:0}
+.rv-sum{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:28px;margin:0 0 12px}
+.rv-stars{--r:0;display:inline-block;font-size:18px;line-height:1;letter-spacing:2px;background:linear-gradient(90deg,#f5b301 calc(var(--r)/5*100%),rgba(127,127,127,.35) calc(var(--r)/5*100%));-webkit-background-clip:text;background-clip:text;color:transparent}
+.rv-list{list-style:none;padding:0;margin:0 0 16px}
+.rv-item{padding:12px 0;border-top:1px solid var(--line,rgba(127,127,127,.2))}
+.rv-item p{margin:6px 0 0;white-space:pre-wrap}
+.rv-form label{display:block;font-size:14px;margin:12px 0 4px}
+.rv-form textarea,.rv-form input[type=text]{width:100%;max-width:560px;box-sizing:border-box;font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line,rgba(127,127,127,.4));background:transparent;color:inherit}
+.rv-pick{border:0;padding:0;margin:0}
+.rv-pick legend{font-size:14px;padding:0;margin:0 0 4px}
+.rv-row{display:inline-flex;gap:2px}
+.rv-row label{margin:0;font-size:30px;line-height:1;cursor:pointer;color:rgba(127,127,127,.45);padding:2px}
+.rv-row label::before{content:"★"}
+.rv-row:has(input:checked) label{color:#f5b301}
+.rv-row input:checked+label~label{color:rgba(127,127,127,.45)}
+.rv-row:hover label{color:#f5b301}
+.rv-row label:hover~label{color:rgba(127,127,127,.45)}
+.rv-row input:focus-visible+label{outline:2px solid #6b8afd;outline-offset:2px;border-radius:4px}
+.rv-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.rv-msg{min-height:1.5em;margin:10px 0 0;font-size:14px}
+.rv-note{font-size:13px;margin:6px 0 0}
+.rv-cnt{display:block;font-size:12px;margin-top:2px}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
