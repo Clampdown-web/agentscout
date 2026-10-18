@@ -56,7 +56,7 @@ def facts(x):
        ("GitHub stars",f'{x["github_stars"]:,}' if x.get("github_stars") is not None else "Not tracked"),("Use cases",", ".join(x["use_cases"])),("Link checked",x["verified"])]
     return f
 def build(t):
-    bs={y["slug"]:y for y in t}; today=datetime.date.today().isoformat(); urls=[]
+    bs={y["slug"]:y for y in t}; today=datetime.datetime.now(datetime.timezone.utc).date().isoformat(); urls=[]
     for a,b in PAIRS:
         A,Bt=bs[a],bs[b]; s=cslug(a,b); canon=f"{B}compare/{s}.html"
         title=f"{A['name']} vs {Bt['name']}: side-by-side comparison · AgentScout"
