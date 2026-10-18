@@ -20609,5 +20609,460 @@
    "license": "the MIT License",
    "osi": true
   }
+ },
+ "repomix": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Repomix packs an entire code repository into a single, AI-friendly file, so you can feed your codebase to LLMs and AI tools such as Claude, ChatGPT, DeepSeek, Perplexity and Gemini.",
+   "It is distributed on npm and can also be used online at repomix.com."
+  ],
+  "who": "Developers who want to give a chat assistant or LLM the full context of a codebase in one file.",
+  "features": [
+   "Packs a whole repository into one AI-friendly file",
+   "Works with Claude, ChatGPT, Gemini, DeepSeek and other LLMs",
+   "npm package and command-line tool",
+   "Web version at repomix.com"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/yamadashy/repomix",
+   "https://github.com/yamadashy/repomix"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/yamadashy/repomix",
+   "stars": 28889,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "task-master": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Taskmaster is a task management system for AI-driven development. It breaks work into structured tasks with dependencies and is designed to work with AI chat and coding tools, starting with Cursor and Claude.",
+   "It runs as a CLI and as an MCP server (with one-click install for Cursor), supports multiple AI providers through your own API keys, and adds commands for research, tags and workstreams, and team collaboration."
+  ],
+  "who": "Developers using AI coding agents who want them to plan and work through a structured task list instead of ad-hoc prompts.",
+  "features": [
+   "Structured tasks with dependencies",
+   "CLI and MCP server",
+   "One-click install for Cursor",
+   "Works with multiple AI providers via your own API keys",
+   "Research and loop commands, tags and workstreams"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/eyaltoledano/claude-task-master",
+   "https://tryhamster.com/research/taskmaster"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/eyaltoledano/claude-task-master",
+   "stars": 28242,
+   "checked": "2026-10-18"
+  }
+ },
+ "kilo-code": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kilo Code is an open-source AI coding agent for VS Code, JetBrains and the command line. You choose from 500+ models, can switch between them mid-task, and pay the model provider's rate with no markup.",
+   "It installs as a VS Code extension or JetBrains plugin, or you run kilo in any project directory from the terminal."
+  ],
+  "who": "Developers who want an open-source coding agent across VS Code, JetBrains and the terminal with free choice of models at provider pricing.",
+  "features": [
+   "VS Code extension, JetBrains plugin and CLI",
+   "500+ models, switchable mid-task",
+   "Provider pricing with no markup",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Kilo-Org/kilocode",
+   "https://kilo.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Kilo-Org/kilocode",
+   "stars": 27649,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "go-micro": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Go Micro is a Go framework for distributed systems, providing RPC, service discovery, messaging, storage and configuration. Each component is a Go interface with a default implementation you can replace.",
+   "It now also treats services as tools for agents: it includes agents (models, conversation history, tools and execution), workflows with retries and checkpoints, and a gateway that exposes services over HTTP and MCP."
+  ],
+  "who": "Go developers building microservices who want to expose them to AI agents, or add agents and workflows to an existing service architecture.",
+  "features": [
+   "RPC with streaming, encoding and service discovery",
+   "Agents with models, history and tools",
+   "Workflows with ordered steps, retries and checkpoints",
+   "Gateway exposing services over HTTP and MCP",
+   "Pluggable Go interfaces"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/micro/go-micro",
+   "https://go-micro.dev/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/micro/go-micro",
+   "stars": 23086,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "opik": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Opik is an open-source LLM observability and evaluation platform from Comet, for AI agent tracing, LLM evaluation, prompt management and production monitoring.",
+   "It is Apache-2.0 licensed and the full platform is free to self-host. It includes a client SDK for logging traces and LLM-as-a-judge evaluations; Comet also offers a hosted version."
+  ],
+  "who": "Teams building LLM apps and agents who need to trace calls, evaluate output quality and monitor production, with the option to self-host.",
+  "features": [
+   "Tracing for LLM calls and AI agents",
+   "LLM evaluation, including LLM-as-a-judge",
+   "Prompt management",
+   "Production monitoring",
+   "Free to self-host (Apache-2.0); hosted option by Comet"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/comet-ml/opik",
+   "https://www.comet.com/site/products/opik/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/comet-ml/opik",
+   "stars": 22703,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "guidance": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Guidance is a programming paradigm for steering language models. It lets you control how output is structured and get high-quality results while reducing latency and cost compared with conventional prompting or fine-tuning.",
+   "It offers a Pythonic interface to LLMs, installs from PyPI, and supports backends such as Transformers, llama.cpp and OpenAI, with a richer widget in Jupyter notebooks."
+  ],
+  "who": "Python developers who need structured, constrained output from language models, such as JSON or specific formats.",
+  "features": [
+   "Constrains and structures model output",
+   "Pythonic interface to language models",
+   "Backends: Transformers, llama.cpp, OpenAI and more",
+   "Jupyter notebook widget",
+   "Available on PyPI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/guidance-ai/guidance",
+   "https://github.com/guidance-ai/guidance"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/guidance-ai/guidance",
+   "stars": 21802,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "funasr": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "FunASR is an industrial speech-recognition toolkit from ModelScope for offline, streaming and edge deployment.",
+   "It covers speech recognition, voice activity detection, punctuation, speaker pipelines and emotion and audio-event models, and can serve models through an OpenAI-compatible API. Fun-ASR-Nano can also run through Hugging Face Transformers."
+  ],
+  "who": "Developers building voice agents or transcription features who want self-hosted speech recognition, including streaming and edge setups.",
+  "features": [
+   "Speech recognition for offline, streaming and edge use",
+   "Voice activity detection and punctuation",
+   "Speaker, emotion and audio-event models",
+   "OpenAI-compatible serving",
+   "Hugging Face Transformers quickstart and Colab notebook"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelscope/FunASR",
+   "https://github.com/modelscope/FunASR"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/modelscope/FunASR",
+   "stars": 20742,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "agent-zero": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent Zero is an open agent framework for work that needs more than chat. It gives the agent a Dockerized Linux desktop, a browser with DOM annotation, live document co-editing, projects, skills and plugins, and a bridge back to your host machine.",
+   "Its plugin hub offers 100+ community plugins, and the agent can use real GUI software, terminals and files inside its desktop."
+  ],
+  "who": "Builders and power users who want a general-purpose, self-hosted agent that can operate a full computer environment.",
+  "features": [
+   "Dockerized Linux desktop for the agent",
+   "Browser with DOM annotation",
+   "Live co-editing of Markdown, documents, spreadsheets and presentations",
+   "Projects and skills",
+   "Plugin hub with 100+ community plugins"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/agent0ai/agent-zero",
+   "https://www.agent-zero.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/agent0ai/agent-zero",
+   "stars": 19505,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "moli": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Moli is a headless browser for AI agents. Its on-demand layout and rendering design combines a complete browser runtime with a lightweight resource footprint.",
+   "It helps agents fetch and extract web pages (as Markdown or a compact semantic tree), search the web and automate browser tasks. You can drive it through its CLI, CDP, WebDriver Classic or WebDriver BiDi on Linux, macOS and Windows."
+  ],
+  "who": "Developers building agents that need to read and automate web pages with less overhead than a full desktop browser.",
+  "features": [
+   "Headless browser built for AI agents",
+   "Page extraction as Markdown or a semantic tree",
+   "CLI, CDP, WebDriver Classic and WebDriver BiDi",
+   "On-demand layout and screenshots",
+   "Linux, macOS and Windows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lexmount/moli",
+   "https://browser.lexmount.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/lexmount/moli",
+   "stars": 19401,
+   "checked": "2026-10-18"
+  }
+ },
+ "hermes-webui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Hermes WebUI is a lightweight, dark-themed browser interface for Hermes Agent, the autonomous agent from Nous Research that runs on your server.",
+   "It aims for full parity with the Hermes CLI and is built with plain Python and vanilla JavaScript, with no build step. The layout has sessions on the left, chat in the center and workspace files on the right, plus a control center for settings and password protection."
+  ],
+  "who": "People running Hermes Agent on a server who want to use it from a web browser instead of the terminal.",
+  "features": [
+   "Browser UI with full CLI parity for Hermes Agent",
+   "Three-panel layout: sessions, chat and workspace files",
+   "Model, profile and workspace controls",
+   "Token-usage context ring",
+   "Python and vanilla JS, no build step"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nesquena/hermes-webui",
+   "https://get-hermes.ai/setup/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/nesquena/hermes-webui",
+   "stars": 19013,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "openworker": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenWorker is an open-source AI coworker that runs on your desktop and aims to deliver finished work, such as reviewed code with fixes, polished documents or drafted Slack replies, rather than just chat. It is in open beta.",
+   "It doesn't lock you into one model: bring your own API key for OpenAI, Anthropic, Google or an open-weight provider, or run fully locally with Ollama."
+  ],
+  "who": "People who want a desktop AI assistant that completes everyday tasks with their choice of model, including fully local models.",
+  "features": [
+   "Desktop AI coworker that completes tasks",
+   "Bring your own key for OpenAI, Anthropic, Google and others",
+   "Fully local option with Ollama",
+   "Integrations you choose; data stays on your machine otherwise",
+   "Open source, in open beta"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/andrewyng/openworker",
+   "https://openworker.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/andrewyng/openworker",
+   "stars": 18561,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "rocketride": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "RocketRide describes itself as an open-source AI Development Environment: it turns your IDE, or the CLI, into a place to compose, debug, observe and deploy AI runtimes.",
+   "Under the hood it is a data-pipeline builder and runtime for AI and ML workloads, with 100+ pipeline nodes spanning 15+ LLM providers, 9 vector databases, OCR and NER. Pipelines are portable JSON and can be built visually."
+  ],
+  "who": "Developers building AI data pipelines and RAG workloads who want to design and run them from their editor.",
+  "features": [
+   "Pipeline builder and runtime for AI and ML",
+   "100+ nodes: 15+ LLM providers, 9 vector databases, OCR and NER",
+   "Pipelines as portable JSON, built visually",
+   "Works inside your IDE or from the CLI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/rocketride-org/rocketride-server",
+   "https://rocketride.org/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/rocketride-org/rocketride-server",
+   "stars": 17751,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "browser-use-web-ui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Browser Use Web UI is a Gradio interface for browser-use, the library that makes websites accessible to AI agents. It supports most browser-use features in a user-friendly UI.",
+   "It works with models from Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama and others, can use your own browser so you stay logged in to sites, and supports high-definition screen recording."
+  ],
+  "who": "People who want to try or run browser-use agents through a web interface instead of writing code.",
+  "features": [
+   "Gradio web UI for browser-use",
+   "Supports Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek and Ollama models",
+   "Use your own browser and logins",
+   "Persistent browser sessions",
+   "HD screen recording"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/browser-use/web-ui",
+   "https://github.com/browser-use/web-ui"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/browser-use/web-ui",
+   "stars": 16618,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "framelink-figma-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Framelink MCP for Figma gives Cursor and other AI coding tools access to your Figma files through the Model Context Protocol, so they can implement designs in any framework.",
+   "You paste a link to a Figma file, frame or group into your IDE's chat; the server fetches the metadata from the Figma API and simplifies it to the most relevant layout and style information before passing it to the model."
+  ],
+  "who": "Front-end developers who build UIs from Figma designs and use Cursor or another AI coding tool.",
+  "features": [
+   "MCP server for Figma data",
+   "Works with Cursor and other AI coding tools",
+   "Paste a Figma link to implement a design",
+   "Simplifies Figma API responses to relevant layout and styles"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/GLips/Figma-Context-MCP",
+   "https://www.framelink.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/GLips/Figma-Context-MCP",
+   "stars": 16004,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "outlines": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Outlines is a library for structured outputs from LLMs, made by the team at .txt. It makes models generate output that follows a schema or format you define.",
+   "Its README lists examples such as customer-support triage, e-commerce product categorization and parsing event details. It is trusted by projects including NVIDIA, Cohere, Hugging Face and vLLM, according to its maker."
+  ],
+  "who": "Developers who need LLM output that reliably matches a JSON schema, type or grammar.",
+  "features": [
+   "Structured generation that follows a schema",
+   "JSON schemas, types and grammars",
+   "Works with popular model backends",
+   "Open source from .txt"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/dottxt-ai/outlines",
+   "https://dottxt-ai.github.io/outlines/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/dottxt-ai/outlines",
+   "stars": 15951,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "midscene-js": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Midscene.js brings AI vision to end-to-end testing for web, mobile and desktop apps. You describe UI steps and expected results in natural language, and its visual GUI agent carries them out and checks what users see.",
+   "You can write YAML test cases with Midscene Test or call its agent APIs from existing Playwright tests, and review HTML reports with screenshots, actions and assertion results."
+  ],
+  "who": "QA engineers and developers who want to write end-to-end tests in plain language instead of brittle selectors.",
+  "features": [
+   "Natural-language E2E tests",
+   "Visual GUI agent for web, mobile and desktop",
+   "YAML test cases with Midscene Test",
+   "Integrates with Playwright",
+   "HTML reports with screenshots and assertions"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/web-infra-dev/midscene",
+   "https://midscenejs.com/introduction"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/web-infra-dev/midscene",
+   "stars": 15313,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  }
 }
