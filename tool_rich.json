@@ -11765,5 +11765,799 @@
    "https://chat.blockscope.co"
   ],
   "updated": "2026-10-18"
+ },
+ "chainaware": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ChainAware offers a Behavioural Prediction MCP server for Web3, security and DeFi use.",
+   "Our listing describes ChainAware as an AI wallet auditor and fraud and rug-pull detector, with the MCP server exposing its predictions to agents."
+  ],
+  "who": "Crypto users and agents checking wallet risk.",
+  "features": [
+   "Wallet behavior prediction",
+   "Fraud and rug-pull detection",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ChainAware/behavioral-prediction-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "chaingpt": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ChainGPT is a suite of crypto AI tools.",
+   "Example prompts on its site include analyzing a token's on-chain activity and market trends and auditing and deploying ERC-20 smart contracts; our listing notes a chatbot, smart-contract generator and auditor."
+  ],
+  "who": "Crypto users and Web3 developers.",
+  "features": [
+   "Crypto chatbot",
+   "Smart-contract generator",
+   "Smart-contract auditor"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.chaingpt.org"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cod3x": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Cod3x is AI trading in plain English: describe a strategy and a financial AI agent trades it for you automatically, 24/7.",
+   "No code or charts needed."
+  ],
+  "who": "Traders who want strategies automated without code.",
+  "features": [
+   "Plain-English strategies",
+   "24/7 automated trading",
+   "No code"
+  ],
+  "faq": [],
+  "sources": [
+   "https://cod3x.org"
+  ],
+  "updated": "2026-10-18"
+ },
+ "coinbase-agentkit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AgentKit is Coinbase Developer Platform's toolkit for giving AI agents a crypto wallet and on-chain interactions.",
+   "It supports multiple wallets, protocols and agent frameworks."
+  ],
+  "who": "Developers building agents that hold and move crypto.",
+  "features": [
+   "Agent wallets",
+   "On-chain actions",
+   "Framework-agnostic"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/coinbase/agentkit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "coingecko-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CoinGecko's MCP server provides crypto prices, market and on-chain data to agents.",
+   "The listed repo is CoinGecko's TypeScript library for its REST API, which the MCP server builds on."
+  ],
+  "who": "Developers whose agents need crypto market data.",
+  "features": [
+   "Crypto prices",
+   "Market data",
+   "On-chain data"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/coingecko/coingecko-typescript"
+  ],
+  "updated": "2026-10-18"
+ },
+ "coinmarketcap-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "CoinMarketCap MCP gives AI agents real-time crypto market data through Model Context Protocol integration with Claude, ChatGPT, Cursor and more.",
+   "Our listing notes it uses your CMC API plan for prices, market caps, rankings and exchange data."
+  ],
+  "who": "Developers and traders using AI with market data.",
+  "features": [
+   "Live prices and market caps",
+   "Rankings and exchange data",
+   "Works with Claude, ChatGPT, Cursor"
+  ],
+  "faq": [],
+  "sources": [
+   "https://coinmarketcap.com/api/mcp/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "crossmint-for-ai-agents": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Crossmint provides fiat and stablecoin wallets for AI agents, since traditional payment systems are built for human authentication.",
+   "Our listing notes stablecoin payments and checkout APIs."
+  ],
+  "who": "Developers building agents that pay.",
+  "features": [
+   "Agent wallets",
+   "Stablecoin payments",
+   "Checkout APIs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.crossmint.com/solutions/agentic-payments"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dataline": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Dataline (formerly Tearline) turns natural-language intent into structured, confidence-scored Web3 market data for AI agents.",
+   "It also offers an orchestration runtime for multi-step agent workflows."
+  ],
+  "who": "Developers building crypto-data agents.",
+  "features": [
+   "Structured Web3 data",
+   "Confidence scores",
+   "Workflow orchestration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.dataline.xyz"
+  ],
+  "updated": "2026-10-18"
+ },
+ "daydreams": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Daydreams builds open-source tools, payment rails and markets for agents that buy, sell and coordinate work on-chain.",
+   "The maintainers note the original agent framework is no longer the core focus; Daydreams now focuses on agentic commerce."
+  ],
+  "who": "Developers exploring agentic commerce.",
+  "features": [
+   "Agentic commerce",
+   "Payment rails",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/daydreamsai/daydreams"
+  ],
+  "updated": "2026-10-18"
+ },
+ "elizaos": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "elizaOS is an open-source TypeScript framework and product stack for autonomous AI agents.",
+   "The monorepo contains the core runtime, the Eliza app, the CLI and cloud services; our listing notes wallet and on-chain plugins."
+  ],
+  "who": "Developers building crypto-native agents.",
+  "features": [
+   "TypeScript agent runtime",
+   "Eliza app and CLI",
+   "Wallet and on-chain plugins"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/elizaOS/eliza"
+  ],
+  "updated": "2026-10-18"
+ },
+ "etherscan-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Etherscan MCP connects AI agents to live Etherscan API data through MCP, with or without an API key.",
+   "Our listing notes read-only on-chain data across EVM chains: balances, transactions, token transfers, contracts and logs."
+  ],
+  "who": "Developers and analysts querying on-chain data.",
+  "features": [
+   "Read-only on-chain data",
+   "EVM chains",
+   "Works without a key"
+  ],
+  "faq": [],
+  "sources": [
+   "https://docs.etherscan.io/build-with-ai/mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "evm-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "EVM MCP Server provides blockchain services across 60+ EVM-compatible networks for AI agents.",
+   "It supports reading chain data and sending transactions."
+  ],
+  "who": "Developers building multi-chain agents.",
+  "features": [
+   "60+ EVM networks",
+   "Read and transact",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mcpdotdirect/evm-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "fere-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Fere AI lets you put crypto to work with a ready-made AI trading bot: pick an agent, fund it, and it trades for you 24/7, taking profit and cutting losses.",
+   "Fere says it is free to run; our listing also notes Polymarket."
+  ],
+  "who": "Crypto holders who want automated trading.",
+  "features": [
+   "Ready-made trading agents",
+   "24/7",
+   "Take-profit and stop-loss"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.fereai.xyz"
+  ],
+  "updated": "2026-10-18"
+ },
+ "fetch-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "uAgents is Fetch.ai's Python library for creating autonomous AI agents with simple decorators.",
+   "Our listing notes Fetch.ai's platform and Agentverse marketplace for agents that can transact on-chain."
+  ],
+  "who": "Developers building autonomous agents.",
+  "features": [
+   "Python agent library",
+   "Agentverse marketplace",
+   "On-chain transactions"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/fetchai/uAgents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "giza": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Giza builds infrastructure that lets agents analyze markets, execute strategies and manage liquidity across DeFi.",
+   "Our listing notes self-custodial agents (Giza World, ARMA)."
+  ],
+  "who": "DeFi users who want automated strategies.",
+  "features": [
+   "Market analysis",
+   "Strategy execution",
+   "Self-custodial"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.gizatech.xyz"
+  ],
+  "updated": "2026-10-18"
+ },
+ "griffin-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Griffin AI is a DeFi agent builder with a live Agent Playground to test, use and share agents.",
+   "A marketplace to monetize or buy agents is listed as coming soon."
+  ],
+  "who": "DeFi users building agents without code.",
+  "features": [
+   "No-code DeFi agents",
+   "Agent Playground",
+   "Marketplace (coming soon)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.griffinai.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hedera-ai-studio": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Hedera Agent Kit lets you build Hedera-powered AI agents in under a minute.",
+   "Our listing notes the Hedera AI Studio toolkit includes the Agent Kit and an MCP server for verifiable agents; v4 has breaking changes from v3."
+  ],
+  "who": "Developers building on Hedera.",
+  "features": [
+   "Agent Kit",
+   "MCP server",
+   "Verifiable agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/hashgraph/hedera-agent-kit-js"
+  ],
+  "updated": "2026-10-18"
+ },
+ "heyanon": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "HeyAnon simplifies DeFi by executing swaps, bridging assets and managing DeFi strategies: give a command and specify the protocol."
+  ],
+  "who": "DeFi users who prefer chat to dashboards.",
+  "features": [
+   "Swaps",
+   "Bridging",
+   "Strategy management"
+  ],
+  "faq": [],
+  "sources": [
+   "https://heyanon.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "magia-trade": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Magia Trade is a visual strategy lab: drag nodes onto a canvas, backtest on real tick data, build with an AI copilot and deploy live to the cloud on Binance and B3.",
+   "No code needed."
+  ],
+  "who": "Traders building strategies visually.",
+  "features": [
+   "Visual strategy canvas",
+   "Tick-data backtests",
+   "AI copilot",
+   "Live on Binance and B3"
+  ],
+  "faq": [],
+  "sources": [
+   "https://magiatrade.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "marx-finance": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Marx Finance hosts autonomous AI agents that predict financial markets through sentiment analysis.",
+   "They publish real-time signals, market analysis and debates; our listing notes an MCP server."
+  ],
+  "who": "Traders following AI-generated signals.",
+  "features": [
+   "Agent market signals",
+   "Sentiment analysis",
+   "Debates",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://marx.finance"
+  ],
+  "updated": "2026-10-18"
+ },
+ "metamask-agent-wallet": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "MetaMask Agent Wallet lets you set up an AI agent to trade on-chain 24/7, with swaps, perps, predictions and LPing, and full transaction security scanning.",
+   "It is available through an Early Access Program."
+  ],
+  "who": "Crypto users who want a self-custodial wallet for agents.",
+  "features": [
+   "Swaps, perps, predictions",
+   "Security scanning",
+   "Self-custodial",
+   "Early access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://metamask.io/agent-wallet"
+  ],
+  "updated": "2026-10-18"
+ },
+ "midash-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "MiDash AI lets you chat with an AI assistant to analyze stocks, build portfolios, test strategies and execute trades automatically.",
+   "Our listing notes stocks, crypto and forex with broker execution."
+  ],
+  "who": "Retail investors.",
+  "features": [
+   "Conversational analysis",
+   "Backtested strategies",
+   "Automated execution"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.midash.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nansen-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Nansen lets you trade on-chain with AI, powered by 500M+ labeled addresses: track Smart Money, analyze any token and execute instantly."
+  ],
+  "who": "Crypto traders and researchers.",
+  "features": [
+   "500M+ labeled addresses",
+   "Smart Money tracking",
+   "AI research and trading"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.nansen.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nora": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Nora is a deep-reasoning agent for software development, first applied to Web3.",
+   "Our listing notes building and securing Web3 apps and smart contracts; early access is by request."
+  ],
+  "who": "Web3 developers.",
+  "features": [
+   "Deep-reasoning coding agent",
+   "Smart contracts",
+   "Security focus"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.mynora.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "octane": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Octane provides agentic security analysis that finds exploitable vulnerabilities in mission-critical software.",
+   "Our listing notes this includes DeFi smart contracts."
+  ],
+  "who": "Teams shipping security-sensitive code.",
+  "features": [
+   "Agentic security analysis",
+   "Exploitable-vulnerability detection",
+   "Smart contracts"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.octane.security"
+  ],
+  "updated": "2026-10-18"
+ },
+ "olas-autonolas": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Olas enables everyone to own and monetize their AI agents.",
+   "Our listing notes the open-source stack (Open Autonomy, the Pearl app) for running and co-owning autonomous on-chain agents."
+  ],
+  "who": "Developers and users running on-chain agents.",
+  "features": [
+   "Own and monetize agents",
+   "Open Autonomy stack",
+   "Pearl app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://olas.network"
+  ],
+  "updated": "2026-10-18"
+ },
+ "oneclick": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "OneClick lets you browse 20,000+ yield-farming pools, track crypto airdrops and build diversified DeFi portfolios.",
+   "Our listing notes recommendations from your wallet history and a risk quiz."
+  ],
+  "who": "DeFi users seeking yield.",
+  "features": [
+   "20,000+ yield pools",
+   "Airdrop tracking",
+   "Personalized portfolios"
+  ],
+  "faq": [],
+  "sources": [
+   "https://defi.oneclick.fi"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openfort": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Openfort is open-source wallet infrastructure for stablecoin products: dollar accounts, spending policies, funding and agent wallets.",
+   "It positions itself as a self-hostable Privy alternative; our listing notes gas sponsorship and x402 support."
+  ],
+  "who": "Developers building stablecoin and agent wallet products.",
+  "features": [
+   "Agent wallets with policies",
+   "Stablecoin accounts",
+   "Self-hostable"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.openfort.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "privy": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Privy lets developers build wallets, hold crypto, move stablecoins and automate financial operations with programmable money.",
+   "Our listing notes embedded and server wallets that can be handed to agents with policy controls."
+  ],
+  "who": "Developers adding wallets to apps and agents.",
+  "features": [
+   "Embedded and server wallets",
+   "Stablecoins",
+   "Policy controls"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.privy.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "proof-x401": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "x401, from Proof, is an identity protocol for agentic commerce that gives AI agents a way to prove what they're authorized to do.",
+   "Our listing notes it is an open HTTP protocol plus MCP server, with websites paying per verified identity claim over x402."
+  ],
+  "who": "Websites and agent builders needing verified identity.",
+  "features": [
+   "Agent identity protocol",
+   "Authorization proofs",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://proof.com/x401"
+  ],
+  "updated": "2026-10-18"
+ },
+ "questflow": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Questflow is an AI finance agent built to let you invest alongside top investors across markets.",
+   "Our listing notes it connects wallets, exchanges and brokers."
+  ],
+  "who": "Retail investors.",
+  "features": [
+   "Invest alongside top investors",
+   "Wallets, exchanges and brokers",
+   "Multi-market"
+  ],
+  "faq": [],
+  "sources": [
+   "https://questflow.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "sherlock-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Sherlock AI is Sherlock's AI auditor for smart contracts.",
+   "It integrates natively with GitHub to run checks on every commit or PR and aims to detect real exploit paths."
+  ],
+  "who": "Smart-contract teams.",
+  "features": [
+   "GitHub integration",
+   "Checks on every PR",
+   "Exploit-path detection"
+  ],
+  "faq": [],
+  "sources": [
+   "https://sherlock.xyz/solutions/ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "skyfire": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Skyfire gives AI agents verified identity and payment credentials that work across the open internet, avoiding blocked access and checkouts."
+  ],
+  "who": "Developers whose agents need to access and pay for services.",
+  "features": [
+   "Verified agent identity",
+   "Payment credentials",
+   "Works across the web"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.skyfire.xyz"
+  ],
+  "updated": "2026-10-18"
+ },
+ "sodax-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SODAX is a cross-chain DeFi project; this monorepo holds its SDK packages and demo apps.",
+   "Our listing notes swaps, lending and bridging, with skills and a Builders MCP for AI-assisted development."
+  ],
+  "who": "Developers building cross-chain DeFi apps.",
+  "features": [
+   "Cross-chain swaps",
+   "Lending and bridging",
+   "Builders MCP"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/icon-project/sodax-sdks"
+  ],
+  "updated": "2026-10-18"
+ },
+ "solana-agent-kit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Solana Agent Kit is an open-source toolkit connecting AI agents to Solana protocols, so any agent with any model can perform 60+ Solana actions."
+  ],
+  "who": "Developers building Solana agents.",
+  "features": [
+   "60+ Solana actions",
+   "Any model",
+   "Trading and token launches"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/sendaifun/solana-agent-kit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "spoonos": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SpoonOS is an agentic OS for building Web3-native AI agents; spoon-core is its core developer framework.",
+   "It includes an interactive CLI and Web3 infrastructure."
+  ],
+  "who": "Developers building Web3 agents.",
+  "features": [
+   "Agent framework",
+   "Interactive CLI",
+   "Web3 infrastructure"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/XSpoonAi/spoon-core"
+  ],
+  "updated": "2026-10-18"
+ },
+ "surf-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Surf positions itself as the intelligence layer for open financial markets, with chat and studio tools for research.",
+   "Our listing notes it is built on on-chain, market and social data and now covers US equities."
+  ],
+  "who": "Crypto and equity researchers.",
+  "features": [
+   "AI research chat",
+   "On-chain and social data",
+   "Stocks coverage"
+  ],
+  "faq": [],
+  "sources": [
+   "https://asksurf.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "theoriq": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Theoriq uses autonomous AI to monitor rates and liquidity across venues and chains, surface relative-value signals and validate every execution before capital moves.",
+   "Our listing notes risk-managed yield vaults such as AlphaVault ETH and Gold Vault."
+  ],
+  "who": "DeFi investors seeking managed yield.",
+  "features": [
+   "Autonomous strategy curation",
+   "Risk-managed vaults",
+   "Execution validation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.theoriq.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tradeos-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "TradeOS lets you build AI trading agents from your own logic that monitor stocks, forex and commodities 24/7 with structured workflows, not black-box predictions."
+  ],
+  "who": "Traders with defined technical-analysis rules.",
+  "features": [
+   "Rule-based agents",
+   "24/7 monitoring",
+   "Structured workflows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.tradeos.xyz"
+  ],
+  "updated": "2026-10-18"
+ },
+ "turnkey": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Turnkey is secure, scalable wallet infrastructure that simplifies private-key management.",
+   "You can create wallets for payments, consumers, AI agents and stablecoin apps."
+  ],
+  "who": "Developers building agent-controlled wallets.",
+  "features": [
+   "Secure key management",
+   "Agent wallets",
+   "Stablecoin apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.turnkey.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "virtuals-protocol": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Virtuals Protocol is a society of productive AI agents, each designed to generate services or products and engage autonomously in on-chain commerce with humans or other agents."
+  ],
+  "who": "Builders and users of tokenized agents.",
+  "features": [
+   "Tokenized agents",
+   "Agent-to-agent commerce",
+   "Co-ownership"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.virtuals.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wayfinder": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Wayfinder offers autonomous agents for cross-chain execution that you deploy, monitor and earn with, without scripting."
+  ],
+  "who": "DeFi users who want cross-chain automation.",
+  "features": [
+   "Cross-chain execution",
+   "No scripting",
+   "Deploy and monitor"
+  ],
+  "faq": [],
+  "sources": [
+   "https://wayfinder.ai"
+  ],
+  "updated": "2026-10-18"
  }
 }
