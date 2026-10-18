@@ -35,9 +35,7 @@ PAGES=[
 ("ai-voice-agent-platforms","Best AI Voice Agent Platforms",lambda x:x["category"]=="voice","stars",20,
  "Platforms and open-source frameworks for building AI voice agents that talk, listen and handle phone calls.",
  '<a href="../tasks/building-voice-agents.html">Building voice agents</a> · <a href="../tasks/phone-calls.html">Handling phone calls</a> · <a href="../compare/livekit-agents-vs-pipecat.html">LiveKit Agents vs Pipecat</a>'),
-("ai-vision-tools","Best AI Vision Tools for Agents",lambda x:x["category"]=="vision","stars",20,
- "Computer vision tools, image and video agents, and vision MCP servers that let AI agents see and understand images and video.",
- '<a href="../tasks/making-images-and-design.html">Images and design</a> · <a href="../generate.html">Free AI image generator</a>'),
+# best/ai-vision-tools removed Oct 18 2026: same tools as categories/vision (redirect in redirects.json)
 ("ai-agent-observability-tools","Best AI Agent Observability & Eval Tools",lambda x:x["category"]=="evals & observability","stars",20,
  "Tracing, evaluation, guardrail and monitoring tools for seeing what your AI agents do and checking that they work.",
  '<a href="../tasks/monitoring-agents.html">Monitoring agents in production</a> · <a href="../tasks/evaluating-agents.html">Evaluating agents</a> · <a href="../compare/langfuse-vs-langsmith.html">Langfuse vs LangSmith</a>'),
@@ -46,26 +44,16 @@ PAGES=[
  '<a href="../tasks/personal-assistants.html">AI agents for personal assistance</a> · <a href="../tasks/chat-apps.html">Agents in chat apps</a>'),
 ("ai-business-agents","Best AI Agents for Business Teams",lambda x:x["category"]=="business agents","maturity",20,
  "Ready-made AI agents for business work: operations, finance, support, sales and back-office tasks.",
- '<a href="../tasks/business-automation.html">Running business operations</a> · <a href="ai-customer-support-agents.html">Best AI customer support agents</a> · <a href="ai-sales-marketing-agents.html">Best AI sales &amp; marketing agents</a> · <a href="../categories/customer-support.html">Customer support category</a> · <a href="../categories/sales-marketing.html">Sales &amp; marketing category</a>'),
+ '<a href="../tasks/business-automation.html">Running business operations</a> · <a href="../categories/customer-support.html">Customer support category</a> · <a href="../categories/sales-marketing.html">Sales &amp; marketing category</a>'),
 ("crypto-ai-agents","Best Crypto AI Agents",lambda x:x["category"]=="crypto","maturity",20,
  "AI agents, MCP servers and toolkits for crypto: on-chain data, wallets, DeFi and research. None of this is financial advice.",
  '<a href="../tasks/crypto-and-wallets.html">Crypto and wallets</a> · <a href="../tasks/trading.html">Trading</a> · <a href="../tasks/smart-contract-security.html">Smart contract security</a>'),
-("ai-productivity-tools","Best AI Productivity Agents",lambda x:x["category"]=="productivity","stars",20,
- "AI agents and tools for everyday productivity: documents, diagrams, spreadsheets, video and design work.",
- '<a href="../tasks/spreadsheets-and-slides.html">Spreadsheets, slides and docs</a> · <a href="../tasks/documents.html">Working with documents</a>'),
+# best/ai-productivity-tools removed Oct 18 2026: same tools as categories/productivity (redirect in redirects.json)
 # ai-agent-memory-rag-tools removed Oct 18 2026: duplicated categories/memory-rag (redirect in redirects.json)
-("ai-agent-security-tools","Best AI Agent Security & Governance Tools",lambda x:x["category"]=="security & governance","stars",20,
- "Guardrails, policy engines, scanners and governance platforms for keeping AI agents safe, compliant and under control.",
- '<a href="../tasks/agent-security.html">Agent security and safety</a> · <a href="../tasks/agent-security-guardrails.html">Guardrails and policies</a> · <a href="../s/free-ai-agent-security-tools.html">Free AI agent security tools</a>'),
-("ai-sales-marketing-agents","Best AI Sales & Marketing Agents",lambda x:x["category"]=="sales & marketing","maturity",20,
- "AI SDRs, prospecting, enrichment and content agents for sales and marketing teams.",
- '<a href="../tasks/sales-outreach.html">Sales outreach</a> · <a href="../tasks/marketing.html">Marketing</a> · <a href="../s/ai-sales-agents.html">AI sales agents</a> · <a href="../s/ai-marketing-agents.html">AI marketing agents</a>'),
-("ai-customer-support-agents","Best AI Customer Support Agents",lambda x:x["category"]=="customer support","maturity",20,
- "AI agents that answer customer questions, resolve tickets and handle support chats, email and calls.",
- '<a href="../tasks/customer-support.html">Customer support</a> · <a href="../s/ai-customer-support-agents.html">AI customer support agents</a> · <a href="../for/customer-support-teams.html">For customer support teams</a>'),
-("local-ai-models-and-runtimes","Best Local AI Models & Runtimes",lambda x:x["category"]=="models & local runtimes","stars",20,
- "Open models and local runtimes for running LLMs on your own computer or server, often as the engine behind self-hosted agents.",
- '<a href="../tasks/running-agents-locally.html">Running agents locally</a> · <a href="../s/local-ai-agents.html">Local AI agents</a> · <a href="self-hosted-ai-agents.html">Self-hosted AI agents</a>'),
+# best/ai-agent-security-tools removed Oct 18 2026: same tools as categories/security-governance (redirect in redirects.json)
+# best/ai-sales-marketing-agents removed Oct 18 2026: same tools as categories/sales-marketing (redirect in redirects.json)
+# best/ai-customer-support-agents removed Oct 18 2026: same tools as categories/customer-support (redirect in redirects.json)
+# best/local-ai-models-and-runtimes removed Oct 18 2026: same tools as categories/models-local-runtimes (redirect in redirects.json)
 ]
 OLD=[("mcp-servers-for-claude-code","Best MCP servers for Claude Code"),("mcp-servers-for-cursor","Best MCP servers for Cursor"),("mcp-servers-for-codex","Best MCP servers for Codex"),("cursor-alternatives","Cursor alternatives")]
 def rank(items,how):

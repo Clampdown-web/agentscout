@@ -34,7 +34,7 @@ def cost_pair(a,b):
     f=lambda x:x["category"] in {"coding","models & local runtimes","frameworks"} or bool(re.search(r"\bAPI\b",x["description"])) or cost_tool(x)
     return f(a) or f(b)
 # small categories with no list overlap: hand-picked, directly relevant pages
-MANUAL={"models & local runtimes":(["local-ai-agents"],["ai-engineers"]),"games":([],["game-developers"])}
+MANUAL={"models & local runtimes":([],["ai-engineers"]),"games":([],["game-developers"])}
 def run(t):
     S=L.DATA["search"]; RO=L.DATA["roles"]; bys={x["slug"]:x for x in t}
     sname={a[0]:a[1] for a in S}; rname={r[0]:r[1] for r in RO}
@@ -49,6 +49,7 @@ def run(t):
         k=os.path.basename(f)[:-5]
         if k=="index": continue
         h=open(f).read(); m=re.search(r"<h1[^>]*>(.*?)</h1>",h,re.S)
+        if 'name="robots" content="noindex' in h: continue  # Moved stubs (redirects.json)
         BEST[k]=(re.sub(r"<[^>]+>","",m.group(1)).replace(" (2026)","").strip() if m else k,[y for y in re.findall(r'href="\.\./tools/([^"]+)\.html"',h.split("<main",1)[-1])])
     # alternatives pages (best/*-alternatives.html) and sub-task pages (3-level crumb) with the tools they list
     ALTP={k:v for k,v in BEST.items() if k.endswith("-alternatives")}

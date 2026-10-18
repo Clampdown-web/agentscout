@@ -20,7 +20,7 @@ TOOLS=[
 ]
 REL={"ai-cost-calculator":(["python-ai-agent-frameworks","open-source-llm-observability-tools","web-search-apis-for-ai-agents","free-ai-coding-agents"],["ai-engineers","developers","founders"]),
  "token-counter":(["open-source-llm-observability-tools","open-source-ai-research-agents"],["ai-engineers","developers","researchers"]),
- "prompt-builder":(["ai-research-assistants","ai-marketing-agents","free-ai-coding-agents"],["marketers","content-creators","researchers"]),
+ "prompt-builder":(["ai-research-assistants","free-ai-coding-agents"],["marketers","content-creators","researchers"]),
  "agent-setup-generator":(["terminal-ai-coding-agents","open-source-ai-agent-frameworks","multi-agent-frameworks","free-mcp-servers"],["developers","ai-engineers","security-engineers"])}
 def rel(s):
     import build_landing as L
@@ -190,8 +190,8 @@ TOOLS+=[
 ("llms-txt-generator","llms.txt Generator","Fill in your site's name, summary and key links and get a valid llms.txt file that AI assistants can read.","📄"),
 ("tool-schema-builder","AI Tool Schema Builder","Define a function once and export the tool-calling JSON schema for OpenAI, Anthropic Claude and Google Gemini.","🧩"),
 ]
-REL.update({"mcp-config-builder":(["free-mcp-servers","database-mcp-servers","terminal-ai-coding-agents"],["developers","ai-engineers"]),
- "llms-txt-generator":(["web-search-apis-for-ai-agents","ai-web-scraping-tools","ai-marketing-agents"],["marketers","developers","founders"]),
+REL.update({"mcp-config-builder":(["free-mcp-servers","terminal-ai-coding-agents"],["developers","ai-engineers"]),
+ "llms-txt-generator":(["web-search-apis-for-ai-agents"],["marketers","developers","founders"]),
  "tool-schema-builder":(["python-ai-agent-frameworks","typescript-ai-agent-frameworks","open-source-ai-agent-frameworks"],["ai-engineers","developers"])})
 TA='style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;box-sizing:border-box"'
 def _outs(ids):

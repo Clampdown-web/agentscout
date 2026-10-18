@@ -61,9 +61,11 @@ def match(x,T):
     _,_,cats,ucs,rx,_=T
     if x.get("category") in cats or set(x.get("use_cases",[]))&ucs: return True
     return bool(re.search(rx,f'{x.get("name","")} {x.get("description","")} {x.get("pricing","")}',re.I))
+REDIRECTED_TASKS={"games"}  # Oct 18 2026: same tools as categories/games (redirect in redirects.json)
 def mapping(t):
     m={}
     for T in TASKS:
+        if T[0] in REDIRECTED_TASKS: continue
         items=[x for x in t if match(x,T)]
         if len(items)>=3:
             items.sort(key=lambda x:(not x.get("featured"),x.get("category") not in T[2],not (set(x.get("use_cases",[]))&T[3]),-(x.get("github_stars") or 0),x["name"].lower()))
@@ -99,6 +101,14 @@ _TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: too
   "title":"Add long-term memory to AI agents: tools by use case (2026)",
   "desc":lambda n,items:f"How to add long-term memory to an AI agent: {n} tools grouped by use case, from RAG over documents to local memory and codebase context."[:158],
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the ranked list of memory and RAG products? See the <a href="../categories/memory-rag.html">Memory &amp; RAG category</a>.</p>'},
+ "personal-assistants":{"h1":"What a personal AI assistant can do for you: tools by use case",
+  "title":"Personal AI assistants by use case: desktop, chat, local (2026)",
+  "desc":lambda n,items:f"Pick a personal AI assistant by what you need it to do: {n} tools grouped by use case, from desktop control and chat apps to local and private setups."[:158],
+  "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the full ranked list? See the <a href="../categories/personal-agents.html">Personal agents category</a>.</p>'},
+ "crypto-and-wallets":{"h1":"Crypto AI agents by job: trading, wallets, payments and data",
+  "title":"Crypto AI agents by job: trading, wallets and payments (2026)",
+  "desc":lambda n,items:f"Find a crypto AI agent by job: {n} tools grouped into trading agents, agent wallets, agent payments and on-chain data MCP servers. Not financial advice."[:158],
+  "pointer":'<p style="margin:0 0 6px;font-size:14px">Want every crypto tool in one list? See the <a href="../categories/crypto.html">Crypto category</a>.</p>'},
  "connecting-tools-mcp":{"h1":"How to connect AI agents to your tools with MCP, by use case",
   "title":"Connect AI agents to your tools with MCP: picks by use case (2026)",
   "desc":lambda n,items:f"How to connect an AI agent to apps and data with MCP: {n} servers, gateways and tools grouped by job, from databases to browsers and auth."[:158],
