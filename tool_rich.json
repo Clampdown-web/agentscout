@@ -6306,5 +6306,931 @@
    "https://www.canva.dev/docs/apps/mcp/"
   ],
   "updated": "2026-10-18"
+ },
+ "stackql": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "StackQL is an open-source engine that lets humans and AI agents query, provision and operate cloud and SaaS services with SQL, with no state file and no per-cloud SDK.",
+   "Its site lists providers such as AWS, Oracle Cloud, Databricks, OpenAI, GitHub, Datadog and Google Workspace, and offers an MCP server so agents can query live state across providers."
+  ],
+  "who": "Platform engineers and agents that need one SQL interface across cloud and SaaS providers.",
+  "features": [
+   "Query and provision cloud resources with SQL",
+   "No state file, no per-cloud SDK",
+   "Many cloud and SaaS providers",
+   "MCP server for agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://stackql.io/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "composio": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Composio gives AI agents 1,000+ pre-authenticated toolkits, per-user sessions, authentication, triggers and a sandbox, so agents can turn intent into action.",
+   "The SDK monorepo includes a composio CLI to search, execute and script tools."
+  ],
+  "who": "Developers building agents that act across many apps on behalf of users.",
+  "features": [
+   "1,000+ toolkits",
+   "Per-user auth and sessions",
+   "Triggers",
+   "Sandbox",
+   "CLI and SDKs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ComposioHQ/composio"
+  ],
+  "updated": "2026-10-18"
+ },
+ "e2b": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "E2B is open-source infrastructure for running AI-generated code in secure, isolated cloud sandboxes.",
+   "You start and control sandboxes with its JavaScript or Python SDK, using an API key."
+  ],
+  "who": "Developers whose agents need to run generated code safely.",
+  "features": [
+   "Isolated cloud sandboxes",
+   "JavaScript and Python SDKs",
+   "Code execution for agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/e2b-dev/E2B",
+   "https://e2b.dev"
+  ],
+  "updated": "2026-10-18"
+ },
+ "gitlab-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "The GitLab MCP server lets you securely connect AI tools such as Claude Desktop, Claude Code and Cursor to your GitLab instance so they can access your GitLab data.",
+   "GitLab's docs list it as generally available on the Free, Premium and Ultimate tiers across GitLab.com, Self-Managed and Dedicated (GA since GitLab 19.5), with selectable toolsets."
+  ],
+  "who": "Teams on GitLab who want AI assistants to work with projects, issues and merge requests.",
+  "features": [
+   "Works with GitLab.com, Self-Managed and Dedicated",
+   "Available on the Free tier",
+   "Selectable toolsets"
+  ],
+  "faq": [],
+  "sources": [
+   "https://docs.gitlab.com/user/model_context_protocol/mcp_server/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "groq": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Groq describes itself as a neocloud for fast inference: one integrated platform for infrastructure, inference and control.",
+   "Our listing notes it runs open models on custom LPU chips and is used for low-latency agents."
+  ],
+  "who": "Developers who need fast, low-latency inference for agents.",
+  "features": [
+   "Fast inference",
+   "Open models",
+   "Custom LPU hardware"
+  ],
+  "faq": [],
+  "sources": [
+   "https://groq.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "linear-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Linear MCP is Linear's official remote MCP server, documented in Linear's docs.",
+   "Our listing notes it lets agents find, create and update issues, projects and comments."
+  ],
+  "who": "Teams on Linear who want AI assistants to work with their issues.",
+  "features": [
+   "Find, create and update issues",
+   "Projects and comments",
+   "Remote, official server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://linear.app/docs/mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lune-research": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Lune Research is an MCP server that grounds AI agents in full-text, top-tier computer science papers, cutting out hallucinated facts and noise from the open web.",
+   "It targets uses such as AI research, academic writing and literature review."
+  ],
+  "who": "Researchers and builders who want agents to cite real CS literature.",
+  "features": [
+   "Full-text CS papers",
+   "Grounding for agents",
+   "Literature review support"
+  ],
+  "faq": [],
+  "sources": [
+   "https://luneresearch.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "manifold-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Manifold MCP is a hosted MCP server that connects Claude, ChatGPT or Cursor to live SEO, AI-answer, Reddit, social, ad and lead data.",
+   "It offers 250 free credits a month."
+  ],
+  "who": "Marketers who want to research SEO, social and ads inside their AI assistant.",
+  "features": [
+   "SEO and AI-answer data",
+   "Social, Reddit and ad data",
+   "Lead research",
+   "250 free credits a month"
+  ],
+  "faq": [],
+  "sources": [
+   "https://manifoldmcp.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "modal": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Modal is cloud infrastructure for teams that develop, train and serve AI applications at scale.",
+   "Its products include inference for serving LLMs, image and video models; our listing also notes serverless compute and sandboxes."
+  ],
+  "who": "AI teams who want serverless GPUs and sandboxes without managing infrastructure.",
+  "features": [
+   "Serverless compute",
+   "Inference serving",
+   "Sandboxes",
+   "Training workloads"
+  ],
+  "faq": [],
+  "sources": [
+   "https://modal.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "model-context-protocol": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Model Context Protocol (MCP) is an open standard for connecting AI agents to tools and data. This repository holds the specification and documentation.",
+   "The schema is defined in TypeScript first and published as JSON Schema too; the official docs are on the MCP documentation website."
+  ],
+  "who": "Anyone building MCP servers or clients.",
+  "features": [
+   "Open specification",
+   "TypeScript and JSON Schema",
+   "Official documentation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/modelcontextprotocol",
+   "https://modelcontextprotocol.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "new-relic-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "New Relic's MCP server, part of New Relic Ground Truth, gives AI tools and agents governed access to New Relic operational intelligence.",
+   "MCP tools help organize observability data so agents can use it; our listing notes metrics, logs, traces and alerts."
+  ],
+  "who": "Engineering teams on New Relic who want agents to investigate incidents.",
+  "features": [
+   "Metrics, logs, traces and alerts",
+   "Governed access",
+   "Part of New Relic Ground Truth"
+  ],
+  "faq": [],
+  "sources": [
+   "https://docs.newrelic.com/docs/agentic-ai/mcp/overview/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "notion-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Notion MCP is Notion's official hosted MCP server; Notion's developer docs explain how MCP clients connect to your workspace.",
+   "Our listing notes agents can search, read and update pages and databases."
+  ],
+  "who": "Notion users who want an AI assistant to work in their workspace.",
+  "features": [
+   "Search pages and databases",
+   "Read and update content",
+   "Hosted by Notion"
+  ],
+  "faq": [],
+  "sources": [
+   "https://developers.notion.com/guides/mcp/overview"
+  ],
+  "updated": "2026-10-18"
+ },
+ "recall-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Recall.ai is an API for getting transcripts, recordings and metadata from meetings, and the infrastructure behind many meeting-recording products.",
+   "It captures each person's audio separately so transcripts show who said what, even when people talk over each other."
+  ],
+  "who": "Developers building meeting bots or note-takers for Zoom, Meet and Teams.",
+  "features": [
+   "Meeting bots for Zoom, Meet and Teams",
+   "Recordings and transcripts",
+   "Per-speaker audio"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.recall.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "self-agent-vault": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Self Agent Vault is a payment and login layer for AI agents. Agents fill checkout and sign-in forms with mock tokens, and real card numbers and passwords are swapped in inside an enclave the agent never sees.",
+   "Our listing notes spending caps, merchant allowlists and a kill switch."
+  ],
+  "who": "People who want their agent to buy things or sign in without exposing real credentials.",
+  "features": [
+   "Mock tokens for agents",
+   "Secrets swapped in an enclave",
+   "Spending caps and allowlists",
+   "Kill switch"
+  ],
+  "faq": [],
+  "sources": [
+   "https://agentvault.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "slash": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Slash for Agents is a business-banking MCP server that lets AI agents create cards, set spend controls and send payments.",
+   "Slash cites RSA-encrypted card data, human-in-the-loop approval and full Slash API access, available to all Slash users."
+  ],
+  "who": "Businesses on Slash who want agents to handle spending under controls.",
+  "features": [
+   "Create cards",
+   "Spend controls",
+   "Payments, including stablecoins",
+   "Human-in-the-loop approval"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.slash.com/platform/agents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "smithery": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Smithery connects agents to thousands of tools and services, handling auth, credentials and sessions for you. Our listing describes it as a registry for finding and installing MCP servers.",
+   "Smithery has announced it is now part of Arcade.dev."
+  ],
+  "who": "Developers looking for MCP servers to plug into agents.",
+  "features": [
+   "MCP server registry",
+   "Auth, credentials and sessions handled",
+   "Now part of Arcade.dev"
+  ],
+  "faq": [],
+  "sources": [
+   "https://smithery.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "together-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Together AI calls itself the AI Native Cloud, an AI cloud for running, fine-tuning and serving open models.",
+   "Its site highlights an open-source AI stack (models, inference, routers, harnesses and tools) and on-demand B200 GPUs."
+  ],
+  "who": "Developers who want to run or fine-tune open models in the cloud.",
+  "features": [
+   "Open-model inference",
+   "Fine-tuning",
+   "On-demand GPUs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.together.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tollbit": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "TollBit lets publishers create an agent-optimized version of their website for autonomous visitors.",
+   "Publishers can control access, analyze AI bot traffic and monetize their site by charging agents and bots for content."
+  ],
+  "who": "Publishers who want to control and charge for AI access to their content.",
+  "features": [
+   "Agent-optimized site version",
+   "AI bot traffic analytics",
+   "Monetize bot access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://tollbit.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vercel-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Vercel MCP is Vercel's official remote MCP server with OAuth, at mcp.vercel.com, giving AI tools secure access to your Vercel projects. It is available on all plans.",
+   "It lets assistants search Vercel docs, manage projects and deployments, analyze deployment logs and query analytics. Only clients reviewed by Vercel can connect, and the connection has the same access as your Vercel account."
+  ],
+  "who": "Vercel users who want coding agents to manage and debug deployments.",
+  "features": [
+   "Docs search",
+   "Projects and deployments",
+   "Deployment logs",
+   "Web Analytics queries",
+   "OAuth, approved clients only"
+  ],
+  "faq": [],
+  "sources": [
+   "https://vercel.com/docs/agent-resources/vercel-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wolfram-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Wolfram MCP is Wolfram's official MCP service giving any MCP-compatible application computed, verified answers via Wolfram Foundation Tool technology.",
+   "There are local self-managed, cloud and enterprise options."
+  ],
+  "who": "Developers whose agents need reliable computation and data.",
+  "features": [
+   "Computed answers from Wolfram",
+   "Wolfram Language and Wolfram|Alpha",
+   "Local, cloud and enterprise options"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.wolfram.com/artificial-intelligence/mcp/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "browser-use": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Browser Use is an open-source browser agent library that lets AI agents control a web browser. You can run it locally with any LLM or on Browser Use Cloud.",
+   "Its README cites tasks like finding a slot and booking a driving test, and stealth cloud browsers."
+  ],
+  "who": "Developers building agents that complete tasks on websites.",
+  "features": [
+   "Browser control for agents",
+   "Any LLM",
+   "Local or cloud",
+   "Stealth browsers (cloud)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/browser-use/browser-use"
+  ],
+  "updated": "2026-10-18"
+ },
+ "crawl4ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Crawl4AI is an open-source web crawler and scraper that turns any website into clean, LLM-ready Markdown for RAG, AI agents and data pipelines.",
+   "You can run it yourself free or use its hosted option."
+  ],
+  "who": "Developers feeding web content to LLMs and RAG systems.",
+  "features": [
+   "LLM-ready Markdown",
+   "Crawling and scraping",
+   "Self-host free"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/unclecode/crawl4ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "chrome-devtools-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Chrome DevTools MCP lets coding agents such as Antigravity, Claude, Cursor or Copilot control and inspect a live Chrome browser.",
+   "It runs as an MCP server, giving assistants the power of Chrome DevTools for debugging and performance work."
+  ],
+  "who": "Web developers who want agents to debug and profile in a real browser.",
+  "features": [
+   "Control a live Chrome",
+   "DevTools inspection",
+   "Performance analysis"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ui-tars-desktop": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TARS is ByteDance's multimodal AI agent stack, shipping Agent TARS and UI-TARS-desktop.",
+   "Agent TARS brings GUI agents and vision to your terminal, computer, browser and product, mainly through a CLI; UI-TARS-desktop is a desktop app for controlling computers."
+  ],
+  "who": "Developers exploring open-source GUI and computer-use agents.",
+  "features": [
+   "Agent TARS CLI",
+   "UI-TARS desktop app",
+   "Multimodal GUI agent"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/bytedance/UI-TARS-desktop"
+  ],
+  "updated": "2026-10-18"
+ },
+ "playwright-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Playwright MCP is Microsoft's MCP server providing browser automation with Playwright.",
+   "It lets LLMs interact with web pages through structured accessibility snapshots, without screenshots or vision-tuned models."
+  ],
+  "who": "Developers giving agents reliable browser control.",
+  "features": [
+   "Playwright browser automation",
+   "Accessibility snapshots",
+   "No vision model required"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/playwright-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "opencli": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenCLI converts websites into CLI commands and runs Browser Use on your logged-in Chrome.",
+   "It turns websites and browser sessions into deterministic interfaces for humans and agents, or lets you navigate, fill forms, click and extract on any page."
+  ],
+  "who": "Developers who want agents to use websites through commands.",
+  "features": [
+   "Websites as CLI commands",
+   "Uses your logged-in Chrome",
+   "Form filling and extraction"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/jackwener/OpenCLI"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cua": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cua is open-source infrastructure that gives AI agents computers they can use. Cua Spaces gives agents full desktops on your Mac and machines you own.",
+   "The repo also holds Cua Driver for desktop automation, Lume for local VMs, CUA-S1 decision models and Cua Bench for evaluating computer-use agents."
+  ],
+  "who": "Developers building and benchmarking computer-use agents.",
+  "features": [
+   "Agent desktops (Cua Spaces)",
+   "Desktop automation driver",
+   "Local VMs (Lume)",
+   "Cua Bench"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/trycua/cua"
+  ],
+  "updated": "2026-10-18"
+ },
+ "page-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Page Agent, from Alibaba, is a GUI agent that lives in your web page: one script gives any page its own AI agent.",
+   "It runs as in-page JavaScript, with no browser extension, Python or headless browser, and no screenshots."
+  ],
+  "who": "Web developers who want to add an agent to their own site.",
+  "features": [
+   "In-page JavaScript agent",
+   "No extension or headless browser",
+   "Natural-language control"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/alibaba/page-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "stagehand": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Stagehand, from Browserbase, is a browser automation framework mixing code with natural-language actions.",
+   "It offers familiar Playwright-style methods such as goto, click, locator and screenshot, plus accessibility-tree trimming for agents; local runs need Chrome."
+  ],
+  "who": "Developers building reliable browser agents.",
+  "features": [
+   "Code plus natural-language actions",
+   "Playwright-style API",
+   "Structured data extraction"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/browserbase/stagehand"
+  ],
+  "updated": "2026-10-18"
+ },
+ "browser-harness": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Browser Harness, from the Browser Use team, lets Claude Code, Codex or Cursor use your real Chrome browser: open pages, click, type, read and download, logged in as you.",
+   "You set it up by pasting one prompt into your coding agent; it talks to Chrome over the DevTools Protocol."
+  ],
+  "who": "Coding-agent users who want them to act in their own browser.",
+  "features": [
+   "Drives your logged-in Chrome",
+   "Works with Claude Code, Codex and Cursor",
+   "Uses Chrome DevTools Protocol"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/browser-use/browser-harness"
+  ],
+  "updated": "2026-10-18"
+ },
+ "maxun": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Maxun is an open-source web data platform for real-time scraping, crawling, search, monitoring and AI data extraction.",
+   "Our listing notes no-code robots that turn websites into structured APIs."
+  ],
+  "who": "Teams who need web data without writing scrapers.",
+  "features": [
+   "No-code scraping robots",
+   "Crawling and monitoring",
+   "AI data extraction"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/getmaxun/maxun"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ego-lite": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ego lite is a browser where you and your AI agents work in parallel: agents run tasks in their own Spaces, isolated workspaces in the same browser, while you keep browsing.",
+   "Our listing notes it is a free macOS browser that works with Claude Code or Codex and reuses your logged-in sessions through an agent skill."
+  ],
+  "who": "Mac users who want coding agents to automate web tasks next to them.",
+  "features": [
+   "Isolated agent Spaces",
+   "Reuses logged-in sessions",
+   "Works with Claude Code and Codex"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/citrolabs/ego-lite"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nanobrowser": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Nanobrowser is an open-source AI agent that works in your own browser as a Chrome extension.",
+   "You give it a task in the side panel; it reads pages, clicks, types and moves between tabs, and asks before it submits."
+  ],
+  "who": "People who want an open-source agent to automate web tasks in Chrome.",
+  "features": [
+   "Chrome extension",
+   "Side-panel tasks",
+   "Asks before submitting"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nanobrowser/nanobrowser"
+  ],
+  "updated": "2026-10-18"
+ },
+ "browseros": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BrowserOS is a free, open-source second browser just for your AI agents, with everything running on your machine.",
+   "You can import Chrome logins in one click, connect Claude Code, Codex or any MCP agent, and let agents run in parallel tabs while you watch live or replay."
+  ],
+  "who": "People who want agents to handle web tasks locally.",
+  "features": [
+   "Runs locally",
+   "Import Chrome logins",
+   "MCP agent support",
+   "Parallel agent tabs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/browseros-ai/BrowserOS"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-s": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent-S, from Simular, is an open-source computer-use agent that operates a real GUI, with mouse, keyboard and screen, as a person does.",
+   "Its README reports top OSWorld results, including Agent S3 as first to surpass human performance on OSWorld (72.6%)."
+  ],
+  "who": "Researchers and developers building computer-use agents.",
+  "features": [
+   "GUI control like a human",
+   "Strong OSWorld results (per the maker)",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/simular-ai/Agent-S"
+  ],
+  "updated": "2026-10-18"
+ },
+ "google-artemis": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Google ARTEMIS lets AI assistants and test suites use real Android phones like a human.",
+   "It executes testing workflows and everyday tasks across apps from natural-language instructions."
+  ],
+  "who": "Developers and testers automating Android apps.",
+  "features": [
+   "Natural-language Android automation",
+   "Cross-app workflows",
+   "Testing support"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/google/artemis"
+  ],
+  "updated": "2026-10-18"
+ },
+ "magentic-ui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Magentic-UI is an agentic application from Microsoft; its next generation, MagenticLite, pairs an on-device-friendly orchestrator model (MagenticBrain) with a browser-use model (Fara).",
+   "Our listing describes it as an experimental human-in-the-loop agent working across the browser and local files."
+  ],
+  "who": "Researchers and developers experimenting with human-in-the-loop agents.",
+  "features": [
+   "Human-in-the-loop",
+   "Browser automation",
+   "Local files"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/magentic-ui"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mobilerun": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mobilerun is an open-source framework for controlling Android and iOS devices with LLM agents.",
+   "It gives agents mobile-native tools to inspect UI state, understand screenshots, tap, swipe, type and plan multi-step workflows, through a CLI or Python API."
+  ],
+  "who": "Developers automating mobile apps with agents.",
+  "features": [
+   "Android and iOS control",
+   "Any LLM",
+   "CLI and Python API"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/droidrun/mobilerun"
+  ],
+  "updated": "2026-10-18"
+ },
+ "steel": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Steel is an open-source browser API for AI agents and apps, so you can build web agents without building automation infrastructure from scratch.",
+   "It also has a hosted cloud."
+  ],
+  "who": "Developers running browser agents at scale.",
+  "features": [
+   "Browser API for agents",
+   "Open source",
+   "Hosted option"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/steel-dev/steel-browser"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-device": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "agent-device, from Callstack, provides mobile app automation and verification for AI coding agents on iOS and Android.",
+   "Agents get a live app feedback loop to inspect, control, debug and verify changes through a CLI, built-in MCP server or typed Node.js API."
+  ],
+  "who": "Mobile developers using coding agents.",
+  "features": [
+   "iOS and Android automation",
+   "CLI, MCP and Node.js API",
+   "Verify changes in the running app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/callstack/agent-device"
+  ],
+  "updated": "2026-10-18"
+ },
+ "playwright-skill": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Playwright Skill is an Agent Skill that lets coding agents write and run Playwright automation on the fly, from simple page tests to complex multi-step flows.",
+   "It is also packaged as a Claude Code plugin."
+  ],
+  "who": "Developers who want coding agents to test and automate web apps.",
+  "features": [
+   "Playwright automation",
+   "Agent Skill",
+   "Claude Code plugin"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lackeyjb/playwright-skill"
+  ],
+  "updated": "2026-10-18"
+ },
+ "turix-cua": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TuriX CUA lets AI models take hands-on actions directly on your desktop.",
+   "It ships a computer-use agent that its makers say reaches 80% success on their OSWorld-style Mac benchmark."
+  ],
+  "who": "People who want an agent to operate desktop apps.",
+  "features": [
+   "Desktop computer-use agent",
+   "Mac support",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TurixAI/TuriX-CUA"
+  ],
+  "updated": "2026-10-18"
+ },
+ "spider": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Spider is a fast web crawler and scraper written in Rust, built for concurrency.",
+   "It streams pages as they arrive, renders JavaScript only where needed, and scales from one script to a distributed fleet without code changes."
+  ],
+  "who": "Developers collecting web data for agents and LLMs.",
+  "features": [
+   "Rust crawling engine",
+   "Selective JavaScript rendering",
+   "Scales to distributed fleets"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/spider-rs/spider"
+  ],
+  "updated": "2026-10-18"
+ },
+ "unbrowse": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Unbrowse turns websites into APIs agents can call by using the first-party APIs sites already use to talk to their backends.",
+   "The makers say this makes agentic browsing 50-100x faster and 95% cheaper than driving a browser. This repo is the open-source client for the hosted service."
+  ],
+  "who": "Developers who want agents to use websites quickly and cheaply.",
+  "features": [
+   "Websites as callable APIs",
+   "Faster than browser automation (per the maker)",
+   "Open-source client"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/unbrowse-ai/unbrowse"
+  ],
+  "updated": "2026-10-18"
+ },
+ "anchor-action-index": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Anchor is a cloud-hosted browser that lets AI agents use the web like a human, in secure, authenticated environments for navigating pages, submitting forms and extracting data.",
+   "Our listing describes Action Index as a shared memory of web workflows: agents replay proven paths as deterministic code, and the model only steps in where a page changed, via Anchor's MCP server and REST API."
+  ],
+  "who": "Teams running computer-use agents on repeated web workflows.",
+  "features": [
+   "Replay proven workflows",
+   "Cloud browsers",
+   "MCP server and REST API"
+  ],
+  "faq": [],
+  "sources": [
+   "https://anchorbrowser.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "arro": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Arro is an AI assistant for your computer that walks you through tasks like signing a PDF, books meetings for you and repeats chores once you've shown it.",
+   "It is free for Windows and Mac."
+  ],
+  "who": "People who want help with repeated tasks on their computer.",
+  "features": [
+   "Guided help on tasks",
+   "Repeats chores you demonstrate",
+   "Windows and Mac"
+  ],
+  "faq": [],
+  "sources": [
+   "https://audimate.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "browserbase": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Browserbase offers cloud browsers for agents to use the web, plus managed browser agents.",
+   "It also provides search to find relevant sites and fetch to retrieve web data as agent-ready HTML, JSON or Markdown."
+  ],
+  "who": "Developers running headless browsers for agents at scale.",
+  "features": [
+   "Cloud browsers",
+   "Managed browser agents",
+   "Search and fetch primitives"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.browserbase.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "holo4-h-company": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Holo4 is H Company's family of open-weight computer-use models, released Oct 1, powering generalist computer-use agents.",
+   "H Company is an AI research lab and agentic platform; our listing notes 27B and 35B-A3B sizes."
+  ],
+  "who": "Researchers and developers building computer-use agents on open weights.",
+  "features": [
+   "Open weights",
+   "Computer-use models",
+   "27B and 35B-A3B sizes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.hcompany.ai"
+  ],
+  "updated": "2026-10-18"
  }
 }
