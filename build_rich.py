@@ -6,6 +6,7 @@ H2='<h2 style="font-size:16px;margin-bottom:10px">'
 def apply(out,x,t,catslug,prim,B):
     r=R.get(x["slug"])
     if not r: return out,None
+    if r.get("kind")=="lite": return lite(out,x,t,catslug,prim,B,r)
     n=x["name"];p=r["pricing"];cat=x["category"];cs=catslug(cat);pg=f"{B}tools/{x['slug']}.html"
     title=f"{n}: Features, Pricing & Alternatives | AgentScout"
     out=re.sub(r"<title>.*?</title>",f"<title>{e(title)}</title>",out,1,flags=re.S)
@@ -32,3 +33,24 @@ def apply(out,x,t,catslug,prim,B):
     app={"@type":"SoftwareApplication","name":n,"url":prim,"description":r["meta"],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","operatingSystem":"macOS" if x["slug"]=="coddo" else "Web","offers":offers}
     fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
     return out,(sec,app,fq,title)
+
+def lite(out,x,t,catslug,prim,B,r):
+    """Lighter rich section (Oct 2026 enrichment): grounded description, who it's for, key features, FAQ.
+    Keeps the existing About paragraph (additive) and never states pricing beyond the directory's maker-stated label."""
+    n=x["name"];cat=x["category"];cs=catslug(cat);pd=x.get("pricing_detail") or x["pricing"]
+    alts=sorted([y for y in t if y is not x and y["category"]==cat and "discontinu" not in (y.get("maturity","")+y["description"]).lower()],key=lambda y:(-(y.get("github_stars") or 0),y["name"].lower()))[:5]
+    altl=", ".join(f'<a href="{y["slug"]}.html">{e(y["name"])}</a>' for y in alts); altp=", ".join(y["name"] for y in alts)
+    pq=f"{n}'s pricing, as the maker states it: {pd}."+(" Open-source tools are free to use, though you may still pay for model API usage or a hosted plan." if re.match(r"(?i)(free, )?open[- ]?source",pd) else "")+" Check the official site for current plans."
+    faq=[(f"What is {n}?",r["long"][0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+[tuple(q) for q in r.get("faq",[])]
+    if altp: faq.append((f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}."))
+    hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
+    sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
+      +f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if "github.com" in " ".join(r.get("sources",[])) else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>'
+      +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
+      +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")
+      +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
+    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":" ".join(r["long"])[:500],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","applicationSubCategory":cat}
+    if re.match(r"(?i)(free, )?open[- ]?source",pd): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":pd}
+    if r.get("features"): app["featureList"]=r["features"]
+    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
+    return out,(sec,app,fq,f"{n}: what it does, pricing and alternatives","lite")

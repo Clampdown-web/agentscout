@@ -432,5 +432,958 @@
    "src": "https://coddo.ai/pricing"
   },
   "updated": "2026-10-18"
+ },
+ "opencode": {
+  "kind": "lite",
+  "long": [
+   "OpenCode is an open-source AI coding agent. It runs in your terminal and is also available as a desktop app (in beta), and it works with many model providers rather than a single vendor.",
+   "It ships with two built-in agents you switch between with the Tab key: build, the default full-access agent for development work, and plan, a read-only agent for analysis and code exploration that asks permission before running bash commands. A general subagent handles complex searches and multistep tasks."
+  ],
+  "who": "Developers who want an open-source terminal coding agent they can point at the model provider of their choice, including people exploring unfamiliar codebases with the read-only plan agent.",
+  "features": [
+   "Terminal coding agent plus a desktop app (beta)",
+   "Works with many model providers",
+   "Built-in build (full access) and plan (read-only) agents, switched with Tab",
+   "General subagent for complex searches and multistep tasks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/anomalyco/opencode"
+  ],
+  "updated": "2026-10-18"
+ },
+ "claude-code": {
+  "kind": "lite",
+  "long": [
+   "Claude Code is Anthropic's agentic coding tool that lives in your terminal. It understands your codebase and helps you code faster by executing routine tasks, explaining complex code and handling git workflows through natural language commands.",
+   "You can use it in the terminal, in your IDE, or by tagging @claude on GitHub. Anthropic notes that installing it via npm is deprecated in favor of its recommended install methods."
+  ],
+  "who": "Developers who want an AI agent that works directly in their terminal and repository, and teams already on a Claude plan or the Anthropic API.",
+  "features": [
+   "Runs in the terminal and reads your codebase",
+   "Executes routine tasks and explains complex code",
+   "Handles git workflows with natural language",
+   "Works in IDEs and via @claude on GitHub"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/anthropics/claude-code"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openai-codex-cli": {
+  "kind": "lite",
+  "long": [
+   "Codex CLI is a coding agent from OpenAI that runs locally on your computer. It is open source and can be used with a ChatGPT plan or the OpenAI API.",
+   "Beyond the terminal, Codex can be installed in code editors such as VS Code, Cursor and Windsurf, has a desktop app experience (codex app), and has a cloud-based agent, Codex Web, at chatgpt.com/codex. Standalone installers are available for macOS, Linux and Windows."
+  ],
+  "who": "Developers who want OpenAI's open-source coding agent in their terminal or editor, especially those who already have a ChatGPT plan.",
+  "features": [
+   "Local coding agent that runs on your computer",
+   "Editor extensions for VS Code, Cursor and Windsurf",
+   "Desktop app and a cloud agent (Codex Web)",
+   "Installers for macOS, Linux and Windows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/openai/codex"
+  ],
+  "updated": "2026-10-18"
+ },
+ "graphify": {
+  "kind": "lite",
+  "long": [
+   "Graphify turns a project into a knowledge graph that coding assistants can query instead of grepping through files. You type /graphify in your AI coding assistant and it maps your code, docs, PDFs, images and videos.",
+   "Code is parsed locally with tree-sitter, deterministically and without an LLM, so nothing leaves your machine; docs, PDFs and media use your assistant's model or a configured API key. Every edge is tagged as extracted from the source or inferred, and it is a real graph rather than a vector index. A separate hosted product, Graphify Cloud, adds always-on, cross-repo features with a free 14-day trial."
+  ],
+  "who": "Developers using AI coding assistants on larger projects who want the agent to navigate code and docs through a structured map rather than raw file search.",
+  "features": [
+   "/graphify command inside your coding assistant",
+   "Local tree-sitter code parsing with no LLM",
+   "Edges labeled EXTRACTED or INFERRED",
+   "Graph you can traverse, not an embedding index",
+   "Optional hosted Graphify Cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Graphify-Labs/graphify"
+  ],
+  "updated": "2026-10-18"
+ },
+ "gemini-cli": {
+  "kind": "lite",
+  "long": [
+   "Gemini CLI is Google's open-source AI agent that brings Gemini into your terminal, giving lightweight, direct access from your prompt to the model.",
+   "Its README notes that for unpaid-tier and Google One users, Gemini CLI was replaced by Antigravity CLI on June 18, 2026, and that Gemini CLI is not optimized for the latest Gemini models; Google points to Antigravity for the best coding experience with them."
+  ],
+  "who": "Developers who want an open-source terminal agent for Gemini models. Check the current README first, since Google now recommends Antigravity CLI for many users.",
+  "features": [
+   "Open-source terminal agent for Gemini",
+   "Lightweight, direct prompt-to-model access",
+   "Successor for unpaid tier: Antigravity CLI (per the README)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/google-gemini/gemini-cli"
+  ],
+  "updated": "2026-10-18"
+ },
+ "claude-mem": {
+  "kind": "lite",
+  "long": [
+   "Claude-Mem is a persistent memory compression system built for Claude Code. It preserves context across sessions by automatically capturing tool-usage observations, generating semantic summaries and making them available to future sessions.",
+   "That lets the agent keep continuity of knowledge about a project after sessions end or reconnect. The installer offers a hosted memory option with a 30-day free trial after a sign-in, and a local observer is available as an opt-in."
+  ],
+  "who": "Claude Code users (and other coding-agent users) who are tired of re-explaining a project at the start of every session.",
+  "features": [
+   "Captures tool-usage observations automatically",
+   "Generates semantic summaries for later sessions",
+   "Keeps project knowledge across sessions and reconnects",
+   "Hosted memory with a free trial, or an opt-in local observer"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/thedotmack/claude-mem"
+  ],
+  "updated": "2026-10-18"
+ },
+ "orca": {
+  "kind": "lite",
+  "long": [
+   "Orca is an agent development environment for running coding agents such as Codex, Claude Code, OpenCode or Pi side by side, each in its own git worktree and tracked in one place.",
+   "You can fan one prompt across several agents, compare the results and merge the winner, review diffs and send line comments back to an agent, browse PRs and issues in-app, and run agents on a remote machine. A mobile companion app lets you monitor agents and send follow-ups from your phone."
+  ],
+  "who": "Developers who run several coding agents in parallel on their own subscriptions and want one place to launch, compare and review their work.",
+  "features": [
+   "Parallel agents in isolated git worktrees",
+   "Fan out one prompt and merge the best result",
+   "Diff review with comments sent back to the agent",
+   "Remote machines with auto-reconnect and port forwarding",
+   "Mobile companion app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/stablyai/orca"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openhands": {
+  "kind": "lite",
+  "long": [
+   "OpenHands is an open-source platform for autonomous coding agents. Its Agent Canvas is a self-hosted developer control center for starting agent conversations and automating everyday tasks, such as publishing reports to Slack or breaking GitHub issues down into tasks.",
+   "It runs locally by default but can connect to local, remote and cloud backends, and it can run OpenHands as well as other agents such as Claude Code, Codex, Gemini, Pi, OpenCode or any ACP-compatible agent. A paid cloud option is also offered."
+  ],
+  "who": "Engineering teams and developers who want a self-hosted, always-on setup for coding agents and automations, with the option of a hosted cloud.",
+  "features": [
+   "Self-hosted Agent Canvas control center",
+   "Runs OpenHands, Claude Code, Codex, Gemini and other ACP agents",
+   "Local, remote and cloud backends",
+   "Automations such as Slack reports and GitHub issue breakdowns"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/OpenHands/OpenHands"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cline": {
+  "kind": "lite",
+  "long": [
+   "Cline is an open-source coding agent that works in your IDE, in the terminal and as a desktop app. In VS Code it creates files, runs commands, browses the web and uses tools, with human-in-the-loop approval for each step.",
+   "There is also a CLI for interactive chat or fully headless runs in CI/CD and scripts, a native desktop app for macOS and Windows that can schedule routines and manage models, plugins and MCP servers, and a JetBrains plugin."
+  ],
+  "who": "Developers who want an open-source coding agent inside VS Code or JetBrains with step-by-step approvals, plus teams that want to script it in CI.",
+  "features": [
+   "VS Code extension with human-in-the-loop approvals",
+   "CLI with headless mode for CI/CD",
+   "Desktop app for macOS and Windows",
+   "JetBrains plugin",
+   "MCP server management"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cline/cline"
+  ],
+  "updated": "2026-10-18"
+ },
+ "strix": {
+  "kind": "lite",
+  "long": [
+   "Strix is an open-source AI penetration-testing tool: autonomous agents that act like real attackers, run your code dynamically, find vulnerabilities and validate them with actual proofs of concept.",
+   "It integrates with GitHub Actions and CI/CD pipelines so it can scan every pull request and block insecure code before it reaches production. A cloud offering sits alongside the open-source project."
+  ],
+  "who": "Developers and security teams who want fast, automated security testing of their own applications, including in CI.",
+  "features": [
+   "Autonomous pentesting agents",
+   "Findings validated with proofs of concept",
+   "GitHub Actions and CI/CD integration",
+   "Open source with a cloud option"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/usestrix/strix"
+  ],
+  "updated": "2026-10-18"
+ },
+ "open-interpreter": {
+  "kind": "lite",
+  "long": [
+   "Open Interpreter is a coding agent optimized for low-cost models. It is a fork of OpenAI's Codex that focuses on emulating the agent harness that gets the best performance out of cheaper and open-weight models.",
+   "A /harness command switches the active harness, it works in ACP-compatible editors via interpreter acp, and it speaks the same Codex exec protocol, so Codex SDK users can switch with a one-line change. You start a session by typing i or interpreter in your terminal."
+  ],
+  "who": "Developers who want a terminal coding agent that gets more out of low-cost or open-weight models than general-purpose harnesses do.",
+  "features": [
+   "Fork of OpenAI's Codex tuned for low-cost models",
+   "Switchable harness modes via /harness",
+   "Works in ACP-compatible editors",
+   "Compatible with the Codex SDK exec protocol"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/openinterpreter/openinterpreter"
+  ],
+  "updated": "2026-10-18"
+ },
+ "goose": {
+  "kind": "lite",
+  "long": [
+   "goose is a general-purpose, open-source AI agent that runs on your machine. It is not just for code: it can also be used for research, writing, automation and data analysis.",
+   "It comes as a native desktop app for macOS, Linux and Windows, a full CLI and an API, and is built in Rust. goose works with 15+ providers, including Anthropic, OpenAI, Google, Ollama, OpenRouter, Azure and Bedrock, using API keys or existing Claude, ChatGPT or Gemini subscriptions via ACP, and connects to extensions through MCP."
+  ],
+  "who": "Developers and power users who want one local agent, with a desktop app or CLI, that can install, run, edit and test code with the model of their choice.",
+  "features": [
+   "Desktop app, CLI and API",
+   "Built in Rust",
+   "15+ model providers, including local models via Ollama",
+   "Uses existing Claude, ChatGPT or Gemini subscriptions via ACP",
+   "MCP extensions"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/aaif-goose/goose",
+   "https://goose-docs.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "herdr": {
+  "kind": "lite",
+  "long": [
+   "Herdr is a runtime for running and managing many coding agents side by side. It owns their terminals rather than wrapping or replacing the agents, so it works with Claude Code, Codex, Cursor, OpenCode, Grok and others.",
+   "Terminals keep running in a background server when you close the client or lose an SSH connection, and after a restart herdr restores the saved layout and can resume supported sessions. It combines local and SSH machines in one window, marks every pane as working, blocked or idle, and lets agents drive it through a CLI and socket API."
+  ],
+  "who": "Developers juggling several terminal coding agents across one or more machines who want to see at a glance which one needs attention.",
+  "features": [
+   "Background server keeps sessions alive",
+   "Local and SSH machines in one window",
+   "Pane status: working, blocked or idle",
+   "CLI and socket API for agents",
+   "tmux-style keys plus mouse; plugins"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/herdrdev/herdr"
+  ],
+  "updated": "2026-10-18"
+ },
+ "codewhale": {
+  "kind": "lite",
+  "long": [
+   "Codewhale is an open-source coding agent that works with any model. It reads your project, edits files, runs commands and checks its own work in your terminal, using a hosted or local model you choose.",
+   "It is written in Rust, with tool approvals and review flows, and its installer downloads checksum-verified binaries for macOS and Linux."
+  ],
+  "who": "Developers who want a model-agnostic terminal coding agent, including people running local models.",
+  "features": [
+   "Works with hosted or local models",
+   "Reads, edits and runs commands in your project",
+   "Tool approvals and review flows",
+   "Rust engine with checksum-verified installers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/codewhale-hq/Codewhale"
+  ],
+  "updated": "2026-10-18"
+ },
+ "oh-my-claudecode": {
+  "kind": "lite",
+  "long": [
+   "Oh My Claudecode (OMC) is a multi-agent orchestration layer for Claude Code. It coordinates teams of specialized agents so you can use Claude Code's power without learning all of its configuration, under the tagline \"zero learning curve.\"",
+   "It installs through the Claude Code plugin marketplace (recommended) or an npm CLI, and the same maintainers offer oh-my-codex for OpenAI Codex CLI users."
+  ],
+  "who": "Claude Code users who want ready-made multi-agent workflows rather than building their own agent teams.",
+  "features": [
+   "Multi-agent orchestration for Claude Code",
+   "Install via the Claude Code marketplace or npm",
+   "Sister project oh-my-codex for Codex CLI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Yeachan-Heo/oh-my-claudecode"
+  ],
+  "updated": "2026-10-18"
+ },
+ "deepseek-reasonix": {
+  "kind": "lite",
+  "long": [
+   "DeepSeek-Reasonix is an open-source (MIT) coding agent for your terminal, desktop, browser and editor, built for complex software-engineering tasks on DeepSeek models. It runs on your computer with the model of your choice.",
+   "It reads your project, edits files and runs commands and tests. You can have it ask before each step or work on its own within limits you set, and files its edit tools changed can be rewound. A Studio desktop app is the suggested starting point."
+  ],
+  "who": "Developers who want an open-source coding agent tuned for DeepSeek models, with approval controls and the ability to undo edits.",
+  "features": [
+   "Terminal, desktop, browser and editor clients",
+   "Ask-before-each-step or autonomous within limits",
+   "Rewind files changed by its edit tools",
+   "MIT license; model of your choice"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/esengine/DeepSeek-Reasonix"
+  ],
+  "updated": "2026-10-18"
+ },
+ "oh-my-pi": {
+  "kind": "lite",
+  "long": [
+   "Oh My Pi is a terminal coding agent with IDE features wired in, built by Stencil Labs as a fork of Pi by Mario Zechner.",
+   "Its README lists 60+ providers, 31 built-in tools, 14 LSP operations and 28 debugger (DAP) operations on a Rust core of about 80k lines."
+  ],
+  "who": "Developers who want a terminal coding agent with language-server and debugger capabilities built in, and support for many model providers.",
+  "features": [
+   "60+ model providers",
+   "31 built-in tools",
+   "LSP and DAP (debugger) operations",
+   "Rust core; fork of Pi"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/can1357/oh-my-pi"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pentagi": {
+  "kind": "lite",
+  "long": [
+   "PentAGI is an open-source, self-hosted multi-agent system for autonomous penetration testing. You describe a target and a goal in plain language, and a team of specialized AI agents plans the work, runs 20+ professional tools such as nmap, Metasploit and sqlmap inside an isolated Docker sandbox, and hands you a report.",
+   "It runs on your own servers with your choice of model: 10+ cloud LLM providers, your own OpenAI-compatible gateway, or local models through Ollama or vLLM. Results are kept in PostgreSQL with pgvector, and an optional Neo4j knowledge graph tracks hosts, services and findings."
+  ],
+  "who": "Security engineers, penetration testers, researchers and red teams who want an autonomous assistant on their own infrastructure, for authorized testing only.",
+  "features": [
+   "Plain-language targets and goals",
+   "20+ security tools in an isolated Docker sandbox",
+   "10+ cloud LLM providers or local models",
+   "Memory in PostgreSQL/pgvector; optional Neo4j graph",
+   "Generated reports"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/vxcontrol/pentagi"
+  ],
+  "updated": "2026-10-18"
+ },
+ "context-mode": {
+  "kind": "lite",
+  "long": [
+   "Context Mode is an MCP server that optimizes a coding agent's context window. Its README describes how raw tool output, such as a Playwright snapshot (56 KB) or twenty GitHub issues (59 KB), quickly fills the context.",
+   "Sandboxed tools keep raw data out of the context (the README cites 315 KB reduced to 5.4 KB), and every file edit, git operation, task, error and decision is tracked in SQLite and retrieved by search after the conversation compacts, so the agent picks up where it left off."
+  ],
+  "who": "Heavy users of coding agents and MCP tools who keep running out of context or losing track of work after compaction.",
+  "features": [
+   "MCP server that sandboxes tool output",
+   "Session events tracked in SQLite",
+   "BM25 search retrieves only relevant context after compaction",
+   "Large context savings reported by the maker"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mksglu/context-mode"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentmemory": {
+  "kind": "lite",
+  "long": [
+   "AgentMemory is a persistent memory layer for AI coding agents, so your agent remembers your project instead of needing it re-explained. It supports Claude Code, GitHub Copilot CLI, Cursor, Gemini CLI, Codex CLI, Hermes, OpenClaw, pi, OpenCode and any MCP client.",
+   "It builds on Andrej Karpathy's LLM Wiki pattern with confidence scoring, lifecycle, knowledge graphs and hybrid search. It needs Node.js 20 or newer, and the first run is an interactive setup where you pick which agents to wire up and an LLM provider, or stay keyless."
+  ],
+  "who": "Developers who use one or more coding agents and want memory that carries across sessions and tools.",
+  "features": [
+   "Works with many coding agents and any MCP client",
+   "Confidence scoring, lifecycle and knowledge graphs",
+   "Hybrid search",
+   "Interactive setup; keyless option"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/rohitg00/agentmemory"
+  ],
+  "updated": "2026-10-18"
+ },
+ "crush": {
+  "kind": "lite",
+  "long": [
+   "Crush is Charm's terminal coding agent, described as \"your new coding bestie\" for your favorite terminal. It wires your tools, code and workflows into the LLM of your choice.",
+   "You can choose from many LLMs or add your own via OpenAI- or Anthropic-compatible APIs, switch models mid-session while keeping context, keep multiple sessions per project, use LSPs for extra context and add capabilities through MCP (http, stdio and sse)."
+  ],
+  "who": "Developers who live in the terminal and want a polished TUI coding agent that is not tied to one model.",
+  "features": [
+   "Multi-model, including OpenAI- or Anthropic-compatible APIs",
+   "Switch models mid-session",
+   "Multiple sessions per project",
+   "LSP-enhanced context",
+   "MCP support (http, stdio, sse)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/charmbracelet/crush"
+  ],
+  "updated": "2026-10-18"
+ },
+ "qwen-code": {
+  "kind": "lite",
+  "long": [
+   "Qwen Code is the Qwen team's open-source AI coding agent for your terminal, editor, desktop, browser and chat.",
+   "It includes auto-memory, auto-skills, subagents, agent teams and MCP out of the box. The framework and the Qwen models are open source, and it supports OpenAI, Anthropic, Gemini and Qwen APIs as well as third-party providers and local models via Ollama or vLLM, switchable at runtime. IDE plugins, a desktop app, a web UI and SDKs are available."
+  ],
+  "who": "Developers who want an open-source coding agent that pairs naturally with open Qwen models but can switch to other providers or local models.",
+  "features": [
+   "Auto-memory, auto-skills, subagents and agent teams",
+   "MCP support",
+   "OpenAI, Anthropic, Gemini, Qwen and local models",
+   "IDE plugins, desktop app, web UI and SDKs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/QwenLM/qwen-code"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vibe-kanban": {
+  "kind": "lite",
+  "long": [
+   "Vibe Kanban is a kanban board for planning and running tasks with coding agents such as Claude Code, Gemini CLI, Codex and Amp. You plan work as kanban issues, privately or with a team, then create workspaces where agents execute them.",
+   "Note: the project's README says Vibe Kanban is sunsetting, so check the announcement before adopting it."
+  ],
+  "who": "Developers and teams who spend much of their time planning and reviewing coding-agent work. Because the project is sunsetting, it suits existing users more than new adopters.",
+  "features": [
+   "Plan with kanban issues",
+   "Run coding agents in workspaces",
+   "Works with Claude Code, Gemini CLI, Codex and Amp",
+   "Project is sunsetting (per README)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/BloopAI/vibe-kanban"
+  ],
+  "updated": "2026-10-18"
+ },
+ "beads": {
+  "kind": "lite",
+  "long": [
+   "Beads (bd) is a distributed, graph-based issue tracker for AI agents, powered by Dolt. It gives coding agents persistent, structured memory by replacing messy Markdown plans with a dependency-aware graph.",
+   "That lets agents handle long-horizon tasks without losing context. It is a CLI you install once and use everywhere, and bd init sets up AGENTS.md so agents can discover the workflow, with project setup for Claude Code, Codex and Cursor. It runs on macOS, Linux, Windows and FreeBSD."
+  ],
+  "who": "Developers who give coding agents long-running, multi-step work and want the plan stored as a structured graph rather than ad hoc notes.",
+  "features": [
+   "Dependency-aware issue graph for agents",
+   "Powered by Dolt",
+   "bd init writes AGENTS.md",
+   "Claude Code, Codex and Cursor setup",
+   "macOS, Linux, Windows, FreeBSD"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/gastownhall/beads"
+  ],
+  "updated": "2026-10-18"
+ },
+ "planning-with-files": {
+  "kind": "lite",
+  "long": [
+   "Planning With Files is a planning skill for AI coding agents that keeps the plan on disk. It maintains task_plan.md, findings.md and progress.md files, so the plan survives context loss, /clear, crashes and compaction.",
+   "Rather than a prompt the agent might ignore, it uses lifecycle hooks that fire every turn to inject the relevant planning context. Recovery reads project files only."
+  ],
+  "who": "Coding-agent users working on long tasks who lose the thread when context is cleared or compacted.",
+  "features": [
+   "Persistent Markdown plan files",
+   "Lifecycle hooks inject the plan every turn",
+   "Survives /clear, crashes and compaction"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/OthmanAdi/planning-with-files"
+  ],
+  "updated": "2026-10-18"
+ },
+ "happy-coder": {
+  "kind": "lite",
+  "long": [
+   "Happy Coder is an open-source (MIT) mobile and desktop app for running and controlling coding agents such as Claude Code and Codex with the subscriptions you already pay for. It adds a harness, not another bill.",
+   "It runs on your own hardware and your projects stay ordinary folders. Sessions are available on your phone with end-to-end encryption between devices, and it is multiplayer: you can invite someone into a session so you both watch and steer the same agent."
+  ],
+  "who": "People who use Claude Code, Codex or similar agents and want to monitor and steer them from their phone or share sessions with a colleague.",
+  "features": [
+   "Uses your existing Claude, Codex and other subscriptions",
+   "End-to-end encrypted mobile app",
+   "Multiplayer sessions",
+   "Runs on your own hardware; MIT license"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/slopus/happy"
+  ],
+  "updated": "2026-10-18"
+ },
+ "paseo": {
+  "kind": "lite",
+  "long": [
+   "Paseo is an open-source agentic development environment for desktop, mobile, web and CLI, with one interface for Claude Code, Codex, Copilot, OpenCode, Pi and other agents.",
+   "The desktop app puts agents, editor, terminals, diffs, pull requests and a browser in one window. You can run many agents at once, each in its own worktree, on one or several machines; agents can create worktrees and launch and talk to other agents. The native iOS and Android app is the full app."
+  ],
+  "who": "Developers who orchestrate several coding agents and want the same environment on desktop and phone, running on their own machines.",
+  "features": [
+   "Parallel agents in separate worktrees",
+   "Agents can launch and message other agents",
+   "Editor, terminals, diffs, PRs and browser in one window",
+   "Self-hosted; native iOS and Android apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/getpaseo/paseo"
+  ],
+  "updated": "2026-10-18"
+ },
+ "jcode": {
+  "kind": "lite",
+  "long": [
+   "jcode is a high-performance coding agent harness written in Rust, designed to run dozens of agents in parallel with low memory use and no lag. Its README publishes memory and latency benchmarks against other agents.",
+   "When you spawn two or more agents in the same repo, its server manages them for native collaboration: if one agent edits a file another has read, the second is notified and can check the diff for conflicts."
+  ],
+  "who": "Developers who fan out many coding agents at once and care about resource use and agent-to-agent coordination.",
+  "features": [
+   "Rust harness built for many parallel agents",
+   "Headless swarm workers",
+   "Server notifies agents of conflicting edits",
+   "SDK and published benchmarks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/1jehuang/jcode"
+  ],
+  "updated": "2026-10-18"
+ },
+ "coder": {
+  "kind": "lite",
+  "long": [
+   "Coder is a self-hosted platform for cloud development environments and AI coding agents. Workspaces are defined in Terraform (EC2 VMs, Kubernetes pods, Docker containers and more), connected through a secure WireGuard tunnel, and automatically shut down when idle.",
+   "Coder Agents runs a native AI coding agent whose loop executes in the control plane on your infrastructure, with no API keys in workspaces. It supports any model (Anthropic, OpenAI, Google, Bedrock or self-hosted) with centralized model governance, cost tracking and audit logging."
+  ],
+  "who": "Platform and engineering teams that want governed, self-hosted dev environments for both developers and AI agents.",
+  "features": [
+   "Terraform-defined workspaces",
+   "Auto-shutdown of idle resources",
+   "Coding agents running on your infrastructure",
+   "Bring any model; no LLM keys in workspaces",
+   "Governance, cost tracking and audit logs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/coder/coder"
+  ],
+  "updated": "2026-10-18"
+ },
+ "deepcode": {
+  "kind": "lite",
+  "long": [
+   "DeepCode is an open agentic coding system from HKUDS that uses multi-agent orchestration to turn research papers and natural-language specs into code.",
+   "It provides TUI, desktop and web clients over one shared local service, which share projects, session history, models, skills, permissions, goals and automations."
+  ],
+  "who": "Researchers and developers who want to turn papers or written specifications into working code with a multi-agent system.",
+  "features": [
+   "Paper- and spec-to-code generation",
+   "Multi-agent orchestration",
+   "TUI, desktop and web clients over one local service"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/HKUDS/DeepCode"
+  ],
+  "updated": "2026-10-18"
+ },
+ "superset": {
+  "kind": "lite",
+  "long": [
+   "Superset is an agentic IDE for running Claude Code, Codex or another CLI agent with terminals, code review and browser previews in one workspace, so you can orchestrate many agents in parallel.",
+   "You add a repository, create a workspace, choose a CLI agent and describe a change, then inspect the patch, run tests and preview your app in the browser pane before committing. It targets macOS (Apple Silicon and Intel), with an experimental Linux AppImage; Git is the only requirement."
+  ],
+  "who": "Developers on macOS who run CLI coding agents and want review and preview built into the same workspace.",
+  "features": [
+   "Works with Claude Code, Codex and other CLI agents",
+   "Parallel workspaces",
+   "Change review, terminals and browser preview",
+   "macOS app; experimental Linux build"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/superset-sh/superset"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mimo-code": {
+  "kind": "lite",
+  "long": [
+   "MiMo Code is Xiaomi's terminal-native AI coding assistant. It reads and writes code, runs commands, manages Git and uses a persistent memory system to keep an understanding of your project across sessions.",
+   "It works with major model providers and is tuned for Xiaomi's MiMo models. It is also the core engine of the Xiaomi MiMo Desktop app, which handles office work, design, coding and multimodal creation."
+  ],
+  "who": "Developers who want a terminal coding agent with long-term project memory, especially those using Xiaomi's MiMo models.",
+  "features": [
+   "Reads and writes code, runs commands and manages Git",
+   "Persistent project memory across sessions",
+   "Smart orchestration across models and tools",
+   "Powers the MiMo Desktop app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/XiaomiMiMo/MiMo-Code"
+  ],
+  "updated": "2026-10-18"
+ },
+ "qodo": {
+  "kind": "lite",
+  "long": [
+   "Qodo makes AI code review and testing agents that work in the IDE, the terminal and pull requests to catch issues before merge. It integrates with GitHub, GitLab, Bitbucket and Azure DevOps, and offers a free version for open-source projects.",
+   "Its open-source PR-Agent project, now community-maintained and described as a legacy project of Qodo, is separate from Qodo's main code-review product."
+  ],
+  "who": "Development teams that want automated, AI-assisted code review on pull requests across common Git hosts.",
+  "features": [
+   "AI code review on pull requests",
+   "IDE and terminal agents",
+   "GitHub, GitLab, Bitbucket and Azure DevOps",
+   "Free version for open-source projects"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/The-PR-Agent/pr-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-orchestrator": {
+  "kind": "lite",
+  "long": [
+   "Agent Orchestrator (Orchestrator.inc) runs and supervises teams of coding agents from planning to merge. It is a local desktop workspace where each coding task gets its own agent, workspace and feedback loop.",
+   "For Git-backed work each worker gets its own branch and worktree, and a project-aware orchestrator plans and delegates larger outcomes. A live kanban follows every worker, pull request, CI run and review."
+  ],
+  "who": "Developers running several coding agents across one project who need help splitting work, avoiding branch collisions and following changes through review.",
+  "features": [
+   "Per-task agent, workspace and branch/worktree",
+   "Project-aware orchestrator for larger goals",
+   "Live kanban of workers, PRs, CI and reviews",
+   "Choice of coding agent and model per task"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/OrchestratorInc/agent-orchestrator"
+  ],
+  "updated": "2026-10-18"
+ },
+ "humanlayer": {
+  "kind": "lite",
+  "long": [
+   "HumanLayer is a multiplayer coding-agent IDE and cloud that brings agent sessions, plan artifacts and code diffs together so a team can collaborate and ship.",
+   "You bring your own AI subscriptions or API keys, such as Claude or Codex, so there is no separate per-token bill. The company says it is SOC 2 Type II compliant, with ZDR and DPA agreements on enterprise tiers. Its older open-source code on GitHub is marked deprecated in favor of the rebuild at humanlayer.com."
+  ],
+  "who": "Engineering teams who want to collaborate with each other and with coding agents on plans and diffs in one shared place.",
+  "features": [
+   "Real-time human and agent collaboration on artifacts",
+   "Bring your own subscriptions or keys",
+   "Remote daemons",
+   "SOC 2 Type II (per the maker)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/humanlayer/humanlayer",
+   "https://www.humanlayer.dev/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openchamber": {
+  "kind": "lite",
+  "long": [
+   "OpenChamber is an open-source workspace for running and reviewing AI coding work on desktop, web, VS Code and mobile, built around the OpenCode agent. Your projects and sessions stay available when you switch devices.",
+   "Session Goals keep an agent working until it reaches a goal, gets blocked or hits a limit you set. Multi-run sends one task to up to five models so you can compare results or merge the best parts with Fusion, and Changes Walkthrough turns a large diff into a guided tour."
+  ],
+  "who": "OpenCode users who want a richer interface to run, compare and review agent work across devices.",
+  "features": [
+   "Desktop, web, VS Code and mobile",
+   "Session Goals",
+   "Multi-run across up to five models, plus Fusion",
+   "Changes Walkthrough for large diffs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/openchamber/openchamber"
+  ],
+  "updated": "2026-10-18"
+ },
+ "open-swe": {
+  "kind": "lite",
+  "long": [
+   "Open SWE is LangChain's open-source asynchronous coding agent, built on Deep Agents. It investigates a codebase, implements changes, validates them and delivers a pull request, and it can review PRs, monitor CI and respond to feedback.",
+   "Its README says it is under active development with breaking changes, is not accepting issues or contributions, and that deploying it as is requires access to the Managed Deep Agents private beta; otherwise LangChain suggests forking and adapting it."
+  ],
+  "who": "Teams experimenting with background coding agents that take work from issues and return pull requests, and who are comfortable adapting early-stage code.",
+  "features": [
+   "Issue-to-pull-request workflow",
+   "PR reviews that learn repo preferences",
+   "CI monitoring and feedback responses",
+   "Built on LangChain Deep Agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/langchain-ai/open-swe"
+  ],
+  "updated": "2026-10-18"
+ },
+ "trail-code": {
+  "kind": "lite",
+  "long": [
+   "Trail Code is a self-learning context layer for coding agents. It gives Claude Code, Cursor, Codex and others a map of your code, plus what your team has learned about it, to make them faster and cheaper on large codebases.",
+   "The maker reports 46% fewer tool calls and 60% less time, and publishes SWE-bench Verified and cost comparisons. It was previously called Graft, and graft commands still work."
+  ],
+  "who": "Teams using coding agents on large codebases who want to cut tool calls, tokens and time.",
+  "features": [
+   "Code map for coding agents",
+   "Team learnings shared with agents",
+   "Works with Claude Code, Cursor and Codex",
+   "Published benchmark results"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/trailhq/Trail-Code"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ralph-for-claude-code": {
+  "kind": "lite",
+  "long": [
+   "Ralph for Claude Code is an autonomous development loop that keeps Claude Code iterating on your project until a task is complete. It implements Geoffrey Huntley's \"Ralph\" technique.",
+   "Safeguards prevent infinite loops and API overuse: a dual-condition exit gate needs both completion indicators and an explicit exit signal, there is configurable rate limiting (100 calls an hour by default) and a circuit breaker with error detection. It installs once as a global command."
+  ],
+  "who": "Claude Code users who want hands-off, iterative development runs with guardrails.",
+  "features": [
+   "Continuous autonomous loops for Claude Code",
+   "Dual-condition exit detection",
+   "Configurable rate limiting",
+   "Circuit breaker for runaway loops"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/frankbria/ralph-claude-code"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hunk": {
+  "kind": "lite",
+  "long": [
+   "Hunk is an interactive terminal diff viewer for reviewing code changes, including what coding agents changed. It is built on OpenTUI and Pierre diffs.",
+   "It offers a multi-file review stream with sidebar navigation, inline AI and agent annotations beside the code, split and unified layouts, a watch mode and Git difftool support. Prebuilt binaries cover macOS, Linux and Windows x64."
+  ],
+  "who": "Developers who review agent-generated changes in the terminal and want a faster, review-first diff view.",
+  "features": [
+   "Multi-file review stream",
+   "Inline agent annotations",
+   "Split, unified and auto layouts",
+   "Watch mode and Git difftool support"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modem-dev/hunk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "oh-my-opencode-slim": {
+  "kind": "lite",
+  "long": [
+   "Oh My OpenCode Slim is an agent orchestration plugin for OpenCode. It includes a built-in team of specialized agents that can scout a codebase, look up fresh documentation, review architecture, handle UI work and carry out well-scoped implementation tasks.",
+   "An orchestrator plans the work, dispatches specialists as background tasks and reconciles their results, routing each part of the job to the best-suited agent to balance quality, speed and cost. You can mix any models."
+  ],
+  "who": "OpenCode users who want a lean, ready-made multi-agent setup with automatic task delegation.",
+  "features": [
+   "Six specialized agents under one orchestrator",
+   "Automatic delegation as background tasks",
+   "Mix any models"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/alvinunreal/oh-my-opencode-slim"
+  ],
+  "updated": "2026-10-18"
+ },
+ "plannotator": {
+  "kind": "lite",
+  "long": [
+   "Plannotator is a local, browser-based review surface for AI coding agents, including Claude Code, Codex, Copilot CLI, Gemini CLI, OpenCode, Kiro, Droid, Amp and Pi.",
+   "It plugs into your agent through hooks and commands. When the agent proposes a plan or HTML, or finishes writing code, the work opens in your browser so you can mark it up, comment on diffs or PRs, suggest code and send the feedback straight back to the agent."
+  ],
+  "who": "Developers who want to review and annotate agent plans and diffs visually before the agent continues.",
+  "features": [
+   "Annotate plans, specs, Markdown and HTML",
+   "Review local diffs and remote PRs",
+   "Feedback goes straight back to the agent",
+   "Works with many coding agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/backnotprop/plannotator"
+  ],
+  "updated": "2026-10-18"
+ },
+ "terax": {
+  "kind": "lite",
+  "long": [
+   "Terax is a lightweight, open-source, terminal-first AI development environment built on Tauri 2, Rust and React 19. It is about 7-8 MB on disk, with no telemetry and no account.",
+   "It combines a native PTY terminal with WebGL rendering, an agentic AI side panel that uses your own keys or fully local models, a code editor, file explorer, source control with a git graph and a web preview pane. Its maker says it is returning to active development, with a major v0.9.0 update in progress."
+  ],
+  "who": "Developers who want a small, private, terminal-centered workspace with an AI agent built in.",
+  "features": [
+   "Native terminal with WebGL rendering",
+   "AI side panel with your own keys or local models",
+   "Editor, file explorer and git graph",
+   "No telemetry, no account"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/crynta/terax-ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "worktrunk": {
+  "kind": "lite",
+  "long": [
+   "Worktrunk is a CLI for Git worktree management, designed for running AI agents in parallel. Git worktrees give each agent its own working directory so agents don't step on each other.",
+   "Three core commands make worktrees as easy as branches, and there are quality-of-life features such as hooks to automate local workflows and copy-on-write build caches. Full documentation is at worktrunk.dev."
+  ],
+  "who": "Developers running several coding agents such as Claude Code or Codex at once on the same repository.",
+  "features": [
+   "Simple worktree commands",
+   "Hooks for local workflows",
+   "Copy-on-write build caches"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/max-sixty/worktrunk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "munder-difflin": {
+  "kind": "lite",
+  "long": [
+   "Munder Difflin is a free, open-source multi-agent harness that runs terminal coding agents together like an office, using the subscriptions you already pay for.",
+   "It wraps Claude Code, OpenAI Codex, Gemini CLI, Grok, Kimi Code, Qwen, OpenCode, Crush, GitHub Copilot CLI, Cursor and more, with bring-your-own keys and local LLMs. Agents message, route and remember, coordinated by a lead agent and shown as avatars on a shared office floor. Downloads are available for macOS, Windows and Linux."
+  ],
+  "who": "Developers who want to coordinate many terminal coding agents on their own machine with a visual overview.",
+  "features": [
+   "Wraps many terminal coding agents",
+   "Uses existing subscriptions, your own keys or local LLMs",
+   "Agent messaging, routing and memory",
+   "Desktop app for macOS, Windows and Linux"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/HarnessMD/munder-difflin"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mini-swe-agent": {
+  "kind": "lite",
+  "long": [
+   "mini-SWE-agent is a tiny coding agent from the SWE-bench and SWE-agent team, with about 100 lines of Python for the agent class. It solves GitHub issues or helps on the command line.",
+   "The team reports it scores above 74% on SWE-bench Verified and starts faster than Claude Code. It supports local environments, Docker or Podman, Singularity/Apptainer and more, and the README says it is used by Meta, NVIDIA, IBM, Princeton and Stanford, among others."
+  ],
+  "who": "Researchers and developers who want a minimal, hackable agent for benchmarks, evaluations or simple command-line help.",
+  "features": [
+   "About 100 lines for the agent class",
+   "Strong SWE-bench Verified results (per the team)",
+   "Local, Docker/Podman and Apptainer environments",
+   "Minimal dependencies"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/SWE-agent/mini-swe-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "superplane": {
+  "kind": "lite",
+  "long": [
+   "SuperPlane is an open-source factory for one-shot engineering. It turns high-confidence backlog issues into verified, review-ready pull requests so engineers can focus on work that needs judgment.",
+   "It coordinates coding agents, source control, CI, review, approvals and feedback in one visible system, evaluates which issues agents can handle with confidence, applies the same guardrails to every run and sends failures back to the agent with context. It is built on an Apache 2.0 engine and can run in the cloud or on-prem."
+  ],
+  "who": "Engineering teams that want to automate routine backlog work with agents while keeping ambiguous decisions with people.",
+  "features": [
+   "Backlog issues to review-ready PRs",
+   "Workflow-level guardrails on every run",
+   "Coordinates agents, CI, review and approvals",
+   "Apache 2.0 engine; cloud or on-prem"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/superplanehq/superplane"
+  ],
+  "updated": "2026-10-18"
+ },
+ "gentle-ai": {
+  "kind": "lite",
+  "long": [
+   "Gentle AI configures the coding agents you already use with shared rules, skills and settings, describing itself as a deterministic engineering environment that gives your agent memory, a workflow and evidence.",
+   "Its Engram component lets the agent write down what it learns and consult it before asking you, so context builds up across sessions. The README lists 17 integrations with native configuration."
+  ],
+  "who": "Developers who want consistent rules, memory and workflow across the coding agents they already use.",
+  "features": [
+   "Shared rules, skills and settings for existing agents",
+   "Engram memory across sessions",
+   "17 integrations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Gentleman-Programming/gentle-ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openrig": {
+  "kind": "lite",
+  "long": [
+   "OpenRig builds persistent teams of coding agents such as Claude Code, Codex and Pi. You define your agent team in YAML and boot it with one command, and the agents are managed as one system.",
+   "You talk to a lead agent about the outcome you want, and it coordinates specialists and brings back results and decisions that need your attention, keeping the team's work and context in stable places."
+  ],
+  "who": "Developers who want to run Claude Code, Codex and other agents as an organized, long-lived team rather than separate terminal sessions.",
+  "features": [
+   "Agent teams defined in YAML",
+   "Claude Code and Codex in the same rig",
+   "Lead agent coordinates specialists"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mvschwarz/openrig"
+  ],
+  "updated": "2026-10-18"
+ },
+ "backlog-md": {
+  "kind": "lite",
+  "long": [
+   "Backlog.md is a Markdown-native task manager and kanban visualizer for any Git repository. It turns a folder into a self-contained project board powered by plain Markdown files and a zero-config CLI.",
+   "It structures agent work around review checkpoints: the agent first breaks your idea into tasks with descriptions, acceptance criteria and milestones, so you can review the specs before any code exists."
+  ],
+  "who": "Developers who coordinate work between people and AI agents and want task specs reviewed before code is written.",
+  "features": [
+   "Plain Markdown task files in your repo",
+   "Kanban visualizer and zero-config CLI",
+   "Tasks with acceptance criteria and milestones",
+   "Review checkpoints for agent work"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MrLesk/Backlog.md"
+  ],
+  "updated": "2026-10-18"
  }
 }
