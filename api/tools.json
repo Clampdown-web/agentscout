@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-18T16:01:11Z",
- "updated": "2026-10-18T16:01:11Z",
+ "generated": "2026-10-18T18:52:28Z",
+ "updated": "2026-10-18T18:52:28Z",
  "last_checked": "2026-10-18",
  "count": 1109,
  "tools": [
@@ -1414,7 +1414,7 @@
    "description": "Discontinued: the open-source VS Code agent with custom modes (architect, code, debug) was shut down on May 15, 2026 and its repo archived; the team now builds Roomote, and roocode.com redirects there. Cline and the community fork ZooCode are the suggested alternatives.",
    "key_features": [
     "Open source (archived)",
-    "Discontinued (shut down May 15, 2026)",
+    "Archived (discontinued, shut down May 15, 2026)",
     "24281 GitHub stars",
     "Write code"
    ],
@@ -2568,7 +2568,7 @@
    "description": "Stanford system that writes Wikipedia-style articles from web research.",
    "key_features": [
     "Open source",
-    "Research project",
+    "Research project; no recent updates (last commit Sep 2025)",
     "31627 GitHub stars",
     "Research the web"
    ],
@@ -3203,7 +3203,7 @@
    "description": "Discontinued: the open-source drag-and-drop builder for agents and LLM flows was wound down by its team, reaching end of life on Aug 31, 2026; the repo is archived but the Apache-2.0 code remains available to fork.",
    "key_features": [
     "Open source + paid cloud",
-    "Discontinued (end of life Aug 31, 2026)",
+    "Archived (discontinued, end of life Aug 31, 2026)",
     "55500 GitHub stars",
     "Write code",
     "Build apps without code"
@@ -6152,7 +6152,7 @@
    "description": "Open-source library for building voice-based LLM agents for phone calls and apps.",
    "key_features": [
     "Open source + cloud",
-    "Active",
+    "No recent updates (last commit Nov 2024)",
     "3804 GitHub stars",
     "Write code",
     "Build an agent",
@@ -15062,7 +15062,7 @@
    "description": "Visual playground for building and iterating on agent workflows.",
    "key_features": [
     "Open source",
-    "Mature",
+    "No recent updates (last commit Jul 2025)",
     "5793 GitHub stars",
     "Write code",
     "Automate workflows",
@@ -23329,7 +23329,7 @@
    "description": "Research agent that explores Minecraft on its own, writing and reusing code skills to learn as it goes.",
    "key_features": [
     "Open source",
-    "Mature",
+    "Research project; no recent updates (last commit Jul 2023)",
     "7268 GitHub stars",
     "Write code",
     "Research the web"
@@ -25190,7 +25190,7 @@
    "description": "AhnLab's MCP server for BICScan risk scores of blockchain addresses and domains.",
    "key_features": [
     "Open source",
-    "Active",
+    "No recent updates (last commit Mar 2025)",
     "Connect tools via mcp"
    ],
    "pricing": "Open source",
@@ -25227,7 +25227,7 @@
    "url": "https://www.almanax.ai",
    "website": "https://www.almanax.ai",
    "github": "https://github.com/almanax-ai",
-   "category": "crypto",
+   "category": "security & governance",
    "description": "AI security engineer that finds vulnerabilities in applications and smart contracts and reviews pull requests; acquired by depthfirst (June 2026).",
    "key_features": [
     "7-day free trial; paid plans",
@@ -25237,14 +25237,12 @@
    "pricing": "7-day free trial; paid plans",
    "price_tag": "unknown",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "vendor/GitHub (direct)",
-   "goals": [
-    "crypto"
-   ],
+   "goals": [],
    "skill": "no-code",
    "weekly_pick": false,
    "new": false,
@@ -25267,7 +25265,7 @@
    "url": "https://www.octane.security",
    "website": "https://www.octane.security",
    "github": "https://github.com/octane-security",
-   "category": "crypto",
+   "category": "security & governance",
    "description": "Agentic security analysis that finds exploitable vulnerabilities in mission-critical code, including DeFi smart contracts.",
    "key_features": [
     "See site",
@@ -25278,7 +25276,7 @@
    "pricing": "See site",
    "price_tag": "unknown",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -27219,7 +27217,7 @@
    "description": "HumanSignal's MCP server that lets AI assistants create Label Studio labeling projects, import tasks, read annotations and add model predictions.",
    "key_features": [
     "Free, open source (Apache-2.0)",
-    "Active",
+    "No recent updates (last commit May 2025)",
     "37 GitHub stars",
     "Connect tools via mcp",
     "Computer vision"
@@ -31921,7 +31919,7 @@
    "url": "https://johnbean393.github.io/Sidekick/",
    "website": "https://johnbean393.github.io/Sidekick/",
    "github": "https://github.com/johnbean393/Sidekick",
-   "category": "personal agents",
+   "category": "models & local runtimes",
    "description": "Native macOS app for chatting offline with a local LLM that can draw on your files, folders and websites.",
    "key_features": [
     "Open source",
@@ -31932,13 +31930,14 @@
    "pricing": "Open source",
    "price_tag": "free",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "writing"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -36382,7 +36381,7 @@
    "description": "Emergence AI's web agent that automates tasks in the browser through hierarchical planning.",
    "key_features": [
     "Open source",
-    "Active",
+    "No recent updates (last commit May 2025)",
     "1252 GitHub stars",
     "Automate the browser",
     "Automate workflows"
@@ -39112,7 +39111,7 @@
    "url": "https://www.phonely.ai/",
    "website": "https://www.phonely.ai/",
    "github": "",
-   "category": "voice",
+   "category": "customer support",
    "description": "AI phone agents that answer every call, book appointments and handle customer support for businesses.",
    "key_features": [
     "See site",
@@ -39129,7 +39128,6 @@
    "added": "2026-10-18",
    "source": "aiagentslist",
    "goals": [
-    "media",
     "support"
    ],
    "skill": "no-code",
@@ -39736,7 +39734,7 @@
    "description": "Open-source JavaScript browser automation library for AI agents.",
    "key_features": [
     "Open source",
-    "Active",
+    "No recent updates (last commit Aug 2025)",
     "1207 GitHub stars",
     "Automate the browser",
     "Build an agent",
@@ -40114,7 +40112,7 @@
    "url": "https://www.parloa.com/",
    "website": "https://www.parloa.com/",
    "github": "",
-   "category": "voice",
+   "category": "customer support",
    "description": "AI agent management platform for enterprise customer service to build, test and scale voice and chat agents.",
    "key_features": [
     "See site",
@@ -40480,7 +40478,7 @@
    "url": "https://www.cognigy.com/",
    "website": "https://www.cognigy.com/",
    "github": "",
-   "category": "voice",
+   "category": "customer support",
    "description": "NiCE Cognigy's enterprise customer service platform with generative and conversational AI agents across voice and chat.",
    "key_features": [
     "See site",

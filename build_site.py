@@ -46,6 +46,11 @@ for x in t:
     out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{ABOUT}}",about).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
     for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(prim),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
         out=out.replace("{{"+k+"}}",v)
+    # Visible status note for archived or stale listings (tools.json "status_note", owner-approved Oct 18 2026)
+    if x.get("status_note"):
+        _arch=x.get("maturity","").lower().startswith(("archived","discontinued"))
+        out=out.replace('<div class="badges">','<div class="badges"><span class="b" style="border-color:#b45309;color:#b45309">'+("Archived" if _arch else "No recent updates")+'</span>',1)
+        out=out.replace('<p class="lede">'+e(x["description"])+'</p>','<p class="lede">'+e(x["description"])+'</p><p class="statusnote" role="note" style="margin:-6px 0 16px;padding:10px 14px;border:1px solid #b45309;border-radius:10px;font-size:14px">⚠️ '+e(x["status_note"])+'</p>',1)
     B="https://agentscouthq.com/";pg=f"{B}tools/{x['slug']}.html"
     out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)
     if _rich: out=out.replace(about,(about+_rich[0]) if _rich[4:]==("lite",) else _rich[0],1)  # lite entries keep the About paragraph (additive)

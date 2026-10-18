@@ -853,7 +853,7 @@
     "description": "Discontinued: the open-source VS Code agent with custom modes (architect, code, debug) was shut down on May 15, 2026 and its repo archived; the team now builds Roomote, and roocode.com redirects there. Cline and the community fork ZooCode are the suggested alternatives.",
     "category": "coding",
     "pricing": "Open source",
-    "maturity": "Discontinued (shut down May 15, 2026)",
+    "maturity": "Archived (discontinued, shut down May 15, 2026)",
     "audience": "builders",
     "featured": false,
     "new": false,
@@ -871,7 +871,8 @@
     "website": "https://github.com/RooCodeInc/Roo-Code",
     "added": "2026-10-14",
     "source": "original",
-    "seed": true
+    "seed": true,
+    "status_note": "Archived: the GitHub repository is read-only and the project is no longer maintained."
   },
   {
     "name": "Windsurf",
@@ -1046,7 +1047,8 @@
     "website": "https://bolt.new",
     "added": "2026-10-14",
     "source": "original",
-    "seed": true
+    "seed": true,
+    "status_note": "No recent updates to the open-source repo: stackblitz/bolt.new has had no commits since Dec 2024 (checked Oct 18, 2026). The hosted Bolt product at bolt.new is still live."
   },
   {
     "name": "v0",
@@ -1548,7 +1550,7 @@
     "description": "Stanford system that writes Wikipedia-style articles from web research.",
     "category": "research",
     "pricing": "Open source",
-    "maturity": "Research project",
+    "maturity": "Research project; no recent updates (last commit Sep 2025)",
     "audience": "builders",
     "featured": false,
     "new": false,
@@ -1566,7 +1568,8 @@
     "website": "https://storm.genie.stanford.edu",
     "added": "2026-10-14",
     "source": "original",
-    "seed": true
+    "seed": true,
+    "status_note": "No recent updates: the GitHub repository has had no commits since Sep 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "Firecrawl",
@@ -1927,7 +1930,7 @@
     "description": "Discontinued: the open-source drag-and-drop builder for agents and LLM flows was wound down by its team, reaching end of life on Aug 31, 2026; the repo is archived but the Apache-2.0 code remains available to fork.",
     "category": "no-code builders",
     "pricing": "Open source + cloud",
-    "maturity": "Discontinued (end of life Aug 31, 2026)",
+    "maturity": "Archived (discontinued, end of life Aug 31, 2026)",
     "audience": "ready to use",
     "featured": false,
     "new": false,
@@ -1946,7 +1949,8 @@
     "website": "https://flowiseai.com",
     "added": "2026-10-14",
     "source": "original",
-    "seed": true
+    "seed": true,
+    "status_note": "Archived: the GitHub repository is read-only and the project is no longer maintained."
   },
   {
     "name": "Model Context Protocol",
@@ -3713,7 +3717,7 @@
     "description": "Open-source library for building voice-based LLM agents for phone calls and apps.",
     "category": "voice",
     "pricing": "Open source + cloud",
-    "maturity": "Active",
+    "maturity": "No recent updates (last commit Nov 2024)",
     "audience": "builders",
     "featured": false,
     "new": false,
@@ -3733,7 +3737,8 @@
     "pricing_detail": "",
     "added": "2026-10-16",
     "source": "Futurepedia",
-    "seed": true
+    "seed": true,
+    "status_note": "No recent updates: the GitHub repository has had no commits since Nov 2024 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "Kognitos",
@@ -9210,7 +9215,7 @@
     "description": "Visual playground for building and iterating on agent workflows.",
     "category": "no-code builders",
     "pricing": "Open source",
-    "maturity": "Mature",
+    "maturity": "No recent updates (last commit Jul 2025)",
     "audience": "builders",
     "featured": false,
     "new": false,
@@ -9230,7 +9235,8 @@
     "logo": "assets/logos/pyspur.png",
     "added": "2026-10-16",
     "source": "GitHub",
-    "seed": true
+    "seed": true,
+    "status_note": "No recent updates: the GitHub repository has had no commits since Jul 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "Potpie",
@@ -14276,7 +14282,7 @@
     "description": "Research agent that explores Minecraft on its own, writing and reusing code skills to learn as it goes.",
     "category": "games",
     "pricing": "Open source",
-    "maturity": "Mature",
+    "maturity": "Research project; no recent updates (last commit Jul 2023)",
     "audience": "builders",
     "featured": false,
     "new": false,
@@ -14295,7 +14301,8 @@
     "id": 552,
     "slug": "voyager",
     "logo": "assets/logos/voyager.png",
-    "seed": true
+    "seed": true,
+    "status_note": "No recent updates: the GitHub repository has had no commits since Jul 2023 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "AI Town",
@@ -15443,7 +15450,7 @@
     "description": "AhnLab's MCP server for BICScan risk scores of blockchain addresses and domains.",
     "category": "crypto",
     "pricing": "Open source",
-    "maturity": "Active",
+    "maturity": "No recent updates (last commit Mar 2025)",
     "audience": "builders",
     "featured": false,
     "new": false,
@@ -15460,13 +15467,14 @@
     "id": 602,
     "slug": "bicscan-mcp",
     "logo": "assets/logos/bicscan-mcp.png",
-    "seed": true
+    "seed": true,
+    "status_note": "No recent updates: the GitHub repository has had no commits since Mar 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "Almanax",
     "url": "https://www.almanax.ai",
     "description": "AI security engineer that finds vulnerabilities in applications and smart contracts and reviews pull requests; acquired by depthfirst (June 2026).",
-    "category": "crypto",
+    "category": "security & governance",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -15490,7 +15498,7 @@
     "name": "Octane",
     "url": "https://www.octane.security",
     "description": "Agentic security analysis that finds exploitable vulnerabilities in mission-critical code, including DeFi smart contracts.",
-    "category": "crypto",
+    "category": "security & governance",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -16654,7 +16662,7 @@
     "description": "HumanSignal's MCP server that lets AI assistants create Label Studio labeling projects, import tasks, read annotations and add model predictions.",
     "category": "vision",
     "pricing": "Open source",
-    "maturity": "Active",
+    "maturity": "No recent updates (last commit May 2025)",
     "audience": "builders",
     "featured": false,
     "new": true,
@@ -16672,7 +16680,8 @@
     "github_stars": 37,
     "id": 654,
     "slug": "label-studio-mcp-server",
-    "logo": "assets/logos/label-studio-mcp-server.png"
+    "logo": "assets/logos/label-studio-mcp-server.png",
+    "status_note": "No recent updates: the GitHub repository has had no commits since May 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "CVAT AI Agents",
@@ -19438,7 +19447,7 @@
     "name": "Sidekick",
     "url": "https://johnbean393.github.io/Sidekick/",
     "description": "Native macOS app for chatting offline with a local LLM that can draw on your files, folders and websites.",
-    "category": "personal agents",
+    "category": "models & local runtimes",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "ready to use",
@@ -22102,7 +22111,7 @@
     "description": "Emergence AI's web agent that automates tasks in the browser through hierarchical planning.",
     "category": "browser/computer use",
     "pricing": "Open source",
-    "maturity": "Active",
+    "maturity": "No recent updates (last commit May 2025)",
     "audience": "builders",
     "featured": false,
     "new": true,
@@ -22120,7 +22129,8 @@
     "github_stars": 1252,
     "id": 872,
     "slug": "agent-e",
-    "logo": "assets/logos/agent-e.png"
+    "logo": "assets/logos/agent-e.png",
+    "status_note": "No recent updates: the GitHub repository has had no commits since May 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "Dust",
@@ -23688,7 +23698,7 @@
     "name": "Phonely",
     "url": "https://www.phonely.ai/",
     "description": "AI phone agents that answer every call, book appointments and handle customer support for businesses.",
-    "category": "voice",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24045,7 +24055,7 @@
     "description": "Open-source JavaScript browser automation library for AI agents.",
     "category": "browser/computer use",
     "pricing": "Open source",
-    "maturity": "Active",
+    "maturity": "No recent updates (last commit Aug 2025)",
     "audience": "ready to use",
     "featured": false,
     "new": true,
@@ -24064,7 +24074,8 @@
     "github_stars": 1207,
     "id": 953,
     "slug": "browserable",
-    "logo": "assets/logos/browserable.png"
+    "logo": "assets/logos/browserable.png",
+    "status_note": "No recent updates: the GitHub repository has had no commits since Aug 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
   },
   {
     "name": "BuildShip",
@@ -24262,7 +24273,7 @@
     "name": "Parloa",
     "url": "https://www.parloa.com/",
     "description": "AI agent management platform for enterprise customer service to build, test and scale voice and chat agents.",
-    "category": "voice",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24472,7 +24483,7 @@
     "name": "Cognigy",
     "url": "https://www.cognigy.com/",
     "description": "NiCE Cognigy's enterprise customer service platform with generative and conversational AI agents across voice and chat.",
-    "category": "voice",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",

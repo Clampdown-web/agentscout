@@ -187,7 +187,7 @@ var mail="mailto:support@agentscouthq.com?subject="+encodeURIComponent("Tool sub
 var btn=f.querySelector("button[type=submit]");btn.disabled=true;btn.textContent="Sending…";
 fetch(SUBMIT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:n,website:w,github:g,category:v("category"),pricing:v("pricing"),desc:d,email:m,x:x,company:v("company"),type:UPD?"update":"new",tool:UPD||""})}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(!r.ok||!j.ok)throw new Error(j.error||"Something went wrong.");f.hidden=true;document.getElementById("sdone").hidden=false;})}).catch(function(e){er.innerHTML="";er.appendChild(document.createTextNode((e&&e.message&&e.message!=="Failed to fetch"?e.message:"We couldn't send it right now.")+" "));var a=document.createElement("a");a.href=mail;a.textContent="Send it by email instead";er.appendChild(a);}).finally(function(){btn.disabled=false;btn.textContent=UPD?"Send suggested edit":"Submit for free review";});})})()</script>'''
     body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Submit a tool</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Submit your AI agent tool</h1>'
-          '<p class="lede" style="margin-left:0;text-align:left">Listing on AgentScout is free. We review every submission, check the links and write the description ourselves in plain words, so you don\'t need marketing copy. Sponsored placements are separate and always labeled.</p>'
+          '<p class="lede" style="margin-left:0;text-align:left">Listing on AgentScout is free. We review every submission, check the links and write the description ourselves in plain words, so you don\'t need marketing copy.</p>'
           f'{form}<p class="disclose" style="max-width:560px">Submissions go straight to the AgentScout team. Prefer email? <a id="smail" href="mailto:support@agentscouthq.com?subject=Tool%20submission">Send it from your email app instead</a>. After you\'re listed, add a <a href="badges.html">free AgentScout badge</a>.</p></section>{js}')
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("submit.html","w").write(shell("",title,desc,canon,body,ld)); return canon
@@ -211,6 +211,10 @@ def sitewide(t):
         # Footer links (scoped to <footer> so body "See also" lines don't satisfy the check, Oct 18 2026):
         # Newsletter archive right after Free tools; Popular searches + AI agents by role right after Free tools
         # (generate.html has no footer Free tools link: after Badges)
+        # Paid listings on hold (Oct 18 2026, owner-approved): strip the footer 'Get featured' link + sponsorship mailto and the
+        # 'sponsorships' JSON-LD contactType sitewide so no rebuild/daily routine brings them back. Hidden Featured machinery untouched.
+        s=re.sub(r'(?: · )?<a [^>]*>Get featured(?: →)?</a>(?: \(<a href="mailto:[^"]*Sponsorship[^"]*">or email</a>\))?','',s)
+        s=s.replace('"contactType": "sponsorships and submissions"','"contactType": "submissions and support"')
         fm=re.search(r'<footer\b.*?</footer>',s,re.S)
         if fm:
             fo=fm.group(0); fn=fo
@@ -262,7 +266,7 @@ def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
     open(fn,"w").write(shell("",title,desc,canon,body,ld)); return canon
 def about_page(t):
-    n=len(t); nc=len({x["category"] for x in t}); feat=e(_featured_href())
+    n=len(t); nc=len({x["category"] for x in t})
     inner=(f'<h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="index.html#directory">directory</a>, <a href="categories/index.html">categories</a> or <a href="tasks/index.html">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p>'
       f'<h2 {H2}>How tools are picked</h2><p>New tools are found every day. Our main sources are:</p><ul>'
       '<li><b>GitHub</b>: agent-related topics such as ai-agents, agent-framework, mcp-server, coding-agent and browser-agent.</li>'
@@ -278,12 +282,11 @@ def about_page(t):
       '<p>We leave out tutorials, courses, awesome lists, prompt collections, CAPTCHA solvers and anti-bot tools, trading bots, and general infrastructure with no agent angle. Each description is one sentence written by us after reading the official site or README, and pricing is labeled the way the maker states it.</p>'
       f'<h2 {H2}>How tools are checked</h2><p>The site is rebuilt every day. When a tool is added we confirm that the repository exists and isn\'t archived, that the website loads, and that the logo is real. After that, listings are re-checked: official links, logos and GitHub details such as stars. Every tool page shows the date its link was last checked, and the homepage shows when links were last checked across the directory. If something looks wrong, <a href="mailto:support@agentscouthq.com?subject=Listing%20correction">tell us</a>.</p>'
       f'<h2 {H2}>Submit a tool</h2><p>Listing is free. Use the <a href="submit.html">submit form</a>. We review every submission, check the links and write the listing ourselves, so you don\'t need marketing copy. Once you\'re listed you can add a <a href="badges.html">free AgentScout badge</a>.</p>'
-      f'<h2 {H2}>Sponsor or get featured</h2><p>Featured placements are available for tools that want more visibility. <a href="{feat}" target="_blank" rel="noopener noreferrer">Get featured</a> or <a href="mailto:support@agentscouthq.com?subject=Sponsorship%20%2F%20featured%20listing">email us</a> about sponsorship. Paid placements are always labeled as sponsored, and they don\'t change how we describe a tool.</p>'
       f'<h2 {H2}>Newsletter</h2><p>One short email a week with new tools, launches and what\'s worth trying. Free, unsubscribe anytime. <a href="https://agentscout.beehiiv.com/" data-nl>Subscribe to the newsletter</a>. You can also follow daily <a href="news.html">agent news</a> on the site.</p>'
       f'<h2 {H2}>The app</h2><p>An AgentScout app for phones and tablets is in testing. It uses the same live directory as this site, with search, saved tools, the quiz, comparisons and the newsletter. It isn\'t in the App Store or Google Play yet; we\'ll announce it here and on X when it is.</p>'
       f'<h2 {H2}>Contact</h2><p>Email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> or find us on X at <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>. See our <a href="privacy.html">privacy policy</a> for how we handle data.</p>')
     return _page("about.html","About","About AgentScout: how AI agent tools are picked and checked",
-        f"AgentScout is a curated directory of {n} AI agents and tools. How we find tools, what gets in, how listings are checked daily, and how to submit or get featured.",
+        f"AgentScout is a curated directory of {n} AI agents and tools. How we find tools, what gets in, how listings are checked daily, and and how to submit a tool.",
         "About AgentScout",f"A curated, link-checked directory of {n} AI agents and agent tools, updated daily.",inner,"AboutPage")
 def privacy_page(t):
     li=lambda *xs:"<ul>"+"".join(f"<li>{x}</li>" for x in xs)+"</ul>"
