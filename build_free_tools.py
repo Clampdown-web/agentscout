@@ -19,7 +19,7 @@ TOOLS=[
 ("agent-setup-generator","AI Agent Setup Generator","Generate starter config files and system prompts for Claude Code, Codex, Cursor, CrewAI, LangChain and the OpenAI Agents SDK.","🤖"),
 ]
 REL={"ai-cost-calculator":(["python-ai-agent-frameworks","open-source-llm-observability-tools","web-search-apis-for-ai-agents","free-ai-coding-agents"],["ai-engineers","developers","founders"]),
- "token-counter":(["open-source-llm-observability-tools","ai-agent-memory-tools","open-source-ai-research-agents"],["ai-engineers","developers","researchers"]),
+ "token-counter":(["open-source-llm-observability-tools","open-source-ai-research-agents"],["ai-engineers","developers","researchers"]),
  "prompt-builder":(["ai-research-assistants","ai-marketing-agents","free-ai-coding-agents"],["marketers","content-creators","researchers"]),
  "agent-setup-generator":(["terminal-ai-coding-agents","open-source-ai-agent-frameworks","multi-agent-frameworks","free-mcp-servers"],["developers","ai-engineers","security-engineers"])}
 def rel(s):

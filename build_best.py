@@ -53,9 +53,7 @@ PAGES=[
 ("ai-productivity-tools","Best AI Productivity Agents",lambda x:x["category"]=="productivity","stars",20,
  "AI agents and tools for everyday productivity: documents, diagrams, spreadsheets, video and design work.",
  '<a href="../tasks/spreadsheets-and-slides.html">Spreadsheets, slides and docs</a> · <a href="../tasks/documents.html">Working with documents</a>'),
-("ai-agent-memory-rag-tools","Best AI Agent Memory & RAG Tools",lambda x:x["category"]=="memory & RAG","stars",20,
- "Memory layers, knowledge graphs, vector databases and RAG frameworks that give AI agents long-term memory and access to your documents.",
- '<a href="../tasks/agent-memory.html">Memory for agents</a> · <a href="../tasks/agent-memory-vector-rag.html">RAG and documents for agent memory</a> · <a href="../s/ai-agent-memory-tools.html">AI agent memory tools</a>'),
+# ai-agent-memory-rag-tools removed Oct 18 2026: duplicated categories/memory-rag (redirect in redirects.json)
 ("ai-agent-security-tools","Best AI Agent Security & Governance Tools",lambda x:x["category"]=="security & governance","stars",20,
  "Guardrails, policy engines, scanners and governance platforms for keeping AI agents safe, compliant and under control.",
  '<a href="../tasks/agent-security.html">Agent security and safety</a> · <a href="../tasks/agent-security-guardrails.html">Guardrails and policies</a> · <a href="../s/free-ai-agent-security-tools.html">Free AI agent security tools</a>'),

@@ -91,6 +91,12 @@ def _existing_sets():
 # --- Natural <title> wording (Oct 18 2026): sentence case, no repeated words ---
 _TT_LABEL={"agent-memory":"agent memory","searching-the-web":"agent web search","games":"games and game making"}
 _TT_FULL={"open-source-agents":"Best open-source AI agents"}
+# Distinct angle for task pages that overlap a category (Oct 18 2026): the category page is the main
+# target for the head keyword; the task page answers "how do I add X", grouped by use case.
+_TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: tools by use case",
+  "title":"Add long-term memory to AI agents: tools by use case (2026)",
+  "desc":lambda n,items:f"How to add long-term memory to an AI agent: {n} tools grouped by use case, from RAG over documents to local memory and codebase context."[:158],
+  "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the ranked list of memory and RAG products? See the <a href="../categories/memory-rag.html">Memory &amp; RAG category</a>.</p>'}}
 def task_title(s,label):
     if s in _TT_FULL: return _TT_FULL[s]
     lab=_TT_LABEL.get(s,label)
@@ -159,6 +165,8 @@ def pages(t):
         h1=f"Best AI agents for {label} (2026)"
         title=f"{task_title(s,label)} (2026) · AgentScout"
         desc=f"Compare {n} AI agents and tools for {label}, including {', '.join(x['name'] for x in items[:3])}. Link-checked, with pricing as makers state it."[:158]
+        _ang=_TASK_ANGLE.get(s)
+        if _ang: h1,title,desc=_ang["h1"],_ang["title"]+" · AgentScout",_ang["desc"](n,items)
         rel=[(s2,T2) for s2,(T2,i2) in m.items() if s2!=s and len(set(id(a) for a in i2)&set(id(a) for a in items))>=2]
         rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))
         if s in ORIG: rel=[r for r in rel if r[0] in ORIG][:8]+[r for r in rel if r[0] not in ORIG][:3]  # original pages keep their related list; newer tasks are appended
@@ -169,7 +177,7 @@ def pages(t):
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+
               f'{_grid(items,s)}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},

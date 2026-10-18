@@ -45,7 +45,7 @@ S=[
 ("multi-agent-frameworks","Multi-agent frameworks","multi-agent frameworks",lambda x,k:k("multi-agent-systems") and x["audience"]=="builders","Frameworks for teams of agents that split work, hand off tasks and check each other's output.","multi-agent-systems","ai-agent-frameworks"),
 ("free-mcp-servers","Free MCP servers","free MCP servers",lambda x,k:x["category"]=="MCP & infra" and isfree(x) and k("connecting-tools-mcp"),"Model Context Protocol servers you can use for free, connecting Claude, Cursor, Codex and other MCP clients to your tools and data.","connecting-tools-mcp","open-source-mcp-servers"),
 ("database-mcp-servers","MCP servers and AI tools for databases","database MCP servers",lambda x,k:k("databases"),"MCP servers, vector stores and text-to-SQL tools that let agents query and manage databases.","databases",None),
-("ai-agent-memory-tools","AI agent memory tools","AI agent memory",lambda x,k:k("agent-memory"),"Memory layers that let agents remember users, past conversations and facts between sessions.","agent-memory",None),
+# s/ai-agent-memory-tools removed Oct 18 2026: duplicated categories/memory-rag + tasks/agent-memory (redirect in redirects.json)
 ("ai-code-sandboxes","Sandboxes for AI agents to run code","AI code sandboxes",lambda x,k:k("running-code-safely"),"Sandboxes and isolated runtimes where agents can run code and tools away from your machine and data.","running-code-safely",None),
 ("open-source-llm-observability-tools","Open-source LLM observability and eval tools","open-source LLM observability",lambda x,k:x["category"]=="evals & observability" and x["pricing"] in OS,"Open-source tracing, evaluation and monitoring tools for LLM apps and agents that you can self-host.","monitoring-agents","ai-agent-observability-tools"),
 ("open-source-voice-ai-agents","Open-source voice AI agent frameworks","open-source voice AI agents",lambda x,k:x["category"]=="voice" and x["pricing"] in OS,"Open-source frameworks and tools for building voice agents that listen, think and talk in real time.","building-voice-agents","ai-voice-agent-platforms"),
@@ -170,8 +170,7 @@ MODS=[("open-source","Open-source",lambda x:x["pricing"] in OS,"with public sour
       ("typescript","TypeScript",lambda x:bool(re.search(r"TypeScript|JavaScript|\bNode(\.js)?\b",D(x))),"whose listings say they are built for TypeScript, JavaScript or Node.js"),
       ("mcp","MCP-ready",lambda x:bool(re.search(r"\bMCP\b|Model Context Protocol",D(x))) and x["category"]!="MCP & infra","that work with the Model Context Protocol (MCP), so Claude, Cursor and other MCP clients can use them")]
 # target key, plural noun, filter(x,k), task slug for related links
-TARGETS=[("ai-agent-memory-tools","AI agent memory tools",lambda x,k:k("agent-memory"),"agent-memory"),
- ("ai-sre-agents","AI SRE agents",lambda x,k:k("devops-and-incidents"),"devops-and-incidents"),
+TARGETS=[("ai-sre-agents","AI SRE agents",lambda x,k:k("devops-and-incidents"),"devops-and-incidents"),
  ("ai-research-agents","AI research agents",lambda x,k:k("research"),"research"),
  ("ai-browser-agents","AI browser agents",lambda x,k:k("browsing-the-web"),"browsing-the-web"),
  ("computer-use-agents","computer-use agents",lambda x,k:k("computer-use"),"computer-use"),
