@@ -45,7 +45,7 @@ def lite(out,x,t,catslug,prim,B,r):
     if altp: faq.append((f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}."))
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
-      +f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if "github.com" in " ".join(r.get("sources",[])) else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>'
+      +f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>'
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
       +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
