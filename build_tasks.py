@@ -41,7 +41,21 @@ TASKS=[
 ("agent-payments","agent payments",set(),set(),r"payment|pay for|checkout|billing|x40[12]","Tools that let agents pay, get paid and handle checkout without a human clicking buy."),
 ("deploying-agents","deploying and hosting agents",set(),set(),r"\bdeploy(s|ing)? (\w+ ){0,3}agents\b|\bagent (hosting|runtime|cloud)\b|\bhost(s|ing)? (AI )?agents\b|\bagents? in production\b|\bserverless\b","Infrastructure for running agents in production: hosting, scaling and serverless runtimes."),
 ("open-source-agents","open-source agents",set(),set(),r"\bopen[- ]source (\w+[- ]){0,2}(AI )?(agent|assistant)s?\b(?! (framework|platform|SDK|library|memory|infrastructure))","Open-source agents you can run yourself, inspect and extend, from coding agents to personal assistants."),
+("security-testing","security testing",set(),set(),r"penetration|pentest|red[- ]team|vulnerab|bug bount|security (audit|analysis|scan|testing)","Agents that probe your app, code and smart contracts the way an attacker would: running penetration tests, red-teaming AI systems and flagging vulnerabilities with suggested fixes."),
+("devops-and-incidents","site reliability and incident response",set(),set(),r"\bSRE\b|incident|on-call|production alerts|root cause|Terraform|Kubernetes UI|(?<!inference )on Kubernetes|cloud infrastructure|pipelines, builds|failed jobs","AI SRE agents and MCP servers that investigate alerts, read dashboards and CI logs, and help manage cloud infrastructure, so incidents get a first look before anyone is paged."),
+("parallel-coding-agents","running coding agents in parallel",set(),set(),r"parallel (coding )?agents|(multiple|many) coding agents|worktrees|verifies tasks in parallel|control plane for dispatching","Command centers, IDEs and CLIs for running several coding agents at once, each on its own task or Git worktree, then reviewing what they hand back."),
+("agent-identity","agent identity and logins",set(),set(),r"\bidentity\b|\bauth\b(?! and storage)|credential handling|payment credentials|login layer","Identity, auth and credential tools that let agents sign in to apps, prove who they act for and use secrets without ever seeing the raw passwords or keys."),
+("spreadsheets-and-slides","spreadsheets, slides and docs",set(),set(),r"spreadsheet|Excel|Google Sheets|slides|PowerPoint|office suite|Airtable|Google Workspace|Microsoft 365","AI spreadsheets, slide makers and office tools, plus MCP servers that let agents read and edit Excel, Airtable and Google Workspace files."),
+("training-agents","training and fine-tuning agents",set(),set(),r"fine[- ]tun|post[- ]train|reinforcement learning|\bRL\b|train(s|ing)? (better |LLM-based )?(agents|agentic models)","Platforms and open-source libraries for fine-tuning models and training agents with reinforcement learning, so they get better at your specific tasks."),
+("running-agents-locally","running agents locally",set(),set(),r"\blocal[- ]first\b|run(s|ning)? (\w+ ){0,4}locally|fully local|on your own hardware|on your (GPU|NPU)|local and hosted models","Agents, model servers and tools that run on your own computer or hardware, keeping your data local and cutting out per-call API costs where possible."),
+("databases","working with databases",set(),set(),r"vector database|search database|multimodal database|\bPostgres|MySQL|MongoDB|ClickHouse|Supabase|PlanetScale|text-to-SQL|SQL engine|Toolbox for Databases|Database MCP|spreadsheet and database|gives coding agents a database","Database MCP servers, vector stores and text-to-SQL tools that let agents query, manage and store data in Postgres, MySQL, MongoDB and more."),
+("trading","trading",set(),set(),r"\btrad(ing|es)\b|\bswaps?\b|\bperps\b|prediction markets|market signals","AI trading agents and copilots that research markets, turn plain-language strategies into trades and execute swaps, mostly in crypto, some across stocks and forex. Trading is risky; none of this is financial advice."),
+("chat-apps","chat apps like Slack and Telegram",set(),set(),r"Telegram|WhatsApp|iMessage|\bDiscord\b|\bSlack\b(?! alerts)","Agents you can talk to, or hand work to, from the chat apps you already use: Slack, Telegram, WhatsApp, Discord and iMessage."),
+("marketing","marketing",set(),set(),r"marketing|go-to-market|\bSEO\b|social media","AI agents for marketing and go-to-market work: running campaigns and outbound, handling social media and pulling SEO, ad and social data for your agents."),
+("smart-contract-security","smart contract security",set(),set(),r"smart[- ]contract|contract analysis","AI auditors and agents that review smart contracts for exploitable bugs before and after deployment, plus tools that help build and check Web3 code."),
+("coding-docs","feeding docs to coding agents",set(),set(),r"documentation|up-to-date docs|docs and best practices|searching docs","MCP servers that give coding agents current, version-specific documentation, so they stop guessing at outdated APIs."),
 ]
+ORIG={T[0] for T in TASKS[:37]}  # the first 37 task pages (Oct 2026); later batches only append to their related links
 def match(x,T):
     _,_,cats,ucs,rx,_=T
     if x.get("category") in cats or set(x.get("use_cases",[]))&ucs: return True
@@ -65,8 +79,14 @@ def pages(t):
         title=f"Best AI Agents for {label.title()} (2026) · AgentScout"
         desc=f"Compare {n} AI agents and tools for {label}, including {', '.join(x['name'] for x in items[:3])}. Link-checked, with pricing as makers state it."[:158]
         rel=[(s2,T2) for s2,(T2,i2) in m.items() if s2!=s and len(set(id(a) for a in i2)&set(id(a) for a in items))>=2]
-        rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))[:8]
+        rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))
+        if s in ORIG: rel=[r for r in rel if r[0] in ORIG][:8]+[r for r in rel if r[0] not in ORIG][:3]  # original pages keep their related list; newer tasks are appended
+        else: rel=rel[:8]
         relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(T2[1].capitalize())}</a>' for s2,T2 in rel)+'<a class="b uc" href="index.html">All tasks →</a></div>'
+        if s not in ORIG:  # newer task pages also link the categories their tools come from
+            from collections import Counter
+            cc=Counter(x["category"] for x in items).most_common()
+            relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(label.capitalize())}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p>'
               f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(items))}</div>{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
