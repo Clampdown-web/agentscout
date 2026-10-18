@@ -1,5 +1,5 @@
 """Generates use-case tags, slugs and static detail pages from tools.json."""
-import json,re,html,os,build_extras
+import json,re,html,os,build_extras,build_rich
 t=json.load(open("tools.json"))
 RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",r"browser|web browser|headless"),("control a computer",r"computer-use|desktop|operating system|cloud computer"),
 ("build multi-agent systems",r"multi-agent|crew|swarm|subagent"),("build an agent",r"framework|SDK|library|toolkit|harness|Development Kit"),("research the web",r"research|search|web data|website|cited|papers"),
@@ -39,9 +39,13 @@ for x in t:
     for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(prim),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
         out=out.replace("{{"+k+"}}",v)
     B="https://agentscouthq.com/";pg=f"{B}tools/{x['slug']}.html"
+    out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)
+    if _rich: out=out.replace(about,_rich[0],1)
     ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":pg,"url":pg,"name":f"{x['name']}: what it does, pricing and alternatives","dateModified":x["verified"],"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
         "about":{"@type":"SoftwareApplication","name":x["name"],"description":x["description"],"url":prim,**({"sameAs":[gh]} if gh and gh!=prim else {}),**({"codeRepository":gh} if gh else {}),"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","keywords":", ".join([x["category"]]+x["use_cases"])}},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":x["category"],"item":f"{B}categories/{build_extras.catslug(x['category'])}.html"},{"@type":"ListItem","position":3,"name":x["name"],"item":pg}]}]}
+    if _rich:
+        ld["@graph"][0]["name"]=_rich[3]; ld["@graph"][0]["about"]={**ld["@graph"][0]["about"],**_rich[1]}; ld["@graph"].append(_rich[2])
     out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
     open(f"tools/{x['slug']}.html","w").write(out)
 print(len(t),"pages")

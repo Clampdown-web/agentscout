@@ -1,0 +1,436 @@
+{
+ "agentcenter": {
+  "meta": "AgentCenter is a mission-control dashboard for OpenClaw AI agents: Kanban tasks, live agent status and deliverable review. Plans from $14/mo.",
+  "long": [
+   "AgentCenter is a mission-control dashboard for people running OpenClaw AI agents. You connect agents running on any machine (laptops, cloud VMs, on-prem servers), assign them tasks with priorities and deadlines, watch their status live, and review what they deliver from one place.",
+   "It is aimed at solo operators running several agents; multi-user team access is on the maker's roadmap. You bring your own AI provider (Claude, GPT, Gemini or another OpenClaw-compatible model)."
+  ],
+  "features": [
+   "Kanban board for assigning and organizing agent tasks",
+   "Real-time agent status: online, working, idle or blocked",
+   "@mentions and chat with agents inside task threads",
+   "Deliverable review, with a lead agent that checks work before it ships",
+   "Live activity feed and analytics across all agents",
+   "Recurring tasks (Pro and up) and Cloud VM provisioning (Scale)"
+  ],
+  "pricing": {
+   "free": false,
+   "start": 14,
+   "trial": "7-day free trial on monthly plans",
+   "tiers": [
+    [
+     "Starter",
+     "$14/mo",
+     "5 agents"
+    ],
+    [
+     "Pro",
+     "$29/mo",
+     "15 agents, recurring tasks"
+    ],
+    [
+     "Scale",
+     "$79/mo",
+     "50 agents, Cloud VM provisioning"
+    ]
+   ],
+   "note": "Yearly billing saves about 17% ($140, $290 and $790 a year). An AI provider subscription or API key is required on top.",
+   "src": "https://www.agentcenter.cloud/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "dart": {
+  "meta": "Dart is an AI project management tool where teams and AI agents share tasks, docs and roadmaps. Free for up to 4 teammates; paid from $8/user/mo.",
+  "long": [
+   "Dart is a project management workspace where people and AI agents work side by side. AI agents can be assigned tasks and execute them, and Dart's AI also plans roadmaps, generates subtasks, fills task properties and writes reports.",
+   "It suits startups and teams that want a Linear- or Asana-style tracker with AI built in, and it connects to ChatGPT, Claude and any LLM through its MCP server."
+  ],
+  "features": [
+   "AI agents that take assigned tasks and do the work",
+   "AI subtask generation, property filling, reporting and duplicate detection",
+   "List, board, roadmap and calendar layouts with sprints and time tracking",
+   "MCP server plus ChatGPT and Claude integrations",
+   "Slack, Discord, GitHub, Notion, Zapier and n8n integrations",
+   "Desktop apps for Mac, Windows and Linux, plus iOS and Android apps"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 8,
+   "trial": "",
+   "tiers": [
+    [
+     "Personal",
+     "$0",
+     "up to 4 teammates, AI agents included"
+    ],
+    [
+     "Premium",
+     "$8 per teammate/mo",
+     "unlimited teammates, AI chat and roadmap planning, GitHub and Slack"
+    ],
+    [
+     "Business",
+     "$12 per teammate/mo",
+     "SAML SSO and SCIM, analytics, priority support"
+    ]
+   ],
+   "note": "Paid prices shown are with yearly billing (20% off).",
+   "src": "https://dartai.com/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "ai-emaily": {
+  "meta": "AI Emaily is an AI email client whose agent triages, drafts in your voice and schedules across every provider. Paid plans from $14.99/mo, 7-day trial.",
+  "long": [
+   "AI Emaily is an AI-native email client with an autonomous assistant that triages your inbox, drafts replies in your voice, schedules meetings and closes loops. It unifies Gmail, Outlook and other providers in one inbox on every device.",
+   "It is built for busy professionals and teams who want an agent to handle email work while they stay in control, with undo and an audit trail on actions."
+  ],
+  "features": [
+   "Works with every major email provider in one unified inbox",
+   "Inbox triage and voice-matched reply drafting",
+   "Scheduling and follow-ups handled by the assistant",
+   "Autopilot mode that can act on email on its own",
+   "Filters cold pitches and noise into a digest",
+   "BYOK, multi-model and MCP tools on Autopilot and Team plans"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 14.99,
+   "trial": "7-day free trial on paid plans",
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "listed in the maker's site summary"
+    ],
+    [
+     "Pro",
+     "$14.99/mo",
+     "1,000 AI credits a month, up to 5 accounts"
+    ],
+    [
+     "Autopilot",
+     "$24.99/mo",
+     "2,000 credits, up to 10 accounts, BYOK"
+    ],
+    [
+     "Team",
+     "$19.99 per seat/mo",
+     "minimum 3 seats"
+    ]
+   ],
+   "note": "Annual billing lowers these to about $12.42, $20.75 and $14.92 a month.",
+   "src": "https://aiemaily.com/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "context-dev": {
+  "meta": "Context.dev is a web data API for AI agents: scrape pages to Markdown, search the web, crawl sites, extract JSON. Free 1,000 credits; paid from $19/mo.",
+  "long": [
+   "Context.dev is a web data API for AI agents and AI apps. One API key lets you scrape any page into clean Markdown, search the live web and news, crawl whole sites, extract structured JSON against your own schema and monitor pages for changes.",
+   "It is for developers building agents, RAG pipelines and products that need fresh web context, with SDKs for TypeScript, Python, Ruby, Go and PHP."
+  ],
+  "features": [
+   "Scrape any page to Markdown, with JS rendering and proxies included",
+   "Crawl up to 500 pages per call, plus Map for URL discovery",
+   "Web and news search APIs and an Answers endpoint",
+   "Structured JSON extraction against your schema",
+   "Page monitors and batch jobs with webhooks",
+   "Brand, logo and styleguide data APIs"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 19,
+   "trial": "",
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "1,000 credits a month, no card"
+    ],
+    [
+     "Developer",
+     "$19/mo",
+     "7,500 credits"
+    ],
+    [
+     "Pro",
+     "$99/mo",
+     "125,000 credits"
+    ],
+    [
+     "Growth",
+     "$299/mo",
+     "500,000 credits"
+    ],
+    [
+     "Scale",
+     "$499/mo",
+     "1,000,000 credits, SSO"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "2M+ credits"
+    ]
+   ],
+   "note": "Annual billing gives two months free. One standard scrape costs 1 credit.",
+   "src": "https://www.context.dev/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "betterclaw": {
+  "meta": "BetterClaw is a no-code AI agent builder: deploy agents to Slack, Telegram, Discord or Gmail on 28+ model providers. Free plan; paid from $19/mo.",
+  "long": [
+   "BetterClaw lets you build and deploy AI agents without code or servers. You create an agent, pick a model, connect channels and tools, and it runs recurring jobs on a schedule in Slack, Telegram, Discord or Gmail.",
+   "It is aimed at non-technical users, solo operators and agencies who want an always-on agent without self-hosting OpenClaw. Every plan is bring-your-own-key, with no markup on model costs."
+  ],
+  "features": [
+   "No-code agent setup, with most agents deployed in under a minute",
+   "Models from 28+ providers, bring your own key with zero markup",
+   "Connectors for Slack, Telegram, Discord, Gmail and more",
+   "Docker-isolated sandbox, kill switch and AES-256 encrypted credentials",
+   "Health monitoring that auto-pauses misbehaving agents",
+   "Team seats with role-based access on Pro and Business"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 19,
+   "trial": "7-day money-back guarantee on paid plans",
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "1 agent, 100 credits"
+    ],
+    [
+     "Basic",
+     "$19/mo",
+     "1 agent, 500 credits"
+    ],
+    [
+     "Pro",
+     "$49/mo",
+     "5 agents, 12,000 credits"
+    ],
+    [
+     "Business",
+     "$149/mo",
+     "25 agents, 40,000 credits"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "unlimited agents"
+    ]
+   ],
+   "note": "Annual billing drops Pro to $39/mo and Business to $119/mo. Model API usage is paid to your provider.",
+   "src": "https://www.betterclaw.io/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "clawdi": {
+  "meta": "Clawdi hosts always-on Hermes or OpenClaw AI agents in the cloud, with shared memory, skills and connectors. Cloud Agent plans $10 or $20 a month.",
+  "long": [
+   "Clawdi is a home for AI agents with shared context. It runs always-on Hermes or OpenClaw agents in the cloud without a server to maintain, and you chat with them over Telegram, Discord or WhatsApp.",
+   "A free, MIT-licensed CLI also connects agents on your own computer, such as Claude Code and Codex, so memories, skills, vaults and connectors are shared across every agent."
+  ],
+  "features": [
+   "Deploy a cloud Hermes or OpenClaw agent in minutes",
+   "Chat through Telegram, Discord or WhatsApp",
+   "Shared memories, skills and secret vaults across agents",
+   "Gmail, Notion, GitHub and hundreds more connectors via one-click OAuth",
+   "Free MIT-licensed CLI to connect Claude Code, Codex and other local agents",
+   "Clawdi AI pay-as-you-go models, or bring your own key"
+  ],
+  "pricing": {
+   "free": false,
+   "start": 10,
+   "trial": "",
+   "tiers": [
+    [
+     "Basic",
+     "$10/mo",
+     "Cloud Agent"
+    ],
+    [
+     "Performance",
+     "$20/mo",
+     "Cloud Agent"
+    ],
+    [
+     "Clawdi AI",
+     "Pay as you go",
+     "optional, or BYOK"
+    ],
+    [
+     "CLI",
+     "Free",
+     "connect your own local agents"
+    ]
+   ],
+   "note": "The open-source stack can also be self-hosted.",
+   "src": "https://clawdi.ai/"
+  },
+  "updated": "2026-10-18"
+ },
+ "momen": {
+  "meta": "Momen is a no-code full-stack AI app builder with a real database, logic, AI agents and publishing. Free plan; paid from $33 per project/mo.",
+  "long": [
+   "Momen is a no-code full-stack app builder. You visually build the frontend, database, backend logic (Actionflows), APIs and AI agents, then publish to your own domain.",
+   "It is for founders and makers who want a production app with real data and payments without writing code, and it supports bringing your own AI model on paid plans."
+  ],
+  "features": [
+   "Visual builder for frontend, database and backend logic",
+   "Built-in AI agents with bring-your-own-model on paid plans",
+   "Automated Actionflows on schedules and database triggers",
+   "APIs, payments, SSO and custom domains",
+   "Usage-based add-ons for storage, data transfer and AI points",
+   "Dedicated instance and BYOC deployment options"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 33,
+   "trial": "",
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "full builder, preview only"
+    ],
+    [
+     "Basic",
+     "$33 per project/mo",
+     "publishing, custom domain, unlimited AI agents"
+    ],
+    [
+     "Pro",
+     "$85 per project/mo",
+     "payments, SSO, 10 collaborators"
+    ]
+   ],
+   "note": "Prices shown are with annual billing (save up to 15%). Extra resources are billed as add-ons.",
+   "src": "https://momen.app/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "scalebrowser": {
+  "meta": "Scalebrowser gives each AI agent its own persistent browser that stays signed in and handles captchas, via MCP, SDK or CDP. From $19/mo, 7-day trial.",
+  "long": [
+   "Scalebrowser is a browser app built for AI agents. Each agent gets its own isolated profile with a persistent identity, so it stays signed in across runs with stored logins, passkeys and cookies, and it handles captchas and email confirmation codes.",
+   "It is for automation builders running many accounts or identities. Agents connect over MCP, Python and Node SDKs or direct CDP, so existing browser-use or Playwright-style agents can switch over."
+  ],
+  "features": [
+   "Unlimited profiles, each with a persistent identity",
+   "Stored logins, passkeys and cookies that stay on your machine",
+   "Captcha handling and an inbox for email confirmation codes",
+   "MCP, Python and Node SDKs, REST API and direct CDP",
+   "Human takeover plus detailed trails with screenshots",
+   "Works with Claude, ChatGPT, Codex, Cursor and custom agents"
+  ],
+  "pricing": {
+   "free": false,
+   "start": 19,
+   "trial": "7-day free trial",
+   "tiers": [
+    [
+     "Start",
+     "$19/mo",
+     "1 browser at once, 1 machine"
+    ],
+    [
+     "Solo",
+     "$39/mo",
+     "5 browsers, 1 machine"
+    ],
+    [
+     "Studio",
+     "$99/mo",
+     "20 browsers, 3 machines"
+    ],
+    [
+     "Fleet",
+     "$249/mo",
+     "50 browsers, 10 machines"
+    ]
+   ],
+   "note": "All plans include unlimited profiles. Fleet extends at +5 browsers for $40/mo or +1 machine for $25/mo.",
+   "src": "https://scalebrowser.net/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "cochat": {
+  "meta": "CoChat is an AI research workspace whose agents gather verified sources, compare models and automate work. Free plan; paid $9 or $19 a month.",
+  "long": [
+   "CoChat is an AI research workspace that verifies every source. Its agents gather citations, check them and organize findings, with side-by-side model comparison and real-time collaboration.",
+   "It suits researchers, students and teams. CoChat connects to 80+ tools and can run automations, with approval gates before risky actions."
+  ],
+  "features": [
+   "Citation verification for research sources",
+   "Side-by-side model comparison",
+   "Real-time team collaboration",
+   "Zotero storage and file uploads",
+   "Automations across 80+ integrations, with approval gates",
+   "Cloud workspace to run code (Pro)"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 9,
+   "trial": "",
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "free models, 10 citation verifications"
+    ],
+    [
+     "Starter",
+     "$9/mo",
+     "premium models, 5x usage, 3 automations"
+    ],
+    [
+     "Pro",
+     "$19/mo",
+     "10x Starter usage, unlimited verifications and automations"
+    ]
+   ],
+   "note": "No credit card needed to start.",
+   "src": "https://cochat.ai/pricing"
+  },
+  "updated": "2026-10-18"
+ },
+ "coddo": {
+  "meta": "Coddo is a Mac app that adds a visual interface, Kanban boards and voice dictation to Claude Code and Codex. Free to start; Basic $7/mo.",
+  "long": [
+   "Coddo Desktop turns terminal AI coding agents such as Claude Code and Codex into a visual app, with chat, Kanban boards, Git integration and multi-project support. It ships with Whisper Island, a voice dictation tool that works anywhere on your Mac.",
+   "It is for developers who use CLI coding agents but want a visual workflow and voice input. Coddo is made in France."
+  ],
+  "features": [
+   "Visual chat interface for Claude Code and Codex",
+   "Unlimited Kanban boards for agent tasks",
+   "Full Git integration and multi-project support",
+   "Custom skills",
+   "Whisper Island voice dictation anywhere on macOS"
+  ],
+  "pricing": {
+   "free": true,
+   "start": 7,
+   "trial": "",
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "1,000 dictated words a week, 30s recordings"
+    ],
+    [
+     "Basic",
+     "$7/mo",
+     "unlimited dictation, priority support"
+    ]
+   ],
+   "note": "Yearly billing saves 22%.",
+   "src": "https://coddo.ai/pricing"
+  },
+  "updated": "2026-10-18"
+ }
+}
