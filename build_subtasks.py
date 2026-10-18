@@ -59,14 +59,44 @@ def tags(x):
     d=f'{x.get("name","")} {x.get("description","")}'
     return [s for s,_,r in _RX if r.search(d)]
 LABEL={s:l for s,l,_ in SUBTASKS}
-def sections(items,min_n=3,max_share=.75,min_page=12):
+# Sub-tasks that make sense under each parent task (quality pass, Oct 18 2026). Tasks not listed stay flat.
+ALLOW={
+"writing-code":["terminal-agents","ide-agents","cloud-coding-agents","parallel-orchestration","code-review","testing-qa","codebase-context","agent-memory","planning-tasks","token-costs","sandboxes","penetration-testing","mcp-servers","rules-config"],
+"terminal-coding":["code-review","mcp-servers","local-models","agent-frameworks"],
+"browsing-the-web":["browser-automation","computer-use","web-scraping","mobile"],
+"computer-use":["browser-automation","agent-memory","mcp-servers"],
+"automating-workflows":["workflow-automation","browser-automation","computer-use","no-code-apps","mcp-servers"],
+"building-apps-without-code":["no-code-apps","workflow-automation"],
+"building-ai-agents":["multi-agent","vector-rag","agent-memory","voice-phone","fine-tuning","evals","workflow-automation","mcp-servers"],
+"multi-agent-systems":["agent-frameworks","parallel-orchestration","research-agents","workflow-automation"],
+"building-voice-agents":["voice-phone","agent-payments"],
+"customer-support":["support-agents","voice-phone","sales-agents","vector-rag"],
+"business-automation":["sales-agents","support-agents","email-agents","workflow-automation"],
+"personal-assistants":["computer-use","local-models","agent-memory","chat-app-agents","research-agents","browser-automation"],
+"research":["research-agents","search-apis","web-scraping","vector-rag","text-to-sql","trading-agents"],
+"data-analysis":["text-to-sql","vector-rag","web-scraping","mcp-servers","observability"],
+"documents":["vector-rag","web-scraping","research-agents"],
+"connecting-tools-mcp":["mcp-servers","mcp-gateways","agent-memory","text-to-sql","sandboxes","codebase-context","computer-use","browser-automation","web-scraping","search-apis","agent-auth","agent-payments","observability"],
+"building-mcp-servers":["mcp-gateways","agent-frameworks","agent-auth","observability","text-to-sql"],
+"agent-memory":["vector-rag","codebase-context","local-models","agent-frameworks"],
+"evaluating-agents":["observability","evals","guardrails","penetration-testing","sandboxes"],
+"monitoring-agents":["evals","guardrails"],
+"agent-security":["guardrails","sandboxes","penetration-testing","agent-wallets"],
+"testing-apps":["testing-qa","code-review","penetration-testing"],
+"making-images-and-design":["images-design","mcp-servers","fine-tuning"],
+"crypto-and-wallets":["trading-agents","agent-wallets","agent-payments","mcp-servers","penetration-testing"],
+"agent-payments":["agent-wallets","agent-auth"],
+}
+def sections(items,min_n=3,max_share=.75,min_page=12,task=None,allow=None):
     """Return [(slug,label,[tools])...] + others list, or None when the page should stay flat."""
     if len(items)<min_page: return None
     tg={id(x):tags(x) for x in items}; n=len(items)
     cnt={}
     for x in items:
         for s in tg[id(x)]: cnt[s]=cnt.get(s,0)+1
-    elig=[s for s,_,_ in SUBTASKS if cnt.get(s,0)>=min_n and cnt[s]<=max_share*n]
+    if allow is None: allow=ALLOW.get(task)
+    if not allow: return None
+    elig=[s for s,_,_ in SUBTASKS if s in allow and cnt.get(s,0)>=min_n and cnt[s]<=max_share*n]
     for _ in range(3):  # re-check after exclusive assignment
         grp={s:[] for s in elig}; other=[]
         for x in items:
@@ -111,3 +141,62 @@ def price_line(items):
     return ", ".join(f"{n} {l}" for n,l in parts if n)
 def dump(t):
     json.dump({x["slug"]:tags(x) for x in t},open("subtasks.json","w"),indent=0,ensure_ascii=False)
+# One-line explanations used on sub-task pages (only sub-tasks that can get a page need one).
+SUBDESC={
+"rules-config":"Tools that give coding agents shared rules, skills and settings, so Claude Code, Cursor, Codex and others follow the same conventions in every repo.",
+"browser-automation":"Agents and libraries that drive a real browser: opening pages, clicking, typing and filling in forms from plain-language instructions.",
+"computer-use":"Agents that see the screen and use the mouse and keyboard, so they can work in desktop apps as well as the browser.",
+"mobile":"Tools that run or control agents from phones, or let agents operate mobile apps and devices.",
+"workflow-automation":"Platforms that chain apps, triggers and AI steps into workflows that run on their own.",
+"no-code-apps":"Builders that turn a description or a drag-and-drop canvas into a working app or agent, without writing code.",
+"multi-agent":"Frameworks for teams of agents that hand work to each other, split tasks and check each other's output.",
+"vector-rag":"Retrieval tools that let agents search documents, PDFs and knowledge bases and answer from them (RAG).",
+"agent-memory":"Memory layers that let agents remember users, past sessions and facts over time.",
+"voice-phone":"Platforms for agents that listen and talk: phone lines, real-time speech and voice assistants.",
+"local-models":"Agents and assistants that can run on your own machine or server, keeping data local.",
+"research-agents":"Agents that search, read many sources and return a cited answer or report.",
+"text-to-sql":"Tools that let agents query databases, from text-to-SQL to database MCP servers.",
+"evals":"Evaluation tools that score agent outputs, catch regressions and compare prompts and models.",
+"guardrails":"Guardrails, policy engines and permission layers that limit what agents are allowed to do.",
+"images-design":"Agents and tools for visual work: generating images, diagrams and designs.",
+"agent-wallets":"Wallets built for agents, so they can hold funds and sign transactions within limits you set.",
+"agent-payments":"Payment rails that let agents pay for APIs and services on their own, including x402 and stablecoin payments.",
+"agent-frameworks":"Frameworks and SDKs for building agents in code.",
+"code-review":"Agents that read diffs and pull requests and flag bugs before merge.",
+"parallel-orchestration":"Tools for running several agents at once and reviewing what each hands back.",
+"codebase-context":"Context layers and code search that help agents understand large codebases with fewer tokens.",
+"sandboxes":"Isolated sandboxes where agents can run code and tools away from your machine and data.",
+"search-apis":"Search APIs built for agents, returning clean results an LLM can use.",
+"web-scraping":"Tools that turn websites into clean data an agent can use.",
+"observability":"Tracing and monitoring for agents: costs, latency and errors in one place.",
+"terminal-agents":"Agents that run in your terminal: they read files, run commands and propose changes.",
+"ide-agents":"Agents that live inside your editor or IDE.",
+"planning-tasks":"Planning boards and task trackers that coding agents can read and update.",
+"mcp-servers":"MCP servers that connect agents to outside apps and data.",
+"mcp-gateways":"Gateways and registries for finding, hosting and securing MCP servers.",
+"agent-auth":"Identity and credential tools that let agents sign in without seeing raw secrets.",
+"trading-agents":"Agents that research markets and execute trades. Trading is risky; none of this is financial advice.",
+"sales-agents":"Agents that find leads, write outreach and update your CRM.",
+"support-agents":"Agents that answer customer questions and resolve tickets.",
+"email-agents":"Assistants that draft replies and manage your inbox.",
+"fine-tuning":"Platforms for fine-tuning models and training agents on your own tasks.",
+"penetration-testing":"Agents that probe apps and code the way an attacker would and report vulnerabilities.",
+"chat-app-agents":"Agents you can reach from Slack, Telegram, WhatsApp, Discord or iMessage.",
+"testing-qa":"Agents that write and run tests and report what breaks.",
+"token-costs":"Trackers for token usage and spend across coding agents.",
+"cloud-coding-agents":"Autonomous coding agents that take an issue and come back with a pull request.",
+}
+def subpages(m,t,existing_sets):
+    """Sub-task pages: >=8 tools, <=75% of the parent, <70% overlap (share of the new page's tools) with any /s/ or /best/ page,
+    Jaccard <70% with any task page, <70% contained in an earlier sub-task page. Returns [(slug,parent_slug,sub,items)]."""
+    tasksets={s:{x["slug"] for x in it} for s,(T,it) in m.items()}; out=[]; made=[]
+    for s,(T,items) in m.items():
+        for sub in ALLOW.get(s) or []:
+            if sub not in SUBDESC: continue
+            its=[x for x in items if sub in tags(x)]; A={x["slug"] for x in its}
+            if len(A)<8 or len(A)>.75*len(items): continue
+            if any(len(A&B)/len(A)>=.7 for B in existing_sets): continue
+            if any(len(A&B)/len(A|B)>=.7 for f,B in tasksets.items() if f!=s): continue
+            if any(len(A&B)/min(len(A),len(B))>=.7 for B in made): continue
+            made.append(A); out.append((f"{s}-{sub}",s,sub,its))
+    return out
