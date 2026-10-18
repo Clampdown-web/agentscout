@@ -276,7 +276,7 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .sharemenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;min-width:190px;max-width:calc(100vw - 32px);background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column}
 .sharemenu a,.sharemenu button{display:block;width:100%;text-align:left;padding:9px 10px;border-radius:6px;font:inherit;font-size:14px;color:var(--text);background:none;border:0;cursor:pointer;text-decoration:none;box-sizing:border-box}
 .sharemenu a:hover,.sharemenu button:hover,.sharemenu a:focus-visible,.sharemenu button:focus-visible{background:var(--line);outline:none}
-.shareacts{display:flex;margin:4px 0 18px}
+.shareacts{display:flex;margin:4px 0 18px}.shareacts.center{justify-content:center}
 
 /* Ratings & reviews (reviews.js, build_reviews.py) */
 .rv{margin:0 0 32px;padding:20px;border:1px solid var(--line,rgba(127,127,127,.25));border-radius:12px;min-height:300px}
@@ -316,3 +316,5 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .card.fcard .tn{padding-right:84px}
 
 .addedago{margin:6px 0 0;font-size:12px;color:var(--faint)}
+/* Oct 18 2026: portrait phones (nav links wrap) - "Submit a tool" gets its own row, centered. The hidden Saved link becomes an invisible full-width line break. Landscape/tablet/desktop unchanged. */
+@media(max-width:430px) and (orientation:portrait){nav .links a.hide{display:block;flex:0 0 100%;height:0;margin:0;padding:0;overflow:hidden;visibility:hidden}nav .links a.btn{margin:2px auto 0}}
