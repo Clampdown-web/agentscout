@@ -92,7 +92,7 @@ def lite(out,x,t,catslug,prim,B,r):
     # Offer only when the price is verified: official pricing page tiers, or a verified OSI open-source licence (free to use)
     F=r.get("facts") or {}
     if offers: app["offers"]=offers
-    elif F.get("osi") and F.get("license"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",F["license"])+")"}
+    elif F.get("osi") and F.get("license") and not F.get("archived"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",F["license"])+")"}
     if F.get("repo"): app["sameAs"]=F["repo"]
     if r.get("features"): app["featureList"]=r["features"]
     fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
