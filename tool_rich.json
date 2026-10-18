@@ -4398,5 +4398,976 @@
    "https://github.com/electric-sql/electric"
   ],
   "updated": "2026-10-18"
+ },
+ "bindu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Bindu is an identity, communication and payments layer for AI agents, so agents can talk to each other, prove who they are and get paid for their work.",
+   "Its README describes a Gmail-shaped inbox for the agent internet, where agents send signed JSON-RPC messages to each other and identities are verified inline."
+  ],
+  "who": "Developers who want their agents to interact with, authenticate to and transact with other agents.",
+  "features": [
+   "Agent identity",
+   "Signed JSON-RPC messaging between agents",
+   "Payments for agent work"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/GetBindu/Bindu"
+  ],
+  "updated": "2026-10-18"
+ },
+ "aws-mcp-servers": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AWS MCP Servers is a suite of official open-source MCP servers from AWS Labs that help you work with AWS services wherever you use MCP.",
+   "AWS notes that the new Agent Toolkit for AWS is now the successor to these MCP servers, plugins and skills, so check it for production work."
+  ],
+  "who": "Developers and agents working with AWS through MCP clients.",
+  "features": [
+   "Specialized MCP servers for AWS services",
+   "Official AWS Labs project",
+   "Successor: Agent Toolkit for AWS"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/awslabs/mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "replicate": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Replicate lets you run and deploy open models through an API with usage-based pricing. Its open-source tool Cog packages machine-learning models in standard, production-ready containers.",
+   "With Cog you define the environment in a simple config file instead of writing your own Dockerfile, then deploy the model to your own infrastructure or to Replicate."
+  ],
+  "who": "Developers who want to call or deploy open models via an API without managing GPUs.",
+  "features": [
+   "Run open models via API",
+   "Cog for packaging models in containers",
+   "Deploy to Replicate or your own infrastructure",
+   "Usage-based pricing"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/replicate/cog"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nasiko": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Nasiko is an open runtime for agents, coding harnesses, frameworks and tools. It finds the coding agents already running in an organization, shows what each costs by harness and model, and routes them to the models you choose.",
+   "Developers keep using their existing harness workflows while the organization gets visibility and control."
+  ],
+  "who": "Engineering leaders who want visibility and model control over the coding agents their developers already use.",
+  "features": [
+   "Discovers running coding agents",
+   "Cost by harness and model",
+   "Routes agents to chosen models"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Nasiko-Labs/nasiko"
+  ],
+  "updated": "2026-10-18"
+ },
+ "activeloop": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Activeloop makes Deep Lake, a database for AI built on a storage format optimized for deep learning. It stores data plus vectors, including embeddings, images, text and video, for LLM apps and RAG.",
+   "It is also used to manage datasets while training deep-learning models. A cloud offering is available."
+  ],
+  "who": "Teams building RAG or multimodal AI apps and managing training datasets.",
+  "features": [
+   "Multimodal storage: vectors, images, text, video",
+   "Vector search for LLM apps",
+   "Dataset management for training",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/activeloopai/deeplake"
+  ],
+  "updated": "2026-10-18"
+ },
+ "microsandbox": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "microsandbox runs untrusted workloads, such as AI agents, user code, plugins, CI jobs and scrapers, inside fast, local microVMs with hardware-level isolation.",
+   "You can fork live sandboxes and snapshot running ones."
+  ],
+  "who": "Developers who need to run agent or user code safely on their own machines.",
+  "features": [
+   "Hardware-isolated microVMs",
+   "Local-first",
+   "Fork and snapshot sandboxes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/superradcompany/microsandbox"
+  ],
+  "updated": "2026-10-18"
+ },
+ "gitmcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "GitMCP is a free, open-source remote MCP server that turns any GitHub project, repositories or GitHub Pages, into a documentation hub for AI tools like Cursor.",
+   "That lets agents access up-to-date docs and code even for projects the model has never seen, reducing hallucinated APIs."
+  ],
+  "who": "Developers whose coding agents need accurate docs for less-known or fast-moving libraries.",
+  "features": [
+   "Remote MCP for any GitHub repo",
+   "Up-to-date docs and code",
+   "Free and open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/idosal/git-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "honcho": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Honcho, from Plastic Labs, is memory infrastructure for stateful agents that understand changing people, agents, groups, projects and ideas over time.",
+   "You store messages and events, Honcho reasons over them in the background, and you query peer representations, session context, search results or insights from any model or framework. It runs managed at api.honcho.dev or locally."
+  ],
+  "who": "Developers building agents that need to remember and understand their users over time.",
+  "features": [
+   "Background reasoning over messages",
+   "Peer representations and session context",
+   "Works with any model or framework",
+   "Managed or self-hosted"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/plastic-labs/honcho"
+  ],
+  "updated": "2026-10-18"
+ },
+ "reef": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Reef is open-source infrastructure for continually self-improving agents. It connects agent inference, feedback, learning and versioned delivery.",
+   "You can use it to train model weights with Slime and SGLang, or to improve an agent's harness, including its prompts, rules and skills."
+  ],
+  "who": "ML teams who want agents that keep improving from feedback in production.",
+  "features": [
+   "Connects inference, feedback and learning",
+   "Weight training via Slime and SGLang",
+   "Harness improvement: prompts, rules, skills",
+   "Versioned delivery"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Human-Agent-Society/reef"
+  ],
+  "updated": "2026-10-18"
+ },
+ "browsertools-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BrowserTools MCP gives AI coding agents eyes on the browser. It streams console output, network activity, screenshots and Lighthouse audits from your real Chrome session to MCP clients such as Cursor, Claude Code, Windsurf, Cline, Zed and Gemini CLI.",
+   "Version 2.0 is a rewrite that runs as one process."
+  ],
+  "who": "Web developers who want their coding agent to see browser errors and network calls while debugging.",
+  "features": [
+   "Console logs and network activity",
+   "Screenshots and Lighthouse audits",
+   "Uses your real Chrome session",
+   "Many MCP clients"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/AgentDeskAI/browser-tools-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "talk-to-figma-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Talk to Figma MCP, from Grab, is an MCP integration between AI agents such as Cursor or Claude Code and Figma, letting the agent read designs and modify them programmatically.",
+   "It includes a TypeScript MCP server for the Figma integration."
+  ],
+  "who": "Designers and developers who want an agent to inspect or edit Figma files.",
+  "features": [
+   "Read Figma designs",
+   "Modify designs programmatically",
+   "Works with Cursor and Claude Code"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/grab/cursor-talk-to-figma-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "smolvm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "smolvm embeds lightweight virtual machines into your software for portable dev environments and local sandboxing, so agents can run safely on your computer.",
+   "It runs on Windows (with the Windows Hypervisor Platform) and other platforms, and its docs are written for both humans and coding agents."
+  ],
+  "who": "Developers who want branchable, portable VMs for running agents locally.",
+  "features": [
+   "Lightweight embeddable VMs",
+   "Local sandboxing",
+   "Docs for humans and agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/smol-machines/smolvm"
+  ],
+  "updated": "2026-10-18"
+ },
+ "open-connector": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Open Connector is an open-source connector gateway for AI agents and an alternative to Pipedream or Composio. Users connect app accounts once, and agents get a shared catalog of 1,000+ providers.",
+   "There is a managed option with hosted OAuth and runtime, or you can run it yourself with Docker or Node.js and manage storage and OAuth. Our listing notes access via SDK, CLI and MCP."
+  ],
+  "who": "Developers who need agents to act in users' SaaS accounts without building auth for each app.",
+  "features": [
+   "1,000+ providers",
+   "Managed OAuth or self-hosted",
+   "SDK, CLI and MCP access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/oomol-lab/open-connector"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lemonade": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Lemonade is a local AI server that offers capabilities similar to cloud APIs, free and private, running the latest models for chat, coding, speech and image generation on your own NPU and GPU.",
+   "Lemonade Server connects to many apps through standard OpenAI, Anthropic and Ollama APIs, and an embeddable version is available."
+  ],
+  "who": "People and developers who want to run AI models and agents locally on their own hardware.",
+  "features": [
+   "Local LLM, speech and image models",
+   "OpenAI, Anthropic and Ollama-compatible APIs",
+   "Runs on NPU and GPU",
+   "Embeddable version"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lemonade-sdk/lemonade"
+  ],
+  "updated": "2026-10-18"
+ },
+ "klavis-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Klavis AI provides MCP integrations for agents, with 100+ prebuilt integrations and OAuth support, designed to use tools reliably and optimize the context window.",
+   "The company also provides live, real-world MCP environments for training agents with long-horizon tool-use data, used by AI labs."
+  ],
+  "who": "Developers connecting agents to many tools, and labs training agents on tool use.",
+  "features": [
+   "100+ prebuilt MCP integrations",
+   "OAuth support",
+   "MCP environments for training and RL",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Klavis-AI/klavis",
+   "https://www.klavis.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wigolo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Wigolo is local-first web search, fetch and crawl for AI agents over MCP, with no API keys, no cloud and no metered bill.",
+   "It works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode, VS Code, Windsurf, Zed and more, plus frameworks like LangChain, CrewAI, LlamaIndex and the Vercel AI SDK, or plain REST."
+  ],
+  "who": "Developers who want web access for agents without paying for a search API.",
+  "features": [
+   "Web search, fetch and crawl",
+   "No API keys or cloud",
+   "MCP and REST",
+   "Works with many agents and frameworks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/KnockOutEZ/wigolo"
+  ],
+  "updated": "2026-10-18"
+ },
+ "zotero-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Zotero MCP connects your Zotero research library to Claude, ChatGPT, Codex, Cursor and other assistants, so you can search, read, cite and annotate your papers.",
+   "It also offers a chat panel inside Zotero, with page citations that open the cited passage."
+  ],
+  "who": "Researchers and students who manage papers in Zotero.",
+  "features": [
+   "Search, read, cite and annotate papers",
+   "Works with Claude, ChatGPT, Codex and Cursor",
+   "Chat panel inside Zotero"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/54yyyu/zotero-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentgateway": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "agentgateway is an open-source proxy built on AI-native protocols (MCP and A2A) that adds security, observability and governance to agent-to-LLM, agent-to-tool and agent-to-agent traffic across frameworks and environments.",
+   "It routes traffic to major LLM providers such as OpenAI, Anthropic, Gemini and Bedrock."
+  ],
+  "who": "Platform teams who need to secure and observe agent traffic.",
+  "features": [
+   "MCP and A2A proxy",
+   "Security, observability and governance",
+   "Routes to major LLM providers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/agentgateway/agentgateway"
+  ],
+  "updated": "2026-10-18"
+ },
+ "olares": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Olares is an open-source personal cloud OS you operate in plain language, built to run AI agents and LLMs on hardware you own.",
+   "Powered by Kubernetes, it turns your machines into a self-hosted AI platform reachable from any browser, with compute, storage, networking and apps in one place."
+  ],
+  "who": "Individuals and small teams who want always-on agents and models at home or on their own servers.",
+  "features": [
+   "Personal cloud OS",
+   "Runs agents and LLMs on your hardware",
+   "Kubernetes-based",
+   "Browser access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/beclab/Olares"
+  ],
+  "updated": "2026-10-18"
+ },
+ "aci-dev": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ACI.dev is an open-source tool-calling platform that connects 600+ tools to agentic IDEs or custom agents, with intent-aware tool access and multi-tenant auth.",
+   "A separate Unified MCP server is built on the platform. A cloud option is available."
+  ],
+  "who": "Developers who want many tools available to their agents through one platform.",
+  "features": [
+   "600+ tools",
+   "Multi-tenant auth",
+   "Unified MCP server",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/aipotheosis-labs/aci"
+  ],
+  "updated": "2026-10-18"
+ },
+ "liveblocks": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Liveblocks provides building blocks and infrastructure that let people and AI work together inside your app, with realtime collaboration features.",
+   "Its products include pre-built hooks, components and APIs that you can use individually or together. It is listed as paid."
+  ],
+  "who": "Product teams adding multiplayer collaboration and AI agents to their apps.",
+  "features": [
+   "Realtime collaboration building blocks",
+   "Hooks, components and APIs",
+   "People and AI working together"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/liveblocks/liveblocks"
+  ],
+  "updated": "2026-10-18"
+ },
+ "contextforge": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ContextForge is IBM's open-source registry and proxy that federates MCP, A2A and REST/gRPC APIs into one endpoint for AI clients.",
+   "It provides centralized governance, discovery and observability, optimizes agent and tool calls, and supports plugins."
+  ],
+  "who": "Enterprises managing many tools and agents who want one governed gateway.",
+  "features": [
+   "Federates MCP, A2A, REST and gRPC",
+   "Central governance and discovery",
+   "Observability",
+   "Plugins"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/IBM/mcp-context-forge"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-c-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP C# SDK is the official C# SDK for the Model Context Protocol, letting .NET applications, services and libraries implement MCP clients and servers.",
+   "It ships packages such as ModelContextProtocol.Core for projects that only need client or low-level server APIs. Our listing notes it is maintained with Microsoft."
+  ],
+  "who": ".NET developers building MCP servers or clients.",
+  "features": [
+   "Official C#/.NET MCP SDK",
+   "Clients and servers",
+   "Modular packages"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/csharp-sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nono": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "nono is an agent runtime security tool that secures agents, their tools, their credentials and the skills and instructions they follow, with low latency.",
+   "Our listing describes it as zero-trust sandboxing for agent runtimes. The project is approaching 1.0 and says APIs are stabilizing."
+  ],
+  "who": "Teams running agents who need to lock down tools, credentials and instructions.",
+  "features": [
+   "Zero-trust sandboxing",
+   "Protects tools, credentials and skills",
+   "Low latency",
+   "Pre-1.0"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nolabs-ai/nono"
+  ],
+  "updated": "2026-10-18"
+ },
+ "judge0": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Judge0 is a robust, scalable, sandboxed open-source online code execution system for humans and AI. It can power applications such as AI agents that need to run code.",
+   "A hosted option is available alongside the open-source system."
+  ],
+  "who": "Developers who need to run untrusted code from users or agents safely.",
+  "features": [
+   "Sandboxed code execution",
+   "Scalable",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/judge0/judge0"
+  ],
+  "updated": "2026-10-18"
+ },
+ "unity-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Unity MCP is an AI-powered game-development assistant for the Unity Editor and runtime. It connects Claude, Cursor and Windsurf to Unity via MCP to automate workflows and generate code.",
+   "Unlike editor-only tools, it can also work inside your compiled game, enabling real-time AI debugging and player-AI interaction."
+  ],
+  "who": "Unity developers who want AI agents to help build, test and debug games.",
+  "features": [
+   "Editor and runtime support",
+   "Works with Claude, Cursor and Windsurf",
+   "AI inside compiled games"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/IvanMurzak/Unity-MCP"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcpo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "mcpo, from Open WebUI, is a simple proxy that takes an MCP server command and exposes it as a standard RESTful OpenAPI server.",
+   "That way MCP tools work with LLM agents and apps that expect OpenAPI, and gain standard features such as docs that raw stdio MCP servers lack."
+  ],
+  "who": "Developers who want to use MCP tools from OpenAPI-based apps such as Open WebUI.",
+  "features": [
+   "Exposes MCP servers as OpenAPI",
+   "Adds docs and standard HTTP",
+   "Works with OpenAPI-based agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/open-webui/mcpo"
+  ],
+  "updated": "2026-10-18"
+ },
+ "antv-mcp-server-chart": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AntV MCP Server Chart is a TypeScript MCP server from AntV for chart generation and data analysis. Our listing notes it supports more than 25 chart types.",
+   "It exposes chart types as MCP tools, such as area charts, and can also be used in Dify."
+  ],
+  "who": "Developers and analysts who want agents to produce charts from data.",
+  "features": [
+   "Chart generation via MCP tools",
+   "Many chart types",
+   "Works in Dify"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/antvis/mcp-server-chart"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cloudflare-mcp-servers": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cloudflare MCP Servers is a collection of MCP servers that connect MCP clients like Cursor and Claude to Cloudflare services, so you can use natural language to work with your Cloudflare account.",
+   "Our listing notes coverage of Workers, observability, DNS analytics and other Cloudflare services."
+  ],
+  "who": "Developers who manage Cloudflare resources and want to do it through an AI assistant.",
+  "features": [
+   "Several Cloudflare MCP servers",
+   "Natural-language control of your account",
+   "Works with Cursor, Claude and other clients"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cloudflare/mcp-server-cloudflare"
+  ],
+  "updated": "2026-10-18"
+ },
+ "archestra": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Archestra is an all-in-one open-source enterprise AI platform with guardrails, an MCP registry, a gateway and an orchestrator.",
+   "It is built on security and observability: SSO and RBAC, sandboxed code execution, Lethal-Trifecta guardrails, OpenTelemetry traces and Prometheus metrics. A cloud option is available."
+  ],
+  "who": "Enterprises rolling out agents and MCP tools that need governance and security.",
+  "features": [
+   "MCP registry, gateway and orchestrator",
+   "SSO and RBAC",
+   "Guardrails and sandboxed execution",
+   "OpenTelemetry and Prometheus"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/archestra-ai/archestra"
+  ],
+  "updated": "2026-10-18"
+ },
+ "optillm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "optillm is an OpenAI API-compatible optimizing inference proxy that applies 20+ reasoning techniques to improve LLM accuracy on reasoning tasks without training or fine-tuning.",
+   "Its README claims 2-10x accuracy improvements on reasoning tasks."
+  ],
+  "who": "Developers who want better reasoning from existing models by changing only the endpoint.",
+  "features": [
+   "OpenAI-compatible proxy",
+   "20+ inference-time techniques",
+   "No training required"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/algorithmicsuperintelligence/optillm"
+  ],
+  "updated": "2026-10-18"
+ },
+ "excel-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Excel MCP Server is an open-source MCP server that lets Claude, Cursor, VS Code Copilot, Codex and other clients create, read and edit Excel files, including charts, PivotTables, formulas and tables.",
+   "It is built on openpyxl, needs no Microsoft Excel, and runs on Windows, macOS and Linux."
+  ],
+  "who": "People who want AI assistants to build or update spreadsheets.",
+  "features": [
+   "Create, read and edit Excel files",
+   "Charts, PivotTables and formulas",
+   "No Excel required",
+   "Windows, macOS and Linux"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/haris-musa/excel-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "arcbox": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ArcBox is a fast, open-source container and VM runtime for macOS, written from scratch in Rust, with drop-in Docker support and agent sandboxes.",
+   "It positions itself as an open-source (MIT/Apache-2.0) alternative to Docker Desktop and OrbStack. Our listing notes it runs agents on isolated machines with their own kernel, filesystem and network."
+  ],
+  "who": "Mac developers who want fast containers and isolated sandboxes for agents.",
+  "features": [
+   "Container and VM runtime for macOS",
+   "Drop-in Docker",
+   "Agent sandboxes",
+   "MIT/Apache-2.0"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/arcboxlabs/arcbox"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-rust-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP Rust SDK is the official Rust implementation of the Model Context Protocol, built on the tokio async runtime.",
+   "It includes the rmcp core crate and rmcp-macros for generating tools, and a migration guide covers the 3.x breaking changes."
+  ],
+  "who": "Rust developers building MCP servers or clients.",
+  "features": [
+   "Official Rust MCP SDK",
+   "tokio async runtime",
+   "rmcp and rmcp-macros crates"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/rust-sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "linkedin-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LinkedIn MCP Server gives AI agents access to LinkedIn through your own browser session: read profiles, research companies, find jobs, and manage conversations and connection requests.",
+   "It is an independent open-source project, not affiliated with LinkedIn or Microsoft."
+  ],
+  "who": "People who want an assistant to help with LinkedIn research and job search.",
+  "features": [
+   "Profiles, companies and jobs",
+   "Messages and connection requests",
+   "Uses your own browser session",
+   "Independent project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/stickerdaniel/linkedin-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "radar": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Radar is an open-source Kubernetes UI with a built-in MCP server for AI agents. It is a single binary that needs no account and is free, and it can run from your laptop or in-cluster.",
+   "Views include topology, resources, Helm, GitOps, traffic, cost, audit, RBAC and upgrade impact, with nothing to install on the cluster."
+  ],
+  "who": "Kubernetes users who want a visual UI plus cluster context for their AI agents.",
+  "features": [
+   "Kubernetes topology and resources",
+   "Helm, GitOps, traffic and cost views",
+   "Built-in MCP server",
+   "Single binary, no account"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/skyhook-io/radar"
+  ],
+  "updated": "2026-10-18"
+ },
+ "azure-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Azure MCP Server is Microsoft's MCP server for connecting AI agents and assistants to Azure services.",
+   "It lives in Microsoft's MCP repository, which explains MCP's client-server architecture of hosts, clients and servers."
+  ],
+  "who": "Developers and teams working with Azure who want AI assistants to act on their resources.",
+  "features": [
+   "Connects agents to Azure services",
+   "Official Microsoft project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-java-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP Java SDK is the official set of Java projects for the Model Context Protocol. It lets Java applications interact with AI models and tools through a standard interface.",
+   "It supports both synchronous and asynchronous communication patterns."
+  ],
+  "who": "Java developers building MCP servers or clients.",
+  "features": [
+   "Official Java MCP SDK",
+   "Sync and async patterns",
+   "Servers and clients"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/java-sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "acontext": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Acontext is an open-source skill memory layer for AI agents. It automatically captures learnings from agent runs and stores them as agent skill files you can read, edit and share across agents, LLMs and frameworks.",
+   "The aim is for agents to learn from mistakes and reuse what worked without opaque memory polluting the context."
+  ],
+  "who": "Developers who want agent learnings stored as readable, shareable skills.",
+  "features": [
+   "Captures learnings automatically",
+   "Stores them as skill files",
+   "Shareable across agents and frameworks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/memodb-io/Acontext"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mirage": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mirage is a virtual terminal for AI agents. A virtual filesystem provides broad data context, virtualized CLIs give agents flexible tool use, and dynamic runtimes save infrastructure cost and tokens.",
+   "Fine-grained control over what the agent can do and see is part of its security model."
+  ],
+  "who": "Developers who want agents to work in a controlled, virtual terminal environment.",
+  "features": [
+   "Virtual filesystem",
+   "Virtualized CLIs",
+   "Fine-grained action and visibility control"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/strukto-ai/mirage"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dbhub": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DBHub, from Bytebase, is a minimal database MCP server: token-efficient, zero-dependency, with just two tools by default and opt-in extras. Our listing notes support for Postgres, MySQL, SQL Server and others.",
+   "Bytebase points to its main product for enterprise needs such as approval flows, access control, data masking and audit logging."
+  ],
+  "who": "Developers who want agents to explore and query databases with minimal overhead.",
+  "features": [
+   "Lightweight database MCP server",
+   "Two default tools, opt-in extras",
+   "Multiple SQL databases"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/bytebase/dbhub"
+  ],
+  "updated": "2026-10-18"
+ },
+ "reme": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ReMe, from the AgentScope team, is a local-first, self-evolving personal knowledge base for AI agents. It turns conversations and resources into readable, editable, searchable and interconnected Markdown memory.",
+   "Agents such as QwenPaw and DeepSeek Harness can share the same workspace to retrieve, maintain and evolve knowledge."
+  ],
+  "who": "Developers who want agent memory stored as ordinary, editable files.",
+  "features": [
+   "Markdown memory files",
+   "Searchable and interconnected",
+   "Shared workspace across agents",
+   "Local-first"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/agentscope-ai/ReMe"
+  ],
+  "updated": "2026-10-18"
+ },
+ "onecli": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OneCLI is an open-source platform for running AI agents as a team in a company: you create a sandboxed personal agent for each employee and give each one only the access it needs.",
+   "Agents work in a sandbox and are routed through a gateway that handles credentials securely. It can be installed on Kubernetes with a Helm chart."
+  ],
+  "who": "Companies that want to give every employee a secure, sandboxed AI agent.",
+  "features": [
+   "Agent per employee",
+   "Sandboxed execution",
+   "Gateway with secure credential handling",
+   "Helm chart for Kubernetes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/onecli/onecli"
+  ],
+  "updated": "2026-10-18"
+ },
+ "davinci-resolve-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DaVinci Resolve MCP is an MCP server that lets AI assistants control DaVinci Resolve Studio through its official Scripting API.",
+   "It provides full API coverage plus guarded helpers for editing, media-pool organization, render setup, review markers, grading, Fusion, Fairlight and project tasks."
+  ],
+  "who": "Video editors who want an AI assistant to automate DaVinci Resolve work.",
+  "features": [
+   "Full Resolve Scripting API coverage",
+   "Editing, grading and rendering helpers",
+   "Fusion and Fairlight support"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/samuelgursky/davinci-resolve-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "grafana-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Grafana MCP is Grafana's MCP server, giving AI agents access to your Grafana instance and its ecosystem. Our listing notes dashboards, data sources and incidents.",
+   "It requires uv and is configured in MCP clients such as Claude Desktop or Cursor; it also works with Grafana Cloud."
+  ],
+  "who": "SRE and ops teams who want AI assistants to query Grafana.",
+  "features": [
+   "Access to Grafana instances",
+   "Works with Grafana Cloud",
+   "Claude Desktop and Cursor configs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/grafana/mcp-grafana"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentfs": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AgentFS, from Turso, is a filesystem designed for AI agents, providing the storage abstractions agents need the way traditional filesystems serve applications. Our listing notes snapshots and auditing.",
+   "It is in beta, and the README advises caution and backups with production data."
+  ],
+  "who": "Developers who want agent file activity to be snapshotted and auditable.",
+  "features": [
+   "Filesystem built for agents",
+   "Snapshots and auditing",
+   "Beta"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/tursodatabase/agentfs"
+  ],
+  "updated": "2026-10-18"
+ },
+ "arxiv-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "arXiv MCP Server is a local MCP server for agent literature work. It reads original-LaTeX sections, generates BibTeX from arXiv metadata and supports topic watches, with papers kept on disk.",
+   "The working loop is paper ID, outline, one section, then citations; search is optional. The default install is uvx arxiv-mcp-server."
+  ],
+  "who": "Researchers who want an AI assistant to read and cite arXiv papers.",
+  "features": [
+   "Original-LaTeX section reads",
+   "BibTeX from arXiv metadata",
+   "Topic watches",
+   "Papers stored locally"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/blazickjp/arxiv-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "seekdb": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "seekdb, from OceanBase, is an AI-native search database and state store for AI agents. It is MySQL-compatible, runs embedded or as a server, and combines vector, full-text and scalar search in one SQL query.",
+   "It has full ACID transactions, fork-and-merge copy-on-write sandboxes for safe agent exploration, and works with LangChain, LlamaIndex and Dify."
+  ],
+  "who": "Developers who need one database for agent state, vectors and text search.",
+  "features": [
+   "Hybrid vector and full-text search in SQL",
+   "MySQL-compatible; embedded or server",
+   "Fork/merge sandboxes",
+   "ACID"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/oceanbase/seekdb"
+  ],
+  "updated": "2026-10-18"
+ },
+ "memmachine": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MemMachine is an open-source long-term memory layer for AI agents and LLM apps, so they can learn, store and recall information from past sessions.",
+   "The project says you can add persistent memory with about five lines of code."
+  ],
+  "who": "Developers turning stateless chatbots into personalized agents.",
+  "features": [
+   "Long-term memory across sessions",
+   "Learn, store and recall",
+   "Quick integration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MemMachine/MemMachine"
+  ],
+  "updated": "2026-10-18"
+ },
+ "supabase-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Supabase MCP connects your Supabase projects to Cursor, Claude, Windsurf and other AI assistants.",
+   "Assistants can manage tables, fetch configuration and query data, among other tools."
+  ],
+  "who": "Supabase users who want an AI assistant to manage their database and project.",
+  "features": [
+   "Manage tables and migrations",
+   "Fetch config and query data",
+   "Works with Cursor, Claude and Windsurf"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/supabase/mcp"
+  ],
+  "updated": "2026-10-18"
  }
 }
