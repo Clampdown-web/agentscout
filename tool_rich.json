@@ -2373,7 +2373,35 @@
   "sources": [
    "https://cleric.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Team",
+     "$700/mo",
+     "1,400 credits a month"
+    ],
+    [
+     "Pro",
+     "$1,500/mo",
+     "3,000 credits a month"
+    ],
+    [
+     "Scale",
+     "$3,000/mo",
+     "6,000 credits a month"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Prices shown with annual billing. Credits cost $0.50 each; all plans include unlimited users and all integrations. Free trial available.",
+   "src": "https://cleric.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "coldtea": {
   "kind": "lite",
@@ -2527,7 +2555,35 @@
   "sources": [
    "https://www.testmuai.com/kane-ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Starter",
+     "$17/mo",
+     "$19 billed monthly; 100 credits"
+    ],
+    [
+     "Pro",
+     "$89/mo",
+     "$99 billed monthly; 300 credits"
+    ],
+    [
+     "Max",
+     "$179/mo",
+     "$199 billed monthly"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "KaneAI is sold by TestMu AI (formerly LambdaTest).",
+   "src": "https://www.testmuai.com/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "runcell": {
   "kind": "lite",
@@ -2546,7 +2602,40 @@
   "sources": [
    "https://www.runcell.dev"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "$0",
+     "20 credits a month"
+    ],
+    [
+     "Pro",
+     "$20/mo",
+     ""
+    ],
+    [
+     "Pro+",
+     "$60/mo",
+     ""
+    ],
+    [
+     "Ultra",
+     "$200/mo",
+     ""
+    ],
+    [
+     "Teams",
+     "from $40/seat/mo",
+     "admin controls and seat management"
+    ]
+   ],
+   "note": "",
+   "src": "https://www.runcell.dev/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "verdent": {
   "kind": "lite",
@@ -2567,7 +2656,40 @@
   "sources": [
    "https://www.verdent.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Lite",
+     "$5/mo",
+     ""
+    ],
+    [
+     "Starter",
+     "$19/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$59/mo",
+     ""
+    ],
+    [
+     "Max",
+     "$179/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Credit top-ups are available (1 credit is about $0.059) with no markup on model costs.",
+   "src": "https://www.verdent.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "hermes-agent-nous-research": {
   "kind": "lite",
@@ -4625,7 +4747,30 @@
   "sources": [
    "https://agentset.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "personal use and small projects"
+    ],
+    [
+     "Pro",
+     "$49 USD",
+     "10,000 pages, then $0.01 per page; $100 per connector"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://agentset.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "mastra": {
   "kind": "lite",
@@ -7578,7 +7723,30 @@
   "sources": [
    "https://aident.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Pay-as-you-go",
+     "$0/mo",
+     "buy credit boosts as needed"
+    ],
+    [
+     "Pro",
+     "$9.90/mo",
+     "$5.00 of credit added every month"
+    ],
+    [
+     "Team",
+     "$59/mo",
+     "$30.00 shared balance added every month"
+    ]
+   ],
+   "note": "",
+   "src": "https://aident.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "airtable-mcp": {
   "kind": "lite",
@@ -7834,7 +8002,30 @@
   "sources": [
    "https://luneresearch.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "10 requests a day"
+    ],
+    [
+     "Pro",
+     "$4.99/mo",
+     "300 requests a day"
+    ],
+    [
+     "Max",
+     "$9.99/mo",
+     "600 requests a day, priority email support"
+    ]
+   ],
+   "note": "Extra credits are $0.99 for 300 requests and never expire. Yearly billing saves 20%.",
+   "src": "https://luneresearch.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "manifold-mcp": {
   "kind": "lite",
@@ -7854,7 +8045,30 @@
   "sources": [
    "https://manifoldmcp.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "250 credits to try every tool"
+    ],
+    [
+     "Pro",
+     "$20/mo",
+     "monthly credits at 20% below the top-up price"
+    ],
+    [
+     "Max",
+     "$250/mo",
+     "credits at 40% below the top-up price"
+    ]
+   ],
+   "note": "Top-ups from $10 to $500 can be bought on Pro and Max.",
+   "src": "https://www.manifoldmcp.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "modal": {
   "kind": "lite",
@@ -7982,7 +8196,20 @@
   "sources": [
    "https://www.recall.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Pay As You Go",
+     "$0.50/hr of recording",
+     "start for free"
+    ]
+   ],
+   "note": "Built-in transcription is $0.15 an hour. Recordings get 7 days of free storage, then $0.05 per hour retained for 30 days. Larger plans are listed on the pricing page.",
+   "src": "https://www.recall.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "self-agent-vault": {
   "kind": "lite",
@@ -8041,7 +8268,25 @@
   "sources": [
    "https://smithery.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "Free",
+     ""
+    ],
+    [
+     "Pay as you go",
+     "$10/mo",
+     "RPCs use the $10 credit, then $0.10 per 1K; managed OAuth, persistent connections"
+    ]
+   ],
+   "note": "",
+   "src": "https://smithery.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "together-ai": {
   "kind": "lite",
@@ -8060,7 +8305,20 @@
   "sources": [
    "https://www.together.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Serverless inference",
+     "Per token",
+     "price per million tokens varies by model"
+    ]
+   ],
+   "note": "Together lists separate prices for input, cached input and output tokens for each model, plus GPU clusters and fine-tuning.",
+   "src": "https://www.together.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "tollbit": {
   "kind": "lite",
@@ -8797,7 +9055,40 @@
   "sources": [
    "https://anchorbrowser.io"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "Free",
+     "5 credits a month"
+    ],
+    [
+     "Starter",
+     "$50/mo",
+     "50 credits a month, then $1.00 per credit"
+    ],
+    [
+     "Team",
+     "$500/mo",
+     "500 credits a month"
+    ],
+    [
+     "Growth",
+     "$2000/mo",
+     "2,000 credits a month"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "These are Anchor Browser's plans.",
+   "src": "https://anchorbrowser.io/#pricing",
+   "checked": "2026-10-18"
+  }
  },
  "arro": {
   "kind": "lite",
@@ -8816,7 +9107,30 @@
   "sources": [
    "https://audimate.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "forever"
+    ],
+    [
+     "Plus",
+     "$20/seat/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$100/seat/mo",
+     ""
+    ]
+   ],
+   "note": "Annual billing saves 20%. Larger plans: contact sales.",
+   "src": "https://audimate.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "browserbase": {
   "kind": "lite",
@@ -8940,7 +9254,30 @@
   "sources": [
    "https://www.tinyfish.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Search and Fetch",
+     "Free",
+     "within rate limits"
+    ],
+    [
+     "Agent",
+     "$0.016 per step",
+     "2 concurrent runs"
+    ],
+    [
+     "Browser",
+     "$0.002 per minute",
+     "5 concurrent sessions"
+    ]
+   ],
+   "note": "Usage is paid from a prepaid wallet. Page monitors are $0.005 per check.",
+   "src": "https://www.tinyfish.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "agent-reach": {
   "kind": "lite",
@@ -9366,7 +9703,30 @@
   "sources": [
    "https://getbruin.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Open Source",
+     "$0",
+     "self-hosted, forever free"
+    ],
+    [
+     "Team",
+     "$0.01 per credit",
+     "starts with $100 in credits and 50 AI tasks, no seats"
+    ],
+    [
+     "Scale",
+     "Custom",
+     "committed credits, volume discounts"
+    ]
+   ],
+   "note": "",
+   "src": "https://getbruin.com/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "dashworks": {
   "kind": "lite",
@@ -9385,7 +9745,25 @@
   "sources": [
    "https://www.dashworks.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Team",
+     "$12/seat/mo",
+     "no seat minimum"
+    ],
+    [
+     "Business",
+     "$15/seat/mo",
+     "minimum 10 seats"
+    ]
+   ],
+   "note": "14-day free trial, no credit card required.",
+   "src": "https://www.dashworks.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "elicit": {
   "kind": "lite",
@@ -10210,7 +10588,20 @@
   "sources": [
    "https://www.respan.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "100k logs, 1k scores, 7-day retention"
+    ]
+   ],
+   "note": "Paid plans add more logs and scores ($8 per 100k logs, $1 per 1k scores), 30-day retention and extra seats at $15 per member; enterprise pricing via sales.",
+   "src": "https://www.respan.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "token-security": {
   "kind": "lite",
@@ -11698,7 +12089,35 @@
   "sources": [
    "https://lutra.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     ""
+    ],
+    [
+     "Essentials",
+     "$23/mo",
+     ""
+    ],
+    [
+     "Professional",
+     "$63/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Annual billing saves 21%. Professional and custom plans can buy extra credits (10,000 credits for $100).",
+   "src": "https://lutra.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "manus": {
   "kind": "lite",
@@ -11933,7 +12352,25 @@
   "sources": [
    "https://accordio.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "time tracking, timesheets, contracts, invoices and more"
+    ],
+    [
+     "Paid",
+     "$39/mo",
+     "billed yearly ($348); AI credits and every feature"
+    ]
+   ],
+   "note": "",
+   "src": "https://accordio.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "agently": {
   "kind": "lite",
@@ -11951,7 +12388,25 @@
   "sources": [
    "https://agently.dev/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "Free",
+     "200 credits"
+    ],
+    [
+     "Pro",
+     "Paid",
+     "all agents, Jarvis, the brain and MCP access"
+    ]
+   ],
+   "note": "See the pricing page for the current Pro price.",
+   "src": "https://agently.dev/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "agentplace": {
   "kind": "lite",
@@ -11969,7 +12424,25 @@
   "sources": [
    "https://agentplace.io/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "your first AI agent"
+    ],
+    [
+     "Pro",
+     "$29/mo",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://agentplace.io/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "agentsdr": {
   "kind": "lite",
@@ -12007,7 +12480,20 @@
   "sources": [
    "https://aisdr.com/ai-gtm-agent-ami/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Pay as you go",
+     "$1.50 per person prospected",
+     "self-serve"
+    ]
+   ],
+   "note": "Extras include a warmed-up mailbox ($33) and a per-campaign managed service ($149 per campaign).",
+   "src": "https://aisdr.com/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "appian": {
   "kind": "lite",
@@ -12063,7 +12549,25 @@
   "sources": [
    "https://brev.io/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Growth",
+     "$250/mo per org",
+     "starts with $100 in free credits"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "for 100+ users"
+    ]
+   ],
+   "note": "Credits are used when Brev's agents do work on your behalf.",
+   "src": "https://brev.io/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "clara-ai-sdr": {
   "kind": "lite",
@@ -12081,7 +12585,30 @@
   "sources": [
    "https://clarasdr.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Starter",
+     "$0",
+     "under 10K monthly visitors"
+    ],
+    [
+     "Pay as you Go",
+     "$299/mo",
+     "300 buyer conversations a month, then $1 per buyer"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "100K+ monthly visitors"
+    ]
+   ],
+   "note": "No long-term contracts.",
+   "src": "https://clarasdr.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "close": {
   "kind": "lite",
@@ -12100,7 +12627,35 @@
   "sources": [
    "https://close.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Solo",
+     "$9/user/mo",
+     ""
+    ],
+    [
+     "Essentials",
+     "$35/user/mo",
+     ""
+    ],
+    [
+     "Growth",
+     "$99/user/mo",
+     ""
+    ],
+    [
+     "Scale",
+     "$139/user/mo",
+     ""
+    ]
+   ],
+   "note": "Free trial available. The page advertises savings of up to 50% with annual billing; calling and SMS usage is passed through at cost.",
+   "src": "https://close.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "cockpit-ai": {
   "kind": "lite",
@@ -12157,7 +12712,20 @@
   "sources": [
    "https://crewdle.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Pay per task",
+     "Credits",
+     "no subscription; example jobs cost about $0.32 to $1.81 each"
+    ]
+   ],
+   "note": "You buy credits and each job draws on them; nothing is charged while agents are idle.",
+   "src": "https://crewdle.com/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "crono": {
   "kind": "lite",
@@ -12195,7 +12763,30 @@
   "sources": [
    "https://customgpt.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Standard",
+     "$99/mo",
+     "7-day free trial"
+    ],
+    [
+     "Premium",
+     "$499/mo",
+     "7-day free trial"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://customgpt.ai/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "dropzone-ai": {
   "kind": "lite",
@@ -12307,7 +12898,30 @@
   "sources": [
    "https://hiverhq.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Growth",
+     "$25/user/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$55/user/mo",
+     ""
+    ],
+    [
+     "Elite",
+     "$85/user/mo",
+     ""
+    ]
+   ],
+   "note": "Prices are for Hiver Omni.",
+   "src": "https://hiverhq.com/pricing/hiver-omni",
+   "checked": "2026-10-18"
+  }
  },
  "intercom-fin": {
   "kind": "lite",
@@ -12325,7 +12939,25 @@
   "sources": [
    "https://fin.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Fin AI Agent",
+     "$0.99 per outcome",
+     "only charged when Fin resolves a conversation"
+    ],
+    [
+     "Fin Voice",
+     "$1.99 per voice outcome",
+     "via sales"
+    ]
+   ],
+   "note": "Fin works with Intercom or other helpdesks such as Zendesk, Salesforce and Freshdesk. An Early Stage Program is offered to qualifying startups.",
+   "src": "https://fin.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "kognitos": {
   "kind": "lite",
@@ -12364,7 +12996,35 @@
   "sources": [
    "https://kodlo.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "for testing the agent, no time limit"
+    ],
+    [
+     "Starter",
+     "$49/mo + VAT",
+     "for solo operators"
+    ],
+    [
+     "Pro",
+     "$199/mo + VAT",
+     ""
+    ],
+    [
+     "Team",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Quarterly billing takes 15% off.",
+   "src": "https://kodlo.ai/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "mindflow": {
   "kind": "lite",
@@ -13605,7 +14265,35 @@
   "sources": [
    "https://circleback.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/user/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$15/user/mo",
+     ""
+    ],
+    [
+     "Business",
+     "$25/user/mo",
+     "unlimited teams"
+    ],
+    [
+     "Enterprise",
+     "$35/user/mo",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://circleback.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "excaliclaw": {
   "kind": "lite",
@@ -13624,7 +14312,35 @@
   "sources": [
    "https://excaliclaw.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "solo use"
+    ],
+    [
+     "Starter",
+     "$10.11/mo",
+     "teams up to 5"
+    ],
+    [
+     "Pro",
+     "$32.59/mo",
+     "teams up to 20"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "SSO and a contract"
+    ]
+   ],
+   "note": "Extra members beyond a plan's seats are $3.37 a month.",
+   "src": "https://excaliclaw.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "sourcetable": {
   "kind": "lite",
@@ -13644,7 +14360,25 @@
   "sources": [
    "https://sourcetable.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Pro",
+     "$29/user",
+     ""
+    ],
+    [
+     "Max",
+     "$100/user",
+     ""
+    ]
+   ],
+   "note": "Extra credits never expire.",
+   "src": "https://sourcetable.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "ai-town": {
   "kind": "lite",
@@ -13747,7 +14481,40 @@
   "sources": [
    "https://aidungeon.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "Free",
+     "basic features"
+    ],
+    [
+     "Journey",
+     "$14.99/mo",
+     "DeepSeek models, 8k context"
+    ],
+    [
+     "Legend",
+     "$29.99/mo",
+     "Ultra models, 16k context"
+    ],
+    [
+     "Mythic",
+     "$49.99/mo",
+     "unlimited Ultra, 32k context"
+    ],
+    [
+     "Ultimate",
+     "$99.99/mo",
+     "unlimited Ultra, 64k context"
+    ]
+   ],
+   "note": "",
+   "src": "https://play.aidungeon.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "astrocade": {
   "kind": "lite",
@@ -13822,7 +14589,25 @@
   "sources": [
    "https://www.hiddendoor.co/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Fan",
+     "$7.99/mo",
+     "play without limits"
+    ],
+    [
+     "Creator",
+     "$19.99/mo",
+     "create and publish your own worlds"
+    ]
+   ],
+   "note": "",
+   "src": "https://www.hiddendoor.co/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "lorekeeper": {
   "kind": "lite",
@@ -13842,7 +14627,30 @@
   "sources": [
    "https://lorekeeper.tech/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "forever"
+    ],
+    [
+     "Adventurer",
+     "$10/mo",
+     ""
+    ],
+    [
+     "Guild",
+     "$20/mo",
+     ""
+    ]
+   ],
+   "note": "Annual billing saves 20%.",
+   "src": "https://lorekeeper.tech/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "ludo-ai": {
   "kind": "lite",
@@ -13861,7 +14669,30 @@
   "sources": [
    "https://ludo.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Indie",
+     "$15/mo",
+     "paid annually ($180 a year), 3,000 credits"
+    ],
+    [
+     "Pro",
+     "$35/mo",
+     "paid annually ($420 a year), 12,000 credits"
+    ],
+    [
+     "Studio",
+     "$300/mo",
+     "paid annually ($3,600 a year), 120,000 credits"
+    ]
+   ],
+   "note": "Extra credits can be bought any time.",
+   "src": "https://ludo.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "open-dungeon-master": {
   "kind": "lite",
@@ -13919,7 +14750,35 @@
   "sources": [
    "https://www.scenario.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Starter",
+     "$15/mo",
+     "1,500 monthly credits"
+    ],
+    [
+     "Pro",
+     "$45/mo",
+     "5,000 monthly credits"
+    ],
+    [
+     "Max",
+     "$75/mo",
+     "10,000 monthly credits"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://www.scenario.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "suck-up": {
   "kind": "lite",
@@ -14638,7 +15497,25 @@
   "sources": [
    "https://chat.blockscope.co"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "$20 in usage credits at sign-up"
+    ],
+    [
+     "Pro",
+     "$20/mo",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://chat.blockscope.co/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "chainaware": {
   "kind": "lite",
@@ -15377,7 +16254,40 @@
   "sources": [
    "https://www.tradeos.xyz"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free trial",
+     "Free",
+     ""
+    ],
+    [
+     "Plus",
+     "$9/mo",
+     "up to 5 agents"
+    ],
+    [
+     "Pro",
+     "$19/mo",
+     "unlimited agents"
+    ],
+    [
+     "Pro Max",
+     "$99/mo",
+     ""
+    ],
+    [
+     "Team",
+     "$499/mo",
+     ""
+    ]
+   ],
+   "note": "First-month and annual discounts are offered.",
+   "src": "https://www.tradeos.xyz/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "turnkey": {
   "kind": "lite",
@@ -16056,6 +16966,29 @@
    "https://www.sharpe.ai"
   ],
   "cite": true,
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "the terminal and API evaluation"
+    ],
+    [
+     "Sharpe API",
+     "$149/mo",
+     "or $1,490 a year; 500,000 requests a month"
+    ],
+    [
+     "Desk",
+     "Custom",
+     "for funds and enterprises"
+    ]
+   ],
+   "note": "Every chart on Sharpe Terminal is free with no signup. The REST API, MCP server and CLI share one key.",
+   "src": "https://www.sharpe.ai/pricing",
+   "checked": "2026-10-18"
+  }
  }
 }
