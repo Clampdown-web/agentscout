@@ -218,7 +218,7 @@ def pages(t):
         if f not in keep: os.remove(f)
     # hub links (additive)
     BB.link_in("best/index.html",'See also: ','<a href="../s/">Popular searches</a> · <a href="../for/index.html">AI agents by role</a> · ','href="../s/"')
-    BB.link_in("tasks/index.html",'each with the agent tools that handle it.',' Or browse <a href="../for/index.html">by role</a> and <a href="../s/">popular searches</a>.','href="../for/index.html"')
+    BB.link_in("tasks/index.html",'each with the agent tools that handle it.',' Or browse <a href="../for/index.html">by role</a> and <a href="../s/">popular searches</a>.',' Or browse <a href="../for/index.html">by role</a>')
     BB.link_in("free-tools.html",'grouped by category.</p>',f'<p style="font-size:14px;margin:-6px 0 0">Looking for something specific? Try <a href="s/">popular searches</a> like <a href="s/free-ai-coding-agents.html">free AI coding agents</a> or browse <a href="for/index.html">AI agents by role</a>.</p>','href="s/"')
     BB.link_in("llms.txt",f"- [All best-of lists]({B}best/)",f"\n- [Popular searches]({B}s/)\n- [AI agents by role]({B}for/)\n- [Free tools: AI cost calculator]({B}free-tools/ai-cost-calculator.html)\n- [Free tools: token counter]({B}free-tools/token-counter.html)\n- [Free tools: prompt builder]({B}free-tools/prompt-builder.html)\n- [Free tools: agent setup generator]({B}free-tools/agent-setup-generator.html)",f"]({B}s/)")
     print("landing:",len(made),"search pages,",len(info),"role pages + 2 hubs")

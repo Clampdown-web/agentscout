@@ -129,7 +129,7 @@ fetch(SUBMIT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("submit.html","w").write(shell("",title,desc,canon,body,ld)); return canon
 NL='<section id="nlblock" class="band" style="border-bottom:0;padding:32px 0"><div class="wrap" style="text-align:center;max-width:620px"><h2 style="font-size:18px;margin:0 0 6px">Get the best new AI agents, weekly</h2><p style="margin:0 0 14px;color:var(--muted)">One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p><form class="sub" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform style="max-width:460px;margin:0 auto"><label for="nl-email" class="hide" style="position:absolute;left:-9999px">Email</label><input id="nl-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email"><button class="btn primary" type="submit">Subscribe</button></form></div></section>\n'
-ASSET_V="202610171300"  # bump when app.js/styles.css change
+ASSET_V="202610180615"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html","detail.tpl.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
@@ -143,6 +143,8 @@ def sitewide(t):
         s=re.sub(r'(<p><a href="[^"]*categories/index\.html">Categories</a>)(?! · <a href="[^"]*tasks/)',lambda mm:mm.group(1)+f' · <a href="{d}tasks/index.html">AI agents by task</a>',s)
         # Nav "Best" goes to the best-of hub
         s=re.sub(r'<a href="[^"]*best/mcp-servers\.html">Best</a>',lambda mm:f'<a href="{d}best/index.html">Best</a>',s)
+        # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
+        s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Searches</a>',s)
         # Newsletter archive in every footer, right after Free tools
         if 'newsletter.html">Newsletter archive</a>' not in s: s=re.sub(r'(<p>(?:(?!</p>).)*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',s,count=1,flags=re.S)
         # Free-tools hub in the main nav, right after Image Gen
