@@ -129,7 +129,7 @@ fetch(SUBMIT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("submit.html","w").write(shell("",title,desc,canon,body,ld)); return canon
 NL='<section id="nlblock" class="band" style="border-bottom:0;padding:32px 0"><div class="wrap" style="text-align:center;max-width:620px"><h2 style="font-size:18px;margin:0 0 6px">Get the best new AI agents, weekly</h2><p style="margin:0 0 14px;color:var(--muted)">One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p><form class="sub" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform style="max-width:460px;margin:0 auto"><label for="nl-email" class="hide" style="position:absolute;left:-9999px">Email</label><input id="nl-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email"><button class="btn primary" type="submit">Subscribe</button></form></div></section>\n'
-ASSET_V="202610180615"  # bump when app.js/styles.css change
+ASSET_V="202610180700"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html","detail.tpl.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
@@ -170,7 +170,8 @@ def sitewide(t):
         if "track.js" not in s and "app.js?v=" in s: s=re.sub(r'(<script src="[^"]*?)app\.js\?v=\d+"></script>',lambda mm:mm.group(0)+mm.group(1)+'track.js?v='+ASSET_V+'" defer></script>',s,count=1)
         # Consent manager (consent.js) loads right before track.js so analytics wait for the visitor's choice
         if "consent.js" not in s and "track.js?v=" in s: s=re.sub(r'<script src="([^"]*?)track\.js\?v=\d+" defer></script>',lambda mm:f'<script src="{mm.group(1)}consent.js?v={ASSET_V}" defer></script>'+mm.group(0),s,count=1)
-        s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
+        s=__import__("build_share").apply(f,s,d,ASSET_V)  # Share button + counter (Oct 18 2026)
+        s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
 
 # ---- About + Privacy pages (relative links; canonical from B, so a domain switch only changes B) ----

@@ -272,3 +272,8 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 /* Oct 18 2026: nav gained "For you" + "Searches"; on tablets let the links wrap to a 2nd row instead of overflowing */
 @media(min-width:600px) and (max-width:1023px){nav .wrap{flex-wrap:wrap;height:auto;min-height:56px;padding-top:6px;padding-bottom:6px;row-gap:4px}nav .links{flex-wrap:wrap;justify-content:center;row-gap:2px;min-width:0;flex:1 1 0}}
 @media(min-width:1024px){nav .logo{flex-shrink:0}nav .links a{white-space:nowrap}nav .links{flex-wrap:wrap;justify-content:flex-end;row-gap:2px;min-width:0;gap:2px clamp(10px,calc(2.4vw - 12px),22px)}nav .wrap{height:auto;min-height:60px;padding-top:8px;padding-bottom:8px}}
+.sharewrap{position:relative;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}.sharebtn{gap:6px}.sharebtn svg{flex-shrink:0}.sharecount{font-size:13px;color:var(--muted)}
+.sharemenu{position:absolute;top:calc(100% + 6px);left:0;z-index:60;min-width:190px;max-width:calc(100vw - 32px);background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column}
+.sharemenu a,.sharemenu button{display:block;width:100%;text-align:left;padding:9px 10px;border-radius:6px;font:inherit;font-size:14px;color:var(--text);background:none;border:0;cursor:pointer;text-decoration:none;box-sizing:border-box}
+.sharemenu a:hover,.sharemenu button:hover,.sharemenu a:focus-visible,.sharemenu button:focus-visible{background:var(--line);outline:none}
+.shareacts{display:flex;margin:4px 0 18px}
