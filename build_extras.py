@@ -202,7 +202,8 @@ _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and co
   "games":"AI game agents and tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
   "no-code builders":"no-code AI agent builders","personal agents":"personal AI agents","productivity":"AI productivity agents","research":"AI research agents",
   "sales & marketing":"AI sales & marketing agents","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents"}
-def cat_title(c,n): return f"{n} best {_CAT_TT.get(c, c+' AI agent tools')} (2026) · AgentScout"
+def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
+def cat_title(c,n): return f"{n} best {cat_phrase(c)} (2026) · AgentScout"
 def seo(t,urls):
     import os,collections
     os.makedirs("categories",exist_ok=True); os.makedirs("best",exist_ok=True)
@@ -211,7 +212,8 @@ def seo(t,urls):
     for c,n in cats.most_common():
         items=[x for x in t if x["category"]==c]
         title=cat_title(c,n)
-        desc=f"{n} link-checked {c} AI agent tools, including {', '.join(x['name'] for x in items[:3])}. Pricing as stated by makers, audience and maturity."[:158]
+        _nm=', '.join(x['name'] for x in items[:3])
+        desc=next((d for d in (f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"{n} link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"{n} link-checked {cat_phrase(c)}, including {_nm}."[:158])
         import build_tasks as _bt,build_subtasks as _bs
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))

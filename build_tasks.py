@@ -118,6 +118,9 @@ def subtask_title(parent,sub,lab,plabel,n):
     stop={"and","for","the","with","tool","tools","agen","ai"}
     overlap={_stem(w) for w in noun.split()}&{_stem(w) for w in ctx.split()}-stop
     return f"{n} AI {noun}" if overlap else f"{n} {noun} for {ctx}"
+def subtask_h1(parent,sub,lab,plabel):
+    t=subtask_title(parent,sub,lab,plabel,0)[2:]
+    return t[0].upper()+t[1:]
 def _sublabel(sub): return build_subtasks.LABEL[sub]
 def _subindex(m):
     if not SUBP: return ""
@@ -128,7 +131,7 @@ def _subpages_write(m):
     for sl,p_,sub,its in SUBP:
         T,pitems=m[p_]; plabel=T[1]; lab=_sublabel(sub); n=len(its); canon=f"{B}tasks/{sl}.html"
         its=sorted(its,key=lambda x:(not x.get("featured"),-(x.get("github_stars") or 0),x["name"].lower()))
-        h1=f"AI tools for {plabel}: {lab}"
+        h1=subtask_h1(p_,sub,lab,plabel)
         title=f"{subtask_title(p_,sub,lab,plabel,n)} · AgentScout"
         desc=f"{n} AI tools for {plabel} focused on {lab}, including {', '.join(x['name'] for x in its[:3])}. Link-checked, pricing as makers state it."[:158]
         starred=[x for x in its if x.get("github_stars")][:3]
@@ -162,7 +165,7 @@ def pages(t):
         if os.path.basename(f)!="index.html" and os.path.basename(f)[:-5] not in keep: os.remove(f)
     for s,(T,items) in m.items():
         _,label,_,_,_,intro=T; n=len(items); canon=f"{B}tasks/{s}.html"
-        h1=f"Best AI agents for {label} (2026)"
+        h1=f"{task_title(s,label)} (2026)"
         title=f"{task_title(s,label)} (2026) · AgentScout"
         desc=f"Compare {n} AI agents and tools for {label}, including {', '.join(x['name'] for x in items[:3])}. Link-checked, with pricing as makers state it."[:158]
         _ang=_TASK_ANGLE.get(s)
