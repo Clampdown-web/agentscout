@@ -29,5 +29,9 @@
  "choose": ["you're a builder deploying phone voice agents and prefer paying by usage.", "you want a ready-to-use platform with conversational agents and ElevenLabs' TTS, with a free tier to start."]},
 "agentcenter-vs-dart": {"best": ["Solo operators running several OpenClaw agents who need one dashboard to assign and review work", "Teams who want a project management tool where people and AI agents share tasks"],
  "choose": ["you run OpenClaw agents and want a mission-control dashboard (Kanban tasks, live agent status, deliverable review). Plans start at $14/month with a 7-day trial, and you bring your own AI provider.", "you want a team project tracker with AI agents built in. It's free for up to 4 teammates, and paid plans start at $8 per teammate per month (billed yearly)."]},
+"ema-vs-moveworks": {"best": ["Enterprises that want prebuilt AI employees to take on work across many business functions", "Enterprises that want an AI assistant to answer employee questions and resolve IT and HR requests"],
+ "choose": ["you want a general platform of prebuilt agentic workers you can deploy across roles and departments.", "your main goal is employee support: answering staff questions and resolving IT and HR requests across your business apps."]},
+"virtuals-protocol-vs-olas-autonolas": {"best": ["People who want to launch, co-own or use tokenized AI agents that transact with each other", "Developers and users who want an open-source stack (Open Autonomy, the Pearl app) to run and co-own autonomous on-chain agents"],
+ "choose": ["you want to launch or take part in tokenized agents that trade services with other agents on-chain.", "you want to run autonomous on-chain agents yourself on an open-source stack, for example through the Pearl app."]},
 "_note": "Recommendation copy for comparison pages added Oct 18 2026. Built only from tools.json listing facts and tool_rich.json (official pricing pages)."
 }

@@ -1,5 +1,5 @@
 """Generates use-case tags, slugs and static detail pages from tools.json."""
-import json,re,html,os,build_extras,build_rich
+import json,re,html,os,build_extras,build_rich,build_related
 t=json.load(open("tools.json"))
 RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",r"browser|web browser|headless"),("control a computer",r"computer-use|desktop|operating system|cloud computer"),
 ("build multi-agent systems",r"multi-agent|crew|swarm|subagent"),("build an agent",r"framework|SDK|library|toolkit|harness|Development Kit"),("research the web",r"research|search|web data|website|cited|papers"),
@@ -20,8 +20,9 @@ json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
 tpl=open("detail.tpl.html").read()
+REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
 for x in t:
-    rel=[y for y in t if y is not x and y["category"]==x["category"]][:6]
+    rel=REL[x["slug"]]
     relh="".join(f'<a class="card" href="{y["slug"]}.html"><div class="ct">{build_extras.ico(y,"../","sm")}<h3 style="flex:1">{e(y["name"])}</h3></div><p>{e(y["description"])}</p></a>' for y in rel)
     facts=[("Category",x["category"]+(" · "+", ".join(x["tags"]) if x.get("tags") else "")),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),("Pricing",(x.get("pricing_detail") or x["pricing"])),("Maturity",x["maturity"])]
     if x.get("github_stars") is not None: facts.append(("GitHub stars",f'{x["github_stars"]:,} (as of {x["verified"]})'))
