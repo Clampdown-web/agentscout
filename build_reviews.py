@@ -57,7 +57,7 @@ def run(t):
                         a["aggregateRating"]={"@type":"AggregateRating","ratingValue":d["avg"],"ratingCount":d["count"],"reviewCount":len(R),"bestRating":5,"worstRating":1}
                         a["review"]=[{"@type":"Review","author":{"@type":"Person","name":r.get("name") or "Anonymous visitor"},"datePublished":day(r["ts"]).date().isoformat(),"reviewBody":r["text"],"reviewRating":{"@type":"Rating","ratingValue":r["stars"],"bestRating":5,"worstRating":1}} for r in R[:10]]
             return '<script type="application/ld+json">'+json.dumps(L,ensure_ascii=False).replace("</","<\\/")+'</script>'
-        h=re.sub(r'<script type="application/ld\+json">(\{.*?"WebPage".*?\})</script>',fix,h,count=1,flags=re.S)
+        h=re.sub(r'<script type="application/ld\+json">(.*?)</script>',lambda m:fix(m) if '"WebPage"' in m.group(1) else m.group(0),h,flags=re.S)
         if R and d.get("count"): ld_n+=1
         if h!=o: open(f,"w").write(h)
     # API: rating object on tools that have ratings
