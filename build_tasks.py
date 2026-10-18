@@ -155,6 +155,13 @@ def sitewide(t):
             if 's/index.html">Popular searches</a>' not in fn:
                 fn,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
                 if not k: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
+            # New tools page (new.html) in every footer, right before Agent news (Oct 18 2026: it was only linked from the homepage)
+            if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:f'<a href="{d}new.html">New tools</a> · '+mm.group(1),fn,count=1)
+            if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/index\.html">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}new.html">New tools</a>',fn,count=1)
+            # Footers that lack the standard Free tools / Newsletter archive / Agent news links (generate.html) get them in the standard order
+            if 'free-tools.html">Free tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*s/index\.html">Popular searches</a>)',lambda mm:f'<a href="{d}free-tools.html">Free tools</a> · '+mm.group(1),fn,count=1)
+            if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/index\.html">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
+            if 'news.html">Agent news</a>' not in fn: fn=re.sub(r'(<a href="[^"]*new\.html">New tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news.html">Agent news</a>',fn,count=1)
             if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Free-tools hub in the main nav, right after Image Gen
         if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s: s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
