@@ -1,4 +1,4 @@
-import build_extras
+import build_extras,build_subtasks
 """Task pages (/tasks/), submit page, and sitewide nav/footer/newsletter injection. Called from build_extras/build_site; reads tools at build time."""
 import re,os,json,glob,urllib.parse
 from build_extras import e,B,shell,card
@@ -69,7 +69,17 @@ def mapping(t):
             m[T[0]]=(T,items)
     return m
 def tasks_for(x,m): return [T for s,(T,items) in m.items() if x in items]
+def _grid(items):
+    r=build_subtasks.sections(items)
+    if not r: return f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(items))}</div>'
+    secs,other=r
+    chips='<div class="badges stchips" role="navigation" aria-label="Sub-tasks" style="margin:10px 0 4px">'+"".join(f'<a class="b uc" href="#st-{sl}">{e(l[0].upper()+l[1:])} ({len(v)})</a>' for sl,l,v in secs)+(f'<a class="b uc" href="#st-more">More tools ({len(other)})</a>' if other else "")+('<a class="b uc" href="#repos">GitHub repos</a>' if len(build_subtasks.repo_rows(items)[0])>=3 else "")+'</div>'
+    h=lambda i,l,n:f'<h2 id="st-{i}" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(l)} <span style="color:var(--muted);font-weight:400">({n})</span></h2>'
+    out=chips+"".join(h(sl,l[0].upper()+l[1:],len(v))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(v))}</div>' for sl,l,v in secs)
+    if other: out+=h("more","More tools",len(other))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(other))}</div>'
+    return out
 def pages(t):
+    build_subtasks.dump(t)
     os.makedirs("tasks",exist_ok=True); m=mapping(t); urls=[]
     for f in glob.glob("tasks/*.html"):
         if os.path.basename(f)!="index.html" and os.path.basename(f)[:-5] not in m: os.remove(f)
@@ -82,14 +92,14 @@ def pages(t):
         rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))
         if s in ORIG: rel=[r for r in rel if r[0] in ORIG][:8]+[r for r in rel if r[0] not in ORIG][:3]  # original pages keep their related list; newer tasks are appended
         else: rel=rel[:8]
-        relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(T2[1].capitalize())}</a>' for s2,T2 in rel)+'<a class="b uc" href="index.html">All tasks →</a></div>'
+        relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(T2[1].capitalize())} ({len(m[s2][1])})</a>' for s2,T2 in rel)+'<a class="b uc" href="index.html">All tasks →</a></div>'
         if s not in ORIG:  # newer task pages also link the categories their tools come from
             from collections import Counter
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(label.capitalize())}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p>'
-              f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(items))}</div>{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'
+              f'{_grid(items)}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":label.capitalize(),"item":canon}]}]}

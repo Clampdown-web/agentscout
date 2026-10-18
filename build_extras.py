@@ -174,12 +174,12 @@ def cico(c):
     if _ICONS is None: _ICONS=_load_icons()
     p=_ICONS.get((c or "").strip().lower(),_ICONS["__fb"])
     return f'<svg class="cico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{p}</svg>'
-def listing_page(path,title,desc,h1,lede,items,crumb,extra=""):
+def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
     canon=B+path
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p><div class="grid">{"".join(card(x) for x in newfirst(items))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}<div class="grid">{"".join(card(x) for x in newfirst(items))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 def seo(t,urls):
     import os,collections
@@ -190,7 +190,14 @@ def seo(t,urls):
         items=[x for x in t if x["category"]==c]
         title=f"{n} best {c} AI agent tools (2026) · AgentScout"[:70]
         desc=f"{n} link-checked {c} AI agent tools, including {', '.join(x['name'] for x in items[:3])}. Pricing as stated by makers, audience and maturity."[:158]
-        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c.capitalize()} AI agent tools",f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing.",items,c.capitalize(),nav))
+        import build_tasks as _bt,build_subtasks as _bs
+        _tm=_bt.mapping(t); _ids={id(x) for x in items}
+        _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
+        _tc=[z for z in _tc if z[2]>=3][:14]
+        _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(l.capitalize())} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
+        _lede=f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing."
+        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(c)} tools: {e(_bs.price_line(items))}.</p>'+_chips
+        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c.capitalize()} AI agent tools",_lede,items,c.capitalize(),_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c.capitalize())}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
