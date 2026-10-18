@@ -7232,5 +7232,926 @@
    "https://www.hcompany.ai"
   ],
   "updated": "2026-10-18"
+ },
+ "openswarm": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "OpenSwarm describes itself as an AI desktop for Mac (\"everyone gets a Jarvis now\"); our listing calls it an AI-first operating system where swarms of agents run apps and browsers in parallel.",
+   "Its site says it is 100% free and offers early access through a waitlist."
+  ],
+  "who": "Mac users who want many agents working on apps and browsers at once.",
+  "features": [
+   "Parallel agent swarms",
+   "Apps and browsers",
+   "Mac; waitlist for early access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://openswarm.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "skyvern": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Skyvern automates browser-based workflows using LLMs and computer vision.",
+   "It provides a Playwright-compatible SDK that adds AI on top of Playwright, plus a no-code workflow builder."
+  ],
+  "who": "Teams automating repetitive web workflows.",
+  "features": [
+   "LLM + computer-vision automation",
+   "Playwright-compatible SDK",
+   "No-code workflow builder"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Skyvern-AI/skyvern"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tinyfish": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "TinyFish provides enterprise infrastructure for AI web agents that run across hundreds of websites at once to navigate, authenticate, extract data and automate workflows.",
+   "It uses a fully serverless architecture and also offers TinyFetch, which turns a rendered page into clean data in one call."
+  ],
+  "who": "Enterprises that need web agents at scale.",
+  "features": [
+   "Hundreds of sites in parallel",
+   "Authentication and extraction",
+   "Serverless",
+   "TinyFetch"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.tinyfish.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-reach": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent-Reach is a toolkit that lets an AI agent read and search sites like X, Reddit, YouTube and GitHub, without paid APIs.",
+   "Its README (in Chinese) explains that each platform has its own hurdles, such as paid APIs, blocking, logins and messy data, and Agent-Reach bundles the tooling and tracks platform changes. For some sites it relies on content or browser sessions you export or control yourself."
+  ],
+  "who": "Agent builders who want their agents to read social and developer sites.",
+  "features": [
+   "Read and search X, Reddit, YouTube, GitHub",
+   "No paid APIs",
+   "Maintained platform adapters"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Panniantong/Agent-Reach"
+  ],
+  "updated": "2026-10-18"
+ },
+ "deer-flow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DeerFlow (Deep Exploration and Efficient Research Flow) is ByteDance's open-source long-horizon agent harness.",
+   "Our listing notes it researches, codes and creates using sandboxes, memory and sub-agents; version 2 reached #1 on GitHub Trending in February 2026."
+  ],
+  "who": "Developers building deep-research and long-running agents.",
+  "features": [
+   "Long-horizon agent harness",
+   "Sandboxes and memory",
+   "Sub-agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/bytedance/deer-flow"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vane": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Vane is a privacy-focused AI answering engine that runs entirely on your own hardware.",
+   "It combines web knowledge with local LLMs (Ollama) or cloud providers like OpenAI, Claude and Groq, and answers with cited sources."
+  ],
+  "who": "People who want a self-hosted, Perplexity-style search with sources.",
+  "features": [
+   "Self-hosted",
+   "Local or cloud LLMs",
+   "Cited answers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ItzCrazyKns/Vane"
+  ],
+  "updated": "2026-10-18"
+ },
+ "storm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "STORM (Synthesis of Topic Outlines through Retrieval and Multi-perspective Question Asking) is a Stanford system that writes Wikipedia-style articles from web research.",
+   "The project also released Co-STORM, and the knowledge-storm package supports models through litellm."
+  ],
+  "who": "Researchers and writers who want long-form, sourced articles.",
+  "features": [
+   "Wikipedia-style articles",
+   "Multi-perspective questioning",
+   "Co-STORM collaboration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/stanford-oval/storm"
+  ],
+  "updated": "2026-10-18"
+ },
+ "gpt-researcher": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "GPT Researcher is an open deep-research agent for web and local research on any task.",
+   "It produces detailed, factual research reports with citations, with many customization options."
+  ],
+  "who": "Anyone who wants automated, cited research reports.",
+  "features": [
+   "Web and local research",
+   "Cited reports",
+   "Customizable"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/assafelovic/gpt-researcher"
+  ],
+  "updated": "2026-10-18"
+ },
+ "db-gpt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DB-GPT is an open-source agentic AI data assistant that connects to your data, writes SQL and code, runs skills in sandboxed environments and turns analysis into reports."
+  ],
+  "who": "Data teams who want an LLM assistant over their databases.",
+  "features": [
+   "Connects to your data",
+   "Writes SQL and code",
+   "Sandboxed skills",
+   "Reports"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/eosphoros-ai/DB-GPT"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wrenai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "WrenAI is an open-source generative BI (GenBI) engine: your agents generate governed SQL, deploy dashboards and keep business definitions in Git across 22+ data sources.",
+   "Our listing notes a semantic context layer for governed text-to-SQL."
+  ],
+  "who": "Data teams who want agents to answer business questions accurately.",
+  "features": [
+   "Governed text-to-SQL",
+   "Semantic layer in Git",
+   "Dashboards",
+   "22+ data sources"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Canner/WrenAI"
+  ],
+  "updated": "2026-10-18"
+ },
+ "surfsense": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SurfSense is a free, open-source, air-gapped NotebookLM alternative: an AI agent that researches, transforms and edits your documents on your machine."
+  ],
+  "who": "People who want a private research notebook over their own sources.",
+  "features": [
+   "NotebookLM alternative",
+   "Runs on your machine",
+   "Research agent over your documents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MODSetter/SurfSense"
+  ],
+  "updated": "2026-10-18"
+ },
+ "feynman": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Feynman is an open-source research agent that reads papers, searches the web, writes research drafts, plans experiments and cites claims.",
+   "It searches alphaXiv, Semantic Scholar, OpenAlex, arXiv, PubMed, bioRxiv, Crossref, Hugging Face and the web, and some workflows write a provenance file of sources used. It sends anonymous usage data (not prompts or content) to PostHog."
+  ],
+  "who": "Researchers who want cited literature reviews and drafts.",
+  "features": [
+   "Searches many scholarly sources",
+   "Cited drafts",
+   "Provenance files",
+   "Skills bundle for Codex and OpenCode"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Companion-Inc/feynman",
+   "https://feynman.is/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mirothinker": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MiroThinker is a deep research agent and open models optimized for research and prediction.",
+   "Its README reports a score of 88.2 on the BrowseComp benchmark; MiroThinker-1.7 and 1.7-mini were released in March 2026."
+  ],
+  "who": "Researchers and builders working on deep-research agents.",
+  "features": [
+   "Deep research agent",
+   "Open models",
+   "Forecasting tasks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MiroMindAI/MiroThinker"
+  ],
+  "updated": "2026-10-18"
+ },
+ "deep-research-u14": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Deep Research uses AI \"thinking\" and \"task\" models with internet access to generate in-depth research reports in a few minutes.",
+   "Our listing notes it works with any LLM and exposes an API and MCP server."
+  ],
+  "who": "People who want quick research reports with their own model choice.",
+  "features": [
+   "In-depth reports in minutes",
+   "Any LLM",
+   "API and MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/u14app/deep-research"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openscience": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenScience is an open-source AI workbench for scientific research. Give it a goal and it reads the literature, writes and runs code and experiments, and writes up its findings, with every step recorded.",
+   "Our listing notes skills and connectors for databases like PubMed, UniProt and arXiv."
+  ],
+  "who": "Scientists who want an agent to run research end to end.",
+  "features": [
+   "Literature reading",
+   "Code and experiments",
+   "Full step log",
+   "Scientific database connectors"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/synthetic-sciences/openscience"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pipeshub": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PipesHub is an open-source platform for connecting AI applications to knowledge stored across your company's systems.",
+   "It connects Slack, Google Drive, GitHub, Microsoft 365, Notion and 50+ other systems, so you can search across them and get cited answers."
+  ],
+  "who": "Companies that want agents and search over internal knowledge.",
+  "features": [
+   "50+ connectors",
+   "Cross-system search",
+   "Cited answers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/pipeshub-ai/pipeshub-ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "paper2agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Paper2Agent is a multi-agent system that turns research papers into interactive AI agents with minimal human input.",
+   "Our listing notes it converts a paper and its code into an MCP server and agent skills you can query and run."
+  ],
+  "who": "Researchers who want to use a paper's methods through an agent.",
+  "features": [
+   "Paper to agent",
+   "MCP server and skills",
+   "Demo agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/jmiao24/Paper2Agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "miroflow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MiroFlow is the official implementation of the MiroMind Research Agent Project, a fully open-source system for multi-step internet research on complex problems such as future event prediction.",
+   "Our listing notes a web UI and support for MiroThinker and other models."
+  ],
+  "who": "Developers building research agents.",
+  "features": [
+   "Multi-step web research",
+   "Forecasting tasks",
+   "Supports MiroThinker"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MiroMindAI/MiroFlow"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tooluniverse": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ToolUniverse, from Harvard's MIMS lab, is a collection of scientific tools for AI scientist agents.",
+   "It can run as an MCP server or be used as a Python SDK (Python 3.10+), and an agent can guide you through setup, API keys and skills."
+  ],
+  "who": "Researchers building AI scientist agents.",
+  "features": [
+   "Scientific tools for agents",
+   "MCP server",
+   "Python SDK"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mims-harvard/ToolUniverse"
+  ],
+  "updated": "2026-10-18"
+ },
+ "anamap": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Anamap is an AI analytics agent that investigates conversion, activation and revenue changes using your data, release history and tracking checks.",
+   "It delivers findings by email or Slack."
+  ],
+  "who": "Product and growth teams who want explanations, not just charts.",
+  "features": [
+   "Investigates metric changes",
+   "Uses release history",
+   "Email and Slack reports"
+  ],
+  "faq": [],
+  "sources": [
+   "https://anamaps.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "bruin": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Bruin is an open-source, AI-powered data platform: data ingestion with ingestr, SQL and Python pipelines, quality checks, column-level lineage and orchestration.",
+   "It also includes an AI data analyst that answers in Slack, Microsoft Teams, Google Chat, WhatsApp, Discord, Telegram and more."
+  ],
+  "who": "Data teams who want one open-source platform for pipelines and AI analysis.",
+  "features": [
+   "Ingestion (ingestr)",
+   "SQL and Python pipelines",
+   "Quality checks and lineage",
+   "AI data analyst in chat apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://getbruin.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dashworks": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Dashworks is an AI assistant that answers questions from your company's apps and knowledge.",
+   "It positions itself as agentic enterprise search that finds the latest data live rather than duplicating data into a separate index."
+  ],
+  "who": "Companies that want answers across internal tools.",
+  "features": [
+   "Live enterprise search",
+   "Answers from company apps",
+   "No data duplication"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.dashworks.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "elicit": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Elicit is an AI research assistant that helps you synthesize evidence, understand a field, design programs and experiments, draft proposals and weigh tradeoffs.",
+   "Elicit says it is used by over 7 million researchers."
+  ],
+  "who": "Researchers who need to find and summarize academic papers.",
+  "features": [
+   "Paper search and summaries",
+   "Evidence synthesis",
+   "Research planning"
+  ],
+  "faq": [],
+  "sources": [
+   "https://elicit.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "exa": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Exa is a search API for AI agents that need real-time web data, deep research and structured content from one endpoint.",
+   "Exa reports leading results on search benchmarks such as FRAMES and offers a free trial."
+  ],
+  "who": "Developers adding web search to agents.",
+  "features": [
+   "Real-time web search",
+   "Deep research",
+   "Structured content"
+  ],
+  "faq": [],
+  "sources": [
+   "https://exa.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "firecrawl": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Firecrawl turns websites into clean, LLM-ready data for AI agents. It is open source and available as a hosted service.",
+   "Firecrawl says it covers 96% of the web, including JavaScript-heavy pages."
+  ],
+  "who": "Developers feeding web data to agents and RAG.",
+  "features": [
+   "LLM-ready web data",
+   "JS-heavy pages",
+   "Open source or hosted"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/firecrawl/firecrawl"
+  ],
+  "updated": "2026-10-18"
+ },
+ "google-deep-review": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Google Deep Review is a Google Research multi-agent system for analyzing technical documents.",
+   "Google says it has been deployed across 16,000+ submissions at conferences including STOC, ICML, NeurIPS and ICLR; our listing notes it checks papers, design docs and legal or financial documents for logical gaps and unsupported claims."
+  ],
+  "who": "Researchers and reviewers checking technical documents.",
+  "features": [
+   "Multi-agent document review",
+   "Finds logical gaps",
+   "Used at major conferences"
+  ],
+  "faq": [],
+  "sources": [
+   "https://research.google/blog/analyzing-technical-documents-with-deep-review/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hebbia": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Hebbia is an AI platform for finance, used by asset managers, investment banks, law firms and Fortune 500 companies.",
+   "Our listing notes it runs agents across large document sets."
+  ],
+  "who": "Finance and legal professionals working with large document sets.",
+  "features": [
+   "Agents over large document sets",
+   "Built for finance and legal",
+   "Enterprise"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.hebbia.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "kater": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Kater is an AI data analyst that answers business questions from your data warehouse.",
+   "It lets you build an executive data assistant with structured decision trees that deliver insights and next steps."
+  ],
+  "who": "Business teams who want answers from their warehouse without writing SQL.",
+  "features": [
+   "Warehouse Q&A",
+   "Decision trees",
+   "Executive data assistant"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.kater.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "kuration-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Kuration AI builds your own B2B database from licence registers, trade shows, dealer locators, maps and PDFs, maintained by AI agents.",
+   "Prospects can be reached on email, LinkedIn and WhatsApp."
+  ],
+  "who": "Sales teams and distributors building niche prospect lists.",
+  "features": [
+   "Custom B2B database",
+   "Agent-maintained",
+   "Multi-source data"
+  ],
+  "faq": [],
+  "sources": [
+   "https://kurationai.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "querri": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Querri is an AI data analyst that turns scattered, messy data into clear answers in plain English.",
+   "Querri says teams can be up and running in a day."
+  ],
+  "who": "Teams who want to ask questions of messy data without analysts.",
+  "features": [
+   "Cleans scattered data",
+   "Plain-English answers",
+   "Fast setup"
+  ],
+  "faq": [],
+  "sources": [
+   "https://querri.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tavily": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Tavily is a real-time search engine for AI agents, with fast, secure APIs for web search and content extraction."
+  ],
+  "who": "Developers adding search and extraction to agents.",
+  "features": [
+   "Web search API",
+   "Content extraction",
+   "Built for agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://tavily.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mlflow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MLflow is an open-source AI engineering platform for agents, LLMs and ML models.",
+   "It helps teams debug, evaluate, monitor and optimize production AI applications."
+  ],
+  "who": "ML and AI engineering teams.",
+  "features": [
+   "Tracing",
+   "Evaluation",
+   "Monitoring",
+   "Model management"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mlflow/mlflow"
+  ],
+  "updated": "2026-10-18"
+ },
+ "arize-phoenix": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Arize Phoenix is Arize's open-source AI observability platform for experimentation, evaluation and troubleshooting.",
+   "It traces LLM application runtime and runs evaluations; for managed production workflows, Arize offers Arize AX."
+  ],
+  "who": "Developers who want open-source tracing and evals.",
+  "features": [
+   "Tracing",
+   "Evaluation",
+   "Experiments",
+   "Managed option: Arize AX"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Arize-ai/phoenix"
+  ],
+  "updated": "2026-10-18"
+ },
+ "guardrails-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Guardrails AI is an open-source framework for validating LLM inputs and outputs with configurable guardrails.",
+   "As of July 2026, validators are moving to standard PyPI packages, and Guardrails is discontinuing hosted remote inferencing (planned cutoff August 25, 2026)."
+  ],
+  "who": "Developers who need to validate and constrain LLM output.",
+  "features": [
+   "Input and output validation",
+   "Configurable validators",
+   "Validators as PyPI packages"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/guardrails-ai/guardrails"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ai-infra-guard": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AI-Infra-Guard (A.I.G) is an AI red-teaming platform from Tencent Zhuque Lab.",
+   "It combines agent scanning, AI infrastructure vulnerability scanning, MCP server and agent-skill scanning, and jailbreak evaluation."
+  ],
+  "who": "Security teams assessing agents and AI infrastructure.",
+  "features": [
+   "Agent scanning",
+   "MCP and skill scanning",
+   "Infra vulnerability scanning",
+   "Jailbreak evaluation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Tencent/AI-Infra-Guard"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-governance-toolkit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Microsoft's Agent Governance Toolkit provides policy enforcement, identity, sandboxing and SRE for autonomous AI agents.",
+   "It is in public preview and may have breaking changes before GA."
+  ],
+  "who": "Teams putting autonomous agents into production.",
+  "features": [
+   "Policy enforcement",
+   "Agent identity",
+   "Sandboxing",
+   "Public preview"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/agent-governance-toolkit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "failproof-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Failproof AI provides observability and enforcement for every harness your agents run in: it can see what agents do and block actions.",
+   "It hooks 12 agent harnesses, including coding CLIs like Claude Code and Codex, chat gateways and self-hosted assistants."
+  ],
+  "who": "Teams who need oversight and policy controls on agents.",
+  "features": [
+   "Observability across harnesses",
+   "Policy enforcement",
+   "12 harnesses supported"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/FailproofAI/failproofai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agenta": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agenta is an open-source workspace where you build specialized agents that automate and augment your work, by chatting.",
+   "You can share agents with your team and talk to them in Slack, WhatsApp or Telegram. Our listing also notes prompt management, evaluation and observability."
+  ],
+  "who": "Teams building and sharing AI agents.",
+  "features": [
+   "Build agents by chat",
+   "Share with your team",
+   "Slack, WhatsApp, Telegram",
+   "Evaluation and observability"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Agenta-AI/agenta"
+  ],
+  "updated": "2026-10-18"
+ },
+ "trulens": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TruLens finds where your agent fails and where you can cut cost without losing quality. It is open source and OpenTelemetry-native.",
+   "You instrument an app with a decorator, score each step with LLM judges that explain themselves, and compare versions."
+  ],
+  "who": "Developers evaluating and improving agents.",
+  "features": [
+   "OpenTelemetry-native",
+   "LLM-judge scoring",
+   "Version comparison"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/truera/trulens"
+  ],
+  "updated": "2026-10-18"
+ },
+ "snyk-agent-scan": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Snyk Agent Scan discovers and scans agent components on your machine, including agents, MCP servers and skills, for prompt injections and vulnerabilities.",
+   "It installs via uvx or as a standalone binary; there is no npm package."
+  ],
+  "who": "Developers and security teams checking their agent setup.",
+  "features": [
+   "Scans MCP servers and skills",
+   "Prompt-injection detection",
+   "uvx or binary install"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/snyk/agent-scan"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openlit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenLIT is an open-source platform to trace, evaluate, guard and improve AI agents and coding agents with OpenTelemetry.",
+   "It covers agent observability, evals, guardrails, prompt management and cost and GPU monitoring, and is free to self-host (Apache 2.0)."
+  ],
+  "who": "Teams who want open-source agent observability.",
+  "features": [
+   "OpenTelemetry tracing",
+   "Evals and guardrails",
+   "Prompt management",
+   "Cost and GPU monitoring"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/openlit/openlit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-memory-leaderboard": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent Memory Leaderboard (AML) is an open, unified and reproducible evaluation platform for measuring how well long-term memory systems work for agents.",
+   "It runs a public leaderboard, challenges and open submissions; our listing notes it is run by a group of universities and labs in recurring rounds."
+  ],
+  "who": "Researchers and builders comparing agent memory systems.",
+  "features": [
+   "Public leaderboard",
+   "Open evaluation protocol",
+   "Submission rounds"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/AML-memory/agent-memory-leaderboard"
+  ],
+  "updated": "2026-10-18"
+ },
+ "galileo-agent-leaderboard": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Galileo Agent Leaderboard is an evaluation framework for AI agents across real-world business scenarios.",
+   "v1 ranks tool-calling performance; v2 adds synthetic dataset generation and a simulation engine for task completion."
+  ],
+  "who": "Teams choosing LLMs for agent use.",
+  "features": [
+   "Tool-calling rankings",
+   "Task-completion simulation",
+   "Business scenarios"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/rungalileo/agent-leaderboard"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentops": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AgentOps is an observability and DevTool platform for AI agents that helps developers build, evaluate and monitor agents from prototype to production.",
+   "The AgentOps app is open source under the MIT license."
+  ],
+  "who": "Developers monitoring agent behavior and cost.",
+  "features": [
+   "Agent monitoring",
+   "Session replay",
+   "Evaluation",
+   "MIT-licensed app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/AgentOps-AI/agentops"
+  ],
+  "updated": "2026-10-18"
+ },
+ "basalt": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Basalt captures customer behavior so your AI agent can improve from it, building infrastructure for self-improving agents."
+  ],
+  "who": "Teams who want their production agents to learn from real interactions.",
+  "features": [
+   "Captures real interactions",
+   "Self-improving agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://getbasalt.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "braintrust": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Braintrust is an AI observability platform for tracing production, running evals and catching regressions before they reach users."
+  ],
+  "who": "Teams shipping AI products who need evals and monitoring.",
+  "features": [
+   "Production tracing",
+   "Evals",
+   "Regression detection"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.braintrust.dev"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hamming-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Hamming AI is a QA platform for voice and chat agents: it auto-generates test scenarios, replays production calls and tracks 50+ metrics.",
+   "It covers testing before launch, red-teaming and monitoring every production call, and says it is SOC 2 certified."
+  ],
+  "who": "Teams building voice and chat agents.",
+  "features": [
+   "Auto-generated scenarios",
+   "Production call replay",
+   "50+ metrics",
+   "Red-teaming and monitoring"
+  ],
+  "faq": [],
+  "sources": [
+   "https://hamming.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "helicone": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Helicone is an open-source AI gateway and LLM observability platform for AI engineers.",
+   "Its gateway gives access to 100+ models with one API key through the OpenAI API, with routing and automatic fallbacks."
+  ],
+  "who": "AI engineers who want observability and a model gateway.",
+  "features": [
+   "AI gateway for 100+ models",
+   "LLM observability",
+   "Routing and fallbacks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Helicone/helicone"
+  ],
+  "updated": "2026-10-18"
  }
 }
