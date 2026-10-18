@@ -21064,5 +21064,54 @@
    "license": "the MIT License",
    "osi": true
   }
+ },
+ "orke": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "orke is a desktop workspace from BOMTOBE for AI coding agents such as Claude Code and Codex. You give an agent work in a terminal session, then check the result in a web window and a Git window on the same screen, and pick the same session up again from the iPhone or Android app.",
+   "It also has \"AI employees\": you set a goal with the AI in a meeting, and the employee works on its own at scheduled times, leaves anything only a person can do (such as logins or payments) as a request, and records what it did in a log. orke itself is free; you sign in to Claude Code, Codex or other AI services separately."
+  ],
+  "who": "Developers who already use terminal coding agents like Claude Code or Codex and want sessions, a browser the agent can work in, and Git review in one desktop app.",
+  "features": [
+   "Persistent terminal sessions for Claude Code, Codex, OpenCode, Hermes, Antigravity and NVIDIA agents; plain terminals work without an AI account",
+   "Web window: pick an element on a real page and send it to the agent; agents can also drive the page through orke browser commands",
+   "Git window: diffs, staging, commits, fetch/pull/push, branches, tags and stashes",
+   "AI employees that work on a schedule toward a goal, ask a person for logins or payments and keep a work log",
+   "orke CLI so agents can manage sessions, web windows and packages themselves",
+   "Continue the same session from the iPhone and Android apps; Linux server mode opens in a browser; optional Docker-compatible isolated environment",
+   "Windows (Microsoft Store), macOS 26 or later on Apple Silicon (DMG on GitHub Releases), Linux servers (x86_64)"
+  ],
+  "faq": [
+   [
+    "Which platforms does orke run on?",
+    "Windows x64 from the Microsoft Store, macOS 26 or later on Apple Silicon (DMG from GitHub Releases), and Linux servers (x86_64), which you use from a browser. There are companion iPhone and Android apps for continuing sessions."
+   ],
+   [
+    "Does orke include AI model access?",
+    "No. Each agent CLI and AI service account is set up and signed in separately, and usage counts toward that account. Regular terminals work without an AI account."
+   ]
+  ],
+  "sources": [
+   "https://orke.bomtobe.com/en/",
+   "https://orke.bomtobe.com/en/docs/",
+   "https://orke.bomtobe.com/llms.txt",
+   "https://apps.microsoft.com/detail/9N7G0NK63QGR",
+   "https://github.com/bomtobe-hgkim/orke-mac/releases"
+  ],
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "orke app",
+     "Free",
+     "Windows, macOS and Linux server"
+    ]
+   ],
+   "note": "AI services such as Claude Code or Codex are used through your own accounts and plans.",
+   "src": "https://apps.microsoft.com/detail/9N7G0NK63QGR",
+   "checked": "2026-10-18"
+  }
  }
 }

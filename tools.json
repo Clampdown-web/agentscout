@@ -28241,5 +28241,30 @@
     ],
     "slug": "skills-sh",
     "logo": "assets/logos/skills-sh.png"
+  },
+  {
+    "name": "orke",
+    "url": "https://orke.bomtobe.com/en/",
+    "description": "BOMTOBE's free desktop workspace for Claude Code, Codex and other coding agents: terminal sessions, an in-app browser the agent can use, a Git review window and scheduled AI employees.",
+    "category": "coding",
+    "pricing": "Free",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Submission",
+    "pricing_detail": "Free (Microsoft Store lists it as Free); Claude Code, Codex and other AI accounts are set up separately",
+    "use_cases": [
+      "write code",
+      "automate the browser",
+      "control a computer"
+    ],
+    "website": "https://orke.bomtobe.com/en/",
+    "github": "",
+    "id": 1128,
+    "slug": "orke",
+    "logo": "assets/logos/orke.png"
   }
 ]

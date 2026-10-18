@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T22:48:36Z",
- "updated": "2026-10-18T22:48:36Z",
+ "generated": "2026-10-18T23:00:08Z",
+ "updated": "2026-10-18T23:00:08Z",
  "last_checked": "2026-10-18",
- "count": 1109,
+ "count": 1110,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -46987,6 +46987,50 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/skills-sh.png",
    "page": "https://agentscouthq.com/tools/skills-sh.html"
+  },
+  {
+   "name": "orke",
+   "slug": "orke",
+   "url": "https://orke.bomtobe.com/en/",
+   "website": "https://orke.bomtobe.com/en/",
+   "github": "",
+   "category": "coding",
+   "description": "BOMTOBE's free desktop workspace for Claude Code, Codex and other coding agents: terminal sessions, an in-app browser the agent can use, a Git review window and scheduled AI employees.",
+   "key_features": [
+    "Free (Microsoft Store lists it as Free); Claude Code, Codex and other AI accounts are set up separately",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Control a computer"
+   ],
+   "pricing": "Free (Microsoft Store lists it as Free); Claude Code, Codex and other AI accounts are set up separately",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/orke.png",
+   "page": "https://agentscouthq.com/tools/orke.html"
   }
  ]
 }
