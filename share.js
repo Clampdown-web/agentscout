@@ -21,7 +21,7 @@
     track("share:"+how);
     if(counted())return;
     counts[path()]=(counts[path()]||0)+1;render();
-    try{fetch(API+"/share",{method:"POST",mode:"cors",keepalive:true,headers:{"Content-Type":"text/plain"},body:JSON.stringify({path:path()})}).catch(function(){})}catch(e){}
+    if(!window.ASNoTrack)try{fetch(API+"/share",{method:"POST",mode:"cors",keepalive:true,headers:{"Content-Type":"text/plain"},body:JSON.stringify({path:path()})}).catch(function(){})}catch(e){}
   }
   function load(){
     try{fetch(API+"/shares?paths="+encodeURIComponent(path()),{mode:"cors"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.counts){var p=path(),n=+j.counts[p]||0;if(n>(counts[p]||0))counts[p]=n;render()}}).catch(function(){})}catch(e){}

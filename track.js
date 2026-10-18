@@ -3,8 +3,22 @@
    sent until the visitor accepts; elsewhere it's on by default and can be turned off under "Privacy choices".
    sessionStorage is used only (after consent) to count each page once per tab.
    Each batch also carries the linking site's hostname only (document.referrer host, never the full URL) and this page's host.
+   Opt-out: ?notrack=1 on any page (our own devices); automated/headless browsers are skipped.
    Events: page_view, search, tool_click, outbound_link, button_click, quiz_complete, favorite_add, submit_tool, image_generate. */
 (function(){
+  // Opt-out for our own devices: open any page once with ?notrack=1 (sets a localStorage flag; ?notrack=0 clears it).
+  // Automated browsers (navigator.webdriver, headless/automation user agents) never send anything.
+  var OFF=false;
+  try{var nt=new URLSearchParams(location.search).get("notrack");
+    if(nt==="1"){localStorage.setItem("as_notrack","1");note("Analytics is off for this browser. Open ?notrack=0 to turn it back on.")}
+    else if(nt==="0"){localStorage.removeItem("as_notrack");note("Analytics is back on for this browser.")}
+    OFF=localStorage.getItem("as_notrack")==="1"}catch(e){}
+  try{if(navigator.webdriver||/HeadlessChrome|Headless|PhantomJS|Playwright|Puppeteer|Selenium|Lighthouse|bot\b|crawler|spider/i.test(navigator.userAgent||""))OFF=true}catch(e){}
+  function note(m){function show(){var d=document.createElement("div");d.textContent=m;d.setAttribute("role","status");
+    d.style.cssText="position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99999;background:#111;color:#fff;padding:10px 14px;border-radius:8px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.3)";
+    document.body.appendChild(d);setTimeout(function(){d.remove()},5000)}
+    document.body?show():document.addEventListener("DOMContentLoaded",show)}
+  if(OFF){window.ASTrack=function(){};window.ASNoTrack=true;return}
   var URL_="https://agentscout-image.agentscouthq.workers.dev/track",q=[],t=null;
   // Referrer: only the hostname of the page that linked here (e.g. "google.com"), never the full URL. "" = direct.
   var REF="";try{REF=document.referrer?new URL(document.referrer).hostname:""}catch(e){}
