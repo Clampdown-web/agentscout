@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 808 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 880 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,22 +22,22 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 194 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 119 tools
-- [frameworks](https://agentscouthq.com/categories/frameworks.html): 106 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 63 tools
+- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 209 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 133 tools
+- [frameworks](https://agentscouthq.com/categories/frameworks.html): 123 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 66 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 57 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 47 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 43 tools
-- [research](https://agentscouthq.com/categories/research.html): 33 tools
-- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 31 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 53 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 44 tools
+- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 38 tools
+- [research](https://agentscouthq.com/categories/research.html): 36 tools
+- [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 27 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 25 tools
-- [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 24 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 22 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 17 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 18 tools
 - [games](https://agentscouthq.com/categories/games.html): 16 tools
-- [app builders](https://agentscouthq.com/categories/app-builders.html): 7 tools
-- [models](https://agentscouthq.com/categories/models.html): 4 tools
+- [app builders](https://agentscouthq.com/categories/app-builders.html): 8 tools
+- [models](https://agentscouthq.com/categories/models.html): 5 tools
 
 ## Guides
 
@@ -72,15 +72,15 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
-- [Langchain.rb](https://agentscouthq.com/tools/langchain-rb.html) (added 2026-10-18): Ruby library for building LLM-powered applications, RAG and assistants.
-- [Ante](https://agentscouthq.com/tools/ante.html) (added 2026-10-18): Self-contained Rust terminal coding agent from Antigma Labs that works with any model and has no runtime dependencies.
-- [LangGraph4j](https://agentscouthq.com/tools/langgraph4j.html) (added 2026-10-18): Java library for building stateful multi-agent applications as graphs, working with LangChain4j and Spring AI.
-- [Intelligent Terminal](https://agentscouthq.com/tools/intelligent-terminal.html) (added 2026-10-18): Experimental fork of Windows Terminal with native integration for ACP-compatible agent CLIs.
-- [ElatoAI](https://agentscouthq.com/tools/elatoai.html) (added 2026-10-18): Realtime voice AI for ESP32 devices and toys with 100+ speech and LLM model options.
-- [ADR](https://agentscouthq.com/tools/adr.html) (added 2026-10-18): Uber's Agentic AI Detection and Response system that secures employee and customer-facing AI agents with observability and threat detection.
-- [superglue](https://agentscouthq.com/tools/superglue.html) (added 2026-10-18): AI agents that connect, migrate and implement enterprise systems like NetSuite and SAP, cloud-hosted or self-hosted.
-- [Ui.Vision RPA](https://agentscouthq.com/tools/ui-vision-rpa.html) (added 2026-10-18): Browser and desktop automation extension with OCR and image recognition, plus an MCP server so AI agents can create and run macros.
-- [Jarvis](https://agentscouthq.com/tools/jarvis.html) (added 2026-10-18): Private, local-first desktop AI assistant with voice and text chat, personal memory, dictation and MCP tools.
-- [Agent Safehouse](https://agentscouthq.com/tools/agent-safehouse.html) (added 2026-10-18): macOS sandbox for local coding agents that limits file and integration access with deny-first policy profiles.
-- [Neuron AI](https://agentscouthq.com/tools/neuron-ai.html) (added 2026-10-18): PHP framework for creating and orchestrating AI agents with LLMs, tools, vector stores and memory.
-- [Skybridge](https://agentscouthq.com/tools/skybridge.html) (added 2026-10-18): Full-stack TypeScript and React framework for building MCP Apps and ChatGPT Apps.
+- [Jupyter MCP Server](https://agentscouthq.com/tools/jupyter-mcp-server.html) (added 2026-10-18): Datalayer's MCP server that lets AI agents connect to and manage Jupyter notebooks in real time, local or hosted.
+- [CodeGraphContext](https://agentscouthq.com/tools/codegraphcontext.html) (added 2026-10-18): MCP server and CLI that index local code into a graph database so AI assistants can query code relationships.
+- [Postgres MCP Pro](https://agentscouthq.com/tools/postgres-mcp-pro.html) (added 2026-10-18): Postgres MCP server with index tuning, explain plans, health checks and safe SQL execution for agents.
+- [LINE Bot MCP Server](https://agentscouthq.com/tools/line-bot-mcp-server.html) (added 2026-10-18): LINE's preview MCP server that connects an AI agent to a LINE Official Account through the Messaging API.
+- [Sentry MCP](https://agentscouthq.com/tools/sentry-mcp.html) (added 2026-10-18): Sentry's MCP server and CLI that give coding agents access to Sentry issues, errors and traces for debugging.
+- [Next.js DevTools MCP](https://agentscouthq.com/tools/next-js-devtools-mcp.html) (added 2026-10-18): Vercel's MCP server that connects coding agents to running Next.js dev servers for live errors, routes, logs and docs.
+- [Firefox DevTools MCP](https://agentscouthq.com/tools/firefox-devtools-mcp.html) (added 2026-10-18): Mozilla's MCP server that lets AI agents browse with Firefox and inspect pages with its developer tools over WebDriver BiDi.
+- [MotherDuck MCP](https://agentscouthq.com/tools/motherduck-mcp.html) (added 2026-10-18): MotherDuck's MCP server that lets AI assistants run SQL on local DuckDB files, S3-hosted databases and MotherDuck.
+- [Kagi MCP](https://agentscouthq.com/tools/kagi-mcp.html) (added 2026-10-18): Official Kagi MCP server with search and page-extraction tools backed by the Kagi API.
+- [dbt MCP](https://agentscouthq.com/tools/dbt-mcp.html) (added 2026-10-18): dbt Labs' MCP server that gives AI agents context and tools for dbt Core, dbt Fusion and dbt Platform projects.
+- [Cloud Run MCP](https://agentscouthq.com/tools/cloud-run-mcp.html) (added 2026-10-18): Google Cloud's MCP server and Gemini CLI extension that lets AI agents deploy apps to Cloud Run.
+- [Azure DevOps MCP](https://agentscouthq.com/tools/azure-devops-mcp.html) (added 2026-10-18): Microsoft's MCP server that gives AI agents access to Azure DevOps work items, repos, pipelines and more, local or hosted.

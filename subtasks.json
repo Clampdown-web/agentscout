@@ -2843,5 +2843,304 @@
 "langchain-rb": [
 "vector-rag",
 "agent-frameworks"
+],
+"ollama": [
+"local-models"
+],
+"markitdown": [
+"vector-rag",
+"mcp-servers",
+"images-design"
+],
+"zed": [
+"ide-agents"
+],
+"litellm": [
+"token-costs",
+"voice-phone",
+"guardrails",
+"observability",
+"mcp-gateways",
+"agent-frameworks"
+],
+"privategpt": [
+"text-to-sql",
+"vector-rag",
+"local-models",
+"rules-config"
+],
+"open-code-review": [
+"code-review",
+"terminal-agents"
+],
+"jan": [
+"local-models"
+],
+"openviking": [
+"agent-memory",
+"text-to-sql",
+"rules-config"
+],
+"dspy": [
+"vector-rag",
+"agent-frameworks"
+],
+"lightpanda": [
+"agent-memory",
+"browser-automation"
+],
+"chatdev": [
+"multi-agent"
+],
+"tabby": [
+"text-to-sql",
+"local-models"
+],
+"scrapegraphai": [
+"vector-rag",
+"web-scraping",
+"agent-frameworks"
+],
+"task-master": [],
+"opik": [
+"vector-rag",
+"observability",
+"evals",
+"workflow-automation",
+"local-models"
+],
+"guidance": [],
+"rocketride": [
+"workflow-automation",
+"terminal-agents",
+"ide-agents"
+],
+"outlines": [
+"agent-frameworks"
+],
+"botpress": [
+"agent-frameworks",
+"terminal-agents",
+"images-design"
+],
+"instructor": [
+"guardrails",
+"agent-frameworks"
+],
+"inbox-zero": [
+"chat-app-agents",
+"email-agents"
+],
+"ufo": [
+"computer-use",
+"multi-agent",
+"agent-frameworks"
+],
+"baml": [
+"images-design"
+],
+"bifrost": [
+"mcp-gateways"
+],
+"typechat": [
+"agent-frameworks"
+],
+"claude-agent-sdk-python": [
+"agent-frameworks",
+"terminal-agents"
+],
+"manifest": [
+"token-costs",
+"mcp-gateways",
+"local-models"
+],
+"superagent": [
+"penetration-testing",
+"voice-phone",
+"guardrails",
+"agent-auth",
+"agent-frameworks",
+"mobile"
+],
+"aios": [
+"agent-memory",
+"research-agents",
+"mobile"
+],
+"fragments": [
+"sandboxes"
+],
+"baserow": [
+"text-to-sql",
+"no-code-apps",
+"local-models"
+],
+"swe-bench": [
+"evals",
+"cloud-coding-agents"
+],
+"devopsgpt": [
+"multi-agent"
+],
+"openagent": [
+"vector-rag",
+"browser-automation"
+],
+"latitude": [
+"observability"
+],
+"agency-swarm": [
+"multi-agent",
+"agent-frameworks"
+],
+"autodev": [
+"research-agents",
+"multi-agent",
+"terminal-agents",
+"ide-agents"
+],
+"ms-agent": [
+"agent-frameworks",
+"rules-config"
+],
+"container-use": [
+"parallel-orchestration",
+"mcp-servers",
+"terminal-agents"
+],
+"pezzo": [
+"observability",
+"images-design"
+],
+"osworld": [
+"computer-use",
+"evals"
+],
+"omnara": [
+"sandboxes",
+"agent-auth"
+],
+"compozy": [
+"agent-memory",
+"terminal-agents"
+],
+"notte": [
+"browser-automation",
+"agent-frameworks"
+],
+"lagent": [
+"agent-frameworks"
+],
+"trpc-agent-go": [
+"agent-memory",
+"evals",
+"workflow-automation",
+"agent-frameworks"
+],
+"stakpak": [],
+"agent-e": [
+"planning-tasks",
+"browser-automation",
+"workflow-automation"
+],
+"dust": [],
+"kaibanjs": [
+"planning-tasks",
+"multi-agent",
+"agent-frameworks"
+],
+"adala": [
+"agent-frameworks",
+"rules-config"
+],
+"aide-ml": [
+"evals"
+],
+"mle-agent": [
+"planning-tasks",
+"research-agents"
+],
+"memfree": [
+"vector-rag",
+"search-apis"
+],
+"browsergym": [
+"browser-automation",
+"evals"
+],
+"pydantic-deep-agents": [
+"sandboxes",
+"multi-agent",
+"agent-frameworks",
+"local-models",
+"terminal-agents"
+],
+"joinly": [
+"voice-phone",
+"mcp-servers",
+"video"
+],
+"giselle": [
+"workflow-automation",
+"images-design"
+],
+"frontman": [
+"browser-automation"
+],
+"qdrant-mcp-server": [
+"text-to-sql",
+"vector-rag",
+"mcp-servers"
+],
+"azure-devops-mcp": [
+"mcp-servers",
+"local-models"
+],
+"cloud-run-mcp": [
+"mcp-servers",
+"terminal-agents"
+],
+"dbt-mcp": [
+"mcp-servers"
+],
+"kagi-mcp": [
+"web-scraping",
+"mcp-servers"
+],
+"motherduck-mcp": [
+"text-to-sql",
+"mcp-servers",
+"local-models"
+],
+"firefox-devtools-mcp": [
+"mcp-servers"
+],
+"next-js-devtools-mcp": [
+"mcp-servers"
+],
+"sentry-mcp": [
+"observability",
+"mcp-servers",
+"terminal-agents"
+],
+"line-bot-mcp-server": [
+"mcp-servers"
+],
+"postgres-mcp-pro": [
+"planning-tasks",
+"text-to-sql",
+"mcp-servers"
+],
+"codegraphcontext": [
+"text-to-sql",
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"jupyter-mcp-server": [
+"notebooks",
+"mcp-servers",
+"local-models",
+"ide-agents"
 ]
 }
