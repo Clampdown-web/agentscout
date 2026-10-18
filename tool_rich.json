@@ -2438,5 +2438,987 @@
    "https://github.com/openai/openai-agents-python"
   ],
   "updated": "2026-10-18"
+ },
+ "smolagents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "smolagents is Hugging Face's library for running powerful agents in a few lines of code. The agent logic fits in about 1,000 lines, keeping abstractions minimal.",
+   "Its CodeAgent writes its actions as code rather than tool-call JSON, and can execute in sandboxes via Blaxel, E2B, Modal or Docker. You can share and pull tools or agents through the Hugging Face Hub, and it is model-agnostic."
+  ],
+  "who": "Python developers who want a small, readable agent library, especially for code-writing agents.",
+  "features": [
+   "Agent logic in about 1,000 lines",
+   "CodeAgent writes actions as code",
+   "Sandboxed execution (Blaxel, E2B, Modal, Docker)",
+   "Hugging Face Hub sharing",
+   "Model-agnostic"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/huggingface/smolagents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "haystack": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Haystack, from deepset, is an open-source AI orchestration framework for building production-ready LLM applications in Python.",
+   "You design modular pipelines and agent workflows with explicit control over retrieval, routing, memory and generation, to build RAG systems, multimodal apps, semantic search, question answering and autonomous agents. A cloud offering is available alongside the open-source framework."
+  ],
+  "who": "Python teams building production RAG, search or agent applications who want transparent, modular pipelines.",
+  "features": [
+   "Modular pipelines and agent workflows",
+   "Control over retrieval, routing, memory and generation",
+   "RAG, semantic search and QA",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/deepset-ai/haystack"
+  ],
+  "updated": "2026-10-18"
+ },
+ "a2a": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "A2A (Agent2Agent) is an open protocol for communication and interoperability between agentic applications. It lets agents built on different frameworks, by different companies and running on separate servers, collaborate as agents, not just as tools.",
+   "The protocol covers things like negotiating interaction modalities (text, forms, media) and collaborating securely, aiming to give agents a common language."
+  ],
+  "who": "Developers and companies building agents that need to talk to agents built elsewhere.",
+  "features": [
+   "Open protocol for agent-to-agent communication",
+   "Works across frameworks and vendors",
+   "Negotiates modalities: text, forms, media",
+   "Secure collaboration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/a2aproject/A2A"
+  ],
+  "updated": "2026-10-18"
+ },
+ "letta": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Letta (formerly MemGPT) is a framework for building stateful agents with memory that can learn and improve over time. Its current source lives in letta-ai/letta-code, which includes the agent harness, a terminal UI, an App Server, channels and the runtime behind its apps.",
+   "You can run agents locally or self-hosted via the App Server, and use them from a desktop app for macOS, Windows and Linux, chat.letta.com, Slack, Telegram, Discord or the Letta Agent SDK. A paid cloud is also offered."
+  ],
+  "who": "Developers who want agents with long-term memory that persist and improve across conversations.",
+  "features": [
+   "Stateful agents with long-term memory",
+   "Self-hosted App Server",
+   "Desktop, web and chat-app channels",
+   "Agent SDK",
+   "Open source plus paid cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/letta-ai/letta",
+   "https://www.letta.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "babyagi": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BabyAGI is Yohei Nakajima's experimental framework for a self-building autonomous agent that creates, stores and runs its own functions. The original BabyAGI from March 2023, which introduced task planning for autonomous agents, is archived in a separate repo.",
+   "The author says the project is meant to share ideas and spark discussion, is not meant for production use, and should be used with caution."
+  ],
+  "who": "Developers and researchers curious about self-building agents who want to experiment, not ship to production.",
+  "features": [
+   "Self-building agent that writes its own functions",
+   "Function storage and execution",
+   "Experimental; not for production (per author)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/yoheinakajima/babyagi"
+  ],
+  "updated": "2026-10-18"
+ },
+ "google-adk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Google's Agent Development Kit (ADK) is an open-source, code-first Python framework for building, evaluating and deploying AI agents. It applies software-development principles to agent creation, from simple tasks to complex systems.",
+   "ADK is optimized for Gemini but is model-agnostic, deployment-agnostic and compatible with other frameworks. It includes a graph-based workflow runtime for complex agent workflows."
+  ],
+  "who": "Python developers building agents, particularly on Google Cloud or with Gemini, who want a structured, code-first framework.",
+  "features": [
+   "Code-first Python framework",
+   "Build, evaluate and deploy agents",
+   "Graph-based workflow runtime",
+   "Optimized for Gemini, model-agnostic"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/google/adk-python"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pydantic-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Pydantic AI is the Pydantic team's Python AI SDK: a typed, extensible agent loop where any model is a string swap away. It also covers realtime voice, image generation and embeddings.",
+   "The same agent can run behind a web frontend, in the terminal, on a voice call, on a durable background queue, in GitHub Actions or as a plain object. Pydantic AI Harness adds capabilities for complex, long-running work."
+  ],
+  "who": "Python developers who want type safety and the Pydantic style in their agent code.",
+  "features": [
+   "Typed end-to-end agent loop",
+   "Swap models with a string",
+   "Voice, image generation and embeddings",
+   "Runs in web, CLI, queues or CI",
+   "Harness for long-running work"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/pydantic/pydantic-ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-lightning": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent Lightning is Microsoft's lightweight framework (about 3,500 lines) for training existing agents with reinforcement learning using their real harnesses, without rewriting the agent's tools or control flow. It is MIT-licensed and was refactored in v1.0.",
+   "Its README reports a 2026 example where pure RL improved Qwen3.5-35B-A3B on SWE-bench Verified from 47.8% to 61.6% with 1.8K training examples, and an Agent Lightning Skill that helps one coding agent improve another."
+  ],
+  "who": "ML engineers and researchers who want to improve an existing agent with RL instead of rebuilding it.",
+  "features": [
+   "RL training with your agent's real harness",
+   "No rewrite of tools or control flow",
+   "About 3,500 lines; MIT license",
+   "Published coding-agent results"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/agent-lightning"
+  ],
+  "updated": "2026-10-18"
+ },
+ "parlant": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Parlant is an interaction-control harness for customer-facing AI agents. The project says it is production-ready for enterprise B2C and sensitive B2B interactions that must be consistent, compliant, on-brand and traceable.",
+   "It positions itself as an open-source alternative to products like Ada, Decagon or Sierra, built around explicit behavior guidelines for conversational agents."
+  ],
+  "who": "Teams building customer-facing chat agents that must follow rules reliably and stay on-brand.",
+  "features": [
+   "Explicit behavior guidelines",
+   "Consistent, compliant, traceable conversations",
+   "For B2C and sensitive B2B use",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/emcie-co/parlant"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openfang": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenFang is an open-source Agent Operating System built in Rust, shipped as one binary. Its README cites 137K lines of code across 14 crates and 1,767+ tests.",
+   "It aims to be a full operating system for autonomous agents rather than a chatbot framework or multi-agent orchestrator. It is feature-complete but pre-1.0, so the maintainers advise pinning a commit for production."
+  ],
+  "who": "Developers who want a self-contained runtime for autonomous agents and can handle pre-1.0 changes.",
+  "features": [
+   "Agent OS in Rust, single binary",
+   "Extensive test suite",
+   "Pre-1.0; pin for production"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/RightNow-AI/openfang"
+  ],
+  "updated": "2026-10-18"
+ },
+ "camel": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CAMEL is one of the first multi-agent frameworks, for building role-playing agents and large agent societies. It is run by an open-source community dedicated to finding the scaling laws of agents by studying them at large scale."
+  ],
+  "who": "Researchers and developers exploring multi-agent role-play and large agent populations.",
+  "features": [
+   "Role-playing agents",
+   "Large-scale agent societies",
+   "Open-source research community"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/camel-ai/camel"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ag-ui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications, integrating agents, real-time user context and user interfaces.",
+   "You can build AG-UI-powered apps or new framework integrations from quickstarts, and try examples in the AG-UI Dojo."
+  ],
+  "who": "Developers connecting agent backends to frontends who want a standard way to stream agent state and events.",
+  "features": [
+   "Open event-based protocol",
+   "Agent-to-UI streaming of state and events",
+   "Framework integration quickstarts",
+   "AG-UI Dojo examples"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ag-ui-protocol/ag-ui"
+  ],
+  "updated": "2026-10-18"
+ },
+ "trigger-dev": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Trigger.dev is an open-source platform for building AI agents and workflows in TypeScript, with long-running tasks, retries, queues, observability and elastic scaling.",
+   "You build agents with the frameworks, services and LLMs you already use and deploy them to Trigger.dev for durable execution. It can be self-hosted or used as a managed cloud."
+  ],
+  "who": "TypeScript developers who need durable background jobs and agents that can run for a long time and retry safely.",
+  "features": [
+   "Durable long-running tasks",
+   "Retries, queues and elastic scaling",
+   "Observability",
+   "Self-host or managed cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/triggerdotdev/trigger.dev"
+  ],
+  "updated": "2026-10-18"
+ },
+ "microsoft-agent-framework": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Microsoft Agent Framework (MAF) is an open, multi-language framework for building production-grade AI agents and multi-agent workflows in .NET and Python.",
+   "It aims to give teams moving from prototype to production a consistent foundation for building, orchestrating and operating agents, and supports Microsoft Foundry, Azure OpenAI, OpenAI and the GitHub Copilot SDK."
+  ],
+  "who": "Enterprise teams on .NET or Python, especially in the Microsoft and Azure ecosystem.",
+  "features": [
+   "Agents and multi-agent workflows",
+   "Python and .NET",
+   "Microsoft Foundry, Azure OpenAI and OpenAI support"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/agent-framework"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pocketflow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PocketFlow is a minimalist LLM framework in 100 lines, with zero dependencies and no vendor lock-in. It still supports agents, multi-agent setups, workflows and RAG.",
+   "Its makers encourage agentic coding, letting AI agents such as Cursor build agents with it, and ports exist for TypeScript, Java and other languages. You can install it or simply copy the source."
+  ],
+  "who": "Developers who want to understand and control every line of their LLM framework.",
+  "features": [
+   "100 lines, zero dependencies",
+   "Agents, workflows and RAG",
+   "Ports to other languages"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/The-Pocket/PocketFlow"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tambo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Tambo is an open-source generative UI toolkit for React: connect your components and Tambo handles streaming, state management and MCP so agents can render them.",
+   "Note: Tambo Cloud is shutting down. New signups are closed, the hosted API stops on October 31, 2026, and user data is deleted on November 30, 2026. The open-source toolkit remains self-hostable."
+  ],
+  "who": "React developers who want agents to render real UI components and are comfortable self-hosting.",
+  "features": [
+   "Generative UI for React",
+   "Streaming, state and MCP handled",
+   "Self-hostable",
+   "Hosted cloud shutting down Oct 31, 2026"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/tambo-ai/tambo"
+  ],
+  "updated": "2026-10-18"
+ },
+ "aden-hive": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Aden Hive is an open-source runtime for colonies of AI agents that do real business work. You tell a queen agent what you need; she does the first piece herself to learn the job, then hands the rest to parallel workers.",
+   "Every result lands in a shared tracker you can query, audit and resume from."
+  ],
+  "who": "Teams who want to split business research or operations tasks across many parallel agents with an audit trail.",
+  "features": [
+   "Queen agent plans and delegates",
+   "Parallel worker agents",
+   "Shared, auditable results tracker"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/aden-hive/hive"
+  ],
+  "updated": "2026-10-18"
+ },
+ "spring-ai-alibaba": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Spring AI Alibaba is a production-ready Java framework, built on Spring AI, for building agentic, workflow and multi-agent applications.",
+   "Its agent framework has built-in context engineering and human-in-the-loop support, and Spring AI Alibaba Admin is an agent platform for visual agent development, observability, evaluation and MCP management that can migrate Dify DSL projects."
+  ],
+  "who": "Java and Spring developers building agents and workflows.",
+  "features": [
+   "Java agent framework on Spring AI",
+   "Context engineering and human in the loop",
+   "Admin platform with observability and evals",
+   "MCP management"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/alibaba/spring-ai-alibaba"
+  ],
+  "updated": "2026-10-18"
+ },
+ "omnigent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Omnigent is an open-source meta-harness that gives you one orchestration layer over Claude Code, Codex, Cursor, OpenCode, Hermes, Pi and agents you write yourself.",
+   "You can swap or combine harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from the terminal, browser, phone or a native macOS desktop app."
+  ],
+  "who": "Developers and teams using several agent harnesses who want shared policies and one place to run them.",
+  "features": [
+   "One layer over many agent harnesses",
+   "Policies and sandboxing",
+   "Works from terminal, browser, phone or desktop"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/omnigent-ai/omnigent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "voltagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "VoltAgent is an AI agent engineering platform with two parts: an open-source TypeScript framework (memory, RAG, guardrails, tools, MCP, voice and workflows) and the VoltOps Console for observability, automation, deployment, evals and prompts.",
+   "The console is available in the cloud or self-hosted, and the framework connects to any AI provider."
+  ],
+  "who": "TypeScript developers who want a framework plus an operations console for their agents.",
+  "features": [
+   "TypeScript framework with memory, RAG, tools and MCP",
+   "Voice and workflows",
+   "VoltOps Console: observability, evals, deployment",
+   "Cloud or self-hosted console"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/VoltAgent/voltagent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openpipe": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenPipe makes reinforcement-learning tooling for training better agents, including the open-source ART library for training multi-step agents on real-world tasks with GRPO.",
+   "Its README also describes W&B Training (Serverless RL), a hosted service that manages training and inference infrastructure so you focus on data, environment and reward function."
+  ],
+  "who": "ML engineers who want to train agents with RL without building the training infrastructure themselves.",
+  "features": [
+   "ART library for multi-step agent RL (GRPO)",
+   "Serverless RL training service",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/OpenPipe/ART"
+  ],
+  "updated": "2026-10-18"
+ },
+ "praisonai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PraisonAI is a multi-agent framework for building a self-improving AI workforce with little code. Its makers say agents that research, plan and execute tasks across your apps can be deployed in five lines.",
+   "It covers several layers of the agent stack, from one agent to a whole organization, including where the agent runs."
+  ],
+  "who": "Developers who want to stand up multi-agent automations quickly with minimal code.",
+  "features": [
+   "Low-code multi-agent framework",
+   "Self-improving agents",
+   "Research, planning and execution across apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MervinPraison/PraisonAI"
+  ],
+  "updated": "2026-10-18"
+ },
+ "strands-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Strands Agents is an open-source SDK for building and running AI agents in Python and TypeScript with a model-driven approach. It runs in your process with no hosted control plane.",
+   "One SDK covers lifecycle controls (turn limits, token budgets, cancellation), tools and structured output, MCP, multi-agent patterns, memory and sessions, model portability and streaming."
+  ],
+  "who": "Developers who would otherwise write their own agent loop and want the common pieces ready-made.",
+  "features": [
+   "Python and TypeScript SDK",
+   "Turn limits, token budgets and cancellation",
+   "MCP and multi-agent patterns",
+   "Memory, sessions and streaming"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/strands-agents/harness-sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "evolver": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Evolver is a self-evolving engine for AI agents built around auditable genes, capsules and events. It has been open source since February 2026 (MIT, then GPL-3.0-or-later from April 2026).",
+   "Its README announces that future releases will move toward source-available licensing, so check the current license before adopting it."
+  ],
+  "who": "Developers experimenting with agents that evolve their own skills and memory, who want an audit trail of changes.",
+  "features": [
+   "Self-evolution with auditable genes and capsules",
+   "Event history",
+   "License moving toward source-available"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/EvoMap/evolver"
+  ],
+  "updated": "2026-10-18"
+ },
+ "upsonic": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Upsonic is a Python framework for building autonomous agents, similar in spirit to OpenClaw or Claude Cowork, as well as more traditional agent systems.",
+   "File and shell operations are restricted to a workspace, with path traversal and dangerous commands blocked, and the community publishes prebuilt agents. Its docs are available as an llms.txt source for coding tools."
+  ],
+  "who": "Python developers building autonomous agents who want workspace restrictions built in.",
+  "features": [
+   "Python framework for autonomous agents",
+   "Workspace-restricted file and shell actions",
+   "Prebuilt community agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Upsonic/Upsonic"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-squad": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent Squad is a lightweight open-source framework for orchestrating multiple AI agents, in the cloud with Python and TypeScript and on device with Swift.",
+   "It routes conversations to specialized agents, and offers a classifier that routes with a decision model instead of an LLM. The Swift version runs agents, MCP tools, realtime voice and tracing entirely on iPhone, iPad and Mac."
+  ],
+  "who": "Developers who need to route user conversations across several specialized agents, including on Apple devices.",
+  "features": [
+   "Multi-agent routing in Python and TypeScript",
+   "Decision-model classifier",
+   "On-device Swift orchestration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/2FastLabs/agent-squad"
+  ],
+  "updated": "2026-10-18"
+ },
+ "flyte": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Flyte is a type-safe orchestration platform for ML pipelines, models and agents at scale, in pure Python, running on Kubernetes. It is a graduated project of the LF AI & Data Foundation.",
+   "Flyte 2 can be tried locally with a devbox, and a TUI provides a local development experience; Flyte 1 is maintained on a separate branch."
+  ],
+  "who": "ML and data teams who orchestrate pipelines and agents on Kubernetes.",
+  "features": [
+   "Pipelines, models and agents in pure Python",
+   "Kubernetes-based",
+   "LF AI & Data graduated project",
+   "Local devbox and TUI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/flyteorg/flyte"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openevolve": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenEvolve is an open-source evolutionary coding agent inspired by AlphaEvolve. It turns LLMs into autonomous code optimizers that evolve better code and algorithms.",
+   "Its README reports 2-3x speedups on real hardware and state-of-the-art results on problems such as circle packing."
+  ],
+  "who": "Researchers and engineers who want to search for faster or better algorithms automatically.",
+  "features": [
+   "Evolutionary code optimization with LLMs",
+   "Examples and system messages",
+   "Reported speedups on real hardware"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/algorithmicsuperintelligence/openevolve"
+  ],
+  "updated": "2026-10-18"
+ },
+ "swarms": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Swarms is a multi-agent orchestration framework that its makers describe as enterprise-grade and production-ready. You build, deploy and scale multi-agent systems in Python.",
+   "It includes harnesses for sequential, concurrent and hierarchical architectures and integrates with MCP, x402 and skills. An optional fast extra adds a drop-in LLM gateway for faster model calls."
+  ],
+  "who": "Python developers building multi-agent systems with standard architectures such as hierarchies.",
+  "features": [
+   "Sequential, concurrent and hierarchical swarms",
+   "MCP, x402 and skills",
+   "Optional LLM gateway",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/kyegomez/swarms"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-native-builder-io": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent-Native is Builder.io's open-source TypeScript framework for agents that come with their own app UI. You define each capability once as an action: the agent uses it as a tool and the UI calls it from code.",
+   "Our listing notes the same action is shared by the UI, agent, API, CLI, MCP and A2A, and that hosted building on Builder.io is optional."
+  ],
+  "who": "TypeScript developers building agent products that need a purpose-built interface, not just a chat box.",
+  "features": [
+   "Actions shared by agent and UI",
+   "TypeScript framework",
+   "Exposed via API, CLI, MCP and A2A"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/BuilderIO/agent-native"
+  ],
+  "updated": "2026-10-18"
+ },
+ "open-multi-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Open Multi-Agent (OMA) is a self-hosted TypeScript agent runtime. Consequential actions wait for durable, tamper-evident approvals, and every run leaves a record you can verify offline.",
+   "There is no telemetry and no hosted control plane. You use your own keys and models, cloud or local (Ollama, vLLM, llama-server). It needs Node.js 20 or newer."
+  ],
+  "who": "Organizations that need agents they can own, approve and audit on their own infrastructure.",
+  "features": [
+   "Durable, tamper-evident approvals",
+   "Verifiable run records",
+   "No telemetry; self-hosted",
+   "Cloud or local models"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/open-multi-agent/open-multi-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "julep": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Julep builds AI agents as composable, durable dataflows rather than ad-hoc loops. Flows can crash and resume, retry safely, explain every step, and deny any tool the model was not explicitly allowed to call.",
+   "The main authoring style is a Python @flow, where ordinary Python names graph steps such as tools, reasoners, branches, fan-out and retries. A cloud option is available."
+  ],
+  "who": "Python developers who need reliable, explainable agent workflows that survive crashes.",
+  "features": [
+   "Durable flows that resume after crashes",
+   "Safe retries",
+   "Explicit tool allow-lists",
+   "Python @flow authoring"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/julep-ai/julep"
+  ],
+  "updated": "2026-10-18"
+ },
+ "genkit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Genkit is Google's open-source framework for building full-stack AI-powered applications, built and used in production by Firebase.",
+   "SDKs cover JavaScript/TypeScript and Go (production-ready), Python (beta) and Dart (preview), with a unified interface across models."
+  ],
+  "who": "App developers, especially on Firebase or Google Cloud, adding AI and agent features in JS, Go, Python or Dart.",
+  "features": [
+   "JS/TS and Go SDKs (production-ready)",
+   "Python (beta) and Dart (preview)",
+   "Unified model interface",
+   "Used in production by Firebase"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/genkit-ai/genkit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "intentkit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "IntentKit is an open-source, self-hosted cloud agent cluster that manages a collaborating team of AI agents for you.",
+   "It takes the cloud-native path rather than local-first: agents run in the cloud with minimal local resources and little maintenance."
+  ],
+  "who": "Teams who want a team of agents running on their own cloud infrastructure rather than on a laptop.",
+  "features": [
+   "Self-hosted agent cluster",
+   "Collaborating team of agents",
+   "Cloud-native design"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/crestalnetwork/intentkit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "trueforge": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TrueForge, from TrueFoundry, is an open-source agent harness: the runtime layer that turns an LLM into a working agent. It runs the execution loop, including model calls, MCP tools, skills, sandboxing, approvals, context management and session state.",
+   "It exposes the agent three ways: a chat UI, an HTTP API with a TypeScript SDK, and an embeddable UI SDK."
+  ],
+  "who": "Developers who want streaming, persistence, tool servers, sandboxing and approvals without building the runtime themselves.",
+  "features": [
+   "Managed agent loop with MCP tools and skills",
+   "Sandboxing and approvals",
+   "Chat UI, HTTP API and TypeScript SDK",
+   "Embeddable UI SDK"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/truefoundry/trueforge"
+  ],
+  "updated": "2026-10-18"
+ },
+ "marvin": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Marvin is a Python framework from Prefect for producing structured outputs and building agentic AI workflows.",
+   "You can cast, classify, extract and generate structured data, define observable tasks, assign specialized agents to them and combine tasks into threads. It uses OpenAI by default and can be configured for other providers."
+  ],
+  "who": "Python developers who need structured LLM outputs and simple task-based agent workflows.",
+  "features": [
+   "Cast, classify, extract and generate",
+   "Observable tasks",
+   "Agents assigned to tasks",
+   "Threads for complex behavior"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/PrefectHQ/marvin"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentscope-java": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AgentScope Java 2.0 is a production-ready framework for building distributed, enterprise-grade agents in Java, with support for long-running, safely controlled execution.",
+   "It includes a unified event stream with 32 typed events for frontend rendering and human-in-the-loop, a permission system that can allow, require approval for or deny tool calls, and AOP-style middleware hooks."
+  ],
+  "who": "Java teams building enterprise agents that need permissions and event streams.",
+  "features": [
+   "32 typed events for UIs and human in the loop",
+   "Tool-call permissions",
+   "Middleware hooks",
+   "Long-running execution"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/agentscope-ai/agentscope-java"
+  ],
+  "updated": "2026-10-18"
+ },
+ "open-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Open Agents is Vercel's open-source reference app for building and running background coding agents on Vercel. It includes the web UI, agent runtime, sandbox orchestration and GitHub integration needed to go from prompt to code changes without your laptop.",
+   "The agent runs as a durable workflow on Vercel, and the repo is meant to be forked and adapted."
+  ],
+  "who": "Developers who want a starting point for their own cloud coding agent on Vercel.",
+  "features": [
+   "Web UI with auth, sessions and streaming",
+   "Durable agent workflow on Vercel",
+   "Sandbox orchestration",
+   "GitHub integration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/vercel-labs/open-agents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cloudflare-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cloudflare Agents is Cloudflare's SDK for persistent, stateful AI agents powered by Durable Objects. Each agent has its own state, storage and lifecycle, with built-in real-time communication, scheduling, AI model calls, MCP and workflows.",
+   "Agents hibernate when idle and wake on demand, so you can run very many of them, one per user, session or game room, at no cost while inactive."
+  ],
+  "who": "Developers deploying agents on Cloudflare Workers who need per-user state at scale.",
+  "features": [
+   "Stateful agents on Durable Objects",
+   "Real-time communication and scheduling",
+   "MCP and workflows",
+   "Hibernate when idle"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cloudflare/agents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "areal": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AReaL is a large-scale asynchronous reinforcement-learning system for training LLM-based agents, originally developed by Tsinghua IIIS and the AReaL team at Ant Group.",
+   "It is built on a fully asynchronous RL training paradigm optimized for efficiency and scalability."
+  ],
+  "who": "ML researchers and engineers training agentic models with RL at scale.",
+  "features": [
+   "Fully asynchronous RL training",
+   "Built for large-scale agent training",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/areal-project/AReaL"
+  ],
+  "updated": "2026-10-18"
+ },
+ "zenml": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ZenML is built for ML and AI engineers working on traditional ML, LLM workflows or agents in a company setting. At its core you write workflows (pipelines) that can be run and tracked.",
+   "Our listing describes it as an MLOps and agent platform for building pipelines and deploying agents, with a cloud option."
+  ],
+  "who": "ML and AI engineering teams that want reproducible pipelines for models and agents.",
+  "features": [
+   "Pipelines for ML, LLM and agent workflows",
+   "Built for company settings",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/zenml-io/zenml"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ag2": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AG2 is the community continuation of AutoGen, an open-source framework for multi-agent systems. As of AG2 v1.0, a protocol-driven framework is the top-level package, imported as ag2.",
+   "The classic framework (ConversableAgent, GroupChat, import autogen) moved to the ag2-classic repository, which is still maintained and installable."
+  ],
+  "who": "Developers building multi-agent systems, including former AutoGen users.",
+  "features": [
+   "Protocol-driven multi-agent framework (v1.0)",
+   "AG2 Classic still maintained",
+   "Community continuation of AutoGen"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ag2ai/ag2"
+  ],
+  "updated": "2026-10-18"
+ },
+ "prime-intellect": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Prime Intellect builds decentralized compute and an open RL environment hub for training agentic models. Its open-source verifiers library creates environments to train and evaluate LLMs.",
+   "verifiers is integrated with the Environments Hub, the prime-rl training framework and a Hosted Training platform, and the Prime CLI is recommended for working with environments."
+  ],
+  "who": "ML researchers who build RL environments and train or evaluate agentic models.",
+  "features": [
+   "verifiers environment library",
+   "Environments Hub",
+   "prime-rl and Hosted Training",
+   "Prime CLI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/PrimeIntellect-ai/verifiers",
+   "https://www.primeintellect.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "koog": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Koog is JetBrains' framework for building and running AI agents in idiomatic Kotlin and Java. Agents can use tools, handle complex workflows and talk with users.",
+   "It supports Kotlin Multiplatform deployment to JVM, JS, WasmJS, Android and iOS, and offers reliability features such as built-in retries and agent persistence to restore state at specific points."
+  ],
+  "who": "Kotlin and Java developers building predictable agents for the JVM and mobile.",
+  "features": [
+   "Idiomatic Kotlin and Java APIs",
+   "Kotlin Multiplatform targets",
+   "Retries and state persistence"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/JetBrains/koog"
+  ],
+  "updated": "2026-10-18"
+ },
+ "docker-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Docker Agent lets you build, run and share AI agents with a declarative YAML config, a rich tool ecosystem and multi-agent orchestration, without writing code.",
+   "It is a Docker CLI plugin run as docker agent, and you can create teams of specialized agents that delegate tasks automatically."
+  ],
+  "who": "Developers who already use Docker and want to define agents in YAML.",
+  "features": [
+   "Declarative YAML agents",
+   "Docker CLI plugin",
+   "Multi-agent teams with delegation",
+   "Rich tool ecosystem"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/docker/docker-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agent-service-toolkit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent Service Toolkit is a full toolkit for running an AI agent service built with LangGraph, FastAPI and Streamlit. It includes a LangGraph agent, a FastAPI service, a client and a Streamlit chat app, with Pydantic data structures and settings.",
+   "It is a template that shows a complete setup from agent definition to user interface."
+  ],
+  "who": "Python developers who want a ready-made template for serving LangGraph agents.",
+  "features": [
+   "LangGraph agent",
+   "FastAPI service and client",
+   "Streamlit chat UI",
+   "Pydantic settings"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/JoshuaC215/agent-service-toolkit"
+  ],
+  "updated": "2026-10-18"
+ },
+ "embabel": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Embabel (pronounced Em-BAY-bel) is a framework for authoring agentic flows on the JVM. Our listing notes it comes from the creator of Spring."
+  ],
+  "who": "JVM developers, particularly Spring users, building agent flows.",
+  "features": [
+   "Agent flows on the JVM",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/embabel/embabel-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "rubyllm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "RubyLLM is a Ruby framework for building AI features the Ruby way, with models, tools, agents, sandboxed code, evaluations and Rails conventions under one consistent API.",
+   "You can move between hosted and local providers without rewriting your application, or connect an OpenAI-compatible endpoint."
+  ],
+  "who": "Ruby and Rails developers adding chat, tools and agents to their apps.",
+  "features": [
+   "One API for chat, tools and agents",
+   "Rails conventions",
+   "Hosted, local or OpenAI-compatible providers",
+   "Evaluations and sandboxed code"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/crmne/ruby_llm"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dagu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Dagu is a local-first, open-source workflow engine for operations and internal automation. It is a single binary with a built-in web UI and no external database or message broker, running on Linux, macOS and Windows.",
+   "You define DAGs in YAML; it supports shell commands, Docker containers, Kubernetes Jobs and SSH, and turns scripts and runbooks into scheduled workflows with retries and human tasks."
+  ],
+  "who": "Ops and platform engineers who want a simple self-hosted scheduler, including for agent jobs.",
+  "features": [
+   "Single binary with web UI",
+   "YAML-defined DAGs",
+   "Shell, Docker, Kubernetes and SSH",
+   "Scheduling, retries and human tasks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/dagucloud/dagu"
+  ],
+  "updated": "2026-10-18"
+ },
+ "docetl": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DocETL, from UC Berkeley, helps you process large collections of structured and unstructured data with LLMs. You write each operation in natural language, such as pulling every complaint out of a ticket.",
+   "It provides operators like map, reduce and filter, parallelizes work across your data and optimizes the pipeline automatically by swapping models, rewriting prompts and decomposing operations. It has a Python API, YAML and the DocWrangler UI."
+  ],
+  "who": "Data and research teams running LLM-powered extraction over large document sets.",
+  "features": [
+   "Natural-language operations",
+   "Map, reduce, filter operators",
+   "Automatic pipeline optimization",
+   "Python API, YAML and DocWrangler UI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ucbepic/docetl"
+  ],
+  "updated": "2026-10-18"
  }
 }
