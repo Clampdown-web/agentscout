@@ -178,8 +178,85 @@ def hub_cards(d=""):
     return "".join(f'<div class="card tile" style="position:relative"><a class="stretch" href="{d}free-tools/{s}.html" aria-label="{e(n)}"></a><div class="ct"><span class="ico"><span aria-hidden="true">{ic}</span></span><div class="tn"><h3>{e(n)}</h3><div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">{e(desc)}</p></div>' for s,n,desc,ic in TOOLS)
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
-    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t)]
+    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t)]
     # /free-tools/ folder URL -> hub (not in sitemap)
     open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
     print("free tools:",len(urls),"pages")
     return urls
+
+# ---- Batch (g), Oct 18 2026: MCP config builder, llms.txt generator, tool-schema builder (all browser-only) ----
+TOOLS+=[
+("mcp-config-builder","MCP Config Builder","Add MCP servers once and get ready-to-paste config for Claude Desktop, Claude Code, Cursor and VS Code.","🔌"),
+("llms-txt-generator","llms.txt Generator","Fill in your site's name, summary and key links and get a valid llms.txt file that AI assistants can read.","📄"),
+("tool-schema-builder","AI Tool Schema Builder","Define a function once and export the tool-calling JSON schema for OpenAI, Anthropic Claude and Google Gemini.","🧩"),
+]
+REL.update({"mcp-config-builder":(["free-mcp-servers","database-mcp-servers","terminal-ai-coding-agents"],["developers","ai-engineers"]),
+ "llms-txt-generator":(["web-search-apis-for-ai-agents","ai-web-scraping-tools","ai-marketing-agents"],["marketers","developers","founders"]),
+ "tool-schema-builder":(["python-ai-agent-frameworks","typescript-ai-agent-frameworks","open-source-ai-agent-frameworks"],["ai-engineers","developers"])})
+TA='style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;box-sizing:border-box"'
+def _outs(ids):
+    return "".join(f'<h3 style="font-size:15px;margin:20px 0 6px">{lab}</h3><textarea id="{i}" readonly rows="12" {OUT}></textarea><button class="btn" type="button" onclick="asCopy(\'{i}\',this)">Copy</button>' for i,lab in ids)
+def mcpcfg(t):
+    inner=(f'<div {BOX}><p style="margin:0 0 6px">One server per line. Local (stdio) servers: <code>name | command and arguments | KEY=value KEY2=value</code>. Remote servers: <code>name | https://url</code>.</p>'
+           f'<label {LAB} for="ms">Servers</label><textarea id="ms" rows="5" {TA}>filesystem | npx -y @modelcontextprotocol/server-filesystem /Users/me/Documents\ngithub | npx -y @modelcontextprotocol/server-github | GITHUB_PERSONAL_ACCESS_TOKEN=your-token-here</textarea>'
+           '<p id="merr" role="alert" style="color:#e5484d;min-height:18px;margin:8px 0 0;font-size:14px"></p></div>'
+           +_outs([("mo1","Claude Desktop: claude_desktop_config.json"),("mo2","Cursor: .cursor/mcp.json (project) or ~/.cursor/mcp.json"),("mo3","VS Code: .vscode/mcp.json"),("mo4","Claude Code: terminal commands")])
+           +'<p class="muted" style="font-size:13px;margin-top:14px">Claude Desktop connects to remote servers through the <code>mcp-remote</code> bridge here; newer versions can also add remote servers under Settings → Connectors. Never paste real secrets into shared files.</p>')
+    js=r'''function $(i){return document.getElementById(i)}
+function sp(s){var a=[],m,re=/"([^"]*)"|'([^']*)'|(\S+)/g;while((m=re.exec(s)))a.push(m[1]!==undefined?m[1]:m[2]!==undefined?m[2]:m[3]);return a}
+function parse(){var out=[],err="";$("ms").value.split("\n").forEach(function(l,i){l=l.trim();if(!l||l[0]==="#")return;var p=l.split("|").map(function(x){return x.trim()});var n=(p[0]||"").replace(/[^A-Za-z0-9_.-]/g,"-");if(!n||!p[1]){err="Line "+(i+1)+": use name | command or name | https://url";return}
+var s={name:n};if(/^https?:\/\//.test(p[1])){s.url=p[1]}else{var a=sp(p[1]);s.command=a[0];s.args=a.slice(1)}var env={};(p[2]||"").split(/\s+/).forEach(function(kv){var k=kv.indexOf("=");if(k>0)env[kv.slice(0,k)]=kv.slice(k+1)});if(Object.keys(env).length)s.env=env;out.push(s)});$("merr").textContent=err;return out}
+function q(s){return /^[A-Za-z0-9_./:@=-]+$/.test(s)?s:"'"+s.replace(/'/g,"'\\''")+"'"}
+function run(){var S=parse(),cd={},cu={},vs={},cc=[];S.forEach(function(s){if(s.url){cd[s.name]={command:"npx",args:["-y","mcp-remote",s.url]};cu[s.name]={url:s.url};vs[s.name]={type:"http",url:s.url};cc.push("claude mcp add --transport http "+q(s.name)+" "+q(s.url))}
+else{var b={command:s.command,args:s.args};if(s.env)b.env=s.env;cd[s.name]=b;cu[s.name]=JSON.parse(JSON.stringify(b));var v={type:"stdio",command:s.command,args:s.args};if(s.env)v.env=s.env;vs[s.name]=v;cc.push("claude mcp add "+q(s.name)+(s.env?" "+Object.keys(s.env).map(function(k){return"--env "+q(k+"="+s.env[k])}).join(" "):"")+" -- "+[s.command].concat(s.args).map(q).join(" "))}});
+$("mo1").value=JSON.stringify({mcpServers:cd},null,2);$("mo2").value=JSON.stringify({mcpServers:cu},null,2);$("mo3").value=JSON.stringify({servers:vs},null,2);$("mo4").value=cc.join("\n")}
+$("ms").addEventListener("input",run);run();'''
+    faq=[("Where does the Claude Desktop config file live?","On macOS it is ~/Library/Application Support/Claude/claude_desktop_config.json and on Windows %APPDATA%\\Claude\\claude_desktop_config.json. You can also open it from Claude Desktop's Settings → Developer → Edit Config. Restart Claude Desktop after saving."),
+         ("What is the difference between the Cursor and VS Code formats?","Cursor's mcp.json uses a top-level mcpServers object, like Claude Desktop. VS Code's .vscode/mcp.json uses a top-level servers object and a type field (stdio or http) for each server."),
+         ("Does this tool install or run anything?","No. It only formats text in your browser. You still need Node.js (for npx servers) or whatever runtime each server needs, and you should only add servers you trust."),
+         ("Where do I find MCP servers?",f"Browse the {sum(1 for x in t if x['category']=='MCP & infra')} MCP and infrastructure tools in the AgentScout directory, or the free MCP servers list.")]
+    return wrap("mcp-config-builder","MCP config builder","Add your MCP servers once and get config you can paste into Claude Desktop, Cursor, VS Code and Claude Code. See also the <a href=\"../categories/mcp-infra.html\">MCP &amp; infra category</a>.",inner,faq,js,t)
+def llmstxt(t):
+    inner=(f'<div {BOX}><label {LAB} for="ln">Site or project name</label><input id="ln" {INP} value="Acme Docs" maxlength="100">'
+           f'<label {LAB} for="ls">One-sentence summary</label><input id="ls" {INP} value="Acme is an open-source library for building AI agents in Python." maxlength="300">'
+           f'<label {LAB} for="ld">More details <span style="color:var(--faint);font-weight:400">(optional, plain text or Markdown)</span></label><textarea id="ld" rows="3" {TA}>Use the Quickstart first. The API reference covers every public class.</textarea>'
+           f'<label {LAB} for="lk">Sections and links</label><p class="muted" style="margin:0 0 6px;font-size:13px">Start a section with <code>## Name</code>. Then one link per line: <code>Title | https://url | optional note</code>. A section named <code>Optional</code> marks links an AI can skip.</p>'
+           f'<textarea id="lk" rows="8" {TA}>## Docs\nQuickstart | https://example.com/docs/quickstart.md | Install and run your first agent\nAPI reference | https://example.com/docs/api.md\n\n## Optional\nChangelog | https://example.com/changelog.md</textarea>'
+           '<p id="lerr" role="alert" style="color:#e5484d;min-height:18px;margin:8px 0 0;font-size:14px"></p></div>'
+           +_outs([("lo","llms.txt (save at your site root, e.g. https://example.com/llms.txt)")])
+           +'<p><button class="btn" type="button" id="ldl">Download llms.txt</button></p>')
+    js=r'''function $(i){return document.getElementById(i)}
+function run(){var o="# "+($("ln").value.trim()||"Untitled")+"\n",s=$("ls").value.trim(),d=$("ld").value.trim(),err="",cur=null;if(s)o+="\n> "+s.replace(/\n+/g," ")+"\n";if(d)o+="\n"+d+"\n";
+$("lk").value.split("\n").forEach(function(l,i){l=l.trim();if(!l)return;if(/^##\s+/.test(l)){cur=l.replace(/^##\s+/,"");o+="\n## "+cur+"\n\n";return}var p=l.split("|").map(function(x){return x.trim()});
+if(!cur){cur="Docs";o+="\n## Docs\n\n"}if(!p[1]||!/^https?:\/\//.test(p[1])){err="Line "+(i+1)+": use Title | https://url | note";return}o+="- ["+p[0]+"]("+p[1]+")"+(p[2]?": "+p[2]:"")+"\n"});
+$("lerr").textContent=err;$("lo").value=o}
+["ln","ls","ld","lk"].forEach(function(i){$(i).addEventListener("input",run)});run();
+$("ldl").addEventListener("click",function(){var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([$("lo").value],{type:"text/plain"}));a.download="llms.txt";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)});'''
+    faq=[("What is llms.txt?","llms.txt is a proposed standard (llmstxt.org) for a Markdown file at the root of a website that gives AI assistants a short summary and a curated list of the most useful pages, so they don't have to crawl everything."),
+         ("What format does this generator follow?","An H1 with the site name, an optional blockquote summary, optional details, then H2 sections that contain Markdown link lists, with an optional note after each link. A section called Optional holds links that can be skipped when context is short."),
+         ("Does AgentScout have one?","Yes: agentscouthq.com/llms.txt lists the directory's categories and machine-readable catalog."),
+         ("Is anything uploaded?","No. The file is built in your browser and downloaded directly.")]
+    return wrap("llms-txt-generator","llms.txt generator","Fill in your site's name, a one-line summary and your key links, and get a valid llms.txt file AI assistants can read. Example: <a href=\"../llms.txt\">AgentScout's llms.txt</a>.",inner,faq,js,t)
+def toolschema(t):
+    inner=(f'<div {BOX}><label {LAB} for="sn">Function name</label><input id="sn" {INP} value="get_weather" maxlength="64">'
+           f'<label {LAB} for="sd">What it does</label><input id="sd" {INP} value="Get the current weather for a city." maxlength="500">'
+           f'<label {LAB} for="sp">Parameters</label><p class="muted" style="margin:0 0 6px;font-size:13px">One per line: <code>name | type | required or optional | description</code>. Types: string, number, integer, boolean, array, object, or <code>enum(a,b,c)</code>.</p>'
+           f'<textarea id="sp" rows="5" {TA}>city | string | required | City name, e.g. Paris\nunit | enum(celsius,fahrenheit) | optional | Temperature unit</textarea>'
+           f'<label style="display:flex;gap:8px;align-items:center;margin:12px 0 0;font-size:14px"><input type="checkbox" id="sx"> Strict mode for OpenAI (all fields required, no extra properties)</label>'
+           '<p id="serr" role="alert" style="color:#e5484d;min-height:18px;margin:8px 0 0;font-size:14px"></p></div>'
+           +_outs([("so1","OpenAI Responses API (tools)"),("so2","OpenAI Chat Completions (tools)"),("so3","Anthropic Claude (tools)"),("so4","Google Gemini (functionDeclarations)")]))
+    js=r'''function $(i){return document.getElementById(i)}
+function schema(strict){var props={},req=[],err="";$("sp").value.split("\n").forEach(function(l,i){l=l.trim();if(!l)return;var p=l.split("|").map(function(x){return x.trim()}),n=p[0],ty=(p[1]||"string").toLowerCase();
+if(!/^[A-Za-z_][A-Za-z0-9_]*$/.test(n||"")){err="Line "+(i+1)+": parameter names use letters, numbers and _";return}var o={},m=/^enum\((.*)\)$/.exec(ty);if(m){o.type="string";o["enum"]=m[1].split(",").map(function(x){return x.trim()}).filter(Boolean)}
+else if(["string","number","integer","boolean","array","object"].indexOf(ty)>=0){o.type=ty;if(ty==="array")o.items={type:"string"};if(ty==="object"){o.properties={};if(strict){o.additionalProperties=false;o.required=[]}}}else{err="Line "+(i+1)+": unknown type "+ty;return}
+if(p[3])o.description=p[3];props[n]=o;if(strict||/^req/.test((p[2]||"").toLowerCase()))req.push(n)});var s={type:"object",properties:props,required:req};if(strict)s.additionalProperties=false;return[s,err]}
+function run(){var n=$("sn").value.trim()||"my_function",d=$("sd").value.trim(),st=$("sx").checked,a=schema(st),b=schema(false);$("serr").textContent=a[1]||(/^[A-Za-z0-9_-]{1,64}$/.test(n)?"":"Function names use letters, numbers, _ and - (max 64).");
+var r={type:"function",name:n,description:d,parameters:a[0]};if(st)r.strict=true;var c={type:"function",function:{name:n,description:d,parameters:a[0]}};if(st)c["function"].strict=true;
+$("so1").value=JSON.stringify([r],null,2);$("so2").value=JSON.stringify([c],null,2);$("so3").value=JSON.stringify([{name:n,description:d,input_schema:b[0]}],null,2);
+$("so4").value=JSON.stringify({functionDeclarations:[{name:n,description:d,parameters:b[0]}]},null,2)}
+["sn","sd","sp"].forEach(function(i){$(i).addEventListener("input",run)});$("sx").addEventListener("change",run);run();'''
+    faq=[("Why does each provider need a different format?","They all use JSON Schema for the parameters, but wrap it differently: OpenAI's Responses API takes type, name, description and parameters at the top level; Chat Completions nests them under function; Anthropic calls the schema input_schema; Gemini lists functions under functionDeclarations."),
+         ("What does OpenAI strict mode change?","With strict set to true, the model's arguments are guaranteed to match your schema. OpenAI requires every property to be listed as required and additionalProperties to be false; use a nullable type if a field is truly optional."),
+         ("Can I use nested objects?","This builder makes flat parameter lists with empty object and string-array placeholders. Edit the output by hand for deeper nesting."),
+         ("Is anything sent to an AI provider?","No. The schema is generated in your browser.")]
+    return wrap("tool-schema-builder","AI tool schema builder (function calling)","Define a function once and export the tool-calling JSON for OpenAI, Anthropic Claude and Google Gemini. Building agents? See <a href=\"../tasks/building-ai-agents.html\">agent frameworks by task</a>.",inner,faq,js,t)
