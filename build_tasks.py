@@ -226,6 +226,8 @@ def sitewide(t):
             if 'news.html">Agent news</a>' not in fn: fn=re.sub(r'(<a href="[^"]*new\.html">New tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news.html">Agent news</a>',fn,count=1)
             # News archive (news/) in every footer, right after Agent news (Oct 18 2026: archive was only linked from news.html and story pages)
             if 'news/index.html">News archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news/index.html">News archive</a>',fn,count=1)
+            # Image generator link in every footer, right after Badges (generate.html's own footer lacked it; audit Oct 18 2026)
+            if 'class="footgen"' not in fn: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a class="footgen" href="{d}generate.html">✨ Free AI Image Generator</a>',fn,count=1)
             if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Free-tools hub in the main nav, right after Image Gen
         if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s: s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
