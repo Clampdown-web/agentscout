@@ -3779,5 +3779,182 @@
 ],
 "freeday": [
 "workflow-automation"
+],
+"amd-gaia": [
+"agent-frameworks",
+"local-models"
+],
+"cli-agent-orchestrator": [
+"multi-agent",
+"terminal-agents"
+],
+"minimax-mcp": [
+"voice-phone",
+"mcp-servers",
+"video",
+"images-design"
+],
+"mcp-php-sdk": [
+"mcp-servers",
+"agent-frameworks"
+],
+"openinference": [
+"voice-phone",
+"observability",
+"agent-frameworks"
+],
+"cloudflare-sandbox-sdk": [
+"sandboxes",
+"agent-frameworks"
+],
+"cisco-mcp-scanner": [
+"mcp-servers",
+"rules-config"
+],
+"arcade": [
+"agent-auth",
+"mcp-servers",
+"agent-frameworks"
+],
+"judgeval": [
+"observability",
+"agent-frameworks"
+],
+"tensorlake": [
+"sandboxes",
+"multi-agent"
+],
+"obot": [
+"mcp-servers",
+"rules-config"
+],
+"jido": [
+"multi-agent",
+"agent-frameworks"
+],
+"terminator": [
+"browser-automation",
+"computer-use",
+"mcp-servers",
+"agent-frameworks"
+],
+"hercules": [
+"testing-qa"
+],
+"core": [
+"code-review",
+"agent-memory",
+"planning-tasks",
+"email-agents",
+"personal-assistants"
+],
+"grounded-docs-mcp": [
+"vector-rag",
+"mcp-servers",
+"local-models"
+],
+"kodus": [
+"code-review"
+],
+"mirascope": [
+"agent-frameworks"
+],
+"patter": [
+"voice-phone",
+"agent-frameworks"
+],
+"supermemory": [
+"agent-memory",
+"mcp-servers",
+"local-models"
+],
+"kilo-code": [
+"terminal-agents",
+"ide-agents"
+],
+"nango": [
+"voice-phone",
+"agent-auth"
+],
+"perplexity-space": [
+"sandboxes",
+"agent-auth"
+],
+"openworker": [
+"chat-app-agents",
+"computer-use"
+],
+"warp": [
+"terminal-agents"
+],
+"hark-pro": [
+"personal-assistants",
+"mobile"
+],
+"instinct": [
+"vector-rag",
+"voice-phone",
+"email-agents",
+"browser-automation",
+"personal-assistants"
+],
+"factory": [
+"chat-app-agents",
+"terminal-agents",
+"ide-agents"
+],
+"jules": [
+"code-review",
+"cloud-coding-agents"
+],
+"genspark": [
+"research-agents",
+"video",
+"images-design"
+],
+"greptile": [
+"code-review",
+"codebase-context"
+],
+"base44": [
+"text-to-sql",
+"agent-auth",
+"no-code-apps"
+],
+"emergent": [
+"planning-tasks",
+"mobile"
+],
+"rork": [
+"no-code-apps",
+"mobile"
+],
+"fellou": [
+"browser-automation"
+],
+"leap": [],
+"eney": [
+"voice-phone"
+],
+"mirror-cli": [
+"parallel-orchestration",
+"sandboxes",
+"terminal-agents"
+],
+"pyth-pro-mcp": [
+"mcp-servers"
+],
+"pimlico-ai": [
+"guardrails",
+"mcp-servers",
+"terminal-agents"
+],
+"openzeppelin-mcp": [
+"smart-contracts",
+"mcp-servers"
+],
+"onesignal-mcp": [
+"email-agents",
+"mcp-servers"
 ]
 }

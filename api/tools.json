@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T14:11:38Z",
- "updated": "2026-10-18T14:11:38Z",
+ "generated": "2026-10-18T15:16:04Z",
+ "updated": "2026-10-18T15:16:04Z",
  "last_checked": "2026-10-18",
- "count": 1064,
+ "count": 1106,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -26992,7 +26992,7 @@
    "slug": "nvidia-tao-agent-skills",
    "url": "https://developer.nvidia.com/tao-toolkit",
    "website": "https://developer.nvidia.com/tao-toolkit",
-   "github": "https://github.com/NVIDIA-TAO/tao-skills-bank",
+   "github": "https://github.com/NVIDIA-TAO/tao-skill-bank",
    "category": "vision",
    "description": "NVIDIA's vision-model post-training toolkit, now packaged as agent skills so Claude Code or Codex can fine-tune, optimize and export vision foundation models from plain-English prompts.",
    "key_features": [
@@ -27019,7 +27019,7 @@
    "new": true,
    "seed": false,
    "new_this_week": true,
-   "repo": "NVIDIA-TAO/tao-skills-bank",
+   "repo": "NVIDIA-TAO/tao-skill-bank",
    "github_stars": 95,
    "open_source": true,
    "license": "Apache-2.0",
@@ -45115,6 +45115,1801 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/freeday.png",
    "page": "https://agentscouthq.com/tools/freeday.html"
+  },
+  {
+   "name": "AMD GAIA",
+   "slug": "amd-gaia",
+   "url": "https://github.com/amd/gaia",
+   "website": "",
+   "github": "https://github.com/amd/gaia",
+   "category": "frameworks",
+   "description": "AMD's open-source toolkit for building AI agents that run locally on Ryzen AI PCs, keeping data on the device.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1586 GitHub stars",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "amd/gaia",
+   "github_stars": 1586,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/amd-gaia.png",
+   "page": "https://agentscouthq.com/tools/amd-gaia.html"
+  },
+  {
+   "name": "CLI Agent Orchestrator",
+   "slug": "cli-agent-orchestrator",
+   "url": "https://awslabs.github.io/cli-agent-orchestrator/",
+   "website": "https://awslabs.github.io/cli-agent-orchestrator/",
+   "github": "https://github.com/awslabs/cli-agent-orchestrator",
+   "category": "coding",
+   "description": "AWS Labs tool that coordinates several coding CLIs such as Claude Code, Kiro and Codex as a team, each in its own tmux session.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1447 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "awslabs/cli-agent-orchestrator",
+   "github_stars": 1447,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cli-agent-orchestrator.png",
+   "page": "https://agentscouthq.com/tools/cli-agent-orchestrator.html"
+  },
+  {
+   "name": "MiniMax MCP",
+   "slug": "minimax-mcp",
+   "url": "https://platform.minimax.io/docs/guides/models-intro",
+   "website": "https://platform.minimax.io/docs/guides/models-intro",
+   "github": "https://github.com/MiniMax-AI/MiniMax-MCP",
+   "category": "MCP & infra",
+   "description": "Official MiniMax MCP server that lets agents call MiniMax text-to-speech, voice cloning, image and video generation.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1589 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "MiniMax-AI/MiniMax-MCP",
+   "github_stars": 1589,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/minimax-mcp.png",
+   "page": "https://agentscouthq.com/tools/minimax-mcp.html"
+  },
+  {
+   "name": "MCP PHP SDK",
+   "slug": "mcp-php-sdk",
+   "url": "https://php.sdk.modelcontextprotocol.io/",
+   "website": "https://php.sdk.modelcontextprotocol.io/",
+   "github": "https://github.com/modelcontextprotocol/php-sdk",
+   "category": "MCP & infra",
+   "description": "Official PHP SDK for building MCP servers and clients, maintained with the PHP Foundation and Symfony.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1634 GitHub stars",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "modelcontextprotocol/php-sdk",
+   "github_stars": 1634,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mcp-php-sdk.png",
+   "page": "https://agentscouthq.com/tools/mcp-php-sdk.html"
+  },
+  {
+   "name": "OpenInference",
+   "slug": "openinference",
+   "url": "https://arize-ai.github.io/openinference/",
+   "website": "https://arize-ai.github.io/openinference/",
+   "github": "https://github.com/Arize-ai/openinference",
+   "category": "evals & observability",
+   "description": "OpenTelemetry-based instrumentation that traces LLM and agent framework calls so any observability backend can show them.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1268 GitHub stars",
+    "Build an agent",
+    "Voice & phone calls",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Arize-ai/openinference",
+   "github_stars": 1268,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "voice & phone calls",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openinference.png",
+   "page": "https://agentscouthq.com/tools/openinference.html"
+  },
+  {
+   "name": "Cloudflare Sandbox SDK",
+   "slug": "cloudflare-sandbox-sdk",
+   "url": "https://sandbox.cloudflare.com/",
+   "website": "https://sandbox.cloudflare.com/",
+   "github": "https://github.com/cloudflare/sandbox-sdk",
+   "category": "MCP & infra",
+   "description": "SDK for running isolated code sandboxes on Cloudflare's network, so agents can execute commands and files safely from a Worker.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1151 GitHub stars",
+    "Write code",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "cloudflare/sandbox-sdk",
+   "github_stars": 1151,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cloudflare-sandbox-sdk.png",
+   "page": "https://agentscouthq.com/tools/cloudflare-sandbox-sdk.html"
+  },
+  {
+   "name": "Cisco MCP Scanner",
+   "slug": "cisco-mcp-scanner",
+   "url": "https://blogs.cisco.com/ai/securing-the-ai-agent-supply-chain-with-ciscos-open-source-mcp-scanner",
+   "website": "https://blogs.cisco.com/ai/securing-the-ai-agent-supply-chain-with-ciscos-open-source-mcp-scanner",
+   "github": "https://github.com/cisco-ai-defense/mcp-scanner",
+   "category": "evals & observability",
+   "description": "Cisco's open-source scanner that checks MCP servers and tools for malicious or risky behaviour using YARA rules and LLM analysis.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1094 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "cisco-ai-defense/mcp-scanner",
+   "github_stars": 1094,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cisco-mcp-scanner.png",
+   "page": "https://agentscouthq.com/tools/cisco-mcp-scanner.html"
+  },
+  {
+   "name": "Arcade",
+   "slug": "arcade",
+   "url": "https://www.arcade.dev/",
+   "website": "https://www.arcade.dev/",
+   "github": "https://github.com/ArcadeAI/arcade-mcp",
+   "category": "MCP & infra",
+   "description": "Actions runtime for enterprise agents with thousands of prebuilt authenticated tools, plus an open-source framework for building your own MCP servers.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1054 GitHub stars",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ArcadeAI/arcade-mcp",
+   "github_stars": 1054,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/arcade.png",
+   "page": "https://agentscouthq.com/tools/arcade.html"
+  },
+  {
+   "name": "Judgeval",
+   "slug": "judgeval",
+   "url": "https://www.judgmentlabs.ai/",
+   "website": "https://www.judgmentlabs.ai/",
+   "github": "https://github.com/JudgmentLabs/judgeval",
+   "category": "evals & observability",
+   "description": "Open-source SDK for tracing agents and scoring them with agent judges, so failures in production can be found and fixes checked.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1068 GitHub stars",
+    "Build an agent",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "JudgmentLabs/judgeval",
+   "github_stars": 1068,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/judgeval.png",
+   "page": "https://agentscouthq.com/tools/judgeval.html"
+  },
+  {
+   "name": "Tensorlake",
+   "slug": "tensorlake",
+   "url": "https://www.tensorlake.ai/",
+   "website": "https://www.tensorlake.ai/",
+   "github": "https://github.com/tensorlakeai/tensorlake",
+   "category": "MCP & infra",
+   "description": "Serverless runtime that gives agents MicroVM sandboxes and durable orchestration for long-running background jobs.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1024 GitHub stars",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tensorlakeai/tensorlake",
+   "github_stars": 1024,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tensorlake.png",
+   "page": "https://agentscouthq.com/tools/tensorlake.html"
+  },
+  {
+   "name": "Obot",
+   "slug": "obot",
+   "url": "https://obot.ai/",
+   "website": "https://obot.ai/",
+   "github": "https://github.com/obot-platform/obot",
+   "category": "MCP & infra",
+   "description": "Open-source platform for companies to host, approve and govern MCP servers, skills and agent access in one place.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1109 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "obot-platform/obot",
+   "github_stars": 1109,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/obot.png",
+   "page": "https://agentscouthq.com/tools/obot.html"
+  },
+  {
+   "name": "Jido",
+   "slug": "jido",
+   "url": "https://jido.run/",
+   "website": "https://jido.run/",
+   "github": "https://github.com/agentjido/jido",
+   "category": "frameworks",
+   "description": "Elixir framework for building supervised, fault-tolerant agents and multi-agent systems on the BEAM.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1893 GitHub stars",
+    "Build multi-agent systems",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "agentjido/jido",
+   "github_stars": 1893,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jido.png",
+   "page": "https://agentscouthq.com/tools/jido.html"
+  },
+  {
+   "name": "Terminator",
+   "slug": "terminator",
+   "url": "https://t8r.tech/",
+   "website": "https://t8r.tech/",
+   "github": "https://github.com/mediar-ai/terminator",
+   "category": "browser/computer use",
+   "description": "Desktop automation library and MCP server that lets AI assistants control any Windows app through the accessibility tree, like Playwright for the desktop.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1656 GitHub stars",
+    "Automate the browser",
+    "Control a computer",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "mediar-ai/terminator",
+   "github_stars": 1656,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "control a computer",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/terminator.png",
+   "page": "https://agentscouthq.com/tools/terminator.html"
+  },
+  {
+   "name": "Hercules",
+   "slug": "hercules",
+   "url": "https://testzeus.com/hercules",
+   "website": "https://testzeus.com/hercules",
+   "github": "https://github.com/test-zeus-ai/testzeus-hercules",
+   "category": "coding",
+   "description": "Open-source testing agent that turns plain Gherkin steps into end-to-end UI, API, accessibility and security tests.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1190 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "test-zeus-ai/testzeus-hercules",
+   "github_stars": 1190,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hercules.png",
+   "page": "https://agentscouthq.com/tools/hercules.html"
+  },
+  {
+   "name": "CORE",
+   "slug": "core",
+   "url": "https://www.getcore.me",
+   "website": "https://www.getcore.me",
+   "github": "https://github.com/RedPlanetHQ/core",
+   "category": "personal agents",
+   "description": "Always-on personal AI that builds a memory graph from your email, meetings and tools, then plans and runs tasks like opening a pull request.",
+   "key_features": [
+    "See site",
+    "Active",
+    "1999 GitHub stars",
+    "Give agents memory"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "RedPlanetHQ/core",
+   "github_stars": 1999,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/core.png",
+   "page": "https://agentscouthq.com/tools/core.html"
+  },
+  {
+   "name": "Grounded Docs MCP",
+   "slug": "grounded-docs-mcp",
+   "url": "https://grounded.tools/",
+   "website": "https://grounded.tools/",
+   "github": "https://github.com/arabold/docs-mcp-server",
+   "category": "MCP & infra",
+   "description": "Self-hosted MCP server that indexes up-to-date documentation from websites, GitHub, npm and PyPI so coding agents query the right version.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1815 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "arabold/docs-mcp-server",
+   "github_stars": 1815,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/grounded-docs-mcp.png",
+   "page": "https://agentscouthq.com/tools/grounded-docs-mcp.html"
+  },
+  {
+   "name": "Kodus",
+   "slug": "kodus",
+   "url": "https://kodus.io/",
+   "website": "https://kodus.io/",
+   "github": "https://github.com/kodustech/kodus-ai",
+   "category": "coding",
+   "description": "Self-hostable AI code reviewer for GitHub, GitLab, Bitbucket and Azure DevOps pull requests that works with the model you choose.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1498 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "kodustech/kodus-ai",
+   "github_stars": 1498,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kodus.png",
+   "page": "https://agentscouthq.com/tools/kodus.html"
+  },
+  {
+   "name": "Mirascope",
+   "slug": "mirascope",
+   "url": "https://mirascope.com/",
+   "website": "https://mirascope.com/",
+   "github": "https://github.com/Mirascope/mirascope",
+   "category": "frameworks",
+   "description": "Lightweight Python library for calling any LLM with typed outputs and tools through one interface, without a heavy framework.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1533 GitHub stars",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Mirascope/mirascope",
+   "github_stars": 1533,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mirascope.png",
+   "page": "https://agentscouthq.com/tools/mirascope.html"
+  },
+  {
+   "name": "Patter",
+   "slug": "patter",
+   "url": "https://www.getpatter.com/",
+   "website": "https://www.getpatter.com/",
+   "github": "https://github.com/PatterAI/Patter",
+   "category": "voice",
+   "description": "Open-source SDK that gives your AI agent a phone number, handling speech, real-time voice and telephony carriers in Python or TypeScript.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1076 GitHub stars",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "PatterAI/Patter",
+   "github_stars": 1076,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/patter.png",
+   "page": "https://agentscouthq.com/tools/patter.html"
+  },
+  {
+   "name": "Supermemory",
+   "slug": "supermemory",
+   "url": "https://supermemory.ai/",
+   "website": "https://supermemory.ai/",
+   "github": "https://github.com/supermemoryai/supermemory",
+   "category": "MCP & infra",
+   "description": "Memory and context engine for agents with an API, app and MCP server, which can also run fully locally.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "31281 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "supermemoryai/supermemory",
+   "github_stars": 31281,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/supermemory.png",
+   "page": "https://agentscouthq.com/tools/supermemory.html"
+  },
+  {
+   "name": "Kilo Code",
+   "slug": "kilo-code",
+   "url": "https://kilo.ai/",
+   "website": "https://kilo.ai/",
+   "github": "https://github.com/Kilo-Org/kilocode",
+   "category": "coding",
+   "description": "Open-source AI coding agent for VS Code, JetBrains, the CLI and the cloud that works with 500+ models at no markup.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "27649 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Kilo-Org/kilocode",
+   "github_stars": 27649,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kilo-code.png",
+   "page": "https://agentscouthq.com/tools/kilo-code.html"
+  },
+  {
+   "name": "Nango",
+   "slug": "nango",
+   "url": "https://nango.dev/",
+   "website": "https://nango.dev/",
+   "github": "https://github.com/NangoHQ/nango",
+   "category": "MCP & infra",
+   "description": "Integration platform that connects products and AI agents to 1,000+ APIs with managed auth, syncs and tool calls.",
+   "key_features": [
+    "Source-available + cloud",
+    "Mature",
+    "12807 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "NangoHQ/nango",
+   "github_stars": 12807,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nango.png",
+   "page": "https://agentscouthq.com/tools/nango.html"
+  },
+  {
+   "name": "Perplexity SPACE",
+   "slug": "perplexity-space",
+   "url": "https://space.docs.perplexity.ai/guide/index.html",
+   "website": "https://space.docs.perplexity.ai/guide/index.html",
+   "github": "https://github.com/perplexityai/SPACE",
+   "category": "MCP & infra",
+   "description": "Perplexity's open-source sandbox platform that runs each agent task in its own Firecracker microVM, with credentials and network access controlled from outside.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1492 GitHub stars",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "News",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "perplexityai/SPACE",
+   "github_stars": 1492,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/perplexity-space.png",
+   "page": "https://agentscouthq.com/tools/perplexity-space.html"
+  },
+  {
+   "name": "OpenWorker",
+   "slug": "openworker",
+   "url": "https://openworker.com/",
+   "website": "https://openworker.com/",
+   "github": "https://github.com/andrewyng/openworker",
+   "category": "personal agents",
+   "description": "Andrew Ng's open-source desktop coworker that turns requests into finished work in your files, Slack and calendar, asking before important actions.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "18561 GitHub stars",
+    "Control a computer"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "News",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "andrewyng/openworker",
+   "github_stars": 18561,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openworker.png",
+   "page": "https://agentscouthq.com/tools/openworker.html"
+  },
+  {
+   "name": "Warp",
+   "slug": "warp",
+   "url": "https://www.warp.dev/",
+   "website": "https://www.warp.dev/",
+   "github": "https://github.com/warpdotdev/warp",
+   "category": "coding",
+   "description": "Agentic development environment built from the terminal, now open source, for running coding agents and cloud software factories.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "65511 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "News",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "warpdotdev/warp",
+   "github_stars": 65511,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/warp.png",
+   "page": "https://agentscouthq.com/tools/warp.html"
+  },
+  {
+   "name": "Hark Pro",
+   "slug": "hark-pro",
+   "url": "https://hark.com/",
+   "website": "https://hark.com/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Proactive personal agent on web, iOS and Android that uses its own cloud computer to shop, pay bills, book travel and handle errands.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Control a computer"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "News",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hark-pro.png",
+   "page": "https://agentscouthq.com/tools/hark-pro.html"
+  },
+  {
+   "name": "Instinct",
+   "slug": "instinct",
+   "url": "https://instinct.com/",
+   "website": "https://instinct.com/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Personal assistant you text or call that works across your Gmail, calendar, documents and a cloud browser to get tasks done.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate the browser",
+    "Voice & phone calls"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "News",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/instinct.png",
+   "page": "https://agentscouthq.com/tools/instinct.html"
+  },
+  {
+   "name": "Factory",
+   "slug": "factory",
+   "url": "https://factory.com/",
+   "website": "https://factory.com/",
+   "github": "",
+   "category": "coding",
+   "description": "Agent-native software development platform whose Droids write code, run tests and handle deployments from the IDE, terminal or Slack.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/factory.png",
+   "page": "https://agentscouthq.com/tools/factory.html"
+  },
+  {
+   "name": "Jules",
+   "slug": "jules",
+   "url": "https://jules.google/",
+   "website": "https://jules.google/",
+   "github": "",
+   "category": "coding",
+   "description": "Google's asynchronous coding agent that works on your GitHub repo in a cloud VM and comes back with a tested pull request.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jules.png",
+   "page": "https://agentscouthq.com/tools/jules.html"
+  },
+  {
+   "name": "Genspark",
+   "slug": "genspark",
+   "url": "https://www.genspark.ai/",
+   "website": "https://www.genspark.ai/",
+   "github": "",
+   "category": "personal agents",
+   "description": "All-in-one AI workspace whose agents research and produce slides, docs, sheets, images, video and code for you.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/genspark.png",
+   "page": "https://agentscouthq.com/tools/genspark.html"
+  },
+  {
+   "name": "Greptile",
+   "slug": "greptile",
+   "url": "https://www.greptile.com/",
+   "website": "https://www.greptile.com/",
+   "github": "",
+   "category": "coding",
+   "description": "AI code reviewer that reads your whole codebase to review pull requests and catch bugs before merge.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/greptile.png",
+   "page": "https://agentscouthq.com/tools/greptile.html"
+  },
+  {
+   "name": "Base44",
+   "slug": "base44",
+   "url": "https://base44.com/",
+   "website": "https://base44.com/",
+   "github": "",
+   "category": "app builders",
+   "description": "AI app builder that turns a plain-language idea into a working web app with database, login and hosting included.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "app builders"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/base44.png",
+   "page": "https://agentscouthq.com/tools/base44.html"
+  },
+  {
+   "name": "Emergent",
+   "slug": "emergent",
+   "url": "https://emergent.sh/",
+   "website": "https://emergent.sh/",
+   "github": "",
+   "category": "app builders",
+   "description": "Vibe-coding platform where AI agents plan, build and deploy full web and mobile apps through a chat conversation.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/emergent.png",
+   "page": "https://agentscouthq.com/tools/emergent.html"
+  },
+  {
+   "name": "Rork",
+   "slug": "rork",
+   "url": "https://rork.com/",
+   "website": "https://rork.com/",
+   "github": "",
+   "category": "app builders",
+   "description": "AI builder for native iOS, Android and web apps that takes you from a prompt to App Store and Google Play publishing.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rork.png",
+   "page": "https://agentscouthq.com/tools/rork.html"
+  },
+  {
+   "name": "Fellou",
+   "slug": "fellou",
+   "url": "https://fellou.ai/",
+   "website": "https://fellou.ai/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Agentic browser that carries out multi-step tasks across websites, runs deep searches and turns results into reports.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Research the web"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fellou.png",
+   "page": "https://agentscouthq.com/tools/fellou.html"
+  },
+  {
+   "name": "Leap",
+   "slug": "leap",
+   "url": "https://leap.new/",
+   "website": "https://leap.new/",
+   "github": "",
+   "category": "app builders",
+   "description": "AI developer agent that builds full-stack apps and deploys them to your own AWS or GCP account, so you keep the code.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/leap.png",
+   "page": "https://agentscouthq.com/tools/leap.html"
+  },
+  {
+   "name": "Eney",
+   "slug": "eney",
+   "url": "https://eney.ai/",
+   "website": "https://eney.ai/",
+   "github": "",
+   "category": "personal agents",
+   "description": "MacPaw's proactive AI assistant for Mac and iPhone that finds files, drafts replies and completes tasks across your connected apps.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Web search",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/eney.png",
+   "page": "https://agentscouthq.com/tools/eney.html"
+  },
+  {
+   "name": "Mirror CLI",
+   "slug": "mirror-cli",
+   "url": "https://developers.reflection.ai/mirror-overview",
+   "website": "https://developers.reflection.ai/mirror-overview",
+   "github": "",
+   "category": "coding",
+   "description": "Reflection AI's terminal coding agent that reads code, edits files and runs commands in isolated git worktrees, using the open-weight Beam model by default.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "X",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mirror-cli.png",
+   "page": "https://agentscouthq.com/tools/mirror-cli.html"
+  },
+  {
+   "name": "Pyth Pro MCP",
+   "slug": "pyth-pro-mcp",
+   "url": "https://docs.pyth.network/price-feeds/pro/mcp",
+   "website": "https://docs.pyth.network/price-feeds/pro/mcp",
+   "github": "",
+   "category": "crypto",
+   "description": "Pyth's hosted MCP server that gives agents real-time and tick-level price history for crypto, FX, equities, metals and rates.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "X",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pyth-pro-mcp.png",
+   "page": "https://agentscouthq.com/tools/pyth-pro-mcp.html"
+  },
+  {
+   "name": "Pimlico AI",
+   "slug": "pimlico-ai",
+   "url": "https://www.pimlico.io/ai",
+   "website": "https://www.pimlico.io/ai",
+   "github": "",
+   "category": "crypto",
+   "description": "CLI and MCP server that lets coding agents manage a Pimlico smart-account infrastructure account, from balances and logs to sponsorship policies.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "X",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pimlico-ai.png",
+   "page": "https://agentscouthq.com/tools/pimlico-ai.html"
+  },
+  {
+   "name": "OpenZeppelin MCP",
+   "slug": "openzeppelin-mcp",
+   "url": "https://mcp.openzeppelin.com/",
+   "website": "https://mcp.openzeppelin.com/",
+   "github": "https://github.com/OpenZeppelin/openzeppelin-mcp",
+   "category": "crypto",
+   "description": "OpenZeppelin's official MCP servers that let agents generate secure smart contracts from audited OpenZeppelin libraries for Solidity, Cairo, Stellar and more.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "30 GitHub stars",
+    "Connect tools via mcp",
+    "Run code safely",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Smithery",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "OpenZeppelin/openzeppelin-mcp",
+   "github_stars": 30,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openzeppelin-mcp.png",
+   "page": "https://agentscouthq.com/tools/openzeppelin-mcp.html"
+  },
+  {
+   "name": "OneSignal MCP",
+   "slug": "onesignal-mcp",
+   "url": "https://documentation.onesignal.com/docs/en/model-context-protocol",
+   "website": "https://documentation.onesignal.com/docs/en/model-context-protocol",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "OneSignal's official hosted MCP server for managing users, segments, templates, push and email messages and analytics from AI clients.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Smithery",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/onesignal-mcp.png",
+   "page": "https://agentscouthq.com/tools/onesignal-mcp.html"
   }
  ]
 }
