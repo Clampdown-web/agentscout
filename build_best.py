@@ -90,7 +90,7 @@ def page(t,P,asof):
           f'<p style="margin-top:24px">Related: {see}</p><p style="margin-top:12px">More best-of lists: <a href="index.html">All best lists</a> · {others}</p>'
           f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and GitHub stars are as recorded on each listing. Check official sites before you choose.</p></section>')
     open(path,"w").write(X.shell("../",title,desc,canon,body,ld)); return canon,h,len(items)
-def hub(t,made):
+def hub(t,made,alt=()):
     canon=B+"best/"; title="Best AI Agent Tools Lists (2026) · AgentScout"
     desc=f"{len(made)+len(OLD)} ranked and curated best-of lists from AgentScout: coding agents, agent frameworks, MCP servers, browser, voice, crypto and free AI agents."
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Top {n}, ranked</p></a>' for _,h,n,s in made)
@@ -100,7 +100,8 @@ def hub(t,made):
           f'<p class="lede" style="margin-left:0;text-align:left">Ranked lists built from the AgentScout directory. Each list says how it is ranked (GitHub stars or listing maturity). We use no invented scores and sell no placements.</p>'
           f'<p style="margin:0 0 8px">See also: <a href="../tasks/index.html">AI agents by task</a> · <a href="../categories/index.html">All categories</a> · <a href="../compare/index.html">Comparisons</a></p>'
           f'<h2 style="font-size:16px;margin:24px 0 10px">Ranked lists</h2><div class="grid">{tiles}</div><h2 style="font-size:16px;margin:32px 0 10px">MCP and coding guides</h2><div class="grid">{old}</div>'
-          '</section>')
+          +(f'<h2 id="alternatives" style="font-size:16px;margin:32px 0 10px">Tool alternatives ({len(alt)})</h2><div class="badges">'+"".join(f'<a class="b uc" href="{sl}.html">{e(x["name"])} alternatives</a>' for x,sl,_ in sorted(alt,key=lambda z:z[0]["name"].lower()))+'</div>' if alt else "")
+          +'</section>')
     open("best/index.html","w").write(X.shell("../",title,desc,canon,body,ld)); return canon
 def link_in(path,anchor,add,marker):
     if not os.path.exists(path): return
@@ -113,7 +114,8 @@ def pages(t):
     made=[]
     for P in PAGES:
         u,h,n=page(t,P,asof); made.append((u,h,n,P[0]))
-    urls=[hub(t,made)]+[m[0] for m in made]
+    import build_alternatives; ALT=build_alternatives.pages(t)
+    urls=[hub(t,made,ALT)]+[m[0] for m in made]+[f"{B}best/{sl}.html" for _,sl,_ in ALT]
     # link from where best/ pages are already listed (additive)
     link_in("index.html",'<a href="best/cursor-alternatives.html">Cursor alternatives 2026</a>',' · <a href="best/index.html">All best lists</a> · '+" · ".join(f'<a href="best/{s}.html">{e(h)}</a>' for _,h,_,s in made),'href="best/index.html"')
     link_in("best/mcp-servers.html",'Guides by client: ','<a href="index.html">All best lists</a> · <a href="open-source-mcp-servers.html">Best open-source MCP servers</a> · ','href="open-source-mcp-servers.html"')
