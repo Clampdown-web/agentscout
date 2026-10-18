@@ -149,7 +149,8 @@ def _subpages_write(m):
         its=sorted(its,key=lambda x:(not x.get("featured"),-(x.get("github_stars") or 0),x["name"].lower()))
         h1=subtask_h1(p_,sub,lab,plabel)
         title=f"{subtask_title(p_,sub,lab,plabel,n)} · AgentScout"
-        desc=f"{n} AI tools for {plabel} focused on {lab}, including {', '.join(x['name'] for x in its[:3])}. Link-checked, pricing as makers state it."[:158]
+        _st=subtask_title(p_,sub,lab,plabel,n); _nm=', '.join(x['name'] for x in its[:3])
+        desc=next((d for d in (f"{_st}, including {_nm}. Link-checked, with pricing as makers state it.",f"{_st}, including {_nm}. Link-checked.",f"{_st}, including {_nm}.") if len(d)<=158),f"{_st}, including {_nm}."[:158])
         starred=[x for x in its if x.get("github_stars")][:3]
         from collections import Counter
         cats=Counter(x["category"] for x in its).most_common(3)
