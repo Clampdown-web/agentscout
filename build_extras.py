@@ -157,6 +157,10 @@ CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use
 "customer support":"AI support agents that answer customer questions, resolve tickets and take actions such as refunds, then hand off to a person when needed: Intercom Fin, Decagon, Sierra, Forethought and more.",
 "sales & marketing":"AI SDRs, outbound and lead-research agents, plus marketing, SEO and social media agents for go-to-market teams: 11x, Artisan, Clay, Close, Jasper and more.",
 "security & governance":"Tools that keep agents safe and accountable: guardrails, prompt-injection and MCP scanners, credential brokers, sandbox policies and AI security-operations agents.",
+"film & TV production":"AI tools for every stage of making film and TV: script breakdowns, storyboards and previs, virtual production and mocap, then post: editing, subtitles, color, VFX, upscaling and visual dubbing. Agentic tools that edit or plan for you on request (Descript's Underlord, Premiere AI Assistant, Eddie AI, Quickture, OpenMontage, VideoDB Director) come first.",
+"video generation":"Models and apps that generate video from text, images or references, from Runway, Luma, Google Flow, Kling and Firefly to open models you can run yourself, like LTX-2, Wan and HunyuanVideo. Tools with agents that plan and run multi-shot work come first.",
+"film & TV audio":"Audio post for film, TV and video: dialogue cleanup and repair, ADR and AI dubbing voices, Foley and sound effects, and mixing. Plugins like iZotope RX and sonible sit alongside dubbing services and open Foley models. For AI sound effects, also see ElevenLabs in Voice.",
+"music production":"AI for making and finishing music: song and score generation, vocal synthesis and tuning, stem separation, and mixing and mastering assistants such as iZotope Ozone and LANDR. Agentic music editors come first.",
 "models & local runtimes":"Agentic models and the apps that run open models on your own computer or server, such as Ollama, LM Studio, LocalAI and Jan.",
 }
 def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
@@ -189,17 +193,33 @@ def cico(c):
     if _ICONS is None: _ICONS=_load_icons()
     p=_ICONS.get((c or "").strip().lower(),_ICONS["__fb"])
     return f'<svg class="cico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{p}</svg>'
+MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
+# Related tools that stay in their own category but belong with the media categories (cross-linked both ways, Oct 18, 2026)
+MEDIA_XLINK={"film & TV production":["davinci-resolve-mcp","mux-mcp","picsart-genai-mcp","mcp-for-blender","happyscribe-mcp","vidiq-mcp","twelvelabs-jockey-mcp","valossa-assistant-mcp","genspark","skywork"],
+ "video generation":["minimax-mcp","picsart-genai-mcp","genspark","skywork"],
+ "film & TV audio":["elevenlabs-agents","deepgram","happyscribe-mcp","minimax-mcp"],
+ "music production":["elevenlabs-agents","minimax-mcp"]}
+def media_xlink_cats(slug): return [c for c,v in MEDIA_XLINK.items() if slug in v]
+def media_xlink_html(c,t):
+    by={x["slug"]:x for x in t}; its=[by[s] for s in MEDIA_XLINK.get(c,[]) if s in by]
+    if not its: return ""
+    note=' ElevenLabs also makes AI sound effects and music.' if c in("film & TV audio","music production") else ""
+    return f'<h2 style="font-size:18px;margin:32px 0 10px">Related tools in other categories</h2><p class="muted" style="margin:0 0 10px;font-size:14px">These are listed under their main category but are useful for {e(c)} work too.{note}</p><div class="grid">{"".join(card(x) for x in its)}</div>'
+def agentic_first(path,items):
+    """Media category pages (Oct 18, 2026) lead with agentic tools; the order is otherwise unchanged."""
+    if path in {f"categories/{catslug(c)}.html" for c in MEDIA_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
+    return items
 def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
     canon=B+path
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
-        {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
+        {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(agentic_first(path,newfirst(items)))]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}<div class="grid">{"".join(card(x) for x in newfirst(items))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}<div class="grid">{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
   "crypto":"crypto AI agent tools","customer support":"AI customer support agents","evals & observability":"AI agent evals & observability tools","frameworks":"AI agent frameworks",
-  "games":"AI game agents and tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
+  "games":"AI game agents and tools","film & TV production":"AI film & TV production tools","video generation":"AI video generation tools","film & TV audio":"AI film & TV audio tools","music production":"AI music production tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
   "no-code builders":"no-code AI agent builders","personal agents":"personal AI agents","productivity":"AI productivity agents","research":"AI research agents",
   "sales & marketing":"AI sales & marketing agents","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
@@ -212,7 +232,7 @@ def seo(t,urls):
     for c,n in cats.most_common():
         items=[x for x in t if x["category"]==c]
         title=cat_title(c,n)
-        _nm=', '.join(x['name'] for x in items[:3])
+        _nm=', '.join(x['name'] for x in (agentic_first(f"categories/{catslug(c)}.html",newfirst(items)) if c in MEDIA_CATS else items)[:3])
         desc=next((d for d in (f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"{n} link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"{n} link-checked {cat_phrase(c)}, including {_nm}."[:158])
         import build_tasks as _bt,build_subtasks as _bs
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
@@ -222,7 +242,7 @@ def seo(t,urls):
         _lede=f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(c)} tools: {e(_bs.price_line(items))}.</p>'+_chips
-        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c[0].upper()+c[1:]} AI agent tools",_lede,items,c[0].upper()+c[1:],_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
+        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,(f"{c[0].upper()+c[1:]} AI tools" if c in MEDIA_CATS else f"{c[0].upper()+c[1:]} AI agent tools"),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))

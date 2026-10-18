@@ -5,8 +5,8 @@ links to written /compare/ pages. The tool page gets one link to its alternative
 import re,os,glob,json,html
 import build_extras as X, build_subtasks as S, build_tasks as BT
 B=X.B; e=X.e
-MAX_PAGES=90; MIN_PEERS=8; SHOW=10; MIN_WORDS=150
-SKIP={"cursor"}  # best/cursor-alternatives.html already exists (hand-built)
+MAX_PAGES=92; MIN_PEERS=8; SHOW=10; MIN_WORDS=150
+SKIP={"cursor","hyperframes"}  # cursor: hand-built page; hyperframes: redirected to its tool page (redirects.json), keep it that way
 def live(x): return "iscontinued" not in x.get("maturity","").lower() and "discontinued" not in x.get("description","").lower()[:40]
 def peers(x,t,tm,tg):
     mine=tm.get(x["slug"],set()); ms=set(tg.get(x["slug"],[]))

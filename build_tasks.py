@@ -55,10 +55,29 @@ TASKS=[
 ("marketing","marketing",set(),set(),r"marketing|go-to-market|\bSEO\b|social media","AI agents for marketing and go-to-market work: running campaigns and outbound, handling social media and pulling SEO, ad and social data for your agents."),
 ("smart-contract-security","smart contract security",set(),set(),r"smart[- ]contract|contract analysis","AI auditors and agents that review smart contracts for exploitable bugs before and after deployment, plus tools that help build and check Web3 code."),
 ("coding-docs","feeding docs to coding agents",set(),set(),r"documentation|up-to-date docs|docs and best practices|searching docs","MCP servers that give coding agents current, version-specific documentation, so they stop guessing at outdated APIs."),
+("storyboarding","storyboarding and previs",set(),{"plan & storyboard"},r"storyboard|previs|animatic|shot list|script breakdown|call sheet|screenplay|script coverage","Tools that turn a script into storyboards, shot lists, animatics and 3D previs, plus script breakdowns and coverage for pre-production."),
+("rough-cuts","rough cuts and assembly edits",set(),set(),r"rough (cut|assembl)|stringout|selects|auto-edit|multicam|bad takes|silences|filler words|highlights","Assistant editors that log footage, pick selects, remove bad takes and silences and assemble a first cut you can finish in your editor."),
+("subtitles","subtitles and captions",set(),{"subtitles & transcripts"},r"subtitle|caption|transcri","Transcription, captioning and translated subtitles for film, TV and online video, from editor plugins to live broadcast captions."),
+("dubbing","dubbing and lip sync",set(),{"dub & localize"},r"\bdub|lip.?sync|locali[sz]|voice clon","AI dubbing: translated voices that keep the actor's sound, and visual dubbing that matches lip movement to the new language."),
+("vfx","VFX and compositing",set(),set(),r"\bVFX|composit|roto|relight|clean plate|planar|object removal|motion capture|mocap|camera track|virtual production|CG scenes","AI for visual effects: rotoscoping and masks, relighting, compositing, tracking, markerless mocap and virtual production."),
+("dialogue-cleanup","dialogue cleanup and repair",set(),{"clean up audio"},r"dialogue|noise|de-?reverb|reverb|repair|filler words|mouth sounds|speech enhance|Enhance Speech","Plugins and apps that remove noise, reverb, hum and clicks from dialogue and rebalance voice against background, for film, TV and podcasts."),
+("scoring","scoring and soundtracks",set(),set(),r"\bscore\b|soundtrack|background music|royalty-free|compos|music generat|songs?\b","AI music for picture: generate or compose score, background tracks and songs you can license for film, TV, ads and video."),
+("stem-separation","stem separation",set(),{"separate stems"},r"\bstems?\b|vocal remov|separat|splitter|unmix|isolat|\bDME\b","Split a mix into vocals, drums, bass and other stems, or dialogue, music and effects (DME), for remixing, karaoke, dubbing and clean-up."),
+("video-post-production","video post-production",set(),set(),r"\bedit|rough cut|subtitle|caption|colou?r|grading|\bVFX|upscal|enhanc|lip.?sync|visual dubbing|composit|roto|footage|transcri","Picture post in one place: editing and assistant-editor agents, subtitles, color, VFX, upscaling and visual dubbing, grouped by stage."),
+("audio-post-production","audio post-production",set(),set(),r"dialogue (clean|repair|isolat|level)|dialogue,|Foley|sound effects?|\bADR\b|loudness|de-?reverb|reverb|noise|echo|voice isolation|sound to picture|\bDME\b|\bdubbing\b|audio repair|audio post|sound design|clean up audio","Sound for picture, grouped by stage: dialogue cleanup, ADR and dubbing voices, Foley and sound effects, and the editors and mixing tools that tie it together."),
+("music-mixing-mastering","music mixing and mastering",set(),{"mix & master"},r"\bmix|master|pitch correction|vocal (mixing|tuning)|AutoTune|level rider","Mixing and mastering assistants for music: AI mix and master services, mixing and vocal plugin suites, pitch correction and loudness tools."),
 ]
 ORIG={T[0] for T in TASKS[:37]}  # the first 37 task pages (Oct 2026); later batches only append to their related links
+MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
+TASK_NEG={"audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage"}  # keeps picture tools off the sound page
+MEDIA_TASKS={"storyboarding","rough-cuts","subtitles","dubbing","vfx","dialogue-cleanup","scoring","stem-separation","video-post-production","audio-post-production","music-mixing-mastering"}
+_MEDIA_ONLY_TASKS=MEDIA_TASKS  # these pages only list film, TV, video and music tools
 def match(x,T):
     _,_,cats,ucs,rx,_=T
+    _m=x.get("category") in MEDIA_CATS
+    if T[0] in _MEDIA_ONLY_TASKS and not _m: return False
+    if _m and T[0] not in MEDIA_TASKS and not x.get("agentic"): return False  # non-agentic media tools stay off the agent task pages
+    if T[0] in TASK_NEG and re.search(TASK_NEG[T[0]],x.get("description",""),re.I): return False
     if x.get("category") in cats or set(x.get("use_cases",[]))&ucs: return True
     return bool(re.search(rx,f'{x.get("name","")} {x.get("description","")} {x.get("pricing","")}',re.I))
 REDIRECTED_TASKS={"games"}  # Oct 18 2026: same tools as categories/games (redirect in redirects.json)
@@ -94,7 +113,14 @@ def _existing_sets():
     return [x for x in out if x]
 # --- Natural <title> wording (Oct 18 2026): sentence case, no repeated words ---
 _TT_LABEL={"agent-memory":"agent memory","searching-the-web":"agent web search","games":"games and game making"}
-_TT_FULL={"open-source-agents":"Best open-source AI agents"}
+_TT_FULL={"open-source-agents":"Best open-source AI agents","storyboarding":"Best AI storyboarding and previs tools","rough-cuts":"Best AI tools for rough cuts and assembly edits",
+ "subtitles":"Best AI subtitle and caption tools","dubbing":"Best AI dubbing and lip sync tools","vfx":"Best AI VFX and compositing tools","dialogue-cleanup":"Best AI dialogue cleanup and repair tools",
+ "scoring":"Best AI music for scoring and soundtracks","stem-separation":"Best AI stem separation tools","video-post-production":"AI video post-production tools by stage",
+ "audio-post-production":"AI audio post-production tools by stage","music-mixing-mastering":"Best AI music mixing and mastering tools"}
+_MEDIA_PTR={"making-videos":'<p style="margin:0 0 6px;font-size:14px">This page lists AI agents that script, edit or generate video. For every film and video tool, see <a href="../categories/film-tv-production.html">Film &amp; TV production</a>, <a href="../categories/video-generation.html">AI video generation</a>, <a href="../categories/film-tv-audio.html">Film &amp; TV audio</a> and <a href="../categories/music-production.html">Music production</a>.</p>',
+ "video-post-production":'<p style="margin:0 0 6px;font-size:14px">Picture post only. For sound, see <a href="audio-post-production.html">audio post-production</a>; for music, see <a href="music-mixing-mastering.html">music mixing and mastering</a>. Every tool: <a href="../categories/film-tv-production.html">Film &amp; TV production</a>.</p>',
+ "audio-post-production":'<p style="margin:0 0 6px;font-size:14px">Sound for picture only. For music, see <a href="music-mixing-mastering.html">music mixing and mastering</a>; for picture, see <a href="video-post-production.html">video post-production</a>. Every tool: <a href="../categories/film-tv-audio.html">Film &amp; TV audio</a>.</p>',
+ "music-mixing-mastering":'<p style="margin:0 0 6px;font-size:14px">Music post only. For dialogue and sound for picture, see <a href="audio-post-production.html">audio post-production</a>. Every tool: <a href="../categories/music-production.html">Music production</a>.</p>'}
 # Distinct angle for task pages that overlap a category (Oct 18 2026): the category page is the main
 # target for the head keyword; the task page answers "how do I add X", grouped by use case.
 _TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: tools by use case",
@@ -197,7 +223,7 @@ def pages(t):
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+_MEDIA_PTR.get(s,"")+
               f'{_grid(items,s)}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},

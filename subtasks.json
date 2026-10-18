@@ -80,7 +80,8 @@
 "voice-phone"
 ],
 "openpilot": [
-"computer-use"
+"computer-use",
+"video-editing"
 ],
 "openswarm": [
 "parallel-orchestration",
@@ -102,13 +103,15 @@
 ],
 "meta-muse-wonder": [],
 "claude-code": [
-"terminal-agents"
+"terminal-agents",
+"video-editing"
 ],
 "openai-codex-cli": [
 "terminal-agents"
 ],
 "cursor": [
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "devin": [
 "cloud-coding-agents"
@@ -135,7 +138,8 @@
 ],
 "amp": [
 "terminal-agents",
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "gemini-cli": [
 "terminal-agents"
@@ -161,7 +165,8 @@
 ],
 "stagehand": [
 "browser-automation",
-"agent-frameworks"
+"agent-frameworks",
+"mixing"
 ],
 "playwright-mcp": [
 "browser-automation",
@@ -265,7 +270,9 @@
 "flowise": [
 "no-code-apps"
 ],
-"model-context-protocol": [],
+"model-context-protocol": [
+"vfx-compositing"
+],
 "mcp-reference-servers": [
 "mcp-servers"
 ],
@@ -347,7 +354,8 @@
 "agent-wallets",
 "agent-payments",
 "agent-auth",
-"mcp-servers"
+"mcp-servers",
+"vfx-compositing"
 ],
 "11x": [
 "voice-phone",
@@ -384,7 +392,8 @@
 ],
 "inworld": [
 "voice-phone",
-"multi-agent"
+"multi-agent",
+"dialogue-cleanup"
 ],
 "qodo": [
 "code-review",
@@ -475,7 +484,9 @@
 "prime-intellect": [
 "fine-tuning"
 ],
-"recall-ai": [],
+"recall-ai": [
+"subtitles-transcripts"
+],
 "replicate": [],
 "sema4-ai": [],
 "simple-phones": [
@@ -488,7 +499,8 @@
 ],
 "tinyfish": [],
 "together-ai": [
-"fine-tuning"
+"fine-tuning",
+"vocal-tuning"
 ],
 "tray-ai": [
 "workflow-automation"
@@ -534,7 +546,8 @@
 "tollbit": [],
 "wand-ai": [],
 "mixus": [
-"workflow-automation"
+"workflow-automation",
+"mixing"
 ],
 "simbian": [],
 "prophet-security": [],
@@ -586,6 +599,7 @@
 "penetration-testing"
 ],
 "openmontage": [
+"video-editing",
 "video"
 ],
 "anythingllm": [
@@ -598,7 +612,9 @@
 "mcp-servers",
 "agent-frameworks"
 ],
-"goose": [],
+"goose": [
+"video-editing"
+],
 "chrome-devtools-mcp": [
 "browser-automation",
 "mcp-servers"
@@ -658,11 +674,14 @@
 "pageindex": [
 "vector-rag"
 ],
-"copilotkit": [],
+"copilotkit": [
+"vfx-compositing"
+],
 "vane": [],
 "next-ai-draw-io": [
 "computer-use",
 "mcp-servers",
+"video-editing",
 "images-design"
 ],
 "deepseek-reasonix": [],
@@ -717,7 +736,8 @@
 "serena": [
 "vector-rag",
 "agent-frameworks",
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "context-mode": [
 "codebase-context",
@@ -780,7 +800,8 @@
 "agent-frameworks"
 ],
 "a2a": [
-"agent-frameworks"
+"agent-frameworks",
+"vfx-compositing"
 ],
 "activepieces": [
 "mcp-servers",
@@ -790,7 +811,8 @@
 "no-code-apps"
 ],
 "mcp-python-sdk": [
-"agent-frameworks"
+"agent-frameworks",
+"vfx-compositing"
 ],
 "happy-coder": [
 "computer-use",
@@ -852,7 +874,9 @@
 "text-to-sql",
 "mcp-servers"
 ],
-"ag-ui": [],
+"ag-ui": [
+"vfx-compositing"
+],
 "trigger-dev": [
 "workflow-automation"
 ],
@@ -986,7 +1010,8 @@
 "personal-assistants"
 ],
 "genoffice": [
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "aws-mcp-servers": [
 "mcp-servers"
@@ -1005,7 +1030,8 @@
 "terminal-agents"
 ],
 "oh-my-opencode-slim": [
-"multi-agent"
+"multi-agent",
+"mixing"
 ],
 "nasiko": [],
 "plannotator": [
@@ -1015,7 +1041,8 @@
 ],
 "oumi": [
 "evals",
-"fine-tuning"
+"fine-tuning",
+"vocal-tuning"
 ],
 "terax": [
 "terminal-agents"
@@ -1099,6 +1126,7 @@
 ],
 "big-agi": [],
 "talk-to-figma-mcp": [
+"video-editing",
 "images-design"
 ],
 "backlog-md": [
@@ -1220,7 +1248,8 @@
 "cadam": [],
 "code-graph-rag": [
 "codebase-context",
-"vector-rag"
+"vector-rag",
+"video-editing"
 ],
 "entire-cli": [
 "terminal-agents"
@@ -1304,10 +1333,12 @@
 "mcp-gateways"
 ],
 "excel-mcp-server": [
-"mcp-servers"
+"mcp-servers",
+"video-editing"
 ],
 "arcbox": [
-"sandboxes"
+"sandboxes",
+"stem-separation"
 ],
 "command-code": [],
 "docetl": [
@@ -1321,7 +1352,8 @@
 "agent-frameworks"
 ],
 "mcp-rust-sdk": [
-"agent-frameworks"
+"agent-frameworks",
+"vfx-compositing"
 ],
 "fast-agent": [
 "evals",
@@ -1432,7 +1464,9 @@
 "sandboxes",
 "personal-assistants"
 ],
-"vexa": [],
+"vexa": [
+"subtitles-transcripts"
+],
 "openlit": [
 "evals"
 ],
@@ -1520,6 +1554,7 @@
 ],
 "canva-mcp": [
 "mcp-servers",
+"video-editing",
 "images-design"
 ],
 "circleci-mcp": [
@@ -1535,7 +1570,8 @@
 ],
 "paypal-mcp": [
 "agent-payments",
-"mcp-servers"
+"mcp-servers",
+"ai-dubbing-voices"
 ],
 "figma-mcp-server": [
 "mcp-servers",
@@ -1565,7 +1601,8 @@
 "mcp-servers"
 ],
 "power-bi-modeling-mcp": [
-"mcp-servers"
+"mcp-servers",
+"video-editing"
 ],
 "monday-com-mcp": [
 "mcp-servers",
@@ -1651,7 +1688,8 @@
 "workflow-automation"
 ],
 "voicemode": [
-"voice-phone"
+"voice-phone",
+"ai-dubbing-voices"
 ],
 "unbrowse": [
 "voice-phone"
@@ -1757,7 +1795,8 @@
 ],
 "riff-ai": [],
 "deepgram": [
-"voice-phone"
+"voice-phone",
+"dialogue-cleanup"
 ],
 "dial": [
 "voice-phone",
@@ -1779,7 +1818,8 @@
 "scalebrowser": [
 "browser-automation",
 "sandboxes",
-"agent-auth"
+"agent-auth",
+"stem-separation"
 ],
 "bruin": [],
 "airjelly": [
@@ -1838,6 +1878,7 @@
 "games"
 ],
 "hidden-door": [
+"mastering",
 "games"
 ],
 "suck-up": [
@@ -1857,18 +1898,22 @@
 ],
 "questwright": [
 "agent-memory",
+"mastering",
 "games"
 ],
 "lorekeeper": [
+"mastering",
 "games"
 ],
 "open-dungeon-master": [
 "local-models",
 "terminal-agents",
+"mastering",
 "rules-config"
 ],
 "friends-fables": [
 "chat-app-agents",
+"mastering",
 "games",
 "rules-config"
 ],
@@ -1896,8 +1941,12 @@
 "agent-wallets",
 "agent-frameworks"
 ],
-"solana-agent-kit": [],
-"virtuals-protocol": [],
+"solana-agent-kit": [
+"vfx-compositing"
+],
+"virtuals-protocol": [
+"vfx-compositing"
+],
 "olas-autonolas": [],
 "daydreams": [
 "agent-payments"
@@ -2059,7 +2108,8 @@
 ],
 "paperclip": [
 "agent-frameworks",
-"local-models"
+"local-models",
+"video-editing"
 ],
 "open-interpreter": [
 "agent-frameworks",
@@ -2079,7 +2129,8 @@
 ],
 "ego-lite": [
 "browser-automation",
-"sandboxes"
+"sandboxes",
+"stem-separation"
 ],
 "agent-lightning": [
 "fine-tuning",
@@ -2089,7 +2140,8 @@
 "code-review",
 "chat-app-agents",
 "sandboxes",
-"cloud-coding-agents"
+"cloud-coding-agents",
+"stem-separation"
 ],
 "mimo-code": [
 "agent-memory",
@@ -2107,6 +2159,8 @@
 ],
 "dograh": [
 "voice-phone",
+"dialogue-cleanup",
+"vocal-tuning",
 "images-design"
 ],
 "openscience": [
@@ -2121,7 +2175,8 @@
 ],
 "agent-memory-leaderboard": [
 "agent-memory",
-"evals"
+"evals",
+"vfx-compositing"
 ],
 "paper2agent": [
 "research-agents",
@@ -2188,11 +2243,13 @@
 "twelvelabs-jockey-mcp": [
 "research-agents",
 "mcp-servers",
+"video-editing",
 "video",
 "images-design"
 ],
 "videodb-director": [
 "agent-frameworks",
+"video-editing",
 "video"
 ],
 "groundlight": [],
@@ -2221,6 +2278,8 @@
 ],
 "valossa-assistant-mcp": [
 "mcp-servers",
+"subtitles-transcripts",
+"video-editing",
 "video",
 "images-design"
 ],
@@ -2232,7 +2291,8 @@
 "search-apis"
 ],
 "zero-xyz": [
-"voice-phone"
+"voice-phone",
+"stem-separation"
 ],
 "assisterr-ai": [],
 "open-webui": [
@@ -2259,7 +2319,10 @@
 "rules-config"
 ],
 "ppt-master": [
-"vector-rag"
+"vector-rag",
+"video-editing",
+"ai-dubbing-voices",
+"mastering"
 ],
 "mempalace": [
 "agent-memory",
@@ -2297,6 +2360,7 @@
 "vector-rag",
 "workflow-automation",
 "ide-agents",
+"video-editing",
 "images-design"
 ],
 "repomix": [
@@ -2370,7 +2434,8 @@
 "code-review",
 "computer-use",
 "mcp-servers",
-"terminal-agents"
+"terminal-agents",
+"video-editing"
 ],
 "mobile-mcp": [
 "mcp-servers",
@@ -2386,7 +2451,8 @@
 "local-models"
 ],
 "mcp-registry": [
-"mcp-gateways"
+"mcp-gateways",
+"vfx-compositing"
 ],
 "glm-5": [],
 "mobilebuildmcp": [
@@ -2413,7 +2479,8 @@
 ],
 "21st-magic-mcp": [
 "mcp-servers",
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "apache-maka": [
 "evals",
@@ -2465,7 +2532,8 @@
 "local-models"
 ],
 "mcp-go-sdk": [
-"agent-frameworks"
+"agent-frameworks",
+"vfx-compositing"
 ],
 "sparrow": [
 "vector-rag",
@@ -2478,7 +2546,8 @@
 "computer-use",
 "evals",
 "fine-tuning",
-"agent-frameworks"
+"agent-frameworks",
+"vocal-tuning"
 ],
 "mcporter": [
 "mcp-servers",
@@ -2591,7 +2660,8 @@
 "ii-agent": [],
 "atomic-agent": [
 "browser-automation",
-"local-models"
+"local-models",
+"video-editing"
 ],
 "evoagentx": [
 "evals",
@@ -2651,6 +2721,7 @@
 ],
 "godot-ai": [
 "mcp-servers",
+"video-editing",
 "games",
 "rules-config"
 ],
@@ -2666,7 +2737,8 @@
 "voice-phone"
 ],
 "forkd": [
-"sandboxes"
+"sandboxes",
+"stem-separation"
 ],
 "holyclaude": [
 "browser-automation"
@@ -2696,12 +2768,14 @@
 "mantis": [
 "penetration-testing",
 "sandboxes",
-"agent-frameworks"
+"agent-frameworks",
+"stem-separation"
 ],
 "ripwire": [
 "voice-phone",
 "mcp-servers",
-"terminal-agents"
+"terminal-agents",
+"video-editing"
 ],
 "elevenlabs-ui": [
 "voice-phone",
@@ -2730,7 +2804,9 @@
 "voice-phone",
 "agent-auth"
 ],
-"agentsmesh": [],
+"agentsmesh": [
+"stem-separation"
+],
 "conduit": [
 "mobile"
 ],
@@ -2742,7 +2818,8 @@
 "guardrails",
 "agent-auth",
 "observability",
-"mcp-servers"
+"mcp-servers",
+"stem-separation"
 ],
 "gemini-mcp-tool": [
 "codebase-context",
@@ -2769,11 +2846,13 @@
 ],
 "chatmcp": [
 "computer-use",
+"vfx-compositing",
 "mobile"
 ],
 "open-cowork": [
 "computer-use",
 "sandboxes",
+"stem-separation",
 "rules-config"
 ],
 "orkas": [
@@ -2825,10 +2904,12 @@
 "local-models"
 ],
 "adr": [
-"observability"
+"observability",
+"ai-dubbing-voices"
 ],
 "elatoai": [
-"voice-phone"
+"voice-phone",
+"dialogue-cleanup"
 ],
 "intelligent-terminal": [
 "terminal-agents"
@@ -2853,7 +2934,8 @@
 "images-design"
 ],
 "zed": [
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "litellm": [
 "token-costs",
@@ -2901,7 +2983,9 @@
 "web-scraping",
 "agent-frameworks"
 ],
-"task-master": [],
+"task-master": [
+"mastering"
+],
 "opik": [
 "vector-rag",
 "observability",
@@ -3085,7 +3169,8 @@
 "images-design"
 ],
 "frontman": [
-"browser-automation"
+"browser-automation",
+"video-editing"
 ],
 "qdrant-mcp-server": [
 "text-to-sql",
@@ -3129,7 +3214,8 @@
 "postgres-mcp-pro": [
 "planning-tasks",
 "text-to-sql",
-"mcp-servers"
+"mcp-servers",
+"vocal-tuning"
 ],
 "codegraphcontext": [
 "text-to-sql",
@@ -3202,14 +3288,16 @@
 ],
 "kapa-ai": [],
 "cartesia-sonic": [
-"voice-phone"
+"voice-phone",
+"dialogue-cleanup"
 ],
 "jason-ai": [
 "text-to-sql",
 "sales-agents"
 ],
 "speechmatics": [
-"voice-phone"
+"voice-phone",
+"dialogue-cleanup"
 ],
 "superagi": [
 "sales-agents"
@@ -3354,7 +3442,8 @@
 "multi-agent"
 ],
 "trae": [
-"ide-agents"
+"ide-agents",
+"video-editing"
 ],
 "writer": [],
 "arize-ai": [
@@ -3363,7 +3452,8 @@
 ],
 "hume-ai": [
 "voice-phone",
-"evals"
+"evals",
+"dialogue-cleanup"
 ],
 "cognigy": [
 "voice-phone",
@@ -3387,7 +3477,8 @@
 "rules-config"
 ],
 "typeform-mcp": [
-"mcp-servers"
+"mcp-servers",
+"video-editing"
 ],
 "ovhcloud-mcp": [
 "mcp-servers"
@@ -3472,7 +3563,8 @@
 "mcp-servers"
 ],
 "lucid-mcp": [
-"vector-rag"
+"vector-rag",
+"video-editing"
 ],
 "printfriendly-mcp": [
 "vector-rag",
@@ -3482,7 +3574,8 @@
 "mcp-servers"
 ],
 "mindmeister-mcp": [
-"mcp-servers"
+"mcp-servers",
+"video-editing"
 ],
 "workos-mcp": [
 "agent-auth",
@@ -3511,7 +3604,8 @@
 "mcp-servers"
 ],
 "fireflies-mcp": [
-"mcp-servers"
+"mcp-servers",
+"subtitles-transcripts"
 ],
 "mural-mcp": [
 "mcp-servers"
@@ -3528,7 +3622,8 @@
 "mcp-servers"
 ],
 "chainstack-mcp": [
-"mcp-servers"
+"mcp-servers",
+"vfx-compositing"
 ],
 "polar-analytics-mcp": [
 "marketing-agents",
@@ -3561,7 +3656,8 @@
 "workflow-automation"
 ],
 "happyscribe-mcp": [
-"mcp-servers"
+"mcp-servers",
+"subtitles-transcripts"
 ],
 "skiplagged-mcp": [
 "planning-tasks",
@@ -3626,6 +3722,7 @@
 ],
 "picsart-genai-mcp": [
 "mcp-servers",
+"video-editing",
 "video",
 "images-design"
 ],
@@ -3634,7 +3731,8 @@
 ],
 "hello-retail-mcp": [
 "email-agents",
-"mcp-servers"
+"mcp-servers",
+"vocal-tuning"
 ],
 "guru-mcp": [
 "vector-rag",
@@ -3663,7 +3761,8 @@
 "mcp-servers"
 ],
 "whimsical-mcp": [
-"mcp-servers"
+"mcp-servers",
+"video-editing"
 ],
 "automox-mcp": [
 "guardrails",
@@ -3678,6 +3777,7 @@
 ],
 "mintlify-mcp": [
 "mcp-servers",
+"video-editing",
 "rules-config"
 ],
 "padlet-mcp": [
@@ -3687,7 +3787,8 @@
 "unlayer-mcp": [
 "vector-rag",
 "email-agents",
-"mcp-servers"
+"mcp-servers",
+"video-editing"
 ],
 "scrapling": [
 "web-scraping",
@@ -3709,7 +3810,8 @@
 "funasr": [
 "voice-phone",
 "agent-frameworks",
-"local-models"
+"local-models",
+"dialogue-cleanup"
 ],
 "cloakbrowser": [
 "browser-automation"
@@ -3735,7 +3837,8 @@
 ],
 "archilabs": [
 "vector-rag",
-"computer-use"
+"computer-use",
+"video-editing"
 ],
 "auquan": [
 "observability"
@@ -3744,7 +3847,9 @@
 "no-code-apps",
 "mobile"
 ],
-"alloy": [],
+"alloy": [
+"vfx-compositing"
+],
 "askyourdatabase": [
 "text-to-sql"
 ],
@@ -3791,6 +3896,8 @@
 "minimax-mcp": [
 "voice-phone",
 "mcp-servers",
+"dialogue-cleanup",
+"ai-dubbing-voices",
 "video",
 "images-design"
 ],
@@ -3805,7 +3912,8 @@
 ],
 "cloudflare-sandbox-sdk": [
 "sandboxes",
-"agent-frameworks"
+"agent-frameworks",
+"stem-separation"
 ],
 "cisco-mcp-scanner": [
 "mcp-servers",
@@ -3861,7 +3969,8 @@
 ],
 "patter": [
 "voice-phone",
-"agent-frameworks"
+"agent-frameworks",
+"dialogue-cleanup"
 ],
 "supermemory": [
 "agent-memory",
@@ -3939,7 +4048,9 @@
 "mirror-cli": [
 "parallel-orchestration",
 "sandboxes",
-"terminal-agents"
+"terminal-agents",
+"video-editing",
+"stem-separation"
 ],
 "pyth-pro-mcp": [
 "mcp-servers"
@@ -3975,5 +4086,627 @@
 "browser-automation",
 "computer-use",
 "terminal-agents"
-]
+],
+"descript": [
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"dialogue-cleanup",
+"video"
+],
+"adobe-premiere-ai-assistant": [
+"subtitles-transcripts",
+"video-editing"
+],
+"eddie-ai": [
+"vector-rag",
+"ide-agents",
+"video-editing"
+],
+"quickture": [
+"ide-agents",
+"video-editing"
+],
+"electric-sheep": [
+"ide-agents",
+"vfx-compositing",
+"video-editing",
+"video"
+],
+"ltx-studio": [
+"storyboards-previs",
+"video-editing",
+"video"
+],
+"filmustage": [
+"voice-phone",
+"script-tools"
+],
+"saturation": [
+"mcp-servers"
+],
+"jumper": [
+"local-models",
+"video-editing",
+"dialogue-cleanup"
+],
+"boords": [
+"planning-tasks",
+"storyboards-previs"
+],
+"storyboarder-ai": [
+"storyboards-previs",
+"vocal-tuning"
+],
+"prescene": [
+"vector-rag",
+"script-tools"
+],
+"greenlight-coverage": [
+"script-tools",
+"dialogue-cleanup"
+],
+"largo-ai": [],
+"intangible": [
+"storyboards-previs",
+"video",
+"images-design"
+],
+"cuebric": [
+"virtual-production-mocap"
+],
+"autodesk-flow-studio": [
+"virtual-production-mocap",
+"vfx-compositing",
+"video-editing"
+],
+"beeble": [
+"vfx-compositing",
+"video-editing",
+"video"
+],
+"lightcraft-jetset": [
+"voice-phone",
+"virtual-production-mocap",
+"mobile"
+],
+"simulon": [
+"voice-phone",
+"mixing",
+"video",
+"mobile"
+],
+"move-ai": [
+"voice-phone",
+"virtual-production-mocap",
+"video",
+"games"
+],
+"rokoko-vision": [
+"virtual-production-mocap",
+"video"
+],
+"deepmotion": [
+"virtual-production-mocap",
+"video"
+],
+"plask": [
+"video-editing",
+"video"
+],
+"davinci-resolve": [
+"voice-phone",
+"vfx-compositing",
+"video-editing",
+"dialogue-cleanup",
+"stem-separation"
+],
+"cutback": [
+"subtitles-transcripts",
+"video-editing"
+],
+"autopod": [
+"video-editing"
+],
+"gling": [
+"ide-agents",
+"video-editing",
+"dialogue-cleanup",
+"video"
+],
+"opusclip": [
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"axle-ai": [
+"voice-phone",
+"ide-agents",
+"video-editing",
+"dialogue-cleanup"
+],
+"moments-lab": [],
+"kapwing": [
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"veed": [
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"capcut": [
+"computer-use",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"video",
+"mobile"
+],
+"simon-says": [
+"ide-agents",
+"subtitles-transcripts",
+"video-editing"
+],
+"trint": [
+"workflow-automation",
+"subtitles-transcripts",
+"video-editing"
+],
+"sonix": [
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"syncwords": [
+"subtitles-transcripts",
+"ai-dubbing-voices"
+],
+"submagic": [
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"captions": [
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"colourlab-ai": [
+"color-upscaling"
+],
+"topaz-video": [
+"color-upscaling",
+"dialogue-cleanup",
+"video"
+],
+"pixop": [
+"workflow-automation",
+"color-upscaling",
+"video"
+],
+"boris-fx-mocha-pro": [
+"vfx-compositing"
+],
+"nuke": [
+"fine-tuning",
+"vfx-compositing"
+],
+"flawless": [
+"ide-agents",
+"visual-dubbing",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"images-design"
+],
+"sync": [
+"visual-dubbing",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"images-design"
+],
+"lipdub-ai": [
+"local-models",
+"visual-dubbing",
+"video"
+],
+"rask-ai": [
+"voice-phone",
+"local-models",
+"visual-dubbing",
+"ai-dubbing-voices",
+"video"
+],
+"heygen": [
+"visual-dubbing",
+"ai-dubbing-voices",
+"video"
+],
+"vozo": [
+"local-models",
+"ide-agents",
+"visual-dubbing",
+"subtitles-transcripts",
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"luma-dream-machine": [
+"testing-qa",
+"workflow-automation",
+"video",
+"images-design"
+],
+"google-flow": [],
+"higgsfield": [
+"voice-phone",
+"workflow-automation",
+"video",
+"images-design"
+],
+"adobe-firefly": [
+"video",
+"images-design"
+],
+"comfyui": [
+"workflow-automation",
+"local-models",
+"video",
+"images-design"
+],
+"invideo-ai": [
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"viggle": [
+"trading-agents",
+"video"
+],
+"runway": [
+"vfx-compositing",
+"video-editing",
+"video",
+"images-design"
+],
+"kling-ai": [
+"video-editing",
+"video",
+"images-design"
+],
+"hailuo-ai": [
+"video"
+],
+"pika": [
+"video-editing",
+"video"
+],
+"dreamina": [
+"marketing-agents",
+"video-editing",
+"video",
+"images-design"
+],
+"hedra": [
+"visual-dubbing",
+"video",
+"images-design"
+],
+"vidu": [
+"marketing-agents",
+"workflow-automation",
+"video-editing",
+"video",
+"images-design"
+],
+"krea": [
+"color-upscaling",
+"video",
+"images-design"
+],
+"skyreels": [
+"video-editing",
+"video"
+],
+"pixverse": [
+"video",
+"images-design"
+],
+"openart": [
+"video",
+"images-design"
+],
+"showrunner": [],
+"morph-studio": [
+"color-upscaling",
+"video",
+"images-design"
+],
+"ltx-2": [
+"video"
+],
+"wan-2-2": [
+"video",
+"images-design"
+],
+"hunyuanvideo": [
+"agent-frameworks",
+"video"
+],
+"mochi": [
+"video"
+],
+"cogvideox": [
+"video",
+"images-design"
+],
+"izotope-rx-12": [
+"dialogue-cleanup",
+"stem-separation"
+],
+"adobe-podcast": [
+"voice-phone",
+"color-upscaling",
+"subtitles-transcripts",
+"video-editing",
+"dialogue-cleanup"
+],
+"accentize": [
+"voice-phone",
+"color-upscaling",
+"dialogue-cleanup",
+"ai-dubbing-voices"
+],
+"antinode-clear": [
+"voice-phone",
+"dialogue-cleanup",
+"stem-separation"
+],
+"auphonic": [
+"voice-phone",
+"dialogue-cleanup"
+],
+"sonible": [
+"mixing"
+],
+"krotos-studio": [
+"vfx-compositing",
+"foley-sfx",
+"images-design"
+],
+"audio-design-desk": [
+"agent-frameworks",
+"ide-agents",
+"video-editing",
+"foley-sfx",
+"video",
+"images-design"
+],
+"respeecher": [
+"voice-phone",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"games"
+],
+"deepdub": [
+"voice-phone",
+"local-models",
+"ai-dubbing-voices",
+"mobile"
+],
+"camb-ai": [
+"ai-dubbing-voices"
+],
+"audioshake": [
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"stem-separation",
+"mobile"
+],
+"waves-clarity-vx": [
+"voice-phone",
+"dialogue-cleanup"
+],
+"crumplepop": [
+"ide-agents",
+"video-editing",
+"dialogue-cleanup",
+"video"
+],
+"hush": [
+"voice-phone",
+"dialogue-cleanup"
+],
+"zynaptiq": [
+"dialogue-cleanup"
+],
+"acon-digital-extract-dialogue": [
+"web-scraping",
+"dialogue-cleanup",
+"mixing"
+],
+"spectralayers": [
+"ide-agents",
+"video-editing",
+"dialogue-cleanup",
+"stem-separation"
+],
+"gaudio-studio": [
+"voice-phone",
+"dialogue-cleanup",
+"stem-separation"
+],
+"cleanvoice": [
+"voice-phone",
+"dialogue-cleanup"
+],
+"altered-studio": [
+"voice-phone",
+"ai-dubbing-voices"
+],
+"wellsaid": [
+"voice-phone",
+"ai-dubbing-voices"
+],
+"murf-ai": [
+"ai-dubbing-voices"
+],
+"speechify-studio": [
+"voice-phone",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"video"
+],
+"dubformer": [
+"voice-phone",
+"ai-dubbing-voices"
+],
+"dubverse": [
+"voice-phone",
+"subtitles-transcripts",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"video"
+],
+"mmaudio": [
+"foley-sfx",
+"video"
+],
+"hunyuanvideo-foley": [
+"foley-sfx",
+"video"
+],
+"google-flow-music": [
+"video-editing",
+"video"
+],
+"yue": [
+"video-editing"
+],
+"suno": [
+"ide-agents",
+"video-editing",
+"stem-separation"
+],
+"udio": [],
+"aiva": [
+"vfx-compositing",
+"video-editing"
+],
+"soundraw": [
+"stem-separation"
+],
+"beatoven-ai": [
+"foley-sfx",
+"video",
+"games"
+],
+"stable-audio": [
+"agent-frameworks"
+],
+"mubert": [
+"video"
+],
+"loudly": [
+"stem-separation",
+"mastering"
+],
+"soundful": [],
+"boomy": [],
+"lemonaide": [],
+"audiocraft": [
+"agent-frameworks",
+"foley-sfx"
+],
+"ace-step": [
+"video-editing"
+],
+"magenta-realtime": [],
+"moises": [
+"stem-separation",
+"mastering"
+],
+"lalal-ai": [
+"stem-separation",
+"video"
+],
+"fadr": [
+"stem-separation"
+],
+"ultimate-vocal-remover": [
+"computer-use",
+"stem-separation"
+],
+"spleeter": [
+"agent-frameworks",
+"stem-separation"
+],
+"izotope-ozone-12": [
+"mastering"
+],
+"izotope-nectar-4": [
+"vocal-tuning",
+"mixing"
+],
+"izotope-neutron-5": [
+"mixing"
+],
+"autotune": [
+"vocal-tuning",
+"mixing"
+],
+"landr": [
+"mastering"
+],
+"masterchannel": [
+"mastering"
+],
+"emastered": [
+"mastering"
+],
+"cryomix": [
+"stem-separation",
+"mastering",
+"mixing"
+],
+"roex": [
+"stem-separation",
+"mastering",
+"mixing"
+],
+"waves-online-mastering": [
+"mastering"
+],
+"bandlab": [
+"mastering"
+],
+"logic-pro": [
+"stem-separation",
+"vocal-tuning"
+],
+"synthesizer-v-studio-2": [
+"voice-phone"
+],
+"ace-studio": [
+"voice-phone",
+"ai-dubbing-voices"
+],
+"kits-ai": [
+"voice-phone",
+"ai-dubbing-voices"
+],
+"voice-swap": [
+"trading-agents",
+"voice-phone",
+"ai-dubbing-voices"
+],
+"neutone": []
 }

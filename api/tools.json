@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T23:00:08Z",
- "updated": "2026-10-18T23:00:08Z",
+ "generated": "2026-10-18T23:38:16Z",
+ "updated": "2026-10-18T23:38:16Z",
  "last_checked": "2026-10-18",
- "count": 1110,
+ "count": 1252,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -7388,12 +7388,13 @@
    "url": "https://www.openmontage.video/",
    "website": "https://www.openmontage.video/",
    "github": "https://github.com/calesthio/OpenMontage",
-   "category": "productivity",
+   "category": "film & TV production",
    "description": "Open-source agentic video production system with ready pipelines and tools that agents use to edit and assemble videos.",
    "key_features": [
     "Open source",
     "Mature",
-    "68893 GitHub stars"
+    "68893 GitHub stars",
+    "Edit video"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -7405,8 +7406,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "media",
-    "writing"
+    "media"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -7418,7 +7418,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "productivity"
+    "edit video"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openmontage.png",
@@ -27344,15 +27344,13 @@
    "url": "https://github.com/video-db/Director",
    "website": "https://github.com/video-db/Director",
    "github": "https://github.com/video-db/Director",
-   "category": "vision",
+   "category": "film & TV production",
    "description": "Open-source framework of 20+ video agents that search, summarize, clip, edit and stream video from natural-language commands, built on VideoDB.",
    "key_features": [
     "Free, open source (MIT); runs on the VideoDB API",
     "Active",
     "1554 GitHub stars",
-    "Build an agent",
-    "Research the web",
-    "Computer vision"
+    "Edit video"
    ],
    "pricing": "Free, open source (MIT); runs on the VideoDB API",
    "price_tag": "free",
@@ -27376,9 +27374,7 @@
    "open_source": true,
    "license": "MIT",
    "tags": [
-    "build an agent",
-    "research the web",
-    "computer vision"
+    "edit video"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/videodb-director.png",
@@ -28036,14 +28032,12 @@
    "url": "https://www.hyperframes.dev/",
    "website": "https://www.hyperframes.dev/",
    "github": "https://github.com/heygen-com/hyperframes",
-   "category": "productivity",
+   "category": "film & TV production",
    "description": "HeyGen's open-source framework that renders HTML, CSS and animations into deterministic MP4 videos, usable from a CLI or by coding agents through skills.",
    "key_features": [
     "Open source",
     "Mature",
-    "66201 GitHub stars",
-    "Write code",
-    "Build an agent"
+    "66201 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -28055,8 +28049,7 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "media",
-    "writing"
+    "media"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -28068,8 +28061,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
-    "build an agent"
+    "film & TV production"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/hyperframes.png",
@@ -47031,6 +47023,5869 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/orke.png",
    "page": "https://agentscouthq.com/tools/orke.html"
+  },
+  {
+   "name": "Descript",
+   "slug": "descript",
+   "url": "https://www.descript.com",
+   "website": "https://www.descript.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Video and audio editor you edit like a doc. Its Underlord co-editor can cut filler words, build rough cuts, add captions, clean up audio and write show notes when you ask it to.",
+   "key_features": [
+    "Free; Hobbyist $24/mo ($16/mo billed yearly); Creator $35/mo ($24); Business $65/mo ($50)",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Clean up audio"
+   ],
+   "pricing": "Free; Hobbyist $24/mo ($16/mo billed yearly); Creator $35/mo ($24); Business $65/mo ($50)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/descript.png",
+   "page": "https://agentscouthq.com/tools/descript.html"
+  },
+  {
+   "name": "Adobe Premiere AI Assistant",
+   "slug": "adobe-premiere-ai-assistant",
+   "url": "https://helpx.adobe.com/premiere/desktop/premiere-ai-assistant/overview.html",
+   "website": "https://helpx.adobe.com/premiere/desktop/premiere-ai-assistant/overview.html",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Chat panel inside Adobe Premiere (public beta). Ask it in plain words to sort footage into bins, transcribe, find slates, add markers and build stringouts or rough assemblies. Every step can be undone.",
+   "key_features": [
+    "Included in Adobe Premiere (public beta); Premiere needs a Creative Cloud plan, see website",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "Included in Adobe Premiere (public beta); Premiere needs a Creative Cloud plan, see website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/adobe-premiere-ai-assistant.png",
+   "page": "https://agentscouthq.com/tools/adobe-premiere-ai-assistant.html"
+  },
+  {
+   "name": "Eddie AI",
+   "slug": "eddie-ai",
+   "url": "https://www.heyeddie.ai",
+   "website": "https://www.heyeddie.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI assistant editor for interviews and documentary footage. Chat with it, or connect it to ChatGPT or Claude over MCP, to get rough cuts you can export to Premiere, Resolve or Final Cut.",
+   "key_features": [
+    "500 free credits; credit packs from $10 (1,000 credits) to $120 (15,000 credits)",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "500 free credits; credit packs from $10 (1,000 credits) to $120 (15,000 credits)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/eddie-ai.png",
+   "page": "https://agentscouthq.com/tools/eddie-ai.html"
+  },
+  {
+   "name": "Quickture",
+   "slug": "quickture",
+   "url": "https://www.quickture.com",
+   "website": "https://www.quickture.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI editing assistant for pro editors that works inside Avid Media Composer and Premiere. Its chat agent can organize bins, find key shots and assemble rough cuts and stringouts.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Make music"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/quickture.png",
+   "page": "https://agentscouthq.com/tools/quickture.html"
+  },
+  {
+   "name": "Electric Sheep",
+   "slug": "electric-sheep",
+   "url": "https://www.electricsheep.tv",
+   "website": "https://www.electricsheep.tv",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Agent-style AI video editor and VFX platform. It handles rotoscoping, cleanup and edit chores for post-production teams and creators.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Visual effects",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/electric-sheep.png",
+   "page": "https://agentscouthq.com/tools/electric-sheep.html"
+  },
+  {
+   "name": "LTX Studio",
+   "slug": "ltx-studio",
+   "url": "https://ltx.io/studio",
+   "website": "https://ltx.io/studio",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Lightricks' AI production studio. Turn a script or idea into a storyboard, shots and edited video, with consistent characters and camera control.",
+   "key_features": [
+    "Free (800 one-time credits); Lite $15/mo; Standard $35/mo; Pro $125/mo (lower when billed yearly)",
+    "Active",
+    "Plan & storyboard",
+    "Edit video"
+   ],
+   "pricing": "Free (800 one-time credits); Lite $15/mo; Standard $35/mo; Pro $125/mo (lower when billed yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard",
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ltx-studio.png",
+   "page": "https://agentscouthq.com/tools/ltx-studio.html"
+  },
+  {
+   "name": "Filmustage",
+   "slug": "filmustage",
+   "url": "https://filmustage.com",
+   "website": "https://filmustage.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI pre-production platform. Upload a script to get scene breakdowns, schedules, budgets and call sheets in any language or format.",
+   "key_features": [
+    "Free $0; Director's Cut from $49/mo; Enterprise custom",
+    "Active",
+    "Plan & storyboard"
+   ],
+   "pricing": "Free $0; Director's Cut from $49/mo; Enterprise custom",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/filmustage.png",
+   "page": "https://agentscouthq.com/tools/filmustage.html"
+  },
+  {
+   "name": "Saturation",
+   "slug": "saturation",
+   "url": "https://saturation.io",
+   "website": "https://saturation.io",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Budgeting, expense tracking and production banking for film, TV and commercial shoots. It scans receipts with AI, syncs to QuickBooks and has an MCP server so your AI assistant can work with your budget.",
+   "key_features": [
+    "Creator free; Pro $40/mo ($32/mo yearly); Team $99/mo ($79/mo yearly); 14-day trial",
+    "Active"
+   ],
+   "pricing": "Creator free; Pro $40/mo ($32/mo yearly); Team $99/mo ($79/mo yearly); 14-day trial",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "film & TV production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/saturation.png",
+   "page": "https://agentscouthq.com/tools/saturation.html"
+  },
+  {
+   "name": "Jumper",
+   "slug": "jumper",
+   "url": "https://getjumper.io",
+   "website": "https://getjumper.io",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Local AI search for footage. Find shots, dialogue and people inside Premiere, Resolve, Final Cut or Avid without uploading anything, and let an AI agent search for you.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jumper.png",
+   "page": "https://agentscouthq.com/tools/jumper.html"
+  },
+  {
+   "name": "Boords",
+   "slug": "boords",
+   "url": "https://boords.com",
+   "website": "https://boords.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Storyboard and animatic tool with an AI storyboard generator. Plan scripts and shots, share them with clients and collect feedback and sign-off in one place.",
+   "key_features": [
+    "Solo $39/mo ($26/mo yearly); Pro $75/mo ($50); Team $125/mo ($85); Agency $250/mo ($165)",
+    "Active",
+    "Plan & storyboard"
+   ],
+   "pricing": "Solo $39/mo ($26/mo yearly); Pro $75/mo ($50); Team $125/mo ($85); Agency $250/mo ($165)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/boords.png",
+   "page": "https://agentscouthq.com/tools/boords.html"
+  },
+  {
+   "name": "Storyboarder.ai",
+   "slug": "storyboarder-ai",
+   "url": "https://storyboarder.ai",
+   "website": "https://storyboarder.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI storyboard maker. Turn a script into storyboards, shot lists, animatics and pitch decks in minutes.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Plan & storyboard"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/storyboarder-ai.png",
+   "page": "https://agentscouthq.com/tools/storyboarder-ai.html"
+  },
+  {
+   "name": "Prescene",
+   "slug": "prescene",
+   "url": "https://prescene.com",
+   "website": "https://prescene.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Screenplay analysis for writers and producers. Run script coverage, compare drafts, follow a series and create production documents grounded in the script.",
+   "key_features": [
+    "Editor $0; Plus $49/mo; Pro $99/mo; Max $299/mo",
+    "Active",
+    "Plan & storyboard"
+   ],
+   "pricing": "Editor $0; Plus $49/mo; Pro $99/mo; Max $299/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/prescene.png",
+   "page": "https://agentscouthq.com/tools/prescene.html"
+  },
+  {
+   "name": "Greenlight Coverage",
+   "slug": "greenlight-coverage",
+   "url": "https://glcoverage.com",
+   "website": "https://glcoverage.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Upload a screenplay and get script coverage in minutes, with notes on plot, character, dialogue and marketability.",
+   "key_features": [
+    "Basic $75/mo; Essential $129/mo; Pro $345/mo (lower when billed yearly)",
+    "Active",
+    "Plan & storyboard",
+    "Clean up audio"
+   ],
+   "pricing": "Basic $75/mo; Essential $129/mo; Pro $345/mo (lower when billed yearly)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/greenlight-coverage.png",
+   "page": "https://agentscouthq.com/tools/greenlight-coverage.html"
+  },
+  {
+   "name": "Largo.ai",
+   "slug": "largo-ai",
+   "url": "https://home.largo.io/",
+   "website": "https://home.largo.io/",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Film and series analytics. Predicts audience response, genre fit and box-office potential from scripts and cuts, and suggests casting.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/largo-ai.png",
+   "page": "https://agentscouthq.com/tools/largo-ai.html"
+  },
+  {
+   "name": "Intangible",
+   "slug": "intangible",
+   "url": "https://www.intangible.ai",
+   "website": "https://www.intangible.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI 3D studio for previs and concept work. Block out scenes in 3D, set cameras and turn them into images and video.",
+   "key_features": [
+    "Free; Explorer $35/mo; Business $65/mo; Enterprise",
+    "Active",
+    "Plan & storyboard"
+   ],
+   "pricing": "Free; Explorer $35/mo; Business $65/mo; Enterprise",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "plan & storyboard"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/intangible.png",
+   "page": "https://agentscouthq.com/tools/intangible.html"
+  },
+  {
+   "name": "Cuebric",
+   "slug": "cuebric",
+   "url": "https://cuebric.com",
+   "website": "https://cuebric.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Generative AI tool for virtual production. Make layered 2.5D backgrounds for LED volumes and greenscreen from concept to camera in minutes.",
+   "key_features": [
+    "See website",
+    "Active"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "film & TV production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cuebric.png",
+   "page": "https://agentscouthq.com/tools/cuebric.html"
+  },
+  {
+   "name": "Autodesk Flow Studio",
+   "slug": "autodesk-flow-studio",
+   "url": "https://www.autodesk.com/products/flow-studio/overview",
+   "website": "https://www.autodesk.com/products/flow-studio/overview",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Autodesk's cloud AI VFX tool, formerly Wonder Studio. Turn live-action footage into editable CG scenes with markerless mocap, camera tracking, clean plates and masks for Maya, Blender or Unreal.",
+   "key_features": [
+    "Free; Lite $10/mo; Standard $45/mo; Pro $95/mo; Enterprise (from Autodesk's plan announcement)",
+    "Active",
+    "Edit video",
+    "Visual effects",
+    "Clean up audio"
+   ],
+   "pricing": "Free; Lite $10/mo; Standard $45/mo; Pro $95/mo; Enterprise (from Autodesk's plan announcement)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/autodesk-flow-studio.png",
+   "page": "https://agentscouthq.com/tools/autodesk-flow-studio.html"
+  },
+  {
+   "name": "Beeble",
+   "slug": "beeble",
+   "url": "https://beeble.ai",
+   "website": "https://beeble.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI VFX for filmmakers. Relight footage after the shoot by pulling normal, depth and other passes from ordinary video.",
+   "key_features": [
+    "Creator $19/mo ($16/mo yearly); Professional $75/mo ($60/mo yearly)",
+    "Active",
+    "Edit video",
+    "Visual effects"
+   ],
+   "pricing": "Creator $19/mo ($16/mo yearly); Professional $75/mo ($60/mo yearly)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/beeble.png",
+   "page": "https://agentscouthq.com/tools/beeble.html"
+  },
+  {
+   "name": "Lightcraft Jetset",
+   "slug": "lightcraft-jetset",
+   "url": "https://lightcraft.pro",
+   "website": "https://lightcraft.pro",
+   "github": "",
+   "category": "film & TV production",
+   "description": "iPhone app for virtual production. Track the camera and shoot actors against live 3D sets or Gaussian splat locations, then send the data to post.",
+   "key_features": [
+    "Spark Team $29.95/mo; extra seat $19.95/mo; storage $8/mo",
+    "Active"
+   ],
+   "pricing": "Spark Team $29.95/mo; extra seat $19.95/mo; storage $8/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "film & TV production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lightcraft-jetset.png",
+   "page": "https://agentscouthq.com/tools/lightcraft-jetset.html"
+  },
+  {
+   "name": "Simulon",
+   "slug": "simulon",
+   "url": "https://simulon.com",
+   "website": "https://simulon.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "iPhone app that turns photos and sketches into 3D assets, places them in your real scene and renders photoreal mixed-reality shots and video.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/simulon.png",
+   "page": "https://agentscouthq.com/tools/simulon.html"
+  },
+  {
+   "name": "Move AI",
+   "slug": "move-ai",
+   "url": "https://www.move.ai",
+   "website": "https://www.move.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Markerless motion capture from ordinary video cameras or phones, for film, games and animation.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/move-ai.png",
+   "page": "https://agentscouthq.com/tools/move-ai.html"
+  },
+  {
+   "name": "Rokoko Vision",
+   "slug": "rokoko-vision",
+   "url": "https://www.rokoko.com/products/vision",
+   "website": "https://www.rokoko.com/products/vision",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Free-to-start AI motion capture from a webcam or video file, with export to Blender, Unreal and other 3D tools.",
+   "key_features": [
+    "Starter $0; Basic $10/mo (yearly); Plus $20/mo (yearly)",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "Starter $0; Basic $10/mo (yearly); Plus $20/mo (yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rokoko-vision.png",
+   "page": "https://agentscouthq.com/tools/rokoko-vision.html"
+  },
+  {
+   "name": "DeepMotion",
+   "slug": "deepmotion",
+   "url": "https://www.deepmotion.com",
+   "website": "https://www.deepmotion.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI motion capture and body tracking. Upload video and get 3D animation for characters.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/deepmotion.png",
+   "page": "https://agentscouthq.com/tools/deepmotion.html"
+  },
+  {
+   "name": "Plask",
+   "slug": "plask",
+   "url": "https://plask.ai",
+   "website": "https://plask.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Turn video into 3D character animation. Capture motion, edit the scene and export FBX, BVH or GLB for Blender or Unreal.",
+   "key_features": [
+    "Free; Standard $18/mo (yearly); Pro $50/mo (yearly)",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Free; Standard $18/mo (yearly); Pro $50/mo (yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/plask.png",
+   "page": "https://agentscouthq.com/tools/plask.html"
+  },
+  {
+   "name": "DaVinci Resolve",
+   "slug": "davinci-resolve",
+   "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+   "website": "https://www.blackmagicdesign.com/products/davinciresolve",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Blackmagic's editing, color, VFX and audio post app. Its AI tools include IntelliSearch, Magic Mask, voice isolation, speed warp and dialogue leveling.",
+   "key_features": [
+    "Free version; DaVinci Resolve Studio $295 one-time",
+    "Active",
+    "Edit video",
+    "Visual effects",
+    "Clean up audio"
+   ],
+   "pricing": "Free version; DaVinci Resolve Studio $295 one-time",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/davinci-resolve.png",
+   "page": "https://agentscouthq.com/tools/davinci-resolve.html"
+  },
+  {
+   "name": "Cutback",
+   "slug": "cutback",
+   "url": "https://www.cutback.video",
+   "website": "https://www.cutback.video",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Premiere Pro assistant that auto-edits raw footage and multicam: picks selects, cuts silences, transcribes and translates.",
+   "key_features": [
+    "Lite $9/mo ($8 yearly); Basic $15/mo ($13); Pro $35/mo ($30)",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Lite $9/mo ($8 yearly); Basic $15/mo ($13); Pro $35/mo ($30)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cutback.png",
+   "page": "https://agentscouthq.com/tools/cutback.html"
+  },
+  {
+   "name": "AutoPod",
+   "slug": "autopod",
+   "url": "https://www.autopod.fm",
+   "website": "https://www.autopod.fm",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Premiere Pro plugin for automatic multicam editing, jump cuts and social exports of podcasts and talk shows.",
+   "key_features": [
+    "$29/mo per license; 30-day free trial",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "$29/mo per license; 30-day free trial",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/autopod.png",
+   "page": "https://agentscouthq.com/tools/autopod.html"
+  },
+  {
+   "name": "Gling",
+   "slug": "gling",
+   "url": "https://www.gling.ai",
+   "website": "https://www.gling.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video editor for YouTubers. Removes bad takes, silences and filler words and exports to your editor.",
+   "key_features": [
+    "Free; paid plans $20, $40 and $100/mo",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Free; paid plans $20, $40 and $100/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gling.png",
+   "page": "https://agentscouthq.com/tools/gling.html"
+  },
+  {
+   "name": "OpusClip",
+   "slug": "opusclip",
+   "url": "https://www.opus.pro",
+   "website": "https://www.opus.pro",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Turns long videos into short clips with AI: picks highlights, reframes, adds captions and scores clips.",
+   "key_features": [
+    "Free; Starter $15/mo; Pro $29/mo ($14.50/mo yearly)",
+    "Active",
+    "Subtitles & transcripts",
+    "Make music"
+   ],
+   "pricing": "Free; Starter $15/mo; Pro $29/mo ($14.50/mo yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "subtitles & transcripts",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/opusclip.png",
+   "page": "https://agentscouthq.com/tools/opusclip.html"
+  },
+  {
+   "name": "Axle AI",
+   "slug": "axle-ai",
+   "url": "https://www.axle.ai",
+   "website": "https://www.axle.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI media asset management for post houses and broadcasters. Tags faces, objects and speech so editors can search footage.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/axle-ai.png",
+   "page": "https://agentscouthq.com/tools/axle-ai.html"
+  },
+  {
+   "name": "Moments Lab",
+   "slug": "moments-lab",
+   "url": "https://www.momentslab.com",
+   "website": "https://www.momentslab.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI indexing for media libraries. Understands characters, storylines and shows, so teams can search archives and cut new content.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/moments-lab.png",
+   "page": "https://agentscouthq.com/tools/moments-lab.html"
+  },
+  {
+   "name": "Kapwing",
+   "slug": "kapwing",
+   "url": "https://www.kapwing.com",
+   "website": "https://www.kapwing.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Online video editor with AI tools: generate a project from a prompt, auto-subtitle, translate, dub and cut by transcript.",
+   "key_features": [
+    "Free; Pro $16/mo; Business $50/mo",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Free; Pro $16/mo; Business $50/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kapwing.png",
+   "page": "https://agentscouthq.com/tools/kapwing.html"
+  },
+  {
+   "name": "VEED",
+   "slug": "veed",
+   "url": "https://www.veed.io",
+   "website": "https://www.veed.io",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Online video editor with AI editing, subtitles, translation, dubbing and talking-head tools.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/veed.png",
+   "page": "https://agentscouthq.com/tools/veed.html"
+  },
+  {
+   "name": "CapCut",
+   "slug": "capcut",
+   "url": "https://www.capcut.com",
+   "website": "https://www.capcut.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "ByteDance's video editor for desktop, mobile and web with AI captions, background removal, effects and templates.",
+   "key_features": [
+    "Free; Pro $19.99/mo; Ultra $79/mo; Teams $12.49/seat",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "Free; Pro $19.99/mo; Ultra $79/mo; Teams $12.49/seat",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/capcut.png",
+   "page": "https://agentscouthq.com/tools/capcut.html"
+  },
+  {
+   "name": "Simon Says",
+   "slug": "simon-says",
+   "url": "https://www.simonsaysai.com",
+   "website": "https://www.simonsaysai.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI transcription, subtitles and translation built for editors, with extensions for Premiere, Resolve, Final Cut and Avid.",
+   "key_features": [
+    "Pay as you go $15/hour; Starter $20/mo ($15 yearly); Pro $40/mo ($33 yearly)",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Pay as you go $15/hour; Starter $20/mo ($15 yearly); Pro $40/mo ($33 yearly)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/simon-says.png",
+   "page": "https://agentscouthq.com/tools/simon-says.html"
+  },
+  {
+   "name": "Trint",
+   "slug": "trint",
+   "url": "https://trint.com",
+   "website": "https://trint.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI transcription and production workflow for newsrooms and producers: transcribe, caption, translate and build rough cuts from text.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/trint.png",
+   "page": "https://agentscouthq.com/tools/trint.html"
+  },
+  {
+   "name": "Sonix",
+   "slug": "sonix",
+   "url": "https://sonix.ai",
+   "website": "https://sonix.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI transcription and subtitles in 54+ languages, with an editor and exports for video tools.",
+   "key_features": [
+    "Pay as you go $10/hour; Core $25/mo; Advanced $50/mo; Pro $80/mo",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "Pay as you go $10/hour; Core $25/mo; Advanced $50/mo; Pro $80/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sonix.png",
+   "page": "https://agentscouthq.com/tools/sonix.html"
+  },
+  {
+   "name": "SyncWords",
+   "slug": "syncwords",
+   "url": "https://www.syncwords.com",
+   "website": "https://www.syncwords.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI captions, translated subtitles and AI dubbing for live broadcast, streaming and recorded media.",
+   "key_features": [
+    "Quote-based; e.g. live captions from $30/hour pay as you go",
+    "Active",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Quote-based; e.g. live captions from $30/hour pay as you go",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/syncwords.png",
+   "page": "https://agentscouthq.com/tools/syncwords.html"
+  },
+  {
+   "name": "Submagic",
+   "slug": "submagic",
+   "url": "https://www.submagic.co",
+   "website": "https://www.submagic.co",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI captions and short-form editing: animated subtitles, B-roll, zooms and cuts for social video.",
+   "key_features": [
+    "Starter $19/mo; Pro $39/mo; Business plan",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "Starter $19/mo; Pro $39/mo; Business plan",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/submagic.png",
+   "page": "https://agentscouthq.com/tools/submagic.html"
+  },
+  {
+   "name": "Captions",
+   "slug": "captions",
+   "url": "https://www.captions.ai",
+   "website": "https://www.captions.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video editor and generator for creators, with auto captions, eye contact, dubbing and AI edits.",
+   "key_features": [
+    "Max $24.99/mo; Frontier $69.99 to $279.99/mo",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Max $24.99/mo; Frontier $69.99 to $279.99/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/captions.png",
+   "page": "https://agentscouthq.com/tools/captions.html"
+  },
+  {
+   "name": "Colourlab AI",
+   "slug": "colourlab-ai",
+   "url": "https://colourlab.ai",
+   "website": "https://colourlab.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI color grading. Match shots and apply looks automatically, with plugins for Resolve, Premiere and Final Cut.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Visual effects"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/colourlab-ai.png",
+   "page": "https://agentscouthq.com/tools/colourlab-ai.html"
+  },
+  {
+   "name": "Topaz Video",
+   "slug": "topaz-video",
+   "url": "https://www.topazlabs.com/topaz-video",
+   "website": "https://www.topazlabs.com/topaz-video",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video enhancement: upscale to 4K or 8K, denoise, deinterlace, sharpen and slow motion with frame interpolation.",
+   "key_features": [
+    "Topaz Video (web) $29/mo; Topaz Studio $399/yr",
+    "Active",
+    "Visual effects",
+    "Clean up audio"
+   ],
+   "pricing": "Topaz Video (web) $29/mo; Topaz Studio $399/yr",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/topaz-video.png",
+   "page": "https://agentscouthq.com/tools/topaz-video.html"
+  },
+  {
+   "name": "Pixop",
+   "slug": "pixop",
+   "url": "https://www.pixop.com",
+   "website": "https://www.pixop.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video enhancement for broadcasters and media companies, including HD to UHD HDR upscaling inside existing workflows.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pixop.png",
+   "page": "https://agentscouthq.com/tools/pixop.html"
+  },
+  {
+   "name": "Boris FX Mocha Pro",
+   "slug": "boris-fx-mocha-pro",
+   "url": "https://borisfx.com/products/mocha-pro/",
+   "website": "https://borisfx.com/products/mocha-pro/",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Academy Award-winning planar tracking, roto and object removal plugin, with ML-based masking, for After Effects, Premiere, Resolve, Nuke and more.",
+   "key_features": [
+    "$37/mo or $295/yr; perpetual licence available; multi-host $75/mo",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "$37/mo or $295/yr; perpetual licence available; multi-host $75/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/boris-fx-mocha-pro.png",
+   "page": "https://agentscouthq.com/tools/boris-fx-mocha-pro.html"
+  },
+  {
+   "name": "Nuke",
+   "slug": "nuke",
+   "url": "https://www.foundry.com/products/nuke-family/nuke",
+   "website": "https://www.foundry.com/products/nuke-family/nuke",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Foundry's node-based compositing software for film and TV VFX. Includes CopyCat for training your own machine-learning effects such as roto and cleanup.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Visual effects",
+    "Clean up audio",
+    "Make music"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects",
+    "clean up audio",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nuke.png",
+   "page": "https://agentscouthq.com/tools/nuke.html"
+  },
+  {
+   "name": "Flawless",
+   "slug": "flawless",
+   "url": "https://flawlessai.com",
+   "website": "https://flawlessai.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI tools for film and TV. DeepEditor changes dialogue and performances in post and does visual dubbing with real lip sync, without reshoots.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Dub & localize",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/flawless.png",
+   "page": "https://agentscouthq.com/tools/flawless.html"
+  },
+  {
+   "name": "sync.",
+   "slug": "sync",
+   "url": "https://sync.so",
+   "website": "https://sync.so",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI lip sync and visual dubbing. Make actors' mouths match new dialogue or translated audio, by API or in a web studio.",
+   "key_features": [
+    "Hobbyist $5/mo plus $0.05/sec; Creator $19/mo; Growth $49/mo; Scale $249/mo",
+    "Active",
+    "Dub & localize",
+    "Clean up audio"
+   ],
+   "pricing": "Hobbyist $5/mo plus $0.05/sec; Creator $19/mo; Growth $49/mo; Scale $249/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sync.png",
+   "page": "https://agentscouthq.com/tools/sync.html"
+  },
+  {
+   "name": "LipDub AI",
+   "slug": "lipdub-ai",
+   "url": "https://www.lipdub.ai",
+   "website": "https://www.lipdub.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "Localize existing video into 80+ languages with the same person on camera and broadcast-quality lip sync.",
+   "key_features": [
+    "Core $29/mo; Growth $99/mo; Scale $249/mo",
+    "Active",
+    "Dub & localize"
+   ],
+   "pricing": "Core $29/mo; Growth $99/mo; Scale $249/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lipdub-ai.png",
+   "page": "https://agentscouthq.com/tools/lipdub-ai.html"
+  },
+  {
+   "name": "Rask AI",
+   "slug": "rask-ai",
+   "url": "https://www.rask.ai",
+   "website": "https://www.rask.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video localization: translate, dub with voice cloning and lip sync into 130+ languages.",
+   "key_features": [
+    "Free trial (3 minutes); paid plans, see website",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "Free trial (3 minutes); paid plans, see website",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rask-ai.png",
+   "page": "https://agentscouthq.com/tools/rask-ai.html"
+  },
+  {
+   "name": "HeyGen",
+   "slug": "heygen",
+   "url": "https://www.heygen.com",
+   "website": "https://www.heygen.com",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video platform with avatars, video translation and lip-synced dubbing into many languages.",
+   "key_features": [
+    "Free $0; Creator $29/mo; Pro plan",
+    "Active",
+    "Dub & localize"
+   ],
+   "pricing": "Free $0; Creator $29/mo; Pro plan",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/heygen.png",
+   "page": "https://agentscouthq.com/tools/heygen.html"
+  },
+  {
+   "name": "Vozo",
+   "slug": "vozo",
+   "url": "https://www.vozo.ai",
+   "website": "https://www.vozo.ai",
+   "github": "",
+   "category": "film & TV production",
+   "description": "AI video localization with subtitles, dubbing and lip sync in 160+ languages, plus a script-based video editor.",
+   "key_features": [
+    "Free; Studio $99/mo",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Free; Studio $99/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vozo.png",
+   "page": "https://agentscouthq.com/tools/vozo.html"
+  },
+  {
+   "name": "Luma Dream Machine",
+   "slug": "luma-dream-machine",
+   "url": "https://lumalabs.ai",
+   "website": "https://lumalabs.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "Luma AI's video and image generation platform, built on its Ray models, with creative agents that handle end-to-end workflows.",
+   "key_features": [
+    "Plus $30/mo; Pro $90/mo",
+    "Active"
+   ],
+   "pricing": "Plus $30/mo; Pro $90/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/luma-dream-machine.png",
+   "page": "https://agentscouthq.com/tools/luma-dream-machine.html"
+  },
+  {
+   "name": "Google Flow",
+   "slug": "google-flow",
+   "url": "https://flow.google.com",
+   "website": "https://flow.google.com",
+   "github": "",
+   "category": "video generation",
+   "description": "Google's AI filmmaking tool built on Veo. Generate and extend cinematic shots, keep characters consistent and build scenes, with a Flow agent to help.",
+   "key_features": [
+    "50 free credits a day; more with Google AI Plus $4.99/mo, Pro $19.99/mo or Ultra",
+    "Active"
+   ],
+   "pricing": "50 free credits a day; more with Google AI Plus $4.99/mo, Pro $19.99/mo or Ultra",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/google-flow.png",
+   "page": "https://agentscouthq.com/tools/google-flow.html"
+  },
+  {
+   "name": "Higgsfield",
+   "slug": "higgsfield",
+   "url": "https://higgsfield.ai",
+   "website": "https://higgsfield.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "Create images, videos and voice from prompts or references using many models, with camera-move presets and an AI agent that automates workflows.",
+   "key_features": [
+    "See website",
+    "Active"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/higgsfield.png",
+   "page": "https://agentscouthq.com/tools/higgsfield.html"
+  },
+  {
+   "name": "Adobe Firefly",
+   "slug": "adobe-firefly",
+   "url": "https://firefly.adobe.com",
+   "website": "https://firefly.adobe.com",
+   "github": "",
+   "category": "video generation",
+   "description": "Adobe's generative app for images, video and audio, with 30+ models including Adobe's commercially safe ones and a creative agent.",
+   "key_features": [
+    "See website",
+    "Active"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/adobe-firefly.png",
+   "page": "https://agentscouthq.com/tools/adobe-firefly.html"
+  },
+  {
+   "name": "ComfyUI",
+   "slug": "comfyui",
+   "url": "https://www.comfy.org",
+   "website": "https://www.comfy.org",
+   "github": "https://github.com/Comfy-Org/ComfyUI",
+   "category": "video generation",
+   "description": "Node-based open-source engine for image and video generation workflows. Run models like Wan, LTX and Hunyuan locally or in Comfy Cloud, with an agent that builds workflows.",
+   "key_features": [
+    "Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo",
+    "Active",
+    "138580 GitHub stars",
+    "Generate video"
+   ],
+   "pricing": "Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Comfy-Org/ComfyUI",
+   "github_stars": 138580,
+   "open_source": true,
+   "license": "GPL-3.0",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/comfyui.png",
+   "page": "https://agentscouthq.com/tools/comfyui.html"
+  },
+  {
+   "name": "invideo AI",
+   "slug": "invideo-ai",
+   "url": "https://invideo.io",
+   "website": "https://invideo.io",
+   "github": "",
+   "category": "video generation",
+   "description": "Make and edit videos from prompts with its agent, Agent Two, including script, footage, voiceover and edits.",
+   "key_features": [
+    "Starter $20/seat/mo; Plus $60/seat/mo",
+    "Active",
+    "Edit video",
+    "Voiceover"
+   ],
+   "pricing": "Starter $20/seat/mo; Plus $60/seat/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/invideo-ai.png",
+   "page": "https://agentscouthq.com/tools/invideo-ai.html"
+  },
+  {
+   "name": "Viggle",
+   "slug": "viggle",
+   "url": "https://viggle.ai",
+   "website": "https://viggle.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "Animate characters by copying motion from a video, swap characters in real time, and connect it to an AI agent.",
+   "key_features": [
+    "Free; Pro $9.99/mo; Live $19.99/mo; Max $79.99/mo",
+    "Active"
+   ],
+   "pricing": "Free; Pro $9.99/mo; Live $19.99/mo; Max $79.99/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/viggle.png",
+   "page": "https://agentscouthq.com/tools/viggle.html"
+  },
+  {
+   "name": "Runway",
+   "slug": "runway",
+   "url": "https://runway.com",
+   "website": "https://runway.com",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video generation and editing tools built on Runway's Gen models: text and image to video, video to video, and VFX tools for filmmakers.",
+   "key_features": [
+    "Free (125 credits); Standard $15/mo ($12 yearly); Pro $35/mo ($28); Max $95/mo ($76)",
+    "Active",
+    "Edit video",
+    "Generate video",
+    "Visual effects"
+   ],
+   "pricing": "Free (125 credits); Standard $15/mo ($12 yearly); Pro $35/mo ($28); Max $95/mo ($76)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "generate video",
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/runway.png",
+   "page": "https://agentscouthq.com/tools/runway.html"
+  },
+  {
+   "name": "Kling AI",
+   "slug": "kling-ai",
+   "url": "https://kling.ai",
+   "website": "https://kling.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips.",
+   "key_features": [
+    "See website",
+    "Active"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kling-ai.png",
+   "page": "https://agentscouthq.com/tools/kling-ai.html"
+  },
+  {
+   "name": "Hailuo AI",
+   "slug": "hailuo-ai",
+   "url": "https://hailuoai.video",
+   "website": "https://hailuoai.video",
+   "github": "",
+   "category": "video generation",
+   "description": "MiniMax's AI video generator. Create video from text or photos.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hailuo-ai.png",
+   "page": "https://agentscouthq.com/tools/hailuo-ai.html"
+  },
+  {
+   "name": "Pika",
+   "slug": "pika",
+   "url": "https://pika.art",
+   "website": "https://pika.art",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video generator with creative effects and tools for short clips.",
+   "key_features": [
+    "Free (credit packs only); Starter $10/mo; Creator $35/mo; Fancy $95/mo",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "Free (credit packs only); Starter $10/mo; Creator $35/mo; Fancy $95/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pika.png",
+   "page": "https://agentscouthq.com/tools/pika.html"
+  },
+  {
+   "name": "Dreamina",
+   "slug": "dreamina",
+   "url": "https://dreamina.capcut.com",
+   "website": "https://dreamina.capcut.com",
+   "github": "",
+   "category": "video generation",
+   "description": "CapCut's AI studio for video and images, powered by models such as Seedance and Seedream, for ads, social clips and short dramas.",
+   "key_features": [
+    "See website",
+    "Active"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dreamina.png",
+   "page": "https://agentscouthq.com/tools/dreamina.html"
+  },
+  {
+   "name": "Hedra",
+   "slug": "hedra",
+   "url": "https://www.hedra.com",
+   "website": "https://www.hedra.com",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video generation for talking characters. Animate a face from an image and audio with expressive lip sync.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Generate video",
+    "Dub & localize"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hedra.png",
+   "page": "https://agentscouthq.com/tools/hedra.html"
+  },
+  {
+   "name": "Vidu",
+   "slug": "vidu",
+   "url": "https://www.vidu.com",
+   "website": "https://www.vidu.com",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video generator from text, images and references, with fast workflows for social clips, ads and stories.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vidu.png",
+   "page": "https://agentscouthq.com/tools/vidu.html"
+  },
+  {
+   "name": "Krea",
+   "slug": "krea",
+   "url": "https://www.krea.ai",
+   "website": "https://www.krea.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "Real-time AI image and video generation and upscaling, with many models in one app.",
+   "key_features": [
+    "Free (100 units a day); Basic $9/mo; Pro $35/mo",
+    "Active",
+    "Generate video",
+    "Visual effects"
+   ],
+   "pricing": "Free (100 units a day); Basic $9/mo; Pro $35/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/krea.png",
+   "page": "https://agentscouthq.com/tools/krea.html"
+  },
+  {
+   "name": "SkyReels",
+   "slug": "skyreels",
+   "url": "https://www.skyreels.ai",
+   "website": "https://www.skyreels.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video generator for short dramas and cinematic clips, built on Skywork's SkyReels video models.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/skyreels.png",
+   "page": "https://agentscouthq.com/tools/skyreels.html"
+  },
+  {
+   "name": "PixVerse",
+   "slug": "pixverse",
+   "url": "https://pixverse.ai",
+   "website": "https://pixverse.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video generation app and models for text and image to video, with effects and templates.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pixverse.png",
+   "page": "https://agentscouthq.com/tools/pixverse.html"
+  },
+  {
+   "name": "OpenArt",
+   "slug": "openart",
+   "url": "https://openart.ai",
+   "website": "https://openart.ai",
+   "github": "",
+   "category": "video generation",
+   "description": "Create AI images, video and music with 100+ models in one place, including story and character tools.",
+   "key_features": [
+    "Starter $14/seat/mo; Plus $34; Pro $56; Wonder $240",
+    "Active"
+   ],
+   "pricing": "Starter $14/seat/mo; Plus $34; Pro $56; Wonder $240",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openart.png",
+   "page": "https://agentscouthq.com/tools/openart.html"
+  },
+  {
+   "name": "Showrunner",
+   "slug": "showrunner",
+   "url": "https://www.showrunnerstudio.com",
+   "website": "https://www.showrunnerstudio.com",
+   "github": "",
+   "category": "video generation",
+   "description": "Make and watch AI-generated animated shows. Pick a world and genre and create episodes in minutes.",
+   "key_features": [
+    "See website",
+    "Active"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/showrunner.png",
+   "page": "https://agentscouthq.com/tools/showrunner.html"
+  },
+  {
+   "name": "Morph Studio",
+   "slug": "morph-studio",
+   "url": "https://www.morphstudio.com",
+   "website": "https://www.morphstudio.com",
+   "github": "",
+   "category": "video generation",
+   "description": "AI suite for text to video, image to video, style transfer and video enhancement on one canvas.",
+   "key_features": [
+    "Free; Basic $12/mo; Pro $35/mo; Premier $90/mo",
+    "Active",
+    "Generate video",
+    "Visual effects"
+   ],
+   "pricing": "Free; Basic $12/mo; Pro $35/mo; Premier $90/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/morph-studio.png",
+   "page": "https://agentscouthq.com/tools/morph-studio.html"
+  },
+  {
+   "name": "LTX-2",
+   "slug": "ltx-2",
+   "url": "https://github.com/Lightricks/LTX-2",
+   "website": "https://github.com/Lightricks/LTX-2",
+   "github": "https://github.com/Lightricks/LTX-2",
+   "category": "video generation",
+   "description": "Lightricks' open audio-and-video generation model. Official Python inference and LoRA trainer.",
+   "key_features": [
+    "Open weights; code on GitHub (see repo licence)",
+    "Active",
+    "9787 GitHub stars",
+    "Generate video"
+   ],
+   "pricing": "Open weights; code on GitHub (see repo licence)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Lightricks/LTX-2",
+   "github_stars": 9787,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ltx-2.png",
+   "page": "https://agentscouthq.com/tools/ltx-2.html"
+  },
+  {
+   "name": "Wan 2.2",
+   "slug": "wan-2-2",
+   "url": "https://github.com/Wan-Video/Wan2.2",
+   "website": "https://wan.video",
+   "github": "https://github.com/Wan-Video/Wan2.2",
+   "category": "video generation",
+   "description": "Alibaba's open, large-scale video generation models for text to video and image to video.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "Active",
+    "18005 GitHub stars",
+    "Generate video"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Wan-Video/Wan2.2",
+   "github_stars": 18005,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wan-2-2.png",
+   "page": "https://agentscouthq.com/tools/wan-2-2.html"
+  },
+  {
+   "name": "HunyuanVideo",
+   "slug": "hunyuanvideo",
+   "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+   "website": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+   "github": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+   "category": "video generation",
+   "description": "Tencent's open large video generation model and framework.",
+   "key_features": [
+    "Open weights (Tencent Hunyuan community licence)",
+    "Active",
+    "12633 GitHub stars",
+    "Generate video"
+   ],
+   "pricing": "Open weights (Tencent Hunyuan community licence)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Tencent-Hunyuan/HunyuanVideo",
+   "github_stars": 12633,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hunyuanvideo.png",
+   "page": "https://agentscouthq.com/tools/hunyuanvideo.html"
+  },
+  {
+   "name": "Mochi",
+   "slug": "mochi",
+   "url": "https://github.com/genmoai/mochi",
+   "website": "https://github.com/genmoai/mochi",
+   "github": "https://github.com/genmoai/mochi",
+   "category": "video generation",
+   "description": "Genmo's open video generation model.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "Active",
+    "3748 GitHub stars",
+    "Generate video"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "genmoai/mochi",
+   "github_stars": 3748,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mochi.png",
+   "page": "https://agentscouthq.com/tools/mochi.html"
+  },
+  {
+   "name": "CogVideoX",
+   "slug": "cogvideox",
+   "url": "https://github.com/zai-org/CogVideo",
+   "website": "https://github.com/zai-org/CogVideo",
+   "github": "https://github.com/zai-org/CogVideo",
+   "category": "video generation",
+   "description": "Open text-to-video and image-to-video models from Zhipu AI (Z.ai) and Tsinghua.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "No recent updates (last commit Nov 2025)",
+    "13086 GitHub stars",
+    "Generate video"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "zai-org/CogVideo",
+   "github_stars": 13086,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cogvideox.png",
+   "page": "https://agentscouthq.com/tools/cogvideox.html"
+  },
+  {
+   "name": "iZotope RX 12",
+   "slug": "izotope-rx-12",
+   "url": "https://www.izotope.com/products/rx-advanced",
+   "website": "https://www.izotope.com/products/rx-advanced",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Industry-standard audio repair. AI dialogue isolation, de-noise, de-reverb and repair modules used in film, TV and music post.",
+   "key_features": [
+    "RX 12 Elements $99; Advanced $1,399; Post Production Suite $1,799",
+    "Active",
+    "Clean up audio"
+   ],
+   "pricing": "RX 12 Elements $99; Advanced $1,399; Post Production Suite $1,799",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/izotope-rx-12.png",
+   "page": "https://agentscouthq.com/tools/izotope-rx-12.html"
+  },
+  {
+   "name": "Adobe Podcast",
+   "slug": "adobe-podcast",
+   "url": "https://podcast.adobe.com",
+   "website": "https://podcast.adobe.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Adobe's web app with Enhance Speech, which makes voice recordings sound studio-clean, plus recording and transcript editing.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Visual effects",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/adobe-podcast.png",
+   "page": "https://agentscouthq.com/tools/adobe-podcast.html"
+  },
+  {
+   "name": "Accentize",
+   "slug": "accentize",
+   "url": "https://www.accentize.com",
+   "website": "https://www.accentize.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI dialogue restoration plugins for post-production: speech enhancement, de-reverb, noise reduction and reverb matching for ADR.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Visual effects",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/accentize.png",
+   "page": "https://agentscouthq.com/tools/accentize.html"
+  },
+  {
+   "name": "Antinode Clear",
+   "slug": "antinode-clear",
+   "url": "https://antinodeaudio.com",
+   "website": "https://antinodeaudio.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI plugin that separates voice, reverb and noise in real time so you can rebalance dialogue (formerly Supertone Clear).",
+   "key_features": [
+    "One-time purchase; see website",
+    "Active",
+    "Clean up audio",
+    "Separate stems"
+   ],
+   "pricing": "One-time purchase; see website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/antinode-clear.png",
+   "page": "https://agentscouthq.com/tools/antinode-clear.html"
+  },
+  {
+   "name": "Auphonic",
+   "slug": "auphonic",
+   "url": "https://auphonic.com",
+   "website": "https://auphonic.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Automatic audio post-production web service: leveling, loudness normalization, noise and reverb reduction for speech.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/auphonic.png",
+   "page": "https://agentscouthq.com/tools/auphonic.html"
+  },
+  {
+   "name": "sonible",
+   "slug": "sonible",
+   "url": "https://www.sonible.com",
+   "website": "https://www.sonible.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI-assisted mixing plugins: smart:EQ, smart:comp and smart:limit set themselves from your audio, plus an AI-powered level rider.",
+   "key_features": [
+    "Plugins sold one by one, e.g. smart:limit $129; Studio Bundle $599",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "Plugins sold one by one, e.g. smart:limit $129; Studio Bundle $599",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sonible.png",
+   "page": "https://agentscouthq.com/tools/sonible.html"
+  },
+  {
+   "name": "Krotos Studio",
+   "slug": "krotos-studio",
+   "url": "https://www.krotosaudio.com",
+   "website": "https://www.krotosaudio.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Sound design software with AI tools to sync sound to picture, perform Foley and build ambiences.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Visual effects",
+    "Sound effects & foley"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects",
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/krotos-studio.png",
+   "page": "https://agentscouthq.com/tools/krotos-studio.html"
+  },
+  {
+   "name": "Audio Design Desk",
+   "slug": "audio-design-desk",
+   "url": "https://add.app",
+   "website": "https://add.app",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Audio workstation for video editors. AI search finds sound effects from its library, it syncs sound to picture and can generate background music.",
+   "key_features": [
+    "+Sounds $4.99/mo; Personal $14.99/mo; Professional $29.99/mo; 30-day trial",
+    "Active",
+    "Edit video",
+    "Sound effects & foley"
+   ],
+   "pricing": "+Sounds $4.99/mo; Personal $14.99/mo; Professional $29.99/mo; 30-day trial",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/audio-design-desk.png",
+   "page": "https://agentscouthq.com/tools/audio-design-desk.html"
+  },
+  {
+   "name": "Respeecher",
+   "slug": "respeecher",
+   "url": "https://www.respeecher.com",
+   "website": "https://www.respeecher.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Speech-to-speech voice cloning for film, TV and games, used for de-aging voices, ADR and dubbing with consent.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/respeecher.png",
+   "page": "https://agentscouthq.com/tools/respeecher.html"
+  },
+  {
+   "name": "Deepdub",
+   "slug": "deepdub",
+   "url": "https://deepdub.ai",
+   "website": "https://deepdub.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI dubbing for studios and streamers, with emotional voice cloning and localization in many languages.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "See website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/deepdub.png",
+   "page": "https://agentscouthq.com/tools/deepdub.html"
+  },
+  {
+   "name": "CAMB.AI",
+   "slug": "camb-ai",
+   "url": "https://www.camb.ai",
+   "website": "https://www.camb.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI dubbing, live translation and lifelike voices in 150+ languages for films, broadcasts and sport.",
+   "key_features": [
+    "Free (5,000 credits); paid tiers $5, $75 and $900/mo",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "Free (5,000 credits); paid tiers $5, $75 and $900/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/camb-ai.png",
+   "page": "https://agentscouthq.com/tools/camb-ai.html"
+  },
+  {
+   "name": "AudioShake",
+   "slug": "audioshake",
+   "url": "https://www.audioshake.ai",
+   "website": "https://www.audioshake.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI audio separation. Split dialogue, music and effects (DME) or music stems for dubbing, remixes and clean-up.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Dub & localize",
+    "Clean up audio",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "clean up audio",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/audioshake.png",
+   "page": "https://agentscouthq.com/tools/audioshake.html"
+  },
+  {
+   "name": "Waves Clarity Vx",
+   "slug": "waves-clarity-vx",
+   "url": "https://www.waves.com/plugins/clarity-vx",
+   "website": "https://www.waves.com/plugins/clarity-vx",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Waves' neural-network plugin that removes noise from voice in real time, with a Pro version for dialogue post.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/waves-clarity-vx.png",
+   "page": "https://agentscouthq.com/tools/waves-clarity-vx.html"
+  },
+  {
+   "name": "CrumplePop",
+   "slug": "crumplepop",
+   "url": "https://borisfx.com/products/crumplepop/",
+   "website": "https://borisfx.com/products/crumplepop/",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Boris FX audio repair plugins with AI: remove echo, wind, rustle, hum and noise from dialogue in video editors.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/crumplepop.png",
+   "page": "https://agentscouthq.com/tools/crumplepop.html"
+  },
+  {
+   "name": "Hush",
+   "slug": "hush",
+   "url": "https://hush.audio",
+   "website": "https://hush.audio",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Machine-learning dialogue repair on the Mac. Removes noise and reverb from speech using the Apple Neural Engine.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hush.png",
+   "page": "https://agentscouthq.com/tools/hush.html"
+  },
+  {
+   "name": "Zynaptiq",
+   "slug": "zynaptiq",
+   "url": "https://www.zynaptiq.com",
+   "website": "https://www.zynaptiq.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI audio plugins such as UNVEIL (de-reverb) and UNCHIRP for repairing dialogue and recordings in post.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Clean up audio"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zynaptiq.png",
+   "page": "https://agentscouthq.com/tools/zynaptiq.html"
+  },
+  {
+   "name": "Acon Digital Extract:Dialogue",
+   "slug": "acon-digital-extract-dialogue",
+   "url": "https://acondigital.com/products/extract-dialogue/",
+   "website": "https://acondigital.com/products/extract-dialogue/",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI dialogue cleaning plugin with real-time reverb reduction and simple mixer controls.",
+   "key_features": [
+    "Extract:Dialogue 2 US$99",
+    "Active",
+    "Clean up audio",
+    "Mix & master"
+   ],
+   "pricing": "Extract:Dialogue 2 US$99",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio",
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/acon-digital-extract-dialogue.png",
+   "page": "https://agentscouthq.com/tools/acon-digital-extract-dialogue.html"
+  },
+  {
+   "name": "SpectraLayers",
+   "slug": "spectralayers",
+   "url": "https://www.steinberg.net/spectralayers/",
+   "website": "https://www.steinberg.net/spectralayers/",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Steinberg's spectral audio editor with AI unmixing that splits dialogue, music and noise into layers to fix them.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Edit video",
+    "Clean up audio",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "clean up audio",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/spectralayers.png",
+   "page": "https://agentscouthq.com/tools/spectralayers.html"
+  },
+  {
+   "name": "Gaudio Studio",
+   "slug": "gaudio-studio",
+   "url": "https://www.gaudiolab.com",
+   "website": "https://www.gaudiolab.com",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Gaudio Lab's AI stem separation and noise removal. Split voice, music and effects or clean background noise online.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Clean up audio",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gaudio-studio.png",
+   "page": "https://agentscouthq.com/tools/gaudio-studio.html"
+  },
+  {
+   "name": "Cleanvoice",
+   "slug": "cleanvoice",
+   "url": "https://cleanvoice.ai",
+   "website": "https://cleanvoice.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI that removes filler words, mouth sounds, silences and background noise from speech recordings.",
+   "key_features": [
+    "Free trial; plans from €10/month",
+    "Active",
+    "Clean up audio"
+   ],
+   "pricing": "Free trial; plans from €10/month",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "clean up audio"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cleanvoice.png",
+   "page": "https://agentscouthq.com/tools/cleanvoice.html"
+  },
+  {
+   "name": "Altered Studio",
+   "slug": "altered-studio",
+   "url": "https://www.altered.ai",
+   "website": "https://www.altered.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Voice-changing studio. Perform a line and turn it into another voice, for voiceover, ADR and character work.",
+   "key_features": [
+    "Free; Creator $30/mo; Professional $90/mo (yearly)",
+    "Active",
+    "Voiceover"
+   ],
+   "pricing": "Free; Creator $30/mo; Professional $90/mo (yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/altered-studio.png",
+   "page": "https://agentscouthq.com/tools/altered-studio.html"
+  },
+  {
+   "name": "WellSaid",
+   "slug": "wellsaid",
+   "url": "https://wellsaid.io",
+   "website": "https://wellsaid.io",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI voice generator for narration and voiceover with studio-quality voices.",
+   "key_features": [
+    "Free trial; Starter $10/mo (yearly); Pro $33/mo (yearly)",
+    "Active",
+    "Voiceover"
+   ],
+   "pricing": "Free trial; Starter $10/mo (yearly); Pro $33/mo (yearly)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wellsaid.png",
+   "page": "https://agentscouthq.com/tools/wellsaid.html"
+  },
+  {
+   "name": "Murf AI",
+   "slug": "murf-ai",
+   "url": "https://murf.ai",
+   "website": "https://murf.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI voiceover and dubbing studio with many voices and languages.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/murf-ai.png",
+   "page": "https://agentscouthq.com/tools/murf-ai.html"
+  },
+  {
+   "name": "Speechify Studio",
+   "slug": "speechify-studio",
+   "url": "https://speechify.com/studio/",
+   "website": "https://speechify.com/studio/",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI voiceover, dubbing and video tools in one studio.",
+   "key_features": [
+    "Free; Starter $100/yr; Creator $300/yr",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "Free; Starter $100/yr; Creator $300/yr",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/speechify-studio.png",
+   "page": "https://agentscouthq.com/tools/speechify-studio.html"
+  },
+  {
+   "name": "Dubformer",
+   "slug": "dubformer",
+   "url": "https://dubformer.ai",
+   "website": "https://dubformer.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI dubbing and voiceover for media companies. Create a voice, direct how it sounds and export.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Dub & localize",
+    "Voiceover"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "dub & localize",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dubformer.png",
+   "page": "https://agentscouthq.com/tools/dubformer.html"
+  },
+  {
+   "name": "Dubverse",
+   "slug": "dubverse",
+   "url": "https://dubverse.ai",
+   "website": "https://dubverse.ai",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "AI video dubbing, text to speech and auto subtitles, with an API.",
+   "key_features": [
+    "Pro $18/mo; Supreme $30/mo; 2-day trial",
+    "Active",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Pro $18/mo; Supreme $30/mo; 2-day trial",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dubverse.png",
+   "page": "https://agentscouthq.com/tools/dubverse.html"
+  },
+  {
+   "name": "MMAudio",
+   "slug": "mmaudio",
+   "url": "https://github.com/hkchengrex/MMAudio",
+   "website": "https://hkchengrex.com/MMAudio/",
+   "github": "https://github.com/hkchengrex/MMAudio",
+   "category": "film & TV audio",
+   "description": "Open model that generates synced sound effects and Foley from video, from the CVPR 2025 paper.",
+   "key_features": [
+    "Open source (MIT)",
+    "Active",
+    "2288 GitHub stars",
+    "Sound effects & foley"
+   ],
+   "pricing": "Open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "hkchengrex/MMAudio",
+   "github_stars": 2288,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mmaudio.png",
+   "page": "https://agentscouthq.com/tools/mmaudio.html"
+  },
+  {
+   "name": "HunyuanVideo-Foley",
+   "slug": "hunyuanvideo-foley",
+   "url": "https://github.com/Tencent-Hunyuan/HunyuanVideo-Foley",
+   "website": "https://github.com/Tencent-Hunyuan/HunyuanVideo-Foley",
+   "github": "https://github.com/Tencent-Hunyuan/HunyuanVideo-Foley",
+   "category": "film & TV audio",
+   "description": "Tencent's open model that generates high-fidelity Foley audio matched to video.",
+   "key_features": [
+    "Open weights (Tencent Hunyuan licence)",
+    "No recent updates (last commit Sep 2025)",
+    "1074 GitHub stars",
+    "Sound effects & foley"
+   ],
+   "pricing": "Open weights (Tencent Hunyuan licence)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Tencent-Hunyuan/HunyuanVideo-Foley",
+   "github_stars": 1074,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hunyuanvideo-foley.png",
+   "page": "https://agentscouthq.com/tools/hunyuanvideo-foley.html"
+  },
+  {
+   "name": "Google Flow Music",
+   "slug": "google-flow-music",
+   "url": "https://www.flowmusic.app",
+   "website": "https://www.flowmusic.app",
+   "github": "",
+   "category": "music production",
+   "description": "Google's AI music platform (formerly Riffusion). Create, remix and edit songs by chatting with it, direct music videos and build new instruments.",
+   "key_features": [
+    "Free; Starter $6/mo; Plus $18/mo; Member $48/mo",
+    "Active",
+    "Edit video",
+    "Make music"
+   ],
+   "pricing": "Free; Starter $6/mo; Plus $18/mo; Member $48/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/google-flow-music.png",
+   "page": "https://agentscouthq.com/tools/google-flow-music.html"
+  },
+  {
+   "name": "YuE",
+   "slug": "yue",
+   "url": "https://github.com/multimodal-art-projection/YuE",
+   "website": "https://map-yue2.github.io/",
+   "github": "https://github.com/multimodal-art-projection/YuE",
+   "category": "music production",
+   "description": "Open song-generation model (YuE2) with lyrics-to-song, zero-shot covers and agentic music editing.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "Active",
+    "12143 GitHub stars",
+    "Edit video",
+    "Make music"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "multimodal-art-projection/YuE",
+   "github_stars": 12143,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "edit video",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/yue.png",
+   "page": "https://agentscouthq.com/tools/yue.html"
+  },
+  {
+   "name": "Suno",
+   "slug": "suno",
+   "url": "https://suno.com",
+   "website": "https://suno.com",
+   "github": "",
+   "category": "music production",
+   "description": "AI song generator. Write or prompt a song and get full tracks with vocals, plus stems and a studio editor.",
+   "key_features": [
+    "Free; Pro $8/mo; Premier $24/mo (billed yearly)",
+    "Active",
+    "Edit video",
+    "Make music",
+    "Separate stems"
+   ],
+   "pricing": "Free; Pro $8/mo; Premier $24/mo (billed yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "make music",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/suno.png",
+   "page": "https://agentscouthq.com/tools/suno.html"
+  },
+  {
+   "name": "Udio",
+   "slug": "udio",
+   "url": "https://www.udio.com",
+   "website": "https://www.udio.com",
+   "github": "",
+   "category": "music production",
+   "description": "AI music generator for songs with vocals. Since its deal with Universal Music Group, downloads are disabled and tracks stay on the platform.",
+   "key_features": [
+    "See website. Note: song downloads have been disabled since Udio's deal with Universal Music Group",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "See website. Note: song downloads have been disabled since Udio's deal with Universal Music Group",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/udio.png",
+   "page": "https://agentscouthq.com/tools/udio.html"
+  },
+  {
+   "name": "AIVA",
+   "slug": "aiva",
+   "url": "https://www.aiva.ai",
+   "website": "https://www.aiva.ai",
+   "github": "",
+   "category": "music production",
+   "description": "AI composition assistant for soundtrack and score music in many styles, with MIDI export and editing.",
+   "key_features": [
+    "Free €0; Standard €11/mo; Pro €33/mo",
+    "Active",
+    "Edit video",
+    "Visual effects",
+    "Make music"
+   ],
+   "pricing": "Free €0; Standard €11/mo; Pro €33/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "visual effects",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aiva.png",
+   "page": "https://agentscouthq.com/tools/aiva.html"
+  },
+  {
+   "name": "Soundraw",
+   "slug": "soundraw",
+   "url": "https://soundraw.io",
+   "website": "https://soundraw.io",
+   "github": "",
+   "category": "music production",
+   "description": "AI music generator for royalty-free tracks. Customize instruments, structure and length and download stems.",
+   "key_features": [
+    "From $16.99/mo ($11.04/mo yearly)",
+    "Active",
+    "Make music",
+    "Separate stems"
+   ],
+   "pricing": "From $16.99/mo ($11.04/mo yearly)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/soundraw.png",
+   "page": "https://agentscouthq.com/tools/soundraw.html"
+  },
+  {
+   "name": "Beatoven.ai",
+   "slug": "beatoven-ai",
+   "url": "https://www.beatoven.ai",
+   "website": "https://www.beatoven.ai",
+   "github": "",
+   "category": "music production",
+   "description": "Royalty-free AI background music and sound effects for videos, podcasts and games, with an API.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Sound effects & foley"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/beatoven-ai.png",
+   "page": "https://agentscouthq.com/tools/beatoven-ai.html"
+  },
+  {
+   "name": "Stable Audio",
+   "slug": "stable-audio",
+   "url": "https://stableaudio.com",
+   "website": "https://stableaudio.com",
+   "github": "https://github.com/Stability-AI/stable-audio-tools",
+   "category": "music production",
+   "description": "Stability AI's music and sound generation toolkit with commercially safe models.",
+   "key_features": [
+    "See website",
+    "Active",
+    "3888 GitHub stars"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Stability-AI/stable-audio-tools",
+   "github_stars": 3888,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "music production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/stable-audio.png",
+   "page": "https://agentscouthq.com/tools/stable-audio.html"
+  },
+  {
+   "name": "Mubert",
+   "slug": "mubert",
+   "url": "https://mubert.com",
+   "website": "https://mubert.com",
+   "github": "",
+   "category": "music production",
+   "description": "Generate royalty-free music from text prompts for videos, streams and apps.",
+   "key_features": [
+    "Ambassador free; Creator $14/mo; Pro $39/mo",
+    "Active"
+   ],
+   "pricing": "Ambassador free; Creator $14/mo; Pro $39/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "music production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mubert.png",
+   "page": "https://agentscouthq.com/tools/mubert.html"
+  },
+  {
+   "name": "Loudly",
+   "slug": "loudly",
+   "url": "https://www.loudly.com",
+   "website": "https://www.loudly.com",
+   "github": "",
+   "category": "music production",
+   "description": "AI music platform to generate, remix, master and split stems of royalty-free tracks.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/loudly.png",
+   "page": "https://agentscouthq.com/tools/loudly.html"
+  },
+  {
+   "name": "Soundful",
+   "slug": "soundful",
+   "url": "https://soundful.com",
+   "website": "https://soundful.com",
+   "github": "",
+   "category": "music production",
+   "description": "AI music generator for royalty-free tracks and beats for creators.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "See website",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/soundful.png",
+   "page": "https://agentscouthq.com/tools/soundful.html"
+  },
+  {
+   "name": "Boomy",
+   "slug": "boomy",
+   "url": "https://boomy.com",
+   "website": "https://boomy.com",
+   "github": "",
+   "category": "music production",
+   "description": "Make generative songs with AI and release them to streaming services.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/boomy.png",
+   "page": "https://agentscouthq.com/tools/boomy.html"
+  },
+  {
+   "name": "Lemonaide",
+   "slug": "lemonaide",
+   "url": "https://www.lemonaide.ai",
+   "website": "https://www.lemonaide.ai",
+   "github": "",
+   "category": "music production",
+   "description": "AI melody and chord generator in MIDI or audio, trained with producers.",
+   "key_features": [
+    "Seeds $9.99/mo",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Seeds $9.99/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lemonaide.png",
+   "page": "https://agentscouthq.com/tools/lemonaide.html"
+  },
+  {
+   "name": "AudioCraft",
+   "slug": "audiocraft",
+   "url": "https://github.com/facebookresearch/audiocraft",
+   "website": "https://github.com/facebookresearch/audiocraft",
+   "github": "https://github.com/facebookresearch/audiocraft",
+   "category": "music production",
+   "description": "Meta's open library for audio generation, including MusicGen for music and AudioGen for sound effects.",
+   "key_features": [
+    "Open source (MIT code)",
+    "Active",
+    "23744 GitHub stars",
+    "Sound effects & foley"
+   ],
+   "pricing": "Open source (MIT code)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "facebookresearch/audiocraft",
+   "github_stars": 23744,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "sound effects & Foley"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/audiocraft.png",
+   "page": "https://agentscouthq.com/tools/audiocraft.html"
+  },
+  {
+   "name": "ACE-Step",
+   "slug": "ace-step",
+   "url": "https://github.com/ace-step/ACE-Step",
+   "website": "https://ace-step.github.io/",
+   "github": "https://github.com/ace-step/ACE-Step",
+   "category": "music production",
+   "description": "Open music generation foundation model for fast full-song generation and editing.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "Active",
+    "4953 GitHub stars",
+    "Edit video",
+    "Make music"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ace-step/ACE-Step",
+   "github_stars": 4953,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "edit video",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ace-step.png",
+   "page": "https://agentscouthq.com/tools/ace-step.html"
+  },
+  {
+   "name": "Magenta RealTime",
+   "slug": "magenta-realtime",
+   "url": "https://github.com/magenta/magenta-realtime",
+   "website": "https://magenta.withgoogle.com/magenta-realtime-2",
+   "github": "https://github.com/magenta/magenta-realtime",
+   "category": "music production",
+   "description": "Google's open-weights live music model that you can play and steer in real time.",
+   "key_features": [
+    "Open weights (Apache-2.0 code)",
+    "Active",
+    "1837 GitHub stars"
+   ],
+   "pricing": "Open weights (Apache-2.0 code)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "magenta/magenta-realtime",
+   "github_stars": 1837,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "music production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/magenta-realtime.png",
+   "page": "https://agentscouthq.com/tools/magenta-realtime.html"
+  },
+  {
+   "name": "Moises",
+   "slug": "moises",
+   "url": "https://moises.ai",
+   "website": "https://moises.ai",
+   "github": "",
+   "category": "music production",
+   "description": "Practice and production app that removes vocals, separates instruments, detects chords and masters tracks with AI.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/moises.png",
+   "page": "https://agentscouthq.com/tools/moises.html"
+  },
+  {
+   "name": "LALAL.AI",
+   "slug": "lalal-ai",
+   "url": "https://www.lalal.ai",
+   "website": "https://www.lalal.ai",
+   "github": "",
+   "category": "music production",
+   "description": "AI stem splitter and vocal remover for music and video.",
+   "key_features": [
+    "Starter free; Lite $7.5/mo; Pro $15/mo (yearly)",
+    "Active",
+    "Separate stems"
+   ],
+   "pricing": "Starter free; Lite $7.5/mo; Pro $15/mo (yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lalal-ai.png",
+   "page": "https://agentscouthq.com/tools/lalal-ai.html"
+  },
+  {
+   "name": "Fadr",
+   "slug": "fadr",
+   "url": "https://fadr.com",
+   "website": "https://fadr.com",
+   "github": "",
+   "category": "music production",
+   "description": "Mostly free music tools: vocal remover, stem splitter, key, tempo and chord detection, remix and mashup makers.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fadr.png",
+   "page": "https://agentscouthq.com/tools/fadr.html"
+  },
+  {
+   "name": "Ultimate Vocal Remover",
+   "slug": "ultimate-vocal-remover",
+   "url": "https://github.com/Anjok07/ultimatevocalremovergui",
+   "website": "https://github.com/Anjok07/ultimatevocalremovergui",
+   "github": "https://github.com/Anjok07/ultimatevocalremovergui",
+   "category": "music production",
+   "description": "Free desktop app that separates vocals and instruments with deep neural networks.",
+   "key_features": [
+    "Open source (MIT)",
+    "Active",
+    "26684 GitHub stars",
+    "Separate stems"
+   ],
+   "pricing": "Open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Anjok07/ultimatevocalremovergui",
+   "github_stars": 26684,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ultimate-vocal-remover.png",
+   "page": "https://agentscouthq.com/tools/ultimate-vocal-remover.html"
+  },
+  {
+   "name": "Spleeter",
+   "slug": "spleeter",
+   "url": "https://github.com/deezer/spleeter",
+   "website": "https://research.deezer.com/projects/spleeter.html",
+   "github": "https://github.com/deezer/spleeter",
+   "category": "music production",
+   "description": "Deezer's source separation library with pretrained models for splitting songs into stems.",
+   "key_features": [
+    "Open source (MIT)",
+    "Active",
+    "28499 GitHub stars",
+    "Make music",
+    "Separate stems"
+   ],
+   "pricing": "Open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "deezer/spleeter",
+   "github_stars": 28499,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "make music",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/spleeter.png",
+   "page": "https://agentscouthq.com/tools/spleeter.html"
+  },
+  {
+   "name": "iZotope Ozone 12",
+   "slug": "izotope-ozone-12",
+   "url": "https://www.izotope.com/products/ozone-advanced",
+   "website": "https://www.izotope.com/products/ozone-advanced",
+   "github": "",
+   "category": "music production",
+   "description": "Mastering suite with an AI Master Assistant and 20 mastering modules as plugins.",
+   "key_features": [
+    "Ozone 12 Advanced $499",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "Ozone 12 Advanced $499",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/izotope-ozone-12.png",
+   "page": "https://agentscouthq.com/tools/izotope-ozone-12.html"
+  },
+  {
+   "name": "iZotope Nectar 4",
+   "slug": "izotope-nectar-4",
+   "url": "https://www.izotope.com/products/nectar-advanced",
+   "website": "https://www.izotope.com/products/nectar-advanced",
+   "github": "",
+   "category": "music production",
+   "description": "Vocal mixing plugin suite with an AI Vocal Assistant for EQ, compression, de-essing and pitch.",
+   "key_features": [
+    "Nectar 4 Advanced $299; Elements $55",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "Nectar 4 Advanced $299; Elements $55",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/izotope-nectar-4.png",
+   "page": "https://agentscouthq.com/tools/izotope-nectar-4.html"
+  },
+  {
+   "name": "iZotope Neutron 5",
+   "slug": "izotope-neutron-5",
+   "url": "https://www.izotope.com/products/neutron",
+   "website": "https://www.izotope.com/products/neutron",
+   "github": "",
+   "category": "music production",
+   "description": "Mixing plugin suite with an AI Mix Assistant that suggests levels and processing across tracks.",
+   "key_features": [
+    "Neutron 5 $299; Elements $55",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "Neutron 5 $299; Elements $55",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/izotope-neutron-5.png",
+   "page": "https://agentscouthq.com/tools/izotope-neutron-5.html"
+  },
+  {
+   "name": "AutoTune",
+   "slug": "autotune",
+   "url": "https://www.antarestech.com",
+   "website": "https://www.antarestech.com",
+   "github": "",
+   "category": "music production",
+   "description": "Antares' pitch-correction plugins plus AI-powered vocal mixing tools for vocal tuning and effects.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/autotune.png",
+   "page": "https://agentscouthq.com/tools/autotune.html"
+  },
+  {
+   "name": "LANDR",
+   "slug": "landr",
+   "url": "https://www.landr.com",
+   "website": "https://www.landr.com",
+   "github": "",
+   "category": "music production",
+   "description": "Creative platform for musicians with AI mastering, plugins, samples and distribution.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/landr.png",
+   "page": "https://agentscouthq.com/tools/landr.html"
+  },
+  {
+   "name": "Masterchannel",
+   "slug": "masterchannel",
+   "url": "https://masterchannel.ai",
+   "website": "https://masterchannel.ai",
+   "github": "",
+   "category": "music production",
+   "description": "AI mastering modeled on world-class engineers, with control over tone and dynamics.",
+   "key_features": [
+    "$15/mo and $19/mo plans; Partner $79/mo (yearly)",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "$15/mo and $19/mo plans; Partner $79/mo (yearly)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/masterchannel.png",
+   "page": "https://agentscouthq.com/tools/masterchannel.html"
+  },
+  {
+   "name": "eMastered",
+   "slug": "emastered",
+   "url": "https://emastered.com",
+   "website": "https://emastered.com",
+   "github": "",
+   "category": "music production",
+   "description": "Online AI mastering engine created by Grammy-winning engineers.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/emastered.png",
+   "page": "https://agentscouthq.com/tools/emastered.html"
+  },
+  {
+   "name": "CryoMix",
+   "slug": "cryomix",
+   "url": "https://cryo-mix.com",
+   "website": "https://cryo-mix.com",
+   "github": "",
+   "category": "music production",
+   "description": "Online AI mixing and mastering for vocals, beats and stems, with a free full-length preview.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Make music",
+    "Mix & master",
+    "Separate stems"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music",
+    "mix & master",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cryomix.png",
+   "page": "https://agentscouthq.com/tools/cryomix.html"
+  },
+  {
+   "name": "RoEx",
+   "slug": "roex",
+   "url": "https://www.roexaudio.com",
+   "website": "https://www.roexaudio.com",
+   "github": "",
+   "category": "music production",
+   "description": "Upload stems and get an AI mix and master in minutes.",
+   "key_features": [
+    "Try free; pay when you download",
+    "Active",
+    "Mix & master",
+    "Separate stems"
+   ],
+   "pricing": "Try free; pay when you download",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/roex.png",
+   "page": "https://agentscouthq.com/tools/roex.html"
+  },
+  {
+   "name": "Waves Online Mastering",
+   "slug": "waves-online-mastering",
+   "url": "https://www.waves.com/online-mastering",
+   "website": "https://www.waves.com/online-mastering",
+   "github": "",
+   "category": "music production",
+   "description": "Waves' online AI mastering service. Try it free and pay to download masters.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "See website",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/waves-online-mastering.png",
+   "page": "https://agentscouthq.com/tools/waves-online-mastering.html"
+  },
+  {
+   "name": "BandLab",
+   "slug": "bandlab",
+   "url": "https://www.bandlab.com",
+   "website": "https://www.bandlab.com",
+   "github": "",
+   "category": "music production",
+   "description": "Free cloud music-making platform and DAW with AI tools such as SongStarter and AI mastering, plus collaboration.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Make music",
+    "Mix & master"
+   ],
+   "pricing": "See website",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music",
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bandlab.png",
+   "page": "https://agentscouthq.com/tools/bandlab.html"
+  },
+  {
+   "name": "Logic Pro",
+   "slug": "logic-pro",
+   "url": "https://www.apple.com/logic-pro/",
+   "website": "https://www.apple.com/logic-pro/",
+   "github": "",
+   "category": "music production",
+   "description": "Apple's DAW for Mac and iPad with AI features: Session Players, Stem Splitter, ChromaGlow and machine-learning pitch correction.",
+   "key_features": [
+    "$199.99 Mac app, or Apple Creator Studio $12.99/mo / $129/yr",
+    "Active",
+    "Separate stems"
+   ],
+   "pricing": "$199.99 Mac app, or Apple Creator Studio $12.99/mo / $129/yr",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/logic-pro.png",
+   "page": "https://agentscouthq.com/tools/logic-pro.html"
+  },
+  {
+   "name": "Synthesizer V Studio 2",
+   "slug": "synthesizer-v-studio-2",
+   "url": "https://dreamtonics.com",
+   "website": "https://dreamtonics.com",
+   "github": "",
+   "category": "music production",
+   "description": "Dreamtonics' AI singing voice synthesizer. Write notes and lyrics and get realistic sung vocals.",
+   "key_features": [
+    "Synthesizer V Studio 2 Pro $99 one-time",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Synthesizer V Studio 2 Pro $99 one-time",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/synthesizer-v-studio-2.png",
+   "page": "https://agentscouthq.com/tools/synthesizer-v-studio-2.html"
+  },
+  {
+   "name": "ACE Studio",
+   "slug": "ace-studio",
+   "url": "https://acestudio.ai",
+   "website": "https://acestudio.ai",
+   "github": "",
+   "category": "music production",
+   "description": "AI singing voice and instrument studio. Turn MIDI and lyrics into vocals and convert voices.",
+   "key_features": [
+    "See website",
+    "Active",
+    "Voiceover",
+    "Make music"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voiceover",
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ace-studio.png",
+   "page": "https://agentscouthq.com/tools/ace-studio.html"
+  },
+  {
+   "name": "Kits AI",
+   "slug": "kits-ai",
+   "url": "https://www.kits.ai",
+   "website": "https://www.kits.ai",
+   "github": "",
+   "category": "music production",
+   "description": "AI vocal tools for producers: voice conversion, cloning and royalty-free AI voices.",
+   "key_features": [
+    "Free; $10, $30 and $60/mo plans",
+    "Active",
+    "Voiceover"
+   ],
+   "pricing": "Free; $10, $30 and $60/mo plans",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kits-ai.png",
+   "page": "https://agentscouthq.com/tools/kits-ai.html"
+  },
+  {
+   "name": "Voice-Swap",
+   "slug": "voice-swap",
+   "url": "https://www.voice-swap.ai",
+   "website": "https://www.voice-swap.ai",
+   "github": "",
+   "category": "music production",
+   "description": "Licensed artist voice models and custom voice conversion for musicians.",
+   "key_features": [
+    "From £6.99/mo",
+    "Active",
+    "Voiceover"
+   ],
+   "pricing": "From £6.99/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/voice-swap.png",
+   "page": "https://agentscouthq.com/tools/voice-swap.html"
+  },
+  {
+   "name": "Neutone",
+   "slug": "neutone",
+   "url": "https://neutone.jp",
+   "website": "https://neutone.jp",
+   "github": "https://github.com/Neutone/neutone_sdk",
+   "category": "music production",
+   "description": "Plugin that runs neural audio models in your DAW in real time for new sounds and timbre transfer.",
+   "key_features": [
+    "See website",
+    "Active",
+    "634 GitHub stars"
+   ],
+   "pricing": "See website",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Research (film, TV, video & music sweep)",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Neutone/neutone_sdk",
+   "github_stars": 634,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "music production"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/neutone.png",
+   "page": "https://agentscouthq.com/tools/neutone.html"
   }
  ]
 }

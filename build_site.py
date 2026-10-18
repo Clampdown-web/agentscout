@@ -6,13 +6,20 @@ RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",
 ("voice & phone calls",r"voice|phone|call|speech|TTS|talk"),("automate workflows",r"workflow|automation|automate|Zapier|apps"),("build apps without code",r"prompt-to-app|full apps|web apps|No-code|no-code|Drag-and-drop|visually"),
 ("connect tools via MCP",r"MCP"),("run code safely",r"sandbox|Sandbox|secure|policies"),("monitor & evaluate agents",r"observab|trac|evals|monitor|Evals|evaluat"),
 ("give agents memory",r"memory|Memory"),("sales & support",r"sales|prospect|customer|account"),("make diagrams",r"diagram"),("computer vision",r"vision")]
+# Film, TV, video and music categories (added Oct 18, 2026) get their own use-case tags; agent rules above don't fit media tools
+MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
+MEDIA_RULES=[("plan & storyboard",r"storyboard|screenplay|script coverage|pre-production|previs|shot list|call sheet"),("edit video",r"\bedit|rough cut|stringout|\bcuts?\b|timeline|footage"),
+("generate video",r"video generat|text to video|image to video|video model|generate video|AI video generator"),("visual effects",r"\bVFX|composit|roto|motion capture|mocap|relight|camera track|upscal|enhanc|grading|color"),
+("subtitles & transcripts",r"subtitle|caption|transcri"),("dub & localize",r"\bdub|lip.?sync|locali[sz]|translat"),("clean up audio",r"noise|dialogue|de-?reverb|repair|clean"),
+("sound effects & Foley",r"sound effect|\bSFX|Foley|sound design"),("voiceover",r"voice ?over|narration|voice clon|voice convers|voices"),
+("make music",r"song|music generat|compos|melod|beats?\b|singing|score|soundtrack"),("mix & master",r"\bmix|master"),("separate stems",r"\bstems?\b|vocal remov|separat|splitter|unmix")]
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
     d=x["name"]+" "+x["description"]+" "+x["category"]
-    x["use_cases"]=[u for u,p in RULES if re.search(p,d)][:3] or [x["category"]]
+    x["use_cases"]=([u for u,p in MEDIA_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]) if x["category"] in MEDIA_CATS else ([u for u,p in RULES if re.search(p,d)][:3] or [x["category"]])
     x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
     if os.path.exists(f"assets/logos/{x['slug']}.png"): x["logo"]=f"assets/logos/{x['slug']}.png"
     else: x.pop("logo",None)
@@ -37,6 +44,7 @@ for x in t:
     fh+=f'<dt>Listing</dt><dd><a class="suggestedit" href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a></dd>'
     if g.get("pushed") and x.get("github"): fh+=f'<dt>Last commit</dt><dd title="GitHub data fetched {e(g.get("fetched",""))}">{e(_dt.date.fromisoformat(g["pushed"]).strftime("%b %-d, %Y"))}</dd>'
     uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
+    uc+="".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">Also see: {e(c)}</a>' for c in build_extras.media_xlink_cats(x["slug"]))
     prim=build_extras.su(x.get("website") or x["url"])
     host=re.sub(r"^https?://(www\.)?","",prim).split("/")[0]
     gh=build_extras.su(x.get("github","")) if x.get("github") else ""
