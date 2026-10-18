@@ -203,7 +203,7 @@ def seo(t,urls):
     out.append(listing_page("best/mcp-servers.html","Best MCP Servers (2026): curated list · AgentScout",
         f"Best MCP servers in 2026: {len(mcp)} link-checked MCP servers and MCP tools, including {', '.join(x['name'] for x in mcp[:3])}. Pricing as stated by makers."[:158],
         "Best MCP Servers (2026)",f'A curated list of the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory. MCP (Model Context Protocol) lets agents like Claude Code, Cursor and Codex connect to tools and data. See also the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.',mcp,"Best MCP servers",'<p style="margin-top:24px">Guides by client: '+guides+'</p>'))
-    out.append(news_page(t)); out.append(free_tools())
+    out.append(news_page(t)); out.append(free_tools(t))
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
         f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
@@ -240,11 +240,35 @@ def news_page(t):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":x["url"],"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
     open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
 
-def free_tools():
-    canon=B+"free-tools.html"; title="Free AI Tools from AgentScout: Image Generator & More | AgentScout"
-    desc="Free tools from AgentScout, starting with a free AI image generator that needs no sign-up."
-    body='<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free tools</h1><p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout. No sign-up needed.</p><div class="grid"><div class="card tile"><div class="ct"><span class="ico"><span aria-hidden="true">✨</span></span><div class="tn"><h3>AI Image Generator</h3><div class="badges"><span class="b new">Free</span><span class="b cat">image</span></div></div></div><p class="hook">Type a prompt and get an image in seconds. Powered by FLUX.1 [schnell].</p><a class="btn primary" href="generate.html">Open</a></div></div></section>'
-    ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebApplication","name":"AgentScout AI Image Generator","url":B+"generate.html","isAccessibleForFree":True,"applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}
+FREE_RE=re.compile(r"open[- ]?source|open weights|open[- ]weight|open standard|\bfree\b|freemium",re.I)
+def free_tools(t):
+    """Free-tools hub: AgentScout's own free tools first, then every directory listing whose maker-stated pricing
+    (pricing_detail, else pricing; the same value as "pricing" in api/tools.json) says open source, open weights/standard,
+    free, free tier/plan or freemium. Listings marked discontinued or archived are left out."""
+    import collections
+    pr=lambda x:(x.get("pricing_detail") or x["pricing"])
+    items=[x for x in t if FREE_RE.search(pr(x)) and not re.search(r"discontinu|archived|shut down",x.get("maturity","")+" "+pr(x),re.I)]
+    cats=collections.Counter(x["category"] for x in items)
+    canon=B+"free-tools.html"; title="Free AI Agent Tools (2026): Open-Source & Free Tiers | AgentScout"
+    desc=f"{len(items)} free and open-source AI agent tools in {len(cats)} categories, plus AgentScout's unlimited free AI image generator. Pricing as each maker states it."[:158]
+    feat=('<div class="card tile" style="margin:18px 0 8px;max-width:640px"><div class="ct"><span class="ico"><span aria-hidden="true">✨</span></span><div class="tn"><h3>Unlimited Free AI Image Generator</h3>'
+          '<div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">Type a prompt and get an image in seconds. No sign-up needed. Powered by FLUX.1 [schnell].</p>'
+          '<a class="btn primary" href="generate.html">Open the image generator</a></div>')
+    jump=" · ".join(f'<a href="#{catslug(c)}">{e(c)} ({n})</a>' for c,n in cats.most_common())
+    sec=""
+    for c,n in cats.most_common():
+        li="".join(f'<li style="margin:0 0 8px"><a href="tools/{x["slug"]}.html"><b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(pr(x))}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span></li>'
+                   for x in sorted([x for x in items if x["category"]==c],key=lambda x:(-(x.get("github_stars") or 0),x["name"].lower())))
+        sec+=f'<h2 id="{catslug(c)}" class="has-cico" style="font-size:18px;margin:32px 0 10px">{cico(c)}{e(c[0].upper()+c[1:])} <span style="color:var(--muted);font-weight:400">({n})</span></h2><p style="margin:0 0 10px;font-size:14px"><a href="categories/{catslug(c)}.html">All {e(c)} tools →</a></p><ul style="list-style:none;padding:0;margin:0">{li}</ul>'
+    body=('<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free AI agent tools</h1>'
+          f'<p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout, plus {len(items)} free and open-source AI agent tools from our directory, grouped by category.</p>'
+          '<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'+feat+
+          f'<h2 style="font-size:18px;margin:32px 0 8px">Free and open-source tools in the directory</h2><p style="font-size:14px;color:var(--muted)">Included when the pricing the maker states says open source, open weights or open standard, free, a free tier or plan, or freemium. Open-source tools can still have paid cloud plans or need a paid model API key. Check each official site.</p><p style="font-size:14px">{jump}</p>'
+          +sec+'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Listings marked discontinued are left out. Within each category, tools are sorted by GitHub stars where known.</p></section>')
+    ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
+        "hasPart":[{"@type":"WebApplication","name":"AgentScout AI Image Generator","url":B+"generate.html","isAccessibleForFree":True,"applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]},
+        {"@type":"ItemList","numberOfItems":len(items)+1,"itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout AI Image Generator","url":B+"generate.html"}]+[{"@type":"ListItem","position":i+2,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate([y for c,_ in cats.most_common() for y in sorted([z for z in items if z["category"]==c],key=lambda z:(-(z.get("github_stars") or 0),z["name"].lower()))])]},
+        {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Free tools","item":canon}]}]}
     open("free-tools.html","w").write(shell("",title,desc,canon,body,ld))
     p="categories/vision.html"; v=open(p).read()
     if "gencall" not in v: v=v.replace('</p><div class="grid">','</p><a class="gencall" href="../generate.html">✨ Try AgentScout\'s free AI image generator →</a><div class="grid">',1); open(p,"w").write(v)
