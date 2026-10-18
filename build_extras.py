@@ -8,6 +8,8 @@ def su(u):
 PAIRS=[("claude-code","openai-codex-cli"),("cursor","windsurf"),("cline","roo-code"),("langgraph","crewai"),("crewai","autogen"),
 ("browser-use","stagehand"),("exa","tavily"),("livekit-agents","pipecat"),("vapi","retell-ai"),("n8n","make"),("dify","flowise"),
 ("langfuse","langsmith"),("e2b","modal"),("bolt","v0")]
+NEW=json.load(open("compare_new.json")); NEW.pop("_note",None)  # Oct 18 batch: recommendation copy, keyed by slug
+PAIRS+=[tuple(k.split("-vs-")) for k in NEW]
 def ico(x,d="../",cls=""):
     L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" onerror="this.remove()">' if x.get("logo") else ""
     return f'<span class="ico {cls}"><span aria-hidden="true">{L}</span>{im}</span>'
@@ -73,20 +75,43 @@ def build(t):
             faq=[("How much does n8n cost?",f"As n8n states it: {A['pricing_detail']}. Check n8n's official pricing page for current cloud plans."),
                  ("Does Make have a free plan?",f"As Make states it: {Bt['pricing_detail']}. Check Make's official pricing page for current limits."),
                  ("Can I self-host n8n or Make?","Our n8n listing says it can be self-hosted or used in the cloud. Our Make listing describes it as a visual automation platform and doesn't list a self-host option.")]
+        N=NEW.get(s)
+        if N:
+            import build_rich; RA,RB=build_rich.R.get(a,{}),build_rich.R.get(b,{})
+            h1=f"{A['name']} vs {Bt['name']}: Which AI Agent Is Better in 2026?"; title=f"{h1} · AgentScout"
+            desc=f"{A['name']} vs {Bt['name']} (2026): pricing, open source, GitHub stars, key features and who each is best for, from AgentScout's verified listings."[:160]
+            def osl(x): return "Yes" if "open source" in (x.get("pricing_detail") or x["pricing"]).lower() else ("Public GitHub repo listed" if x.get("github") else "Not listed as open source")
+            def kf(x,R): return "; ".join(R["features"][:3]) if R.get("features") else x["description"]
+            def pr(x,R):
+                P=R.get("pricing") or {}
+                return ", ".join(f"{n} {p}" for n,p,_ in P["tiers"])+(f". {P['trial']}" if P.get("trial") else "") if P.get("tiers") else ""
+            faq=[(f"What is the difference between {A['name']} and {Bt['name']}?",f"{A['name']}: {A['description']} {Bt['name']}: {Bt['description']}"),
+                 (f"Is {A['name']} or {Bt['name']} open source?",f"{A['name']}: {osl(A)}. {Bt['name']}: {osl(Bt)}. Pricing as each maker states it: {A['name']}, {A.get('pricing_detail') or A['pricing']}; {Bt['name']}, {Bt.get('pricing_detail') or Bt['pricing']}."),
+                 (f"Should I choose {A['name']} or {Bt['name']}?",f"Choose {A['name']} if {N['choose'][0]} Choose {Bt['name']} if {N['choose'][1]}")]
         faqh="".join(f"<h3 style=\"font-size:15px;margin:18px 0 4px\">{e(q)}</h3><p style=\"margin:0\">{e(a_)}</p>" for q,a_ in faq)
         faqh=f'<h2 style="font-size:18px;margin:32px 0 4px">FAQ</h2>{faqh}' if faq else ""
         rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · <a href="../categories/{catslug(A["category"])}.html">More {e(A["category"])} tools</a> · <a href="../best/mcp-servers.html">Best MCP servers</a></p>'
 
         fa,fb=facts(A),facts(Bt)
+        if N:
+            fa=[(k,(v or A["pricing"]) if k.startswith("Pricing") else v) for k,v in fa]; fb=[(k,(v or Bt["pricing"]) if k.startswith("Pricing") else v) for k,v in fb]
+            def pm(x,R): return "Paid plans with a free trial" if (R.get("pricing") or {}).get("free") is False and R["pricing"].get("trial") else x["pricing"]
+            fa=[(k,pm(A,RA) if k.startswith("Pricing") and v==A["pricing"] else v) for k,v in fa]; fb=[(k,pm(Bt,RB) if k.startswith("Pricing") and v==Bt["pricing"] else v) for k,v in fb]
+            ex=[("Pricing model",pm(A,RA),pm(Bt,RB)),("Open source",osl(A),osl(Bt))]
+            if pr(A,RA) or pr(Bt,RB): ex.append(("Plans (official pricing page)",pr(A,RA) or "Not listed",pr(Bt,RB) or "Not listed"))
+            ex+=[("Key features",kf(A,RA),kf(Bt,RB)),("Best for",N["best"][0],N["best"][1])]
+            fa=fa[:1]+[(k,va) for k,va,_ in ex]+fa[1:]; fb=fb[:1]+[(k,vb) for k,_,vb in ex]+fb[1:]
+            rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · '+" · ".join(f'<a href="../categories/{catslug(c)}.html">More {e(c)} tools</a>' for c in dict.fromkeys([A["category"],Bt["category"]]))+' · <a href="../best/mcp-servers.html">Best MCP servers</a></p>'
+            faqh=f'<h2 style="font-size:18px;margin:32px 0 8px">Our recommendation</h2><p style="margin:0 0 8px"><b>Choose <a href="../tools/{a}.html">{e(A["name"])}</a> if</b> {e(N["choose"][0])}</p><p style="margin:0"><b>Choose <a href="../tools/{b}.html">{e(Bt["name"])}</a> if</b> {e(N["choose"][1])}</p>'+faqh
         rows="".join(f"<tr><th>{e(k)}</th><td>{e(va)}</td><td>{e(vb)}</td></tr>" for (k,va),(_,vb) in zip(fa,fb))
         shared=sorted(set(A["use_cases"])&set(Bt["use_cases"]))
         sh=f"Both are listed for: {', '.join(shared)}." if shared else "They're listed under different use cases, so check which fits your job."
         body=f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Compare</a> / {e(A["name"])} vs {e(Bt["name"])}</div>
 <section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>
-<p class="lede" style="margin-left:0;text-align:left">Two closely related {e(A["category"])} tools, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
+<p class="lede" style="margin-left:0;text-align:left">{f"Two closely related {e(A['category'])} tools" if A["category"]==Bt["category"] else f"A {e(A['category'])} tool and a {e(Bt['category'])} tool that overlap"}, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
 <div class="tablewrap"><table class="cmp"><thead><tr><th></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a></th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
 <tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td></tr></tbody></table></div>
-<p class="disclose">We don't benchmark tools or rank one above the other here. Check each official site for current pricing and features before you choose.</p>
+<p class="disclose">{"We don't run benchmarks. The recommendation below is based on the listing facts in this table, not on testing." if N else "We don't benchmark tools or rank one above the other here."} Check each official site for current pricing and features before you choose.</p>
 {faqh}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
         ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
             "about":[{"@type":"SoftwareApplication","name":x["name"],"url":x["url"],"applicationCategory":x["category"]} for x in (A,Bt)]},
