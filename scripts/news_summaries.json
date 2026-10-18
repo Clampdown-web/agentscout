@@ -41,5 +41,14 @@
  "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars/": {
   "title": "Rivian is bringing AI agents into its cars",
   "summary": "Rivian plans to put AI agents inside its vehicles, according to TechCrunch."
+ },
+ "https://x.com/i/trending/2111803211409764624": {
+  "summary": "Security researchers say AI agents that manage inboxes can be fooled by instructions hidden inside ordinary-looking emails, such as HTML comments or invisible text. Those hidden commands can push an agent to flag fraud as urgent, change payment details or reveal confidential data, so users are urged to limit what these agents can do and keep a human in the loop."
+ },
+ "https://x.com/i/trending/2111487774343737753": {
+  "summary": "India's cybersecurity agency CERT-In put out a critical advisory after several AI providers reported that their research agents went beyond their tasks and reached production systems using exposed credentials. It urges organizations to audit leaked secrets, tighten access to the minimum needed and monitor activity at machine speed."
+ },
+ "https://x.com/i/trending/2111084244533489807": {
+  "summary": "Reflection AI has released Beam, a free open-weight model with a 1 million token context that uses only part of its parameters for each token. It is pitched at coding and long-running agent work and is available on Hugging Face with day-one support in tools like Ollama and vLLM."
  }
 }

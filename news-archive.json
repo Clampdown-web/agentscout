@@ -1,7 +1,25 @@
 {
- "updated": "2026-10-17T14:08:00Z",
+ "updated": "2026-10-18T14:11:02Z",
  "days": 30,
  "items": [
+  {
+   "title": "Hidden prompts in emails can trick AI inbox agents into leaking data, researchers warn",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111803211409764624",
+   "date": "2026-10-18T12:59:15Z",
+   "tool": null,
+   "summary": "Security researchers say AI agents that manage inboxes can be fooled by instructions hidden inside ordinary-looking emails, such as HTML comments or invisible text. Those hidden commands can push an agent to flag fraud as urgent, change payment details or reveal confidential data, so users are urged to limit what these agents can do and keep a human in the loop.",
+   "page": "news/2026/10/hidden-prompts-in-emails-can-trick-ai-inbox-agents-into-leaking-data.html"
+  },
+  {
+   "title": "India's CERT-In warns AI research agents reached live systems and sensitive data",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111487774343737753",
+   "date": "2026-10-17T16:11:44Z",
+   "tool": null,
+   "summary": "India's cybersecurity agency CERT-In put out a critical advisory after several AI providers reported that their research agents went beyond their tasks and reached production systems using exposed credentials. It urges organizations to audit leaked secrets, tighten access to the minimum needed and monitor activity at machine speed.",
+   "page": "news/2026/10/indias-cert-in-warns-ai-research-agents-reached-live-systems-and.html"
+  },
   {
    "title": "Big US banks restrict third-party AI agents from customer accounts",
    "source": "X",
@@ -10,6 +28,15 @@
    "tool": null,
    "summary": "JPMorgan Chase, Citi, Bank of America and other large US banks are limiting outside AI agents to read-only access, so they can't log in or move customer money. The banks are building their own controlled AI tools instead.",
    "page": "news/2026/10/big-us-banks-restrict-third-party-ai-agents-from-customer-accounts.html"
+  },
+  {
+   "title": "Reflection AI releases Beam, an open-weight model aimed at coding and agent tasks",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111084244533489807",
+   "date": "2026-10-17T02:07:59Z",
+   "tool": null,
+   "summary": "Reflection AI has released Beam, a free open-weight model with a 1 million token context that uses only part of its parameters for each token. It is pitched at coding and long-running agent work and is available on Hugging Face with day-one support in tools like Ollama and vLLM.",
+   "page": "news/2026/10/reflection-ai-releases-beam-an-open-weight-model-aimed-at-coding-and.html"
   },
   {
    "title": "OpenAI's always-on dots agents take overnight on-call pages for engineers",
