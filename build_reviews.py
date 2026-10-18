@@ -34,6 +34,14 @@ def section(x,d,V):
         f'<p style="margin:14px 0 0"><button type="submit" class="btn primary">Submit rating</button></p><p class="rv-msg" role="status" aria-live="polite"></p>'
         f'<p class="rv-note muted">Star ratings count right away; written reviews appear after a quick check. One rating per tool per visitor. Reviews are from site visitors, not verified users. <a href="../privacy.html#reviews">How reviews work</a></p></form>'
         f'<script src="../reviews.js?v={V}" defer></script></section>')
+def top(x,d):
+    """Compact rating line under the tool name (Oct 18 2026): average + count, or 'No ratings yet', and a jump link to #reviews.
+    Fixed min-height so reviews.js refreshing it never shifts the layout."""
+    c=(d or {}).get("count",0)
+    summ=(f'<a class="rv-topsum" href="#reviews" style="display:inline-flex;align-items:center;gap:6px;color:inherit;text-decoration:none"><span class="rv-stars" style="--r:{d["avg"]};font-size:15px" aria-hidden="true">★★★★★</span><span><b>{d["avg"]:.1f}</b> <span class="muted">({c} rating{"s" if c!=1 else ""})</span></span><span class="sr">Rated {d["avg"]:.1f} out of 5 from {c} rating{"s" if c!=1 else ""}</span></a>'
+          if c else '<span class="muted rv-topsum">No ratings yet</span>')
+    return (f'<div class="rv-top" style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;min-height:24px;line-height:24px;margin:-6px 0 12px;font-size:14px">'
+            f'{summ}<span class="muted" aria-hidden="true">·</span><a class="rv-write" href="#reviews">Write a review</a></div>')
 def run(t):
     import build_tasks; V=build_tasks.ASSET_V
     D=data(); bs={x["slug"]:x for x in t}; ld_n=0; ins=0
@@ -43,6 +51,8 @@ def run(t):
         h=open(f).read(); o=h
         h=re.sub(r'<section id="reviews".*?</section>','',h,flags=re.S)
         sec=section(x,D.get(s0),V)
+        h=re.sub(r'<div class="rv-top".*?</a></div>','',h,count=1,flags=re.S)
+        h=h.replace('</h1>','</h1>'+top(x,D.get(s0)),1)
         h,k=re.subn(r'(<h2 style="font-size:16px;margin-bottom:12px">[^<]*alternatives</h2>)',lambda m:sec+m.group(1),h,count=1)
         if not k: h,k=re.subn(r'(<h2 style="font-size:16px;margin:36px 0 6px">Badge for makers</h2>)',lambda m:sec+m.group(1),h,count=1)
         ins+=k

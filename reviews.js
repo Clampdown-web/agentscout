@@ -21,6 +21,11 @@
     var s = $(".rv-sum");
     if (d.count > 0) s.innerHTML = stars(d.avg) + ' <span class="rv-text"><b>' + esc(d.avg.toFixed(1)) + '</b> out of 5 · ' + d.count + (d.count === 1 ? " rating" : " ratings") + '</span>';
     else s.innerHTML = '<span class="rv-text">No ratings yet. Be the first to review ' + esc(name) + '.</span>';
+    var T = document.querySelector(".rv-top .rv-topsum");  /* rating line under the tool name */
+    if (T) {
+      var h = d.count > 0 ? '<a class="rv-topsum" href="#reviews" style="display:inline-flex;align-items:center;gap:6px;color:inherit;text-decoration:none"><span class="rv-stars" style="--r:' + (+d.avg || 0) + ';font-size:15px" aria-hidden="true">★★★★★</span><span><b>' + esc(d.avg.toFixed(1)) + '</b> <span class="muted">(' + d.count + (d.count === 1 ? " rating" : " ratings") + ')</span></span><span class="sr">Rated ' + esc(d.avg.toFixed(1)) + ' out of 5 from ' + d.count + (d.count === 1 ? " rating" : " ratings") + '</span></a>' : '<span class="muted rv-topsum">No ratings yet</span>';
+      T.outerHTML = h;
+    }
     var L = $(".rv-list"), R = d.reviews || [];
     L.innerHTML = R.map(function (r) {
       return '<li class="rv-item">' + stars(r.stars) + '<span class="sr">' + r.stars + ' out of 5 stars</span> <b class="rv-who">' + esc(r.name || "Anonymous") + '</b> <time class="muted" datetime="' + esc(new Date(r.ts).toISOString()) + '">' + esc(date(r.ts)) + '</time><p>' + esc(r.text) + '</p></li>';
