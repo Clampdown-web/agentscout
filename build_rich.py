@@ -34,6 +34,41 @@ def apply(out,x,t,catslug,prim,B):
     fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
     return out,(sec,app,fq,title)
 
+OSI_NOTE="(verified on GitHub)"
+def _mdy(d):
+    import datetime
+    try: return datetime.date.fromisoformat(d).strftime("%b %-d, %Y")
+    except Exception: return d or ""
+def _facts(n,r):
+    """Verified facts block (licence, repo, stars, status) and FAQ items. Only fields present in r["facts"] are shown."""
+    F=r.get("facts") or {}; li=[]; fq=[]
+    lic=F.get("license")
+    if lic:
+        li.append(("Open source",(f"Yes ({re.sub(r'^the ','',lic)})" if F.get("osi") else f"Source-available, not OSI open source: {lic}") if F.get("osi") is not False or "Proprietary" not in lic else f"No ({lic})"))
+        fq.append((f"Is {n} open source?",(f"Yes. {n} is released under {lic}, according to its GitHub repository." if F.get("osi") else (f"No. {n}'s code is published under {lic}, which is not an OSI-approved open-source licence." if "Proprietary" not in lic else f"No. {n}'s GitHub repository states: {lic}."))))
+    if F.get("repo"):
+        st=F.get("stars"); li.append(("GitHub",f'<a href="{e(F["repo"])}" target="_blank" rel="noopener">{e(F["repo"].replace("https://github.com/",""))}</a>'+(f" · {st:,} stars" if st else "")+(f" · {F['forks']:,} forks" if F.get("forks") else "")+(f" (as of {_mdy(F.get('checked'))})" if st else ""),True))
+    if F.get("archived"): li.append(("Status","Archived: the GitHub repository is read-only and no longer maintained"))
+    if F.get("status"): li.append(("Status",F["status"]))
+    return li,fq
+def _pricing(n,r):
+    P=r.get("pricing_v")
+    if not P: return "",[],None
+    tiers=P["tiers"]; ck=_mdy(P.get("checked"))
+    html_=(f'{H2}{e(n)} pricing</h2><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(a)}</strong>: {e(b)}{(' · '+e(c)) if c else ''}</li>" for a,b,c in tiers)+"</ul>"
+        +(f'<p style="margin:0 0 8px">{e(P["note"])}</p>' if P.get("note") else "")
+        +f'<p class="muted" style="margin:0 0 28px">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
+    plans="; ".join(f"{a}: {b}" for a,b,c in tiers)
+    fq=[(f"How much does {n} cost?",f"As of {ck}, {n}'s official pricing page lists: {plans}."+(" "+P["note"] if P.get("note") else ""))]
+    free=[a for a,b,c in tiers if re.match(r"(?i)^(\$0(?![\d.])|free\b)",b)]
+    isfree=(f"Yes. {n} has a free option ({', '.join(free)}), according to its pricing page (checked {ck})." if P.get("free") and free else f"{n} doesn't list a free plan on its pricing page (checked {ck}). Plans: {plans}.")
+    offers=[]
+    for a,b,c in tiers:
+        m=re.match(r"^(?:from )?\$([\d,]+(?:\.\d+)?)(?:\s*/\s*mo|/mo|/month| per month|\b)",b)
+        if (m and ("/mo" in b or "month" in b or re.match(r"^\$0(?![\d.])",b.strip()))) or re.match(r"(?i)^free$",b):
+            offers.append({"@type":"Offer","name":f"{n} {a}","price":(m.group(1).replace(",","") if m else "0"),"priceCurrency":"USD","url":P["src"],"description":b+((" · "+c) if c else "")})
+    return html_,fq+[("__free__",isfree)],offers
+
 def lite(out,x,t,catslug,prim,B,r):
     """Lighter rich section (Oct 2026 enrichment): grounded description, who it's for, key features, FAQ.
     Keeps the existing About paragraph (additive) and never states pricing beyond the directory's maker-stated label."""
@@ -41,16 +76,24 @@ def lite(out,x,t,catslug,prim,B,r):
     alts=sorted([y for y in t if y is not x and y["category"]==cat and "discontinu" not in (y.get("maturity","")+y["description"]).lower()],key=lambda y:(-(y.get("github_stars") or 0),y["name"].lower()))[:5]
     altl=", ".join(f'<a href="{y["slug"]}.html">{e(y["name"])}</a>' for y in alts); altp=", ".join(y["name"] for y in alts)
     pq=f"{n}'s pricing, as the maker states it: {pd}."+(" Open-source tools are free to use, though you may still pay for model API usage or a hosted plan." if re.match(r"(?i)(free, )?open[- ]?source",pd) else "")+" Check the official site for current plans."
-    faq=[(f"What is {n}?",r["long"][0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+[tuple(q) for q in r.get("faq",[])]
+    fli,ffq=_facts(n,r); phtml,pfq,offers=_pricing(n,r)
+    isfree=[a for q,a in pfq if q=="__free__"]; pfq=[(q,a) for q,a in pfq if q!="__free__"]
+    if isfree: pq=isfree[0]
+    faq=[(f"What is {n}?",r["long"][0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+pfq+ffq+[tuple(q) for q in r.get("faq",[])]
     if altp: faq.append((f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}."))
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
       +(f'<p class="muted" style="margin:0 0 28px">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
-      +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")
+      +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
+      +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+phtml
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
     app={"@type":"SoftwareApplication","name":n,"url":prim,"description":" ".join(r["long"])[:500],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","applicationSubCategory":cat}
-    if re.match(r"(?i)(free, )?open[- ]?source",pd): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":pd}
+    # Offer only when the price is verified: official pricing page tiers, or a verified OSI open-source licence (free to use)
+    F=r.get("facts") or {}
+    if offers: app["offers"]=offers
+    elif F.get("osi") and F.get("license"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",F["license"])+")"}
+    if F.get("repo"): app["sameAs"]=F["repo"]
     if r.get("features"): app["featureList"]=r["features"]
     fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
     return out,(sec,app,fq,f"{n}: what it does, pricing and alternatives","lite")

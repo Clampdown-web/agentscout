@@ -170,7 +170,8 @@ def sitewide(t):
         if f.startswith("tools/"):
             x=bys.get(os.path.basename(f)[:-5]); s=re.sub(r'<p class="goodfor".*?</p>','',s)
             ts=tasks_for(x,m) if x else []
-            if ts: s=s.replace('style="display:contents"></span></div>','style="display:contents"></span></div><p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+", ".join(f'<a href="../tasks/{T[0]}.html">{e(T[1])}</a>' for T in ts[:8])+'</p>',1)
+            # anchor = end of the action row, with or without the Share button (build_share) inside it
+            if ts: s=re.sub(r'(style="display:contents"></span>(?:<span class="sharewrap">.*?</span></span>)?</div>)',lambda mm:mm.group(1)+'<p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+", ".join(f'<a href="../tasks/{T[0]}.html">{e(T[1])}</a>' for T in ts[:8])+'</p>',s,count=1,flags=re.S)
         # Anonymous analytics (track.js) on every page, right after app.js
         # Privacy pages + choices in every footer
         s=s.replace('<p><a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> · ©',f'<p><a href="{d}about.html">About</a> · <a href="{d}privacy.html">Privacy</a> · <a href="{d}privacy.html#privacy-choices" data-consent-open>Privacy choices</a> · <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> · ©')

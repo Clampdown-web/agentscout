@@ -451,7 +451,15 @@
   "sources": [
    "https://github.com/anomalyco/opencode"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/anomalyco/opencode",
+   "stars": 215707,
+   "forks": 28899,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "claude-code": {
   "kind": "lite",
@@ -471,7 +479,33 @@
   "sources": [
    "https://github.com/anthropics/claude-code"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/anthropics/claude-code",
+   "stars": 152114,
+   "forks": 26935,
+   "checked": "2026-10-18",
+   "license": "Proprietary (All rights reserved; Anthropic Commercial Terms of Service)",
+   "osi": false
+  },
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Pro",
+     "$20/mo",
+     "$17/mo with annual billing; Claude Code included"
+    ],
+    [
+     "Max",
+     "from $100/mo",
+     "5x or 20x Pro usage; Claude Code included"
+    ]
+   ],
+   "note": "Claude Code is included in all paid Claude plans and shares their usage limits. Team, Enterprise and API pricing are listed separately.",
+   "src": "https://claude.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "openai-codex-cli": {
   "kind": "lite",
@@ -491,7 +525,15 @@
   "sources": [
    "https://github.com/openai/codex"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/openai/codex",
+   "stars": 129680,
+   "forks": 20415,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "graphify": {
   "kind": "lite",
@@ -512,7 +554,15 @@
   "sources": [
    "https://github.com/Graphify-Labs/graphify"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Graphify-Labs/graphify",
+   "stars": 127926,
+   "forks": 12335,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "gemini-cli": {
   "kind": "lite",
@@ -531,7 +581,15 @@
   "sources": [
    "https://github.com/google-gemini/gemini-cli"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/google-gemini/gemini-cli",
+   "stars": 107433,
+   "forks": 14732,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "claude-mem": {
   "kind": "lite",
@@ -551,7 +609,15 @@
   "sources": [
    "https://github.com/thedotmack/claude-mem"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/thedotmack/claude-mem",
+   "stars": 101473,
+   "forks": 8898,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "orca": {
   "kind": "lite",
@@ -572,7 +638,15 @@
   "sources": [
    "https://github.com/stablyai/orca"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/stablyai/orca",
+   "stars": 95722,
+   "forks": 6127,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "openhands": {
   "kind": "lite",
@@ -592,7 +666,15 @@
   "sources": [
    "https://github.com/OpenHands/OpenHands"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/OpenHands/OpenHands",
+   "stars": 91166,
+   "forks": 12098,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "cline": {
   "kind": "lite",
@@ -613,7 +695,15 @@
   "sources": [
    "https://github.com/cline/cline"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/cline/cline",
+   "stars": 70489,
+   "forks": 7697,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "strix": {
   "kind": "lite",
@@ -633,7 +723,15 @@
   "sources": [
    "https://github.com/usestrix/strix"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/usestrix/strix",
+   "stars": 69293,
+   "forks": 7688,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "open-interpreter": {
   "kind": "lite",
@@ -653,7 +751,15 @@
   "sources": [
    "https://github.com/openinterpreter/openinterpreter"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/openinterpreter/openinterpreter",
+   "stars": 68600,
+   "forks": 5904,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "goose": {
   "kind": "lite",
@@ -675,7 +781,15 @@
    "https://github.com/aaif-goose/goose",
    "https://goose-docs.ai/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/aaif-goose/goose",
+   "stars": 55388,
+   "forks": 6456,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "herdr": {
   "kind": "lite",
@@ -696,7 +810,15 @@
   "sources": [
    "https://github.com/herdrdev/herdr"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/herdrdev/herdr",
+   "stars": 44558,
+   "forks": 3542,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "codewhale": {
   "kind": "lite",
@@ -716,7 +838,15 @@
   "sources": [
    "https://github.com/codewhale-hq/Codewhale"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/codewhale-hq/Codewhale",
+   "stars": 41100,
+   "forks": 3568,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "oh-my-claudecode": {
   "kind": "lite",
@@ -735,7 +865,15 @@
   "sources": [
    "https://github.com/Yeachan-Heo/oh-my-claudecode"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+   "stars": 40020,
+   "forks": 3588,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "deepseek-reasonix": {
   "kind": "lite",
@@ -755,7 +893,15 @@
   "sources": [
    "https://github.com/esengine/DeepSeek-Reasonix"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/esengine/DeepSeek-Reasonix",
+   "stars": 35838,
+   "forks": 2461,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "oh-my-pi": {
   "kind": "lite",
@@ -775,7 +921,15 @@
   "sources": [
    "https://github.com/can1357/oh-my-pi"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/can1357/oh-my-pi",
+   "stars": 35797,
+   "forks": 3935,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "pentagi": {
   "kind": "lite",
@@ -796,7 +950,15 @@
   "sources": [
    "https://github.com/vxcontrol/pentagi"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/vxcontrol/pentagi",
+   "stars": 30965,
+   "forks": 4797,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "context-mode": {
   "kind": "lite",
@@ -816,7 +978,15 @@
   "sources": [
    "https://github.com/mksglu/context-mode"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/mksglu/context-mode",
+   "stars": 30567,
+   "forks": 2224,
+   "checked": "2026-10-18",
+   "license": "Elastic License 2.0 (source-available)",
+   "osi": false
+  }
  },
  "agentmemory": {
   "kind": "lite",
@@ -836,7 +1006,15 @@
   "sources": [
    "https://github.com/rohitg00/agentmemory"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/rohitg00/agentmemory",
+   "stars": 29633,
+   "forks": 2609,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "crush": {
   "kind": "lite",
@@ -857,7 +1035,15 @@
   "sources": [
    "https://github.com/charmbracelet/crush"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/charmbracelet/crush",
+   "stars": 28688,
+   "forks": 2341,
+   "checked": "2026-10-18",
+   "license": "Functional Source License 1.1, MIT Future License (FSL-1.1-MIT)",
+   "osi": false
+  }
  },
  "qwen-code": {
   "kind": "lite",
@@ -877,7 +1063,15 @@
   "sources": [
    "https://github.com/QwenLM/qwen-code"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/QwenLM/qwen-code",
+   "stars": 28554,
+   "forks": 3218,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "vibe-kanban": {
   "kind": "lite",
@@ -1932,7 +2126,15 @@
   "sources": [
    "https://github.com/Aider-AI/aider"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Aider-AI/aider",
+   "stars": 49605,
+   "forks": 5070,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "amp": {
   "kind": "lite",
@@ -1998,20 +2200,66 @@
   "src_kind": "site",
   "long": [
    "Cursor is an AI code editor built around coding agents. You can hand off tasks to its agents, and our listing notes an agent mode and background agents.",
-   "It has a free tier plus paid plans."
+   "Its pricing page now sells Cursor together with X and Grok subscriptions: the $8 Plus plan uses only Grok models, while Premium and higher add cloud agents and automations, code hosting with AI code reviews, and third-party models at API list price."
   ],
   "who": "Developers who want an AI-first code editor with built-in agents rather than a terminal tool.",
   "features": [
-   "AI code editor",
-   "Agent mode",
-   "Background agents",
-   "Free tier plus paid plans"
+   "AI code editor with coding agents",
+   "Agent and Chat requests (limited on the Free plan)",
+   "Cloud agents and automations (Premium and up)",
+   "Code hosting and AI code reviews (Premium and up)",
+   "Third-party models at API list price, billed separately by usage",
+   "Teams plans with usage analytics, team-wide privacy settings and SCIM seat management (Enterprise)"
   ],
   "faq": [],
   "sources": [
-   "https://cursor.com"
+   "https://cursor.com",
+   "https://cursor.com/pricing"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "limited agent and Chat requests"
+    ],
+    [
+     "Plus",
+     "$8/mo",
+     "shared AI usage pool; only Grok models"
+    ],
+    [
+     "Premium",
+     "$30/mo",
+     "4x Plus usage, latest Grok models, cloud agents, AI code reviews, third-party models at API list price"
+    ],
+    [
+     "Super",
+     "$100/mo",
+     "15x Plus usage, priority model access"
+    ],
+    [
+     "Ultra",
+     "$200/mo",
+     "50x Plus usage"
+    ],
+    [
+     "Teams",
+     "$30+/user/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Cursor's plans are now combined with X/Grok subscriptions. Third-party model usage in Cursor is billed separately by usage.",
+   "src": "https://cursor.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "github-copilot": {
   "kind": "lite",
@@ -2031,7 +2279,35 @@
   "sources": [
    "https://github.com/features/copilot"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "2,000 completions a month, limited chat and agent usage"
+    ],
+    [
+     "Pro",
+     "$10/mo",
+     "1,500 monthly AI credits ($15 value)"
+    ],
+    [
+     "Pro+",
+     "$39/mo",
+     "access to frontier models, more included credits"
+    ],
+    [
+     "Max",
+     "$100/mo",
+     "early access to frontier models, the most included credits"
+    ]
+   ],
+   "note": "Free for verified students (Copilot Student), teachers and maintainers of popular open-source projects. Business and Enterprise plans are listed separately.",
+   "src": "https://github.com/features/copilot/plans",
+   "checked": "2026-10-18"
+  }
  },
  "kaneai": {
   "kind": "lite",
@@ -2112,7 +2388,15 @@
   "sources": [
    "https://github.com/NousResearch/hermes-agent"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/NousResearch/hermes-agent",
+   "stars": 254761,
+   "forks": 55399,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "deepseek-harness": {
   "kind": "lite",
@@ -2132,7 +2416,15 @@
   "sources": [
    "https://github.com/deepseek-ai/deepseek-harness"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/deepseek-ai/deepseek-harness",
+   "stars": 252467,
+   "forks": 30367,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "autogpt": {
   "kind": "lite",
@@ -2153,7 +2445,15 @@
   "sources": [
    "https://github.com/Significant-Gravitas/AutoGPT"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Significant-Gravitas/AutoGPT",
+   "stars": 187633,
+   "forks": 45912,
+   "checked": "2026-10-18",
+   "license": "MIT outside the autogpt_platform folder; the platform is under the Polyform Shield License",
+   "osi": false
+  }
  },
  "ragflow": {
   "kind": "lite",
@@ -2174,7 +2474,15 @@
   "sources": [
    "https://github.com/infiniflow/ragflow"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/infiniflow/ragflow",
+   "stars": 92395,
+   "forks": 11022,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "ruflo": {
   "kind": "lite",
@@ -2195,7 +2503,15 @@
   "sources": [
    "https://github.com/ruvnet/ruflo"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ruvnet/ruflo",
+   "stars": 76201,
+   "forks": 9010,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "metagpt": {
   "kind": "lite",
@@ -2215,7 +2531,15 @@
   "sources": [
    "https://github.com/FoundationAgents/MetaGPT"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/FoundationAgents/MetaGPT",
+   "stars": 70902,
+   "forks": 9022,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "crewai": {
   "kind": "lite",
@@ -2235,7 +2559,33 @@
   "sources": [
    "https://github.com/crewAIInc/crewAI"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/crewAIInc/crewAI",
+   "stars": 59817,
+   "forks": 8764,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Basic",
+     "Free",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "The CrewAI framework itself is open source (MIT).",
+   "src": "https://crewai.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "llamaindex": {
   "kind": "lite",
@@ -2255,7 +2605,15 @@
   "sources": [
    "https://github.com/run-llama/llama_index"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/run-llama/llama_index",
+   "stars": 52547,
+   "forks": 8371,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "langgraph": {
   "kind": "lite",
@@ -2275,7 +2633,15 @@
   "sources": [
    "https://github.com/langchain-ai/langgraph"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/langchain-ai/langgraph",
+   "stars": 43429,
+   "forks": 7401,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "agno": {
   "kind": "lite",
@@ -2295,7 +2661,15 @@
   "sources": [
    "https://github.com/agno-agi/agno"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/agno-agi/agno",
+   "stars": 42784,
+   "forks": 6151,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "openhuman": {
   "kind": "lite",
@@ -2315,7 +2689,15 @@
   "sources": [
    "https://github.com/tinyhumansai/openhuman"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/tinyhumansai/openhuman",
+   "stars": 42137,
+   "forks": 4160,
+   "checked": "2026-10-18",
+   "license": "the GNU GPL v3.0",
+   "osi": true
+  }
  },
  "pageindex": {
   "kind": "lite",
@@ -2335,7 +2717,15 @@
   "sources": [
    "https://github.com/VectifyAI/PageIndex"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/VectifyAI/PageIndex",
+   "stars": 39248,
+   "forks": 3408,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "copilotkit": {
   "kind": "lite",
@@ -2355,7 +2745,15 @@
   "sources": [
    "https://github.com/CopilotKit/CopilotKit"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/CopilotKit/CopilotKit",
+   "stars": 38087,
+   "forks": 4744,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "agentscope": {
   "kind": "lite",
@@ -2375,7 +2773,15 @@
   "sources": [
    "https://github.com/agentscope-ai/agentscope"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/agentscope-ai/agentscope",
+   "stars": 33441,
+   "forks": 3754,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "orkes": {
   "kind": "lite",
@@ -2395,7 +2801,15 @@
   "sources": [
    "https://github.com/conductor-oss/conductor"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/conductor-oss/conductor",
+   "stars": 32327,
+   "forks": 1033,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "langchain-deep-agents": {
   "kind": "lite",
@@ -2416,7 +2830,15 @@
   "sources": [
    "https://github.com/langchain-ai/deepagents"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/langchain-ai/deepagents",
+   "stars": 30379,
+   "forks": 4279,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "openai-agents-sdk-python": {
   "kind": "lite",
@@ -2437,7 +2859,15 @@
   "sources": [
    "https://github.com/openai/openai-agents-python"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/openai/openai-agents-python",
+   "stars": 30108,
+   "forks": 4984,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "smolagents": {
   "kind": "lite",
@@ -2458,7 +2888,15 @@
   "sources": [
    "https://github.com/huggingface/smolagents"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/huggingface/smolagents",
+   "stars": 29905,
+   "forks": 3094,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "haystack": {
   "kind": "lite",
@@ -3769,7 +4207,15 @@
   "sources": [
    "https://github.com/vercel/ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/vercel/ai",
+   "stars": 27371,
+   "forks": 5369,
+   "checked": "2026-10-18",
+   "license": "Apache-2.0",
+   "osi": true
+  }
  },
  "rea": {
   "kind": "lite",
@@ -3788,7 +4234,15 @@
   "sources": [
    "https://github.com/morluto/rea"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/morluto/rea",
+   "stars": 311851,
+   "forks": 79027,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "mcp-reference-servers": {
   "kind": "lite",
@@ -3807,7 +4261,15 @@
   "sources": [
    "https://github.com/modelcontextprotocol/servers"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/modelcontextprotocol/servers",
+   "stars": 91340,
+   "forks": 11805,
+   "checked": "2026-10-18",
+   "license": "MIT, moving to Apache-2.0 for new contributions",
+   "osi": true
+  }
  },
  "mem0": {
   "kind": "lite",
@@ -3827,7 +4289,43 @@
   "sources": [
    "https://github.com/mem0ai/mem0"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/mem0ai/mem0",
+   "stars": 67372,
+   "forks": 7944,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "Free",
+     ""
+    ],
+    [
+     "Starter",
+     "$19/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$249/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://mem0.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "context7": {
   "kind": "lite",
@@ -3847,7 +4345,38 @@
   "sources": [
    "https://github.com/upstash/context7"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/upstash/context7",
+   "stars": 63220,
+   "forks": 3107,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "1,000 API calls a month"
+    ],
+    [
+     "Pro",
+     "$10/seat/mo",
+     "2,000 API calls per seat, extra calls $5 per 1,000"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://context7.com/plans",
+   "checked": "2026-10-18"
+  }
  },
  "hindsight": {
   "kind": "lite",
@@ -3867,7 +4396,15 @@
   "sources": [
    "https://github.com/vectorize-io/hindsight"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/vectorize-io/hindsight",
+   "stars": 50959,
+   "forks": 6134,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "localai": {
   "kind": "lite",
@@ -3887,7 +4424,15 @@
   "sources": [
    "https://github.com/mudler/LocalAI"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/mudler/LocalAI",
+   "stars": 49611,
+   "forks": 4502,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "codebase-memory-mcp": {
   "kind": "lite",
@@ -3907,7 +4452,15 @@
   "sources": [
    "https://github.com/DeusData/codebase-memory-mcp"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/DeusData/codebase-memory-mcp",
+   "stars": 46797,
+   "forks": 3860,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "github-mcp-server": {
   "kind": "lite",
@@ -3927,7 +4480,15 @@
   "sources": [
    "https://github.com/github/github-mcp-server"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/github/github-mcp-server",
+   "stars": 33711,
+   "forks": 5296,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "cognee": {
   "kind": "lite",
@@ -3947,7 +4508,15 @@
   "sources": [
    "https://github.com/topoteretes/cognee"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/topoteretes/cognee",
+   "stars": 32453,
+   "forks": 3385,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "graphiti": {
   "kind": "lite",
@@ -3966,7 +4535,15 @@
   "sources": [
    "https://github.com/getzep/graphiti"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/getzep/graphiti",
+   "stars": 31936,
+   "forks": 3283,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "google-workspace-cli": {
   "kind": "lite",
@@ -3986,7 +4563,15 @@
   "sources": [
    "https://github.com/googleworkspace/cli"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/googleworkspace/cli",
+   "stars": 31627,
+   "forks": 1982,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "serena": {
   "kind": "lite",
@@ -4005,7 +4590,15 @@
   "sources": [
    "https://github.com/oraios/serena"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/oraios/serena",
+   "stars": 30352,
+   "forks": 2181,
+   "checked": "2026-10-18",
+   "license": "GPL-3.0-or-later for the Serena application; MIT for SolidLSP",
+   "osi": true
+  }
  },
  "chroma": {
   "kind": "lite",
@@ -4025,7 +4618,15 @@
    "https://github.com/chroma-core/chroma",
    "https://www.trychroma.com/"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/chroma-core/chroma",
+   "stars": 29521,
+   "forks": 2569,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "tencentdb-agent-memory": {
   "kind": "lite",
@@ -4045,7 +4646,15 @@
   "sources": [
    "https://github.com/TencentCloud/TencentDB-Agent-Memory"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+   "stars": 29531,
+   "forks": 2924,
+   "checked": "2026-10-18",
+   "license": "MIT",
+   "osi": true
+  }
  },
  "fastmcp": {
   "kind": "lite",
@@ -6346,7 +6955,38 @@
   "sources": [
    "https://github.com/ComposioHQ/composio"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ComposioHQ/composio",
+   "stars": 30622,
+   "forks": 4861,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "$0",
+     "100,000 tool calls, 50,000 triggers and 3 team members a month"
+    ],
+    [
+     "Pro",
+     "$29/mo",
+     "includes $29 of monthly usage credit"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://composio.dev/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "e2b": {
   "kind": "lite",
@@ -6366,7 +7006,38 @@
    "https://github.com/e2b-dev/E2B",
    "https://e2b.dev"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/e2b-dev/E2B",
+   "stars": 14422,
+   "forks": 1121,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "Free",
+     "$100 one-time usage credit, sessions up to 1 hour"
+    ],
+    [
+     "Pro",
+     "$150/mo",
+     "plus usage"
+    ],
+    [
+     "Enterprise",
+     "$3,000/mo minimum",
+     ""
+    ]
+   ],
+   "note": "Sandbox compute is billed per second (from $0.000014/s per vCPU).",
+   "src": "https://e2b.dev/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "gitlab-mcp": {
   "kind": "lite",
@@ -6482,7 +7153,30 @@
   "sources": [
    "https://modal.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Starter",
+     "$0 + compute",
+     "$30 a month in free credits, 3 seats"
+    ],
+    [
+     "Team",
+     "$250/mo + compute",
+     "$100 a month in free credits, unlimited seats"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "volume discounts"
+    ]
+   ],
+   "note": "Academics can apply for up to $10k in free compute credits.",
+   "src": "https://modal.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "model-context-protocol": {
   "kind": "lite",
@@ -6502,7 +7196,15 @@
    "https://github.com/modelcontextprotocol/modelcontextprotocol",
    "https://modelcontextprotocol.io"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+   "stars": 9469,
+   "forks": 1876,
+   "checked": "2026-10-18",
+   "license": "MIT, moving to Apache-2.0 for new contributions",
+   "osi": true
+  }
  },
  "new-relic-mcp": {
   "kind": "lite",
@@ -6716,7 +7418,15 @@
   "sources": [
    "https://github.com/browser-use/browser-use"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/browser-use/browser-use",
+   "stars": 118362,
+   "forks": 13130,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "crawl4ai": {
   "kind": "lite",
@@ -6735,7 +7445,15 @@
   "sources": [
    "https://github.com/unclecode/crawl4ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/unclecode/crawl4ai",
+   "stars": 85738,
+   "forks": 8910,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "chrome-devtools-mcp": {
   "kind": "lite",
@@ -6754,7 +7472,15 @@
   "sources": [
    "https://github.com/ChromeDevTools/chrome-devtools-mcp"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+   "stars": 53749,
+   "forks": 6862,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "ui-tars-desktop": {
   "kind": "lite",
@@ -6773,7 +7499,15 @@
   "sources": [
    "https://github.com/bytedance/UI-TARS-desktop"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/bytedance/UI-TARS-desktop",
+   "stars": 39311,
+   "forks": 3992,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "playwright-mcp": {
   "kind": "lite",
@@ -6792,7 +7526,15 @@
   "sources": [
    "https://github.com/microsoft/playwright-mcp"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/microsoft/playwright-mcp",
+   "stars": 38304,
+   "forks": 3276,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "opencli": {
   "kind": "lite",
@@ -6811,7 +7553,15 @@
   "sources": [
    "https://github.com/jackwener/OpenCLI"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/jackwener/OpenCLI",
+   "stars": 30389,
+   "forks": 3028,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "cua": {
   "kind": "lite",
@@ -6831,7 +7581,15 @@
   "sources": [
    "https://github.com/trycua/cua"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/trycua/cua",
+   "stars": 30056,
+   "forks": 2157,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "page-agent": {
   "kind": "lite",
@@ -6850,7 +7608,15 @@
   "sources": [
    "https://github.com/alibaba/page-agent"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/alibaba/page-agent",
+   "stars": 29475,
+   "forks": 2784,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "stagehand": {
   "kind": "lite",
@@ -7212,7 +7978,35 @@
   "sources": [
    "https://www.browserbase.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "1 browser hour, 15-minute sessions"
+    ],
+    [
+     "Developer",
+     "$20/mo",
+     "then $0.12 per extra browser hour"
+    ],
+    [
+     "Startup",
+     "$99/mo",
+     "then $0.10 per extra browser hour"
+    ],
+    [
+     "Scale",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Every plan scales past its included usage at the plan's rate.",
+   "src": "https://www.browserbase.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "holo4-h-company": {
   "kind": "lite",
@@ -7308,7 +8102,15 @@
   "sources": [
    "https://github.com/Panniantong/Agent-Reach"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Panniantong/Agent-Reach",
+   "stars": 98832,
+   "forks": 8702,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "deer-flow": {
   "kind": "lite",
@@ -7327,7 +8129,15 @@
   "sources": [
    "https://github.com/bytedance/deer-flow"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/bytedance/deer-flow",
+   "stars": 84047,
+   "forks": 11718,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "vane": {
   "kind": "lite",
@@ -7346,7 +8156,15 @@
   "sources": [
    "https://github.com/ItzCrazyKns/Vane"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ItzCrazyKns/Vane",
+   "stars": 37377,
+   "forks": 4165,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "storm": {
   "kind": "lite",
@@ -7365,7 +8183,15 @@
   "sources": [
    "https://github.com/stanford-oval/storm"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/stanford-oval/storm",
+   "stars": 31656,
+   "forks": 2985,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "gpt-researcher": {
   "kind": "lite",
@@ -7384,7 +8210,15 @@
   "sources": [
    "https://github.com/assafelovic/gpt-researcher"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/assafelovic/gpt-researcher",
+   "stars": 30153,
+   "forks": 4246,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "db-gpt": {
   "kind": "lite",
@@ -7673,7 +8507,35 @@
   "sources": [
    "https://elicit.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "limited Research Agent and Research Reports usage"
+    ],
+    [
+     "Pro",
+     "$49/user/mo",
+     "billed annually ($588 a year)"
+    ],
+    [
+     "Team",
+     "$169/user/mo",
+     "billed annually ($2,028 a year), 5x usage, collaboration, admin panel"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://elicit.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "exa": {
   "kind": "lite",
@@ -7692,7 +8554,35 @@
   "sources": [
    "https://exa.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Starter",
+     "Free",
+     "$10 in credits every month plus a $10 onboarding bonus"
+    ],
+    [
+     "Search API",
+     "from $4 per 1,000 requests",
+     ""
+    ],
+    [
+     "Contents",
+     "$1 per 1,000 pages",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Usage-based pricing per product (Search, Agent, Contents, Deep Search, Monitors).",
+   "src": "https://exa.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "firecrawl": {
   "kind": "lite",
@@ -7711,7 +8601,53 @@
   "sources": [
    "https://github.com/firecrawl/firecrawl"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/firecrawl/firecrawl",
+   "stars": 192569,
+   "forks": 10169,
+   "checked": "2026-10-18",
+   "license": "the GNU AGPL v3.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "1,000 credits a month"
+    ],
+    [
+     "Hobby",
+     "$16/mo",
+     "5,000 credits a month, billed yearly"
+    ],
+    [
+     "Standard",
+     "$83/mo",
+     "100,000 credits a month, billed yearly"
+    ],
+    [
+     "Growth",
+     "$333/mo",
+     "500,000 credits a month, billed yearly"
+    ],
+    [
+     "Scale",
+     "$599/mo",
+     "1,000,000 credits a month, billed yearly"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Prices shown are monthly with annual billing.",
+   "src": "https://www.firecrawl.dev/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "google-deep-review": {
   "kind": "lite",
@@ -7824,7 +8760,35 @@
   "sources": [
    "https://tavily.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Researcher",
+     "Free",
+     ""
+    ],
+    [
+     "Pay As You Go",
+     "$0.008/credit",
+     ""
+    ],
+    [
+     "Project",
+     "$30/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://www.tavily.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "mlflow": {
   "kind": "lite",
@@ -7844,7 +8808,15 @@
   "sources": [
    "https://github.com/mlflow/mlflow"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/mlflow/mlflow",
+   "stars": 28431,
+   "forks": 6469,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "arize-phoenix": {
   "kind": "lite",
@@ -8113,7 +9085,30 @@
   "sources": [
    "https://www.braintrust.dev"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Starter",
+     "$0/mo",
+     "$10 credits, 1 GB processed data, 10k scores, 14-day retention"
+    ],
+    [
+     "Pro",
+     "$249/mo",
+     "$100 credits, 5 GB processed data, 50k scores, 30-day retention"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Overage on processed data and scores is billed per unit.",
+   "src": "https://www.braintrust.dev/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "hamming-ai": {
   "kind": "lite",
@@ -8152,7 +9147,38 @@
   "sources": [
    "https://github.com/Helicone/helicone"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Helicone/helicone",
+   "stars": 6225,
+   "forks": 684,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "Free",
+     ""
+    ],
+    [
+     "Pro",
+     "$79/mo",
+     ""
+    ],
+    [
+     "Team",
+     "$799/mo",
+     ""
+    ]
+   ],
+   "note": "Discounts for startups (50% off the first year), non-profits, open-source companies and students.",
+   "src": "https://www.helicone.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "langfuse": {
   "kind": "lite",
@@ -8172,7 +9198,43 @@
   "sources": [
    "https://github.com/langfuse/langfuse"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/langfuse/langfuse",
+   "stars": 35983,
+   "forks": 4011,
+   "checked": "2026-10-18",
+   "license": "MIT, except the ee/ directories (commercial licence)",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Hobby",
+     "Free",
+     ""
+    ],
+    [
+     "Core",
+     "$29/mo",
+     "100k units a month, 90 days data access"
+    ],
+    [
+     "Pro",
+     "$199/mo",
+     "unlimited history"
+    ],
+    [
+     "Enterprise",
+     "$2499/mo",
+     ""
+    ]
+   ],
+   "note": "Additional usage is $8 per 100k units. A Teams add-on is $300/mo. Langfuse can also be self-hosted from its GitHub repo.",
+   "src": "https://langfuse.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "langsmith": {
   "kind": "lite",
@@ -8192,7 +9254,38 @@
   "sources": [
    "https://github.com/langchain-ai/langsmith-python"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/langchain-ai/langsmith-python",
+   "stars": 12,
+   "forks": 7,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Developer",
+     "$0/seat/mo",
+     "1 seat, then pay as you go"
+    ],
+    [
+     "Plus",
+     "$39/seat/mo",
+     "includes 10K traces, then pay as you go"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Usage is billed in LangChain Standard Units ($1.00 per LSU). Startup credits of up to $10,000 are offered.",
+   "src": "https://www.langchain.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "respan": {
   "kind": "lite",
@@ -8251,7 +9344,34 @@
   "sources": [
    "https://github.com/wandb/weave"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/wandb/weave",
+   "stars": 1142,
+   "forks": 177,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true,
+   "status": "wandb.ai pricing now redirects to CoreWeave Forge"
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "personal development"
+    ],
+    [
+     "Pro",
+     "from $60/mo",
+     "30-day free trial"
+    ]
+   ],
+   "note": "wandb.ai/site/pricing now redirects to CoreWeave Forge pricing; these are CoreWeave Forge's plans.",
+   "src": "https://coreweave.com/forge-pricing",
+   "checked": "2026-10-18"
+  }
  },
  "zenity": {
   "kind": "lite",
@@ -8561,7 +9681,45 @@
   "sources": [
    "https://elevenlabs.io"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     ""
+    ],
+    [
+     "Starter",
+     "$6/mo",
+     ""
+    ],
+    [
+     "Creator",
+     "$22/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$99/mo",
+     ""
+    ],
+    [
+     "Scale",
+     "$299/mo",
+     "3 seats"
+    ],
+    [
+     "Business",
+     "$990/mo",
+     ""
+    ]
+   ],
+   "note": "Monthly billing prices; first-month and yearly discounts are offered. These are ElevenLabs' account plans, which include Agents usage.",
+   "src": "https://elevenlabs.io/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "inworld": {
   "kind": "lite",
@@ -8600,7 +9758,43 @@
   "sources": [
    "https://github.com/livekit/agents"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/livekit/agents",
+   "stars": 14806,
+   "forks": 3954,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Build",
+     "$0/mo",
+     "no credit card required"
+    ],
+    [
+     "Ship",
+     "from $50/mo",
+     ""
+    ],
+    [
+     "Scale",
+     "from $500/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Agent sessions are also billed per minute (from $0.01 a minute), plus any model and telephony usage.",
+   "src": "https://livekit.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "retell-ai": {
   "kind": "lite",
@@ -8619,7 +9813,25 @@
   "sources": [
    "https://www.retellai.com"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Pay as you go",
+     "$0.07-$0.31/min",
+     "for AI voice agents; $10 in free credits, 20 concurrent calls included"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "no cap on concurrent calls"
+    ]
+   ],
+   "note": "No annual contract required. Chat agents are billed from $0.002 a message.",
+   "src": "https://www.retellai.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "simple-phones": {
   "kind": "lite",
@@ -8675,7 +9887,30 @@
   "sources": [
    "https://vapi.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Pay as you go",
+     "Usage-based",
+     "$5 in free credits to start"
+    ],
+    [
+     "Core",
+     "$29/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$999/mo minimum",
+     ""
+    ]
+   ],
+   "note": "Calls are billed per minute for hosting plus the transcriber, model, voice and telephony you choose.",
+   "src": "https://vapi.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "openclaw": {
   "kind": "lite",
@@ -8693,7 +9928,15 @@
   "sources": [
    "https://github.com/openclaw/openclaw"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/openclaw/openclaw",
+   "stars": 392315,
+   "forks": 82469,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "career-ops": {
   "kind": "lite",
@@ -8712,7 +9955,15 @@
   "sources": [
    "https://github.com/career-ops-hq/career-ops"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/career-ops-hq/career-ops",
+   "stars": 75389,
+   "forks": 14058,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "anythingllm": {
   "kind": "lite",
@@ -8732,7 +9983,33 @@
   "sources": [
    "https://github.com/Mintplex-Labs/anything-llm"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Mintplex-Labs/anything-llm",
+   "stars": 67262,
+   "forks": 7522,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Basic",
+     "$50/mo",
+     "AnythingLLM Cloud, bring your own LLM API key"
+    ],
+    [
+     "Pro",
+     "$99/mo",
+     ""
+    ]
+   ],
+   "note": "These are hosted cloud plans. The AnythingLLM desktop app and self-hosted version are open source (MIT).",
+   "src": "https://anythingllm.com/cloud",
+   "checked": "2026-10-18"
+  }
  },
  "cherry-studio": {
   "kind": "lite",
@@ -8752,7 +10029,15 @@
   "sources": [
    "https://github.com/CherryHQ/cherry-studio"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/CherryHQ/cherry-studio",
+   "stars": 52721,
+   "forks": 5079,
+   "checked": "2026-10-18",
+   "license": "the GNU AGPL v3.0",
+   "osi": true
+  }
  },
  "nanobot": {
   "kind": "lite",
@@ -8772,7 +10057,15 @@
   "sources": [
    "https://github.com/HKUDS/nanobot"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/HKUDS/nanobot",
+   "stars": 49141,
+   "forks": 8638,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "cowagent": {
   "kind": "lite",
@@ -8792,7 +10085,15 @@
   "sources": [
    "https://github.com/zhayujie/CowAgent"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/zhayujie/CowAgent",
+   "stars": 47449,
+   "forks": 10394,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "qwenpaw": {
   "kind": "lite",
@@ -8812,7 +10113,15 @@
   "sources": [
    "https://github.com/agentscope-ai/QwenPaw"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/agentscope-ai/QwenPaw",
+   "stars": 35819,
+   "forks": 3188,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "aionui": {
   "kind": "lite",
@@ -8832,7 +10141,15 @@
   "sources": [
    "https://github.com/iOfficeAI/AionUi"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/iOfficeAI/AionUi",
+   "stars": 33606,
+   "forks": 3490,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "nanoclaw": {
   "kind": "lite",
@@ -8851,7 +10168,15 @@
   "sources": [
    "https://github.com/nanocoai/nanoclaw"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/nanocoai/nanoclaw",
+   "stars": 30964,
+   "forks": 12857,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "agenticseek": {
   "kind": "lite",
@@ -9387,7 +10712,15 @@
   "sources": [
    "https://github.com/paperclipai/paperclip"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/paperclipai/paperclip",
+   "stars": 103772,
+   "forks": 17359,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "docsgpt": {
   "kind": "lite",
@@ -10124,7 +11457,38 @@
   "sources": [
    "https://github.com/langgenius/dify"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/langgenius/dify",
+   "stars": 158751,
+   "forks": 25091,
+   "checked": "2026-10-18",
+   "license": "Modified Apache License 2.0 with additional conditions",
+   "osi": false
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Sandbox",
+     "Free",
+     "for trying out Dify's core features"
+    ],
+    [
+     "Community",
+     "Free",
+     "open-source self-hosted edition"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Other Dify Cloud plans are listed on the pricing page.",
+   "src": "https://dify.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "langflow": {
   "kind": "lite",
@@ -10143,7 +11507,15 @@
   "sources": [
    "https://github.com/langflow-ai/langflow"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/langflow-ai/langflow",
+   "stars": 155784,
+   "forks": 10245,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "sim-studio": {
   "kind": "lite",
@@ -10163,7 +11535,15 @@
   "sources": [
    "https://github.com/simstudioai/sim"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/simstudioai/sim",
+   "stars": 29835,
+   "forks": 3862,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "activepieces": {
   "kind": "lite",
@@ -10351,7 +11731,30 @@
   "sources": [
    "https://www.lindy.ai"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "$50 in credits"
+    ],
+    [
+     "Paid",
+     "from $49.99/user/mo",
+     "5,000 credits a month per active user; top-ups $10 per 1,000 credits"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://www.lindy.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "make": {
   "kind": "lite",
@@ -10390,7 +11793,33 @@
   "sources": [
    "https://github.com/n8n-io/n8n"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/n8n-io/n8n",
+   "stars": 207852,
+   "forks": 61173,
+   "checked": "2026-10-18",
+   "license": "Sustainable Use License (fair-code; .ee files under the n8n Enterprise License)",
+   "osi": false
+  },
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Starter",
+     "$20/mo",
+     "billed annually"
+    ],
+    [
+     "Pro",
+     "$50/mo",
+     "billed annually"
+    ]
+   ],
+   "note": "These are n8n Cloud plans; Business and Enterprise plans are also offered. The source code is available under n8n's Sustainable Use License for self-hosting.",
+   "src": "https://n8n.io/pricing/",
+   "checked": "2026-10-18"
+  }
  },
  "relevance-ai": {
   "kind": "lite",
@@ -10464,7 +11893,30 @@
   "sources": [
    "https://zapier.com/agents"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "free forever"
+    ],
+    [
+     "Professional",
+     "from $19.99/mo",
+     ""
+    ],
+    [
+     "Team",
+     "from $69/mo",
+     ""
+    ]
+   ],
+   "note": "These are Zapier's account plans.",
+   "src": "https://zapier.com/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "nocobase": {
   "kind": "lite",
@@ -10540,7 +11992,43 @@
   "sources": [
    "https://github.com/stackblitz/bolt.new"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/stackblitz/bolt.new",
+   "stars": 16577,
+   "forks": 14832,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "1M tokens a month"
+    ],
+    [
+     "Pro",
+     "$25/mo",
+     "from 10M tokens a month, unused tokens roll over, custom domains"
+    ],
+    [
+     "Teams",
+     "$30/mo per member",
+     "team access management and admin controls"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "",
+   "src": "https://bolt.new/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "v0": {
   "kind": "lite",
@@ -10560,7 +12048,35 @@
   "sources": [
    "https://v0.app"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "$5 in one-time credits for new users"
+    ],
+    [
+     "Plus",
+     "$30/user/mo",
+     "$30 of monthly credits per user plus $2 of free daily credits"
+    ],
+    [
+     "Business",
+     "$100/user/mo",
+     ""
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Additional usage is billed per million tokens, depending on the v0 model.",
+   "src": "https://v0.app/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "openmontage": {
   "kind": "lite",
@@ -10579,7 +12095,15 @@
   "sources": [
    "https://github.com/calesthio/OpenMontage"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/calesthio/OpenMontage",
+   "stars": 69274,
+   "forks": 8920,
+   "checked": "2026-10-18",
+   "license": "the GNU AGPL v3.0",
+   "osi": true
+  }
  },
  "mindshub": {
   "kind": "lite",
@@ -10598,7 +12122,15 @@
   "sources": [
    "https://github.com/mindsdb/mindshub"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/mindsdb/mindshub",
+   "stars": 39800,
+   "forks": 6241,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "next-ai-draw-io": {
   "kind": "lite",
@@ -10617,7 +12149,15 @@
   "sources": [
    "https://github.com/DayuanJiang/next-ai-draw-io"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/DayuanJiang/next-ai-draw-io",
+   "stars": 36311,
+   "forks": 3850,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
  },
  "teable": {
   "kind": "lite",
@@ -11593,7 +13133,15 @@
   "sources": [
    "https://github.com/HKUDS/Vibe-Trading"
   ],
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/HKUDS/Vibe-Trading",
+   "stars": 35754,
+   "forks": 5804,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  },
  "blockscout-mcp": {
   "kind": "lite",
@@ -12756,7 +14304,40 @@
    "https://devin.ai/pricing"
   ],
   "cite": true,
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     "light agent quota, unlimited inline edits and Tab completions"
+    ],
+    [
+     "Pro",
+     "$20/mo",
+     "higher quotas, frontier models from OpenAI, Claude, Gemini and SpaceXAI"
+    ],
+    [
+     "Max",
+     "$200/mo",
+     "much higher quotas than Pro"
+    ],
+    [
+     "Teams",
+     "$80/mo",
+     "plus $40/mo per full dev seat, up to 200 users"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Extra usage on paid plans is billed at API pricing.",
+   "src": "https://devin.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "windsurf": {
   "kind": "lite",
@@ -12789,7 +14370,43 @@
    "https://devin.ai/pricing"
   ],
   "cite": true,
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "status": "Rebranded as Devin Desktop by Cognition; windsurf.com/pricing redirects to Devin's pricing"
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/mo",
+     ""
+    ],
+    [
+     "Pro",
+     "$20/mo",
+     ""
+    ],
+    [
+     "Max",
+     "$200/mo",
+     ""
+    ],
+    [
+     "Teams",
+     "$80/mo",
+     "plus $40/mo per full dev seat"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "windsurf.com/pricing now redirects to Devin's pricing page: Windsurf has been rebranded as Devin Desktop, and these are Devin's plans.",
+   "src": "https://devin.ai/pricing",
+   "checked": "2026-10-18"
+  }
  },
  "autogen": {
   "kind": "lite",
@@ -12816,7 +14433,16 @@
    "https://github.com/microsoft/autogen"
   ],
   "cite": true,
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/microsoft/autogen",
+   "stars": 61455,
+   "forks": 9294,
+   "checked": "2026-10-18",
+   "license": "MIT for code (LICENSE-CODE); CC-BY-4.0 for documentation",
+   "osi": true,
+   "status": "Microsoft's official README says AutoGen is archived and no longer actively maintained"
+  }
  },
  "comet": {
   "kind": "lite",
@@ -12963,7 +14589,16 @@
    "https://github.com/FlowiseAI/Flowise/discussions/6727"
   ],
   "cite": true,
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/FlowiseAI/Flowise",
+   "stars": 55514,
+   "forks": 25058,
+   "checked": "2026-10-18",
+   "archived": true,
+   "license": "Apache-2.0, except enterprise directories (commercial licence)",
+   "osi": true
+  }
  },
  "replit-agent": {
   "kind": "lite",
