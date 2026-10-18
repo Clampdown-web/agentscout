@@ -33,6 +33,7 @@ def build(t):
             "verdict":first(r'<p class="lede"[^>]*>(.*?)</p>',m),"note":first(r'<p class="disclose">(.*?)</p>',m),"rows":rows,"url":B+p})
     best=[]
     for p in sorted(glob.glob("best/*.html")):
+        if p.endswith("/index.html"): continue
         m=main_of(p); best.append({"slug":os.path.basename(p)[:-5],"title":first(r'<h1[^>]*>(.*?)</h1>',m),"lede":first(r'<p class="lede"[^>]*>(.*?)</p>',m),"tools":slugs(m),"url":B+p})
     try: news=json.load(open("news.json"))["items"]
     except Exception: news=[]
