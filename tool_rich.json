@@ -8153,5 +8153,950 @@
    "https://github.com/Helicone/helicone"
   ],
   "updated": "2026-10-18"
+ },
+ "langfuse": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Langfuse is an open-source LLM engineering platform that helps teams develop, monitor, evaluate and debug AI applications together.",
+   "It can be self-hosted in minutes, with a paid cloud as well."
+  ],
+  "who": "Teams building LLM apps who want open-source tracing and evals.",
+  "features": [
+   "Tracing",
+   "Evaluations",
+   "Prompt management",
+   "Self-host or cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/langfuse/langfuse"
+  ],
+  "updated": "2026-10-18"
+ },
+ "langsmith": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LangSmith is LangChain's platform for tracing, evaluating and monitoring LLM apps and agents.",
+   "The Python client nests every LLM call in a pipeline under a single trace in the LangSmith UI."
+  ],
+  "who": "Developers who need visibility into LLM apps, with or without LangChain.",
+  "features": [
+   "Tracing",
+   "Evals",
+   "Monitoring",
+   "Python client"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/langchain-ai/langsmith-python"
+  ],
+  "updated": "2026-10-18"
+ },
+ "respan": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Respan is an AI router with built-in observability and automated evals.",
+   "You point the SDK you already use at one endpoint to reach 1,000+ models, with automatic fallbacks, response caching and spend limits."
+  ],
+  "who": "Teams running LLM apps who want routing plus observability in one place.",
+  "features": [
+   "1,000+ models via one endpoint",
+   "Fallbacks and caching",
+   "Spend limits",
+   "Automated evals"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.respan.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "token-security": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Token Security secures non-human and AI agent identities.",
+   "Its site lists use cases including shadow AI and MCP server discovery, AI agent ownership and accountability, agent access control and right-sizing, and traceability across multi-agent systems."
+  ],
+  "who": "Enterprise security teams governing AI agent identities.",
+  "features": [
+   "Agent and non-human identity security",
+   "MCP server discovery",
+   "Access right-sizing",
+   "Multi-agent traceability"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.token.security"
+  ],
+  "updated": "2026-10-18"
+ },
+ "w-b-weave": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Weave is Weights & Biases' toolkit for tracing and evaluating AI agents.",
+   "Conversations, turns, LLM calls and tool calls show up in an Agents tab, and you can trace your own functions with @weave.op."
+  ],
+  "who": "Teams evaluating and debugging agents.",
+  "features": [
+   "Agent tracing",
+   "Function tracing with @weave.op",
+   "Evaluations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/wandb/weave"
+  ],
+  "updated": "2026-10-18"
+ },
+ "zenity": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Zenity lets you decide exactly what your AI agents can and can't do, evaluating every agent action in real time and steering it.",
+   "It positions itself as one platform for securing long-horizon AI agents."
+  ],
+  "who": "Enterprise security teams overseeing AI agents.",
+  "features": [
+   "Real-time action evaluation",
+   "Agent governance",
+   "Enterprise platforms"
+  ],
+  "faq": [],
+  "sources": [
+   "https://zenity.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pipecat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Pipecat is an open-source Python framework for building real-time voice and multimodal conversational agents, from a single voice agent to a full multi-agent system."
+  ],
+  "who": "Developers building voice agents.",
+  "features": [
+   "Real-time voice",
+   "Multimodal",
+   "Python framework",
+   "Multi-agent systems"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/pipecat-ai/pipecat"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ten-framework": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TEN is an open-source framework for real-time multimodal conversational AI.",
+   "Its examples include a low-latency, real-time voice assistant over RTC or WebSocket that you can extend with memory and voice activity detection; our listing also notes the TEN Agent demo."
+  ],
+  "who": "Developers building real-time voice agents.",
+  "features": [
+   "Real-time multimodal AI",
+   "RTC and WebSocket",
+   "Extensible voice assistant example"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TEN-framework/ten-framework"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vision-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Vision Agents, from Stream, is an open framework for multimodal AI agents that watch, listen and understand video.",
+   "It provides building blocks for low-latency video experiences powered by your choice of models."
+  ],
+  "who": "Developers building real-time voice and video agents.",
+  "features": [
+   "Video AI",
+   "Voice",
+   "Any model",
+   "Low latency"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/GetStream/Vision-Agents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dograh": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Dograh is an open-source, self-hostable alternative to Vapi and Retell for building production voice agents with a visual workflow builder.",
+   "You can test agents in minutes, and AI coding assistants can help design and edit them through MCP."
+  ],
+  "who": "Teams who want a self-hosted voice-agent platform.",
+  "features": [
+   "Visual call-flow builder",
+   "Self-hostable",
+   "Bring your own providers",
+   "MCP control"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/dograh-hq/dograh"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vocode": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Vocode is an open-source library for building voice-based LLM apps in minutes.",
+   "It supports real-time streaming conversations with LLMs that you can deploy to phone calls and apps."
+  ],
+  "who": "Developers building voice agents.",
+  "features": [
+   "Real-time streaming conversations",
+   "Phone calls",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/vocodedev/vocode-core"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vexa": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Vexa provides open-source meeting bots and real-time transcription, in the cloud or fully self-hosted.",
+   "A bot joins Google Meet, Microsoft Teams and Zoom calls and streams speaker-attributed transcripts in real time through its API."
+  ],
+  "who": "Developers building meeting transcription into their products.",
+  "features": [
+   "Meet, Teams and Zoom bots",
+   "Speaker-attributed transcripts",
+   "Self-host or cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Vexa-ai/vexa"
+  ],
+  "updated": "2026-10-18"
+ },
+ "voicemode": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "VoiceMode enables natural voice conversations with Claude Code and other MCP-capable agents.",
+   "The maker's point: voice isn't about replacing typing but being available when typing isn't."
+  ],
+  "who": "Developers who want to talk to their coding agent.",
+  "features": [
+   "Voice for Claude Code",
+   "MCP-capable agents",
+   "Natural conversation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mbailey/voicemode"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tryvoice": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TryVoice is a hands-free voice runtime for AI agents, so you can talk to your coding assistant without touching the keyboard.",
+   "It wraps agents like OpenClaw and Claude Code in a voice interface with wake-word activation and push-to-talk."
+  ],
+  "who": "Developers who want hands-free control of coding agents.",
+  "features": [
+   "Wake word",
+   "Push-to-talk",
+   "Streaming replies"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TryAILab/tryvoice-oss"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cicero": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cicero is a self-hosted voice interface for coding agents: you speak, it answers out loud, and your agent does the work.",
+   "You install it next to your existing agent and talk to it from a browser; our listing notes Claude Code, Codex, ACP and Telegram calls."
+  ],
+  "who": "Developers who want to talk to their coding agent remotely.",
+  "features": [
+   "Self-hosted voice interface",
+   "Browser access",
+   "Works with existing agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/5uck1ess/cicero"
+  ],
+  "updated": "2026-10-18"
+ },
+ "voiceloop": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Voiceloop is a zero-dependency JavaScript library for a fast, interruptible voice-agent loop in the browser.",
+   "A live demo runs in your tab with no keys or install; our listing notes VAD, speech-to-text, LLM and text-to-speech stages."
+  ],
+  "who": "Web developers adding voice agents to pages.",
+  "features": [
+   "In-browser voice loop",
+   "Interruptible",
+   "Zero dependencies",
+   "MIT license"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/todoforai/voiceloop"
+  ],
+  "updated": "2026-10-18"
+ },
+ "clawcall": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ClawCall is an AI that makes phone calls for you: it dials US numbers, works the menu, waits on hold and talks to the rep.",
+   "It offers 30 free calls and 30 minutes to start."
+  ],
+  "who": "People who want to skip phone menus and hold times.",
+  "features": [
+   "Places calls for you",
+   "Navigates phone menus",
+   "Waits on hold",
+   "US numbers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://clawcall.dev/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "convai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Convai builds conversational AI for virtual worlds, enabling spatially aware 3D characters.",
+   "Our listing notes voice-enabled characters and agents that perceive, speak and act inside games and 3D scenes."
+  ],
+  "who": "Game and 3D developers adding AI characters.",
+  "features": [
+   "Voice-enabled characters",
+   "Spatial awareness",
+   "Games and 3D scenes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://convai.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "deepgram": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Deepgram offers speech-to-text, text-to-speech and voice agent APIs for real-time enterprise voice solutions.",
+   "It cites text-to-speech latency as low as 80 ms."
+  ],
+  "who": "Developers building real-time voice agents.",
+  "features": [
+   "Speech-to-text",
+   "Text-to-speech",
+   "Voice Agent API",
+   "Low latency"
+  ],
+  "faq": [],
+  "sources": [
+   "https://deepgram.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dial": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Dial gives your AI agent a real phone number with calls, SMS, iMessage and WhatsApp through one API, with global reach."
+  ],
+  "who": "Developers whose agents need to call or message people.",
+  "features": [
+   "Real phone numbers",
+   "Calls and SMS",
+   "iMessage and WhatsApp",
+   "One API"
+  ],
+  "faq": [],
+  "sources": [
+   "https://getdial.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "elevenlabs-agents": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ElevenLabs is a voice AI platform with a voice generator and voice-agents platform.",
+   "It offers 17,500+ voices in 90+ languages with secure APIs and SDKs."
+  ],
+  "who": "Creators and developers who need lifelike speech or voice agents.",
+  "features": [
+   "Conversational voice agents",
+   "Text-to-speech",
+   "17,500+ voices",
+   "90+ languages"
+  ],
+  "faq": [],
+  "sources": [
+   "https://elevenlabs.io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "inworld": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Inworld provides real-time voice models and open LLMs on a fleet it operates, for consumer apps.",
+   "It cites first audio as low as 50 ms, voice across four regions and LLM inference in the US."
+  ],
+  "who": "Developers building interactive voice and character experiences.",
+  "features": [
+   "Real-time voice models",
+   "Open LLM inference",
+   "Interactive characters"
+  ],
+  "faq": [],
+  "sources": [
+   "https://inworld.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "livekit-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LiveKit Agents is a framework for building realtime, programmable participants that run on servers, for conversational, multimodal voice agents.",
+   "It sits on LiveKit's real-time voice and video infrastructure; a JS/TS version, AgentsJS, is also available."
+  ],
+  "who": "Developers building real-time voice and video agents.",
+  "features": [
+   "Realtime voice agents",
+   "Multimodal",
+   "Python and JS/TS",
+   "LiveKit infrastructure"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/livekit/agents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "retell-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Retell AI is a platform to build, update, test and deploy AI voice agents.",
+   "Businesses use it to run phone agents for operations and customer service."
+  ],
+  "who": "Businesses automating phone calls and support.",
+  "features": [
+   "Build and test voice agents",
+   "Phone calls",
+   "Customer service"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.retellai.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "simple-phones": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Simple Phones answers your business calls with a customized AI voice agent that you can keep tweaking to handle edge cases.",
+   "It also supports outbound calling for follow-ups."
+  ],
+  "who": "Small businesses that miss calls.",
+  "features": [
+   "Answers business calls",
+   "Takes messages and books appointments",
+   "Outbound follow-ups"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.simplephones.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "thoughtly": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Thoughtly provides AI voice agents that respond to leads in seconds, answer questions, qualify leads and book meetings automatically.",
+   "It cites a customer handling 20,000 calls a day."
+  ],
+  "who": "Businesses handling inbound and outbound call volume.",
+  "features": [
+   "Inbound and outbound calls",
+   "Lead qualification",
+   "Meeting booking"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.thoughtly.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vapi": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Vapi is a platform for developers to build, test and deploy voice AI agents in minutes."
+  ],
+  "who": "Developers building phone voice agents.",
+  "features": [
+   "Build, test, deploy voice agents",
+   "Developer platform",
+   "Phone calls"
+  ],
+  "faq": [],
+  "sources": [
+   "https://vapi.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openclaw": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenClaw is an open-source AI assistant that runs on your own computer and meets you in channels you already use, such as Discord, iMessage, Slack, Teams and Telegram."
+  ],
+  "who": "People who want a self-run personal agent reachable by chat.",
+  "features": [
+   "Runs on your devices",
+   "Many chat channels",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/openclaw/openclaw"
+  ],
+  "updated": "2026-10-18"
+ },
+ "career-ops": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Career Ops is an open-source job-search agent: paste a job and, on your machine, it tells you if it's still open and whether it fits.",
+   "Our listing notes it scans job boards and scores postings against your CV; the maker says he built it for his own search and got the job."
+  ],
+  "who": "Job seekers who want help filtering and tailoring applications.",
+  "features": [
+   "Checks if postings are open",
+   "Scores fit against your CV",
+   "Runs locally"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/career-ops-hq/career-ops"
+  ],
+  "updated": "2026-10-18"
+ },
+ "anythingllm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AnythingLLM is an all-in-one AI app to chat with your docs and use AI agents, multi-user and hyper-configurable, with no frustrating setup.",
+   "It is available for desktop (Mac, Windows and Linux) and as a server."
+  ],
+  "who": "People and teams who want a private AI workspace over their documents.",
+  "features": [
+   "Chat with documents",
+   "AI agents",
+   "Any LLM",
+   "Desktop and server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Mintplex-Labs/anything-llm"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cherry-studio": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cherry Studio is a desktop client that supports multiple LLM providers, on Windows, Mac and Linux.",
+   "A mobile app is also available for iOS and Android; our listing notes autonomous agents and hundreds of assistants."
+  ],
+  "who": "People who want one desktop app for many AI models.",
+  "features": [
+   "Many LLM providers",
+   "Windows, Mac, Linux",
+   "Agents and assistants",
+   "Mobile app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/CherryHQ/cherry-studio"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nanobot": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "nanobot is an ultra-lightweight, open-source, self-hosted personal AI agent framework in Python.",
+   "You can use it in a browser, terminal or chat app to work with files, remember preferences and schedule tasks."
+  ],
+  "who": "Developers who want a small, hackable personal agent.",
+  "features": [
+   "Lightweight Python framework",
+   "Web UI, terminal, chat",
+   "Memory and scheduling",
+   "MCP support"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/HKUDS/nanobot"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cowagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CowAgent is an open-source AI assistant that plans tasks, controls your computer and external services, creates and runs Skills, and builds a personal knowledge base and long-term memory.",
+   "It can also form multi-agent setups and connect to chat apps."
+  ],
+  "who": "People who want a self-hosted assistant across chat apps.",
+  "features": [
+   "Task planning",
+   "Skills",
+   "Long-term memory",
+   "Chat app connections"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/zhayujie/CowAgent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "qwenpaw": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "QwenPaw is a personal AI assistant you can deploy locally or in the cloud, extend with Skills and Plugins, and connect across channels.",
+   "It supports automation and scheduled recurring tasks."
+  ],
+  "who": "People who want a personal assistant on their own setup.",
+  "features": [
+   "Local or cloud",
+   "Skills and plugins",
+   "Multiple channels",
+   "Scheduling"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/agentscope-ai/QwenPaw"
+  ],
+  "updated": "2026-10-18"
+ },
+ "aionui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AionUi is a free, open-source cowork app with AI agents: a built-in agent with zero setup, any API key, multi-agent support, remote access and 24/7 automation.",
+   "Our listing notes it gives a GUI to CLI agents like Claude Code, Codex and OpenCode."
+  ],
+  "who": "People who want a desktop GUI for CLI coding agents.",
+  "features": [
+   "GUI for CLI agents",
+   "Any API key",
+   "Multi-agent",
+   "Remote access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/iOfficeAI/AionUi"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nanoclaw": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "NanoClaw is a lightweight AI assistant that runs agents securely in their own containers, built to be easy to understand and customize.",
+   "Setup can provision each agent its own Slack app; our listing notes WhatsApp, Telegram and Slack."
+  ],
+  "who": "Developers who want a small, container-isolated personal agent.",
+  "features": [
+   "Agents in containers",
+   "Easy to customize",
+   "Chat app connections"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nanocoai/nanoclaw"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agenticseek": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "agenticSeek is a 100% local alternative to Manus AI: a voice-enabled assistant that browses the web, writes code and plans tasks while keeping all data on your device."
+  ],
+  "who": "People who want a private, local autonomous agent.",
+  "features": [
+   "Fully local",
+   "Web browsing",
+   "Coding",
+   "Voice"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Fosowl/agenticSeek"
+  ],
+  "updated": "2026-10-18"
+ },
+ "screenpipe": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Screenpipe continuously records computer work (screen and audio) locally to map workflows, find work worth automating and give agents context."
+  ],
+  "who": "Individuals and companies who want agents with context from computer history.",
+  "features": [
+   "Local screen and audio recording",
+   "Searchable history",
+   "Workflow mapping",
+   "Agent context"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/screenpipe/screenpipe"
+  ],
+  "updated": "2026-10-18"
+ },
+ "kortix-suna": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kortix (Suna) is an open-source platform for agents that deliver finished work such as reports, decks, code, replies and deployed changes.",
+   "It pitches itself as an open-source alternative to Claude Cowork and ChatGPT Work."
+  ],
+  "who": "Teams who want self-hostable general-purpose agents.",
+  "features": [
+   "General-purpose agents",
+   "Finished deliverables",
+   "Open source + cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/kortix-ai/suna"
+  ],
+  "updated": "2026-10-18"
+ },
+ "rowboat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Rowboat is an open-source personal AI assistant with built-in docs, whiteboard and email that works solo or with your team.",
+   "It indexes your work into a living knowledge graph and uses it to get work done on your machine."
+  ],
+  "who": "People and small teams who want an AI coworker with memory.",
+  "features": [
+   "Knowledge-graph memory",
+   "Docs, whiteboard, email",
+   "Runs on your machine"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/rowboatlabs/rowboat"
+  ],
+  "updated": "2026-10-18"
+ },
+ "leon": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Leon is an open-source personal assistant that runs on your own server.",
+   "It is currently focused on a 2.0 Developer Preview, and the new documentation is not ready yet."
+  ],
+  "who": "Developers who want a self-hosted assistant to tinker with.",
+  "features": [
+   "Self-hosted",
+   "Open source",
+   "2.0 in developer preview"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/leon-ai/leon"
+  ],
+  "updated": "2026-10-18"
+ },
+ "eigent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Eigent is an open-source cowork desktop app for building, managing and deploying a custom AI workforce that automates complex workflows.",
+   "It is built on CAMEL-AI and runs a multi-agent workforce in parallel, with customization and privacy protection."
+  ],
+  "who": "People who want multi-agent automation on their desktop.",
+  "features": [
+   "Multi-agent workforce",
+   "Desktop app",
+   "Built on CAMEL-AI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/eigent-ai/eigent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "genericagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "GenericAgent is a minimal, self-evolving autonomous agent framework: about 3K lines of seed code, 9 atomic tools and a ~100-line agent loop.",
+   "Our listing notes it grows its own skill tree for full system control."
+  ],
+  "who": "Developers interested in small, self-improving agents.",
+  "features": [
+   "Minimal codebase",
+   "Self-evolving skills",
+   "System control"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lsdefine/GenericAgent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "moltworker": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Moltworker runs the OpenClaw personal AI assistant (formerly Moltbot) in a Cloudflare Sandbox.",
+   "It is an experimental proof of concept."
+  ],
+  "who": "Developers who want to run OpenClaw on Cloudflare.",
+  "features": [
+   "OpenClaw on Cloudflare",
+   "Experimental",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cloudflare/moltworker"
+  ],
+  "updated": "2026-10-18"
+ },
+ "octop": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Octop, from Tencent Cloud, is an open-source, self-hosted AI assistant that is multi-user and multi-agent, able to work in parallel."
+  ],
+  "who": "Teams who want a shared, self-hosted assistant.",
+  "features": [
+   "Self-hosted",
+   "Multi-user",
+   "Multi-agent"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TencentCloud/Octop"
+  ],
+  "updated": "2026-10-18"
+ },
+ "yao": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Yao puts all your agents and workspaces in one place, on every device you own, with tasks tracked on a board.",
+   "It is accessible from desktop, mobile, browser or API, and self-hosted."
+  ],
+  "who": "People running many agents who want to track their work.",
+  "features": [
+   "Agent task board",
+   "Desktop, mobile, browser, API",
+   "Self-hosted"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/YaoApp/yao"
+  ],
+  "updated": "2026-10-18"
+ },
+ "osaurus": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Osaurus provides agents, memory, tools and identity that live on your Mac, built purely in Swift, fully offline and open source."
+  ],
+  "who": "Mac users who want a native, offline agent harness.",
+  "features": [
+   "Native macOS (Swift)",
+   "Fully offline",
+   "Any model",
+   "Memory and tools"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/osaurus-ai/osaurus"
+  ],
+  "updated": "2026-10-18"
+ },
+ "big-agi": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Big-AGI is a multi-model AI workspace for experts such as engineers, founders and researchers.",
+   "This repo is its open-source foundation; our listing notes personas, multi-model chats and agent features."
+  ],
+  "who": "Power users who compare and combine models.",
+  "features": [
+   "Multi-model chats",
+   "Personas",
+   "Open source + cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/enricoros/big-AGI"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openbot": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenBot, from CopilotKit, is an AI assistant your company can own: same shape as ChatGPT, Claude or Grok, but running on your infrastructure, and you can change anything about it.",
+   "Our listing notes each AI coworker gets its own computer with a browser, files and tools."
+  ],
+  "who": "Companies who want a self-owned AI assistant.",
+  "features": [
+   "Runs on your infrastructure",
+   "Any agent stack",
+   "Own computer per coworker"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/CopilotKit/OpenBot"
+  ],
+  "updated": "2026-10-18"
  }
 }
