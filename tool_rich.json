@@ -3420,5 +3420,983 @@
    "https://github.com/ucbepic/docetl"
   ],
   "updated": "2026-10-18"
+ },
+ "langroid": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Langroid is a lightweight, extensible Python framework for building LLM-powered applications, from researchers at CMU and UW-Madison. You set up agents, equip them with optional components such as an LLM, a vector store and tools, assign them tasks and have them collaborate.",
+   "Its maintainers note that pull requests are by invitation, for changes motivated by real use of Langroid in an organization."
+  ],
+  "who": "Python developers who want a principled multi-agent framework built around agents and tasks.",
+  "features": [
+   "Agents with optional LLM, vector store and tools",
+   "Task-based multi-agent collaboration",
+   "Lightweight and extensible"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/langroid/langroid"
+  ],
+  "updated": "2026-10-18"
+ },
+ "kagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "kagent is a Kubernetes-native framework for building AI agents. It makes it easy to build, deploy and manage agents inside Kubernetes, the most popular platform for running workloads.",
+   "Agents are its main building block, and the project aims to be easy to understand while still flexible."
+  ],
+  "who": "Platform and DevOps teams that run on Kubernetes and want agents managed like other cluster workloads.",
+  "features": [
+   "Kubernetes-native agents",
+   "Build, deploy and manage in-cluster",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/kagent-dev/kagent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "fast-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "fast-agent is a flexible way to work with LLMs that can be used as a coding agent, development toolkit, evaluation tool or workflow platform. Our listing notes strong MCP, ACP and A2A support.",
+   "You can start an interactive session with shell support using uv, work with Hugging Face inference providers or an OpenAI Codex plan, and run shell commands from inside the session. Latest documentation is at fast-agent.ai."
+  ],
+  "who": "Developers who want one tool to build, run and evaluate MCP-connected agents.",
+  "features": [
+   "Coding agent, toolkit, evals and workflows",
+   "MCP, ACP and A2A support",
+   "Interactive shell sessions",
+   "Hugging Face providers or Codex plan"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/evalstate/fast-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lazyllm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LazyLLM is a low-code development tool for building multi-agent LLM applications. It helps developers create complex AI applications at low cost and keep optimizing them iteratively.",
+   "It provides a convenient application-building workflow plus standard processes and tools for the different stages of development."
+  ],
+  "who": "Developers who want to assemble multi-agent LLM apps with little code.",
+  "features": [
+   "Low-code multi-agent apps",
+   "Standard processes and tools per stage",
+   "Iterative optimization"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/LazyAGI/LazyLLM"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tanstack-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TanStack AI is a type-safe, provider-agnostic TypeScript SDK for streaming chat, tool-calling agents, structured outputs, realtime voice and media generation.",
+   "It is built from composable activities and provider adapters, so you can use one provider or switch between many and import only what you need, such as chat, image, audio, transcription, realtime or devtools."
+  ],
+  "who": "TypeScript developers who want type safety and provider freedom when building chat and agent features.",
+  "features": [
+   "Type-safe TypeScript SDK",
+   "Provider adapters; switch providers",
+   "Chat, tools, structured output, voice and media",
+   "Import only what you use"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TanStack/ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "botsharp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BotSharp is an open-source AI agent application framework for .NET that connects LLMs to your existing business applications.",
+   "The project describes itself as a toolkit for building conversation-as-a-platform bots, with natural-language understanding, computer vision and audio processing."
+  ],
+  "who": ".NET developers adding AI agents and bots to business systems.",
+  "features": [
+   "Agent framework for .NET",
+   "Connects LLMs to existing apps",
+   "NLU, vision and audio"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/SciSharp/BotSharp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ax": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Ax is a DSPy-style framework for building LLM programs and agents, TypeScript-first and published as @ax-llm/ax.",
+   "The same signatures, provider mappings, agents, flows, runtime contracts and optimizers are also compiled into generated Python, Java, C++, Go and Rust libraries, giving one programming model across languages."
+  ],
+  "who": "TypeScript developers (and polyglot teams) who like DSPy's signature-and-optimizer approach.",
+  "features": [
+   "DSPy-style signatures and optimizers",
+   "TypeScript-first",
+   "Generated libraries for Python, Java, C++, Go and Rust",
+   "Agents and flows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ax-llm/ax"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ragen": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "RAGEN (Reasoning AGENT) is a flexible framework for training reasoning LLM agents with multi-turn reinforcement learning, built on the StarPO algorithm.",
+   "Its team also develops diagnostics to understand how agent RL training works and to fix hidden failure modes such as the \"Echo Trap.\""
+  ],
+  "who": "Researchers training multi-turn LLM agents with RL.",
+  "features": [
+   "Multi-turn agent RL",
+   "StarPO algorithm",
+   "Diagnostics for RL failure modes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mll-lab-nu/RAGEN"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentfield": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AgentField is an open-source control plane that lets you build AI agents callable by any service in your stack, like APIs, and run very many of them like microservices.",
+   "One request can fan out to thousands of agents while the control plane queues, retries and traces every branch. SDKs are available for Python, Go and TypeScript, plus a REST API."
+  ],
+  "who": "Backend teams that want agents to behave like scalable, observable services.",
+  "features": [
+   "Agents callable like APIs",
+   "Fan-out with queues, retries and tracing",
+   "Python, Go and TypeScript SDKs",
+   "REST API"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Agent-Field/agentfield"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentic-context-engine": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agentic Context Engine (ACE) is an open-source engine that adds a persistent learning loop to AI agents, so they stop repeating mistakes and remember what worked.",
+   "ACE also powers Kayba, a managed service that handles the loop for you, from investigating failures to shipping fixes as pull requests."
+  ],
+  "who": "Teams running agents in production who want them to learn from past runs.",
+  "features": [
+   "Persistent learning loop for agents",
+   "Learns from successes and failures",
+   "Managed option via Kayba"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/kayba-ai/agentic-context-engine"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentflow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AgentFlow is a trainable agentic system from Stanford in which planner, executor, verifier and generator modules coordinate, with in-the-flow optimization of the system. Our listing notes a Hugging Face demo.",
+   "Its paper was accepted at ICLR 2026, and the project was featured at a NeurIPS 2025 workshop."
+  ],
+  "who": "Researchers interested in trainable, modular agent systems.",
+  "features": [
+   "Planner, executor, verifier and generator modules",
+   "In-the-flow optimization",
+   "Research paper (ICLR 2026)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lupantech/AgentFlow"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ibm-cuga": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "IBM CUGA is an enterprise agent harness for sovereign, policy-controlled automation from IBM Research. It turns business requests into actions across your applications, APIs and documents.",
+   "You can deploy it in a private cloud or an air-gapped environment, enforce fine-grained execution policies and use open models on infrastructure you control. Our listing notes a live demo on Hugging Face Spaces."
+  ],
+  "who": "Enterprises that need agents for web and API tasks under strict policy and data-sovereignty requirements.",
+  "features": [
+   "Requests turned into actions across apps and APIs",
+   "Private cloud or air-gapped deployment",
+   "Fine-grained execution policies",
+   "Open models on your infrastructure"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cuga-project/cuga-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lyzr": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Lyzr is an enterprise agent studio and framework for building secure AI agents, listed with freemium pricing.",
+   "Its open-source Lyzr Automata is a low-code multi-agent framework for process automation; the makers note it began as an experiment and is being improved for stability."
+  ],
+  "who": "Enterprises building secure agents, and developers who want a low-code multi-agent automation framework.",
+  "features": [
+   "Enterprise agent studio",
+   "Low-code multi-agent automation (Lyzr Automata)",
+   "Freemium"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/LyzrCore/lyzr-automata"
+  ],
+  "updated": "2026-10-18"
+ },
+ "viam": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Viam is a software platform for building and operating robots and smart machines. Its open-source robot architecture exposes robotics functionality through simple APIs.",
+   "The core server (RDK) is written in Go, and a cloud platform is offered alongside it."
+  ],
+  "who": "Robotics and hardware teams building and running robots and smart machines.",
+  "features": [
+   "Open-source robot architecture",
+   "Robotics features via simple APIs",
+   "Cloud platform available"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/viamrobotics/rdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "orca-agent-engine": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Orca Agent Engine is an open, Apache-2.0, self-hosted implementation of the managed-agents API. You define agents, run them in sessions and stream each session's events.",
+   "It follows Anthropic's Managed Agents beta closely enough that the official Anthropic SDKs can use it by changing their base URL, while agents, sessions, files, memory and credentials stay in your infrastructure. Our listing notes a choice of harness (Claude Agent SDK, Codex, Pi) and a Developer Preview released Oct 6, 2026."
+  ],
+  "who": "Teams who want managed-agent style APIs but need to run them on their own infrastructure.",
+  "features": [
+   "Self-hosted managed-agents API",
+   "Compatible with Anthropic SDKs via base URL",
+   "Sessions with streamed events",
+   "Choice of harness and model",
+   "Apache 2.0; developer preview"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/orca-ae/orca-agent-engine"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentset": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Agentset is an open-source platform for building AI apps that give reliable answers from your documents, with production-grade RAG in minutes and no RAG expertise needed.",
+   "The company cites benchmark results on MultiHopQA and FinanceBench, and says it works natively with images. A hosted cloud is available."
+  ],
+  "who": "Developers who want accurate chat and search over their documents without building a RAG pipeline themselves.",
+  "features": [
+   "Production-grade RAG",
+   "Works with images",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://agentset.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mastra": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mastra is a TypeScript framework for building AI-powered applications and agents, from prototypes to production. It includes agents, workflows and RAG.",
+   "It integrates with React, Next.js and Node, or deploys anywhere as a standalone server."
+  ],
+  "who": "TypeScript developers building agents and AI features into web apps.",
+  "features": [
+   "Agents, workflows and RAG",
+   "Works with React, Next.js and Node",
+   "Standalone server deployment"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mastra-ai/mastra"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vercel-ai-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Vercel AI SDK is a provider-agnostic TypeScript toolkit for building AI-powered applications and agents with frameworks such as Next.js, React, Svelte, Vue and Angular and runtimes like Node.js.",
+   "A unified API works with providers such as OpenAI, Anthropic and Google; by default it uses the Vercel AI Gateway so you can pass a model string for any supported model. It needs Node.js 22+, and an AI SDK skill is offered for coding agents like Claude Code and Cursor."
+  ],
+  "who": "TypeScript and JavaScript developers adding chat, generation and agents to web apps.",
+  "features": [
+   "Unified provider API",
+   "Works with Next.js, React, Svelte, Vue and Angular",
+   "Vercel AI Gateway by default",
+   "Skill for coding agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/vercel/ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "rea": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "REA is an MCP server and CLI that lets coding agents reverse-engineer native binaries, Electron and JavaScript apps, .NET assemblies and live websites, using Ghidra, Hopper or IDA under the hood.",
+   "Its pitch is that if you see a feature you like in an app, you can understand how it works down to the binary level. The README warns that only its official sources should be trusted for downloads."
+  ],
+  "who": "Security researchers and developers who want agent help with reverse engineering.",
+  "features": [
+   "One MCP server for reverse engineering",
+   "Binaries, Electron/JS apps, .NET and websites",
+   "Uses Ghidra, Hopper or IDA"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/morluto/rea"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-reference-servers": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MCP reference servers is the official repository of reference implementations for the Model Context Protocol, maintained by the MCP steering group, along with pointers to community servers and resources.",
+   "It holds only a small number of reference servers; for a full list of servers the README points to the MCP Registry."
+  ],
+  "who": "Developers learning MCP or looking for canonical example servers to build from.",
+  "features": [
+   "Official reference MCP servers",
+   "Maintained by the MCP steering group",
+   "Points to the MCP Registry"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/servers"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mem0": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mem0 is a memory layer for AI agents. Its current algorithm uses single-pass, add-only extraction (one LLM call; memories accumulate and nothing is overwritten), treats agent-generated facts as first-class and links entities across memories for retrieval.",
+   "It is open source with a paid managed platform; Mem0 notes its published benchmarks reflect the managed platform, which includes optimizations not in the open-source SDK."
+  ],
+  "who": "Developers who want agents to remember users and facts across sessions.",
+  "features": [
+   "Add-only memory extraction",
+   "Agent-generated facts stored",
+   "Entity linking",
+   "Open-source SDK plus managed platform"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mem0ai/mem0"
+  ],
+  "updated": "2026-10-18"
+ },
+ "context7": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Context7, from Upstash, is an MCP server and platform that feeds coding agents up-to-date, version-specific library documentation and code examples straight from the source.",
+   "That avoids outdated examples and hallucinated APIs that come from old training data, without switching tabs. It is listed as freemium."
+  ],
+  "who": "Developers whose coding agents keep using outdated library APIs.",
+  "features": [
+   "Version-specific docs for coding agents",
+   "Code examples from the source",
+   "MCP server",
+   "Freemium"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/upstash/context7"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hindsight": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Hindsight, from Vectorize, is an agent memory system built so agents learn over time, not just recall conversation history.",
+   "The makers say it overcomes shortcomings of RAG and knowledge-graph approaches and publish benchmarks and a paper. A hosted Hindsight Cloud is available."
+  ],
+  "who": "Developers who want agents that improve from experience.",
+  "features": [
+   "Memory focused on learning",
+   "Integrations and cookbook",
+   "Benchmarks and paper",
+   "Hindsight Cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/vectorize-io/hindsight"
+  ],
+  "updated": "2026-10-18"
+ },
+ "localai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LocalAI is an open-source AI engine for running LLM, vision, voice, image and video models on any hardware, no GPU required, with an OpenAI-compatible API.",
+   "It has a small core: each backend wraps an engine such as llama.cpp, vLLM, whisper.cpp, stable-diffusion or MLX in its own image, pulled only when a model needs it."
+  ],
+  "who": "Developers and self-hosters who want to run models, and agents on top of them, on their own hardware.",
+  "features": [
+   "OpenAI-compatible API",
+   "LLM, vision, voice, image and video",
+   "No GPU required",
+   "Backends pulled on demand"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mudler/LocalAI"
+  ],
+  "updated": "2026-10-18"
+ },
+ "codebase-memory-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Codebase Memory MCP is a local MCP server that gives Claude Code, Codex and other coding agents a persistent code knowledge graph. It indexes functions, classes, imports, HTTP routes and their relationships.",
+   "You can search code, follow call graphs and explore architecture in your browser, and the project aims to cut token usage for agents."
+  ],
+  "who": "Developers who want coding agents to look up code structure quickly instead of reading many files.",
+  "features": [
+   "Persistent code knowledge graph",
+   "Call graphs and architecture view",
+   "Local MCP server",
+   "Lower token usage"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/DeusData/codebase-memory-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "github-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The GitHub MCP Server is GitHub's official MCP server. It connects AI tools to GitHub so agents, assistants and chatbots can read repositories and code, manage issues and pull requests, analyze code and automate workflows in natural language.",
+   "Repository features include browsing and querying code, searching files, analyzing commits and understanding project structure across repositories you have access to."
+  ],
+  "who": "Developers who want their AI tools to work directly with GitHub repos, issues, PRs and Actions.",
+  "features": [
+   "Official GitHub MCP server",
+   "Repos, code and commits",
+   "Issues and pull requests",
+   "Workflow automation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/github/github-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cognee": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cognee is a free, open-source AI memory platform that gives agents persistent long-term memory across sessions. It turns documents, code and conversations into a self-hosted knowledge graph your agents can search and reuse.",
+   "The project says it relies on free small models that run on your CPU, and it has published a research paper on knowledge graphs and LLMs. A cloud option is available."
+  ],
+  "who": "Developers who want self-hosted, graph-based long-term memory for agents.",
+  "features": [
+   "Knowledge graph from documents, code and chats",
+   "Self-hosted",
+   "Runs on CPU with small models",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/topoteretes/cognee"
+  ],
+  "updated": "2026-10-18"
+ },
+ "graphiti": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Graphiti, from Zep, is a framework for building and querying temporal context graphs for AI agents. Unlike static knowledge graphs, it tracks how facts change over time.",
+   "It serves as real-time memory for agents."
+  ],
+  "who": "Developers building agents that need memory of facts and relationships that change over time.",
+  "features": [
+   "Temporal knowledge graphs",
+   "Real-time updates",
+   "Agent memory"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/getzep/graphiti"
+  ],
+  "updated": "2026-10-18"
+ },
+ "google-workspace-cli": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Google Workspace CLI (gws) is one CLI for all of Google Workspace, built for humans and AI agents: Drive, Gmail, Calendar and every Workspace API, with structured JSON output and 40+ agent skills.",
+   "It reads Google's Discovery Service at runtime to build its commands dynamically. Its README states it is not an officially supported Google product."
+  ],
+  "who": "Developers and agents that need to automate Google Workspace from the command line.",
+  "features": [
+   "Drive, Gmail, Calendar and all Workspace APIs",
+   "Structured JSON output",
+   "40+ agent skills",
+   "Commands built from Google's Discovery Service"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/googleworkspace/cli"
+  ],
+  "updated": "2026-10-18"
+ },
+ "serena": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Serena is an MCP toolkit that gives coding agents semantic code retrieval, editing, refactoring and debugging tools akin to an IDE's, working at the symbol level.",
+   "It integrates with any client or LLM via MCP, and its agent-first tool design uses high-level abstractions rather than line numbers."
+  ],
+  "who": "Developers who want coding agents to navigate and edit code by symbols, like an IDE.",
+  "features": [
+   "Symbol-level retrieval and editing",
+   "Refactoring and debugging tools",
+   "Works with any MCP client"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/oraios/serena"
+  ],
+  "updated": "2026-10-18"
+ },
+ "chroma": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Chroma is open-source data infrastructure for AI, widely used as a vector database for agent memory and RAG. Its core API is only four functions.",
+   "Chroma Cloud, the hosted service, offers serverless vector, hybrid and full-text search, with $5 of free credits to start."
+  ],
+  "who": "Developers who need a simple vector store for RAG or agent memory.",
+  "features": [
+   "Four-function core API",
+   "Vector, hybrid and full-text search (cloud)",
+   "Open source plus Chroma Cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/chroma-core/chroma",
+   "https://www.trychroma.com/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tencentdb-agent-memory": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TencentDB-Agent-Memory is a team-level memory hub that turns conversations, docs and code into shared memory for agents. It runs as three services: memory-core, memory-hub and a proxy.",
+   "Its Team Memory feature is in beta, and the docs cover use with Claude Code and CodeBuddy."
+  ],
+  "who": "Teams who want their agents to share memory rather than each starting from scratch.",
+  "features": [
+   "Shared team memory for agents",
+   "Memory core, hub and proxy",
+   "Works with Claude Code and CodeBuddy",
+   "Beta"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TencentCloud/TencentDB-Agent-Memory"
+  ],
+  "updated": "2026-10-18"
+ },
+ "fastmcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "FastMCP is a Pythonic framework for MCP servers, clients and interactive apps. A server starts with ordinary Python, and declaring a tool as a Python function generates its schema, validation and documentation automatically.",
+   "Connecting to a server takes a URL, with transport handled for you. It is maintained by Prefect."
+  ],
+  "who": "Python developers building MCP servers or clients quickly.",
+  "features": [
+   "MCP servers from plain Python functions",
+   "Automatic schema and validation",
+   "Clients and interactive apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/PrefectHQ/fastmcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-python-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP Python SDK is the official Python implementation of the Model Context Protocol, for building MCP servers and clients. It is MIT-licensed.",
+   "Its docs include a getting-started guide, what's new in v2, an API reference and a migration guide."
+  ],
+  "who": "Python developers implementing MCP servers or clients against the official SDK.",
+  "features": [
+   "Official Python MCP SDK",
+   "Servers and clients",
+   "v2 with migration guide",
+   "MIT license"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/python-sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "n8n-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "n8n-MCP is an MCP server that gives AI assistants such as Claude and Cursor detailed access to n8n node documentation, properties and operations, so they can build n8n workflows for you.",
+   "Its README cites coverage of 3,135 n8n workflow automation nodes (840 core and 2,295 community)."
+  ],
+  "who": "n8n users who want an AI assistant to design and build workflows.",
+  "features": [
+   "Knowledge of n8n nodes and properties",
+   "Lets assistants build n8n workflows",
+   "Works with Claude, Cursor and other MCP clients"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/czlonkowski/n8n-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-toolbox-for-databases": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MCP Toolbox for Databases is Google's open-source MCP server that connects AI agents, IDEs and applications to enterprise databases.",
+   "Prebuilt generic tools let clients such as Gemini CLI, Google Antigravity, Claude Code and Codex talk to your data, explore schemas and generate code without boilerplate."
+  ],
+  "who": "Developers and data teams who want agents to query and work with their databases safely.",
+  "features": [
+   "MCP server for databases",
+   "Prebuilt generic database tools",
+   "Works with Gemini CLI, Claude Code, Codex and more"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/googleapis/mcp-toolbox"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nvidia-openshell": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "NVIDIA OpenShell is a safe, private runtime for fleets of autonomous AI agents. It lets agents read files, install packages, call APIs and use credentials without unrestricted access to your data, secrets or network.",
+   "Policies are declared in YAML for file, network and credential access. Version 0.1.x brought a stable release cadence, new isolation primitives and new APIs. It is Apache 2.0 licensed."
+  ],
+  "who": "Teams running autonomous agents who need strict, declarative control over what they can touch.",
+  "features": [
+   "Sandboxed runtime for agent fleets",
+   "YAML policies for files, network and credentials",
+   "Isolation primitives",
+   "Apache 2.0"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nvidia/openShell"
+  ],
+  "updated": "2026-10-18"
+ },
+ "opensandbox": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenSandbox runs AI agents in sandboxes on your own infrastructure. It gives AI applications isolated environments to execute code, run commands, manage files and operate browsers or desktops.",
+   "You start locally with Docker and deploy on Kubernetes through one sandbox API; examples need Python 3.10+."
+  ],
+  "who": "Developers who need secure, self-hosted code execution for agents.",
+  "features": [
+   "Isolated code, command and file execution",
+   "Browser and desktop sandboxes",
+   "Docker locally, Kubernetes in production"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/opensandbox-group/OpenSandbox"
+  ],
+  "updated": "2026-10-18"
+ },
+ "corsair": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Corsair is a product integration platform for connecting your users' apps to agents and services. Unlike MCP-only tools, it is built on a REST API, so the same integration layer serves agents, backend services and customer dashboards.",
+   "You can build anything from an agent working across your integrations to a multi-tenant dashboard where users connect their accounts."
+  ],
+  "who": "Product teams who need third-party integrations usable by both their agents and their app.",
+  "features": [
+   "REST-based integration layer",
+   "Works for agents, backends and dashboards",
+   "Multi-tenant connections"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/corsairdev/corsair"
+  ],
+  "updated": "2026-10-18"
+ },
+ "casdoor": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Casdoor is an open-source, self-hosted identity and access management platform: a single sign-on and authentication server with a web console. Our listing describes it as agent-first, with an MCP and agent gateway.",
+   "It speaks OAuth 2.0, OIDC, SAML 2.0, CAS, LDAP, SCIM 2.0, WebAuthn, TOTP/MFA and MCP, and connects to identity providers such as Google Workspace, Microsoft Entra ID and GitHub."
+  ],
+  "who": "Teams that need self-hosted SSO and access control for users and agents.",
+  "features": [
+   "SSO and authentication server",
+   "OAuth 2.0, OIDC, SAML, LDAP, SCIM, WebAuthn",
+   "MCP support",
+   "Connects to Google, Entra ID and GitHub"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/casdoor/casdoor"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-typescript-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP TypeScript SDK is the official TypeScript SDK for building MCP servers and clients. Its main branch is v2 (@modelcontextprotocol/server and @modelcontextprotocol/client), implementing the 2026-07-28 MCP spec.",
+   "The v1.x line (@modelcontextprotocol/sdk) continues to get bug fixes and security updates for at least six months after the v2 release, and a migration guide is available."
+  ],
+  "who": "TypeScript developers implementing MCP servers or clients.",
+  "features": [
+   "Official TypeScript MCP SDK",
+   "v2 implements the 2026-07-28 spec",
+   "Separate server and client packages",
+   "v1.x maintained for migration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/modelcontextprotocol/typescript-sdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "everos": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "EverOS is a Python library and local-first memory runtime that gives agents one portable memory layer across coding assistants, apps, devices and workflows.",
+   "It stores conversations, files and agent trajectories as readable Markdown that you can edit, diff and version in Git, and syncs local SQLite and LanceDB indexes for retrieval."
+  ],
+  "who": "Developers who want agent memory they can read, edit and version as plain files.",
+  "features": [
+   "Memory stored as Markdown",
+   "Git-versionable",
+   "Local SQLite and LanceDB indexes",
+   "Portable across tools"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/EverMind-AI/EverOS"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cubesandbox": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CubeSandbox, from Tencent Cloud, is a secure sandbox service for AI agents built on RustVMM and KVM, deployable on a single node or as a multi-node cluster.",
+   "It is compatible with the E2B SDK, and the README says it can create a hardware-isolated sandbox in under 60 ms with less than 5 MB of memory overhead. Version 0.7 added cross-node pause and resume."
+  ],
+  "who": "Teams who need fast, hardware-isolated sandboxes for agent code at scale.",
+  "features": [
+   "KVM-based hardware isolation",
+   "E2B SDK compatible",
+   "Fast startup, low overhead",
+   "Single node or cluster"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TencentCloud/CubeSandbox"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ida-pro-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "IDA Pro MCP is a simple MCP server that connects IDA Pro to language models for AI-assisted reverse engineering. It needs IDA Pro 8.3 or higher.",
+   "Its author now recommends the official Hex-Rays IDA MCP Server instead."
+  ],
+  "who": "Reverse engineers using IDA Pro who want LLM assistance; consider the official Hex-Rays server first.",
+  "features": [
+   "Connects IDA Pro to LLMs via MCP",
+   "IDA Pro 8.3+",
+   "Author recommends official Hex-Rays server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mrexodia/ida-pro-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "memos": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MemOS is a memory operating system for LLMs and AI agents that unifies storing, retrieving and managing memory, giving agents persistent memory and the ability to grow.",
+   "It can connect to DeepSeek Harness, adding automatic recall, background capture, hybrid retrieval and a local Memory Viewer."
+  ],
+  "who": "Developers who want a full memory system for agents.",
+  "features": [
+   "Store, retrieve and manage memory",
+   "Automatic recall and background capture",
+   "Hybrid retrieval",
+   "Local Memory Viewer"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MemTensor/MemOS"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cocoindex": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CocoIndex is an incremental data engine that turns codebases, meeting notes, inboxes, Slack, PDFs and videos into live, continuously fresh context for AI agents and LLM apps.",
+   "It processes only what changed, runs in parallel by default and is declarative in Python."
+  ],
+  "who": "Teams whose agents need context that stays current as source data changes.",
+  "features": [
+   "Incremental processing (only the delta)",
+   "Many sources: code, notes, email, Slack, PDFs, video",
+   "Declarative Python",
+   "Parallel by default"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cocoindex-io/cocoindex"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lancedb": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LanceDB is an open-source multimodal vector database for fast, scalable vector search, built on the Lance columnar format. It can store, index and search petabytes of multimodal data and vectors.",
+   "It is used for search, RAG and agent memory, and a cloud option is available."
+  ],
+  "who": "Developers storing and searching embeddings and multimodal data for RAG or agents.",
+  "features": [
+   "Multimodal vector search",
+   "Built on the Lance format",
+   "Scales to very large datasets",
+   "Open source plus cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lancedb/lancedb"
+  ],
+  "updated": "2026-10-18"
+ },
+ "apify-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Apify MCP Server, at mcp.apify.com, lets AI agents extract data from social media, search engines, maps, e-commerce sites and other websites using thousands of ready-made scrapers, crawlers and automation tools from Apify Store.",
+   "It supports OAuth, so you can connect from clients like Claude.ai or VS Code with just the URL."
+  ],
+  "who": "Developers who want agents to collect web data without writing scrapers.",
+  "features": [
+   "Thousands of Apify Store scrapers",
+   "Social, search, maps and e-commerce data",
+   "Hosted MCP with OAuth"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/apify/apify-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcp-use": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "mcp-use is a full-stack MCP framework for building, testing and shipping MCP servers, ChatGPT plugins, Claude connectors and agents that connect to them.",
+   "It is fully typed with Zod schemas flowing from tools to results, supports native Views and MCP Apps that bind React views to tools, and includes a built-in Inspector."
+  ],
+  "who": "Developers building MCP servers and interactive MCP apps.",
+  "features": [
+   "MCP servers, apps and agents",
+   "Typed with Zod",
+   "React Views and MCP Apps",
+   "Built-in Inspector"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mcp-use/mcp-use"
+  ],
+  "updated": "2026-10-18"
+ },
+ "electric": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Electric is a Postgres sync engine that handles partial replication, fan-out and data delivery, syncing data out of Postgres into apps and agents in real time.",
+   "Our listing describes it as a sync engine and agent platform for keeping data in sync between Postgres, apps and agents. A cloud option is available."
+  ],
+  "who": "Developers building fast local-first apps or agents that work on live Postgres data.",
+  "features": [
+   "Read-path sync from Postgres",
+   "Partial replication and fan-out",
+   "Real-time data for apps and agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/electric-sql/electric"
+  ],
+  "updated": "2026-10-18"
  }
 }
