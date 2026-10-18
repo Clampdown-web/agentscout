@@ -160,7 +160,13 @@ import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 def week_new(x): return (not x.get("seed")) and x.get("added","")>=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=6)).isoformat()
 def newfirst(items): return sorted(items,key=lambda x:(not week_new(x),"" if not week_new(x) else "~"+"".join(chr(255-ord(c)) for c in x.get("added",""))))
-def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p></a>'
+def added_line(x):
+    a=x.get("added")
+    if not a: return ""
+    try: lab=_dt.date.fromisoformat(a).strftime("%b %-d, %Y")
+    except Exception: return ""
+    return f'<p class="addedago">Added <time class="ago" datetime="{e(a)}">{e(lab)}</time></p>'
+def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -312,6 +318,8 @@ def _apply_featured():
         _here=_os.getcwd(); _os.chdir(_FEAT_CWD)
         if _os.path.exists("featured.json") and _os.path.exists("index.html"):
             import build_featured; build_featured.run()
+        if _os.path.exists("sitemap.xml"):
+            import build_lastmod; build_lastmod.run()
         _os.chdir(_here)
     except Exception as _ex: print("featured skipped:",_ex)
 _atexit.register(_apply_featured)

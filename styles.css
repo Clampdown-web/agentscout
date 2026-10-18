@@ -314,3 +314,5 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .fnote{font-size:.8rem;opacity:.75;margin:8px 0 0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .card.fcard .tn{padding-right:84px}
+
+.addedago{margin:6px 0 0;font-size:12px;color:var(--faint)}

@@ -13,7 +13,7 @@ def fmt(d): return datetime.date.fromisoformat(d).strftime("%b %-d, %Y")
 def short(s,n=110): return s if len(s)<=n else s[:n].rsplit(" ",1)[0]+"…"
 def card(x,d):
     return (f'<a class="card rcard" href="{d}tools/{x["slug"]}.html"><div class="ct">{build_extras.ico(x,d,"sm")}<h3>{e(x["name"])}</h3></div>'
-            f'<p>{e(short(x["description"]))}</p><div class="rmeta">{"<span class=\"b new\">New</span>" if is_week(x) else ""}<span class="muted">Added {e(fmt(x["added"]))}</span></div></a>')
+            f'<p>{e(short(x["description"]))}</p><div class="rmeta">{"<span class=\"b new\">New</span>" if is_week(x) else ""}<span class="muted">Added <time class="ago" datetime="{e(x["added"])}">{e(fmt(x["added"]))}</time></span></div></a>')
 def build(t):
     top=(newest(fresh(t))+[x for x in newest(t) if x.get("seed")])[:12]
     nw=sum(1 for x in t if is_week(x))

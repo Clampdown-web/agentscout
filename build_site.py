@@ -20,6 +20,7 @@ json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
 tpl=open("detail.tpl.html").read()
+GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
 for x in t:
     rel=REL[x["slug"]]
@@ -29,6 +30,11 @@ for x in t:
     if x.get("added"): facts.append(("Added",x["added"]))
     facts.append(("Link checked",x["verified"]))
     fh="".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a,b in facts)
+    g=GH.get(x["slug"]) or {}
+    if g.get("release_tag") and x.get("github"):
+        _tg=g["release_tag"] if len(g["release_tag"])<=22 else g["release_tag"][:21]+"…"
+        fh+=f'<dt>Latest release</dt><dd><a href="{e(g.get("release_url") or x["github"].rstrip("/")+"/releases")}" target="_blank" rel="noopener noreferrer" title="{e(g["release_tag"])} · GitHub data fetched {e(g.get("fetched",""))}">{e(_tg)}</a>, {e(_dt.date.fromisoformat(g["release_date"]).strftime("%b %-d, %Y"))}</dd>'
+    if g.get("pushed") and x.get("github"): fh+=f'<dt>Last commit</dt><dd title="GitHub data fetched {e(g.get("fetched",""))}">{e(_dt.date.fromisoformat(g["pushed"]).strftime("%b %-d, %Y"))}</dd>'
     uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
     prim=build_extras.su(x.get("website") or x["url"])
     host=re.sub(r"^https?://(www\.)?","",prim).split("/")[0]

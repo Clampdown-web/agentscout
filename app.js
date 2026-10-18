@@ -71,3 +71,7 @@ function run(root){root=root||document;
 function hdr(){var c=slugCat(location.pathname);if(c){var h=document.querySelector("main h1, section h1, h1");add(h,c)}}
 function init(){run();hdr();new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)run(n.parentNode||n)})})}).observe(document.body,{childList:true,subtree:true})}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
+
+/* Relative "Added X days ago" for <time class="ago" datetime="YYYY-MM-DD"> (static date stays as fallback/tooltip) */
+(function(){function ago(r){(r||document).querySelectorAll("time.ago:not([data-ago])").forEach(function(t){var d=t.getAttribute("datetime");if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return;var p=d.split("-"),then=new Date(+p[0],p[1]-1,+p[2]),now=new Date(),n=Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate())-then)/864e5);if(n<0)return;t.title=t.textContent;t.textContent=n===0?"today":n===1?"yesterday":n<60?n+" days ago":n<730?Math.round(n/30.4)+" months ago":Math.round(n/365)+" years ago";t.setAttribute("data-ago","1")})}
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){ago()}):ago();window.asAgo=ago})();
