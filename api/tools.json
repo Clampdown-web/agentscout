@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T15:16:04Z",
- "updated": "2026-10-18T15:16:04Z",
+ "generated": "2026-10-18T15:25:04Z",
+ "updated": "2026-10-18T15:25:04Z",
  "last_checked": "2026-10-18",
- "count": 1106,
+ "count": 1109,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -21442,8 +21442,8 @@
   {
    "name": "Agentcard",
    "slug": "agentcard",
-   "url": "https://www.agentcard.sh/",
-   "website": "https://www.agentcard.sh/",
+   "url": "https://agentcard.com/",
+   "website": "https://agentcard.com/",
    "github": "",
    "category": "MCP & infra",
    "description": "Gives each user of your product a payment card wallet that their AI agent can spend from within set limits.",
@@ -46910,6 +46910,138 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/onesignal-mcp.png",
    "page": "https://agentscouthq.com/tools/onesignal-mcp.html"
+  },
+  {
+   "name": "Pi",
+   "slug": "pi",
+   "url": "https://pi.dev",
+   "website": "https://pi.dev",
+   "github": "https://github.com/earendil-works/pi",
+   "category": "coding",
+   "description": "Minimal, extensible open-source terminal coding agent and agent toolkit from Earendil, with a multi-provider LLM API, TypeScript SDK, RPC mode and installable extensions, skills and themes.",
+   "key_features": [
+    "Open source (MIT); bring your own model provider or subscription",
+    "Mature",
+    "116073 GitHub stars",
+    "Write code",
+    "Build an agent"
+   ],
+   "pricing": "Open source (MIT); bring your own model provider or subscription",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "earendil-works/pi",
+   "github_stars": 116073,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pi.png",
+   "page": "https://agentscouthq.com/tools/pi.html"
+  },
+  {
+   "name": "CLI-Anything",
+   "slug": "cli-anything",
+   "url": "https://clianything.cc",
+   "website": "https://clianything.cc",
+   "github": "https://github.com/HKUDS/CLI-Anything",
+   "category": "MCP & infra",
+   "description": "Open-source project from HKUDS that generates agent-native command-line interfaces for existing software, codebases and web APIs, with CLI-Hub, a registry of community CLIs that coding agents can install and drive.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "Active",
+    "54399 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "HKUDS/CLI-Anything",
+   "github_stars": 54399,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cli-anything.png",
+   "page": "https://agentscouthq.com/tools/cli-anything.html"
+  },
+  {
+   "name": "skills.sh",
+   "slug": "skills-sh",
+   "url": "https://skills.sh",
+   "website": "https://skills.sh",
+   "github": "https://github.com/vercel-labs/skills",
+   "category": "MCP & infra",
+   "description": "Vercel Labs' open-source CLI (npx skills) and directory for finding, installing and sharing agent skills across Claude Code, Codex, Cursor, OpenCode and 75+ other coding agents.",
+   "key_features": [
+    "Open source (MIT)",
+    "Active",
+    "35459 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "vercel-labs/skills",
+   "github_stars": 35459,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/skills-sh.png",
+   "page": "https://agentscouthq.com/tools/skills-sh.html"
   }
  ]
 }

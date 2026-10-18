@@ -17166,11 +17166,11 @@
   ],
   "faq": [],
   "sources": [
-   "https://github.com/NVIDIA-TAO/tao-skills-bank"
+   "https://github.com/NVIDIA-TAO/tao-skill-bank"
   ],
   "updated": "2026-10-18",
   "facts": {
-   "repo": "https://github.com/NVIDIA-TAO/tao-skills-bank",
+   "repo": "https://github.com/NVIDIA-TAO/tao-skill-bank",
    "checked": "2026-10-18",
    "stars": 95,
    "forks": 28,
@@ -19544,6 +19544,115 @@
    "note": "Every chart on Sharpe Terminal is free with no signup. The REST API, MCP server and CLI share one key.",
    "src": "https://www.sharpe.ai/pricing",
    "checked": "2026-10-18"
+  }
+ },
+ "pi": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Pi is a minimal, extensible agent harness from Earendil that you can run as an interactive terminal coding agent, in print/JSON mode for scripts, as an RPC server over stdin/stdout, or as a TypeScript SDK embedded in your own app. Pi 1.0 shipped together with Pi Durable, a durable conversation, task and document runtime.",
+   "It deliberately leaves out built-in sub-agents and plan mode: you add what you need with TypeScript extensions, skills, prompt templates and themes, bundled as Pi packages and shared over npm or git. It works with 15+ providers (Anthropic, OpenAI, Google, Bedrock, Mistral, Groq, xAI, OpenRouter, Ollama and more), can switch models mid-session, and stores sessions as branchable trees you can export to HTML or share as a gist."
+  ],
+  "who": "Developers who want a small, hackable terminal coding agent they can reshape with their own extensions, and teams that want to embed an agent loop in their own product (the project cites OpenClaw as a real-world integration).",
+  "features": [
+   "Interactive TUI, print/JSON, RPC and SDK modes",
+   "15+ model providers; switch models mid-session",
+   "Extensions, skills, prompt templates and themes as npm or git packages",
+   "Tree-structured sessions with HTML export and gist sharing",
+   "AGENTS.md / SYSTEM.md context control and customizable compaction"
+  ],
+  "faq": [
+   [
+    "Does Pi sandbox the commands it runs?",
+    "No. Pi has no built-in permission system and runs with the permissions of the user who starts it; its docs recommend running it in a container or sandbox if you need stronger boundaries."
+   ],
+   [
+    "How do I install Pi?",
+    "Use the installer from pi.dev (curl -fsSL https://pi.dev/install.sh | sh, or the PowerShell script on Windows) or npm install -g @earendil-works/pi-coding-agent. It needs Node.js 22.19 or newer."
+   ]
+  ],
+  "sources": [
+   "https://github.com/earendil-works/pi",
+   "https://pi.dev"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/earendil-works/pi",
+   "stars": 116073,
+   "forks": 14803,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "cli-anything": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CLI-Anything, from the HKUDS lab, turns existing software, codebases and web APIs into agent-native command-line interfaces, so AI agents such as Claude Code, Codex, Cursor, OpenClaw, nanobot and Pi can operate that software without a GUI.",
+   "Generated CLIs are published to CLI-Hub, a community registry you use with pip install cli-anything-hub and cli-hub install <name>, or hand to an agent as a skill. The project's demos show agents driving FreeCAD, Blender and draw.io through generated CLIs to finished CAD models, 3D scenes and diagrams, and a technical report is on arXiv."
+  ],
+  "who": "Agent builders whose agents need to control desktop or specialist software (CAD, 3D, diagramming, media tools) that has no agent-friendly API, and contributors who want to publish CLIs for others to reuse.",
+  "features": [
+   "Generates agent-ready CLIs for existing software and web APIs",
+   "CLI-Hub registry (pip install cli-anything-hub)",
+   "Installable as an agent skill for Claude Code, Codex, OpenClaw and others",
+   "JSON and human-readable output",
+   "Demos for FreeCAD, Blender and draw.io"
+  ],
+  "faq": [
+   [
+    "How do agents use CLI-Anything?",
+    "Install the CLI-Hub skill or the cli-anything-hub Python package, then ask the agent to find a matching CLI in CLI-Hub and complete the task with it."
+   ]
+  ],
+  "sources": [
+   "https://github.com/HKUDS/CLI-Anything",
+   "https://clianything.cc"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/HKUDS/CLI-Anything",
+   "stars": 54399,
+   "forks": 4933,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "skills-sh": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "skills is Vercel Labs' open-source command-line tool for the open agent skills ecosystem: npx skills add owner/repo installs reusable skills (instructions plus supporting files) into coding agents such as OpenCode, Claude Code, Codex, Cursor and 75 more.",
+   "It can pull skills from GitHub, GitLab, Azure Repos, any git URL or a local folder, install them globally or per project, and npx skills use generates a prompt for a single skill without installing it. The companion site skills.sh is a directory of skills with an install leaderboard."
+  ],
+  "who": "Developers who use one or more coding agents and want to install, share and update the same skills across all of them, including from private repositories.",
+  "features": [
+   "npx skills add and npx skills use",
+   "Supports OpenCode, Claude Code, Codex, Cursor and 75+ other agents",
+   "Sources: GitHub, GitLab, Azure Repos, any git URL or a local path",
+   "Private repos via your existing git, GitHub CLI or SSH authentication",
+   "skills.sh directory with an install leaderboard"
+  ],
+  "faq": [
+   [
+    "Does skills need my GitHub token?",
+    "Not normally. It uses the git, GitHub CLI or SSH authentication you already have; GITHUB_TOKEN or GH_TOKEN can be set explicitly for API access to private repositories."
+   ]
+  ],
+  "sources": [
+   "https://github.com/vercel-labs/skills",
+   "https://skills.sh"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/vercel-labs/skills",
+   "stars": 35459,
+   "forks": 3025,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
   }
  }
 }

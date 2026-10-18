@@ -13127,7 +13127,7 @@
   },
   {
     "name": "Agentcard",
-    "url": "https://www.agentcard.sh/",
+    "url": "https://agentcard.com/",
     "description": "Gives each user of your product a payment card wallet that their AI agent can spend from within set limits.",
     "category": "MCP & infra",
     "pricing": "Usage-based",
@@ -13135,12 +13135,12 @@
     "audience": "builders",
     "featured": false,
     "new": false,
-    "verified": "2026-10-16",
+    "verified": "2026-10-18",
     "pricing_detail": "",
     "use_cases": [
       "connect tools via MCP"
     ],
-    "website": "https://www.agentcard.sh/",
+    "website": "https://agentcard.com/",
     "github": "",
     "id": 505,
     "slug": "agentcard",
@@ -28169,5 +28169,83 @@
     "id": 1124,
     "slug": "onesignal-mcp",
     "logo": "assets/logos/onesignal-mcp.png"
+  },
+  {
+    "name": "Pi",
+    "url": "https://pi.dev",
+    "website": "https://pi.dev",
+    "github": "https://github.com/earendil-works/pi",
+    "repo": "earendil-works/pi",
+    "github_stars": 116073,
+    "description": "Minimal, extensible open-source terminal coding agent and agent toolkit from Earendil, with a multi-provider LLM API, TypeScript SDK, RPC mode and installable extensions, skills and themes.",
+    "category": "coding",
+    "pricing": "Open source",
+    "pricing_detail": "Open source (MIT); bring your own model provider or subscription",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "GitHub",
+    "id": 1125,
+    "use_cases": [
+      "write code",
+      "build an agent"
+    ],
+    "slug": "pi",
+    "logo": "assets/logos/pi.png"
+  },
+  {
+    "name": "CLI-Anything",
+    "url": "https://clianything.cc",
+    "website": "https://clianything.cc",
+    "github": "https://github.com/HKUDS/CLI-Anything",
+    "repo": "HKUDS/CLI-Anything",
+    "github_stars": 54399,
+    "description": "Open-source project from HKUDS that generates agent-native command-line interfaces for existing software, codebases and web APIs, with CLI-Hub, a registry of community CLIs that coding agents can install and drive.",
+    "category": "MCP & infra",
+    "pricing": "Open source",
+    "pricing_detail": "Open source (Apache-2.0)",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "GitHub",
+    "id": 1126,
+    "use_cases": [
+      "write code",
+      "connect tools via MCP"
+    ],
+    "slug": "cli-anything",
+    "logo": "assets/logos/cli-anything.png"
+  },
+  {
+    "name": "skills.sh",
+    "url": "https://skills.sh",
+    "website": "https://skills.sh",
+    "github": "https://github.com/vercel-labs/skills",
+    "repo": "vercel-labs/skills",
+    "github_stars": 35459,
+    "description": "Vercel Labs' open-source CLI (npx skills) and directory for finding, installing and sharing agent skills across Claude Code, Codex, Cursor, OpenCode and 75+ other coding agents.",
+    "category": "MCP & infra",
+    "pricing": "Open source",
+    "pricing_detail": "Open source (MIT)",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "GitHub",
+    "id": 1127,
+    "use_cases": [
+      "write code",
+      "connect tools via MCP"
+    ],
+    "slug": "skills-sh",
+    "logo": "assets/logos/skills-sh.png"
   }
 ]

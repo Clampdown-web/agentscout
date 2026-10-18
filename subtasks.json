@@ -3956,5 +3956,19 @@
 "onesignal-mcp": [
 "email-agents",
 "mcp-servers"
+],
+"pi": [
+"agent-frameworks",
+"terminal-agents",
+"rules-config"
+],
+"cli-anything": [
+"codebase-context",
+"mcp-gateways",
+"terminal-agents"
+],
+"skills-sh": [
+"terminal-agents",
+"rules-config"
 ]
 }

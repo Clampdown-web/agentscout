@@ -1,6 +1,6 @@
 {"checked":"2026-10-18","unit":"USD per 1M tokens, standard (non-batch) tier, short-context rates","note":"Copied by hand from each provider's official pricing page on the date checked. Prices change often; always confirm on the provider page.",
 "providers":[
-{"name":"OpenAI","source":"https://platform.openai.com/docs/pricing","context_note":"Short context = up to 272K input tokens; longer prompts cost more.","models":[
+{"name":"OpenAI","source":"https://developers.openai.com/api/docs/pricing","context_note":"Short context = up to 272K input tokens; longer prompts cost more.","models":[
 {"id":"gpt-6-astra","in":10,"cached":1,"out":50},
 {"id":"gpt-6.1-sol","in":2,"cached":0.10,"out":10},
 {"id":"gpt-6-sol","in":2,"cached":0.20,"out":10},
@@ -14,7 +14,7 @@
 {"id":"gpt-5-nano","in":0.05,"cached":0.005,"out":0.40},
 {"id":"gpt-4.1","in":2,"cached":0.50,"out":8},
 {"id":"gpt-4o-mini","in":0.15,"cached":0.075,"out":0.60}]},
-{"name":"Anthropic","source":"https://docs.anthropic.com/en/docs/about-claude/pricing","context_note":"Cached = cache hits and refreshes. Claude 4.7 and later use a newer tokenizer that makes about 30% more tokens for the same text.","models":[
+{"name":"Anthropic","source":"https://platform.claude.com/docs/en/about-claude/pricing","context_note":"Cached = cache hits and refreshes. Claude 4.7 and later use a newer tokenizer that makes about 30% more tokens for the same text.","models":[
 {"id":"Claude Fable 5.1","in":10,"cached":0.25,"out":50},
 {"id":"Claude Opus 5.5","in":4,"cached":0.20,"out":20},
 {"id":"Claude Opus 5","in":5,"cached":0.50,"out":25},
@@ -33,7 +33,7 @@
 {"id":"gemini-2.5-pro","in":1.25,"cached":0.125,"out":10,"note":"prompts up to 200K tokens"},
 {"id":"gemini-2.5-flash","in":0.30,"cached":0.03,"out":2.50},
 {"id":"gemini-2.5-flash-lite","in":0.10,"cached":0.01,"out":0.40}]},
-{"name":"xAI","source":"https://docs.x.ai/docs/models","context_note":"Rates shown are for prompts under 200K tokens; longer prompts are billed at double.","models":[
+{"name":"xAI","source":"https://docs.x.ai/developers/models","context_note":"Rates shown are for prompts under 200K tokens; longer prompts are billed at double.","models":[
 {"id":"grok-4.7","in":2,"cached":0.50,"out":6},
 {"id":"grok-4.3","in":1.25,"cached":0.20,"out":2.50},
 {"id":"grok-build-0.1","in":1,"cached":0.20,"out":2}]}]}
