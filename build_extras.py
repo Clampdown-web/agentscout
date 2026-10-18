@@ -13,6 +13,7 @@ PAIRS+=[tuple(k.split("-vs-")) for k in NEW]
 def ico(x,d="../",cls=""):
     L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" onerror="this.remove()">' if x.get("logo") else ""
     return f'<span class="ico {cls}"><span aria-hidden="true">{L}</span>{im}</span>'
+def ico24(x): return ico(x,"","sm").replace('width="40" height="40"','width="24" height="24"')
 def cslug(a,b): return f"{a}-vs-{b}"
 def badge_html(x,depth="../"):
     url=f"{B}tools/{x['slug']}.html"; kind="featured" if x.get("featured") else "listed"; lab=kind.title()
@@ -276,7 +277,7 @@ def free_tools(t):
     jump=" · ".join(f'<a href="#{catslug(c)}">{e(c)} ({n})</a>' for c,n in cats.most_common())
     sec=""
     for c,n in cats.most_common():
-        li="".join(f'<li style="margin:0 0 8px"><a href="tools/{x["slug"]}.html"><b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(pr(x))}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span></li>'
+        li="".join(f'<li style="margin:0 0 10px"><a href="tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{ico24(x)}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(pr(x))}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span></li>'
                    for x in sorted([x for x in items if x["category"]==c],key=lambda x:(-(x.get("github_stars") or 0),x["name"].lower())))
         sec+=f'<h2 id="{catslug(c)}" class="has-cico" style="font-size:18px;margin:32px 0 10px">{cico(c)}{e(c[0].upper()+c[1:])} <span style="color:var(--muted);font-weight:400">({n})</span></h2><p style="margin:0 0 10px;font-size:14px"><a href="categories/{catslug(c)}.html">All {e(c)} tools →</a></p><ul style="list-style:none;padding:0;margin:0">{li}</ul>'
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free AI agent tools</h1>'
