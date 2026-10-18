@@ -2967,7 +2967,7 @@
   "src_kind": "README",
   "long": [
    "AutoGPT, one of the first autonomous agent projects, is now a platform for building, deploying and running AI agents that carry out complete workflows. You describe an outcome in plain English or shape every step in a visual builder.",
-   "Agents can run on demand, on a schedule or from a trigger, and you can see every agent, run, cost and action that needs attention. You can start from proven agents in a library and customize them. A hosted AutoGPT Platform is available alongside the open-source code."
+   "Agents can run on demand, on a schedule or from a trigger, and you can see every agent, run, cost and action that needs attention. You can start from proven agents in a library and customize them. A hosted AutoGPT Platform is available alongside the source-available code."
   ],
   "who": "Builders who want to create workflow-automating agents either by describing them or with a visual block builder.",
   "features": [
@@ -11698,10 +11698,10 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "Arize Phoenix is Arize's open-source AI observability platform for experimentation, evaluation and troubleshooting.",
+   "Arize Phoenix is Arize's source-available AI observability platform for experimentation, evaluation and troubleshooting.",
    "It traces LLM application runtime and runs evaluations; for managed production workflows, Arize offers Arize AX."
   ],
-  "who": "Developers who want open-source tracing and evals.",
+  "who": "Developers who want source-available tracing and evals.",
   "features": [
    "Tracing",
    "Evaluation",
@@ -12406,7 +12406,7 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "TEN is an open-source framework for real-time multimodal conversational AI.",
+   "TEN is a source-available framework for real-time multimodal conversational AI.",
    "Its examples include a low-latency, real-time voice assistant over RTC or WebSocket that you can extend with memory and voice activity detection; our listing also notes the TEN Agent demo."
   ],
   "who": "Developers building real-time voice agents.",
@@ -13505,14 +13505,14 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "Kortix (Suna) is an open-source platform for agents that deliver finished work such as reports, decks, code, replies and deployed changes.",
+   "Kortix (Suna) is a source-available platform for agents that deliver finished work such as reports, decks, code, replies and deployed changes.",
    "It pitches itself as an open-source alternative to Claude Cowork and ChatGPT Work."
   ],
   "who": "Teams who want self-hostable general-purpose agents.",
   "features": [
    "General-purpose agents",
    "Finished deliverables",
-   "Open source + cloud"
+   "Source-available + cloud"
   ],
   "faq": [],
   "sources": [
@@ -13842,14 +13842,14 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "Everywhere (\"Your AI - Everywhere\") is an open-source desktop assistant built with .NET and Avalonia.",
+   "Everywhere (\"Your AI - Everywhere\") is a source-available desktop assistant built with .NET and Avalonia.",
    "Our listing notes it sees what is on your screen and helps using LLMs and MCP tools."
   ],
   "who": "Desktop users who want context-aware AI help in any app.",
   "features": [
    "Screen-aware assistance",
    "LLM and MCP tools",
-   "Open source desktop app"
+   "Source-available desktop app"
   ],
   "faq": [],
   "sources": [
@@ -13925,14 +13925,14 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "ChatOllama is an open-source agentic app for running AI agents with hosted or local models.",
+   "ChatOllama is a source-available agentic app for running AI agents with hosted or local models.",
    "You set an API key for any provider you want to use."
   ],
-  "who": "People who want an open-source chat app for local and hosted models.",
+  "who": "People who want a source-available chat app for local and hosted models.",
   "features": [
    "Local and hosted models",
    "Agents",
-   "Open source"
+   "Source-available code"
   ],
   "faq": [],
   "sources": [
@@ -14269,7 +14269,7 @@
   "features": [
    "Apps and agent side by side",
    "Many integrations",
-   "Open source"
+   "Source-available code"
   ],
   "faq": [],
   "sources": [
@@ -15224,7 +15224,7 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "Dify is an open-source LLM app development platform whose visual interface combines AI workflows, RAG pipelines, agent capabilities, model management and observability.",
+   "Dify is a source-available LLM app development platform whose visual interface combines AI workflows, RAG pipelines, agent capabilities, model management and observability.",
    "It is available self-hosted or as a paid cloud."
   ],
   "who": "Teams building LLM apps and agents visually.",
@@ -15807,7 +15807,7 @@
   "kind": "lite",
   "src_kind": "README",
   "long": [
-   "NocoBase is an open-source AI + no-code platform for building business systems fast.",
+   "NocoBase is a source-available AI + no-code platform for building business systems fast.",
    "Our listing notes AI employees inside the systems you build; a cloud option is available."
   ],
   "who": "Teams building internal business systems.",
