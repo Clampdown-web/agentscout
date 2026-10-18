@@ -88,6 +88,30 @@ def _existing_sets():
         body=open(f).read().split("<main",1)[-1].split('id="nlblock"')[0]
         out.append(set(re.findall(r'tools/([a-z0-9-]+)\.html',body)))
     return [x for x in out if x]
+# --- Natural <title> wording (Oct 18 2026): sentence case, no repeated words ---
+_TT_LABEL={"agent-memory":"agent memory","searching-the-web":"agent web search","games":"games and game making"}
+_TT_FULL={"open-source-agents":"Best open-source AI agents"}
+def task_title(s,label):
+    if s in _TT_FULL: return _TT_FULL[s]
+    lab=_TT_LABEL.get(s,label)
+    return f"Best tools for {lab}" if "agent" in lab.lower() else f"Best AI agents for {lab}"
+# parent context for sub-task titles (short noun phrase)
+_SUB_CTX={"agent-memory":"agent memory","automating-workflows":"workflow automation","browsing-the-web":"web browsing agents","building-ai-agents":"building AI agents",
+  "crypto-and-wallets":"crypto agents","evaluating-agents":"agent evaluation","making-images-and-design":"image and design agents","personal-assistants":"personal AI assistants",
+  "research":"research agents","terminal-coding":"terminal coding","testing-apps":"app testing","writing-code":"coding agents","agent-security":"agent security",
+  "searching-the-web":"agent web search","building-voice-agents":"voice agents","customer-support":"customer support","data-analysis":"data analysis"}
+# sub-task noun phrase used in titles
+_SUB_NOUN={"vector-rag":"RAG and document tools","images-design":"image and design tools","research-agents":"research and report agents","text-to-sql":"SQL and database tools",
+  "evals":"eval and benchmark tools","no-code-apps":"no-code app builders","agent-memory":"memory tools","agent-wallets":"agent wallet tools","agent-payments":"agent payment tools",
+  "guardrails":"guardrail and policy tools","agent-frameworks":"agent frameworks and SDKs","local-models":"local and self-hosted tools","multi-agent":"multi-agent orchestration tools",
+  "workflow-automation":"workflow automation tools","testing-qa":"testing and QA tools","voice-phone":"voice and phone agents"}
+def _stem(w): return w.lower().strip(",")[:4]
+def subtask_title(parent,sub,lab,plabel,n):
+    noun=_SUB_NOUN.get(sub) or (lab if lab.split()[-1] in ("agents","tools","builders","SDKs") else f"{lab} tools")
+    ctx=_SUB_CTX.get(parent,plabel)
+    stop={"and","for","the","with","tool","tools","agen","ai"}
+    overlap={_stem(w) for w in noun.split()}&{_stem(w) for w in ctx.split()}-stop
+    return f"{n} AI {noun}" if overlap else f"{n} {noun} for {ctx}"
 def _sublabel(sub): return build_subtasks.LABEL[sub]
 def _subindex(m):
     if not SUBP: return ""
@@ -99,7 +123,7 @@ def _subpages_write(m):
         T,pitems=m[p_]; plabel=T[1]; lab=_sublabel(sub); n=len(its); canon=f"{B}tasks/{sl}.html"
         its=sorted(its,key=lambda x:(not x.get("featured"),-(x.get("github_stars") or 0),x["name"].lower()))
         h1=f"AI tools for {plabel}: {lab}"
-        title=f"{lab[0].upper()+lab[1:]} for {plabel} ({n} tools) · AgentScout"
+        title=f"{subtask_title(p_,sub,lab,plabel,n)} · AgentScout"
         desc=f"{n} AI tools for {plabel} focused on {lab}, including {', '.join(x['name'] for x in its[:3])}. Link-checked, pricing as makers state it."[:158]
         starred=[x for x in its if x.get("github_stars")][:3]
         from collections import Counter
@@ -133,7 +157,7 @@ def pages(t):
     for s,(T,items) in m.items():
         _,label,_,_,_,intro=T; n=len(items); canon=f"{B}tasks/{s}.html"
         h1=f"Best AI agents for {label} (2026)"
-        title=f"Best AI Agents for {label.title()} (2026) · AgentScout"
+        title=f"{task_title(s,label)} (2026) · AgentScout"
         desc=f"Compare {n} AI agents and tools for {label}, including {', '.join(x['name'] for x in items[:3])}. Link-checked, with pricing as makers state it."[:158]
         rel=[(s2,T2) for s2,(T2,i2) in m.items() if s2!=s and len(set(id(a) for a in i2)&set(id(a) for a in items))>=2]
         rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))

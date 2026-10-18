@@ -4,7 +4,7 @@ from zoneinfo import ZoneInfo
 def pt_today(): return datetime.datetime.now(ZoneInfo('America/Los_Angeles')).date()
 e=lambda s:html.escape(str(s or ""))
 B="https://agentscouthq.com/"
-STATS_JS=open("stats.js.html").read()  # shared PT stats logic (mirrored in the app: src/api/tools.js stats())
+STATS_JS=re.sub(r'<meta name="robots"[^>]*>\s*',"",open("stats.js.html").read())  # shared PT stats logic (mirrored in the app: src/api/tools.js stats())
 def newest(t): return sorted(t,key=lambda x:(x.get("added",""),x.get("id",0)),reverse=True)
 # "seed" = starting catalog (launch Oct 14 + bulk import Oct 16). Never counted as new; daily-discovery additions are.
 def fresh(t): return [x for x in t if not x.get("seed")]

@@ -1,13 +1,13 @@
 """Technical SEO pass for the recently added page groups (tool pages, best-of, /s/, /for/, free tools, categories, homepage).
 Idempotent post-processing, run at the end of build_site.py:
-- shortens tool and /s/ <title>/og:title over 70 chars (keeps the tool name),
+- shortens <title>/og:title over 65 chars on every generated page group (drops brand, then year; keeps the tool name),
 - adds twitter:title / twitter:description / twitter:image mirrored from the Open Graph tags when missing,
 - adds BreadcrumbList + ItemList JSON-LD to the best/, s/, for/ and categories/ hubs."""
 import glob,re,json,html
 B="https://agentscouthq.com/"
 def _groups():
     return (sorted(glob.glob("tools/*.html"))+sorted(glob.glob("best/*.html"))+sorted(glob.glob("s/*.html"))+sorted(glob.glob("for/*.html"))
-        +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+sorted(glob.glob("tasks/*.html"))+["index.html"])
+        +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+sorted(glob.glob("tasks/*.html"))+sorted(glob.glob("compare/*.html"))+sorted(glob.glob("news/**/*.html",recursive=True))+["index.html"])
 def _attr(s,pat):
     m=re.search(pat,s); return m.group(1) if m else None
 def _settitle(s,new):
@@ -16,25 +16,34 @@ def _settitle(s,new):
     s=re.sub(r'(<meta property="og:title" content=")[^"]*(")',lambda m:m.group(1)+v+m.group(2),s,1)
     s=re.sub(r'(<meta name="twitter:title" content=")[^"]*(")',lambda m:m.group(1)+v+m.group(2),s,1)
     return s
+MAXT=65  # Google shows ~60-65 chars; was 70 (Oct 18 2026)
+def _generic(t):
+    """Brand first, then the year, then both; keeps the meaning of the title."""
+    a=re.sub(r" · AgentScout$| \| AgentScout$","",t); b=t.replace(" (2026)",""); c=a.replace(" (2026)","")
+    return [a,b,c]
 def shorten(f,s,names,c):
     t=_attr(s,r"<title>(.*?)</title>"); 
     if not t: return s
     t=html.unescape(t.strip())
-    if len(t)<=70: return s
+    if len(t)<=MAXT: return s
+    cands=[]
     if f.startswith("tools/"):
         n=names.get(f[6:-5])
-        if not n: return s
-        for cand in (f"{n}: pricing and alternatives · AgentScout",f"{n}: alternatives · AgentScout",f"{n} · AgentScout"):
-            if len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
+        if n: cands=_generic(t)+[f"{n}: pricing and alternatives · AgentScout",f"{n}: pricing and alternatives",f"{n}: alternatives · AgentScout",f"{n}: alternatives",f"{n} · AgentScout"]
     elif f.startswith("tasks/"):
-        for cand in (re.sub(r" \(\d+ tools\)","",t),re.sub(r" \(\d+ tools\) · AgentScout$","",t)):
-            if cand!=t and len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
+        x=re.sub(r" \(\d+ tools\)","",t); cands=_generic(t)+[x]+_generic(x)
     elif f.startswith("best/") and f.endswith("-alternatives.html"):
-        for cand in (t.replace(" (2026)",""),re.sub(r": \d+ similar tools","",t),re.sub(r" \(2026\): \d+ similar tools| ?: \d+ similar tools","",t)):
-            if cand!=t and len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
-    elif f.startswith("s/"):
-        cand=t.replace(" (2026)","")
-        if cand!=t and len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
+        x=re.sub(r" ?: \d+ similar tools","",t); cands=_generic(t)+[x]+_generic(x)
+    elif f.startswith("compare/"):
+        x=re.sub(r": Which [^?]*\?"," compared (2026)",t); cands=_generic(t)+[x]+_generic(x)
+    else:
+        cands=_generic(t)
+    for cand in cands:
+        if cand!=t and len(cand)<=MAXT: c["title_shortened"]+=1; return _settitle(s,cand)
+    if f.startswith("news/"):  # headline is the meaning: keep it whole, just drop the brand suffix
+        a=_generic(t)[0]
+        if a!=t: c["title_shortened"]+=1; s=_settitle(s,a)
+    c["title_still_long"]+=1
     return s
 def twitter(s,c):
     if 'name="twitter:card"' not in s: return s

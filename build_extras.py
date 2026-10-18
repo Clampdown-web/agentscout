@@ -121,7 +121,7 @@ def build(t):
         if faq: ld["@graph"].append({"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a_}} for q,a_ in faq]})
         open(f"compare/{s}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
     cards="".join(f'<a class="card" href="{cslug(a,b)}.html"><div class="ct"><span class="icopair">{ico(bs[a],"../","sm")}{ico(bs[b],"../","sm")}</span><h3 style="flex:1">{e(bs[a]["name"])} vs {e(bs[b]["name"])}</h3></div><p>{e(bs[a]["category"])}: {e(bs[a]["description"])}</p></a>' for a,b in PAIRS)
-    canon=B+"compare/"; title="Compare AI agent tools side by side · AgentScout"; desc="Side-by-side comparisons of closely related AI agent tools: coding agents, frameworks, browser automation, voice, search APIs, no-code builders and observability."
+    canon=B+"compare/"; title="Compare AI agent tools side by side · AgentScout"; desc="Side-by-side comparisons of related AI agent tools: coding agents, frameworks, browser automation, voice, search APIs, no-code builders and observability."
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","url":f"{B}compare/{cslug(a,b)}.html","name":f"{bs[a]['name']} vs {bs[b]['name']}"} for a,b in PAIRS]}
     open("compare/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Compare</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Compare AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">Closely related tools, side by side, using only facts from our listings.</p><div class="cpick" id="cpick" data-pairs="{",".join(cslug(a,b) for a,b in PAIRS)}"><h2>Compare any two tools</h2><p class="muted" style="margin:0">Pick any two of the {len(t)} tools in the directory and see them side by side.</p><div class="cp-row"><div class="cp-f"><label for="cp-a">Tool A</label><input id="cp-a" type="text" autocomplete="off" placeholder="Type a tool name" role="combobox" aria-controls="cp-a-l"><ul class="cp-l" id="cp-a-l" role="listbox" hidden></ul></div><button class="btn cp-swap" id="cp-swap" type="button" title="Swap" aria-label="Swap tools">⇄</button><div class="cp-f"><label for="cp-b">Tool B</label><input id="cp-b" type="text" autocomplete="off" placeholder="Type a tool name" role="combobox" aria-controls="cp-b-l"><ul class="cp-l" id="cp-b-l" role="listbox" hidden></ul></div><button class="btn primary" id="cp-go" type="button">Compare</button><button class="btn" id="cp-copy" type="button">Copy link</button></div><div id="cp-res"></div></div><h2 style="font-size:19px;margin:0 0 14px">Written comparisons</h2><div class="grid">{cards}</div></section><script src="../compare-picker.js?v=202610170400" defer></script>',ld)); urls.insert(0,canon)
     # badges page
@@ -196,6 +196,13 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
     body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}<div class="grid">{"".join(card(x) for x in newfirst(items))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
+# --- Natural category <title> wording (Oct 18 2026) ---
+_CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
+  "crypto":"crypto AI agent tools","customer support":"AI customer support agents","evals & observability":"AI agent evals & observability tools","frameworks":"AI agent frameworks",
+  "games":"AI game agents and tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
+  "no-code builders":"no-code AI agent builders","personal agents":"personal AI agents","productivity":"AI productivity agents","research":"AI research agents",
+  "sales & marketing":"AI sales & marketing agents","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents"}
+def cat_title(c,n): return f"{n} best {_CAT_TT.get(c, c+' AI agent tools')} (2026) · AgentScout"
 def seo(t,urls):
     import os,collections
     os.makedirs("categories",exist_ok=True); os.makedirs("best",exist_ok=True)
@@ -203,7 +210,7 @@ def seo(t,urls):
     nav='<h2 style="font-size:16px;margin:32px 0 10px">All categories</h2><div class="badges">'+"".join(f'<a class="b uc has-cico" href="{catslug(c)}.html">{cico(c)}{e(c)} ({n})</a>' for c,n in cats.most_common())+'</div>'
     for c,n in cats.most_common():
         items=[x for x in t if x["category"]==c]
-        title=f"{n} best {c} AI agent tools (2026) · AgentScout"[:70]
+        title=cat_title(c,n)
         desc=f"{n} link-checked {c} AI agent tools, including {', '.join(x['name'] for x in items[:3])}. Pricing as stated by makers, audience and maturity."[:158]
         import build_tasks as _bt,build_subtasks as _bs
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
