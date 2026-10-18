@@ -44,14 +44,29 @@ def run(t):
     for r in RO:
         for i,sl in enumerate(r[4]): rpos[sl].append((i,r[0]))
     rtasks={r[0]:r[3] for r in RO}
+    BEST={}
+    for f in glob.glob("best/*.html"):
+        k=os.path.basename(f)[:-5]
+        if k=="index": continue
+        h=open(f).read(); m=re.search(r"<h1[^>]*>(.*?)</h1>",h,re.S)
+        BEST[k]=(re.sub(r"<[^>]+>","",m.group(1)).replace(" (2026)","").strip() if m else k,[y for y in re.findall(r'href="\.\./tools/([^"]+)\.html"',h.split("<main",1)[-1])])
+    def best_for(slugs,n=2,mn=3):
+        sl=set(slugs); sc=sorted(((len(sl&set(v[1])),k) for k,v in BEST.items()),reverse=True)
+        return [k for c,k in sc if c>=mn][:n]
+    def blink(k,d="../"): return f'<a href="{d}best/{k}.html">{e(BEST[k][0])}</a>'
     # (1) tool pages
     for x in t:
         p=f"tools/{x['slug']}.html"
         ss=[k for _,_,k in sorted(spos.get(x["slug"],[]))][:4]; rr=[k for _,k in sorted(rpos.get(x["slug"],[]))][:2]
         c=cost_tool(x); html=""
-        if ss or rr or c:
+        inb=[k for k,v in BEST.items() if x["slug"] in v[1]][:2]
+        catb=[k for k,v in BEST.items() if sum(1 for y in v[1] if bys.get(y,{}).get("category")==x["category"])*2>=max(1,len(v[1]))][:1]
+        bl=("Ranked in: "+" · ".join(blink(k) for k in inb)) if inb else ("See also: "+blink(catb[0])+" · " if catb else "")+'<a href="../best/index.html">All best-of lists</a>'
+        if inb: stats["tool_ranked_in"]+=1
+        if True:
             it=[(f"../s/{k}.html",sname[k]) for k in ss]+[(f"../for/{k}.html","For "+rname[k]) for k in rr]
-            html=(f'<h2 {H2}>Popular searches with this tool</h2>'+(chips(it) if it else "")+
+            html=((f'<h2 {H2}>Popular searches with this tool</h2>'+chips(it)) if it else f'<h2 {H2}>Related lists</h2>')+(
+                  f'<p style="margin:10px 0 0;font-size:14px">🏆 {bl}</p>'+
                   (f'<p style="margin:10px 0 0;font-size:14px">💲 <a href="../free-tools/ai-cost-calculator.html">Estimate API cost</a>: compare per-request and monthly costs for GPT, Claude, Gemini and Grok models.</p>' if c else ""))
             html=f'<div style="margin:0 0 32px">{html}</div>'
             if ss or rr: stats["tool_with_search_or_role"]+=1
@@ -69,9 +84,11 @@ def run(t):
         html=""
         if rs: html+=f'<h2 style="font-size:16px;margin:28px 0 10px">Related searches</h2>'+chips([(f"../s/{a[0]}.html",a[1]) for a in rs])
         if ro: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Who uses these</h2>'+chips([(f"../for/{r[0]}.html","For "+r[1]) for r in ro])
-        if html: stats["cat_rel_s"]+=len(rs); stats["cat_rel_for"]+=len(ro)
+        cb=sorted([k for k,v in BEST.items() if v[1] and sum(1 for y in v[1] if bys.get(y,{}).get("category")==c)*2>=len(v[1])],key=lambda k:-len(BEST[k][1]))[:3]
+        html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Best-of lists</h2>'+chips([(f"../best/{k}.html",BEST[k][0]) for k in cb]+[("../best/index.html","All best-of lists")])
+        if html: stats["cat_rel_s"]+=len(rs); stats["cat_rel_for"]+=len(ro); stats["cat_best"]+=len(cb)
         edit(f"categories/{cs}.html",lambda s,html=html:put(s,"cat",html,'<p class="disclose">'))
-    edit("categories/index.html",lambda s:put(s,"cathub",' Or browse <a href="../for/index.html">by role</a> or <a href="../s/">popular searches</a>.',r'<p class="lede"[^>]*>[^<]*(?=</p>)',before=False,regex=True))
+    edit("categories/index.html",lambda s:put(s,"cathub",' Or browse <a href="../for/index.html">by role</a>, <a href="../s/">popular searches</a> or <a href="../best/index.html">best-of lists</a>.',r'<p class="lede"[^>]*>[^<]*(?=</p>)',before=False,regex=True))
     # (5) task pages
     for f in glob.glob("tasks/*.html"):
         k=os.path.basename(f)[:-5]
@@ -108,6 +125,20 @@ def run(t):
             if re.search(r'<p style="margin-top:24px">Related: .*?</p>',s,re.S): return put(s,"best",html,r'<p style="margin-top:24px">Related: .*?</p>',before=False,regex=True)
             return put(s,"best",html,r'<p class="disclose">|</section></main>',regex=True)
         edit(f,fn)
+    # (A) best-of links on search, role and free-tool pages
+    for a in S:
+        f=f"s/{a[0]}.html"; bb=[a[7]] if a[7] in BEST else best_for([y["slug"] for y in a[4]],1)
+        html=f'<p>Best-of lists: '+" · ".join([blink(k) for k in bb]+['<a href="../best/index.html">All best lists</a>'])+'</p>'
+        if not a[7] or a[7] not in BEST: edit(f,lambda s,html=html:put(s,"sbest",html,'<p class="disclose">'))
+    for r in RO:
+        bb=best_for(r[4],2,2)
+        html=f'<p>Best-of lists for {e(r[1])}: '+" · ".join([blink(k) for k in bb]+['<a href="../best/index.html">All best lists</a>'])+'</p>'
+        stats["role_best"]+=len(bb); edit(f"for/{r[0]}.html",lambda s,html=html:put(s,"rbest",html,'<p class="disclose">'))
+    FB={"ai-cost-calculator":["ai-agent-frameworks","ai-coding-agents"],"token-counter":["ai-agent-frameworks","ai-agent-observability-tools"],"prompt-builder":["ai-productivity-tools","personal-ai-agents"],"agent-setup-generator":["ai-coding-agents","ai-agent-frameworks"]}
+    for k,v in FB.items():
+        html='<p>Best-of lists: '+" · ".join([blink(b) for b in v if b in BEST]+['<a href="../best/index.html">All best lists</a>'])+'</p>'
+        edit(f"free-tools/{k}.html",lambda s,html=html:put(s,"ftbest",html,'<p>More free tools from AgentScout:'))
+    edit("free-tools.html",lambda s:put(s,"fthubbest",'<p style="font-size:14px;margin:6px 0 0">Ranked picks: <a href="best/free-ai-agents.html">Best free AI agents</a> · <a href="best/self-hosted-ai-agents.html">Best self-hosted AI agents</a> · <a href="best/most-starred-open-source-ai-agents.html">Most-starred open-source projects</a> · <a href="best/index.html">All best lists</a></p>','<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
     # (8) free-tools.html
     edit("free-tools.html",lambda s:put(s,"ftroles",'<p style="font-size:14px;margin:6px 0 0">Free tools by role: '+" · ".join(f'<a href="for/{r[0]}.html">{e(CAP(r[1]))}</a>' for r in RO)+'</p>','<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
     # (9) static pages
