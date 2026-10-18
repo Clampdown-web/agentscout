@@ -10028,5 +10028,898 @@
    "https://riff.ai/"
   ],
   "updated": "2026-10-18"
+ },
+ "siena-social-agent": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Siena builds AI agents for commerce that combine empathy with automation to give shoppers personalized support.",
+   "Our listing notes the Social Agent converts comments and DMs, moderates, resolves support and turns social conversations into insight; it is sold via demo."
+  ],
+  "who": "E-commerce brands handling social and support conversations.",
+  "features": [
+   "Comment and DM handling",
+   "Moderation",
+   "Support resolution",
+   "Conversation insights"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.siena.cx"
+  ],
+  "updated": "2026-10-18"
+ },
+ "simbian": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Simbian investigates every security alert to a verdict, acts in the tools you already own and improves every week.",
+   "It positions itself as self-improving defense against AI attacks."
+  ],
+  "who": "Security operations teams.",
+  "features": [
+   "Alert investigation to verdict",
+   "Acts in existing tools",
+   "Threat hunting and response"
+  ],
+  "faq": [],
+  "sources": [
+   "https://simbian.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "trig": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Trig is an agent-powered workspace for account management and customer success.",
+   "AI agents onboard new accounts, drive expansions and re-engage accounts before they churn."
+  ],
+  "who": "Account managers and CS teams.",
+  "features": [
+   "Account follow-ups",
+   "Renewal prep",
+   "Expansion cases",
+   "Churn prevention"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.trig.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wand-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Wand describes itself as agentic labor infrastructure for governments and global enterprises, with systems that let AI agents collaborate alongside humans."
+  ],
+  "who": "Large organizations managing a hybrid workforce of agents and people.",
+  "features": [
+   "Hybrid agent-human workforce",
+   "Agent management",
+   "Enterprise and government"
+  ],
+  "faq": [],
+  "sources": [
+   "https://wand.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "dify": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Dify is an open-source LLM app development platform whose visual interface combines AI workflows, RAG pipelines, agent capabilities, model management and observability.",
+   "It is available self-hosted or as a paid cloud."
+  ],
+  "who": "Teams building LLM apps and agents visually.",
+  "features": [
+   "Visual workflows",
+   "RAG pipelines",
+   "Agents",
+   "Model management and observability"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/langgenius/dify"
+  ],
+  "updated": "2026-10-18"
+ },
+ "langflow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Langflow is a platform for building and deploying AI agents and workflows, with a visual authoring experience plus built-in API and MCP servers.",
+   "You can run flows locally, deploy them as an API or expose them as MCP servers."
+  ],
+  "who": "Developers prototyping and shipping agent workflows.",
+  "features": [
+   "Visual drag-and-drop builder",
+   "Deploy as API",
+   "Expose as MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/langflow-ai/langflow"
+  ],
+  "updated": "2026-10-18"
+ },
+ "sim-studio": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Sim is a workspace to build, deploy and manage AI agents and workflows.",
+   "It connects 270+ integrations and has a desktop app for macOS 12+ that can point at a self-hosted deployment."
+  ],
+  "who": "Teams building and monitoring agent workflows.",
+  "features": [
+   "Visual agent builder",
+   "270+ integrations",
+   "Self-host or cloud",
+   "Desktop app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/simstudioai/sim"
+  ],
+  "updated": "2026-10-18"
+ },
+ "activepieces": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Activepieces is all-in-one AI automation, extensible through a type-safe pieces framework written in TypeScript.",
+   "Pieces contributed to Activepieces also become available as MCP servers."
+  ],
+  "who": "Teams automating workflows with AI agents.",
+  "features": [
+   "Open-source automation",
+   "TypeScript pieces framework",
+   "Pieces as MCP servers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/activepieces/activepieces"
+  ],
+  "updated": "2026-10-18"
+ },
+ "maxkb": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MaxKB (Max Knowledge Brain) is an open-source platform for building enterprise-grade agents, integrating retrieval-augmented generation (RAG).",
+   "Our listing notes knowledge-base assistants."
+  ],
+  "who": "Enterprises building knowledge-base assistants and agents.",
+  "features": [
+   "Enterprise agents",
+   "RAG",
+   "Knowledge bases"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/1Panel-dev/MaxKB"
+  ],
+  "updated": "2026-10-18"
+ },
+ "astron-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Astron Agent, from iFlytek, is an enterprise-grade, commercial-friendly agentic workflow development platform.",
+   "It integrates AI workflow orchestration, model management and AI and MCP tool integration."
+  ],
+  "who": "Enterprises building agentic workflows.",
+  "features": [
+   "Workflow orchestration",
+   "Model management",
+   "MCP tool integration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/iflytek/astron-agent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "unstract": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Unstract uses LLMs to turn unstructured documents (PDFs, images, scans) into structured JSON.",
+   "You define what to extract in natural language, then run it via APIs or ETL pipelines."
+  ],
+  "who": "Teams processing documents at scale.",
+  "features": [
+   "Structured extraction",
+   "Natural-language schemas",
+   "APIs and ETL pipelines"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Zipstack/unstract"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nexent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Nexent is a zero-code platform for auto-generating production-grade AI agents, built on harness-engineering principles.",
+   "It provides unified tools, skills, memory and orchestration."
+  ],
+  "who": "Teams who want agents from plain-language descriptions.",
+  "features": [
+   "Zero-code agent generation",
+   "Tools and skills",
+   "Memory and orchestration"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ModelEngine-Group/nexent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pyspur": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PySpur lets AI engineers iterate on agents visually, which the makers say is up to 10x faster."
+  ],
+  "who": "AI engineers iterating on agent workflows.",
+  "features": [
+   "Visual agent workflows",
+   "Fast iteration",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/PySpur-Dev/pyspur"
+  ],
+  "updated": "2026-10-18"
+ },
+ "boomi": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Boomi is a single platform that integrates applications, APIs, data and AI agents.",
+   "Our listing notes Boomi AI agents and agent management."
+  ],
+  "who": "Enterprises integrating systems and managing agents.",
+  "features": [
+   "App, API and data integration",
+   "AI agents",
+   "Agent management"
+  ],
+  "faq": [],
+  "sources": [
+   "https://boomi.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cassidy": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Cassidy is a no-code platform that lets non-technical teams build AI assistants and workflows trained on company knowledge.",
+   "It offers hands-on support for adoption."
+  ],
+  "who": "Teams adopting AI across the organization.",
+  "features": [
+   "No-code",
+   "Company-knowledge assistants",
+   "Workflows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.cassidyai.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "jotform-ai-agents": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Jotform AI Agents let you build customer-service agents that respond instantly to customers, anytime.",
+   "Our listing notes agents built from forms and docs that answer via chat, voice and messaging. You can get started free."
+  ],
+  "who": "Businesses wanting customer-service agents without code.",
+  "features": [
+   "Built from forms and docs",
+   "Chat, voice and messaging",
+   "Free to start"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.jotform.com/ai/agents/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "lindy": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Lindy is an AI employee that connects to your tools, knows about your company and does real work for the whole team."
+  ],
+  "who": "Teams who want AI assistants for email, meetings and ops.",
+  "features": [
+   "Connects to your tools",
+   "Email and meetings",
+   "Ops automation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.lindy.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "make": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Make is a visual automation platform with AI agents, used from startups to global enterprises.",
+   "You can see your whole stack live, fine-tune with JavaScript or Python, and build and run automations from Claude."
+  ],
+  "who": "Teams automating workflows visually.",
+  "features": [
+   "Visual automation",
+   "AI agents",
+   "Code when needed",
+   "Run from Claude"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.make.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "n8n": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "n8n is a fair-code platform to build and deploy AI agents and workflows, combining a visual canvas with custom code.",
+   "You can run it self-hosted or in the cloud."
+  ],
+  "who": "Technical teams automating workflows with AI.",
+  "features": [
+   "Visual canvas plus code",
+   "AI agent nodes",
+   "Self-host or cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/n8n-io/n8n"
+  ],
+  "updated": "2026-10-18"
+ },
+ "relevance-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Relevance AI lets you build specialist agents for sales, customer success, marketing and HR, and run millions of daily tasks on one platform."
+  ],
+  "who": "Business teams building agent workforces.",
+  "features": [
+   "Specialist agents",
+   "Sales, CS, marketing, HR",
+   "High-volume tasks"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.relevanceai.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "snaplogic": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "SnapLogic is a governed integration platform that unifies people, apps, data and agents, positioned as the AI operational layer for the agentic enterprise.",
+   "Our listing notes AgentCreator for building enterprise agents."
+  ],
+  "who": "Enterprises integrating systems and agents.",
+  "features": [
+   "Governed integration",
+   "AgentCreator",
+   "App and data connectivity"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.snaplogic.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "tray-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Tray.ai is an AI-native enterprise iPaaS for building AI agents, governing MCP and integrating 700+ apps.",
+   "It includes an Agent Gateway for governed MCP."
+  ],
+  "who": "Enterprises building and governing agents.",
+  "features": [
+   "Agent building",
+   "Governed MCP gateway",
+   "700+ apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://tray.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "zapier-agents": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Zapier Agents let you create custom AI agents in minutes, equip them with live business data and have them work across 8,000+ apps, on command or on a schedule."
+  ],
+  "who": "Teams who want agents across their business apps.",
+  "features": [
+   "Custom agents in minutes",
+   "8,000+ apps",
+   "Live business data"
+  ],
+  "faq": [],
+  "sources": [
+   "https://zapier.com/agents"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nocobase": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "NocoBase is an open-source AI + no-code platform for building business systems fast.",
+   "Our listing notes AI employees inside the systems you build; a cloud option is available."
+  ],
+  "who": "Teams building internal business systems.",
+  "features": [
+   "No-code business systems",
+   "AI employees",
+   "Open source + cloud"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nocobase/nocobase"
+  ],
+  "updated": "2026-10-18"
+ },
+ "insforge": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "InsForge is an all-in-one, open-source backend platform for agentic coding.",
+   "Our listing notes it gives coding agents a database, auth and storage."
+  ],
+  "who": "Developers using coding agents to build apps.",
+  "features": [
+   "Database",
+   "Auth",
+   "Storage",
+   "Built for coding agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/InsForge/InsForge"
+  ],
+  "updated": "2026-10-18"
+ },
+ "vibesdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "VibeSDK is Cloudflare's open-source, agentic platform for building and deploying full-stack applications on Cloudflare.",
+   "People build apps by working with an AI coding agent; you can run your own vibe-coding platform with it."
+  ],
+  "who": "Companies wanting their own app-builder platform.",
+  "features": [
+   "Self-hosted vibe-coding platform",
+   "Full-stack apps",
+   "Deploys on Cloudflare"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/cloudflare/vibesdk"
+  ],
+  "updated": "2026-10-18"
+ },
+ "bolt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Bolt.new is an AI web development agent that lets you prompt, run, edit and deploy full-stack applications directly in the browser."
+  ],
+  "who": "People building web apps from prompts.",
+  "features": [
+   "Prompt-to-app",
+   "Runs in the browser",
+   "Deploy full-stack apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/stackblitz/bolt.new"
+  ],
+  "updated": "2026-10-18"
+ },
+ "v0": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "v0 by Vercel is a collaborative AI assistant to design, iterate and scale full-stack web applications.",
+   "It generates working applications in minutes, with templates to start from."
+  ],
+  "who": "Developers and designers building web apps and UI.",
+  "features": [
+   "Full-stack app generation",
+   "UI design",
+   "Templates",
+   "Deploy on Vercel"
+  ],
+  "faq": [],
+  "sources": [
+   "https://v0.app"
+  ],
+  "updated": "2026-10-18"
+ },
+ "openmontage": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenMontage is an open-source agentic video production system that turns your AI coding assistant into a video production studio.",
+   "Our listing notes ready pipelines and tools agents use to edit and assemble videos."
+  ],
+  "who": "Creators who want agents to produce videos.",
+  "features": [
+   "Agentic video production",
+   "Ready pipelines",
+   "Works with coding assistants"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/calesthio/OpenMontage"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mindshub": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MindsHub, from MindsDB, is an agent workspace for knowledge work and software development, with open-source agent harnesses and a choice of models.",
+   "Our listing notes a model router and a scoped vault for connected data."
+  ],
+  "who": "Knowledge workers and developers.",
+  "features": [
+   "Swappable agent harnesses",
+   "Model choice",
+   "Scoped data vault"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mindsdb/mindshub"
+  ],
+  "updated": "2026-10-18"
+ },
+ "next-ai-draw-io": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Next AI Draw.io lets you draw and edit draw.io diagrams by chatting with an AI.",
+   "It is available as a web demo, desktop app and MCP server."
+  ],
+  "who": "Anyone who makes diagrams.",
+  "features": [
+   "Chat-driven diagrams",
+   "draw.io format",
+   "Web, desktop and MCP"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/DayuanJiang/next-ai-draw-io"
+  ],
+  "updated": "2026-10-18"
+ },
+ "teable": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Teable turns your data into AI workflows and custom apps: data management, AI workflows and app building on one spreadsheet-simple platform."
+  ],
+  "who": "Business teams managing data and workflows.",
+  "features": [
+   "AI spreadsheet-database",
+   "AI workflows",
+   "Custom apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/teableio/teable"
+  ],
+  "updated": "2026-10-18"
+ },
+ "text-to-cad": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The text-to-cad plugin gives your agent local workflows for generating 3D models as STEP, GLB, STL or 3MF files.",
+   "It also does design-for-manufacturing checks and generates engineering drawings."
+  ],
+  "who": "Engineers and makers using agents for CAD.",
+  "features": [
+   "STEP, GLB, STL, 3MF output",
+   "Manufacturability checks",
+   "Engineering drawings"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/earthtojake/text-to-cad"
+  ],
+  "updated": "2026-10-18"
+ },
+ "presenton": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Presenton is an open-source AI presentation generator and API, positioned as an alternative to Gamma, Canva and Beautiful.ai."
+  ],
+  "who": "People and developers generating slide decks.",
+  "features": [
+   "AI presentation generation",
+   "API",
+   "Open source"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/presenton/presenton"
+  ],
+  "updated": "2026-10-18"
+ },
+ "inkos": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "InkOS is a story-creation AI agent system for novels, short fiction, scripts, interactive fiction and multilingual translation.",
+   "Its README (in Chinese) describes one workbench for serialized novels, short stories, screenplays, fan fiction, continuations, interactive games and long-form translation."
+  ],
+  "who": "Writers using AI for long-form fiction.",
+  "features": [
+   "Novels and scripts",
+   "Interactive fiction",
+   "Translation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Narcooo/inkos"
+  ],
+  "updated": "2026-10-18"
+ },
+ "genoffice": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "GenOffice, from Genspark, is a free, open-source AI office suite: Word, Excel, PowerPoint and PDF files edited by you and your AI, saved in their real formats."
+  ],
+  "who": "People who want an open-source office suite with an AI agent.",
+  "features": [
+   "Docs, sheets, slides, PDF",
+   "Built-in AI agent",
+   "Real file formats"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/genspark-ai/genoffice"
+  ],
+  "updated": "2026-10-18"
+ },
+ "craft-agents": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Craft Agents, from the makers of Craft, is a desktop app for working with agents in a document-first way.",
+   "Our listing notes the agent sets up APIs and MCP servers for you and sessions can be shared."
+  ],
+  "who": "Craft users and knowledge workers.",
+  "features": [
+   "Document-first agent work",
+   "Auto-setup of APIs and MCP",
+   "Shareable sessions"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/craft-ai-agents/craft-agents-oss"
+  ],
+  "updated": "2026-10-18"
+ },
+ "cadam": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CADAM is an open-source text-to-CAD web app: generate a CAD model in seconds in your browser, with no install.",
+   "It turns natural language and images into 3D models with parametric controls."
+  ],
+  "who": "Makers and designers prototyping parts.",
+  "features": [
+   "Text and image to 3D",
+   "Parametric controls",
+   "Runs in browser"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Adam-CAD/CADAM"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pptagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PPTAgent is an agentic framework for generating and refining PowerPoint presentations.",
+   "A PPTAgent Skill for Claude Code, Codex and OpenCode creates, revises and visually reviews editable decks."
+  ],
+  "who": "People generating slide decks with agents.",
+  "features": [
+   "Editable PowerPoint output",
+   "Revision and visual review",
+   "Coding-agent skill"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/icip-cas/PPTAgent"
+  ],
+  "updated": "2026-10-18"
+ },
+ "circleback": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Circleback turns conversations into meeting notes, action items and searchable company knowledge.",
+   "It records and transcribes virtual and in-person meetings in 100+ languages; our listing notes automated follow-up workflows and integrations."
+  ],
+  "who": "Teams with many meetings.",
+  "features": [
+   "Notes and action items",
+   "100+ languages",
+   "In-person and virtual",
+   "Follow-up automations"
+  ],
+  "faq": [],
+  "sources": [
+   "https://circleback.ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "excaliclaw": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "ExcaliClaw is a collaborative workspace for hand-drawn diagrams where you organize, search, share and create diagrams with Claude, Cursor and VS Code through MCP.",
+   "It is an independent workspace."
+  ],
+  "who": "People who diagram with AI assistants.",
+  "features": [
+   "Hand-drawn diagrams",
+   "MCP for Claude, Cursor, VS Code",
+   "Sharing and search"
+  ],
+  "faq": [],
+  "sources": [
+   "https://excaliclaw.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "sourcetable": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Sourcetable is an AI spreadsheet that analyzes data, builds financial models and generates Excel templates, graphs and reports.",
+   "It has connectors to bring your data in."
+  ],
+  "who": "Analysts and finance teams.",
+  "features": [
+   "AI analysis",
+   "Financial models",
+   "Charts and reports",
+   "Data connectors"
+  ],
+  "faq": [],
+  "sources": [
+   "https://sourcetable.com"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ai-town": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AI Town is a virtual town where AI characters live, chat and socialize.",
+   "It is a deployable starter kit for building your own version, inspired by the Generative Agents paper."
+  ],
+  "who": "Developers experimenting with agent simulations.",
+  "features": [
+   "AI character town",
+   "Deployable starter kit",
+   "Customizable"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/a16z-infra/ai-town"
+  ],
+  "updated": "2026-10-18"
+ },
+ "voyager": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Voyager is an open-ended embodied agent with large language models that explores Minecraft on its own.",
+   "Our listing notes it writes and reuses code skills to learn as it goes; there is a paper on arXiv."
+  ],
+  "who": "Researchers in embodied and lifelong-learning agents.",
+  "features": [
+   "Autonomous Minecraft exploration",
+   "Skill library",
+   "Research project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MineDojo/Voyager"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mindcraft": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mindcraft crafts minds for Minecraft with LLMs and Mineflayer: agents that play with you and take chat commands.",
+   "The maintainers warn not to connect it to public servers with coding enabled, since the LLM can write and execute code on your computer."
+  ],
+  "who": "Players and researchers building Minecraft agents.",
+  "features": [
+   "LLM Minecraft agents",
+   "Chat commands",
+   "Mineflayer-based"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mindcraft-bots/mindcraft"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wolfcha": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Wolfcha is an AI-native Werewolf game for deduction and bluffing that fills a complete table of distinct players.",
+   "You choose your role and LLM players take the other seats."
+  ],
+  "who": "Fans of social deduction games.",
+  "features": [
+   "AI Werewolf players",
+   "Pick your role",
+   "Play anytime"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/oil-oil/wolfcha"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ai-dungeon": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "AI Dungeon is a free AI text adventure game where you create endless stories, explore worlds and direct every choice.",
+   "You can play online or in the app."
+  ],
+  "who": "Players who enjoy interactive fiction.",
+  "features": [
+   "AI narrator",
+   "Endless stories",
+   "Web and app"
+  ],
+  "faq": [],
+  "sources": [
+   "https://aidungeon.com/"
+  ],
+  "updated": "2026-10-18"
  }
 }
