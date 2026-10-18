@@ -34,6 +34,7 @@ for x in t:
     if g.get("release_tag") and x.get("github"):
         _tg=g["release_tag"] if len(g["release_tag"])<=22 else g["release_tag"][:21]+"…"
         fh+=f'<dt>Latest release</dt><dd><a href="{e(g.get("release_url") or x["github"].rstrip("/")+"/releases")}" target="_blank" rel="noopener noreferrer" title="{e(g["release_tag"])} · GitHub data fetched {e(g.get("fetched",""))}">{e(_tg)}</a>, {e(_dt.date.fromisoformat(g["release_date"]).strftime("%b %-d, %Y"))}</dd>'
+    fh+=f'<dt>Listing</dt><dd><a class="suggestedit" href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a></dd>'
     if g.get("pushed") and x.get("github"): fh+=f'<dt>Last commit</dt><dd title="GitHub data fetched {e(g.get("fetched",""))}">{e(_dt.date.fromisoformat(g["pushed"]).strftime("%b %-d, %Y"))}</dd>'
     uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
     prim=build_extras.su(x.get("website") or x["url"])
