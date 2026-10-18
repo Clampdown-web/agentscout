@@ -127,12 +127,80 @@ def mini(x):
     gs=f' · ★ {x["github_stars"]:,}' if x.get("github_stars") is not None else ""
     return f'<li style="margin:0 0 10px"><a href="../tools/{x["slug"]}.html"><b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span><span class="muted" style="font-size:12.5px">{gs}</span></li>'
 DATA={}
+# ---- Modifier /s/ pages (TAAFT item 7, Oct 18 2026): "<modifier> <target>", strict gate, capped ----
+MOD_CAP=20; MOD_MIN=8
+MODS=[("open-source","Open-source",lambda x:x["pricing"] in OS,"with public source code you can read, self-host and extend"),
+      ("free","Free",lambda x:isfree(x),"that you can use without paying: open-source projects plus tools with a free plan"),
+      ("self-hosted","Self-hosted",lambda x:x["pricing"] in OS and x["audience"]!="builders","that are ready to use and open source, so you can run them on your own machine or server"),
+      ("python","Python",lambda x:bool(re.search(r"\bPython\b",D(x))),"whose listings say they are built for Python"),
+      ("typescript","TypeScript",lambda x:bool(re.search(r"TypeScript|JavaScript|\bNode(\.js)?\b",D(x))),"whose listings say they are built for TypeScript, JavaScript or Node.js"),
+      ("mcp","MCP-ready",lambda x:bool(re.search(r"\bMCP\b|Model Context Protocol",D(x))) and x["category"]!="MCP & infra","that work with the Model Context Protocol (MCP), so Claude, Cursor and other MCP clients can use them")]
+# target key, plural noun, filter(x,k), task slug for related links
+TARGETS=[("ai-agent-memory-tools","AI agent memory tools",lambda x,k:k("agent-memory"),"agent-memory"),
+ ("ai-sre-agents","AI SRE agents",lambda x,k:k("devops-and-incidents"),"devops-and-incidents"),
+ ("ai-research-agents","AI research agents",lambda x,k:k("research"),"research"),
+ ("ai-browser-agents","AI browser agents",lambda x,k:k("browsing-the-web"),"browsing-the-web"),
+ ("computer-use-agents","computer-use agents",lambda x,k:k("computer-use"),"computer-use"),
+ ("ai-workflow-automation-tools","AI workflow automation tools",lambda x,k:k("automating-workflows"),"automating-workflows"),
+ ("ai-agent-evaluation-tools","AI agent evaluation tools",lambda x,k:k("evaluating-agents"),"evaluating-agents"),
+ ("ai-agent-monitoring-tools","AI agent monitoring tools",lambda x,k:k("monitoring-agents"),"monitoring-agents"),
+ ("ai-agent-security-tools","AI agent security tools",lambda x,k:k("agent-security"),"agent-security"),
+ ("ai-agent-sandboxes","AI agent sandboxes",lambda x,k:k("running-code-safely"),"running-code-safely"),
+ ("ai-voice-agents","AI voice agents",lambda x,k:k("building-voice-agents"),"building-voice-agents"),
+ ("multi-agent-frameworks","multi-agent frameworks",lambda x,k:k("multi-agent-systems"),"multi-agent-systems"),
+ ("ai-agent-frameworks","AI agent frameworks",lambda x,k:x["category"]=="frameworks","building-ai-agents"),
+ ("mcp-servers","MCP servers",lambda x,k:x["category"]=="MCP & infra" and k("connecting-tools-mcp"),"connecting-tools-mcp"),
+ ("mcp-servers-for-databases","MCP servers for databases",lambda x,k:k("databases"),"databases"),
+ ("ai-coding-agents","AI coding agents",lambda x,k:x["category"]=="coding","writing-code"),
+ ("ai-code-review-tools","AI code review tools",lambda x,k:k("reviewing-pull-requests"),"reviewing-pull-requests"),
+ ("ai-testing-agents","AI testing agents",lambda x,k:k("testing-apps"),"testing-apps"),
+ ("personal-ai-assistants","personal AI assistants",lambda x,k:k("personal-assistants"),"personal-assistants"),
+ ("ai-data-analysis-agents","AI data analysis agents",lambda x,k:k("data-analysis"),"data-analysis"),
+ ("ai-document-agents","AI document and RAG tools",lambda x,k:k("documents"),"documents"),
+ ("ai-agent-builders","no-code AI agent builders",lambda x,k:x["category"] in ("no-code builders","app builders"),"building-apps-without-code"),
+ ("ai-image-and-design-agents","AI image and design agents",lambda x,k:k("making-images-and-design"),"making-images-and-design"),
+ ("crypto-ai-agents","crypto AI agents",lambda x,k:x["category"]=="crypto","crypto-and-wallets"),
+ ("ai-agent-payment-tools","AI agent payment tools",lambda x,k:k("agent-payments"),"agent-payments"),
+ ("local-ai-agents","local AI agents",lambda x,k:k("running-agents-locally"),"running-agents-locally"),
+ ("ai-web-scraping-tools","AI web scraping tools",lambda x,k:k("web-scraping"),"web-scraping"),
+ ("deep-research-agents","deep research agents",lambda x,k:x["category"]=="research","research")]
+def _existing_sets(made):
+    sets=[{x["slug"] for x in a[8]} for a in made]
+    for f in glob.glob("best/*.html"):
+        if f.endswith("index.html"): continue
+        sets.append(set(re.findall(r'tools/([a-z0-9-]+)\.html',open(f).read().split("<main",1)[-1].split('id="nlblock"')[0])))
+    if os.path.exists("free-tools.html"):  # each category section of the free-tools hub
+        for sec in open("free-tools.html").read().split('<h2 id=')[1:]: sets.append(set(re.findall(r'tools/([a-z0-9-]+)\.html',sec)))
+    return [x for x in sets if x]
+def modifier_pages(t,m,made,inT):
+    have={a[0] for a in made}; ex=_existing_sets(made); tasksets=[{x["slug"] for x in it} for _,it in m.values()]
+    cands=[]
+    for ms,ml,mf,mtxt in MODS:
+        for tk,noun,tf,task in TARGETS:
+            slug=f"{ms}-{tk}"
+            if slug in have or (ms=="mcp" and "mcp" in tk): continue
+            allm=[x for x in t if live(x) and mf(x) and tf(x,inT(x))]
+            A={x["slug"] for x in allm}
+            if len(A)<MOD_MIN: continue
+            base={x["slug"] for x in t if live(x) and tf(x,inT(x))}
+            if len(A)>=.85*len(base): continue  # modifier must actually narrow the list
+            if any(len(A&B)/len(A)>=.7 for B in ex): continue
+            cands.append((len(A),slug,ml,noun,mtxt,task,allm,A))
+    cands.sort(key=lambda z:-z[0]); out=[]; chosen=[]
+    for n,slug,ml,noun,mtxt,task,allm,A in cands:
+        if len(out)>=MOD_CAP: break
+        if any(len(A&B)/min(len(A),len(B))>=.7 for B in chosen): continue
+        chosen.append(A); h=f"{ml} {noun}"; intro=f"{noun[0].upper()+noun[1:]} {mtxt}." 
+        out.append((slug,h,h[0].lower()+h[1:] if ml not in ("Python","TypeScript","MCP-ready") else h,len(allm),rank(allm)[:25],intro,task,None,allm))
+    print("modifier search pages:",len(out),"of",len(cands),"candidates")
+    return out
 def search_pages(t,m,asof):
     made=[]; inT=lambda x:(lambda s:s in m and x in m[s][1])
     for s,h,q,f,intro,task,best in S:
         allm=[x for x in t if live(x) and f(x,inT(x))]
         if len(allm)<6: print("skip search page (too few):",s,len(allm)); continue
         items=rank(allm)[:25]; made.append((s,h,q,len(allm),items,intro,task,best,allm))
+    made+=modifier_pages(t,m,made,inT)
     titles={a[0]:a[1] for a in made}
     DATA['search']=made
     for s,h,q,n,items,intro,task,best,allm in made:
