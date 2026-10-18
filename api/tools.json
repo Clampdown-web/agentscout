@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-18T07:42:18Z",
- "updated": "2026-10-18T07:42:18Z",
+ "generated": "2026-10-18T07:46:57Z",
+ "updated": "2026-10-18T07:46:57Z",
  "last_checked": "2026-10-18",
  "count": 656,
  "tools": [
@@ -2947,7 +2947,7 @@
     "Build apps without code"
    ],
    "pricing": "Self-host free; paid cloud",
-   "price_tag": "free",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -2964,7 +2964,7 @@
    "new_this_week": false,
    "repo": null,
    "github_stars": null,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -3156,15 +3156,15 @@
    "category": "no-code builders",
    "description": "Open-source platform for building LLM apps and agents visually.",
    "key_features": [
-    "Open source + paid cloud",
+    "Source-available + paid cloud",
     "Mature",
     "158410 GitHub stars",
     "Write code",
     "Automate workflows",
     "Build apps without code"
    ],
-   "pricing": "Open source + paid cloud",
-   "price_tag": "free",
+   "pricing": "Source-available + paid cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -3181,7 +3181,7 @@
    "new_this_week": false,
    "repo": "langgenius/dify",
    "github_stars": 158410,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -3701,17 +3701,16 @@
    "category": "evals & observability",
    "description": "Open-source tracing and evaluation for LLM apps.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "11828 GitHub stars",
     "Automate workflows",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-14",
    "added": "2026-10-14",
@@ -3724,7 +3723,7 @@
    "new_this_week": false,
    "repo": "Arize-ai/phoenix",
    "github_stars": 11828,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "automate workflows",
@@ -4247,17 +4246,16 @@
    "category": "frameworks",
    "description": "One of the first autonomous agent projects, now a platform for building, deploying and running continuous AI agents that automate workflows.",
    "key_features": [
-    "Open source + cloud",
+    "Source-available + cloud",
     "Mature",
     "187612 GitHub stars",
     "Build an agent",
     "Automate workflows"
    ],
-   "pricing": "Open source + cloud",
-   "price_tag": "free",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -4272,7 +4270,7 @@
    "new_this_week": false,
    "repo": "Significant-Gravitas/AutoGPT",
    "github_stars": 187612,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "build an agent",
@@ -8927,18 +8925,17 @@
    "category": "coding",
    "description": "Context window optimizer for coding agents that sandboxes tool output and persists session memory.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "30192 GitHub stars",
     "Write code",
     "Run code safely",
     "Give agents memory"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -8953,7 +8950,7 @@
    "new_this_week": false,
    "repo": "mksglu/context-mode",
    "github_stars": 30192,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -9245,17 +9242,16 @@
    "category": "coding",
    "description": "Charm's terminal coding agent with a polished TUI, multiple models and MCP support.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "28674 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -9271,7 +9267,7 @@
    "new_this_week": false,
    "repo": "charmbracelet/crush",
    "github_stars": 28674,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -9722,17 +9718,16 @@
    "category": "app builders",
    "description": "Open-source no-code platform with AI employees for building business systems.",
    "key_features": [
-    "Open source + cloud",
+    "Source-available + cloud",
     "Mature",
     "24599 GitHub stars",
     "Write code",
     "Build apps without code"
    ],
-   "pricing": "Open source + cloud",
-   "price_tag": "free",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -9747,7 +9742,7 @@
    "new_this_week": false,
    "repo": "nocobase/nocobase",
    "github_stars": 24599,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -9941,17 +9936,16 @@
    "category": "personal agents",
    "description": "Records your screen and audio locally so AI agents can search and act on your computer history.",
    "key_features": [
-    "Open source + cloud",
+    "Source-available + cloud",
     "Mature",
     "21958 GitHub stars",
     "Research the web",
     "Voice & phone calls"
    ],
-   "pricing": "Open source + cloud",
-   "price_tag": "free",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -9966,7 +9960,7 @@
    "new_this_week": false,
    "repo": "screenpipe/screenpipe",
    "github_stars": 21958,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "research the web",
@@ -10155,15 +10149,14 @@
    "category": "personal agents",
    "description": "Kortix, an open-source platform for building and running general-purpose AI agents.",
    "key_features": [
-    "Open source + cloud",
+    "Source-available + cloud",
     "Mature",
     "20278 GitHub stars"
    ],
-   "pricing": "Open source + cloud",
-   "price_tag": "free",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -10178,7 +10171,7 @@
    "new_this_week": false,
    "repo": "kortix-ai/suna",
    "github_stars": 20278,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "personal agents"
@@ -10890,16 +10883,15 @@
    "category": "coding",
    "description": "Agentic IDE for orchestrating many coding agents in parallel.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "15289 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -10914,7 +10906,7 @@
    "new_this_week": false,
    "repo": "superset-sh/superset",
    "github_stars": 15289,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code"
@@ -11759,15 +11751,14 @@
    "category": "business agents",
    "description": "Open-source agentic workspace for enterprises with many integrations.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "11446 GitHub stars"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -11782,7 +11773,7 @@
    "new_this_week": false,
    "repo": "holaboss-ai/holaOS",
    "github_stars": 11446,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "business agents"
@@ -13341,16 +13332,15 @@
    "category": "personal agents",
    "description": "Workspace for running and tracking all your agents and tasks across devices.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "8134 GitHub stars",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -13365,7 +13355,7 @@
    "new_this_week": false,
    "repo": "YaoApp/yao",
    "github_stars": 8134,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "monitor & evaluate agents"
@@ -14501,13 +14491,13 @@
    "category": "personal agents",
    "description": "Desktop assistant that sees what is on your screen and helps using LLMs and MCP tools.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "6319 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -14524,7 +14514,7 @@
    "new_this_week": false,
    "repo": "Sylinko/Everywhere",
    "github_stars": 6319,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "connect tools via MCP"
@@ -14542,15 +14532,15 @@
    "category": "personal agents",
    "description": "Local-first agent workspace for coding, writing, design, research and automation.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "6313 GitHub stars",
     "Write code",
     "Research the web",
     "Automate workflows"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -14568,7 +14558,7 @@
    "new_this_week": false,
    "repo": "KunAgent/Kun",
    "github_stars": 6313,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -17735,12 +17725,12 @@
    "category": "personal agents",
    "description": "Open-source agentic chat app for running agents on local and hosted models.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Active",
     "3518 GitHub stars"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -17757,7 +17747,7 @@
    "new_this_week": false,
    "repo": "sugarforever/chat-ollama",
    "github_stars": 3518,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "personal agents"
@@ -18639,17 +18629,16 @@
    "category": "MCP & infra",
    "description": "MCP server for symbol-level code exploration that cuts token use.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Active",
     "2776 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -18665,7 +18654,7 @@
    "new_this_week": false,
    "repo": "jgravelle/jcodemunch-mcp",
    "github_stars": 2776,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -19191,16 +19180,15 @@
    "category": "crypto",
    "description": "Blockscout's MCP server giving agents contextual access to blockchain data across many EVM chains.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Active",
     "46 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -19215,7 +19203,7 @@
    "new_this_week": false,
    "repo": "blockscout/mcp-server",
    "github_stars": 46,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "connect tools via MCP"
@@ -19919,17 +19907,16 @@
    "category": "MCP & infra",
    "description": "MathWorks' MCP server that lets coding agents run MATLAB code and tests.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Active",
     "1672 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -19944,7 +19931,7 @@
    "new_this_week": false,
    "repo": "matlab/matlab-mcp-server",
    "github_stars": 1672,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -20005,16 +19992,15 @@
    "category": "MCP & infra",
    "description": "Official Microsoft Learn MCP server giving agents up-to-date Microsoft documentation.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Active",
     "1950 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -20029,7 +20015,7 @@
    "new_this_week": false,
    "repo": "MicrosoftDocs/mcp",
    "github_stars": 1950,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "connect tools via MCP"
@@ -20601,17 +20587,16 @@
    "category": "MCP & infra",
    "description": "SonarQube MCP server for code quality and security analysis from agents.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Active",
     "665 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -20626,7 +20611,7 @@
    "new_this_week": false,
    "repo": "SonarSource/sonarqube-mcp-server",
    "github_stars": 665,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -23222,17 +23207,16 @@
    "category": "voice",
    "description": "Open-source framework for real-time multimodal voice agents, including the TEN Agent demo.",
    "key_features": [
-    "Open source",
+    "Source-available",
     "Mature",
     "11172 GitHub stars",
     "Build an agent",
     "Voice & phone calls"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "Source-available",
+   "price_tag": "paid",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -23247,7 +23231,7 @@
    "new_this_week": false,
    "repo": "TEN-framework/ten-framework",
    "github_stars": 11172,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "build an agent",

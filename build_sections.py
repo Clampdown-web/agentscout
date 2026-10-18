@@ -40,7 +40,7 @@ def build(t):
     g=open("generate.html").read(); gm=g[g.index('<main'):g.index('</main>')] if '<main' in g else g
     generate={"title":first(r'<h1[^>]*>(.*?)</h1>',gm,"Free AI Image Generator"),"lede":first(r'<p class="lede"[^>]*>(.*?)</p>',gm),"url":B+"generate.html"}
     submit={"endpoint":"https://agentscout-image.agentscouthq.workers.dev/submit","fields":["name","website","github","category","pricing","desc","email","x","company"],
-        "categories":[c for c,_ in cats.most_common()],"pricing":["Open source","Free","Freemium","Paid","Open source + cloud","Enterprise / contact sales"],"url":B+"submit.html"}
+        "categories":[c for c,_ in cats.most_common()],"pricing":["Open source","Free","Freemium","Paid","Open source + cloud","Source-available","Source-available + cloud","Enterprise / contact sales"],"url":B+"submit.html"}
     free_tools=[{"name":"AI Image Generator","badges":["Free","image"],"description":"Type a prompt and get an image in seconds. Powered by FLUX.1 [schnell].","screen":"Generate","url":B+"generate.html"}]
     badges={"title":"Badges for makers","lede":"If your tool is on AgentScout, you can show it. Badges are free and link to your tool's page, so readers can see how it compares.",
         "kinds":[{"id":"listed","label":"Listed","desc":"for any tool in the directory."},{"id":"featured","label":"Featured","desc":"for tools we've picked as featured."}],
