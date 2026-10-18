@@ -139,6 +139,7 @@ def build(t):
     import build_tasks; urls+=build_tasks.pages(t)
     import build_best; urls+=build_best.pages(t)
     import build_free_tools; urls+=build_free_tools.pages(t)
+    import build_landing; urls+=build_landing.pages(t)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B,B+"new.html",B+"quiz.html",B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}
