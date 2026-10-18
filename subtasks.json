@@ -3688,5 +3688,96 @@
 "vector-rag",
 "email-agents",
 "mcp-servers"
+],
+"scrapling": [
+"web-scraping",
+"browser-automation",
+"mcp-servers",
+"agent-frameworks"
+],
+"omniroute": [
+"mcp-gateways",
+"local-models"
+],
+"tyk-gateway": [
+"agent-auth",
+"mcp-gateways"
+],
+"openui": [
+"agent-frameworks"
+],
+"funasr": [
+"voice-phone",
+"agent-frameworks",
+"local-models"
+],
+"cloakbrowser": [
+"browser-automation"
+],
+"moxo": [
+"workflow-automation"
+],
+"outverse": [
+"workflow-automation"
+],
+"llamaparse": [
+"vector-rag",
+"web-scraping"
+],
+"blockit": [
+"chat-app-agents",
+"email-agents"
+],
+"causalens": [],
+"cobalt": [
+"workflow-automation",
+"agent-frameworks"
+],
+"archilabs": [
+"vector-rag",
+"computer-use"
+],
+"auquan": [
+"observability"
+],
+"a0-dev": [
+"no-code-apps",
+"mobile"
+],
+"alloy": [],
+"askyourdatabase": [
+"text-to-sql"
+],
+"extruct-ai": [
+"research-agents",
+"search-apis"
+],
+"fabi-ai": [
+"text-to-sql"
+],
+"ask-ai": [
+"no-code-apps"
+],
+"agentman": [
+"voice-phone"
+],
+"baseai": [
+"agent-memory",
+"vector-rag",
+"agent-frameworks"
+],
+"aimdoc": [
+"observability"
+],
+"rep-ai": [
+"support-agents"
+],
+"sigma-ai-browser": [
+"marketing-agents",
+"browser-automation",
+"local-models"
+],
+"freeday": [
+"workflow-automation"
 ]
 }
