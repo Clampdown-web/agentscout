@@ -145,12 +145,17 @@ def sitewide(t):
         s=re.sub(r'<a href="[^"]*best/mcp-servers\.html">Best</a>',lambda mm:f'<a href="{d}best/index.html">Best</a>',s)
         # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
         s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Searches</a>',s)
-        # Newsletter archive in every footer, right after Free tools
-        if 'newsletter.html">Newsletter archive</a>' not in s: s=re.sub(r'(<p>(?:(?!</p>).)*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',s,count=1,flags=re.S)
-        # Popular searches + AI agents by role in every footer, right after Free tools (generate.html has no footer Free tools link: after Badges)
-        if 's/index.html">Popular searches</a>' not in s:
-            s,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',s,count=1)
-            if not k and "<footer" in s: s=re.sub(r'(<footer.*?<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',s,count=1,flags=re.S)
+        # Footer links (scoped to <footer> so body "See also" lines don't satisfy the check, Oct 18 2026):
+        # Newsletter archive right after Free tools; Popular searches + AI agents by role right after Free tools
+        # (generate.html has no footer Free tools link: after Badges)
+        fm=re.search(r'<footer\b.*?</footer>',s,re.S)
+        if fm:
+            fo=fm.group(0); fn=fo
+            if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
+            if 's/index.html">Popular searches</a>' not in fn:
+                fn,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
+                if not k: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
+            if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Free-tools hub in the main nav, right after Image Gen
         if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s: s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")
