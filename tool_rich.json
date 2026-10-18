@@ -12701,5 +12701,391 @@
    "https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/"
   ],
   "updated": "2026-10-18"
+ },
+ "roo-code": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Roo Code is discontinued. Its official README says the Roo Code extension was shut down on May 15, 2026, and the repository is archived. It remains under the Apache 2.0 license, so the code can still be read and forked.",
+   "Before the shutdown, Roo Code was an open-source AI coding agent for VS Code. It could generate code from natural-language specs, refactor and debug existing code, write documentation, answer questions about a codebase and use MCP servers, with Code, Architect, Ask, Debug and custom modes. The README points users to Cline, the project Roo Code was forked from, and to ZooCode, a community fork."
+  ],
+  "who": "Existing Roo Code users planning a migration, and developers studying its mode-based agent design. New users should start with an actively maintained alternative.",
+  "features": [
+   "Discontinued: the extension shut down on May 15, 2026, and the repo is archived",
+   "Was a VS Code coding agent with Code, Architect, Ask, Debug and custom modes",
+   "MCP server support",
+   "Apache 2.0 code you can still fork",
+   "Suggested alternatives: Cline and the community fork ZooCode"
+  ],
+  "faq": [
+   [
+    "Is Roo Code still available?",
+    "No. The Roo Code extension was shut down on May 15, 2026, according to its official README, and the repository is archived. Billing questions go to billing@roocode.com."
+   ]
+  ],
+  "sources": [
+   "https://github.com/RooCodeInc/Roo-Code"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "devin": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Devin is Cognition's autonomous AI software engineer. It runs in the cloud or on your machine, tests its work in its own browser and keeps going until a pull request is ready to merge. You can start it from Devin Cloud, from Devin Desktop or the CLI, or by tagging @Devin in Slack or Teams.",
+   "Beyond writing code, it can run automations that react to bugs, failed CI and alerts. Devin Wiki maps a codebase and its architecture, and Devin Review checks pull requests for bugs and vulnerabilities. On the official pricing page, the Free plan comes with a light quota. Pro costs $20 a month and adds Devin Cloud, Max costs $200 a month, and Teams costs $80 a month plus $40 for each full developer seat. Enterprise plans add SAML/OIDC SSO and a VPC deployment option."
+  ],
+  "who": "Engineering teams that want to hand off tickets, bug fixes, migrations and reviews to an agent that opens pull requests, while keeping humans in the review loop.",
+  "features": [
+   "Runs in the cloud (Devin Cloud) or locally (Devin Desktop and CLI)",
+   "Tests changes in its own browser before opening a PR",
+   "Tag @Devin in Slack and Teams; Linear and Jira integrations",
+   "Automations for bugs, failed CI and alerts",
+   "Devin Wiki codebase maps and Devin Review PR checks",
+   "Free plan; Pro $20/mo, Max $200/mo, Teams $80/mo plus $40 per seat"
+  ],
+  "faq": [
+   [
+    "How much does Devin cost?",
+    "According to Cognition's pricing page: a Free plan with a light quota, Pro at $20/month (which adds Devin Cloud), Max at $200/month, Teams at $80/month plus $40/month per full dev seat, and custom Enterprise plans."
+   ]
+  ],
+  "sources": [
+   "https://devin.ai/",
+   "https://devin.ai/pricing"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "windsurf": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Windsurf has been rebranded as Devin Desktop. Cognition's official page says: \"Devin Desktop is the new name for Windsurf.\" Devin Desktop keeps Windsurf's full IDE and adds an Agent Command Center, with Spaces, a Kanban view and multi-agent management, for running local and cloud agents from one place.",
+   "Existing Windsurf users get Devin Desktop as an over-the-air update, and their plan, pricing, extensions and settings carry over. Cognition says Windsurf for JetBrains IDEs is still available to download. Devin Desktop works with other agents through the Agent Client Protocol (ACP) and includes Supercomplete, Fast Context and the SWE-2 model. Plans are Free, Pro at $20 a month, Max at $200 a month, and Teams."
+  ],
+  "who": "Windsurf users following the product into Devin Desktop, and developers who want one AI IDE to manage several local and cloud coding agents.",
+  "features": [
+   "Rebranded: Windsurf is now Devin Desktop (Cognition)",
+   "Agent Command Center: Spaces, Kanban view, multi-agent management",
+   "Full IDE with Supercomplete and Fast Context",
+   "Agent Client Protocol (ACP) support for other agents",
+   "Hand off a plan to the cloud with Devin Cloud",
+   "Windsurf for JetBrains is still available"
+  ],
+  "faq": [
+   [
+    "What happened to Windsurf?",
+    "Cognition renamed it Devin Desktop. Existing users get it as an over-the-air update, and their plan, pricing, extensions and settings carry over, including legacy Windsurf Enterprise plans."
+   ],
+   [
+    "How much does Devin Desktop cost?",
+    "The official page lists Free, Pro at $20/month, Max at $200/month, and Teams plans."
+   ]
+  ],
+  "sources": [
+   "https://devin.ai/desktop",
+   "https://devin.ai/pricing"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "autogen": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AutoGen is Microsoft's open-source framework for building multi-agent AI applications that can act on their own or alongside people. Its official README now says the project has been archived and is no longer actively maintained. Microsoft no longer provides bug fixes, security fixes, new features or support, and it advises against production use.",
+   "Microsoft recommends that new users start with Microsoft Agent Framework, which it calls AutoGen's enterprise-ready successor, and it publishes a migration guide for existing users. AutoGen needs Python 3.10 or later. It ships AgentChat and Core APIs, extensions for model clients and tools such as MCP, and AutoGen Studio, a no-code GUI for prototyping multi-agent workflows."
+  ],
+  "who": "Researchers and teams maintaining existing AutoGen projects or studying multi-agent patterns. New production work should use Microsoft Agent Framework.",
+  "features": [
+   "Archived: no longer maintained by Microsoft (per the README)",
+   "Successor: Microsoft Agent Framework, with a migration guide",
+   "AgentChat and Core APIs for multi-agent apps (Python 3.10+)",
+   "Extensions for model clients and MCP tools",
+   "AutoGen Studio no-code prototyping GUI"
+  ],
+  "faq": [
+   [
+    "Is AutoGen still maintained?",
+    "No. The official README says AutoGen has been archived and is no longer actively maintained by Microsoft. New users should start with Microsoft Agent Framework."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/autogen"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "comet": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Comet is Perplexity's AI browser. It's built on Chromium, uses Perplexity search as its main search engine, and has a built-in assistant that can understand pages, create content and take on tasks for you. Comet is available for Mac, Windows, iOS and Android.",
+   "According to Perplexity's help center, its main features are Personal Search, which uses your browsing history; natural-language browser commands for managing tabs; a Gmail connector for email and calendar questions; Ask and Summarize buttons for the page you're on; and built-in ad blocking. It also has standard browser features and supports most Chrome extensions."
+  ],
+  "who": "People who want an everyday browser with an AI assistant that can answer questions about pages, summarize them and take on web tasks.",
+  "features": [
+   "Chromium-based, supports most Chrome extensions",
+   "Perplexity AI search as the default engine",
+   "Comet Assistant for page questions and delegated tasks",
+   "Natural-language browser commands for tabs",
+   "Gmail connector, Ask and Summarize buttons, built-in AdBlock",
+   "Mac, Windows, iOS and Android"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.perplexity.ai/comet",
+   "https://www.perplexity.ai/help-center/en/articles/11172798-getting-started-with-comet"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "nvidia-open-agent-safety-platform": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "The NVIDIA Open Agent Safety Platform is a reference architecture for monitoring AI agents continuously, which NVIDIA announced on its technical blog on September 28, 2026. It combines NVIDIA OpenShell, an open-source secure runtime that runs autonomous agents in sandboxes with kernel-level isolation, with NVIDIA Sentry running on BlueField-4 DPUs.",
+   "Sentry uses NVIDIA DOCA to extend monitoring and enforcement into the hardware. It links agent interactions, policy decisions and tool access into records of agent activity. In Vera Rubin POD systems, the DPU sits on the node's only path to the model, which gives out-of-band visibility and real-time policy enforcement. NVIDIA describes five principles: verifiable policy, out-of-band enforcement, controlling the path to the model, scaling agent authority with how visible its reasoning is, and shared responsibility."
+  ],
+  "who": "Platform and security teams designing how autonomous agents are contained and monitored, especially on NVIDIA infrastructure. OpenShell can be used on its own.",
+  "features": [
+   "Reference architecture announced Sep 28, 2026",
+   "OpenShell: open-source sandboxed agent runtime with kernel-level isolation",
+   "NVIDIA Sentry on BlueField-4 DPUs for out-of-band monitoring",
+   "Correlates agent interactions, policy decisions and tool access",
+   "Hardware layer targets NVIDIA Vera CPUs and Vera Rubin POD systems"
+  ],
+  "faq": [],
+  "sources": [
+   "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "coreweave-forge": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "CoreWeave Forge is a platform for building and improving models and agents, launched on September 30, 2026. It covers the whole loop of running, observing, curating, improving and evaluating in one connected environment. It combines Weights & Biases Models, OpenPipe's post-training expertise and marimo-based notebooks with CoreWeave's own services, and it works with other models, frameworks and clouds.",
+   "At launch it included ARIA, a coding agent that analyzes experiment and agent-observability data and proposes next steps. It also included Agent Lens for observing production agents, Sandboxes for isolated runs, Registry for versioned checkpoints and agent configs, Post-Training (serverless RL and fine-tuning) and Inference. The Free plan costs $0 a month. Pro starts at $60 a month with a 30-day trial and is meant for teams with fewer than 50 employees. Enterprise is custom."
+  ],
+  "who": "ML and agent teams that want tracing, evals, sandboxes and post-training in one place, including existing Weights & Biases users.",
+  "features": [
+   "Agent tracing, evaluations and scorers",
+   "Agent Lens observability for production agents",
+   "Sandboxes for agent tool use, RL and evals",
+   "ARIA agent that proposes next experiments",
+   "Serverless RL, fine-tuning and distillation",
+   "Free $0/mo; Pro from $60/mo; Enterprise custom"
+  ],
+  "faq": [
+   [
+    "How much does CoreWeave Forge cost?",
+    "Free is $0/month. Pro starts at $60/month (billed monthly, 30-day free trial) for teams with fewer than 50 employees. Enterprise is custom-priced."
+   ]
+  ],
+  "sources": [
+   "https://www.coreweave.com/news/coreweave-forge-launches-turning-the-ai-loop-production-run-into-a-better-model-and-agent",
+   "https://www.coreweave.com/forge-pricing"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "kore-ai-autoloop": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Autoloop is the agent optimization engine in Kore.ai's Artemis agent platform, released on October 13, 2026. Teams set the goals an agent should meet. Autoloop then evaluates the agent against those goals, traces failures to their root cause, applies targeted fixes and re-checks every change for regressions before keeping it.",
+   "Goals cover seven dimensions: task completion, accuracy and grounding, business-rule adherence, token and cost efficiency, end-user experience, robustness, and guardrails and safety. Problems that can be fixed deterministically, such as contracts, fixtures and routing rules, are repaired directly, and models are used where judgment is needed. Changes can be applied in three modes: Autopilot applies them automatically, Copilot waits for a person to approve, and Advisor only recommends them."
+  ],
+  "who": "Enterprises running complex networks of production agents on Kore.ai that need agent quality to improve continuously without regressions.",
+  "features": [
+   "Goal-based evaluation across seven dimensions",
+   "Traces failures across multi-agent paths to root cause",
+   "Deterministic repairs plus model-based judgment",
+   "Every change gated and re-verified against all goals",
+   "Autopilot, Copilot and Advisor modes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.kore.ai/blog/autoloop-continuous-ai-agent-optimization-for-production"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "nanomuse": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "nanoMuse is an open-source personal agent for all your devices. It's a single agent with its own name and look that takes actions instead of just answering questions, keeps working while the app is closed, remembers you and asks before doing anything you couldn't undo. The phone app, desktop app, web console and the relay that connects them are all in one repository, licensed GPL-3.0-or-later.",
+   "It can use a Linux shell, a browser, MCP servers and skills. With Hands turned on, it can operate apps on your phone and windows on your computer through the screen. Signing in gives you a free allowance of model use on the community relay. After that you can use your own API key or run the relay on your own server. Version 1.0.0 came out on October 9, 2026, and builds are available for Android, iPhone (TestFlight beta), macOS, Windows, Linux and Docker."
+  ],
+  "who": "Tinkerers and developers who want a self-hostable personal agent across phone and desktop, with their own model key and approvals before risky actions.",
+  "features": [
+   "Phone, desktop and web apps plus a self-hostable relay",
+   "Shell, browser, MCP servers and skills; screen control with Hands",
+   "Asks before deleting, sending or paying",
+   "Routines and goals that run while the app is closed",
+   "Free community-relay allowance, then bring your own key",
+   "GPL-3.0-or-later"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nano-muse/nanoMuse"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "flowise": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Flowise is discontinued. The team announced on July 29, 2026 that it was winding the project down and froze the code. The GitHub repository was archived on August 13, 2026, and npm packages and Docker images were marked deprecated. End of life was August 31, 2026, when the core team stopped taking part on Discord and GitHub.",
+   "Flowise was an open-source platform for building agents visually. It offered Agentflow for multi-agent systems, Chatflow for single-agent chatbots with tool calling and RAG, human-in-the-loop review, and execution traces. The Apache 2.0 code stays on GitHub, and the team encourages people to fork it."
+  ],
+  "who": "Teams with existing Flowise deployments planning a migration or maintaining a fork. New projects should pick an actively maintained builder.",
+  "features": [
+   "Discontinued: end of life Aug 31, 2026 (repo archived Aug 13, 2026)",
+   "Was a visual builder: Agentflow (multi-agent) and Chatflow (chat assistants)",
+   "Tool calling, RAG, human-in-the-loop, execution traces",
+   "Apache 2.0 code remains available to fork"
+  ],
+  "faq": [
+   [
+    "Is Flowise still maintained?",
+    "No. Flowise reached end of life on August 31, 2026. The repository was archived on August 13, 2026, and the team encourages forking the Apache 2.0 code."
+   ]
+  ],
+  "sources": [
+   "https://github.com/FlowiseAI/Flowise",
+   "https://github.com/FlowiseAI/Flowise/discussions/6727"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "replit-agent": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Replit Agent turns plain-language ideas into apps, designs, slides and more, and you don't need to know how to code. Unlike a chatbot, it takes action: it sets up the project, writes code, sets up infrastructure, tests the result and fixes problems along the way, from planning through deployment.",
+   "Plan mode lets you work out an ordered task list before any code changes. Agent modes control cost and capability. Free Mode covers everyday work within your plan's allowance, and the paid Power and Max modes use stronger models. One project can include web apps, mobile apps, data dashboards, slides and videos that share a backend. It can also pull data from connected services such as BigQuery, Linear, Slack and Notion."
+  ],
+  "who": "Founders, makers and non-developers who want to build and publish working apps from a prompt in the browser, and developers who want fast prototypes.",
+  "features": [
+   "Builds, tests and publishes apps from plain language",
+   "Plan mode for ordered task lists before building",
+   "Free, Power and Max agent modes",
+   "Web apps, mobile apps, slides, dashboards and videos in one project",
+   "Connectors for BigQuery, Linear, Slack, Notion and more"
+  ],
+  "faq": [
+   [
+    "Do I need to know how to code to use Replit Agent?",
+    "No. Replit's docs say Agent handles the technical work from planning to deployment."
+   ]
+  ],
+  "sources": [
+   "https://docs.replit.com/replitai/agent"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "myshell": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "MyShell describes itself as an AI consumer layer where people can build, share and own AI agents. It has its own $SHELL token. The site is currently built around MyShell Art, launched on June 4, 2026, which creates portraits, filters and short videos from a selfie.",
+   "MyShell Art is powered by Shell Agent and offers 200+ styles across professional, artistic, fashion and trending categories. Examples include headshot generators, storyboard and one-image film generators, cartoon and pixel-art styles, and virtual try-ons. MyShell says you can start creating for free."
+  ],
+  "who": "Casual creators who want quick AI portraits, filters and short videos, and builders interested in MyShell's agent and token ecosystem.",
+  "features": [
+   "Build, share and own AI agents",
+   "MyShell Art: 200+ portrait, filter and video styles",
+   "Powered by Shell Agent",
+   "Free to start creating",
+   "$SHELL ecosystem token"
+  ],
+  "faq": [],
+  "sources": [
+   "https://myshell.ai"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "almanax": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Almanax is an AI security engineer for application security. It connects to your GitHub repositories, scans for vulnerabilities and reviews every pull request so it can block risky code before merging. It has specialized models for blockchain ecosystems such as EVM, Solana, Stellar and Aptos, and it also supports most programming languages.",
+   "Its features include automated threat modeling, custom detection rules written in plain English, agents that learn from dismissed findings, reachability triage of third-party alerts and automatic patch suggestions. In June 2026, Almanax announced that it was joining the product-security company depthfirst, which acquired it. The Almanax site is still live and offers a 7-day free trial."
+  ],
+  "who": "Security and engineering teams, especially at blockchain and smart-contract companies, that want continuous AI code scanning and PR review instead of only periodic audits.",
+  "features": [
+   "GitHub app for repo scans and PR security reviews",
+   "Ecosystem-specialized models (EVM, Solana, Stellar, Aptos)",
+   "Automated threat modeling and custom natural-language rules",
+   "Third-party alert triage with reachability analysis",
+   "Auto-patch suggestions",
+   "Acquired by depthfirst (announced June 2026)"
+  ],
+  "faq": [
+   [
+    "Is Almanax still independent?",
+    "No. In June 2026 Almanax announced that it was joining depthfirst, which acquired the company. The Almanax site is still live and offers a 7-day free trial."
+   ]
+  ],
+  "sources": [
+   "https://www.almanax.ai",
+   "https://www.almanax.ai/blog/almanax-is-joining-depthfirst",
+   "https://depthfirst.com/post/almanax-is-joining-depthfirst"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "laika-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Laika AI's site now presents Polymetric by Laika AI, an analytics and intelligence platform built on Polymarket's public on-chain data. The site describes it as a Bloomberg Terminal for prediction markets. Earlier, it was listed as a Web3 browser extension for crypto research.",
+   "Polymetric offers AI-generated research on open prediction markets, whale-wallet tracking, a market screener and a live news feed. It covers more than 18,000 active Polymarket markets across politics, crypto, economics, entertainment and sports. It only reads public on-chain data, never asks your wallet to sign anything and doesn't handle user funds."
+  ],
+  "who": "Polymarket traders who want AI research, whale tracking and screening on top of public prediction-market data.",
+  "features": [
+   "AI market analysis for Polymarket",
+   "Whale wallet tracking",
+   "Polymarket screener by volume, liquidity and edge",
+   "Read-only: never asks your wallet to sign",
+   "Covers 18,000+ active markets, including sports"
+  ],
+  "faq": [],
+  "sources": [
+   "https://laikalabs.ai"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
+ },
+ "sharpe-labs": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Sharpe Terminal, from Sharpe Labs Ltd. (founded 2021), is a free crypto derivatives, DEX and market-intelligence terminal. It combines funding rates, futures data, arbitrage scanners, listings, narratives, memecoins, news and research in more than 20 trader tools, and core analytics need no signup.",
+   "For AI agents, Sharpe offers an MCP server that brings live market data into Claude, Cursor, ChatGPT and other agents. It's hosted at sharpe.ai/api/mcp or can run locally with npx. Sharpe also offers a REST API with an OpenAPI spec and a CLI with JSON and CSV output. Its data covers funding rates across 42 exchanges and futures across 10."
+  ],
+  "who": "Crypto traders and quant-minded builders who want free derivatives and market data, and agent builders who want that data available through MCP.",
+  "features": [
+   "Free web terminal, no signup for core analytics",
+   "Funding rates across 42 exchanges; futures, OI, liquidations, arbitrage",
+   "Rug Check, new listings, narratives and memecoin trackers",
+   "MCP server (hosted or npx) for Claude, Cursor, ChatGPT",
+   "REST API (OpenAPI) and CLI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.sharpe.ai"
+  ],
+  "cite": true,
+  "updated": "2026-10-18"
  }
 }

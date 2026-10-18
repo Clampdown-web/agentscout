@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-18T06:19:13Z",
- "updated": "2026-10-18T06:19:13Z",
+ "generated": "2026-10-18T06:23:53Z",
+ "updated": "2026-10-18T06:23:53Z",
  "last_checked": "2026-10-18",
  "count": 656,
  "tools": [
@@ -486,12 +486,12 @@
    "category": "evals & observability",
    "description": "One product to run, observe, evaluate and post-train agents (W&B, OpenPipe, sandboxes).",
    "key_features": [
-    "Free tier; Pro from $60/mo",
+    "Free $0/mo; Pro from $60/mo; Enterprise custom",
     "Newly launched",
     "Run code safely",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Free tier; Pro from $60/mo",
+   "pricing": "Free $0/mo; Pro from $60/mo; Enterprise custom",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -1247,12 +1247,12 @@
    "category": "coding",
    "description": "Cognition's autonomous software engineer that takes tickets and opens PRs.",
    "key_features": [
-    "Paid",
+    "Free plan; Pro $20/mo; Max $200/mo; Teams $80/mo + $40/seat",
     "Mature",
     "Write code"
    ],
-   "pricing": "Paid",
-   "price_tag": "paid",
+   "pricing": "Free plan; Pro $20/mo; Max $200/mo; Teams $80/mo + $40/seat",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -1454,11 +1454,11 @@
    "category": "coding",
    "description": "AI IDE with the Cascade agent, now rebranded as Devin Desktop after Cognition acquired Windsurf (windsurf.com redirects there).",
    "key_features": [
-    "Free tier + paid plans",
+    "Free; Pro $20/mo; Max $200/mo; Teams plans (as Devin Desktop)",
     "Mature",
     "Write code"
    ],
-   "pricing": "Free tier + paid plans",
+   "pricing": "Free; Pro $20/mo; Max $200/mo; Teams plans (as Devin Desktop)",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -2178,10 +2178,10 @@
    "website": "https://microsoft.github.io/autogen/",
    "github": "https://github.com/microsoft/autogen",
    "category": "frameworks",
-   "description": "Microsoft's framework for multi-agent conversations.",
+   "description": "Microsoft's framework for multi-agent conversations, now archived and no longer maintained; Microsoft points new users to Microsoft Agent Framework.",
    "key_features": [
     "Open source",
-    "Mature",
+    "Archived (no longer maintained)",
     "61395 GitHub stars",
     "Build multi-agent systems",
     "Build an agent"
@@ -4668,11 +4668,11 @@
    "category": "browser/computer use",
    "description": "Perplexity's AI browser with a built-in assistant that can browse, summarize and complete tasks on web pages for you.",
    "key_features": [
-    "Freemium",
+    "Free download; paid Perplexity plans add assistant usage",
     "Active",
     "Automate the browser"
    ],
-   "pricing": "Freemium",
+   "pricing": "Free download; paid Perplexity plans add assistant usage",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -25289,13 +25289,13 @@
    "website": "https://www.almanax.ai",
    "github": "https://github.com/almanax-ai",
    "category": "crypto",
-   "description": "AI security agent that finds vulnerabilities in smart contracts.",
+   "description": "AI security engineer that finds vulnerabilities in applications and smart contracts and reviews pull requests; acquired by depthfirst (June 2026).",
    "key_features": [
-    "See site",
+    "7-day free trial; paid plans",
     "Active",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
+   "pricing": "7-day free trial; paid plans",
    "price_tag": "unknown",
    "platforms": [
     "Web"
@@ -25692,11 +25692,10 @@
    "website": "https://laikalabs.ai",
    "github": "",
    "category": "crypto",
-   "description": "Web3 browser extension for AI research, token and contract analysis, wallet monitoring and phishing detection.",
+   "description": "Polymetric by Laika AI: AI research, whale tracking and a screener for Polymarket prediction markets (formerly a Web3 research extension).",
    "key_features": [
     "See site",
     "Active",
-    "Automate the browser",
     "Research the web",
     "Monitor & evaluate agents"
    ],
@@ -25721,7 +25720,6 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate the browser",
     "research the web",
     "monitor & evaluate agents"
    ],
@@ -25817,11 +25815,11 @@
    "category": "crypto",
    "description": "Free crypto trading intelligence terminal (derivatives, funding, on-chain, sentiment) with an MCP server for AI agents.",
    "key_features": [
-    "See site",
+    "Free web terminal; MCP server, API and CLI",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
+   "pricing": "Free web terminal; MCP server, API and CLI",
    "price_tag": "unknown",
    "platforms": [
     "Web"

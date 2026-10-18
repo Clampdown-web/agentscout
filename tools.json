@@ -298,9 +298,9 @@
     "audience": "builders",
     "id": 8,
     "featured": false,
-    "verified": "2026-10-14",
+    "verified": "2026-10-18",
     "new": false,
-    "pricing_detail": "Free tier; Pro from $60/mo",
+    "pricing_detail": "Free $0/mo; Pro from $60/mo; Enterprise custom",
     "use_cases": [
       "run code safely",
       "monitor & evaluate agents"
@@ -752,14 +752,14 @@
     "url": "https://devin.ai",
     "description": "Cognition's autonomous software engineer that takes tickets and opens PRs.",
     "category": "coding",
-    "pricing": "Paid",
+    "pricing": "Freemium",
     "maturity": "Mature",
     "audience": "builders",
     "featured": false,
     "new": false,
-    "verified": "2026-10-14",
+    "verified": "2026-10-18",
     "id": 26,
-    "pricing_detail": "Paid",
+    "pricing_detail": "Free plan; Pro $20/mo; Max $200/mo; Teams $80/mo + $40/seat",
     "use_cases": [
       "write code"
     ],
@@ -883,9 +883,9 @@
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-14",
+    "verified": "2026-10-18",
     "id": 31,
-    "pricing_detail": "Free tier + paid plans",
+    "pricing_detail": "Free; Pro $20/mo; Max $200/mo; Teams plans (as Devin Desktop)",
     "use_cases": [
       "write code"
     ],
@@ -1312,14 +1312,14 @@
   {
     "name": "AutoGen",
     "url": "https://microsoft.github.io/autogen/",
-    "description": "Microsoft's framework for multi-agent conversations.",
+    "description": "Microsoft's framework for multi-agent conversations, now archived and no longer maintained; Microsoft points new users to Microsoft Agent Framework.",
     "category": "frameworks",
     "pricing": "Open source",
-    "maturity": "Mature",
+    "maturity": "Archived (no longer maintained)",
     "audience": "builders",
     "featured": false,
     "new": false,
-    "verified": "2026-10-14",
+    "verified": "2026-10-18",
     "id": 48,
     "pricing_detail": "Open source",
     "github_stars": 61395,
@@ -2815,7 +2815,7 @@
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-16",
+    "verified": "2026-10-18",
     "id": 112,
     "slug": "comet",
     "logo": "assets/logos/comet.png",
@@ -2824,7 +2824,7 @@
     "use_cases": [
       "automate the browser"
     ],
-    "pricing_detail": "",
+    "pricing_detail": "Free download; paid Perplexity plans add assistant usage",
     "added": "2026-10-16",
     "source": "Futurepedia",
     "seed": true
@@ -15481,17 +15481,17 @@
   {
     "name": "Almanax",
     "url": "https://www.almanax.ai",
-    "description": "AI security agent that finds vulnerabilities in smart contracts.",
+    "description": "AI security engineer that finds vulnerabilities in applications and smart contracts and reviews pull requests; acquired by depthfirst (June 2026).",
     "category": "crypto",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-16",
+    "verified": "2026-10-18",
     "added": "2026-10-16",
     "source": "vendor/GitHub (direct)",
-    "pricing_detail": "",
+    "pricing_detail": "7-day free trial; paid plans",
     "use_cases": [
       "monitor & evaluate agents"
     ],
@@ -15727,19 +15727,18 @@
   {
     "name": "Laika AI",
     "url": "https://laikalabs.ai",
-    "description": "Web3 browser extension for AI research, token and contract analysis, wallet monitoring and phishing detection.",
+    "description": "Polymetric by Laika AI: AI research, whale tracking and a screener for Polymarket prediction markets (formerly a Web3 research extension).",
     "category": "crypto",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-16",
+    "verified": "2026-10-18",
     "added": "2026-10-16",
     "source": "Toolify",
     "pricing_detail": "",
     "use_cases": [
-      "automate the browser",
       "research the web",
       "monitor & evaluate agents"
     ],
@@ -15808,10 +15807,10 @@
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-16",
+    "verified": "2026-10-18",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "pricing_detail": "",
+    "pricing_detail": "Free web terminal; MCP server, API and CLI",
     "use_cases": [
       "connect tools via MCP"
     ],
