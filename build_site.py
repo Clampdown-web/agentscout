@@ -99,3 +99,4 @@ build_pick.pick(t)
 import build_links
 build_links.run(t)
 import build_seo; build_seo.run(t)
+import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
