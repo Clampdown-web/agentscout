@@ -3,7 +3,7 @@
     "name": "Siena Social Agent",
     "url": "https://www.siena.cx/blog/siena-social-agent-social-media-management",
     "description": "AI agent for social media that converts comments/DMs, moderates, resolves support, and turns conversations into intelligence; launched Oct 13, 2026.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Enterprise",
     "maturity": "Launched Oct 13",
     "audience": "ready to use",
@@ -13,7 +13,7 @@
     "new": false,
     "pricing_detail": "Enterprise / book a demo",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "slug": "siena-social-agent",
     "logo": "assets/logos/siena-social-agent.png",
@@ -576,7 +576,7 @@
     "name": "kōdlo",
     "url": "https://kodlo.ai",
     "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Launched Oct 11 (Product Hunt #2 of day)",
     "audience": "ready to use",
@@ -602,7 +602,7 @@
     "name": "Trig",
     "url": "https://www.trig.ai/blog/a-new-way-to-manage-your-customers",
     "description": "Rebuilt as an agent workspace for account managers: agents follow up, prep renewals, build expansion cases.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Relaunched Oct 13",
     "audience": "ready to use",
@@ -626,7 +626,7 @@
     "name": "Cresta Deputy Agent",
     "url": "https://cresta.com/deputy-agent",
     "description": "Long-running agent that finishes customer-service back-office workflows, pausing for approvals or documents.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Enterprise",
     "maturity": "Launched Oct 13",
     "audience": "ready to use",
@@ -651,7 +651,7 @@
     "name": "Meta Muse Wonder",
     "url": "https://research.meta.ai/blog/muse-wonder",
     "description": "Meta's new models for personal and professional agent tasks, available via Meta Model API and Muse Code.",
-    "category": "models",
+    "category": "models & local runtimes",
     "pricing": "Paid",
     "maturity": "Released Oct 12",
     "audience": "ready to use",
@@ -661,7 +661,7 @@
     "new": false,
     "pricing_detail": "Paid API / subscription",
     "use_cases": [
-      "models"
+      "models & local runtimes"
     ],
     "slug": "meta-muse-wonder",
     "logo": "assets/logos/meta-muse-wonder.png",
@@ -2102,7 +2102,7 @@
     "name": "Mem0",
     "url": "https://mem0.ai",
     "description": "Memory layer for AI agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -2114,7 +2114,6 @@
     "github_stars": 67147,
     "repo": "mem0ai/mem0",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "slug": "mem0",
@@ -2478,7 +2477,7 @@
     "name": "11x",
     "url": "https://www.11x.ai",
     "description": "Digital AI workers for go-to-market teams, including an SDR agent that researches prospects and runs outbound and a phone agent that handles calls.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "ready to use",
@@ -2504,7 +2503,7 @@
     "name": "ASI:One",
     "url": "https://asi1.ai",
     "description": "Agentic LLM and chat app from Fetch.ai built to reason, plan and call other agents on the ASI Alliance network.",
-    "category": "models",
+    "category": "models & local runtimes",
     "pricing": "Freemium",
     "maturity": "Active",
     "audience": "builders",
@@ -2528,7 +2527,7 @@
     "name": "Activeloop",
     "url": "https://www.activeloop.ai",
     "description": "Deep Lake, a multimodal database for AI that stores vectors, images, text and video so agents and RAG apps can search and retrieve them.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -2545,7 +2544,7 @@
     "use_cases": [
       "research the web",
       "automate workflows",
-      "connect tools via MCP"
+      "give agents memory"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -2634,7 +2633,7 @@
     "name": "CustomGPT.ai",
     "url": "https://customgpt.ai",
     "description": "No-code platform for building AI agents grounded in your business content, with citations and anti-hallucination controls.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -2648,7 +2647,8 @@
     "github": "",
     "use_cases": [
       "write code",
-      "build apps without code"
+      "build apps without code",
+      "sales & support"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -2734,7 +2734,7 @@
     "name": "Artisan",
     "url": "https://www.artisan.co",
     "description": "AI employees for sales, led by Ava, an outbound SDR agent that finds leads, writes emails and books meetings.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -2882,7 +2882,7 @@
     "name": "Dropzone AI",
     "url": "https://www.dropzone.ai",
     "description": "AI SOC analyst agents that investigate security alerts autonomously.",
-    "category": "business agents",
+    "category": "security & governance",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "ready to use",
@@ -2895,7 +2895,7 @@
     "website": "https://www.dropzone.ai",
     "github": "",
     "use_cases": [
-      "business agents"
+      "security & governance"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -2930,7 +2930,7 @@
     "name": "Gradient Labs",
     "url": "https://gradient-labs.ai",
     "description": "AI customer support agent for regulated financial services companies.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "ready to use",
@@ -2978,7 +2978,7 @@
     "name": "Guardrails AI",
     "url": "https://www.guardrailsai.com",
     "description": "Open-source framework for validating LLM inputs and outputs with configurable guardrails.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -2993,8 +2993,7 @@
     "repo": "guardrails-ai/guardrails",
     "github_stars": 7529,
     "use_cases": [
-      "build an agent",
-      "monitor & evaluate agents"
+      "build an agent"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -3056,7 +3055,7 @@
     "name": "Intercom Fin",
     "url": "https://fin.ai",
     "description": "Intercom's Fin AI agent that resolves customer support conversations across channels.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Usage-based",
     "maturity": "Active",
     "audience": "ready to use",
@@ -3130,7 +3129,7 @@
     "name": "LanceDB",
     "url": "https://lancedb.com",
     "description": "Open-source multimodal vector database for search, RAG and agent memory.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -3146,7 +3145,6 @@
     "github_stars": 11684,
     "use_cases": [
       "research the web",
-      "connect tools via MCP",
       "give agents memory"
     ],
     "pricing_detail": "",
@@ -3235,7 +3233,7 @@
     "name": "Mindflow",
     "url": "https://mindflow.io",
     "description": "No-code automation and AI agents for security and IT operations.",
-    "category": "business agents",
+    "category": "security & governance",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "builders",
@@ -3689,7 +3687,7 @@
     "name": "Zenity",
     "url": "https://zenity.io",
     "description": "Security and governance for AI agents across enterprise platforms.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "builders",
@@ -3702,7 +3700,7 @@
     "website": "https://zenity.io",
     "github": "",
     "use_cases": [
-      "monitor & evaluate agents"
+      "security & governance"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -3813,7 +3811,7 @@
     "name": "Duckie",
     "url": "https://www.duckie.ai",
     "description": "AI support agent for technical products that resolves tickets.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -3826,7 +3824,8 @@
     "website": "https://www.duckie.ai",
     "github": "",
     "use_cases": [
-      "write code"
+      "write code",
+      "sales & support"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -4033,7 +4032,7 @@
     "name": "Simbian",
     "url": "https://simbian.ai",
     "description": "AI agents for security operations, threat hunting and response.",
-    "category": "business agents",
+    "category": "security & governance",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "ready to use",
@@ -4046,7 +4045,7 @@
     "website": "https://simbian.ai",
     "github": "",
     "use_cases": [
-      "business agents"
+      "security & governance"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -4057,7 +4056,7 @@
     "name": "Prophet Security",
     "url": "https://www.prophetsecurity.ai",
     "description": "Agentic AI SOC analyst that triages and investigates alerts.",
-    "category": "business agents",
+    "category": "security & governance",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "ready to use",
@@ -4070,7 +4069,7 @@
     "website": "https://www.prophetsecurity.ai",
     "github": "",
     "use_cases": [
-      "business agents"
+      "security & governance"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -4081,7 +4080,7 @@
     "name": "Token Security",
     "url": "https://www.token.security",
     "description": "Security for non-human and AI agent identities.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Enterprise",
     "maturity": "Active",
     "audience": "builders",
@@ -4094,7 +4093,7 @@
     "website": "https://www.token.security",
     "github": "",
     "use_cases": [
-      "monitor & evaluate agents"
+      "security & governance"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -4179,7 +4178,7 @@
     "name": "Hiver",
     "url": "https://hiverhq.com",
     "description": "Customer service helpdesk in Gmail with AI agents.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -4192,7 +4191,7 @@
     "website": "https://hiverhq.com",
     "github": "",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
@@ -4257,7 +4256,7 @@
     "name": "Claude-Mem",
     "url": "https://cmem.ai/",
     "description": "Gives coding agents memory across sessions by capturing what they do, compressing it and feeding the relevant context back in later.",
-    "category": "coding",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -4337,7 +4336,7 @@
     "name": "RAGFlow",
     "url": "https://ragflow.io/",
     "description": "Open-source RAG engine with deep document parsing and agent features for building grounded question-answering over your files.",
-    "category": "frameworks",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -4346,7 +4345,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent"
+      "give agents memory"
     ],
     "website": "https://ragflow.io/",
     "github": "https://github.com/infiniflow/ragflow",
@@ -4444,7 +4443,7 @@
     "name": "Strix",
     "url": "https://www.strix.ai/",
     "description": "Open-source AI agents that run penetration tests on your app to find and help fix security vulnerabilities.",
-    "category": "coding",
+    "category": "security & governance",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -4453,7 +4452,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "write code"
+      "security & governance"
     ],
     "website": "https://www.strix.ai/",
     "github": "https://github.com/usestrix/strix",
@@ -4631,7 +4630,7 @@
     "name": "Hindsight",
     "url": "https://hindsight.vectorize.io/",
     "description": "Agent memory system that stores experiences and learns from them so agents improve over time.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -4640,7 +4639,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://hindsight.vectorize.io/",
@@ -4658,7 +4656,7 @@
     "name": "LocalAI",
     "url": "https://localai.io/",
     "description": "Self-hosted engine with an OpenAI-compatible API for running LLM, vision, voice and image models on your own hardware, including agents.",
-    "category": "MCP & infra",
+    "category": "models & local runtimes",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -4668,7 +4666,6 @@
     "pricing_detail": "",
     "use_cases": [
       "voice & phone calls",
-      "connect tools via MCP",
       "computer vision"
     ],
     "website": "https://localai.io/",
@@ -4928,7 +4925,7 @@
     "name": "PageIndex",
     "url": "https://pageindex.ai/",
     "description": "Document index for reasoning-based, vectorless RAG that lets agents navigate long documents like a table of contents.",
-    "category": "frameworks",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -4937,7 +4934,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent"
+      "give agents memory"
     ],
     "website": "https://pageindex.ai/",
     "github": "https://github.com/VectifyAI/PageIndex",
@@ -5219,7 +5216,7 @@
     "name": "Cognee",
     "url": "https://www.cognee.ai/",
     "description": "Open-source memory platform that builds knowledge graphs so agents keep long-term memory.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -5228,7 +5225,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://www.cognee.ai/",
@@ -5246,7 +5242,7 @@
     "name": "Graphiti",
     "url": "https://help.getzep.com/graphiti/getting-started/welcome",
     "description": "Builds real-time, temporal knowledge graphs that serve as memory for AI agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -5255,7 +5251,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://help.getzep.com/graphiti/getting-started/welcome",
@@ -5491,7 +5486,7 @@
     "name": "AgentMemory",
     "url": "https://www.agent-memory.dev/",
     "description": "Persistent memory layer for AI coding agents.",
-    "category": "coding",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -5518,7 +5513,7 @@
     "name": "Chroma",
     "url": "https://www.trychroma.com/",
     "description": "Open-source search and vector database widely used for agent memory and RAG.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -5528,7 +5523,6 @@
     "pricing_detail": "",
     "use_cases": [
       "research the web",
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://www.trychroma.com/",
@@ -5572,7 +5566,7 @@
     "name": "TencentDB-Agent-Memory",
     "url": "https://tencentcloud.github.io/TencentDB-Agent-Memory/",
     "description": "Team-level memory hub that turns conversations, docs and code into shared memory for agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -5582,7 +5576,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://tencentcloud.github.io/TencentDB-Agent-Memory/",
@@ -6830,7 +6823,7 @@
     "name": "EverOS",
     "url": "https://evermind.ai/everos",
     "description": "Local-first, portable memory layer for AI agents stored as Markdown.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -6839,7 +6832,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://evermind.ai/everos",
@@ -7017,7 +7009,7 @@
     "name": "MemOS",
     "url": "https://memos.openmem.net/",
     "description": "Memory operating system for LLMs and agents with persistent memory and retrieval.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -7027,7 +7019,6 @@
     "pricing_detail": "",
     "use_cases": [
       "control a computer",
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://memos.openmem.net/",
@@ -7810,7 +7801,7 @@
     "name": "Oumi",
     "url": "https://oumi.ai/",
     "description": "Open platform for fine-tuning, evaluating and deploying open agentic LLMs and VLMs.",
-    "category": "models",
+    "category": "models & local runtimes",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -8076,7 +8067,7 @@
     "name": "MiroThinker",
     "url": "https://www.miromind.ai/",
     "description": "Deep research agent and open models tuned for complex research and forecasting tasks.",
-    "category": "research",
+    "category": "models & local runtimes",
     "pricing": "Open weights",
     "maturity": "Mature",
     "audience": "builders",
@@ -8339,7 +8330,7 @@
     "name": "Honcho",
     "url": "https://honcho.dev/docs/v3/documentation/introduction/overview",
     "description": "Memory library and service for building stateful agents that remember users.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -8349,7 +8340,6 @@
     "pricing_detail": "",
     "use_cases": [
       "build an agent",
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://honcho.dev/docs/v3/documentation/introduction/overview",
@@ -8633,7 +8623,7 @@
     "name": "AI-Infra-Guard",
     "url": "https://tencent.github.io/AI-Infra-Guard/",
     "description": "Tencent's AI red-teaming platform that scans agents, skills and MCP servers for risks.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -8642,8 +8632,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
-      "monitor & evaluate agents"
+      "connect tools via MCP"
     ],
     "website": "https://tencent.github.io/AI-Infra-Guard/",
     "github": "https://github.com/Tencent/AI-Infra-Guard",
@@ -8792,7 +8781,7 @@
     "name": "Agent Governance Toolkit",
     "url": "https://github.com/microsoft/agent-governance-toolkit",
     "description": "Microsoft toolkit for policy enforcement, identity and sandboxing for AI agents.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -8802,8 +8791,7 @@
     "pricing_detail": "",
     "use_cases": [
       "build an agent",
-      "run code safely",
-      "monitor & evaluate agents"
+      "run code safely"
     ],
     "website": "",
     "github": "https://github.com/microsoft/agent-governance-toolkit",
@@ -9326,7 +9314,7 @@
     "name": "Failproof AI",
     "url": "https://befailproof.ai/",
     "description": "Observability and policy enforcement for AI agent harnesses.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -9335,8 +9323,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
-      "monitor & evaluate agents"
+      "build an agent"
     ],
     "website": "https://befailproof.ai/",
     "github": "https://github.com/FailproofAI/failproofai",
@@ -10522,7 +10509,7 @@
     "name": "Tracecat",
     "url": "https://www.tracecat.com/",
     "description": "Open-source security automation platform for teams and AI agents.",
-    "category": "business agents",
+    "category": "security & governance",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -10654,7 +10641,7 @@
     "name": "Acontext",
     "url": "https://acontext.io/",
     "description": "Memory layer that stores agent experience as reusable skills.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -10663,7 +10650,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://acontext.io/",
@@ -10707,7 +10693,7 @@
     "name": "ReMe",
     "url": "https://reme.agentscope.io/",
     "description": "Memory management kit for agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -10716,7 +10702,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://reme.agentscope.io/",
@@ -11000,7 +10985,7 @@
     "name": "PentestAgent",
     "url": "https://github.com/GH05TCREW/pentestagent",
     "description": "Agent framework for black-box security testing and bug bounty work.",
-    "category": "coding",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -11009,7 +10994,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "write code",
       "build an agent"
     ],
     "website": "",
@@ -11081,7 +11065,7 @@
     "name": "seekdb",
     "url": "https://www.seekdb.ai/",
     "description": "AI-native search database for agent storage combining vector, text and structured data.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -11091,7 +11075,7 @@
     "pricing_detail": "",
     "use_cases": [
       "research the web",
-      "connect tools via MCP"
+      "give agents memory"
     ],
     "website": "https://www.seekdb.ai/",
     "github": "https://github.com/oceanbase/seekdb",
@@ -11161,7 +11145,7 @@
     "name": "MemMachine",
     "url": "https://memmachine.ai/",
     "description": "Universal memory layer for AI agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -11170,7 +11154,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://memmachine.ai/",
@@ -12574,7 +12557,7 @@
     "name": "Snyk Agent Scan",
     "url": "https://github.com/snyk/agent-scan",
     "description": "Snyk's scanner for security risks in MCP servers and agent skills.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -12583,8 +12566,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
-      "monitor & evaluate agents"
+      "connect tools via MCP"
     ],
     "website": "",
     "github": "https://github.com/snyk/agent-scan",
@@ -13201,7 +13183,7 @@
     "name": "Agentplace",
     "url": "https://agentplace.io/",
     "description": "Build AI agents that answer customer questions, book appointments and deliver services online.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "Freemium",
     "maturity": "Active",
     "audience": "ready to use",
@@ -13225,7 +13207,7 @@
     "name": "AgentSDR",
     "url": "https://agentsdr.ai/",
     "description": "Open-source AI SDR that runs email, LinkedIn and WhatsApp outreach and sorts replies in a built-in CRM.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -13234,7 +13216,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "website": "https://agentsdr.ai/",
     "github": "",
@@ -13249,7 +13231,7 @@
     "name": "Agentset",
     "url": "https://agentset.ai/",
     "description": "Open-source RAG platform for building agents and apps that answer accurately from your documents.",
-    "category": "frameworks",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -13258,8 +13240,8 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
-      "automate workflows"
+      "automate workflows",
+      "give agents memory"
     ],
     "website": "https://agentset.ai/",
     "github": "",
@@ -13323,7 +13305,7 @@
     "name": "Ami by AiSDR",
     "url": "https://aisdr.com/ai-gtm-agent-ami/",
     "description": "AI go-to-market agent from AiSDR that builds a target list and runs a live outbound campaign from your website.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -13332,7 +13314,8 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "research the web"
+      "research the web",
+      "sales & support"
     ],
     "website": "https://aisdr.com/ai-gtm-agent-ami/",
     "github": "",
@@ -13640,7 +13623,7 @@
     "name": "Close",
     "url": "https://close.com/",
     "description": "CRM with a built-in AI teammate that calls leads, qualifies prospects and books meetings.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -13665,7 +13648,7 @@
     "name": "Cockpit AI",
     "url": "https://oncockpit.ai/",
     "description": "AI go-to-market team that runs outbound, content, paid, lifecycle and sales work together.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -13739,7 +13722,7 @@
     "name": "Crono",
     "url": "https://www.crono.one/",
     "description": "Sales execution platform where reps and AI agents work together on signals and outreach.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -13748,7 +13731,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "website": "https://www.crono.one/",
     "github": "",
@@ -14009,7 +13992,7 @@
     "name": "Clara AI SDR",
     "url": "https://clarasdr.ai/",
     "description": "Face-to-face video AI SDR that talks to website visitors, qualifies leads and books meetings.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
@@ -14019,7 +14002,8 @@
     "pricing_detail": "",
     "use_cases": [
       "research the web",
-      "voice & phone calls"
+      "voice & phone calls",
+      "sales & support"
     ],
     "website": "https://clarasdr.ai/",
     "github": "",
@@ -17124,7 +17108,7 @@
     "name": "Headroom",
     "url": "https://docs.headroomlabs.ai/docs",
     "description": "Library, proxy and MCP server that compresses tool outputs, logs, files and RAG chunks locally before they reach the LLM, cutting tokens for coding agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -17151,7 +17135,7 @@
     "name": "HyperFrames",
     "url": "https://www.hyperframes.dev/",
     "description": "HeyGen's open-source framework that renders HTML, CSS and animations into deterministic MP4 videos, usable from a CLI or by coding agents through skills.",
-    "category": "MCP & infra",
+    "category": "productivity",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -17163,8 +17147,7 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "build an agent",
-      "connect tools via MCP"
+      "build an agent"
     ],
     "website": "https://www.hyperframes.dev/",
     "github": "https://github.com/heygen-com/hyperframes",
@@ -17203,7 +17186,7 @@
     "name": "MemPalace",
     "url": "https://github.com/MemPalace/mempalace",
     "description": "Local-first AI memory system that stores conversations verbatim with a pluggable backend and serves recall to agents without API calls.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -17215,7 +17198,6 @@
     "pricing_detail": "",
     "use_cases": [
       "voice & phone calls",
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "",
@@ -17669,7 +17651,7 @@
     "name": "llmware",
     "url": "https://llmware-ai.github.io/llmware/",
     "description": "Framework for building private, local RAG and agent applications with small specialized models on AI PCs, edge and self-hosted setups.",
-    "category": "frameworks",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -17680,7 +17662,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent"
+      "give agents memory"
     ],
     "website": "https://llmware-ai.github.io/llmware/",
     "github": "https://github.com/llmware-ai/llmware",
@@ -17694,7 +17676,7 @@
     "name": "memU",
     "url": "https://memu.pro/",
     "description": "Lightweight memory system that gives Codex, Claude Code, Cursor and other agents a shared memory across sessions and devices and distills reusable skills.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -17705,7 +17687,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://memu.pro/",
@@ -17770,7 +17751,7 @@
     "name": "txtai",
     "url": "https://neuml.github.io/txtai/",
     "description": "All-in-one Python framework for semantic search, LLM orchestration and agents built on an embeddings database of vector, graph and relational indexes.",
-    "category": "frameworks",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -17782,7 +17763,8 @@
     "pricing_detail": "",
     "use_cases": [
       "build an agent",
-      "research the web"
+      "research the web",
+      "give agents memory"
     ],
     "website": "https://neuml.github.io/txtai/",
     "github": "https://github.com/neuml/txtai",
@@ -18007,7 +17989,7 @@
     "name": "GLM-5",
     "url": "https://z.ai/blog/glm-5.2",
     "description": "Z.ai's open-weights GLM-5 model family built for coding and long-horizon agentic tasks, also offered through the Z.ai API.",
-    "category": "models",
+    "category": "models & local runtimes",
     "pricing": "Open weights",
     "maturity": "Mature",
     "audience": "builders",
@@ -18191,7 +18173,7 @@
     "name": "UltraRAG",
     "url": "https://ultrarag.github.io/",
     "description": "Low-code MCP-based framework from OpenBMB for building and debugging complex RAG pipelines with visible reasoning logic.",
-    "category": "frameworks",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -18532,7 +18514,7 @@
     "name": "Magic",
     "url": "https://www.magicrew.ai/",
     "description": "Open-source enterprise AI agent platform that combines a general agent, workflow engine, team chat and collaborative office tools.",
-    "category": "productivity",
+    "category": "business agents",
     "pricing": "Source-available",
     "maturity": "Mature",
     "audience": "ready to use",
@@ -18684,7 +18666,7 @@
     "name": "Observal",
     "url": "https://observal.io/",
     "description": "Self-hosted registry and insight engine for sharing coding-agent skills, MCP servers and agents across a team.",
-    "category": "evals & observability",
+    "category": "MCP & infra",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -18696,8 +18678,7 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
-      "monitor & evaluate agents"
+      "connect tools via MCP"
     ],
     "website": "https://observal.io/",
     "github": "https://github.com/Observal/Observal",
@@ -18737,7 +18718,7 @@
     "name": "Basic Memory",
     "url": "https://basicmemory.com/",
     "description": "Persistent memory for Claude, Codex and Cursor stored as local Markdown knowledge, available open source or as a hosted cloud workspace.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "ready to use",
@@ -18748,7 +18729,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://basicmemory.com/",
@@ -18839,7 +18819,7 @@
     "name": "LeanCTX",
     "url": "https://github.com/yvgude/lean-ctx",
     "description": "Open-source context gateway that sits between AI tools and your code and data to control and shrink what the model sees.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -18851,7 +18831,7 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP"
+      "give agents memory"
     ],
     "website": "",
     "github": "https://github.com/yvgude/lean-ctx",
@@ -18918,7 +18898,7 @@
     "name": "SimpleMem",
     "url": "https://github.com/aiming-lab/SimpleMem",
     "description": "Research-backed lifelong memory library for LLM agents that stores, compresses and retrieves text and multimodal memories, usable over MCP.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -18971,7 +18951,7 @@
     "name": "Easel",
     "url": "https://github.com/ZJU-REAL/Easel",
     "description": "Open-source social media agent workspace that discovers trends, creates and publishes content and learns what performs across Chinese platforms.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "ready to use",
@@ -18982,7 +18962,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "website": "",
     "github": "https://github.com/ZJU-REAL/Easel",
@@ -19023,7 +19003,7 @@
     "name": "Knowhere",
     "url": "https://knowhereto.ai/",
     "description": "Document parsing and retrieval system that turns messy files into structured, navigable memory for AI agents and RAG.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -19034,7 +19014,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://knowhereto.ai/",
@@ -19152,7 +19131,7 @@
     "name": "Mnemosyne",
     "url": "https://mnemosyne.site/",
     "description": "Zero-cloud, SQLite-backed memory layer for Hermes, Claude Code, Cursor, Codex and custom agents with a single Python dependency.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -19163,7 +19142,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://mnemosyne.site/",
@@ -19435,7 +19413,7 @@
     "name": "OpenOutreach",
     "url": "https://openoutreach.app/",
     "description": "Self-hosted AI agent for B2B lead generation that finds people matching your market, explains the fit and emails them from your mailbox.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "ready to use",
@@ -19446,7 +19424,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "website": "https://openoutreach.app/",
     "github": "https://github.com/eracle/OpenOutreach",
@@ -19948,7 +19926,7 @@
     "name": "Mantis",
     "url": "https://github.com/google/mantis",
     "description": "Google's toolkit for AI coding agents to autonomously find, reproduce and patch software vulnerabilities in isolated environments.",
-    "category": "coding",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -20158,7 +20136,7 @@
     "name": "Agent Vault",
     "url": "https://docs.agent-vault.dev/",
     "description": "Infisical's open-source credential broker that proxies API calls for AI agents so they never hold secrets themselves.",
-    "category": "MCP & infra",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -20169,8 +20147,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
-      "connect tools via MCP"
+      "voice & phone calls"
     ],
     "website": "https://docs.agent-vault.dev/",
     "github": "https://github.com/Infisical/agent-vault",
@@ -20234,7 +20211,7 @@
     "name": "Memanto",
     "url": "https://memanto.ai/",
     "description": "Memory agent that manages what your other agents keep, resolve and forget across platforms.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -20245,7 +20222,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://memanto.ai/",
@@ -20651,7 +20627,7 @@
     "name": "Agent Safehouse",
     "url": "https://agent-safehouse.dev/",
     "description": "macOS sandbox for local coding agents that limits file and integration access with deny-first policy profiles.",
-    "category": "MCP & infra",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -20663,7 +20639,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "run code safely"
     ],
     "website": "https://agent-safehouse.dev/",
@@ -20732,7 +20707,7 @@
     "name": "superglue",
     "url": "https://superglue.ai/",
     "description": "AI agents that connect, migrate and implement enterprise systems like NetSuite and SAP, cloud-hosted or self-hosted.",
-    "category": "MCP & infra",
+    "category": "business agents",
     "pricing": "Source-available + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -20743,7 +20718,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "business agents"
     ],
     "website": "https://superglue.ai/",
     "github": "https://github.com/superglue-ai/superglue",
@@ -20757,7 +20732,7 @@
     "name": "ADR",
     "url": "https://github.com/uber/ADR",
     "description": "Uber's Agentic AI Detection and Response system that secures employee and customer-facing AI agents with observability and threat detection.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -20910,7 +20885,7 @@
     "name": "Ollama",
     "url": "https://ollama.com/",
     "description": "Runs open models such as Qwen, Gemma, DeepSeek and gpt-oss locally or in Ollama's cloud, and connects them to agents like Claude Code, OpenClaw and Codex.",
-    "category": "models",
+    "category": "models & local runtimes",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -20935,7 +20910,7 @@
     "name": "MarkItDown",
     "url": "https://github.com/microsoft/markitdown",
     "description": "Microsoft's Python tool and MCP server that converts PDFs, Office documents, images, audio and web pages to Markdown for LLM and agent pipelines.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -20946,7 +20921,8 @@
     "source": "awesome lists",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "connect tools via MCP",
+      "give agents memory"
     ],
     "website": "",
     "github": "https://github.com/microsoft/markitdown",
@@ -21063,7 +21039,7 @@
     "name": "Jan",
     "url": "https://www.jan.ai/",
     "description": "Open-source ChatGPT alternative that downloads and runs LLMs fully offline on your computer, with optional connections to cloud models.",
-    "category": "personal agents",
+    "category": "models & local runtimes",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "ready to use",
@@ -21074,7 +21050,7 @@
     "source": "awesome lists",
     "pricing_detail": "",
     "use_cases": [
-      "personal agents"
+      "models & local runtimes"
     ],
     "website": "https://www.jan.ai/",
     "github": "https://github.com/janhq/jan",
@@ -21088,7 +21064,7 @@
     "name": "OpenViking",
     "url": "https://openviking.ai/",
     "description": "Context database for AI agents that keeps memory, knowledge and skills in one inspectable virtual filesystem agents can navigate.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -21099,7 +21075,6 @@
     "source": "awesome lists",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://openviking.ai/",
@@ -21167,7 +21142,7 @@
     "name": "ChatDev",
     "url": "https://github.com/OpenBMB/ChatDev",
     "description": "Zero-code multi-agent platform from OpenBMB, grown from a software-development agent company into a general multi-agent orchestration system.",
-    "category": "coding",
+    "category": "frameworks",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -21179,7 +21154,8 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "build multi-agent systems"
+      "build multi-agent systems",
+      "build an agent"
     ],
     "website": "",
     "github": "https://github.com/OpenBMB/ChatDev",
@@ -21605,7 +21581,7 @@
     "name": "Superagent",
     "url": "https://www.superagent.sh/",
     "description": "SDK for AI agent safety that blocks prompt injections and unsafe tool calls, redacts PII and secrets, and runs red-team scenarios.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -21617,8 +21593,7 @@
     "pricing_detail": "",
     "use_cases": [
       "build an agent",
-      "voice & phone calls",
-      "monitor & evaluate agents"
+      "voice & phone calls"
     ],
     "website": "https://www.superagent.sh/",
     "github": "https://github.com/superagent-ai/superagent",
@@ -21968,7 +21943,7 @@
     "name": "Omnara",
     "url": "https://www.omnara.com/",
     "description": "Open-source managed agent platform, a self-hostable alternative to Claude Managed Agents and the OpenAI Agents API, with tools, secrets and sandboxes.",
-    "category": "frameworks",
+    "category": "MCP & infra",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -21979,7 +21954,7 @@
     "source": "awesome lists",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
+      "connect tools via MCP",
       "run code safely"
     ],
     "website": "https://www.omnara.com/",
@@ -22356,7 +22331,7 @@
     "name": "joinly",
     "url": "https://joinly.ai/",
     "description": "Connector middleware and MCP server that lets AI agents join video calls and take part in meetings in real time.",
-    "category": "productivity",
+    "category": "MCP & infra",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -22434,7 +22409,7 @@
     "name": "Qdrant MCP Server",
     "url": "https://qdrant.tech/",
     "description": "Official Qdrant MCP server that lets agents store and retrieve memories and documents in the Qdrant vector database.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -22445,7 +22420,8 @@
     "source": "awesome lists",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "connect tools via MCP",
+      "give agents memory"
     ],
     "website": "https://qdrant.tech/",
     "github": "https://github.com/qdrant/mcp-server-qdrant",
@@ -22768,7 +22744,7 @@
     "name": "Jasper",
     "url": "https://www.jasper.ai/",
     "description": "Marketing AI platform that orchestrates agents to run end-to-end marketing workflows such as content, campaigns and brand-consistent copy.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -22779,7 +22755,8 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "automate workflows"
+      "automate workflows",
+      "sales & support"
     ],
     "website": "https://www.jasper.ai/",
     "github": "",
@@ -22838,7 +22815,7 @@
     "name": "LM Studio",
     "url": "https://lmstudio.ai/",
     "description": "Desktop app for running local and open models, with Bionic, its agent for work and code that creates documents, slides, PDFs and software.",
-    "category": "personal agents",
+    "category": "models & local runtimes",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -22909,7 +22886,7 @@
     "name": "Decagon",
     "url": "https://decagon.ai/",
     "description": "Platform for building, optimizing and scaling customer-facing AI support agents.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -22932,7 +22909,7 @@
     "name": "Lyro by Tidio",
     "url": "https://www.tidio.com/ai-agent/",
     "description": "Tidio's AI customer service agent that answers questions instantly and turns conversations into sales, leads and bookings.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -22978,7 +22955,7 @@
     "name": "Zowie",
     "url": "https://getzowie.com/",
     "description": "AI agent platform for enterprise customer service that resolves requests and takes actions in production.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23001,30 +22978,7 @@
     "name": "WordLift Agent",
     "url": "https://wordlift.io/agent/",
     "description": "WordLift's AI SEO agent that works on your site's content and knowledge graph to improve search visibility.",
-    "category": "business agents",
-    "pricing": "See site",
-    "maturity": "Active",
-    "audience": "ready to use",
-    "featured": false,
-    "new": true,
-    "verified": "2026-10-18",
-    "added": "2026-10-18",
-    "source": "aiagentslist",
-    "pricing_detail": "",
-    "use_cases": [
-      "research the web"
-    ],
-    "website": "https://wordlift.io/agent/",
-    "github": "",
-    "id": 908,
-    "slug": "wordlift-agent",
-    "logo": "assets/logos/wordlift-agent.png"
-  },
-  {
-    "name": "Clay",
-    "url": "https://www.clay.com/",
-    "description": "Go-to-market data platform for enriching leads and running agentic research workflows and outreach plays.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23036,7 +22990,32 @@
     "pricing_detail": "",
     "use_cases": [
       "research the web",
-      "automate workflows"
+      "sales & support"
+    ],
+    "website": "https://wordlift.io/agent/",
+    "github": "",
+    "id": 908,
+    "slug": "wordlift-agent",
+    "logo": "assets/logos/wordlift-agent.png"
+  },
+  {
+    "name": "Clay",
+    "url": "https://www.clay.com/",
+    "description": "Go-to-market data platform for enriching leads and running agentic research workflows and outreach plays.",
+    "category": "sales & marketing",
+    "pricing": "See site",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "aiagentslist",
+    "pricing_detail": "",
+    "use_cases": [
+      "research the web",
+      "automate workflows",
+      "sales & support"
     ],
     "website": "https://www.clay.com/",
     "github": "",
@@ -23145,7 +23124,7 @@
     "name": "kapa.ai",
     "url": "https://www.kapa.ai/",
     "description": "Turns docs, tickets, wikis and 30+ other sources into accurate AI agents for answering user and team questions.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23156,7 +23135,8 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "write code"
+      "write code",
+      "sales & support"
     ],
     "website": "https://www.kapa.ai/",
     "github": "",
@@ -23191,7 +23171,7 @@
     "name": "Jason AI",
     "url": "https://reply.io/jason-ai/",
     "description": "Reply.io's AI SDR agent that runs personalized outreach and books meetings using its prospect database.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23237,7 +23217,7 @@
     "name": "SuperAGI",
     "url": "https://superagi.com/",
     "description": "AI sales agent platform that finds and engages prospects around the clock.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23284,7 +23264,7 @@
     "name": "Sierra",
     "url": "https://sierra.ai/",
     "description": "Platform for building customer-facing AI agents that handle service conversations for businesses.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23332,7 +23312,7 @@
     "name": "Kodif",
     "url": "https://kodif.ai/",
     "description": "Action-first AI support for e-commerce brands that resolves tickets by processing refunds, returns and order changes.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23343,7 +23323,8 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "write code"
+      "write code",
+      "sales & support"
     ],
     "website": "https://kodif.ai/",
     "github": "",
@@ -23453,7 +23434,7 @@
     "name": "Zep",
     "url": "https://www.getzep.com/",
     "description": "Context layer that unifies business data, documents and conversations into memory so agents complete tasks correctly.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
@@ -23464,7 +23445,6 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
       "give agents memory"
     ],
     "website": "https://www.getzep.com/",
@@ -23523,7 +23503,7 @@
     "name": "Unify",
     "url": "https://www.unifygtm.com/",
     "description": "Sales platform with outbound agents, B2B data, signals and sequencing run from one chat interface.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23534,7 +23514,7 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "business agents"
+      "sales & support"
     ],
     "website": "https://www.unifygtm.com/",
     "github": "",
@@ -23569,7 +23549,7 @@
     "name": "Delve",
     "url": "https://delve.co/",
     "description": "Compliance automation that uses AI agents to handle SOC 2, HIPAA and GDPR busywork.",
-    "category": "business agents",
+    "category": "security & governance",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23616,7 +23596,7 @@
     "name": "Pieces",
     "url": "https://pieces.app/",
     "description": "AI memory layer that captures context from your work so you and your AI tools can recover decisions and resume where you left off.",
-    "category": "productivity",
+    "category": "memory & RAG",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23639,7 +23619,7 @@
     "name": "Alta",
     "url": "https://www.altahq.com/",
     "description": "GTM AI agents for B2B sales that handle outbound, inbound and revenue intelligence.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23732,7 +23712,7 @@
     "name": "SalesAPE",
     "url": "https://www.salesape.ai/",
     "description": "Autonomous AI sales agent that qualifies inbound leads and books meetings around the clock.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23778,7 +23758,7 @@
     "name": "Kadoa",
     "url": "https://www.kadoa.com/",
     "description": "AI agents that build, monitor and maintain web data pipelines producing verified datasets for investors.",
-    "category": "research",
+    "category": "browser/computer use",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -23789,6 +23769,7 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
+      "automate the browser",
       "research the web",
       "monitor & evaluate agents"
     ],
@@ -23802,7 +23783,7 @@
     "name": "Origami Agents",
     "url": "https://origami.chat/",
     "description": "AI growth agent that finds ways to get customers for your website and runs the approved campaigns.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24211,7 +24192,7 @@
     "name": "Enjo",
     "url": "https://www.enjo.ai/",
     "description": "AI support agent that resolves employee and customer requests end to end and takes action in your systems.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24234,7 +24215,7 @@
     "name": "Forethought",
     "url": "https://forethought.ai/",
     "description": "Customer service AI platform whose agents resolve support issues automatically to lower support costs.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24245,7 +24226,8 @@
     "source": "AI Agents Directory",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls"
+      "voice & phone calls",
+      "sales & support"
     ],
     "website": "https://forethought.ai/",
     "github": "",
@@ -24257,7 +24239,7 @@
     "name": "Bardeen",
     "url": "https://www.bardeen.ai/",
     "description": "Lead-sourcing tool with an agentic web scraper that finds, qualifies and enriches prospects for outreach.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24328,7 +24310,7 @@
     "name": "Nooks",
     "url": "https://www.nooks.ai/",
     "description": "Revenue platform whose AI agents dial, sequence, follow up and prep deals alongside sales reps.",
-    "category": "business agents",
+    "category": "sales & marketing",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24561,7 +24543,7 @@
     "name": "Skywork",
     "url": "https://skywork.ai/",
     "description": "AI workspace agents that turn a prompt into docs, slides, sheets, podcasts and web pages backed by deep research.",
-    "category": "research",
+    "category": "productivity",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -24962,7 +24944,7 @@
     "name": "Playgama MCP",
     "url": "https://playgama.com/mcp/",
     "description": "Playgama's MCP server for publishing and managing HTML5 games from an AI agent, with audience, monetization and analytics.",
-    "category": "MCP & infra",
+    "category": "games",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
@@ -25032,7 +25014,7 @@
     "name": "Sonatype MCP",
     "url": "https://www.sonatype.com/",
     "description": "Sonatype's dependency-management MCP server that gives coding agents component versions, security analysis and Trust Score recommendations.",
-    "category": "MCP & infra",
+    "category": "security & governance",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
@@ -26052,7 +26034,7 @@
     "name": "Extend MCP",
     "url": "https://docs.extend.ai/mcp",
     "description": "Extend's MCP server for turning documents into structured data: parse, extract, classify, split and fill PDF forms.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
@@ -26064,7 +26046,8 @@
     "pricing_detail": "",
     "use_cases": [
       "connect tools via MCP",
-      "monitor & evaluate agents"
+      "monitor & evaluate agents",
+      "give agents memory"
     ],
     "website": "https://docs.extend.ai/mcp",
     "github": "",
@@ -26676,7 +26659,7 @@
     "name": "Outverse",
     "url": "https://www.outverse.com/",
     "description": "Governed platform for deploying AI agents across enterprise service workflows and channels, connected to your systems.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -26687,7 +26670,8 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "automate workflows"
+      "automate workflows",
+      "sales & support"
     ],
     "website": "https://www.outverse.com/",
     "github": "",
@@ -26699,7 +26683,7 @@
     "name": "LlamaParse",
     "url": "https://developers.llamaindex.ai/llamaparse/",
     "description": "LlamaIndex's document processing platform that parses PDFs, scans and Office files into markdown or JSON and extracts, classifies and indexes them for agents.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
@@ -26710,8 +26694,8 @@
     "source": "aiagentslist",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
-      "monitor & evaluate agents"
+      "monitor & evaluate agents",
+      "give agents memory"
     ],
     "website": "https://developers.llamaindex.ai/llamaparse/",
     "github": "",
@@ -26957,7 +26941,7 @@
     "name": "Ask-AI",
     "url": "https://www.ask-ai.com/",
     "description": "AI customer experience platform for B2B SaaS support teams with AI agents, support analytics and no-code automation.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -27053,7 +27037,7 @@
     "name": "Rep AI",
     "url": "https://www.hellorep.ai/",
     "description": "AI shopping and customer service agent for e-commerce brands that handles product discovery, support and helpdesk work.",
-    "category": "business agents",
+    "category": "customer support",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "ready to use",
@@ -27279,7 +27263,7 @@
     "name": "Cisco MCP Scanner",
     "url": "https://blogs.cisco.com/ai/securing-the-ai-agent-supply-chain-with-ciscos-open-source-mcp-scanner",
     "description": "Cisco's open-source scanner that checks MCP servers and tools for malicious or risky behaviour using YARA rules and LLM analysis.",
-    "category": "evals & observability",
+    "category": "security & governance",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -27290,8 +27274,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
-      "monitor & evaluate agents"
+      "connect tools via MCP"
     ],
     "website": "https://blogs.cisco.com/ai/securing-the-ai-agent-supply-chain-with-ciscos-open-source-mcp-scanner",
     "github": "https://github.com/cisco-ai-defense/mcp-scanner",
@@ -27615,7 +27598,7 @@
     "name": "Supermemory",
     "url": "https://supermemory.ai/",
     "description": "Memory and context engine for agents with an API, app and MCP server, which can also run fully locally.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -27862,7 +27845,7 @@
     "name": "Genspark",
     "url": "https://www.genspark.ai/",
     "description": "All-in-one AI workspace whose agents research and produce slides, docs, sheets, images, video and code for you.",
-    "category": "personal agents",
+    "category": "productivity",
     "pricing": "Freemium",
     "maturity": "Active",
     "audience": "ready to use",

@@ -8,15 +8,15 @@ def tag(p):
     return "paid"
 def platforms(x):
     a=x.get("audience","");c=x["category"]
-    if a!="ready to use" or c in("frameworks","MCP & infra","evals & observability"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
+    if a!="ready to use" or c in("frameworks","MCP & infra","evals & observability","memory & RAG","security & governance","models & local runtimes"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
     return ["Web"]
-GOALS={"coding":["coding","app builders"],"research":["research","browser/computer use"],"crypto":["crypto"],"writing":["productivity","models"],"media":["voice","vision"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP & infra"],"support":["business agents"]}
+GOALS={"coding":["coding","app builders"],"research":["research","browser/computer use"],"crypto":["crypto"],"writing":["productivity","models & local runtimes"],"media":["voice","vision"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP & infra","memory & RAG"],"support":["customer support","sales & marketing","business agents"]}
 KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["support","customer","helpdesk"],"writing":["writ","content","copy"],"media":["video","voice","image","speech"]}
 def goals(x):
     txt=(x["name"]+" "+x["description"]).lower()
     return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
 def skill(x):
-    return "no-code" if x.get("audience")=="ready to use" or x["category"] in("no-code builders","app builders","personal agents","business agents") else "developer"
+    return "no-code" if x.get("audience")=="ready to use" or x["category"] in("no-code builders","app builders","personal agents","business agents","customer support","sales & marketing") else "developer"
 LIC=__import__("re").compile(r"\b(AGPL[- ]?v?3(?:\.0)?|LGPL[- ]?v?[23](?:\.\d)?|GPL[- ]?v?[23](?:\.0)?|Apache[- ]?2(?:\.0)?|MIT|BSD[- ]?[23]-?Clause|BSD|MPL[- ]?2(?:\.0)?|Elastic License(?: 2\.0)?|SSPL)\b",2)
 def lic(x):
     m=LIC.search((x.get("pricing_detail") or "")+" "+x.get("description",""))

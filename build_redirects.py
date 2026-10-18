@@ -51,6 +51,10 @@ def run():
         print("redirects: none")
         return 0
     n = 0
+    try:  # never overwrite a page the current build lists in sitemap.xml (it came back)
+        live = set(l.split("<loc>")[1].split("</loc>")[0].replace(B, "") for l in open("sitemap.xml") if "<loc>" in l)
+    except Exception:
+        live = set()
     for src, dst in sorted(m.items()):
         if not isinstance(src, str) or not isinstance(dst, str):
             continue
@@ -58,6 +62,9 @@ def run():
         dst = dst.lstrip("/")
         if not src.endswith(".html") or not dst.endswith(".html"):
             print("redirects: skip bad paths", src, "->", dst)
+            continue
+        if src in live:
+            print("redirects: page is live again, skip", src)
             continue
         if not os.path.exists(dst):
             print("redirects: target missing, skip", src, "->", dst)

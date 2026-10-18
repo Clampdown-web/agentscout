@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-18T15:25:04Z",
- "updated": "2026-10-18T15:25:04Z",
+ "generated": "2026-10-18T15:44:50Z",
+ "updated": "2026-10-18T15:44:50Z",
  "last_checked": "2026-10-18",
  "count": 1109,
  "tools": [
@@ -11,11 +11,12 @@
    "url": "https://www.siena.cx/blog/siena-social-agent-social-media-management",
    "website": "https://www.siena.cx",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI agent for social media that converts comments/DMs, moderates, resolves support, and turns conversations into intelligence; launched Oct 13, 2026.",
    "key_features": [
     "Enterprise / book a demo",
-    "Launched Oct 13"
+    "Launched Oct 13",
+    "Sales & support"
    ],
    "pricing": "Enterprise / book a demo",
    "price_tag": "paid",
@@ -38,7 +39,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/siena-social-agent.png",
@@ -956,7 +957,7 @@
    "url": "https://kodlo.ai",
    "website": "https://kodlo.ai",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
    "key_features": [
     "See site",
@@ -1000,7 +1001,7 @@
    "url": "https://www.trig.ai/blog/a-new-way-to-manage-your-customers",
    "website": "https://www.trig.ai",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Rebuilt as an agent workspace for account managers: agents follow up, prep renewals, build expansion cases.",
    "key_features": [
     "Paid (see site)",
@@ -1040,7 +1041,7 @@
    "url": "https://cresta.com/deputy-agent",
    "website": "https://cresta.com/deputy-agent",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Long-running agent that finishes customer-service back-office workflows, pausing for approvals or documents.",
    "key_features": [
     "Enterprise, paid",
@@ -1082,7 +1083,7 @@
    "url": "https://research.meta.ai/blog/muse-wonder",
    "website": "https://research.meta.ai/blog/muse-wonder",
    "github": "",
-   "category": "models",
+   "category": "models & local runtimes",
    "description": "Meta's new models for personal and professional agent tasks, available via Meta Model API and Muse Code.",
    "key_features": [
     "Paid API / subscription",
@@ -1091,7 +1092,7 @@
    "pricing": "Paid API / subscription",
    "price_tag": "paid",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-14",
    "added": "2026-10-14",
@@ -1109,7 +1110,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "models"
+    "models & local runtimes"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/meta-muse-wonder.png",
@@ -3493,13 +3494,12 @@
    "url": "https://mem0.ai",
    "website": "https://mem0.ai",
    "github": "https://github.com/mem0ai/mem0",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory layer for AI agents.",
    "key_features": [
     "Open source + paid cloud",
     "Mature",
     "67147 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + paid cloud",
@@ -3524,7 +3524,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -4112,7 +4111,7 @@
    "url": "https://www.11x.ai",
    "website": "https://www.11x.ai",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Digital AI workers for go-to-market teams, including an SDR agent that researches prospects and runs outbound and a phone agent that handles calls.",
    "key_features": [
     "Enterprise",
@@ -4156,7 +4155,7 @@
    "url": "https://asi1.ai",
    "website": "https://asi1.ai",
    "github": "",
-   "category": "models",
+   "category": "models & local runtimes",
    "description": "Agentic LLM and chat app from Fetch.ai built to reason, plan and call other agents on the ASI Alliance network.",
    "key_features": [
     "Freemium",
@@ -4196,7 +4195,7 @@
    "url": "https://www.activeloop.ai",
    "website": "https://www.activeloop.ai",
    "github": "https://github.com/activeloopai/deeplake",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Deep Lake, a multimodal database for AI that stores vectors, images, text and video so agents and RAG apps can search and retrieve them.",
    "key_features": [
     "Open source + cloud",
@@ -4204,7 +4203,7 @@
     "9252 GitHub stars",
     "Research the web",
     "Automate workflows",
-    "Connect tools via mcp"
+    "Give agents memory"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -4231,7 +4230,7 @@
    "tags": [
     "research the web",
     "automate workflows",
-    "connect tools via MCP"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/activeloop.png",
@@ -4370,13 +4369,14 @@
    "url": "https://customgpt.ai",
    "website": "https://customgpt.ai",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "No-code platform for building AI agents grounded in your business content, with citations and anti-hallucination controls.",
    "key_features": [
     "Paid",
     "Active",
     "Write code",
-    "Build apps without code"
+    "Build apps without code",
+    "Sales & support"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -4401,7 +4401,8 @@
    "license": "",
    "tags": [
     "write code",
-    "build apps without code"
+    "build apps without code",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/customgpt-ai.png",
@@ -4536,7 +4537,7 @@
    "url": "https://www.artisan.co",
    "website": "https://www.artisan.co",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "AI employees for sales, led by Ava, an outbound SDR agent that finds leads, writes emails and books meetings.",
    "key_features": [
     "Paid",
@@ -4785,7 +4786,7 @@
    "url": "https://www.dropzone.ai",
    "website": "https://www.dropzone.ai",
    "github": "",
-   "category": "business agents",
+   "category": "security & governance",
    "description": "AI SOC analyst agents that investigate security alerts autonomously.",
    "key_features": [
     "Enterprise",
@@ -4794,14 +4795,12 @@
    "pricing": "Enterprise",
    "price_tag": "paid",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "Futurepedia",
-   "goals": [
-    "support"
-   ],
+   "goals": [],
    "skill": "no-code",
    "weekly_pick": false,
    "new": false,
@@ -4812,7 +4811,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/dropzone-ai.png",
@@ -4863,7 +4862,7 @@
    "url": "https://gradient-labs.ai",
    "website": "https://gradient-labs.ai",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI customer support agent for regulated financial services companies.",
    "key_features": [
     "Enterprise",
@@ -4943,14 +4942,13 @@
    "url": "https://www.guardrailsai.com",
    "website": "https://www.guardrailsai.com",
    "github": "https://github.com/guardrails-ai/guardrails",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Open-source framework for validating LLM inputs and outputs with configurable guardrails.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "7529 GitHub stars",
-    "Build an agent",
-    "Monitor & evaluate agents"
+    "Build an agent"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -4972,8 +4970,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "monitor & evaluate agents"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/guardrails-ai.png",
@@ -5069,7 +5066,7 @@
    "url": "https://fin.ai",
    "website": "https://fin.ai",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Intercom's Fin AI agent that resolves customer support conversations across channels.",
    "key_features": [
     "Usage-based",
@@ -5196,14 +5193,13 @@
    "url": "https://lancedb.com",
    "website": "https://lancedb.com",
    "github": "https://github.com/lancedb/lancedb",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Open-source multimodal vector database for search, RAG and agent memory.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "11684 GitHub stars",
     "Research the web",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + cloud",
@@ -5229,7 +5225,6 @@
    "license": "",
    "tags": [
     "research the web",
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -5367,7 +5362,7 @@
    "url": "https://mindflow.io",
    "website": "https://mindflow.io",
    "github": "",
-   "category": "business agents",
+   "category": "security & governance",
    "description": "No-code automation and AI agents for security and IT operations.",
    "key_features": [
     "Enterprise",
@@ -5384,10 +5379,8 @@
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "Futurepedia",
-   "goals": [
-    "support"
-   ],
-   "skill": "no-code",
+   "goals": [],
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -6118,12 +6111,11 @@
    "url": "https://zenity.io",
    "website": "https://zenity.io",
    "github": "",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Security and governance for AI agents across enterprise platforms.",
    "key_features": [
     "Enterprise",
-    "Active",
-    "Monitor & evaluate agents"
+    "Active"
    ],
    "pricing": "Enterprise",
    "price_tag": "paid",
@@ -6144,7 +6136,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "monitor & evaluate agents"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/zenity.png",
@@ -6321,12 +6313,13 @@
    "url": "https://www.duckie.ai",
    "website": "https://www.duckie.ai",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI support agent for technical products that resolves tickets.",
    "key_features": [
     "Paid",
     "Active",
-    "Write code"
+    "Write code",
+    "Sales & support"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -6349,7 +6342,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "write code"
+    "write code",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/duckie.png",
@@ -6686,7 +6680,7 @@
    "url": "https://simbian.ai",
    "website": "https://simbian.ai",
    "github": "",
-   "category": "business agents",
+   "category": "security & governance",
    "description": "AI agents for security operations, threat hunting and response.",
    "key_features": [
     "Enterprise",
@@ -6695,14 +6689,12 @@
    "pricing": "Enterprise",
    "price_tag": "paid",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "Futurepedia",
-   "goals": [
-    "support"
-   ],
+   "goals": [],
    "skill": "no-code",
    "weekly_pick": false,
    "new": false,
@@ -6713,7 +6705,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/simbian.png",
@@ -6725,7 +6717,7 @@
    "url": "https://www.prophetsecurity.ai",
    "website": "https://www.prophetsecurity.ai",
    "github": "",
-   "category": "business agents",
+   "category": "security & governance",
    "description": "Agentic AI SOC analyst that triages and investigates alerts.",
    "key_features": [
     "Enterprise",
@@ -6734,14 +6726,12 @@
    "pricing": "Enterprise",
    "price_tag": "paid",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "Futurepedia",
-   "goals": [
-    "support"
-   ],
+   "goals": [],
    "skill": "no-code",
    "weekly_pick": false,
    "new": false,
@@ -6752,7 +6742,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/prophet-security.png",
@@ -6764,12 +6754,11 @@
    "url": "https://www.token.security",
    "website": "https://www.token.security",
    "github": "",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Security for non-human and AI agent identities.",
    "key_features": [
     "Enterprise",
-    "Active",
-    "Monitor & evaluate agents"
+    "Active"
    ],
    "pricing": "Enterprise",
    "price_tag": "paid",
@@ -6792,7 +6781,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "monitor & evaluate agents"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/token-security.png",
@@ -6928,11 +6917,12 @@
    "url": "https://hiverhq.com",
    "website": "https://hiverhq.com",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Customer service helpdesk in Gmail with AI agents.",
    "key_features": [
     "Paid",
-    "Active"
+    "Active",
+    "Sales & support"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -6955,7 +6945,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/hiver.png",
@@ -7055,7 +7045,7 @@
    "url": "https://cmem.ai/",
    "website": "https://cmem.ai/",
    "github": "https://github.com/thedotmack/claude-mem",
-   "category": "coding",
+   "category": "memory & RAG",
    "description": "Gives coding agents memory across sessions by capturing what they do, compressing it and feeding the relevant context back in later.",
    "key_features": [
     "Open source",
@@ -7074,7 +7064,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "coding"
+    "automation"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -7185,13 +7175,13 @@
    "url": "https://ragflow.io/",
    "website": "https://ragflow.io/",
    "github": "https://github.com/infiniflow/ragflow",
-   "category": "frameworks",
+   "category": "memory & RAG",
    "description": "Open-source RAG engine with deep document parsing and agent features for building grounded question-answering over your files.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "92335 GitHub stars",
-    "Build an agent"
+    "Give agents memory"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -7215,7 +7205,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ragflow.png",
@@ -7359,13 +7349,12 @@
    "url": "https://www.strix.ai/",
    "website": "https://www.strix.ai/",
    "github": "https://github.com/usestrix/strix",
-   "category": "coding",
+   "category": "security & governance",
    "description": "Open-source AI agents that run penetration tests on your app to find and help fix security vulnerabilities.",
    "key_features": [
     "Open source + cloud",
     "Mature",
-    "69022 GitHub stars",
-    "Write code"
+    "69022 GitHub stars"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -7376,9 +7365,7 @@
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "GitHub",
-   "goals": [
-    "coding"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": false,
@@ -7389,7 +7376,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/strix.png",
@@ -7660,13 +7647,12 @@
    "url": "https://hindsight.vectorize.io/",
    "website": "https://hindsight.vectorize.io/",
    "github": "https://github.com/vectorize-io/hindsight",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Agent memory system that stores experiences and learns from them so agents improve over time.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "50483 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + cloud",
@@ -7691,7 +7677,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -7704,14 +7689,13 @@
    "url": "https://localai.io/",
    "website": "https://localai.io/",
    "github": "https://github.com/mudler/LocalAI",
-   "category": "MCP & infra",
+   "category": "models & local runtimes",
    "description": "Self-hosted engine with an OpenAI-compatible API for running LLM, vision, voice and image models on your own hardware, including agents.",
    "key_features": [
     "Open source",
     "Mature",
     "49586 GitHub stars",
     "Voice & phone calls",
-    "Connect tools via mcp",
     "Computer vision"
    ],
    "pricing": "Open source",
@@ -7724,8 +7708,8 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation",
-    "media"
+    "media",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -7738,7 +7722,6 @@
    "license": "",
    "tags": [
     "voice & phone calls",
-    "connect tools via MCP",
     "computer vision"
    ],
    "hybrid": false,
@@ -8147,13 +8130,13 @@
    "url": "https://pageindex.ai/",
    "website": "https://pageindex.ai/",
    "github": "https://github.com/VectifyAI/PageIndex",
-   "category": "frameworks",
+   "category": "memory & RAG",
    "description": "Document index for reasoning-based, vectorless RAG that lets agents navigate long documents like a table of contents.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "39186 GitHub stars",
-    "Build an agent"
+    "Give agents memory"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -8178,7 +8161,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/pageindex.png",
@@ -8616,13 +8599,12 @@
    "url": "https://www.cognee.ai/",
    "website": "https://www.cognee.ai/",
    "github": "https://github.com/topoteretes/cognee",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Open-source memory platform that builds knowledge graphs so agents keep long-term memory.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "32405 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + cloud",
@@ -8647,7 +8629,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -8660,13 +8641,12 @@
    "url": "https://help.getzep.com/graphiti/getting-started/welcome",
    "website": "https://help.getzep.com/graphiti/getting-started/welcome",
    "github": "https://github.com/getzep/graphiti",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Builds real-time, temporal knowledge graphs that serve as memory for AI agents.",
    "key_features": [
     "Open source",
     "Mature",
     "31819 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -8691,7 +8671,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -9060,7 +9039,7 @@
    "url": "https://www.agent-memory.dev/",
    "website": "https://www.agent-memory.dev/",
    "github": "https://github.com/rohitg00/agentmemory",
-   "category": "coding",
+   "category": "memory & RAG",
    "description": "Persistent memory layer for AI coding agents.",
    "key_features": [
     "Open source",
@@ -9079,7 +9058,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "coding"
+    "automation"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -9104,14 +9083,13 @@
    "url": "https://www.trychroma.com/",
    "website": "https://www.trychroma.com/",
    "github": "https://github.com/chroma-core/chroma",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Open-source search and vector database widely used for agent memory and RAG.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "29512 GitHub stars",
     "Research the web",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + cloud",
@@ -9137,7 +9115,6 @@
    "license": "",
    "tags": [
     "research the web",
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -9193,14 +9170,13 @@
    "url": "https://tencentcloud.github.io/TencentDB-Agent-Memory/",
    "website": "https://tencentcloud.github.io/TencentDB-Agent-Memory/",
    "github": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Team-level memory hub that turns conversations, docs and code into shared memory for agents.",
    "key_features": [
     "Open source",
     "Mature",
     "29346 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -9226,7 +9202,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -11226,13 +11201,12 @@
    "url": "https://evermind.ai/everos",
    "website": "https://evermind.ai/everos",
    "github": "https://github.com/EverMind-AI/EverOS",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Local-first, portable memory layer for AI agents stored as Markdown.",
    "key_features": [
     "Open source",
     "Mature",
     "13451 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -11257,7 +11231,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -11532,14 +11505,13 @@
    "url": "https://memos.openmem.net/",
    "website": "https://memos.openmem.net/",
    "github": "https://github.com/MemTensor/MemOS",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory operating system for LLMs and agents with persistent memory and retrieval.",
    "key_features": [
     "Open source",
     "Mature",
     "11892 GitHub stars",
     "Control a computer",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -11565,7 +11537,6 @@
    "license": "",
    "tags": [
     "control a computer",
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -12811,7 +12782,7 @@
    "url": "https://oumi.ai/",
    "website": "https://oumi.ai/",
    "github": "https://github.com/oumi-ai/oumi",
-   "category": "models",
+   "category": "models & local runtimes",
    "description": "Open platform for fine-tuning, evaluating and deploying open agentic LLMs and VLMs.",
    "key_features": [
     "Open source",
@@ -13243,7 +13214,7 @@
    "url": "https://www.miromind.ai/",
    "website": "https://www.miromind.ai/",
    "github": "https://github.com/MiroMindAI/MiroThinker",
-   "category": "research",
+   "category": "models & local runtimes",
    "description": "Deep research agent and open models tuned for complex research and forecasting tasks.",
    "key_features": [
     "Open weights",
@@ -13261,7 +13232,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "research"
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -13668,14 +13639,13 @@
    "url": "https://honcho.dev/docs/v3/documentation/introduction/overview",
    "website": "https://honcho.dev/docs/v3/documentation/introduction/overview",
    "github": "https://github.com/plastic-labs/honcho",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory library and service for building stateful agents that remember users.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "7648 GitHub stars",
     "Build an agent",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + cloud",
@@ -13701,7 +13671,6 @@
    "license": "",
    "tags": [
     "build an agent",
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -14144,14 +14113,13 @@
    "url": "https://tencent.github.io/AI-Infra-Guard/",
    "website": "https://tencent.github.io/AI-Infra-Guard/",
    "github": "https://github.com/Tencent/AI-Infra-Guard",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Tencent's AI red-teaming platform that scans agents, skills and MCP servers for risks.",
    "key_features": [
     "Open source",
     "Mature",
     "6887 GitHub stars",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Connect tools via mcp"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -14173,8 +14141,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ai-infra-guard.png",
@@ -14400,15 +14367,14 @@
    "url": "https://github.com/microsoft/agent-governance-toolkit",
    "website": "",
    "github": "https://github.com/microsoft/agent-governance-toolkit",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Microsoft toolkit for policy enforcement, identity and sandboxing for AI agents.",
    "key_features": [
     "Open source",
     "Mature",
     "6435 GitHub stars",
     "Build an agent",
-    "Run code safely",
-    "Monitor & evaluate agents"
+    "Run code safely"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -14431,8 +14397,7 @@
    "license": "",
    "tags": [
     "build an agent",
-    "run code safely",
-    "monitor & evaluate agents"
+    "run code safely"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-governance-toolkit.png",
@@ -15266,14 +15231,13 @@
    "url": "https://befailproof.ai/",
    "website": "https://befailproof.ai/",
    "github": "https://github.com/FailproofAI/failproofai",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Observability and policy enforcement for AI agent harnesses.",
    "key_features": [
     "Open source",
     "Mature",
     "5560 GitHub stars",
-    "Build an agent",
-    "Monitor & evaluate agents"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -15295,8 +15259,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "monitor & evaluate agents"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/failproof-ai.png",
@@ -17205,7 +17168,7 @@
    "url": "https://www.tracecat.com/",
    "website": "https://www.tracecat.com/",
    "github": "https://github.com/TracecatHQ/tracecat",
-   "category": "business agents",
+   "category": "security & governance",
    "description": "Open-source security automation platform for teams and AI agents.",
    "key_features": [
     "Open source + cloud",
@@ -17222,10 +17185,8 @@
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "GitHub",
-   "goals": [
-    "support"
-   ],
-   "skill": "no-code",
+   "goals": [],
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -17420,13 +17381,12 @@
    "url": "https://acontext.io/",
    "website": "https://acontext.io/",
    "github": "https://github.com/memodb-io/Acontext",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory layer that stores agent experience as reusable skills.",
    "key_features": [
     "Open source",
     "Active",
     "3695 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -17451,7 +17411,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -17506,13 +17465,12 @@
    "url": "https://reme.agentscope.io/",
    "website": "https://reme.agentscope.io/",
    "github": "https://github.com/agentscope-ai/ReMe",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory management kit for agents.",
    "key_features": [
     "Open source",
     "Active",
     "3632 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -17537,7 +17495,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -17979,13 +17936,12 @@
    "url": "https://github.com/GH05TCREW/pentestagent",
    "website": "",
    "github": "https://github.com/GH05TCREW/pentestagent",
-   "category": "coding",
+   "category": "security & governance",
    "description": "Agent framework for black-box security testing and bug bounty work.",
    "key_features": [
     "Open source",
     "Active",
     "3188 GitHub stars",
-    "Write code",
     "Build an agent"
    ],
    "pricing": "Open source",
@@ -17997,9 +17953,7 @@
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "GitHub",
-   "goals": [
-    "coding"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": false,
@@ -18010,7 +17964,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
     "build an agent"
    ],
    "hybrid": false,
@@ -18112,14 +18065,14 @@
    "url": "https://www.seekdb.ai/",
    "website": "https://www.seekdb.ai/",
    "github": "https://github.com/oceanbase/seekdb",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "AI-native search database for agent storage combining vector, text and structured data.",
    "key_features": [
     "Open source",
     "Active",
     "3157 GitHub stars",
     "Research the web",
-    "Connect tools via mcp"
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -18144,7 +18097,7 @@
    "license": "",
    "tags": [
     "research the web",
-    "connect tools via MCP"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/seekdb.png",
@@ -18243,13 +18196,12 @@
    "url": "https://memmachine.ai/",
    "website": "https://memmachine.ai/",
    "github": "https://github.com/MemMachine/MemMachine",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Universal memory layer for AI agents.",
    "key_features": [
     "Open source",
     "Active",
     "3072 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -18274,7 +18226,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -20542,14 +20493,13 @@
    "url": "https://github.com/snyk/agent-scan",
    "website": "",
    "github": "https://github.com/snyk/agent-scan",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Snyk's scanner for security risks in MCP servers and agent skills.",
    "key_features": [
     "Open source",
     "Active",
     "3142 GitHub stars",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Connect tools via mcp"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -20571,8 +20521,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/snyk-agent-scan.png",
@@ -21564,7 +21513,7 @@
    "url": "https://agentplace.io/",
    "website": "https://agentplace.io/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Build AI agents that answer customer questions, book appointments and deliver services online.",
    "key_features": [
     "Freemium",
@@ -21604,11 +21553,12 @@
    "url": "https://agentsdr.ai/",
    "website": "https://agentsdr.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Open-source AI SDR that runs email, LinkedIn and WhatsApp outreach and sorts replies in a built-in CRM.",
    "key_features": [
     "Open source + cloud",
-    "Active"
+    "Active",
+    "Sales & support"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -21632,7 +21582,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agentsdr.png",
@@ -21644,13 +21594,13 @@
    "url": "https://agentset.ai/",
    "website": "https://agentset.ai/",
    "github": "",
-   "category": "frameworks",
+   "category": "memory & RAG",
    "description": "Open-source RAG platform for building agents and apps that answer accurately from your documents.",
    "key_features": [
     "Open source + cloud",
     "Active",
-    "Build an agent",
-    "Automate workflows"
+    "Automate workflows",
+    "Give agents memory"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -21674,8 +21624,8 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "automate workflows"
+    "automate workflows",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agentset.png",
@@ -21770,12 +21720,13 @@
    "url": "https://aisdr.com/ai-gtm-agent-ami/",
    "website": "https://aisdr.com/ai-gtm-agent-ami/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "AI go-to-market agent from AiSDR that builds a target list and runs a live outbound campaign from your website.",
    "key_features": [
     "Paid",
     "Active",
-    "Research the web"
+    "Research the web",
+    "Sales & support"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -21798,7 +21749,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web"
+    "research the web",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ami-by-aisdr.png",
@@ -22295,7 +22247,7 @@
    "url": "https://close.com/",
    "website": "https://close.com/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "CRM with a built-in AI teammate that calls leads, qualifies prospects and books meetings.",
    "key_features": [
     "Paid",
@@ -22337,7 +22289,7 @@
    "url": "https://oncockpit.ai/",
    "website": "https://oncockpit.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "AI go-to-market team that runs outbound, content, paid, lifecycle and sales work together.",
    "key_features": [
     "Paid",
@@ -22463,11 +22415,12 @@
    "url": "https://www.crono.one/",
    "website": "https://www.crono.one/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Sales execution platform where reps and AI agents work together on signals and outreach.",
    "key_features": [
     "Paid",
-    "Active"
+    "Active",
+    "Sales & support"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -22490,7 +22443,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/crono.png",
@@ -22913,13 +22866,14 @@
    "url": "https://clarasdr.ai/",
    "website": "https://clarasdr.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Face-to-face video AI SDR that talks to website visitors, qualifies leads and books meetings.",
    "key_features": [
     "Paid",
     "Active",
     "Research the web",
-    "Voice & phone calls"
+    "Voice & phone calls",
+    "Sales & support"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -22944,7 +22898,8 @@
    "license": "",
    "tags": [
     "research the web",
-    "voice & phone calls"
+    "voice & phone calls",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/clara-ai-sdr.png",
@@ -28036,7 +27991,7 @@
    "url": "https://docs.headroomlabs.ai/docs",
    "website": "https://docs.headroomlabs.ai/docs",
    "github": "https://github.com/headroomlabs-ai/headroom",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Library, proxy and MCP server that compresses tool outputs, logs, files and RAG chunks locally before they reach the LLM, cutting tokens for coding agents.",
    "key_features": [
     "Open source",
@@ -28083,15 +28038,14 @@
    "url": "https://www.hyperframes.dev/",
    "website": "https://www.hyperframes.dev/",
    "github": "https://github.com/heygen-com/hyperframes",
-   "category": "MCP & infra",
+   "category": "productivity",
    "description": "HeyGen's open-source framework that renders HTML, CSS and animations into deterministic MP4 videos, usable from a CLI or by coding agents through skills.",
    "key_features": [
     "Open source",
     "Mature",
     "66201 GitHub stars",
     "Write code",
-    "Build an agent",
-    "Connect tools via mcp"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -28103,8 +28057,8 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation",
-    "media"
+    "media",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -28117,8 +28071,7 @@
    "license": "",
    "tags": [
     "write code",
-    "build an agent",
-    "connect tools via MCP"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/hyperframes.png",
@@ -28170,14 +28123,13 @@
    "url": "https://github.com/MemPalace/mempalace",
    "website": "",
    "github": "https://github.com/MemPalace/mempalace",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Local-first AI memory system that stores conversations verbatim with a pluggable backend and serves recall to agents without API calls.",
    "key_features": [
     "Open source",
     "Mature",
     "59622 GitHub stars",
     "Voice & phone calls",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -28203,7 +28155,6 @@
    "license": "",
    "tags": [
     "voice & phone calls",
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -28958,13 +28909,13 @@
    "url": "https://llmware-ai.github.io/llmware/",
    "website": "https://llmware-ai.github.io/llmware/",
    "github": "https://github.com/llmware-ai/llmware",
-   "category": "frameworks",
+   "category": "memory & RAG",
    "description": "Framework for building private, local RAG and agent applications with small specialized models on AI PCs, edge and self-hosted setups.",
    "key_features": [
     "Open source",
     "Mature",
     "14814 GitHub stars",
-    "Build an agent"
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -28988,7 +28939,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/llmware.png",
@@ -29000,13 +28951,12 @@
    "url": "https://memu.pro/",
    "website": "https://memu.pro/",
    "github": "https://github.com/NevaMind-AI/memU",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Lightweight memory system that gives Codex, Claude Code, Cursor and other agents a shared memory across sessions and devices and distills reusable skills.",
    "key_features": [
     "Open source",
     "Mature",
     "14553 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -29031,7 +28981,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -29127,14 +29076,15 @@
    "url": "https://neuml.github.io/txtai/",
    "website": "https://neuml.github.io/txtai/",
    "github": "https://github.com/neuml/txtai",
-   "category": "frameworks",
+   "category": "memory & RAG",
    "description": "All-in-one Python framework for semantic search, LLM orchestration and agents built on an embeddings database of vector, graph and relational indexes.",
    "key_features": [
     "Open source",
     "Mature",
     "13024 GitHub stars",
     "Build an agent",
-    "Research the web"
+    "Research the web",
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -29159,7 +29109,8 @@
    "license": "",
    "tags": [
     "build an agent",
-    "research the web"
+    "research the web",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/txtai.png",
@@ -29532,7 +29483,7 @@
    "url": "https://z.ai/blog/glm-5.2",
    "website": "https://z.ai/blog/glm-5.2",
    "github": "https://github.com/zai-org/GLM-5",
-   "category": "models",
+   "category": "models & local runtimes",
    "description": "Z.ai's open-weights GLM-5 model family built for coding and long-horizon agentic tasks, also offered through the Z.ai API.",
    "key_features": [
     "Open weights",
@@ -29844,7 +29795,7 @@
    "url": "https://ultrarag.github.io/",
    "website": "https://ultrarag.github.io/",
    "github": "https://github.com/OpenBMB/UltraRAG",
-   "category": "frameworks",
+   "category": "memory & RAG",
    "description": "Low-code MCP-based framework from OpenBMB for building and debugging complex RAG pipelines with visible reasoning logic.",
    "key_features": [
     "Open source",
@@ -30419,7 +30370,7 @@
    "url": "https://www.magicrew.ai/",
    "website": "https://www.magicrew.ai/",
    "github": "https://github.com/dtyq/magic",
-   "category": "productivity",
+   "category": "business agents",
    "description": "Open-source enterprise AI agent platform that combines a general agent, workflow engine, team chat and collaborative office tools.",
    "key_features": [
     "Source-available",
@@ -30436,7 +30387,7 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "writing"
+    "support"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -30672,15 +30623,14 @@
    "url": "https://observal.io/",
    "website": "https://observal.io/",
    "github": "https://github.com/Observal/Observal",
-   "category": "evals & observability",
+   "category": "MCP & infra",
    "description": "Self-hosted registry and insight engine for sharing coding-agent skills, MCP servers and agents across a team.",
    "key_features": [
     "Open source",
     "Active",
     "4517 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Connect tools via mcp"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -30691,7 +30641,9 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -30703,8 +30655,7 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/observal.png",
@@ -30760,13 +30711,12 @@
    "url": "https://basicmemory.com/",
    "website": "https://basicmemory.com/",
    "github": "https://github.com/basicmachines-co/basic-memory",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Persistent memory for Claude, Codex and Cursor stored as local Markdown knowledge, available open source or as a hosted cloud workspace.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "4263 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source + cloud",
@@ -30791,7 +30741,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -30933,14 +30882,14 @@
    "url": "https://github.com/yvgude/lean-ctx",
    "website": "",
    "github": "https://github.com/yvgude/lean-ctx",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Open-source context gateway that sits between AI tools and your code and data to control and shrink what the model sees.",
    "key_features": [
     "Open source",
     "Active",
     "3883 GitHub stars",
     "Write code",
-    "Connect tools via mcp"
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -30965,7 +30914,7 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/leanctx.png",
@@ -31066,7 +31015,7 @@
    "url": "https://github.com/aiming-lab/SimpleMem",
    "website": "",
    "github": "https://github.com/aiming-lab/SimpleMem",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Research-backed lifelong memory library for LLM agents that stores, compresses and retrieves text and multimodal memories, usable over MCP.",
    "key_features": [
     "Open source",
@@ -31156,12 +31105,13 @@
    "url": "https://github.com/ZJU-REAL/Easel",
    "website": "",
    "github": "https://github.com/ZJU-REAL/Easel",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Open-source social media agent workspace that discovers trends, creates and publishes content and learns what performs across Chinese platforms.",
    "key_features": [
     "Open source",
     "Active",
-    "3809 GitHub stars"
+    "3809 GitHub stars",
+    "Sales & support"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -31185,7 +31135,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/easel.png",
@@ -31243,13 +31193,12 @@
    "url": "https://knowhereto.ai/",
    "website": "https://knowhereto.ai/",
    "github": "https://github.com/Ontos-AI/knowhere",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Document parsing and retrieval system that turns messy files into structured, navigable memory for AI agents and RAG.",
    "key_features": [
     "Open source",
     "Active",
     "3775 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -31274,7 +31223,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -31459,13 +31407,12 @@
    "url": "https://mnemosyne.site/",
    "website": "https://mnemosyne.site/",
    "github": "https://github.com/mnemosyne-oss/mnemosyne",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Zero-cloud, SQLite-backed memory layer for Hermes, Claude Code, Cursor, Codex and custom agents with a single Python dependency.",
    "key_features": [
     "Open source",
     "Active",
     "3449 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -31490,7 +31437,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -31934,12 +31880,13 @@
    "url": "https://openoutreach.app/",
    "website": "https://openoutreach.app/",
    "github": "https://github.com/eracle/OpenOutreach",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Self-hosted AI agent for B2B lead generation that finds people matching your market, explains the fit and emails them from your mailbox.",
    "key_features": [
     "Open source",
     "Active",
-    "3323 GitHub stars"
+    "3323 GitHub stars",
+    "Sales & support"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -31962,7 +31909,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openoutreach.png",
@@ -32794,7 +32741,7 @@
    "url": "https://github.com/google/mantis",
    "website": "",
    "github": "https://github.com/google/mantis",
-   "category": "coding",
+   "category": "security & governance",
    "description": "Google's toolkit for AI coding agents to autonomously find, reproduce and patch software vulnerabilities in isolated environments.",
    "key_features": [
     "Open source",
@@ -32812,9 +32759,7 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "GitHub",
-   "goals": [
-    "coding"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -33150,14 +33095,13 @@
    "url": "https://docs.agent-vault.dev/",
    "website": "https://docs.agent-vault.dev/",
    "github": "https://github.com/Infisical/agent-vault",
-   "category": "MCP & infra",
+   "category": "security & governance",
    "description": "Infisical's open-source credential broker that proxies API calls for AI agents so they never hold secrets themselves.",
    "key_features": [
     "Open source",
     "Active",
     "2368 GitHub stars",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Voice & phone calls"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -33168,9 +33112,7 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "GitHub",
-   "goals": [
-    "automation"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -33181,8 +33123,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
-    "connect tools via MCP"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-vault.png",
@@ -33275,13 +33216,12 @@
    "url": "https://memanto.ai/",
    "website": "https://memanto.ai/",
    "github": "https://github.com/moorcheh-ai/memanto",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory agent that manages what your other agents keep, resolve and forget across platforms.",
    "key_features": [
     "Open source",
     "Active",
     "2332 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -33306,7 +33246,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -33968,14 +33907,13 @@
    "url": "https://agent-safehouse.dev/",
    "website": "https://agent-safehouse.dev/",
    "github": "https://github.com/eugene1g/agent-safehouse",
-   "category": "MCP & infra",
+   "category": "security & governance",
    "description": "macOS sandbox for local coding agents that limits file and integration access with deny-first policy profiles.",
    "key_features": [
     "Open source",
     "Active",
     "2110 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -33987,9 +33925,7 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "GitHub",
-   "goals": [
-    "automation"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -34001,7 +33937,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -34107,13 +34042,12 @@
    "url": "https://superglue.ai/",
    "website": "https://superglue.ai/",
    "github": "https://github.com/superglue-ai/superglue",
-   "category": "MCP & infra",
+   "category": "business agents",
    "description": "AI agents that connect, migrate and implement enterprise systems like NetSuite and SAP, cloud-hosted or self-hosted.",
    "key_features": [
     "Source-available + cloud",
     "Active",
-    "2065 GitHub stars",
-    "Connect tools via mcp"
+    "2065 GitHub stars"
    ],
    "pricing": "Source-available + cloud",
    "price_tag": "freemium",
@@ -34124,9 +34058,9 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "support"
    ],
-   "skill": "developer",
+   "skill": "no-code",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -34136,7 +34070,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "business agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/superglue.png",
@@ -34148,7 +34082,7 @@
    "url": "https://github.com/uber/ADR",
    "website": "",
    "github": "https://github.com/uber/ADR",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Uber's Agentic AI Detection and Response system that secures employee and customer-facing AI agents with observability and threat detection.",
    "key_features": [
     "Open source",
@@ -34405,7 +34339,7 @@
    "url": "https://ollama.com/",
    "website": "https://ollama.com/",
    "github": "https://github.com/ollama/ollama",
-   "category": "models",
+   "category": "models & local runtimes",
    "description": "Runs open models such as Qwen, Gemma, DeepSeek and gpt-oss locally or in Ollama's cloud, and connects them to agents like Claude Code, OpenClaw and Codex.",
    "key_features": [
     "Open source",
@@ -34447,13 +34381,14 @@
    "url": "https://github.com/microsoft/markitdown",
    "website": "",
    "github": "https://github.com/microsoft/markitdown",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Microsoft's Python tool and MCP server that converts PDFs, Office documents, images, audio and web pages to Markdown for LLM and agent pipelines.",
    "key_features": [
     "Open source",
     "Mature",
     "190824 GitHub stars",
-    "Connect tools via mcp"
+    "Connect tools via mcp",
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -34478,7 +34413,8 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/markitdown.png",
@@ -34663,7 +34599,7 @@
    "url": "https://www.jan.ai/",
    "website": "https://www.jan.ai/",
    "github": "https://github.com/janhq/jan",
-   "category": "personal agents",
+   "category": "models & local runtimes",
    "description": "Open-source ChatGPT alternative that downloads and runs LLMs fully offline on your computer, with optional connections to cloud models.",
    "key_features": [
     "Open source",
@@ -34673,13 +34609,14 @@
    "pricing": "Open source",
    "price_tag": "free",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "awesome lists",
    "goals": [
-    "automation"
+    "writing"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -34691,7 +34628,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "personal agents"
+    "models & local runtimes"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/jan.png",
@@ -34703,13 +34640,12 @@
    "url": "https://openviking.ai/",
    "website": "https://openviking.ai/",
    "github": "https://github.com/volcengine/OpenViking",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Context database for AI agents that keeps memory, knowledge and skills in one inspectable virtual filesystem agents can navigate.",
    "key_features": [
     "Open source",
     "Mature",
     "40217 GitHub stars",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -34734,7 +34670,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -34839,14 +34774,15 @@
    "url": "https://github.com/OpenBMB/ChatDev",
    "website": "",
    "github": "https://github.com/OpenBMB/ChatDev",
-   "category": "coding",
+   "category": "frameworks",
    "description": "Zero-code multi-agent platform from OpenBMB, grown from a software-development agent company into a general multi-agent orchestration system.",
    "key_features": [
     "Open source",
     "Mature",
     "34545 GitHub stars",
     "Write code",
-    "Build multi-agent systems"
+    "Build multi-agent systems",
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -34858,7 +34794,7 @@
    "added": "2026-10-18",
    "source": "awesome lists",
    "goals": [
-    "coding"
+    "automation"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -34871,7 +34807,8 @@
    "license": "",
    "tags": [
     "write code",
-    "build multi-agent systems"
+    "build multi-agent systems",
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/chatdev.png",
@@ -35576,15 +35513,14 @@
    "url": "https://www.superagent.sh/",
    "website": "https://www.superagent.sh/",
    "github": "https://github.com/superagent-ai/superagent",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "SDK for AI agent safety that blocks prompt injections and unsafe tool calls, redacts PII and secrets, and runs red-team scenarios.",
    "key_features": [
     "Open source",
     "Mature",
     "6766 GitHub stars",
     "Build an agent",
-    "Voice & phone calls",
-    "Monitor & evaluate agents"
+    "Voice & phone calls"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -35607,8 +35543,7 @@
    "license": "",
    "tags": [
     "build an agent",
-    "voice & phone calls",
-    "monitor & evaluate agents"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/superagent.png",
@@ -36177,13 +36112,13 @@
    "url": "https://www.omnara.com/",
    "website": "https://www.omnara.com/",
    "github": "https://github.com/omnara-ai/omnara",
-   "category": "frameworks",
+   "category": "MCP & infra",
    "description": "Open-source managed agent platform, a self-hostable alternative to Claude Managed Agents and the OpenAI Agents API, with tools, secrets and sandboxes.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "2938 GitHub stars",
-    "Build an agent",
+    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source + cloud",
@@ -36208,7 +36143,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
+    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -36829,7 +36764,7 @@
    "url": "https://joinly.ai/",
    "website": "https://joinly.ai/",
    "github": "https://github.com/joinly-ai/joinly",
-   "category": "productivity",
+   "category": "MCP & infra",
    "description": "Connector middleware and MCP server that lets AI agents join video calls and take part in meetings in real time.",
    "key_features": [
     "Open source",
@@ -36848,8 +36783,8 @@
    "added": "2026-10-18",
    "source": "awesome lists",
    "goals": [
-    "media",
-    "writing"
+    "automation",
+    "media"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -36961,13 +36896,14 @@
    "url": "https://qdrant.tech/",
    "website": "https://qdrant.tech/",
    "github": "https://github.com/qdrant/mcp-server-qdrant",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Official Qdrant MCP server that lets agents store and retrieve memories and documents in the Qdrant vector database.",
    "key_features": [
     "Open source",
     "Active",
     "1551 GitHub stars",
-    "Connect tools via mcp"
+    "Connect tools via mcp",
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -36991,7 +36927,8 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/qdrant-mcp-server.png",
@@ -37523,12 +37460,13 @@
    "url": "https://www.jasper.ai/",
    "website": "https://www.jasper.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Marketing AI platform that orchestrates agents to run end-to-end marketing workflows such as content, campaigns and brand-consistent copy.",
    "key_features": [
     "See site",
     "Active",
-    "Automate workflows"
+    "Automate workflows",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -37552,7 +37490,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate workflows"
+    "automate workflows",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/jasper.png",
@@ -37646,7 +37585,7 @@
    "url": "https://lmstudio.ai/",
    "website": "https://lmstudio.ai/",
    "github": "",
-   "category": "personal agents",
+   "category": "models & local runtimes",
    "description": "Desktop app for running local and open models, with Bionic, its agent for work and code that creates documents, slides, PDFs and software.",
    "key_features": [
     "See site",
@@ -37656,13 +37595,13 @@
    "pricing": "See site",
    "price_tag": "unknown",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "aiagentslist",
    "goals": [
-    "automation"
+    "writing"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -37771,7 +37710,7 @@
    "url": "https://decagon.ai/",
    "website": "https://decagon.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Platform for building, optimizing and scaling customer-facing AI support agents.",
    "key_features": [
     "See site",
@@ -37811,7 +37750,7 @@
    "url": "https://www.tidio.com/ai-agent/",
    "website": "https://www.tidio.com/ai-agent/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Tidio's AI customer service agent that answers questions instantly and turns conversations into sales, leads and bookings.",
    "key_features": [
     "See site",
@@ -37891,7 +37830,7 @@
    "url": "https://getzowie.com/",
    "website": "https://getzowie.com/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI agent platform for enterprise customer service that resolves requests and takes actions in production.",
    "key_features": [
     "See site",
@@ -37931,12 +37870,13 @@
    "url": "https://wordlift.io/agent/",
    "website": "https://wordlift.io/agent/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "WordLift's AI SEO agent that works on your site's content and knowledge graph to improve search visibility.",
    "key_features": [
     "See site",
     "Active",
-    "Research the web"
+    "Research the web",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -37960,7 +37900,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web"
+    "research the web",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/wordlift-agent.png",
@@ -37972,13 +37913,14 @@
    "url": "https://www.clay.com/",
    "website": "https://www.clay.com/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Go-to-market data platform for enriching leads and running agentic research workflows and outreach plays.",
    "key_features": [
     "See site",
     "Active",
     "Research the web",
-    "Automate workflows"
+    "Automate workflows",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -38002,7 +37944,8 @@
    "license": "",
    "tags": [
     "research the web",
-    "automate workflows"
+    "automate workflows",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/clay.png",
@@ -38186,12 +38129,13 @@
    "url": "https://www.kapa.ai/",
    "website": "https://www.kapa.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Turns docs, tickets, wikis and 30+ other sources into accurate AI agents for answering user and team questions.",
    "key_features": [
     "See site",
     "Active",
-    "Write code"
+    "Write code",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -38214,7 +38158,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "write code"
+    "write code",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/kapa-ai.png",
@@ -38266,7 +38211,7 @@
    "url": "https://reply.io/jason-ai/",
    "website": "https://reply.io/jason-ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Reply.io's AI SDR agent that runs personalized outreach and books meetings using its prospect database.",
    "key_features": [
     "See site",
@@ -38346,7 +38291,7 @@
    "url": "https://superagi.com/",
    "website": "https://superagi.com/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "AI sales agent platform that finds and engages prospects around the clock.",
    "key_features": [
     "See site",
@@ -38428,7 +38373,7 @@
    "url": "https://sierra.ai/",
    "website": "https://sierra.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Platform for building customer-facing AI agents that handle service conversations for businesses.",
    "key_features": [
     "See site",
@@ -38514,12 +38459,13 @@
    "url": "https://kodif.ai/",
    "website": "https://kodif.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Action-first AI support for e-commerce brands that resolves tickets by processing refunds, returns and order changes.",
    "key_features": [
     "See site",
     "Active",
-    "Write code"
+    "Write code",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -38542,7 +38488,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "write code"
+    "write code",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/kodif.png",
@@ -38729,12 +38676,11 @@
    "url": "https://www.getzep.com/",
    "website": "https://www.getzep.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Context layer that unifies business data, documents and conversations into memory so agents complete tasks correctly.",
    "key_features": [
     "See site",
     "Active",
-    "Connect tools via mcp",
     "Give agents memory"
    ],
    "pricing": "See site",
@@ -38758,7 +38704,6 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "give agents memory"
    ],
    "hybrid": false,
@@ -38850,11 +38795,12 @@
    "url": "https://www.unifygtm.com/",
    "website": "https://www.unifygtm.com/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Sales platform with outbound agents, B2B data, signals and sequencing run from one chat interface.",
    "key_features": [
     "See site",
-    "Active"
+    "Active",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -38877,7 +38823,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "business agents"
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/unify.png",
@@ -38929,7 +38875,7 @@
    "url": "https://delve.co/",
    "website": "https://delve.co/",
    "github": "",
-   "category": "business agents",
+   "category": "security & governance",
    "description": "Compliance automation that uses AI agents to handle SOC 2, HIPAA and GDPR busywork.",
    "key_features": [
     "See site",
@@ -38940,14 +38886,12 @@
    "pricing": "See site",
    "price_tag": "unknown",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "aiagentslist",
-   "goals": [
-    "support"
-   ],
+   "goals": [],
    "skill": "no-code",
    "weekly_pick": false,
    "new": true,
@@ -39010,7 +38954,7 @@
    "url": "https://pieces.app/",
    "website": "https://pieces.app/",
    "github": "",
-   "category": "productivity",
+   "category": "memory & RAG",
    "description": "AI memory layer that captures context from your work so you and your AI tools can recover decisions and resume where you left off.",
    "key_features": [
     "See site",
@@ -39020,13 +38964,13 @@
    "pricing": "See site",
    "price_tag": "unknown",
    "platforms": [
-    "Web"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "aiagentslist",
    "goals": [
-    "writing"
+    "automation"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -39050,7 +38994,7 @@
    "url": "https://www.altahq.com/",
    "website": "https://www.altahq.com/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "GTM AI agents for B2B sales that handle outbound, inbound and revenue intelligence.",
    "key_features": [
     "See site",
@@ -39211,7 +39155,7 @@
    "url": "https://www.salesape.ai/",
    "website": "https://www.salesape.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Autonomous AI sales agent that qualifies inbound leads and books meetings around the clock.",
    "key_features": [
     "See site",
@@ -39291,11 +39235,12 @@
    "url": "https://www.kadoa.com/",
    "website": "https://www.kadoa.com/",
    "github": "",
-   "category": "research",
+   "category": "browser/computer use",
    "description": "AI agents that build, monitor and maintain web data pipelines producing verified datasets for investors.",
    "key_features": [
     "See site",
     "Active",
+    "Automate the browser",
     "Research the web",
     "Monitor & evaluate agents"
    ],
@@ -39308,6 +39253,7 @@
    "added": "2026-10-18",
    "source": "aiagentslist",
    "goals": [
+    "automation",
     "research"
    ],
    "skill": "no-code",
@@ -39320,6 +39266,7 @@
    "open_source": false,
    "license": "",
    "tags": [
+    "automate the browser",
     "research the web",
     "monitor & evaluate agents"
    ],
@@ -39333,7 +39280,7 @@
    "url": "https://origami.chat/",
    "website": "https://origami.chat/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "AI growth agent that finds ways to get customers for your website and runs the approved campaigns.",
    "key_features": [
     "See site",
@@ -40045,7 +39992,7 @@
    "url": "https://www.enjo.ai/",
    "website": "https://www.enjo.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI support agent that resolves employee and customer requests end to end and takes action in your systems.",
    "key_features": [
     "See site",
@@ -40085,12 +40032,13 @@
    "url": "https://forethought.ai/",
    "website": "https://forethought.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Customer service AI platform whose agents resolve support issues automatically to lower support costs.",
    "key_features": [
     "See site",
     "Active",
-    "Voice & phone calls"
+    "Voice & phone calls",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -40113,7 +40061,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "voice & phone calls"
+    "voice & phone calls",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/forethought.png",
@@ -40125,7 +40074,7 @@
    "url": "https://www.bardeen.ai/",
    "website": "https://www.bardeen.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Lead-sourcing tool with an agentic web scraper that finds, qualifies and enriches prospects for outreach.",
    "key_features": [
     "See site",
@@ -40250,7 +40199,7 @@
    "url": "https://www.nooks.ai/",
    "website": "https://www.nooks.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "sales & marketing",
    "description": "Revenue platform whose AI agents dial, sequence, follow up and prep deals alongside sales reps.",
    "key_features": [
     "See site",
@@ -40657,7 +40606,7 @@
    "url": "https://skywork.ai/",
    "website": "https://skywork.ai/",
    "github": "",
-   "category": "research",
+   "category": "productivity",
    "description": "AI workspace agents that turn a prompt into docs, slides, sheets, podcasts and web pages backed by deep research.",
    "key_features": [
     "See site",
@@ -40673,7 +40622,7 @@
    "added": "2026-10-18",
    "source": "AI Agents Directory",
    "goals": [
-    "research"
+    "writing"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -41355,7 +41304,7 @@
    "url": "https://playgama.com/mcp/",
    "website": "https://playgama.com/mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "games",
    "description": "Playgama's MCP server for publishing and managing HTML5 games from an AI agent, with audience, monetization and analytics.",
    "key_features": [
     "See site",
@@ -41370,9 +41319,7 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "MCP registry",
-   "goals": [
-    "automation"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -41477,7 +41424,7 @@
    "url": "https://www.sonatype.com/",
    "website": "https://www.sonatype.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "security & governance",
    "description": "Sonatype's dependency-management MCP server that gives coding agents component versions, security analysis and Trust Score recommendations.",
    "key_features": [
     "See site",
@@ -41493,9 +41440,7 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "MCP registry",
-   "goals": [
-    "automation"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -43262,13 +43207,14 @@
    "url": "https://docs.extend.ai/mcp",
    "website": "https://docs.extend.ai/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Extend's MCP server for turning documents into structured data: parse, extract, classify, split and fill PDF forms.",
    "key_features": [
     "See site",
     "Active",
     "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Monitor & evaluate agents",
+    "Give agents memory"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -43292,7 +43238,8 @@
    "license": "",
    "tags": [
     "connect tools via MCP",
-    "monitor & evaluate agents"
+    "monitor & evaluate agents",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/extend-mcp.png",
@@ -44347,12 +44294,13 @@
    "url": "https://www.outverse.com/",
    "website": "https://www.outverse.com/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "Governed platform for deploying AI agents across enterprise service workflows and channels, connected to your systems.",
    "key_features": [
     "See site",
     "Active",
-    "Automate workflows"
+    "Automate workflows",
+    "Sales & support"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -44375,7 +44323,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate workflows"
+    "automate workflows",
+    "sales & support"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/outverse.png",
@@ -44387,13 +44336,13 @@
    "url": "https://developers.llamaindex.ai/llamaparse/",
    "website": "https://developers.llamaindex.ai/llamaparse/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "LlamaIndex's document processing platform that parses PDFs, scans and Office files into markdown or JSON and extracts, classifies and indexes them for agents.",
    "key_features": [
     "See site",
     "Active",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Monitor & evaluate agents",
+    "Give agents memory"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -44416,8 +44365,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "monitor & evaluate agents",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/llamaparse.png",
@@ -44833,7 +44782,7 @@
    "url": "https://www.ask-ai.com/",
    "website": "https://www.ask-ai.com/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI customer experience platform for B2B SaaS support teams with AI agents, support analytics and no-code automation.",
    "key_features": [
     "See site",
@@ -45001,7 +44950,7 @@
    "url": "https://www.hellorep.ai/",
    "website": "https://www.hellorep.ai/",
    "github": "",
-   "category": "business agents",
+   "category": "customer support",
    "description": "AI shopping and customer service agent for e-commerce brands that handles product discovery, support and helpdesk work.",
    "key_features": [
     "See site",
@@ -45387,14 +45336,13 @@
    "url": "https://blogs.cisco.com/ai/securing-the-ai-agent-supply-chain-with-ciscos-open-source-mcp-scanner",
    "website": "https://blogs.cisco.com/ai/securing-the-ai-agent-supply-chain-with-ciscos-open-source-mcp-scanner",
    "github": "https://github.com/cisco-ai-defense/mcp-scanner",
-   "category": "evals & observability",
+   "category": "security & governance",
    "description": "Cisco's open-source scanner that checks MCP servers and tools for malicious or risky behaviour using YARA rules and LLM analysis.",
    "key_features": [
     "Open source",
     "Active",
     "1094 GitHub stars",
-    "Connect tools via mcp",
-    "Monitor & evaluate agents"
+    "Connect tools via mcp"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -45416,8 +45364,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
-    "monitor & evaluate agents"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cisco-mcp-scanner.png",
@@ -45951,7 +45898,7 @@
    "url": "https://supermemory.ai/",
    "website": "https://supermemory.ai/",
    "github": "https://github.com/supermemoryai/supermemory",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "Memory and context engine for agents with an API, app and MCP server, which can also run fully locally.",
    "key_features": [
     "Open source + cloud",
@@ -46372,7 +46319,7 @@
    "url": "https://www.genspark.ai/",
    "website": "https://www.genspark.ai/",
    "github": "",
-   "category": "personal agents",
+   "category": "productivity",
    "description": "All-in-one AI workspace whose agents research and produce slides, docs, sheets, images, video and code for you.",
    "key_features": [
     "Freemium",
@@ -46389,8 +46336,8 @@
    "added": "2026-10-18",
    "source": "Web search",
    "goals": [
-    "automation",
-    "media"
+    "media",
+    "writing"
    ],
    "skill": "no-code",
    "weekly_pick": false,

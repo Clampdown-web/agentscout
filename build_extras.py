@@ -151,6 +151,13 @@ def build(t):
     print(len(PAIRS),"comparisons, badges page, sitemap",len(sm)-2,"urls")
 
 # ---- SEO pages: categories, best-of guides, 404, llms.txt ----
+CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use the generic lede)
+"memory & RAG":"Memory layers, vector and graph stores, and document parsers that give agents long-term memory and let them search your files: tools like Mem0, Zep, Supermemory, Cognee, LlamaParse and MarkItDown.",
+"customer support":"AI support agents that answer customer questions, resolve tickets and take actions such as refunds, then hand off to a person when needed: Intercom Fin, Decagon, Sierra, Forethought and more.",
+"sales & marketing":"AI SDRs, outbound and lead-research agents, plus marketing, SEO and social media agents for go-to-market teams: 11x, Artisan, Clay, Close, Jasper and more.",
+"security & governance":"Tools that keep agents safe and accountable: guardrails, prompt-injection and MCP scanners, credential brokers, sandbox policies and AI security-operations agents.",
+"models & local runtimes":"Agentic models and the apps that run open models on your own computer or server, such as Ollama, LM Studio, LocalAI and Jan.",
+}
 def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
 def meta(x,n=155):
     s=f'{x["name"]}: {x["description"].rstrip(".")}. {x["category"]} tool; pricing: {x.get("pricing_detail",x["pricing"])}.'
@@ -203,9 +210,10 @@ def seo(t,urls):
         _tc=[z for z in _tc if z[2]>=3][:14]
         _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(l.capitalize())} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
         _lede=f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing."
+        if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(c)} tools: {e(_bs.price_line(items))}.</p>'+_chips
-        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c.capitalize()} AI agent tools",_lede,items,c.capitalize(),_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
-    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c.capitalize())}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
+        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,f"{c[0].upper()+c[1:]} AI agent tools",_lede,items,c[0].upper()+c[1:],_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
+    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)

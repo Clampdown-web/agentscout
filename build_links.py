@@ -27,14 +27,14 @@ def edit(path,fn):
     s=open(path).read(); o=s; s=fn(s)
     if s!=o: open(path,"w").write(s)
 def chips(items): return '<div class="badges">'+"".join(f'<a class="b uc" href="{h}">{e(t)}</a>' for h,t in items)+'</div>'
-COST_CAT={"models","frameworks"}
+COST_CAT={"models & local runtimes","frameworks"}
 COST_RX=re.compile(r"\bLLMs?\b|\binference\b|model (API|gateway|router|provider)|\bgateway\b|\brouter\b|\btokens?\b|\bmodel APIs?\b",re.I)
 def cost_tool(x): return x["category"] in COST_CAT or (x["category"] in ("MCP & infra","evals & observability") and bool(COST_RX.search(x["description"]))) or bool(re.search(r"\bLLM API|\bmodel API|inference API",x["description"],re.I))
 def cost_pair(a,b):
-    f=lambda x:x["category"] in {"coding","models","frameworks"} or bool(re.search(r"\bAPI\b",x["description"])) or cost_tool(x)
+    f=lambda x:x["category"] in {"coding","models & local runtimes","frameworks"} or bool(re.search(r"\bAPI\b",x["description"])) or cost_tool(x)
     return f(a) or f(b)
 # small categories with no list overlap: hand-picked, directly relevant pages
-MANUAL={"models":(["local-ai-agents"],["ai-engineers"]),"games":([],["game-developers"])}
+MANUAL={"models & local runtimes":(["local-ai-agents"],["ai-engineers"]),"games":([],["game-developers"])}
 def run(t):
     S=L.DATA["search"]; RO=L.DATA["roles"]; bys={x["slug"]:x for x in t}
     sname={a[0]:a[1] for a in S}; rname={r[0]:r[1] for r in RO}
