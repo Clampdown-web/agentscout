@@ -5369,5 +5369,942 @@
    "https://github.com/supabase/mcp"
   ],
   "updated": "2026-10-18"
+ },
+ "mcp-proxy": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "mcp-proxy is a tool for switching between MCP server transports, bridging Streamable HTTP or SSE and stdio.",
+   "In one mode it runs a stdio proxy that connects to a remote SSE server, so clients like Claude Desktop can talk to remote servers even where that transport is not supported natively; another mode exposes a local stdio server over the network."
+  ],
+  "who": "Developers connecting MCP clients and servers that use different transports.",
+  "features": [
+   "stdio to remote SSE/HTTP bridging",
+   "Expose stdio servers remotely",
+   "Works with Claude Desktop"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/sparfenyuk/mcp-proxy"
+  ],
+  "updated": "2026-10-18"
+ },
+ "jcodemunch-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "jCodeMunch MCP is an MCP server for precise, symbol-level source-code retrieval using tree-sitter AST parsing, so agents stop reading entire files.",
+   "Its README reports 86-99% lower token use on code exploration (96% on average) versus a grep-and-read agent."
+  ],
+  "who": "Developers who want coding agents to explore code with far fewer tokens.",
+  "features": [
+   "Symbol-level retrieval via tree-sitter",
+   "Large token savings (per the maker)",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/jgravelle/jcodemunch-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "metamcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MetaMCP is an MCP aggregator, orchestrator, middleware and gateway in one Docker image, combining many MCP servers into one.",
+   "The maintainers note active development on an ai-dev branch and advise testing before building images from it."
+  ],
+  "who": "Developers and teams who run many MCP servers and want one endpoint.",
+  "features": [
+   "Aggregates many MCP servers",
+   "Middleware and gateway",
+   "Runs in Docker"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/metatool-ai/metamcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "bright-data-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Bright Data MCP is Bright Data's MCP server for web search, page scraping, structured data extraction and browser automation for AI agents and LLMs.",
+   "It works with any MCP-compatible client and has a free tier of 5,000 requests per month with no credit card required."
+  ],
+  "who": "Developers whose agents need reliable access to web data.",
+  "features": [
+   "Web search and scraping",
+   "Structured data extraction",
+   "Browser automation",
+   "Free tier: 5,000 requests a month"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/brightdata/brightdata-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mcphub": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MCPHub is an open-source, self-hosted MCP gateway and control plane for connecting, controlling and operating MCP servers.",
+   "You connect local and remote servers once, organize and route their capabilities through stable endpoints, and control access with authentication."
+  ],
+  "who": "Teams managing many MCP servers for many AI clients.",
+  "features": [
+   "Self-hosted MCP gateway",
+   "Stable routed endpoints",
+   "Authentication and access control"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/samanhappy/mcphub"
+  ],
+  "updated": "2026-10-18"
+ },
+ "nitrostack": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "NitroStack is a TypeScript framework for building production-ready MCP servers, with decorators, dependency injection and widgets.",
+   "Once your project is scaffolded you can open it in NitroStudio, a companion desktop app, for visual testing."
+  ],
+  "who": "TypeScript developers building MCP servers and MCP apps.",
+  "features": [
+   "Decorators and dependency injection",
+   "Widgets for MCP apps",
+   "NitroStudio for visual testing"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/nitrocloudofficial/nitrostack"
+  ],
+  "updated": "2026-10-18"
+ },
+ "boxlite": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BoxLite is an embeddable micro-VM for AI agents, light enough for a laptop and elastic enough for an agentic cloud. Each Box is a hardware-isolated micro-VM that runs any OCI image.",
+   "Boxes persist, so agents can install packages, write files and resume across turns without starting cold, and each has its own kernel for stronger isolation than containers."
+  ],
+  "who": "Developers who need persistent, isolated compute for agents.",
+  "features": [
+   "Hardware-isolated micro-VMs",
+   "Runs any OCI image",
+   "Persistent across turns"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/boxlite-ai/boxlite"
+  ],
+  "updated": "2026-10-18"
+ },
+ "figma-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Figma MCP Server brings Figma into your workflow by giving AI agents design information and context when they generate code from Figma design files.",
+   "Rate limits apply to tools that read data from Figma, while some tools that write to Figma files are exempt."
+  ],
+  "who": "Developers turning Figma designs into code with an AI agent.",
+  "features": [
+   "Design context from Figma files",
+   "Read and write tools",
+   "Rate limits on read tools"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/figma/mcp-server-guide"
+  ],
+  "updated": "2026-10-18"
+ },
+ "stripe-agent-toolkit": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Stripe's agent toolkit is a one-stop repo for building AI-powered products on Stripe, with SDKs to integrate Stripe with LLMs and agent frameworks.",
+   "It includes, for example, @stripe/ai-sdk for Vercel's AI SDK and @stripe/token-meter for billing on token usage. Our listing notes an MCP server for customers, payments and billing."
+  ],
+  "who": "Developers who want agents to work with Stripe payments and billing.",
+  "features": [
+   "SDKs for LLMs and agent frameworks",
+   "Vercel AI SDK integration",
+   "Token-usage metering",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/stripe/ai"
+  ],
+  "updated": "2026-10-18"
+ },
+ "microsoft-learn-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Microsoft Learn MCP is Microsoft's official MCP server giving AI assistants such as Claude, Cursor, Copilot and Codex direct access to the latest official Microsoft documentation.",
+   "It is free with one-click install and no key needed."
+  ],
+  "who": "Developers working with Microsoft technologies who want accurate, current docs in their agent.",
+  "features": [
+   "Official Microsoft documentation",
+   "Free, no key required",
+   "Works with many assistants"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MicrosoftDocs/mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "pg-aiguide": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "pg-aiguide, from Timescale, helps AI coding tools write better PostgreSQL code.",
+   "It provides version-aware semantic search across the official PostgreSQL manual and curated, opinionated Postgres best-practice skills that agents use automatically."
+  ],
+  "who": "Developers whose agents write SQL and schemas for Postgres.",
+  "features": [
+   "Version-aware Postgres manual search",
+   "Best-practice skills for agents",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/timescale/pg-aiguide"
+  ],
+  "updated": "2026-10-18"
+ },
+ "matlab-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MATLAB MCP Server is MathWorks' official MCP server for running MATLAB from AI applications. It can, for example, assess your MATLAB code for style and correctness.",
+   "MathWorks also offers MATLAB and Simulink Agentic Toolkits with skills for agents."
+  ],
+  "who": "MATLAB and Simulink users who want AI agents to run and check their code.",
+  "features": [
+   "Run MATLAB from AI apps",
+   "Code style and correctness checks",
+   "MATLAB and Simulink agent skills"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/matlab/matlab-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "testkube-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Testkube is an open testing platform for defining, running and analyzing automated tests with your existing testing tools and scripts, running in your Kubernetes infrastructure.",
+   "Its MCP server lets agents manage test workflows and executions."
+  ],
+  "who": "Engineering teams running automated tests on Kubernetes.",
+  "features": [
+   "Run existing test tools in Kubernetes",
+   "Test workflow management",
+   "MCP access for agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/kubeshop/testkube"
+  ],
+  "updated": "2026-10-18"
+ },
+ "terraform-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Terraform MCP Server, from HashiCorp, integrates with the Terraform Registry and HCP Terraform APIs for infrastructure-as-code automation.",
+   "Our listing notes it helps agents look up providers and modules and automate workflows; the README lists clients such as Claude Desktop, Amazon Q Developer and Kiro CLI."
+  ],
+  "who": "Infrastructure engineers using AI assistants with Terraform.",
+  "features": [
+   "Terraform Registry lookups",
+   "HCP Terraform API integration",
+   "IaC workflow automation"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/hashicorp/terraform-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "brave-search-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Brave Search MCP is Brave's official MCP server for the Brave Search API, with web, local business, place, image, video and news search, LLM context and AI summarization.",
+   "It supports STDIO and HTTP transports, with STDIO as the default."
+  ],
+  "who": "Developers who want independent web search in their agents.",
+  "features": [
+   "Web, image, video and news search",
+   "Local and place search",
+   "AI summarization",
+   "STDIO and HTTP"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/brave/brave-search-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ros-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ROS MCP Server connects language models such as Claude, GPT and Gemini to robots running ROS, with two-way communication: models can control robots and read their state.",
+   "It requires no changes to robot source code; you add the rosbridge node to your existing ROS setup."
+  ],
+  "who": "Robotics developers who want to control ROS robots with an LLM.",
+  "features": [
+   "Two-way LLM-robot communication",
+   "No robot code changes",
+   "Uses rosbridge"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/robotmcp/ros-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "searxng-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SearXNG MCP is an MCP server that gives AI assistants privacy-respecting web search through a SearXNG instance you control or trust, with Claude, Cursor and more.",
+   "You need an existing SearXNG instance with JSON search enabled."
+  ],
+  "who": "People who want private web search for their AI assistant.",
+  "features": [
+   "Web search via SearXNG",
+   "Privacy-respecting",
+   "Works with Claude and Cursor"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ihor-sokoliuk/mcp-searxng"
+  ],
+  "updated": "2026-10-18"
+ },
+ "power-bi-modeling-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Power BI Modeling MCP is Microsoft's MCP server for creating and editing Power BI semantic models with AI agents.",
+   "Microsoft recommends its remote, hosted Power BI Authoring MCP server when authoring in a Fabric workspace, since it needs no local install."
+  ],
+  "who": "Power BI developers who want an agent to build or modify semantic models.",
+  "features": [
+   "Create and edit semantic models",
+   "Local server; hosted option for Fabric"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/microsoft/powerbi-modeling-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "ref": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Ref is an MCP server that gives AI coding tools access to documentation for APIs, services and libraries, keeping agents up to date in a fast, token-efficient way.",
+   "Its tools are designed to match how models search, returning just the right context. It is listed as freemium."
+  ],
+  "who": "Developers whose coding agents need accurate, current documentation.",
+  "features": [
+   "Documentation search for agents",
+   "Token-efficient results",
+   "Freemium"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ref-tools/ref-tools-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mongodb-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MongoDB MCP Server is MongoDB's official MCP server for working with MongoDB databases and MongoDB Atlas.",
+   "It comes bundled with official MongoDB plugins for AI agents, including one that connects to the hosted Atlas MCP server."
+  ],
+  "who": "Developers using MongoDB who want agents to query data or manage Atlas.",
+  "features": [
+   "Query MongoDB databases",
+   "Manage MongoDB Atlas",
+   "Official plugins for AI agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mongodb-js/mongodb-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "atlassian-rovo-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Atlassian Rovo MCP Server is Atlassian's official, cloud-hosted MCP server giving AI tools secure, real-time access to Jira, Confluence, Jira Service Management, Bitbucket, Compass, Loom and more.",
+   "It is powered by your Teamwork Graph. It is listed as freemium."
+  ],
+  "who": "Teams on Atlassian Cloud who want AI agents to work with Jira and Confluence.",
+  "features": [
+   "Jira, Confluence, JSM, Bitbucket, Compass and Loom",
+   "Cloud-hosted",
+   "Powered by the Teamwork Graph"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/atlassian/atlassian-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "neo4j-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Neo4j MCP is a set of MCP servers from the Neo4j Labs program, maintained by the Neo4j Field GenAI team, for querying graphs, managing Aura instances and graph memory.",
+   "They are actively developed with experimental features and are not supported by the Neo4j product team."
+  ],
+  "who": "Developers using Neo4j who want agents to query graphs or use them as memory.",
+  "features": [
+   "Graph queries",
+   "Aura instance management",
+   "Graph memory",
+   "Neo4j Labs (community-supported)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/neo4j-contrib/mcp-neo4j"
+  ],
+  "updated": "2026-10-18"
+ },
+ "clickhouse-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ClickHouse MCP is the official MCP server for querying and exploring ClickHouse databases.",
+   "It implements the 2026-07-28 MCP spec and still supports legacy handshakes for older clients."
+  ],
+  "who": "Analytics teams who want agents to query ClickHouse.",
+  "features": [
+   "Query and explore ClickHouse",
+   "Current and legacy MCP protocol support",
+   "Official ClickHouse project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ClickHouse/mcp-clickhouse"
+  ],
+  "updated": "2026-10-18"
+ },
+ "sonarqube-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The SonarQube MCP Server integrates SonarQube Server or Cloud with AI agents for code quality and security.",
+   "It can also analyze code snippets directly within the agent's context."
+  ],
+  "who": "Teams using SonarQube who want agents to check quality and security issues.",
+  "features": [
+   "SonarQube Server and Cloud",
+   "Code quality and security data",
+   "Snippet analysis in the agent"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/SonarSource/sonarqube-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "neon-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Neon MCP Server is an open-source tool that lets you work with your Lakebase Postgres databases on Neon in natural language.",
+   "The repository provides a remote MCP server; our listing notes management of projects, branches and queries."
+  ],
+  "who": "Neon users who want an AI assistant to manage Postgres projects and branches.",
+  "features": [
+   "Natural-language Postgres management",
+   "Projects, branches and queries",
+   "Remote MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/neondatabase/mcp-server-neon"
+  ],
+  "updated": "2026-10-18"
+ },
+ "redis-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Redis MCP Server is Redis' official natural-language interface for agentic applications to manage and search data in Redis.",
+   "It integrates with MCP clients so AI workflows can work with structured and unstructured data in Redis."
+  ],
+  "who": "Developers who want agents to read, write and search Redis data.",
+  "features": [
+   "Natural-language Redis access",
+   "Structured and unstructured data",
+   "Official Redis project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/redis/mcp-redis"
+  ],
+  "updated": "2026-10-18"
+ },
+ "anytype-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Anytype MCP Server lets AI assistants interact with Anytype's API through natural language.",
+   "It converts Anytype's OpenAPI specification into MCP tools, so you can manage your knowledge base through conversation."
+  ],
+  "who": "Anytype users who want an AI assistant to work with their notes and knowledge base.",
+  "features": [
+   "Anytype API as MCP tools",
+   "Manage your knowledge base by chat",
+   "Official Anytype project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/anyproto/anytype-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "zapier-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Zapier MCP gives any MCP-compatible AI client governed access to 9,000+ apps, to send messages, pull data and trigger workflows in plain English, with no code or infrastructure.",
+   "Zapier says it is SOC 2 Type II certified. The repo distributes the Zapier MCP plugin you install from your client's marketplace. It is listed as freemium."
+  ],
+  "who": "People who want their AI assistant to take actions across many business apps.",
+  "features": [
+   "9,000+ apps",
+   "Messages, data and workflow triggers",
+   "Hosted; no infrastructure",
+   "SOC 2 Type II (per Zapier)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/zapier/zapier-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "monday-com-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "monday.com MCP is monday.com's open framework for connecting AI agents to its work OS, giving them secure access to structured data, tools to take action and context for decisions.",
+   "It is maintained by the monday.com AI team; our listing notes management of boards, items and workflows."
+  ],
+  "who": "Teams on monday.com who want agents to manage their boards and workflows.",
+  "features": [
+   "Boards, items and workflows",
+   "Secure data access",
+   "Maintained by monday.com"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/mondaycom/mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "postman-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Postman MCP Server connects AI agents and coding assistants, including Claude Code, Cursor, VS Code Copilot, GitHub Copilot CLI and Gemini CLI, to your Postman workspaces, collections, specifications and environments.",
+   "Postman also offers the server as an npm package."
+  ],
+  "who": "API developers who want their agent to work with Postman collections and specs.",
+  "features": [
+   "Workspaces, collections and specs",
+   "Environments",
+   "Works with many coding assistants"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/postmanlabs/postman-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "hugging-face-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The official Hugging Face MCP Server connects your LLM to the Hugging Face Hub and thousands of Gradio AI applications.",
+   "You can add it as a connector, for example in Claude's connector settings. Our listing notes access to models, datasets, papers and Spaces."
+  ],
+  "who": "AI developers who want assistants to search and use Hugging Face resources.",
+  "features": [
+   "Models, datasets and papers",
+   "Gradio Spaces as tools",
+   "Official Hugging Face server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/huggingface/hf-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "mux-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mux MCP is Mux's official MCP server for video and the Mux API. It lives alongside Mux's server-side TypeScript/JavaScript SDK for the Mux REST API.",
+   "API documentation is on docs.mux.com."
+  ],
+  "who": "Developers building video features who want agents to work with Mux.",
+  "features": [
+   "Mux API via MCP",
+   "Video management",
+   "Official Mux project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/muxinc/mux-ts"
+  ],
+  "updated": "2026-10-18"
+ },
+ "webflow-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Webflow MCP is a Node.js MCP server built on the Webflow JavaScript SDK that lets AI agents interact with Webflow APIs.",
+   "A remote MCP server is available that uses OAuth to authenticate with your Webflow sites."
+  ],
+  "who": "Webflow users who want an agent to help design and manage sites.",
+  "features": [
+   "Webflow APIs via MCP",
+   "Remote server with OAuth",
+   "Official Webflow project"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/webflow/mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "auth0-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Auth0 MCP Server connects Claude, Cursor or Windsurf to your Auth0 tenant so an agent can create apps, deploy Actions and more.",
+   "Our listing notes management of applications, APIs, actions and logs."
+  ],
+  "who": "Developers who manage Auth0 tenants and want an AI assistant's help.",
+  "features": [
+   "Manage Auth0 applications and APIs",
+   "Deploy Actions",
+   "Read logs"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/auth0/auth0-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "scrapegraph-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ScrapeGraph MCP is a production-ready MCP server for the ScrapeGraph AI API, giving language models AI-powered web-scraping capabilities.",
+   "It targets ScrapeGraph API v2."
+  ],
+  "who": "Developers who want agents to extract web data with AI scraping.",
+  "features": [
+   "AI-powered web scraping",
+   "ScrapeGraph API v2",
+   "MCP server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ScrapeGraphAI/scrapegraph-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "infranodus-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "InfraNodus MCP integrates InfraNodus knowledge-graph and text-network analysis into LLM workflows and AI assistants like Claude Desktop.",
+   "It is available on npm."
+  ],
+  "who": "Researchers and writers who want to analyze text structure and gaps with an assistant.",
+  "features": [
+   "Text-to-knowledge-graph analysis",
+   "Text network insights",
+   "Available on npm"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/infranodus/mcp-server-infranodus"
+  ],
+  "updated": "2026-10-18"
+ },
+ "oxylabs-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Oxylabs MCP server bridges AI models and the web: it can scrape any URL, render JavaScript-heavy pages, extract and format content for AI and access geo-restricted content.",
+   "Oxylabs describes it as one API that delivers clean, structured data from any site."
+  ],
+  "who": "Developers whose agents need web data at scale.",
+  "features": [
+   "Scrape any URL",
+   "JavaScript rendering",
+   "Content formatted for AI",
+   "Geo-restricted access"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/oxylabs/oxylabs-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "upstash-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Upstash MCP server lets your agent manage and debug Upstash resources across Redis, QStash, Workflow and Upstash Box.",
+   "Upstash notes that for most workflows it recommends installing the Upstash Skill and letting your agent drive @upstash/cli instead."
+  ],
+  "who": "Upstash users who want an agent to manage their resources.",
+  "features": [
+   "Redis, QStash, Workflow and Box",
+   "Manage and debug resources",
+   "Skill + CLI recommended for most workflows"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/upstash/mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "buildkite-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Buildkite MCP is Buildkite's MCP server exposing pipelines, builds, jobs and tests to AI tooling and editors.",
+   "A retries toolset lets agents investigate failures and retry jobs without broader build-write access. Full docs are at buildkite.com/docs/apis/mcp-server."
+  ],
+  "who": "Teams on Buildkite who want coding agents to debug CI.",
+  "features": [
+   "Pipelines, builds, jobs and tests",
+   "Scoped retries toolset",
+   "Official Buildkite server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/buildkite/buildkite-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "linkup-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Linkup MCP provides web search and page fetching through Linkup's API, so assistants like Claude can search with natural-language queries and fetch content from any page.",
+   "Our listing describes it as real-time, source-backed web search."
+  ],
+  "who": "Developers who want source-backed web search for their agents.",
+  "features": [
+   "Natural-language web search",
+   "Page fetching",
+   "Real-time, sourced results"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/LinkupPlatform/linkup-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "stack-overflow-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Stack Overflow MCP Server connects your AI to Stack Overflow's community knowledge through MCP, for developers from open-source contributors to small teams experimenting with agents.",
+   "Our listing notes it is an official remote server that lets coding agents search and pull vetted questions and answers, with a free daily call allowance per user."
+  ],
+  "who": "Developers who want coding agents to draw on Stack Overflow answers.",
+  "features": [
+   "Search Stack Overflow from agents",
+   "Vetted Q&A",
+   "Free daily allowance"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/StackExchange/Stack-MCP"
+  ],
+  "updated": "2026-10-18"
+ },
+ "wix-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Wix MCP lets you work with Wix tools and services in your AI client: search the Wix documentation, write code for the Wix platform and make API calls on Wix sites.",
+   "Our listing notes building and managing Wix sites and business data."
+  ],
+  "who": "Wix site owners and developers who want an AI assistant's help.",
+  "features": [
+   "Search Wix docs",
+   "Write Wix code",
+   "Call Wix APIs on your sites"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/wix/wix-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "paypal-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The PayPal MCP server integrates PayPal APIs through function calling, with tools for different PayPal services.",
+   "It runs via npx with your PayPal access token. Our listing notes invoices, orders and payments."
+  ],
+  "who": "Businesses and developers who want agents to handle PayPal operations.",
+  "features": [
+   "Invoices, orders and payments",
+   "Runs via npx",
+   "Official PayPal server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/paypal/paypal-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "planetscale-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PlanetScale MCP is PlanetScale's MCP server for databases, branches, schemas and query insights. The repo holds tool implementations for the hosted server.",
+   "The full hosted server includes more tools generated from the PlanetScale API OpenAPI spec. It is listed as freemium."
+  ],
+  "who": "PlanetScale users who want agents to inspect and manage databases.",
+  "features": [
+   "Databases, branches and schemas",
+   "Query insights",
+   "Hosted server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/planetscale/mcp-server",
+   "https://planetscale.com/docs/mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "agentcard": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Agentcard gives every user of your product a payment-card wallet their AI agent can spend from. Cards are added once, and purchases come out priced, approved and paid within limits.",
+   "The company cites B2B use, such as storing corporate cards and automating purchases through a Slack agent. Pricing is usage-based."
+  ],
+  "who": "Products that want their users' agents to make purchases safely.",
+  "features": [
+   "Card wallets for agents",
+   "Spending limits and approvals",
+   "Usage-based pricing"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.agentcard.sh/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "aident-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Aident AI is a unified capability layer that connects any AI agent to 1,000+ apps, 27,000+ actions and 400+ expert-built skills through one reusable setup.",
+   "It aims to let agents act across tools while keeping every action under control. It is listed as freemium."
+  ],
+  "who": "Teams who want agents to act across many apps without per-app integration work.",
+  "features": [
+   "1,000+ apps and 27,000+ actions",
+   "400+ prebuilt skills",
+   "Action controls"
+  ],
+  "faq": [],
+  "sources": [
+   "https://aident.ai/"
+  ],
+  "updated": "2026-10-18"
+ },
+ "airtable-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Airtable's official MCP server lets AI assistants that support MCP, such as Claude and ChatGPT, read and write Airtable bases.",
+   "MCP permissions mirror the permission levels you have in Airtable; for example, commenter or read-only users can only read data."
+  ],
+  "who": "Airtable users who want an assistant to work with their bases and records.",
+  "features": [
+   "Read and write bases, tables and records",
+   "Permissions mirror Airtable roles",
+   "Works with Claude and ChatGPT"
+  ],
+  "faq": [],
+  "sources": [
+   "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server"
+  ],
+  "updated": "2026-10-18"
+ },
+ "amplitude-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Amplitude MCP connects the Amplitude MCP server to AI tools so teams can query and create Amplitude content with natural language.",
+   "It is listed as freemium."
+  ],
+  "who": "Product and growth teams who want to ask analytics questions through an AI assistant.",
+  "features": [
+   "Natural-language analytics queries",
+   "Create Amplitude content",
+   "Official Amplitude server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://amplitude.com/docs/amplitude-ai/amplitude-mcp"
+  ],
+  "updated": "2026-10-18"
+ },
+ "canva-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Canva MCP connects AI assistants to Canva's design capabilities. Our listing notes creating, searching, editing and exporting designs.",
+   "Canva's documentation targets IT admins integrating Canva into internal tools and teams building AI assistants or platforms."
+  ],
+  "who": "Teams who want an AI assistant to create and manage Canva designs.",
+  "features": [
+   "Create, search, edit and export designs",
+   "For AI assistants and internal tools",
+   "Official Canva server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://www.canva.dev/docs/apps/mcp/"
+  ],
+  "updated": "2026-10-18"
  }
 }
