@@ -138,6 +138,7 @@ def build(t):
     urls+=seo(t,urls)
     import build_tasks; urls+=build_tasks.pages(t)
     import build_best; urls+=build_best.pages(t)
+    import build_free_tools; urls+=build_free_tools.pages(t)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B,B+"new.html",B+"quiz.html",B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}
@@ -267,7 +268,7 @@ def free_tools(t):
     items=[x for x in t if FREE_RE.search(pr(x)) and not re.search(r"discontinu|archived|shut down",x.get("maturity","")+" "+pr(x),re.I)]
     cats=collections.Counter(x["category"] for x in items)
     canon=B+"free-tools.html"; title="Free AI Agent Tools (2026): Open-Source & Free Tiers | AgentScout"
-    desc=f"{len(items)} free and open-source AI agent tools in {len(cats)} categories, plus AgentScout's unlimited free AI image generator. Pricing as each maker states it."[:158]
+    desc=f"{len(items)} free and open-source AI agent tools in {len(cats)} categories, plus AgentScout's free AI cost calculator, token counter, prompt builder and image generator."[:158]
     feat=('<div class="card tile" style="margin:18px 0 8px;max-width:640px"><div class="ct"><span class="ico"><span aria-hidden="true">✨</span></span><div class="tn"><h3>Unlimited Free AI Image Generator</h3>'
           '<div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">Type a prompt and get an image in seconds. No sign-up needed. Powered by FLUX.1 [schnell].</p>'
           '<a class="btn primary" href="generate.html">Open the image generator</a></div>')
@@ -279,11 +280,11 @@ def free_tools(t):
         sec+=f'<h2 id="{catslug(c)}" class="has-cico" style="font-size:18px;margin:32px 0 10px">{cico(c)}{e(c[0].upper()+c[1:])} <span style="color:var(--muted);font-weight:400">({n})</span></h2><p style="margin:0 0 10px;font-size:14px"><a href="categories/{catslug(c)}.html">All {e(c)} tools →</a></p><ul style="list-style:none;padding:0;margin:0">{li}</ul>'
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free AI agent tools</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout, plus {len(items)} free and open-source AI agent tools from our directory, grouped by category.</p>'
-          '<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'+feat+
+          '<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'+feat+'<h2 id="agentscout-tools" style="font-size:18px;margin:28px 0 10px">More free tools from AgentScout</h2><p style="font-size:14px;color:var(--muted);margin:0 0 12px">Calculators and generators that run entirely in your browser. No sign-up, no API key, nothing sent to a server.</p><div class="grid">'+__import__("build_free_tools").hub_cards()+'</div>'+
           f'<h2 style="font-size:18px;margin:32px 0 8px">Free and open-source tools in the directory</h2><p style="font-size:14px;color:var(--muted)">Included when the pricing the maker states says open source, open weights or open standard, free, a free tier or plan, or freemium. Open-source tools can still have paid cloud plans or need a paid model API key. Check each official site.</p><p style="font-size:14px">{jump}</p>'
           +sec+'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Listings marked discontinued are left out. Within each category, tools are sorted by GitHub stars where known.</p></section>')
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
-        "hasPart":[{"@type":"WebApplication","name":"AgentScout AI Image Generator","url":B+"generate.html","isAccessibleForFree":True,"applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]},
+        "hasPart":[{"@type":"WebApplication","name":"AgentScout AI Image Generator","url":B+"generate.html","isAccessibleForFree":True,"applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]+[{"@type":"WebApplication","name":"AgentScout "+n,"url":f"{B}free-tools/{sl}.html","isAccessibleForFree":True,"applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}} for sl,n,_,_ in __import__("build_free_tools").TOOLS]},
         {"@type":"ItemList","numberOfItems":len(items)+1,"itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout AI Image Generator","url":B+"generate.html"}]+[{"@type":"ListItem","position":i+2,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate([y for c,_ in cats.most_common() for y in sorted([z for z in items if z["category"]==c],key=lambda z:(-(z.get("github_stars") or 0),z["name"].lower()))])]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Free tools","item":canon}]}]}
     open("free-tools.html","w").write(shell("",title,desc,canon,body,ld))
