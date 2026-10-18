@@ -197,8 +197,17 @@ TARGETS=[("ai-sre-agents","AI SRE agents",lambda x,k:k("devops-and-incidents"),"
  ("local-ai-agents","local AI agents",lambda x,k:k("running-agents-locally"),"running-agents-locally"),
  ("ai-web-scraping-tools","AI web scraping tools",lambda x,k:k("web-scraping"),"web-scraping"),
  ("deep-research-agents","deep research agents",lambda x,k:x["category"]=="research","research")]
+# Tool lists of pages that were redirected into a main page (Oct 18 2026). They still count as existing
+# lists, so the auto generators don't re-create near-duplicate search/sub-task pages for the same tools.
+def absorbed_sets():
+    import json
+    try: t=json.load(open("tools.json"))
+    except Exception: return []
+    mcp={x["slug"] for x in t if x["category"]=="MCP & infra" or "connect tools via MCP" in x.get("use_cases",[])}  # was best/mcp-servers
+    return [mcp]
 def _existing_sets(made):
     sets=[{x["slug"] for x in a[8]} for a in made]
+    sets+=absorbed_sets()
     for f in glob.glob("best/*.html"):
         if f.endswith("index.html"): continue
         sets.append(set(re.findall(r'tools/([a-z0-9-]+)\.html',open(f).read().split("<main",1)[-1].split('id="nlblock"')[0])))

@@ -19,7 +19,7 @@ PAGES=[
  '<a href="../tasks/browsing-the-web.html">AI agents for browsing the web</a> · <a href="../tasks/computer-use.html">Controlling a computer</a>'),
 ("open-source-mcp-servers","Best Open-Source MCP Servers",lambda x:x["category"]=="MCP & infra" and x["pricing"] in OS,"stars",25,
  "Open-source MCP servers and MCP infrastructure you can run yourself and connect to Claude Code, Cursor, Codex and other MCP clients.",
- '<a href="mcp-servers.html">Best MCP servers (all)</a> · <a href="mcp-servers-for-claude-code.html">for Claude Code</a> · <a href="mcp-servers-for-cursor.html">for Cursor</a> · <a href="mcp-servers-for-codex.html">for Codex</a>'),
+ '<a href="../categories/mcp-infra.html">All MCP servers &amp; infra</a> · <a href="mcp-servers-for-claude-code.html">for Claude Code</a> · <a href="mcp-servers-for-cursor.html">for Cursor</a> · <a href="mcp-servers-for-codex.html">for Codex</a>'),
 ("most-starred-open-source-ai-agents","Most-Starred Open-Source AI Agent Projects",lambda x:x["pricing"] in OS|{"Open weights","Open standard"},"stars",25,
  "The open-source AI agent projects in our directory with the most GitHub stars, across every category.",
  '<a href="../tasks/open-source-agents.html">Open-source agents by task</a> · <a href="self-hosted-ai-agents.html">Self-hosted AI agents</a>'),
@@ -67,7 +67,7 @@ PAGES=[
  "Open models and local runtimes for running LLMs on your own computer or server, often as the engine behind self-hosted agents.",
  '<a href="../tasks/running-agents-locally.html">Running agents locally</a> · <a href="../s/local-ai-agents.html">Local AI agents</a> · <a href="self-hosted-ai-agents.html">Self-hosted AI agents</a>'),
 ]
-OLD=[("mcp-servers","Best MCP Servers"),("mcp-servers-for-claude-code","Best MCP servers for Claude Code"),("mcp-servers-for-cursor","Best MCP servers for Cursor"),("mcp-servers-for-codex","Best MCP servers for Codex"),("cursor-alternatives","Cursor alternatives")]
+OLD=[("mcp-servers-for-claude-code","Best MCP servers for Claude Code"),("mcp-servers-for-cursor","Best MCP servers for Cursor"),("mcp-servers-for-codex","Best MCP servers for Codex"),("cursor-alternatives","Cursor alternatives")]
 def rank(items,how):
     st=lambda x:-(x.get("github_stars") or 0)
     has=lambda x:x.get("github_stars") is None

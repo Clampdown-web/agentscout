@@ -83,6 +83,8 @@ def _grid(items,task=None):
 SUBP=[]
 def _existing_sets():
     out=[]
+    import build_landing as _bl
+    out+=_bl.absorbed_sets()
     for f in glob.glob("s/*.html")+glob.glob("best/*.html"):
         if f.endswith("index.html"): continue
         body=open(f).read().split("<main",1)[-1].split('id="nlblock"')[0]
@@ -96,7 +98,11 @@ _TT_FULL={"open-source-agents":"Best open-source AI agents"}
 _TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: tools by use case",
   "title":"Add long-term memory to AI agents: tools by use case (2026)",
   "desc":lambda n,items:f"How to add long-term memory to an AI agent: {n} tools grouped by use case, from RAG over documents to local memory and codebase context."[:158],
-  "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the ranked list of memory and RAG products? See the <a href="../categories/memory-rag.html">Memory &amp; RAG category</a>.</p>'}}
+  "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the ranked list of memory and RAG products? See the <a href="../categories/memory-rag.html">Memory &amp; RAG category</a>.</p>'},
+ "connecting-tools-mcp":{"h1":"How to connect AI agents to your tools with MCP, by use case",
+  "title":"Connect AI agents to your tools with MCP: picks by use case (2026)",
+  "desc":lambda n,items:f"How to connect an AI agent to apps and data with MCP: {n} servers, gateways and tools grouped by job, from databases to browsers and auth."[:158],
+  "pointer":'<p style="margin:0 0 6px;font-size:14px">Looking for the full list of MCP servers? See the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.</p>'}}
 def task_title(s,label):
     if s in _TT_FULL: return _TT_FULL[s]
     lab=_TT_LABEL.get(s,label)
