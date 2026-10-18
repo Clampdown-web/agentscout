@@ -39,21 +39,25 @@ AS.card=function(t,extra){var logo=t.logo?t.logo.replace(/^https:\/\/clampdown-w
 return '<a class="card tile" href="tools/'+ASe(t.slug)+'.html">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true">'+ASe((t.name||"?")[0])+'</span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span></div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
 AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){i.addEventListener("error",function(){i.remove()})})};
 /* Newsletter: links with data-nl (and the signup forms with data-nlform) never open a tab or leave the page.
-   A tap toggles an inline panel right there; signup posts to Beehiiv's subscribe page inside a same-page iframe. */
+   Nothing from Beehiiv loads with the page. A tap on "Subscribe free" loads Beehiiv's hosted signup form
+   (agentscout.beehiiv.com/subscribe) in an iframe right there, so the visitor types their email once, in Beehiiv's form.
+   (Beehiiv's page ignores ?email=, so we don't ask for the address twice.) consent.js keeps these forms hidden until
+   embedded content is allowed. */
 (function(){
 var LATEST={title:"AgentScout Weekly #1: 5 agent tools worth trying",date:"Oct 16, 2026",sub:"Labeled for builders and everyday users"};
-var n=0;
-function frameFor(host){var f=host.querySelector("iframe.nlframe");if(!f){var name="nlframe"+(++n);f=document.createElement("iframe");f.name=name;f.className="nlframe";f.title="Newsletter signup";f.setAttribute("loading","lazy");host.appendChild(f)}return f}
-function wire(form,host,msg){form.addEventListener("submit",function(){var f=frameFor(host);form.target=f.name;f.classList.add("show");if(msg)msg.textContent="Almost done: confirm with the Subscribe button in the box below. You stay on this page."})}
+var SRC="https://agentscout.beehiiv.com/subscribe";
+function open1(form,host,msg){var f=host.querySelector("iframe.nlframe");if(!f){f=document.createElement("iframe");f.className="nlframe";f.title="Newsletter signup form (Beehiiv)";f.src=SRC;host.appendChild(f)}
+ f.classList.add("show");form.hidden=true;if(msg)msg.textContent="Enter your email in the box below and tap Subscribe. You stay on this page.";try{f.scrollIntoView({block:"nearest",behavior:"smooth"})}catch(e){}}
+function wire(form,host,msg){form.addEventListener("submit",function(e){e.preventDefault();open1(form,host,msg)})}
 function panel(){var p=document.createElement("div");p.className="nlpanel";p.setAttribute("role","region");p.setAttribute("aria-label","Newsletter signup");
-p.innerHTML='<div class="nlin"><button type="button" class="nlx" aria-label="Close newsletter panel">×</button><h3>Get the best new AI agents, weekly</h3><p class="muted">One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p><p class="nllatest"><span class="b">Latest issue</span> <strong>'+ASe(LATEST.title)+'</strong> <span class="muted">· '+ASe(LATEST.date)+' · '+ASe(LATEST.sub)+'</span></p><form class="sub" action="https://agentscout.beehiiv.com/subscribe" method="get"><label class="sr-only" for="nlp'+(n+1)+'">Email</label><input id="nlp'+(n+1)+'" type="email" name="email" placeholder="you@example.com" required autocomplete="email"><button class="btn primary" type="submit">Subscribe</button></form><p class="nlmsg muted" aria-live="polite"></p></div>';
+p.innerHTML='<div class="nlin"><button type="button" class="nlx" aria-label="Close newsletter panel">×</button><h3>Get the best new AI agents, weekly</h3><p class="muted">One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p><p class="nllatest"><span class="b">Latest issue</span> <strong>'+ASe(LATEST.title)+'</strong> <span class="muted">· '+ASe(LATEST.date)+' · '+ASe(LATEST.sub)+'</span></p><form class="nlgo" action="'+SRC+'" method="get"><button class="btn primary" type="submit">Subscribe free</button></form><p class="nlmsg muted" aria-live="polite"></p></div>';
 wire(p.querySelector("form"),p.querySelector(".nlin"),p.querySelector(".nlmsg"));p.querySelector(".nlx").onclick=function(){p.remove();document.querySelectorAll("[data-nl][aria-expanded=true]").forEach(function(a){a.setAttribute("aria-expanded","false")})};return p}
 function anchorFor(a){var nav=a.closest("nav");if(nav)return nav;return a.closest("p,li,.card,.cta,.about,div")||a}
 document.addEventListener("click",function(e){var a=e.target.closest("a[data-nl]");if(!a)return;e.preventDefault();
  var at=anchorFor(a),next=at.nextElementSibling,open=next&&next.classList.contains("nlpanel");
  document.querySelectorAll(".nlpanel").forEach(function(x){x.remove()});document.querySelectorAll("[data-nl]").forEach(function(x){x.setAttribute("aria-expanded","false")});
- if(open)return;var p=panel();at.insertAdjacentElement("afterend",p);a.setAttribute("aria-expanded","true");var i=p.querySelector("input");i&&i.focus({preventScroll:true});p.scrollIntoView({block:"nearest",behavior:"smooth"})});
-function init(){document.querySelectorAll("form[data-nlform]").forEach(function(f){var m=document.createElement("p");m.className="nlmsg muted";m.setAttribute("aria-live","polite");f.insertAdjacentElement("afterend",m);wire(f,f.parentNode,m)});
+ if(open)return;var p=panel();at.insertAdjacentElement("afterend",p);a.setAttribute("aria-expanded","true");var i=p.querySelector("form button");i&&i.focus({preventScroll:true});p.scrollIntoView({block:"nearest",behavior:"smooth"})});
+function init(){document.querySelectorAll("form[data-nlform]").forEach(function(f){var m=document.createElement("p");m.className="nlmsg muted";m.setAttribute("aria-live","polite");f.insertAdjacentElement("afterend",m);wire(f,f.closest(".nlbox")||f.parentNode,m)});
  document.querySelectorAll("a[data-nl]").forEach(function(a){a.setAttribute("aria-expanded","false");a.setAttribute("role","button")})}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
 /* Category icons (Lucide-style inline SVG, stroke currentColor). Mirrors app v10 catIcons.js; unknown categories fall back to "tag". */

@@ -242,7 +242,7 @@ nav+.nlpanel .nlin{max-width:620px;margin:0 auto;padding:22px 20px}
 .nlin h3{margin:0 0 6px;font-size:18px;padding-right:32px}.nlin p{margin:0 0 12px}
 .nllatest{font-size:14px}.nllatest strong{color:var(--text)}
 .nlx{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:18px;cursor:pointer;line-height:1}
-.nlframe{display:none;width:100%;height:420px;border:1px solid var(--line);border-radius:12px;background:#fff;margin-top:12px}.nlframe.show{display:block}
+.nlframe{display:none;width:100%;height:420px;border:1px solid var(--line);border-radius:12px;background:#0f1015;margin-top:12px}.nlframe.show{display:block}
 .nlmsg:empty{display:none}.nlmsg{margin:10px 0 0;font-size:14px}
 @keyframes nlin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.nlpanel{animation:none}}
@@ -318,3 +318,17 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .addedago{margin:6px 0 0;font-size:12px;color:var(--faint)}
 /* Oct 18 2026: portrait phones (nav links wrap) - "Submit a tool" gets its own row, centered. The hidden Saved link becomes an invisible full-width line break. Landscape/tablet/desktop unchanged. */
 @media(max-width:430px) and (orientation:portrait){nav .links a.hide{display:block;flex:0 0 100%;height:0;margin:0;padding:0;overflow:hidden;visibility:hidden}nav .links a.btn{margin:2px auto 0}}
+
+/* Newsletter signup card (Oct 18 2026): compact, theme-aware; Beehiiv form loads in place on click */
+.nlwrap{padding:28px 0 36px}
+.nlbox{max-width:720px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);text-align:left}
+.nlbox .nltxt{flex:1 1 300px;min-width:0}
+.nlbox h2{font-size:17px;margin:0 0 4px}
+.nlbox .nltxt p{margin:0;color:var(--muted);font-size:14px}
+.nlbox .nlgo{margin:0}
+.nlbox .nlgo .btn{white-space:nowrap}
+.nlbox .nlmsg{flex-basis:100%;margin:0}
+.nlbox .nlframe{flex-basis:100%;margin-top:0}
+.nlbox .as-ph{margin:0;flex:1 1 260px}
+@media (max-width:560px){.nlbox{padding:16px}.nlbox .nlgo,.nlbox .nlgo .btn{width:100%}}
+@media (max-width:560px){.nlframe{height:470px}}

@@ -61,7 +61,7 @@
   function ph(root){(root.querySelectorAll?root:document).querySelectorAll('form[action*="beehiiv.com"]').forEach(function(f){
     if(f.previousElementSibling&&f.previousElementSibling.classList.contains("as-ph"))return;
     var p=el('<div class="as-ph"><p>The newsletter sign-up is run by Beehiiv, which may set its own cookies. It loads only if you allow embedded content.</p><button type="button" class="btn">Load newsletter form</button></div>');
-    p.querySelector("button").addEventListener("click",function(){set(S.analytics,1);var i=f.querySelector("input[type=email]");if(i)i.focus()});
+    p.querySelector("button").addEventListener("click",function(){set(S.analytics,1);var i=f.querySelector("input[type=email],button");if(i)i.focus()});
     f.parentNode.insertBefore(p,f)})}
   document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-consent-open],a[href$='#privacy-choices']");if(a){e.preventDefault();openPicker()}});
   function boot(){ph(document);if(window.MutationObserver)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)ph(n)})})}).observe(document.body,{childList:true,subtree:true});
