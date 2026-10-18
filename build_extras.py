@@ -136,6 +136,7 @@ def build(t):
 <p class="disclose">Badges are SVG files hosted on this site. Please don't change the wording. Featured placements that are paid are always labeled as sponsored on AgentScout.</p></section>'''
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
     open("badges.html","w").write(shell("",title,desc,canon,body,ld).replace('href="index.html#','href="index.html#')); urls.insert(0,canon)
+    import build_news; urls+=build_news.pages(t)  # per-story news pages + archives (before news.html)
     urls+=seo(t,urls)
     import build_tasks; urls+=build_tasks.pages(t)
     import build_best; urls+=build_best.pages(t)
@@ -232,16 +233,17 @@ def news_page(t):
     def item(x):
         tl=f' · <a href="tools/{e(x["tool"])}.html">On AgentScout →</a>' if x.get("tool") in bs else ""
         sm=f'<p class="nsum">{e(x["summary"])}</p>' if x.get("summary") else ""
-        return f'<li class="nitem"><h3><a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a></h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(x["date"][:16].replace("T"," "))} UTC</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'
+        h3=f'<a href="{e(x["page"])}">{e(x["title"])}</a>' if x.get("page") and os.path.exists(x["page"]) else f'<a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a>'
+        return f'<li class="nitem"><h3>{h3}</h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(x["date"][:16].replace("T"," "))} UTC</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'
     body='<div class="crumb"><a href="index.html">AgentScout</a> / Agent news</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(arc.get("updated","")[:16].replace("T"," "))+' UTC.</p>'
     for d in sorted(days,reverse=True):
         dd=datetime.date.fromisoformat(d).strftime("%A, %B %-d, %Y")
         body+=f'<h2 class="nday">{dd}</h2><ol class="nlist">'+"".join(item(x) for x in days[d])+'</ol>'
     if not days: body+='<p>No agent news yet.</p>'
-    body+='<p class="disclose">Headlines and summaries are written by AgentScout from each source; follow the source link for the full story. Rolling 30-day archive.</p></section>'
+    body+='<p class="disclose">Headlines and summaries are written by AgentScout from each source; follow the source link for the full story. Older stories: <a href="news/index.html">news archive by month</a>.</p></section>'
     title="AI Agent News Today: Daily Agent Launches & Updates | AgentScout"
     desc="Daily AI agent news: new agent launches, coding agents, MCP servers and agent frameworks, summarized in plain words with links to the original sources."
-    ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":x["url"],"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
+    ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":(B+x["page"]) if x.get("page") else x["url"],**({"isBasedOn":x["url"]} if x.get("page") else {}),"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
     open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
 
 # Past issues on the public Beehiiv archive (https://agentscout.beehiiv.com/archive), checked read-only 2026-10-18.

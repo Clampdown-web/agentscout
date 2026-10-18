@@ -133,7 +133,7 @@ fetch("tools.json",{cache:"no-cache"}).then(r=>r.json()).then(d=>{
 
 fetch("news.json",{cache:"no-cache"}).then(r=>r.json()).then(n=>{if(!n.items||!n.items.length)return;
  const rel=d=>{const h=Math.round((Date.now()-new Date(d))/36e5);return h<1?"just now":h<24?h+"h ago":Math.round(h/24)+"d ago"};
- $("newslist").innerHTML=n.items.slice(0,8).map(x=>`<li><a class="nt" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a><span class="nm">${esc(x.source)} · <time datetime="${esc(x.date)}">${rel(x.date)}</time>${x.tool?` · <a href="tools/${encodeURIComponent(x.tool)}.html">On AgentScout →</a>`:""}</span></li>`).join("");
+ $("newslist").innerHTML=n.items.slice(0,8).map(x=>`<li><a class="nt" href="${x.page?esc(x.page):esc(safeUrl(x.url))}"${x.page?"":` target="_blank" rel="noopener noreferrer"`}>${esc(x.title)}</a><span class="nm">${esc(x.source)} · <time datetime="${esc(x.date)}">${rel(x.date)}</time>${x.tool?` · <a href="tools/${encodeURIComponent(x.tool)}.html">On AgentScout →</a>`:""}</span></li>`).join("");
  $("newsup").textContent="Last updated "+new Date(n.updated).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});$("news").hidden=false}).catch(()=>{});
 </script>
 <script src="generate.js?v=202610170200" defer></script>

@@ -1,6 +1,7 @@
 """Builds news.json: recent AI-agent news from free RSS/Atom feeds (+ optional X items).
 Usage: python3 scripts/update_news.py [--x scripts/x_items.json] [--hours 72] [--n 8]
-Stdlib only. Titles are shortened/cleaned; no summaries are copied."""
+Stdlib only. Titles are shortened/cleaned; no summaries are copied.
+After this script, run `python3 build_site.py`: build_news.py then gives every item a permanent page under news/YYYY/MM/ (tracked in news-history.json). Commit news/ and news-history.json with the other files."""
 import json,re,sys,datetime as dt,urllib.request,xml.etree.ElementTree as ET,email.utils,html,argparse,os
 FEEDS=[("TechCrunch","https://techcrunch.com/category/artificial-intelligence/feed/"),
 ("The Verge","https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),

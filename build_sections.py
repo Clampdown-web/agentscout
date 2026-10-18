@@ -35,7 +35,7 @@ def build(t):
     for p in sorted(glob.glob("best/*.html")):
         if p.endswith("/index.html"): continue
         m=main_of(p); best.append({"slug":os.path.basename(p)[:-5],"title":first(r'<h1[^>]*>(.*?)</h1>',m),"lede":first(r'<p class="lede"[^>]*>(.*?)</p>',m),"tools":slugs(m),"url":B+p})
-    try: news=json.load(open("news.json"))["items"]
+    try: news=[{**x,**({"page_url":B+x["page"]} if x.get("page") else {})} for x in json.load(open("news.json"))["items"]]
     except Exception: news=[]
     g=open("generate.html").read(); gm=g[g.index('<main'):g.index('</main>')] if '<main' in g else g
     generate={"title":first(r'<h1[^>]*>(.*?)</h1>',gm,"Free AI Image Generator"),"lede":first(r'<p class="lede"[^>]*>(.*?)</p>',gm),"url":B+"generate.html"}
