@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T07:58:20Z",
- "updated": "2026-10-18T07:58:20Z",
+ "generated": "2026-10-18T08:03:58Z",
+ "updated": "2026-10-18T08:03:58Z",
  "last_checked": "2026-10-18",
- "count": 656,
+ "count": 659,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -27780,6 +27780,131 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/picsellia-mcp-server.png",
    "page": "https://agentscouthq.com/tools/picsellia-mcp-server.html"
+  },
+  {
+   "name": "AgentKey",
+   "slug": "agentkey",
+   "url": "https://agentkey.app",
+   "website": "https://agentkey.app",
+   "github": "https://github.com/chainbase-labs/AgentKey",
+   "category": "MCP & infra",
+   "description": "One MCP install that gives AI agents live web search, X, Reddit and YouTube data, web page reading and market and token-price data, all paid from a single monthly credit subscription.",
+   "key_features": [
+    "Lite, Pro and Max monthly credit plans, with extra credit top-ups.",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Lite, Pro and Max monthly credit plans, with extra credit top-ups.",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Product Hunt",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "chainbase-labs/AgentKey",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agentkey.png",
+   "page": "https://agentscouthq.com/tools/agentkey.html"
+  },
+  {
+   "name": "zero.xyz",
+   "slug": "zero-xyz",
+   "url": "https://www.zero.xyz",
+   "website": "https://www.zero.xyz",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Lets AI agents discover, connect to and pay per call for thousands of APIs and services without API-key setup or separate sign-ups.",
+   "key_features": [
+    "Free to install with $5 starting credit; many services are free, paid ones are charged per call with no markup.",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free to install with $5 starting credit; many services are free, paid ones are charged per call with no markup.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Product Hunt",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zero-xyz.png",
+   "page": "https://agentscouthq.com/tools/zero-xyz.html"
+  },
+  {
+   "name": "Assisterr AI",
+   "slug": "assisterr-ai",
+   "url": "https://assisterr.ai",
+   "website": "https://assisterr.ai",
+   "github": "",
+   "category": "business agents",
+   "description": "AI lab that builds and deploys domain-specific small language models (SLMs) and AI agents for businesses, plus Agent Tokenization as a Service (ATaaS) for AI startups launching agents.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Toolify",
+   "goals": [
+    "crypto",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/assisterr-ai.png",
+   "page": "https://agentscouthq.com/tools/assisterr-ai.html"
   }
  ]
 }

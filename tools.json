@@ -16971,5 +16971,77 @@
     "id": 665,
     "slug": "picsellia-mcp-server",
     "logo": "assets/logos/picsellia-mcp-server.png"
+  },
+  {
+    "name": "AgentKey",
+    "url": "https://agentkey.app",
+    "description": "One MCP install that gives AI agents live web search, X, Reddit and YouTube data, web page reading and market and token-price data, all paid from a single monthly credit subscription.",
+    "category": "MCP & infra",
+    "pricing": "Paid",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Product Hunt",
+    "pricing_detail": "Lite, Pro and Max monthly credit plans, with extra credit top-ups.",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP"
+    ],
+    "website": "https://agentkey.app",
+    "github": "https://github.com/chainbase-labs/AgentKey",
+    "repo": "chainbase-labs/AgentKey",
+    "id": 666,
+    "slug": "agentkey",
+    "logo": "assets/logos/agentkey.png"
+  },
+  {
+    "name": "zero.xyz",
+    "url": "https://www.zero.xyz",
+    "description": "Lets AI agents discover, connect to and pay per call for thousands of APIs and services without API-key setup or separate sign-ups.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Product Hunt",
+    "pricing_detail": "Free to install with $5 starting credit; many services are free, paid ones are charged per call with no markup.",
+    "use_cases": [
+      "voice & phone calls",
+      "connect tools via MCP"
+    ],
+    "website": "https://www.zero.xyz",
+    "github": "",
+    "id": 667,
+    "slug": "zero-xyz",
+    "logo": "assets/logos/zero-xyz.png"
+  },
+  {
+    "name": "Assisterr AI",
+    "url": "https://assisterr.ai",
+    "description": "AI lab that builds and deploys domain-specific small language models (SLMs) and AI agents for businesses, plus Agent Tokenization as a Service (ATaaS) for AI startups launching agents.",
+    "category": "business agents",
+    "pricing": "See site",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Toolify",
+    "pricing_detail": "",
+    "use_cases": [
+      "business agents"
+    ],
+    "website": "https://assisterr.ai",
+    "github": "",
+    "id": 668,
+    "slug": "assisterr-ai",
+    "logo": "assets/logos/assisterr-ai.png"
   }
 ]
