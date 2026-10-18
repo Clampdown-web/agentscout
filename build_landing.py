@@ -119,6 +119,40 @@ R=[
 ("content-creators","content creators","AI agents for content creators","Video, image and social tools, plus research helpers, for people who publish online.",
  [("Video","making-videos"),("Images and design","making-images-and-design"),("Marketing and social","marketing"),("Research","research")],
  [("prompt-builder","Prompt builder"),("../generate","Free AI image generator")],["ai-video-agents","ai-marketing-agents"]),
+ # Batch (i), Oct 18 2026: more roles (published only with >=10 tools across their sections)
+ ("qa-engineers","QA engineers","AI agents for QA engineers","Testing agents, review bots and security scanners that help QA engineers find bugs before users do.",
+ [("Test your app","testing-apps"),("Review pull requests","reviewing-pull-requests"),("Security testing","security-testing"),("Evaluate AI features","evaluating-agents")],
+ [("prompt-builder","Prompt builder")],["ai-code-review-tools","free-ai-testing-agents","ai-security-testing-tools"]),
+ ("data-engineers","data engineers","AI agents for data engineers","Database MCP servers, scrapers and workflow tools that help data engineers move, query and clean data with agents.",
+ [("Databases","databases"),("Data analysis","data-analysis"),("Scrape websites","web-scraping"),("Pipelines and workflows","automating-workflows"),("Documents and RAG","documents")],
+ [("ai-cost-calculator","AI API cost calculator"),("token-counter","Token counter")],["database-mcp-servers","ai-web-scraping-tools","open-source-workflow-automation-tools"]),
+ ("product-managers","product managers","AI agents for product managers","Research assistants, data tools and no-code builders that help product managers learn faster and prototype ideas.",
+ [("Research","research"),("Analyze data","data-analysis"),("Prototype without code","building-apps-without-code"),("Slides and docs","spreadsheets-and-slides"),("Understand customers","customer-support")],
+ [("prompt-builder","Prompt builder")],["ai-research-assistants","free-no-code-ai-agent-builders"]),
+ ("students","students","AI agents for students","Research assistants, paper readers and document tools that help students find sources, read faster and keep track of their work.",
+ [("Research","research"),("Read scientific papers","reading-papers"),("Work with documents","documents"),("Personal assistants","personal-assistants")],
+ [("token-counter","Token counter"),("prompt-builder","Prompt builder")],["ai-research-assistants","open-source-ai-research-agents"]),
+ ("operations-teams","operations teams","AI agents for operations teams","Ready-made business agents, workflow automation and office tools that take repetitive operations work off your team's plate.",
+ [("Business operations","business-automation"),("Automate workflows","automating-workflows"),("Spreadsheets and slides","spreadsheets-and-slides"),("Email","writing-emails"),("Chat apps","chat-apps")],
+ [("ai-cost-calculator","AI API cost calculator")],["open-source-workflow-automation-tools","ai-agents-for-spreadsheets-and-slides"]),
+ ("startup-ctos","startup CTOs","AI agents for startup CTOs","Coding agents, agent infrastructure, monitoring and security tools for CTOs deciding what their small team builds and buys.",
+ [("Run several coding agents at once","parallel-coding-agents"),("Build agents","building-ai-agents"),("Deploy and host agents","deploying-agents"),("Monitor in production","monitoring-agents"),("Agent security","agent-security")],
+ [("ai-cost-calculator","AI API cost calculator"),("agent-setup-generator","Agent setup generator")],["open-source-ai-agent-frameworks","open-source-llm-observability-tools","ai-code-sandboxes"]),
+ ("agencies","agencies","AI agents for agencies","Marketing, design, video and no-code tools that help agencies deliver more client work with the same team.",
+ [("Marketing","marketing"),("Images and design","making-images-and-design"),("Video","making-videos"),("Automate client workflows","automating-workflows"),("Build apps without code","building-apps-without-code")],
+ [("prompt-builder","Prompt builder"),("../generate","Free AI image generator")],["ai-marketing-agents","ai-video-agents","free-no-code-ai-agent-builders"]),
+ ("open-source-maintainers","open-source maintainers","AI agents for open-source maintainers","Review bots, docs servers, testing and security agents that help maintainers keep up with issues and pull requests.",
+ [("Review pull requests","reviewing-pull-requests"),("Write and fix code","writing-code"),("Keep docs current for agents","coding-docs"),("Test changes","testing-apps"),("Security testing","security-testing")],
+ [("agent-setup-generator","Agent setup generator (AGENTS.md, CLAUDE.md)"),("llms-txt-generator","llms.txt generator")],["ai-code-review-tools","open-source-ai-coding-agents"]),
+ ("mcp-developers","MCP developers","AI tools for MCP developers","SDKs, gateways, registries and identity tools for developers building and running Model Context Protocol servers.",
+ [("Build MCP servers","building-mcp-servers"),("Connect tools with MCP","connecting-tools-mcp"),("Agent identity and logins","agent-identity"),("Run code safely","running-code-safely")],
+ [("mcp-config-builder","MCP config builder"),("tool-schema-builder","Tool schema builder")],["free-mcp-servers","database-mcp-servers"]),
+ ("automation-engineers","automation engineers","AI agents for automation engineers","Workflow platforms, browser and computer-use agents and scrapers for engineers who automate repetitive work.",
+ [("Automate workflows","automating-workflows"),("Browse the web","browsing-the-web"),("Control a computer","computer-use"),("Scrape websites","web-scraping")],
+ [("tool-schema-builder","Tool schema builder"),("ai-cost-calculator","AI API cost calculator")],["open-source-workflow-automation-tools","open-source-browser-agents","computer-use-agents"]),
+ ("ecommerce-teams","e-commerce teams","AI agents for e-commerce teams","Support, marketing, phone and payment agents for teams running an online store.",
+ [("Customer support","customer-support"),("Marketing","marketing"),("Phone calls","phone-calls"),("Agent payments and checkout","agent-payments")],
+ [("prompt-builder","Prompt builder")],["ai-customer-support-agents","ai-marketing-agents","ai-phone-call-agents"])
 ]
 def ftl(h,d="../"):
     if h.startswith("../"): return f'{d}{h[3:]}.html'
@@ -259,6 +293,7 @@ def role_pages(t,m,made):
             body_s+=(f'<h2 style="font-size:18px;margin:32px 0 6px">{e(hd)}</h2><p class="muted" style="margin:0 0 10px;font-size:14px">{e(m[task][0][5])} <a href="../tasks/{task}.html">All {len(m[task][1])} tools →</a></p>'
                      f'<ul style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in items)}</ul>')
         n=len(seen)
+        if n<10: print('skip role page (too few tools):',s,n); continue
         desc=f"{h} in 2026: {n} picks across {len(secs)} jobs, including {', '.join(x['name'] for x in allitems[:3])}. Link-checked; pricing as makers state it."
         if len(desc)>158: desc=f"{h} (2026): {n} picks across {len(secs)} jobs, including {', '.join(x['name'] for x in allitems[:2])}."[:158]
         jump=" · ".join(f'<a href="#{T2}">{e(a)}</a>' for a,T2 in [(a,X.catslug(a)) for a,_ in secs])
