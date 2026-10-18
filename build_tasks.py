@@ -248,7 +248,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
 ASSET_V="202610182330"  # bump when app.js/styles.css change
-SKIP={"og.html","outreach-tracker.html","detail.tpl.html"}
+SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
@@ -311,7 +311,7 @@ def sitewide(t):
 
 # ---- About + Privacy pages (relative links; canonical from B, so a domain switch only changes B) ----
 def _featured_href():
-    m=re.search(r'<a href="(https://github\.com/Clampdown-web/agentscout/issues/new\?title=Featured[^"]*)">Get featured</a>',open("detail.tpl.html").read())
+    m=re.search(r'<a href="(https://github\.com/Clampdown-web/agentscout/issues/new\?title=Featured[^"]*)">Get featured</a>',open("data/detail.tpl").read())
     return m.group(1) if m else "mailto:support@agentscouthq.com?subject=Sponsorship%20%2F%20featured%20listing"
 H2='style="font-size:19px;margin:32px 0 8px"'
 def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):

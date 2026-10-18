@@ -19,7 +19,7 @@ for x in t:
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
-tpl=open("detail.tpl.html").read()
+tpl=open("data/detail.tpl").read()
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
 for x in t:

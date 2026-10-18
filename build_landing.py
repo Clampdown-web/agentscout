@@ -249,8 +249,11 @@ def search_pages(t,m,asof):
     DATA['search']=made
     for s,h,q,n,items,intro,task,best,allm in made:
         canon=f"{B}s/{s}.html"; title=f"{h} (2026): {len(items)} picks · AgentScout"
-        desc=f"{h} in 2026: {n} matching tools in AgentScout's link-checked directory, including {', '.join(x['name'] for x in items[:3])}. Pricing as makers state it."
-        if len(desc)>158: desc=f"{h} (2026): {n} tools, including {', '.join(x['name'] for x in items[:2])}. Link-checked; pricing as stated."[:158]
+        cnt=f"top {len(items)} of {n} matching tools" if n>len(items) else f"{n} matching tools"  # same count basis as the title's "{len(items)} picks" (Oct 18 2026)
+        desc=f"{h} in 2026: {cnt} in AgentScout's link-checked directory, including {', '.join(x['name'] for x in items[:3])}. Pricing as makers state it."
+        if len(desc)>158: desc=f"{h} (2026): {cnt}, including {', '.join(x['name'] for x in items[:2])}. Link-checked; pricing as stated."
+        if len(desc)>158: desc=f"{h} (2026): {cnt}, including {items[0]['name']}. Link-checked; pricing as stated."
+        if len(desc)>158: desc=desc[:157].rsplit(" ",1)[0]+"…"
         pc=collections.Counter(x["pricing"] for x in items); cats=collections.Counter(x["category"] for x in allm).most_common()
         star=[x for x in items if x.get("github_stars")]
         osn=sum(1 for x in allm if x["pricing"] in OS); frn=sum(1 for x in allm if isfree(x))

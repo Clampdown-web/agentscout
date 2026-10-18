@@ -41,7 +41,7 @@ def cmp_links(x,t):
     li="".join(f'<a class="b uc" href="../compare/{cslug(a,b)}.html">{e(bs[a]["name"])} vs {e(bs[b]["name"])}</a>' for a,b in ps)
     return f'<h2 style="font-size:16px;margin:0 0 10px">Compare</h2><div class="badges" style="margin-bottom:32px">{li}</div>'
 def shell(depth,title,desc,canon,body,ld):
-    tpl=open("detail.tpl.html").read()
+    tpl=open("data/detail.tpl").read()
     head=tpl.split("<title>")[0].replace("../",depth)
     foot="<footer"+tpl.split("<footer",1)[1].replace("../",depth)
     nav=tpl.split("</head>",1)[1].split("<main")[0].replace("../",depth)
