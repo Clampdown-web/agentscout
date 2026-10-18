@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T09:33:26Z",
- "updated": "2026-10-18T09:33:26Z",
+ "generated": "2026-10-18T09:36:55Z",
+ "updated": "2026-10-18T09:36:55Z",
  "last_checked": "2026-10-18",
- "count": 880,
+ "count": 957,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -37516,6 +37516,3180 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/jupyter-mcp-server.png",
    "page": "https://agentscouthq.com/tools/jupyter-mcp-server.html"
+  },
+  {
+   "name": "Jasper",
+   "slug": "jasper",
+   "url": "https://www.jasper.ai/",
+   "website": "https://www.jasper.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Marketing AI platform that orchestrates agents to run end-to-end marketing workflows such as content, campaigns and brand-consistent copy.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jasper.png",
+   "page": "https://agentscouthq.com/tools/jasper.html"
+  },
+  {
+   "name": "Glean",
+   "slug": "glean",
+   "url": "https://www.glean.com/",
+   "website": "https://www.glean.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Enterprise AI platform connected to company data, with search, an assistant and agents that find information and automate work.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/glean.png",
+   "page": "https://agentscouthq.com/tools/glean.html"
+  },
+  {
+   "name": "Gemini Notebook",
+   "slug": "gemini-notebook",
+   "url": "https://notebook.google/",
+   "website": "https://notebook.google/",
+   "github": "",
+   "category": "research",
+   "description": "Google's AI research tool, formerly NotebookLM, that analyzes the sources you upload and turns them into summaries, answers and new formats.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gemini-notebook.png",
+   "page": "https://agentscouthq.com/tools/gemini-notebook.html"
+  },
+  {
+   "name": "LM Studio",
+   "slug": "lm-studio",
+   "url": "https://lmstudio.ai/",
+   "website": "https://lmstudio.ai/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Desktop app for running local and open models, with Bionic, its agent for work and code that creates documents, slides, PDFs and software.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lm-studio.png",
+   "page": "https://agentscouthq.com/tools/lm-studio.html"
+  },
+  {
+   "name": "Apify",
+   "slug": "apify",
+   "url": "https://apify.com/",
+   "website": "https://apify.com/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Marketplace of thousands of ready-to-run scrapers and automation tools (\"Actors\") for real-time web data, usable from apps and AI agents, including via MCP.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate the browser",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/apify.png",
+   "page": "https://agentscouthq.com/tools/apify.html"
+  },
+  {
+   "name": "Consensus",
+   "slug": "consensus",
+   "url": "https://consensus.app/",
+   "website": "https://consensus.app/",
+   "github": "",
+   "category": "research",
+   "description": "AI academic search engine over peer-reviewed literature for finding, organizing and analyzing scientific research.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/consensus.png",
+   "page": "https://agentscouthq.com/tools/consensus.html"
+  },
+  {
+   "name": "Decagon",
+   "slug": "decagon",
+   "url": "https://decagon.ai/",
+   "website": "https://decagon.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Platform for building, optimizing and scaling customer-facing AI support agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/decagon.png",
+   "page": "https://agentscouthq.com/tools/decagon.html"
+  },
+  {
+   "name": "Lyro by Tidio",
+   "slug": "lyro-by-tidio",
+   "url": "https://www.tidio.com/ai-agent/",
+   "website": "https://www.tidio.com/ai-agent/",
+   "github": "",
+   "category": "business agents",
+   "description": "Tidio's AI customer service agent that answers questions instantly and turns conversations into sales, leads and bookings.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lyro-by-tidio.png",
+   "page": "https://agentscouthq.com/tools/lyro-by-tidio.html"
+  },
+  {
+   "name": "Abacus.AI ChatLLM",
+   "slug": "abacus-ai-chatllm",
+   "url": "https://abacus.ai/",
+   "website": "https://abacus.ai/",
+   "github": "",
+   "category": "personal agents",
+   "description": "AI super assistant with 100+ models in one place and an agent that turns a task into a finished app, deck or report.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/abacus-ai-chatllm.png",
+   "page": "https://agentscouthq.com/tools/abacus-ai-chatllm.html"
+  },
+  {
+   "name": "Zowie",
+   "slug": "zowie",
+   "url": "https://getzowie.com/",
+   "website": "https://getzowie.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI agent platform for enterprise customer service that resolves requests and takes actions in production.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zowie.png",
+   "page": "https://agentscouthq.com/tools/zowie.html"
+  },
+  {
+   "name": "WordLift Agent",
+   "slug": "wordlift-agent",
+   "url": "https://wordlift.io/agent/",
+   "website": "https://wordlift.io/agent/",
+   "github": "",
+   "category": "business agents",
+   "description": "WordLift's AI SEO agent that works on your site's content and knowledge graph to improve search visibility.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wordlift-agent.png",
+   "page": "https://agentscouthq.com/tools/wordlift-agent.html"
+  },
+  {
+   "name": "Clay",
+   "slug": "clay",
+   "url": "https://www.clay.com/",
+   "website": "https://www.clay.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Go-to-market data platform for enriching leads and running agentic research workflows and outreach plays.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/clay.png",
+   "page": "https://agentscouthq.com/tools/clay.html"
+  },
+  {
+   "name": "Voiceflow",
+   "slug": "voiceflow",
+   "url": "https://www.voiceflow.com/",
+   "website": "https://www.voiceflow.com/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "AI agent platform for customer experience automation, for building, launching and scaling chat and voice agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/voiceflow.png",
+   "page": "https://agentscouthq.com/tools/voiceflow.html"
+  },
+  {
+   "name": "Taskade AI Agents",
+   "slug": "taskade-ai-agents",
+   "url": "https://www.taskade.com/ai/agents",
+   "website": "https://www.taskade.com/ai/agents",
+   "github": "",
+   "category": "no-code builders",
+   "description": "No-code builder for AI agents inside Taskade that use your data, trigger automations and ship as live apps.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/taskade-ai-agents.png",
+   "page": "https://agentscouthq.com/tools/taskade-ai-agents.html"
+  },
+  {
+   "name": "CodeRabbit",
+   "slug": "coderabbit",
+   "url": "https://www.coderabbit.ai/",
+   "website": "https://www.coderabbit.ai/",
+   "github": "",
+   "category": "coding",
+   "description": "AI code review for pull requests, with PR triage, change explanations and continuous security monitoring.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coderabbit.png",
+   "page": "https://agentscouthq.com/tools/coderabbit.html"
+  },
+  {
+   "name": "Hex",
+   "slug": "hex",
+   "url": "https://hex.tech/",
+   "website": "https://hex.tech/",
+   "github": "",
+   "category": "research",
+   "description": "Analytics platform for humans and agents, with conversational analytics, notebooks and context management for data teams.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hex.png",
+   "page": "https://agentscouthq.com/tools/hex.html"
+  },
+  {
+   "name": "kapa.ai",
+   "slug": "kapa-ai",
+   "url": "https://www.kapa.ai/",
+   "website": "https://www.kapa.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Turns docs, tickets, wikis and 30+ other sources into accurate AI agents for answering user and team questions.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kapa-ai.png",
+   "page": "https://agentscouthq.com/tools/kapa-ai.html"
+  },
+  {
+   "name": "Cartesia Sonic",
+   "slug": "cartesia-sonic",
+   "url": "https://www.cartesia.ai/sonic",
+   "website": "https://www.cartesia.ai/sonic",
+   "github": "",
+   "category": "voice",
+   "description": "Cartesia's real-time text-to-speech API with emotion control, built for low-latency voice agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cartesia-sonic.png",
+   "page": "https://agentscouthq.com/tools/cartesia-sonic.html"
+  },
+  {
+   "name": "Jason AI",
+   "slug": "jason-ai",
+   "url": "https://reply.io/jason-ai/",
+   "website": "https://reply.io/jason-ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Reply.io's AI SDR agent that runs personalized outreach and books meetings using its prospect database.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jason-ai.png",
+   "page": "https://agentscouthq.com/tools/jason-ai.html"
+  },
+  {
+   "name": "Speechmatics",
+   "slug": "speechmatics",
+   "url": "https://www.speechmatics.com/",
+   "website": "https://www.speechmatics.com/",
+   "github": "",
+   "category": "voice",
+   "description": "Speech-to-text and voice AI APIs that handle accents, multiple speakers and multilingual speech for voice agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/speechmatics.png",
+   "page": "https://agentscouthq.com/tools/speechmatics.html"
+  },
+  {
+   "name": "SuperAGI",
+   "slug": "superagi",
+   "url": "https://superagi.com/",
+   "website": "https://superagi.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI sales agent platform that finds and engages prospects around the clock.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/superagi.png",
+   "page": "https://agentscouthq.com/tools/superagi.html"
+  },
+  {
+   "name": "Gumloop",
+   "slug": "gumloop",
+   "url": "https://www.gumloop.com/",
+   "website": "https://www.gumloop.com/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Multiplayer AI agent builder that lets anyone at a company build agents with any model and integration under IT control.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Build apps without code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gumloop.png",
+   "page": "https://agentscouthq.com/tools/gumloop.html"
+  },
+  {
+   "name": "Sierra",
+   "slug": "sierra",
+   "url": "https://sierra.ai/",
+   "website": "https://sierra.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Platform for building customer-facing AI agents that handle service conversations for businesses.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sierra.png",
+   "page": "https://agentscouthq.com/tools/sierra.html"
+  },
+  {
+   "name": "HARPA AI",
+   "slug": "harpa-ai",
+   "url": "https://harpa.ai/",
+   "website": "https://harpa.ai/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Chrome extension browser agent that combines models like GPT, Claude and Gemini to automate web tasks, searching, writing and summarizing.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate the browser",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "research",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/harpa-ai.png",
+   "page": "https://agentscouthq.com/tools/harpa-ai.html"
+  },
+  {
+   "name": "Kodif",
+   "slug": "kodif",
+   "url": "https://kodif.ai/",
+   "website": "https://kodif.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Action-first AI support for e-commerce brands that resolves tickets by processing refunds, returns and order changes.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kodif.png",
+   "page": "https://agentscouthq.com/tools/kodif.html"
+  },
+  {
+   "name": "Shortwave",
+   "slug": "shortwave",
+   "url": "https://www.shortwave.com/",
+   "website": "https://www.shortwave.com/",
+   "github": "",
+   "category": "personal agents",
+   "description": "AI email client with an agent that organizes, writes, searches and schedules from a prompt.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/shortwave.png",
+   "page": "https://agentscouthq.com/tools/shortwave.html"
+  },
+  {
+   "name": "BrowserAct",
+   "slug": "browseract",
+   "url": "https://www.browseract.com/",
+   "website": "https://www.browseract.com/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "No-code builder for reusable AI web scrapers that collect structured data and connect it to apps, workflows and agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/browseract.png",
+   "page": "https://agentscouthq.com/tools/browseract.html"
+  },
+  {
+   "name": "Synthflow",
+   "slug": "synthflow",
+   "url": "https://synthflow.ai/",
+   "website": "https://synthflow.ai/",
+   "github": "",
+   "category": "voice",
+   "description": "Voice AI platform for enterprise call automation that deploys low-latency phone agents for sales and support.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Automate workflows",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "automate workflows",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/synthflow.png",
+   "page": "https://agentscouthq.com/tools/synthflow.html"
+  },
+  {
+   "name": "StackAI",
+   "slug": "stackai",
+   "url": "https://www.stackai.com/",
+   "website": "https://www.stackai.com/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Drag-and-drop no-code platform for enterprises to build and deploy secure, compliant AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Build apps without code",
+    "Run code safely"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "build apps without code",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/stackai.png",
+   "page": "https://agentscouthq.com/tools/stackai.html"
+  },
+  {
+   "name": "Zep",
+   "slug": "zep",
+   "url": "https://www.getzep.com/",
+   "website": "https://www.getzep.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Context layer that unifies business data, documents and conversations into memory so agents complete tasks correctly.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zep.png",
+   "page": "https://agentscouthq.com/tools/zep.html"
+  },
+  {
+   "name": "Goodcall",
+   "slug": "goodcall",
+   "url": "https://www.goodcall.com/",
+   "website": "https://www.goodcall.com/",
+   "github": "",
+   "category": "voice",
+   "description": "AI answering service whose voice agent works as a virtual receptionist for businesses from small shops to contact centers.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/goodcall.png",
+   "page": "https://agentscouthq.com/tools/goodcall.html"
+  },
+  {
+   "name": "remio",
+   "slug": "remio",
+   "url": "https://www.remio.ai/",
+   "website": "https://www.remio.ai/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Personal AI assistant that captures web pages, meetings, emails and files and answers with context from your work.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "personal agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/remio.png",
+   "page": "https://agentscouthq.com/tools/remio.html"
+  },
+  {
+   "name": "Unify",
+   "slug": "unify",
+   "url": "https://www.unifygtm.com/",
+   "website": "https://www.unifygtm.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Sales platform with outbound agents, B2B data, signals and sequencing run from one chat interface.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/unify.png",
+   "page": "https://agentscouthq.com/tools/unify.html"
+  },
+  {
+   "name": "Spinach AI",
+   "slug": "spinach-ai",
+   "url": "https://www.spinach.ai/",
+   "website": "https://www.spinach.ai/",
+   "github": "",
+   "category": "productivity",
+   "description": "AI meeting assistant that helps run meetings, summarizes them and automates follow-up tasks in your tools.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/spinach-ai.png",
+   "page": "https://agentscouthq.com/tools/spinach-ai.html"
+  },
+  {
+   "name": "Delve",
+   "slug": "delve",
+   "url": "https://delve.co/",
+   "website": "https://delve.co/",
+   "github": "",
+   "category": "business agents",
+   "description": "Compliance automation that uses AI agents to handle SOC 2, HIPAA and GDPR busywork.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/delve.png",
+   "page": "https://agentscouthq.com/tools/delve.html"
+  },
+  {
+   "name": "Pin",
+   "slug": "pin",
+   "url": "https://www.pin.com/",
+   "website": "https://www.pin.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI recruiting platform that sources candidates from 850M+ profiles, runs outreach and schedules interviews.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pin.png",
+   "page": "https://agentscouthq.com/tools/pin.html"
+  },
+  {
+   "name": "Pieces",
+   "slug": "pieces",
+   "url": "https://pieces.app/",
+   "website": "https://pieces.app/",
+   "github": "",
+   "category": "productivity",
+   "description": "AI memory layer that captures context from your work so you and your AI tools can recover decisions and resume where you left off.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Give agents memory"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pieces.png",
+   "page": "https://agentscouthq.com/tools/pieces.html"
+  },
+  {
+   "name": "Alta",
+   "slug": "alta",
+   "url": "https://www.altahq.com/",
+   "website": "https://www.altahq.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "GTM AI agents for B2B sales that handle outbound, inbound and revenue intelligence.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/alta.png",
+   "page": "https://agentscouthq.com/tools/alta.html"
+  },
+  {
+   "name": "Beam AI",
+   "slug": "beam-ai",
+   "url": "https://beam.ai/",
+   "website": "https://beam.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI agent automation platform with an agent hub, templates and task mining for business processes.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/beam-ai.png",
+   "page": "https://agentscouthq.com/tools/beam-ai.html"
+  },
+  {
+   "name": "Confident AI",
+   "slug": "confident-ai",
+   "url": "https://www.confident-ai.com/",
+   "website": "https://www.confident-ai.com/",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Enterprise platform for AI evals and observability that gives teams one standard for measuring and monitoring AI quality.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/confident-ai.png",
+   "page": "https://agentscouthq.com/tools/confident-ai.html"
+  },
+  {
+   "name": "Phonely",
+   "slug": "phonely",
+   "url": "https://www.phonely.ai/",
+   "website": "https://www.phonely.ai/",
+   "github": "",
+   "category": "voice",
+   "description": "AI phone agents that answer every call, book appointments and handle customer support for businesses.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/phonely.png",
+   "page": "https://agentscouthq.com/tools/phonely.html"
+  },
+  {
+   "name": "SalesAPE",
+   "slug": "salesape",
+   "url": "https://www.salesape.ai/",
+   "website": "https://www.salesape.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Autonomous AI sales agent that qualifies inbound leads and books meetings around the clock.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/salesape.png",
+   "page": "https://agentscouthq.com/tools/salesape.html"
+  },
+  {
+   "name": "Momentic",
+   "slug": "momentic",
+   "url": "https://momentic.ai/",
+   "website": "https://momentic.ai/",
+   "github": "",
+   "category": "coding",
+   "description": "AI testing platform with an AI QA agent that runs and maintains plain-English tests and reports bugs with repro steps.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/momentic.png",
+   "page": "https://agentscouthq.com/tools/momentic.html"
+  },
+  {
+   "name": "Kadoa",
+   "slug": "kadoa",
+   "url": "https://www.kadoa.com/",
+   "website": "https://www.kadoa.com/",
+   "github": "",
+   "category": "research",
+   "description": "AI agents that build, monitor and maintain web data pipelines producing verified datasets for investors.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kadoa.png",
+   "page": "https://agentscouthq.com/tools/kadoa.html"
+  },
+  {
+   "name": "Origami Agents",
+   "slug": "origami-agents",
+   "url": "https://origami.chat/",
+   "website": "https://origami.chat/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI growth agent that finds ways to get customers for your website and runs the approved campaigns.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/origami-agents.png",
+   "page": "https://agentscouthq.com/tools/origami-agents.html"
+  },
+  {
+   "name": "cubic",
+   "slug": "cubic",
+   "url": "https://www.cubic.dev/",
+   "website": "https://www.cubic.dev/",
+   "github": "",
+   "category": "coding",
+   "description": "AI code review that catches bugs in complex codebases on every pull request.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cubic.png",
+   "page": "https://agentscouthq.com/tools/cubic.html"
+  },
+  {
+   "name": "CoTester",
+   "slug": "cotester",
+   "url": "https://testgrid.io/cotester",
+   "website": "https://testgrid.io/cotester",
+   "github": "",
+   "category": "coding",
+   "description": "TestGrid's AI software testing agent that creates, runs and maintains self-healing tests for enterprise apps.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cotester.png",
+   "page": "https://agentscouthq.com/tools/cotester.html"
+  },
+  {
+   "name": "assistant-ui",
+   "slug": "assistant-ui",
+   "url": "https://www.assistant-ui.com/",
+   "website": "https://www.assistant-ui.com/",
+   "github": "https://github.com/assistant-ui/assistant-ui",
+   "category": "frameworks",
+   "description": "Open-source React components and runtimes for building AI chat and agent front ends with streaming, tools and persistence.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "12593 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "assistant-ui/assistant-ui",
+   "github_stars": 12593,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/assistant-ui.png",
+   "page": "https://agentscouthq.com/tools/assistant-ui.html"
+  },
+  {
+   "name": "Agent Zero",
+   "slug": "agent-zero",
+   "url": "https://www.agent-zero.ai/",
+   "website": "https://www.agent-zero.ai/",
+   "github": "https://github.com/agent0ai/agent-zero",
+   "category": "frameworks",
+   "description": "Open-source agentic framework and computer assistant whose agents use their own OS environment, create tools and self-correct.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "19500 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "agent0ai/agent-zero",
+   "github_stars": 19500,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-zero.png",
+   "page": "https://agentscouthq.com/tools/agent-zero.html"
+  },
+  {
+   "name": "AGI-0 by AGI, Inc.",
+   "slug": "agi-0-by-agi-inc",
+   "url": "https://theagi.company/",
+   "website": "https://theagi.company/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "AGI, Inc.'s small action model and Android agent that sees the screen and acts across any app without APIs.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate the browser"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agi-0-by-agi-inc.png",
+   "page": "https://agentscouthq.com/tools/agi-0-by-agi-inc.html"
+  },
+  {
+   "name": "Athena Intelligence",
+   "slug": "athena-intelligence",
+   "url": "https://athenaintel.com/",
+   "website": "https://athenaintel.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Enterprise platform for building and running AI agents that do multi-step work across company systems.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/athena-intelligence.png",
+   "page": "https://agentscouthq.com/tools/athena-intelligence.html"
+  },
+  {
+   "name": "Atomic Mail",
+   "slug": "atomic-mail",
+   "url": "https://atomicmail.ai/",
+   "website": "https://atomicmail.ai/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Email API that gives AI agents their own inboxes, built on JMAP with MCP and agent skill support.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/atomic-mail.png",
+   "page": "https://agentscouthq.com/tools/atomic-mail.html"
+  },
+  {
+   "name": "Basis",
+   "slug": "basis",
+   "url": "https://www.getbasis.ai/",
+   "website": "https://www.getbasis.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI agents that do accounting work end to end for accounting firms across CAS, tax and audit.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/basis.png",
+   "page": "https://agentscouthq.com/tools/basis.html"
+  },
+  {
+   "name": "Baz",
+   "slug": "baz",
+   "url": "https://baz.co/",
+   "website": "https://baz.co/",
+   "github": "",
+   "category": "coding",
+   "description": "AI code review platform that helps engineering teams ship better code faster.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/baz.png",
+   "page": "https://agentscouthq.com/tools/baz.html"
+  },
+  {
+   "name": "Bolna",
+   "slug": "bolna",
+   "url": "https://www.bolna.ai/",
+   "website": "https://www.bolna.ai/",
+   "github": "",
+   "category": "voice",
+   "description": "Platform for building, deploying and testing voice AI agents for recruitment, sales and customer support.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bolna.png",
+   "page": "https://agentscouthq.com/tools/bolna.html"
+  },
+  {
+   "name": "Browserable",
+   "slug": "browserable",
+   "url": "https://www.browserable.ai/",
+   "website": "https://www.browserable.ai/",
+   "github": "https://github.com/browserable/browserable",
+   "category": "browser/computer use",
+   "description": "Open-source JavaScript browser automation library for AI agents.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1207 GitHub stars",
+    "Automate the browser",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "browserable/browserable",
+   "github_stars": 1207,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "build an agent",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/browserable.png",
+   "page": "https://agentscouthq.com/tools/browserable.html"
+  },
+  {
+   "name": "BuildShip",
+   "slug": "buildship",
+   "url": "https://buildship.com/",
+   "website": "https://buildship.com/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Visual AI workflow builder for automating backends, building tools for AI agents and spinning up APIs.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/buildship.png",
+   "page": "https://agentscouthq.com/tools/buildship.html"
+  },
+  {
+   "name": "Coval",
+   "slug": "coval",
+   "url": "https://www.coval.ai/",
+   "website": "https://www.coval.ai/",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Testing and evaluation platform for voice agents, with simulations, production evals and human QA.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coval.png",
+   "page": "https://agentscouthq.com/tools/coval.html"
+  },
+  {
+   "name": "Credal",
+   "slug": "credal",
+   "url": "https://credal.ai/",
+   "website": "https://credal.ai/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Spins up governed MCP servers from your company systems so Claude, ChatGPT, Cursor or your apps can query them with permissions.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/credal.png",
+   "page": "https://agentscouthq.com/tools/credal.html"
+  },
+  {
+   "name": "Dosu",
+   "slug": "dosu",
+   "url": "https://dosu.dev/",
+   "website": "https://dosu.dev/",
+   "github": "",
+   "category": "coding",
+   "description": "Knowledge infrastructure that keeps docs, specs and agent memory current with your code for teams and coding agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Give agents memory"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dosu.png",
+   "page": "https://agentscouthq.com/tools/dosu.html"
+  },
+  {
+   "name": "Dot",
+   "slug": "dot",
+   "url": "https://www.getdot.ai/",
+   "website": "https://www.getdot.ai/",
+   "github": "",
+   "category": "research",
+   "description": "AI data analyst that answers data questions, runs root-cause analysis and sends automated reports.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dot.png",
+   "page": "https://agentscouthq.com/tools/dot.html"
+  },
+  {
+   "name": "Enjo",
+   "slug": "enjo",
+   "url": "https://www.enjo.ai/",
+   "website": "https://www.enjo.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "AI support agent that resolves employee and customer requests end to end and takes action in your systems.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/enjo.png",
+   "page": "https://agentscouthq.com/tools/enjo.html"
+  },
+  {
+   "name": "Forethought",
+   "slug": "forethought",
+   "url": "https://forethought.ai/",
+   "website": "https://forethought.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Customer service AI platform whose agents resolve support issues automatically to lower support costs.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "AI Agents Directory",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/forethought.png",
+   "page": "https://agentscouthq.com/tools/forethought.html"
+  },
+  {
+   "name": "Bardeen",
+   "slug": "bardeen",
+   "url": "https://www.bardeen.ai/",
+   "website": "https://www.bardeen.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Lead-sourcing tool with an agentic web scraper that finds, qualifies and enriches prospects for outreach.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "AI Agents Directory",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bardeen.png",
+   "page": "https://agentscouthq.com/tools/bardeen.html"
+  },
+  {
+   "name": "Parloa",
+   "slug": "parloa",
+   "url": "https://www.parloa.com/",
+   "website": "https://www.parloa.com/",
+   "github": "",
+   "category": "voice",
+   "description": "AI agent management platform for enterprise customer service to build, test and scale voice and chat agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "AI Agents Directory",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/parloa.png",
+   "page": "https://agentscouthq.com/tools/parloa.html"
+  },
+  {
+   "name": "Bland AI",
+   "slug": "bland-ai",
+   "url": "https://www.bland.ai/",
+   "website": "https://www.bland.ai/",
+   "github": "",
+   "category": "voice",
+   "description": "Enterprise voice AI platform for building, deploying and monitoring phone agents with self-hosted models.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "AI Agents Directory",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bland-ai.png",
+   "page": "https://agentscouthq.com/tools/bland-ai.html"
+  },
+  {
+   "name": "Nooks",
+   "slug": "nooks",
+   "url": "https://www.nooks.ai/",
+   "website": "https://www.nooks.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Revenue platform whose AI agents dial, sequence, follow up and prep deals alongside sales reps.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "AI Agents Directory",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nooks.png",
+   "page": "https://agentscouthq.com/tools/nooks.html"
+  },
+  {
+   "name": "Agentforce",
+   "slug": "agentforce",
+   "url": "https://www.salesforce.com/agentforce/",
+   "website": "https://www.salesforce.com/agentforce/",
+   "github": "",
+   "category": "business agents",
+   "description": "Salesforce's platform for building and customizing autonomous AI agents that support employees and customers around the clock inside the Salesforce ecosystem.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agentforce.png",
+   "page": "https://agentscouthq.com/tools/agentforce.html"
+  },
+  {
+   "name": "UiPath",
+   "slug": "uipath",
+   "url": "https://www.uipath.com/",
+   "website": "https://www.uipath.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Enterprise automation platform that orchestrates AI agents, software robots and people across business processes with security and compliance controls.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/uipath.png",
+   "page": "https://agentscouthq.com/tools/uipath.html"
+  },
+  {
+   "name": "TRAE",
+   "slug": "trae",
+   "url": "https://www.trae.ai/",
+   "website": "https://www.trae.ai/",
+   "github": "",
+   "category": "coding",
+   "description": "AI coding IDE and agent that works alongside you in your editor to write, edit and run code.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/trae.png",
+   "page": "https://agentscouthq.com/tools/trae.html"
+  },
+  {
+   "name": "WRITER",
+   "slug": "writer",
+   "url": "https://writer.com/",
+   "website": "https://writer.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Enterprise AI agent platform for teams to run on-brand, compliant work with agents built on WRITER's own models.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/writer.png",
+   "page": "https://agentscouthq.com/tools/writer.html"
+  },
+  {
+   "name": "Arize AI",
+   "slug": "arize-ai",
+   "url": "https://arize.com/",
+   "website": "https://arize.com/",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Agent observability and evaluation platform with tracing, evals and experiments for improving AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/arize-ai.png",
+   "page": "https://agentscouthq.com/tools/arize-ai.html"
+  },
+  {
+   "name": "Hume AI",
+   "slug": "hume-ai",
+   "url": "https://www.hume.ai/",
+   "website": "https://www.hume.ai/",
+   "github": "",
+   "category": "voice",
+   "description": "Voice AI company focused on emotionally intelligent speech, with voice-native evaluation and human judgment tooling for voice agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hume-ai.png",
+   "page": "https://agentscouthq.com/tools/hume-ai.html"
+  },
+  {
+   "name": "Cognigy",
+   "slug": "cognigy",
+   "url": "https://www.cognigy.com/",
+   "website": "https://www.cognigy.com/",
+   "github": "",
+   "category": "voice",
+   "description": "NiCE Cognigy's enterprise customer service platform with generative and conversational AI agents across voice and chat.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cognigy.png",
+   "page": "https://agentscouthq.com/tools/cognigy.html"
+  },
+  {
+   "name": "Restack",
+   "slug": "restack",
+   "url": "https://www.restack.io/",
+   "website": "https://www.restack.io/",
+   "github": "",
+   "category": "frameworks",
+   "description": "Platform for designing, testing and running reliable agents at enterprise scale on Kubernetes.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Build an agent"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/restack.png",
+   "page": "https://agentscouthq.com/tools/restack.html"
+  },
+  {
+   "name": "Airtop",
+   "slug": "airtop",
+   "url": "https://www.airtop.ai/",
+   "website": "https://www.airtop.ai/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Turns plain-English workflow descriptions into deterministic agents that work across your apps, APIs and the web.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate the browser",
+    "Automate workflows"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "aiagentslist",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/airtop.png",
+   "page": "https://agentscouthq.com/tools/airtop.html"
+  },
+  {
+   "name": "Skywork",
+   "slug": "skywork",
+   "url": "https://skywork.ai/",
+   "website": "https://skywork.ai/",
+   "github": "",
+   "category": "research",
+   "description": "AI workspace agents that turn a prompt into docs, slides, sheets, podcasts and web pages backed by deep research.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "AI Agents Directory",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/skywork.png",
+   "page": "https://agentscouthq.com/tools/skywork.html"
   }
  ]
 }

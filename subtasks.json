@@ -3142,5 +3142,240 @@
 "mcp-servers",
 "local-models",
 "ide-agents"
+],
+"jasper": [
+"testing-qa",
+"marketing-agents",
+"workflow-automation",
+"multi-agent"
+],
+"glean": [
+"workflow-automation"
+],
+"gemini-notebook": [
+"notebooks",
+"research-agents"
+],
+"lm-studio": [
+"vector-rag",
+"computer-use",
+"local-models"
+],
+"apify": [
+"web-scraping",
+"mcp-gateways"
+],
+"consensus": [
+"research-agents",
+"search-apis"
+],
+"decagon": [],
+"lyro-by-tidio": [
+"sales-agents",
+"support-agents"
+],
+"abacus-ai-chatllm": [],
+"zowie": [
+"support-agents"
+],
+"wordlift-agent": [
+"codebase-context",
+"marketing-agents"
+],
+"clay": [
+"sales-agents",
+"research-agents",
+"workflow-automation"
+],
+"voiceflow": [
+"voice-phone"
+],
+"taskade-ai-agents": [
+"no-code-apps"
+],
+"coderabbit": [
+"code-review",
+"observability"
+],
+"hex": [
+"notebooks"
+],
+"kapa-ai": [],
+"cartesia-sonic": [
+"voice-phone"
+],
+"jason-ai": [
+"text-to-sql",
+"sales-agents"
+],
+"speechmatics": [
+"voice-phone"
+],
+"superagi": [
+"sales-agents"
+],
+"gumloop": [],
+"sierra": [],
+"harpa-ai": [
+"browser-automation"
+],
+"kodif": [],
+"shortwave": [
+"email-agents"
+],
+"browseract": [
+"web-scraping",
+"workflow-automation",
+"no-code-apps"
+],
+"synthflow": [
+"voice-phone",
+"sales-agents"
+],
+"stackai": [
+"no-code-apps"
+],
+"zep": [
+"codebase-context",
+"agent-memory",
+"vector-rag"
+],
+"goodcall": [
+"voice-phone"
+],
+"remio": [
+"email-agents"
+],
+"unify": [
+"sales-agents"
+],
+"spinach-ai": [],
+"delve": [],
+"pin": [],
+"pieces": [
+"agent-memory"
+],
+"alta": [
+"sales-agents"
+],
+"beam-ai": [
+"workflow-automation"
+],
+"confident-ai": [
+"observability",
+"evals"
+],
+"phonely": [
+"voice-phone",
+"support-agents"
+],
+"salesape": [
+"sales-agents"
+],
+"momentic": [
+"testing-qa"
+],
+"kadoa": [
+"observability"
+],
+"origami-agents": [],
+"cubic": [
+"code-review",
+"codebase-context"
+],
+"cotester": [
+"testing-qa"
+],
+"assistant-ui": [],
+"agent-zero": [
+"agent-frameworks"
+],
+"agi-0-by-agi-inc": [
+"computer-use",
+"mobile"
+],
+"athena-intelligence": [],
+"atomic-mail": [
+"email-agents"
+],
+"basis": [],
+"baz": [
+"code-review"
+],
+"bolna": [
+"voice-phone",
+"sales-agents",
+"support-agents"
+],
+"browserable": [
+"browser-automation",
+"agent-frameworks"
+],
+"buildship": [
+"workflow-automation",
+"images-design"
+],
+"coval": [
+"testing-qa",
+"voice-phone",
+"evals"
+],
+"credal": [
+"guardrails",
+"mcp-servers"
+],
+"dosu": [
+"agent-memory"
+],
+"dot": [],
+"enjo": [],
+"forethought": [
+"support-agents"
+],
+"bardeen": [
+"sales-agents",
+"web-scraping"
+],
+"parloa": [
+"voice-phone",
+"support-agents"
+],
+"bland-ai": [
+"voice-phone",
+"observability",
+"local-models"
+],
+"nooks": [
+"sales-agents"
+],
+"agentforce": [],
+"uipath": [
+"workflow-automation",
+"multi-agent"
+],
+"trae": [
+"ide-agents"
+],
+"writer": [],
+"arize-ai": [
+"observability",
+"evals"
+],
+"hume-ai": [
+"voice-phone",
+"evals"
+],
+"cognigy": [
+"voice-phone",
+"support-agents"
+],
+"restack": [
+"images-design"
+],
+"airtop": [
+"workflow-automation"
+],
+"skywork": [
+"research-agents"
 ]
 }

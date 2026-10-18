@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 880 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 957 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,19 +22,19 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 209 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 133 tools
-- [frameworks](https://agentscouthq.com/categories/frameworks.html): 123 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 66 tools
+- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 212 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 140 tools
+- [frameworks](https://agentscouthq.com/categories/frameworks.html): 126 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 72 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 70 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 59 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 57 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 53 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 44 tools
-- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 38 tools
-- [research](https://agentscouthq.com/categories/research.html): 36 tools
-- [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 27 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 25 tools
+- [research](https://agentscouthq.com/categories/research.html): 42 tools
+- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 41 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 35 tools
+- [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 32 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 22 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 18 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 20 tools
 - [games](https://agentscouthq.com/categories/games.html): 16 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 8 tools
 - [models](https://agentscouthq.com/categories/models.html): 5 tools
@@ -72,15 +72,15 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
-- [Jupyter MCP Server](https://agentscouthq.com/tools/jupyter-mcp-server.html) (added 2026-10-18): Datalayer's MCP server that lets AI agents connect to and manage Jupyter notebooks in real time, local or hosted.
-- [CodeGraphContext](https://agentscouthq.com/tools/codegraphcontext.html) (added 2026-10-18): MCP server and CLI that index local code into a graph database so AI assistants can query code relationships.
-- [Postgres MCP Pro](https://agentscouthq.com/tools/postgres-mcp-pro.html) (added 2026-10-18): Postgres MCP server with index tuning, explain plans, health checks and safe SQL execution for agents.
-- [LINE Bot MCP Server](https://agentscouthq.com/tools/line-bot-mcp-server.html) (added 2026-10-18): LINE's preview MCP server that connects an AI agent to a LINE Official Account through the Messaging API.
-- [Sentry MCP](https://agentscouthq.com/tools/sentry-mcp.html) (added 2026-10-18): Sentry's MCP server and CLI that give coding agents access to Sentry issues, errors and traces for debugging.
-- [Next.js DevTools MCP](https://agentscouthq.com/tools/next-js-devtools-mcp.html) (added 2026-10-18): Vercel's MCP server that connects coding agents to running Next.js dev servers for live errors, routes, logs and docs.
-- [Firefox DevTools MCP](https://agentscouthq.com/tools/firefox-devtools-mcp.html) (added 2026-10-18): Mozilla's MCP server that lets AI agents browse with Firefox and inspect pages with its developer tools over WebDriver BiDi.
-- [MotherDuck MCP](https://agentscouthq.com/tools/motherduck-mcp.html) (added 2026-10-18): MotherDuck's MCP server that lets AI assistants run SQL on local DuckDB files, S3-hosted databases and MotherDuck.
-- [Kagi MCP](https://agentscouthq.com/tools/kagi-mcp.html) (added 2026-10-18): Official Kagi MCP server with search and page-extraction tools backed by the Kagi API.
-- [dbt MCP](https://agentscouthq.com/tools/dbt-mcp.html) (added 2026-10-18): dbt Labs' MCP server that gives AI agents context and tools for dbt Core, dbt Fusion and dbt Platform projects.
-- [Cloud Run MCP](https://agentscouthq.com/tools/cloud-run-mcp.html) (added 2026-10-18): Google Cloud's MCP server and Gemini CLI extension that lets AI agents deploy apps to Cloud Run.
-- [Azure DevOps MCP](https://agentscouthq.com/tools/azure-devops-mcp.html) (added 2026-10-18): Microsoft's MCP server that gives AI agents access to Azure DevOps work items, repos, pipelines and more, local or hosted.
+- [Skywork](https://agentscouthq.com/tools/skywork.html) (added 2026-10-18): AI workspace agents that turn a prompt into docs, slides, sheets, podcasts and web pages backed by deep research.
+- [Airtop](https://agentscouthq.com/tools/airtop.html) (added 2026-10-18): Turns plain-English workflow descriptions into deterministic agents that work across your apps, APIs and the web.
+- [Restack](https://agentscouthq.com/tools/restack.html) (added 2026-10-18): Platform for designing, testing and running reliable agents at enterprise scale on Kubernetes.
+- [Cognigy](https://agentscouthq.com/tools/cognigy.html) (added 2026-10-18): NiCE Cognigy's enterprise customer service platform with generative and conversational AI agents across voice and chat.
+- [Hume AI](https://agentscouthq.com/tools/hume-ai.html) (added 2026-10-18): Voice AI company focused on emotionally intelligent speech, with voice-native evaluation and human judgment tooling for voice agents.
+- [Arize AI](https://agentscouthq.com/tools/arize-ai.html) (added 2026-10-18): Agent observability and evaluation platform with tracing, evals and experiments for improving AI agents.
+- [WRITER](https://agentscouthq.com/tools/writer.html) (added 2026-10-18): Enterprise AI agent platform for teams to run on-brand, compliant work with agents built on WRITER's own models.
+- [TRAE](https://agentscouthq.com/tools/trae.html) (added 2026-10-18): AI coding IDE and agent that works alongside you in your editor to write, edit and run code.
+- [UiPath](https://agentscouthq.com/tools/uipath.html) (added 2026-10-18): Enterprise automation platform that orchestrates AI agents, software robots and people across business processes with security and compliance controls.
+- [Agentforce](https://agentscouthq.com/tools/agentforce.html) (added 2026-10-18): Salesforce's platform for building and customizing autonomous AI agents that support employees and customers around the clock inside the Salesforce ecosystem.
+- [Nooks](https://agentscouthq.com/tools/nooks.html) (added 2026-10-18): Revenue platform whose AI agents dial, sequence, follow up and prep deals alongside sales reps.
+- [Bland AI](https://agentscouthq.com/tools/bland-ai.html) (added 2026-10-18): Enterprise voice AI platform for building, deploying and monitoring phone agents with self-hosted models.
