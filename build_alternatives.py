@@ -43,6 +43,7 @@ def pages(t):
     for s,(T,items) in m.items():
         for y in items: tm.setdefault(y["slug"],set()).add(s)
     tg={x["slug"]:S.tags(x) for x in t}
+    global ORD; ORD={k:i for i,k in enumerate(m)}
     cands=sorted([x for x in t if live(x) and x["slug"] not in SKIP],key=lambda x:(not x.get("featured"),-(x.get("github_stars") or 0),x["name"].lower()))
     pairs={X.cslug(a,b) for a,b in X.PAIRS}|{X.cslug(b,a) for a,b in X.PAIRS}
     made=[]; os.makedirs("best",exist_ok=True)
@@ -52,7 +53,7 @@ def pages(t):
         ps=peers(x,t,tm,tg)
         if len(ps)<MIN_PEERS: continue
         alts=ps[:SHOW]; n=x["name"]; sl=f"{x['slug']}-alternatives"; path=f"best/{sl}.html"; canon=B+path
-        tasks=[m[s][0][1] for s in tm.get(x["slug"],[])][:3]
+        tasks=[m[s][0][1] for s in sorted(tm.get(x["slug"],[]),key=ORD.get)][:3]
         opn=sum(y["pricing"] in S.OPEN for y in ps); fr=sum(y["pricing"] in S.FREE for y in ps)
         intro=(f"{e(n)} is a {e(x['category'])} tool: {e(x['description'])} Pricing, as the maker states it: {e(x.get('pricing_detail') or x['pricing'])}."
                +(f" Its GitHub repo has {x['github_stars']:,} stars." if x.get("github_stars") else "")
@@ -62,7 +63,7 @@ def pages(t):
                       +(f' <a href="../compare/{X.cslug(x["slug"],y["slug"]) if X.cslug(x["slug"],y["slug"]) in {X.cslug(a,b) for a,b in X.PAIRS} else X.cslug(y["slug"],x["slug"])}.html">{e(n)} vs {e(y["name"])} →</a>' if X.cslug(x["slug"],y["slug"]) in pairs else "")+'</li>' for y in alts)
         uniq=words(intro)+sum(words(why(x,y,tg)) for y in alts)
         if uniq<MIN_WORDS: continue
-        gf=lambda y:", ".join(m[s][0][1] for s in list(tm.get(y["slug"],[]))[:2]) or y["category"]
+        gf=lambda y:", ".join(m[s][0][1] for s in sorted(tm.get(y["slug"],[]),key=ORD.get)[:2]) or y["category"]
         rows="".join(f'<tr><td><a href="../tools/{y["slug"]}.html">{e(y["name"])}</a></td><td>{e(y["pricing"])}</td><td>{e(lic(y)) or ("Yes" if y["pricing"] in S.OPEN else "No")}</td><td>{(format(y["github_stars"],",") if y.get("github_stars") else "—")}</td><td>{e(gf(y))}</td></tr>' for y in [x]+alts)
         table=(f'<h2 style="font-size:18px;margin:28px 0 10px">{e(n)} vs alternatives at a glance</h2><div class="tablewrap"><table class="cmp"><thead><tr><th scope="col">Tool</th><th scope="col">Pricing</th><th scope="col">Open source / licence</th><th scope="col">GitHub stars</th><th scope="col">Good for</th></tr></thead><tbody>{rows}</tbody></table></div>')
         cmpl=[f'<a href="../compare/{c}.html">{e(X_n(t,c))}</a>' for c in sorted({X.cslug(a,b) for a,b in X.PAIRS if x["slug"] in (a,b)})]
