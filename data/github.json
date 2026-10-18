@@ -1,4 +1,48 @@
 {
+ "21st-magic-mcp": {
+  "repo": "21st-dev/magic-mcp",
+  "stars": 6091,
+  "archived": false,
+  "releases": [
+   [
+    "21st MCP compatibility proxy 0.2.3",
+    "2026-09-09",
+    "https://github.com/21st-dev/magic-mcp/releases/tag/v0.2.3"
+   ]
+  ],
+  "release_tag": "21st MCP compatibility proxy 0.2.3",
+  "release_date": "2026-09-09",
+  "release_url": "https://github.com/21st-dev/magic-mcp/releases/tag/v0.2.3",
+  "pushed": "2026-09-09",
+  "fetched": "2026-10-18"
+ },
+ "5ire": {
+  "repo": "nanbingxyz/5ire",
+  "stars": 5373,
+  "archived": false,
+  "releases": [
+   [
+    "0.15.4",
+    "2026-03-18",
+    "https://github.com/nanbingxyz/5ire/releases/tag/v0.15.4"
+   ],
+   [
+    "v0.15.3",
+    "2026-01-20",
+    "https://github.com/nanbingxyz/5ire/releases/tag/v0.15.3"
+   ],
+   [
+    "0.15.2",
+    "2025-12-23",
+    "https://github.com/nanbingxyz/5ire/releases/tag/v0.15.2"
+   ]
+  ],
+  "release_tag": "0.15.4",
+  "release_date": "2026-03-18",
+  "release_url": "https://github.com/nanbingxyz/5ire/releases/tag/v0.15.4",
+  "pushed": "2026-07-15",
+  "fetched": "2026-10-18"
+ },
  "a2a": {
   "repo": "a2aproject/A2A",
   "stars": 26192,
@@ -161,6 +205,33 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "adala": {
+  "repo": "HumanSignal/Adala",
+  "stars": 1643,
+  "archived": false,
+  "releases": [
+   [
+    "Adala v0.0.4 - Introducing a New Code Environment and Enhanced Automated Prompt ",
+    "2023-11-30",
+    "https://github.com/HumanSignal/Adala/releases/tag/0.0.4"
+   ],
+   [
+    "Adala v0.0.3 – Extending agent’s feedback and control; core skills update; paral",
+    "2023-11-16",
+    "https://github.com/HumanSignal/Adala/releases/tag/0.0.3"
+   ],
+   [
+    "Adala v0.0.2 – Introducing Skill Sets!",
+    "2023-11-02",
+    "https://github.com/HumanSignal/Adala/releases/tag/0.0.2"
+   ]
+  ],
+  "release_tag": "Adala v0.0.4 - Introducing a New Code Environment and Enhanced Automated Prompt ",
+  "release_date": "2023-11-30",
+  "release_url": "https://github.com/HumanSignal/Adala/releases/tag/0.0.4",
+  "pushed": "2026-09-03",
+  "fetched": "2026-10-18"
+ },
  "aden-hive": {
   "repo": "aden-hive/hive",
   "stars": 11110,
@@ -186,6 +257,23 @@
   "release_date": "2026-10-18",
   "release_url": "https://github.com/aden-hive/hive/releases/tag/v1.0.7",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "adr": {
+  "repo": "uber/ADR",
+  "stars": 2064,
+  "archived": false,
+  "releases": [
+   [
+    "ADR Sensor v1.0.0",
+    "2026-07-31",
+    "https://github.com/uber/ADR/releases/tag/sensor-v1.0.0"
+   ]
+  ],
+  "release_tag": "ADR Sensor v1.0.0",
+  "release_date": "2026-07-31",
+  "release_url": "https://github.com/uber/ADR/releases/tag/sensor-v1.0.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "ag-ui": {
@@ -242,6 +330,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "agency-swarm": {
+  "repo": "VRSEN/agency-swarm",
+  "stars": 4604,
+  "archived": false,
+  "releases": [
+   [
+    "v1.11.0",
+    "2026-08-03",
+    "https://github.com/VRSEN/agency-swarm/releases/tag/v1.11.0"
+   ],
+   [
+    "v1.10.5",
+    "2026-07-17",
+    "https://github.com/VRSEN/agency-swarm/releases/tag/v1.10.5"
+   ],
+   [
+    "v1.10.4",
+    "2026-07-17",
+    "https://github.com/VRSEN/agency-swarm/releases/tag/v1.10.4"
+   ]
+  ],
+  "release_tag": "v1.11.0",
+  "release_date": "2026-08-03",
+  "release_url": "https://github.com/VRSEN/agency-swarm/releases/tag/v1.11.0",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
  "agent-device": {
   "repo": "callstack/agent-device",
   "stars": 5063,
@@ -267,6 +382,14 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/callstack/agent-device/releases/tag/nightly%2Fv0.21.29-nightly.20261018.74",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "agent-e": {
+  "repo": "EmergenceAI/Agent-E",
+  "stars": 1252,
+  "archived": false,
+  "releases": [],
+  "pushed": "2025-05-12",
   "fetched": "2026-10-18"
  },
  "agent-governance-toolkit": {
@@ -439,6 +562,33 @@
   "pushed": "2026-10-08",
   "fetched": "2026-10-18"
  },
+ "agent-safehouse": {
+  "repo": "eugene1g/agent-safehouse",
+  "stars": 2110,
+  "archived": false,
+  "releases": [
+   [
+    "v0.12.0",
+    "2026-09-07",
+    "https://github.com/eugene1g/agent-safehouse/releases/tag/v0.12.0"
+   ],
+   [
+    "v0.11.1",
+    "2026-07-17",
+    "https://github.com/eugene1g/agent-safehouse/releases/tag/v0.11.1"
+   ],
+   [
+    "v0.11.0",
+    "2026-07-08",
+    "https://github.com/eugene1g/agent-safehouse/releases/tag/v0.11.0"
+   ]
+  ],
+  "release_tag": "v0.12.0",
+  "release_date": "2026-09-07",
+  "release_url": "https://github.com/eugene1g/agent-safehouse/releases/tag/v0.12.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "agent-service-toolkit": {
   "repo": "JoshuaC215/agent-service-toolkit",
   "stars": 4531,
@@ -472,6 +622,87 @@
   "release_date": "2026-09-23",
   "release_url": "https://github.com/2FastLabs/agent-squad/releases/tag/typescript_1.1.5",
   "pushed": "2026-10-02",
+  "fetched": "2026-10-18"
+ },
+ "agent-teams": {
+  "repo": "777genius/agent-teams-ai",
+  "stars": 2273,
+  "archived": false,
+  "releases": [
+   [
+    "release-tooling-v2.17.10-windows-resume-ota",
+    "2026-10-09",
+    "https://github.com/777genius/agent-teams-ai/releases/tag/release-tooling-v2.17.10-windows-resume-ota"
+   ],
+   [
+    "release-tooling-v2.17.10-windows-remaining-lint",
+    "2026-10-09",
+    "https://github.com/777genius/agent-teams-ai/releases/tag/release-tooling-v2.17.10-windows-remaining-lint"
+   ],
+   [
+    "release-tooling-v2.17.10-windows-remaining",
+    "2026-10-09",
+    "https://github.com/777genius/agent-teams-ai/releases/tag/release-tooling-v2.17.10-windows-remaining"
+   ]
+  ],
+  "release_tag": "release-tooling-v2.17.10-windows-resume-ota",
+  "release_date": "2026-10-09",
+  "release_url": "https://github.com/777genius/agent-teams-ai/releases/tag/release-tooling-v2.17.10-windows-resume-ota",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "agent-vault": {
+  "repo": "Infisical/agent-vault",
+  "stars": 2373,
+  "archived": false,
+  "releases": [
+   [
+    "v0.40.0",
+    "2026-10-01",
+    "https://github.com/Infisical/agent-vault/releases/tag/v0.40.0"
+   ],
+   [
+    "v0.39.3",
+    "2026-09-01",
+    "https://github.com/Infisical/agent-vault/releases/tag/v0.39.3"
+   ],
+   [
+    "v0.39.2",
+    "2026-09-01",
+    "https://github.com/Infisical/agent-vault/releases/tag/v0.39.2"
+   ]
+  ],
+  "release_tag": "v0.40.0",
+  "release_date": "2026-10-01",
+  "release_url": "https://github.com/Infisical/agent-vault/releases/tag/v0.40.0",
+  "pushed": "2026-10-01",
+  "fetched": "2026-10-18"
+ },
+ "agent-zero": {
+  "repo": "agent0ai/agent-zero",
+  "stars": 19505,
+  "archived": false,
+  "releases": [
+   [
+    "v2.14",
+    "2026-10-13",
+    "https://github.com/agent0ai/agent-zero/releases/tag/v2.14"
+   ],
+   [
+    "v2.13",
+    "2026-09-23",
+    "https://github.com/agent0ai/agent-zero/releases/tag/v2.13"
+   ],
+   [
+    "v2.12",
+    "2026-09-09",
+    "https://github.com/agent0ai/agent-zero/releases/tag/v2.12"
+   ]
+  ],
+  "release_tag": "v2.14",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/agent0ai/agent-zero/releases/tag/v2.14",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "agenta": {
@@ -706,6 +937,33 @@
   "pushed": "2026-06-25",
   "fetched": "2026-10-18"
  },
+ "agents-cli": {
+  "repo": "google/agents-cli",
+  "stars": 6099,
+  "archived": false,
+  "releases": [
+   [
+    "Release v1.10.0",
+    "2026-10-12",
+    "https://github.com/google/agents-cli/releases/tag/v1.10.0"
+   ],
+   [
+    "Release v1.9.0",
+    "2026-10-06",
+    "https://github.com/google/agents-cli/releases/tag/v1.9.0"
+   ],
+   [
+    "Release v1.8.0",
+    "2026-09-30",
+    "https://github.com/google/agents-cli/releases/tag/v1.8.0"
+   ]
+  ],
+  "release_tag": "Release v1.10.0",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/google/agents-cli/releases/tag/v1.10.0",
+  "pushed": "2026-10-12",
+  "fetched": "2026-10-18"
+ },
  "agentscope": {
   "repo": "agentscope-ai/agentscope",
   "stars": 33442,
@@ -758,6 +1016,60 @@
   "release_date": "2026-10-08",
   "release_url": "https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.1.0-BETA1",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "agentsmesh": {
+  "repo": "AgentsMesh/AgentsMesh",
+  "stars": 2362,
+  "archived": false,
+  "releases": [
+   [
+    "AgentsMesh Runner v0.44.8-nightly.20260923 (nightly)",
+    "2026-09-23",
+    "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.8-nightly.20260923"
+   ],
+   [
+    "AgentsMesh Runner v0.44.7",
+    "2026-07-25",
+    "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.7"
+   ],
+   [
+    "AgentsMesh Runner v0.44.6",
+    "2026-07-24",
+    "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.6"
+   ]
+  ],
+  "release_tag": "AgentsMesh Runner v0.44.8-nightly.20260923 (nightly)",
+  "release_date": "2026-09-23",
+  "release_url": "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.8-nightly.20260923",
+  "pushed": "2026-09-23",
+  "fetched": "2026-10-18"
+ },
+ "agentuniverse": {
+  "repo": "agentuniverse-ai/agentUniverse",
+  "stars": 2383,
+  "archived": false,
+  "releases": [
+   [
+    "v0.0.19.1",
+    "2026-09-14",
+    "https://github.com/agentuniverse-ai/agentUniverse/releases/tag/v0.0.19.1"
+   ],
+   [
+    "v0.0.19",
+    "2025-11-17",
+    "https://github.com/agentuniverse-ai/agentUniverse/releases/tag/v0.0.19"
+   ],
+   [
+    "v0.0.18",
+    "2025-07-10",
+    "https://github.com/agentuniverse-ai/agentUniverse/releases/tag/v0.0.18"
+   ]
+  ],
+  "release_tag": "v0.0.19.1",
+  "release_date": "2026-09-14",
+  "release_url": "https://github.com/agentuniverse-ai/agentUniverse/releases/tag/v0.0.19.1",
+  "pushed": "2026-07-28",
   "fetched": "2026-10-18"
  },
  "agno": {
@@ -822,6 +1134,33 @@
   "pushed": "2026-08-26",
   "fetched": "2026-10-18"
  },
+ "aide-ml": {
+  "repo": "WecoAI/aideml",
+  "stars": 1583,
+  "archived": false,
+  "releases": [
+   [
+    "v0.2.2",
+    "2025-11-05",
+    "https://github.com/WecoAI/aideml/releases/tag/v0.2.2"
+   ],
+   [
+    "aideml v0.2.0",
+    "2025-01-23",
+    "https://github.com/WecoAI/aideml/releases/tag/v0.2.0"
+   ],
+   [
+    "aideml v0.1.4",
+    "2024-04-29",
+    "https://github.com/WecoAI/aideml/releases/tag/v0.1.4"
+   ]
+  ],
+  "release_tag": "v0.2.2",
+  "release_date": "2025-11-05",
+  "release_url": "https://github.com/WecoAI/aideml/releases/tag/v0.2.2",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "aider": {
   "repo": "Aider-AI/aider",
   "stars": 49605,
@@ -849,6 +1188,33 @@
   "pushed": "2026-05-22",
   "fetched": "2026-10-18"
  },
+ "aio-sandbox": {
+  "repo": "agent-infra/sandbox",
+  "stars": 6181,
+  "archived": false,
+  "releases": [
+   [
+    "v1.11.0",
+    "2026-06-23",
+    "https://github.com/agent-infra/sandbox/releases/tag/v1.11.0"
+   ],
+   [
+    "v1.10.0",
+    "2026-06-15",
+    "https://github.com/agent-infra/sandbox/releases/tag/v1.10.0"
+   ],
+   [
+    "v1.9.3",
+    "2026-05-29",
+    "https://github.com/agent-infra/sandbox/releases/tag/v1.9.3"
+   ]
+  ],
+  "release_tag": "v1.11.0",
+  "release_date": "2026-06-23",
+  "release_url": "https://github.com/agent-infra/sandbox/releases/tag/v1.11.0",
+  "pushed": "2026-09-14",
+  "fetched": "2026-10-18"
+ },
  "aionui": {
   "repo": "iOfficeAI/AionUi",
   "stars": 33609,
@@ -874,6 +1240,33 @@
   "release_date": "2026-09-09",
   "release_url": "https://github.com/iOfficeAI/AionUi/releases/tag/v2.2.2",
   "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "aios": {
+  "repo": "agiresearch/AIOS",
+  "stars": 6480,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.0",
+    "2026-01-22",
+    "https://github.com/agiresearch/AIOS/releases/tag/v0.3.0"
+   ],
+   [
+    "v0.2.2",
+    "2025-03-08",
+    "https://github.com/agiresearch/AIOS/releases/tag/v0.2.2"
+   ],
+   [
+    "v0.2.1",
+    "2025-01-20",
+    "https://github.com/agiresearch/AIOS/releases/tag/v0.2.1"
+   ]
+  ],
+  "release_tag": "v0.3.0",
+  "release_date": "2026-01-22",
+  "release_url": "https://github.com/agiresearch/AIOS/releases/tag/v0.3.0",
+  "pushed": "2026-07-20",
   "fetched": "2026-10-18"
  },
  "alchemy-mcp-server": {
@@ -928,6 +1321,60 @@
   "release_date": "2026-10-09",
   "release_url": "https://github.com/almanak-co/sdk/releases/tag/v2.29.3-rc1",
   "pushed": "2026-10-09",
+  "fetched": "2026-10-18"
+ },
+ "ante": {
+  "repo": "AntigmaLabs/ante",
+  "stars": 2011,
+  "archived": false,
+  "releases": [
+   [
+    "v0.2.12",
+    "2026-10-15",
+    "https://github.com/AntigmaLabs/ante/releases/tag/v0.2.12"
+   ],
+   [
+    "v0.2.11",
+    "2026-10-12",
+    "https://github.com/AntigmaLabs/ante/releases/tag/v0.2.11"
+   ],
+   [
+    "v0.2.10",
+    "2026-10-11",
+    "https://github.com/AntigmaLabs/ante/releases/tag/v0.2.10"
+   ]
+  ],
+  "release_tag": "v0.2.12",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/AntigmaLabs/ante/releases/tag/v0.2.12",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "antigravity-sdk": {
+  "repo": "google-antigravity/antigravity-sdk-python",
+  "stars": 3773,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.22",
+    "2026-10-13",
+    "https://github.com/google-antigravity/antigravity-sdk-python/releases/tag/v0.1.22"
+   ],
+   [
+    "v0.1.21",
+    "2026-10-07",
+    "https://github.com/google-antigravity/antigravity-sdk-python/releases/tag/v0.1.21"
+   ],
+   [
+    "v0.1.20",
+    "2026-09-27",
+    "https://github.com/google-antigravity/antigravity-sdk-python/releases/tag/v0.1.20"
+   ]
+  ],
+  "release_tag": "v0.1.22",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/google-antigravity/antigravity-sdk-python/releases/tag/v0.1.22",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "antv-mcp-server-chart": {
@@ -1011,6 +1458,33 @@
   "pushed": "2026-10-03",
   "fetched": "2026-10-18"
  },
+ "apache-maka": {
+  "repo": "apache/maka",
+  "stars": 5843,
+  "archived": false,
+  "releases": [
+   [
+    "Maka Desktop Nightly 0.2.1-dev.89.20261016",
+    "2026-10-16",
+    "https://github.com/apache/maka/releases/tag/v0.2.1-dev.89.20261016"
+   ],
+   [
+    "Maka Desktop Nightly 0.2.1-dev.88.20261016",
+    "2026-10-16",
+    "https://github.com/apache/maka/releases/tag/v0.2.1-dev.88.20261016"
+   ],
+   [
+    "Maka Desktop Nightly 0.2.1-dev.85.20261014",
+    "2026-10-14",
+    "https://github.com/apache/maka/releases/tag/v0.2.1-dev.85.20261014"
+   ]
+  ],
+  "release_tag": "Maka Desktop Nightly 0.2.1-dev.89.20261016",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/apache/maka/releases/tag/v0.2.1-dev.89.20261016",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "apify-mcp-server": {
   "repo": "apify/apify-mcp-server",
   "stars": 11776,
@@ -1035,6 +1509,33 @@
   "release_tag": "0.18.4",
   "release_date": "2026-10-16",
   "release_url": "https://github.com/apify/apify-mcp-server/releases/tag/v0.18.4",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "apm-agent-package-manager": {
+  "repo": "microsoft/apm",
+  "stars": 4032,
+  "archived": false,
+  "releases": [
+   [
+    "v0.33.0",
+    "2026-10-02",
+    "https://github.com/microsoft/apm/releases/tag/v0.33.0"
+   ],
+   [
+    "v0.32.0",
+    "2026-09-25",
+    "https://github.com/microsoft/apm/releases/tag/v0.32.0"
+   ],
+   [
+    "v0.31.0",
+    "2026-09-15",
+    "https://github.com/microsoft/apm/releases/tag/v0.31.0"
+   ]
+  ],
+  "release_tag": "v0.33.0",
+  "release_date": "2026-10-02",
+  "release_url": "https://github.com/microsoft/apm/releases/tag/v0.33.0",
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
@@ -1173,6 +1674,60 @@
   "pushed": "2026-10-08",
   "fetched": "2026-10-18"
  },
+ "assistant-ui": {
+  "repo": "assistant-ui/assistant-ui",
+  "stars": 12594,
+  "archived": false,
+  "releases": [
+   [
+    "tw-shimmer@0.4.14",
+    "2026-10-15",
+    "https://github.com/assistant-ui/assistant-ui/releases/tag/tw-shimmer%400.4.14"
+   ],
+   [
+    "heat-graph@0.0.25",
+    "2026-10-15",
+    "https://github.com/assistant-ui/assistant-ui/releases/tag/heat-graph%400.0.25"
+   ],
+   [
+    "generative-frame@0.0.6",
+    "2026-10-15",
+    "https://github.com/assistant-ui/assistant-ui/releases/tag/generative-frame%400.0.6"
+   ]
+  ],
+  "release_tag": "tw-shimmer@0.4.14",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/assistant-ui/assistant-ui/releases/tag/tw-shimmer%400.4.14",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "astrbot": {
+  "repo": "AstrBotDevs/AstrBot",
+  "stars": 42106,
+  "archived": false,
+  "releases": [
+   [
+    "v4.29.1",
+    "2026-10-17",
+    "https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.1"
+   ],
+   [
+    "v4.29.0",
+    "2026-10-14",
+    "https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.0"
+   ],
+   [
+    "v4.29.0-beta.2",
+    "2026-10-10",
+    "https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.0-beta.2"
+   ]
+  ],
+  "release_tag": "v4.29.1",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/AstrBotDevs/AstrBot/releases/tag/v4.29.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "astron-agent": {
   "repo": "iflytek/astron-agent",
   "stars": 8911,
@@ -1200,12 +1755,93 @@
   "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
+ "astronrpa": {
+  "repo": "iflytek/astron-rpa",
+  "stars": 5276,
+  "archived": false,
+  "releases": [
+   [
+    "Astron RPA v1.1.6 (Release)",
+    "2026-08-03",
+    "https://github.com/iflytek/astron-rpa/releases/tag/v1.1.6"
+   ],
+   [
+    "Astron RPA v1.1.5 (Release)",
+    "2026-01-30",
+    "https://github.com/iflytek/astron-rpa/releases/tag/v1.1.5"
+   ],
+   [
+    "Astron RPA v1.1.2-nightly · Rolling Preview (Pre-Release)",
+    "2025-12-11",
+    "https://github.com/iflytek/astron-rpa/releases/tag/v1.1.2-nightly"
+   ]
+  ],
+  "release_tag": "Astron RPA v1.1.6 (Release)",
+  "release_date": "2026-08-03",
+  "release_url": "https://github.com/iflytek/astron-rpa/releases/tag/v1.1.6",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "atlassian-rovo-mcp-server": {
   "repo": "atlassian/atlassian-mcp-server",
   "stars": 1103,
   "archived": false,
   "releases": [],
   "pushed": "2026-10-07",
+  "fetched": "2026-10-18"
+ },
+ "atmosphere": {
+  "repo": "Atmosphere/atmosphere",
+  "stars": 3820,
+  "archived": false,
+  "releases": [
+   [
+    "js-v5.0.51",
+    "2026-10-17",
+    "https://github.com/Atmosphere/atmosphere/releases/tag/js-v5.0.51"
+   ],
+   [
+    "js-v5.0.50",
+    "2026-10-17",
+    "https://github.com/Atmosphere/atmosphere/releases/tag/js-v5.0.50"
+   ],
+   [
+    "Atmosphere 4.0.75",
+    "2026-10-17",
+    "https://github.com/Atmosphere/atmosphere/releases/tag/atmosphere-4.0.75"
+   ]
+  ],
+  "release_tag": "js-v5.0.51",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/Atmosphere/atmosphere/releases/tag/js-v5.0.51",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "atomic-agent": {
+  "repo": "AtomicBot-ai/atomic-agent",
+  "stars": 3391,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.9",
+    "2026-10-15",
+    "https://github.com/AtomicBot-ai/atomic-agent/releases/tag/v0.6.9"
+   ],
+   [
+    "Desktop v0.0.3",
+    "2026-10-15",
+    "https://github.com/AtomicBot-ai/atomic-agent/releases/tag/desktop-v0.0.3"
+   ],
+   [
+    "v0.6.8",
+    "2026-10-13",
+    "https://github.com/AtomicBot-ai/atomic-agent/releases/tag/v0.6.8"
+   ]
+  ],
+  "release_tag": "v0.6.9",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/AtomicBot-ai/atomic-agent/releases/tag/v0.6.9",
+  "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
  "auth0-mcp-server": {
@@ -1233,6 +1869,33 @@
   "release_date": "2026-08-13",
   "release_url": "https://github.com/auth0/auth0-mcp-server/releases/tag/v0.1.0-beta.19",
   "pushed": "2026-08-13",
+  "fetched": "2026-10-18"
+ },
+ "autodev": {
+  "repo": "phodal/auto-dev",
+  "stars": 4558,
+  "archived": false,
+  "releases": [
+   [
+    "AutoDev Xiuper compose-v3.0.0-alpha5",
+    "2026-02-07",
+    "https://github.com/phodal/auto-dev/releases/tag/compose-v3.0.0-alpha5"
+   ],
+   [
+    "compose-v3.0.0-alpha4",
+    "2026-02-07",
+    "https://github.com/phodal/auto-dev/releases/tag/compose-v3.0.0-alpha4"
+   ],
+   [
+    "AutoDev Xiuper compose-v3.0.0-alpha3",
+    "2026-02-07",
+    "https://github.com/phodal/auto-dev/releases/tag/compose-v3.0.0-alpha3"
+   ]
+  ],
+  "release_tag": "AutoDev Xiuper compose-v3.0.0-alpha5",
+  "release_date": "2026-02-07",
+  "release_url": "https://github.com/phodal/auto-dev/releases/tag/compose-v3.0.0-alpha5",
+  "pushed": "2026-09-25",
   "fetched": "2026-10-18"
  },
  "autodistill": {
@@ -1370,6 +2033,33 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "azure-devops-mcp": {
+  "repo": "microsoft/azure-devops-mcp",
+  "stars": 2057,
+  "archived": false,
+  "releases": [
+   [
+    "v2.10.0",
+    "2026-09-09",
+    "https://github.com/microsoft/azure-devops-mcp/releases/tag/v2.10.0"
+   ],
+   [
+    "v2.9.0",
+    "2026-07-30",
+    "https://github.com/microsoft/azure-devops-mcp/releases/tag/v2.9.0"
+   ],
+   [
+    "v2.8.0",
+    "2026-06-24",
+    "https://github.com/microsoft/azure-devops-mcp/releases/tag/v2.8.0"
+   ]
+  ],
+  "release_tag": "v2.10.0",
+  "release_date": "2026-09-09",
+  "release_url": "https://github.com/microsoft/azure-devops-mcp/releases/tag/v2.10.0",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "azure-mcp-server": {
   "repo": "microsoft/mcp",
   "stars": 3780,
@@ -1441,6 +2131,87 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "baml": {
+  "repo": "BoundaryML/baml",
+  "stars": 9421,
+  "archived": false,
+  "releases": [
+   [
+    "baml-language-source-f52b47fe584ca4a745fef219e7f62931a4e229c9: speedtest: worklo",
+    "2026-10-17",
+    "https://github.com/BoundaryML/baml/releases/tag/baml-language-source-f52b47fe584ca4a745fef219e7f62931a4e229c9"
+   ],
+   [
+    "baml-language-source-13e20f5771467e61a1d8b257f4434b9379d80f7d",
+    "2026-10-17",
+    "https://github.com/BoundaryML/baml/releases/tag/baml-language-source-13e20f5771467e61a1d8b257f4434b9379d80f7d"
+   ],
+   [
+    "baml-language-source-8afeb7e2cfc69cfc6b5c93932e57c819d5d49403: Follow up on the ",
+    "2026-10-17",
+    "https://github.com/BoundaryML/baml/releases/tag/baml-language-source-8afeb7e2cfc69cfc6b5c93932e57c819d5d49403"
+   ]
+  ],
+  "release_tag": "baml-language-source-f52b47fe584ca4a745fef219e7f62931a4e229c9: speedtest: worklo",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/BoundaryML/baml/releases/tag/baml-language-source-f52b47fe584ca4a745fef219e7f62931a4e229c9",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "baserow": {
+  "repo": "baserow/baserow",
+  "stars": 6171,
+  "archived": false,
+  "releases": [
+   [
+    "2.4.1",
+    "2026-10-13",
+    "https://github.com/baserow/baserow/releases/tag/2.4.1"
+   ],
+   [
+    "2.4.0",
+    "2026-09-30",
+    "https://github.com/baserow/baserow/releases/tag/2.4.0"
+   ],
+   [
+    "2.3.4",
+    "2026-09-15",
+    "https://github.com/baserow/baserow/releases/tag/2.3.4"
+   ]
+  ],
+  "release_tag": "2.4.1",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/baserow/baserow/releases/tag/2.4.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "basic-memory": {
+  "repo": "basicmachines-co/basic-memory",
+  "stars": 4266,
+  "archived": false,
+  "releases": [
+   [
+    "v0.23.2",
+    "2026-08-25",
+    "https://github.com/basicmachines-co/basic-memory/releases/tag/v0.23.2"
+   ],
+   [
+    "v0.23.1",
+    "2026-08-25",
+    "https://github.com/basicmachines-co/basic-memory/releases/tag/v0.23.1"
+   ],
+   [
+    "v0.23.0",
+    "2026-08-24",
+    "https://github.com/basicmachines-co/basic-memory/releases/tag/v0.23.0"
+   ]
+  ],
+  "release_tag": "v0.23.2",
+  "release_date": "2026-08-25",
+  "release_url": "https://github.com/basicmachines-co/basic-memory/releases/tag/v0.23.2",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "beads": {
   "repo": "gastownhall/beads",
   "stars": 27980,
@@ -1468,12 +2239,66 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "beeai-framework": {
+  "repo": "i-am-bee/beeai-framework",
+  "stars": 3436,
+  "archived": false,
+  "releases": [
+   [
+    "typescript_v0.1.31",
+    "2026-09-28",
+    "https://github.com/i-am-bee/beeai-framework/releases/tag/typescript_v0.1.31"
+   ],
+   [
+    "python_v0.1.85",
+    "2026-09-28",
+    "https://github.com/i-am-bee/beeai-framework/releases/tag/python_v0.1.85"
+   ],
+   [
+    "python_v0.1.84",
+    "2026-09-15",
+    "https://github.com/i-am-bee/beeai-framework/releases/tag/python_v0.1.84"
+   ]
+  ],
+  "release_tag": "typescript_v0.1.31",
+  "release_date": "2026-09-28",
+  "release_url": "https://github.com/i-am-bee/beeai-framework/releases/tag/typescript_v0.1.31",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
  "bicscan-mcp": {
   "repo": "ahnlabio/bicscan-mcp",
   "stars": 16,
   "archived": false,
   "releases": [],
   "pushed": "2025-03-25",
+  "fetched": "2026-10-18"
+ },
+ "bifrost": {
+  "repo": "maximhq/bifrost",
+  "stars": 8906,
+  "archived": false,
+  "releases": [
+   [
+    "Bifrost HTTP v2.3.0",
+    "2026-10-13",
+    "https://github.com/maximhq/bifrost/releases/tag/transports%2Fv2.3.0"
+   ],
+   [
+    "Plugin telemetry v1.9.0",
+    "2026-10-13",
+    "https://github.com/maximhq/bifrost/releases/tag/plugins%2Ftelemetry%2Fv1.9.0"
+   ],
+   [
+    "Plugin semanticcache v1.7.0",
+    "2026-10-13",
+    "https://github.com/maximhq/bifrost/releases/tag/plugins%2Fsemanticcache%2Fv1.7.0"
+   ]
+  ],
+  "release_tag": "Bifrost HTTP v2.3.0",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/maximhq/bifrost/releases/tag/transports%2Fv2.3.0",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "big-agi": {
@@ -1538,6 +2363,33 @@
   "pushed": "2026-09-06",
   "fetched": "2026-10-18"
  },
+ "bionic": {
+  "repo": "bionic-gpt/bionic-gpt",
+  "stars": 2395,
+  "archived": false,
+  "releases": [
+   [
+    "v1.12.28",
+    "2026-10-01",
+    "https://github.com/bionic-gpt/bionic-gpt/releases/tag/v1.12.28"
+   ],
+   [
+    "v1.12.28-rc.1",
+    "2026-10-01",
+    "https://github.com/bionic-gpt/bionic-gpt/releases/tag/v1.12.28-rc.1"
+   ],
+   [
+    "v1.12.27",
+    "2026-09-28",
+    "https://github.com/bionic-gpt/bionic-gpt/releases/tag/v1.12.27"
+   ]
+  ],
+  "release_tag": "v1.12.28",
+  "release_date": "2026-10-01",
+  "release_url": "https://github.com/bionic-gpt/bionic-gpt/releases/tag/v1.12.28",
+  "pushed": "2026-10-07",
+  "fetched": "2026-10-18"
+ },
  "blockscout-mcp": {
   "repo": "blockscout/mcp-server",
   "stars": 46,
@@ -1571,6 +2423,33 @@
   "archived": false,
   "releases": [],
   "pushed": "2024-12-17",
+  "fetched": "2026-10-18"
+ },
+ "botpress": {
+  "repo": "botpress/botpress",
+  "stars": 14956,
+  "archived": false,
+  "releases": [
+   [
+    "chat-2026-08-12_13-16-40",
+    "2026-08-12",
+    "https://github.com/botpress/botpress/releases/tag/chat-2026-08-12_13-16-40"
+   ],
+   [
+    "chat-2026-08-11_08-54-48",
+    "2026-08-11",
+    "https://github.com/botpress/botpress/releases/tag/chat-2026-08-11_08-54-48"
+   ],
+   [
+    "chat-2026-08-07_12-59-04: chore(botpress): migrate from using prettier to oxfmt ",
+    "2026-08-07",
+    "https://github.com/botpress/botpress/releases/tag/chat-2026-08-07_12-59-04"
+   ]
+  ],
+  "release_tag": "chat-2026-08-12_13-16-40",
+  "release_date": "2026-08-12",
+  "release_url": "https://github.com/botpress/botpress/releases/tag/chat-2026-08-12_13-16-40",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "botsharp": {
@@ -1733,6 +2612,68 @@
   "release_date": "2026-10-15",
   "release_url": "https://github.com/browser-use/browser-use/releases/tag/0.13.13",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "browser-use-web-ui": {
+  "repo": "browser-use/web-ui",
+  "stars": 16618,
+  "archived": false,
+  "releases": [
+   [
+    "WebUI or VibeSurf? cdb-use is all you need 🚀",
+    "2025-08-31",
+    "https://github.com/browser-use/web-ui/releases/tag/v3.0.0"
+   ],
+   [
+    "💥 Browser-Use + MCP: Unleashing Agent Power Beyond the Browser! 🚀",
+    "2025-05-18",
+    "https://github.com/browser-use/web-ui/releases/tag/v2.0.0"
+   ],
+   [
+    "Security Update & UI Enhancements!",
+    "2025-04-12",
+    "https://github.com/browser-use/web-ui/releases/tag/v1.7"
+   ]
+  ],
+  "release_tag": "WebUI or VibeSurf? cdb-use is all you need 🚀",
+  "release_date": "2025-08-31",
+  "release_url": "https://github.com/browser-use/web-ui/releases/tag/v3.0.0",
+  "pushed": "2026-05-15",
+  "fetched": "2026-10-18"
+ },
+ "browserable": {
+  "repo": "browserable/browserable",
+  "stars": 1207,
+  "archived": false,
+  "releases": [],
+  "pushed": "2025-08-27",
+  "fetched": "2026-10-18"
+ },
+ "browsergym": {
+  "repo": "ServiceNow/BrowserGym",
+  "stars": 1407,
+  "archived": false,
+  "releases": [
+   [
+    "v0.14.3",
+    "2026-01-20",
+    "https://github.com/ServiceNow/BrowserGym/releases/tag/v0.14.3"
+   ],
+   [
+    "Release v0.14.3.dev4",
+    "2026-01-08",
+    "https://github.com/ServiceNow/BrowserGym/releases/tag/v0.14.3.dev4"
+   ],
+   [
+    "v0.14.3.dev3",
+    "2025-12-15",
+    "https://github.com/ServiceNow/BrowserGym/releases/tag/v0.14.3.dev3"
+   ]
+  ],
+  "release_tag": "v0.14.3",
+  "release_date": "2026-01-20",
+  "release_url": "https://github.com/ServiceNow/BrowserGym/releases/tag/v0.14.3",
+  "pushed": "2026-10-05",
   "fetched": "2026-10-18"
  },
  "browseros": {
@@ -1951,12 +2892,66 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "cc-switch": {
+  "repo": "farion1231/cc-switch",
+  "stars": 145767,
+  "archived": false,
+  "releases": [
+   [
+    "CC Switch v4.0.15",
+    "2026-10-17",
+    "https://github.com/farion1231/cc-switch/releases/tag/v4.0.15"
+   ],
+   [
+    "CC Switch v4.0.14",
+    "2026-10-16",
+    "https://github.com/farion1231/cc-switch/releases/tag/v4.0.14"
+   ],
+   [
+    "CC Switch v4.0.13",
+    "2026-10-15",
+    "https://github.com/farion1231/cc-switch/releases/tag/v4.0.13"
+   ]
+  ],
+  "release_tag": "CC Switch v4.0.15",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/farion1231/cc-switch/releases/tag/v4.0.15",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "chainaware": {
   "repo": "ChainAware/behavioral-prediction-mcp",
   "stars": 10,
   "archived": false,
   "releases": [],
   "pushed": "2026-08-11",
+  "fetched": "2026-10-18"
+ },
+ "chatdev": {
+  "repo": "OpenBMB/ChatDev",
+  "stars": 34545,
+  "archived": false,
+  "releases": [
+   [
+    "v2.2.0:",
+    "2026-03-23",
+    "https://github.com/OpenBMB/ChatDev/releases/tag/v2.2.0"
+   ],
+   [
+    "v2.1.0",
+    "2026-01-22",
+    "https://github.com/OpenBMB/ChatDev/releases/tag/v2.1.0"
+   ],
+   [
+    "ChatDev 2.0 Release",
+    "2026-01-07",
+    "https://github.com/OpenBMB/ChatDev/releases/tag/v2.0.0"
+   ]
+  ],
+  "release_tag": "v2.2.0:",
+  "release_date": "2026-03-23",
+  "release_url": "https://github.com/OpenBMB/ChatDev/releases/tag/v2.2.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "chaterm": {
@@ -1984,6 +2979,33 @@
   "release_date": "2026-09-24",
   "release_url": "https://github.com/chaterm/Chaterm/releases/tag/v0.12.5",
   "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "chatmcp": {
+  "repo": "daodao97/chatmcp",
+  "stars": 2228,
+  "archived": false,
+  "releases": [
+   [
+    "ChatMCP v0.0.76 Release Notes 🚀",
+    "2025-08-25",
+    "https://github.com/daodao97/chatmcp/releases/tag/v0.0.76"
+   ],
+   [
+    "v0.0.75",
+    "2025-08-25",
+    "https://github.com/daodao97/chatmcp/releases/tag/v0.0.75"
+   ],
+   [
+    "v0.0.74",
+    "2025-08-20",
+    "https://github.com/daodao97/chatmcp/releases/tag/v0.0.74"
+   ]
+  ],
+  "release_tag": "ChatMCP v0.0.76 Release Notes 🚀",
+  "release_date": "2025-08-25",
+  "release_url": "https://github.com/daodao97/chatmcp/releases/tag/v0.0.76",
+  "pushed": "2026-09-07",
   "fetched": "2026-10-18"
  },
  "chatollama": {
@@ -2038,6 +3060,33 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/CherryHQ/cherry-studio/releases/tag/v2.1.7",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "cheshire-cat": {
+  "repo": "cheshire-cat-ai/core",
+  "stars": 3095,
+  "archived": false,
+  "releases": [
+   [
+    "2.0.23",
+    "2026-07-08",
+    "https://github.com/cheshire-cat-ai/core/releases/tag/2.0.23"
+   ],
+   [
+    "2.0.22",
+    "2026-07-04",
+    "https://github.com/cheshire-cat-ai/core/releases/tag/2.0.22"
+   ],
+   [
+    "2.0.21",
+    "2026-06-22",
+    "https://github.com/cheshire-cat-ai/core/releases/tag/2.0.21"
+   ]
+  ],
+  "release_tag": "2.0.23",
+  "release_date": "2026-07-08",
+  "release_url": "https://github.com/cheshire-cat-ai/core/releases/tag/2.0.23",
+  "pushed": "2026-07-29",
   "fetched": "2026-10-18"
  },
  "chroma": {
@@ -2102,6 +3151,60 @@
   "pushed": "2026-10-12",
   "fetched": "2026-10-18"
  },
+ "cindy": {
+  "repo": "makecindy/cindy",
+  "stars": 3183,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.110",
+    "2026-10-16",
+    "https://github.com/makecindy/cindy/releases/tag/v0.1.110"
+   ],
+   [
+    "v0.1.110-beta: Merge pull request #6148 from makecindy/fix/cindy-ai-key-auto-res",
+    "2026-10-15",
+    "https://github.com/makecindy/cindy/releases/tag/v0.1.110-beta"
+   ],
+   [
+    "v0.1.109",
+    "2026-10-15",
+    "https://github.com/makecindy/cindy/releases/tag/v0.1.109"
+   ]
+  ],
+  "release_tag": "v0.1.110",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/makecindy/cindy/releases/tag/v0.1.110",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "claude-agent-sdk-python": {
+  "repo": "anthropics/claude-agent-sdk-python",
+  "stars": 8293,
+  "archived": false,
+  "releases": [
+   [
+    "v0.2.168",
+    "2026-10-15",
+    "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168"
+   ],
+   [
+    "v0.2.167",
+    "2026-10-14",
+    "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167"
+   ],
+   [
+    "v0.2.166",
+    "2026-10-14",
+    "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.166"
+   ]
+  ],
+  "release_tag": "v0.2.168",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.168",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "claude-code": {
   "repo": "anthropics/claude-code",
   "stars": 152149,
@@ -2129,6 +3232,33 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "claude-context": {
+  "repo": "zilliztech/claude-context",
+  "stars": 12623,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.11",
+    "2026-04-28",
+    "https://github.com/zilliztech/claude-context/releases/tag/v0.1.11"
+   ],
+   [
+    "v0.1.10",
+    "2026-04-27",
+    "https://github.com/zilliztech/claude-context/releases/tag/v0.1.10"
+   ],
+   [
+    "v0.1.9: chore: bump version to 0.1.9",
+    "2026-04-26",
+    "https://github.com/zilliztech/claude-context/releases/tag/v0.1.9"
+   ]
+  ],
+  "release_tag": "v0.1.11",
+  "release_date": "2026-04-28",
+  "release_url": "https://github.com/zilliztech/claude-context/releases/tag/v0.1.11",
+  "pushed": "2026-07-14",
+  "fetched": "2026-10-18"
+ },
  "claude-mem": {
   "repo": "thedotmack/claude-mem",
   "stars": 101489,
@@ -2154,6 +3284,33 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/thedotmack/claude-mem/releases/tag/v14.0.1",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "claude-scientific-writer": {
+  "repo": "K-Dense-AI/claude-scientific-writer",
+  "stars": 2491,
+  "archived": false,
+  "releases": [
+   [
+    "v2.22.0",
+    "2026-09-29",
+    "https://github.com/K-Dense-AI/claude-scientific-writer/releases/tag/v2.22.0"
+   ],
+   [
+    "v2.21.0",
+    "2026-08-13",
+    "https://github.com/K-Dense-AI/claude-scientific-writer/releases/tag/v2.21.0"
+   ],
+   [
+    "v2.20.0",
+    "2026-08-13",
+    "https://github.com/K-Dense-AI/claude-scientific-writer/releases/tag/v2.20.0"
+   ]
+  ],
+  "release_tag": "v2.22.0",
+  "release_date": "2026-09-29",
+  "release_url": "https://github.com/K-Dense-AI/claude-scientific-writer/releases/tag/v2.22.0",
+  "pushed": "2026-09-29",
   "fetched": "2026-10-18"
  },
  "clickhouse-mcp": {
@@ -2208,6 +3365,60 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.95",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "cloakbrowser": {
+  "repo": "CloakHQ/CloakBrowser",
+  "stars": 32286,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.3",
+    "2026-10-14",
+    "https://github.com/CloakHQ/CloakBrowser/releases/tag/v0.6.3"
+   ],
+   [
+    "Chromium v154.0.8037.57.2 — Stealth Build (Pro)",
+    "2026-10-13",
+    "https://github.com/CloakHQ/CloakBrowser/releases/tag/chromium-v154.0.8037.57.2-pro"
+   ],
+   [
+    "v0.6.2",
+    "2026-10-12",
+    "https://github.com/CloakHQ/CloakBrowser/releases/tag/v0.6.2"
+   ]
+  ],
+  "release_tag": "v0.6.3",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/CloakHQ/CloakBrowser/releases/tag/v0.6.3",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "cloud-run-mcp": {
+  "repo": "GoogleCloudPlatform/cloud-run-mcp",
+  "stars": 633,
+  "archived": false,
+  "releases": [
+   [
+    "v1.11.0",
+    "2026-09-28",
+    "https://github.com/GoogleCloudPlatform/cloud-run-mcp/releases/tag/v1.11.0"
+   ],
+   [
+    "v1.10.0",
+    "2026-03-04",
+    "https://github.com/GoogleCloudPlatform/cloud-run-mcp/releases/tag/v1.10.0"
+   ],
+   [
+    "v1.9.0",
+    "2026-02-23",
+    "https://github.com/GoogleCloudPlatform/cloud-run-mcp/releases/tag/v1.9.0"
+   ]
+  ],
+  "release_tag": "v1.11.0",
+  "release_date": "2026-09-28",
+  "release_url": "https://github.com/GoogleCloudPlatform/cloud-run-mcp/releases/tag/v1.11.0",
+  "pushed": "2026-10-08",
   "fetched": "2026-10-18"
  },
  "cloudflare-agents": {
@@ -2318,6 +3529,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "code-review-graph": {
+  "repo": "tirth8205/code-review-graph",
+  "stars": 32234,
+  "archived": false,
+  "releases": [
+   [
+    "v2.3.9",
+    "2026-09-18",
+    "https://github.com/tirth8205/code-review-graph/releases/tag/v2.3.9"
+   ],
+   [
+    "v2.3.8",
+    "2026-08-22",
+    "https://github.com/tirth8205/code-review-graph/releases/tag/v2.3.8"
+   ],
+   [
+    "v2.3.7",
+    "2026-07-18",
+    "https://github.com/tirth8205/code-review-graph/releases/tag/v2.3.7"
+   ]
+  ],
+  "release_tag": "v2.3.9",
+  "release_date": "2026-09-18",
+  "release_url": "https://github.com/tirth8205/code-review-graph/releases/tag/v2.3.9",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
  "codebase-memory-mcp": {
   "repo": "DeusData/codebase-memory-mcp",
   "stars": 46800,
@@ -2369,6 +3607,60 @@
   "release_tag": "Release v0.14.2",
   "release_date": "2026-09-16",
   "release_url": "https://github.com/CodeBoarding/CodeBoarding/releases/tag/v0.14.2",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "codeg": {
+  "repo": "spacering-net/codeg",
+  "stars": 4002,
+  "archived": false,
+  "releases": [
+   [
+    "v0.38.0-rc.1: # Release version 0.38.0-rc.1",
+    "2026-10-18",
+    "https://github.com/spacering-net/codeg/releases/tag/v0.38.0-rc.1"
+   ],
+   [
+    "codeg v0.37.0",
+    "2026-10-18",
+    "https://github.com/spacering-net/codeg/releases/tag/v0.37.0"
+   ],
+   [
+    "codeg v0.36.0",
+    "2026-10-16",
+    "https://github.com/spacering-net/codeg/releases/tag/v0.36.0"
+   ]
+  ],
+  "release_tag": "v0.38.0-rc.1: # Release version 0.38.0-rc.1",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/spacering-net/codeg/releases/tag/v0.38.0-rc.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "codegraphcontext": {
+  "repo": "CodeGraphContext/CodeGraphContext",
+  "stars": 4295,
+  "archived": false,
+  "releases": [
+   [
+    "v0.5.7",
+    "2026-08-08",
+    "https://github.com/CodeGraphContext/CodeGraphContext/releases/tag/v0.5.7"
+   ],
+   [
+    "v0.5.6",
+    "2026-08-05",
+    "https://github.com/CodeGraphContext/CodeGraphContext/releases/tag/v0.5.6"
+   ],
+   [
+    "v0.5.5",
+    "2026-08-02",
+    "https://github.com/CodeGraphContext/CodeGraphContext/releases/tag/v0.5.5"
+   ]
+  ],
+  "release_tag": "v0.5.7",
+  "release_date": "2026-08-08",
+  "release_url": "https://github.com/CodeGraphContext/CodeGraphContext/releases/tag/v0.5.7",
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
@@ -2542,6 +3834,87 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "compozy": {
+  "repo": "compozy/compozy",
+  "stars": 2806,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.0-beta.35",
+    "2026-10-18",
+    "https://github.com/compozy/compozy/releases/tag/v0.3.0-beta.35"
+   ],
+   [
+    "sdk/go/v0.3.0-beta.35",
+    "2026-10-18",
+    "https://github.com/compozy/compozy/releases/tag/sdk%2Fgo%2Fv0.3.0-beta.35"
+   ],
+   [
+    "CompozyOS 0.3.0-beta.34 — beta",
+    "2026-10-16",
+    "https://github.com/compozy/compozy/releases/tag/v0.3.0-beta.34"
+   ]
+  ],
+  "release_tag": "v0.3.0-beta.35",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/compozy/compozy/releases/tag/v0.3.0-beta.35",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "conduit": {
+  "repo": "cogwheel0/conduit",
+  "stars": 2339,
+  "archived": false,
+  "releases": [
+   [
+    "v4.2.1",
+    "2026-10-16",
+    "https://github.com/cogwheel0/conduit/releases/tag/v4.2.1"
+   ],
+   [
+    "v4.2.0",
+    "2026-10-13",
+    "https://github.com/cogwheel0/conduit/releases/tag/v4.2.0"
+   ],
+   [
+    "v4.1.9",
+    "2026-10-06",
+    "https://github.com/cogwheel0/conduit/releases/tag/v4.1.9"
+   ]
+  ],
+  "release_tag": "v4.2.1",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/cogwheel0/conduit/releases/tag/v4.2.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "container-use": {
+  "repo": "dagger/container-use",
+  "stars": 4072,
+  "archived": false,
+  "releases": [
+   [
+    "v0.4.2",
+    "2025-08-19",
+    "https://github.com/dagger/container-use/releases/tag/v0.4.2"
+   ],
+   [
+    "v0.4.1",
+    "2025-08-01",
+    "https://github.com/dagger/container-use/releases/tag/v0.4.1"
+   ],
+   [
+    "v0.4.0",
+    "2025-07-31",
+    "https://github.com/dagger/container-use/releases/tag/v0.4.0"
+   ]
+  ],
+  "release_tag": "v0.4.2",
+  "release_date": "2025-08-19",
+  "release_url": "https://github.com/dagger/container-use/releases/tag/v0.4.2",
+  "pushed": "2026-08-12",
+  "fetched": "2026-10-18"
+ },
  "context-mode": {
   "repo": "mksglu/context-mode",
   "stars": 30575,
@@ -2665,6 +4038,33 @@
   "release_date": "2025-12-05",
   "release_url": "https://github.com/corsairdev/corsair/releases/tag/v0.1.0",
   "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "coucou": {
+  "repo": "Louis-CFM/coucou",
+  "stars": 5484,
+  "archived": false,
+  "releases": [
+   [
+    "Coucou for Windows 0.5.0",
+    "2026-10-15",
+    "https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.5.0"
+   ],
+   [
+    "Coucou for Windows (latest)",
+    "2026-10-15",
+    "https://github.com/Louis-CFM/coucou/releases/tag/windows-latest"
+   ],
+   [
+    "Coucou 0.4.0",
+    "2026-10-15",
+    "https://github.com/Louis-CFM/coucou/releases/tag/v0.4.0"
+   ]
+  ],
+  "release_tag": "Coucou for Windows 0.5.0",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.5.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "cowagent": {
@@ -3018,6 +4418,33 @@
   "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
+ "dbt-mcp": {
+  "repo": "dbt-labs/dbt-mcp",
+  "stars": 609,
+  "archived": false,
+  "releases": [
+   [
+    "v2.8.0",
+    "2026-10-13",
+    "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.8.0"
+   ],
+   [
+    "v2.7.0",
+    "2026-10-09",
+    "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.7.0"
+   ],
+   [
+    "v2.6.0",
+    "2026-10-06",
+    "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.6.0"
+   ]
+  ],
+  "release_tag": "v2.8.0",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.8.0",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
  "deep-research-u14": {
   "repo": "u14app/deep-research",
   "stars": 4693,
@@ -3043,6 +4470,41 @@
   "release_date": "2026-02-10",
   "release_url": "https://github.com/u14app/deep-research/releases/tag/v0.11.0",
   "pushed": "2026-06-18",
+  "fetched": "2026-10-18"
+ },
+ "deepanalyze": {
+  "repo": "ruc-datalab/DeepAnalyze",
+  "stars": 4728,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-13",
+  "fetched": "2026-10-18"
+ },
+ "deepchat": {
+  "repo": "ThinkInAIXYZ/deepchat",
+  "stars": 6367,
+  "archived": false,
+  "releases": [
+   [
+    "DeepChat V1.1.4-beta.3",
+    "2026-10-12",
+    "https://github.com/ThinkInAIXYZ/deepchat/releases/tag/v1.1.4-beta.3"
+   ],
+   [
+    "v1.1.4-beta.2",
+    "2026-10-12",
+    "https://github.com/ThinkInAIXYZ/deepchat/releases/tag/v1.1.4-beta.2"
+   ],
+   [
+    "v1.1.4-beta.1",
+    "2026-10-12",
+    "https://github.com/ThinkInAIXYZ/deepchat/releases/tag/v1.1.4-beta.1"
+   ]
+  ],
+  "release_tag": "DeepChat V1.1.4-beta.3",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/ThinkInAIXYZ/deepchat/releases/tag/v1.1.4-beta.3",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "deepcode": {
@@ -3126,6 +4588,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "deeptutor": {
+  "repo": "HKUDS/DeepTutor",
+  "stars": 41605,
+  "archived": false,
+  "releases": [
+   [
+    "v1.6.14",
+    "2026-10-08",
+    "https://github.com/HKUDS/DeepTutor/releases/tag/v1.6.14"
+   ],
+   [
+    "v1.6.13",
+    "2026-10-04",
+    "https://github.com/HKUDS/DeepTutor/releases/tag/v1.6.13"
+   ],
+   [
+    "v1.6.12",
+    "2026-09-27",
+    "https://github.com/HKUDS/DeepTutor/releases/tag/v1.6.12"
+   ]
+  ],
+  "release_tag": "v1.6.14",
+  "release_date": "2026-10-08",
+  "release_url": "https://github.com/HKUDS/DeepTutor/releases/tag/v1.6.14",
+  "pushed": "2026-10-08",
+  "fetched": "2026-10-18"
+ },
  "deer-flow": {
   "repo": "bytedance/deer-flow",
   "stars": 84050,
@@ -3151,6 +4640,55 @@
   "release_date": "2026-09-24",
   "release_url": "https://github.com/bytedance/deer-flow/releases/tag/v2.1.0",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "desktop-commander-mcp": {
+  "repo": "wonderwhy-er/DesktopCommanderMCP",
+  "stars": 10092,
+  "archived": false,
+  "releases": [
+   [
+    "Release Notes — v0.3.0",
+    "2026-10-13",
+    "https://github.com/wonderwhy-er/DesktopCommanderMCP/releases/tag/v0.3.0"
+   ],
+   [
+    "0.3.1-alpha.0",
+    "2026-10-06",
+    "https://github.com/wonderwhy-er/DesktopCommanderMCP/releases/tag/0.3.1-alpha.0"
+   ],
+   [
+    "Release Notes — v0.2.52",
+    "2026-09-29",
+    "https://github.com/wonderwhy-er/DesktopCommanderMCP/releases/tag/v0.2.52"
+   ]
+  ],
+  "release_tag": "Release Notes — v0.3.0",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/wonderwhy-er/DesktopCommanderMCP/releases/tag/v0.3.0",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "devopsgpt": {
+  "repo": "kuafuai/DevOpsGPT",
+  "stars": 5964,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.21",
+    "2023-08-25",
+    "https://github.com/kuafuai/DevOpsGPT/releases/tag/v0.6.21"
+   ],
+   [
+    "v0.6.20",
+    "2023-08-04",
+    "https://github.com/kuafuai/DevOpsGPT/releases/tag/v0.6.20"
+   ]
+  ],
+  "release_tag": "v0.6.21",
+  "release_date": "2023-08-25",
+  "release_url": "https://github.com/kuafuai/DevOpsGPT/releases/tag/v0.6.21",
+  "pushed": "2026-10-04",
   "fetched": "2026-10-18"
  },
  "dify": {
@@ -3288,6 +4826,60 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "dspy": {
+  "repo": "stanfordnlp/dspy",
+  "stars": 38677,
+  "archived": false,
+  "releases": [
+   [
+    "3.4.1",
+    "2026-10-12",
+    "https://github.com/stanfordnlp/dspy/releases/tag/3.4.1"
+   ],
+   [
+    "3.4.0",
+    "2026-09-25",
+    "https://github.com/stanfordnlp/dspy/releases/tag/3.4.0"
+   ],
+   [
+    "3.4.0b1",
+    "2026-09-11",
+    "https://github.com/stanfordnlp/dspy/releases/tag/3.4.0b1"
+   ]
+  ],
+  "release_tag": "3.4.1",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/stanfordnlp/dspy/releases/tag/3.4.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "dust": {
+  "repo": "dust-tt/dust",
+  "stars": 1487,
+  "archived": false,
+  "releases": [
+   [
+    "spa/poke/026118b",
+    "2026-10-16",
+    "https://github.com/dust-tt/dust/releases/tag/spa%2Fpoke%2F026118b"
+   ],
+   [
+    "spa/poke/851fba0",
+    "2026-10-16",
+    "https://github.com/dust-tt/dust/releases/tag/spa%2Fpoke%2F851fba0"
+   ],
+   [
+    "spa/poke/426b3da",
+    "2026-10-16",
+    "https://github.com/dust-tt/dust/releases/tag/spa%2Fpoke%2F426b3da"
+   ]
+  ],
+  "release_tag": "spa/poke/026118b",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/dust-tt/dust/releases/tag/spa%2Fpoke%2F026118b",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "e2b": {
   "repo": "e2b-dev/E2B",
   "stars": 14422,
@@ -3313,6 +4905,33 @@
   "release_date": "2026-10-13",
   "release_url": "https://github.com/e2b-dev/E2B/releases/tag/e2b%402.56.0",
   "pushed": "2026-10-13",
+  "fetched": "2026-10-18"
+ },
+ "easel": {
+  "repo": "ZJU-REAL/Easel",
+  "stars": 3818,
+  "archived": false,
+  "releases": [
+   [
+    "Easel v0.3.0 — 多 Agent 底座 · Codex 授权开关 · 创作数据修复",
+    "2026-10-12",
+    "https://github.com/ZJU-REAL/Easel/releases/tag/v0.3.0"
+   ],
+   [
+    "Easel v0.2.1 — 设置面板 · 对话直连网关提速 · 安全加固",
+    "2026-09-24",
+    "https://github.com/ZJU-REAL/Easel/releases/tag/v0.2.1"
+   ],
+   [
+    "Easel v0.2.0 — 视频产线内置 + 三级转录 · 能力菜单 · CoT 流式修复",
+    "2026-09-17",
+    "https://github.com/ZJU-REAL/Easel/releases/tag/v0.2.0"
+   ]
+  ],
+  "release_tag": "Easel v0.3.0 — 多 Agent 底座 · Codex 授权开关 · 创作数据修复",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/ZJU-REAL/Easel/releases/tag/v0.3.0",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "ego-lite": {
@@ -3342,6 +4961,33 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "eigenflux": {
+  "repo": "phronesis-io/eigenflux",
+  "stars": 2180,
+  "archived": false,
+  "releases": [
+   [
+    "CLI_0.0.32",
+    "2026-08-11",
+    "https://github.com/phronesis-io/eigenflux/releases/tag/CLI_0.0.32"
+   ],
+   [
+    "CLI_0.0.30",
+    "2026-08-04",
+    "https://github.com/phronesis-io/eigenflux/releases/tag/CLI_0.0.30"
+   ],
+   [
+    "CLI_0.0.29",
+    "2026-08-03",
+    "https://github.com/phronesis-io/eigenflux/releases/tag/CLI_0.0.29"
+   ]
+  ],
+  "release_tag": "CLI_0.0.32",
+  "release_date": "2026-08-11",
+  "release_url": "https://github.com/phronesis-io/eigenflux/releases/tag/CLI_0.0.32",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "eigent": {
   "repo": "eigent-ai/eigent",
   "stars": 15590,
@@ -3369,6 +5015,14 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "elatoai": {
+  "repo": "akdeb/ElatoAI",
+  "stars": 2064,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-12",
+  "fetched": "2026-10-18"
+ },
  "electric": {
   "repo": "electric-sql/electric",
   "stars": 10401,
@@ -3394,6 +5048,23 @@
   "release_date": "2026-09-28",
   "release_url": "https://github.com/electric-sql/electric/releases/tag/agents-desktop-canary",
   "pushed": "2026-10-06",
+  "fetched": "2026-10-18"
+ },
+ "elevenlabs-ui": {
+  "repo": "elevenlabs/ui",
+  "stars": 2425,
+  "archived": false,
+  "releases": [
+   [
+    "Introducing ElevenLabs UI",
+    "2025-10-10",
+    "https://github.com/elevenlabs/ui/releases/tag/v1.0.0"
+   ]
+  ],
+  "release_tag": "Introducing ElevenLabs UI",
+  "release_date": "2025-10-10",
+  "release_url": "https://github.com/elevenlabs/ui/releases/tag/v1.0.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "elizaos": {
@@ -3585,6 +5256,33 @@
   "pushed": "2026-06-04",
   "fetched": "2026-10-18"
  },
+ "evoagentx": {
+  "repo": "ANative-Lab/EvoAgentX",
+  "stars": 3385,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.4 Release",
+    "2026-06-28",
+    "https://github.com/ANative-Lab/EvoAgentX/releases/tag/v0.1.4"
+   ],
+   [
+    "v0.1.3 Release",
+    "2026-06-27",
+    "https://github.com/ANative-Lab/EvoAgentX/releases/tag/v0.1.3"
+   ],
+   [
+    "v0.1.2 Release",
+    "2026-06-24",
+    "https://github.com/ANative-Lab/EvoAgentX/releases/tag/v0.1.2"
+   ]
+  ],
+  "release_tag": "v0.1.4 Release",
+  "release_date": "2026-06-28",
+  "release_url": "https://github.com/ANative-Lab/EvoAgentX/releases/tag/v0.1.4",
+  "pushed": "2026-08-27",
+  "fetched": "2026-10-18"
+ },
  "evolver": {
   "repo": "EvoMap/evolver",
   "stars": 8686,
@@ -3610,6 +5308,33 @@
   "release_date": "2026-10-16",
   "release_url": "https://github.com/EvoMap/evolver/releases/tag/v2.0.44",
   "pushed": "2026-09-04",
+  "fetched": "2026-10-18"
+ },
+ "evoscientist": {
+  "repo": "EvoScientist/EvoScientist",
+  "stars": 4985,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.7",
+    "2026-10-17",
+    "https://github.com/EvoScientist/EvoScientist/releases/tag/v0.3.7"
+   ],
+   [
+    "v0.3.6",
+    "2026-10-09",
+    "https://github.com/EvoScientist/EvoScientist/releases/tag/v0.3.6"
+   ],
+   [
+    "v0.3.5",
+    "2026-10-03",
+    "https://github.com/EvoScientist/EvoScientist/releases/tag/v0.3.5"
+   ]
+  ],
+  "release_tag": "v0.3.7",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/EvoScientist/EvoScientist/releases/tag/v0.3.7",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "excel-mcp-server": {
@@ -3691,6 +5416,33 @@
   "release_date": "2026-10-13",
   "release_url": "https://github.com/evalstate/fast-agent/releases/tag/v0.10.46",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "fastgpt": {
+  "repo": "labring/FastGPT",
+  "stars": 29853,
+  "archived": false,
+  "releases": [
+   [
+    "v4.17.2",
+    "2026-10-09",
+    "https://github.com/labring/FastGPT/releases/tag/v4.17.2"
+   ],
+   [
+    "v4.17.1",
+    "2026-09-30",
+    "https://github.com/labring/FastGPT/releases/tag/v4.17.1"
+   ],
+   [
+    "v4.17.0",
+    "2026-09-11",
+    "https://github.com/labring/FastGPT/releases/tag/v4.17.0"
+   ]
+  ],
+  "release_tag": "v4.17.2",
+  "release_date": "2026-10-09",
+  "release_url": "https://github.com/labring/FastGPT/releases/tag/v4.17.2",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "fastmcp": {
@@ -3782,6 +5534,33 @@
   "pushed": "2026-09-24",
   "fetched": "2026-10-18"
  },
+ "figma-console-mcp": {
+  "repo": "southleft/figma-console-mcp",
+  "stars": 2530,
+  "archived": false,
+  "releases": [
+   [
+    "v1.40.9",
+    "2026-10-02",
+    "https://github.com/southleft/figma-console-mcp/releases/tag/v1.40.9"
+   ],
+   [
+    "v1.40.8",
+    "2026-09-30",
+    "https://github.com/southleft/figma-console-mcp/releases/tag/v1.40.8"
+   ],
+   [
+    "v1.40.7 — Color Tokens Readability",
+    "2026-09-28",
+    "https://github.com/southleft/figma-console-mcp/releases/tag/v1.40.7"
+   ]
+  ],
+  "release_tag": "v1.40.9",
+  "release_date": "2026-10-02",
+  "release_url": "https://github.com/southleft/figma-console-mcp/releases/tag/v1.40.9",
+  "pushed": "2026-10-02",
+  "fetched": "2026-10-18"
+ },
  "figma-mcp-server": {
   "repo": "figma/mcp-server-guide",
   "stars": 2082,
@@ -3829,6 +5608,33 @@
   "release_date": "2026-10-18",
   "release_url": "https://github.com/firecrawl/firecrawl/releases/tag/v2.11.538",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "firefox-devtools-mcp": {
+  "repo": "mozilla/firefox-devtools-mcp",
+  "stars": 501,
+  "archived": false,
+  "releases": [
+   [
+    "v0.10.6",
+    "2026-10-16",
+    "https://github.com/mozilla/firefox-devtools-mcp/releases/tag/v0.10.6"
+   ],
+   [
+    "v0.10.5",
+    "2026-10-09",
+    "https://github.com/mozilla/firefox-devtools-mcp/releases/tag/v0.10.5"
+   ],
+   [
+    "v0.10.4",
+    "2026-09-22",
+    "https://github.com/mozilla/firefox-devtools-mcp/releases/tag/v0.10.4"
+   ]
+  ],
+  "release_tag": "v0.10.6",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/mozilla/firefox-devtools-mcp/releases/tag/v0.10.6",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "flowise": {
@@ -3885,6 +5691,157 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "forkd": {
+  "repo": "deeplethe/forkd",
+  "stars": 2920,
+  "archived": false,
+  "releases": [
+   [
+    "mcp-v0.2.1: Merge pull request #276 from Retengart/feature/arch-forkd-bin",
+    "2026-07-31",
+    "https://github.com/deeplethe/forkd/releases/tag/mcp-v0.2.1"
+   ],
+   [
+    "v0.5.3",
+    "2026-07-22",
+    "https://github.com/deeplethe/forkd/releases/tag/v0.5.3"
+   ],
+   [
+    "v0.5.2",
+    "2026-06-10",
+    "https://github.com/deeplethe/forkd/releases/tag/v0.5.2"
+   ]
+  ],
+  "release_tag": "mcp-v0.2.1: Merge pull request #276 from Retengart/feature/arch-forkd-bin",
+  "release_date": "2026-07-31",
+  "release_url": "https://github.com/deeplethe/forkd/releases/tag/mcp-v0.2.1",
+  "pushed": "2026-09-14",
+  "fetched": "2026-10-18"
+ },
+ "fragments": {
+  "repo": "e2b-dev/fragments",
+  "stars": 6391,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-13",
+  "fetched": "2026-10-18"
+ },
+ "framelink-figma-mcp": {
+  "repo": "GLips/Figma-Context-MCP",
+  "stars": 16004,
+  "archived": false,
+  "releases": [
+   [
+    "v0.13.2",
+    "2026-06-18",
+    "https://github.com/GLips/Figma-Context-MCP/releases/tag/v0.13.2"
+   ],
+   [
+    "v0.13.1",
+    "2026-06-18",
+    "https://github.com/GLips/Figma-Context-MCP/releases/tag/v0.13.1"
+   ],
+   [
+    "v0.13.0",
+    "2026-06-18",
+    "https://github.com/GLips/Figma-Context-MCP/releases/tag/v0.13.0"
+   ]
+  ],
+  "release_tag": "v0.13.2",
+  "release_date": "2026-06-18",
+  "release_url": "https://github.com/GLips/Figma-Context-MCP/releases/tag/v0.13.2",
+  "pushed": "2026-06-24",
+  "fetched": "2026-10-18"
+ },
+ "frontieragent": {
+  "repo": "ApodexAI/FrontierAgent",
+  "stars": 5318,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "frontman": {
+  "repo": "frontman-ai/frontman",
+  "stars": 718,
+  "archived": false,
+  "releases": [
+   [
+    "v5.3.0",
+    "2026-10-06",
+    "https://github.com/frontman-ai/frontman/releases/tag/v5.3.0"
+   ],
+   [
+    "v5.2.0",
+    "2026-09-28",
+    "https://github.com/frontman-ai/frontman/releases/tag/v5.2.0"
+   ],
+   [
+    "v5.1.0",
+    "2026-09-08",
+    "https://github.com/frontman-ai/frontman/releases/tag/v5.1.0"
+   ]
+  ],
+  "release_tag": "v5.3.0",
+  "release_date": "2026-10-06",
+  "release_url": "https://github.com/frontman-ai/frontman/releases/tag/v5.3.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "funasr": {
+  "repo": "modelscope/FunASR",
+  "stars": 20742,
+  "archived": false,
+  "releases": [
+   [
+    "FunASR 1.4.16",
+    "2026-09-18",
+    "https://github.com/modelscope/FunASR/releases/tag/v1.4.16"
+   ],
+   [
+    "v1.4.15",
+    "2026-09-10",
+    "https://github.com/modelscope/FunASR/releases/tag/v1.4.15"
+   ],
+   [
+    "funasr-onnx 0.4.3",
+    "2026-09-09",
+    "https://github.com/modelscope/FunASR/releases/tag/funasr-onnx-v0.4.3"
+   ]
+  ],
+  "release_tag": "FunASR 1.4.16",
+  "release_date": "2026-09-18",
+  "release_url": "https://github.com/modelscope/FunASR/releases/tag/v1.4.16",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "future-agi": {
+  "repo": "future-agi/future-agi",
+  "stars": 2174,
+  "archived": false,
+  "releases": [
+   [
+    "v1.51.0",
+    "2026-10-15",
+    "https://github.com/future-agi/future-agi/releases/tag/v1.51.0"
+   ],
+   [
+    "v1.50.0",
+    "2026-10-14",
+    "https://github.com/future-agi/future-agi/releases/tag/v1.50.0"
+   ],
+   [
+    "v1.49.0",
+    "2026-10-12",
+    "https://github.com/future-agi/future-agi/releases/tag/v1.49.0"
+   ]
+  ],
+  "release_tag": "v1.51.0",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/future-agi/future-agi/releases/tag/v1.51.0",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
  "galileo-agent-leaderboard": {
   "repo": "rungalileo/agent-leaderboard",
   "stars": 226,
@@ -3918,6 +5875,33 @@
   "release_date": "2026-10-18",
   "release_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.66.0-nightly.20261018.ged96faedf",
   "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "gemini-mcp-tool": {
+  "repo": "jamubc/gemini-mcp-tool",
+  "stars": 2290,
+  "archived": false,
+  "releases": [
+   [
+    "v1.1.8: Antigravity CLI (agy) backend",
+    "2026-06-18",
+    "https://github.com/jamubc/gemini-mcp-tool/releases/tag/v1.1.8"
+   ],
+   [
+    "v1.1.7",
+    "2026-06-01",
+    "https://github.com/jamubc/gemini-mcp-tool/releases/tag/v1.1.7"
+   ],
+   [
+    "v1.2.0-beta.1 — beta",
+    "2026-05-30",
+    "https://github.com/jamubc/gemini-mcp-tool/releases/tag/v1.2.0-beta.1"
+   ]
+  ],
+  "release_tag": "v1.1.8: Antigravity CLI (agy) backend",
+  "release_date": "2026-06-18",
+  "release_url": "https://github.com/jamubc/gemini-mcp-tool/releases/tag/v1.1.8",
+  "pushed": "2026-06-18",
   "fetched": "2026-10-18"
  },
  "genericagent": {
@@ -4028,6 +6012,33 @@
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
+ "giselle": {
+  "repo": "giselles-ai/giselle",
+  "stars": 558,
+  "archived": false,
+  "releases": [
+   [
+    "v0.75.6",
+    "2026-04-27",
+    "https://github.com/giselles-ai/giselle/releases/tag/v0.75.6"
+   ],
+   [
+    "v0.75.5",
+    "2026-04-27",
+    "https://github.com/giselles-ai/giselle/releases/tag/v0.75.5"
+   ],
+   [
+    "v0.75.4",
+    "2026-04-16",
+    "https://github.com/giselles-ai/giselle/releases/tag/v0.75.4"
+   ]
+  ],
+  "release_tag": "v0.75.6",
+  "release_date": "2026-04-27",
+  "release_url": "https://github.com/giselles-ai/giselle/releases/tag/v0.75.6",
+  "pushed": "2026-09-01",
+  "fetched": "2026-10-18"
+ },
  "github-agentic-workflows-gh-aw": {
   "repo": "github/gh-aw",
   "stars": 5413,
@@ -4090,6 +6101,122 @@
   "pushed": "2026-05-08",
   "fetched": "2026-10-18"
  },
+ "glm-5": {
+  "repo": "zai-org/GLM-5",
+  "stars": 7351,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "go-micro": {
+  "repo": "micro/go-micro",
+  "stars": 23086,
+  "archived": false,
+  "releases": [
+   [
+    "v6.15.1",
+    "2026-10-18",
+    "https://github.com/micro/go-micro/releases/tag/v6.15.1"
+   ],
+   [
+    "v4.11.2",
+    "2026-10-12",
+    "https://github.com/micro/go-micro/releases/tag/v4.11.2"
+   ],
+   [
+    "v6.15.0",
+    "2026-10-10",
+    "https://github.com/micro/go-micro/releases/tag/v6.15.0"
+   ]
+  ],
+  "release_tag": "v6.15.1",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/micro/go-micro/releases/tag/v6.15.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "goclaw": {
+  "repo": "nextlevelbuilder/goclaw",
+  "stars": 3658,
+  "archived": false,
+  "releases": [
+   [
+    "GoClaw v3.15.0-beta.229",
+    "2026-10-17",
+    "https://github.com/nextlevelbuilder/goclaw/releases/tag/v3.15.0-beta.229"
+   ],
+   [
+    "GoClaw v3.15.0-beta.228",
+    "2026-10-04",
+    "https://github.com/nextlevelbuilder/goclaw/releases/tag/v3.15.0-beta.228"
+   ],
+   [
+    "GoClaw v3.15.0-beta.227",
+    "2026-10-03",
+    "https://github.com/nextlevelbuilder/goclaw/releases/tag/v3.15.0-beta.227"
+   ]
+  ],
+  "release_tag": "GoClaw v3.15.0-beta.229",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/nextlevelbuilder/goclaw/releases/tag/v3.15.0-beta.229",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "godot-ai": {
+  "repo": "hi-godot/godot-ai",
+  "stars": 3055,
+  "archived": false,
+  "releases": [
+   [
+    "Godot AI 4.3.0",
+    "2026-10-03",
+    "https://github.com/hi-godot/godot-ai/releases/tag/v4.3.0"
+   ],
+   [
+    "Godot AI 4.2.3",
+    "2026-09-24",
+    "https://github.com/hi-godot/godot-ai/releases/tag/v4.2.3"
+   ],
+   [
+    "Godot AI 4.2.2",
+    "2026-09-24",
+    "https://github.com/hi-godot/godot-ai/releases/tag/v4.2.2"
+   ]
+  ],
+  "release_tag": "Godot AI 4.3.0",
+  "release_date": "2026-10-03",
+  "release_url": "https://github.com/hi-godot/godot-ai/releases/tag/v4.3.0",
+  "pushed": "2026-10-03",
+  "fetched": "2026-10-18"
+ },
+ "golutra": {
+  "repo": "golutra/golutra",
+  "stars": 3857,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.4",
+    "2026-09-28",
+    "https://github.com/golutra/golutra/releases/tag/v0.3.4"
+   ],
+   [
+    "v0.3.3",
+    "2026-09-24",
+    "https://github.com/golutra/golutra/releases/tag/v0.3.3"
+   ],
+   [
+    "v0.3.2",
+    "2026-08-12",
+    "https://github.com/golutra/golutra/releases/tag/v0.3.2"
+   ]
+  ],
+  "release_tag": "v0.3.4",
+  "release_date": "2026-09-28",
+  "release_url": "https://github.com/golutra/golutra/releases/tag/v0.3.4",
+  "pushed": "2026-05-12",
+  "fetched": "2026-10-18"
+ },
  "google-adk": {
   "repo": "google/adk-python",
   "stars": 21898,
@@ -4150,6 +6277,33 @@
   "release_date": "2026-03-31",
   "release_url": "https://github.com/googleworkspace/cli/releases/tag/v0.22.5",
   "pushed": "2026-03-31",
+  "fetched": "2026-10-18"
+ },
+ "google-workspace-mcp": {
+  "repo": "taylorwilsdon/google_workspace_mcp",
+  "stars": 3363,
+  "archived": false,
+  "releases": [
+   [
+    "v2.1.0",
+    "2026-10-09",
+    "https://github.com/taylorwilsdon/google_workspace_mcp/releases/tag/v2.1.0"
+   ],
+   [
+    "v2.0.1",
+    "2026-10-04",
+    "https://github.com/taylorwilsdon/google_workspace_mcp/releases/tag/v2.0.1"
+   ],
+   [
+    "v2.0.0",
+    "2026-10-03",
+    "https://github.com/taylorwilsdon/google_workspace_mcp/releases/tag/v2.0.0"
+   ]
+  ],
+  "release_tag": "v2.1.0",
+  "release_date": "2026-10-09",
+  "release_url": "https://github.com/taylorwilsdon/google_workspace_mcp/releases/tag/v2.1.0",
+  "pushed": "2026-10-09",
   "fetched": "2026-10-18"
  },
  "goose": {
@@ -4368,6 +6522,33 @@
   "pushed": "2026-08-26",
   "fetched": "2026-10-18"
  },
+ "guidance": {
+  "repo": "guidance-ai/guidance",
+  "stars": 21802,
+  "archived": false,
+  "releases": [
+   [
+    "Guidance 0.3.2",
+    "2026-03-18",
+    "https://github.com/guidance-ai/guidance/releases/tag/0.3.2"
+   ],
+   [
+    "Guidance 0.3.1",
+    "2026-02-03",
+    "https://github.com/guidance-ai/guidance/releases/tag/0.3.1"
+   ],
+   [
+    "0.3.0",
+    "2025-09-09",
+    "https://github.com/guidance-ai/guidance/releases/tag/0.3.0"
+   ]
+  ],
+  "release_tag": "Guidance 0.3.2",
+  "release_date": "2026-03-18",
+  "release_url": "https://github.com/guidance-ai/guidance/releases/tag/0.3.2",
+  "pushed": "2026-05-21",
+  "fetched": "2026-10-18"
+ },
  "happy-coder": {
   "repo": "slopus/happy",
   "stars": 24196,
@@ -4420,6 +6601,33 @@
   "release_date": "2026-10-15",
   "release_url": "https://github.com/deepset-ai/haystack/releases/tag/v3.4.0",
   "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "headroom": {
+  "repo": "headroomlabs-ai/headroom",
+  "stars": 75716,
+  "archived": false,
+  "releases": [
+   [
+    "Release v0.41.0",
+    "2026-10-14",
+    "https://github.com/headroomlabs-ai/headroom/releases/tag/v0.41.0"
+   ],
+   [
+    "Release v0.40.0",
+    "2026-10-06",
+    "https://github.com/headroomlabs-ai/headroom/releases/tag/v0.40.0"
+   ],
+   [
+    "Release v0.39.1",
+    "2026-09-26",
+    "https://github.com/headroomlabs-ai/headroom/releases/tag/v0.39.1"
+   ]
+  ],
+  "release_tag": "Release v0.41.0",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/headroomlabs-ai/headroom/releases/tag/v0.41.0",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "hedera-ai-studio": {
@@ -4530,6 +6738,60 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "hermes-one": {
+  "repo": "fathah/hermes-desktop",
+  "stars": 14427,
+  "archived": false,
+  "releases": [
+   [
+    "Hermes Desktop v0.7.7",
+    "2026-09-04",
+    "https://github.com/fathah/hermes-desktop/releases/tag/v0.7.7"
+   ],
+   [
+    "Hermes Desktop v0.7.7-beta.5 (beta)",
+    "2026-09-04",
+    "https://github.com/fathah/hermes-desktop/releases/tag/v0.7.7-beta.5"
+   ],
+   [
+    "Hermes Desktop v0.7.6",
+    "2026-07-22",
+    "https://github.com/fathah/hermes-desktop/releases/tag/v0.7.6"
+   ]
+  ],
+  "release_tag": "Hermes Desktop v0.7.7",
+  "release_date": "2026-09-04",
+  "release_url": "https://github.com/fathah/hermes-desktop/releases/tag/v0.7.7",
+  "pushed": "2026-10-13",
+  "fetched": "2026-10-18"
+ },
+ "hermes-webui": {
+  "repo": "nesquena/hermes-webui",
+  "stars": 19013,
+  "archived": false,
+  "releases": [
+   [
+    "exp-v0.52.515",
+    "2026-10-17",
+    "https://github.com/nesquena/hermes-webui/releases/tag/exp-v0.52.515"
+   ],
+   [
+    "exp-v0.52.514",
+    "2026-10-17",
+    "https://github.com/nesquena/hermes-webui/releases/tag/exp-v0.52.514"
+   ],
+   [
+    "exp-v0.52.513",
+    "2026-10-17",
+    "https://github.com/nesquena/hermes-webui/releases/tag/exp-v0.52.513"
+   ]
+  ],
+  "release_tag": "exp-v0.52.515",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/nesquena/hermes-webui/releases/tag/exp-v0.52.515",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "hindsight": {
   "repo": "vectorize-io/hindsight",
   "stars": 50973,
@@ -4598,6 +6860,33 @@
   "release_tag": "0.45.0",
   "release_date": "2026-10-15",
   "release_url": "https://github.com/HolmesGPT/holmesgpt/releases/tag/0.45.0",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "holyclaude": {
+  "repo": "CoderLuii/HolyClaude",
+  "stars": 2584,
+  "archived": false,
+  "releases": [
+   [
+    "v1.6.7",
+    "2026-10-15",
+    "https://github.com/CoderLuii/HolyClaude/releases/tag/v1.6.7"
+   ],
+   [
+    "v1.6.6",
+    "2026-10-10",
+    "https://github.com/CoderLuii/HolyClaude/releases/tag/v1.6.6"
+   ],
+   [
+    "v1.6.5",
+    "2026-10-06",
+    "https://github.com/CoderLuii/HolyClaude/releases/tag/v1.6.5"
+   ]
+  ],
+  "release_tag": "v1.6.7",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/CoderLuii/HolyClaude/releases/tag/v1.6.7",
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
@@ -4709,6 +6998,60 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "hyperframes": {
+  "repo": "heygen-com/hyperframes",
+  "stars": 66398,
+  "archived": false,
+  "releases": [
+   [
+    "v0.8.171",
+    "2026-10-18",
+    "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.171"
+   ],
+   [
+    "v0.8.170",
+    "2026-10-18",
+    "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.170"
+   ],
+   [
+    "v0.8.169",
+    "2026-10-17",
+    "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.169"
+   ]
+  ],
+  "release_tag": "v0.8.171",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.171",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "hyperresearch": {
+  "repo": "jordan-gibbs/hyperresearch",
+  "stars": 3878,
+  "archived": false,
+  "releases": [
+   [
+    "v0.12.0",
+    "2026-09-24",
+    "https://github.com/jordan-gibbs/hyperresearch/releases/tag/v0.12.0"
+   ],
+   [
+    "v0.11.1",
+    "2026-09-11",
+    "https://github.com/jordan-gibbs/hyperresearch/releases/tag/v0.11.1"
+   ],
+   [
+    "v0.11.0",
+    "2026-09-11",
+    "https://github.com/jordan-gibbs/hyperresearch/releases/tag/v0.11.0"
+   ]
+  ],
+  "release_tag": "v0.12.0",
+  "release_date": "2026-09-24",
+  "release_url": "https://github.com/jordan-gibbs/hyperresearch/releases/tag/v0.12.0",
+  "pushed": "2026-10-10",
+  "fetched": "2026-10-18"
+ },
  "ibm-cuga": {
   "repo": "cuga-project/cuga-agent",
   "stars": 1038,
@@ -4763,6 +7106,33 @@
   "pushed": "2026-09-26",
   "fetched": "2026-10-18"
  },
+ "ii-agent": {
+  "repo": "Intelligent-Internet/ii-agent",
+  "stars": 3391,
+  "archived": false,
+  "releases": [
+   [
+    "v0.4",
+    "2025-07-29",
+    "https://github.com/Intelligent-Internet/ii-agent/releases/tag/v0.4"
+   ],
+   [
+    "v0.3",
+    "2025-07-07",
+    "https://github.com/Intelligent-Internet/ii-agent/releases/tag/v0.3"
+   ],
+   [
+    "v0.2",
+    "2025-06-11",
+    "https://github.com/Intelligent-Internet/ii-agent/releases/tag/v0.2"
+   ]
+  ],
+  "release_tag": "v0.4",
+  "release_date": "2025-07-29",
+  "release_url": "https://github.com/Intelligent-Internet/ii-agent/releases/tag/v0.4",
+  "pushed": "2026-08-13",
+  "fetched": "2026-10-18"
+ },
  "imagesorcery-mcp": {
   "repo": "sunriseapps/imagesorcery-mcp",
   "stars": 333,
@@ -4815,6 +7185,33 @@
   "release_date": "2026-09-21",
   "release_url": "https://github.com/imbue-ai/sculptor/releases/tag/sculptor-v0.48.0",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "inbox-zero": {
+  "repo": "elie222/inbox-zero",
+  "stars": 12616,
+  "archived": false,
+  "releases": [
+   [
+    "Inbox Zero Desktop 0.1.19",
+    "2026-10-10",
+    "https://github.com/elie222/inbox-zero/releases/tag/desktop-v0.1.19"
+   ],
+   [
+    "Inbox Zero Desktop 0.1.18",
+    "2026-09-29",
+    "https://github.com/elie222/inbox-zero/releases/tag/desktop-v0.1.18"
+   ],
+   [
+    "Inbox Zero Desktop 0.1.17",
+    "2026-09-27",
+    "https://github.com/elie222/inbox-zero/releases/tag/desktop-v0.1.17"
+   ]
+  ],
+  "release_tag": "Inbox Zero Desktop 0.1.19",
+  "release_date": "2026-10-10",
+  "release_url": "https://github.com/elie222/inbox-zero/releases/tag/desktop-v0.1.19",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "infranodus-mcp": {
@@ -4879,12 +7276,66 @@
   "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
+ "instructor": {
+  "repo": "567-labs/instructor",
+  "stars": 14030,
+  "archived": false,
+  "releases": [
+   [
+    "Instructor v1.17.0",
+    "2026-09-09",
+    "https://github.com/567-labs/instructor/releases/tag/v1.17.0"
+   ],
+   [
+    "Instructor v1.16.0",
+    "2026-08-27",
+    "https://github.com/567-labs/instructor/releases/tag/v1.16.0"
+   ],
+   [
+    "v1.15.4",
+    "2026-06-28",
+    "https://github.com/567-labs/instructor/releases/tag/v1.15.4"
+   ]
+  ],
+  "release_tag": "Instructor v1.17.0",
+  "release_date": "2026-09-09",
+  "release_url": "https://github.com/567-labs/instructor/releases/tag/v1.17.0",
+  "pushed": "2026-10-10",
+  "fetched": "2026-10-18"
+ },
  "integuru": {
   "repo": "Integuru-AI/Integuru",
   "stars": 4783,
   "archived": false,
   "releases": [],
   "pushed": "2026-05-26",
+  "fetched": "2026-10-18"
+ },
+ "intelligent-terminal": {
+  "repo": "microsoft/intelligent-terminal",
+  "stars": 2062,
+  "archived": false,
+  "releases": [
+   [
+    "Intelligent Terminal 0.2.2572.0",
+    "2026-09-14",
+    "https://github.com/microsoft/intelligent-terminal/releases/tag/v0.2.2572"
+   ],
+   [
+    "Intelligent Terminal v0.2.2395",
+    "2026-08-28",
+    "https://github.com/microsoft/intelligent-terminal/releases/tag/v0.2.23"
+   ],
+   [
+    "Intelligent Terminal v0.2.2192",
+    "2026-08-10",
+    "https://github.com/microsoft/intelligent-terminal/releases/tag/v0.2"
+   ]
+  ],
+  "release_tag": "Intelligent Terminal 0.2.2572.0",
+  "release_date": "2026-09-14",
+  "release_url": "https://github.com/microsoft/intelligent-terminal/releases/tag/v0.2.2572",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "intentkit": {
@@ -4912,6 +7363,87 @@
   "release_date": "2026-06-14",
   "release_url": "https://github.com/crestalnetwork/intentkit/releases/tag/v2.6.3",
   "pushed": "2026-09-16",
+  "fetched": "2026-10-18"
+ },
+ "jan": {
+  "repo": "janhq/jan",
+  "stars": 44995,
+  "archived": false,
+  "releases": [
+   [
+    "0.8.6",
+    "2026-10-09",
+    "https://github.com/janhq/jan/releases/tag/v0.8.6"
+   ],
+   [
+    "0.8.5",
+    "2026-10-08",
+    "https://github.com/janhq/jan/releases/tag/v0.8.5"
+   ],
+   [
+    "0.8.4",
+    "2026-07-23",
+    "https://github.com/janhq/jan/releases/tag/v0.8.4"
+   ]
+  ],
+  "release_tag": "0.8.6",
+  "release_date": "2026-10-09",
+  "release_url": "https://github.com/janhq/jan/releases/tag/v0.8.6",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "jarvis": {
+  "repo": "isair/jarvis",
+  "stars": 2098,
+  "archived": false,
+  "releases": [
+   [
+    "v2.7.8",
+    "2026-10-18",
+    "https://github.com/isair/jarvis/releases/tag/v2.7.8"
+   ],
+   [
+    "v2.7.7",
+    "2026-10-14",
+    "https://github.com/isair/jarvis/releases/tag/v2.7.7"
+   ],
+   [
+    "v2.7.6",
+    "2026-10-13",
+    "https://github.com/isair/jarvis/releases/tag/v2.7.6"
+   ]
+  ],
+  "release_tag": "v2.7.8",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/isair/jarvis/releases/tag/v2.7.8",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "jarvis-registry": {
+  "repo": "ascending-llc/jarvis-registry",
+  "stars": 3656,
+  "archived": false,
+  "releases": [
+   [
+    "Jarvis Registry CLI v0.9.0",
+    "2026-10-08",
+    "https://github.com/ascending-llc/jarvis-registry/releases/tag/cli-v0.9.0"
+   ],
+   [
+    "Jarvis Registry asc0.5.14",
+    "2026-10-08",
+    "https://github.com/ascending-llc/jarvis-registry/releases/tag/asc0.5.14"
+   ],
+   [
+    "Jarvis Registry asc0.5.13",
+    "2026-10-06",
+    "https://github.com/ascending-llc/jarvis-registry/releases/tag/asc0.5.13"
+   ]
+  ],
+  "release_tag": "Jarvis Registry CLI v0.9.0",
+  "release_date": "2026-10-08",
+  "release_url": "https://github.com/ascending-llc/jarvis-registry/releases/tag/cli-v0.9.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "jcode": {
@@ -4995,6 +7527,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "joinly": {
+  "repo": "joinly-ai/joinly",
+  "stars": 569,
+  "archived": false,
+  "releases": [
+   [
+    "v0.5.4",
+    "2026-09-01",
+    "https://github.com/joinly-ai/joinly/releases/tag/v0.5.4"
+   ],
+   [
+    "v0.5.3",
+    "2025-12-01",
+    "https://github.com/joinly-ai/joinly/releases/tag/v0.5.3"
+   ],
+   [
+    "v0.5.2",
+    "2025-11-13",
+    "https://github.com/joinly-ai/joinly/releases/tag/v0.5.2"
+   ]
+  ],
+  "release_tag": "v0.5.4",
+  "release_date": "2026-09-01",
+  "release_url": "https://github.com/joinly-ai/joinly/releases/tag/v0.5.4",
+  "pushed": "2026-09-01",
+  "fetched": "2026-10-18"
+ },
  "judge0": {
   "repo": "judge0/judge0",
   "stars": 4484,
@@ -5076,6 +7635,60 @@
   "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
+ "jupyter-mcp-server": {
+  "repo": "datalayer/jupyter-mcp-server",
+  "stars": 1305,
+  "archived": false,
+  "releases": [
+   [
+    "Release 2.2.4",
+    "2026-10-11",
+    "https://github.com/datalayer/jupyter-mcp-server/releases/tag/v2.2.4"
+   ],
+   [
+    "Release 2.2.3",
+    "2026-09-26",
+    "https://github.com/datalayer/jupyter-mcp-server/releases/tag/v2.2.3"
+   ],
+   [
+    "Release 2.2.2",
+    "2026-09-21",
+    "https://github.com/datalayer/jupyter-mcp-server/releases/tag/v2.2.2"
+   ]
+  ],
+  "release_tag": "Release 2.2.4",
+  "release_date": "2026-10-11",
+  "release_url": "https://github.com/datalayer/jupyter-mcp-server/releases/tag/v2.2.4",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "justhireme": {
+  "repo": "vasu-devs/JustHireMe",
+  "stars": 2255,
+  "archived": false,
+  "releases": [
+   [
+    "JustHireMe v1.7.0",
+    "2026-09-01",
+    "https://github.com/vasu-devs/JustHireMe/releases/tag/v1.7.0"
+   ],
+   [
+    "JustHireMe v1.6.2",
+    "2026-08-27",
+    "https://github.com/vasu-devs/JustHireMe/releases/tag/v1.6.2"
+   ],
+   [
+    "JustHireMe v1.6.1",
+    "2026-08-26",
+    "https://github.com/vasu-devs/JustHireMe/releases/tag/v1.6.1"
+   ]
+  ],
+  "release_tag": "JustHireMe v1.7.0",
+  "release_date": "2026-09-01",
+  "release_url": "https://github.com/vasu-devs/JustHireMe/releases/tag/v1.7.0",
+  "pushed": "2026-09-22",
+  "fetched": "2026-10-18"
+ },
  "kagent": {
   "repo": "kagent-dev/kagent",
   "stars": 4042,
@@ -5103,6 +7716,109 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "kagi-mcp": {
+  "repo": "kagisearch/kagimcp",
+  "stars": 544,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.5",
+    "2026-04-08",
+    "https://github.com/kagisearch/kagimcp/releases/tag/v0.1.5"
+   ],
+   [
+    "v0.1.4",
+    "2026-02-27",
+    "https://github.com/kagisearch/kagimcp/releases/tag/v0.1.4"
+   ]
+  ],
+  "release_tag": "v0.1.5",
+  "release_date": "2026-04-08",
+  "release_url": "https://github.com/kagisearch/kagimcp/releases/tag/v0.1.5",
+  "pushed": "2026-07-07",
+  "fetched": "2026-10-18"
+ },
+ "kaibanjs": {
+  "repo": "kaiban-ai/KaibanJS",
+  "stars": 1482,
+  "archived": false,
+  "releases": [
+   [
+    "v0.24.2",
+    "2026-05-15",
+    "https://github.com/kaiban-ai/KaibanJS/releases/tag/v0.24.2"
+   ],
+   [
+    "v0.24.1",
+    "2026-05-01",
+    "https://github.com/kaiban-ai/KaibanJS/releases/tag/v0.24.1"
+   ],
+   [
+    "v0.23.1",
+    "2025-12-12",
+    "https://github.com/kaiban-ai/KaibanJS/releases/tag/v0.23.1"
+   ]
+  ],
+  "release_tag": "v0.24.2",
+  "release_date": "2026-05-15",
+  "release_url": "https://github.com/kaiban-ai/KaibanJS/releases/tag/v0.24.2",
+  "pushed": "2026-05-15",
+  "fetched": "2026-10-18"
+ },
+ "kiln": {
+  "repo": "Kiln-AI/Kiln",
+  "stars": 5196,
+  "archived": false,
+  "releases": [
+   [
+    "Kiln Desktop - v1.2.0",
+    "2026-09-29",
+    "https://github.com/Kiln-AI/Kiln/releases/tag/v1.2.0"
+   ],
+   [
+    "Kiln Desktop - v1.1.3",
+    "2026-09-16",
+    "https://github.com/Kiln-AI/Kiln/releases/tag/v1.1.3"
+   ],
+   [
+    "Merge pull request #1775 from Kiln-AI/scosman/v1.1.2",
+    "2026-09-16",
+    "https://github.com/Kiln-AI/Kiln/releases/tag/v1.1.2"
+   ]
+  ],
+  "release_tag": "Kiln Desktop - v1.2.0",
+  "release_date": "2026-09-29",
+  "release_url": "https://github.com/Kiln-AI/Kiln/releases/tag/v1.2.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "kiro-crew": {
+  "repo": "kirodotdev/KiroCrew",
+  "stars": 4479,
+  "archived": false,
+  "releases": [
+   [
+    "v0.10.0-insider.4",
+    "2026-10-17",
+    "https://github.com/kirodotdev/KiroCrew/releases/tag/v0.10.0-insider.4"
+   ],
+   [
+    "v0.10.0-rc.1",
+    "2026-10-16",
+    "https://github.com/kirodotdev/KiroCrew/releases/tag/v0.10.0-rc.1"
+   ],
+   [
+    "v0.10.0-insider.3",
+    "2026-10-17",
+    "https://github.com/kirodotdev/KiroCrew/releases/tag/v0.10.0-insider.3"
+   ]
+  ],
+  "release_tag": "v0.10.0-insider.4",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/kirodotdev/KiroCrew/releases/tag/v0.10.0-insider.4",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "klavis-ai": {
   "repo": "Klavis-AI/klavis",
   "stars": 5813,
@@ -5128,6 +7844,60 @@
   "release_date": "2026-01-29",
   "release_url": "https://github.com/Klavis-AI/klavis/releases/tag/ts-v2.20.0",
   "pushed": "2026-06-01",
+  "fetched": "2026-10-18"
+ },
+ "knowhere": {
+  "repo": "Ontos-AI/knowhere",
+  "stars": 3775,
+  "archived": false,
+  "releases": [
+   [
+    "v1.2.26",
+    "2026-10-16",
+    "https://github.com/Ontos-AI/knowhere/releases/tag/v1.2.26"
+   ],
+   [
+    "v1.2.25",
+    "2026-10-13",
+    "https://github.com/Ontos-AI/knowhere/releases/tag/v1.2.25"
+   ],
+   [
+    "v1.2.24",
+    "2026-10-10",
+    "https://github.com/Ontos-AI/knowhere/releases/tag/v1.2.24"
+   ]
+  ],
+  "release_tag": "v1.2.26",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/Ontos-AI/knowhere/releases/tag/v1.2.26",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "kong-gateway": {
+  "repo": "Kong/kong",
+  "stars": 44278,
+  "archived": false,
+  "releases": [
+   [
+    "3.9.4",
+    "2026-10-12",
+    "https://github.com/Kong/kong/releases/tag/3.9.4"
+   ],
+   [
+    "3.9.3",
+    "2026-06-17",
+    "https://github.com/Kong/kong/releases/tag/3.9.3"
+   ],
+   [
+    "3.9.2",
+    "2026-06-04",
+    "https://github.com/Kong/kong/releases/tag/3.9.2"
+   ]
+  ],
+  "release_tag": "3.9.4",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/Kong/kong/releases/tag/3.9.4",
+  "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
  "koog": {
@@ -5184,6 +7954,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "kubernetes-mcp-server": {
+  "repo": "containers/kubernetes-mcp-server",
+  "stars": 2164,
+  "archived": false,
+  "releases": [
+   [
+    "v0.0.67",
+    "2026-09-18",
+    "https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.67"
+   ],
+   [
+    "v0.0.66",
+    "2026-07-31",
+    "https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.66"
+   ],
+   [
+    "v0.0.65",
+    "2026-07-14",
+    "https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.65"
+   ]
+  ],
+  "release_tag": "v0.0.67",
+  "release_date": "2026-09-18",
+  "release_url": "https://github.com/containers/kubernetes-mcp-server/releases/tag/v0.0.67",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "kun": {
   "repo": "KunAgent/Kun",
   "stars": 6318,
@@ -5211,12 +8008,93 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "kungfu": {
+  "repo": "kungfu-systems/kungfu",
+  "stars": 4531,
+  "archived": false,
+  "releases": [
+   [
+    "v4.0.0-alpha.5",
+    "2026-09-03",
+    "https://github.com/kungfu-systems/kungfu/releases/tag/v4.0.0-alpha.5"
+   ],
+   [
+    "v4.0-alpha: chore(release): rebind KFD evidence to Alpha.5 v2",
+    "2026-09-02",
+    "https://github.com/kungfu-systems/kungfu/releases/tag/v4.0-alpha"
+   ],
+   [
+    "v4-alpha: chore(release): rebind KFD evidence to Alpha.5 v2",
+    "2026-09-02",
+    "https://github.com/kungfu-systems/kungfu/releases/tag/v4-alpha"
+   ]
+  ],
+  "release_tag": "v4.0.0-alpha.5",
+  "release_date": "2026-09-03",
+  "release_url": "https://github.com/kungfu-systems/kungfu/releases/tag/v4.0.0-alpha.5",
+  "pushed": "2026-09-09",
+  "fetched": "2026-10-18"
+ },
  "label-studio-mcp-server": {
   "repo": "HumanSignal/label-studio-mcp-server",
   "stars": 37,
   "archived": false,
   "releases": [],
   "pushed": "2025-05-30",
+  "fetched": "2026-10-18"
+ },
+ "lagent": {
+  "repo": "InternLM/lagent",
+  "stars": 2284,
+  "archived": false,
+  "releases": [
+   [
+    "agentrl_rc0",
+    "2026-05-19",
+    "https://github.com/InternLM/lagent/releases/tag/agentrl_rc0"
+   ],
+   [
+    "v0.5.0rc3",
+    "2025-03-04",
+    "https://github.com/InternLM/lagent/releases/tag/v0.5.0rc3"
+   ],
+   [
+    "V0.5.0rc2",
+    "2024-11-29",
+    "https://github.com/InternLM/lagent/releases/tag/v0.5.0rc2"
+   ]
+  ],
+  "release_tag": "agentrl_rc0",
+  "release_date": "2026-05-19",
+  "release_url": "https://github.com/InternLM/lagent/releases/tag/agentrl_rc0",
+  "pushed": "2026-04-20",
+  "fetched": "2026-10-18"
+ },
+ "laminar": {
+  "repo": "lmnr-ai/lmnr",
+  "stars": 3400,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.2",
+    "2026-10-16",
+    "https://github.com/lmnr-ai/lmnr/releases/tag/v0.3.2"
+   ],
+   [
+    "v0.3.1",
+    "2026-10-13",
+    "https://github.com/lmnr-ai/lmnr/releases/tag/v0.3.1"
+   ],
+   [
+    "v0.3.0",
+    "2026-10-11",
+    "https://github.com/lmnr-ai/lmnr/releases/tag/v0.3.0"
+   ]
+  ],
+  "release_tag": "v0.3.2",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/lmnr-ai/lmnr/releases/tag/v0.3.2",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "lancedb": {
@@ -5271,6 +8149,33 @@
   "release_date": "2026-10-16",
   "release_url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.86",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "langchain-rb": {
+  "repo": "patterns-ai-core/langchainrb",
+  "stars": 2004,
+  "archived": false,
+  "releases": [
+   [
+    "0.19.5",
+    "2025-05-01",
+    "https://github.com/patterns-ai-core/langchainrb/releases/tag/0.19.5"
+   ],
+   [
+    "0.19.4",
+    "2025-02-17",
+    "https://github.com/patterns-ai-core/langchainrb/releases/tag/0.19.4"
+   ],
+   [
+    "0.19.3",
+    "2025-01-13",
+    "https://github.com/patterns-ai-core/langchainrb/releases/tag/0.19.3"
+   ]
+  ],
+  "release_tag": "0.19.5",
+  "release_date": "2025-05-01",
+  "release_url": "https://github.com/patterns-ai-core/langchainrb/releases/tag/0.19.5",
+  "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
  "langflow": {
@@ -5354,6 +8259,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "langgraph4j": {
+  "repo": "langgraph4j/langgraph4j",
+  "stars": 2058,
+  "archived": false,
+  "releases": [
+   [
+    "1.9.5",
+    "2026-10-13",
+    "https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.5"
+   ],
+   [
+    "1.9.4",
+    "2026-10-09",
+    "https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.4"
+   ],
+   [
+    "1.9.3",
+    "2026-10-01",
+    "https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.3"
+   ]
+  ],
+  "release_tag": "1.9.5",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.5",
+  "pushed": "2026-10-13",
+  "fetched": "2026-10-18"
+ },
  "langroid": {
   "repo": "langroid/langroid",
   "stars": 4119,
@@ -5408,6 +8340,60 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "latitude": {
+  "repo": "latitude-dev/latitude-llm",
+  "stars": 4723,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.124",
+    "2026-10-13",
+    "https://github.com/latitude-dev/latitude-llm/releases/tag/v0.3.124"
+   ],
+   [
+    "v0.3.123",
+    "2026-10-13",
+    "https://github.com/latitude-dev/latitude-llm/releases/tag/v0.3.123"
+   ],
+   [
+    "v0.3.122",
+    "2026-10-09",
+    "https://github.com/latitude-dev/latitude-llm/releases/tag/v0.3.122"
+   ]
+  ],
+  "release_tag": "v0.3.124",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/latitude-dev/latitude-llm/releases/tag/v0.3.124",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "lazycodex": {
+  "repo": "code-yeongyu/lazycodex",
+  "stars": 3792,
+  "archived": false,
+  "releases": [
+   [
+    "v5.1.35",
+    "2026-10-17",
+    "https://github.com/code-yeongyu/lazycodex/releases/tag/v5.1.35"
+   ],
+   [
+    "v5.1.34",
+    "2026-10-16",
+    "https://github.com/code-yeongyu/lazycodex/releases/tag/v5.1.34"
+   ],
+   [
+    "v5.1.33",
+    "2026-10-13",
+    "https://github.com/code-yeongyu/lazycodex/releases/tag/v5.1.33"
+   ]
+  ],
+  "release_tag": "v5.1.35",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/code-yeongyu/lazycodex/releases/tag/v5.1.35",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "lazyllm": {
   "repo": "LazyAGI/LazyLLM",
   "stars": 3889,
@@ -5433,6 +8419,33 @@
   "release_date": "2026-10-13",
   "release_url": "https://github.com/LazyAGI/LazyLLM/releases/tag/v1.4.0",
   "pushed": "2026-10-13",
+  "fetched": "2026-10-18"
+ },
+ "leanctx": {
+  "repo": "yvgude/lean-ctx",
+  "stars": 3884,
+  "archived": false,
+  "releases": [
+   [
+    "v3.11.4",
+    "2026-10-11",
+    "https://github.com/yvgude/lean-ctx/releases/tag/v3.11.4"
+   ],
+   [
+    "v3.11.3",
+    "2026-10-11",
+    "https://github.com/yvgude/lean-ctx/releases/tag/v3.11.3"
+   ],
+   [
+    "v3.11.2",
+    "2026-10-09",
+    "https://github.com/yvgude/lean-ctx/releases/tag/v3.11.2"
+   ]
+  ],
+  "release_tag": "v3.11.4",
+  "release_date": "2026-10-11",
+  "release_url": "https://github.com/yvgude/lean-ctx/releases/tag/v3.11.4",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "lemonade": {
@@ -5516,6 +8529,87 @@
   "pushed": "2026-09-10",
   "fetched": "2026-10-18"
  },
+ "librechat": {
+  "repo": "LibreChat-AI/LibreChat",
+  "stars": 45916,
+  "archived": false,
+  "releases": [
+   [
+    "chart-3.0.0",
+    "2026-10-14",
+    "https://github.com/LibreChat-AI/LibreChat/releases/tag/chart-3.0.0"
+   ],
+   [
+    "v0.8.8",
+    "2026-10-01",
+    "https://github.com/LibreChat-AI/LibreChat/releases/tag/v0.8.8"
+   ],
+   [
+    "chart-2.0.17: 🎁 chore: Bump Packages and Helm After Security Fixes (#16582)",
+    "2026-10-01",
+    "https://github.com/LibreChat-AI/LibreChat/releases/tag/chart-2.0.17"
+   ]
+  ],
+  "release_tag": "chart-3.0.0",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/LibreChat-AI/LibreChat/releases/tag/chart-3.0.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "lightpanda": {
+  "repo": "lightpanda-io/browser",
+  "stars": 36659,
+  "archived": false,
+  "releases": [
+   [
+    "1.0.1",
+    "2026-10-15",
+    "https://github.com/lightpanda-io/browser/releases/tag/1.0.1"
+   ],
+   [
+    "1.0.0",
+    "2026-10-02",
+    "https://github.com/lightpanda-io/browser/releases/tag/1.0.0"
+   ],
+   [
+    "0.4.1",
+    "2026-09-15",
+    "https://github.com/lightpanda-io/browser/releases/tag/0.4.1"
+   ]
+  ],
+  "release_tag": "1.0.1",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/lightpanda-io/browser/releases/tag/1.0.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "line-bot-mcp-server": {
+  "repo": "line/line-bot-mcp-server",
+  "stars": 789,
+  "archived": false,
+  "releases": [
+   [
+    "v0.5.0 Support get_follower_ids and fix bugs",
+    "2026-05-29",
+    "https://github.com/line/line-bot-mcp-server/releases/tag/v0.5.0"
+   ],
+   [
+    "v0.4.2 Fix Create Richmenu Tool via npx",
+    "2025-11-14",
+    "https://github.com/line/line-bot-mcp-server/releases/tag/v0.4.2"
+   ],
+   [
+    "v0.4.0 Add Create Richmenu Tool",
+    "2025-11-14",
+    "https://github.com/line/line-bot-mcp-server/releases/tag/v0.4.0"
+   ]
+  ],
+  "release_tag": "v0.5.0 Support get_follower_ids and fix bugs",
+  "release_date": "2026-05-29",
+  "release_url": "https://github.com/line/line-bot-mcp-server/releases/tag/v0.5.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "linkedin-mcp-server": {
   "repo": "stickerdaniel/linkedin-mcp-server",
   "stars": 3915,
@@ -5568,6 +8662,33 @@
   "release_date": "2026-09-15",
   "release_url": "https://github.com/LinkupPlatform/linkup-mcp-server/releases/tag/v3.4.0",
   "pushed": "2026-10-01",
+  "fetched": "2026-10-18"
+ },
+ "litellm": {
+  "repo": "BerriAI/litellm",
+  "stars": 61480,
+  "archived": false,
+  "releases": [
+   [
+    "v1.107.0-rc.1",
+    "2026-10-18",
+    "https://github.com/BerriAI/litellm/releases/tag/v1.107.0-rc.1"
+   ],
+   [
+    "v1.106.0",
+    "2026-10-18",
+    "https://github.com/BerriAI/litellm/releases/tag/v1.106.0"
+   ],
+   [
+    "v1.103.5",
+    "2026-10-17",
+    "https://github.com/BerriAI/litellm/releases/tag/v1.103.5"
+   ]
+  ],
+  "release_tag": "v1.107.0-rc.1",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/BerriAI/litellm/releases/tag/v1.107.0-rc.1",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "liveblocks": {
@@ -5651,6 +8772,60 @@
   "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
+ "llmware": {
+  "repo": "llmware-ai/llmware",
+  "stars": 14815,
+  "archived": false,
+  "releases": [
+   [
+    "v0.4.7",
+    "2026-10-01",
+    "https://github.com/llmware-ai/llmware/releases/tag/v0.4.7"
+   ],
+   [
+    "v0.4.6",
+    "2026-04-14",
+    "https://github.com/llmware-ai/llmware/releases/tag/v0.4.6"
+   ],
+   [
+    "v0.4.5",
+    "2026-02-21",
+    "https://github.com/llmware-ai/llmware/releases/tag/v0.4.5"
+   ]
+  ],
+  "release_tag": "v0.4.7",
+  "release_date": "2026-10-01",
+  "release_url": "https://github.com/llmware-ai/llmware/releases/tag/v0.4.7",
+  "pushed": "2026-10-01",
+  "fetched": "2026-10-18"
+ },
+ "lobehub": {
+  "repo": "lobehub/lobehub",
+  "stars": 83307,
+  "archived": false,
+  "releases": [
+   [
+    "Desktop Canary v2.2.21-canary.1",
+    "2026-10-18",
+    "https://github.com/lobehub/lobehub/releases/tag/v2.2.21-canary.1"
+   ],
+   [
+    "🚀 Release v2.2.20",
+    "2026-10-18",
+    "https://github.com/lobehub/lobehub/releases/tag/v2.2.20"
+   ],
+   [
+    "Desktop Canary v2.2.20-canary.7",
+    "2026-10-17",
+    "https://github.com/lobehub/lobehub/releases/tag/v2.2.20-canary.7"
+   ]
+  ],
+  "release_tag": "Desktop Canary v2.2.21-canary.1",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/lobehub/lobehub/releases/tag/v2.2.21-canary.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "lobsterai": {
   "repo": "netease-youdao/LobsterAI",
   "stars": 6124,
@@ -5703,6 +8878,22 @@
   "release_date": "2026-10-02",
   "release_url": "https://github.com/mudler/LocalAI/releases/tag/v4.11.0",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "lovable-mcp": {
+  "repo": "lovablelabs/mcp",
+  "stars": 7,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-07-13",
+  "fetched": "2026-10-18"
+ },
+ "lucid-mcp": {
+  "repo": "lucidsoftware/lucid-mcp-server",
+  "stars": 3,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-07",
   "fetched": "2026-10-18"
  },
  "lyzr": {
@@ -5784,6 +8975,76 @@
   "release_date": "2026-05-27",
   "release_url": "https://github.com/microsoft/magentic-ui/releases/tag/v0.2.1",
   "pushed": "2026-07-23",
+  "fetched": "2026-10-18"
+ },
+ "magic": {
+  "repo": "dtyq/magic",
+  "stars": 5050,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-08-12",
+  "fetched": "2026-10-18"
+ },
+ "manifest": {
+  "repo": "mnfst/llm-gateway",
+  "stars": 7588,
+  "archived": false,
+  "releases": [
+   [
+    "manifest v6.28.9",
+    "2026-10-16",
+    "https://github.com/mnfst/llm-gateway/releases/tag/manifest%406.28.9"
+   ],
+   [
+    "manifest v6.28.8",
+    "2026-10-16",
+    "https://github.com/mnfst/llm-gateway/releases/tag/manifest%406.28.8"
+   ],
+   [
+    "manifest v6.28.7",
+    "2026-10-14",
+    "https://github.com/mnfst/llm-gateway/releases/tag/manifest%406.28.7"
+   ]
+  ],
+  "release_tag": "manifest v6.28.9",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/mnfst/llm-gateway/releases/tag/manifest%406.28.9",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "mantis": {
+  "repo": "google/mantis",
+  "stars": 2460,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "markitdown": {
+  "repo": "microsoft/markitdown",
+  "stars": 190851,
+  "archived": false,
+  "releases": [
+   [
+    "Version 0.1.8",
+    "2026-09-21",
+    "https://github.com/microsoft/markitdown/releases/tag/v0.1.8"
+   ],
+   [
+    "Version 0.1.8b2",
+    "2026-09-14",
+    "https://github.com/microsoft/markitdown/releases/tag/v0.1.8b2"
+   ],
+   [
+    "Version 0.1.8b1",
+    "2026-09-04",
+    "https://github.com/microsoft/markitdown/releases/tag/v0.1.8b1"
+   ]
+  ],
+  "release_tag": "Version 0.1.8",
+  "release_date": "2026-09-21",
+  "release_url": "https://github.com/microsoft/markitdown/releases/tag/v0.1.8",
+  "pushed": "2026-10-04",
   "fetched": "2026-10-18"
  },
  "marvin": {
@@ -5921,6 +9182,33 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "mcp-apps": {
+  "repo": "modelcontextprotocol/ext-apps",
+  "stars": 2970,
+  "archived": false,
+  "releases": [
+   [
+    "v2.0.3",
+    "2026-09-25",
+    "https://github.com/modelcontextprotocol/ext-apps/releases/tag/v2.0.3"
+   ],
+   [
+    "v2.0.2",
+    "2026-09-25",
+    "https://github.com/modelcontextprotocol/ext-apps/releases/tag/v2.0.2"
+   ],
+   [
+    "v2.0.1",
+    "2026-09-24",
+    "https://github.com/modelcontextprotocol/ext-apps/releases/tag/v2.0.1"
+   ]
+  ],
+  "release_tag": "v2.0.3",
+  "release_date": "2026-09-25",
+  "release_url": "https://github.com/modelcontextprotocol/ext-apps/releases/tag/v2.0.3",
+  "pushed": "2026-09-25",
+  "fetched": "2026-10-18"
+ },
  "mcp-c-sdk": {
   "repo": "modelcontextprotocol/csharp-sdk",
   "stars": 4587,
@@ -5946,6 +9234,68 @@
   "release_date": "2026-08-13",
   "release_url": "https://github.com/modelcontextprotocol/csharp-sdk/releases/tag/v2.2.0",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "mcp-for-blender": {
+  "repo": "ahujasid/mcp-for-blender",
+  "stars": 31505,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-06",
+  "fetched": "2026-10-18"
+ },
+ "mcp-go-sdk": {
+  "repo": "modelcontextprotocol/go-sdk",
+  "stars": 5240,
+  "archived": false,
+  "releases": [
+   [
+    "v1.8.0",
+    "2026-09-14",
+    "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0"
+   ],
+   [
+    "v1.8.0-pre.2",
+    "2026-09-04",
+    "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.2"
+   ],
+   [
+    "v1.8.0-pre.1",
+    "2026-09-04",
+    "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0-pre.1"
+   ]
+  ],
+  "release_tag": "v1.8.0",
+  "release_date": "2026-09-14",
+  "release_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.8.0",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "mcp-inspector": {
+  "repo": "modelcontextprotocol/inspector",
+  "stars": 11096,
+  "archived": false,
+  "releases": [
+   [
+    "2.11.0",
+    "2026-10-14",
+    "https://github.com/modelcontextprotocol/inspector/releases/tag/2.11.0"
+   ],
+   [
+    "2.10.1",
+    "2026-10-08",
+    "https://github.com/modelcontextprotocol/inspector/releases/tag/2.10.1"
+   ],
+   [
+    "2.10.0",
+    "2026-10-07",
+    "https://github.com/modelcontextprotocol/inspector/releases/tag/2.10.0"
+   ]
+  ],
+  "release_tag": "2.11.0",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/modelcontextprotocol/inspector/releases/tag/2.11.0",
+  "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
  "mcp-java-sdk": {
@@ -6053,6 +9403,33 @@
   "release_tag": "v1.0.0",
   "release_date": "2026-10-11",
   "release_url": "https://github.com/modelcontextprotocol/servers/releases/tag/v1.0.0",
+  "pushed": "2026-10-11",
+  "fetched": "2026-10-18"
+ },
+ "mcp-registry": {
+  "repo": "modelcontextprotocol/registry",
+  "stars": 7373,
+  "archived": false,
+  "releases": [
+   [
+    "v1.8.1",
+    "2026-08-06",
+    "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.1"
+   ],
+   [
+    "v1.8.0",
+    "2026-07-13",
+    "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.0"
+   ],
+   [
+    "v1.7.9",
+    "2026-05-12",
+    "https://github.com/modelcontextprotocol/registry/releases/tag/v1.7.9"
+   ]
+  ],
+  "release_tag": "v1.8.1",
+  "release_date": "2026-08-06",
+  "release_url": "https://github.com/modelcontextprotocol/registry/releases/tag/v1.8.1",
   "pushed": "2026-10-11",
   "fetched": "2026-10-18"
  },
@@ -6191,6 +9568,33 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "mcpjam-inspector": {
+  "repo": "MCPJam/inspector",
+  "stars": 2269,
+  "archived": false,
+  "releases": [
+   [
+    "Release v3.16.1",
+    "2026-10-15",
+    "https://github.com/MCPJam/inspector/releases/tag/v3.16.1"
+   ],
+   [
+    "Release v3.16.0",
+    "2026-10-13",
+    "https://github.com/MCPJam/inspector/releases/tag/v3.16.0"
+   ],
+   [
+    "Local harness pack claude-code 1.0.4",
+    "2026-10-12",
+    "https://github.com/MCPJam/inspector/releases/tag/local-harness-pack-v1.0.4"
+   ]
+  ],
+  "release_tag": "Release v3.16.1",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/MCPJam/inspector/releases/tag/v3.16.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "mcpo": {
   "repo": "open-webui/mcpo",
   "stars": 4404,
@@ -6218,6 +9622,33 @@
   "pushed": "2026-02-27",
   "fetched": "2026-10-18"
  },
+ "mcporter": {
+  "repo": "openclaw/mcporter",
+  "stars": 5069,
+  "archived": false,
+  "releases": [
+   [
+    "mcporter 0.15.0",
+    "2026-10-16",
+    "https://github.com/openclaw/mcporter/releases/tag/v0.15.0"
+   ],
+   [
+    "v0.14.3",
+    "2026-10-11",
+    "https://github.com/openclaw/mcporter/releases/tag/v0.14.3"
+   ],
+   [
+    "mcporter 0.14.2",
+    "2026-10-01",
+    "https://github.com/openclaw/mcporter/releases/tag/v0.14.2"
+   ]
+  ],
+  "release_tag": "mcporter 0.15.0",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/openclaw/mcporter/releases/tag/v0.15.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "mem0": {
   "repo": "mem0ai/mem0",
   "stars": 67372,
@@ -6243,6 +9674,41 @@
   "release_date": "2026-09-25",
   "release_url": "https://github.com/mem0ai/mem0/releases/tag/v2.2.1",
   "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "memanto": {
+  "repo": "moorcheh-ai/memanto",
+  "stars": 2333,
+  "archived": false,
+  "releases": [
+   [
+    "v0.2.28",
+    "2026-10-13",
+    "https://github.com/moorcheh-ai/memanto/releases/tag/v0.2.28"
+   ],
+   [
+    "sdks/go/v0.2.28: Merge pull request #2092 from moorcheh-ai/feat/client-extract",
+    "2026-10-13",
+    "https://github.com/moorcheh-ai/memanto/releases/tag/sdks%2Fgo%2Fv0.2.28"
+   ],
+   [
+    "v0.2.27",
+    "2026-10-07",
+    "https://github.com/moorcheh-ai/memanto/releases/tag/v0.2.27"
+   ]
+  ],
+  "release_tag": "v0.2.28",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/moorcheh-ai/memanto/releases/tag/v0.2.28",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "memfree": {
+  "repo": "memfreeme/memfree",
+  "stars": 1515,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-07-06",
   "fetched": "2026-10-18"
  },
  "memmachine": {
@@ -6299,6 +9765,87 @@
   "pushed": "2026-09-22",
   "fetched": "2026-10-18"
  },
+ "mempalace": {
+  "repo": "MemPalace/mempalace",
+  "stars": 59623,
+  "archived": false,
+  "releases": [
+   [
+    "v3.11.0 — audit, repair and opt-in EmbeddingGemma 2",
+    "2026-10-14",
+    "https://github.com/MemPalace/mempalace/releases/tag/v3.11.0"
+   ],
+   [
+    "v3.10.0 — lighter ways in for agents",
+    "2026-09-16",
+    "https://github.com/MemPalace/mempalace/releases/tag/v3.10.0"
+   ],
+   [
+    "v3.9.0 — one hub for every agent",
+    "2026-08-31",
+    "https://github.com/MemPalace/mempalace/releases/tag/v3.9.0"
+   ]
+  ],
+  "release_tag": "v3.11.0 — audit, repair and opt-in EmbeddingGemma 2",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/MemPalace/mempalace/releases/tag/v3.11.0",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "memu": {
+  "repo": "NevaMind-AI/memU",
+  "stars": 14554,
+  "archived": false,
+  "releases": [
+   [
+    "v2.0.0-beta.0",
+    "2026-07-23",
+    "https://github.com/NevaMind-AI/memU/releases/tag/v2.0.0-beta.0"
+   ],
+   [
+    "v1.5.1",
+    "2026-03-23",
+    "https://github.com/NevaMind-AI/memU/releases/tag/v1.5.1"
+   ],
+   [
+    "v1.5.0",
+    "2026-03-17",
+    "https://github.com/NevaMind-AI/memU/releases/tag/v1.5.0"
+   ]
+  ],
+  "release_tag": "v2.0.0-beta.0",
+  "release_date": "2026-07-23",
+  "release_url": "https://github.com/NevaMind-AI/memU/releases/tag/v2.0.0-beta.0",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "mercury-agent": {
+  "repo": "cosmicstack-labs/mercury-agent",
+  "stars": 3433,
+  "archived": false,
+  "releases": [
+   [
+    "1.3.8 — Steady Mercury (hotfix: attach TUI live rendering and spinners)",
+    "2026-10-12",
+    "https://github.com/cosmicstack-labs/mercury-agent/releases/tag/v1.3.8"
+   ],
+   [
+    "1.3.7 — Steady Mercury (hotfix: first-run setup exited at the mode menu)",
+    "2026-10-12",
+    "https://github.com/cosmicstack-labs/mercury-agent/releases/tag/v1.3.7"
+   ],
+   [
+    "1.3.6 — Steady Mercury (hotfix: upgrade is a no-op when current)",
+    "2026-10-12",
+    "https://github.com/cosmicstack-labs/mercury-agent/releases/tag/v1.3.6"
+   ]
+  ],
+  "release_tag": "1.3.8 — Steady Mercury (hotfix: attach TUI live rendering and spinners)",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/cosmicstack-labs/mercury-agent/releases/tag/v1.3.8",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "metagpt": {
   "repo": "FoundationAgents/MetaGPT",
   "stars": 70902,
@@ -6351,6 +9898,14 @@
   "release_date": "2025-12-19",
   "release_url": "https://github.com/metatool-ai/metamcp/releases/tag/v2.4.22",
   "pushed": "2026-06-22",
+  "fetched": "2026-10-18"
+ },
+ "metorial": {
+  "repo": "metorial/metorial",
+  "stars": 3367,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "microsandbox": {
@@ -6413,6 +9968,33 @@
   "archived": false,
   "releases": [],
   "pushed": "2026-09-10",
+  "fetched": "2026-10-18"
+ },
+ "midscene-js": {
+  "repo": "web-infra-dev/midscene",
+  "stars": 15313,
+  "archived": false,
+  "releases": [
+   [
+    "v1.16.0",
+    "2026-10-16",
+    "https://github.com/web-infra-dev/midscene/releases/tag/v1.16.0"
+   ],
+   [
+    "v1.15.6",
+    "2026-10-16",
+    "https://github.com/web-infra-dev/midscene/releases/tag/v1.15.6"
+   ],
+   [
+    "v1.15.5",
+    "2026-10-16",
+    "https://github.com/web-infra-dev/midscene/releases/tag/v1.15.5"
+   ]
+  ],
+  "release_tag": "v1.16.0",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/web-infra-dev/midscene/releases/tag/v1.16.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "mimo-code": {
@@ -6593,6 +10175,33 @@
   "pushed": "2026-09-22",
   "fetched": "2026-10-18"
  },
+ "mle-agent": {
+  "repo": "MLSysOps/MLE-agent",
+  "stars": 1574,
+  "archived": false,
+  "releases": [
+   [
+    "0.4.2",
+    "2024-10-12",
+    "https://github.com/MLSysOps/MLE-agent/releases/tag/0.4.2"
+   ],
+   [
+    "0.4.1",
+    "2024-10-12",
+    "https://github.com/MLSysOps/MLE-agent/releases/tag/0.4.1"
+   ],
+   [
+    "0.4.0",
+    "2024-09-12",
+    "https://github.com/MLSysOps/MLE-agent/releases/tag/0.4.0"
+   ]
+  ],
+  "release_tag": "0.4.2",
+  "release_date": "2024-10-12",
+  "release_url": "https://github.com/MLSysOps/MLE-agent/releases/tag/0.4.2",
+  "pushed": "2026-07-10",
+  "fetched": "2026-10-18"
+ },
  "mlflow": {
   "repo": "mlflow/mlflow",
   "stars": 28431,
@@ -6618,6 +10227,114 @@
   "release_date": "2026-10-16",
   "release_url": "https://github.com/mlflow/mlflow/releases/tag/model-catalog%2Flatest",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "mnemosyne": {
+  "repo": "mnemosyne-oss/mnemosyne",
+  "stars": 3449,
+  "archived": false,
+  "releases": [
+   [
+    "v4.0.0b4",
+    "2026-10-03",
+    "https://github.com/mnemosyne-oss/mnemosyne/releases/tag/v4.0.0b4"
+   ],
+   [
+    "v0.7.4",
+    "2026-10-03",
+    "https://github.com/mnemosyne-oss/mnemosyne/releases/tag/v0.7.4"
+   ],
+   [
+    "v4.0.0b3",
+    "2026-09-23",
+    "https://github.com/mnemosyne-oss/mnemosyne/releases/tag/v4.0.0b3"
+   ]
+  ],
+  "release_tag": "v4.0.0b4",
+  "release_date": "2026-10-03",
+  "release_url": "https://github.com/mnemosyne-oss/mnemosyne/releases/tag/v4.0.0b4",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "mobile-mcp": {
+  "repo": "mobile-next/mobile-mcp",
+  "stars": 9727,
+  "archived": false,
+  "releases": [
+   [
+    "Version 1.0.11",
+    "2026-10-14",
+    "https://github.com/mobile-next/mobile-mcp/releases/tag/1.0.11"
+   ],
+   [
+    "Version 1.0.10",
+    "2026-10-11",
+    "https://github.com/mobile-next/mobile-mcp/releases/tag/1.0.10"
+   ],
+   [
+    "Version 1.0.9",
+    "2026-10-11",
+    "https://github.com/mobile-next/mobile-mcp/releases/tag/1.0.9"
+   ]
+  ],
+  "release_tag": "Version 1.0.11",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/mobile-next/mobile-mcp/releases/tag/1.0.11",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "mobile-use": {
+  "repo": "minitap-ai/mobile-use",
+  "stars": 3274,
+  "archived": false,
+  "releases": [
+   [
+    "v4.0.0",
+    "2026-08-27",
+    "https://github.com/minitap-ai/mobile-use/releases/tag/v4.0.0"
+   ],
+   [
+    "v3.6.3",
+    "2026-03-19",
+    "https://github.com/minitap-ai/mobile-use/releases/tag/v3.6.3"
+   ],
+   [
+    "v3.6.2",
+    "2026-03-19",
+    "https://github.com/minitap-ai/mobile-use/releases/tag/v3.6.2"
+   ]
+  ],
+  "release_tag": "v4.0.0",
+  "release_date": "2026-08-27",
+  "release_url": "https://github.com/minitap-ai/mobile-use/releases/tag/v4.0.0",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "mobilebuildmcp": {
+  "repo": "getsentry/MobileBuildMCP",
+  "stars": 6487,
+  "archived": false,
+  "releases": [
+   [
+    "Release v2.7.1",
+    "2026-09-23",
+    "https://github.com/getsentry/MobileBuildMCP/releases/tag/v2.7.1"
+   ],
+   [
+    "Release v2.7.0",
+    "2026-07-23",
+    "https://github.com/getsentry/MobileBuildMCP/releases/tag/v2.7.0"
+   ],
+   [
+    "Release v2.6.2",
+    "2026-06-02",
+    "https://github.com/getsentry/MobileBuildMCP/releases/tag/v2.6.2"
+   ]
+  ],
+  "release_tag": "Release v2.7.1",
+  "release_date": "2026-09-23",
+  "release_url": "https://github.com/getsentry/MobileBuildMCP/releases/tag/v2.7.1",
+  "pushed": "2026-09-23",
   "fetched": "2026-10-18"
  },
  "mobilerun": {
@@ -6671,6 +10388,33 @@
   "release_tag": "2026-07-28",
   "release_date": "2026-07-28",
   "release_url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "moli": {
+  "repo": "lexmount/moli",
+  "stars": 19401,
+  "archived": false,
+  "releases": [
+   [
+    "Moli v1.1.18",
+    "2026-10-17",
+    "https://github.com/lexmount/moli/releases/tag/v1.1.18"
+   ],
+   [
+    "Moli v1.1.17",
+    "2026-10-12",
+    "https://github.com/lexmount/moli/releases/tag/v1.1.17"
+   ],
+   [
+    "Moli v1.1.16",
+    "2026-10-11",
+    "https://github.com/lexmount/moli/releases/tag/v1.1.16"
+   ]
+  ],
+  "release_tag": "Moli v1.1.18",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/lexmount/moli/releases/tag/v1.1.18",
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
@@ -6761,6 +10505,87 @@
   "release_date": "2026-10-15",
   "release_url": "https://github.com/mongodb-js/mongodb-mcp-server/releases/tag/v3.1.1-pre.1",
   "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "monkeycode": {
+  "repo": "chaitin/MonkeyCode",
+  "stars": 4838,
+  "archived": false,
+  "releases": [
+   [
+    "MonkeyCode v26072801",
+    "2026-07-28",
+    "https://github.com/chaitin/MonkeyCode/releases/tag/v26072801"
+   ],
+   [
+    "MonkeyCode v26072101",
+    "2026-07-21",
+    "https://github.com/chaitin/MonkeyCode/releases/tag/v26072101"
+   ],
+   [
+    "MonkeyCode v26072001",
+    "2026-07-20",
+    "https://github.com/chaitin/MonkeyCode/releases/tag/v26072001"
+   ]
+  ],
+  "release_tag": "MonkeyCode v26072801",
+  "release_date": "2026-07-28",
+  "release_url": "https://github.com/chaitin/MonkeyCode/releases/tag/v26072801",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "motherduck-mcp": {
+  "repo": "motherduckdb/mcp-server-motherduck",
+  "stars": 532,
+  "archived": false,
+  "releases": [
+   [
+    "v1.1.0",
+    "2026-10-07",
+    "https://github.com/motherduckdb/mcp-server-motherduck/releases/tag/v1.1.0"
+   ],
+   [
+    "v1.0.8",
+    "2026-08-19",
+    "https://github.com/motherduckdb/mcp-server-motherduck/releases/tag/v1.0.8"
+   ],
+   [
+    "v1.0.7",
+    "2026-06-09",
+    "https://github.com/motherduckdb/mcp-server-motherduck/releases/tag/v1.0.7"
+   ]
+  ],
+  "release_tag": "v1.1.0",
+  "release_date": "2026-10-07",
+  "release_url": "https://github.com/motherduckdb/mcp-server-motherduck/releases/tag/v1.1.0",
+  "pushed": "2026-10-07",
+  "fetched": "2026-10-18"
+ },
+ "ms-agent": {
+  "repo": "modelscope/ms-agent",
+  "stars": 4416,
+  "archived": false,
+  "releases": [
+   [
+    "v1.6.0",
+    "2026-03-23",
+    "https://github.com/modelscope/ms-agent/releases/tag/v1.6.0"
+   ],
+   [
+    "v1.6.0rc1",
+    "2026-02-06",
+    "https://github.com/modelscope/ms-agent/releases/tag/v1.6.0rc1"
+   ],
+   [
+    "v1.6.0rc0",
+    "2026-02-10",
+    "https://github.com/modelscope/ms-agent/releases/tag/v1.6.0rc0"
+   ]
+  ],
+  "release_tag": "v1.6.0",
+  "release_date": "2026-03-23",
+  "release_url": "https://github.com/modelscope/ms-agent/releases/tag/v1.6.0",
+  "pushed": "2026-09-21",
   "fetched": "2026-10-18"
  },
  "munder-difflin": {
@@ -7040,6 +10865,33 @@
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
+ "neuron-ai": {
+  "repo": "neuron-core/neuron-ai",
+  "stars": 2146,
+  "archived": false,
+  "releases": [
+   [
+    "4.1.12",
+    "2026-10-16",
+    "https://github.com/neuron-core/neuron-ai/releases/tag/4.1.12"
+   ],
+   [
+    "4.1.11",
+    "2026-10-10",
+    "https://github.com/neuron-core/neuron-ai/releases/tag/4.1.11"
+   ],
+   [
+    "4.1.10",
+    "2026-10-10",
+    "https://github.com/neuron-core/neuron-ai/releases/tag/4.1.10"
+   ]
+  ],
+  "release_tag": "4.1.12",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/neuron-core/neuron-ai/releases/tag/4.1.12",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "nexent": {
   "repo": "ModelEngine-Group/nexent",
   "stars": 5971,
@@ -7092,6 +10944,60 @@
   "release_date": "2026-10-10",
   "release_url": "https://github.com/DayuanJiang/next-ai-draw-io/releases/tag/v0.5.0",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "next-js-devtools-mcp": {
+  "repo": "vercel/next-devtools-mcp",
+  "stars": 829,
+  "archived": false,
+  "releases": [
+   [
+    "v0.4.0",
+    "2026-06-24",
+    "https://github.com/vercel/next-devtools-mcp/releases/tag/v0.4.0"
+   ],
+   [
+    "v0.3.10",
+    "2026-01-08",
+    "https://github.com/vercel/next-devtools-mcp/releases/tag/v0.3.10"
+   ],
+   [
+    "v0.3.9",
+    "2026-01-06",
+    "https://github.com/vercel/next-devtools-mcp/releases/tag/v0.3.9"
+   ]
+  ],
+  "release_tag": "v0.4.0",
+  "release_date": "2026-06-24",
+  "release_url": "https://github.com/vercel/next-devtools-mcp/releases/tag/v0.4.0",
+  "pushed": "2026-09-15",
+  "fetched": "2026-10-18"
+ },
+ "nexu": {
+  "repo": "nexu-io/nexu",
+  "stars": 3282,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.12",
+    "2026-04-13",
+    "https://github.com/nexu-io/nexu/releases/tag/v0.1.12"
+   ],
+   [
+    "v0.1.11",
+    "2026-04-08",
+    "https://github.com/nexu-io/nexu/releases/tag/v0.1.11"
+   ],
+   [
+    "v0.1.10",
+    "2026-04-02",
+    "https://github.com/nexu-io/nexu/releases/tag/v0.1.10"
+   ]
+  ],
+  "release_tag": "v0.1.12",
+  "release_date": "2026-04-13",
+  "release_url": "https://github.com/nexu-io/nexu/releases/tag/v0.1.12",
+  "pushed": "2026-04-16",
   "fetched": "2026-10-18"
  },
  "nimbalyst": {
@@ -7202,6 +11108,60 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "notte": {
+  "repo": "nottelabs/notte",
+  "stars": 2040,
+  "archived": false,
+  "releases": [
+   [
+    "v1.9.7",
+    "2026-10-14",
+    "https://github.com/nottelabs/notte/releases/tag/v1.9.7"
+   ],
+   [
+    "v1.9.6",
+    "2026-10-07",
+    "https://github.com/nottelabs/notte/releases/tag/v1.9.6"
+   ],
+   [
+    "v1.9.5",
+    "2026-10-06",
+    "https://github.com/nottelabs/notte/releases/tag/v1.9.5"
+   ]
+  ],
+  "release_tag": "v1.9.7",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/nottelabs/notte/releases/tag/v1.9.7",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "novu": {
+  "repo": "novuhq/novu",
+  "stars": 40165,
+  "archived": false,
+  "releases": [
+   [
+    "@novu/framework@v2.14.0",
+    "2026-09-28",
+    "https://github.com/novuhq/novu/releases/tag/%40novu%2Fframework%40v2.14.0"
+   ],
+   [
+    "@novu/react@v3.19.2",
+    "2026-09-07",
+    "https://github.com/novuhq/novu/releases/tag/%40novu%2Freact%40v3.19.2"
+   ],
+   [
+    "@novu/nextjs@v3.19.2",
+    "2026-09-07",
+    "https://github.com/novuhq/novu/releases/tag/%40novu%2Fnextjs%40v3.19.2"
+   ]
+  ],
+  "release_tag": "@novu/framework@v2.14.0",
+  "release_date": "2026-09-28",
+  "release_url": "https://github.com/novuhq/novu/releases/tag/%40novu%2Fframework%40v2.14.0",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "nvidia-openshell": {
   "repo": "nvidia/openShell",
   "stars": 16574,
@@ -7281,6 +11241,33 @@
   "release_date": "2026-10-18",
   "release_url": "https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization/releases/tag/nightly-20261017",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "observal": {
+  "repo": "Observal/Observal",
+  "stars": 4523,
+  "archived": false,
+  "releases": [
+   [
+    "Observal v1.15.1",
+    "2026-10-16",
+    "https://github.com/Observal/Observal/releases/tag/v1.15.1"
+   ],
+   [
+    "Observal v1.15.0",
+    "2026-10-13",
+    "https://github.com/Observal/Observal/releases/tag/v1.15.0"
+   ],
+   [
+    "Observal v1.14.0",
+    "2026-10-04",
+    "https://github.com/Observal/Observal/releases/tag/v1.14.0"
+   ]
+  ],
+  "release_tag": "Observal v1.15.1",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/Observal/Observal/releases/tag/v1.15.1",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "octop": {
@@ -7418,6 +11405,60 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "ollama": {
+  "repo": "ollama/ollama",
+  "stars": 183704,
+  "archived": false,
+  "releases": [
+   [
+    "v0.40.7",
+    "2026-10-18",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0"
+   ],
+   [
+    "v0.40.6",
+    "2026-10-17",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.6"
+   ],
+   [
+    "v0.40.6-rc1: transfer: support proxies on registry redirect targets (#19065)",
+    "2026-10-16",
+    "https://github.com/ollama/ollama/releases/tag/v0.40.6-rc1"
+   ]
+  ],
+  "release_tag": "v0.40.7",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "omnara": {
+  "repo": "omnara-ai/omnara",
+  "stars": 2939,
+  "archived": false,
+  "releases": [
+   [
+    "sdk-v0.1.33: fix: stop NUL bytes in process output from hanging tool calls (#674",
+    "2026-10-16",
+    "https://github.com/omnara-ai/omnara/releases/tag/sdk-v0.1.33"
+   ],
+   [
+    "omnarad v0.2.7",
+    "2026-10-16",
+    "https://github.com/omnara-ai/omnara/releases/tag/omnarad-v0.2.7"
+   ],
+   [
+    "omnarad stable channel",
+    "2026-10-16",
+    "https://github.com/omnara-ai/omnara/releases/tag/omnarad-stable"
+   ]
+  ],
+  "release_tag": "sdk-v0.1.33: fix: stop NUL bytes in process output from hanging tool calls (#674",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/omnara-ai/omnara/releases/tag/sdk-v0.1.33",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "omnigent": {
   "repo": "omnigent-ai/omnigent",
   "stars": 10867,
@@ -7442,6 +11483,33 @@
   "release_tag": "nightly: v0.19.0.dev20261018",
   "release_date": "2026-10-18",
   "release_url": "https://github.com/omnigent-ai/omnigent/releases/tag/v0.19.0.dev20261018",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "omniroute": {
+  "repo": "diegosouzapw/OmniRoute",
+  "stars": 77954,
+  "archived": false,
+  "releases": [
+   [
+    "v3.8.51",
+    "2026-09-30",
+    "https://github.com/diegosouzapw/OmniRoute/releases/tag/v3.8.51"
+   ],
+   [
+    "v3.8.50",
+    "2026-09-02",
+    "https://github.com/diegosouzapw/OmniRoute/releases/tag/v3.8.50"
+   ],
+   [
+    "Radar catalog export (rolling)",
+    "2026-10-18",
+    "https://github.com/diegosouzapw/OmniRoute/releases/tag/radar-export-latest"
+   ]
+  ],
+  "release_tag": "v3.8.51",
+  "release_date": "2026-09-30",
+  "release_url": "https://github.com/diegosouzapw/OmniRoute/releases/tag/v3.8.51",
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
@@ -7480,6 +11548,33 @@
   "pushed": "2026-06-04",
   "fetched": "2026-10-18"
  },
+ "open-code-review": {
+  "repo": "alibaba/open-code-review",
+  "stars": 47571,
+  "archived": false,
+  "releases": [
+   [
+    "v1.13.1",
+    "2026-10-17",
+    "https://github.com/alibaba/open-code-review/releases/tag/v1.13.1"
+   ],
+   [
+    "v1.13.0",
+    "2026-10-13",
+    "https://github.com/alibaba/open-code-review/releases/tag/v1.13.0"
+   ],
+   [
+    "v1.12.13",
+    "2026-10-08",
+    "https://github.com/alibaba/open-code-review/releases/tag/v1.12.13"
+   ]
+  ],
+  "release_tag": "v1.13.1",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/alibaba/open-code-review/releases/tag/v1.13.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "open-connector": {
   "repo": "oomol-lab/open-connector",
   "stars": 6040,
@@ -7505,6 +11600,33 @@
   "release_date": "2026-10-15",
   "release_url": "https://github.com/oomol-lab/open-connector/releases/tag/v1.9.0",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "open-cowork": {
+  "repo": "OpenCoworkAI/open-cowork",
+  "stars": 2218,
+  "archived": false,
+  "releases": [
+   [
+    "v3.3.1",
+    "2026-05-23",
+    "https://github.com/OpenCoworkAI/open-cowork/releases/tag/v3.3.1"
+   ],
+   [
+    "v3.3.0",
+    "2026-04-18",
+    "https://github.com/OpenCoworkAI/open-cowork/releases/tag/v3.3.0"
+   ],
+   [
+    "v3.3.0-beta.9",
+    "2026-04-03",
+    "https://github.com/OpenCoworkAI/open-cowork/releases/tag/v3.3.0-beta.9"
+   ]
+  ],
+  "release_tag": "v3.3.1",
+  "release_date": "2026-05-23",
+  "release_url": "https://github.com/OpenCoworkAI/open-cowork/releases/tag/v3.3.1",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "open-interpreter": {
@@ -7586,6 +11708,87 @@
   "release_date": "2026-10-18",
   "release_url": "https://github.com/langchain-ai/open-swe/releases/tag/mda-deployed%2Fstaging",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "open-terminal": {
+  "repo": "open-webui/open-terminal",
+  "stars": 3369,
+  "archived": false,
+  "releases": [
+   [
+    "v0.14.1",
+    "2026-10-16",
+    "https://github.com/open-webui/open-terminal/releases/tag/v0.14.1"
+   ],
+   [
+    "v0.14.0",
+    "2026-09-23",
+    "https://github.com/open-webui/open-terminal/releases/tag/v0.14.0"
+   ],
+   [
+    "v0.13.0",
+    "2026-09-14",
+    "https://github.com/open-webui/open-terminal/releases/tag/v0.13.0"
+   ]
+  ],
+  "release_tag": "v0.14.1",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/open-webui/open-terminal/releases/tag/v0.14.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "open-webui": {
+  "repo": "open-webui/open-webui",
+  "stars": 156052,
+  "archived": false,
+  "releases": [
+   [
+    "v0.12.3",
+    "2026-10-16",
+    "https://github.com/open-webui/open-webui/releases/tag/v0.12.3"
+   ],
+   [
+    "v0.12.2",
+    "2026-10-14",
+    "https://github.com/open-webui/open-webui/releases/tag/v0.12.2"
+   ],
+   [
+    "v0.12.1",
+    "2026-10-14",
+    "https://github.com/open-webui/open-webui/releases/tag/v0.12.1"
+   ]
+  ],
+  "release_tag": "v0.12.3",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/open-webui/open-webui/releases/tag/v0.12.3",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "openagent": {
+  "repo": "the-open-agent/openagent",
+  "stars": 5698,
+  "archived": false,
+  "releases": [
+   [
+    "v2.95.1",
+    "2026-10-05",
+    "https://github.com/the-open-agent/openagent/releases/tag/v2.95.1"
+   ],
+   [
+    "v2.95.0",
+    "2026-10-05",
+    "https://github.com/the-open-agent/openagent/releases/tag/v2.95.0"
+   ],
+   [
+    "v2.94.8",
+    "2026-10-01",
+    "https://github.com/the-open-agent/openagent/releases/tag/v2.94.8"
+   ]
+  ],
+  "release_tag": "v2.95.1",
+  "release_date": "2026-10-05",
+  "release_url": "https://github.com/the-open-agent/openagent/releases/tag/v2.95.1",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "openai-agents-sdk-python": {
@@ -7831,6 +12034,33 @@
   "pushed": "2026-05-12",
   "fetched": "2026-10-18"
  },
+ "opengap": {
+  "repo": "open-gitagent/opengap",
+  "stars": 2980,
+  "archived": false,
+  "releases": [
+   [
+    "v0.5.0 — Claude session continuation (--continue, --resume, --session-id)",
+    "2026-07-02",
+    "https://github.com/open-gitagent/opengap/releases/tag/v0.5.0"
+   ],
+   [
+    "v0.4.0 — OpenGAP (rebrand from gapman)",
+    "2026-05-24",
+    "https://github.com/open-gitagent/opengap/releases/tag/v0.4.0"
+   ],
+   [
+    "v0.3.2 — publish gapman both scoped and unscoped",
+    "2026-04-20",
+    "https://github.com/open-gitagent/opengap/releases/tag/v0.3.2"
+   ]
+  ],
+  "release_tag": "v0.5.0 — Claude session continuation (--continue, --resume, --session-id)",
+  "release_date": "2026-07-02",
+  "release_url": "https://github.com/open-gitagent/opengap/releases/tag/v0.5.0",
+  "pushed": "2026-07-02",
+  "fetched": "2026-10-18"
+ },
  "openhands": {
   "repo": "OpenHands/OpenHands",
   "stars": 91168,
@@ -7918,6 +12148,28 @@
   "archived": false,
   "releases": [],
   "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "openoutreach": {
+  "repo": "eracle/OpenOutreach",
+  "stars": 3325,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.0",
+    "2026-08-21",
+    "https://github.com/eracle/OpenOutreach/releases/tag/v0.1.0"
+   ],
+   [
+    "pre-finder-cut",
+    "2026-08-19",
+    "https://github.com/eracle/OpenOutreach/releases/tag/pre-finder-cut"
+   ]
+  ],
+  "release_tag": "v0.1.0",
+  "release_date": "2026-08-21",
+  "release_url": "https://github.com/eracle/OpenOutreach/releases/tag/v0.1.0",
+  "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
  "openpilot": {
@@ -8055,6 +12307,114 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "opensumi": {
+  "repo": "opensumi/core",
+  "stars": 3657,
+  "archived": false,
+  "releases": [
+   [
+    "v3.9.0",
+    "2025-05-20",
+    "https://github.com/opensumi/core/releases/tag/v3.9.0"
+   ],
+   [
+    "v3.8.2",
+    "2025-03-11",
+    "https://github.com/opensumi/core/releases/tag/v3.8.2"
+   ],
+   [
+    "v3.8.1",
+    "2025-03-07",
+    "https://github.com/opensumi/core/releases/tag/v3.8.1"
+   ]
+  ],
+  "release_tag": "v3.9.0",
+  "release_date": "2025-05-20",
+  "release_url": "https://github.com/opensumi/core/releases/tag/v3.9.0",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "openui": {
+  "repo": "thesysdev/openui",
+  "stars": 11688,
+  "archived": false,
+  "releases": [
+   [
+    "@openuidev/vue-lang@0.4.2",
+    "2026-10-15",
+    "https://github.com/thesysdev/openui/releases/tag/%40openuidev%2Fvue-lang%400.4.2"
+   ],
+   [
+    "@openuidev/svelte-lang@0.4.2",
+    "2026-10-15",
+    "https://github.com/thesysdev/openui/releases/tag/%40openuidev%2Fsvelte-lang%400.4.2"
+   ],
+   [
+    "@openuidev/react-ui@0.18.1",
+    "2026-10-15",
+    "https://github.com/thesysdev/openui/releases/tag/%40openuidev%2Freact-ui%400.18.1"
+   ]
+  ],
+  "release_tag": "@openuidev/vue-lang@0.4.2",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/thesysdev/openui/releases/tag/%40openuidev%2Fvue-lang%400.4.2",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "openviking": {
+  "repo": "volcengine/OpenViking",
+  "stars": 40234,
+  "archived": false,
+  "releases": [
+   [
+    "python-sdk@0.1.15",
+    "2026-10-13",
+    "https://github.com/volcengine/OpenViking/releases/tag/python-sdk%400.1.15"
+   ],
+   [
+    "v0.5.0",
+    "2026-10-09",
+    "https://github.com/volcengine/OpenViking/releases/tag/v0.5.0"
+   ],
+   [
+    "python-sdk@0.1.14",
+    "2026-10-09",
+    "https://github.com/volcengine/OpenViking/releases/tag/python-sdk%400.1.14"
+   ]
+  ],
+  "release_tag": "python-sdk@0.1.15",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/volcengine/OpenViking/releases/tag/python-sdk%400.1.15",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "opik": {
+  "repo": "comet-ml/opik",
+  "stars": 22703,
+  "archived": false,
+  "releases": [
+   [
+    "2.2.104-9012-merge-3948",
+    "2026-10-18",
+    "https://github.com/comet-ml/opik/releases/tag/2.2.104-9012-merge-3948"
+   ],
+   [
+    "2.2.103-8964-merge-3947",
+    "2026-10-18",
+    "https://github.com/comet-ml/opik/releases/tag/2.2.103-8964-merge-3947"
+   ],
+   [
+    "2.2.104-miguelg-opik-8539-ag-7093",
+    "2026-10-16",
+    "https://github.com/comet-ml/opik/releases/tag/2.2.104-miguelg-opik-8539-ag-7093"
+   ]
+  ],
+  "release_tag": "2.2.104-9012-merge-3948",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/comet-ml/opik/releases/tag/2.2.104-9012-merge-3948",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "optillm": {
   "repo": "algorithmicsuperintelligence/optillm",
   "stars": 4319,
@@ -8131,6 +12491,33 @@
   "pushed": "2026-10-12",
   "fetched": "2026-10-18"
  },
+ "orkas": {
+  "repo": "Orkas-AI/Orkas",
+  "stars": 2204,
+  "archived": false,
+  "releases": [
+   [
+    "Orkas 2026.10.17",
+    "2026-10-17",
+    "https://github.com/Orkas-AI/Orkas/releases/tag/v2026.10.17"
+   ],
+   [
+    "Orkas 2026.10.1",
+    "2026-10-16",
+    "https://github.com/Orkas-AI/Orkas/releases/tag/v2026.10.1"
+   ],
+   [
+    "Orkas 2026.9.22",
+    "2026-09-22",
+    "https://github.com/Orkas-AI/Orkas/releases/tag/v2026.9.22"
+   ]
+  ],
+  "release_tag": "Orkas 2026.10.17",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/Orkas-AI/Orkas/releases/tag/v2026.10.17",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "orkes": {
   "repo": "conductor-oss/conductor",
   "stars": 32328,
@@ -8185,6 +12572,28 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "osworld": {
+  "repo": "xlang-ai/OSWorld",
+  "stars": 3217,
+  "archived": false,
+  "releases": [
+   [
+    "v0.1.16",
+    "2024-06-26",
+    "https://github.com/xlang-ai/OSWorld/releases/tag/v0.1.16"
+   ],
+   [
+    "v0.1.0",
+    "2024-04-12",
+    "https://github.com/xlang-ai/OSWorld/releases/tag/v0.1.0"
+   ]
+  ],
+  "release_tag": "v0.1.16",
+  "release_date": "2024-06-26",
+  "release_url": "https://github.com/xlang-ai/OSWorld/releases/tag/v0.1.16",
+  "pushed": "2026-09-14",
+  "fetched": "2026-10-18"
+ },
  "oumi": {
   "repo": "oumi-ai/oumi",
   "stars": 9402,
@@ -8210,6 +12619,33 @@
   "release_date": "2026-09-16",
   "release_url": "https://github.com/oumi-ai/oumi/releases/tag/v0.9",
   "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "outlines": {
+  "repo": "dottxt-ai/outlines",
+  "stars": 15951,
+  "archived": false,
+  "releases": [
+   [
+    "Outlines v1.3.3",
+    "2026-08-06",
+    "https://github.com/dottxt-ai/outlines/releases/tag/1.3.3"
+   ],
+   [
+    "Outlines v1.3.2",
+    "2026-07-20",
+    "https://github.com/dottxt-ai/outlines/releases/tag/1.3.2"
+   ],
+   [
+    "Outlines v1.3.1",
+    "2026-06-30",
+    "https://github.com/dottxt-ai/outlines/releases/tag/1.3.1"
+   ]
+  ],
+  "release_tag": "Outlines v1.3.3",
+  "release_date": "2026-08-06",
+  "release_url": "https://github.com/dottxt-ai/outlines/releases/tag/1.3.3",
+  "pushed": "2026-08-24",
   "fetched": "2026-10-18"
  },
  "oxylabs-mcp": {
@@ -8399,6 +12835,33 @@
   "pushed": "2025-10-28",
   "fetched": "2026-10-18"
  },
+ "peekaboo": {
+  "repo": "openclaw/Peekaboo",
+  "stars": 5335,
+  "archived": false,
+  "releases": [
+   [
+    "v4.9.5",
+    "2026-10-17",
+    "https://github.com/openclaw/Peekaboo/releases/tag/v4.9.5"
+   ],
+   [
+    "v4.9.4",
+    "2026-10-16",
+    "https://github.com/openclaw/Peekaboo/releases/tag/v4.9.4"
+   ],
+   [
+    "v4.9.3",
+    "2026-10-14",
+    "https://github.com/openclaw/Peekaboo/releases/tag/v4.9.3"
+   ]
+  ],
+  "release_tag": "v4.9.5",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/openclaw/Peekaboo/releases/tag/v4.9.5",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "pentagi": {
   "repo": "vxcontrol/pentagi",
   "stars": 30974,
@@ -8434,6 +12897,33 @@
   "pushed": "2026-09-21",
   "fetched": "2026-10-18"
  },
+ "pezzo": {
+  "repo": "pezzolabs/pezzo",
+  "stars": 3277,
+  "archived": false,
+  "releases": [
+   [
+    "v0.9.2",
+    "2024-05-15",
+    "https://github.com/pezzolabs/pezzo/releases/tag/v0.9.2"
+   ],
+   [
+    "v0.9.1",
+    "2024-05-14",
+    "https://github.com/pezzolabs/pezzo/releases/tag/v0.9.1"
+   ],
+   [
+    "v0.9.0",
+    "2024-04-28",
+    "https://github.com/pezzolabs/pezzo/releases/tag/v0.9.0"
+   ]
+  ],
+  "release_tag": "v0.9.2",
+  "release_date": "2024-05-15",
+  "release_url": "https://github.com/pezzolabs/pezzo/releases/tag/v0.9.2",
+  "pushed": "2026-08-21",
+  "fetched": "2026-10-18"
+ },
  "pg-aiguide": {
   "repo": "timescale/pg-aiguide",
   "stars": 1871,
@@ -8467,6 +12957,33 @@
   "archived": false,
   "releases": [],
   "pushed": "2026-02-24",
+  "fetched": "2026-10-18"
+ },
+ "pinvou-agent": {
+  "repo": "Pinvou/pinvou-agent",
+  "stars": 2571,
+  "archived": false,
+  "releases": [
+   [
+    "Pinvou 0.10.11 预览版",
+    "2026-10-15",
+    "https://github.com/Pinvou/pinvou-agent/releases/tag/v0.10.11"
+   ],
+   [
+    "Pinvou 0.10.10 预览版",
+    "2026-10-14",
+    "https://github.com/Pinvou/pinvou-agent/releases/tag/v0.10.10"
+   ],
+   [
+    "Pinvou 0.10.9 预览版",
+    "2026-10-14",
+    "https://github.com/Pinvou/pinvou-agent/releases/tag/v0.10.9"
+   ]
+  ],
+  "release_tag": "Pinvou 0.10.11 预览版",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/Pinvou/pinvou-agent/releases/tag/v0.10.11",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "pipecat": {
@@ -8639,6 +13156,33 @@
   "pushed": "2026-08-14",
   "fetched": "2026-10-18"
  },
+ "playwriter": {
+  "repo": "remorses/playwriter",
+  "stars": 4011,
+  "archived": false,
+  "releases": [
+   [
+    "playwriter@0.8.0",
+    "2026-10-07",
+    "https://github.com/remorses/playwriter/releases/tag/playwriter%400.8.0"
+   ],
+   [
+    "Extension 0.0.159",
+    "2026-10-07",
+    "https://github.com/remorses/playwriter/releases/tag/extension%400.0.159"
+   ],
+   [
+    "extension@0.0.158: fix: let agent clicks pass through the in-page toolbar",
+    "2026-10-04",
+    "https://github.com/remorses/playwriter/releases/tag/extension%400.0.158"
+   ]
+  ],
+  "release_tag": "playwriter@0.8.0",
+  "release_date": "2026-10-07",
+  "release_url": "https://github.com/remorses/playwriter/releases/tag/playwriter%400.8.0",
+  "pushed": "2026-10-07",
+  "fetched": "2026-10-18"
+ },
  "pocketflow": {
   "repo": "The-Pocket/PocketFlow",
   "stars": 11255,
@@ -8654,6 +13198,60 @@
   "release_date": "2025-03-25",
   "release_url": "https://github.com/The-Pocket/PocketFlow/releases/tag/v0.0.0",
   "pushed": "2026-07-26",
+  "fetched": "2026-10-18"
+ },
+ "portkey-ai-gateway": {
+  "repo": "Portkey-AI/gateway",
+  "stars": 13214,
+  "archived": false,
+  "releases": [
+   [
+    "v1.15.2",
+    "2026-01-12",
+    "https://github.com/Portkey-AI/gateway/releases/tag/v1.15.2"
+   ],
+   [
+    "v1.15.1",
+    "2025-12-24",
+    "https://github.com/Portkey-AI/gateway/releases/tag/v1.15.1"
+   ],
+   [
+    "v1.15.0",
+    "2025-12-23",
+    "https://github.com/Portkey-AI/gateway/releases/tag/v1.15.0"
+   ]
+  ],
+  "release_tag": "v1.15.2",
+  "release_date": "2026-01-12",
+  "release_url": "https://github.com/Portkey-AI/gateway/releases/tag/v1.15.2",
+  "pushed": "2026-05-25",
+  "fetched": "2026-10-18"
+ },
+ "postgres-mcp-pro": {
+  "repo": "crystaldba/postgres-mcp",
+  "stars": 3402,
+  "archived": false,
+  "releases": [
+   [
+    "PostgreSQL MCP v0.3.0",
+    "2025-05-16",
+    "https://github.com/crystaldba/postgres-mcp/releases/tag/v0.3.0"
+   ],
+   [
+    "PostgreSQL MCP v0.2.1",
+    "2025-04-17",
+    "https://github.com/crystaldba/postgres-mcp/releases/tag/v0.2.1"
+   ],
+   [
+    "PostgreSQL MCP v0.2.0",
+    "2025-04-16",
+    "https://github.com/crystaldba/postgres-mcp/releases/tag/v0.2.0"
+   ]
+  ],
+  "release_tag": "PostgreSQL MCP v0.3.0",
+  "release_date": "2025-05-16",
+  "release_url": "https://github.com/crystaldba/postgres-mcp/releases/tag/v0.3.0",
+  "pushed": "2026-08-16",
   "fetched": "2026-10-18"
  },
  "postman-mcp-server": {
@@ -8735,6 +13333,33 @@
   "release_date": "2026-09-25",
   "release_url": "https://github.com/microsoft/powerbi-modeling-mcp/releases/tag/v1.0.0",
   "pushed": "2026-09-29",
+  "fetched": "2026-10-18"
+ },
+ "ppt-master": {
+  "repo": "hugohe3/ppt-master",
+  "stars": 63385,
+  "archived": false,
+  "releases": [
+   [
+    "v6.7.2",
+    "2026-10-17",
+    "https://github.com/hugohe3/ppt-master/releases/tag/v6.7.2"
+   ],
+   [
+    "v6.7.1",
+    "2026-10-16",
+    "https://github.com/hugohe3/ppt-master/releases/tag/v6.7.1"
+   ],
+   [
+    "v6.7.0",
+    "2026-10-08",
+    "https://github.com/hugohe3/ppt-master/releases/tag/v6.7.0"
+   ]
+  ],
+  "release_tag": "v6.7.2",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/hugohe3/ppt-master/releases/tag/v6.7.2",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "pptagent": {
@@ -8845,6 +13470,33 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "privategpt": {
+  "repo": "zylon-ai/private-gpt",
+  "stars": 57591,
+  "archived": false,
+  "releases": [
+   [
+    "v1.0.1",
+    "2026-06-18",
+    "https://github.com/zylon-ai/private-gpt/releases/tag/v1.0.1"
+   ],
+   [
+    "v1.0.0",
+    "2026-06-03",
+    "https://github.com/zylon-ai/private-gpt/releases/tag/v1.0.0"
+   ],
+   [
+    "v1.0.0-rc7",
+    "2026-06-03",
+    "https://github.com/zylon-ai/private-gpt/releases/tag/v1.0.0-rc7"
+   ]
+  ],
+  "release_tag": "v1.0.1",
+  "release_date": "2026-06-18",
+  "release_url": "https://github.com/zylon-ai/private-gpt/releases/tag/v1.0.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "pydantic-ai": {
   "repo": "pydantic/pydantic-ai",
   "stars": 20697,
@@ -8870,6 +13522,33 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/pydantic/pydantic-ai/releases/tag/clai2-bleeding",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "pydantic-deep-agents": {
+  "repo": "vstorm-co/pydantic-deepagents",
+  "stars": 1102,
+  "archived": false,
+  "releases": [
+   [
+    "0.3.50",
+    "2026-10-06",
+    "https://github.com/vstorm-co/pydantic-deepagents/releases/tag/0.3.50"
+   ],
+   [
+    "0.3.49",
+    "2026-10-06",
+    "https://github.com/vstorm-co/pydantic-deepagents/releases/tag/0.3.49"
+   ],
+   [
+    "0.3.48",
+    "2026-10-06",
+    "https://github.com/vstorm-co/pydantic-deepagents/releases/tag/0.3.48"
+   ]
+  ],
+  "release_tag": "0.3.50",
+  "release_date": "2026-10-06",
+  "release_url": "https://github.com/vstorm-co/pydantic-deepagents/releases/tag/0.3.50",
+  "pushed": "2026-10-06",
   "fetched": "2026-10-18"
  },
  "pyspur": {
@@ -8899,6 +13578,33 @@
   "pushed": "2025-07-20",
   "fetched": "2026-10-18"
  },
+ "qdrant-mcp-server": {
+  "repo": "qdrant/mcp-server-qdrant",
+  "stars": 1551,
+  "archived": false,
+  "releases": [
+   [
+    "v0.8.1",
+    "2025-12-10",
+    "https://github.com/qdrant/mcp-server-qdrant/releases/tag/v0.8.1"
+   ],
+   [
+    "v0.8.0",
+    "2025-06-27",
+    "https://github.com/qdrant/mcp-server-qdrant/releases/tag/v0.8.0"
+   ],
+   [
+    "v0.7.1",
+    "2025-03-11",
+    "https://github.com/qdrant/mcp-server-qdrant/releases/tag/v0.7.1"
+   ]
+  ],
+  "release_tag": "v0.8.1",
+  "release_date": "2025-12-10",
+  "release_url": "https://github.com/qdrant/mcp-server-qdrant/releases/tag/v0.8.1",
+  "pushed": "2026-08-11",
+  "fetched": "2026-10-18"
+ },
  "qodo": {
   "repo": "The-PR-Agent/pr-agent",
   "stars": 13431,
@@ -8926,6 +13632,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "qwen-audio-agent": {
+  "repo": "QwenAudio/qwen-audio-agent",
+  "stars": 2938,
+  "archived": false,
+  "releases": [
+   [
+    "v2.0.1",
+    "2026-09-26",
+    "https://github.com/QwenAudio/qwen-audio-agent/releases/tag/v2.0.1"
+   ],
+   [
+    "v2.0.0",
+    "2026-09-23",
+    "https://github.com/QwenAudio/qwen-audio-agent/releases/tag/v2.0.0"
+   ],
+   [
+    "v1.11.0",
+    "2026-08-20",
+    "https://github.com/QwenAudio/qwen-audio-agent/releases/tag/v1.11.0"
+   ]
+  ],
+  "release_tag": "v2.0.1",
+  "release_date": "2026-09-26",
+  "release_url": "https://github.com/QwenAudio/qwen-audio-agent/releases/tag/v2.0.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "qwen-code": {
   "repo": "QwenLM/qwen-code",
   "stars": 28555,
@@ -8951,6 +13684,14 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-nightly.20261017.39c237af3b",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "qwen-ui-agent": {
+  "repo": "Tongyi-MAI/MAI-UI",
+  "stars": 2402,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-08-19",
   "fetched": "2026-10-18"
  },
  "qwenpaw": {
@@ -9104,6 +13845,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "react-doctor": {
+  "repo": "millionco/react-doctor",
+  "stars": 15012,
+  "archived": false,
+  "releases": [
+   [
+    "v2.4.0",
+    "2026-10-12",
+    "https://github.com/millionco/react-doctor/releases/tag/v2.4.0"
+   ],
+   [
+    "v2",
+    "2026-10-12",
+    "https://github.com/millionco/react-doctor/releases/tag/v2"
+   ],
+   [
+    "react-doctor@0.9.18",
+    "2026-10-12",
+    "https://github.com/millionco/react-doctor/releases/tag/react-doctor%400.9.18"
+   ]
+  ],
+  "release_tag": "v2.4.0",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/millionco/react-doctor/releases/tag/v2.4.0",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
  "redis-mcp-server": {
   "repo": "redis/mcp-redis",
   "stars": 636,
@@ -9218,6 +13986,141 @@
   "release_date": "2026-09-22",
   "release_url": "https://github.com/replicate/cog/releases/tag/v0.23.0",
   "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "repomix": {
+  "repo": "yamadashy/repomix",
+  "stars": 28889,
+  "archived": false,
+  "releases": [
+   [
+    "v1.18.1",
+    "2026-09-21",
+    "https://github.com/yamadashy/repomix/releases/tag/v1.18.1"
+   ],
+   [
+    "v1.18.0",
+    "2026-08-08",
+    "https://github.com/yamadashy/repomix/releases/tag/v1.18.0"
+   ],
+   [
+    "v1.17.0",
+    "2026-07-22",
+    "https://github.com/yamadashy/repomix/releases/tag/v1.17.0"
+   ]
+  ],
+  "release_tag": "v1.18.1",
+  "release_date": "2026-09-21",
+  "release_url": "https://github.com/yamadashy/repomix/releases/tag/v1.18.1",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "repowise": {
+  "repo": "repowise-dev/repowise",
+  "stars": 7835,
+  "archived": false,
+  "releases": [
+   [
+    "vscode-v0.12.0",
+    "2026-10-15",
+    "https://github.com/repowise-dev/repowise/releases/tag/vscode-v0.12.0"
+   ],
+   [
+    "v0.57.0",
+    "2026-10-16",
+    "https://github.com/repowise-dev/repowise/releases/tag/v0.57.0"
+   ],
+   [
+    "v0.56.0",
+    "2026-10-12",
+    "https://github.com/repowise-dev/repowise/releases/tag/v0.56.0"
+   ]
+  ],
+  "release_tag": "vscode-v0.12.0",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/repowise-dev/repowise/releases/tag/vscode-v0.12.0",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "ripwire": {
+  "repo": "redhat-et/ripwire",
+  "stars": 2456,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.7",
+    "2026-10-12",
+    "https://github.com/redhat-et/ripwire/releases/tag/v0.6.7"
+   ],
+   [
+    "v0.6.5",
+    "2026-09-27",
+    "https://github.com/redhat-et/ripwire/releases/tag/v0.6.5"
+   ],
+   [
+    "v0.6.4",
+    "2026-09-26",
+    "https://github.com/redhat-et/ripwire/releases/tag/v0.6.4"
+   ]
+  ],
+  "release_tag": "v0.6.7",
+  "release_date": "2026-10-12",
+  "release_url": "https://github.com/redhat-et/ripwire/releases/tag/v0.6.7",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "robotgo": {
+  "repo": "go-vgo/robotgo",
+  "stars": 10871,
+  "archived": false,
+  "releases": [
+   [
+    "v1.3.6",
+    "2026-10-16",
+    "https://github.com/go-vgo/robotgo/releases/tag/v1.3.6"
+   ],
+   [
+    "v1.3.5",
+    "2026-10-07",
+    "https://github.com/go-vgo/robotgo/releases/tag/v1.3.5"
+   ],
+   [
+    "v1.3.4",
+    "2026-10-07",
+    "https://github.com/go-vgo/robotgo/releases/tag/v1.3.4"
+   ]
+  ],
+  "release_tag": "v1.3.6",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/go-vgo/robotgo/releases/tag/v1.3.6",
+  "pushed": "2026-10-07",
+  "fetched": "2026-10-18"
+ },
+ "rocketride": {
+  "repo": "rocketride-org/rocketride-server",
+  "stars": 17751,
+  "archived": false,
+  "releases": [
+   [
+    "RocketRide VS Code Extension v1.5.0 (prerelease)",
+    "2026-10-17",
+    "https://github.com/rocketride-org/rocketride-server/releases/tag/vscode-v1.5.0-prerelease"
+   ],
+   [
+    "RocketRide Server v3.5.0 (prerelease)",
+    "2026-10-17",
+    "https://github.com/rocketride-org/rocketride-server/releases/tag/server-v3.5.0-prerelease"
+   ],
+   [
+    "RocketRide TypeScript Client v1.5.0 (prerelease)",
+    "2026-10-17",
+    "https://github.com/rocketride-org/rocketride-server/releases/tag/client-typescript-v1.5.0-prerelease"
+   ]
+  ],
+  "release_tag": "RocketRide VS Code Extension v1.5.0 (prerelease)",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/rocketride-org/rocketride-server/releases/tag/vscode-v1.5.0-prerelease",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "roo-code": {
@@ -9417,6 +14320,60 @@
   "pushed": "2026-07-17",
   "fetched": "2026-10-18"
  },
+ "scrapegraphai": {
+  "repo": "ScrapeGraphAI/Scrapegraph-ai",
+  "stars": 31899,
+  "archived": false,
+  "releases": [
+   [
+    "v2.3.1",
+    "2026-10-06",
+    "https://github.com/ScrapeGraphAI/Scrapegraph-ai/releases/tag/v2.3.1"
+   ],
+   [
+    "v2.3.0",
+    "2026-09-25",
+    "https://github.com/ScrapeGraphAI/Scrapegraph-ai/releases/tag/v2.3.0"
+   ],
+   [
+    "v2.3.0-beta.1",
+    "2026-09-25",
+    "https://github.com/ScrapeGraphAI/Scrapegraph-ai/releases/tag/v2.3.0-beta.1"
+   ]
+  ],
+  "release_tag": "v2.3.1",
+  "release_date": "2026-10-06",
+  "release_url": "https://github.com/ScrapeGraphAI/Scrapegraph-ai/releases/tag/v2.3.1",
+  "pushed": "2026-10-06",
+  "fetched": "2026-10-18"
+ },
+ "scrapling": {
+  "repo": "D4Vinci/Scrapling",
+  "stars": 88407,
+  "archived": false,
+  "releases": [
+   [
+    "Release v0.5",
+    "2026-10-17",
+    "https://github.com/D4Vinci/Scrapling/releases/tag/v0.5"
+   ],
+   [
+    "Release v0.4.15",
+    "2026-08-23",
+    "https://github.com/D4Vinci/Scrapling/releases/tag/v0.4.15"
+   ],
+   [
+    "Release v0.4.14",
+    "2026-08-10",
+    "https://github.com/D4Vinci/Scrapling/releases/tag/v0.4.14"
+   ]
+  ],
+  "release_tag": "Release v0.5",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/D4Vinci/Scrapling/releases/tag/v0.5",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "screenpipe": {
   "repo": "screenpipe/screenpipe",
   "stars": 21970,
@@ -9552,6 +14509,33 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "sentry-mcp": {
+  "repo": "getsentry/toolkit",
+  "stars": 932,
+  "archived": false,
+  "releases": [
+   [
+    "0.47.0",
+    "2026-10-05",
+    "https://github.com/getsentry/toolkit/releases/tag/cli%400.47.0"
+   ],
+   [
+    "0.46.0",
+    "2026-10-02",
+    "https://github.com/getsentry/toolkit/releases/tag/cli%400.46.0"
+   ],
+   [
+    "0.42.0",
+    "2026-09-25",
+    "https://github.com/getsentry/toolkit/releases/tag/0.42.0"
+   ]
+  ],
+  "release_tag": "0.47.0",
+  "release_date": "2026-10-05",
+  "release_url": "https://github.com/getsentry/toolkit/releases/tag/cli%400.47.0",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "serena": {
   "repo": "oraios/serena",
   "stars": 30351,
@@ -9579,6 +14563,87 @@
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
+ "shadcn-ui-mcp-server": {
+  "repo": "Jpisnice/shadcn-ui-mcp-server",
+  "stars": 3060,
+  "archived": false,
+  "releases": [
+   [
+    "v3.0.0 — MCP 2026-07-28 spec",
+    "2026-10-03",
+    "https://github.com/Jpisnice/shadcn-ui-mcp-server/releases/tag/v3.0.0"
+   ],
+   [
+    "January 2026 Release",
+    "2026-01-30",
+    "https://github.com/Jpisnice/shadcn-ui-mcp-server/releases/tag/v2.0.0"
+   ],
+   [
+    "Release Oct 2025",
+    "2025-10-23",
+    "https://github.com/Jpisnice/shadcn-ui-mcp-server/releases/tag/v1.1.4"
+   ]
+  ],
+  "release_tag": "v3.0.0 — MCP 2026-07-28 spec",
+  "release_date": "2026-10-03",
+  "release_url": "https://github.com/Jpisnice/shadcn-ui-mcp-server/releases/tag/v3.0.0",
+  "pushed": "2026-10-03",
+  "fetched": "2026-10-18"
+ },
+ "shippie": {
+  "repo": "mattzcarey/shippie",
+  "stars": 2510,
+  "archived": false,
+  "releases": [
+   [
+    "v0.21.2",
+    "2026-06-23",
+    "https://github.com/mattzcarey/shippie/releases/tag/v0.21.2"
+   ],
+   [
+    "v0.21.1",
+    "2026-06-23",
+    "https://github.com/mattzcarey/shippie/releases/tag/v0.21.1"
+   ],
+   [
+    "v0.21.0",
+    "2026-06-22",
+    "https://github.com/mattzcarey/shippie/releases/tag/v0.21.0"
+   ]
+  ],
+  "release_tag": "v0.21.2",
+  "release_date": "2026-06-23",
+  "release_url": "https://github.com/mattzcarey/shippie/releases/tag/v0.21.2",
+  "pushed": "2026-07-02",
+  "fetched": "2026-10-18"
+ },
+ "sidekick": {
+  "repo": "johnbean393/Sidekick",
+  "stars": 3320,
+  "archived": false,
+  "releases": [
+   [
+    "1.0.0 Release Candidate 18",
+    "2026-04-02",
+    "https://github.com/johnbean393/Sidekick/releases/tag/1.0.0-rc.18"
+   ],
+   [
+    "1.0.0 Release Candidate 17",
+    "2026-03-12",
+    "https://github.com/johnbean393/Sidekick/releases/tag/1.0.0-rc.17"
+   ],
+   [
+    "1.0.0 Release Candidate 16",
+    "2025-11-17",
+    "https://github.com/johnbean393/Sidekick/releases/tag/1.0.0-rc.16"
+   ]
+  ],
+  "release_tag": "1.0.0 Release Candidate 18",
+  "release_date": "2026-04-02",
+  "release_url": "https://github.com/johnbean393/Sidekick/releases/tag/1.0.0-rc.18",
+  "pushed": "2026-09-30",
+  "fetched": "2026-10-18"
+ },
  "sim-studio": {
   "repo": "simstudioai/sim",
   "stars": 29834,
@@ -9604,6 +14669,114 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/simstudioai/sim/releases/tag/v0.9.26",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "simplemem": {
+  "repo": "aiming-lab/SimpleMem",
+  "stars": 3836,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.0 — Unified SimpleMem package",
+    "2026-05-21",
+    "https://github.com/aiming-lab/SimpleMem/releases/tag/v0.3.0"
+   ],
+   [
+    "v0.2.0 — Omni-SimpleMem: Multimodal Memory",
+    "2026-04-03",
+    "https://github.com/aiming-lab/SimpleMem/releases/tag/v0.2.0"
+   ],
+   [
+    "v0.1.0 — Initial Release (Text Only)",
+    "2026-03-10",
+    "https://github.com/aiming-lab/SimpleMem/releases/tag/v0.1.0"
+   ]
+  ],
+  "release_tag": "v0.3.0 — Unified SimpleMem package",
+  "release_date": "2026-05-21",
+  "release_url": "https://github.com/aiming-lab/SimpleMem/releases/tag/v0.3.0",
+  "pushed": "2026-07-24",
+  "fetched": "2026-10-18"
+ },
+ "skales": {
+  "repo": "skalesapp/skales",
+  "stars": 2196,
+  "archived": false,
+  "releases": [
+   [
+    "Skales 12.9.51 - Guardrail",
+    "2026-10-16",
+    "https://github.com/skalesapp/skales/releases/tag/v12.9.51"
+   ],
+   [
+    "Skales 12.9.50 - Aftermath",
+    "2026-10-12",
+    "https://github.com/skalesapp/skales/releases/tag/v12.9.50"
+   ],
+   [
+    "Skales 12.9.46 - Mend",
+    "2026-10-13",
+    "https://github.com/skalesapp/skales/releases/tag/v12.9.46"
+   ]
+  ],
+  "release_tag": "Skales 12.9.51 - Guardrail",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/skalesapp/skales/releases/tag/v12.9.51",
+  "pushed": "2026-10-12",
+  "fetched": "2026-10-18"
+ },
+ "skillhub": {
+  "repo": "iflytek/skillhub",
+  "stars": 5243,
+  "archived": false,
+  "releases": [
+   [
+    "dsh-v0.1.0",
+    "2026-10-16",
+    "https://github.com/iflytek/skillhub/releases/tag/dsh-v0.1.0"
+   ],
+   [
+    "SkillHub v0.2.22",
+    "2026-10-10",
+    "https://github.com/iflytek/skillhub/releases/tag/v0.2.22"
+   ],
+   [
+    "v0.2.21",
+    "2026-09-21",
+    "https://github.com/iflytek/skillhub/releases/tag/v0.2.21"
+   ]
+  ],
+  "release_tag": "dsh-v0.1.0",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/iflytek/skillhub/releases/tag/dsh-v0.1.0",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "skybridge": {
+  "repo": "alpic-ai/skybridge",
+  "stars": 2162,
+  "archived": false,
+  "releases": [
+   [
+    "v2.0.4",
+    "2026-10-15",
+    "https://github.com/alpic-ai/skybridge/releases/tag/v2.0.4"
+   ],
+   [
+    "v2.0.3",
+    "2026-10-06",
+    "https://github.com/alpic-ai/skybridge/releases/tag/v2.0.3"
+   ],
+   [
+    "v2.0.2",
+    "2026-10-05",
+    "https://github.com/alpic-ai/skybridge/releases/tag/v2.0.2"
+   ]
+  ],
+  "release_tag": "v2.0.4",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/alpic-ai/skybridge/releases/tag/v2.0.4",
+  "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
  "skyvern": {
@@ -9714,6 +14887,33 @@
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
+ "socraticode": {
+  "repo": "giancarloerra/SocratiCode",
+  "stars": 3342,
+  "archived": false,
+  "releases": [
+   [
+    "v1.16.1",
+    "2026-10-15",
+    "https://github.com/giancarloerra/SocratiCode/releases/tag/v1.16.1"
+   ],
+   [
+    "v1.16.0",
+    "2026-09-28",
+    "https://github.com/giancarloerra/SocratiCode/releases/tag/v1.16.0"
+   ],
+   [
+    "v1.15.0",
+    "2026-09-24",
+    "https://github.com/giancarloerra/SocratiCode/releases/tag/v1.15.0"
+   ]
+  ],
+  "release_tag": "v1.16.1",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/giancarloerra/SocratiCode/releases/tag/v1.16.1",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
  "sodax-sdk": {
   "repo": "icon-project/sodax-sdks",
   "stars": 7,
@@ -9793,6 +14993,60 @@
   "release_date": "2026-10-13",
   "release_url": "https://github.com/SonarSource/sonarqube-mcp-server/releases/tag/1.29.0.4488",
   "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "sparrow": {
+  "repo": "katanaml/sparrow",
+  "stars": 5225,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.0",
+    "2026-06-05",
+    "https://github.com/katanaml/sparrow/releases/tag/v0.6.0"
+   ],
+   [
+    "v0.5.0",
+    "2026-05-26",
+    "https://github.com/katanaml/sparrow/releases/tag/v0.5.0"
+   ],
+   [
+    "v0.4.4",
+    "2025-09-27",
+    "https://github.com/katanaml/sparrow/releases/tag/v0.4.4"
+   ]
+  ],
+  "release_tag": "v0.6.0",
+  "release_date": "2026-06-05",
+  "release_url": "https://github.com/katanaml/sparrow/releases/tag/v0.6.0",
+  "pushed": "2026-10-08",
+  "fetched": "2026-10-18"
+ },
+ "sphere-sdk": {
+  "repo": "unicity-sphere/sphere-sdk",
+  "stars": 5385,
+  "archived": false,
+  "releases": [
+   [
+    "v0.19.1",
+    "2026-10-16",
+    "https://github.com/unicity-sphere/sphere-sdk/releases/tag/v0.19.1"
+   ],
+   [
+    "v0.19.0",
+    "2026-10-14",
+    "https://github.com/unicity-sphere/sphere-sdk/releases/tag/v0.19.0"
+   ],
+   [
+    "v0.18.1",
+    "2026-10-07",
+    "https://github.com/unicity-sphere/sphere-sdk/releases/tag/v0.18.1"
+   ]
+  ],
+  "release_tag": "v0.19.1",
+  "release_date": "2026-10-16",
+  "release_url": "https://github.com/unicity-sphere/sphere-sdk/releases/tag/v0.19.1",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "spider": {
@@ -9876,6 +15130,33 @@
   "pushed": "2026-10-07",
   "fetched": "2026-10-18"
  },
+ "squad": {
+  "repo": "bradygaster/squad",
+  "stars": 3286,
+  "archived": false,
+  "releases": [
+   [
+    "v1.0.1",
+    "2026-10-04",
+    "https://github.com/bradygaster/squad/releases/tag/v1.0.1"
+   ],
+   [
+    "v1.0.0",
+    "2026-10-03",
+    "https://github.com/bradygaster/squad/releases/tag/v1.0.0"
+   ],
+   [
+    "v0.13.1",
+    "2026-08-26",
+    "https://github.com/bradygaster/squad/releases/tag/v0.13.1"
+   ]
+  ],
+  "release_tag": "v1.0.1",
+  "release_date": "2026-10-04",
+  "release_url": "https://github.com/bradygaster/squad/releases/tag/v1.0.1",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "stack-overflow-mcp": {
   "repo": "StackExchange/Stack-MCP",
   "stars": 26,
@@ -9936,6 +15217,33 @@
   "release_date": "2026-10-15",
   "release_url": "https://github.com/browserbase/stagehand/releases/tag/stagehand-python%404.2.2a0.dev1605",
   "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "stakpak": {
+  "repo": "stakpak/agent",
+  "stars": 1824,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.88",
+    "2026-06-10",
+    "https://github.com/stakpak/agent/releases/tag/v0.3.88"
+   ],
+   [
+    "v0.3.87",
+    "2026-06-10",
+    "https://github.com/stakpak/agent/releases/tag/v0.3.87"
+   ],
+   [
+    "v0.3.86",
+    "2026-06-04",
+    "https://github.com/stakpak/agent/releases/tag/v0.3.86"
+   ]
+  ],
+  "release_tag": "v0.3.88",
+  "release_date": "2026-06-10",
+  "release_url": "https://github.com/stakpak/agent/releases/tag/v0.3.88",
+  "pushed": "2026-07-06",
   "fetched": "2026-10-18"
  },
  "steel": {
@@ -10081,6 +15389,60 @@
   "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
+ "superagent": {
+  "repo": "superagent-ai/superagent",
+  "stars": 6766,
+  "archived": false,
+  "releases": [
+   [
+    "rust-v0.0.9",
+    "2025-09-14",
+    "https://github.com/superagent-ai/superagent/releases/tag/rust-v0.0.9"
+   ],
+   [
+    "node-v0.0.9",
+    "2025-09-14",
+    "https://github.com/superagent-ai/superagent/releases/tag/node-v0.0.9"
+   ],
+   [
+    "rust-v0.0.8",
+    "2025-09-11",
+    "https://github.com/superagent-ai/superagent/releases/tag/rust-v0.0.8"
+   ]
+  ],
+  "release_tag": "rust-v0.0.9",
+  "release_date": "2025-09-14",
+  "release_url": "https://github.com/superagent-ai/superagent/releases/tag/rust-v0.0.9",
+  "pushed": "2026-08-25",
+  "fetched": "2026-10-18"
+ },
+ "superglue": {
+  "repo": "superglue-ai/superglue",
+  "stars": 2065,
+  "archived": false,
+  "releases": [
+   [
+    "python-v1.0.0",
+    "2025-12-11",
+    "https://github.com/superglue-ai/superglue/releases/tag/python-v1.0.0"
+   ],
+   [
+    "python-v0.1.2",
+    "2025-12-10",
+    "https://github.com/superglue-ai/superglue/releases/tag/python-v0.1.2"
+   ],
+   [
+    "python-v0.1.1",
+    "2025-12-10",
+    "https://github.com/superglue-ai/superglue/releases/tag/python-v0.1.1"
+   ]
+  ],
+  "release_tag": "python-v1.0.0",
+  "release_date": "2025-12-11",
+  "release_url": "https://github.com/superglue-ai/superglue/releases/tag/python-v1.0.0",
+  "pushed": "2026-08-19",
+  "fetched": "2026-10-18"
+ },
  "superplane": {
   "repo": "superplanehq/superplane",
   "stars": 7899,
@@ -10189,6 +15551,60 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "swe-bench": {
+  "repo": "SWE-bench/SWE-bench",
+  "stars": 6046,
+  "archived": false,
+  "releases": [
+   [
+    "v5.0.1",
+    "2026-08-18",
+    "https://github.com/SWE-bench/SWE-bench/releases/tag/v5.0.1"
+   ],
+   [
+    "v5.0.0",
+    "2026-08-17",
+    "https://github.com/SWE-bench/SWE-bench/releases/tag/v5.0.0"
+   ],
+   [
+    "v4.1.0",
+    "2025-09-11",
+    "https://github.com/SWE-bench/SWE-bench/releases/tag/v4.1.0"
+   ]
+  ],
+  "release_tag": "v5.0.1",
+  "release_date": "2026-08-18",
+  "release_url": "https://github.com/SWE-bench/SWE-bench/releases/tag/v5.0.1",
+  "pushed": "2026-09-02",
+  "fetched": "2026-10-18"
+ },
+ "tabby": {
+  "repo": "TabbyML/tabby",
+  "stars": 33913,
+  "archived": false,
+  "releases": [
+   [
+    "nightly",
+    "2026-03-02",
+    "https://github.com/TabbyML/tabby/releases/tag/nightly"
+   ],
+   [
+    "next-alpha",
+    "2026-02-13",
+    "https://github.com/TabbyML/tabby/releases/tag/next-alpha"
+   ],
+   [
+    "v0.33.0-dev.0",
+    "2026-01-29",
+    "https://github.com/TabbyML/tabby/releases/tag/v0.33.0-dev.0"
+   ]
+  ],
+  "release_tag": "nightly",
+  "release_date": "2026-03-02",
+  "release_url": "https://github.com/TabbyML/tabby/releases/tag/nightly",
+  "pushed": "2026-06-30",
+  "fetched": "2026-10-18"
+ },
  "talk-to-figma-mcp": {
   "repo": "grab/cursor-talk-to-figma-mcp",
   "stars": 7060,
@@ -10249,6 +15665,33 @@
   "release_date": "2026-10-13",
   "release_url": "https://github.com/TanStack/ai/releases/tag/%40tanstack%2Fopenai-base%400.14.0",
   "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "task-master": {
+  "repo": "eyaltoledano/claude-task-master",
+  "stars": 28242,
+  "archived": false,
+  "releases": [
+   [
+    "task-master-ai@0.43.1",
+    "2026-03-31",
+    "https://github.com/eyaltoledano/claude-task-master/releases/tag/task-master-ai%400.43.1"
+   ],
+   [
+    "task-master-ai@0.43.0",
+    "2026-02-04",
+    "https://github.com/eyaltoledano/claude-task-master/releases/tag/task-master-ai%400.43.0"
+   ],
+   [
+    "task-master-ai@0.42.0",
+    "2026-01-15",
+    "https://github.com/eyaltoledano/claude-task-master/releases/tag/task-master-ai%400.42.0"
+   ]
+  ],
+  "release_tag": "task-master-ai@0.43.1",
+  "release_date": "2026-03-31",
+  "release_url": "https://github.com/eyaltoledano/claude-task-master/releases/tag/task-master-ai%400.43.1",
+  "pushed": "2026-04-23",
   "fetched": "2026-10-18"
  },
  "teable": {
@@ -10448,6 +15891,33 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "thunderbolt": {
+  "repo": "thunderbird/thunderbolt",
+  "stars": 4797,
+  "archived": false,
+  "releases": [
+   [
+    "Release v0.1.144",
+    "2026-10-17",
+    "https://github.com/thunderbird/thunderbolt/releases/tag/v0.1.144"
+   ],
+   [
+    "Release v0.1.143",
+    "2026-10-17",
+    "https://github.com/thunderbird/thunderbolt/releases/tag/v0.1.143"
+   ],
+   [
+    "Release v0.1.142",
+    "2026-10-17",
+    "https://github.com/thunderbird/thunderbolt/releases/tag/v0.1.142"
+   ]
+  ],
+  "release_tag": "Release v0.1.144",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/thunderbird/thunderbolt/releases/tag/v0.1.144",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "tokscale": {
   "repo": "junhoyeo/tokscale",
   "stars": 5707,
@@ -10473,6 +15943,33 @@
   "release_date": "2026-10-17",
   "release_url": "https://github.com/junhoyeo/tokscale/releases/tag/v4.20.0",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "toolhive": {
+  "repo": "stacklok/toolhive",
+  "stars": 2293,
+  "archived": false,
+  "releases": [
+   [
+    "v0.54.0",
+    "2026-10-14",
+    "https://github.com/stacklok/toolhive/releases/tag/v0.54.0"
+   ],
+   [
+    "v0.53.0",
+    "2026-10-13",
+    "https://github.com/stacklok/toolhive/releases/tag/v0.53.0"
+   ],
+   [
+    "v0.52.0",
+    "2026-10-12",
+    "https://github.com/stacklok/toolhive/releases/tag/v0.52.0"
+   ]
+  ],
+  "release_tag": "v0.54.0",
+  "release_date": "2026-10-14",
+  "release_url": "https://github.com/stacklok/toolhive/releases/tag/v0.54.0",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "tooluniverse": {
@@ -10583,6 +16080,33 @@
   "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
+ "trpc-agent-go": {
+  "repo": "trpc-group/trpc-agent-go",
+  "stars": 1868,
+  "archived": false,
+  "releases": [
+   [
+    "Release v1.11.2",
+    "2026-08-20",
+    "https://github.com/trpc-group/trpc-agent-go/releases/tag/v1.11.2"
+   ],
+   [
+    "session/mysql/v1.11.2: lsc: backport fixes for v1.11.2 (#2497)",
+    "2026-08-20",
+    "https://github.com/trpc-group/trpc-agent-go/releases/tag/session%2Fmysql%2Fv1.11.2"
+   ],
+   [
+    "model/ollama/v1.11.2: lsc: backport fixes for v1.11.2 (#2497)",
+    "2026-08-20",
+    "https://github.com/trpc-group/trpc-agent-go/releases/tag/model%2Follama%2Fv1.11.2"
+   ]
+  ],
+  "release_tag": "Release v1.11.2",
+  "release_date": "2026-08-20",
+  "release_url": "https://github.com/trpc-group/trpc-agent-go/releases/tag/v1.11.2",
+  "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
  "trueforge": {
   "repo": "truefoundry/trueforge",
   "stars": 6282,
@@ -10645,6 +16169,33 @@
   "pushed": "2026-03-27",
   "fetched": "2026-10-18"
  },
+ "tuios": {
+  "repo": "Gaurav-Gosain/tuios",
+  "stars": 5469,
+  "archived": false,
+  "releases": [
+   [
+    "vt/v0.3.0",
+    "2026-10-18",
+    "https://github.com/Gaurav-Gosain/tuios/releases/tag/vt%2Fv0.3.0"
+   ],
+   [
+    "v0.10.1",
+    "2026-10-17",
+    "https://github.com/Gaurav-Gosain/tuios/releases/tag/v0.10.1"
+   ],
+   [
+    "shot/v0.2.0",
+    "2026-10-17",
+    "https://github.com/Gaurav-Gosain/tuios/releases/tag/shot%2Fv0.2.0"
+   ]
+  ],
+  "release_tag": "vt/v0.3.0",
+  "release_date": "2026-10-18",
+  "release_url": "https://github.com/Gaurav-Gosain/tuios/releases/tag/vt%2Fv0.3.0",
+  "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
  "turix-cua": {
   "repo": "TurixAI/TuriX-CUA",
   "stars": 3172,
@@ -10670,6 +16221,95 @@
   "release_date": "2026-03-06",
   "release_url": "https://github.com/TurixAI/TuriX-CUA/releases/tag/v0.4",
   "pushed": "2026-09-14",
+  "fetched": "2026-10-18"
+ },
+ "txtai": {
+  "repo": "neuml/txtai",
+  "stars": 13024,
+  "archived": false,
+  "releases": [
+   [
+    "v9.14.0",
+    "2026-10-06",
+    "https://github.com/neuml/txtai/releases/tag/v9.14.0"
+   ],
+   [
+    "v9.13.0",
+    "2026-08-27",
+    "https://github.com/neuml/txtai/releases/tag/v9.13.0"
+   ],
+   [
+    "v9.12.0",
+    "2026-07-30",
+    "https://github.com/neuml/txtai/releases/tag/v9.12.0"
+   ]
+  ],
+  "release_tag": "v9.14.0",
+  "release_date": "2026-10-06",
+  "release_url": "https://github.com/neuml/txtai/releases/tag/v9.14.0",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
+ "tyk-gateway": {
+  "repo": "TykTechnologies/tyk",
+  "stars": 10863,
+  "archived": false,
+  "releases": [
+   [
+    "v5.13.4",
+    "2026-10-15",
+    "https://github.com/TykTechnologies/tyk/releases/tag/v5.13.4"
+   ],
+   [
+    "v5.13.4-rc5",
+    "2026-10-15",
+    "https://github.com/TykTechnologies/tyk/releases/tag/v5.13.4-rc5"
+   ],
+   [
+    "v5.16.0-rc2",
+    "2026-10-13",
+    "https://github.com/TykTechnologies/tyk/releases/tag/v5.16.0-rc2"
+   ]
+  ],
+  "release_tag": "v5.13.4",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/TykTechnologies/tyk/releases/tag/v5.13.4",
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "typechat": {
+  "repo": "microsoft/TypeChat",
+  "stars": 8693,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-15",
+  "fetched": "2026-10-18"
+ },
+ "ufo": {
+  "repo": "microsoft/UFO",
+  "stars": 10059,
+  "archived": false,
+  "releases": [
+   [
+    "v3.0.10",
+    "2026-09-22",
+    "https://github.com/microsoft/UFO/releases/tag/v3.0.10"
+   ],
+   [
+    "Fixed security issues.",
+    "2026-09-14",
+    "https://github.com/microsoft/UFO/releases/tag/v3.0.9"
+   ],
+   [
+    "v3.0.8",
+    "2026-08-10",
+    "https://github.com/microsoft/UFO/releases/tag/v3.0.8"
+   ]
+  ],
+  "release_tag": "v3.0.10",
+  "release_date": "2026-09-22",
+  "release_url": "https://github.com/microsoft/UFO/releases/tag/v3.0.10",
+  "pushed": "2026-10-14",
   "fetched": "2026-10-18"
  },
  "ui-tars-desktop": {
@@ -10699,6 +16339,33 @@
   "pushed": "2026-10-09",
   "fetched": "2026-10-18"
  },
+ "ui-vision-rpa": {
+  "repo": "A9T9/RPA",
+  "stars": 2084,
+  "archived": false,
+  "releases": [
+   [
+    "New uiv.* API, AI and MCP features, and bug fixes",
+    "2026-09-21",
+    "https://github.com/A9T9/RPA/releases/tag/V10.0.276"
+   ],
+   [
+    "AI macro creation, uiv.* API and the MCP bridge",
+    "2026-08-01",
+    "https://github.com/A9T9/RPA/releases/tag/V10.0.31"
+   ],
+   [
+    "Unlimited hard-drive storage mode",
+    "2026-07-03",
+    "https://github.com/A9T9/RPA/releases/tag/V9.6.1"
+   ]
+  ],
+  "release_tag": "New uiv.* API, AI and MCP features, and bug fixes",
+  "release_date": "2026-09-21",
+  "release_url": "https://github.com/A9T9/RPA/releases/tag/V10.0.276",
+  "pushed": "2026-09-21",
+  "fetched": "2026-10-18"
+ },
  "ultralytics-agents": {
   "repo": "ultralytics/skills",
   "stars": 30,
@@ -10719,6 +16386,33 @@
   "release_date": "2026-10-06",
   "release_url": "https://github.com/ultralytics/skills/releases/tag/v0.5.0",
   "pushed": "2026-10-10",
+  "fetched": "2026-10-18"
+ },
+ "ultrarag": {
+  "repo": "OpenBMB/UltraRAG",
+  "stars": 5729,
+  "archived": false,
+  "releases": [
+   [
+    "v0.3.0.3",
+    "2026-09-15",
+    "https://github.com/OpenBMB/UltraRAG/releases/tag/v0.3.0.3"
+   ],
+   [
+    "v0.3.0.2",
+    "2026-04-09",
+    "https://github.com/OpenBMB/UltraRAG/releases/tag/v0.3.0.2"
+   ],
+   [
+    "v0.3.0.1",
+    "2026-03-10",
+    "https://github.com/OpenBMB/UltraRAG/releases/tag/v0.3.0.1"
+   ]
+  ],
+  "release_tag": "v0.3.0.3",
+  "release_date": "2026-09-15",
+  "release_url": "https://github.com/OpenBMB/UltraRAG/releases/tag/v0.3.0.3",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "unbrowse": {
@@ -10773,6 +16467,33 @@
   "release_date": "2026-10-18",
   "release_url": "https://github.com/IvanMurzak/Unity-MCP/releases/tag/1.2.0",
   "pushed": "2026-10-18",
+  "fetched": "2026-10-18"
+ },
+ "unla": {
+  "repo": "AmoyLab/Unla",
+  "stars": 2242,
+  "archived": false,
+  "releases": [
+   [
+    "v0.10.0",
+    "2026-08-04",
+    "https://github.com/AmoyLab/Unla/releases/tag/v0.10.0"
+   ],
+   [
+    "v0.9.2",
+    "2026-01-21",
+    "https://github.com/AmoyLab/Unla/releases/tag/v0.9.2"
+   ],
+   [
+    "v0.9.1",
+    "2026-01-09",
+    "https://github.com/AmoyLab/Unla/releases/tag/v0.9.1"
+   ]
+  ],
+  "release_tag": "v0.10.0",
+  "release_date": "2026-08-04",
+  "release_url": "https://github.com/AmoyLab/Unla/releases/tag/v0.10.0",
+  "pushed": "2026-10-13",
   "fetched": "2026-10-18"
  },
  "unstract": {
@@ -11232,6 +16953,33 @@
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
+ "webclaw": {
+  "repo": "0xMassi/webclaw",
+  "stars": 2381,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.23",
+    "2026-09-14",
+    "https://github.com/0xMassi/webclaw/releases/tag/v0.6.23"
+   ],
+   [
+    "rc/v0.6.23-release.20260914.3",
+    "2026-09-14",
+    "https://github.com/0xMassi/webclaw/releases/tag/rc%2Fv0.6.23-release.20260914.3"
+   ],
+   [
+    "rc/v0.6.23-release.20260914.2",
+    "2026-09-14",
+    "https://github.com/0xMassi/webclaw/releases/tag/rc%2Fv0.6.23-release.20260914.2"
+   ]
+  ],
+  "release_tag": "v0.6.23",
+  "release_date": "2026-09-14",
+  "release_url": "https://github.com/0xMassi/webclaw/releases/tag/v0.6.23",
+  "pushed": "2026-09-23",
+  "fetched": "2026-10-18"
+ },
  "webflow-mcp": {
   "repo": "webflow/mcp-server",
   "stars": 141,
@@ -11286,6 +17034,33 @@
   "pushed": "2026-09-27",
   "fetched": "2026-10-18"
  },
+ "windows-mcp": {
+  "repo": "CursorTouch/Windows-MCP",
+  "stars": 9431,
+  "archived": false,
+  "releases": [
+   [
+    "Release v0.8.8",
+    "2026-10-10",
+    "https://github.com/CursorTouch/Windows-MCP/releases/tag/v0.8.8"
+   ],
+   [
+    "Release v0.8.7",
+    "2026-09-30",
+    "https://github.com/CursorTouch/Windows-MCP/releases/tag/v0.8.7"
+   ],
+   [
+    "Release v0.8.6",
+    "2026-09-26",
+    "https://github.com/CursorTouch/Windows-MCP/releases/tag/v0.8.6"
+   ]
+  ],
+  "release_tag": "Release v0.8.8",
+  "release_date": "2026-10-10",
+  "release_url": "https://github.com/CursorTouch/Windows-MCP/releases/tag/v0.8.8",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "wix-mcp": {
   "repo": "wix/wix-mcp",
   "stars": 15,
@@ -11309,6 +17084,33 @@
   "release_date": "2026-02-16",
   "release_url": "https://github.com/oil-oil/wolfcha/releases/tag/v1.0.0",
   "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
+ "workflow-sdk": {
+  "repo": "vercel/workflow",
+  "stars": 2461,
+  "archived": false,
+  "releases": [
+   [
+    "workflow@5.2.2",
+    "2026-10-13",
+    "https://github.com/vercel/workflow/releases/tag/workflow%405.2.2"
+   ],
+   [
+    "@workflow/world-vercel@5.2.2",
+    "2026-10-13",
+    "https://github.com/vercel/workflow/releases/tag/%40workflow%2Fworld-vercel%405.2.2"
+   ],
+   [
+    "@workflow/world-testing@5.0.5",
+    "2026-10-13",
+    "https://github.com/vercel/workflow/releases/tag/%40workflow%2Fworld-testing%405.0.5"
+   ]
+  ],
+  "release_tag": "workflow@5.2.2",
+  "release_date": "2026-10-13",
+  "release_url": "https://github.com/vercel/workflow/releases/tag/workflow%405.2.2",
+  "pushed": "2026-10-16",
   "fetched": "2026-10-18"
  },
  "worktrunk": {
@@ -11392,6 +17194,33 @@
   "pushed": "2026-10-15",
   "fetched": "2026-10-18"
  },
+ "xiaozhi-esp32": {
+  "repo": "78/xiaozhi-esp32",
+  "stars": 31411,
+  "archived": false,
+  "releases": [
+   [
+    "v2.5.2",
+    "2026-10-11",
+    "https://github.com/78/xiaozhi-esp32/releases/tag/v2.5.2"
+   ],
+   [
+    "v2.5.0",
+    "2026-09-10",
+    "https://github.com/78/xiaozhi-esp32/releases/tag/v2.5.0"
+   ],
+   [
+    "v2.4.2",
+    "2026-08-06",
+    "https://github.com/78/xiaozhi-esp32/releases/tag/v2.4.2"
+   ]
+  ],
+  "release_tag": "v2.5.2",
+  "release_date": "2026-10-11",
+  "release_url": "https://github.com/78/xiaozhi-esp32/releases/tag/v2.5.2",
+  "pushed": "2026-10-17",
+  "fetched": "2026-10-18"
+ },
  "yao": {
   "repo": "YaoApp/yao",
   "stars": 8141,
@@ -11419,12 +17248,66 @@
   "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
+ "yuanjing-wanwu": {
+  "repo": "UnicomAI/wanwu",
+  "stars": 2371,
+  "archived": false,
+  "releases": [
+   [
+    "v0.6.5",
+    "2026-09-18",
+    "https://github.com/UnicomAI/wanwu/releases/tag/v0.6.5"
+   ],
+   [
+    "v0.6.4",
+    "2026-09-04",
+    "https://github.com/UnicomAI/wanwu/releases/tag/v0.6.4"
+   ],
+   [
+    "v0.6.3: Merge branch 'dev_rag_260817' into 'dev'",
+    "2026-08-17",
+    "https://github.com/UnicomAI/wanwu/releases/tag/v0.6.3"
+   ]
+  ],
+  "release_tag": "v0.6.5",
+  "release_date": "2026-09-18",
+  "release_url": "https://github.com/UnicomAI/wanwu/releases/tag/v0.6.5",
+  "pushed": "2026-10-16",
+  "fetched": "2026-10-18"
+ },
  "zapier-mcp": {
   "repo": "zapier/zapier-mcp",
   "stars": 443,
   "archived": false,
   "releases": [],
   "pushed": "2026-07-29",
+  "fetched": "2026-10-18"
+ },
+ "zed": {
+  "repo": "zed-industries/zed",
+  "stars": 91879,
+  "archived": false,
+  "releases": [
+   [
+    "nightly: acp_thread: Apply v2 metadata patches by key (#65709)",
+    "2026-10-17",
+    "https://github.com/zed-industries/zed/releases/tag/nightly"
+   ],
+   [
+    "collab-staging: acp_thread: Apply v2 metadata patches by key (#65709)",
+    "2026-10-17",
+    "https://github.com/zed-industries/zed/releases/tag/collab-staging"
+   ],
+   [
+    "v1.24.3",
+    "2026-10-16",
+    "https://github.com/zed-industries/zed/releases/tag/v1.24.3"
+   ]
+  ],
+  "release_tag": "nightly: acp_thread: Apply v2 metadata patches by key (#65709)",
+  "release_date": "2026-10-17",
+  "release_url": "https://github.com/zed-industries/zed/releases/tag/nightly",
+  "pushed": "2026-10-17",
   "fetched": "2026-10-18"
  },
  "zenml": {
@@ -11452,6 +17335,33 @@
   "release_date": "2026-10-14",
   "release_url": "https://github.com/zenml-io/zenml/releases/tag/0.98.0",
   "pushed": "2026-10-14",
+  "fetched": "2026-10-18"
+ },
+ "zeron": {
+  "repo": "zeronsh/zeron",
+  "stars": 3287,
+  "archived": false,
+  "releases": [
+   [
+    "v0.2.113",
+    "2026-10-15",
+    "https://github.com/zeronsh/zeron/releases/tag/v0.2.113"
+   ],
+   [
+    "v0.2.112",
+    "2026-10-11",
+    "https://github.com/zeronsh/zeron/releases/tag/v0.2.112"
+   ],
+   [
+    "v0.2.111",
+    "2026-10-10",
+    "https://github.com/zeronsh/zeron/releases/tag/v0.2.111"
+   ]
+  ],
+  "release_tag": "v0.2.113",
+  "release_date": "2026-10-15",
+  "release_url": "https://github.com/zeronsh/zeron/releases/tag/v0.2.113",
+  "pushed": "2026-10-18",
   "fetched": "2026-10-18"
  },
  "zotero-mcp": {
