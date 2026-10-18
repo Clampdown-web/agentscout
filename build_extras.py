@@ -295,3 +295,16 @@ def free_tools(t):
     p="categories/vision.html"; v=open(p).read()
     if "gencall" not in v: v=v.replace('</p><div class="grid">','</p><a class="gencall" href="../generate.html">✨ Try AgentScout\'s free AI image generator →</a><div class="grid">',1); open(p,"w").write(v)
     return canon
+
+# Featured listings: re-apply featured.json after any generator run that imports this module,
+# so rebuilds keep active Featured blocks and drop expired ones (no-op with an empty list).
+import atexit as _atexit, os as _os
+_FEAT_CWD=_os.getcwd()
+def _apply_featured():
+    try:
+        _here=_os.getcwd(); _os.chdir(_FEAT_CWD)
+        if _os.path.exists("featured.json") and _os.path.exists("index.html"):
+            import build_featured; build_featured.run()
+        _os.chdir(_here)
+    except Exception as _ex: print("featured skipped:",_ex)
+_atexit.register(_apply_featured)
