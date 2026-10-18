@@ -7,7 +7,7 @@ import glob,re,json,html
 B="https://agentscouthq.com/"
 def _groups():
     return (sorted(glob.glob("tools/*.html"))+sorted(glob.glob("best/*.html"))+sorted(glob.glob("s/*.html"))+sorted(glob.glob("for/*.html"))
-        +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+["index.html"])
+        +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+sorted(glob.glob("tasks/*.html"))+["index.html"])
 def _attr(s,pat):
     m=re.search(pat,s); return m.group(1) if m else None
 def _settitle(s,new):
@@ -26,6 +26,12 @@ def shorten(f,s,names,c):
         if not n: return s
         for cand in (f"{n}: pricing and alternatives · AgentScout",f"{n}: alternatives · AgentScout",f"{n} · AgentScout"):
             if len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
+    elif f.startswith("tasks/"):
+        for cand in (re.sub(r" \(\d+ tools\)","",t),re.sub(r" \(\d+ tools\) · AgentScout$","",t)):
+            if cand!=t and len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
+    elif f.startswith("best/") and f.endswith("-alternatives.html"):
+        for cand in (t.replace(" (2026)",""),re.sub(r": \d+ similar tools","",t),re.sub(r" \(2026\): \d+ similar tools| ?: \d+ similar tools","",t)):
+            if cand!=t and len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
     elif f.startswith("s/"):
         cand=t.replace(" (2026)","")
         if cand!=t and len(cand)<=70: c["title_shortened"]+=1; return _settitle(s,cand)
@@ -66,4 +72,26 @@ def run(t):
         s=shorten(f,s,names,c); s=twitter(s,c)
         if f in HUBS: s=hubld(f,s,c)
         if s!=s0: open(f,"w").write(s)
+    llms_extra(c)
     print("seo pass:",dict(c))
+def _h1(f):
+    s=open(f,errors="ignore").read()
+    if 'name="robots" content="noindex' in s: return None
+    m=re.search(r"<h1[^>]*>(.*?)</h1>",s,re.S)
+    return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>","",m.group(1)))).strip() if m else None
+def llms_extra(c=None):
+    """llms.txt sections for every indexable best-of, alternatives, search, role, task and free-tool page (idempotent, between markers)."""
+    import os
+    if not os.path.exists("llms.txt"): return
+    L=open("llms.txt").read(); L=re.sub(r"\n?<!-- pages:start -->.*?<!-- pages:end -->\n?","\n",L,flags=re.S).rstrip()+"\n"
+    def sec(name,files,strip=""):
+        out=[]
+        for f in files:
+            if f.endswith("index.html"): continue
+            h=_h1(f)
+            if h: out.append(f"- [{h.replace(strip,'').strip()}]({B}{f})")
+        return [f"## {name}",""]+out+[""] if out else []
+    best=sorted(glob.glob("best/*.html")); alt=[f for f in best if f.endswith("-alternatives.html")]
+    S=["<!-- pages:start -->",""]+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular searches",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+["<!-- pages:end -->"]
+    open("llms.txt","w").write(L+"\n"+"\n".join(S)+"\n")
+    if c is not None: c["llms_pages"]=sum(1 for z in S if z.startswith("- ["))

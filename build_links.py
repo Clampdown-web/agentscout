@@ -50,6 +50,17 @@ def run(t):
         if k=="index": continue
         h=open(f).read(); m=re.search(r"<h1[^>]*>(.*?)</h1>",h,re.S)
         BEST[k]=(re.sub(r"<[^>]+>","",m.group(1)).replace(" (2026)","").strip() if m else k,[y for y in re.findall(r'href="\.\./tools/([^"]+)\.html"',h.split("<main",1)[-1])])
+    # alternatives pages (best/*-alternatives.html) and sub-task pages (3-level crumb) with the tools they list
+    ALTP={k:v for k,v in BEST.items() if k.endswith("-alternatives")}
+    SUB={}
+    for f in glob.glob("tasks/*.html"):
+        h=open(f).read()
+        if 'name="robots" content="noindex' in h: continue
+        cm=re.search(r'<div class="crumb">(.*?)</div>',h,re.S)
+        if not cm or cm.group(1).count("</a>")<3: continue
+        m=re.search(r"<h1[^>]*>(.*?)</h1>",h,re.S); nm=re.sub(r"<[^>]+>","",m.group(1)).replace("AI tools for ","").strip() if m else f
+        SUB[os.path.basename(f)[:-5]]=(nm[:1].upper()+nm[1:],re.findall(r'href="\.\./tools/([^"]+)\.html"',h.split("<main",1)[-1]))
+    altin=collections.Counter(); subin=collections.Counter()
     def best_for(slugs,n=2,mn=3):
         sl=set(slugs); sc=sorted(((len(sl&set(v[1])),k) for k,v in BEST.items()),reverse=True)
         return [k for c,k in sc if c>=mn][:n]
@@ -63,11 +74,19 @@ def run(t):
         catb=[k for k,v in BEST.items() if sum(1 for y in v[1] if bys.get(y,{}).get("category")==x["category"])*2>=max(1,len(v[1]))][:1]
         bl=("Ranked in: "+" · ".join(blink(k) for k in inb)) if inb else ("See also: "+blink(catb[0])+" · " if catb else "")+'<a href="../best/index.html">All best-of lists</a>'
         if inb: stats["tool_ranked_in"]+=1
+        # alternatives pages and sub-task guides that list this tool (least-linked first, so every page gets inbound links)
+        al=sorted([k for k,v in ALTP.items() if x["slug"] in v[1] and k!=x["slug"]+"-alternatives"],key=lambda k:(altin[k],k))[:3]
+        for k in al: altin[k]+=1
+        sb=sorted([k for k,v in SUB.items() if x["slug"] in v[1]],key=lambda k:(subin[k],k))[:3]
+        for k in sb: subin[k]+=1
+        extra=(f'<p style="margin:10px 0 0;font-size:14px">🔁 Listed in: '+" · ".join(blink(k) for k in al)+'</p>' if al else "")+(f'<p style="margin:10px 0 0;font-size:14px">🧭 Task guides: '+" · ".join(f'<a href="../tasks/{k}.html">{e(SUB[k][0])}</a>' for k in sb)+'</p>' if sb else "")
+        if al: stats["tool_alt_links"]+=len(al)
+        if sb: stats["tool_subtask_links"]+=len(sb)
         if True:
             it=[(f"../s/{k}.html",sname[k]) for k in ss]+[(f"../for/{k}.html","For "+rname[k]) for k in rr]
             html=((f'<h2 {H2}>Popular searches with this tool</h2>'+chips(it)) if it else f'<h2 {H2}>Related lists</h2>')+(
                   f'<p style="margin:10px 0 0;font-size:14px">🏆 {bl}</p>'+
-                  (f'<p style="margin:10px 0 0;font-size:14px">💲 <a href="../free-tools/ai-cost-calculator.html">Estimate API cost</a>: compare per-request and monthly costs for GPT, Claude, Gemini and Grok models.</p>' if c else ""))
+                  extra+(f'<p style="margin:10px 0 0;font-size:14px">💲 <a href="../free-tools/ai-cost-calculator.html">Estimate API cost</a>: compare per-request and monthly costs for GPT, Claude, Gemini and Grok models.</p>' if c else ""))
             html=f'<div style="margin:0 0 32px">{html}</div>'
             if ss or rr: stats["tool_with_search_or_role"]+=1
             if c: stats["tool_cost_link"]+=1
@@ -86,6 +105,10 @@ def run(t):
         if ro: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Who uses these</h2>'+chips([(f"../for/{r[0]}.html","For "+r[1]) for r in ro])
         cb=sorted([k for k,v in BEST.items() if v[1] and sum(1 for y in v[1] if bys.get(y,{}).get("category")==c)*2>=len(v[1])],key=lambda k:-len(BEST[k][1]))[:3]
         html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Best-of lists</h2>'+chips([(f"../best/{k}.html",BEST[k][0]) for k in cb]+[("../best/index.html","All best-of lists")])
+        ca=sorted([k for k in ALTP if bys.get(k[:-13],{}).get("category")==c],key=lambda k:-(bys[k[:-13]].get("github_stars") or 0))[:8]
+        if ca: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Alternatives pages</h2>'+chips([(f"../best/{k}.html",BEST[k][0]) for k in ca]); stats["cat_alt"]+=len(ca)
+        cg=sorted([k for k,v in SUB.items() if v[1] and sum(1 for y in v[1] if bys.get(y,{}).get("category")==c)*10>=len(v[1])*4],key=lambda k:-len(SUB[k][1]))[:6]
+        if cg: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Task guides</h2>'+chips([(f"../tasks/{k}.html",SUB[k][0]) for k in cg]); stats["cat_subtask"]+=len(cg)
         if html: stats["cat_rel_s"]+=len(rs); stats["cat_rel_for"]+=len(ro); stats["cat_best"]+=len(cb)
         edit(f"categories/{cs}.html",lambda s,html=html:put(s,"cat",html,'<p class="disclose">'))
     edit("categories/index.html",lambda s:put(s,"cathub",' Or browse <a href="../for/index.html">by role</a>, <a href="../s/">popular searches</a> or <a href="../best/index.html">best-of lists</a>.',r'<p class="lede"[^>]*>[^<]*(?=</p>)',before=False,regex=True))
@@ -134,6 +157,14 @@ def run(t):
         bb=best_for(r[4],2,2)
         html=f'<p>Best-of lists for {e(r[1])}: '+" · ".join([blink(k) for k in bb]+['<a href="../best/index.html">All best lists</a>'])+'</p>'
         stats["role_best"]+=len(bb); edit(f"for/{r[0]}.html",lambda s,html=html:put(s,"rbest",html,'<p class="disclose">'))
+    def catline(slugs,d="../"):
+        cc=collections.Counter(bys[y]["category"] for y in slugs if y in bys)
+        top=[(c,n) for c,n in cc.most_common() if n>=3 or n*5>=max(1,len(slugs))][:5]
+        return ('<p>Related categories: '+" · ".join(f'<a href="{d}categories/{X.catslug(c)}.html">{e(CAP(c))}</a>' for c,n in top)+'</p>') if top else ""
+    for a in S:
+        edit(f"s/{a[0]}.html",lambda s,html=catline([y["slug"] for y in a[4]]):put(s,"scat",html,'<p class="disclose">')); stats["s_catline"]+=1
+    for r in RO:
+        edit(f"for/{r[0]}.html",lambda s,html=catline(r[4]):put(s,"rcat",html,'<p class="disclose">')); stats["role_catline"]+=1
     FB={"ai-cost-calculator":["ai-agent-frameworks","ai-coding-agents"],"token-counter":["ai-agent-frameworks","ai-agent-observability-tools"],"prompt-builder":["ai-productivity-tools","personal-ai-agents"],"agent-setup-generator":["ai-coding-agents","ai-agent-frameworks"]}
     for k,v in FB.items():
         html='<p>Best-of lists: '+" · ".join([blink(b) for b in v if b in BEST]+['<a href="../best/index.html">All best lists</a>'])+'</p>'
@@ -155,6 +186,10 @@ def run(t):
         s=put(s,"homefree",strip,'<div class="layout">')
         role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'
               +chips([(f"for/{r[0]}.html",CAP(r[1])) for r in RO])+'</div></section>')
+        cc=collections.Counter(x["category"] for x in t)
+        cats_=(f'<section id="xcats" class="band" aria-labelledby="xcats-h"><div class="wrap"><div class="sh"><div><h2 id="xcats-h">All categories</h2><p>Every AI agent tool category, with its own page. <a href="categories/index.html">All categories →</a></p></div></div>'
+              +chips([(f"categories/{X.catslug(c)}.html",f"{CAP(c)} ({n})") for c,n in cc.most_common()])+'</div></section>')
+        role=cats_+role
         s=put(s,"homeroles",role,r'<div class="cats" id="catgrid"></div>\s*</div></section>',before=False,regex=True)
         s=put(s,"homeguide",' · <a href="s/">Popular searches</a> · <a href="for/index.html">By role</a>',r'<h3>Browse by guide</h3><p>.*?(?=</p>)',before=False,regex=True)
         return s

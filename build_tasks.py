@@ -1,4 +1,5 @@
 import build_extras,build_subtasks
+_cap=lambda s:str(s)[:1].upper()+str(s)[1:]  # keeps acronyms (RAG, MCP, SQL, QA) intact
 """Task pages (/tasks/), submit page, and sitewide nav/footer/newsletter injection. Called from build_extras/build_site; reads tools at build time."""
 import re,os,json,glob,urllib.parse
 from build_extras import e,B,shell,card
@@ -91,7 +92,7 @@ def _sublabel(sub): return build_subtasks.LABEL[sub]
 def _subindex(m):
     if not SUBP: return ""
     return ('<h2 style="font-size:19px;margin:36px 0 12px">Narrower lists</h2><p class="muted" style="margin:0 0 12px">Sub-tasks with enough tools to get their own page.</p><div class="badges">'
-        +"".join(f'<a class="b uc" href="{sl}.html">{e(m[p_][0][1].capitalize())}: {e(_sublabel(sub))} ({len(its)})</a>' for sl,p_,sub,its in sorted(SUBP,key=lambda z:(m[z[1]][0][1],z[2])))+'</div>')
+        +"".join(f'<a class="b uc" href="{sl}.html">{e(_cap(m[p_][0][1]))}: {e(_sublabel(sub))} ({len(its)})</a>' for sl,p_,sub,its in sorted(SUBP,key=lambda z:(m[z[1]][0][1],z[2])))+'</div>')
 def _subpages_write(m):
     urls=[]
     for sl,p_,sub,its in SUBP:
@@ -113,12 +114,12 @@ def _subpages_write(m):
         faq=[(f"What are the best AI tools for {plabel} focused on {lab}?",f"We list {n}. The first three by GitHub stars and featured status are "+"; ".join(f"{x['name']}: {x['description']}" for x in top)),
              (f"Are there free or open-source options?",f"Yes: {build_subtasks.price_line(its)}. Pricing is as each maker states it." if any(x["pricing"] in build_subtasks.OPEN|build_subtasks.FREE for x in its) else f"Pricing breakdown: {build_subtasks.price_line(its)}.")]
         faqh='<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>'+"".join(f'<h3 style="font-size:15px;margin:16px 0 6px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / <a href="{p_}.html">{e(plabel.capitalize())}</a> / {e(lab.capitalize())}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / <a href="{p_}.html">{e(_cap(plabel))}</a> / {e(_cap(lab))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p><div class="grid">{"".join(card(x) for x in its)}</div>{build_subtasks.repo_table(its)}{faqh}{sibh}<p class="disclose">Tools are grouped by what each says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(its)]},
             {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]},
-            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":plabel.capitalize(),"item":f"{B}tasks/{p_}.html"},{"@type":"ListItem","position":4,"name":lab.capitalize(),"item":canon}]}]}
+            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":_cap(plabel),"item":f"{B}tasks/{p_}.html"},{"@type":"ListItem","position":4,"name":_cap(lab),"item":canon}]}]}
         open(f"tasks/{sl}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
     return urls
 def pages(t):
@@ -138,21 +139,21 @@ def pages(t):
         rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))
         if s in ORIG: rel=[r for r in rel if r[0] in ORIG][:8]+[r for r in rel if r[0] not in ORIG][:3]  # original pages keep their related list; newer tasks are appended
         else: rel=rel[:8]
-        relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(T2[1].capitalize())} ({len(m[s2][1])})</a>' for s2,T2 in rel)+'<a class="b uc" href="index.html">All tasks →</a></div>'
+        relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(_cap(T2[1]))} ({len(m[s2][1])})</a>' for s2,T2 in rel)+'<a class="b uc" href="index.html">All tasks →</a></div>'
         if s not in ORIG:  # newer task pages also link the categories their tools come from
             from collections import Counter
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(label.capitalize())}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'
               f'{_grid(items,s)}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
-            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":label.capitalize(),"item":canon}]}]}
+            {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":B+"tasks/index.html"},{"@type":"ListItem","position":3,"name":_cap(label),"item":canon}]}]}
         open(f"tasks/{s}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
     canon=B+"tasks/index.html"; title=f"AI Agents by Task: {len(m)} Jobs, Best Tools for Each · AgentScout"
     desc=f"Find the best AI agents for {len(m)} tasks, from writing code and browsing the web to voice agents, research and customer support."[:158]
-    tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(T[1].capitalize())}</h3></div><p>{len(items)} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
+    tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(_cap(T[1]))}</h3></div><p>{len(items)} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
     body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / Tasks</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><div class="grid">{tiles}</div>{_subindex(m)}</section>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"AI agents by task","description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":canon}]}]}
     open("tasks/index.html","w").write(shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)

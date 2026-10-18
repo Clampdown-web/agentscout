@@ -46,13 +46,28 @@ PAGES=[
  '<a href="../tasks/personal-assistants.html">AI agents for personal assistance</a> · <a href="../tasks/chat-apps.html">Agents in chat apps</a>'),
 ("ai-business-agents","Best AI Agents for Business Teams",lambda x:x["category"]=="business agents","maturity",20,
  "Ready-made AI agents for business work: operations, finance, support, sales and back-office tasks.",
- '<a href="../tasks/business-automation.html">Running business operations</a> · <a href="../tasks/customer-support.html">Customer support</a> · <a href="../tasks/sales-outreach.html">Sales outreach</a>'),
+ '<a href="../tasks/business-automation.html">Running business operations</a> · <a href="ai-customer-support-agents.html">Best AI customer support agents</a> · <a href="ai-sales-marketing-agents.html">Best AI sales &amp; marketing agents</a> · <a href="../categories/customer-support.html">Customer support category</a> · <a href="../categories/sales-marketing.html">Sales &amp; marketing category</a>'),
 ("crypto-ai-agents","Best Crypto AI Agents",lambda x:x["category"]=="crypto","maturity",20,
  "AI agents, MCP servers and toolkits for crypto: on-chain data, wallets, DeFi and research. None of this is financial advice.",
  '<a href="../tasks/crypto-and-wallets.html">Crypto and wallets</a> · <a href="../tasks/trading.html">Trading</a> · <a href="../tasks/smart-contract-security.html">Smart contract security</a>'),
 ("ai-productivity-tools","Best AI Productivity Agents",lambda x:x["category"]=="productivity","stars",20,
  "AI agents and tools for everyday productivity: documents, diagrams, spreadsheets, video and design work.",
  '<a href="../tasks/spreadsheets-and-slides.html">Spreadsheets, slides and docs</a> · <a href="../tasks/documents.html">Working with documents</a>'),
+("ai-agent-memory-rag-tools","Best AI Agent Memory & RAG Tools",lambda x:x["category"]=="memory & RAG","stars",20,
+ "Memory layers, knowledge graphs, vector databases and RAG frameworks that give AI agents long-term memory and access to your documents.",
+ '<a href="../tasks/agent-memory.html">Memory for agents</a> · <a href="../tasks/agent-memory-vector-rag.html">RAG and documents for agent memory</a> · <a href="../s/ai-agent-memory-tools.html">AI agent memory tools</a>'),
+("ai-agent-security-tools","Best AI Agent Security & Governance Tools",lambda x:x["category"]=="security & governance","stars",20,
+ "Guardrails, policy engines, scanners and governance platforms for keeping AI agents safe, compliant and under control.",
+ '<a href="../tasks/agent-security.html">Agent security and safety</a> · <a href="../tasks/agent-security-guardrails.html">Guardrails and policies</a> · <a href="../s/free-ai-agent-security-tools.html">Free AI agent security tools</a>'),
+("ai-sales-marketing-agents","Best AI Sales & Marketing Agents",lambda x:x["category"]=="sales & marketing","maturity",20,
+ "AI SDRs, prospecting, enrichment and content agents for sales and marketing teams.",
+ '<a href="../tasks/sales-outreach.html">Sales outreach</a> · <a href="../tasks/marketing.html">Marketing</a> · <a href="../s/ai-sales-agents.html">AI sales agents</a> · <a href="../s/ai-marketing-agents.html">AI marketing agents</a>'),
+("ai-customer-support-agents","Best AI Customer Support Agents",lambda x:x["category"]=="customer support","maturity",20,
+ "AI agents that answer customer questions, resolve tickets and handle support chats, email and calls.",
+ '<a href="../tasks/customer-support.html">Customer support</a> · <a href="../s/ai-customer-support-agents.html">AI customer support agents</a> · <a href="../for/customer-support-teams.html">For customer support teams</a>'),
+("local-ai-models-and-runtimes","Best Local AI Models & Runtimes",lambda x:x["category"]=="models & local runtimes","stars",20,
+ "Open models and local runtimes for running LLMs on your own computer or server, often as the engine behind self-hosted agents.",
+ '<a href="../tasks/running-agents-locally.html">Running agents locally</a> · <a href="../s/local-ai-agents.html">Local AI agents</a> · <a href="self-hosted-ai-agents.html">Self-hosted AI agents</a>'),
 ]
 OLD=[("mcp-servers","Best MCP Servers"),("mcp-servers-for-claude-code","Best MCP servers for Claude Code"),("mcp-servers-for-cursor","Best MCP servers for Cursor"),("mcp-servers-for-codex","Best MCP servers for Codex"),("cursor-alternatives","Cursor alternatives")]
 def rank(items,how):
@@ -118,6 +133,10 @@ def pages(t):
     urls=[hub(t,made,ALT)]+[m[0] for m in made]+[f"{B}best/{sl}.html" for _,sl,_ in ALT]
     # link from where best/ pages are already listed (additive)
     link_in("index.html",'<a href="best/cursor-alternatives.html">Cursor alternatives 2026</a>',' · <a href="best/index.html">All best lists</a> · '+" · ".join(f'<a href="best/{s}.html">{e(h)}</a>' for _,h,_,s in made),'href="best/index.html"')
+    if os.path.exists("index.html"):
+        hs=open("index.html").read(); miss=[(h,sl) for _,h,_,sl in made if f'href="best/{sl}.html"' not in hs]
+        if miss and '<a href="best/index.html">All best lists</a>' in hs:
+            hs=hs.replace('<a href="best/index.html">All best lists</a>','<a href="best/index.html">All best lists</a>'+"".join(f' · <a href="best/{sl}.html">{e(h)}</a>' for h,sl in miss),1); open("index.html","w").write(hs)
     link_in("best/mcp-servers.html",'Guides by client: ','<a href="index.html">All best lists</a> · <a href="open-source-mcp-servers.html">Best open-source MCP servers</a> · ','href="open-source-mcp-servers.html"')
     link_in("best/cursor-alternatives.html",'<a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>','. More: <a href="ai-coding-agents.html">Best AI coding agents (ranked)</a> · <a href="index.html">All best lists</a>','href="ai-coding-agents.html"')
     link_in("llms.txt",f'- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)',"\n"+f"- [All best-of lists]({B}best/)\n"+"\n".join(f"- [{h} 2026]({u})" for u,h,_,_ in made),f"]({B}best/)")

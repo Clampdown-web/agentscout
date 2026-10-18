@@ -4,7 +4,7 @@ ICON='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="curren
 WRAP=('<span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page">'+ICON+'Share</button>'
       '<span class="sharecount" hidden></span></span>')
 def wanted(f):
-    return (f.startswith(("tools/","best/","s/","for/")) or f=="free-tools.html" or (f.startswith("free-tools/") and not f.endswith("index.html")) or (f.startswith("news/") and not f.endswith("index.html")))
+    return (f.startswith(("tools/","best/","s/","for/")) or (f.startswith(("categories/","tasks/")) and not f.endswith("index.html")) or f=="free-tools.html" or (f.startswith("free-tools/") and not f.endswith("index.html")) or (f.startswith("news/") and not f.endswith("index.html")))
 def apply(f,s,d,V):
     if not wanted(f) or "<h1" not in s: return s
     if 'data-share' not in s:

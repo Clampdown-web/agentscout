@@ -1,5 +1,6 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
 import html,json,re,datetime
+_cap=lambda s:str(s)[:1].upper()+str(s)[1:]  # keeps acronyms (RAG, MCP, SQL, QA) intact
 B="https://agentscouthq.com/"
 e=lambda s:html.escape(str(s or ""))
 def su(u):
@@ -208,7 +209,7 @@ def seo(t,urls):
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
         _tc=[z for z in _tc if z[2]>=3][:14]
-        _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(l.capitalize())} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
+        _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
         _lede=f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(c)} tools: {e(_bs.price_line(items))}.</p>'+_chips
@@ -332,6 +333,8 @@ def _apply_featured():
         # Re-write redirects.json pages after cleanup in best/ and tasks/ may have deleted them.
         if _os.path.exists("redirects.json"):
             import build_redirects; build_redirects.run()
+        if _os.path.exists("llms.txt"):
+            import build_seo; build_seo.llms_extra()
         _os.chdir(_here)
     except Exception as _ex: print("featured skipped:",_ex)
 _atexit.register(_apply_featured)

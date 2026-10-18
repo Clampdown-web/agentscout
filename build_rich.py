@@ -5,7 +5,7 @@ R=json.load(open("tool_rich.json")) if os.path.exists("tool_rich.json") else {}
 H2='<h2 style="font-size:16px;margin-bottom:10px">'
 def apply(out,x,t,catslug,prim,B):
     r=R.get(x["slug"])
-    if not r: return out,None
+    if not r: return auto(out,x,t,catslug,prim,B)
     if r.get("kind")=="lite": return lite(out,x,t,catslug,prim,B,r)
     n=x["name"];p=r["pricing"];cat=x["category"];cs=catslug(cat);pg=f"{B}tools/{x['slug']}.html"
     title=f"{n}: Features, Pricing & Alternatives | AgentScout"
@@ -95,5 +95,52 @@ def lite(out,x,t,catslug,prim,B,r):
     elif F.get("osi") and F.get("license") and not F.get("archived"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",F["license"])+")"}
     if F.get("repo"): app["sameAs"]=F["repo"]
     if r.get("features"): app["featureList"]=r["features"]
+    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
+    return out,(sec,app,fq,f"{n}: what it does, pricing and alternatives","lite")
+
+
+# ---- Auto facts layer (Oct 18 2026): tools without a tool_rich.json entry still get an at-a-glance box, FAQ and
+# FAQPage/SoftwareApplication JSON-LD, built ONLY from verified data: the directory listing (link-checked), the GitHub
+# snapshot (data/github.json) and the licence file read from the repo (data/repo_facts.json). Pricing is never inferred:
+# the maker-stated label is shown, and "See site" means we have not verified it.
+_RF=json.load(open("data/repo_facts.json")) if os.path.exists("data/repo_facts.json") else {}
+_GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
+def auto(out,x,t,catslug,prim,B):
+    n=x["name"];cat=x["category"];cs=catslug(cat);pd=(x.get("pricing_detail") or x["pricing"]).strip()
+    g=_GH.get(x["slug"]) or {}; rf=_RF.get(x["slug"]) or {}
+    repo=("https://github.com/"+g["repo"]) if g.get("repo") else (x.get("github") or "")
+    if repo and "github.com/" not in repo: repo=""
+    hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
+    unk=pd.lower() in ("see site","unknown","")
+    stars=g.get("stars") if g.get("stars") is not None else x.get("github_stars")
+    lic=rf.get("license"); osi=rf.get("osi")
+    aud="Developers and teams building with AI agents" if x["audience"]=="builders" else "People and teams who want a ready-to-use AI product"
+    li=[("Category",f'<a href="../categories/{cs}.html">{e(cat[:1].upper()+cat[1:])}</a>'),("Built for",e(aud)),
+        ("Pricing",e("Not verified yet: see the official site" if unk else pd+" (as the maker states it)"))]
+    if lic: li.append(("Licence",e(re.sub(r"^the ","",lic))+(" (OSI-approved open source)" if osi else "")))
+    if repo:
+        rp=repo.replace("https://github.com/","").strip("/")
+        li.append(("GitHub",f'<a href="{e(repo)}" target="_blank" rel="noopener">{e(rp)}</a>'+(f" · {stars:,} stars" if stars else "")+(f" (as of {_mdy(g.get('fetched') or x.get('verified'))})" if stars else "")))
+    if g.get("release_tag"): li.append(("Latest release",e((g["release_tag"] if len(g["release_tag"])<=40 else g["release_tag"][:39]+"…")+", "+_mdy(g.get("release_date")))))
+    if g.get("pushed"): li.append(("Last commit",e(_mdy(g["pushed"]))))
+    if g.get("archived"): li.append(("Status","Archived: the GitHub repository is read-only"))
+    li.append(("Official site",f'<a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>'))
+    if x.get("added"): li.append(("Listed on AgentScout",e(_mdy(x["added"]))))
+    alts=sorted([y for y in t if y is not x and y["category"]==cat and "discontinu" not in (y.get("maturity","")+y["description"]).lower()],key=lambda y:(-(y.get("github_stars") or 0),y["name"].lower()))[:5]
+    altp=", ".join(y["name"] for y in alts)
+    if unk: cost=f"AgentScout hasn't verified {n}'s pricing yet, so we don't list a price. Check the official site ({hst}) for current plans."
+    else: cost=f"{n}'s pricing, as the maker states it: {pd}."+(" Open-source tools are free to use, though you may still pay for model API usage or a hosted plan." if re.match(r"(?i)(free, )?open[- ]?(source|weights)",pd) else "")+" Check the official site for current plans."
+    faq=[(f"What is {n}?",x["description"]),(f"How much does {n} cost?",cost)]
+    if lic and osi: faq.append((f"Is {n} open source?",f"Yes. {n}'s GitHub repository is published under {lic}, according to the licence file in the repo."))
+    elif lic: faq.append((f"Is {n} open source?",f"{n}'s code is published under {lic}. Check the licence terms before commercial use."))
+    if repo: faq.append((f"Where can I find {n}'s source code?",f"On GitHub at {repo.replace('https://github.com/','')}"+(f", which had {stars:,} stars as of {_mdy(g.get('fetched') or x.get('verified'))}" if stars else "")+(f". The latest release is {g['release_tag']} ({_mdy(g.get('release_date'))})." if g.get("release_tag") else ".")))
+    if altp: faq.append((f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}."))
+    sec=(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(k)}</strong>: {v}</li>" for k,v in li)+"</ul>"
+      +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)
+      +f'<p class="muted" style="margin:10px 0 28px">Facts from our link-checked listing{", the GitHub repository" if repo else ""} and the official site. See something wrong? <a href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a>.</p>')
+    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":x["description"],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","applicationSubCategory":cat}
+    if osi and lic and not g.get("archived"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",lic)+")"}
+    if repo: app["sameAs"]=repo
+    if g.get("release_tag") and len(g["release_tag"])<=40: app["softwareVersion"]=g["release_tag"]
     fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
     return out,(sec,app,fq,f"{n}: what it does, pricing and alternatives","lite")

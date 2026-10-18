@@ -19654,5 +19654,960 @@
    "license": "the MIT License",
    "osi": true
   }
+ },
+ "markitdown": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MarkItDown is Microsoft's lightweight Python utility for converting files to Markdown for use with LLMs and text-analysis pipelines. It keeps important document structure, such as headings, lists, tables and links, as Markdown.",
+   "It converts PDF, PowerPoint, Word, Excel, images (EXIF metadata and OCR), audio (metadata and speech transcription), HTML, CSV, JSON and XML, ZIP files, YouTube URLs and EPubs. The output is meant for machines to read rather than for high-fidelity documents for people."
+  ],
+  "who": "Developers building LLM, RAG or agent pipelines who need to turn Office files, PDFs and other documents into clean Markdown before sending them to a model.",
+  "features": [
+   "Converts PDF, Word, PowerPoint and Excel files to Markdown",
+   "Keeps headings, lists, tables and links",
+   "OCR and EXIF metadata for images; transcription for audio",
+   "Handles HTML, CSV, JSON, XML, ZIP archives, EPubs and YouTube URLs",
+   "Python library and command-line tool"
+  ],
+  "faq": [
+   [
+    "Is MarkItDown safe to run on untrusted files?",
+    "Its README warns that MarkItDown performs I/O with the privileges of the current process, so you should sanitize inputs in untrusted environments and call the narrowest convert function you need."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/markitdown",
+   "https://github.com/microsoft/markitdown"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/microsoft/markitdown",
+   "stars": 190851,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "ollama": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Ollama lets you run open models locally on macOS, Windows and Linux, or in the cloud, and gives you a CLI and a REST API for running and managing them. An official Docker image and Python and JavaScript libraries are available.",
+   "It can connect models to coding agents and apps such as Claude Code, Codex, Copilot CLI and OpenCode, and to OpenClaw for a personal assistant across chat apps. Its local backend is built on the llama.cpp project."
+  ],
+  "who": "Developers and hobbyists who want to run open-weight models on their own machine and plug them into agents, chat interfaces or their own apps through a local API.",
+  "features": [
+   "Run open models locally on macOS, Windows and Linux",
+   "REST API plus official Python and JavaScript libraries",
+   "Official Docker image (ollama/ollama)",
+   "One-command launch of integrations such as Claude Code, Codex and OpenCode",
+   "Model library at ollama.com/library and Modelfile customization"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ollama/ollama",
+   "https://ollama.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ollama/ollama",
+   "stars": 183704,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "open-webui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Open WebUI is a self-hosted AI platform built to run entirely offline. It works with Ollama and any OpenAI-compatible API, so you can use local and cloud models from one provider-agnostic interface.",
+   "It installs with pip, uv, Docker or Kubernetes and adds role-based access control and user groups for teams. Plugins (filters, actions, pipes, tools and skills) and MCP, MCPO and OpenAPI tool servers extend it. An enterprise plan is offered by its maker."
+  ],
+  "who": "Individuals and teams who want a private, self-hosted ChatGPT-style interface for local models (via Ollama) and cloud APIs, with user management and plugins.",
+  "features": [
+   "Self-hosted, can run fully offline",
+   "Ollama and any OpenAI-compatible API (LM Studio, Groq, Mistral, OpenRouter, vLLM and more)",
+   "Role-based access control and user groups",
+   "Plugins: filters, actions, pipes, tools and skills",
+   "MCP, MCPO and OpenAPI tool servers",
+   "Install via pip, uv, Docker or Kubernetes"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/open-webui/open-webui",
+   "https://openwebui.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/open-webui/open-webui",
+   "stars": 156052,
+   "checked": "2026-10-18"
+  }
+ },
+ "cc-switch": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CC Switch is a desktop app (built with Tauri) for managing coding-agent CLIs from one place: Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes Agent, Pi and others.",
+   "It switches API providers in one click and manages MCP servers, skills and prompts, so you don't have to hand-edit JSON, TOML or YAML config files. Its only official website is ccswitch.io."
+  ],
+  "who": "Developers who use several AI coding CLIs or API providers and want to switch between them and manage MCP servers and skills without editing config files.",
+  "features": [
+   "One-click API provider switching",
+   "Manages MCP servers, skills and prompts in one place",
+   "Supports Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw and more",
+   "No hand-editing of JSON, TOML or YAML configs",
+   "Desktop app built with Tauri"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/farion1231/cc-switch",
+   "https://ccswitch.io/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/farion1231/cc-switch",
+   "stars": 145767,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "zed": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter. You can download it for macOS, Linux and Windows or install it through a package manager.",
+   "Its source code is licensed primarily under GPL-3.0-or-later, with Apache-2.0 components where marked. A web version is not yet available."
+  ],
+  "who": "Developers who want a fast, native code editor with real-time collaboration and built-in AI features, and who prefer an open-source editor.",
+  "features": [
+   "High-performance native editor written in Rust",
+   "Multiplayer, real-time collaboration",
+   "Available for macOS, Linux and Windows",
+   "Open source (GPL-3.0-or-later, with Apache-2.0 parts)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/zed-industries/zed",
+   "https://zed.dev/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/zed-industries/zed",
+   "stars": 91879,
+   "checked": "2026-10-18"
+  }
+ },
+ "scrapling": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Scrapling is a Python web-scraping framework that combines fast HTTP requests, stealth browsers, parsing and concurrent crawling in one library. It can scrape static pages, render JavaScript, interact with sites and capture the API calls behind them.",
+   "Crawlers get reusable sessions, proxy rotation, automatic retries, pause and resume, and exports to JSON, JSONL, CSV and XML. You can use it from Python, the terminal, or an AI agent through its MCP server and Agent Skill."
+  ],
+  "who": "Developers and data teams who need to scrape or crawl websites, including JavaScript-heavy ones, and AI-agent builders who want a scraping MCP server.",
+  "features": [
+   "Fast HTTP fetching plus stealth browsers and JavaScript rendering",
+   "CSS, XPath, text and regex selection with adaptive element tracking",
+   "Concurrent spiders with proxy rotation, retries and pause/resume",
+   "Exports to JSON, JSONL, CSV and XML, or clean Markdown",
+   "MCP server, Agent Skill, CLI and interactive shell"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/D4Vinci/Scrapling",
+   "https://scrapling.readthedocs.io/en/latest/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/D4Vinci/Scrapling",
+   "stars": 88407,
+   "checked": "2026-10-18",
+   "license": "the BSD 3-Clause License",
+   "osi": true
+  }
+ },
+ "lobehub": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LobeHub (formerly Lobe Chat) is an open-source workspace for running AI agents. Its README describes it as organizing your agents into round-the-clock operation: it hires, schedules and reports on your AI team while you stay in charge.",
+   "It can be deployed with Docker or on Vercel, and has an official site, documentation and changelog."
+  ],
+  "who": "Individuals and teams who want a self-hostable, open-source interface to create, run and coordinate many AI agents.",
+  "features": [
+   "Create and manage multiple AI agents",
+   "Schedules agents and reports on their work",
+   "Collaboration features for agent teams",
+   "Self-host with Docker or deploy on Vercel"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lobehub/lobehub",
+   "https://lobehub.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/lobehub/lobehub",
+   "stars": 83307,
+   "checked": "2026-10-18"
+  }
+ },
+ "omniroute": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OmniRoute is a free, open-source AI gateway that routes requests across many model providers. You bring your own provider accounts and it catalogs and pools their free tiers, showing what is available on a dashboard.",
+   "Its README stresses that the token totals it shows are an estimate across third-party free tiers, not a grant from OmniRoute; each provider controls its own limits, availability and terms."
+  ],
+  "who": "Developers who want one gateway in front of many LLM providers, especially to combine free tiers they already have accounts for.",
+  "features": [
+   "Single gateway across many LLM providers",
+   "Bring your own provider accounts and keys",
+   "Catalog of provider free tiers with a live dashboard",
+   "Open source and self-hosted"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/diegosouzapw/OmniRoute",
+   "https://www.omniroute.online/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/diegosouzapw/OmniRoute",
+   "stars": 77954,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "headroom": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Headroom compresses what your AI agent reads (tool outputs, logs, RAG chunks, files and conversation history) before it reaches the LLM, to cut token usage. Compression runs on your own machine.",
+   "You can use it as a Python or TypeScript library, as a local proxy with no code changes, as a wrapper around coding agents such as Claude Code, Codex, Cursor and Aider, or as an MCP server. Originals are cached locally so compressed content can be retrieved."
+  ],
+  "who": "Developers running coding agents or LLM apps who want to reduce token costs and context usage without changing their models.",
+  "features": [
+   "Library for Python and TypeScript",
+   "Local proxy mode with no code changes",
+   "Wraps Claude Code, Codex, Cursor, Aider, OpenCode, Cline and more",
+   "MCP server with compress, retrieve and stats tools",
+   "Shared memory across agents",
+   "Runs locally; originals cached for retrieval"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/headroomlabs-ai/headroom",
+   "https://docs.headroomlabs.ai/docs"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/headroomlabs-ai/headroom",
+   "stars": 75716,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "hyperframes": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "HyperFrames is an open-source framework for turning HTML, CSS, media and seekable animations into deterministic MP4 videos. Its tagline is \"Write HTML. Render video. Built for agents.\"",
+   "You can use it locally through its CLI, from AI coding agents such as Claude Code, Copilot, Cursor, Gemini CLI and OpenCode through plugins and skills, or as the rendering core behind hosted authoring workflows."
+  ],
+  "who": "Developers and AI-agent users who want to generate videos from code or prompts, such as product intros, with repeatable output.",
+  "features": [
+   "Renders HTML, CSS, media and animations to MP4",
+   "Deterministic, repeatable output",
+   "CLI for local use",
+   "Plugins and skills for Claude Code, Copilot, Cursor, Gemini CLI and OpenCode",
+   "Studio, playground and catalog"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/heygen-com/hyperframes",
+   "https://www.hyperframes.dev/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/heygen-com/hyperframes",
+   "stars": 66398,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "warp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Warp is an agentic development environment that grew out of the terminal. You can use its built-in coding agent or bring your own CLI agent, such as Claude Code, Codex or Gemini CLI.",
+   "Its client codebase is open source: the UI framework crates are MIT-licensed and the rest of the repository is AGPL v3. Warp also offers Warp Factories, infrastructure for teams to run cloud software factories of agents."
+  ],
+  "who": "Developers who live in the terminal and want a modern terminal with a built-in coding agent, or a home for the CLI agents they already use.",
+  "features": [
+   "Modern terminal with a built-in coding agent",
+   "Works with Claude Code, Codex, Gemini CLI and other CLI agents",
+   "Warp Drive for shared workflows and docs",
+   "Warp Factories for teams running agents in the cloud",
+   "Open-source client (AGPL v3, MIT UI framework)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/warpdotdev/warp",
+   "https://www.warp.dev/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/warpdotdev/warp",
+   "stars": 65511,
+   "checked": "2026-10-18"
+  }
+ },
+ "ppt-master": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PPT Master is an open-source project that uses AI to generate native, editable PowerPoint files from source documents such as PDFs, DOCX files and web pages.",
+   "It identifies key points, structures the narrative and produces a PPTX you can keep refining in PowerPoint. The project is released under the MIT License and is kept free with the help of sponsors."
+  ],
+  "who": "People who regularly turn reports and documents into slide decks and want an open-source, AI-driven way to get editable PowerPoint files.",
+  "features": [
+   "Generates native, editable PPTX files",
+   "Works from PDFs, Word documents and web pages",
+   "Extracts key points and structures the narrative",
+   "Open source (MIT)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/hugohe3/ppt-master",
+   "https://hugohe3.github.io/ppt-master-examples/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/hugohe3/ppt-master",
+   "stars": 63385,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "litellm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LiteLLM is an open-source AI gateway that gives you one interface to call 100+ LLM providers, including OpenAI, Anthropic, Gemini, Bedrock and Azure, using the OpenAI format.",
+   "You can use it as a Python SDK inside your code or deploy the AI Gateway (proxy server) as a central service for a team, with virtual keys, spend tracking, guardrails, load balancing and an admin dashboard. A hosted proxy and an enterprise tier are also offered."
+  ],
+  "who": "Developers and platform teams who call several LLM providers and want one OpenAI-compatible API, plus central keys, budgets and spend tracking.",
+  "features": [
+   "One OpenAI-format API for 100+ LLM providers",
+   "Python SDK and self-hosted AI Gateway (proxy server)",
+   "Virtual keys, spend tracking and budgets",
+   "Guardrails, load balancing and fallbacks",
+   "Admin dashboard",
+   "Endpoints for chat, responses, embeddings, images, audio, batches and rerank"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/BerriAI/litellm",
+   "https://www.litellm.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/BerriAI/litellm",
+   "stars": 61480,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "mempalace": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MemPalace is a local-first memory system for AI agents. It stores your conversation history as verbatim text and retrieves it with semantic search, without summarizing or paraphrasing it.",
+   "Its index is structured so searches can be scoped (people and projects become wings, topics become rooms), and the retrieval backend is pluggable, with ChromaDB as the default. Nothing leaves your machine unless you opt in. Its README warns that the only official sources are the GitHub repo, the PyPI package and mempalaceofficial.com."
+  ],
+  "who": "Developers using coding agents such as Claude Code who want long-term, local memory of past sessions that they can search.",
+  "features": [
+   "Verbatim storage of conversation history (no summarizing)",
+   "Semantic search scoped by wings and rooms",
+   "Pluggable retrieval backend (ChromaDB by default)",
+   "Local-first: nothing leaves your machine unless you opt in",
+   "Agent skills for guided setup"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/MemPalace/mempalace",
+   "https://github.com/MemPalace/mempalace"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/MemPalace/mempalace",
+   "stars": 59623,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "privategpt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PrivateGPT is an open-source API layer that turns local models into AI applications. It follows the Claude API model and provides the backend building blocks (messages, ingestion, retrieval and tools) so you can build private AI products without depending on cloud APIs.",
+   "It does not run models itself: it connects to any OpenAI-compatible inference server. It ships a workbench UI at /ui for testing, and it powers Zylon, an on-premise AI platform for enterprises."
+  ],
+  "who": "Developers and companies building private or on-premise AI apps on local models who need RAG, tools and ingestion without rebuilding a backend.",
+  "features": [
+   "Messages API with streaming, async and token counting",
+   "File and artifact ingestion",
+   "Retrieval with citations and agentic RAG",
+   "Built-in tools (web search, web fetch, code execution), custom tools and MCP connectors",
+   "Structured access to databases and CSVs",
+   "Works with any OpenAI-compatible inference server"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/zylon-ai/private-gpt",
+   "https://www.zylon.ai/private-gpt"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/zylon-ai/private-gpt",
+   "stars": 57591,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "open-code-review": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Open Code Review is an AI-powered code review CLI. It began as Alibaba Group's internal AI code review assistant and was later released as open source.",
+   "It reads Git diffs and sends changed files to a configurable LLM through an agent that can read full files and search the codebase, then writes structured review comments with line-level precision. An ocr scan command reviews whole files for audits."
+  ],
+  "who": "Engineering teams that want automated, line-level AI code reviews on their own model endpoint, run from the command line or CI.",
+  "features": [
+   "Reviews Git diffs with line-level comments",
+   "Agent can read files, search the codebase and inspect related changes",
+   "Works with a configurable model endpoint",
+   "ocr scan for full-file audits",
+   "Originated as Alibaba's internal review assistant"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/alibaba/open-code-review",
+   "https://open-codereview.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/alibaba/open-code-review",
+   "stars": 47571,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "librechat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LibreChat is an open-source, self-hosted chat interface that works with many AI providers, often described as an enhanced ChatGPT clone with multi-provider support.",
+   "Recent releases (v0.8.8) add an Agent Management API in beta, experimental attached workspaces where agents can read files and run commands, and admin controls to ask, allow or deny file writes and command execution."
+  ],
+  "who": "Teams and individuals who want to self-host one chat app for several AI providers, with agents and admin controls.",
+  "features": [
+   "Self-hosted chat for multiple AI providers",
+   "Agents with files and skills, plus an Agent Management API (beta)",
+   "Code approval controls: ask, allow or deny writes and commands",
+   "Context usage and manual context compaction",
+   "Role-based access controls"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/LibreChat-AI/LibreChat",
+   "https://www.librechat.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/LibreChat-AI/LibreChat",
+   "stars": 45916,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "jan": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Jan is an open-source ChatGPT replacement for your desktop. You can download and run LLMs such as Llama, Gemma, Qwen and gpt-oss from Hugging Face with full control and privacy, or connect to cloud models from OpenAI, Anthropic, Mistral, Groq and others.",
+   "It runs a local OpenAI-compatible API server at localhost:1337 for other apps, supports MCP for agentic features, and is available for Windows, macOS and Linux."
+  ],
+  "who": "People who want a private, desktop AI chat app that runs models locally, and developers who need a local OpenAI-compatible API.",
+  "features": [
+   "Download and run local LLMs from Hugging Face",
+   "Connect cloud models from OpenAI, Anthropic, Mistral, Groq and more",
+   "Custom assistants",
+   "Local OpenAI-compatible API at localhost:1337",
+   "MCP integration",
+   "Windows, macOS and Linux apps"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/janhq/jan",
+   "https://www.jan.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/janhq/jan",
+   "stars": 44995,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "kong-gateway": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kong Gateway is a cloud-native, platform-agnostic API, LLM and MCP gateway known for its performance and plugin-based extensibility. It handles proxying, routing, load balancing, health checks and authentication.",
+   "For AI traffic it adds multi-LLM support, semantic security, and MCP traffic security and analytics. It runs natively on Kubernetes through its official Ingress Controller, and Kong Konnect offers a cloud-hosted version with a free trial."
+  ],
+  "who": "Platform and API teams that need a single gateway for regular APIs, LLM traffic and MCP servers, self-hosted or in the cloud.",
+  "features": [
+   "API, LLM and MCP gateway in one",
+   "Proxying, routing, load balancing and authentication",
+   "Multi-LLM support and semantic security",
+   "MCP traffic security and analytics",
+   "Plugins for extensibility",
+   "Kubernetes Ingress Controller; cloud-hosted Kong Konnect"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/Kong/kong",
+   "https://konghq.com/products/kong-gateway"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/Kong/kong",
+   "stars": 44278,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "astrbot": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AstrBot is an open-source, all-in-one agent chatbot platform that connects to major messaging apps. It is used to build personal AI companions, customer-service bots, automation assistants and knowledge bases.",
+   "It supports QQ, WeChat Work, Feishu, DingTalk, WeChat Official Accounts, Telegram, Slack and more, and integrates with agent platforms such as Dify, Alibaba Cloud Bailian and Coze. It has a web UI, over 1,000 one-click plugins and an agent sandbox for isolated code execution."
+  ],
+  "who": "Developers and teams who want to run an LLM-powered agent bot inside chat apps like Telegram, Slack, QQ or WeChat.",
+  "features": [
+   "Connects to QQ, WeChat Work, Feishu, DingTalk, Telegram, Slack and more",
+   "LLM chat, multimodal input, agents, MCP, skills and knowledge base",
+   "Integrates with Dify, Bailian and Coze",
+   "1,000+ plugins with one-click install",
+   "Agent sandbox for isolated code and shell execution",
+   "Web UI and web chat UI"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/AstrBotDevs/AstrBot",
+   "https://astrbot.app/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/AstrBotDevs/AstrBot",
+   "stars": 42106,
+   "checked": "2026-10-18",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  }
+ },
+ "deeptutor": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DeepTutor is an open-source AI tutoring system from HKUDS (University of Hong Kong Data Science Lab) aimed at lifelong, personalized learning. It is built with Python and Next.js and has an accompanying arXiv paper.",
+   "Recent releases add reading and listening tools, question-bank practice, knowledge bases built on LightRAG, document and video reading, a task board and a learning journal."
+  ],
+  "who": "Students and self-learners who want an AI tutor that works from their own materials, and researchers interested in AI tutoring systems.",
+  "features": [
+   "Personalized tutoring from your own documents",
+   "Knowledge bases with LightRAG",
+   "Question-bank practice and reading tools",
+   "Video and Office document reading",
+   "CLI and web app (Python and Next.js)"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/HKUDS/DeepTutor",
+   "https://github.com/HKUDS/DeepTutor"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/HKUDS/DeepTutor",
+   "stars": 41605,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "openviking": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenViking is an open-source context database for AI agents: one filesystem for an agent's knowledge, memory and skills. Context is organized as a virtual filesystem under viking:// that agents navigate with ls, tree, read, write and grep.",
+   "You can open any directory to inspect and edit what an agent knows. Each directory has a generated summary, and semantic search can be scoped to a project or memory subtree instead of a flat vector pool. A browser-based Studio is available, and it can be self-hosted."
+  ],
+  "who": "Developers building agents who want inspectable, editable long-term memory and knowledge instead of an opaque vector store.",
+  "features": [
+   "Virtual filesystem (viking://) for knowledge, memory and skills",
+   "Agents use ls, tree, read, write and grep",
+   "Generated directory summaries and overviews",
+   "Semantic search scoped to a subtree",
+   "Web Studio, self-hostable"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/volcengine/OpenViking",
+   "https://openviking.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/volcengine/OpenViking",
+   "stars": 40234,
+   "checked": "2026-10-18",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  }
+ },
+ "novu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Novu is open-source communication infrastructure for products and AI agents. One API and one conversation model connect to in-app inbox, email, SMS, push, chat, Slack, Microsoft Teams, Telegram and more.",
+   "For products it handles notifications with workflows, digests and an embeddable inbox component. Its Agent Communication Infrastructure connects agents you have already built to those channels."
+  ],
+  "who": "Developers who need to send notifications from their product, or connect an AI agent to users over email, chat, SMS and other channels.",
+  "features": [
+   "One API for inbox, email, SMS, push and chat",
+   "Slack, Microsoft Teams and Telegram channels",
+   "Workflows and digests",
+   "Embeddable in-app inbox component",
+   "Agent Communication Infrastructure for AI agents"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/novuhq/novu",
+   "https://github.com/novuhq/novu"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/novuhq/novu",
+   "stars": 40165,
+   "checked": "2026-10-18"
+  }
+ },
+ "dspy": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DSPy is a framework for programming, rather than prompting, language models. You write compositional Python code to build modular AI systems, from classifiers to RAG pipelines and agent loops.",
+   "It includes algorithms that optimize your prompts and weights, so the model learns to produce high-quality outputs. DSPy stands for Declarative Self-improving Python."
+  ],
+  "who": "Developers and researchers building LLM pipelines who want to replace brittle hand-written prompts with code that can be optimized automatically.",
+  "features": [
+   "Declarative Python modules instead of hand-written prompts",
+   "Optimizers for prompts and weights",
+   "Works for classifiers, RAG pipelines and agent loops",
+   "Open source with an active community"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/stanfordnlp/dspy",
+   "https://dspy.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/stanfordnlp/dspy",
+   "stars": 38677,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "lightpanda": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Lightpanda is a headless browser built from scratch for AI agents and automation. It is not a Chromium fork or a WebKit patch: it is a new browser written in Zig.",
+   "In the maker's benchmark of 100 real pages on an AWS m5.large instance, it used about 123 MB of peak memory against 2 GB for headless Chrome and finished in 5 seconds against 46. Nightly builds are available for Linux and macOS on x86_64 and aarch64, and through Homebrew and the AUR."
+  ],
+  "who": "Developers running browser automation, scraping or AI agents at scale who want a lighter, faster headless browser than Chrome.",
+  "features": [
+   "Headless browser written from scratch in Zig",
+   "Much lower memory use than headless Chrome in the maker's benchmark",
+   "Built for AI agents and automation",
+   "Linux and macOS builds (x86_64 and aarch64)",
+   "Available via Homebrew and the AUR"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/lightpanda-io/browser",
+   "https://lightpanda.io/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/lightpanda-io/browser",
+   "stars": 36659,
+   "checked": "2026-10-18",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  }
+ },
+ "chatdev": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ChatDev began as a multi-agent \"virtual software company\" in which agents such as a CEO, CTO and programmer design, code, test and document software together. That classic version (1.x) is maintained on its own branch.",
+   "ChatDev 2.0 (DevAll), released in January 2026, is a zero-code multi-agent orchestration platform: you define agents, workflows and tasks through configuration rather than code. The team's paper on multi-agent collaboration through evolving orchestration was accepted at NeurIPS 2025."
+  ],
+  "who": "Researchers and builders exploring multi-agent systems who want to set up agent teams and workflows by configuration instead of code.",
+  "features": [
+   "Zero-code multi-agent orchestration (ChatDev 2.0, DevAll)",
+   "Define agents, workflows and tasks by configuration",
+   "Classic virtual software company mode (ChatDev 1.x)",
+   "Research-backed, with published papers"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/OpenBMB/ChatDev",
+   "https://github.com/OpenBMB/ChatDev"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/OpenBMB/ChatDev",
+   "stars": 34545,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "tabby": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Tabby is a self-hosted AI coding assistant, offered as an open-source, on-premises alternative to GitHub Copilot. It is self-contained, with no need for a database or cloud service.",
+   "It has an OpenAPI interface for integrating with existing infrastructure such as cloud IDEs, supports consumer-grade GPUs, and adds features such as a chat side panel, an answer engine and indexing of GitLab merge requests as context."
+  ],
+  "who": "Engineering teams that want Copilot-style code completion and chat on their own hardware, without sending code to a third-party cloud.",
+  "features": [
+   "Self-hosted, on-premises coding assistant",
+   "No database or cloud service required",
+   "Runs on consumer-grade GPUs",
+   "OpenAPI interface for integration",
+   "IDE extensions with chat side panel",
+   "Repository and merge-request indexing for context"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/TabbyML/tabby",
+   "https://www.tabbyml.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/TabbyML/tabby",
+   "stars": 33913,
+   "checked": "2026-10-18",
+   "license": "the Apache License 2.0",
+   "osi": true
+  }
+ },
+ "cloakbrowser": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CloakBrowser is a stealth Chromium build for browser automation. Instead of patching config or injecting JavaScript, it modifies fingerprints in Chromium's C++ source, so anti-bot systems see an ordinary browser.",
+   "It works as a drop-in replacement for Playwright and Puppeteer in Python and JavaScript, installs with pip or npm, and has a humanize option for human-like mouse, keyboard and scrolling. A free binary is available, with a paid Pro tier."
+  ],
+  "who": "Developers whose scrapers or browser agents get blocked by bot detection and who already use Playwright or Puppeteer.",
+  "features": [
+   "Chromium with source-level fingerprint patches",
+   "Drop-in Playwright and Puppeteer replacement (Python and JavaScript)",
+   "humanize option for human-like input",
+   "pip install cloakbrowser or npm install cloakbrowser",
+   "Free binary plus a paid Pro tier"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/CloakHQ/CloakBrowser",
+   "https://cloakbrowser.dev/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/CloakHQ/CloakBrowser",
+   "stars": 32286,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "code-review-graph": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "code-review-graph builds a local knowledge graph of your codebase with Tree-sitter, keeps it updated incrementally, and serves compact review context to AI coding tools over MCP, so the assistant reads only the files a change touches.",
+   "Its install command detects your AI coding tools and writes an MCP server entry for each, with support for Codex, Claude Code, Cursor, Windsurf, Zed, Continue, OpenCode, Gemini CLI, Copilot and others. It requires Python 3.10 or later and also ships a GitHub Action."
+  ],
+  "who": "Developers using AI coding assistants on large codebases who want more precise, cheaper code reviews.",
+  "features": [
+   "Local code graph built with Tree-sitter",
+   "Incremental updates as code changes",
+   "Serves review context over MCP",
+   "Auto-configures Codex, Claude Code, Cursor, Windsurf, Zed and more",
+   "GitHub Action"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/tirth8205/code-review-graph",
+   "https://code-review-graph.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/tirth8205/code-review-graph",
+   "stars": 32234,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "scrapegraphai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ScrapeGraphAI is a Python web-scraping library that uses LLMs and graph logic to build scraping pipelines for websites and local documents such as XML, HTML, JSON and Markdown. You say what information you want and it extracts it.",
+   "It has Python and Node SDKs, an API, an MCP server, and integrations with LangChain, LlamaIndex, CrewAI, Agno and low-code tools such as Zapier, n8n and Dify. A hosted version is offered at ScrapeGraphAI.com."
+  ],
+  "who": "Developers who want to extract structured data from websites or documents by describing what they need, instead of writing selectors.",
+  "features": [
+   "LLM-driven scraping pipelines",
+   "Works on websites and local XML, HTML, JSON and Markdown",
+   "Python and Node SDKs, API and MCP server",
+   "Integrations with LangChain, LlamaIndex, CrewAI, n8n, Zapier and Dify",
+   "Open source (MIT) with a hosted service"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ScrapeGraphAI/Scrapegraph-ai",
+   "https://scrapegraphai.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ScrapeGraphAI/Scrapegraph-ai",
+   "stars": 31899,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "mcp-for-blender": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MCP for Blender (formerly blender-mcp) connects Blender to any LLM through the Model Context Protocol, for prompt-assisted 3D modeling, scene creation and manipulation. It is a third-party integration, not made by Blender.",
+   "One setup command installs the Blender add-on and configures MCP clients it finds on your machine, such as Claude Desktop, Claude Code, Codex, Cursor, VS Code, Windsurf and OpenCode. The PyPI package is now mcp-for-blender, and existing blender-mcp setups keep working."
+  ],
+  "who": "3D artists and hobbyists who want to build and edit Blender scenes by chatting with an AI assistant.",
+  "features": [
+   "Connects Blender to LLMs over MCP",
+   "Prompt-driven 3D modeling and scene editing",
+   "One-command setup of the add-on and MCP clients",
+   "Works with Claude, Codex, Cursor, VS Code, Windsurf and OpenCode"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/ahujasid/mcp-for-blender",
+   "https://www.mcp-for-blender.com/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/ahujasid/mcp-for-blender",
+   "stars": 31505,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "xiaozhi-esp32": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "XiaoZhi is an open-source, MCP-based voice chatbot for ESP32 hardware. It uses large models such as Qwen and DeepSeek and controls multiple devices through the MCP protocol.",
+   "It supports Wi-Fi, Ethernet and 4G networking, offline wake words with ESP-SR, WebSocket or MQTT plus UDP transports, streaming speech recognition, LLM and text-to-speech pipelines, speaker recognition, and displays and cameras on supported boards. It requires ESP-IDF 6.0.1 or later."
+  ],
+  "who": "Makers and hardware hobbyists who want to build their own AI voice assistant device on ESP32 boards.",
+  "features": [
+   "Voice chatbot firmware for ESP32 boards",
+   "MCP-based device control",
+   "Offline wake word with customizable wake words",
+   "Streaming ASR + LLM + TTS and realtime voice models",
+   "Wi-Fi, Ethernet and 4G networking",
+   "Speaker recognition, displays and camera input"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/78/xiaozhi-esp32",
+   "https://xiaozhi.me/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/78/xiaozhi-esp32",
+   "stars": 31411,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
+ },
+ "supermemory": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Supermemory is a memory and context engine for AI. It learns from conversations, extracts facts, builds user profiles, handles updates and contradictions, and forgets expired information, so an AI keeps context between conversations.",
+   "It combines memory with full RAG, connectors (Google Drive, Gmail, Notion, OneDrive and GitHub) and extractors for PDFs, images, video and code. It can give coding tools such as Claude Code, Cursor, Codex and OpenCode persistent memory, and can be self-hosted."
+  ],
+  "who": "Developers adding long-term memory and personalization to AI apps or agents, and people who want their coding assistants to remember past work.",
+  "features": [
+   "Fact extraction with handling of updates and contradictions",
+   "Auto-maintained user profiles",
+   "Hybrid search across memory and documents",
+   "Connectors for Google Drive, Gmail, Notion, OneDrive and GitHub",
+   "PDF, image, video and code extractors",
+   "Plugins for Claude Code, Cursor, Codex and OpenCode; self-hostable"
+  ],
+  "faq": [],
+  "sources": [
+   "https://github.com/supermemoryai/supermemory",
+   "https://supermemory.ai/"
+  ],
+  "updated": "2026-10-18",
+  "facts": {
+   "repo": "https://github.com/supermemoryai/supermemory",
+   "stars": 31281,
+   "checked": "2026-10-18",
+   "license": "the MIT License",
+   "osi": true
+  }
  }
 }
