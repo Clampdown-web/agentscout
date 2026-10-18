@@ -2234,5 +2234,394 @@
 "zero-xyz": [
 "voice-phone"
 ],
-"assisterr-ai": []
+"assisterr-ai": [],
+"open-webui": [
+"local-models"
+],
+"cc-switch": [
+"computer-use",
+"mcp-servers",
+"terminal-agents",
+"rules-config"
+],
+"lobehub": [],
+"headroom": [
+"vector-rag",
+"mcp-gateways",
+"mcp-servers",
+"agent-frameworks",
+"local-models"
+],
+"hyperframes": [
+"agent-frameworks",
+"terminal-agents",
+"video",
+"rules-config"
+],
+"ppt-master": [
+"vector-rag"
+],
+"mempalace": [
+"agent-memory",
+"voice-phone",
+"local-models"
+],
+"librechat": [
+"local-models",
+"rules-config"
+],
+"kong-gateway": [
+"agent-auth",
+"mcp-gateways"
+],
+"astrbot": [
+"vector-rag",
+"agent-frameworks"
+],
+"deeptutor": [
+"agent-memory"
+],
+"novu": [
+"chat-app-agents",
+"email-agents"
+],
+"code-review-graph": [
+"codebase-context",
+"local-models"
+],
+"mcp-for-blender": [],
+"xiaozhi-esp32": [
+"voice-phone"
+],
+"fastgpt": [
+"vector-rag",
+"workflow-automation",
+"ide-agents",
+"images-design"
+],
+"repomix": [
+"codebase-context",
+"mcp-servers",
+"terminal-agents"
+],
+"go-micro": [
+"workflow-automation",
+"agent-frameworks"
+],
+"moli": [
+"web-scraping",
+"browser-automation",
+"terminal-agents"
+],
+"hermes-webui": [
+"terminal-agents",
+"mobile"
+],
+"browser-use-web-ui": [
+"browser-automation"
+],
+"framelink-figma-mcp": [
+"mcp-servers",
+"images-design"
+],
+"midscene-js": [
+"testing-qa",
+"computer-use",
+"agent-frameworks",
+"mobile"
+],
+"react-doctor": [],
+"llmware": [
+"vector-rag",
+"agent-frameworks",
+"local-models"
+],
+"memu": [
+"agent-memory",
+"rules-config"
+],
+"hermes-one": [
+"computer-use",
+"terminal-agents",
+"rules-config"
+],
+"portkey-ai-gateway": [
+"guardrails",
+"mcp-gateways"
+],
+"txtai": [
+"text-to-sql",
+"vector-rag",
+"multi-agent",
+"agent-frameworks"
+],
+"claude-context": [
+"codebase-context"
+],
+"mcp-inspector": [
+"mcp-servers",
+"terminal-agents"
+],
+"robotgo": [
+"computer-use",
+"agent-frameworks"
+],
+"desktop-commander-mcp": [
+"code-review",
+"computer-use",
+"mcp-servers",
+"terminal-agents"
+],
+"mobile-mcp": [
+"mcp-servers",
+"mobile"
+],
+"windows-mcp": [
+"computer-use",
+"mcp-servers"
+],
+"repowise": [
+"codebase-context",
+"voice-phone",
+"local-models"
+],
+"mcp-registry": [
+"mcp-gateways"
+],
+"glm-5": [],
+"mobilebuildmcp": [
+"mcp-servers",
+"terminal-agents",
+"mobile"
+],
+"deepchat": [
+"computer-use",
+"local-models",
+"rules-config"
+],
+"aio-sandbox": [
+"notebooks",
+"browser-automation",
+"sandboxes",
+"terminal-agents",
+"ide-agents"
+],
+"agents-cli": [
+"evals",
+"terminal-agents",
+"rules-config"
+],
+"21st-magic-mcp": [
+"mcp-servers",
+"ide-agents"
+],
+"apache-maka": [
+"evals",
+"agent-frameworks"
+],
+"ultrarag": [
+"vector-rag",
+"agent-frameworks"
+],
+"coucou": [
+"voice-phone",
+"guardrails",
+"observability",
+"terminal-agents"
+],
+"tuios": [
+"email-agents",
+"terminal-agents",
+"mobile"
+],
+"sphere-sdk": [
+"agent-wallets",
+"agent-payments",
+"agent-auth",
+"agent-frameworks"
+],
+"5ire": [
+"vector-rag",
+"computer-use",
+"local-models"
+],
+"peekaboo": [
+"computer-use",
+"mcp-servers",
+"terminal-agents"
+],
+"frontieragent": [
+"parallel-orchestration",
+"research-agents",
+"terminal-agents"
+],
+"astronrpa": [
+"computer-use",
+"workflow-automation",
+"images-design"
+],
+"skillhub": [
+"mcp-gateways",
+"local-models"
+],
+"mcp-go-sdk": [
+"agent-frameworks"
+],
+"sparrow": [
+"vector-rag",
+"web-scraping",
+"workflow-automation",
+"images-design"
+],
+"kiln": [
+"vector-rag",
+"computer-use",
+"evals",
+"fine-tuning",
+"agent-frameworks"
+],
+"mcporter": [
+"mcp-servers",
+"terminal-agents"
+],
+"magic": [
+"workflow-automation"
+],
+"evoscientist": [
+"agent-memory",
+"research-agents",
+"rules-config"
+],
+"monkeycode": [],
+"thunderbolt": [
+"local-models"
+],
+"deepanalyze": [
+"research-agents"
+],
+"kungfu": [],
+"observal": [
+"mcp-gateways",
+"mcp-servers",
+"local-models",
+"rules-config"
+],
+"kiro-crew": [
+"multi-agent",
+"local-models"
+],
+"basic-memory": [
+"agent-memory",
+"local-models"
+],
+"apm-agent-package-manager": [
+"mcp-servers",
+"rules-config"
+],
+"playwriter": [
+"browser-automation",
+"terminal-agents"
+],
+"codeg": [
+"multi-agent"
+],
+"leanctx": [
+"mcp-gateways"
+],
+"hyperresearch": [
+"research-agents",
+"agent-frameworks"
+],
+"golutra": [
+"parallel-orchestration",
+"multi-agent"
+],
+"simplemem": [
+"agent-memory",
+"vector-rag",
+"research-agents",
+"agent-frameworks"
+],
+"atmosphere": [],
+"easel": [
+"marketing-agents"
+],
+"lazycodex": [
+"codebase-context",
+"agent-memory",
+"planning-tasks",
+"agent-frameworks"
+],
+"knowhere": [
+"agent-memory",
+"vector-rag"
+],
+"antigravity-sdk": [
+"agent-frameworks"
+],
+"goclaw": [
+"mcp-gateways"
+],
+"opensumi": [
+"agent-frameworks",
+"ide-agents"
+],
+"jarvis-registry": [
+"agent-auth",
+"observability",
+"mcp-gateways"
+],
+"mnemosyne": [
+"agent-memory"
+],
+"beeai-framework": [
+"multi-agent",
+"agent-frameworks"
+],
+"mercury-agent": [
+"agent-memory",
+"chat-app-agents",
+"guardrails",
+"local-models",
+"terminal-agents"
+],
+"laminar": [
+"observability"
+],
+"ii-agent": [],
+"atomic-agent": [
+"browser-automation",
+"local-models"
+],
+"evoagentx": [
+"evals",
+"workflow-automation",
+"agent-frameworks"
+],
+"open-terminal": [
+"local-models",
+"terminal-agents"
+],
+"metorial": [
+"guardrails",
+"agent-auth",
+"observability",
+"terminal-agents"
+],
+"google-workspace-mcp": [
+"email-agents",
+"mcp-servers",
+"terminal-agents"
+],
+"socraticode": [
+"codebase-context"
+],
+"openoutreach": [
+"email-agents",
+"sales-agents",
+"local-models"
+],
+"sidekick": [
+"local-models"
+]
 }
