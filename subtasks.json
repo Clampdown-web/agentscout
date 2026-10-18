@@ -3377,5 +3377,316 @@
 ],
 "skywork": [
 "research-agents"
+],
+"appsflyer-mcp": [
+"mcp-servers",
+"mobile"
+],
+"porkbun-mcp": [
+"mcp-servers",
+"rules-config"
+],
+"typeform-mcp": [
+"mcp-servers"
+],
+"ovhcloud-mcp": [
+"mcp-servers"
+],
+"egnyte-mcp": [
+"mcp-servers"
+],
+"lovable-mcp": [
+"mcp-servers",
+"no-code-apps"
+],
+"parse-ly-mcp": [
+"mcp-servers"
+],
+"jumpcloud-mcp": [
+"agent-auth",
+"mcp-servers"
+],
+"studocu-mcp": [
+"vector-rag",
+"mcp-servers"
+],
+"zomato-mcp": [
+"mcp-servers"
+],
+"infobip-mcp": [
+"chat-app-agents",
+"mcp-servers"
+],
+"statsig-mcp": [
+"mcp-servers"
+],
+"beehiiv-mcp": [
+"mcp-servers"
+],
+"uptimerobot-mcp": [
+"ai-sre",
+"observability",
+"mcp-servers"
+],
+"scite-mcp": [
+"research-agents",
+"mcp-servers"
+],
+"altmetric-mcp": [
+"vector-rag",
+"marketing-agents",
+"research-agents",
+"guardrails",
+"mcp-servers"
+],
+"playgama-mcp": [
+"mcp-servers",
+"games"
+],
+"ifttt-mcp": [
+"mcp-servers"
+],
+"rocketreach-mcp": [
+"text-to-sql",
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"sonatype-mcp": [
+"mcp-servers"
+],
+"kajabi-mcp": [
+"email-agents",
+"mcp-servers"
+],
+"sendpulse-mcp": [
+"email-agents",
+"sales-agents",
+"mcp-servers"
+],
+"vidiq-mcp": [
+"research-agents",
+"mcp-servers"
+],
+"idealo-mcp": [
+"mcp-servers"
+],
+"lucid-mcp": [
+"vector-rag"
+],
+"printfriendly-mcp": [
+"vector-rag",
+"mcp-servers"
+],
+"devcycle-mcp": [
+"mcp-servers"
+],
+"mindmeister-mcp": [
+"mcp-servers"
+],
+"workos-mcp": [
+"agent-auth",
+"mcp-servers"
+],
+"railway-mcp": [
+"mcp-servers"
+],
+"tipranks-mcp": [
+"mcp-servers",
+"mobile"
+],
+"gocardless-mcp": [
+"agent-payments",
+"mcp-servers"
+],
+"aftership-mcp": [
+"mcp-servers"
+],
+"gitkraken-mcp": [
+"code-review",
+"mcp-servers",
+"terminal-agents"
+],
+"teamwork-com-mcp": [
+"mcp-servers"
+],
+"fireflies-mcp": [
+"mcp-servers"
+],
+"mural-mcp": [
+"mcp-servers"
+],
+"axiom-mcp": [
+"observability",
+"mcp-servers"
+],
+"se-ranking-mcp": [
+"mcp-servers"
+],
+"churnkey-mcp": [
+"agent-payments",
+"mcp-servers"
+],
+"chainstack-mcp": [
+"mcp-servers"
+],
+"polar-analytics-mcp": [
+"marketing-agents",
+"mcp-servers"
+],
+"bird-mcp": [
+"voice-phone",
+"chat-app-agents",
+"email-agents",
+"mcp-servers"
+],
+"daily-dev-mcp": [
+"mcp-servers"
+],
+"aave-mcp": [
+"guardrails",
+"mcp-servers"
+],
+"svelte-mcp": [
+"mcp-servers"
+],
+"frase-mcp": [
+"marketing-agents",
+"research-agents",
+"observability",
+"mcp-servers"
+],
+"cypress-cloud-mcp": [
+"mcp-servers",
+"workflow-automation"
+],
+"happyscribe-mcp": [
+"mcp-servers"
+],
+"skiplagged-mcp": [
+"planning-tasks",
+"mcp-servers"
+],
+"liner-mcp": [
+"research-agents",
+"mcp-servers"
+],
+"lusha-mcp": [
+"agent-auth",
+"mcp-servers"
+],
+"logo-dev-mcp": [
+"mcp-servers"
+],
+"serpstat-mcp": [
+"marketing-agents",
+"research-agents",
+"mcp-servers"
+],
+"twelve-data-mcp": [
+"mcp-servers"
+],
+"geckoboard-mcp": [
+"observability",
+"mcp-servers"
+],
+"locize-mcp": [
+"agent-memory",
+"mcp-servers"
+],
+"unleash-mcp": [
+"mcp-servers"
+],
+"cdata-connect-ai-mcp": [
+"mcp-servers"
+],
+"parallel-search-mcp": [
+"parallel-orchestration",
+"research-agents",
+"search-apis",
+"mcp-servers"
+],
+"supermetrics-mcp": [
+"marketing-agents",
+"mcp-servers"
+],
+"aiven-mcp": [
+"text-to-sql",
+"mcp-servers"
+],
+"extend-mcp": [
+"vector-rag",
+"web-scraping",
+"mcp-servers"
+],
+"brandfetch-mcp": [
+"vector-rag",
+"mcp-servers",
+"images-design"
+],
+"picsart-genai-mcp": [
+"mcp-servers",
+"video",
+"images-design"
+],
+"icons8-mcp": [
+"mcp-servers"
+],
+"hello-retail-mcp": [
+"email-agents",
+"mcp-servers"
+],
+"guru-mcp": [
+"vector-rag",
+"mcp-servers"
+],
+"1inch-mcp": [
+"trading-agents",
+"mcp-servers"
+],
+"redpanda-docs-mcp": [
+"vector-rag",
+"mcp-servers"
+],
+"carto-mcp": [
+"mcp-servers",
+"workflow-automation"
+],
+"pandadoc-mcp": [
+"vector-rag",
+"mcp-servers"
+],
+"smartbear-mcp": [
+"mcp-servers"
+],
+"tenderly-mcp": [
+"mcp-servers"
+],
+"whimsical-mcp": [
+"mcp-servers"
+],
+"automox-mcp": [
+"guardrails",
+"mcp-servers"
+],
+"gtmetrix-mcp": [
+"mcp-servers",
+"workflow-automation"
+],
+"jitsu-mcp": [
+"mcp-servers"
+],
+"mintlify-mcp": [
+"mcp-servers",
+"rules-config"
+],
+"padlet-mcp": [
+"mcp-servers",
+"rules-config"
+],
+"unlayer-mcp": [
+"vector-rag",
+"email-agents",
+"mcp-servers"
 ]
 }

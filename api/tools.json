@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-18T09:36:55Z",
- "updated": "2026-10-18T09:36:55Z",
+ "generated": "2026-10-18T09:40:45Z",
+ "updated": "2026-10-18T09:40:45Z",
  "last_checked": "2026-10-18",
- "count": 957,
+ "count": 1038,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -40690,6 +40690,3352 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/skywork.png",
    "page": "https://agentscouthq.com/tools/skywork.html"
+  },
+  {
+   "name": "AppsFlyer MCP",
+   "slug": "appsflyer-mcp",
+   "url": "https://www.appsflyer.com/",
+   "website": "https://www.appsflyer.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "AppsFlyer's hosted MCP server that lets AI assistants analyze your mobile attribution and campaign performance data.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/appsflyer-mcp.png",
+   "page": "https://agentscouthq.com/tools/appsflyer-mcp.html"
+  },
+  {
+   "name": "Porkbun MCP",
+   "slug": "porkbun-mcp",
+   "url": "https://porkbun.com/mcp",
+   "website": "https://porkbun.com/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Official Porkbun MCP server for managing domains, DNS, SSL, hosting and Cloudflare settings through the Porkbun API.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/porkbun-mcp.png",
+   "page": "https://agentscouthq.com/tools/porkbun-mcp.html"
+  },
+  {
+   "name": "Typeform MCP",
+   "slug": "typeform-mcp",
+   "url": "https://www.typeform.com/developers/mcp/",
+   "website": "https://www.typeform.com/developers/mcp/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Typeform's MCP server for building and editing forms, managing automations and contacts, and analyzing responses from an AI assistant.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/typeform-mcp.png",
+   "page": "https://agentscouthq.com/tools/typeform-mcp.html"
+  },
+  {
+   "name": "OVHcloud MCP",
+   "slug": "ovhcloud-mcp",
+   "url": "https://us.ovhcloud.com/",
+   "website": "https://us.ovhcloud.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "OVHcloud's official remote MCP server for managing OVHcloud infrastructure, services and account from AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ovhcloud-mcp.png",
+   "page": "https://agentscouthq.com/tools/ovhcloud-mcp.html"
+  },
+  {
+   "name": "Egnyte MCP",
+   "slug": "egnyte-mcp",
+   "url": "https://www.egnyte.com/",
+   "website": "https://www.egnyte.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Egnyte's remote MCP server for secure AI search, upload and file management in your Egnyte account.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/egnyte-mcp.png",
+   "page": "https://agentscouthq.com/tools/egnyte-mcp.html"
+  },
+  {
+   "name": "Lovable MCP",
+   "slug": "lovable-mcp",
+   "url": "https://github.com/lovablelabs/mcp",
+   "website": "",
+   "github": "https://github.com/lovablelabs/mcp",
+   "category": "MCP & infra",
+   "description": "Official MCP server for Lovable, the AI full-stack app builder, so other agents can work with your Lovable projects.",
+   "key_features": [
+    "See site",
+    "Active",
+    "7 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "lovablelabs/mcp",
+   "github_stars": 7,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lovable-mcp.png",
+   "page": "https://agentscouthq.com/tools/lovable-mcp.html"
+  },
+  {
+   "name": "Parse.ly MCP",
+   "slug": "parse-ly-mcp",
+   "url": "https://www.parse.ly/",
+   "website": "https://www.parse.ly/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Parse.ly MCP server for querying content analytics such as top content, referrers, campaigns, trends and real-time data.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/parse-ly-mcp.png",
+   "page": "https://agentscouthq.com/tools/parse-ly-mcp.html"
+  },
+  {
+   "name": "JumpCloud MCP",
+   "slug": "jumpcloud-mcp",
+   "url": "https://jumpcloud.com/",
+   "website": "https://jumpcloud.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "JumpCloud's MCP server that lets LLMs manage JumpCloud identity, device and access resources.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jumpcloud-mcp.png",
+   "page": "https://agentscouthq.com/tools/jumpcloud-mcp.html"
+  },
+  {
+   "name": "Studocu MCP",
+   "slug": "studocu-mcp",
+   "url": "https://www.studocu.com/en-us/mcp",
+   "website": "https://www.studocu.com/en-us/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Studocu's MCP server for finding study documents, courses and institutions and managing study projects and quizzes.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/studocu-mcp.png",
+   "page": "https://agentscouthq.com/tools/studocu-mcp.html"
+  },
+  {
+   "name": "Zomato MCP",
+   "slug": "zomato-mcp",
+   "url": "https://www.zomato.com/",
+   "website": "https://www.zomato.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Zomato's MCP server that exposes its food-ordering services to AI assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zomato-mcp.png",
+   "page": "https://agentscouthq.com/tools/zomato-mcp.html"
+  },
+  {
+   "name": "Infobip MCP",
+   "slug": "infobip-mcp",
+   "url": "https://www.infobip.com/",
+   "website": "https://www.infobip.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Infobip MCP servers for omnichannel messaging from agents, including SMS, RCS, WhatsApp and Viber.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/infobip-mcp.png",
+   "page": "https://agentscouthq.com/tools/infobip-mcp.html"
+  },
+  {
+   "name": "Statsig MCP",
+   "slug": "statsig-mcp",
+   "url": "https://www.statsig.com/",
+   "website": "https://www.statsig.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Statsig's MCP server for working with feature flags, experiments and product analytics from AI tools.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/statsig-mcp.png",
+   "page": "https://agentscouthq.com/tools/statsig-mcp.html"
+  },
+  {
+   "name": "beehiiv MCP",
+   "slug": "beehiiv-mcp",
+   "url": "https://www.beehiiv.com/",
+   "website": "https://www.beehiiv.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "beehiiv's MCP server for managing newsletters, posts, podcasts, subscribers and analytics from an AI assistant.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/beehiiv-mcp.png",
+   "page": "https://agentscouthq.com/tools/beehiiv-mcp.html"
+  },
+  {
+   "name": "UptimeRobot MCP",
+   "slug": "uptimerobot-mcp",
+   "url": "https://uptimerobot.com/",
+   "website": "https://uptimerobot.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "UptimeRobot's MCP server for creating monitors, triaging incidents and querying uptime stats for sites, APIs and servers.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/uptimerobot-mcp.png",
+   "page": "https://agentscouthq.com/tools/uptimerobot-mcp.html"
+  },
+  {
+   "name": "Scite MCP",
+   "slug": "scite-mcp",
+   "url": "https://scite.ai/mcp",
+   "website": "https://scite.ai/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Scite's MCP server that grounds AI answers in scientific literature, with full-text search and citation-based trust signals.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/scite-mcp.png",
+   "page": "https://agentscouthq.com/tools/scite-mcp.html"
+  },
+  {
+   "name": "Altmetric MCP",
+   "slug": "altmetric-mcp",
+   "url": "https://www.altmetric.com/",
+   "website": "https://www.altmetric.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Altmetric's MCP server for tracking research attention across news, policy documents and social media.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/altmetric-mcp.png",
+   "page": "https://agentscouthq.com/tools/altmetric-mcp.html"
+  },
+  {
+   "name": "Playgama MCP",
+   "slug": "playgama-mcp",
+   "url": "https://playgama.com/mcp/",
+   "website": "https://playgama.com/mcp/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Playgama's MCP server for publishing and managing HTML5 games from an AI agent, with audience, monetization and analytics.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/playgama-mcp.png",
+   "page": "https://agentscouthq.com/tools/playgama-mcp.html"
+  },
+  {
+   "name": "IFTTT MCP",
+   "slug": "ifttt-mcp",
+   "url": "https://ifttt.com/mcp",
+   "website": "https://ifttt.com/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "IFTTT's MCP server that lets AI agents build Applets and run actions and queries across 1,000+ connected services.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ifttt-mcp.png",
+   "page": "https://agentscouthq.com/tools/ifttt-mcp.html"
+  },
+  {
+   "name": "RocketReach MCP",
+   "slug": "rocketreach-mcp",
+   "url": "https://docs.rocketreach.co/reference/mcp",
+   "website": "https://docs.rocketreach.co/reference/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "RocketReach's MCP server for looking up verified work emails and phone numbers from its contact database.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rocketreach-mcp.png",
+   "page": "https://agentscouthq.com/tools/rocketreach-mcp.html"
+  },
+  {
+   "name": "Sonatype MCP",
+   "slug": "sonatype-mcp",
+   "url": "https://www.sonatype.com/",
+   "website": "https://www.sonatype.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Sonatype's dependency-management MCP server that gives coding agents component versions, security analysis and Trust Score recommendations.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sonatype-mcp.png",
+   "page": "https://agentscouthq.com/tools/sonatype-mcp.html"
+  },
+  {
+   "name": "Kajabi MCP",
+   "slug": "kajabi-mcp",
+   "url": "https://www.kajabi.com/",
+   "website": "https://www.kajabi.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Kajabi's MCP server for managing products, pages, contacts, offers, emails and analytics from any MCP client.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kajabi-mcp.png",
+   "page": "https://agentscouthq.com/tools/kajabi-mcp.html"
+  },
+  {
+   "name": "SendPulse MCP",
+   "slug": "sendpulse-mcp",
+   "url": "https://sendpulse.com/features/mcp",
+   "website": "https://sendpulse.com/features/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "SendPulse's MCP server for driving its email, CRM, chatbot, SMTP and course automation from AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sendpulse-mcp.png",
+   "page": "https://agentscouthq.com/tools/sendpulse-mcp.html"
+  },
+  {
+   "name": "vidIQ MCP",
+   "slug": "vidiq-mcp",
+   "url": "https://vidiq.com/mcp/",
+   "website": "https://vidiq.com/mcp/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "vidIQ's MCP server for researching and creating content for YouTube, Instagram and TikTok from an AI assistant.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vidiq-mcp.png",
+   "page": "https://agentscouthq.com/tools/vidiq-mcp.html"
+  },
+  {
+   "name": "idealo MCP",
+   "slug": "idealo-mcp",
+   "url": "https://flights.idealo.com",
+   "website": "https://flights.idealo.com",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "idealo's MCP server for searching products, comparing prices and finding deals across six European markets.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/idealo-mcp.png",
+   "page": "https://agentscouthq.com/tools/idealo-mcp.html"
+  },
+  {
+   "name": "Lucid MCP",
+   "slug": "lucid-mcp",
+   "url": "https://github.com/lucidsoftware/lucid-mcp-server",
+   "website": "",
+   "github": "https://github.com/lucidsoftware/lucid-mcp-server",
+   "category": "MCP & infra",
+   "description": "Lucid's MCP connector for creating, searching, editing and sharing Lucidchart and Lucid documents from AI tools.",
+   "key_features": [
+    "See site",
+    "Active",
+    "3 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "lucidsoftware/lucid-mcp-server",
+   "github_stars": 3,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lucid-mcp.png",
+   "page": "https://agentscouthq.com/tools/lucid-mcp.html"
+  },
+  {
+   "name": "PrintFriendly MCP",
+   "slug": "printfriendly-mcp",
+   "url": "https://www.printfriendly.com/help/api-mcp",
+   "website": "https://www.printfriendly.com/help/api-mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "PrintFriendly's MCP server for reading clean web pages and creating PDF, Word and Markdown documents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/printfriendly-mcp.png",
+   "page": "https://agentscouthq.com/tools/printfriendly-mcp.html"
+  },
+  {
+   "name": "DevCycle MCP",
+   "slug": "devcycle-mcp",
+   "url": "https://docs.devcycle.com/cli-mcp/mcp-getting-started/",
+   "website": "https://docs.devcycle.com/cli-mcp/mcp-getting-started/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "DevCycle's MCP server for managing feature flags from AI coding assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/devcycle-mcp.png",
+   "page": "https://agentscouthq.com/tools/devcycle-mcp.html"
+  },
+  {
+   "name": "MindMeister MCP",
+   "slug": "mindmeister-mcp",
+   "url": "https://www.mindmeister.com/",
+   "website": "https://www.mindmeister.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "MindMeister's MCP server for creating, editing and organizing mind maps from an AI assistant.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mindmeister-mcp.png",
+   "page": "https://agentscouthq.com/tools/mindmeister-mcp.html"
+  },
+  {
+   "name": "WorkOS MCP",
+   "slug": "workos-mcp",
+   "url": "https://workos.com/docs/mcp",
+   "website": "https://workos.com/docs/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "WorkOS MCP server for managing organizations, users, SSO, Directory Sync and AuthKit in plain language.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/workos-mcp.png",
+   "page": "https://agentscouthq.com/tools/workos-mcp.html"
+  },
+  {
+   "name": "Railway MCP",
+   "slug": "railway-mcp",
+   "url": "https://railway.com/",
+   "website": "https://railway.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Railway's remote MCP server for developing, managing and debugging Railway projects, services and deployments from agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/railway-mcp.png",
+   "page": "https://agentscouthq.com/tools/railway-mcp.html"
+  },
+  {
+   "name": "TipRanks MCP",
+   "slug": "tipranks-mcp",
+   "url": "https://mcp.tipranks.com/",
+   "website": "https://mcp.tipranks.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "TipRanks MCP server with live market data such as analyst ratings, Smart Score, technicals, options and portfolios.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tipranks-mcp.png",
+   "page": "https://agentscouthq.com/tools/tipranks-mcp.html"
+  },
+  {
+   "name": "GoCardless MCP",
+   "slug": "gocardless-mcp",
+   "url": "https://gocardless.com/",
+   "website": "https://gocardless.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "GoCardless MCP server for managing payments, mandates, subscriptions, refunds and payouts via AI assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gocardless-mcp.png",
+   "page": "https://agentscouthq.com/tools/gocardless-mcp.html"
+  },
+  {
+   "name": "AfterShip MCP",
+   "slug": "aftership-mcp",
+   "url": "https://www.aftership.com/",
+   "website": "https://www.aftership.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "AfterShip's MCP server for tracking packages across 1,300+ carriers with real-time status.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aftership-mcp.png",
+   "page": "https://agentscouthq.com/tools/aftership-mcp.html"
+  },
+  {
+   "name": "GitKraken MCP",
+   "slug": "gitkraken-mcp",
+   "url": "https://gitkraken.com/",
+   "website": "https://gitkraken.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "GitKraken's MCP server, via the GitKraken CLI, for managing repos, pull requests and issues across GitHub, GitLab and Bitbucket.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gitkraken-mcp.png",
+   "page": "https://agentscouthq.com/tools/gitkraken-mcp.html"
+  },
+  {
+   "name": "Teamwork.com MCP",
+   "slug": "teamwork-com-mcp",
+   "url": "https://www.teamwork.com/",
+   "website": "https://www.teamwork.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Teamwork.com's official MCP server for managing client projects and tasks with AI assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/teamwork-com-mcp.png",
+   "page": "https://agentscouthq.com/tools/teamwork-com-mcp.html"
+  },
+  {
+   "name": "Fireflies MCP",
+   "slug": "fireflies-mcp",
+   "url": "https://docs.fireflies.ai/mcp-tools/overview",
+   "website": "https://docs.fireflies.ai/mcp-tools/overview",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Fireflies.ai MCP server for searching and analyzing meeting transcripts, summaries, soundbites and analytics.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fireflies-mcp.png",
+   "page": "https://agentscouthq.com/tools/fireflies-mcp.html"
+  },
+  {
+   "name": "Mural MCP",
+   "slug": "mural-mcp",
+   "url": "https://www.mural.co/ai/mcp",
+   "website": "https://www.mural.co/ai/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Mural's MCP server for reading and writing shared Mural boards from AI assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mural-mcp.png",
+   "page": "https://agentscouthq.com/tools/mural-mcp.html"
+  },
+  {
+   "name": "Axiom MCP",
+   "slug": "axiom-mcp",
+   "url": "https://axiom.co/",
+   "website": "https://axiom.co/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Axiom's MCP server for listing datasets and schemas and running APL queries for log exploration and monitoring.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/axiom-mcp.png",
+   "page": "https://agentscouthq.com/tools/axiom-mcp.html"
+  },
+  {
+   "name": "SE Ranking MCP",
+   "slug": "se-ranking-mcp",
+   "url": "https://seranking.com/api/integrations/mcp/",
+   "website": "https://seranking.com/api/integrations/mcp/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "SE Ranking's MCP server for keyword, backlink, SERP, audit, rank-tracking and AI search visibility data.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/se-ranking-mcp.png",
+   "page": "https://agentscouthq.com/tools/se-ranking-mcp.html"
+  },
+  {
+   "name": "Churnkey MCP",
+   "slug": "churnkey-mcp",
+   "url": "https://churnkey.co/feature/mcp",
+   "website": "https://churnkey.co/feature/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Churnkey's MCP server for reading and managing cancel flows, retention metrics and payment recovery.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/churnkey-mcp.png",
+   "page": "https://agentscouthq.com/tools/churnkey-mcp.html"
+  },
+  {
+   "name": "Chainstack MCP",
+   "slug": "chainstack-mcp",
+   "url": "https://docs.chainstack.com/docs/chainstack-mcp-server",
+   "website": "https://docs.chainstack.com/docs/chainstack-mcp-server",
+   "github": "",
+   "category": "crypto",
+   "description": "Chainstack's MCP server for deploying and managing blockchain nodes across 70+ protocols and requesting testnet funds from agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/chainstack-mcp.png",
+   "page": "https://agentscouthq.com/tools/chainstack-mcp.html"
+  },
+  {
+   "name": "Polar Analytics MCP",
+   "slug": "polar-analytics-mcp",
+   "url": "https://www.polaranalytics.com/mcp-for-ecommerce/polar-analytics",
+   "website": "https://www.polaranalytics.com/mcp-for-ecommerce/polar-analytics",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Polar Analytics MCP server that gives AI assistants commerce data from Shopify, Amazon, ads and Klaviyo with shared metric definitions.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/polar-analytics-mcp.png",
+   "page": "https://agentscouthq.com/tools/polar-analytics-mcp.html"
+  },
+  {
+   "name": "Bird MCP",
+   "slug": "bird-mcp",
+   "url": "https://bird.com/docs/ai/mcp-server",
+   "website": "https://bird.com/docs/ai/mcp-server",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Bird's MCP server for sending and receiving email, SMS, WhatsApp and voice messages from AI agents through one API.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bird-mcp.png",
+   "page": "https://agentscouthq.com/tools/bird-mcp.html"
+  },
+  {
+   "name": "daily.dev MCP",
+   "slug": "daily-dev-mcp",
+   "url": "https://daily.dev/",
+   "website": "https://daily.dev/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "daily.dev's MCP server for developer news feeds, posts, bookmarks, tags and search.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/daily-dev-mcp.png",
+   "page": "https://agentscouthq.com/tools/daily-dev-mcp.html"
+  },
+  {
+   "name": "Aave MCP",
+   "slug": "aave-mcp",
+   "url": "https://aave.com/",
+   "website": "https://aave.com/",
+   "github": "",
+   "category": "crypto",
+   "description": "Official Aave MCP server for V3 and V4 markets, positions, governance and transaction preparation by AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aave-mcp.png",
+   "page": "https://agentscouthq.com/tools/aave-mcp.html"
+  },
+  {
+   "name": "Svelte MCP",
+   "slug": "svelte-mcp",
+   "url": "https://svelte.dev/docs/ai/overview",
+   "website": "https://svelte.dev/docs/ai/overview",
+   "github": "",
+   "category": "coding",
+   "description": "Official Svelte MCP server that gives coding agents Svelte docs and autofixing tools.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/svelte-mcp.png",
+   "page": "https://agentscouthq.com/tools/svelte-mcp.html"
+  },
+  {
+   "name": "Frase MCP",
+   "slug": "frase-mcp",
+   "url": "https://www.frase.io/agents",
+   "website": "https://www.frase.io/agents",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Frase's MCP server with SEO, GEO and AI visibility tools to research, write, optimize, publish and monitor content.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/frase-mcp.png",
+   "page": "https://agentscouthq.com/tools/frase-mcp.html"
+  },
+  {
+   "name": "Cypress Cloud MCP",
+   "slug": "cypress-cloud-mcp",
+   "url": "https://www.cypress.io/",
+   "website": "https://www.cypress.io/",
+   "github": "",
+   "category": "coding",
+   "description": "Cypress's MCP server that brings Cypress Cloud test results and accessibility reports into AI coding workflows.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cypress-cloud-mcp.png",
+   "page": "https://agentscouthq.com/tools/cypress-cloud-mcp.html"
+  },
+  {
+   "name": "HappyScribe MCP",
+   "slug": "happyscribe-mcp",
+   "url": "https://www.happyscribe.com/integrations/mcp",
+   "website": "https://www.happyscribe.com/integrations/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "HappyScribe's MCP server for searching, reading, analyzing and creating transcripts and meeting notes.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/happyscribe-mcp.png",
+   "page": "https://agentscouthq.com/tools/happyscribe-mcp.html"
+  },
+  {
+   "name": "Skiplagged MCP",
+   "slug": "skiplagged-mcp",
+   "url": "https://skiplagged.com/",
+   "website": "https://skiplagged.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Skiplagged's MCP server for flight search, hotel booking and travel planning from AI assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/skiplagged-mcp.png",
+   "page": "https://agentscouthq.com/tools/skiplagged-mcp.html"
+  },
+  {
+   "name": "Liner MCP",
+   "slug": "liner-mcp",
+   "url": "https://liner.com/developers/docs/mcp",
+   "website": "https://liner.com/developers/docs/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Liner's MCP server for real-time web and scholarly search with cited answers and multi-step deep research.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/liner-mcp.png",
+   "page": "https://agentscouthq.com/tools/liner-mcp.html"
+  },
+  {
+   "name": "Lusha MCP",
+   "slug": "lusha-mcp",
+   "url": "https://www.lusha.com/",
+   "website": "https://www.lusha.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Lusha's MCP server for authorized business profile, usage and buying-signal insights in AI tools.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lusha-mcp.png",
+   "page": "https://agentscouthq.com/tools/lusha-mcp.html"
+  },
+  {
+   "name": "Logo.dev MCP",
+   "slug": "logo-dev-mcp",
+   "url": "https://www.logo.dev/docs/mcp/introduction",
+   "website": "https://www.logo.dev/docs/mcp/introduction",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Official Logo.dev MCP server for finding brand logos and brandmarks and managing brand subscriptions.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/logo-dev-mcp.png",
+   "page": "https://agentscouthq.com/tools/logo-dev-mcp.html"
+  },
+  {
+   "name": "Serpstat MCP",
+   "slug": "serpstat-mcp",
+   "url": "https://serpstat.com/",
+   "website": "https://serpstat.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Serpstat's MCP server for automating SEO tasks such as keyword research, competitor analysis and audits.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/serpstat-mcp.png",
+   "page": "https://agentscouthq.com/tools/serpstat-mcp.html"
+  },
+  {
+   "name": "Twelve Data MCP",
+   "slug": "twelve-data-mcp",
+   "url": "https://twelvedata.com/",
+   "website": "https://twelvedata.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Twelve Data's MCP server for real-time and historical market data on stocks, forex, crypto and more.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/twelve-data-mcp.png",
+   "page": "https://agentscouthq.com/tools/twelve-data-mcp.html"
+  },
+  {
+   "name": "Geckoboard MCP",
+   "slug": "geckoboard-mcp",
+   "url": "https://www.geckoboard.com/product/metrics-mcp/",
+   "website": "https://www.geckoboard.com/product/metrics-mcp/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Geckoboard's MCP server for querying live metrics and data lists from the business tools connected to your dashboards.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/geckoboard-mcp.png",
+   "page": "https://agentscouthq.com/tools/geckoboard-mcp.html"
+  },
+  {
+   "name": "Locize MCP",
+   "slug": "locize-mcp",
+   "url": "https://www.locize.com/docs/integration/mcp",
+   "website": "https://www.locize.com/docs/integration/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Locize's MCP server with translation-management tools for keys, translation memory, glossary, styleguides and versions.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/locize-mcp.png",
+   "page": "https://agentscouthq.com/tools/locize-mcp.html"
+  },
+  {
+   "name": "Unleash MCP",
+   "slug": "unleash-mcp",
+   "url": "https://www.getunleash.io/",
+   "website": "https://www.getunleash.io/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Unleash's MCP server for managing feature flags from AI coding assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/unleash-mcp.png",
+   "page": "https://agentscouthq.com/tools/unleash-mcp.html"
+  },
+  {
+   "name": "CData Connect AI MCP",
+   "slug": "cdata-connect-ai-mcp",
+   "url": "https://www.cdata.com/ai/",
+   "website": "https://www.cdata.com/ai/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "CData's cloud-hosted MCP server for secure AI access to hundreds of enterprise data sources through Connect AI.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cdata-connect-ai-mcp.png",
+   "page": "https://agentscouthq.com/tools/cdata-connect-ai-mcp.html"
+  },
+  {
+   "name": "Parallel Search MCP",
+   "slug": "parallel-search-mcp",
+   "url": "https://parallel.ai/",
+   "website": "https://parallel.ai/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Parallel's MCP servers for web search and deep-research tasks built for AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/parallel-search-mcp.png",
+   "page": "https://agentscouthq.com/tools/parallel-search-mcp.html"
+  },
+  {
+   "name": "Supermetrics MCP",
+   "slug": "supermetrics-mcp",
+   "url": "https://mcp.supermetrics.com/",
+   "website": "https://mcp.supermetrics.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Supermetrics MCP server for discovering marketing data sources and fields, running queries and managing campaigns.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/supermetrics-mcp.png",
+   "page": "https://agentscouthq.com/tools/supermetrics-mcp.html"
+  },
+  {
+   "name": "Aiven MCP",
+   "slug": "aiven-mcp",
+   "url": "https://aiven.io/mcp",
+   "website": "https://aiven.io/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Aiven's MCP server for provisioning PostgreSQL, managing Apache Kafka and deploying apps from your AI assistant.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp",
+    "Computer vision"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP",
+    "computer vision"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aiven-mcp.png",
+   "page": "https://agentscouthq.com/tools/aiven-mcp.html"
+  },
+  {
+   "name": "Extend MCP",
+   "slug": "extend-mcp",
+   "url": "https://docs.extend.ai/mcp",
+   "website": "https://docs.extend.ai/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Extend's MCP server for turning documents into structured data: parse, extract, classify, split and fill PDF forms.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/extend-mcp.png",
+   "page": "https://agentscouthq.com/tools/extend-mcp.html"
+  },
+  {
+   "name": "Brandfetch MCP",
+   "slug": "brandfetch-mcp",
+   "url": "https://docs.brandfetch.com/mcp/overview",
+   "website": "https://docs.brandfetch.com/mcp/overview",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Brandfetch's MCP server for searching brands and retrieving logos, design assets and company data.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/brandfetch-mcp.png",
+   "page": "https://agentscouthq.com/tools/brandfetch-mcp.html"
+  },
+  {
+   "name": "Picsart GenAI MCP",
+   "slug": "picsart-genai-mcp",
+   "url": "https://picsart.io/",
+   "website": "https://picsart.io/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Picsart's MCP server for generating and editing images, video and audio with 150+ models from 20+ vendors.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/picsart-genai-mcp.png",
+   "page": "https://agentscouthq.com/tools/picsart-genai-mcp.html"
+  },
+  {
+   "name": "Icons8 MCP",
+   "slug": "icons8-mcp",
+   "url": "https://icons8.com/mcp",
+   "website": "https://icons8.com/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Icons8 MCP server for searching and fetching Icons8 icons and Ouch illustrations as SVG, PNG or animations.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/icons8-mcp.png",
+   "page": "https://agentscouthq.com/tools/icons8-mcp.html"
+  },
+  {
+   "name": "Hello Retail MCP",
+   "slug": "hello-retail-mcp",
+   "url": "https://developer.helloretail.com/mcp",
+   "website": "https://developer.helloretail.com/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Hello Retail's MCP server for setting up and tuning e-commerce search, recommendations, email and product agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hello-retail-mcp.png",
+   "page": "https://agentscouthq.com/tools/hello-retail-mcp.html"
+  },
+  {
+   "name": "Guru MCP",
+   "slug": "guru-mcp",
+   "url": "https://developer.getguru.com/docs/guru-mcp-server-overview",
+   "website": "https://developer.getguru.com/docs/guru-mcp-server-overview",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Guru's remote MCP server that connects AI tools to your company's Guru knowledge base.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/guru-mcp.png",
+   "page": "https://agentscouthq.com/tools/guru-mcp.html"
+  },
+  {
+   "name": "1inch MCP",
+   "slug": "1inch-mcp",
+   "url": "https://business.1inch.com/portal/documentation/ai-integration",
+   "website": "https://business.1inch.com/portal/documentation/ai-integration",
+   "github": "",
+   "category": "crypto",
+   "description": "1inch's MCP server for doc search, intent and cross-chain swaps, limit orders, portfolio data, spot prices and gas.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/1inch-mcp.png",
+   "page": "https://agentscouthq.com/tools/1inch-mcp.html"
+  },
+  {
+   "name": "Redpanda Docs MCP",
+   "slug": "redpanda-docs-mcp",
+   "url": "https://docs.redpanda.com/",
+   "website": "https://docs.redpanda.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Redpanda's MCP server for answering questions from Redpanda documentation and API references.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/redpanda-docs-mcp.png",
+   "page": "https://agentscouthq.com/tools/redpanda-docs-mcp.html"
+  },
+  {
+   "name": "CARTO MCP",
+   "slug": "carto-mcp",
+   "url": "https://docs.carto.com/carto-for-agents/mcp-server",
+   "website": "https://docs.carto.com/carto-for-agents/mcp-server",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "CARTO's MCP server for querying data warehouses, running spatial workflows and rendering maps from your CARTO workspace.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/carto-mcp.png",
+   "page": "https://agentscouthq.com/tools/carto-mcp.html"
+  },
+  {
+   "name": "PandaDoc MCP",
+   "slug": "pandadoc-mcp",
+   "url": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
+   "website": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "PandaDoc's MCP server for creating, sending, signing and tracking documents from AI assistants.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pandadoc-mcp.png",
+   "page": "https://agentscouthq.com/tools/pandadoc-mcp.html"
+  },
+  {
+   "name": "SmartBear MCP",
+   "slug": "smartbear-mcp",
+   "url": "https://www.smartbear.com/",
+   "website": "https://www.smartbear.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "SmartBear's MCP server giving AI tools access to BugSnag, Reflect, Swagger, PactFlow and QTM4J.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/smartbear-mcp.png",
+   "page": "https://agentscouthq.com/tools/smartbear-mcp.html"
+  },
+  {
+   "name": "Tenderly MCP",
+   "slug": "tenderly-mcp",
+   "url": "https://tenderly.co/",
+   "website": "https://tenderly.co/",
+   "github": "",
+   "category": "crypto",
+   "description": "Tenderly's MCP server for blockchain developers to simulate, debug and test transactions on 100+ networks from AI agents.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tenderly-mcp.png",
+   "page": "https://agentscouthq.com/tools/tenderly-mcp.html"
+  },
+  {
+   "name": "Whimsical MCP",
+   "slug": "whimsical-mcp",
+   "url": "https://whimsical.com/mcp",
+   "website": "https://whimsical.com/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Whimsical's MCP server for creating and editing flowcharts, mind maps, wireframes and docs, or searching your workspace.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/whimsical-mcp.png",
+   "page": "https://agentscouthq.com/tools/whimsical-mcp.html"
+  },
+  {
+   "name": "Automox MCP",
+   "slug": "automox-mcp",
+   "url": "https://www.automox.com/",
+   "website": "https://www.automox.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Official Automox MCP server for managing devices, patches and policies in natural language.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/automox-mcp.png",
+   "page": "https://agentscouthq.com/tools/automox-mcp.html"
+  },
+  {
+   "name": "GTmetrix MCP",
+   "slug": "gtmetrix-mcp",
+   "url": "https://gtmetrix.com/",
+   "website": "https://gtmetrix.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "GTmetrix MCP server for running web performance analyses and getting optimization insights inside AI workflows.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gtmetrix-mcp.png",
+   "page": "https://agentscouthq.com/tools/gtmetrix-mcp.html"
+  },
+  {
+   "name": "Jitsu MCP",
+   "slug": "jitsu-mcp",
+   "url": "https://jitsu.com/docs/mcp",
+   "website": "https://jitsu.com/docs/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Jitsu's MCP server for managing data pipelines: destinations, streams, connections, functions and live events.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jitsu-mcp.png",
+   "page": "https://agentscouthq.com/tools/jitsu-mcp.html"
+  },
+  {
+   "name": "Mintlify MCP",
+   "slug": "mintlify-mcp",
+   "url": "https://www.mintlify.com/docs/ai/mintlify-mcp",
+   "website": "https://www.mintlify.com/docs/ai/mintlify-mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Mintlify's admin MCP server for editing, publishing and managing docs pages, navigation, settings and analytics.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mintlify-mcp.png",
+   "page": "https://agentscouthq.com/tools/mintlify-mcp.html"
+  },
+  {
+   "name": "Padlet MCP",
+   "slug": "padlet-mcp",
+   "url": "https://padlet.com/",
+   "website": "https://padlet.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Padlet's MCP server for creating and managing boards, posts, comments, sections and sharing settings from an AI assistant.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/padlet-mcp.png",
+   "page": "https://agentscouthq.com/tools/padlet-mcp.html"
+  },
+  {
+   "name": "Unlayer MCP",
+   "slug": "unlayer-mcp",
+   "url": "https://docs.unlayer.com/ai/mcp",
+   "website": "https://docs.unlayer.com/ai/mcp",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Unlayer's MCP server for generating and editing email, page and PDF document templates.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/unlayer-mcp.png",
+   "page": "https://agentscouthq.com/tools/unlayer-mcp.html"
   }
  ]
 }
