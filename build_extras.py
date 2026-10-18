@@ -321,6 +321,9 @@ def _apply_featured():
             import build_featured; build_featured.run()
         if _os.path.exists("sitemap.xml"):
             import build_lastmod; build_lastmod.run()
+        # Re-write redirects.json pages after cleanup in best/ and tasks/ may have deleted them.
+        if _os.path.exists("redirects.json"):
+            import build_redirects; build_redirects.run()
         _os.chdir(_here)
     except Exception as _ex: print("featured skipped:",_ex)
 _atexit.register(_apply_featured)
