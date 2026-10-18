@@ -4,6 +4,7 @@ from build_tasks). Ranking uses only directory data: tracked GitHub stars, then 
 import os,re,glob,collections
 import build_extras as X, build_tasks as T, build_best as BB
 B=X.B; e=X.e
+CAP=lambda s:s[:1].upper()+s[1:]
 OS={"Open source","Open source + cloud"}
 FREE=OS|{"Freemium","Free","Open weights","Open standard"}
 def isfree(x): return x["pricing"] in FREE or bool(X.FREE_RE.search(x.get("pricing_detail") or ""))
@@ -72,10 +73,10 @@ S=[
 R=[
 ("developers","developers","AI agents for developers","Coding agents, review bots, docs servers and sandboxes that help software developers ship faster.",
  [("Write and edit code","writing-code"),("Work in the terminal","terminal-coding"),("Review pull requests","reviewing-pull-requests"),("Give agents current docs","coding-docs"),("Test your app","testing-apps"),("Run several coding agents at once","parallel-coding-agents")],
- [("agent-setup-generator","Agent setup generator (CLAUDE.md, AGENTS.md, Cursor rules)"),("token-counter","Token counter")],["free-ai-coding-agents","terminal-ai-coding-agents","ai-code-review-tools","ai-code-sandboxes"]),
+ [("agent-setup-generator","Agent setup generator (CLAUDE.md, AGENTS.md, Cursor rules)"),("token-counter","Token counter")],["free-ai-coding-agents","terminal-ai-coding-agents","ai-code-review-tools","ai-code-sandboxes","free-mcp-servers","local-ai-agents"]),
 ("ai-engineers","AI engineers","AI agent tools for AI engineers","Frameworks, memory, MCP, evals and observability for engineers who build and run their own agents.",
  [("Build agents","building-ai-agents"),("Multi-agent systems","multi-agent-systems"),("Memory","agent-memory"),("Build MCP servers","building-mcp-servers"),("Evaluate agents","evaluating-agents"),("Monitor in production","monitoring-agents"),("Deploy and host","deploying-agents")],
- [("ai-cost-calculator","AI API cost calculator"),("agent-setup-generator","Agent setup generator")],["open-source-ai-agent-frameworks","python-ai-agent-frameworks","typescript-ai-agent-frameworks","open-source-llm-observability-tools"]),
+ [("ai-cost-calculator","AI API cost calculator"),("agent-setup-generator","Agent setup generator")],["open-source-ai-agent-frameworks","python-ai-agent-frameworks","typescript-ai-agent-frameworks","open-source-llm-observability-tools","free-mcp-servers","open-source-browser-agents","computer-use-agents","local-ai-agents"]),
 ("marketers","marketers","AI agents for marketers","Agents for campaigns, social media, SEO data, email, images and video, so a small marketing team can do more.",
  [("Marketing and go-to-market","marketing"),("Email","writing-emails"),("Images and design","making-images-and-design"),("Video","making-videos"),("Research","research"),("Automate the busywork","automating-workflows")],
  [("prompt-builder","Prompt builder"),("../generate","Free AI image generator")],["ai-marketing-agents","ai-video-agents","ai-research-assistants"]),
@@ -96,16 +97,16 @@ R=[
  [("ai-cost-calculator","AI API cost calculator")],["database-mcp-servers","ai-agents-for-spreadsheets-and-slides","ai-web-scraping-tools"]),
 ("crypto-traders","crypto traders","AI agents for crypto traders","Trading copilots, wallet and on-chain tools, and smart-contract checkers. Trading is risky and nothing here is financial advice.",
  [("Trading","trading"),("Crypto and wallets","crypto-and-wallets"),("Smart contract security","smart-contract-security"),("Agent payments","agent-payments")],
- [],["ai-trading-agents","open-source-crypto-ai-agents"]),
+ [("token-counter","Token counter"),("prompt-builder","Prompt builder")],["ai-trading-agents","open-source-crypto-ai-agents"]),
 ("founders","founders and small businesses","AI agents for founders and small businesses","Ready-made agents for operations, support, marketing and building your first app, so a small team can cover more ground.",
  [("Business operations","business-automation"),("Automate workflows","automating-workflows"),("Build apps without code","building-apps-without-code"),("Customer support","customer-support"),("Marketing","marketing"),("Personal assistants","personal-assistants")],
- [("ai-cost-calculator","AI API cost calculator"),("prompt-builder","Prompt builder")],["free-no-code-ai-agent-builders","ai-customer-support-agents","ai-marketing-agents"]),
+ [("ai-cost-calculator","AI API cost calculator"),("prompt-builder","Prompt builder")],["free-no-code-ai-agent-builders","ai-customer-support-agents","ai-marketing-agents","free-browser-automation-agents"]),
 ("devops-engineers","DevOps and SRE engineers","AI agents for DevOps and SRE engineers","AI SRE agents, observability, sandboxes and deployment tools for keeping systems and agents running.",
  [("Incidents and infrastructure","devops-and-incidents"),("Monitor agents in production","monitoring-agents"),("Deploy and host agents","deploying-agents"),("Run code safely","running-code-safely"),("Agent security","agent-security")],
  [("agent-setup-generator","Agent setup generator")],["ai-sre-agents","ai-code-sandboxes","open-source-llm-observability-tools"]),
 ("security-engineers","security engineers","AI agents for security engineers","Pentest agents, guardrails, identity and sandboxing tools for securing apps and the agents that touch them.",
  [("Security testing","security-testing"),("Agent security and guardrails","agent-security"),("Smart contract security","smart-contract-security"),("Agent identity and logins","agent-identity"),("Sandboxes","running-code-safely")],
- [],["ai-security-testing-tools","ai-code-sandboxes"]),
+ [("agent-setup-generator","Agent setup generator (guardrail rules in CLAUDE.md, AGENTS.md)")],["ai-security-testing-tools","ai-code-sandboxes"]),
 ("game-developers","game developers","AI tools for game developers","AI game makers, NPC engines, image and voice tools for building games.",
  [("Games and game makers","games"),("Images and design","making-images-and-design"),("Voice","building-voice-agents")],
  [("../generate","Free AI image generator")],["open-source-voice-ai-agents"]),
@@ -119,6 +120,7 @@ def ftl(h,d="../"):
 def mini(x):
     gs=f' · ★ {x["github_stars"]:,}' if x.get("github_stars") is not None else ""
     return f'<li style="margin:0 0 10px"><a href="../tools/{x["slug"]}.html"><b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span><span class="muted" style="font-size:12.5px">{gs}</span></li>'
+DATA={}
 def search_pages(t,m,asof):
     made=[]; inT=lambda x:(lambda s:s in m and x in m[s][1])
     for s,h,q,f,intro,task,best in S:
@@ -126,6 +128,7 @@ def search_pages(t,m,asof):
         if len(allm)<6: print("skip search page (too few):",s,len(allm)); continue
         items=rank(allm)[:25]; made.append((s,h,q,len(allm),items,intro,task,best,allm))
     titles={a[0]:a[1] for a in made}
+    DATA['search']=made
     for s,h,q,n,items,intro,task,best,allm in made:
         canon=f"{B}s/{s}.html"; title=f"{h} (2026): {len(items)} picks · AgentScout"
         desc=f"{h} in 2026: {n} matching tools in AgentScout's link-checked directory, including {', '.join(x['name'] for x in items[:3])}. Pricing as makers state it."
@@ -146,6 +149,8 @@ def search_pages(t,m,asof):
         sib=[a for a in made if a[0]!=s and (a[6]==task or (best and a[7]==best))][:5]
         sibh=" · ".join(f'<a href="{a[0]}.html">{e(a[1])}</a>' for a in sib)
         roles=[r for r in R if s in r[6]]
+        if not roles:  # fall back: roles whose sections use this page's task
+            roles=[r for r in R if task in [b for _,b in r[4]]][:2]
         roleh=" · ".join(f'<a href="../for/{r[0]}.html">For {e(r[1])}</a>' for r in roles)
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","name":h,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":len(items),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
@@ -186,12 +191,12 @@ def role_pages(t,m,made):
         body_s=re.sub(r'<h2 style="font-size:18px;margin:32px 0 6px">([^<]+)</h2>',lambda mm:f'<h2 id="{X.catslug(__import__("html").unescape(mm.group(1)))}" style="font-size:18px;margin:32px 0 6px">{mm.group(1)}</h2>',body_s)
         ft=" · ".join(f'<a href="{ftl(a)}">{e(b)}</a>' for a,b in fts)
         sr=" · ".join(f'<a href="../s/{x}.html">{e(ok[x])}</a>' for x in ss if x in ok)
-        oth=" · ".join(f'<a href="{r[0]}.html">{e(r[1].capitalize())}</a>' for r in R if r[0]!=s)
+        oth=" · ".join(f'<a href="{r[0]}.html">{e(CAP(r[1]))}</a>' for r in R if r[0]!=s)
         free_n=sum(1 for x in allitems if isfree(x))
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"audience":{"@type":"Audience","audienceType":who}},
             {"@type":"ItemList","numberOfItems":len(allitems),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(allitems)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"By role","item":B+"for/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">By role</a> / {e(who.capitalize())}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">By role</a> / {e(CAP(who))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We picked the top tools for {len(secs)} jobs {e(who)} do every day: {n} tools in all, {free_n} of them free or with a free tier.</p>'
               f'<p style="font-size:14px">Jump to: {jump}</p>'
               +(f'<p style="font-size:14px">Free tools from AgentScout for {e(who)}: {ft}</p>' if ft else "")+
@@ -199,7 +204,7 @@ def role_pages(t,m,made):
               f'{body_s}'+(f'<h2 style="font-size:16px;margin:32px 0 10px">Popular searches for {e(who)}</h2><p>{sr}</p>' if sr else "")+
               f'<p style="margin-top:24px">Other roles: {oth} · <a href="index.html">All roles</a></p>'
               f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Missing a tool? <a href="../submit.html">Submit it free</a>.</p></section>')
-        open(f"for/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon); info.append((s,who,h,n))
+        open(f"for/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon); info.append((s,who,h,n)); DATA.setdefault('roles',[]).append((s,who,h,[b for _,b in secs],[x['slug'] for x in allitems]))
     canon=B+"for/"; title="AI Agents by Role: Tools for Every Team (2026) · AgentScout"
     desc=f"AI agent tools picked for {len(info)} roles: developers, marketers, sales, support, designers, researchers, crypto traders and more."[:158]
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>For {e(who)}</h3></div><p>{n} tools picked</p></a>' for s,who,h,n in info)

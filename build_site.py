@@ -79,3 +79,5 @@ import build_sections
 build_sections.build(t)
 import build_pick
 build_pick.pick(t)
+import build_links
+build_links.run(t)

@@ -98,8 +98,9 @@ def hub(t,made):
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":u} for u,h,_,_ in made]+[{"@type":"WebPage","name":h,"url":f"{B}best/{s}.html"} for s,h in OLD]}
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Best lists</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Ranked lists built from the AgentScout directory. Each list says how it is ranked (GitHub stars or listing maturity). We use no invented scores and sell no placements.</p>'
+          f'<p style="margin:0 0 8px">See also: <a href="../tasks/index.html">AI agents by task</a> · <a href="../categories/index.html">All categories</a> · <a href="../compare/index.html">Comparisons</a></p>'
           f'<h2 style="font-size:16px;margin:24px 0 10px">Ranked lists</h2><div class="grid">{tiles}</div><h2 style="font-size:16px;margin:32px 0 10px">MCP and coding guides</h2><div class="grid">{old}</div>'
-          f'<p style="margin-top:24px">See also: <a href="../tasks/index.html">AI agents by task</a> · <a href="../categories/index.html">All categories</a> · <a href="../compare/index.html">Comparisons</a></p></section>')
+          '</section>')
     open("best/index.html","w").write(X.shell("../",title,desc,canon,body,ld)); return canon
 def link_in(path,anchor,add,marker):
     if not os.path.exists(path): return

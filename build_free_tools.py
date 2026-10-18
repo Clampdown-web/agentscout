@@ -4,6 +4,7 @@ copied by hand from each provider's official pricing page (date in "checked").""
 import json,os
 import build_extras as X
 B=X.B; e=X.e
+CAP=lambda s:s[:1].upper()+s[1:]
 INP='style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;box-sizing:border-box"'
 LAB='style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px"'
 OUT='style="width:100%;min-height:260px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;box-sizing:border-box;white-space:pre"'
@@ -17,6 +18,15 @@ TOOLS=[
 ("prompt-builder","AI Prompt Builder","Fill in a few fields and get a clear, well-structured prompt for ChatGPT, Claude, Gemini or Grok. Copy it in one click.","🧱"),
 ("agent-setup-generator","AI Agent Setup Generator","Generate starter config files and system prompts for Claude Code, Codex, Cursor, CrewAI, LangChain and the OpenAI Agents SDK.","🤖"),
 ]
+REL={"ai-cost-calculator":(["python-ai-agent-frameworks","open-source-llm-observability-tools","web-search-apis-for-ai-agents","free-ai-coding-agents"],["ai-engineers","developers","founders"]),
+ "token-counter":(["open-source-llm-observability-tools","ai-agent-memory-tools","open-source-ai-research-agents"],["ai-engineers","developers","researchers"]),
+ "prompt-builder":(["ai-research-assistants","ai-marketing-agents","free-ai-coding-agents"],["marketers","content-creators","researchers"]),
+ "agent-setup-generator":(["terminal-ai-coding-agents","open-source-ai-agent-frameworks","multi-agent-frameworks","free-mcp-servers"],["developers","ai-engineers","security-engineers"])}
+def rel(s):
+    import build_landing as L
+    st={p[0]:p[1] for p in L.S}; rn={r[0]:r[1] for r in L.R}; a,b=REL[s]
+    return ('<p style="margin-top:28px">Popular searches: '+" · ".join(f'<a href="../s/{x}.html">{e(st[x])}</a>' for x in a if x in st)+'</p>'
+            '<p>Popular with: '+" · ".join(f'<a href="../for/{x}.html">{e(CAP(rn[x]))}</a>' for x in b if x in rn)+'</p>')
 def others(s): return " · ".join(f'<a href="{t[0]}.html">{e(t[1])}</a>' for t in TOOLS if t[0]!=s)
 def wrap(s,h1,lede,inner,faq,js,t):
     slug,name,desc,_=next(x for x in TOOLS if x[0]==s)
@@ -28,8 +38,8 @@ def wrap(s,h1,lede,inner,faq,js,t):
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / {e(name)}</div><section style="padding-top:20px;text-align:left;max-width:860px">'
           f'<h1 style="text-align:left;margin-left:0">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>'
           f'<p class="muted" style="margin:0 0 8px;font-size:13.5px">Free, no sign-up. Runs entirely in your browser: nothing you type is sent to AgentScout or any AI provider.</p>'
-          f'{inner}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}'
-          f'<p style="margin-top:28px">More free tools from AgentScout: {others(s)} · <a href="../generate.html">Free AI image generator</a> · <a href="../free-tools.html">All free tools</a></p></section><script>{TOK}\n{js}</script>')
+          f'{inner}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}{rel(s)}'
+          f'<p>More free tools from AgentScout: {others(s)} · <a href="../generate.html">Free AI image generator</a> · <a href="../free-tools.html">All free tools</a></p></section><script>{TOK}\n{js}</script>')
     os.makedirs("free-tools",exist_ok=True)
     open(f"free-tools/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); return canon
 
