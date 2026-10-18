@@ -204,7 +204,7 @@ def seo(t,urls):
     out.append(listing_page("best/mcp-servers.html","Best MCP Servers (2026): curated list · AgentScout",
         f"Best MCP servers in 2026: {len(mcp)} link-checked MCP servers and MCP tools, including {', '.join(x['name'] for x in mcp[:3])}. Pricing as stated by makers."[:158],
         "Best MCP Servers (2026)",f'A curated list of the {len(mcp)} MCP servers and MCP-related tools in the AgentScout directory. MCP (Model Context Protocol) lets agents like Claude Code, Cursor and Codex connect to tools and data. See also the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.',mcp,"Best MCP servers",'<p style="margin-top:24px">Guides by client: '+guides+'</p>'))
-    out.append(news_page(t)); out.append(free_tools(t))
+    out.append(news_page(t)); out.append(free_tools(t)); out.append(newsletter_page())
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
         f"{len(alt)} Cursor alternatives from our directory, including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing as stated by makers, open-source options marked."[:158],
@@ -241,6 +241,22 @@ def news_page(t):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":x["url"],"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
     open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
 
+# Past issues on the public Beehiiv archive (https://agentscout.beehiiv.com/archive), checked read-only 2026-10-18.
+NL_ISSUES=[{"title":"AgentScout Weekly #1: 5 agent tools worth trying","subtitle":"Labeled for builders and everyday users","date":"2026-10-16","url":"https://agentscout.beehiiv.com/p/agentscout-weekly-1-5-agent-tools-worth-trying"}]
+def newsletter_page():
+    canon=B+"newsletter.html"; title="AgentScout Weekly: AI Agent Newsletter Archive | AgentScout"
+    desc="Past issues of AgentScout Weekly, a free weekly email with the best new AI agents, launches and what's worth trying. Read the archive or subscribe."
+    iss=sorted(NL_ISSUES,key=lambda x:x["date"],reverse=True)
+    li="".join(f'<li class="nitem"><h3><a href="{e(x["url"])}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a></h3>'+(f'<p class="nsum">{e(x["subtitle"])}</p>' if x.get("subtitle") else "")+f'<span class="nm"><time datetime="{e(x["date"])}">{datetime.date.fromisoformat(x["date"]).strftime("%B %-d, %Y")}</time> · <a href="{e(x["url"])}" target="_blank" rel="noopener noreferrer">Read on Beehiiv ↗</a></span></li>' for x in iss)
+    lst=f'<ol class="nlist">{li}</ol>' if iss else '<p>Issues will appear here.</p>'
+    body=('<div class="crumb"><a href="index.html">AgentScout</a> / Newsletter</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AgentScout Weekly</h1>'
+          '<p class="lede" style="margin-left:0;text-align:left">One short email a week with the best new AI agents, launches and what\'s worth trying. Free, unsubscribe anytime. Subscribe below.</p>'
+          f'<h2 style="font-size:18px;margin:28px 0 10px">Past issues</h2>{lst}<p style="margin-top:18px;font-size:14px"><a href="https://agentscout.beehiiv.com/archive" target="_blank" rel="noopener noreferrer">Full archive on Beehiiv ↗</a></p>'
+          '<p class="disclose">The newsletter is sent with Beehiiv. Issues open on the Beehiiv site. See our <a href="privacy.html">privacy policy</a>.</p></section>')
+    ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
+        {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":x["url"],"name":x["title"]} for i,x in enumerate(iss)]},
+        {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Newsletter","item":canon}]}]}
+    open("newsletter.html","w").write(shell("",title,desc,canon,body,ld)); return canon
 FREE_RE=re.compile(r"open[- ]?source|open weights|open[- ]weight|open standard|\bfree\b|freemium",re.I)
 def free_tools(t):
     """Free-tools hub: AgentScout's own free tools first, then every directory listing whose maker-stated pricing
