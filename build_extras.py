@@ -247,18 +247,32 @@ def seo(t,urls):
     L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
 
+
+# Pacific display for stored UTC timestamps (Oct 18 2026: site shows Pacific, never UTC; datetime attrs/JSON-LD stay ISO UTC)
+def _pt_dt(iso):
+    from zoneinfo import ZoneInfo
+    try:
+        d=datetime.datetime.fromisoformat(str(iso).replace("Z","+00:00"))
+        if d.tzinfo is None: d=d.replace(tzinfo=datetime.timezone.utc)
+        return d.astimezone(ZoneInfo("America/Los_Angeles"))
+    except Exception: return None
+def pt_time(iso):
+    d=_pt_dt(iso); return d.strftime("%b %-d, %Y, %-I:%M %p")+" PT" if d else str(iso)
+def pt_date(iso):
+    d=_pt_dt(iso) if "T" in str(iso) else None
+    return d.date().isoformat() if d else str(iso)[:10]
 def news_page(t):
     import os
     bs={x["slug"]:x for x in t}; canon=B+"news.html"
     arc=json.load(open("news-archive.json")) if os.path.exists("news-archive.json") else {"items":[],"updated":""}
     days={}
-    for x in arc["items"]: days.setdefault(x["date"][:10],[]).append(x)
+    for x in arc["items"]: days.setdefault(pt_date(x["date"]),[]).append(x)
     def item(x):
         tl=f' · <a href="tools/{e(x["tool"])}.html">On AgentScout →</a>' if x.get("tool") in bs else ""
         sm=f'<p class="nsum">{e(x["summary"])}</p>' if x.get("summary") else ""
         h3=f'<a href="{e(x["page"])}">{e(x["title"])}</a>' if x.get("page") and os.path.exists(x["page"]) else f'<a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a>'
-        return f'<li class="nitem"><h3>{h3}</h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(x["date"][:16].replace("T"," "))} UTC</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'
-    body='<div class="crumb"><a href="index.html">AgentScout</a> / Agent news</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(arc.get("updated","")[:16].replace("T"," "))+' UTC.</p>'
+        return f'<li class="nitem"><h3>{h3}</h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(pt_time(x["date"]))}</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'
+    body='<div class="crumb"><a href="index.html">AgentScout</a> / Agent news</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(pt_time(arc.get("updated","")))+'.</p>'
     for d in sorted(days,reverse=True):
         dd=datetime.date.fromisoformat(d).strftime("%A, %B %-d, %Y")
         body+=f'<h2 class="nday">{dd}</h2><ol class="nlist">'+"".join(item(x) for x in days[d])+'</ol>'

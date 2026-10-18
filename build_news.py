@@ -54,7 +54,9 @@ def related(x,t):
         # an official "<Product> MCP Server" listing matches a story that names the product and MCP
         elif re.search(r"\bMCP\b",txt) and (m:=re.match(r"^(.{4,}?) MCP(?: Server)?$",n)) and m.group(1).lower() not in GENERIC and re.search(r"(?<![\w-])"+re.escape(m.group(1))+r"(?![\w-])",txt): out.append(y)
     return out[:6]
-def _fmt(d): return datetime.date.fromisoformat(d[:10]).strftime("%b %-d, %Y")
+def _ptd(d):
+    import build_extras; return build_extras.pt_date(d)
+def _fmt(d): return datetime.date.fromisoformat(_ptd(d)).strftime("%b %-d, %Y")  # Pacific date
 def _month(ym): return datetime.date(int(ym[:4]),int(ym[5:7]),1).strftime("%B %Y")
 def pages(t):
     import build_extras as X
@@ -64,7 +66,7 @@ def pages(t):
     for i,x in enumerate(items):
         d="../../../"; canon=B+x["page"]; ym=x["date"][:7]
         rel=related(x,t)
-        sameday=[y for y in items if y is not x and y["date"][:10]==x["date"][:10]][:6]
+        sameday=[y for y in items if y is not x and _ptd(y["date"])==_ptd(x["date"])][:6]
         newer=items[i-1] if i>0 else None; older=items[i+1] if i+1<len(items) else None
         src=X.su(x["url"])
         relh=("<h2 style=\"font-size:18px;margin:32px 0 12px\">Related on AgentScout</h2><div class=\"grid\" style=\"grid-template-columns:repeat(auto-fill,minmax(240px,1fr))\">"+"".join(f'<a class="card" href="{d}tools/{y["slug"]}.html"><div class="ct">{X.ico(y,d,"sm")}<h3 style="flex:1">{e(y["name"])}</h3></div><p>{e(y["description"])}</p></a>' for y in rel)+"</div>") if rel else ""
@@ -91,7 +93,7 @@ def pages(t):
     # monthly archives
     for ym,its in sorted(months.items(),reverse=True):
         d="../../../"; canon=f"{B}news/{ym[:4]}/{ym[5:]}/"; days={}
-        for x in its: days.setdefault(x["date"][:10],[]).append(x)
+        for x in its: days.setdefault(_ptd(x["date"]),[]).append(x)
         lis="".join(f'<h2 class="nday">{datetime.date.fromisoformat(dd).strftime("%A, %B %-d, %Y")}</h2><ol class="nlist">'+"".join(f'<li class="nitem"><h3><a href="{d}{x["page"]}">{e(x["title"])}</a></h3><p class="nsum">{e(x["summary"])}</p><span class="nm">{e(x["source"])}</span></li>' for x in days[dd])+"</ol>" for dd in sorted(days,reverse=True))
         title=f"AI agent news, {_month(ym)} · AgentScout"; desc=f"All {len(its)} AI agent news stories AgentScout covered in {_month(ym)}, each with a short summary in our own words and a link to the source."
         body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / {_month(ym)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news: {_month(ym)}</h1>'
