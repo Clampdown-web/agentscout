@@ -98,7 +98,7 @@ ALLOW={
 "monitoring-agents":["evals","guardrails"],
 "agent-security":["guardrails","sandboxes","penetration-testing","agent-wallets"],
 "testing-apps":["testing-qa","code-review","penetration-testing"],
-"making-images-and-design":["images-design","mcp-servers","fine-tuning"],
+"making-images-and-design":["mcp-servers"],  # Oct 18 2026: images-design sub-page retired (redirect), page rebuilt on art categories
 "crypto-and-wallets":["trading-agents","agent-wallets","agent-payments","mcp-servers","penetration-testing"],
 "agent-payments":["agent-wallets","agent-auth"],
 "video-post-production":["visual-dubbing","vfx-compositing","color-upscaling","subtitles-transcripts","video-editing"],

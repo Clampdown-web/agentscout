@@ -1,7 +1,7 @@
 """Duplicate check for tools.json by normalized name, domain and GitHub repo. Exit 1 on duplicates."""
 import json,re,sys,collections
 from urllib.parse import urlparse
-SHARED={"huggingface.co","developer.nvidia.com","github.com","devin.ai","langchain.com","modelcontextprotocol.io","izotope.com","borisfx.com","waves.com"}  # hosts shared by legitimately distinct pre-existing tools
+SHARED={"huggingface.co","developer.nvidia.com","github.com","devin.ai","langchain.com","modelcontextprotocol.io","izotope.com","borisfx.com","waves.com","adobe.com","figma.com","topazlabs.com","apple.com","3d.hunyuan.tencent.com"}  # hosts shared by legitimately distinct pre-existing tools
 def norm(s): return re.sub(r'[^a-z0-9]','',re.sub(r'\(.*?\)','',s or '').lower())
 def dom(u):
   if not u: return ''

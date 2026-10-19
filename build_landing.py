@@ -92,9 +92,15 @@ R=[
 ("customer-support-teams","customer support teams","AI agents for customer support teams","Agents that answer customers, resolve tickets, take calls and search your knowledge base.",
  [("Customer support","customer-support"),("Phone calls","phone-calls"),("Chat apps","chat-apps"),("Search your documents","documents"),("Email","writing-emails")],
  [("prompt-builder","Prompt builder"),("agent-setup-generator","Agent setup generator")],["ai-customer-support-agents"]),
-("designers","designers","AI agents for designers","Image, diagram and video tools, plus app builders that turn a design idea into something people can click.",
- [("Images and design","making-images-and-design"),("Video","making-videos"),("Build apps without code","building-apps-without-code"),("Slides and docs","spreadsheets-and-slides")],
- [("../generate","Free AI image generator"),("prompt-builder","Prompt builder")],["free-no-code-ai-agent-builders"]),
+("designers","designers","AI tools for designers","Design agents and AI tools for UI, branding, social graphics, vectors and 3D, including MCP servers that let AI agents work inside Figma, Canva and Penpot.",
+ [('Design agents', 'making-images-and-design'), ('UI design and mockups', 'ui-design-and-mockups'), ('Logos and brand kits', 'logo-and-brand-design'), ('Social posts and ad creatives', 'social-posts-and-ad-creatives'), ('Vectorizing images', 'vectorizing-images'), ('Text and image to 3D', 'text-to-3d')],
+ [('../generate', 'Free AI image generator'), ('prompt-builder', 'Prompt builder')],[]),
+("artists","artists","AI tools for artists","Tools that keep the artist in control: painting assistants, private style models, open-source generators you run yourself, 3D from concept art, upscaling, and Glaze to protect your work.",
+ [('Illustration and concept art', 'illustration-and-concept-art'), ('Open-source image generation', 'open-source-image-generation'), ('Image and design agents', 'making-images-and-design'), ('Text and image to 3D', 'text-to-3d'), ('Vectorizing images', 'vectorizing-images'), ('Upscaling and restoring', 'upscaling-and-restoring-photos')],
+ [('../generate', 'Free AI image generator'), ('prompt-builder', 'Prompt builder')],[]),
+("photographers","photographers","AI tools for photographers","AI that gives photographers their time back: culling, editing in your own style, portrait retouching, upscaling, background removal, product shots, headshots and private photo libraries.",
+ [('Photo culling', 'photo-culling'), ('Editing in your style', 'photo-editing-in-your-style'), ('Portrait retouching', 'portrait-retouching'), ('Upscaling and restoring', 'upscaling-and-restoring-photos'), ('Background removal', 'background-removal'), ('Product photography', 'product-photography'), ('AI headshots', 'ai-headshots'), ('Organizing your library', 'organizing-photos'), ('Real estate and architecture', 'architecture-and-real-estate-visuals')],
+ [('prompt-builder', 'Prompt builder')],[]),
 ("filmmakers","filmmakers","AI tools for filmmakers","AI for every stage of a film or series: script breakdowns and storyboards, previs and virtual production, rough cuts, VFX, subtitles, dubbing and sound.",
  [("Storyboarding and previs","storyboarding"),("Rough cuts","rough-cuts"),("VFX and compositing","vfx"),("Video post-production","video-post-production"),("Audio post-production","audio-post-production"),("Dubbing and lip sync","dubbing"),("Scoring and soundtracks","scoring")],
  [("prompt-builder","Prompt builder")],[]),
@@ -123,7 +129,7 @@ R=[
  [("Security testing","security-testing"),("Agent security and guardrails","agent-security"),("Smart contract security","smart-contract-security"),("Agent identity and logins","agent-identity"),("Sandboxes","running-code-safely")],
  [("agent-setup-generator","Agent setup generator (guardrail rules in CLAUDE.md, AGENTS.md)")],["ai-code-sandboxes"]),
 ("game-developers","game developers","AI tools for game developers","AI game makers, NPC engines, image and voice tools for building games.",
- [("Images and design","making-images-and-design"),("Voice","building-voice-agents")],
+ [("Concept art","illustration-and-concept-art"),("3D assets","text-to-3d"),("Voice","building-voice-agents")],
  [("../generate","Free AI image generator")],["open-source-voice-ai-agents"]),
 ("content-creators","content creators","AI agents for content creators","Video, image and social tools, plus research helpers, for people who publish online.",
  [("Video","making-videos"),("Images and design","making-images-and-design"),("Marketing and social","marketing"),("Research","research")],
@@ -304,6 +310,8 @@ def search_pages(t,m,asof):
           f'<p style="margin-top:24px">See also: <a href="../for/index.html">AI agents by role</a> · <a href="../best/index.html">Best lists</a> · <a href="../tasks/index.html">AI agents by task</a> · <a href="../free-tools.html">Free tools</a></p></section>')
     open("s/index.html","w").write(X.shell("../",title,desc,canon,body,ld))
     return [canon]+[f"{B}s/{a[0]}.html" for a in made],made
+# Short commercial-use and copyright note on role pages (Oct 18, 2026); also linked from the art task pages
+ROLE_NOTE={"artists":'<div id="copyright" class="note" style="margin:10px 0;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px"><strong>Commercial use and copyright, in short.</strong> This is general information, not legal advice. In the US, the Copyright Office registers only work with real human authorship, and prompts alone usually don\'t count. The Supreme Court declined to hear <em>Thaler v. Perlmutter</em> on Mar 2, 2026, which leaves that rule in place. Training-data cases are still open: Getty mostly lost its UK case against Stability AI in Nov 2025 and can appeal, and Disney and Universal are suing Midjourney in the US. Before you sell AI-assisted work, read each tool\'s license terms. Some models, such as Adobe Firefly, Bria and Getty\'s generator, are trained only on licensed images and offer indemnity. To keep your own art out of training sets and style copies, look at <a href="../tools/glaze.html">Glaze</a> and <a href="https://cara.app" rel="nofollow noopener">Cara</a>.</div>'}
 def role_pages(t,m,made):
     ok={a[0]:a[1] for a in made}; urls=[]; info=[]
     for s,who,h,intro,secs,fts,ss in R:
@@ -332,7 +340,7 @@ def role_pages(t,m,made):
               f'<p style="font-size:14px">Jump to: {jump}</p>'
               +(f'<p style="font-size:14px">Free tools from AgentScout for {e(who)}: {ft}</p>' if ft else "")+
               f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we picked:</strong> each section takes the tools matched to that task in our directory, putting tools whose category and stated use cases fit the task first, then ordering by tracked GitHub stars. No paid placements.</p>'
-              f'{body_s}'+(f'<h2 style="font-size:16px;margin:32px 0 10px">Popular searches for {e(who)}</h2><p>{sr}</p>' if sr else "")+
+              +ROLE_NOTE.get(s,"")+f'{body_s}'+(f'<h2 style="font-size:16px;margin:32px 0 10px">Popular searches for {e(who)}</h2><p>{sr}</p>' if sr else "")+
               f'<p style="margin-top:24px">Other roles: {oth} · <a href="index.html">All roles</a></p>'
               f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Missing a tool? <a href="../submit.html">Submit it free</a>.</p></section>')
         open(f"for/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon); info.append((s,who,h,n)); DATA.setdefault('roles',[]).append((s,who,h,[b for _,b in secs],[x['slug'] for x in allitems]))

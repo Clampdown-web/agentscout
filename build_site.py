@@ -16,14 +16,31 @@ MEDIA_RULES=[("plan & storyboard",r"storyboard|screenplay|script coverage|pre-pr
 ("subtitles & transcripts",r"subtitle|caption|transcri"),("dub & localize",r"\bdub|lip.?sync|locali[sz]|translat"),("clean up audio",r"noise|dialogue|de-?reverb|repair|clean"),
 ("sound effects & Foley",r"sound effect|\bSFX|Foley|sound design"),("voiceover",r"voice ?over|narration|voice clon|voice convers|voices"),
 ("make music",r"song|music generat|compos|melod|beats?\b|singing|score|soundtrack"),("mix & master",r"\bmix|master"),("separate stems",r"\bstems?\b|vocal remov|separat|splitter|unmix")]
+# Art, design, 3D & photo categories (added Oct 18, 2026): hand-set use_cases in tools.json are kept; ART_RULES only fill empty ones.
+ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
+ART_UC={"generate images","open image models","concept art","logos & branding","vectorize","UI design","design graphics","social posts & ads","generate 3D","animate characters","3D scanning","3D texturing","architecture visuals","real estate photos","cull photos","edit photos","edit in your style","retouch portraits","upscale images","restore photos","remove backgrounds","product photos","headshots","organize photos","protect artwork"}
+ART_RULES=[("generate images",r"image generat|text-to-image|generat\w* images"),("concept art",r"illustrat|concept art"),("logos & branding",r"\blogos?\b|brand kit"),("vectorize",r"\bSVG\b|vectoriz"),
+("UI design",r"\bUI\b|wireframe|mockup|prototyp"),("social posts & ads",r"social posts?|\bads?\b|ad creatives?"),("design graphics",r"graphic design|posters?|infographic"),("generate 3D",r"\b3D (?:models?|assets?|worlds?)|to 3D\b"),
+("animate characters",r"rigg|character animation|mocap"),("cull photos",r"\bcull"),("retouch portraits",r"retouch|portrait"),("upscale images",r"upscal"),("remove backgrounds",r"background remov"),
+("product photos",r"product photo|on-model"),("headshots",r"headshot"),("real estate photos",r"real[- ]estate|virtual stag"),("organize photos",r"photo librar|face recognition"),("edit photos",r"photo edit|raw editor")]
+# Existing tools in other categories that also belong on the art task pages (explicit tags, Oct 18, 2026)
+ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-server":["UI design"],"talk-to-figma-mcp":["UI design"],"framelink-figma-mcp":["UI design"],
+"figma-console-mcp":["UI design"],"picsart-genai-mcp":["generate images","edit photos"],"icons8-mcp":["design graphics"],"brandfetch-mcp":["logos & branding"],
+"logo-dev-mcp":["logos & branding"],"mcp-for-blender":["generate 3D"],"imagesorcery-mcp":["remove backgrounds"],"comfyui":["generate images","open image models"],
+"adobe-firefly":["generate images"],"higgsfield":["generate images"],"dreamina":["generate images"],"luma-dream-machine":["generate images"],
+"scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
     d=x["name"]+" "+x["description"]+" "+x["category"]
-    x["use_cases"]=([u for u,p in MEDIA_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]) if x["category"] in MEDIA_CATS else ([u for u,p in RULES if re.search(p,d)][:3] or [x["category"]])
+    if x["category"] in ART_CATS:
+        _k=[u for u in (x.get("use_cases") or []) if u in ART_UC]
+        x["use_cases"]=_k or [u for u,p in ART_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]
+    else: x["use_cases"]=([u for u,p in MEDIA_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]) if x["category"] in MEDIA_CATS else ([u for u,p in RULES if re.search(p,d)][:3] or [x["category"]])
     x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
+    if x["slug"] in ART_XLINK_UC: x["use_cases"]=list(dict.fromkeys(x["use_cases"]+ART_XLINK_UC[x["slug"]]))
     if os.path.exists(f"assets/logos/{x['slug']}.png"): x["logo"]=f"assets/logos/{x['slug']}.png"
     else: x.pop("logo",None)
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
@@ -119,3 +136,6 @@ import build_seo; build_seo.run(t)
 import build_fresh; build_fresh.run(t)  # Updated dates, dateModified, quick comparison tables (Oct 18 2026)
 import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
+# Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
+import subprocess as _sp, sys as _sys
+if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)

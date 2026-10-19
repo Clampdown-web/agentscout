@@ -164,6 +164,10 @@ CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use
 "video generation":"Models and apps that generate video from text, images or references, from Runway, Luma, Google Flow, Kling and Firefly to open models you can run yourself, like LTX-2, Wan and HunyuanVideo. Tools with agents that plan and run multi-shot work come first.",
 "film & TV audio":"Audio post for film, TV and video: dialogue cleanup and repair, ADR and AI dubbing voices, Foley and sound effects, and mixing. Plugins like iZotope RX and sonible sit alongside dubbing services and open Foley models. For AI sound effects, also see ElevenLabs in Voice.",
 "music production":"AI for making and finishing music: song and score generation, vocal synthesis and tuning, stem separation, and mixing and mastering assistants such as iZotope Ozone and LANDR. Agentic music editors come first.",
+"image generation":"AI image generators and open image models: Midjourney, Leonardo, Ideogram, FLUX, Recraft, Nano Banana and Krea, plus open-source apps you run yourself such as Invoke, Krita AI Diffusion, SwarmUI and Qwen-Image. Tools that are commercially safe (licensed training data) say so in their listing.",
+"graphic design & branding":"Design agents and AI design tools for logos, brand kits, social posts, ads, UI mockups and vectors: Canva AI, Lovart, Adobe Express, Figma Make, Google Stitch, Pomelli and Penpot's MCP lead the page, since they plan and build designs for you on request.",
+"3D & concept art":"Text and image to 3D models and worlds, auto-rigging and character animation, sketch-to-render for product and architecture, and 3D scanning: Meshy, Tripo, Rodin, Spline, Vizcom, Hunyuan3D, TRELLIS, World Labs Marble and more.",
+"photography & photo editing":"AI for photographers: culling, editing in your own style, portrait retouching, upscaling and restoration, background removal, product photos, headshots, real-estate editing and private AI photo libraries. Lightroom and Photoshop's AI Assistant come first, then Aftershoot, Imagen, Evoto, Topaz and others.",
 "models & local runtimes":"Agentic models and the apps that run open models on your own computer or server, such as Ollama, LM Studio, LocalAI and Jan.",
 }
 def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
@@ -201,7 +205,14 @@ MEDIA_CATS={"film & TV production","video generation","film & TV audio","music p
 MEDIA_XLINK={"film & TV production":["davinci-resolve-mcp","mux-mcp","picsart-genai-mcp","mcp-for-blender","happyscribe-mcp","vidiq-mcp","twelvelabs-jockey-mcp","valossa-assistant-mcp","genspark","skywork"],
  "video generation":["minimax-mcp","picsart-genai-mcp","genspark","skywork"],
  "film & TV audio":["elevenlabs-agents","deepgram","happyscribe-mcp","minimax-mcp"],
- "music production":["elevenlabs-agents","minimax-mcp"]}
+ "music production":["elevenlabs-agents","minimax-mcp"],
+ # Art, design, 3D & photo categories (Oct 18, 2026)
+ "image generation":["comfyui","adobe-firefly","higgsfield","dreamina","luma-dream-machine","picsart-genai-mcp","minimax-mcp"],
+ "graphic design & branding":["canva-mcp","figma-mcp-server","talk-to-figma-mcp","framelink-figma-mcp","figma-console-mcp","icons8-mcp","brandfetch-mcp","logo-dev-mcp"],
+ "3D & concept art":["mcp-for-blender","scenario","intangible","simulon"],
+ "photography & photo editing":["imagesorcery-mcp","picsart-genai-mcp","topaz-video"]}
+ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
+LEAD_CATS=MEDIA_CATS|ART_CATS  # category pages that lead with agentic tools
 def media_xlink_cats(slug): return [c for c,v in MEDIA_XLINK.items() if slug in v]
 def media_xlink_html(c,t):
     by={x["slug"]:x for x in t}; its=[by[s] for s in MEDIA_XLINK.get(c,[]) if s in by]
@@ -210,7 +221,7 @@ def media_xlink_html(c,t):
     return f'<h2 style="font-size:18px;margin:32px 0 10px">Related tools in other categories</h2><p class="muted" style="margin:0 0 10px;font-size:14px">These are listed under their main category but are useful for {e(c)} work too.{note}</p><div class="grid">{"".join(card(x) for x in its)}</div>'
 def agentic_first(path,items):
     """Media category pages (Oct 18, 2026) lead with agentic tools; the order is otherwise unchanged."""
-    if path in {f"categories/{catslug(c)}.html" for c in MEDIA_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
+    if path in {f"categories/{catslug(c)}.html" for c in LEAD_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
     return items
 def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
     canon=B+path
@@ -222,7 +233,7 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
   "crypto":"crypto AI agent tools","customer support":"AI customer support agents","evals & observability":"AI agent evals & observability tools","frameworks":"AI agent frameworks",
-  "games":"AI game agents and tools","film & TV production":"AI film & TV production tools","video generation":"AI video generation tools","film & TV audio":"AI film & TV audio tools","music production":"AI music production tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
+  "games":"AI game agents and tools","film & TV production":"AI film & TV production tools","video generation":"AI video generation tools","film & TV audio":"AI film & TV audio tools","music production":"AI music production tools","image generation":"AI image generators","graphic design & branding":"AI graphic design & branding tools","3D & concept art":"AI 3D & concept art tools","photography & photo editing":"AI photography & photo editing tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
   "no-code builders":"no-code AI agent builders","personal agents":"personal AI agents","productivity":"AI productivity agents","research":"AI research agents",
   "sales & marketing":"AI sales & marketing agents","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
@@ -235,7 +246,7 @@ def seo(t,urls):
     for c,n in cats.most_common():
         items=[x for x in t if x["category"]==c]
         title=cat_title(c,n)
-        _nm=', '.join(x['name'] for x in (agentic_first(f"categories/{catslug(c)}.html",newfirst(items)) if c in MEDIA_CATS else items)[:3])
+        _nm=', '.join(x['name'] for x in (agentic_first(f"categories/{catslug(c)}.html",newfirst(items)) if c in LEAD_CATS else items)[:3])
         desc=next((d for d in (f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"{n} link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"{n} link-checked {cat_phrase(c)}, including {_nm}."[:158])
         import build_tasks as _bt,build_subtasks as _bs
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
@@ -245,7 +256,7 @@ def seo(t,urls):
         _lede=f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(c)} tools: {e(_bs.price_line(items))}.</p>'+_chips
-        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,(f"{c[0].upper()+c[1:]} AI tools" if c in MEDIA_CATS else f"{c[0].upper()+c[1:]} AI agent tools"),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
+        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,(f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools"),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))

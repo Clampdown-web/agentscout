@@ -36,7 +36,7 @@ TASKS=[
 ("agent-security","agent security and safety",set(),set(),r"secur|safety|guardrail|permission|policy|governance","Guardrails, policies and monitoring that keep agents from doing what they shouldn't."),
 ("testing-apps","testing apps",set(),set(),r"\bQA\b|\btest(s|ing)?\b|end-to-end|\bE2E\b","Agents that write and run tests, click through your app and report what breaks."),
 ("making-videos","making videos",set(),set(),r"video","AI agents and tools that script, edit or generate video."),
-("making-images-and-design","images and design",{"vision"},{"computer vision","make diagrams"},r"\bimage|design|diagram|vision|visual","Agents for visual work: generating images, diagrams and designs, or understanding what's in a picture."),
+("making-images-and-design","images and design",{"image generation","graphic design & branding","3D & concept art","photography & photo editing"},{"make diagrams","generate images","design graphics","logos & branding","UI design"},r"\bimage|design|diagram|visual","AI agents for visual work: design agents that build graphics and brand assets from a brief, image generators you can direct by chat, diagram makers, and MCP servers that let agents work in Figma, Canva and Penpot."),
 ("games","AI games and game makers",{"games"},set(),r"\bgames?\b|game master|dungeon|NPC|Minecraft","AI-made and AI-driven games: text adventures, AI game masters for tabletop, games against AI agents, AI NPC engines and tools that make games."),
 ("crypto-and-wallets","crypto and wallets",{"crypto"},set(),r"crypto|wallet|blockchain|onchain|stablecoin|x402|web3","Wallets, payment rails and tools that let agents hold funds and pay for things on their own."),
 ("agent-payments","agent payments",set(),set(),r"payment|pay for|checkout|billing|x40[12]","Tools that let agents pay, get paid and handle checkout without a human clicking buy."),
@@ -66,20 +66,44 @@ TASKS=[
 ("video-post-production","video post-production",set(),set(),r"\bedit|rough cut|subtitle|caption|colou?r|grading|\bVFX|upscal|enhanc|lip.?sync|visual dubbing|composit|roto|footage|transcri","Picture post in one place: editing and assistant-editor agents, subtitles, color, VFX, upscaling and visual dubbing, grouped by stage."),
 ("audio-post-production","audio post-production",set(),set(),r"dialogue (clean|repair|isolat|level)|dialogue,|Foley|sound effects?|\bADR\b|loudness|de-?reverb|reverb|noise|echo|voice isolation|sound to picture|\bDME\b|\bdubbing\b|audio repair|audio post|sound design|clean up audio","Sound for picture, grouped by stage: dialogue cleanup, ADR and dubbing voices, Foley and sound effects, and the editors and mixing tools that tie it together."),
 ("music-mixing-mastering","music mixing and mastering",set(),{"mix & master"},r"\bmix|master|pitch correction|vocal (mixing|tuning)|AutoTune|level rider","Mixing and mastering assistants for music: AI mix and master services, mixing and vocal plugin suites, pitch correction and loudness tools."),
+# Art, design, 3D & photo tasks (Oct 18, 2026): art-only pages (see ART_TASKS)
+('open-source-image-generation','open-source image generation',set(),{'open image models'},r'open[- ](?:source|weights?)','Open models and free local apps for AI image generation: run FLUX, Stable Diffusion, Qwen-Image and more on your own computer, with no per-image fees and full control.'),
+('illustration-and-concept-art','illustration and concept art',set(),{'concept art'},r'illustrat|concept art|character design|sketch(?:es)? (?:to|into)','Tools for illustrators and concept artists: style-controlled generation, sketch-to-render, painting assistants and private style models.'),
+('logo-and-brand-design','logos and brand kits',set(),{'logos & branding'},r'\\blogos?\\b|brand kit|brand identity|on-brand','AI logo makers and brand tools that create a logo, colors, fonts and on-brand assets from a short brief.'),
+('vectorizing-images','vectorizing images',set(),{'vectorize'},r'\\bvectors?\\b|\\bSVG\\b|vectoriz','Turn bitmaps into clean SVG, PDF or EPS vectors, or generate vector art directly.'),
+('ui-design-and-mockups','UI design and mockups',set(),{'UI design'},r'\\bUI\\b|wireframe|mockup|prototyp','Prompt-to-UI tools that turn a description, sketch or screenshot into editable screens, wireframes, prototypes and front-end code.'),
+('social-posts-and-ad-creatives','social posts and ad creatives',set(),{'social posts & ads'},r'social (?:media )?posts?|\\bads?\\b|ad creatives?|posters?|flyers?|campaigns?','AI design tools and agents that make social posts, ads, posters and whole campaigns from a brief, in your brand style.'),
+('text-to-3d','text and image to 3D',set(),{'generate 3D'},r'\\b3D (?:models?|assets?|mesh\\w*|worlds?|objects)|text-to-3D|image-to-3D|to 3D\\b','Generate textured 3D models, scenes and worlds from a prompt or a picture, ready for games, AR, printing or product design.'),
+('3d-rigging-and-animation','3D rigging and character animation',set(),{'animate characters'},r'auto-?rig|rigg(?:ed|ing)|character animation|motion capture|mocap','Auto-riggers and AI animation tools that turn a static character into one that moves, from text, video or keyframes.'),
+('architecture-and-real-estate-visuals','architecture and real estate visuals',set(),{'real estate photos', 'architecture visuals'},r'architect|interior|SketchUp|Revit|real[- ]estate|virtual(?:ly)? stag','AI renderers for architects and interior designers, plus real-estate photo editing and virtual staging for listings.'),
+('photo-culling','photo culling',set(),{'cull photos'},r'\\bcull','AI culling that picks the keepers from a shoot: flags blinks, focus misses and duplicates so you edit only the best frames.'),
+('photo-editing-in-your-style','AI photo editing in your style',set(),{'edit in your style'},r'learns your (?:\\w+ )?(?:editing )?style|in your (?:own )?style|editing profile','AI that learns how you edit, from your past Lightroom catalogs or presets, and batch-edits new shoots the same way.'),
+('portrait-retouching','portrait retouching',set(),{'retouch portraits'},r'retouch|portrait','Batch portrait retouching: skin, blemishes, eyes and lighting, with control over how natural it stays.'),
+('upscaling-and-restoring-photos','upscaling and restoring photos',set(),{'upscale images', 'restore photos'},r'upscal|enlarg|restor\\w* (?:old|faces|photos)|blurry','Upscale low-resolution images and restore old, blurry or damaged photos with AI.'),
+('background-removal','background removal',set(),{'remove backgrounds'},r'background remov|remove backgrounds?|cutouts?','One-click background removal and replacement for product shots, portraits and design work, with APIs for bulk jobs.'),
+('product-photography','AI product photography',set(),{'product photos'},r'product photo|e-commerce|on-model|fashion (?:brands|photos)|listings?','AI product photoshoots for online sellers: studio backgrounds, lifestyle scenes and on-model fashion images from one product shot.'),
+('ai-headshots','AI headshots',set(),{'headshots'},r'headshot','Professional headshots made from your own selfies. Every tool here works from photos of you that you upload yourself.'),
+('organizing-photos','organizing photo libraries',set(),{'organize photos'},r'photo (?:library|libraries)|organi[sz]|face recognition|keyword','AI photo libraries and catalogers that tag, search and sort large collections, including private self-hosted options.'),
 ]
 ORIG={T[0] for T in TASKS[:37]}  # the first 37 task pages (Oct 2026); later batches only append to their related links
 MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
-TASK_NEG={"audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage"}  # keeps picture tools off the sound page
+TASK_NEG={"audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage","building-voice-agents":r"from a voice or text request"}  # keeps picture tools off the sound page
 MEDIA_TASKS={"storyboarding","rough-cuts","subtitles","dubbing","vfx","dialogue-cleanup","scoring","stem-separation","video-post-production","audio-post-production","music-mixing-mastering"}
 _MEDIA_ONLY_TASKS=MEDIA_TASKS  # these pages only list film, TV, video and music tools
+ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
+ART_TASKS={'open-source-image-generation','illustration-and-concept-art','logo-and-brand-design','vectorizing-images','ui-design-and-mockups','social-posts-and-ad-creatives','text-to-3d','3d-rigging-and-animation','architecture-and-real-estate-visuals','photo-culling','photo-editing-in-your-style','portrait-retouching','upscaling-and-restoring-photos','background-removal','product-photography','ai-headshots','organizing-photos'}
+import relevance  # relevance score (Oct 18, 2026): one generic keyword is no longer enough; see relevance.py and scripts/check_relevance.py
 def match(x,T):
     _,_,cats,ucs,rx,_=T
-    _m=x.get("category") in MEDIA_CATS
+    c=x.get("category"); _m=c in MEDIA_CATS; _a=c in ART_CATS
     if T[0] in _MEDIA_ONLY_TASKS and not _m: return False
+    if T[0] in ART_TASKS:  # art-only pages: art tools, plus tools explicitly tagged with the page's use case
+        if not _a: return bool(set(x.get("use_cases",[]))&ucs)
+        return c in cats or bool(set(x.get("use_cases",[]))&ucs) or bool(re.search(rx,x.get("description",""),re.I))
     if _m and T[0] not in MEDIA_TASKS and not x.get("agentic"): return False  # non-agentic media tools stay off the agent task pages
+    if _a and not x.get("agentic"): return False  # same for art, design, 3D and photo tools
     if T[0] in TASK_NEG and re.search(TASK_NEG[T[0]],x.get("description",""),re.I): return False
-    if x.get("category") in cats or set(x.get("use_cases",[]))&ucs: return True
-    return bool(re.search(rx,f'{x.get("name","")} {x.get("description","")} {x.get("pricing","")}',re.I))
+    return relevance.relevant(x,T)
 REDIRECTED_TASKS={"games"}  # Oct 18 2026: same tools as categories/games (redirect in redirects.json)
 def mapping(t):
     m={}
@@ -116,8 +140,12 @@ _TT_LABEL={"agent-memory":"agent memory","searching-the-web":"agent web search",
 _TT_FULL={"open-source-agents":"Best open-source AI agents","storyboarding":"Best AI storyboarding and previs tools","rough-cuts":"Best AI tools for rough cuts and assembly edits",
  "subtitles":"Best AI subtitle and caption tools","dubbing":"Best AI dubbing and lip sync tools","vfx":"Best AI VFX and compositing tools","dialogue-cleanup":"Best AI dialogue cleanup and repair tools",
  "scoring":"Best AI music for scoring and soundtracks","stem-separation":"Best AI stem separation tools","video-post-production":"AI video post-production tools by stage",
- "audio-post-production":"AI audio post-production tools by stage","music-mixing-mastering":"Best AI music mixing and mastering tools"}
-_MEDIA_PTR={"making-videos":'<p style="margin:0 0 6px;font-size:14px">This page lists AI agents that script, edit or generate video. For every film and video tool, see <a href="../categories/film-tv-production.html">Film &amp; TV production</a>, <a href="../categories/video-generation.html">AI video generation</a>, <a href="../categories/film-tv-audio.html">Film &amp; TV audio</a> and <a href="../categories/music-production.html">Music production</a>.</p>',
+ "audio-post-production":"AI audio post-production tools by stage","music-mixing-mastering":"Best AI music mixing and mastering tools",
+ "open-source-image-generation":"Best open-source AI image generators","illustration-and-concept-art":"Best AI tools for illustration and concept art","logo-and-brand-design":"Best AI logo makers and brand kit tools","vectorizing-images":"Best AI tools to vectorize images","ui-design-and-mockups":"Best AI UI design and mockup tools","social-posts-and-ad-creatives":"Best AI tools for social posts and ad creatives","text-to-3d":"Best AI text and image to 3D tools","3d-rigging-and-animation":"Best AI 3D rigging and character animation tools","architecture-and-real-estate-visuals":"Best AI tools for architecture and real estate visuals","photo-culling":"Best AI photo culling tools","photo-editing-in-your-style":"Best AI photo editors that learn your style","portrait-retouching":"Best AI portrait retouching tools","upscaling-and-restoring-photos":"Best AI photo upscalers and restoration tools","background-removal":"Best AI background removal tools","product-photography":"Best AI product photography tools","ai-headshots":"Best AI headshot generators","organizing-photos":"Best AI photo library and organizing tools","making-images-and-design":"Best AI agents for images and design"}
+_ART_NOTE='<p style="margin:0 0 6px;font-size:13px;color:var(--muted)">Selling AI-assisted art? Check each tool\'s license and see the short <a href="../for/artists.html#copyright">commercial-use and copyright note</a>.</p>'
+_MEDIA_PTR={"making-images-and-design":'<p style="margin:0 0 6px;font-size:14px">This page lists AI agents and MCP servers that create or edit visuals for you. For every art, design, 3D and photo tool, see <a href="../categories/image-generation.html">Image generation</a>, <a href="../categories/graphic-design-branding.html">Graphic design &amp; branding</a>, <a href="../categories/3d-concept-art.html">3D &amp; concept art</a> and <a href="../categories/photography-photo-editing.html">Photography &amp; photo editing</a>.</p>',
+ "illustration-and-concept-art":_ART_NOTE,"open-source-image-generation":_ART_NOTE,
+ "making-videos":'<p style="margin:0 0 6px;font-size:14px">This page lists AI agents that script, edit or generate video. For every film and video tool, see <a href="../categories/film-tv-production.html">Film &amp; TV production</a>, <a href="../categories/video-generation.html">AI video generation</a>, <a href="../categories/film-tv-audio.html">Film &amp; TV audio</a> and <a href="../categories/music-production.html">Music production</a>.</p>',
  "video-post-production":'<p style="margin:0 0 6px;font-size:14px">Picture post only. For sound, see <a href="audio-post-production.html">audio post-production</a>; for music, see <a href="music-mixing-mastering.html">music mixing and mastering</a>. Every tool: <a href="../categories/film-tv-production.html">Film &amp; TV production</a>.</p>',
  "audio-post-production":'<p style="margin:0 0 6px;font-size:14px">Sound for picture only. For music, see <a href="music-mixing-mastering.html">music mixing and mastering</a>; for picture, see <a href="video-post-production.html">video post-production</a>. Every tool: <a href="../categories/film-tv-audio.html">Film &amp; TV audio</a>.</p>',
  "music-mixing-mastering":'<p style="margin:0 0 6px;font-size:14px">Music post only. For dialogue and sound for picture, see <a href="audio-post-production.html">audio post-production</a>. Every tool: <a href="../categories/music-production.html">Music production</a>.</p>'}
@@ -273,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610181830"  # bump when app.js/styles.css change
+ASSET_V="202610181900"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
