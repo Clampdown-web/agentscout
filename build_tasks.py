@@ -301,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610191400"  # bump when app.js/styles.css change
+ASSET_V="202610191500"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
@@ -351,6 +351,10 @@ def sitewide(t):
             if fm2 and 'class="navbt"' not in fm2.group(0):
                 fn2=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:f'<a class="navbt" href="{d}bot-templates/">Bot templates</a> · '+mm.group(1),fm2.group(0),count=1)
                 s=s[:fm2.start()]+fn2+s[fm2.end():]
+            if f.startswith("tools/") and os.path.exists("data/bt-links.json"):  # related Bot templates on matching tool pages (SEO pass Oct 19 2026)
+                s=re.sub(r'<p class="btrel".*?</p>','',s,flags=re.S)
+                L=__import__("json").load(open("data/bt-links.json")).get(os.path.basename(f)[:-5])
+                if L: s=re.sub(r'(\n\s*</div>\s*<aside class="panel">)',lambda mm:'<p class="btrel" style="margin:0 0 28px;font-size:14px">Bot templates: '+", ".join(f'<a href="../bot-templates/{a}.html">{e(n)}</a> ({e(pl)})' for a,n,pl in L)+' · <a href="../bot-templates/">All Bot templates</a></p>'+mm.group(1),s,count=1)
             if f=="index.html" and os.path.exists("data/bt-strip.inc"):
                 s=re.sub(r'<section id="bt-strip".*?</section>','',s,flags=re.S)
                 s=s.replace("<!--MAKERS-END-->","<!--MAKERS-END-->"+open("data/bt-strip.inc").read(),1)
@@ -372,6 +376,8 @@ def sitewide(t):
         if "consent.js" not in s and "track.js?v=" in s: s=re.sub(r'<script src="([^"]*?)track\.js\?v=\d+" defer></script>',lambda mm:f'<script src="{mm.group(1)}consent.js?v={ASSET_V}" defer></script>'+mm.group(0),s,count=1)
         s=__import__("build_share").apply(f,s,d,ASSET_V)  # Share button + counter (Oct 18 2026)
         s=__import__("ga4").apply(s,f)  # Google Analytics 4 tag + CSP hosts, consent-aware (ga4.py, Oct 19 2026)
+        PC='<link rel="preconnect" href="https://agentscout-image.agentscouthq.workers.dev" crossorigin>'  # share counter host (Lighthouse preconnect, Oct 19 2026)
+        if PC not in s and "share.js" in s and "</head>" in s: s=s.replace("</head>",PC+"</head>",1)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
 
