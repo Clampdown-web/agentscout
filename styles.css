@@ -383,3 +383,8 @@ body{overflow-wrap:break-word}.btn{max-width:100%}.hg-head h2{white-space:normal
    so 1.52em makes "AgentScout" match the surrounding text size; -0.4em puts the svg text baseline on the line's baseline. */
 img.aswm{display:inline-block;height:1.52em;width:auto;max-width:100%;aspect-ratio:168/32;vertical-align:-.4em;margin:0 -.5em 0 .05em}
 html[data-theme=dark] img.aswm{filter:invert(1) hue-rotate(180deg)}
+/* Overflow at 390px with 1.3x text (full live check, Oct 19, 2026 PT): a long one-word tool name in the page title, and a long
+   hostname in the "Visit ..." button, could not wrap. Let both break when they must; normal-size buttons keep their one-line height. */
+.detail h1.icoh>span:not(.ico){min-width:0;overflow-wrap:anywhere}
+.detail .acts{flex-wrap:wrap;max-width:100%}
+.detail .acts a.btn{max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:center;height:auto;min-height:38px;padding-top:7px;padding-bottom:7px}
