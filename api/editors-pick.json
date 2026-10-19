@@ -1,12 +1,12 @@
 {
- "date": "2026-10-18",
- "slug": "privategpt",
- "name": "PrivateGPT",
- "why": "A standout frameworks tool for builders: open-source API layer that turns local models into private AI applications, with RAG, tools, skills, MCP and text-to-SQL on any OpenAI-compatible server.",
- "category": "frameworks",
- "description": "Open-source API layer that turns local models into private AI applications, with RAG, tools, skills, MCP and text-to-SQL on any OpenAI-compatible server.",
- "logo": "https://agentscouthq.com/assets/logos/privategpt.png",
- "page": "https://agentscouthq.com/tools/privategpt.html",
+ "date": "2026-10-19",
+ "slug": "webclaw",
+ "name": "webclaw",
+ "why": "A standout browser/computer use tool for builders: rust web extraction tool that turns sites into clean Markdown or JSON for agents, as a CLI, MCP server and REST API, with a hosted API.",
+ "category": "browser/computer use",
+ "description": "Rust web extraction tool that turns sites into clean Markdown or JSON for agents, as a CLI, MCP server and REST API, with a hosted API.",
+ "logo": "https://agentscouthq.com/assets/logos/webclaw.png",
+ "page": "https://agentscouthq.com/tools/webclaw.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -19,6 +19,10 @@
   {
    "date": "2026-10-18",
    "slug": "privategpt"
+  },
+  {
+   "date": "2026-10-19",
+   "slug": "webclaw"
   }
  ]
 }
