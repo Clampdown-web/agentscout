@@ -43,7 +43,7 @@ def apply_bar(enabled):
     if enabled and not ready: print("build_sponsor: SPONSOR_ENABLED is on but data/sponsor_bar.json is incomplete; no bar rendered")
     rx=re.compile(re.escape(BAR_START)+".*?"+re.escape(BAR_END),re.S); n=0
     for f in glob.glob("**/*.html",recursive=True):
-        if f in ("outreach-tracker.html","sponsor.html") or f.startswith(("app/","node_modules/")): continue
+        if f in ("outreach-tracker.html","sponsor.html") or f.startswith(("app/","node_modules/","preview/")): continue
         s=open(f,errors="ignore").read(); o=s; s=rx.sub("",s)
         if ready and "</body>" in s and 'http-equiv="refresh"' not in s:
             d="../"*f.count("/"); s=s.replace("</body>",bar_html(sp,d)+"</body>",1); n+=1

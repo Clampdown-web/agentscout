@@ -301,12 +301,12 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610190930"  # bump when app.js/styles.css change
+ASSET_V="202610191100"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
-        if os.path.basename(f) in SKIP or f.startswith(("node_modules","app/")): continue
+        if os.path.basename(f) in SKIP or f.startswith(("node_modules","app/","preview/")): continue
         s=open(f).read(); o=s
         s=re.sub(r'<section class="nlband".*?</section>\n?',"",s,flags=re.S)  # dark "5 agent tools" strip removed sitewide
         d="/" if f=="404.html" else "../"*f.count("/")

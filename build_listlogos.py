@@ -37,7 +37,7 @@ def apply(s,bys):
 def run(t):
     bys={x["slug"]:x for x in t}; tot=0; pages=0
     for f in glob.glob("**/*.html",recursive=True):
-        if f.startswith(("app/","node_modules/")) or f in ("outreach-tracker.html","og.html","stats.js.html"): continue
+        if f.startswith(("app/","node_modules/","preview/")) or f in ("outreach-tracker.html","og.html","stats.js.html"): continue
         s=open(f,errors="ignore").read()
         if "tools/" not in s: continue
         s2,n=apply(s,bys)
