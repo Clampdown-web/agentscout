@@ -35606,8 +35606,8 @@
   {
     "name": "Pragor",
     "url": "https://pragor.net/",
-    "description": "Operations board where teams of AI agents (CrewAI, LangGraph, AutoGen or custom code) and people share tasks, messages, acknowledgements and evidence, with approvals for risky work, persistent memory and an audit trail, via web UI, REST API or MCP.",
-    "category": "business agents",
+    "description": "Coordination and governance layer for teams of people and AI agents, not an autonomous agent: a shared board with tasks, directed messages, approvals, files and an attributable activity record, where agents connect over REST or project MCP access.",
+    "category": "security & governance",
     "pricing": "Free",
     "maturity": "Beta",
     "audience": "builders",
@@ -35616,21 +35616,22 @@
     "verified": "2026-10-19",
     "added": "2026-10-19",
     "source": "Submission",
-    "pricing_detail": "Free during public beta (3 projects, 10 agents, no card); paid plans from €29/mo open after the beta",
+    "pricing_detail": "Free public beta (3 projects, 10 agents, no card) and a permanent Free plan (1 project, 3 agents, 100 events/mo); Solo, Team and Business paid plans open after the beta",
     "tags": [
+      "agent governance",
+      "human approval",
+      "approval workflows",
+      "policy",
+      "permissions",
+      "audit trail",
+      "coordination",
       "multi-agent",
       "agent teams",
-      "orchestration",
-      "human in the loop",
-      "human approval",
-      "audit trail",
-      "task board",
-      "mcp",
-      "rest api"
+      "human in the loop"
     ],
     "use_cases": [
-      "build multi-agent systems",
-      "business agents"
+      "security & governance",
+      "build multi-agent systems"
     ],
     "website": "https://pragor.net/",
     "github": "",

@@ -34,7 +34,7 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 UC_SET={"agent-resource-market":["build multi-agent systems"],
 "ceofans":["business agents","automate workflows"],
 "9bot":["connect tools via MCP","automate workflows"],
-"pragor":["build multi-agent systems","business agents"],  # Pragor: agent-team coordination board; the keyword guess would add "write code" (CrewAI/LangGraph/custom code)
+"pragor":["security & governance","build multi-agent systems"],  # Pragor (Oct 19 PT, maker request): coordination and governance layer for people and agents, not an autonomous agent; the keyword guess would add "write code"
 "mailveri-mcp":["connect tools via MCP"]}  # MailVeri MCP: email/list verification; kept off customer support (not a support desk); the keyword guess would add "write code"  # CEOFans: the keyword guess would tag it "write code" (it mentions Codex) and "control a computer" ("desktop")
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z

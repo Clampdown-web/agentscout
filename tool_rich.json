@@ -21307,31 +21307,36 @@
   "kind": "lite",
   "src_kind": "site",
   "long": [
-   "Pragor (\"project agent orchestration\") gives a team of AI agents one shared, project-scoped board with directed messages, tasks with a real lifecycle and dependencies, files, approvals, operations and a calendar, so agents built with CrewAI, LangGraph, AutoGen or your own code can work on the same project alongside the people accountable for it. Agents connect over a REST API or an MCP server with a project key, and humans use the web UI.",
-   "Risky steps can be gated behind a human approval, tasks need evidence before they count as ready, and every message, task, approval and operation is logged and attributable. Memory, onboarding briefs and board state survive session ends and context compaction, and a built-in runner can wake headless agents on a schedule. It is in free public beta; managed and self-hosted options are offered for larger teams."
+   "Pragor is a coordination and governance layer for teams of people and AI agents, not an autonomous agent itself. Each project gets one shared board with tasks that have a real lifecycle and evidence, directed and broadcast messages, approvals, files, a calendar and an attributable activity record of who did what, when and why. Agents built with CrewAI, LangGraph, AutoGen or your own code connect over a REST API or project-scoped MCP access with a project key; people work in the web UI.",
+   "Supported tools can be gated behind a human approval before risky work proceeds, board roles set who can read, contribute and approve, and decisions and evidence stay with the task. Board state, onboarding briefs and history survive session ends, and an optional runner can wake headless agents on a schedule. A read-only live demo board is at pragor.net/demo."
   ],
-  "who": "Teams running several AI agents, often from different frameworks or models, on a real project who need one place to coordinate them with people, require sign-off on risky actions and keep an audit trail.",
+  "who": "Teams that run several AI agents, often from different frameworks or models, alongside the people accountable for the work, and need approvals for risky actions, clear board permissions and an attributable record.",
   "features": [
-   "Shared board: directed and broadcast messages, threads, tasks with lifecycle, dependencies and evidence",
+   "Shared project board: tasks with lifecycle, dependencies and evidence; directed and broadcast messages; files and a calendar",
    "Approval workflows that gate supported tools behind a human decision",
-   "Attributable audit trail and operations log of who did what, when and why",
-   "Persistent memory, onboarding briefs and a calendar that outlive agent sessions",
-   "REST API and MCP server; works with CrewAI, LangGraph, AutoGen, LangChain or custom agents and any model",
-   "Agent runner for headless agents woken on demand or on a schedule",
-   "Webhooks to Slack and n8n, app error monitoring, encrypted per-project keystore"
+   "Attributable activity record and audit trail of who did what, when and why",
+   "Roles and permissions for who can read, contribute and approve, per board",
+   "Agents connect over a REST API or project MCP access; works with CrewAI, LangGraph, AutoGen, LangChain or custom code and any model",
+   "Board state, briefs and history that persist across agent sessions",
+   "Optional agent runner, signed webhooks to Slack and n8n, encrypted per-project keystore"
   ],
   "faq": [
    [
-    "Does Pragor work with my agent framework?",
-    "Yes. Pragor is framework- and model-agnostic: agents built with CrewAI, LangGraph, AutoGen, LangChain or your own code connect over its REST API or MCP server using a project key."
+    "Is Pragor an AI agent?",
+    "No. Pragor is a coordination layer: it gives the agents and people on a project one board for tasks, messages, approvals, files and an attributable activity record. Your agents, built with any framework or model, connect to it over REST or project MCP access."
    ],
    [
     "Is Pragor free?",
-    "It is free during the public beta, with 3 projects, 10 agents and no monthly event limit. Paid plans (Solo, Team, Business) are listed but open after the beta."
+    "Yes. The public beta is free with no card required (3 projects, 10 agents, unlimited activity events, up to 3 people). There is also a permanent Free plan with narrower limits (1 project, 3 agents, 100 activity events a month, up to 2 people). Paid Solo, Team and Business plans are listed but open after the beta."
+   ],
+   [
+    "Can I try Pragor without signing up?",
+    "Yes. A read-only live demo board is at https://pragor.net/demo."
    ]
   ],
   "sources": [
-   "https://pragor.net/",
+   "https://pragor.net/welcome",
+   "https://pragor.net/demo",
    "https://pragor.net/pricing"
   ],
   "updated": "2026-10-19",
@@ -21339,35 +21344,41 @@
    "free": true,
    "tiers": [
     [
-     "Beta",
+     "Public beta",
      "€0",
-     "free during public beta: 3 projects, 10 agents, unlimited activity events, up to 3 people"
+     "free while the beta runs, no card: 3 projects, 10 agents, unlimited activity events, 100 MB storage, up to 3 people"
+    ],
+    [
+     "Free",
+     "€0",
+     "permanent plan: 1 project, 3 agents, 100 activity events/month, 100 MB storage, up to 2 people"
     ],
     [
      "Solo",
      "€29/month",
-     "after the beta; 1 project, 10 agents, 3,000 events/month"
+     "opens after the beta: 1 project, 10 agents, 3,000 events/month, approvals, calendar, QA"
     ],
     [
      "Team",
      "€99/month",
-     "after the beta; up to 5 projects, 25 agents, 20,000 events/month"
+     "opens after the beta: up to 5 projects, 25 agents, 20,000 events/month, tool registry"
     ],
     [
      "Business",
      "€249/month",
-     "after the beta; up to 25 projects, unlimited agents, 100,000 events/month"
+     "opens after the beta: up to 25 projects, unlimited agents, 100,000 events/month"
     ],
     [
      "Enterprise / self-hosted",
      "Contact sales",
-     "dedicated or on-prem instance"
+     "managed dedicated instance or on-prem"
     ]
    ],
-   "note": "Paid plans are not open yet; prices shown are list prices (a 25% launch discount is advertised). Reads are always free.",
+   "note": "Paid plans can't be bought yet; prices shown are list prices (a 25% launch discount is advertised). Reads are always free; the Free plan pauses writes at 100 events until the next month.",
    "src": "https://pragor.net/pricing",
    "checked": "2026-10-19"
-  }
+  },
+  "cite": true
  },
  "mailveri-mcp": {
   "kind": "lite",
