@@ -11,7 +11,8 @@ def _file(u):
     return p
 _V=[(re.compile(r"\?v=\d+"),""),(re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?(\.\d+)?Z?"),""),
     (re.compile(r"Links checked [A-Z][a-z]{2} \d{1,2}, \d{4}"),""),(re.compile(r'"dateModified": ?"[^"]*"'),""),
-    (re.compile(r'<section id="nlblock".*?</section>',re.S),"")]  # sitewide signup box is page chrome, not content (Oct 18 2026)
+    (re.compile(r'<section id="nlblock".*?</section>',re.S),""),
+    (re.compile(r'<!-- ga4 -->.*?<!-- /ga4 -->',re.S),""),(re.compile(r' https://\*\.google-analytics\.com https://\*\.analytics\.google\.com https://www\.googletagmanager\.com| https://www\.googletagmanager\.com'),"")]  # GA4 tag + CSP are page chrome (Oct 19 2026)  # sitewide signup box is page chrome, not content (Oct 18 2026)
 def _hash(p):
     s=open(p,encoding="utf-8",errors="replace").read()
     for r,v in _V: s=r.sub(v,s)

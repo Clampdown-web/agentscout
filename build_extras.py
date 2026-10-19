@@ -397,6 +397,9 @@ def _apply_featured():
         _here=_os.getcwd(); _os.chdir(_FEAT_CWD)
         if _os.path.exists("featured.json") and _os.path.exists("index.html"):
             import build_featured; build_featured.run()
+        # Google Analytics 4 tag on every page (ga4.py, Oct 19 2026); before lastmod, which ignores the tag block
+        if _os.path.exists("ga4.py"):
+            import ga4; ga4.apply_all()
         if _os.path.exists("sitemap.xml"):
             import build_lastmod; build_lastmod.run()
         # Re-write redirects.json pages after cleanup in best/ and tasks/ may have deleted them.

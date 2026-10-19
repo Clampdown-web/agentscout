@@ -1,5 +1,5 @@
 /* AgentScout privacy choices. Categories: necessary (always on: saved tools, votes, theme), analytics (anonymous
-   counts sent by track.js) and embeds (the Beehiiv newsletter sign-up, which may set Beehiiv's own cookies).
+   counts sent by track.js, plus Google Analytics 4 via the ga4 tag in each page head, Oct 19 2026) and embeds (the Beehiiv newsletter sign-up, which may set Beehiiv's own cookies).
    Strict regions (from the Worker's /geo; any failure counts as strict): banner with Accept all / Reject all /
    Customize, and nothing optional runs until the visitor chooses. Elsewhere: a small dismissible notice, analytics
    and embeds on by default, opt-out one tap away. The choice is kept in localStorage "as_consent". */
@@ -37,18 +37,18 @@
   var PRIV=relRoot()+"privacy.html";
   function relRoot(){var s=document.querySelector('script[src*="consent.js"]');return s?s.getAttribute("src").replace(/consent\.js.*$/,""):""}
   function showBanner(){closeBar();
-    bar=el('<div class="as-bar" role="region" aria-labelledby="as-bt"><p><b id="as-bt">Privacy choices:</b> we\'d like to count anonymous visits (no cookies, nothing that identifies you) and load Beehiiv\'s newsletter sign-up, which may set its own cookies. Nothing optional runs until you choose. <a href="'+PRIV+'">Privacy policy</a></p><div class="as-row"><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button><button type="button" class="btn" data-a="custom">Customize</button></div></div>');
+    bar=el('<div class="as-bar" role="region" aria-labelledby="as-bt"><p><b id="as-bt">Privacy choices:</b> we\'d like to measure visits anonymously (our own cookie-free counter plus Google Analytics, which sets its own cookies; no ads) and load Beehiiv\'s newsletter sign-up, which may set its own cookies. Nothing optional runs until you choose. <a href="'+PRIV+'">Privacy policy</a></p><div class="as-row"><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button><button type="button" class="btn" data-a="custom">Customize</button></div></div>');
     bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="all")set(1,1);else if(a==="none")set(0,0);else if(a==="custom")openPicker()});
     mount()}
   function showNotice(){closeBar();
-    bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>Anonymous visit counts, no cookies. <button type="button" class="as-link" data-a="opt">Opt out</button> · <button type="button" class="as-link" data-a="custom">Privacy choices</button></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
+    bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>Anonymous visit stats (incl. Google Analytics). <button type="button" class="as-link" data-a="opt">Opt out</button> · <button type="button" class="as-link" data-a="custom">Privacy choices</button></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
     bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="ok")set(S.analytics,S.embeds);else if(a==="opt")set(0,S.embeds);else if(a==="custom")openPicker()});
     mount()}
   function openPicker(){
     if(document.querySelector(".as-ov"))return;lastFocus=document.activeElement;
     var ov=el('<div class="as-ov"><div class="as-dlg" role="dialog" aria-modal="true" aria-labelledby="as-pt" aria-describedby="as-pd"><h2 id="as-pt">Privacy choices</h2><p id="as-pd">Choose what AgentScout may use. You can change this anytime from "Privacy choices" in the footer. <a href="'+PRIV+'">Privacy policy</a></p>'+
       '<label class="as-cat"><div><b>Necessary</b><span>Always on. Saved tools, votes, theme and the image generator cooldown, kept only in your browser.</span></div><input type="checkbox" class="as-sw" checked disabled aria-label="Necessary, always on"></label>'+
-      '<label class="as-cat"><div><b>Analytics</b><span>Anonymous counts of page views, searches and clicks. No cookies, no personal data; stored only as daily totals.</span></div><input type="checkbox" class="as-sw" id="as-an"'+(S.analytics?" checked":"")+'></label>'+
+      '<label class="as-cat"><div><b>Analytics</b><span>Anonymous counts of page views, searches and clicks (our own counter, no cookies), plus Google Analytics usage stats, which set Google Analytics cookies. No ads, no data sold.</span></div><input type="checkbox" class="as-sw" id="as-an"'+(S.analytics?" checked":"")+'></label>'+
       '<label class="as-cat"><div><b>Embedded content</b><span>The newsletter sign-up form, run by Beehiiv. Beehiiv may set its own cookies when you use it.</span></div><input type="checkbox" class="as-sw" id="as-em"'+(S.embeds?" checked":"")+'></label>'+
       '<div class="as-row"><button type="button" class="btn primary" data-a="save">Save choices</button><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button></div></div></div>');
     function close(){ov.remove();document.removeEventListener("keydown",key,true);if(lastFocus&&lastFocus.focus)lastFocus.focus()}
