@@ -62,7 +62,11 @@ def _facts(n,r):
         li.append(("Open source",(f"Yes ({re.sub(r'^the ','',lic)})" if F.get("osi") else f"Source-available, not OSI open source: {lic}") if F.get("osi") is not False or "Proprietary" not in lic else f"No ({lic})"))
         fq.append((f"Is {n} open source?",(f"Yes. {n} is released under {lic}, according to its GitHub repository." if F.get("osi") else (f"No. {n}'s code is published under {lic}, which is not an OSI-approved open-source licence." if "Proprietary" not in lic else f"No. {n}'s GitHub repository states: {lic}."))))
     if F.get("repo"):
-        st=F.get("stars"); li.append(("GitHub",f'<a href="{e(F["repo"])}" target="_blank" rel="noopener">{e(F["repo"].replace("https://github.com/",""))}</a>'+(f" · {st:,} stars" if st else "")+(f" · {F['forks']:,} forks" if F.get("forks") else "")+(f" (as of {_mdy(F.get('checked'))})" if st else ""),True))
+        st=F.get("stars"); _ck=F.get("checked")
+        _rp=F["repo"].replace("https://github.com/","").strip("/").lower()
+        for _g in _GH.values():  # prefer the newer daily snapshot (data/github.json) over the one-off repo_facts stars
+            if (_g.get("repo") or "").lower()==_rp and _g.get("stars") and (_g.get("fetched") or "")>(_ck or ""): st=_g["stars"]; _ck=_g["fetched"]; F=dict(F,forks=None); break
+        F=dict(F,checked=_ck); li.append(("GitHub",f'<a href="{e(F["repo"])}" target="_blank" rel="noopener">{e(F["repo"].replace("https://github.com/",""))}</a>'+(f" · {st:,} stars" if st else "")+(f" · {F['forks']:,} forks" if F.get("forks") else "")+(f" (as of {_mdy(F.get('checked'))})" if st else ""),True))
     if F.get("archived"): li.append(("Status","Archived: the GitHub repository is read-only and no longer maintained"))
     if F.get("status"): li.append(("Status",F["status"]))
     return li,fq

@@ -32,6 +32,7 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 UC_SET={"agent-resource-market":["build multi-agent systems"],
+"robottraining-jobs":["connect tools via MCP","research the web"],  # Oct 19 PT audit: "hiring data" tripped the customer/sales rule; it is a job board + MCP server, not customer support
 "ceofans":["business agents","automate workflows"],
 "9bot":["connect tools via MCP","automate workflows"],
 "pragor":["security & governance","build multi-agent systems"],  # Pragor (Oct 19 PT, maker request): coordination and governance layer for people and agents, not an autonomous agent; the keyword guess would add "write code"

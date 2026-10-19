@@ -63,7 +63,7 @@ def shell(depth,title,desc,canon,body,ld):
 {foot}'''
 def facts(x):
     f=[("Description",x["description"]),("Category",x["category"]),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),
-       ("Pricing (as stated)",x.get("pricing_detail",x["pricing"])),("Maturity",x["maturity"]),
+       ("Pricing (as stated)",(x.get("pricing_detail") or x["pricing"])),("Maturity",x["maturity"]),
        ("GitHub stars",f'{x["github_stars"]:,}' if x.get("github_stars") is not None else "Not tracked"),("Use cases",", ".join(x["use_cases"])),("Link checked",x["verified"])]
     return f
 def build(t):
@@ -178,7 +178,7 @@ CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use
 }
 def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
 def meta(x,n=155):
-    s=f'{x["name"]}: {x["description"].rstrip(".")}. {x["category"]} tool; pricing: {x.get("pricing_detail",x["pricing"])}.'
+    s=f'{x["name"]}: {x["description"].rstrip(".")}. {x["category"]} tool; pricing: {(x.get("pricing_detail") or x["pricing"])}.'
     if len(s)<120: s+=" Alternatives and facts on AgentScout."
     if len(s)>n: s=s[:n-1].rsplit(" ",1)[0].rstrip(",;:")+"…"
     return s
