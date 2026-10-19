@@ -317,7 +317,7 @@ def news_page(t):
     days={}
     for x in arc["items"]: days.setdefault(pt_date(x["date"]),[]).append(x)
     def item(x):
-        tl=f' · <a href="tools/{e(x["tool"])}.html">On AgentScout →</a>' if x.get("tool") in bs else ""
+        tl=(f' · <a class="icol" href="tools/{e(x["tool"])}.html">'+ico(bs[x["tool"]],"","sm").replace('width="40" height="40"','width="24" height="24"').replace(f'alt="{e(bs[x["tool"]]["name"])} logo"','alt=""')+f'{e(bs[x["tool"]]["name"])} on AgentScout →</a>') if x.get("tool") in bs else ""
         sm=f'<p class="nsum">{e(x["summary"])}</p>' if x.get("summary") else ""
         h3=f'<a href="{e(x["page"])}">{e(x["title"])}</a>' if x.get("page") and os.path.exists(x["page"]) else f'<a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a>'
         return f'<li class="nitem"><h3>{h3}</h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(pt_time(x["date"]))}</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'

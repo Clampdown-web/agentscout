@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Logo checks (Oct 18, 2026 PT).
-  python3 scripts/check_logos.py            local gate: every tool in tools.json has a valid local logo (same as build)
+  python3 scripts/check_logos.py            local gate: every tool in tools.json has a valid local logo (same as build), and in the
+                                              built HTML every tool link in a listing (table cell, list item, card, inline
+                                              'Related:' list) shows the tool's logo (build_logocheck.listing_missing)
   python3 scripts/check_logos.py --online   + flag logos that are a maintainer's personal GitHub avatar (User-owned repo,
                                               logo ~ owner avatar) unless listed in data/logo_review.json
   python3 scripts/check_logos.py --placeholders   re-search official sources (site icons, logo/icon files in the repo, custom
@@ -62,6 +64,7 @@ def live(tools):
             if s!=200: bad.append((u,"",f"page HTTP {s}")); continue
             h=b.decode("utf-8","replace"); m=re.search(r"<main.*?</main>",h,re.S); main=m.group(0) if m else h
             for src in re.findall(r'<img[^>]*src="([^"]*assets/logos/[^"]+)"',h): imgs.setdefault(urllib.parse.urljoin(u,src),set()).add(u)
+            bad.extend(L.listing_missing(h,u))  # every tool link in a listing/table row/card/inline list needs its logo (Oct 18 2026)
             for mm in CARD.finditer(main):
                 a_open=main[mm.start():main.find(">",mm.start())+1]; inner=mm.group(2)
                 pre=main[max(0,mm.start()-80):mm.start()]; li=re.search(r"<li[^>]*>\s*$",pre)
@@ -105,6 +108,7 @@ def placeholders(tools):
 if __name__=="__main__":
     tools=json.load(open("tools.json")); fails=[(s,c,p) for s,c,p in L.check(tools)]
     print(f"local: {len(tools)} tools, {len(fails)} without a valid local logo")
+    lg=L.listings_gate(exit_on_fail=False); fails+=lg  # built HTML: tool links in listings without a logo
     if "--online" in sys.argv: o=online(tools); print(f"online: {len(o)} personal-avatar logos not yet reviewed"); fails+=o
     if "--placeholders" in sys.argv: placeholders(tools)
     if "--live" in sys.argv: v=live(tools); print(f"live: {len(v)} problems"); fails+=v

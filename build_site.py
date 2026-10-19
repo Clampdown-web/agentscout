@@ -134,7 +134,9 @@ import build_links
 build_links.run(t)
 import build_seo; build_seo.run(t)
 import build_fresh; build_fresh.run(t)  # Updated dates, dateModified, quick comparison tables (Oct 18 2026)
+import build_listlogos; build_listlogos.run(t)  # logos next to tool names in tables and inline tool lists (Oct 18 2026)
 import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
+build_logocheck.listings_gate()  # stop the build if any tool link in a listing lacks its logo (Oct 18 2026)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys

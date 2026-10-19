@@ -52,3 +52,50 @@ def run(tools,exit_on_fail=True):
     return bad
 if __name__=="__main__":
     run(json.load(open(os.path.join(ROOT,"tools.json"))))
+
+# ---- Listings on the built HTML (Oct 18, 2026 PT): every tool link in a listing must sit next to its logo ----
+# Listing = a link to tools/<slug>.html inside <main> whose nearest block is a list item, table cell, definition, or a card,
+# or that sits in an inline 'Related:' / 'pages on AgentScout:' list. Prose links inside sentences are not listings.
+# The logo (<img src=".../assets/logos/...">) must be inside the link, its table cell, its list item or its card.
+import re as _re
+def listing_missing(h,where=""):
+    import lxml.html
+    m=_re.search(r"<main.*?</main>",h,_re.S)
+    if not m: return []
+    try: doc=lxml.html.fromstring(m.group(0))
+    except Exception: return []
+    bad=[]
+    for a in doc.iter("a"):
+        hm=_re.search(r'(?:^|/)tools/([a-z0-9-]+)\.html$',a.get("href") or "")
+        if not hm: continue
+        if a.xpath('.//img[contains(@src,"assets/logos/")]'): continue
+        box=None; p=a.getparent(); depth=0
+        while p is not None and depth<6:
+            cls=" "+(p.get("class") or "")+" "
+            if p.tag in ("td","th","li","dd","dt") or " card " in cls or " tile " in cls: box=p; break
+            if p.tag=="p":
+                t=(p.text_content() or "").strip()
+                if t.startswith("Related:") or "pages on AgentScout:" in t: box=p
+                break
+            if p.tag in ("h1","h2","h3","blockquote","figcaption","summary","details"): break
+            p=p.getparent(); depth+=1
+        acls=" "+(a.get("class") or "")+" "
+        if box is None and (" card " in acls or " tile " in acls): box=a
+        if box is None: continue
+        if box.tag=="p":  # inline list: the logo must be inside the link
+            bad.append((where,hm.group(1),"inline tool list link without a logo")); continue
+        if not box.xpath('.//img[contains(@src,"assets/logos/")]'):
+            bad.append((where,hm.group(1),f"tool link in a {box.tag}{'.'+box.get('class').split()[0] if box.get('class') else ''} without a logo"))
+    return bad
+def listings_gate(exit_on_fail=True):
+    import glob
+    bad=[]
+    for f in glob.glob("**/*.html",recursive=True):
+        if f.startswith(("app/","node_modules/")) or f in ("outreach-tracker.html","og.html","stats.js.html"): continue
+        s=open(f,errors="ignore").read()
+        if "tools/" in s and 'http-equiv="refresh"' not in s: bad+=listing_missing(s,f)
+    if bad:
+        print(f"logo gate: {len(bad)} tool links in listings without a logo, e.g.:"); [print("  ",b) for b in bad[:20]]
+        if exit_on_fail: raise SystemExit(1)
+    else: print("logo gate (listings): every tool link in a listing has its logo")
+    return bad
