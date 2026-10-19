@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-19T18:09:21Z",
- "updated": "2026-10-19T18:09:21Z",
+ "generated": "2026-10-19T18:17:25Z",
+ "updated": "2026-10-19T18:17:25Z",
  "last_checked": "2026-10-19",
  "count": 1463,
  "tools": [
@@ -397,13 +397,13 @@
    "url": "https://docs.nvidia.com/openshell/latest/",
    "website": "https://docs.nvidia.com/openshell/latest/",
    "github": "https://github.com/nvidia/openShell",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Sandboxed runtime for autonomous agents with declarative YAML policies on file, network and credential access.",
    "key_features": [
     "Open source (Apache 2.0)",
     "Active; part of newly announced Open Agent Safety Platform",
     "16156 GitHub stars",
-    "Connect tools via mcp",
+    "Write code",
     "Run code safely"
    ],
    "pricing": "Open source (Apache 2.0)",
@@ -416,7 +416,7 @@
    "added": "2026-10-14",
    "source": "original",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -428,7 +428,7 @@
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
-    "connect tools via MCP",
+    "write code",
     "run code safely"
    ],
    "hybrid": false,
@@ -3367,13 +3367,12 @@
    "url": "https://e2b.dev",
    "website": "https://e2b.dev",
    "github": "https://github.com/e2b-dev/E2B",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Secure cloud sandboxes for running agent-generated code.",
    "key_features": [
     "Open source + paid cloud",
     "Mature",
     "Write code",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source + paid cloud",
@@ -3386,7 +3385,7 @@
    "added": "2026-10-14",
    "source": "original",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -3399,7 +3398,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -3412,12 +3410,12 @@
    "url": "https://modal.com",
    "website": "https://modal.com",
    "github": "",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Serverless compute and sandboxes for AI workloads.",
    "key_features": [
     "Usage-based, free credits",
     "Mature",
-    "Connect tools via mcp",
+    "Write code",
     "Run code safely"
    ],
    "pricing": "Usage-based, free credits",
@@ -3429,7 +3427,7 @@
    "added": "2026-10-14",
    "source": "original",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -3441,7 +3439,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP",
+    "write code",
     "run code safely"
    ],
    "hybrid": false,
@@ -10763,14 +10761,13 @@
    "url": "https://open-sandbox.ai/",
    "website": "https://open-sandbox.ai/",
    "github": "https://github.com/opensandbox-group/OpenSandbox",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Secure, fast sandbox runtime for AI agents to run code.",
    "key_features": [
     "Open source",
     "Mature",
     "15907 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -10783,7 +10780,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -10796,7 +10793,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -11326,14 +11322,13 @@
    "url": "https://github.com/TencentCloud/CubeSandbox",
    "website": "",
    "github": "https://github.com/TencentCloud/CubeSandbox",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Lightweight, concurrent sandbox for running AI agent code securely.",
    "key_features": [
     "Open source",
     "Mature",
     "12960 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -11346,7 +11341,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -11359,7 +11354,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -13039,14 +13033,13 @@
    "url": "https://docs.microsandbox.dev/getting-started/introduction",
    "website": "https://docs.microsandbox.dev/getting-started/introduction",
    "github": "https://github.com/superradcompany/microsandbox",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Local-first microVM runtime for running untrusted agent code safely.",
    "key_features": [
     "Open source",
     "Mature",
     "8717 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -13059,7 +13052,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -13072,7 +13065,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -16135,13 +16127,13 @@
    "url": "https://nono.sh/",
    "website": "https://nono.sh/",
    "github": "https://github.com/nolabs-ai/nono",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Zero-trust sandboxing for agent runtimes.",
    "key_features": [
     "Open source",
     "Active",
     "4535 GitHub stars",
-    "Connect tools via mcp",
+    "Write code",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -16154,7 +16146,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -16166,7 +16158,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
+    "write code",
     "run code safely"
    ],
    "hybrid": false,
@@ -16263,14 +16255,13 @@
    "url": "https://judge0.com/",
    "website": "https://judge0.com/",
    "github": "https://github.com/judge0/judge0",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Sandboxed code execution system for running untrusted code from people and AI.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "4482 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source + cloud",
@@ -16283,7 +16274,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -16296,7 +16287,6 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -16735,13 +16725,14 @@
    "url": "https://arcbox.dev/",
    "website": "https://arcbox.dev/",
    "github": "https://github.com/arcboxlabs/arcbox",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Runs AI agents on isolated machines with their own kernel, filesystem and network.",
    "key_features": [
     "Open source",
     "Active",
     "4240 GitHub stars",
-    "Connect tools via mcp"
+    "Write code",
+    "Run code safely"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -16753,7 +16744,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -16765,7 +16756,8 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "write code",
+    "run code safely"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/arcbox.png",
@@ -29644,15 +29636,15 @@
    "url": "https://sandbox.agent-infra.com/",
    "website": "https://sandbox.agent-infra.com/",
    "github": "https://github.com/agent-infra/sandbox",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "All-in-one Docker sandbox for AI agents that combines a browser, shell, files, MCP, VS Code Server and Jupyter in one container.",
    "key_features": [
     "Open source",
     "Mature",
     "6180 GitHub stars",
+    "Write code",
     "Automate the browser",
-    "Connect tools via mcp",
-    "Run code safely"
+    "Connect tools via mcp"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -29664,7 +29656,7 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -29676,9 +29668,9 @@
    "open_source": true,
    "license": "",
    "tags": [
+    "write code",
     "automate the browser",
-    "connect tools via MCP",
-    "run code safely"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/aio-sandbox.png",
@@ -32465,13 +32457,13 @@
    "url": "https://github.com/deeplethe/forkd",
    "website": "",
    "github": "https://github.com/deeplethe/forkd",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "MicroVM sandbox runtime for AI agent fan-out that forks KVM-isolated child VMs from a warm snapshot in milliseconds.",
    "key_features": [
     "Open source",
     "Active",
     "2919 GitHub stars",
-    "Connect tools via mcp",
+    "Write code",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -32484,7 +32476,7 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -32496,7 +32488,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
+    "write code",
     "run code safely"
    ],
    "hybrid": false,
@@ -33939,7 +33931,7 @@
    "url": "https://agent-safehouse.dev/",
    "website": "https://agent-safehouse.dev/",
    "github": "https://github.com/eugene1g/agent-safehouse",
-   "category": "security & governance",
+   "category": "sandboxes & code execution",
    "description": "macOS sandbox for local coding agents that limits file and integration access with deny-first policy profiles.",
    "key_features": [
     "Open source",
@@ -33957,7 +33949,9 @@
    "date_added": "2026-10-18",
    "added": "2026-10-18",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "coding"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -45361,7 +45355,7 @@
    "url": "https://sandbox.cloudflare.com/",
    "website": "https://sandbox.cloudflare.com/",
    "github": "https://github.com/cloudflare/sandbox-sdk",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "SDK for running isolated code sandboxes on Cloudflare's network, so agents can execute commands and files safely from a Worker.",
    "key_features": [
     "Open source + cloud",
@@ -45369,7 +45363,7 @@
     "1151 GitHub stars",
     "Write code",
     "Build an agent",
-    "Connect tools via mcp"
+    "Run code safely"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -45381,7 +45375,7 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -45395,7 +45389,7 @@
    "tags": [
     "write code",
     "build an agent",
-    "connect tools via MCP"
+    "run code safely"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cloudflare-sandbox-sdk.png",
@@ -45533,13 +45527,13 @@
    "url": "https://www.tensorlake.ai/",
    "website": "https://www.tensorlake.ai/",
    "github": "https://github.com/tensorlakeai/tensorlake",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Serverless runtime that gives agents MicroVM sandboxes and durable orchestration for long-running background jobs.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "1024 GitHub stars",
-    "Connect tools via mcp",
+    "Write code",
     "Run code safely"
    ],
    "pricing": "Open source + cloud",
@@ -45552,7 +45546,7 @@
    "added": "2026-10-18",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -45564,7 +45558,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
+    "write code",
     "run code safely"
    ],
    "hybrid": false,
@@ -46100,13 +46094,13 @@
    "url": "https://space.docs.perplexity.ai/guide/index.html",
    "website": "https://space.docs.perplexity.ai/guide/index.html",
    "github": "https://github.com/perplexityai/SPACE",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Perplexity's open-source sandbox platform that runs each agent task in its own Firecracker microVM, with credentials and network access controlled from outside.",
    "key_features": [
     "Open source",
     "Active",
     "1492 GitHub stars",
-    "Connect tools via mcp",
+    "Write code",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -46119,7 +46113,7 @@
    "added": "2026-10-18",
    "source": "News",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -46131,7 +46125,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
+    "write code",
     "run code safely"
    ],
    "hybrid": false,
@@ -53116,7 +53110,7 @@
    "url": "https://www.recraft.ai",
    "website": "https://www.recraft.ai",
    "github": "",
-   "category": "image generation",
+   "category": "graphic design & branding",
    "description": "Image and vector generator for designers, with brand styles, icon sets and SVG export.",
    "key_features": [
     "Free plan; paid plans: see website",
@@ -59677,15 +59671,15 @@
    "url": "https://github.com/zerobootdev/zeroboot",
    "website": "https://github.com/zerobootdev/zeroboot",
    "github": "https://github.com/zerobootdev/zeroboot",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "VM sandboxes for running agent code that start in under a millisecond by forking a warm snapshot with copy-on-write memory.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "2465 GitHub stars",
     "Write code",
-    "Connect tools via mcp",
-    "Run code safely"
+    "Run code safely",
+    "Give agents memory"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -59697,7 +59691,7 @@
    "added": "2026-10-19",
    "source": "GitHub",
    "goals": [
-    "automation",
+    "coding",
     "writing"
    ],
    "skill": "developer",
@@ -59711,8 +59705,8 @@
    "license": "",
    "tags": [
     "write code",
-    "connect tools via MCP",
-    "run code safely"
+    "run code safely",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/zeroboot.png",

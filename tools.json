@@ -240,7 +240,7 @@
     "name": "NVIDIA OpenShell",
     "url": "https://docs.nvidia.com/openshell/latest/",
     "description": "Sandboxed runtime for autonomous agents with declarative YAML policies on file, network and credential access.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Active; part of newly announced Open Agent Safety Platform",
     "audience": "builders",
@@ -252,7 +252,7 @@
     "github_stars": 16156,
     "repo": "nvidia/openShell",
     "use_cases": [
-      "connect tools via MCP",
+      "write code",
       "run code safely"
     ],
     "slug": "nvidia-openshell",
@@ -2036,7 +2036,7 @@
     "name": "E2B",
     "url": "https://e2b.dev",
     "description": "Secure cloud sandboxes for running agent-generated code.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -2047,7 +2047,6 @@
     "pricing_detail": "Open source + paid cloud",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "run code safely"
     ],
     "slug": "e2b",
@@ -2062,7 +2061,7 @@
     "name": "Modal",
     "url": "https://modal.com",
     "description": "Serverless compute and sandboxes for AI workloads.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Freemium",
     "maturity": "Mature",
     "audience": "builders",
@@ -2072,7 +2071,7 @@
     "id": 77,
     "pricing_detail": "Usage-based, free credits",
     "use_cases": [
-      "connect tools via MCP",
+      "write code",
       "run code safely"
     ],
     "slug": "modal",
@@ -6564,7 +6563,7 @@
     "name": "OpenSandbox",
     "url": "https://open-sandbox.ai/",
     "description": "Secure, fast sandbox runtime for AI agents to run code.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -6574,7 +6573,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "run code safely"
     ],
     "website": "https://open-sandbox.ai/",
@@ -6912,7 +6910,7 @@
     "name": "CubeSandbox",
     "url": "https://github.com/TencentCloud/CubeSandbox",
     "description": "Lightweight, concurrent sandbox for running AI agent code securely.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -6922,7 +6920,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "run code safely"
     ],
     "website": "",
@@ -7971,7 +7968,7 @@
     "name": "microsandbox",
     "url": "https://docs.microsandbox.dev/getting-started/introduction",
     "description": "Local-first microVM runtime for running untrusted agent code safely.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -7981,7 +7978,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "run code safely"
     ],
     "website": "https://docs.microsandbox.dev/getting-started/introduction",
@@ -9886,7 +9882,7 @@
     "name": "nono",
     "url": "https://nono.sh/",
     "description": "Zero-trust sandboxing for agent runtimes.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -9895,7 +9891,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
+      "write code",
       "run code safely"
     ],
     "website": "https://nono.sh/",
@@ -9965,7 +9961,7 @@
     "name": "Judge0",
     "url": "https://judge0.com/",
     "description": "Sandboxed code execution system for running untrusted code from people and AI.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -9975,7 +9971,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
       "run code safely"
     ],
     "website": "https://judge0.com/",
@@ -10255,7 +10250,7 @@
     "name": "ArcBox",
     "url": "https://arcbox.dev/",
     "description": "Runs AI agents on isolated machines with their own kernel, filesystem and network.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -10264,7 +10259,8 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "write code",
+      "run code safely"
     ],
     "website": "https://arcbox.dev/",
     "github": "https://github.com/arcboxlabs/arcbox",
@@ -18140,7 +18136,7 @@
     "name": "AIO Sandbox",
     "url": "https://sandbox.agent-infra.com/",
     "description": "All-in-one Docker sandbox for AI agents that combines a browser, shell, files, MCP, VS Code Server and Jupyter in one container.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -18151,9 +18147,9 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
+      "write code",
       "automate the browser",
-      "connect tools via MCP",
-      "run code safely"
+      "connect tools via MCP"
     ],
     "website": "https://sandbox.agent-infra.com/",
     "github": "https://github.com/agent-infra/sandbox",
@@ -19818,7 +19814,7 @@
     "name": "forkd",
     "url": "https://github.com/deeplethe/forkd",
     "description": "MicroVM sandbox runtime for AI agent fan-out that forks KVM-isolated child VMs from a warm snapshot in milliseconds.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -19829,7 +19825,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
+      "write code",
       "run code safely"
     ],
     "website": "",
@@ -20701,7 +20697,7 @@
     "name": "Agent Safehouse",
     "url": "https://agent-safehouse.dev/",
     "description": "macOS sandbox for local coding agents that limits file and integration access with deny-first policy profiles.",
-    "category": "security & governance",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -27422,7 +27418,7 @@
     "name": "Cloudflare Sandbox SDK",
     "url": "https://sandbox.cloudflare.com/",
     "description": "SDK for running isolated code sandboxes on Cloudflare's network, so agents can execute commands and files safely from a Worker.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -27435,7 +27431,7 @@
     "use_cases": [
       "write code",
       "build an agent",
-      "connect tools via MCP"
+      "run code safely"
     ],
     "website": "https://sandbox.cloudflare.com/",
     "github": "https://github.com/cloudflare/sandbox-sdk",
@@ -27526,7 +27522,7 @@
     "name": "Tensorlake",
     "url": "https://www.tensorlake.ai/",
     "description": "Serverless runtime that gives agents MicroVM sandboxes and durable orchestration for long-running background jobs.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -27537,7 +27533,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
+      "write code",
       "run code safely"
     ],
     "website": "https://www.tensorlake.ai/",
@@ -27862,7 +27858,7 @@
     "name": "Perplexity SPACE",
     "url": "https://space.docs.perplexity.ai/guide/index.html",
     "description": "Perplexity's open-source sandbox platform that runs each agent task in its own Firecracker microVM, with credentials and network access controlled from outside.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -27873,7 +27869,7 @@
     "source": "News",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP",
+      "write code",
       "run code safely"
     ],
     "website": "https://space.docs.perplexity.ai/guide/index.html",
@@ -31931,7 +31927,7 @@
     "name": "Recraft",
     "url": "https://www.recraft.ai",
     "description": "Image and vector generator for designers, with brand styles, icon sets and SVG export.",
-    "category": "image generation",
+    "category": "graphic design & branding",
     "pricing": "Freemium",
     "maturity": "Active",
     "audience": "ready to use",
@@ -35758,7 +35754,7 @@
     "name": "Zeroboot",
     "url": "https://github.com/zerobootdev/zeroboot",
     "description": "VM sandboxes for running agent code that start in under a millisecond by forking a warm snapshot with copy-on-write memory.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -35770,8 +35766,8 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "connect tools via MCP",
-      "run code safely"
+      "run code safely",
+      "give agents memory"
     ],
     "website": "https://github.com/zerobootdev/zeroboot",
     "github": "https://github.com/zerobootdev/zeroboot",
