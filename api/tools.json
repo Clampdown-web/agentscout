@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T04:22:33Z",
- "updated": "2026-10-19T04:22:33Z",
+ "generated": "2026-10-19T04:35:20Z",
+ "updated": "2026-10-19T04:35:20Z",
  "last_checked": "2026-10-18",
- "count": 1407,
+ "count": 1408,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -47058,7 +47058,7 @@
    "page": "https://agentscouthq.com/tools/skills-sh.html"
   },
   {
-   "name": "orke",
+   "name": "Orke",
    "slug": "orke",
    "url": "https://orke.bomtobe.com/en/",
    "website": "https://orke.bomtobe.com/en/",
@@ -59343,6 +59343,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-resource-market.png",
    "page": "https://agentscouthq.com/tools/agent-resource-market.html"
+  },
+  {
+   "name": "CEOFans",
+   "slug": "ceofans",
+   "url": "https://www.ceofans.com/",
+   "website": "https://www.ceofans.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Chinese-language platform where one-person companies and small teams hire AI 'digital employees' by role, delegate tasks and review the results, which are saved as shared company knowledge. Local AI agents such as Codex and Hermes run the tasks through revocable employee tokens.",
+   "key_features": [
+    "Free trial on sign-up; OPC Solo ¥39/mo, OPC Team ¥129/mo, OPC Business ¥599/mo, OPC Group ¥968/mo (yearly plans cost less)",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Free trial on sign-up; OPC Solo ¥39/mo, OPC Team ¥129/mo, OPC Business ¥599/mo, OPC Group ¥968/mo (yearly plans cost less)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Submission",
+   "goals": [
+    "crypto",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ceofans.png",
+   "page": "https://agentscouthq.com/tools/ceofans.html"
   }
  ]
 }

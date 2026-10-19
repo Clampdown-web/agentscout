@@ -21069,26 +21069,26 @@
   "kind": "lite",
   "src_kind": "site",
   "long": [
-   "orke is a desktop workspace from BOMTOBE for AI coding agents such as Claude Code and Codex. You give an agent work in a terminal session, then check the result in a web window and a Git window on the same screen, and pick the same session up again from the iPhone or Android app.",
-   "It also has \"AI employees\": you set a goal with the AI in a meeting, and the employee works on its own at scheduled times, leaves anything only a person can do (such as logins or payments) as a request, and records what it did in a log. orke itself is free; you sign in to Claude Code, Codex or other AI services separately."
+   "Orke is a desktop workspace from BOMTOBE for AI coding agents such as Claude Code and Codex. You give an agent work in a terminal session, then check the result in a web window and a Git window on the same screen, and pick the same session up again from the iPhone or Android app.",
+   "It also has \"AI employees\": you set a goal with the AI in a meeting, and the employee works on its own at scheduled times, leaves anything only a person can do (such as logins or payments) as a request, and records what it did in a log. Orke itself is free; you sign in to Claude Code, Codex or other AI services separately."
   ],
   "who": "Developers who already use terminal coding agents like Claude Code or Codex and want sessions, a browser the agent can work in, and Git review in one desktop app.",
   "features": [
    "Persistent terminal sessions for Claude Code, Codex, OpenCode, Hermes, Antigravity and NVIDIA agents; plain terminals work without an AI account",
-   "Web window: pick an element on a real page and send it to the agent; agents can also drive the page through orke browser commands",
+   "Web window: pick an element on a real page and send it to the agent; agents can also drive the page through Orke browser commands",
    "Git window: diffs, staging, commits, fetch/pull/push, branches, tags and stashes",
    "AI employees that work on a schedule toward a goal, ask a person for logins or payments and keep a work log",
-   "orke CLI so agents can manage sessions, web windows and packages themselves",
+   "Orke CLI so agents can manage sessions, web windows and packages themselves",
    "Continue the same session from the iPhone and Android apps; Linux server mode opens in a browser; optional Docker-compatible isolated environment",
    "Windows (Microsoft Store), macOS 26 or later on Apple Silicon (DMG on GitHub Releases), Linux servers (x86_64)"
   ],
   "faq": [
    [
-    "Which platforms does orke run on?",
+    "Which platforms does Orke run on?",
     "Windows x64 from the Microsoft Store, macOS 26 or later on Apple Silicon (DMG from GitHub Releases), and Linux servers (x86_64), which you use from a browser. There are companion iPhone and Android apps for continuing sessions."
    ],
    [
-    "Does orke include AI model access?",
+    "Does Orke include AI model access?",
     "No. Each agent CLI and AI service account is set up and signed in separately, and usage counts toward that account. Regular terminals work without an AI account."
    ]
   ],
@@ -21104,7 +21104,7 @@
    "free": true,
    "tiers": [
     [
-     "orke app",
+     "Orke app",
      "Free",
      "Windows, macOS and Linux server"
     ]
@@ -21164,6 +21164,73 @@
    ],
    "note": "Registration is capacity-limited during the beta.",
    "src": "https://agentresourcemarket.com/api/v1/status",
+   "checked": "2026-10-18"
+  }
+ },
+ "ceofans": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "CEOFans is an AI employee and task-management platform from Shanghai Yichong Technology for OPC (one-person company) founders, solo operators and small teams. You pick AI \"digital employees\" by role (marketing, content, sales, data, engineering and more), give each an identity, a department and task permissions, then delegate tasks and review what comes back.",
+   "The work itself runs in a desktop AI agent on your own machine. Each digital employee gets its own revocable employee token, which a compatible agent uses to load the employee's skills, pick up tasks and report logs and results. The site says Codex and Hermes are already connected, and Cursor, Claude Code and OpenClaw can be configured the same way. Approved results are saved as shared company memory or the employee's private memory. The interface is in Chinese."
+  ],
+  "who": "Chinese-speaking solo founders, freelancers, independent developers, e-commerce sellers, content creators and small-business owners who already have clear, repeatable tasks and run a desktop coding agent such as Codex.",
+  "features": [
+   "Library of ready-made AI digital employees you choose by role",
+   "Departments, identities and task permissions for each digital employee",
+   "One revocable employee token per digital employee for desktop agents",
+   "Works with Codex and Hermes; Cursor, Claude Code and OpenClaw can be configured",
+   "Task system with logs and a review step before results are accepted",
+   "Shared company memory and private per-employee memory",
+   "Skills library and MCP tool access for compatible desktop agents"
+  ],
+  "faq": [
+   [
+    "Is CEOFans in English?",
+    "No. The website and app interface are in Chinese."
+   ],
+   [
+    "Does CEOFans run the AI models itself?",
+    "No. Tasks run in a compatible desktop agent such as Codex or Hermes on your machine, using an employee token; model and third-party tool costs are billed separately."
+   ]
+  ],
+  "sources": [
+   "https://www.ceofans.com/",
+   "https://www.ceofans.com/#pricing",
+   "https://www.ceofans.com/qa/"
+  ],
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free trial",
+     "Free trial on sign-up",
+     ""
+    ],
+    [
+     "OPC Solo",
+     "¥39/month",
+     "¥398/year; 3 AI digital employees, 1 department, 5 GB team memory"
+    ],
+    [
+     "OPC Team",
+     "¥129/month",
+     "¥1,314/year; 10 AI digital employees, 5 departments, 3 human sub-accounts"
+    ],
+    [
+     "OPC Business",
+     "¥599/month",
+     "¥6,066/year; 30 AI digital employees, 20 departments"
+    ],
+    [
+     "OPC Group",
+     "¥968/month",
+     "¥9,866/year; unlimited standard digital employees"
+    ]
+   ],
+   "note": "Prices are in Chinese yuan. Model, third-party tool and human review costs are charged separately.",
+   "src": "https://www.ceofans.com/#pricing",
    "checked": "2026-10-18"
   }
  }

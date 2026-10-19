@@ -6,7 +6,7 @@ var T=[],BS={},sel={a:"",b:""},PAIRS=(root.dataset.pairs||"").split(",");
 var E=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
 var rel=function(u){return u?String(u).replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,"../"):""};
 var res=document.getElementById("cp-res");
-function ico(t){return '<span class="ico sm"><span aria-hidden="true">'+E((t.name||"?")[0].toUpperCase())+'</span>'+(t.logo?'<img src="'+E(rel(t.logo))+'" alt="'+E(t.name)+' logo" width="40" height="40" loading="lazy" onerror="ASimgErr(this)">':"")+'</span>'}
+function ico(t){return '<span class="ico sm"><span aria-hidden="true" data-l="'+E((t.name||"?")[0].toUpperCase())+'"></span>'+(t.logo?'<img src="'+E(rel(t.logo))+'" alt="'+E(t.name)+' logo" width="40" height="40" loading="lazy" onerror="ASimgErr(this)">':"")+'</span>'}
 function box(k){
   var inp=document.getElementById("cp-"+k),list=document.getElementById("cp-"+k+"-l"),hi=-1,cur=[];
   function show(){var q=inp.value.trim().toLowerCase();

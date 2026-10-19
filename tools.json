@@ -28414,7 +28414,7 @@
     "logo": "assets/logos/skills-sh.png"
   },
   {
-    "name": "orke",
+    "name": "Orke",
     "url": "https://orke.bomtobe.com/en/",
     "description": "BOMTOBE's free desktop workspace for Claude Code, Codex and other coding agents: terminal sessions, an in-app browser the agent can use, a Git review window and scheduled AI employees.",
     "category": "coding",
@@ -35532,6 +35532,32 @@
     "id": 1425,
     "slug": "agent-resource-market",
     "logo": "assets/logos/agent-resource-market.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-18"
+  },
+  {
+    "name": "CEOFans",
+    "url": "https://www.ceofans.com/",
+    "description": "Chinese-language platform where one-person companies and small teams hire AI 'digital employees' by role, delegate tasks and review the results, which are saved as shared company knowledge. Local AI agents such as Codex and Hermes run the tasks through revocable employee tokens.",
+    "category": "business agents",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Submission",
+    "pricing_detail": "Free trial on sign-up; OPC Solo ¥39/mo, OPC Team ¥129/mo, OPC Business ¥599/mo, OPC Group ¥968/mo (yearly plans cost less)",
+    "use_cases": [
+      "business agents",
+      "automate workflows"
+    ],
+    "website": "https://www.ceofans.com/",
+    "github": "",
+    "id": 1426,
+    "slug": "ceofans",
+    "logo": "assets/logos/ceofans.png",
     "maker_submitted": true,
     "submitted": "2026-10-18"
   }

@@ -376,3 +376,6 @@ body{overflow-wrap:break-word}.btn{max-width:100%}.hg-head h2{white-space:normal
 @media(max-width:900px){.grid.fill>:last-child:nth-child(n){grid-column:auto}.grid.fill>:last-child:nth-child(2n+1){grid-column:span 2}}
 @media(max-width:400px){.grid.fill>:last-child:nth-child(n){grid-column:auto}}
 .ftall .ico{background:var(--accent-soft)}.ftall .ico img{width:28px;height:28px}
+
+/* Logo fallback letter (Oct 19, 2026 PT): drawn with CSS so it is never part of the text (copy, reader view, snippets), not selectable, and hidden while a logo img is present (shown only if the logo fails and is removed) */
+.ico>[data-l]::before{content:attr(data-l)}.ico>[data-l]{-webkit-user-select:none;user-select:none;pointer-events:none}.ico:has(>img)>[data-l]{visibility:hidden}

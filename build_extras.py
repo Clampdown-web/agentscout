@@ -17,7 +17,7 @@ ONERR='onerror="'+"var i=this,n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTim
 def ico(x,d="../",cls=""):
     L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" {ONERR}>' if x.get("logo") else ""
     if cls=="lg": im=im.replace('width="40" height="40" loading="lazy"','width="56" height="56" fetchpriority="high"')  # tool-page header logo is above the fold: load it right away
-    return f'<span class="ico {cls}"><span aria-hidden="true">{L}</span>{im}</span>'
+    return f'<span class="ico {cls}"><span aria-hidden="true" data-l="{L}"></span>{im}</span>'  # letter drawn by CSS (::before), so it never joins the name in copied or extracted text
 def ico24(x): return ico(x,"","sm").replace('width="40" height="40"','width="24" height="24"')
 def cslug(a,b): return f"{a}-vs-{b}"
 def badge_html(x,depth="../"):

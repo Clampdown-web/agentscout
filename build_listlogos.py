@@ -11,7 +11,7 @@ import build_extras
 e=lambda s:html.escape(str(s))
 def _icon(x,d):
     L=e(x["name"].strip()[:1].upper())
-    return (f'<span class="ico sm"><span aria-hidden="true">{L}</span><img src="{d}{x["logo"]}" alt="" width="24" height="24" '
+    return (f'<span class="ico sm"><span aria-hidden="true" data-l="{L}"></span><img src="{d}{x["logo"]}" alt="" width="24" height="24" '
             f'loading="lazy" decoding="async" {build_extras.ONERR}></span>')
 CELL=re.compile(r'(<t[hd]\b[^>]*>\s*)<a ((?:class="[^"]*" )?)href="((?:\.\./)*)tools/([a-z0-9-]+)\.html"([^>]*)>(?!<span class="ico)')
 INL=re.compile(r'<a href="((?:\.\./)*)tools/([a-z0-9-]+)\.html">(?!<span class="ico)')
