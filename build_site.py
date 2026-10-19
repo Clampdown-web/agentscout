@@ -1,6 +1,8 @@
 """Generates use-case tags, slugs and static detail pages from tools.json."""
 import json,re,html,os,build_extras,build_rich,build_related
 t=json.load(open("tools.json"))
+# Sponsor bar on every page (build_sponsor.py). OFF until a sponsor is booked: set True and fill data/sponsor_bar.json, then rebuild.
+SPONSOR_ENABLED = False
 RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",r"browser|web browser|headless"),("control a computer",r"computer-use|desktop|operating system|cloud computer"),
 ("build multi-agent systems",r"multi-agent|crew|swarm|subagent"),("build an agent",r"framework|SDK|library|toolkit|harness|Development Kit"),("research the web",r"research|search|web data|website|cited|papers"),
 ("voice & phone calls",r"voice|phone|call|speech|TTS|talk"),("automate workflows",r"workflow|automation|automate|Zapier|apps"),("build apps without code",r"prompt-to-app|full apps|web apps|No-code|no-code|Drag-and-drop|visually"),
@@ -103,6 +105,7 @@ _sync_index_counts()
 import build_recent
 build_recent.build(t)
 
+import build_sponsor; build_sponsor.page(t)  # hidden sponsor page: noindex, not in sitemap, not linked (Oct 18 2026)
 import build_tasks
 build_tasks.sitewide(t)
 import build_sections
@@ -114,3 +117,4 @@ build_links.run(t)
 import build_seo; build_seo.run(t)
 import build_fresh; build_fresh.run(t)  # Updated dates, dateModified, quick comparison tables (Oct 18 2026)
 import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
+build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
