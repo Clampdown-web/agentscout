@@ -125,9 +125,9 @@ function render(){
  /* homepage directory: first 24 cards, then 24 more as the visitor scrolls (IntersectionObserver) or taps Show more; search/filters still run over all tools (Oct 19 2026) */
  let i=F;const upd=()=>{mb.hidden=i>=r.length;mb.textContent=`Show more (${(r.length-i).toLocaleString("en-US")} more)`};
  const near=()=>mb.getBoundingClientRect().top<innerHeight+800;
- const more=()=>{if(gen!==renderGen||i>=r.length)return;L.insertAdjacentHTML("beforeend",r.slice(i,i+F).map(card).join(""));i+=F;upd();if(dirIO&&!mb.hidden)requestAnimationFrame(()=>{if(gen===renderGen&&near())more()})};
+ const more=()=>{if(gen!==renderGen||i>=r.length)return;L.insertAdjacentHTML("beforeend",r.slice(i,i+F).map(card).join(""));i+=F;upd();if(dirIO&&!mb.hidden)requestAnimationFrame(()=>{if(gen===renderGen&&!window.__asJump&&near())more()})};
  mb.onclick=more;upd();
- if(window.IntersectionObserver){if(dirIO)dirIO.disconnect();dirIO=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))more()},{rootMargin:"0px 0px 800px 0px"});dirIO.observe(mb)}
+ if(window.IntersectionObserver){if(dirIO)dirIO.disconnect();dirIO=new IntersectionObserver(es=>{if(!window.__asJump&&es.some(e=>e.isIntersecting))more()},{rootMargin:"0px 0px 800px 0px"});dirIO.observe(mb)}
 }
 let dirIO=null;
 let renderGen=0;

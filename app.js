@@ -22,8 +22,18 @@ const AS={
 function init(){var w=document.createElement("div");w.className="scrollbtns";
 w.innerHTML='<button type="button" class="scrollbtn up" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button><button type="button" class="scrollbtn down" aria-label="Scroll to bottom" title="Scroll to bottom"><span aria-hidden="true">↓</span></button>';
 document.body.appendChild(w);var up=w.querySelector(".up"),dn=w.querySelector(".down"),q=0;
-up.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})};
-dn.onclick=function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:"smooth"})};
+/* One smooth glide to the true top/bottom: own rAF animation that re-reads the page height every frame (lazy images/cards can grow the page mid-scroll, which made native smooth scroll stop short). window.__asJump tells lazy loaders (homepage directory) not to add cards during the glide. Any wheel/touch/key cancels. Oct 19 2026 */
+var raf=0;function stop(){if(raf){cancelAnimationFrame(raf);raf=0}window.__asJump=0}
+["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,function(e){if(raf&&!(e.target.closest&&e.target.closest(".scrollbtns")))stop()},{passive:true})});
+function glide(down){stop();window.__asJump=down?1:0;var de=document.documentElement,y0=window.scrollY||0,t0=performance.now();
+var max=function(){return Math.max(0,de.scrollHeight-window.innerHeight)},dist=Math.abs((down?max():0)-y0),dur=Math.min(1100,Math.max(350,dist/6));
+if(matchMedia("(prefers-reduced-motion: reduce)").matches)dur=1;
+function step(now){var k=Math.min(1,(now-t0)/dur),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2,tgt=down?max():0;
+window.scrollTo({top:y0+(tgt-y0)*e,behavior:"instant"});
+if(k<1){raf=requestAnimationFrame(step)}else{raf=0;window.scrollTo({top:down?max():0,behavior:"instant"});setTimeout(function(){window.__asJump=0},400)}}
+raf=requestAnimationFrame(step)}
+up.onclick=function(){glide(false)};
+dn.onclick=function(){glide(true)};
 function upd(){q=0;var y=window.scrollY||0,h=document.documentElement.scrollHeight,v=window.innerHeight,fromBottom=h-(y+v);
 up.classList.toggle("show",y>400);dn.classList.toggle("show",h>v+300&&fromBottom>300)}
 function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
