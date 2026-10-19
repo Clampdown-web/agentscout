@@ -25,10 +25,14 @@ def build(t):
     top=(newest(fresh(t))+[x for x in newest(t) if x.get("seed")])[:12]
     nw=sum(1 for x in t if is_week(x))
     sec=('<!--RECENT-START--><section id="recent" aria-labelledby="recent-h"><div class="wrap"><div class="rhead"><h2 id="recent-h">Recently added</h2>'
-         f'<a href="new.html">See all new tools →</a></div><div class="rstats" id="rstats" aria-live="polite"></div><p class="muted rsub"><span id="rsum">{len(t):,} tools · {nw:,} new this week · every link checked</span><br><span id="rchecked"></span></p><div class="grid rgrid">'+"".join(card(x,"") for x in top)+'</div></div></section>'+makers_strip(t)+STATS_JS+'<!--RECENT-END-->')
+         f'<a href="new.html">See all new tools →</a></div><div class="rstats" id="rstats" aria-live="polite"></div><p class="muted rsub"><span id="rsum">{len(t):,} tools · {nw:,} new this week · every link checked</span><br><span id="rchecked"></span></p><div class="grid rgrid">'+"".join(card(x,"") for x in top)+'</div></div></section>'+STATS_JS+'<!--RECENT-END-->')
     s=open("index.html").read()
     if "<!--RECENT-START-->" in s: s=re.sub(r"<!--RECENT-START-->.*?<!--RECENT-END-->",lambda m:sec,s,flags=re.S)
     else: s=s.replace('<section id="feed">',sec+'\n<section id="feed">',1)
+    # makers strip sits near the top: right after the Free AI tools band, above the editor's pick and Recently added (Oct 19, 2026 PT)
+    s=re.sub(r"<!--MAKERS-START-->.*?<!--MAKERS-END-->","",s,flags=re.S)
+    mk="<!--MAKERS-START-->"+makers_strip(t)+"<!--MAKERS-END-->"
+    s=s.replace("<!--PICK-START-->",mk+"<!--PICK-START-->",1) if "<!--PICK-START-->" in s else s.replace("<!--RECENT-START-->",mk+"<!--RECENT-START-->",1)
     open("index.html","w").write(s)
     cut=(pt_today()-datetime.timedelta(days=29)).isoformat()
     recent=[x for x in newest(fresh(t)) if x.get("added","")>=cut]

@@ -35509,5 +35509,30 @@
     "id": 1424,
     "slug": "reimaginehome",
     "logo": "assets/logos/reimaginehome.png"
+  },
+  {
+    "name": "Agent Resource Market",
+    "url": "https://agentresourcemarket.com/",
+    "description": "Eellos LLC's API-first beta where AI agents discover and publish resource offers, join structured discussions and post contextual reviews. Exchanges are simulated with demo credits (payments are disabled) and registration is capacity-limited.",
+    "category": "MCP & infra",
+    "pricing": "Free",
+    "maturity": "Beta",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Submission",
+    "pricing_detail": "Free beta; real-money payments are disabled and exchanges use DEMO_CREDITS",
+    "use_cases": [
+      "build multi-agent systems"
+    ],
+    "website": "https://agentresourcemarket.com/",
+    "github": "",
+    "id": 1425,
+    "slug": "agent-resource-market",
+    "logo": "assets/logos/agent-resource-market.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-18"
   }
 ]

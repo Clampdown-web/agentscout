@@ -87,7 +87,7 @@ TASKS=[
 ]
 ORIG={T[0] for T in TASKS[:37]}  # the first 37 task pages (Oct 2026); later batches only append to their related links
 MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
-TASK_NEG={"audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage","building-voice-agents":r"from a voice or text request"}  # keeps picture tools off the sound page
+TASK_NEG={"agent-payments":r"payments (?:are |is )?disabled|real-money payments|no money moves","audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage","building-voice-agents":r"from a voice or text request"}  # keeps picture tools off the sound page
 MEDIA_TASKS={"storyboarding","rough-cuts","subtitles","dubbing","vfx","dialogue-cleanup","scoring","stem-separation","video-post-production","audio-post-production","music-mixing-mastering"}
 _MEDIA_ONLY_TASKS=MEDIA_TASKS  # these pages only list film, TV, video and music tools
 ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
@@ -301,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610190215"  # bump when app.js/styles.css change
+ASSET_V="202610190340"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}

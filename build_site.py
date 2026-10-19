@@ -29,6 +29,9 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "logo-dev-mcp":["logos & branding"],"mcp-for-blender":["generate 3D"],"imagesorcery-mcp":["remove backgrounds"],"comfyui":["generate images","open image models"],
 "adobe-firefly":["generate images"],"higgsfield":["generate images"],"dreamina":["generate images"],"luma-dream-machine":["generate images"],
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
+# Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
+# its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
+UC_SET={"agent-resource-market":["build multi-agent systems"]}
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
@@ -41,6 +44,7 @@ for x in t:
     else: x["use_cases"]=([u for u,p in MEDIA_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]) if x["category"] in MEDIA_CATS else ([u for u,p in RULES if re.search(p,d)][:3] or [x["category"]])
     x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
     if x["slug"] in ART_XLINK_UC: x["use_cases"]=list(dict.fromkeys(x["use_cases"]+ART_XLINK_UC[x["slug"]]))
+    if x["slug"] in UC_SET: x["use_cases"]=list(UC_SET[x["slug"]])
     if os.path.exists(f"assets/logos/{x['slug']}.png"): x["logo"]=f"assets/logos/{x['slug']}.png"
     else: x.pop("logo",None)
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)

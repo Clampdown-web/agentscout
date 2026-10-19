@@ -183,7 +183,7 @@ def run(t):
     # (4) homepage
     def home(s):
         strip=(f'<section id="xfree" class="band" aria-labelledby="xfree-h"><div class="wrap"><div class="sh"><div><h2 id="xfree-h">Free AI tools</h2><p>Calculators and generators that run in your browser. No sign-up. <a href="free-tools.html">All free tools →</a></p></div></div>'
-               f'<div class="grid">{F.hub_cards("")}</div></div></section>')
+               f'<div class="grid fill">{F.hub_cards("")}{F.see_all_card("")}</div></div></section>')
         s=put(s,"homefree",strip,'<div class="layout">')
         role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'
               +chips([(f"for/{r[0]}.html",CAP(r[1])) for r in RO])+'</div></section>')

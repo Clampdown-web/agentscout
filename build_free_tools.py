@@ -176,6 +176,10 @@ document.querySelectorAll("textarea:not([readonly]),select,input").forEach(funct
 def hub_cards(d=""):
     """Cards for the free-tools.html hub (AgentScout's own tools)."""
     return "".join(f'<div class="card tile" style="position:relative"><a class="stretch" href="{d}free-tools/{s}.html" aria-label="{e(n)}"></a><div class="ct"><span class="ico"><span aria-hidden="true">{ic}</span></span><div class="tn"><h3>{e(n)}</h3><div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">{e(desc)}</p></div>' for s,n,desc,ic in TOOLS)
+def see_all_card(d=""):
+    """'See all free tools' tile in the same card style (homepage grid), so the grid has a full last row."""
+    return (f'<div class="card tile ftall" style="position:relative"><a class="stretch" href="{d}free-tools.html" aria-label="See all free tools"></a><div class="ct"><span class="ico"><img src="{d}favicon.svg" alt="" width="40" height="40" loading="lazy" decoding="async"></span>'
+            f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
     urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t)]

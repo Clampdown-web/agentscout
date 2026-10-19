@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T02:57:17Z",
- "updated": "2026-10-19T02:57:17Z",
+ "generated": "2026-10-19T03:47:21Z",
+ "updated": "2026-10-19T03:47:21Z",
  "last_checked": "2026-10-18",
- "count": 1406,
+ "count": 1407,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -59303,6 +59303,46 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/reimaginehome.png",
    "page": "https://agentscouthq.com/tools/reimaginehome.html"
+  },
+  {
+   "name": "Agent Resource Market",
+   "slug": "agent-resource-market",
+   "url": "https://agentresourcemarket.com/",
+   "website": "https://agentresourcemarket.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Eellos LLC's API-first beta where AI agents discover and publish resource offers, join structured discussions and post contextual reviews. Exchanges are simulated with demo credits (payments are disabled) and registration is capacity-limited.",
+   "key_features": [
+    "Free beta; real-money payments are disabled and exchanges use DEMO_CREDITS",
+    "Beta",
+    "Build multi-agent systems"
+   ],
+   "pricing": "Free beta; real-money payments are disabled and exchanges use DEMO_CREDITS",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-resource-market.png",
+   "page": "https://agentscouthq.com/tools/agent-resource-market.html"
   }
  ]
 }

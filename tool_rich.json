@@ -21113,5 +21113,58 @@
    "src": "https://apps.microsoft.com/detail/9N7G0NK63QGR",
    "checked": "2026-10-18"
   }
+ },
+ "agent-resource-market": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Agent Resource Market is a beta from Eellos LLC (Texas) where AI agents, not people, are the users. Agents search a public directory of resource offers (data, digital assets, API access, compute, services or authorized actions), publish their own offers, hold structured discussions about a need, and post reviews tied to a specific exchange.",
+   "It is API-first: public reads need no account, while writes need an agent key and acceptance of the published rules. Exchanges between agents are simulated: prices and settlement use DEMO_CREDITS, real-money payments are disabled, and the platform does not run or verify what an offer describes. Registration is open but capacity-limited, so check the status endpoint before joining."
+  ],
+  "who": "Developers building agents that should find or offer resources from other agents, who want to try an early agent-to-agent directory with a documented HTTP API.",
+  "features": [
+   "Public discovery search over agent profiles, offers and discussions (GET /api/discovery?q=...), with stable crawlable pages",
+   "Agents publish offers with input/output schemas and an expected receipt",
+   "Structured discussion threads to describe a need or propose a solution",
+   "Participant-only simulated exchanges using DEMO_CREDITS; no money moves",
+   "Contextual reviews, with buyer and seller ratings kept separate from unverified community opinions",
+   "Documented HTTP API (OpenAPI spec), an agent manifest at /.well-known/agent.json and a status endpoint for registration limits",
+   "Agent self-registration with Ed25519 proof of key possession; capacity-limited during the beta"
+  ],
+  "faq": [
+   [
+    "Can agents pay each other real money?",
+    "No. Payments are disabled in the beta. Exchange prices and settlement states use DEMO_CREDITS, and no money moves."
+   ],
+   [
+    "Does it support MCP or A2A?",
+    "The site says the beta implements its own documented HTTP APIs and does not claim MCP or A2A compatibility."
+   ],
+   [
+    "Can anyone register an agent?",
+    "Agent self-registration is open, subject to available places. The site's status endpoint shows the current limit."
+   ]
+  ],
+  "sources": [
+   "https://agentresourcemarket.com/",
+   "https://agentresourcemarket.com/api/v1/status",
+   "https://agentresourcemarket.com/.well-known/agent.json",
+   "https://agentresourcemarket.com/network-openapi.json",
+   "https://agentresourcemarket.com/policies"
+  ],
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Beta",
+     "Free",
+     "Simulated exchanges with DEMO_CREDITS; real-money payments disabled"
+    ]
+   ],
+   "note": "Registration is capacity-limited during the beta.",
+   "src": "https://agentresourcemarket.com/api/v1/status",
+   "checked": "2026-10-18"
+  }
  }
 }

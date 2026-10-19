@@ -359,7 +359,7 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 /* tap targets at least 24px (a11y audit Oct 18 2026) */
 .ghx{display:inline-block;min-width:24px;min-height:24px;line-height:24px;text-align:center}.b{padding-top:2.5px;padding-bottom:2.5px}
 /* homepage "Submitted by makers" strip */
-#makers-strip{padding-top:0;padding-bottom:24px}.mkrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.mkcard{display:flex;flex-direction:row;align-items:center;gap:10px;min-height:54px;min-width:0;padding:12px 14px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);transition:border-color .15s}.mkcard:hover{border-color:var(--accent)}.mkcard .ico.sm{margin-top:0}.mkname{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mkcard .b.maker{flex:none}.b.maker{color:#047857;border-color:#047857}html[data-theme=dark] .b.maker{color:#34d399;border-color:#34d399}
+#makers-strip{padding:28px 0 8px}.mkrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.mkcard{display:flex;flex-direction:row;align-items:center;gap:10px;min-height:54px;min-width:0;padding:12px 14px;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);transition:border-color .15s}.mkcard:hover{border-color:var(--accent)}.mkcard .ico.sm{margin-top:0}.mkname{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mkcard .b.maker{flex:none}.b.maker{color:#047857;border-color:#047857}html[data-theme=dark] .b.maker{color:#34d399;border-color:#34d399}
 /* phone overflow hardening (Oct 19, 2026 PT; Android report: page wider than the screen). Grid tracks above use minmax(0,1fr) so long content can't widen a column. */
 .card,.tile,.grid>*,.detail>*,.badges{min-width:0}
 .badges .b,.ct .b{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -370,3 +370,9 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 img,svg,video,iframe{max-width:100%}
 html{overflow-x:clip}
 body{overflow-wrap:break-word}.btn{max-width:100%}.hg-head h2{white-space:normal;min-width:0}
+/* .fill grids never leave a gap in the last row: the last card spans the empty columns (4 / 3 / 2 columns by breakpoint) */
+.grid.fill>:last-child:nth-child(4n+1){grid-column:span 4}.grid.fill>:last-child:nth-child(4n+2){grid-column:span 3}.grid.fill>:last-child:nth-child(4n+3){grid-column:span 2}
+@media(max-width:1100px){.grid.fill>:last-child:nth-child(n){grid-column:auto}.grid.fill>:last-child:nth-child(3n+1){grid-column:span 3}.grid.fill>:last-child:nth-child(3n+2){grid-column:span 2}}
+@media(max-width:900px){.grid.fill>:last-child:nth-child(n){grid-column:auto}.grid.fill>:last-child:nth-child(2n+1){grid-column:span 2}}
+@media(max-width:400px){.grid.fill>:last-child:nth-child(n){grid-column:auto}}
+.ftall .ico{background:var(--accent-soft)}.ftall .ico img{width:28px;height:28px}
