@@ -3,6 +3,7 @@ Loads pages in headless Chrome at 360px and 390px and fails if document.document
   python3 scripts/check_overflow.py                 # one page of every type, local build (serves the repo on a free port)
   python3 scripts/check_overflow.py --all           # every sitemap page, local build
   python3 scripts/check_overflow.py --live [--all]  # same against https://agentscouthq.com
+  python3 scripts/check_overflow.py --pages tools/x.html,new.html
 Type mode also re-checks with every font scaled 1.3x (Android text-size setting); OVERFLOW_TEXT_SCALES=1,1.3,1.5 overrides.
 Reports the widest offending elements for each failing page. Exit code 1 on any overflow."""
 import sys,os,re,glob,threading,http.server,socketserver,functools
@@ -31,6 +32,7 @@ SCALES=[float(x) for x in os.environ.get("OVERFLOW_TEXT_SCALES","1" if "--all" i
 WIDTHS=[int(x) for x in os.environ.get("OVERFLOW_WIDTHS","360,390").split(",")]
 def main():
     live="--live" in sys.argv; P=pages_all() if "--all" in sys.argv else add_compare(list(TYPES))
+    if "--pages" in sys.argv: P=sys.argv[sys.argv.index("--pages")+1].split(",")
     P=[p for p in P if os.path.exists(os.path.join(ROOT,p)) or live]
     if live: base="https://agentscouthq.com"
     else:
@@ -38,13 +40,13 @@ def main():
             def log_message(self,*a): pass
         srv=socketserver.ThreadingTCPServer(("127.0.0.1",0),functools.partial(Q,directory=ROOT)); srv.daemon_threads=True
         threading.Thread(target=srv.serve_forever,daemon=True).start(); base=f"http://127.0.0.1:{srv.server_address[1]}"
-    bad=[]
+    bad=[];errs=[]
     with sync_playwright() as pw:
         b=pw.chromium.launch(executable_path="/usr/bin/google-chrome")
         for w in WIDTHS:
             c=b.new_context(viewport={"width":w,"height":800},is_mobile=True,has_touch=True,device_scale_factor=2)
             c.add_init_script("window.ASNoTrack=true;try{localStorage.setItem('as_consent',JSON.stringify({v:1,analytics:false,embeds:false,strict:false,ts:Date.now()}))}catch(e){}")
-            c.route(re.compile(r"(workers\.dev|beehiiv|challenges\.cloudflare)"),lambda r:r.abort())
+            c.route(re.compile(r"^https://[^/]*(workers\.dev|beehiiv\.com|challenges\.cloudflare\.com)/"),lambda r:r.abort())  # third-party hosts only
             pg=c.new_page()
             for p in P:
                 try:
@@ -55,10 +57,15 @@ def main():
                         if k==1 or r["sw"]>r["cw"]: continue
                         pg.evaluate(SCALEJS,k/prev); prev=k; pg.wait_for_timeout(100); r=pg.evaluate(JS)
                         if r["sw"]>r["cw"]: r["text_scale"]=k
-                except Exception as ex: print(f"ERR {w} {p} {ex}"[:200]); continue
+                except Exception as ex:
+                    try:  # one retry (live hosting can rate-limit a full crawl)
+                        pg.close(); pg=c.new_page(); pg.wait_for_timeout(1500)
+                        pg.goto(base+"/"+("" if p=="index.html" else p),wait_until="load",timeout=30000); pg.wait_for_timeout(250)
+                        pg.add_style_tag(content="html,body{overflow-x:visible!important}"); r=pg.evaluate(JS)
+                    except Exception as ex2: errs.append((w,p)); print(f"ERR {w} {p} {ex2}".splitlines()[0][:200]); continue
                 if r["sw"]>r["cw"]: bad.append((w,p,r)); print(f"OVERFLOW {w}px{' text x'+str(r['text_scale']) if r.get('text_scale') else ''} {p}: scrollWidth {r['sw']} > {r['cw']}  {r['o']}")
             c.close()
         b.close()
-    print(f"overflow check: {len(P)} pages x 2 widths (360, 390), {len(bad)} overflowing")
-    sys.exit(1 if bad else 0)
+    print(f"overflow check: {len(P)} pages x {len(WIDTHS)} widths ({', '.join(map(str,WIDTHS))}), {len(bad)} overflowing, {len(errs)} failed to load")
+    sys.exit(1 if bad or errs else 0)
 if __name__=="__main__": main()
