@@ -1,5 +1,5 @@
 {
- "_note": "Logo review list for scripts/check_logos.py --online (Oct 18, 2026 PT). ok = owner GitHub avatar verified as the real logo. pending = only a maintainer's personal avatar exists (no logo on the official site, repo or README); kept as-is until the owner decides (replace, keep, or remove).",
+ "_note": "Logo review list for scripts/check_logos.py (updated Oct 18, 2026 PT). ok = owner GitHub avatar verified as the real logo. agentscout_placeholder = AgentScout-made icon (dark rounded tile, white/#9696ff symbol), NOT the maker's asset, used only because no official logo exists anywhere (repo tree + README + social preview, site/docs, npm/PyPI, org/X/Discord avatars all checked). Daily upkeep runs `python3 scripts/check_logos.py --placeholders` and swaps in a real logo as soon as one appears. reviewed_not_logo = candidates already looked at and rejected (jcodemunch social preview is a promo banner with a mascot, no clean mark; ppt-master repo logo.png files are China Telecom template assets; ppt-master examples-site favicon is a generic blue slide outline, not a brand mark).",
  "ok": {
   "chainaware": "owner account is the brand (ChainAware.ai)",
   "yuanjing-wanwu": "owner avatar is the UniAI brand logo",
@@ -7,20 +7,81 @@
   "lobsterai": "owner avatar is the NetEase Youdao brand logo",
   "ida-pro-mcp": "same image is the repo's own .github/logo.png"
  },
- "pending": {
-  "jcodemunch-mcp": "personal avatar; no official logo found Oct 18 2026",
-  "ultimate-vocal-remover": "personal avatar; no official logo found Oct 18 2026",
-  "abtop": "personal avatar; no official logo found Oct 18 2026",
-  "ralph-for-claude-code": "personal avatar; no official logo found Oct 18 2026",
-  "searxng-mcp": "personal avatar; no official logo found Oct 18 2026",
-  "mmaudio": "personal avatar; no official logo found Oct 18 2026",
-  "arxiv-mcp-server": "personal avatar; no official logo found Oct 18 2026",
-  "playwright-skill": "personal avatar; no official logo found Oct 18 2026",
-  "jevgrep": "personal avatar; no official logo found Oct 18 2026",
-  "mcp-proxy": "personal avatar; no official logo found Oct 18 2026",
-  "ppt-master": "personal avatar; no official logo found Oct 18 2026",
-  "babyagi": "personal avatar; no official logo found Oct 18 2026",
-  "davinci-resolve-mcp": "personal avatar; no official logo found Oct 18 2026",
-  "oh-my-claudecode": "personal avatar; no official logo found Oct 18 2026"
+ "agentscout_placeholder": {
+  "jcodemunch-mcp": {
+   "made": "2026-10-18",
+   "symbol": "AST tree (code index)",
+   "size": "80x80"
+  },
+  "searxng-mcp": {
+   "made": "2026-10-18",
+   "symbol": "magnifier (search)",
+   "size": "80x80"
+  },
+  "arxiv-mcp-server": {
+   "made": "2026-10-18",
+   "symbol": "paper (research papers)",
+   "size": "80x80"
+  },
+  "mcp-proxy": {
+   "made": "2026-10-18",
+   "symbol": "two-way arrows (proxy)",
+   "size": "80x80"
+  },
+  "davinci-resolve-mcp": {
+   "made": "2026-10-18",
+   "symbol": "timeline tracks + playhead (video editing)",
+   "size": "80x80"
+  },
+  "abtop": {
+   "made": "2026-10-18",
+   "symbol": "activity bars (agent monitor)",
+   "size": "80x80"
+  },
+  "ralph-for-claude-code": {
+   "made": "2026-10-18",
+   "symbol": "loop arrow (autonomous loop)",
+   "size": "80x80"
+  },
+  "jevgrep": {
+   "made": "2026-10-18",
+   "symbol": "terminal prompt (CLI search)",
+   "size": "80x80"
+  },
+  "playwright-skill": {
+   "made": "2026-10-18",
+   "symbol": "browser + cursor",
+   "size": "80x80"
+  },
+  "ppt-master": {
+   "made": "2026-10-18",
+   "symbol": "slide on a stand (presentations)",
+   "size": "80x80"
+  },
+  "babyagi": {
+   "made": "2026-10-18",
+   "symbol": "task checklist (task agent)",
+   "size": "80x80"
+  },
+  "instructor": {
+   "made": "2026-10-18",
+   "symbol": "braces around I (docs palette)",
+   "size": "128x128"
+  }
+ },
+ "real_logo_found_2026-10-18": {
+  "ultimate-vocal-remover": "official app icon gui_data/img/GUI-Icon.png in the repo",
+  "mmaudio": "project icon docs/images/icon.png (also the project site's favicon), 32px pixel art scaled 4x nearest-neighbour",
+  "oh-my-claudecode": "head of the project's own mascot, cropped from assets/omc-character.jpg (also on oh-my-claudecode.dev and the repo social preview)"
+ },
+ "reviewed_not_logo": {
+  "jcodemunch-mcp": [
+   "https://repository-images.githubusercontent.com/1153178500/30e71ed7-afd7-48b6-8aff-d3a592b75a9e"
+  ],
+  "ppt-master": [
+   "skills/ppt-master/templates/brands/中国电信/images/logo.png",
+   "skills/ppt-master/templates/decks/中国电信/images/logo.png",
+   "site icon"
+  ]
  }
 }

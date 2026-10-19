@@ -3,6 +3,8 @@
   python3 scripts/check_logos.py            local gate: every tool in tools.json has a valid local logo (same as build)
   python3 scripts/check_logos.py --online   + flag logos that are a maintainer's personal GitHub avatar (User-owned repo,
                                               logo ~ owner avatar) unless listed in data/logo_review.json
+  python3 scripts/check_logos.py --placeholders   re-search official sources (site icons, logo/icon files in the repo, custom
+                                              social preview) for tools on the AgentScout-made placeholder list and print candidates
   python3 scripts/check_logos.py --live     + crawl https://agentscouthq.com (sitemap + api/tools.json): every logo <img>
                                               must return 200 with a real image, and every tool card / tool list item must
                                               carry a logo <img> (no letter-only fallbacks)
@@ -28,7 +30,7 @@ def vec(im):
     return list(bg.convert("L").resize((16,16)).getdata())
 def online(tools):
     R=json.load(open("data/logo_review.json")) if os.path.exists("data/logo_review.json") else {}
-    allow={**R.get("ok",{}),**R.get("pending",{})}
+    allow={**R.get("ok",{}),**R.get("pending",{}),**R.get("agentscout_placeholder",{})}
     if R.get("pending"): print(f"online: {len(R['pending'])} tools still on the pending list (personal avatar, no official logo): "+", ".join(R["pending"]))
     bad=[]; seen={}
     for x in tools:
@@ -78,10 +80,33 @@ def live(tools):
             if not ok: bad.append((u,sorted(imgs[u])[0],f"logo HTTP {s} {ct} {len(b)}B"))
     print(f"live: {len(urls)} pages, {len(imgs)} logo URLs checked")
     return bad
+def placeholders(tools):
+    R=json.load(open("data/logo_review.json")); ph=R.get("agentscout_placeholder",{}); by={x["slug"]:x for x in tools}; found=[]
+    for s in ph:
+        x=by.get(s)
+        if not x: continue
+        m=re.match(r"https?://github\.com/([^/]+)/([^/#?]+)",x.get("github") or "")
+        if m:
+            o,r=m.groups()
+            tr=subprocess.run(["gh","api",f"repos/{o}/{r}/git/trees/HEAD?recursive=1","--jq",".tree[].path"],capture_output=True,text=True).stdout.split("\n")
+            for p in tr:
+                if re.search(r"(^|/)(logo|icon|brand|favicon)[^/]*\.(png|svg|jpe?g|webp|ico)$",p,re.I) and not re.search(r"node_modules|test|vendor|templates?/icons",p,re.I): found.append((s,"repo file",p))
+            g=subprocess.run(["gh","api","graphql","-f","query=query{repository(owner:\"%s\",name:\"%s\"){usesCustomOpenGraphImage openGraphImageUrl}}"%(o,r),"--jq",".data.repository|select(.usesCustomOpenGraphImage)|.openGraphImageUrl"],capture_output=True,text=True).stdout.strip()
+            if g : found.append((s,"custom social preview",g))
+        site=x.get("website") or ""
+        if site and "github.com" not in site:
+            st,ct,b=get(site)
+            for h in re.findall(r'<link[^>]+rel=["\'][^"\']*icon[^"\']*["\'][^>]*>',b.decode("utf-8","replace"),re.I): found.append((s,"site icon",h[:160]))
+    rej=R.get("reviewed_not_logo",{})
+    found=[f for f in found if not any(k in f[2] or (k=="site icon" and f[1]=="site icon") for k in rej.get(f[0],[]))]
+    for f in found: print("CANDIDATE",*f)
+    print(f"placeholders: {len(ph)} AgentScout-made icons, {len(found)} candidate real logos to review by eye")
+    return found
 if __name__=="__main__":
     tools=json.load(open("tools.json")); fails=[(s,c,p) for s,c,p in L.check(tools)]
     print(f"local: {len(tools)} tools, {len(fails)} without a valid local logo")
     if "--online" in sys.argv: o=online(tools); print(f"online: {len(o)} personal-avatar logos not yet reviewed"); fails+=o
+    if "--placeholders" in sys.argv: placeholders(tools)
     if "--live" in sys.argv: v=live(tools); print(f"live: {len(v)} problems"); fails+=v
     for f in fails: print("FAIL",*f)
     sys.exit(1 if fails else 0)
