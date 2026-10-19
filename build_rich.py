@@ -3,6 +3,16 @@ import json,html,os,re
 e=lambda s:html.escape(str(s or ""))
 R=json.load(open("tool_rich.json")) if os.path.exists("tool_rich.json") else {}
 H2='<h2 style="font-size:16px;margin-bottom:10px">'
+# Tool-page FAQ "What are alternatives to X?" uses the same list as the page's alternatives section (build_related.pick,
+# set by build_site as REL), Oct 19, 2026 PT. Fewer than 3 related tools: fall back to the old category list.
+REL={}; FALLBACK=[]
+def _join(ns): return ns[0] if len(ns)==1 else ", ".join(ns[:-1])+" and "+ns[-1]
+def _alt_answer(x,cat,old):
+    rel=REL.get(x["slug"]) or []
+    if len(rel)>=3: return f"Similar tools include {_join([y['name'] for y in rel])}."
+    FALLBACK.append(x["slug"])
+    return f"Other {cat} tools on AgentScout include {old}." if old else None
+
 def apply(out,x,t,catslug,prim,B):
     r=R.get(x["slug"])
     if not r: return auto(out,x,t,catslug,prim,B)
@@ -21,7 +31,8 @@ def apply(out,x,t,catslug,prim,B):
     tiers="".join(f"<li><strong>{e(a)}</strong>: {e(b)}{(' · '+e(c)) if c else ''}</li>" for a,b,c in p["tiers"])
     freeq="Yes. "+e(n)+" has a free plan"+(f" ({e(p['tiers'][0][2])})" if p["tiers"][0][1] in ("$0","Free") else "")+"." if p["free"] else f"No free plan is listed{(', but there is a '+e(p['trial'])) if p['trial'] else ''}. Paid plans start at ${p['start']:g} a month."
     cost=f"{n} pricing starts at ${p['start']:g} a month for paid plans"+(", with a free plan available" if p["free"] else "")+". Plans: "+"; ".join(f"{a} {b}" for a,b,c in p["tiers"])+". "+p.get("note","")+" (as of Oct 2026)"
-    faq=[(f"What is {n}?"," ".join(r["long"])),(f"How much does {n} cost?",cost),(f"Does {n} have a free plan?",re.sub("<[^>]+>","",html.unescape(freeq))),(f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}.")]
+    faq=[(f"What is {n}?"," ".join(r["long"])),(f"How much does {n} cost?",cost),(f"Does {n} have a free plan?",re.sub("<[^>]+>","",html.unescape(freeq))),(f"What are alternatives to {n}?",_alt_answer(x,cat,altp))]
+    faq=[q for q in faq if q[1]]
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(s)}</p>' for s in r["long"])
       +f'<p class="muted" style="margin:0 0 28px">Listed in our <a href="../categories/{cs}.html">{e(cat)}</a> category. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",prim).rstrip("/"))}</a>.</p>'
       +f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>"
@@ -80,7 +91,8 @@ def lite(out,x,t,catslug,prim,B,r):
     isfree=[a for q,a in pfq if q=="__free__"]; pfq=[(q,a) for q,a in pfq if q!="__free__"]
     if isfree: pq=isfree[0]
     faq=[(f"What is {n}?",r["long"][0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+pfq+ffq+[tuple(q) for q in r.get("faq",[])]
-    if altp: faq.append((f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}."))
+    _aa=_alt_answer(x,cat,altp)
+    if _aa: faq.append((f"What are alternatives to {n}?",_aa))
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
       +(f'<p class="muted" style="margin:0 0 28px">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
@@ -134,7 +146,8 @@ def auto(out,x,t,catslug,prim,B):
     if lic and osi: faq.append((f"Is {n} open source?",f"Yes. {n}'s GitHub repository is published under {lic}, according to the licence file in the repo."))
     elif lic: faq.append((f"Is {n} open source?",f"{n}'s code is published under {lic}. Check the licence terms before commercial use."))
     if repo: faq.append((f"Where can I find {n}'s source code?",f"On GitHub at {repo.replace('https://github.com/','')}"+(f", which had {stars:,} stars as of {_mdy(g.get('fetched') or x.get('verified'))}" if stars else "")+(f". The latest release is {g['release_tag']} ({_mdy(g.get('release_date'))})." if g.get("release_tag") else ".")))
-    if altp: faq.append((f"What are alternatives to {n}?",f"Other {cat} tools on AgentScout include {altp}."))
+    _aa=_alt_answer(x,cat,altp)
+    if _aa: faq.append((f"What are alternatives to {n}?",_aa))
     sec=(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(k)}</strong>: {v}</li>" for k,v in li)+"</ul>"
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)
       +f'<p class="muted" style="margin:10px 0 28px">Facts from our link-checked listing{", the GitHub repository" if repo else ""} and the official site. See something wrong? <a href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a>.</p>')

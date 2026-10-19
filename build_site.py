@@ -53,6 +53,7 @@ e=lambda s:html.escape(str(s or ""))
 tpl=open("data/detail.tpl").read()
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
+build_rich.REL=REL
 for x in t:
     rel=REL[x["slug"]]
     relh="".join(f'<a class="card" href="{y["slug"]}.html"><div class="ct">{build_extras.ico(y,"../","sm")}<h3 style="flex:1">{e(y["name"])}</h3></div><p>{e(y["description"])}</p></a>' for y in rel)
