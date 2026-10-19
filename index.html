@@ -63,6 +63,8 @@ el.innerHTML=[["Total tools",s.total.toLocaleString("en-US")],["Last updated",md
   <div class="ucbar" id="ucbar"></div>
   <div class="count" id="count"></div>
   <div class="grid" id="list"></div>
+  <div style="text-align:center;margin:18px 0 4px"><button type="button" class="btn" id="dirmore" hidden>Show more</button></div>
+  <noscript><p class="count">Browse every tool by <a href="categories/index.html">category</a>, <a href="new.html">newest</a> or <a href="tasks/index.html">task</a>.</p></noscript>
 </div></section>
 </div><aside class="side" aria-label="Agent news">
   <section class="news sticky" id="news" aria-labelledby="newsh" hidden><div class="newshead"><h2 id="newsh">Agent news</h2><span class="muted" id="newsup"></span></div><ol id="newslist"></ol><p class="disclose">Headlines link to the original source. Agent-only, last 72 hours. <a href="news.html">See all agent news →</a></p></section>
@@ -118,11 +120,16 @@ function render(){
  r=r.sort((a,b)=>(q?b[1]-a[1]:0)||srt(a[0],b[0])).map(x=>x[0]);
  $("dirTitle").textContent=onlySaved?"Your saved tools":"Directory";
  $("count").textContent=`Showing ${r.length.toLocaleString("en-US")} of ${tools.length.toLocaleString("en-US")} tools`;
- const L=$("list"),gen=++renderGen,F=48;
+ const L=$("list"),gen=++renderGen,F=24,mb=$("dirmore");
  L.innerHTML=r.length?r.slice(0,F).map(card).join(""):`<div class="empty" style="grid-column:1/-1">${onlySaved?"No saved tools yet. Tap the heart on any card to save it.":"No tools match. Try a different search or filter."}</div>`;
- /* the rest in small batches after first paint, so a 1,400-card directory doesn't block the page */
- const idle=window.requestIdleCallback||(f=>setTimeout(f,30));let i=F;const more=()=>{if(gen!==renderGen||i>=r.length)return;L.insertAdjacentHTML("beforeend",r.slice(i,i+120).map(card).join(""));i+=120;idle(more)};idle(more);
+ /* homepage directory: first 24 cards, then 24 more as the visitor scrolls (IntersectionObserver) or taps Show more; search/filters still run over all tools (Oct 19 2026) */
+ let i=F;const upd=()=>{mb.hidden=i>=r.length;mb.textContent=`Show more (${(r.length-i).toLocaleString("en-US")} more)`};
+ const near=()=>mb.getBoundingClientRect().top<innerHeight+800;
+ const more=()=>{if(gen!==renderGen||i>=r.length)return;L.insertAdjacentHTML("beforeend",r.slice(i,i+F).map(card).join(""));i+=F;upd();if(dirIO&&!mb.hidden)requestAnimationFrame(()=>{if(gen===renderGen&&near())more()})};
+ mb.onclick=more;upd();
+ if(window.IntersectionObserver){if(dirIO)dirIO.disconnect();dirIO=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))more()},{rootMargin:"0px 0px 800px 0px"});dirIO.observe(mb)}
 }
+let dirIO=null;
 let renderGen=0;
 AS.bind(document,()=>{if(onlySaved)render();if(tab==="votes")renderRank()});
 document.addEventListener("click",e=>{const u=e.target.closest("[data-uc]");if(u){e.preventDefault();uc=u.dataset.uc;render();$("directory").scrollIntoView({behavior:"smooth"})}});
