@@ -9,7 +9,10 @@ NEGATED=re.compile(r"\(?\b(?:real[- ]money )?(?:payments?|billing|checkout|trans
     r"|\bno (?:money|funds|real money) (?:moves?|changes? hands)|\b(?:does not|doesn't|do not|don't) (?:claim|support|offer|handle|process) [a-z0-9/+ -]{2,40}?(?=[,.;)]|$)",re.I)
 def strip_negated(s): return NEGATED.sub(" ",s)
 # Shared concepts that word overlap misses: agent registries, marketplaces and agent-to-agent discovery.
-CONCEPTS=[re.compile(r"\bregistr(?:y|ies)\b|\bagents? (?:can )?discover|\bagent(?:-native)? (?:resource )?market(?:place)?s?\b",re.I)]
+CONCEPTS=[re.compile(r"\bregistr(?:y|ies)\b|\bagents? (?:can )?discover|\bagent(?:-native)? (?:resource )?market(?:place)?s?\b",re.I),
+    # Email delivery and verification tools (sending, verifying or looking up emails; SMTP; deliverability), added Oct 19, 2026 PT so
+    # email MCP servers (MailVeri, RocketReach, SendPulse, Bird, Atomic Mail) are matched with each other rather than with generic MCP servers.
+    re.compile(r"\b(?:send(?:ing)?|verif\w*|look(?:ing)? up|find(?:ing|s)?) (?:and receiv\w+ )?(?:(?:verified|single|work|bulk) )?(?:emails?|e-mail)\b|\bemail (?:verification|deliverability|marketing|outreach|api|lists?)\b|\b(?:smtp|deliverability)\b",re.I)]
 def concepts(x):
     d=strip_negated(x["name"]+" "+x["description"])
     return {i for i,p in enumerate(CONCEPTS) if p.search(d)}

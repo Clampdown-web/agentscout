@@ -1753,7 +1753,10 @@
 "betterclaw": [
 "chat-app-agents",
 "email-agents",
-"no-code-apps"
+"mcp-servers",
+"no-code-apps",
+"local-models",
+"rules-config"
 ],
 "boss-console": [
 "personal-assistants"
@@ -5243,6 +5246,14 @@
 ],
 "9bot": [
 "chat-app-agents",
+"mcp-servers"
+],
+"pragor": [
+"agent-memory",
+"multi-agent"
+],
+"mailveri-mcp": [
+"email-agents",
 "mcp-servers"
 ]
 }

@@ -33,7 +33,9 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 UC_SET={"agent-resource-market":["build multi-agent systems"],
 "ceofans":["business agents","automate workflows"],
-"9bot":["connect tools via MCP","automate workflows"]}  # CEOFans: the keyword guess would tag it "write code" (it mentions Codex) and "control a computer" ("desktop")
+"9bot":["connect tools via MCP","automate workflows"],
+"pragor":["build multi-agent systems","business agents"],  # Pragor: agent-team coordination board; the keyword guess would add "write code" (CrewAI/LangGraph/custom code)
+"mailveri-mcp":["connect tools via MCP"]}  # MailVeri MCP: email/list verification; kept off customer support (not a support desk); the keyword guess would add "write code"  # CEOFans: the keyword guess would tag it "write code" (it mentions Codex) and "control a computer" ("desktop")
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()

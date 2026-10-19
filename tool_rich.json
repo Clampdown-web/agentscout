@@ -182,13 +182,16 @@
  "betterclaw": {
   "meta": "BetterClaw is a no-code AI agent builder: deploy agents to Slack, Telegram, Discord or Gmail on 28+ model providers. Free plan; paid from $19/mo.",
   "long": [
-   "BetterClaw lets you build and deploy AI agents without code or servers. You create an agent, pick a model, connect channels and tools, and it runs recurring jobs on a schedule in Slack, Telegram, Discord or Gmail.",
-   "It is aimed at non-technical users, solo operators and agencies who want an always-on agent without self-hosting OpenClaw. Every plan is bring-your-own-key, with no markup on model costs."
+   "BetterClaw lets you build and deploy AI agents without code or servers. You create an agent, pick a model, connect channels and tools from 120+ app connectors or any remote MCP server, and it runs recurring jobs on a schedule in Slack, Telegram, Discord or Gmail.",
+   "It is aimed at non-technical users, solo operators and agencies who want an always-on agent without self-hosting OpenClaw. Every plan is bring-your-own-key, with no markup on model costs, and local models via Ollama are supported alongside your own API keys. Agents can use an unlimited, security-reviewed skills library."
   ],
   "features": [
    "No-code agent setup, with most agents deployed in under a minute",
    "Models from 28+ providers, bring your own key with zero markup",
-   "Connectors for Slack, Telegram, Discord, Gmail and more",
+   "Local LLM support (Ollama, LM Studio or llama.cpp via BetterClaw Desktop) alongside your own API keys",
+   "120+ app connectors (Slack, Telegram, Discord, Gmail, Notion, HubSpot, Stripe and more), with per-agent access controls",
+   "MCP support: connect any remote MCP server (Streamable HTTP or SSE) to an agent, on every paid plan",
+   "Unlimited skills from a security-reviewed skills library, plus custom skills",
    "Docker-isolated sandbox, kill switch and AES-256 encrypted credentials",
    "Health monitoring that auto-pauses misbehaving agents",
    "Team seats with role-based access on Pro and Business"
@@ -227,7 +230,22 @@
    "note": "Annual billing drops Pro to $39/mo and Business to $119/mo. Model API usage is paid to your provider.",
    "src": "https://www.betterclaw.io/pricing"
   },
-  "updated": "2026-10-18"
+  "updated": "2026-10-19",
+  "faq": [
+   [
+    "Does BetterClaw support MCP?",
+    "Yes. BetterClaw is an MCP client: you can attach any remote MCP server (Streamable HTTP or SSE) to an agent, and its tools appear next to the 120+ built-in connectors. MCP is available on every paid plan."
+   ],
+   [
+    "Can BetterClaw use local models?",
+    "Yes. Besides bring-your-own API keys for 28+ providers, you can run agents on local models via Ollama (and LM Studio or llama.cpp through BetterClaw Desktop), with no token cost."
+   ]
+  ],
+  "sources": [
+   "https://www.betterclaw.io/integrations",
+   "https://www.betterclaw.io/mcp",
+   "https://www.betterclaw.io/skills"
+  ]
  },
  "clawdi": {
   "meta": "Clawdi hosts always-on Hermes or OpenClaw AI agents in the cloud, with shared memory, skills and connectors. Cloud Agent plans $10 or $20 a month.",
@@ -21283,6 +21301,128 @@
    "note": "Cancel anytime, according to the pricing section.",
    "src": "https://9bot.com.br/en/",
    "checked": "2026-10-18"
+  }
+ },
+ "pragor": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Pragor (\"project agent orchestration\") gives a team of AI agents one shared, project-scoped board with directed messages, tasks with a real lifecycle and dependencies, files, approvals, operations and a calendar, so agents built with CrewAI, LangGraph, AutoGen or your own code can work on the same project alongside the people accountable for it. Agents connect over a REST API or an MCP server with a project key, and humans use the web UI.",
+   "Risky steps can be gated behind a human approval, tasks need evidence before they count as ready, and every message, task, approval and operation is logged and attributable. Memory, onboarding briefs and board state survive session ends and context compaction, and a built-in runner can wake headless agents on a schedule. It is in free public beta; managed and self-hosted options are offered for larger teams."
+  ],
+  "who": "Teams running several AI agents, often from different frameworks or models, on a real project who need one place to coordinate them with people, require sign-off on risky actions and keep an audit trail.",
+  "features": [
+   "Shared board: directed and broadcast messages, threads, tasks with lifecycle, dependencies and evidence",
+   "Approval workflows that gate supported tools behind a human decision",
+   "Attributable audit trail and operations log of who did what, when and why",
+   "Persistent memory, onboarding briefs and a calendar that outlive agent sessions",
+   "REST API and MCP server; works with CrewAI, LangGraph, AutoGen, LangChain or custom agents and any model",
+   "Agent runner for headless agents woken on demand or on a schedule",
+   "Webhooks to Slack and n8n, app error monitoring, encrypted per-project keystore"
+  ],
+  "faq": [
+   [
+    "Does Pragor work with my agent framework?",
+    "Yes. Pragor is framework- and model-agnostic: agents built with CrewAI, LangGraph, AutoGen, LangChain or your own code connect over its REST API or MCP server using a project key."
+   ],
+   [
+    "Is Pragor free?",
+    "It is free during the public beta, with 3 projects, 10 agents and no monthly event limit. Paid plans (Solo, Team, Business) are listed but open after the beta."
+   ]
+  ],
+  "sources": [
+   "https://pragor.net/",
+   "https://pragor.net/pricing"
+  ],
+  "updated": "2026-10-19",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Beta",
+     "€0",
+     "free during public beta: 3 projects, 10 agents, unlimited activity events, up to 3 people"
+    ],
+    [
+     "Solo",
+     "€29/month",
+     "after the beta; 1 project, 10 agents, 3,000 events/month"
+    ],
+    [
+     "Team",
+     "€99/month",
+     "after the beta; up to 5 projects, 25 agents, 20,000 events/month"
+    ],
+    [
+     "Business",
+     "€249/month",
+     "after the beta; up to 25 projects, unlimited agents, 100,000 events/month"
+    ],
+    [
+     "Enterprise / self-hosted",
+     "Contact sales",
+     "dedicated or on-prem instance"
+    ]
+   ],
+   "note": "Paid plans are not open yet; prices shown are list prices (a 25% launch discount is advertised). Reads are always free.",
+   "src": "https://pragor.net/pricing",
+   "checked": "2026-10-19"
+  }
+ },
+ "mailveri-mcp": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "MailVeri MCP is the official, MIT-licensed Model Context Protocol server for MailVeri, an email verification service. It lets AI assistants such as Claude Desktop, Claude Code, Codex, Cursor, Windsurf and VS Code (Cline) check whether an address is deliverable straight from chat: syntax, MX and SMTP checks, mailbox existence, catch-all domains, disposable providers, role accounts and full inboxes.",
+   "Agents can also queue bulk lists for background verification, follow batch progress, download filtered results and check the remaining credit balance before a large outreach run. It runs locally over stdio (or SSE) via uvx from GitHub with a MailVeri API key; verification uses pay-as-you-go credits."
+  ],
+  "who": "Developers, growth and sales teams who clean lead and contact lists, and builders of outreach agents who want their AI assistant to verify emails before sending.",
+  "features": [
+   "Single-email verification: syntax, MX, SMTP, catch-all, disposable, role-account and full-inbox detection",
+   "Bulk list verification as background batches, with progress and filtered CSV or ZIP results",
+   "Credit balance check before large runs",
+   "Six MCP tools (verify_email, verify_batch, get_batch_status, download_batch_result, delete_batch, get_balance)",
+   "Configs for Claude Desktop, Claude Code, Codex, Cursor, Windsurf, VS Code (Cline) and more; stdio or SSE transport",
+   "MIT-licensed server, launched with uvx from GitHub"
+  ],
+  "faq": [
+   [
+    "What does MailVeri MCP cost?",
+    "The MCP server is free and open source (MIT). Verifications use MailVeri credits: 1,000 free on sign-up, then pay-as-you-go packs from $9 for 10,000 credits, with no subscription and credits that never expire."
+   ],
+   [
+    "Which AI assistants does it work with?",
+    "Any MCP client. MailVeri documents setups for Claude Desktop, Claude Code, Codex, Cursor, Windsurf, Antigravity, OpenCode, Pi, Oh My Pi and VS Code (Cline)."
+   ]
+  ],
+  "sources": [
+   "https://mailveri.com/docs/mcp/",
+   "https://github.com/mailveri/mailveri-mcp",
+   "https://mailveri.com/pricing"
+  ],
+  "updated": "2026-10-19",
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "MCP server",
+     "Free",
+     "open source (MIT)"
+    ],
+    [
+     "Free credits",
+     "1,000 credits",
+     "on sign-up"
+    ],
+    [
+     "Pay-as-you-go",
+     "from $9",
+     "10,000 credits; $59 for 100,000; $299 for 1,000,000; up to $999 for 5,000,000"
+    ]
+   ],
+   "note": "No subscription; credits never expire.",
+   "src": "https://mailveri.com/pricing",
+   "checked": "2026-10-19"
   }
  }
 }

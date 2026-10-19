@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T05:39:58Z",
- "updated": "2026-10-19T05:39:58Z",
- "last_checked": "2026-10-18",
- "count": 1409,
+ "generated": "2026-10-19T14:01:48Z",
+ "updated": "2026-10-19T14:01:48Z",
+ "last_checked": "2026-10-19",
+ "count": 1411,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -21944,12 +21944,13 @@
    "website": "https://www.betterclaw.io/",
    "github": "",
    "category": "no-code builders",
-   "description": "Build and deploy AI agents without code on 28+ model providers, connected to Telegram, Slack, Discord and Gmail.",
+   "description": "Build and deploy AI agents without code on 28+ model providers or local LLMs, with 120+ app connectors, any MCP server and unlimited skills, running in Telegram, Slack, Discord and Gmail.",
    "key_features": [
     "Freemium",
     "Active",
     "Write code",
-    "Build apps without code"
+    "Build apps without code",
+    "Connect tools via mcp"
    ],
    "pricing": "Freemium",
    "price_tag": "freemium",
@@ -21973,7 +21974,13 @@
    "license": "",
    "tags": [
     "write code",
-    "build apps without code"
+    "build apps without code",
+    "connect tools via MCP",
+    "120+ connectors",
+    "byok",
+    "local llm",
+    "mcp",
+    "skills"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/betterclaw.png",
@@ -59433,6 +59440,106 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/9bot.png",
    "page": "https://agentscouthq.com/tools/9bot.html"
+  },
+  {
+   "name": "Pragor",
+   "slug": "pragor",
+   "url": "https://pragor.net/",
+   "website": "https://pragor.net/",
+   "github": "",
+   "category": "business agents",
+   "description": "Operations board where teams of AI agents (CrewAI, LangGraph, AutoGen or custom code) and people share tasks, messages, acknowledgements and evidence, with approvals for risky work, persistent memory and an audit trail, via web UI, REST API or MCP.",
+   "key_features": [
+    "Free during public beta (3 projects, 10 agents, no card); paid plans from €29/mo open after the beta",
+    "Beta",
+    "Build multi-agent systems"
+   ],
+   "pricing": "Free during public beta (3 projects, 10 agents, no card); paid plans from €29/mo open after the beta",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "business agents",
+    "multi-agent",
+    "agent teams",
+    "orchestration",
+    "human in the loop",
+    "human approval",
+    "audit trail",
+    "task board",
+    "mcp",
+    "rest api"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pragor.png",
+   "page": "https://agentscouthq.com/tools/pragor.html"
+  },
+  {
+   "name": "MailVeri MCP",
+   "slug": "mailveri-mcp",
+   "url": "https://mailveri.com/docs/mcp/",
+   "website": "https://mailveri.com/docs/mcp/",
+   "github": "https://github.com/mailveri/mailveri-mcp",
+   "category": "MCP & infra",
+   "description": "Open-source MCP server that lets AI agents and coding assistants verify single emails and bulk email lists through the MailVeri API, with SMTP, catch-all, disposable and role-account detection.",
+   "key_features": [
+    "MIT-licensed server; MailVeri API is pay-as-you-go credits (1,000 free on sign-up, from $9 for 10,000), no subscription",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "MIT-licensed server; MailVeri API is pay-as-you-go credits (1,000 free on sign-up, from $9 for 10,000), no subscription",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP",
+    "email verification",
+    "email",
+    "mcp",
+    "deliverability",
+    "bulk email lists",
+    "lead lists",
+    "outreach",
+    "contacts",
+    "smtp"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mailveri-mcp.png",
+   "page": "https://agentscouthq.com/tools/mailveri-mcp.html"
   }
  ]
 }
