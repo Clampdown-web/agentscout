@@ -379,3 +379,7 @@ body{overflow-wrap:break-word}.btn{max-width:100%}.hg-head h2{white-space:normal
 
 /* Logo fallback letter (Oct 19, 2026 PT): drawn with CSS so it is never part of the text (copy, reader view, snippets), not selectable, and hidden while a logo img is present (shown only if the logo fails and is removed) */
 .ico>[data-l]::before{content:attr(data-l)}.ico>[data-l]{-webkit-user-select:none;user-select:none;pointer-events:none}.ico:has(>img)>[data-l]{visibility:hidden}
+/* AgentScout wordmark inline in "Free AI tools built by AgentScout" headings (Oct 19, 2026 PT): the svg's text is 21/32 of its height,
+   so 1.52em makes "AgentScout" match the surrounding text size; -0.4em puts the svg text baseline on the line's baseline. */
+img.aswm{display:inline-block;height:1.52em;width:auto;max-width:100%;aspect-ratio:168/32;vertical-align:-.4em;margin:0 -.5em 0 .05em}
+html[data-theme=dark] img.aswm{filter:invert(1) hue-rotate(180deg)}

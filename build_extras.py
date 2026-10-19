@@ -14,6 +14,11 @@ PAIRS+=[tuple(k.split("-vs-")) for k in NEW]
 # Logo <img> error handler (Oct 18 2026 logo fix): retry twice (1.5 s, 3 s) with a cache-busting query before
 # falling back to the letter, so a transient GitHub Pages 503/404 (e.g. during a deploy) no longer drops logos for good.
 ONERR='onerror="'+"var i=this,n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()"+'"'
+def wordmark(d=""):
+    """AgentScout wordmark inline in a heading or sentence (same logo-wordmark.svg as the site header, so it is already cached
+    and follows the theme). alt="AgentScout" keeps the text reading "... built by AgentScout". Sized/aligned in styles.css (.aswm)."""
+    return f'<img class="aswm" src="{d}logo-wordmark.svg" alt="AgentScout" width="168" height="32">'
+BUILT_BY=lambda d="": f'Free AI tools built by {wordmark(d)}'
 def ico(x,d="../",cls=""):
     L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" {ONERR}>' if x.get("logo") else ""
     if cls=="lg": im=im.replace('width="40" height="40" loading="lazy"','width="56" height="56" fetchpriority="high"')  # tool-page header logo is above the fold: load it right away
@@ -361,7 +366,7 @@ def free_tools(t):
     canon=B+"free-tools.html"; title="Free AI Agent Tools (2026): Open-Source & Free Tiers | AgentScout"
     desc=f"{len(items)} free and open-source AI agent tools in {len(cats)} categories, plus AgentScout's free AI cost calculator, token counter, prompt builder and image generator."[:158]
     feat=('<div class="card tile" style="margin:18px 0 8px;max-width:640px"><div class="ct"><span class="ico"><span aria-hidden="true">✨</span></span><div class="tn"><h3>Unlimited Free AI Image Generator</h3>'
-          '<div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">Type a prompt and get an image in seconds. No sign-up needed. Powered by FLUX.1 [schnell].</p>'
+          '<div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">Type a prompt and get an image in seconds. No sign-up needed. Powered by FLUX.1 [schnell].</p>'
           '<a class="btn primary" href="generate.html">Open the image generator</a></div>')
     jump=" · ".join(f'<a href="#{catslug(c)}">{e(c)} ({n})</a>' for c,n in cats.most_common())
     sec=""
@@ -371,7 +376,7 @@ def free_tools(t):
         sec+=f'<h2 id="{catslug(c)}" class="has-cico" style="font-size:18px;margin:32px 0 10px">{cico(c)}{e(c[0].upper()+c[1:])} <span style="color:var(--muted);font-weight:400">({n})</span></h2><p style="margin:0 0 10px;font-size:14px"><a href="categories/{catslug(c)}.html">All {e(c)} tools →</a></p><ul style="list-style:none;padding:0;margin:0">{li}</ul>'
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free AI agent tools</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout, plus {len(items)} free and open-source AI agent tools from our directory, grouped by category.</p>'
-          '<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'+feat+'<h2 id="agentscout-tools" style="font-size:18px;margin:28px 0 10px">More free tools from AgentScout</h2><p style="font-size:14px;color:var(--muted);margin:0 0 12px">Calculators and generators that run entirely in your browser. No sign-up, no API key, nothing sent to a server.</p><div class="grid">'+__import__("build_free_tools").hub_cards()+'</div>'+
+          '<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'+feat+'<h2 id="agentscout-tools" style="font-size:18px;margin:28px 0 10px">'+BUILT_BY("")+'</h2><p style="font-size:14px;color:var(--muted);margin:0 0 12px">Calculators and generators that run entirely in your browser. No sign-up, no API key, nothing sent to a server.</p><div class="grid">'+__import__("build_free_tools").hub_cards()+'</div>'+
           f'<h2 style="font-size:18px;margin:32px 0 8px">Free and open-source tools in the directory</h2><p style="font-size:14px;color:var(--muted)">Included when the pricing the maker states says open source, open weights or open standard, free, a free tier or plan, or freemium. Open-source tools can still have paid cloud plans or need a paid model API key. Check each official site.</p><p style="font-size:14px">{jump}</p>'
           +sec+'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Listings marked discontinued are left out. Within each category, tools are sorted by GitHub stars where known.</p></section>')
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},

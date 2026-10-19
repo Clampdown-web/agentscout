@@ -169,20 +169,20 @@ def run(t):
     FB={"ai-cost-calculator":["ai-agent-frameworks","ai-coding-agents"],"token-counter":["ai-agent-frameworks","ai-agent-observability-tools"],"prompt-builder":["ai-productivity-tools","personal-ai-agents"],"agent-setup-generator":["ai-coding-agents","ai-agent-frameworks"]}
     for k,v in FB.items():
         html='<p>Best-of lists: '+" · ".join([blink(b) for b in v if b in BEST]+['<a href="../best/index.html">All best lists</a>'])+'</p>'
-        edit(f"free-tools/{k}.html",lambda s,html=html:put(s,"ftbest",html,'<p>More free tools from AgentScout:'))
+        edit(f"free-tools/{k}.html",lambda s,html=html:put(s,"ftbest",html,'<p class="ftmore">'))
     edit("free-tools.html",lambda s:put(s,"fthubbest",'<p style="font-size:14px;margin:6px 0 0">Ranked picks: <a href="best/free-ai-agents.html">Best free AI agents</a> · <a href="best/self-hosted-ai-agents.html">Best self-hosted AI agents</a> · <a href="best/most-starred-open-source-ai-agents.html">Most-starred open-source projects</a> · <a href="best/index.html">All best lists</a></p>','<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
     # (8) free-tools.html
     edit("free-tools.html",lambda s:put(s,"ftroles",'<p style="font-size:14px;margin:6px 0 0">Free tools by role: '+" · ".join(f'<a href="for/{r[0]}.html">{e(CAP(r[1]))}</a>' for r in RO)+'</p>','<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
     # (9) static pages
     edit("submit.html",lambda s:put(s,"submit",'<p style="margin:0 0 16px;font-size:14.5px"><b>Prepare your listing:</b> describe what your agent does in a sentence or two. Our free <a href="free-tools/agent-setup-generator.html">agent setup generator</a> can draft a clear system prompt and starter config to share with users.</p>','<form id="sf"'))
     ft=" · ".join(f'<a href="free-tools/{s}.html">{e(n)}</a>' for s,n,_,_ in F.TOOLS)
-    edit("generate.html",lambda s:put(s,"gen",f'<p style="margin:18px 0 0">More free tools: {ft} · <a href="free-tools.html">All free tools</a></p>','</section></main>'))
+    edit("generate.html",lambda s:put(s,"gen",f'<p style="margin:18px 0 0">More {X.BUILT_BY("").replace("Free AI","free AI",1)}: {ft} · <a href="free-tools.html">All free tools</a></p>','</section></main>'))
     line=f'<p style="margin:18px 0 0;font-size:14px">Free tools: {ft} · Popular searches: <a href="s/free-ai-coding-agents.html">Free AI coding agents</a> · <a href="s/open-source-browser-agents.html">Open-source browser agents</a> · <a href="s/">All searches</a></p>'
     edit("news.html",lambda s:put(s,"news",line,'</section></main>'))
     edit("newsletter.html",lambda s:put(s,"nl",line,'</section></main>'))
     # (4) homepage
     def home(s):
-        strip=(f'<section id="xfree" class="band" aria-labelledby="xfree-h"><div class="wrap"><div class="sh"><div><h2 id="xfree-h">Free AI tools</h2><p>Calculators and generators that run in your browser. No sign-up. <a href="free-tools.html">All free tools →</a></p></div></div>'
+        strip=(f'<section id="xfree" class="band" aria-labelledby="xfree-h"><div class="wrap"><div class="sh"><div><h2 id="xfree-h">{X.BUILT_BY("")}</h2><p>Calculators and generators that run in your browser. No sign-up. <a href="free-tools.html">All free tools →</a></p></div></div>'
                f'<div class="grid fill">{F.hub_cards("")}{F.see_all_card("")}</div></div></section>')
         s=put(s,"homefree",strip,'<div class="layout">')
         role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'

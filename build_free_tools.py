@@ -39,7 +39,7 @@ def wrap(s,h1,lede,inner,faq,js,t):
           f'<h1 style="text-align:left;margin-left:0">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>'
           f'<p class="muted" style="margin:0 0 8px;font-size:13.5px">Free, no sign-up. Runs entirely in your browser: nothing you type is sent to AgentScout or any AI provider.</p>'
           f'{inner}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}{rel(s)}'
-          f'<p>More free tools from AgentScout: {others(s)} · <a href="../generate.html">Free AI image generator</a> · <a href="../free-tools.html">All free tools</a></p></section><script>{TOK}\n{js}</script>')
+          f'<p class="ftmore">More {X.BUILT_BY("../").replace("Free AI","free AI",1)}: {others(s)} · <a href="../generate.html">Free AI image generator</a> · <a href="../free-tools.html">All free tools</a></p></section><script>{TOK}\n{js}</script>')
     os.makedirs("free-tools",exist_ok=True)
     open(f"free-tools/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); return canon
 
@@ -175,11 +175,11 @@ document.querySelectorAll("textarea:not([readonly]),select,input").forEach(funct
 
 def hub_cards(d=""):
     """Cards for the free-tools.html hub (AgentScout's own tools)."""
-    return "".join(f'<div class="card tile" style="position:relative"><a class="stretch" href="{d}free-tools/{s}.html" aria-label="{e(n)}"></a><div class="ct"><span class="ico"><span aria-hidden="true">{ic}</span></span><div class="tn"><h3>{e(n)}</h3><div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">{e(desc)}</p></div>' for s,n,desc,ic in TOOLS)
+    return "".join(f'<div class="card tile" style="position:relative"><a class="stretch" href="{d}free-tools/{s}.html" aria-label="{e(n)}"></a><div class="ct"><span class="ico"><span aria-hidden="true">{ic}</span></span><div class="tn"><h3>{e(n)}</h3><div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">{e(desc)}</p></div>' for s,n,desc,ic in TOOLS)
 def see_all_card(d=""):
     """'See all free tools' tile in the same card style (homepage grid), so the grid has a full last row."""
     return (f'<div class="card tile ftall" style="position:relative"><a class="stretch" href="{d}free-tools.html" aria-label="See all free tools"></a><div class="ct"><span class="ico"><img src="{d}favicon.svg" alt="" width="40" height="40" loading="lazy" decoding="async"></span>'
-            f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span><span class="b cat">by AgentScout</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
+            f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
     urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t)]
