@@ -5254,5 +5254,224 @@
 "mailveri-mcp": [
 "email-agents",
 "mcp-servers"
+],
+"mcp-ui": [
+"mcp-servers",
+"agent-frameworks"
+],
+"monid": [
+"voice-phone",
+"web-scraping",
+"mcp-gateways",
+"images-design"
+],
+"treg": [
+"voice-phone",
+"marketing-agents",
+"web-scraping"
+],
+"zeroboot": [
+"agent-memory",
+"sandboxes"
+],
+"home-assistant-mcp-ha-mcp": [
+"mcp-servers",
+"video-editing"
+],
+"paper-search-mcp": [
+"research-agents",
+"mcp-servers",
+"terminal-agents"
+],
+"harnessrouter": [
+"agent-frameworks"
+],
+"memgraph": [
+"agent-memory",
+"text-to-sql",
+"vector-rag"
+],
+"longmemory": [
+"agent-memory",
+"local-models",
+"terminal-agents"
+],
+"oh-my-openagent-omo": [
+"parallel-orchestration",
+"agent-memory",
+"planning-tasks",
+"workflow-automation",
+"agent-frameworks"
+],
+"atlas": [],
+"openqodex": [
+"code-review",
+"stem-separation"
+],
+"sem": [
+"code-review",
+"observability",
+"mcp-servers"
+],
+"shadcn-lint": [
+"images-design",
+"rules-config"
+],
+"raven": [
+"ai-sre",
+"planning-tasks",
+"voice-phone",
+"research-agents",
+"images-design"
+],
+"skill-recorder": [
+"computer-use"
+],
+"openmausbot": [],
+"rakazo": [
+"voice-phone",
+"computer-use",
+"sandboxes",
+"local-models",
+"mobile"
+],
+"clawx": [
+"computer-use",
+"terminal-agents"
+],
+"infisical": [
+"agent-auth"
+],
+"cyberstrike": [
+"penetration-testing",
+"agent-auth",
+"local-models",
+"terminal-agents"
+],
+"webcmd": [
+"agent-memory",
+"token-costs",
+"browser-automation",
+"local-models"
+],
+"scout-outcrawl": [
+"web-scraping",
+"browser-automation"
+],
+"openadapt": [
+"voice-phone",
+"computer-use",
+"local-models"
+],
+"pascal-editor": [
+"browser-automation",
+"local-models",
+"terminal-agents",
+"ide-agents",
+"video-editing"
+],
+"solidcraft": [
+"computer-use",
+"mcp-servers"
+],
+"palmier-pro": [
+"ide-agents",
+"video-editing",
+"video"
+],
+"html-video": [
+"local-models",
+"video"
+],
+"openpencil": [
+"vector-rag",
+"mcp-servers",
+"images-design"
+],
+"llm-for-zotero": [
+"research-agents",
+"agent-frameworks"
+],
+"dramaclaw": [
+"marketing-agents",
+"local-models",
+"storyboards-previs",
+"video"
+],
+"macro": [
+"agent-memory",
+"voice-phone",
+"email-agents",
+"sales-agents"
+],
+"dynamiq": [
+"vector-rag",
+"workflow-automation",
+"multi-agent",
+"agent-frameworks"
+],
+"aworld": [
+"agent-memory",
+"agent-frameworks"
+],
+"pixeltable": [
+"vector-rag",
+"agent-frameworks",
+"video",
+"images-design"
+],
+"golem": [],
+"agor": [],
+"imcp": [],
+"rogue": [
+"penetration-testing",
+"guardrails",
+"evals"
+],
+"mcp-kotlin-sdk": [
+"mcp-servers",
+"agent-frameworks",
+"ide-agents"
+],
+"agent-mesh": [
+"agent-auth"
+],
+"bytechef": [
+"workflow-automation"
+],
+"universal-modder": [
+"vector-rag",
+"games",
+"rules-config"
+],
+"moonpay-cli-moonagents": [
+"trading-agents",
+"agent-wallets",
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"conductor": [
+"parallel-orchestration",
+"voice-phone",
+"sandboxes",
+"stem-separation",
+"mobile"
+],
+"sentience": [
+"agent-memory",
+"voice-phone",
+"email-agents",
+"computer-use"
+],
+"toolhouse": [],
+"hyperbrowser": [
+"voice-phone",
+"browser-automation",
+"sandboxes",
+"stem-separation"
+],
+"augment-code": [
+"codebase-context"
 ]
 }
