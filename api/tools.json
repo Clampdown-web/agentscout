@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T15:59:03Z",
- "updated": "2026-10-19T15:59:03Z",
+ "generated": "2026-10-19T16:50:10Z",
+ "updated": "2026-10-19T16:50:10Z",
  "last_checked": "2026-10-19",
- "count": 1462,
+ "count": 1463,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -60331,8 +60331,8 @@
   {
    "name": "ClawX",
    "slug": "clawx",
-   "url": "https://github.com/ValueCell-ai/ClawX",
-   "website": "",
+   "url": "https://claw-x.com/",
+   "website": "https://claw-x.com/",
    "github": "https://github.com/ValueCell-ai/ClawX",
    "category": "personal agents",
    "description": "Desktop app that puts a graphical interface on OpenClaw agents so you can set up and run them without the terminal.",
@@ -61728,6 +61728,60 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openfilm.png",
    "page": "https://agentscouthq.com/tools/openfilm.html"
+  },
+  {
+   "name": "RobotTraining.jobs",
+   "slug": "robottraining-jobs",
+   "url": "https://robottraining.jobs/",
+   "website": "https://robottraining.jobs/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Free job board and remote MCP server for paid robot-training work (teleoperation, demonstration recording, AV and drone test operations): AI assistants can search open roles, hourly pay and hiring data with no key or account.",
+   "key_features": [
+    "Free for job seekers; free remote MCP server and open data (no key, CC BY 4.0); employers pay per onboarded hire or $99 per featured role for 30 days",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Free for job seekers; free remote MCP server and open data (no key, CC BY 4.0); employers pay per onboarded hire or $99 per featured role for 30 days",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "sales & support",
+    "mcp",
+    "remote mcp server",
+    "jobs",
+    "job board",
+    "robotics",
+    "robot training",
+    "teleoperation",
+    "data collection",
+    "open data",
+    "hiring data"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/robottraining-jobs.png",
+   "page": "https://agentscouthq.com/tools/robottraining-jobs.html"
   }
  ]
 }

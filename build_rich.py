@@ -84,6 +84,16 @@ def _pricing(n,r):
             offers.append({"@type":"Offer","name":f"{n} {a}","price":(m.group(1).replace(",","") if m else "0"),"priceCurrency":"USD","url":P["src"],"description":b+((" · "+c) if c else "")})
     return html_,fq+[("__free__",isfree)],offers
 
+def _mcp(n,r):
+    """Optional MCP server section (Oct 19 2026, RobotTraining.jobs): endpoint, transport, auth, tools and client config, only from the maker's own docs or a live tools/list."""
+    M=r.get("mcp")
+    if not M: return ""
+    li=[("Endpoint",f'<code>{e(M["endpoint"])}</code>')]+[(k,e(M[f])) for k,f in (("Transport","transport"),("Authentication","auth"),("MCP Registry name","registry")) if M.get(f)]
+    return (f'{H2}{e(n)} MCP server</h2><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{k}</strong>: {v}</li>" for k,v in li)+"</ul>"
+      +(f'<p style="margin:0 0 6px"><strong>Tools</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">'+"".join(f"<li><code>{e(a)}</code>: {e(b)}</li>" for a,b in M["tools"])+"</ul>" if M.get("tools") else "")
+      +(f'<p style="margin:0 0 6px">Client config (Cursor, VS Code, Claude Code and other config-file clients):</p><pre style="margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{e(M["config"])}</code></pre>' if M.get("config") else "")
+      +(f'<p class="muted" style="margin:0 0 28px">Setup docs: <a href="{e(M["docs"])}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",M["docs"]).rstrip("/"))}</a>. Tool list checked live on {e(r.get("updated",""))}.</p>' if M.get("docs") else '<div style="margin-bottom:28px"></div>'))
+
 def lite(out,x,t,catslug,prim,B,r):
     """Lighter rich section (Oct 2026 enrichment): grounded description, who it's for, key features, FAQ.
     Keeps the existing About paragraph (additive) and never states pricing beyond the directory's maker-stated label."""
@@ -103,7 +113,7 @@ def lite(out,x,t,catslug,prim,B,r):
       +(f'<p class="muted" style="margin:0 0 28px">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
       +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
-      +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+phtml
+      +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+_mcp(n,r)+phtml
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
     app={"@type":"SoftwareApplication","name":n,"url":prim,"description":" ".join(r["long"])[:500],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","applicationSubCategory":cat}
     # Offer only when the price is verified: official pricing page tiers, or a verified OSI open-source licence (free to use)

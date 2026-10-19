@@ -36979,5 +36979,44 @@
     "id": 1480,
     "slug": "openfilm",
     "logo": "assets/logos/openfilm.png"
+  },
+  {
+    "name": "RobotTraining.jobs",
+    "url": "https://robottraining.jobs/",
+    "description": "Free job board and remote MCP server for paid robot-training work (teleoperation, demonstration recording, AV and drone test operations): AI assistants can search open roles, hourly pay and hiring data with no key or account.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-19",
+    "added": "2026-10-19",
+    "source": "Submission",
+    "pricing_detail": "Free for job seekers; free remote MCP server and open data (no key, CC BY 4.0); employers pay per onboarded hire or $99 per featured role for 30 days",
+    "tags": [
+      "mcp",
+      "remote mcp server",
+      "jobs",
+      "job board",
+      "robotics",
+      "robot training",
+      "teleoperation",
+      "data collection",
+      "open data",
+      "hiring data"
+    ],
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP",
+      "sales & support"
+    ],
+    "website": "https://robottraining.jobs/",
+    "github": "",
+    "id": 1481,
+    "slug": "robottraining-jobs",
+    "logo": "assets/logos/robottraining-jobs.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-19"
   }
 ]

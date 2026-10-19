@@ -22228,5 +22228,95 @@
    "checked": "2026-10-19"
   },
   "updated": "2026-10-19"
+ },
+ "robottraining-jobs": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "RobotTraining.jobs is a free job board for paid robot-training work: remote robot teleoperation, demonstration and data collection, first-person (egocentric) video capture, robot sensor-data annotation, robot testing and QA, fleet operations, and self-driving vehicle and drone operation. It follows 120 employers and programs, such as Tesla, Figure, Waymo, Zipline and micro1, reads the job boards of the 103 that publish one every day, and shows each role with the hourly pay its posting states and a link to apply on the employer's own site. On Oct 19, 2026 it listed 1,024 open roles.",
+   "The same data is open to AI agents. A free remote MCP server at robottraining.jobs/api/mcp (Streamable HTTP, no API key or account) lets Claude, ChatGPT, Cursor, VS Code, Claude Code and other MCP clients search open roles, pull pay by kind of work and read hiring counts by employer, and each returned role links back to apply. The totals and pay figures are also published as JSON and CSV files under a CC BY 4.0 licence, plus a small Python client on PyPI."
+  ],
+  "who": "People looking for paid work teaching or operating robots, and builders who want an AI assistant or agent to answer questions about robot-training jobs, pay and hiring from live, sourced data.",
+  "features": [
+   "Open robot-training roles from 103 employer job boards, re-read daily, with each posting's stated hourly pay",
+   "Seven kinds of work: teleoperation, demonstration collection, egocentric capture, embodied-AI annotation, robot QA and evaluation, fleet operations, AV and drone operators",
+   "Country filter that hides roles you can't take from where you live",
+   "Pay medians and typical ranges per kind of work and per employer, each figure with its source",
+   "Free remote MCP server (no key) with three read-only tools",
+   "Open data: /roles.json, /pay.json and /pay.csv (CC BY 4.0), an OpenAPI spec and a pip-installable Python client"
+  ],
+  "mcp": {
+   "endpoint": "https://robottraining.jobs/api/mcp",
+   "transport": "Streamable HTTP (remote)",
+   "auth": "None: no API key or account",
+   "registry": "jobs.robottraining/robot-training-jobs",
+   "tools": [
+    [
+     "search_robot_training_jobs",
+     "Finds open roles by keyword, kind of work, employer, country or minimum hourly rate (up to 25 results), each with its pay and an apply link."
+    ],
+    [
+     "get_robot_training_pay",
+     "Median and typical (25th to 75th percentile) hourly pay per kind of work, shown only when at least three employers post a rate."
+    ],
+    [
+     "get_robot_training_market",
+     "How many roles are open now and new in the last 7 days, by kind of work and by employer, optionally for one country."
+    ]
+   ],
+   "config": "{\"mcpServers\": {\"robottraining-jobs\": {\"url\": \"https://robottraining.jobs/api/mcp\"}}}",
+   "docs": "https://robottraining.jobs/data"
+  },
+  "faq": [
+   [
+    "How do I connect the RobotTraining.jobs MCP server?",
+    "In Claude, open Settings, then Connectors, then Add custom connector and enter https://robottraining.jobs/api/mcp. In Cursor, VS Code or Claude Code, add {\"mcpServers\": {\"robottraining-jobs\": {\"url\": \"https://robottraining.jobs/api/mcp\"}}} to the MCP config. No key is needed."
+   ],
+   [
+    "Where does RobotTraining.jobs get its pay figures?",
+    "From employers' own job postings and pages, read daily. Each figure states its source (a live posting, the employer's statement, an outside report or a labelled estimate), and a market rate is shown only when at least three employers post one. None is a promise of earnings."
+   ]
+  ],
+  "sources": [
+   "https://robottraining.jobs/",
+   "https://robottraining.jobs/data",
+   "https://robottraining.jobs/about",
+   "https://robottraining.jobs/partners",
+   "https://registry.modelcontextprotocol.io/v0/servers?search=robottraining"
+  ],
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Job seekers",
+     "Free",
+     "search, job alerts and matching"
+    ],
+    [
+     "MCP server and open data",
+     "Free",
+     "no key; CC BY 4.0"
+    ],
+    [
+     "Employer pilot",
+     "Free",
+     "tracked referrals"
+    ],
+    [
+     "Featured role",
+     "$99 per role",
+     "30 days"
+    ],
+    [
+     "Tracked referrals",
+     "Per onboarded person",
+     "at or under the employer's referral rate"
+    ]
+   ],
+   "note": "Employers pay only for featured roles or for people who onboard; job seekers and AI assistants use it free.",
+   "src": "https://robottraining.jobs/partners",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
  }
 }
