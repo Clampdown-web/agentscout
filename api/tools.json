@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T15:57:26Z",
- "updated": "2026-10-19T15:57:26Z",
+ "generated": "2026-10-19T15:59:03Z",
+ "updated": "2026-10-19T15:59:03Z",
  "last_checked": "2026-10-19",
- "count": 1460,
+ "count": 1462,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -8768,13 +8768,12 @@
    "url": "https://pentagi.com/",
    "website": "https://pentagi.com/",
    "github": "https://github.com/vxcontrol/pentagi",
-   "category": "coding",
+   "category": "security & governance",
    "description": "Autonomous multi-agent system for running penetration testing tasks.",
    "key_features": [
     "Open source",
     "Mature",
     "30728 GitHub stars",
-    "Write code",
     "Build multi-agent systems"
    ],
    "pricing": "Open source",
@@ -8786,9 +8785,7 @@
    "date_added": "2026-10-16",
    "added": "2026-10-16",
    "source": "GitHub",
-   "goals": [
-    "coding"
-   ],
+   "goals": [],
    "skill": "developer",
    "weekly_pick": false,
    "new": false,
@@ -8799,7 +8796,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
     "build multi-agent systems"
    ],
    "hybrid": false,
@@ -10037,12 +10033,13 @@
    "url": "https://www.texttocad.dev/",
    "website": "https://www.texttocad.dev/",
    "github": "https://github.com/earthtojake/text-to-cad",
-   "category": "productivity",
+   "category": "3D & concept art",
    "description": "Gives agents tools to create CAD models from text.",
    "key_features": [
     "Open source",
     "Mature",
-    "20968 GitHub stars"
+    "20968 GitHub stars",
+    "Generate 3d"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -10054,7 +10051,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "writing"
+    "media"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -10066,7 +10063,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "productivity"
+    "generate 3D"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/text-to-cad.png",
@@ -15497,12 +15494,13 @@
    "url": "https://adam.new/cadam/",
    "website": "https://adam.new/cadam/",
    "github": "https://github.com/Adam-CAD/CADAM",
-   "category": "productivity",
+   "category": "3D & concept art",
    "description": "Open-source text-to-CAD web app.",
    "key_features": [
     "Open source",
     "Mature",
-    "5280 GitHub stars"
+    "5280 GitHub stars",
+    "Generate 3d"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -15513,7 +15511,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "writing"
+    "media"
    ],
    "skill": "no-code",
    "weekly_pick": false,
@@ -15525,7 +15523,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "productivity"
+    "generate 3D"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cadam.png",
@@ -28543,14 +28541,14 @@
    "category": "no-code builders",
    "description": "AI agent building platform with knowledge-base RAG, data processing and a visual workflow editor for deploying question-answering and automation apps.",
    "key_features": [
-    "Source-available + cloud",
+    "Free cloud plan; Basic ¥99/mo, Advanced ¥599/mo; self-host under the FastGPT Open Source License",
     "Mature",
     "29851 GitHub stars",
     "Write code",
     "Automate workflows",
     "Build apps without code"
    ],
-   "pricing": "Source-available + cloud",
+   "pricing": "Free cloud plan; Basic ¥99/mo, Advanced ¥599/mo; self-host under the FastGPT Open Source License",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -28901,12 +28899,12 @@
    "category": "coding",
    "description": "Checker that catches bad React patterns written by coding agents and reports issues to fix.",
    "key_features": [
-    "Source-available",
+    "Free CLI (Modified MIT License)",
     "Mature",
     "15012 GitHub stars",
     "Write code"
    ],
-   "pricing": "Source-available",
+   "pricing": "Free CLI (Modified MIT License)",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -28926,7 +28924,7 @@
    "repo": "millionco/react-doctor",
    "github_stars": 15012,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code"
    ],
@@ -35159,14 +35157,14 @@
    "category": "no-code builders",
    "description": "Platform for building and deploying LLM-powered chatbots and agents, with a visual studio, integrations hub, CLI and SDK.",
    "key_features": [
-    "Open source + cloud",
+    "Free plan; Plus $150/mo and Team $750/mo billed annually; Enterprise custom",
     "Mature",
     "14956 GitHub stars",
     "Write code",
     "Build an agent",
     "Build apps without code"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Free plan; Plus $150/mo and Team $750/mo billed annually; Enterprise custom",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -49405,14 +49403,14 @@
    "category": "video generation",
    "description": "Node-based open-source engine for image and video generation workflows. Run models like Wan, LTX and Hunyuan locally or in Comfy Cloud, with an agent that builds workflows.",
    "key_features": [
-    "Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo",
+    "Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo, Team $700/mo",
     "Active",
     "138580 GitHub stars",
     "Generate video",
     "Generate images",
     "Open image models"
    ],
-   "pricing": "Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo",
+   "pricing": "Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo, Team $700/mo",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -53208,14 +53206,14 @@
    "category": "image generation",
    "description": "Maker of Stable Diffusion, offering image models, an API and self-hosted enterprise licenses.",
    "key_features": [
-    "See website; community license free for small businesses",
+    "Community License free under $1M annual revenue; Enterprise license custom; API usage billed separately",
     "Active",
     "27301 GitHub stars",
     "Generate images",
     "Open image models"
    ],
-   "pricing": "See website; community license free for small businesses",
-   "price_tag": "unknown",
+   "pricing": "Community License free under $1M annual revenue; Enterprise license custom; API usage billed separately",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -54833,8 +54831,8 @@
   {
    "name": "Playground",
    "slug": "playground",
-   "url": "https://playground.com",
-   "website": "https://playground.com",
+   "url": "https://playgroundai.com/",
+   "website": "https://playgroundai.com/",
    "github": "",
    "category": "graphic design & branding",
    "description": "AI design tool for logos, t-shirts, social posts and flyers, edited by chatting.",
@@ -58021,12 +58019,12 @@
    "category": "photography & photo editing",
    "description": "Free open-source desktop app for upscaling images on your own computer.",
    "key_features": [
-    "Free and open source (AGPL-3.0) desktop app; Upscayl Cloud Pro $24.99/mo",
+    "Free and open source (AGPL-3.0) desktop app; Upscayl Cloud free trial (10 credits), Pro $24.99/mo",
     "Active",
     "50719 GitHub stars",
     "Upscale images"
    ],
-   "pricing": "Free and open source (AGPL-3.0) desktop app; Upscayl Cloud Pro $24.99/mo",
+   "pricing": "Free and open source (AGPL-3.0) desktop app; Upscayl Cloud free trial (10 credits), Pro $24.99/mo",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -59077,12 +59075,12 @@
    "category": "photography & photo editing",
    "description": "Self-hosted AI photo library that auto-tags, recognizes faces and finds places.",
    "key_features": [
-    "Free and open source, self-hosted; paid memberships: see website",
+    "Community edition free (AGPL-3.0, self-hosted); Essentials €2/mo, Plus from €6/mo; managed hosting via PikaPods from $6.50/mo",
     "Active",
     "40320 GitHub stars",
     "Organize photos"
    ],
-   "pricing": "Free and open source, self-hosted; paid memberships: see website",
+   "pricing": "Community edition free (AGPL-3.0, self-hosted); Essentials €2/mo, Plus from €6/mo; managed hosting via PikaPods from $6.50/mo",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -59101,7 +59099,7 @@
    "repo": "photoprism/photoprism",
    "github_stars": 40320,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
     "organize photos"
    ],
@@ -60250,8 +60248,8 @@
   {
    "name": "OpenMausBot",
    "slug": "openmausbot",
-   "url": "https://www.openmausbot.com/",
-   "website": "https://www.openmausbot.com/",
+   "url": "https://mausbot.com/",
+   "website": "https://mausbot.com/",
    "github": "https://github.com/milind-soni/OpenMausBot",
    "category": "personal agents",
    "description": "Open-source chat app for running your own team of AI bots, each with a virtual machine it can use, on the model you choose.",
@@ -60333,8 +60331,8 @@
   {
    "name": "ClawX",
    "slug": "clawx",
-   "url": "https://claw-x.com/",
-   "website": "https://claw-x.com/",
+   "url": "https://github.com/ValueCell-ai/ClawX",
+   "website": "",
    "github": "https://github.com/ValueCell-ai/ClawX",
    "category": "personal agents",
    "description": "Desktop app that puts a graphical interface on OpenClaw agents so you can set up and run them without the terminal.",
@@ -61644,6 +61642,92 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/augment-code.png",
    "page": "https://agentscouthq.com/tools/augment-code.html"
+  },
+  {
+   "name": "Magpie",
+   "slug": "magpie",
+   "url": "https://usemagpie.ai/",
+   "website": "https://usemagpie.ai/",
+   "github": "https://github.com/yetone/magpie",
+   "category": "MCP & infra",
+   "description": "Free, open-source menu bar app and local gateway that lets any coding agent (Claude Code, Codex, Gemini CLI, OpenCode and 60+ more) use any model provider or subscription, with failover when a quota runs out.",
+   "key_features": [
+    "Free and open source (MIT)",
+    "Active",
+    "16857 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "yetone/magpie",
+   "github_stars": 16857,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/magpie.png",
+   "page": "https://agentscouthq.com/tools/magpie.html"
+  },
+  {
+   "name": "OpenFilm",
+   "slug": "openfilm",
+   "url": "https://openfilm.dev/",
+   "website": "https://openfilm.dev/",
+   "github": "https://github.com/openfilm/openfilm",
+   "category": "video generation",
+   "description": "Open-source AI video agent: a skill and CLI that let Claude Code, Codex or any coding agent make films as web pages, plus Studio, a local editor to change and render anything it makes.",
+   "key_features": [
+    "Free and open source (MIT); generated voice, music and images use your own provider keys",
+    "Active",
+    "1224 GitHub stars",
+    "Edit video"
+   ],
+   "pricing": "Free and open source (MIT); generated voice, music and images use your own provider keys",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "openfilm/openfilm",
+   "github_stars": 1224,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openfilm.png",
+   "page": "https://agentscouthq.com/tools/openfilm.html"
   }
  ]
 }

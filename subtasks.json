@@ -5473,5 +5473,17 @@
 ],
 "augment-code": [
 "codebase-context"
+],
+"magpie": [
+"mcp-gateways",
+"local-models",
+"terminal-agents"
+],
+"openfilm": [
+"local-models",
+"terminal-agents",
+"ide-agents",
+"video-editing",
+"video"
 ]
 }

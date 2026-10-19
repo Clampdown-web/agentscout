@@ -21435,5 +21435,798 @@
    "src": "https://mailveri.com/pricing",
    "checked": "2026-10-19"
   }
+ },
+ "magpie": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Magpie, from developer yetone, is a free, open-source app that lets every coding agent on your machine use any model. It runs one local gateway (127.0.0.1:3425) that speaks the OpenAI Chat, OpenAI Responses, Anthropic Messages and Gemini APIs and translates between them, including streaming, tool calls and reasoning, so Codex can run on DeepSeek or Claude Code on Kimi.",
+   "From a menu bar app, window, TUI, web UI or CLI you add providers once (API keys, local models via Ollama, or the Claude, ChatGPT, Copilot, Gemini or Grok plans you are already signed in to) and pick a model per agent; Magpie edits only the relevant key in each agent's own config. Routing groups fail over to the next account or model when a quota runs out, and profiles switch every agent at once."
+  ],
+  "who": "Developers who use more than one coding agent, provider or subscription and want to switch models per agent from one place, or keep working when a plan's quota runs out.",
+  "features": [
+   "One local gateway for OpenAI, Anthropic and Gemini APIs, with translation between them",
+   "Pick a model per agent for Claude Code, Codex, Gemini CLI, OpenCode, Cursor CLI and 60+ more",
+   "Reuse signed-in Claude, ChatGPT, Copilot, Gemini or Grok plans across agents",
+   "Routing groups that fail over when a quota runs out",
+   "Menu bar app, TUI, web UI and CLI on macOS, Windows, Linux, Docker and Termux"
+  ],
+  "faq": [
+   [
+    "Does Magpie read my agents' sign-ins?",
+    "Yes, to offer the subscriptions your agents are signed in to as providers it reads their sign-ins (for example Claude Code's and Codex's files or the Keychain). You can turn this off in Settings → Privacy → Subscription accounts or with magpie accounts discovery off; API-key providers work either way."
+   ],
+   [
+    "How do I install Magpie?",
+    "Download the app from usemagpie.ai, run curl -fsSL https://usemagpie.ai/install.sh | sh, use go install github.com/yetone/magpie@latest, or run the Docker image."
+   ]
+  ],
+  "sources": [
+   "https://github.com/yetone/magpie",
+   "https://usemagpie.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/yetone/magpie",
+   "stars": 16852,
+   "forks": 1216,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "openfilm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenFilm is an open-source AI video agent toolkit: install it as a skill (npx skills add openfilm/openfilm) and Claude Code, Codex or any coding agent can make a film. The agent writes the film as web pages, where each shot is a page that draws any moment with one frame(t) function using CSS, SVG, canvas, WebGL, three.js or video, and film.html cuts the pages, footage, pictures and sound together on tracks.",
+   "Studio, a local editor that runs in your browser (or in the macOS and Windows desktop app, with a chat for your agents beside it), shows the film taking shape and lets you change any text, color, element or clip by hand. It renders MP4 up to 4K, GIFs, transparent video, stems, subtitles and timelines for Final Cut Pro, Premiere Pro and DaVinci Resolve; generated voice, music, images and video come from services you connect with your own keys."
+  ],
+  "who": "People who already use a coding agent and want it to make launch videos, explainers, music videos or edited footage they can then fine-tune by hand, without a video model subscription.",
+  "features": [
+   "Skill and CLI that turn any coding agent into a video agent",
+   "Films as plain HTML: one frame(t) function per shot, cut together in film.html",
+   "Studio editor to change text, styles, clips and timing by hand",
+   "Renders MP4 up to 4K, GIF, transparent video, subtitles and NLE timelines",
+   "No account needed; connect ElevenLabs, OpenAI, Google, fal and others with your own keys"
+  ],
+  "faq": [
+   [
+    "What do I need to run OpenFilm?",
+    "Node 22.2+ and ffmpeg on macOS, Windows or Linux; the first run downloads a headless Chromium (about 100 MB). The desktop app bundles ffmpeg and the browser."
+   ],
+   [
+    "Does OpenFilm need an account?",
+    "No. Making, editing and rendering films needs no account; generated voice, music, images and video use the services you connect with your own API keys."
+   ]
+  ],
+  "sources": [
+   "https://github.com/openfilm/openfilm",
+   "https://openfilm.dev"
+  ],
+  "facts": {
+   "repo": "https://github.com/openfilm/openfilm",
+   "stars": 1222,
+   "forks": 125,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "comfyui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ComfyUI is an open-source, node-based engine for generating images, video, 3D models and audio. You build a workflow as a graph of nodes, so every model, parameter and step is visible and adjustable, and it natively supports the latest open models such as Wan, LTX and Hunyuan.",
+   "Its maker describes it as highly optimized for local consumer hardware, able to run large open models on as little as 4 GB of VRAM and 8 GB of RAM through asynchronous weight streaming. Partner Nodes add closed models such as Nano Banana and Seedance, and Comfy Cloud runs the same workflows on hosted GPUs, with Comfy Agent able to build workflows for you."
+  ],
+  "who": "Artists, video creators and technical users who want fine control over open image and video models, on their own GPU or in the cloud.",
+  "features": [
+   "Node-graph workflows for image, video, 3D and audio generation",
+   "Native support for new open models (Wan, LTX, Hunyuan and more)",
+   "Runs large models on low-VRAM consumer GPUs",
+   "Partner Nodes for closed models such as Nano Banana",
+   "Comfy Cloud with 900+ pre-installed models and Comfy Agent"
+  ],
+  "faq": [
+   [
+    "Is ComfyUI free?",
+    "The desktop app and engine are free and open source under GPL-3.0. Comfy Cloud is paid: Standard $20/mo, Creator $35/mo, Pro $100/mo and Team $700/mo (about 20% less billed yearly), with free trial runs for new users."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Comfy-Org/ComfyUI",
+   "https://www.comfy.org/cloud/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/Comfy-Org/ComfyUI",
+   "stars": 139357,
+   "forks": 16550,
+   "checked": "2026-10-19",
+   "license": "the GNU General Public License v3.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Desktop / local",
+     "Free",
+     "open source, runs on your own GPU"
+    ],
+    [
+     "Cloud Standard",
+     "$20/mo ($16/mo yearly)",
+     "50,400 credits a year, 30-minute max run"
+    ],
+    [
+     "Cloud Creator",
+     "$35/mo ($28/mo yearly)",
+     "import your own models and LoRAs"
+    ],
+    [
+     "Cloud Pro",
+     "$100/mo ($80/mo yearly)",
+     "runs up to 1 hour"
+    ],
+    [
+     "Cloud Team",
+     "$700/mo",
+     "up to 50 members, shared credits"
+    ]
+   ],
+   "note": "Enterprise plans are on request.",
+   "src": "https://comfy.org/pricing/",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
+ },
+ "immich": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Immich is a high-performance, self-hosted photo and video management app, an open-source alternative to cloud photo services. You run the server yourself and use the web app or the iOS and Android apps, which back up your library automatically, including in the background.",
+   "It uses machine learning for facial recognition and clustering and for smart search by objects, faces, metadata and CLIP descriptions, and adds albums and shared albums, partner sharing, a global map, memories, RAW and Live Photo support, multi-user accounts and OAuth sign-in."
+  ],
+  "who": "People and families who want a private, self-hosted replacement for Google Photos or iCloud Photos with automatic phone backup and AI search.",
+  "features": [
+   "Automatic and background backup from iOS and Android",
+   "Facial recognition and clustering",
+   "Smart search by objects, faces, metadata and CLIP",
+   "Shared albums, partner sharing, public links and a global map",
+   "Multi-user, OAuth, API keys, RAW and Live Photo support"
+  ],
+  "faq": [
+   [
+    "Can I try Immich before installing it?",
+    "Yes. The public demo at demo.immich.app uses the login demo@immich.app with the password demo, and the mobile app can point to the same server URL."
+   ],
+   [
+    "Does Immich replace a backup?",
+    "No. The project warns users to always follow a 3-2-1 backup plan for their photos and videos."
+   ]
+  ],
+  "sources": [
+   "https://github.com/immich-app/immich",
+   "https://immich.app"
+  ],
+  "facts": {
+   "repo": "https://github.com/immich-app/immich",
+   "stars": 116654,
+   "forks": 7272,
+   "checked": "2026-10-19",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "penpot": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Penpot is an open-source design and prototyping platform for product teams, used in the browser or self-hosted on your own servers. It works with open standards like SVG, CSS, HTML and JSON, expresses design as code, and offers native design tokens, CSS Grid and Flex layouts and real-time collaboration.",
+   "Its official MCP server and open API let AI agents read and edit design files, enabling two-way workflows between design and code, and a plugin system makes the workspace programmable."
+  ],
+  "who": "Product designers and developers who want a Figma-style tool they can own and self-host, and teams that want AI agents to work directly with design files.",
+  "features": [
+   "Browser-based design and prototyping, or self-hosted",
+   "Official MCP server for AI agents",
+   "Design tokens as a single source of truth",
+   "CSS Grid and Flex layouts that behave like code",
+   "Open API and plugin system"
+  ],
+  "faq": [
+   [
+    "Is Penpot free?",
+    "Yes. The Professional cloud plan is $0 and fully featured, and the open-source edition can be self-hosted. Unlimited costs $7 per editor a month (capped at $175 a month), Enterprise $25 per member a month, and a Private Server $50k a year."
+   ]
+  ],
+  "sources": [
+   "https://github.com/penpot/penpot",
+   "https://penpot.app/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/penpot/penpot",
+   "stars": 61372,
+   "forks": 4254,
+   "checked": "2026-10-19",
+   "license": "the Mozilla Public License 2.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Professional",
+     "$0",
+     "fully featured, up to 8 team members"
+    ],
+    [
+     "Unlimited",
+     "$7/editor/mo",
+     "capped at $175 a month"
+    ],
+    [
+     "Enterprise",
+     "$25/member/mo",
+     "SSO, governance, admin"
+    ],
+    [
+     "Private Server",
+     "$50k/year",
+     "dedicated infrastructure"
+    ]
+   ],
+   "note": "Self-hosting the open-source edition is free; non-profit, education and open-source discounts are available.",
+   "src": "https://penpot.app/pricing",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
+ },
+ "upscayl": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Upscayl is a free and open-source desktop app that enlarges and enhances low-resolution images with AI upscaling models, running on your own computer.",
+   "It is available for Linux (AppImage, Flatpak, Snap, DEB, RPM), macOS 12+ (including Homebrew) and Windows 10+, and needs a Vulkan-compatible GPU. A separate paid service, Upscayl Cloud, upscales in the browser with credits."
+  ],
+  "who": "Photographers, designers and anyone who wants to upscale images locally for free, or in the cloud without a capable GPU.",
+  "features": [
+   "AI image upscaling on your own computer",
+   "Linux, macOS and Windows desktop apps",
+   "Free and open source (AGPL-3.0)",
+   "Upscayl Cloud for upscaling without a local GPU"
+  ],
+  "faq": [
+   [
+    "What hardware does Upscayl need?",
+    "A Vulkan-compatible GPU. The project notes that many integrated GPUs do not work."
+   ]
+  ],
+  "sources": [
+   "https://github.com/upscayl/upscayl",
+   "https://upscayl.org/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/upscayl/upscayl",
+   "stars": 50751,
+   "forks": 2610,
+   "checked": "2026-10-19",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Desktop app",
+     "Free",
+     "open source"
+    ],
+    [
+     "Cloud Free Trial",
+     "$0",
+     "10 credits"
+    ],
+    [
+     "Cloud Pro",
+     "$24.99/mo",
+     "300 credits a month, upscales up to 256MP"
+    ],
+    [
+     "Cloud Custom",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Cloud credits are also sold as one-time packs.",
+   "src": "https://upscayl.org/pricing",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
+ },
+ "photoprism": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "PhotoPrism is an AI-powered, privacy-first app for browsing, organizing and sharing photos and videos, self-hosted or in the cloud. It automatically labels pictures by content and location and recognizes the faces of family and friends.",
+   "It handles RAW images and many video formats, offers combinable search filters (labels, location, resolution, color, quality), Live Photos, maps and places, and runs as an installable progressive web app on phones, tablets and desktops. A public demo is at try.photoprism.app."
+  ],
+  "who": "Privacy-minded people who want to keep their photo library on their own hardware while still getting automatic tagging, face recognition and maps.",
+  "features": [
+   "Automatic labels by content and location",
+   "Face recognition",
+   "RAW and video support, Live Photos",
+   "Powerful combinable search filters",
+   "Installable PWA, maps and places"
+  ],
+  "faq": [
+   [
+    "Is PhotoPrism free?",
+    "The Community edition is free and open source (AGPL-3.0). Essentials (€2/mo) and Plus (from €6/mo) memberships add features such as extra user roles and 3D maps, and fully managed hosting is available through PikaPods from $6.50/mo."
+   ]
+  ],
+  "sources": [
+   "https://github.com/photoprism/photoprism",
+   "https://www.photoprism.app/editions/"
+  ],
+  "facts": {
+   "repo": "https://github.com/photoprism/photoprism",
+   "stars": 40323,
+   "forks": 2333,
+   "checked": "2026-10-19",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Community",
+     "Free",
+     "self-hosted, AGPL licence"
+    ],
+    [
+     "Essentials",
+     "€2/mo",
+     "extra user roles, 3D and satellite maps"
+    ],
+    [
+     "Plus",
+     "from €6/mo",
+     "user management UI, private chat"
+    ],
+    [
+     "PikaPods hosting",
+     "from $6.50/mo",
+     "fully managed"
+    ]
+   ],
+   "note": "",
+   "src": "https://www.photoprism.app/editions/",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
+ },
+ "fastgpt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "FastGPT, from Labring (the Sealos team), is an AI agent building platform with ready-made data processing and model calling, plus a visual Flow editor for orchestrating workflows into complex applications such as knowledge-base question answering.",
+   "You can self-host it with Docker or use the FastGPT cloud. The source is under the FastGPT Open Source License (Apache 2.0 with extra conditions): commercial use as a backend is allowed, but running a multi-tenant SaaS like FastGPT or removing its logo needs a commercial licence."
+  ],
+  "who": "Teams that want to build RAG knowledge-base assistants and workflow agents visually, self-hosted or as a cloud service.",
+  "features": [
+   "Visual Flow workflow orchestration",
+   "Knowledge bases with data processing and indexing",
+   "Agents with model calling",
+   "OpenAPI for integration",
+   "Docker self-hosting or cloud"
+  ],
+  "faq": [
+   [
+    "Can I use FastGPT commercially?",
+    "Yes as a backend service or internal platform; a multi-tenant SaaS similar to FastGPT, or removing its logo and copyright notices, requires a commercial licence from the maker."
+   ]
+  ],
+  "sources": [
+   "https://github.com/labring/FastGPT",
+   "https://fastgpt.io/en/price"
+  ],
+  "facts": {
+   "repo": "https://github.com/labring/FastGPT",
+   "stars": 29863,
+   "forks": 7340,
+   "checked": "2026-10-19",
+   "license": "FastGPT Open Source License (Apache 2.0 with additional conditions)",
+   "osi": false
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "¥0/mo",
+     "100 AI credits, 10 agents, 1 member"
+    ],
+    [
+     "Basic",
+     "¥99/mo",
+     "4,000 AI credits, 50 agents, 5 members"
+    ],
+    [
+     "Advanced",
+     "¥599/mo",
+     "25,000 AI credits, 200 agents, 50 members"
+    ],
+    [
+     "Custom",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Cloud prices in CNY; annual billing gives 12 months for the price of 10. Self-hosted editions are listed separately.",
+   "src": "https://fastgpt.io/en/price",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
+ },
+ "invoke": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Invoke is an open-source creative engine for generating and refining images with AI, with a web-based UI that also underpins several commercial products. It is free to use under a commercially friendly licence and installs on your own hardware through the Invoke launcher.",
+   "Its Unified Canvas brings generation, inpainting and outpainting, brush tools and control layers into one space, and node-based Workflows let you build and share custom pipelines. Boards and a gallery keep images and their prompts organized, and a Model Manager handles checkpoints, diffusers and some GGUF models."
+  ],
+  "who": "Artists and studios who want a polished local app for Stable Diffusion and FLUX image work, with both a canvas and node workflows.",
+  "features": [
+   "Unified Canvas with inpainting, outpainting and control layers",
+   "Node-based Workflows you can build and share",
+   "Boards and gallery with prompt recall",
+   "Model Manager (ckpt, diffusers, some GGUF)",
+   "Segmentation and selection models (SAM / SAM2)"
+  ],
+  "faq": [
+   [
+    "How do I install Invoke?",
+    "Download the Invoke Launcher from GitHub releases and install on compatible hardware."
+   ]
+  ],
+  "sources": [
+   "https://github.com/invoke-ai/InvokeAI",
+   "https://invoke.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/invoke-ai/InvokeAI",
+   "stars": 28760,
+   "forks": 3069,
+   "checked": "2026-10-19",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "spleeter": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Spleeter is Deezer's open-source source separation library, written in Python on TensorFlow, with pretrained models that split a song into stems: vocals and accompaniment (2 stems), vocals, drums, bass and other (4 stems), or vocals, drums, bass, piano and other (5 stems).",
+   "Deezer reports that the 2- and 4-stem models perform strongly on the musdb benchmark and that it can separate audio into 4 stems about 100 times faster than real time on a GPU. It runs from the command line or as a Python library, installs with pip or Docker, and can be used to train your own separation models."
+  ],
+  "who": "Musicians, remixers, karaoke and audio developers who need fast, scriptable stem separation.",
+  "features": [
+   "Pretrained 2-, 4- and 5-stem models",
+   "About 100x faster than real time for 4 stems on a GPU",
+   "Command line and Python API",
+   "pip, Conda and Docker installs",
+   "Train your own separation models"
+  ],
+  "faq": [
+   [
+    "Is Spleeter free for commercial use?",
+    "The code is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/deezer/spleeter"
+  ],
+  "facts": {
+   "repo": "https://github.com/deezer/spleeter",
+   "stars": 28498,
+   "forks": 3052,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "stability-ai": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Stability AI is the maker of Stable Diffusion and builds generative models for image, video, 3D and audio, including the Stable Diffusion 3.5 suite, SDXL Turbo, Stable Fast 3D and Stable Audio. You can use the models through its Platform API or self-host them under a licence.",
+   "Its open research code, such as the generative-models repository with Stable Video Diffusion and SV4D 2.0, is on GitHub. The Community License lets researchers, developers, small businesses and creators with under $1M in annual revenue use the core models free, while larger companies need an Enterprise licence."
+  ],
+  "who": "Developers and companies that want to build on Stable Diffusion and other Stability models, either via API or self-hosted.",
+  "features": [
+   "Image models (Stable Diffusion 3.5 suite, SDXL Turbo)",
+   "Video and 3D models (Stable Video, Stable Fast 3D, SV4D)",
+   "Stable Audio for music and sound",
+   "Platform API and self-hosted licences",
+   "Open research code on GitHub"
+  ],
+  "faq": [
+   [
+    "Do I have to pay to self-host Stability's models?",
+    "Not if you or your organization earn under $1M a year; the Community License covers research, non-commercial and small commercial use. Above that, an Enterprise licence with custom pricing is required."
+   ]
+  ],
+  "sources": [
+   "https://stability.ai/license",
+   "https://github.com/Stability-AI/generative-models"
+  ],
+  "facts": {
+   "repo": "https://github.com/Stability-AI/generative-models",
+   "stars": 27302,
+   "forks": 3091,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Community License",
+     "Free",
+     "for organizations under $1M annual revenue"
+    ],
+    [
+     "Enterprise License",
+     "Custom",
+     "commercial use above $1M revenue, implementation support"
+    ]
+   ],
+   "note": "Platform API usage is billed separately; see stability.ai.",
+   "src": "https://stability.ai/license",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
+ },
+ "ultimate-vocal-remover": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Ultimate Vocal Remover (UVR) is a free, open-source desktop app that uses state-of-the-art source separation models to remove vocals from audio files or split them into stems. Its core developers, Anjok07 and aufr33, trained all the bundled models except the Demucs v3 and v4 4-stem models.",
+   "The installers bundle the interface, Python, PyTorch and other dependencies, so no prerequisites are needed. There are Windows installers (including a DirectML build for AMD Radeon and Intel Arc GPUs), a macOS build and manual install options for Linux."
+  ],
+  "who": "Musicians, DJs, karaoke makers and video editors who want high-quality vocal and instrument separation on their own computer for free.",
+  "features": [
+   "Vocal removal and stem separation",
+   "Models trained by the UVR developers plus Demucs",
+   "One-click installers with all dependencies",
+   "DirectML build for AMD and Intel GPUs",
+   "Free and open source (MIT)"
+  ],
+  "faq": [
+   [
+    "Does UVR need a GPU?",
+    "No, but a GPU speeds it up; the Windows DirectML version supports AMD Radeon and Intel Arc cards."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Anjok07/ultimatevocalremovergui"
+  ],
+  "facts": {
+   "repo": "https://github.com/Anjok07/ultimatevocalremovergui",
+   "stars": 26691,
+   "forks": 2038,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "audiocraft": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AudioCraft is Meta's PyTorch library for deep-learning research on audio generation. It contains inference and training code for MusicGen, a controllable text-to-music model, and AudioGen, a text-to-sound model.",
+   "It also includes EnCodec (a high-fidelity neural audio codec), Multi Band Diffusion (an EnCodec-compatible decoder), MAGNeT (non-autoregressive text-to-music and text-to-sound) and AudioSeal for audio watermarking. It installs with pip and needs Python 3.9 and PyTorch 2.1."
+  ],
+  "who": "Researchers and developers who want to generate music or sound effects from text, or train their own audio generation models.",
+  "features": [
+   "MusicGen text-to-music",
+   "AudioGen text-to-sound",
+   "EnCodec neural audio codec",
+   "MAGNeT and Multi Band Diffusion",
+   "AudioSeal watermarking; training code included"
+  ],
+  "faq": [
+   [
+    "What licence is AudioCraft under?",
+    "The code is under the MIT License; the model weights have their own licence, described in the repository."
+   ]
+  ],
+  "sources": [
+   "https://github.com/facebookresearch/audiocraft"
+  ],
+  "facts": {
+   "repo": "https://github.com/facebookresearch/audiocraft",
+   "stars": 23746,
+   "forks": 2708,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "wan-2-2": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Wan 2.2 is the open, large-scale video generation model family from Alibaba's Wan team, for text-to-video and image-to-video. It introduces a Mixture-of-Experts architecture into video diffusion, separating the denoising process across timesteps with specialized experts to add capacity at the same compute cost.",
+   "It was trained on far more data than Wan 2.1 (+65.6% images, +83.2% videos) with curated aesthetic labels for lighting, composition and color, for more controllable cinematic styles. A 5B hybrid text-and-image-to-video model with a high-compression VAE targets high-definition video on consumer GPUs."
+  ],
+  "who": "Developers, researchers and creators who want to run a state-of-the-art open video model locally or build it into their own tools (it is also supported in ComfyUI).",
+  "features": [
+   "Text-to-video and image-to-video",
+   "Mixture-of-Experts video diffusion",
+   "Cinematic aesthetic controls",
+   "5B TI2V model with a 16x16x4 compression VAE",
+   "Open weights on Hugging Face and ModelScope (Apache-2.0)"
+  ],
+  "faq": [
+   [
+    "Where can I get the Wan 2.2 weights?",
+    "From Hugging Face and ModelScope, linked from the GitHub repository."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Wan-Video/Wan2.2"
+  ],
+  "facts": {
+   "repo": "https://github.com/Wan-Video/Wan2.2",
+   "stars": 18017,
+   "forks": 2336,
+   "checked": "2026-10-19",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-19"
+ },
+ "hunyuan3d": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Hunyuan3D is Tencent's family of models for generating 3D assets from images or text, with a shape model that builds the mesh and a paint model that adds high-resolution textures. Tencent also offers it as a free web app.",
+   "The Hunyuan3D-2 repository has released turbo and mini shape models, a multiview shape model, a turbo paint model, a Blender add-on and FlashVDM acceleration; Hunyuan3D 2.1 added a fully open PBR material model and training code. The weights are under the Tencent Hunyuan 3D Community License, which does not apply in the EU, UK and South Korea."
+  ],
+  "who": "3D artists, game developers and researchers who want fast image-to-3D or text-to-3D assets, in a browser or on their own GPU.",
+  "features": [
+   "Image- and text-to-3D shape generation",
+   "High-resolution texture painting (PBR in 2.1)",
+   "Turbo and mini models for faster generation",
+   "Blender add-on",
+   "Free web app"
+  ],
+  "faq": [
+   [
+    "Can I use Hunyuan3D in Europe?",
+    "The community licence states that it does not apply in the European Union, the United Kingdom and South Korea."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
+   "https://3d.hunyuan.tencent.com"
+  ],
+  "facts": {
+   "repo": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
+   "stars": 15159,
+   "forks": 1575,
+   "checked": "2026-10-19",
+   "license": "the Tencent Hunyuan 3D 2.0 Community License",
+   "osi": false
+  },
+  "updated": "2026-10-19"
+ },
+ "react-doctor": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "React Doctor, from Million Software, runs deterministic checks on React code written by you or your coding agent and reports issues in state and effects, performance, architecture, security, accessibility and maintainability. It supports projects built with Next.js, Vite, Astro, TanStack, React Native and Expo.",
+   "You run a scan with npx react-doctor@latest, install it as a skill so Claude Code, Cursor, Codex or OpenCode can find and fix issues, or add it to CI to report issues each pull request introduces and block merges at a chosen severity. It can also record Chrome DevTools performance traces while you use a running app."
+  ],
+  "who": "React teams and developers whose code is increasingly written by AI coding agents and who want an automated guardrail in the agent loop and in CI.",
+  "features": [
+   "Checks for state/effects, performance, security, accessibility and maintainability",
+   "Agent skill for Claude Code, Cursor, Codex and OpenCode",
+   "CI mode that blocks regressions in pull requests",
+   "Runtime performance traces",
+   "Rules configured in doctor.config.ts"
+  ],
+  "faq": [
+   [
+    "Does React Doctor collect data?",
+    "The CLI collects crash reports and anonymous usage data; opt out with npx react-doctor@latest --no-telemetry."
+   ]
+  ],
+  "sources": [
+   "https://github.com/millionco/react-doctor",
+   "https://www.react.doctor/"
+  ],
+  "facts": {
+   "repo": "https://github.com/millionco/react-doctor",
+   "stars": 15016,
+   "forks": 490,
+   "checked": "2026-10-19",
+   "license": "Modified MIT License",
+   "osi": false
+  },
+  "updated": "2026-10-19"
+ },
+ "botpress": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "Botpress is a platform for building and deploying AI agents and chatbots, especially for customer support. You build in Botpress Studio (a visual agent builder) or Viber (a natural-language builder), add knowledge bases, tables and escalation to humans, and deploy to webchat, WhatsApp, Slack and other channels.",
+   "Its open-source GitHub repository holds the public integrations on the Botpress Hub and the developer tools (CLI, SDK and API client) for building bots as code. Pricing is per conversation, with AI usage included."
+  ],
+  "who": "Support and product teams that want AI agents handling customer conversations across channels, and developers extending them with code.",
+  "features": [
+   "Visual Studio and natural-language Viber builders",
+   "Knowledge bases, tables and human escalation",
+   "Webchat, WhatsApp, Slack and more channels",
+   "Integrations with Intercom, Zendesk, HubSpot and Salesforce",
+   "CLI, SDK and API client (open source)"
+  ],
+  "faq": [
+   [
+    "Is Botpress free?",
+    "There is a free plan with 100 conversations and 3 AI agents. Plus is $150/mo and Team $750/mo (billed annually), with more conversations and AI usage included; Enterprise is custom."
+   ]
+  ],
+  "sources": [
+   "https://botpress.com/pricing",
+   "https://github.com/botpress/botpress"
+  ],
+  "facts": {
+   "repo": "https://github.com/botpress/botpress",
+   "stars": 14958,
+   "forks": 2296,
+   "checked": "2026-10-19",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "100 conversations, 3 seats, 3 AI agents"
+    ],
+    [
+     "Plus",
+     "$150/mo billed annually",
+     "250 conversations/mo, $25 AI usage, unlimited agents"
+    ],
+    [
+     "Team",
+     "$750/mo billed annually",
+     "1,500 conversations/mo, $150 AI usage, unlimited seats"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     ""
+    ]
+   ],
+   "note": "Monthly billing costs more; extra conversations are sold in packs of 100.",
+   "src": "https://botpress.com/pricing",
+   "checked": "2026-10-19"
+  },
+  "updated": "2026-10-19"
  }
 }
