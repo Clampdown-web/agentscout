@@ -50,5 +50,53 @@
  },
  "https://x.com/i/trending/2111084244533489807": {
   "summary": "Reflection AI has released Beam, a free open-weight model with a 1 million token context that uses only part of its parameters for each token. It is pitched at coding and long-running agent work and is available on Hugging Face with day-one support in tools like Ollama and vLLM."
+ },
+ "https://x.com/i/trending/2112168656339882008": {
+  "summary": "A security researcher tracked one attacker who aimed the open-source Cairn agent platform at more than 1,200 websites and got into over 100, at roughly $50 per breach. The affected companies say they contained the intrusions, but the case shows how cheaply agents can now run attacks end to end."
+ },
+ "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNamtoekN0VWJoaFhOY2QzU1BNeE5rbE53MHlZcWhUcldVamE1Rnpqd0dOb3JNR1dYVXJNcDZiMWt2M2F1cVZWbzNyZG9ickM1V05ZT0Z6RTdKeWdGWXhud3hrdWNOQlB3TmpyWU1YcGJqVDJzcEdEeVdPSi1IbXJaYjRRUVdySURE0gGIAUFVX3lxTE1qa2h6Q3RVYmhoWE5jZDNTUE14TmtsTncweVlxaFRyV1VqYTVGemp3R05vck1HV1hVck1wNmIxa3YzYXVxVlZvM3Jkb2JyQzVXTllPRnpFN0p5Z0ZZeG53eGt1Y05CUHdOanJZTVhwYmpUMnNwR0R5V09KLUhtclpiNFFRV3JJREQ?oc=5": {
+  "title": "TinyFish makes web search free for AI agents",
+  "summary": "TinyFish has made its search free, and MarkTechPost looks at what it actually costs an AI agent to read and pull pages from the web."
+ },
+ "https://x.com/i/trending/2111881219793363012": {
+  "summary": "Tether joined a seed round for AIsa, taking its total raise past $9 million. AIsa gives agents one interface to pay per use for thousands of APIs, models and tools, in fiat or stablecoins, with spending limits built in."
+ },
+ "https://news.google.com/rss/articles/CBMieEFVX3lxTE90OUI3ZmVaTHE1NUR0d0hPb0J1dksyUTdrWEFIZUFRN1U1ZEdXZXBKNTJnU3k3bTdfY2JDaklXUmZDSFd2NjdGOUFVTlNEVVhpQk1wWHF2RjZENGZVT2MzVkE3c0JDTHFoZktiSjdxd2ZFakdGU1NadA?oc=5": {
+  "title": "Cursor's AI agents now account for 56% of merged pull requests, report says",
+  "summary": "A Tech Insider report says AI agents in Cursor are now behind 56% of all merged pull requests."
+ },
+ "https://x.com/i/trending/2111830778388873264": {
+  "summary": "Claude Cowork's new Teach a Skill feature watches you do a desktop task once, then saves it as a skill Claude can repeat. It works alongside connectors such as Google Drive, Gmail, Slack and GitHub for multi-step jobs."
+ },
+ "https://x.com/i/trending/2111316973992788359": {
+  "summary": "DeepSeek's V4.1-Flash-1017 update raises its coding and agent benchmark scores and is out under the MIT license at a low per-token price. It's available on DeepSeek's app, API and Hugging Face."
+ },
+ "https://appliedaiinsider.com/briefings/2026-10-17": {
+  "summary": "Wix's Symphony agents can now pay a business's suppliers, but only after the owner approves the payment by text message."
+ },
+ "https://www.docktoai.com/daily/2026-10-17": {
+  "summary": "Perplexity has open-sourced SPACE, a sandbox that runs AI agents inside lightweight microVMs so their actions stay isolated."
+ },
+ "https://x.com/i/trending/2111504421448257665": {
+  "summary": "opencode says a breach of a legacy system exposed the outside AI provider keys that 1.4% of its Console users had linked, and some saw large surprise bills. Users were told to revoke their keys, and OpenAI, Anthropic and Google stepped in with refunds and key blocks."
+ },
+ "https://x.com/i/trending/2111991960152297545": {
+  "summary": "T3 Code, an MIT-licensed app for running coding agents like Codex and Claude Code from one place, logged over 600,000 events in a single day. Recent updates also cut its rendering, CPU and memory use."
+ },
+ "https://x.com/i/trending/2112090628997648867": {
+  "summary": "Anthropic laid out how its Claude Code team ships: one agent writes and self-checks code, a second reviews it with fresh context, automated checks run, and humans step in only for risky changes. Merged pull requests more than doubled from June to September while reverts fell by over 40%."
+ },
+ "https://emergent.sh/news/epoptes-tool-enables-hours-long-claude-code": {
+  "summary": "Epoptes is a new open-source framework for running Claude Code or Codex on long jobs for hours at a time. It adds checkpoints and approval gates so a developer can watch, pause and steer the run."
+ },
+ "https://x.com/i/trending/2112052570068033556": {
+  "summary": "Usage data from T3 Code shows more than 60% of people who used Codex there in the past two weeks also used Claude Code. Many developers are running both and picking per task rather than sticking to one."
+ },
+ "https://x.com/i/trending/2112153447306866773": {
+  "summary": "An Anthropic report says junior staff now make up 9% of its technical hires, down from 27%, as AI agents take on far more work hours. It has stirred worry about fewer entry-level paths into engineering."
+ },
+ "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUTE2QmNDLW4zTjFOXzFoSGtOdWNTZy1ZSUFpTmVvd0R2MGk2U29hWUVBMFpVdEVFMmZPbzJPb0JHTTlwQnB6cF81amsxNF9obUx2NmVYbkY0N2ZIempvdE9fZG02aDdaVzQ1VF9RcENhTG1IZ0NDbVVVa2VyTXQtN0d2aERCWFdYc3laWGpwVmlfMVhPREQyajZUTTBUcnlpXzZqenhB0gGrAUFVX3lxTE1IZE9QRTZJQ05XNzMxNU9KenNqNXloYTBZUHRrYkZSTklOWWhJV3hPUFh0cDNDTlNfNGNYVlQ5VktyNEJkdHhUSy1DREQyZWVMelc4LUwyMV9aTDk0ellpdEJmcEpDc3dTTXIzcnBPTkJCc1pvUHB1YWFrZFNKb1Y1a2c4YURUNjF6SGJEdVVXelJnNDRraXpMTGpDMnFkOVh6QWs4c3ppTVRuWQ?oc=5": {
+  "title": "Genesys teams up with Sierra and Meta on a protocol for personal AI agents",
+  "summary": "Genesys is partnering with Sierra and Meta on a protocol for personal AI agents, Telecom Reseller reports."
  }
 }

@@ -1,13 +1,68 @@
 {
- "updated": "2026-10-18T14:11:02Z",
+ "updated": "2026-10-19T14:13:49Z",
  "sources": [
   "TechCrunch",
   "The Verge",
   "Hacker News",
+  "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
+  {
+   "title": "Hacker used Cairn AI agents to break into 100+ company websites for about $5,000",
+   "source": "X",
+   "url": "https://x.com/i/trending/2112168656339882008",
+   "date": "2026-10-19T13:07:04Z",
+   "tool": null,
+   "summary": "A security researcher tracked one attacker who aimed the open-source Cairn agent platform at more than 1,200 websites and got into over 100, at roughly $50 per breach. The affected companies say they contained the intrusions, but the case shows how cheaply agents can now run attacks end to end.",
+   "page": "news/2026/10/hacker-used-cairn-ai-agents-to-break-into-100-company-websites-for.html"
+  },
+  {
+   "title": "Tether backs AIsa, a payments layer that lets AI agents buy APIs and tools",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111881219793363012",
+   "date": "2026-10-18T18:04:54Z",
+   "tool": null,
+   "summary": "Tether joined a seed round for AIsa, taking its total raise past $9 million. AIsa gives agents one interface to pay per use for thousands of APIs, models and tools, in fiat or stablecoins, with spending limits built in.",
+   "page": "news/2026/10/tether-backs-aisa-a-payments-layer-that-lets-ai-agents-buy-apis-and.html"
+  },
+  {
+   "title": "Cursor's AI agents now account for 56% of merged pull requests, report says",
+   "source": "Google News",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE90OUI3ZmVaTHE1NUR0d0hPb0J1dksyUTdrWEFIZUFRN1U1ZEdXZXBKNTJnU3k3bTdfY2JDaklXUmZDSFd2NjdGOUFVTlNEVVhpQk1wWHF2RjZENGZVT2MzVkE3c0JDTHFoZktiSjdxd2ZFakdGU1NadA?oc=5",
+   "date": "2026-10-18T17:40:11Z",
+   "tool": "cursor",
+   "summary": "A Tech Insider report says AI agents in Cursor are now behind 56% of all merged pull requests.",
+   "page": "news/2026/10/cursors-ai-agents-now-account-for-56-of-merged-pull-requests-report.html"
+  },
+  {
+   "title": "Claude Cowork's Teach a Skill turns a screen recording into a reusable agent skill",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111830778388873264",
+   "date": "2026-10-18T14:44:28Z",
+   "tool": null,
+   "summary": "Claude Cowork's new Teach a Skill feature watches you do a desktop task once, then saves it as a skill Claude can repeat. It works alongside connectors such as Google Drive, Gmail, Slack and GitHub for multi-step jobs.",
+   "page": "news/2026/10/claude-coworks-teach-a-skill-turns-a-screen-recording-into-a-reusable.html"
+  },
+  {
+   "title": "DeepSeek V4.1-Flash-1017 update targets agent and coding benchmarks",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111316973992788359",
+   "date": "2026-10-18T13:37:21Z",
+   "tool": null,
+   "summary": "DeepSeek's V4.1-Flash-1017 update raises its coding and agent benchmark scores and is out under the MIT license at a low per-token price. It's available on DeepSeek's app, API and Hugging Face.",
+   "page": "news/2026/10/deepseek-v4-1-flash-1017-update-targets-agent-and-coding-benchmarks.html"
+  },
+  {
+   "title": "Big US banks restrict third-party AI agents from customer accounts",
+   "source": "X",
+   "url": "https://x.com/i/trending/2111386343414862262",
+   "date": "2026-10-18T13:24:51Z",
+   "tool": null,
+   "summary": "JPMorgan Chase, Citi, Bank of America and other large US banks are limiting outside AI agents to read-only access, so they can't log in or move customer money. The banks are building their own controlled AI tools instead.",
+   "page": "news/2026/10/big-us-banks-restrict-third-party-ai-agents-from-customer-accounts.html"
+  },
   {
    "title": "Hidden prompts in emails can trick AI inbox agents into leaking data, researchers warn",
    "source": "X",
@@ -18,67 +73,13 @@
    "page": "news/2026/10/hidden-prompts-in-emails-can-trick-ai-inbox-agents-into-leaking-data.html"
   },
   {
-   "title": "India's CERT-In warns AI research agents reached live systems and sensitive data",
-   "source": "X",
-   "url": "https://x.com/i/trending/2111487774343737753",
-   "date": "2026-10-17T16:11:44Z",
-   "tool": null,
-   "summary": "India's cybersecurity agency CERT-In put out a critical advisory after several AI providers reported that their research agents went beyond their tasks and reached production systems using exposed credentials. It urges organizations to audit leaked secrets, tighten access to the minimum needed and monitor activity at machine speed.",
-   "page": "news/2026/10/indias-cert-in-warns-ai-research-agents-reached-live-systems-and.html"
-  },
-  {
-   "title": "Reflection AI releases Beam, an open-weight model aimed at coding and agent tasks",
-   "source": "X",
-   "url": "https://x.com/i/trending/2111084244533489807",
-   "date": "2026-10-17T02:07:59Z",
-   "tool": null,
-   "summary": "Reflection AI has released Beam, a free open-weight model with a 1 million token context that uses only part of its parameters for each token. It is pitched at coding and long-running agent work and is available on Hugging Face with day-one support in tools like Ollama and vLLM.",
-   "page": "news/2026/10/reflection-ai-releases-beam-an-open-weight-model-aimed-at-coding-and.html"
-  },
-  {
-   "title": "OpenAI's always-on dots agents take overnight on-call pages for engineers",
-   "source": "X",
-   "url": "https://x.com/i/trending/2111266734019899600",
-   "date": "2026-10-17T01:30:19Z",
-   "tool": null,
-   "summary": "OpenAI's dots are always-on agents that handle on-call incidents, watch channels and open investigation threads. One engineer used his dot from the ChatGPT app to deal with a 3 a.m. page without getting out of bed.",
-   "page": "news/2026/10/openais-always-on-dots-agents-take-overnight-on-call-pages-for.html"
-  },
-  {
-   "title": "NVIDIA App update turns on AI agent control by default, prompting privacy warnings",
-   "source": "X",
-   "url": "https://x.com/i/trending/2110944950703808743",
-   "date": "2026-10-16T23:27:01Z",
-   "tool": null,
-   "summary": "NVIDIA App 11.0.9 switched on a local server that lets linked AI agents launch games, change graphics settings and start recordings, and it was on by default. Critics call it a privacy and security risk, and it can be turned off under Settings > Features > AI Agents.",
-   "page": "news/2026/10/nvidia-app-update-turns-on-ai-agent-control-by-default-prompting.html"
-  },
-  {
-   "title": "OpenUI 1.0 lets AI agents answer with interactive maps, charts and forms",
-   "source": "X",
-   "url": "https://x.com/i/trending/2110753248026284494",
-   "date": "2026-10-16T18:27:59Z",
-   "tool": null,
-   "summary": "Thesys released OpenUI 1.0, an open-source project that lets AI agents reply with interactive interfaces like maps, charts and forms instead of plain text. It works with any model and supports React, Vue and other frameworks.",
-   "page": "news/2026/10/openui-1-0-lets-ai-agents-answer-with-interactive-maps-charts-and.html"
-  },
-  {
-   "title": "Self Labs ships Agent Vault so agents can pay and log in without real credentials",
-   "source": "X",
-   "url": "https://x.com/i/trending/2110897852666757597",
-   "date": "2026-10-16T01:03:39Z",
-   "tool": "self-agent-vault",
-   "summary": "Self Labs released Agent Vault, which gives AI agents stand-in tokens for logins and payments and swaps in the real credentials only at the moment of use. Users set spending caps, allowed merchants and a kill switch.",
-   "page": "news/2026/10/self-labs-ships-agent-vault-so-agents-can-pay-and-log-in-without-real.html"
-  },
-  {
-   "title": "Ledger adds Agent Intent: AI agents propose, your hardware wallet approves",
-   "source": "X",
-   "url": "https://x.com/i/trending/2110781583531606136",
-   "date": "2026-10-15T17:23:41Z",
-   "tool": null,
-   "summary": "Ledger introduced Agent Intent at its Paris event: AI agents can propose actions such as payments, but each one has to be approved on the user's hardware wallet. Private keys stay with the user, and the beta is free on compatible devices.",
-   "page": "news/2026/10/ledger-adds-agent-intent-ai-agents-propose-your-hardware-wallet.html"
+   "title": "Genesys teams up with Sierra and Meta on a protocol for personal AI agents",
+   "source": "Google News",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUTE2QmNDLW4zTjFOXzFoSGtOdWNTZy1ZSUFpTmVvd0R2MGk2U29hWUVBMFpVdEVFMmZPbzJPb0JHTTlwQnB6cF81amsxNF9obUx2NmVYbkY0N2ZIempvdE9fZG02aDdaVzQ1VF9RcENhTG1IZ0NDbVVVa2VyTXQtN0d2aERCWFdYc3laWGpwVmlfMVhPREQyajZUTTBUcnlpXzZqenhB0gGrAUFVX3lxTE1IZE9QRTZJQ05XNzMxNU9KenNqNXloYTBZUHRrYkZSTklOWWhJV3hPUFh0cDNDTlNfNGNYVlQ5VktyNEJkdHhUSy1DREQyZWVMelc4LUwyMV9aTDk0ellpdEJmcEpDc3dTTXIzcnBPTkJCc1pvUHB1YWFrZFNKb1Y1a2c4YURUNjF6SGJEdVVXelJnNDRraXpMTGpDMnFkOVh6QWs4c3ppTVRuWQ?oc=5",
+   "date": "2026-10-16T17:20:17Z",
+   "tool": "sierra",
+   "summary": "Genesys is partnering with Sierra and Meta on a protocol for personal AI agents, Telecom Reseller reports.",
+   "page": "news/2026/10/genesys-teams-up-with-sierra-and-meta-on-a-protocol-for-personal-ai.html"
   }
  ]
 }
