@@ -38,4 +38,6 @@ def build(t):
           "page":f"https://agentscouthq.com/tools/{x['slug']}.html"})
     lc=max((x.get("verified") or "") for x in t)
     json.dump({"version":1,"generated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"last_checked":lc,"count":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
+    # small file for the homepage "Recently added" stats (stats.js.html), so the homepage doesn't download the full 1.5 MB API
+    json.dump({"last_checked":lc,"tools":[{"category":x.get("category"),"added":x.get("added"),"seed":bool(x.get("seed"))} for x in t]},open("api/stats.json","w"),separators=(",",":"),ensure_ascii=False)
 if __name__=="__main__": build(json.load(open("tools.json")))

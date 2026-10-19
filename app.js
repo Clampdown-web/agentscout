@@ -75,7 +75,7 @@ function run(root){root=root||document;
  root.querySelectorAll(".cattile[data-cat]").forEach(function(a){add(a,a.dataset.cat)});
  root.querySelectorAll('a[href$=".html"]').forEach(function(a){var c=slugCat(null,a.href);if(!c)return;if(a.classList.contains("b")||a.classList.contains("chip"))add(a,c);else if(a.classList.contains("card"))add(a.querySelector(".ct h3"),c)})}
 function hdr(){var c=slugCat(location.pathname);if(c){var h=document.querySelector("main h1, section h1, h1");add(h,c)}}
-function init(){run();hdr();new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)run(n.parentNode||n)})})}).observe(document.body,{childList:true,subtree:true})}
+function init(){run();hdr();new MutationObserver(function(ms){var R=[];ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType!==1||(n.getAttribute("class")||"").indexOf("cico")>-1)return;var p=n.parentNode||n;if(R.indexOf(p)<0)R.push(p)})});R.forEach(function(p){if(p.isConnected)run(p)})}).observe(document.body,{childList:true,subtree:true})}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
 
 /* Relative "Added X days ago" for <time class="ago" datetime="YYYY-MM-DD"> (static date stays as fallback/tooltip) */

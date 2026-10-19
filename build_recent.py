@@ -14,11 +14,18 @@ def short(s,n=110): return s if len(s)<=n else s[:n].rsplit(" ",1)[0]+"…"
 def card(x,d):
     return (f'<a class="card rcard" href="{d}tools/{x["slug"]}.html"><div class="ct">{build_extras.ico(x,d,"sm")}<h3>{e(x["name"])}</h3></div>'
             f'<p>{e(short(x["description"]))}</p><div class="rmeta">{"<span class=\"b new\">New</span>" if is_week(x) else ""}<span class="muted">Added <time class="ago" datetime="{e(x["added"])}">{e(fmt(x["added"]))}</time></span></div></a>')
+def makers_strip(t,n=6):
+    """Homepage 'Submitted by makers' strip (Oct 18, 2026 PT): newest maker submissions, static HTML (no layout shift); empty when there are none."""
+    mk=sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)),reverse=True)[:n]
+    if not mk: return ""
+    cards="".join(f'<a class="mkcard" href="tools/{e(x["slug"])}.html">{build_extras.ico24(x)}<span class="mkname">{e(x["name"])}</span><span class="b maker">✓ Submitted by maker</span></a>' for x in mk)
+    return ('<section id="makers-strip" class="mkstrip" aria-labelledby="mk-h"><div class="wrap"><div class="rhead"><h2 id="mk-h">Submitted by makers</h2>'
+            '<a href="new.html#makers">See all →</a></div><div class="mkrow">'+cards+'</div></div></section>')
 def build(t):
     top=(newest(fresh(t))+[x for x in newest(t) if x.get("seed")])[:12]
     nw=sum(1 for x in t if is_week(x))
     sec=('<!--RECENT-START--><section id="recent" aria-labelledby="recent-h"><div class="wrap"><div class="rhead"><h2 id="recent-h">Recently added</h2>'
-         f'<a href="new.html">See all new tools →</a></div><div class="rstats" id="rstats" aria-live="polite"></div><p class="muted rsub"><span id="rsum">{len(t)} tools · {nw} new this week · every link checked</span><br><span id="rchecked"></span></p><div class="grid rgrid">'+"".join(card(x,"") for x in top)+'</div></div></section>'+STATS_JS+'<!--RECENT-END-->')
+         f'<a href="new.html">See all new tools →</a></div><div class="rstats" id="rstats" aria-live="polite"></div><p class="muted rsub"><span id="rsum">{len(t):,} tools · {nw:,} new this week · every link checked</span><br><span id="rchecked"></span></p><div class="grid rgrid">'+"".join(card(x,"") for x in top)+'</div></div></section>'+makers_strip(t)+STATS_JS+'<!--RECENT-END-->')
     s=open("index.html").read()
     if "<!--RECENT-START-->" in s: s=re.sub(r"<!--RECENT-START-->.*?<!--RECENT-END-->",lambda m:sec,s,flags=re.S)
     else: s=s.replace('<section id="feed">',sec+'\n<section id="feed">',1)
@@ -26,7 +33,7 @@ def build(t):
     cut=(pt_today()-datetime.timedelta(days=29)).isoformat()
     recent=[x for x in newest(fresh(t)) if x.get("added","")>=cut]
     seed=[x for x in t if x.get("seed")]; sd=sorted({x["added"] for x in seed if x.get("added")})
-    seednote=(f' The starting catalog of {len(seed)} tools ({e(datetime.date.fromisoformat(sd[0]).strftime("%b %-d"))}–{e(fmt(sd[-1]))}) is not counted as new. <a href="index.html#feed">Browse all {len(t)} tools</a>.' if seed and sd else "")
+    seednote=(f' The starting catalog of {len(seed):,} tools ({e(datetime.date.fromisoformat(sd[0]).strftime("%b %-d"))}–{e(fmt(sd[-1]))}) is not counted as new. <a href="index.html#feed">Browse all {len(t):,} tools</a>.' if seed and sd else "")
     days={}
     for x in recent: days.setdefault(x["added"],[]).append(x)
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section style="padding-top:20px;text-align:left">'

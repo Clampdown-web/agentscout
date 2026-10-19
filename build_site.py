@@ -83,7 +83,7 @@ for x in t:
     if x.get("maker_submitted"):
         _sd=x.get("submitted") or x.get("added","")
         _sdt=_dt.date.fromisoformat(_sd).strftime("%b %-d, %Y") if _sd else ""
-        out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+f'<span class="b maker" style="color:#059669;border-color:#059669" title="The maker submitted this tool through our submit form{(" on "+_sdt) if _sdt else ""}. We reviewed and wrote the listing.">✓ Submitted by maker</span>'+m.group(2),out,count=1,flags=re.S)
+        out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+f'<span class="b maker" title="The maker submitted this tool through our submit form{(" on "+_sdt) if _sdt else ""}. We reviewed and wrote the listing.">✓ Submitted by maker</span>'+m.group(2),out,count=1,flags=re.S)
     B="https://agentscouthq.com/";pg=f"{B}tools/{x['slug']}.html"
     out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)
     if _rich: out=out.replace(about,(about+_rich[0]) if _rich[4:]==("lite",) else _rich[0],1)  # lite entries keep the About paragraph (additive)
@@ -141,6 +141,7 @@ import build_fresh; build_fresh.run(t)  # Updated dates, dateModified, quick com
 import build_listlogos; build_listlogos.run(t)  # logos next to tool names in tables and inline tool lists (Oct 18 2026)
 import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
 build_logocheck.listings_gate()  # stop the build if any tool link in a listing lacks its logo (Oct 18 2026)
+import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
