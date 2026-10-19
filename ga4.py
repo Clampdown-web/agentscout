@@ -16,7 +16,7 @@ ID = "G-TGDXK5F13D"
 START, END = "<!-- ga4 -->", "<!-- /ga4 -->"
 _EEA = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO",
         "SK","SI","ES","SE","IS","LI","NO","GB","CH"]
-SNIPPET = (START + '<script>(function(){var ID="' + ID + '",off=false;'
+SNIPPET = (START + '<script>(function(){var ID="' + ID + '",off=false,LOC=location.href;'
   'try{var nt=new URLSearchParams(location.search).get("notrack");if(nt==="1")localStorage.setItem("as_notrack","1");else if(nt==="0")localStorage.removeItem("as_notrack");off=localStorage.getItem("as_notrack")==="1"}catch(e){}'
   'try{if(navigator.webdriver||/HeadlessChrome|Headless|PhantomJS|Playwright|Puppeteer|Selenium|Lighthouse|bot\\b|crawler|spider/i.test(navigator.userAgent||""))off=true}catch(e){}'
   'if(off){window["ga-disable-"+ID]=true;return}'
@@ -25,7 +25,7 @@ SNIPPET = (START + '<script>(function(){var ID="' + ID + '",off=false;'
   'gtag("consent","default",Object.assign({analytics_storage:"denied",region:' + str(_EEA).replace("'", '"').replace(" ", "") + '},D));'
   'gtag("consent","default",Object.assign({analytics_storage:"granted"},D));'
   'gtag("set","ads_data_redaction",true);'
-  'var go=false;function start(){if(go)return;go=true;gtag("js",new Date());gtag("config",ID,{allow_google_signals:false,allow_ad_personalization_signals:false});'
+  'var go=false;function start(){if(go)return;go=true;gtag("js",new Date());gtag("config",ID,{page_location:LOC,allow_google_signals:false,allow_ad_personalization_signals:false});'
   'function inj(){var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s)}'
   'document.readyState==="complete"?inj():addEventListener("load",inj)}'
   'function c(x){if(!x.ready||(x.strict&&!x.decided))return;var a=!!x.analytics;window["ga-disable-"+ID]=!a;'
