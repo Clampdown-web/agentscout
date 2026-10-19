@@ -541,11 +541,14 @@
     ],
     "slug": "openswarm",
     "logo": "assets/logos/openswarm.png",
-    "github": "",
+    "github": "https://github.com/openswarm-ai/openswarm",
     "website": "https://openswarm.com",
     "added": "2026-10-14",
     "source": "original",
-    "seed": true
+    "seed": true,
+    "repo": "openswarm-ai/openswarm",
+    "github_stars": 829,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "ExcaliClaw",
@@ -741,11 +744,14 @@
     ],
     "slug": "cursor",
     "logo": "assets/logos/cursor.png",
-    "github": "",
+    "github": "https://github.com/cursor/cursor",
     "website": "https://cursor.com",
     "added": "2026-10-14",
     "source": "original",
-    "seed": true
+    "seed": true,
+    "repo": "cursor/cursor",
+    "github_stars": 33283,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Devin",
@@ -11924,13 +11930,16 @@
       "connect tools via MCP"
     ],
     "website": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
-    "github": "",
+    "github": "https://github.com/amplitude/mcp-marketplace",
     "id": 459,
     "slug": "amplitude-mcp",
     "logo": "assets/logos/amplitude-mcp.png",
     "added": "2026-10-16",
     "source": "MCP registry",
-    "seed": true
+    "seed": true,
+    "repo": "amplitude/mcp-marketplace",
+    "github_stars": 45,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Canva MCP",
@@ -12023,13 +12032,16 @@
       "monitor & evaluate agents"
     ],
     "website": "https://docs.newrelic.com/docs/agentic-ai/mcp/overview/",
-    "github": "",
+    "github": "https://github.com/newrelic/mcp-server",
     "id": 463,
     "slug": "new-relic-mcp",
     "logo": "assets/logos/new-relic-mcp.png",
     "added": "2026-10-16",
     "source": "MCP registry",
-    "seed": true
+    "seed": true,
+    "repo": "newrelic/mcp-server",
+    "github_stars": 7,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "PayPal MCP",
@@ -12737,13 +12749,16 @@
       "connect tools via MCP"
     ],
     "website": "https://vercel.com/docs/agent-resources/vercel-mcp",
-    "github": "",
+    "github": "https://github.com/vercel/vercel-mcp-overview",
     "id": 490,
     "slug": "vercel-mcp",
     "logo": "assets/logos/vercel-mcp.png",
     "added": "2026-10-16",
     "source": "MCP registry",
-    "seed": true
+    "seed": true,
+    "repo": "vercel/vercel-mcp-overview",
+    "github_stars": 15,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Webflow MCP",
@@ -13226,13 +13241,16 @@
       "sales & support"
     ],
     "website": "https://agentsdr.ai/",
-    "github": "",
+    "github": "https://github.com/Kandid-ai/AgentSDR",
     "id": 509,
     "slug": "agentsdr",
     "logo": "assets/logos/agentsdr.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "Kandid-ai/AgentSDR",
+    "github_stars": 43,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Agentset",
@@ -13251,13 +13269,16 @@
       "give agents memory"
     ],
     "website": "https://agentset.ai/",
-    "github": "",
+    "github": "https://github.com/agentset-ai/agentset",
     "id": 510,
     "slug": "agentset",
     "logo": "assets/logos/agentset.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "agentset-ai/agentset",
+    "github_stars": 2112,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "AI Emaily",
@@ -13300,13 +13321,16 @@
       "connect tools via MCP"
     ],
     "website": "https://aident.ai/",
-    "github": "",
+    "github": "https://github.com/Aident-AI/aident-skill",
     "id": 512,
     "slug": "aident-ai",
     "logo": "assets/logos/aident-ai.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "Aident-AI/aident-skill",
+    "github_stars": 6,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Ami by AiSDR",
@@ -13472,13 +13496,16 @@
       "control a computer"
     ],
     "website": "https://bossconsole.ai/",
-    "github": "",
+    "github": "https://github.com/risa-labs-inc/BossConsole",
     "id": 519,
     "slug": "boss-console",
     "logo": "assets/logos/boss-console.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "risa-labs-inc/BossConsole",
+    "github_stars": 815,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Brev",
@@ -13546,13 +13573,16 @@
       "personal agents"
     ],
     "website": "https://clawapp.saharaai.com/",
-    "github": "",
+    "github": "https://github.com/SaharaLabsAI/Claw_app",
     "id": 522,
     "slug": "clawapp",
     "logo": "assets/logos/clawapp.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "SaharaLabsAI/Claw_app",
+    "github_stars": 9,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "ClawCall",
@@ -13570,13 +13600,16 @@
       "voice & phone calls"
     ],
     "website": "https://clawcall.dev/",
-    "github": "",
+    "github": "https://github.com/ClawCall-Dev/ClawCall",
     "id": 523,
     "slug": "clawcall",
     "logo": "assets/logos/clawcall.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "ClawCall-Dev/ClawCall",
+    "github_stars": 9,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Clawdi",
@@ -13594,13 +13627,16 @@
       "personal agents"
     ],
     "website": "https://clawdi.ai/",
-    "github": "",
+    "github": "https://github.com/Clawdi-AI/clawdi",
     "id": 524,
     "slug": "clawdi",
     "logo": "assets/logos/clawdi.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "Clawdi-AI/clawdi",
+    "github_stars": 104,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "ClawSimple",
@@ -13692,13 +13728,16 @@
       "voice & phone calls"
     ],
     "website": "https://coddo.ai/",
-    "github": "",
+    "github": "https://github.com/coddo-ai/coddo-releases",
     "id": 528,
     "slug": "coddo",
     "logo": "assets/logos/coddo.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "coddo-ai/coddo-releases",
+    "github_stars": 6,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Context.dev",
@@ -13863,13 +13902,16 @@
       "connect tools via MCP"
     ],
     "website": "https://luneresearch.com/",
-    "github": "",
+    "github": "https://github.com/RetrogradeLabs/lune-mcp-server",
     "id": 535,
     "slug": "lune-research",
     "logo": "assets/logos/lune-research.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "RetrogradeLabs/lune-mcp-server",
+    "github_stars": 4,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Munder Difflin",
@@ -13938,13 +13980,16 @@
       "research the web"
     ],
     "website": "https://getbruin.com/",
-    "github": "",
+    "github": "https://github.com/bruin-data/bruin",
     "id": 538,
     "slug": "bruin",
     "logo": "assets/logos/bruin.png",
     "added": "2026-10-16",
     "source": "Product Hunt",
-    "seed": true
+    "seed": true,
+    "repo": "bruin-data/bruin",
+    "github_stars": 1783,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "AirJelly",
@@ -14573,14 +14618,17 @@
       "games"
     ],
     "website": "https://opendungeonmaster.com/",
-    "github": "",
+    "github": "https://github.com/Lebbitheplow/open-dungeon-master",
     "id": 566,
     "slug": "open-dungeon-master",
     "logo": "assets/logos/open-dungeon-master.png",
     "tags": [
       "hybrid"
     ],
-    "seed": true
+    "seed": true,
+    "repo": "Lebbitheplow/open-dungeon-master",
+    "github_stars": 46,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Friends & Fables",
@@ -23078,10 +23126,13 @@
       "build apps without code"
     ],
     "website": "https://www.taskade.com/ai/agents",
-    "github": "",
+    "github": "https://github.com/taskade/taskade",
     "id": 911,
     "slug": "taskade-ai-agents",
-    "logo": "assets/logos/taskade-ai-agents.png"
+    "logo": "assets/logos/taskade-ai-agents.png",
+    "repo": "taskade/taskade",
+    "github_stars": 69,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "CodeRabbit",
@@ -23458,10 +23509,13 @@
       "give agents memory"
     ],
     "website": "https://www.getzep.com/",
-    "github": "",
+    "github": "https://github.com/getzep/zep",
     "id": 927,
     "slug": "zep",
-    "logo": "assets/logos/zep.png"
+    "logo": "assets/logos/zep.png",
+    "repo": "getzep/zep",
+    "github_stars": 4966,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Goodcall",
@@ -23974,10 +24028,13 @@
       "connect tools via MCP"
     ],
     "website": "https://atomicmail.ai/",
-    "github": "",
+    "github": "https://github.com/Atomic-Mail/atomic-mail-agentic",
     "id": 949,
     "slug": "atomic-mail",
-    "logo": "assets/logos/atomic-mail.png"
+    "logo": "assets/logos/atomic-mail.png",
+    "repo": "Atomic-Mail/atomic-mail-agentic",
+    "github_stars": 266,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Basis",
@@ -24044,10 +24101,13 @@
       "sales & support"
     ],
     "website": "https://www.bolna.ai/",
-    "github": "",
+    "github": "https://github.com/bolna-ai/bolna",
     "id": 952,
     "slug": "bolna",
-    "logo": "assets/logos/bolna.png"
+    "logo": "assets/logos/bolna.png",
+    "repo": "bolna-ai/bolna",
+    "github_stars": 797,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Browserable",
@@ -24097,10 +24157,13 @@
       "build apps without code"
     ],
     "website": "https://buildship.com/",
-    "github": "",
+    "github": "https://github.com/buildship-ai/buildship",
     "id": 954,
     "slug": "buildship",
-    "logo": "assets/logos/buildship.png"
+    "logo": "assets/logos/buildship.png",
+    "repo": "buildship-ai/buildship",
+    "github_stars": 603,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Coval",
@@ -24614,10 +24677,13 @@
       "connect tools via MCP"
     ],
     "website": "https://porkbun.com/mcp",
-    "github": "",
+    "github": "https://github.com/oborseth/Porkbun-MCP",
     "id": 976,
     "slug": "porkbun-mcp",
-    "logo": "assets/logos/porkbun-mcp.png"
+    "logo": "assets/logos/porkbun-mcp.png",
+    "repo": "oborseth/Porkbun-MCP",
+    "github_stars": 32,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Typeform MCP",
@@ -24804,10 +24870,13 @@
       "connect tools via MCP"
     ],
     "website": "https://www.zomato.com/",
-    "github": "",
+    "github": "https://github.com/Zomato/mcp-server-manifest",
     "id": 984,
     "slug": "zomato-mcp",
-    "logo": "assets/logos/zomato-mcp.png"
+    "logo": "assets/logos/zomato-mcp.png",
+    "repo": "Zomato/mcp-server-manifest",
+    "github_stars": 185,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Infobip MCP",
@@ -24827,10 +24896,13 @@
       "connect tools via MCP"
     ],
     "website": "https://www.infobip.com/",
-    "github": "",
+    "github": "https://github.com/infobip/mcp",
     "id": 985,
     "slug": "infobip-mcp",
-    "logo": "assets/logos/infobip-mcp.png"
+    "logo": "assets/logos/infobip-mcp.png",
+    "repo": "infobip/mcp",
+    "github_stars": 37,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Statsig MCP",
@@ -24897,10 +24969,13 @@
       "monitor & evaluate agents"
     ],
     "website": "https://uptimerobot.com/",
-    "github": "",
+    "github": "https://github.com/uptimerobot/ai",
     "id": 988,
     "slug": "uptimerobot-mcp",
-    "logo": "assets/logos/uptimerobot-mcp.png"
+    "logo": "assets/logos/uptimerobot-mcp.png",
+    "repo": "uptimerobot/ai",
+    "github_stars": 24,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Scite MCP",
@@ -24946,10 +25021,13 @@
       "monitor & evaluate agents"
     ],
     "website": "https://www.altmetric.com/",
-    "github": "",
+    "github": "https://github.com/altmetric/altmetric-mcp",
     "id": 990,
     "slug": "altmetric-mcp",
-    "logo": "assets/logos/altmetric-mcp.png"
+    "logo": "assets/logos/altmetric-mcp.png",
+    "repo": "altmetric/altmetric-mcp",
+    "github_stars": 7,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Playgama MCP",
@@ -24992,10 +25070,13 @@
       "connect tools via MCP"
     ],
     "website": "https://ifttt.com/mcp",
-    "github": "",
+    "github": "https://github.com/IFTTT/ifttt-plugins",
     "id": 992,
     "slug": "ifttt-mcp",
-    "logo": "assets/logos/ifttt-mcp.png"
+    "logo": "assets/logos/ifttt-mcp.png",
+    "repo": "IFTTT/ifttt-plugins",
+    "github_stars": 2,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "RocketReach MCP",
@@ -25016,10 +25097,13 @@
       "connect tools via MCP"
     ],
     "website": "https://docs.rocketreach.co/reference/mcp",
-    "github": "",
+    "github": "https://github.com/rocketreach/rocketreach-mcp-plugin",
     "id": 993,
     "slug": "rocketreach-mcp",
-    "logo": "assets/logos/rocketreach-mcp.png"
+    "logo": "assets/logos/rocketreach-mcp.png",
+    "repo": "rocketreach/rocketreach-mcp-plugin",
+    "github_stars": 0,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Sonatype MCP",
@@ -25087,10 +25171,13 @@
       "connect tools via MCP"
     ],
     "website": "https://sendpulse.com/features/mcp",
-    "github": "",
+    "github": "https://github.com/sendpulse/mcp-server",
     "id": 996,
     "slug": "sendpulse-mcp",
-    "logo": "assets/logos/sendpulse-mcp.png"
+    "logo": "assets/logos/sendpulse-mcp.png",
+    "repo": "sendpulse/mcp-server",
+    "github_stars": 1,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "vidIQ MCP",
@@ -25135,10 +25222,13 @@
       "connect tools via MCP"
     ],
     "website": "https://flights.idealo.com",
-    "github": "",
+    "github": "https://github.com/idealo/mcp-server-guide",
     "id": 998,
     "slug": "idealo-mcp",
-    "logo": "assets/logos/idealo-mcp.png"
+    "logo": "assets/logos/idealo-mcp.png",
+    "repo": "idealo/mcp-server-guide",
+    "github_stars": 19,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Lucid MCP",
@@ -25184,10 +25274,13 @@
       "connect tools via MCP"
     ],
     "website": "https://www.printfriendly.com/help/api-mcp",
-    "github": "",
+    "github": "https://github.com/printfriendly/printfriendly-mcp",
     "id": 1000,
     "slug": "printfriendly-mcp",
-    "logo": "assets/logos/printfriendly-mcp.png"
+    "logo": "assets/logos/printfriendly-mcp.png",
+    "repo": "printfriendly/printfriendly-mcp",
+    "github_stars": 0,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "DevCycle MCP",
@@ -25208,10 +25301,13 @@
       "connect tools via MCP"
     ],
     "website": "https://docs.devcycle.com/cli-mcp/mcp-getting-started/",
-    "github": "",
+    "github": "https://github.com/DevCycleHQ/cli",
     "id": 1001,
     "slug": "devcycle-mcp",
-    "logo": "assets/logos/devcycle-mcp.png"
+    "logo": "assets/logos/devcycle-mcp.png",
+    "repo": "DevCycleHQ/cli",
+    "github_stars": 20,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "MindMeister MCP",
@@ -25300,10 +25396,13 @@
       "connect tools via MCP"
     ],
     "website": "https://mcp.tipranks.com/",
-    "github": "",
+    "github": "https://github.com/TipRanks/mcp",
     "id": 1005,
     "slug": "tipranks-mcp",
-    "logo": "assets/logos/tipranks-mcp.png"
+    "logo": "assets/logos/tipranks-mcp.png",
+    "repo": "TipRanks/mcp",
+    "github_stars": 16,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "GoCardless MCP",
@@ -25371,10 +25470,13 @@
       "connect tools via MCP"
     ],
     "website": "https://gitkraken.com/",
-    "github": "",
+    "github": "https://github.com/gitkraken/gk-cli",
     "id": 1008,
     "slug": "gitkraken-mcp",
-    "logo": "assets/logos/gitkraken-mcp.png"
+    "logo": "assets/logos/gitkraken-mcp.png",
+    "repo": "gitkraken/gk-cli",
+    "github_stars": 460,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Teamwork.com MCP",
@@ -25536,10 +25638,13 @@
       "connect tools via MCP"
     ],
     "website": "https://docs.chainstack.com/docs/chainstack-mcp-server",
-    "github": "",
+    "github": "https://github.com/chainstacklabs/mcp-server",
     "id": 1015,
     "slug": "chainstack-mcp",
-    "logo": "assets/logos/chainstack-mcp.png"
+    "logo": "assets/logos/chainstack-mcp.png",
+    "repo": "chainstacklabs/mcp-server",
+    "github_stars": 4,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Polar Analytics MCP",
@@ -25583,10 +25688,13 @@
       "connect tools via MCP"
     ],
     "website": "https://bird.com/docs/ai/mcp-server",
-    "github": "",
+    "github": "https://github.com/messagebird/bird-ai",
     "id": 1017,
     "slug": "bird-mcp",
-    "logo": "assets/logos/bird-mcp.png"
+    "logo": "assets/logos/bird-mcp.png",
+    "repo": "messagebird/bird-ai",
+    "github_stars": 7,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "daily.dev MCP",
@@ -25654,10 +25762,13 @@
       "connect tools via MCP"
     ],
     "website": "https://svelte.dev/docs/ai/overview",
-    "github": "",
+    "github": "https://github.com/sveltejs/ai-tools",
     "id": 1020,
     "slug": "svelte-mcp",
-    "logo": "assets/logos/svelte-mcp.png"
+    "logo": "assets/logos/svelte-mcp.png",
+    "repo": "sveltejs/ai-tools",
+    "github_stars": 334,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Frase MCP",
@@ -25679,10 +25790,13 @@
       "monitor & evaluate agents"
     ],
     "website": "https://www.frase.io/agents",
-    "github": "",
+    "github": "https://github.com/frase-io/mcp-server",
     "id": 1021,
     "slug": "frase-mcp",
-    "logo": "assets/logos/frase-mcp.png"
+    "logo": "assets/logos/frase-mcp.png",
+    "repo": "frase-io/mcp-server",
+    "github_stars": 0,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Cypress Cloud MCP",
@@ -25799,10 +25913,13 @@
       "connect tools via MCP"
     ],
     "website": "https://www.lusha.com/",
-    "github": "",
+    "github": "https://github.com/lusha-oss/lusha-mcp-plugin",
     "id": 1026,
     "slug": "lusha-mcp",
-    "logo": "assets/logos/lusha-mcp.png"
+    "logo": "assets/logos/lusha-mcp.png",
+    "repo": "lusha-oss/lusha-mcp-plugin",
+    "github_stars": 4,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Logo.dev MCP",
@@ -25869,10 +25986,13 @@
       "connect tools via MCP"
     ],
     "website": "https://twelvedata.com/",
-    "github": "",
+    "github": "https://github.com/twelvedata/mcp",
     "id": 1029,
     "slug": "twelve-data-mcp",
-    "logo": "assets/logos/twelve-data-mcp.png"
+    "logo": "assets/logos/twelve-data-mcp.png",
+    "repo": "twelvedata/mcp",
+    "github_stars": 84,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Geckoboard MCP",
@@ -25916,10 +26036,13 @@
       "give agents memory"
     ],
     "website": "https://www.locize.com/docs/integration/mcp",
-    "github": "",
+    "github": "https://github.com/locize/locize-agents",
     "id": 1031,
     "slug": "locize-mcp",
-    "logo": "assets/logos/locize-mcp.png"
+    "logo": "assets/logos/locize-mcp.png",
+    "repo": "locize/locize-agents",
+    "github_stars": 1,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Unleash MCP",
@@ -25940,10 +26063,13 @@
       "connect tools via MCP"
     ],
     "website": "https://www.getunleash.io/",
-    "github": "",
+    "github": "https://github.com/Unleash/unleash-mcp",
     "id": 1033,
     "slug": "unleash-mcp",
-    "logo": "assets/logos/unleash-mcp.png"
+    "logo": "assets/logos/unleash-mcp.png",
+    "repo": "Unleash/unleash-mcp",
+    "github_stars": 21,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "CData Connect AI MCP",
@@ -25988,10 +26114,13 @@
       "connect tools via MCP"
     ],
     "website": "https://parallel.ai/",
-    "github": "",
+    "github": "https://github.com/parallel-web/search-mcp",
     "id": 1035,
     "slug": "parallel-search-mcp",
-    "logo": "assets/logos/parallel-search-mcp.png"
+    "logo": "assets/logos/parallel-search-mcp.png",
+    "repo": "parallel-web/search-mcp",
+    "github_stars": 26,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Supermetrics MCP",
@@ -26036,10 +26165,13 @@
       "computer vision"
     ],
     "website": "https://aiven.io/mcp",
-    "github": "",
+    "github": "https://github.com/Aiven-Open/mcp-aiven",
     "id": 1037,
     "slug": "aiven-mcp",
-    "logo": "assets/logos/aiven-mcp.png"
+    "logo": "assets/logos/aiven-mcp.png",
+    "repo": "Aiven-Open/mcp-aiven",
+    "github_stars": 28,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Extend MCP",
@@ -26085,10 +26217,13 @@
       "connect tools via MCP"
     ],
     "website": "https://docs.brandfetch.com/mcp/overview",
-    "github": "",
+    "github": "https://github.com/Brandfetch/brandfetch-mcp-server",
     "id": 1039,
     "slug": "brandfetch-mcp",
-    "logo": "assets/logos/brandfetch-mcp.png"
+    "logo": "assets/logos/brandfetch-mcp.png",
+    "repo": "Brandfetch/brandfetch-mcp-server",
+    "github_stars": 9,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Picsart GenAI MCP",
@@ -26179,10 +26314,13 @@
       "connect tools via MCP"
     ],
     "website": "https://developer.getguru.com/docs/guru-mcp-server-overview",
-    "github": "",
+    "github": "https://github.com/guruhq/remote-mcp-server",
     "id": 1043,
     "slug": "guru-mcp",
-    "logo": "assets/logos/guru-mcp.png"
+    "logo": "assets/logos/guru-mcp.png",
+    "repo": "guruhq/remote-mcp-server",
+    "github_stars": 1,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "1inch MCP",
@@ -26274,10 +26412,13 @@
       "monitor & evaluate agents"
     ],
     "website": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
-    "github": "",
+    "github": "https://github.com/PandaDoc/mcp-server-guide",
     "id": 1047,
     "slug": "pandadoc-mcp",
-    "logo": "assets/logos/pandadoc-mcp.png"
+    "logo": "assets/logos/pandadoc-mcp.png",
+    "repo": "PandaDoc/mcp-server-guide",
+    "github_stars": 2,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "SmartBear MCP",
@@ -26297,10 +26438,13 @@
       "connect tools via MCP"
     ],
     "website": "https://www.smartbear.com/",
-    "github": "",
+    "github": "https://github.com/SmartBear/smartbear-mcp",
     "id": 1048,
     "slug": "smartbear-mcp",
-    "logo": "assets/logos/smartbear-mcp.png"
+    "logo": "assets/logos/smartbear-mcp.png",
+    "repo": "SmartBear/smartbear-mcp",
+    "github_stars": 44,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Tenderly MCP",
@@ -26344,10 +26488,13 @@
       "connect tools via MCP"
     ],
     "website": "https://whimsical.com/mcp",
-    "github": "",
+    "github": "https://github.com/WhimsicalCode/mcp-server-guide",
     "id": 1050,
     "slug": "whimsical-mcp",
-    "logo": "assets/logos/whimsical-mcp.png"
+    "logo": "assets/logos/whimsical-mcp.png",
+    "repo": "WhimsicalCode/mcp-server-guide",
+    "github_stars": 11,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Automox MCP",
@@ -26368,10 +26515,13 @@
       "run code safely"
     ],
     "website": "https://www.automox.com/",
-    "github": "",
+    "github": "https://github.com/AutomoxCommunity/automox-mcp",
     "id": 1051,
     "slug": "automox-mcp",
-    "logo": "assets/logos/automox-mcp.png"
+    "logo": "assets/logos/automox-mcp.png",
+    "repo": "AutomoxCommunity/automox-mcp",
+    "github_stars": 14,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "GTmetrix MCP",
@@ -27015,10 +27165,13 @@
       "give agents memory"
     ],
     "website": "https://baseai.dev/",
-    "github": "",
+    "github": "https://github.com/CommandCodeAI/BaseAI",
     "id": 1078,
     "slug": "baseai",
-    "logo": "assets/logos/baseai.png"
+    "logo": "assets/logos/baseai.png",
+    "repo": "CommandCodeAI/BaseAI",
+    "github_stars": 1286,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Aimdoc",
@@ -28061,10 +28214,13 @@
       "write code"
     ],
     "website": "https://developers.reflection.ai/mirror-overview",
-    "github": "",
+    "github": "https://github.com/reflection-oss/mirror",
     "id": 1120,
     "slug": "mirror-cli",
-    "logo": "assets/logos/mirror-cli.png"
+    "logo": "assets/logos/mirror-cli.png",
+    "repo": "reflection-oss/mirror",
+    "github_stars": 180,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Pyth Pro MCP",
@@ -28262,12 +28418,15 @@
       "control a computer"
     ],
     "website": "https://orke.bomtobe.com/en/",
-    "github": "",
+    "github": "https://github.com/bomtobe-hgkim/orke-mac",
     "id": 1128,
     "slug": "orke",
     "logo": "assets/logos/orke.png",
     "maker_submitted": true,
-    "submitted": "2026-10-18"
+    "submitted": "2026-10-18",
+    "repo": "bomtobe-hgkim/orke-mac",
+    "github_stars": 1,
+    "stars_checked": "2026-10-18"
   },
   {
     "name": "Descript",

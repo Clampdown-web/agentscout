@@ -120,7 +120,7 @@ def auto(out,x,t,catslug,prim,B):
     if lic: li.append(("Licence",e(re.sub(r"^the ","",lic))+(" (OSI-approved open source)" if osi else "")))
     if repo:
         rp=repo.replace("https://github.com/","").strip("/")
-        li.append(("GitHub",f'<a href="{e(repo)}" target="_blank" rel="noopener">{e(rp)}</a>'+(f" · {stars:,} stars" if stars else "")+(f" (as of {_mdy(g.get('fetched') or x.get('verified'))})" if stars else "")))
+        li.append(("GitHub",f'<a href="{e(repo)}" target="_blank" rel="noopener">{e(rp)}</a>'+(f" · {stars:,} stars" if stars else "")+(f" (as of {_mdy(g.get('fetched') or x.get('stars_checked') or x.get('verified'))})" if stars else "")))
     if g.get("release_tag"): li.append(("Latest release",e((g["release_tag"] if len(g["release_tag"])<=40 else g["release_tag"][:39]+"…")+", "+_mdy(g.get("release_date")))))
     if g.get("pushed"): li.append(("Last commit",e(_mdy(g["pushed"]))))
     if g.get("archived"): li.append(("Status","Archived: the GitHub repository is read-only"))
