@@ -21233,5 +21233,56 @@
    "src": "https://www.ceofans.com/#pricing",
    "checked": "2026-10-18"
   }
+ },
+ "9bot": {
+  "kind": "lite",
+  "src_kind": "site",
+  "long": [
+   "9bot is a WhatsApp automation platform from Brazil for people who run groups, communities and Channels: creators, news portals, educators and companies. It sends recurring messages and news from RSS feeds and APIs, answers custom commands, welcomes new members and posts to WhatsApp Channels, with live-stream alerts for Twitch, YouTube and Kick and scheduled affiliate posts for Mercado Livre, Amazon and Shopee.",
+   "Moderation rules handle spam, suspicious links, banned words and a configurable punishment ladder, and a dashboard reports engagement, peak activity and growth. Its official MCP server (remote, OAuth sign-in with your WhatsApp number) lets compatible AI assistants and agents manage groups, schedule messages, moderate and read metrics for your 9bot account. An active 9bot subscription is required."
+  ],
+  "who": "Admins of busy WhatsApp groups and communities, such as creators, news sites, course providers and community teams, who want moderation, scheduled content and reporting handled automatically, and optionally run from an AI assistant over MCP.",
+  "features": [
+   "Recurring messages, automatic replies and custom commands for WhatsApp groups",
+   "Moderation: spam and suspicious-link rules, banned words, punishment ladder",
+   "Automatic news delivery from RSS feeds and external APIs",
+   "WhatsApp Channel posts, welcome messages and message scheduling",
+   "Live-stream alerts (Twitch, YouTube, Kick) and scheduled affiliate posts",
+   "Engagement, activity and growth reports in a dashboard",
+   "Official remote MCP server (OAuth) for AI assistants and agents"
+  ],
+  "faq": [
+   [
+    "Does 9bot have an MCP server?",
+    "Yes. The official remote MCP endpoint is https://mcp.9bot.com.br/mcp (Streamable HTTP, OAuth 2.0). You sign in with the WhatsApp number on your 9bot account, and an active subscription is required."
+   ],
+   [
+    "Which languages is 9bot available in?",
+    "The site is available in English, Portuguese, Spanish and Chinese."
+   ]
+  ],
+  "sources": [
+   "https://9bot.com.br/en/",
+   "https://github.com/9-bot/mcp"
+  ],
+  "updated": "2026-10-18",
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Free trial",
+     "7 days",
+     "Test the full plan before paying"
+    ],
+    [
+     "Basic Pro",
+     "US$35/month",
+     "for the first 3 months, then US$70/month; all features included"
+    ]
+   ],
+   "note": "Cancel anytime, according to the pricing section.",
+   "src": "https://9bot.com.br/en/",
+   "checked": "2026-10-18"
+  }
  }
 }

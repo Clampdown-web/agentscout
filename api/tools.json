@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T04:48:00Z",
- "updated": "2026-10-19T04:48:00Z",
+ "generated": "2026-10-19T05:05:27Z",
+ "updated": "2026-10-19T05:05:27Z",
  "last_checked": "2026-10-18",
- "count": 1408,
+ "count": 1409,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -59385,6 +59385,54 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ceofans.png",
    "page": "https://agentscouthq.com/tools/ceofans.html"
+  },
+  {
+   "name": "9bot",
+   "slug": "9bot",
+   "url": "https://9bot.com.br/en/",
+   "website": "https://9bot.com.br/en/",
+   "github": "https://github.com/9-bot/mcp",
+   "category": "MCP & infra",
+   "description": "AI bot and operations hub for WhatsApp groups and communities that automates messages, commands, moderation (spam, suspicious links), news delivery, Channel posts, integrations and engagement reporting. An official MCP server lets AI assistants and agents manage the groups.",
+   "key_features": [
+    "Paid with a 7-day free trial; Basic Pro US$35/mo for the first 3 months, then US$70/mo",
+    "Active",
+    "Connect tools via mcp",
+    "Automate workflows"
+   ],
+   "pricing": "Paid with a 7-day free trial; Basic Pro US$35/mo for the first 3 months, then US$70/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-18",
+   "added": "2026-10-18",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "automate workflows",
+    "whatsapp",
+    "community management",
+    "moderation",
+    "customer support",
+    "messaging",
+    "mcp"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/9bot.png",
+   "page": "https://agentscouthq.com/tools/9bot.html"
   }
  ]
 }

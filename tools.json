@@ -35560,5 +35560,39 @@
     "logo": "assets/logos/ceofans.png",
     "maker_submitted": true,
     "submitted": "2026-10-18"
+  },
+  {
+    "name": "9bot",
+    "url": "https://9bot.com.br/en/",
+    "description": "AI bot and operations hub for WhatsApp groups and communities that automates messages, commands, moderation (spam, suspicious links), news delivery, Channel posts, integrations and engagement reporting. An official MCP server lets AI assistants and agents manage the groups.",
+    "category": "MCP & infra",
+    "pricing": "Paid",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-18",
+    "added": "2026-10-18",
+    "source": "Submission",
+    "pricing_detail": "Paid with a 7-day free trial; Basic Pro US$35/mo for the first 3 months, then US$70/mo",
+    "tags": [
+      "whatsapp",
+      "community management",
+      "moderation",
+      "customer support",
+      "messaging",
+      "mcp"
+    ],
+    "use_cases": [
+      "connect tools via MCP",
+      "automate workflows"
+    ],
+    "website": "https://9bot.com.br/en/",
+    "github": "https://github.com/9-bot/mcp",
+    "id": 1427,
+    "slug": "9bot",
+    "logo": "assets/logos/9bot.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-18"
   }
 ]
