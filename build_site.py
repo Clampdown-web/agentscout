@@ -1,6 +1,7 @@
 """Generates use-case tags, slugs and static detail pages from tools.json."""
 import json,re,html,os,build_extras,build_rich,build_related
 t=json.load(open("tools.json"))
+import build_logocheck; build_logocheck.run(t)  # stop the build if any tool lacks a valid local logo (Oct 18 2026)
 # Sponsor bar on every page (build_sponsor.py). OFF until a sponsor is booked: set True and fill data/sponsor_bar.json, then rebuild.
 SPONSOR_ENABLED = False
 RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",r"browser|web browser|headless"),("control a computer",r"computer-use|desktop|operating system|cloud computer"),

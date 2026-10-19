@@ -1,11 +1,12 @@
 /* Compare any two tools: type-ahead pickers over api/tools.json, side-by-side table, shareable ?a=slug&b=slug. */
 (function(){
+if(!window.ASimgErr)window.ASimgErr=function(i){var n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()};
 var root=document.getElementById("cpick");if(!root)return;
 var T=[],BS={},sel={a:"",b:""},PAIRS=(root.dataset.pairs||"").split(",");
 var E=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
 var rel=function(u){return u?String(u).replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,"../"):""};
 var res=document.getElementById("cp-res");
-function ico(t){return '<span class="ico sm"><span aria-hidden="true">'+E((t.name||"?")[0].toUpperCase())+'</span>'+(t.logo?'<img src="'+E(rel(t.logo))+'" alt="'+E(t.name)+' logo" width="40" height="40" loading="lazy" onerror="this.remove()">':"")+'</span>'}
+function ico(t){return '<span class="ico sm"><span aria-hidden="true">'+E((t.name||"?")[0].toUpperCase())+'</span>'+(t.logo?'<img src="'+E(rel(t.logo))+'" alt="'+E(t.name)+' logo" width="40" height="40" loading="lazy" onerror="ASimgErr(this)">':"")+'</span>'}
 function box(k){
   var inp=document.getElementById("cp-"+k),list=document.getElementById("cp-"+k+"-l"),hi=-1,cur=[];
   function show(){var q=inp.value.trim().toLowerCase();

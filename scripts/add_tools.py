@@ -2,7 +2,7 @@
 Input TSV columns: repo_or_blank  category  pricing  audience  description  [name]  [website]
   - repo: owner/name on GitHub (or blank for closed products; then name+website required)
 Checks: GitHub repo exists & not archived, website returns 200 (bot-blocked 403 => website dropped, github kept),
-logo = site apple-touch-icon / icon >=64px, else GitHub owner avatar; dedupe by name/domain/repo against tools.json.
+logo = site apple-touch-icon / icon >=64px, else a logo/icon file in the repo, else the GitHub owner avatar ONLY if the owner is an Organization (never a personal User avatar); dedupe by name/domain/repo against tools.json.
 Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"Product Hunt"|"Hugging Face"|"Futurepedia"|...] [--dry]
 Each new tool is stamped added=today and source; build_site.py then refreshes the homepage Recently added section, new.html and llms.txt.
  [--cache=discovered.json from discover_github.py]"""
@@ -74,7 +74,19 @@ def verify(row):
       if h: cands.append(urljoin(site,h.group(1)))
   cands.sort(key=lambda u:0 if 'apple' in u else 1)
   if site: cands+= [urljoin(site,'/apple-touch-icon.png'),urljoin(site,'/favicon.ico')]
-  if owner_avatar: cands.append(owner_avatar)
+  if repo:  # official logo files in the repo itself (README logo, logo/icon files), before any avatar
+    try:
+      tr=requests.get(f"https://api.github.com/repos/{repo}/git/trees/HEAD?recursive=1",headers=GH,timeout=15).json().get("tree",[])
+      hits=sorted([x["path"] for x in tr if re.search(r'(^|/)(logo|icon|brand)[^/]*\.(png|svg|jpg|webp)$',x["path"],re.I) and not re.search(r'node_modules|test|vendor|third_party|templates?/icons',x["path"],re.I)],key=lambda q:(q.count('/'),len(q)))
+      cands+=[f"https://raw.githubusercontent.com/{repo}/HEAD/{q}" for q in hits[:4]]
+    except Exception: pass
+  # GitHub owner avatar ONLY for organisation accounts. A User account's avatar is a personal photo, not a logo
+  # (logo audit Oct 18 2026: 43 tools had a maintainer's face/landscape as their logo). Users -> "no logo" -> review by hand.
+  if owner_avatar:
+    login=owner_avatar.split("github.com/")[1].split(".png")[0]
+    try: otype=requests.get(f"https://api.github.com/users/{login}",headers=GH,timeout=15).json().get("type")
+    except Exception: otype=None
+    if otype=="Organization": cands.append(owner_avatar)
   logo=None
   if re.search(r'hf\.space|huggingface\.co/spaces',site): cands=[c for c in cands if 'huggingface' not in c and 'hf.space' not in c]
   cands=[c for c in cands if not re.search(r'github\.com/fluidicon|githubassets|figma\.com|google\.com/favicon',c)]

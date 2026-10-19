@@ -1,4 +1,6 @@
 /* Shared helpers: local-only upvotes and saves (localStorage). No server, no tracking. */
+/* Logo img error: retry twice with a cache-busting query, then show the letter (Oct 18 2026 logo fix). */
+function ASimgErr(i){var n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()}
 const ASe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const AS={
   get(k){try{return JSON.parse(localStorage.getItem(k)||"{}")}catch{return{}}},
@@ -36,7 +38,7 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",ini
 /* Standard site tool card for JS-rendered lists (quiz, saved). Same markup as the built category/task cards. */
 AS.wk=function(){var t;try{t=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}catch(e){t=new Date(Date.now()-7*36e5).toISOString().slice(0,10)}var d=new Date(t+"T00:00:00Z");d.setUTCDate(d.getUTCDate()-6);return d.toISOString().slice(0,10)};
 AS.card=function(t,extra){var logo=t.logo?t.logo.replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,""):"";
-return '<a class="card tile" href="tools/'+ASe(t.slug)+'.html">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true">'+ASe((t.name||"?")[0])+'</span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span></div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
+return '<a class="card tile" href="tools/'+ASe(t.slug)+'.html">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true">'+ASe((t.name||"?")[0])+'</span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async" onerror="ASimgErr(this)">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span></div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
 AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){i.addEventListener("error",function(){i.remove()})})};
 /* Newsletter: links with data-nl (and the signup forms with data-nlform) never open a tab or leave the page.
    Nothing from Beehiiv loads with the page. A tap on "Subscribe free" loads Beehiiv's hosted signup form

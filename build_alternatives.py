@@ -59,7 +59,7 @@ def pages(t):
                +(f" Its GitHub repo has {x['github_stars']:,} stars." if x.get("github_stars") else "")
                +f" We found {len(ps)} tools in the directory that do overlapping work"+(f" ({e(', '.join(tasks))})" if tasks else "")
                +f"; {opn} of them are open source and {fr} list a free or freemium plan. Below are the {len(alts)} closest, ranked by how many tasks and sub-tasks they share with {e(n)}, then by GitHub stars.")
-        lines="".join(f'<li style="margin:0 0 10px"><a href="../tools/{y["slug"]}.html"><b>{e(y["name"])}</b></a> ({e(y["pricing"])}): {e(y["description"])} {e(why(x,y,tg))}'
+        lines="".join(f'<li style="margin:0 0 10px"><a href="../tools/{y["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(y,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(y["name"])}</b></a> ({e(y["pricing"])}): {e(y["description"])} {e(why(x,y,tg))}'
                       +(f' <a href="../compare/{X.cslug(x["slug"],y["slug"]) if X.cslug(x["slug"],y["slug"]) in {X.cslug(a,b) for a,b in X.PAIRS} else X.cslug(y["slug"],x["slug"])}.html">{e(n)} vs {e(y["name"])} →</a>' if X.cslug(x["slug"],y["slug"]) in pairs else "")+'</li>' for y in alts)
         uniq=words(intro)+sum(words(why(x,y,tg)) for y in alts)
         if uniq<MIN_WORDS: continue

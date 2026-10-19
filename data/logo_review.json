@@ -1,0 +1,26 @@
+{
+ "_note": "Logo review list for scripts/check_logos.py --online (Oct 18, 2026 PT). ok = owner GitHub avatar verified as the real logo. pending = only a maintainer's personal avatar exists (no logo on the official site, repo or README); kept as-is until the owner decides (replace, keep, or remove).",
+ "ok": {
+  "chainaware": "owner account is the brand (ChainAware.ai)",
+  "yuanjing-wanwu": "owner avatar is the UniAI brand logo",
+  "ui-vision-rpa": "owner avatar is the Ui.Vision brand logo",
+  "lobsterai": "owner avatar is the NetEase Youdao brand logo",
+  "ida-pro-mcp": "same image is the repo's own .github/logo.png"
+ },
+ "pending": {
+  "jcodemunch-mcp": "personal avatar; no official logo found Oct 18 2026",
+  "ultimate-vocal-remover": "personal avatar; no official logo found Oct 18 2026",
+  "abtop": "personal avatar; no official logo found Oct 18 2026",
+  "ralph-for-claude-code": "personal avatar; no official logo found Oct 18 2026",
+  "searxng-mcp": "personal avatar; no official logo found Oct 18 2026",
+  "mmaudio": "personal avatar; no official logo found Oct 18 2026",
+  "arxiv-mcp-server": "personal avatar; no official logo found Oct 18 2026",
+  "playwright-skill": "personal avatar; no official logo found Oct 18 2026",
+  "jevgrep": "personal avatar; no official logo found Oct 18 2026",
+  "mcp-proxy": "personal avatar; no official logo found Oct 18 2026",
+  "ppt-master": "personal avatar; no official logo found Oct 18 2026",
+  "babyagi": "personal avatar; no official logo found Oct 18 2026",
+  "davinci-resolve-mcp": "personal avatar; no official logo found Oct 18 2026",
+  "oh-my-claudecode": "personal avatar; no official logo found Oct 18 2026"
+ }
+}

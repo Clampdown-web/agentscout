@@ -11,8 +11,11 @@ PAIRS=[("claude-code","openai-codex-cli"),("cursor","windsurf"),("cline","roo-co
 ("langfuse","langsmith"),("e2b","modal"),("bolt","v0")]
 NEW=json.load(open("compare_new.json")); NEW.pop("_note",None)  # Oct 18 batch: recommendation copy, keyed by slug
 PAIRS+=[tuple(k.split("-vs-")) for k in NEW]
+# Logo <img> error handler (Oct 18 2026 logo fix): retry twice (1.5 s, 3 s) with a cache-busting query before
+# falling back to the letter, so a transient GitHub Pages 503/404 (e.g. during a deploy) no longer drops logos for good.
+ONERR='onerror="'+"var i=this,n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()"+'"'
 def ico(x,d="../",cls=""):
-    L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" onerror="this.remove()">' if x.get("logo") else ""
+    L=e(x["name"].strip()[:1].upper()); im=f'<img src="{d}{x["logo"]}" alt="{e(x["name"])} logo" width="40" height="40" loading="lazy" decoding="async" {ONERR}>' if x.get("logo") else ""
     return f'<span class="ico {cls}"><span aria-hidden="true">{L}</span>{im}</span>'
 def ico24(x): return ico(x,"","sm").replace('width="40" height="40"','width="24" height="24"')
 def cslug(a,b): return f"{a}-vs-{b}"
