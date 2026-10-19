@@ -393,4 +393,4 @@ html[data-theme=dark] img.aswm{filter:invert(1) hue-rotate(180deg)}
 @media(max-width:560px){#list.grid{grid-template-columns:minmax(0,1fr)}#list .tile h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}#list .badges{flex-wrap:wrap}#list .badges .b{white-space:normal;overflow:visible;text-overflow:clip}}
 #count{scroll-margin-top:90px}@media(max-width:560px){#count{scroll-margin-top:200px}}
 /* phone: full tool names on every card grid and makers strip (audit Oct 19 2026: category/new/free-tools cards cut names like "GitHub Agentic Workflows (gh-aw)") */
-@media(max-width:560px){.tile h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}.mkname{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}}
+@media(max-width:560px){.tile h3,.rcard h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}.mkname{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}}
