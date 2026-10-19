@@ -75,7 +75,7 @@ def _pricing(n,r):
         +f'<p class="muted" style="margin:0 0 28px">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
     plans="; ".join(f"{a}: {b}" for a,b,c in tiers)
     fq=[(f"How much does {n} cost?",f"As of {ck}, {n}'s official pricing page lists: {plans}."+(" "+P["note"] if P.get("note") else ""))]
-    free=[a for a,b,c in tiers if re.match(r"(?i)^(\$0(?![\d.])|free\b)",b)]
+    free=[a for a,b,c in tiers if re.match(r"(?i)^([$€£¥]0(?![\d.,])|free\b)",b)]  # any currency (Oct 19 PT: Pragor lists €0 plans)
     isfree=(f"Yes. {n} has a free option ({', '.join(free)}), according to its pricing page (checked {ck})." if P.get("free") and free else f"{n} doesn't list a free plan on its pricing page (checked {ck}). Plans: {plans}.")
     offers=[]
     for a,b,c in tiers:
