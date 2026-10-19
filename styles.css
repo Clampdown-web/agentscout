@@ -388,3 +388,7 @@ html[data-theme=dark] img.aswm{filter:invert(1) hue-rotate(180deg)}
 .detail h1.icoh>span:not(.ico){min-width:0;overflow-wrap:anywhere}
 .detail .acts{flex-wrap:wrap;max-width:100%}
 .detail .acts a.btn{max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:center;height:auto;min-height:38px;padding-top:7px;padding-bottom:7px}
+
+/* phone: 1-column cards, full names and badges wrap (no ellipsis) */
+@media(max-width:560px){#list.grid{grid-template-columns:minmax(0,1fr)}#list .tile h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}#list .badges{flex-wrap:wrap}#list .badges .b{white-space:normal;overflow:visible;text-overflow:clip}}
+#count{scroll-margin-top:90px}@media(max-width:560px){#count{scroll-margin-top:200px}}

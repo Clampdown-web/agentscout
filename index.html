@@ -23,7 +23,7 @@
   <span class="eyebrow" id="s-eyebrow">1,463 tools · Links checked Oct 19, 2026</span>
   <h1>AI Agents Directory: the agent tools actually worth trying.</h1><div class="shareacts center"><span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>Share</button><span class="sharecount" hidden></span></span></div>
   <p class="lede">A curated, link-checked directory of agent tools for builders and everyday users, sorted by what they actually do.</p>
-  <form class="sub" style="max-width:560px;margin:0 auto" onsubmit="event.preventDefault();document.getElementById('q').value=this.h.value;render();location.hash='directory'"><input name="h" type="search" placeholder="What do you want an agent to do? e.g. “voice”, “browser”, “MCP”" aria-label="Search"><button class="btn primary">Search</button></form><p class="quizcta"><a href="quiz.html">Not sure where to start? Take the 30-second Agent Finder Quiz →</a></p>
+  <form class="sub" style="max-width:560px;margin:0 auto" onsubmit="event.preventDefault();document.getElementById('q').value=this.h.value;render();location.hash='directory';setTimeout(function(){document.getElementById('count').scrollIntoView({behavior:'smooth',block:'start'})},60)"><input name="h" type="search" placeholder="What do you want an agent to do? e.g. “voice”, “browser”, “MCP”" aria-label="Search"><button class="btn primary">Search</button></form><p class="quizcta"><a href="quiz.html">Not sure where to start? Take the 30-second Agent Finder Quiz →</a></p>
   <div class="stats"><span><b id="s-total">–</b> tools</span><span><b id="s-new">–</b> new this week</span><span><b id="s-cats">–</b> categories</span><span>Every link checked</span></div>
 </div></header>
 <div class="wrap"><section class="homegen" aria-labelledby="hg-h"><div class="hg-head"><h2 id="hg-h">✨ Free AI Image Generator</h2><a href="generate.html">Full-page →</a></div>
@@ -111,8 +111,11 @@ function render(){
  $("ucbar").innerHTML='<label for="ucs">Use case</label> <select id="ucs" class="ucsel"><option value="">Any use case</option>'+ucs.map(u=>`<option ${u===uc?"selected":""} value="${esc(u)}">${esc(u)}</option>`).join("")+'</select>'+(uc?` <button class="chip on" id="ucclear">${esc(uc)} ✕</button>`:"");
  $("ucs").onchange=e=>{uc=e.target.value;render()};if($("ucclear"))$("ucclear").onclick=()=>{uc="";render()};
  const q=$("q").value.trim().toLowerCase(),s=$("sort").value,sv=AS.get("as_saves");
- let r=tools.filter(t=>(cat==="all"||t.category===cat)&&(aud==="all"||t.audience===aud)&&(!uc||t.use_cases.includes(uc))&&(!onlyNew||(!t.seed&&(t.added||"")>=WK))&&(!onlySaved||sv[t.slug])&&(!q||[t.name,t.description,t.category,t.pricing,t.pricing_detail,t.audience,...t.use_cases].join(" ").toLowerCase().includes(q)));
- r.sort(s==="az"?(a,b)=>a.name.localeCompare(b.name):s==="stars"?(a,b)=>(b.github_stars??-1)-(a.github_stars??-1):(a,b)=>(b.added||"").localeCompare(a.added||"")||b.id-a.id);
+ const N=x=>(x||"").toLowerCase().replace(/[\s._\-]+/g,""),nq=N(q),words=q.split(/[\s._\-]+/).filter(Boolean);
+ const sc=t=>{if(!q)return 1;const n=N(t.name),sl=N(t.slug);if(n===nq||sl===nq)return 1000;if(n.startsWith(nq))return 800-n.length;if(n.includes(nq)||sl.includes(nq))return 600-n.length;const tg=N([t.category,...t.use_cases].join(" ")),d=N([t.description,t.pricing,t.pricing_detail,t.audience].join(" "));if(tg.includes(nq))return 300;if(d.includes(nq))return 200;const all=N([t.name,t.description,t.category,t.pricing,t.pricing_detail,t.audience,...t.use_cases].join(" "));return words.length>1&&words.every(w=>all.includes(N(w)))?100:0};
+ let r=tools.filter(t=>(cat==="all"||t.category===cat)&&(aud==="all"||t.audience===aud)&&(!uc||t.use_cases.includes(uc))&&(!onlyNew||(!t.seed&&(t.added||"")>=WK))&&(!onlySaved||sv[t.slug])).map(t=>[t,sc(t)]).filter(x=>x[1]>0);
+ const srt=s==="az"?(a,b)=>a.name.localeCompare(b.name):s==="stars"?(a,b)=>(b.github_stars??-1)-(a.github_stars??-1):(a,b)=>(b.added||"").localeCompare(a.added||"")||b.id-a.id;
+ r=r.sort((a,b)=>(q?b[1]-a[1]:0)||srt(a[0],b[0])).map(x=>x[0]);
  $("dirTitle").textContent=onlySaved?"Your saved tools":"Directory";
  $("count").textContent=`Showing ${r.length.toLocaleString("en-US")} of ${tools.length.toLocaleString("en-US")} tools`;
  const L=$("list"),gen=++renderGen,F=48;
@@ -125,13 +128,13 @@ AS.bind(document,()=>{if(onlySaved)render();if(tab==="votes")renderRank()});
 document.addEventListener("click",e=>{const u=e.target.closest("[data-uc]");if(u){e.preventDefault();uc=u.dataset.uc;render();$("directory").scrollIntoView({behavior:"smooth"})}});
 $("tabs").onclick=e=>{const b=e.target.closest("button");if(b){tab=b.dataset.t;renderRank()}};
 fetch("tools.json",{cache:"no-cache"}).then(r=>r.json()).then(d=>{
- tools=d;const p=new URLSearchParams(location.search);uc=p.get("uc")||"";onlySaved=p.has("saved");if(p.get("cat"))cat=p.get("cat");
+ tools=d;const p=new URLSearchParams(location.search);uc=p.get("uc")||"";onlySaved=p.has("saved");if(p.get("cat"))cat=p.get("cat");if(p.get("q"))$("q").value=p.get("q");
  const f=null,cats={};d.forEach(t=>cats[t.category]=(cats[t.category]||0)+1);
  $("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\d,]+/,d.length.toLocaleString("en-US"));$("s-new").textContent=d.filter(t=>t.new).length;$("s-cats").textContent=Object.keys(cats).length;
  $("catgrid").innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<a class="cattile" href="?cat=${encodeURIComponent(c)}#directory" data-cat="${esc(c)}">${esc(c)}<span>${n}</span></a>`).join("");
  $("catgrid").onclick=e=>{const a=e.target.closest("[data-cat]");if(a){e.preventDefault();cat=a.dataset.cat;onlyNew=onlySaved=false;render();$("directory").scrollIntoView({behavior:"smooth"})}};
  if(f)$("featured").innerHTML=`<div class="featured"><div><span class="label">Editor's pick</span><h3 class="icoh">${ico(f)}${esc(f.name)}</h3><p>${esc(f.description)}</p><div class="badges" style="margin-bottom:16px"><span class="b cat">${esc(f.category)}</span><span class="b">${esc(f.pricing)}</span>${f.github_stars!=null?`<span class="b">★ ${k(f.github_stars)} on GitHub</span>`:""}</div><div class="acts"><a class="btn primary" href="${page(f)}">View details</a>${AS.saveBtn(f.slug,1)}</div></div><aside><b style="color:var(--text)">Featured slot</b><br>Our pick this week.</aside></div>`;
- $("q").oninput=render;$("sort").onchange=render;renderRank();render();
+ $("q").oninput=render;$("q").onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();render();$("q").blur();$("count").scrollIntoView({behavior:"smooth",block:"start"})}};$("sort").onchange=render;renderRank();render();if(p.get("q"))setTimeout(()=>$("count").scrollIntoView({block:"start"}),50);
  document.querySelectorAll("[data-saved-count]").forEach(n=>n.textContent=AS.savedCount());
 }).catch(()=>{$("list").innerHTML='<div class="empty">Could not load tools.json. Serve this folder over HTTP.</div>'});
 
