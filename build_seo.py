@@ -42,7 +42,17 @@ def shorten(f,s,names,c):
         if cand!=t and len(cand)<=MAXT: c["title_shortened"]+=1; return _settitle(s,cand)
     if f.startswith("news/"):  # headline is the meaning: keep it whole, just drop the brand suffix
         a=_generic(t)[0]
-        if a!=t: c["title_shortened"]+=1; s=_settitle(s,a)
+        if a!=t: c["title_shortened"]+=1; s=_settitle(s,a); t=a
+        if len(t)>MAXT:  # search-result <title> only: cut at a clause break, else at a word with "…"; the H1 and og:title keep the full headline
+            cut=[t[:i].rstrip(" :,;-–") for sep in (" (",", ",": "," — "," – "," so "," as "," without "," after "," for ") for i in [m.start() for m in re.finditer(re.escape(sep),t)]]
+            cut=[x for x in cut if 45<=len(x)<=MAXT]
+            if cut: short=max(cut,key=len)
+            else:
+                w=t[:MAXT-1].rsplit(" ",1)[0].rstrip(" :,;-–").split(" ")
+                while len(w)>4 and w[-1].lower() in ("a","an","the","at","to","and","of","for","with","in","on","into","by","or","your"): w.pop()
+                short=" ".join(w).rstrip(" :,;-–")+"…"
+            c["title_shortened"]+=1
+            return re.sub(r"<title>.*?</title>",f"<title>{html.escape(short,quote=True)}</title>",s,1,flags=re.S)
     c["title_still_long"]+=1
     return s
 def twitter(s,c):
