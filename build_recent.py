@@ -8,7 +8,7 @@ STATS_JS=re.sub(r'<meta name="robots"[^>]*>\s*',"",open("stats.js.html").read())
 def newest(t): return sorted(t,key=lambda x:(x.get("added",""),x.get("id",0)),reverse=True)
 # "seed" = starting catalog (launch Oct 14 + bulk import Oct 16). Never counted as new; daily-discovery additions are.
 def fresh(t): return [x for x in t if not x.get("seed")]
-def is_week(x): return (not x.get("seed")) and x.get("added","")>=(pt_today()-datetime.timedelta(days=6)).isoformat()
+def is_week(x): return (not x.get("seed")) and "discontinued" not in x.get("maturity","").lower() and x.get("added","")>=(pt_today()-datetime.timedelta(days=6)).isoformat()
 def fmt(d): return datetime.date.fromisoformat(d).strftime("%b %-d, %Y")
 def short(s,n=110): return s if len(s)<=n else s[:n].rsplit(" ",1)[0]+"…"
 def card(x,d):

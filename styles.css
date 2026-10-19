@@ -347,3 +347,5 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 /* Quick comparison + other listing tables on phones: fit 390px without sideways scroll; logos next to names (Oct 18 2026) */
 @media (max-width:520px){.cmptbl{min-width:0;font-size:13px}.cmptbl th,.cmptbl td{padding:8px 7px}.cmptbl thead th{font-size:10.5px;letter-spacing:.02em}.cmptbl th:first-child,.cmptbl td:first-child{padding-left:10px}}
 .cmptbl a.icol,table a.icol{align-items:flex-start;gap:8px}.cmptbl a.icol .ico,table a.icol .ico{margin-top:-1px}
+/* tap targets at least 24px (a11y audit Oct 18 2026) */
+.ghx{display:inline-block;min-width:24px;min-height:24px;line-height:24px;text-align:center}.b{padding-top:2.5px;padding-bottom:2.5px}

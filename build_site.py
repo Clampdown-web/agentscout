@@ -33,7 +33,7 @@ import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 for x in t:
-    x["new"]=(not x.get("seed")) and x.get("added","")>=_c  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
+    x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
     d=x["name"]+" "+x["description"]+" "+x["category"]
     if x["category"] in ART_CATS:
         _k=[u for u in (x.get("use_cases") or []) if u in ART_UC]
@@ -77,7 +77,7 @@ for x in t:
     # Visible status note for archived or stale listings (tools.json "status_note", owner-approved Oct 18 2026)
     if x.get("status_note"):
         _arch=x.get("maturity","").lower().startswith(("archived","discontinued"))
-        out=out.replace('<div class="badges">','<div class="badges"><span class="b" style="border-color:#b45309;color:#b45309">'+("Archived" if _arch else "No recent updates")+'</span>',1)
+        out=out.replace('<div class="badges">','<div class="badges"><span class="b" style="border-color:#b45309;color:#f59e0b">'+(("Discontinued" if "discontinued" in x.get("maturity","").lower() else "Archived") if _arch else "No recent updates")+'</span>',1)
         out=out.replace('<p class="lede">'+e(x["description"])+'</p>','<p class="lede">'+e(x["description"])+'</p><p class="statusnote" role="note" style="margin:-6px 0 16px;padding:10px 14px;border:1px solid #b45309;border-radius:10px;font-size:14px">⚠️ '+e(x["status_note"])+'</p>',1)
     # Maker-submitted listings (tools.json "maker_submitted": true + "submitted": YYYY-MM-DD, Pacific): small badge by the name (standing perk, Oct 18 2026)
     if x.get("maker_submitted"):
@@ -118,6 +118,10 @@ def _sync_index_counts():
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
+    # main landmark for screen readers (a11y audit Oct 18 2026): hero through the newsletter box, footer stays outside
+    if "<main" not in s and '<header class="hero">' in s and "<footer" in s:
+        s = s.replace('<header class="hero">', '<main id="main"><header class="hero">', 1)
+        i = s.rfind("<footer"); s = s[:i] + "</main>\n" + s[i:]
     open("index.html", "w").write(s)
 _sync_index_counts()
 import build_recent

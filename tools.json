@@ -27092,26 +27092,26 @@
   {
     "name": "Fabi.ai",
     "url": "https://www.fabi.ai/",
-    "description": "AI data analysis platform that combines SQL, Python and AI automation to get insights from your data.",
+    "description": "Discontinued: the AI data analysis platform that combined SQL, Python and AI shut down in 2026 after its team joined Omni (announced May 26, 2026); app.fabi.ai now shows a shutdown notice.",
     "category": "research",
     "pricing": "See site",
-    "maturity": "Active",
+    "maturity": "Discontinued (shut down 2026; team joined Omni)",
     "audience": "ready to use",
     "featured": false,
-    "new": true,
+    "new": false,
     "verified": "2026-10-18",
     "added": "2026-10-18",
     "source": "aiagentslist",
-    "pricing_detail": "",
+    "pricing_detail": "No longer available",
     "use_cases": [
-      "research the web",
-      "automate workflows"
+      "research the web"
     ],
     "website": "https://www.fabi.ai/",
     "github": "",
     "id": 1075,
     "slug": "fabi-ai",
-    "logo": "assets/logos/fabi-ai.png"
+    "logo": "assets/logos/fabi-ai.png",
+    "status_note": "Discontinued: app.fabi.ai says Fabi.ai has shut down and the team has joined Omni. The marketing site at fabi.ai is still up but the product is no longer available. Checked Oct 18, 2026 (PT)."
   },
   {
     "name": "Ask-AI",

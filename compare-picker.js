@@ -13,11 +13,11 @@ function box(k){
     cur=(q?T.filter(function(t){return t.name.toLowerCase().indexOf(q)>=0||t.slug.indexOf(q)>=0}).sort(function(x,y){return x.name.toLowerCase().indexOf(q)-y.name.toLowerCase().indexOf(q)}):T).slice(0,8);
     hi=cur.length?0:-1;
     list.innerHTML=cur.map(function(t,i){return '<li role="option" data-i="'+i+'" class="'+(i===hi?"on":"")+'">'+ico(t)+'<span><b>'+E(t.name)+'</b><small>'+E(t.category)+'</small></span></li>'}).join("")||'<li class="none">No match</li>';
-    list.hidden=false}
-  function pick(t){sel[k]=t.slug;inp.value=t.name;list.hidden=true}
+    list.hidden=false;inp.setAttribute("aria-expanded","true")}
+  function pick(t){sel[k]=t.slug;inp.value=t.name;list.hidden=true;inp.setAttribute("aria-expanded","false")}
   inp.addEventListener("input",function(){sel[k]="";show()});
   inp.addEventListener("focus",show);
-  inp.addEventListener("blur",function(){setTimeout(function(){list.hidden=true},150)});
+  inp.addEventListener("blur",function(){setTimeout(function(){list.hidden=true;inp.setAttribute("aria-expanded","false")},150)});
   inp.addEventListener("keydown",function(e){if(list.hidden)return;
     if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();hi=(hi+(e.key==="ArrowDown"?1:-1)+cur.length)%cur.length;[].forEach.call(list.children,function(li,i){li.classList.toggle("on",i===hi)})}
     else if(e.key==="Enter"&&cur[hi]){e.preventDefault();pick(cur[hi])}else if(e.key==="Escape")list.hidden=true});
@@ -35,7 +35,7 @@ function render(push){
   var row=function(l,f){return "<tr><th>"+l+"</th><td>"+f(a)+"</td><td>"+f(b)+"</td></tr>"};
   var btns=function(t){var w=t.website||t.url;return (w?'<a class="btn" href="'+E(w)+'" target="_blank" rel="noopener noreferrer">Website ↗</a> ':"")+(t.github?'<a class="btn" href="'+E(t.github)+'" target="_blank" rel="noopener noreferrer">GitHub ↗</a>':"")};
   res.innerHTML=(m?'<p class="cp-match">We have a written comparison for this pair: <a href="'+m+'.html">'+E(BS[m.split("-vs-")[0]]?BS[m.split("-vs-")[0]].name:a.name)+' vs '+E(BS[m.split("-vs-")[1]]?BS[m.split("-vs-")[1]].name:b.name)+' →</a></p>':"")+
-   '<div class="tablewrap"><table class="cmp cp-t"><thead><tr><th></th>'+[a,b].map(function(t){return '<th><div class="cp-h"><a class="icol" href="../tools/'+E(t.slug)+'.html">'+ico(t)+E(t.name)+'</a>'+AS.saveBtn(t.slug).replace('class="save','class="save heart cp-heart')+'</div></th>'}).join("")+'</tr></thead><tbody>'+
+   '<div class="tablewrap"><table class="cmp cp-t"><thead><tr><th><span class="sr">Feature</span></th>'+[a,b].map(function(t){return '<th><div class="cp-h"><a class="icol" href="../tools/'+E(t.slug)+'.html">'+ico(t)+E(t.name)+'</a>'+AS.saveBtn(t.slug).replace('class="save','class="save heart cp-heart')+'</div></th>'}).join("")+'</tr></thead><tbody>'+
    row("Category",function(t){return '<span class="b cat">'+E(t.category)+'</span>'})+
    row("Pricing",function(t){return E(t.pricing)})+
    row("Open source",function(t){return t.open_source?"Yes"+(t.license?" ("+E(t.license)+")":""):"No"})+

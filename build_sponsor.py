@@ -66,7 +66,9 @@ def page(t):
     demo={"name":"Your brand","pitch":"your pitch, about 40 characters","url":"#","logo":""}
     barprev=bar_html(demo).replace(BAR_START,"").replace(BAR_END,"")
     barprev=re.sub(r'<script>.*?</script>','',barprev).replace('position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:60;','position:relative;margin:0 auto;width:max-content;')
-    barprev=barprev.replace('id="sponsorbar" role="complementary"','role="img"').replace(' onclick="try{localStorage.setItem(\'as_sponsorbar\',\'0\')}catch(e){}this.parentNode.remove()"',' tabindex="-1"').replace('href="#" target="_blank" rel="sponsored noopener"','href="#how" tabindex="-1"')
+    barprev=re.sub(r'<a href="#"[^>]*>','<span style="display:flex;align-items:center;gap:8px;min-width:0">',barprev).replace('</span></a><button','</span></span><button')
+    barprev=re.sub(r'<button type="button" aria-label="Hide sponsor".*?</button>','<span aria-hidden="true" style="flex:none;width:24px;height:24px;color:var(--muted);font-size:16px;line-height:24px;text-align:center">×</span>',barprev,flags=re.S)
+    barprev=barprev.replace('id="sponsorbar" role="complementary"','role="img" aria-label="Preview of the sponsor bar: Your brand, your pitch"').replace(' onclick="try{localStorage.setItem(\'as_sponsorbar\',\'0\')}catch(e){}this.parentNode.remove()"',' tabindex="-1"').replace('href="#" target="_blank" rel="sponsored noopener"','href="#how" tabindex="-1"')
     nlprev=(f'<div {card}><div class="muted" style="font-size:12px;margin-bottom:8px">AgentScout newsletter · New this week</div>'
       '<div style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:10px">'
       '<div style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--faint)">Sponsored by</div>'

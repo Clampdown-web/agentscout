@@ -144,7 +144,7 @@ def repo_table(items,d="../",title="GitHub repos"):
     if len(rows)<3: return ""
     haspush=any(r[3] for r in rows)
     th='<tr><th scope="col">Repo</th><th scope="col">GitHub stars</th><th scope="col">Licence</th>'+('<th scope="col">Last push</th>' if haspush else "")+'</tr>'
-    tr="".join(f'<tr><td><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a> <a href="{e(x["github"])}" target="_blank" rel="noopener noreferrer" aria-label="{e(x["name"])} on GitHub">↗</a></td><td>{s:,}</td><td>{e(l) or "—"}</td>'+(f'<td>{e(p[:10]) or "—"}</td>' if haspush else "")+'</tr>' for x,s,l,p in rows)
+    tr="".join(f'<tr><td><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a> <a class="ghx" href="{e(x["github"])}" target="_blank" rel="noopener noreferrer" aria-label="{e(x["name"])} on GitHub">↗</a></td><td>{s:,}</td><td>{e(l) or "—"}</td>'+(f'<td>{e(p[:10]) or "—"}</td>' if haspush else "")+'</tr>' for x,s,l,p in rows)
     note=f"Top {len(rows)} of {total} by stars." if total>len(rows) else f"{total} repos."
     return (f'<h2 id="repos" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(title)} <span style="color:var(--muted);font-weight:400">({total})</span></h2>'
             f'<div style="overflow-x:auto"><table class="cmp" style="width:100%;border-collapse:collapse;font-size:14px"><thead>{th}</thead><tbody>{tr}</tbody></table></div>'
