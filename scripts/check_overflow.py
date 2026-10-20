@@ -12,7 +12,7 @@ ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TYPES=["index.html","categories/photography-photo-editing.html","categories/coding.html","categories/mcp-infra.html","tasks/agent-identity.html",
        "for/photographers.html","s/free-mcp-servers.html","best/ai-coding-agents.html","tools/cursor.html","tools/adobe-lightroom.html",
        "compare/index.html","alternatives/index.html","new.html","news.html","free-tools.html","free-tools/token-counter.html",
-       "free-tools/ai-cost-calculator.html","quiz.html","submit.html","categories/index.html","tasks/index.html","saved.html","generate.html"]
+       "free-tools/ai-cost-calculator.html","free-tools/ai-agent-readiness-checker.html","quiz.html","submit.html","categories/index.html","tasks/index.html","saved.html","generate.html"]
 def pages_all():
     sm=open(os.path.join(ROOT,"sitemap.xml")).read()
     return [u.replace("https://agentscouthq.com/","") or "index.html" for u in re.findall(r"<loc>([^<]+)</loc>",sm) if not u.endswith((".txt",".xml",".json"))]
