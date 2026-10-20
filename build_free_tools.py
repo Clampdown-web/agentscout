@@ -185,7 +185,7 @@ def see_all_card(d=""):
             f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
-    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t),linter(t),ctxplan(t),license(t),bvb(t)]
+    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t),linter(t),ctxplan(t),license(t),bvb(t),mcppick(t),jsonval(t),cmpcard(t)]
     # /free-tools/ folder URL -> hub (not in sitemap)
     open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
     print("free tools:",len(urls),"pages")
@@ -521,3 +521,120 @@ F.map(function(x){return x[0]}).concat(["hy"]).forEach(function(i){$(i).addEvent
          ("Are any prices filled in for me?","No. The starting numbers are examples only. Enter your real quotes and costs."),
          ("Is anything sent to a server?","No. The calculator runs in your browser.")]
     return wrap("build-vs-buy-calculator","Build vs buy AI agent calculator","Compare self-hosting an open-source AI agent with paying for a hosted tool: setup, hosting, model API, maintenance time and seats, over 12, 24 or 36 months, with the break-even month.",inner,faq,js,t)
+
+# ---- Batch C, Oct 20 2026: MCP server picker, JSON output validator, comparison card maker (all browser-only).
+# The AI Agent Readiness Checker was not built: browsers block cross-site fetches and the existing Worker has no read-only fetch route.
+TOOLS+=[
+("mcp-server-picker","MCP Server Picker","Tick the apps you use, like GitHub, Slack, Notion or Postgres, and find matching MCP servers in the AgentScout directory.","🧲"),
+("json-output-validator","JSON Output Schema Validator","Paste a JSON Schema and a model's output to see if it passes, with exact error paths and OpenAI strict-mode checks.","✅"),
+("ai-tool-comparison-card","AI Tool Comparison Card Maker","Pick 2 or 3 AI tools from the directory and get a side-by-side comparison and a shareable image card.","🃏"),
+]
+REL.update({"mcp-server-picker":(["free-mcp-servers","terminal-ai-coding-agents"],["mcp-developers","developers","ai-engineers"]),
+ "json-output-validator":(["python-ai-agent-frameworks","typescript-ai-agent-frameworks","open-source-llm-observability-tools"],["ai-engineers","developers","qa-engineers"]),
+ "ai-tool-comparison-card":(["free-ai-coding-agents","open-source-ai-agent-frameworks"],["content-creators","founders","marketers"])})
+APPS=[("GitHub",r"github"),("GitLab",r"gitlab"),("Slack",r"slack"),("Discord",r"discord"),("Notion",r"notion"),("Linear",r"linear"),("Jira",r"jira|atlassian"),("Google Drive",r"google drive|gdrive"),("Gmail",r"gmail"),("Google Calendar",r"google calendar"),
+ ("Postgres",r"postgres|postgresql"),("MySQL",r"mysql"),("SQLite",r"sqlite"),("MongoDB",r"mongodb"),("Supabase",r"supabase"),("Redis",r"redis"),("Stripe",r"stripe"),("Figma",r"figma"),("Sentry",r"sentry"),
+ ("Docker",r"docker"),("Kubernetes",r"kubernetes|k8s"),("AWS",r"aws|amazon web services"),("Cloudflare",r"cloudflare"),("Browser / web automation",r"browser|playwright|puppeteer|chrome"),("Web search",r"web search|search api|search engine"),
+ ("Files on my computer",r"filesystem|file system|local files"),("Obsidian",r"obsidian"),("Zapier",r"zapier"),("Shopify",r"shopify"),("HubSpot",r"hubspot"),("Salesforce",r"salesforce")]
+def mcppick(t):
+    pool=[x for x in t if x["category"]=="MCP & infra"]
+    def txt(x): return " ".join([x["name"],x["description"]]+x.get("use_cases",[])+x.get("tags",[])).lower()
+    import re as _re
+    apps=[[n,p,sum(1 for x in pool if _re.search(r"\b("+p+r")\b",txt(x)))] for n,p in APPS]
+    apps=[a for a in apps if a[2]>0]
+    chk="".join(f'<label style="display:inline-flex;gap:6px;align-items:center;margin:0 14px 8px 0;font-size:14px"><input type="checkbox" class="mpa" value="{i}"> {e(n)} <span class="muted" style="font-size:12.5px">({c})</span></label>' for i,(n,p,c) in enumerate(apps))
+    inner=(f'<div {BOX}><p style="margin:0 0 8px;font-weight:600;font-size:14px">Which apps should your agent connect to?</p>{chk}'
+           f'<label {LAB} for="mpq">Or search by keyword</label><input id="mpq" placeholder="e.g. calendar, crm, vector database" {INP}>'
+           f'<label style="display:flex;gap:8px;align-items:center;margin:12px 0 0;font-size:14px"><input type="checkbox" id="mpo"> Open source only</label></div><div id="mpout" aria-live="polite"><p class="muted">Loading the directory…</p></div>'
+           f'<p class="muted" style="font-size:13.5px;margin-top:14px">Matches come from the names, descriptions and tags of the {len(pool)} MCP &amp; infrastructure tools in the directory. Check each server\'s own docs for install steps, then turn them into config for Claude Desktop, Cursor, VS Code or Claude Code with the <a href="mcp-config-builder.html">MCP config builder</a>. Only connect servers you trust.</p>')
+    js=NUMJS+"\nvar A="+json.dumps([[n,p] for n,p,_ in apps])+r''';var T=null;function txt(x){return[x.name,x.description].concat(x.tags||[]).join(" ").toLowerCase()}
+function run(){if(!T)return;var sel=[].slice.call(document.querySelectorAll(".mpa:checked")).map(function(c){return A[+c.value]}),q=$("mpq").value.trim().toLowerCase(),os=$("mpo").checked,h="";
+var groups=sel.map(function(a){return[a[0],new RegExp("\\b("+a[1]+")\\b")]});if(q)groups.push(["\u201c"+q+"\u201d",null]);
+if(!groups.length){$("mpout").innerHTML='<p class="muted" style="margin-top:14px">Tick an app or type a keyword to see matching MCP servers.</p>';return}
+groups.forEach(function(g){var m=T.filter(function(x){if(os&&!x.open_source)return false;var s=txt(x);return g[1]?g[1].test(s):s.indexOf(q)>=0}).sort(function(a,b){var na=g[1]?+g[1].test(a.name.toLowerCase()):+(a.name.toLowerCase().indexOf(q)>=0),nb=g[1]?+g[1].test(b.name.toLowerCase()):+(b.name.toLowerCase().indexOf(q)>=0);return nb-na||(b.weekly_pick?1:0)-(a.weekly_pick?1:0)||(b.github_stars||0)-(a.github_stars||0)});
+h+='<h2 style="font-size:17px;margin:24px 0 8px">'+g[0]+' <span class="muted" style="font-weight:400;font-size:14px">('+m.length+')</span></h2>'+(m.length?'<div class="grid">'+m.slice(0,9).map(function(x){return AS.card(x.seed?Object.assign({},x,{added:""}):x).replace(/href="tools\//,'href="../tools/').replace(/src="assets\//,'src="../assets/')}).join("")+'</div>'+(m.length>9?'<p class="muted" style="font-size:13.5px">Showing the top 9: name matches first, then AgentScout picks and GitHub stars. <a href="../categories/mcp-infra.html">See every MCP &amp; infra tool</a>.</p>':''):'<p class="muted" style="margin:0">No MCP servers in the directory match this yet.</p>')});
+$("mpout").innerHTML=h;AS.fixImgs&&AS.fixImgs($("mpout"));window.ASHearts&&ASHearts($("mpout"))}
+document.querySelectorAll(".mpa,#mpo").forEach(function(c){c.addEventListener("change",run)});$("mpq").addEventListener("input",run);
+fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T=(Array.isArray(d)?d:d.tools).filter(function(x){return x.category==="MCP & infra"});run()}).catch(function(){$("mpout").innerHTML='<p class="empty">Couldn\'t load the directory. Please refresh.</p>'});'''
+    faq=[("What is an MCP server?","A Model Context Protocol server is a small program that gives an AI app like Claude Desktop, Cursor or VS Code access to a tool or data source, such as GitHub, a database or your files, through one standard interface."),
+         ("How are matches found?","By keyword across the name, description and tags of every MCP and infrastructure tool in the AgentScout directory, with servers named after the app first, then AgentScout picks and GitHub stars. Read each server's page to confirm it does what you need."),
+         ("How do I install the servers I pick?","Follow the install steps in each server's own docs, then paste the details into the MCP config builder to get config for Claude Desktop, Cursor, VS Code or Claude Code."),
+         ("Are MCP servers safe?","Only as safe as the code and the permissions you give them. Prefer official or well-maintained servers, give the least access needed, and never paste real secrets into shared files.")]
+    return wrap("mcp-server-picker","MCP server picker","Tick the apps your AI agent should connect to, like GitHub, Slack, Notion or Postgres, and find matching MCP servers in the AgentScout directory. Then build the config with the <a href=\"mcp-config-builder.html\">MCP config builder</a>.",inner,faq,js,t)
+
+def jsonval(t):
+    sch='{\n  "type": "object",\n  "properties": {\n    "title": {"type": "string", "maxLength": 60},\n    "priority": {"type": "string", "enum": ["low", "medium", "high"]},\n    "tags": {"type": "array", "items": {"type": "string"}}\n  },\n  "required": ["title", "priority", "tags"],\n  "additionalProperties": false\n}'
+    out='Here is the result:\n```json\n{"title": "Refund request for order 1042", "priority": "urgent", "tags": ["billing"], "notes": "VIP"}\n```'
+    inner=(f'<div {BOX}><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 18px"><div><label {LAB} for="js">JSON Schema</label><textarea id="js" rows="14" spellcheck="false" {TA}>{e(sch)}</textarea></div>'
+           f'<div><label {LAB} for="jo">Model output</label><textarea id="jo" rows="14" spellcheck="false" {TA}>{e(out)}</textarea></div></div>'
+           f'<div id="jres" style="{CARDS}"></div><div id="jout" aria-live="polite"></div></div>'
+           '<p style="margin:12px 0 0"><button class="btn primary" type="button" id="jcopy">Copy report</button> <span id="jmsg" class="muted" aria-live="polite"></span></p>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">What it supports</h2><p>The validator covers the JSON Schema keywords most used for structured outputs: <code>type</code> (including type lists for nullable fields), <code>properties</code>, <code>required</code>, <code>additionalProperties</code>, <code>items</code>, <code>enum</code>, <code>const</code>, <code>anyOf</code>, <code>minLength</code>/<code>maxLength</code>, <code>minimum</code>/<code>maximum</code>, <code>minItems</code>/<code>maxItems</code>, <code>pattern</code> and local <code>$ref</code> to <code>#/$defs</code>. Other keywords are listed as not checked. If the output has text or a ```json fence around the JSON, the JSON part is pulled out first. Need a schema? Make one with the <a href="tool-schema-builder.html">tool schema builder</a>.</p>')
+    js=NUMJS+r''';function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+var KNOWN=["type","properties","required","additionalProperties","items","enum","const","anyOf","minLength","maxLength","minimum","maximum","minItems","maxItems","pattern","$ref","$defs","definitions","description","title","default","strict","$schema","examples","format"];
+function ty(v){return v===null?"null":Array.isArray(v)?"array":typeof v==="number"?(Number.isInteger(v)?"integer":"number"):typeof v}
+function extract(s){s=s.trim();var m=/```(?:json)?\s*([\s\S]*?)```/i.exec(s);if(m)return[m[1].trim(),"Pulled the JSON out of a code fence."];try{JSON.parse(s);return[s,""]}catch(e){}var a=s.search(/[\[{]/),b=Math.max(s.lastIndexOf("}"),s.lastIndexOf("]"));if(a>=0&&b>a)return[s.slice(a,b+1),"Ignored text around the JSON."];return[s,""]}
+var ROOT,unk={};function res(r){if(r&&r.$ref){var p=r.$ref.replace(/^#\//,"").split("/"),o=ROOT;p.forEach(function(k){o=o&&o[k]});return o||{}}return r}
+function val(s,v,p,E){s=res(s);if(!s||typeof s!=="object")return;Object.keys(s).forEach(function(k){if(KNOWN.indexOf(k)<0)unk[k]=1});
+if(s.anyOf){var ok=s.anyOf.some(function(x){var e2=[];val(x,v,p,e2);return!e2.length});if(!ok)E.push([p,"matches none of the anyOf options"]);return}
+if(s.type){var ts=[].concat(s.type),t=ty(v);if(!(ts.indexOf(t)>=0||(t==="integer"&&ts.indexOf("number")>=0))){E.push([p,"should be "+ts.join(" or ")+", got "+t]);return}}
+if(s["enum"]&&!s["enum"].some(function(x){return JSON.stringify(x)===JSON.stringify(v)}))E.push([p,"must be one of "+JSON.stringify(s["enum"])+", got "+JSON.stringify(v)]);
+if("const" in s&&JSON.stringify(s["const"])!==JSON.stringify(v))E.push([p,"must equal "+JSON.stringify(s["const"])]);
+if(typeof v==="string"){if(s.minLength!=null&&v.length<s.minLength)E.push([p,"is shorter than "+s.minLength+" characters"]);if(s.maxLength!=null&&v.length>s.maxLength)E.push([p,"is longer than "+s.maxLength+" characters ("+v.length+")"]);if(s.pattern){try{if(!new RegExp(s.pattern,"u").test(v))E.push([p,"does not match pattern "+s.pattern])}catch(e){E.push([p,"schema pattern is not a valid regex"])}}}
+if(typeof v==="number"){if(s.minimum!=null&&v<s.minimum)E.push([p,"is below the minimum "+s.minimum]);if(s.maximum!=null&&v>s.maximum)E.push([p,"is above the maximum "+s.maximum])}
+if(Array.isArray(v)){if(s.minItems!=null&&v.length<s.minItems)E.push([p,"has fewer than "+s.minItems+" items"]);if(s.maxItems!=null&&v.length>s.maxItems)E.push([p,"has more than "+s.maxItems+" items"]);if(s.items)v.forEach(function(x,i){val(s.items,x,p+"["+i+"]",E)})}
+if(v&&typeof v==="object"&&!Array.isArray(v)){var pr=s.properties||{};(s.required||[]).forEach(function(k){if(!(k in v))E.push([p,"is missing required property \u201c"+k+"\u201d"])});
+Object.keys(v).forEach(function(k){if(pr[k])val(pr[k],v[k],p+"."+k,E);else if(s.additionalProperties===false)E.push([p,"has unexpected property \u201c"+k+"\u201d"]);else if(s.additionalProperties&&typeof s.additionalProperties==="object")val(s.additionalProperties,v[k],p+"."+k,E)})}}
+function strict(s,p,W){s=res(s);if(!s||typeof s!=="object")return;if(s.type==="object"||[].concat(s.type||[]).indexOf("object")>=0||s.properties){var ks=Object.keys(s.properties||{}),rq=s.required||[];if(s.additionalProperties!==false)W.push(p+": set \u201cadditionalProperties\u201d: false");var miss=ks.filter(function(k){return rq.indexOf(k)<0});if(miss.length)W.push(p+": list every property in \u201crequired\u201d (missing "+miss.join(", ")+")");ks.forEach(function(k){strict(s.properties[k],p+"."+k,W)})}
+if(s.items)strict(s.items,p+"[]",W);(s.anyOf||[]).forEach(function(x,i){strict(x,p+".anyOf["+i+"]",W)})}
+var rep="";function run(){var S,O,E=[],W=[],note="";unk={};$("jres").innerHTML="";
+try{S=JSON.parse($("js").value)}catch(e){$("jout").innerHTML='<p style="color:#e5484d;margin:14px 0 0"><b>The schema is not valid JSON:</b> '+esc(e.message)+'</p>';rep="Schema is not valid JSON";return}
+var x=extract($("jo").value);note=x[1];try{O=JSON.parse(x[0])}catch(e){$("jres").innerHTML=card("Result","\u274c Not JSON");$("jout").innerHTML='<p style="color:#e5484d;margin:14px 0 0"><b>The output is not valid JSON:</b> '+esc(e.message)+'</p>';rep="Output is not valid JSON: "+e.message;return}
+ROOT=S;val(S,O,"$",E);strict(S,"$",W);var u=Object.keys(unk);
+$("jres").innerHTML=card("Result",E.length?"\u274c Fails":"\u2705 Passes")+card("Errors",E.length)+card("OpenAI strict mode",W.length?"\u26a0\ufe0f "+W.length+" fix"+(W.length>1?"es":""):"\u2705 Ready");
+$("jout").innerHTML=(note?'<p class="muted" style="margin:14px 0 0">'+note+'</p>':"")+(E.length?'<h3 style="font-size:15px;margin:16px 0 6px">Errors</h3><ul style="margin:0;padding-left:20px">'+E.map(function(z){return"<li><code>"+esc(z[0])+"</code> "+esc(z[1])+"</li>"}).join("")+"</ul>":"")
++(W.length?'<h3 style="font-size:15px;margin:16px 0 6px">For OpenAI strict structured outputs</h3><ul style="margin:0;padding-left:20px">'+W.map(function(z){return"<li>"+esc(z)+"</li>"}).join("")+"</ul>":"")+(u.length?'<p class="muted" style="margin:12px 0 0;font-size:13.5px">Not checked: '+u.map(esc).join(", ")+'</p>':"");
+rep="JSON output check (AgentScout): "+(E.length?"FAILS with "+E.length+" error(s)":"passes")+"\n"+E.map(function(z){return"- "+z[0]+" "+z[1]}).join("\n")+(W.length?"\nStrict mode:\n"+W.map(function(z){return"- "+z}).join("\n"):"")}
+["js","jo"].forEach(function(i){$(i).addEventListener("input",run)});$("jcopy").addEventListener("click",function(){navigator.clipboard.writeText(rep).then(function(){$("jmsg").textContent="Copied";setTimeout(function(){$("jmsg").textContent=""},1500)})});run();'''
+    faq=[("Why validate a model's JSON output?","Even with structured-output modes, models can return missing fields, wrong types or values outside an enum, especially without strict mode. Checking against your schema catches this before it breaks your app."),
+         ("What does OpenAI strict mode need?","OpenAI's strict structured outputs require every object to set additionalProperties to false and to list all of its properties in required. Use a type list like [\"string\", \"null\"] for optional values."),
+         ("Does it support the full JSON Schema spec?","No. It covers the keywords most used for structured outputs and lists any others in the schema as not checked."),
+         ("Is my data uploaded?","No. Validation runs in your browser.")]
+    return wrap("json-output-validator","JSON output schema validator","Paste a JSON Schema and a model's output to see whether it passes, with the exact path of every error, plus checks for OpenAI strict structured outputs.",inner,faq,js,t)
+
+def cmpcard(t):
+    inner=(f'<div {BOX}><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px">'
+           +"".join(f'<div><label {LAB} for="cc{i}">Tool {i+1}{" (optional)" if i==2 else ""}</label><input id="cc{i}" list="ccl" autocomplete="off" placeholder="Start typing a tool name" {INP}></div>' for i in range(3))+
+           '</div><datalist id="ccl"></datalist><p id="cerr2" class="muted" style="margin:8px 0 0;font-size:13.5px"></p></div><div id="ccout" aria-live="polite"></div>'
+           '<p style="margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px"><button class="btn primary" type="button" id="ccpng">Download comparison card (PNG)</button><button class="btn" type="button" id="cclink">Copy link</button><button class="btn" type="button" id="cctxt">Copy as text</button><span id="ccmsg" class="muted" aria-live="polite" style="align-self:center"></span></p>'
+           '<p class="muted" style="font-size:13px">Data comes from the AgentScout directory: pricing as each maker states it, open source as listed, and GitHub stars from our latest snapshot of the repository linked on the tool page. For a written head-to-head, see <a href="../compare/index.html">AgentScout comparisons</a>.</p>')
+    js=NUMJS+r''';var T=null,BY={},cur=[];function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var ROWS=[["Category",function(x){return x.category}],["Pricing",function(x){return x.pricing}],["Open source",function(x){return x.open_source?"Yes":"No"}],["Skill level",function(x){return x.skill==="no-code"?"No code needed":"For developers"}],["Platforms",function(x){return(x.platforms||[]).join(", ")||"\u2013"}],["GitHub stars",function(x){return x.github_stars?x.github_stars.toLocaleString():"\u2013"}]];
+function find(n){n=n.trim().toLowerCase();return BY[n]||null}
+function run(){if(!T)return;cur=[0,1,2].map(function(i){return find($("cc"+i).value)}).filter(Boolean);var bad=[0,1,2].filter(function(i){return $("cc"+i).value.trim()&&!find($("cc"+i).value)});
+$("cerr2").textContent=bad.length?"Pick a name from the list for tool "+bad.map(function(i){return i+1}).join(" and ")+".":"";
+try{history.replaceState(null,"","#"+cur.map(function(x){return encodeURIComponent(x.slug)}).join(","))}catch(e){}
+if(cur.length<2){$("ccout").innerHTML='<p class="muted" style="margin-top:14px">Choose at least two tools to compare.</p>';return}
+$("ccout").innerHTML='<div style="overflow-x:auto;margin-top:16px" tabindex="0" role="region" aria-label="Comparison table"><table style="width:100%;border-collapse:collapse;font-size:14px;min-width:'+(cur.length*150+110)+'px"><thead><tr style="text-align:left;border-bottom:1px solid var(--line)"><th style="padding:8px 6px"></th>'+cur.map(function(x){return'<th style="padding:8px 6px"><a href="../tools/'+esc(x.slug)+'.html">'+esc(x.name)+'</a></th>'}).join("")+'</tr></thead><tbody>'
++ROWS.map(function(r){return'<tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 6px;font-weight:600">'+r[0]+'</td>'+cur.map(function(x){return'<td style="padding:8px 6px">'+esc(r[1](x))+'</td>'}).join("")+'</tr>'}).join("")
++'<tr><td style="padding:8px 6px;font-weight:600">What it does</td>'+cur.map(function(x){return'<td style="padding:8px 6px;font-size:13.5px">'+esc(x.description)+'</td>'}).join("")+'</tr></tbody></table></div>'}
+function msg(s){$("ccmsg").textContent=s;setTimeout(function(){$("ccmsg").textContent=""},2000)}
+function wrapT(x,s,w){var out=[],l="";s.split(" ").forEach(function(wd){var t=l?l+" "+wd:wd;if(x.measureText(t).width>w&&l){out.push(l);l=wd}else l=t});if(l)out.push(l);return out}
+$("ccpng").addEventListener("click",function(){if(cur.length<2){msg("Choose two tools first");return}var W=1200,H=630,c=document.createElement("canvas");c.width=W;c.height=H;var x=c.getContext("2d"),n=cur.length,cw=(W-280)/n;
+x.fillStyle="#0b0d12";x.fillRect(0,0,W,H);x.fillStyle="#7c8cff";x.fillRect(0,0,W,8);x.fillStyle="#fff";x.font="700 40px Inter,system-ui,sans-serif";x.fillText(cur.map(function(t){return t.name}).join(" vs ").slice(0,48),50,80);
+cur.forEach(function(t,i){x.fillStyle="#7c8cff";x.font="700 28px Inter,system-ui,sans-serif";x.fillText(t.name.slice(0,22),260+i*cw,150)});
+ROWS.forEach(function(r,j){var y=210+j*62;x.fillStyle="#aab";x.font="600 22px Inter,system-ui,sans-serif";x.fillText(r[0],50,y);x.fillStyle="#fff";x.font="22px Inter,system-ui,sans-serif";
+cur.forEach(function(t,i){var ln=wrapT(x,String(r[1](t)),cw-24).slice(0,2);ln.forEach(function(s,k){x.fillText(s,260+i*cw,y+k*26)})})});
+x.fillStyle="#aab";x.font="22px Inter,system-ui,sans-serif";x.fillText("Compare AI tools free at agentscouthq.com/free-tools",50,H-30);
+c.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=cur.map(function(t){return t.slug}).join("-vs-")+".png";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)})});
+$("cclink").addEventListener("click",function(){navigator.clipboard.writeText(location.href.replace(/[?&]notrack=1/,"")).then(function(){msg("Link copied")})});
+$("cctxt").addEventListener("click",function(){if(cur.length<2)return;navigator.clipboard.writeText(cur.map(function(t){return t.name}).join(" vs ")+" (via AgentScout)\n"+ROWS.map(function(r){return r[0]+": "+cur.map(function(t){return t.name+" "+r[1](t)}).join(" | ")}).join("\n")+"\n"+location.href.split("?")[0]).then(function(){msg("Copied")})});
+[0,1,2].forEach(function(i){$("cc"+i).addEventListener("input",run);$("cc"+i).addEventListener("change",run)});
+fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T=Array.isArray(d)?d:d.tools;T.forEach(function(x){BY[x.name.toLowerCase()]=x;BY[x.slug]=BY[x.slug]||x});
+$("ccl").innerHTML=T.map(function(x){return'<option value="'+esc(x.name)+'">'}).join("");
+var h=location.hash.slice(1).split(",").map(decodeURIComponent).filter(Boolean);if(h.length){h.slice(0,3).forEach(function(s,i){var x=BY[s];if(x)$("cc"+i).value=x.name})}else{$("cc0").value="Cursor";$("cc1").value="Claude Code"}run()}).catch(function(){$("ccout").innerHTML='<p class="empty">Couldn\'t load the directory. Please refresh.</p>'});'''
+    faq=[("Where does the comparison data come from?",f"From the AgentScout directory of {len(t):,} link-checked AI tools: category, pricing as each maker states it, open source, who it suits, platforms and GitHub stars from our latest repository snapshot."),
+         ("Can I share the comparison?","Yes. Copy the link (the tools you picked are saved in it), copy it as text, or download a 1200×630 PNG card that fits X, LinkedIn and most social sites."),
+         ("How many tools can I compare?","Two or three at a time."),
+         ("Is it free?","Yes. No sign-up, and it runs in your browser.")]
+    return wrap("ai-tool-comparison-card","AI tool comparison card maker","Pick two or three AI tools from the AgentScout directory and get a side-by-side comparison of pricing, open source, platforms and GitHub stars, plus a shareable image card.",inner,faq,js,t)
