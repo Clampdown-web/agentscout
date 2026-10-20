@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T18:00:49Z",
- "updated": "2026-10-20T18:00:49Z",
+ "generated": "2026-10-20T19:31:39Z",
+ "updated": "2026-10-20T19:31:39Z",
  "last_checked": "2026-10-20",
- "count": 1547,
+ "count": 1548,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -65350,6 +65350,51 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/sage.png",
    "page": "https://agentscouthq.com/tools/sage.html"
+  },
+  {
+   "name": "CosVoice",
+   "slug": "cosvoice",
+   "url": "https://cosvoice.com/",
+   "website": "https://cosvoice.com/",
+   "github": "https://github.com/CosVoice/cosvoice-mcp",
+   "category": "voice",
+   "description": "CosVoice gives the AI assistant you already use (Grok Bot, ChatGPT, Claude, Cursor or any MCP client) a real US phone number in your area code and its own email address. It places and answers calls for you, such as booking a table or taking a contractor's quote, then sends a written summary and transcript to your inbox; connect it through its open-source (MIT) MCP server.",
+   "key_features": [
+    "Paid: $29/month after a 7-day free trial (card required; trial includes 10 minutes of calls); plan includes 100 call minutes a month",
+    "Active",
+    "Write code",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Paid: $29/month after a 7-day free trial (card required; trial includes 10 minutes of calls); plan includes 100 call minutes a month",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "CosVoice/cosvoice-mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cosvoice.png",
+   "page": "https://agentscouthq.com/tools/cosvoice.html"
   }
  ]
 }

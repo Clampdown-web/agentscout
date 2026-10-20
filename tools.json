@@ -39289,5 +39289,34 @@
     "logo": "assets/logos/sage.png",
     "maker_submitted": true,
     "submitted": "2026-10-20"
+  },
+  {
+    "name": "CosVoice",
+    "url": "https://cosvoice.com/",
+    "description": "CosVoice gives the AI assistant you already use (Grok Bot, ChatGPT, Claude, Cursor or any MCP client) a real US phone number in your area code and its own email address. It places and answers calls for you, such as booking a table or taking a contractor's quote, then sends a written summary and transcript to your inbox; connect it through its open-source (MIT) MCP server.",
+    "category": "voice",
+    "pricing": "Paid",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Paid: $29/month after a 7-day free trial (card required; trial includes 10 minutes of calls); plan includes 100 call minutes a month",
+    "use_cases": [
+      "write code",
+      "voice & phone calls",
+      "connect tools via MCP"
+    ],
+    "website": "https://cosvoice.com/",
+    "github": "https://github.com/CosVoice/cosvoice-mcp",
+    "repo": "CosVoice/cosvoice-mcp",
+    "github_stars": 0,
+    "id": 1567,
+    "slug": "cosvoice",
+    "logo": "assets/logos/cosvoice.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
   }
 ]
