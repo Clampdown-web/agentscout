@@ -185,7 +185,7 @@ def see_all_card(d=""):
             f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
-    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t)]
+    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t)]
     # /free-tools/ folder URL -> hub (not in sitemap)
     open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
     print("free tools:",len(urls),"pages")
@@ -267,3 +267,137 @@ $("so4").value=JSON.stringify({functionDeclarations:[{name:n,description:d,param
          ("Can I use nested objects?","This builder makes flat parameter lists with empty object and string-array placeholders. Edit the output by hand for deeper nesting."),
          ("Is anything sent to an AI provider?","No. The schema is generated in your browser.")]
     return wrap("tool-schema-builder","AI tool schema builder (function calling)","Define a function once and export the tool-calling JSON for OpenAI, Anthropic Claude and Google Gemini. Building agents? See <a href=\"../tasks/building-ai-agents.html\">agent frameworks by task</a>.",inner,faq,js,t)
+
+# ---- Batch A, Oct 20 2026: agent run cost estimator, rule-file generator, agent stack builder (all browser-only) ----
+TOOLS+=[
+("agent-run-cost-estimator","AI Agent Run Cost Estimator","Estimate what one multi-step agent task costs: steps, tool results, growing context, caching and retries, then per day and per month across 33 models.","🧾"),
+("rules-file-generator","AGENTS.md & Rules File Generator","Write your project rules once and export AGENTS.md, CLAUDE.md, GEMINI.md, Cursor rules and GitHub Copilot instructions.","📐"),
+("ai-agent-stack-builder","AI Agent Stack Builder","Pick your goal, skill level and budget and get a recommended AI agent stack from the AgentScout directory, with a shareable stack card.","🏗️"),
+]
+REL.update({"agent-run-cost-estimator":(["open-source-llm-observability-tools","python-ai-agent-frameworks","multi-agent-frameworks"],["ai-engineers","founders","product-managers"]),
+ "rules-file-generator":(["terminal-ai-coding-agents","free-ai-coding-agents","open-source-ai-coding-agents"],["developers","open-source-maintainers"]),
+ "ai-agent-stack-builder":(["open-source-ai-agent-frameworks","free-mcp-servers","free-no-code-ai-agent-builders"],["founders","ai-engineers","startup-ctos"])})
+def _num(id,lab,v,extra=""): return f'<div><label {LAB} for="{id}">{lab}</label><input id="{id}" type="number" min="0" step="any" value="{v}" {extra} {INP}></div>'
+ERR=lambda id:f'<p id="{id}" role="alert" style="color:#e5484d;min-height:18px;margin:8px 0 0;font-size:14px"></p>'
+CARDS='margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px'
+# shared JS: number validation + money format (same rules as the cost calculator)
+NUMJS=r'''function $(i){return document.getElementById(i)}
+function chkN(list,errId){var bad=[];list.forEach(function(x){var el=$(x[0]),r=el.value.trim(),n=parseFloat(r),mx=x[2],ok=r!==""&&isFinite(n)&&n>=0&&!(mx!=null&&n>mx);el.setAttribute("aria-invalid",ok?"false":"true");el.style.borderColor=ok?"":"#e5484d";if(!ok)bad.push(x[1]+(mx!=null?" (0 to "+mx+")":""))});$(errId).textContent=bad.length?"Please enter a number of 0 or more for: "+bad.join(", ")+". Invalid fields count as 0 until fixed.":"";return bad.length===0}
+function v(i){var x=parseFloat($(i).value);return isFinite(x)&&x>0?x:0}
+function fm(x){return x>=100?"$"+x.toLocaleString(undefined,{maximumFractionDigits:0}):x>=1?"$"+x.toFixed(2):x>=0.01?"$"+x.toFixed(3):x>0?"$"+x.toPrecision(2):"$0"}
+function card(l,val){return '<div class="card" style="padding:12px"><div class="muted" style="font-size:12.5px">'+l+'</div><div style="font-size:22px;font-weight:700">'+val+'</div></div>'}
+function dl(name,text){var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type:"text/plain"}));a.download=name.replace(/^\./,"");a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)}'''
+def _rows(P): return [{"p":p["name"],"id":m["id"],"in":m["in"],"c":m.get("cached",m["in"]),"out":m["out"],"n":m.get("note","")} for p in P["providers"] for m in p["models"]]
+def _opts(P,sel=""): return "".join(f'<optgroup label="{e(p["name"])}">'+"".join(f'<option value="{e(m["id"])}"{" selected" if m["id"]==sel else ""}>{e(m["id"])}</option>' for m in p["models"])+"</optgroup>" for p in P["providers"])
+
+def runcost(t,P):
+    rows=_rows(P); n=len(rows)
+    inner=(f'<div {BOX}><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 16px">'
+           f'<div><label {LAB} for="rm">Model</label><select id="rm" {INP}>{_opts(P,"gpt-6.1-sol")}</select></div>'
+           +_num("rs","Steps (model calls) per task",8)+_num("rb","System prompt + tool definitions (tokens)",3000)+_num("ru","User request + starting context (tokens)",1000)
+           +_num("rt","Tool result added per step (tokens)",1500)+_num("ro","Model output per step (tokens)",300)+_num("rc","Cached share of repeated input (%)",50,'max="100"')
+           +_num("rr","Extra steps from retries (%)",10)+_num("rd","Tasks per day",100)+
+           '</div>'+ERR("rerr")+f'<div id="rres" style="{CARDS}"></div><p id="rnote" class="muted" style="font-size:13px;margin:10px 0 0"></p></div>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">The same agent on every model</h2><p class="muted" style="font-size:13.5px;margin:0 0 10px">Sorted by cost per task. Click a row to select it.</p>'
+           '<div style="overflow-x:auto" tabindex="0" role="region" aria-label="Agent cost by model"><table id="rtab" style="width:100%;border-collapse:collapse;font-size:14px"><thead><tr style="text-align:left;border-bottom:1px solid var(--line)"><th style="padding:6px">Model</th><th style="padding:6px">Provider</th><th style="padding:6px">Per task</th><th style="padding:6px">Per month</th></tr></thead><tbody></tbody></table></div>'
+           f'<h2 style="font-size:18px;margin:28px 0 6px">How it works</h2><p>An agent re-sends its whole conversation on every step, so input grows: step <i>k</i> sends the system prompt and tools, the starting context, and every earlier tool result and model reply. The estimator adds those up step by step. The cached share applies to input that was already sent on an earlier step (prompt caching), billed at the cached rate; the first step is always full price. Retries add extra steps at the average step cost.</p>'
+           f'<p class="muted" style="font-size:13px">Prices are the same verified list the <a href="ai-cost-calculator.html">AI API cost calculator</a> uses, checked on <b>{e(P["checked"])}</b> from each provider\'s official pricing page (standard tier, short-context rates). This tool does not list context-window sizes: check the provider page to make sure your final-step context fits the model.</p>')
+    js=NUMJS+"\nvar R="+json.dumps(rows)+r''';
+var F=[["rs","Steps"],["rb","System prompt + tools"],["ru","Starting context"],["rt","Tool result per step"],["ro","Output per step"],["rc","Cached share",100],["rr","Retries"],["rd","Tasks per day"]];
+function sim(m){var s=Math.round(v("rs")),b=v("rb"),u=v("ru"),tr=v("rt"),o=v("ro"),cs=Math.min(v("rc"),100)/100,ret=v("rr")/100,cost=0,inT=0,outT=0,ctx=0,prev=0;
+for(var k=0;k<s;k++){ctx=b+u+k*(tr+o);var cached=k===0?0:Math.min(prev,ctx)*cs;cost+=((ctx-cached)*m.in+cached*m.c+o*m.out)/1e6;inT+=ctx;outT+=o;prev=ctx+o+tr}
+var f=1+ret;return{cost:cost*f,inT:inT*f,outT:outT*f,ctx:ctx,steps:s}}
+function run(){chkN(F,"rerr");var m=R.filter(function(x){return x.id===$("rm").value})[0]||R[0],r=sim(m),d=r.cost*v("rd");
+$("rres").innerHTML=card("Per task",fm(r.cost))+card("Per day",fm(d))+card("Per month (30 days)",fm(d*30))+card("Tokens per task",Math.round(r.inT+r.outT).toLocaleString())+card("Context at last step",Math.round(r.ctx).toLocaleString());
+$("rnote").textContent=m.p+" "+m.id+": $"+m.in+" input, $"+m.c+" cached input, $"+m.out+" output per 1M tokens. Per task: about "+Math.round(r.inT).toLocaleString()+" input and "+Math.round(r.outT).toLocaleString()+" output tokens."+(m.n?" Note: "+m.n+".":"");
+var S=R.map(function(x){return[x,sim(x).cost]}).sort(function(a,b){return a[1]-b[1]});$("rtab").tBodies[0].innerHTML=S.map(function(z){var x=z[0],on=x.id===m.id;return '<tr data-id="'+x.id+'" style="cursor:pointer;border-bottom:1px solid var(--line)'+(on?';background:var(--line)':'')+'"><td style="padding:6px"><b>'+x.id+'</b></td><td style="padding:6px">'+x.p+'</td><td style="padding:6px">'+fm(z[1])+'</td><td style="padding:6px">'+fm(z[1]*v("rd")*30)+'</td></tr>'}).join("")}
+["rm"].concat(F.map(function(x){return x[0]})).forEach(function(i){$(i).addEventListener("input",run)});$("rtab").addEventListener("click",function(ev){var r=ev.target.closest("tr[data-id]");if(r){$("rm").value=r.dataset.id;run()}});run();'''
+    faq=[("Why is an agent task so much more expensive than one chat request?","Each step re-sends the full conversation so far, including every tool result, so input tokens grow with every step. A 10-step task can use many times the tokens of a single prompt."),
+         ("How does prompt caching change the cost?","Input already sent on an earlier step can often be served from the provider's prompt cache at a lower cached rate. Set the cached share to how much of that repeated input you expect to hit the cache; 0% means no caching."),
+         ("Are reasoning tokens included?","Only if you add them. Thinking tokens are billed as output, so raise the output-per-step figure if your model reasons before acting."),
+         ("Where do the prices come from?",f"The same list as the AgentScout cost calculator, copied from the official OpenAI, Anthropic, Google and xAI pricing pages on {P['checked']}. Confirm on the provider page before you budget.")]
+    return wrap("agent-run-cost-estimator","AI agent run cost estimator",f"Work out what one multi-step agent task really costs, with a growing context, tool results, prompt caching and retries, then compare it on {n} GPT, Claude, Gemini and Grok models.",inner,faq,js,t)
+
+RF=[("AGENTS.md","AGENTS.md","OpenAI Codex and many other coding agents (agents.md)"),("CLAUDE.md","CLAUDE.md","Claude Code"),("GEMINI.md","GEMINI.md","Gemini CLI"),
+    (".cursor/rules/project.mdc","Cursor project rule","Cursor (.cursor/rules)"),(".github/copilot-instructions.md","Copilot instructions","GitHub Copilot"),(".cursorrules",".cursorrules (legacy)","older Cursor setups")]
+def rules(t):
+    f=lambda id,lab,v,rows=3,ph="":f'<label {LAB} for="{id}">{lab}</label><textarea id="{id}" rows="{rows}" placeholder="{e(ph)}" {TA}>{e(v)}</textarea>'
+    chk="".join(f'<label style="display:inline-flex;gap:6px;align-items:center;margin:0 14px 6px 0;font-size:14px"><input type="checkbox" class="rfk" value="{i}" checked> {e(l)}</label>' for i,(p,l,_) in enumerate(RF))
+    inner=(f'<div {BOX}><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 18px"><div>'
+           f'<label {LAB} for="fn">Project name</label><input id="fn" value="acme-web" {INP}>'
+           +f("fo","What the project is","A Next.js storefront with a Postgres database and a small admin dashboard.",2)
+           +f("fs","Stack and versions","TypeScript, Next.js 15, React 19, pnpm, Prisma, Vitest",2)
+           +f("fc","Commands (one per line, label: command)","Install: pnpm install\nDev server: pnpm dev\nTest: pnpm test\nLint: pnpm lint",4)
+           +'</div><div>'
+           +f("fy","Code style (one per line)","Use TypeScript strict mode; no any\nPrefer server components; mark client components with \"use client\"\nKeep functions small and named clearly",4)
+           +f("fd","Always do (one per line)","Run tests and lint before you finish\nExplain changes in a short summary",3)
+           +f("fx","Never do (one per line)","Never commit secrets or .env files\nDon't change database migrations that already ran",3)
+           +f("fp","Key folders (one per line, path: what lives there)","src/app: routes and pages\nsrc/lib: shared helpers\nprisma: schema and migrations",3)
+           +f'</div></div><p style="margin:14px 0 6px;font-weight:600;font-size:14px">Files to make</p>{chk}</div><div id="fout"></div>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">Which file does my coding agent read?</h2><ul>'
+           +"".join(f'<li><code>{e(p)}</code>: {e(w)}</li>' for p,_,w in RF)+
+           '</ul><p class="muted" style="font-size:13.5px">Tools change fast: check each tool\'s docs for the exact file it reads today. Keeping one AGENTS.md and pointing the others at it is a common way to avoid copies drifting apart.</p>')
+    js=NUMJS+"\nvar RF="+json.dumps([[p,l] for p,l,_ in RF])+r''';function L(id){return $(id).value.split("\n").map(function(s){return s.trim()}).filter(Boolean)}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function body(){var o="",d=$("fo").value.trim(),s=$("fs").value.trim();if(d)o+=d+"\n";if(s)o+="\n## Stack\n"+s+"\n";
+var c=L("fc");if(c.length)o+="\n## Commands\n"+c.map(function(x){var i=x.indexOf(":");return i>0?"- "+x.slice(0,i).trim()+": `"+x.slice(i+1).trim()+"`":"- `"+x+"`"}).join("\n")+"\n";
+var p=L("fp");if(p.length)o+="\n## Project layout\n"+p.map(function(x){var i=x.indexOf(":");return i>0?"- `"+x.slice(0,i).trim()+"`: "+x.slice(i+1).trim():"- `"+x+"`"}).join("\n")+"\n";
+[["fy","Code style"],["fd","Always"],["fx","Never"]].forEach(function(k){var a=L(k[0]);if(a.length)o+="\n## "+k[1]+"\n"+a.map(function(x){return"- "+x}).join("\n")+"\n"});return o}
+function file(i){var n=$("fn").value.trim()||"Project",b=body(),p=RF[i][0];
+if(p===".cursor/rules/project.mdc")return"---\ndescription: Project rules for "+n+"\nglobs:\nalwaysApply: true\n---\n\n# "+n+"\n\n"+b;
+if(p===".cursorrules")return"# "+n+"\n\n"+b;
+if(p===".github/copilot-instructions.md")return"# Copilot instructions for "+n+"\n\n"+b;
+return"# "+n+"\n\n"+b}
+function run(){var ks=[].slice.call(document.querySelectorAll(".rfk")).filter(function(x){return x.checked}).map(function(x){return+x.value});
+$("fout").innerHTML=ks.map(function(i){var p=RF[i][0],b=p.split("/").pop(),txt=file(i);return '<h3 style="font-size:15px;margin:20px 0 6px"><code>'+esc(p)+'</code></h3><textarea id="fo'+i+'" aria-label="'+esc(p)+'" readonly rows="'+Math.min(20,txt.split("\n").length+1)+'" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;box-sizing:border-box;white-space:pre">'+esc(txt)+'</textarea><p style="margin:6px 0 0"><button class="btn primary" type="button" onclick="asCopy(\'fo'+i+'\',this)">Copy</button> <button class="btn" type="button" data-dl="'+i+'">Download '+esc(b[0]==="."?b.slice(1)+" (rename to "+b+")":b)+'</button>'+(b[0]==="."?' <span class="muted" style="font-size:13px">Browsers drop the leading dot, so rename the file to <code>'+esc(b)+'</code> after saving.</span>':'')+'</p>'}).join("")||'<p class="muted">Tick at least one file above.</p>'}
+$("fout").addEventListener("click",function(ev){var b=ev.target.closest("[data-dl]");if(b){var i=+b.dataset.dl;dl(RF[i][0].split("/").pop(),file(i))}});
+document.querySelectorAll("textarea:not([readonly]),input").forEach(function(el){el.addEventListener("input",run);el.addEventListener("change",run)});run();'''
+    faq=[("What is AGENTS.md?","AGENTS.md is a plain Markdown file at the root of a repository that tells AI coding agents how to work on the project: what it is, how to build and test it, and the rules to follow. OpenAI Codex reads it, and a growing list of other agents support it (see agents.md)."),
+         ("What is the difference between CLAUDE.md, GEMINI.md and AGENTS.md?","They do the same job for different agents: Claude Code reads CLAUDE.md, Gemini CLI reads GEMINI.md, and Codex and many others read AGENTS.md. The content can be identical, which is why this generator writes them all from one form."),
+         ("Should I use .cursorrules or .cursor/rules?",".cursor/rules/*.mdc project rules are Cursor's current format; a single .cursorrules file in the project root is the older way and is still recognised by some setups. Check Cursor's docs for your version."),
+         ("Where does copilot-instructions.md go?","Save it as .github/copilot-instructions.md in your repository so GitHub Copilot uses it as repository custom instructions."),
+         ("Is anything uploaded?","No. The files are built in your browser and downloaded straight to your device.")]
+    return wrap("rules-file-generator","AGENTS.md and rules file generator","Write your project rules once and export AGENTS.md, CLAUDE.md, GEMINI.md, Cursor rules and GitHub Copilot instructions for your AI coding agents. Need agent config too? Try the <a href=\"agent-setup-generator.html\">agent setup generator</a>.",inner,faq,js,t)
+
+STACK_GOALS=[("coding","Write and ship code",[("Coding agent",["coding"]),("Code sandbox",["sandboxes & code execution"]),("MCP servers and connectors",["MCP & infra"]),("Evals and observability",["evals & observability"])]),
+ ("support","Customer support",[("Support agent",["customer support"]),("Voice",["voice"]),("Memory and knowledge (RAG)",["memory & RAG"]),("Evals and observability",["evals & observability"])]),
+ ("research","Research and analysis",[("Research agent",["research"]),("Web and browser access",["browser/computer use"]),("Memory and knowledge (RAG)",["memory & RAG"])]),
+ ("automation","Automate business workflows",[("Business agent",["business agents"]),("No-code builder",["no-code builders"]),("MCP servers and connectors",["MCP & infra"])]),
+ ("sales","Sales and marketing",[("Sales and marketing agent",["sales & marketing"]),("Business agent",["business agents"]),("Web and browser access",["browser/computer use"])]),
+ ("browse","Use the web or a computer",[("Browser or computer-use agent",["browser/computer use"]),("Sandbox",["sandboxes & code execution"]),("MCP servers and connectors",["MCP & infra"])]),
+ ("build","Build my own agent",[("Agent framework",["frameworks"]),("Memory and knowledge (RAG)",["memory & RAG"]),("MCP servers and connectors",["MCP & infra"]),("Evals and observability",["evals & observability"]),("Sandbox",["sandboxes & code execution"])])]
+def stack(t):
+    cats={x["category"] for x in t}
+    GT={"coding":["coding"],"support":["support"],"research":["research"],"automation":["automation"],"sales":["automation"],"browse":["automation"],"build":["coding","automation"]}
+    G=[[k,l,[[n,[c for c in cs if c in cats]] for n,cs in L],GT[k]] for k,l,L in STACK_GOALS]
+    sel=lambda id,lab,opts:f'<div><label {LAB} for="{id}">{lab}</label><select id="{id}" {INP}>'+"".join(f'<option value="{a}">{e(b)}</option>' for a,b in opts)+'</select></div>'
+    inner=(f'<div {BOX}><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px">'
+           +sel("kg","What should the agent do?",[(k,l) for k,l,_ in STACK_GOALS])+sel("ks","How technical are you?",[("any","Any"),("no-code","No code, please"),("developer","I'm a developer")])
+           +sel("kb","Budget",[("any","Any"),("free","Free only"),("freemium","Free to start (free or freemium)")])+sel("ko","Open source?",[("any","Doesn't matter"),("yes","Open source only")])+
+           '</div></div><div id="kout" aria-live="polite"><p class="muted">Loading the directory…</p></div>'
+           '<p style="margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px"><button class="btn primary" type="button" id="kcopy">Copy stack as text</button><button class="btn" type="button" id="kpng">Download stack card (PNG)</button><button class="btn" type="button" id="klink">Copy link to this stack</button><span id="kmsg" class="muted" aria-live="polite" style="align-self:center"></span></p>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">How picks are chosen</h2><p>Every pick comes from the AgentScout directory of link-checked tools. Your answers filter the list (no-code, budget and open-source choices are strict), then tools that match your goal come first, followed by AgentScout weekly picks and GitHub stars where a project has them. Pricing labels are as each maker states them. For the model layer, compare prices in the <a href="ai-cost-calculator.html">AI API cost calculator</a> and the <a href="agent-run-cost-estimator.html">agent run cost estimator</a>.</p>')
+    js=NUMJS+"\nvar G="+json.dumps(G)+r''';var T=null,cur=null;function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function ok(x,s,b,o){if(s==="no-code"&&x.skill!=="no-code")return false;if(b==="free"&&x.price_tag!=="free")return false;if(b==="freemium"&&["free","freemium"].indexOf(x.price_tag)<0)return false;if(o==="yes"&&!x.open_source)return false;return true}
+function sc(x,gt){return((x.goals||[]).some(function(g){return gt.indexOf(g)>=0})?2e9:0)+(x.weekly_pick?1e9:0)+(x.github_stars||0)+(x.logo?1:0)}
+function pick(){var g=G.filter(function(z){return z[0]===$("kg").value})[0],s=$("ks").value,b=$("kb").value,o=$("ko").value;
+return{goal:g[1],layers:g[2].map(function(L){var c=T.filter(function(x){return L[1].indexOf(x.category)>=0&&ok(x,s,b,o)}).sort(function(a,b2){return sc(b2,g[3])-sc(a,g[3])}).slice(0,3);return[L[0],c]})}}
+function run(){if(!T)return;var h="kg="+$("kg").value+"&ks="+$("ks").value+"&kb="+$("kb").value+"&ko="+$("ko").value;try{history.replaceState(null,"","#"+h)}catch(e){}
+cur=pick();$("kout").innerHTML='<h2 style="font-size:18px;margin:24px 0 6px">Your stack: '+esc(cur.goal)+'</h2>'+cur.layers.map(function(L){return '<h3 style="font-size:15px;margin:18px 0 8px">'+esc(L[0])+'</h3>'+(L[1].length?'<div class="grid">'+L[1].map(function(x){return AS.card(x.seed?Object.assign({},x,{added:""}):x).replace(/href="tools\//,'href="../tools/').replace(/src="assets\//,'src="../assets/')}).join("")+'</div>':'<p class="muted" style="margin:0">No tools in the directory match these filters for this layer yet. Try a wider budget or "Doesn\'t matter" for open source.</p>')}).join("")
++'<h3 style="font-size:15px;margin:18px 0 8px">Model</h3><p style="margin:0">Pick a model by price and fit in the <a href="ai-cost-calculator.html">AI API cost calculator</a>.</p>';AS.fixImgs&&AS.fixImgs($("kout"));window.ASHearts&&ASHearts($("kout"))}
+function txt(){return"My AI agent stack ("+cur.goal+"), via AgentScout:\n"+cur.layers.map(function(L){return"- "+L[0]+": "+(L[1].map(function(x){return x.name}).join(", ")||"none matched")}).join("\n")+"\n"+location.href.split("?")[0]}
+function msg(s){$("kmsg").textContent=s;setTimeout(function(){$("kmsg").textContent=""},2500)}
+$("kcopy").addEventListener("click",function(){cur&&navigator.clipboard.writeText(txt()).then(function(){msg("Copied")})});
+$("klink").addEventListener("click",function(){navigator.clipboard.writeText(location.href.replace(/[?&]notrack=1/,"")).then(function(){msg("Link copied")})});
+$("kpng").addEventListener("click",function(){if(!cur)return;var W=1200,H=630,c=document.createElement("canvas");c.width=W;c.height=H;var x=c.getContext("2d");x.fillStyle="#0b0d12";x.fillRect(0,0,W,H);x.fillStyle="#7c8cff";x.fillRect(0,0,W,8);
+x.fillStyle="#fff";x.font="700 44px Inter,system-ui,sans-serif";x.fillText("My AI agent stack",60,100);x.fillStyle="#aab";x.font="28px Inter,system-ui,sans-serif";x.fillText(cur.goal,60,145);
+var y=215;cur.layers.slice(0,5).forEach(function(L){x.fillStyle="#7c8cff";x.font="600 24px Inter,system-ui,sans-serif";x.fillText(L[0],60,y);x.fillStyle="#fff";x.font="26px Inter,system-ui,sans-serif";var s=L[1].map(function(t){return t.name}).join("  ·  ")||"none matched";while(x.measureText(s).width>W-120&&s.length>4)s=s.slice(0,-2);x.fillText(s,60,y+36);y+=80});
+x.fillStyle="#aab";x.font="24px Inter,system-ui,sans-serif";x.fillText("Build yours free at agentscouthq.com/free-tools",60,H-40);c.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="my-ai-agent-stack.png";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)})});
+try{location.hash.replace(/^#/,"").split("&").forEach(function(p){var kv=p.split("=");if(kv[1]&&$(kv[0])&&[].some.call($(kv[0]).options,function(o){return o.value===kv[1]}))$(kv[0]).value=kv[1]})}catch(e){}
+["kg","ks","kb","ko"].forEach(function(i){$(i).addEventListener("change",run)});
+fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T=Array.isArray(d)?d:d.tools;run()}).catch(function(){$("kout").innerHTML='<p class="empty">Couldn\'t load the directory. Please refresh.</p>'});'''
+    faq=[("What is an AI agent stack?","The set of tools an AI agent runs on: the agent or framework itself, the model, memory and knowledge retrieval (RAG), connectors such as MCP servers, a sandbox to run code safely, and evals or observability to see what it is doing."),
+         ("Where do the recommendations come from?",f"From the AgentScout directory of {len(t):,} link-checked AI agent tools. Your answers filter it, and tools are ordered by AgentScout weekly picks and GitHub stars."),
+         ("Can I share my stack?","Yes. Copy the link (your choices are saved in it), copy the stack as text, or download a PNG stack card to post."),
+         ("Does this cost anything?","No. It is free, needs no sign-up and runs in your browser.")]
+    return wrap("ai-agent-stack-builder","AI agent stack builder","Tell us what your agent should do, how technical you are and your budget, and get a recommended stack from the AgentScout directory, layer by layer, with a shareable stack card.",inner,faq,js,t)
