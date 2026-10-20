@@ -66,7 +66,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13.5px}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer .about{max-width:460px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured{grid-template-columns:minmax(0,1fr)}.featured aside{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}}
-@media(max-width:640px){.wrap{padding:0 16px}.grid,.two{grid-template-columns:minmax(0,1fr)}.links a.hide{display:none}.hero{padding:56px 0 40px}section{padding:40px 0}.toolbar{grid-template-columns:minmax(0,1fr)}.seg{width:100%}.seg button{flex:1}.sub{flex-direction:row;align-items:stretch;gap:8px}.sub input{height:54px;font-size:16px;padding:0 14px}.sub .btn{height:54px;font-size:16px;padding:0 18px}.toolbar input#q{height:54px;font-size:16px;padding:0 14px}.featured,.panel{padding:20px}}
+@media(max-width:640px){.wrap{padding:0 16px}.grid,.two{grid-template-columns:minmax(0,1fr)}.hero{padding:56px 0 40px}section{padding:40px 0}.toolbar{grid-template-columns:minmax(0,1fr)}.seg{width:100%}.seg button{flex:1}.sub{flex-direction:row;align-items:stretch;gap:8px}.sub input{height:54px;font-size:16px;padding:0 14px}.sub .btn{height:54px;font-size:16px;padding:0 18px}.toolbar input#q{height:54px;font-size:16px;padding:0 14px}.featured,.panel{padding:20px}}
 .cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .cattile{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);font-weight:500;font-size:14.5px;text-transform:capitalize;cursor:pointer;transition:border-color .15s}
 .cattile:hover{border-color:var(--accent)}.cattile span{font-size:12.5px;color:var(--faint);font-weight:500;background:var(--soft);padding:1px 8px;border-radius:999px}
@@ -326,7 +326,7 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 
 .addedago{margin:6px 0 0;font-size:12px;color:var(--faint)}
 /* Oct 18 2026: portrait phones (nav links wrap) - "Submit a tool" gets its own row, centered. The hidden Saved link becomes an invisible full-width line break. Landscape/tablet/desktop unchanged. */
-@media(max-width:430px) and (orientation:portrait){nav .links a.hide{display:block;flex:0 0 100%;height:0;margin:0;padding:0;overflow:hidden;visibility:hidden}nav .links a.btn{margin:2px auto 0}}
+@media(max-width:430px) and (orientation:portrait){nav .links::after{content:'';flex:0 0 100%;height:0;order:1}nav .links a.btn{order:2;margin:2px auto 0}}
 
 /* Newsletter signup card (Oct 18 2026): compact, theme-aware; Beehiiv form loads in place on click */
 .nlwrap{padding:28px 0 36px}
