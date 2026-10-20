@@ -39282,5 +39282,34 @@
     "id": 1565,
     "slug": "microsoft-copilot-studio",
     "logo": "assets/logos/microsoft-copilot-studio.png"
+  },
+  {
+    "name": "Sage",
+    "url": "https://zhangzhengeric.github.io/Sage/",
+    "description": "Sage is an MIT-licensed framework for building configurable, self-improving AI agents from reusable agent packages, tools, Skills and MCP services. It supports multi-agent workflows and multi-round self-improvement, keeping a version history of agent packages so you choose which version to adopt.",
+    "category": "frameworks",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Free and open source (MIT); model-provider API usage is billed separately",
+    "use_cases": [
+      "build multi-agent systems",
+      "build an agent",
+      "automate workflows"
+    ],
+    "website": "https://zhangzhengeric.github.io/Sage/",
+    "github": "https://github.com/ZHangZHengEric/Sage",
+    "repo": "ZHangZHengEric/Sage",
+    "github_stars": 1212,
+    "id": 1566,
+    "slug": "sage",
+    "logo": "assets/logos/sage.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
   }
 ]
