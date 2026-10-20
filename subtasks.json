@@ -5489,5 +5489,45 @@
 "robottraining-jobs": [
 "fine-tuning",
 "mcp-servers"
+],
+"empyre": [
+"planning-tasks",
+"token-costs",
+"marketing-agents"
+],
+"vectoree": [
+"text-to-sql",
+"vector-rag",
+"agent-auth",
+"mcp-gateways",
+"terminal-agents"
+],
+"xcrawl": [
+"web-scraping",
+"rules-config"
+],
+"agents24x7": [
+"marketing-agents"
+],
+"is-my-agent-safe": [],
+"novastart": [],
+"flexqueries": [
+"marketing-agents",
+"research-agents",
+"mcp-servers"
+],
+"tecadrise-bot": [
+"agent-memory",
+"computer-use",
+"mcp-servers",
+"agent-frameworks",
+"local-models",
+"rules-config"
+],
+"xquik": [
+"planning-tasks",
+"web-scraping",
+"observability",
+"mcp-servers"
 ]
 }

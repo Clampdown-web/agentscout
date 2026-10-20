@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-19T21:46:34Z",
- "updated": "2026-10-19T21:46:34Z",
+ "generated": "2026-10-20T01:17:57Z",
+ "updated": "2026-10-20T01:17:57Z",
  "last_checked": "2026-10-19",
- "count": 1463,
+ "count": 1472,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -61774,6 +61774,428 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/robottraining-jobs.png",
    "page": "https://agentscouthq.com/tools/robottraining-jobs.html"
+  },
+  {
+   "name": "Empyre",
+   "slug": "empyre",
+   "url": "https://www.empyre.dev/",
+   "website": "https://www.empyre.dev/",
+   "github": "",
+   "category": "business agents",
+   "description": "Empyre turns a plain-language business brief into a running software company: eight AI agents (CEO, CTO, CMO, CFO and more) build it, deploy it to its own HTTPS address and keep operating it, shipping code, marketing and support with spend approval; plans $49, $149 and $299 a month.",
+   "key_features": [
+    "Starter $49/mo, Growth $149/mo, Empyre $299/mo, plus pay-as-you-go top-ups",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Starter $49/mo, Growth $149/mo, Empyre $299/mo, plus pay-as-you-go top-ups",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "business agents",
+    "ai company",
+    "autonomous operations",
+    "deployment"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/empyre.png",
+   "page": "https://agentscouthq.com/tools/empyre.html"
+  },
+  {
+   "name": "Vectoree",
+   "slug": "vectoree",
+   "url": "https://vectoree.ai/",
+   "website": "https://vectoree.ai/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "Vectoree gives coding agents a backend behind one project key: an OpenAI-compatible model gateway across providers, an MCP tool hub, auth, Postgres and storage, driven by a skill and CLI, pay-as-you-go with no monthly fee.",
+   "key_features": [
+    "Pay-as-you-go wallet, no monthly fee; $5 credit after CLI link",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Pay-as-you-go wallet, no monthly fee; $5 credit after CLI link",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP",
+    "mcp",
+    "model gateway",
+    "openai-compatible",
+    "auth",
+    "postgres",
+    "storage",
+    "cli"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vectoree.png",
+   "page": "https://agentscouthq.com/tools/vectoree.html"
+  },
+  {
+   "name": "XCrawl",
+   "slug": "xcrawl",
+   "url": "https://www.xcrawl.ai/",
+   "website": "https://www.xcrawl.ai/",
+   "github": "https://github.com/xcrawl-api/xcrawl-skills",
+   "category": "MCP & infra",
+   "description": "XCrawl is a web scraping, crawling and SERP API that returns clean JSON, Markdown or screenshots in one request, with agent skills for plugging it into AI agents; free trial with no card.",
+   "key_features": [
+    "Free trial, no card; paid credits",
+    "Active",
+    "450 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free trial, no card; paid credits",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "xcrawl-api/xcrawl-skills",
+   "github_stars": 450,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "web scraping",
+    "crawler",
+    "serp api",
+    "markdown",
+    "agent skills"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/xcrawl.png",
+   "page": "https://agentscouthq.com/tools/xcrawl.html"
+  },
+  {
+   "name": "Agents24x7",
+   "slug": "agents24x7",
+   "url": "https://agents24x7.com/",
+   "website": "https://agents24x7.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Agents24x7 runs SEO and support AI agents for Shopify, WordPress and GitHub sites that read your site, prepare work and act only after you approve it; Starter from $19 a month.",
+   "key_features": [
+    "Starter $19/mo ($10/mo billed yearly)",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Starter $19/mo ($10/mo billed yearly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support",
+    "seo",
+    "shopify",
+    "wordpress",
+    "approval workflow",
+    "support agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agents24x7.png",
+   "page": "https://agentscouthq.com/tools/agents24x7.html"
+  },
+  {
+   "name": "Is My Agent Safe",
+   "slug": "is-my-agent-safe",
+   "url": "https://ismyagentsafe.com/check",
+   "website": "https://ismyagentsafe.com/check",
+   "github": "",
+   "category": "security & governance",
+   "description": "Is My Agent Safe checks your OpenClaw version and security audit output in plain English, showing which published security fixes you are missing and which breaking changes lie before the latest release; free check, full report $29 one-off.",
+   "key_features": [
+    "Free check; full report $29 one-off",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "Free check; full report $29 one-off",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "openclaw",
+    "security audit",
+    "vulnerabilities",
+    "upgrade check"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/is-my-agent-safe.png",
+   "page": "https://agentscouthq.com/tools/is-my-agent-safe.html"
+  },
+  {
+   "name": "Novastart",
+   "slug": "novastart",
+   "url": "https://novastart.com/",
+   "website": "https://novastart.com/",
+   "github": "",
+   "category": "productivity",
+   "description": "Novastart is an infinite-canvas operating system where your apps, AI agents and teammates work together on one shared whiteboard space; Free, Pro $10 and Team $20 per user.",
+   "key_features": [
+    "Free; Pro $10 and Team $20 per user per month",
+    "Active",
+    "Control a computer",
+    "Automate workflows"
+   ],
+   "pricing": "Free; Pro $10 and Team $20 per user per month",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "automate workflows",
+    "infinite canvas",
+    "whiteboard",
+    "multi-agent",
+    "team collaboration"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/novastart.png",
+   "page": "https://agentscouthq.com/tools/novastart.html"
+  },
+  {
+   "name": "FlexQueries",
+   "slug": "flexqueries",
+   "url": "https://flexqueries.com/",
+   "website": "https://flexqueries.com/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "FlexQueries is a hosted MCP server and REST API for SEO and AI-visibility research (keywords, SERPs, backlinks, competitors, rankings, site audits) that connects to Claude, ChatGPT, Cursor and Codex over OAuth, billed with prepaid credits that never expire.",
+   "key_features": [
+    "Prepaid credits, no subscription or seat fees; credits never expire",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Prepaid credits, no subscription or seat fees; credits never expire",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "mcp",
+    "seo",
+    "serp",
+    "backlinks",
+    "keyword research",
+    "oauth",
+    "rest api"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/flexqueries.png",
+   "page": "https://agentscouthq.com/tools/flexqueries.html"
+  },
+  {
+   "name": "TecAdRise Bot",
+   "slug": "tecadrise-bot",
+   "url": "https://tecadrise.ai/products/tecadrisebot",
+   "website": "https://tecadrise.ai/products/tecadrisebot",
+   "github": "https://github.com/tecadrise-ai/TecAdRiseBot",
+   "category": "personal agents",
+   "description": "TecAdRise Bot is a free, MIT-licensed Windows desktop app (Electron and Cursor SDK) for running a local team of AI agents, each with its own model, memory, skills, MCP servers, workspace and schedule.",
+   "key_features": [
+    "Free, MIT license",
+    "Active",
+    "Control a computer",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free, MIT license",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tecadrise-ai/TecAdRiseBot",
+   "github_stars": 0,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "control a computer",
+    "build an agent",
+    "connect tools via MCP",
+    "windows",
+    "electron",
+    "multi-agent",
+    "local-first",
+    "mcp",
+    "open source"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tecadrise-bot.png",
+   "page": "https://agentscouthq.com/tools/tecadrise-bot.html"
+  },
+  {
+   "name": "Xquik",
+   "slug": "xquik",
+   "url": "https://xquik.com/",
+   "website": "https://xquik.com/",
+   "github": "https://github.com/Xquik-dev/x-twitter-scraper",
+   "category": "MCP & infra",
+   "description": "Xquik is an X (Twitter) data service for searching and extracting tweets, replies, followers and profiles, monitoring accounts and posting, over REST, an OAuth MCP server and SDKs; pay-as-you-go from $10 or monthly plans from $20.",
+   "key_features": [
+    "Pay-as-you-go from $10 (credits never expire); monthly plans from $20/mo",
+    "Active",
+    "Build an agent",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Pay-as-you-go from $10 (credits never expire); monthly plans from $20/mo",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-19",
+   "added": "2026-10-19",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "research the web",
+    "connect tools via MCP",
+    "mcp",
+    "x",
+    "twitter",
+    "social data",
+    "scraper api",
+    "sdk"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/xquik.png",
+   "page": "https://agentscouthq.com/tools/xquik.html"
   }
  ]
 }
