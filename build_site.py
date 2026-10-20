@@ -35,6 +35,8 @@ UC_SET={"smolvm":["run code safely"],"lemonade":["models & local runtimes"],"rec
 "robylon":["sales & support","voice & phone calls","automate workflows"],"agent-resource-market":["build multi-agent systems"],
 # Oct 20, 2026 PT weekly batch: keyword rules mis-tagged these (e.g. "extracts" -> monitor, "browser interface" -> browser automation, "phone number" -> code), so pinned by hand
 "mem0":["give agents memory","build an agent"],"zcode":["write code","build multi-agent systems"],"andee":["control a computer","voice & phone calls"],
+# Oct 20, 2026 PT afternoon discovery: keyword guess added computer use / browsing / email / multi-agent
+"memmy":["give agents memory","personal agents"],"thclaws":["build an agent","models & local runtimes"],"tel-agent":["voice & phone calls","sales & support"],"open-kritt":["security & governance"],
 "bops":["automate workflows","control a computer","voice & phone calls"],"graphicle":["give agents memory","write code","connect tools via MCP"],"shipyard":["write code"],
 "puter-ai-builder":["build apps without code"],"agentenv-framework":["monitor & evaluate agents","build an agent","connect tools via MCP"],"vicoa":["write code","build multi-agent systems"],
 "halofy":["run code safely","connect tools via MCP"],"hiroute":["write code"],"sentio":["automate workflows","connect tools via MCP"],"agent-tincan":["build multi-agent systems","connect tools via MCP"],
