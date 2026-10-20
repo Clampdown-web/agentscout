@@ -235,7 +235,7 @@ MEDIA_XLINK={"film & TV production":["davinci-resolve-mcp","mux-mcp","picsart-ge
  "3D & concept art":["mcp-for-blender","scenario","intangible","simulon"],
  "photography & photo editing":["imagesorcery-mcp","picsart-genai-mcp","topaz-video"],
  # Secondary placements (Oct 20, 2026, owner-approved): main category stays as-is
- "MCP servers":["tinyfish"]}
+ "MCP servers":["tinyfish","cosvoice"]}
 ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
 LEAD_CATS=MEDIA_CATS|ART_CATS  # category pages that lead with agentic tools
 def media_xlink_cats(slug): return [c for c,v in MEDIA_XLINK.items() if slug in v]

@@ -42,6 +42,7 @@ UC_SET={"smolvm":["run code safely"],"lemonade":["models & local runtimes"],"rec
 "ceofans":["business agents","automate workflows"],
 "9bot":["connect tools via MCP","automate workflows"],
 "pragor":["security & governance","build multi-agent systems"],  # Pragor (Oct 19 PT, maker request): coordination and governance layer for people and agents, not an autonomous agent; the keyword guess would add "write code"
+"cosvoice":["voice & phone calls","connect tools via MCP"],  # CosVoice (Oct 20 PT, owner): phone/email for AI assistants; keyword guess would add "write code" (mentions Cursor, repo)
 "mailveri-mcp":["connect tools via MCP"],
 # Oct 20, 2026 PT morning discovery: keyword rules mis-tagged these ("call"/"phone" -> voice, "browser" -> browser automation, "search" -> research), so pinned by hand
 "opcode":["write code"],"memori":["give agents memory","build an agent"],"cloudcli":["write code"],"xerj":["give agents memory","connect tools via MCP"],
