@@ -185,7 +185,7 @@ def see_all_card(d=""):
             f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
-    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t)]
+    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t),linter(t),ctxplan(t),license(t),bvb(t)]
     # /free-tools/ folder URL -> hub (not in sitemap)
     open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
     print("free tools:",len(urls),"pages")
@@ -401,3 +401,123 @@ fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T
          ("Can I share my stack?","Yes. Copy the link (your choices are saved in it), copy the stack as text, or download a PNG stack card to post."),
          ("Does this cost anything?","No. It is free, needs no sign-up and runs in your browser.")]
     return wrap("ai-agent-stack-builder","AI agent stack builder","Tell us what your agent should do, how technical you are and your budget, and get a recommended stack from the AgentScout directory, layer by layer, with a shareable stack card.",inner,faq,js,t)
+
+# ---- Batch B, Oct 20 2026: system prompt linter, context window planner, license checker, build vs buy (all browser-only) ----
+TOOLS+=[
+("system-prompt-linter","System Prompt Linter","Paste a system prompt and get a score out of 10 with checks for role, task, output format, rules, conflicts, vague wording and prompt-injection defenses.","🩺"),
+("context-window-planner","Context Window Planner","See how much of your model's context window the system prompt, tools, documents, history and output reserve use, as one clear bar.","📏"),
+("open-source-license-checker","Open-Source License Checker for AI Tools","Pick a license (MIT, Apache, GPL, AGPL, ELv2, BSL and more) and see if you can use it commercially, self-host it or offer it as a service.","⚖️"),
+("build-vs-buy-calculator","Build vs Buy AI Agent Calculator","Compare self-hosting an open-source AI agent with paying for a hosted tool over 12 to 36 months, with the break-even month.","💰"),
+]
+REL.update({"system-prompt-linter":(["open-source-llm-observability-tools","ai-research-assistants"],["ai-engineers","developers","product-managers"]),
+ "context-window-planner":(["open-source-llm-observability-tools","python-ai-agent-frameworks"],["ai-engineers","developers"]),
+ "open-source-license-checker":(["open-source-ai-agent-frameworks","open-source-ai-coding-agents","open-source-personal-ai-assistants"],["founders","startup-ctos","open-source-maintainers"]),
+ "build-vs-buy-calculator":(["open-source-ai-agent-frameworks","enterprise-ai-agent-platforms","free-no-code-ai-agent-builders"],["founders","startup-ctos","operations-teams"])})
+
+def linter(t):
+    ex="You are a support assistant for Acme.\nAnswer billing questions using the help center.\nAlways be friendly.\nTry to keep answers short if possible.\nNever share internal notes."
+    inner=(f'<div {BOX}><label {LAB} for="lp">Your system prompt</label><textarea id="lp" rows="12" {TA}>{e(ex)}</textarea>'
+           f'<div id="lres" style="{CARDS}"></div></div><div id="lout"></div>'
+           '<p style="margin:12px 0 0"><button class="btn primary" type="button" id="lcopy">Copy report</button> <span id="lmsg" class="muted" aria-live="polite"></span></p>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">What the linter checks</h2><p>Ten rule-of-thumb checks that catch the most common system prompt problems: a clear role, a stated task, an output format, explicit rules, a way to handle uncertainty, examples, no vague hedging, no conflicting always/never rules, no unfilled placeholders, and a defense against instructions hidden in user or tool content. It runs simple text rules in your browser, so it can miss things or flag a deliberate choice: treat it as a checklist, not a grade from a model.</p>')
+    js=NUMJS+r''';function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+var C=[["Role","Says who the AI is (\u201cYou are\u2026\u201d, \u201cAct as\u2026\u201d).",function(s){return/\b(you are|act as|your role|you're an?)\b/i.test(s)}],
+["Task","States what to do (answer, write, help, review, summarize\u2026).",function(s){return/\b(your (job|task|goal) is|help (the )?users?|answer|write|summari[sz]e|review|classify|draft|extract|translate)\b/i.test(s)}],
+["Output format","Says how to format replies (length, list, JSON, Markdown, sections).",function(s){return/\b(format|json|markdown|bullet|numbered|table|respond (with|in)|reply (with|in)|under \d+ (words|sentences|characters)|sections?|headings?)\b/i.test(s)}],
+["Clear rules","Has explicit must / never / don't rules.",function(s){return/\b(never|must|do not|don't|always|only)\b/i.test(s)}],
+["Uncertainty","Says what to do when unsure (ask, say you don't know, escalate).",function(s){return/(if (you are |you're )?(unsure|not sure|uncertain)|don't know|do not know|ask (a |the user|for)|clarif|escalat|hand (it )?off)/i.test(s)}],
+["Examples","Gives at least one example of a good answer.",function(s){return/(example|e\.g\.|for instance|<example>)/i.test(s)}],
+["No vague hedging","Avoids \u201ctry to\u201d, \u201cif possible\u201d, \u201cmaybe\u201d, \u201cetc.\u201d and \u201cas needed\u201d.",function(s){return!/\b(try to|if possible|maybe|perhaps|etc\.?|as needed|as appropriate|somewhat)\b/i.test(s)}],
+["No conflicting rules","No word appears in both an \u201calways\u201d and a \u201cnever\u201d rule.",function(s){var a=[],n=[];s.split(/[\n.!]/).forEach(function(l){var w=(l.toLowerCase().match(/[a-z]{5,}/g)||[]).filter(function(x){return["always","never","should","their","there","about","which","would","could"].indexOf(x)<0});if(/\balways\b/i.test(l))a=a.concat(w);if(/\b(never|don't|do not)\b/i.test(l))n=n.concat(w)});return!a.some(function(x){return n.indexOf(x)>=0})}],
+["No placeholders","No unfilled {{variables}}, [INSERT\u2026] or TODO.",function(s){return!/(\{\{[^}]*\}\}|\[(insert|your|todo)[^\]]*\]|\bTODO\b|\bTBD\b)/i.test(s)}],
+["Injection defense","Tells the AI to treat documents, web pages or tool results as data, not instructions.",function(s){return/(ignore (any )?instructions (in|inside|from|found)|treat .{0,40}(as data|as untrusted|not as instructions)|untrusted|prompt injection|do not follow instructions (in|from))/i.test(s)}]];
+var rep="";function run(){var s=$("lp").value,res=C.map(function(c){return[c,!!(s.trim()&&c[2](s))]}),sc=res.filter(function(x){return x[1]}).length,tk=asTok(s),caps=(s.match(/\b[A-Z]{4,}\b/g)||[]).length;
+var notes=[];if(tk>4000)notes.push("Long prompt (\u2248"+tk.toLocaleString()+" tokens). Every request pays for it; move rarely used detail into tools or retrieved docs.");if(caps>=5)notes.push(caps+" ALL-CAPS words. Shouting rarely helps modern models; plain, specific rules work better.");
+var ln=s.split("\n").map(function(x){return x.trim().toLowerCase()}).filter(Boolean),dup=ln.filter(function(x,i){return ln.indexOf(x)!==i});if(dup.length)notes.push(dup.length+" repeated line(s).");
+$("lres").innerHTML=card("Score",sc+" / 10")+card("Estimated tokens",tk.toLocaleString())+card("Words",(s.match(/\S+/g)||[]).length.toLocaleString());
+$("lout").innerHTML='<ul style="list-style:none;padding:0;margin:14px 0 0">'+res.map(function(x){return'<li style="padding:8px 0;border-bottom:1px solid var(--line)"><b>'+(x[1]?"\u2705":"\u26a0\ufe0f")+" "+x[0][0]+'</b><br><span class="muted" style="font-size:14px">'+x[0][1]+'</span></li>'}).join("")+'</ul>'+(notes.length?'<p style="margin:12px 0 0"><b>Also:</b> '+notes.map(esc).join(" ")+'</p>':"");
+rep="System prompt lint: "+sc+"/10 (AgentScout)\n"+res.map(function(x){return(x[1]?"[ok] ":"[fix] ")+x[0][0]}).join("\n")+(notes.length?"\n"+notes.join("\n"):"")}
+$("lp").addEventListener("input",run);$("lcopy").addEventListener("click",function(){navigator.clipboard.writeText(rep).then(function(){$("lmsg").textContent="Copied";setTimeout(function(){$("lmsg").textContent=""},1500)})});run();'''
+    faq=[("What makes a good system prompt?","A clear role and task, the output format you want, explicit rules, what to do when unsure, and one example. Specific instructions beat long lists of vague ones."),
+         ("How is the score worked out?","One point for each of ten checks passed. The checks are simple text rules that run in your browser, not an AI model, so read each item rather than chasing a perfect score."),
+         ("What is prompt injection?","Text in a web page, document, email or tool result that tries to give the AI new instructions. Telling the model to treat that content as data, not instructions, is a basic first defense; agents with real tools also need permission checks."),
+         ("Is my prompt sent anywhere?","No. Everything runs in your browser.")]
+    return wrap("system-prompt-linter","System prompt linter","Paste a system prompt and get a score out of 10, with checks for role, task, output format, rules, conflicts, vague wording and prompt-injection defense. Build one from scratch with the <a href=\"prompt-builder.html\">prompt builder</a>.",inner,faq,js,t)
+
+def ctxplan(t):
+    ta=lambda id,lab,v="":f'<label {LAB} for="{id}">{lab} <span class="muted" id="{id}n" style="font-weight:400"></span></label><textarea id="{id}" rows="4" {TA}>{e(v)}</textarea>'
+    inner=(f'<div {BOX}><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 16px">'
+           +_num("xw","Your model's context window (tokens)",128000)+_num("xo","Reserve for the reply (tokens)",4000)+_num("xh","Conversation history (tokens)",6000)+_num("xr","Retrieved documents (tokens)",20000)+
+           '</div><p class="muted" style="font-size:13px;margin:8px 0 0">128,000 is only an example: enter the context window from your provider\'s model page. AgentScout does not list context sizes because they change often and differ by plan.</p>'
+           +ta("xs","System prompt","You are a research assistant. Answer with sources.")+ta("xt","Tool definitions (JSON)",'[{"type":"function","name":"search","description":"Search the web","parameters":{"type":"object","properties":{"q":{"type":"string"}},"required":["q"]}}]')
+           +ERR("xerr")+'<div id="xbar" role="img" aria-label="Context window usage" style="display:flex;height:28px;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin-top:14px"></div><div id="xleg" style="display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13.5px"></div>'
+           f'<div id="xres" style="{CARDS}"></div></div>'
+           '<p class="muted" style="font-size:13px">Token counts for pasted text are estimates from the same method as the <a href="token-counter.html">token counter</a>. Price thresholds also matter: some providers bill long prompts at a higher rate (see the notes in the <a href="ai-cost-calculator.html">cost calculator</a>).</p>')
+    js=NUMJS+r''';var P=[["System prompt","#7c8cff"],["Tools","#2bb673"],["Documents","#f5a623"],["History","#e5484d"],["Reply reserve","#8e8e93"]];
+function run(){chkN([["xw","Context window"],["xo","Reply reserve"],["xh","History"],["xr","Documents"]],"xerr");var s=asTok($("xs").value),tl=asTok($("xt").value);$("xsn").textContent="\u2248 "+s.toLocaleString()+" tokens";$("xtn").textContent="\u2248 "+tl.toLocaleString()+" tokens";
+var parts=[s,tl,v("xr"),v("xh"),v("xo")],W=v("xw"),used=parts.reduce(function(a,b){return a+b},0),base=Math.max(W,used)||1;
+$("xbar").innerHTML=parts.map(function(p,i){return'<div title="'+P[i][0]+'" style="width:'+(p/base*100)+'%;background:'+P[i][1]+'"></div>'}).join("");
+$("xleg").innerHTML=P.map(function(p,i){return'<span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:'+p[1]+';margin-right:5px"></span>'+p[0]+": "+Math.round(parts[i]).toLocaleString()+'</span>'}).join("");
+var free=W-used;$("xres").innerHTML=card("Used",Math.round(used).toLocaleString())+card("Share of window",W?Math.round(used/W*100)+"%":"\u2013")+card(free>=0?"Room left":"Over by",Math.abs(Math.round(free)).toLocaleString());
+$("xres").lastChild.style.borderColor=free<0?"#e5484d":""}
+["xw","xo","xh","xr","xs","xt"].forEach(function(i){$(i).addEventListener("input",run)});run();'''
+    faq=[("What is a context window?","The maximum number of tokens a model can take in one request, counting the system prompt, tool definitions, conversation history, documents and the reply it writes."),
+         ("Why reserve tokens for the reply?","The model's output shares the same window on most APIs. If the input fills it, the reply gets cut short or the request fails."),
+         ("Why doesn't AgentScout list each model's context size?","Sizes change often and can differ by plan, region or API tier, so we only show figures you can check. Enter the number from the provider's model page."),
+         ("What if I'm over the limit?","Trim history (summarize older turns), retrieve fewer or shorter documents, shorten tool descriptions, or choose a model with a larger window.")]
+    return wrap("context-window-planner","Context window planner","See how much of your model's context window the system prompt, tool definitions, retrieved documents, chat history and reply reserve take up, and how much room is left.",inner,faq,js,t)
+
+LIC=[("MIT","MIT",["yes","yes","yes","yes"],"Keep the copyright and license notice in copies. No patent clause."),
+ ("Apache-2.0","Apache 2.0",["yes","yes","yes","yes"],"Keep the license and NOTICE file, state significant changes. Includes an explicit patent grant."),
+ ("BSD-3-Clause","BSD 3-Clause",["yes","yes","yes","yes"],"Keep the copyright notice; don't use the authors' names to endorse your product."),
+ ("MPL-2.0","Mozilla Public License 2.0",["yes","yes","yes","cond"],"File-level copyleft: if you distribute changed MPL files, share those files' source. Your own separate files can stay closed."),
+ ("LGPL-3.0","GNU LGPL 3.0",["yes","yes","yes","cond"],"You can link it from closed-source software, but if you distribute changes to the library itself, share them under the LGPL."),
+ ("GPL-3.0","GNU GPL 3.0",["yes","yes","yes","cond"],"If you distribute the software or a modified version, you must release the source under the GPL. Running it privately or as a hosted service without distributing it does not trigger that."),
+ ("AGPL-3.0","GNU AGPL 3.0",["yes","yes","cond","cond"],"Like the GPL, plus: if you modify it and let users interact with it over a network, you must offer them the source of your modified version."),
+ ("ELv2","Elastic License 2.0",["cond","yes","no","cond"],"Source-available, not open source. You can't offer it to others as a hosted or managed service, or bypass license-key features."),
+ ("BUSL-1.1","Business Source License 1.1",["cond","cond","cond","cond"],"Source-available. Production use is limited by the project's Additional Use Grant; each version converts to an open-source license on its Change Date."),
+ ("SSPL-1.0","Server Side Public License",["cond","yes","cond","cond"],"Source-available. If you offer it as a service, you must release the source of the whole service stack under the SSPL.")]
+def license(t):
+    # licences from the verified facts in tool_rich.json (repo LICENSE files); mixed or multi-licence projects are left out
+    MAP={"the MIT License":"MIT","MIT":"MIT","the Apache License 2.0":"Apache-2.0","Apache-2.0":"Apache-2.0","the GNU AGPL v3.0":"AGPL-3.0","the GNU Affero General Public License v3.0":"AGPL-3.0",
+         "the GNU GPL v3.0":"GPL-3.0","Elastic License 2.0 (source-available)":"ELv2","the BSD 3-Clause License":"BSD-3-Clause","the Mozilla Public License 2.0":"MPL-2.0"}
+    RF_=json.load(open("tool_rich.json")); have={}
+    for x in t:
+        l=MAP.get(((RF_.get(x["slug"]) or {}).get("facts") or {}).get("license") or "")
+        if l: have.setdefault(l,[]).append((x["slug"],x["name"]))
+    data=[[k,n,c,note,sorted(have.get(k,[]),key=lambda z:z[1].lower())] for k,n,c,note in LIC]
+    opts="".join(f'<option value="{e(k)}">{e(n)} ({e(k)})</option>' for k,n,_,_ in LIC)
+    inner=(f'<div {BOX}><label {LAB} for="ql">License</label><select id="ql" {INP}>{opts}</select><div id="qout" aria-live="polite"></div></div>'
+           '<p class="muted" style="font-size:13px">Plain-English summary of common terms, not legal advice. Always read the license text in the project\'s repository, and ask a lawyer for anything important. Some projects add extra terms or use different licenses for different parts.</p>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">Open source vs source-available</h2><p>Open-source licenses (MIT, Apache, BSD, MPL, LGPL, GPL, AGPL) let anyone use, change and share the code, with conditions that range from keeping a notice (permissive) to sharing your changes (copyleft). Source-available licenses (ELv2, BSL, SSPL) publish the code but restrict some uses, most often offering it as a competing hosted service. AgentScout labels these as "Source-available" in the directory.</p>')
+    js=NUMJS+"\nvar LD="+json.dumps(data)+r''';function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+var Q=["Use it in a commercial product","Modify it","Offer it as a hosted service (SaaS)","Keep your changes private"],M={yes:["\u2705","Yes"],cond:["\u26a0\ufe0f","With conditions"],no:["\u274c","No"]};
+function run(){var d=LD.filter(function(x){return x[0]===$("ql").value})[0];try{history.replaceState(null,"","#"+d[0])}catch(e){}
+$("qout").innerHTML='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14.5px;margin-top:14px">'+Q.map(function(q,i){var m=M[d[2][i]];return'<tr style="border-bottom:1px solid var(--line)"><td style="padding:8px 6px">'+q+'</td><td style="padding:8px 6px;white-space:nowrap"><b>'+m[0]+" "+m[1]+'</b></td></tr>'}).join("")+'</table></div><p style="margin:12px 0 0"><b>Main condition:</b> '+esc(d[3])+'</p>'
++'<p style="margin:12px 0 0">'+(d[4].length?"<b>"+d[4].length+" tool"+(d[4].length>1?"s":"")+" in the AgentScout directory use this license</b> (from each project's repository):<br>"+d[4].slice(0,30).map(function(z){return'<a href="../tools/'+z[0]+'.html">'+esc(z[1])+'</a>'}).join(" \u00b7 ")+(d[4].length>30?" \u00b7 and "+(d[4].length-30)+" more":""):'<span class="muted">No tools in the directory are recorded with this exact license yet.</span>')+'</p>'}
+try{var h=decodeURIComponent(location.hash.slice(1));if(h&&LD.some(function(x){return x[0]===h}))$("ql").value=h}catch(e){}$("ql").addEventListener("change",run);run();'''
+    faq=[("Can I use MIT or Apache 2.0 AI tools in a commercial product?","Yes. Both are permissive: you can use, change and sell software that includes them, as long as you keep the license and copyright notices (and, for Apache 2.0, the NOTICE file and a note of significant changes)."),
+         ("What is the catch with AGPL?","If you change AGPL software and let people use it over a network, for example as a web app, you must offer them the source code of your changed version."),
+         ("Is source-available the same as open source?","No. Licenses like the Elastic License 2.0, Business Source License and SSPL publish the code but restrict some uses, typically running it as a competing hosted service."),
+         ("Is this legal advice?","No. It is a plain-English summary of common license terms. Read the actual license and ask a lawyer when it matters.")]
+    return wrap("open-source-license-checker","Open-source license checker for AI tools","Pick a license and see in plain English whether you can use it commercially, modify it, run it as a hosted service and keep changes private, plus which AgentScout directory tools use it.",inner,faq,js,t)
+
+def bvb(t):
+    inner=(f'<div {BOX}><h2 style="font-size:16px;margin:0">Buy: hosted tool</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px">'
+           +_num("bs","Price per seat per month ($)",30)+_num("bn","Seats",5)+_num("bu","Usage or overage per month ($)",0)+_num("bo","One-time setup ($)",0)+
+           f'</div><h2 style="font-size:16px;margin:22px 0 0">Build: self-host open source</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px">'
+           +_num("hs","Servers or hosting per month ($)",60)+_num("ha","Model API cost per month ($)",80)+_num("hh","Setup hours",40)+_num("hm","Maintenance hours per month",6)+_num("hr","Hourly cost of your time ($)",75)+
+           f'</div><div><label {LAB} for="hy">Compare over</label><select id="hy" {INP}><option value="12">12 months</option><option value="24" selected>24 months</option><option value="36">36 months</option></select></div>'
+           +ERR("berr")+f'<div id="bres" style="{CARDS}"></div><p id="bver" style="font-weight:600;margin:12px 0 0"></p></div>'
+           '<p class="muted" style="font-size:13px">Need the model API figure? Estimate it with the <a href="agent-run-cost-estimator.html">agent run cost estimator</a>. Looking for open-source options? Browse the <a href="../best/index.html">best-of lists</a> or check a license with the <a href="open-source-license-checker.html">license checker</a>.</p>')
+    js=NUMJS+r''';var F=[["bs","Seat price"],["bn","Seats"],["bu","Usage"],["bo","Setup"],["hs","Hosting"],["ha","Model API"],["hh","Setup hours"],["hm","Maintenance hours"],["hr","Hourly cost"]];
+function run(){chkN(F,"berr");var y=+$("hy").value,buyM=v("bs")*v("bn")+v("bu"),buy0=v("bo"),bldM=v("hs")+v("ha")+v("hm")*v("hr"),bld0=v("hh")*v("hr"),B=buy0+buyM*y,S=bld0+bldM*y,be=null;
+for(var m=1;m<=120;m++){if(bld0+bldM*m<=buy0+buyM*m){be=m;break}}
+$("bres").innerHTML=card("Buy, "+y+" months",fm(B))+card("Build, "+y+" months",fm(S))+card("Buy per month",fm(buyM))+card("Build per month",fm(bldM))+card("Break-even",be?"Month "+be:"Not within 10 years");
+$("bver").textContent=S<B?"Building looks cheaper over "+y+" months by "+fm(B-S)+".":S>B?"Buying looks cheaper over "+y+" months by "+fm(S-B)+".":"They cost the same over "+y+" months."}
+F.map(function(x){return x[0]}).concat(["hy"]).forEach(function(i){$(i).addEventListener("input",run)});run();'''
+    faq=[("How is the comparison calculated?","Buy = one-time setup + (seats × seat price + usage) × months. Build = setup hours × hourly cost + (hosting + model API + maintenance hours × hourly cost) × months. Break-even is the first month where building has cost no more in total than buying."),
+         ("What does this leave out?","Things that are hard to price: security reviews, uptime, support, features the hosted tool adds over time, and what your team could build instead. Add rough figures to maintenance hours if they matter."),
+         ("Are any prices filled in for me?","No. The starting numbers are examples only. Enter your real quotes and costs."),
+         ("Is anything sent to a server?","No. The calculator runs in your browser.")]
+    return wrap("build-vs-buy-calculator","Build vs buy AI agent calculator","Compare self-hosting an open-source AI agent with paying for a hosted tool: setup, hosting, model API, maintenance time and seats, over 12, 24 or 36 months, with the break-even month.",inner,faq,js,t)
