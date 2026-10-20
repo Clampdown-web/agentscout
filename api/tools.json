@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T22:00:07Z",
- "updated": "2026-10-20T22:00:07Z",
+ "generated": "2026-10-20T23:33:18Z",
+ "updated": "2026-10-20T23:33:18Z",
  "last_checked": "2026-10-20",
- "count": 1591,
+ "count": 1592,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -67259,6 +67259,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/dodaios.png",
    "page": "https://agentscouthq.com/tools/dodaios.html"
+  },
+  {
+   "name": "OpenCity Record",
+   "slug": "opencity-record",
+   "url": "https://opencityrecord.org/",
+   "website": "https://opencityrecord.org/",
+   "github": "",
+   "category": "research",
+   "description": "OpenCity Record makes US city council and planning meetings searchable in plain language: what was decided, who voted and what is coming up, drawn from meeting transcripts, agendas and ordinances across hundreds of cities. Connect it to Claude, ChatGPT or Cursor through its remote MCP server and ask questions about your local government, with every answer citing the meeting it came from.",
+   "key_features": [
+    "Freemium: Free plan covers one city forever (speakers unattributed, 1,000 credits a month, no card); paid plans from $9/month (Resident, 3 cities) up to $499/month (Premium, all states); new accounts get full Premium free during the beta, until at least January 1, 2027",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium: Free plan covers one city forever (speakers unattributed, 1,000 credits a month, no card); paid plans from $9/month (Resident, 3 cities) up to $499/month (Premium, all states); new accounts get full Premium free during the beta, until at least January 1, 2027",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/opencity-record.png",
+   "page": "https://agentscouthq.com/tools/opencity-record.html"
   }
  ]
 }

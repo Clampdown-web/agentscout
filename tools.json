@@ -40427,5 +40427,31 @@
     "id": 1610,
     "slug": "dodaios",
     "logo": "assets/logos/dodaios.png"
+  },
+  {
+    "name": "OpenCity Record",
+    "url": "https://opencityrecord.org/",
+    "description": "OpenCity Record makes US city council and planning meetings searchable in plain language: what was decided, who voted and what is coming up, drawn from meeting transcripts, agendas and ordinances across hundreds of cities. Connect it to Claude, ChatGPT or Cursor through its remote MCP server and ask questions about your local government, with every answer citing the meeting it came from.",
+    "category": "research",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Freemium: Free plan covers one city forever (speakers unattributed, 1,000 credits a month, no card); paid plans from $9/month (Resident, 3 cities) up to $499/month (Premium, all states); new accounts get full Premium free during the beta, until at least January 1, 2027",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP"
+    ],
+    "website": "https://opencityrecord.org/",
+    "github": "",
+    "id": 1611,
+    "slug": "opencity-record",
+    "logo": "assets/logos/opencity-record.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
   }
 ]
