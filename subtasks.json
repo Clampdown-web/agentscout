@@ -5670,5 +5670,17 @@
 "agent-auth",
 "mcp-servers",
 "local-models"
+],
+"remotify-mcp": [
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"hol-guard": [
+"guardrails",
+"agent-auth",
+"observability",
+"local-models",
+"terminal-agents"
 ]
 }

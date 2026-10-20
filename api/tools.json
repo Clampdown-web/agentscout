@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T14:05:10Z",
- "updated": "2026-10-20T14:05:10Z",
+ "generated": "2026-10-20T14:18:17Z",
+ "updated": "2026-10-20T14:18:17Z",
  "last_checked": "2026-10-20",
- "count": 1499,
+ "count": 1501,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -63390,6 +63390,94 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/loppee.png",
    "page": "https://agentscouthq.com/tools/loppee.html"
+  },
+  {
+   "name": "remotify-mcp",
+   "slug": "remotify-mcp",
+   "url": "https://relay.remotify.run/",
+   "website": "https://relay.remotify.run/",
+   "github": "https://github.com/onlsol/relay.remotify.run",
+   "category": "MCP & infra",
+   "description": "remotify-mcp is a free, open-source (Apache-2.0) local stdio MCP server (npx remotify-mcp) that gives Claude Code, Cursor, Codex, OpenCode, Gemini CLI and other MCP hosts a remote_exec tool for running shell commands on a remote computer through an HTTP relay. The remote machine needs only curl and bash (no SSH port or installed agent), and each command can wait for human approval or run automatically.",
+   "key_features": [
+    "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
+    "Active",
+    "3 GitHub stars",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "onlsol/relay.remotify.run",
+   "github_stars": 3,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/remotify-mcp.png",
+   "page": "https://agentscouthq.com/tools/remotify-mcp.html"
+  },
+  {
+   "name": "HOL Guard",
+   "slug": "hol-guard",
+   "url": "https://hol.org/guard",
+   "website": "https://hol.org/guard",
+   "github": "https://github.com/hashgraph-online/hol-guard",
+   "category": "security & governance",
+   "description": "HOL Guard is a free, open-source (Apache-2.0), local-first security layer for AI coding agents such as Claude Code, Codex, Cursor and GitHub Copilot CLI. On supported integrations it checks risky shell commands, reads of secret-bearing files, package installs and new or changed MCP tools before they run, lets you allow, ask or block each action, and keeps a local record for review. It installs with pipx (hol-guard) and works offline; optional Guard Cloud adds synced approvals, team policy and dashboards.",
+   "key_features": [
+    "Free forever for local protection on one machine; Guard Cloud plans: Solo $4.99/mo, Pro $15/mo, Team $30/seat/mo, plus Enterprise",
+    "Active",
+    "947 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free forever for local protection on one machine; Guard Cloud plans: Solo $4.99/mo, Pro $15/mo, Team $30/seat/mo, plus Enterprise",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "hashgraph-online/hol-guard",
+   "github_stars": 947,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hol-guard.png",
+   "page": "https://agentscouthq.com/tools/hol-guard.html"
   }
  ]
 }

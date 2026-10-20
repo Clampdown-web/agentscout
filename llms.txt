@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,499 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,501 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,7 +22,7 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 278 tools
+- [MCP & infra](https://agentscouthq.com/categories/mcp-infra.html): 279 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 161 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 129 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 79 tools
@@ -40,7 +40,7 @@ Contact: support@agentscouthq.com
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 35 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 34 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 33 tools
-- [security & governance](https://agentscouthq.com/categories/security-governance.html): 29 tools
+- [security & governance](https://agentscouthq.com/categories/security-governance.html): 30 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
 - [video generation](https://agentscouthq.com/categories/video-generation.html): 27 tools
 - [customer support](https://agentscouthq.com/categories/customer-support.html): 24 tools
@@ -83,6 +83,8 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
+- [HOL Guard](https://agentscouthq.com/tools/hol-guard.html) (added 2026-10-20): HOL Guard is a free, open-source (Apache-2.0), local-first security layer for AI coding agents such as Claude Code, Codex, Cursor and GitHub Copilot CLI. On supported integrations it checks risky shell commands, reads of secret-bearing files, package installs and new or changed MCP tools before they run, lets you allow, ask or block each action, and keeps a local record for review. It installs with pipx (hol-guard) and works offline; optional Guard Cloud adds synced approvals, team policy and dashboards.
+- [remotify-mcp](https://agentscouthq.com/tools/remotify-mcp.html) (added 2026-10-20): remotify-mcp is a free, open-source (Apache-2.0) local stdio MCP server (npx remotify-mcp) that gives Claude Code, Cursor, Codex, OpenCode, Gemini CLI and other MCP hosts a remote_exec tool for running shell commands on a remote computer through an HTTP relay. The remote machine needs only curl and bash (no SSH port or installed agent), and each command can wait for human approval or run automatically.
 - [Loppee](https://agentscouthq.com/tools/loppee.html) (added 2026-10-20): Loppee is a US directory of local businesses that marks which ones it has verified (registration, an owner contact route and any required license). Its free, no-sign-in remote MCP server (loppee.com/mcp/discovery) and REST API let Claude, ChatGPT, Cursor and other assistants look up a business, read its Trust Card and identity-verified reviews, and compare options; owners can also manage their listing through their own AI agent.
 - [VirtualBudz BudBot](https://agentscouthq.com/tools/virtualbudz-budbot.html) (added 2026-10-20): VirtualBudz BudBot is an AI budtender for cannabis dispensary websites. It answers shoppers' product questions, recommends items from the live menu and builds carts around the clock, so customers get help even when staff are busy.
 - [objekts Production Desk](https://agentscouthq.com/tools/objekts-production-desk.html) (added 2026-10-20): objekts Production Desk is a free remote MCP server for planning AI/VFX, CGI, motion-design and animation production. Agents can check locked references, product, character and camera continuity, versioning risks and a sensible first proof of concept. Rough estimates only on request, and nothing is sent to the studio without the user's confirmation.
@@ -93,8 +95,6 @@ Contact: support@agentscouthq.com
 - [Monobot.AI](https://agentscouthq.com/tools/monobot-ai.html) (added 2026-10-20): Monobot.AI is a no-code platform for building voice and chat AI agents that handle customer support, bookings, reservations and routine business calls, with a workspace for managing agents and integrations with CRMs and other tools.
 - [Robylon](https://agentscouthq.com/tools/robylon.html) (added 2026-10-20): Robylon builds AI customer-support agents that resolve tickets across email, chat, voice and WhatsApp, connect to helpdesks like Zendesk, Freshdesk and Intercom, take actions such as refunds and order updates, and hand hard cases to a person.
 - [Halofy](https://agentscouthq.com/tools/halofy.html) (added 2026-10-20): Halofy is an access and governance layer for a team's AI agents, giving every agent organizational context through one identity and policy model with provenance and audit, alongside a desktop AI workstation that turns power users' agent practices into shared policies.
-- [Agent Tincan](https://agentscouthq.com/tools/agent-tincan.html) (added 2026-10-20): Agent Tincan lets your AI agents (Claude Code, Codex, Gemini, Hermes, ChatGPT and others) ask each other to do things and hand back results through a small relay on your own Tailscale network, with no open ports or API keys between agents.
-- [Sno Station](https://agentscouthq.com/tools/sno-station.html) (added 2026-10-20): Sno Station turns the coding agents you already use (Claude Code, Codex, Cursor, Hermes, OpenClaw) into one squad on your machine with shared memory, and its Self Learning reviews their sessions and proposes skill-file fixes you approve.
 
 <!-- pages:start -->
 

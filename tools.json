@@ -38100,5 +38100,61 @@
     "logo": "assets/logos/loppee.png",
     "maker_submitted": true,
     "submitted": "2026-10-20"
+  },
+  {
+    "name": "remotify-mcp",
+    "url": "https://relay.remotify.run/",
+    "description": "remotify-mcp is a free, open-source (Apache-2.0) local stdio MCP server (npx remotify-mcp) that gives Claude Code, Cursor, Codex, OpenCode, Gemini CLI and other MCP hosts a remote_exec tool for running shell commands on a remote computer through an HTTP relay. The remote machine needs only curl and bash (no SSH port or installed agent), and each command can wait for human approval or run automatically.",
+    "category": "MCP & infra",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
+    "use_cases": [
+      "voice & phone calls",
+      "connect tools via MCP"
+    ],
+    "website": "https://relay.remotify.run/",
+    "github": "https://github.com/onlsol/relay.remotify.run",
+    "repo": "onlsol/relay.remotify.run",
+    "github_stars": 3,
+    "id": 1519,
+    "slug": "remotify-mcp",
+    "logo": "assets/logos/remotify-mcp.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
+  },
+  {
+    "name": "HOL Guard",
+    "url": "https://hol.org/guard",
+    "description": "HOL Guard is a free, open-source (Apache-2.0), local-first security layer for AI coding agents such as Claude Code, Codex, Cursor and GitHub Copilot CLI. On supported integrations it checks risky shell commands, reads of secret-bearing files, package installs and new or changed MCP tools before they run, lets you allow, ask or block each action, and keeps a local record for review. It installs with pipx (hol-guard) and works offline; optional Guard Cloud adds synced approvals, team policy and dashboards.",
+    "category": "security & governance",
+    "pricing": "Open source + cloud",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Free forever for local protection on one machine; Guard Cloud plans: Solo $4.99/mo, Pro $15/mo, Team $30/seat/mo, plus Enterprise",
+    "use_cases": [
+      "write code",
+      "connect tools via MCP"
+    ],
+    "website": "https://hol.org/guard",
+    "github": "https://github.com/hashgraph-online/hol-guard",
+    "repo": "hashgraph-online/hol-guard",
+    "github_stars": 947,
+    "id": 1520,
+    "slug": "hol-guard",
+    "logo": "assets/logos/hol-guard.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
   }
 ]
