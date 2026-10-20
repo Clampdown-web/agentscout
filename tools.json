@@ -37969,7 +37969,7 @@
   {
     "name": "SEAL",
     "url": "https://seal.net/",
-    "description": "SEAL is an MCP server (npx sealnet-mcp) that lets AI agents send and request files and secrets with end-to-end encryption. After a one-time pairing, reports and archives land in the user's SEAL inbox and the model only gets a handle, never the link or the secret. Also has a browser app, CLI and SDK; free up to 1 GB per seal.",
+    "description": "SEAL is an MCP server (npx sealnet-mcp) that lets AI agents send and request files and secrets with end-to-end encryption. After pairing, the default delivery route sends the file to the user's SEAL inbox and returns a handle to the model. Also has a browser app, CLI and SDK; free up to 1 GB per seal.",
     "category": "MCP & infra",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -37981,11 +37981,12 @@
     "source": "Submission",
     "pricing_detail": "Free up to 1 GB per seal; larger transfers after a one-time payment",
     "use_cases": [
-      "write code",
       "automate the browser",
-      "build an agent"
+      "build an agent",
+      "connect tools via MCP"
     ],
     "website": "https://seal.net/",
+    "visit_url": "https://seal.net/docs/mcp?utm_source=agentscouthq&utm_medium=referral&utm_campaign=directory",
     "github": "",
     "id": 1514,
     "slug": "seal",
