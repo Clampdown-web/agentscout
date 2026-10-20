@@ -166,7 +166,7 @@ def build(t):
     import build_trending; urls+=build_trending.pages(t)
     import os as _os2
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)
-    _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
+    _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B,B+"new.html",B+"quiz.html",B+"llms.txt",B+"generate.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}
