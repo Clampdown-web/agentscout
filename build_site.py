@@ -75,10 +75,13 @@ def soc_lab(u):
     h=re.sub(r"^https?://(www\.)?","",u).split("/")[0].lower()
     return next((l for d,l in SOC if h==d),None)
 def demo_row(x):
-    # maker-supplied demo video (tools.json "demo_video"); lazy (preload=none), width 100% so it fits phones
+    # maker demo video. Served from our own domain (CSP default-src 'self' blocks off-site media), poster + link to the maker's original
     v=x.get("demo_video")
     if not v: return ""
-    return f'<h2 style="font-size:16px;margin-bottom:10px">Demo video</h2><div style="margin-bottom:32px;max-width:100%"><video controls preload="none" playsinline style="display:block;width:100%;max-width:100%;height:auto;border-radius:10px;background:#000" aria-label="{e(x["name"])} demo video"><source src="{e(v)}" type="video/mp4"></video><p style="margin:8px 0 0;font-size:14px"><a href="{e(v)}" target="_blank" rel="nofollow noopener">Watch the demo video ↗</a> (MP4, from the maker)</p></div>'
+    src=x.get("demo_video_local") or v
+    pos=x.get("demo_poster")
+    pa=f' poster="{e(pos)}"' if pos else ""
+    return f'<h2 style="font-size:16px;margin-bottom:10px">Demo video</h2><div style="margin-bottom:32px;max-width:100%"><video controls preload="none" playsinline{pa} style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000" aria-label="{e(x["name"])} demo video"><source src="{e(src)}" type="video/mp4"></video><p style="margin:8px 0 0;font-size:14px"><a href="{e(v)}" target="_blank" rel="nofollow noopener">Watch the original demo video ↗</a> (MP4, from the maker)</p></div>'
 def soc_row(x):
     # verified official social links only (tools.json "socials"); no block when empty
     ls=[(u,soc_lab(u)) for u in x.get("socials") or [] if soc_lab(u)]
