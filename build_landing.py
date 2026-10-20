@@ -36,8 +36,9 @@ S=[
 ("open-source-ai-coding-agents","Open-source AI coding agents","open-source AI coding agents",lambda x,k:x["category"]=="coding" and x["pricing"] in OS,"Coding agents whose source code is public, so you can read it, self-host it and bring your own model API key.","writing-code","ai-coding-agents"),
 ("terminal-ai-coding-agents","AI coding agents for the terminal (CLI)","terminal AI coding agents",lambda x,k:x["category"]=="coding" and k("terminal-coding"),"Coding agents that run in your terminal: they read files, run commands and propose changes from a prompt.","terminal-coding","ai-coding-agents"),
 # s/ai-code-review-tools removed Oct 18 2026: same tools as tasks/reviewing-pull-requests (redirect in redirects.json)
-("open-source-browser-agents","Open-source browser agents","open-source browser agents",lambda x,k:(x["category"]=="browser/computer use" or k("browsing-the-web")) and x["pricing"] in OS,"Open-source libraries and agents that drive a real browser: clicking, typing, filling forms and extracting data.","browsing-the-web","ai-browser-agents"),
-("free-browser-automation-agents","Free AI browser automation tools","free AI browser automation",lambda x,k:(x["category"]=="browser/computer use" or k("browsing-the-web")) and isfree(x),"Browser and computer-use agents you can try for free, from open-source libraries to hosted tools with free tiers.","browsing-the-web","ai-browser-agents"),
+# Oct 20 2026: s/free-browser-automation-agents merged into this page (owner-approved; redirect in redirects.json).
+# The list is the union of the top 25 open-source and top 25 free browser tools (see MERGED below); every count is computed.
+("open-source-browser-agents","Free & open-source browser agents","free and open-source browser agents",lambda x,k:(x["category"]=="browser/computer use" or k("browsing-the-web")) and isfree(x),"Open-source libraries, MCP servers, headless browsers and agents that drive a real browser, plus free browser automation tools with a free plan.","browsing-the-web","ai-browser-agents"),
 ("computer-use-agents","AI computer-use agents","computer-use agents",lambda x,k:k("computer-use"),"Agents that look at the screen and use the mouse and keyboard to work across desktop apps and websites.","computer-use","ai-browser-agents"),
 ("open-source-ai-agent-frameworks","Open-source AI agent frameworks","open-source AI agent frameworks",lambda x,k:x["category"]=="frameworks" and x["pricing"] in OS,"Frameworks and SDKs for building your own agents, with public source code you can inspect and extend.","building-ai-agents","ai-agent-frameworks"),
 ("python-ai-agent-frameworks","Python AI agent frameworks","Python AI agent frameworks",lambda x,k:x["category"]=="frameworks" and re.search(r"\bPython\b",x["description"]+" "+x["name"]),"Agent frameworks and SDKs whose listings say they are built for Python.","building-ai-agents","ai-agent-frameworks"),
@@ -121,7 +122,7 @@ R=[
  [("token-counter","Token counter"),("prompt-builder","Prompt builder")],["open-source-crypto-ai-agents","defi-ai-agents","ai-crypto-investing-agents","web3-ai-agent-platforms"]),
 ("founders","founders and small businesses","AI agents for founders and small businesses","Ready-made agents for operations, support, marketing and building your first app, so a small team can cover more ground.",
  [("Business operations","business-automation"),("Automate workflows","automating-workflows"),("Build apps without code","building-apps-without-code"),("Customer support","customer-support"),("Marketing","marketing"),("Personal assistants","personal-assistants")],
- [("ai-cost-calculator","AI API cost calculator"),("prompt-builder","Prompt builder")],["free-no-code-ai-agent-builders","ai-customer-support-agents","free-browser-automation-agents"]),
+ [("ai-cost-calculator","AI API cost calculator"),("prompt-builder","Prompt builder")],["free-no-code-ai-agent-builders","ai-customer-support-agents","open-source-browser-agents"]),
 ("devops-engineers","DevOps and SRE engineers","AI agents for DevOps and SRE engineers","AI SRE agents, observability, sandboxes and deployment tools for keeping systems and agents running.",
  [("Incidents and infrastructure","devops-and-incidents"),("Monitor agents in production","monitoring-agents"),("Deploy and host agents","deploying-agents"),("Run code safely","running-code-safely"),("Agent security","agent-security")],
  [("agent-setup-generator","Agent setup generator")],["ai-code-sandboxes","open-source-llm-observability-tools"]),
@@ -253,22 +254,38 @@ def modifier_pages(t,m,made,inT):
         out.append((slug,h,h[0].lower()+h[1:] if ml not in ("Python","TypeScript","MCP-ready") else h,len(allm),rank(allm)[:25],intro,task,None,allm))
     print("modifier search pages:",len(out),"of",len(cands),"candidates")
     return out
+BROWSER=lambda x,k:x["category"]=="browser/computer use" or k("browsing-the-web")
+# slug -> list of filters; the page shows the union of the top 25 of each (ranked), so both old lists survive the merge
+MERGED={"open-source-browser-agents":[lambda x,k:BROWSER(x,k) and x["pricing"] in OS,lambda x,k:BROWSER(x,k) and isfree(x)]}
+def site_stats(t):
+    """Directory-wide numbers for stat callouts, computed from tools.json at build time (never hand-written)."""
+    return {"total":len(t),"categories":len({x["category"] for x in t})}
 def search_pages(t,m,asof):
     made=[]; inT=lambda x:(lambda s:s in m and x in m[s][1])
     for s,h,q,f,intro,task,best in S:
         allm=[x for x in t if live(x) and f(x,inT(x))]
         if len(allm)<6: print("skip search page (too few):",s,len(allm)); continue
-        items=rank(allm)[:25]; made.append((s,h,q,len(allm),items,intro,task,best,allm))
+        if s in MERGED:
+            parts=[rank([x for x in t if live(x) and g(x,inT(x))])[:25] for g in MERGED[s]]
+            seen=set(); items=[]
+            for x in rank([y for p in parts for y in p]):
+                if x["slug"] not in seen: seen.add(x["slug"]); items.append(x)
+        else: items=rank(allm)[:25]
+        made.append((s,h,q,len(allm),items,intro,task,best,allm))
     made+=modifier_pages(t,m,made,inT)
     titles={a[0]:a[1] for a in made}
     DATA['search']=made
     for s,h,q,n,items,intro,task,best,allm in made:
         canon=f"{B}s/{s}.html"; title=f"{h} (2026): {len(items)} picks · AgentScout"
+        if s in MERGED: ST=site_stats(t); title=f"Free & Open-Source Browser Agents: {len(items)} Tools · AgentScout"
         cnt=f"top {len(items)} of {n} matching tools" if n>len(items) else f"{n} matching tools"  # same count basis as the title's "{len(items)} picks" (Oct 18 2026)
         desc=f"{h} in 2026: {cnt} in AgentScout's link-checked directory, including {', '.join(x['name'] for x in items[:3])}. Pricing as makers state it."
         if len(desc)>158: desc=f"{h} (2026): {cnt}, including {', '.join(x['name'] for x in items[:2])}. Link-checked; pricing as stated."
         if len(desc)>158: desc=f"{h} (2026): {cnt}, including {items[0]['name']}. Link-checked; pricing as stated."
         if len(desc)>158: desc=desc[:157].rsplit(" ",1)[0]+"…"
+        if s in MERGED:
+            desc=f"{len(items)} free and open-source browser agents and automation tools, including {items[0]['name']} and {items[1]['name']}. From a link-checked directory of {ST['total']:,}."
+            if len(desc)>155: desc=f"{len(items)} free and open-source browser agents and automation tools, from a link-checked directory of {ST['total']:,} AI tools."
         pc=collections.Counter(x["pricing"] for x in items); cats=collections.Counter(x["category"] for x in allm).most_common()
         star=[x for x in items if x.get("github_stars")]
         osn=sum(1 for x in allm if x["pricing"] in OS); frn=sum(1 for x in allm if isfree(x))
@@ -278,6 +295,12 @@ def search_pages(t,m,asof):
              (f"How many {q} does AgentScout list?",f"{n} tools match. This page shows the top {len(items)}. Pricing mix on this page: "+", ".join(f"{k} ({v})" for k,v in pc.most_common())+"."),
              ("Are these tools really free?" if "free" in s else "How much do these tools cost?","Pricing is what each maker states on their site. Open-source tools are free to self-host but may need a paid model API key or offer paid cloud plans; freemium tools have a free plan with limits. Check each official site.")]
         if task in m: faq.append((f"Where can I see every tool for {m[task][0][1]}?",f"Our task page lists all {len(m[task][1])} tools we match to {m[task][0][1]}."))
+        if s in MERGED:
+            nos=sum(1 for x in items if x["pricing"] in OS)
+            faq=[("What are open source browser agents?",f"Open-source browser agents are tools with public source code that let an AI model drive a real web browser: open pages, click, type, fill forms and pull out data. {nos} of the {len(items)} tools on this page are open source, including "+", ".join(x["name"] for x in items[:3])+"."),
+                 ("What are the best free browser automation tools?","Ranked by tracked GitHub stars, the most popular free browser automation tools in our directory are "+", ".join(x["name"] for x in items[:5])+". Stars measure popularity, not fit, so try two or three on your own task."),
+                 ("Are these browser agents really free?",f"Every tool here is open source or has a free plan. Pricing mix on this page: "+", ".join(f"{k} ({v})" for k,v in pc.most_common())+". Open-source tools may still need a paid model API key, and some sell an optional hosted cloud."),
+                 (f"How many browser agents does AgentScout list?",f"{n} free or open-source tools match browser automation in our directory of {ST['total']:,} tools across {ST['categories']} categories. This page shows the top {len(items)}.")]
         fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(a)}</h3><p style="margin:0">{e(b)}</p>' for a,b in faq)
         rel=[f'<a href="../tasks/{task}.html">All tools for {e(m[task][0][1])}</a>'] if task in m else []
         if best: rel.append(f'<a href="../best/{best}.html">{e(next((p[1] for p in BB.PAGES if p[0]==best),"Best list"))}</a>')
@@ -300,6 +323,16 @@ def search_pages(t,m,asof):
               f'<p style="margin-top:28px">Related: {" · ".join(rel)}</p>'+(f'<p>Similar searches: {sibh}</p>' if sibh else "")+(f'<p>By role: {roleh}</p>' if roleh else "")+
               f'<p><a href="index.html">All popular searches</a> · <a href="../for/index.html">AI agents by role</a> · <a href="../free-tools.html">Free tools</a></p>'
               f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Check official sites before you choose.</p></section>')
+        if s in MERGED:
+            stat=(f'<div class="badges" style="margin:0 0 18px" aria-label="AgentScout directory stats"><span class="b"><b>{ST["total"]:,}</b>&nbsp;tools tracked</span><span class="b"><b>{ST["categories"]}</b>&nbsp;categories</span><span class="b">Links checked daily</span><span class="b">{len(items)} on this page</span></div>')
+            lede=(f'<p class="lede" style="margin-left:0;text-align:left">AgentScout tracks {ST["total"]:,} AI agent tools across {ST["categories"]} categories and checks every link daily. This page is one slice of that directory: the {len(items)} most-starred browser agents and browser automation tools you can use for free, {nos} of them fully open source. Each one links to its listing, code and official site, so you can judge it yourself.</p>')
+            why=('<h2 style="font-size:18px;margin:28px 0 6px">What browser agents are for</h2><p style="margin:0 0 18px">Browser agents let an AI model use the web the way a person does: open pages, click, type, log in and pull out data. Developers use them to automate repetitive web work, test UIs from plain-language steps, give coding agents like Claude Code or Cursor a live browser through MCP, and turn messy sites into clean, LLM-ready data. This list covers libraries, MCP servers, headless browsers, browser extensions and full desktop agents.</p>')
+            rels=[("../categories/browser-computer-use.html","Browser and computer-use agents (category)"),("../best/ai-browser-agents.html","Best AI browser agents"),("../best/browser-use-alternatives.html","Browser Use alternatives"),("../s/computer-use-agents.html","AI computer-use agents"),("../tasks/browsing-the-web.html","AI agents for browsing the web"),("../tasks/web-scraping.html","AI web scraping tools"),("../categories/mcp-servers.html","MCP servers"),("../s/free-mcp-servers.html","Free MCP servers")]
+            relh=('<h2 style="font-size:18px;margin:32px 0 6px">You might also like</h2><div class="badges">'+"".join(f'<a class="b uc" href="{u}">{e(l)}</a>' for u,l in rels)+'</div>')
+            body=body.replace(f'<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>',f'<h1 style="text-align:left;margin-left:0">{e(h)} and browser automation tools (2026)</h1>',1)
+            body=re.sub(r'<p class="lede".*?</p>'+re.escape(facts),lambda _:stat+lede+why+f'<h2 style="font-size:18px;margin:28px 0 6px">The {len(items)} tools</h2>',body,count=1,flags=re.S)
+            body=body.replace(f'<p style="margin-top:28px">Related: ',relh+f'<p style="margin-top:20px">Related: ',1)
+            body=body.replace('<p class="disclose">',f'<p style="margin-top:20px">Browser agents are one corner of AgentScout. <a href="../index.html#directory">Browse all {ST["total"]:,} tools across {ST["categories"]} categories</a> to find the rest of your agent stack.</p><p class="disclose">',1)
         open(f"s/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld))
     canon=B+"s/"; title="Popular AI Agent Tool Searches (2026) · AgentScout"
     desc=f"{len(made)} focused lists of AI agent tools: free coding agents, open-source browser agents, Python frameworks, MCP servers, voice and more."[:158]
@@ -365,5 +398,7 @@ def pages(t):
     BB.link_in("tasks/index.html",'each with the agent tools that handle it.',' Or browse <a href="../for/index.html">by role</a> and <a href="../s/">popular searches</a>.',' Or browse <a href="../for/index.html">by role</a>')
     BB.link_in("free-tools.html",'grouped by category.</p>',f'<p style="font-size:14px;margin:-6px 0 0">Looking for something specific? Try <a href="s/">popular searches</a> like <a href="s/free-ai-coding-agents.html">free AI coding agents</a> or browse <a href="for/index.html">AI agents by role</a>.</p>','href="s/"')
     BB.link_in("llms.txt",f"- [All best-of lists]({B}best/)",f"\n- [Popular searches]({B}s/)\n- [AI agents by role]({B}for/)\n- [Free tools: AI cost calculator]({B}free-tools/ai-cost-calculator.html)\n- [Free tools: token counter]({B}free-tools/token-counter.html)\n- [Free tools: prompt builder]({B}free-tools/prompt-builder.html)\n- [Free tools: agent setup generator]({B}free-tools/agent-setup-generator.html)",f"]({B}s/)")
+    # Oct 20 2026: inbound links to the merged browser-agents page from the homepage and the MCP servers category
+    BB.link_in("index.html",'<a href="s/index.html">Popular searches</a>',' · <a href="s/open-source-browser-agents.html">Free &amp; open-source browser agents</a>','href="s/open-source-browser-agents.html"')
     print("landing:",len(made),"search pages,",len(info),"role pages + 2 hubs")
     return su+ru

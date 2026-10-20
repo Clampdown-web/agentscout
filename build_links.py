@@ -34,7 +34,7 @@ def cost_pair(a,b):
     f=lambda x:x["category"] in {"coding","models & local runtimes","frameworks"} or bool(re.search(r"\bAPI\b",x["description"])) or cost_tool(x)
     return f(a) or f(b)
 # small categories with no list overlap: hand-picked, directly relevant pages
-MANUAL={"models & local runtimes":([],["ai-engineers"]),"games":([],["game-developers"])}
+MANUAL={"models & local runtimes":([],["ai-engineers"]),"games":([],["game-developers"]),"MCP servers":(["open-source-browser-agents"],[])}  # MCP servers -> merged browser-agents page (Oct 20 2026)
 def run(t):
     S=L.DATA["search"]; RO=L.DATA["roles"]; bys={x["slug"]:x for x in t}
     sname={a[0]:a[1] for a in S}; rname={r[0]:r[1] for r in RO}
@@ -97,8 +97,9 @@ def run(t):
     for c in cats:
         cs=X.catslug(c)
         n_=lambda a:sum(1 for y in a[4] if y["category"]==c)
-        rs=[a for a in S if n_(a)*10>=len(a[4])*3 or n_(a)>=5]+[a for a in S if a[0] in MANUAL.get(c,([],[]))[0]]
+        rs=[a for a in S if n_(a)*10>=len(a[4])*3 or n_(a)>=5]
         rs=sorted(rs,key=lambda a:-sum(1 for y in a[4] if y["category"]==c))[:6]
+        rs+=[a for a in S if a[0] in MANUAL.get(c,([],[]))[0] and a not in rs]  # manual picks are always kept (Oct 20 2026)
         ro=[(sum(1 for sl in r[4] if bys.get(sl,{}).get("category")==c),r) for r in RO]; ro=sorted(ro,key=lambda z:-z[0]/max(1,len(z[1][4]))); ro=([r for n,r in ro if n>=3 and n*100>=len(r[4])*15] or [r for n,r in ro[:1] if n>=2])[:4]
         ro+=[r for r in RO if r[0] in MANUAL.get(c,([],[]))[1] and r not in ro]
         html=""
@@ -177,7 +178,7 @@ def run(t):
     edit("submit.html",lambda s:put(s,"submit",'<p style="margin:0 0 16px;font-size:14.5px"><b>Prepare your listing:</b> describe what your agent does in a sentence or two. Our free <a href="free-tools/agent-setup-generator.html">agent setup generator</a> can draft a clear system prompt and starter config to share with users.</p>','<form id="sf"'))
     ft=" · ".join(f'<a href="free-tools/{s}.html">{e(n)}</a>' for s,n,_,_ in F.TOOLS)
     edit("generate.html",lambda s:put(s,"gen",f'<p style="margin:18px 0 0">More {X.BUILT_BY("").replace("Free AI","free AI",1)}: {ft} · <a href="free-tools.html">All free tools</a></p>','</section></main>'))
-    line=f'<p style="margin:18px 0 0;font-size:14px">Free tools: {ft} · Popular searches: <a href="s/free-ai-coding-agents.html">Free AI coding agents</a> · <a href="s/open-source-browser-agents.html">Open-source browser agents</a> · <a href="s/">All searches</a></p>'
+    line=f'<p style="margin:18px 0 0;font-size:14px">Free tools: {ft} · Popular searches: <a href="s/free-ai-coding-agents.html">Free AI coding agents</a> · <a href="s/open-source-browser-agents.html">Free &amp; open-source browser agents</a> · <a href="s/">All searches</a></p>'
     edit("news.html",lambda s:put(s,"news",line,'</section></main>'))
     edit("newsletter.html",lambda s:put(s,"nl",line,'</section></main>'))
     # (4) homepage
