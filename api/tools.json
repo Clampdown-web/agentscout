@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T09:37:17Z",
- "updated": "2026-10-20T09:37:17Z",
+ "generated": "2026-10-20T09:47:51Z",
+ "updated": "2026-10-20T09:47:51Z",
  "last_checked": "2026-10-20",
- "count": 1494,
+ "count": 1498,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -63179,6 +63179,177 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/what-should-my-bot-do.png",
    "page": "https://agentscouthq.com/tools/what-should-my-bot-do.html"
+  },
+  {
+   "name": "SEAL",
+   "slug": "seal",
+   "url": "https://seal.net/",
+   "website": "https://seal.net/",
+   "github": "",
+   "category": "MCP & infra",
+   "description": "SEAL is an MCP server (npx sealnet-mcp) that lets AI agents send and request files and secrets with end-to-end encryption. After a one-time pairing, reports and archives land in the user's SEAL inbox and the model only gets a handle, never the link or the secret. Also has a browser app, CLI and SDK; free up to 1 GB per seal.",
+   "key_features": [
+    "Free up to 1 GB per seal; larger transfers after a one-time payment",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Build an agent"
+   ],
+   "pricing": "Free up to 1 GB per seal; larger transfers after a one-time payment",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/seal.png",
+   "page": "https://agentscouthq.com/tools/seal.html"
+  },
+  {
+   "name": "ByteFlow",
+   "slug": "byteflow",
+   "url": "https://byteflow.bot/",
+   "website": "https://byteflow.bot/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "ByteFlow is a no-code builder for AI agents on top of the systems a company already runs (ERP, CRM, in-house and legacy apps) through APIs or a browser agent. Agents prepare the work, such as a CRM update or ERP entry, and a person approves it with one tap. Includes voice agents in 10+ Indian languages and document extraction.",
+   "key_features": [
+    "Paid; book a call for pricing",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Voice & phone calls"
+   ],
+   "pricing": "Paid; book a call for pricing",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/byteflow.png",
+   "page": "https://agentscouthq.com/tools/byteflow.html"
+  },
+  {
+   "name": "objekts Production Desk",
+   "slug": "objekts-production-desk",
+   "url": "https://objekts.ai/en/tools/production-desk",
+   "website": "https://objekts.ai/en/tools/production-desk",
+   "github": "https://github.com/peach420fuzz/objekts-production-desk",
+   "category": "MCP & infra",
+   "description": "objekts Production Desk is a free remote MCP server for planning AI/VFX, CGI, motion-design and animation production. Agents can check locked references, product, character and camera continuity, versioning risks and a sensible first proof of concept. Rough estimates only on request, and nothing is sent to the studio without the user's confirmation.",
+   "key_features": [
+    "Free remote MCP; production estimates on request",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free remote MCP; production estimates on request",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "peach420fuzz/objekts-production-desk",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/objekts-production-desk.png",
+   "page": "https://agentscouthq.com/tools/objekts-production-desk.html"
+  },
+  {
+   "name": "VirtualBudz BudBot",
+   "slug": "virtualbudz-budbot",
+   "url": "https://virtualbudz.com/",
+   "website": "https://virtualbudz.com/",
+   "github": "",
+   "category": "customer support",
+   "description": "VirtualBudz BudBot is an AI budtender for cannabis dispensary websites. It answers shoppers' product questions, recommends items from the live menu and builds carts around the clock, so customers get help even when staff are busy.",
+   "key_features": [
+    "$100 per store per month; free trial",
+    "Active",
+    "Research the web",
+    "Sales & support"
+   ],
+   "pricing": "$100 per store per month; free trial",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/virtualbudz-budbot.png",
+   "page": "https://agentscouthq.com/tools/virtualbudz-budbot.html"
   }
  ]
 }
