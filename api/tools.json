@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T09:05:42Z",
- "updated": "2026-10-20T09:05:42Z",
+ "generated": "2026-10-20T09:12:06Z",
+ "updated": "2026-10-20T09:12:06Z",
  "last_checked": "2026-10-20",
- "count": 1493,
+ "count": 1494,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -63130,6 +63130,52 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-barn.png",
    "page": "https://agentscouthq.com/tools/agent-barn.html"
+  },
+  {
+   "name": "What Should My Bot Do",
+   "slug": "what-should-my-bot-do",
+   "url": "https://whatshouldmybotdo.com/",
+   "website": "https://whatshouldmybotdo.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "What Should My Bot Do is a free AI agent planner for small businesses: answer 5 quick questions and get a first agent to set up, 3 next jobs to automate and copy-ready templates for Grok Bot, ChatGPT, Claude and n8n. No signup.",
+   "key_features": [
+    "Planner and templates free, no signup; optional paid routines pack",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Planner and templates free, no signup; optional paid routines pack",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "agent planner",
+    "templates",
+    "small business",
+    "n8n",
+    "no signup"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/what-should-my-bot-do.png",
+   "page": "https://agentscouthq.com/tools/what-should-my-bot-do.html"
   }
  ]
 }

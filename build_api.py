@@ -6,7 +6,11 @@ def tag(p):
     if "freemium" in p or "cloud" in p: return "freemium"
     if p in("see site",): return "unknown"
     return "paid"
+# Hand-checked platform overrides (Oct 20 2026 data cleanup): desktop editors were showing as "Web".
+PLAT={"cursor":["Desktop (macOS, Windows, Linux)"],"windsurf":["Desktop (macOS, Windows, Linux)","IDE extension"],"zed":["Desktop (macOS, Windows, Linux)"],"trae":["Desktop (macOS, Windows, Linux)"],
+ "github-copilot":["IDE extension","Web"],"lm-studio":["Desktop (macOS, Windows, Linux)"],"jan":["Desktop (macOS, Windows, Linux)"]}
 def platforms(x):
+    if x.get("slug") in PLAT: return PLAT[x["slug"]]
     a=x.get("audience","");c=x["category"]
     if a!="ready to use" or c in("frameworks","MCP & infra","evals & observability","memory & RAG","security & governance","sandboxes & code execution","models & local runtimes"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
     return ["Web"]
@@ -15,7 +19,9 @@ KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["
 def goals(x):
     txt=(x["name"]+" "+x["description"]).lower()
     return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
+DEV_CATS=("coding","frameworks","MCP & infra")  # always developer tools, even when "ready to use" (Cursor is not "no code needed")
 def skill(x):
+    if x["category"] in DEV_CATS: return "developer"
     return "no-code" if x.get("audience")=="ready to use" or x["category"] in("no-code builders","app builders","personal agents","business agents","customer support","sales & marketing") else "developer"
 LIC=__import__("re").compile(r"\b(AGPL[- ]?v?3(?:\.0)?|LGPL[- ]?v?[23](?:\.\d)?|GPL[- ]?v?[23](?:\.0)?|Apache[- ]?2(?:\.0)?|MIT|BSD[- ]?[23]-?Clause|BSD|MPL[- ]?2(?:\.0)?|Elastic License(?: 2\.0)?|SSPL)\b",2)
 def lic(x):
