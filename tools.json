@@ -2472,7 +2472,6 @@
     "id": 97,
     "use_cases": [
       "research the web",
-      "voice & phone calls",
       "connect tools via MCP"
     ],
     "slug": "proof-x401",
@@ -4223,8 +4222,8 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "voice & phone calls",
-      "automate workflows"
+      "automate workflows",
+      "build apps without code"
     ],
     "website": "",
     "github": "https://github.com/langflow-ai/langflow",
@@ -5079,7 +5078,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls"
+      "personal agents"
     ],
     "website": "",
     "github": "https://github.com/agentscope-ai/QwenPaw",
@@ -6042,8 +6041,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "research the web",
-      "voice & phone calls"
+      "research the web"
     ],
     "website": "https://screenpipe.com/",
     "github": "https://github.com/screenpipe/screenpipe",
@@ -6602,7 +6600,7 @@
     "use_cases": [
       "control a computer",
       "build multi-agent systems",
-      "voice & phone calls"
+      "automate workflows"
     ],
     "website": "https://www.eigent.ai/",
     "github": "https://github.com/eigent-ai/eigent",
@@ -6788,8 +6786,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "automate the browser",
-      "voice & phone calls"
+      "automate the browser"
     ],
     "website": "https://browseros.com/",
     "github": "https://github.com/browseros-ai/BrowserOS",
@@ -7740,8 +7737,7 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "build multi-agent systems",
-      "voice & phone calls"
+      "build multi-agent systems"
     ],
     "website": "https://ohmyopencodeslim.com/",
     "github": "https://github.com/alvinunreal/oh-my-opencode-slim",
@@ -8658,7 +8654,7 @@
     "name": "smolvm",
     "url": "https://smolmachines.com/",
     "description": "Portable, branchable virtual machine for running agents safely on your computer.",
-    "category": "MCP & infra",
+    "category": "sandboxes & code execution",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -8667,7 +8663,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "run code safely"
     ],
     "website": "https://smolmachines.com/",
     "github": "https://github.com/smol-machines/smolvm",
@@ -9086,7 +9082,7 @@
     "name": "Lemonade",
     "url": "https://lemonade-server.ai/",
     "description": "Local server that runs optimized LLMs on your GPU or NPU for local AI apps and agents.",
-    "category": "MCP & infra",
+    "category": "models & local runtimes",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -9095,8 +9091,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "automate workflows",
-      "connect tools via MCP"
+      "models & local runtimes"
     ],
     "website": "https://lemonade-server.ai/",
     "github": "https://github.com/lemonade-sdk/lemonade",
@@ -9654,7 +9649,6 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
       "connect tools via MCP"
     ],
     "website": "https://www.aci.dev/",
@@ -10977,8 +10971,7 @@
     "verified": "2026-10-16",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
-      "voice & phone calls"
+      "build an agent"
     ],
     "website": "https://tanstack.com/ai/latest",
     "github": "https://github.com/TanStack/ai",
@@ -17188,8 +17181,8 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "voice & phone calls",
-      "connect tools via MCP"
+      "connect tools via MCP",
+      "give agents memory"
     ],
     "website": "https://docs.headroomlabs.ai/docs",
     "github": "https://github.com/headroomlabs-ai/headroom",
@@ -18569,7 +18562,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
       "connect tools via MCP"
     ],
     "website": "https://mcporter.sh/",
@@ -18773,8 +18765,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "write code",
-      "voice & phone calls"
+      "write code"
     ],
     "website": "https://kiro.dev/crew/",
     "github": "https://github.com/kirodotdev/KiroCrew",
@@ -19364,8 +19355,8 @@
     "pricing_detail": "",
     "use_cases": [
       "build an agent",
-      "voice & phone calls",
-      "automate workflows"
+      "automate workflows",
+      "monitor & evaluate agents"
     ],
     "website": "https://anative-lab.github.io/EvoAgentX/",
     "github": "https://github.com/ANative-Lab/EvoAgentX",
@@ -19545,7 +19536,6 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "voice & phone calls",
       "monitor & evaluate agents"
     ],
     "website": "https://zeron.sh/",
@@ -20967,7 +20957,7 @@
     "source": "awesome lists",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls"
+      "models & local runtimes"
     ],
     "website": "https://ollama.com/",
     "github": "https://github.com/ollama/ollama",
@@ -24314,7 +24304,6 @@
     "source": "AI Agents Directory",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
       "sales & support"
     ],
     "website": "https://forethought.ai/",
@@ -27300,8 +27289,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
-      "voice & phone calls"
+      "build an agent"
     ],
     "website": "",
     "github": "https://github.com/amd/gaia",
@@ -27740,8 +27728,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
-      "voice & phone calls"
+      "build an agent"
     ],
     "website": "https://mirascope.com/",
     "github": "https://github.com/Mirascope/mirascope",
@@ -27792,7 +27779,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
       "connect tools via MCP",
       "give agents memory"
     ],
@@ -38118,7 +38104,6 @@
     "source": "Submission",
     "pricing_detail": "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
     "use_cases": [
-      "voice & phone calls",
       "connect tools via MCP"
     ],
     "website": "https://relay.remotify.run/",

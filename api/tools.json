@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-20T15:40:39Z",
- "updated": "2026-10-20T15:40:39Z",
+ "generated": "2026-10-20T15:47:37Z",
+ "updated": "2026-10-20T15:47:37Z",
  "last_checked": "2026-10-20",
  "count": 1546,
  "tools": [
@@ -4077,7 +4077,6 @@
     "Open protocol; websites can pay per verified identity claim over x402, basic claims need no sales process",
     "Live; production launch Oct 15, 2026",
     "Research the web",
-    "Voice & phone calls",
     "Connect tools via mcp"
    ],
    "pricing": "Open protocol; websites can pay per verified identity claim over x402, basic claims need no sales process",
@@ -4102,7 +4101,6 @@
    "license": "",
    "tags": [
     "research the web",
-    "voice & phone calls",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -6968,8 +6966,8 @@
     "Mature",
     "155757 GitHub stars",
     "Write code",
-    "Voice & phone calls",
-    "Automate workflows"
+    "Automate workflows",
+    "Build apps without code"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -6994,8 +6992,8 @@
    "license": "",
    "tags": [
     "write code",
-    "voice & phone calls",
-    "automate workflows"
+    "automate workflows",
+    "build apps without code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/langflow.png",
@@ -8354,8 +8352,7 @@
    "key_features": [
     "Open source",
     "Mature",
-    "35761 GitHub stars",
-    "Voice & phone calls"
+    "35761 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -8378,7 +8375,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls"
+    "personal agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/qwenpaw.png",
@@ -9914,8 +9911,7 @@
     "Source-available + cloud",
     "Mature",
     "21958 GitHub stars",
-    "Research the web",
-    "Voice & phone calls"
+    "Research the web"
    ],
    "pricing": "Source-available + cloud",
    "price_tag": "freemium",
@@ -9938,8 +9934,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web",
-    "voice & phone calls"
+    "research the web"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/screenpipe.png",
@@ -10817,7 +10812,7 @@
     "15571 GitHub stars",
     "Control a computer",
     "Build multi-agent systems",
-    "Voice & phone calls"
+    "Automate workflows"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -10842,7 +10837,7 @@
    "tags": [
     "control a computer",
     "build multi-agent systems",
-    "voice & phone calls"
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/eigent.png",
@@ -11118,8 +11113,7 @@
     "Open source",
     "Mature",
     "13953 GitHub stars",
-    "Automate the browser",
-    "Voice & phone calls"
+    "Automate the browser"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -11143,8 +11137,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "automate the browser",
-    "voice & phone calls"
+    "automate the browser"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/browseros.png",
@@ -12656,8 +12649,7 @@
     "Mature",
     "9588 GitHub stars",
     "Write code",
-    "Build multi-agent systems",
-    "Voice & phone calls"
+    "Build multi-agent systems"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -12682,8 +12674,7 @@
    "license": "",
    "tags": [
     "write code",
-    "build multi-agent systems",
-    "voice & phone calls"
+    "build multi-agent systems"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/oh-my-opencode-slim.png",
@@ -14150,13 +14141,13 @@
    "url": "https://smolmachines.com/",
    "website": "https://smolmachines.com/",
    "github": "https://github.com/smol-machines/smolvm",
-   "category": "MCP & infra",
+   "category": "sandboxes & code execution",
    "description": "Portable, branchable virtual machine for running agents safely on your computer.",
    "key_features": [
     "Open source",
     "Mature",
     "6746 GitHub stars",
-    "Connect tools via mcp"
+    "Run code safely"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -14168,7 +14159,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -14180,7 +14171,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "run code safely"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/smolvm.png",
@@ -14843,14 +14834,12 @@
    "url": "https://lemonade-server.ai/",
    "website": "https://lemonade-server.ai/",
    "github": "https://github.com/lemonade-sdk/lemonade",
-   "category": "MCP & infra",
+   "category": "models & local runtimes",
    "description": "Local server that runs optimized LLMs on your GPU or NPU for local AI apps and agents.",
    "key_features": [
     "Open source",
     "Mature",
-    "5915 GitHub stars",
-    "Automate workflows",
-    "Connect tools via mcp"
+    "5915 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -14862,7 +14851,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -14874,8 +14863,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "automate workflows",
-    "connect tools via MCP"
+    "models & local runtimes"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/lemonade.png",
@@ -15754,7 +15742,6 @@
     "Open source + cloud",
     "Active",
     "4911 GitHub stars",
-    "Voice & phone calls",
     "Connect tools via mcp"
    ],
    "pricing": "Open source + cloud",
@@ -15779,7 +15766,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -17896,8 +17882,7 @@
     "Open source",
     "Active",
     "3199 GitHub stars",
-    "Build an agent",
-    "Voice & phone calls"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -17921,8 +17906,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "voice & phone calls"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tanstack-ai.png",
@@ -28023,8 +28007,8 @@
     "Mature",
     "75629 GitHub stars",
     "Write code",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Connect tools via mcp",
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -28050,8 +28034,8 @@
    "license": "",
    "tags": [
     "write code",
-    "voice & phone calls",
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/headroom.png",
@@ -30357,7 +30341,6 @@
     "Open source",
     "Mature",
     "5069 GitHub stars",
-    "Voice & phone calls",
     "Connect tools via mcp"
    ],
    "pricing": "Open source",
@@ -30382,7 +30365,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -30698,8 +30680,7 @@
     "Open source",
     "Active",
     "4478 GitHub stars",
-    "Write code",
-    "Voice & phone calls"
+    "Write code"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -30723,8 +30704,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
-    "voice & phone calls"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/kiro-crew.png",
@@ -31691,8 +31671,8 @@
     "Active",
     "3385 GitHub stars",
     "Build an agent",
-    "Voice & phone calls",
-    "Automate workflows"
+    "Automate workflows",
+    "Monitor & evaluate agents"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -31717,8 +31697,8 @@
    "license": "",
    "tags": [
     "build an agent",
-    "voice & phone calls",
-    "automate workflows"
+    "automate workflows",
+    "monitor & evaluate agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/evoagentx.png",
@@ -31995,7 +31975,6 @@
     "Active",
     "3287 GitHub stars",
     "Write code",
-    "Voice & phone calls",
     "Monitor & evaluate agents"
    ],
    "pricing": "Open source",
@@ -32020,7 +31999,6 @@
    "license": "",
    "tags": [
     "write code",
-    "voice & phone calls",
     "monitor & evaluate agents"
    ],
    "hybrid": false,
@@ -34375,8 +34353,7 @@
    "key_features": [
     "Open source",
     "Mature",
-    "183684 GitHub stars",
-    "Voice & phone calls"
+    "183684 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -34400,7 +34377,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls"
+    "models & local runtimes"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ollama.png",
@@ -40071,7 +40048,6 @@
    "key_features": [
     "See site",
     "Active",
-    "Voice & phone calls",
     "Sales & support"
    ],
    "pricing": "See site",
@@ -40095,7 +40071,6 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "voice & phone calls",
     "sales & support"
    ],
    "hybrid": false,
@@ -45146,8 +45121,7 @@
     "Open source",
     "Active",
     "1586 GitHub stars",
-    "Build an agent",
-    "Voice & phone calls"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -45171,8 +45145,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "voice & phone calls"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/amd-gaia.png",
@@ -45885,8 +45858,7 @@
     "Open source",
     "Active",
     "1533 GitHub stars",
-    "Build an agent",
-    "Voice & phone calls"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -45910,8 +45882,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "voice & phone calls"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/mirascope.png",
@@ -45973,7 +45944,6 @@
     "Open source + cloud",
     "Mature",
     "31281 GitHub stars",
-    "Voice & phone calls",
     "Connect tools via mcp",
     "Give agents memory"
    ],
@@ -45999,7 +45969,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
     "connect tools via MCP",
     "give agents memory"
    ],
@@ -63402,7 +63371,6 @@
     "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
     "Active",
     "3 GitHub stars",
-    "Voice & phone calls",
     "Connect tools via mcp"
    ],
    "pricing": "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
@@ -63427,7 +63395,6 @@
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
-    "voice & phone calls",
     "connect tools via MCP"
    ],
    "hybrid": false,
