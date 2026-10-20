@@ -10,10 +10,12 @@
       if (!s && W.goal.requireMatch) return -1;
     }
     var sk = t.skill === 'no-code' ? 'no-code' : 'developer';
+    if (a.skill === 'no-code' && sk !== 'no-code') return -1;      // "No code, please" is a hard filter (Oct 20 2026)
+    if (a.oss === 'yes' && !(t.open_source || t.openSource)) return -1; // "Yes, open source" keeps only open-source tools
     if (W.skill[a.skill]) s += W.skill[a.skill][sk] || 0;
     var p = t.price_tag || t.priceTag || 'unknown';
     if (W.budget[a.budget]) s += W.budget[a.budget][p] || 0;
-    if (W.oss[a.oss]) s += W.oss[a.oss][t.github ? 'github' : 'none'];
+    if (W.oss[a.oss]) s += W.oss[a.oss][(t.open_source || t.openSource) ? 'github' : 'none'];
     if (t.weekly_pick || t.weeklyPick) s += W.bonus.weekly_pick;
     if (t.logo) s += W.bonus.logo;
     return s;
