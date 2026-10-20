@@ -1,0 +1,24 @@
+function $(i){return document.getElementById(i)}function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var W="https://agentscout-image.agentscouthq.workers.dev/readiness";
+function row(ok,label,note,w){var i=ok===true?"✅":(w?"⚠️":"❌");return'<li style="margin:0 0 10px;list-style:none"><span aria-hidden="true">'+i+'</span> <b>'+esc(label)+'</b>'+(note?'<br><span class="muted" style="font-size:13.5px;overflow-wrap:anywhere">'+note+'</span>':'')+'</li>'}
+function show(d){if(d.error){$("rout").innerHTML='<p class="empty">'+esc(d.error)+'</p>';return}if(!d.reachable){$("rout").innerHTML='<p class="empty">We couldn\'t reach '+esc(d.site)+'. Check the address and try again.</p>';return}
+var h=d.home,b=d.robots.ai_bots_blocked||{},bl=Object.keys(b).filter(function(k){return b[k]}),R=[],sc=0,mx=0;
+function add(ok,wt,l,n,w){mx+=wt;if(ok)sc+=wt;R.push(row(ok,l,n,w))}
+add(h.status===200&&h.https,10,"Homepage loads over HTTPS",h.status===200?(h.https?"":"The site didn't end up on https://."):"The homepage returned status "+h.status+".");
+add(d.llms_txt.found,15,"llms.txt",d.llms_txt.found?(d.llms_txt.has_title?"Found, with a title":"Found, but it should start with a # Title line")+(d.llms_txt.links?", "+d.llms_txt.links+" links.":"."):'Not found. <a href="llms-txt-generator.html">Create one free</a>.');
+add(d.robots.found,10,"robots.txt",d.robots.found?"Found.":"Not found. Crawlers will assume everything is allowed.",true);
+add(bl.length===0,15,"AI crawlers allowed",bl.length?"Blocked in robots.txt: "+esc(bl.join(", "))+". Blocked bots can't read or cite your site.":"No AI crawler is blocked from the whole site.",true);
+add(d.sitemap.found||d.robots.sitemap_listed,10,"Sitemap",d.sitemap.found?"Found at /sitemap.xml"+(d.robots.sitemap_listed?" and listed in robots.txt.":". Tip: list it in robots.txt too."):d.robots.sitemap_listed?"Listed in robots.txt.":"No /sitemap.xml found.",true);
+add(!!h.title&&!!h.description,10,"Title and description",h.title?"Title: "+esc(h.title)+(h.description?"":" · No meta description."):"No page title.",true);
+add(h.json_ld,10,"Structured data (JSON-LD)",h.json_ld?"Found on the homepage.":"None on the homepage. Schema.org data helps AI understand what you offer.",true);
+add(h.open_graph,5,"Open Graph tags",h.open_graph?"Found.":"Missing. Links to your site will show without a preview.",true);
+add(h.text_chars>=500,5,"Readable homepage text",h.text_chars>=500?h.text_chars.toLocaleString()+" characters of text in the HTML.":"Only "+h.text_chars+" characters of text in the HTML. Agents that don't run JavaScript may see an empty page.",true);
+add(!h.noindex,5,"Indexable",h.noindex?"The homepage has a noindex tag.":"No noindex tag.");
+var ag=d.mcp_json.found||d.agent_card.found||d.ai_plugin.found||d.openapi.found;
+add(ag,5,"Agent files (optional)",[["MCP manifest",d.mcp_json.found],["A2A agent card",d.agent_card.found],["ai-plugin.json",d.ai_plugin.found],["openapi.json",d.openapi.found]].map(function(x){return(x[1]?"✓ ":"✗ ")+x[0]}).join(" · "),true);
+var p=Math.round(sc/mx*100),g=p>=80?"Ready":p>=55?"Partly ready":"Not ready yet";
+$("rout").innerHTML='<div style="border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0;background:var(--card)"><h2 style="font-size:20px;margin:0 0 4px">'+p+'/100 · '+g+'</h2><p class="muted" style="margin:0 0 14px;font-size:14px;overflow-wrap:anywhere">'+esc(d.site)+' · checked '+new Date(d.checked).toLocaleString()+'</p><ul style="padding:0;margin:0">'+R.join("")+'</ul></div>'}
+$("rf").addEventListener("submit",function(ev){ev.preventDefault();var u=$("ru").value.trim();if(!u)return;$("rb").disabled=true;$("rout").innerHTML='<p class="muted">Checking '+esc(u)+'…</p>';
+try{history.replaceState(null,"","#"+encodeURIComponent(u))}catch(e){}
+fetch(W+"?url="+encodeURIComponent(u)).then(function(r){return r.json()}).then(show).catch(function(){$("rout").innerHTML='<p class="empty">The check failed. Please try again in a minute.</p>'}).finally(function(){$("rb").disabled=false})});
+var hs=decodeURIComponent(location.hash.slice(1));if(hs){$("ru").value=hs;$("rf").requestSubmit()}

@@ -185,7 +185,7 @@ def see_all_card(d=""):
             f'<div class="tn"><h3>See all free tools →</h3><div class="badges"><span class="b new">Free</span></div></div></div><p class="hook">All {len(TOOLS)} calculators and generators in one place. No sign-up.</p></div>')
 def pages(t):
     P=json.load(open("assets/ai-prices.json"))
-    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t),linter(t),ctxplan(t),license(t),bvb(t),mcppick(t),jsonval(t),cmpcard(t)]
+    urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t),linter(t),ctxplan(t),license(t),bvb(t),mcppick(t),jsonval(t),cmpcard(t),ready(t)]
     # /free-tools/ folder URL -> hub (not in sitemap)
     open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
     print("free tools:",len(urls),"pages")
@@ -523,7 +523,6 @@ F.map(function(x){return x[0]}).concat(["hy"]).forEach(function(i){$(i).addEvent
     return wrap("build-vs-buy-calculator","Build vs buy AI agent calculator","Compare self-hosting an open-source AI agent with paying for a hosted tool: setup, hosting, model API, maintenance time and seats, over 12, 24 or 36 months, with the break-even month.",inner,faq,js,t)
 
 # ---- Batch C, Oct 20 2026: MCP server picker, JSON output validator, comparison card maker (all browser-only).
-# The AI Agent Readiness Checker was not built: browsers block cross-site fetches and the existing Worker has no read-only fetch route.
 TOOLS+=[
 ("mcp-server-picker","MCP Server Picker","Tick the apps you use, like GitHub, Slack, Notion or Postgres, and find matching MCP servers in the AgentScout directory.","🧲"),
 ("json-output-validator","JSON Output Schema Validator","Paste a JSON Schema and a model's output to see if it passes, with exact error paths and OpenAI strict-mode checks.","✅"),
@@ -638,3 +637,20 @@ var h=location.hash.slice(1).split(",").map(decodeURIComponent).filter(Boolean);
          ("How many tools can I compare?","Two or three at a time."),
          ("Is it free?","Yes. No sign-up, and it runs in your browser.")]
     return wrap("ai-tool-comparison-card","AI tool comparison card maker","Pick two or three AI tools from the AgentScout directory and get a side-by-side comparison of pricing, open source, platforms and GitHub stars, plus a shareable image card.",inner,faq,js,t)
+
+
+# ---- Oct 20 2026: AI Agent Readiness Checker. Uses the Worker's read-only GET /readiness route (owner-approved), which fetches a fixed list
+# of public files on one site and returns only derived checks.
+TOOLS+=[("ai-agent-readiness-checker","AI Agent Readiness Checker","Enter a website and see how ready it is for AI agents and AI search: llms.txt, robots.txt AI crawler rules, sitemap, structured data, MCP and agent files.","🛰️")]
+REL["ai-agent-readiness-checker"]=(["free-mcp-servers","web-search-apis-for-ai-agents"],["founders","marketers","developers"])
+def ready(t):
+    inner=(f'<div {BOX}><form id="rf"><label {LAB} for="ru">Website address</label><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="ru" inputmode="url" autocomplete="url" placeholder="example.com" {INP.replace("width:100%","flex:1 1 220px;min-width:0")}>'
+           '<button class="btn primary" type="submit" id="rb">Check site</button></div></form><p class="muted" style="font-size:13px;margin:8px 0 0">We read only public files: the homepage, robots.txt, sitemap.xml, llms.txt and a few standard agent files. Nothing is stored.</p></div>'
+           '<div id="rout" aria-live="polite"></div>'
+           '<h2 style="font-size:18px;margin:28px 0 6px">What it checks</h2><p><b>llms.txt</b> (a Markdown map of your site for AI models; make one with the <a href="llms-txt-generator.html">llms.txt generator</a>), <b>robots.txt</b> rules for AI crawlers such as GPTBot, ClaudeBot, PerplexityBot and Google-Extended, a <b>sitemap</b>, <b>structured data</b> (JSON-LD), page title, description and Open Graph tags, readable text on the homepage, and machine-readable agent files: <code>/.well-known/mcp.json</code>, <code>/.well-known/agent.json</code> (A2A agent card), <code>ai-plugin.json</code> and <code>openapi.json</code>.</p>')
+    js=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"free_tools_js","readiness.js")).read()
+    faq=[("What is AI agent readiness?","How easily AI agents, assistants and AI search engines can find, read and use your site: whether their crawlers are allowed, whether there's an llms.txt map, a sitemap, structured data and machine-readable agent files."),
+         ("How is the score worked out?","Each check has a weight (llms.txt and AI crawler access count most). The score is the share of weights your site passes. It's a quick guide, not an official standard."),
+         ("Is anything stored?","No. We fetch only public files from the site you enter and keep the result in a short cache for 10 minutes. You can check up to 10 sites a minute."),
+         ("Why does my site say it can't be reached?","Some sites block automated requests or take longer than 6 seconds to answer. Only public web addresses can be checked.")]
+    return wrap("ai-agent-readiness-checker","AI agent readiness checker","Enter any website and see how ready it is for AI agents and AI search: llms.txt, AI crawler rules in robots.txt, sitemap, structured data, and MCP or agent files, with a score and fixes.",inner,faq,js,t)

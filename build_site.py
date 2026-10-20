@@ -154,7 +154,11 @@ _sync_index_counts()
 import build_recent
 build_recent.build(t)
 
-import build_sponsor; build_sponsor.page(t)  # hidden sponsor page: noindex, not in sitemap, not linked (Oct 18 2026)
+import build_sponsor
+# sponsor.html is frozen (Oct 20 2026): rebuilt only when missing or SPONSOR_REBUILD=1, and restored byte-for-byte at the end of the
+# build so sitewide passes (asset versions, nav, footer, live stats) never touch the hidden page.
+_SP=open("sponsor.html","rb").read() if os.path.exists("sponsor.html") and os.environ.get("SPONSOR_REBUILD")!="1" else None
+if _SP is None: build_sponsor.page(t)  # hidden sponsor page: noindex, not in sitemap, not linked (Oct 18 2026)
 import build_tasks
 build_tasks.sitewide(t)
 import build_sections
@@ -170,6 +174,7 @@ import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
 build_logocheck.listings_gate()  # stop the build if any tool link in a listing lacks its logo (Oct 18 2026)
 import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
+if _SP is not None: open("sponsor.html","wb").write(_SP)  # keep the hidden sponsor page untouched
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)

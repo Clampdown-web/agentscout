@@ -82,7 +82,9 @@ def pages(t):
     keep={sl for _,sl,_ in made}
     for f in glob.glob("best/*-alternatives.html"):
         b=os.path.basename(f)[:-5]
-        if b!="cursor-alternatives" and b not in keep: os.remove(f)
+        # Never delete a published alternatives page (Oct 20 2026): the word-count gate above flips with data changes, which used to
+        # remove pages like best/cognee-alternatives.html that are indexed. Pages not rebuilt this run keep their last good version.
+        if b!="cursor-alternatives" and b not in keep: print("alternatives: kept existing (not rebuilt this run):",f)
     # tool page link (one line, no repeated list)
     for x,sl,k in made:
         p=f"tools/{x['slug']}.html"
