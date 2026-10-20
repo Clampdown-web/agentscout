@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T08:36:13Z",
- "updated": "2026-10-20T08:36:13Z",
+ "generated": "2026-10-20T09:03:35Z",
+ "updated": "2026-10-20T09:03:35Z",
  "last_checked": "2026-10-20",
- "count": 1490,
+ "count": 1493,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -62978,6 +62978,158 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/halofy.png",
    "page": "https://agentscouthq.com/tools/halofy.html"
+  },
+  {
+   "name": "Robylon",
+   "slug": "robylon",
+   "url": "https://www.robylon.ai/",
+   "website": "https://www.robylon.ai/",
+   "github": "",
+   "category": "customer support",
+   "description": "Robylon builds AI customer-support agents that resolve tickets across email, chat, voice and WhatsApp, connect to helpdesks like Zendesk, Freshdesk and Intercom, take actions such as refunds and order updates, and hand hard cases to a person.",
+   "key_features": [
+    "Free Starter plan (300 credits/month); Pro from $25/mo; Business from $180/mo",
+    "Active",
+    "Write code",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "Free Starter plan (300 credits/month); Pro from $25/mo; Business from $180/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "sales & support",
+    "customer support",
+    "helpdesk",
+    "voice",
+    "whatsapp",
+    "chat",
+    "zendesk"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/robylon.png",
+   "page": "https://agentscouthq.com/tools/robylon.html"
+  },
+  {
+   "name": "Monobot.AI",
+   "slug": "monobot-ai",
+   "url": "https://monobot.ai/",
+   "website": "https://monobot.ai/",
+   "github": "",
+   "category": "no-code builders",
+   "description": "Monobot.AI is a no-code platform for building voice and chat AI agents that handle customer support, bookings, reservations and routine business calls, with a workspace for managing agents and integrations with CRMs and other tools.",
+   "key_features": [
+    "Starter $200/mo, Growth $500/mo, Business $1,000/mo; Enterprise custom",
+    "Active",
+    "Write code",
+    "Voice & phone calls",
+    "Build apps without code"
+   ],
+   "pricing": "Starter $200/mo, Growth $500/mo, Business $1,000/mo; Enterprise custom",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation",
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "build apps without code",
+    "voice agents",
+    "chat agents",
+    "no-code",
+    "call automation",
+    "bookings"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/monobot-ai.png",
+   "page": "https://agentscouthq.com/tools/monobot-ai.html"
+  },
+  {
+   "name": "Agent Barn",
+   "slug": "agent-barn",
+   "url": "https://agentbarn.dev/",
+   "website": "https://agentbarn.dev/",
+   "github": "https://github.com/aai-labs/agent-barn",
+   "category": "MCP & infra",
+   "description": "Agent Barn is an open-source (Apache-2.0) control plane for running a fleet of AI agents on your own Kubernetes: create, configure, run and monitor agents across Slack, Microsoft Teams and Telegram from one place.",
+   "key_features": [
+    "Self-hosted free (Apache-2.0); Cloud free for a limited time; supervised pilot $1,000",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Self-hosted free (Apache-2.0); Cloud free for a limited time; supervised pilot $1,000",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents",
+    "kubernetes",
+    "control plane",
+    "self-hosted",
+    "slack",
+    "teams",
+    "telegram",
+    "open source"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-barn.png",
+   "page": "https://agentscouthq.com/tools/agent-barn.html"
   }
  ]
 }

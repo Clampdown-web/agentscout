@@ -37783,5 +37783,107 @@
     "id": 1509,
     "slug": "halofy",
     "logo": "assets/logos/halofy.png"
+  },
+  {
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-19",
+    "name": "Robylon",
+    "url": "https://www.robylon.ai/",
+    "website": "https://www.robylon.ai/",
+    "slug": "robylon",
+    "logo": "assets/logos/robylon.png",
+    "category": "customer support",
+    "pricing": "Freemium",
+    "audience": "ready to use",
+    "description": "Robylon builds AI customer-support agents that resolve tickets across email, chat, voice and WhatsApp, connect to helpdesks like Zendesk, Freshdesk and Intercom, take actions such as refunds and order updates, and hand hard cases to a person.",
+    "pricing_detail": "Free Starter plan (300 credits/month); Pro from $25/mo; Business from $180/mo",
+    "use_cases": [
+      "write code",
+      "voice & phone calls",
+      "sales & support"
+    ],
+    "tags": [
+      "customer support",
+      "helpdesk",
+      "voice",
+      "whatsapp",
+      "chat",
+      "zendesk"
+    ],
+    "id": 1510
+  },
+  {
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-19",
+    "name": "Monobot.AI",
+    "url": "https://monobot.ai/",
+    "website": "https://monobot.ai/",
+    "slug": "monobot-ai",
+    "logo": "assets/logos/monobot-ai.png",
+    "category": "no-code builders",
+    "pricing": "Paid",
+    "audience": "ready to use",
+    "description": "Monobot.AI is a no-code platform for building voice and chat AI agents that handle customer support, bookings, reservations and routine business calls, with a workspace for managing agents and integrations with CRMs and other tools.",
+    "pricing_detail": "Starter $200/mo, Growth $500/mo, Business $1,000/mo; Enterprise custom",
+    "use_cases": [
+      "write code",
+      "voice & phone calls",
+      "build apps without code"
+    ],
+    "tags": [
+      "voice agents",
+      "chat agents",
+      "no-code",
+      "call automation",
+      "bookings"
+    ],
+    "id": 1511
+  },
+  {
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-19",
+    "name": "Agent Barn",
+    "url": "https://agentbarn.dev/",
+    "website": "https://agentbarn.dev/",
+    "github": "https://github.com/aai-labs/agent-barn",
+    "slug": "agent-barn",
+    "logo": "assets/logos/agent-barn.png",
+    "category": "MCP & infra",
+    "pricing": "Open source + cloud",
+    "audience": "builders",
+    "description": "Agent Barn is an open-source (Apache-2.0) control plane for running a fleet of AI agents on your own Kubernetes: create, configure, run and monitor agents across Slack, Microsoft Teams and Telegram from one place.",
+    "pricing_detail": "Self-hosted free (Apache-2.0); Cloud free for a limited time; supervised pilot $1,000",
+    "use_cases": [
+      "connect tools via MCP",
+      "monitor & evaluate agents"
+    ],
+    "tags": [
+      "kubernetes",
+      "control plane",
+      "self-hosted",
+      "slack",
+      "teams",
+      "telegram",
+      "open source"
+    ],
+    "id": 1512
   }
 ]
