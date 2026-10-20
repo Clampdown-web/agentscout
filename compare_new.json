@@ -33,5 +33,7 @@
  "choose": ["you want a general platform of prebuilt agentic workers you can deploy across roles and departments.", "your main goal is employee support: answering staff questions and resolving IT and HR requests across your business apps."]},
 "virtuals-protocol-vs-olas-autonolas": {"best": ["People who want to launch, co-own or use tokenized AI agents that transact with each other", "Developers and users who want an open-source stack (Open Autonomy, the Pearl app) to run and co-own autonomous on-chain agents"],
  "choose": ["you want to launch or take part in tokenized agents that trade services with other agents on-chain.", "you want to run autonomous on-chain agents yourself on an open-source stack, for example through the Pearl app."]},
-"_note": "Recommendation copy for comparison pages added Oct 18 2026. Built only from tools.json listing facts and tool_rich.json (official pricing pages)."
+"_note": "Recommendation copy for comparison pages added Oct 18 2026. Built only from tools.json listing facts and tool_rich.json (official pricing pages).",
+"mem0-vs-zep": {"best": ["Developers who want an open-source memory layer they can run themselves, with a managed platform that has a free plan", "Teams that want a managed context layer joining business data, documents and conversations, with cloud or VPC deployment"],
+ "choose": ["you want an Apache-2.0 SDK you can self-host, or a managed platform with a free Hobby plan and paid plans from $19/mo.", "you want a managed, credit-based context layer that unifies business data, documents and chat history, with a free plan, Flex plans from $125/mo and enterprise VPC deployment."]}
 }

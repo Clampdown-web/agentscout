@@ -32,6 +32,11 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 UC_SET={"agent-resource-market":["build multi-agent systems"],
+# Oct 20, 2026 PT weekly batch: keyword rules mis-tagged these (e.g. "extracts" -> monitor, "browser interface" -> browser automation, "phone number" -> code), so pinned by hand
+"mem0":["give agents memory","build an agent"],"zcode":["write code","build multi-agent systems"],"andee":["control a computer","voice & phone calls"],
+"bops":["automate workflows","control a computer","voice & phone calls"],"graphicle":["give agents memory","write code","connect tools via MCP"],"shipyard":["write code"],
+"puter-ai-builder":["build apps without code"],"agentenv-framework":["monitor & evaluate agents","build an agent","connect tools via MCP"],"vicoa":["write code","build multi-agent systems"],
+"halofy":["run code safely","connect tools via MCP"],"hiroute":["write code"],"sentio":["automate workflows","connect tools via MCP"],"agent-tincan":["build multi-agent systems","connect tools via MCP"],
 "robottraining-jobs":["connect tools via MCP","research the web"],  # Oct 19 PT audit: "hiring data" tripped the customer/sales rule; it is a job board + MCP server, not customer support
 "ceofans":["business agents","automate workflows"],
 "9bot":["connect tools via MCP","automate workflows"],

@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T01:17:57Z",
- "updated": "2026-10-20T01:17:57Z",
- "last_checked": "2026-10-19",
- "count": 1472,
+ "generated": "2026-10-20T08:36:13Z",
+ "updated": "2026-10-20T08:36:13Z",
+ "last_checked": "2026-10-20",
+ "count": 1490,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -3495,14 +3495,15 @@
    "website": "https://mem0.ai",
    "github": "https://github.com/mem0ai/mem0",
    "category": "memory & RAG",
-   "description": "Memory layer for AI agents.",
+   "description": "Mem0 is an open-source memory layer for AI agents that extracts facts from conversations in a single add-only pass, links entities across memories and retrieves them in later sessions, with an Apache-2.0 SDK and a managed platform.",
    "key_features": [
-    "Open source + paid cloud",
+    "Open source SDK (Apache-2.0); managed platform: Hobby free, Starter $19/mo, Pro $249/mo, Enterprise custom",
     "Mature",
     "67147 GitHub stars",
-    "Give agents memory"
+    "Give agents memory",
+    "Build an agent"
    ],
-   "pricing": "Open source + paid cloud",
+   "pricing": "Open source SDK (Apache-2.0); managed platform: Hobby free, Starter $19/mo, Pro $249/mo, Enterprise custom",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -3522,9 +3523,10 @@
    "repo": "mem0ai/mem0",
    "github_stars": 67147,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
-    "give agents memory"
+    "give agents memory",
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/mem0.png",
@@ -38706,13 +38708,13 @@
    "category": "memory & RAG",
    "description": "Context layer that unifies business data, documents and conversations into memory so agents complete tasks correctly.",
    "key_features": [
-    "See site",
+    "Free plan (10,000 credits/month); Flex $125/mo, Flex Plus $375/mo (billed monthly); Enterprise custom",
     "Active",
     "4966 GitHub stars",
     "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan (10,000 credits/month); Flex $125/mo, Flex Plus $375/mo (billed monthly); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -62196,6 +62198,786 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/xquik.png",
    "page": "https://agentscouthq.com/tools/xquik.html"
+  },
+  {
+   "name": "ZCode",
+   "slug": "zcode",
+   "url": "https://zcode.z.ai/en",
+   "website": "https://zcode.z.ai/en",
+   "github": "https://github.com/zai-org/ZCode",
+   "category": "coding",
+   "description": "ZCode is Z.ai's open-source AI coding workspace and official harness for GLM-5.3, with a desktop app, web interface and terminal agent that run multiple agents on long goals, plus control from WeChat, Feishu or Telegram.",
+   "key_features": [
+    "Free, open-source app (Apache-2.0); Z.ai's GLM Coding Plan subscriptions (Lite, Pro, Max) are sold separately on z.ai",
+    "Mature",
+    "8014 GitHub stars",
+    "Write code",
+    "Build multi-agent systems"
+   ],
+   "pricing": "Free, open-source app (Apache-2.0); Z.ai's GLM Coding Plan subscriptions (Lite, Pro, Max) are sold separately on z.ai",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "zai-org/ZCode",
+   "github_stars": 8014,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "build multi-agent systems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zcode.png",
+   "page": "https://agentscouthq.com/tools/zcode.html"
+  },
+  {
+   "name": "Andee",
+   "slug": "andee",
+   "url": "https://heyandee.com/",
+   "website": "https://heyandee.com/",
+   "github": "https://github.com/kuafuai/andee",
+   "category": "personal agents",
+   "description": "Andee is an Android agent you install as one APK (Android 11+, no root) that reads the screen and taps, types and replies in any app for you, keeps private on-device notes, and uses the OpenAI-compatible model and speech provider you choose.",
+   "key_features": [
+    "Free; source public under Apache-2.0 with additional conditions; you pay the model and speech providers you connect",
+    "Active",
+    "1400 GitHub stars",
+    "Control a computer",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free; source public under Apache-2.0 with additional conditions; you pay the model and speech providers you connect",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "kuafuai/andee",
+   "github_stars": 1400,
+   "open_source": false,
+   "license": "Apache-2.0",
+   "tags": [
+    "control a computer",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/andee.png",
+   "page": "https://agentscouthq.com/tools/andee.html"
+  },
+  {
+   "name": "Cloudroom",
+   "slug": "cloudroom",
+   "url": "https://www.cloudroom.dev/",
+   "website": "https://www.cloudroom.dev/",
+   "github": "https://github.com/davidondrej/cloudroom-core",
+   "category": "coding",
+   "description": "Cloudroom runs Claude Code, Codex, Pi and other coding agents in the cloud, each in its own isolated sandbox on its own Git branch, using your own model logins; the Rust core is open source to self-host, and a desktop app manages local and cloud agents.",
+   "key_features": [
+    "Self-hosted core free (Apache-2.0); cloud: Free $0 (100 cloud agents/month, 25 hours), Pro $50/mo, Super $150/mo, Ultra $500/mo",
+    "Active",
+    "916 GitHub stars",
+    "Write code",
+    "Control a computer",
+    "Run code safely"
+   ],
+   "pricing": "Self-hosted core free (Apache-2.0); cloud: Free $0 (100 cloud agents/month, 25 hours), Pro $50/mo, Super $150/mo, Ultra $500/mo",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "davidondrej/cloudroom-core",
+   "github_stars": 916,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "control a computer",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cloudroom.png",
+   "page": "https://agentscouthq.com/tools/cloudroom.html"
+  },
+  {
+   "name": "Tracely",
+   "slug": "tracely",
+   "url": "https://tracely-ai.com/",
+   "website": "https://tracely-ai.com/",
+   "github": "https://github.com/jwuthri-cloud/Tracely-ai",
+   "category": "evals & observability",
+   "description": "Tracely is open-source, trace-native CI/CD for AI agents: it grades every production trace with evaluators, clusters failures into issues, freezes bad runs into replayable test cases and blocks pull requests that would reintroduce them.",
+   "key_features": [
+    "Self-host free (MIT); hosted Free $0 (20k traces/month), Team $49/mo; LLM judges run on your own OpenRouter key",
+    "Active",
+    "1115 GitHub stars",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Self-host free (MIT); hosted Free $0 (20k traces/month), Team $49/mo; LLM judges run on your own OpenRouter key",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "jwuthri-cloud/Tracely-ai",
+   "github_stars": 1115,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tracely.png",
+   "page": "https://agentscouthq.com/tools/tracely.html"
+  },
+  {
+   "name": "Bops",
+   "slug": "bops",
+   "url": "https://bops.bot/",
+   "website": "https://bops.bot/",
+   "github": "https://github.com/OrgoAI/bops",
+   "category": "business agents",
+   "description": "Bops, from Orgo, is a Mac app for a team of AI bots that handle business ops such as inbox triage, CRM follow-ups, invoices and reports, each with its own cloud computer, email address, phone number and shared memory.",
+   "key_features": [
+    "Free $0 (1 computer, 10 hours/month, $5 AI credit once), Pro $20/mo, Max $200/mo; source on GitHub under FSL-1.1-ALv2",
+    "Active",
+    "326 GitHub stars",
+    "Automate workflows",
+    "Control a computer",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free $0 (1 computer, 10 hours/month, $5 AI credit once), Pro $20/mo, Max $200/mo; source on GitHub under FSL-1.1-ALv2",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "OrgoAI/bops",
+   "github_stars": 326,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "control a computer",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bops.png",
+   "page": "https://agentscouthq.com/tools/bops.html"
+  },
+  {
+   "name": "Frametell",
+   "slug": "frametell",
+   "url": "https://frametell.ai/",
+   "website": "https://frametell.ai/",
+   "github": "https://github.com/sitor-ai/frametell",
+   "category": "video generation",
+   "description": "Frametell turns an idea, PDF, slides or notes into a narrated, hand-drawn explainer film: a director agent storyboards it with you for approval, writes and voices the script and draws every page, as an open-source Mac app or Frametell Cloud.",
+   "key_features": [
+    "Mac app free and open source (AGPL-3.0, bring your own API keys); Frametell Cloud starts free (300 credits), plans from $20/mo",
+    "Active",
+    "325 GitHub stars",
+    "Plan & storyboard",
+    "Voiceover"
+   ],
+   "pricing": "Mac app free and open source (AGPL-3.0, bring your own API keys); Frametell Cloud starts free (300 credits), plans from $20/mo",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "sitor-ai/frametell",
+   "github_stars": 325,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "plan & storyboard",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/frametell.png",
+   "page": "https://agentscouthq.com/tools/frametell.html"
+  },
+  {
+   "name": "Graphicle",
+   "slug": "graphicle",
+   "url": "https://www.karlex.ai/",
+   "website": "https://www.karlex.ai/",
+   "github": "https://github.com/Graphicle-AI/graphicle",
+   "category": "memory & RAG",
+   "description": "Graphicle, from KarLex AI, is a single local Rust program that gives Claude Code, Cursor, Codex and other MCP agents a code graph and memory, returning excerpts with file and line references from your code, docs and past sessions, with no account or telemetry.",
+   "key_features": [
+    "Free and open source (Apache-2.0); runs locally, no account",
+    "Active",
+    "325 GitHub stars",
+    "Give agents memory",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (Apache-2.0); runs locally, no account",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Graphicle-AI/graphicle",
+   "github_stars": 325,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "give agents memory",
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/graphicle.png",
+   "page": "https://agentscouthq.com/tools/graphicle.html"
+  },
+  {
+   "name": "Shipyard",
+   "slug": "shipyard",
+   "url": "https://coss.com/shipyard",
+   "website": "https://coss.com/shipyard",
+   "github": "https://github.com/cosscom/shipyard",
+   "category": "coding",
+   "description": "Shipyard, from coss.com, runs Claude Code, Codex and other coding agents on your own dev machines, each task in its own worktree with its own terminals, dev server and live page previews, so agents keep working when your laptop sleeps.",
+   "key_features": [
+    "Free and open source (MIT)",
+    "Active",
+    "324 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Free and open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "cosscom/shipyard",
+   "github_stars": 324,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/shipyard.png",
+   "page": "https://agentscouthq.com/tools/shipyard.html"
+  },
+  {
+   "name": "HiRoute",
+   "slug": "hiroute",
+   "url": "https://hiroute.ai/en/",
+   "website": "https://hiroute.ai/en/",
+   "github": "https://github.com/higress-group/HiRoute",
+   "category": "MCP & infra",
+   "description": "HiRoute, from the Higress team, is an open-source local model router for long-running agents like Codex and Claude Code: it hands routine stages to cheaper models, saves your strongest model for hard steps and keeps a record of each decision.",
+   "key_features": [
+    "Free and open source (Apache-2.0) desktop app; you bring your own model subscriptions and keys",
+    "Active",
+    "278 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Free and open source (Apache-2.0) desktop app; you bring your own model subscriptions and keys",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "higress-group/HiRoute",
+   "github_stars": 278,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hiroute.png",
+   "page": "https://agentscouthq.com/tools/hiroute.html"
+  },
+  {
+   "name": "Sentio",
+   "slug": "sentio",
+   "url": "https://truespar.com/sentio",
+   "website": "https://truespar.com/sentio",
+   "github": "https://github.com/truespar/sentio",
+   "category": "MCP & infra",
+   "description": "Sentio, from Truespar, is a self-hosted email inbox API for AI agents: a Rust SMTP server that gives each agent a real address, delivers inbound mail as authenticated webhooks and lets agents reply in-thread over REST, with multi-tenant isolation.",
+   "key_features": [
+    "Free and open source (MIT or Apache-2.0), self-hosted",
+    "Active",
+    "255 GitHub stars",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (MIT or Apache-2.0), self-hosted",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "truespar/sentio",
+   "github_stars": 255,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sentio.png",
+   "page": "https://agentscouthq.com/tools/sentio.html"
+  },
+  {
+   "name": "Puter AI Builder",
+   "slug": "puter-ai-builder",
+   "url": "https://builder.puter.com/",
+   "website": "https://builder.puter.com/",
+   "github": "https://github.com/HeyPuter/builder",
+   "category": "app builders",
+   "description": "Puter AI Builder turns a plain-language description into a working app or website that can be published to a real URL, with no code; it is an open-source alternative to Lovable, Replit and v0 from the team behind Puter.",
+   "key_features": [
+    "Open source (Apache-2.0); hosted builder at builder.puter.com is free to start",
+    "Active",
+    "291 GitHub stars",
+    "Build apps without code"
+   ],
+   "pricing": "Open source (Apache-2.0); hosted builder at builder.puter.com is free to start",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "HeyPuter/builder",
+   "github_stars": 291,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/puter-ai-builder.png",
+   "page": "https://agentscouthq.com/tools/puter-ai-builder.html"
+  },
+  {
+   "name": "ManimGX",
+   "slug": "manimgx",
+   "url": "https://manimgx.academa.ai/",
+   "website": "https://manimgx.academa.ai/",
+   "github": "https://github.com/academa-labs/manimgx",
+   "category": "video generation",
+   "description": "ManimGX, from Academa, is an open-source animation engine for AI agents that renders math and 3D explainer videos from Manim CE's Python API on a Rust and wgpu GPU core, many times faster than Manim CE, and can also run in the browser.",
+   "key_features": [
+    "Free and open source (MIT)",
+    "Active",
+    "1906 GitHub stars"
+   ],
+   "pricing": "Free and open source (MIT)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "academa-labs/manimgx",
+   "github_stars": 1906,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/manimgx.png",
+   "page": "https://agentscouthq.com/tools/manimgx.html"
+  },
+  {
+   "name": "AgentEnv Framework",
+   "slug": "agentenv-framework",
+   "url": "https://www.agentenvframework.com/",
+   "website": "https://www.agentenvframework.com/",
+   "github": "https://github.com/scaleapi/agentenv-framework",
+   "category": "evals & observability",
+   "description": "AgentEnv Framework is Scale AI's open-source Python SDK and CLI for building RL environments for agents: containerized worlds with realistic apps and data behind an MCP gateway, plus tasks (as DAGs) that grade any agent in any sandbox.",
+   "key_features": [
+    "Free and open source (Apache-2.0); pip install agentenv-framework",
+    "Active",
+    "330 GitHub stars",
+    "Monitor & evaluate agents",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (Apache-2.0); pip install agentenv-framework",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "scaleapi/agentenv-framework",
+   "github_stars": 330,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "monitor & evaluate agents",
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agentenv-framework.png",
+   "page": "https://agentscouthq.com/tools/agentenv-framework.html"
+  },
+  {
+   "name": "Vicoa",
+   "slug": "vicoa",
+   "url": "https://vicoa.ai/",
+   "website": "https://vicoa.ai/",
+   "github": "https://github.com/vicoa-ai/vicoa",
+   "category": "coding",
+   "description": "Vicoa is an agent-native IDE for running Claude Code, Codex, Gemini and 40+ other coding agents in parallel, each on its own git worktree, from desktop, web or phone, with notifications when an agent needs you.",
+   "key_features": [
+    "Free $0 (1 remote machine, 10 automations); Pro $12/user/mo ($9 billed yearly); Enterprise custom; source AGPL-3.0",
+    "Active",
+    "518 GitHub stars",
+    "Write code",
+    "Build multi-agent systems"
+   ],
+   "pricing": "Free $0 (1 remote machine, 10 automations); Pro $12/user/mo ($9 billed yearly); Enterprise custom; source AGPL-3.0",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "vicoa-ai/vicoa",
+   "github_stars": 518,
+   "open_source": false,
+   "license": "AGPL-3.0",
+   "tags": [
+    "write code",
+    "build multi-agent systems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vicoa.png",
+   "page": "https://agentscouthq.com/tools/vicoa.html"
+  },
+  {
+   "name": "Muxin",
+   "slug": "muxin",
+   "url": "https://muxin.dev/",
+   "website": "https://muxin.dev/",
+   "github": "https://github.com/LumaryLabsLLC/muxin",
+   "category": "coding",
+   "description": "Muxin is a free, open-source desktop app that puts all your Macs, Linux, Windows and cloud machines in one window, so you can run Claude Code, Codex and other agent CLIs on any of them, see their screens and logs, and take changes to a pull request.",
+   "key_features": [
+    "Free and open source (Apache-2.0)",
+    "Active",
+    "329 GitHub stars",
+    "Write code",
+    "Control a computer"
+   ],
+   "pricing": "Free and open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "LumaryLabsLLC/muxin",
+   "github_stars": 329,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/muxin.png",
+   "page": "https://agentscouthq.com/tools/muxin.html"
+  },
+  {
+   "name": "Sno Station",
+   "slug": "sno-station",
+   "url": "https://www.sno.ai/",
+   "website": "https://www.sno.ai/",
+   "github": "https://github.com/sno-ai/sno-station",
+   "category": "coding",
+   "description": "Sno Station turns the coding agents you already use (Claude Code, Codex, Cursor, Hermes, OpenClaw) into one squad on your machine with shared memory, and its Self Learning reviews their sessions and proposes skill-file fixes you approve.",
+   "key_features": [
+    "Sno Station is open source (Apache-2.0) with a free weekly cloud allowance; Plus $19/mo, Max $199/mo, pay-as-you-go balance from $10",
+    "Active",
+    "765 GitHub stars",
+    "Write code",
+    "Give agents memory"
+   ],
+   "pricing": "Sno Station is open source (Apache-2.0) with a free weekly cloud allowance; Plus $19/mo, Max $199/mo, pay-as-you-go balance from $10",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "sno-ai/sno-station",
+   "github_stars": 765,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sno-station.png",
+   "page": "https://agentscouthq.com/tools/sno-station.html"
+  },
+  {
+   "name": "Agent Tincan",
+   "slug": "agent-tincan",
+   "url": "https://agenttincan.com/",
+   "website": "https://agenttincan.com/",
+   "github": "https://github.com/mvanhorn/agent-tincan",
+   "category": "MCP & infra",
+   "description": "Agent Tincan lets your AI agents (Claude Code, Codex, Gemini, Hermes, ChatGPT and others) ask each other to do things and hand back results through a small relay on your own Tailscale network, with no open ports or API keys between agents.",
+   "key_features": [
+    "Free and open source (MIT); runs on your own Tailscale network",
+    "Active",
+    "327 GitHub stars",
+    "Build multi-agent systems",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (MIT); runs on your own Tailscale network",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "mvanhorn/agent-tincan",
+   "github_stars": 327,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "build multi-agent systems",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-tincan.png",
+   "page": "https://agentscouthq.com/tools/agent-tincan.html"
+  },
+  {
+   "name": "Halofy",
+   "slug": "halofy",
+   "url": "https://halofy.ai/",
+   "website": "https://halofy.ai/",
+   "github": "https://github.com/halofyai/halofy",
+   "category": "security & governance",
+   "description": "Halofy is an access and governance layer for a team's AI agents, giving every agent organizational context through one identity and policy model with provenance and audit, alongside a desktop AI workstation that turns power users' agent practices into shared policies.",
+   "key_features": [
+    "Free $0 (1 seat); Base $16/mo and Team $120/mo for 5 seats (billed yearly); Enterprise custom; governance layer AGPL-3.0",
+    "Active",
+    "319 GitHub stars",
+    "Run code safely",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free $0 (1 seat); Base $16/mo and Team $120/mo for 5 seats (billed yearly); Enterprise custom; governance layer AGPL-3.0",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "halofyai/halofy",
+   "github_stars": 319,
+   "open_source": false,
+   "license": "AGPL-3.0",
+   "tags": [
+    "run code safely",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/halofy.png",
+   "page": "https://agentscouthq.com/tools/halofy.html"
   }
  ]
 }

@@ -290,7 +290,10 @@
 "agent-auth"
 ],
 "mem0": [
-"agent-memory"
+"agent-memory",
+"vector-rag",
+"web-scraping",
+"agent-frameworks"
 ],
 "letta": [
 "agent-memory",
@@ -5529,5 +5532,95 @@
 "web-scraping",
 "observability",
 "mcp-servers"
+],
+"zcode": [
+"parallel-orchestration",
+"chat-app-agents",
+"computer-use",
+"agent-frameworks",
+"terminal-agents"
+],
+"andee": [
+"voice-phone",
+"computer-use",
+"local-models",
+"dialogue-cleanup",
+"mobile"
+],
+"cloudroom": [
+"computer-use",
+"sandboxes",
+"agent-auth",
+"local-models",
+"cloud-coding-agents",
+"stem-separation"
+],
+"tracely": [
+"code-review",
+"evals"
+],
+"bops": [
+"agent-memory",
+"voice-phone",
+"email-agents",
+"sales-agents",
+"ai-dubbing-voices"
+],
+"frametell": [
+"vector-rag",
+"storyboards-previs",
+"ai-dubbing-voices"
+],
+"graphicle": [
+"agent-memory",
+"local-models"
+],
+"shipyard": [
+"parallel-orchestration",
+"local-models",
+"terminal-agents"
+],
+"hiroute": [
+"token-costs",
+"local-models"
+],
+"sentio": [
+"email-agents",
+"agent-auth",
+"local-models",
+"stem-separation"
+],
+"puter-ai-builder": [],
+"manimgx": [
+"browser-automation",
+"video"
+],
+"agentenv-framework": [
+"sandboxes",
+"fine-tuning",
+"mcp-gateways",
+"agent-frameworks",
+"terminal-agents"
+],
+"vicoa": [
+"parallel-orchestration",
+"voice-phone",
+"computer-use",
+"ide-agents"
+],
+"muxin": [
+"code-review",
+"computer-use"
+],
+"sno-station": [
+"agent-memory"
+],
+"agent-tincan": [
+"local-models"
+],
+"halofy": [
+"computer-use",
+"guardrails",
+"agent-auth"
 ]
 }
