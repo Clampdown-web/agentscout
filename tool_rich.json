@@ -23061,5 +23061,591 @@
    "osi": true
   },
   "updated": "2026-10-20"
+ },
+ "mcp-inspector": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MCP Inspector is the official developer tool from the Model Context Protocol project for testing and debugging MCP servers. One npm package, @modelcontextprotocol/inspector, gives you four ways in: a web app, a scriptable CLI for automation and CI, an interactive terminal UI, and an experimental connection CLI (mcpdo) that keeps a named connection open across many commands.",
+   "You point it at a server over stdio or HTTP, then list and call its tools, read resources, try prompts and watch the raw protocol messages. It handles OAuth flows and stores tokens and secrets in the OS keychain where one is available, so it is the usual first stop when an MCP server misbehaves in Claude, Cursor or another client."
+  ],
+  "who": "MCP server authors and anyone wiring MCP servers into an agent who needs to see exactly what a server exposes and returns.",
+  "features": [
+   "Web UI, CLI, terminal UI and mcpdo connection CLI in one package",
+   "Call tools, read resources and test prompts",
+   "Inspect raw protocol traffic",
+   "OAuth support with secrets kept in the OS keychain",
+   "Runs with one npx command"
+  ],
+  "faq": [
+   [
+    "Is MCP Inspector free?",
+    "Yes. It is open source from the Model Context Protocol project; new code is Apache-2.0 while the project finishes moving off MIT."
+   ]
+  ],
+  "sources": [
+   "https://github.com/modelcontextprotocol/inspector"
+  ],
+  "facts": {
+   "repo": "https://github.com/modelcontextprotocol/inspector",
+   "stars": 11110,
+   "forks": 1576,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0 (moving from MIT; older contributions stay MIT)",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "robotgo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "RobotGo is a Go library for native desktop automation on macOS, Windows and Linux (x86-64 and arm64). It controls the mouse and keyboard, reads the screen and pixel colours, captures bitmaps, manages processes and window handles, and listens for global input events.",
+   "It is used for RPA scripts, GUI test automation and, increasingly, as the low-level action layer for computer-use agents written in Go. The maker also sells RobotGo-Pro, a separate paid edition with JavaScript, Python and Lua bindings and support."
+  ],
+  "who": "Go developers building desktop automation, GUI tests or the action layer of a computer-use agent.",
+  "features": [
+   "Mouse and keyboard control",
+   "Screen capture, pixel reading and bitmap search",
+   "Process and window handle management",
+   "Global keyboard and mouse event listener",
+   "macOS, Windows and Linux, x86-64 and arm64"
+  ],
+  "faq": [
+   [
+    "Is RobotGo free?",
+    "The open-source library is free under Apache-2.0. RobotGo-Pro, with extra language bindings and support, is a separate paid product."
+   ]
+  ],
+  "sources": [
+   "https://github.com/go-vgo/robotgo"
+  ],
+  "facts": {
+   "repo": "https://github.com/go-vgo/robotgo",
+   "stars": 10874,
+   "forks": 969,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "tyk-gateway": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Tyk Gateway is an open-source API and AI gateway, written in Go, that sits in front of REST, GraphQL, TCP, gRPC and Model Context Protocol (MCP) services. The open-source gateway ships with no feature lockout: rate limiting, authentication, analytics, quotas and microservice patterns are all included.",
+   "For agent builders, Tyk adds an MCP gateway and AI gateway so tool and model traffic can be authenticated, governed and metered like any other API. You can run the gateway yourself, buy the self-managed enterprise platform with a dashboard and developer portal, or use the hosted Tyk Cloud."
+  ],
+  "who": "Platform teams that already manage APIs and want the same auth, rate limits and analytics on MCP servers and LLM traffic.",
+  "features": [
+   "API gateway for REST, GraphQL, TCP and gRPC",
+   "MCP gateway and AI gateway features",
+   "Rate limiting, auth, quotas and analytics built in",
+   "Self-host open source, self-managed enterprise or Tyk Cloud"
+  ],
+  "faq": [
+   [
+    "Is Tyk Gateway open source?",
+    "Yes. The gateway is under the Mozilla Public License 2.0, except its ee folder. The dashboard, developer portal and Tyk Cloud are commercial."
+   ]
+  ],
+  "sources": [
+   "https://github.com/TykTechnologies/tyk",
+   "https://tyk.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/TykTechnologies/tyk",
+   "stars": 10868,
+   "forks": 1169,
+   "checked": "2026-10-20",
+   "license": "the Mozilla Public License 2.0 (except the ee folder)",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "krita-ai-diffusion": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Krita AI Diffusion is a plugin that brings generative image AI into the Krita painting app. Instead of generating whole pictures from a prompt, it focuses on control: you can restrict generation to a selection, refine existing content at a chosen strength, focus text on regions, and guide results with reference images, sketches, line art and depth maps.",
+   "It runs on a local ComfyUI backend that the plugin can install for you, so it works offline and free on your own GPU; the maker also offers an optional paid cloud service (Interstice) for people without suitable hardware."
+  ],
+  "who": "Illustrators and artists who already paint in Krita and want inpainting, outpainting and guided generation inside their normal workflow.",
+  "features": [
+   "Inpaint and outpaint inside Krita",
+   "Generate within selections, with adjustable strength",
+   "Control with sketches, line art, depth and reference images",
+   "Local ComfyUI backend, offline and free",
+   "Optional hosted cloud from the maker"
+  ],
+  "faq": [
+   [
+    "Is Krita AI Diffusion free?",
+    "The plugin is free and open source (GPL-3.0) and runs locally on your GPU. The maker's optional cloud service is paid."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Acly/krita-ai-diffusion",
+   "https://www.interstice.cloud"
+  ],
+  "facts": {
+   "repo": "https://github.com/Acly/krita-ai-diffusion",
+   "stars": 10749,
+   "forks": 646,
+   "checked": "2026-10-20",
+   "license": "the GNU General Public License v3.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "desktop-commander-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Desktop Commander is an MCP server that lets Claude and other AI clients work directly on your computer: run and manage long-running terminal commands and processes, search the file system, and edit files with search-and-replace diffs. It builds on the reference MCP Filesystem server and adds those editing and process tools.",
+   "Because it runs through your existing AI subscription rather than per-token API calls, many people use it as a low-cost coding and automation agent. It also offers a remote MCP endpoint for ChatGPT and Claude on the web, and a file preview and Markdown editor UI."
+  ],
+  "who": "People who want Claude Desktop or another MCP client to run commands and edit files on their own machine.",
+  "features": [
+   "Run and manage long-running terminal processes",
+   "File system search and diff-based file editing",
+   "Remote MCP for ChatGPT and Claude web",
+   "File preview UI and Markdown editor",
+   "Uses your existing client subscription"
+  ],
+  "faq": [
+   [
+    "Is Desktop Commander free?",
+    "Yes, the MCP server is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+   "https://desktopcommander.app/"
+  ],
+  "facts": {
+   "repo": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+   "stars": 10085,
+   "forks": 1254,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "ufo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "UFO is Microsoft's open-source framework for agents that operate computers. UFO² is a stable desktop agent OS for Windows that combines GUI actions with native API calls and deep Windows integration, while UFO³ (Galaxy) coordinates many device agents at once.",
+   "In Galaxy, a task is broken into a graph of steps (a constellation) that can be edited while it runs, executed in parallel across devices, and coordinated over a unified agent protocol. UFO² can act as one of those device agents."
+  ],
+  "who": "Researchers and developers building Windows automation or multi-device computer-use agents.",
+  "features": [
+   "UFO² desktop agent for Windows with GUI and API actions",
+   "UFO³ Galaxy for multi-device orchestration",
+   "Tasks decomposed into editable DAGs",
+   "Parallel, asynchronous execution",
+   "Unified agent communication protocol"
+  ],
+  "faq": [
+   [
+    "Is UFO free?",
+    "Yes, it is open source from Microsoft under the MIT License; you supply the model API."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/UFO",
+   "https://microsoft.github.io/UFO/"
+  ],
+  "facts": {
+   "repo": "https://github.com/microsoft/UFO",
+   "stars": 10079,
+   "forks": 1077,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "ltx-2": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LTX-2 is Lightricks' open-weights audio-video foundation model, a diffusion transformer that generates synchronized video and sound in one model. The repository is the official Python inference package and LoRA trainer, with pipelines for the LTX-2.5 checkpoints published on Hugging Face.",
+   "It offers several speed and quality modes, latent upscaling and distilled variants. The full model download is large (around 66 GB for the main set), so it is aimed at people with serious GPUs; Lightricks also offers API access."
+  ],
+  "who": "Developers and studios who want to run or fine-tune an open audio-video generation model on their own hardware.",
+  "features": [
+   "Joint audio and video generation",
+   "Official inference pipelines and LoRA trainer",
+   "Distilled and upscaler checkpoints",
+   "Weights on Hugging Face",
+   "API access from Lightricks"
+  ],
+  "faq": [
+   [
+    "Is LTX-2 open source?",
+    "The code and weights are openly available under the LTX-2.x Community License, which is not an OSI open-source licence; check its terms for commercial use."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Lightricks/LTX-2",
+   "https://huggingface.co/Lightricks/LTX-2.5"
+  ],
+  "facts": {
+   "repo": "https://github.com/Lightricks/LTX-2",
+   "stars": 9807,
+   "forks": 1560,
+   "checked": "2026-10-20",
+   "license": "the LTX-2.x Community License",
+   "osi": false
+  },
+  "updated": "2026-10-20"
+ },
+ "mobile-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Mobile MCP, from Mobile Next, is an MCP server that lets agents drive iOS and Android apps on simulators, emulators and real devices through one platform-neutral interface. Agents read structured accessibility snapshots, or fall back to screenshot-based coordinate taps when needed.",
+   "It works with Claude Code, Codex, Gemini, GitHub Copilot and any other MCP client, and can run against devices on your own machine or real devices in Mobile Next's cloud. Typical uses are app test automation, scripted form flows and multi-step user journeys."
+  ],
+  "who": "Mobile developers and QA teams who want an AI agent to test or operate native iOS and Android apps.",
+  "features": [
+   "iOS and Android, simulators, emulators and real devices",
+   "Accessibility snapshots plus screenshot taps",
+   "Works with any MCP client",
+   "Optional real-device cloud from Mobile Next"
+  ],
+  "faq": [
+   [
+    "Is Mobile MCP free?",
+    "The MCP server is open source under Apache-2.0. Mobile Next Cloud for remote real devices is a separate service."
+   ]
+  ],
+  "sources": [
+   "https://github.com/mobile-next/mobile-mcp",
+   "https://mobilenext.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/mobile-next/mobile-mcp",
+   "stars": 9818,
+   "forks": 871,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "windows-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Windows-MCP is a lightweight open-source MCP server that gives AI agents control of Windows 10 and 11: navigating files, opening and controlling apps and windows, interacting with UI elements, simulating input and running QA tests. It works with any model and does not need computer vision, though vision is optional.",
+   "It is distributed on PyPI (uvx windows-mcp), listed in the MCP Registry and as a Claude Desktop extension, where the maker reports more than two million users."
+  ],
+  "who": "Windows users and developers who want Claude or another MCP client to operate their PC.",
+  "features": [
+   "Native Windows UI interaction and app control",
+   "Works with any LLM, vision optional",
+   "File navigation and input simulation",
+   "Install via uvx or Claude Desktop extension"
+  ],
+  "faq": [
+   [
+    "Is Windows-MCP free?",
+    "Yes, it is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/CursorTouch/Windows-MCP"
+  ],
+  "facts": {
+   "repo": "https://github.com/CursorTouch/Windows-MCP",
+   "stars": 9698,
+   "forks": 1031,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "baml": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "BAML is a programming language from Boundary built for writing agents and LLM functions. It looks like TypeScript but has a strict, Rust-like type system that persists at runtime, typed errors, Go-style concurrency and a built-in test and eval framework, so model outputs are parsed into real types instead of loose strings.",
+   "You can run BAML on its own or adopt it gradually, calling BAML functions from TypeScript, Python, Go, C#, Java and other languages, with editor tooling and an agent install command."
+  ],
+  "who": "Developers who want structured, type-safe LLM calls and agent logic that plugs into an existing codebase.",
+  "features": [
+   "Typed language for LLM functions and agents",
+   "Runtime types, typed errors, no unsafe casts",
+   "Built-in tests and evals",
+   "Call from TypeScript, Python, Go, C#, Java and more",
+   "Editor and agent tooling"
+  ],
+  "faq": [
+   [
+    "Is BAML free?",
+    "Yes, BAML is open source under the Apache License 2.0."
+   ]
+  ],
+  "sources": [
+   "https://github.com/BoundaryML/baml",
+   "https://boundaryml.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/BoundaryML/baml",
+   "stars": 9426,
+   "forks": 499,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "bifrost": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Bifrost, from Maxim AI, is an open-source AI gateway that puts more than 20 providers (OpenAI, Anthropic, AWS Bedrock, Google Vertex and others) behind one OpenAI-compatible API. It starts with one npx or Docker command and includes a web UI for configuration and monitoring.",
+   "It adds automatic failover, load balancing, semantic caching, virtual keys and budgets, and also works as an MCP gateway. The maker says it adds under 200 microseconds of overhead at 5,000 requests per second."
+  ],
+  "who": "Teams running LLM apps or agents in production who want one fast gateway for routing, failover and spend control.",
+  "features": [
+   "One OpenAI-compatible API for 20+ providers",
+   "Failover, load balancing and semantic caching",
+   "Virtual keys and budgets",
+   "MCP gateway",
+   "Web UI, runs via npx or Docker"
+  ],
+  "faq": [
+   [
+    "Is Bifrost free?",
+    "The gateway is open source under Apache-2.0. Maxim AI sells an enterprise edition and its own evaluation platform."
+   ]
+  ],
+  "sources": [
+   "https://github.com/maximhq/bifrost",
+   "https://www.getmaxim.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/maximhq/bifrost",
+   "stars": 8968,
+   "forks": 1435,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "typechat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TypeChat is a Microsoft library for building natural-language interfaces with types. Instead of prompt engineering, you define TypeScript (or Python) types that describe the intents your app supports, and TypeChat builds the prompt, validates the model's JSON reply against the schema and asks the model to repair any reply that doesn't fit.",
+   "It suits apps such as command interfaces, shopping carts or music players where user requests must become well-formed actions."
+  ],
+  "who": "Developers who need LLM replies to map reliably onto their app's data types.",
+  "features": [
+   "Schema engineering instead of prompt engineering",
+   "Validates model output against your types",
+   "Automatic repair of invalid replies",
+   "TypeScript and Python versions"
+  ],
+  "faq": [
+   [
+    "Is TypeChat free?",
+    "Yes, it is open source from Microsoft under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/TypeChat",
+   "https://microsoft.github.io/TypeChat/"
+  ],
+  "facts": {
+   "repo": "https://github.com/microsoft/TypeChat",
+   "stars": 8693,
+   "forks": 425,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "qwen-image": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Qwen-Image is the Qwen team's open-weights image generation foundation model, a 20B MMDiT known for unusually accurate text rendering (especially Chinese) and precise image editing. A separate Edit model handles instruction-based edits.",
+   "Qwen-Image-2.0, announced in February 2026, adds long-instruction typography for infographics, posters and slides, native 2K resolution and unified generation and editing. Weights are on Hugging Face and ModelScope, and you can try it in Qwen Chat."
+  ],
+  "who": "Designers and developers who want an open image model that can render legible text and edit images precisely.",
+  "features": [
+   "20B image foundation model",
+   "Strong text rendering in images",
+   "Instruction-based image editing model",
+   "Weights on Hugging Face and ModelScope",
+   "Try it free in Qwen Chat"
+  ],
+  "faq": [
+   [
+    "Is Qwen-Image free?",
+    "Yes, the weights are released under the Apache License 2.0."
+   ]
+  ],
+  "sources": [
+   "https://github.com/QwenLM/Qwen-Image"
+  ],
+  "facts": {
+   "repo": "https://github.com/QwenLM/Qwen-Image",
+   "stars": 8417,
+   "forks": 567,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "claude-agent-sdk-python": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The Claude Agent SDK for Python is Anthropic's official library for building agents on the same harness that powers Claude Code. A simple async query() call streams Claude's messages, and a client class supports interactive sessions, custom tools, hooks and permission settings.",
+   "The Claude Code CLI comes bundled with the package, so pip install claude-agent-sdk is enough to start (Python 3.10+); you can point it at your own Claude Code install instead."
+  ],
+  "who": "Python developers who want Claude Code's agent loop, tools and permissions inside their own apps and scripts.",
+  "features": [
+   "Official Anthropic SDK for the Claude Code harness",
+   "Async query() streaming",
+   "Custom tools, hooks and permissions",
+   "Claude Code CLI bundled"
+  ],
+  "faq": [
+   [
+    "Is the Claude Agent SDK free?",
+    "The SDK is free and open source (MIT). You pay for Claude usage through the API or your plan."
+   ]
+  ],
+  "sources": [
+   "https://github.com/anthropics/claude-agent-sdk-python",
+   "https://code.claude.com/docs/en/agent-sdk/overview"
+  ],
+  "facts": {
+   "repo": "https://github.com/anthropics/claude-agent-sdk-python",
+   "stars": 8308,
+   "forks": 1363,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "repowise": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Repowise indexes your codebase once on your machine (code, call graph, git history, tests, docs and design decisions) so you and your coding agent can ask it what calls what, what breaks if something changes, what code is dead, what to fix first and why it was built that way.",
+   "Graph, risk, health, test and dead-code analysis run without LLM calls, so the same diff gives the same answer, and agents reach it through REST and MCP with scoped tokens. It also produces code health scores and docs, and can enforce change policy in CI via SARIF. It is free for one developer; a commercial licence and hosted option cover company use."
+  ],
+  "who": "Engineers and teams who want their coding agents to stop re-reading the codebase and work from a shared, deterministic index.",
+  "features": [
+   "Local index of code, call graph, git history, tests and docs",
+   "Impact, risk and dead-code answers without LLM calls",
+   "REST and MCP access with scoped tokens",
+   "Code health scores and generated docs",
+   "CI policy checks via SARIF"
+  ],
+  "faq": [
+   [
+    "Is Repowise free?",
+    "It is free for one developer and open source under AGPL-3.0; a commercial licence and hosted version are available for companies."
+   ]
+  ],
+  "sources": [
+   "https://github.com/repowise-dev/repowise",
+   "https://repowise.dev/"
+  ],
+  "facts": {
+   "repo": "https://github.com/repowise-dev/repowise",
+   "stars": 7870,
+   "forks": 918,
+   "checked": "2026-10-20",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "ai-memory": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ai-memory, by Fabio Akita, is a long-term memory layer for AI coding agents. Coding agents each keep their own notes on one machine; ai-memory gives more than twenty harnesses (Claude Code, Codex, Cursor, Gemini CLI, OpenCode, Devin, Kiro and others) one shared memory, stored as plain markdown.",
+   "Quit Claude Code mid-task, start Codex in the same directory, and the next agent picks up a typed handoff saying where you left off, what failed and what is still open. Starting agents through ai-memory run can also carry a private local view of the previous session, and a small cross-project profile of your habits follows you into new repositories. It ships as one binary for Linux, macOS and Windows."
+  ],
+  "who": "Developers who switch between coding agents, machines or teammates and are tired of re-explaining the project.",
+  "features": [
+   "Shared memory across 20+ coding agents",
+   "Typed handoffs between agents",
+   "Plain markdown storage, one binary",
+   "Cross-project profile of your habits",
+   "Optional shared server for teams"
+  ],
+  "faq": [
+   [
+    "Is ai-memory free?",
+    "Yes, it is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/akitaonrails/ai-memory",
+   "https://aimemory.sh/"
+  ],
+  "facts": {
+   "repo": "https://github.com/akitaonrails/ai-memory",
+   "stars": 11877,
+   "forks": 844,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "dodaios": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Dodaios (formerly Personal Jarvis) is an open-source agent OS for the desktop on Windows, macOS and Linux. You talk to it by voice or chat, and a lead agent plans the work, then runs your coding CLIs side by side, your browser and your apps, taking a task from one prompt to a merged pull request.",
+   "Speech recognition and voice run offline with Whisper and Piper, and a local wiki on your disk gives agents long-term memory they can cite. It works with a local model through Ollama or an OpenAI-compatible server, or with an existing Claude or ChatGPT subscription, so no API key or GPU is required. A plugin and skills marketplace is community-run."
+  ],
+  "who": "People who want a local, voice-driven assistant that runs their AI coding agents and apps without sending data to a hosted service.",
+  "features": [
+   "Voice or chat control, offline speech",
+   "Runs several coding CLIs in parallel panes",
+   "Browser and app control",
+   "Local wiki memory",
+   "Local models or existing Claude/ChatGPT subscriptions"
+  ],
+  "faq": [
+   [
+    "Is Dodaios free?",
+    "Yes, it is open source under Apache-2.0. You bring a local model, an API key or a Claude or ChatGPT subscription."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Dodaios/Dodaios",
+   "https://dodaios.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/Dodaios/Dodaios",
+   "stars": 244,
+   "forks": 87,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
  }
 }

@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T20:51:16Z",
- "updated": "2026-10-20T20:51:16Z",
+ "generated": "2026-10-20T21:13:57Z",
+ "updated": "2026-10-20T21:13:57Z",
  "last_checked": "2026-10-20",
- "count": 1589,
+ "count": 1591,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -18831,12 +18831,14 @@
    "url": "https://boxlite.ai/",
    "website": "https://boxlite.ai/",
    "github": "https://github.com/boxlite-ai/boxlite",
-   "category": "agent infra",
+   "category": "sandboxes & code execution",
    "description": "Embeddable micro-VM for running AI agents.",
    "key_features": [
     "Open source",
     "Active",
-    "2520 GitHub stars"
+    "2520 GitHub stars",
+    "Write code",
+    "Run code safely"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -18848,7 +18850,7 @@
    "added": "2026-10-16",
    "source": "GitHub",
    "goals": [
-    "automation"
+    "coding"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -18860,7 +18862,8 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "agent infra"
+    "write code",
+    "run code safely"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/boxlite.png",
@@ -67159,6 +67162,97 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/second-brain.png",
    "page": "https://agentscouthq.com/tools/second-brain.html"
+  },
+  {
+   "name": "ai-memory",
+   "slug": "ai-memory",
+   "url": "https://aimemory.sh/",
+   "website": "https://aimemory.sh/",
+   "github": "https://github.com/akitaonrails/ai-memory",
+   "category": "memory & RAG",
+   "description": "Fabio Akita's open-source long-term memory layer for coding agents: one Rust binary that keeps plain-markdown project memory and typed handoffs shared across 20+ harnesses such as Claude Code, Codex, Cursor and Gemini CLI, so you can switch agents, machines or teammates without re-explaining the project.",
+   "key_features": [
+    "Free and open source (MIT); you pay only for the coding agents and models you already use",
+    "Mature",
+    "11877 GitHub stars",
+    "Give agents memory",
+    "Write code"
+   ],
+   "pricing": "Free and open source (MIT); you pay only for the coding agents and models you already use",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "News",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "akitaonrails/ai-memory",
+   "github_stars": 11877,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "give agents memory",
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-memory.png",
+   "page": "https://agentscouthq.com/tools/ai-memory.html"
+  },
+  {
+   "name": "Dodaios",
+   "slug": "dodaios",
+   "url": "https://dodaios.ai/",
+   "website": "https://dodaios.ai/",
+   "github": "https://github.com/Dodaios/Dodaios",
+   "category": "personal agents",
+   "description": "Open-source desktop agent OS for Windows, macOS and Linux (formerly Personal Jarvis): talk to it and it runs your coding CLIs side by side, your browser and your apps, with offline Whisper speech, a local wiki memory and support for Ollama, Claude or ChatGPT subscriptions.",
+   "key_features": [
+    "Free and open source (Apache-2.0); works with a local model or an existing Claude or ChatGPT subscription, no API key required",
+    "Early (active development)",
+    "244 GitHub stars",
+    "Write code",
+    "Automate the browser",
+    "Control a computer"
+   ],
+   "pricing": "Free and open source (Apache-2.0); works with a local model or an existing Claude or ChatGPT subscription, no API key required",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "News",
+   "goals": [
+    "automation",
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Dodaios/Dodaios",
+   "github_stars": 244,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dodaios.png",
+   "page": "https://agentscouthq.com/tools/dodaios.html"
   }
  ]
 }

@@ -6082,5 +6082,20 @@
 ],
 "second-brain": [
 "agent-memory"
+],
+"ai-memory": [
+"agent-memory",
+"agent-frameworks",
+"terminal-agents"
+],
+"dodaios": [
+"parallel-orchestration",
+"agent-memory",
+"voice-phone",
+"browser-automation",
+"computer-use",
+"local-models",
+"dialogue-cleanup",
+"mobile"
 ]
 }

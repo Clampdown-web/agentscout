@@ -317,8 +317,12 @@ def seo(t,urls):
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t):,} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: support@agentscouthq.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     L+=["","## Guides","",f"- [MCP servers]({B}categories/mcp-servers.html)",f"- [Agent infra]({B}categories/agent-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
-    rec=sorted(t,key=lambda x:(not x.get("seed"),x.get("added",""),x.get("id",0)),reverse=True)[:12]
-    L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
+    # every tool added in the last 2 days (today PT + yesterday), no fixed cap (owner bug fix Oct 20 2026); falls back to the 12 newest if none
+    import datetime as _d,zoneinfo as _z
+    _today=_d.datetime.now(_z.ZoneInfo("America/Los_Angeles")).date(); _cut=(_today-_d.timedelta(days=1)).isoformat()
+    _srt=sorted(t,key=lambda x:(not x.get("seed"),x.get("added",""),x.get("id",0)),reverse=True)
+    rec=[x for x in _srt if x.get("added","")>=_cut] or _srt[:12]
+    L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",f"- Tools added in the last 2 days ({_cut} to {_today.isoformat()}): {len(rec)}",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out
 
 
