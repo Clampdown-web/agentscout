@@ -42,7 +42,15 @@ UC_SET={"agentic-scientist":["research the web"],"opengcua":["control a computer
 "ceofans":["business agents","automate workflows"],
 "9bot":["connect tools via MCP","automate workflows"],
 "pragor":["security & governance","build multi-agent systems"],  # Pragor (Oct 19 PT, maker request): coordination and governance layer for people and agents, not an autonomous agent; the keyword guess would add "write code"
-"mailveri-mcp":["connect tools via MCP"]}  # MailVeri MCP: email/list verification; kept off customer support (not a support desk); the keyword guess would add "write code"  # CEOFans: the keyword guess would tag it "write code" (it mentions Codex) and "control a computer" ("desktop")
+"mailveri-mcp":["connect tools via MCP"],
+# Oct 20, 2026 PT morning discovery: keyword rules mis-tagged these ("call"/"phone" -> voice, "browser" -> browser automation, "search" -> research), so pinned by hand
+"opcode":["write code"],"memori":["give agents memory","build an agent"],"cloudcli":["write code"],"xerj":["give agents memory","connect tools via MCP"],
+"onlook":["build apps without code","write code"],"agentos":["run code safely","write code"],"agent-sandbox-kubernetes":["run code safely","automate the browser"],
+"pooled":["build an agent"],"thinkwatch-lite":["security & governance","write code"],"eleven":["security & governance","write code"],"hy-memory":["give agents memory"],
+"oneuptime-mcp":["connect tools via MCP"],"openlayer-mcp":["monitor & evaluate agents","connect tools via MCP"],"mapbox-mcp":["connect tools via MCP"],
+"browserstack-mcp":["connect tools via MCP","write code","automate the browser"],"phase":["security & governance"],"zapia":["personal agents","research the web"],
+"agentbay":["run code safely","automate the browser","control a computer"],"microsoft-copilot-studio":["build apps without code","build an agent","connect tools via MCP"],
+"reason-network":["write code","build multi-agent systems"]}  # MailVeri MCP: email/list verification; kept off customer support (not a support desk); the keyword guess would add "write code"  # CEOFans: the keyword guess would tag it "write code" (it mentions Codex) and "control a computer" ("desktop")
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()

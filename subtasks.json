@@ -5695,5 +5695,195 @@
 "computer-use",
 "agent-frameworks",
 "terminal-agents"
+],
+"rtk": [
+"token-costs",
+"mcp-gateways",
+"terminal-agents"
+],
+"understand-anything": [
+"codebase-context",
+"vector-rag",
+"terminal-agents"
+],
+"onlook": [
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"opcode": [
+"computer-use",
+"terminal-agents"
+],
+"memori": [
+"agent-memory",
+"text-to-sql",
+"agent-frameworks"
+],
+"cloudcli": [
+"voice-phone",
+"browser-automation",
+"terminal-agents",
+"mobile"
+],
+"xerj": [
+"agent-memory",
+"vector-rag",
+"search-apis",
+"mcp-servers",
+"local-models"
+],
+"emdash": [
+"code-review",
+"parallel-orchestration"
+],
+"eve": [
+"workflow-automation",
+"agent-frameworks",
+"vocal-tuning"
+],
+"agentos": [
+"sandboxes"
+],
+"agent-sandbox-kubernetes": [
+"browser-automation",
+"sandboxes",
+"local-models",
+"stem-separation"
+],
+"toad": [
+"terminal-agents"
+],
+"codecompanion-nvim": [
+"video-editing"
+],
+"baocut": [
+"subtitles-transcripts",
+"video-editing",
+"ai-dubbing-voices",
+"video"
+],
+"libretto": [
+"browser-automation",
+"terminal-agents"
+],
+"phase": [
+"testing-qa",
+"agent-auth"
+],
+"handsy": [
+"voice-phone",
+"computer-use"
+],
+"doop": [
+"parallel-orchestration",
+"mcp-servers",
+"images-design"
+],
+"pooled": [
+"voice-phone",
+"browser-automation"
+],
+"explainroo": [
+"voice-phone",
+"local-models",
+"video",
+"images-design"
+],
+"thinkwatch-lite": [
+"voice-phone",
+"agent-auth",
+"mcp-gateways",
+"local-models"
+],
+"eleven": [],
+"don-t-be-michael": [],
+"reason-network": [
+"terminal-agents"
+],
+"hy-memory": [
+"agent-memory",
+"web-scraping"
+],
+"firedrill": [
+"mcp-servers",
+"mobile"
+],
+"kernel": [
+"browser-automation",
+"mcp-servers",
+"terminal-agents"
+],
+"draw-io-mcp": [
+"mcp-servers",
+"video-editing",
+"images-design"
+],
+"browserstack-mcp": [
+"browser-automation",
+"mcp-servers",
+"ide-agents"
+],
+"appwrite-mcp": [
+"text-to-sql",
+"mcp-servers"
+],
+"algolia-mcp": [
+"mcp-servers"
+],
+"oneuptime-mcp": [
+"ai-sre",
+"planning-tasks",
+"voice-phone",
+"observability",
+"mcp-servers"
+],
+"openlayer-mcp": [
+"observability",
+"evals",
+"mcp-servers",
+"ide-agents"
+],
+"mapbox-mcp": [
+"mcp-servers",
+"images-design"
+],
+"launchdarkly-mcp": [
+"mcp-servers",
+"ide-agents",
+"rules-config"
+],
+"sanity-mcp": [
+"mcp-servers"
+],
+"wabi": [
+"planning-tasks",
+"voice-phone",
+"games",
+"mobile"
+],
+"zapia": [
+"planning-tasks",
+"voice-phone",
+"chat-app-agents",
+"personal-assistants",
+"mobile"
+],
+"visorbot": [
+"planning-tasks",
+"mobile"
+],
+"agentbay": [
+"browser-automation",
+"computer-use",
+"sandboxes",
+"agent-frameworks",
+"mobile"
+],
+"paddle-mcp": [
+"mcp-servers"
+],
+"microsoft-copilot-studio": [
+"mcp-servers"
 ]
 }
