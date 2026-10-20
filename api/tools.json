@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T10:24:33Z",
- "updated": "2026-10-20T10:24:33Z",
+ "generated": "2026-10-20T11:58:53Z",
+ "updated": "2026-10-20T11:58:53Z",
  "last_checked": "2026-10-20",
- "count": 1498,
+ "count": 1499,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -63350,6 +63350,46 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/virtualbudz-budbot.png",
    "page": "https://agentscouthq.com/tools/virtualbudz-budbot.html"
+  },
+  {
+   "name": "Loppee",
+   "slug": "loppee",
+   "url": "https://loppee.com/",
+   "website": "https://loppee.com/",
+   "github": "https://github.com/loppee-ai/loppee-mcp",
+   "category": "MCP & infra",
+   "description": "Loppee is a US directory of local businesses that marks which ones it has verified (registration, an owner contact route and any required license). Its free, no-sign-in remote MCP server (loppee.com/mcp/discovery) and REST API let Claude, ChatGPT, Cursor and other assistants look up a business, read its Trust Card and identity-verified reviews, and compare options; owners can also manage their listing through their own AI agent.",
+   "key_features": [
+    "Free public MCP and REST reads with no sign-in; free for businesses to list, paid plans add reach and gallery space",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free public MCP and REST reads with no sign-in; free for businesses to list, paid plans add reach and gallery space",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "loppee-ai/loppee-mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/loppee.png",
+   "page": "https://agentscouthq.com/tools/loppee.html"
   }
  ]
 }

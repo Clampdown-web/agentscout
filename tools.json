@@ -38073,5 +38073,32 @@
     "logo": "assets/logos/virtualbudz-budbot.png",
     "maker_submitted": true,
     "submitted": "2026-10-19"
+  },
+  {
+    "name": "Loppee",
+    "url": "https://loppee.com/",
+    "description": "Loppee is a US directory of local businesses that marks which ones it has verified (registration, an owner contact route and any required license). Its free, no-sign-in remote MCP server (loppee.com/mcp/discovery) and REST API let Claude, ChatGPT, Cursor and other assistants look up a business, read its Trust Card and identity-verified reviews, and compare options; owners can also manage their listing through their own AI agent.",
+    "category": "MCP & infra",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Free public MCP and REST reads with no sign-in; free for businesses to list, paid plans add reach and gallery space",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://loppee.com/",
+    "github": "https://github.com/loppee-ai/loppee-mcp",
+    "repo": "loppee-ai/loppee-mcp",
+    "github_stars": 0,
+    "id": 1518,
+    "slug": "loppee",
+    "logo": "assets/logos/loppee.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
   }
 ]
