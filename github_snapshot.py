@@ -1,7 +1,7 @@
 """Daily GitHub snapshot for listed tools (no token, no API: public repo page + Atom feeds, ~1 req/s).
 Writes data/stars/YYYY-MM-DD.json ({slug: stars}) and data/github.json ({slug: {repo, stars, release_tag, release_date, release_url,
 releases:[[tag,date,url]..3], pushed, archived, fetched}}). Previous values are kept when a fetch fails.
-Usage (from repo root): python3 github_snapshot.py [--limit N] [--workers 8] [--force]
+Usage (from repo root): python3 github_snapshot.py [--limit N] [--workers 8] [--force] [--max-minutes 40]
 Resumes by default (repos fetched today are reused); about 10-15 min for ~1,000 repos with 8 workers."""
 import json,re,os,sys,time,urllib.request,datetime,html,threading
 from concurrent.futures import ThreadPoolExecutor
@@ -24,11 +24,18 @@ def entries(atom,n=3):
         if t and d: out.append([html.unescape(t.group(1)).strip()[:80],d.group(1)[:10],l.group(1) if l else ""])
         if len(out)>=n: break
     return out
+def _atomic(path,obj,**kw):
+    # write to a temp file then rename, so a killed run never leaves a half-written JSON
+    tmp=path+".tmp"
+    with open(tmp,"w") as f: json.dump(obj,f,**kw)
+    os.replace(tmp,path)
 def save(G,snap,today):
-    json.dump(dict(sorted(G.items())),open("data/github.json","w"),indent=1,ensure_ascii=False)
+    _atomic("data/github.json",dict(sorted(G.items())),indent=1,ensure_ascii=False)
     if snap:
-        p=f"data/stars/{today}.json"; old=json.load(open(p)) if os.path.exists(p) else {}
-        old.update(snap); json.dump(dict(sorted(old.items())),open(p,"w"),indent=0)
+        p=f"data/stars/{today}.json"
+        try: old=json.load(open(p)) if os.path.exists(p) else {}
+        except Exception: old={}
+        old.update(snap); _atomic(p,dict(sorted(old.items())),indent=0)
 def main():
     lim=int(sys.argv[sys.argv.index("--limit")+1]) if "--limit" in sys.argv else 10**9
     t=json.load(open("tools.json")); today=datetime.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
@@ -38,6 +45,10 @@ def main():
     repos=[(x["slug"],m.group(1).rstrip("/")) for x in t for m in [re.search(r"github\.com/([^/\s]+/[^/\s#?]+)",x.get("github") or "")] if m][:lim]
     W=int(sys.argv[sys.argv.index("--workers")+1]) if "--workers" in sys.argv else 8
     lock=threading.Lock(); todo=[]; cnt=[0]
+    # time budget: stop starting new repos after --max-minutes (default 40) and save, so the routine always ends cleanly;
+    # rerunning resumes where it stopped
+    budget=float(sys.argv[sys.argv.index("--max-minutes")+1]) if "--max-minutes" in sys.argv else 40.0
+    t0=time.time(); skipped=[0]
     for slug,repo in repos:
         repo=re.sub(r"\.git$","",repo); g=G.get(slug,{}); g["repo"]=repo; G[slug]=g
         # always resume: repos already fetched today are reused, so a killed run can just be restarted
@@ -46,7 +57,11 @@ def main():
     print(f"{len(repos)} repos, {len(repos)-len(todo)} already fetched today, {len(todo)} to fetch, {W} workers",flush=True)
     def one(item):
         nonlocal ok,fail
-        slug,repo=item; g=dict(G[slug])
+        slug,repo=item
+        if time.time()-t0>budget*60:
+            with lock: skipped[0]+=1
+            return
+        g=dict(G[slug])
         page=get(f"https://github.com/{repo}"); time.sleep(1)
         m=re.search(r'"stargazerCount":(\d+)',page or ""); got=None
         if m:
@@ -66,5 +81,6 @@ def main():
             if cnt[0]%50==0: save(G,snap,today); print(f"progress {cnt[0]}/{len(todo)}",flush=True)
     with ThreadPoolExecutor(W) as ex: list(ex.map(one,todo))
     save(G,snap,today)
-    print(f"github snapshot {today}: {ok} repos with stars, {fail} failed, {sum(1 for v in G.values() if v.get('release_tag'))} with releases")
+    if skipped[0]: print(f"TIME BUDGET reached: {skipped[0]} repos not fetched; rerun to resume",flush=True)
+    print(f"github snapshot {today}: {ok} repos with stars, {fail} failed, {skipped[0]} skipped, {sum(1 for v in G.values() if v.get('release_tag'))} with releases")
 if __name__=="__main__": main()

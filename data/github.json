@@ -5275,6 +5275,14 @@
   "pushed": "2026-10-20",
   "fetched": "2026-10-20"
  },
+ "cosvoice": {
+  "repo": "CosVoice/cosvoice-mcp",
+  "stars": 0,
+  "archived": false,
+  "releases": [],
+  "pushed": "2026-10-13",
+  "fetched": "2026-10-20"
+ },
  "coucou": {
   "repo": "Louis-CFM/coucou",
   "stars": 5623,
@@ -8496,7 +8504,7 @@
  },
  "hermes-agent-nous-research": {
   "repo": "NousResearch/hermes-agent",
-  "stars": 255454,
+  "stars": 255537,
   "archived": false,
   "releases": [
    [
@@ -8505,14 +8513,14 @@
     "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261020T065957Z"
    ],
    [
+    "rc.1-v0.22.3",
+    "2026-10-20",
+    "https://github.com/NousResearch/hermes-agent/releases/tag/rc.1-v0.22.3"
+   ],
+   [
     "v0.22.2+canary.20261019T071120Z",
     "2026-10-19",
     "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261019T071120Z"
-   ],
-   [
-    "v0.22.2+canary.20261018T065527Z",
-    "2026-10-18",
-    "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2%2Bcanary.20261018T065527Z"
    ]
   ],
   "release_tag": "v0.22.2+canary.20261020T065957Z",
@@ -9588,7 +9596,7 @@
  },
  "jevgrep": {
   "repo": "dzhng/jevgrep",
-  "stars": 2826,
+  "stars": 2829,
   "archived": false,
   "releases": [
    [
@@ -10355,28 +10363,28 @@
  },
  "langchain-deep-agents": {
   "repo": "langchain-ai/deepagents",
-  "stars": 30445,
+  "stars": 30454,
   "archived": false,
   "releases": [
+   [
+    "deepagents-code==0.1.87",
+    "2026-10-20",
+    "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.87"
+   ],
+   [
+    "deepagents==0.7.29",
+    "2026-10-20",
+    "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.29"
+   ],
    [
     "deepagents-code==0.1.86",
     "2026-10-16",
     "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.86"
-   ],
-   [
-    "deepagents==0.7.28",
-    "2026-10-16",
-    "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.28"
-   ],
-   [
-    "deepagents==0.7.27",
-    "2026-10-16",
-    "https://github.com/langchain-ai/deepagents/releases/tag/deepagents%3D%3D0.7.27"
    ]
   ],
-  "release_tag": "deepagents-code==0.1.86",
-  "release_date": "2026-10-16",
-  "release_url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.86",
+  "release_tag": "deepagents-code==0.1.87",
+  "release_date": "2026-10-20",
+  "release_url": "https://github.com/langchain-ai/deepagents/releases/tag/deepagents-code%3D%3D0.1.87",
   "pushed": "2026-10-20",
   "fetched": "2026-10-20"
  },
@@ -14067,28 +14075,28 @@
  },
  "nvidia-openshell": {
   "repo": "nvidia/openShell",
-  "stars": 16793,
+  "stars": 16813,
   "archived": false,
   "releases": [
+   [
+    "v0.1.6-pre.1: feat(auth): emit OCSF events for gateway authorization denials (#4",
+    "2026-10-20",
+    "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.6-pre.1"
+   ],
+   [
+    "OpenShell v0.1.5",
+    "2026-10-20",
+    "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.5"
+   ],
    [
     "v0.1.5-pre.7: fix(ci): grant prerelease publish pull request read permission (#4",
     "2026-10-20",
     "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.5-pre.7"
-   ],
-   [
-    "v0.1.5-pre.6: fix(vm): flush guest filesystem before a planned sandbox stop (#41",
-    "2026-10-20",
-    "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.5-pre.6"
-   ],
-   [
-    "OpenShell Development Build",
-    "2026-10-20",
-    "https://github.com/NVIDIA/OpenShell/releases/tag/dev"
    ]
   ],
-  "release_tag": "v0.1.5-pre.7: fix(ci): grant prerelease publish pull request read permission (#4",
+  "release_tag": "v0.1.6-pre.1: feat(auth): emit OCSF events for gateway authorization denials (#4",
   "release_date": "2026-10-20",
-  "release_url": "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.5-pre.7",
+  "release_url": "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.6-pre.1",
   "pushed": "2026-10-20",
   "fetched": "2026-10-20"
  },
@@ -14897,7 +14905,7 @@
  },
  "openai-agents-sdk-python": {
   "repo": "openai/openai-agents-python",
-  "stars": 30170,
+  "stars": 30180,
   "archived": false,
   "releases": [
    [
@@ -18202,28 +18210,28 @@
  },
  "ruflo": {
   "repo": "ruvnet/ruflo",
-  "stars": 77558,
+  "stars": 77718,
   "archived": false,
   "releases": [
+   [
+    "v3.59.1 — npx ruflo tui: mouse clicking on by default",
+    "2026-10-20",
+    "https://github.com/ruvnet/ruflo/releases/tag/v3.59.1"
+   ],
+   [
+    "v3.59.0 — Real AgentDB HNSW search, Grok Build host, npm README image fix",
+    "2026-10-20",
+    "https://github.com/ruvnet/ruflo/releases/tag/v3.59.0"
+   ],
    [
     "v3.58.1 — CWE-22 fix, CLI parser fix, TokenOptimizer fix",
     "2026-10-20",
     "https://github.com/ruvnet/ruflo/releases/tag/v3.58.1"
-   ],
-   [
-    "v3.58.0 — critical install fix + TUI mouse/menu fixes + memory peek",
-    "2026-10-20",
-    "https://github.com/ruvnet/ruflo/releases/tag/v3.58.0"
-   ],
-   [
-    "v3.57.2 — graph/backup/ttl correctness fixes + large community PR batch",
-    "2026-10-19",
-    "https://github.com/ruvnet/ruflo/releases/tag/v3.57.2"
    ]
   ],
-  "release_tag": "v3.58.1 — CWE-22 fix, CLI parser fix, TokenOptimizer fix",
+  "release_tag": "v3.59.1 — npx ruflo tui: mouse clicking on by default",
   "release_date": "2026-10-20",
-  "release_url": "https://github.com/ruvnet/ruflo/releases/tag/v3.58.1",
+  "release_url": "https://github.com/ruvnet/ruflo/releases/tag/v3.59.1",
   "pushed": "2026-10-20",
   "fetched": "2026-10-20"
  },
@@ -18252,6 +18260,33 @@
   "release_date": "2026-06-30",
   "release_url": "https://github.com/intellectronica/ruler/releases/tag/v0.3.44",
   "pushed": "2026-08-19",
+  "fetched": "2026-10-20"
+ },
+ "sage": {
+  "repo": "ZHangZHengEric/Sage",
+  "stars": 1212,
+  "archived": false,
+  "releases": [
+   [
+    "Sage 2.1.1",
+    "2026-10-19",
+    "https://github.com/ZHangZHengEric/Sage/releases/tag/v2.1.1"
+   ],
+   [
+    "Sage 2.1.0",
+    "2026-10-13",
+    "https://github.com/ZHangZHengEric/Sage/releases/tag/v2.1.0"
+   ],
+   [
+    "Sage 2.0.0",
+    "2026-10-10",
+    "https://github.com/ZHangZHengEric/Sage/releases/tag/v2.0.0"
+   ]
+  ],
+  "release_tag": "Sage 2.1.1",
+  "release_date": "2026-10-19",
+  "release_url": "https://github.com/ZHangZHengEric/Sage/releases/tag/v2.1.1",
+  "pushed": "2026-10-20",
   "fetched": "2026-10-20"
  },
  "scout-outcrawl": {
