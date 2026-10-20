@@ -61,6 +61,17 @@ json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
 tpl=open("data/detail.tpl").read()
+SOC=[("x.com","X"),("twitter.com","X"),("discord.gg","Discord"),("discord.com","Discord"),("reddit.com","Reddit"),("github.com","GitHub"),("linkedin.com","LinkedIn"),("youtube.com","YouTube")]
+def soc_lab(u):
+    h=re.sub(r"^https?://(www\.)?","",u).split("/")[0].lower()
+    return next((l for d,l in SOC if h==d),None)
+def soc_row(x):
+    # verified official social links only (tools.json "socials"); no block when empty
+    ls=[(u,soc_lab(u)) for u in x.get("socials") or [] if soc_lab(u)]
+    if not ls: return ""
+    a="".join(f'<a class="b" href="{e(u)}" target="_blank" rel="nofollow noopener" aria-label="{e(x["name"])} on {l}">{l} ↗</a>' for u,l in ls)
+    return f'<h2 style="font-size:16px;margin-bottom:10px">Official channels</h2><div class="badges soc" style="margin-bottom:32px;flex-wrap:wrap">{a}</div>'
+
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
 build_rich.REL=REL
@@ -99,11 +110,12 @@ for x in t:
         _sd=x.get("submitted") or x.get("added","")
         _sdt=_dt.date.fromisoformat(_sd).strftime("%b %-d, %Y") if _sd else ""
         out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+f'<span class="b maker" title="The maker submitted this tool through our submit form{(" on "+_sdt) if _sdt else ""}. We reviewed and wrote the listing.">✓ Submitted by maker</span>'+m.group(2),out,count=1,flags=re.S)
+    out=out.replace('<h2 style="font-size:16px;margin-bottom:10px">Use cases</h2>',soc_row(x)+'<h2 style="font-size:16px;margin-bottom:10px">Use cases</h2>',1)
     B="https://agentscouthq.com/";pg=f"{B}tools/{x['slug']}.html"
     out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)
     if _rich: out=out.replace(about,(about+_rich[0]) if _rich[4:]==("lite",) else _rich[0],1)  # lite entries keep the About paragraph (additive)
     ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":pg,"url":pg,"name":f"{x['name']}: what it does, pricing and alternatives","dateModified":x["verified"],"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
-        "about":{"@type":"SoftwareApplication","name":x["name"],"description":x["description"],"url":prim,**({"sameAs":[gh]} if gh and gh!=prim else {}),**({"codeRepository":gh} if gh else {}),"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","keywords":", ".join(dict.fromkeys([x["category"]]+x["use_cases"]))}},
+        "about":{"@type":"SoftwareApplication","name":x["name"],"description":x["description"],"url":prim,**({"sameAs":([gh] if gh and gh!=prim else [])+[u for u in x.get("socials") or [] if soc_lab(u)]} if (gh and gh!=prim) or x.get("socials") else {}),**({"codeRepository":gh} if gh else {}),"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","keywords":", ".join(dict.fromkeys([x["category"]]+x["use_cases"]))}},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":x["category"],"item":f"{B}categories/{build_extras.catslug(x['category'])}.html"},{"@type":"ListItem","position":3,"name":x["name"],"item":pg}]}]}
     if _rich:
         ld["@graph"][0]["name"]=_rich[3]; ld["@graph"][0]["about"]={**ld["@graph"][0]["about"],**_rich[1]}; ld["@graph"].append(_rich[2])
