@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-20T21:13:57Z",
- "updated": "2026-10-20T21:13:57Z",
+ "generated": "2026-10-20T22:00:07Z",
+ "updated": "2026-10-20T22:00:07Z",
  "last_checked": "2026-10-20",
  "count": 1591,
  "tools": [
@@ -65444,15 +65444,14 @@
    "url": "https://opencodex.me/",
    "website": "https://opencodex.me/",
    "github": "https://github.com/lidge-jun/opencodex",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "A local provider proxy that lets OpenAI Codex (CLI, app and SDK) and Claude Code run on other model providers such as Claude, Gemini, Grok, DeepSeek or local Ollama models.",
    "key_features": [
     "Open source",
     "Mature",
     "17682 GitHub stars",
     "Write code",
-    "Build an agent",
-    "Connect tools via mcp"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -65463,7 +65462,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -65475,8 +65476,7 @@
    "license": "",
    "tags": [
     "write code",
-    "build an agent",
-    "connect tools via MCP"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/opencodex.png",
@@ -65529,14 +65529,13 @@
    "url": "https://weaveos.com/products/router",
    "website": "https://weaveos.com/products/router",
    "github": "https://github.com/weave-os/router",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "An open-source LLM router for Claude Code, Codex and other coding agents that sends each request to the cheapest model that still meets your quality bar, cutting model spend.",
    "key_features": [
     "Open source",
     "Mature",
     "5595 GitHub stars",
-    "Write code",
-    "Connect tools via mcp"
+    "Write code"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -65547,7 +65546,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -65558,8 +65559,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
-    "connect tools via MCP"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/weave-router.png",
@@ -65777,7 +65777,7 @@
    "url": "https://www.anysearch.com/",
    "website": "https://www.anysearch.com/",
    "github": "https://github.com/anysearch-ai/anysearch-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "A search MCP server and API for AI agents, covering real-time web search, vertical search and parallel batch queries with structured results and anonymous access.",
    "key_features": [
     "See site",
@@ -65794,7 +65794,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -66049,13 +66051,13 @@
    "url": "https://docs.kaelio.com/ktx/docs/getting-started/introduction",
    "website": "https://docs.kaelio.com/ktx/docs/getting-started/introduction",
    "github": "https://github.com/Kaelio/ktx",
-   "category": "MCP & infra",
+   "category": "memory & RAG",
    "description": "An open-source context layer for data and analytics agents that gives Claude Code, Codex and other agents a self-improving map of your warehouse, metrics and business definitions.",
    "key_features": [
     "Open source",
     "Active",
     "1620 GitHub stars",
-    "Connect tools via mcp"
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -66067,6 +66069,7 @@
    "added": "2026-10-20",
    "source": "GitHub",
    "goals": [
+    "automation",
     "crypto"
    ],
    "skill": "developer",
@@ -66079,7 +66082,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ktx.png",
@@ -66226,14 +66229,13 @@
    "url": "https://openmeld.ai/",
    "website": "https://openmeld.ai/",
    "github": "https://github.com/amplifthq/openmeld",
-   "category": "MCP & infra",
+   "category": "productivity",
    "description": "An open-source collaboration system where people, cloud agents and coding agents such as Codex, Claude Code and Cursor share context and pick up each other's work.",
    "key_features": [
     "Open source",
     "Active",
     "1388 GitHub stars",
-    "Write code",
-    "Connect tools via mcp"
+    "Write code"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -66244,7 +66246,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "writing"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -66255,8 +66259,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
-    "connect tools via MCP"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openmeld.png",
@@ -66308,13 +66311,12 @@
    "url": "https://docs.litellm-agent-platform.ai/introduction",
    "website": "https://docs.litellm-agent-platform.ai/introduction",
    "github": "https://github.com/LiteLLM-Labs/litellm-agent-control-plane",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "A control plane from the LiteLLM team that gives one API and gateway for calling many agents, such as OpenCode, Claude Managed Agents, Cursor Agents and Deep Agents.",
    "key_features": [
     "Open source",
     "Active",
-    "1317 GitHub stars",
-    "Connect tools via mcp"
+    "1317 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -66325,7 +66327,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -66336,7 +66340,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/litellm-agent-platform.png",
@@ -66390,7 +66394,7 @@
    "url": "https://www.nexusdock.co/",
    "website": "https://www.nexusdock.co/",
    "github": "https://github.com/uvwt/agentdock",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "A secure MCP runtime that lets ChatGPT, Claude and other AI clients operate your Mac, Windows, Linux and Android devices, with memory, tools and reusable automations.",
    "key_features": [
     "Open source + cloud",
@@ -66409,7 +66413,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -66564,14 +66570,13 @@
    "url": "https://trycaspianai.com/",
    "website": "https://trycaspianai.com/",
    "github": "https://github.com/TryCaspian/caspian-sdk",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "An open-source communication SDK that lets AI agents send and receive messages over email, WhatsApp, Slack, Discord and other channels.",
    "key_features": [
     "Open source",
     "Active",
     "973 GitHub stars",
-    "Build an agent",
-    "Connect tools via mcp"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -66582,7 +66587,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "automation"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -66593,8 +66600,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build an agent",
-    "connect tools via MCP"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/caspian.png",
@@ -66863,14 +66869,13 @@
    "url": "https://www.agentconnect.md/",
    "website": "https://www.agentconnect.md/",
    "github": "https://github.com/agentconnect-md/agentconnect",
-   "category": "MCP & infra",
+   "category": "productivity",
    "description": "An open-source, multi-agent workspace where you @-mention any agent wherever work happens, and agents work alongside your team and each other.",
    "key_features": [
     "Open source",
     "Active",
     "1479 GitHub stars",
-    "Build multi-agent systems",
-    "Connect tools via mcp"
+    "Build multi-agent systems"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -66881,7 +66886,9 @@
    "date_added": "2026-10-20",
    "added": "2026-10-20",
    "source": "GitHub",
-   "goals": [],
+   "goals": [
+    "writing"
+   ],
    "skill": "developer",
    "weekly_pick": false,
    "new": true,
@@ -66892,8 +66899,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "build multi-agent systems",
-    "connect tools via MCP"
+    "build multi-agent systems"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agentconnect.png",

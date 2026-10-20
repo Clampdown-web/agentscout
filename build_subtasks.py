@@ -205,6 +205,8 @@ SUBDESC={
 "token-costs":"Trackers for token usage and spend across coding agents.",
 "cloud-coding-agents":"Autonomous coding agents that take an issue and come back with a pull request.",
 }
+try: _REDIR=set(__import__("json").load(open("redirects.json")))
+except Exception: _REDIR=set()
 def subpages(m,t,existing_sets):
     """Sub-task pages: >=8 tools, <=75% of the parent, <70% overlap (share of the new page's tools) with any /s/ or /best/ page,
     Jaccard <70% with any task page, <70% contained in an earlier sub-task page. Returns [(slug,parent_slug,sub,items)]."""
@@ -212,6 +214,7 @@ def subpages(m,t,existing_sets):
     for s,(T,items) in m.items():
         for sub in ALLOW.get(s) or []:
             if sub not in SUBDESC: continue
+            if f"tasks/{s}-{sub}.html" in _REDIR: continue  # redirected page (redirects.json): never re-create it
             its=[x for x in items if sub in tags(x)]; A={x["slug"] for x in its}
             if len(A)<8 or len(A)>.75*len(items): continue
             if any(len(A&B)/len(A)>=.7 for B in existing_sets): continue

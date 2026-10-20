@@ -39348,7 +39348,7 @@
     "name": "opencodex",
     "url": "https://opencodex.me/",
     "description": "A local provider proxy that lets OpenAI Codex (CLI, app and SDK) and Claude Code run on other model providers such as Claude, Gemini, Grok, DeepSeek or local Ollama models.",
-    "category": "MCP & infra",
+    "category": "agent infra",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -39360,8 +39360,7 @@
     "pricing_detail": "",
     "use_cases": [
       "write code",
-      "build an agent",
-      "connect tools via MCP"
+      "build an agent"
     ],
     "website": "https://opencodex.me/",
     "github": "https://github.com/lidge-jun/opencodex",
@@ -39400,7 +39399,7 @@
     "name": "Weave Router",
     "url": "https://weaveos.com/products/router",
     "description": "An open-source LLM router for Claude Code, Codex and other coding agents that sends each request to the cheapest model that still meets your quality bar, cutting model spend.",
-    "category": "MCP & infra",
+    "category": "agent infra",
     "pricing": "Open source",
     "maturity": "Mature",
     "audience": "builders",
@@ -39411,8 +39410,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "write code",
-      "connect tools via MCP"
+      "write code"
     ],
     "website": "https://weaveos.com/products/router",
     "github": "https://github.com/weave-os/router",
@@ -39553,7 +39551,7 @@
     "name": "AnySearch",
     "url": "https://www.anysearch.com/",
     "description": "A search MCP server and API for AI agents, covering real-time web search, vertical search and parallel batch queries with structured results and anonymous access.",
-    "category": "MCP & infra",
+    "category": "MCP servers",
     "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
@@ -39713,7 +39711,7 @@
     "name": "ktx",
     "url": "https://docs.kaelio.com/ktx/docs/getting-started/introduction",
     "description": "An open-source context layer for data and analytics agents that gives Claude Code, Codex and other agents a self-improving map of your warehouse, metrics and business definitions.",
-    "category": "MCP & infra",
+    "category": "memory & RAG",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -39724,7 +39722,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "give agents memory"
     ],
     "website": "https://docs.kaelio.com/ktx/docs/getting-started/introduction",
     "github": "https://github.com/Kaelio/ktx",
@@ -39817,7 +39815,7 @@
     "name": "OpenMeld",
     "url": "https://openmeld.ai/",
     "description": "An open-source collaboration system where people, cloud agents and coding agents such as Codex, Claude Code and Cursor share context and pick up each other's work.",
-    "category": "MCP & infra",
+    "category": "productivity",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -39828,8 +39826,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "write code",
-      "connect tools via MCP"
+      "write code"
     ],
     "website": "https://openmeld.ai/",
     "github": "https://github.com/amplifthq/openmeld",
@@ -39868,7 +39865,7 @@
     "name": "LiteLLM Agent Platform",
     "url": "https://docs.litellm-agent-platform.ai/introduction",
     "description": "A control plane from the LiteLLM team that gives one API and gateway for calling many agents, such as OpenCode, Claude Managed Agents, Cursor Agents and Deep Agents.",
-    "category": "MCP & infra",
+    "category": "agent infra",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -39879,7 +39876,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "connect tools via MCP"
+      "agent infra"
     ],
     "website": "https://docs.litellm-agent-platform.ai/introduction",
     "github": "https://github.com/LiteLLM-Labs/litellm-agent-control-plane",
@@ -39918,7 +39915,7 @@
     "name": "AgentDock (NexusDock)",
     "url": "https://www.nexusdock.co/",
     "description": "A secure MCP runtime that lets ChatGPT, Claude and other AI clients operate your Mac, Windows, Linux and Android devices, with memory, tools and reusable automations.",
-    "category": "MCP & infra",
+    "category": "MCP servers",
     "pricing": "Open source + cloud",
     "maturity": "Active",
     "audience": "builders",
@@ -40022,7 +40019,7 @@
     "name": "Caspian",
     "url": "https://trycaspianai.com/",
     "description": "An open-source communication SDK that lets AI agents send and receive messages over email, WhatsApp, Slack, Discord and other channels.",
-    "category": "MCP & infra",
+    "category": "agent infra",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -40033,8 +40030,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "build an agent",
-      "connect tools via MCP"
+      "build an agent"
     ],
     "website": "https://trycaspianai.com/",
     "github": "https://github.com/TryCaspian/caspian-sdk",
@@ -40202,7 +40198,7 @@
     "name": "AgentConnect",
     "url": "https://www.agentconnect.md/",
     "description": "An open-source, multi-agent workspace where you @-mention any agent wherever work happens, and agents work alongside your team and each other.",
-    "category": "MCP & infra",
+    "category": "productivity",
     "pricing": "Open source",
     "maturity": "Active",
     "audience": "builders",
@@ -40213,8 +40209,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "build multi-agent systems",
-      "connect tools via MCP"
+      "build multi-agent systems"
     ],
     "website": "https://www.agentconnect.md/",
     "github": "https://github.com/agentconnect-md/agentconnect",

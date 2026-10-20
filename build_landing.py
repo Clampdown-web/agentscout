@@ -142,7 +142,7 @@ R=[
  # Batch (i), Oct 18 2026: more roles (published only with >=10 tools across their sections)
  ("qa-engineers","QA engineers","AI agents for QA engineers","Testing agents, review bots and security scanners that help QA engineers find bugs before users do.",
  [("Test your app","testing-apps"),("Review pull requests","reviewing-pull-requests"),("Security testing","security-testing"),("Evaluate AI features","evaluating-agents")],
- [("prompt-builder","Prompt builder")],["free-ai-testing-agents"]),
+ [("prompt-builder","Prompt builder")],[]),
  ("data-engineers","data engineers","AI agents for data engineers","Database MCP servers, scrapers and workflow tools that help data engineers move, query and clean data with agents.",
  [("Databases","databases"),("Data analysis","data-analysis"),("Scrape websites","web-scraping"),("Pipelines and workflows","automating-workflows"),("Documents and RAG","documents")],
  [("ai-cost-calculator","AI API cost calculator"),("token-counter","Token counter")],["open-source-workflow-automation-tools"]),
@@ -236,6 +236,8 @@ def _existing_sets(made):
     if os.path.exists("free-tools.html"):  # each category section of the free-tools hub
         for sec in open("free-tools.html").read().split('<h2 id=')[1:]: sets.append(set(re.findall(r'tools/([a-z0-9-]+)\.html',sec)))
     return [x for x in sets if x]
+try: _REDIR=set(__import__("json").load(open("redirects.json")))
+except Exception: _REDIR=set()
 def modifier_pages(t,m,made,inT):
     have={a[0] for a in made}; ex=_existing_sets(made); tasksets=[{x["slug"] for x in it} for _,it in m.values()]
     cands=[]
@@ -243,6 +245,7 @@ def modifier_pages(t,m,made,inT):
         for tk,noun,tf,task in TARGETS:
             slug=f"{ms}-{tk}"
             if slug in have or (ms=="mcp" and "mcp" in tk): continue
+            if f"s/{slug}.html" in _REDIR: continue  # redirected page (redirects.json): never re-create it
             allm=[x for x in t if live(x) and mf(x) and tf(x,inT(x))]
             A={x["slug"] for x in allm}
             if len(A)<MOD_MIN: continue
