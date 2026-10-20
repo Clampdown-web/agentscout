@@ -1,12 +1,12 @@
 {
- "date": "2026-10-19",
- "slug": "webclaw",
- "name": "webclaw",
- "why": "A standout browser/computer use tool for builders: rust web extraction tool that turns sites into clean Markdown or JSON for agents, as a CLI, MCP server and REST API, with a hosted API.",
- "category": "browser/computer use",
- "description": "Rust web extraction tool that turns sites into clean Markdown or JSON for agents, as a CLI, MCP server and REST API, with a hosted API.",
- "logo": "https://agentscouthq.com/assets/logos/webclaw.png",
- "page": "https://agentscouthq.com/tools/webclaw.html",
+ "date": "2026-10-20",
+ "slug": "coddo",
+ "name": "Coddo",
+ "why": "A standout coding tool for builders: desktop app that puts a visual interface and voice input on top of terminal coding agents.",
+ "category": "coding",
+ "description": "Desktop app that puts a visual interface and voice input on top of terminal coding agents.",
+ "logo": "https://agentscouthq.com/assets/logos/coddo.png",
+ "page": "https://agentscouthq.com/tools/coddo.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -23,6 +23,10 @@
   {
    "date": "2026-10-19",
    "slug": "webclaw"
+  },
+  {
+   "date": "2026-10-20",
+   "slug": "coddo"
   }
  ]
 }
