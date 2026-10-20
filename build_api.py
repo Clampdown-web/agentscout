@@ -19,6 +19,8 @@ KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["
 def goals(x):
     txt=(x["name"]+" "+x["description"]).lower()
     return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
+# DIY hardware/firmware projects: real voice projects, but not ready-made voice agents, so free-tool picks rank them after software.
+HW={"xiaozhi-esp32","elatoai"}
 DEV_CATS=("coding","frameworks","MCP & infra")  # always developer tools, even when "ready to use" (Cursor is not "no code needed")
 def skill(x):
     if x["category"] in DEV_CATS: return "developer"
@@ -40,7 +42,7 @@ def build(t):
         tools.append({"name":x["name"],"slug":x["slug"],"url":x["url"],"website":x.get("website",""),"github":x.get("github",""),"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
           "price_tag":tag(x["pricing"]),"platforms":platforms(x),"date_added":x.get("added") or x.get("verified"),"added":x.get("added"),"source":x.get("source"),
-          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"seed":bool(x.get("seed")),"new_this_week":(not x.get("seed")) and (x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"github_stars":x.get("github_stars"),"open_source":x["pricing"].lower().startswith("open"),"license":lic(x),"tags":x.get("use_cases",[])+x.get("tags",[]),"hybrid":"hybrid" in x.get("tags",[]),"logo":(f"https://agentscouthq.com/{x['logo']}" if x.get("logo") else None),
+          "goals":goals(x),"skill":skill(x),"weekly_pick":bool(x.get("featured")),"new":bool(x.get("new")),"seed":bool(x.get("seed")),"new_this_week":(not x.get("seed")) and (x.get("added") or "")>=(datetime.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date()-datetime.timedelta(days=6)).isoformat(),"repo":x.get("repo"),"github_stars":x.get("github_stars"),"open_source":x["pricing"].lower().startswith("open"),"license":lic(x),"tags":x.get("use_cases",[])+x.get("tags",[])+(["hardware"] if x.get("slug") in HW else []),"hybrid":"hybrid" in x.get("tags",[]),"logo":(f"https://agentscouthq.com/{x['logo']}" if x.get("logo") else None),
           "page":f"https://agentscouthq.com/tools/{x['slug']}.html"})
     lc=max((x.get("verified") or "") for x in t)
     json.dump({"version":1,"generated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"last_checked":lc,"count":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)

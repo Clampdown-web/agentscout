@@ -375,7 +375,7 @@ def free_tools(t):
     sec=""
     for c,n in cats.most_common():
         li="".join(f'<li style="margin:0 0 10px"><a href="tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{ico24(x)}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(pr(x))}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span></li>'
-                   for x in sorted([x for x in items if x["category"]==c],key=lambda x:(-(x.get("github_stars") or 0),x["name"].lower())))
+                   for x in sorted([x for x in items if x["category"]==c],key=lambda x:(x.get("slug") in __import__("build_api").HW,-(x.get("github_stars") or 0),x["name"].lower())))
         sec+=f'<h2 id="{catslug(c)}" class="has-cico" style="font-size:18px;margin:32px 0 10px">{cico(c)}{e(c[0].upper()+c[1:])} <span style="color:var(--muted);font-weight:400">({n})</span></h2><p style="margin:0 0 10px;font-size:14px"><a href="categories/{catslug(c)}.html">All {e(c)} tools →</a></p><ul style="list-style:none;padding:0;margin:0">{li}</ul>'
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Free AI agent tools</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout, plus {len(items)} free and open-source AI agent tools from our directory, grouped by category.</p>'

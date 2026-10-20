@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-20T09:12:06Z",
- "updated": "2026-10-20T09:12:06Z",
+ "generated": "2026-10-20T09:14:53Z",
+ "updated": "2026-10-20T09:14:53Z",
  "last_checked": "2026-10-20",
  "count": 1494,
  "tools": [
@@ -1217,7 +1217,7 @@
    "pricing": "Free tier + paid plans",
    "price_tag": "freemium",
    "platforms": [
-    "Web"
+    "Desktop (macOS, Windows, Linux)"
    ],
    "date_added": "2026-10-14",
    "added": "2026-10-14",
@@ -1225,7 +1225,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -1464,7 +1464,8 @@
    "pricing": "Free; Pro $20/mo; Max $200/mo; Teams plans (as Devin Desktop)",
    "price_tag": "freemium",
    "platforms": [
-    "Web"
+    "Desktop (macOS, Windows, Linux)",
+    "IDE extension"
    ],
    "date_added": "2026-10-14",
    "added": "2026-10-14",
@@ -1472,7 +1473,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -1628,6 +1629,7 @@
    "pricing": "Free tier + paid plans",
    "price_tag": "freemium",
    "platforms": [
+    "IDE extension",
     "Web"
    ],
    "date_added": "2026-10-14",
@@ -1636,7 +1638,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -4002,7 +4004,7 @@
     "automation",
     "crypto"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -9795,7 +9797,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -23950,7 +23952,7 @@
    "goals": [
     "automation"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": false,
    "seed": true,
@@ -27950,7 +27952,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -28520,7 +28522,8 @@
    "license": "",
    "tags": [
     "voice & phone calls",
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "hardware"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/xiaozhi-esp32.png",
@@ -29301,7 +29304,7 @@
    "goals": [
     "automation"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -29885,7 +29888,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -30883,7 +30886,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -31015,7 +31018,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -31619,7 +31622,7 @@
    "goals": [
     "automation"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -32007,7 +32010,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -33393,7 +33396,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -34186,7 +34189,8 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls"
+    "voice & phone calls",
+    "hardware"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/elatoai.png",
@@ -34217,7 +34221,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -34465,7 +34469,7 @@
    "pricing": "Open source",
    "price_tag": "free",
    "platforms": [
-    "Web"
+    "Desktop (macOS, Windows, Linux)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -34473,7 +34477,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -34637,8 +34641,7 @@
    "pricing": "Open source",
    "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Desktop (macOS, Windows, Linux)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -36902,7 +36905,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -37623,7 +37626,7 @@
    "pricing": "See site",
    "price_tag": "unknown",
    "platforms": [
-    "Developer (API/SDK)"
+    "Desktop (macOS, Windows, Linux)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -38095,7 +38098,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -39242,7 +39245,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -39369,7 +39372,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -39410,7 +39413,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -39697,7 +39700,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -39957,7 +39960,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -40361,7 +40364,7 @@
    "pricing": "See site",
    "price_tag": "unknown",
    "platforms": [
-    "Web"
+    "Desktop (macOS, Windows, Linux)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -40370,7 +40373,7 @@
     "coding",
     "writing"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -44544,7 +44547,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -47085,7 +47088,7 @@
    "goals": [
     "coding"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -59412,7 +59415,7 @@
    "goals": [
     "automation"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -61155,7 +61158,7 @@
    "goals": [
     "automation"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
@@ -61750,7 +61753,7 @@
    "goals": [
     "automation"
    ],
-   "skill": "no-code",
+   "skill": "developer",
    "weekly_pick": false,
    "new": true,
    "seed": false,
