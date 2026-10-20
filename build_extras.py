@@ -6,6 +6,17 @@ e=lambda s:html.escape(str(s or ""))
 def su(u):
     u=str(u or "").strip()
     return u if re.match(r"(?i)^https?://",u) else "#"
+
+# Standard outbound tracking on tool-page Visit buttons (owner-approved Oct 20 2026). Official-site links and JSON-LD stay clean.
+# Per-tool opt-out: tools.json "no_utm": true (for sites that break on query params).
+UTM="utm_source=agentscouthq&utm_medium=referral&utm_campaign=directory"
+def utm(u,x=None):
+    u=su(u)
+    if u=="#" or (x and x.get("no_utm")) or re.search(r"(?i)[?&]utm_[a-z]+=",u): return u
+    base,hsh,frag=u.partition("#")
+    if re.match(r"(?i)^https?://[^/?]+$",base): base+="/"
+    sep="" if base.endswith(("?","&")) else ("&" if "?" in base else "?")
+    return base+sep+UTM+hsh+frag
 PAIRS=[("claude-code","openai-codex-cli"),("cursor","windsurf"),("cline","roo-code"),("langgraph","crewai"),("crewai","autogen"),
 ("browser-use","stagehand"),("exa","tavily"),("livekit-agents","pipecat"),("vapi","retell-ai"),("n8n","make"),("dify","flowise"),
 ("langfuse","langsmith"),("e2b","modal"),("bolt","v0")]
