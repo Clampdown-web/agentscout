@@ -22318,5 +22318,748 @@
    "checked": "2026-10-19"
   },
   "updated": "2026-10-19"
+ },
+ "agentic-scientist": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agentic Scientist, from Sakana AI (the team behind The AI Scientist), treats coding agents as AI scientists. You give it a task.md describing a research problem; the agents propose ideas, run experiments, score them against the task rubric and iterate toward stronger programs. The pipeline then runs baselines and ablations, a sealed final evaluation and post-hoc analyses, and writes, compiles and audits a paper against that evidence, with every stage kept under one run directory.",
+   "It drives Claude Code, Codex, Cursor, OpenCode, Gemini CLI and pi through the Headless CLI, so the same experiment can be repeated across agents and models. Every phase runs in its own Docker container by default, because the agents run with full tool permissions, and a browser-based Run Inspector lets you review each run. The accompanying paper is on arXiv (2610.18933)."
+  ],
+  "who": "Researchers and ML engineers who want to hand a well-defined research task to coding agents and get back experiments, ablations and a draft paper they can check, and people comparing how different agents and models do on the same task.",
+  "features": [
+   "Six phases: task drafting, investigation, ablations, sealed final evaluation, post-hoc analysis and paper",
+   "Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI and pi (agent.name=...)",
+   "Each phase runs in its own Docker container for safety and reproducibility",
+   "Optional external AI review and revision phases for the paper",
+   "Run Inspector web UI to browse ideas, attempts, results and the manuscript",
+   "CPU-only example task (circle packing) plus GPU task presets"
+  ],
+  "faq": [
+   [
+    "What do I need to run Agentic Scientist?",
+    "Docker, Python 3.11+ with uv, and API keys or a subscription for the coding agent you pick (for example a Claude login for the default claude agent). GPUs are only needed for the GPU task presets; the circle-packing example runs on CPU."
+   ],
+   [
+    "Is it safe to run?",
+    "The project warns that it launches coding agents with full tool permissions, so they can run arbitrary commands. It recommends keeping runs inside its Docker image, only running tasks and sources you trust, and reviewing run directories before sharing them."
+   ]
+  ],
+  "sources": [
+   "https://github.com/SakanaAI/AI-Scientist-v3",
+   "https://arxiv.org/abs/2610.18933"
+  ],
+  "facts": {
+   "repo": "https://github.com/SakanaAI/AI-Scientist-v3",
+   "stars": 428,
+   "forks": 65,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "opengcua": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenGCUA (Open Generalist CUA) is an ongoing open project from the MAI-UI team at Tongyi Lab to build the full stack for generalist computer-use agents: systems that complete computer tasks by deciding for themselves whether to look at a screenshot or an accessibility tree, and whether to click, call an API, run a shell command or write a small program that combines them.",
+   "The first research preview (October 2026) releases an OSWorld integration example with reference screenshot-action and code-action agents, evaluation trajectories for eight frontier models, a preliminary macOS real-device harness (a menu-bar app that runs the agent on your own Mac) and a Cross-Device SDK with one programming interface for computers, browsers and phones. On the OSWorld-v2 offline set the team reports the design raised the mean partial score of the eight models from 45.3 to 64.9 and cut steps per task by 53% on average. A model release is listed as next on the roadmap."
+  ],
+  "who": "Researchers and developers building computer-use agents who want an open harness, SDK and benchmark trajectories to start from, and Mac users who want to try a real-device agent.",
+  "features": [
+   "Generalist design: GUI, accessibility tree, shell, API and code actions in one agent",
+   "OSWorld integration example with screenshot-action and code-action agents",
+   "Evaluation trajectories of 8 frontier models released",
+   "macOS real-device harness (macOS 14+) that can work in background windows",
+   "Cross-Device SDK (qwen-intelligence-sdk) for computers, browsers and phones",
+   "Interactive lab and tech report on the project site"
+  ],
+  "faq": [
+   [
+    "What does OpenGCUA need to run?",
+    "The macOS real-device harness needs macOS 14 or later; Python 3.12 is recommended, and prebuilt SDK wheels do not need Rust. The project calls the harness and SDK preliminary."
+   ],
+   [
+    "Is there an OpenGCUA model?",
+    "Not yet. The roadmap lists a GCUA model for computer and browser use as the next release; this preview opens the harness, SDK, OSWorld example and trajectories."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Tongyi-MAI/OpenGCUA",
+   "https://tongyi-mai.github.io/OpenGCUA/",
+   "https://arxiv.org/abs/2610.22200"
+  ],
+  "facts": {
+   "repo": "https://github.com/Tongyi-MAI/OpenGCUA",
+   "stars": 315,
+   "forks": 23,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "llmware": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "llmware is an open-source Python framework for building knowledge-based LLM applications that run locally and privately: on AI PCs and laptops, at the edge or self-hosted, across Windows, Mac and Linux. It supports GGUF, OpenVINO, ONNX Runtime (including Qualcomm QNN), Windows Local Foundry and PyTorch, and picks the right inference technology for the target machine.",
+   "It has two parts: a model catalog of 300+ quantized models, including 50+ of llmware's own fine-tuned SLIM, Bling, Dragon and Industry-BERT models for enterprise tasks (cloud models from OpenAI, Anthropic and Google are supported too), and a RAG pipeline that parses, chunks, embeds and indexes documents into libraries you can query with text, semantic, hybrid and metadata filters and prompt with sources."
+  ],
+  "who": "Developers building private RAG and agent apps for enterprise documents who want small models that run on a laptop or on-prem hardware instead of a cloud API.",
+  "features": [
+   "Model catalog with 300+ models in optimized, quantized formats",
+   "50+ fine-tuned small models (SLIM, Bling, Dragon, Industry-BERT) for RAG and automation",
+   "Document parsing, chunking, embedding and knowledge-base libraries",
+   "Text, semantic, hybrid and metadata queries, plus prompt-with-sources",
+   "Runs on CPU, GPU and NPU via GGUF, OpenVINO and ONNX Runtime",
+   "Database options from a laptop to a parallel cluster"
+  ],
+  "faq": [
+   [
+    "Does llmware need a GPU or cloud API?",
+    "No. The project says virtually all of its examples and models can run on device, on a laptop, and it is optimized for AI PCs; cloud models are optional."
+   ]
+  ],
+  "sources": [
+   "https://github.com/llmware-ai/llmware",
+   "https://llmware-ai.github.io/llmware/"
+  ],
+  "facts": {
+   "repo": "https://github.com/llmware-ai/llmware",
+   "stars": 14817,
+   "forks": 2929,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "memu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "memU is a lightweight, agent-driven memory system from NevaMind AI that gives you one personal memory, stored as a readable Markdown wiki, across sessions, agents and devices. A scheduled background task captures useful knowledge from your agent sessions and distills reusable skills from your agent history, and relevant memory is brought back into later tasks.",
+   "It works with Codex and ChatGPT's Work mode, Claude Code, Cursor, OpenClaw, Hermes Agent, WorkBuddy and others on macOS and Windows; setup is a message to your agent pointing it at memU's SKILL.md with an API key from memu.so. The core memory logic is about 500 lines of open-source code, and the hosted cross-device service is described by the maker as free and unlimited."
+  ],
+  "who": "People who use several coding or desktop agents (for example Codex at work and Claude Code at home) and want them to share the same memory of their projects and preferences.",
+  "features": [
+   "One shared memory across agents, sessions and devices",
+   "Memory stored as an inspectable Markdown wiki with source-linked recall",
+   "Automatic skill extraction from your agent history",
+   "Tested adapters for Codex, Claude Code, Cursor, OpenClaw, Hermes Agent and WorkBuddy",
+   "Install by sending your agent the SKILL.md link plus an API key"
+  ],
+  "faq": [
+   [
+    "Is memU free?",
+    "The open-source code is under the Apache 2.0 License, and the maker describes the hosted cross-device memory at memu.so as free and unlimited (checked Oct 20, 2026)."
+   ],
+   [
+    "Which agents are not supported?",
+    "The README lists ChatGPT's Chat mode and Claude's Chat and Cowork modes as not supported; use ChatGPT's Work mode or Claude Code instead."
+   ]
+  ],
+  "sources": [
+   "https://github.com/NevaMind-AI/memU",
+   "https://memu.pro/"
+  ],
+  "facts": {
+   "repo": "https://github.com/NevaMind-AI/memU",
+   "stars": 14553,
+   "forks": 1090,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "hermes-one": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Hermes One is a community-maintained, open-source desktop app for installing, configuring and chatting with Hermes Agent, Nous Research's self-improving AI assistant. Instead of managing the command line, it walks you through install (using the official Hermes install script), provider setup and daily use, and can also connect to a remote Hermes API server.",
+   "It adds a streaming chat UI with token and cost tracking, 22 slash commands, searchable session history, separate profiles, a memory and persona editor, 14 toolsets, scheduled tasks with a cron builder, and messaging gateways, with providers from OpenRouter, Anthropic, OpenAI, Gemini, xAI and Nous Portal to local Ollama, LM Studio, vLLM and llama.cpp. The maker notes it is in active development."
+  ],
+  "who": "People who want to use Hermes Agent with a point-and-click app on Windows, macOS or Linux rather than the terminal.",
+  "features": [
+   "Guided first-run install of Hermes Agent, local or remote backend",
+   "Many providers, including local OpenAI-compatible servers",
+   "Streaming chat with token usage and cost display",
+   "Session search, profiles, memory, persona (SOUL.md) and skills management",
+   "Scheduled tasks with 15 delivery targets and messaging gateways"
+  ],
+  "faq": [
+   [
+    "Is Hermes One official?",
+    "No. It is a community-maintained app that uses the official Hermes Agent install script; Hermes Agent itself is made by Nous Research."
+   ],
+   [
+    "How do I install Hermes One?",
+    "Download the desktop app from hermesone.org or GitHub Releases; the Windows installer is not code-signed, so SmartScreen warns on first launch."
+   ]
+  ],
+  "sources": [
+   "https://github.com/fathah/hermes-desktop",
+   "https://hermesone.org/"
+  ],
+  "facts": {
+   "repo": "https://github.com/fathah/hermes-desktop",
+   "stars": 14432,
+   "forks": 1795,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "instructor": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Instructor is a popular open-source library for getting reliable structured output (JSON) from LLMs. You define a Pydantic model, and Instructor handles the schema, validation, parsing and automatic retries, feeding validation errors back to the model until the output fits.",
+   "The same code works across major providers (OpenAI, Anthropic, Google and others, including local models), with streaming of partial objects and lists, nested models and full type safety and IDE support. Its maintainers suggest Instructor for fast, schema-first extraction and PydanticAI when you need full agent runs."
+  ],
+  "who": "Python developers who need clean, validated data out of LLM calls for extraction, classification or agent tool inputs.",
+  "features": [
+   "Pydantic models as the output schema",
+   "Automatic retries with the validation error fed back",
+   "One interface across many LLM providers",
+   "Streaming partial and list responses",
+   "Type safety and IDE autocompletion"
+  ],
+  "faq": [
+   [
+    "Is Instructor free?",
+    "Yes. It is open source under the MIT License; you only pay your model provider."
+   ],
+   [
+    "When should I use PydanticAI instead?",
+    "Instructor's README recommends PydanticAI when you need richer agent runs, built-in observability or shareable traces, and Instructor for simple, cheap extraction."
+   ]
+  ],
+  "sources": [
+   "https://github.com/567-labs/instructor",
+   "https://python.useinstructor.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/567-labs/instructor",
+   "stars": 14038,
+   "forks": 1327,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "trellis": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TRELLIS is Microsoft's open model for generating 3D assets from text or image prompts. It is built on a unified Structured LATent (SLAT) representation that can be decoded to different formats, including radiance fields, 3D Gaussians and meshes, with rectified-flow transformers as the backbone.",
+   "Microsoft released pre-trained models of up to 2 billion parameters trained on a dataset of 500K diverse 3D objects, plus training code, the TRELLIS-500K dataset and Gradio demos. It also supports variants of the same object and local editing of a generated asset. The maintainers recommend generating an image first and using the image model, since the text-conditioned models are less detailed."
+  ],
+  "who": "3D artists, game and XR developers and researchers who want to generate textured 3D assets locally from an image or a prompt.",
+  "features": [
+   "Image-to-3D and text-to-3D generation",
+   "Outputs radiance fields, 3D Gaussians or meshes",
+   "Models up to 2B parameters, trained on 500K objects",
+   "Asset variants and local 3D editing",
+   "Training code, dataset toolkit and Gradio demos"
+  ],
+  "faq": [
+   [
+    "Is TRELLIS free?",
+    "Yes. The code and models are open source under the MIT License."
+   ],
+   [
+    "Should I use text or image prompts?",
+    "The project recommends text-to-image first, then the TRELLIS image model, because its text-conditioned models are less creative and detailed."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/TRELLIS",
+   "https://trellis3d.github.io"
+  ],
+  "facts": {
+   "repo": "https://github.com/microsoft/TRELLIS",
+   "stars": 14030,
+   "forks": 1389,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "portkey-ai-gateway": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Portkey's AI Gateway is a fast, lightweight open-source gateway that puts hundreds of LLMs behind one API (Portkey cites 250+ LLMs and 1,600+ language, vision, audio and image models). You can integrate a new model in minutes and add reliability without changing app code.",
+   "It handles automatic retries and fallbacks, load balancing and conditional routing, guardrails, multimodal requests and agent-framework integrations, and Portkey's MCP Gateway adds enterprise auth and observability for MCP servers. You can self-host the open-source gateway or use Portkey's hosted platform, which adds observability, prompt management and caching; a Gateway 2.0 pre-release is merging Portkey's enterprise gateway into the open-source project."
+  ],
+  "who": "Teams running LLM apps or agents in production who want one API across providers, with fallbacks, budgets and logs.",
+  "features": [
+   "One API for hundreds of models and providers",
+   "Automatic retries, fallbacks and load balancing",
+   "Conditional routing and guardrails",
+   "MCP Gateway with auth and observability",
+   "Self-host free or use the hosted platform with logs and prompt management"
+  ],
+  "faq": [
+   [
+    "How much does Portkey cost?",
+    "The open-source gateway is free to self-host. The hosted Developer plan is free (10k recorded logs a month), Production is $49/month (100k logs, then $9 per extra 100k requests), and Enterprise is custom."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Portkey-AI/gateway",
+   "https://portkey.ai/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/Portkey-AI/gateway",
+   "stars": 13233,
+   "forks": 1517,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Open source",
+     "Free",
+     "self-hosted gateway"
+    ],
+    [
+     "Developer",
+     "$0",
+     "10k recorded logs a month, 3-day log retention"
+    ],
+    [
+     "Production",
+     "$49/mo",
+     "100k recorded logs, +$9 per extra 100k requests"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "private cloud, VPC, SSO, compliance"
+    ]
+   ],
+   "note": "",
+   "src": "https://portkey.ai/pricing",
+   "checked": "2026-10-20"
+  },
+  "updated": "2026-10-20"
+ },
+ "cogvideox": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "CogVideoX is a family of open text-to-video and image-to-video models from Zhipu AI (Z.ai) and Tsinghua University's THUDM group, released with inference and fine-tuning code. The CogVideoX1.5-5B models generate 10-second videos at higher resolution, and the image-to-video model works at any resolution.",
+   "The smaller models run on consumer GPUs: the README says CogVideoX-2B runs on older cards such as a GTX 1080 Ti and CogVideoX-5B on desktop GPUs such as an RTX 3060. It supports LoRA fine-tuning through diffusers, DDIM inversion, and the CogKit toolkit; online demos are on Hugging Face and ModelScope."
+  ],
+  "who": "Developers, researchers and creators who want to run or fine-tune an open video generation model on their own hardware.",
+  "features": [
+   "Text-to-video and image-to-video models (2B and 5B)",
+   "CogVideoX1.5: 10-second videos at higher resolution",
+   "Runs on consumer GPUs",
+   "LoRA fine-tuning via diffusers, plus CogKit",
+   "3D causal VAE and tech report released"
+  ],
+  "faq": [
+   [
+    "What licence does CogVideoX use?",
+    "The code is Apache-2.0 and CogVideoX-2B is under the Apache 2.0 License; check each model card on Hugging Face for the 5B models' terms."
+   ]
+  ],
+  "sources": [
+   "https://github.com/zai-org/CogVideo",
+   "https://arxiv.org/abs/2408.06072"
+  ],
+  "facts": {
+   "repo": "https://github.com/zai-org/CogVideo",
+   "stars": 13090,
+   "forks": 1372,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "txtai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "txtai is an all-in-one open-source Python framework from NeuML for semantic search, LLM orchestration and language-model workflows. Its core is an embeddings database that combines sparse and dense vector indexes, graph networks and relational storage, so it works both as a vector search engine and as a knowledge source for RAG.",
+   "On top of that it offers LLM pipelines (prompts, question answering, labeling, transcription, translation, summarization), workflows that chain them, and agents that connect embeddings, pipelines and workflows to solve problems on their own. It exposes web and Model Context Protocol (MCP) APIs, with bindings for JavaScript, Java, Rust and Go, and runs locally or scales out in containers."
+  ],
+  "who": "Python developers building semantic search, RAG or small agent systems who want one batteries-included library they can run locally.",
+  "features": [
+   "Embeddings database: vector, graph and relational indexes",
+   "Vector search with SQL, topic modeling and multimodal indexing",
+   "LLM pipelines for QA, summarization, transcription and more",
+   "Workflows and autonomous agents",
+   "Web and MCP APIs, with JS, Java, Rust and Go bindings"
+  ],
+  "faq": [
+   [
+    "Is txtai free?",
+    "Yes, it is open source under the Apache 2.0 License. NeuML, the company behind it, offers paid consulting."
+   ]
+  ],
+  "sources": [
+   "https://github.com/neuml/txtai",
+   "https://neuml.github.io/txtai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/neuml/txtai",
+   "stars": 13028,
+   "forks": 1170,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "nango": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Nango is a platform for building product integrations that connects your app and your AI agents to 1,000+ APIs. It gives you three building blocks: managed auth (OAuth, API keys and token refresh, with an embeddable white-label auth flow), a proxy that makes authenticated requests for your users with retries and rate-limit handling, and functions, TypeScript integration logic you write yourself or generate with its AI builder and deploy to Nango's runtime.",
+   "Use cases include AI tool calling and MCP, data syncs and webhooks. Nango says it is used in production by Replit, Ramp and Mercor, offers about 7,000 pre-built tools, triggers and syncs, and can be self-hosted on the Enterprise plan; the code is source-available under the Elastic License 2.0."
+  ],
+  "who": "SaaS and AI-agent teams that need their product or agents to act in users' third-party accounts (CRM, email, calendars and more) without building every integration and OAuth flow themselves.",
+  "features": [
+   "Managed auth for 1,000+ APIs and MCP servers",
+   "Proxy for authenticated API calls with retries",
+   "TypeScript functions for tools, syncs and webhooks, with an AI builder",
+   "About 7,000 pre-built tools, triggers and syncs",
+   "Logs, OpenTelemetry export, SOC 2 Type II"
+  ],
+  "faq": [
+   [
+    "How much does Nango cost?",
+    "Free is $0 with hard-capped monthly limits (10 connections, 10 compute hours, 10 GB). Pay-as-you-go is $50/month including $50 of credits, then $0.29 per connection, $0.72 per compute hour and $0.50 per GB. Enterprise is custom and adds self-hosting."
+   ]
+  ],
+  "sources": [
+   "https://github.com/NangoHQ/nango",
+   "https://nango.dev/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/NangoHQ/nango",
+   "stars": 12895,
+   "forks": 1461,
+   "checked": "2026-10-20",
+   "license": "the Elastic License 2.0 (source-available)",
+   "osi": false
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "10 connections, 10 compute hours, 10 GB a month (hard caps)"
+    ],
+    [
+     "Pay-as-you-go",
+     "$50/mo",
+     "includes $50 credits; $0.29/connection, $0.72/compute hour, $0.50/GB"
+    ],
+    [
+     "Growth add-on",
+     "$450/mo",
+     "shared Slack channel, faster integration requests"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "volume discounts, self-hosting, SLA"
+    ]
+   ],
+   "note": "",
+   "src": "https://nango.dev/pricing",
+   "checked": "2026-10-20"
+  },
+  "updated": "2026-10-20"
+ },
+ "hunyuanvideo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "HunyuanVideo is Tencent's open video foundation model and framework for text-to-video generation, released with PyTorch model code, pre-trained weights and inference code. At release Tencent described it as the largest open video generation model, with over 13 billion parameters, and reported quality comparable to leading closed models.",
+   "It is integrated into Hugging Face Diffusers, has FP8 weights to save GPU memory and parallel inference via xDiT. Tencent has since built a family on it: HunyuanVideo-I2V (image-to-video), HunyuanCustom, HunyuanVideo-Avatar (audio-driven animation) and the newer, more efficient HunyuanVideo-1.5."
+  ],
+  "who": "Researchers, developers and studios who want to run or build on a large open video model on their own GPUs.",
+  "features": [
+   "Open 13B-parameter text-to-video model",
+   "Weights, inference and parallel inference code",
+   "Diffusers integration and FP8 weights",
+   "Related I2V, Custom and Avatar models, plus HunyuanVideo-1.5",
+   "Penguin Video Benchmark released"
+  ],
+  "faq": [
+   [
+    "Can I use HunyuanVideo commercially?",
+    "It is released under the Tencent Hunyuan Community License, which does not apply in the European Union, United Kingdom and South Korea; read the licence for its terms before commercial use."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+   "https://arxiv.org/abs/2412.03603"
+  ],
+  "facts": {
+   "repo": "https://github.com/Tencent-Hunyuan/HunyuanVideo",
+   "stars": 12637,
+   "forks": 1357,
+   "checked": "2026-10-20",
+   "license": "the Tencent Hunyuan Community License",
+   "osi": false
+  },
+  "updated": "2026-10-20"
+ },
+ "claude-context": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Claude Context is an open-source MCP plugin from Zilliz that adds semantic code search to Claude Code and other AI coding agents. It indexes your codebase into a vector database and brings only the relevant code into the agent's context, so the agent finds code across millions of lines without many rounds of file discovery.",
+   "Zilliz pitches it as cost-effective for large codebases, since it avoids loading whole directories for every request. It needs a vector database (Milvus or a free Zilliz Cloud cluster) and an embedding provider such as OpenAI, works as an MCP server with Claude Code, Gemini CLI and other MCP clients, and also ships as a VS Code extension and npm packages."
+  ],
+  "who": "Developers using Claude Code or another coding agent on large repositories who want better, cheaper code retrieval.",
+  "features": [
+   "Semantic code search over your whole codebase via MCP",
+   "Works with Claude Code, Gemini CLI and other MCP clients",
+   "Vector storage in Milvus or Zilliz Cloud",
+   "VS Code extension and npm core package",
+   "Keeps context small to reduce token costs"
+  ],
+  "faq": [
+   [
+    "What does Claude Context need?",
+    "A vector database (a free Zilliz Cloud cluster or your own Milvus) and an embedding model API key, for example OpenAI's. The plugin itself is free and MIT-licensed."
+   ]
+  ],
+  "sources": [
+   "https://github.com/zilliztech/claude-context"
+  ],
+  "facts": {
+   "repo": "https://github.com/zilliztech/claude-context",
+   "stars": 12630,
+   "forks": 942,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "inbox-zero": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Inbox Zero is an open-source AI email assistant and email app for Gmail and Outlook. The assistant works in the background: it sorts and labels mail, pre-drafts replies in your tone, follows plain-English rules you write, tracks what needs a reply, blocks cold email, bulk-unsubscribes and archives, files attachments to Google Drive or OneDrive, and sends briefings before meetings.",
+   "You can chat with it from Slack or Telegram to manage your inbox on the go. The separate email client offers a split inbox, multiple accounts and team comments, and is free on web, desktop and iPhone. The code can be self-hosted, and the hosted service has paid plans with a 7-day free trial."
+  ],
+  "who": "Busy founders, executives and teams who get a lot of email and want an assistant that triages and drafts for them, with the option to self-host.",
+  "features": [
+   "Auto-sorting, labeling and drafted replies in your voice",
+   "AI rules in plain English",
+   "Reply tracking, cold email blocker, bulk unsubscribe and archive",
+   "Meeting briefs and auto-filing of attachments",
+   "Chat with your inbox from Slack or Telegram",
+   "Free email app for web, desktop and iPhone"
+  ],
+  "faq": [
+   [
+    "How much does Inbox Zero cost?",
+    "Paid monthly, Starter is $20, Plus $35 and Professional $50 a month; billed yearly they are $18, $28 and $42 per user per month. Each has a 7-day free trial, and Enterprise is by quote. The email app is free."
+   ],
+   [
+    "Can I self-host Inbox Zero?",
+    "Yes. The code is open source under the AGPL-3.0, and the docs include a quick start, setup CLI and Docker guide for self-hosting."
+   ]
+  ],
+  "sources": [
+   "https://github.com/elie222/inbox-zero",
+   "https://www.getinboxzero.com/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/elie222/inbox-zero",
+   "stars": 12703,
+   "forks": 1611,
+   "checked": "2026-10-20",
+   "license": "the GNU Affero General Public License v3.0",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": false,
+   "tiers": [
+    [
+     "Starter",
+     "$20/mo ($18/user/mo yearly)",
+     "sorting, drafted replies, cold-email blocker, analytics"
+    ],
+    [
+     "Plus",
+     "$35/mo ($28/user/mo yearly)",
+     "2 email accounts per user, meeting notetaker, Slack, integrations"
+    ],
+    [
+     "Professional",
+     "$50/mo ($42/user/mo yearly)",
+     "team analytics, priority support, onboarding"
+    ],
+    [
+     "Enterprise",
+     "Custom",
+     "SSO, SCIM, on-premise"
+    ]
+   ],
+   "note": "7-day free trial on each plan; the email app is free; self-hosting the open-source code is free.",
+   "src": "https://www.getinboxzero.com/pricing",
+   "checked": "2026-10-20"
+  },
+  "updated": "2026-10-20"
+ },
+ "assistant-ui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "assistant-ui is an open-source TypeScript/React library for building production-grade AI chat experiences, the UX of ChatGPT in your own app. It gives you composable primitives (Thread, Message, Composer, ThreadList, ActionBar) that you can style yourself or start from a shadcn/ui theme that its CLI copies into your project.",
+   "It handles streaming, auto-scroll, retries, attachments, markdown, code highlighting, voice dictation, keyboard shortcuts and accessibility, and supports generative UI: rendering tool calls as React components and collecting inline human approvals. Runtimes connect it to the Vercel AI SDK, LangGraph and LangChain, AG-UI and A2A, Google ADK and others, and it also targets React Native and Ink. Optional assistant-cloud adds hosted thread persistence."
+  ],
+  "who": "Front-end and full-stack developers adding a chat or agent interface to a React, React Native or terminal app.",
+  "features": [
+   "Composable chat primitives with a shadcn/ui starting theme",
+   "Streaming, attachments, markdown, code highlighting and voice dictation",
+   "Generative UI: tool calls as components, inline approvals",
+   "Runtimes for AI SDK, LangGraph, AG-UI, A2A and more",
+   "Optional hosted thread persistence (assistant-cloud)"
+  ],
+  "faq": [
+   [
+    "Is assistant-ui free?",
+    "The library is free and MIT-licensed. Optional assistant-cloud is Free (200 monthly active users), Pro $50/month (500 MAU, then $0.10 per extra MAU) or Enterprise custom."
+   ]
+  ],
+  "sources": [
+   "https://github.com/assistant-ui/assistant-ui",
+   "https://www.assistant-ui.com/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/assistant-ui/assistant-ui",
+   "stars": 12640,
+   "forks": 1267,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Library",
+     "Free",
+     "MIT licence, use your own backend"
+    ],
+    [
+     "Cloud Free",
+     "$0",
+     "200 monthly active users, thread persistence"
+    ],
+    [
+     "Cloud Pro",
+     "$50/mo",
+     "500 MAU included, $0.10 per extra MAU"
+    ],
+    [
+     "Cloud Enterprise",
+     "Custom",
+     "own backend, on-prem, 99.99% SLA"
+    ]
+   ],
+   "note": "MAU = monthly active users who send at least one message.",
+   "src": "https://www.assistant-ui.com/pricing",
+   "checked": "2026-10-20"
+  },
+  "updated": "2026-10-20"
+ },
+ "yue": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "YuE is an open song-generation project from the Multimodal Art Projection (M-A-P) community; its current version, YuE2, turns lyrics and a style prompt into a complete song with vocals and accompaniment. It first writes an explicit melody-and-chord plan, then renders that plan as audio, so a person or an agent can read, play and change the composition before rendering.",
+   "The same model does zero-shot covers of transcribed songs in a new style and agentic editing through a conversation about score, arrangement and lyrics. Its maintainers report it is competitive with Suno v5/v6 on WildSongBench. A yue2-music agent skill teaches agents to generate songs and instrumentals and edit ABC scores, and a free online demo is available."
+  ],
+  "who": "Musicians, producers and developers who want an open, controllable song generator they can run themselves or drive from an AI agent.",
+  "features": [
+   "Lyrics-to-song with vocals and accompaniment, 48 kHz stereo",
+   "Editable symbolic plan (melody and chords) before audio",
+   "Zero-shot covers and conversational editing",
+   "yue2-music agent skill for instrumentals and ABC scores",
+   "Free online demo; runs locally on a 24 GB NVIDIA GPU"
+  ],
+  "faq": [
+   [
+    "What hardware does YuE2 need?",
+    "Linux, Python 3.12 and an NVIDIA GPU with BF16 support and 24 GB of VRAM; model files download from Hugging Face on first use."
+   ],
+   [
+    "Where is the original YuE?",
+    "Its code, documentation and licence are kept on the repository's YuE-v1 branch."
+   ]
+  ],
+  "sources": [
+   "https://github.com/multimodal-art-projection/YuE",
+   "https://map-yue2.github.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/multimodal-art-projection/YuE",
+   "stars": 12393,
+   "forks": 1422,
+   "checked": "2026-10-20",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-20"
+ },
+ "openui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenUI, from Thesys, is an open-source, framework-agnostic generative UI framework. Its centerpiece is OpenUI Lang, a compact, streaming-first language for model-generated interfaces that, by the maker's figures, uses up to 67% fewer tokens than JSON.",
+   "You define the components a model may use, OpenUI generates the prompt instructions from that library, and a streaming renderer draws the UI progressively as tokens arrive. A framework-agnostic core powers runtimes for React, Vue, Svelte and Angular, and React also gets built-in component libraries (charts, forms, tables, layouts) and ready-made chat interfaces. The project notes it has no official cryptocurrency or token."
+  ],
+  "who": "Developers building AI assistants, copilots or agent apps that should answer with real interface elements instead of plain text.",
+  "features": [
+   "OpenUI Lang: compact, streaming-first UI language",
+   "Prompt instructions generated from your component library",
+   "Streaming renderer for React, Vue, Svelte and Angular",
+   "Built-in charts, forms, tables and chat interfaces for React",
+   "Playground and scaffold CLI"
+  ],
+  "faq": [
+   [
+    "Is OpenUI free?",
+    "Yes, it is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/thesysdev/openui",
+   "https://www.openui.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/thesysdev/openui",
+   "stars": 12509,
+   "forks": 845,
+   "checked": "2026-10-20",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-20"
  }
 }

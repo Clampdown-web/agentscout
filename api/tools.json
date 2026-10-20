@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T15:12:14Z",
- "updated": "2026-10-20T15:12:14Z",
+ "generated": "2026-10-20T15:34:09Z",
+ "updated": "2026-10-20T15:34:09Z",
  "last_checked": "2026-10-20",
- "count": 1502,
+ "count": 1504,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -28938,12 +28938,12 @@
    "category": "memory & RAG",
    "description": "Framework for building private, local RAG and agent applications with small specialized models on AI PCs, edge and self-hosted setups.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
     "14814 GitHub stars",
     "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -28963,7 +28963,7 @@
    "repo": "llmware-ai/llmware",
    "github_stars": 14814,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "give agents memory"
    ],
@@ -28980,12 +28980,12 @@
    "category": "memory & RAG",
    "description": "Lightweight memory system that gives Codex, Claude Code, Cursor and other agents a shared memory across sessions and devices and distills reusable skills.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0); hosted memory free per the maker",
     "Mature",
     "14553 GitHub stars",
     "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0); hosted memory free per the maker",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29005,7 +29005,7 @@
    "repo": "NevaMind-AI/memU",
    "github_stars": 14553,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "give agents memory"
    ],
@@ -29022,12 +29022,12 @@
    "category": "personal agents",
    "description": "Community desktop app for installing, configuring and chatting with Hermes Agent without managing it from the terminal.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
     "14427 GitHub stars",
     "Control a computer"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -29046,7 +29046,7 @@
    "repo": "fathah/hermes-desktop",
    "github_stars": 14427,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "control a computer"
    ],
@@ -29063,16 +29063,15 @@
    "category": "MCP & infra",
    "description": "Fast open-source AI gateway that routes requests to hundreds of LLMs through one API with fallbacks, load balancing and built-in guardrails.",
    "key_features": [
-    "Open source + cloud",
+    "Open-source gateway free to self-host; hosted Developer plan free (10k logs/mo), Production $49/mo, Enterprise custom",
     "Mature",
     "13214 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source + cloud",
-   "price_tag": "free",
+   "pricing": "Open-source gateway free to self-host; hosted Developer plan free (10k logs/mo), Production $49/mo, Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -29087,7 +29086,7 @@
    "new_this_week": true,
    "repo": "Portkey-AI/gateway",
    "github_stars": 13214,
-   "open_source": true,
+   "open_source": false,
    "license": "",
    "tags": [
     "connect tools via MCP"
@@ -29105,14 +29104,14 @@
    "category": "memory & RAG",
    "description": "All-in-one Python framework for semantic search, LLM orchestration and agents built on an embeddings database of vector, graph and relational indexes.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
     "13024 GitHub stars",
     "Build an agent",
     "Research the web",
     "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29132,7 +29131,7 @@
    "repo": "neuml/txtai",
    "github_stars": 13024,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "build an agent",
     "research the web",
@@ -29151,14 +29150,14 @@
    "category": "coding",
    "description": "Zilliz MCP plugin that adds semantic code search to Claude Code and other coding agents, using your whole codebase as context.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); needs a vector database and embedding API key",
     "Mature",
     "12622 GitHub stars",
     "Write code",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); needs a vector database and embedding API key",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29178,7 +29177,7 @@
    "repo": "zilliztech/claude-context",
    "github_stars": 12622,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "research the web",
@@ -35202,12 +35201,12 @@
    "category": "frameworks",
    "description": "Library for getting validated structured outputs from any LLM, built on Pydantic with retries and type safety.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
     "14029 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35227,7 +35226,7 @@
    "repo": "567-labs/instructor",
    "github_stars": 14029,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "build an agent"
    ],
@@ -35244,11 +35243,11 @@
    "category": "personal agents",
    "description": "AI email assistant that organizes your inbox, pre-drafts replies and manages your calendar, chat-controllable from Slack or Telegram.",
    "key_features": [
-    "Open source + cloud",
+    "Starter $20/mo, Plus $35/mo, Professional $50/mo (yearly $18/$28/$42 per user/mo), 7-day free trial; self-host free (AGPL-3.0)",
     "Mature",
     "12609 GitHub stars"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Starter $20/mo, Plus $35/mo, Professional $50/mo (yearly $18/$28/$42 per user/mo), 7-day free trial; self-host free (AGPL-3.0)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -35267,7 +35266,7 @@
    "repo": "elie222/inbox-zero",
    "github_stars": 12609,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
     "personal agents"
    ],
@@ -39439,12 +39438,12 @@
    "category": "frameworks",
    "description": "Open-source React components and runtimes for building AI chat and agent front ends with streaming, tools and persistence.",
    "key_features": [
-    "Open source",
+    "Library free (MIT); optional assistant-cloud Free (200 MAU), Pro $50/mo, Enterprise custom",
     "Mature",
     "12593 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Library free (MIT); optional assistant-cloud Free (200 MAU), Pro $50/mo, Enterprise custom",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -39464,7 +39463,7 @@
    "repo": "assistant-ui/assistant-ui",
    "github_stars": 12593,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "build an agent"
    ],
@@ -44197,12 +44196,12 @@
    "category": "frameworks",
    "description": "Framework-agnostic generative UI framework with a compact streaming language and runtimes for React, Vue, Svelte and Angular.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
     "11647 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -44222,7 +44221,7 @@
    "repo": "thesysdev/openui",
    "github_stars": 11647,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "build an agent"
    ],
@@ -46059,13 +46058,13 @@
    "category": "MCP & infra",
    "description": "Integration platform that connects products and AI agents to 1,000+ APIs with managed auth, syncs and tool calls.",
    "key_features": [
-    "Source-available + cloud",
+    "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
     "Mature",
     "12807 GitHub stars",
     "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "Source-available + cloud",
+   "pricing": "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -46084,7 +46083,7 @@
    "repo": "NangoHQ/nango",
    "github_stars": 12807,
    "open_source": false,
-   "license": "",
+   "license": "Elastic-License-2.0",
    "tags": [
     "voice & phone calls",
     "connect tools via MCP"
@@ -50139,12 +50138,12 @@
    "category": "video generation",
    "description": "Tencent's open large video generation model and framework.",
    "key_features": [
-    "Open weights (Tencent Hunyuan community licence)",
+    "Open weights (Tencent Hunyuan Community License; not valid in the EU, UK and South Korea)",
     "Active",
     "12633 GitHub stars",
     "Generate video"
    ],
-   "pricing": "Open weights (Tencent Hunyuan community licence)",
+   "pricing": "Open weights (Tencent Hunyuan Community License; not valid in the EU, UK and South Korea)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -63524,6 +63523,94 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/bottally.png",
    "page": "https://agentscouthq.com/tools/bottally.html"
+  },
+  {
+   "name": "Agentic Scientist",
+   "slug": "agentic-scientist",
+   "url": "https://github.com/SakanaAI/AI-Scientist-v3",
+   "website": "",
+   "github": "https://github.com/SakanaAI/AI-Scientist-v3",
+   "category": "research",
+   "description": "Sakana AI's open-source pipeline that turns coding agents such as Claude Code, Codex, Cursor and Gemini CLI into AI scientists: from a task file they propose ideas, run and score experiments and ablations, then write the paper.",
+   "key_features": [
+    "Free and open source (Apache-2.0); you pay for the agent and model API keys or subscriptions you use",
+    "Active",
+    "428 GitHub stars",
+    "Research the web"
+   ],
+   "pricing": "Free and open source (Apache-2.0); you pay for the agent and model API keys or subscriptions you use",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "research",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "SakanaAI/AI-Scientist-v3",
+   "github_stars": 428,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agentic-scientist.png",
+   "page": "https://agentscouthq.com/tools/agentic-scientist.html"
+  },
+  {
+   "name": "OpenGCUA",
+   "slug": "opengcua",
+   "url": "https://tongyi-mai.github.io/OpenGCUA/",
+   "website": "https://tongyi-mai.github.io/OpenGCUA/",
+   "github": "https://github.com/Tongyi-MAI/OpenGCUA",
+   "category": "browser/computer use",
+   "description": "Open stack from Tongyi Lab's MAI-UI team for generalist computer-use agents that combine GUI clicks, accessibility trees, terminal commands, APIs and code: an OSWorld harness, a macOS real-device harness, a cross-device SDK and published task runs of eight frontier models.",
+   "key_features": [
+    "Free and open source (Apache-2.0); research preview",
+    "Early (research preview)",
+    "315 GitHub stars",
+    "Control a computer",
+    "Automate the browser"
+   ],
+   "pricing": "Free and open source (Apache-2.0); research preview",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Tongyi-MAI/OpenGCUA",
+   "github_stars": 315,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "control a computer",
+    "automate the browser"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/opengcua.png",
+   "page": "https://agentscouthq.com/tools/opengcua.html"
   }
  ]
 }

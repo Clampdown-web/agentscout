@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,502 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,504 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -26,11 +26,11 @@ Contact: support@agentscouthq.com
 - [coding](https://agentscouthq.com/categories/coding.html): 161 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 129 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 79 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 69 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 70 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 63 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 56 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 51 tools
-- [research](https://agentscouthq.com/categories/research.html): 44 tools
+- [research](https://agentscouthq.com/categories/research.html): 45 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 44 tools
 - [business agents](https://agentscouthq.com/categories/business-agents.html): 40 tools
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 39 tools
@@ -83,6 +83,8 @@ Contact: support@agentscouthq.com
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
 
+- [OpenGCUA](https://agentscouthq.com/tools/opengcua.html) (added 2026-10-20): Open stack from Tongyi Lab's MAI-UI team for generalist computer-use agents that combine GUI clicks, accessibility trees, terminal commands, APIs and code: an OSWorld harness, a macOS real-device harness, a cross-device SDK and published task runs of eight frontier models.
+- [Agentic Scientist](https://agentscouthq.com/tools/agentic-scientist.html) (added 2026-10-20): Sakana AI's open-source pipeline that turns coding agents such as Claude Code, Codex, Cursor and Gemini CLI into AI scientists: from a task file they propose ideas, run and score experiments and ablations, then write the paper.
 - [Bottally](https://agentscouthq.com/tools/bottally.html) (added 2026-10-20): Bottally is an AI marketing agent for SEO and AEO that runs on autopilot. Once you connect your blog (WordPress, Webflow, Ghost, Shopify, Wix, Notion, Framer, Next.js or a webhook), it researches keywords and competitor gaps, then writes and publishes one researched article a day with images. It also offers an opt-in backlink exchange network and tracks weekly whether ChatGPT, Google AI Mode, Google AI Overviews and Perplexity recommend your business.
 - [HOL Guard](https://agentscouthq.com/tools/hol-guard.html) (added 2026-10-20): HOL Guard is a free, open-source (Apache-2.0), local-first security layer for AI coding agents such as Claude Code, Codex, Cursor and GitHub Copilot CLI. On supported integrations it checks risky shell commands, reads of secret-bearing files, package installs and new or changed MCP tools before they run, lets you allow, ask or block each action, and keeps a local record for review. It installs with pipx (hol-guard) and works offline; optional Guard Cloud adds synced approvals, team policy and dashboards.
 - [remotify-mcp](https://agentscouthq.com/tools/remotify-mcp.html) (added 2026-10-20): remotify-mcp is a free, open-source (Apache-2.0) local stdio MCP server (npx remotify-mcp) that gives Claude Code, Cursor, Codex, OpenCode, Gemini CLI and other MCP hosts a remote_exec tool for running shell commands on a remote computer through an HTTP relay. The remote machine needs only curl and bash (no SSH port or installed agent), and each command can wait for human approval or run automatically.
@@ -93,8 +95,6 @@ Contact: support@agentscouthq.com
 - [SEAL](https://agentscouthq.com/tools/seal.html) (added 2026-10-20): SEAL is an MCP server (npx sealnet-mcp) that lets AI agents send and request files and secrets with end-to-end encryption. After pairing, the default delivery route sends the file to the user's SEAL inbox and returns a handle to the model. Also has a browser app, CLI and SDK; free up to 1 GB per seal.
 - [What Should My Bot Do](https://agentscouthq.com/tools/what-should-my-bot-do.html) (added 2026-10-20): What Should My Bot Do is a free AI agent planner for small businesses: answer 5 quick questions and get a first agent to set up, 3 next jobs to automate and copy-ready templates for Grok Bot, ChatGPT, Claude and n8n. No signup.
 - [Agent Barn](https://agentscouthq.com/tools/agent-barn.html) (added 2026-10-20): Agent Barn is an open-source (Apache-2.0) control plane for running a fleet of AI agents on your own Kubernetes: create, configure, run and monitor agents across Slack, Microsoft Teams and Telegram from one place.
-- [Monobot.AI](https://agentscouthq.com/tools/monobot-ai.html) (added 2026-10-20): Monobot.AI is a no-code platform for building voice and chat AI agents that handle customer support, bookings, reservations and routine business calls, with a workspace for managing agents and integrations with CRMs and other tools.
-- [Robylon](https://agentscouthq.com/tools/robylon.html) (added 2026-10-20): Robylon builds AI customer-support agents that resolve tickets across email, chat, voice and WhatsApp, connect to helpdesks like Zendesk, Freshdesk and Intercom, take actions such as refunds and order updates, and hand hard cases to a person.
 
 <!-- pages:start -->
 
