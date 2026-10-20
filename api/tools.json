@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T14:18:17Z",
- "updated": "2026-10-20T14:18:17Z",
+ "generated": "2026-10-20T14:57:27Z",
+ "updated": "2026-10-20T14:57:27Z",
  "last_checked": "2026-10-20",
- "count": 1501,
+ "count": 1502,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -63478,6 +63478,52 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/hol-guard.png",
    "page": "https://agentscouthq.com/tools/hol-guard.html"
+  },
+  {
+   "name": "Bottally",
+   "slug": "bottally",
+   "url": "https://www.bottally.com/",
+   "website": "https://www.bottally.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Bottally is an AI marketing agent for SEO and AEO that runs on autopilot. Once you connect your blog (WordPress, Webflow, Ghost, Shopify, Wix, Notion, Framer, Next.js or a webhook), it researches keywords and competitor gaps, then writes and publishes one researched article a day with images. It also offers an opt-in backlink exchange network and tracks weekly whether ChatGPT, Google AI Mode, Google AI Overviews and Perplexity recommend your business.",
+   "key_features": [
+    "One plan, $99/mo: 30 articles a month, weekly AI visibility tracking, keyword research and backlinks",
+    "Active",
+    "Research the web",
+    "Monitor & evaluate agents",
+    "Sales & support"
+   ],
+   "pricing": "One plan, $99/mo: 30 articles a month, weekly AI visibility tracking, keyword research and backlinks",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "monitor & evaluate agents",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bottally.png",
+   "page": "https://agentscouthq.com/tools/bottally.html"
   }
  ]
 }
