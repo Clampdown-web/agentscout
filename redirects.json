@@ -12,7 +12,7 @@
   "tasks/evaluating-agents-guardrails.html": "tasks/agent-security-guardrails.html",
   "best/ai-agent-memory-rag-tools.html": "categories/memory-rag.html",
   "s/ai-agent-memory-tools.html": "categories/memory-rag.html",
-  "best/mcp-servers.html": "categories/mcp-infra.html",
+  "best/mcp-servers.html": "categories/mcp-servers.html",
   "s/local-ai-agents.html": "tasks/running-agents-locally.html",
   "s/database-mcp-servers.html": "tasks/databases.html",
   "s/ai-web-scraping-tools.html": "tasks/web-scraping.html",
@@ -38,5 +38,6 @@
   "s/free-ai-testing-agents.html": "tasks/testing-apps.html",
   "best/mindshub-alternatives.html": "tools/mindshub.html",
   "best/orkes-alternatives.html": "tools/orkes.html",
-  "s/open-source-ai-testing-agents.html": "tasks/testing-apps.html"
+  "s/open-source-ai-testing-agents.html": "tasks/testing-apps.html",
+  "categories/mcp-infra.html": "categories/mcp-servers.html"
 }

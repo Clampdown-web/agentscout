@@ -222,8 +222,8 @@ $("ms").addEventListener("input",run);run();'''
     faq=[("Where does the Claude Desktop config file live?","On macOS it is ~/Library/Application Support/Claude/claude_desktop_config.json and on Windows %APPDATA%\\Claude\\claude_desktop_config.json. You can also open it from Claude Desktop's Settings → Developer → Edit Config. Restart Claude Desktop after saving."),
          ("What is the difference between the Cursor and VS Code formats?","Cursor's mcp.json uses a top-level mcpServers object, like Claude Desktop. VS Code's .vscode/mcp.json uses a top-level servers object and a type field (stdio or http) for each server."),
          ("Does this tool install or run anything?","No. It only formats text in your browser. You still need Node.js (for npx servers) or whatever runtime each server needs, and you should only add servers you trust."),
-         ("Where do I find MCP servers?",f"Browse the {sum(1 for x in t if x['category']=='MCP & infra')} MCP and infrastructure tools in the AgentScout directory, or the free MCP servers list.")]
-    return wrap("mcp-config-builder","MCP config builder","Add your MCP servers once and get config you can paste into Claude Desktop, Cursor, VS Code and Claude Code. See also the <a href=\"../categories/mcp-infra.html\">MCP &amp; infra category</a>.",inner,faq,js,t)
+         ("Where do I find MCP servers?",f"Browse the {sum(1 for x in t if x['category']=='MCP servers')} MCP servers in the AgentScout directory, or the free MCP servers list.")]
+    return wrap("mcp-config-builder","MCP config builder","Add your MCP servers once and get config you can paste into Claude Desktop, Cursor, VS Code and Claude Code. See also the <a href=\"../categories/mcp-servers.html\">MCP serversa category</a>.",inner,faq,js,t)
 def llmstxt(t):
     inner=(f'<div {BOX}><label {LAB} for="ln">Site or project name</label><input id="ln" {INP} value="Acme Docs" maxlength="100">'
            f'<label {LAB} for="ls">One-sentence summary</label><input id="ls" {INP} value="Acme is an open-source library for building AI agents in Python." maxlength="300">'
@@ -361,13 +361,13 @@ document.querySelectorAll("textarea:not([readonly]),input").forEach(function(el)
          ("Is anything uploaded?","No. The files are built in your browser and downloaded straight to your device.")]
     return wrap("rules-file-generator","AGENTS.md and rules file generator","Write your project rules once and export AGENTS.md, CLAUDE.md, GEMINI.md, Cursor rules and GitHub Copilot instructions for your AI coding agents. Need agent config too? Try the <a href=\"agent-setup-generator.html\">agent setup generator</a>.",inner,faq,js,t)
 
-STACK_GOALS=[("coding","Write and ship code",[("Coding agent",["coding"]),("Code sandbox",["sandboxes & code execution"]),("MCP servers and connectors",["MCP & infra"]),("Evals and observability",["evals & observability"])]),
+STACK_GOALS=[("coding","Write and ship code",[("Coding agent",["coding"]),("Code sandbox",["sandboxes & code execution"]),("MCP servers and connectors",["MCP servers"]),("Evals and observability",["evals & observability"])]),
  ("support","Customer support",[("Support agent",["customer support"]),("Voice",["voice"]),("Memory and knowledge (RAG)",["memory & RAG"]),("Evals and observability",["evals & observability"])]),
  ("research","Research and analysis",[("Research agent",["research"]),("Web and browser access",["browser/computer use"]),("Memory and knowledge (RAG)",["memory & RAG"])]),
- ("automation","Automate business workflows",[("Business agent",["business agents"]),("No-code builder",["no-code builders"]),("MCP servers and connectors",["MCP & infra"])]),
+ ("automation","Automate business workflows",[("Business agent",["business agents"]),("No-code builder",["no-code builders"]),("MCP servers and connectors",["MCP servers"])]),
  ("sales","Sales and marketing",[("Sales and marketing agent",["sales & marketing"]),("Business agent",["business agents"]),("Web and browser access",["browser/computer use"])]),
- ("browse","Use the web or a computer",[("Browser or computer-use agent",["browser/computer use"]),("Sandbox",["sandboxes & code execution"]),("MCP servers and connectors",["MCP & infra"])]),
- ("build","Build my own agent",[("Agent framework",["frameworks"]),("Memory and knowledge (RAG)",["memory & RAG"]),("MCP servers and connectors",["MCP & infra"]),("Evals and observability",["evals & observability"]),("Sandbox",["sandboxes & code execution"])])]
+ ("browse","Use the web or a computer",[("Browser or computer-use agent",["browser/computer use"]),("Sandbox",["sandboxes & code execution"]),("MCP servers and connectors",["MCP servers"])]),
+ ("build","Build my own agent",[("Agent framework",["frameworks"]),("Memory and knowledge (RAG)",["memory & RAG"]),("MCP servers and connectors",["MCP servers"]),("Evals and observability",["evals & observability"]),("Sandbox",["sandboxes & code execution"])])]
 def stack(t):
     cats={x["category"] for x in t}
     GT={"coding":["coding"],"support":["support"],"research":["research"],"automation":["automation"],"sales":["automation"],"browse":["automation"],"build":["coding","automation"]}
@@ -538,7 +538,7 @@ APPS=[("GitHub",r"github"),("GitLab",r"gitlab"),("Slack",r"slack"),("Discord",r"
  ("Docker",r"docker"),("Kubernetes",r"kubernetes|k8s"),("AWS",r"aws|amazon web services"),("Cloudflare",r"cloudflare"),("Browser / web automation",r"browser|playwright|puppeteer|chrome"),("Web search",r"web search|search api|search engine"),
  ("Files on my computer",r"filesystem|file system|local files"),("Obsidian",r"obsidian"),("Zapier",r"zapier"),("Shopify",r"shopify"),("HubSpot",r"hubspot"),("Salesforce",r"salesforce")]
 def mcppick(t):
-    pool=[x for x in t if x["category"]=="MCP & infra"]
+    pool=[x for x in t if x["category"]=="MCP servers"]
     def txt(x): return " ".join([x["name"],x["description"]]+x.get("use_cases",[])+x.get("tags",[])).lower()
     import re as _re
     apps=[[n,p,sum(1 for x in pool if _re.search(r"\b("+p+r")\b",txt(x)))] for n,p in APPS]
@@ -547,16 +547,16 @@ def mcppick(t):
     inner=(f'<div {BOX}><p style="margin:0 0 8px;font-weight:600;font-size:14px">Which apps should your agent connect to?</p>{chk}'
            f'<label {LAB} for="mpq">Or search by keyword</label><input id="mpq" placeholder="e.g. calendar, crm, vector database" {INP}>'
            f'<label style="display:flex;gap:8px;align-items:center;margin:12px 0 0;font-size:14px"><input type="checkbox" id="mpo"> Open source only</label></div><div id="mpout" aria-live="polite"><p class="muted">Loading the directory…</p></div>'
-           f'<p class="muted" style="font-size:13.5px;margin-top:14px">Matches come from the names, descriptions and tags of the {len(pool)} MCP &amp; infrastructure tools in the directory. Check each server\'s own docs for install steps, then turn them into config for Claude Desktop, Cursor, VS Code or Claude Code with the <a href="mcp-config-builder.html">MCP config builder</a>. Only connect servers you trust.</p>')
+           f'<p class="muted" style="font-size:13.5px;margin-top:14px">Matches come from the names, descriptions and tags of the {len(pool)} MCP servers in the directory. Check each server\'s own docs for install steps, then turn them into config for Claude Desktop, Cursor, VS Code or Claude Code with the <a href="mcp-config-builder.html">MCP config builder</a>. Only connect servers you trust.</p>')
     js=NUMJS+"\nvar A="+json.dumps([[n,p] for n,p,_ in apps])+r''';var T=null;function txt(x){return[x.name,x.description].concat(x.tags||[]).join(" ").toLowerCase()}
 function run(){if(!T)return;var sel=[].slice.call(document.querySelectorAll(".mpa:checked")).map(function(c){return A[+c.value]}),q=$("mpq").value.trim().toLowerCase(),os=$("mpo").checked,h="";
 var groups=sel.map(function(a){return[a[0],new RegExp("\\b("+a[1]+")\\b")]});if(q)groups.push(["\u201c"+q+"\u201d",null]);
 if(!groups.length){$("mpout").innerHTML='<p class="muted" style="margin-top:14px">Tick an app or type a keyword to see matching MCP servers.</p>';return}
 groups.forEach(function(g){var m=T.filter(function(x){if(os&&!x.open_source)return false;var s=txt(x);return g[1]?g[1].test(s):s.indexOf(q)>=0}).sort(function(a,b){var na=g[1]?+g[1].test(a.name.toLowerCase()):+(a.name.toLowerCase().indexOf(q)>=0),nb=g[1]?+g[1].test(b.name.toLowerCase()):+(b.name.toLowerCase().indexOf(q)>=0);return nb-na||(b.weekly_pick?1:0)-(a.weekly_pick?1:0)||(b.github_stars||0)-(a.github_stars||0)});
-h+='<h2 style="font-size:17px;margin:24px 0 8px">'+g[0]+' <span class="muted" style="font-weight:400;font-size:14px">('+m.length+')</span></h2>'+(m.length?'<div class="grid">'+m.slice(0,9).map(function(x){return AS.card(x.seed?Object.assign({},x,{added:""}):x).replace(/href="tools\//,'href="../tools/').replace(/src="assets\//,'src="../assets/')}).join("")+'</div>'+(m.length>9?'<p class="muted" style="font-size:13.5px">Showing the top 9: name matches first, then AgentScout picks and GitHub stars. <a href="../categories/mcp-infra.html">See every MCP &amp; infra tool</a>.</p>':''):'<p class="muted" style="margin:0">No MCP servers in the directory match this yet.</p>')});
+h+='<h2 style="font-size:17px;margin:24px 0 8px">'+g[0]+' <span class="muted" style="font-weight:400;font-size:14px">('+m.length+')</span></h2>'+(m.length?'<div class="grid">'+m.slice(0,9).map(function(x){return AS.card(x.seed?Object.assign({},x,{added:""}):x).replace(/href="tools\//,'href="../tools/').replace(/src="assets\//,'src="../assets/')}).join("")+'</div>'+(m.length>9?'<p class="muted" style="font-size:13.5px">Showing the top 9: name matches first, then AgentScout picks and GitHub stars. <a href="../categories/mcp-servers.html">See every MCP server</a>.</p>':''):'<p class="muted" style="margin:0">No MCP servers in the directory match this yet.</p>')});
 $("mpout").innerHTML=h;AS.fixImgs&&AS.fixImgs($("mpout"));window.ASHearts&&ASHearts($("mpout"))}
 document.querySelectorAll(".mpa,#mpo").forEach(function(c){c.addEventListener("change",run)});$("mpq").addEventListener("input",run);
-fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T=(Array.isArray(d)?d:d.tools).filter(function(x){return x.category==="MCP & infra"});run()}).catch(function(){$("mpout").innerHTML='<p class="empty">Couldn\'t load the directory. Please refresh.</p>'});'''
+fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T=(Array.isArray(d)?d:d.tools).filter(function(x){return x.category==="MCP servers"});run()}).catch(function(){$("mpout").innerHTML='<p class="empty">Couldn\'t load the directory. Please refresh.</p>'});'''
     faq=[("What is an MCP server?","A Model Context Protocol server is a small program that gives an AI app like Claude Desktop, Cursor or VS Code access to a tool or data source, such as GitHub, a database or your files, through one standard interface."),
          ("How are matches found?","By keyword across the name, description and tags of every MCP and infrastructure tool in the AgentScout directory, with servers named after the app first, then AgentScout picks and GitHub stars. Read each server's page to confirm it does what you need."),
          ("How do I install the servers I pick?","Follow the install steps in each server's own docs, then paste the details into the MCP config builder to get config for Claude Desktop, Cursor, VS Code or Claude Code."),

@@ -13,7 +13,7 @@ sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
 UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 GH={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
 BADHOST=re.compile(r'(linkedin|discord|deepwiki|arxiv|twitter|x\.com|youtube|aka\.ms|bilibili|notion\.site|go\.novu)',re.I)
-CATS={"frameworks","coding","MCP & infra","evals & observability","voice","browser/computer use","research","no-code builders","business agents","personal agents","app builders","vision","games","crypto","productivity","models","models & local runtimes","memory & RAG","customer support","sales & marketing","security & governance","sandboxes & code execution","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing"}
+CATS={"frameworks","coding","MCP servers","agent infra","evals & observability","voice","browser/computer use","research","no-code builders","business agents","personal agents","app builders","vision","games","crypto","productivity","models","models & local runtimes","memory & RAG","customer support","sales & marketing","security & governance","sandboxes & code execution","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing"}
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
 def is_identicon(im):
   """GitHub default avatar: #f0f0f0 background + one flat colour in a 5x5 grid."""

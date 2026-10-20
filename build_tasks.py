@@ -166,7 +166,7 @@ _TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: too
  "connecting-tools-mcp":{"h1":"How to connect AI agents to your tools with MCP, by use case",
   "title":"Connect AI agents to your tools with MCP: picks by use case (2026)",
   "desc":lambda n,items:f"How to connect an AI agent to apps and data with MCP: {n} servers, gateways and tools grouped by job, from databases to browsers and auth."[:158],
-  "pointer":'<p style="margin:0 0 6px;font-size:14px">Looking for the full list of MCP servers? See the <a href="../categories/mcp-infra.html">MCP &amp; infra category</a>.</p>'}}
+  "pointer":'<p style="margin:0 0 6px;font-size:14px">Looking for the full list of MCP servers? See the <a href="../categories/mcp-servers.html">MCP servers category</a>.</p>'}}
 def task_title(s,label):
     if s in _TT_FULL: return _TT_FULL[s]
     lab=_TT_LABEL.get(s,label)
@@ -301,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610192240"  # bump when app.js/styles.css change
+ASSET_V="202610201000"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}

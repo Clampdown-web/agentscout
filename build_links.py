@@ -29,7 +29,7 @@ def edit(path,fn):
 def chips(items): return '<div class="badges">'+"".join(f'<a class="b uc" href="{h}">{e(t)}</a>' for h,t in items)+'</div>'
 COST_CAT={"models & local runtimes","frameworks"}
 COST_RX=re.compile(r"\bLLMs?\b|\binference\b|model (API|gateway|router|provider)|\bgateway\b|\brouter\b|\btokens?\b|\bmodel APIs?\b",re.I)
-def cost_tool(x): return x["category"] in COST_CAT or (x["category"] in ("MCP & infra","evals & observability") and bool(COST_RX.search(x["description"]))) or bool(re.search(r"\bLLM API|\bmodel API|inference API",x["description"],re.I))
+def cost_tool(x): return x["category"] in COST_CAT or (x["category"] in ("MCP servers","agent infra","evals & observability") and bool(COST_RX.search(x["description"]))) or bool(re.search(r"\bLLM API|\bmodel API|inference API",x["description"],re.I))
 def cost_pair(a,b):
     f=lambda x:x["category"] in {"coding","models & local runtimes","frameworks"} or bool(re.search(r"\bAPI\b",x["description"])) or cost_tool(x)
     return f(a) or f(b)

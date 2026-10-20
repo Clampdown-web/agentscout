@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-20T16:28:49Z",
- "updated": "2026-10-20T16:28:49Z",
+ "generated": "2026-10-20T16:49:38Z",
+ "updated": "2026-10-20T16:49:38Z",
  "last_checked": "2026-10-20",
  "count": 1547,
  "tools": [
@@ -441,12 +441,11 @@
    "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
    "website": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Reference stack pairing OpenShell with NVIDIA Sentry on BlueField-4 DPUs for hardware-level agent monitoring.",
    "key_features": [
     "OpenShell open source; hardware layer needs NVIDIA systems",
     "Newly announced reference",
-    "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
    "pricing": "OpenShell open source; hardware layer needs NVIDIA systems",
@@ -471,7 +470,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "monitor & evaluate agents"
    ],
    "hybrid": false,
@@ -748,7 +746,7 @@
    "url": "https://manifoldmcp.com",
    "website": "https://manifoldmcp.com",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Hosted MCP server giving agents SEO, AI-answer, social, ad and leads data.",
    "key_features": [
     "Free to start",
@@ -3246,7 +3244,7 @@
    "url": "https://modelcontextprotocol.io",
    "website": "https://modelcontextprotocol.io",
    "github": "https://github.com/modelcontextprotocol/modelcontextprotocol",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open standard for connecting agents to tools and data.",
    "key_features": [
     "Open standard",
@@ -3287,7 +3285,7 @@
    "url": "https://modelcontextprotocol.io",
    "website": "https://modelcontextprotocol.io",
    "github": "https://github.com/modelcontextprotocol/servers",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official collection of reference MCP servers.",
    "key_features": [
     "Open source",
@@ -3329,7 +3327,7 @@
    "url": "https://smithery.ai",
    "website": "https://smithery.ai",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Registry for finding and installing MCP servers.",
    "key_features": [
     "Free + paid",
@@ -3454,13 +3452,12 @@
    "url": "https://composio.dev",
    "website": "https://composio.dev",
    "github": "https://github.com/ComposioHQ/composio",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Tool integrations and auth for agents across hundreds of apps.",
    "key_features": [
     "Free tier + paid plans",
     "Mature",
-    "Automate workflows",
-    "Connect tools via mcp"
+    "Automate workflows"
    ],
    "pricing": "Free tier + paid plans",
    "price_tag": "freemium",
@@ -3483,8 +3480,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate workflows",
-    "connect tools via MCP"
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/composio.png",
@@ -3985,12 +3981,11 @@
    "url": "https://agentvault.io",
    "website": "https://agentvault.io",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Payment and login layer for AI agents: agents check out and sign in using mock tokens, while real card numbers and passwords are swapped in out of the agent's view, with spending caps, merchant allowlists and a kill switch.",
    "key_features": [
     "Free, Plus and Enterprise tiers; first 1,000 sign-ups get Plus free for three months",
-    "Live; launched Oct 15, 2026 by Self Labs",
-    "Connect tools via mcp"
+    "Live; launched Oct 15, 2026 by Self Labs"
    ],
    "pricing": "Free, Plus and Enterprise tiers; first 1,000 sign-ups get Plus free for three months",
    "price_tag": "freemium",
@@ -4014,7 +4009,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/self-agent-vault.png",
@@ -4904,12 +4899,11 @@
    "url": "https://groq.com",
    "website": "https://groq.com",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Fast inference cloud running open models on custom LPU chips, used for low-latency agents.",
    "key_features": [
     "Usage-based",
-    "Active",
-    "Connect tools via mcp"
+    "Active"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -4932,7 +4926,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/groq.png",
@@ -5662,7 +5656,7 @@
    "url": "https://www.recall.ai",
    "website": "https://www.recall.ai",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "API for meeting bots that join Zoom, Meet and Teams to record and transcribe.",
    "key_features": [
     "Usage-based",
@@ -5704,13 +5698,12 @@
    "url": "https://replicate.com",
    "website": "https://replicate.com",
    "github": "https://github.com/replicate/cog",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Run and deploy open models through an API, with Cog for packaging models.",
    "key_features": [
     "Usage-based",
     "Mature",
-    "9490 GitHub stars",
-    "Connect tools via mcp"
+    "9490 GitHub stars"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -5733,7 +5726,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/replicate.png",
@@ -5947,12 +5940,11 @@
    "url": "https://www.together.ai",
    "website": "https://www.together.ai",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "AI cloud for running, fine-tuning and serving open models.",
    "key_features": [
     "Usage-based",
-    "Active",
-    "Connect tools via mcp"
+    "Active"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -5975,7 +5967,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/together-ai.png",
@@ -6562,12 +6554,11 @@
    "url": "https://tollbit.com",
    "website": "https://tollbit.com",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Lets publishers charge AI agents and bots for accessing their content.",
    "key_features": [
     "Usage-based",
-    "Active",
-    "Connect tools via mcp"
+    "Active"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -6591,7 +6582,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tollbit.png",
@@ -7473,7 +7464,7 @@
    "url": "https://context7.com/",
    "website": "https://context7.com/",
    "github": "https://github.com/upstash/context7",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server and platform that feeds coding agents up-to-date, version-specific library documentation.",
    "key_features": [
     "Freemium",
@@ -7827,7 +7818,7 @@
    "url": "https://deusdata.github.io/codebase-memory-mcp/",
    "website": "https://deusdata.github.io/codebase-memory-mcp/",
    "github": "https://github.com/DeusData/codebase-memory-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that indexes codebases into a persistent knowledge graph so coding agents can look up structure quickly.",
    "key_features": [
     "Open source",
@@ -8471,7 +8462,7 @@
    "url": "https://github.com/github/github-mcp-server",
    "website": "",
    "github": "https://github.com/github/github-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "GitHub's official MCP server for letting agents work with repositories, issues, pull requests and Actions.",
    "key_features": [
     "Open source",
@@ -8684,13 +8675,12 @@
    "url": "https://developers.google.com/workspace",
    "website": "https://developers.google.com/workspace",
    "github": "https://github.com/googleworkspace/cli",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Official Google Workspace command-line tool for Drive, Gmail, Calendar, Docs and more, usable by agents.",
    "key_features": [
     "Open source",
     "Mature",
-    "31557 GitHub stars",
-    "Connect tools via mcp"
+    "31557 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -8714,7 +8704,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/google-workspace-cli.png",
@@ -8852,7 +8842,7 @@
    "url": "https://oraios.github.io/serena/",
    "website": "https://oraios.github.io/serena/",
    "github": "https://github.com/oraios/serena",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP toolkit that gives coding agents semantic code retrieval and editing, like IDE features.",
    "key_features": [
     "Open source",
@@ -9381,7 +9371,7 @@
    "url": "https://gofastmcp.com/getting-started/welcome",
    "website": "https://gofastmcp.com/getting-started/welcome",
    "github": "https://github.com/PrefectHQ/fastmcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Pythonic framework for building MCP servers and clients quickly.",
    "key_features": [
     "Open source",
@@ -9730,7 +9720,7 @@
    "url": "https://py.sdk.modelcontextprotocol.io/",
    "website": "https://py.sdk.modelcontextprotocol.io/",
    "github": "https://github.com/modelcontextprotocol/python-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Python SDK for building Model Context Protocol servers and clients.",
    "key_features": [
     "Open source",
@@ -9817,7 +9807,7 @@
    "url": "https://www.n8n-mcp.com/",
    "website": "https://www.n8n-mcp.com/",
    "github": "https://github.com/czlonkowski/n8n-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that lets Claude, Cursor and other agents build n8n workflows for you.",
    "key_features": [
     "Open source",
@@ -10589,7 +10579,7 @@
    "url": "https://mcp-toolbox.dev/documentation/introduction/",
    "website": "https://mcp-toolbox.dev/documentation/introduction/",
    "github": "https://github.com/googleapis/mcp-toolbox",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open-source MCP server from Google for connecting agents to databases.",
    "key_features": [
     "Open source",
@@ -10890,14 +10880,13 @@
    "url": "https://corsair.dev/",
    "website": "https://corsair.dev/",
    "github": "https://github.com/corsairdev/corsair",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Integration layer for connecting your users' apps to agents.",
    "key_features": [
     "Open source",
     "Mature",
     "14922 GitHub stars",
-    "Automate workflows",
-    "Connect tools via mcp"
+    "Automate workflows"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -10921,8 +10910,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "automate workflows",
-    "connect tools via MCP"
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/corsair.png",
@@ -10934,7 +10922,7 @@
    "url": "https://casdoor.ai/",
    "website": "https://casdoor.ai/",
    "github": "https://github.com/casdoor/casdoor",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Agent-first identity and access management with an MCP and agent gateway.",
    "key_features": [
     "Open source",
@@ -11149,7 +11137,7 @@
    "url": "https://ts.sdk.modelcontextprotocol.io/v2/",
    "website": "https://ts.sdk.modelcontextprotocol.io/v2/",
    "github": "https://github.com/modelcontextprotocol/typescript-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official TypeScript SDK for building MCP servers and clients.",
    "key_features": [
     "Open source",
@@ -11363,7 +11351,7 @@
    "url": "https://plugins.hex-rays.com/mrexodia/ida-pro-mcp",
    "website": "https://plugins.hex-rays.com/mrexodia/ida-pro-mcp",
    "github": "https://github.com/mrexodia/ida-pro-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server connecting IDA Pro to language models for AI-assisted reverse engineering.",
    "key_features": [
     "Open source",
@@ -11539,13 +11527,12 @@
    "url": "https://cocoindex.io/",
    "website": "https://cocoindex.io/",
    "github": "https://github.com/cocoindex-io/cocoindex",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Incremental data engine for keeping agent context and indexes fresh.",
    "key_features": [
     "Open source",
     "Mature",
-    "11710 GitHub stars",
-    "Connect tools via mcp"
+    "11710 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -11569,7 +11556,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cocoindex.png",
@@ -11665,7 +11652,7 @@
    "url": "https://github.com/apify/apify-mcp-server",
    "website": "",
    "github": "https://github.com/apify/apify-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Apify's MCP server giving agents access to thousands of scrapers for social media, search and maps.",
    "key_features": [
     "Open source + cloud",
@@ -12043,7 +12030,7 @@
    "url": "https://manufact.com/",
    "website": "https://manufact.com/",
    "github": "https://github.com/mcp-use/mcp-use",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Full-stack MCP framework for building MCP servers, MCP apps and agents that connect to them.",
    "key_features": [
     "Open source",
@@ -12089,14 +12076,13 @@
    "url": "https://electric.ax/",
    "website": "https://electric.ax/",
    "github": "https://github.com/electric-sql/electric",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Sync engine and agent platform that keeps data in sync between Postgres, apps and agents in real time.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "10400 GitHub stars",
-    "Automate workflows",
-    "Connect tools via mcp"
+    "Automate workflows"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -12120,8 +12106,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "automate workflows",
-    "connect tools via MCP"
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/electric.png",
@@ -12261,14 +12246,13 @@
    "url": "https://docs.getbindu.com/",
    "website": "https://docs.getbindu.com/",
    "github": "https://github.com/GetBindu/Bindu",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Identity, communication and payments layer that lets AI agents talk to and pay each other.",
    "key_features": [
     "Open source",
     "Mature",
     "10056 GitHub stars",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Voice & phone calls"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -12292,8 +12276,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
-    "connect tools via MCP"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/bindu.png",
@@ -12431,7 +12414,7 @@
    "url": "https://awslabs.github.io/mcp/",
    "website": "https://awslabs.github.io/mcp/",
    "github": "https://github.com/awslabs/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Collection of official open-source MCP servers for working with AWS services from agents.",
    "key_features": [
     "Open source",
@@ -12686,13 +12669,12 @@
    "url": "https://www.nasiko.com/",
    "website": "https://www.nasiko.com/",
    "github": "https://github.com/Nasiko-Labs/nasiko",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open runtime for deploying and operating AI agents.",
    "key_features": [
     "Open source",
     "Mature",
-    "9479 GitHub stars",
-    "Connect tools via mcp"
+    "9479 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -12716,7 +12698,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/nasiko.png",
@@ -13156,7 +13138,7 @@
    "url": "https://gitmcp.io/",
    "website": "https://gitmcp.io/",
    "github": "https://github.com/idosal/git-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Free remote MCP server that gives agents up-to-date docs and code for any GitHub project.",
    "key_features": [
     "Open source",
@@ -13669,13 +13651,12 @@
    "url": "https://www.reefinfra.ai/",
    "website": "https://www.reefinfra.ai/",
    "github": "https://github.com/Human-Agent-Society/reef",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Infrastructure for continually self-improving agents.",
    "key_features": [
     "Open source",
     "Mature",
-    "7612 GitHub stars",
-    "Connect tools via mcp"
+    "7612 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -13699,7 +13680,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/reef.png",
@@ -13797,7 +13778,7 @@
    "url": "https://www.agentdesk.ai/",
    "website": "https://www.agentdesk.ai/",
    "github": "https://github.com/AgentDeskAI/browser-tools-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that lets Cursor and other agents read browser console logs and network activity.",
    "key_features": [
     "Open source",
@@ -13971,7 +13952,7 @@
    "url": "https://www.figma.com/community/plugin/1485687494525374295/talk-to-figma-mcp-plugin",
    "website": "https://www.figma.com/community/plugin/1485687494525374295/talk-to-figma-mcp-plugin",
    "github": "https://github.com/grab/cursor-talk-to-figma-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP integration that lets coding agents read and edit Figma designs.",
    "key_features": [
     "Open source",
@@ -14702,7 +14683,7 @@
    "url": "https://oomol.com/",
    "website": "https://oomol.com/",
    "github": "https://github.com/oomol-lab/open-connector",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source auth gateway connecting SaaS apps to AI agents via SDK, CLI and MCP.",
    "key_features": [
     "Open source",
@@ -15001,7 +14982,7 @@
    "url": "https://www.klavis.ai/",
    "website": "https://www.klavis.ai/",
    "github": "https://github.com/Klavis-AI/klavis",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP integration platform that lets agents use many tools reliably at scale.",
    "key_features": [
     "Open source + cloud",
@@ -15256,7 +15237,7 @@
    "url": "https://wigolo.app/",
    "website": "https://wigolo.app/",
    "github": "https://github.com/KnockOutEZ/wigolo",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Local-first web search, fetch and crawl for coding agents over MCP, with no API keys.",
    "key_features": [
     "Open source",
@@ -15302,7 +15283,7 @@
    "url": "https://stevenyuyy.com/zotero-mcp/",
    "website": "https://stevenyuyy.com/zotero-mcp/",
    "github": "https://github.com/54yyyu/zotero-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that connects your Zotero research library to Claude and other assistants.",
    "key_features": [
     "Open source",
@@ -15392,7 +15373,7 @@
    "url": "https://agentgateway.dev/",
    "website": "https://agentgateway.dev/",
    "github": "https://github.com/agentgateway/agentgateway",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Proxy for AI agents and MCP servers with security and observability.",
    "key_features": [
     "Open source",
@@ -15436,13 +15417,12 @@
    "url": "https://www.olares.com/",
    "website": "https://www.olares.com/",
    "github": "https://github.com/beclab/Olares",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source personal cloud OS for running always-on agents at home.",
    "key_features": [
     "Open source",
     "Mature",
-    "5310 GitHub stars",
-    "Connect tools via mcp"
+    "5310 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -15466,7 +15446,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/olares.png",
@@ -15736,13 +15716,12 @@
    "url": "https://www.aci.dev/",
    "website": "https://www.aci.dev/",
    "github": "https://github.com/aipotheosis-labs/aci",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source tool-calling platform connecting hundreds of tools to agents.",
    "key_features": [
     "Open source + cloud",
     "Active",
-    "4911 GitHub stars",
-    "Connect tools via mcp"
+    "4911 GitHub stars"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -15766,7 +15745,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/aci-dev.png",
@@ -15860,14 +15839,13 @@
    "url": "https://liveblocks.io/",
    "website": "https://liveblocks.io/",
    "github": "https://github.com/liveblocks/liveblocks",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Realtime collaboration infrastructure for multiplayer apps and AI agents.",
    "key_features": [
     "Paid",
     "Active",
     "4756 GitHub stars",
-    "Automate workflows",
-    "Connect tools via mcp"
+    "Automate workflows"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -15890,8 +15868,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate workflows",
-    "connect tools via MCP"
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/liveblocks.png",
@@ -15946,7 +15923,7 @@
    "url": "https://ibm.github.io/mcp-context-forge/",
    "website": "https://ibm.github.io/mcp-context-forge/",
    "github": "https://github.com/IBM/mcp-context-forge",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "IBM's gateway and registry that fronts MCP, A2A and REST APIs with one endpoint.",
    "key_features": [
     "Open source",
@@ -16030,7 +16007,7 @@
    "url": "https://csharp.sdk.modelcontextprotocol.io/",
    "website": "https://csharp.sdk.modelcontextprotocol.io/",
    "github": "https://github.com/modelcontextprotocol/csharp-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official C# SDK for building MCP servers and clients, maintained with Microsoft.",
    "key_features": [
     "Open source",
@@ -16289,7 +16266,7 @@
    "url": "https://ai-game.dev/",
    "website": "https://ai-game.dev/",
    "github": "https://github.com/IvanMurzak/Unity-MCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP tools and CLI that let AI agents develop and test inside the Unity engine.",
    "key_features": [
     "Open source",
@@ -16460,7 +16437,7 @@
    "url": "https://github.com/open-webui/mcpo",
    "website": "",
    "github": "https://github.com/open-webui/mcpo",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Simple proxy that exposes MCP servers as OpenAPI endpoints.",
    "key_features": [
     "Open source",
@@ -16502,7 +16479,7 @@
    "url": "https://github.com/antvis/mcp-server-chart",
    "website": "",
    "github": "https://github.com/antvis/mcp-server-chart",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server from AntV that lets agents generate more than 25 chart types.",
    "key_features": [
     "Open source",
@@ -16544,7 +16521,7 @@
    "url": "https://archestra.ai/",
    "website": "https://archestra.ai/",
    "github": "https://github.com/archestra-ai/archestra",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Enterprise AI platform with guardrails, an MCP registry, gateway and orchestrator.",
    "key_features": [
     "Open source + cloud",
@@ -16631,13 +16608,12 @@
    "url": "https://github.com/algorithmicsuperintelligence/optillm",
    "website": "",
    "github": "https://github.com/algorithmicsuperintelligence/optillm",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Inference proxy that applies reasoning techniques to improve LLM answers.",
    "key_features": [
     "Open source",
     "Active",
-    "4318 GitHub stars",
-    "Connect tools via mcp"
+    "4318 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -16661,7 +16637,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/optillm.png",
@@ -16673,7 +16649,7 @@
    "url": "https://excelmcpserver.com/",
    "website": "https://excelmcpserver.com/",
    "github": "https://github.com/haris-musa/excel-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that lets agents create and edit Excel files with formulas and charts.",
    "key_features": [
     "Open source",
@@ -16931,7 +16907,7 @@
    "url": "https://docs.rs/rmcp/latest/rmcp/",
    "website": "https://docs.rs/rmcp/latest/rmcp/",
    "github": "https://github.com/modelcontextprotocol/rust-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Rust SDK for the Model Context Protocol.",
    "key_features": [
     "Open source",
@@ -17022,7 +16998,7 @@
    "url": "https://github.com/stickerdaniel/linkedin-mcp-server",
    "website": "",
    "github": "https://github.com/stickerdaniel/linkedin-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that gives agents access to LinkedIn profiles, companies and jobs.",
    "key_features": [
     "Open source",
@@ -17192,7 +17168,7 @@
    "url": "https://radarhq.io/",
    "website": "https://radarhq.io/",
    "github": "https://github.com/skyhook-io/radar",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open-source Kubernetes UI with a built-in MCP server for agents.",
    "key_features": [
     "Open source",
@@ -17279,7 +17255,7 @@
    "url": "https://java.sdk.modelcontextprotocol.io/latest/",
    "website": "https://java.sdk.modelcontextprotocol.io/latest/",
    "github": "https://github.com/modelcontextprotocol/java-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Java SDK for MCP servers and clients.",
    "key_features": [
     "Open source",
@@ -17323,13 +17299,12 @@
    "url": "https://www.strukto.ai/",
    "website": "https://www.strukto.ai/",
    "github": "https://github.com/strukto-ai/mirage",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Virtual terminal environment for AI agents.",
    "key_features": [
     "Open source",
     "Active",
-    "3695 GitHub stars",
-    "Connect tools via mcp"
+    "3695 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -17353,7 +17328,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/mirage.png",
@@ -17407,7 +17382,7 @@
    "url": "https://dbhub.ai/",
    "website": "https://dbhub.ai/",
    "github": "https://github.com/bytebase/dbhub",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Database MCP server for Postgres, MySQL, SQL Server and others from Bytebase.",
    "key_features": [
     "Open source",
@@ -17575,14 +17550,13 @@
    "url": "https://onecli.sh/",
    "website": "https://onecli.sh/",
    "github": "https://github.com/onecli/onecli",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Sandboxed agent harness for teams with secure credential handling.",
    "key_features": [
     "Open source",
     "Active",
     "3576 GitHub stars",
     "Build an agent",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source",
@@ -17608,7 +17582,6 @@
    "license": "",
    "tags": [
     "build an agent",
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -17621,7 +17594,7 @@
    "url": "https://github.com/samuelgursky/davinci-resolve-mcp",
    "website": "",
    "github": "https://github.com/samuelgursky/davinci-resolve-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server for controlling DaVinci Resolve Studio from AI agents.",
    "key_features": [
     "Open source",
@@ -17745,13 +17718,12 @@
    "url": "https://www.agentfs.ai/",
    "website": "https://www.agentfs.ai/",
    "github": "https://github.com/tursodatabase/agentfs",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Turso's filesystem for agents with snapshots and auditing.",
    "key_features": [
     "Open source",
     "Active",
-    "3475 GitHub stars",
-    "Connect tools via mcp"
+    "3475 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -17775,7 +17747,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agentfs.png",
@@ -18474,7 +18446,7 @@
    "url": "https://github.com/sparfenyuk/mcp-proxy",
    "website": "",
    "github": "https://github.com/sparfenyuk/mcp-proxy",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Bridge between Streamable HTTP and stdio MCP transports.",
    "key_features": [
     "Open source",
@@ -18559,7 +18531,7 @@
    "url": "https://jcodemunch.com/",
    "website": "https://jcodemunch.com/",
    "github": "https://github.com/jgravelle/jcodemunch-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server for symbol-level code exploration that cuts token use.",
    "key_features": [
     "Source-available",
@@ -18603,7 +18575,7 @@
    "url": "https://docs.metamcp.com/en",
    "website": "https://docs.metamcp.com/en",
    "github": "https://github.com/metatool-ai/metamcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Aggregator and gateway that combines many MCP servers into one.",
    "key_features": [
     "Open source",
@@ -18645,7 +18617,7 @@
    "url": "https://brightdata.com/",
    "website": "https://brightdata.com/",
    "github": "https://github.com/brightdata/brightdata-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Bright Data's MCP server for web search, scraping and browsing.",
    "key_features": [
     "Open source + cloud",
@@ -18817,7 +18789,7 @@
    "url": "https://www.mcphub.app/",
    "website": "https://www.mcphub.app/",
    "github": "https://github.com/samanhappy/mcphub",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Self-hosted MCP gateway for managing many servers.",
    "key_features": [
     "Open source",
@@ -18859,13 +18831,12 @@
    "url": "https://boxlite.ai/",
    "website": "https://boxlite.ai/",
    "github": "https://github.com/boxlite-ai/boxlite",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Embeddable micro-VM for running AI agents.",
    "key_features": [
     "Open source",
     "Active",
-    "2520 GitHub stars",
-    "Connect tools via mcp"
+    "2520 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -18889,7 +18860,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/boxlite.png",
@@ -18943,7 +18914,7 @@
    "url": "https://developers.notion.com/guides/mcp/overview",
    "website": "https://developers.notion.com/guides/mcp/overview",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Notion's official hosted MCP server that lets AI agents search, read and update pages and databases in your workspace.",
    "key_features": [
     "Freemium",
@@ -18985,7 +18956,7 @@
    "url": "https://linear.app/docs/mcp",
    "website": "https://linear.app/docs/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Linear's official remote MCP server for letting agents find, create and update issues, projects and comments.",
    "key_features": [
     "Freemium",
@@ -19025,7 +18996,7 @@
    "url": "https://www.atlassian.com/platform/rovo-mcp",
    "website": "https://www.atlassian.com/platform/rovo-mcp",
    "github": "https://github.com/atlassian/atlassian-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Atlassian's Rovo MCP server that connects agents to Jira, Confluence and other Atlassian cloud apps.",
    "key_features": [
     "Freemium",
@@ -19068,7 +19039,7 @@
    "url": "https://github.com/auth0/auth0-mcp-server",
    "website": "",
    "github": "https://github.com/auth0/auth0-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Auth0's MCP server for managing applications, APIs, actions and logs in an Auth0 tenant through an agent.",
    "key_features": [
     "Open source",
@@ -19151,7 +19122,7 @@
    "url": "https://github.com/brave/brave-search-mcp-server",
    "website": "",
    "github": "https://github.com/brave/brave-search-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Brave's official MCP server for web, image, video, news and local search through the Brave Search API.",
    "key_features": [
     "Open source",
@@ -19196,7 +19167,7 @@
    "url": "https://github.com/buildkite/buildkite-mcp-server",
    "website": "",
    "github": "https://github.com/buildkite/buildkite-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Buildkite's MCP server exposing pipelines, builds, jobs and logs to coding agents.",
    "key_features": [
     "Open source",
@@ -19240,7 +19211,7 @@
    "url": "https://github.com/ClickHouse/mcp-clickhouse",
    "website": "",
    "github": "https://github.com/ClickHouse/mcp-clickhouse",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official ClickHouse MCP server for querying and exploring ClickHouse databases.",
    "key_features": [
     "Open source",
@@ -19282,7 +19253,7 @@
    "url": "https://github.com/cloudflare/mcp-server-cloudflare",
    "website": "",
    "github": "https://github.com/cloudflare/mcp-server-cloudflare",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Cloudflare's collection of MCP servers for Workers, observability, DNS analytics and other Cloudflare services.",
    "key_features": [
     "Open source",
@@ -19326,7 +19297,7 @@
    "url": "https://huggingface.co/mcp",
    "website": "https://huggingface.co/mcp",
    "github": "https://github.com/huggingface/hf-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Hugging Face's MCP server connecting agents to the Hub's models, datasets, papers and Gradio Spaces.",
    "key_features": [
     "Open source",
@@ -19370,7 +19341,7 @@
    "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
    "website": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Airtable's official MCP server that lets agents read and write bases, tables and records.",
    "key_features": [
     "Freemium",
@@ -19411,7 +19382,7 @@
    "url": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
    "website": "https://amplitude.com/docs/amplitude-ai/amplitude-mcp",
    "github": "https://github.com/amplitude/mcp-marketplace",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Amplitude's MCP server for searching and analyzing product analytics data from an agent.",
    "key_features": [
     "Freemium",
@@ -19454,7 +19425,7 @@
    "url": "https://www.canva.dev/docs/apps/mcp/",
    "website": "https://www.canva.dev/docs/apps/mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Canva's MCP server for creating, searching, editing and exporting designs from AI assistants.",
    "key_features": [
     "Freemium",
@@ -19500,7 +19471,7 @@
    "url": "https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/",
    "website": "https://circleci.com/docs/guides/toolkit/circleci-mcp-overview/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "CircleCI's MCP servers (hosted and CLI) for diagnosing build failures, inspecting runs and managing CI pipelines from coding agents.",
    "key_features": [
     "Freemium",
@@ -19542,7 +19513,7 @@
    "url": "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
    "website": "https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "GitLab's official MCP server for letting agents work with projects, issues and merge requests.",
    "key_features": [
     "Freemium",
@@ -19582,7 +19553,7 @@
    "url": "https://docs.newrelic.com/docs/agentic-ai/mcp/overview/",
    "website": "https://docs.newrelic.com/docs/agentic-ai/mcp/overview/",
    "github": "https://github.com/newrelic/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "New Relic's MCP server for querying metrics, logs, traces and alerts through an agent.",
    "key_features": [
     "Freemium",
@@ -19625,7 +19596,7 @@
    "url": "https://github.com/paypal/paypal-mcp-server",
    "website": "",
    "github": "https://github.com/paypal/paypal-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "PayPal's MCP server for invoices, orders, payments and other PayPal operations from agents.",
    "key_features": [
     "Open source",
@@ -19670,7 +19641,7 @@
    "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
    "website": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
    "github": "https://github.com/figma/mcp-server-guide",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Figma's MCP server that brings design context from Figma files into coding agents.",
    "key_features": [
     "Freemium",
@@ -19715,7 +19686,7 @@
    "url": "https://github.com/grafana/mcp-grafana",
    "website": "",
    "github": "https://github.com/grafana/mcp-grafana",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Grafana's MCP server giving agents access to dashboards, data sources and incidents.",
    "key_features": [
     "Open source",
@@ -19757,7 +19728,7 @@
    "url": "https://github.com/hashicorp/terraform-mcp-server",
    "website": "",
    "github": "https://github.com/hashicorp/terraform-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "HashiCorp's Terraform MCP server for looking up providers and modules and automating workflows.",
    "key_features": [
     "Open source",
@@ -19801,7 +19772,7 @@
    "url": "https://www.linkup.so/",
    "website": "https://www.linkup.so/",
    "github": "https://github.com/LinkupPlatform/linkup-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Linkup's MCP server for real-time, source-backed web search.",
    "key_features": [
     "Open source",
@@ -19845,7 +19816,7 @@
    "url": "https://github.com/matlab/matlab-mcp-server",
    "website": "",
    "github": "https://github.com/matlab/matlab-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MathWorks' MCP server that lets coding agents run MATLAB code and tests.",
    "key_features": [
     "Source-available",
@@ -19888,7 +19859,7 @@
    "url": "https://github.com/microsoft/mcp",
    "website": "",
    "github": "https://github.com/microsoft/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Microsoft's Azure MCP server connecting agents to Azure services.",
    "key_features": [
     "Open source",
@@ -19930,7 +19901,7 @@
    "url": "https://learn.microsoft.com/en-us/",
    "website": "https://learn.microsoft.com/en-us/",
    "github": "https://github.com/MicrosoftDocs/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Microsoft Learn MCP server giving agents up-to-date Microsoft documentation.",
    "key_features": [
     "Source-available",
@@ -19971,7 +19942,7 @@
    "url": "https://github.com/microsoft/powerbi-modeling-mcp",
    "website": "",
    "github": "https://github.com/microsoft/powerbi-modeling-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Microsoft's MCP server that lets agents build and edit Power BI semantic models.",
    "key_features": [
     "Open source",
@@ -20013,7 +19984,7 @@
    "url": "https://monday.com/",
    "website": "https://monday.com/",
    "github": "https://github.com/mondaycom/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "monday.com's MCP server for managing boards, items and workflows.",
    "key_features": [
     "Open source",
@@ -20057,7 +20028,7 @@
    "url": "https://github.com/mongodb-js/mongodb-mcp-server",
    "website": "",
    "github": "https://github.com/mongodb-js/mongodb-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MongoDB's official MCP server for querying databases and managing Atlas.",
    "key_features": [
     "Open source",
@@ -20099,7 +20070,7 @@
    "url": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/",
    "website": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/",
    "github": "https://github.com/neo4j-contrib/mcp-neo4j",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Neo4j MCP servers for querying graphs, managing Aura instances and graph memory.",
    "key_features": [
     "Open source",
@@ -20143,7 +20114,7 @@
    "url": "https://neon.com/docs/ai/neon-mcp-server",
    "website": "https://neon.com/docs/ai/neon-mcp-server",
    "github": "https://github.com/neondatabase/mcp-server-neon",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Neon's official MCP server for managing Postgres projects, branches and queries.",
    "key_features": [
     "Open source",
@@ -20185,7 +20156,7 @@
    "url": "https://oxylabs.io/",
    "website": "https://oxylabs.io/",
    "github": "https://github.com/oxylabs/oxylabs-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Oxylabs' MCP server for fetching and parsing web content at scale.",
    "key_features": [
     "Open source",
@@ -20228,7 +20199,7 @@
    "url": "https://planetscale.com/docs/mcp-server",
    "website": "https://planetscale.com/docs/mcp-server",
    "github": "https://github.com/planetscale/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "PlanetScale's MCP server for databases, branches, schemas and query insights.",
    "key_features": [
     "Freemium",
@@ -20269,7 +20240,7 @@
    "url": "https://www.postman.com/product/mcp-server/",
    "website": "https://www.postman.com/product/mcp-server/",
    "github": "https://github.com/postmanlabs/postman-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Postman's MCP server giving agents access to workspaces, collections and APIs.",
    "key_features": [
     "Open source",
@@ -20311,7 +20282,7 @@
    "url": "https://redis.io/docs/latest/integrate/redis-mcp/",
    "website": "https://redis.io/docs/latest/integrate/redis-mcp/",
    "github": "https://github.com/redis/mcp-redis",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Redis' official MCP server for working with data in Redis through natural language.",
    "key_features": [
     "Open source",
@@ -20353,15 +20324,14 @@
    "url": "https://github.com/ref-tools/ref-tools-mcp",
    "website": "",
    "github": "https://github.com/ref-tools/ref-tools-mcp",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Token-efficient documentation search for coding agents.",
    "key_features": [
     "Freemium",
     "Active",
     "1183 GitHub stars",
     "Write code",
-    "Research the web",
-    "Connect tools via mcp"
+    "Research the web"
    ],
    "pricing": "Freemium",
    "price_tag": "freemium",
@@ -20386,8 +20356,7 @@
    "license": "",
    "tags": [
     "write code",
-    "research the web",
-    "connect tools via MCP"
+    "research the web"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ref.png",
@@ -20399,7 +20368,7 @@
    "url": "https://robotmcp.ai/",
    "website": "https://robotmcp.ai/",
    "github": "https://github.com/robotmcp/ros-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Connects Claude and other models to ROS robots.",
    "key_features": [
     "Open source",
@@ -20441,7 +20410,7 @@
    "url": "https://github.com/ScrapeGraphAI/scrapegraph-mcp",
    "website": "",
    "github": "https://github.com/ScrapeGraphAI/scrapegraph-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "ScrapeGraphAI's MCP server for AI-powered web scraping.",
    "key_features": [
     "Open source",
@@ -20523,7 +20492,7 @@
    "url": "https://www.sonarsource.com/products/sonarqube/mcp-server/",
    "website": "https://www.sonarsource.com/products/sonarqube/mcp-server/",
    "github": "https://github.com/SonarSource/sonarqube-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SonarQube MCP server for code quality and security analysis from agents.",
    "key_features": [
     "Source-available",
@@ -20566,7 +20535,7 @@
    "url": "https://stackql.io/",
    "website": "https://stackql.io/",
    "github": "https://github.com/stackql/stackql",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SQL engine with an MCP server for querying and provisioning cloud resources.",
    "key_features": [
     "Open source",
@@ -20610,7 +20579,7 @@
    "url": "https://docs.stripe.com/agents",
    "website": "https://docs.stripe.com/agents",
    "github": "https://github.com/stripe/ai",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Stripe's agent toolkit and MCP server for customers, payments and billing.",
    "key_features": [
     "Open source",
@@ -20657,7 +20626,7 @@
    "url": "https://supabase.com/docs/guides/ai-tools/mcp",
    "website": "https://supabase.com/docs/guides/ai-tools/mcp",
    "github": "https://github.com/supabase/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Supabase's MCP server for managing databases, migrations and projects.",
    "key_features": [
     "Open source",
@@ -20699,7 +20668,7 @@
    "url": "https://github.com/upstash/mcp-server",
    "website": "",
    "github": "https://github.com/upstash/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Upstash's MCP server for managing Redis and other Upstash resources.",
    "key_features": [
     "Open source",
@@ -20741,7 +20710,7 @@
    "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
    "website": "https://vercel.com/docs/agent-resources/vercel-mcp",
    "github": "https://github.com/vercel/vercel-mcp-overview",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Vercel's official MCP server for searching docs and managing projects and deployments.",
    "key_features": [
     "Freemium",
@@ -20784,7 +20753,7 @@
    "url": "https://github.com/webflow/mcp-server",
    "website": "",
    "github": "https://github.com/webflow/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Webflow's MCP server for designing and managing Webflow sites.",
    "key_features": [
     "Open source",
@@ -20826,7 +20795,7 @@
    "url": "https://github.com/wix/wix-mcp",
    "website": "",
    "github": "https://github.com/wix/wix-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Wix's MCP server for building and managing Wix sites and business data.",
    "key_features": [
     "Open source",
@@ -20868,7 +20837,7 @@
    "url": "https://docs.zapier.com/mcp",
    "website": "https://docs.zapier.com/mcp",
    "github": "https://github.com/zapier/zapier-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Zapier's hosted MCP server that connects agents to thousands of apps.",
    "key_features": [
     "Freemium",
@@ -20911,7 +20880,7 @@
    "url": "https://github.com/muxinc/mux-ts",
    "website": "",
    "github": "https://github.com/muxinc/mux-ts",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Mux's official MCP server for video and the Mux API.",
    "key_features": [
     "Open source",
@@ -20954,7 +20923,7 @@
    "url": "https://testkube.io/",
    "website": "https://testkube.io/",
    "github": "https://github.com/kubeshop/testkube",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Testkube MCP server for managing test workflows and executions.",
    "key_features": [
     "Open source",
@@ -21129,7 +21098,7 @@
    "url": "https://github.com/infranodus/mcp-server-infranodus",
    "website": "",
    "github": "https://github.com/infranodus/mcp-server-infranodus",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Turns text into knowledge graphs for agents.",
    "key_features": [
     "Open source",
@@ -21171,7 +21140,7 @@
    "url": "https://github.com/blazickjp/arxiv-mcp-server",
    "website": "",
    "github": "https://github.com/blazickjp/arxiv-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server for searching and reading arXiv papers.",
    "key_features": [
     "Open source",
@@ -21215,7 +21184,7 @@
    "url": "https://github.com/ihor-sokoliuk/mcp-searxng",
    "website": "",
    "github": "https://github.com/ihor-sokoliuk/mcp-searxng",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server for private web search through SearXNG.",
    "key_features": [
     "Open source",
@@ -21259,7 +21228,7 @@
    "url": "https://github.com/anyproto/anytype-mcp",
    "website": "",
    "github": "https://github.com/anyproto/anytype-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official MCP server for the Anytype knowledge app.",
    "key_features": [
     "Open source",
@@ -21301,7 +21270,7 @@
    "url": "https://github.com/timescale/pg-aiguide",
    "website": "",
    "github": "https://github.com/timescale/pg-aiguide",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Timescale's MCP server with PostgreSQL docs and best practices for agents.",
    "key_features": [
     "Open source",
@@ -21385,12 +21354,11 @@
    "url": "https://agentcard.com/",
    "website": "https://agentcard.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Gives each user of your product a payment card wallet that their AI agent can spend from within set limits.",
    "key_features": [
     "Usage-based",
-    "Active",
-    "Connect tools via mcp"
+    "Active"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -21414,7 +21382,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agentcard.png",
@@ -21671,14 +21639,13 @@
    "url": "https://aident.ai/",
    "website": "https://aident.ai/",
    "github": "https://github.com/Aident-AI/aident-skill",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Connects AI agents to more than 1,000 apps through one integration so they can act across tools.",
    "key_features": [
     "Freemium",
     "Active",
     "6 GitHub stars",
-    "Automate workflows",
-    "Connect tools via mcp"
+    "Automate workflows"
    ],
    "pricing": "Freemium",
    "price_tag": "freemium",
@@ -21701,8 +21668,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate workflows",
-    "connect tools via MCP"
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/aident-ai.png",
@@ -22379,13 +22345,12 @@
    "url": "https://www.context.dev/",
    "website": "https://www.context.dev/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Web data API for AI agents that scrapes pages to Markdown, searches the web and crawls sites.",
    "key_features": [
     "Usage-based",
     "Active",
-    "Research the web",
-    "Connect tools via mcp"
+    "Research the web"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -22408,8 +22373,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "research the web",
-    "connect tools via MCP"
+    "research the web"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/context-dev.png",
@@ -22622,7 +22586,7 @@
    "url": "https://luneresearch.com/",
    "website": "https://luneresearch.com/",
    "github": "https://github.com/RetrogradeLabs/lune-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that grounds AI agents in full-text computer science research papers.",
    "key_features": [
     "Freemium",
@@ -23918,7 +23882,7 @@
    "url": "https://www.slash.com/platform/agents",
    "website": "https://www.slash.com/platform/agents",
    "github": "https://github.com/slashfi",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Business-banking MCP server that lets AI agents create cards, set spend limits and send payments, including stablecoins.",
    "key_features": [
     "See site",
@@ -26137,7 +26101,7 @@
    "url": "https://rea.tools/",
    "website": "https://rea.tools/",
    "github": "https://github.com/morluto/rea",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server and CLI that lets coding agents reverse engineer native binaries, Electron and JavaScript apps, .NET assemblies and live websites, using Ghidra, Hopper or IDA under the hood.",
    "key_features": [
     "Open source",
@@ -26446,7 +26410,7 @@
    "url": "https://nitrostack.ai/",
    "website": "https://nitrostack.ai/",
    "github": "https://github.com/nitrocloudofficial/nitrostack",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "TypeScript framework with decorators and dependency injection for building, testing and deploying MCP servers and MCP apps, with a companion desktop studio.",
    "key_features": [
     "Open source + cloud",
@@ -26709,7 +26673,7 @@
    "url": "https://www.wolfram.com/artificial-intelligence/mcp/",
    "website": "https://www.wolfram.com/artificial-intelligence/mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Wolfram's official MCP service that gives agents computed answers from Wolfram Language and Wolfram|Alpha, with local, cloud and enterprise deployment options.",
    "key_features": [
     "See site",
@@ -26749,7 +26713,7 @@
    "url": "https://api.stackexchange.com/docs/mcp-server",
    "website": "https://api.stackexchange.com/docs/mcp-server",
    "github": "https://github.com/StackExchange/Stack-MCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official remote MCP server that lets coding agents search and pull vetted Stack Overflow questions and answers, with a free daily call allowance per user.",
    "key_features": [
     "Freemium",
@@ -27751,7 +27715,7 @@
    "url": "https://agentkey.app",
    "website": "https://agentkey.app",
    "github": "https://github.com/chainbase-labs/AgentKey",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "One MCP install that gives AI agents live web search, X, Reddit and YouTube data, web page reading and market and token-price data, all paid from a single monthly credit subscription.",
    "key_features": [
     "Lite, Pro and Max monthly credit plans, with extra credit top-ups.",
@@ -27794,13 +27758,12 @@
    "url": "https://www.zero.xyz",
    "website": "https://www.zero.xyz",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Lets AI agents discover, connect to and pay per call for thousands of APIs and services without API-key setup or separate sign-ups.",
    "key_features": [
     "Free to install with $5 starting credit; many services are free, paid ones are charged per call with no markup.",
     "Active",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Voice & phone calls"
    ],
    "pricing": "Free to install with $5 starting credit; many services are free, paid ones are charged per call with no markup.",
    "price_tag": "freemium",
@@ -27823,8 +27786,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "voice & phone calls",
-    "connect tools via MCP"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/zero-xyz.png",
@@ -28216,7 +28178,7 @@
    "url": "https://konghq.com/products/kong-gateway",
    "website": "https://konghq.com/products/kong-gateway",
    "github": "https://github.com/Kong/kong",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Cloud-native API, LLM and MCP gateway that adds routing, auth, multi-LLM support, semantic security and MCP traffic analytics through plugins.",
    "key_features": [
     "Open source + cloud",
@@ -28345,13 +28307,12 @@
    "url": "https://github.com/novuhq/novu",
    "website": "",
    "github": "https://github.com/novuhq/novu",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source communication infrastructure that gives products and AI agents one API to reach users over in-app inbox, email, SMS, push, Slack, Teams and chat.",
    "key_features": [
     "See site",
     "Mature",
-    "40164 GitHub stars",
-    "Connect tools via mcp"
+    "40164 GitHub stars"
    ],
    "pricing": "See site",
    "price_tag": "unknown",
@@ -28374,7 +28335,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/novu.png",
@@ -28430,7 +28391,7 @@
    "url": "https://www.mcp-for-blender.com/",
    "website": "https://www.mcp-for-blender.com/",
    "github": "https://github.com/ahujasid/mcp-for-blender",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Community MCP plugin that lets Claude and other LLMs control Blender for prompt-driven 3D modeling, scene creation and manipulation.",
    "key_features": [
     "Open source",
@@ -28784,7 +28745,7 @@
    "url": "https://www.framelink.ai/",
    "website": "https://www.framelink.ai/",
    "github": "https://github.com/GLips/Figma-Context-MCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that gives Cursor and other coding agents Figma layout data so they can implement designs accurately in one shot.",
    "key_features": [
     "Open source",
@@ -29044,13 +29005,12 @@
    "url": "https://portkey.ai/features/ai-gateway",
    "website": "https://portkey.ai/features/ai-gateway",
    "github": "https://github.com/Portkey-AI/gateway",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Fast open-source AI gateway that routes requests to hundreds of LLMs through one API with fallbacks, load balancing and built-in guardrails.",
    "key_features": [
     "Open-source gateway free to self-host; hosted Developer plan free (10k logs/mo), Production $49/mo, Enterprise custom",
     "Mature",
-    "13214 GitHub stars",
-    "Connect tools via mcp"
+    "13214 GitHub stars"
    ],
    "pricing": "Open-source gateway free to self-host; hosted Developer plan free (10k logs/mo), Production $49/mo, Enterprise custom",
    "price_tag": "freemium",
@@ -29073,7 +29033,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/portkey-ai-gateway.png",
@@ -29177,7 +29137,7 @@
    "url": "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector",
    "website": "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector",
    "github": "https://github.com/modelcontextprotocol/inspector",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official developer tool for testing and debugging MCP servers through a web UI, CLI or terminal UI.",
    "key_features": [
     "Open source",
@@ -29266,7 +29226,7 @@
    "url": "https://desktopcommander.app/",
    "website": "https://desktopcommander.app/",
    "github": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server that gives Claude and other clients terminal control, process management, file search and diff-based file editing on your computer.",
    "key_features": [
     "Open source",
@@ -29450,7 +29410,7 @@
    "url": "https://github.com/modelcontextprotocol/registry",
    "website": "",
    "github": "https://github.com/modelcontextprotocol/registry",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official community-driven registry service and API that lists Model Context Protocol servers for MCP clients, like an app store for servers.",
    "key_features": [
     "Open source",
@@ -30160,13 +30120,12 @@
    "url": "https://skill.xfyun.cn/",
    "website": "https://skill.xfyun.cn/",
    "github": "https://github.com/iflytek/skillhub",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Self-hosted registry for publishing, versioning and governing agent skill packages across an organization, with RBAC and audit logs.",
    "key_features": [
     "Open source",
     "Mature",
-    "5241 GitHub stars",
-    "Connect tools via mcp"
+    "5241 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -30190,7 +30149,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/skillhub.png",
@@ -30202,7 +30161,7 @@
    "url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
    "website": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
    "github": "https://github.com/modelcontextprotocol/go-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
    "key_features": [
     "Open source",
@@ -30335,7 +30294,7 @@
    "url": "https://mcporter.sh/",
    "website": "https://mcporter.sh/",
    "github": "https://github.com/openclaw/mcporter",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "TypeScript runtime and CLI for discovering and calling MCP servers from scripts, terminals and agents, or packaging them as standalone CLIs.",
    "key_features": [
     "Open source",
@@ -30630,7 +30589,7 @@
    "url": "https://observal.io/",
    "website": "https://observal.io/",
    "github": "https://github.com/Observal/Observal",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Self-hosted registry and insight engine for sharing coding-agent skills, MCP servers and agents across a team.",
    "key_features": [
     "Open source",
@@ -30758,7 +30717,7 @@
    "url": "https://microsoft.github.io/apm/",
    "website": "https://microsoft.github.io/apm/",
    "github": "https://github.com/microsoft/apm",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Microsoft's open-source dependency manager for AI agent configuration that installs skills, prompts and MCP servers across Copilot, Claude Code, Cursor and others from one manifest.",
    "key_features": [
     "Open source",
@@ -31368,7 +31327,7 @@
    "url": "https://jarvisregistry.com/",
    "website": "https://jarvisregistry.com/",
    "github": "https://github.com/ascending-llc/jarvis-registry",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open-source MCP and A2A agent gateway that connects copilots and agents to enterprise tools with identity, access control and observability.",
    "key_features": [
     "Open source",
@@ -31710,14 +31669,13 @@
    "url": "https://openterminal.sh/",
    "website": "https://openterminal.sh/",
    "github": "https://github.com/open-webui/open-terminal",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Self-hosted terminal service from the Open WebUI team that gives AI agents an API to run commands, manage files and execute code.",
    "key_features": [
     "Open source",
     "Active",
     "3368 GitHub stars",
-    "Write code",
-    "Connect tools via mcp"
+    "Write code"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -31741,8 +31699,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "write code",
-    "connect tools via MCP"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/open-terminal.png",
@@ -31754,7 +31711,7 @@
    "url": "https://metorial.com/",
    "website": "https://metorial.com/",
    "github": "https://github.com/metorial/metorial",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open-source identity and access layer that connects AI agents to 1,200+ integrations via MCP, CLI or API with auth, permissions and observability.",
    "key_features": [
     "Source-available + cloud",
@@ -31797,7 +31754,7 @@
    "url": "https://workspacemcp.com/",
    "website": "https://workspacemcp.com/",
    "github": "https://github.com/taylorwilsdon/google_workspace_mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server and CLI that gives AI assistants natural-language control of Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Tasks and Chat.",
    "key_features": [
     "Open source",
@@ -32353,7 +32310,7 @@
    "url": "https://apps.extensions.modelcontextprotocol.io/",
    "website": "https://apps.extensions.modelcontextprotocol.io/",
    "github": "https://github.com/modelcontextprotocol/ext-apps",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official spec and SDK for MCP Apps, the standard for interactive UIs like charts and forms that MCP servers render inside chat clients.",
    "key_features": [
     "Open source",
@@ -32570,7 +32527,7 @@
    "url": "https://southleft.com/",
    "website": "https://southleft.com/",
    "github": "https://github.com/southleft/figma-console-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Design-system-focused MCP server that reads and writes Figma and checks design-code parity and accessibility.",
    "key_features": [
     "Open source",
@@ -33264,7 +33221,7 @@
    "url": "https://stacklok.com/download/",
    "website": "https://stacklok.com/download/",
    "github": "https://github.com/stacklok/toolhive",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Stacklok platform that runs MCP servers in isolated containers with per-request identity, access policy and observability.",
    "key_features": [
     "Open source",
@@ -33480,7 +33437,7 @@
    "url": "https://github.com/AmoyLab/Unla",
    "website": "",
    "github": "https://github.com/AmoyLab/Unla",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Lightweight MCP gateway that turns existing MCP servers and APIs into MCP endpoints without code changes, with a management UI.",
    "key_features": [
     "Open source",
@@ -33742,13 +33699,12 @@
    "url": "https://www.eigenflux.ai/",
    "website": "https://www.eigenflux.ai/",
    "github": "https://github.com/phronesis-io/eigenflux",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source communication and broadcast network where AI agents share information, needs and capabilities.",
    "key_features": [
     "Source-available",
     "Active",
-    "2174 GitHub stars",
-    "Connect tools via mcp"
+    "2174 GitHub stars"
    ],
    "pricing": "Source-available",
    "price_tag": "paid",
@@ -33771,7 +33727,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/eigenflux.png",
@@ -33783,7 +33739,7 @@
    "url": "https://github.com/containers/kubernetes-mcp-server",
    "website": "",
    "github": "https://github.com/containers/kubernetes-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MCP server for Kubernetes and OpenShift that lets agents view and manage cluster resources.",
    "key_features": [
     "Open source",
@@ -33825,7 +33781,7 @@
    "url": "https://www.skybridge.tech/",
    "website": "https://www.skybridge.tech/",
    "github": "https://github.com/alpic-ai/skybridge",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Full-stack TypeScript and React framework for building MCP Apps and ChatGPT Apps.",
    "key_features": [
     "Open source",
@@ -34475,7 +34431,7 @@
    "url": "https://www.litellm.ai/",
    "website": "https://www.litellm.ai/",
    "github": "https://github.com/BerriAI/litellm",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source AI gateway and Python SDK that calls 100+ LLM providers in the OpenAI format, with cost tracking, guardrails, load balancing and logging.",
    "key_features": [
     "Open source + cloud",
@@ -34483,7 +34439,7 @@
     "61465 GitHub stars",
     "Build an agent",
     "Voice & phone calls",
-    "Connect tools via mcp"
+    "Monitor & evaluate agents"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -34509,7 +34465,7 @@
    "tags": [
     "build an agent",
     "voice & phone calls",
-    "connect tools via MCP"
+    "monitor & evaluate agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/litellm.png",
@@ -35348,7 +35304,7 @@
    "url": "https://www.getmaxim.ai",
    "website": "https://www.getmaxim.ai",
    "github": "https://github.com/maximhq/bifrost",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "High-performance AI gateway from Maxim that unifies 20+ LLM providers behind one OpenAI-compatible API and acts as an MCP and agent gateway.",
    "key_features": [
     "Open source + cloud",
@@ -35474,14 +35430,13 @@
    "url": "https://manifest.build/",
    "website": "https://manifest.build/",
    "github": "https://github.com/mnfst/llm-gateway",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source LLM gateway that routes each request from agents and apps to the right model across API keys, subscriptions and local models, with spend tracking.",
    "key_features": [
     "Open source",
     "Mature",
     "7588 GitHub stars",
     "Automate workflows",
-    "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
    "pricing": "Open source",
@@ -35507,7 +35462,6 @@
    "license": "",
    "tags": [
     "automate workflows",
-    "connect tools via MCP",
     "monitor & evaluate agents"
    ],
    "hybrid": false,
@@ -36119,13 +36073,12 @@
    "url": "https://www.omnara.com/",
    "website": "https://www.omnara.com/",
    "github": "https://github.com/omnara-ai/omnara",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source managed agent platform, a self-hostable alternative to Claude Managed Agents and the OpenAI Agents API, with tools, secrets and sandboxes.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "2938 GitHub stars",
-    "Connect tools via mcp",
     "Run code safely"
    ],
    "pricing": "Open source + cloud",
@@ -36150,7 +36103,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP",
     "run code safely"
    ],
    "hybrid": false,
@@ -36771,7 +36723,7 @@
    "url": "https://joinly.ai/",
    "website": "https://joinly.ai/",
    "github": "https://github.com/joinly-ai/joinly",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Connector middleware and MCP server that lets AI agents join video calls and take part in meetings in real time.",
    "key_features": [
     "Open source",
@@ -36947,7 +36899,7 @@
    "url": "https://github.com/microsoft/azure-devops-mcp",
    "website": "",
    "github": "https://github.com/microsoft/azure-devops-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Microsoft's MCP server that gives AI agents access to Azure DevOps work items, repos, pipelines and more, local or hosted.",
    "key_features": [
     "Open source",
@@ -36991,7 +36943,7 @@
    "url": "https://github.com/GoogleCloudPlatform/cloud-run-mcp",
    "website": "",
    "github": "https://github.com/GoogleCloudPlatform/cloud-run-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Google Cloud's MCP server and Gemini CLI extension that lets AI agents deploy apps to Cloud Run.",
    "key_features": [
     "Open source",
@@ -37035,7 +36987,7 @@
    "url": "https://github.com/dbt-labs/dbt-mcp",
    "website": "",
    "github": "https://github.com/dbt-labs/dbt-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "dbt Labs' MCP server that gives AI agents context and tools for dbt Core, dbt Fusion and dbt Platform projects.",
    "key_features": [
     "Open source",
@@ -37077,7 +37029,7 @@
    "url": "https://github.com/kagisearch/kagimcp",
    "website": "",
    "github": "https://github.com/kagisearch/kagimcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Kagi MCP server with search and page-extraction tools backed by the Kagi API.",
    "key_features": [
     "Open source",
@@ -37123,7 +37075,7 @@
    "url": "https://github.com/motherduckdb/mcp-server-motherduck",
    "website": "",
    "github": "https://github.com/motherduckdb/mcp-server-motherduck",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MotherDuck's MCP server that lets AI assistants run SQL on local DuckDB files, S3-hosted databases and MotherDuck.",
    "key_features": [
     "Open source",
@@ -37252,7 +37204,7 @@
    "url": "https://mcp.sentry.dev/",
    "website": "https://mcp.sentry.dev/",
    "github": "https://github.com/getsentry/toolkit",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Sentry's MCP server and CLI that give coding agents access to Sentry issues, errors and traces for debugging.",
    "key_features": [
     "Source-available + cloud",
@@ -37297,7 +37249,7 @@
    "url": "https://github.com/line/line-bot-mcp-server",
    "website": "",
    "github": "https://github.com/line/line-bot-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "LINE's preview MCP server that connects an AI agent to a LINE Official Account through the Messaging API.",
    "key_features": [
     "Open source",
@@ -37339,7 +37291,7 @@
    "url": "https://github.com/crystaldba/postgres-mcp",
    "website": "",
    "github": "https://github.com/crystaldba/postgres-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Postgres MCP server with index tuning, explain plans, health checks and safe SQL execution for agents.",
    "key_features": [
     "Open source",
@@ -37425,7 +37377,7 @@
    "url": "https://jupyter-mcp-server.datalayer.tech/",
    "website": "https://jupyter-mcp-server.datalayer.tech/",
    "github": "https://github.com/datalayer/jupyter-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Datalayer's MCP server that lets AI agents connect to and manage Jupyter notebooks in real time, local or hosted.",
    "key_features": [
     "Open source",
@@ -39576,7 +39528,7 @@
    "url": "https://atomicmail.ai/",
    "website": "https://atomicmail.ai/",
    "github": "https://github.com/Atomic-Mail/atomic-mail-agentic",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Email API that gives AI agents their own inboxes, built on JMAP with MCP and agent skill support.",
    "key_features": [
     "See site",
@@ -39875,7 +39827,7 @@
    "url": "https://credal.ai/",
    "website": "https://credal.ai/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Spins up governed MCP servers from your company systems so Claude, ChatGPT, Cursor or your apps can query them with permissions.",
    "key_features": [
     "See site",
@@ -40655,7 +40607,7 @@
    "url": "https://www.appsflyer.com/",
    "website": "https://www.appsflyer.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "AppsFlyer's hosted MCP server that lets AI assistants analyze your mobile attribution and campaign performance data.",
    "key_features": [
     "See site",
@@ -40695,7 +40647,7 @@
    "url": "https://porkbun.com/mcp",
    "website": "https://porkbun.com/mcp",
    "github": "https://github.com/oborseth/Porkbun-MCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Porkbun MCP server for managing domains, DNS, SSL, hosting and Cloudflare settings through the Porkbun API.",
    "key_features": [
     "See site",
@@ -40736,7 +40688,7 @@
    "url": "https://www.typeform.com/developers/mcp/",
    "website": "https://www.typeform.com/developers/mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Typeform's MCP server for building and editing forms, managing automations and contacts, and analyzing responses from an AI assistant.",
    "key_features": [
     "See site",
@@ -40778,7 +40730,7 @@
    "url": "https://us.ovhcloud.com/",
    "website": "https://us.ovhcloud.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "OVHcloud's official remote MCP server for managing OVHcloud infrastructure, services and account from AI agents.",
    "key_features": [
     "See site",
@@ -40820,7 +40772,7 @@
    "url": "https://www.egnyte.com/",
    "website": "https://www.egnyte.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Egnyte's remote MCP server for secure AI search, upload and file management in your Egnyte account.",
    "key_features": [
     "See site",
@@ -40864,7 +40816,7 @@
    "url": "https://github.com/lovablelabs/mcp",
    "website": "",
    "github": "https://github.com/lovablelabs/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official MCP server for Lovable, the AI full-stack app builder, so other agents can work with your Lovable projects.",
    "key_features": [
     "See site",
@@ -40905,7 +40857,7 @@
    "url": "https://www.parse.ly/",
    "website": "https://www.parse.ly/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Parse.ly MCP server for querying content analytics such as top content, referrers, campaigns, trends and real-time data.",
    "key_features": [
     "See site",
@@ -40946,7 +40898,7 @@
    "url": "https://jumpcloud.com/",
    "website": "https://jumpcloud.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "JumpCloud's MCP server that lets LLMs manage JumpCloud identity, device and access resources.",
    "key_features": [
     "See site",
@@ -40986,7 +40938,7 @@
    "url": "https://www.studocu.com/en-us/mcp",
    "website": "https://www.studocu.com/en-us/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Studocu's MCP server for finding study documents, courses and institutions and managing study projects and quizzes.",
    "key_features": [
     "See site",
@@ -41026,7 +40978,7 @@
    "url": "https://www.zomato.com/",
    "website": "https://www.zomato.com/",
    "github": "https://github.com/Zomato/mcp-server-manifest",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Zomato's MCP server that exposes its food-ordering services to AI assistants.",
    "key_features": [
     "See site",
@@ -41067,7 +41019,7 @@
    "url": "https://www.infobip.com/",
    "website": "https://www.infobip.com/",
    "github": "https://github.com/infobip/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Infobip MCP servers for omnichannel messaging from agents, including SMS, RCS, WhatsApp and Viber.",
    "key_features": [
     "See site",
@@ -41108,7 +41060,7 @@
    "url": "https://www.statsig.com/",
    "website": "https://www.statsig.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Statsig's MCP server for working with feature flags, experiments and product analytics from AI tools.",
    "key_features": [
     "See site",
@@ -41148,7 +41100,7 @@
    "url": "https://www.beehiiv.com/",
    "website": "https://www.beehiiv.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "beehiiv's MCP server for managing newsletters, posts, podcasts, subscribers and analytics from an AI assistant.",
    "key_features": [
     "See site",
@@ -41188,7 +41140,7 @@
    "url": "https://uptimerobot.com/",
    "website": "https://uptimerobot.com/",
    "github": "https://github.com/uptimerobot/ai",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "UptimeRobot's MCP server for creating monitors, triaging incidents and querying uptime stats for sites, APIs and servers.",
    "key_features": [
     "See site",
@@ -41231,7 +41183,7 @@
    "url": "https://scite.ai/mcp",
    "website": "https://scite.ai/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Scite's MCP server that grounds AI answers in scientific literature, with full-text search and citation-based trust signals.",
    "key_features": [
     "See site",
@@ -41273,7 +41225,7 @@
    "url": "https://www.altmetric.com/",
    "website": "https://www.altmetric.com/",
    "github": "https://github.com/altmetric/altmetric-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Altmetric's MCP server for tracking research attention across news, policy documents and social media.",
    "key_features": [
     "See site",
@@ -41356,7 +41308,7 @@
    "url": "https://ifttt.com/mcp",
    "website": "https://ifttt.com/mcp",
    "github": "https://github.com/IFTTT/ifttt-plugins",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "IFTTT's MCP server that lets AI agents build Applets and run actions and queries across 1,000+ connected services.",
    "key_features": [
     "See site",
@@ -41397,7 +41349,7 @@
    "url": "https://docs.rocketreach.co/reference/mcp",
    "website": "https://docs.rocketreach.co/reference/mcp",
    "github": "https://github.com/rocketreach/rocketreach-mcp-plugin",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "RocketReach's MCP server for looking up verified work emails and phone numbers from its contact database.",
    "key_features": [
     "See site",
@@ -41479,7 +41431,7 @@
    "url": "https://www.kajabi.com/",
    "website": "https://www.kajabi.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Kajabi's MCP server for managing products, pages, contacts, offers, emails and analytics from any MCP client.",
    "key_features": [
     "See site",
@@ -41519,7 +41471,7 @@
    "url": "https://sendpulse.com/features/mcp",
    "website": "https://sendpulse.com/features/mcp",
    "github": "https://github.com/sendpulse/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SendPulse's MCP server for driving its email, CRM, chatbot, SMTP and course automation from AI agents.",
    "key_features": [
     "See site",
@@ -41562,7 +41514,7 @@
    "url": "https://vidiq.com/mcp/",
    "website": "https://vidiq.com/mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "vidIQ's MCP server for researching and creating content for YouTube, Instagram and TikTok from an AI assistant.",
    "key_features": [
     "See site",
@@ -41605,7 +41557,7 @@
    "url": "https://flights.idealo.com",
    "website": "https://flights.idealo.com",
    "github": "https://github.com/idealo/mcp-server-guide",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "idealo's MCP server for searching products, comparing prices and finding deals across six European markets.",
    "key_features": [
     "See site",
@@ -41648,7 +41600,7 @@
    "url": "https://github.com/lucidsoftware/lucid-mcp-server",
    "website": "",
    "github": "https://github.com/lucidsoftware/lucid-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Lucid's MCP connector for creating, searching, editing and sharing Lucidchart and Lucid documents from AI tools.",
    "key_features": [
     "See site",
@@ -41691,7 +41643,7 @@
    "url": "https://www.printfriendly.com/help/api-mcp",
    "website": "https://www.printfriendly.com/help/api-mcp",
    "github": "https://github.com/printfriendly/printfriendly-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "PrintFriendly's MCP server for reading clean web pages and creating PDF, Word and Markdown documents.",
    "key_features": [
     "See site",
@@ -41731,7 +41683,7 @@
    "url": "https://docs.devcycle.com/cli-mcp/mcp-getting-started/",
    "website": "https://docs.devcycle.com/cli-mcp/mcp-getting-started/",
    "github": "https://github.com/DevCycleHQ/cli",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "DevCycle's MCP server for managing feature flags from AI coding assistants.",
    "key_features": [
     "See site",
@@ -41774,7 +41726,7 @@
    "url": "https://www.mindmeister.com/",
    "website": "https://www.mindmeister.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "MindMeister's MCP server for creating, editing and organizing mind maps from an AI assistant.",
    "key_features": [
     "See site",
@@ -41814,7 +41766,7 @@
    "url": "https://workos.com/docs/mcp",
    "website": "https://workos.com/docs/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "WorkOS MCP server for managing organizations, users, SSO, Directory Sync and AuthKit in plain language.",
    "key_features": [
     "See site",
@@ -41854,7 +41806,7 @@
    "url": "https://railway.com/",
    "website": "https://railway.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Railway's remote MCP server for developing, managing and debugging Railway projects, services and deployments from agents.",
    "key_features": [
     "See site",
@@ -41894,7 +41846,7 @@
    "url": "https://mcp.tipranks.com/",
    "website": "https://mcp.tipranks.com/",
    "github": "https://github.com/TipRanks/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "TipRanks MCP server with live market data such as analyst ratings, Smart Score, technicals, options and portfolios.",
    "key_features": [
     "See site",
@@ -41935,7 +41887,7 @@
    "url": "https://gocardless.com/",
    "website": "https://gocardless.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "GoCardless MCP server for managing payments, mandates, subscriptions, refunds and payouts via AI assistants.",
    "key_features": [
     "See site",
@@ -41975,7 +41927,7 @@
    "url": "https://www.aftership.com/",
    "website": "https://www.aftership.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "AfterShip's MCP server for tracking packages across 1,300+ carriers with real-time status.",
    "key_features": [
     "See site",
@@ -42017,7 +41969,7 @@
    "url": "https://gitkraken.com/",
    "website": "https://gitkraken.com/",
    "github": "https://github.com/gitkraken/gk-cli",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "GitKraken's MCP server, via the GitKraken CLI, for managing repos, pull requests and issues across GitHub, GitLab and Bitbucket.",
    "key_features": [
     "See site",
@@ -42060,7 +42012,7 @@
    "url": "https://www.teamwork.com/",
    "website": "https://www.teamwork.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Teamwork.com's official MCP server for managing client projects and tasks with AI assistants.",
    "key_features": [
     "See site",
@@ -42100,7 +42052,7 @@
    "url": "https://docs.fireflies.ai/mcp-tools/overview",
    "website": "https://docs.fireflies.ai/mcp-tools/overview",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Fireflies.ai MCP server for searching and analyzing meeting transcripts, summaries, soundbites and analytics.",
    "key_features": [
     "See site",
@@ -42142,7 +42094,7 @@
    "url": "https://www.mural.co/ai/mcp",
    "website": "https://www.mural.co/ai/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Mural's MCP server for reading and writing shared Mural boards from AI assistants.",
    "key_features": [
     "See site",
@@ -42183,7 +42135,7 @@
    "url": "https://axiom.co/",
    "website": "https://axiom.co/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Axiom's MCP server for listing datasets and schemas and running APL queries for log exploration and monitoring.",
    "key_features": [
     "See site",
@@ -42225,7 +42177,7 @@
    "url": "https://seranking.com/api/integrations/mcp/",
    "website": "https://seranking.com/api/integrations/mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SE Ranking's MCP server for keyword, backlink, SERP, audit, rank-tracking and AI search visibility data.",
    "key_features": [
     "See site",
@@ -42269,7 +42221,7 @@
    "url": "https://churnkey.co/feature/mcp",
    "website": "https://churnkey.co/feature/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Churnkey's MCP server for reading and managing cancel flows, retention metrics and payment recovery.",
    "key_features": [
     "See site",
@@ -42350,7 +42302,7 @@
    "url": "https://www.polaranalytics.com/mcp-for-ecommerce/polar-analytics",
    "website": "https://www.polaranalytics.com/mcp-for-ecommerce/polar-analytics",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Polar Analytics MCP server that gives AI assistants commerce data from Shopify, Amazon, ads and Klaviyo with shared metric definitions.",
    "key_features": [
     "See site",
@@ -42391,7 +42343,7 @@
    "url": "https://bird.com/docs/ai/mcp-server",
    "website": "https://bird.com/docs/ai/mcp-server",
    "github": "https://github.com/messagebird/bird-ai",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Bird's MCP server for sending and receiving email, SMS, WhatsApp and voice messages from AI agents through one API.",
    "key_features": [
     "See site",
@@ -42435,7 +42387,7 @@
    "url": "https://daily.dev/",
    "website": "https://daily.dev/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "daily.dev's MCP server for developer news feeds, posts, bookmarks, tags and search.",
    "key_features": [
     "See site",
@@ -42560,7 +42512,7 @@
    "url": "https://www.frase.io/agents",
    "website": "https://www.frase.io/agents",
    "github": "https://github.com/frase-io/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Frase's MCP server with SEO, GEO and AI visibility tools to research, write, optimize, publish and monitor content.",
    "key_features": [
     "See site",
@@ -42649,7 +42601,7 @@
    "url": "https://www.happyscribe.com/integrations/mcp",
    "website": "https://www.happyscribe.com/integrations/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "HappyScribe's MCP server for searching, reading, analyzing and creating transcripts and meeting notes.",
    "key_features": [
     "See site",
@@ -42691,7 +42643,7 @@
    "url": "https://skiplagged.com/",
    "website": "https://skiplagged.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Skiplagged's MCP server for flight search, hotel booking and travel planning from AI assistants.",
    "key_features": [
     "See site",
@@ -42733,7 +42685,7 @@
    "url": "https://liner.com/developers/docs/mcp",
    "website": "https://liner.com/developers/docs/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Liner's MCP server for real-time web and scholarly search with cited answers and multi-step deep research.",
    "key_features": [
     "See site",
@@ -42775,7 +42727,7 @@
    "url": "https://www.lusha.com/",
    "website": "https://www.lusha.com/",
    "github": "https://github.com/lusha-oss/lusha-mcp-plugin",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Lusha's MCP server for authorized business profile, usage and buying-signal insights in AI tools.",
    "key_features": [
     "See site",
@@ -42816,7 +42768,7 @@
    "url": "https://www.logo.dev/docs/mcp/introduction",
    "website": "https://www.logo.dev/docs/mcp/introduction",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Logo.dev MCP server for finding brand logos and brandmarks and managing brand subscriptions.",
    "key_features": [
     "See site",
@@ -42858,7 +42810,7 @@
    "url": "https://serpstat.com/",
    "website": "https://serpstat.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Serpstat's MCP server for automating SEO tasks such as keyword research, competitor analysis and audits.",
    "key_features": [
     "See site",
@@ -42900,7 +42852,7 @@
    "url": "https://twelvedata.com/",
    "website": "https://twelvedata.com/",
    "github": "https://github.com/twelvedata/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Twelve Data's MCP server for real-time and historical market data on stocks, forex, crypto and more.",
    "key_features": [
     "See site",
@@ -42942,7 +42894,7 @@
    "url": "https://www.geckoboard.com/product/metrics-mcp/",
    "website": "https://www.geckoboard.com/product/metrics-mcp/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Geckoboard's MCP server for querying live metrics and data lists from the business tools connected to your dashboards.",
    "key_features": [
     "See site",
@@ -42982,7 +42934,7 @@
    "url": "https://www.locize.com/docs/integration/mcp",
    "website": "https://www.locize.com/docs/integration/mcp",
    "github": "https://github.com/locize/locize-agents",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Locize's MCP server with translation-management tools for keys, translation memory, glossary, styleguides and versions.",
    "key_features": [
     "See site",
@@ -43025,7 +42977,7 @@
    "url": "https://www.getunleash.io/",
    "website": "https://www.getunleash.io/",
    "github": "https://github.com/Unleash/unleash-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Unleash's MCP server for managing feature flags from AI coding assistants.",
    "key_features": [
     "See site",
@@ -43068,7 +43020,7 @@
    "url": "https://www.cdata.com/ai/",
    "website": "https://www.cdata.com/ai/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "CData's cloud-hosted MCP server for secure AI access to hundreds of enterprise data sources through Connect AI.",
    "key_features": [
     "See site",
@@ -43110,7 +43062,7 @@
    "url": "https://parallel.ai/",
    "website": "https://parallel.ai/",
    "github": "https://github.com/parallel-web/search-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Parallel's MCP servers for web search and deep-research tasks built for AI agents.",
    "key_features": [
     "See site",
@@ -43153,7 +43105,7 @@
    "url": "https://mcp.supermetrics.com/",
    "website": "https://mcp.supermetrics.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Supermetrics MCP server for discovering marketing data sources and fields, running queries and managing campaigns.",
    "key_features": [
     "See site",
@@ -43193,7 +43145,7 @@
    "url": "https://aiven.io/mcp",
    "website": "https://aiven.io/mcp",
    "github": "https://github.com/Aiven-Open/mcp-aiven",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Aiven's MCP server for provisioning PostgreSQL, managing Apache Kafka and deploying apps from your AI assistant.",
    "key_features": [
     "See site",
@@ -43282,7 +43234,7 @@
    "url": "https://docs.brandfetch.com/mcp/overview",
    "website": "https://docs.brandfetch.com/mcp/overview",
    "github": "https://github.com/Brandfetch/brandfetch-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Brandfetch's MCP server for searching brands and retrieving logos, design assets and company data.",
    "key_features": [
     "See site",
@@ -43327,7 +43279,7 @@
    "url": "https://picsart.io/",
    "website": "https://picsart.io/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Picsart's MCP server for generating and editing images, video and audio with 150+ models from 20+ vendors.",
    "key_features": [
     "See site",
@@ -43372,7 +43324,7 @@
    "url": "https://icons8.com/mcp",
    "website": "https://icons8.com/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Icons8 MCP server for searching and fetching Icons8 icons and Ouch illustrations as SVG, PNG or animations.",
    "key_features": [
     "See site",
@@ -43416,7 +43368,7 @@
    "url": "https://developer.helloretail.com/mcp",
    "website": "https://developer.helloretail.com/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Hello Retail's MCP server for setting up and tuning e-commerce search, recommendations, email and product agents.",
    "key_features": [
     "See site",
@@ -43458,7 +43410,7 @@
    "url": "https://developer.getguru.com/docs/guru-mcp-server-overview",
    "website": "https://developer.getguru.com/docs/guru-mcp-server-overview",
    "github": "https://github.com/guruhq/remote-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Guru's remote MCP server that connects AI tools to your company's Guru knowledge base.",
    "key_features": [
     "See site",
@@ -43541,7 +43493,7 @@
    "url": "https://docs.redpanda.com/",
    "website": "https://docs.redpanda.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Redpanda's MCP server for answering questions from Redpanda documentation and API references.",
    "key_features": [
     "See site",
@@ -43581,7 +43533,7 @@
    "url": "https://docs.carto.com/carto-for-agents/mcp-server",
    "website": "https://docs.carto.com/carto-for-agents/mcp-server",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "CARTO's MCP server for querying data warehouses, running spatial workflows and rendering maps from your CARTO workspace.",
    "key_features": [
     "See site",
@@ -43623,7 +43575,7 @@
    "url": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
    "website": "https://developers.pandadoc.com/docs/getting-started-with-mcp",
    "github": "https://github.com/PandaDoc/mcp-server-guide",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "PandaDoc's MCP server for creating, sending, signing and tracking documents from AI assistants.",
    "key_features": [
     "See site",
@@ -43666,7 +43618,7 @@
    "url": "https://www.smartbear.com/",
    "website": "https://www.smartbear.com/",
    "github": "https://github.com/SmartBear/smartbear-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SmartBear's MCP server giving AI tools access to BugSnag, Reflect, Swagger, PactFlow and QTM4J.",
    "key_features": [
     "See site",
@@ -43747,7 +43699,7 @@
    "url": "https://whimsical.com/mcp",
    "website": "https://whimsical.com/mcp",
    "github": "https://github.com/WhimsicalCode/mcp-server-guide",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Whimsical's MCP server for creating and editing flowcharts, mind maps, wireframes and docs, or searching your workspace.",
    "key_features": [
     "See site",
@@ -43790,7 +43742,7 @@
    "url": "https://www.automox.com/",
    "website": "https://www.automox.com/",
    "github": "https://github.com/AutomoxCommunity/automox-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Automox MCP server for managing devices, patches and policies in natural language.",
    "key_features": [
     "See site",
@@ -43833,7 +43785,7 @@
    "url": "https://gtmetrix.com/",
    "website": "https://gtmetrix.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "GTmetrix MCP server for running web performance analyses and getting optimization insights inside AI workflows.",
    "key_features": [
     "See site",
@@ -43875,7 +43827,7 @@
    "url": "https://jitsu.com/docs/mcp",
    "website": "https://jitsu.com/docs/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Jitsu's MCP server for managing data pipelines: destinations, streams, connections, functions and live events.",
    "key_features": [
     "See site",
@@ -43915,7 +43867,7 @@
    "url": "https://www.mintlify.com/docs/ai/mintlify-mcp",
    "website": "https://www.mintlify.com/docs/ai/mintlify-mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Mintlify's admin MCP server for editing, publishing and managing docs pages, navigation, settings and analytics.",
    "key_features": [
     "See site",
@@ -43955,7 +43907,7 @@
    "url": "https://padlet.com/",
    "website": "https://padlet.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Padlet's MCP server for creating and managing boards, posts, comments, sections and sharing settings from an AI assistant.",
    "key_features": [
     "See site",
@@ -43995,7 +43947,7 @@
    "url": "https://docs.unlayer.com/ai/mcp",
    "website": "https://docs.unlayer.com/ai/mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Unlayer's MCP server for generating and editing email, page and PDF document templates.",
    "key_features": [
     "See site",
@@ -44082,7 +44034,7 @@
    "url": "https://www.omniroute.online/",
    "website": "https://www.omniroute.online/",
    "github": "https://github.com/diegosouzapw/OmniRoute",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Self-hosted AI gateway that puts hundreds of model providers behind one endpoint for Claude Code, Codex, Cursor and others, with quota-aware fallback and MCP/A2A support.",
    "key_features": [
     "Open source",
@@ -44125,7 +44077,7 @@
    "url": "https://tyk.io/",
    "website": "https://tyk.io/",
    "github": "https://github.com/TykTechnologies/tyk",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Cloud-native API and AI gateway supporting REST, GraphQL, gRPC and MCP, with rate limiting, auth and analytics.",
    "key_features": [
     "Open source + cloud",
@@ -45199,7 +45151,7 @@
    "url": "https://platform.minimax.io/docs/guides/models-intro",
    "website": "https://platform.minimax.io/docs/guides/models-intro",
    "github": "https://github.com/MiniMax-AI/MiniMax-MCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official MiniMax MCP server that lets agents call MiniMax text-to-speech, voice cloning, image and video generation.",
    "key_features": [
     "Open source",
@@ -45244,7 +45196,7 @@
    "url": "https://php.sdk.modelcontextprotocol.io/",
    "website": "https://php.sdk.modelcontextprotocol.io/",
    "github": "https://github.com/modelcontextprotocol/php-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official PHP SDK for building MCP servers and clients, maintained with the PHP Foundation and Symfony.",
    "key_features": [
     "Open source",
@@ -45418,7 +45370,7 @@
    "url": "https://www.arcade.dev/",
    "website": "https://www.arcade.dev/",
    "github": "https://github.com/ArcadeAI/arcade-mcp",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Actions runtime for enterprise agents with thousands of prebuilt authenticated tools, plus an open-source framework for building your own MCP servers.",
    "key_features": [
     "Open source + cloud",
@@ -45548,7 +45500,7 @@
    "url": "https://obot.ai/",
    "website": "https://obot.ai/",
    "github": "https://github.com/obot-platform/obot",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open-source platform for companies to host, approve and govern MCP servers, skills and agent access in one place.",
    "key_features": [
     "Open source + cloud",
@@ -45764,7 +45716,7 @@
    "url": "https://grounded.tools/",
    "website": "https://grounded.tools/",
    "github": "https://github.com/arabold/docs-mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Self-hosted MCP server that indexes up-to-date documentation from websites, GitHub, npm and PyPI so coding agents query the right version.",
    "key_features": [
     "Open source",
@@ -46024,14 +45976,13 @@
    "url": "https://nango.dev/",
    "website": "https://nango.dev/",
    "github": "https://github.com/NangoHQ/nango",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Integration platform that connects products and AI agents to 1,000+ APIs with managed auth, syncs and tool calls.",
    "key_features": [
     "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
     "Mature",
     "12807 GitHub stars",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Voice & phone calls"
    ],
    "pricing": "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
    "price_tag": "freemium",
@@ -46054,8 +46005,7 @@
    "open_source": false,
    "license": "Elastic-License-2.0",
    "tags": [
-    "voice & phone calls",
-    "connect tools via MCP"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/nango.png",
@@ -46863,7 +46813,7 @@
    "url": "https://documentation.onesignal.com/docs/en/model-context-protocol",
    "website": "https://documentation.onesignal.com/docs/en/model-context-protocol",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "OneSignal's official hosted MCP server for managing users, segments, templates, push and email messages and analytics from AI clients.",
    "key_features": [
     "See site",
@@ -46947,14 +46897,13 @@
    "url": "https://clianything.cc",
    "website": "https://clianything.cc",
    "github": "https://github.com/HKUDS/CLI-Anything",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Open-source project from HKUDS that generates agent-native command-line interfaces for existing software, codebases and web APIs, with CLI-Hub, a registry of community CLIs that coding agents can install and drive.",
    "key_features": [
     "Open source (Apache-2.0)",
     "Active",
     "54399 GitHub stars",
-    "Write code",
-    "Connect tools via mcp"
+    "Write code"
    ],
    "pricing": "Open source (Apache-2.0)",
    "price_tag": "free",
@@ -46978,8 +46927,7 @@
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
-    "write code",
-    "connect tools via MCP"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cli-anything.png",
@@ -46991,14 +46939,13 @@
    "url": "https://skills.sh",
    "website": "https://skills.sh",
    "github": "https://github.com/vercel-labs/skills",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Vercel Labs' open-source CLI (npx skills) and directory for finding, installing and sharing agent skills across Claude Code, Codex, Cursor, OpenCode and 75+ other coding agents.",
    "key_features": [
     "Open source (MIT)",
     "Active",
     "35459 GitHub stars",
-    "Write code",
-    "Connect tools via mcp"
+    "Write code"
    ],
    "pricing": "Open source (MIT)",
    "price_tag": "free",
@@ -47022,8 +46969,7 @@
    "open_source": true,
    "license": "MIT",
    "tags": [
-    "write code",
-    "connect tools via MCP"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/skills-sh.png",
@@ -59282,7 +59228,7 @@
    "url": "https://agentresourcemarket.com/",
    "website": "https://agentresourcemarket.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Eellos LLC's API-first beta where AI agents discover and publish resource offers, join structured discussions and post contextual reviews. Exchanges are simulated with demo credits (payments are disabled) and registration is capacity-limited.",
    "key_features": [
     "Free beta; real-money payments are disabled and exchanges use DEMO_CREDITS",
@@ -59364,7 +59310,7 @@
    "url": "https://9bot.com.br/en/",
    "website": "https://9bot.com.br/en/",
    "github": "https://github.com/9-bot/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "AI bot and operations hub for WhatsApp groups and communities that automates messages, commands, moderation (spam, suspicious links), news delivery, Channel posts, integrations and engagement reporting. An official MCP server lets AI assistants and agents manage the groups.",
    "key_features": [
     "Paid with a 7-day free trial; Basic Pro US$35/mo for the first 3 months, then US$70/mo",
@@ -59461,7 +59407,7 @@
    "url": "https://mailveri.com/docs/mcp/",
    "website": "https://mailveri.com/docs/mcp/",
    "github": "https://github.com/mailveri/mailveri-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Open-source MCP server that lets AI agents and coding assistants verify single emails and bulk email lists through the MailVeri API, with SMTP, catch-all, disposable and role-account detection.",
    "key_features": [
     "MIT-licensed server; MailVeri API is pay-as-you-go credits (1,000 free on sign-up, from $9 for 10,000), no subscription",
@@ -59511,7 +59457,7 @@
    "url": "https://mcpui.dev/",
    "website": "https://mcpui.dev/",
    "github": "https://github.com/MCP-UI-Org/mcp-ui",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SDK that lets MCP servers send interactive web components such as forms, charts and buttons that chat hosts render inside the conversation.",
    "key_features": [
     "Open source",
@@ -59555,14 +59501,13 @@
    "url": "https://monid.ai/",
    "website": "https://monid.ai/",
    "github": "https://github.com/monid-ai/monid",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Gateway that gives an agent one base URL and one key to call thousands of paid tools, from web scraping and enrichment to image and voice generation, billed per call.",
    "key_features": [
     "Open source + cloud",
     "Mature",
     "5298 GitHub stars",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Voice & phone calls"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -59587,8 +59532,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
-    "connect tools via MCP"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/monid.png",
@@ -59600,14 +59544,13 @@
    "url": "https://treg.to/",
    "website": "https://treg.to/",
    "github": "https://github.com/superdesigndev/treg",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Single endpoint and token that lets agents call a catalog of third-party APIs for SEO, social data, enrichment, scraping and media generation, priced per call.",
    "key_features": [
     "Usage-based",
     "Mature",
     "5806 GitHub stars",
-    "Voice & phone calls",
-    "Connect tools via mcp"
+    "Voice & phone calls"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -59631,8 +59574,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "voice & phone calls",
-    "connect tools via MCP"
+    "voice & phone calls"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/treg.png",
@@ -59691,7 +59633,7 @@
    "url": "https://homeassistant-ai.github.io/ha-mcp/",
    "website": "https://homeassistant-ai.github.io/ha-mcp/",
    "github": "https://github.com/homeassistant-ai/ha-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Community MCP server that lets AI assistants control Home Assistant devices, read their states and build or edit automations in plain language.",
    "key_features": [
     "Open source",
@@ -59779,15 +59721,14 @@
    "url": "https://harnessrouter.ai/",
    "website": "https://harnessrouter.ai/",
    "github": "https://github.com/HarnessRouter/harnessrouter",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "One API for running coding-agent harnesses such as Codex, Claude Code and Hermes as product backends, with sessions, streaming, files and failure handling.",
    "key_features": [
     "Open source + cloud",
     "Active",
     "3141 GitHub stars",
     "Write code",
-    "Build an agent",
-    "Connect tools via mcp"
+    "Build an agent"
    ],
    "pricing": "Open source + cloud",
    "price_tag": "free",
@@ -59812,8 +59753,7 @@
    "license": "",
    "tags": [
     "write code",
-    "build an agent",
-    "connect tools via MCP"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/harnessrouter.png",
@@ -61106,7 +61046,7 @@
    "url": "https://github.com/mattt/iMCP",
    "website": "https://github.com/mattt/iMCP",
    "github": "https://github.com/mattt/iMCP",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "macOS app that exposes your Messages, Contacts, Calendar, Reminders and more to AI assistants through MCP.",
    "key_features": [
     "Open source",
@@ -61192,7 +61132,7 @@
    "url": "https://kotlin.sdk.modelcontextprotocol.io/",
    "website": "https://kotlin.sdk.modelcontextprotocol.io/",
    "github": "https://github.com/modelcontextprotocol/kotlin-sdk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Official Kotlin Multiplatform SDK for building MCP servers and clients on JVM, Native, JS and Wasm, maintained with JetBrains.",
    "key_features": [
     "Open source",
@@ -61236,13 +61176,12 @@
    "url": "https://google.github.io/agentmesh/",
    "website": "https://google.github.io/agentmesh/",
    "github": "https://github.com/google/agentmesh",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Private peer-to-peer network for AI agents: each node publishes tools and models, finds other agents' tools and carries a verifiable identity.",
    "key_features": [
     "Open source",
     "Active",
-    "1123 GitHub stars",
-    "Connect tools via mcp"
+    "1123 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -61266,7 +61205,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-mesh.png",
@@ -61616,14 +61555,13 @@
    "url": "https://usemagpie.ai/",
    "website": "https://usemagpie.ai/",
    "github": "https://github.com/yetone/magpie",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Free, open-source menu bar app and local gateway that lets any coding agent (Claude Code, Codex, Gemini CLI, OpenCode and 60+ more) use any model provider or subscription, with failover when a quota runs out.",
    "key_features": [
     "Free and open source (MIT)",
     "Active",
     "16857 GitHub stars",
-    "Write code",
-    "Connect tools via mcp"
+    "Write code"
    ],
    "pricing": "Free and open source (MIT)",
    "price_tag": "free",
@@ -61647,8 +61585,7 @@
    "open_source": true,
    "license": "MIT",
    "tags": [
-    "write code",
-    "connect tools via MCP"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/magpie.png",
@@ -61702,7 +61639,7 @@
    "url": "https://robottraining.jobs/",
    "website": "https://robottraining.jobs/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Free job board and remote MCP server for paid robot-training work (teleoperation, demonstration recording, AV and drone test operations): AI assistants can search open roles, hourly pay and hiring data with no key or account.",
    "key_features": [
     "Free for job seekers; free remote MCP server and open data (no key, CC BY 4.0); employers pay per onboarded hire or $99 per featured role for 30 days",
@@ -61798,7 +61735,7 @@
    "url": "https://vectoree.ai/",
    "website": "https://vectoree.ai/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Vectoree gives coding agents a backend behind one project key: an OpenAI-compatible model gateway across providers, an MCP tool hub, auth, Postgres and storage, driven by a skill and CLI, pay-as-you-go with no monthly fee.",
    "key_features": [
     "Pay-as-you-go wallet, no monthly fee; $5 credit after CLI link",
@@ -61847,13 +61784,12 @@
    "url": "https://www.xcrawl.ai/",
    "website": "https://www.xcrawl.ai/",
    "github": "https://github.com/xcrawl-api/xcrawl-skills",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "XCrawl is a web scraping, crawling and SERP API that returns clean JSON, Markdown or screenshots in one request, with agent skills for plugging it into AI agents; free trial with no card.",
    "key_features": [
     "Free trial, no card; paid credits",
     "Active",
-    "450 GitHub stars",
-    "Connect tools via mcp"
+    "450 GitHub stars"
    ],
    "pricing": "Free trial, no card; paid credits",
    "price_tag": "freemium",
@@ -61876,7 +61812,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP",
+    "agent infra",
     "web scraping",
     "crawler",
     "serp api",
@@ -62026,7 +61962,7 @@
    "url": "https://flexqueries.com/",
    "website": "https://flexqueries.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "FlexQueries is a hosted MCP server and REST API for SEO and AI-visibility research (keywords, SERPs, backlinks, competitors, rankings, site audits) that connects to Claude, ChatGPT, Cursor and Codex over OAuth, billed with prepaid credits that never expire.",
    "key_features": [
     "Prepaid credits, no subscription or seat fees; credits never expire",
@@ -62126,7 +62062,7 @@
    "url": "https://xquik.com/",
    "website": "https://xquik.com/",
    "github": "https://github.com/Xquik-dev/x-twitter-scraper",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Xquik is an X (Twitter) data service for searching and extracting tweets, replies, followers and profiles, monitoring accounts and posting, over REST, an OAuth MCP server and SDKs; pay-as-you-go from $10 or monthly plans from $20.",
    "key_features": [
     "Pay-as-you-go from $10 (credits never expire); monthly plans from $20/mo",
@@ -62528,7 +62464,7 @@
    "url": "https://hiroute.ai/en/",
    "website": "https://hiroute.ai/en/",
    "github": "https://github.com/higress-group/HiRoute",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "HiRoute, from the Higress team, is an open-source local model router for long-running agents like Codex and Claude Code: it hands routine stages to cheaper models, saves your strongest model for hard steps and keeps a record of each decision.",
    "key_features": [
     "Free and open source (Apache-2.0) desktop app; you bring your own model subscriptions and keys",
@@ -62570,7 +62506,7 @@
    "url": "https://truespar.com/sentio",
    "website": "https://truespar.com/sentio",
    "github": "https://github.com/truespar/sentio",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Sentio, from Truespar, is a self-hosted email inbox API for AI agents: a Rust SMTP server that gives each agent a real address, delivers inbound mail as authenticated webhooks and lets agents reply in-thread over REST, with multi-tenant isolation.",
    "key_features": [
     "Free and open source (MIT or Apache-2.0), self-hosted",
@@ -62871,7 +62807,7 @@
    "url": "https://agenttincan.com/",
    "website": "https://agenttincan.com/",
    "github": "https://github.com/mvanhorn/agent-tincan",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Agent Tincan lets your AI agents (Claude Code, Codex, Gemini, Hermes, ChatGPT and others) ask each other to do things and hand back results through a small relay on your own Tailscale network, with no open ports or API keys between agents.",
    "key_features": [
     "Free and open source (MIT); runs on your own Tailscale network",
@@ -63058,12 +62994,11 @@
    "url": "https://agentbarn.dev/",
    "website": "https://agentbarn.dev/",
    "github": "https://github.com/aai-labs/agent-barn",
-   "category": "MCP & infra",
+   "category": "agent infra",
    "description": "Agent Barn is an open-source (Apache-2.0) control plane for running a fleet of AI agents on your own Kubernetes: create, configure, run and monitor agents across Slack, Microsoft Teams and Telegram from one place.",
    "key_features": [
     "Self-hosted free (Apache-2.0); Cloud free for a limited time; supervised pilot $1,000",
     "Active",
-    "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
    "pricing": "Self-hosted free (Apache-2.0); Cloud free for a limited time; supervised pilot $1,000",
@@ -63088,7 +63023,6 @@
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
-    "connect tools via MCP",
     "monitor & evaluate agents",
     "kubernetes",
     "control plane",
@@ -63154,7 +63088,7 @@
    "url": "https://seal.net/",
    "website": "https://seal.net/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "SEAL is an MCP server (npx sealnet-mcp) that lets AI agents send and request files and secrets with end-to-end encryption. After pairing, the default delivery route sends the file to the user's SEAL inbox and returns a handle to the model. Also has a browser app, CLI and SDK; free up to 1 GB per seal.",
    "key_features": [
     "Free up to 1 GB per seal; larger transfers after a one-time payment",
@@ -63243,7 +63177,7 @@
    "url": "https://objekts.ai/en/tools/production-desk",
    "website": "https://objekts.ai/en/tools/production-desk",
    "github": "https://github.com/peach420fuzz/objekts-production-desk",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "objekts Production Desk is a free remote MCP server for planning AI/VFX, CGI, motion-design and animation production. Agents can check locked references, product, character and camera continuity, versioning risks and a sensible first proof of concept. Rough estimates only on request, and nothing is sent to the studio without the user's confirmation.",
    "key_features": [
     "Free remote MCP; production estimates on request",
@@ -63325,7 +63259,7 @@
    "url": "https://loppee.com/",
    "website": "https://loppee.com/",
    "github": "https://github.com/loppee-ai/loppee-mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Loppee is a US directory of local businesses that marks which ones it has verified (registration, an owner contact route and any required license). Its free, no-sign-in remote MCP server (loppee.com/mcp/discovery) and REST API let Claude, ChatGPT, Cursor and other assistants look up a business, read its Trust Card and identity-verified reviews, and compare options; owners can also manage their listing through their own AI agent.",
    "key_features": [
     "Free public MCP and REST reads with no sign-in; free for businesses to list, paid plans add reach and gallery space",
@@ -63365,7 +63299,7 @@
    "url": "https://relay.remotify.run/",
    "website": "https://relay.remotify.run/",
    "github": "https://github.com/onlsol/relay.remotify.run",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "remotify-mcp is a free, open-source (Apache-2.0) local stdio MCP server (npx remotify-mcp) that gives Claude Code, Cursor, Codex, OpenCode, Gemini CLI and other MCP hosts a remote_exec tool for running shell commands on a remote computer through an HTTP relay. The remote machine needs only curl and bash (no SSH port or installed agent), and each command can wait for human approval or run automatically.",
    "key_features": [
     "Free and open source (Apache-2.0); the public relay at relay.remotify.run is free, or self-host it with Docker",
@@ -64782,7 +64716,7 @@
    "url": "https://www.browserstack.com/docs/browserstack-mcp-server",
    "website": "https://www.browserstack.com/docs/browserstack-mcp-server",
    "github": "https://github.com/browserstack/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "BrowserStack's official MCP server, letting coding agents run manual and automated tests on real browsers and devices, debug failures and check accessibility from the IDE.",
    "key_features": [
     "See site",
@@ -64827,7 +64761,7 @@
    "url": "https://appwrite.io/docs/tooling/ai/mcp-servers",
    "website": "https://appwrite.io/docs/tooling/ai/mcp-servers",
    "github": "https://github.com/appwrite/mcp",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Appwrite's official MCP servers, so agents can manage Appwrite databases, users, storage and functions and look up Appwrite docs while building your backend.",
    "key_features": [
     "Open source + cloud",
@@ -64870,7 +64804,7 @@
    "url": "https://www.algolia.com/doc/guides/model-context-protocol/productivity-mcp",
    "website": "https://www.algolia.com/doc/guides/model-context-protocol/productivity-mcp",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Algolia's official MCP server that lets assistants search and manage Algolia indices, check analytics and tune relevance through natural-language requests.",
    "key_features": [
     "See site",
@@ -64912,7 +64846,7 @@
    "url": "https://oneuptime.com/docs/en/ai/mcp-server",
    "website": "https://oneuptime.com/docs/en/ai/mcp-server",
    "github": "https://github.com/OneUptime/oneuptime",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "OneUptime's official MCP server, giving agents access to monitors, incidents, on-call and status pages in this open-source observability platform. Free plan, paid plans from $22 per user, or self-host.",
    "key_features": [
     "OneUptime free plan; paid plans from $22 per user/month; self-host free.",
@@ -64994,7 +64928,7 @@
    "url": "https://docs.mapbox.com/location-ai/mcp-servers/mcp-server/",
    "website": "https://docs.mapbox.com/location-ai/mcp-servers/mcp-server/",
    "github": "https://github.com/mapbox/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Mapbox's official MCP server that gives agents geocoding, directions, travel-time isochrones, points of interest and static map images through Mapbox APIs.",
    "key_features": [
     "Open source",
@@ -65037,7 +64971,7 @@
    "url": "https://launchdarkly.com/docs/home/getting-started/mcp",
    "website": "https://launchdarkly.com/docs/home/getting-started/mcp",
    "github": "https://github.com/launchdarkly/mcp-server",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "LaunchDarkly's official MCP server, so agents can create, update and clean up feature flags, AI configs and targeting rules from the IDE or chat.",
    "key_features": [
     "See site",
@@ -65080,7 +65014,7 @@
    "url": "https://www.sanity.io/docs/ai/mcp-server",
    "website": "https://www.sanity.io/docs/ai/mcp-server",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Sanity's official remote MCP server that lets assistants query, create and update content, schemas and releases in a Sanity project using plain language.",
    "key_features": [
     "See site",
@@ -65289,7 +65223,7 @@
    "url": "https://mcp.paddle.com/",
    "website": "https://mcp.paddle.com/",
    "github": "",
-   "category": "MCP & infra",
+   "category": "MCP servers",
    "description": "Paddle's official remote MCP server, so assistants can look up and manage products, prices, customers, subscriptions and transactions in your Paddle billing account.",
    "key_features": [
     "See site",

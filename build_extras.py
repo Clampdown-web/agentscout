@@ -112,7 +112,7 @@ def build(t):
                  (f"Should I choose {A['name']} or {Bt['name']}?",f"Choose {A['name']} if {N['choose'][0]} Choose {Bt['name']} if {N['choose'][1]}")]
         faqh="".join(f"<h3 style=\"font-size:15px;margin:18px 0 4px\">{e(q)}</h3><p style=\"margin:0\">{e(a_)}</p>" for q,a_ in faq)
         faqh=f'<h2 style="font-size:18px;margin:32px 0 4px">FAQ</h2>{faqh}' if faq else ""
-        rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · <a href="../categories/{catslug(A["category"])}.html">More {e(A["category"])} tools</a> · <a href="../categories/mcp-infra.html">MCP servers &amp; infra</a></p>'
+        rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · <a href="../categories/{catslug(A["category"])}.html">More {e(A["category"])} tools</a> · <a href="../categories/mcp-servers.html">MCP servers</a></p>'
 
         fa,fb=facts(A),facts(Bt)
         if N:
@@ -123,7 +123,7 @@ def build(t):
             if pr(A,RA) or pr(Bt,RB): ex.append(("Plans (official pricing page)",pr(A,RA) or "Not listed",pr(Bt,RB) or "Not listed"))
             ex+=[("Key features",kf(A,RA),kf(Bt,RB)),("Best for",N["best"][0],N["best"][1])]
             fa=fa[:1]+[(k,va) for k,va,_ in ex]+fa[1:]; fb=fb[:1]+[(k,vb) for k,_,vb in ex]+fb[1:]
-            rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · '+" · ".join(f'<a href="../categories/{catslug(c)}.html">More {e(c)} tools</a>' for c in dict.fromkeys([A["category"],Bt["category"]]))+' · <a href="../categories/mcp-infra.html">MCP servers &amp; infra</a></p>'
+            rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · '+" · ".join(f'<a href="../categories/{catslug(c)}.html">More {e(c)} tools</a>' for c in dict.fromkeys([A["category"],Bt["category"]]))+' · <a href="../categories/mcp-servers.html">MCP servers</a></p>'
             faqh=f'<h2 style="font-size:18px;margin:32px 0 8px">Our recommendation</h2><p style="margin:0 0 8px"><b>Choose <a href="../tools/{a}.html">{e(A["name"])}</a> if</b> {e(N["choose"][0])}</p><p style="margin:0"><b>Choose <a href="../tools/{b}.html">{e(Bt["name"])}</a> if</b> {e(N["choose"][1])}</p>'+faqh
         rows="".join(f"<tr><th>{e(k)}</th><td>{e(va)}</td><td>{e(vb)}</td></tr>" for (k,va),(_,vb) in zip(fa,fb))
         shared=sorted(set(A["use_cases"])&set(Bt["use_cases"]))
@@ -189,6 +189,8 @@ CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use
 "graphic design & branding":"Design agents and AI design tools for logos, brand kits, social posts, ads, UI mockups and vectors: Canva AI, Lovart, Adobe Express, Figma Make, Google Stitch, Pomelli and Penpot's MCP lead the page, since they plan and build designs for you on request.",
 "3D & concept art":"Text and image to 3D models and worlds, auto-rigging and character animation, sketch-to-render for product and architecture, and 3D scanning: Meshy, Tripo, Rodin, Spline, Vizcom, Hunyuan3D, TRELLIS, World Labs Marble and more.",
 "photography & photo editing":"AI for photographers: culling, editing in your own style, portrait retouching, upscaling and restoration, background removal, product photos, headshots, real-estate editing and private AI photo libraries. Lightroom and Photoshop's AI Assistant come first, then Aftershoot, Imagen, Evoto, Topaz and others.",
+"MCP servers":"Model Context Protocol (MCP) servers that plug Claude, Cursor, Codex, ChatGPT and other MCP clients into databases, docs, payments, browsers and SaaS apps, plus MCP gateways, registries and frameworks for building and running them: Context7, Smithery, DBHub, Serena, ToolHive, Obot and more. For hosting, model gateways, auth and other agent plumbing, see agent infra.",
+"agent infra":"The infrastructure behind AI agents that is not primarily MCP: LLM and AI gateways, inference clouds, agent runtimes and control planes, tool-integration and auth platforms, agent email, payments and identity layers, and agent filesystems: LiteLLM, Portkey, Composio, Nango, Groq, Replicate, Together AI and more. MCP servers have their own page.",
 "models & local runtimes":"Agentic models and the apps that run open models on your own computer or server, such as Ollama, LM Studio, LocalAI and Jan.",
 }
 def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
@@ -233,7 +235,7 @@ MEDIA_XLINK={"film & TV production":["davinci-resolve-mcp","mux-mcp","picsart-ge
  "3D & concept art":["mcp-for-blender","scenario","intangible","simulon"],
  "photography & photo editing":["imagesorcery-mcp","picsart-genai-mcp","topaz-video"],
  # Secondary placements (Oct 20, 2026, owner-approved): main category stays as-is
- "MCP & infra":["tinyfish"]}
+ "MCP servers":["tinyfish"]}
 ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
 LEAD_CATS=MEDIA_CATS|ART_CATS  # category pages that lead with agentic tools
 def media_xlink_cats(slug): return [c for c,v in MEDIA_XLINK.items() if slug in v]
@@ -256,7 +258,7 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
   "crypto":"crypto AI agent tools","customer support":"AI customer support agents","evals & observability":"AI agent evals & observability tools","frameworks":"AI agent frameworks",
-  "games":"AI game agents and tools","film & TV production":"AI film & TV production tools","video generation":"AI video generation tools","film & TV audio":"AI film & TV audio tools","music production":"AI music production tools","image generation":"AI image generators","graphic design & branding":"AI graphic design & branding tools","3D & concept art":"AI 3D & concept art tools","photography & photo editing":"AI photography & photo editing tools","MCP & infra":"MCP servers & agent infra tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
+  "games":"AI game agents and tools","MCP servers":"MCP servers & MCP tools","agent infra":"AI agent infrastructure tools","film & TV production":"AI film & TV production tools","video generation":"AI video generation tools","film & TV audio":"AI film & TV audio tools","music production":"AI music production tools","image generation":"AI image generators","graphic design & branding":"AI graphic design & branding tools","3D & concept art":"AI 3D & concept art tools","photography & photo editing":"AI photography & photo editing tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
   "no-code builders":"no-code AI agent builders","personal agents":"personal AI agents","productivity":"AI productivity agents","research":"AI research agents",
   "sales & marketing":"AI sales & marketing agents","sandboxes & code execution":"AI agent sandboxes & code execution tools","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
@@ -276,16 +278,16 @@ def seo(t,urls):
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
         _tc=[z for z in _tc if z[2]>=3][:14]
         _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
-        _lede=f"{n} {e(c)} tools in the AgentScout directory, each with a link-checked listing."
+        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{n} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
-        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(c)} tools: {e(_bs.price_line(items))}.</p>'+_chips
-        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,(f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools"),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
+        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
+        out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,({"MCP servers":"MCP servers and MCP tools","agent infra":"AI agent infrastructure tools"}.get(c) or (f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools")),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
     open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)
-    mcp=[x for x in t if x["category"]=="MCP & infra" or "connect tools via MCP" in x["use_cases"]]
-    # MCP cluster (Oct 18 2026): categories/mcp-infra is the main "MCP servers" page (best/mcp-servers redirects there).
+    mcp=[x for x in t if x["category"]=="MCP servers" or "connect tools via MCP" in x["use_cases"]]
+    # MCP cluster (Oct 18 2026; Oct 20 split): categories/mcp-servers is the main "MCP servers" page (best/mcp-servers redirects there).
     # Client guides are client-specific: only listings whose text says they work with that client.
     try: _RICH=json.load(open("tool_rich.json"))
     except Exception: _RICH={}
@@ -302,7 +304,7 @@ def seo(t,urls):
         cll=f' See our <a href="../tools/{cl[0]["slug"]}.html">{e(cl[0]["name"])} listing</a>.' if cl else ""
         out.append(listing_page(f"best/mcp-servers-for-{s}.html",f"Best MCP servers for {client} (2026) · AgentScout",
             f"{len(named)} MCP servers whose listings say they work with {client}, including {', '.join(x['name'] for x in named[:3])}. Link-checked, pricing as stated."[:158],
-            f"MCP servers that work with {client}",f"{client} is an MCP client. These {len(named)} MCP servers and MCP tools say in their own listing or docs that they work with {e(client)}, sorted by GitHub stars. Check each tool's docs for {e(client)} setup.{cll} For every MCP server in the directory, see the <a href=\"../categories/mcp-infra.html\">MCP &amp; infra category</a>.",named,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: <a href="../categories/mcp-infra.html">All MCP servers &amp; infra</a> · '+guides+'</p>'))
+            f"MCP servers that work with {client}",f"{client} is an MCP client. These {len(named)} MCP servers and MCP tools say in their own listing or docs that they work with {e(client)}, sorted by GitHub stars. Check each tool's docs for {e(client)} setup.{cll} For every MCP server in the directory, see the <a href=\"../categories/mcp-servers.html\">MCP servers category</a>.",named,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: <a href="../categories/mcp-servers.html">All MCP servers</a> · '+guides+'</p>'))
     out.append(news_page(t)); out.append(free_tools(t)); out.append(newsletter_page())
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html","Cursor alternatives 2026: AI coding agents · AgentScout",
@@ -314,7 +316,7 @@ def seo(t,urls):
     # llms.txt
     L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t):,} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: support@agentscouthq.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
-    L+=["","## Guides","",f"- [MCP servers & infra]({B}categories/mcp-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
+    L+=["","## Guides","",f"- [MCP servers]({B}categories/mcp-servers.html)",f"- [Agent infra]({B}categories/agent-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
     rec=sorted(t,key=lambda x:(not x.get("seed"),x.get("added",""),x.get("id",0)),reverse=True)[:12]
     L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
     open("llms.txt","w").write("\n".join(L)); return out

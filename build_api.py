@@ -12,16 +12,16 @@ PLAT={"cursor":["Desktop (macOS, Windows, Linux)"],"windsurf":["Desktop (macOS, 
 def platforms(x):
     if x.get("slug") in PLAT: return PLAT[x["slug"]]
     a=x.get("audience","");c=x["category"]
-    if a!="ready to use" or c in("frameworks","MCP & infra","evals & observability","memory & RAG","security & governance","sandboxes & code execution","models & local runtimes"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
+    if a!="ready to use" or c in("frameworks","MCP servers","agent infra","evals & observability","memory & RAG","security & governance","sandboxes & code execution","models & local runtimes"): return ["Developer (API/SDK)"]+(["Self-host"] if "open" in x["pricing"].lower() else [])
     return ["Web"]
-GOALS={"coding":["coding","app builders","sandboxes & code execution"],"research":["research","browser/computer use"],"crypto":["crypto"],"writing":["productivity","models & local runtimes"],"media":["voice","vision","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP & infra","memory & RAG"],"support":["customer support","sales & marketing","business agents"]}
+GOALS={"coding":["coding","app builders","sandboxes & code execution"],"research":["research","browser/computer use"],"crypto":["crypto"],"writing":["productivity","models & local runtimes"],"media":["voice","vision","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing"],"automation":["no-code builders","browser/computer use","personal agents","frameworks","MCP servers","agent infra","memory & RAG"],"support":["customer support","sales & marketing","business agents"]}
 KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["support","customer","helpdesk"],"writing":["writ","content","copy"],"media":["video","voice","image","speech"]}
 def goals(x):
     txt=(x["name"]+" "+x["description"]).lower()
     return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
 # DIY hardware/firmware projects: real voice projects, but not ready-made voice agents, so free-tool picks rank them after software.
 HW={"xiaozhi-esp32","elatoai"}
-DEV_CATS=("coding","frameworks","MCP & infra")  # always developer tools, even when "ready to use" (Cursor is not "no code needed")
+DEV_CATS=("coding","frameworks","MCP servers","agent infra")  # always developer tools, even when "ready to use" (Cursor is not "no code needed")
 def skill(x):
     if x["category"] in DEV_CATS: return "developer"
     return "no-code" if x.get("audience")=="ready to use" or x["category"] in("no-code builders","app builders","personal agents","business agents","customer support","sales & marketing") else "developer"

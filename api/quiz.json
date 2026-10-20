@@ -10,7 +10,7 @@
       {"id": "support", "label": "Support and sales", "hint": "Chat, voice, SDR agents", "goals": ["support"], "categories": ["business agents", "voice"]},
       {"id": "writing", "label": "Write and create media", "hint": "Docs, slides, images, audio", "goals": ["writing", "media"], "categories": ["productivity", "vision", "voice"]},
       {"id": "browse", "label": "Use the web or my computer", "hint": "Browser and computer use", "goals": ["automation"], "categories": ["browser/computer use", "personal agents"]},
-      {"id": "build", "label": "Build my own agents", "hint": "Frameworks, MCP, evals", "goals": ["coding", "automation"], "categories": ["frameworks", "MCP & infra", "evals & observability"]}
+      {"id": "build", "label": "Build my own agents", "hint": "Frameworks, MCP, evals", "goals": ["coding", "automation"], "categories": ["frameworks", "MCP servers", "agent infra", "evals & observability"]}
     ]},
     {"key": "skill", "q": "How technical are you?", "options": [
       {"id": "no-code", "label": "No code, please", "hint": "Point-and-click only"},

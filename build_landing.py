@@ -43,7 +43,7 @@ S=[
 ("python-ai-agent-frameworks","Python AI agent frameworks","Python AI agent frameworks",lambda x,k:x["category"]=="frameworks" and re.search(r"\bPython\b",x["description"]+" "+x["name"]),"Agent frameworks and SDKs whose listings say they are built for Python.","building-ai-agents","ai-agent-frameworks"),
 ("typescript-ai-agent-frameworks","TypeScript and JavaScript AI agent frameworks","TypeScript AI agent frameworks",lambda x,k:x["category"]=="frameworks" and re.search(r"TypeScript|JavaScript|\bNode(\.js)?\b|\bJS\b",x["description"]+" "+x["name"]),"Agent frameworks and SDKs for TypeScript, JavaScript and Node.js developers.","building-ai-agents","ai-agent-frameworks"),
 ("multi-agent-frameworks","Multi-agent frameworks","multi-agent frameworks",lambda x,k:k("multi-agent-systems") and x["audience"]=="builders","Frameworks for teams of agents that split work, hand off tasks and check each other's output.","multi-agent-systems","ai-agent-frameworks"),
-("free-mcp-servers","Free MCP servers","free MCP servers",lambda x,k:x["category"]=="MCP & infra" and isfree(x) and k("connecting-tools-mcp"),"Model Context Protocol servers you can use for free, connecting Claude, Cursor, Codex and other MCP clients to your tools and data.","connecting-tools-mcp","open-source-mcp-servers"),
+("free-mcp-servers","Free MCP servers","free MCP servers",lambda x,k:x["category"]=="MCP servers" and isfree(x) and k("connecting-tools-mcp"),"Model Context Protocol servers you can use for free, connecting Claude, Cursor, Codex and other MCP clients to your tools and data.","connecting-tools-mcp","open-source-mcp-servers"),
 # s/database-mcp-servers removed Oct 18 2026: same tools as tasks/databases (redirect in redirects.json)
 # s/ai-agent-memory-tools removed Oct 18 2026: duplicated categories/memory-rag + tasks/agent-memory (redirect in redirects.json)
 ("ai-code-sandboxes","Sandboxes for AI agents to run code","AI code sandboxes",lambda x,k:k("running-code-safely"),"Sandboxes and isolated runtimes where agents can run code and tools away from your machine and data.","running-code-safely",None),
@@ -183,7 +183,7 @@ MODS=[("open-source","Open-source",lambda x:x["pricing"] in OS,"with public sour
       ("self-hosted","Self-hosted",lambda x:x["pricing"] in OS and x["audience"]!="builders","that are ready to use and open source, so you can run them on your own machine or server"),
       ("python","Python",lambda x:bool(re.search(r"\bPython\b",D(x))),"whose listings say they are built for Python"),
       ("typescript","TypeScript",lambda x:bool(re.search(r"TypeScript|JavaScript|\bNode(\.js)?\b",D(x))),"whose listings say they are built for TypeScript, JavaScript or Node.js"),
-      ("mcp","MCP-ready",lambda x:bool(re.search(r"\bMCP\b|Model Context Protocol",D(x))) and x["category"]!="MCP & infra","that work with the Model Context Protocol (MCP), so Claude, Cursor and other MCP clients can use them")]
+      ("mcp","MCP-ready",lambda x:bool(re.search(r"\bMCP\b|Model Context Protocol",D(x))) and x["category"]!="MCP servers","that work with the Model Context Protocol (MCP), so Claude, Cursor and other MCP clients can use them")]
 # target key, plural noun, filter(x,k), task slug for related links
 TARGETS=[("ai-sre-agents","AI SRE agents",lambda x,k:k("devops-and-incidents"),"devops-and-incidents"),
  ("ai-research-agents","AI research agents",lambda x,k:k("research"),"research"),
@@ -197,7 +197,7 @@ TARGETS=[("ai-sre-agents","AI SRE agents",lambda x,k:k("devops-and-incidents"),"
  ("ai-voice-agents","AI voice agents",lambda x,k:k("building-voice-agents"),"building-voice-agents"),
  ("multi-agent-frameworks","multi-agent frameworks",lambda x,k:k("multi-agent-systems"),"multi-agent-systems"),
  ("ai-agent-frameworks","AI agent frameworks",lambda x,k:x["category"]=="frameworks","building-ai-agents"),
- ("mcp-servers","MCP servers",lambda x,k:x["category"]=="MCP & infra" and k("connecting-tools-mcp"),"connecting-tools-mcp"),
+ ("mcp-servers","MCP servers",lambda x,k:x["category"]=="MCP servers" and k("connecting-tools-mcp"),"connecting-tools-mcp"),
  ("mcp-servers-for-databases","MCP servers for databases",lambda x,k:k("databases"),"databases"),
  ("ai-coding-agents","AI coding agents",lambda x,k:x["category"]=="coding","writing-code"),
  ("ai-code-review-tools","AI code review tools",lambda x,k:k("reviewing-pull-requests"),"reviewing-pull-requests"),
@@ -218,7 +218,7 @@ def absorbed_sets():
     import json
     try: t=json.load(open("tools.json"))
     except Exception: return []
-    mcp={x["slug"] for x in t if x["category"]=="MCP & infra" or "connect tools via MCP" in x.get("use_cases",[])}  # was best/mcp-servers
+    mcp={x["slug"] for x in t if x["category"]=="MCP servers" or "connect tools via MCP" in x.get("use_cases",[])}  # was best/mcp-servers
     try: frozen=[set(v) for v in json.load(open("data/absorbed_sets.json"))["sets"].values()]
     except Exception: frozen=[]
     return [mcp]+frozen
