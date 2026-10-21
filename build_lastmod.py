@@ -13,7 +13,7 @@ _V=[(re.compile(r"\?v=\d+"),""),(re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{
     (re.compile(r"Links checked [A-Z][a-z]{2} \d{1,2}, \d{4}"),""),(re.compile(r'"dateModified": ?"[^"]*"'),""),
     (re.compile(r'<section id="nlblock".*?</section>',re.S),""),
     (re.compile(r'<!-- ga4 -->.*?<!-- /ga4 -->',re.S),""),(re.compile(r' https://\*\.google-analytics\.com https://\*\.analytics\.google\.com https://www\.googletagmanager\.com| https://www\.googletagmanager\.com'),"")]  # GA4 tag + CSP are page chrome (Oct 19 2026)  # sitewide signup box is page chrome, not content (Oct 18 2026)
-_V+=[(re.compile(r'<span id="pfm".*?</span></span>|<span id="pfm"[^>]*></span>'),""),(re.compile(r' data-pagefind-body'),""),(re.compile(r'<a data-navsearch [^>]*>[^<]*</a>'),"")]  # site-search markers are not content (Oct 21 2026)
+_V+=[(re.compile(r'<span id="pfm".*?</span></span>|<span id="pfm"[^>]*></span>'),""),(re.compile(r' data-pagefind-body| data-pagefind-weight="10"'),""),(re.compile(r'<a data-navsearch [^>]*>[^<]*</a>'),"")]  # site-search markers are not content (Oct 21 2026)
 def _hash(p):
     s=open(p,encoding="utf-8",errors="replace").read()
     for r,v in _V: s=r.sub(v,s)

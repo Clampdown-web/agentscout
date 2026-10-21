@@ -32,7 +32,7 @@ async function go(){const my=++tok;toolMode();sync();const q=$("sq").value.trim(
  $("sstat").textContent=hits.length?`${hits.length} result${hits.length===1?"":"s"}${q?` for “${q}”`:""}`:`No results${q?` for “${q}”`:""}. Try fewer words or clear filters.`;await more(my)}
 async function more(my){const part=await Promise.all(hits.slice(page*PER,(page+1)*PER).map(h=>h.data()));if(my!==tok)return;page++;
  const groups={};for(const d of part){const t=(d.meta&&d.meta.type)||"Pages";(groups[t]=groups[t]||[]).push(d)}
- const order=["Tools","Categories","Guides & best-of","Free tools","News","Pages"];let h="";
+ const order=Object.keys(groups);/* groups appear in order of their best-ranked result */let h="";
  for(const t of order){if(!groups[t])continue;h+=`<h2 style="font-size:16px;margin:22px 0 8px">${esc(t)}</h2><ul style="list-style:none;padding:0;margin:0">`+groups[t].map(d=>`<li style="margin:0 0 14px"><a href="${esc(d.url)}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600">${d.meta.image&&t==="Tools"?`<img src="${esc(d.meta.image)}" alt="" width="24" height="24" loading="lazy" style="border-radius:6px">`:""}${esc(d.meta.title||d.url)}</a><br><span class="muted" style="font-size:14px">${d.excerpt}</span></li>`).join("")+"</ul>"}
  $("sres").insertAdjacentHTML("beforeend",h);$("smore").hidden=page*PER>=hits.length}
 let deb;$("sq").addEventListener("input",()=>{clearTimeout(deb);deb=setTimeout(go,250)});

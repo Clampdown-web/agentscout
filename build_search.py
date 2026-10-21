@@ -45,6 +45,7 @@ def annotate():
         s2=MK_RE.sub("",s)
         s2=re.sub(r'<main(?![^>]*data-pagefind-body)([^>]*)>',r'<main\1 data-pagefind-body>',s2,1)
         if "data-pagefind-body" not in s2: continue
+        s2=re.sub(r'<h1(?![^>]*data-pagefind-weight)([^>]*)>',r'<h1\1 data-pagefind-weight="10">',s2,1)  # titles outrank body mentions
         s2=s2.replace("</main>",mk+"</main>",1)
         if s2!=s: open(p,"w",encoding="utf-8").write(s2)
         n+=1
