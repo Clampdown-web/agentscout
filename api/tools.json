@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-21T17:16:20Z",
- "updated": "2026-10-21T17:16:20Z",
+ "generated": "2026-10-21T17:31:07Z",
+ "updated": "2026-10-21T17:31:07Z",
  "last_checked": "2026-10-21",
  "count": 1625,
  "tools": [
@@ -23468,11 +23468,11 @@
    "category": "games",
    "description": "Narrative game platform where an AI game master runs story adventures set in licensed and original worlds.",
    "key_features": [
-    "See site",
+    "Free play; Creator $9.99/mo",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free play; Creator $9.99/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -24415,11 +24415,11 @@
    "category": "crypto",
    "description": "Wallets, stablecoin payments and checkout APIs built for AI agents.",
    "key_features": [
-    "See site",
+    "Free tier (1,000 wallets); usage-based beyond; enterprise custom",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free tier (1,000 wallets); usage-based beyond; enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -24454,11 +24454,11 @@
    "category": "crypto",
    "description": "Embedded and server wallets developers can hand to agents with policy controls.",
    "key_features": [
-    "See site",
+    "Free up to 500 MAU; Core $299/mo; Scale $499/mo; enterprise custom",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free up to 500 MAU; Core $299/mo; Scale $499/mo; enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -24852,12 +24852,12 @@
    "category": "crypto",
    "description": "AI research assistant for crypto (and now US equities) built on on-chain, market and social data.",
    "key_features": [
-    "See site",
+    "Free plan; Pro $39/mo; Max $333/mo (billed annually)",
     "Active",
     "Research the web"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan; Pro $39/mo; Max $333/mo (billed annually)",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -25012,13 +25012,13 @@
    "category": "crypto",
    "description": "AI on-chain investigator that decodes transactions, profiles wallets and traces stolen funds across 8 chains.",
    "key_features": [
-    "See site",
+    "Free plan; Pro $20/mo",
     "Active",
     "Write code",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan; Pro $20/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -25095,12 +25095,12 @@
    "category": "crypto",
    "description": "Official MCP server for crypto prices, market and on-chain data.",
    "key_features": [
-    "See site",
+    "Free keyless server and Demo API key; paid Pro API plans",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free keyless server and Demo API key; paid Pro API plans",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -25539,12 +25539,12 @@
    "category": "crypto",
    "description": "AI wallet auditor, fraud and rug-pull detector with a prediction MCP server for agents.",
    "key_features": [
-    "See site",
+    "Starter $0/mo; Business $399/mo; Enterprise $999/mo; pay-per-use via x402",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter $0/mo; Business $399/mo; Enterprise $999/mo; pay-per-use via x402",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -25739,12 +25739,12 @@
    "category": "crypto",
    "description": "Free crypto trading intelligence terminal (derivatives, funding, on-chain, sentiment) with an MCP server for AI agents.",
    "key_features": [
-    "Free web terminal; MCP server, API and CLI",
+    "Terminal and personal API free; commercial API $149/mo",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "Free web terminal; MCP server, API and CLI",
-   "price_tag": "unknown",
+   "pricing": "Terminal and personal API free; commercial API $149/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -26686,12 +26686,12 @@
    "category": "MCP servers",
    "description": "Wolfram's official MCP service that gives agents computed answers from Wolfram Language and Wolfram|Alpha, with local, cloud and enterprise deployment options.",
    "key_features": [
-    "See site",
+    "Included with Wolfram|One and Mathematica; free trial",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Included with Wolfram|One and Mathematica; free trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -28318,12 +28318,12 @@
    "category": "agent infra",
    "description": "Open-source communication infrastructure that gives products and AI agents one API to reach users over in-app inbox, email, SMS, push, Slack, Teams and chat.",
    "key_features": [
-    "See site",
+    "Open source (self-host); Novu Cloud Free $0/mo; Pro from $30/mo; Team from $250/mo",
     "Mature",
     "40164 GitHub stars"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Open source (self-host); Novu Cloud Free $0/mo; Pro from $30/mo; Team from $250/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -33623,15 +33623,15 @@
    "category": "personal agents",
    "description": "Personal AI agent for desktop and mobile that codes, automates the desktop and browser and runs scheduled tasks with local or cloud models.",
    "key_features": [
-    "See site",
+    "Free for personal and educational use; companies need a licence",
     "Active",
     "2196 GitHub stars",
     "Write code",
     "Automate the browser",
     "Control a computer"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free for personal and educational use; companies need a licence",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -37124,16 +37124,17 @@
    "category": "browser/computer use",
    "description": "Mozilla's MCP server that lets AI agents browse with Firefox and inspect pages with its developer tools over WebDriver BiDi.",
    "key_features": [
-    "See site",
+    "Open source (MIT or Apache-2.0)",
     "Active",
     "500 GitHub stars",
     "Automate the browser",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Open source (MIT or Apache-2.0)",
+   "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -37149,8 +37150,8 @@
    "new_this_week": true,
    "repo": "mozilla/firefox-devtools-mcp",
    "github_stars": 500,
-   "open_source": false,
-   "license": "",
+   "open_source": true,
+   "license": "MIT",
    "tags": [
     "automate the browser",
     "connect tools via MCP"
@@ -37551,12 +37552,12 @@
    "category": "models & local runtimes",
    "description": "Desktop app for running local and open models, with Bionic, its agent for work and code that creates documents, slides, PDFs and software.",
    "key_features": [
-    "See site",
+    "Free (local models); Bionic+ $20/mo; Pro $100/mo",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free (local models); Bionic+ $20/mo; Pro $100/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Desktop (macOS, Windows, Linux)"
    ],
@@ -37636,12 +37637,12 @@
    "category": "research",
    "description": "AI academic search engine over peer-reviewed literature for finding, organizing and analyzing scientific research.",
    "key_features": [
-    "See site",
+    "Free plan; Pro $12/mo; Deep and team plans",
     "Active",
     "Research the web"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan; Pro $12/mo; Deep and team plans",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -37879,14 +37880,14 @@
    "category": "sales & marketing",
    "description": "Go-to-market data platform for enriching leads and running agentic research workflows and outreach plays.",
    "key_features": [
-    "See site",
+    "Free plan; Launch from $167/mo; enterprise custom",
     "Active",
     "Research the web",
     "Automate workflows",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan; Launch from $167/mo; enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -37923,14 +37924,14 @@
    "category": "no-code builders",
    "description": "AI agent platform for customer experience automation, for building, launching and scaling chat and voice agents.",
    "key_features": [
-    "See site",
+    "Usage-based; free trial; pricing on request",
     "Active",
     "Write code",
     "Voice & phone calls",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Usage-based; free trial; pricing on request",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38056,12 +38057,12 @@
    "category": "research",
    "description": "Analytics platform for humans and agents, with conversational analytics, notebooks and context management for data teams.",
    "key_features": [
-    "See site",
+    "Community free; Professional $36/editor/mo; Team $75/editor/mo; Enterprise custom",
     "Active",
     "Research the web"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Community free; Professional $36/editor/mo; Team $75/editor/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38096,13 +38097,13 @@
    "category": "customer support",
    "description": "Turns docs, tickets, wikis and 30+ other sources into accurate AI agents for answering user and team questions.",
    "key_features": [
-    "See site",
+    "14-day free trial; Growth usage-based; Enterprise custom",
     "Active",
     "Write code",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "14-day free trial; Growth usage-based; Enterprise custom",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38426,13 +38427,13 @@
    "category": "customer support",
    "description": "Action-first AI support for e-commerce brands that resolves tickets by processing refunds, returns and order changes.",
    "key_features": [
-    "See site",
+    "Plans by conversation volume; talk to sales",
     "Active",
     "Write code",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Plans by conversation volume; talk to sales",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38554,14 +38555,14 @@
    "category": "voice",
    "description": "Voice AI platform for enterprise call automation that deploys low-latency phone agents for sales and support.",
    "key_features": [
-    "See site",
+    "Enterprise contracts from $30,000/yr",
     "Active",
     "Voice & phone calls",
     "Automate workflows",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Enterprise contracts from $30,000/yr",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38599,14 +38600,14 @@
    "category": "no-code builders",
    "description": "Drag-and-drop no-code platform for enterprises to build and deploy secure, compliant AI agents.",
    "key_features": [
-    "See site",
+    "Free plan; Enterprise custom",
     "Active",
     "Write code",
     "Build apps without code",
     "Run code safely"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38763,12 +38764,12 @@
    "category": "sales & marketing",
    "description": "Sales platform with outbound agents, B2B data, signals and sequencing run from one chat interface.",
    "key_features": [
-    "See site",
+    "Free forever; Base $20/seat/mo; Pro $60/seat/mo",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free forever; Base $20/seat/mo; Pro $60/seat/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38803,12 +38804,12 @@
    "category": "productivity",
    "description": "AI meeting assistant that helps run meetings, summarizes them and automates follow-up tasks in your tools.",
    "key_features": [
-    "See site",
+    "Starter free; Pro $2.90/meeting hour; Business $19/user/mo; Enterprise custom",
     "Active",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter free; Pro $2.90/meeting hour; Business $19/user/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38883,11 +38884,11 @@
    "category": "business agents",
    "description": "AI recruiting platform that sources candidates from 850M+ profiles, runs outreach and schedules interviews.",
    "key_features": [
-    "See site",
+    "Free plan; paid from $99/mo",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan; paid from $99/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38962,12 +38963,12 @@
    "category": "sales & marketing",
    "description": "GTM AI agents for B2B sales that handle outbound, inbound and revenue intelligence.",
    "key_features": [
-    "See site",
+    "Quote-based, usage-scaled pricing",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Quote-based, usage-scaled pricing",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -39042,12 +39043,12 @@
    "category": "evals & observability",
    "description": "Enterprise platform for AI evals and observability that gives teams one standard for measuring and monitoring AI quality.",
    "key_features": [
-    "See site",
+    "Free forever; Starter $200/mo; Team $2,000/mo; Enterprise custom",
     "Active",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free forever; Starter $200/mo; Team $2,000/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -39080,13 +39081,13 @@
    "category": "customer support",
    "description": "AI phone agents that answer every call, book appointments and handle customer support for businesses.",
    "key_features": [
-    "See site",
+    "Free (100 min); Starter $50/mo; Enterprise custom",
     "Active",
     "Voice & phone calls",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free (100 min); Starter $50/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -39162,12 +39163,12 @@
    "category": "coding",
    "description": "AI testing platform with an AI QA agent that runs and maintains plain-English tests and reports bugs with repro steps.",
    "key_features": [
-    "See site",
+    "Free forever; Pay-as-you-go $125/mo + usage; Enterprise custom",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free forever; Pay-as-you-go $125/mo + usage; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -39247,13 +39248,13 @@
    "category": "sales & marketing",
    "description": "AI growth agent that finds ways to get customers for your website and runs the approved campaigns.",
    "key_features": [
-    "See site",
+    "Starter $99/mo; Pro $199/mo; Max $399/mo; 7-day trial",
     "Active",
     "Research the web",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter $99/mo; Pro $199/mo; Max $399/mo; 7-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -39289,12 +39290,12 @@
    "category": "coding",
    "description": "AI code review that catches bugs in complex codebases on every pull request.",
    "key_features": [
-    "See site",
+    "Starter free (20 PR reviews/mo); Team $40/dev/mo; Pro $99/dev/mo; Max $200/dev/mo (monthly); free for open source",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter free (20 PR reviews/mo); Team $40/dev/mo; Pro $99/dev/mo; Max $200/dev/mo (monthly); free for open source",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -39329,13 +39330,13 @@
    "category": "coding",
    "description": "TestGrid's AI software testing agent that creates, runs and maintains self-healing tests for enterprise apps.",
    "key_features": [
-    "See site",
+    "$199/seat/mo; custom enterprise plans",
     "Active",
     "Write code",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "$199/seat/mo; custom enterprise plans",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -39535,13 +39536,13 @@
    "category": "agent infra",
    "description": "Email API that gives AI agents their own inboxes, built on JMAP with MCP and agent skill support.",
    "key_features": [
-    "See site",
+    "Free during open alpha (paid product planned)",
     "Active",
     "266 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free during open alpha (paid product planned)",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -39617,12 +39618,12 @@
    "category": "coding",
    "description": "AI code review platform that helps engineering teams ship better code faster.",
    "key_features": [
-    "See site",
+    "Pro $30/active dev/mo after 14-day trial; Enterprise custom",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Pro $30/active dev/mo after 14-day trial; Enterprise custom",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -39657,14 +39658,14 @@
    "category": "voice",
    "description": "Platform for building, deploying and testing voice AI agents for recruitment, sales and customer support.",
    "key_features": [
-    "See site",
+    "Usage-based from $0.06/min ($5 free credits)",
     "Active",
     "797 GitHub stars",
     "Voice & phone calls",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Usage-based from $0.06/min ($5 free credits)",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -39747,15 +39748,15 @@
    "category": "no-code builders",
    "description": "Visual AI workflow builder for automating backends, building tools for AI agents and spinning up APIs.",
    "key_features": [
-    "See site",
+    "Starter $19/mo; Pro $59/mo; Business $449/mo; 7-day trial",
     "Active",
     "603 GitHub stars",
     "Write code",
     "Automate workflows",
     "Build apps without code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter $19/mo; Pro $59/mo; Business $449/mo; 7-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -39792,13 +39793,13 @@
    "category": "evals & observability",
    "description": "Testing and evaluation platform for voice agents, with simulations, production evals and human QA.",
    "key_features": [
-    "See site",
+    "Starter $100/mo; Growth $500/mo; Enterprise from $4,500/mo",
     "Active",
     "Voice & phone calls",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter $100/mo; Growth $500/mo; Enterprise from $4,500/mo",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -39834,13 +39835,13 @@
    "category": "MCP servers",
    "description": "Spins up governed MCP servers from your company systems so Claude, ChatGPT, Cursor or your apps can query them with permissions.",
    "key_features": [
-    "See site",
+    "Custom pricing; talk to sales",
     "Active",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Custom pricing; talk to sales",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -39962,12 +39963,12 @@
    "category": "customer support",
    "description": "AI support agent that resolves employee and customer requests end to end and takes action in your systems.",
    "key_features": [
-    "See site",
+    "Free (200 AI replies/mo); Starter $95/mo; Standard $295/mo",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free (200 AI replies/mo); Starter $95/mo; Standard $295/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -40002,12 +40003,12 @@
    "category": "customer support",
    "description": "Customer service AI platform whose agents resolve support issues automatically to lower support costs.",
    "key_features": [
-    "See site",
+    "Quote-based plans",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Quote-based plans",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -40082,13 +40083,13 @@
    "category": "customer support",
    "description": "AI agent management platform for enterprise customer service to build, test and scale voice and chat agents.",
    "key_features": [
-    "See site",
+    "Consumption-based (per minute / per conversation)",
     "Active",
     "Voice & phone calls",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Consumption-based (per minute / per conversation)",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -40125,13 +40126,13 @@
    "category": "voice",
    "description": "Enterprise voice AI platform for building, deploying and monitoring phone agents with self-hosted models.",
    "key_features": [
-    "See site",
+    "Usage-based: Start $0.14/min with $0 platform fee; Build $299/mo + $0.12/min; Enterprise custom",
     "Active",
     "Voice & phone calls",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Usage-based: Start $0.14/min with $0 platform fee; Build $299/mo + $0.12/min; Enterprise custom",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -40287,12 +40288,12 @@
    "category": "coding",
    "description": "AI coding IDE and agent that works alongside you in your editor to write, edit and run code.",
    "key_features": [
-    "See site",
+    "Lite $3/mo; Pro $10/mo; Pro+ $30/mo",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Lite $3/mo; Pro $10/mo; Pro+ $30/mo",
+   "price_tag": "paid",
    "platforms": [
     "Desktop (macOS, Windows, Linux)"
    ],
@@ -40328,11 +40329,11 @@
    "category": "business agents",
    "description": "Enterprise AI agent platform for teams to run on-brand, compliant work with agents built on WRITER's own models.",
    "key_features": [
-    "See site",
+    "Starter (14-day free trial); Enterprise: contact sales",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter (14-day free trial); Enterprise: contact sales",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -40368,12 +40369,12 @@
    "category": "evals & observability",
    "description": "Agent observability and evaluation platform with tracing, evals and experiments for improving AI agents.",
    "key_features": [
-    "See site",
+    "AX Free; AX Pro $50/mo; Enterprise custom",
     "Active",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "AX Free; AX Pro $50/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40491,12 +40492,12 @@
    "category": "frameworks",
    "description": "Platform for designing, testing and running reliable agents at enterprise scale on Kubernetes.",
    "key_features": [
-    "See site",
+    "Restack Cloud $25/user/mo + compute; BYOC $999/mo",
     "Active",
     "Build an agent"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Restack Cloud $25/user/mo + compute; BYOC $999/mo",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40531,13 +40532,13 @@
    "category": "browser/computer use",
    "description": "Turns plain-English workflow descriptions into deterministic agents that work across your apps, APIs and the web.",
    "key_features": [
-    "See site",
+    "Free $0/mo (1,000 credits); Starter $29/mo; Professional $189/mo; Enterprise $558/mo",
     "Active",
     "Automate the browser",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free $0/mo (1,000 credits); Starter $29/mo; Professional $189/mo; Enterprise $558/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -40614,12 +40615,12 @@
    "category": "MCP servers",
    "description": "AppsFlyer's hosted MCP server that lets AI assistants analyze your mobile attribution and campaign performance data.",
    "key_features": [
-    "See site",
+    "Requires an AppsFlyer plan: Zero (free); Growth pay-as-you-go ($0.07/conversion); Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires an AppsFlyer plan: Zero (free); Growth pay-as-you-go ($0.07/conversion); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40695,13 +40696,13 @@
    "category": "MCP servers",
    "description": "Typeform's MCP server for building and editing forms, managing automations and contacts, and analyzing responses from an AI assistant.",
    "key_features": [
-    "See site",
+    "Requires a Typeform plan: Free plan; Basic from 39 USD/mo; Enterprise custom",
     "Active",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires a Typeform plan: Free plan; Basic from 39 USD/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40779,14 +40780,14 @@
    "category": "MCP servers",
    "description": "Egnyte's remote MCP server for secure AI search, upload and file management in your Egnyte account.",
    "key_features": [
-    "See site",
+    "Requires an Egnyte plan: from $22/user/mo (annual); free trial",
     "Active",
     "Research the web",
     "Connect tools via mcp",
     "Run code safely"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires an Egnyte plan: from $22/user/mo (annual); free trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40823,13 +40824,13 @@
    "category": "MCP servers",
    "description": "Official MCP server for Lovable, the AI full-stack app builder, so other agents can work with your Lovable projects.",
    "key_features": [
-    "See site",
+    "MCP server is Apache-2.0; requires Lovable: Free; Pro $25/mo; Business $50/mo",
     "Active",
     "7 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "MCP server is Apache-2.0; requires Lovable: Free; Pro $25/mo; Business $50/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40847,7 +40848,7 @@
    "repo": "lovablelabs/mcp",
    "github_stars": 7,
    "open_source": false,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "connect tools via MCP"
    ],
@@ -40864,12 +40865,12 @@
    "category": "MCP servers",
    "description": "Parse.ly MCP server for querying content analytics such as top content, referrers, campaigns, trends and real-time data.",
    "key_features": [
-    "See site",
+    "Requires a Parse.ly plan: quote-based, book a demo",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires a Parse.ly plan: quote-based, book a demo",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -40905,12 +40906,12 @@
    "category": "MCP servers",
    "description": "JumpCloud's MCP server that lets LLMs manage JumpCloud identity, device and access resources.",
    "key_features": [
-    "See site",
+    "Requires a JumpCloud plan: from $9/user/mo (annual); 30-day free trial",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires a JumpCloud plan: from $9/user/mo (annual); 30-day free trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41026,13 +41027,13 @@
    "category": "MCP servers",
    "description": "Infobip MCP servers for omnichannel messaging from agents, including SMS, RCS, WhatsApp and Viber.",
    "key_features": [
-    "See site",
+    "Requires Infobip: pay per message/channel usage; custom plans via sales",
     "Active",
     "37 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Infobip: pay per message/channel usage; custom plans via sales",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41067,12 +41068,12 @@
    "category": "MCP servers",
    "description": "Statsig's MCP server for working with feature flags, experiments and product analytics from AI tools.",
    "key_features": [
-    "See site",
+    "Requires Statsig: Developer free; Pro $150/mo; Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Statsig: Developer free; Pro $150/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41107,12 +41108,12 @@
    "category": "MCP servers",
    "description": "beehiiv's MCP server for managing newsletters, posts, podcasts, subscribers and analytics from an AI assistant.",
    "key_features": [
-    "See site",
+    "Requires beehiiv: Free; Lite $49/mo; Pro $95/mo (yearly); Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires beehiiv: Free; Lite $49/mo; Pro $95/mo (yearly); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41147,14 +41148,14 @@
    "category": "MCP servers",
    "description": "UptimeRobot's MCP server for creating monitors, triaging incidents and querying uptime stats for sites, APIs and servers.",
    "key_features": [
-    "See site",
+    "Requires UptimeRobot: Free plan; Solo from $12/mo; Team $39/mo; Scale $79/mo (annual)",
     "Active",
     "24 GitHub stars",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires UptimeRobot: Free plan; Solo from $12/mo; Team $39/mo; Scale $79/mo (annual)",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41315,13 +41316,13 @@
    "category": "MCP servers",
    "description": "IFTTT's MCP server that lets AI agents build Applets and run actions and queries across 1,000+ connected services.",
    "key_features": [
-    "See site",
+    "Requires IFTTT: Free; Pro $2.99/mo; Pro+ $8.99/mo",
     "Active",
     "2 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires IFTTT: Free; Pro $2.99/mo; Pro+ $8.99/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41356,13 +41357,13 @@
    "category": "MCP servers",
    "description": "RocketReach's MCP server for looking up verified work emails and phone numbers from its contact database.",
    "key_features": [
-    "See site",
+    "Requires RocketReach: free account (5 lookups); Essentials $33/mo; Pro $75/mo; Ultimate $142/mo (annual)",
     "Active",
     "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires RocketReach: free account (5 lookups); Essentials $33/mo; Pro $75/mo; Ultimate $142/mo (annual)",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41438,12 +41439,12 @@
    "category": "MCP servers",
    "description": "Kajabi's MCP server for managing products, pages, contacts, offers, emails and analytics from any MCP client.",
    "key_features": [
-    "See site",
+    "Requires a Kajabi plan: Basic $143/mo (annual) to Pro $399/mo; free trial",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires a Kajabi plan: Basic $143/mo (annual) to Pro $399/mo; free trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41478,14 +41479,14 @@
    "category": "MCP servers",
    "description": "SendPulse's MCP server for driving its email, CRM, chatbot, SMTP and course automation from AI agents.",
    "key_features": [
-    "See site",
+    "MCP free; SendPulse has a free plan; paid email plans from $9.60/mo",
     "Active",
     "1 GitHub stars",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "MCP free; SendPulse has a free plan; paid email plans from $9.60/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41521,13 +41522,13 @@
    "category": "MCP servers",
    "description": "vidIQ's MCP server for researching and creating content for YouTube, Instagram and TikTok from an AI assistant.",
    "key_features": [
-    "See site",
+    "Works on every vidIQ plan incl. Free; Boost $19/mo; MAX $49/mo",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Works on every vidIQ plan incl. Free; Boost $19/mo; MAX $49/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41607,14 +41608,14 @@
    "category": "MCP servers",
    "description": "Lucid's MCP connector for creating, searching, editing and sharing Lucidchart and Lucid documents from AI tools.",
    "key_features": [
-    "See site",
+    "Requires Lucid: Free plan; Individual and Team paid plans; Enterprise",
     "Active",
     "3 GitHub stars",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Lucid: Free plan; Individual and Team paid plans; Enterprise",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41650,12 +41651,12 @@
    "category": "MCP servers",
    "description": "PrintFriendly's MCP server for reading clean web pages and creating PDF, Word and Markdown documents.",
    "key_features": [
-    "See site",
+    "Free plan (100 documents/mo); paid plans raise the limit",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan (100 documents/mo); paid plans raise the limit",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41690,14 +41691,14 @@
    "category": "MCP servers",
    "description": "DevCycle's MCP server for managing feature flags from AI coding assistants.",
    "key_features": [
-    "See site",
+    "Requires DevCycle: Free $0; Business $500/mo (annual); Enterprise custom",
     "Active",
     "20 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires DevCycle: Free $0; Business $500/mo (annual); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41773,12 +41774,12 @@
    "category": "MCP servers",
    "description": "WorkOS MCP server for managing organizations, users, SSO, Directory Sync and AuthKit in plain language.",
    "key_features": [
-    "See site",
+    "Requires WorkOS: AuthKit free up to 1M users; SSO $125/connection/mo",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires WorkOS: AuthKit free up to 1M users; SSO $125/connection/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41853,13 +41854,13 @@
    "category": "MCP servers",
    "description": "TipRanks MCP server with live market data such as analyst ratings, Smart Score, technicals, options and portfolios.",
    "key_features": [
-    "See site",
+    "Free tier (50 tool calls/mo); paid MCP subscription or TipRanks Premium/Ultimate for more",
     "Active",
     "16 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free tier (50 tool calls/mo); paid MCP subscription or TipRanks Premium/Ultimate for more",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41934,13 +41935,13 @@
    "category": "MCP servers",
    "description": "AfterShip's MCP server for tracking packages across 1,300+ carriers with real-time status.",
    "key_features": [
-    "See site",
+    "Requires AfterShip: Free plan; Essentials from $29/mo; Premium from $59/mo; Enterprise custom",
     "Active",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires AfterShip: Free plan; Essentials from $29/mo; Premium from $59/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41976,14 +41977,14 @@
    "category": "MCP servers",
    "description": "GitKraken's MCP server, via the GitKraken CLI, for managing repos, pull requests and issues across GitHub, GitLab and Bitbucket.",
    "key_features": [
-    "See site",
+    "Community plan free (OSS); paid plans with 14-day trial",
     "Active",
     "460 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Community plan free (OSS); paid plans with 14-day trial",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42019,12 +42020,12 @@
    "category": "MCP servers",
    "description": "Teamwork.com's official MCP server for managing client projects and tasks with AI assistants.",
    "key_features": [
-    "See site",
+    "Requires Teamwork.com: Basics from 9.99/user/mo (yearly); 14-day trial",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Teamwork.com: Basics from 9.99/user/mo (yearly); 14-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42059,13 +42060,13 @@
    "category": "MCP servers",
    "description": "Fireflies.ai MCP server for searching and analyzing meeting transcripts, summaries, soundbites and analytics.",
    "key_features": [
-    "See site",
+    "Requires Fireflies: Free forever; Pro $10/seat/mo; Business $19/seat/mo (annual)",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Fireflies: Free forever; Pro $10/seat/mo; Business $19/seat/mo (annual)",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42101,12 +42102,12 @@
    "category": "MCP servers",
    "description": "Mural's MCP server for reading and writing shared Mural boards from AI assistants.",
    "key_features": [
-    "See site",
+    "Requires Mural: Free plan; Team+ $9.99/member/mo (annual); Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Mural: Free plan; Team+ $9.99/member/mo (annual); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42142,13 +42143,13 @@
    "category": "MCP servers",
    "description": "Axiom's MCP server for listing datasets and schemas and running APL queries for log exploration and monitoring.",
    "key_features": [
-    "See site",
+    "Requires Axiom: Personal $0/mo; Axiom Cloud $25/mo platform fee + usage",
     "Active",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Axiom: Personal $0/mo; Axiom Cloud $25/mo platform fee + usage",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42184,14 +42185,14 @@
    "category": "MCP servers",
    "description": "SE Ranking's MCP server for keyword, backlink, SERP, audit, rank-tracking and AI search visibility data.",
    "key_features": [
-    "See site",
+    "Requires SE Ranking: Core from $103.20/mo (annual); 14-day trial",
     "Active",
     "Research the web",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires SE Ranking: Core from $103.20/mo (annual); 14-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42228,12 +42229,12 @@
    "category": "MCP servers",
    "description": "Churnkey's MCP server for reading and managing cancel flows, retention metrics and payment recovery.",
    "key_features": [
-    "See site",
+    "MCP server free and open source; requires a Churnkey plan (Starter $250/mo billed yearly)",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "MCP server free and open source; requires a Churnkey plan (Starter $250/mo billed yearly)",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42268,13 +42269,13 @@
    "category": "crypto",
    "description": "Chainstack's MCP server for deploying and managing blockchain nodes across 70+ protocols and requesting testnet funds from agents.",
    "key_features": [
-    "See site",
+    "Requires Chainstack: Developer free; Growth $49/mo; Pro $199/mo; Business $499/mo; Enterprise from $990/mo",
     "Active",
     "4 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Chainstack: Developer free; Growth $49/mo; Pro $199/mo; Business $499/mo; Enterprise from $990/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42309,12 +42310,12 @@
    "category": "MCP servers",
    "description": "Polar Analytics MCP server that gives AI assistants commerce data from Shopify, Amazon, ads and Klaviyo with shared metric definitions.",
    "key_features": [
-    "See site",
+    "Requires Polar Analytics: custom plans, book a demo",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Polar Analytics: custom plans, book a demo",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42350,14 +42351,14 @@
    "category": "MCP servers",
    "description": "Bird's MCP server for sending and receiving email, SMS, WhatsApp and voice messages from AI agents through one API.",
    "key_features": [
-    "See site",
+    "Requires Bird: free tiers, pay-as-you-go usage and product plans",
     "Active",
     "7 GitHub stars",
     "Voice & phone calls",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Bird: free tiers, pay-as-you-go usage and product plans",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42394,13 +42395,13 @@
    "category": "MCP servers",
    "description": "daily.dev's MCP server for developer news feeds, posts, bookmarks, tags and search.",
    "key_features": [
-    "See site",
+    "daily.dev free forever; Plus $14.99/mo",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "daily.dev free forever; Plus $14.99/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42476,16 +42477,17 @@
    "category": "coding",
    "description": "Official Svelte MCP server that gives coding agents Svelte docs and autofixing tools.",
    "key_features": [
-    "See site",
+    "Free and open source (MIT)",
     "Active",
     "334 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free and open source (MIT)",
+   "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -42500,8 +42502,8 @@
    "new_this_week": true,
    "repo": "sveltejs/ai-tools",
    "github_stars": 334,
-   "open_source": false,
-   "license": "",
+   "open_source": true,
+   "license": "MIT",
    "tags": [
     "write code",
     "connect tools via MCP"
@@ -42519,14 +42521,14 @@
    "category": "MCP servers",
    "description": "Frase's MCP server with SEO, GEO and AI visibility tools to research, write, optimize, publish and monitor content.",
    "key_features": [
-    "See site",
+    "Requires Frase: Starter $39/mo (yearly); Professional $103/mo; Scale $239/mo; 7-day trial",
     "Active",
     "Research the web",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Frase: Starter $39/mo (yearly); Professional $103/mo; Scale $239/mo; 7-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42564,14 +42566,14 @@
    "category": "coding",
    "description": "Cypress's MCP server that brings Cypress Cloud test results and accessibility reports into AI coding workflows.",
    "key_features": [
-    "See site",
+    "Requires Cypress Cloud: Starter free; Team from $67/mo; Business from $267/mo; Enterprise custom",
     "Active",
     "Write code",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Cypress Cloud: Starter free; Team from $67/mo; Business from $267/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42608,13 +42610,13 @@
    "category": "MCP servers",
    "description": "HappyScribe's MCP server for searching, reading, analyzing and creating transcripts and meeting notes.",
    "key_features": [
-    "See site",
+    "Requires HappyScribe: Free plan; Basic $17/mo ($8.50/mo annually); Enterprise",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires HappyScribe: Free plan; Basic $17/mo ($8.50/mo annually); Enterprise",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42692,13 +42694,13 @@
    "category": "MCP servers",
    "description": "Liner's MCP server for real-time web and scholarly search with cited answers and multi-step deep research.",
    "key_features": [
-    "See site",
+    "Requires Liner: Free; Pro $14.99/mo; Max $29.99/mo (annual); Team $26.99/seat/mo",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Liner: Free; Pro $14.99/mo; Max $29.99/mo (annual); Team $26.99/seat/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42734,13 +42736,13 @@
    "category": "MCP servers",
    "description": "Lusha's MCP server for authorized business profile, usage and buying-signal insights in AI tools.",
    "key_features": [
-    "See site",
+    "Requires Lusha: Free plan (40 credits/mo); paid and Scale plans",
     "Active",
     "4 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Lusha: Free plan (40 credits/mo); paid and Scale plans",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42775,13 +42777,13 @@
    "category": "MCP servers",
    "description": "Official Logo.dev MCP server for finding brand logos and brandmarks and managing brand subscriptions.",
    "key_features": [
-    "See site",
+    "Community free; Startup $33/mo; Enterprise custom",
     "Active",
     "Connect tools via mcp",
     "Logos & branding"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Community free; Startup $33/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42859,13 +42861,13 @@
    "category": "MCP servers",
    "description": "Twelve Data's MCP server for real-time and historical market data on stocks, forex, crypto and more.",
    "key_features": [
-    "See site",
+    "Requires Twelve Data: Basic free; Grow from $29/mo; Pro from $99/mo; Ultra from $329/mo",
     "Active",
     "84 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Twelve Data: Basic free; Grow from $29/mo; Pro from $99/mo; Ultra from $329/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42901,12 +42903,12 @@
    "category": "MCP servers",
    "description": "Geckoboard's MCP server for querying live metrics and data lists from the business tools connected to your dashboards.",
    "key_features": [
-    "See site",
+    "Requires Geckoboard: Essentials from $79/mo (annual); Performance from $319/mo; 14-day trial",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Geckoboard: Essentials from $79/mo (annual); Performance from $319/mo; 14-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42941,14 +42943,14 @@
    "category": "MCP servers",
    "description": "Locize's MCP server with translation-management tools for keys, translation memory, glossary, styleguides and versions.",
    "key_features": [
-    "See site",
+    "Requires Locize: Free $0/mo; Starter $7/mo; Growth $49/mo",
     "Active",
     "1 GitHub stars",
     "Connect tools via mcp",
     "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Locize: Free $0/mo; Starter $7/mo; Growth $49/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -42984,16 +42986,17 @@
    "category": "MCP servers",
    "description": "Unleash's MCP server for managing feature flags from AI coding assistants.",
    "key_features": [
-    "See site",
+    "Unleash OSS free to self-host; Pay-as-you-go $75/seat/mo; Enterprise custom",
     "Active",
     "21 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Unleash OSS free to self-host; Pay-as-you-go $75/seat/mo; Enterprise custom",
+   "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -43008,7 +43011,7 @@
    "new_this_week": true,
    "repo": "Unleash/unleash-mcp",
    "github_stars": 21,
-   "open_source": false,
+   "open_source": true,
    "license": "",
    "tags": [
     "write code",
@@ -43069,14 +43072,14 @@
    "category": "MCP servers",
    "description": "Parallel's MCP servers for web search and deep-research tasks built for AI agents.",
    "key_features": [
-    "See site",
+    "Pay-as-you-go per request with a $5 free monthly allowance",
     "Active",
     "26 GitHub stars",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Pay-as-you-go per request with a $5 free monthly allowance",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43152,15 +43155,15 @@
    "category": "MCP servers",
    "description": "Aiven's MCP server for provisioning PostgreSQL, managing Apache Kafka and deploying apps from your AI assistant.",
    "key_features": [
-    "See site",
+    "MCP included free; Aiven Free tier $0/mo, Developer $5/mo, paid plans",
     "Active",
     "28 GitHub stars",
     "Automate workflows",
     "Connect tools via mcp",
     "Computer vision"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "MCP included free; Aiven Free tier $0/mo, Developer $5/mo, paid plans",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43197,14 +43200,14 @@
    "category": "memory & RAG",
    "description": "Extend's MCP server for turning documents into structured data: parse, extract, classify, split and fill PDF forms.",
    "key_features": [
-    "See site",
+    "Pay-as-you-go after 10,000 free credits ($100); no monthly fee",
     "Active",
     "Connect tools via mcp",
     "Monitor & evaluate agents",
     "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Pay-as-you-go after 10,000 free credits ($100); no monthly fee",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43241,15 +43244,15 @@
    "category": "MCP servers",
    "description": "Brandfetch's MCP server for searching brands and retrieving logos, design assets and company data.",
    "key_features": [
-    "See site",
+    "Free plan (100 requests/mo); paid plans and prepaid credits",
     "Active",
     "9 GitHub stars",
     "Research the web",
     "Connect tools via mcp",
     "Logos & branding"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan (100 requests/mo); paid plans and prepaid credits",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43286,14 +43289,14 @@
    "category": "MCP servers",
    "description": "Picsart's MCP server for generating and editing images, video and audio with 150+ models from 20+ vendors.",
    "key_features": [
-    "See site",
+    "Free Creative API basics; paid packages from $99/mo; enterprise via sales",
     "Active",
     "Connect tools via mcp",
     "Generate images",
     "Edit photos"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free Creative API basics; paid packages from $99/mo; enterprise via sales",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43375,13 +43378,13 @@
    "category": "MCP servers",
    "description": "Hello Retail's MCP server for setting up and tuning e-commerce search, recommendations, email and product agents.",
    "key_features": [
-    "See site",
+    "Requires Hello Retail: Search from €250/mo; Recommendations from €250/mo; 14-day trial for Shopify/Klaviyo emails",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Hello Retail: Search from €250/mo; Recommendations from €250/mo; 14-day trial for Shopify/Klaviyo emails",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43540,13 +43543,13 @@
    "category": "MCP servers",
    "description": "CARTO's MCP server for querying data warehouses, running spatial workflows and rendering maps from your CARTO workspace.",
    "key_features": [
-    "See site",
+    "Requires CARTO: enterprise plans; 30-day free trial",
     "Active",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires CARTO: enterprise plans; 30-day free trial",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43706,14 +43709,14 @@
    "category": "MCP servers",
    "description": "Whimsical's MCP server for creating and editing flowcharts, mind maps, wireframes and docs, or searching your workspace.",
    "key_features": [
-    "See site",
+    "Requires Whimsical: Free; Pro $10/editor/mo; higher tiers",
     "Active",
     "11 GitHub stars",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Whimsical: Free; Pro $10/editor/mo; higher tiers",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43792,13 +43795,13 @@
    "category": "MCP servers",
    "description": "GTmetrix MCP server for running web performance analyses and getting optimization insights inside AI workflows.",
    "key_features": [
-    "See site",
+    "Requires GTmetrix PRO: Lite $4.99/mo to Expert $49.99/mo (billed yearly)",
     "Active",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires GTmetrix PRO: Lite $4.99/mo to Expert $49.99/mo (billed yearly)",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43834,12 +43837,12 @@
    "category": "MCP servers",
    "description": "Jitsu's MCP server for managing data pipelines: destinations, streams, connections, functions and live events.",
    "key_features": [
-    "See site",
+    "Jitsu Cloud: Free (200k events/mo); Business $99/mo; open source",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Jitsu Cloud: Free (200k events/mo); Business $99/mo; open source",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43874,12 +43877,12 @@
    "category": "MCP servers",
    "description": "Mintlify's admin MCP server for editing, publishing and managing docs pages, navigation, settings and analytics.",
    "key_features": [
-    "See site",
+    "Requires Mintlify: Starter free; Pro $450/mo (annual); Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Mintlify: Starter free; Pro $450/mo (annual); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -44340,13 +44343,13 @@
    "category": "memory & RAG",
    "description": "LlamaIndex's document processing platform that parses PDFs, scans and Office files into markdown or JSON and extracts, classifies and indexes them for agents.",
    "key_features": [
-    "See site",
+    "Free $0/mo (10K credits); Starter; Pro $500/mo; Enterprise custom",
     "Active",
     "Monitor & evaluate agents",
     "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free $0/mo (10K credits); Starter; Pro $500/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -44382,11 +44385,11 @@
    "category": "personal agents",
    "description": "AI scheduling agent you CC on email or Slack threads to negotiate times across time zones and send invites.",
    "key_features": [
-    "See site",
+    "Free forever (15 meetings/mo); Lite $83/mo; Infinity $395/mo (annual); Enterprise from $20k/yr",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free forever (15 meetings/mo); Lite $83/mo; Infinity $395/mo (annual); Enterprise from $20k/yr",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -44460,14 +44463,14 @@
    "category": "coding",
    "description": "Cloud harness for coding agents that runs every task in its own environment and automates work with loops.",
    "key_features": [
-    "See site",
+    "Free (200 credits/mo); Plus $30/workspace/mo; Pro $100/workspace/mo; Enterprise custom",
     "Active",
     "Write code",
     "Build an agent",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free (200 credits/mo); Plus $30/workspace/mo; Pro $100/workspace/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -44585,12 +44588,12 @@
    "category": "app builders",
    "description": "AI app builder for iOS and Android that generates production mobile apps and ships them to the App Store and Google Play.",
    "key_features": [
-    "See site",
+    "Pro $20/mo; Max $200/mo",
     "Active",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Pro $20/mo; Max $200/mo",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -44625,11 +44628,11 @@
    "category": "app builders",
    "description": "AI prototyping tool for product managers that clones your product so you can make changes and share high-fidelity prototypes.",
    "key_features": [
-    "See site",
+    "Free ($5 credits/user/mo); Pro $20/user/mo; Enterprise custom",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free ($5 credits/user/mo); Pro $20/user/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -44664,12 +44667,12 @@
    "category": "research",
    "description": "Chat-with-your-database tool that answers natural-language questions over Postgres, MySQL, BigQuery, Snowflake and more with SQL and charts.",
    "key_features": [
-    "See site",
+    "Desktop $49/seat/mo; website chatbot from $149/mo",
     "Active",
     "Research the web"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Desktop $49/seat/mo; website chatbot from $149/mo",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -44704,12 +44707,12 @@
    "category": "research",
    "description": "Company research API for AI that finds and researches companies from a 10M-company index or the live web, with sources.",
    "key_features": [
-    "See site",
+    "Free (25 credits/mo); Starter $49/mo; Pro $149/mo",
     "Active",
     "Research the web"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free (25 credits/mo); Starter $49/mo; Pro $149/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -44828,12 +44831,12 @@
    "category": "business agents",
    "description": "AI agents that run healthcare practice operations across phone calls, faxes and payer portals, with staff approving final actions.",
    "key_features": [
-    "See site",
+    "Priced per agent task (e.g. $0.50/eligibility check); 14-day trial per agent",
     "Active",
     "Voice & phone calls"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Priced per agent task (e.g. $0.50/eligibility check); 14-day trial per agent",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -44911,13 +44914,13 @@
    "category": "business agents",
    "description": "AI agents that connect to your product and systems to deliver work for your customers, metered and monitored.",
    "key_features": [
-    "See site",
+    "Free $0/mo (10,000 credits to start); Scale $500/mo",
     "Active",
     "Monitor & evaluate agents",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free $0/mo (10,000 credits to start); Scale $500/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -44993,12 +44996,12 @@
    "category": "browser/computer use",
    "description": "Free private web browser with a built-in AI agent, local AI and ad blocker.",
    "key_features": [
-    "See site",
+    "Free; Plus $8/mo (annual); Pro Unlimited $60/mo (annual)",
     "Active",
     "Automate the browser"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free; Plus $8/mo (annual); Pro Unlimited $60/mo (annual)",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -46356,12 +46359,12 @@
    "category": "coding",
    "description": "AI code reviewer that reads your whole codebase to review pull requests and catch bugs before merge.",
    "key_features": [
-    "See site",
+    "Starter free (1 developer); Pro $30/seat/mo; Enterprise custom",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Starter free (1 developer); Pro $30/seat/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -46564,14 +46567,14 @@
    "category": "app builders",
    "description": "AI developer agent that builds full-stack apps and deploys them to your own AWS or GCP account, so you keep the code.",
    "key_features": [
-    "See site",
+    "Free (15 credits/mo); Pro $30/mo",
     "Active",
     "Write code",
     "Automate workflows",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free (15 credits/mo); Pro $30/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -46608,12 +46611,12 @@
    "category": "personal agents",
    "description": "MacPaw's proactive AI assistant for Mac and iPhone that finds files, drafts replies and completes tasks across your connected apps.",
    "key_features": [
-    "See site",
+    "Free 14-day trial, then Starter $14.99/mo, Boost $29.99/mo, Power $49.99/mo",
     "Active",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free 14-day trial, then Starter $14.99/mo, Boost $29.99/mo, Power $49.99/mo",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -46729,14 +46732,14 @@
    "category": "crypto",
    "description": "CLI and MCP server that lets coding agents manage a Pimlico smart-account infrastructure account, from balances and logs to sponsorship policies.",
    "key_features": [
-    "See site",
+    "Free on testnets; Pay-as-you-go $0/mo with 10M credits included, then $1 per 100k credits; Enterprise",
     "Active",
     "Write code",
     "Connect tools via mcp",
     "Run code safely"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free on testnets; Pay-as-you-go $0/mo with 10M credits included, then $1 per 100k credits; Enterprise",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -46819,12 +46822,12 @@
    "category": "MCP servers",
    "description": "OneSignal's official hosted MCP server for managing users, segments, templates, push and email messages and analytics from AI clients.",
    "key_features": [
-    "See site",
+    "MCP free; OneSignal Free $0/mo; Growth from $19/mo; Professional and Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "MCP free; OneSignal Free $0/mo; Growth from $19/mo; Professional and Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -47366,13 +47369,13 @@
    "category": "film & TV production",
    "description": "Local AI search for footage. Find shots, dialogue and people inside Premiere, Resolve, Final Cut or Avid without uploading anything, and let an AI agent search for you.",
    "key_features": [
-    "See website",
+    "Lifetime $169/seat; Pro $599 lifetime or $49/mo; Enterprise custom",
     "Active",
     "Edit video",
     "Clean up audio"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Lifetime $169/seat; Pro $599 lifetime or $49/mo; Enterprise custom",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -47448,12 +47451,12 @@
    "category": "film & TV production",
    "description": "AI storyboard maker. Turn a script into storyboards, shot lists, animatics and pitch decks in minutes.",
    "key_features": [
-    "See website",
+    "Free plan (2 projects); three paid plans",
     "Active",
     "Plan & storyboard"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Free plan (2 projects); three paid plans",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -47817,13 +47820,13 @@
    "category": "film & TV production",
    "description": "iPhone app that turns photos and sketches into 3D assets, places them in your real scene and renders photoreal mixed-reality shots and video.",
    "key_features": [
-    "See website",
+    "100 one-time starter credits; Plus $14.99/mo; Pro $39.99/mo",
     "Active",
     "Mix & master",
     "Concept art"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "100 one-time starter credits; Plus $14.99/mo; Pro $39.99/mo",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -48354,14 +48357,14 @@
    "category": "film & TV production",
    "description": "Online video editor with AI editing, subtitles, translation, dubbing and talking-head tools.",
    "key_features": [
-    "See website",
+    "Free to start; Creator $12/user/mo; Pro $22/user/mo; Studio $39/user/mo (yearly); Enterprise custom",
     "Active",
     "Edit video",
     "Subtitles & transcripts",
     "Dub & localize"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Free to start; Creator $12/user/mo; Pro $22/user/mo; Studio $39/user/mo (yearly); Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -48570,13 +48573,13 @@
    "category": "film & TV production",
    "description": "AI captions, translated subtitles and AI dubbing for live broadcast, streaming and recorded media.",
    "key_features": [
-    "Quote-based; e.g. live captions from $30/hour pay as you go",
+    "Quote-based hourly rates (e.g. $27/hour standard tier)",
     "Active",
     "Subtitles & transcripts",
     "Dub & localize"
    ],
-   "pricing": "Quote-based; e.g. live captions from $30/hour pay as you go",
-   "price_tag": "unknown",
+   "pricing": "Quote-based hourly rates (e.g. $27/hour standard tier)",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -48698,13 +48701,13 @@
    "category": "film & TV production",
    "description": "AI color grading. Match shots and apply looks automatically, with plugins for Resolve, Premiere and Final Cut.",
    "key_features": [
-    "See website",
+    "Colourlab Ai 4 $49/mo, $399/yr or $799 perpetual; 14-day trial",
     "Active",
     "Edit video",
     "Visual effects"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Colourlab Ai 4 $49/mo, $399/yr or $799 perpetual; 14-day trial",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -49278,12 +49281,12 @@
    "category": "video generation",
    "description": "Adobe's generative app for images, video and audio, with 30+ models including Adobe's commercially safe ones and a creative agent.",
    "key_features": [
-    "See website",
+    "Firefly Standard US$9.99/mo; Pro US$19.99/mo; Pro Plus US$49.99/mo; Premium US$199.99/mo; free trial",
     "Active",
     "Generate images"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Firefly Standard US$9.99/mo; Pro US$19.99/mo; Pro Plus US$49.99/mo; Premium US$199.99/mo; free trial",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -49692,12 +49695,12 @@
    "category": "video generation",
    "description": "AI video generator from text, images and references, with fast workflows for social clips, ads and stories.",
    "key_features": [
-    "See website",
+    "Free $0/mo; Standard $8.25/mo; Premium $35.42/mo; Ultimate $95.83/mo (yearly)",
     "Active",
     "Generate video"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Free $0/mo; Standard $8.25/mo; Premium $35.42/mo; Ultimate $95.83/mo (yearly)",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -50430,13 +50433,13 @@
    "category": "film & TV audio",
    "description": "Sound design software with AI tools to sync sound to picture, perform Foley and build ambiences.",
    "key_features": [
-    "See website",
+    "Subscription; 5-day free trial",
     "Active",
     "Visual effects",
     "Sound effects & foley"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Subscription; 5-day free trial",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -50806,12 +50809,12 @@
    "category": "film & TV audio",
    "description": "AI audio plugins such as UNVEIL (de-reverb) and UNCHIRP for repairing dialogue and recordings in post.",
    "key_features": [
-    "See website",
+    "Plugins sold individually (e.g. WIDE USD 99 MSRP) and in bundles",
     "Active",
     "Clean up audio"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Plugins sold individually (e.g. WIDE USD 99 MSRP) and in bundles",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -51477,12 +51480,12 @@
    "category": "music production",
    "description": "AI music generator for songs with vocals. Since its deal with Universal Music Group, downloads are disabled and tracks stay on the platform.",
    "key_features": [
-    "See website. Note: song downloads have been disabled since Udio's deal with Universal Music Group",
+    "Free (daily quota); Standard $8/mo; Pro $24/mo (annual)",
     "Active",
     "Make music"
    ],
-   "pricing": "See website. Note: song downloads have been disabled since Udio's deal with Universal Music Group",
-   "price_tag": "unknown",
+   "pricing": "Free (daily quota); Standard $8/mo; Pro $24/mo (annual)",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -51643,12 +51646,12 @@
    "category": "music production",
    "description": "Stability AI's music and sound generation toolkit with commercially safe models.",
    "key_features": [
-    "See website",
+    "Free (50 credits/mo, non-commercial); Session $30/mo; Producer $90/mo; Studio $199/mo",
     "Active",
     "3888 GitHub stars"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Free (50 credits/mo, non-commercial); Session $30/mo; Producer $90/mo; Studio $199/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -51804,12 +51807,12 @@
    "category": "music production",
    "description": "Make generative songs with AI and release them to streaming services.",
    "key_features": [
-    "See website",
+    "Free; Pro $29.99/mo",
     "Active",
     "Make music"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Free; Pro $29.99/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -52011,13 +52014,13 @@
    "category": "music production",
    "description": "Practice and production app that removes vocals, separates instruments, detects chords and masters tracks with AI.",
    "key_features": [
-    "See website",
+    "Free tier with limited uploads; paid subscription for full features",
     "Active",
     "Mix & master",
     "Separate stems"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Free tier with limited uploads; paid subscription for full features",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -52338,12 +52341,12 @@
    "category": "music production",
    "description": "Antares' pitch-correction plugins plus AI-powered vocal mixing tools for vocal tuning and effects.",
    "key_features": [
-    "See website",
+    "Perpetual licences ($250–$450) or $17.50/mo subscription",
     "Active",
     "Mix & master"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Perpetual licences ($250–$450) or $17.50/mo subscription",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -52747,13 +52750,13 @@
    "category": "music production",
    "description": "AI singing voice and instrument studio. Turn MIDI and lyrics into vocals and convert voices.",
    "key_features": [
-    "See website",
+    "Artist $16.58/mo; Artist Pro $22/mo (yearly, rent-to-own)",
     "Active",
     "Voiceover",
     "Make music"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Artist $16.58/mo; Artist Pro $22/mo (yearly, rent-to-own)",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -54835,13 +54838,13 @@
    "category": "graphic design & branding",
    "description": "Suite of AI tools for logos, mockups, video and social graphics.",
    "key_features": [
-    "See website",
+    "Go $9.90/mo; Plus $19.50/mo (offer); Pro $79/mo; Enterprise $639/mo (annual)",
     "Active",
     "Design graphics",
     "Logos & branding"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Go $9.90/mo; Plus $19.50/mo (offer); Pro $79/mo; Enterprise $639/mo (annual)",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -57771,13 +57774,13 @@
    "category": "photography & photo editing",
    "description": "AI real-estate photo editing: HDR merging, sky replacement and decluttering, with an API.",
    "key_features": [
-    "See website",
+    "Essential $29/mo (100 images); $0.29 per extra image; watermarked free trial",
     "Active",
     "Real estate photos",
     "Edit photos"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Essential $29/mo (100 images); $0.29 per extra image; watermarked free trial",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -60583,13 +60586,13 @@
    "category": "film & TV production",
    "description": "macOS video editor built around AI, where an assistant can search footage, assemble cuts and edit the timeline for you.",
    "key_features": [
-    "See site",
+    "Free editor; Pro $29/mo; Max $69/mo (limited-time prices)",
     "Mature",
     "14600 GitHub stars",
     "Edit video"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free editor; Pro $29/mo; Max $69/mo (limited-time prices)",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -61349,14 +61352,14 @@
    "category": "coding",
    "description": "Runs a team of coding agents such as Claude Code and Codex in isolated cloud sandboxes, with Mac and iPhone apps to review and merge their work.",
    "key_features": [
-    "See site",
+    "Free; Pro $50/mo; Teams $60/user/mo",
     "Active",
     "Write code",
     "Automate workflows",
     "Run code safely"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free; Pro $50/mo; Teams $60/user/mo",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -64601,13 +64604,13 @@
    "category": "evals & observability",
    "description": "A simulation platform for testing AI agents before launch: it runs your agent through realistic scenarios with simulated users and tools, scores results against checks or rubrics and shows where it fails. Includes a remote MCP server.",
    "key_features": [
-    "Free for now; you pay your own model-provider and runner costs.",
+    "Free during early access (future pricing to be announced)",
     "Active",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Free for now; you pay your own model-provider and runner costs.",
-   "price_tag": "unknown",
+   "pricing": "Free during early access (future pricing to be announced)",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -64816,13 +64819,13 @@
    "category": "MCP servers",
    "description": "Algolia's official MCP server that lets assistants search and manage Algolia indices, check analytics and tune relevance through natural-language requests.",
    "key_features": [
-    "See site",
+    "Requires Algolia: Grow from $0/mo (10K searches included), then usage; Enterprise",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Algolia: Grow from $0/mo (10K searches included), then usage; Enterprise",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -64900,13 +64903,13 @@
    "category": "evals & observability",
    "description": "Openlayer's MCP server, letting coding agents pull evaluation results, failing tests and monitoring data from Openlayer so they can debug and improve AI systems from the IDE.",
    "key_features": [
-    "See site",
+    "Requires Openlayer: free Basic plan; Enterprise custom",
     "Active",
     "Monitor & evaluate agents",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Openlayer: free Basic plan; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -64983,14 +64986,14 @@
    "category": "MCP servers",
    "description": "LaunchDarkly's official MCP server, so agents can create, update and clean up feature flags, AI configs and targeting rules from the IDE or chat.",
    "key_features": [
-    "See site",
+    "Requires LaunchDarkly: Developer $0/mo forever; pay as you go from $10/service connection/mo; Enterprise",
     "Active",
     "27 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires LaunchDarkly: Developer $0/mo forever; pay as you go from $10/service connection/mo; Enterprise",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -65026,12 +65029,12 @@
    "category": "MCP servers",
    "description": "Sanity's official remote MCP server that lets assistants query, create and update content, schemas and releases in a Sanity project using plain language.",
    "key_features": [
-    "See site",
+    "Requires Sanity: Free; Growth $15/seat/mo; Enterprise custom",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Sanity: Free; Growth $15/seat/mo; Enterprise custom",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -65235,13 +65238,13 @@
    "category": "MCP servers",
    "description": "Paddle's official remote MCP server, so assistants can look up and manage products, prices, customers, subscriptions and transactions in your Paddle billing account.",
    "key_features": [
-    "See site",
+    "Requires Paddle: 5% + 50¢ per checkout transaction; custom pricing for high volume",
     "Active",
     "Connect tools via mcp",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Requires Paddle: 5% + 50¢ per checkout transaction; custom pricing for high volume",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -65412,13 +65415,13 @@
    "category": "video generation",
    "description": "An open-source agent workflow that takes a viral short video and rebuilds it as an editable template, letting you swap the presenter, script, voice and B-roll to produce many new variants with your own API keys.",
    "key_features": [
-    "See site",
+    "Open-source core $0; Starter $9.90/mo; Pro $39.90/mo; Ultra $99.90/mo (cloud credits)",
     "Mature",
     "24265 GitHub stars",
     "Edit video"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Open-source core $0; Starter $9.90/mo; Pro $39.90/mo; Ultra $99.90/mo (cloud credits)",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -68575,13 +68578,13 @@
    "category": "MCP servers",
    "description": "trivago MCP is trivago's official remote MCP server for hotel search. Ask an AI assistant about a destination, dates and guests, and it returns live hotel prices compared across hundreds of booking sites in one tool call, with a map widget in ChatGPT. It needs no API key and connects in about a minute to Claude, ChatGPT, Cursor, VS Code and any client that reads the MCP Registry.",
    "key_features": [
-    "Free to use; no API key or sign-up needed",
+    "Free, no API key",
     "Active",
     "Connect tools via mcp",
     "Research the web"
    ],
-   "pricing": "Free to use; no API key or sign-up needed",
-   "price_tag": "unknown",
+   "pricing": "Free, no API key",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
