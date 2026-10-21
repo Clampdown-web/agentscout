@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T15:48:14Z",
- "updated": "2026-10-21T15:48:14Z",
+ "generated": "2026-10-21T16:19:55Z",
+ "updated": "2026-10-21T16:19:55Z",
  "last_checked": "2026-10-21",
- "count": 1624,
+ "count": 1625,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -68692,6 +68692,51 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/reticle.png",
    "page": "https://agentscouthq.com/tools/reticle.html"
+  },
+  {
+   "name": "Bidhelm",
+   "slug": "bidhelm",
+   "url": "https://bidhelm.com/",
+   "website": "https://bidhelm.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Bidhelm is an AI marketing department that runs a company's marketing for it. It researches markets and competitors, writes ad copy and creates ad assets, builds landing pages with lead forms, and runs Google Ads campaigns and X posting every day, managing bids, keywords and budget. It learns from campaign results, moves budget to what works and reports every change it made and why, so owners can steer it in plain language instead of operating ad tools.",
+   "key_features": [
+    "Paid: from $79/month plus 3% of managed ad spend; 14-day free trial (card required, renews automatically unless cancelled)",
+    "Active",
+    "Social posts & ads",
+    "Sales & support",
+    "Automate workflows"
+   ],
+   "pricing": "Paid: from $79/month plus 3% of managed ad spend; 14-day free trial (card required, renews automatically unless cancelled)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "social posts & ads",
+    "sales & support",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bidhelm.png",
+   "page": "https://agentscouthq.com/tools/bidhelm.html"
   }
  ]
 }

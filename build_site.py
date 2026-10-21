@@ -32,7 +32,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"sphinx":["write code"],  # upkeep Oct 21: git push quiz hook for agent-written code
+UC_SET={"bidhelm":["social posts & ads","sales & support","automate workflows"],  # submission Oct 21: AI marketing department (Google Ads, X)
+"sphinx":["write code"],  # upkeep Oct 21: git push quiz hook for agent-written code
 "reticle":["write code","monitor & evaluate agents"],  # upkeep Oct 21: verifies coding-agent work in the running app
 "openknowledge":["give agents memory","productivity","write code"],  # daily discovery Oct 21: keyword guess gave control a computer
 "cumora":["build multi-agent systems","productivity","give agents memory"],  # Oct 21: guess gave browser/computer/voice
