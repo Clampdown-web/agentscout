@@ -40480,5 +40480,57 @@
     "logo": "assets/logos/roverlead.png",
     "maker_submitted": true,
     "submitted": "2026-10-20"
+  },
+  {
+    "name": "TypeSafe Jev",
+    "url": "https://typesafe.ai/",
+    "description": "Jev is TypeSafe's System One decision model, built for the small decisions inside software and agents. You send a state and typed questions (choice, score and more) and get typed answers with probabilities back instead of free-form text, so code can branch on them directly to route, classify, score or rank options. Agents can use it to settle narrow calls cheaply and save the larger LLM for open-ended work. Available through TypeSafe's API, Python and JavaScript SDKs, an agent skill, and OpenRouter.",
+    "category": "agent infra",
+    "pricing": "Usage-based: pay per input token, output free; Jev 1.14 listed at $0.042 per million input tokens in TypeSafe docs; also on OpenRouter; enterprise plans via sales",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Owner request",
+    "pricing_detail": "",
+    "use_cases": [
+      "write code",
+      "build an agent",
+      "voice & phone calls"
+    ],
+    "website": "https://typesafe.ai/",
+    "github": "",
+    "id": 1613,
+    "slug": "typesafe-jev",
+    "logo": "assets/logos/typesafe-jev.png"
+  },
+  {
+    "name": "Grok Bot Jev Router",
+    "url": "https://github.com/Bodila51/grok-bot-jev",
+    "description": "Grok Bot Jev Router is an open-source Python reference router that puts TypeSafe Jev in front of Grok Bot as a cheap decision layer. Before expensive research, browser, retry or subagent work, Jev classifies the request and returns an explicit action such as reuse a cached result, stop a failing retry, cap research, run a deterministic step, or ask a human. It starts in shadow mode that only logs decisions, has an active mode for a Grok Bot skill that honors them, and includes a kill switch. It never sends, pays or deletes anything itself.",
+    "category": "agent infra",
+    "pricing": "Open source (MIT); needs a TypeSafe API key (Jev is billed per input token)",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Owner request",
+    "pricing_detail": "",
+    "use_cases": [
+      "automate the browser",
+      "build multi-agent systems",
+      "research the web"
+    ],
+    "website": "",
+    "github": "https://github.com/Bodila51/grok-bot-jev",
+    "repo": "Bodila51/grok-bot-jev",
+    "github_stars": 112,
+    "id": 1614,
+    "slug": "grok-bot-jev-router",
+    "logo": "assets/logos/grok-bot-jev-router.png"
   }
 ]

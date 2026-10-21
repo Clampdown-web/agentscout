@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-20T23:59:25Z",
- "updated": "2026-10-20T23:59:25Z",
+ "generated": "2026-10-21T00:25:07Z",
+ "updated": "2026-10-21T00:25:07Z",
  "last_checked": "2026-10-20",
- "count": 1593,
+ "count": 1595,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -67347,6 +67347,97 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/roverlead.png",
    "page": "https://agentscouthq.com/tools/roverlead.html"
+  },
+  {
+   "name": "TypeSafe Jev",
+   "slug": "typesafe-jev",
+   "url": "https://typesafe.ai/",
+   "website": "https://typesafe.ai/",
+   "github": "",
+   "category": "agent infra",
+   "description": "Jev is TypeSafe's System One decision model, built for the small decisions inside software and agents. You send a state and typed questions (choice, score and more) and get typed answers with probabilities back instead of free-form text, so code can branch on them directly to route, classify, score or rank options. Agents can use it to settle narrow calls cheaply and save the larger LLM for open-ended work. Available through TypeSafe's API, Python and JavaScript SDKs, an agent skill, and OpenRouter.",
+   "key_features": [
+    "Usage-based: pay per input token, output free; Jev 1.14 listed at $0.042 per million input tokens in TypeSafe docs; also on OpenRouter; enterprise plans via sales",
+    "Active",
+    "Write code",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Usage-based: pay per input token, output free; Jev 1.14 listed at $0.042 per million input tokens in TypeSafe docs; also on OpenRouter; enterprise plans via sales",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Owner request",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "build an agent",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/typesafe-jev.png",
+   "page": "https://agentscouthq.com/tools/typesafe-jev.html"
+  },
+  {
+   "name": "Grok Bot Jev Router",
+   "slug": "grok-bot-jev-router",
+   "url": "https://github.com/Bodila51/grok-bot-jev",
+   "website": "",
+   "github": "https://github.com/Bodila51/grok-bot-jev",
+   "category": "agent infra",
+   "description": "Grok Bot Jev Router is an open-source Python reference router that puts TypeSafe Jev in front of Grok Bot as a cheap decision layer. Before expensive research, browser, retry or subagent work, Jev classifies the request and returns an explicit action such as reuse a cached result, stop a failing retry, cap research, run a deterministic step, or ask a human. It starts in shadow mode that only logs decisions, has an active mode for a Grok Bot skill that honors them, and includes a kill switch. It never sends, pays or deletes anything itself.",
+   "key_features": [
+    "Open source (MIT); needs a TypeSafe API key (Jev is billed per input token)",
+    "Active",
+    "112 GitHub stars",
+    "Automate the browser",
+    "Build multi-agent systems",
+    "Research the web"
+   ],
+   "pricing": "Open source (MIT); needs a TypeSafe API key (Jev is billed per input token)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Owner request",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Bodila51/grok-bot-jev",
+   "github_stars": 112,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "build multi-agent systems",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/grok-bot-jev-router.png",
+   "page": "https://agentscouthq.com/tools/grok-bot-jev-router.html"
   }
  ]
 }
