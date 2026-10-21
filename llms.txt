@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,595 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,598 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,13 +22,13 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 229 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 230 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 178 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 133 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 83 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 75 tools
+- [crypto](https://agentscouthq.com/categories/crypto.html): 64 tools
 - [agent infra](https://agentscouthq.com/categories/agent-infra.html): 63 tools
-- [crypto](https://agentscouthq.com/categories/crypto.html): 63 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 59 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 54 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 51 tools
@@ -40,7 +40,7 @@ Contact: support@agentscouthq.com
 - [music production](https://agentscouthq.com/categories/music-production.html): 38 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 35 tools
-- [security & governance](https://agentscouthq.com/categories/security-governance.html): 34 tools
+- [security & governance](https://agentscouthq.com/categories/security-governance.html): 35 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 33 tools
 - [video generation](https://agentscouthq.com/categories/video-generation.html): 29 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
@@ -84,8 +84,11 @@ Contact: support@agentscouthq.com
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-19 to 2026-10-20): 186
+- Tools added in the last 2 days (2026-10-19 to 2026-10-20): 189
 
+- [The Commons (Dead Brands Collab Hub)](https://agentscouthq.com/tools/the-commons-dead-brands-collab-hub.html) (added 2026-10-20): The Commons is an open discussion hub for AI agents and bots, run as a remote MCP server (Streamable HTTP) by Dead Brands. Agents can read rooms, threads, search and bot profiles anonymously, and post, reply, upvote and send presence heartbeats with a free, instant hub key they claim themselves through the hub_register tool. Rooms include introductions, lobby, build-log, help-desk and meta, with public moderation, newcomer rate limits and an AI judge that holds prompt-injection bait aimed at visiting bots.
+- [Wren x402 Doctor](https://agentscouthq.com/tools/wren-x402-doctor.html) (added 2026-10-20): Wren x402 Doctor helps sellers of x402 pay-per-call endpoints, the payment standard AI agents use to pay for APIs in USDC, get listed in the Coinbase CDP Bazaar and stay listed. A free lint checks a 402 response against the x402 v2 spec and the Bazaar listing rules (networks, amounts, payTo checksum, description length, injection-like text, schema and metadata). A paid health check returns every Bazaar listing for your wallet address with 30-day calls, unique payers and an estimated delisting date.
+- [wren-guard Pro](https://agentscouthq.com/tools/wren-guard-pro.html) (added 2026-10-20): wren-guard Pro is a TypeScript guard library for AI agents that hold or move funds on Base and other EVM chains (viem, CDP AgentKit, Privy, Eliza and similar stacks). It enforces allowlisted, capped and simulated sends, decodes calldata and signatures to flag unlimited approvals, Permit, Permit2, setApprovalForAll and EIP-7702 delegation, screens for injected instructions and watches nonces. It ships with an 89-scenario attack corpus drawn from public agent wallet incidents and a GitHub Action that fails CI if your agent's policy would let a known attack through. The original Python wren-guard is free and MIT licensed.
 - [Grok Bot Jev Router](https://agentscouthq.com/tools/grok-bot-jev-router.html) (added 2026-10-20): Grok Bot Jev Router is an open-source Python reference router that puts TypeSafe Jev in front of Grok Bot as a cheap decision layer. Before expensive research, browser, retry or subagent work, Jev classifies the request and returns an explicit action such as reuse a cached result, stop a failing retry, cap research, run a deterministic step, or ask a human. It starts in shadow mode that only logs decisions, has an active mode for a Grok Bot skill that honors them, and includes a kill switch. It never sends, pays or deletes anything itself.
 - [TypeSafe Jev](https://agentscouthq.com/tools/typesafe-jev.html) (added 2026-10-20): Jev is TypeSafe's System One decision model, built for the small decisions inside software and agents. You send a state and typed questions (choice, score and more) and get typed answers with probabilities back instead of free-form text, so code can branch on them directly to route, classify, score or rank options. Agents can use it to settle narrow calls cheaply and save the larger LLM for open-ended work. Available through TypeSafe's API, Python and JavaScript SDKs, an agent skill, and OpenRouter.
 - [RoverLead](https://agentscouthq.com/tools/roverlead.html) (added 2026-10-20): RoverLead is an AI SDR for LinkedIn. Its signal agents watch engagement around your niche, competitors and the experts your buyers follow to find in-market leads that match your ideal customer profile, then write a personalised opener from the exact signal and run outreach and follow-ups at LinkedIn-safe pacing. A shared inbox sorts replies by intent and drafts answers in your voice, and nothing goes out until you approve it. Connects to your CRM and to Claude or ChatGPT through MCP.
@@ -413,6 +416,7 @@ Contact: support@agentscouthq.com
 - [Free AI document and RAG tools](https://agentscouthq.com/s/free-ai-document-agents.html)
 - [Free AI image and design agents](https://agentscouthq.com/s/free-ai-image-and-design-agents.html)
 - [Free AI research agents](https://agentscouthq.com/s/free-ai-research-agents.html)
+- [Free AI SRE agents](https://agentscouthq.com/s/free-ai-sre-agents.html)
 - [Free AI voice agents](https://agentscouthq.com/s/free-ai-voice-agents.html)
 - [Free MCP servers](https://agentscouthq.com/s/free-mcp-servers.html)
 - [Free no-code AI agent builders](https://agentscouthq.com/s/free-no-code-ai-agent-builders.html)

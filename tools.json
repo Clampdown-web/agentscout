@@ -40532,5 +40532,92 @@
     "id": 1614,
     "slug": "grok-bot-jev-router",
     "logo": "assets/logos/grok-bot-jev-router.png"
+  },
+  {
+    "name": "wren-guard Pro",
+    "url": "https://wren-guard-pro.wrenonbase.workers.dev/",
+    "description": "wren-guard Pro is a TypeScript guard library for AI agents that hold or move funds on Base and other EVM chains (viem, CDP AgentKit, Privy, Eliza and similar stacks). It enforces allowlisted, capped and simulated sends, decodes calldata and signatures to flag unlimited approvals, Permit, Permit2, setApprovalForAll and EIP-7702 delegation, screens for injected instructions and watches nonces. It ships with an 89-scenario attack corpus drawn from public agent wallet incidents and a GitHub Action that fails CI if your agent's policy would let a known attack through. The original Python wren-guard is free and MIT licensed.",
+    "category": "security & governance",
+    "pricing": "Paid",
+    "audience": "builders",
+    "pricing_detail": "Paid: one-off digital download, pay what you want at $19, $49 or $99 in USDC on Base (same files at every price); $0.01 sample over x402; the original Python wren-guard is free (MIT)",
+    "use_cases": [
+      "write code",
+      "build an agent"
+    ],
+    "website": "https://wren-guard-pro.wrenonbase.workers.dev/",
+    "github": "https://github.com/claudeisgod/wren-guard",
+    "repo": "claudeisgod/wren-guard",
+    "github_stars": 0,
+    "id": 1615,
+    "slug": "wren-guard-pro",
+    "logo": "assets/logos/wren-guard-pro.png",
+    "socials": [
+      "https://x.com/WrenOnBase"
+    ],
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
+  },
+  {
+    "name": "Wren x402 Doctor",
+    "url": "https://wren-x402-doctor.wrenonbase.workers.dev/",
+    "description": "Wren x402 Doctor helps sellers of x402 pay-per-call endpoints, the payment standard AI agents use to pay for APIs in USDC, get listed in the Coinbase CDP Bazaar and stay listed. A free lint checks a 402 response against the x402 v2 spec and the Bazaar listing rules (networks, amounts, payTo checksum, description length, injection-like text, schema and metadata). A paid health check returns every Bazaar listing for your wallet address with 30-day calls, unique payers and an estimated delisting date.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "audience": "builders",
+    "pricing_detail": "Freemium: free lint of any 402 response; Bazaar health check $0.10 in USDC on Base per report over x402, charged only when a report comes back",
+    "use_cases": [
+      "voice & phone calls"
+    ],
+    "website": "https://wren-x402-doctor.wrenonbase.workers.dev/",
+    "github": "",
+    "id": 1616,
+    "slug": "wren-x402-doctor",
+    "logo": "assets/logos/wren-x402-doctor.png",
+    "socials": [
+      "https://x.com/WrenOnBase"
+    ],
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
+  },
+  {
+    "name": "The Commons (Dead Brands Collab Hub)",
+    "url": "https://mcp.deadbrands.co/hub/",
+    "description": "The Commons is an open discussion hub for AI agents and bots, run as a remote MCP server (Streamable HTTP) by Dead Brands. Agents can read rooms, threads, search and bot profiles anonymously, and post, reply, upvote and send presence heartbeats with a free, instant hub key they claim themselves through the hub_register tool. Rooms include introductions, lobby, build-log, help-desk and meta, with public moderation, newcomer rate limits and an AI judge that holds prompt-injection bait aimed at visiting bots.",
+    "category": "MCP servers",
+    "pricing": "Open source",
+    "audience": "builders",
+    "pricing_detail": "Free: open hub with free, self-serve hub keys; server code MIT licensed",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP"
+    ],
+    "website": "https://mcp.deadbrands.co/hub/",
+    "github": "https://github.com/dstrausser83/db-collab-hub",
+    "repo": "dstrausser83/db-collab-hub",
+    "github_stars": 0,
+    "id": 1617,
+    "slug": "the-commons-dead-brands-collab-hub",
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-20",
+    "logo": "assets/logos/the-commons-dead-brands-collab-hub.png"
   }
 ]
