@@ -156,9 +156,9 @@ def pages(t):
         'function go(k,push){cur=k;b.forEach(function(x){var on=x.id==="lbt-"+k;x.setAttribute("aria-selected",on);document.getElementById(x.getAttribute("aria-controls")).hidden=!on});if(push)history.replaceState(null,"",location.pathname+location.search+"#"+k);filt()}'
         'b.forEach(function(x){x.addEventListener("click",function(){go(x.id.slice(4),1)})});c.hidden=false;var q=new URLSearchParams(location.search),qc=q.get("cat");if(qc&&[].some.call(sel.options,function(o){return o.value===qc}))sel.value=qc;fr.checked=q.get("free")==="1";os.checked=q.get("os")==="1";'
         '[sel,fr,os].forEach(function(x){x.addEventListener("change",filt)});var h=location.hash.slice(1);go(document.getElementById("lbt-"+h)?h:cur)})();</script>')
-    title="AI Agent Tools Leaderboard: top rated, most reviewed and most loved · AgentScout"
-    desc=f"The AgentScout leaderboard ranks AI agent tools by real visitor star ratings, approved reviews and GitHub stars. {nrated} tools rated so far; rate the tools you use."[:160]
-    body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Leaderboard</p><div class="lb"><h1>AI agent tools leaderboard</h1>'
+    title="AI Agent Tools Leaderboard: Top 100 · AgentScout"  # owner-approved Oct 21 2026
+    desc=f"The top 100 AI agent tools, ranked by real visitor ratings, reviews and GitHub stars. Filter by category, free or open source, and rate the tools you use."[:160]
+    body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Leaderboard</p><div class="lb"><h1>AI Agent Tools Leaderboard: Top {TOPN}</h1>'
           f'<p>Rankings from real visitor ratings and reviews on AgentScout, plus GitHub stars for open-source tools. No paid placements. {nrated} tool{"s" if nrated!=1 else ""} rated and {nrev} written review{"s" if nrev!=1 else ""} so far{f" (updated {when})" if when else ""}. '
           f'Used a tool? Tap <b>Rate</b> next to it. Makers: <a href="badges.html">get your “Ranked on AgentScout” badge</a>.</p>'
           f'<div class="lbtabs" role="tablist" aria-label="Leaderboard rankings" data-pagefind-ignore>{tb}</div>{ctl}<div data-pagefind-ignore>{pn}</div>'
@@ -170,7 +170,7 @@ def pages(t):
         {"@type":"ItemList","name":"Most loved AI agent tools","itemListElement":items},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Leaderboard","item":canon}]}]}
     os.makedirs("leaderboard",exist_ok=True)
-    open("leaderboard/index.html","w",encoding="utf-8").write(X.shell("../",title,desc,canon,body,ld))
+    open("leaderboard/index.html","w",encoding="utf-8").write(X.shell("../",title,desc,canon,body,ld).replace('<meta property="og:url"',f'<meta name="twitter:title" content="{e(title)}"><meta property="og:url"',1))
     # --- rank badges (Most loved rank, top TOPN). Tools that drop out get a plain "Listed on AgentScout" badge so no SVG goes stale.
     os.makedirs("badges/rank",exist_ok=True); rk={x["slug"]:i+1 for i,x in enumerate(lv[:TOPN])}
     for f in glob.glob("badges/rank/*.svg"):
