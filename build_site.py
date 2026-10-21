@@ -210,6 +210,7 @@ import build_sponsor
 # build so sitewide passes (asset versions, nav, footer, live stats) never touch the hidden page.
 _SP=open("sponsor.html","rb").read() if os.path.exists("sponsor.html") and os.environ.get("SPONSOR_REBUILD")!="1" else None
 if _SP is None: build_sponsor.page(t)  # hidden sponsor page: noindex, not in sitemap, not linked (Oct 18 2026)
+import build_bot_templates; build_bot_templates.run()  # extra Bot templates from data/bot-templates-extra.json (Oct 21 2026)
 import build_tasks
 build_tasks.sitewide(t)
 import build_sections
