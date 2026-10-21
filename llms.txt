@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,622 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,624 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -22,12 +22,12 @@ Contact: support@agentscouthq.com
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 233 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 182 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 232 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 184 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 133 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 86 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 75 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 65 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 66 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 64 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 60 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 54 tools
@@ -92,8 +92,10 @@ Contact: support@agentscouthq.com
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-20 to 2026-10-21): 150
+- Tools added in the last 2 days (2026-10-20 to 2026-10-21): 152
 
+- [Reticle](https://agentscouthq.com/tools/reticle.html) (added 2026-10-21): Verification layer for AI coding agents: a dev-only SDK inside your web or desktop app lets the agent drive real flows and read network calls, app state and console, then returns a pass, fail or cannot-tell verdict with the file and line to fix; saved flows replay without an AI model and can gate CI.
+- [Sphinx](https://agentscouthq.com/tools/sphinx.html) (added 2026-10-21): Open-source Git hook for agent-assisted coding: before code your agent wrote is pushed to a protected branch, it reads the diff and quizzes you on what the change actually does when things go wrong, and only lets the push through once you answer correctly. Works with Claude Code, Codex, Cursor and OpenCode.
 - [trivago MCP](https://agentscouthq.com/tools/trivago-mcp.html) (added 2026-10-21): trivago MCP is trivago's official remote MCP server for hotel search. Ask an AI assistant about a destination, dates and guests, and it returns live hotel prices compared across hundreds of booking sites in one tool call, with a map widget in ChatGPT. It needs no API key and connects in about a minute to Claude, ChatGPT, Cursor, VS Code and any client that reads the MCP Registry.
 - [WaveSpeed MCP](https://agentscouthq.com/tools/wavespeed-mcp.html) (added 2026-10-21): WaveSpeed MCP is WaveSpeedAI's official MCP server and CLI, which lets an AI agent run any model in WaveSpeed's live catalog of over a thousand image, video, audio and 3D generation models from one connection. Agents can pick a model, submit a generation job and get the result back without switching tools. It is available as a hosted remote server or a local install, and usage is billed per generation at WaveSpeed's API prices.
 - [Sundae](https://agentscouthq.com/tools/sundae.html) (added 2026-10-21): Sundae is a personal AI assistant you text from iMessage or Android RCS, with no app or account needed. It works on a computer of its own: it books tables, finds flights at current prices, compares shops, reads letters and photos you send, sets reminders, watches prices and builds simple web pages, then texts back with a screenshot so you can check. It remembers what you tell it, asks before spending money, sending, deleting or opening accounts, and stops at checkout for you to pay. It is free to start with a daily limit, with a paid Plus plan, and is in limited beta.

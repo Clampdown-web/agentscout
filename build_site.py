@@ -7,7 +7,7 @@ import build_logocheck; build_logocheck.run(t)  # stop the build if any tool lac
 SPONSOR_ENABLED = False
 RULES=[("write code",r"cod|IDE|PR|ticket|repo|program"),("automate the browser",r"browser|web browser|headless"),("control a computer",r"computer-use|desktop|operating system|cloud computer"),
 ("build multi-agent systems",r"multi-agent|crew|swarm|subagent"),("build an agent",r"framework|SDK|library|toolkit|harness|Development Kit"),("research the web",r"research|search|web data|website|cited|papers"),
-("voice & phone calls",r"voice|phone|\bcall(s|ers?)?\b|speech|TTS|talk"),("automate workflows",r"workflow|automation|automate|Zapier|apps"),("build apps without code",r"prompt-to-app|full apps|web apps|No-code|no-code|Drag-and-drop|visually"),
+("voice & phone calls",r"voice|phone|(?<!tool )(?<!tool-)(?<!API )(?<!function )(?<!RPC )\bcall(s|ers?)?\b|speech|TTS|talk"),("automate workflows",r"workflow|automation|automate|Zapier|apps"),("build apps without code",r"prompt-to-app|full apps|web apps|No-code|no-code|Drag-and-drop|visually"),
 ("connect tools via MCP",r"MCP"),("run code safely",r"sandbox|Sandbox|secure|policies"),("monitor & evaluate agents",r"observab|trac|evals|monitor|Evals|evaluat"),
 ("give agents memory",r"memory|Memory"),("sales & support",r"sales|prospect|customer|account"),("make diagrams",r"diagram"),("computer vision",r"vision")]
 # Film, TV, video and music categories (added Oct 18, 2026) get their own use-case tags; agent rules above don't fit media tools
@@ -32,7 +32,9 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"openknowledge":["give agents memory","productivity","write code"],  # daily discovery Oct 21: keyword guess gave control a computer
+UC_SET={"sphinx":["write code"],  # upkeep Oct 21: git push quiz hook for agent-written code
+"reticle":["write code","monitor & evaluate agents"],  # upkeep Oct 21: verifies coding-agent work in the running app
+"openknowledge":["give agents memory","productivity","write code"],  # daily discovery Oct 21: keyword guess gave control a computer
 "cumora":["build multi-agent systems","productivity","give agents memory"],  # Oct 21: guess gave browser/computer/voice
 "monocode":["write code"],  # Oct 21
 "pr-lens":["write code","make diagrams"],  # Oct 21

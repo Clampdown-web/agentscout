@@ -18669,11 +18669,11 @@
   ],
   "faq": [],
   "sources": [
-   "https://github.com/icon-project/sodax-sdks"
+   "https://github.com/gosodax/sodax-sdks"
   ],
   "updated": "2026-10-18",
   "facts": {
-   "repo": "https://github.com/icon-project/sodax-sdks",
+   "repo": "https://github.com/gosodax/sodax-sdks",
    "checked": "2026-10-18",
    "stars": 7,
    "forks": 3,
@@ -23647,5 +23647,721 @@
    "osi": true
   },
   "updated": "2026-10-20"
+ },
+ "sphinx": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Sphinx is an open-source Git hook for agent-assisted development. When you, or your coding agent, push to a branch you protect, Git pauses and Sphinx has a reviewer model that never saw your chat read the diff and ask you what the change does when things go wrong.",
+   "Answer wrong and it explains why, then tries a new scenario; answer right and the push continues. Its pitch is that you can outsource the writing but not the understanding. It runs on few tokens using your existing coding agent, OpenRouter or any OpenAI-compatible endpoint, never shows your answers to the coding agent, never opens .env files or keys, and has a logged 'sphinx yolo' escape hatch. It reached the Hacker News front page in October 2026."
+  ],
+  "who": "Developers who ship code written by Claude Code, Codex, Cursor or other agents and want to be sure they understand it before it reaches production.",
+  "features": [
+   "Git pre-push quiz on protected branches",
+   "Questions generated from the actual diff",
+   "Works with Codex, Claude Code, Cursor, OpenCode, Pi or plain Git",
+   "Any model: your agent, OpenRouter or OpenAI-compatible",
+   "Logged skip with 'sphinx yolo'"
+  ],
+  "faq": [
+   [
+    "Is Sphinx free?",
+    "Yes. It is open source under the MIT License; you only pay for the model tokens its questions use."
+   ],
+   [
+    "How do I install it?",
+    "npm install -g sphinx-understand, then run sphinx install (Node 22.19+, macOS, Linux or WSL)."
+   ]
+  ],
+  "sources": [
+   "https://github.com/parthh01/sphinx",
+   "https://sphinx-six-theta.vercel.app/",
+   "https://news.ycombinator.com/item?id=50137950"
+  ],
+  "facts": {
+   "repo": "https://github.com/parthh01/sphinx",
+   "stars": 280,
+   "forks": 12,
+   "checked": "2026-10-21",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "reticle": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Reticle checks whether your AI coding agent's work is actually done. A small dev-only SDK sits inside your running web or desktop app, and your agent gets tools to look, act, observe and assert through it, reading network responses, real store state, console errors and each element's source line rather than a screenshot.",
+   "Every check ends in a verdict, yes, no or cannot tell, with the evidence and the file and line to fix. Flows you verify can be saved and replayed deterministically without an AI model (Reticle cites about 480 tokens for a four-flow suite), and 'reticle gate' fails a CI change that touches a saved flow without a new passing run. It works with Claude Code, Cursor, Codex, Windsurf, VS Code, Gemini CLI and other MCP clients, on React, Next.js, Vue, Svelte, Angular, Electron and Tauri apps; the SDK is stripped from production builds."
+  ],
+  "who": "Developers using coding agents on web or desktop apps who are tired of acting as the agent's QA.",
+  "features": [
+   "Pass, fail or cannot-tell verdicts with file:line",
+   "Reads network, app state and console from inside the app",
+   "Saved flows replay without an AI model",
+   "CI gate for changes that touch saved flows",
+   "Hosted dashboard with run history and grouped failures"
+  ],
+  "faq": [
+   [
+    "Is Reticle open source?",
+    "Partly. The embeddable SDK packages are Apache-2.0; the server and CLI packages are under the Functional Source License (free for internal use, Apache-2.0 after two years), and enterprise features need a licence key."
+   ],
+   [
+    "Does it cost anything?",
+    "The hosted platform at app.reticle.sh is free to start with no credit card; paid and enterprise prices are not listed publicly."
+   ]
+  ],
+  "sources": [
+   "https://github.com/reticlehq/reticle",
+   "https://www.reticle.sh/",
+   "https://news.ycombinator.com/item?id=50163896"
+  ],
+  "facts": {
+   "repo": "https://github.com/reticlehq/reticle",
+   "stars": 1275,
+   "forks": 220,
+   "checked": "2026-10-21",
+   "license": "Apache-2.0 for the SDK packages, FSL-1.1-ALv2 for the server (source-available)",
+   "osi": false
+  },
+  "updated": "2026-10-21"
+ },
+ "manifest": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Manifest LLM Gateway is an open-source gateway for AI agents and apps. You connect API keys, subscriptions and local models once, and everything goes through one OpenAI-compatible endpoint; send model 'auto' and Manifest picks the model for each request, so you are not locked to one provider.",
+   "It connects to 300+ models through 35 built-in provider connections plus any OpenAI- or Anthropic-compatible endpoint, and can reuse 18 subscription flows. It logs full request and error bodies, tracks spend with budget alerts and limits, and falls back to other models when a query fails. You can use Manifest Cloud or self-host the Docker image on Railway, Render, AWS, GCP, Fly.io and other platforms."
+  ],
+  "who": "Developers and teams running agents across several model providers who want routing, fallbacks and cost tracking in one place.",
+  "features": [
+   "One OpenAI-compatible endpoint, auto model routing",
+   "300+ models via 35 providers, subscriptions and local models",
+   "Full request and error logs",
+   "Spend tracking, budget alerts and limits",
+   "Fallbacks and self-healing of failed requests"
+  ],
+  "faq": [
+   [
+    "How much does Manifest cost?",
+    "Self-hosting is free (MIT). Manifest Cloud has a Free plan (10,000 routed requests a month) until November 1, 2026; from November 2 Manifest Cloud costs $19/month (Pro)."
+   ]
+  ],
+  "sources": [
+   "https://github.com/mnfst/llm-gateway",
+   "https://manifest.build/pricing/"
+  ],
+  "facts": {
+   "repo": "https://github.com/mnfst/llm-gateway",
+   "stars": 7595,
+   "forks": 522,
+   "checked": "2026-10-21",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Self-hosted",
+     "Free",
+     "Docker, MIT licence, unlimited requests"
+    ],
+    [
+     "Cloud Free",
+     "$0",
+     "10,000 routed requests a month, 7-day retention; available until Nov 1, 2026"
+    ],
+    [
+     "Pro",
+     "$19/mo",
+     "Manifest Cloud, longer data access, unlimited agents"
+    ]
+   ],
+   "note": "From November 2, 2026 Manifest Cloud is $19/month; self-hosted stays free.",
+   "src": "https://manifest.build/pricing/",
+   "checked": "2026-10-21"
+  },
+  "updated": "2026-10-21"
+ },
+ "mcp-registry": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP Registry is the official, community-driven registry service for Model Context Protocol servers, run under the modelcontextprotocol project. It gives MCP clients a list of available servers, like an app store, and an API (registry.modelcontextprotocol.io) that clients and sub-registries can build on.",
+   "Server authors publish their own entries, and a working group with members from Stacklok, PulseMCP and others maintains it. It launched in preview in September 2025 and its v0.1 API was frozen in October 2025 so integrators could build against a stable contract while work continues towards general availability."
+  ],
+  "who": "MCP client developers who need a source of servers, and MCP server authors who want to be discoverable.",
+  "features": [
+   "Official list of MCP servers with a public API",
+   "Self-publishing for server authors",
+   "Basis for client app stores and sub-registries",
+   "Stable v0.1 API",
+   "Run as an open community project"
+  ],
+  "faq": [
+   [
+    "Is the MCP Registry free?",
+    "Yes. The code is open source (Apache-2.0, transitioning from MIT) and the public registry API is free to use."
+   ]
+  ],
+  "sources": [
+   "https://github.com/modelcontextprotocol/registry",
+   "https://registry.modelcontextprotocol.io/docs"
+  ],
+  "facts": {
+   "repo": "https://github.com/modelcontextprotocol/registry",
+   "stars": 7389,
+   "forks": 1031,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0 (transitioning from MIT)",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "sd-next": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SD.Next, by Vladimir Mandic, is an all-in-one open-source web interface for generating and editing images and video with a wide range of diffusion models. It runs locally on NVIDIA, AMD, Intel, Apple Silicon or CPU setups, on desktop or mobile.",
+   "You can create images or video from text or images, inpaint, outpaint and refine, guide generation with LoRA, ControlNet and IP-Adapters, and caption, tag, upscale, interpolate or colorize. Models can be auto-downloaded from a reference list, SDNQ quantization and offloading help on smaller GPUs, and a built-in installer manages dependencies and updates."
+  ],
+  "who": "Artists and hobbyists who want one local interface for many image and video diffusion models on their own hardware.",
+  "features": [
+   "Text- and image-to-image and video",
+   "Inpaint, outpaint, refine and detail",
+   "LoRA, ControlNet and IP-Adapter guidance",
+   "Caption, upscale, interpolate and colorize",
+   "Runs on NVIDIA, AMD, Intel, Apple Silicon or CPU"
+  ],
+  "faq": [
+   [
+    "Is SD.Next free?",
+    "Yes. It is open source under the Apache License 2.0 and runs on your own hardware."
+   ]
+  ],
+  "sources": [
+   "https://github.com/vladmandic/sdnext",
+   "https://vladmandic.github.io/sdnext-docs/"
+  ],
+  "facts": {
+   "repo": "https://github.com/vladmandic/sdnext",
+   "stars": 7357,
+   "forks": 580,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "glm-5": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "GLM-5 is Z.ai's open-weights model family for coding and long-horizon agentic work, and the GitHub repository now covers GLM-5, 5.1, 5.2, 5.3 and GLM-5.3-Flash. GLM-5.2 brought a stable 1M-token context and coding with selectable thinking effort, with IndexShare cutting per-token compute at long context.",
+   "GLM-5.3 keeps the 5.2 base and improves complex coding and long-horizon tasks through post-training, while GLM-5.3-Flash is a new, more efficient base with hybrid sparse and linear attention. The weights can be run yourself, and the models are also served through the Z.ai API platform and the z.ai chat app."
+  ],
+  "who": "Developers who want a strong open-weights model for coding agents and long agentic tasks, self-hosted or via API.",
+  "features": [
+   "Open weights for coding and agentic tasks",
+   "1M-token context (GLM-5.2 and later)",
+   "Selectable thinking effort",
+   "GLM-5.3-Flash efficient hybrid-attention variant",
+   "Also available through the Z.ai API"
+  ],
+  "faq": [
+   [
+    "Is GLM-5 free?",
+    "The weights and code are published openly (the repository is Apache-2.0); using it through the Z.ai API is paid, and those prices were not verified here."
+   ]
+  ],
+  "sources": [
+   "https://github.com/zai-org/GLM-5",
+   "https://z.ai/blog/glm-5.2"
+  ],
+  "facts": {
+   "repo": "https://github.com/zai-org/GLM-5",
+   "stars": 7367,
+   "forks": 991,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "triposr": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TripoSR is an open-source model from Tripo AI and Stability AI for fast feed-forward 3D reconstruction from a single image. Built on the Large Reconstruction Model (LRM) approach, it produces a 3D model in under half a second on an NVIDIA A100.",
+   "The code, pretrained model and demo are released under the MIT License. You run it with Python and PyTorch (about 6 GB of VRAM for one image by default), can bake a texture instead of vertex colors, and there is a local Gradio app; the technical report compares it favourably with other open-source image-to-3D models."
+  ],
+  "who": "3D artists, game developers and researchers who want quick image-to-3D meshes on their own GPU.",
+  "features": [
+   "Single image to 3D mesh",
+   "Under 0.5 s per model on an A100",
+   "Optional baked textures",
+   "Local Gradio app",
+   "MIT-licensed code and weights"
+  ],
+  "faq": [
+   [
+    "Is TripoSR free?",
+    "Yes. The code and pretrained model are open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/VAST-AI-Research/TripoSR",
+   "https://arxiv.org/abs/2403.02151"
+  ],
+  "facts": {
+   "repo": "https://github.com/VAST-AI-Research/TripoSR",
+   "stars": 7170,
+   "forks": 925,
+   "checked": "2026-10-21",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "superagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Superagent is an open-source SDK for AI agent safety. Its Guard call detects and blocks prompt injections, malicious instructions and unsafe tool calls at runtime, and Redact strips PII, PHI and secrets from text, with TypeScript and Python clients.",
+   "It can also scan repositories for attacks aimed at AI agents, such as repo poisoning and planted instructions, and run red-team scenarios against your agent. Alongside the SDK, Superagent sells a hosted security product that is free for open-source repositories, with credit-based plans for private ones."
+  ],
+  "who": "Teams building AI apps and agents that handle untrusted input or sensitive data.",
+  "features": [
+   "Prompt-injection and unsafe tool-call guard",
+   "PII, PHI and secret redaction",
+   "Repository scans for agent-targeted attacks",
+   "Red-team scenarios",
+   "TypeScript and Python SDKs"
+  ],
+  "faq": [
+   [
+    "How much does Superagent cost?",
+    "The SDK is free and open source (MIT). The hosted service is free for open-source repositories; for private repositories there is a free tier (100 credits a month), Starter $499/month, Growth $1,499/month and Scale from $3,999/month."
+   ]
+  ],
+  "sources": [
+   "https://github.com/superagent-ai/superagent",
+   "https://www.superagent.sh/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/superagent-ai/superagent",
+   "stars": 6770,
+   "forks": 966,
+   "checked": "2026-10-21",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Open source",
+     "Free",
+     "SDK (MIT); hosted use free on public repositories"
+    ],
+    [
+     "Free",
+     "$0",
+     "100 private-repository credits a month"
+    ],
+    [
+     "Starter",
+     "$499/mo",
+     "500 credits a month"
+    ],
+    [
+     "Growth",
+     "$1,499/mo",
+     "2,000 credits a month"
+    ],
+    [
+     "Scale",
+     "from $3,999/mo",
+     "6,000 credits a month"
+    ]
+   ],
+   "note": "Annual plans include 20% more credits.",
+   "src": "https://www.superagent.sh/pricing",
+   "checked": "2026-10-21"
+  },
+  "updated": "2026-10-21"
+ },
+ "mobilebuildmcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MobileBuildMCP, from Sentry, is an MCP server and CLI that gives coding agents the tools they need on iOS and macOS projects: building, testing and running apps with Xcode. One package covers both modes, the CLI for the terminal and the MCP server for agents such as Cursor, Claude Code and Codex.",
+   "It installs through Homebrew or npm (the Homebrew tap is getsentry/xcodebuildmcp), needs macOS 14.5+ and Xcode 16+, and ships two optional agent skills that teach the agent how to use the MCP tools or the CLI."
+  ],
+  "who": "iOS and macOS developers who let coding agents build, test and run their Xcode projects.",
+  "features": [
+   "Xcode build, test and run tools for agents",
+   "MCP server and CLI in one package",
+   "Works with Cursor, Claude Code and Codex",
+   "Optional MCP and CLI agent skills",
+   "Homebrew or npm install"
+  ],
+  "faq": [
+   [
+    "Is MobileBuildMCP free?",
+    "Yes. It is open source under the MIT License."
+   ],
+   [
+    "What do I need?",
+    "macOS 14.5 or later, Xcode 16 or later, and Node.js 18+ unless you install with Homebrew."
+   ]
+  ],
+  "sources": [
+   "https://github.com/getsentry/MobileBuildMCP"
+  ],
+  "facts": {
+   "repo": "https://github.com/getsentry/MobileBuildMCP",
+   "stars": 6497,
+   "forks": 327,
+   "checked": "2026-10-21",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "aios": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AIOS, from the AGI Research group, is an 'AI agent operating system' that embeds a language model into the operating system layer. Its kernel manages what agents need, such as LLM access, scheduling, context switching, memory, storage and tools, while the separate Cerebrum SDK is used to build and run agents on top.",
+   "It offers a web UI and a terminal UI, and a computer-use variant extends the kernel with a VM controller and an MCP server so agents can operate a desktop safely. It is a research project with accompanying papers rather than a commercial product."
+  ],
+  "who": "Researchers and developers exploring OS-level infrastructure for running many LLM agents.",
+  "features": [
+   "Kernel for agent scheduling and context switching",
+   "Memory, storage and tool management",
+   "Cerebrum SDK for building agents",
+   "Web and terminal UIs",
+   "Computer-use mode with VM controller and MCP"
+  ],
+  "faq": [
+   [
+    "Is AIOS free?",
+    "The code is free to download on GitHub, but the repository's LICENSE file is empty, so no open-source licence is declared."
+   ]
+  ],
+  "sources": [
+   "https://github.com/agiresearch/AIOS",
+   "https://docs.aios.foundation/"
+  ],
+  "facts": {
+   "repo": "https://github.com/agiresearch/AIOS",
+   "stars": 6492,
+   "forks": 924,
+   "checked": "2026-10-21",
+   "license": "no licence (the LICENSE file is empty)",
+   "osi": false
+  },
+  "updated": "2026-10-21"
+ },
+ "fragments": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Fragments is E2B's open-source Next.js template for apps that are fully generated by AI, in the spirit of Claude Artifacts or v0. You describe what you want, a model writes the code, and it runs in a secure E2B sandbox with output streamed into the UI.",
+   "It supports Python, Next.js, Vue.js, Streamlit and Gradio stacks, can install any npm or pip package, and works with OpenAI, Anthropic, Google, Mistral, Groq, Fireworks, Together AI and Ollama models. Running it needs an E2B API key and a model provider key; a hosted demo is at fragments.e2b.dev."
+  ],
+  "who": "Developers who want a starting point for their own AI app builder or code-artifact feature.",
+  "features": [
+   "Prompt-to-app generation in sandboxes",
+   "Python, Next.js, Vue, Streamlit and Gradio",
+   "Any npm or pip package",
+   "Many LLM providers, including Ollama",
+   "Next.js 14, shadcn/ui and Vercel AI SDK"
+  ],
+  "faq": [
+   [
+    "Is Fragments free?",
+    "The template is open source under the Apache License 2.0; you pay for your E2B sandbox usage and model API keys."
+   ]
+  ],
+  "sources": [
+   "https://github.com/e2b-dev/fragments",
+   "https://fragments.e2b.dev/"
+  ],
+  "facts": {
+   "repo": "https://github.com/e2b-dev/fragments",
+   "stars": 6393,
+   "forks": 863,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "deepchat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DeepChat is an open-source, local-first AI agent desktop client that puts models, tools, skills, agent runtimes and long-running sessions in one app. It works with cloud APIs such as OpenAI, Gemini and Anthropic and with local Ollama models, and any provider in those API formats.",
+   "Sessions follow a 'keep the process' design, so context, tool calls and results stay recoverable and inspectable. It has strong MCP support, installable and exportable skills, Agent Client Protocol (ACP) integration for coding agents, and remote control of sessions from Telegram, Feishu/Lark, QQBot, Discord and WeChat."
+  ],
+  "who": "People who want one private desktop app for chatting with many models and running agents, with their data stored locally.",
+  "features": [
+   "Local-first desktop agent client",
+   "MCP tools, prompts and resources",
+   "Installable skills per conversation",
+   "ACP agents in the model picker",
+   "Remote control from Telegram, Discord and more"
+  ],
+  "faq": [
+   [
+    "Is DeepChat free?",
+    "Yes. It is open source under the Apache License 2.0; you bring your own model API keys or local models."
+   ]
+  ],
+  "sources": [
+   "https://github.com/ThinkInAIXYZ/deepchat",
+   "https://deepchat.thinkinai.xyz/"
+  ],
+  "facts": {
+   "repo": "https://github.com/ThinkInAIXYZ/deepchat",
+   "stars": 6371,
+   "forks": 758,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "aio-sandbox": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AIO Sandbox is an all-in-one sandbox environment for AI agents that packs a browser, terminal, file system, VS Code Server, Jupyter and MCP into a single Docker container, so an agent can browse, run code and edit files in one place.",
+   "It starts with one docker run command, supports API-key authentication across its API, JupyterLab and VNC, and publishes pinned release images, including a mirror for users in mainland China. The project also provides an API, examples, a paper and an evaluation suite."
+  ],
+  "who": "Developers building agents that need a combined browser, shell and code environment they can self-host.",
+  "features": [
+   "Browser, shell, files, VS Code and Jupyter in one container",
+   "Built-in MCP access",
+   "One-command Docker start",
+   "API-key auth across services",
+   "Pinned release images"
+  ],
+  "faq": [
+   [
+    "Is AIO Sandbox free?",
+    "Yes. It is open source under the Apache License 2.0 and runs on your own Docker host."
+   ]
+  ],
+  "sources": [
+   "https://github.com/agent-infra/sandbox",
+   "https://sandbox.agent-infra.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/agent-infra/sandbox",
+   "stars": 6205,
+   "forks": 561,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "baserow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Baserow is an open-source no-code platform for building databases, applications, automations and AI agents, often used as an Airtable alternative. It combines a spreadsheet-style database with app and portal publishing on your own domain, automations and dashboards.",
+   "Its AI assistant, Kuma, can create databases and workflows from natural language. Baserow is API-first, runs in the cloud or self-hosted, and cites GDPR, HIPAA and SOC 2 Type II compliance and more than 150,000 users. The core is MIT-licensed, with premium and enterprise features under separate licences."
+  ],
+  "who": "Teams that want Airtable-style databases, internal apps and automations with the option to self-host.",
+  "features": [
+   "Spreadsheet-database hybrid",
+   "Apps and portals on your own domain",
+   "Automations and dashboards",
+   "Kuma AI assistant builds from prompts",
+   "Cloud or self-hosted, API-first"
+  ],
+  "faq": [
+   [
+    "How much does Baserow cost?",
+    "There is a free plan. Cloud Premium is $10 per user/month billed yearly ($12 monthly), Advanced is $18 per user/month yearly ($22 monthly), and Enterprise is on request."
+   ]
+  ],
+  "sources": [
+   "https://github.com/baserow/baserow",
+   "https://baserow.io/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/baserow/baserow",
+   "stars": 6184,
+   "forks": 770,
+   "checked": "2026-10-21",
+   "license": "the MIT License for the core (premium and enterprise features under their own licences)",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "3,000 rows and 2 GB per workspace, 2,000 automation credits"
+    ],
+    [
+     "Premium",
+     "$10/user/mo yearly ($12 monthly)",
+     "50,000 rows, 20 GB, AI features"
+    ],
+    [
+     "Advanced",
+     "$18/user/mo yearly ($22 monthly)",
+     "250,000 rows, 100 GB, roles and audit logs"
+    ],
+    [
+     "Enterprise",
+     "On request",
+     "1M rows, implementation support"
+    ]
+   ],
+   "note": "Cloud prices shown; self-hosted plans are listed separately on the same page.",
+   "src": "https://baserow.io/pricing",
+   "checked": "2026-10-21"
+  },
+  "updated": "2026-10-21"
+ },
+ "agents-cli": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agents CLI, from Google, is a command-line tool plus a set of skills that turn a coding assistant into an expert at building, evaluating and deploying AI agents on Google Cloud and the Gemini platform, so you don't have to learn every CLI and service yourself.",
+   "You install it with uvx google-agents-cli setup, or add only the skills with npx skills add google/agents-cli, then ask your coding agent (Antigravity CLI, Claude Code, Codex or another) to build an agent. It covers creating, scaling, governing and optimizing agents."
+  ],
+  "who": "Developers who build agents on Google Cloud and want their coding assistant to handle the setup and deployment.",
+  "features": [
+   "Skills for building agents on Gemini and Google Cloud",
+   "Evaluate and deploy from your coding agent",
+   "Works with Antigravity CLI, Claude Code and Codex",
+   "Skills-only install option",
+   "Python 3.11+ via uv"
+  ],
+  "faq": [
+   [
+    "Is Agents CLI free?",
+    "Yes. It is open source under the Apache License 2.0; the Google Cloud services you deploy to are billed separately."
+   ]
+  ],
+  "sources": [
+   "https://github.com/google/agents-cli",
+   "https://google.github.io/agents-cli/"
+  ],
+  "facts": {
+   "repo": "https://github.com/google/agents-cli",
+   "stars": 6137,
+   "forks": 702,
+   "checked": "2026-10-21",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-21"
+ },
+ "21st-magic-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "21st Magic MCP lets coding agents such as Cursor, Claude Code and Windsurf search 21st.dev's catalog of React and Tailwind components, generate new UI with AI and publish your own, right from the editor. Magic MCP has now been replaced by the unified 21st MCP, installed with the 21st CLI.",
+   "The original @21st-dev/magic package is kept as a small proxy so old configurations keep working; old Magic API keys were reset, so you need a fresh key from 21st.dev/mcp. Component search and code retrieval are included in 21st plans, while AI generation uses monthly AI credits."
+  ],
+  "who": "Front-end developers who want their coding agent to pull in or generate polished React UI components.",
+  "features": [
+   "Search 21st.dev React/Tailwind components from the editor",
+   "Generate UI variants with AI",
+   "Publish your own components",
+   "Works with Cursor, Claude Code, Windsurf, Codex and VS Code",
+   "Backwards-compatible proxy for old configs"
+  ],
+  "faq": [
+   [
+    "How much does 21st cost?",
+    "The MCP code is open source (ISC). 21st plans: Builder $6/month, Builder + AI $15/month and Team $7.50 per seat/month (billed yearly); extra AI credits are 100 for $5."
+   ]
+  ],
+  "sources": [
+   "https://github.com/21st-dev/magic-mcp",
+   "https://21st.dev/mcp",
+   "https://21st.dev/pricing"
+  ],
+  "facts": {
+   "repo": "https://github.com/21st-dev/magic-mcp",
+   "stars": 6161,
+   "forks": 503,
+   "checked": "2026-10-21",
+   "license": "the ISC License",
+   "osi": true
+  },
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Builder",
+     "$6/mo yearly",
+     "marketplace, component installs via MCP and CLI"
+    ],
+    [
+     "Builder + AI",
+     "$15/mo yearly",
+     "500-2,000 monthly AI credits, PR design reviews"
+    ],
+    [
+     "Team",
+     "$7.50/seat/mo yearly",
+     "2-50 seats, shared collections, admin controls"
+    ]
+   ],
+   "note": "Extra AI credits: 100 for $5 (roll over). Searching is free with 2 installs a day.",
+   "src": "https://21st.dev/pricing",
+   "checked": "2026-10-21"
+  },
+  "updated": "2026-10-21"
+ },
+ "swe-bench": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SWE-bench is the benchmark that tests whether language models and coding agents can resolve real GitHub issues: given a codebase and an issue, the system must produce a patch that makes the project's tests pass. It was introduced at ICLR 2024 and is one of the most cited coding-agent benchmarks.",
+   "Variants include SWE-bench Verified, a 500-task subset that engineers confirmed solvable (with OpenAI Preparedness), and SWE-bench Multimodal for visual software tasks, whose v2 with 480 tasks became fully open source in September 2026. Evaluation runs in containers locally, on Modal, or through the sb-cli cloud tool for leaderboard submissions."
+  ],
+  "who": "Researchers and teams who want to measure and compare coding models and agents on real-world issues.",
+  "features": [
+   "Real GitHub issues with test-based grading",
+   "SWE-bench Verified 500-task subset",
+   "SWE-bench Multimodal for visual tasks",
+   "Containerized evaluation harness",
+   "Cloud runs via Modal and sb-cli"
+  ],
+  "faq": [
+   [
+    "Is SWE-bench free?",
+    "Yes. The code and datasets are open source (MIT); you pay only for the compute and model calls your evaluation uses."
+   ]
+  ],
+  "sources": [
+   "https://github.com/SWE-bench/SWE-bench",
+   "https://www.swebench.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/SWE-bench/SWE-bench",
+   "stars": 6067,
+   "forks": 1025,
+   "checked": "2026-10-21",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-21"
  }
 }

@@ -15949,8 +15949,8 @@
       "connect tools via MCP"
     ],
     "website": "https://www.sodax.com",
-    "github": "https://github.com/icon-project/sodax-sdks",
-    "repo": "icon-project/sodax-sdks",
+    "github": "https://github.com/gosodax/sodax-sdks",
+    "repo": "gosodax/sodax-sdks",
     "id": 620,
     "slug": "sodax-sdk",
     "logo": "assets/logos/sodax-sdk.png",
@@ -17248,7 +17248,6 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
       "give agents memory"
     ],
     "website": "",
@@ -17289,7 +17288,7 @@
     "name": "Kong Gateway",
     "url": "https://konghq.com/products/kong-gateway",
     "description": "Cloud-native API, LLM and MCP gateway that adds routing, auth, multi-LLM support, semantic security and MCP traffic analytics through plugins.",
-    "category": "MCP servers",
+    "category": "agent infra",
     "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
@@ -18023,17 +18022,17 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (Apache-2.0, transitioning from MIT); public registry API free",
     "use_cases": [
       "connect tools via MCP"
     ],
     "website": "",
     "github": "https://github.com/modelcontextprotocol/registry",
     "repo": "modelcontextprotocol/registry",
-    "github_stars": 7372,
+    "github_stars": 7389,
     "id": 706,
     "slug": "mcp-registry",
     "logo": "assets/logos/mcp-registry.png"
@@ -18048,17 +18047,17 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "Open weights (repository Apache-2.0); Z.ai API pricing not verified yet",
     "use_cases": [
       "write code"
     ],
     "website": "https://z.ai/blog/glm-5.2",
     "github": "https://github.com/zai-org/GLM-5",
     "repo": "zai-org/GLM-5",
-    "github_stars": 7350,
+    "github_stars": 7367,
     "id": 707,
     "slug": "glm-5",
     "logo": "assets/logos/glm-5.png"
@@ -18073,10 +18072,10 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (MIT)",
     "use_cases": [
       "write code",
       "connect tools via MCP"
@@ -18084,7 +18083,7 @@
     "website": "",
     "github": "https://github.com/getsentry/MobileBuildMCP",
     "repo": "getsentry/MobileBuildMCP",
-    "github_stars": 6488,
+    "github_stars": 6497,
     "id": 708,
     "slug": "mobilebuildmcp",
     "logo": "assets/logos/mobilebuildmcp.png"
@@ -18099,10 +18098,10 @@
     "audience": "ready to use",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (Apache-2.0); bring your own model keys or local models",
     "use_cases": [
       "control a computer",
       "automate workflows",
@@ -18111,7 +18110,7 @@
     "website": "https://deepchat.thinkinai.xyz/",
     "github": "https://github.com/ThinkInAIXYZ/deepchat",
     "repo": "ThinkInAIXYZ/deepchat",
-    "github_stars": 6367,
+    "github_stars": 6371,
     "id": 709,
     "slug": "deepchat",
     "logo": "assets/logos/deepchat.png"
@@ -18126,10 +18125,10 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (Apache-2.0)",
     "use_cases": [
       "write code",
       "automate the browser",
@@ -18138,7 +18137,7 @@
     "website": "https://sandbox.agent-infra.com/",
     "github": "https://github.com/agent-infra/sandbox",
     "repo": "agent-infra/sandbox",
-    "github_stars": 6180,
+    "github_stars": 6205,
     "id": 711,
     "slug": "aio-sandbox",
     "logo": "assets/logos/aio-sandbox.png"
@@ -18153,10 +18152,10 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (Apache-2.0); Google Cloud usage billed separately",
     "use_cases": [
       "write code",
       "build an agent",
@@ -18165,7 +18164,7 @@
     "website": "https://google.github.io/agents-cli/",
     "github": "https://github.com/google/agents-cli",
     "repo": "google/agents-cli",
-    "github_stars": 6099,
+    "github_stars": 6137,
     "id": 712,
     "slug": "agents-cli",
     "logo": "assets/logos/agents-cli.png"
@@ -18175,15 +18174,15 @@
     "url": "https://21st.dev/mcp",
     "description": "MCP server from 21st.dev that lets Cursor, Claude Code and Windsurf search and generate React and Tailwind UI components inside the editor.",
     "category": "coding",
-    "pricing": "Open source",
+    "pricing": "Freemium",
     "maturity": "Mature",
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "GitHub",
-    "pricing_detail": "",
+    "pricing_detail": "MCP code open source (ISC); 21st plans Builder $6/mo, Builder + AI $15/mo, Team $7.50/seat/mo (billed yearly)",
     "use_cases": [
       "write code",
       "research the web",
@@ -18192,7 +18191,7 @@
     "website": "https://21st.dev/mcp",
     "github": "https://github.com/21st-dev/magic-mcp",
     "repo": "21st-dev/magic-mcp",
-    "github_stars": 6089,
+    "github_stars": 6161,
     "id": 713,
     "slug": "21st-magic-mcp",
     "logo": "assets/logos/21st-magic-mcp.png"
@@ -20197,7 +20196,7 @@
     "source": "GitHub",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls"
+      "security & governance"
     ],
     "website": "https://docs.agent-vault.dev/",
     "github": "https://github.com/Infisical/agent-vault",
@@ -21605,15 +21604,15 @@
     "url": "https://manifest.build/",
     "description": "Open-source LLM gateway that routes each request from agents and apps to the right model across API keys, subscriptions and local models, with spend tracking.",
     "category": "agent infra",
-    "pricing": "Open source",
+    "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "awesome lists",
-    "pricing_detail": "",
+    "pricing_detail": "Self-hosted free (MIT); Manifest Cloud Free plan until Nov 1, 2026, then Cloud $19/month (Pro)",
     "use_cases": [
       "automate workflows",
       "monitor & evaluate agents"
@@ -21621,7 +21620,7 @@
     "website": "https://manifest.build/",
     "github": "https://github.com/mnfst/llm-gateway",
     "repo": "mnfst/llm-gateway",
-    "github_stars": 7588,
+    "github_stars": 7595,
     "id": 851,
     "slug": "manifest",
     "logo": "assets/logos/manifest.png"
@@ -21631,23 +21630,22 @@
     "url": "https://www.superagent.sh/",
     "description": "SDK for AI agent safety that blocks prompt injections and unsafe tool calls, redacts PII and secrets, and runs red-team scenarios.",
     "category": "security & governance",
-    "pricing": "Open source",
+    "pricing": "Open source + cloud",
     "maturity": "Mature",
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "awesome lists",
-    "pricing_detail": "",
+    "pricing_detail": "SDK free and open source (MIT); hosted service free for open-source repos; private repos: free 100 credits/month, Starter $499/mo, Growth $1,499/mo, Scale from $3,999/mo",
     "use_cases": [
-      "build an agent",
-      "voice & phone calls"
+      "build an agent"
     ],
     "website": "https://www.superagent.sh/",
     "github": "https://github.com/superagent-ai/superagent",
     "repo": "superagent-ai/superagent",
-    "github_stars": 6766,
+    "github_stars": 6770,
     "id": 852,
     "slug": "superagent",
     "logo": "assets/logos/superagent.png"
@@ -21662,10 +21660,10 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "awesome lists",
-    "pricing_detail": "",
+    "pricing_detail": "Free to download on GitHub; no licence declared (empty LICENSE file)",
     "use_cases": [
       "control a computer",
       "build an agent",
@@ -21674,7 +21672,7 @@
     "website": "https://docs.aios.foundation/aios-docs",
     "github": "https://github.com/agiresearch/AIOS",
     "repo": "agiresearch/AIOS",
-    "github_stars": 6480,
+    "github_stars": 6492,
     "id": 853,
     "slug": "aios",
     "logo": "assets/logos/aios.png"
@@ -21689,10 +21687,10 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "awesome lists",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (Apache-2.0); needs an E2B API key and a model provider key",
     "use_cases": [
       "write code",
       "automate workflows",
@@ -21701,7 +21699,7 @@
     "website": "https://fragments.e2b.dev/",
     "github": "https://github.com/e2b-dev/fragments",
     "repo": "e2b-dev/fragments",
-    "github_stars": 6391,
+    "github_stars": 6393,
     "id": 854,
     "slug": "fragments",
     "logo": "assets/logos/fragments.png"
@@ -21716,10 +21714,10 @@
     "audience": "ready to use",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "awesome lists",
-    "pricing_detail": "",
+    "pricing_detail": "Free plan; Premium $10/user/mo yearly ($12 monthly), Advanced $18 ($22), Enterprise on request; self-host available (open core, MIT)",
     "use_cases": [
       "write code",
       "automate workflows",
@@ -21728,7 +21726,7 @@
     "website": "https://baserow.io/",
     "github": "https://github.com/baserow/baserow",
     "repo": "baserow/baserow",
-    "github_stars": 6170,
+    "github_stars": 6184,
     "id": 855,
     "slug": "baserow",
     "logo": "assets/logos/baserow.png"
@@ -21743,10 +21741,10 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "awesome lists",
-    "pricing_detail": "",
+    "pricing_detail": "Free and open source (MIT)",
     "use_cases": [
       "write code",
       "monitor & evaluate agents"
@@ -21754,7 +21752,7 @@
     "website": "https://www.swebench.com/",
     "github": "https://github.com/SWE-bench/SWE-bench",
     "repo": "SWE-bench/SWE-bench",
-    "github_stars": 6044,
+    "github_stars": 6067,
     "id": 856,
     "slug": "swe-bench",
     "logo": "assets/logos/swe-bench.png"
@@ -27817,7 +27815,7 @@
     "source": "GitHub",
     "pricing_detail": "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
     "use_cases": [
-      "voice & phone calls"
+      "agent infra"
     ],
     "website": "https://nango.dev/",
     "github": "https://github.com/NangoHQ/nango",
@@ -32250,7 +32248,7 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "Research (art, design, 3D & photo sweep)",
     "pricing_detail": "Free and open source (Apache-2.0)",
@@ -32264,7 +32262,7 @@
     "slug": "sd-next",
     "logo": "assets/logos/sd-next.png",
     "repo": "vladmandic/sdnext",
-    "github_stars": 7355
+    "github_stars": 7357
   },
   {
     "name": "Qwen-Image",
@@ -33824,7 +33822,7 @@
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-21",
     "added": "2026-10-18",
     "source": "Research (art, design, 3D & photo sweep)",
     "pricing_detail": "Free and open source (MIT)",
@@ -33837,7 +33835,7 @@
     "slug": "triposr",
     "logo": "assets/logos/triposr.png",
     "repo": "VAST-AI-Research/TripoSR",
-    "github_stars": 7101
+    "github_stars": 7170
   },
   {
     "name": "Marble (World Labs)",
@@ -41187,8 +41185,7 @@
     "logo": "assets/logos/fish-audio.png",
     "socials": [
       "https://x.com/FishAudio",
-      "https://discord.com/invite/fish-audio",
-      "https://www.linkedin.com/company/open-audio"
+      "https://discord.com/invite/fish-audio"
     ]
   },
   {
@@ -41301,5 +41298,56 @@
     "slug": "trivago-mcp",
     "logo": "assets/logos/trivago-mcp.png",
     "socials": []
+  },
+  {
+    "name": "Sphinx",
+    "url": "https://sphinx-six-theta.vercel.app/",
+    "description": "Open-source Git hook for agent-assisted coding: before code your agent wrote is pushed to a protected branch, it reads the diff and quizzes you on what the change actually does when things go wrong, and only lets the push through once you answer correctly. Works with Claude Code, Codex, Cursor and OpenCode.",
+    "category": "coding",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Hacker News",
+    "pricing_detail": "Free and open source (MIT); questions are generated by a model you choose (your existing coding agent, OpenRouter or any OpenAI-compatible endpoint), so you pay only for those tokens",
+    "use_cases": [
+      "write code"
+    ],
+    "website": "https://sphinx-six-theta.vercel.app/",
+    "github": "https://github.com/parthh01/sphinx",
+    "repo": "parthh01/sphinx",
+    "github_stars": 280,
+    "slug": "sphinx",
+    "id": 1642,
+    "logo": "assets/logos/sphinx.png"
+  },
+  {
+    "name": "Reticle",
+    "url": "https://www.reticle.sh/",
+    "description": "Verification layer for AI coding agents: a dev-only SDK inside your web or desktop app lets the agent drive real flows and read network calls, app state and console, then returns a pass, fail or cannot-tell verdict with the file and line to fix; saved flows replay without an AI model and can gate CI.",
+    "category": "coding",
+    "pricing": "Source-available + cloud",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Hacker News",
+    "pricing_detail": "Embeddable SDK packages are Apache-2.0; the server, init and test packages are FSL-1.1-ALv2 (free for internal use, Apache-2.0 after two years); the hosted platform at app.reticle.sh is free to start with no credit card; enterprise features need a paid licence (price not listed publicly)",
+    "use_cases": [
+      "write code",
+      "monitor & evaluate agents"
+    ],
+    "website": "https://www.reticle.sh/",
+    "github": "https://github.com/reticlehq/reticle",
+    "repo": "reticlehq/reticle",
+    "github_stars": 1275,
+    "slug": "reticle",
+    "id": 1643,
+    "logo": "assets/logos/reticle.png"
   }
 ]

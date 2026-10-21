@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T14:32:02Z",
- "updated": "2026-10-21T14:32:02Z",
+ "generated": "2026-10-21T15:43:44Z",
+ "updated": "2026-10-21T15:43:44Z",
  "last_checked": "2026-10-21",
- "count": 1622,
+ "count": 1624,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -25899,7 +25899,7 @@
    "slug": "sodax-sdk",
    "url": "https://www.sodax.com",
    "website": "https://www.sodax.com",
-   "github": "https://github.com/icon-project/sodax-sdks",
+   "github": "https://github.com/gosodax/sodax-sdks",
    "category": "crypto",
    "description": "Cross-network DeFi execution SDK (swaps, lending, bridging) with skills and a Builders MCP for AI-assisted development.",
    "key_features": [
@@ -25924,7 +25924,7 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "icon-project/sodax-sdks",
+   "repo": "gosodax/sodax-sdks",
    "github_stars": null,
    "open_source": false,
    "license": "",
@@ -28106,7 +28106,6 @@
     "Open source",
     "Mature",
     "59622 GitHub stars",
-    "Voice & phone calls",
     "Give agents memory"
    ],
    "pricing": "Open source",
@@ -28131,7 +28130,6 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls",
     "give agents memory"
    ],
    "hybrid": false,
@@ -28188,7 +28186,7 @@
    "url": "https://konghq.com/products/kong-gateway",
    "website": "https://konghq.com/products/kong-gateway",
    "github": "https://github.com/Kong/kong",
-   "category": "MCP servers",
+   "category": "agent infra",
    "description": "Cloud-native API, LLM and MCP gateway that adds routing, auth, multi-LLM support, semantic security and MCP traffic analytics through plugins.",
    "key_features": [
     "Open source + cloud",
@@ -29423,12 +29421,12 @@
    "category": "MCP servers",
    "description": "Official community-driven registry service and API that lists Model Context Protocol servers for MCP clients, like an app store for servers.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0, transitioning from MIT); public registry API free",
     "Mature",
-    "7372 GitHub stars",
+    "7389 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0, transitioning from MIT); public registry API free",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29446,9 +29444,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "modelcontextprotocol/registry",
-   "github_stars": 7372,
+   "github_stars": 7389,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "connect tools via MCP"
    ],
@@ -29465,12 +29463,12 @@
    "category": "models & local runtimes",
    "description": "Z.ai's open-weights GLM-5 model family built for coding and long-horizon agentic tasks, also offered through the Z.ai API.",
    "key_features": [
-    "Open weights",
+    "Open weights (repository Apache-2.0); Z.ai API pricing not verified yet",
     "Mature",
-    "7350 GitHub stars",
+    "7367 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open weights",
+   "pricing": "Open weights (repository Apache-2.0); Z.ai API pricing not verified yet",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29488,9 +29486,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "zai-org/GLM-5",
-   "github_stars": 7350,
+   "github_stars": 7367,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code"
    ],
@@ -29507,13 +29505,13 @@
    "category": "coding",
    "description": "Sentry's MCP server and CLI that gives coding agents build, test and run tools for iOS and macOS projects.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "6488 GitHub stars",
+    "6497 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29531,9 +29529,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "getsentry/MobileBuildMCP",
-   "github_stars": 6488,
+   "github_stars": 6497,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "connect tools via MCP"
@@ -29551,14 +29549,14 @@
    "category": "personal agents",
    "description": "Open-source, local-first AI agent desktop client with MCP, skills, ACP support and remote control from messaging apps.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0); bring your own model keys or local models",
     "Mature",
-    "6367 GitHub stars",
+    "6371 GitHub stars",
     "Control a computer",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0); bring your own model keys or local models",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -29576,9 +29574,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "ThinkInAIXYZ/deepchat",
-   "github_stars": 6367,
+   "github_stars": 6371,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "control a computer",
     "automate workflows",
@@ -29597,14 +29595,14 @@
    "category": "sandboxes & code execution",
    "description": "All-in-one Docker sandbox for AI agents that combines a browser, shell, files, MCP, VS Code Server and Jupyter in one container.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
-    "6180 GitHub stars",
+    "6205 GitHub stars",
     "Write code",
     "Automate the browser",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29622,9 +29620,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "agent-infra/sandbox",
-   "github_stars": 6180,
+   "github_stars": 6205,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "automate the browser",
@@ -29643,14 +29641,14 @@
    "category": "frameworks",
    "description": "Google's CLI and skills that teach coding assistants to build, evaluate and deploy agents on Google Cloud and the Gemini platform.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0); Google Cloud usage billed separately",
     "Mature",
-    "6099 GitHub stars",
+    "6137 GitHub stars",
     "Write code",
     "Build an agent",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0); Google Cloud usage billed separately",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29668,9 +29666,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "google/agents-cli",
-   "github_stars": 6099,
+   "github_stars": 6137,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "build an agent",
@@ -29689,18 +29687,17 @@
    "category": "coding",
    "description": "MCP server from 21st.dev that lets Cursor, Claude Code and Windsurf search and generate React and Tailwind UI components inside the editor.",
    "key_features": [
-    "Open source",
+    "MCP code open source (ISC); 21st plans Builder $6/mo, Builder + AI $15/mo, Team $7.50/seat/mo (billed yearly)",
     "Mature",
-    "6089 GitHub stars",
+    "6161 GitHub stars",
     "Write code",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "MCP code open source (ISC); 21st plans Builder $6/mo, Builder + AI $15/mo, Team $7.50/seat/mo (billed yearly)",
+   "price_tag": "freemium",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-18",
    "added": "2026-10-18",
@@ -29714,8 +29711,8 @@
    "seed": false,
    "new_this_week": true,
    "repo": "21st-dev/magic-mcp",
-   "github_stars": 6089,
-   "open_source": true,
+   "github_stars": 6161,
+   "open_source": false,
    "license": "",
    "tags": [
     "write code",
@@ -33073,8 +33070,7 @@
    "key_features": [
     "Open source",
     "Active",
-    "2368 GitHub stars",
-    "Voice & phone calls"
+    "2368 GitHub stars"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -33096,7 +33092,7 @@
    "open_source": true,
    "license": "",
    "tags": [
-    "voice & phone calls"
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-vault.png",
@@ -35443,13 +35439,13 @@
    "category": "agent infra",
    "description": "Open-source LLM gateway that routes each request from agents and apps to the right model across API keys, subscriptions and local models, with spend tracking.",
    "key_features": [
-    "Open source",
+    "Self-hosted free (MIT); Manifest Cloud Free plan until Nov 1, 2026, then Cloud $19/month (Pro)",
     "Mature",
-    "7588 GitHub stars",
+    "7595 GitHub stars",
     "Automate workflows",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "Self-hosted free (MIT); Manifest Cloud Free plan until Nov 1, 2026, then Cloud $19/month (Pro)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35467,9 +35463,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "mnfst/llm-gateway",
-   "github_stars": 7588,
+   "github_stars": 7595,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "automate workflows",
     "monitor & evaluate agents"
@@ -35487,13 +35483,12 @@
    "category": "security & governance",
    "description": "SDK for AI agent safety that blocks prompt injections and unsafe tool calls, redacts PII and secrets, and runs red-team scenarios.",
    "key_features": [
-    "Open source",
+    "SDK free and open source (MIT); hosted service free for open-source repos; private repos: free 100 credits/month, Starter $499/mo, Growth $1,499/mo, Scale from $3,999/mo",
     "Mature",
-    "6766 GitHub stars",
-    "Build an agent",
-    "Voice & phone calls"
+    "6770 GitHub stars",
+    "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "SDK free and open source (MIT); hosted service free for open-source repos; private repos: free 100 credits/month, Starter $499/mo, Growth $1,499/mo, Scale from $3,999/mo",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35509,12 +35504,11 @@
    "seed": false,
    "new_this_week": true,
    "repo": "superagent-ai/superagent",
-   "github_stars": 6766,
+   "github_stars": 6770,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "build an agent",
-    "voice & phone calls"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/superagent.png",
@@ -35529,14 +35523,14 @@
    "category": "frameworks",
    "description": "Research AI agent operating system that handles scheduling, context switching, memory, storage and tool management for LLM-based agents.",
    "key_features": [
-    "See site",
+    "Free to download on GitHub; no licence declared (empty LICENSE file)",
     "Mature",
-    "6480 GitHub stars",
+    "6492 GitHub stars",
     "Control a computer",
     "Build an agent",
     "Research the web"
    ],
-   "pricing": "See site",
+   "pricing": "Free to download on GitHub; no licence declared (empty LICENSE file)",
    "price_tag": "unknown",
    "platforms": [
     "Developer (API/SDK)"
@@ -35553,7 +35547,7 @@
    "seed": false,
    "new_this_week": true,
    "repo": "agiresearch/AIOS",
-   "github_stars": 6480,
+   "github_stars": 6492,
    "open_source": false,
    "license": "",
    "tags": [
@@ -35574,14 +35568,14 @@
    "category": "app builders",
    "description": "E2B's open-source Next.js template for AI-generated apps, like Claude Artifacts or v0, with generated code run in secure E2B sandboxes.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0); needs an E2B API key and a model provider key",
     "Mature",
-    "6391 GitHub stars",
+    "6393 GitHub stars",
     "Write code",
     "Automate workflows",
     "Run code safely"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0); needs an E2B API key and a model provider key",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35599,9 +35593,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "e2b-dev/fragments",
-   "github_stars": 6391,
+   "github_stars": 6393,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "automate workflows",
@@ -35620,14 +35614,14 @@
    "category": "no-code builders",
    "description": "No-code platform for databases, apps, automations and AI agents, an Airtable alternative available as cloud or self-hosted.",
    "key_features": [
-    "Open source + cloud",
+    "Free plan; Premium $10/user/mo yearly ($12 monthly), Advanced $18 ($22), Enterprise on request; self-host available (open core, MIT)",
     "Mature",
-    "6170 GitHub stars",
+    "6184 GitHub stars",
     "Write code",
     "Automate workflows",
     "Build apps without code"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Free plan; Premium $10/user/mo yearly ($12 monthly), Advanced $18 ($22), Enterprise on request; self-host available (open core, MIT)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -35644,9 +35638,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "baserow/baserow",
-   "github_stars": 6170,
+   "github_stars": 6184,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "automate workflows",
@@ -35665,13 +35659,13 @@
    "category": "evals & observability",
    "description": "Benchmark that tests whether language models and coding agents can resolve real GitHub issues, with multimodal and verified variants.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "6044 GitHub stars",
+    "6067 GitHub stars",
     "Write code",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35687,9 +35681,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "SWE-bench/SWE-bench",
-   "github_stars": 6044,
+   "github_stars": 6067,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "monitor & evaluate agents"
@@ -45991,8 +45985,7 @@
    "key_features": [
     "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
     "Mature",
-    "12807 GitHub stars",
-    "Voice & phone calls"
+    "12807 GitHub stars"
    ],
    "pricing": "Free plan (hard-capped); Pay-as-you-go $50/mo incl. $50 credits; Enterprise custom; source-available (Elastic License 2.0)",
    "price_tag": "freemium",
@@ -46015,7 +46008,7 @@
    "open_source": false,
    "license": "Elastic-License-2.0",
    "tags": [
-    "voice & phone calls"
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/nango.png",
@@ -53639,7 +53632,7 @@
    "key_features": [
     "Free and open source (Apache-2.0)",
     "Active",
-    "7355 GitHub stars",
+    "7357 GitHub stars",
     "Generate images",
     "Open image models"
    ],
@@ -53661,7 +53654,7 @@
    "seed": false,
    "new_this_week": true,
    "repo": "vladmandic/sdnext",
-   "github_stars": 7355,
+   "github_stars": 7357,
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
@@ -56348,7 +56341,7 @@
    "key_features": [
     "Free and open source (MIT)",
     "Active",
-    "7101 GitHub stars",
+    "7170 GitHub stars",
     "Generate 3d"
    ],
    "pricing": "Free and open source (MIT)",
@@ -56369,7 +56362,7 @@
    "seed": false,
    "new_this_week": true,
    "repo": "VAST-AI-Research/TripoSR",
-   "github_stars": 7101,
+   "github_stars": 7170,
    "open_source": true,
    "license": "MIT",
    "tags": [
@@ -68614,6 +68607,91 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/trivago-mcp.png",
    "page": "https://agentscouthq.com/tools/trivago-mcp.html"
+  },
+  {
+   "name": "Sphinx",
+   "slug": "sphinx",
+   "url": "https://sphinx-six-theta.vercel.app/",
+   "website": "https://sphinx-six-theta.vercel.app/",
+   "github": "https://github.com/parthh01/sphinx",
+   "category": "coding",
+   "description": "Open-source Git hook for agent-assisted coding: before code your agent wrote is pushed to a protected branch, it reads the diff and quizzes you on what the change actually does when things go wrong, and only lets the push through once you answer correctly. Works with Claude Code, Codex, Cursor and OpenCode.",
+   "key_features": [
+    "Free and open source (MIT); questions are generated by a model you choose (your existing coding agent, OpenRouter or any OpenAI-compatible endpoint), so you pay only for those tokens",
+    "Active",
+    "280 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Free and open source (MIT); questions are generated by a model you choose (your existing coding agent, OpenRouter or any OpenAI-compatible endpoint), so you pay only for those tokens",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Hacker News",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "parthh01/sphinx",
+   "github_stars": 280,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sphinx.png",
+   "page": "https://agentscouthq.com/tools/sphinx.html"
+  },
+  {
+   "name": "Reticle",
+   "slug": "reticle",
+   "url": "https://www.reticle.sh/",
+   "website": "https://www.reticle.sh/",
+   "github": "https://github.com/reticlehq/reticle",
+   "category": "coding",
+   "description": "Verification layer for AI coding agents: a dev-only SDK inside your web or desktop app lets the agent drive real flows and read network calls, app state and console, then returns a pass, fail or cannot-tell verdict with the file and line to fix; saved flows replay without an AI model and can gate CI.",
+   "key_features": [
+    "Embeddable SDK packages are Apache-2.0; the server, init and test packages are FSL-1.1-ALv2 (free for internal use, Apache-2.0 after two years); the hosted platform at app.reticle.sh is free to start with no credit card; enterprise features need a paid licence (price not listed publicly)",
+    "Active",
+    "1275 GitHub stars",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Embeddable SDK packages are Apache-2.0; the server, init and test packages are FSL-1.1-ALv2 (free for internal use, Apache-2.0 after two years); the hosted platform at app.reticle.sh is free to start with no credit card; enterprise features need a paid licence (price not listed publicly)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Hacker News",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "reticlehq/reticle",
+   "github_stars": 1275,
+   "open_source": false,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/reticle.png",
+   "page": "https://agentscouthq.com/tools/reticle.html"
   }
  ]
 }

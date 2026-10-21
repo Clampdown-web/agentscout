@@ -1,4 +1,4 @@
-{"checked":"2026-10-20","unit":"USD per 1M tokens, standard (non-batch) tier, short-context rates","note":"Copied by hand from each provider's official pricing page on the date checked. Prices change often; always confirm on the provider page.",
+{"checked":"2026-10-21","unit":"USD per 1M tokens, standard (non-batch) tier, short-context rates","note":"Copied by hand from each provider's official pricing page on the date checked. Prices change often; always confirm on the provider page.",
 "providers":[
 {"name":"OpenAI","source":"https://developers.openai.com/api/docs/pricing","context_note":"Short context = up to 272K input tokens; longer prompts cost more.","models":[
 {"id":"gpt-6-astra","in":10,"cached":1,"out":50},
