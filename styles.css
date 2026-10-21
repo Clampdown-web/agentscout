@@ -438,3 +438,6 @@ footer a.navbt::before{content:'';width:14px;height:14px;flex:0 0 14px;backgroun
 @media(min-width:641px){nav .nsrch+.links{column-gap:clamp(4px,calc(2.6vw - 14px),10px)}}
 
 .rv-rate{font-weight:600}.rv-cta{margin:4px 0 10px;padding:10px 12px;border-radius:10px;background:rgba(245,179,1,.1);border:1px solid rgba(245,179,1,.35);font-size:14px}
+@media(min-width:641px){.nsrch{flex:0 0 clamp(168px,16vw,210px)}}/* Oct 21 2026: keep the full "Search tools…" placeholder visible on tablets and laptops */
+@media(min-width:1024px) and (max-width:1279px){nav .links{font-size:13.5px;column-gap:12px}nav .links .btn{padding:6px 12px;font-size:13.5px}nav .nsrch{margin-left:10px}nav .links::after{display:none}}/* Oct 21 2026: two tidy rows instead of three */
+@media(min-width:1280px){nav .links::after{display:none}}
