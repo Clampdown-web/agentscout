@@ -40619,5 +40619,30 @@
     "maker_submitted": true,
     "submitted": "2026-10-20",
     "logo": "assets/logos/the-commons-dead-brands-collab-hub.png"
+  },
+  {
+    "name": "Moltgate",
+    "url": "https://moltgate.com/",
+    "description": "Moltgate helps AI agent builders and automation operators turn agent ideas into paid offers. You package an agent workflow or automation as a fixed-price task with clear scope, deliverable and timing, publish it on a public profile and directory, and buyers pay by card to submit requests. Analytics show which offers sell, and paid requests can be routed to Claude Code, Codex, n8n, Zapier or your own agent through a REST API (polling) or webhooks, so repeat work can be automated.",
+    "category": "business agents",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Freemium: Free plan publishes 1 offer at $9/$19/$29 task prices (you keep 80%); Pro $29/month (3 offers, $49/$99 prices, webhooks, analytics, keep 90%); Ultra $99/month (5 offers, up to $299 prices, keep 95%)",
+    "use_cases": [
+      "automate workflows"
+    ],
+    "website": "https://moltgate.com/",
+    "github": "",
+    "id": 1618,
+    "slug": "moltgate",
+    "logo": "assets/logos/moltgate.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20"
   }
 ]

@@ -32,7 +32,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"ai-memory":["give agents memory","write code"],  # upkeep Oct 20 PM: keyword guess added build an agent
+UC_SET={"moltgate":["automate workflows"],  # submission Oct 20 PM: "research task" keyword added research the web
+"ai-memory":["give agents memory","write code"],  # upkeep Oct 20 PM: keyword guess added build an agent
 "smolvm":["run code safely"],"lemonade":["models & local runtimes"],"recall-ai":["voice & phone calls","connect tools via MCP"],"agentic-scientist":["research the web"],"opengcua":["control a computer","automate the browser"],  # upkeep Oct 20 2026 PT: keyword guess added write code / evals
 "robylon":["sales & support","voice & phone calls","automate workflows"],"agent-resource-market":["build multi-agent systems"],
 # Oct 20, 2026 PT weekly batch: keyword rules mis-tagged these (e.g. "extracts" -> monitor, "browser interface" -> browser automation, "phone number" -> code), so pinned by hand

@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T01:21:39Z",
- "updated": "2026-10-21T01:21:39Z",
+ "generated": "2026-10-21T03:06:47Z",
+ "updated": "2026-10-21T03:06:47Z",
  "last_checked": "2026-10-20",
- "count": 1598,
+ "count": 1599,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -67563,6 +67563,46 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/the-commons-dead-brands-collab-hub.png",
    "page": "https://agentscouthq.com/tools/the-commons-dead-brands-collab-hub.html"
+  },
+  {
+   "name": "Moltgate",
+   "slug": "moltgate",
+   "url": "https://moltgate.com/",
+   "website": "https://moltgate.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "Moltgate helps AI agent builders and automation operators turn agent ideas into paid offers. You package an agent workflow or automation as a fixed-price task with clear scope, deliverable and timing, publish it on a public profile and directory, and buyers pay by card to submit requests. Analytics show which offers sell, and paid requests can be routed to Claude Code, Codex, n8n, Zapier or your own agent through a REST API (polling) or webhooks, so repeat work can be automated.",
+   "key_features": [
+    "Freemium: Free plan publishes 1 offer at $9/$19/$29 task prices (you keep 80%); Pro $29/month (3 offers, $49/$99 prices, webhooks, analytics, keep 90%); Ultra $99/month (5 offers, up to $299 prices, keep 95%)",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium: Free plan publishes 1 offer at $9/$19/$29 task prices (you keep 80%); Pro $29/month (3 offers, $49/$99 prices, webhooks, analytics, keep 90%); Ultra $99/month (5 offers, up to $299 prices, keep 95%)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/moltgate.png",
+   "page": "https://agentscouthq.com/tools/moltgate.html"
   }
  ]
 }
