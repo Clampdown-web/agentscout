@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-21T07:50:09Z",
- "updated": "2026-10-21T07:50:09Z",
+ "generated": "2026-10-21T12:37:20Z",
+ "updated": "2026-10-21T12:37:20Z",
  "last_checked": "2026-10-21",
  "count": 1602,
  "tools": [
@@ -62996,7 +62996,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/monobot-ai.png",
-   "page": "https://agentscouthq.com/tools/monobot-ai.html"
+   "page": "https://agentscouthq.com/tools/monobot-ai.html",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://agentscout-image.agentscouthq.workers.dev/reviews?tool=monobot-ai"
+   }
   },
   {
    "name": "Agent Barn",
