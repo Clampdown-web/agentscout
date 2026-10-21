@@ -362,7 +362,7 @@ def news_page(t):
     open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
 
 # Past issues on the public Beehiiv archive (https://agentscout.beehiiv.com/archive), checked read-only 2026-10-18.
-NL_ISSUES=[{"title":"AgentScout Weekly #1: 5 agent tools worth trying","subtitle":"Labeled for builders and everyday users","date":"2026-10-16","url":"https://agentscout.beehiiv.com/p/agentscout-weekly-1-5-agent-tools-worth-trying"}]
+NL_ISSUES=json.load(open("data/newsletter-issues.json"))  # refreshed by scripts/update_latest_issue.py (Oct 20 2026)
 def newsletter_page():
     canon=B+"newsletter.html"; title="AgentScout Weekly: AI Agent Newsletter Archive | AgentScout"
     desc="Past issues of AgentScout Weekly, a free weekly email with the best new AI agents, launches and what's worth trying. Read the archive or subscribe."

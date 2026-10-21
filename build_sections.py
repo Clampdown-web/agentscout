@@ -46,7 +46,7 @@ def build(t):
         "kinds":[{"id":"listed","label":"Listed","desc":"for any tool in the directory."},{"id":"featured","label":"Featured","desc":"for tools we've picked as featured."}],
         "variants":["light","dark"],"svg":B+"badges/{id}-{variant}.svg","png":B+"badges/{id}-{variant}.png","link":B}
     out={"free_tools":free_tools,"badges":badges,"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"categories":categories,"tasks":tasks,"compare":compare,"best":best,"news":news,"generate":generate,"submit":submit,
-        "newsletter":{"url":"https://agentscout.beehiiv.com/","subscribe":"https://agentscout.beehiiv.com/subscribe","latest":{"title":"AgentScout Weekly #1: 5 agent tools worth trying","date":"2026-10-16","summary":"Labeled for builders and everyday users"}}}
+        "newsletter":{"url":"https://agentscout.beehiiv.com/","subscribe":"https://agentscout.beehiiv.com/subscribe","latest":(lambda L:{"title":L["title"],"date":L["date"],"summary":L["subtitle"],"url":L["url"]})(json.load(open("data/latest-issue.json")))}}
     # Daily generator background: same file + version the site's generate.css uses (daily routine bumps ?v=)
     css=open("generate.css").read(); mv=re.search(r"--gen-art:url\((assets/gen-art\.webp\?v=[^)]+)\)",css)
     rel=mv.group(1) if mv else "assets/gen-art.webp"

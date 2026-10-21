@@ -1,4 +1,5 @@
 """Generates use-case tags, slugs and static detail pages from tools.json."""
+import subprocess as _sp,sys as _sys; _sp.run([_sys.executable,'scripts/update_latest_issue.py'])  # newsletter Latest issue (Oct 20 2026)
 import json,re,html,os,build_extras,build_rich,build_related
 t=json.load(open("tools.json"))
 import build_logocheck; build_logocheck.run(t)  # stop the build if any tool lacks a valid local logo (Oct 18 2026)
