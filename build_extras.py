@@ -163,6 +163,7 @@ def build(t):
     import build_best; urls+=build_best.pages(t)
     import build_free_tools; urls+=build_free_tools.pages(t)
     import build_landing; urls+=build_landing.pages(t)
+    import build_mcp_tasks; urls+=build_mcp_tasks.pages(t)  # Best MCP servers by task (Oct 21 2026)
     import build_trending; urls+=build_trending.pages(t)
     import os as _os2
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)

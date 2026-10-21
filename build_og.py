@@ -92,6 +92,7 @@ def run(t):
     for f in sorted(glob.glob("categories/*.html")): jobs.append(("category",f))
     for f in sorted(glob.glob("best/*.html")): jobs.append(("best",f))
     for f in sorted(glob.glob("s/*.html")): jobs.append(("search",f))
+    for f in sorted(glob.glob("mcp/*.html")): jobs.append(("best",f))
     for f in sorted(glob.glob("for/*.html")): jobs.append(("role",f))
     for f in ["free-tools.html"]+sorted(glob.glob("free-tools/*.html")): jobs.append(("free",f))
     for f in sorted(glob.glob("news/**/*.html",recursive=True)): jobs.append(("news",f))

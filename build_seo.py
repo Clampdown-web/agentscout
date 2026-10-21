@@ -6,7 +6,7 @@ Idempotent post-processing, run at the end of build_site.py:
 import glob,re,json,html
 B="https://agentscouthq.com/"
 def _groups():
-    return (sorted(glob.glob("tools/*.html"))+sorted(glob.glob("best/*.html"))+sorted(glob.glob("s/*.html"))+sorted(glob.glob("for/*.html"))
+    return (sorted(glob.glob("tools/*.html"))+sorted(glob.glob("best/*.html"))+sorted(glob.glob("s/*.html"))+sorted(glob.glob("for/*.html"))+sorted(glob.glob("mcp/*.html"))
         +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+sorted(glob.glob("tasks/*.html"))+sorted(glob.glob("compare/*.html"))+sorted(glob.glob("news/**/*.html",recursive=True))+["index.html"])
 def _attr(s,pat):
     m=re.search(pat,s); return m.group(1) if m else None
