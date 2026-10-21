@@ -53,15 +53,26 @@ def annotate():
         if s2!=s: open(p,"w",encoding="utf-8").write(s2)
         n+=1
     print("search: annotated",n,"pages")
+NAVFORM='<form data-navsearch class="nsrch" role="search" action="/search/" method="get"><input name="q" type="search" placeholder="Search tools…" aria-label="Search the site" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nsl"><ul id="nsl" role="listbox" aria-label="Suggestions" hidden></ul></form>'
+NAVJS='<script src="/navsearch.js?v=20261021b" defer></script>'
+OLD_LINK='<a data-navsearch href="/search/" aria-label="Search the site">🔍 Search</a>'
 def navlink():
+    """Unified search (Oct 21 2026, owner-approved): one compact box in the nav on every page (replaces the old "🔍 Search" link).
+    Suggestions come from navsearch.js (names.json first, Pagefind tool results to fill), so every page's CSP allows 'wasm-unsafe-eval'."""
     import glob
     n=0
     for f in glob.glob("**/*.html",recursive=True):
         if f.startswith(("sponsor","preview/","pagefind/")): continue
-        s=open(f,encoding="utf-8").read()
-        if 'data-navsearch' in s or '<div class="links">' not in s: continue
-        open(f,"w",encoding="utf-8").write(s.replace('<div class="links">','<div class="links"><a data-navsearch href="/search/" aria-label="Search the site">🔍 Search</a>',1)); n+=1
-    print("search: nav link added to",n,"pages")
+        s=open(f,encoding="utf-8").read(); s0=s
+        if '<div class="links">' not in s: continue
+        s=s.replace(OLD_LINK,"")
+        if 'form data-navsearch' not in s: s=s.replace('<div class="links">',NAVFORM+'<div class="links">',1)
+        else: s=re.sub(r'<form data-navsearch.*?</form>',lambda m:NAVFORM,s,1)
+        s=re.sub(r'<script src="/navsearch\.js[^"]*" defer></script>','',s)
+        s=s.replace("</body>",NAVJS+"</body>",1) if "</body>" in s else s+NAVJS
+        if "script-src 'self' 'unsafe-inline'" in s and "'wasm-unsafe-eval'" not in s: s=s.replace("script-src 'self'","script-src 'self' 'wasm-unsafe-eval'",1)
+        if s!=s0: open(f,"w",encoding="utf-8").write(s); n+=1
+    print("search: nav box updated on",n,"pages")
 def run():
     if os.environ.get("NO_PAGEFIND"): print("search: skipped (NO_PAGEFIND)"); return
     if not os.path.exists("sitemap.xml"): return

@@ -1,6 +1,6 @@
 <div class="crumb"><a href="../index.html">AgentScout</a> / Search</div><section style="padding-top:20px;text-align:left">
 <h1 style="text-align:left;margin-left:0">Search AgentScout</h1>
-<form id="sf" role="search" class="sub" style="max-width:640px;margin:0 0 12px" action="./" method="get"><label for="sq" class="sr-only" style="position:absolute;left:-9999px">Search the whole site</label><input id="sq" name="q" type="search" placeholder="Search tools, guides, news, free tools…" autocomplete="off"><button class="btn primary">Search</button></form>
+
 <div class="filters" role="group" aria-label="Filter results" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 8px">
 <label for="ftype">Type</label><select id="ftype" class="ucsel"><option value="">All types</option><option>Tools</option><option>Categories</option><option>Guides &amp; best-of</option><option>News</option><option>Free tools</option><option>Pages</option></select>
 <span id="toolf" style="display:contents"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option>Free</option><option>Freemium</option><option>Paid</option><option>Not listed</option></select>
@@ -8,22 +8,24 @@
 <label style="display:inline-flex;align-items:center;gap:6px;min-height:44px"><input type="checkbox" id="fos"> Open source only</label></span>
 <label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Relevance</option><option value="new">Newest</option></select>
 <button type="button" id="fclear" class="chip" style="min-height:44px">Clear filters</button></div>
-<p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type a search to begin.</p>
+<p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type in the search box at the top to begin.</p>
 <p id="ssugg" role="status" aria-live="polite" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres"></div>
 <style>#smore[hidden]{display:none!important}</style><p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
 <noscript><p>Search needs JavaScript. Browse <a href="../categories/index.html">categories</a> or the <a href="../index.html#directory">directory</a> instead.</p></noscript>
 </section>
 <script type="module">
-const $=id=>document.getElementById(id);const P=new URLSearchParams(location.search);
+const $0=id=>document.getElementById(id);const NF=document.querySelector("form[data-navsearch]");const SQ=NF.querySelector("input");const $=id=>id==="sq"?SQ:id==="sf"?NF:$0(id);const P=new URLSearchParams(location.search);
 let pf,names,page=0,list=[],tok=0,more_=0;const PER=20,POOL=120;
-$("sq").value=P.get("q")||"";$("ftype").value=P.get("type")||"";$("fprice").value=P.get("price")||"";$("fos").checked=P.get("os")==="1";$("fsort").value=P.get("sort")==="new"?"new":"";
+/* URL filters are case-insensitive (price=free == price=Free, type=tools, cat=coding agents, os=true, sort=NEW) */
+const setSel=(id,v)=>{v=(v||"").trim().toLowerCase().replace(/\s+/g," ");const o=[...$(id).options].find(o=>(o.value||o.textContent).trim().toLowerCase()===v||(v==="guides"&&o.value.startsWith("Guides")));$(id).value=o?o.value:""};
+$("sq").value=P.get("q")||"";setSel("ftype",P.get("type"));setSel("fprice",P.get("price"));$("fos").checked=/^(1|true|yes|on)$/i.test(P.get("os")||"");$("fsort").value=(P.get("sort")||"").toLowerCase()==="new"?"new":"";
 const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const N=s=>(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
 const C=s=>N(s).replace(/[^a-z0-9]+/g,"");
 function toolMode(){const t=$("ftype").value;$("toolf").style.display=(t===""||t==="Tools")?"contents":"none"}
 function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("ftype").value)u.set("type",$("ftype").value);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort","new");history.replaceState(null,"","?"+u.toString())}
 async function load(){if(pf)return pf;const [m,nm]=await Promise.all([import("../pagefind/pagefind.js"),fetch("names.json").then(r=>r.json()).catch(()=>[])]);names=nm;pf=m;await pf.options({baseUrl:"/",excerptLength:22});pf.init();
- const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));$("fcat").value=P.get("cat")||"";return pf}
+ const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));setSel("fcat",P.get("cat"));return pf}
 function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;let p=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let c=[i];for(let j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[b.length]}
 function suggest(q){const cq=C(q);if(cq.length<3)return null;let best=null,bd=9;const lim=cq.length<=5?1:2;
  for(const [n,sl] of names){for(const cand of [C(n),C(sl)]){const d=lev(cq,cand);if(d<bd){bd=d;best=n}}}
@@ -47,7 +49,7 @@ async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??
  if($("ftype").value)filters.type=$("ftype").value;
  if($("ftype").value===""||$("ftype").value==="Tools"){if($("fprice").value)filters.pricing=$("fprice").value;if($("fcat").value)filters.category=$("fcat").value;if($("fos").checked)filters["open source"]="Yes"}
  $("ssugg").innerHTML="";$("sbest").innerHTML="";
- if(!q&&!Object.keys(filters).length){$("sres").innerHTML="";$("smore").hidden=true;$("sstat").textContent="Type a search to begin.";return}
+ if(!q&&!Object.keys(filters).length){$("sres").innerHTML="";$("smore").hidden=true;$("sstat").textContent="Type in the search box at the top to begin.";return}
  $("sstat").textContent="Searching…";await load();
  const opts={};if($("fsort").value==="new")opts.sort={date:"desc"};
  let res=await run(q,filters,opts);if(my!==tok)return;let used=q,orig=null;
@@ -72,5 +74,5 @@ $("fclear").onclick=()=>{["ftype","fprice","fcat","fsort"].forEach(id=>$(id).val
 $("smore").onclick=()=>render();
 $("ssugg").addEventListener("click",e=>{if(e.target.id==="didyou"){e.preventDefault();$("sq").value=e.target.textContent;go()}});
 $("sq").addEventListener("focus",()=>load(),{once:true});
-toolMode();if(P.toString())load().then(()=>go());
+toolMode();if(P.toString())load().then(()=>go());else if(matchMedia("(pointer:fine)").matches)SQ.focus();
 </script>
