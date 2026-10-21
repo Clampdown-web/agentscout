@@ -2,7 +2,7 @@
 Membership is a hand-checked slug list per task (each listing's own description names the job); every count, star
 figure, pricing label and date is read from tools.json / data/github.json / reviews.json at build time. Tasks with an
 existing focused page (docs, cloud, design) or fewer than 5 solid servers are folded into the hub."""
-import os,json,urllib.parse,collections
+import os,re,json,urllib.parse,collections
 import build_extras as X, build_best as BB
 B=X.B; e=X.e
 MIN=5
@@ -64,7 +64,8 @@ FOLD=[("Docs for coding agents","Up-to-date library and API documentation for co
 SHORT={"marketing-and-analytics-mcp-servers":"SEO and analytics","mcp-gateways-and-registries":"gateways and registries","monitoring-mcp-servers":"monitoring and incidents","productivity-mcp-servers":"Notion and Google Workspace","software-development-mcp-servers":"GitHub, issues and CI","web-search-and-scraping-mcp-servers":"web search and scraping"}
 def flink(q,d="../"): return f'{d}index.html?'+urllib.parse.urlencode({"cat":"MCP servers","q":q,"sort":"stars"})+"#directory"
 def item(i,x):
-    h=BB.item(i,x).replace('href="../','href="../')
+    h=BB.item(i,x)
+    h=re.sub(r'<a class="b cat has-cico" href="[^"]*">(.*?)</a>',r'<span class="b cat has-cico">\1</span>',h,1)  # every item is an MCP server; avoids small duplicate tap targets
     p=pushed(x); rv=rating(x)
     extra=(f' · Last code push {p}' if p else "")+(f' · Visitor rating {rv[0]:g}/5 ({rv[1]})' if rv[1] else "")
     return h.replace(f'· {e(x["maturity"])}</p></li>',f'· {e(x["maturity"])}{extra}</p></li>',1)
@@ -112,6 +113,7 @@ def pages(t):
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">MCP servers by task</a> / {e(lab)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h1)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Here are the {n} we list, ranked.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked them:</strong> each server here is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a> and its listing says it does this job. We order them by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come last. Links checked {asof}. No paid placements.</p>'
+              f'<h2 {H2}>The {n} MCP servers for {e(job)}, ranked</h2>'
               f'<ol class="grid" style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(it))}</ol>'
               f'<p style="margin:18px 0 0"><a href="{flink(kw)}">Filter these live in the directory</a>: MCP servers matching “{e(kw)}”, sorted by GitHub stars. You can add pricing and open-source filters there.</p>'
               f'<h2 {H2}>How to choose</h2><ul>{"".join(f"<li>{e(b)}</li>" for b in how)}<li>Only connect servers you trust: an MCP server can read and act on whatever its credentials allow.</li></ul>'
