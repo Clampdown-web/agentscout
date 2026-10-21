@@ -209,7 +209,14 @@ def added_line(x):
     try: lab=_dt.date.fromisoformat(a).strftime("%b %-d, %Y")
     except Exception: return ""
     return f'<p class="addedago">Added <time class="ago" datetime="{e(a)}">{e(lab)}</time></p>'
-def card(x,d="../"): return f'<a class="card tile" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+def ptag(p):
+    """Pricing class for search filters (Oct 21 2026); mirrors pc() in index.html. 'See site' and plain source-available stay unknown, never free."""
+    p=(p or "").lower()
+    if re.match(r"^(open|free$)",p): return "freemium" if "cloud" in p else "free"
+    if "freemium" in p or "+ cloud" in p: return "freemium"
+    if re.match(r"^(paid|usage|enterprise)",p): return "paid"
+    return "unknown"
+def card(x,d="../"): return f'<a class="card tile" data-s="{e(x["slug"])}" data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -248,12 +255,15 @@ def agentic_first(path,items):
     """Media category pages (Oct 18, 2026) lead with agentic tools; the order is otherwise unchanged."""
     if path in {f"categories/{catslug(c)}.html" for c in LEAD_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
     return items
+def catbar(n): return ('<div class="filters cfilters" id="cfilters" role="group" aria-label="Filter and sort these tools"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option value="free">Free</option><option value="freeplan">Free or free plan</option><option value="freemium">Freemium</option><option value="paid">Paid</option><option value="unknown">Pricing not listed</option></select>'
+ '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label><label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option></select>'
+ '<button type="button" class="chip" id="freset" hidden>Clear all filters</button></div><p class="count" id="ccount" aria-live="polite">Showing {n} of {n} tools</p><p class="snote muted" id="snote" hidden></p>').replace("{n}",str(n))
 def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre=""):
     canon=B+path
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(agentic_first(path,newfirst(items)))]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}<div class="grid">{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items)) if path.startswith("categories/") else ""}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{'<script src="../catfilter.js?v=20261021a" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",

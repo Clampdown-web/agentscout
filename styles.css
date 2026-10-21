@@ -424,3 +424,7 @@ footer a.navbt::before{content:'';width:14px;height:14px;flex:0 0 14px;backgroun
 
 /* Oct 20 2026 mobile pass: phone nav links get a 25px tap height (row gap trimmed so the nav keeps the same height) */
 @media(max-width:430px){nav .links a:not(.btn){padding:2px 0}nav .links{row-gap:2px}}
+/* search filters on home + category pages, bigger chip tap targets (Oct 21 2026) */
+.filters{display:flex;gap:8px 10px;flex-wrap:wrap;align-items:center;margin:0 0 4px;font-size:13px;color:var(--faint)}.filters .fchk{display:inline-flex;align-items:center;gap:6px;min-height:40px;color:var(--text);cursor:pointer}.filters .fchk input{width:18px;height:18px;margin:0}.filters select{min-height:40px}.snote{font-size:12.5px;margin:-6px 0 12px}.cfilters{margin:16px 0 6px}.card[hidden]{display:none}
+.chip{height:auto;min-height:40px}.chips{gap:8px}
+@media(max-width:640px){.filters select{flex:1 1 140px}.chip{min-height:44px}}
