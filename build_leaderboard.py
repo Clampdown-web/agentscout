@@ -1,7 +1,7 @@
 """Leaderboard page /leaderboard/ (Oct 21 2026, owner-approved in Work Chat: "Yes to all the suggestions").
 Real data only: visitor star ratings and approved written reviews from reviews.json (refreshed from the Worker by build_reviews
 on every build), and GitHub stars from tools.json. Nothing is seeded or estimated.
-Tabs: Top rated (min MIN_RATED ratings), Most reviewed (approved written reviews), Most loved (same weighting as the directory's
+Tabs: Top rated (min MIN_RATED ratings AND MIN_RATED approved reviews), Most reviewed (approved written reviews), Most loved (same weighting as the directory's
 "Most loved" sort: rated tools first, then open-source tools by GitHub stars as the fallback)."""
 import json,html,datetime
 import build_extras as X
@@ -20,7 +20,7 @@ def pages(t):
     except Exception: D={}; upd=""
     bs={x["slug"]:x for x in t}; R={k:v for k,v in D.items() if k in bs and v.get("count")}
     nrated=len(R); nrev=sum(len(v.get("reviews") or []) for v in R.values())
-    top=sorted([k for k,v in R.items() if v["count"]>=MIN_RATED],key=lambda k:(-R[k]["avg"],-R[k]["count"],bs[k]["name"].lower()))[:TOPN]
+    top=sorted([k for k,v in R.items() if v["count"]>=MIN_RATED and len(v.get("reviews") or [])>=MIN_RATED],key=lambda k:(-R[k]["avg"],-R[k]["count"],bs[k]["name"].lower()))[:TOPN]
     rev=sorted([k for k,v in R.items() if v.get("reviews")],key=lambda k:(-len(R[k]["reviews"]),-R[k]["count"],bs[k]["name"].lower()))[:TOPN]
     loved=sorted(R,key=lambda k:(-bay(R[k]),-R[k]["count"],bs[k]["name"].lower()))
     osrc=sorted([x for x in t if x.get("github") and x.get("github_stars") and x["slug"] not in R],key=lambda x:-x["github_stars"])
@@ -28,12 +28,12 @@ def pages(t):
     lv=lv[:max(TOPN,len(loved))]
     ol=lambda L:f'<ol class="lbl">{"".join(row(i+1,x,s) for i,(x,s) in enumerate(L))}</ol>'
     empty=lambda msg:f'<div class="lbe"><p>{msg}</p><p><a class="btn primary" href="../index.html#directory">Find a tool you use and rate it</a></p></div>'
-    p1=(ol([(bs[k],rt(R[k])) for k in top]) if top else "")+(empty(f'Only {len(top)} tool{"s have" if len(top)!=1 else " has"} {MIN_RATED} or more ratings so far, so this list is short. Tools appear here once they reach {MIN_RATED} visitor ratings.') if len(top)<10 else "")
+    p1=(ol([(bs[k],rt(R[k])) for k in top]) if top else "")+(empty(f'Only {len(top)} tool{"s have" if len(top)!=1 else " has"} {MIN_RATED} or more approved written reviews so far, so this list is short. Tools appear here once they have at least {MIN_RATED} ratings and {MIN_RATED} approved reviews.') if len(top)<10 else "")
     p2=(ol([(bs[k],f'<span><b>{len(R[k]["reviews"])}</b> <span class="muted">review{"s" if len(R[k]["reviews"])!=1 else ""}</span></span>') for k in rev]) if rev else "")+(empty("Very few written reviews so far. Approved reviews show up here.") if len(rev)<10 else "")
     p3=ol(lv)
     try: when=datetime.datetime.fromisoformat(upd.replace("Z","+00:00")).astimezone(datetime.timezone(datetime.timedelta(hours=-7))).strftime("%b %-d, %Y")
     except Exception: when=""
-    tabs=[("top","Top rated",p1,f"Average visitor star rating. Tools need at least {MIN_RATED} ratings to be ranked."),
+    tabs=[("top","Top rated",p1,f"Average visitor star rating. Tools need at least {MIN_RATED} ratings and {MIN_RATED} approved written reviews to be ranked."),
           ("reviewed","Most reviewed",p2,"Number of approved written reviews (each one is checked before it goes live)."),
           ("loved","Most loved",p3,"Rated tools first, weighted toward 4★ until a tool has more ratings (same as the directory's Most loved sort). Tools with no ratings yet follow, ranked by GitHub stars (open-source tools only).")]
     tb="".join(f'<button type="button" role="tab" id="lbt-{k}" aria-controls="lb-{k}" aria-selected="{"true" if i==0 else "false"}">{n}</button>' for i,(k,n,_,_) in enumerate(tabs))

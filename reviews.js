@@ -9,6 +9,9 @@
   document.querySelectorAll("a.rv-rate").forEach(function (a) { a.addEventListener("click", rateJump) })
   if (location.hash === "#rate" || location.hash === "#rv-form") setTimeout(rateJump, 300)
   var sec = document.getElementById("reviews"); if (!sec || !window.fetch) return;
+  // Turnstile (Oct 21 2026): shown only once a site key is set here; the Worker enforces it when REVIEW_TURNSTILE="true"
+  var TS_SITEKEY = ""
+  if (TS_SITEKEY) { var fm0 = sec.querySelector(".rv-form button[type=submit]"); if (fm0) { var td = document.createElement("div"); td.className = "cf-turnstile"; td.setAttribute("data-sitekey", TS_SITEKEY); td.style.margin = "12px 0 0"; fm0.parentNode.parentNode.insertBefore(td, fm0.parentNode); var sc = document.createElement("script"); sc.src = "https://challenges.cloudflare.com/turnstile/v0/api.js"; sc.async = true; document.head.appendChild(sc) } }
   var tool = sec.getAttribute("data-tool"), name = sec.getAttribute("data-name") || "this tool";
   var $ = function (s) { return sec.querySelector(s); };
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -51,7 +54,7 @@
     var text = (ta.value || "").trim();
     if (text && (text.length < 20 || text.length > 600)) { msg.textContent = "Reviews need 20 to 600 characters, or leave the box empty to just rate."; ta.focus(); return; }
     btn.disabled = true; msg.textContent = "Sending…";
-    fetch(W + "/review", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value }) })
+    fetch(W + "/review", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value, turnstileToken: (f.querySelector('input[name="cf-turnstile-response"]') || {}).value || "" }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         btn.disabled = false;
