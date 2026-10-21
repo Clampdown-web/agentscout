@@ -4,10 +4,11 @@ ICON='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="curren
 WRAP=('<span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page">'+ICON+'Share</button>'
       '<span class="sharecount" hidden></span></span>')
 # Pages with no share button on purpose: submit.html (form), 404.html, privacy.html (legal), saved.html (personal list), og.html/outreach-tracker.html (internal)
+# mcp/ hub + MCP task pages added Oct 21 2026 upkeep (they had no share button)
 EXTRA={"index.html","new.html","news.html","quiz.html","generate.html","about.html","badges.html","newsletter.html"}  # added Oct 18 2026 share audit
 CENTER={"index.html","generate.html"}  # centered hero h1 -> centered button
 def wanted(f):
-    return (f.startswith(("tools/","best/","s/","for/","categories/","tasks/","compare/","news/","free-tools/")) or f=="free-tools.html" or f in EXTRA)
+    return (f.startswith(("tools/","best/","s/","for/","categories/","tasks/","compare/","news/","free-tools/","mcp/")) or f=="free-tools.html" or f in EXTRA)
 def apply(f,s,d,V):
     if not wanted(f) or "<h1" not in s: return s
     if 'data-share' not in s:
