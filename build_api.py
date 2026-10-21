@@ -1,11 +1,12 @@
 """Generates api/tools.json (machine-readable daily feed for the AgentScout app) from tools.json."""
-import json,os,datetime
+import json,os,datetime,re
 def tag(p):
-    p=p.lower()
-    if p.startswith("open") : return "free"
-    if "freemium" in p or "cloud" in p: return "freemium"
-    if p in("see site",): return "unknown"
-    return "paid"
+    """Same classes as build_extras.ptag / pc() in index.html (Oct 21 2026 fix: 'Free' was tagged paid, 'Open source + cloud' free)."""
+    p=(p or "").lower()
+    if re.match(r"^(open|free$)",p): return "freemium" if "cloud" in p else "free"
+    if "freemium" in p or "+ cloud" in p: return "freemium"
+    if re.match(r"^(paid|usage|enterprise)",p): return "paid"
+    return "unknown"
 # Hand-checked platform overrides (Oct 20 2026 data cleanup): desktop editors were showing as "Web".
 PLAT={"cursor":["Desktop (macOS, Windows, Linux)"],"windsurf":["Desktop (macOS, Windows, Linux)","IDE extension"],"zed":["Desktop (macOS, Windows, Linux)"],"trae":["Desktop (macOS, Windows, Linux)"],
  "github-copilot":["IDE extension","Web"],"lm-studio":["Desktop (macOS, Windows, Linux)"],"jan":["Desktop (macOS, Windows, Linux)"]}
