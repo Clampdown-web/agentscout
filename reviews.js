@@ -49,28 +49,33 @@
 
   var f = $(".rv-form"); if (!f) return;
   var msg = $(".rv-msg"), btn = f.querySelector("button[type=submit]"), ta = f.querySelector("textarea"), cnt = $(".rv-cnt");
+  var MIN = 10, MAX = 600;
+  // Oct 21 2026: messages sit right under Submit; errors are red and scrolled into view so they are seen on phones
+  function show(t, kind) { msg.textContent = t; msg.className = "rv-msg" + (kind ? " rv-" + kind : ""); msg.style.cssText = kind === "err" ? "color:#c0392b;font-weight:600;margin:8px 0 0" : kind === "ok" ? "color:#1e8449;font-weight:600;margin:8px 0 0;padding:8px 10px;border:1px solid #1e8449;border-radius:8px" : "margin:8px 0 0"; if (kind) { try { msg.scrollIntoView({ behavior: "smooth", block: "center" }) } catch (e) { msg.scrollIntoView() } } }
+  var hint = null; if (ta) { hint = document.createElement("p"); hint.className = "rv-hint muted"; hint.style.cssText = "margin:4px 0 0;font-size:13px"; hint.textContent = "Add at least 10 characters, or leave it blank."; (cnt || ta).insertAdjacentElement("afterend", hint) }
   var prev = mine()[tool];
   if (prev) { var p = f.querySelector('input[name="rv-stars"][value="' + prev + '"]'); if (p) p.checked = true; msg.textContent = "You rated " + name + " " + prev + " out of 5. You can change your rating."; }
-  if (ta && cnt) ta.addEventListener("input", function () { cnt.textContent = ta.value.trim().length + " / 600"; });
+  if (ta && cnt) ta.addEventListener("input", function () { cnt.textContent = ta.value.trim().length + " / 600"; var n = ta.value.trim().length; if (hint) hint.style.color = n && n < MIN ? "#c0392b" : ""; });
   f.addEventListener("submit", function (ev) {
     ev.preventDefault();
     var s = f.querySelector('input[name="rv-stars"]:checked');
-    if (!s) { msg.textContent = "Please pick 1 to 5 stars."; f.querySelector('input[name="rv-stars"]').focus(); return; }
+    if (!s) { show("Please pick 1 to 5 stars.", "err"); return; }
     var text = (ta.value || "").trim();
-    if (text && (text.length < 20 || text.length > 600)) { msg.textContent = "Reviews need 20 to 600 characters, or leave the box empty to just rate."; ta.focus(); return; }
-    if (TS_SITEKEY && !((f.querySelector('input[name="cf-turnstile-response"]') || {}).value)) { loadTS(); msg.textContent = "Please complete the quick check above, then press Submit."; return; }
-    btn.disabled = true; msg.textContent = "Sending…";
-    fetch(W + "/review", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value, turnstileToken: (f.querySelector('input[name="cf-turnstile-response"]') || {}).value || "" }) })
+    if (text && (text.length < MIN || text.length > MAX)) { show(text.length < MIN ? "Your review is " + text.length + " characters. Add at least 10 characters, or leave it blank to just rate." : "Reviews can be up to 600 characters.", "err"); return; }
+    if (TS_SITEKEY && !((f.querySelector('input[name="cf-turnstile-response"]') || {}).value)) { loadTS(); show("Please complete the quick check above, then press Submit.", "err"); return; }
+    btn.disabled = true; show("Sending…");
+    var ac = window.AbortController ? new AbortController() : null, tmo = setTimeout(function () { if (ac) ac.abort() }, 15000);
+    fetch(W + "/review", { signal: ac ? ac.signal : undefined, method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value, turnstileToken: (f.querySelector('input[name="cf-turnstile-response"]') || {}).value || "" }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
-        btn.disabled = false; try { window.turnstile && turnstile.reset() } catch (e) {}
-        if (!x.ok || !x.j.ok) { msg.textContent = (x.j && x.j.error) || "Couldn't send right now. Please try again later."; return; }
+        clearTimeout(tmo); btn.disabled = false; try { window.turnstile && turnstile.reset() } catch (e) {}
+        if (!x.ok || !x.j.ok) { show((x.j && x.j.error) || "Couldn't send right now. Please try again later.", "err"); return; }
         var m = mine(); m[tool] = +s.value; store("as-rated", JSON.stringify(m));
-        msg.textContent = x.j.pending ? "Thanks! Your rating counts now. Your review will appear after a quick check." : "Thanks! Your rating counts now.";
+        show(x.j.pending ? "✓ Thanks! Your rating was saved. Your review will appear after a quick check." : "✓ Thanks! Your rating was saved.", "ok");
         if (x.j.pending) { ta.value = ""; if (cnt) cnt.textContent = "0 / 600"; }
         fetch(W + "/reviews?tool=" + encodeURIComponent(tool) + "&t=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
         try { window.asTrack && window.asTrack("button_click", "review_submit"); } catch (e) {}
       })
-      .catch(function () { btn.disabled = false; msg.textContent = "Couldn't send right now. Please try again later."; });
+      .catch(function (e) { clearTimeout(tmo); btn.disabled = false; try { window.turnstile && turnstile.reset() } catch (x) {} show(e && e.name === "AbortError" ? "This is taking too long. Please check your connection and try again." : "Couldn't send right now. Please try again later.", "err"); });
   });
 })();

@@ -29,7 +29,7 @@ def section(x,d,V):
         f'<div class="rv-sum">{summ}</div><ol class="rv-list"{"" if R else " hidden"}>{lis}</ol>'
         f'<p class="rv-cta">{"Be the first to rate" if not c else "Used"} {e(n)}{"" if not c else "? Rate it too"}: tap 1 to 5 stars below. A written review is optional.</p>'
         f'<form class="rv-form" id="rv-form" novalidate><fieldset class="rv-pick"><legend>Your rating of {e(n)}</legend><div class="rv-row">{radios}</div></fieldset>'
-        f'<label for="rv-text">Short review (optional)</label><textarea id="rv-text" name="rv-text" rows="3" maxlength="600" placeholder="What worked, what didn\'t? 20 to 600 characters, no links."></textarea><span class="rv-cnt muted" aria-hidden="true">0 / 600</span>'
+        f'<label for="rv-text">Short review (optional)</label><textarea id="rv-text" name="rv-text" rows="3" maxlength="600" placeholder="What worked, what didn\'t? 10 to 600 characters, no links."></textarea><span class="rv-cnt muted" aria-hidden="true">0 / 600</span>'
         f'<label for="rv-name">Name (optional)</label><input type="text" id="rv-name" name="rv-name" maxlength="40" autocomplete="nickname">'
         f'<div class="rv-hp" aria-hidden="true"><label for="rv-website">Leave this empty</label><input type="text" id="rv-website" name="website" tabindex="-1" autocomplete="off"></div>'
         f'<p style="margin:14px 0 0"><button type="submit" class="btn primary">Submit rating</button></p><p class="rv-msg" role="status" aria-live="polite"></p>'
@@ -44,7 +44,7 @@ def top(x,d):
     return (f'<div class="rv-top" style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;min-height:24px;line-height:24px;margin:-6px 0 12px;font-size:14px">'
             f'{summ}<span class="muted" aria-hidden="true">·</span><a class="rv-write rv-rate" href="#rv-form">★ Rate this tool</a></div>')
 def run(t):
-    import build_tasks; V=build_tasks.ASSET_V
+    import build_tasks; V="202610211400"  # reviews.js cache version (Oct 21 2026: own constant; bump when reviews.js changes)
     D=data(); bs={x["slug"]:x for x in t}; ld_n=0; ins=0
     for f in glob.glob("tools/*.html"):
         s0=os.path.basename(f)[:-5]; x=bs.get(s0)
