@@ -10,7 +10,7 @@
   if (location.hash === "#rate" || location.hash === "#rv-form") setTimeout(rateJump, 300)
   var sec = document.getElementById("reviews"); if (!sec || !window.fetch) return;
   // Turnstile (Oct 21 2026): shown only once a site key is set here; the Worker enforces it when REVIEW_TURNSTILE="true"
-  var TS_SITEKEY = ""
+  var TS_SITEKEY = "0x4AAAAAAFfaxf14aQF-sky1"
   if (TS_SITEKEY) { var fm0 = sec.querySelector(".rv-form button[type=submit]"); if (fm0) { var td = document.createElement("div"); td.className = "cf-turnstile"; td.setAttribute("data-sitekey", TS_SITEKEY); td.style.margin = "12px 0 0"; fm0.parentNode.parentNode.insertBefore(td, fm0.parentNode); var sc = document.createElement("script"); sc.src = "https://challenges.cloudflare.com/turnstile/v0/api.js"; sc.async = true; document.head.appendChild(sc) } }
   var tool = sec.getAttribute("data-tool"), name = sec.getAttribute("data-name") || "this tool";
   var $ = function (s) { return sec.querySelector(s); };
@@ -57,7 +57,7 @@
     fetch(W + "/review", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value, turnstileToken: (f.querySelector('input[name="cf-turnstile-response"]') || {}).value || "" }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
-        btn.disabled = false;
+        btn.disabled = false; try { window.turnstile && turnstile.reset() } catch (e) {}
         if (!x.ok || !x.j.ok) { msg.textContent = (x.j && x.j.error) || "Couldn't send right now. Please try again later."; return; }
         var m = mine(); m[tool] = +s.value; store("as-rated", JSON.stringify(m));
         msg.textContent = x.j.pending ? "Thanks! Your rating counts now. Your review will appear after a quick check." : "Thanks! Your rating counts now.";
