@@ -13,13 +13,14 @@ var esc=function(s){return String(s||"").replace(/[&<>"]/g,function(c){return {"
 function loadNames(){if(names)return Promise.resolve(names);return fetch("/search/names.json").then(function(r){return r.json()}).then(function(d){names=d;return d}).catch(function(){names=[];return names})}
 function loadPf(){if(pf)return Promise.resolve(pf);return import("/pagefind/pagefind.js").then(function(m){pf=m;return pf.options({baseUrl:"/"}).then(function(){pf.init();return pf})}).catch(function(){pf=false;return false})}
 function nameHits(q){var cq=C(q),nq=N(q),a=[],b=[],c=[];if(!cq)return [];
- for(var i=0;i<names.length;i++){var x=names[i],cn=C(x[0]);if(cn===cq||C(x[1])===cq)a.push(x);else if(cn.indexOf(cq)===0)b.push(x);else if(cq.length>=3&&(N(x[0]).indexOf(nq)>=0||cn.indexOf(cq)>0))c.push(x);if(a.length+b.length>=6)break}
+ for(var i=0;i<names.length;i++){var x=names[i],cn=C(x[0]);if(cn===cq||C(x[1])===cq)a.push(x);else if(cn.indexOf(cq)===0)b.push(x);else if(cq.length>=3&&(N(x[0]).indexOf(nq)>=0||cn.indexOf(cq)>0))c.push(x);}
+ var P=function(u,v){return (v[5]||0)-(u[5]||0)};a.sort(P);b.sort(P);c.sort(P);
  return a.concat(b,c).slice(0,6).map(function(x){return {t:x[0],u:"/tools/"+x[1]+".html",l:x[2]?"/"+x[2]:"",s:x[3]}})}
 function loadWords(){if(words)return Promise.resolve(words);return fetch("/search/words.json").then(function(r){return r.json()}).then(function(d){words=d;return d}).catch(function(){words=[];return words})}
 function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var D=[],i,j;for(i=0;i<=a.length;i++){D[i]=[i];for(j=1;j<=b.length;j++)D[i][j]=i?Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+(a[i-1]===b[j-1]?0:1),(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])?D[i-2][j-2]+1:9):j}return D[a.length][b.length]}
 function fuzzyNames(q){var cq=C(q);if(cq.length<3)return [];var lim=cq.length<=5?1:2,r=[];
  for(var i=0;i<names.length;i++){var x=names[i],d=Math.min(lev(cq,C(x[0])),lev(cq,C(x[1])));if(d<=lim)r.push([d,x])}
- r.sort(function(a,b){return a[0]-b[0]});return r.slice(0,6).map(function(p){var x=p[1];return {t:x[0],u:"/tools/"+x[1]+".html",l:x[2]?"/"+x[2]:"",s:x[3]}})}
+ r.sort(function(a,b){return a[0]-b[0]||(b[1][5]||0)-(a[1][5]||0)});return r.slice(0,6).map(function(p){var x=p[1];return {t:x[0],u:"/tools/"+x[1]+".html",l:x[2]?"/"+x[2]:"",s:x[3]}})}
 function fixQuery(q){var ws=N(q).split(/[^a-z0-9]+/).filter(Boolean);return ws.map(function(w){if(w.length<3)return w;var best=w,bd=9,bc=0,lim=w.length<=5?1:2;
  for(var i=0;i<words.length;i++){var v=words[i][0];if(v===w)return w;var d=lev(w,v);if(d<bd||(d===bd&&words[i][1]>bc)){bd=d;bc=words[i][1];best=v}}return bd<=lim?best:w}).join(" ")}
 function draw(q){var h=items.map(function(it,i){return '<li role="option" id="nso'+i+'" aria-selected="'+(i===sel)+'"><a href="'+esc(it.u)+'">'+(it.l?'<img src="'+esc(it.l)+'" alt="" width="24" height="24" loading="lazy">':'<span class="nsph" aria-hidden="true">'+esc((it.t||"?").charAt(0))+'</span>')+'<span class="nst"><b>'+esc(it.t)+'</b>'+(it.s?'<span>'+esc(it.s)+'</span>':'')+'</span></a></li>'}).join("");

@@ -54,7 +54,7 @@ def annotate():
         n+=1
     print("search: annotated",n,"pages")
 NAVFORM='<form data-navsearch class="nsrch" role="search" action="/search/" method="get"><input name="q" type="search" placeholder="Search tools…" aria-label="Search the site" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nsl"><ul id="nsl" role="listbox" aria-label="Suggestions" hidden></ul></form>'
-NAVJS='<script src="/navsearch.js?v=20261021c" defer></script>'
+NAVJS='<script src="/navsearch.js?v=20261021d" defer></script>'
 OLD_LINK='<a data-navsearch href="/search/" aria-label="Search the site">🔍 Search</a>'
 def navlink():
     """Unified search (Oct 21 2026, owner-approved): one compact box in the nav on every page (replaces the old "🔍 Search" link).
@@ -93,7 +93,20 @@ def page():
     open("search/index.html","w",encoding="utf-8").write(X.shell("../",title,desc,canon,body,ld))
     # small tool-name index for best-match pinning and "Did you mean" (loaded lazily with the Pagefind index)
     t=json.load(open("tools.json"))
-    json.dump([[x["name"],x["slug"],x.get("logo") or "",x["category"],x.get("pricing") or ""] for x in t],open("search/names.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
+    # popularity score (owner-approved Oct 21 2026) used to order nav suggestions WITHIN each name-match group:
+    # log10 GitHub stars; tools without a repo get the median (neutral) so closed tools aren't buried; ratings add in only from 3+ ratings.
+    # Paid/sponsored/featured status is never used.
+    import math,statistics
+    try: RV=json.load(open("reviews.json")).get("tools",{})
+    except Exception: RV={}
+    lg=[math.log10(x["github_stars"]+1) for x in t if x.get("github") and x.get("github_stars")]
+    mid=statistics.median(lg) if lg else 0
+    def pop(x):
+        sc=math.log10(x["github_stars"]+1) if x.get("github") and x.get("github_stars") else mid
+        r=RV.get(x["slug"]) or {}
+        if r.get("count",0)>=3: sc+=((r["avg"]*r["count"]+12)/(r["count"]+3)-3)*0.5
+        return round(sc,2)
+    json.dump([[x["name"],x["slug"],x.get("logo") or "",x["category"],x.get("pricing") or "",pop(x)] for x in t],open("search/names.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
     # typo-fallback vocabulary (Oct 21 2026): common words from tool names, categories, use cases and descriptions, with counts
     import collections; W=collections.Counter()
     for x in t:
