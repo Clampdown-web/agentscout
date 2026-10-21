@@ -40644,5 +40644,32 @@
     "logo": "assets/logos/moltgate.png",
     "maker_submitted": true,
     "submitted": "2026-10-20"
+  },
+  {
+    "name": "iArt",
+    "url": "https://www.iart.ai/",
+    "description": "iArt is an AI motion graphics agent that turns a text prompt, or uploaded images, PDFs, slide decks, audio or a web link, into animated scenes. It writes real animation code scene by scene (layout, typography, timing, transitions), so text stays exactly spelled and you can refine the result by chatting (\"make the title two seconds shorter\"). It handles explainers, logo animations, kinetic typography, animated charts, lower thirds and audio-synced captions, adds AI voiceover or a cloned voice, and exports MP4 (1080p on Pro, 4K on Ultra) or transparent WebM overlays.",
+    "category": "video generation",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-20",
+    "added": "2026-10-20",
+    "source": "Submission",
+    "pricing_detail": "Freemium: Free plan with a $2 signup credit (watermarked, share links); Pro $20/month ($30 monthly credit, 1080p, no watermark, 3 cloned voices); Ultra $50/month ($80 monthly credit, 4K, 10 cloned voices); 20% off yearly",
+    "website": "https://www.iart.ai/",
+    "github": "",
+    "id": 1619,
+    "slug": "iart",
+    "logo": "assets/logos/iart.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-20",
+    "use_cases": [
+      "generate video",
+      "design graphics",
+      "voiceover"
+    ]
   }
 ]

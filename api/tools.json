@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T03:06:47Z",
- "updated": "2026-10-21T03:06:47Z",
+ "generated": "2026-10-21T03:32:12Z",
+ "updated": "2026-10-21T03:32:12Z",
  "last_checked": "2026-10-20",
- "count": 1599,
+ "count": 1600,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -67603,6 +67603,51 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/moltgate.png",
    "page": "https://agentscouthq.com/tools/moltgate.html"
+  },
+  {
+   "name": "iArt",
+   "slug": "iart",
+   "url": "https://www.iart.ai/",
+   "website": "https://www.iart.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "iArt is an AI motion graphics agent that turns a text prompt, or uploaded images, PDFs, slide decks, audio or a web link, into animated scenes. It writes real animation code scene by scene (layout, typography, timing, transitions), so text stays exactly spelled and you can refine the result by chatting (\"make the title two seconds shorter\"). It handles explainers, logo animations, kinetic typography, animated charts, lower thirds and audio-synced captions, adds AI voiceover or a cloned voice, and exports MP4 (1080p on Pro, 4K on Ultra) or transparent WebM overlays.",
+   "key_features": [
+    "Freemium: Free plan with a $2 signup credit (watermarked, share links); Pro $20/month ($30 monthly credit, 1080p, no watermark, 3 cloned voices); Ultra $50/month ($80 monthly credit, 4K, 10 cloned voices); 20% off yearly",
+    "Active",
+    "Generate video",
+    "Design graphics",
+    "Voiceover"
+   ],
+   "pricing": "Freemium: Free plan with a $2 signup credit (watermarked, share links); Pro $20/month ($30 monthly credit, 1080p, no watermark, 3 cloned voices); Ultra $50/month ($80 monthly credit, 4K, 10 cloned voices); 20% off yearly",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-20",
+   "added": "2026-10-20",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "design graphics",
+    "voiceover"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/iart.png",
+   "page": "https://agentscouthq.com/tools/iart.html"
   }
  ]
 }
