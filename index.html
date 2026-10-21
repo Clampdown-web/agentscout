@@ -57,11 +57,12 @@ el.innerHTML=[["Total tools",s.total.toLocaleString("en-US")],["Last updated",md
   <div class="toolbar">
     <input id="q" type="search" placeholder="Search by name, use case, or pricing…" aria-label="Search tools">
     <div class="seg" id="aud"></div>
-    <select id="sort" aria-label="Sort"><option value="new">Newest first</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option></select>
+    <select id="sort" aria-label="Sort"><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option></select>
   </div>
+  <style>.filters{display:flex;gap:8px 10px;flex-wrap:wrap;align-items:center;margin:0 0 4px;font-size:13px;color:var(--faint)}.filters .fchk{display:inline-flex;align-items:center;gap:6px;min-height:34px;color:var(--text);cursor:pointer}.filters .fchk input{width:18px;height:18px;margin:0}.filters .chip{min-height:34px}.snote{font-size:12.5px;margin:-6px 0 12px}@media(max-width:640px){.filters select{flex:1 1 140px;min-height:40px}.filters .fchk{min-height:40px}}</style><div class="filters" id="filters" role="group" aria-label="Filter tools"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option value="free">Free</option><option value="freeplan">Free or free plan</option><option value="freemium">Freemium</option><option value="paid">Paid</option><option value="unknown">Pricing not listed</option></select><label class="fchk"><input type="checkbox" id="fos"> Open source only</label><button type="button" class="chip" id="freset" hidden>Clear all filters</button></div>
   <div class="chips" id="cats"></div>
   <div class="ucbar" id="ucbar"></div>
-  <div class="count" id="count"></div>
+  <div class="count" id="count" aria-live="polite"></div><p class="snote muted" id="snote" hidden></p>
   <div class="grid" id="list"></div>
   <div style="text-align:center;margin:18px 0 4px"><button type="button" class="btn" id="dirmore" hidden>Show more</button></div>
   <noscript><p class="count">Browse every tool by <a href="categories/index.html">category</a>, <a href="new.html">newest</a> or <a href="tasks/index.html">task</a>.</p></noscript>
@@ -83,7 +84,13 @@ el.innerHTML=[["Total tools",s.total.toLocaleString("en-US")],["Last updated",md
 </div></footer>
 <script src="app.js?v=202610201905"></script><script src="consent.js?v=202610201905" defer></script><script src="track.js?v=202610201905" defer></script><script src="share.js?v=202610201905" defer></script>
 <script>
-let tools=[],cat="all",aud="all",uc="",onlyNew=false,onlySaved=false,tab="new";
+let tools=[],cat="all",aud="all",uc="",onlyNew=false,onlySaved=false,tab="new",price="",os=false,RV={};
+/* Search filters + sorting (Oct 21 2026): pricing class from the listed pricing text; "See site" stays "not listed", never free */
+const pc=t=>{const p=(t.pricing||"").toLowerCase();if(/^(open|free$)/.test(p))return /cloud/.test(p)?"freemium":"free";if(/freemium|\+ cloud/.test(p))return "freemium";if(/^(paid|usage|enterprise)/.test(p))return "paid";return "unknown"};
+const isOS=t=>/^open/i.test(t.pricing||"");
+const bay=r=>r&&r.count?(r.avg*r.count+4*3)/(r.count+3):0;
+const love=t=>[bay(RV[t.slug]),t.github_stars??-1];
+const syncURL=()=>{try{const p=new URLSearchParams(location.search),set=(k,v)=>v?p.set(k,v):p.delete(k);set("q",$("q").value.trim());set("cat",cat!=="all"?cat:"");set("price",price);set("os",os?"1":"");set("sort",$("sort").value!=="new"?$("sort").value:"");set("uc",uc);set("aud",aud!=="all"?aud:"");const qs=p.toString();history.replaceState(null,"",location.pathname+(qs?"?"+qs:"")+location.hash)}catch(e){}};
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch{return""}};
@@ -94,7 +101,7 @@ const ico=(t,c="")=>`<span class="ico ${c}"><span aria-hidden="true" data-l="${e
 const card=t=>`<div class="card tile"><a class="stretch" href="${page(t)}" aria-label="${esc(t.name)} details"></a>
  <div class="ct">${ico(t)}<div class="tn"><h3>${esc(t.name)}</h3><div class="badges"><span class="b cat">${esc(t.category)}</span><span class="b" title="${esc(t.pricing_detail)}">${esc(t.pricing)}</span>${t.new?'<span class="b new">New</span>':""}</div></div><div class="acts">${AS.saveBtn(t.slug)}</div></div>
  <p class="hook" title="${esc(t.description)}">${esc(t.description)}</p>
- <div class="cardfoot"><span class="meta">${t.audience==="builders"?"For builders":"Ready to use"} · ${esc(host(t.url))}${t.github_stars!=null?` · ★ ${k(t.github_stars)}`:""}</span></div></div>`;
+ <div class="cardfoot"><span class="meta">${t.audience==="builders"?"For builders":"Ready to use"} · ${esc(host(t.url))}${RV[t.slug]&&RV[t.slug].count?` · <span title="Visitor rating">${RV[t.slug].avg.toFixed(1)}★ (${RV[t.slug].count})</span>`:""}${t.github_stars!=null?` · <span title="GitHub stars">★ ${k(t.github_stars)} GitHub</span>`:""}</span></div></div>`;
 const row=(t,i)=>`<div class="row"><span class="n">${i+1}</span><a href="${page(t)}"><h3 class="icoh">${ico(t,"sm")}${esc(t.name)} <span class="b cat" style="margin-left:6px;vertical-align:2px">${esc(t.category)}</span></h3><p>${esc(t.description)}</p></a><div class="acts">${AS.saveBtn(t.slug)}${AS.voteBtn(t.slug)}</div></div>`;
 function renderRank(){
  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab));
@@ -115,9 +122,14 @@ function render(){
  const q=$("q").value.trim().toLowerCase(),s=$("sort").value,sv=AS.get("as_saves");
  const N=x=>(x||"").toLowerCase().replace(/[\s._\-]+/g,""),nq=N(q),words=q.split(/[\s._\-]+/).filter(Boolean);
  const sc=t=>{if(!q)return 1;const n=N(t.name),sl=N(t.slug);if(n===nq||sl===nq)return 1000;if(n.startsWith(nq))return 800-n.length;if(n.includes(nq)||sl.includes(nq))return 600-n.length;const tg=N([t.category,...t.use_cases].join(" ")),d=N([t.description,t.pricing,t.pricing_detail,t.audience].join(" "));if(tg.includes(nq))return 300;if(d.includes(nq))return 200;const all=N([t.name,t.description,t.category,t.pricing,t.pricing_detail,t.audience,...t.use_cases].join(" "));return words.length>1&&words.every(w=>all.includes(N(w)))?100:0};
- let r=tools.filter(t=>(cat==="all"||t.category===cat)&&(aud==="all"||t.audience===aud)&&(!uc||t.use_cases.includes(uc))&&(!onlyNew||(!t.seed&&(t.added||"")>=WK))&&(!onlySaved||sv[t.slug])).map(t=>[t,sc(t)]).filter(x=>x[1]>0);
- const srt=s==="az"?(a,b)=>a.name.localeCompare(b.name):s==="stars"?(a,b)=>(b.github_stars??-1)-(a.github_stars??-1):(a,b)=>(b.added||"").localeCompare(a.added||"")||b.id-a.id;
+ const pk=price==="freeplan"?["free","freemium"]:price?[price]:null;
+ let r=tools.filter(t=>(cat==="all"||t.category===cat)&&(aud==="all"||t.audience===aud)&&(!pk||pk.includes(pc(t)))&&(!os||isOS(t))&&(!uc||t.use_cases.includes(uc))&&(!onlyNew||(!t.seed&&(t.added||"")>=WK))&&(!onlySaved||sv[t.slug])).map(t=>[t,sc(t)]).filter(x=>x[1]>0);
+ const nw=(a,b)=>(b.added||"").localeCompare(a.added||"")||b.id-a.id;
+ const srt=s==="az"?(a,b)=>a.name.localeCompare(b.name):s==="stars"?(a,b)=>(b.github_stars??-1)-(a.github_stars??-1)||nw(a,b):s==="loved"?(a,b)=>{const x=love(a),y=love(b);return y[0]-x[0]||y[1]-x[1]||nw(a,b)}:(a,b)=>(b.added||"").localeCompare(a.added||"")||b.id-a.id;
  r=r.sort((a,b)=>(q?b[1]-a[1]:0)||srt(a[0],b[0])).map(x=>x[0]);
+ const act=!!(q||cat!=="all"||aud!=="all"||uc||price||os||onlyNew||onlySaved||s!=="new");$("freset").hidden=!act;$("fprice").value=price;$("fos").checked=os;
+ const nr=Object.values(RV).filter(x=>x.count).length;$("snote").hidden=s!=="loved";$("snote").textContent="Most loved: tools with visitor star ratings first ("+nr+" rated so far, average weighted toward 4★ until a tool has more ratings), then by GitHub stars, then newest.";
+ syncURL();
  $("dirTitle").textContent=onlySaved?"Your saved tools":"Directory";
  $("count").textContent=`Showing ${r.length.toLocaleString("en-US")} of ${tools.length.toLocaleString("en-US")} tools`;
  const L=$("list"),gen=++renderGen,F=24,mb=$("dirmore");
@@ -135,13 +147,15 @@ AS.bind(document,()=>{if(onlySaved)render();if(tab==="votes")renderRank()});
 document.addEventListener("click",e=>{const u=e.target.closest("[data-uc]");if(u){e.preventDefault();uc=u.dataset.uc;render();$("directory").scrollIntoView({behavior:"smooth"})}});
 $("tabs").onclick=e=>{const b=e.target.closest("button");if(b){tab=b.dataset.t;renderRank()}};
 fetch("tools.json",{cache:"no-cache"}).then(r=>r.json()).then(d=>{
- tools=d;const p=new URLSearchParams(location.search);uc=p.get("uc")||"";onlySaved=p.has("saved");if(p.get("cat"))cat=p.get("cat");if(p.get("q"))$("q").value=p.get("q");
+ tools=d;const p=new URLSearchParams(location.search);uc=p.get("uc")||"";onlySaved=p.has("saved");if(p.get("cat"))cat=p.get("cat");if(p.get("q"))$("q").value=p.get("q");price=["free","freeplan","freemium","paid","unknown"].includes(p.get("price"))?p.get("price"):"";os=p.get("os")==="1";if(["new","loved","stars","az"].includes(p.get("sort")))$("sort").value=p.get("sort");if(["builders","ready to use"].includes(p.get("aud")))aud=p.get("aud");
+ $("fprice").onchange=e=>{price=e.target.value;render()};$("fos").onchange=e=>{os=e.target.checked;render()};$("freset").onclick=()=>{$("q").value="";cat="all";aud="all";uc="";price="";os=false;onlyNew=onlySaved=false;$("sort").value="new";render();$("q").focus()};
+ fetch("https://agentscout-image.agentscouthq.workers.dev/reviews/all",{headers:{"X-AgentScout-App":"1"}}).then(r=>r.ok?r.json():Promise.reject()).catch(()=>fetch("reviews.json").then(r=>r.json())).then(j=>{if(j&&j.tools&&typeof j.tools==="object"){RV=j.tools;render()}}).catch(()=>{});
  const f=null,cats={};d.forEach(t=>cats[t.category]=(cats[t.category]||0)+1);
  $("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\d,]+/,d.length.toLocaleString("en-US"));$("s-new").textContent=d.filter(t=>t.new).length;$("s-cats").textContent=Object.keys(cats).length;
  $("catgrid").innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`<a class="cattile" href="?cat=${encodeURIComponent(c)}#directory" data-cat="${esc(c)}">${esc(c)}<span>${n}</span></a>`).join("");
  $("catgrid").onclick=e=>{const a=e.target.closest("[data-cat]");if(a){e.preventDefault();cat=a.dataset.cat;onlyNew=onlySaved=false;render();$("directory").scrollIntoView({behavior:"smooth"})}};
  if(f)$("featured").innerHTML=`<div class="featured"><div><span class="label">Editor's pick</span><h3 class="icoh">${ico(f)}${esc(f.name)}</h3><p>${esc(f.description)}</p><div class="badges" style="margin-bottom:16px"><span class="b cat">${esc(f.category)}</span><span class="b">${esc(f.pricing)}</span>${f.github_stars!=null?`<span class="b">★ ${k(f.github_stars)} on GitHub</span>`:""}</div><div class="acts"><a class="btn primary" href="${page(f)}">View details</a>${AS.saveBtn(f.slug,1)}</div></div><aside><b style="color:var(--text)">Featured slot</b><br>Our pick this week.</aside></div>`;
- $("q").oninput=render;$("q").onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();render();$("q").blur();$("count").scrollIntoView({behavior:"smooth",block:"start"})}};$("sort").onchange=render;renderRank();render();if(p.get("q"))setTimeout(()=>$("count").scrollIntoView({block:"start"}),50);
+ $("q").oninput=render;$("q").onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();render();$("q").blur();$("count").scrollIntoView({behavior:"smooth",block:"start"})}};$("sort").onchange=render;renderRank();render();if(p.get("q")||p.get("price")||p.get("os")||p.get("sort"))setTimeout(()=>$("count").scrollIntoView({block:"start"}),50);
  document.querySelectorAll("[data-saved-count]").forEach(n=>n.textContent=AS.savedCount());
 }).catch(()=>{$("list").innerHTML='<div class="empty">Could not load tools.json. Serve this folder over HTTP.</div>'});
 
