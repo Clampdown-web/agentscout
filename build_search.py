@@ -37,7 +37,10 @@ def annotate():
                 if (x.get("pricing") or "").lower().startswith("open"): a.append('data-pagefind-filter="open source:Yes"')
                 date=x.get("added") or lm
                 a.append(f'data-pagefind-meta="title:{html.escape(x["name"],quote=True)}"')
-                if x.get("logo"): a.append(f'data-pagefind-meta="image:/{x["logo"]}"')
+                if x.get("logo"): a.append(f'data-pagefind-meta="logo:/{x["logo"]}"')
+        elif p.startswith("bot-templates/") and p!="bot-templates/index.html":
+            m=re.search(r'<div class="bd-top"><img[^>]*?src="([^"]+)"',s)
+            if m and not m.group(1).startswith(("http","/","data:")): a.append(f'data-pagefind-meta="logo:/bot-templates/{html.escape(m.group(1),quote=True)}"')
         elif ptype(p)=="News":
             m=re.search(r'"datePublished": ?"(\d{4}-\d\d-\d\d)',s); date=m.group(1) if m else lm
         a.append(f'data-pagefind-sort="date:{date}"'); a.append(f'data-pagefind-meta="type:{ptype(p)}"')
@@ -66,7 +69,7 @@ def run():
     if os.path.exists("search/index.html"):  # Pagefind runs WebAssembly: allow it on the search page only
         z=open("search/index.html",encoding="utf-8").read()
         if "'wasm-unsafe-eval'" not in z: open("search/index.html","w",encoding="utf-8").write(z.replace("script-src 'self'","script-src 'self' 'wasm-unsafe-eval'",1))
-    r=subprocess.run([sys.executable,"-m","pagefind","--site",".","--output-subdir","pagefind","--glob","**/*.html","--exclude-selectors","nav,footer,.crumb,.shareacts,[data-pagefind-ignore]"],capture_output=True,text=True)
+    r=subprocess.run([sys.executable,"-m","pagefind","--site",".","--output-subdir","pagefind","--glob","**/*.html","--exclude-selectors","nav,footer,.crumb,.shareacts,[data-pagefind-ignore],.badges,.rv-top,.updated,.gencall,.acts,.bd-back,.bd-meta,.bd-cta,.ico,.bt-ic,.rv,.embeds,.bd-src,.bd-rel,.addedago"],capture_output=True,text=True)
     out=(r.stdout+r.stderr).strip().splitlines()
     print("search: pagefind",("ok" if r.returncode==0 else "FAILED")," | ".join(l for l in out if "Indexed" in l or "rror" in l)[:300])
     if r.returncode: sys.exit(1)

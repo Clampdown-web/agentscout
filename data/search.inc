@@ -9,8 +9,8 @@
 <label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Relevance</option><option value="new">Newest</option></select>
 <button type="button" id="fclear" class="chip" style="min-height:44px">Clear filters</button></div>
 <p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type a search to begin.</p>
-<p id="ssugg" role="status" aria-live="polite" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres" style="min-height:60vh"></div>
-<p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
+<p id="ssugg" role="status" aria-live="polite" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres"></div>
+<style>#smore[hidden]{display:none!important}</style><p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
 <noscript><p>Search needs JavaScript. Browse <a href="../categories/index.html">categories</a> or the <a href="../index.html#directory">directory</a> instead.</p></noscript>
 </section>
 <script type="module">
@@ -61,8 +61,10 @@ async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??
  $("sstat").textContent=`${n}${more_?"+":""} result${n===1?"":"s"}${used?` for “${used}”`:""}`;render()}
 function render(){const part=list.slice(page*PER,(page+1)*PER);page++;
  const groups={};for(const d of part){const t=(d.meta&&d.meta.type)||"Pages";(groups[t]=groups[t]||[]).push(d)}
- let h="";for(const t of Object.keys(groups)){h+=`<h2 style="font-size:16px;margin:22px 0 8px">${esc(t)}</h2><ul style="list-style:none;padding:0;margin:0">`+groups[t].map(d=>`<li style="margin:0 0 14px"><a href="${esc(d.url)}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600">${d.meta.image&&t==="Tools"?`<img src="${esc(d.meta.image)}" alt="" width="24" height="24" loading="lazy" style="border-radius:6px">`:""}${esc(d.meta.title||d.url)}</a><br><span class="muted" style="font-size:14px">${d.excerpt}</span></li>`).join("")+"</ul>"}
- $("sres").insertAdjacentHTML("beforeend",h);$("smore").hidden=page*PER>=list.length}
+ for(const t of Object.keys(groups)){const li=groups[t].map(d=>`<li style="margin:0 0 14px"><a href="${esc(d.url)}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600">${d.meta.logo?`<img src="${esc(d.meta.logo)}" alt="" width="24" height="24" decoding="async" style="border-radius:6px">`:""}${esc(d.meta.title||d.url)}</a><br><span class="muted" style="font-size:14px">${d.excerpt}</span></li>`).join("");
+  const ul=[...$("sres").querySelectorAll("ul[data-g]")].find(u=>u.dataset.g===t); /* "Show more" appends into the existing group instead of repeating headings */
+  if(ul)ul.insertAdjacentHTML("beforeend",li);else $("sres").insertAdjacentHTML("beforeend",`<h2 style="font-size:16px;margin:22px 0 8px">${esc(t)}</h2><ul data-g="${esc(t)}" style="list-style:none;padding:0;margin:0">${li}</ul>`)}
+ $("smore").hidden=page*PER>=list.length}
 let deb;$("sq").addEventListener("input",()=>{clearTimeout(deb);deb=setTimeout(()=>go(),250)});
 $("sf").addEventListener("submit",e=>{e.preventDefault();go()});
 ["ftype","fprice","fcat","fos","fsort"].forEach(id=>$(id).addEventListener("change",()=>go()));
