@@ -91,6 +91,12 @@ def run(t):
         s=shorten(f,s,names,c); s=twitter(s,c)
         if f in HUBS: s=hubld(f,s,c)
         if s!=s0: open(f,"w").write(s)
+    # twitter:* mirror for the other indexable pages (top-level pages and bot templates); titles left as-is (Oct 20 2026 SEO pass)
+    g=set(_groups())
+    for f in sorted(glob.glob("*.html"))+sorted(glob.glob("bot-templates/*.html")):
+        if f in g or f.startswith("sponsor"): continue  # sponsor.html is frozen
+        s0=s=open(f).read(); s=twitter(s,c)
+        if s!=s0: open(f,"w").write(s)
     llms_extra(c)
     print("seo pass:",dict(c))
 def _h1(f):
