@@ -9,7 +9,7 @@ homepage directory), rank-movement arrows vs the rank snapshot from ~7 days earl
 Every build (build_site.py -> build_extras.build) rewrites today's data/ratings and data/lb-ranks snapshot files; commit them."""
 import json,html,datetime,os,glob,re
 import build_extras as X
-B="https://agentscouthq.com/"; MIN_RATED=1; TOPN=50; DEF="loved"; XTRA=20
+B="https://agentscouthq.com/"; MIN_RATED=1; TOPN=100; DEF="loved"; XTRA=10
 PT=datetime.timezone(datetime.timedelta(hours=-7))
 e=lambda s:html.escape(str(s if s is not None else ""))
 bay=lambda r:(r["avg"]*r["count"]+12)/(r["count"]+3) if r and r.get("count") else 0  # same as catfilter.js
