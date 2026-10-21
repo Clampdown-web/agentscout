@@ -40700,5 +40700,32 @@
     "source": "Submission",
     "maker_submitted": true,
     "submitted": "2026-10-21"
+  },
+  {
+    "name": "Sandbox0",
+    "url": "https://sandbox0.ai/",
+    "description": "Sandbox0 is a managed sandbox runtime that gives each AI agent an isolated cloud computer where it can run code, install software, manage files and control network access. The whole writable root filesystem persists across incremental checkpoints and grows automatically as it fills, so an agent can pause compute between tasks and resume the same sandbox later with its tools, dependencies and files intact. It adds snapshots and restore, SSH, egress proxy and credential injection, private previews, Docker in the sandbox, webhooks, warm pools and custom templates, with integrations for LangChain Deep Agents, OpenAI Agents, Vercel and GitHub CI. Sandboxes run under gVisor isolation with Nomad scheduling.",
+    "category": "sandboxes & code execution",
+    "pricing": "Paid",
+    "audience": "builders",
+    "pricing_detail": "Paid, usage-based: $0.015 per GiB-hour compute billed by the second, $0.02 per GiB-month retained storage, network free for now; $5 free credit for new users, no card required. An archived Apache-2.0 release is on GitHub; current runtime is closed source",
+    "use_cases": [
+      "run code safely",
+      "build an agent"
+    ],
+    "website": "https://sandbox0.ai/",
+    "github": "https://github.com/sandbox0-ai/sandbox0",
+    "id": 1621,
+    "slug": "sandbox0",
+    "logo": "assets/logos/sandbox0.png",
+    "socials": [],
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-21"
   }
 ]

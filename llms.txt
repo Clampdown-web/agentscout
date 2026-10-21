@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,601 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,602 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -47,7 +47,7 @@ Contact: support@agentscouthq.com
 - [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 27 tools
 - [customer support](https://agentscouthq.com/categories/customer-support.html): 25 tools
 - [productivity](https://agentscouthq.com/categories/productivity.html): 24 tools
-- [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 21 tools
+- [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 22 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 21 tools
 - [games](https://agentscouthq.com/categories/games.html): 18 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 16 tools
@@ -84,8 +84,9 @@ Contact: support@agentscouthq.com
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-20 to 2026-10-21): 129
+- Tools added in the last 2 days (2026-10-20 to 2026-10-21): 130
 
+- [Sandbox0](https://agentscouthq.com/tools/sandbox0.html) (added 2026-10-21): Sandbox0 is a managed sandbox runtime that gives each AI agent an isolated cloud computer where it can run code, install software, manage files and control network access. The whole writable root filesystem persists across incremental checkpoints and grows automatically as it fills, so an agent can pause compute between tasks and resume the same sandbox later with its tools, dependencies and files intact. It adds snapshots and restore, SSH, egress proxy and credential injection, private previews, Docker in the sandbox, webhooks, warm pools and custom templates, with integrations for LangChain Deep Agents, OpenAI Agents, Vercel and GitHub CI. Sandboxes run under gVisor isolation with Nomad scheduling.
 - [Wren Pre-sign Check](https://agentscouthq.com/tools/wren-pre-sign-check.html) (added 2026-10-21): Wren Pre-sign Check is a pay-per-call x402 API that an AI agent calls before it signs anything with its wallet. Send a transaction (to + data), an EIP-712 typed-data payload or untrusted text, and it returns block, review or allow, the decoded call in plain words and every finding: unlimited approvals, Permit and Permit2 signatures, setApprovalForAll, EIP-7702 delegation, contract deployment and injected instructions. With an optional wren-guard policy (allowlist, spenders, caps) it also blocks unknown recipients, over-cap amounts and lookalike addresses. It is a static check and stores nothing you send; free demos show real output.
 - [iArt](https://agentscouthq.com/tools/iart.html) (added 2026-10-20): iArt is an AI motion graphics agent that turns a text prompt, or uploaded images, PDFs, slide decks, audio or a web link, into animated scenes. It writes real animation code scene by scene (layout, typography, timing, transitions), so text stays exactly spelled and you can refine the result by chatting ("make the title two seconds shorter"). It handles explainers, logo animations, kinetic typography, animated charts, lower thirds and audio-synced captions, adds AI voiceover or a cloned voice, and exports MP4 (1080p on Pro, 4K on Ultra) or transparent WebM overlays.
 - [Moltgate](https://agentscouthq.com/tools/moltgate.html) (added 2026-10-20): Moltgate helps AI agent builders and automation operators turn agent ideas into paid offers. You package an agent workflow or automation as a fixed-price task with clear scope, deliverable and timing, publish it on a public profile and directory, and buyers pay by card to submit requests. Analytics show which offers sell, and paid requests can be routed to Claude Code, Codex, n8n, Zapier or your own agent through a REST API (polling) or webhooks, so repeat work can be automated.

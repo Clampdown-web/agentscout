@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T07:25:23Z",
- "updated": "2026-10-21T07:25:23Z",
+ "generated": "2026-10-21T07:50:09Z",
+ "updated": "2026-10-21T07:50:09Z",
  "last_checked": "2026-10-21",
- "count": 1601,
+ "count": 1602,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -21936,7 +21936,7 @@
    "rating": {
     "average": 5,
     "count": 5,
-    "approved_reviews": 0,
+    "approved_reviews": 2,
     "reviews_api": "https://agentscout-image.agentscouthq.workers.dev/reviews?tool=betterclaw"
    }
   },
@@ -67696,6 +67696,49 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/wren-pre-sign-check.png",
    "page": "https://agentscouthq.com/tools/wren-pre-sign-check.html"
+  },
+  {
+   "name": "Sandbox0",
+   "slug": "sandbox0",
+   "url": "https://sandbox0.ai/",
+   "website": "https://sandbox0.ai/",
+   "github": "https://github.com/sandbox0-ai/sandbox0",
+   "category": "sandboxes & code execution",
+   "description": "Sandbox0 is a managed sandbox runtime that gives each AI agent an isolated cloud computer where it can run code, install software, manage files and control network access. The whole writable root filesystem persists across incremental checkpoints and grows automatically as it fills, so an agent can pause compute between tasks and resume the same sandbox later with its tools, dependencies and files intact. It adds snapshots and restore, SSH, egress proxy and credential injection, private previews, Docker in the sandbox, webhooks, warm pools and custom templates, with integrations for LangChain Deep Agents, OpenAI Agents, Vercel and GitHub CI. Sandboxes run under gVisor isolation with Nomad scheduling.",
+   "key_features": [
+    "Paid, usage-based: $0.015 per GiB-hour compute billed by the second, $0.02 per GiB-month retained storage, network free for now; $5 free credit for new users, no card required. An archived Apache-2.0 release is on GitHub; current runtime is closed source",
+    "Active",
+    "Run code safely",
+    "Build an agent"
+   ],
+   "pricing": "Paid, usage-based: $0.015 per GiB-hour compute billed by the second, $0.02 per GiB-month retained storage, network free for now; $5 free credit for new users, no card required. An archived Apache-2.0 release is on GitHub; current runtime is closed source",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "Apache-2.0",
+   "tags": [
+    "run code safely",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sandbox0.png",
+   "page": "https://agentscouthq.com/tools/sandbox0.html"
   }
  ]
 }

@@ -1,10 +1,25 @@
 {
- "updated": "2026-10-21T07:20:49.424Z",
+ "updated": "2026-10-21T07:50:09.781Z",
  "tools": {
   "betterclaw": {
    "count": 5,
    "avg": 5,
-   "reviews": []
+   "reviews": [
+    {
+     "id": "dd0d598e-3e35-47cb-a0c1-b54cb02fc26b",
+     "name": "Tina",
+     "stars": 5,
+     "text": "honestly didn’t expect it to be this easy. had my first agent running in like a minute, no docker no config nothing. i use it for competitor research, inbox triage and a morning summary in slack before i even open my laptop. love that agents ask before doing anything so i was ok connecting gmail on day one. spending limits are a big one for me, no random bills. added an MCP server too just pasted the url and picked the tools. would love more templates but yeah it’s already doing half my boring work",
+     "ts": 1792565393478
+    },
+    {
+     "id": "1a9a4117-539a-463a-aad7-7756de82aad8",
+     "name": "",
+     "stars": 5,
+     "text": "Great tool for building AI agents!\nBetterClaw makes it super easy to build and deploy AI agents without coding. The wide range of integrations, model support, and automation features make it a great choice for saving time and boosting productivity. Highly recommended!",
+     "ts": 1792563976824
+    }
+   ]
   }
  }
 }
