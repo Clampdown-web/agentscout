@@ -33,6 +33,7 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 UC_SET={"sandbox0":["run code safely","build an agent"],  # submission Oct 21: managed persistent agent sandboxes
+"wren-x402-doctor":["crypto"],  # maker edit Oct 21: x402 seller tool; "30-day calls" tripped the voice rule
 "wren-pre-sign-check":["security & governance","build an agent"],  # submission Oct 21: pre-sign wallet check API
 "iart":["generate video","design graphics","voiceover"],  # submission Oct 20 PM: keyword guess gave subtitles & transcripts
 "moltgate":["automate workflows"],  # submission Oct 20 PM: "research task" keyword added research the web

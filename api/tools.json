@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-21T12:37:20Z",
- "updated": "2026-10-21T12:37:20Z",
+ "generated": "2026-10-21T13:21:17Z",
+ "updated": "2026-10-21T13:21:17Z",
  "last_checked": "2026-10-21",
  "count": 1602,
  "tools": [
@@ -67501,13 +67501,12 @@
    "website": "https://wren-x402-doctor.wrenonbase.workers.dev/",
    "github": "",
    "category": "crypto",
-   "description": "Wren x402 Doctor helps sellers of x402 pay-per-call endpoints, the payment standard AI agents use to pay for APIs in USDC, get listed in the Coinbase CDP Bazaar and stay listed. A free lint checks a 402 response against the x402 v2 spec and the Bazaar listing rules (networks, amounts, payTo checksum, description length, injection-like text, schema and metadata). A paid health check returns every Bazaar listing for your wallet address with 30-day calls, unique payers and an estimated delisting date.",
+   "description": "Wren x402 Doctor helps sellers of x402 pay-per-call endpoints, the payment standard AI agents use to pay for APIs in USDC, get listed in the Coinbase CDP Bazaar and stay listed. A free lint checks a 402 response against the x402 v2 spec and the Bazaar listing rules (networks, amounts, payTo checksum, description length, injection-like text, schema and metadata), and now also checks a seller's OpenAPI and x402 discovery documents. A paid health check returns every Bazaar listing for your wallet address with 30-day calls, unique payers and an estimated delisting date, and a paid market check (GET /market) returns up to 20 comparable live Bazaar listings with USD price, 30-day calls and payers, plus price quartiles.",
    "key_features": [
-    "Freemium: free lint of any 402 response; Bazaar health check $0.10 in USDC on Base per report over x402, charged only when a report comes back",
-    "Active",
-    "Voice & phone calls"
+    "Freemium: free lint of any 402 response and discovery documents; Bazaar health check $0.10 and market check $0.02 in USDC on Base per report over x402",
+    "Active"
    ],
-   "pricing": "Freemium: free lint of any 402 response; Bazaar health check $0.10 in USDC on Base per report over x402, charged only when a report comes back",
+   "pricing": "Freemium: free lint of any 402 response and discovery documents; Bazaar health check $0.10 and market check $0.02 in USDC on Base per report over x402",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -67528,7 +67527,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "voice & phone calls"
+    "crypto"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/wren-x402-doctor.png",
