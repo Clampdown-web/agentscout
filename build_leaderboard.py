@@ -158,7 +158,7 @@ def pages(t):
         '[sel,fr,os].forEach(function(x){x.addEventListener("change",filt)});var h=location.hash.slice(1);go(document.getElementById("lbt-"+h)?h:cur)})();</script>')
     title="AI Agent Tools Leaderboard: Top 100 · AgentScout"  # owner-approved Oct 21 2026
     desc=f"The top 100 AI agent tools, ranked by real visitor ratings, reviews and GitHub stars. Filter by category, free or open source, and rate the tools you use."[:160]
-    body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Leaderboard</p><div class="lb"><h1>AI Agent Tools Leaderboard: Top {TOPN}</h1>'
+    body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Leaderboard</p><div class="lb"><h1>AI Agent Tools Leaderboard: Top&nbsp;{TOPN}</h1>'
           f'<p>Rankings from real visitor ratings and reviews on AgentScout, plus GitHub stars for open-source tools. No paid placements. {nrated} tool{"s" if nrated!=1 else ""} rated and {nrev} written review{"s" if nrev!=1 else ""} so far{f" (updated {when})" if when else ""}. '
           f'Used a tool? Tap <b>Rate</b> next to it. Makers: <a href="badges.html">get your “Ranked on AgentScout” badge</a>.</p>'
           f'<div class="lbtabs" role="tablist" aria-label="Leaderboard rankings" data-pagefind-ignore>{tb}</div>{ctl}<div data-pagefind-ignore>{pn}</div>'
