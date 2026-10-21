@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T03:32:12Z",
- "updated": "2026-10-21T03:32:12Z",
- "last_checked": "2026-10-20",
- "count": 1600,
+ "generated": "2026-10-21T07:10:11Z",
+ "updated": "2026-10-21T07:10:11Z",
+ "last_checked": "2026-10-21",
+ "count": 1601,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -21931,7 +21931,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/betterclaw.png",
-   "page": "https://agentscouthq.com/tools/betterclaw.html"
+   "page": "https://agentscouthq.com/tools/betterclaw.html",
+   "rating": {
+    "average": 5,
+    "count": 5,
+    "approved_reviews": 0,
+    "reviews_api": "https://agentscout-image.agentscouthq.workers.dev/reviews?tool=betterclaw"
+   }
   },
   {
    "name": "BOSS Console",
@@ -67648,6 +67654,47 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/iart.png",
    "page": "https://agentscouthq.com/tools/iart.html"
+  },
+  {
+   "name": "Wren Pre-sign Check",
+   "slug": "wren-pre-sign-check",
+   "url": "https://wren-presign-check.wrenonbase.workers.dev/",
+   "website": "https://wren-presign-check.wrenonbase.workers.dev/",
+   "github": "",
+   "category": "security & governance",
+   "description": "Wren Pre-sign Check is a pay-per-call x402 API that an AI agent calls before it signs anything with its wallet. Send a transaction (to + data), an EIP-712 typed-data payload or untrusted text, and it returns block, review or allow, the decoded call in plain words and every finding: unlimited approvals, Permit and Permit2 signatures, setApprovalForAll, EIP-7702 delegation, contract deployment and injected instructions. With an optional wren-guard policy (allowlist, spenders, caps) it also blocks unknown recipients, over-cap amounts and lookalike addresses. It is a static check and stores nothing you send; free demos show real output.",
+   "key_features": [
+    "Paid: $0.01 in USDC on Base per check over x402 (EIP-3009 payment authorisation, no approvals); free demo endpoints with fixed examples",
+    "Active",
+    "Build an agent"
+   ],
+   "pricing": "Paid: $0.01 in USDC on Base per check over x402 (EIP-3009 payment authorisation, no approvals); free demo endpoints with fixed examples",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "security & governance",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wren-pre-sign-check.png",
+   "page": "https://agentscouthq.com/tools/wren-pre-sign-check.html"
   }
  ]
 }

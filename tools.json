@@ -40671,5 +40671,34 @@
       "design graphics",
       "voiceover"
     ]
+  },
+  {
+    "name": "Wren Pre-sign Check",
+    "url": "https://wren-presign-check.wrenonbase.workers.dev/",
+    "description": "Wren Pre-sign Check is a pay-per-call x402 API that an AI agent calls before it signs anything with its wallet. Send a transaction (to + data), an EIP-712 typed-data payload or untrusted text, and it returns block, review or allow, the decoded call in plain words and every finding: unlimited approvals, Permit and Permit2 signatures, setApprovalForAll, EIP-7702 delegation, contract deployment and injected instructions. With an optional wren-guard policy (allowlist, spenders, caps) it also blocks unknown recipients, over-cap amounts and lookalike addresses. It is a static check and stores nothing you send; free demos show real output.",
+    "category": "security & governance",
+    "pricing": "Paid",
+    "audience": "builders",
+    "pricing_detail": "Paid: $0.01 in USDC on Base per check over x402 (EIP-3009 payment authorisation, no approvals); free demo endpoints with fixed examples",
+    "use_cases": [
+      "security & governance",
+      "build an agent"
+    ],
+    "website": "https://wren-presign-check.wrenonbase.workers.dev/",
+    "github": "",
+    "id": 1620,
+    "slug": "wren-pre-sign-check",
+    "logo": "assets/logos/wren-pre-sign-check.png",
+    "socials": [
+      "https://x.com/WrenOnBase"
+    ],
+    "maturity": "Active",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-21"
   }
 ]
