@@ -32,7 +32,27 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"sandbox0":["run code safely","build an agent"],  # submission Oct 21: managed persistent agent sandboxes
+UC_SET={"openknowledge":["give agents memory","productivity","write code"],  # daily discovery Oct 21: keyword guess gave control a computer
+"cumora":["build multi-agent systems","productivity","give agents memory"],  # Oct 21: guess gave browser/computer/voice
+"monocode":["write code"],  # Oct 21
+"pr-lens":["write code","make diagrams"],  # Oct 21
+"openappa":["security & governance","monitor & evaluate agents"],  # Oct 21: guess gave write code + voice
+"hermex":["personal agents"],  # Oct 21
+"wake":["write code"],  # Oct 21: guess gave computer + research
+"superlog":["monitor & evaluate agents","automate workflows","write code"],  # Oct 21
+"ida-mcp-hex-rays":["connect tools via MCP","security & governance"],  # Oct 21: guess gave automate the browser
+"layerfs":["agent infra","run code safely","build multi-agent systems"],  # Oct 21: guess gave voice
+"co-op-anything":["games","write code"],  # Oct 21
+"tov":["write code"],  # Oct 21: "Tov song" tripped voice
+"concat":["edit video","subtitles & transcripts","voiceover"],  # Oct 21
+"onetake":["generate video","edit video"],  # Oct 21: guess gave make music
+"opencomputer":["build an agent","run code safely","agent infra"],  # Oct 21
+"fish-audio":["voiceover","voice & phone calls","build an agent"],  # Oct 21
+"lvlz":["personal agents","automate the browser","business agents"],  # Oct 21: guess gave voice
+"sundae":["personal agents","automate the browser"],  # Oct 21: guess gave sales & support
+"wavespeed-mcp":["connect tools via MCP","generate images","generate video"],  # Oct 21
+"trivago-mcp":["connect tools via MCP","research the web"],  # Oct 21: guess gave voice
+"sandbox0":["run code safely","build an agent"],  # submission Oct 21: managed persistent agent sandboxes
 "wren-x402-doctor":["crypto"],  # maker edit Oct 21: x402 seller tool; "30-day calls" tripped the voice rule
 "wren-pre-sign-check":["security & governance","build an agent"],  # submission Oct 21: pre-sign wallet check API
 "iart":["generate video","design graphics","voiceover"],  # submission Oct 20 PM: keyword guess gave subtitles & transcripts

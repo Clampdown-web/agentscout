@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T14:10:14Z",
- "updated": "2026-10-21T14:10:14Z",
+ "generated": "2026-10-21T14:32:02Z",
+ "updated": "2026-10-21T14:32:02Z",
  "last_checked": "2026-10-21",
- "count": 1621,
+ "count": 1622,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -67754,13 +67754,13 @@
    "category": "productivity",
    "description": "OpenKnowledge is a free, local-first markdown editor and knowledge base built for working alongside AI agents. It looks and feels like a Notion-style WYSIWYG editor, with callouts, tabs, Mermaid diagrams and media blocks, but every page stays a plain markdown file on your disk. Coding agents such as Claude Code, Codex, Cursor, Gemini CLI and dozens of others can read and write the same files through its integrations, so specs, team wikis and LLM wikis stay in one place that both people and agents keep up to date. It ships as a desktop app plus a web UI and CLI.",
    "key_features": [
-    "Open source",
+    "Free and open source (GPL-3.0): desktop app, web UI and CLI",
     "Active",
     "4646 GitHub stars",
-    "Control a computer",
-    "Make diagrams"
+    "Give agents memory",
+    "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (GPL-3.0): desktop app, web UI and CLI",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -67779,10 +67779,11 @@
    "repo": "inkeep/open-knowledge",
    "github_stars": 4646,
    "open_source": true,
-   "license": "",
+   "license": "GPL-3.0",
    "tags": [
-    "control a computer",
-    "make diagrams"
+    "give agents memory",
+    "productivity",
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openknowledge.png",
@@ -67797,14 +67798,13 @@
    "category": "productivity",
    "description": "Cumora is a team chat app where AI agents are members of the workspace rather than a chat box you prompt. Each agent gets a persona, its own private memory and files, a status, and a schedule on which it wakes up, reads the room and decides whether to message someone, post an idea or pull a small group together. Agents can message each other, and you can read those side conversations. People join by email or link, agents can be grouped into teams and given projects, and the same live workspace runs on desktop, in the browser and on a phone. It is free during an invite-only preview.",
    "key_features": [
-    "Open source",
+    "Free during the invite-only preview; open source (MIT); macOS, Windows, Linux, web and phone",
     "Active",
     "4005 GitHub stars",
-    "Automate the browser",
-    "Control a computer",
-    "Voice & phone calls"
+    "Build multi-agent systems",
+    "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free during the invite-only preview; open source (MIT); macOS, Windows, Linux, web and phone",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -67823,11 +67823,11 @@
    "repo": "yetone/cumora",
    "github_stars": 4005,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "automate the browser",
-    "control a computer",
-    "voice & phone calls"
+    "build multi-agent systems",
+    "productivity",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cumora.png",
@@ -67842,13 +67842,12 @@
    "category": "coding",
    "description": "MonoCode is a desktop app that puts the coding agents you already pay for behind one interface. It drives Claude Code, Codex, Cursor, Grok Build, OpenCode, Antigravity, Pi, Hermes Agent, Devin and others, using the subscriptions and logins already on your machine, so you never buy tokens through it. Each tab is an agent session and one composer sends work to whichever agent you pick, so several sessions can run side by side. It runs on macOS, Windows and Linux, with an iOS app in public beta.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); uses your existing agent subscriptions, sells no tokens",
     "Active",
     "3194 GitHub stars",
-    "Write code",
-    "Control a computer"
+    "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); uses your existing agent subscriptions, sells no tokens",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -67869,10 +67868,9 @@
    "repo": "hardbeat920/monocode",
    "github_stars": 3194,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "control a computer"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/monocode.png",
@@ -67887,13 +67885,13 @@
    "category": "coding",
    "description": "PR Lens helps people review code that agents wrote. For each pull request it draws animated architecture and data-flow diagrams inside the PR, showing which parts of the app were added, changed or removed, what else depends on the change and how a request now moves through the system. It also flags likely bugs, security holes and design problems in the same review comment, with a ready prompt to hand each fix to your coding agent or an autofix. The open-source core runs locally and installs as an agent skill.",
    "key_features": [
-    "Open source",
+    "Open-source core (MIT), runs locally; installs as an agent skill",
     "Active",
     "2167 GitHub stars",
     "Write code",
     "Make diagrams"
    ],
-   "pricing": "Open source",
+   "pricing": "Open-source core (MIT), runs locally; installs as an agent skill",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -67913,7 +67911,7 @@
    "repo": "coldteadotai/pr-lens",
    "github_stars": 2167,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "make diagrams"
@@ -67931,14 +67929,12 @@
    "category": "security & governance",
    "description": "OpenAPPA is a deterministic guardrail that sits between an AI agent and its tools and tracks how data flows across tool calls, instead of asking a second model to judge each call. Policies decide whether untrusted or sensitive data may reach a given action, which blocks data exfiltration caused by prompt injection or hallucination while letting agents finish their tasks. It plugs into Claude Code, Pi, OpenCode, kAgent and Archestra, comes with reusable policy \"batteries\", validation, observability and reporting, and is backed by a NeurIPS workshop paper with published benchmarks. It is in preview as an open RFC.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); preview and RFC",
     "Active",
     "1596 GitHub stars",
-    "Write code",
-    "Voice & phone calls",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); preview and RFC",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -67956,10 +67952,9 @@
    "repo": "archestra-ai/OpenAPPA",
    "github_stars": 1596,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "voice & phone calls",
+    "security & governance",
     "monitor & evaluate agents"
    ],
    "hybrid": false,
@@ -67975,11 +67970,11 @@
    "category": "personal agents",
    "description": "Hermex is a native iPhone and iPad app for controlling a self-hosted Hermes agent. The agent keeps running on your own server; the app connects to it over your private Tailscale network or an HTTPS tunnel, streams replies, lets you answer approval requests, manage tasks and Kanban boards, browse the agent's workspace and get push notifications when it needs you. It is free on the App Store with no in-app purchases, and its source is open.",
    "key_features": [
-    "Open source",
+    "Free on the App Store, no in-app purchases; open source (MIT); needs your own Hermes server",
     "Active",
     "1545 GitHub stars"
    ],
-   "pricing": "Open source",
+   "pricing": "Free on the App Store, no in-app purchases; open source (MIT); needs your own Hermes server",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -67998,7 +67993,7 @@
    "repo": "uzairansaruzi/hermex",
    "github_stars": 1545,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "personal agents"
    ],
@@ -68015,14 +68010,12 @@
    "category": "coding",
    "description": "Wake is a desktop app that collects every coding-agent conversation on your computer into one searchable place. It reads the local history kept by Claude Code, Codex, Cursor, Copilot CLI, Gemini CLI, Antigravity, Devin and other agents, groups sessions by agent and project, and lets you find a past conversation in seconds and resume it in your terminal. It is read-only and nothing leaves your machine. Built in Rust, it runs on macOS, with Linux and Windows in beta.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); macOS 14+, Linux and Windows beta",
     "Active",
     "1481 GitHub stars",
-    "Write code",
-    "Control a computer",
-    "Research the web"
+    "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); macOS 14+, Linux and Windows beta",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -68042,11 +68035,9 @@
    "repo": "iAmCorey/Wake",
    "github_stars": 1481,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "control a computer",
-    "research the web"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/wake.png",
@@ -68061,14 +68052,14 @@
    "category": "evals & observability",
    "description": "Superlog runs AI agents on routine engineering work around production. You set up automations with triggers and connectors, for example rating each new Sentry issue, posting a plain-language summary to Slack and opening a pull request with the fix, comparing error rates and latency against their normal range every hour, adding missing logs and spans to hard-to-debug code paths, or answering community questions from your code and docs. You choose the model and agent harness and bring your own tokens or subscriptions. The core is open source (Apache-2.0) with a hosted version.",
    "key_features": [
-    "Open source + cloud",
+    "Open source (Apache-2.0) to self-host; hosted plans and enterprise on the pricing page; bring your own model tokens or subscriptions",
     "Active",
     "1467 GitHub stars",
-    "Write code",
-    "Build an agent",
-    "Automate workflows"
+    "Monitor & evaluate agents",
+    "Automate workflows",
+    "Write code"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Open source (Apache-2.0) to self-host; hosted plans and enterprise on the pricing page; bring your own model tokens or subscriptions",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -68090,9 +68081,9 @@
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
-    "write code",
-    "build an agent",
-    "automate workflows"
+    "monitor & evaluate agents",
+    "automate workflows",
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/superlog.png",
@@ -68107,14 +68098,13 @@
    "category": "MCP servers",
    "description": "IDA MCP is Hex-Rays' official MCP server for the IDA disassembler and decompiler. It lets AI coding agents and people work on the same IDA databases at the same time, so an agent can inspect functions, types and decompiled code, rename and annotate, and coordinate analysis across several related binaries in one session. It works with the IDA GUI through a plugin or headless through idalib, installs with Hex-Rays' hcli tool, and needs IDA 9.4 or later.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); requires a licensed IDA 9.4 or later",
     "Active",
     "1329 GitHub stars",
-    "Write code",
-    "Automate the browser",
-    "Connect tools via mcp"
+    "Connect tools via mcp",
+    "Security & governance"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); requires a licensed IDA 9.4 or later",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -68134,11 +68124,10 @@
    "repo": "HexRaysSA/ida-mcp",
    "github_stars": 1329,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "automate the browser",
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "security & governance"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ida-mcp-hex-rays.png",
@@ -68153,13 +68142,13 @@
    "category": "agent infra",
    "description": "LayerFS is a filesystem built for running many coding agents in parallel. Each agent mounts a complete, writable workspace on top of shared committed history, does its work, commits what it changed and goes away, so compute only exists while a command runs. Every tool call becomes a commit on a branch, same-file clashes between agents are refused rather than silently merged, each line records the step that wrote it, and any commit can be forked at no cost for recursive exploration or RL training. Agents on different computers share one serverless store with chunk-level deduplication.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
     "1289 GitHub stars",
-    "Write code",
-    "Voice & phone calls"
+    "Run code safely",
+    "Build multi-agent systems"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -68180,10 +68169,11 @@
    "repo": "Ephemeral-AI-Lab/layerfs",
    "github_stars": 1289,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "voice & phone calls"
+    "agent infra",
+    "run code safely",
+    "build multi-agent systems"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/layerfs.png",
@@ -68198,13 +68188,12 @@
    "category": "games",
    "description": "Co-op Anything lets you point your AI coding agent at a single-player game and have it build or revive a co-op mod, so you can play it with friends online or split-screen. The project gives the agent a step-by-step method for working out what has to be synced between players (the story, enemies, the world, items and players seeing each other) and testing it. Its website is a searchable directory of every co-op mod made this way, with player ratings, how much of each game works in co-op and how active each project is.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
     "762 GitHub stars",
-    "Write code",
-    "Research the web"
+    "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -68221,10 +68210,10 @@
    "repo": "cranebeaker/coop-anything",
    "github_stars": 762,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "research the web"
+    "games",
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/co-op-anything.png",
@@ -68239,13 +68228,12 @@
    "category": "coding",
    "description": "Tov is an experimental programming language designed to be written by coding agents. It uses TypeScript syntax minus a few traps (no any, null or loose equality, separate int and float types, and failing calls marked with try), so agents already know how to write it, and its compiler returns machine-readable fixes the agent can apply after every edit. Programs compile to small, fast native binaries, with published benchmarks against Rust, Bun and Node. Agents can learn it from the site's llms.txt.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); experimental v0.0.1",
     "Active",
     "740 GitHub stars",
-    "Write code",
-    "Voice & phone calls"
+    "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); experimental v0.0.1",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -68266,10 +68254,9 @@
    "repo": "richiemcilroy/Tov",
    "github_stars": 740,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code",
-    "voice & phone calls"
+    "write code"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tov.png",
@@ -68284,14 +68271,14 @@
    "category": "film & TV production",
    "description": "Concat is a free, open-source video editor meant as a CapCut replacement that runs entirely on your own machine. It covers auto-captions, text-to-speech voices, background removal, keyframes, titles, effects, filters and transitions with multi-track editing up to 4K, with no watermark, account or subscription. It runs on Windows, macOS, Linux, Android and iOS, and it can be scripted through a documented JSON-RPC and gRPC API, so scripts and AI agents can drive edits.",
    "key_features": [
-    "Open source",
+    "Free and open source (AGPL-3.0); no watermark, account or subscription",
     "Mature",
     "10303 GitHub stars",
     "Edit video",
     "Subtitles & transcripts",
     "Voiceover"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (AGPL-3.0); no watermark, account or subscription",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -68310,7 +68297,7 @@
    "repo": "jub0t/Concat",
    "github_stars": 10303,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
     "edit video",
     "subtitles & transcripts",
@@ -68329,13 +68316,13 @@
    "category": "video generation",
    "description": "onetake is an agent skill for Claude Code and similar agents that makes product launch films, teasers and feature demos as one continuous camera move, where each beat grows out of the previous one instead of cutting between slides. The agent writes the motion as code and renders it with ffmpeg, and the skill checks continuity at every transition. The free edition on GitHub is for noncommercial use; onetake Pro adds a camera operator that follows each beat, source files for every example film, starter templates and a commercial licence.",
    "key_features": [
-    "Freemium",
+    "Free edition on GitHub (PolyForm Noncommercial); onetake Pro $79 one time with a commercial licence and all 1.x updates",
     "Active",
     "2812 GitHub stars",
-    "Edit video",
-    "Make music"
+    "Generate video",
+    "Edit video"
    ],
-   "pricing": "Freemium",
+   "pricing": "Free edition on GitHub (PolyForm Noncommercial); onetake Pro $79 one time with a commercial licence and all 1.x updates",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
@@ -68357,8 +68344,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "edit video",
-    "make music"
+    "generate video",
+    "edit video"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/onetake.png",
@@ -68373,14 +68360,13 @@
    "category": "agent infra",
    "description": "OpenComputer is a platform for building and deploying long-running AI agents as code. You define an agent as a TypeScript function with its model, tools and MCP servers, deploy it with one command, and every session gets its own real cloud computer, with managed sessions, schedules and API keys kept outside the agent's runtime. Templates include a coding agent that edits a repo, runs checks and opens a draft pull request, and market-research and GTM agents; its own Slack coding agent runs on it. Pricing is pay-as-you-go for model calls and per-second machine time.",
    "key_features": [
-    "Usage-based",
+    "Pay as you go (model calls at API rates, machine time per second, $10 free credit); Pro $20/mo and Max $200/mo prepaid credit at 10x; Enterprise custom. Core is open source (Apache-2.0)",
     "Active",
     "568 GitHub stars",
-    "Write code",
-    "Control a computer",
-    "Research the web"
+    "Build an agent",
+    "Run code safely"
    ],
-   "pricing": "Usage-based",
+   "pricing": "Pay as you go (model calls at API rates, machine time per second, $10 free credit); Pro $20/mo and Max $200/mo prepaid credit at 10x; Enterprise custom. Core is open source (Apache-2.0)",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -68400,11 +68386,11 @@
    "repo": "diggerhq/opencomputer",
    "github_stars": 568,
    "open_source": false,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
-    "write code",
-    "control a computer",
-    "research the web"
+    "build an agent",
+    "run code safely",
+    "agent infra"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/opencomputer.png",
@@ -68419,13 +68405,14 @@
    "category": "voice",
    "description": "Fish Audio is a voice AI platform for text to speech, voice cloning and speech to text, with a real-time API for voice agents. Its Drama 3 and S2 models take inline emotion and delivery tags such as whispering, laughing or pauses, it can clone a voice from a few seconds of audio, and its library has more than two million community voices for narration, characters, audiobooks and support agents. The Fish Speech models behind it are published on GitHub and Hugging Face.",
    "key_features": [
-    "Freemium",
+    "Free tier (8,000 credits a month); Plus $11/mo and Pro $75/mo billed yearly ($15 and $100 monthly); Max $749/mo yearly; API billed by usage",
     "Mature",
     "33333 GitHub stars",
-    "Build an agent",
-    "Voice & phone calls"
+    "Voiceover",
+    "Voice & phone calls",
+    "Build an agent"
    ],
-   "pricing": "Freemium",
+   "pricing": "Free tier (8,000 credits a month); Plus $11/mo and Pro $75/mo billed yearly ($15 and $100 monthly); Max $749/mo yearly; API billed by usage",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -68447,8 +68434,9 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "build an agent",
-    "voice & phone calls"
+    "voiceover",
+    "voice & phone calls",
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/fish-audio.png",
@@ -68463,13 +68451,12 @@
    "category": "personal agents",
    "description": "LVLZ is a personal AI agent you run by messaging it like a person, on iMessage or WhatsApp, as a text, voice note or call. It runs errands on real websites in a cloud browser, such as bookings, forms and shopping, turns messages into tasks and projects, fills a CRM from your conversations, and runs routines like a morning brief or a price watch. Everything it does lands in a web workspace, its memory can be read, edited and exported, and it asks before paying, contacting someone new or deleting anything, with cards and passwords kept in an encrypted vault.",
    "key_features": [
-    "Paid",
+    "Personal $19/mo, Pro $49/mo, Business $149/mo, each with a 7-day free trial",
     "Active",
     "Automate the browser",
-    "Research the web",
-    "Voice & phone calls"
+    "Business agents"
    ],
-   "pricing": "Paid",
+   "pricing": "Personal $19/mo, Pro $49/mo, Business $149/mo, each with a 7-day free trial",
    "price_tag": "paid",
    "platforms": [
     "Web"
@@ -68491,9 +68478,9 @@
    "open_source": false,
    "license": "",
    "tags": [
+    "personal agents",
     "automate the browser",
-    "research the web",
-    "voice & phone calls"
+    "business agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/lvlz.png",
@@ -68508,11 +68495,11 @@
    "category": "personal agents",
    "description": "Sundae is a personal AI assistant you text from iMessage or Android RCS, with no app or account needed. It works on a computer of its own: it books tables, finds flights at current prices, compares shops, reads letters and photos you send, sets reminders, watches prices and builds simple web pages, then texts back with a screenshot so you can check. It remembers what you tell it, asks before spending money, sending, deleting or opening accounts, and stops at checkout for you to pay. It is free to start with a daily limit, with a paid Plus plan, and is in limited beta.",
    "key_features": [
-    "Freemium",
+    "Free to start with a daily limit; paid Plus plan raises it; limited beta",
     "Active",
-    "Sales & support"
+    "Automate the browser"
    ],
-   "pricing": "Freemium",
+   "pricing": "Free to start with a daily limit; paid Plus plan raises it; limited beta",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -68533,7 +68520,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "sales & support"
+    "personal agents",
+    "automate the browser"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/sundae.png",
@@ -68548,12 +68536,14 @@
    "category": "MCP servers",
    "description": "WaveSpeed MCP is WaveSpeedAI's official MCP server and CLI, which lets an AI agent run any model in WaveSpeed's live catalog of over a thousand image, video, audio and 3D generation models from one connection. Agents can pick a model, submit a generation job and get the result back without switching tools. It is available as a hosted remote server or a local install, and usage is billed per generation at WaveSpeed's API prices.",
    "key_features": [
-    "Usage-based",
+    "Pay per generation at WaveSpeed API prices; eligible new accounts get $1 free credit; MCP server is open source",
     "Active",
     "34 GitHub stars",
-    "Connect tools via mcp"
+    "Connect tools via mcp",
+    "Generate images",
+    "Generate video"
    ],
-   "pricing": "Usage-based",
+   "pricing": "Pay per generation at WaveSpeed API prices; eligible new accounts get $1 free credit; MCP server is open source",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -68575,11 +68565,55 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "connect tools via MCP"
+    "connect tools via MCP",
+    "generate images",
+    "generate video"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/wavespeed-mcp.png",
    "page": "https://agentscouthq.com/tools/wavespeed-mcp.html"
+  },
+  {
+   "name": "trivago MCP",
+   "slug": "trivago-mcp",
+   "url": "https://mcp.trivago.com/docs",
+   "website": "https://mcp.trivago.com/docs",
+   "github": "",
+   "category": "MCP servers",
+   "description": "trivago MCP is trivago's official remote MCP server for hotel search. Ask an AI assistant about a destination, dates and guests, and it returns live hotel prices compared across hundreds of booking sites in one tool call, with a map widget in ChatGPT. It needs no API key and connects in about a minute to Claude, ChatGPT, Cursor, VS Code and any client that reads the MCP Registry.",
+   "key_features": [
+    "Free to use; no API key or sign-up needed",
+    "Active",
+    "Connect tools via mcp",
+    "Research the web"
+   ],
+   "pricing": "Free to use; no API key or sign-up needed",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/trivago-mcp.png",
+   "page": "https://agentscouthq.com/tools/trivago-mcp.html"
   }
  ]
 }

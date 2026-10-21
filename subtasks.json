@@ -6154,5 +6154,134 @@
 "agent-auth",
 "mcp-gateways",
 "stem-separation"
+],
+"openknowledge": [
+"vector-rag",
+"computer-use",
+"local-models",
+"terminal-agents",
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"cumora": [
+"agent-memory",
+"voice-phone",
+"email-agents",
+"browser-automation",
+"computer-use"
+],
+"monocode": [
+"agent-payments",
+"parallel-orchestration",
+"computer-use",
+"agent-auth",
+"mobile"
+],
+"pr-lens": [
+"code-review",
+"local-models",
+"images-design"
+],
+"openappa": [
+"voice-phone",
+"guardrails",
+"observability",
+"evals"
+],
+"hermex": [
+"planning-tasks",
+"voice-phone",
+"local-models"
+],
+"wake": [
+"computer-use",
+"local-models",
+"terminal-agents"
+],
+"superlog": [
+"code-review",
+"chat-app-agents",
+"agent-frameworks"
+],
+"ida-mcp-hex-rays": [
+"text-to-sql",
+"browser-automation",
+"mcp-servers"
+],
+"layerfs": [
+"parallel-orchestration",
+"voice-phone",
+"fine-tuning"
+],
+"co-op-anything": [
+"computer-use",
+"games"
+],
+"tov": [
+"voice-phone",
+"evals",
+"video-editing",
+"stem-separation",
+"images-design"
+],
+"concat": [
+"vector-rag",
+"voice-phone",
+"local-models",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"video",
+"mobile"
+],
+"onetake": [
+"video-editing"
+],
+"opencomputer": [
+"code-review",
+"voice-phone",
+"chat-app-agents",
+"research-agents",
+"mcp-servers",
+"script-tools",
+"video-editing"
+],
+"fish-audio": [
+"voice-phone",
+"agent-frameworks",
+"dialogue-cleanup",
+"ai-dubbing-voices"
+],
+"lvlz": [
+"agent-memory",
+"voice-phone",
+"chat-app-agents",
+"sales-agents",
+"browser-automation",
+"video-editing",
+"personal-assistants"
+],
+"sundae": [
+"agent-payments",
+"agent-memory",
+"planning-tasks",
+"chat-app-agents",
+"mobile"
+],
+"wavespeed-mcp": [
+"mcp-servers",
+"local-models",
+"terminal-agents",
+"video",
+"images-design"
+],
+"trivago-mcp": [
+"voice-phone",
+"mcp-gateways",
+"mcp-servers",
+"ide-agents"
 ]
 }
