@@ -1,5 +1,11 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
 import html,json,re,datetime
+import atexit as _ax0
+def _pf_last():
+    import sys as _s
+    if _s.argv and 'scripts/' in _s.argv[0]: return  # check/helper scripts: the build itself reindexes at exit
+    import build_search; build_search.run()
+_ax0.register(_pf_last)  # site search index, runs after every other exit hook (Oct 21 2026)
 _cap=lambda s:str(s)[:1].upper()+str(s)[1:]  # keeps acronyms (RAG, MCP, SQL, QA) intact
 B="https://agentscouthq.com/"
 e=lambda s:html.escape(str(s or ""))
@@ -163,7 +169,8 @@ def build(t):
     import build_best; urls+=build_best.pages(t)
     import build_free_tools; urls+=build_free_tools.pages(t)
     import build_landing; urls+=build_landing.pages(t)
-    import build_mcp_tasks; urls+=build_mcp_tasks.pages(t)  # Best MCP servers by task (Oct 21 2026)
+    import build_mcp_tasks; urls+=build_mcp_tasks.pages(t)
+    import build_search; urls+=build_search.page()  # /search/ page (Oct 21 2026)  # Best MCP servers by task (Oct 21 2026)
     import build_trending; urls+=build_trending.pages(t)
     import os as _os2
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)
