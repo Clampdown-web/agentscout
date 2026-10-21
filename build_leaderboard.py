@@ -44,10 +44,17 @@ def row(i,x,stat,mv="",extra=False):
     medal={1:"lb1",2:"lb2",3:"lb3"}.get(i,"")
     return (f'<li class="lbr {medal}" data-c="{e(x["category"])}" data-f="{1 if isfree(x) else 0}" data-o="{1 if isos(x) else 0}"{" data-x hidden" if extra else ""}>'
             f'<span class="lbn">{i}</span><a class="lbt" href="../tools/{e(x["slug"])}.html">{X.ico(x,"../","sm")}'
-            f'<span class="lbx"><b>{e(x["name"])}</b><span class="muted">{e(x["category"])}</span></span></a><span class="lbs">{stat}{mv}</span>'
+            f'<span class="lbx"><b>{e(x["name"])}</b><span class="muted">{e(x["category"])}</span></span><span class="lbd muted">{e(short(x.get("description")))}</span></a><span class="lbs">{stat}{mv}</span>'
             f'<a class="lbrate" href="../tools/{e(x["slug"])}.html#rv-form" aria-label="Rate {e(x["name"])}">Rate</a></li>')
+def short(d,n=100):  # tool's one-line description, cut at a word boundary (Oct 21 2026, owner-approved)
+    d=" ".join(str(d or "").split())
+    return d if len(d)<=n else d[:n].rsplit(" ",1)[0].rstrip(",;:.-–—")+"…"
 def stars(v): return f'<span class="rv-stars" style="--r:{v}" aria-hidden="true">★★★★★</span>'
 def rt(d): c=d["count"]; return f'{stars(d["avg"])}<span><b>{d["avg"]:.1f}</b> <span class="muted">({c} rating{"s" if c!=1 else ""})</span></span>'
+def both(x,d):  # Oct 21 2026 owner request: star rating block AND GitHub count on every row
+    r=rt(d) if d and d.get("count") else '<span class="muted">No ratings yet</span>'
+    g=gh(x) if x.get("github") and x.get("github_stars") else ('<span class="muted lbcs">Closed source</span>' if d and d.get("count") else "")
+    return f'<span class="lbb">{r}</span>{g}'
 def gh(x): return f'<span>★ <b>{x["github_stars"]:,}</b> <span class="muted">GitHub</span></span>'
 def svg(n):
     txt=f"Ranked #{n} on AgentScout" if n else "Listed on AgentScout"; sub="Most loved AI agent tools" if n else "AI agent tools directory"
@@ -117,9 +124,9 @@ def pages(t):
         return f'<ol class="lbl">{"".join(out)}</ol>' if out else ""
     fe='<div class="lbe lbf" hidden><p>No ranked tools match these filters yet.</p><p><a class="btn primary" href="../index.html#directory">Browse the directory</a></p></div>'
     empty=lambda msg,cls="":f'<div class="lbe{cls}"><p>{msg}</p><p><a class="btn primary" href="../index.html#directory">Find a tool you use and rate it</a></p></div>'
-    p1=(ol("top",top,TOPN,lambda s:rt(R[s])) if top else empty("No tools have been rated yet. Be the first to rate one."))+fe
+    p1=(ol("top",top,TOPN,lambda s:both(bs[s],R[s])) if top else empty("No tools have been rated yet. Be the first to rate one."))+fe
     p2=(ol("reviewed",rev,TOPN,lambda s:f'<span><b>{len(R[s]["reviews"])}</b> <span class="muted">review{"s" if len(R[s]["reviews"])!=1 else ""}</span></span>') if rev else "")+(empty("Very few written reviews so far. Approved reviews show up here.") if len(rev)<10 else "")+fe
-    p3=ol("loved",lvall,NL,lambda s:rt(R[s]) if s in R else gh(bs[s]))+fe
+    p3=ol("loved",lvall,NL,lambda s:both(bs[s],R.get(s)))+fe
     tz={z[0]:z for z in trend}
     p4=(ol("trending",[z[0] for z in trend],TOPN,lambda s:tstat(tz[s])) if trend else empty("Not enough history yet to show what's trending. This fills in as our daily GitHub snapshots and new ratings build up."))+fe
     json.dump(ranks,open(f"data/lb-ranks/{today}.json","w"),indent=0,sort_keys=True)
@@ -144,8 +151,8 @@ def pages(t):
          ".lbl{list-style:none;padding:0;margin:0}.lbr{display:flex;align-items:center;gap:10px;padding:10px 8px;border-top:1px solid var(--line,rgba(127,127,127,.2));border-radius:8px;min-width:0}"
          ".lb1{background:rgba(245,179,1,.12)}.lb2{background:rgba(160,170,185,.14)}.lb3{background:rgba(205,127,50,.13)}.lbn{flex:0 0 28px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}"
          ".lb1 .lbn::before{content:'🥇'}.lb2 .lbn::before{content:'🥈'}.lb3 .lbn::before{content:'🥉'}.lb1 .lbn,.lb2 .lbn,.lb3 .lbn{font-size:0}.lb1 .lbn::before,.lb2 .lbn::before,.lb3 .lbn::before{font-size:20px}"
-         ".lbt{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;min-height:44px;color:inherit;text-decoration:none}.lbx{display:flex;flex-direction:column;min-width:0}.lbx b,.lbx span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lbx span{font-size:12px}"
-         ".lbs{flex:0 1 auto;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:13px;text-align:right}.lbs .rv-stars{font-size:13px}"
+         ".lbt{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;min-height:44px;color:inherit;text-decoration:none}.lbx{display:flex;flex-direction:column;min-width:0}.lbx b,.lbx span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lbx span{font-size:12px}.lbx{flex:0 0 clamp(150px,27%,250px)}@media(min-width:641px){.lbs{flex:0 0 auto}.lbs>span{white-space:nowrap}}.lbd{flex:1 1 0;min-width:0;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 8px}@media(max-width:640px){.lbd{display:none}.lbx{max-width:none}}"
+         ".lbs{flex:0 1 auto;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-size:13px;text-align:right}.lbs .rv-stars{font-size:13px}.lbb{display:flex;align-items:center;gap:6px}.lbcs{font-size:12px}"
          ".lbm{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}.lbm.up{color:#1a9a4b}.lbm.dn{color:#d0453a}.lbm.eq{color:var(--muted,#888)}.lbf-on .lbm{display:none}"
          ".lbrate{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line,rgba(127,127,127,.35));color:inherit;text-decoration:none;font-size:13px;font-weight:600}.lbrate:hover{border-color:#6b8afd;color:#6b8afd}"
          ".lbe{padding:14px;border:1px dashed var(--line,rgba(127,127,127,.4));border-radius:12px;margin:12px 0}.lbe p{margin:0 0 10px}.lbe p:last-child{margin:0}"
