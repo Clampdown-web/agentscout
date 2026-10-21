@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-21T07:21:49Z",
- "updated": "2026-10-21T07:21:49Z",
+ "generated": "2026-10-21T07:25:23Z",
+ "updated": "2026-10-21T07:25:23Z",
  "last_checked": "2026-10-21",
  "count": 1601,
  "tools": [
@@ -959,14 +959,14 @@
    "category": "sales & marketing",
    "description": "Sales workspace whose agent finds prospects and drafts outreach, decks and searches; has an MCP server.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Launched Oct 11 (Product Hunt #2 of day)",
     "Research the web",
     "Connect tools via mcp",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -3707,7 +3707,7 @@
     "Monitor & evaluate agents"
    ],
    "pricing": "Source-available",
-   "price_tag": "paid",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -8891,15 +8891,15 @@
    "category": "coding",
    "description": "Context window optimizer for coding agents that sandboxes tool output and persists session memory.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Mature",
     "30192 GitHub stars",
     "Write code",
     "Run code safely",
     "Give agents memory"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -10842,13 +10842,13 @@
    "category": "coding",
    "description": "Agentic IDE for orchestrating many coding agents in parallel.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Mature",
     "15289 GitHub stars",
     "Write code"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -14425,13 +14425,13 @@
    "category": "personal agents",
    "description": "Desktop assistant that sees what is on your screen and helps using LLMs and MCP tools.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Mature",
     "6319 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -18534,14 +18534,14 @@
    "category": "MCP servers",
    "description": "MCP server for symbol-level code exploration that cuts token use.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Active",
     "2776 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -19822,16 +19822,17 @@
    "category": "MCP servers",
    "description": "MathWorks' MCP server that lets coding agents run MATLAB code and tests.",
    "key_features": [
-    "Source-available",
+    "Open source",
     "Active",
     "1672 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Open source",
+   "price_tag": "free",
    "platforms": [
-    "Developer (API/SDK)"
+    "Developer (API/SDK)",
+    "Self-host"
    ],
    "date_added": "2026-10-16",
    "added": "2026-10-16",
@@ -19846,7 +19847,7 @@
    "new_this_week": false,
    "repo": "matlab/matlab-mcp-server",
    "github_stars": 1672,
-   "open_source": false,
+   "open_source": true,
    "license": "",
    "tags": [
     "write code",
@@ -20498,14 +20499,14 @@
    "category": "MCP servers",
    "description": "SonarQube MCP server for code quality and security analysis from agents.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Active",
     "665 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -23894,12 +23895,12 @@
    "category": "MCP servers",
    "description": "Business-banking MCP server that lets AI agents create cards, set spend limits and send payments, including stablecoins.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -23934,12 +23935,12 @@
    "category": "crypto",
    "description": "Build AI trading agents from your own technical-analysis rules that monitor markets 24/7 and flag setups (stocks, forex, commodities; crypto secondary).",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -24492,12 +24493,12 @@
    "category": "crypto",
    "description": "Secure key infrastructure for programmatic and agent-controlled wallets.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -24772,11 +24773,11 @@
    "category": "crypto",
    "description": "AI finance agent that connects wallets, exchanges and brokers to invest alongside top investors across crypto and other markets.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -25578,11 +25579,11 @@
    "category": "crypto",
    "description": "Turns natural-language intent into structured, confidence-scored Web3 market data for AI agents (formerly Tearline).",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -25862,11 +25863,11 @@
    "category": "crypto",
    "description": "Open-source stablecoin wallet infrastructure with policy-gated agent wallets, gas sponsorship and x402 support.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -30348,13 +30349,13 @@
    "category": "business agents",
    "description": "Open-source enterprise AI agent platform that combines a general agent, workflow engine, team chat and collaborative office tools.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Mature",
     "5050 GitHub stars",
     "Automate workflows"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -33365,15 +33366,15 @@
    "category": "evals & observability",
    "description": "Open-source testing and evals platform for MCP servers, MCP apps and ChatGPT apps across many clients and models.",
    "key_features": [
-    "Source-available",
+    "Source-available + cloud",
     "Active",
     "2269 GitHub stars",
     "Automate workflows",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Source-available",
-   "price_tag": "paid",
+   "pricing": "Source-available + cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -37431,13 +37432,13 @@
    "category": "sales & marketing",
    "description": "Marketing AI platform that orchestrates agents to run end-to-end marketing workflows such as content, campaigns and brand-consistent copy.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Automate workflows",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -37596,14 +37597,14 @@
    "category": "browser/computer use",
    "description": "Marketplace of thousands of ready-to-run scrapers and automation tools (\"Actors\") for real-time web data, usable from apps and AI agents, including via MCP.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Automate the browser",
     "Research the web",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -37721,12 +37722,12 @@
    "category": "customer support",
    "description": "Tidio's AI customer service agent that answers questions instantly and turns conversations into sales, leads and bookings.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -37761,12 +37762,12 @@
    "category": "personal agents",
    "description": "AI super assistant with 100+ models in one place and an agent that turns a task into a finished app, deck or report.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -37841,13 +37842,13 @@
    "category": "sales & marketing",
    "description": "WordLift's AI SEO agent that works on your site's content and knowledge graph to improve search visibility.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Research the web",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -37974,15 +37975,15 @@
    "category": "no-code builders",
    "description": "No-code builder for AI agents inside Taskade that use your data, trigger automations and ship as live apps.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "69 GitHub stars",
     "Write code",
     "Automate workflows",
     "Build apps without code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38019,13 +38020,13 @@
    "category": "coding",
    "description": "AI code review for pull requests, with PR triage, change explanations and continuous security monitoring.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Write code",
     "Monitor & evaluate agents"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38143,12 +38144,12 @@
    "category": "voice",
    "description": "Cartesia's real-time text-to-speech API with emotion control, built for low-latency voice agents.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Voice & phone calls"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -38183,12 +38184,12 @@
    "category": "sales & marketing",
    "description": "Reply.io's AI SDR agent that runs personalized outreach and books meetings using its prospect database.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38223,12 +38224,12 @@
    "category": "voice",
    "description": "Speech-to-text and voice AI APIs that handle accents, multiple speakers and multilingual speech for voice agents.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Voice & phone calls"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -38303,13 +38304,13 @@
    "category": "no-code builders",
    "description": "Multiplayer AI agent builder that lets anyone at a company build agents with any model and integration under IT control.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Write code",
     "Build apps without code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38385,14 +38386,14 @@
    "category": "browser/computer use",
    "description": "Chrome extension browser agent that combines models like GPT, Claude and Gemini to automate web tasks, searching, writing and summarizing.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Automate the browser",
     "Research the web",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38473,12 +38474,12 @@
    "category": "personal agents",
    "description": "AI email client with an agent that organizes, writes, searches and schedules from a prompt.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Research the web"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38514,14 +38515,14 @@
    "category": "browser/computer use",
    "description": "No-code builder for reusable AI web scrapers that collect structured data and connect it to apps, workflows and agents.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Write code",
     "Automate the browser",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38689,12 +38690,12 @@
    "category": "voice",
    "description": "AI answering service whose voice agent works as a virtual receptionist for businesses from small shops to contact centers.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Voice & phone calls"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -38729,11 +38730,11 @@
    "category": "personal agents",
    "description": "Personal AI assistant that captures web pages, meetings, emails and files and answers with context from your work.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -38927,12 +38928,12 @@
    "category": "memory & RAG",
    "description": "AI memory layer that captures context from your work so you and your AI tools can recover decisions and resume where you left off.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -39007,12 +39008,12 @@
    "category": "business agents",
    "description": "AI agent automation platform with an agent hub, templates and task mining for business processes.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -39881,13 +39882,13 @@
    "category": "coding",
    "description": "Knowledge infrastructure that keeps docs, specs and agent memory current with your code for teams and coding agents.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Write code",
     "Give agents memory"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -40047,12 +40048,12 @@
    "category": "sales & marketing",
    "description": "Lead-sourcing tool with an agentic web scraper that finds, qualifies and enriches prospects for outreach.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -40252,12 +40253,12 @@
    "category": "business agents",
    "description": "Enterprise automation platform that orchestrates AI agents, software robots and people across business processes with security and compliance controls.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -40659,13 +40660,13 @@
    "category": "MCP servers",
    "description": "Official Porkbun MCP server for managing domains, DNS, SSL, hosting and Cloudflare settings through the Porkbun API.",
    "key_features": [
-    "See site",
+    "Free",
     "Active",
     "32 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41195,13 +41196,13 @@
    "category": "MCP servers",
    "description": "Scite's MCP server that grounds AI answers in scientific literature, with full-text search and citation-based trust signals.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41818,12 +41819,12 @@
    "category": "MCP servers",
    "description": "Railway's remote MCP server for developing, managing and debugging Railway projects, services and deployments from agents.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -41899,12 +41900,12 @@
    "category": "MCP servers",
    "description": "GoCardless MCP server for managing payments, mandates, subscriptions, refunds and payouts via AI assistants.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43336,14 +43337,14 @@
    "category": "MCP servers",
    "description": "Icons8 MCP server for searching and fetching Icons8 icons and Ouch illustrations as SVG, PNG or animations.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Research the web",
     "Connect tools via mcp",
     "Design graphics"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43463,13 +43464,13 @@
    "category": "crypto",
    "description": "1inch's MCP server for doc search, intent and cross-chain swaps, limit orders, portfolio data, spot prices and gas.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43754,14 +43755,14 @@
    "category": "MCP servers",
    "description": "Official Automox MCP server for managing devices, patches and policies in natural language.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "14 GitHub stars",
     "Connect tools via mcp",
     "Run code safely"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -43959,12 +43960,12 @@
    "category": "MCP servers",
    "description": "Unlayer's MCP server for generating and editing email, page and PDF document templates.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -44509,11 +44510,11 @@
    "category": "productivity",
    "description": "AI teammate for architects that creates and edits native models and drawings in Revit and AutoCAD from a task, PDF or screen recording.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -44958,12 +44959,12 @@
    "category": "customer support",
    "description": "AI shopping and customer service agent for e-commerce brands that handles product discovery, support and helpdesk work.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Sales & support"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -45039,12 +45040,12 @@
    "category": "business agents",
    "description": "Enterprise AI agent platform that deploys agents to handle complete business workflows, with outcome-based pricing.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Automate workflows"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -46238,12 +46239,12 @@
    "category": "coding",
    "description": "Agent-native software development platform whose Droids write code, run tests and handle deployments from the IDE, terminal or Slack.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -48235,12 +48236,12 @@
    "category": "film & TV production",
    "description": "AI media asset management for post houses and broadcasters. Tags faces, objects and speech so editors can search footage.",
    "key_features": [
-    "See website",
+    "Paid",
     "Active",
     "Edit video"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -49615,12 +49616,12 @@
    "category": "video generation",
    "description": "CapCut's AI studio for video and images, powered by models such as Seedance and Seedream, for ads, social clips and short dramas.",
    "key_features": [
-    "See website",
+    "Freemium",
     "Active",
     "Generate images"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -50356,12 +50357,12 @@
    "category": "film & TV audio",
    "description": "Automatic audio post-production web service: leveling, loudness normalization, noise and reverb reduction for speech.",
    "key_features": [
-    "See website",
+    "Freemium",
     "Active",
     "Clean up audio"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Web"
    ],
@@ -51184,13 +51185,13 @@
    "category": "film & TV audio",
    "description": "AI dubbing and voiceover for media companies. Create a voice, direct how it sounds and export.",
    "key_features": [
-    "See website",
+    "Paid",
     "Active",
     "Dub & localize",
     "Voiceover"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -54100,12 +54101,12 @@
    "category": "image generation",
    "description": "Image generator trained only on Getty's licensed library, with legal indemnity for commercial use.",
    "key_features": [
-    "See website",
+    "Paid",
     "Active",
     "Generate images"
    ],
-   "pricing": "See website",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -61527,12 +61528,12 @@
    "category": "coding",
    "description": "Agentic software development platform for engineering teams, with coding agents that use deep context from large codebases.",
    "key_features": [
-    "See site",
+    "Paid",
     "Active",
     "Write code"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -65786,14 +65787,14 @@
    "category": "MCP servers",
    "description": "A search MCP server and API for AI agents, covering real-time web search, vertical search and parallel batch queries with structured results and anonymous access.",
    "key_features": [
-    "See site",
+    "Freemium",
     "Active",
     "2029 GitHub stars",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Freemium",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
