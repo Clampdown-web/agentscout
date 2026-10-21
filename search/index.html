@@ -29,7 +29,7 @@
 <label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Relevance</option><option value="new">Newest</option></select>
 <button type="button" id="fclear" class="chip" style="min-height:44px">Clear filters</button></div>
 <p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type a search to begin.</p>
-<p id="ssugg" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres" style="min-height:60vh"></div>
+<p id="ssugg" role="status" aria-live="polite" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres" style="min-height:60vh"></div>
 <p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
 <noscript><p>Search needs JavaScript. Browse <a href="../categories/index.html">categories</a> or the <a href="../index.html#directory">directory</a> instead.</p></noscript>
 </section>
@@ -75,7 +75,7 @@ async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??
  let bm=used?bestMatch(used):null;if(bm&&!toolOK(bm))bm=null;
  list=res.rows;if(bm)list=list.filter(d=>!d.url.endsWith("/tools/"+bm[1]+".html"));more_=res.more;page=0;$("sres").innerHTML="";
  if(bm)$("sbest").innerHTML=`<h2 style="font-size:16px;margin:12px 0 8px">Best match</h2><a class="card" href="/tools/${esc(bm[1])}.html" style="display:flex;align-items:center;gap:10px;min-height:44px;padding:12px;margin:0 0 8px">${bm[2]?`<img src="/${esc(bm[2])}" alt="" width="32" height="32" style="border-radius:8px">`:""}<span><b>${esc(bm[0])}</b><br><span class="muted" style="font-size:13px">${esc(bm[3])} · ${esc(bm[4])}</span></span></a>`;
- if(orig)$("ssugg").innerHTML=`No results for “${esc(orig)}”. Showing results for <b>${esc(used)}</b>.`;
+ if(orig)$("ssugg").innerHTML=`Showing results for <b>${esc(used)}</b> instead of “${esc(orig)}”.`;
  const n=list.length+(bm?1:0);
  if(!n){const s=q?suggest(q):null;$("sstat").textContent=`No results${q?` for “${q}”`:""}. Try fewer words or clear filters.`;if(s)$("ssugg").innerHTML=`Did you mean <a href="?q=${encodeURIComponent(s)}" id="didyou">${esc(s)}</a>?`;$("smore").hidden=true;return}
  $("sstat").textContent=`${n}${more_?"+":""} result${n===1?"":"s"}${used?` for “${used}”`:""}`;render()}
