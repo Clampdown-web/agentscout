@@ -3,6 +3,11 @@
    ("as-vid") enforces one rating per tool per visitor. */
 (function () {
   var W = "https://agentscout-image.agentscouthq.workers.dev";
+  // "Rate this tool" (Oct 21 2026): jump to the form and put focus on the first star
+  function rateJump(ev) { var fm = document.getElementById("rv-form"); if (!fm) return; if (ev) ev.preventDefault()
+    fm.scrollIntoView({ behavior: "smooth", block: "center" }); var r = fm.querySelector('input[name="rv-stars"]'); if (r) setTimeout(function () { try { r.focus({ preventScroll: true }) } catch (e) { r.focus() } }, 350) }
+  document.querySelectorAll("a.rv-rate").forEach(function (a) { a.addEventListener("click", rateJump) })
+  if (location.hash === "#rate" || location.hash === "#rv-form") setTimeout(rateJump, 300)
   var sec = document.getElementById("reviews"); if (!sec || !window.fetch) return;
   var tool = sec.getAttribute("data-tool"), name = sec.getAttribute("data-name") || "this tool";
   var $ = function (s) { return sec.querySelector(s); };

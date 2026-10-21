@@ -170,6 +170,7 @@ def build(t):
     import build_free_tools; urls+=build_free_tools.pages(t)
     import build_landing; urls+=build_landing.pages(t)
     import build_mcp_tasks; urls+=build_mcp_tasks.pages(t)
+    import build_leaderboard; urls+=build_leaderboard.pages(t)  # /leaderboard/ (Oct 21 2026)
     import build_search; urls+=build_search.page()  # /search/ page (Oct 21 2026)  # Best MCP servers by task (Oct 21 2026)
     import build_trending; urls+=build_trending.pages(t)
     import os as _os2
@@ -332,7 +333,7 @@ def seo(t,urls):
     s=shell("/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section style="padding-top:40px"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/index.html#directory">directory</a> or <a href="/categories/index.html">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
     open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
     # llms.txt
-    L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t):,} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: support@agentscouthq.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
+    L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t):,} AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: support@agentscouthq.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Leaderboard]({B}leaderboard/): tools ranked by visitor ratings, reviews and GitHub stars",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     L+=["","## Guides","",f"- [MCP servers]({B}categories/mcp-servers.html)",f"- [Agent infra]({B}categories/agent-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
     # every tool added in the last 2 days (today PT + yesterday), no fixed cap (owner bug fix Oct 20 2026); falls back to the 12 newest if none

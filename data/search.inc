@@ -15,7 +15,7 @@
 </section>
 <script type="module">
 const $0=id=>document.getElementById(id);const NF=document.querySelector("form[data-navsearch]");const SQ=NF.querySelector("input");const $=id=>id==="sq"?SQ:id==="sf"?NF:$0(id);const P=new URLSearchParams(location.search);
-let pf,names,page=0,list=[],tok=0,more_=0;const PER=20,POOL=120;
+let pf,names,words=[],page=0,list=[],tok=0,more_=0;const PER=20,POOL=120;
 /* URL filters are case-insensitive (price=free == price=Free, type=tools, cat=coding agents, os=true, sort=NEW) */
 const setSel=(id,v)=>{v=(v||"").trim().toLowerCase().replace(/\s+/g," ");const o=[...$(id).options].find(o=>(o.value||o.textContent).trim().toLowerCase()===v||(v==="guides"&&o.value.startsWith("Guides")));$(id).value=o?o.value:""};
 $("sq").value=P.get("q")||"";setSel("ftype",P.get("type"));setSel("fprice",P.get("price"));$("fos").checked=/^(1|true|yes|on)$/i.test(P.get("os")||"");$("fsort").value=(P.get("sort")||"").toLowerCase()==="new"?"new":"";
@@ -24,12 +24,14 @@ const N=s=>(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,""
 const C=s=>N(s).replace(/[^a-z0-9]+/g,"");
 function toolMode(){const t=$("ftype").value;$("toolf").style.display=(t===""||t==="Tools")?"contents":"none"}
 function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("ftype").value)u.set("type",$("ftype").value);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort","new");history.replaceState(null,"","?"+u.toString())}
-async function load(){if(pf)return pf;const [m,nm]=await Promise.all([import("../pagefind/pagefind.js"),fetch("names.json").then(r=>r.json()).catch(()=>[])]);names=nm;pf=m;await pf.options({baseUrl:"/",excerptLength:22});pf.init();
+async function load(){if(pf)return pf;const [m,nm,wd]=await Promise.all([import("../pagefind/pagefind.js"),fetch("names.json").then(r=>r.json()).catch(()=>[]),fetch("words.json").then(r=>r.json()).catch(()=>[])]);names=nm;words=wd;pf=m;await pf.options({baseUrl:"/",excerptLength:22});pf.init();
  const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));setSel("fcat",P.get("cat"));return pf}
-function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;let p=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let c=[i];for(let j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[b.length]}
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;const D=[];for(let i=0;i<=a.length;i++){D[i]=[i];for(let j=1;j<=b.length;j++)D[i][j]=i?Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+(a[i-1]===b[j-1]?0:1),(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])?D[i-2][j-2]+1:9):j}return D[a.length][b.length]}
+function fixWord(w){if(w.length<3)return w;let best=null,bd=9,bc=0;const lim=w.length<=5?1:2;for(const [v,c] of words){if(v===w)return w;const d=lev(w,v);if(d<bd||(d===bd&&c>bc)){bd=d;bc=c;best=v}}return bd<=lim?best:w}
 function suggest(q){const cq=C(q);if(cq.length<3)return null;let best=null,bd=9;const lim=cq.length<=5?1:2;
  for(const [n,sl] of names){for(const cand of [C(n),C(sl)]){const d=lev(cq,cand);if(d<bd){bd=d;best=n}}}
- return bd>0&&bd<=lim?best:null}
+ if(bd>0&&bd<=lim)return best;
+ const ws=N(q).split(/[^a-z0-9]+/).filter(Boolean),fx=ws.map(fixWord).join(" ");return fx!==ws.join(" ")?fx:null}
 function bestMatch(q){const cq=C(q);if(cq.length<2)return null;let hit=null;
  for(const x of names){if(C(x[0])===cq||C(x[1])===cq){hit=x;break}}
  return hit}

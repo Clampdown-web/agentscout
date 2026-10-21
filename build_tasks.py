@@ -301,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610210030"  # bump when app.js/styles.css change
+ASSET_V="202610211000"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
@@ -347,6 +347,8 @@ def sitewide(t):
         # homepage strip after the makers strip (data/bt-strip.inc). Sponsor page stays untouched.
         if f!="sponsor.html":
             if 'class="navbt"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navbt" href="{d}bot-templates/">Bot templates</a>'+mm.group(2),s,count=1,flags=re.S)
+            # Leaderboard (Oct 21 2026, owner-approved): one nav link right before Bot templates
+            if 'class="navlb"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a class="navbt")',lambda mm:mm.group(1)+f'<a class="navlb" href="{d}leaderboard/">Leaderboard</a>'+mm.group(2),s,count=1,flags=re.S)
             fm2=re.search(r'<footer\b.*?</footer>',s,re.S)
             if fm2 and 'class="navbt"' not in fm2.group(0):
                 fn2=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:f'<a class="navbt" href="{d}bot-templates/">Bot templates</a> · '+mm.group(1),fm2.group(0),count=1)

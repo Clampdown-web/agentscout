@@ -27,7 +27,8 @@ def section(x,d,V):
     radios="".join(f'<input type="radio" class="sr" name="rv-stars" id="rv-s{i}" value="{i}"><label for="rv-s{i}" title="{i} star{"s" if i>1 else ""}"><span class="sr">{i} star{"s" if i>1 else ""}</span></label>' for i in range(1,6))
     return (f'<section id="reviews" class="rv" data-tool="{e(s)}" data-name="{e(n)}" aria-labelledby="rv-h"><h2 id="rv-h" style="font-size:16px;margin-bottom:10px">{e(n)} ratings and reviews</h2>'
         f'<div class="rv-sum">{summ}</div><ol class="rv-list"{"" if R else " hidden"}>{lis}</ol>'
-        f'<form class="rv-form" novalidate><fieldset class="rv-pick"><legend>Your rating of {e(n)}</legend><div class="rv-row">{radios}</div></fieldset>'
+        f'<p class="rv-cta">{"Be the first to rate" if not c else "Used"} {e(n)}{"" if not c else "? Rate it too"}: tap 1 to 5 stars below. A written review is optional.</p>'
+        f'<form class="rv-form" id="rv-form" novalidate><fieldset class="rv-pick"><legend>Your rating of {e(n)}</legend><div class="rv-row">{radios}</div></fieldset>'
         f'<label for="rv-text">Short review (optional)</label><textarea id="rv-text" name="rv-text" rows="3" maxlength="600" placeholder="What worked, what didn\'t? 20 to 600 characters, no links."></textarea><span class="rv-cnt muted" aria-hidden="true">0 / 600</span>'
         f'<label for="rv-name">Name (optional)</label><input type="text" id="rv-name" name="rv-name" maxlength="40" autocomplete="nickname">'
         f'<div class="rv-hp" aria-hidden="true"><label for="rv-website">Leave this empty</label><input type="text" id="rv-website" name="website" tabindex="-1" autocomplete="off"></div>'
@@ -41,7 +42,7 @@ def top(x,d):
     summ=(f'<a class="rv-topsum" href="#reviews" style="display:inline-flex;align-items:center;gap:6px;color:inherit;text-decoration:none"><span class="rv-stars" style="--r:{d["avg"]};font-size:15px" aria-hidden="true">★★★★★</span><span><b>{d["avg"]:.1f}</b> <span class="muted">({c} rating{"s" if c!=1 else ""})</span></span><span class="sr">Rated {d["avg"]:.1f} out of 5 from {c} rating{"s" if c!=1 else ""}</span></a>'
           if c else '<span class="muted rv-topsum">No ratings yet</span>')
     return (f'<div class="rv-top" style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;min-height:24px;line-height:24px;margin:-6px 0 12px;font-size:14px">'
-            f'{summ}<span class="muted" aria-hidden="true">·</span><a class="rv-write" href="#reviews">Write a review</a></div>')
+            f'{summ}<span class="muted" aria-hidden="true">·</span><a class="rv-write rv-rate" href="#rv-form">★ Rate this tool</a></div>')
 def run(t):
     import build_tasks; V=build_tasks.ASSET_V
     D=data(); bs={x["slug"]:x for x in t}; ld_n=0; ins=0
