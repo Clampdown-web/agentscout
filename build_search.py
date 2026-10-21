@@ -77,4 +77,7 @@ def page():
     body=open("data/search.inc",encoding="utf-8").read()
     ld={"@context":"https://schema.org","@type":"SearchResultsPage","name":title,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}}
     open("search/index.html","w",encoding="utf-8").write(X.shell("../",title,desc,canon,body,ld))
+    # small tool-name index for best-match pinning and "Did you mean" (loaded lazily with the Pagefind index)
+    t=json.load(open("tools.json"))
+    json.dump([[x["name"],x["slug"],x.get("logo") or "",x["category"],x.get("pricing") or ""] for x in t],open("search/names.json","w",encoding="utf-8"),ensure_ascii=False,separators=(",",":"))
     return [canon]

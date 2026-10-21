@@ -29,39 +29,68 @@
 <label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Relevance</option><option value="new">Newest</option></select>
 <button type="button" id="fclear" class="chip" style="min-height:44px">Clear filters</button></div>
 <p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type a search to begin.</p>
-<div id="sres" style="min-height:60vh"></div>
+<p id="ssugg" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres" style="min-height:60vh"></div>
 <p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
 <noscript><p>Search needs JavaScript. Browse <a href="../categories/index.html">categories</a> or the <a href="../index.html#directory">directory</a> instead.</p></noscript>
 </section>
 <script type="module">
 const $=id=>document.getElementById(id);const P=new URLSearchParams(location.search);
-const F={type:"ftype",pricing:"fprice",category:"fcat"};let pf,page=0,hits=[],tok=0;const PER=20;
+let pf,names,page=0,list=[],tok=0,more_=0;const PER=20,POOL=120;
 $("sq").value=P.get("q")||"";$("ftype").value=P.get("type")||"";$("fprice").value=P.get("price")||"";$("fos").checked=P.get("os")==="1";$("fsort").value=P.get("sort")==="new"?"new":"";
 const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const N=s=>(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
+const C=s=>N(s).replace(/[^a-z0-9]+/g,"");
 function toolMode(){const t=$("ftype").value;$("toolf").style.display=(t===""||t==="Tools")?"contents":"none"}
 function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("ftype").value)u.set("type",$("ftype").value);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort","new");history.replaceState(null,"","?"+u.toString())}
-async function load(){if(pf)return pf;pf=await import("../pagefind/pagefind.js");await pf.options({baseUrl:"/",excerptLength:22});pf.init();
+async function load(){if(pf)return pf;const [m,nm]=await Promise.all([import("../pagefind/pagefind.js"),fetch("names.json").then(r=>r.json()).catch(()=>[])]);names=nm;pf=m;await pf.options({baseUrl:"/",excerptLength:22});pf.init();
  const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));$("fcat").value=P.get("cat")||"";return pf}
-async function go(){const my=++tok;toolMode();sync();const q=$("sq").value.trim();const filters={};
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;let p=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let c=[i];for(let j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[b.length]}
+function suggest(q){const cq=C(q);if(cq.length<3)return null;let best=null,bd=9;const lim=cq.length<=5?1:2;
+ for(const [n,sl] of names){for(const cand of [C(n),C(sl)]){const d=lev(cq,cand);if(d<bd){bd=d;best=n}}}
+ return bd>0&&bd<=lim?best:null}
+function bestMatch(q){const cq=C(q);if(cq.length<2)return null;let hit=null;
+ for(const x of names){if(C(x[0])===cq||C(x[1])===cq){hit=x;break}}
+ return hit}
+const terms=q=>N(q).split(/[^a-z0-9]+/).filter(w=>w.length>1).map(w=>w.length>4&&w.endsWith("s")?w.slice(0,-1):w);
+function toolOK(x){if($("ftype").value&&$("ftype").value!=="Tools")return false;const pr=$("fprice").value;
+ const pt=(p=>{p=p.toLowerCase();if(/^(open|free$)/.test(p))return p.includes("cloud")?"Freemium":"Free";if(p.includes("freemium")||p.includes("+ cloud"))return"Freemium";if(/^(paid|usage|enterprise)/.test(p))return"Paid";return"Not listed"})(x[4]);
+ if(pr&&pt!==pr)return false;if($("fcat").value&&x[3]!==$("fcat").value)return false;if($("fos").checked&&!/^open/i.test(x[4]))return false;return true}
+async function run(q,filters,opts){const r=await pf.search(q||null,{filters,...opts});const hits=r.results.slice(0,POOL);const data=await Promise.all(hits.map(h=>h.data()));
+ if(!q)return {rows:data,more:r.results.length>POOL};
+ const T=terms(q);const top=hits.length?hits[0].score:0;const rows=[];
+ data.forEach((d,i)=>{const txt=N((d.meta&&d.meta.title||"")+" "+d.content);const tt=N(d.meta&&d.meta.title||"");const lead=N((d.meta&&d.meta.title||"")+" "+d.content.slice(0,400));const all=T.every(w=>txt.includes(w));const intitle=T.every(w=>tt.includes(w));const inlead=T.every(w=>lead.includes(w));
+  if(!T.some(w=>txt.includes(w)))return; if(hits[i].score<top*0.08)return; rows.push({d,all,intitle,inlead,i})});
+ const anyAll=rows.some(r=>r.all);const keep=anyAll?rows.filter(r=>r.all):rows;
+ keep.sort((a,b)=>(b.intitle-a.intitle)||(b.inlead-a.inlead)||(a.i-b.i));
+ return {rows:keep.map(r=>r.d),more:r.results.length>POOL&&keep.length===rows.length}}
+async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??$("sq").value).trim();const filters={};
  if($("ftype").value)filters.type=$("ftype").value;
  if($("ftype").value===""||$("ftype").value==="Tools"){if($("fprice").value)filters.pricing=$("fprice").value;if($("fcat").value)filters.category=$("fcat").value;if($("fos").checked)filters["open source"]="Yes"}
+ $("ssugg").innerHTML="";$("sbest").innerHTML="";
  if(!q&&!Object.keys(filters).length){$("sres").innerHTML="";$("smore").hidden=true;$("sstat").textContent="Type a search to begin.";return}
  $("sstat").textContent="Searching…";await load();
- const opts={filters};if($("fsort").value==="new")opts.sort={date:"desc"};
- const r=await pf.search(q||null,opts);if(my!==tok)return;hits=r.results;page=0;$("sres").innerHTML="";
- $("sstat").textContent=hits.length?`${hits.length} result${hits.length===1?"":"s"}${q?` for “${q}”`:""}`:`No results${q?` for “${q}”`:""}. Try fewer words or clear filters.`;await more(my)}
-async function more(my){const part=await Promise.all(hits.slice(page*PER,(page+1)*PER).map(h=>h.data()));if(my!==tok)return;page++;
+ const opts={};if($("fsort").value==="new")opts.sort={date:"desc"};
+ let res=await run(q,filters,opts);if(my!==tok)return;let used=q,orig=null;
+ if(q&&!res.rows.length){const s=suggest(q);if(s){const r2=await run(s,filters,opts);if(my!==tok)return;if(r2.rows.length){res=r2;orig=q;used=s}}}
+ let bm=used?bestMatch(used):null;if(bm&&!toolOK(bm))bm=null;
+ list=res.rows;if(bm)list=list.filter(d=>!d.url.endsWith("/tools/"+bm[1]+".html"));more_=res.more;page=0;$("sres").innerHTML="";
+ if(bm)$("sbest").innerHTML=`<h2 style="font-size:16px;margin:12px 0 8px">Best match</h2><a class="card" href="/tools/${esc(bm[1])}.html" style="display:flex;align-items:center;gap:10px;min-height:44px;padding:12px;margin:0 0 8px">${bm[2]?`<img src="/${esc(bm[2])}" alt="" width="32" height="32" style="border-radius:8px">`:""}<span><b>${esc(bm[0])}</b><br><span class="muted" style="font-size:13px">${esc(bm[3])} · ${esc(bm[4])}</span></span></a>`;
+ if(orig)$("ssugg").innerHTML=`No results for “${esc(orig)}”. Showing results for <b>${esc(used)}</b>.`;
+ const n=list.length+(bm?1:0);
+ if(!n){const s=q?suggest(q):null;$("sstat").textContent=`No results${q?` for “${q}”`:""}. Try fewer words or clear filters.`;if(s)$("ssugg").innerHTML=`Did you mean <a href="?q=${encodeURIComponent(s)}" id="didyou">${esc(s)}</a>?`;$("smore").hidden=true;return}
+ $("sstat").textContent=`${n}${more_?"+":""} result${n===1?"":"s"}${used?` for “${used}”`:""}`;render()}
+function render(){const part=list.slice(page*PER,(page+1)*PER);page++;
  const groups={};for(const d of part){const t=(d.meta&&d.meta.type)||"Pages";(groups[t]=groups[t]||[]).push(d)}
- const order=Object.keys(groups);/* groups appear in order of their best-ranked result */let h="";
- for(const t of order){if(!groups[t])continue;h+=`<h2 style="font-size:16px;margin:22px 0 8px">${esc(t)}</h2><ul style="list-style:none;padding:0;margin:0">`+groups[t].map(d=>`<li style="margin:0 0 14px"><a href="${esc(d.url)}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600">${d.meta.image&&t==="Tools"?`<img src="${esc(d.meta.image)}" alt="" width="24" height="24" loading="lazy" style="border-radius:6px">`:""}${esc(d.meta.title||d.url)}</a><br><span class="muted" style="font-size:14px">${d.excerpt}</span></li>`).join("")+"</ul>"}
- $("sres").insertAdjacentHTML("beforeend",h);$("smore").hidden=page*PER>=hits.length}
-let deb;$("sq").addEventListener("input",()=>{clearTimeout(deb);deb=setTimeout(go,250)});
+ let h="";for(const t of Object.keys(groups)){h+=`<h2 style="font-size:16px;margin:22px 0 8px">${esc(t)}</h2><ul style="list-style:none;padding:0;margin:0">`+groups[t].map(d=>`<li style="margin:0 0 14px"><a href="${esc(d.url)}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600">${d.meta.image&&t==="Tools"?`<img src="${esc(d.meta.image)}" alt="" width="24" height="24" loading="lazy" style="border-radius:6px">`:""}${esc(d.meta.title||d.url)}</a><br><span class="muted" style="font-size:14px">${d.excerpt}</span></li>`).join("")+"</ul>"}
+ $("sres").insertAdjacentHTML("beforeend",h);$("smore").hidden=page*PER>=list.length}
+let deb;$("sq").addEventListener("input",()=>{clearTimeout(deb);deb=setTimeout(()=>go(),250)});
 $("sf").addEventListener("submit",e=>{e.preventDefault();go()});
-["ftype","fprice","fcat","fos","fsort"].forEach(id=>$(id).addEventListener("change",go));
+["ftype","fprice","fcat","fos","fsort"].forEach(id=>$(id).addEventListener("change",()=>go()));
 $("fclear").onclick=()=>{["ftype","fprice","fcat","fsort"].forEach(id=>$(id).value="");$("fos").checked=false;go();$("sq").focus()};
-$("smore").onclick=()=>more(tok);
+$("smore").onclick=()=>render();
+$("ssugg").addEventListener("click",e=>{if(e.target.id==="didyou"){e.preventDefault();$("sq").value=e.target.textContent;go()}});
 $("sq").addEventListener("focus",()=>load(),{once:true});
-toolMode();if(P.toString())load().then(go);
+toolMode();if(P.toString())load().then(()=>go());
 </script>
 </main>
 <section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><div class="nltxt"><h2>Get the best new AI agents, weekly</h2><p>One short email with new tools, launches and what's worth trying. Free, unsubscribe anytime.</p></div><form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form></div></div></section><footer id="about" class="band" style="border-bottom:0"><div class="wrap">
