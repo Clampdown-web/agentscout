@@ -1,0 +1,97 @@
+[
+ {
+  "id": "oss-awesome-grokbot",
+  "repo": "kydlikebtc/awesome-grokbot",
+  "name": "awesome-grokbot",
+  "cats": [
+   "research",
+   "productivity"
+  ],
+  "desc": "Index of public x.ai/bot shares for Grok Bot. Every link is status-checked and every row attributed; bilingual EN/中文 catalog with a JSON schema, CI and a searchable site.",
+  "stars": 366,
+  "license": "NOASSERTION"
+ },
+ {
+  "id": "oss-grok-bot-cli",
+  "repo": "ScriptedAlchemy/grok-bot-cli",
+  "name": "grok-bot-cli",
+  "cats": [
+   "coding",
+   "ops"
+  ],
+  "desc": "Command-line tool for Grok Bot agents and groups: create, update, message, inspect threads and automate cleanup from scripts.",
+  "stars": 116,
+  "license": "MIT"
+ },
+ {
+  "id": "oss-hypergrok-trading-desk",
+  "repo": "galleonlabs/hypergrok-trading-desk",
+  "name": "HyperGrok Trading Desk",
+  "cats": [
+   "data",
+   "research"
+  ],
+  "desc": "Open-source 7-agent Hyperliquid trading desk with role profiles and 17 skills for research, risk, execution and review. Risk warning: it can place real trades. Start read-only or on testnet; every trade needs a ticket you approve.",
+  "stars": 139,
+  "license": "MIT"
+ },
+ {
+  "id": "oss-ronglecat-awesome-grok-bot",
+  "repo": "RongleCat/awesome-grok-bot",
+  "name": "Awesome Grok Bot (RongleCat)",
+  "cats": [
+   "research",
+   "productivity"
+  ],
+  "desc": "Curated bilingual list of Grok Bot resources: guides, bots, skills and tools for always-on AI teammates with their own cloud computer.",
+  "stars": 440,
+  "license": "NOASSERTION"
+ },
+ {
+  "id": "oss-akeru-bot",
+  "repo": "opencoredev/akeru-bot",
+  "name": "Akeru Bot",
+  "cats": [
+   "coding",
+   "productivity"
+  ],
+  "desc": "Open-source Grok Bot alternative for named AI teammates. Local-first desktop, web and mobile clients with per-bot tools, instructions and memory. Independent fork of T3 Code.",
+  "stars": 101,
+  "license": "MIT"
+ },
+ {
+  "id": "oss-guaca",
+  "repo": "madebywelch/guaca",
+  "name": "Guaca",
+  "cats": [
+   "coding",
+   "productivity"
+  ],
+  "desc": "Desktop workspace inspired by Grok Bot where AI agents collaborate, write code and use tools. Runs locally or on your own server, with shared conversations, persistent memory and MCP plugins.",
+  "stars": 46,
+  "license": "AGPL-3.0"
+ },
+ {
+  "id": "oss-grok-bot-profiles",
+  "repo": "HAEGONG/grok-bot-profiles",
+  "name": "Grok Bot Profiles",
+  "cats": [
+   "coding"
+  ],
+  "desc": "Four ready-to-use Grok Bot profiles (Spec Writer, Bug Reproducer, PR Producer, PR Verifier) with focused outcomes and explicit approval boundaries, so a bot never approves its own work.",
+  "stars": 7,
+  "license": "CC-BY-4.0"
+ },
+ {
+  "id": "oss-majiayu-awesome-grok-bot",
+  "repo": "majiayu000/awesome-grok-bot",
+  "name": "Awesome Grok Bot (majiayu000)",
+  "cats": [
+   "research",
+   "productivity"
+  ],
+  "desc": "Curated catalog of live x.ai/bot shares for Grok Bot with shelf tiers, searchable pages and a bilingual README. Community list; entries aren't verified by AgentScout.",
+  "stars": 72,
+  "license": "CC0-1.0"
+ }
+]

@@ -18,6 +18,13 @@ def row(e):
             f'<div class="bt-txt"><div class="bt-nm"><a href="{s}.html"><b>{n}</b></a> <span>by {esc(e["creator"])}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Grok Bot</span><span class="sharewrap bt-share">{share(e,"btn sharebtn bt-sbtn","Share "+n)}<span class="sharecount" hidden></span></span>'
             f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens original listing)">Add</a></li>')
+def oss_row(e):
+    n=esc(e["name"]); o=e["repo"].split("/")[0]; u="https://github.com/"+e["repo"]; st=f'{e["stars"]:,}'
+    lic=f' · {esc(e["license"])}' if e.get("license") and e["license"]!="NOASSERTION" else ""
+    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+o).lower())}"><img class="bt-ic logo" src="icons/gh-{o.lower()}.png" alt="{esc(o)} avatar" width="32" height="32" loading="lazy">'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{u}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by @{esc(o)} · ★ {st} on GitHub{lic}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+            f'<span class="b bt-badge">Open source</span>'
+            f'<a class="btn bt-btn" href="{u}" target="_blank" rel="noopener" aria-label="View {n} on GitHub (opens in new tab)">GitHub</a></li>')
 def tabs(e):
     T=[]
     if e["memories"]:
@@ -66,8 +73,9 @@ def run():
     X=[e for e in X if f'grok-{e["slug"]}' not in base and not os.path.exists(f"{D}/{e['slug']}.html") or (os.path.exists(f"{D}/{e['slug']}.html") and MARK in open(f"{D}/{e['slug']}.html").read())]
     anchor='</ul></section><section class="bt-sec" data-sec="claude">'
     assert anchor in s
-    s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+'<!--/btx-->'+anchor,1)
-    total=len(base)+len(X)
+    OSS=json.load(open("data/bot-templates-oss.json")) if os.path.exists("data/bot-templates-oss.json") else []
+    s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+"".join(oss_row(e) for e in OSS)+'<!--/btx-->'+anchor,1)
+    total=len(base)+len(X)+len(OSS)
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
     s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
     def il(m):

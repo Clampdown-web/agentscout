@@ -1,17 +1,239 @@
-{"_note":"Use-case categories for every row on /bot-templates/ (row id -> 1-2 category keys). build_bot_templates.py applies these; new templates without an entry get 'productivity' and a build warning.",
-"_cats":{"research":"Research","sales":"Sales & marketing","coding":"Coding & engineering","design":"Design","content":"Content & writing","productivity":"Productivity","meetings":"Meetings","ops":"Ops & support","personal":"Personal","data":"Data & analytics"},
-"grok-overheard":["research","sales"],"grok-dr-eggbot":["productivity"],"grok-haggle-bot":["ops","data"],"grok-seo-aeo-desk":["sales","content"],
-"grok-competitor-watch":["research","sales"],"grok-nightly-audit-engineer":["coding"],"grok-researchy":["research"],"grok-imogen":["content","design"],
-"grok-tradbot":["personal"],"grok-projects-manager":["productivity","ops"],"grok-recruiting-coordinator":["ops","meetings"],"grok-figma-bro":["design","coding"],
-"grok-sales-call-coach":["sales","meetings"],"grok-meeting-recap-deck":["meetings","content"],"grok-pitch-deck-coach":["sales","content"],"grok-clip-bot":["content"],
-"grok-copy-humanizer":["content"],"grok-ai-search-visibility":["sales","data"],"grok-tinkabot":["coding"],"grok-critiquito":["design"],
-"grok-engineering-lead":["coding","productivity"],"grok-qa-bot":["coding"],"grok-pm-bot":["productivity"],"grok-the-morning-newspaper":["personal"],
-"grok-company-docs-q-a":["ops","research"],"grok-site-audit":["sales","data"],"grok-x-brief":["research","personal"],"grok-last30days":["research"],
-"grok-product-idea-stress-test":["research"],"grok-import-bot":["productivity"],
-"claude-code-review":["coding"],"claude-feature-dev":["coding"],"claude-skill-creator":["coding"],"claude-mcp-builder":["coding"],
-"claude-frontend-design":["design","coding"],"claude-webapp-testing":["coding"],
-"codex-build-web-apps":["coding","design"],"codex-github":["coding"],"codex-codex-security":["coding"],"codex-build-ios-apps":["coding"],"codex-plugin-eval":["coding"],
-"openclaw-memory-lancedb":["coding","data"],"openclaw-lobster":["productivity","coding"],"openclaw-voice-call":["ops"],"openclaw-shopify-ai-toolkit":["coding","sales"],"openclaw-expedia-travel":["personal"],
-"cursor-sentry":["coding"],"cursor-linear":["productivity","coding"],"cursor-vercel":["coding"],"cursor-figma":["design","coding"],"cursor-1password":["coding"],
-"n8n-build-your-first-ai-agent":["coding"],"n8n-gmail-ai-email-manager":["productivity"],"n8n-customer-support-whatsapp-bot":["ops"],
-"n8n-multi-platform-social-media-content":["content","sales"],"n8n-firecrawl-web-agent-webhook":["research","data"]}
+{
+ "_note": "Use-case categories for every row on /bot-templates/ (row id -> 1-2 category keys). build_bot_templates.py applies these; new templates without an entry get 'productivity' and a build warning.",
+ "_cats": {
+  "research": "Research",
+  "sales": "Sales & marketing",
+  "coding": "Coding & engineering",
+  "design": "Design",
+  "content": "Content & writing",
+  "productivity": "Productivity",
+  "meetings": "Meetings",
+  "ops": "Ops & support",
+  "personal": "Personal",
+  "data": "Data & analytics"
+ },
+ "grok-overheard": [
+  "research",
+  "sales"
+ ],
+ "grok-dr-eggbot": [
+  "productivity"
+ ],
+ "grok-haggle-bot": [
+  "ops",
+  "data"
+ ],
+ "grok-seo-aeo-desk": [
+  "sales",
+  "content"
+ ],
+ "grok-competitor-watch": [
+  "research",
+  "sales"
+ ],
+ "grok-nightly-audit-engineer": [
+  "coding"
+ ],
+ "grok-researchy": [
+  "research"
+ ],
+ "grok-imogen": [
+  "content",
+  "design"
+ ],
+ "grok-tradbot": [
+  "personal"
+ ],
+ "grok-projects-manager": [
+  "productivity",
+  "ops"
+ ],
+ "grok-recruiting-coordinator": [
+  "ops",
+  "meetings"
+ ],
+ "grok-figma-bro": [
+  "design",
+  "coding"
+ ],
+ "grok-sales-call-coach": [
+  "sales",
+  "meetings"
+ ],
+ "grok-meeting-recap-deck": [
+  "meetings",
+  "content"
+ ],
+ "grok-pitch-deck-coach": [
+  "sales",
+  "content"
+ ],
+ "grok-clip-bot": [
+  "content"
+ ],
+ "grok-copy-humanizer": [
+  "content"
+ ],
+ "grok-ai-search-visibility": [
+  "sales",
+  "data"
+ ],
+ "grok-tinkabot": [
+  "coding"
+ ],
+ "grok-critiquito": [
+  "design"
+ ],
+ "grok-engineering-lead": [
+  "coding",
+  "productivity"
+ ],
+ "grok-qa-bot": [
+  "coding"
+ ],
+ "grok-pm-bot": [
+  "productivity"
+ ],
+ "grok-the-morning-newspaper": [
+  "personal"
+ ],
+ "grok-company-docs-q-a": [
+  "ops",
+  "research"
+ ],
+ "grok-site-audit": [
+  "sales",
+  "data"
+ ],
+ "grok-x-brief": [
+  "research",
+  "personal"
+ ],
+ "grok-last30days": [
+  "research"
+ ],
+ "grok-product-idea-stress-test": [
+  "research"
+ ],
+ "grok-import-bot": [
+  "productivity"
+ ],
+ "claude-code-review": [
+  "coding"
+ ],
+ "claude-feature-dev": [
+  "coding"
+ ],
+ "claude-skill-creator": [
+  "coding"
+ ],
+ "claude-mcp-builder": [
+  "coding"
+ ],
+ "claude-frontend-design": [
+  "design",
+  "coding"
+ ],
+ "claude-webapp-testing": [
+  "coding"
+ ],
+ "codex-build-web-apps": [
+  "coding",
+  "design"
+ ],
+ "codex-github": [
+  "coding"
+ ],
+ "codex-codex-security": [
+  "coding"
+ ],
+ "codex-build-ios-apps": [
+  "coding"
+ ],
+ "codex-plugin-eval": [
+  "coding"
+ ],
+ "openclaw-memory-lancedb": [
+  "coding",
+  "data"
+ ],
+ "openclaw-lobster": [
+  "productivity",
+  "coding"
+ ],
+ "openclaw-voice-call": [
+  "ops"
+ ],
+ "openclaw-shopify-ai-toolkit": [
+  "coding",
+  "sales"
+ ],
+ "openclaw-expedia-travel": [
+  "personal"
+ ],
+ "cursor-sentry": [
+  "coding"
+ ],
+ "cursor-linear": [
+  "productivity",
+  "coding"
+ ],
+ "cursor-vercel": [
+  "coding"
+ ],
+ "cursor-figma": [
+  "design",
+  "coding"
+ ],
+ "cursor-1password": [
+  "coding"
+ ],
+ "n8n-build-your-first-ai-agent": [
+  "coding"
+ ],
+ "n8n-gmail-ai-email-manager": [
+  "productivity"
+ ],
+ "n8n-customer-support-whatsapp-bot": [
+  "ops"
+ ],
+ "n8n-multi-platform-social-media-content": [
+  "content",
+  "sales"
+ ],
+ "n8n-firecrawl-web-agent-webhook": [
+  "research",
+  "data"
+ ],
+ "oss-awesome-grokbot": [
+  "research",
+  "productivity"
+ ],
+ "oss-grok-bot-cli": [
+  "coding",
+  "ops"
+ ],
+ "oss-hypergrok-trading-desk": [
+  "data",
+  "research"
+ ],
+ "oss-ronglecat-awesome-grok-bot": [
+  "research",
+  "productivity"
+ ],
+ "oss-akeru-bot": [
+  "coding",
+  "productivity"
+ ],
+ "oss-guaca": [
+  "coding",
+  "productivity"
+ ],
+ "oss-grok-bot-profiles": [
+  "coding"
+ ],
+ "oss-majiayu-awesome-grok-bot": [
+  "research",
+  "productivity"
+ ]
+}
