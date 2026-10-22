@@ -32,6 +32,13 @@ def cb_row(e):
             f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by <a href="https://x.com/{h}" target="_blank" rel="noopener">@{h}</a> · {CB_LABEL}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Community</span>'
             f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
+UC_LABEL="Official x.ai use case"
+def uc_row(e):
+    n=esc(e["name"]); act=' · <span class="bt-act">Acts with your approval</span>' if e.get("acts") else ""
+    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["creator"]).lower())}"><img class="bt-ic logo" src="icons/official-use-case.svg" alt="{n} icon" width="32" height="32" loading="lazy">'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by {esc(e["creator"])} · <a href="https://x.ai/bot/use-cases" target="_blank" rel="noopener">{UC_LABEL}</a>{act}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+            f'<span class="b bt-badge">Official</span>'
+            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
 def tabs(e):
     T=[]
     if e["memories"]:
@@ -82,8 +89,9 @@ def run():
     assert anchor in s
     OSS=json.load(open("data/bot-templates-oss.json")) if os.path.exists("data/bot-templates-oss.json") else []
     CB=json.load(open("data/bot-templates-community.json")) if os.path.exists("data/bot-templates-community.json") else []
-    s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+"".join(oss_row(e) for e in OSS)+"".join(cb_row(e) for e in CB)+'<!--/btx-->'+anchor,1)
-    total=len(base)+len(X)+len(OSS)+len(CB)
+    UC=json.load(open("data/bot-templates-official.json")) if os.path.exists("data/bot-templates-official.json") else []
+    s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+"".join(uc_row(e) for e in UC)+"".join(oss_row(e) for e in OSS)+"".join(cb_row(e) for e in CB)+'<!--/btx-->'+anchor,1)
+    total=len(base)+len(X)+len(UC)+len(OSS)+len(CB)
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
     s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
     # Short index title (owner-approved Oct 21 2026, 7:26 PM PT): under 60 chars so Google does not truncate it
@@ -146,6 +154,8 @@ def filters():
     X={e["slug"]:e for e in json.load(open("data/bot-templates-extra.json"))}
     if os.path.exists("data/bot-templates-community.json"):
         for e in json.load(open("data/bot-templates-community.json")): M.setdefault(e["id"],e["cats"])
+    if os.path.exists("data/bot-templates-official.json"):
+        for e in json.load(open("data/bot-templates-official.json")): M.setdefault(e["id"],e["cats"])
     cnt={k:0 for k in CATS}; total=0
     def fix(m):
         nonlocal total; tag=m.group(0); rid=re.search(r'id="([^"]+)"',tag).group(1); total+=1

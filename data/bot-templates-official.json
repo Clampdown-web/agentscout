@@ -1,0 +1,711 @@
+[
+ {
+  "id": "uc-beta-adoption-watcher",
+  "name": "Beta Adoption Watcher",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sfcf5d046a2784045938d",
+  "desc": "See who's actually trying the new feature. Monitors usage and surfaces which customers are in, so the team can follow up.",
+  "cats": [
+   "data",
+   "coding"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-bug-reproduction",
+  "name": "Bug Reproduction",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s2d62197e15bd11a1bd63",
+  "desc": "Give engineers reports they can trust. Catches the thread, clicks the same path in staging, captures the failure, and drops a repro pack (steps,...",
+  "cats": [
+   "coding"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-call-faq-miner",
+  "name": "Call FAQ Miner",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s297976f738dc390d23df",
+  "desc": "Keep enablement current from real calls. Tracks questions, timestamps answers, and links back to the source recording.",
+  "cats": [
+   "sales",
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-cloud-agent-orchestrator",
+  "name": "Cloud Agent Orchestrator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s20b2c65ebeebb7362fa7",
+  "desc": "Keep many cloud agent runs moving without babysitting each one. Kicks off runs, monitors, chases what's stuck, and summarizes the report.",
+  "cats": [
+   "coding"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-docs-auditor",
+  "name": "Docs Auditor",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s1025e1ebe0b11f048bd4",
+  "desc": "Catch docs that are out of date with the product. Diffs help center and internal notes against what shipped last week, flags stale pages, and drafts the...",
+  "cats": [
+   "content",
+   "coding"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-feature-request-tracker",
+  "name": "Feature Request Tracker",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s229dcca5bc0eaa01b09c",
+  "desc": "Never lose \"who asked for this.\" Mines Slack and calls into a living list tied to customers, so the spec has a real demand trail.",
+  "cats": [
+   "research",
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-playtest-operator",
+  "name": "Playtest Operator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s2cfcbb8a38b8e22b7d18",
+  "desc": "Brute-force test the product path when APIs aren't enough. Drives the UI on a computer, captures failures, and returns a tight findings pack.",
+  "cats": [
+   "coding"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-product-feedback-analyst",
+  "name": "Product Feedback Analyst",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s9e2a2591b97ca74fbeaa",
+  "desc": "Turn scattered product signal into a prioritized view. Collects and clusters feedback from connected sources, weighs evidence and urgency, and drafts...",
+  "cats": [
+   "research",
+   "data"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-product-performance",
+  "name": "Product Performance",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s6d5f1cc3a564c8da972a",
+  "desc": "Get a clear view of the metrics that matter. Logs into observability tools, walks the flamegraphs, and comes back with hotspots plus a short writeup...",
+  "cats": [
+   "data",
+   "coding"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-prototype-builder",
+  "name": "Prototype Builder",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s2e4acfb8db3cc0669a1b",
+  "desc": "Go from ask to something clickable fast. Writes on its computer and comes back with a screenshot plus a live URL.",
+  "cats": [
+   "coding",
+   "design"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-security-questionnaire-filler",
+  "name": "Security Questionnaire Filler",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s1bde25ba45eca88ff276",
+  "desc": "Speed through vendor security portals. Logs into the questionnaire site, pulls answers from your trust center and past RFPs, drafts every field, and...",
+  "cats": [
+   "ops"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-marketing-calendar-owner",
+  "name": "Marketing Calendar Owner",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/se318a72a31fad75c277e",
+  "desc": "Keep regional and global content, launch, and events calendars in sync. Pulls from Notion and keeps webinars and campaigns current without a weekly chase.",
+  "cats": [
+   "sales",
+   "productivity"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-newsletter-writer",
+  "name": "Newsletter Writer",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s5d2839123b973b4480f9",
+  "desc": "Ship monthly marketing and product updates on time. Pulls what's new from launches, wins, and your calendar, writes the issue in your voice, and parks...",
+  "cats": [
+   "content",
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-personal-site-builder",
+  "name": "Personal Site Builder",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s3c76c85a840b32b8fed8",
+  "desc": "Scaffold a personal site from a description, untangle domain issues, and leave you with a live starting point.",
+  "cats": [
+   "coding",
+   "personal"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-presentation-designer",
+  "name": "Presentation Designer",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s25997c2d0308b4e76024",
+  "desc": "Build on-brand decks without starting from a blank slide. Uses your master template and brand system and delivers an editable link ready to refine and...",
+  "cats": [
+   "design",
+   "content"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-account-health",
+  "name": "Account Health",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s5465ebb9e192551741f7",
+  "desc": "See risk and expansion before the QBR. Reads usage and signals across your book and turns portfolio noise into a clear watch list.",
+  "cats": [
+   "ops",
+   "data"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-account-manager",
+  "name": "Account Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sd4333bc337078a9752ac",
+  "desc": "Keep every key account warm without rebuilding context each time. Preps every call from transcripts, notes, CRM, and Slack, drafts follow-ups, and keeps...",
+  "cats": [
+   "sales",
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-account-research-specialist",
+  "name": "Account Research Specialist",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sa7d7f82d0068c2367a17",
+  "desc": "Tier accounts before you touch them. Pulls Salesforce + live signals, scores fit and warmth, and builds a shareable research pack per account.",
+  "cats": [
+   "sales",
+   "research"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-community-operations-manager",
+  "name": "Community Operations Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/seb9d6ba6765c64113941",
+  "desc": "Keep the ambassador loop moving. Screens apps, triages DMs across channels, and drafts nurture on a cadence so community isn't a full-time chase.",
+  "cats": [
+   "ops",
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-compelling-events-monitor",
+  "name": "Compelling Events Monitor",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sdeb02761a9d185e5899f",
+  "desc": "Engage when there's a real reason. Watches leadership posts for awards, launches, and hiring signals, then sends a short digest of posts to engage with...",
+  "cats": [
+   "sales",
+   "research"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-crm-operations-manager",
+  "name": "CRM Operations Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s162b4ed38d6cf1d56731",
+  "desc": "Keep the pipeline clean. Handles CRM and org-chart hygiene before and after meetings so records stay current without a manual pass.",
+  "cats": [
+   "sales",
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-deal-desk-coordinator",
+  "name": "Deal Desk Coordinator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sb434ef300dea2b88aa58",
+  "desc": "Draft contextual internal deal notes from past emails, Salesforce, and calls, then submit in Salesforce once you approve.",
+  "cats": [
+   "sales"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-deck-updater",
+  "name": "Deck Updater",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s2a289081613e5e361c79",
+  "desc": "Leave the room with the slide already moving. Updates your deck from discovery notes mid-call or right after, with next steps baked in.",
+  "cats": [
+   "sales",
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-enablement-fulfillment-specialist",
+  "name": "Enablement Fulfillment Specialist",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s0dfd5486dc759d409d69",
+  "desc": "Answer \"send me the recordings\" without digging. Finds Zoom assets, builds one-pagers, uploads to Drive, and drafts the reply with links.",
+  "cats": [
+   "ops",
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-event-guest-screener",
+  "name": "Event Guest Screener",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s47ebc74c9fcf9359b5a9",
+  "desc": "Fill the room with the right people. Scores event applicants against your ICP and batch-approves strong fits in the invite tool.",
+  "cats": [
+   "sales",
+   "ops"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-linkedin-campaign-manager",
+  "name": "LinkedIn Campaign Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s4d10d16bdbe2391aa753",
+  "desc": "Own lead-gen funnel consistency across ads, forms, follow-up, and UTMs. Drafts campaigns for approval and keeps every offer and handoff clean.",
+  "cats": [
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-meeting-prep-buddy",
+  "name": "Meeting Prep Buddy",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s445a0c9a2ca4bea7729e",
+  "desc": "Walk into every meeting ready. Builds prep packs from calendar, notes, CRM, Gong, and Slack: who's in the room, last touch, open threads, and a...",
+  "cats": [
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-merch-fulfillment-operator",
+  "name": "Merch Fulfillment Operator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/se479952f3c9e373dfd64",
+  "desc": "Send merch to the right prospects. Runs outreach, watches the redemption form, pings you to approve/reject submission in chat, and sends your swag...",
+  "cats": [
+   "ops",
+   "sales"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-pipeline-analyst",
+  "name": "Pipeline Analyst",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s98af8b9dcde521e1a9fa",
+  "desc": "Walk into pipe with a clean view. Scrubs Salesforce + sheets, flags stalls and commit risk, and drops a Monday scoreboard.",
+  "cats": [
+   "sales",
+   "data"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-prospecting-plan-builder",
+  "name": "Prospecting Plan Builder",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s8b59eb62f90871ac5c36",
+  "desc": "Build the week's book of work. Seeds contacts, enriches email/mobile, and writes a ready-to-work tracker so outbound starts from a list.",
+  "cats": [
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-renewal-desk-operator",
+  "name": "Renewal Desk Operator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s4c86a54f188668096400",
+  "desc": "Walk into every renewal already briefed. Builds a 90-day pack per account from usage, tickets, Gong, and CRM, drafts the commercial note, and nudges...",
+  "cats": [
+   "sales",
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-sales-call-coach",
+  "name": "Sales Call Coach",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s8173b3a9c49917de5b2d",
+  "desc": "Leave every call with homework. Reviews Gong calls and leaves timestamped coaching on discovery, objections, and executive presence, plus a call score.",
+  "cats": [
+   "sales",
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-sales-outbound",
+  "name": "Sales Outbound",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s8ff03023f140bab479f7",
+  "desc": "Hand off research and outbound. Researches accounts overnight, scores contacts with intent, drafts email and LinkedIn in your voice, and leaves a review...",
+  "cats": [
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-social-media-manager",
+  "name": "Social Media Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s634cb1edf26493e86be2",
+  "desc": "Post in your voice without living in drafts. Studies your real history, drafts when something noteworthy ships, parks posts for you to publish, and...",
+  "cats": [
+   "content",
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-ticket-triage-specialist",
+  "name": "Ticket Triage Specialist",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s7aaf6431077930df326f",
+  "desc": "Clear the queue without living in it. Watches support on a cadence, drafts replies only, and stays quiet when it's clean.",
+  "cats": [
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-contract-desk",
+  "name": "Contract Desk",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sd358e6cf5e8bed188eec",
+  "desc": "See the week of paper at a glance. Summarizes by stage and owner, pulls key terms, and flags blocked reviews.",
+  "cats": [
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-expense-manager",
+  "name": "Expense Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s50bb9361d891bd788a23",
+  "desc": "Stay on top of the money. Builds the weekly summary from your expense manager and sheets, logs new receipts from email, and nudges owners on missing...",
+  "cats": [
+   "ops",
+   "data"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-invoice-coordinator",
+  "name": "Invoice Coordinator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s072bae9387b9fc03cac8",
+  "desc": "Stop invoices from sitting. Forwards invoices, matches what it can, tracks campus or vendor actuals, and nudges the right owner when something needs a...",
+  "cats": [
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-paid-media",
+  "name": "Paid Media",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s59facc90a46a8b4f59da",
+  "desc": "Pulls live channel and campaign data, Slacks a recommended reallocation against your monthly budget, and holds for your approval before making adjustments.",
+  "cats": [
+   "sales",
+   "data"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-paid-media-creative-strategist",
+  "name": "Paid Media Creative Strategist",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s45471f3a8af234c13047",
+  "desc": "Spot early creative winners before they're obvious. Writes a sharp why-it-works hypothesis and proposes the next test. No invented metrics.",
+  "cats": [
+   "sales",
+   "design"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-vendor-portal-operator",
+  "name": "Vendor Portal Operator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s98a7368e786130ad172b",
+  "desc": "Run renewals, seats, and procurement on portals with no clean API. Clicks the same path every week and comes back with exceptions only.",
+  "cats": [
+   "ops"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-apartment-scout",
+  "name": "Apartment Scout",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sd6f165284d7fd2f25e56",
+  "desc": "Book tours with a shortlist of eligible apartments as soon as they go on the market. Filters listings, emails to book tour times, and applies for the...",
+  "cats": [
+   "personal"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-subscription-cleaner",
+  "name": "Subscription Cleaner",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sb36667ce9e1fdc00cfe7",
+  "desc": "Cut the noise you forgot about. Collates receipt and newsletter mail, suggests what to kill, and unsubscribes what you approve.",
+  "cats": [
+   "personal",
+   "productivity"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-travel-coordinator",
+  "name": "Travel Coordinator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sc693906bdeded166b7ba",
+  "desc": "Hold the best option before it expires. Compares flights and hotels to your rules, confirms before booking, and drops itinerary plus calendar.",
+  "cats": [
+   "personal",
+   "productivity"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-competitive-intelligence-analyst",
+  "name": "Competitive Intelligence Analyst",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sa2d131975aaab07e43f2",
+  "desc": "See the landscape shift in meaningful ways. Monitors overnight for new launches and audits your site for fatigued creatives and stale messaging....",
+  "cats": [
+   "research",
+   "sales"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-seo-aeo-auditor",
+  "name": "SEO / AEO Auditor",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sb6d579c33f7a32d0e7af",
+  "desc": "Track keyword, technical, AI-prompt, and competitor movement in one place. Surfaces whether you're gaining or losing ground, flags site issues that need...",
+  "cats": [
+   "sales",
+   "data"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-calendar-coordinator",
+  "name": "Calendar Coordinator",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s634fd63ee875502d8df9",
+  "desc": "Get people in the same room. Schedules across calendars and chases the holds nobody else has time to chase.",
+  "cats": [
+   "productivity",
+   "meetings"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-chief-of-staff",
+  "name": "Chief of Staff",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sc0a0ec3ce9c675824106",
+  "desc": "Your always-on assistant. Scans Slack, email, calendar, and meeting notes and delivers a succinct read out on what's new and what maps to your...",
+  "cats": [
+   "productivity"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-daily-briefing-writer",
+  "name": "Daily Briefing Writer",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sb94d44175e650dbb703e",
+  "desc": "Start the day with high quality inputs instead of noise. Delivers a tight daily brief of only the stories that matter to you.",
+  "cats": [
+   "research",
+   "productivity"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-executive-assistant",
+  "name": "Executive Assistant",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sf813cbd3aadad1cfda46",
+  "desc": "Stay oriented without living in channels. Delivers a morning briefing, plus an automatic catch-up summary whenever you join a new room, so you're never...",
+  "cats": [
+   "productivity",
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-hiring-screener",
+  "name": "Hiring Screener",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/scfddc8ad204a669484d0",
+  "desc": "Interview the strong ones, not the whole pile. Scores applications or work samples against a defined bar and hands off an ATS-ready review.",
+  "cats": [
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-inbox-manager",
+  "name": "Inbox Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s4f048c7b7da9e010c2c3",
+  "desc": "Keep email usable. Triages your inbox into clear categories, surfaces urgent and blocked threads, and drafts replies and cleanup. Every send stays...",
+  "cats": [
+   "productivity"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-internal-communications-manager",
+  "name": "Internal Communications Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s066a9145d936e74d0c80",
+  "desc": "Draft clear, on-voice copy from your real context, matched to each audience and channel. Review-only so it never sends on its own.",
+  "cats": [
+   "content",
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-onboarding-manager",
+  "name": "Onboarding Manager",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/s9c881536413c0bbfa776",
+  "desc": "Give new hires a path, not a pile of links. Builds the checklist, pulls the right docs, answers day-one questions, and routes each ask to whoever can...",
+  "cats": [
+   "ops"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-status-report-writer",
+  "name": "Status Report Writer",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sde2c69536d2f2564fe1b",
+  "desc": "Own the to-do so nothing slips. Pulls open action items from docs, meetings, and Slack into one living list and a morning digest.",
+  "cats": [
+   "productivity",
+   "meetings"
+  ],
+  "acts": false,
+  "checked": "2026-10-22"
+ },
+ {
+  "id": "uc-talent-scout",
+  "name": "Talent Scout",
+  "creator": "SpaceX",
+  "url": "https://x.ai/bot/sac3a109dfe021c555c7c",
+  "desc": "Keep recruiting moving while you sleep. Runs screen-to-offer: sources, drafts outreach in your voice, skips people already in the ATS, and handles...",
+  "cats": [
+   "ops"
+  ],
+  "acts": true,
+  "checked": "2026-10-22"
+ }
+]

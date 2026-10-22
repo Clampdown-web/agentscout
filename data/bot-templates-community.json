@@ -648,5 +648,286 @@
   "checked": "2026-10-21",
   "logo": "cb-babel-live-translator.jpg",
   "logo_src": "maker-x-avatar"
+ },
+ {
+  "id": "cb-forge-template-foundry",
+  "name": "Forge",
+  "handle": "rryssf",
+  "url": "https://x.ai/bot/uF_uodOFUz9mdv6XDWE70",
+  "desc": "One keyword in, a production-ready Grok Bot recipe out.",
+  "cats": [
+   "coding",
+   "productivity"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-loops",
+  "name": "loops",
+  "handle": "mattyp",
+  "url": "https://x.ai/bot/Ub3T7usX-c6yRQibQq83P",
+  "desc": "An engineering outer loop that sits above your coding agents.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-grimoire-s-tome-the-grim-council",
+  "name": "Grimoire",
+  "handle": "NickADobos",
+  "url": "https://x.ai/bot/luPJeAxuAjhqO97wU3wm0",
+  "desc": "A 50-skill coding wizard with a 20-member advisory council.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-apps",
+  "name": "Apps",
+  "handle": "waynesutton",
+  "url": "https://x.ai/bot/OPLop__-mqSsyQheR5JYv",
+  "desc": "Describe an app in one sentence and get a running build back.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-sable-game-art",
+  "name": "Sable: Game Art",
+  "handle": "DannyLimanseta",
+  "url": "https://x.ai/bot/oSvAMKX_ahD56ZmgwtRys",
+  "desc": "Generates 2D game art and sprite sheets in a style you pick.",
+  "cats": [
+   "design"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-george",
+  "name": "George",
+  "handle": "arni0x9053",
+  "url": "https://x.ai/bot/8vjjlI7z5W0HtpRcFQgJ4",
+  "desc": "Turns one brief into a full set of on-brand creative assets.",
+  "cats": [
+   "design",
+   "content"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-ralph",
+  "name": "Ralph",
+  "handle": "HouseHackerJon",
+  "url": "https://x.ai/bot/NQQjXITgX9V7WjaDh9Vzb",
+  "desc": "Rebuilds a resume into a live portfolio of clickable work demos.",
+  "cats": [
+   "personal",
+   "design"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-decklens-pitch-deck-analyzer",
+  "name": "DeckLens",
+  "handle": "BrianDEvans",
+  "url": "https://x.ai/bot/KlcxAG1I8cMQoqS_8Hrdn",
+  "desc": "Interviews you to build a review rubric, then scores pitch decks against it.",
+  "cats": [
+   "research",
+   "sales"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-pg-prospecting",
+  "name": "PG",
+  "handle": "kristaletz",
+  "url": "https://x.ai/bot/fcJJMM58AdXSTBdW3xWyW",
+  "desc": "Researches accounts and mines podcasts for a real outreach hook.",
+  "cats": [
+   "sales",
+   "research"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-ae-deal-bot",
+  "name": "AE deal bot",
+  "handle": "scottxmetcalf",
+  "url": "https://x.ai/bot/yXsqmCaODNkTEwtIbiXxe",
+  "desc": "Grades your open opportunities against MEDDPICC and names the next move to make.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-news-scout",
+  "name": "News Scout",
+  "handle": "byeleni",
+  "url": "https://x.ai/bot/9Mo5saoPQYIp45IgzMT7P",
+  "desc": "A weekday morning news digest in your own timezone.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-dealer",
+  "name": "Dealer",
+  "handle": "wolfe_jam",
+  "url": "https://x.ai/bot/nbUWXUqcXIA0HNQQ3R1Bu",
+  "desc": "Turns a repository into a two-sided summary card of its stack from .faf only.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-exec-daily-ops",
+  "name": "Exec Daily Ops",
+  "handle": "kumarkandgule",
+  "url": "https://x.ai/bot/vIIc2EV8FFZ3g6W8JUgoZ",
+  "desc": "An engineering-morning brief, with draft replies left for you to send.",
+  "cats": [
+   "productivity",
+   "coding"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-quill",
+  "name": "Quill",
+  "handle": "the_simonjester",
+  "url": "https://x.ai/bot/tHo33t3IaAhpxds5IpNbD",
+  "desc": "A revision pass for your notes: voice punch-up, continuity check or depth read.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-sundial",
+  "name": "Sundial",
+  "handle": "WaterMixing",
+  "url": "https://x.ai/bot/yF9Z-RMzHW1SpLC94-BmM",
+  "desc": "Calendar assistant for meetings, deadlines, and focus blocks; invites only when you ask.",
+  "cats": [
+   "productivity",
+   "meetings"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-clipper",
+  "name": "Clipper",
+  "handle": "thesoragirls",
+  "url": "https://x.ai/bot/ozEfaAFJMDGoB-ysym8_V",
+  "desc": "Turns videos into short clips and captioned GIFs, picking the joke itself.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-best-video-editor",
+  "name": "Best Video Editor",
+  "handle": "XFreeze",
+  "url": "https://x.ai/bot/Do4CujP_kqnnc1KYnpOfI",
+  "desc": "Plans the whole edit from your footage and returns a review-ready cut.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-lennybot",
+  "name": "Lennybot",
+  "handle": "lennysan",
+  "url": "https://x.ai/bot/VjbtJ_qTdzbhJGmXdvTIc",
+  "desc": "Answers product and growth questions from Lenny Rachitsky's own archive.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-webby",
+  "name": "Webby",
+  "handle": "farzyness",
+  "url": "https://x.ai/bot/Q2shbC8RRmoRleIyr5J33",
+  "desc": "A website admin that rebuilds, dashboards and keeps the newsletter going.",
+  "cats": [
+   "coding",
+   "content"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-explainer-video-bot",
+  "name": "Explainer Video bot",
+  "handle": "EngMoElgaraihy",
+  "url": "https://x.ai/bot/eTLAqnD45kW3h-THwU8XM",
+  "desc": "Makes upload-ready, data-driven explainer videos with verified numbers, AI voice-over, kinetic motion graphics and real footage.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
+ },
+ {
+  "id": "cb-pain-in-the-task",
+  "name": "Pain in the Task",
+  "handle": "gambrill",
+  "url": "https://x.ai/bot/yztAMds3EQ2J5OjG_tBgw",
+  "desc": "Finds the dull work eating your week and gets it handed off.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-22",
+  "logo": "community-bot.svg",
+  "logo_src": "generic"
  }
 ]
