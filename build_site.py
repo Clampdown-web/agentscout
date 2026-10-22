@@ -158,12 +158,12 @@ for x in t:
         out=out.replace("{{"+k+"}}",v)
     # Archived GitHub repo label (tools.json "repo_archived": true, owner-approved Oct 22 2026)
     if x.get("repo_archived"):
-        out=out.replace('<div class="badges">','<div class="badges"><span class="b" style="border-color:#b45309;color:#f59e0b" title="The GitHub repository is archived (read-only) and no longer updated.">Archived repo</span>',1)
+        out=out.replace('<div class="badges">','<div class="badges"><span class="b warn" title="The GitHub repository is archived (read-only) and no longer updated.">Archived repo</span>',1)
     # Visible status note for archived or stale listings (tools.json "status_note", owner-approved Oct 18 2026)
     if x.get("status_note"):
         _arch=x.get("maturity","").lower().startswith(("archived","discontinued"))
         if _arch or not x.get("repo_archived"):
-            out=out.replace('<div class="badges">','<div class="badges"><span class="b" style="border-color:#b45309;color:#f59e0b">'+(("Discontinued" if "discontinued" in x.get("maturity","").lower() else "Archived") if _arch else "No recent updates")+'</span>',1)
+            out=out.replace('<div class="badges">','<div class="badges"><span class="b warn">'+(("Discontinued" if "discontinued" in x.get("maturity","").lower() else "Archived") if _arch else "No recent updates")+'</span>',1)
         out=out.replace('<p class="lede">'+e(x["description"])+'</p>','<p class="lede">'+e(x["description"])+'</p><p class="statusnote" role="note" style="margin:-6px 0 16px;padding:10px 14px;border:1px solid #b45309;border-radius:10px;font-size:14px">⚠️ '+e(x["status_note"])+'</p>',1)
     # Maker-submitted listings (tools.json "maker_submitted": true + "submitted": YYYY-MM-DD, Pacific): small badge by the name (standing perk, Oct 18 2026)
     if x.get("maker_submitted"):
