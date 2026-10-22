@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T14:07:25Z",
- "updated": "2026-10-22T14:07:25Z",
+ "generated": "2026-10-22T14:36:38Z",
+ "updated": "2026-10-22T14:36:38Z",
  "last_checked": "2026-10-22",
- "count": 1653,
+ "count": 1671,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -69900,6 +69900,786 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/superagnt.png",
    "page": "https://agentscouthq.com/tools/superagnt.html"
+  },
+  {
+   "name": "Claude Duet",
+   "slug": "claude-duet",
+   "url": "https://claude.com/product/claude-duet",
+   "website": "https://claude.com/product/claude-duet",
+   "github": "",
+   "category": "personal agents",
+   "description": "Claude Duet is Anthropic's proactive personal agent app, in research preview. You message it like an assistant: it sends a morning brief from your connected apps, keeps watch on your inbox, calendar and follow-ups through the day, and only pings you when something needs you. You can also hand it tasks, from scheduling meetings to building dashboards or simple web apps, and it keeps working when you step away but checks with you before acting on your behalf. It runs on iOS, Android and claude.ai, starting with a waitlist for US Pro and Max subscribers on their existing plan limits.",
+   "key_features": [
+    "Research preview by waitlist for US Pro and Max plans",
+    "Active",
+    "Research the web",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Research preview by waitlist for US Pro and Max plans",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "X",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "automate workflows",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/claude-duet.png",
+   "page": "https://agentscouthq.com/tools/claude-duet.html"
+  },
+  {
+   "name": "1Password for Agents",
+   "slug": "1password-for-agents",
+   "url": "https://1password.com/personal-ai-agent-integrations",
+   "website": "https://1password.com/personal-ai-agent-integrations",
+   "github": "",
+   "category": "security & governance",
+   "description": "1Password for Agents lets personal AI agents sign in to your accounts without ever seeing your passwords or one-time codes. When a supported agent reaches a sign-in page, it asks for a credential from your vault; you approve the request, and 1Password fills it straight into the site, so the secret never enters the model or its memory. You can see and manage which agents have access to what. It launched with integrations for agents such as Claude Duet, ChatGPT Work and dots, Meta's Muse and Grok Bot, and needs a 1Password plan.",
+   "key_features": [
+    "Included with 1Password plans",
+    "Active",
+    "Write code",
+    "Give agents memory",
+    "Sales & support"
+   ],
+   "pricing": "Included with 1Password plans",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "X",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "give agents memory",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/1password-for-agents.png",
+   "page": "https://agentscouthq.com/tools/1password-for-agents.html"
+  },
+  {
+   "name": "PhoneUse",
+   "slug": "phoneuse",
+   "url": "https://www.phoneuse.com/",
+   "website": "https://www.phoneuse.com/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "PhoneUse gives AI agents phones of their own to operate. Agents get cloud Android phones that boot in seconds and scale to hundreds, or real retail iPhones and Androids in a San Francisco rack, tapped by a robot stylus, for apps that detect emulators, with real carrier numbers for SMS and 2FA codes. One MCP server with tools such as acquire, read screen, tap, type, swipe, open app and read SMS plugs into Claude, Cursor, Codex or Windsurf, and there is a Python SDK and REST API. On-demand cloud phones are billed per minute, with flat monthly prices for dedicated and real phones.",
+   "key_features": [
+    "Cloud phones $0.30 per minute on demand; dedicated and real phones monthly",
+    "Active",
+    "Write code",
+    "Automate the browser",
+    "Build an agent"
+   ],
+   "pricing": "Cloud phones $0.30 per minute on demand; dedicated and real phones monthly",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "X",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/phoneuse.png",
+   "page": "https://agentscouthq.com/tools/phoneuse.html"
+  },
+  {
+   "name": "Needle",
+   "slug": "needle",
+   "url": "https://needle.app/",
+   "website": "https://needle.app/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Needle is an outbound engine built for AI agents to drive. You connect it to Claude, ChatGPT or Grok and describe who you want to reach in one prompt; it finds leads from LinkedIn, Instagram and Google Maps, enriches them with context for personal messages, and reaches out from your own connected accounts on whichever channel the lead uses, with sending limits built in. It works for sales, partnerships, hiring or fundraising outreach, and you can start for free.",
+   "key_features": [
+    "Free to start; paid plans",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Free to start; paid plans",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Product Hunt",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/needle.png",
+   "page": "https://agentscouthq.com/tools/needle.html"
+  },
+  {
+   "name": "BAND",
+   "slug": "band",
+   "url": "https://www.band.ai/",
+   "website": "https://www.band.ai/",
+   "github": "",
+   "category": "agent infra",
+   "description": "BAND is an interaction layer for teams running many AI agents alongside people. Agents and humans share one chat-like workspace where they coordinate tasks, exchange context and hand off work in real time, with governance over how agents communicate built in, instead of hand-wiring every handoff. BAND for Developers connects coding agents across your existing development tools so they can work together without you acting as their project manager.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Product Hunt",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/band.png",
+   "page": "https://agentscouthq.com/tools/band.html"
+  },
+  {
+   "name": "UseIt Studio",
+   "slug": "useit-studio",
+   "url": "https://useit.im/",
+   "website": "https://useit.im/",
+   "github": "",
+   "category": "graphic design & branding",
+   "description": "UseIt Studio is an AI design agent for things you can hold. You describe what you want in a sentence, it asks the questions a designer would, and you refine any detail by pointing at it. Instead of a flat mockup you get a real, editable design file ready to print, cut and fold, with true dimensions, bleed and dielines, for pins, stickers, gift boxes, pop-up cards, packaging and brand kits. It runs in the browser, and a Windows desktop helper lets you call it up anywhere.",
+   "key_features": [
+    "Free to try; paid plans",
+    "Active",
+    "Logos & branding",
+    "Ui design"
+   ],
+   "pricing": "Free to try; paid plans",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Product Hunt",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "logos & branding",
+    "UI design"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/useit-studio.png",
+   "page": "https://agentscouthq.com/tools/useit-studio.html"
+  },
+  {
+   "name": "Voxtral 3",
+   "slug": "voxtral-3",
+   "url": "https://mistral.ai/news/voxtral-3/",
+   "website": "https://mistral.ai/news/voxtral-3/",
+   "github": "",
+   "category": "voice",
+   "description": "Voxtral 3 is Mistral AI's voice agent stack: speech-to-text in 50+ languages with speaker labels and end-of-turn detection, expressive text-to-speech in 35+ languages, and a voice agent SDK built on LiveKit that handles listening, tool calls and speaking in one stream over SIP or WebRTC. You can use it through Mistral's API with EU, US or global endpoints, or deploy it yourself, and it is priced per minute of audio or per character.",
+   "key_features": [
+    "Transcription from $0.0035/min, TTS $13 per 1M characters, voice agent API from $0.04/min",
+    "Active",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Transcription from $0.0035/min, TTS $13 per 1M characters, voice agent API from $0.04/min",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Newsletter",
+   "goals": [
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/voxtral-3.png",
+   "page": "https://agentscouthq.com/tools/voxtral-3.html"
+  },
+  {
+   "name": "Mercury 3",
+   "slug": "mercury-3",
+   "url": "https://www.inceptionlabs.ai/",
+   "website": "https://www.inceptionlabs.ai/",
+   "github": "",
+   "category": "models & local runtimes",
+   "description": "Mercury 3 is Inception's diffusion language model, which writes many tokens in parallel rather than one at a time, reaching over 1,000 tokens per second on NVIDIA GPUs with a 1M-token context, tool calling and structured outputs. It has an OpenAI-compatible API and is also offered on OpenRouter, Baseten and Vercel, which makes it a fit for voice bots, support agents and browser agents where response speed matters. Pricing is per million input and output tokens.",
+   "key_features": [
+    "$0.20 / $0.70 per million input / output tokens",
+    "Active",
+    "Automate the browser",
+    "Voice & phone calls"
+   ],
+   "pricing": "$0.20 / $0.70 per million input / output tokens",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Newsletter",
+   "goals": [
+    "crypto",
+    "media",
+    "support",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mercury-3.png",
+   "page": "https://agentscouthq.com/tools/mercury-3.html"
+  },
+  {
+   "name": "OmniRush",
+   "slug": "omnirush",
+   "url": "https://omnirush.ai/",
+   "website": "https://omnirush.ai/",
+   "github": "https://github.com/omnirush-ai/omnirush-gui",
+   "category": "coding",
+   "description": "OmniRush is a desktop coding agent for Windows, macOS and Linux, with a terminal CLI as well. It works through the files of your own projects, reading code, making edits and running commands, and gives free access to frontier models from a model picker, with GPT 6 Astra as the default. Builds for each platform are published on its releases page.",
+   "key_features": [
+    "Free desktop app with free frontier-model access",
+    "Active",
+    "3657 GitHub stars",
+    "Write code",
+    "Control a computer"
+   ],
+   "pricing": "Free desktop app with free frontier-model access",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "omnirush-ai/omnirush-gui",
+   "github_stars": 3657,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/omnirush.png",
+   "page": "https://agentscouthq.com/tools/omnirush.html"
+  },
+  {
+   "name": "Unreal Agent",
+   "slug": "unreal-agent",
+   "url": "https://unreallabs.ai/",
+   "website": "https://unreallabs.ai/",
+   "github": "https://github.com/unreallabsai/unreal-agent",
+   "category": "frameworks",
+   "description": "Unreal Agent is an async-first agent harness from Unreal Labs, a team researching how to make agentic workflows efficient. The library handles inputs with stable IDs and deduplication, append-only sessions that can be forked, and a coordinator that manages each model turn and translates tool calls into operations. It ships with a cloud agent runner, a terminal UI and benchmark runners, under the MIT license.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2211 GitHub stars",
+    "Build an agent",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "unreallabsai/unreal-agent",
+   "github_stars": 2211,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "build an agent",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/unreal-agent.png",
+   "page": "https://agentscouthq.com/tools/unreal-agent.html"
+  },
+  {
+   "name": "MemoraX Code",
+   "slug": "memorax-code",
+   "url": "https://code.memorax.net/",
+   "website": "https://code.memorax.net/",
+   "github": "https://github.com/memorax-ai/memorax-code",
+   "category": "memory & RAG",
+   "description": "MemoraX Code is a shared memory layer for coding agents such as Codex, Claude Code, OpenCode, Cursor, Trae and DeepSeek Harness. It recalls prior engineering knowledge, captures lessons from finished work, keeps repository knowledge and architecture history up to date, and carries your procedures and preferences into new sessions, bringing back only the memory relevant to the task at hand. It needs Node.js 20 or later and is MIT licensed.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1997 GitHub stars",
+    "Write code",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "memorax-ai/memorax-code",
+   "github_stars": 1997,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/memorax-code.png",
+   "page": "https://agentscouthq.com/tools/memorax-code.html"
+  },
+  {
+   "name": "AOCI-CODE",
+   "slug": "aoci-code",
+   "url": "https://www.aoci.ai/",
+   "website": "https://www.aoci.ai/",
+   "github": "https://github.com/aoci-spec/aoci-code",
+   "category": "coding",
+   "description": "AOCI-CODE keeps a persistent, Git-versioned map of your whole codebase and database schema that your coding agent writes and a local MCP server governs. Agents in Codex, Claude Code, Cursor or OpenCode read the map once and know what each file is for, what it depends on and what must not break, instead of re-reading the repo on every task. It can index an existing codebase of up to about half a million lines and report how well it knows each area before taking over development.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1697 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "aoci-spec/aoci-code",
+   "github_stars": 1697,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aoci-code.png",
+   "page": "https://agentscouthq.com/tools/aoci-code.html"
+  },
+  {
+   "name": "OpenHarness",
+   "slug": "openharness",
+   "url": "https://www.autonomous.ai/harness",
+   "website": "https://www.autonomous.ai/harness",
+   "github": "https://github.com/autonomous-ai/openharness",
+   "category": "coding",
+   "description": "OpenHarness from Autonomous is a native command center for running coding agents side by side, including Claude Code, Codex, Cursor, OpenCode, Devin, Amp and Copilot. It links your laptop, home server and GPU box into one window with a password instead of SSH keys or port forwarding, keeps code and keystrokes end-to-end encrypted through its relay, and is keyboard first. Agents keep working when you close it, and it extends beyond code to CAD, circuits, robots, games and music.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1340 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "autonomous-ai/openharness",
+   "github_stars": 1340,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/openharness.png",
+   "page": "https://agentscouthq.com/tools/openharness.html"
+  },
+  {
+   "name": "Wisp Science",
+   "slug": "wisp-science",
+   "url": "https://wispscience.com/",
+   "website": "https://wispscience.com/",
+   "github": "https://github.com/xuzhougeng/wisp-science",
+   "category": "research",
+   "description": "Wisp Science is an open-source, local-first AI research workbench for scientists on Windows, macOS and Linux. Its agent searches the literature, runs persistent Python and R kernels on your laptop or remote servers, queries about 80 scientific databases and loads reusable skills, while keeping figures, runs, decisions and drafts together in one project. You bring your own OpenAI-compatible or Anthropic model, or drive Codex or Claude Code, and approval gates stay on by default.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1050 GitHub stars",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "xuzhougeng/wisp-science",
+   "github_stars": 1050,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wisp-science.png",
+   "page": "https://agentscouthq.com/tools/wisp-science.html"
+  },
+  {
+   "name": "Foreman",
+   "slug": "foreman",
+   "url": "https://thruwire.ai/",
+   "website": "https://thruwire.ai/",
+   "github": "https://github.com/thruwire/foreman",
+   "category": "agent infra",
+   "description": "Foreman from ThruWire supervises coding agents with fast decision models. You give it a ticket, spec or bug report and it runs Codex, OpenCode, Hermes or LangChain's Deep Agents Code as workers, or attaches to supported sessions such as Pi, then independently judges whether the job meets the original requirements, whether the test evidence is enough and when verification or human input is needed. Extra checks can be configured for your workflow, and it is MIT licensed.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "781 GitHub stars",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "thruwire/foreman",
+   "github_stars": 781,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/foreman.png",
+   "page": "https://agentscouthq.com/tools/foreman.html"
+  },
+  {
+   "name": "FableCut",
+   "slug": "fablecut",
+   "url": "https://fablecut.space/",
+   "website": "https://fablecut.space/",
+   "github": "https://github.com/ronak-create/FableCut",
+   "category": "film & TV production",
+   "description": "FableCut is a Premiere-style video editor that runs entirely in the browser and exposes the whole timeline as one JSON document, covering media, clips, tracks, effects, keyframes and transitions. You can edit by hand or let an AI agent such as Claude Code or Claude Desktop cut the video over MCP or REST while the timeline updates live. It has no npm dependencies, starts with one node command and is MIT licensed.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "739 GitHub stars",
+    "Edit video"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ronak-create/FableCut",
+   "github_stars": 739,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fablecut.png",
+   "page": "https://agentscouthq.com/tools/fablecut.html"
+  },
+  {
+   "name": "Diagrid Catalyst MCP",
+   "slug": "diagrid-catalyst-mcp",
+   "url": "https://www.diagrid.io/catalyst",
+   "website": "https://www.diagrid.io/catalyst",
+   "github": "https://github.com/diagridio/catalyst-ai",
+   "category": "MCP servers",
+   "description": "The Diagrid Catalyst MCP server lets AI coding agents build and operate Dapr Workflows and Dapr durable agents on Diagrid Catalyst, the managed platform for long-running, fault-tolerant agent and workflow apps. Through it an agent can create and inspect workflows, check running instances and manage Catalyst resources from your MCP client. It is the official server from Diagrid, the company behind Dapr, and needs a Catalyst sign-in.",
+   "key_features": [
+    "See site",
+    "Active",
+    "2 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "diagridio/catalyst-ai",
+   "github_stars": 2,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/diagrid-catalyst-mcp.png",
+   "page": "https://agentscouthq.com/tools/diagrid-catalyst-mcp.html"
+  },
+  {
+   "name": "Cayu",
+   "slug": "cayu",
+   "url": "https://cayu.dev/",
+   "website": "https://cayu.dev/",
+   "github": "https://github.com/cayu-dev/cayu",
+   "category": "frameworks",
+   "description": "Cayu is an open-source Python framework for building and running domain-specific, long-horizon agents on a durable runtime. Sessions survive restarts and redeploys from SQLite or Postgres stores, tool policies can require human approval before side effects, spend caps are checked before each model call, and timers, background tasks, subagents and forks cover longer multi-agent work. It is Apache 2.0 licensed.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "922 GitHub stars",
+    "Build multi-agent systems",
+    "Build an agent",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "cayu-dev/cayu",
+   "github_stars": 922,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "build multi-agent systems",
+    "build an agent",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cayu.png",
+   "page": "https://agentscouthq.com/tools/cayu.html"
   }
  ]
 }

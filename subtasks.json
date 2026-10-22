@@ -6413,5 +6413,109 @@
 "sales-agents",
 "web-scraping",
 "mcp-servers"
+],
+"claude-duet": [
+"planning-tasks",
+"email-agents",
+"research-agents",
+"observability",
+"no-code-apps",
+"personal-assistants",
+"mobile"
+],
+"1password-for-agents": [
+"agent-memory",
+"planning-tasks",
+"agent-auth"
+],
+"phoneuse": [
+"voice-phone",
+"computer-use",
+"mcp-servers",
+"agent-frameworks",
+"mobile"
+],
+"needle": [
+"sales-agents"
+],
+"band": [
+"guardrails"
+],
+"useit-studio": [
+"voice-phone",
+"browser-automation",
+"computer-use",
+"video-editing",
+"images-design"
+],
+"voxtral-3": [
+"voice-phone",
+"agent-frameworks",
+"dialogue-cleanup"
+],
+"mercury-3": [
+"parallel-orchestration",
+"voice-phone",
+"browser-automation"
+],
+"omnirush": [
+"computer-use",
+"terminal-agents",
+"video-editing"
+],
+"unreal-agent": [
+"voice-phone",
+"research-agents",
+"evals",
+"workflow-automation",
+"agent-frameworks",
+"terminal-agents",
+"cloud-coding-agents"
+],
+"memorax-code": [
+"agent-memory",
+"agent-frameworks"
+],
+"aoci-code": [
+"codebase-context",
+"text-to-sql",
+"mcp-servers",
+"local-models"
+],
+"openharness": [
+"testing-qa",
+"parallel-orchestration",
+"agent-frameworks",
+"games"
+],
+"wisp-science": [
+"text-to-sql",
+"research-agents",
+"local-models",
+"rules-config"
+],
+"foreman": [
+"workflow-automation",
+"rules-config"
+],
+"fablecut": [
+"vector-rag",
+"browser-automation",
+"computer-use",
+"ide-agents",
+"video-editing",
+"video"
+],
+"diagrid-catalyst-mcp": [
+"mcp-servers",
+"workflow-automation"
+],
+"cayu": [
+"token-costs",
+"text-to-sql",
+"voice-phone",
+"guardrails",
+"multi-agent",
+"agent-frameworks"
 ]
 }
