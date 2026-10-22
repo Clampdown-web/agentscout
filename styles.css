@@ -462,20 +462,21 @@ a.btn{display:inline-flex;align-items:center;justify-content:center}
 summary{display:list-item;padding-top:10px;padding-bottom:10px}
 .rv-write,.bt-cn,.bt-va,.quizcta a{display:inline-flex;align-items:center;min-height:44px}
 .nt{min-height:44px}
-/* Small pill links (category/task chips) keep their look; a transparent ::after extends the tap area to 44px tall */
-a.b{position:relative}
-a.b::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
+/* Linked pills (category/task chips) are 44px tall boxes */
+a.b{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
 .ucsel{height:44px}
 .acts a.btn{min-height:44px!important}
 .fchk{min-height:44px!important}
 .hg-head a,.rhead a{display:inline-flex;align-items:center;min-height:44px}
 .crumb a{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle}
-/* Short standalone text links (chip rows, headline links, "see all" lines): vertical padding on the inline link grows the tap area to 44px without moving any text */
-:is(.suggestedit,.goodfor a,.ig-cta a,main h3>a,main li>a:only-child,main p>a:only-child,main li>strong+a):not(.btn,.bt-cn,.quizcta a,.crumb a,.rv-write,.bt-va){padding-top:14px;padding-bottom:14px}
-.bt-nm{padding-top:14px;padding-bottom:14px;margin-top:-14px;margin-bottom:-14px}.bt-nm a{padding-top:14px;padding-bottom:14px}
+/* Short standalone links (chip rows, headline links, "see all" lines, Suggest an edit): 44px tall boxes, no invisible padding, so tap areas never overlap */
+:is(.suggestedit,.goodfor a,.ig-cta a,main h3>a,main li>a:only-child,main p>a:only-child,main li>strong+a):not(.btn,.bt-cn,.quizcta a,.crumb a,.rv-write,.bt-va){display:inline-flex;align-items:center;min-height:44px;vertical-align:middle}
+div.bt-nm{display:flex;align-items:center;gap:4px;min-height:44px}div.bt-nm>a{display:inline-flex;align-items:center;min-height:44px;flex:0 1 auto;min-width:0;overflow:hidden}div.bt-nm>a b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}div.bt-nm>span{flex:0 1000 auto;display:flex;align-items:center;gap:.25em;min-width:0;overflow:hidden;white-space:nowrap}div.bt-nm span a{display:block;min-width:0;min-height:44px;line-height:44px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* Footer links, directory table links, save/share buttons: 44px tap area (Ops review of 6feecfaa, Oct 21 2026) */
-footer a:not(.logo):not(.btn):not(.footgen):not(.navbt){padding-top:14px;padding-bottom:14px}
+footer p a{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle}
 footer a.footgen,footer a.navbt{display:inline-flex;align-items:center;min-height:44px}
 a.icol,table a.icol{min-height:44px}
 a.ghx{min-height:44px;line-height:44px}
 .save,.savebtn,.sharebtn{min-width:44px}
+a.ghx{min-width:44px;display:inline-flex;align-items:center;justify-content:center}
+nav .links a{min-width:44px;justify-content:center}
