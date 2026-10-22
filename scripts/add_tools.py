@@ -3,7 +3,7 @@ Input TSV columns: repo_or_blank  category  pricing  audience  description  [nam
   - repo: owner/name on GitHub (or blank for closed products; then name+website required)
 Checks: GitHub repo exists & not archived, website returns 200 (bot-blocked 403 => website dropped, github kept),
 logo = site apple-touch-icon / icon >=64px, else a logo/icon file in the repo, else the GitHub owner avatar ONLY if the owner is an Organization (never a personal User avatar); dedupe by name/domain/repo against tools.json.
-Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"Product Hunt"|"Hugging Face"|"Futurepedia"|...] [--dry]
+Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"Product Hunt"|"Hugging Face"|"directory"|...] [--dry]
 Each new tool is stamped added=today and source; build_site.py then refreshes the homepage Recently added section, new.html and llms.txt.
  [--cache=discovered.json from discover_github.py]"""
 import sys,json,re,io,requests,concurrent.futures as cf

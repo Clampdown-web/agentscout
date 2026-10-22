@@ -1,4 +1,4 @@
-"""Trending pages (TAAFT item 6, Oct 18 2026). Called from build_extras.build(); returns sitemap URLs.
+"""Trending pages (competitor-research item 6, Oct 18 2026). Called from build_extras.build(); returns sitemap URLs.
 1) trending.html: tools ranked by the Worker's public /trending endpoint (7-day tool-page views + tool clicks + saves from Analytics
    Engine, rank only, min 3 events per tool). Published only when >= MIN_TOOLS tools qualify; otherwise the page is not built.
 2) best/trending-open-source-ai-agents.html: GitHub star growth from data/stars/ daily snapshots. Held until there are snapshots

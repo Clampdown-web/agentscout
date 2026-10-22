@@ -1,4 +1,4 @@
-"""'<Tool> alternatives' pages in best/<slug>-alternatives.html (TAAFT item 4, Oct 18 2026). Called from build_best.pages().
+"""'<Tool> alternatives' pages in best/<slug>-alternatives.html (competitor-research item 4, Oct 18 2026). Called from build_best.pages().
 Picks popular tools (featured or most GitHub stars) that have >=8 real peers: same category AND sharing at least one task or sub-task.
 Each page: data-driven intro + per-alternative "why consider it" lines (>=150 unique words checked, else skipped), comparison table,
 links to written /compare/ pages. The tool page gets one link to its alternatives page (no repeated list). Counts are computed each build."""

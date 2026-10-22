@@ -183,7 +183,7 @@ def mini(x):
     gs=f' · ★ {x["github_stars"]:,}' if x.get("github_stars") is not None else ""
     return f'<li style="margin:0 0 10px"><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span><span class="muted" style="font-size:12.5px">{gs}</span></li>'
 DATA={}
-# ---- Modifier /s/ pages (TAAFT item 7, Oct 18 2026): "<modifier> <target>", strict gate, capped ----
+# ---- Modifier /s/ pages (competitor-research item 7, Oct 18 2026): "<modifier> <target>", strict gate, capped ----
 MOD_CAP=20; MOD_MIN=8
 MODS=[("open-source","Open-source",lambda x:x["pricing"] in OS,"with public source code you can read, self-host and extend"),
       ("free","Free",lambda x:isfree(x),"that you can use without paying: open-source projects plus tools with a free plan"),

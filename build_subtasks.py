@@ -1,4 +1,4 @@
-"""Sub-task sections, sibling counts and open-source repo tables for /tasks/ and /categories/ pages (TAAFT-style task template, Oct 18 2026).
+"""Sub-task sections, sibling counts and open-source repo tables for /tasks/ and /categories/ pages (directory-style task template, Oct 18 2026).
 Sub-tasks are assigned by keyword rules over each tool's name + description. Within a page a tool appears once, under the first eligible sub-task
 (order below = most specific first). A sub-task is shown on a page only if it has >=3 tools there and covers <=75% of the page."""
 import re,json,os,html

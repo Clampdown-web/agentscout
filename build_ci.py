@@ -1,7 +1,7 @@
 """Competitive-intel pass (owner-approved Oct 22 2026 PT):
 - /skills/: Agent Skills section with install commands copied from each project's own README (checked Oct 22 2026).
 - Homepage hero line + og/twitter description: "<N> MCP servers, link-checked daily", N from tools.json.
-- Free listing vs TAAFT ($49 / $437, theresanaiforthat.com/launch, checked Oct 22 2026) on index.html and submit.html.
+- Free listing vs other directories ($49 to $437, prices checked Oct 2026; no competitor named, owner request Oct 22 2026) on index.html and submit.html.
 Idempotent (marker blocks). Every count is computed from tools.json."""
 import json,re,html,os
 e=lambda s:html.escape(str(s),quote=True)
@@ -30,8 +30,8 @@ def cmp_table():
      '<caption style="text-align:left;font-weight:700;margin-bottom:6px">Free listing vs $49–$437 elsewhere</caption>'
      '<thead><tr><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Directory</th><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Cost to get listed</th></tr></thead><tbody>'
      '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>AgentScout</b></td><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>Free.</b> Every submission is reviewed; no paid placements in the rankings.</td></tr>'
-     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)">There\'s An AI For That</td><td style="padding:6px 8px;border-bottom:1px solid var(--line)">$49 one-time review fee (basic listing) up to a $437 one-time package. Free route: one tool picked from a monthly X thread.</td></tr>'
-     f'</tbody></table><p class="muted" style="font-size:12.5px;margin:6px 0 0">TAAFT prices from <a href="https://theresanaiforthat.com/launch/" rel="noopener noreferrer" target="_blank">theresanaiforthat.com/launch</a>, checked {CHECKED}. Prices can change.</p></div>')
+     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)">Other directories</td><td style="padding:6px 8px;border-bottom:1px solid var(--line)">$49 to $437 to get listed</td></tr>'
+     f'</tbody></table><p class="muted" style="font-size:12.5px;margin:6px 0 0">Prices checked Oct 2026, may change.</p></div>')
 def home(t):
     n=mcp_n(t); s=open("index.html").read()
     line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b>{n:,} MCP servers</b>, link-checked daily</a> · <a href="skills/">Agent Skills with install commands</a></p>'
