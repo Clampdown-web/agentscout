@@ -69,6 +69,7 @@ def run():
     s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+'<!--/btx-->'+anchor,1)
     total=len(base)+len(X)
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
+    s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
     def il(m):
         o=json.loads(m.group(1)); ex={f"{SITE}/{D}/{e['slug']}.html" for e in X}
         L=[i for i in o["itemListElement"] if i["url"] not in ex]
