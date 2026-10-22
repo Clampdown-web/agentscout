@@ -1,0 +1,552 @@
+[
+ {
+  "id": "cb-pr-reviewer",
+  "name": "PR Reviewer",
+  "handle": "mustafaergisi",
+  "url": "https://x.ai/bot/rt629UEZFtE4Wz0A_0c37",
+  "desc": "Reviews pull requests for risk, missing tests, and thin context so review starts with the scary diff. Leads with what can break, what is untested.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-agent-looper",
+  "name": "Agent Looper",
+  "handle": "dancingteeth",
+  "url": "https://x.ai/bot/AETdGbRRNWfckrRGv22LD",
+  "desc": "You say what to build and how to know it's done. It keeps a coding agent working on your computer until that check passes.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-examiner",
+  "name": "Examiner",
+  "handle": "liam_fallen",
+  "url": "https://x.ai/bot/rBnJhXhks-_7n1zhZCN3E",
+  "desc": "Maintain a reliable timeline of important changes so you can reconstruct what happened when something later goes wrong. Isolated: talk only to you.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-ai-harness-assistant",
+  "name": "AI Harness Assistant",
+  "handle": "gheeunit",
+  "url": "https://x.ai/bot/oq-mYZXM23ShlY7UbJWeB",
+  "desc": "Keeps the AI coding tools you already have, like Codex, Grok Build, OpenCode, and Cursor, current on your Windows, Mac, and Linux machines.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-greenbuild",
+  "name": "GreenBuild",
+  "handle": "dkkkkd",
+  "url": "https://x.ai/bot/Y4m1o1g_TWG5he7mG1ZHb",
+  "desc": "A senior QA and test-automation lead for testers and dev teams. It turns requirements into test plans and triages flaky tests.",
+  "cats": [
+   "coding"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-1000x-product-engineer",
+  "name": "UI/UX/Designer. Product Engineer 1000x",
+  "handle": "TomZarebczan",
+  "url": "https://x.ai/bot/sQDD87Gp6VLT0m99tFpzu",
+  "desc": "World-class product engineer for mobile and desktop web. Ships Convex + TanStack + React end to end. Simple, intuitive UI with real taste.",
+  "cats": [
+   "design"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-illo",
+  "name": "illo",
+  "handle": "trevin",
+  "url": "https://x.ai/bot/y3uTGY5hkl6iTmE-ZAX02",
+  "desc": "Editorial illustration bot that uses the illo skill (tmchow/illo-skill) to turn ideas, posts, and announcements into mascot-led images on Grok Bot.",
+  "cats": [
+   "design"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-design-expert",
+  "name": "Design Expert",
+  "handle": "inqusit",
+  "url": "https://x.ai/bot/H2WEoHRGKv_6a3j6lsHiG",
+  "desc": "A product design lead that keeps AI-built UIs honest.",
+  "cats": [
+   "design"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-fabrication",
+  "name": "Fabrication",
+  "handle": "JonathanSayle",
+  "url": "https://x.ai/bot/jQ4VpRUAOS4awmiDlwI6n",
+  "desc": "Takes your parts from CAD design to a finished 3D print. It checks fit, flat bed faces and hole sizes, and shows previews.",
+  "cats": [
+   "design"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-churn-retention-manager",
+  "name": "Churn retention manager",
+  "handle": "ColinMcDermott",
+  "url": "https://x.ai/bot/p0OIZUJK5sRFImh_DMujf",
+  "desc": "Catches churn before it lands, offers a real alternative, and reports why people left. For businesses saving cancellations and failed payments.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-echo",
+  "name": "Echo",
+  "handle": "kristaletz",
+  "url": "https://x.ai/bot/ph5mcXqVy2p176Br7BJYi",
+  "desc": "Turns a customer call into slides from customer context. What we heard, next steps, project initiatives, or all of the above.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-events",
+  "name": "Events",
+  "handle": "Richard Garrick",
+  "url": "https://x.ai/bot/VnfgvYJ-G58ZjwfvijWOy",
+  "desc": "A market and pop-up inventory desk for small sellers. It builds pack lists before a show and logs what sold afterward.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-go-direct",
+  "name": "Go Direct",
+  "handle": "LandonH",
+  "url": "https://x.ai/bot/WxcRgxU7YtWNqL7ZIkg3e",
+  "desc": "Skip the press. Lulu helps founders tell their story straight to the 50 to 500 people who actually matter: investors, early customers, future hires.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-linkedin-desk",
+  "name": "LinkedIn Desk",
+  "handle": "SEO",
+  "url": "https://x.ai/bot/tQuoQ94ErUfXNJu4xPqZi",
+  "desc": "LinkedIn Desk helps you keep network quality high without living in LinkedIn, by reviewing connection requests and LinkedIn invitations.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-sumosign",
+  "name": "Meeting to Money",
+  "handle": "SumoSign",
+  "url": "https://x.ai/bot/Uicr9Dc3FKOmsMfbN_NHB",
+  "desc": "Turns a sales meeting into a priced proposal, a signed go-ahead, an invoice, and payment chase. You approve every send. For freelancers and small agencies.",
+  "cats": [
+   "sales"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-chief-of-staff-avid",
+  "name": "DOGE (Department of Grok Efficiency)",
+  "handle": "Av1dlive",
+  "url": "https://x.ai/bot/d8OshqLZvtcKDcNluPuyo",
+  "desc": "A Grok Bot whose only job is to audit your other bots and routines, flag what to cut or merge, and find bottlenecks.",
+  "cats": [
+   "ops"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-watchdog",
+  "name": "Watchdog",
+  "handle": "jxckvibe",
+  "url": "https://x.ai/bot/PuAEE57P58Df5zskFY3pg",
+  "desc": "On first install, scans email once as soon as Gmail is ready, then weekly for receipts, renewals, and trials.",
+  "cats": [
+   "ops"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-ai-usage-meter",
+  "name": "AIUsageBot",
+  "handle": "BrianDEvans",
+  "url": "https://x.ai/bot/2atUDeldi9vF1R_ySRgCo",
+  "desc": "Interviews you about which AI subscriptions to track and where leftover lives (local CLIs, apps), then pings remaining % as it drops.",
+  "cats": [
+   "ops"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-slowbooks-cutover",
+  "name": "SlowBooks Cutover",
+  "handle": "jschnett",
+  "url": "https://x.ai/bot/IpwtPuGwCQ-y24b4loSBh",
+  "desc": "Migrate one QuickBooks Desktop company into SlowBooks via Conductor (read-only), then prove Trial Balance and spot-check P&L.",
+  "cats": [
+   "ops"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-newsletter-cleanup",
+  "name": "Newsletter Cleanup",
+  "handle": "scheemunai",
+  "url": "https://x.ai/bot/dHd69sBvMG2o3lJa__T7K",
+  "desc": "Audits Gmail newsletters (last 6 months), builds a three-bucket review.html, then unsubscribes only what you approve. Never deletes mail.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-bot-inbox",
+  "name": "Bot inbox",
+  "handle": "waynesutton",
+  "url": "https://x.ai/bot/RHSd-aq6KC84xxUnvBXSl",
+  "desc": "A weekday unread digest for Grok Bots. Lists bots and group chats with new activity, one line each. Type scan anytime.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-dewey",
+  "name": "Dewey",
+  "handle": "Vixlio",
+  "url": "https://x.ai/bot/rfAHsaFrz6xHBMtUpxDi5",
+  "desc": "Watches Gmail and pings you when a message looks time-sensitive or needs a reply. Reads freely; never sends, replies, or trashes mail unless you ask.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-harper",
+  "name": "Harper",
+  "handle": "TravisWeathers",
+  "url": "https://x.ai/bot/A6er8L662aOk-vYUrRY9_",
+  "desc": "An executive assistant for email, calendar, and texting. It triages your inbox, schedules people, protects deep-work time.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-backpack",
+  "name": "Backpack",
+  "handle": "RohanBhanotAI",
+  "url": "https://x.ai/bot/-soz2Si8sWlLlb8hTeIX2",
+  "desc": "Reads school and activity emails you don't have time for and turns them into calendar events, reminders, and a weekly family plan.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-bfcm-email-planner",
+  "name": "BFCM Email Planner",
+  "handle": "ecomchasedimond",
+  "url": "https://x.ai/bot/Uf1bydmjxYZZpgymtOzSZ",
+  "desc": "Plans your full Black Friday / Cyber Monday email and SMS calendar: sends, segments, offer angles, subject lines.",
+  "cats": [
+   "productivity"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-be-happier",
+  "name": "Be Happier",
+  "handle": "lennysan",
+  "url": "https://x.ai/bot/0VC1XzREXRFGe0hVo-JEG",
+  "desc": "Looks at your email and calendar each week, then suggests 3 concrete things that would make you happier. Protects existing life, does not add new habits.",
+  "cats": [
+   "personal"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-chef",
+  "name": "Chef",
+  "handle": "DogecoinNorway",
+  "url": "https://x.ai/bot/3U6zxtPa1b8GbWheaIr4J",
+  "desc": "A home-cooking helper that adapts to the country you live in: seasonal produce, local dishes, holidays, and grocers where you are.",
+  "cats": [
+   "personal"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-interview-prep",
+  "name": "Interview Prep",
+  "handle": "techdevnotes",
+  "url": "https://x.ai/bot/4aTE8S1KT93GkqHYxWIo3",
+  "desc": "Interview prep for any topic. Pick the topic and level, then climb with examples, running code, and quizzes until it feels interview-ready.",
+  "cats": [
+   "personal"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-canvas",
+  "name": "Canvas",
+  "handle": "daxperera",
+  "url": "https://x.ai/bot/YihRBqrXaDwRdjN79Uofl",
+  "desc": "Keeps an eye on a student's Canvas LMS: daily reminders of what's due, overdue or missing, assignment briefs and rubrics, and pass-mark math.",
+  "cats": [
+   "personal"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-eg4-monitor",
+  "name": "EG4 Monitor",
+  "handle": "look4terry",
+  "url": "https://x.ai/bot/9rxPP70OSzuTtTaOrzeqz",
+  "desc": "Watches your EG4 solar and battery system on EG4 Monitor Center and sends you a nightly report with estimated savings, all read-only.",
+  "cats": [
+   "personal"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-human-copywriter",
+  "name": "Human Copywriter",
+  "handle": "massimodeluisa",
+  "url": "https://x.ai/bot/JZAccYtlRFvDSU2CnMnkZ",
+  "desc": "A human-voice rewrite desk for email, posts, blogs, DMs, landing-page bodies, and PR. American English by default.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-index-seo-aeo-teammate",
+  "name": "Index",
+  "handle": "adamta",
+  "url": "https://x.ai/bot/Viv2NbC5skPslV1WH9Fs7",
+  "desc": "An SEO and AEO program teammate. On first run it reads what you already connected, recommends a stack, and only asks for gaps.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-redreplier",
+  "name": "RedReplier",
+  "handle": "tarasshyn",
+  "url": "https://x.ai/bot/8aU6ly_uunnMabpybs3hB",
+  "desc": "Watches Reddit, X, Hacker News and Bluesky for mentions of your product, competitors and buying-signal phrases.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-scout-competitive-intelligence",
+  "name": "Scout",
+  "handle": "adamta",
+  "url": "https://x.ai/bot/rthl9MdskO2f-JCzmyINP",
+  "desc": "A competitive intelligence agent for organic growth that watches rival sites, search rankings, and AI-answer visibility so real moves don’t get buried.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-socials-short-form-scout",
+  "name": "socials",
+  "handle": "ashen_one",
+  "url": "https://x.ai/bot/bjsbaj_a2ds2pQY1YiXqE",
+  "desc": "Content scout for short-form creators: watches X and YouTube for filmable AI and tech stories and sends short, ready-to-film kits in chat.",
+  "cats": [
+   "content"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-ai-resource-sift",
+  "name": "AI Resource Sift",
+  "handle": "beamnxw",
+  "url": "https://x.ai/bot/3XvYxSCGJRY6x1woq-hdL",
+  "desc": "For one AI topic, sweep papers, code, lectures, courses, Reddit, and official lab docs, then keep a large filtered stack.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-research-bot",
+  "name": "Research Bot",
+  "handle": "ArthurMacwaters",
+  "url": "https://x.ai/bot/Nn0ykGa3vJ6YS7ib7F6yH",
+  "desc": "This bot exists to do deep research and provide verifiable answers with sources.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-thoth-researcher-archivist",
+  "name": "Thoth",
+  "handle": "RichSilver",
+  "url": "https://x.ai/bot/W4Z5pvEm6UgCml48Ig4dT",
+  "desc": "Named for the Egyptian god of writing, knowledge, and the moon. He does deep research for whatever you are working on.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-2nd-brain",
+  "name": "2nd Brain",
+  "handle": "LeTerryBZH",
+  "url": "https://x.ai/bot/c4fYduVVic2YtbcjXquD0",
+  "desc": "Compiles notes, PDFs, and X bookmarks into an inspectable markdown wiki (Karpathy Lattice: raw/ → wiki/).",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-ai-radar",
+  "name": "AI Radar",
+  "handle": "gota_bara",
+  "url": "https://x.ai/bot/i1xwguSTrplEdPvx96MYh",
+  "desc": "Always-on AI news radar. Watches AI labs' official X accounts, their staff, researchers and well-known people, plus blogs and changelogs.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-storiesbot",
+  "name": "StoriesBot",
+  "handle": "viticci",
+  "url": "https://x.ai/bot/cV7nGFO88pb2WXNN56h8A",
+  "desc": "Search 17 years of MacStories.net. Longform reviews, Setups, the Shortcuts Archive, and anything Federico or John published. Filter by time and author.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-frontier-model-watch",
+  "name": "Frontier Model Watch",
+  "handle": "GuleidAmina",
+  "url": "https://x.ai/bot/YHqn0iTQuvI-8LC01IP6S",
+  "desc": "Watches official releases from xAI, Anthropic, Google, OpenAI, Moonshot, Alibaba, Zhipu, DeepSeek, MiniMax, and Tencent. Runs at 07:30 EAT.",
+  "cats": [
+   "research"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-revenue-signal-radar",
+  "name": "Revenue Signal Radar",
+  "handle": "ericosiu",
+  "url": "https://x.ai/bot/9BnpveyF3fbsRRtolSWpp",
+  "desc": "Weekday revenue-action radar for HubSpot shops. Ranks expansion, stalled deals, and closed-lost revival with evidence and draft next steps.",
+  "cats": [
+   "data"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-x-algo",
+  "name": "X Algo",
+  "handle": "UziObi",
+  "url": "https://x.ai/bot/W0LrVwNwsRHhFY4PG7586",
+  "desc": "Helps X posters decide when to quote, ship a new post, or wait. Reads the public For You ranking code and live post metrics.",
+  "cats": [
+   "data"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-aeo-content-producer",
+  "name": "AEO Content Producer",
+  "handle": "Jingg_n_Tonic",
+  "url": "https://x.ai/bot/WEqsULsog0KJUFUbhIRXH",
+  "desc": "Produces AEO refreshes and net-new articles from AI visibility data: briefs, drafts, and an editorial pass — then stops for your review.",
+  "cats": [
+   "data"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-gong-call-coach",
+  "name": "Gong Call Coach",
+  "handle": "scottxmetcalf",
+  "url": "https://x.ai/bot/KpodhhBqjA4FHv47R1HrD",
+  "desc": "Reviews Gong call recordings and gives short, actionable coaching after the fact.",
+  "cats": [
+   "meetings"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-exec-cos-digest",
+  "name": "Exec CoS Digest",
+  "handle": "montymccoy",
+  "url": "https://x.ai/bot/gEujmYQAd4BD19eRxMvnC",
+  "desc": "Weekday chief-of-staff bot: morning calendar digest plus night-before external meeting prep. Drafts only — you approve anything irreversible.",
+  "cats": [
+   "meetings"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-engineer-s-morning-brief",
+  "name": "Engineer's Morning Brief",
+  "handle": "mahdi",
+  "url": "https://x.ai/bot/9b4DUFqQnCtrclcyzWs5x",
+  "desc": "Before standup each day, one short brief covering today's meetings, the PRs waiting on you, failing CI, and the messages that actually need you.",
+  "cats": [
+   "meetings"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-time-keeper",
+  "name": "Time Keeper",
+  "handle": "ironted21",
+  "url": "https://x.ai/bot/IAEp851k9orM1LguTm2F8",
+  "desc": "A calendar assistant that sends a morning digest (one good quote, then the day) and a next-day briefing every night.",
+  "cats": [
+   "meetings"
+  ],
+  "checked": "2026-10-21"
+ },
+ {
+  "id": "cb-babel-live-translator",
+  "name": "Babel - live translator",
+  "handle": "kunalsells",
+  "url": "https://x.ai/bot/-GzMJlSIqdo89K0qs3yC4",
+  "desc": "Live Zoom translator. Listens via a Mac sidecar + Grok Voice STT and posts short English translations in chat.",
+  "cats": [
+   "meetings"
+  ],
+  "checked": "2026-10-21"
+ }
+]

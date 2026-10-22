@@ -25,6 +25,13 @@ def oss_row(e):
             f'<div class="bt-txt"><div class="bt-nm"><a href="{u}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by @{esc(o)} · ★ {st} on GitHub{lic}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Open source</span>'
             f'<a class="btn bt-btn" href="{u}" target="_blank" rel="noopener" aria-label="View {n} on GitHub (opens in new tab)">GitHub</a></li>')
+CB_LABEL="Community bot (via awesome-grokbot), vetted by AgentScout"
+def cb_row(e):
+    n=esc(e["name"]); h=esc(e["handle"])
+    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["handle"]).lower())}"><img class="bt-ic logo" src="icons/community-bot.svg" alt="" width="32" height="32" loading="lazy">'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by <a href="https://x.com/{h}" target="_blank" rel="noopener">@{h}</a> · {CB_LABEL}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+            f'<span class="b bt-badge">Community</span>'
+            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
 def tabs(e):
     T=[]
     if e["memories"]:
@@ -74,8 +81,9 @@ def run():
     anchor='</ul></section><section class="bt-sec" data-sec="claude">'
     assert anchor in s
     OSS=json.load(open("data/bot-templates-oss.json")) if os.path.exists("data/bot-templates-oss.json") else []
-    s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+"".join(oss_row(e) for e in OSS)+'<!--/btx-->'+anchor,1)
-    total=len(base)+len(X)+len(OSS)
+    CB=json.load(open("data/bot-templates-community.json")) if os.path.exists("data/bot-templates-community.json") else []
+    s=s.replace(anchor,'<!--btx-->'+"".join(row(e) for e in X)+"".join(oss_row(e) for e in OSS)+"".join(cb_row(e) for e in CB)+'<!--/btx-->'+anchor,1)
+    total=len(base)+len(X)+len(OSS)+len(CB)
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
     s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
     def il(m):
@@ -131,6 +139,8 @@ if(u.get('q'))q.value=u.get('q');apply(true)})();</script>'''
 def filters():
     s=open(f"{D}/index.html").read(); M=json.load(open("data/bot-templates-cats.json")); CATS=M["_cats"]
     X={e["slug"]:e for e in json.load(open("data/bot-templates-extra.json"))}
+    if os.path.exists("data/bot-templates-community.json"):
+        for e in json.load(open("data/bot-templates-community.json")): M.setdefault(e["id"],e["cats"])
     cnt={k:0 for k in CATS}; total=0
     def fix(m):
         nonlocal total; tag=m.group(0); rid=re.search(r'id="([^"]+)"',tag).group(1); total+=1
