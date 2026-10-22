@@ -29,7 +29,7 @@ def annotate():
         if not p.endswith(".html") or p=="index.html" or p.startswith("search/") or not os.path.exists(p): continue
         s=open(p,encoding="utf-8").read()
         if 'name="robots" content="noindex' in s or 'http-equiv="refresh"' in s[:4000]: continue
-        a=[f'data-pagefind-filter="type:{ptype(p)}"']; date=lm
+        a=[f'data-pagefind-filter="type:{ptype(p)}"']; date=lm; kw=""
         if p.startswith("tools/"):
             x=tools.get(p[6:-5])
             if x:
@@ -38,13 +38,14 @@ def annotate():
                 date=x.get("added") or lm
                 a.append(f'data-pagefind-meta="title:{html.escape(x["name"],quote=True)}"')
                 if x.get("logo"): a.append(f'data-pagefind-meta="logo:/{x["logo"]}"')
+                kw=_joined(x["name"])
         elif p.startswith("bot-templates/") and p!="bot-templates/index.html":
             m=re.search(r'<div class="bd-top"><img[^>]*?src="([^"]+)"',s)
             if m and not m.group(1).startswith(("http","/","data:")): a.append(f'data-pagefind-meta="logo:/bot-templates/{html.escape(m.group(1),quote=True)}"')
         elif ptype(p)=="News":
             m=re.search(r'"datePublished": ?"(\d{4}-\d\d-\d\d)',s); date=m.group(1) if m else lm
         a.append(f'data-pagefind-sort="date:{date}"'); a.append(f'data-pagefind-meta="type:{ptype(p)}"')
-        mk='<span id="pfm" hidden>'+"".join(f'<span {z}></span>' for z in a)+'</span>'
+        mk='<span id="pfm" hidden>'+"".join(f'<span {z}></span>' for z in a)+(f'<span data-pagefind-weight="7">{html.escape(kw)}</span>' if kw else "")+'</span>'
         s2=MK_RE.sub("",s)
         s2=re.sub(r'<main(?![^>]*data-pagefind-body)([^>]*)>',r'<main\1 data-pagefind-body>',s2,1)
         if "data-pagefind-body" not in s2: continue
@@ -73,6 +74,17 @@ def navlink():
         if "script-src 'self' 'unsafe-inline'" in s and "'wasm-unsafe-eval'" not in s: s=s.replace("script-src 'self'","script-src 'self' 'wasm-unsafe-eval'",1)
         if s!=s0: open(f,"w",encoding="utf-8").write(s); n+=1
     print("search: nav box updated on",n,"pages")
+def _joined(name):
+    """Joined-up lowercase forms of a tool name so Pagefind finds 'gmapsscraper' / 'gmapsscraper.ai' (Oct 21 2026).
+    Only added when the name has more than one part; e.g. 'GMapsScraper.AI' -> 'gmapsscraperai gmapsscraper'."""
+    n=name.lower(); parts=[w for w in re.split(r"[^a-z0-9]+",n) if w]
+    if len(parts)<2: return ""
+    out=["".join(parts)]
+    m=re.match(r"^(.*?)\.(ai|io|app|dev|so|sh|co|com|xyz|run|chat|tech|net|org|me|gg)$",n.strip())
+    if m:
+        b="".join(w for w in re.split(r"[^a-z0-9]+",m.group(1)) if w)
+        if b and b not in out: out.append(b)
+    return " ".join(out)
 def run():
     if os.environ.get("NO_PAGEFIND"): print("search: skipped (NO_PAGEFIND)"); return
     if not os.path.exists("sitemap.xml"): return
