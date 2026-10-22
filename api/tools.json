@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T02:41:00Z",
- "updated": "2026-10-22T02:41:00Z",
+ "generated": "2026-10-22T02:47:10Z",
+ "updated": "2026-10-22T02:47:10Z",
  "last_checked": "2026-10-21",
- "count": 1649,
+ "count": 1650,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -69731,6 +69731,46 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/moralis-mcp.png",
    "page": "https://agentscouthq.com/tools/moralis-mcp.html"
+  },
+  {
+   "name": "Playable Notes",
+   "slug": "playable-notes",
+   "url": "https://playablenotes.com/",
+   "website": "https://playablenotes.com/",
+   "github": "",
+   "category": "music production",
+   "description": "Playable Notes is an AI music tool for piano teachers: snap a photo, screenshot or PDF of piano sheet music and it reads it into a real, playable score, then rearranges it for your student from a plain-language request like \"easier left hand\", \"take out the octaves\" or \"put it in C\". You can hear it, fix any note, print a clean PDF and share practice links, and it also works inside ChatGPT.",
+   "key_features": [
+    "Freemium: 50 free credits on sign-up (1 credit reads one line of music) and editing, AI arranging (up to 100 a day), playback and printing are free; credit packs from $10 for 100 credits, as listed on its site",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Freemium: 50 free credits on sign-up (1 credit reads one line of music) and editing, AI arranging (up to 100 a day), playback and printing are free; credit packs from $10 for 100 credits, as listed on its site",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/playable-notes.png",
+   "page": "https://agentscouthq.com/tools/playable-notes.html"
   }
  ]
 }
