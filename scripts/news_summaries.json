@@ -140,5 +140,49 @@
  },
  "https://x.com/i/trending/2112582270389194774": {
   "summary": "ElevenLabs introduced Eleven Realtime, speech-to-speech models meant for voice agents that need to respond quickly while still reasoning. A Mini version targets natural conversation and a Max version handles harder jobs like customer support with tool use, across more than 90 languages."
+ },
+ "https://x.com/i/trending/2112987690803343606": {
+  "summary": "Anthropic opened a research preview of Claude Duet, a standalone app that checks connected apps like email, Slack and calendar, sends a morning brief and works on tasks in its own cloud computer. It asks for approval before key actions and is on a waitlist for U.S. Pro and Max subscribers.",
+  "title": "Anthropic previews Claude Duet, a proactive agent app that watches your email and calendar"
+ },
+ "https://x.com/i/trending/2113059266378793184": {
+  "summary": "Walmart launched Agent Gateway, an MCP server that lets approved AI agents check stock and place orders at Walmart and Sam's Club. Agent Profiles coming next month will keep agent orders separate, require purchase approval by default and allow optional spending limits.",
+  "title": "Walmart opens Agent Gateway, an MCP server that lets approved AI agents shop for customers"
+ },
+ "https://x.com/i/trending/2112981234360189208": {
+  "summary": "PhoneUse launched a service that gives AI agents cloud Android phones or real iPhones and Androids to tap and swipe through apps that have no API. It is aimed at handling things like push notifications, two-factor codes and device checks."
+ },
+ "https://x.com/i/trending/2113267945325613188": {
+  "summary": "Large U.S. banks are reportedly seeing third-party AI agents sign into customer accounts with the customer's own username and password, which makes it hard to tell person from agent. Some banks are blocking that access and updating their terms, though not every bank confirmed the reports."
+ },
+ "https://x.com/i/trending/2112923062404317476": {
+  "summary": "Security firm Straiker reported that a criminal group built an automated system of AI agents, using several commercial models, to attack more than 400 Latin American financial institutions. Anthropic cut off the group's access and an investigation is under way."
+ },
+ "https://x.com/i/trending/2113118175424602281": {
+  "summary": "Breken launched an AI testing tool that recreates an app's production setup, speeds up simulated usage and injects failures to find bugs before users do. In its own test it caught about a third of 235 known open-source bugs."
+ },
+ "https://x.com/i/trending/2112908301625356787": {
+  "summary": "OpenAI, working with PerturbAI and Scripps Research, ran close to 2,000 research agents over a whole-brain CRISPR atlas and got back testable leads on neurodegenerative disease in 32 minutes. The results are shared in a public atlas."
+ },
+ "https://x.com/i/trending/2112981233940795447": {
+  "summary": "MIT researchers introduced OPAL, which lets an AI agent watch a neural network's training and edit the optimizer code as it goes. It ships as a PyTorch wrapper and the team reports results that match or beat fixed optimizers."
+ },
+ "https://x.com/i/trending/2112920261683216616": {
+  "summary": "EverOS Cloud pitches a memory service for AI agents that keeps user preferences, the agent's past cases and skills, and company knowledge in separate layers so an agent can draw on all three for a task."
+ },
+ "https://x.com/i/trending/2113122034259460232": {
+  "summary": "Microsoft said a China-aligned group used an open-source AI framework to speed up reconnaissance and password spraying after breaking into ConnectWise's cloud backup service, reaching thousands of Microsoft 365 tenants. ConnectWise paused the service as a precaution."
+ },
+ "https://x.com/i/trending/2113245462748897301": {
+  "summary": "Ant Group's updated Ling-3.1-flash model rose on the Artificial Analysis index, with gains on benchmarks that test practical agent tasks. API access and open weights are planned."
+ },
+ "https://x.com/i/trending/2112977628105703829": {
+  "summary": "New lab Mirendil says a single researcher, with AI agents doing most of the work, pretrained a competitive coding base model on public data in about three and a half months. Larger versions are in training."
+ },
+ "https://x.com/i/trending/2113232867287253234": {
+  "summary": "Developers are debating how much the harness, the software layer that runs a model's edits, commands and context, changes AI coding results, with posts pointing to large swings in scores and cost from the harness alone."
+ },
+ "https://x.com/i/trending/2112687333317443979": {
+  "summary": "Former Apple Watch product lead Praneeta Pujari launched Niq, an iOS agent from her startup UniqueHuman that uses wearable data, records and check-ins to anticipate migraine flare-ups. It also helps with appointments, prescriptions and insurance, with doctors overseeing decisions."
  }
 }
