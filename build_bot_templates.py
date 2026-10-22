@@ -123,6 +123,7 @@ def run():
         if os.path.exists(fp):
             t=open(fp).read(); t2=re.sub(r'See all \d+ →',f'See all {total} →',t)
             t2=re.sub(r'(<p class="btsub">)[^<]*(</p>)',lambda m:m.group(1)+SUB+m.group(2),t2)
+            t2=re.sub(r'(?i)AI\s+Agents\s+Directory','AgentScout, the AI agent tools directory',t2)  # no rival names (owner, Oct 22 2026)
             if t2!=t: open(fp,"w").write(t2)
 
 # ---- Filters (Oct 21 2026 PT, owner request): count pill, search, use-case chips, URL params, empty state. ----
