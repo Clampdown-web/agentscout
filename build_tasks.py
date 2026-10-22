@@ -360,6 +360,10 @@ def sitewide(t):
             if f=="index.html" and os.path.exists("data/bt-strip.inc"):
                 s=re.sub(r'<section id="bt-strip".*?</section>','',s,flags=re.S)
                 s=s.replace("<!--MAKERS-END-->","<!--MAKERS-END-->"+open("data/bt-strip.inc").read(),1)
+                # live template count from the built list page (Oct 21 2026: was hardcoded "See all 32")
+                if os.path.exists("bot-templates/index.html"):
+                    _n=len(re.findall(r'<li class="bt-row" ',open("bot-templates/index.html").read()))
+                    if _n: s=re.sub(r'(<a href="bot-templates/">See all )\d+( →</a>)',lambda mm:mm.group(1)+str(_n)+mm.group(2),s,count=1)
         # Free-tools hub in the main nav, right after Image Gen
         if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s: s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")

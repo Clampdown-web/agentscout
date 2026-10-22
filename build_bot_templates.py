@@ -1,6 +1,6 @@
 """Extra Bot templates (Oct 21 2026 PT, owner request): data/bot-templates-extra.json -> rows on /bot-templates/ and
 one detail page each (bot-templates/<slug>.html). Idempotent; runs from build_site.py before build_tasks (nav/footer pass).
-The original 32 templates are static pages from the Oct 19 launch; this only adds/refreshes the extra ones."""
+The original templates (32 at launch) are static pages from the Oct 19 launch; this only adds/refreshes the extra ones."""
 import json,re,os,html
 esc=html.escape
 SITE="https://agentscouthq.com"; D="bot-templates"; MARK="<!-- btx-generated -->"
@@ -87,6 +87,13 @@ def run():
         rel=[p for p in pool[k+1:]+pool[:k]][:4]
         open(f"{D}/{e['slug']}.html","w").write(detail(e,shell,rel))
     print(f"bot templates: {len(X)} extra, {total} total")
+    # Keep every hardcoded template count in sync with the data (Oct 21 2026): homepage strip source + preview copy
+    SUB="Ready-made bots, skills, plugins and workflows for Grok Bot, Claude, Codex, OpenClaw, Cursor and n8n."
+    for fp in ("data/bt-strip.inc","preview/site-test/index.html"):
+        if os.path.exists(fp):
+            t=open(fp).read(); t2=re.sub(r'See all \d+ →',f'See all {total} →',t)
+            t2=re.sub(r'(<p class="btsub">)[^<]*(</p>)',lambda m:m.group(1)+SUB+m.group(2),t2)
+            if t2!=t: open(fp,"w").write(t2)
 
 # ---- Filters (Oct 21 2026 PT, owner request): count pill, search, use-case chips, URL params, empty state. ----
 FCSS=('<style id="btf-css">.bt-h1{flex-wrap:wrap;row-gap:4px}.bt-count{display:inline-flex;align-items:center;justify-content:center;min-width:2.2em;height:1.5em;padding:0 .45em;margin-left:.4em;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:.5em;font-weight:600;vertical-align:middle}'
