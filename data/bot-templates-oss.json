@@ -48,30 +48,6 @@
   "license": "NOASSERTION"
  },
  {
-  "id": "oss-akeru-bot",
-  "repo": "opencoredev/akeru-bot",
-  "name": "Akeru Bot",
-  "cats": [
-   "coding",
-   "productivity"
-  ],
-  "desc": "Open-source Grok Bot alternative for named AI teammates. Local-first desktop, web and mobile clients with per-bot tools, instructions and memory. Independent fork of T3 Code.",
-  "stars": 101,
-  "license": "MIT"
- },
- {
-  "id": "oss-guaca",
-  "repo": "madebywelch/guaca",
-  "name": "Guaca",
-  "cats": [
-   "coding",
-   "productivity"
-  ],
-  "desc": "Desktop workspace inspired by Grok Bot where AI agents collaborate, write code and use tools. Runs locally or on your own server, with shared conversations, persistent memory and MCP plugins.",
-  "stars": 46,
-  "license": "AGPL-3.0"
- },
- {
   "id": "oss-grok-bot-profiles",
   "repo": "HAEGONG/grok-bot-profiles",
   "name": "Grok Bot Profiles",

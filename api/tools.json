@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T02:05:22Z",
- "updated": "2026-10-22T02:05:22Z",
+ "generated": "2026-10-22T02:08:47Z",
+ "updated": "2026-10-22T02:08:47Z",
  "last_checked": "2026-10-21",
- "count": 1627,
+ "count": 1629,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -68823,6 +68823,97 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/fireply-ai.png",
    "page": "https://agentscouthq.com/tools/fireply-ai.html"
+  },
+  {
+   "name": "Akeru Bot",
+   "slug": "akeru-bot",
+   "url": "https://www.akeru-bot.com/",
+   "website": "https://www.akeru-bot.com/",
+   "github": "https://github.com/opencoredev/akeru-bot",
+   "category": "personal agents",
+   "description": "Open-source alternative to Grok Bot for named AI teammates: local-first desktop, web and mobile clients where each bot has its own tools, instructions and memory. MIT-licensed independent fork of T3 Code.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "101 GitHub stars",
+    "Control a computer",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "opencoredev/akeru-bot",
+   "github_stars": 101,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "control a computer",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/akeru-bot.png",
+   "page": "https://agentscouthq.com/tools/akeru-bot.html"
+  },
+  {
+   "name": "Guaca",
+   "slug": "guaca",
+   "url": "https://guaca.bot/",
+   "website": "https://guaca.bot/",
+   "github": "https://github.com/madebywelch/guaca",
+   "category": "personal agents",
+   "description": "Desktop workspace inspired by Grok Bot where AI agents collaborate, write code and use tools; runs locally or on your own server, with shared conversations, persistent memory and MCP plugins. AGPL-3.0.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "46 GitHub stars",
+    "Write code",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "madebywelch/guaca",
+   "github_stars": 46,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "write code",
+    "connect tools via MCP",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/guaca.png",
+   "page": "https://agentscouthq.com/tools/guaca.html"
   }
  ]
 }

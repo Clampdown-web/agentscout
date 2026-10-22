@@ -41436,5 +41436,58 @@
     "socials": [
       "https://x.com/fireplyai"
     ]
+  },
+  {
+    "name": "Akeru Bot",
+    "url": "https://www.akeru-bot.com/",
+    "description": "Open-source alternative to Grok Bot for named AI teammates: local-first desktop, web and mobile clients where each bot has its own tools, instructions and memory. MIT-licensed independent fork of T3 Code.",
+    "category": "personal agents",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "GitHub",
+    "pricing_detail": "",
+    "use_cases": [
+      "control a computer",
+      "give agents memory"
+    ],
+    "website": "https://www.akeru-bot.com/",
+    "github": "https://github.com/opencoredev/akeru-bot",
+    "repo": "opencoredev/akeru-bot",
+    "github_stars": 101,
+    "id": 1647,
+    "slug": "akeru-bot",
+    "logo": "assets/logos/akeru-bot.png"
+  },
+  {
+    "name": "Guaca",
+    "url": "https://guaca.bot/",
+    "description": "Desktop workspace inspired by Grok Bot where AI agents collaborate, write code and use tools; runs locally or on your own server, with shared conversations, persistent memory and MCP plugins. AGPL-3.0.",
+    "category": "personal agents",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "GitHub",
+    "pricing_detail": "",
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "give agents memory"
+    ],
+    "website": "https://guaca.bot/",
+    "github": "https://github.com/madebywelch/guaca",
+    "repo": "madebywelch/guaca",
+    "github_stars": 46,
+    "id": 1648,
+    "slug": "guaca",
+    "logo": "assets/logos/guaca.png"
   }
 ]
