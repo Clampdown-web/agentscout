@@ -473,3 +473,9 @@ a.b::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;trans
 /* Short standalone text links (chip rows, headline links, "see all" lines): vertical padding on the inline link grows the tap area to 44px without moving any text */
 :is(.suggestedit,.goodfor a,.ig-cta a,main h3>a,main li>a:only-child,main p>a:only-child,main li>strong+a):not(.btn,.bt-cn,.quizcta a,.crumb a,.rv-write,.bt-va){padding-top:14px;padding-bottom:14px}
 .bt-nm{padding-top:14px;padding-bottom:14px;margin-top:-14px;margin-bottom:-14px}.bt-nm a{padding-top:14px;padding-bottom:14px}
+/* Footer links, directory table links, save/share buttons: 44px tap area (Ops review of 6feecfaa, Oct 21 2026) */
+footer a:not(.logo):not(.btn):not(.footgen):not(.navbt){padding-top:14px;padding-bottom:14px}
+footer a.footgen,footer a.navbt{display:inline-flex;align-items:center;min-height:44px}
+a.icol,table a.icol{min-height:44px}
+a.ghx{min-height:44px;line-height:44px}
+.save,.savebtn,.sharebtn{min-width:44px}
