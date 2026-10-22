@@ -35,7 +35,7 @@ def cb_row(e):
 UC_LABEL="Official x.ai use case"
 def uc_row(e):
     n=esc(e["name"]); act=' · <span class="bt-act">Acts with your approval</span>' if e.get("acts") else ""
-    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["creator"]).lower())}"><img class="bt-ic logo" src="icons/official-use-case.svg" alt="{n} icon" width="32" height="32" loading="lazy">'
+    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["creator"]).lower())}"><img class="bt-ic logo" src="icons/{esc(e.get('logo') or 'official-use-case.svg')}" alt="{n} icon" width="32" height="32" loading="lazy">'
             f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by {esc(e["creator"])} · <a href="https://x.ai/bot/use-cases" target="_blank" rel="noopener">{UC_LABEL}</a>{act}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Official</span>'
             f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
