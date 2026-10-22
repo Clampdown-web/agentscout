@@ -80,10 +80,13 @@ def run():
     if os.path.exists("search/index.html"):  # Pagefind runs WebAssembly: allow it on the search page only
         z=open("search/index.html",encoding="utf-8").read()
         if "'wasm-unsafe-eval'" not in z: open("search/index.html","w",encoding="utf-8").write(z.replace("script-src 'self'","script-src 'self' 'wasm-unsafe-eval'",1))
-    r=subprocess.run([sys.executable,"-m","pagefind","--site",".","--output-subdir","pagefind","--glob","**/*.html","--exclude-selectors","nav,footer,.crumb,.shareacts,[data-pagefind-ignore],.badges,.rv-top,.updated,.gencall,.acts,.bd-back,.bd-meta,.bd-cta,.ico,.bt-ic,.rv,.embeds,.bd-src,.bd-rel,.addedago"],capture_output=True,text=True)
+    # Build into a temp dir, then swap it in, so stale index/fragment files from old builds never pile up (Oct 21 2026: 85 stale builds, ~16.8k files)
+    import shutil; tmp=".pagefind_new"; shutil.rmtree(tmp,ignore_errors=True)
+    r=subprocess.run([sys.executable,"-m","pagefind","--site",".","--output-path",tmp,"--glob","**/*.html","--exclude-selectors","nav,footer,.crumb,.shareacts,[data-pagefind-ignore],.badges,.rv-top,.updated,.gencall,.acts,.bd-back,.bd-meta,.bd-cta,.ico,.bt-ic,.rv,.embeds,.bd-src,.bd-rel,.addedago"],capture_output=True,text=True)
     out=(r.stdout+r.stderr).strip().splitlines()
     print("search: pagefind",("ok" if r.returncode==0 else "FAILED")," | ".join(l for l in out if "Indexed" in l or "rror" in l)[:300])
-    if r.returncode: sys.exit(1)
+    if r.returncode or not os.path.exists(os.path.join(tmp,"pagefind-entry.json")): shutil.rmtree(tmp,ignore_errors=True); sys.exit(1)
+    shutil.rmtree("pagefind",ignore_errors=True); os.rename(tmp,"pagefind")
 def page():
     import build_extras as X
     os.makedirs("search",exist_ok=True)
