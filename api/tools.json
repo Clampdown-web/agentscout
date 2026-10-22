@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-21T23:36:31Z",
- "updated": "2026-10-21T23:36:31Z",
+ "generated": "2026-10-22T00:00:09Z",
+ "updated": "2026-10-22T00:00:09Z",
  "last_checked": "2026-10-21",
- "count": 1626,
+ "count": 1627,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -68781,6 +68781,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cliptalk.png",
    "page": "https://agentscouthq.com/tools/cliptalk.html"
+  },
+  {
+   "name": "Fireply AI",
+   "slug": "fireply-ai",
+   "url": "https://fireply.ai/",
+   "website": "https://fireply.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Fireply is an AI agent for growing on X (Twitter): it finds relevant conversations in your niche and writes and posts context-aware replies in your own voice, so you can grow followers, reach and sales without replying by hand. Sign-in uses X OAuth, so it never sees your password, and it also offers free X tools like an account analyzer and advanced search.",
+   "key_features": [
+    "Freemium: 40 free replies to start, no card needed; paid plans from $69/month (Growth) as listed on its site, with a yearly option at about 20% off",
+    "Active",
+    "Social posts & ads"
+   ],
+   "pricing": "Freemium: 40 free replies to start, no card needed; paid plans from $69/month (Growth) as listed on its site, with a yearly option at about 20% off",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "social posts & ads"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fireply-ai.png",
+   "page": "https://agentscouthq.com/tools/fireply-ai.html"
   }
  ]
 }

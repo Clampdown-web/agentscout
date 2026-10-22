@@ -32,7 +32,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"cliptalk":["generate video","edit video"],  # submission Oct 21: AI video agent for short-form social videos
+UC_SET={"fireply-ai":["social posts & ads"],  # submission Oct 21: AI agent that finds X conversations and replies in your voice
+"cliptalk":["generate video","edit video"],  # submission Oct 21: AI video agent for short-form social videos
 "bidhelm":["social posts & ads","automate workflows"],  # submission Oct 21: AI marketing department (Google Ads, X); maker edit Oct 21: not customer support or sales outreach
 "sphinx":["write code"],  # upkeep Oct 21: git push quiz hook for agent-written code
 "reticle":["write code","monitor & evaluate agents"],  # upkeep Oct 21: verifies coding-agent work in the running app
