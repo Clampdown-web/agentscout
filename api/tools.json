@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T02:47:10Z",
- "updated": "2026-10-22T02:47:10Z",
+ "generated": "2026-10-22T03:10:04Z",
+ "updated": "2026-10-22T03:10:04Z",
  "last_checked": "2026-10-21",
- "count": 1650,
+ "count": 1651,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -69771,6 +69771,47 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/playable-notes.png",
    "page": "https://agentscouthq.com/tools/playable-notes.html"
+  },
+  {
+   "name": "Metix AI",
+   "slug": "metix-ai",
+   "url": "https://metix.ai/",
+   "website": "https://metix.ai/",
+   "github": "https://github.com/MetixAI-Official/metix-skills",
+   "category": "business agents",
+   "description": "Metix AI (formerly OpenJobs AI) is an AI recruiting platform built around Mira, an AI recruiter agent: you describe the role and Mira searches 900M+ profiles in 190+ countries, runs personalized outreach only after you approve it, handles replies and screening, and books interview-ready candidates on your calendar, often within 24 hours. You still approve outreach and run the interviews.",
+   "key_features": [
+    "Paid: free 14-day trial (1 AI Agent and 500 Credits, no card required), then subscription plans from $99/month (Starter, 5,000 Credits and 1 AI Agent) up to Scale at $499/month, plus a Delivery service; prices as listed on its site",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Paid: free 14-day trial (1 AI Agent and 500 Credits, no card required), then subscription plans from $99/month (Starter, 5,000 Credits and 1 AI Agent) up to Scale at $499/month, plus a Delivery service; prices as listed on its site",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/metix-ai.png",
+   "page": "https://agentscouthq.com/tools/metix-ai.html"
   }
  ]
 }

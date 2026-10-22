@@ -32,7 +32,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"playable-notes":["make music"],  # submission Oct 21: AI piano sheet music reader and arranger for teachers
+UC_SET={"metix-ai":["business agents","automate workflows"],  # submission Oct 21: AI recruiter agent (Mira) that sources, does approved outreach and books interviews
+"playable-notes":["make music"],  # submission Oct 21: AI piano sheet music reader and arranger for teachers
 "fireply-ai":["social posts & ads"],  # submission Oct 21: AI agent that finds X conversations and replies in your voice
 "cliptalk":["generate video","edit video"],  # submission Oct 21: AI video agent for short-form social videos
 "bidhelm":["social posts & ads","automate workflows"],  # submission Oct 21: AI marketing department (Google Ads, X); maker edit Oct 21: not customer support or sales outreach
