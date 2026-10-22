@@ -99,7 +99,9 @@ def answer_blocks(t):
     f="bot-templates/index.html"
     if os.path.exists(f):
         s=open(f).read(); s=re.sub(r"<!--sn:bt-->.*?<!--/sn:bt-->","",s,flags=re.S)
-        m=re.search(r'aria-label="(\d+) templates"',s); bn=m.group(1) if m else ""
+        m=re.search(r'aria-label="(\d+) templates"',s) or re.search(r"(\d+) ready-made",s); bn=m.group(1) if m else ""
+        if 'id="bt-count"' not in s and bn:  # build_bot_templates only adds the count badge to 'Bot templates</h1>'; restore it after the rename
+            s=re.sub(r'(<h1 class="bt-h1"[^>]*>.*?)(</h1>)',lambda mm:mm.group(1)+f'<span id="bt-count" class="bt-count" aria-label="{bn} templates">{bn}</span>'+mm.group(2),s,1,flags=re.S)
         import json as J; ncb=len(J.load(open("data/bot-templates-community.json"))) if os.path.exists("data/bot-templates-community.json") else 0
         s=re.sub(r'(</svg>)(?:AI bot templates|Bot templates|Grok Bot templates, plugins &amp; skills)(<span id="bt-count")',r'\1Grok Bot templates, plugins &amp; skills\2',s,1)
         faq=[("What are Grok Bot templates?",f"Ready-made bots you can import into Grok Bot and use right away. This page lists {bn} templates, skills, plugins and workflows, including {ncb} community-made Grok Bot templates, plus templates for Claude, Codex, OpenClaw, Cursor and n8n."),
