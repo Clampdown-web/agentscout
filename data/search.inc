@@ -42,10 +42,10 @@ function toolOK(x){if($("ftype").value&&$("ftype").value!=="Tools")return false;
 async function run(q,filters,opts){const r=await pf.search(q||null,{filters,...opts});const hits=r.results.slice(0,POOL);const data=await Promise.all(hits.map(h=>h.data()));
  if(!q)return {rows:data,more:r.results.length>POOL};
  const T=terms(q);const top=hits.length?hits[0].score:0;const rows=[];
- data.forEach((d,i)=>{const txt=N((d.meta&&d.meta.title||"")+" "+d.content);const tt=N(d.meta&&d.meta.title||"");const lead=N((d.meta&&d.meta.title||"")+" "+d.content.slice(0,400));const all=T.every(w=>txt.includes(w));const intitle=T.every(w=>tt.includes(w));const inlead=T.every(w=>lead.includes(w));
-  if(!T.some(w=>txt.includes(w)))return; if(hits[i].score<top*0.08)return; rows.push({d,all,intitle,inlead,i})});
- const anyAll=rows.some(r=>r.all);const keep=anyAll?rows.filter(r=>r.all):rows;
- keep.sort((a,b)=>(b.intitle-a.intitle)||(b.inlead-a.inlead)||(a.i-b.i));
+ data.forEach((d,i)=>{const txt=N((d.meta&&d.meta.title||"")+" "+d.content);const tt=N(d.meta&&d.meta.title||"");const lead=N((d.meta&&d.meta.title||"")+" "+d.content.slice(0,400));const exact=C(d.meta&&d.meta.title||"")===C(q);const all=T.every(w=>txt.includes(w));const intitle=T.every(w=>tt.includes(w));const inlead=T.every(w=>lead.includes(w));
+  if(!T.some(w=>txt.includes(w)))return; if(hits[i].score<top*0.08)return; rows.push({d,exact,all,intitle,inlead,i})});
+ /* exact name matches (title equals the query, ignoring case/punctuation) rank first, Oct 21 2026 */const anyAll=rows.some(r=>r.all);const keep=anyAll?rows.filter(r=>r.all):rows;
+ keep.sort((a,b)=>(b.exact-a.exact)||(b.intitle-a.intitle)||(b.inlead-a.inlead)||(a.i-b.i));
  return {rows:keep.map(r=>r.d),more:r.results.length>POOL&&keep.length===rows.length}}
 async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??$("sq").value).trim();const filters={};
  if($("ftype").value)filters.type=$("ftype").value;

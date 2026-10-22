@@ -452,4 +452,24 @@ footer a.navbt::before{content:'';width:14px;height:14px;flex:0 0 14px;backgroun
 
 /* Moves funds label (Oct 21 2026) */
 .b.funds{color:#b45309;border-color:#b45309;font-weight:600}html[data-theme=dark] .b.funds{color:#fbbf24;border-color:#fbbf24}.fundsnote{margin:-6px 0 16px;padding:10px 14px;border:1px solid #b45309;border-radius:10px;font-size:14px;max-width:100%;overflow-wrap:anywhere}html[data-theme=dark] .fundsnote{border-color:#fbbf24}
-@media(max-width:640px){.themebtn{width:44px;height:44px;top:2px}nav .logo{min-height:44px;display:flex;align-items:center}nav .links{row-gap:0}nav .links a:not(.btn){min-height:44px;display:inline-flex;align-items:center}nav .links .btn{min-height:44px;display:inline-flex;align-items:center}}@media(max-width:640px){main button,#consent button,.cbar button,[id*=consent] button,.shbtn,.savebtn{min-height:44px}}@media(max-width:640px){button.btn{min-height:44px}}@media(max-width:640px){.bt-grid a.btn{min-height:44px;display:inline-flex;align-items:center}}@media(max-width:640px){h1.bt-h1{white-space:normal!important;font-size:26px;line-height:1.2}}
+@media(max-width:640px){.themebtn{width:44px;height:44px;top:2px}nav .logo{min-height:44px;display:flex;align-items:center}nav .links{row-gap:0}nav .links a:not(.btn){min-height:44px;display:inline-flex;align-items:center}nav .links .btn{min-height:44px;display:inline-flex;align-items:center}}@media(max-width:640px){main button,#consent button,.cbar button,[id*=consent] button,.shbtn,.savebtn{min-height:44px}}@media(max-width:640px){button.btn{min-height:44px}}@media(max-width:640px){.bt-grid a.btn{min-height:44px;display:inline-flex;align-items:center}}@media(max-width:640px){h1.bt-h1{white-space:normal!important;font-size:26px;line-height:1.2}}/* Tap targets: every control is at least 44px tall at every width, 320-1440 (Ops audit, Oct 21 2026). Extends the old max-width:640px rules to all widths. */
+nav .links{row-gap:0}
+nav .links a,nav .links a:not(.btn),nav .links .btn,nav .logo,footer .logo{min-height:44px;display:inline-flex;align-items:center;box-sizing:border-box}
+.themebtn,nav .themebtn{width:44px;height:44px;min-width:44px}
+.nsrch input,nav .nsrch input{height:44px}
+.chip,.btn,button,select,summary,.save,.savebtn,.shbtn,input[type=text],input[type=search],input[type=email],input[type=url],input[type=number],input[type=password]{min-height:44px;box-sizing:border-box}
+a.btn{display:inline-flex;align-items:center;justify-content:center}
+summary{display:list-item;padding-top:10px;padding-bottom:10px}
+.rv-write,.bt-cn,.bt-va,.quizcta a{display:inline-flex;align-items:center;min-height:44px}
+.nt{min-height:44px}
+/* Small pill links (category/task chips) keep their look; a transparent ::after extends the tap area to 44px tall */
+a.b{position:relative}
+a.b::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
+.ucsel{height:44px}
+.acts a.btn{min-height:44px!important}
+.fchk{min-height:44px!important}
+.hg-head a,.rhead a{display:inline-flex;align-items:center;min-height:44px}
+.crumb a{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle}
+/* Short standalone text links (chip rows, headline links, "see all" lines): vertical padding on the inline link grows the tap area to 44px without moving any text */
+:is(.suggestedit,.goodfor a,.ig-cta a,main h3>a,main li>a:only-child,main p>a:only-child,main li>strong+a):not(.btn,.bt-cn,.quizcta a,.crumb a,.rv-write,.bt-va){padding-top:14px;padding-bottom:14px}
+.bt-nm{padding-top:14px;padding-bottom:14px;margin-top:-14px;margin-bottom:-14px}.bt-nm a{padding-top:14px;padding-bottom:14px}

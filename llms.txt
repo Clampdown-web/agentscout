@@ -10,6 +10,7 @@ Contact: support@agentscouthq.com
 
 - [tools.json](https://agentscouthq.com/tools.json): full catalog
 - [openapi.json](https://agentscouthq.com/openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/
+- [.well-known/openapi.json](https://agentscouthq.com/.well-known/openapi.json): same OpenAPI 3.1 description at the well-known address
 - [sitemap.xml](https://agentscouthq.com/sitemap.xml): all public pages
 
 ## Browse
