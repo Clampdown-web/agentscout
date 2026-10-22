@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T18:44:02Z",
- "updated": "2026-10-22T18:44:02Z",
+ "generated": "2026-10-22T20:00:48Z",
+ "updated": "2026-10-22T20:00:48Z",
  "last_checked": "2026-10-22",
- "count": 1674,
+ "count": 1675,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -70818,6 +70818,51 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/kestra.png",
    "page": "https://agentscouthq.com/tools/kestra.html"
+  },
+  {
+   "name": "FloGPT",
+   "slug": "flogpt",
+   "url": "https://flogpt.com/",
+   "website": "https://flogpt.com/",
+   "github": "",
+   "category": "customer support",
+   "description": "FloGPT is an AI chat and voice agent platform with a built-in AI CRM: embed a chat widget on your website, run AI phone agents around the clock, and handle chat, voice, email, SMS, WhatsApp, Instagram and Facebook conversations from one inbox, all grounded in your own knowledge base.",
+   "key_features": [
+    "Freemium: free plan ($0/month plus usage for calls and SMS, 100 messages), then Starter $49/month, Growth $149/month or Professional $399/month, each plus usage for calls and SMS; prices as listed on its site",
+    "Active",
+    "Research the web",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "Freemium: free plan ($0/month plus usage for calls and SMS, 100 messages), then Starter $49/month, Growth $149/month or Professional $399/month, each plus usage for calls and SMS; prices as listed on its site",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "voice & phone calls",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/flogpt.png",
+   "page": "https://agentscouthq.com/tools/flogpt.html"
   }
  ]
 }
