@@ -1,0 +1,1333 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "AgentScout public data API",
+  "version": "1.0.0",
+  "summary": "Read-only static JSON feeds of the AgentScout AI agent tool directory.",
+  "description": "AgentScout lists 1,652 AI agent tools. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. Filter client-side.",
+  "contact": {
+   "name": "AgentScout",
+   "email": "support@agentscouthq.com",
+   "url": "https://agentscouthq.com/"
+  },
+  "termsOfService": "https://agentscouthq.com/privacy.html"
+ },
+ "servers": [
+  {
+   "url": "https://agentscouthq.com"
+  }
+ ],
+ "tags": [
+  {
+   "name": "catalog",
+   "description": "Tool catalog data"
+  },
+  {
+   "name": "site",
+   "description": "Site sections and features"
+  }
+ ],
+ "paths": {
+  "/api/tools.json": {
+   "get": {
+    "operationId": "getTools",
+    "summary": "Full tool catalog",
+    "description": "Every listed AI agent tool with category, pricing, platforms, GitHub data, ratings and its AgentScout page. Rebuilt daily.",
+    "tags": [
+     "catalog"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Tools"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  },
+  "/api/stats.json": {
+   "get": {
+    "operationId": "getStats",
+    "summary": "Lightweight catalog stats",
+    "description": "Category, added date and seed flag for every tool, plus the last-checked date. Small file for homepage counters.",
+    "tags": [
+     "catalog"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Stats"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  },
+  "/api/sections.json": {
+   "get": {
+    "operationId": "getSections",
+    "summary": "Site sections",
+    "description": "Categories with counts, task pages, comparisons, best-of lists, news, free tools, badges, submit form fields and newsletter info.",
+    "tags": [
+     "site"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Sections"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  },
+  "/api/editors-pick.json": {
+   "get": {
+    "operationId": "getEditorsPick",
+    "summary": "Editor's Pick of the day",
+    "description": "Today's Editor's Pick and recent pick history.",
+    "tags": [
+     "site"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/EditorsPick"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  },
+  "/api/quiz.json": {
+   "get": {
+    "operationId": "getQuiz",
+    "summary": "Tool-finder quiz",
+    "description": "Questions, options and scoring weights used by the tool-finder quiz.",
+    "tags": [
+     "site"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Quiz"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  },
+  "/api/generator-daily.json": {
+   "get": {
+    "operationId": "getGeneratorDaily",
+    "summary": "Daily generator image",
+    "description": "Today's image-generator background and its overlay colours.",
+    "tags": [
+     "site"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GeneratorDaily"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "Tools": {
+    "type": "object",
+    "properties": {
+     "version": {
+      "type": "integer"
+     },
+     "generated": {
+      "type": "string"
+     },
+     "updated": {
+      "type": "string"
+     },
+     "last_checked": {
+      "type": "string"
+     },
+     "count": {
+      "type": "integer"
+     },
+     "tools": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "slug": {
+         "type": "string"
+        },
+        "url": {
+         "type": "string"
+        },
+        "website": {
+         "type": "string"
+        },
+        "github": {
+         "type": "string"
+        },
+        "category": {
+         "type": "string"
+        },
+        "description": {
+         "type": "string"
+        },
+        "key_features": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "pricing": {
+         "type": "string"
+        },
+        "price_tag": {
+         "type": "string",
+         "enum": [
+          "free",
+          "freemium",
+          "paid",
+          "unknown"
+         ]
+        },
+        "platforms": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "date_added": {
+         "type": "string"
+        },
+        "added": {
+         "type": "string"
+        },
+        "source": {
+         "type": "string"
+        },
+        "goals": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill": {
+         "type": "string",
+         "enum": [
+          "developer",
+          "no-code"
+         ]
+        },
+        "weekly_pick": {
+         "type": "boolean"
+        },
+        "new": {
+         "type": "boolean"
+        },
+        "seed": {
+         "type": "boolean"
+        },
+        "new_this_week": {
+         "type": "boolean"
+        },
+        "repo": {
+         "type": [
+          "null",
+          "string"
+         ]
+        },
+        "github_stars": {
+         "type": [
+          "integer",
+          "null"
+         ]
+        },
+        "open_source": {
+         "type": "boolean"
+        },
+        "license": {
+         "type": "string"
+        },
+        "tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "hybrid": {
+         "type": "boolean"
+        },
+        "logo": {
+         "type": "string"
+        },
+        "page": {
+         "type": "string"
+        },
+        "rating": {
+         "type": "object",
+         "properties": {
+          "average": {
+           "type": "integer"
+          },
+          "count": {
+           "type": "integer"
+          },
+          "approved_reviews": {
+           "type": "integer"
+          },
+          "reviews_api": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "average",
+          "count",
+          "approved_reviews",
+          "reviews_api"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "slug",
+        "url",
+        "website",
+        "github",
+        "category",
+        "description",
+        "key_features",
+        "pricing",
+        "price_tag",
+        "platforms",
+        "date_added",
+        "added",
+        "source",
+        "goals",
+        "skill",
+        "weekly_pick",
+        "new",
+        "seed",
+        "new_this_week",
+        "repo",
+        "github_stars",
+        "open_source",
+        "license",
+        "tags",
+        "hybrid",
+        "logo",
+        "page"
+       ]
+      }
+     }
+    },
+    "required": [
+     "version",
+     "generated",
+     "updated",
+     "last_checked",
+     "count",
+     "tools"
+    ],
+    "title": "Tools"
+   },
+   "Stats": {
+    "type": "object",
+    "properties": {
+     "last_checked": {
+      "type": "string"
+     },
+     "tools": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "category": {
+         "type": "string"
+        },
+        "added": {
+         "type": "string"
+        },
+        "seed": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "category",
+        "added",
+        "seed"
+       ]
+      }
+     }
+    },
+    "required": [
+     "last_checked",
+     "tools"
+    ],
+    "title": "Stats"
+   },
+   "Sections": {
+    "type": "object",
+    "properties": {
+     "free_tools": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "badges": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "description": {
+         "type": "string"
+        },
+        "screen": {
+         "type": "string"
+        },
+        "url": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "name",
+        "badges",
+        "description",
+        "screen",
+        "url"
+       ]
+      }
+     },
+     "badges": {
+      "type": "object",
+      "properties": {
+       "title": {
+        "type": "string"
+       },
+       "lede": {
+        "type": "string"
+       },
+       "kinds": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "label": {
+           "type": "string"
+          },
+          "desc": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "id",
+          "label",
+          "desc"
+         ]
+        }
+       },
+       "variants": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "svg": {
+        "type": "string"
+       },
+       "png": {
+        "type": "string"
+       },
+       "link": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "title",
+       "lede",
+       "kinds",
+       "variants",
+       "svg",
+       "png",
+       "link"
+      ]
+     },
+     "updated": {
+      "type": "string"
+     },
+     "categories": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "slug": {
+         "type": "string"
+        },
+        "count": {
+         "type": "integer"
+        },
+        "url": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "name",
+        "slug",
+        "count",
+        "url"
+       ]
+      }
+     },
+     "tasks": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "slug": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "name": {
+         "type": "string"
+        },
+        "description": {
+         "type": "string"
+        },
+        "tools": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "url": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "slug",
+        "title",
+        "name",
+        "description",
+        "tools",
+        "url"
+       ]
+      }
+     },
+     "compare": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "slug": {
+         "type": "string"
+        },
+        "a": {
+         "type": "string"
+        },
+        "b": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "verdict": {
+         "type": "string"
+        },
+        "note": {
+         "type": "string"
+        },
+        "rows": {
+         "type": "array",
+         "items": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        },
+        "url": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "slug",
+        "a",
+        "b",
+        "title",
+        "verdict",
+        "note",
+        "rows",
+        "url"
+       ]
+      }
+     },
+     "best": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "slug": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        },
+        "lede": {
+         "type": "string"
+        },
+        "tools": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "url": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "slug",
+        "title",
+        "lede",
+        "tools",
+        "url"
+       ]
+      }
+     },
+     "news": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string"
+        },
+        "source": {
+         "type": "string"
+        },
+        "url": {
+         "type": "string"
+        },
+        "date": {
+         "type": "string"
+        },
+        "tool": {
+         "type": "null"
+        },
+        "summary": {
+         "type": "string"
+        },
+        "page": {
+         "type": "string"
+        },
+        "page_url": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "title",
+        "source",
+        "url",
+        "date",
+        "tool",
+        "summary",
+        "page",
+        "page_url"
+       ]
+      }
+     },
+     "generate": {
+      "type": "object",
+      "properties": {
+       "title": {
+        "type": "string"
+       },
+       "lede": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       },
+       "daily": {
+        "type": "object",
+        "properties": {
+         "image": {
+          "type": "string"
+         },
+         "path": {
+          "type": "string"
+         },
+         "overlay": {
+          "type": "object",
+          "properties": {
+           "light": {
+            "type": "string"
+           },
+           "dark": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "light",
+           "dark"
+          ]
+         },
+         "base": {
+          "type": "object",
+          "properties": {
+           "light": {
+            "type": "string"
+           },
+           "dark": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "light",
+           "dark"
+          ]
+         },
+         "border": {
+          "type": "object",
+          "properties": {
+           "light": {
+            "type": "string"
+           },
+           "dark": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "light",
+           "dark"
+          ]
+         },
+         "radius": {
+          "type": "integer"
+         },
+         "updated": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "image",
+         "path",
+         "overlay",
+         "base",
+         "border",
+         "radius",
+         "updated"
+        ]
+       }
+      },
+      "required": [
+       "title",
+       "lede",
+       "url",
+       "daily"
+      ]
+     },
+     "submit": {
+      "type": "object",
+      "properties": {
+       "endpoint": {
+        "type": "string"
+       },
+       "fields": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "categories": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "pricing": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "url": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "endpoint",
+       "fields",
+       "categories",
+       "pricing",
+       "url"
+      ]
+     },
+     "newsletter": {
+      "type": "object",
+      "properties": {
+       "url": {
+        "type": "string"
+       },
+       "subscribe": {
+        "type": "string"
+       },
+       "latest": {
+        "type": "object",
+        "properties": {
+         "title": {
+          "type": "string"
+         },
+         "date": {
+          "type": "string"
+         },
+         "summary": {
+          "type": "string"
+         },
+         "url": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "title",
+         "date",
+         "summary",
+         "url"
+        ]
+       }
+      },
+      "required": [
+       "url",
+       "subscribe",
+       "latest"
+      ]
+     }
+    },
+    "required": [
+     "free_tools",
+     "badges",
+     "updated",
+     "categories",
+     "tasks",
+     "compare",
+     "best",
+     "news",
+     "generate",
+     "submit",
+     "newsletter"
+    ],
+    "title": "Sections"
+   },
+   "EditorsPick": {
+    "type": "object",
+    "properties": {
+     "date": {
+      "type": "string"
+     },
+     "slug": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     },
+     "why": {
+      "type": "string"
+     },
+     "category": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     },
+     "logo": {
+      "type": "string"
+     },
+     "page": {
+      "type": "string"
+     },
+     "history": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "date": {
+         "type": "string"
+        },
+        "slug": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "date",
+        "slug"
+       ]
+      }
+     }
+    },
+    "required": [
+     "date",
+     "slug",
+     "name",
+     "why",
+     "category",
+     "description",
+     "logo",
+     "page",
+     "history"
+    ],
+    "title": "EditorsPick"
+   },
+   "Quiz": {
+    "type": "object",
+    "properties": {
+     "version": {
+      "type": "integer"
+     },
+     "about": {
+      "type": "string"
+     },
+     "results": {
+      "type": "object",
+      "properties": {
+       "min": {
+        "type": "integer"
+       },
+       "max": {
+        "type": "integer"
+       }
+      },
+      "required": [
+       "min",
+       "max"
+      ]
+     },
+     "questions": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "key": {
+         "type": "string"
+        },
+        "q": {
+         "type": "string"
+        },
+        "options": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "id": {
+            "type": "string"
+           },
+           "label": {
+            "type": "string"
+           },
+           "hint": {
+            "type": "string"
+           },
+           "goals": {
+            "type": "array",
+            "items": {
+             "type": "string"
+            }
+           },
+           "categories": {
+            "type": "array",
+            "items": {
+             "type": "string"
+            }
+           },
+           "tasks": {
+            "type": "array",
+            "items": {
+             "type": "string"
+            }
+           }
+          },
+          "required": [
+           "id",
+           "label",
+           "hint"
+          ]
+         }
+        },
+        "optional": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "key",
+        "q",
+        "options"
+       ]
+      }
+     },
+     "weights": {
+      "type": "object",
+      "properties": {
+       "goal": {
+        "type": "object",
+        "properties": {
+         "category": {
+          "type": "integer"
+         },
+         "goals": {
+          "type": "integer"
+         },
+         "requireMatch": {
+          "type": "boolean"
+         }
+        },
+        "required": [
+         "category",
+         "goals",
+         "requireMatch"
+        ]
+       },
+       "skill": {
+        "type": "object",
+        "properties": {
+         "no-code": {
+          "type": "object",
+          "properties": {
+           "no-code": {
+            "type": "integer"
+           },
+           "developer": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "no-code",
+           "developer"
+          ]
+         },
+         "some": {
+          "type": "object",
+          "properties": {
+           "no-code": {
+            "type": "integer"
+           },
+           "developer": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "no-code",
+           "developer"
+          ]
+         },
+         "developer": {
+          "type": "object",
+          "properties": {
+           "no-code": {
+            "type": "integer"
+           },
+           "developer": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "no-code",
+           "developer"
+          ]
+         }
+        },
+        "required": [
+         "no-code",
+         "some",
+         "developer"
+        ]
+       },
+       "budget": {
+        "type": "object",
+        "properties": {
+         "free": {
+          "type": "object",
+          "properties": {
+           "free": {
+            "type": "integer"
+           },
+           "freemium": {
+            "type": "integer"
+           },
+           "paid": {
+            "type": "integer"
+           },
+           "unknown": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "free",
+           "freemium",
+           "paid",
+           "unknown"
+          ]
+         },
+         "freemium": {
+          "type": "object",
+          "properties": {
+           "free": {
+            "type": "integer"
+           },
+           "freemium": {
+            "type": "integer"
+           },
+           "paid": {
+            "type": "integer"
+           },
+           "unknown": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "free",
+           "freemium",
+           "paid",
+           "unknown"
+          ]
+         },
+         "paid": {
+          "type": "object",
+          "properties": {
+           "free": {
+            "type": "integer"
+           },
+           "freemium": {
+            "type": "integer"
+           },
+           "paid": {
+            "type": "integer"
+           },
+           "unknown": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "free",
+           "freemium",
+           "paid",
+           "unknown"
+          ]
+         }
+        },
+        "required": [
+         "free",
+         "freemium",
+         "paid"
+        ]
+       },
+       "oss": {
+        "type": "object",
+        "properties": {
+         "yes": {
+          "type": "object",
+          "properties": {
+           "github": {
+            "type": "integer"
+           },
+           "none": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "github",
+           "none"
+          ]
+         },
+         "any": {
+          "type": "object",
+          "properties": {
+           "github": {
+            "type": "integer"
+           },
+           "none": {
+            "type": "integer"
+           }
+          },
+          "required": [
+           "github",
+           "none"
+          ]
+         }
+        },
+        "required": [
+         "yes",
+         "any"
+        ]
+       },
+       "bonus": {
+        "type": "object",
+        "properties": {
+         "weekly_pick": {
+          "type": "integer"
+         },
+         "logo": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "weekly_pick",
+         "logo"
+        ]
+       }
+      },
+      "required": [
+       "goal",
+       "skill",
+       "budget",
+       "oss",
+       "bonus"
+      ]
+     }
+    },
+    "required": [
+     "version",
+     "about",
+     "results",
+     "questions",
+     "weights"
+    ],
+    "title": "Quiz"
+   },
+   "GeneratorDaily": {
+    "type": "object",
+    "properties": {
+     "image": {
+      "type": "string"
+     },
+     "path": {
+      "type": "string"
+     },
+     "overlay": {
+      "type": "object",
+      "properties": {
+       "light": {
+        "type": "string"
+       },
+       "dark": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "light",
+       "dark"
+      ]
+     },
+     "base": {
+      "type": "object",
+      "properties": {
+       "light": {
+        "type": "string"
+       },
+       "dark": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "light",
+       "dark"
+      ]
+     },
+     "border": {
+      "type": "object",
+      "properties": {
+       "light": {
+        "type": "string"
+       },
+       "dark": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "light",
+       "dark"
+      ]
+     },
+     "radius": {
+      "type": "integer"
+     },
+     "updated": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "image",
+     "path",
+     "overlay",
+     "base",
+     "border",
+     "radius",
+     "updated"
+    ],
+    "title": "GeneratorDaily"
+   }
+  }
+ }
+}

@@ -226,6 +226,8 @@ build_sections.build(t)
 import build_pick
 build_pick.pick(t)
 import build_links
+import build_openapi
+build_openapi.run()  # /openapi.json + /.well-known/openapi.json from the real api/*.json (Oct 21 2026)
 build_links.run(t)
 import build_seo; build_seo.run(t)
 import build_seo_new; build_seo_new.run(t)  # keyword-targeted titles/descriptions for new pages (Oct 21 2026)
