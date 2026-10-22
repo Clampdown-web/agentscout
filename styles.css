@@ -206,8 +206,8 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
 @media print{.scrollbtns{display:none}}
 /* Keep the fixed scroll buttons clear of row controls (Rate etc.) */
 main.wrap{padding-bottom:96px}
-@media (min-width:641px) and (max-width:767px){main.wrap{padding-right:calc(84px + env(safe-area-inset-right))}}
-@media (min-width:768px) and (max-width:1279px){main.wrap{padding-right:calc(104px + env(safe-area-inset-right))}}
+@media (min-width:641px) and (max-width:767px){main.wrap,main section>.wrap{padding-right:calc(84px + env(safe-area-inset-right))}}
+@media (min-width:768px) and (max-width:1279px){main.wrap,main section>.wrap{padding-right:calc(104px + env(safe-area-inset-right))}}
 /* Recently added */
 #recent{padding:28px 0 8px}
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
