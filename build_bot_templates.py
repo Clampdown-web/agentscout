@@ -87,4 +87,67 @@ def run():
         rel=[p for p in pool[k+1:]+pool[:k]][:4]
         open(f"{D}/{e['slug']}.html","w").write(detail(e,shell,rel))
     print(f"bot templates: {len(X)} extra, {total} total")
+
+# ---- Filters (Oct 21 2026 PT, owner request): count pill, search, use-case chips, URL params, empty state. ----
+FCSS=('<style id="btf-css">.bt-count{display:inline-flex;align-items:center;justify-content:center;min-width:2.2em;height:1.5em;padding:0 .45em;margin-left:.4em;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:.5em;font-weight:600;vertical-align:middle}'
+ '.btf{margin:14px 0 6px;display:flex;flex-direction:column;gap:10px;min-width:0}.btf-s{position:relative;max-width:520px}.btf-s input{width:100%;box-sizing:border-box;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:16px}'
+ '.bt-pills,.btf-cats{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:4px;min-width:0;max-width:100%}.bt-pills .chip,.btf-cats .chip{flex:0 0 auto;white-space:nowrap}'
+ '.btf-lbl{font-size:13px;color:var(--muted);margin:0}.btf-st{font-size:14px;color:var(--muted);margin:4px 0 0}.bt-empty{display:none;padding:28px 12px;text-align:center;border:1px dashed var(--line);border-radius:12px;margin:16px 0}.bt-empty p{margin:0 0 12px}'
+ '.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}'
+ '@media(min-width:900px){.bt-pills,.btf-cats{flex-wrap:wrap;overflow:visible}}</style>')
+FJS=r'''<script id="btf-js">(function(){var $=function(s){return document.querySelector(s)},A=function(s){return [].slice.call(document.querySelectorAll(s))};
+var q=$('#bt-q'),rows=A('.bt-row'),P=A('.bt-pills .chip'),C=A('.btf-cats .chip'),st=$('#bt-status'),em=$('#bt-empty'),cnt=$('#bt-count'),f='all',c='all',T=rows.length;
+if(cnt)cnt.textContent=T;
+function sync(){var u=new URLSearchParams(location.search),s=q.value.trim();s?u.set('q',s):u.delete('q');c!=='all'?u.set('cat',c):u.delete('cat');f!=='all'?u.set('platform',f):u.delete('platform');var x=u.toString();history.replaceState(null,'',location.pathname+(x?'?'+x:'')+location.hash)}
+function apply(nosync){var s=q.value.trim().toLowerCase(),n=0;
+ A('.bt-sec').forEach(function(sec){var k=0;sec.querySelectorAll('.bt-row').forEach(function(r){var ok=(f==='all'||r.dataset.plat===f)&&(c==='all'||(' '+r.dataset.cat+' ').indexOf(' '+c+' ')>-1)&&(!s||r.dataset.q.indexOf(s)>-1);r.hidden=!ok;if(ok)k++});sec.hidden=!k;n+=k});
+ var fl=f!=='all'||c!=='all'||!!s;$('#bt-featured').hidden=fl;em.style.display=n?'none':'block';
+ st.textContent='Showing '+n+' of '+T+' templates';if(!nosync)sync()}
+function pick(L,b){L.forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)})}
+P.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;pick(P,b);apply()})});
+C.forEach(function(b){b.addEventListener('click',function(){c=b.dataset.c;pick(C,b);apply()})});
+q.addEventListener('input',function(){apply()});
+A('[data-bt-reset]').forEach(function(b){b.addEventListener('click',function(){q.value='';f='all';c='all';pick(P,P[0]);pick(C,C[0]);apply()})});
+var u=new URLSearchParams(location.search),h=(location.hash||'').slice(1),pf=u.get('platform')||h,ct=u.get('cat');
+var m=P.filter(function(b){return b.dataset.f===pf})[0];if(m){f=pf;pick(P,m)}
+m=C.filter(function(b){return b.dataset.c===ct})[0];if(m){c=ct;pick(C,m)}
+if(u.get('q'))q.value=u.get('q');apply(true)})();</script>'''
+def filters():
+    s=open(f"{D}/index.html").read(); M=json.load(open("data/bot-templates-cats.json")); CATS=M["_cats"]
+    X={e["slug"]:e for e in json.load(open("data/bot-templates-extra.json"))}
+    cnt={k:0 for k in CATS}; total=0
+    def fix(m):
+        nonlocal total; tag=m.group(0); rid=re.search(r'id="([^"]+)"',tag).group(1); total+=1
+        cats=M.get(rid) or (print(f"bot templates: WARN no category for {rid}") or ["productivity"])
+        for k in cats: cnt[k]+=1
+        tag=re.sub(r' data-cat="[^"]*"','',tag)
+        return tag[:-1]+f' data-cat="{" ".join(cats)}">'
+    s=re.sub(r'<li class="bt-row" id="[^"]+"[^>]*>',fix,s)
+    # enrich search text with description + platform (and creator for static rows)
+    def dq(m):
+        li=m.group(0); nm=re.search(r'<b>(.*?)</b>',li); by=re.search(r'<span>by (.*?)</span>',li) or re.search(r'class="bt-by">(.*?)<',li)
+        d=re.search(r'class="bt-d"[^>]*>(.*?)</p>',li); pl=re.search(r'class="b bt-badge">(.*?)<',li)
+        txt=" ".join(html.unescape(re.sub('<[^>]+>','',x.group(1))) for x in (nm,by,d,pl) if x).lower()
+        return re.sub(r'data-q="[^"]*"',lambda _:f'data-q="{esc(txt)}"',li,count=1)
+    s=re.sub(r'<li class="bt-row".*?</li>',dq,s,flags=re.S)
+    s=re.sub(r'<span id="bt-count"[^>]*>.*?</span>','',s)
+    s=s.replace('Bot templates</h1>',f'Bot templates<span id="bt-count" class="bt-count" aria-label="{total} templates">{total}</span></h1>',1)
+    s=re.sub(r'<!--btf-->.*?<!--/btf-->','',s,flags=re.S)
+    s=s.replace('<input id="bt-q" type="hidden" value="">','')
+    ui=('<!--btf--><div class="btf"><div class="btf-s"><label for="bt-q" class="sr-only">Search bot templates</label><input id="bt-q" type="search" placeholder="Search by name, creator, task or platform" autocomplete="off" enterkeyhint="search"></div>'
+        '<p class="btf-lbl" id="btf-cl">Use case</p><div class="btf-cats" role="group" aria-labelledby="btf-cl"><button type="button" class="chip on" data-c="all" aria-pressed="true">All uses</button>'
+        +"".join(f'<button type="button" class="chip" data-c="{k}" aria-pressed="false">{esc(v)} <span aria-hidden="true">· {cnt[k]}</span></button>' for k,v in CATS.items() if cnt[k])+
+        f'</div><p id="bt-status" class="btf-st" role="status" aria-live="polite">Showing {total} of {total} templates</p></div><!--/btf-->')
+    i=s.find('</div>',s.find('<div class="bt-pills"'))+6; s=s[:i]+ui+s[i:]
+    s=re.sub(r'<div id="bt-empty" class="bt-empty">.*?</div>','<div id="bt-empty" class="bt-empty"><p>No templates match those filters.</p><button type="button" class="btn" data-bt-reset>Reset filters</button></div>',s,count=1,flags=re.S)
+    s=re.sub(r'<style id="btf-css">.*?</style>','',s,flags=re.S); s=s.replace('</head>',FCSS+'</head>',1)
+    s=re.sub(r'<script id="btf-js">.*?</script>','',s,flags=re.S)
+    s=re.sub(r'<script>\(function\(\)\{var pills=.*?</script>','',s,count=1,flags=re.S)
+    s=s.replace('<script src="/navsearch.js',FJS+'<script src="/navsearch.js',1)
+    open(f"{D}/index.html","w").write(s)
+    print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
+_run0=run
+def run():
+    _run0(); filters()
+
 if __name__=="__main__": run()
