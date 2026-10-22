@@ -121,7 +121,10 @@ def detect(m):
         except Exception as ex:
             print("redirects: vanished-URL check skipped:", ex)
             prev = set()
-    back = sorted(k for k in m if k in cur)
+    norm = lambda u: u.replace(B, "").replace("http://agentscouthq.com/", "").lstrip("/")
+    cur = set(norm(u) for u in cur)
+    prev = set(norm(u) for u in prev) if prev else prev
+    back = sorted(k for k in m if norm(k) in cur)  # keys and locs both as site-root paths
     for k in back:  # page is live in the sitemap again: drop its redirect entry
         print("redirects: page is live again, removing entry", k, "->", m.pop(k))
     if back:

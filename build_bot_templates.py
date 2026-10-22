@@ -90,17 +90,6 @@ def run():
     T=f'Grok Bot templates: {total} ready-made templates'
     s=re.sub(r'<title>[^<]*</title>',f'<title>{T} · AgentScout</title>',s,count=1)
     for k in ('property="og:title"','name="twitter:title"'): s=re.sub(rf'(<meta {k} content=")[^"]*',lambda m:m.group(1)+T,s,count=1)
-    def il(m):
-        o=json.loads(m.group(1)); ex={f"{SITE}/{D}/{e['slug']}.html" for e in X}
-        L=[i for i in o["itemListElement"] if i["url"] not in ex]
-        # put extras right after the last Grok Bot item (same order as the page)
-        g=[k for k,i in enumerate(L) if i["url"].rsplit('/',1)[-1].replace('.html','') in ("overheard","dr-eggbot","haggle-bot","seo-aeo-desk","competitor-watch","nightly-audit-engineer")]
-        at=(max(g)+1) if g else len(L)
-        L=L[:at]+[{"@type":"ListItem","position":0,"name":e["name"],"url":f"{SITE}/{D}/{e['slug']}.html"} for e in X]+L[at:]
-        for k,i in enumerate(L): i["position"]=k+1
-        o["itemListElement"]=L; o["numberOfItems"]=len(L)
-        return '<script type="application/ld+json">'+json.dumps(o)+'</script>'
-    s=re.sub(r'<script type="application/ld\+json">(\{"@context": "https://schema.org", "@type": "ItemList".*?)</script>',il,s,count=1,flags=re.S)
     # ItemList from every row on the page, in page order (Ops follow-up Oct 21 2026): numberOfItems == rows shown
     def il_all(m):
         o=json.loads(m.group(1)); old={i["url"]:i["name"] for i in o["itemListElement"]}
