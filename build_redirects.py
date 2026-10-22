@@ -93,17 +93,43 @@ def _target(src, live):
             return idx
     return ""  # home page
 
+def _save(m):
+    with open("redirects.json", "w") as f:
+        json.dump(m, f, indent=1)
+        f.write("\n")
+
 def detect(m):
     """Auto-add redirects for URLs in the committed (live) sitemap that the new build dropped."""
-    import subprocess
+    import subprocess, urllib.request
     try:
-        prev = _locs(subprocess.run(["git", "show", "HEAD:sitemap.xml"], capture_output=True, text=True, check=True).stdout)
         cur = _locs(open("sitemap.xml").read())
     except Exception as ex:
         print("redirects: vanished-URL check skipped:", ex)
         return m
+    prev, srcname = None, "live " + B + "sitemap.xml"
+    try:  # the live sitemap is the real "previous" set; git HEAD only if the fetch fails
+        req = urllib.request.Request(B + "sitemap.xml", headers={"User-Agent": "AgentScout-build"})
+        prev = _locs(urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "replace"))
+        if not prev:
+            prev = None
+    except Exception as ex:
+        print("redirects: live sitemap fetch failed, using git HEAD:", ex)
+    if prev is None:
+        srcname = "git HEAD sitemap.xml"
+        try:
+            prev = _locs(subprocess.run(["git", "show", "HEAD:sitemap.xml"], capture_output=True, text=True, check=True).stdout)
+        except Exception as ex:
+            print("redirects: vanished-URL check skipped:", ex)
+            prev = set()
+    back = sorted(k for k in m if k in cur)
+    for k in back:  # page is live in the sitemap again: drop its redirect entry
+        print("redirects: page is live again, removing entry", k, "->", m.pop(k))
+    if back:
+        _save(m)
+    if not prev:
+        return m
     if len(cur) < 0.8 * len(prev):
-        print(f"redirects: REFUSING auto-add, new sitemap has {len(cur)} URLs vs {len(prev)} live (partial build?)")
+        print(f"redirects: REFUSING auto-add, new sitemap has {len(cur)} URLs vs {len(prev)} in {srcname} (partial build?)")
         return m
     added = 0
     for src in sorted(prev - cur):
@@ -114,12 +140,14 @@ def detect(m):
         if os.path.exists(src) and not _is_redirect(src):
             continue  # page still exists (e.g. made noindex on purpose); not a 404
         dst = _target(src, cur)
+        if dst == "":  # 5: homepage fallback is a soft-404 risk, never add silently
+            print(f"redirects: WARNING (soft-404 risk) no good target for vanished {src}; NOT auto-added. Add a redirects.json entry by hand.")
+            continue
         m[src] = dst
         added += 1
-        print(f"redirects: REDIRECT AUTO-ADDED {src} -> {dst or '(home)'}  (review / edit redirects.json)")
+        print(f"redirects: REDIRECT AUTO-ADDED {src} -> {dst}  (review / edit redirects.json)")
     if added:
-        json.dump(m, open("redirects.json", "w"), indent=1)
-        open("redirects.json", "a").write("\n")
+        _save(m)
     return m
 
 def run():
@@ -142,6 +170,9 @@ def run():
             continue
         if src in live:
             print("redirects: page is live again, skip", src)
+            continue
+        if os.path.exists(src) and not _is_redirect(src):  # 3: never overwrite a real page
+            print("redirects: real page exists at source, skip", src)
             continue
         if not _exists(dst):
             print("redirects: target missing, skip", src, "->", dst)

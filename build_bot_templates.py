@@ -87,7 +87,7 @@ def run():
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
     s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
     # Short index title (owner-approved Oct 21 2026, 7:26 PM PT): under 60 chars so Google does not truncate it
-    T=f'Grok Bot templates: {total} ready-made bots'
+    T=f'Grok Bot templates: {total} ready-made templates'
     s=re.sub(r'<title>[^<]*</title>',f'<title>{T} · AgentScout</title>',s,count=1)
     for k in ('property="og:title"','name="twitter:title"'): s=re.sub(rf'(<meta {k} content=")[^"]*',lambda m:m.group(1)+T,s,count=1)
     def il(m):
@@ -101,6 +101,18 @@ def run():
         o["itemListElement"]=L; o["numberOfItems"]=len(L)
         return '<script type="application/ld+json">'+json.dumps(o)+'</script>'
     s=re.sub(r'<script type="application/ld\+json">(\{"@context": "https://schema.org", "@type": "ItemList".*?)</script>',il,s,count=1,flags=re.S)
+    # ItemList from every row on the page, in page order (Ops follow-up Oct 21 2026): numberOfItems == rows shown
+    def il_all(m):
+        o=json.loads(m.group(1)); old={i["url"]:i["name"] for i in o["itemListElement"]}
+        L=[]
+        for r in re.findall(r'<li class="bt-row".*?</li>',s,flags=re.S):
+            h=re.search(r'<a href="([^"]+)"[^>]*><b>(.*?)</b>',r)
+            if not h: continue
+            u=h.group(1) if h.group(1).startswith("http") else f"{SITE}/{D}/{h.group(1)}"
+            L.append({"@type":"ListItem","position":len(L)+1,"name":old.get(u) or html.unescape(re.sub(r'<[^>]+>','',h.group(2))),"url":u})
+        o["itemListElement"]=L; o["numberOfItems"]=len(L)
+        return '<script type="application/ld+json">'+json.dumps(o)+'</script>'
+    s=re.sub(r'<script type="application/ld\+json">(\{"@context": "https://schema.org", "@type": "ItemList".*?)</script>',il_all,s,count=1,flags=re.S)
     open(ip,"w").write(s)
     shell=open(f"{D}/haggle-bot.html").read()
     pool=[(e["slug"],e["name"],e["creator"]) for e in X]
