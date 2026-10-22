@@ -38,9 +38,9 @@ def apply(out,x,t,catslug,prim,B):
     faq=[q for q in faq if q[1]]
     faq=_dedupe(faq)
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(s)}</p>' for s in r["long"])
-      +f'<p class="muted" style="margin:0 0 28px">Listed in our <a href="../categories/{cs}.html">{e(cat)}</a> category. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",prim).rstrip("/"))}</a>.</p>'
+      +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Listed in our <a href="../categories/{cs}.html">{e(cat)}</a> category. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",prim).rstrip("/"))}</a>.</p>'
       +f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>"
-      +f'{H2}{e(n)} pricing</h2><p style="margin:0 0 8px">{"Free plan available. " if p["free"] else ""}Paid plans from ${p["start"]:g}/month{(". "+e(p["trial"][0].upper()+p["trial"][1:])) if p["trial"] else ""}.</p><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">{tiers}</ul><p class="muted" style="margin:0 0 28px">{e(p.get("note",""))} Prices as of Oct 2026, from the <a href="{e(p["src"])}" target="_blank" rel="noopener">official pricing page</a>.</p>'
+      +f'{H2}{e(n)} pricing</h2><p style="margin:0 0 8px">{"Free plan available. " if p["free"] else ""}Paid plans from ${p["start"]:g}/month{(". "+e(p["trial"][0].upper()+p["trial"][1:])) if p["trial"] else ""}.</p><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">{tiers}</ul><p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">{e(p.get("note",""))} Prices as of Oct 2026, from the <a href="{e(p["src"])}" target="_blank" rel="noopener">official pricing page</a>.</p>'
       +f'{H2}{e(n)} alternatives</h2><p style="margin:0 0 28px">Similar {e(cat)} tools: {altl}. <a href="../categories/{cs}.html">Browse all {e(cat)} tools →</a></p>'
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
     offers=[{"@type":"Offer","name":f"{n} {a}","price":re.match(r"\$([\d.]+)",b).group(1) if re.match(r"\$[\d.]+",b) else None,"priceCurrency":"USD","url":p["src"]} for a,b,c in p["tiers"]]
@@ -76,7 +76,7 @@ def _pricing(n,r):
     tiers=P["tiers"]; ck=_mdy(P.get("checked"))
     html_=(f'{H2}{e(n)} pricing</h2><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(a)}</strong>: {e(b)}{(' · '+e(c)) if c else ''}</li>" for a,b,c in tiers)+"</ul>"
         +(f'<p style="margin:0 0 8px">{e(P["note"])}</p>' if P.get("note") else "")
-        +f'<p class="muted" style="margin:0 0 28px">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
+        +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
     plans="; ".join(f"{a}: {b}" for a,b,c in tiers)
     fq=[(f"How much does {n} cost?",f"As of {ck}, {n}'s official pricing page lists: {plans}."+(" "+P["note"] if P.get("note") else ""))]
     free=[a for a,b,c in tiers if re.match(r"(?i)^([$€£¥]0(?![\d.,])|free\b)",b)]  # any currency (Oct 19 PT: Pragor lists €0 plans)
@@ -96,7 +96,7 @@ def _mcp(n,r):
     return (f'{H2}{e(n)} MCP server</h2><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{k}</strong>: {v}</li>" for k,v in li)+"</ul>"
       +(f'<p style="margin:0 0 6px"><strong>Tools</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">'+"".join(f"<li><code>{e(a)}</code>: {e(b)}</li>" for a,b in M["tools"])+"</ul>" if M.get("tools") else "")
       +(f'<p style="margin:0 0 6px">Client config (Cursor, VS Code, Claude Code and other config-file clients):</p><pre style="margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{e(M["config"])}</code></pre>' if M.get("config") else "")
-      +(f'<p class="muted" style="margin:0 0 28px">Setup docs: <a href="{e(M["docs"])}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",M["docs"]).rstrip("/"))}</a>. Tool list checked live on {e(r.get("updated",""))}.</p>' if M.get("docs") else '<div style="margin-bottom:28px"></div>'))
+      +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Setup docs: <a href="{e(M["docs"])}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",M["docs"]).rstrip("/"))}</a>. Tool list checked live on {e(r.get("updated",""))}.</p>' if M.get("docs") else '<div style="margin-bottom:28px"></div>'))
 
 def lite(out,x,t,catslug,prim,B,r):
     """Lighter rich section (Oct 2026 enrichment): grounded description, who it's for, key features, FAQ.
@@ -114,9 +114,9 @@ def lite(out,x,t,catslug,prim,B,r):
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
     faq=_dedupe(faq)
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
-      +(f'<p class="muted" style="margin:0 0 28px">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
+      +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
-      +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
+      +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7;overflow-wrap:anywhere">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
       +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+_mcp(n,r)+phtml
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
     app={"@type":"SoftwareApplication","name":n,"url":prim,"description":" ".join(r["long"])[:500],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","applicationSubCategory":cat}
@@ -168,7 +168,7 @@ def auto(out,x,t,catslug,prim,B):
     _aa=_alt_answer(x,cat,altp)
     if _aa: faq.append((f"What are alternatives to {n}?",_aa))
     faq=_dedupe(faq)
-    sec=(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(k)}</strong>: {v}</li>" for k,v in li)+"</ul>"
+    sec=(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7;overflow-wrap:anywhere">'+"".join(f"<li><strong>{e(k)}</strong>: {v}</li>" for k,v in li)+"</ul>"
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)
       +f'<p class="muted" style="margin:10px 0 28px">Facts from our link-checked listing{", the GitHub repository" if repo else ""} and the official site. See something wrong? <a href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a>.</p>')
     app={"@type":"SoftwareApplication","name":n,"url":prim,"description":x["description"],"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","applicationSubCategory":cat}
