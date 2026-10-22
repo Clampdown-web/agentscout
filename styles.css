@@ -208,6 +208,10 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
 main.wrap{padding-bottom:96px}
 @media (min-width:641px) and (max-width:767px){main.wrap,main section>.wrap{padding-right:calc(84px + env(safe-area-inset-right))}}
 @media (min-width:768px) and (max-width:1279px){main.wrap,main section>.wrap{padding-right:calc(104px + env(safe-area-inset-right))}}
+/* Home sidebar layout (1100px+) and hero generator box: keep clear of the scroll buttons */
+@media (min-width:1100px) and (max-width:1319px){.layout{padding-right:calc(104px + env(safe-area-inset-right))}}
+@media (min-width:641px) and (max-width:767px){.homegen{margin-right:60px}}
+@media (min-width:768px) and (max-width:1099px){.homegen{margin-right:80px}}
 /* Recently added */
 #recent{padding:28px 0 8px}
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
