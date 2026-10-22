@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-22T14:36:38Z",
- "updated": "2026-10-22T14:36:38Z",
+ "generated": "2026-10-22T15:22:40Z",
+ "updated": "2026-10-22T15:22:40Z",
  "last_checked": "2026-10-22",
  "count": 1671,
  "tools": [
@@ -29732,12 +29732,12 @@
    "category": "frameworks",
    "description": "Incubating Apache agent harness and workspace that records everything it does and publishes benchmarked run results.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
-    "5842 GitHub stars",
+    "5866 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29755,9 +29755,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "apache/maka",
-   "github_stars": 5842,
+   "github_stars": 5866,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "build an agent"
    ],
@@ -29774,14 +29774,14 @@
    "category": "memory & RAG",
    "description": "Low-code MCP-based framework from OpenBMB for building and debugging complex RAG pipelines with visible reasoning logic.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
-    "5729 GitHub stars",
+    "5730 GitHub stars",
     "Write code",
     "Build an agent",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29799,9 +29799,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "OpenBMB/UltraRAG",
-   "github_stars": 5729,
+   "github_stars": 5730,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "build an agent",
@@ -29820,14 +29820,14 @@
    "category": "coding",
    "description": "Mac notch and phone companion that monitors your Claude Code, Codex, Cursor and Gemini CLI sessions and lets you approve permissions on the go.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "5468 GitHub stars",
+    "6190 GitHub stars",
     "Write code",
     "Voice & phone calls",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -29844,9 +29844,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "Louis-CFM/coucou",
-   "github_stars": 5468,
+   "github_stars": 6190,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "voice & phone calls",
@@ -29865,12 +29865,12 @@
    "category": "coding",
    "description": "Terminal window manager with tiling panes, persistent sessions and one inbox where coding agents report their state and message each other.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "5467 GitHub stars",
+    "5562 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29888,9 +29888,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "Gaurav-Gosain/tuios",
-   "github_stars": 5467,
+   "github_stars": 5562,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code"
    ],
@@ -29949,13 +29949,13 @@
    "category": "personal agents",
    "description": "Cross-platform desktop AI assistant and MCP client with a local knowledge base and support for major model providers.",
    "key_features": [
-    "Source-available",
+    "Free to download; modified Apache 2.0 licence",
     "Mature",
-    "5372 GitHub stars",
+    "5373 GitHub stars",
     "Control a computer",
     "Connect tools via mcp"
    ],
-   "pricing": "Source-available",
+   "pricing": "Free to download; modified Apache 2.0 licence",
    "price_tag": "unknown",
    "platforms": [
     "Web"
@@ -29973,9 +29973,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "nanbingxyz/5ire",
-   "github_stars": 5372,
+   "github_stars": 5373,
    "open_source": false,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "control a computer",
     "connect tools via MCP"
@@ -29993,14 +29993,14 @@
    "category": "browser/computer use",
    "description": "macOS CLI, menu-bar app and MCP server for screen capture, accessibility inspection and native UI automation by AI agents.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "5335 GitHub stars",
+    "5371 GitHub stars",
     "Automate the browser",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30019,9 +30019,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "openclaw/Peekaboo",
-   "github_stars": 5335,
+   "github_stars": 5371,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "automate the browser",
     "automate workflows",
@@ -30040,13 +30040,13 @@
    "category": "frameworks",
    "description": "Open-source agent runtime and terminal app for long-horizon research and file work, with single-agent ReAct and parallel agent-team modes.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
-    "5312 GitHub stars",
+    "5291 GitHub stars",
     "Build an agent",
     "Research the web"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30064,9 +30064,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "ApodexAI/FrontierAgent",
-   "github_stars": 5312,
+   "github_stars": 5291,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "build an agent",
     "research the web"
@@ -30084,14 +30084,14 @@
    "category": "browser/computer use",
    "description": "iFlytek's open-source enterprise RPA desktop app with a low-code visual designer whose workflows can be called by AI agents.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
-    "5276 GitHub stars",
+    "5271 GitHub stars",
     "Write code",
     "Automate the browser",
     "Control a computer"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -30109,9 +30109,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "iflytek/astron-rpa",
-   "github_stars": 5276,
+   "github_stars": 5271,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "automate the browser",
@@ -30171,13 +30171,13 @@
    "category": "MCP servers",
    "description": "Official Go SDK for building Model Context Protocol servers and clients, maintained with Google.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0, transitioning from MIT)",
     "Mature",
-    "5240 GitHub stars",
+    "5258 GitHub stars",
     "Build an agent",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0, transitioning from MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30195,9 +30195,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "modelcontextprotocol/go-sdk",
-   "github_stars": 5240,
+   "github_stars": 5258,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "build an agent",
     "connect tools via MCP"
@@ -30215,14 +30215,14 @@
    "category": "vision",
    "description": "Open-source tool for structured data extraction from documents and images with ML, LLMs and vision LLMs, plus agentic workflows.",
    "key_features": [
-    "Open source",
+    "Free and open source (GPL-3.0), self-hosted",
     "Mature",
-    "5225 GitHub stars",
+    "5226 GitHub stars",
     "Automate workflows",
     "Monitor & evaluate agents",
     "Computer vision"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (GPL-3.0), self-hosted",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30240,9 +30240,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "katanaml/sparrow",
-   "github_stars": 5225,
+   "github_stars": 5226,
    "open_source": true,
-   "license": "",
+   "license": "GPL-3.0",
    "tags": [
     "automate workflows",
     "monitor & evaluate agents",
@@ -30261,14 +30261,14 @@
    "category": "evals & observability",
    "description": "Free desktop app and open-source library for building AI systems with evals, RAG, agents, fine-tuning and synthetic data in one workbench.",
    "key_features": [
-    "Source-available",
+    "Free desktop app (Kiln AI Desktop EULA); Python libraries MIT",
     "Mature",
-    "5195 GitHub stars",
+    "5223 GitHub stars",
     "Control a computer",
     "Build an agent",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Source-available",
+   "pricing": "Free desktop app (Kiln AI Desktop EULA); Python libraries MIT",
    "price_tag": "unknown",
    "platforms": [
     "Developer (API/SDK)"
@@ -30283,9 +30283,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "Kiln-AI/Kiln",
-   "github_stars": 5195,
+   "github_stars": 5223,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "control a computer",
     "build an agent",
@@ -30304,12 +30304,12 @@
    "category": "MCP servers",
    "description": "TypeScript runtime and CLI for discovering and calling MCP servers from scripts, terminals and agents, or packaging them as standalone CLIs.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "5069 GitHub stars",
+    "5083 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30327,9 +30327,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "openclaw/mcporter",
-   "github_stars": 5069,
+   "github_stars": 5083,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "connect tools via MCP"
    ],
@@ -35701,12 +35701,12 @@
    "category": "coding",
    "description": "Multi-agent system that combines LLMs with DevOps tools to turn natural-language requirements into working software on existing code.",
    "key_features": [
-    "Source-available",
+    "Open edition free (Apache 2.0 with a non-compete clause); Enterprise Edition and cloud service pricing not published",
     "Mature",
-    "5964 GitHub stars",
+    "5965 GitHub stars",
     "Write code"
    ],
-   "pricing": "Source-available",
+   "pricing": "Open edition free (Apache 2.0 with a non-compete clause); Enterprise Edition and cloud service pricing not published",
    "price_tag": "unknown",
    "platforms": [
     "Developer (API/SDK)"
@@ -35723,9 +35723,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "kuafuai/DevOpsGPT",
-   "github_stars": 5964,
+   "github_stars": 5965,
    "open_source": false,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code"
    ],
@@ -35742,13 +35742,13 @@
    "category": "personal agents",
    "description": "Self-hostable personal AI assistant shipped as one binary, combining LLMs, a knowledge base and agent loops with computer, browser and coding use.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Mature",
-    "5698 GitHub stars",
+    "5709 GitHub stars",
     "Write code",
     "Automate the browser"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -35765,9 +35765,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "the-open-agent/openagent",
-   "github_stars": 5698,
+   "github_stars": 5709,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "automate the browser"
@@ -44040,7 +44040,7 @@
    "slug": "omniroute",
    "url": "https://www.omniroute.online/",
    "website": "https://www.omniroute.online/",
-   "github": "https://github.com/diegosouzapw/OmniRoute",
+   "github": "https://github.com/cheaper-inference/OmniRoute",
    "category": "agent infra",
    "description": "Self-hosted AI gateway that puts hundreds of model providers behind one endpoint for Claude Code, Codex, Cursor and others, with quota-aware fallback and MCP/A2A support.",
    "key_features": [
@@ -44067,7 +44067,7 @@
    "new": true,
    "seed": false,
    "new_this_week": true,
-   "repo": "diegosouzapw/OmniRoute",
+   "repo": "cheaper-inference/OmniRoute",
    "github_stars": 77863,
    "open_source": true,
    "license": "",

@@ -19890,12 +19890,12 @@
   ],
   "faq": [],
   "sources": [
-   "https://github.com/diegosouzapw/OmniRoute",
+   "https://github.com/cheaper-inference/OmniRoute",
    "https://www.omniroute.online/"
   ],
   "updated": "2026-10-18",
   "facts": {
-   "repo": "https://github.com/diegosouzapw/OmniRoute",
+   "repo": "https://github.com/cheaper-inference/OmniRoute",
    "stars": 77954,
    "checked": "2026-10-18",
    "license": "the MIT License",
@@ -24363,5 +24363,495 @@
    "osi": true
   },
   "updated": "2026-10-21"
+ },
+ "devopsgpt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DevOpsGPT, from KuafuAI, is a multi-agent system that turns natural-language requirements into working software by combining large language models with DevOps tools. You describe what you need, it helps clarify the requirement, writes interface documentation and code, and works inside an existing project rather than only starting from scratch.",
+   "It then hands the result to continuous integration and can deploy the new version to your target environment. The open-source edition runs from source with Python and SQLite; an Enterprise Edition adds analysis of existing projects, stronger specialist models with private deployment and more DevOps platform integrations, and KuafuAI also offers a cloud service."
+  ],
+  "who": "Development teams who want an agent to go from a plain-language requirement to code, CI and deployment on their own projects.",
+  "features": [
+   "Natural-language requirements to working code",
+   "Clarifies requirements and writes interface docs",
+   "Works on existing projects in any language",
+   "Hooks into CI and deployment tools",
+   "Enterprise Edition and cloud service available"
+  ],
+  "faq": [
+   [
+    "Is DevOpsGPT open source?",
+    "The code is public under Apache 2.0 with an added clause that forbids using it to compete directly with DevOpsGPT and KuafuAI services, so it is source-available rather than OSI open source. Enterprise and cloud pricing is not published."
+   ]
+  ],
+  "sources": [
+   "https://github.com/kuafuai/DevOpsGPT",
+   "https://www.kuafuai.net/"
+  ],
+  "facts": {
+   "repo": "https://github.com/kuafuai/DevOpsGPT",
+   "stars": 5965,
+   "forks": 718,
+   "checked": "2026-10-22",
+   "license": "Apache 2.0 plus an extra clause that bars directly competing with DevOpsGPT and KuafuAI services",
+   "osi": false
+  },
+  "updated": "2026-10-22"
+ },
+ "apache-maka": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Apache Maka (Incubating) is an open-source agent workspace from the Apache Software Foundation incubator that keeps a complete record of everything the agent did. Every model message, tool call, permission decision and stop is stored as an append-only event log, and the UI, the next prompt and crash recovery are all built from that log.",
+   "It runs on your machine with the model you choose (a cloud API, a local model or a compatible gateway), and sessions, settings and run records stay local. A desktop app, a terminal UI and a CLI all share one runtime host, and the project publishes per-task benchmark runs against other agent harnesses on the same model and official verifier. The latest Apache release is 0.2.0 (incubating)."
+  ],
+  "who": "Developers who want a local, auditable agent harness and published, reproducible benchmark results.",
+  "features": [
+   "Append-only log of every model message and tool call",
+   "Desktop app, terminal UI and CLI on one runtime",
+   "Bring your own cloud, local or gateway model",
+   "Sessions and records stay on your machine",
+   "Published per-task benchmark runs"
+  ],
+  "faq": [
+   [
+    "Is Apache Maka free?",
+    "Yes. It is open source under the Apache License 2.0; you pay only for the model you connect."
+   ]
+  ],
+  "sources": [
+   "https://github.com/apache/maka",
+   "https://maka.apache.org/en/"
+  ],
+  "facts": {
+   "repo": "https://github.com/apache/maka",
+   "stars": 5866,
+   "forks": 563,
+   "checked": "2026-10-22",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "ultrarag": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "UltraRAG is a low-code framework for building retrieval-augmented generation (RAG) pipelines on the Model Context Protocol, launched by Tsinghua University's THUNLP, Northeastern University's NEUIR, OpenBMB and partners. Core RAG parts such as retrieval and generation run as separate MCP servers, and an MCP client orchestrates them, so complex pipelines take little code.",
+   "UltraRAG 3.0 (January 2026) adds UltraRAG UI, a visual RAG development environment with a pipeline builder that keeps canvas and code in sync, an AI assistant, and a unified evaluation system. It targets both research experiments and industrial prototypes, including lightweight deep-research pipelines."
+  ],
+  "who": "Researchers and engineers who want to assemble, debug and evaluate RAG pipelines quickly.",
+  "features": [
+   "RAG components as independent MCP servers",
+   "Low-code pipeline orchestration",
+   "Visual pipeline builder synced with code",
+   "Built-in evaluation system",
+   "Multimodal knowledge ingestion"
+  ],
+  "faq": [
+   [
+    "Is UltraRAG free?",
+    "Yes. It is open source under the Apache License 2.0."
+   ]
+  ],
+  "sources": [
+   "https://github.com/OpenBMB/UltraRAG",
+   "https://ultrarag.github.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/OpenBMB/UltraRAG",
+   "stars": 5730,
+   "forks": 453,
+   "checked": "2026-10-22",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "openagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OpenAgent is an open-source, self-hostable personal AI assistant that combines large language models, a knowledge base built from your own documents (RAG) and autonomous agent loops. Agents can use the browser and computer and act as a coding agent.",
+   "It ships as a single binary for Linux, macOS and Windows (x86_64 and arm64), so there is nothing else to install: the installer starts it on port 14000. You can connect any model provider, and the admin side includes usage analytics, activity monitoring, tool management and detailed logs. A live demo and playground are available."
+  ],
+  "who": "People and teams who want one self-hosted assistant with their own documents, any model and agents that can browse and code.",
+  "features": [
+   "Any model provider",
+   "Knowledge base from your documents (RAG)",
+   "Browser-use, computer-use and coding agents",
+   "Single binary for Linux, macOS and Windows",
+   "Usage analytics, monitoring and logs"
+  ],
+  "faq": [
+   [
+    "Is OpenAgent free?",
+    "Yes. It is open source under the Apache License 2.0 and you host it yourself."
+   ]
+  ],
+  "sources": [
+   "https://github.com/the-open-agent/openagent",
+   "https://www.openagentai.org/"
+  ],
+  "facts": {
+   "repo": "https://github.com/the-open-agent/openagent",
+   "stars": 5709,
+   "forks": 667,
+   "checked": "2026-10-22",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "coucou": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Coucou is a small open-source companion that lives in your Mac's notch, or at the top of the screen on Windows and Linux, and keeps an eye on your AI coding agent sessions. Its mascot Mochi pops out when Claude Code needs you, and you can see what each agent reads, edits and runs, approve permissions, drop in a file or chat with Claude without switching windows.",
+   "It follows Claude Code, Cursor, Codex, Gemini CLI, Antigravity, Copilot CLI, OpenCode, Amp and other agents, and when you step away it moves to your iPhone or Android phone so you can approve from the Lock Screen or Dynamic Island. Version 0.4 also made it a full Mac app with hold-to-talk dictation (offline with NVIDIA Parakeet) and a call notetaker that needs no meeting bot."
+  ],
+  "who": "Developers who run several coding agents and want to watch and approve them without leaving what they are doing.",
+  "features": [
+   "Live view of coding agent sessions in the notch",
+   "Approve permissions from the notch or phone Lock Screen",
+   "Works with Claude Code, Cursor, Codex, Gemini CLI and more",
+   "Offline dictation on the Mac",
+   "Call notetaker without a meeting bot"
+  ],
+  "faq": [
+   [
+    "Is Coucou free?",
+    "Yes. The code is open source under the MIT License; the Coucou name, Mochi and sounds remain the author's."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Louis-CFM/coucou",
+   "https://louis-cfm.github.io/coucou/"
+  ],
+  "facts": {
+   "repo": "https://github.com/Louis-CFM/coucou",
+   "stars": 6190,
+   "forks": 1000,
+   "checked": "2026-10-22",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "tuios": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "TUIOS is a terminal multiplexer and window manager written in Go that knows what your coding agents are doing. It gives you tiling panes, workspaces and a vim-like modal interface inside your existing terminal, with sessions that survive restarts.",
+   "For agents it adds one Inbox across every coding agent, with their state, approvals, fleets and agents on other machines, plus a tmux shim so tools that drive tmux, such as Claude Code agent teams, still work. It is built on the Charm stack with event-driven rendering for near-zero idle CPU, supports kitty graphics, hooks and themes, and you can try it in the browser at tuios.dev/learn."
+  ],
+  "who": "Terminal users who run several coding agents and want one place to watch and approve them.",
+  "features": [
+   "Tiling panes, workspaces and BSP layouts",
+   "One Inbox for every coding agent",
+   "Sessions that survive restarts and detach",
+   "tmux shim for Claude Code agent teams",
+   "Hooks, themes and a control protocol"
+  ],
+  "faq": [
+   [
+    "Is TUIOS free?",
+    "Yes. It is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Gaurav-Gosain/tuios",
+   "https://tuios.dev/"
+  ],
+  "facts": {
+   "repo": "https://github.com/Gaurav-Gosain/tuios",
+   "stars": 5562,
+   "forks": 257,
+   "checked": "2026-10-22",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "5ire": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "5ire (pronounced 'fai-er') is a cross-platform desktop AI assistant and MCP client. It works with major model providers including OpenAI, Azure, Anthropic, Google, Mistral, Grok, DeepSeek and local models through Ollama.",
+   "It supports a local knowledge base and tools through Model Context Protocol servers, with one-click server installation that websites can integrate. The tools feature needs Python, Node.js and uv installed, since those run the MCP servers."
+  ],
+  "who": "People who want one desktop chat app for many model providers with MCP tools and a local knowledge base.",
+  "features": [
+   "Desktop assistant for Mac, Windows and Linux",
+   "Many providers plus Ollama local models",
+   "MCP client for tools",
+   "Local knowledge base",
+   "One-click MCP server installation"
+  ],
+  "faq": [
+   [
+    "Is 5ire free?",
+    "It is free to download. Its licence is a modified Apache License 2.0 with extra conditions, so check the LICENSE file before building on it."
+   ]
+  ],
+  "sources": [
+   "https://github.com/nanbingxyz/5ire",
+   "https://5ire.app/"
+  ],
+  "facts": {
+   "repo": "https://github.com/nanbingxyz/5ire",
+   "stars": 5373,
+   "forks": 436,
+   "checked": "2026-10-22",
+   "license": "a modified Apache License 2.0 with extra conditions",
+   "osi": false
+  },
+  "updated": "2026-10-22"
+ },
+ "peekaboo": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Peekaboo is a macOS command-line tool and menu-bar app for screen capture, accessibility inspection and native UI automation, so an AI agent can see the screen and do the clicks. You can use it directly, let its built-in agent plan multi-step work, or expose the same tools to MCP clients such as Codex, Claude Code and Cursor.",
+   "It can return a structured map of a running app's interface with element IDs, then click, type and act on those elements. It needs macOS 15 or later and installs with Homebrew, as an npm MCP package, or as a signed Mac app that handles permission setup and shows visual feedback."
+  ],
+  "who": "Developers who want coding or desktop agents to see and control Mac apps.",
+  "features": [
+   "Screenshots of the screen or any app",
+   "Structured UI maps with element IDs",
+   "Native clicks and typing via accessibility",
+   "MCP server for Codex, Claude Code and Cursor",
+   "Menu-bar app with permission onboarding"
+  ],
+  "faq": [
+   [
+    "Is Peekaboo free?",
+    "Yes. It is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/openclaw/Peekaboo",
+   "https://www.peekaboo.boo/"
+  ],
+  "facts": {
+   "repo": "https://github.com/openclaw/Peekaboo",
+   "stars": 5371,
+   "forks": 412,
+   "checked": "2026-10-22",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "frontieragent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "FrontierAgent, from Apodex, is an open-source agent runtime, terminal app and evaluation suite for long research and file-based tasks. Its frontier-agent terminal UI has two workflows: ReAct, where one agent researches, reads files, writes deliverables and runs commands in a task sandbox, and Agent Team, where a coordinator splits the work across parallel sub-agents and combines their reports.",
+   "The same engine runs the benchmarks Apodex uses for its own models, and the framework, tools, workflows and evaluation layer can each be reused on their own. It installs with one command on macOS and Linux with no hard Docker dependency, and works with OpenAI-compatible endpoints including Apodex's API."
+  ],
+  "who": "Developers who want a ready-made terminal agent for long research and file tasks, single or as a team.",
+  "features": [
+   "ReAct single-agent workflow",
+   "Agent Team with parallel sub-agents",
+   "Task-scoped sandbox",
+   "Built-in evaluation suite",
+   "One-command install, no hard Docker dependency"
+  ],
+  "faq": [
+   [
+    "Is FrontierAgent free?",
+    "Yes. It is open source under the Apache License 2.0; you supply the model, such as an OpenAI-compatible endpoint."
+   ]
+  ],
+  "sources": [
+   "https://github.com/ApodexAI/FrontierAgent",
+   "https://www.apodex.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/ApodexAI/FrontierAgent",
+   "stars": 5291,
+   "forks": 314,
+   "checked": "2026-10-22",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "astronrpa": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AstronRPA, from iFlytek, is an open-source, enterprise-grade robotic process automation (RPA) desktop app. A visual low-code designer lets you build workflows that automate Windows desktop software and web pages, from WPS and Office to ERP systems and browsers.",
+   "It comes with 300+ ready-made actions, team sharing, scheduling and monitoring, and connects both ways with iFlytek's Astron Agent platform so automations and AI agents can call each other. Workflows can be triggered directly, on a schedule, by API or as MCP services. The client targets Windows 10/11 and the server deploys with Docker."
+  ],
+  "who": "Businesses that want agent-ready desktop and web automation they can self-host.",
+  "features": [
+   "Visual low-code workflow designer",
+   "300+ built-in automation actions",
+   "Windows desktop and web automation",
+   "Two-way integration with AI agents",
+   "Triggers by schedule, API or MCP"
+  ],
+  "faq": [
+   [
+    "Is AstronRPA free?",
+    "Yes. It is open source under the Apache License 2.0 and can be self-hosted."
+   ]
+  ],
+  "sources": [
+   "https://github.com/iflytek/astron-rpa",
+   "https://www.iflyrpa.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/iflytek/astron-rpa",
+   "stars": 5271,
+   "forks": 478,
+   "checked": "2026-10-22",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "mcp-go-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The MCP Go SDK is the official Go software development kit for the Model Context Protocol, maintained by the MCP project in collaboration with Google. It provides the main APIs for building MCP clients and servers, transport packages, and OAuth helpers.",
+   "The SDK aims to implement the full MCP specification, and its documentation maps each part of the spec to its packages, with a table of which SDK versions support which protocol versions. Features deprecated in the 2026-07-28 protocol version, such as roots, sampling and logging, stay supported for compatibility."
+  ],
+  "who": "Go developers building MCP servers or clients for AI agents.",
+  "features": [
+   "Official Go SDK for MCP",
+   "Client and server APIs",
+   "Pluggable transports",
+   "OAuth support",
+   "Version table against the MCP spec"
+  ],
+  "faq": [
+   [
+    "Is the MCP Go SDK free?",
+    "Yes. It is open source (Apache-2.0, transitioning from MIT)."
+   ]
+  ],
+  "sources": [
+   "https://github.com/modelcontextprotocol/go-sdk",
+   "https://modelcontextprotocol.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/modelcontextprotocol/go-sdk",
+   "stars": 5258,
+   "forks": 597,
+   "checked": "2026-10-22",
+   "license": "the Apache License 2.0 (transitioning from MIT)",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "sparrow": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Sparrow, from Katana ML, is an API-first platform for document intelligence: it turns invoices, receipts, bank statements, forms and tables into clean, validated JSON using machine learning, LLMs and vision LLMs, all running on your own infrastructure.",
+   "Besides extraction it handles instruction processing such as validation and decisions, and has an agent framework for multi-step workflows monitored through Prefect. Pipelines mix vision and text models, and the same API works on MLX on Apple Silicon, vLLM on NVIDIA, Ollama, Hugging Face or Mistral OCR. A web UI offers drag-and-drop uploads and JSON schema queries."
+  ],
+  "who": "Teams that need structured data from business documents without sending them to a third party.",
+  "features": [
+   "Document to validated JSON via REST",
+   "Vision LLM and text LLM pipelines",
+   "Workflow and decision agents",
+   "Runs on MLX, vLLM, Ollama or Hugging Face",
+   "Web UI with drag-and-drop"
+  ],
+  "faq": [
+   [
+    "Is Sparrow free?",
+    "The code is open source under the GNU GPL v3.0 and you can self-host it; commercial licensing terms were not checked here."
+   ]
+  ],
+  "sources": [
+   "https://github.com/katanaml/sparrow",
+   "https://sparrow.katanaml.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/katanaml/sparrow",
+   "stars": 5226,
+   "forks": 519,
+   "checked": "2026-10-22",
+   "license": "the GNU GPL v3.0",
+   "osi": true
+  },
+  "updated": "2026-10-22"
+ },
+ "kiln": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kiln is a workbench for the whole AI development loop: evals, optimization, prompts, RAG, fine-tuning, synthetic data, agents and tools in one app. Desktop apps for Mac, Windows and Linux let product managers, subject experts and QA contribute alongside engineers, and projects sync to Git automatically.",
+   "Its eval builder auto-generates a judge and synthetic eval set, Auto-Optimize searches prompts, models, tools and parameters, and the Kiln Assistant proposes and runs experiments. You can build a RAG by dragging in PDFs, images, video or audio, compose sub-agent hierarchies, and fine-tune 60+ models on Fireworks, Together or Vertex without code."
+  ],
+  "who": "Teams building AI products who want evals, optimization and fine-tuning in one collaborative tool.",
+  "features": [
+   "Auto-generated evals with judges",
+   "Automatic prompt and model optimization",
+   "Drag-and-drop RAG with RAG evals",
+   "Zero-code fine-tuning on 60+ models",
+   "Git-synced team collaboration"
+  ],
+  "faq": [
+   [
+    "Is Kiln free?",
+    "Yes. The desktop app is free under the Kiln AI Desktop EULA, and the Python libraries are open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Kiln-AI/Kiln",
+   "https://kiln.tech/"
+  ],
+  "facts": {
+   "repo": "https://github.com/Kiln-AI/Kiln",
+   "stars": 5223,
+   "forks": 395,
+   "checked": "2026-10-22",
+   "license": "MIT for the Python libraries; the desktop app is free under the Kiln AI Desktop EULA",
+   "osi": false
+  },
+  "updated": "2026-10-22"
+ },
+ "mcporter": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MCPorter is a TypeScript runtime and command-line tool for discovering and calling Model Context Protocol servers. It lets developers and coding agents use the same MCP tools from a terminal, a script, or a standalone CLI that MCPorter generates.",
+   "You can list a server's tools as TypeScript-style signatures and call them directly, with JSON output when another program needs it. It reads project and user config and imports MCP servers already set up in Cursor, Claude Code and Desktop, Codex, Windsurf, OpenCode and VS Code. It installs with npx, npm or Homebrew."
+  ],
+  "who": "Developers and agents that want to call MCP tools from scripts and the command line.",
+  "features": [
+   "Call any MCP server from the terminal",
+   "TypeScript API for MCP tools",
+   "Generate standalone CLIs from servers",
+   "Imports configs from Cursor, Claude Code, Codex and more",
+   "JSON output for automation"
+  ],
+  "faq": [
+   [
+    "Is MCPorter free?",
+    "Yes. It is open source under the MIT License."
+   ]
+  ],
+  "sources": [
+   "https://github.com/openclaw/mcporter",
+   "https://mcporter.sh/"
+  ],
+  "facts": {
+   "repo": "https://github.com/openclaw/mcporter",
+   "stars": 5083,
+   "forks": 356,
+   "checked": "2026-10-22",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-22"
  }
 }
