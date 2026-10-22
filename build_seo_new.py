@@ -23,11 +23,11 @@ def run(t):
         cb=json.load(open("data/bot-templates-community.json"))
         L+="\n<!-- cb:start -->\n## Community Grok Bot templates\n\n"+"\n".join(f"- [{e['name']}](https://agentscouthq.com/bot-templates/#{e['id']}): {e['desc']}" for e in cb)+"\n<!-- cb:end -->\n"
         open("llms.txt","w").write(L)
-    print("seo overrides:",n,"pages"); crypto_links(t); bt_rename(); long_titles(); answer_blocks(t)
+    print("seo overrides:",n,"pages"); crypto_links(t); bt_rename(); long_titles(); answer_blocks(t); mcp_links()
 
 # Crypto guide links (Oct 21 2026): crypto category + every crypto tool page link the two crypto guides.
 def crypto_links(t):
-    G=[("../mcp/crypto-mcp-servers.html","Best MCP servers for crypto and on-chain data"),("../s/ai-crypto-scam-checkers.html","AI crypto wallet scam and risk checkers")]
+    G=[("../mcp/crypto-mcp-servers.html","Best MCP servers for crypto and on-chain data"),("../mcp/crypto-wallet-mcp-servers.html","Best MCP servers for crypto wallets"),("../s/ai-crypto-scam-checkers.html","AI crypto wallet scam and risk checkers")]
     n=0
     files=["categories/crypto.html"]+[f"tools/{x['slug']}.html" for x in t if x["category"]=="crypto"]
     for f in files:
@@ -109,3 +109,18 @@ def answer_blocks(t):
         blk=(f'<!--sn:bt--><section class="wrap" style="max-width:860px;margin:28px auto"><p class="muted" style="margin:0 0 14px">Last checked {d}.</p><h2 style="font-size:18px;margin:0 0 10px">Grok Bot templates FAQ</h2>{_faq_html(faq)}</section>{_faq_ld(faq)}<!--/sn:bt-->')
         s=s.replace("</main>",blk+"</main>",1); open(f,"w").write(s)
     print("answer blocks: home + bot templates")
+
+# MCP guide links (Ops follow-up Oct 21 2026): page -> [(href, label)], one marker block before </main>
+MCP_LINKS={
+ "categories/browser-computer-use.html":[("../mcp/browser-automation-mcp-servers.html","Best MCP servers for browser automation")],
+ "s/best-mcp-servers.html":[("../mcp/browser-automation-mcp-servers.html","Best MCP servers for browser automation"),("../mcp/crypto-wallet-mcp-servers.html","Best MCP servers for crypto wallets"),("../mcp/crypto-mcp-servers.html","Best MCP servers for crypto and on-chain data"),("../mcp/index.html","All MCP servers by task")],
+}
+def mcp_links():
+    n=0
+    for f,L in MCP_LINKS.items():
+        if not os.path.exists(f): continue
+        s0=s=open(f).read(); s=re.sub(r"<!--sn:ml-->.*?<!--/sn:ml-->","",s,flags=re.S)
+        blk='<!--sn:ml--><h2 style="font-size:16px;margin:28px 0 10px">MCP server guides</h2><div class="badges">'+"".join(f'<a class="b uc" href="{h}">{html.escape(l)}</a>' for h,l in L)+'</div><!--/sn:ml-->'
+        s=s.replace("</main>",blk+"</main>",1)
+        if s!=s0: open(f,"w").write(s); n+=1
+    print("mcp guide links:",n)
