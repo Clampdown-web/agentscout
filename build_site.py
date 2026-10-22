@@ -227,6 +227,7 @@ build_pick.pick(t)
 import build_links
 build_links.run(t)
 import build_seo; build_seo.run(t)
+import build_seo_new; build_seo_new.run(t)  # keyword-targeted titles/descriptions for new pages (Oct 21 2026)
 import build_fresh; build_fresh.run(t)  # Updated dates, dateModified, quick comparison tables (Oct 18 2026)
 import build_listlogos; build_listlogos.run(t)  # logos next to tool names in tables and inline tool lists (Oct 18 2026)
 import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
@@ -234,6 +235,7 @@ build_logocheck.listings_gate()  # stop the build if any tool link in a listing 
 import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 if _SP is not None: open("sponsor.html","wb").write(_SP)  # keep the hidden sponsor page untouched
+import build_seo_new as _bsn; _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)

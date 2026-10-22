@@ -108,14 +108,14 @@ def _bt_sec():
     """Bot templates hub + every template detail page, and the leaderboard badges and site search pages (Oct 21 2026 7 PM pass)."""
     import os
     out=[]
-    if os.path.exists("bot-templates/index.html") and _h1("bot-templates/index.html"): out.append(f"- [Bot templates: ready-made Grok Bot bots, skills, plugins and workflows]({B}bot-templates/)")
+    if os.path.exists("bot-templates/index.html") and _h1("bot-templates/index.html"): out.append(f"- [AI bot templates, plugins and skills: ready-made Grok Bot, Claude, Codex and Cursor templates]({B}bot-templates/)")
     for f in sorted(glob.glob("bot-templates/*.html")):
         if f.endswith("index.html"): continue
         h=_h1(f)
         if h: out.append(f"- [{h}]({B}{f})")
     for f,u,lbl in (("leaderboard/badges.html",B+"leaderboard/badges.html",None),("search/index.html",B+"search/","Site search: every AgentScout page")):
         if os.path.exists(f) and (lbl or _h1(f)): out.append(f"- [{lbl or _h1(f)}]({u})")
-    return ["## Bot templates and more",""]+out+[""] if out else []
+    return ["## AI bot templates and more",""]+out+[""] if out else []
 def llms_extra(c=None):
     """llms.txt sections for every indexable best-of, alternatives, search, role, task and free-tool page (idempotent, between markers)."""
     import os

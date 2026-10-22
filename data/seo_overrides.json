@@ -1,0 +1,118 @@
+{
+"tools/goplus-security-mcp.html": [
+"GoPlus Security MCP: crypto scam checker for AI agents",
+"Free, open-source GoPlus MCP server: AI agents check token, address, NFT, approval and phishing-site risk before they act. Setup, pricing, alternatives."
+],
+"tools/tanod.html": [
+"Tanod: pre-transaction security MCP for crypto agents",
+"Tanod's hosted MCP and API checks honeypot tokens, risky contracts, phishing URLs, OFAC sanctions and wallet drains before an AI agent signs."
+],
+"tools/coingraph-wallet-guard.html": [
+"CoinGraph Wallet Guard: check a crypto swap before signing",
+"CoinGraph Wallet Guard checks token risk, price impact and look-alike recipients before you sign, returning SAFE, WARN or STOP via API or MCP."
+],
+"tools/antalpha-wallet-guard.html": [
+"Antalpha Wallet Guard: open-source wallet scan skill",
+"Open-source agent skill that scans EVM wallets for dangerous approvals, malicious addresses, rug pulls and phishing sites, using GoPlus data."
+],
+"tools/webacy.html": [
+"Webacy: wallet and token risk API and MCP server",
+"Webacy's risk-ratings API and MCP server let AI agents screen wallets, tokens, vaults and transactions before moving funds. Features and alternatives."
+],
+"tools/scamsniffer.html": [
+"ScamSniffer: crypto phishing and wallet drainer checker",
+"ScamSniffer tracks phishing sites, wallet drainers and scammer addresses: a free browser extension plus a blocklist API agents can query."
+],
+"tools/de-fi-scanner.html": [
+"De.Fi Scanner: token honeypot and smart contract checker",
+"De.Fi Scanner flags honeypots, owner powers and other smart-contract risks, with a credit-based API for apps and AI agents. Pricing and alternatives."
+],
+"tools/blockaid.html": [
+"Blockaid: onchain transaction security for wallets",
+"Blockaid simulates and scans transactions to block malicious dApps, tokens and signatures before users or AI agents sign. Who it's for, alternatives."
+],
+"tools/forta-firewall.html": [
+"Forta Firewall: block malicious crypto transactions",
+"Forta Firewall screens transactions for exploits and malicious activity before they settle onchain. What it does, who it's for and alternatives."
+],
+"tools/dune-mcp.html": [
+"Dune MCP: on-chain data and DuneSQL for AI agents",
+"Dune's official remote MCP server: AI agents search on-chain datasets, run DuneSQL queries and build charts across 100+ chains. Pricing, alternatives."
+],
+"tools/goldrush-mcp.html": [
+"GoldRush MCP: multichain wallet and token data API",
+"Covalent's GoldRush MCP server gives AI agents wallet balances, transactions, token and NFT data across 100+ chains. Pricing and alternatives."
+],
+"tools/helius-mcp.html": [
+"Helius MCP: Solana data MCP server for AI agents",
+"Helius's MCP server lets AI agents read Solana accounts, transactions, tokens and NFTs through Helius RPC and APIs. Free tier, setup, alternatives."
+],
+"tools/santiment.html": [
+"Santiment: on-chain and social crypto data for agents",
+"Santiment's crypto market intelligence covers on-chain, social and development activity, with an AI assistant and API for agent research."
+],
+"tools/messari-copilot.html": [
+"Messari Copilot: AI crypto research with MCP server",
+"Messari Copilot answers crypto questions from Messari research, news and market data, with an API and hosted MCP server for AI agents."
+],
+"tools/moralis-mcp.html": [
+"Moralis MCP: wallet, token and NFT data for AI agents",
+"Moralis's MCP server gives AI agents wallet, token, NFT and DeFi data across EVM chains and Solana in plain language. Free tier and alternatives."
+],
+"tools/bitquery-mcp.html": [
+"Bitquery MCP: DEX trades and wallet history MCP server",
+"Bitquery's read-only hosted MCP server: 300+ tools for DEX trades, candles, wallet history and money-flow tracing across 40+ chains."
+],
+"tools/the-graph-token-api-mcp.html": [
+"The Graph Token API MCP: token data for AI agents",
+"The Graph's Token API MCP server lets AI agents query token metadata, balances, transfers and holder stats in plain language. Pricing, alternatives."
+],
+"tools/thirdweb-nebula.html": [
+"thirdweb Nebula: onchain AI agent that can send crypto",
+"thirdweb Nebula reads live chain data, analyzes transactions and can buy, swap and send crypto from connected wallets. Moves funds: use spend limits."
+],
+"tools/coinbase-agentic-wallet-mcp.html": [
+"Coinbase Agentic Wallet MCP: USDC wallet for AI agents",
+"Coinbase's MCP server and wallet (formerly Payments MCP) let AI agents hold USDC and pay for x402 services within spend limits you set."
+],
+"tools/alby-mcp.html": [
+"Alby MCP: Bitcoin Lightning wallet for AI agents",
+"Open-source Alby MCP server connects a Lightning wallet to your AI agent via Nostr Wallet Connect, so it can pay and create invoices."
+],
+"categories/crypto.html": [
+null,
+"{crypto_n} crypto AI agent tools: wallet scam checkers, on-chain data MCP servers, agent wallets and trading agents. Link-checked; not financial advice."
+],
+"bot-templates/index.html": [
+null,
+"{bt_n} ready-made Grok Bot templates, including 50 community bots, plus skills and plugins for Claude, Codex, Cursor and n8n, with setup for each."
+],
+"mcp/crypto-mcp-servers.html": [
+"Best MCP servers for crypto and on-chain data (2026)",
+"16 MCP servers that give AI agents on-chain data: wallet history, token and NFT data, DEX trades, prices and DuneSQL. Ranked; not financial advice."
+],
+"s/cloud-and-devops-mcp-servers.html": [
+"MCP servers for AWS, Azure, Cloudflare and Kubernetes (2026)",
+null
+],
+"leaderboard/badges.html": [
+"Ranked on AgentScout badges for top AI agent tools",
+null
+],
+"bot-templates/critiquito.html": [
+"Critiquito: design critique Grok Bot template",
+null
+],
+"free-tools/mcp-config-builder.html": [
+"Free MCP config generator for Claude Desktop, Cursor & VS Code",
+null
+],
+"free-tools/agent-run-cost-estimator.html": [
+"AI agent cost calculator: free, no sign-up (2026)",
+null
+],
+"s/best-mcp-servers.html": [
+null,
+"The 25 most-starred MCP servers for Claude, Cursor, Codex and VS Code, from {mcp_n} link-checked listings. Ranked by GitHub stars; pricing as stated."
+]
+}

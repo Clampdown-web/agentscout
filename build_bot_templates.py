@@ -87,9 +87,9 @@ def run():
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
     s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
     # Short index title (owner-approved Oct 21 2026, 7:26 PM PT): under 60 chars so Google does not truncate it
-    T=f'Grok Bot templates: {total} ready-made templates'
-    s=re.sub(r'<title>[^<]*</title>',f'<title>{T} · AgentScout</title>',s,count=1)
-    for k in ('property="og:title"','name="twitter:title"'): s=re.sub(rf'(<meta {k} content=")[^"]*',lambda m:m.group(1)+T,s,count=1)
+    T=f'AI bot templates, plugins & skills: {total} ready-made'  # owner rename Oct 21 2026 7:49 PM PT (fits all platforms; 'Grok Bot' kept in H1/meta)
+    s=re.sub(r'<title>[^<]*</title>',f'<title>{html.escape(T)}</title>',s,count=1)
+    for k in ('property="og:title"','name="twitter:title"'): s=re.sub(rf'(<meta {k} content=")[^"]*',lambda m:m.group(1)+html.escape(T),s,count=1)
     # ItemList from every row on the page, in page order (Ops follow-up Oct 21 2026): numberOfItems == rows shown
     def il_all(m):
         o=json.loads(m.group(1)); old={i["url"]:i["name"] for i in o["itemListElement"]}
