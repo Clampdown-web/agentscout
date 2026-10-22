@@ -42072,5 +42072,32 @@
     "logo": "assets/logos/gmapsscraper-ai.png",
     "maker_submitted": true,
     "submitted": "2026-10-21"
+  },
+  {
+    "name": "superagnt",
+    "url": "https://www.superagnt.com/",
+    "description": "superagnt is a hosted MCP server and REST API that gives AI agents one key for the tools they lack: Instagram, TikTok, LinkedIn, YouTube, Reddit and X data, web scraping to clean markdown or JSON, email finding and lead enrichment, plus a real Postgres database, memory, schedules, queues and an inbox. Credits are charged only on successful calls, and it plugs into Claude, Cursor, Codex and other agents.",
+    "category": "coding",
+    "pricing": "Paid",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "Submission",
+    "pricing_detail": "Paid: free 7-day trial with no card ($3 of data credits and Growth limits), then Starter $49/month, Growth $149/month or Scale $399/month, each with monthly data credits included; Enterprise is custom; prices as listed on its site",
+    "use_cases": [
+      "connect tools via MCP",
+      "research the web",
+      "give agents memory"
+    ],
+    "website": "https://www.superagnt.com/",
+    "github": "",
+    "id": 1672,
+    "slug": "superagnt",
+    "logo": "assets/logos/superagnt.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-22"
   }
 ]

@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T06:11:52Z",
- "updated": "2026-10-22T06:11:52Z",
- "last_checked": "2026-10-21",
- "count": 1652,
+ "generated": "2026-10-22T07:14:16Z",
+ "updated": "2026-10-22T07:14:16Z",
+ "last_checked": "2026-10-22",
+ "count": 1653,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -3880,7 +3880,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "BuilderIO/agent-native",
    "github_stars": 7262,
    "open_source": true,
@@ -3923,7 +3923,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -3963,7 +3963,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -69856,6 +69856,50 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/gmapsscraper-ai.png",
    "page": "https://agentscouthq.com/tools/gmapsscraper-ai.html"
+  },
+  {
+   "name": "superagnt",
+   "slug": "superagnt",
+   "url": "https://www.superagnt.com/",
+   "website": "https://www.superagnt.com/",
+   "github": "",
+   "category": "coding",
+   "description": "superagnt is a hosted MCP server and REST API that gives AI agents one key for the tools they lack: Instagram, TikTok, LinkedIn, YouTube, Reddit and X data, web scraping to clean markdown or JSON, email finding and lead enrichment, plus a real Postgres database, memory, schedules, queues and an inbox. Credits are charged only on successful calls, and it plugs into Claude, Cursor, Codex and other agents.",
+   "key_features": [
+    "Paid: free 7-day trial with no card ($3 of data credits and Growth limits), then Starter $49/month, Growth $149/month or Scale $399/month, each with monthly data credits included; Enterprise is custom; prices as listed on its site",
+    "Active",
+    "Connect tools via mcp",
+    "Research the web",
+    "Give agents memory"
+   ],
+   "pricing": "Paid: free 7-day trial with no card ($3 of data credits and Growth limits), then Starter $49/month, Growth $149/month or Scale $399/month, each with monthly data credits included; Enterprise is custom; prices as listed on its site",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "research the web",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/superagnt.png",
+   "page": "https://agentscouthq.com/tools/superagnt.html"
   }
  ]
 }
