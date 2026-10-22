@@ -145,7 +145,7 @@ def pages(t):
          f'<span class="lbcount muted" id="lbcount" aria-live="polite"></span></div>'
          f'<noscript><p class="muted" style="font-size:13px">Browse rankings for one area on its <a href="../categories/index.html">category page</a>.</p></noscript>')
     css=("<style>.lbtabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 8px}.lbtabs button{font:inherit;font-size:14px;padding:8px 14px;min-height:44px;border-radius:999px;border:1px solid var(--line,rgba(127,127,127,.35));background:transparent;color:inherit;cursor:pointer}"
-         ".lbtabs button[aria-selected=true]{background:#6b8afd;border-color:#6b8afd;color:#fff}.lb h2{font-size:18px;margin:16px 0 4px}.lbh{font-size:13px;margin:0 0 10px}"
+         ".lbtabs button[aria-selected=true]{background:#4263eb;border-color:#4263eb;color:#fff}.lb h2{font-size:18px;margin:16px 0 4px}.lbh{font-size:13px;margin:0 0 10px}"
          ".lbctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:8px 0 4px;font-size:14px}.lbctl select{min-height:44px;max-width:100%;font:inherit;font-size:14px}.lbctl .fchk{display:inline-flex;align-items:center;gap:6px;min-height:44px;cursor:pointer}.lbctl .fchk input{width:20px;height:20px;margin:0}.lbcount{font-size:13px}"
          ".lbctl[hidden],.lbr[hidden],.lbe[hidden]{display:none}"
          ".lbl{list-style:none;padding:0;margin:0}.lbr{display:flex;align-items:center;gap:10px;padding:10px 8px;border-top:1px solid var(--line,rgba(127,127,127,.2));border-radius:8px;min-width:0}"

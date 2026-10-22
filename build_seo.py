@@ -93,8 +93,8 @@ def run(t):
         if s!=s0: open(f,"w").write(s)
     # twitter:* mirror for the other indexable pages (top-level pages and bot templates); titles left as-is (Oct 20 2026 SEO pass)
     g=set(_groups())
-    for f in sorted(glob.glob("*.html"))+sorted(glob.glob("bot-templates/*.html")):
-        if f in g or f.startswith("sponsor"): continue  # sponsor.html is frozen
+    for f in sorted(glob.glob("*.html"))+sorted(glob.glob("bot-templates/*.html"))+sorted(glob.glob("leaderboard/*.html"))+["search/index.html"]:  # leaderboard + search added Oct 21 2026 7 PM pass
+        if f in g or f.startswith("sponsor") or not __import__("os").path.exists(f): continue  # sponsor.html is frozen
         s0=s=open(f).read(); s=twitter(s,c)
         if s!=s0: open(f,"w").write(s)
     llms_extra(c)
@@ -104,6 +104,18 @@ def _h1(f):
     if 'name="robots" content="noindex' in s: return None
     m=re.search(r"<h1[^>]*>(.*?)</h1>",s,re.S)
     return re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>","",m.group(1)))).strip() if m else None
+def _bt_sec():
+    """Bot templates hub + every template detail page, and the leaderboard badges and site search pages (Oct 21 2026 7 PM pass)."""
+    import os
+    out=[]
+    if os.path.exists("bot-templates/index.html") and _h1("bot-templates/index.html"): out.append(f"- [Bot templates: ready-made Grok Bot bots, skills, plugins and workflows]({B}bot-templates/)")
+    for f in sorted(glob.glob("bot-templates/*.html")):
+        if f.endswith("index.html"): continue
+        h=_h1(f)
+        if h: out.append(f"- [{h}]({B}{f})")
+    for f,u,lbl in (("leaderboard/badges.html",B+"leaderboard/badges.html",None),("search/index.html",B+"search/","Site search: every AgentScout page")):
+        if os.path.exists(f) and (lbl or _h1(f)): out.append(f"- [{lbl or _h1(f)}]({u})")
+    return ["## Bot templates and more",""]+out+[""] if out else []
 def llms_extra(c=None):
     """llms.txt sections for every indexable best-of, alternatives, search, role, task and free-tool page (idempotent, between markers)."""
     import os
@@ -117,6 +129,6 @@ def llms_extra(c=None):
             if h: out.append(f"- [{h.replace(strip,'').strip()}]({B}{f})")
         return [f"## {name}",""]+out+[""] if out else []
     best=sorted(glob.glob("best/*.html")); alt=[f for f in best if f.endswith("-alternatives.html")]
-    S=["<!-- pages:start -->",""]+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular searches",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+["<!-- pages:end -->"]
+    S=["<!-- pages:start -->",""]+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular searches",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+_bt_sec()+["<!-- pages:end -->"]
     open("llms.txt","w").write(L+"\n"+"\n".join(S)+"\n")
     if c is not None: c["llms_pages"]=sum(1 for z in S if z.startswith("- ["))
