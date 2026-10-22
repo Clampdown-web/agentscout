@@ -4,10 +4,15 @@ Writes a small noindex page at each from-path with meta refresh, canonical to th
 and JS location.replace. Kept out of sitemap.xml (generators only emit their own URLs).
 Re-applied at exit of every generator that imports build_extras, so cleanup passes that
 delete unknown files in best/ or tasks/ cannot drop these redirects.
-Auto-redirect for every vanished sitemap URL is not attempted: choosing a target needs
-a human or a heuristics pass. Add entries to redirects.json as Search Console reports 404s.
+Automatic redirects (owner-approved Oct 21 2026): before writing pages, run() compares the
+committed sitemap.xml (git HEAD, i.e. the live set) with the freshly built sitemap.xml. Every URL
+that vanished and is neither in redirects.json nor still a real page on disk gets a redirect
+auto-added to redirects.json, to the best target (tool page for X-alternatives, parent task for
+a subtask, closest-named live page, else the section index / home). Each auto-add is printed
+loudly as "REDIRECT AUTO-ADDED" so it can be reviewed in the commit diff; edit redirects.json
+to change a target. Targets may be .html pages or directory URLs ending in "/".
 """
-import json, os, html
+import json, os, html, re
 B = "https://agentscouthq.com/"
 
 def load():
@@ -19,14 +24,14 @@ def load():
 
 def page(src, dst):
     """src and dst are site-root-relative paths like 'best/foo.html'."""
-    if not dst or dst == src:
+    if dst == src:
         return None
     # Prefer a same-tree relative href for the visible link; fall back to root-absolute.
     src_dir = os.path.dirname(src)
-    rel = os.path.relpath(dst, src_dir or ".").replace(os.sep, "/")
+    rel = os.path.relpath(dst.rstrip("/") or ".", src_dir or ".").replace(os.sep, "/") + ("/" if dst.endswith("/") else "")
     abs_dst = B + dst
     abs_src = B + src
-    name = os.path.basename(dst).replace(".html", "").replace("-", " ")
+    name = (os.path.basename(dst.rstrip("/")).replace(".html", "").replace("-", " ")) or "home"
     e = html.escape
     # Immediate client redirect; 0-second meta refresh; canonical consolidates SEO to the target.
     return f"""<!doctype html>
@@ -45,8 +50,80 @@ def page(src, dst):
 </body></html>
 """
 
+def _locs(text):
+    return set(x.replace(B, "") for x in re.findall(r"<loc>([^<]+)</loc>", text))
+
+def _exists(dst):
+    return os.path.exists(dst + "index.html" if dst.endswith("/") else dst) or dst == ""
+
+def _is_redirect(path):
+    try:
+        return 'http-equiv="refresh"' in open(path).read(3000)
+    except Exception:
+        return False
+
+def _target(src, live):
+    d, f = os.path.split(src)
+    stem = f[:-5] if f.endswith(".html") else f
+    if src.startswith("best/") and stem.endswith("-alternatives") and "tools/" + stem[:-13] + ".html" in live:
+        return "tools/" + stem[:-13] + ".html"
+    if d in ("tasks", "categories", "s", "best"):
+        parts = stem.split("-")
+        for k in range(len(parts) - 1, 0, -1):
+            c = f"{d}/{'-'.join(parts[:k])}.html"
+            if c in live and c != src:
+                return c
+    if d.startswith("bot-templates") and "bot-templates/" in live:
+        return "bot-templates/"
+    w = set(stem.split("-")) - {"ai", "agent", "agents", "tools", "free", "best", "for", "and", "the"}
+    best, sc = None, 0.0
+    for u in live:
+        if not u.endswith(".html") or u.startswith(("preview/", "tools/")):
+            continue
+        uw = set(os.path.basename(u)[:-5].split("-")) - {"ai", "agent", "agents", "tools", "free", "best", "for", "and", "the"}
+        if not w or not uw:
+            continue
+        j = len(w & uw) / len(w | uw)
+        if j > sc:
+            best, sc = u, j
+    if best and sc >= 0.34:
+        return best
+    for idx in (d + "/", "leaderboard/" if d == "tools" else None):
+        if idx and idx in live:
+            return idx
+    return ""  # home page
+
+def detect(m):
+    """Auto-add redirects for URLs in the committed (live) sitemap that the new build dropped."""
+    import subprocess
+    try:
+        prev = _locs(subprocess.run(["git", "show", "HEAD:sitemap.xml"], capture_output=True, text=True, check=True).stdout)
+        cur = _locs(open("sitemap.xml").read())
+    except Exception as ex:
+        print("redirects: vanished-URL check skipped:", ex)
+        return m
+    if len(cur) < 0.8 * len(prev):
+        print(f"redirects: REFUSING auto-add, new sitemap has {len(cur)} URLs vs {len(prev)} live (partial build?)")
+        return m
+    added = 0
+    for src in sorted(prev - cur):
+        if src in m or src == "" or src.endswith("/"):
+            if src.endswith("/") and src not in m:
+                print("redirects: WARNING directory URL vanished, add a redirect by hand:", src)
+            continue
+        if os.path.exists(src) and not _is_redirect(src):
+            continue  # page still exists (e.g. made noindex on purpose); not a 404
+        dst = _target(src, cur)
+        m[src] = dst
+        added += 1
+        print(f"redirects: REDIRECT AUTO-ADDED {src} -> {dst or '(home)'}  (review / edit redirects.json)")
+    if added:
+        json.dump(m, open("redirects.json", "w"), indent=1)
+        open("redirects.json", "a").write("\n")
+    return m
+
 def run():
-    m = load()
+    m = detect(load())
     if not m:
         print("redirects: none")
         return 0
@@ -60,13 +137,13 @@ def run():
             continue
         src = src.lstrip("/")
         dst = dst.lstrip("/")
-        if not src.endswith(".html") or not dst.endswith(".html"):
+        if not src.endswith(".html") or not (dst.endswith(".html") or dst.endswith("/") or dst == ""):
             print("redirects: skip bad paths", src, "->", dst)
             continue
         if src in live:
             print("redirects: page is live again, skip", src)
             continue
-        if not os.path.exists(dst):
+        if not _exists(dst):
             print("redirects: target missing, skip", src, "->", dst)
             continue
         body = page(src, dst)

@@ -86,6 +86,10 @@ def run():
     total=len(base)+len(X)+len(OSS)+len(CB)
     s=re.sub(r'\b\d+ ready-made',f'{total} ready-made',s)
     s=re.sub(r'ready-made bots, skills,? (?:and )?workflows','ready-made bots, skills, plugins and workflows',s)  # owner-approved title wording, Oct 21 2026
+    # Short index title (owner-approved Oct 21 2026, 7:26 PM PT): under 60 chars so Google does not truncate it
+    T=f'Grok Bot templates: {total} ready-made bots'
+    s=re.sub(r'<title>[^<]*</title>',f'<title>{T} · AgentScout</title>',s,count=1)
+    for k in ('property="og:title"','name="twitter:title"'): s=re.sub(rf'(<meta {k} content=")[^"]*',lambda m:m.group(1)+T,s,count=1)
     def il(m):
         o=json.loads(m.group(1)); ex={f"{SITE}/{D}/{e['slug']}.html" for e in X}
         L=[i for i in o["itemListElement"] if i["url"] not in ex]
