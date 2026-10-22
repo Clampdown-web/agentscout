@@ -89,7 +89,7 @@ def run():
     print(f"bot templates: {len(X)} extra, {total} total")
 
 # ---- Filters (Oct 21 2026 PT, owner request): count pill, search, use-case chips, URL params, empty state. ----
-FCSS=('<style id="btf-css">.bt-count{display:inline-flex;align-items:center;justify-content:center;min-width:2.2em;height:1.5em;padding:0 .45em;margin-left:.4em;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:.5em;font-weight:600;vertical-align:middle}'
+FCSS=('<style id="btf-css">.bt-h1{flex-wrap:wrap;row-gap:4px}.bt-count{display:inline-flex;align-items:center;justify-content:center;min-width:2.2em;height:1.5em;padding:0 .45em;margin-left:.4em;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:.5em;font-weight:600;vertical-align:middle}'
  '.btf{margin:14px 0 6px;display:flex;flex-direction:column;gap:10px;min-width:0}.btf-s{position:relative;max-width:520px}.btf-s input{width:100%;box-sizing:border-box;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:16px}'
  '.bt-pills,.btf-cats{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:4px;min-width:0;max-width:100%}.bt-pills .chip,.btf-cats .chip{flex:0 0 auto;white-space:nowrap}'
  '.btf-lbl{font-size:13px;color:var(--muted);margin:0}.btf-st{font-size:14px;color:var(--muted);margin:4px 0 0}.bt-empty{display:none;padding:28px 12px;text-align:center;border:1px dashed var(--line);border-radius:12px;margin:16px 0}.bt-empty p{margin:0 0 12px}'
