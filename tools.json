@@ -877,7 +877,8 @@
     "added": "2026-10-14",
     "source": "original",
     "seed": true,
-    "status_note": "Archived: the GitHub repository is read-only and the project is no longer maintained."
+    "status_note": "Archived: the GitHub repository is read-only and the project is no longer maintained.",
+    "repo_archived": true
   },
   {
     "name": "Windsurf",
@@ -1955,7 +1956,8 @@
     "added": "2026-10-14",
     "source": "original",
     "seed": true,
-    "status_note": "Archived: the GitHub repository is read-only and the project is no longer maintained."
+    "status_note": "Archived: the GitHub repository is read-only and the project is no longer maintained.",
+    "repo_archived": true
   },
   {
     "name": "Model Context Protocol",
@@ -40744,7 +40746,9 @@
     "added": "2026-10-21",
     "source": "Submission",
     "maker_submitted": true,
-    "submitted": "2026-10-21"
+    "submitted": "2026-10-21",
+    "repo_archived": true,
+    "status_note": "The GitHub repository is archived and the current Sandbox0 runtime is now closed source. The hosted service at sandbox0.ai is still live."
   },
   {
     "name": "OpenKnowledge",
