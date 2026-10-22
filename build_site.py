@@ -236,10 +236,13 @@ build_openapi.run()  # /openapi.json + /.well-known/openapi.json from the real a
 build_links.run(t)
 import build_seo; build_seo.run(t)
 import build_seo_new; build_seo_new.run(t)  # keyword-targeted titles/descriptions for new pages (Oct 21 2026)
+import build_ci; build_ci.home(t)  # MCP line, og/twitter desc, free-listing comparison (Oct 22 2026); after build_seo_new, which rewrites the homepage about block
 import build_fresh; build_fresh.run(t)  # Updated dates, dateModified, quick comparison tables (Oct 18 2026)
+import build_aeo; build_aeo.run(t)  # quick answer + ranked table + verified date on best/mcp/s pages (Oct 22 2026)
 import build_listlogos; build_listlogos.run(t)  # logos next to tool names in tables and inline tool lists (Oct 18 2026)
 import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
 build_logocheck.listings_gate()  # stop the build if any tool link in a listing lacks its logo (Oct 18 2026)
+import build_lighten; build_lighten.run(t)  # lighter leaderboard, writing-code and mcp-servers pages (Oct 22 2026)
 import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 if _SP is not None: open("sponsor.html","wb").write(_SP)  # keep the hidden sponsor page untouched

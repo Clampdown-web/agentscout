@@ -64,6 +64,7 @@ def svg(n):
             f'<circle cx="24" cy="25" r="9" fill="none" stroke="#111111" stroke-width="3"/><path d="M31 32l7 7" stroke="#111111" stroke-width="3.2" stroke-linecap="round"/>'
             f'<text x="46" y="24" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#111111">{e(txt)}</text>'
             f'<text x="46" y="40" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#5b5b66">{e(sub)}</text></svg>')
+LB_SHOW_COUNT=20  # hide the "N tools rated" count until at least this many tools have ratings (owner-approved Oct 22 2026)
 def pages(t):
     J=load("reviews.json",{}); D=J.get("tools",{}) if isinstance(J,dict) else {}; upd=J.get("updated","") if isinstance(J,dict) else ""
     bs={x["slug"]:x for x in t}; R={k:v for k,v in D.items() if k in bs and v.get("count")}
@@ -166,7 +167,7 @@ def pages(t):
     title="AI Agent Tools Leaderboard: Top 100 · AgentScout"  # owner-approved Oct 21 2026
     desc=f"The top 100 AI agent tools, ranked by real visitor ratings, reviews and GitHub stars. Filter by category, free or open source, and rate the tools you use."[:160]
     body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Leaderboard</p><div class="lb"><h1>AI Agent Tools Leaderboard: Top&nbsp;{TOPN}</h1>'
-          f'<p>Rankings from real visitor ratings and reviews on AgentScout, plus GitHub stars for open-source tools. No paid placements. {nrated} tool{"s" if nrated!=1 else ""} rated and {nrev} written review{"s" if nrev!=1 else ""} so far{f" (updated {when})" if when else ""}. '
+          f'<p>Rankings from real visitor ratings and reviews on AgentScout, plus GitHub stars for open-source tools. No paid placements. {(f"{nrated} tool" + ("s" if nrated!=1 else "") + f" rated and {nrev} written review" + ("s" if nrev!=1 else "") + " so far" + (f" (updated {when})" if when else "") + ". ") if nrated>=LB_SHOW_COUNT else "Visitor ratings are just getting started. "}'
           f'Used a tool? Tap <b>Rate</b> next to it. Makers: <a href="badges.html">get your “Ranked on AgentScout” badge</a>.</p>'
           f'<div class="lbtabs" role="tablist" aria-label="Leaderboard rankings" data-pagefind-ignore>{tb}</div>{ctl}<div data-pagefind-ignore>{pn}</div>'
           f'<p class="muted" style="font-size:13px;margin-top:20px">Ratings come from site visitors and are not verified purchases. One rating per tool per visitor; written reviews are checked before they appear. <a href="../privacy.html#reviews">How reviews work</a></p></div>{css}{js}')

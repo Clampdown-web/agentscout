@@ -1,6 +1,6 @@
 /* Category page filters + sorting (Oct 21 2026). Works on the static cards (data-p pricing class, data-o open source, data-a added, data-g GitHub stars); state lives in URL params price, os, sort. */
 (function(){var G=document.getElementById("cgrid"),B=document.getElementById("cfilters");if(!G||!B)return;
-var $=function(i){return document.getElementById(i)},C=[].slice.call(G.children),RV={},T=C.length;C.forEach(function(c,i){c._i=i});
+var $=function(i){return document.getElementById(i)},C=[].slice.call(G.children),RV={},T=+(G.dataset.total||0)||C.length;C.forEach(function(c,i){c._i=i});
 var bay=function(r){return r&&r.count?(r.avg*r.count+12)/(r.count+3):0};
 function nw(a,b){return (b.dataset.a||"").localeCompare(a.dataset.a||"")||a._i-b._i}
 function run(){var pr=$("fprice").value,os=$("fos").checked,s=$("fsort").value,pk=pr==="freeplan"?["free","freemium"]:pr?[pr]:null,n=0;
