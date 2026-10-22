@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T03:45:53Z",
- "updated": "2026-10-22T03:45:53Z",
+ "generated": "2026-10-22T03:54:10Z",
+ "updated": "2026-10-22T03:54:10Z",
  "last_checked": "2026-10-21",
- "count": 1651,
+ "count": 1652,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -69812,6 +69812,50 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/metix-ai.png",
    "page": "https://agentscouthq.com/tools/metix-ai.html"
+  },
+  {
+   "name": "GMapsScraper.AI",
+   "slug": "gmapsscraper-ai",
+   "url": "https://gmapsscraper.ai/",
+   "website": "https://gmapsscraper.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "GMapsScraper.AI is an AI-powered Google Maps scraper for lead generation: enter keywords and it pulls business listings with names, addresses, phone numbers, emails, social links, ratings, reviews, photos and opening hours, exported to CSV or JSON. It also offers a REST API and a remote MCP server (/api/mcp) so AI agents in Claude, Cursor or OpenAI can run Google Maps searches directly.",
+   "key_features": [
+    "Freemium: free plan with 1,000 credits per month (1 credit = 1 business), then Starter $29/month (50,000 credits), Pro $99/month (300,000) and Business $199/month (1,000,000), plus on-demand credits from $15 per 15,000; prices as listed on its site",
+    "Active",
+    "Sales & support",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium: free plan with 1,000 credits per month (1 credit = 1 business), then Starter $29/month (50,000 credits), Pro $99/month (300,000) and Business $199/month (1,000,000), plus on-demand credits from $15 per 15,000; prices as listed on its site",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gmapsscraper-ai.png",
+   "page": "https://agentscouthq.com/tools/gmapsscraper-ai.html"
   }
  ]
 }
