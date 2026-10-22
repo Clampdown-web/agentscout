@@ -42608,5 +42608,91 @@
     "socials": [
       "https://discord.gg/VUNHpjTDQ"
     ]
+  },
+  {
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "GitHub",
+    "category": "agent infra",
+    "name": "Inngest",
+    "url": "https://www.inngest.com/",
+    "website": "https://www.inngest.com/",
+    "github": "https://github.com/inngest/inngest",
+    "repo": "inngest/inngest",
+    "github_stars": 5970,
+    "slug": "inngest",
+    "logo": "assets/logos/inngest.png",
+    "description": "Inngest is a durable workflow orchestration platform for running stateful step functions and AI workflows on serverless, servers or the edge. You write functions in TypeScript, Python or Go with automatic retries, queues, throttling and human-in-the-loop waits, and its AgentKit and AI inference steps let you build durable, long-running AI agents with tracing and evals. The server is source-available (SSPL, converting to Apache 2.0 later) and can be self-hosted, or you can use Inngest Cloud.",
+    "pricing": "Freemium",
+    "pricing_detail": "Inngest Cloud: Free $0/mo (50k executions, 5 seats), Pro $99/mo, Business $499/mo, Enterprise custom (inngest.com/pricing, checked Oct 22 2026). Server is source-available (SSPL with delayed Apache 2.0) and self-hostable.",
+    "open_source": false,
+    "license": "SSPL-1.0 (delayed Apache 2.0)",
+    "use_cases": [
+      "automate workflows",
+      "monitor & evaluate agents"
+    ],
+    "id": 1691
+  },
+  {
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "GitHub",
+    "category": "agent infra",
+    "name": "Windmill",
+    "url": "https://www.windmill.dev/",
+    "website": "https://www.windmill.dev/",
+    "github": "https://github.com/windmill-labs/windmill",
+    "repo": "windmill-labs/windmill",
+    "github_stars": 18247,
+    "slug": "windmill",
+    "logo": "assets/logos/windmill.png",
+    "description": "Windmill is an open-source developer platform that turns scripts in Python, TypeScript, Go, SQL and other languages into webhooks, workflows and internal UIs. Its flows include AI agent steps that call an LLM with your scripts as tools, support nested agents and MCP, and run on a fast self-hostable workflow engine. It positions itself as an open-source alternative to Retool and Temporal.",
+    "pricing": "Open source + cloud",
+    "pricing_detail": "Free and open-source Community Edition from $0/mo (self-hosted, unlimited executions, up to 10 SSO users); Enterprise from $120/mo; cloud and self-hosted paid plans (windmill.dev/pricing, checked Oct 22 2026). Core is AGPLv3, some enterprise features proprietary.",
+    "open_source": true,
+    "license": "AGPL-3.0 (enterprise features proprietary)",
+    "use_cases": [
+      "voice & phone calls",
+      "automate workflows",
+      "connect tools via MCP"
+    ],
+    "id": 1692
+  },
+  {
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "GitHub",
+    "category": "agent infra",
+    "name": "Kestra",
+    "url": "https://kestra.io/",
+    "website": "https://kestra.io/",
+    "github": "https://github.com/kestra-io/kestra",
+    "repo": "kestra-io/kestra",
+    "github_stars": 29948,
+    "slug": "kestra",
+    "logo": "assets/logos/kestra.png",
+    "description": "Kestra is an open-source, event-driven orchestration and scheduling platform where workflows are declared in YAML or built in a no-code editor. It includes an AI Agent task that gives flows an LLM with memory and tools, supports nested agents and the Agent-to-Agent (A2A) protocol, and can expose any flow as a tool to external AI agents through its MCP server. It runs in the cloud, on-prem or air-gapped and is Apache 2.0 licensed.",
+    "pricing": "Open source + enterprise",
+    "pricing_detail": "Open Source edition is free (Apache 2.0); Enterprise Edition and Kestra Cloud are annual subscriptions priced via sales, no public price (kestra.io/pricing, checked Oct 22 2026).",
+    "open_source": true,
+    "license": "Apache-2.0",
+    "use_cases": [
+      "write code",
+      "automate workflows",
+      "build apps without code"
+    ],
+    "id": 1693
   }
 ]

@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,671 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,674 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -31,7 +31,7 @@ Contact: support@agentscouthq.com
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 89 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 84 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 76 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 68 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 71 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 55 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 51 tools
@@ -98,8 +98,11 @@ Contact: support@agentscouthq.com
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-21 to 2026-10-22): 71
+- Tools added in the last 2 days (2026-10-21 to 2026-10-22): 74
 
+- [Kestra](https://agentscouthq.com/tools/kestra.html) (added 2026-10-22): Kestra is an open-source, event-driven orchestration and scheduling platform where workflows are declared in YAML or built in a no-code editor. It includes an AI Agent task that gives flows an LLM with memory and tools, supports nested agents and the Agent-to-Agent (A2A) protocol, and can expose any flow as a tool to external AI agents through its MCP server. It runs in the cloud, on-prem or air-gapped and is Apache 2.0 licensed.
+- [Windmill](https://agentscouthq.com/tools/windmill.html) (added 2026-10-22): Windmill is an open-source developer platform that turns scripts in Python, TypeScript, Go, SQL and other languages into webhooks, workflows and internal UIs. Its flows include AI agent steps that call an LLM with your scripts as tools, support nested agents and MCP, and run on a fast self-hostable workflow engine. It positions itself as an open-source alternative to Retool and Temporal.
+- [Inngest](https://agentscouthq.com/tools/inngest.html) (added 2026-10-22): Inngest is a durable workflow orchestration platform for running stateful step functions and AI workflows on serverless, servers or the edge. You write functions in TypeScript, Python or Go with automatic retries, queues, throttling and human-in-the-loop waits, and its AgentKit and AI inference steps let you build durable, long-running AI agents with tracing and evals. The server is source-available (SSPL, converting to Apache 2.0 later) and can be self-hosted, or you can use Inngest Cloud.
 - [Cayu](https://agentscouthq.com/tools/cayu.html) (added 2026-10-22): Cayu is an open-source Python framework for building and running domain-specific, long-horizon agents on a durable runtime. Sessions survive restarts and redeploys from SQLite or Postgres stores, tool policies can require human approval before side effects, spend caps are checked before each model call, and timers, background tasks, subagents and forks cover longer multi-agent work. It is Apache 2.0 licensed.
 - [Diagrid Catalyst MCP](https://agentscouthq.com/tools/diagrid-catalyst-mcp.html) (added 2026-10-22): The Diagrid Catalyst MCP server lets AI coding agents build and operate Dapr Workflows and Dapr durable agents on Diagrid Catalyst, the managed platform for long-running, fault-tolerant agent and workflow apps. Through it an agent can create and inspect workflows, check running instances and manage Catalyst resources from your MCP client. It is the official server from Diagrid, the company behind Dapr, and needs a Catalyst sign-in.
 - [FableCut](https://agentscouthq.com/tools/fablecut.html) (added 2026-10-22): FableCut is a Premiere-style video editor that runs entirely in the browser and exposes the whole timeline as one JSON document, covering media, clips, tracks, effects, keyframes and transitions. You can edit by hand or let an AI agent such as Claude Code or Claude Desktop cut the video over MCP or REST while the timeline updates live. It has no npm dependencies, starts with one node command and is MIT licensed.
@@ -557,6 +560,7 @@ Contact: support@agentscouthq.com
 - [AI video post-production tools by stage (2026)](https://agentscouthq.com/tasks/video-post-production.html)
 - [Best AI agents for scraping websites (2026)](https://agentscouthq.com/tasks/web-scraping.html)
 - [Memory tools for coding agents](https://agentscouthq.com/tasks/writing-code-agent-memory.html)
+- [IDE and editor agents for coding agents](https://agentscouthq.com/tasks/writing-code-ide-agents.html)
 - [Rules, skills and config tools for coding agents](https://agentscouthq.com/tasks/writing-code-rules-config.html)
 - [Sandboxes and secure execution tools for coding agents](https://agentscouthq.com/tasks/writing-code-sandboxes.html)
 - [Token usage and cost tracking tools for coding agents](https://agentscouthq.com/tasks/writing-code-token-costs.html)

@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T17:08:42Z",
- "updated": "2026-10-22T17:08:42Z",
+ "generated": "2026-10-22T18:03:30Z",
+ "updated": "2026-10-22T18:03:30Z",
  "last_checked": "2026-10-22",
- "count": 1671,
+ "count": 1674,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -70680,6 +70680,144 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cayu.png",
    "page": "https://agentscouthq.com/tools/cayu.html"
+  },
+  {
+   "name": "Inngest",
+   "slug": "inngest",
+   "url": "https://www.inngest.com/",
+   "website": "https://www.inngest.com/",
+   "github": "https://github.com/inngest/inngest",
+   "category": "agent infra",
+   "description": "Inngest is a durable workflow orchestration platform for running stateful step functions and AI workflows on serverless, servers or the edge. You write functions in TypeScript, Python or Go with automatic retries, queues, throttling and human-in-the-loop waits, and its AgentKit and AI inference steps let you build durable, long-running AI agents with tracing and evals. The server is source-available (SSPL, converting to Apache 2.0 later) and can be self-hosted, or you can use Inngest Cloud.",
+   "key_features": [
+    "Inngest Cloud: Free $0/mo (50k executions, 5 seats), Pro $99/mo, Business $499/mo, Enterprise custom (inngest.com/pricing, checked Oct 22 2026). Server is source-available (SSPL with delayed Apache 2.0) and self-hostable.",
+    "Mature",
+    "5970 GitHub stars",
+    "Automate workflows",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Inngest Cloud: Free $0/mo (50k executions, 5 seats), Pro $99/mo, Business $499/mo, Enterprise custom (inngest.com/pricing, checked Oct 22 2026). Server is source-available (SSPL with delayed Apache 2.0) and self-hostable.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "inngest/inngest",
+   "github_stars": 5970,
+   "open_source": false,
+   "license": "SSPL",
+   "tags": [
+    "automate workflows",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/inngest.png",
+   "page": "https://agentscouthq.com/tools/inngest.html"
+  },
+  {
+   "name": "Windmill",
+   "slug": "windmill",
+   "url": "https://www.windmill.dev/",
+   "website": "https://www.windmill.dev/",
+   "github": "https://github.com/windmill-labs/windmill",
+   "category": "agent infra",
+   "description": "Windmill is an open-source developer platform that turns scripts in Python, TypeScript, Go, SQL and other languages into webhooks, workflows and internal UIs. Its flows include AI agent steps that call an LLM with your scripts as tools, support nested agents and MCP, and run on a fast self-hostable workflow engine. It positions itself as an open-source alternative to Retool and Temporal.",
+   "key_features": [
+    "Free and open-source Community Edition from $0/mo (self-hosted, unlimited executions, up to 10 SSO users); Enterprise from $120/mo; cloud and self-hosted paid plans (windmill.dev/pricing, checked Oct 22 2026). Core is AGPLv3, some enterprise features proprietary.",
+    "Mature",
+    "18247 GitHub stars",
+    "Voice & phone calls",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open-source Community Edition from $0/mo (self-hosted, unlimited executions, up to 10 SSO users); Enterprise from $120/mo; cloud and self-hosted paid plans (windmill.dev/pricing, checked Oct 22 2026). Core is AGPLv3, some enterprise features proprietary.",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "windmill-labs/windmill",
+   "github_stars": 18247,
+   "open_source": true,
+   "license": "AGPLv3",
+   "tags": [
+    "voice & phone calls",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/windmill.png",
+   "page": "https://agentscouthq.com/tools/windmill.html"
+  },
+  {
+   "name": "Kestra",
+   "slug": "kestra",
+   "url": "https://kestra.io/",
+   "website": "https://kestra.io/",
+   "github": "https://github.com/kestra-io/kestra",
+   "category": "agent infra",
+   "description": "Kestra is an open-source, event-driven orchestration and scheduling platform where workflows are declared in YAML or built in a no-code editor. It includes an AI Agent task that gives flows an LLM with memory and tools, supports nested agents and the Agent-to-Agent (A2A) protocol, and can expose any flow as a tool to external AI agents through its MCP server. It runs in the cloud, on-prem or air-gapped and is Apache 2.0 licensed.",
+   "key_features": [
+    "Open Source edition is free (Apache 2.0); Enterprise Edition and Kestra Cloud are annual subscriptions priced via sales, no public price (kestra.io/pricing, checked Oct 22 2026).",
+    "Mature",
+    "29948 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Open Source edition is free (Apache 2.0); Enterprise Edition and Kestra Cloud are annual subscriptions priced via sales, no public price (kestra.io/pricing, checked Oct 22 2026).",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "kestra-io/kestra",
+   "github_stars": 29948,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kestra.png",
+   "page": "https://agentscouthq.com/tools/kestra.html"
   }
  ]
 }
