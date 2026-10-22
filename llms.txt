@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,629 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated directory of 1,649 AI agent tools for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
 
 Site: https://agentscouthq.com/
 X: https://x.com/AgentScoutHQ
@@ -27,9 +27,9 @@ Contact: support@agentscouthq.com
 - [coding](https://agentscouthq.com/categories/coding.html): 184 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 133 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 88 tools
+- [crypto](https://agentscouthq.com/categories/crypto.html): 84 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 75 tools
 - [agent infra](https://agentscouthq.com/categories/agent-infra.html): 66 tools
-- [crypto](https://agentscouthq.com/categories/crypto.html): 64 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 60 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 54 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 51 tools
@@ -93,8 +93,28 @@ Contact: support@agentscouthq.com
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-20 to 2026-10-21): 157
+- Tools added in the last 2 days (2026-10-20 to 2026-10-21): 177
 
+- [Moralis MCP](https://agentscouthq.com/tools/moralis-mcp.html) (added 2026-10-21): Moralis's MCP server that gives agents wallet, token, NFT and DeFi data across EVM chains and Solana in plain language.
+- [Blockaid](https://agentscouthq.com/tools/blockaid.html) (added 2026-10-21): Onchain security platform used by wallets and exchanges: transaction simulation and scanning that blocks malicious dApps, tokens and signatures before users or agents sign.
+- [Messari Copilot](https://agentscouthq.com/tools/messari-copilot.html) (added 2026-10-21): Messari's AI research copilot for crypto, answering questions from its research, news and market data, with an API and hosted MCP server for agents.
+- [The Graph Token API MCP](https://agentscouthq.com/tools/the-graph-token-api-mcp.html) (added 2026-10-21): The Graph's Token API MCP server that lets agents query token metadata, balances, transfers and holder stats in plain language.
+- [Bitquery MCP](https://agentscouthq.com/tools/bitquery-mcp.html) (added 2026-10-21): Bitquery's hosted, read-only MCP server with 300+ tools for DEX trades, candles, wallet history and money-flow tracing across 40+ chains.
+- [Forta Firewall](https://agentscouthq.com/tools/forta-firewall.html) (added 2026-10-21): Forta's pre-execution firewall that screens transactions for exploits and malicious activity and can block them before they settle onchain.
+- [Alby MCP](https://agentscouthq.com/tools/alby-mcp.html) (added 2026-10-21): Open-source MCP server that connects a Bitcoin Lightning wallet to your agent via Nostr Wallet Connect, so it can pay and create invoices.
+- [Coinbase Agentic Wallet MCP](https://agentscouthq.com/tools/coinbase-agentic-wallet-mcp.html) (added 2026-10-21): Coinbase's MCP server and wallet app (formerly Payments MCP) that let agents hold USDC and pay for x402 services on Base, Polygon and Solana within spend limits you set.
+- [thirdweb Nebula](https://agentscouthq.com/tools/thirdweb-nebula.html) (added 2026-10-21): thirdweb's AI for onchain work: agents read live chain data, analyze transactions and can buy, swap and send crypto from connected wallets.
+- [Santiment](https://agentscouthq.com/tools/santiment.html) (added 2026-10-21): Crypto market intelligence on on-chain, social and development activity, with an AI assistant and API that agents can use for research.
+- [Helius MCP](https://agentscouthq.com/tools/helius-mcp.html) (added 2026-10-21): Helius's MCP server for Solana: agents read accounts, transactions, tokens and NFTs through Helius RPC and APIs.
+- [GoldRush MCP](https://agentscouthq.com/tools/goldrush-mcp.html) (added 2026-10-21): Covalent's GoldRush multichain data API with an MCP server, giving agents wallet balances, transactions, token and NFT data across 100+ chains.
+- [Dune MCP](https://agentscouthq.com/tools/dune-mcp.html) (added 2026-10-21): Dune's official remote MCP server: agents search on-chain datasets, write and run DuneSQL, fetch results and build charts across 100+ chains.
+- [De.Fi Scanner](https://agentscouthq.com/tools/de-fi-scanner.html) (added 2026-10-21): Smart-contract and token scanner that flags honeypots, owner powers and other contract risks, with a credit-based API for apps and agents.
+- [ScamSniffer](https://agentscouthq.com/tools/scamsniffer.html) (added 2026-10-21): Real-time intelligence on phishing sites, wallet drainers and scammer addresses: a free browser extension plus a blocklist API teams and agents can query.
+- [Webacy](https://agentscouthq.com/tools/webacy.html) (added 2026-10-21): Risk ratings API and MCP server for wallets, tokens, vaults and transactions, so agents can screen addresses and check risk before moving funds.
+- [Antalpha Wallet Guard](https://agentscouthq.com/tools/antalpha-wallet-guard.html) (added 2026-10-21): Open-source agent skill that scans EVM wallets for dangerous approvals, malicious addresses, risky tokens and NFTs, rug pulls and phishing sites, powered by GoPlus data.
+- [CoinGraph Wallet Guard](https://agentscouthq.com/tools/coingraph-wallet-guard.html) (added 2026-10-21): Checks a swap or send before you sign it: token contract risks, price impact, sanctioned or look-alike recipients. Returns SAFE, WARN or STOP via API or MCP.
+- [Tanod](https://agentscouthq.com/tools/tanod.html) (added 2026-10-21): Hosted security MCP and API for agents: pre-transaction checks for token honeypots, risky contracts, phishing URLs, OFAC sanctions, address poisoning, live approvals and wallet drains.
+- [GoPlus Security MCP](https://agentscouthq.com/tools/goplus-security-mcp.html) (added 2026-10-21): GoPlus's MCP server that lets agents check token, address, NFT, approval and phishing-site risk before they act, using the GoPlus security API.
 - [Guaca](https://agentscouthq.com/tools/guaca.html) (added 2026-10-21): Desktop workspace inspired by Grok Bot where AI agents collaborate, write code and use tools; runs locally or on your own server, with shared conversations, persistent memory and MCP plugins. AGPL-3.0.
 - [Akeru Bot](https://agentscouthq.com/tools/akeru-bot.html) (added 2026-10-21): Open-source alternative to Grok Bot for named AI teammates: local-first desktop, web and mobile clients where each bot has its own tools, instructions and memory. MIT-licensed independent fork of T3 Code.
 - [Fireply AI](https://agentscouthq.com/tools/fireply-ai.html) (added 2026-10-21): Fireply is an AI agent for growing on X (Twitter): it finds relevant conversations in your niche and writes and posts context-aware replies in your own voice, so you can grow followers, reach and sales without replying by hand. Sign-in uses X OAuth, so it never sees your password, and it also offers free X tools like an account analyzer and advanced search.

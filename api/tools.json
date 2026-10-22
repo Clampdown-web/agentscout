@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-22T02:22:24Z",
- "updated": "2026-10-22T02:22:24Z",
+ "generated": "2026-10-22T02:41:00Z",
+ "updated": "2026-10-22T02:41:00Z",
  "last_checked": "2026-10-21",
- "count": 1629,
+ "count": 1649,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -68914,6 +68914,823 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/guaca.png",
    "page": "https://agentscouthq.com/tools/guaca.html"
+  },
+  {
+   "name": "GoPlus Security MCP",
+   "slug": "goplus-security-mcp",
+   "url": "https://gopluslabs.io/en",
+   "website": "https://gopluslabs.io/en",
+   "github": "https://github.com/GoPlusSecurity/goplus-mcp",
+   "category": "crypto",
+   "description": "GoPlus's MCP server that lets agents check token, address, NFT, approval and phishing-site risk before they act, using the GoPlus security API.",
+   "key_features": [
+    "Open source (Apache-2.0); GoPlus API has a free public tier",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source (Apache-2.0); GoPlus API has a free public tier",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "GoPlusSecurity/goplus-mcp",
+   "github_stars": null,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/goplus-security-mcp.png",
+   "page": "https://agentscouthq.com/tools/goplus-security-mcp.html"
+  },
+  {
+   "name": "Tanod",
+   "slug": "tanod",
+   "url": "https://tanod.dev",
+   "website": "https://tanod.dev",
+   "github": "",
+   "category": "crypto",
+   "description": "Hosted security MCP and API for agents: pre-transaction checks for token honeypots, risky contracts, phishing URLs, OFAC sanctions, address poisoning, live approvals and wallet drains.",
+   "key_features": [
+    "Pay per call via x402 (from $0.001); 10 free chain reads a day",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Pay per call via x402 (from $0.001); 10 free chain reads a day",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tanod.png",
+   "page": "https://agentscouthq.com/tools/tanod.html"
+  },
+  {
+   "name": "CoinGraph Wallet Guard",
+   "slug": "coingraph-wallet-guard",
+   "url": "https://coingraph.ai/agents/wallet-guard",
+   "website": "https://coingraph.ai/agents/wallet-guard",
+   "github": "",
+   "category": "crypto",
+   "description": "Checks a swap or send before you sign it: token contract risks, price impact, sanctioned or look-alike recipients. Returns SAFE, WARN or STOP via API or MCP.",
+   "key_features": [
+    "1,000 free credits a month with an API key; MCP free during preview; x402 per call",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "1,000 free credits a month with an API key; MCP free during preview; x402 per call",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coingraph-wallet-guard.png",
+   "page": "https://agentscouthq.com/tools/coingraph-wallet-guard.html"
+  },
+  {
+   "name": "Antalpha Wallet Guard",
+   "slug": "antalpha-wallet-guard",
+   "url": "https://www.antalpha.com/en-us/documentation/mcp/",
+   "website": "https://www.antalpha.com/en-us/documentation/mcp/",
+   "github": "https://github.com/AntalphaAI/wallet-guard",
+   "category": "crypto",
+   "description": "Open-source agent skill that scans EVM wallets for dangerous approvals, malicious addresses, risky tokens and NFTs, rug pulls and phishing sites, powered by GoPlus data.",
+   "key_features": [
+    "Open-source agent skill (MIT per README) on Antalpha's hosted MCP",
+    "Active"
+   ],
+   "pricing": "Open-source agent skill (MIT per README) on Antalpha's hosted MCP",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "AntalphaAI/wallet-guard",
+   "github_stars": null,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/antalpha-wallet-guard.png",
+   "page": "https://agentscouthq.com/tools/antalpha-wallet-guard.html"
+  },
+  {
+   "name": "Webacy",
+   "slug": "webacy",
+   "url": "https://www.webacy.com",
+   "website": "https://www.webacy.com",
+   "github": "",
+   "category": "crypto",
+   "description": "Risk ratings API and MCP server for wallets, tokens, vaults and transactions, so agents can screen addresses and check risk before moving funds.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/webacy.png",
+   "page": "https://agentscouthq.com/tools/webacy.html"
+  },
+  {
+   "name": "ScamSniffer",
+   "slug": "scamsniffer",
+   "url": "https://www.scamsniffer.io",
+   "website": "https://www.scamsniffer.io",
+   "github": "",
+   "category": "crypto",
+   "description": "Real-time intelligence on phishing sites, wallet drainers and scammer addresses: a free browser extension plus a blocklist API teams and agents can query.",
+   "key_features": [
+    "Free browser extension; blocklist API plans from $84/mo",
+    "Active",
+    "Automate the browser"
+   ],
+   "pricing": "Free browser extension; blocklist API plans from $84/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/scamsniffer.png",
+   "page": "https://agentscouthq.com/tools/scamsniffer.html"
+  },
+  {
+   "name": "De.Fi Scanner",
+   "slug": "de-fi-scanner",
+   "url": "https://de.fi/scanner",
+   "website": "https://de.fi/scanner",
+   "github": "",
+   "category": "crypto",
+   "description": "Smart-contract and token scanner that flags honeypots, owner powers and other contract risks, with a credit-based API for apps and agents.",
+   "key_features": [
+    "Free web scanner; API uses paid credits",
+    "Active",
+    "Automate workflows",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Free web scanner; API uses paid credits",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/de-fi-scanner.png",
+   "page": "https://agentscouthq.com/tools/de-fi-scanner.html"
+  },
+  {
+   "name": "Dune MCP",
+   "slug": "dune-mcp",
+   "url": "https://docs.dune.com/docs/agents/mcp",
+   "website": "https://docs.dune.com/docs/agents/mcp",
+   "github": "",
+   "category": "crypto",
+   "description": "Dune's official remote MCP server: agents search on-chain datasets, write and run DuneSQL, fetch results and build charts across 100+ chains.",
+   "key_features": [
+    "Free plan; paid plans add credits (14-day trial)",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free plan; paid plans add credits (14-day trial)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dune-mcp.png",
+   "page": "https://agentscouthq.com/tools/dune-mcp.html"
+  },
+  {
+   "name": "GoldRush MCP",
+   "slug": "goldrush-mcp",
+   "url": "https://goldrush.dev",
+   "website": "https://goldrush.dev",
+   "github": "",
+   "category": "crypto",
+   "description": "Covalent's GoldRush multichain data API with an MCP server, giving agents wallet balances, transactions, token and NFT data across 100+ chains.",
+   "key_features": [
+    "14-day free trial, then from $10/mo; x402 pay per request",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "14-day free trial, then from $10/mo; x402 pay per request",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/goldrush-mcp.png",
+   "page": "https://agentscouthq.com/tools/goldrush-mcp.html"
+  },
+  {
+   "name": "Helius MCP",
+   "slug": "helius-mcp",
+   "url": "https://www.helius.dev/docs/agents/mcp",
+   "website": "https://www.helius.dev/docs/agents/mcp",
+   "github": "",
+   "category": "crypto",
+   "description": "Helius's MCP server for Solana: agents read accounts, transactions, tokens and NFTs through Helius RPC and APIs.",
+   "key_features": [
+    "Free plan; paid plans on site",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Free plan; paid plans on site",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/helius-mcp.png",
+   "page": "https://agentscouthq.com/tools/helius-mcp.html"
+  },
+  {
+   "name": "Santiment",
+   "slug": "santiment",
+   "url": "https://santiment.net",
+   "website": "https://santiment.net",
+   "github": "",
+   "category": "crypto",
+   "description": "Crypto market intelligence on on-chain, social and development activity, with an AI assistant and API that agents can use for research.",
+   "key_features": [
+    "Free plan; Sanbase Pro from $49/mo",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "Free plan; Sanbase Pro from $49/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/santiment.png",
+   "page": "https://agentscouthq.com/tools/santiment.html"
+  },
+  {
+   "name": "thirdweb Nebula",
+   "slug": "thirdweb-nebula",
+   "url": "https://thirdweb.com/ai",
+   "website": "https://thirdweb.com/ai",
+   "github": "",
+   "category": "crypto",
+   "description": "thirdweb's AI for onchain work: agents read live chain data, analyze transactions and can buy, swap and send crypto from connected wallets.",
+   "key_features": [
+    "Free tier; usage-based beyond",
+    "Active"
+   ],
+   "pricing": "Free tier; usage-based beyond",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/thirdweb-nebula.png",
+   "page": "https://agentscouthq.com/tools/thirdweb-nebula.html"
+  },
+  {
+   "name": "Coinbase Agentic Wallet MCP",
+   "slug": "coinbase-agentic-wallet-mcp",
+   "url": "https://docs.cdp.coinbase.com/agentic-wallet/mcp/welcome",
+   "website": "https://docs.cdp.coinbase.com/agentic-wallet/mcp/welcome",
+   "github": "https://github.com/coinbase/payments-mcp",
+   "category": "crypto",
+   "description": "Coinbase's MCP server and wallet app (formerly Payments MCP) that let agents hold USDC and pay for x402 services on Base, Polygon and Solana within spend limits you set.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "coinbase/payments-mcp",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coinbase-agentic-wallet-mcp.png",
+   "page": "https://agentscouthq.com/tools/coinbase-agentic-wallet-mcp.html"
+  },
+  {
+   "name": "Alby MCP",
+   "slug": "alby-mcp",
+   "url": "https://github.com/getAlby/mcp",
+   "website": "",
+   "github": "https://github.com/getAlby/mcp",
+   "category": "crypto",
+   "description": "Open-source MCP server that connects a Bitcoin Lightning wallet to your agent via Nostr Wallet Connect, so it can pay and create invoices.",
+   "key_features": [
+    "Open source (Apache-2.0)",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source (Apache-2.0)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "getAlby/mcp",
+   "github_stars": null,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/alby-mcp.png",
+   "page": "https://agentscouthq.com/tools/alby-mcp.html"
+  },
+  {
+   "name": "Forta Firewall",
+   "slug": "forta-firewall",
+   "url": "https://www.forta.org/firewall",
+   "website": "https://www.forta.org/firewall",
+   "github": "",
+   "category": "crypto",
+   "description": "Forta's pre-execution firewall that screens transactions for exploits and malicious activity and can block them before they settle onchain.",
+   "key_features": [
+    "See site",
+    "Active"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/forta-firewall.png",
+   "page": "https://agentscouthq.com/tools/forta-firewall.html"
+  },
+  {
+   "name": "Bitquery MCP",
+   "slug": "bitquery-mcp",
+   "url": "https://bitquery.io/products/bitquery-mcp-server",
+   "website": "https://bitquery.io/products/bitquery-mcp-server",
+   "github": "",
+   "category": "crypto",
+   "description": "Bitquery's hosted, read-only MCP server with 300+ tools for DEX trades, candles, wallet history and money-flow tracing across 40+ chains.",
+   "key_features": [
+    "Free tier with a Bitquery account; metered on your plan",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Free tier with a Bitquery account; metered on your plan",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bitquery-mcp.png",
+   "page": "https://agentscouthq.com/tools/bitquery-mcp.html"
+  },
+  {
+   "name": "The Graph Token API MCP",
+   "slug": "the-graph-token-api-mcp",
+   "url": "https://thegraph.com/docs/en/ai-suite/token-api-mcp/introduction/",
+   "website": "https://thegraph.com/docs/en/ai-suite/token-api-mcp/introduction/",
+   "github": "https://github.com/graphprotocol/token-api",
+   "category": "crypto",
+   "description": "The Graph's Token API MCP server that lets agents query token metadata, balances, transfers and holder stats in plain language.",
+   "key_features": [
+    "Available on all tiers, including free",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Available on all tiers, including free",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "graphprotocol/token-api",
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/the-graph-token-api-mcp.png",
+   "page": "https://agentscouthq.com/tools/the-graph-token-api-mcp.html"
+  },
+  {
+   "name": "Messari Copilot",
+   "slug": "messari-copilot",
+   "url": "https://messari.io/ai",
+   "website": "https://messari.io/ai",
+   "github": "",
+   "category": "crypto",
+   "description": "Messari's AI research copilot for crypto, answering questions from its research, news and market data, with an API and hosted MCP server for agents.",
+   "key_features": [
+    "Enterprise plan; Copilot API also pay-per-request via x402",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Enterprise plan; Copilot API also pay-per-request via x402",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/messari-copilot.png",
+   "page": "https://agentscouthq.com/tools/messari-copilot.html"
+  },
+  {
+   "name": "Blockaid",
+   "slug": "blockaid",
+   "url": "https://blockaid.io",
+   "website": "https://blockaid.io",
+   "github": "",
+   "category": "crypto",
+   "description": "Onchain security platform used by wallets and exchanges: transaction simulation and scanning that blocks malicious dApps, tokens and signatures before users or agents sign.",
+   "key_features": [
+    "Enterprise",
+    "Active"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "crypto"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/blockaid.png",
+   "page": "https://agentscouthq.com/tools/blockaid.html"
+  },
+  {
+   "name": "Moralis MCP",
+   "slug": "moralis-mcp",
+   "url": "https://docs.moralis.com/mcp",
+   "website": "https://docs.moralis.com/mcp",
+   "github": "",
+   "category": "crypto",
+   "description": "Moralis's MCP server that gives agents wallet, token, NFT and DeFi data across EVM chains and Solana in plain language.",
+   "key_features": [
+    "Free plan; paid plans on site",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free plan; paid plans on site",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-21",
+   "added": "2026-10-21",
+   "source": "Web search",
+   "goals": [
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/moralis-mcp.png",
+   "page": "https://agentscouthq.com/tools/moralis-mcp.html"
   }
  ]
 }

@@ -2403,7 +2403,8 @@
     "github": "",
     "website": "https://metamask.io/agent-wallet",
     "added": "2026-10-15",
-    "source": "original"
+    "source": "original",
+    "moves_funds": true
   },
   {
     "name": "Self Agent Vault",
@@ -14802,7 +14803,8 @@
     "id": 573,
     "slug": "coinbase-agentkit",
     "logo": "assets/logos/coinbase-agentkit.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Solana Agent Kit",
@@ -14827,7 +14829,8 @@
     "id": 574,
     "slug": "solana-agent-kit",
     "logo": "assets/logos/solana-agent-kit.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Virtuals Protocol",
@@ -15023,7 +15026,8 @@
     "id": 582,
     "slug": "skyfire",
     "logo": "assets/logos/skyfire.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Crossmint for AI Agents",
@@ -15047,7 +15051,8 @@
     "id": 583,
     "slug": "crossmint-for-ai-agents",
     "logo": "assets/logos/crossmint-for-ai-agents.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Privy",
@@ -15119,7 +15124,8 @@
     "id": 586,
     "slug": "bankr",
     "logo": "assets/logos/bankr.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "HeyAnon",
@@ -15143,7 +15149,8 @@
     "id": 587,
     "slug": "heyanon",
     "logo": "assets/logos/heyanon.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Almanak",
@@ -15192,7 +15199,8 @@
     "id": 589,
     "slug": "giza",
     "logo": "assets/logos/giza.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Wayfinder",
@@ -15216,7 +15224,8 @@
     "id": 590,
     "slug": "wayfinder",
     "logo": "assets/logos/wayfinder.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Cod3x",
@@ -15241,7 +15250,8 @@
     "id": 591,
     "slug": "cod3x",
     "logo": "assets/logos/cod3x.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Questflow",
@@ -15361,7 +15371,8 @@
     "id": 596,
     "slug": "nansen-ai",
     "logo": "assets/logos/nansen-ai.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "ChainGPT",
@@ -15485,7 +15496,8 @@
     "id": 601,
     "slug": "evm-mcp-server",
     "logo": "assets/logos/evm-mcp-server.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "BICScan MCP",
@@ -15511,7 +15523,8 @@
     "slug": "bicscan-mcp",
     "logo": "assets/logos/bicscan-mcp.png",
     "seed": true,
-    "status_note": "No recent updates: the GitHub repository has had no commits since Mar 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance."
+    "status_note": "No recent updates: the GitHub repository has had no commits since Mar 2025 (checked Oct 18, 2026). It may still work, but expect little or no maintenance.",
+    "wallet_safety": true
   },
   {
     "name": "Almanax",
@@ -15609,7 +15622,8 @@
     "id": 606,
     "slug": "binance-agent-os",
     "logo": "assets/logos/binance-agent-os.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Hedera AI Studio",
@@ -15733,7 +15747,8 @@
     "id": 611,
     "slug": "chainaware",
     "logo": "assets/logos/chainaware.png",
-    "seed": true
+    "seed": true,
+    "wallet_safety": true
   },
   {
     "name": "Dataline",
@@ -15806,7 +15821,8 @@
     "id": 614,
     "slug": "fere-ai",
     "logo": "assets/logos/fere-ai.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "blai",
@@ -15830,7 +15846,8 @@
     "id": 615,
     "slug": "blai",
     "logo": "assets/logos/blai.png",
-    "seed": true
+    "seed": true,
+    "moves_funds": true
   },
   {
     "name": "Sharpe Labs",
@@ -18323,7 +18340,8 @@
     "github_stars": 5385,
     "id": 719,
     "slug": "sphere-sdk",
-    "logo": "assets/logos/sphere-sdk.png"
+    "logo": "assets/logos/sphere-sdk.png",
+    "moves_funds": true
   },
   {
     "name": "5ire",
@@ -26337,7 +26355,8 @@
     "github": "",
     "id": 1044,
     "slug": "1inch-mcp",
-    "logo": "assets/logos/1inch-mcp.png"
+    "logo": "assets/logos/1inch-mcp.png",
+    "moves_funds": true
   },
   {
     "name": "Redpanda Docs MCP",
@@ -36769,7 +36788,8 @@
     "github": "",
     "id": 1473,
     "slug": "moonpay-cli-moonagents",
-    "logo": "assets/logos/moonpay-cli-moonagents.png"
+    "logo": "assets/logos/moonpay-cli-moonagents.png",
+    "moves_funds": true
   },
   {
     "name": "Conductor",
@@ -41489,5 +41509,490 @@
     "id": 1648,
     "slug": "guaca",
     "logo": "assets/logos/guaca.png"
+  },
+  {
+    "name": "GoPlus Security MCP",
+    "url": "https://gopluslabs.io/en",
+    "description": "GoPlus's MCP server that lets agents check token, address, NFT, approval and phishing-site risk before they act, using the GoPlus security API.",
+    "category": "crypto",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Open source (Apache-2.0); GoPlus API has a free public tier",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://gopluslabs.io/en",
+    "github": "https://github.com/GoPlusSecurity/goplus-mcp",
+    "repo": "GoPlusSecurity/goplus-mcp",
+    "id": 1649,
+    "slug": "goplus-security-mcp",
+    "logo": "assets/logos/goplus-security-mcp.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "Tanod",
+    "url": "https://tanod.dev",
+    "description": "Hosted security MCP and API for agents: pre-transaction checks for token honeypots, risky contracts, phishing URLs, OFAC sanctions, address poisoning, live approvals and wallet drains.",
+    "category": "crypto",
+    "pricing": "Usage-based",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Pay per call via x402 (from $0.001); 10 free chain reads a day",
+    "use_cases": [
+      "connect tools via MCP",
+      "monitor & evaluate agents"
+    ],
+    "website": "https://tanod.dev",
+    "github": "",
+    "id": 1650,
+    "slug": "tanod",
+    "logo": "assets/logos/tanod.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "CoinGraph Wallet Guard",
+    "url": "https://coingraph.ai/agents/wallet-guard",
+    "description": "Checks a swap or send before you sign it: token contract risks, price impact, sanctioned or look-alike recipients. Returns SAFE, WARN or STOP via API or MCP.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "1,000 free credits a month with an API key; MCP free during preview; x402 per call",
+    "use_cases": [
+      "connect tools via MCP",
+      "monitor & evaluate agents"
+    ],
+    "website": "https://coingraph.ai/agents/wallet-guard",
+    "github": "",
+    "id": 1651,
+    "slug": "coingraph-wallet-guard",
+    "logo": "assets/logos/coingraph-wallet-guard.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "Antalpha Wallet Guard",
+    "url": "https://www.antalpha.com/en-us/documentation/mcp/",
+    "description": "Open-source agent skill that scans EVM wallets for dangerous approvals, malicious addresses, risky tokens and NFTs, rug pulls and phishing sites, powered by GoPlus data.",
+    "category": "crypto",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Open-source agent skill (MIT per README) on Antalpha's hosted MCP",
+    "use_cases": [
+      "crypto"
+    ],
+    "website": "https://www.antalpha.com/en-us/documentation/mcp/",
+    "github": "https://github.com/AntalphaAI/wallet-guard",
+    "repo": "AntalphaAI/wallet-guard",
+    "id": 1652,
+    "slug": "antalpha-wallet-guard",
+    "logo": "assets/logos/antalpha-wallet-guard.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "Webacy",
+    "url": "https://www.webacy.com",
+    "description": "Risk ratings API and MCP server for wallets, tokens, vaults and transactions, so agents can screen addresses and check risk before moving funds.",
+    "category": "crypto",
+    "pricing": "See site",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://www.webacy.com",
+    "github": "",
+    "id": 1653,
+    "slug": "webacy",
+    "logo": "assets/logos/webacy.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "ScamSniffer",
+    "url": "https://www.scamsniffer.io",
+    "description": "Real-time intelligence on phishing sites, wallet drainers and scammer addresses: a free browser extension plus a blocklist API teams and agents can query.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free browser extension; blocklist API plans from $84/mo",
+    "use_cases": [
+      "automate the browser"
+    ],
+    "website": "https://www.scamsniffer.io",
+    "github": "",
+    "id": 1654,
+    "slug": "scamsniffer",
+    "logo": "assets/logos/scamsniffer.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "De.Fi Scanner",
+    "url": "https://de.fi/scanner",
+    "description": "Smart-contract and token scanner that flags honeypots, owner powers and other contract risks, with a credit-based API for apps and agents.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free web scanner; API uses paid credits",
+    "use_cases": [
+      "automate workflows",
+      "monitor & evaluate agents"
+    ],
+    "website": "https://de.fi/scanner",
+    "github": "",
+    "id": 1655,
+    "slug": "de-fi-scanner",
+    "logo": "assets/logos/de-fi-scanner.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "Dune MCP",
+    "url": "https://docs.dune.com/docs/agents/mcp",
+    "description": "Dune's official remote MCP server: agents search on-chain datasets, write and run DuneSQL, fetch results and build charts across 100+ chains.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free plan; paid plans add credits (14-day trial)",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP"
+    ],
+    "website": "https://docs.dune.com/docs/agents/mcp",
+    "github": "",
+    "id": 1656,
+    "slug": "dune-mcp",
+    "logo": "assets/logos/dune-mcp.png"
+  },
+  {
+    "name": "GoldRush MCP",
+    "url": "https://goldrush.dev",
+    "description": "Covalent's GoldRush multichain data API with an MCP server, giving agents wallet balances, transactions, token and NFT data across 100+ chains.",
+    "category": "crypto",
+    "pricing": "Paid",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "14-day free trial, then from $10/mo; x402 pay per request",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://goldrush.dev",
+    "github": "",
+    "id": 1657,
+    "slug": "goldrush-mcp",
+    "logo": "assets/logos/goldrush-mcp.png"
+  },
+  {
+    "name": "Helius MCP",
+    "url": "https://www.helius.dev/docs/agents/mcp",
+    "description": "Helius's MCP server for Solana: agents read accounts, transactions, tokens and NFTs through Helius RPC and APIs.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free plan; paid plans on site",
+    "use_cases": [
+      "connect tools via MCP",
+      "sales & support"
+    ],
+    "website": "https://www.helius.dev/docs/agents/mcp",
+    "github": "",
+    "id": 1658,
+    "slug": "helius-mcp",
+    "logo": "assets/logos/helius-mcp.png"
+  },
+  {
+    "name": "Santiment",
+    "url": "https://santiment.net",
+    "description": "Crypto market intelligence on on-chain, social and development activity, with an AI assistant and API that agents can use for research.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free plan; Sanbase Pro from $49/mo",
+    "use_cases": [
+      "research the web"
+    ],
+    "website": "https://santiment.net",
+    "github": "",
+    "id": 1659,
+    "slug": "santiment",
+    "logo": "assets/logos/santiment.png"
+  },
+  {
+    "name": "thirdweb Nebula",
+    "url": "https://thirdweb.com/ai",
+    "description": "thirdweb's AI for onchain work: agents read live chain data, analyze transactions and can buy, swap and send crypto from connected wallets.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free tier; usage-based beyond",
+    "use_cases": [
+      "crypto"
+    ],
+    "website": "https://thirdweb.com/ai",
+    "github": "",
+    "id": 1660,
+    "slug": "thirdweb-nebula",
+    "logo": "assets/logos/thirdweb-nebula.png",
+    "moves_funds": true
+  },
+  {
+    "name": "Coinbase Agentic Wallet MCP",
+    "url": "https://docs.cdp.coinbase.com/agentic-wallet/mcp/welcome",
+    "description": "Coinbase's MCP server and wallet app (formerly Payments MCP) that let agents hold USDC and pay for x402 services on Base, Polygon and Solana within spend limits you set.",
+    "category": "crypto",
+    "pricing": "See site",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://docs.cdp.coinbase.com/agentic-wallet/mcp/welcome",
+    "github": "https://github.com/coinbase/payments-mcp",
+    "repo": "coinbase/payments-mcp",
+    "id": 1661,
+    "slug": "coinbase-agentic-wallet-mcp",
+    "logo": "assets/logos/coinbase-agentic-wallet-mcp.png",
+    "moves_funds": true
+  },
+  {
+    "name": "Alby MCP",
+    "url": "https://github.com/getAlby/mcp",
+    "description": "Open-source MCP server that connects a Bitcoin Lightning wallet to your agent via Nostr Wallet Connect, so it can pay and create invoices.",
+    "category": "crypto",
+    "pricing": "Open source",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Open source (Apache-2.0)",
+    "use_cases": [
+      "voice & phone calls",
+      "connect tools via MCP"
+    ],
+    "website": "",
+    "github": "https://github.com/getAlby/mcp",
+    "repo": "getAlby/mcp",
+    "id": 1662,
+    "slug": "alby-mcp",
+    "logo": "assets/logos/alby-mcp.png",
+    "moves_funds": true
+  },
+  {
+    "name": "Forta Firewall",
+    "url": "https://www.forta.org/firewall",
+    "description": "Forta's pre-execution firewall that screens transactions for exploits and malicious activity and can block them before they settle onchain.",
+    "category": "crypto",
+    "pricing": "See site",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "",
+    "use_cases": [
+      "crypto"
+    ],
+    "website": "https://www.forta.org/firewall",
+    "github": "",
+    "id": 1663,
+    "slug": "forta-firewall",
+    "logo": "assets/logos/forta-firewall.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "Bitquery MCP",
+    "url": "https://bitquery.io/products/bitquery-mcp-server",
+    "description": "Bitquery's hosted, read-only MCP server with 300+ tools for DEX trades, candles, wallet history and money-flow tracing across 40+ chains.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free tier with a Bitquery account; metered on your plan",
+    "use_cases": [
+      "connect tools via MCP",
+      "monitor & evaluate agents"
+    ],
+    "website": "https://bitquery.io/products/bitquery-mcp-server",
+    "github": "",
+    "id": 1664,
+    "slug": "bitquery-mcp",
+    "logo": "assets/logos/bitquery-mcp.png"
+  },
+  {
+    "name": "The Graph Token API MCP",
+    "url": "https://thegraph.com/docs/en/ai-suite/token-api-mcp/introduction/",
+    "description": "The Graph's Token API MCP server that lets agents query token metadata, balances, transfers and holder stats in plain language.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Available on all tiers, including free",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://thegraph.com/docs/en/ai-suite/token-api-mcp/introduction/",
+    "github": "https://github.com/graphprotocol/token-api",
+    "repo": "graphprotocol/token-api",
+    "id": 1665,
+    "slug": "the-graph-token-api-mcp",
+    "logo": "assets/logos/the-graph-token-api-mcp.png"
+  },
+  {
+    "name": "Messari Copilot",
+    "url": "https://messari.io/ai",
+    "description": "Messari's AI research copilot for crypto, answering questions from its research, news and market data, with an API and hosted MCP server for agents.",
+    "category": "crypto",
+    "pricing": "Enterprise",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Enterprise plan; Copilot API also pay-per-request via x402",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP"
+    ],
+    "website": "https://messari.io/ai",
+    "github": "",
+    "id": 1666,
+    "slug": "messari-copilot",
+    "logo": "assets/logos/messari-copilot.png"
+  },
+  {
+    "name": "Blockaid",
+    "url": "https://blockaid.io",
+    "description": "Onchain security platform used by wallets and exchanges: transaction simulation and scanning that blocks malicious dApps, tokens and signatures before users or agents sign.",
+    "category": "crypto",
+    "pricing": "Enterprise",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "",
+    "use_cases": [
+      "crypto"
+    ],
+    "website": "https://blockaid.io",
+    "github": "",
+    "id": 1667,
+    "slug": "blockaid",
+    "logo": "assets/logos/blockaid.png",
+    "wallet_safety": true
+  },
+  {
+    "name": "Moralis MCP",
+    "url": "https://docs.moralis.com/mcp",
+    "description": "Moralis's MCP server that gives agents wallet, token, NFT and DeFi data across EVM chains and Solana in plain language.",
+    "category": "crypto",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-21",
+    "added": "2026-10-21",
+    "source": "Web search",
+    "pricing_detail": "Free plan; paid plans on site",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "website": "https://docs.moralis.com/mcp",
+    "github": "",
+    "id": 1668,
+    "slug": "moralis-mcp",
+    "logo": "assets/logos/moralis-mcp.png"
   }
 ]

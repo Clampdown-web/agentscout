@@ -6319,5 +6319,79 @@
 "agent-memory",
 "computer-use",
 "local-models"
+],
+"goplus-security-mcp": [
+"mcp-servers"
+],
+"tanod": [
+"agent-wallets"
+],
+"coingraph-wallet-guard": [
+"trading-agents",
+"agent-wallets"
+],
+"antalpha-wallet-guard": [
+"agent-wallets"
+],
+"webacy": [
+"agent-wallets",
+"computer-use",
+"mcp-servers"
+],
+"scamsniffer": [
+"agent-wallets",
+"browser-automation"
+],
+"de-fi-scanner": [
+"smart-contracts"
+],
+"dune-mcp": [
+"mcp-servers"
+],
+"goldrush-mcp": [
+"agent-wallets",
+"mcp-servers"
+],
+"helius-mcp": [
+"mcp-servers"
+],
+"santiment": [
+"research-agents"
+],
+"thirdweb-nebula": [
+"trading-agents",
+"agent-wallets"
+],
+"coinbase-agentic-wallet-mcp": [
+"agent-wallets",
+"agent-payments",
+"token-costs",
+"mcp-servers"
+],
+"alby-mcp": [
+"agent-wallets",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"forta-firewall": [],
+"bitquery-mcp": [
+"trading-agents",
+"agent-wallets",
+"observability",
+"mcp-servers"
+],
+"the-graph-token-api-mcp": [
+"mcp-servers"
+],
+"messari-copilot": [
+"research-agents",
+"mcp-servers"
+],
+"blockaid": [
+"agent-wallets"
+],
+"moralis-mcp": [
+"agent-wallets",
+"mcp-servers"
 ]
 }

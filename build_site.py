@@ -162,6 +162,10 @@ for x in t:
         _sd=x.get("submitted") or x.get("added","")
         _sdt=_dt.date.fromisoformat(_sd).strftime("%b %-d, %Y") if _sd else ""
         out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+f'<span class="b maker" title="The maker submitted this tool through our submit form{(" on "+_sdt) if _sdt else ""}. We reviewed and wrote the listing.">✓ Submitted by maker</span>'+m.group(2),out,count=1,flags=re.S)
+    # Moves funds label (Oct 21 2026, owner-approved): tools that can sign or send transactions from a wallet
+    if x.get("moves_funds"):
+        out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+'<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>'+m.group(2),out,count=1,flags=re.S)
+        out=out.replace('<p class="lede">'+e(x["description"])+'</p>','<p class="lede">'+e(x["description"])+'</p><p class="fundsnote" role="note"><b>⚠ Moves funds.</b> This tool can sign or send crypto transactions from a connected wallet. Give it a separate wallet with only what it needs, set spend limits, and keep human approval on for large amounts. Not financial advice.</p>',1)
     out=out.replace('<h2 style="font-size:16px;margin-bottom:10px">Use cases</h2>',soc_row(x)+demo_row(x)+'<h2 style="font-size:16px;margin-bottom:10px">Use cases</h2>',1)
     B="https://agentscouthq.com/";pg=f"{B}tools/{x['slug']}.html"
     out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)

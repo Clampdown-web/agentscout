@@ -225,7 +225,8 @@ def ptag(p):
     if "freemium" in p or "+ cloud" in p: return "freemium"
     if re.match(r"^(paid|usage|enterprise)",p): return "paid"
     return "unknown"
-def card(x,d="../"): return f'<a class="card tile" data-s="{e(x["slug"])}" data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+FUNDS='<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>'
+def card(x,d="../"): return f'<a class="card tile" data-s="{e(x["slug"])}" data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -300,6 +301,12 @@ def seo(t,urls):
         _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{n} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
+        if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
+            _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
+            if _ws: _pre+=(f'<section id="wallet-safety" aria-labelledby="wallet-safety-h"><h2 id="wallet-safety-h" style="font-size:18px;margin:24px 0 6px">Wallet safety</h2>'
+                f'<p style="margin:0 0 10px;font-size:14px">{len(_ws)} tools that check a token, contract, address or site before you or your agent sign: scam and phishing flags, risky approvals, honeypots, sanctions and transaction simulation. '
+                f'Run one of these before any tool marked <span class="b funds">⚠ Moves funds</span> ({_mf} in this category) sends money. Those tools can sign or send transactions from a connected wallet, so give them a separate wallet, spend limits and human approval for large amounts. Not financial advice.</p>'
+                f'<div class="grid">{"".join(card(x) for x in sorted(_ws,key=lambda x:x["name"].lower()))}</div></section><h2 style="font-size:18px;margin:28px 0 6px">All crypto tools</h2>')
         out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,({"MCP servers":"MCP servers and MCP tools","agent infra":"AI agent infrastructure tools"}.get(c) or (f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools")),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
