@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T14:09:26Z",
- "updated": "2026-10-23T14:09:26Z",
- "last_checked": "2026-10-22",
- "count": 1679,
+ "generated": "2026-10-23T14:28:15Z",
+ "updated": "2026-10-23T14:28:15Z",
+ "last_checked": "2026-10-23",
+ "count": 1704,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -71028,6 +71028,1077 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/havetml.png",
    "page": "https://agentscouthq.com/tools/havetml.html"
+  },
+  {
+   "name": "PeekPanda",
+   "slug": "peekpanda",
+   "url": "https://peekpanda.com/",
+   "website": "https://peekpanda.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "PeekPanda is competitor research for iOS apps. Open any app to see the Meta ads it keeps paying for and how long each has run, the US App Store searches it ranks for, and which of its posts went viral. Use it in the web app, or add its MCP server so Claude, ChatGPT or Cursor can answer questions about any iOS competitor.",
+   "key_features": [
+    "Peek $59/mo; Panda $99/mo; $1 three-day trial",
+    "Active",
+    "Research the web",
+    "Social posts & ads",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Peek $59/mo; Panda $99/mo; $1 three-day trial",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "social posts & ads",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/peekpanda.png",
+   "page": "https://agentscouthq.com/tools/peekpanda.html"
+  },
+  {
+   "name": "HireDov",
+   "slug": "hiredov",
+   "url": "https://hiredov.com/",
+   "website": "https://hiredov.com/",
+   "github": "",
+   "category": "business agents",
+   "description": "HireDov is an AI sourcing agent. Describe what you need to buy and its agent, Dov, finds qualified suppliers, sends each a tailored request for quote in their own language, chases every reply and brings the quotes back to one dashboard to compare; first quotes usually arrive within a few days. You see the suppliers it finds before you pay.",
+   "key_features": [
+    "Pro $299/mo (100 credits); Business $799/mo (400 credits)",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Pro $299/mo (100 credits); Business $799/mo (400 credits)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hiredov.png",
+   "page": "https://agentscouthq.com/tools/hiredov.html"
+  },
+  {
+   "name": "System One API",
+   "slug": "system-one-api",
+   "url": "https://system-one.dev/en",
+   "website": "https://system-one.dev/en",
+   "github": "https://github.com/ziyu/system-one-sdk",
+   "category": "agent infra",
+   "description": "System One API is the hosted decision API behind TypeSafe Jev, with an open-source TypeScript SDK for AI agents. Where the TypeSafe Jev listing covers the decision model itself, this listing covers the developer API and console: send text or app context and get back a typed choice, a score or a yes/no probability for routing tools, ranking results and checking conditions, with API keys, call logs and credit use managed in one place.",
+   "key_features": [
+    "100 free credits on sign-up; Starter $10 for 10,000 prepaid credits; no subscription",
+    "Active",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "100 free credits on sign-up; Starter $10 for 10,000 prepaid credits; no subscription",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/system-one-api.png",
+   "page": "https://agentscouthq.com/tools/system-one-api.html"
+  },
+  {
+   "name": "Financial Cents MCP",
+   "slug": "financial-cents-mcp",
+   "url": "https://financial-cents.com/mcp/",
+   "website": "https://financial-cents.com/mcp/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "The Financial Cents MCP server connects an accounting, bookkeeping or tax firm's Financial Cents practice-management account to Claude, ChatGPT, Gemini, Cursor and other MCP clients. Staff can ask about overdue work, unpaid invoices or missing client tax documents in plain English and have the assistant log time or create tasks, with each connection bound to one firm, your own permissions applied, writes confirmed in the client and deletes not offered at all. It is a hosted server signed in with OAuth and comes with the Scale plan.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Voice & phone calls",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "X",
+   "goals": [
+    "automation",
+    "media",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/financial-cents-mcp.png",
+   "page": "https://agentscouthq.com/tools/financial-cents-mcp.html"
+  },
+  {
+   "name": "Userpilot Agent Analytics",
+   "slug": "userpilot-agent-analytics",
+   "url": "https://userpilot.com/ai/agent-analytics/",
+   "website": "https://userpilot.com/ai/agent-analytics/",
+   "github": "",
+   "category": "evals & observability",
+   "description": "Userpilot Agent Analytics shows product teams how users actually get on with the AI agent inside their app. It reads the agent's conversations at scale and reports whether people got what they needed or left frustrated, so teams can see where the agent fails, which requests it can't handle and how agent use ties back to product engagement, alongside Userpilot's existing product analytics.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "X",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/userpilot-agent-analytics.png",
+   "page": "https://agentscouthq.com/tools/userpilot-agent-analytics.html"
+  },
+  {
+   "name": "Tulimoa Memory",
+   "slug": "tulimoa-memory",
+   "url": "https://tulimoa.com/memory",
+   "website": "https://tulimoa.com/memory",
+   "github": "",
+   "category": "memory & RAG",
+   "description": "Tulimoa Memory is a hosted, shared memory store for AI agents and agent swarms. Agents write what they learn into it during the day; overnight a separate model sorts those notes into a knowledge graph with associative recall, and each agent starts the morning with a short briefing so it reads less and knows more. It is billed per call, with starting credit to try it.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Build multi-agent systems",
+    "Voice & phone calls",
+    "Give agents memory"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "X",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "voice & phone calls",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tulimoa-memory.png",
+   "page": "https://agentscouthq.com/tools/tulimoa-memory.html"
+  },
+  {
+   "name": "Keboola MCP Server",
+   "slug": "keboola-mcp-server",
+   "url": "https://www.keboola.com/",
+   "website": "https://www.keboola.com/",
+   "github": "https://github.com/keboola/mcp-server",
+   "category": "MCP servers",
+   "description": "Keboola's official MCP server lets AI assistants and coding agents work with a Keboola data project: browse storage tables and buckets, read and write SQL transformations, run and debug jobs and components, and build data flows from a chat. It can run locally or as Keboola's hosted remote server, with access scoped to the project token or OAuth sign-in you grant.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "85 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "crypto",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "keboola/mcp-server",
+   "github_stars": 85,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/keboola-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/keboola-mcp-server.html"
+  },
+  {
+   "name": "Speakeasy Gram",
+   "slug": "speakeasy-gram",
+   "url": "https://www.speakeasy.com/",
+   "website": "https://www.speakeasy.com/",
+   "github": "https://github.com/speakeasy-api/gram",
+   "category": "security & governance",
+   "description": "Gram is Speakeasy's open-source platform for building, hosting and governing MCP servers. Teams can turn APIs into curated MCP toolsets, host them, and manage which agents and people may use which servers from one control plane, with sign-in, access policies and usage visibility; its own MCP server lets an agent manage that setup directly.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "275 GitHub stars",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "MCP registry",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "speakeasy-api/gram",
+   "github_stars": 275,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/speakeasy-gram.png",
+   "page": "https://agentscouthq.com/tools/speakeasy-gram.html"
+  },
+  {
+   "name": "SuprSend MCP",
+   "slug": "suprsend-mcp",
+   "url": "https://www.suprsend.com/",
+   "website": "https://www.suprsend.com/",
+   "github": "https://github.com/suprsend/mcp",
+   "category": "MCP servers",
+   "description": "SuprSend's official hosted MCP server gives AI agents and coding assistants access to a SuprSend notification workspace. An agent can look up and manage users and lists, inspect and edit notification workflows and templates, and read delivery data across email, SMS, push, Slack and in-app inbox channels without leaving the chat or editor.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Write code",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "suprsend/mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/suprsend-mcp.png",
+   "page": "https://agentscouthq.com/tools/suprsend-mcp.html"
+  },
+  {
+   "name": "Edgegap MCP",
+   "slug": "edgegap-mcp",
+   "url": "https://edgegap.com/",
+   "website": "https://edgegap.com/",
+   "github": "https://github.com/edgegap/llm-mcp-server",
+   "category": "MCP servers",
+   "description": "Edgegap's official MCP server lets AI coding agents deploy and run multiplayer game servers on Edgegap's edge hosting network. From the editor, an agent can push server builds, start and stop deployments, check matchmaking and fleet status and read logs, so game developers can manage their online backend in plain language.",
+   "key_features": [
+    "See site",
+    "Active",
+    "1 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "edgegap/llm-mcp-server",
+   "github_stars": 1,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/edgegap-mcp.png",
+   "page": "https://agentscouthq.com/tools/edgegap-mcp.html"
+  },
+  {
+   "name": "Jev",
+   "slug": "jev",
+   "url": "https://chatjevs.com/",
+   "website": "https://chatjevs.com/",
+   "github": "https://github.com/jev-chat/jev-chat-jarvis",
+   "category": "personal agents",
+   "description": "Jev is an open-source chat assistant for Android, Windows and macOS that reads the conversation on your screen, judges what the other person wants and whether a message looks risky, and drafts candidate replies for you. It fills in the reply box, but you always decide whether to send, so it helps with tricky messages without acting on its own.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "8014 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "jev-chat/jev-chat-jarvis",
+   "github_stars": 8014,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "personal agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jev.png",
+   "page": "https://agentscouthq.com/tools/jev.html"
+  },
+  {
+   "name": "Waku",
+   "slug": "waku",
+   "url": "https://waku.sh/",
+   "website": "https://waku.sh/",
+   "github": "https://github.com/egoist/waku",
+   "category": "coding",
+   "description": "Waku is a native desktop app that gathers your local coding agents in one place. It shows sessions from Amp, Claude Code, Codex, Cursor, OpenCode, Grok and Pi on a single timeline that stays entirely on your machine, so you can follow and switch between agent runs without juggling terminals.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1586 GitHub stars",
+    "Write code",
+    "Control a computer"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "egoist/waku",
+   "github_stars": 1586,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/waku.png",
+   "page": "https://agentscouthq.com/tools/waku.html"
+  },
+  {
+   "name": "Paritok",
+   "slug": "paritok",
+   "url": "https://www.paritok.com/",
+   "website": "https://www.paritok.com/",
+   "github": "https://github.com/Paritok-official/paritok-4b-v1",
+   "category": "coding",
+   "description": "Paritok is a compression gateway that sits between a coding agent and its LLM. Using its own open-source 4B code-aware model, it shrinks tool output, files and conversation history on the fly without losing what the agent needs, which cuts token bills and lets agent sessions run longer before they hit context limits.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1462 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Paritok-official/paritok-4b-v1",
+   "github_stars": 1462,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/paritok.png",
+   "page": "https://agentscouthq.com/tools/paritok.html"
+  },
+  {
+   "name": "Rome OS",
+   "slug": "rome-os",
+   "url": "https://romeos.cc/",
+   "website": "https://romeos.cc/",
+   "github": "https://github.com/rome-os/rome",
+   "category": "frameworks",
+   "description": "Rome is an open-source agent OS for recursive agents that compounds what they learn. Agents build their own tools, keep context and reuse capabilities across tasks instead of starting fresh each time, so a long-running assistant grows more capable the more it works.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "841 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "rome-os/rome",
+   "github_stars": 841,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rome-os.png",
+   "page": "https://agentscouthq.com/tools/rome-os.html"
+  },
+  {
+   "name": "TapQ",
+   "slug": "tapq",
+   "url": "https://tapq.ai/",
+   "website": "https://tapq.ai/",
+   "github": "https://github.com/spaceamoeba-t/tapq",
+   "category": "voice",
+   "description": "TapQ is an always-on voice layer for the coding and work agents you already run. You talk to Claude Code, Codex and others through your earbuds, interrupt them, steer the work and hear spoken updates, so you can supervise agents hands-free while away from the keyboard.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "648 GitHub stars",
+    "Write code",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "spaceamoeba-t/tapq",
+   "github_stars": 648,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tapq.png",
+   "page": "https://agentscouthq.com/tools/tapq.html"
+  },
+  {
+   "name": "nanocode",
+   "slug": "nanocode",
+   "url": "https://nanocode.xyz/",
+   "website": "https://nanocode.xyz/",
+   "github": "https://github.com/gakonst/nanocode",
+   "category": "frameworks",
+   "description": "nanocode is a small SDK for embedding frontier-model agents inside your own apps and tools. It provides the agent loop, tool calling and session handling for models such as Claude and GPT in a compact codebase, so developers can ship a capable embedded agent without adopting a heavy framework.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "582 GitHub stars",
+    "Write code",
+    "Build an agent",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "gakonst/nanocode",
+   "github_stars": 582,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "build an agent",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nanocode.png",
+   "page": "https://agentscouthq.com/tools/nanocode.html"
+  },
+  {
+   "name": "0.security",
+   "slug": "0-security",
+   "url": "https://0.security/",
+   "website": "https://0.security/",
+   "github": "https://github.com/0sec-labs/0",
+   "category": "security & governance",
+   "description": "0 is an open, self-improving AI operating system for offensive security work. Its agents investigate code and binaries for vulnerabilities, test defenses, verify findings with working proofs and help fix the issues, and the team behind it publishes the advisories it has found in real open-source projects.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "516 GitHub stars",
+    "Write code",
+    "Control a computer"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "0sec-labs/0",
+   "github_stars": 516,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/0-security.png",
+   "page": "https://agentscouthq.com/tools/0-security.html"
+  },
+  {
+   "name": "agent-manager",
+   "slug": "agent-manager",
+   "url": "https://agent-manager.dev/",
+   "website": "https://agent-manager.dev/",
+   "github": "https://github.com/YoanWai/agent-manager",
+   "category": "coding",
+   "description": "agent-manager is a terminal app built on tmux for running many AI coding agents at once. It shows live status for Claude Code, Codex, OpenCode, Gemini, Grok, Cursor and other sessions in a foldable project tree, adds a quick prompt bar, and has a diff reviewer whose line comments are sent straight back to the right agent, on macOS, Linux and Windows.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "616 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "YoanWai/agent-manager",
+   "github_stars": 616,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-manager.png",
+   "page": "https://agentscouthq.com/tools/agent-manager.html"
+  },
+  {
+   "name": "mu",
+   "slug": "mu",
+   "url": "https://usemu.dev/",
+   "website": "https://usemu.dev/",
+   "github": "https://github.com/qybaihe/mu",
+   "category": "coding",
+   "description": "mu is an open-source coding agent with a judgment kernel: a small, fast judge model makes the many routine decisions in each turn so the main model only gets the context it needs. It ships as a command-line tool and a desktop app and aims to keep coding sessions focused and cheap.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "537 GitHub stars",
+    "Write code",
+    "Control a computer"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "qybaihe/mu",
+   "github_stars": 537,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mu.png",
+   "page": "https://agentscouthq.com/tools/mu.html"
+  },
+  {
+   "name": "Streamkap MCP",
+   "slug": "streamkap-mcp",
+   "url": "https://streamkap.com/",
+   "website": "https://streamkap.com/",
+   "github": "https://github.com/streamkap-com/streamkap-mcp",
+   "category": "MCP servers",
+   "description": "Streamkap's official CLI and MCP server let AI agents manage real-time change-data-capture pipelines on Streamkap. An agent can create and edit sources, destinations, pipelines and transforms, check their status and troubleshoot lag, streaming database changes into warehouses and apps without clicking through the console.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "streamkap-com/streamkap-mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/streamkap-mcp.png",
+   "page": "https://agentscouthq.com/tools/streamkap-mcp.html"
+  },
+  {
+   "name": "Agente Smart Documents",
+   "slug": "agente-smart-documents",
+   "url": "https://www.agente.dev/smart-documents",
+   "website": "https://www.agente.dev/smart-documents",
+   "github": "",
+   "category": "productivity",
+   "description": "Agente Smart Documents turns a finished Word document into a reusable template your AI agent can fill. You upload an example, it builds the template, then ChatGPT or Codex, Claude, Grok Bot, Hermes or the web workspace asks only for the details that are missing and hands back a filled .docx with the original layout kept, for you to review before sending. A few documents are free each month, then a flat monthly fee per office.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "X",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "productivity"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agente-smart-documents.png",
+   "page": "https://agentscouthq.com/tools/agente-smart-documents.html"
+  },
+  {
+   "name": "CutBay",
+   "slug": "cutbay",
+   "url": "https://www.cutbay.ai/",
+   "website": "https://www.cutbay.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "CutBay is a chat-based AI video agent that turns ideas, web links, documents, slides, spreadsheets and your own media into finished videos. You describe what you want and it drafts explainers, product demos, slideshows, animated charts, talking-head clips or YouTube Shorts, then lets you keep editing by chat, with add-ons such as B-roll and automatic subtitles.",
+   "key_features": [
+    "See site",
+    "Active",
+    "Edit video",
+    "Subtitles & transcripts"
+   ],
+   "pricing": "See site",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Product Hunt",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "subtitles & transcripts"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cutbay.png",
+   "page": "https://agentscouthq.com/tools/cutbay.html"
+  },
+  {
+   "name": "only-cli",
+   "slug": "only-cli",
+   "url": "https://only-cli.com/",
+   "website": "https://only-cli.com/",
+   "github": "https://github.com/only-cli/oc",
+   "category": "browser/computer use",
+   "description": "only-cli (oc) turns any website into a compact command-line view for AI agents. It distills a page into short text with numbered actions that agents like Claude Code can follow and click through, so agents browse the web using a small fraction of the tokens raw HTML or screenshots would take.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "549 GitHub stars",
+    "Automate the browser",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "crypto",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "only-cli/oc",
+   "github_stars": 549,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/only-cli.png",
+   "page": "https://agentscouthq.com/tools/only-cli.html"
+  },
+  {
+   "name": "Vidmoat",
+   "slug": "vidmoat",
+   "url": "https://www.vidmoat.com/",
+   "website": "https://www.vidmoat.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "Vidmoat is a hosted AI video editor you direct in chat. Describe the edit and its agent cuts dead air, adds word-synced captions, grades and reframes your footage on a real timeline, where you can review and change any cut by hand before rendering an MP4. It works in the browser, on Telegram (@vidmoat_bot) and over MCP (https://api.vidmoat.com/api/mcp, OAuth), so Claude, ChatGPT or Cursor can drive edits too.",
+   "key_features": [
+    "Hobby $0 (no card, 40 AI credits/mo, 720p with watermark); Creator $19/mo; Studio $49/mo; Team $29/seat/mo (min 3 seats); day passes from $2.99",
+    "Active",
+    "Edit video",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Hobby $0 (no card, 40 AI credits/mo, 720p with watermark); Creator $19/mo; Studio $49/mo; Team $29/seat/mo (min 3 seats); day passes from $2.99",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vidmoat.png",
+   "page": "https://agentscouthq.com/tools/vidmoat.html"
+  },
+  {
+   "name": "SalesTouch",
+   "slug": "salestouch",
+   "url": "https://www.salestouch.io/",
+   "website": "https://www.salestouch.io/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "SalesTouch is a LinkedIn MCP server for AI agents. Connect Claude, Codex, ChatGPT or any remote MCP client to https://www.salestouch.io/api/mcp and your agent can find prospects, research people and companies, send invitations and messages, and handle follow-ups through 45 purpose-built LinkedIn tools instead of browser automation. Scoped OAuth, approvals for sensitive actions, daily limits, working hours and a human-paced action queue keep the account under control.",
+   "key_features": [
+    "$39/month or $389/year; 7-day free trial (card required, no charge before day 7); one LinkedIn account included",
+    "Active",
+    "Sales & support",
+    "Connect tools via mcp"
+   ],
+   "pricing": "$39/month or $389/year; 7-day free trial (card required, no charge before day 7); one LinkedIn account included",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/salestouch.png",
+   "page": "https://agentscouthq.com/tools/salestouch.html"
   }
  ]
 }

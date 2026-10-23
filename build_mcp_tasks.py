@@ -170,7 +170,7 @@ def pages(t):
           f'<p class="disclose">Facts come from our directory listings and each project\'s GitHub repo; pricing is as each maker states it and can change. Missing a server? <a href="../submit.html">Submit it free</a>.</p></section>')
     open("mcp/index.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
     # inbound links (idempotent)
-    BB.link_in("index.html",'<a href="s/index.html">Popular searches</a>',' · <a href="mcp/">Best MCP servers by task</a>','href="mcp/"')
+    BB.link_in("index.html",'<a href="s/index.html">Popular lists</a>',' · <a href="mcp/">Best MCP servers by task</a>','href="mcp/"')
     import atexit; atexit.register(_catlink,made)  # category pages are rewritten later in build_site, so link in at exit
     BB.link_in("llms.txt",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)","\n"+f"- [Best MCP servers by task]({B}mcp/)"+"".join(f"\n- [Best MCP servers for {a[1]}]({B}mcp/{a[0]}.html)" for a in made),f"]({B}mcp/)")
     print("mcp task pages:",len(made),[(a[0],len(a[6])) for a in made])

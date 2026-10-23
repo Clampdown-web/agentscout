@@ -6573,5 +6573,121 @@
 "havetml": [
 "sandboxes",
 "mcp-servers"
+],
+"peekpanda": [
+"marketing-agents",
+"research-agents",
+"mcp-servers",
+"mobile"
+],
+"hiredov": [
+"email-agents",
+"workflow-automation"
+],
+"system-one-api": [
+"agent-frameworks"
+],
+"financial-cents-mcp": [
+"planning-tasks",
+"vector-rag",
+"guardrails",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"userpilot-agent-analytics": [],
+"tulimoa-memory": [
+"codebase-context",
+"agent-memory",
+"voice-phone",
+"multi-agent",
+"stem-separation"
+],
+"keboola-mcp-server": [
+"text-to-sql",
+"mcp-servers",
+"local-models"
+],
+"speakeasy-gram": [
+"parallel-orchestration",
+"guardrails",
+"mcp-servers"
+],
+"suprsend-mcp": [
+"chat-app-agents",
+"email-agents",
+"mcp-servers",
+"workflow-automation",
+"ide-agents",
+"video-editing"
+],
+"edgegap-mcp": [
+"mcp-servers",
+"ide-agents",
+"video-editing",
+"games"
+],
+"jev": [
+"computer-use",
+"mobile"
+],
+"waku": [
+"computer-use",
+"local-models",
+"terminal-agents"
+],
+"paritok": [
+"mcp-gateways"
+],
+"rome-os": [],
+"tapq": [
+"voice-phone",
+"personal-assistants"
+],
+"nanocode": [
+"codebase-context",
+"agent-frameworks"
+],
+"0-security": [
+"penetration-testing"
+],
+"agent-manager": [
+"code-review",
+"terminal-agents"
+],
+"mu": [
+"computer-use",
+"terminal-agents"
+],
+"streamkap-mcp": [
+"text-to-sql",
+"mcp-servers",
+"terminal-agents",
+"video-editing"
+],
+"agente-smart-documents": [
+"vector-rag"
+],
+"cutbay": [
+"vector-rag",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"only-cli": [
+"terminal-agents"
+],
+"vidmoat": [
+"chat-app-agents",
+"browser-automation",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"salestouch": [
+"sales-agents",
+"research-agents",
+"browser-automation",
+"mcp-servers"
 ]
 }

@@ -87,7 +87,7 @@ TASKS=[
 ]
 ORIG={T[0] for T in TASKS[:37]}  # the first 37 task pages (Oct 2026); later batches only append to their related links
 MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
-TASK_NEG={"sales-outreach":r"AI marketing department","agent-payments":r"payments (?:are |is )?disabled|real-money payments|no money moves","audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage","building-voice-agents":r"from a voice or text request"}  # keeps picture tools off the sound page
+TASK_NEG={"sales-outreach":r"AI marketing department","agent-payments":r"payments (?:are |is )?disabled|real-money payments|no money moves","audio-post-production":r"upscal|deinterlace|script coverage|lip sync|footage","building-voice-agents":r"from a voice or text request","building-mcp-servers":r"hosted decision API"}  # keeps picture tools off the sound page
 MEDIA_TASKS={"storyboarding","rough-cuts","subtitles","dubbing","vfx","dialogue-cleanup","scoring","stem-separation","video-post-production","audio-post-production","music-mixing-mastering"}
 _MEDIA_ONLY_TASKS=MEDIA_TASKS  # these pages only list film, TV, video and music tools
 ART_CATS={"image generation","graphic design & branding","3D & concept art","photography & photo editing"}
@@ -310,13 +310,15 @@ def sitewide(t):
         s=open(f).read(); o=s
         s=re.sub(r'<section class="nlband".*?</section>\n?',"",s,flags=re.S)  # dark "5 agent tools" strip removed sitewide
         d="/" if f=="404.html" else "../"*f.count("/")
+        # Oct 23 2026 (owner: one search only): the /s/ hub is "Popular lists" in menus and footers, never "Searches"/"Popular searches"
+        s=re.sub(r'(<a href="[^"]*s/index\.html">)(?:Searches|Popular searches)</a>',r'\1Popular lists</a>',s)
         s=re.sub(r'<a([^>]*?) href="https://github\.com/Clampdown-web/agentscout/issues/new\?[^"]*?[Ss]ubmission[^"]*"(?: target="_blank")?(?: rel="noopener(?: noreferrer)?")?',lambda mm:f'<a{mm.group(1)} href="{d}submit.html"',s)
         s=re.sub(r'(<div class="links"><a href="[^"]*categories/index\.html">Categories</a>)(?!<a href="[^"]*tasks/)',lambda mm:mm.group(1)+f'<a href="{d}tasks/index.html">Tasks</a>',s)
         s=re.sub(r'(<p><a href="[^"]*categories/index\.html">Categories</a>)(?! · <a href="[^"]*tasks/)',lambda mm:mm.group(1)+f' · <a href="{d}tasks/index.html">AI agents by task</a>',s)
         # Nav "Best" goes to the best-of hub
         s=re.sub(r'<a href="[^"]*best/mcp-servers\.html">Best</a>',lambda mm:f'<a href="{d}best/index.html">Best</a>',s)
         # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
-        s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Searches</a>',s)
+        s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Popular lists</a>',s)
         # Footer links (scoped to <footer> so body "See also" lines don't satisfy the check, Oct 18 2026):
         # Newsletter archive right after Free tools; Popular searches + AI agents by role right after Free tools
         # (generate.html has no footer Free tools link: after Badges)
@@ -328,14 +330,14 @@ def sitewide(t):
         if fm:
             fo=fm.group(0); fn=fo
             if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
-            if 's/index.html">Popular searches</a>' not in fn:
-                fn,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
-                if not k: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular searches</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
+            if 's/index.html">Popular lists</a>' not in fn:
+                fn,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular lists</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
+                if not k: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular lists</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
             # New tools page (new.html) in every footer, right before Agent news (Oct 18 2026: it was only linked from the homepage)
             if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:f'<a href="{d}new.html">New tools</a> · '+mm.group(1),fn,count=1)
             if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/index\.html">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}new.html">New tools</a>',fn,count=1)
             # Footers that lack the standard Free tools / Newsletter archive / Agent news links (generate.html) get them in the standard order
-            if 'free-tools.html">Free tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*s/index\.html">Popular searches</a>)',lambda mm:f'<a href="{d}free-tools.html">Free tools</a> · '+mm.group(1),fn,count=1)
+            if 'free-tools.html">Free tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*s/index\.html">Popular lists</a>)',lambda mm:f'<a href="{d}free-tools.html">Free tools</a> · '+mm.group(1),fn,count=1)
             if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/index\.html">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
             if 'news.html">Agent news</a>' not in fn: fn=re.sub(r'(<a href="[^"]*new\.html">New tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news.html">Agent news</a>',fn,count=1)
             # News archive (news/) in every footer, right after Agent news (Oct 18 2026: archive was only linked from news.html and story pages)

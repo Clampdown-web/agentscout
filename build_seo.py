@@ -66,7 +66,7 @@ def twitter(s,c):
         add+=f'<meta name="twitter:{tw}" content="{v}">'; c["twitter_"+tw]+=1
     if add: s=s.replace('<meta name="twitter:card"',add+'<meta name="twitter:card"',1)
     return s
-HUBS={"best/index.html":("Best-of lists","best/"),"s/index.html":("Popular searches","s/"),"for/index.html":("AI agents by role","for/"),"categories/index.html":("Categories","categories/")}
+HUBS={"best/index.html":("Best-of lists","best/"),"s/index.html":("Popular lists","s/"),"for/index.html":("AI agents by role","for/"),"categories/index.html":("Categories","categories/")}
 def hubld(f,s,c):
     s=re.sub(r"<!--xl:ldhub-->.*?<!--/xl:ldhub-->","",s,flags=re.S)
     name,path=HUBS[f]; d=path
@@ -129,6 +129,6 @@ def llms_extra(c=None):
             if h: out.append(f"- [{h.replace(strip,'').strip()}]({B}{f})")
         return [f"## {name}",""]+out+[""] if out else []
     best=sorted(glob.glob("best/*.html")); alt=[f for f in best if f.endswith("-alternatives.html")]
-    S=["<!-- pages:start -->",""]+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular searches",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+_bt_sec()+["<!-- pages:end -->"]
+    S=["<!-- pages:start -->",""]+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular lists",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+_bt_sec()+["<!-- pages:end -->"]
     open("llms.txt","w").write(L+"\n"+"\n".join(S)+"\n")
     if c is not None: c["llms_pages"]=sum(1 for z in S if z.startswith("- ["))

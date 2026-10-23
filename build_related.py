@@ -57,4 +57,12 @@ def pick(t,k=6,top=3,pool=10,frac=0.6,penalty=0.06):
             rest=sorted((y for y in xs if y is not x and y["slug"] not in hs),key=lambda y:(-(sim(x,y)-penalty*load[y["slug"]]),y["slug"]))[:k-len(h)]
             for y in rest: load[y["slug"]]+=1
             out[x["slug"]]=h+rest
+    # Hand-checked pins (Oct 23 2026 PT): maker-requested related tools, shown first, both ways
+    bys={x["slug"]:x for x in t}
+    for s,ps in PIN.items():
+        if s not in out: continue
+        for p in reversed(ps):
+            if p in bys and p!=s: out[s]=[bys[p]]+[y for y in out[s] if y["slug"]!=p]
+        out[s]=out[s][:k]
     return out
+PIN={"salestouch":["roverlead"],"roverlead":["salestouch"],"system-one-api":["typesafe-jev"],"typesafe-jev":["system-one-api"]}

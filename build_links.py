@@ -193,7 +193,7 @@ def run(t):
               +chips([(f"categories/{X.catslug(c)}.html",f"{CAP(c)} ({n})") for c,n in cc.most_common()])+'</div></section>')
         role=cats_+role
         s=put(s,"homeroles",role,r'<div class="cats" id="catgrid"></div>\s*</div></section>',before=False,regex=True)
-        s=put(s,"homeguide",' · <a href="s/">Popular searches</a> · <a href="for/index.html">By role</a>',r'<h3>Browse by guide</h3><p>.*?(?=</p>)',before=False,regex=True)
+        s=put(s,"homeguide",' · <a href="s/">Popular lists</a> · <a href="for/index.html">By role</a>',r'<h3>Browse by guide</h3><p>.*?(?=</p>)',before=False,regex=True)
         return s
     edit("index.html",home)
     print("internal links:",dict(stats),"missing anchors:",dict(miss) or "none")
