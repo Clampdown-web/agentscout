@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-23T16:11:44Z",
- "updated": "2026-10-23T16:11:44Z",
+ "generated": "2026-10-23T16:35:43Z",
+ "updated": "2026-10-23T16:35:43Z",
  "last_checked": "2026-10-23",
  "count": 1706,
  "tools": [
@@ -29907,12 +29907,12 @@
    "category": "crypto",
    "description": "TypeScript SDK that gives autonomous agents an identity and wallet on the Unicity network to find, negotiate and settle payments with other agents.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Mature",
-    "5385 GitHub stars",
+    "5386 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -29930,9 +29930,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "unicity-sphere/sphere-sdk",
-   "github_stars": 5385,
+   "github_stars": 5386,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "build an agent"
    ],
@@ -30130,11 +30130,11 @@
    "category": "agent infra",
    "description": "Self-hosted registry for publishing, versioning and governing agent skill packages across an organization, with RBAC and audit logs.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0), self-hosted",
     "Mature",
-    "5241 GitHub stars"
+    "5275 GitHub stars"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0), self-hosted",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30152,9 +30152,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "iflytek/skillhub",
-   "github_stars": 5241,
+   "github_stars": 5275,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "agent infra"
    ],
@@ -30387,13 +30387,13 @@
    "category": "research",
    "description": "Self-evolving AI scientist system that autonomously explores research ideas, runs experiments and improves with growing skills and memory.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Active",
-    "4984 GitHub stars",
+    "4913 GitHub stars",
     "Research the web",
     "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30411,9 +30411,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "EvoScientist/EvoScientist",
-   "github_stars": 4984,
+   "github_stars": 4913,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "research the web",
     "give agents memory"
@@ -30431,12 +30431,12 @@
    "category": "coding",
    "description": "Chaitin's self-hostable AI development platform for engineering teams with dev environments, model management and AI task management.",
    "key_features": [
-    "Open source",
+    "Open source (AGPL-3.0), self-hostable; online version free to start",
     "Active",
-    "4837 GitHub stars",
+    "4854 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Open source (AGPL-3.0), self-hostable; online version free to start",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30454,9 +30454,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "chaitin/MonkeyCode",
-   "github_stars": 4837,
+   "github_stars": 4854,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
     "write code"
    ],
@@ -30473,11 +30473,11 @@
    "category": "personal agents",
    "description": "Thunderbird's open-source AI client that lets you choose your models and keep your data, aimed at self-hosted and on-prem deployments.",
    "key_features": [
-    "Open source",
+    "Free and open source (MPL-2.0); enterprise support available",
     "Active",
-    "4796 GitHub stars"
+    "4802 GitHub stars"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MPL-2.0); enterprise support available",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -30494,9 +30494,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "thunderbird/thunderbolt",
-   "github_stars": 4796,
+   "github_stars": 4802,
    "open_source": true,
-   "license": "",
+   "license": "MPL-2.0",
    "tags": [
     "personal agents"
    ],
@@ -30513,13 +30513,13 @@
    "category": "research",
    "description": "Agentic LLM from Renmin University that autonomously runs data science pipelines and produces analyst-grade research reports.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "4727 GitHub stars",
+    "4744 GitHub stars",
     "Write code",
     "Research the web"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30537,9 +30537,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "ruc-datalab/DeepAnalyze",
-   "github_stars": 4727,
+   "github_stars": 4744,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "research the web"
@@ -30557,12 +30557,12 @@
    "category": "coding",
    "description": "Workspace that keeps the same task moving across Codex, Claude, OpenCode and other agents without re-explaining context at each handoff.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Active",
-    "4531 GitHub stars",
+    "4534 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30580,9 +30580,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "kungfu-systems/kungfu",
-   "github_stars": 4531,
+   "github_stars": 4534,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code"
    ],
@@ -30599,13 +30599,13 @@
    "category": "MCP servers",
    "description": "Self-hosted registry and insight engine for sharing coding-agent skills, MCP servers and agents across a team.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0), self-hosted",
     "Active",
-    "4517 GitHub stars",
+    "4549 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0), self-hosted",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30623,9 +30623,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "Observal/Observal",
-   "github_stars": 4517,
+   "github_stars": 4549,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
     "connect tools via MCP"
@@ -30643,12 +30643,12 @@
    "category": "coding",
    "description": "Kiro's open-source, persistent development workspace that runs unattended and recurring coding tasks locally or on your own hardware.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0); default agent needs kiro-cli",
     "Active",
-    "4478 GitHub stars",
+    "4551 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0); default agent needs kiro-cli",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -30666,9 +30666,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "kirodotdev/KiroCrew",
-   "github_stars": 4478,
+   "github_stars": 4551,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code"
    ],
@@ -35785,12 +35785,12 @@
    "category": "evals & observability",
    "description": "Observability platform for AI agents that captures traces, groups failures into signals and verifies fixes against real traces.",
    "key_features": [
-    "Open source + cloud",
+    "Open source (MIT), self-hostable; cloud pricing not verified",
     "Active",
-    "4723 GitHub stars",
+    "4734 GitHub stars",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Open source (MIT), self-hostable; cloud pricing not verified",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -35806,9 +35806,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "latitude-dev/latitude-llm",
-   "github_stars": 4723,
+   "github_stars": 4734,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "monitor & evaluate agents"
    ],
@@ -35825,12 +35825,12 @@
    "category": "frameworks",
    "description": "Multi-agent orchestration framework built on the OpenAI Agents SDK for creating collaborating agent \"agencies\" with defined roles.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "4604 GitHub stars",
+    "4610 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35849,9 +35849,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "VRSEN/agency-swarm",
-   "github_stars": 4604,
+   "github_stars": 4610,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "build an agent"
    ],
@@ -35868,13 +35868,13 @@
    "category": "coding",
    "description": "Multi-agent development platform built on Kotlin Multiplatform for research, coding, review and data queries across IntelliJ, VS Code, CLI and more.",
    "key_features": [
-    "Open source",
+    "Free and open source (MPL-2.0)",
     "Active",
-    "4558 GitHub stars",
+    "4561 GitHub stars",
     "Write code",
     "Research the web"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MPL-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -35892,9 +35892,9 @@
    "seed": false,
    "new_this_week": true,
    "repo": "phodal/auto-dev",
-   "github_stars": 4558,
+   "github_stars": 4561,
    "open_source": true,
-   "license": "",
+   "license": "MPL-2.0",
    "tags": [
     "write code",
     "research the web"
@@ -38646,7 +38646,7 @@
    "key_features": [
     "Free plan (10,000 credits/month); Flex $125/mo, Flex Plus $375/mo (billed monthly); Enterprise custom",
     "Active",
-    "4966 GitHub stars",
+    "4969 GitHub stars",
     "Give agents memory"
    ],
    "pricing": "Free plan (10,000 credits/month); Flex $125/mo, Flex Plus $375/mo (billed monthly); Enterprise custom",
@@ -38666,7 +38666,7 @@
    "seed": false,
    "new_this_week": true,
    "repo": "getzep/zep",
-   "github_stars": 4966,
+   "github_stars": 4969,
    "open_source": false,
    "license": "",
    "tags": [
@@ -51931,7 +51931,7 @@
    "key_features": [
     "Open source (Apache-2.0)",
     "Active",
-    "4953 GitHub stars",
+    "4974 GitHub stars",
     "Edit video",
     "Make music"
    ],
@@ -51953,7 +51953,7 @@
    "seed": false,
    "new_this_week": true,
    "repo": "ace-step/ACE-Step",
-   "github_stars": 4953,
+   "github_stars": 4974,
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [
@@ -53591,7 +53591,7 @@
    "key_features": [
     "Free and open source (MIT)",
     "Active",
-    "4680 GitHub stars",
+    "4698 GitHub stars",
     "Generate images",
     "Open image models"
    ],
@@ -53613,7 +53613,7 @@
    "seed": false,
    "new_this_week": true,
    "repo": "mcmonkeyprojects/SwarmUI",
-   "github_stars": 4680,
+   "github_stars": 4698,
    "open_source": true,
    "license": "MIT",
    "tags": [
