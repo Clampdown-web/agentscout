@@ -1,6 +1,6 @@
 {
   "name": "AgentScout",
-  "description": "AgentScout is a read-only directory of 1,706 AI agent tools, including 239 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below.",
+  "description": "AgentScout is a read-only directory of 1,706 AI agent tools, including 239 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server (https://agentscout-mcp.agentscouthq.workers.dev/mcp).",
   "url": "https://agentscouthq.com/",
   "provider": {
     "organization": "AgentScout",
@@ -14,7 +14,7 @@
     "pushNotifications": false,
     "stateTransitionHistory": false
   },
-  "interaction": "none: static, read-only files over HTTPS GET; no authentication; no A2A task endpoint",
+  "interaction": "static, read-only files over HTTPS GET, plus a read-only MCP server (Streamable HTTP); no authentication; no A2A task endpoint",
   "defaultInputModes": [],
   "defaultOutputModes": [
     "application/json",
@@ -70,6 +70,19 @@
       "id": "mcp-link-status",
       "name": "MCP server link status",
       "url": "https://agentscouthq.com/mcp/link-status.html",
+      "mediaType": "text/html"
+    },
+    {
+      "id": "mcp-server",
+      "name": "AgentScout MCP server (read-only, Streamable HTTP)",
+      "description": "Search tools, get one tool, list categories, best tools for a task. No authentication.",
+      "url": "https://agentscout-mcp.agentscouthq.workers.dev/mcp",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "mcp-connect",
+      "name": "How to connect to the MCP server",
+      "url": "https://agentscouthq.com/mcp/connect.html",
       "mediaType": "text/html"
     },
     {

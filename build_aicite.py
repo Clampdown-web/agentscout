@@ -76,7 +76,7 @@ def pages(t):
     desc=f"Pricing for all {len(M)} MCP servers in AgentScout: {cnt['free']} free, {cnt['freemium']} free plus paid plans, {cnt['paid']} paid. As stated by makers, dated {nice(upd)}."[:158]
     rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",f'{int(x["github_stars"]):,}' if x.get("github_stars") else "–"] for x in M]
     body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for all {len(M)} MCP servers listed on AgentScout, as each maker states it. Data as of <time datetime="{e(upd)}">{e(nice(upd))}</time> (Pacific).</p>'
-          f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="link-status.html">MCP link-status table</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a>.</p>'
+          f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="link-status.html">MCP link-status table</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a> and our <a href="connect.html">read-only MCP server</a>.</p>'
           +tbl(["MCP server","Pricing (as stated)","Type","Open source","GitHub stars"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server pricing table","description":desc,"url":canon,"dateModified":upd,"creator":{"@type":"Organization","name":"AgentScout","url":B},"license":B+"about.html"}
     open("mcp/pricing.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
@@ -96,25 +96,60 @@ def pages(t):
     else: qa=(f'{len(brk)} of {len(M):,} MCP server links did not respond or returned an error: {_and(brk[:5])}'+(f' and {len(brk)-5} more' if len(brk)>5 else '')+f'. The other {len(M)-len(brk)-unc:,} are reachable'+extra+'.')
     qa=f'<p class="qa"><b>Quick answer:</b> {qa}</p>' if qa else ''
     body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{e(chk[:10])}">{e(chk)} PT</time>.</p>'+qa if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
-    body+=(f'<p>{ok} of {len(M)} OK. "Reachable, blocks automated checks" means the site answered but refuses scripted requests (HTTP 401, 403 or 429); it usually works in a browser. HTTP 405 counts as OK because MCP endpoints often accept only POST. Links that did not respond or returned an error are listed first. See also the <a href="pricing.html">MCP pricing table</a>.</p>'
+    body+=(f'<p>{ok} of {len(M)} OK. "Reachable, blocks automated checks" means the site answered but refuses scripted requests (HTTP 401, 403 or 429); it usually works in a browser. HTTP 405 counts as OK because MCP endpoints often accept only POST. Links that did not respond or returned an error are listed first. See also the <a href="pricing.html">MCP pricing table</a> and <a href="connect.html">how to connect to the AgentScout MCP server</a>.</p>'
            +tbl(["MCP server","Status","HTTP result"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server link status","description":desc,"url":canon,"dateModified":(chk[:10] or upd),"creator":{"@type":"Organization","name":"AgentScout","url":B}}
     open("mcp/link-status.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
+    urls.append(connect_page(t))
     agent_cards(t)
     return urls
+MCP_URL="https://agentscout-mcp.agentscouthq.workers.dev/mcp"  # public read-only MCP server (worker agentscout-mcp)
+MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (free, freemium, paid) and open-source filters. Up to 25 results."),
+           ("get_tool","Full listing for one tool by its slug: features, platforms, GitHub repo and stars, AgentScout page."),
+           ("list_categories","Every category with its tool count and page link."),
+           ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing and open-source filters.")]
+def connect_page(t):
+    M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"
+    title="Connect to the AgentScout MCP server · AgentScout"
+    desc=f"Free, read-only MCP server for the AgentScout directory: search {len(t):,} AI agent tools and {M:,} MCP servers from Claude, Cursor, VS Code or any MCP client. No sign-up."[:158]
+    pre=lambda s:f'<pre style="overflow-x:auto;max-width:100%;white-space:pre;padding:12px;border-radius:8px;border:1px solid rgba(127,127,127,.3);font-size:13px"><code>{e(s)}</code></pre>'
+    cfg='{\n  "mcpServers": {\n    "agentscout": {\n      "url": "'+MCP_URL+'"\n    }\n  }\n}'
+    body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server</h1>'
+          f'<p class="lede">Let your AI assistant search AgentScout directly. The server is free, read-only and needs no sign-up or key. It covers all {len(t):,} tools, including {M:,} MCP servers, with pricing as each maker states it.</p>'
+          f'<p class="qa"><b>Quick answer:</b> add <code style="overflow-wrap:anywhere">{e(MCP_URL)}</code> as a remote MCP server (Streamable HTTP) in your client.</p>'
+          '<h2>Server URL</h2>'+pre(MCP_URL)+
+          '<h2>Add it to your client</h2><p><b>Claude Code</b></p>'+pre("claude mcp add --transport http agentscout "+MCP_URL)+
+          '<p><b>Cursor, Windsurf and other clients that use an mcpServers file</b></p>'+pre(cfg)+
+          '<p><b>VS Code</b>: run <i>MCP: Add Server</i>, choose HTTP and paste the server URL. <b>Claude.ai and Claude Desktop</b>: Settings, Connectors, Add custom connector, then paste the URL.</p>'
+          '<h2>Tools</h2>'+tbl(["Tool","What it does"],[[f'<code>{n}</code>',e(d)] for n,d in MCP_TOOLS])+
+          '<h2>Try asking</h2><ul><li>"Find free, open-source MCP servers for browser automation on AgentScout."</li><li>"What does AgentScout list for voice agents that make phone calls?"</li><li>"Show me the AgentScout listing for Cursor."</li></ul>'
+          '<h2>Limits and data</h2><p>Read-only: the server can only look things up, it cannot change anything. Up to 60 requests per minute per IP address. Data comes from the same catalog as the site (<a href="../api/tools.json">api/tools.json</a>) and refreshes within about 10 minutes of each site update. '
+          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="link-status.html">MCP link status</a>, the <a href="../openapi.json">OpenAPI description</a> and <a href="../llms.txt">llms.txt</a>.</p></section>')
+    ld={"@context":"https://schema.org","@type":"WebAPI","name":"AgentScout MCP server","description":desc,"url":canon,"documentation":canon,
+        "provider":{"@type":"Organization","name":"AgentScout","url":B},"isAccessibleForFree":True,"potentialAction":{"@type":"SearchAction","target":MCP_URL}}
+    open("mcp/connect.html","w").write(X.shell("../",title,desc,canon,body,ld))
+    card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","version":"1.0","protocolVersion":"2025-06-18",
+          "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.0"},
+          "description":f"Read-only search over {len(t):,} AI agent tools and {M:,} MCP servers listed on AgentScout. No authentication.",
+          "documentationUrl":canon,"transport":{"type":"streamable-http","endpoint":MCP_URL},"authentication":{"required":False},
+          "capabilities":{"tools":{"listChanged":False}},"tools":[{"name":n,"description":d} for n,d in MCP_TOOLS]}
+    os.makedirs(".well-known",exist_ok=True); open(".well-known/mcp.json","w").write(json.dumps(card,indent=2,ensure_ascii=False)+"\n")
+    return canon
 def agent_cards(t):
     os.makedirs(".well-known",exist_ok=True); M=sum(1 for x in t if x.get("category")=="MCP servers")
-    desc=f"AgentScout is a read-only directory of {len(t):,} AI agent tools, including {M:,} MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below."
+    desc=f"AgentScout is a read-only directory of {len(t):,} AI agent tools, including {M:,} MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server ({MCP_URL})."
     feeds=[{"id":"tools-catalog","name":"Full tool catalog","description":"Every listed tool with category, pricing, platforms, GitHub stars and listing URL.","url":B+"api/tools.json","mediaType":"application/json"},
            {"id":"openapi","name":"OpenAPI description","description":"OpenAPI 3.1 description of the read-only JSON feeds under /api/.","url":B+"openapi.json","mediaType":"application/json"},
            {"id":"llms-txt","name":"llms.txt","description":"Guide to the site for AI models.","url":B+"llms.txt","mediaType":"text/markdown"},
            {"id":"mcp-pricing","name":"MCP server pricing table","url":B+"mcp/pricing.html","mediaType":"text/html"},
            {"id":"mcp-link-status","name":"MCP server link status","url":B+"mcp/link-status.html","mediaType":"text/html"},
+           {"id":"mcp-server","name":"AgentScout MCP server (read-only, Streamable HTTP)","description":"Search tools, get one tool, list categories, best tools for a task. No authentication.","url":MCP_URL,"mediaType":"application/json"},
+           {"id":"mcp-connect","name":"How to connect to the MCP server","url":B+"mcp/connect.html","mediaType":"text/html"},
            {"id":"sitemap","name":"Sitemap","url":B+"sitemap.xml","mediaType":"application/xml"}]
     card={"name":"AgentScout","description":desc,"url":B,"provider":{"organization":"AgentScout","url":B},"version":today(),
           "documentationUrl":B+"llms.txt","contact":"support@agentscouthq.com",
           "capabilities":{"streaming":False,"pushNotifications":False,"stateTransitionHistory":False},
-          "interaction":"none: static, read-only files over HTTPS GET; no authentication; no A2A task endpoint",
+          "interaction":"static, read-only files over HTTPS GET, plus a read-only MCP server (Streamable HTTP); no authentication; no A2A task endpoint",
           "defaultInputModes":[],"defaultOutputModes":["application/json","text/html","text/markdown"],
           "skills":[{"id":"find-ai-agent-tools","name":"Find AI agent tools","description":"Look up AI agent tools and MCP servers by category, pricing or name by reading api/tools.json.","tags":["directory","ai agents","mcp","tools"],"examples":["Which MCP servers are free?","List coding agents with open-source code."]}],
           "resources":feeds}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "agentscout",
+    "title": "AgentScout directory",
+    "version": "1.0.0"
+  },
+  "description": "Read-only search over 1,706 AI agent tools and 239 MCP servers listed on AgentScout. No authentication.",
+  "documentationUrl": "https://agentscouthq.com/mcp/connect.html",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://agentscout-mcp.agentscouthq.workers.dev/mcp"
+  },
+  "authentication": {
+    "required": false
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "search_tools",
+      "description": "Search by keyword, with optional category, pricing (free, freemium, paid) and open-source filters. Up to 25 results."
+    },
+    {
+      "name": "get_tool",
+      "description": "Full listing for one tool by its slug: features, platforms, GitHub repo and stars, AgentScout page."
+    },
+    {
+      "name": "list_categories",
+      "description": "Every category with its tool count and page link."
+    },
+    {
+      "name": "best_for_task",
+      "description": "Describe a task in plain words and get the most relevant tools, with optional pricing and open-source filters."
+    }
+  ]
+}
