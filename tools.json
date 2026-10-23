@@ -42770,5 +42770,35 @@
     "logo": "assets/logos/motion-transfer.png",
     "maker_submitted": true,
     "submitted": "2026-10-22"
+  },
+  {
+    "name": "Teebots",
+    "url": "https://teebots.ai/",
+    "description": "Teebots is a free desktop app that keeps a small team of AI bots on your own computer. Each bot can use a different model through your own API key, with requests going straight to the provider, and keeps its own private memory alongside a shared group memory. Put several bots in one group chat and @mention one to hand it a task, or let them pass steps to each other. Bots can work with files in their own folder, run commands, use skills including MCP and browse in their own browser, but they stop and wait for your approval before submitting or paying for anything. Scheduled daily or weekly jobs keep running from the menu bar. Chats, memory, files and logins stay local. Available for Mac (Apple silicon) now, with Windows and Linux coming soon.",
+    "category": "personal agents",
+    "pricing": "Free",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "Submission",
+    "pricing_detail": "Free: the app costs nothing; model usage is billed to the API key you add. macOS (Apple silicon, v0.1.2) now; Windows and Linux coming soon",
+    "use_cases": [
+      "automate the browser",
+      "control a computer",
+      "connect tools via MCP"
+    ],
+    "website": "https://teebots.ai/",
+    "github": "",
+    "id": 1697,
+    "slug": "teebots",
+    "logo": "assets/logos/teebots.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-22",
+    "socials": [
+      "https://x.com/xijaja"
+    ]
   }
 ]

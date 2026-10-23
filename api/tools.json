@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T04:43:26Z",
- "updated": "2026-10-23T04:43:26Z",
+ "generated": "2026-10-23T05:04:43Z",
+ "updated": "2026-10-23T05:04:43Z",
  "last_checked": "2026-10-22",
- "count": 1677,
+ "count": 1678,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -70941,6 +70941,50 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/motion-transfer.png",
    "page": "https://agentscouthq.com/tools/motion-transfer.html"
+  },
+  {
+   "name": "Teebots",
+   "slug": "teebots",
+   "url": "https://teebots.ai/",
+   "website": "https://teebots.ai/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Teebots is a free desktop app that keeps a small team of AI bots on your own computer. Each bot can use a different model through your own API key, with requests going straight to the provider, and keeps its own private memory alongside a shared group memory. Put several bots in one group chat and @mention one to hand it a task, or let them pass steps to each other. Bots can work with files in their own folder, run commands, use skills including MCP and browse in their own browser, but they stop and wait for your approval before submitting or paying for anything. Scheduled daily or weekly jobs keep running from the menu bar. Chats, memory, files and logins stay local. Available for Mac (Apple silicon) now, with Windows and Linux coming soon.",
+   "key_features": [
+    "Free: the app costs nothing; model usage is billed to the API key you add. macOS (Apple silicon, v0.1.2) now; Windows and Linux coming soon",
+    "Active",
+    "Automate the browser",
+    "Control a computer",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free: the app costs nothing; model usage is billed to the API key you add. macOS (Apple silicon, v0.1.2) now; Windows and Linux coming soon",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "control a computer",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/teebots.png",
+   "page": "https://agentscouthq.com/tools/teebots.html"
   }
  ]
 }
