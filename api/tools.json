@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T01:28:30Z",
- "updated": "2026-10-23T01:28:30Z",
+ "generated": "2026-10-23T02:26:54Z",
+ "updated": "2026-10-23T02:26:54Z",
  "last_checked": "2026-10-22",
- "count": 1675,
+ "count": 1676,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -70861,6 +70861,45 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/flogpt.png",
    "page": "https://agentscouthq.com/tools/flogpt.html"
+  },
+  {
+   "name": "Reference to Video",
+   "slug": "reference-to-video",
+   "url": "https://reference-to-video.com/",
+   "website": "https://reference-to-video.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "Reference to Video turns product photos into 6-second AI ad clips for ecommerce and social: upload a product image, pick a shot style (showcase, lifestyle UGC, close-up detail or slow camera move) and an aspect ratio, and get a vertical, landscape or square video in 480p or 720p. Its reference mode treats the photo as a strict guide for tighter product fidelity and camera control.",
+   "key_features": [
+    "Paid: no free plan; one-time credit packs from $4.99 for 400 credits or $9.99 for 900 credits (valid 365 days), plus monthly and yearly plans; each 6-second clip costs 80-240 credits depending on mode and resolution; prices as listed on its site",
+    "Active"
+   ],
+   "pricing": "Paid: no free plan; one-time credit packs from $4.99 for 400 credits or $9.99 for 900 credits (valid 365 days), plus monthly and yearly plans; each 6-second clip costs 80-240 credits depending on mode and resolution; prices as listed on its site",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/reference-to-video.png",
+   "page": "https://agentscouthq.com/tools/reference-to-video.html"
   }
  ]
 }
