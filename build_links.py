@@ -182,8 +182,9 @@ def run(t):
     edit("news.html",lambda s:put(s,"news",line,'</section></main>'))
     edit("newsletter.html",lambda s:put(s,"nl",line,'</section></main>'))
     # (4) homepage
+    # teal neon pill on 'All free tools' (Oct 23 2026): this strip is written after sitewide(), so it carries the pill itself
     def home(s):
-        strip=(f'<section id="xfree" class="band" aria-labelledby="xfree-h"><div class="wrap"><div class="sh"><div><h2 id="xfree-h">{X.BUILT_BY("")}</h2><p>Calculators and generators that run in your browser. No sign-up. <a href="free-tools.html">All free tools →</a></p></div></div>'
+        strip=(f'<section id="xfree" class="band" aria-labelledby="xfree-h"><div class="wrap"><div class="sh"><div><h2 id="xfree-h">{X.BUILT_BY("")}</h2><p>Calculators and generators that run in your browser. No sign-up. <a class="navft" href="free-tools.html">'+__import__("build_tasks")._wrap("ft","All free tools →")+'</a></p></div></div>'
                f'<div class="grid fill">{F.hub_cards("")}{F.see_all_card("")}</div></div></section>')
         s=put(s,"homefree",strip,'<div class="layout">')
         role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'

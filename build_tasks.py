@@ -301,13 +301,34 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610231545"  # bump when app.js/styles.css change
+ASSET_V="202610231610"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
+# ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
+_SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
+_ICO={"ft":"M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z",  # wrench
+      "gen":"M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z",  # sparkle
+      "mcp":"M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5",  # plug (same as header MCP pill)
+      "bt":"M12 2v3M8 5h8a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3zM9.5 10.5v1M14.5 10.5v1M9.5 15h5M2 10v3M22 10v3"}  # robot head
+def _wrap(k,txt): return f'<span class="npill np{k}">'+_SV.format(_ICO[k])+txt+'</span>'
+def _unpill(s):
+    s=re.sub(r'<a class="navft" (href="[^"]*")><span class="npill npft"><svg class="npico".*?</svg>(.*?)</span></a>',r'<a \1>\2</a>',s)
+    s=re.sub(r'<span class="npill npgen"><svg class="npico".*?</svg>(.*?)</span>',r'✨ \1',s)
+    s=re.sub(r'<a class="footmcp" (href="[^"]*")><span class="npill npmcp"><svg class="npico".*?</svg>(.*?)</span></a>',r'<a \1>\2</a>',s)
+    s=re.sub(r'<span class="npill npbt"><svg class="npico".*?</svg>(.*?)</span>',r'\1',s)
+    return s
+def _pill(s):
+    s=re.sub(r'(?<!AgentScout</a> / )<a (href="[^"]*free-tools\.html")>((?:All f|F)ree tools(?: →)?)</a>',lambda mm:f'<a class="navft" {mm.group(1)}>'+_wrap("ft",mm.group(2))+'</a>',s)
+    s=re.sub(r'(<a class="(?:navgen|footgen)" href="[^"]*">)✨ ([^<]*)</a>',lambda mm:mm.group(1)+_wrap("gen",mm.group(2))+'</a>',s)
+    s=re.sub(r'(<a class="navbt" href="[^"]*">)([^<]*)</a>',lambda mm:mm.group(1)+_wrap("bt",mm.group(2))+'</a>',s)
+    fm=re.search(r'<footer\b.*?</footer>',s,re.S)  # footer MCP link gets a static plug pill (pulse stays header-only)
+    if fm: s=s[:fm.start()]+re.sub(r'<a (href="[^"]*mcp/connect\.html")>(MCP server)</a>',lambda mm:f'<a class="footmcp" {mm.group(1)}>'+_wrap("mcp",mm.group(2))+'</a>',fm.group(0))+s[fm.end():]
+    return s
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
         if os.path.basename(f) in SKIP or f.startswith(("node_modules","app/","preview/")): continue
         s=open(f).read(); o=s
+        s=_unpill(s)  # neon pills are re-applied at the end (_pill), so every rule below sees the plain links
         s=re.sub(r'<section class="nlband".*?</section>\n?',"",s,flags=re.S)  # dark "5 agent tools" strip removed sitewide
         d="/" if f=="404.html" else "../"*f.count("/")
         # Oct 23 2026 (owner: one search only): the /s/ hub is "Popular lists" in menus and footers, never "Searches"/"Popular searches"
@@ -346,6 +367,10 @@ def sitewide(t):
             if 'class="footgen"' not in fn: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a class="footgen" href="{d}generate.html">✨ Free AI Image Generator</a>',fn,count=1)
             # AgentScout MCP server connect page in every footer, right after Free tools (Oct 23 2026, crawlable link for /mcp/connect.html)
             if 'mcp/connect.html">MCP server</a>' not in fn and f!="sponsor.html": fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
+            # Oct 23 2026 (Ops review): 66 footers (index, saved, quiz, generate, bot-templates/*, some best/*) listed Popular lists and
+            # AI agents by role twice; keep the later (standard-position) link and drop the earlier copy
+            for _lk in (r'<a href="[^"]*s/index\.html">Popular lists</a>',r'<a href="[^"]*for/index\.html">AI agents by role</a>'):
+                while len(re.findall(_lk,fn))>1: fn=re.sub(r'(?: · )?'+_lk,'',fn,count=1)
             if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Bot templates (launched Oct 19 2026 PT, owner approved): red flame nav link left of Quiz, footer link before Free tools,
         # homepage strip after the makers strip (data/bt-strip.inc). Sponsor page stays untouched.
@@ -393,6 +418,7 @@ def sitewide(t):
         s=__import__("ga4").apply(s,f)  # Google Analytics 4 tag + CSP hosts, consent-aware (ga4.py, Oct 19 2026)
         PC='<link rel="preconnect" href="https://agentscout-image.agentscouthq.workers.dev" crossorigin>'  # share counter host (Lighthouse preconnect, Oct 19 2026)
         if PC not in s and "share.js" in s and "</head>" in s: s=s.replace("</head>",PC+"</head>",1)
+        if f!="sponsor.html": s=_pill(s)  # Oct 23 2026 (owner): neon pills for Free tools / Image Gen / AI bot templates; sponsor page untouched
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
 

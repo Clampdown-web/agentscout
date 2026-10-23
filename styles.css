@@ -503,3 +503,28 @@ nav .links a.navmcp:focus-visible{outline:2px solid var(--accent);outline-offset
 @media(min-width:600px) and (max-width:659px){nav .links a.navmcp{display:none}}
 [data-theme=dark] nav .links a.navmcp:hover .mcppill,[data-theme=dark] nav .links a.navmcp:hover .mcpico{color:var(--bg)}
 @media(min-width:420px) and (max-width:430px){nav .links{column-gap:8px}nav .links a.navmcp .mcppill{padding:2px 6px 2px 5px;gap:3px}}
+/* Oct 23 2026 (owner): softer neon pills for Free tools (teal wrench), Image Gen (pink sparkle), AI bot templates (amber robot). Static glow, no pulse: MCP keeps the strongest glow.
+   Text uses --text (4.5:1+); tint goes on border, icon and glow only. In the header the pill is drawn with box-shadow rings so it adds no layout width (search/filters don't move). */
+.npill{--np:#0f766e;--npg:rgba(20,184,166,.35);--npb:rgba(20,184,166,.10);display:inline-flex;align-items:center;gap:4px;line-height:1.2;padding:2px 8px 2px 6px;border:1px solid var(--np);border-radius:999px;background:var(--npb);color:var(--text);font-weight:600;box-shadow:0 0 6px var(--npg);white-space:nowrap}
+.npgen{--np:#be185d;--npg:rgba(236,72,153,.35);--npb:rgba(236,72,153,.09)}
+.npbt{--np:#b45309;--npg:rgba(245,158,11,.38);--npb:rgba(245,158,11,.10)}
+[data-theme=dark] .npft{--np:#2dd4bf;--npg:rgba(45,212,191,.35);--npb:rgba(45,212,191,.10)}
+[data-theme=dark] .npgen{--np:#f472b6;--npg:rgba(244,114,182,.35);--npb:rgba(244,114,182,.10)}
+[data-theme=dark] .npbt{--np:#fbbf24;--npg:rgba(251,191,36,.33);--npb:rgba(251,191,36,.10)}
+.npico{flex:0 0 14px;width:14px;height:14px;color:var(--np)}
+a.navft,a.navgen,a.footgen,a.navbt{text-decoration:none}
+a:hover>.npill{background:var(--np);color:#fff}a:hover>.npill .npico{color:#fff}
+[data-theme=dark] a:hover>.npill,[data-theme=dark] a:hover>.npill .npico{color:#0b0b12}
+a:has(>.npill):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:999px}
+a.navbt:has(>.npill)::before{display:none!important}
+a.navgen:has(>.npill),a.footgen:has(>.npill),a.navbt:has(>.npill){color:var(--text)!important}
+footer a.footgen:has(>.npill){padding:0;background:none}
+footer a.navft,main a.navft,section a.navft{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle}
+nav .links .npill{padding:0;border:0;gap:3px;background:none;box-shadow:0 0 0 3px var(--npb),0 0 0 4px var(--np),0 0 7px 3px var(--npg)}
+nav .links .npico{width:13px;height:13px;flex-basis:13px}
+nav .links a:hover>.npill{box-shadow:0 0 0 3px var(--np),0 0 0 4px var(--np)}
+/* 320-349px and 600-739px: the header has no spare width, so Image Gen and AI bot templates drop their icons there (the tinted ring stays); the wrench stays on Free tools. Keeps the header row count and search position unchanged. */
+@media(max-width:349px),(min-width:600px) and (max-width:739px){nav .links .npgen .npico,nav .links .npbt .npico{display:none}}
+@media(max-width:339px){nav .links .npft .npico{display:none}}
+.npmcp{--np:var(--accent);--npg:rgba(91,91,247,.35);--npb:var(--accent-soft)}[data-theme=dark] .npmcp{--np:#9b9bff;--npg:rgba(147,147,255,.35)}
+footer a.footmcp{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle;text-decoration:none}

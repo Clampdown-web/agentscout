@@ -45,6 +45,7 @@ def bt_rename():
         if f.startswith(("pagefind","sponsor")): continue
         s0=s=open(f).read()
         s=re.sub(r'(<a class="navbt" href="[^"]*bot-templates/">)Bot templates</a>',r'\1AI bot templates</a>',s)
+        s=re.sub(r'(<a class="navbt" href="[^"]*bot-templates/"><span class="npill npbt"><svg class="npico".*?</svg>)Bot templates</span></a>',r'\1AI bot templates</span></a>',s)  # neon pill form (Oct 23 2026): a fresh build pills the link before this rename runs
         s=s.replace('"name": "Bot templates"','"name": "AI bot templates"').replace('"name":"Bot templates"','"name":"AI bot templates"')
         s=s.replace('</svg>Bot templates</h2><a href="bot-templates/">','</svg>AI bot templates</h2><a href="bot-templates/">')
         if f=="bot-templates/index.html": s=s.replace('Bot templates<span id="bt-count"','AI bot templates<span id="bt-count"',1)
