@@ -349,6 +349,8 @@ def sitewide(t):
             if 'class="navbt"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navbt" href="{d}bot-templates/">Bot templates</a>'+mm.group(2),s,count=1,flags=re.S)
             # Leaderboard (Oct 21 2026, owner-approved): one nav link right before Bot templates
             if 'class="navlb"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a class="navbt")',lambda mm:mm.group(1)+f'<a class="navlb" href="{d}leaderboard/">Leaderboard</a>'+mm.group(2),s,count=1,flags=re.S)
+            # Search & filters (Oct 22 2026, owner-approved): first nav link, points to the full /search/ page
+            if 'class="navsf"' not in s.split("</nav>")[0]: s=s.replace('<div class="links">',f'<div class="links"><a class="navsf" href="{d}search/">Search &amp; filters</a>',1)
             fm2=re.search(r'<footer\b.*?</footer>',s,re.S)
             if fm2 and 'class="navbt"' not in fm2.group(0):
                 fn2=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:f'<a class="navbt" href="{d}bot-templates/">Bot templates</a> · '+mm.group(1),fm2.group(0),count=1)
