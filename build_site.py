@@ -32,7 +32,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"superagnt":["connect tools via MCP","research the web","give agents memory"],  # submission Oct 22: hosted MCP server + REST API (social data, scraping, enrichment, Postgres, memory, inbox)
+UC_SET={"flogpt":["voice & phone calls","sales & support"],  # Oct 22 PT: "website" keyword wrongly added research the web
+"superagnt":["connect tools via MCP","research the web","give agents memory"],  # submission Oct 22: hosted MCP server + REST API (social data, scraping, enrichment, Postgres, memory, inbox)
 "gmapsscraper-ai":["sales & support","research the web","connect tools via MCP"],  # submission Oct 21: AI Google Maps lead scraper with REST API and MCP server
 "metix-ai":["business agents","automate workflows"],  # submission Oct 21: AI recruiter agent (Mira) that sources, does approved outreach and books interviews
 "playable-notes":["make music"],  # submission Oct 21: AI piano sheet music reader and arranger for teachers
