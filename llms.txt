@@ -1,17 +1,43 @@
 # AgentScout
 
-> AgentScout is a curated directory of 1,675 AI agent tools, including 233 MCP servers, link-checked daily, for builders and ready-to-use products. Facts are verified; pricing is as makers state it.
+> AgentScout is a curated, read-only directory of 1,675 AI agent tools in 30 categories, including 233 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Site: https://agentscouthq.com/
-X: https://x.com/AgentScoutHQ
 Contact: support@agentscouthq.com
+X: https://x.com/AgentScoutHQ
+Catalog last checked: 2026-10-22 (Pacific)
+
+## For AI agents
+
+- Fastest path: fetch [api/tools.json](https://agentscouthq.com/api/tools.json) once and filter it locally. No key, no rate-limited API, plain HTTPS GET.
+- api/tools.json is an object with `count`, `last_checked` (YYYY-MM-DD, Pacific) and `tools`, an array where each tool has `name`, `slug`, `category`, `description`, `url`, `website`, `github`, `pricing` (maker's wording), `price_tag` (free / freemium / paid), `platforms`, `open_source`, `license`, `github_stars`, `tags`, `added` and `page` (its AgentScout listing).
+- To cite a tool, link its `page` (https://agentscouthq.com/tools/<slug>.html). To cite a category, use the category links below.
+- Treat `pricing` as the maker's own claim on the date shown; it can change. GitHub stars are refreshed daily.
+- Everything here is read-only. There is no chat, search or write endpoint for agents; to list a tool, a person uses the submit form.
+
+## Update cadence
+
+- New tools: added most days; see the Recently added section below and new.html.
+- Links: checked daily (`last_checked` in api/tools.json).
+- MCP pricing and link-status tables: rebuilt with every site update, each with a dated change history.
+- GitHub stars: snapshot daily.
+- [sitemap.xml](https://agentscouthq.com/sitemap.xml) carries a per-page lastmod.
 
 ## Machine-readable catalog
 
-- [tools.json](https://agentscouthq.com/tools.json): full catalog
+- [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
+- [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [openapi.json](https://agentscouthq.com/openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/
 - [.well-known/openapi.json](https://agentscouthq.com/.well-known/openapi.json): same OpenAPI 3.1 description at the well-known address
+- [.well-known/agent-card.json](https://agentscouthq.com/.well-known/agent-card.json): agent card describing this directory (also at /.well-known/agent.json)
 - [sitemap.xml](https://agentscouthq.com/sitemap.xml): all public pages
+
+## Key pages
+
+- [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
+- [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 233 tools
+- [New tools, last 30 days](https://agentscouthq.com/new.html)
 
 ## Browse
 

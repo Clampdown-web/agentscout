@@ -174,6 +174,7 @@ def build(t):
     import build_leaderboard; urls+=build_leaderboard.pages(t)  # /leaderboard/ (Oct 21 2026)
     import build_search; urls+=build_search.page()  # /search/ page (Oct 21 2026)  # Best MCP servers by task (Oct 21 2026)
     import build_trending; urls+=build_trending.pages(t)
+    import build_aicite; urls+=build_aicite.pages(t)  # MCP pricing + link-status tables, agent cards (Oct 22 2026)
     import os as _os2
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
@@ -341,7 +342,25 @@ def seo(t,urls):
     s=shell("/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section style="padding-top:40px"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/index.html#directory">directory</a> or <a href="/categories/index.html">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
     open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
     # llms.txt
-    L=["# AgentScout","",f"> AgentScout is a curated directory of {len(t):,} AI agent tools, including {sum(1 for _x in t if _x['category']=='MCP servers'):,} MCP servers, link-checked daily, for builders and ready-to-use products. Facts are verified; pricing is as makers state it.","",f"Site: {B}","X: https://x.com/AgentScoutHQ","Contact: support@agentscouthq.com","","## Machine-readable catalog","",f"- [tools.json]({B}tools.json): full catalog",f"- [openapi.json]({B}openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/",f"- [.well-known/openapi.json]({B}.well-known/openapi.json): same OpenAPI 3.1 description at the well-known address",f"- [sitemap.xml]({B}sitemap.xml): all public pages","","## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Leaderboard]({B}leaderboard/): tools ranked by visitor ratings, reviews and GitHub stars",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
+    _nm=sum(1 for _x in t if _x['category']=='MCP servers')
+    try: _lc=json.load(open("api/tools.json")).get("last_checked","")
+    except Exception: _lc=""
+    L=["# AgentScout","",f"> AgentScout is a curated, read-only directory of {len(t):,} AI agent tools in {len(cats)} categories, including {_nm:,} MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.","",f"Site: {B}","Contact: support@agentscouthq.com","X: https://x.com/AgentScoutHQ"]+([f"Catalog last checked: {_lc} (Pacific)"] if _lc else [])+["",
+    "## For AI agents","",
+    f"- Fastest path: fetch [api/tools.json]({B}api/tools.json) once and filter it locally. No key, no rate-limited API, plain HTTPS GET.",
+    "- api/tools.json is an object with `count`, `last_checked` (YYYY-MM-DD, Pacific) and `tools`, an array where each tool has `name`, `slug`, `category`, `description`, `url`, `website`, `github`, `pricing` (maker's wording), `price_tag` (free / freemium / paid), `platforms`, `open_source`, `license`, `github_stars`, `tags`, `added` and `page` (its AgentScout listing).",
+    "- To cite a tool, link its `page` (https://agentscouthq.com/tools/<slug>.html). To cite a category, use the category links below.",
+    "- Treat `pricing` as the maker's own claim on the date shown; it can change. GitHub stars are refreshed daily.",
+    "- Everything here is read-only. There is no chat, search or write endpoint for agents; to list a tool, a person uses the submit form.","",
+    "## Update cadence","",
+    "- New tools: added most days; see the Recently added section below and new.html.",
+    "- Links: checked daily (`last_checked` in api/tools.json).",
+    f"- MCP pricing and link-status tables: rebuilt with every site update, each with a dated change history.",
+    "- GitHub stars: snapshot daily.",
+    f"- [sitemap.xml]({B}sitemap.xml) carries a per-page lastmod.","",
+    "## Machine-readable catalog","",f"- [api/tools.json]({B}api/tools.json): full catalog with counts and check date",f"- [tools.json]({B}tools.json): same tools in the site's internal format",f"- [openapi.json]({B}openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/",f"- [.well-known/openapi.json]({B}.well-known/openapi.json): same OpenAPI 3.1 description at the well-known address",f"- [.well-known/agent-card.json]({B}.well-known/agent-card.json): agent card describing this directory (also at /.well-known/agent.json)",f"- [sitemap.xml]({B}sitemap.xml): all public pages","",
+    "## Key pages","",f"- [MCP server pricing table]({B}mcp/pricing.html): every MCP server's stated pricing, dated, with change history",f"- [MCP server link status]({B}mcp/link-status.html): latest automated link check for every MCP server, with change history",f"- [MCP servers category]({B}categories/mcp-servers.html): {_nm:,} tools",f"- [New tools, last 30 days]({B}new.html)","",
+    "## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Leaderboard]({B}leaderboard/): tools ranked by visitor ratings, reviews and GitHub stars",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     L+=["","## Guides","",f"- [MCP servers]({B}categories/mcp-servers.html)",f"- [Agent Skills with install commands]({B}skills/)",f"- [Agent infra]({B}categories/agent-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",""]
     # every tool added in the last 2 days (today PT + yesterday), no fixed cap (owner bug fix Oct 20 2026); falls back to the 12 newest if none
