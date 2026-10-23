@@ -95,7 +95,7 @@ def answer_blocks(t):
              f'<p style="margin:0 0 10px">AgentScout tracks <b>{n:,}</b> AI agent tools across <b>{nc}</b> categories, including <a href="categories/mcp-servers.html">{nmcp} MCP servers</a>, coding agents, browser agents, voice agents and no-code builders. We check every link daily, describe each tool from its official site or README, show pricing as the maker states it, and have no paid placements in the rankings. <span class="muted">Last checked {d}.</span></p>'
              '<p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
              f'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>{_faq_html(faq)}</div></section>{_faq_ld(faq)}<!--/sn:home-->')
-        s=s.replace("<!--/dir:top-->","<!--/dir:top-->"+blk,1) if "<!--/dir:top-->" in s else s.replace("</header>","</header>"+blk,1); open(f,"w").write(s)  # Oct 22 2026: about block goes after the top search panel
+        s=s.replace("</header>","</header>"+blk,1); open(f,"w").write(s)  # Oct 22 2026: about block goes after the top search panel
     f="bot-templates/index.html"
     if os.path.exists(f):
         s=open(f).read(); s=re.sub(r"<!--sn:bt-->.*?<!--/sn:bt-->","",s,flags=re.S)

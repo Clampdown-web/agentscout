@@ -25,6 +25,7 @@ def run(t):
         a="".join(f'<a {CH} href="{e(up+p)}">{e(l)}</a>' for p,l in T if p!=src)
         b=f'<!--il:pop--><section class="wrap" aria-label="Popular lists" style="margin:24px auto 8px"><h2 style="font-size:16px;margin:0 0 4px">Popular lists</h2><div class="chips">{a}</div></section><!--/il:pop-->'
         if "<footer" not in s: print("build_intlinks: no footer, skipped:",src); continue
-        i=s.rfind("<footer"); s=s[:i]+b+s[i:]; open(src,"w").write(s); done+=1
+        i=s.find("<!--dir:top-->") if src=="index.html" and "<!--dir:top-->" in s else s.rfind("<footer")  # Oct 23 2026 (owner): homepage directory sits last, right above the footer
+        s=s[:i]+b+s[i:]; open(src,"w").write(s); done+=1
     print(f"build_intlinks: Popular lists on {done} pages, {len(T)} targets")
 if __name__=="__main__": run(json.load(open("tools.json")))

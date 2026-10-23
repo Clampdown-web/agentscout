@@ -64,5 +64,12 @@ def pick(t,k=6,top=3,pool=10,frac=0.6,penalty=0.06):
         for p in reversed(ps):
             if p in bys and p!=s: out[s]=[bys[p]]+[y for y in out[s] if y["slug"]!=p]
         out[s]=out[s][:k]
+    # Hand-checked exclusions (Oct 23 2026 PT): drop a wrong match and refill with the next most similar tool in the category
+    for s,bad in EXCLUDE.items():
+        if s not in out: continue
+        x=bys[s]; keep=[y for y in out[s] if y["slug"] not in bad]; have={y["slug"] for y in keep}|{s}
+        extra=sorted((y for y in by[x["category"]] if y["slug"] not in have and y["slug"] not in bad),key=lambda y:(-sim(x,y),y["slug"]))
+        out[s]=(keep+extra)[:k]
     return out
+EXCLUDE={"keboola-mcp-server":{"robottraining-jobs"}}
 PIN={"vellm":["vidmoat","viggle","motion-transfer","reference-to-video"],"salestouch":["roverlead"],"roverlead":["salestouch"],"system-one-api":["typesafe-jev"],"typesafe-jev":["system-one-api"]}

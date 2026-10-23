@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-23T15:13:32Z",
- "updated": "2026-10-23T15:13:32Z",
+ "generated": "2026-10-23T15:23:33Z",
+ "updated": "2026-10-23T15:23:33Z",
  "last_checked": "2026-10-23",
  "count": 1705,
  "tools": [
@@ -71384,14 +71384,14 @@
    "category": "MCP servers",
    "description": "SuprSend's official hosted MCP server gives AI agents and coding assistants access to a SuprSend notification workspace. An agent can look up and manage users and lists, inspect and edit notification workflows and templates, and read delivery data across email, SMS, push, Slack and in-app inbox channels without leaving the chat or editor.",
    "key_features": [
-    "See site",
+    "Free plan $0/month (10k notifications/mo, no card); Essentials from $100/month billed annually; Business and Enterprise tiers",
     "Active",
     "Write code",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan $0/month (10k notifications/mo, no card); Essentials from $100/month billed annually; Business and Enterprise tiers",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
@@ -71856,13 +71856,13 @@
    "category": "MCP servers",
    "description": "Streamkap's official CLI and MCP server let AI agents manage real-time change-data-capture pipelines on Streamkap. An agent can create and edit sources, destinations, pipelines and transforms, check their status and troubleshoot lag, streaming database changes into warehouses and apps without clicking through the console.",
    "key_features": [
-    "See site",
+    "Free plan $0 (500 MB/month, MCP server included); paid plans priced by data volume",
     "Active",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "See site",
-   "price_tag": "unknown",
+   "pricing": "Free plan $0 (500 MB/month, MCP server included); paid plans priced by data volume",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)"
    ],
