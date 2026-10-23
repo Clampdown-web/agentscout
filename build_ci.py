@@ -70,5 +70,8 @@ def pages(t):
         {"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":f"{B}tools/{s}.html","name":bs[s]["name"]} for i,(s,*_) in enumerate([r for r in SKILLS if r[0] in bs])]}]}
     os.makedirs("skills",exist_ok=True)
     h=X.shell("../",title,desc,canon,body,ld).replace('<meta property="og:url"',f'<meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}"><meta property="og:url"',1)
+    if 'name="twitter:image"' not in h:  # mirror og:image so X cards show the share image (post-update pass Oct 22 2026)
+        m=re.search(r'<meta property="og:image" content="([^"]+)">',h)
+        if m: h=h.replace('<meta name="twitter:title"',f'<meta name="twitter:image" content="{m.group(1)}"><meta name="twitter:title"',1)
     open("skills/index.html","w").write(h); print("build_ci: skills page",k,"skills")
     return [canon]
