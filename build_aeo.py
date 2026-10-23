@@ -35,6 +35,7 @@ def run(t):
     n=0
     for f in sorted(glob.glob("best/*.html")+glob.glob("mcp/*.html")+glob.glob("s/*.html")):
         if f.endswith("/index.html"): continue
+        if f=="mcp/link-status.html": continue  # status page, not a ranked list: build_aicite writes its own Quick answer
         s0=s=open(f).read()
         if 'http-equiv="refresh"' in s[:4000]: continue
         s=re.sub(r"<!--ci:aeo-->.*?<!--/ci:aeo-->","",s,flags=re.S)
