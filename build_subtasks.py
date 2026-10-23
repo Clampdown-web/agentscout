@@ -70,7 +70,10 @@ SUBTASKS=[
 ("rules-config","rules, skills and config",r"\brules\b|skills|configur|settings"),
 ]
 _RX=[(s,l,re.compile(r,re.I)) for s,l,r in SUBTASKS]
+# Hand-checked sub-tasks for tools the regex tags wrongly (Oct 22 2026).
+TAG_OVERRIDE={"havetml":["sandboxes","mcp-servers"]}
 def tags(x):
+    if x.get("slug") in TAG_OVERRIDE: return list(TAG_OVERRIDE[x["slug"]])
     d=f'{x.get("name","")} {x.get("description","")}'
     return [s for s,_,r in _RX if r.search(d)]
 LABEL={s:l for s,l,_ in SUBTASKS}
