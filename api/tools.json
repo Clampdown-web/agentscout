@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T02:26:54Z",
- "updated": "2026-10-23T02:26:54Z",
+ "generated": "2026-10-23T03:00:53Z",
+ "updated": "2026-10-23T03:00:53Z",
  "last_checked": "2026-10-22",
- "count": 1676,
+ "count": 1677,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -70900,6 +70900,47 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/reference-to-video.png",
    "page": "https://agentscouthq.com/tools/reference-to-video.html"
+  },
+  {
+   "name": "Motion Transfer",
+   "slug": "motion-transfer",
+   "url": "https://motiontransfer.app/",
+   "website": "https://motiontransfer.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "Motion Transfer animates a character photo by copying the movement from a reference video: the photo sets the look while the clip drives gestures, expressions and body motion. Upload your own 4-30 second clip or pick a ready-made motion template, choose the model, resolution, length and aspect ratio in settings, see a credit estimate first, then preview and download the result. It also includes general AI image and video generation from one shared credit balance.",
+   "key_features": [
+    "Freemium: free Basic plan with one-time signup credits (the site banner advertises 60; the pricing page lists 18) and watermarked downloads; Starter $8.30/month billed yearly ($100/year, 2,400 credits), Pro $30/month billed yearly ($49.90 month-to-month), Business $49.90/month billed yearly; prices as listed on its site",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "Freemium: free Basic plan with one-time signup credits (the site banner advertises 60; the pricing page lists 18) and watermarked downloads; Starter $8.30/month billed yearly ($100/year, 2,400 credits), Pro $30/month billed yearly ($49.90 month-to-month), Business $49.90/month billed yearly; prices as listed on its site",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/motion-transfer.png",
+   "page": "https://agentscouthq.com/tools/motion-transfer.html"
   }
  ]
 }

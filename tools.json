@@ -42745,5 +42745,30 @@
     "logo": "assets/logos/reference-to-video.png",
     "maker_submitted": true,
     "submitted": "2026-10-22"
+  },
+  {
+    "name": "Motion Transfer",
+    "url": "https://motiontransfer.app/",
+    "description": "Motion Transfer animates a character photo by copying the movement from a reference video: the photo sets the look while the clip drives gestures, expressions and body motion. Upload your own 4-30 second clip or pick a ready-made motion template, choose the model, resolution, length and aspect ratio in settings, see a credit estimate first, then preview and download the result. It also includes general AI image and video generation from one shared credit balance.",
+    "category": "video generation",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "Submission",
+    "pricing_detail": "Freemium: free Basic plan with one-time signup credits (the site banner advertises 60; the pricing page lists 18) and watermarked downloads; Starter $8.30/month billed yearly ($100/year, 2,400 credits), Pro $30/month billed yearly ($49.90 month-to-month), Business $49.90/month billed yearly; prices as listed on its site",
+    "use_cases": [
+      "generate video"
+    ],
+    "website": "https://motiontransfer.app/",
+    "github": "",
+    "id": 1696,
+    "slug": "motion-transfer",
+    "logo": "assets/logos/motion-transfer.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-22"
   }
 ]
