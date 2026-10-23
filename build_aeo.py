@@ -42,8 +42,9 @@ def run(t):
         if a<0: continue
         _,b=F._main(s); body=re.sub(r"<!--xl:cmp-->.*?<!--/xl:cmp-->","",s[a:b],flags=re.S)
         sl=[]
+        subj=f[5:-len("-alternatives.html")] if f.startswith("best/") and f.endswith("-alternatives.html") else None  # an alternatives page's own tool is not one of its alternatives
         for x in re.findall(r'href="\.\./tools/([a-z0-9-]+)\.html"',body):
-            if x in bys and x not in sl: sl.append(x)
+            if x in bys and x not in sl and x!=subj: sl.append(x)
         if len(sl)<3:
             if s!=s0: open(f,"w").write(s)
             continue
