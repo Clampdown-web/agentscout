@@ -185,7 +185,7 @@ def filters():
     s=re.sub(r'<style id="btf-css">.*?</style>','',s,flags=re.S); s=s.replace('</head>',FCSS+'</head>',1)
     s=re.sub(r'<script id="btf-js">.*?</script>','',s,flags=re.S)
     s=re.sub(r'<script>\(function\(\)\{var pills=.*?</script>','',s,count=1,flags=re.S)
-    s=s.replace('<script src="/navsearch.js',FJS+'<script src="/navsearch.js',1) if '<script src="/navsearch.js' in s else s.replace('</body>',FJS+'</body>',1)  # menu search box removed Oct 23 2026
+    s=s.replace('</body>',FJS+'</body>',1)  # menu search box removed Oct 23 2026
     open(f"{D}/index.html","w").write(s)
     print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
 # Tap targets (Oct 22 2026 PT, owner "fix what's broken"): back link + related links were 19-22px tall at 390px; >=44px via min-height/padding only, no color change.

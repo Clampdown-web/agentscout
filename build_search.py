@@ -65,8 +65,6 @@ def annotate():
         if s2!=s: open(p,"w",encoding="utf-8").write(s2)
         n+=1
     print("search: annotated",n,"pages")
-NAVFORM='<form data-navsearch class="nsrch" role="search" action="/search/" method="get"><input name="q" type="search" placeholder="Search tools…" aria-label="Search the site" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="nsl"><ul id="nsl" role="listbox" aria-label="Suggestions" hidden></ul></form>'
-NAVJS='<script src="/navsearch.js?v=20261021d" defer></script>'
 OLD_LINK='<a data-navsearch href="/search/" aria-label="Search the site">🔍 Search</a>'
 def navlink():
     """Oct 23 2026 (owner): back to ONE search per page. The menu search box (Oct 21) is removed from every page;

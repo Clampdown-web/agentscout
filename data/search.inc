@@ -4,7 +4,7 @@
 <style>#spanel{scroll-margin-top:12px}.spanel{border:1px solid var(--line,rgba(127,127,127,.25));border-radius:14px;padding:14px;margin:0 0 14px;background:var(--card,transparent)}.sprow{display:flex;gap:8px;margin:0 0 12px}.sprow input{flex:1 1 auto;min-width:0;min-height:48px;font-size:16px;padding:0 14px;border-radius:10px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--bg,#fff);color:var(--text)}.sprow .btn{min-height:48px;flex:0 0 auto}.srl{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:end;margin:0;font-size:13px;color:var(--faint)}.filters .fg{display:flex;flex-direction:column;gap:4px;min-width:0}.spanel .filters select{flex:none;width:100%;min-height:44px;height:44px;font-size:15px}.filters .fchk{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--text);cursor:pointer}.filters .fchk input{width:24px;height:24px;margin:0}.filters #fclear{min-height:44px}#toolf{display:contents}@media(max-width:420px){.spanel{padding:10px}.sprow{margin:0 0 8px}.filters{grid-template-columns:1fr 1fr;gap:8px}}</style><form class="spanel" id="spanel" role="search" aria-label="Search and filter AgentScout" action="./" method="get">
 <div class="sprow"><label for="sq" class="srl">Search AgentScout</label><input id="sq" name="q" type="search" placeholder="Search tools, guides, news…" autocomplete="off" enterkeyhint="search"><button type="submit" class="btn primary">Search</button></div>
 <div class="filters" role="group" aria-label="Filter results">
-<span class="fg"><label for="ftype">Type</label><select id="ftype" class="ucsel"><option value="">All types</option><option>Tools</option><option>Categories</option><option>Guides &amp; best-of</option><option>News</option><option>Free tools</option><option>Pages</option></select></span>
+
 <span id="toolf"><span class="fg"><label for="fcat">Category</label><select id="fcat" class="ucsel"><option value="">Any category</option></select></span>
 <span class="fg"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option>Free</option><option value="freeplan">Free or free plan</option><option>Freemium</option><option>Paid</option><option>Not listed</option></select></span>
 <label class="fchk"><input type="checkbox" id="fos"> Open source only</label></span>
@@ -18,14 +18,13 @@
 <script type="module">
 const $0=id=>document.getElementById(id);const $=id=>$0(id==="sf"?"spanel":id);const P=new URLSearchParams(location.search);
 let pf,names,words=[],page=0,list=[],tok=0,more_=0;const PER=20,POOL=120;
-/* URL filters are case-insensitive (price=free == price=Free, type=tools, cat=coding agents, os=true, sort=NEW) */
+/* URL filters are case-insensitive (price=free == price=Free, cat=coding agents, os=true, sort=NEW) */
 const setSel=(id,v)=>{v=(v||"").trim().toLowerCase().replace(/\s+/g," ");const o=[...$(id).options].find(o=>(o.value||o.textContent).trim().toLowerCase()===v||(v==="guides"&&o.value.startsWith("Guides")));$(id).value=o?o.value:""};
-$("sq").value=P.get("q")||"";setSel("ftype",P.get("type"));setSel("fprice",P.get("price"));setSel("fcat",P.get("cat"));$("fos").checked=/^(1|true|yes|on)$/i.test(P.get("os")||"");{const so=(P.get("sort")||"").toLowerCase();$("fsort").value=["new","loved","stars","az"].includes(so)?so:""}
+$("sq").value=P.get("q")||"";setSel("fprice",P.get("price"));setSel("fcat",P.get("cat"));$("fos").checked=/^(1|true|yes|on)$/i.test(P.get("os")||"");{const so=(P.get("sort")||"").toLowerCase();$("fsort").value=["new","loved","stars","az"].includes(so)?so:""}
 const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const N=s=>(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
 const C=s=>N(s).replace(/[^a-z0-9]+/g,"");
-function toolMode(){const t=$("ftype").value;$("toolf").style.display=(t===""||t==="Tools")?"":"none"}
-function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("ftype").value)u.set("type",$("ftype").value);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort",$("fsort").value);history.replaceState(null,"","?"+u.toString())}
+function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort",$("fsort").value);history.replaceState(null,"","?"+u.toString())}
 async function load(){if(pf)return pf;const [m,nm,wd]=await Promise.all([import("../pagefind/pagefind.js"),fetch("names.json").then(r=>r.json()).catch(()=>[]),fetch("words.json").then(r=>r.json()).catch(()=>[])]);names=nm;words=wd;pf=m;await pf.options({baseUrl:"/",excerptLength:22});pf.init();
  const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();if($("fcat").options.length<2)$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));setSel("fcat",P.get("cat"));return pf}
 function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;const D=[];for(let i=0;i<=a.length;i++){D[i]=[i];for(let j=1;j<=b.length;j++)D[i][j]=i?Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+(a[i-1]===b[j-1]?0:1),(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])?D[i-2][j-2]+1:9):j}return D[a.length][b.length]}
@@ -38,7 +37,7 @@ function bestMatch(q){const cq=C(q);if(cq.length<2)return null;let hit=null;
  for(const x of names){if(C(x[0])===cq||C(x[1])===cq){hit=x;break}}
  return hit}
 const terms=q=>N(q).split(/[^a-z0-9]+/).filter(w=>w.length>1).map(w=>w.length>4&&w.endsWith("s")?w.slice(0,-1):w);
-function toolOK(x){if($("ftype").value&&$("ftype").value!=="Tools")return false;const pr=$("fprice").value;
+function toolOK(x){const pr=$("fprice").value;
  const pt=(p=>{p=p.toLowerCase();if(/^(open|free$)/.test(p))return /cloud|enterprise|paid|hosted/.test(p)?"Freemium":"Free";if(p.includes("freemium")||p.includes("+ cloud"))return"Freemium";if(/^(paid|usage|enterprise)/.test(p))return"Paid";return"Not listed"})(x[4]);
  if(pr&&(pr==="freeplan"?!["Free","Freemium"].includes(pt):pt!==pr))return false;if($("fcat").value&&x[3]!==$("fcat").value)return false;if($("fos").checked&&!/^open/i.test(x[4]))return false;return true}
 async function run(q,filters,opts){const r=await pf.search(q||null,{filters,...opts});const hits=r.results.slice(0,POOL);const data=await Promise.all(hits.map(h=>h.data()));
@@ -49,9 +48,8 @@ async function run(q,filters,opts){const r=await pf.search(q||null,{filters,...o
  /* exact name matches (title equals the query, ignoring case/punctuation) rank first, Oct 21 2026 */const anyAll=rows.some(r=>r.all);const keep=anyAll?rows.filter(r=>r.all):rows;
  if(!opts.sort)keep.sort((a,b)=>(b.exact-a.exact)||(b.intitle-a.intitle)||(b.inlead-a.inlead)||(a.i-b.i));
  return {rows:keep.map(r=>r.d),more:r.results.length>POOL&&keep.length===rows.length}}
-async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??$("sq").value).trim();const filters={};
- if($("ftype").value)filters.type=$("ftype").value;
- if($("ftype").value===""||$("ftype").value==="Tools"){if($("fprice").value)filters.pricing=$("fprice").value==="freeplan"?{any:["Free","Freemium"]}:$("fprice").value;if($("fcat").value)filters.category=$("fcat").value;if($("fos").checked)filters["open source"]="Yes"}
+async function go(qOverride){const my=++tok;sync();let q=(qOverride??$("sq").value).trim();const filters={};
+ {if($("fprice").value)filters.pricing=$("fprice").value==="freeplan"?{any:["Free","Freemium"]}:$("fprice").value;if($("fcat").value)filters.category=$("fcat").value;if($("fos").checked)filters["open source"]="Yes"}
  $("ssugg").innerHTML="";$("sbest").innerHTML="";
  if(!q&&!Object.keys(filters).length){$("sres").innerHTML="";$("smore").hidden=true;$("sstat").textContent="Type above or pick a filter to begin.";return}
  $("sstat").textContent="Searching…";await load();
@@ -73,10 +71,10 @@ function render(){const part=list.slice(page*PER,(page+1)*PER);page++;
  $("smore").hidden=page*PER>=list.length}
 let deb;$("sq").addEventListener("input",()=>{clearTimeout(deb);deb=setTimeout(()=>go(),250)});
 $("sf").addEventListener("submit",e=>{e.preventDefault();go()});
-["ftype","fprice","fcat","fos","fsort"].forEach(id=>$(id).addEventListener("change",()=>go()));
-$("fclear").onclick=()=>{["ftype","fprice","fcat","fsort"].forEach(id=>$(id).value="");$("fos").checked=false;go();$("sq").focus()};
+["fprice","fcat","fos","fsort"].forEach(id=>$(id).addEventListener("change",()=>go()));
+$("fclear").onclick=()=>{["fprice","fcat","fsort"].forEach(id=>$(id).value="");$("fos").checked=false;go();$("sq").focus()};
 $("smore").onclick=()=>render();
 $("ssugg").addEventListener("click",e=>{if(e.target.id==="didyou"){e.preventDefault();$("sq").value=e.target.textContent;go()}});
 $("sq").addEventListener("focus",()=>load(),{once:true});
-toolMode();if(P.toString())load().then(()=>go());else if(matchMedia("(pointer:fine)").matches)$("sq").focus();
+if(P.toString())load().then(()=>go());else if(matchMedia("(pointer:fine)").matches)$("sq").focus();
 </script>
