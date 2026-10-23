@@ -26,17 +26,27 @@ class Guard(urllib.request.HTTPRedirectHandler):
         if not public(newurl): raise urllib.error.URLError("redirect to non-public address skipped")
         return super().redirect_request(req,fp,code,msg,hdrs,newurl)
 OPEN=urllib.request.build_opener(Guard).open
+BUA={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"}
+def _tls(ex):
+    import ssl
+    return isinstance(ex,ssl.SSLError) or isinstance(getattr(ex,"reason",None),ssl.SSLError) or "SSL" in str(ex) or "CERTIFICATE" in str(ex).upper()
 def probe(u):
+    """HTTP status; 0 = no response. A TLS failure, timeout or reset for our bot UA that a browser UA gets past
+    (or a box-only TLS failure) is reported as 403 = "Reachable, blocks automated checks", not "Not responding"."""
     if not public(u): return 0  # skipped: non-public or unresolvable host
+    err=None
     for m in ("HEAD","GET"):
         try:
             r=OPEN(urllib.request.Request(u,headers=UA,method=m),timeout=20); return r.status
         except urllib.error.HTTPError as ex:
             if m=="GET" or ex.code not in (403,405,400,404,429,501): return ex.code
-            last=ex.code
-        except Exception: 
-            if m=="GET": return 0
-    return 0
+        except Exception as ex: err=ex
+    if err is None: return 0
+    try:
+        r=OPEN(urllib.request.Request(u,headers=BUA,method="GET"),timeout=25); return r.status if r.status>=400 else 403
+    except urllib.error.HTTPError as ex: return ex.code if ex.code not in (200,) else 403
+    except Exception as ex2:
+        return 403 if (_tls(err) or _tls(ex2)) else 0
 def main():
     t=[x for x in json.load(open("tools.json")) if x.get("category")=="MCP servers"]
     jobs={}
