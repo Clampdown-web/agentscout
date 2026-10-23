@@ -188,8 +188,19 @@ def filters():
     s=s.replace('<script src="/navsearch.js',FJS+'<script src="/navsearch.js',1)
     open(f"{D}/index.html","w").write(s)
     print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
+# Tap targets (Oct 22 2026 PT, owner "fix what's broken"): back link + related links were 19-22px tall at 390px; >=44px via min-height/padding only, no color change.
+TAPCSS='<style id="bt-tap-css">.bd-back{display:inline-flex;align-items:center;min-height:44px;padding-right:8px}.bd-rel li a{display:inline-flex;align-items:center;min-height:44px}</style>'
+def tap():
+    n=0
+    for f in sorted(os.listdir(D)):
+        if not f.endswith(".html") or f=="index.html": continue
+        fp=f"{D}/{f}"; s=open(fp).read()
+        if 'class="bd-back"' not in s and 'class="bd-rel"' not in s: continue
+        t=re.sub(r'<style id="bt-tap-css">.*?</style>','',s,flags=re.S).replace('</head>',TAPCSS+'</head>',1)
+        if t!=s: open(fp,"w").write(t); n+=1
+    print("bot templates tap css:",n,"pages")
 _run0=run
 def run():
-    _run0(); filters()
+    _run0(); filters(); tap()
 
 if __name__=="__main__": run()
