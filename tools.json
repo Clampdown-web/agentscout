@@ -43499,5 +43499,31 @@
     "github": "",
     "maker_submitted": true,
     "submitted": "2026-10-23"
+  },
+  {
+    "name": "Vellm",
+    "url": "https://vellm.app/",
+    "website": "https://vellm.app/",
+    "id": 1724,
+    "slug": "vellm",
+    "logo": "assets/logos/vellm.png",
+    "category": "video generation",
+    "description": "Vellm turns photos of people and pets into short AI videos from ready-made templates. Pick one of 108 dance, funny, duo and pet templates built on ByteDance Seedance 2.5, upload your photos and it renders your own version, or start from a prompt in its Create Studio. A remote MCP server (https://api.vellm.app/mcp, OAuth sign-in) lets MCP-compatible AI apps create videos from your Vellm account.",
+    "pricing": "Paid",
+    "pricing_detail": "One-time credit packs from $4.49 (50 credits, one video) up to $39.99 (600 credits); monthly plans $20.99 (350 credits) and $41.99 (700 credits); templates cost 50-100 credits; no free trial",
+    "use_cases": [
+      "generate video",
+      "connect tools via MCP"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-23",
+    "added": "2026-10-23",
+    "source": "Submission",
+    "github": "",
+    "maker_submitted": true,
+    "submitted": "2026-10-23"
   }
 ]

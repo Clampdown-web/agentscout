@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T14:28:15Z",
- "updated": "2026-10-23T14:28:15Z",
+ "generated": "2026-10-23T15:13:32Z",
+ "updated": "2026-10-23T15:13:32Z",
  "last_checked": "2026-10-23",
- "count": 1704,
+ "count": 1705,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -72099,6 +72099,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/salestouch.png",
    "page": "https://agentscouthq.com/tools/salestouch.html"
+  },
+  {
+   "name": "Vellm",
+   "slug": "vellm",
+   "url": "https://vellm.app/",
+   "website": "https://vellm.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "Vellm turns photos of people and pets into short AI videos from ready-made templates. Pick one of 108 dance, funny, duo and pet templates built on ByteDance Seedance 2.5, upload your photos and it renders your own version, or start from a prompt in its Create Studio. A remote MCP server (https://api.vellm.app/mcp, OAuth sign-in) lets MCP-compatible AI apps create videos from your Vellm account.",
+   "key_features": [
+    "One-time credit packs from $4.49 (50 credits, one video) up to $39.99 (600 credits); monthly plans $20.99 (350 credits) and $41.99 (700 credits); templates cost 50-100 credits; no free trial",
+    "Active",
+    "Generate video",
+    "Connect tools via mcp"
+   ],
+   "pricing": "One-time credit packs from $4.49 (50 credits, one video) up to $39.99 (600 credits); monthly plans $20.99 (350 credits) and $41.99 (700 credits); templates cost 50-100 credits; no free trial",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vellm.png",
+   "page": "https://agentscouthq.com/tools/vellm.html"
   }
  ]
 }

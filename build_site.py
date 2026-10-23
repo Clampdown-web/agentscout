@@ -32,7 +32,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"vidmoat":["edit video","connect tools via MCP"],"salestouch":["sales & support","connect tools via MCP"],  # Oct 23 PT: maker submissions (hosted AI video editor with MCP; LinkedIn MCP for sales agents)
+UC_SET={"vellm":["generate video","connect tools via MCP"],  # Oct 23 PT: maker submission (photo-to-video templates with OAuth MCP)
+"vidmoat":["edit video","connect tools via MCP"],"salestouch":["sales & support","connect tools via MCP"],  # Oct 23 PT: maker submissions (hosted AI video editor with MCP; LinkedIn MCP for sales agents)
 "system-one-api":["build an agent","automate workflows"],"peekpanda":["research the web","social posts & ads","connect tools via MCP"],"hiredov":["business agents","automate workflows"],  # Oct 23 PT: maker submissions, hand-checked ("call logs" wrongly matched voice)
 "flogpt":["voice & phone calls","sales & support"],  # Oct 22 PT: "website" keyword wrongly added research the web
 "superagnt":["connect tools via MCP","research the web","give agents memory"],  # submission Oct 22: hosted MCP server + REST API (social data, scraping, enrichment, Postgres, memory, inbox)

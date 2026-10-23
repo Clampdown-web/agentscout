@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,704 AI agent tools in 30 categories, including 239 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,705 AI agent tools in 30 categories, including 239 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Site: https://agentscouthq.com/
 Contact: support@agentscouthq.com
@@ -69,8 +69,8 @@ Catalog last checked: 2026-10-23 (Pacific)
 - [music production](https://agentscouthq.com/categories/music-production.html): 39 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 38 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 38 tools
+- [video generation](https://agentscouthq.com/categories/video-generation.html): 37 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
-- [video generation](https://agentscouthq.com/categories/video-generation.html): 36 tools
 - [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 33 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 33 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
@@ -125,8 +125,9 @@ Catalog last checked: 2026-10-23 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-22 to 2026-10-23): 52
+- Tools added in the last 2 days (2026-10-22 to 2026-10-23): 53
 
+- [Vellm](https://agentscouthq.com/tools/vellm.html) (added 2026-10-23): Vellm turns photos of people and pets into short AI videos from ready-made templates. Pick one of 108 dance, funny, duo and pet templates built on ByteDance Seedance 2.5, upload your photos and it renders your own version, or start from a prompt in its Create Studio. A remote MCP server (https://api.vellm.app/mcp, OAuth sign-in) lets MCP-compatible AI apps create videos from your Vellm account.
 - [SalesTouch](https://agentscouthq.com/tools/salestouch.html) (added 2026-10-23): SalesTouch is a LinkedIn MCP server for AI agents. Connect Claude, Codex, ChatGPT or any remote MCP client to https://www.salestouch.io/api/mcp and your agent can find prospects, research people and companies, send invitations and messages, and handle follow-ups through 45 purpose-built LinkedIn tools instead of browser automation. Scoped OAuth, approvals for sensitive actions, daily limits, working hours and a human-paced action queue keep the account under control.
 - [Vidmoat](https://agentscouthq.com/tools/vidmoat.html) (added 2026-10-23): Vidmoat is a hosted AI video editor you direct in chat. Describe the edit and its agent cuts dead air, adds word-synced captions, grades and reframes your footage on a real timeline, where you can review and change any cut by hand before rendering an MP4. It works in the browser, on Telegram (@vidmoat_bot) and over MCP (https://api.vidmoat.com/api/mcp, OAuth), so Claude, ChatGPT or Cursor can drive edits too.
 - [only-cli](https://agentscouthq.com/tools/only-cli.html) (added 2026-10-23): only-cli (oc) turns any website into a compact command-line view for AI agents. It distills a page into short text with numbered actions that agents like Claude Code can follow and click through, so agents browse the web using a small fraction of the tokens raw HTML or screenshots would take.

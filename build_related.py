@@ -65,4 +65,4 @@ def pick(t,k=6,top=3,pool=10,frac=0.6,penalty=0.06):
             if p in bys and p!=s: out[s]=[bys[p]]+[y for y in out[s] if y["slug"]!=p]
         out[s]=out[s][:k]
     return out
-PIN={"salestouch":["roverlead"],"roverlead":["salestouch"],"system-one-api":["typesafe-jev"],"typesafe-jev":["system-one-api"]}
+PIN={"vellm":["vidmoat","viggle","motion-transfer","reference-to-video"],"salestouch":["roverlead"],"roverlead":["salestouch"],"system-one-api":["typesafe-jev"],"typesafe-jev":["system-one-api"]}
