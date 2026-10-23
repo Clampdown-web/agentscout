@@ -301,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610222330"  # bump when app.js/styles.css change
+ASSET_V="202610230020"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}

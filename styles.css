@@ -483,3 +483,4 @@ nav .links a{min-width:44px;justify-content:center}
 .b.warn{color:#b45309;border-color:#b45309}html[data-theme=dark] .b.warn{color:#f59e0b;border-color:#f59e0b}
 
 /* tap targets >=24px (Oct 22 2026) */.alltools p a{display:inline-block;min-height:24px;line-height:24px}.fchk input,.filters .fchk input{width:24px!important;height:24px!important}
+.scrollbtns.nearpanel .scrollbtn{opacity:0!important;visibility:hidden!important;pointer-events:none!important}main label>input[type=checkbox]{width:24px;height:24px}main h2>a,main h3>a{display:inline-block;min-height:24px;line-height:24px}

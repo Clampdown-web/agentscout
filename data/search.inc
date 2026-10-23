@@ -78,5 +78,5 @@ $("fclear").onclick=()=>{["ftype","fprice","fcat","fsort"].forEach(id=>$(id).val
 $("smore").onclick=()=>render();
 $("ssugg").addEventListener("click",e=>{if(e.target.id==="didyou"){e.preventDefault();$("sq").value=e.target.textContent;go()}});
 $("sq").addEventListener("focus",()=>load(),{once:true});
-toolMode();if(P.toString())load().then(()=>go());else if(matchMedia("(pointer:fine)").matches)SQ.focus();
+toolMode();if(P.toString())load().then(()=>go());else if(matchMedia("(pointer:fine)").matches)$("sq").focus();
 </script>

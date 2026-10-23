@@ -22,6 +22,8 @@ const AS={
 function init(){var w=document.createElement("div");w.className="scrollbtns";
 w.innerHTML='<button type="button" class="scrollbtn up" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button><button type="button" class="scrollbtn down" aria-label="Scroll to bottom" title="Scroll to bottom"><span aria-hidden="true">↓</span></button>';
 document.body.appendChild(w);var up=w.querySelector(".up"),dn=w.querySelector(".down"),q=0;
+/* phone: hide the floating buttons while a search/filter panel is on screen so they never cover its controls (Oct 23 2026) */
+try{var NP=document.querySelectorAll("#spanel,.spanel,#filters,.filters"),vis=new Set();if(NP.length&&"IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target)});w.classList.toggle("nearpanel",vis.size>0&&innerWidth<768)});NP.forEach(function(n){io.observe(n)})}}catch(_){}
 /* One smooth glide to the true top/bottom: own rAF animation that re-reads the page height every frame (lazy images/cards can grow the page mid-scroll, which made native smooth scroll stop short). window.__asJump tells lazy loaders (homepage directory) not to add cards during the glide. Any wheel/touch/key cancels. Oct 19 2026 */
 var raf=0;function stop(){if(raf){cancelAnimationFrame(raf);raf=0}window.__asJump=0}
 ["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,function(e){if(raf&&!(e.target.closest&&e.target.closest(".scrollbtns")))stop()},{passive:true})});
