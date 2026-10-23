@@ -1,7 +1,79 @@
 {
- "updated": "2026-10-22T14:05:56Z",
+ "updated": "2026-10-23T14:08:03Z",
  "days": 30,
  "items": [
+  {
+   "title": "Big banks spot unauthorized AI agents in customer accounts and move to restrict them",
+   "source": "X",
+   "url": "https://x.com/i/trending/2112923062404317476",
+   "date": "2026-10-23T13:24:00Z",
+   "tool": null,
+   "summary": "Security firm Straiker reported that a criminal group built an automated system of AI agents, using several commercial models, to attack more than 400 Latin American financial institutions. Anthropic cut off the group's access and an investigation is under way.",
+   "page": "news/2026/10/report-criminal-group-ran-a-swarm-of-ai-agents-against-400-latin.html"
+  },
+  {
+   "title": "Anthropic previews Claude Duet, a proactive agent app that watches your email and calendar",
+   "source": "X",
+   "url": "https://x.com/i/trending/2112987690803343606",
+   "date": "2026-10-23T08:27:41Z",
+   "tool": null,
+   "summary": "Anthropic opened a research preview of Claude Duet, a standalone app that checks connected apps like email, Slack and calendar, sends a morning brief and works on tasks in its own cloud computer. It asks for approval before key actions and is on a waitlist for U.S. Pro and Max subscribers.",
+   "page": "news/2026/10/anthropic-previews-claude-duet-a-proactive-agent-app-that-watches.html"
+  },
+  {
+   "title": "Anthropic will make auto mode the default for paid Claude users next week",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113396361819525146",
+   "date": "2026-10-23T03:58:47Z",
+   "tool": null,
+   "summary": "Anthropic says auto mode will become the default for new sessions in Claude's web, desktop and mobile apps for Pro, Max and Team users starting next week. An automated check blocks risky actions while safe ones go ahead, and users can switch back to manual mode.",
+   "page": "news/2026/10/anthropic-will-make-auto-mode-the-default-for-paid-claude-users-next.html"
+  },
+  {
+   "title": "Coding Agent Index 2.0 ranks Claude Code with Opus 5.5 first across 290 tasks",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113477158035153126",
+   "date": "2026-10-23T03:51:22Z",
+   "tool": null,
+   "summary": "Artificial Analysis released version 2.0 of its Coding Agent Index, which scores model and harness pairings on 290 software engineering, terminal and repo Q&A tasks. Claude Code running Claude Opus 5.5 leads the ranking.",
+   "page": "news/2026/10/coding-agent-index-2-0-ranks-claude-code-with-opus-5-5-first-across.html"
+  },
+  {
+   "title": "Anthropic hands its Agent Skills standard to the Agentic AI Foundation",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113337982409171319",
+   "date": "2026-10-23T02:42:07Z",
+   "tool": null,
+   "summary": "Anthropic donated Agent Skills, its lightweight standard for agents to load tasks from folders containing SKILL.md files, to the Agentic AI Foundation. It was one of four new projects the foundation added this week.",
+   "page": "news/2026/10/anthropic-hands-its-agent-skills-standard-to-the-agentic-ai-foundation.html"
+  },
+  {
+   "title": "Google launches Gemini API CLI and Agent Compute Engine for running agents at scale",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113347493450698932",
+   "date": "2026-10-22T22:09:57Z",
+   "tool": null,
+   "summary": "Google released the Gemini API CLI, a single command-line tool that lets AI agents generate images, video, speech and music with an API key. It pairs with Google Cloud's Agent Compute Engine, which runs agents at scale in isolated microVMs.",
+   "page": "news/2026/10/google-launches-gemini-api-cli-and-agent-compute-engine-for-running.html"
+  },
+  {
+   "title": "Framer ships an official MCP connector so AI agents can design and publish sites",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113341164963426491",
+   "date": "2026-10-22T21:23:08Z",
+   "tool": null,
+   "summary": "Framer launched an official MCP connector that lets AI agents such as Claude, Codex, Cursor and Grok work directly in Framer projects. Through a remote server, agents can reach the canvas, CMS, layouts and publishing tools.",
+   "page": "news/2026/10/framer-ships-an-official-mcp-connector-so-ai-agents-can-design-and.html"
+  },
+  {
+   "title": "Walmart opens Agent Gateway, an MCP server that lets approved AI agents shop for customers",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113059266378793184",
+   "date": "2026-10-22T19:31:25Z",
+   "tool": null,
+   "summary": "Walmart launched Agent Gateway, an MCP server that lets approved AI agents check stock and place orders at Walmart and Sam's Club. Agent Profiles coming next month will keep agent orders separate, require purchase approval by default and allow optional spending limits.",
+   "page": "news/2026/10/walmart-opens-agent-gateway-an-mcp-server-that-lets-approved-ai.html"
+  },
   {
    "title": "Banks report third-party AI agents logging into customer accounts with shared passwords",
    "source": "X",
@@ -10,15 +82,6 @@
    "tool": null,
    "summary": "Large U.S. banks are reportedly seeing third-party AI agents sign into customer accounts with the customer's own username and password, which makes it hard to tell person from agent. Some banks are blocking that access and updating their terms, though not every bank confirmed the reports.",
    "page": "news/2026/10/banks-report-third-party-ai-agents-logging-into-customer-accounts.html"
-  },
-  {
-   "title": "Report: criminal group ran a swarm of AI agents against 400+ Latin American banks",
-   "source": "X",
-   "url": "https://x.com/i/trending/2112923062404317476",
-   "date": "2026-10-22T13:18:33Z",
-   "tool": null,
-   "summary": "Security firm Straiker reported that a criminal group built an automated system of AI agents, using several commercial models, to attack more than 400 Latin American financial institutions. Anthropic cut off the group's access and an investigation is under way.",
-   "page": "news/2026/10/report-criminal-group-ran-a-swarm-of-ai-agents-against-400-latin.html"
   },
   {
    "title": "PhoneUse launches real and cloud phones that AI agents can tap and swipe through",
@@ -30,15 +93,6 @@
    "page": "news/2026/10/phoneuse-launches-real-and-cloud-phones-that-ai-agents-can-tap-and.html"
   },
   {
-   "title": "Walmart opens Agent Gateway, an MCP server that lets approved AI agents shop for customers",
-   "source": "X",
-   "url": "https://x.com/i/trending/2113059266378793184",
-   "date": "2026-10-22T13:10:21Z",
-   "tool": null,
-   "summary": "Walmart launched Agent Gateway, an MCP server that lets approved AI agents check stock and place orders at Walmart and Sam's Club. Agent Profiles coming next month will keep agent orders separate, require purchase approval by default and allow optional spending limits.",
-   "page": "news/2026/10/walmart-opens-agent-gateway-an-mcp-server-that-lets-approved-ai.html"
-  },
-  {
    "title": "Breken launches an AI tester that rebuilds and stress-tests apps before release",
    "source": "X",
    "url": "https://x.com/i/trending/2113118175424602281",
@@ -46,15 +100,6 @@
    "tool": null,
    "summary": "Breken launched an AI testing tool that recreates an app's production setup, speeds up simulated usage and injects failures to find bugs before users do. In its own test it caught about a third of 235 known open-source bugs.",
    "page": "news/2026/10/breken-launches-an-ai-tester-that-rebuilds-and-stress-tests-apps.html"
-  },
-  {
-   "title": "Anthropic previews Claude Duet, a proactive agent app that watches your email and calendar",
-   "source": "X",
-   "url": "https://x.com/i/trending/2112987690803343606",
-   "date": "2026-10-22T11:42:08Z",
-   "tool": null,
-   "summary": "Anthropic opened a research preview of Claude Duet, a standalone app that checks connected apps like email, Slack and calendar, sends a morning brief and works on tasks in its own cloud computer. It asks for approval before key actions and is on a waitlist for U.S. Pro and Max subscribers.",
-   "page": "news/2026/10/anthropic-previews-claude-duet-a-proactive-agent-app-that-watches.html"
   },
   {
    "title": "Ex-Apple Watch lead launches Niq, an AI agent that helps manage migraines",
