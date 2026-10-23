@@ -21,10 +21,11 @@
       "listChanged": false
     }
   },
+  "dataLocalityFilter": "Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance.",
   "tools": [
     {
       "name": "search_tools",
-      "description": "Search by keyword, with optional category, pricing (free, freemium, paid) and open-source filters. Up to 25 results."
+      "description": "Search by keyword, with optional category, pricing (free, freemium, paid), open-source and runs_locally filters. Up to 25 results."
     },
     {
       "name": "get_tool",
@@ -36,7 +37,7 @@
     },
     {
       "name": "best_for_task",
-      "description": "Describe a task in plain words and get the most relevant tools, with optional pricing and open-source filters."
+      "description": "Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters."
     }
   ]
 }

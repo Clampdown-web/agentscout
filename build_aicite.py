@@ -104,10 +104,11 @@ def pages(t):
     agent_cards(t)
     return urls
 MCP_URL="https://agentscout-mcp.agentscouthq.workers.dev/mcp"  # public read-only MCP server (worker agentscout-mcp)
-MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (free, freemium, paid) and open-source filters. Up to 25 results."),
+MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (free, freemium, paid), open-source and runs_locally filters. Up to 25 results."),
            ("get_tool","Full listing for one tool by its slug: features, platforms, GitHub repo and stars, AgentScout page."),
            ("list_categories","Every category with its tool count and page link."),
-           ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing and open-source filters.")]
+           ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters.")]
+LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance."
 def connect_page(t):
     M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"
     title="Connect to the AgentScout MCP server · AgentScout"
@@ -122,7 +123,8 @@ def connect_page(t):
           '<p><b>Cursor, Windsurf and other clients that use an mcpServers file</b></p>'+pre(cfg)+
           '<p><b>VS Code</b>: run <i>MCP: Add Server</i>, choose HTTP and paste the server URL. <b>Claude.ai and Claude Desktop</b>: Settings, Connectors, Add custom connector, then paste the URL.</p>'
           '<h2>Tools</h2>'+tbl(["Tool","What it does"],[[f'<code>{n}</code>',e(d)] for n,d in MCP_TOOLS])+
-          '<h2>Try asking</h2><ul><li>"Find free, open-source MCP servers for browser automation on AgentScout."</li><li>"What does AgentScout list for voice agents that make phone calls?"</li><li>"Show me the AgentScout listing for Cursor."</li></ul>'
+          f'<p><b>Keep data on your side:</b> {e(LOCAL_LINE)}</p>'
+          '<h2>Try asking</h2><ul><li>"Find free, open-source MCP servers for browser automation on AgentScout."</li><li>"What does AgentScout list for voice agents that make phone calls?"</li><li>"Show me the AgentScout listing for Cursor."</li><li>"Find no-code automation tools on AgentScout that I can self-host."</li></ul>'
           '<h2>Limits and data</h2><p>Read-only: the server can only look things up, it cannot change anything. Up to 60 requests per minute per IP address. Data comes from the same catalog as the site (<a href="../api/tools.json">api/tools.json</a>) and refreshes within about 10 minutes of each site update. '
           'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="link-status.html">MCP link status</a>, the <a href="../openapi.json">OpenAPI description</a> and <a href="../llms.txt">llms.txt</a>.</p></section>')
     ld={"@context":"https://schema.org","@type":"WebAPI","name":"AgentScout MCP server","description":desc,"url":canon,"documentation":canon,
@@ -132,7 +134,7 @@ def connect_page(t):
           "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.0"},
           "description":f"Read-only search over {len(t):,} AI agent tools and {M:,} MCP servers listed on AgentScout. No authentication.",
           "documentationUrl":canon,"transport":{"type":"streamable-http","endpoint":MCP_URL},"authentication":{"required":False},
-          "capabilities":{"tools":{"listChanged":False}},"tools":[{"name":n,"description":d} for n,d in MCP_TOOLS]}
+          "capabilities":{"tools":{"listChanged":False}},"dataLocalityFilter":LOCAL_LINE,"tools":[{"name":n,"description":d} for n,d in MCP_TOOLS]}
     os.makedirs(".well-known",exist_ok=True); open(".well-known/mcp.json","w").write(json.dumps(card,indent=2,ensure_ascii=False)+"\n")
     return canon
 def agent_cards(t):
