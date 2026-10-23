@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T15:49:57Z",
- "updated": "2026-10-23T15:49:57Z",
+ "generated": "2026-10-23T15:51:44Z",
+ "updated": "2026-10-23T15:51:44Z",
  "last_checked": "2026-10-23",
- "count": 1705,
+ "count": 1706,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -72141,6 +72141,50 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/vellm.png",
    "page": "https://agentscouthq.com/tools/vellm.html"
+  },
+  {
+   "name": "Crolytics",
+   "slug": "crolytics",
+   "url": "https://crolytics.ai/",
+   "website": "https://crolytics.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Crolytics is a managed, governed AI workspace for B2B marketing and go-to-market teams, hosted on Google Cloud. Its agents connect to your CMS, GA4, Search Console and knowledge base through custom MCP connectors, answer analytics questions in plain language, track how AI assistants cite your brand (GEO/AEO), and draft or update website pages behind human approval gates, with per-person permissions and a tamper-evident audit log. Teams use it from the Crolytics chat or inside their own Claude or ChatGPT account.",
+   "key_features": [
+    "Growth $5,000/month (managed and run for you, no per-seat or usage pricing); Enterprise custom; every plan starts with a free 2-week pilot after a scoping call",
+    "Active",
+    "Sales & support",
+    "Connect tools via mcp",
+    "Automate workflows"
+   ],
+   "pricing": "Growth $5,000/month (managed and run for you, no per-seat or usage pricing); Enterprise custom; every plan starts with a free 2-week pilot after a scoping call",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Web search",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support",
+    "connect tools via MCP",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/crolytics.png",
+   "page": "https://agentscouthq.com/tools/crolytics.html"
   }
  ]
 }
