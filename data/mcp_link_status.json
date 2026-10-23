@@ -1,5 +1,5 @@
 {
- "checked": "2026-10-22 17:40",
+ "checked": "2026-10-23 08:22",
  "tz": "America/Los_Angeles",
  "results": {
   "9bot": {
@@ -18,8 +18,8 @@
    "github": 200
   },
   "agentkey": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "airtable-mcp": {
    "url": 200
@@ -32,8 +32,8 @@
    "url": 200
   },
   "altmetric-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "amplitude-mcp": {
    "url": 200,
@@ -71,8 +71,8 @@
    "url": 200
   },
   "atlassian-rovo-mcp-server": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "auth0-mcp-server": {
    "url": 200
@@ -117,8 +117,8 @@
    "github": 200
   },
   "browsertools-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "buildkite-mcp": {
    "url": 200
@@ -187,6 +187,10 @@
    "url": 200,
    "github": 200
   },
+  "edgegap-mcp": {
+   "url": 200,
+   "github": 200
+  },
   "egnyte-mcp": {
    "url": 200
   },
@@ -205,6 +209,9 @@
   "figma-mcp-server": {
    "url": 200,
    "github": 200
+  },
+  "financial-cents-mcp": {
+   "url": 200
   },
   "fireflies-mcp": {
    "url": 200
@@ -255,10 +262,13 @@
    "url": 200
   },
   "guru-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "happyscribe-mcp": {
+   "url": 200
+  },
+  "havetml": {
    "url": 200
   },
   "hello-retail-mcp": {
@@ -284,8 +294,8 @@
    "github": 200
   },
   "idealo-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "ifttt-mcp": {
    "url": 200,
@@ -306,8 +316,8 @@
    "github": 200
   },
   "jcodemunch-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "jitsu-mcp": {
    "url": 200
@@ -328,6 +338,10 @@
   },
   "kajabi-mcp": {
    "url": 200
+  },
+  "keboola-mcp-server": {
+   "url": 200,
+   "github": 200
   },
   "klavis-ai": {
    "url": 200,
@@ -353,12 +367,12 @@
    "url": 200
   },
   "linkup-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "locize-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "logo-dev-mcp": {
    "url": 200
@@ -488,8 +502,8 @@
    "url": 200
   },
   "minimax-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "mintlify-mcp": {
    "url": 200
@@ -546,8 +560,8 @@
    "github": 200
   },
   "observal": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "onesignal-mcp": {
    "url": 200
@@ -587,7 +601,7 @@
    "url": 200
   },
   "picsart-genai-mcp": {
-   "url": 403
+   "url": 202
   },
   "planetscale-mcp": {
    "url": 200,
@@ -597,8 +611,8 @@
    "url": 200
   },
   "porkbun-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "postgres-mcp-pro": {
    "url": 200
@@ -640,12 +654,12 @@
    "url": 200
   },
   "rocketreach-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "ros-mcp-server": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "sanity-mcp": {
    "url": 200
@@ -699,8 +713,8 @@
    "url": 200
   },
   "sonarqube-mcp-server": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "stack-overflow-mcp": {
    "url": 200,
@@ -712,6 +726,10 @@
   },
   "statsig-mcp": {
    "url": 200
+  },
+  "streamkap-mcp": {
+   "url": 200,
+   "github": 200
   },
   "stripe-agent-toolkit": {
    "url": 200,
@@ -726,6 +744,10 @@
   },
   "supermetrics-mcp": {
    "url": 200
+  },
+  "suprsend-mcp": {
+   "url": 200,
+   "github": 200
   },
   "talk-to-figma-mcp": {
    "github": 200,
@@ -742,12 +764,12 @@
    "github": 200
   },
   "the-commons-dead-brands-collab-hub": {
-   "url": 200,
-   "github": 200
-  },
-  "tipranks-mcp": {
    "github": 200,
    "url": 200
+  },
+  "tipranks-mcp": {
+   "url": 200,
+   "github": 200
   },
   "toolhive": {
    "url": 200,
@@ -820,8 +842,8 @@
    "github": 200
   },
   "zapier-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "zomato-mcp": {
    "github": 200,

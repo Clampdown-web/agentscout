@@ -24853,5 +24853,533 @@
    "osi": true
   },
   "updated": "2026-10-22"
+ },
+ "sphere-sdk": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Sphere SDK is a modular TypeScript SDK from Unicity for giving autonomous agents an identity and a wallet on the Unicity network, so they can find, negotiate with and settle payments with other agents peer to peer.",
+   "It covers BIP39/BIP32 wallet keys with optional seed encryption, certified token transfers and payment requests with encrypted memos, a signed intent bulletin board with semantic search, and Nostr-based direct and group messaging. It runs in the browser or in Node.js 22+, and a Connect protocol lets dApps talk to a hosted wallet."
+  ],
+  "who": "Developers building agents that need to hold funds and pay or get paid by other agents.",
+  "features": [
+   "Agent identity and HD wallet",
+   "Certified token transfers and payment requests",
+   "Intent market with semantic search",
+   "Nostr DMs and group chat",
+   "Browser and Node.js support"
+  ],
+  "faq": [
+   [
+    "Is Sphere SDK free?",
+    "Yes. It is open source under the MIT License and installs from npm as @unicitylabs/sphere-sdk."
+   ]
+  ],
+  "sources": [
+   "https://github.com/unicity-sphere/sphere-sdk",
+   "https://unicity.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/unicity-sphere/sphere-sdk",
+   "stars": 5386,
+   "forks": 107,
+   "checked": "2026-10-23",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "skillhub": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SkillHub, from iFlytek, is a self-hosted, open-source registry for agent skills. Teams publish skill packages into namespaces, version them, and let colleagues find them through search or install them with a CLI, all behind their own firewall.",
+   "It adds governance for companies, with role-based access control and audit logs, and deploys on-premise with Docker or Kubernetes. A REST API (with Python examples) handles search, download and publishing, and there is a curated starter collection of community skills."
+  ],
+  "who": "Organizations that want a private, governed place to share agent skills internally.",
+  "features": [
+   "Publish and version skill packages",
+   "Search and CLI install",
+   "Namespaces with RBAC",
+   "Audit logs",
+   "Docker and Kubernetes deployment"
+  ],
+  "faq": [
+   [
+    "Is SkillHub free?",
+    "Yes. It is open source under the Apache License 2.0 and you host it yourself."
+   ]
+  ],
+  "sources": [
+   "https://github.com/iflytek/skillhub",
+   "https://skill.xfyun.cn"
+  ],
+  "facts": {
+   "repo": "https://github.com/iflytek/skillhub",
+   "stars": 5275,
+   "forks": 809,
+   "checked": "2026-10-23",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "evoscientist": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "EvoScientist is an open-source AI scientist system that explores research ideas, runs experiments and writes up results, while improving itself through growing skills and memory. It works 'human on the loop': the researcher steers while a team of six sub-agents handles planning, research, coding, debugging, analysis and writing.",
+   "Memory is distilled every turn into a self-linking knowledge graph, and AutoSkills turns recurring patterns into reusable skills you approve. It switches between Anthropic, OpenAI, Google, MiniMax and NVIDIA models, runs from a CLI, a desktop web UI or chat apps such as Telegram and Slack, can schedule recurring research, and plugs in MCP servers and skills."
+  ],
+  "who": "Researchers who want an autonomous research assistant that plans, codes, analyzes and writes.",
+  "features": [
+   "Six cooperating research sub-agents",
+   "Self-evolving memory knowledge graph",
+   "AutoSkills from its own history",
+   "Multi-provider models",
+   "CLI, web UI and chat-app access"
+  ],
+  "faq": [
+   [
+    "Is EvoScientist free?",
+    "Yes. It is open source under the Apache License 2.0; you pay for the model provider you connect."
+   ]
+  ],
+  "sources": [
+   "https://github.com/EvoScientist/EvoScientist",
+   "https://evoscientist.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/EvoScientist/EvoScientist",
+   "stars": 4913,
+   "forks": 340,
+   "checked": "2026-10-23",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "zep": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Zep is a managed memory and context platform for AI agents. It builds a temporal knowledge graph from conversations, business data and documents, so agents can recall relevant facts and how they changed over time. It is powered by Zep's open-source Graphiti framework.",
+   "Official SDKs cover Python, TypeScript and Go, and integration packages exist for frameworks such as Google ADK, Microsoft Agent Framework, AutoGen, CrewAI, LangGraph, LiveKit, Pydantic AI, Mastra and the Vercel AI SDK. A bulk ingestion pipeline loads Slack, documents, email and CSV data, and plugins bring Zep memory to Claude Code, Codex and Cursor. The older self-hosted Community Edition is deprecated."
+  ],
+  "who": "Teams building agents that need long-term, up-to-date memory about users and business data.",
+  "features": [
+   "Temporal knowledge graph memory",
+   "Python, TypeScript and Go SDKs",
+   "Integrations for major agent frameworks",
+   "Bulk ingestion from Slack, docs and email",
+   "Memory benchmarks and eval harness"
+  ],
+  "faq": [
+   [
+    "Is Zep open source?",
+    "Zep Cloud is a managed service with a free plan and paid tiers. The getzep/zep repository holds Apache-2.0 examples and integrations, and the graph engine underneath, Graphiti, is open source."
+   ]
+  ],
+  "sources": [
+   "https://github.com/getzep/zep",
+   "https://www.getzep.com/",
+   "https://help.getzep.com"
+  ],
+  "facts": {
+   "repo": "https://github.com/getzep/zep",
+   "stars": 4969,
+   "forks": 656,
+   "checked": "2026-10-23",
+   "license": "Apache 2.0 for the examples and integrations repo; Zep Cloud itself is a managed service",
+   "osi": false
+  },
+  "updated": "2026-10-23"
+ },
+ "ace-step": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ACE-Step is an open-source foundation model for music generation. It combines diffusion-based generation with a deep-compression autoencoder and a lightweight linear transformer to get both speed and long-range musical structure.",
+   "The team reports it can create up to four minutes of music in about 20 seconds on an A100 GPU, about 15 times faster than LLM-based baselines, with good lyric alignment. It also supports voice cloning, lyric editing, remixing and track generation such as lyrics to vocals or singing to accompaniment. Weights are on Hugging Face and ModelScope, with a demo Space and a training guide."
+  ],
+  "who": "Musicians and developers who want a fast, open model for generating and editing full songs.",
+  "features": [
+   "Full songs up to four minutes",
+   "Fast generation on a single GPU",
+   "Lyric editing and remixing",
+   "Voice cloning and track generation",
+   "Open weights and training code"
+  ],
+  "faq": [
+   [
+    "Is ACE-Step free?",
+    "Yes. The code and model are released under the Apache License 2.0."
+   ]
+  ],
+  "sources": [
+   "https://github.com/ace-step/ACE-Step",
+   "https://ace-step.github.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/ace-step/ACE-Step",
+   "stars": 4974,
+   "forks": 643,
+   "checked": "2026-10-23",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "monkeycode": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MonkeyCode, from Chaitin, is an open-source AI development platform for professional engineering teams. It combines development environment management, AI model management, AI task management and project requirement management, so you can hand it a requirement and it carries the work through development and validation.",
+   "Teams can deploy it inside their own network and manage AI coding workflows centrally, or use the online version with managed cloud environments, built-in models and iOS and Android apps. Every task runs in a real server-side environment with build, test and preview, and it supports models such as GLM, Kimi, MiniMax, Qwen and DeepSeek."
+  ],
+  "who": "Engineering teams that want a self-hostable AI coding platform with central control.",
+  "features": [
+   "Requirement to validated code workflow",
+   "Cloud development environments",
+   "Multiple Chinese and open models",
+   "Self-host inside your network",
+   "Mobile apps synced with desktop"
+  ],
+  "faq": [
+   [
+    "Is MonkeyCode free?",
+    "The code is open source under the GNU AGPL v3.0 and you can self-host it; the online version is free to start. Paid plan pricing was not verified."
+   ]
+  ],
+  "sources": [
+   "https://github.com/chaitin/MonkeyCode",
+   "https://monkeycode-ai.net/"
+  ],
+  "facts": {
+   "repo": "https://github.com/chaitin/MonkeyCode",
+   "stars": 4854,
+   "forks": 742,
+   "checked": "2026-10-23",
+   "license": "the GNU AGPL v3.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "thunderbolt": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Thunderbolt is an open-source, cross-platform AI client from the Thunderbird team, built around choosing your own models and keeping your own data. It runs on the web, iOS, Android, Mac, Linux and Windows, and works with frontier, local and on-prem models.",
+   "It is still early and under active development, aimed first at enterprises that want to deploy it on-prem, with enterprise support available. You can self-host the backend with Docker Compose, add keys for any OpenAI-compatible provider, or point it at Ollama or llama.cpp for free local inference."
+  ],
+  "who": "Organizations and individuals who want a private AI client they can host and point at any model.",
+  "features": [
+   "Web, desktop and mobile apps",
+   "Any OpenAI-compatible or local model",
+   "Self-hosted backend with Docker Compose",
+   "Ollama and llama.cpp support",
+   "Enterprise on-prem deployment"
+  ],
+  "faq": [
+   [
+    "Is Thunderbolt free?",
+    "Yes. It is open source under the Mozilla Public License 2.0; enterprise support pricing is not published."
+   ]
+  ],
+  "sources": [
+   "https://github.com/thunderbird/thunderbolt",
+   "https://www.thunderbolt.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/thunderbird/thunderbolt",
+   "stars": 4802,
+   "forks": 334,
+   "checked": "2026-10-23",
+   "license": "the Mozilla Public License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "deepanalyze": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "DeepAnalyze, from Renmin University of China and Tsinghua University, is an agentic large language model built for autonomous data science. It can carry out a whole data science pipeline on its own: data preparation, analysis, modeling, visualization and report writing.",
+   "It also does open-ended research across structured data (databases, CSV, Excel), semi-structured data (JSON, XML, YAML) and plain text, and produces analyst-grade reports. The 8B model, the code and the 500K-example training dataset are all public, with a paper on arXiv."
+  ],
+  "who": "Analysts and researchers who want an open model that analyzes data and writes the report.",
+  "features": [
+   "End-to-end data science pipeline",
+   "Works on databases, spreadsheets and JSON",
+   "Analyst-grade research reports",
+   "Open 8B model on Hugging Face",
+   "Open training dataset"
+  ],
+  "faq": [
+   [
+    "Is DeepAnalyze free?",
+    "Yes. The code is open source under the MIT License and the model and data are published on Hugging Face."
+   ]
+  ],
+  "sources": [
+   "https://github.com/ruc-datalab/DeepAnalyze",
+   "https://ruc-deepanalyze.github.io/",
+   "https://arxiv.org/abs/2510.16872"
+  ],
+  "facts": {
+   "repo": "https://github.com/ruc-datalab/DeepAnalyze",
+   "stars": 4744,
+   "forks": 745,
+   "checked": "2026-10-23",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "latitude": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Latitude is an open-source observability platform for AI agents that finds where agents fail and helps get them fixed. One line of telemetry captures multi-turn sessions, tool calls and full execution paths, with OpenTelemetry ingest.",
+   "Failing traces are grouped into tracked signals with size and trend. Latitude can then send your coding agent, such as Claude Code or Cursor, the context and sample traces to write a fix and open a pull request, and replays fixes against the real failing traces so regressions don't return. Everything in the UI is also available through its MCP server."
+  ],
+  "who": "Teams running agents in production who want to find, fix and verify failures quickly.",
+  "features": [
+   "Trace and session capture",
+   "Failures auto-grouped into signals",
+   "Dispatch coding agents to fix issues",
+   "Fixes verified against real traces",
+   "MCP server and OpenTelemetry ingest"
+  ],
+  "faq": [
+   [
+    "Is Latitude free?",
+    "The code is open source under the MIT License and can be self-hosted; a hosted cloud is also offered, but its pricing was not verified here."
+   ]
+  ],
+  "sources": [
+   "https://github.com/latitude-dev/latitude-llm",
+   "https://latitude.so/",
+   "https://docs.latitude.so/"
+  ],
+  "facts": {
+   "repo": "https://github.com/latitude-dev/latitude-llm",
+   "stars": 4734,
+   "forks": 404,
+   "checked": "2026-10-23",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "swarmui": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SwarmUI (formerly StableSwarmUI) is a modular web interface for running AI image, video and some audio models on your own hardware. It supports image models such as Stable Diffusion and Flux, video models such as Wan and LTX-2, and audio models such as ACE-Step.",
+   "Beginners can use the simple Generate tab, while advanced users can open the full ComfyUI workflow graph underneath. It adds convenience tools like an image editor, automatic workflow generation and a grid generator, and is in near-release beta (v0.9.8)."
+  ],
+  "who": "Hobbyists and pros who want one local interface for image and video models, from simple to node-based.",
+  "features": [
+   "Simple Generate tab for beginners",
+   "Full ComfyUI workflow tab",
+   "Image, video and audio model support",
+   "Image editor and grid generator",
+   "Runs locally"
+  ],
+  "faq": [
+   [
+    "Is SwarmUI free?",
+    "Yes. It is open source under the MIT License and runs on your own GPU."
+   ]
+  ],
+  "sources": [
+   "https://github.com/mcmonkeyprojects/SwarmUI",
+   "https://swarmui.net/"
+  ],
+  "facts": {
+   "repo": "https://github.com/mcmonkeyprojects/SwarmUI",
+   "stars": 4698,
+   "forks": 475,
+   "checked": "2026-10-23",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "agency-swarm": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agency Swarm is a Python framework for building multi-agent applications on top of the OpenAI Agents SDK. It models automation like a real organization: you define agents with roles such as CEO, virtual assistant or developer, each with its own instructions and tools.",
+   "Agents talk to each other through a dedicated send_message tool along communication flows you define, tools are type-safe Pydantic models, and you keep full control of every prompt. It was started by Arsenii Shatokhin (VRSEN), and version 1.x is a rewrite on the Agents SDK with a migration guide from 0.x."
+  ],
+  "who": "Developers who want to build teams of role-based agents on the OpenAI Agents SDK.",
+  "features": [
+   "Role-based agents with custom instructions",
+   "Defined agent-to-agent communication flows",
+   "Type-safe Pydantic tools",
+   "Built on the OpenAI Agents SDK",
+   "Full control over prompts"
+  ],
+  "faq": [
+   [
+    "Is Agency Swarm free?",
+    "Yes. It is open source under the MIT License; you pay for the models you call."
+   ]
+  ],
+  "sources": [
+   "https://github.com/VRSEN/agency-swarm",
+   "https://agency-swarm.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/VRSEN/agency-swarm",
+   "stars": 4610,
+   "forks": 1059,
+   "checked": "2026-10-23",
+   "license": "the MIT License",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "autodev": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AutoDev, by Phodal, is a multi-agent development platform built on Kotlin Multiplatform. Version 3.0, called AutoDev Xiuper (alpha), covers document research, coding, code review, data queries, artifact generation and web interaction workflows from one shared agent engine.",
+   "It runs as an IntelliJ IDEA plugin, a VS Code extension, a CLI (npm @xiuper/cli), a web app, desktop and Android builds and a remote coding-agent server, with MCP integration and AGENTS.md support. The earlier AutoDev 2.0 remains available as the stable IntelliJ plugin."
+  ],
+  "who": "Developers who want one agent platform across their IDE, terminal, desktop and phone.",
+  "features": [
+   "Multi-agent coding and code review",
+   "IntelliJ, VS Code, CLI and web",
+   "Desktop, Android and server builds",
+   "MCP integration and AGENTS.md",
+   "Data query and document research"
+  ],
+  "faq": [
+   [
+    "Is AutoDev free?",
+    "Yes. It is open source under the Mozilla Public License 2.0."
+   ]
+  ],
+  "sources": [
+   "https://github.com/phodal/auto-dev",
+   "https://ide.unitmesh.cc/"
+  ],
+  "facts": {
+   "repo": "https://github.com/phodal/auto-dev",
+   "stars": 4561,
+   "forks": 501,
+   "checked": "2026-10-23",
+   "license": "the Mozilla Public License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "kungfu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kungfu is a workspace that keeps one piece of work moving across different coding agents, so you don't have to copy context and re-explain decisions every time you switch. You can use a strong agent when it matters and a cheaper one when it doesn't, across Codex, Claude, OpenCode, Amp or your own execution surface.",
+   "It tracks each piece of work through attempts, so a task can survive a disconnect or crash and recover. It is in alpha, installs on macOS or Linux with a per-user script that needs no sudo, and includes a mock agent to test recovery without provider credentials."
+  ],
+  "who": "Developers who switch between coding agents and want the task and its context to carry over.",
+  "features": [
+   "Same task across Codex, Claude, OpenCode and Amp",
+   "Context kept across agent handoffs",
+   "Recovery after crashes and disconnects",
+   "Mock agent for credential-free testing",
+   "No-sudo installer"
+  ],
+  "faq": [
+   [
+    "Is Kungfu free?",
+    "Yes. It is open source under the Apache License 2.0."
+   ]
+  ],
+  "sources": [
+   "https://github.com/kungfu-systems/kungfu",
+   "https://kungfu.tech/"
+  ],
+  "facts": {
+   "repo": "https://github.com/kungfu-systems/kungfu",
+   "stars": 4534,
+   "forks": 1289,
+   "checked": "2026-10-23",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "observal": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Observal is a self-hosted registry and system of record for a team's coding agent resources: skills, agent files and MCP servers. It gives an organization one place to discover what colleagues have already built, instead of everyone writing their own version in scattered repos.",
+   "It also has a built-in insight engine that shows how those resources are actually used, closing the feedback loop for the people who maintain them. You set the scope, share resources with peers, and coding agents use it through observal-cli."
+  ],
+  "who": "Engineering orgs that want to share and measure internal skills, MCP servers and agents.",
+  "features": [
+   "Registry for skills, agents and MCP servers",
+   "Discovery across the organization",
+   "Usage insight engine",
+   "observal-cli for coding agents",
+   "Self-hosted"
+  ],
+  "faq": [
+   [
+    "Is Observal free?",
+    "Yes. It is open source under the Apache License 2.0 and you host it yourself."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Observal/Observal",
+   "https://observal.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/Observal/Observal",
+   "stars": 4549,
+   "forks": 1137,
+   "checked": "2026-10-23",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
+ },
+ "kiro-crew": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kiro Crew is an open-source, persistent development workspace from the Kiro team that runs locally or on your own remote hardware. It keeps working beyond a single session and learns and improves as it goes.",
+   "Multi-step tasks can run unattended, recurring jobs run on a schedule, and heartbeats watch systems until something needs attention. You can work with it from a desktop app, a web dashboard or a CLI, or through Slack and Discord, and Kiro Crew Apps bundle a purpose-built interface with agents, skills, schedules and integrations. The default agent runs on kiro-cli, which you install and sign in to separately."
+  ],
+  "who": "Developers who want a self-hosted agent workspace for long-running and recurring coding work.",
+  "features": [
+   "Persistent, self-improving workspace",
+   "Unattended and scheduled tasks",
+   "Heartbeat monitoring",
+   "Desktop app, web dashboard and CLI",
+   "Slack and Discord access"
+  ],
+  "faq": [
+   [
+    "Is Kiro Crew free?",
+    "The workspace is open source under the Apache License 2.0; its default agent uses kiro-cli, which needs a Kiro sign-in and follows Kiro's own plans."
+   ]
+  ],
+  "sources": [
+   "https://github.com/kirodotdev/KiroCrew",
+   "https://kiro.dev/crew/"
+  ],
+  "facts": {
+   "repo": "https://github.com/kirodotdev/KiroCrew",
+   "stars": 4551,
+   "forks": 865,
+   "checked": "2026-10-23",
+   "license": "the Apache License 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-23"
  }
 }
