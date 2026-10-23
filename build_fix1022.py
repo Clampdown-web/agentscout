@@ -8,6 +8,7 @@ def run(t=None):
     opts="".join(f'<option value="{html.escape(c)}">{html.escape(c)}</option>' for c in cats)
     for f,first in (("index.html",'<option value="all">Any category</option>'),("search/index.html",'<option value="">Any category</option>')):
         s=open(f,encoding="utf-8").read()
+        if f.startswith("search/") and 'id="fcat"' not in s: continue  # /search/ is a forwarder now (Oct 23 2026)
         n,k=re.subn(r'(<select id="fcat"[^>]*>)(.*?)(</select>)',lambda m:m.group(1)+first+opts+m.group(3),s,count=1,flags=re.S)
         if not k: raise SystemExit(f"build_catopts: no #fcat in {f}")
         open(f,"w",encoding="utf-8").write(n)

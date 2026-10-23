@@ -106,13 +106,26 @@ def run():
     print("search: pagefind",("ok" if r.returncode==0 else "FAILED")," | ".join(l for l in out if "Indexed" in l or "rror" in l)[:300])
     if r.returncode or not os.path.exists(os.path.join(tmp,"pagefind-entry.json")): shutil.rmtree(tmp,ignore_errors=True); sys.exit(1)
     shutil.rmtree("pagefind",ignore_errors=True); os.rename(tmp,"pagefind")
+REDIR='''<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search · AgentScout</title>
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://agentscouthq.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script>(function(){var p=new URLSearchParams(location.search);p.delete("type");var q=p.toString();location.replace("/"+(q?"?"+q:"")+(q?"#directory":""))})()</script>
+<noscript><meta http-equiv="refresh" content="0;url=/"></noscript>
+</head><body>
+<p>Search now lives on the <a href="/">AgentScout homepage</a>.</p>
+</body></html>
+'''
 def page():
-    import build_extras as X
+    """Oct 23 2026 (owner): ONE search on the site, the homepage panel. /search/ is now only a forwarder:
+    /search/?q=..&cat=..&price=..&os=..&sort=.. -> /?same-query#directory (homepage JS reads those params and runs).
+    noindex + canonical to the homepage; not in the sitemap (returns no URLs)."""
     os.makedirs("search",exist_ok=True)
-    canon=B+"search/"; title="Search AgentScout: tools, guides, news and free tools"; desc="Search the whole AgentScout site: AI agent tools, MCP servers, categories, best-of guides, news and free tools, with filters for type, pricing and open source."
-    body=open("data/search.inc",encoding="utf-8").read()
-    ld={"@context":"https://schema.org","@type":"SearchResultsPage","name":title,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}}
-    open("search/index.html","w",encoding="utf-8").write(X.shell("../",title,desc,canon,body,ld))
+    open("search/index.html","w",encoding="utf-8").write(REDIR)
     # small tool-name index for best-match pinning and "Did you mean" (loaded lazily with the Pagefind index)
     t=json.load(open("tools.json"))
     # popularity score (owner-approved Oct 21 2026) used to order nav suggestions WITHIN each name-match group:
@@ -135,4 +148,4 @@ def page():
         for fld in (x["name"],x["category"],x.get("description",""),x.get("pricing","")," ".join(x.get("use_cases") or [])):
             for w in re.findall(r"[a-z][a-z0-9]{2,}",fld.lower()): W[w]+=1
     json.dump([[w,c] for w,c in W.most_common(6000) if c>=2],open("search/words.json","w",encoding="utf-8"),separators=(",",":"))
-    return [canon]
+    return []

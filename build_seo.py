@@ -93,7 +93,7 @@ def run(t):
         if s!=s0: open(f,"w").write(s)
     # twitter:* mirror for the other indexable pages (top-level pages and bot templates); titles left as-is (Oct 20 2026 SEO pass)
     g=set(_groups())
-    for f in sorted(glob.glob("*.html"))+sorted(glob.glob("bot-templates/*.html"))+sorted(glob.glob("leaderboard/*.html"))+["search/index.html"]:  # leaderboard + search added Oct 21 2026 7 PM pass
+    for f in sorted(glob.glob("*.html"))+sorted(glob.glob("bot-templates/*.html"))+sorted(glob.glob("leaderboard/*.html"))+[]:  # leaderboard + search added Oct 21 2026 7 PM pass
         if f in g or f.startswith("sponsor") or not __import__("os").path.exists(f): continue  # sponsor.html is frozen
         s0=s=open(f).read(); s=twitter(s,c)
         if s!=s0: open(f,"w").write(s)
@@ -113,7 +113,7 @@ def _bt_sec():
         if f.endswith("index.html"): continue
         h=_h1(f)
         if h: out.append(f"- [{h}]({B}{f})")
-    for f,u,lbl in (("leaderboard/badges.html",B+"leaderboard/badges.html",None),("search/index.html",B+"search/","Site search: every AgentScout page")):
+    for f,u,lbl in (("leaderboard/badges.html",B+"leaderboard/badges.html",None),):
         if os.path.exists(f) and (lbl or _h1(f)): out.append(f"- [{lbl or _h1(f)}]({u})")
     return ["## AI bot templates and more",""]+out+[""] if out else []
 def llms_extra(c=None):
