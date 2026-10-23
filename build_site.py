@@ -32,7 +32,10 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 "scenario":["concept art","generate 3D"],"intangible":["concept art"],"simulon":["concept art"]}
 # Reviewed use cases that replace the keyword guess (Oct 19, 2026 PT). agent-resource-market: agent-to-agent discovery and coordination;
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
-UC_SET={"crolytics":["sales & support","connect tools via MCP","automate workflows"],  # Oct 23 PT: owner request (governed GTM agent workspace; GA4/Search Console/CMS via MCP)
+APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
+LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
+UC_SET={"krea":["generate images","generate video","upscale images"],  # Oct 23 PT: Krea refresh (images + text/image-to-video + upscaling, per krea.ai/features/ai-video-generator)
+"crolytics":["sales & support","connect tools via MCP","automate workflows"],  # Oct 23 PT: owner request (governed GTM agent workspace; GA4/Search Console/CMS via MCP)
 "vellm":["generate video","connect tools via MCP"],  # Oct 23 PT: maker submission (photo-to-video templates with OAuth MCP)
 "vidmoat":["edit video","connect tools via MCP"],"salestouch":["sales & support","connect tools via MCP"],  # Oct 23 PT: maker submissions (hosted AI video editor with MCP; LinkedIn MCP for sales agents)
 "system-one-api":["build an agent","automate workflows"],"peekpanda":["research the web","social posts & ads","connect tools via MCP"],"hiredov":["business agents","automate workflows"],  # Oct 23 PT: maker submissions, hand-checked ("call logs" wrongly matched voice)
@@ -184,7 +187,7 @@ for x in t:
     out,_rich=build_rich.apply(out,x,t,build_extras.catslug,prim,B)
     if _rich: out=out.replace(about,(about+_rich[0]) if _rich[4:]==("lite",) else _rich[0],1)  # lite entries keep the About paragraph (additive)
     ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":pg,"url":pg,"name":f"{x['name']}: what it does, pricing and alternatives","dateModified":x["verified"],"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
-        "about":{"@type":"SoftwareApplication","name":x["name"],"description":x["description"],"url":prim,**({"sameAs":([gh] if gh and gh!=prim else [])+[u for u in x.get("socials") or [] if soc_lab(u)]} if (gh and gh!=prim) or x.get("socials") else {}),**({"codeRepository":gh} if gh else {}),"applicationCategory":"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication","keywords":", ".join(dict.fromkeys([x["category"]]+x["use_cases"]))}},
+        "about":{"@type":"SoftwareApplication","name":x["name"],"description":x["description"],"url":prim,**({"sameAs":([gh] if gh and gh!=prim else [])+[u for u in x.get("socials") or [] if soc_lab(u)]} if (gh and gh!=prim) or x.get("socials") else {}),**({"codeRepository":gh} if gh else {}),"applicationCategory":APP_CAT.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"keywords":", ".join(dict.fromkeys([x["category"]]+x["use_cases"]+LD_KW.get(x["slug"],[])))}},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":x["category"],"item":f"{B}categories/{build_extras.catslug(x['category'])}.html"},{"@type":"ListItem","position":3,"name":x["name"],"item":pg}]}]}
     if _rich:
         ld["@graph"][0]["name"]=_rich[3]; ld["@graph"][0]["about"]={**ld["@graph"][0]["about"],**_rich[1]}; ld["@graph"].append(_rich[2])

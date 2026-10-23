@@ -30004,25 +30004,30 @@
   {
     "name": "Krea",
     "url": "https://www.krea.ai",
-    "description": "Real-time AI image and video generation and upscaling, with many models in one app.",
+    "description": "Creative AI suite for generating, editing and upscaling images and video, with many models (Krea 3, Veo, Sora, Kling, Seedance and more), plus 3D, LoRA training and plugins.",
     "category": "image generation",
     "pricing": "Freemium",
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-23",
     "added": "2026-10-18",
     "source": "Research (film, TV, video & music sweep)",
-    "pricing_detail": "Free (100 units a day); Basic $9/mo; Pro $35/mo",
+    "pricing_detail": "Free (100 compute units a day); Basic $9/mo; Pro $35/mo; Max $105/mo; Business $200/mo; Enterprise custom (Basic, Pro and Max about 40% off billed yearly)",
     "use_cases": [
+      "generate images",
+      "generate video",
       "upscale images"
     ],
     "website": "https://www.krea.ai",
     "github": "",
     "id": 1194,
     "slug": "krea",
-    "logo": "assets/logos/krea.png"
+    "logo": "assets/logos/krea.png",
+    "tags": [
+      "video generation"
+    ]
   },
   {
     "name": "SkyReels",

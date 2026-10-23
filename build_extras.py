@@ -245,7 +245,7 @@ def cico(c):
 MEDIA_CATS={"film & TV production","video generation","film & TV audio","music production"}
 # Related tools that stay in their own category but belong with the media categories (cross-linked both ways, Oct 18, 2026)
 MEDIA_XLINK={"film & TV production":["davinci-resolve-mcp","mux-mcp","picsart-genai-mcp","mcp-for-blender","happyscribe-mcp","vidiq-mcp","twelvelabs-jockey-mcp","valossa-assistant-mcp","genspark","skywork"],
- "video generation":["minimax-mcp","picsart-genai-mcp","genspark","skywork"],
+ "video generation":["minimax-mcp","picsart-genai-mcp","genspark","skywork","krea"],
  "film & TV audio":["elevenlabs-agents","deepgram","happyscribe-mcp","minimax-mcp"],
  "music production":["elevenlabs-agents","minimax-mcp"],
  # Art, design, 3D & photo categories (Oct 18, 2026)

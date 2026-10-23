@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-23T16:35:43Z",
- "updated": "2026-10-23T16:35:43Z",
+ "generated": "2026-10-23T17:21:37Z",
+ "updated": "2026-10-23T17:21:37Z",
  "last_checked": "2026-10-23",
  "count": 1706,
  "tools": [
@@ -49733,13 +49733,15 @@
    "website": "https://www.krea.ai",
    "github": "",
    "category": "image generation",
-   "description": "Real-time AI image and video generation and upscaling, with many models in one app.",
+   "description": "Creative AI suite for generating, editing and upscaling images and video, with many models (Krea 3, Veo, Sora, Kling, Seedance and more), plus 3D, LoRA training and plugins.",
    "key_features": [
-    "Free (100 units a day); Basic $9/mo; Pro $35/mo",
+    "Free (100 compute units a day); Basic $9/mo; Pro $35/mo; Max $105/mo; Business $200/mo; Enterprise custom (Basic, Pro and Max about 40% off billed yearly)",
     "Active",
+    "Generate images",
+    "Generate video",
     "Upscale images"
    ],
-   "pricing": "Free (100 units a day); Basic $9/mo; Pro $35/mo",
+   "pricing": "Free (100 compute units a day); Basic $9/mo; Pro $35/mo; Max $105/mo; Business $200/mo; Enterprise custom (Basic, Pro and Max about 40% off billed yearly)",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -49760,7 +49762,10 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "upscale images"
+    "generate images",
+    "generate video",
+    "upscale images",
+    "video generation"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/krea.png",
