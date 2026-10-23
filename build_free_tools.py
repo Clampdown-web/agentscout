@@ -390,7 +390,7 @@ cur=pick();$("kout").innerHTML='<h2 style="font-size:18px;margin:24px 0 6px">You
 function txt(){return"My AI agent stack ("+cur.goal+"), via AgentScout:\n"+cur.layers.map(function(L){return"- "+L[0]+": "+(L[1].map(function(x){return x.name}).join(", ")||"none matched")}).join("\n")+"\n"+location.href.split("?")[0]}
 function msg(s){$("kmsg").textContent=s;setTimeout(function(){$("kmsg").textContent=""},2500)}
 $("kcopy").addEventListener("click",function(){cur&&navigator.clipboard.writeText(txt()).then(function(){msg("Copied")})});
-$("klink").addEventListener("click",function(){navigator.clipboard.writeText(location.href.replace(/[?&]notrack=1/,"")).then(function(){msg("Link copied")})});
+$("klink").addEventListener("click",function(){navigator.clipboard.writeText(location.href.replace(/([?&])notrack(=[^&#]*)?(&|(?=#)|$)/,function(m,a,b,c){return c?a:""})).then(function(){msg("Link copied")})});
 $("kpng").addEventListener("click",function(){if(!cur)return;var W=1200,H=630,c=document.createElement("canvas");c.width=W;c.height=H;var x=c.getContext("2d");x.fillStyle="#0b0d12";x.fillRect(0,0,W,H);x.fillStyle="#7c8cff";x.fillRect(0,0,W,8);
 x.fillStyle="#fff";x.font="700 44px Inter,system-ui,sans-serif";x.fillText("My AI agent stack",60,100);x.fillStyle="#aab";x.font="28px Inter,system-ui,sans-serif";x.fillText(cur.goal,60,145);
 var y=215;cur.layers.slice(0,5).forEach(function(L){x.fillStyle="#7c8cff";x.font="600 24px Inter,system-ui,sans-serif";x.fillText(L[0],60,y);x.fillStyle="#fff";x.font="26px Inter,system-ui,sans-serif";var s=L[1].map(function(t){return t.name}).join("  ·  ")||"none matched";while(x.measureText(s).width>W-120&&s.length>4)s=s.slice(0,-2);x.fillText(s,60,y+36);y+=80});
@@ -628,7 +628,7 @@ ROWS.forEach(function(r,j){var y=210+j*62;x.fillStyle="#aab";x.font="600 22px In
 cur.forEach(function(t,i){var ln=wrapT(x,String(r[1](t)),cw-24).slice(0,2);ln.forEach(function(s,k){x.fillText(s,260+i*cw,y+k*26)})})});
 x.fillStyle="#aab";x.font="22px Inter,system-ui,sans-serif";x.fillText("Compare AI tools free at agentscouthq.com/free-tools",50,H-30);
 c.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=cur.map(function(t){return t.slug}).join("-vs-")+".png";a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)})});
-$("cclink").addEventListener("click",function(){navigator.clipboard.writeText(location.href.replace(/[?&]notrack=1/,"")).then(function(){msg("Link copied")})});
+$("cclink").addEventListener("click",function(){navigator.clipboard.writeText(location.href.replace(/([?&])notrack(=[^&#]*)?(&|(?=#)|$)/,function(m,a,b,c){return c?a:""})).then(function(){msg("Link copied")})});
 $("cctxt").addEventListener("click",function(){if(cur.length<2)return;navigator.clipboard.writeText(cur.map(function(t){return t.name}).join(" vs ")+" (via AgentScout)\n"+ROWS.map(function(r){return r[0]+": "+cur.map(function(t){return t.name+" "+r[1](t)}).join(" | ")}).join("\n")+"\n"+location.href.split("?")[0]).then(function(){msg("Copied")})});
 [0,1,2].forEach(function(i){$("cc"+i).addEventListener("input",run);$("cc"+i).addEventListener("change",run)});
 fetch("../api/tools.json").then(function(r){return r.json()}).then(function(d){T=Array.isArray(d)?d:d.tools;T.forEach(function(x){BY[x.name.toLowerCase()]=x;BY[x.slug]=BY[x.slug]||x});

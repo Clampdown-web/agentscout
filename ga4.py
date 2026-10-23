@@ -2,7 +2,7 @@
 apply(html) inserts/refreshes one marked <script> block before </head> and adds GA hosts to the page CSP; idempotent.
 Called from build_tasks.sitewide() and from build_extras' atexit hook, so every generator run keeps the tag.
 Behaviour (all in the inline snippet below):
-- Skipped entirely (gtag.js never requested) when the owner opt-out flag is set (?notrack=1 -> localStorage as_notrack=1,
+- Skipped entirely (gtag.js never requested) when the owner opt-out flag is set (?notrack or ?notrack=1 / any value but 0 -> localStorage as_notrack=1,
   the same flag track.js uses; ?notrack=0 clears it) or the browser is automated/headless (same test as track.js).
 - Consent Mode v2 defaults: EEA + UK + CH -> analytics/ad storage, ad_user_data, ad_personalization all denied;
   elsewhere analytics_storage granted, ad signals denied. allow_google_signals and allow_ad_personalization_signals false.
@@ -17,7 +17,7 @@ START, END = "<!-- ga4 -->", "<!-- /ga4 -->"
 _EEA = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO",
         "SK","SI","ES","SE","IS","LI","NO","GB","CH"]
 SNIPPET = (START + '<script>(function(){var ID="' + ID + '",off=false,LOC=location.href;'
-  'try{var nt=new URLSearchParams(location.search).get("notrack");if(nt==="1")localStorage.setItem("as_notrack","1");else if(nt==="0")localStorage.removeItem("as_notrack");off=localStorage.getItem("as_notrack")==="1"}catch(e){}'
+  'try{var nt=new URLSearchParams(location.search).get("notrack");if(nt==="0")localStorage.removeItem("as_notrack");else if(nt!==null)localStorage.setItem("as_notrack","1");off=localStorage.getItem("as_notrack")==="1"}catch(e){}'
   'try{if(navigator.webdriver||/HeadlessChrome|Headless|PhantomJS|Playwright|Puppeteer|Selenium|Lighthouse|bot\\b|crawler|spider/i.test(navigator.userAgent||""))off=true}catch(e){}'
   'if(off){window["ga-disable-"+ID]=true;return}'
   'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;'
