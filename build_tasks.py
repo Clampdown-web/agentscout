@@ -344,6 +344,8 @@ def sitewide(t):
             if 'news/index.html">News archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news/index.html">News archive</a>',fn,count=1)
             # Image generator link in every footer, right after Badges (generate.html's own footer lacked it; audit Oct 18 2026)
             if 'class="footgen"' not in fn: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a class="footgen" href="{d}generate.html">✨ Free AI Image Generator</a>',fn,count=1)
+            # AgentScout MCP server connect page in every footer, right after Free tools (Oct 23 2026, crawlable link for /mcp/connect.html)
+            if 'mcp/connect.html">MCP server</a>' not in fn and f!="sponsor.html": fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
             if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Bot templates (launched Oct 19 2026 PT, owner approved): red flame nav link left of Quiz, footer link before Free tools,
         # homepage strip after the makers strip (data/bt-strip.inc). Sponsor page stays untouched.

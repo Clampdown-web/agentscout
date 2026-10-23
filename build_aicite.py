@@ -111,7 +111,7 @@ MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (
 def connect_page(t):
     M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"
     title="Connect to the AgentScout MCP server · AgentScout"
-    desc=f"Free, read-only MCP server for the AgentScout directory: search {len(t):,} AI agent tools and {M:,} MCP servers from Claude, Cursor, VS Code or any MCP client. No sign-up."[:158]
+    desc=f"Free, read-only MCP server: search {len(t):,} AI agent tools and {M:,} MCP servers from Claude, Cursor, VS Code or any MCP client. No sign-up needed."  # full sentence, no truncation (Oct 23 2026)
     pre=lambda s:f'<pre style="overflow-x:auto;max-width:100%;white-space:pre;padding:12px;border-radius:8px;border:1px solid rgba(127,127,127,.3);font-size:13px"><code>{e(s)}</code></pre>'
     cfg='{\n  "mcpServers": {\n    "agentscout": {\n      "url": "'+MCP_URL+'"\n    }\n  }\n}'
     body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server</h1>'

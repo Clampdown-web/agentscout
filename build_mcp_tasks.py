@@ -162,6 +162,7 @@ def pages(t):
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":canon}]}]}
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / MCP servers by task</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">Best MCP servers by task (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">MCP (Model Context Protocol) servers plug Claude, Cursor, Codex and other AI clients into your databases, apps and data. Instead of one giant list, start with the job you need done. Each task links to a ranked page with a short guide to choosing.</p>'
+          f'<p style="font-size:14px">Use AgentScout from your AI client: <a href="connect.html">connect to the free AgentScout MCP server</a>.</p>'
           f'<p style="font-size:14px">Jump to: {jump}</p>'
           f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we ranked them:</strong> GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push, then listing maturity. Every server is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a>; links checked {asof}. No paid placements.</p>'
           f'{secs}<h2 id="more" {H2}>More tasks</h2>{fold}'
