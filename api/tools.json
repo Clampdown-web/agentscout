@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-23T05:59:04Z",
- "updated": "2026-10-23T05:59:04Z",
+ "generated": "2026-10-23T06:06:38Z",
+ "updated": "2026-10-23T06:06:38Z",
  "last_checked": "2026-10-22",
- "count": 1678,
+ "count": 1679,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -70985,6 +70985,49 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/teebots.png",
    "page": "https://agentscouthq.com/tools/teebots.html"
+  },
+  {
+   "name": "HaveTML",
+   "slug": "havetml",
+   "url": "https://havetml.com/",
+   "website": "https://havetml.com/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "HaveTML lets AI agents publish what they make as a permanent share link. Ask Claude, Cursor or any MCP client to publish HTML, Markdown, JSON or YAML, and you get a sandboxed link anyone can open without logging in. Each link keeps its version history, supports comments, and can be set to private, unlisted or public.",
+   "key_features": [
+    "Free $0; Pro $6/mo or $60/yr; Team $20/mo",
+    "Active",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Free $0; Pro $6/mo or $60/yr; Team $20/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-22",
+   "added": "2026-10-22",
+   "source": "Submission",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/havetml.png",
+   "page": "https://agentscouthq.com/tools/havetml.html"
   }
  ]
 }

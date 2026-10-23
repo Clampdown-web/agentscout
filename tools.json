@@ -42800,5 +42800,31 @@
     "socials": [
       "https://x.com/xijaja"
     ]
+  },
+  {
+    "name": "HaveTML",
+    "url": "https://havetml.com/",
+    "description": "HaveTML lets AI agents publish what they make as a permanent share link. Ask Claude, Cursor or any MCP client to publish HTML, Markdown, JSON or YAML, and you get a sandboxed link anyone can open without logging in. Each link keeps its version history, supports comments, and can be set to private, unlisted or public.",
+    "category": "MCP servers",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-22",
+    "added": "2026-10-22",
+    "source": "Submission",
+    "pricing_detail": "Free $0; Pro $6/mo or $60/yr; Team $20/mo",
+    "use_cases": [
+      "connect tools via MCP",
+      "run code safely"
+    ],
+    "website": "https://havetml.com/",
+    "github": "",
+    "id": 1698,
+    "slug": "havetml",
+    "logo": "assets/logos/havetml.png",
+    "maker_submitted": true,
+    "submitted": "2026-10-22"
   }
 ]
