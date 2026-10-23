@@ -223,7 +223,7 @@ def added_line(x):
 def ptag(p):
     """Pricing class for search filters (Oct 21 2026); mirrors pc() in index.html. 'See site' and plain source-available stay unknown, never free."""
     p=(p or "").lower()
-    if re.match(r"^(open|free$)",p): return "freemium" if "cloud" in p else "free"
+    if re.match(r"^(open|free$)",p): return "freemium" if re.search(r"cloud|enterprise|paid|hosted",p) else "free"
     if "freemium" in p or "+ cloud" in p: return "freemium"
     if re.match(r"^(paid|usage|enterprise)",p): return "paid"
     return "unknown"

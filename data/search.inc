@@ -1,31 +1,33 @@
 <div class="crumb"><a href="../index.html">AgentScout</a> / Search</div><section style="padding-top:20px;text-align:left">
 <h1 style="text-align:left;margin-left:0">Search AgentScout</h1>
 
-<div class="filters" role="group" aria-label="Filter results" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 8px">
-<label for="ftype">Type</label><select id="ftype" class="ucsel"><option value="">All types</option><option>Tools</option><option>Categories</option><option>Guides &amp; best-of</option><option>News</option><option>Free tools</option><option>Pages</option></select>
-<span id="toolf" style="display:contents"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option>Free</option><option>Freemium</option><option>Paid</option><option>Not listed</option></select>
-<label for="fcat">Category</label><select id="fcat" class="ucsel"><option value="">Any category</option></select>
-<label style="display:inline-flex;align-items:center;gap:6px;min-height:44px"><input type="checkbox" id="fos"> Open source only</label></span>
-<label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Relevance</option><option value="new">Newest</option></select>
-<button type="button" id="fclear" class="chip" style="min-height:44px">Clear filters</button></div>
-<p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type in the search box at the top to begin.</p>
+<style>form[data-navsearch]{display:none!important}#spanel{scroll-margin-top:12px}.spanel{border:1px solid var(--line,rgba(127,127,127,.25));border-radius:14px;padding:14px;margin:0 0 14px;background:var(--card,transparent)}.sprow{display:flex;gap:8px;margin:0 0 12px}.sprow input{flex:1 1 auto;min-width:0;min-height:48px;font-size:16px;padding:0 14px;border-radius:10px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--bg,#fff);color:var(--text)}.sprow .btn{min-height:48px;flex:0 0 auto}.srl{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:end;margin:0;font-size:13px;color:var(--faint)}.filters .fg{display:flex;flex-direction:column;gap:4px;min-width:0}.spanel .filters select{flex:none;width:100%;min-height:44px;height:44px;font-size:15px}.filters .fchk{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--text);cursor:pointer}.filters .fchk input{width:24px;height:24px;margin:0}.filters #fclear{min-height:44px}#toolf{display:contents}@media(max-width:420px){.spanel{padding:10px}.sprow{margin:0 0 8px}.filters{grid-template-columns:1fr 1fr;gap:8px}}</style><form class="spanel" id="spanel" role="search" aria-label="Search and filter AgentScout" action="./" method="get">
+<div class="sprow"><label for="sq" class="srl">Search AgentScout</label><input id="sq" name="q" type="search" placeholder="Search tools, guides, news…" autocomplete="off" enterkeyhint="search"><button type="submit" class="btn primary">Search</button></div>
+<div class="filters" role="group" aria-label="Filter results">
+<span class="fg"><label for="ftype">Type</label><select id="ftype" class="ucsel"><option value="">All types</option><option>Tools</option><option>Categories</option><option>Guides &amp; best-of</option><option>News</option><option>Free tools</option><option>Pages</option></select></span>
+<span id="toolf"><span class="fg"><label for="fcat">Category</label><select id="fcat" class="ucsel"><option value="">Any category</option></select></span>
+<span class="fg"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option>Free</option><option value="freeplan">Free or free plan</option><option>Freemium</option><option>Paid</option><option>Not listed</option></select></span>
+<label class="fchk"><input type="checkbox" id="fos"> Open source only</label></span>
+<span class="fg"><label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Relevance</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option></select></span>
+<button type="button" id="fclear" class="chip">Clear filters</button></div></form>
+<p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type above or pick a filter to begin.</p>
 <p id="ssugg" role="status" aria-live="polite" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres"></div>
 <style>#smore[hidden]{display:none!important}</style><p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
 <noscript><p>Search needs JavaScript. Browse <a href="../categories/index.html">categories</a> or the <a href="../index.html#directory">directory</a> instead.</p></noscript>
 </section>
 <script type="module">
-const $0=id=>document.getElementById(id);const NF=document.querySelector("form[data-navsearch]");const SQ=NF.querySelector("input");const $=id=>id==="sq"?SQ:id==="sf"?NF:$0(id);const P=new URLSearchParams(location.search);
+const $0=id=>document.getElementById(id);const $=id=>$0(id==="sf"?"spanel":id);const P=new URLSearchParams(location.search);
 let pf,names,words=[],page=0,list=[],tok=0,more_=0;const PER=20,POOL=120;
 /* URL filters are case-insensitive (price=free == price=Free, type=tools, cat=coding agents, os=true, sort=NEW) */
 const setSel=(id,v)=>{v=(v||"").trim().toLowerCase().replace(/\s+/g," ");const o=[...$(id).options].find(o=>(o.value||o.textContent).trim().toLowerCase()===v||(v==="guides"&&o.value.startsWith("Guides")));$(id).value=o?o.value:""};
-$("sq").value=P.get("q")||"";setSel("ftype",P.get("type"));setSel("fprice",P.get("price"));$("fos").checked=/^(1|true|yes|on)$/i.test(P.get("os")||"");$("fsort").value=(P.get("sort")||"").toLowerCase()==="new"?"new":"";
+$("sq").value=P.get("q")||"";setSel("ftype",P.get("type"));setSel("fprice",P.get("price"));setSel("fcat",P.get("cat"));$("fos").checked=/^(1|true|yes|on)$/i.test(P.get("os")||"");{const so=(P.get("sort")||"").toLowerCase();$("fsort").value=["new","loved","stars","az"].includes(so)?so:""}
 const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const N=s=>(s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");
 const C=s=>N(s).replace(/[^a-z0-9]+/g,"");
-function toolMode(){const t=$("ftype").value;$("toolf").style.display=(t===""||t==="Tools")?"contents":"none"}
-function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("ftype").value)u.set("type",$("ftype").value);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort","new");history.replaceState(null,"","?"+u.toString())}
+function toolMode(){const t=$("ftype").value;$("toolf").style.display=(t===""||t==="Tools")?"":"none"}
+function sync(){const u=new URLSearchParams();const q=$("sq").value.trim();if(q)u.set("q",q);if($("ftype").value)u.set("type",$("ftype").value);if($("fprice").value)u.set("price",$("fprice").value);if($("fcat").value)u.set("cat",$("fcat").value);if($("fos").checked)u.set("os","1");if($("fsort").value)u.set("sort",$("fsort").value);history.replaceState(null,"","?"+u.toString())}
 async function load(){if(pf)return pf;const [m,nm,wd]=await Promise.all([import("../pagefind/pagefind.js"),fetch("names.json").then(r=>r.json()).catch(()=>[]),fetch("words.json").then(r=>r.json()).catch(()=>[])]);names=nm;words=wd;pf=m;await pf.options({baseUrl:"/",excerptLength:22});pf.init();
- const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));setSel("fcat",P.get("cat"));return pf}
+ const f=await pf.filters();const cats=Object.keys(f.category||{}).sort();if($("fcat").options.length<2)$("fcat").insertAdjacentHTML("beforeend",cats.map(c=>`<option>${esc(c)}</option>`).join(""));setSel("fcat",P.get("cat"));return pf}
 function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;const D=[];for(let i=0;i<=a.length;i++){D[i]=[i];for(let j=1;j<=b.length;j++)D[i][j]=i?Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+(a[i-1]===b[j-1]?0:1),(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])?D[i-2][j-2]+1:9):j}return D[a.length][b.length]}
 function fixWord(w){if(w.length<3)return w;let best=null,bd=9,bc=0;const lim=w.length<=5?1:2;for(const [v,c] of words){if(v===w)return w;const d=lev(w,v);if(d<bd||(d===bd&&c>bc)){bd=d;bc=c;best=v}}return bd<=lim?best:w}
 function suggest(q){const cq=C(q);if(cq.length<3)return null;let best=null,bd=9;const lim=cq.length<=5?1:2;
@@ -37,8 +39,8 @@ function bestMatch(q){const cq=C(q);if(cq.length<2)return null;let hit=null;
  return hit}
 const terms=q=>N(q).split(/[^a-z0-9]+/).filter(w=>w.length>1).map(w=>w.length>4&&w.endsWith("s")?w.slice(0,-1):w);
 function toolOK(x){if($("ftype").value&&$("ftype").value!=="Tools")return false;const pr=$("fprice").value;
- const pt=(p=>{p=p.toLowerCase();if(/^(open|free$)/.test(p))return p.includes("cloud")?"Freemium":"Free";if(p.includes("freemium")||p.includes("+ cloud"))return"Freemium";if(/^(paid|usage|enterprise)/.test(p))return"Paid";return"Not listed"})(x[4]);
- if(pr&&pt!==pr)return false;if($("fcat").value&&x[3]!==$("fcat").value)return false;if($("fos").checked&&!/^open/i.test(x[4]))return false;return true}
+ const pt=(p=>{p=p.toLowerCase();if(/^(open|free$)/.test(p))return /cloud|enterprise|paid|hosted/.test(p)?"Freemium":"Free";if(p.includes("freemium")||p.includes("+ cloud"))return"Freemium";if(/^(paid|usage|enterprise)/.test(p))return"Paid";return"Not listed"})(x[4]);
+ if(pr&&(pr==="freeplan"?!["Free","Freemium"].includes(pt):pt!==pr))return false;if($("fcat").value&&x[3]!==$("fcat").value)return false;if($("fos").checked&&!/^open/i.test(x[4]))return false;return true}
 async function run(q,filters,opts){const r=await pf.search(q||null,{filters,...opts});const hits=r.results.slice(0,POOL);const data=await Promise.all(hits.map(h=>h.data()));
  if(!q)return {rows:data,more:r.results.length>POOL};
  const T=terms(q);const top=hits.length?hits[0].score:0;const rows=[];
@@ -49,11 +51,11 @@ async function run(q,filters,opts){const r=await pf.search(q||null,{filters,...o
  return {rows:keep.map(r=>r.d),more:r.results.length>POOL&&keep.length===rows.length}}
 async function go(qOverride){const my=++tok;toolMode();sync();let q=(qOverride??$("sq").value).trim();const filters={};
  if($("ftype").value)filters.type=$("ftype").value;
- if($("ftype").value===""||$("ftype").value==="Tools"){if($("fprice").value)filters.pricing=$("fprice").value;if($("fcat").value)filters.category=$("fcat").value;if($("fos").checked)filters["open source"]="Yes"}
+ if($("ftype").value===""||$("ftype").value==="Tools"){if($("fprice").value)filters.pricing=$("fprice").value==="freeplan"?{any:["Free","Freemium"]}:$("fprice").value;if($("fcat").value)filters.category=$("fcat").value;if($("fos").checked)filters["open source"]="Yes"}
  $("ssugg").innerHTML="";$("sbest").innerHTML="";
- if(!q&&!Object.keys(filters).length){$("sres").innerHTML="";$("smore").hidden=true;$("sstat").textContent="Type in the search box at the top to begin.";return}
+ if(!q&&!Object.keys(filters).length){$("sres").innerHTML="";$("smore").hidden=true;$("sstat").textContent="Type above or pick a filter to begin.";return}
  $("sstat").textContent="Searching…";await load();
- const opts={};if($("fsort").value==="new")opts.sort={date:"desc"};
+ const opts={};const SO={new:{date:"desc"},loved:{loved:"desc"},stars:{stars:"desc"},az:{name:"asc"}}[$("fsort").value];if(SO)opts.sort=SO;
  let res=await run(q,filters,opts);if(my!==tok)return;let used=q,orig=null;
  if(q&&!res.rows.length){const s=suggest(q);if(s){const r2=await run(s,filters,opts);if(my!==tok)return;if(r2.rows.length){res=r2;orig=q;used=s}}}
  let bm=used?bestMatch(used):null;if(bm&&!toolOK(bm))bm=null;

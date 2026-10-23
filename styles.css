@@ -481,3 +481,5 @@ a.ghx{min-height:44px;line-height:44px}
 a.ghx{min-width:44px;display:inline-flex;align-items:center;justify-content:center}
 nav .links a{min-width:44px;justify-content:center}
 .b.warn{color:#b45309;border-color:#b45309}html[data-theme=dark] .b.warn{color:#f59e0b;border-color:#f59e0b}
+
+/* tap targets >=24px (Oct 22 2026) */.alltools p a{display:inline-block;min-height:24px;line-height:24px}.fchk input,.filters .fchk input{width:24px!important;height:24px!important}

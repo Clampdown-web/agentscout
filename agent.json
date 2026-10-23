@@ -1,0 +1,82 @@
+{
+  "name": "AgentScout",
+  "description": "AgentScout is a read-only directory of 1,679 AI agent tools, including 234 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below.",
+  "url": "https://agentscouthq.com/",
+  "provider": {
+    "organization": "AgentScout",
+    "url": "https://agentscouthq.com/"
+  },
+  "version": "2026-10-23",
+  "documentationUrl": "https://agentscouthq.com/llms.txt",
+  "contact": "support@agentscouthq.com",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "interaction": "none: static, read-only files over HTTPS GET; no authentication; no A2A task endpoint",
+  "defaultInputModes": [],
+  "defaultOutputModes": [
+    "application/json",
+    "text/html",
+    "text/markdown"
+  ],
+  "skills": [
+    {
+      "id": "find-ai-agent-tools",
+      "name": "Find AI agent tools",
+      "description": "Look up AI agent tools and MCP servers by category, pricing or name by reading api/tools.json.",
+      "tags": [
+        "directory",
+        "ai agents",
+        "mcp",
+        "tools"
+      ],
+      "examples": [
+        "Which MCP servers are free?",
+        "List coding agents with open-source code."
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "tools-catalog",
+      "name": "Full tool catalog",
+      "description": "Every listed tool with category, pricing, platforms, GitHub stars and listing URL.",
+      "url": "https://agentscouthq.com/api/tools.json",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "openapi",
+      "name": "OpenAPI description",
+      "description": "OpenAPI 3.1 description of the read-only JSON feeds under /api/.",
+      "url": "https://agentscouthq.com/openapi.json",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "llms-txt",
+      "name": "llms.txt",
+      "description": "Guide to the site for AI models.",
+      "url": "https://agentscouthq.com/llms.txt",
+      "mediaType": "text/markdown"
+    },
+    {
+      "id": "mcp-pricing",
+      "name": "MCP server pricing table",
+      "url": "https://agentscouthq.com/mcp/pricing.html",
+      "mediaType": "text/html"
+    },
+    {
+      "id": "mcp-link-status",
+      "name": "MCP server link status",
+      "url": "https://agentscouthq.com/mcp/link-status.html",
+      "mediaType": "text/html"
+    },
+    {
+      "id": "sitemap",
+      "name": "Sitemap",
+      "url": "https://agentscouthq.com/sitemap.xml",
+      "mediaType": "application/xml"
+    }
+  ]
+}

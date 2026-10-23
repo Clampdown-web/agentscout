@@ -18,6 +18,13 @@ def ptype(p):
 def _price(p):
     import build_extras as X
     return {"free":"Free","freemium":"Freemium","paid":"Paid"}.get(X.ptag(p),"Not listed")
+_rvc=None
+def _RV():
+    global _rvc
+    if _rvc is None:
+        try: _rvc=json.load(open("reviews.json")).get("tools",{})
+        except Exception: _rvc={}
+    return _rvc
 def annotate():
     sm=open("sitemap.xml").read()
     locs=re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>",sm)
@@ -39,6 +46,10 @@ def annotate():
                 a.append(f'data-pagefind-meta="title:{html.escape(x["name"],quote=True)}"')
                 if x.get("logo"): a.append(f'data-pagefind-meta="logo:/{x["logo"]}"')
                 kw=_joined(x["name"])
+                # extra sort keys so /search/ offers the same 4 sorts as the homepage (Oct 22 2026)
+                gs=x.get("github_stars") if x.get("github_stars") is not None else 0
+                r=_RV().get(x["slug"]) or {}; bay=(r["avg"]*r["count"]+12)/(r["count"]+3) if r.get("count") else 0
+                a+=[f'data-pagefind-sort="stars:{int(gs)}"',f'data-pagefind-sort="loved:{int(round(bay*1000))*10**9+int(gs)}"',f'data-pagefind-sort="name:{html.escape(x["name"].lower(),quote=True)}"']
         elif p.startswith("bot-templates/") and p!="bot-templates/index.html":
             m=re.search(r'<div class="bd-top"><img[^>]*?src="([^"]+)"',s)
             if m and not m.group(1).startswith(("http","/","data:")): a.append(f'data-pagefind-meta="logo:/bot-templates/{html.escape(m.group(1),quote=True)}"')

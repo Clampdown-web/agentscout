@@ -246,6 +246,7 @@ build_logocheck.listings_gate()  # stop the build if any tool link in a listing 
 import build_lighten; build_lighten.run(t)  # lighter leaderboard, writing-code and mcp-servers pages (Oct 22 2026)
 import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
 import build_intlinks; build_intlinks.run(t)  # Popular lists internal links on home/hub/top best pages (owner-approved Oct 22 2026)
+import build_fix1022; build_fix1022.run(t)  # category options in HTML, agent.json copy, lighter free-tools/new pages (Oct 22 2026)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 if _SP is not None: open("sponsor.html","wb").write(_SP)  # keep the hidden sponsor page untouched
 import build_seo_new as _bsn; _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)
