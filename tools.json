@@ -39285,7 +39285,7 @@
   {
     "name": "Sage",
     "url": "https://zhangzhengeric.github.io/Sage/",
-    "description": "Sage is an MIT-licensed framework for building configurable, self-improving AI agents from reusable agent packages, tools, Skills and MCP services. It supports multi-agent workflows and multi-round self-improvement, keeping a version history of agent packages so you choose which version to adopt.",
+    "description": "Sage is an open-source (MIT) RSI agent harness, where RSI stands for Recursive Self-Improvement: it improves agents using feedback from their tasks. Starting from a goal or a curated usage history, it runs the agent, has a separate evaluator grade the results, tunes the agent and keeps every version with its evidence, so you decide which one to adopt. It comes as a Desktop app, a multi-user Server with Agent Studio, and the SAgents Python runtime, with support for Skills, MCP, multi-agent setups and sandboxed runs with approvals.",
     "category": "frameworks",
     "pricing": "Open source",
     "maturity": "Active",
@@ -39299,7 +39299,7 @@
     "use_cases": [
       "build multi-agent systems",
       "build an agent",
-      "automate workflows"
+      "connect tools via MCP"
     ],
     "website": "https://zhangzhengeric.github.io/Sage/",
     "github": "https://github.com/ZHangZHengEric/Sage",

@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-23T01:00:14Z",
- "updated": "2026-10-23T01:00:14Z",
+ "generated": "2026-10-23T01:08:54Z",
+ "updated": "2026-10-23T01:08:54Z",
  "last_checked": "2026-10-22",
  "count": 1675,
  "tools": [
@@ -65323,14 +65323,14 @@
    "website": "https://zhangzhengeric.github.io/Sage/",
    "github": "https://github.com/ZHangZHengEric/Sage",
    "category": "frameworks",
-   "description": "Sage is an MIT-licensed framework for building configurable, self-improving AI agents from reusable agent packages, tools, Skills and MCP services. It supports multi-agent workflows and multi-round self-improvement, keeping a version history of agent packages so you choose which version to adopt.",
+   "description": "Sage is an open-source (MIT) RSI agent harness, where RSI stands for Recursive Self-Improvement: it improves agents using feedback from their tasks. Starting from a goal or a curated usage history, it runs the agent, has a separate evaluator grade the results, tunes the agent and keeps every version with its evidence, so you decide which one to adopt. It comes as a Desktop app, a multi-user Server with Agent Studio, and the SAgents Python runtime, with support for Skills, MCP, multi-agent setups and sandboxed runs with approvals.",
    "key_features": [
     "Free and open source (MIT); model-provider API usage is billed separately",
     "Active",
     "1212 GitHub stars",
     "Build multi-agent systems",
     "Build an agent",
-    "Automate workflows"
+    "Connect tools via mcp"
    ],
    "pricing": "Free and open source (MIT); model-provider API usage is billed separately",
    "price_tag": "free",
@@ -65357,7 +65357,7 @@
    "tags": [
     "build multi-agent systems",
     "build an agent",
-    "automate workflows"
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/sage.png",
