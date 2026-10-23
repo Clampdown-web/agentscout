@@ -69,22 +69,18 @@ NAVFORM='<form data-navsearch class="nsrch" role="search" action="/search/" meth
 NAVJS='<script src="/navsearch.js?v=20261021d" defer></script>'
 OLD_LINK='<a data-navsearch href="/search/" aria-label="Search the site">🔍 Search</a>'
 def navlink():
-    """Unified search (Oct 21 2026, owner-approved): one compact box in the nav on every page (replaces the old "🔍 Search" link).
-    Suggestions come from navsearch.js (names.json first, Pagefind tool results to fill), so every page's CSP allows 'wasm-unsafe-eval'."""
+    """Oct 23 2026 (owner): back to ONE search per page. The menu search box (Oct 21) is removed from every page;
+    the homepage panel and /search/ have their own box with filters attached, and the menu keeps its "Search & filters" link to /search/."""
     import glob
     n=0
     for f in glob.glob("**/*.html",recursive=True):
         if f.startswith(("sponsor","preview/","pagefind/")): continue
         s=open(f,encoding="utf-8").read(); s0=s
-        if '<div class="links">' not in s: continue
         s=s.replace(OLD_LINK,"")
-        if 'form data-navsearch' not in s: s=s.replace('<div class="links">',NAVFORM+'<div class="links">',1)
-        else: s=re.sub(r'<form data-navsearch.*?</form>',lambda m:NAVFORM,s,1)
+        s=re.sub(r'<form data-navsearch.*?</form>','',s,1,flags=re.S)
         s=re.sub(r'<script src="/navsearch\.js[^"]*" defer></script>','',s)
-        s=s.replace("</body>",NAVJS+"</body>",1) if "</body>" in s else s+NAVJS
-        if "script-src 'self' 'unsafe-inline'" in s and "'wasm-unsafe-eval'" not in s: s=s.replace("script-src 'self'","script-src 'self' 'wasm-unsafe-eval'",1)
         if s!=s0: open(f,"w",encoding="utf-8").write(s); n+=1
-    print("search: nav box updated on",n,"pages")
+    print("search: menu search box removed on",n,"pages")
 def _joined(name):
     """Joined-up lowercase forms of a tool name so Pagefind finds 'gmapsscraper' / 'gmapsscraper.ai' (Oct 21 2026).
     Only added when the name has more than one part; e.g. 'GMapsScraper.AI' -> 'gmapsscraperai gmapsscraper'."""
