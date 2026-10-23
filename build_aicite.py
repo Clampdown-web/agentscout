@@ -59,7 +59,7 @@ def hist_html(H):
     r=['<h2 style="font-size:18px;margin:28px 0 6px">Change history</h2><p class="muted">Logged automatically each time the site is rebuilt, newest first (Pacific dates).</p><ul>']
     for h in reversed(H[-60:]):
         ch=h["changes"]; more=f" <span class=\"muted\">(+{len(ch)-25} more)</span>" if len(ch)>25 else ""
-        r.append(f'<li><b>{nice(h["date"])}</b>: '+" ".join(e(c) for c in ch[:25])+more+"</li>")
+        r.append(f'<li><b>{e(nice(h["date"]))}</b>: '+" ".join(e(c) for c in ch[:25])+more+"</li>")
     return "".join(r)+"</ul>"
 def tbl(head,rows):
     return ('<div style="overflow-x:auto;max-width:100%"><table class="cmp-table" style="width:100%;border-collapse:collapse;font-size:14px"><thead><tr>'+
@@ -74,8 +74,8 @@ def pages(t):
     # pricing
     canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"
     desc=f"Pricing for all {len(M)} MCP servers in AgentScout: {cnt['free']} free, {cnt['freemium']} free plus paid plans, {cnt['paid']} paid. As stated by makers, dated {nice(upd)}."[:158]
-    rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",f'{x["github_stars"]:,}' if x.get("github_stars") else "–"] for x in M]
-    body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for all {len(M)} MCP servers listed on AgentScout, as each maker states it. Data as of <time datetime="{upd}">{nice(upd)}</time> (Pacific).</p>'
+    rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",f'{int(x["github_stars"]):,}' if x.get("github_stars") else "–"] for x in M]
+    body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for all {len(M)} MCP servers listed on AgentScout, as each maker states it. Data as of <time datetime="{e(upd)}">{e(nice(upd))}</time> (Pacific).</p>'
           f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="link-status.html">MCP link-status table</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a>.</p>'
           +tbl(["MCP server","Pricing (as stated)","Type","Open source","GitHub stars"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server pricing table","description":desc,"url":canon,"dateModified":upd,"creator":{"@type":"Organization","name":"AgentScout","url":B},"license":B+"about.html"}
@@ -88,7 +88,7 @@ def pages(t):
     desc=f"Link check for {len(M)} MCP servers on AgentScout: {ok} OK. Listing and GitHub links requested automatically, checked {nice(chk) if chk else 'soon'} (Pacific)."[:158]
     order={"Error":0,"Not responding":0,"Reachable, blocks automated checks":1,"not checked":2,"OK":3}
     rows=[[link(x),e(s),e(c)] for x,s,c in sorted(st,key=lambda s:(order.get(s[1],2),s[0]["name"].lower()))]
-    body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{chk[:10]}">{e(chk)} PT</time>.</p>' if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
+    body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{e(chk[:10])}">{e(chk)} PT</time>.</p>' if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
     body+=(f'<p>{ok} of {len(M)} OK. "Reachable, blocks automated checks" means the site answered but refuses scripted requests (HTTP 401, 403 or 429); it usually works in a browser. HTTP 405 counts as OK because MCP endpoints often accept only POST. Problems are listed first. See also the <a href="pricing.html">MCP pricing table</a>.</p>'
            +tbl(["MCP server","Status","HTTP result"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server link status","description":desc,"url":canon,"dateModified":(chk[:10] or upd),"creator":{"@type":"Organization","name":"AgentScout","url":B}}
