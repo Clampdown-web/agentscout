@@ -301,7 +301,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610230830"  # bump when app.js/styles.css change
+ASSET_V="202610231545"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
@@ -372,6 +372,9 @@ def sitewide(t):
                     if _n: s=re.sub(r'(<a href="bot-templates/">See all )\d+( →</a>)',lambda mm:mm.group(1)+str(_n)+mm.group(2),s,count=1)
         # Free-tools hub in the main nav, right after Image Gen
         if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s: s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
+        # MCP server connect page in the main nav, right after Free tools (Oct 23 2026, owner asked; SEO advised one short link)
+        s=re.sub(r'<a class="navmcp" href="[^"]*">.*?</a>','',s)  # rebuild in place so markup updates apply
+        if f!="sponsor.html": s=re.sub(r'(<div class="links">.*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f'<a class="navmcp" href="{d}mcp/connect.html"><span class="mcppill"><svg class="mcpico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg>MCP</span></a>',s,count=1,flags=re.S)
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")
         s=re.sub(r'<section id="nlblock".*?</section>',lambda mm:NL,s,count=1,flags=re.S)  # refresh older signup markup in place
         if 'id="nlblock"' not in s and "<footer" in s: s=s.replace("<footer",NL+"<footer",1)

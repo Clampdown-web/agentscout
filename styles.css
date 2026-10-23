@@ -484,3 +484,22 @@ nav .links a{min-width:44px;justify-content:center}
 
 /* tap targets >=24px (Oct 22 2026) */.alltools p a{display:inline-block;min-height:24px;line-height:24px}.fchk input,.filters .fchk input{width:24px!important;height:24px!important}
 .scrollbtns.nearpanel .scrollbtn{opacity:0!important;visibility:hidden!important;pointer-events:none!important}main label>input[type=checkbox]{width:24px;height:24px}main h2>a,main h3>a{display:inline-block;min-height:24px;line-height:24px}
+/* Oct 23 2026 (owner): header MCP link stands out. Pill sits inside the 44px tap target; text uses --text for 4.5:1+ contrast, icon/outline use --accent. */
+nav .links a.navmcp{white-space:nowrap}
+nav .links a.navmcp .mcppill{display:inline-flex;align-items:center;gap:4px;line-height:1.2;padding:3px 9px 3px 7px;border:1px solid var(--accent);border-radius:999px;background:var(--accent-soft);color:var(--text);font-weight:600;box-shadow:0 0 6px rgba(91,91,247,.45),0 0 12px rgba(34,211,238,.25)}
+nav .links a.navmcp .mcpico{flex:0 0 14px;color:var(--accent);filter:drop-shadow(0 0 2px #22d3ee) drop-shadow(0 0 4px rgba(91,91,247,.8))}
+[data-theme=dark] nav .links a.navmcp:hover .mcppill{color:var(--bg)}[data-theme=dark] nav .links a.navmcp:hover .mcpico{color:var(--bg)}
+[data-theme=dark] nav .links a.navmcp .mcppill{box-shadow:0 0 8px rgba(147,147,255,.6),0 0 16px rgba(34,211,238,.35)}[data-theme=dark] nav .links a.navmcp .mcpico{color:#7de8f5}
+nav .links a.navmcp:hover .mcppill{background:var(--accent);color:#fff}nav .links a.navmcp:hover .mcpico{color:#fff}
+@keyframes mcpglow{0%,100%{box-shadow:0 0 5px rgba(91,91,247,.4),0 0 10px rgba(34,211,238,.2)}50%{box-shadow:0 0 9px rgba(91,91,247,.7),0 0 18px rgba(34,211,238,.45)}}
+@media (prefers-reduced-motion:no-preference){nav .links a.navmcp .mcppill{animation:mcpglow 2.6s ease-in-out infinite}}
+nav .links a.navmcp:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:999px}
+/* 600-1023px: keep the nav at two rows (search/filters must not move); slightly tighter gap pays for the MCP link */
+@media(min-width:600px) and (max-width:1023px){nav .links{column-gap:clamp(4px,calc(2.6vw - 16px),12px)}nav .links a.navmcp .mcppill{padding:1px 5px 1px 4px;gap:2px}nav .links a.navmcp .mcpico{width:11px;height:11px;flex-basis:11px}}
+@media(min-width:600px) and (max-width:719px){nav .links{column-gap:2px}nav .links a.navmcp .mcppill{padding:1px 4px 1px 3px}}
+@media(max-width:359px){nav .links{column-gap:9px}nav .links a.navmcp .mcppill{padding:2px 6px 2px 5px;gap:3px}}
+@media(max-width:339px){nav .links a.navmcp .mcpico{display:none}nav .links a.navmcp .mcppill{padding:1px 5px}}
+/* 600-659px (landscape phones): the two-row nav has no room left, so the MCP link sits only in the footer there; keeps search/filters in place */
+@media(min-width:600px) and (max-width:659px){nav .links a.navmcp{display:none}}
+[data-theme=dark] nav .links a.navmcp:hover .mcppill,[data-theme=dark] nav .links a.navmcp:hover .mcpico{color:var(--bg)}
+@media(min-width:420px) and (max-width:430px){nav .links{column-gap:8px}nav .links a.navmcp .mcppill{padding:2px 6px 2px 5px;gap:3px}}
