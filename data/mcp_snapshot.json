@@ -194,6 +194,11 @@
   "name": "CircleCI MCP",
   "pricing": "Freemium"
  },
+ "clicdata-mcp": {
+  "link": "not checked",
+  "name": "ClicData MCP",
+  "pricing": "Paid"
+ },
  "clickhouse-mcp": {
   "link": "OK",
   "name": "ClickHouse MCP",
@@ -840,7 +845,7 @@
   "pricing": "Open source"
  },
  "picsart-genai-mcp": {
-  "link": "OK",
+  "link": "Reachable, blocks automated checks",
   "name": "Picsart GenAI MCP",
   "pricing": "Freemium"
  },
@@ -973,6 +978,11 @@
   "link": "OK",
   "name": "Serpstat MCP",
   "pricing": "Paid"
+ },
+ "simplebackups-mcp": {
+  "link": "not checked",
+  "name": "SimpleBackups MCP",
+  "pricing": "Freemium"
  },
  "skiplagged-mcp": {
   "link": "OK",

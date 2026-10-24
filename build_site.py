@@ -34,7 +34,21 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
-UC_SET={"fileaify":["write code","give agents memory","connect tools via MCP"],  # Oct 23 PT: maker submission (project context, vault-brokered credentials, human-approved actions, hosted MCP)
+UC_SET={"enhancewizard":["upscale images","restore photos","edit photos"],  # Oct 24 PT: maker submissions + discovery UC overrides
+"pudding":["control a computer","automate the browser","write code"],
+"orbi":["write code","automate workflows"],
+"sora2-hub":["generate images","generate video"],
+"massvai":["build apps without code","write code"],
+"images-upscale":["upscale images","edit photos","remove backgrounds"],
+"siphotoeditor":["edit photos","retouch portraits","remove backgrounds"],
+"sigamegen":["games","build apps without code"],
+"agenvas":["design graphics","generate images","edit photos"],
+"my-green-robot":["personal agents","voice & phone calls","automate workflows"],
+"codeaf":["write code","build multi-agent systems"],
+"chatacademia":["research the web"],
+"json2video-mcp":["connect tools via MCP","generate video"],
+"secureauth-mcp-authority":["security & governance","connect tools via MCP"],
+"fileaify":["write code","give agents memory","connect tools via MCP"],  # Oct 23 PT: maker submission (project context, vault-brokered credentials, human-approved actions, hosted MCP)
 "diri-ai":["sales & support","voice & phone calls"],  # Oct 23 PT: maker submission (voice AI sales role-play with call reports)
 "krea":["generate images","generate video","upscale images"],  # Oct 23 PT: Krea refresh (images + text/image-to-video + upscaling, per krea.ai/features/ai-video-generator)
 "crolytics":["sales & support","connect tools via MCP","automate workflows"],  # Oct 23 PT: owner request (governed GTM agent workspace; GA4/Search Console/CMS via MCP)

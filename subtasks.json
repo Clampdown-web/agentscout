@@ -6298,7 +6298,6 @@
 "agent-frameworks"
 ],
 "bidhelm": [
-"sales-agents",
 "marketing-agents",
 "research-agents"
 ],
@@ -6710,5 +6709,160 @@
 "sandboxes",
 "agent-auth",
 "rules-config"
+],
+"img2threejs": [
+"workflow-automation",
+"images-design"
+],
+"waggle": [
+"vector-rag",
+"agent-frameworks"
+],
+"strands-decider": [
+"workflow-automation"
+],
+"decionis": [
+"agent-payments",
+"voice-phone",
+"guardrails",
+"mcp-gateways"
+],
+"foremerge": [
+"parallel-orchestration",
+"planning-tasks"
+],
+"codeaf": [
+"code-review",
+"voice-phone"
+],
+"kition": [
+"vector-rag",
+"research-agents",
+"computer-use",
+"workflow-automation",
+"video-editing",
+"images-design"
+],
+"beeftv": [
+"computer-use",
+"local-models",
+"video-editing",
+"video",
+"images-design"
+],
+"aletheore": [
+"penetration-testing",
+"code-review",
+"agent-auth",
+"mcp-servers"
+],
+"tura": [
+"evals"
+],
+"partmode": [
+"browser-automation",
+"guardrails",
+"agent-frameworks",
+"terminal-agents",
+"images-design"
+],
+"machinist": [
+"evals"
+],
+"concord": [
+"parallel-orchestration",
+"mcp-servers",
+"terminal-agents"
+],
+"json2video-mcp": [
+"mcp-servers",
+"video"
+],
+"clicdata-mcp": [
+"observability",
+"mcp-servers"
+],
+"shadeform": [
+"mcp-gateways",
+"mcp-servers",
+"terminal-agents",
+"stem-separation"
+],
+"secureauth-mcp-authority": [
+"voice-phone",
+"agent-auth",
+"mcp-gateways",
+"rules-config"
+],
+"simplebackups-mcp": [
+"text-to-sql",
+"mcp-servers"
+],
+"chatacademia": [
+"text-to-sql",
+"vector-rag",
+"research-agents",
+"computer-use",
+"local-models"
+],
+"enhancewizard": [
+"browser-automation",
+"local-models",
+"color-upscaling",
+"dialogue-cleanup",
+"images-design"
+],
+"pudding": [
+"parallel-orchestration",
+"vector-rag",
+"voice-phone",
+"browser-automation",
+"computer-use",
+"guardrails",
+"local-models"
+],
+"orbi": [
+"code-review",
+"parallel-orchestration",
+"sandboxes",
+"dialogue-cleanup",
+"stem-separation"
+],
+"sora2-hub": [
+"agent-frameworks",
+"video",
+"images-design"
+],
+"massvai": [
+"planning-tasks",
+"text-to-sql",
+"agent-auth",
+"no-code-apps"
+],
+"images-upscale": [
+"browser-automation",
+"color-upscaling",
+"images-design"
+],
+"siphotoeditor": [
+"browser-automation",
+"ide-agents",
+"video-editing"
+],
+"sigamegen": [
+"browser-automation",
+"games"
+],
+"agenvas": [
+"workflow-automation",
+"local-models",
+"video",
+"images-design"
+],
+"my-green-robot": [
+"parallel-orchestration",
+"voice-phone",
+"email-agents",
+"local-models"
 ]
 }

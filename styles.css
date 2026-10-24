@@ -550,3 +550,12 @@ footer .footpills{display:inline-flex;flex-wrap:nowrap;align-items:center;column
 @media(max-width:339px){nav .links .navpills{column-gap:8px}nav .links .navpills .npill,nav .links .navpills .mcppill{font-size:12px}}
 @media(min-width:660px) and (max-width:1023px){nav .links .navpills{column-gap:10px}}
 @media(max-width:1023px){nav .links .navpills a{min-height:44px;display:inline-flex;align-items:center}}/* Ops: pills shrink narrower, never shorter than 44px */
+/* v5 (Ops nit + footer single-row 300-639px, Oct 23 2026): footer .footpills keeps all 4 pills on one row at 300-639px; header .npill gets inner ring padding at 300-390px without overflowing */
+footer .wrap>div{min-width:0;max-width:100%}
+@media(max-width:639px){footer .footpills{flex-wrap:nowrap;white-space:nowrap;column-gap:4px}footer .footpills .npill{font-size:12.5px;padding:2px 6px 2px 5px}}
+@media(max-width:599px){nav .links .navpills{max-width:100%}nav .links .navpills a,nav .links .navpills .npill,nav .links .navpills .mcppill{min-width:0;flex-shrink:1;overflow:hidden}footer .footpills{display:flex;width:100%;justify-content:center;font-size:0;column-gap:clamp(2px,1vw,6px);margin:2px 0;max-width:100%}footer .footpills a,footer .footpills .npill{min-width:0;flex-shrink:1;overflow:hidden}footer .footpills .npill{font-size:clamp(8.5px,2.5vw,12px);padding:2px clamp(3px,1vw,6px);gap:2px}footer .footpills .npico{width:12px;height:12px;flex-basis:12px}}
+@media(max-width:539px){footer .footpills .npgen .npico,footer .footpills .npbt .npico{display:none}}
+@media(max-width:489px){footer .footpills .npico{display:none}}
+@media(max-width:399px){nav .links .navpills{margin-left:-12px;margin-right:-12px;flex:0 0 calc(100% + 24px);max-width:calc(100% + 24px);column-gap:7px}nav .links .navpills .npill{padding:0 5px 0 4px}nav .links .navpills .npgen,nav .links .navpills .npbt{padding:0 5px}footer .footpills{margin-left:-12px;margin-right:-12px;width:calc(100% + 24px);max-width:calc(100% + 24px)}}
+@media(max-width:359px){nav .links .navpills{column-gap:5px}nav .links .navpills .npill{padding:0 4px 0 3px}nav .links .navpills .npgen,nav .links .navpills .npbt{padding:0 4px}}
+@media(max-width:339px){nav .links .navpills{column-gap:5px}nav .links .navpills .npill{padding:0 4px}footer .footpills{column-gap:2px}footer .footpills .npill{font-size:clamp(7.5px,2.6vw,9.5px);padding:2px 3px}}

@@ -302,7 +302,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>One short email with new tools, launches and what\'s worth trying. Free, unsubscribe anytime.</p></div>'
     '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" data-nlform><button class="btn primary" type="submit">Subscribe free</button></form>'
     '</div></div></section>')  # compact card; Beehiiv's form loads in-page only on click (app.js), Oct 18 2026
-ASSET_V="202610231900"  # bump when app.js/styles.css change
+ASSET_V="202610241035"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
