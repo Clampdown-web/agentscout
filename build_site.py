@@ -34,7 +34,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
-UC_SET={"krea":["generate images","generate video","upscale images"],  # Oct 23 PT: Krea refresh (images + text/image-to-video + upscaling, per krea.ai/features/ai-video-generator)
+UC_SET={"diri-ai":["sales & support","voice & phone calls"],  # Oct 23 PT: maker submission (voice AI sales role-play with call reports)
+"krea":["generate images","generate video","upscale images"],  # Oct 23 PT: Krea refresh (images + text/image-to-video + upscaling, per krea.ai/features/ai-video-generator)
 "crolytics":["sales & support","connect tools via MCP","automate workflows"],  # Oct 23 PT: owner request (governed GTM agent workspace; GA4/Search Console/CMS via MCP)
 "vellm":["generate video","connect tools via MCP"],  # Oct 23 PT: maker submission (photo-to-video templates with OAuth MCP)
 "vidmoat":["edit video","connect tools via MCP"],"salestouch":["sales & support","connect tools via MCP"],  # Oct 23 PT: maker submissions (hosted AI video editor with MCP; LinkedIn MCP for sales agents)

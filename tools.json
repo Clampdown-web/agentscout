@@ -43555,5 +43555,33 @@
     "added": "2026-10-23",
     "source": "Web search",
     "github": ""
+  },
+  {
+    "name": "DIRI AI",
+    "url": "https://diriai.com/",
+    "website": "https://diriai.com/",
+    "id": 1726,
+    "slug": "diri-ai",
+    "logo": "assets/logos/diri-ai.png",
+    "category": "sales & marketing",
+    "description": "DIRI AI is a voice role-play trainer for salespeople. You pick a situation, such as a price objection, an intro meeting, a cold call or a client who wants to leave, set the difficulty, and talk out loud with an AI customer that reacts to what you actually say rather than a fixed script. After each call you get an instant report with a transcript, the key moments highlighted and specific stronger wording to try next time, plus a history of your practice. Managers can use it to help new hires ramp up before real calls.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free €0 (no card): 1 voice call a day, up to 5 minutes, with a full report; Start €19.90/month (80 min), Plus €49.90/month (240 min), Pro €99.90/month (480 min); 7-day free trial on paid plans (card required)",
+    "use_cases": [
+      "sales & support",
+      "voice & phone calls"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-23",
+    "added": "2026-10-23",
+    "source": "Maker submission",
+    "github": "",
+    "good_for": "sales teams practising calls, onboarding new reps, objection handling",
+    "tasks_exclude": [
+      "building-voice-agents"
+    ]
   }
 ]

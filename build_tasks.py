@@ -102,6 +102,7 @@ def match(x,T):
         return c in cats or bool(set(x.get("use_cases",[]))&ucs) or bool(re.search(rx,x.get("description",""),re.I))
     if _m and T[0] not in MEDIA_TASKS and not x.get("agentic"): return False  # non-agentic media tools stay off the agent task pages
     if _a and not x.get("agentic"): return False  # same for art, design, 3D and photo tools
+    if T[0] in x.get("tasks_exclude",[]): return False  # per-tool hand override in tools.json (Oct 23 2026)
     if T[0] in TASK_NEG and re.search(TASK_NEG[T[0]],x.get("description",""),re.I): return False
     return relevance.relevant(x,T)
 REDIRECTED_TASKS={"games"}  # Oct 18 2026: same tools as categories/games (redirect in redirects.json)
@@ -407,6 +408,7 @@ def sitewide(t):
             x=bys.get(os.path.basename(f)[:-5]); s=re.sub(r'<p class="goodfor".*?</p>','',s)
             ts=tasks_for(x,m) if x else []
             # anchor = end of the action row, with or without the Share button (build_share) inside it
+            if x and x.get("good_for"): s=re.sub(r'(style="display:contents"></span>(?:<span class="sharewrap">.*?</span></span>)?</div>)',lambda mm:mm.group(1)+'<p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+e(x["good_for"])+'</p>',s,count=1,flags=re.S); ts=[]  # hand-written line (tools.json good_for) replaces the auto task links
             if ts: s=re.sub(r'(style="display:contents"></span>(?:<span class="sharewrap">.*?</span></span>)?</div>)',lambda mm:mm.group(1)+'<p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+", ".join(f'<a href="../tasks/{T[0]}.html">{e(T[1])}</a>' for T in ts[:8])+'</p>',s,count=1,flags=re.S)
         # Anonymous analytics (track.js) on every page, right after app.js
         # Privacy pages + choices in every footer
