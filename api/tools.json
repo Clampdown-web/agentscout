@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-24T00:21:07Z",
- "updated": "2026-10-24T00:21:07Z",
+ "generated": "2026-10-24T01:04:07Z",
+ "updated": "2026-10-24T01:04:07Z",
  "last_checked": "2026-10-23",
- "count": 1707,
+ "count": 1708,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -72233,6 +72233,51 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/diri-ai.png",
    "page": "https://agentscouthq.com/tools/diri-ai.html"
+  },
+  {
+   "name": "Fileaify",
+   "slug": "fileaify",
+   "url": "https://fileaify.com/",
+   "website": "https://fileaify.com/",
+   "github": "",
+   "category": "agent infra",
+   "description": "Fileaify is a project workspace that plugs into the coding agent you already use, such as Claude Code, Codex, Cursor or Windsurf. You give the agent one URL (fileaify.com/agent) or the hosted MCP connector, approve its access, and it finds the project's documentation, architecture decisions, roadmap and known issues in each new conversation, so you don't have to explain the project again, even when you switch agents. Credentials stay in a vault: the agent can run approved actions with them without ever seeing the keys, sensitive actions need a human's approval, and paid tiers add a sandboxed executor where the agent can actually run work. The agent also writes its contributions back into the project docs, following your review rules. A live demo project lets you try it without installing anything.",
+   "key_features": [
+    "Free €0 (1 project, 5 services and secrets); Solo €4.90/month; Pro €14.90/month; Premium €39.90/month; Enterprise on request",
+    "Active",
+    "Write code",
+    "Give agents memory",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free €0 (1 project, 5 services and secrets); Solo €4.90/month; Pro €14.90/month; Premium €39.90/month; Enterprise on request",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-23",
+   "added": "2026-10-23",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "give agents memory",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fileaify.png",
+   "page": "https://agentscouthq.com/tools/fileaify.html"
   }
  ]
 }

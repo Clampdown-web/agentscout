@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,707 AI agent tools in 30 categories, including 239 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,708 AI agent tools in 30 categories, including 239 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Site: https://agentscouthq.com/
 Contact: support@agentscouthq.com
@@ -58,7 +58,7 @@ Catalog last checked: 2026-10-23 (Pacific)
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 91 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 84 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 77 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 72 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 73 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 56 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 51 tools
@@ -126,8 +126,9 @@ Catalog last checked: 2026-10-23 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-22 to 2026-10-23): 55
+- Tools added in the last 2 days (2026-10-22 to 2026-10-23): 56
 
+- [Fileaify](https://agentscouthq.com/tools/fileaify.html) (added 2026-10-23): Fileaify is a project workspace that plugs into the coding agent you already use, such as Claude Code, Codex, Cursor or Windsurf. You give the agent one URL (fileaify.com/agent) or the hosted MCP connector, approve its access, and it finds the project's documentation, architecture decisions, roadmap and known issues in each new conversation, so you don't have to explain the project again, even when you switch agents. Credentials stay in a vault: the agent can run approved actions with them without ever seeing the keys, sensitive actions need a human's approval, and paid tiers add a sandboxed executor where the agent can actually run work. The agent also writes its contributions back into the project docs, following your review rules. A live demo project lets you try it without installing anything.
 - [DIRI AI](https://agentscouthq.com/tools/diri-ai.html) (added 2026-10-23): DIRI AI is a voice role-play trainer for salespeople. You pick a situation, such as a price objection, an intro meeting, a cold call or a client who wants to leave, set the difficulty, and talk out loud with an AI customer that reacts to what you actually say rather than a fixed script. After each call you get an instant report with a transcript, the key moments highlighted and specific stronger wording to try next time, plus a history of your practice. Managers can use it to help new hires ramp up before real calls.
 - [Crolytics](https://agentscouthq.com/tools/crolytics.html) (added 2026-10-23): Crolytics is a managed, governed AI workspace for B2B marketing and go-to-market teams, hosted on Google Cloud. Its agents connect to your CMS, GA4, Search Console and knowledge base through custom MCP connectors, answer analytics questions in plain language, track how AI assistants cite your brand (GEO/AEO), and draft or update website pages behind human approval gates, with per-person permissions and a tamper-evident audit log. Teams use it from the Crolytics chat or inside their own Claude or ChatGPT account.
 - [Vellm](https://agentscouthq.com/tools/vellm.html) (added 2026-10-23): Vellm turns photos of people and pets into short AI videos from ready-made templates. Pick one of 108 dance, funny, duo and pet templates built on ByteDance Seedance 2.5, upload your photos and it renders your own version, or start from a prompt in its Create Studio. A remote MCP server (https://api.vellm.app/mcp, OAuth sign-in) lets MCP-compatible AI apps create videos from your Vellm account.
