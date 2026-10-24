@@ -407,7 +407,7 @@ html[data-theme=dark] img.aswm{filter:invert(1) hue-rotate(180deg)}
 @media(min-width:1024px){nav .links{justify-content:center}}
 @media(max-width:640px){nav .links{justify-content:center}}
 /* nav-bot-templates: keep Bot templates on row 2 beside Quiz on desktop; alert-red emphasis */
-@media(min-width:1024px){nav .links::after{content:'';flex-basis:100%;height:0;order:1}nav .links a.navbt,nav .links a.navbt~a{order:2}}
+@media(min-width:1024px){nav .links::after{content:'';flex-basis:100%;height:0;order:1}nav .links .navpills,nav .links .navpills~a{order:2}}
 nav .links a.navbt{color:#ce2c31!important;font-weight:600;display:inline-flex;align-items:center;gap:4px}
 [data-theme=dark] nav .links a.navbt{color:#e5484d!important}
 /* variant A: campfire flame icon (own fills) */
@@ -500,7 +500,6 @@ nav .links a.navmcp:focus-visible{outline:2px solid var(--accent);outline-offset
 @media(max-width:359px){nav .links{column-gap:9px}nav .links a.navmcp .mcppill{padding:2px 6px 2px 5px;gap:3px}}
 @media(max-width:339px){nav .links a.navmcp .mcpico{display:none}nav .links a.navmcp .mcppill{padding:1px 5px}}
 /* 600-659px (landscape phones): the two-row nav has no room left, so the MCP link sits only in the footer there; keeps search/filters in place */
-@media(min-width:600px) and (max-width:659px){nav .links a.navmcp{display:none}}
 [data-theme=dark] nav .links a.navmcp:hover .mcppill,[data-theme=dark] nav .links a.navmcp:hover .mcpico{color:var(--bg)}
 @media(min-width:420px) and (max-width:430px){nav .links{column-gap:8px}nav .links a.navmcp .mcppill{padding:2px 6px 2px 5px;gap:3px}}
 /* Oct 23 2026 (owner): softer neon pills for Free tools (teal wrench), Image Gen (pink sparkle), AI bot templates (amber robot). Static glow, no pulse: MCP keeps the strongest glow.
@@ -528,3 +527,26 @@ nav .links a:hover>.npill{box-shadow:0 0 0 3px var(--np),0 0 0 4px var(--np)}
 @media(max-width:339px){nav .links .npft .npico{display:none}}
 .npmcp{--np:var(--accent);--npg:rgba(91,91,247,.35);--npb:var(--accent-soft)}[data-theme=dark] .npmcp{--np:#9b9bff;--npg:rgba(147,147,255,.35)}
 footer a.footmcp{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle;text-decoration:none}
+/* Oct 23 2026 (owner): the four neon header pills (Image Gen, AI bot templates, Free tools, MCP) stay together as one group, in footer order */
+nav .links .navpills{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:inherit;flex:0 0 auto}
+@media(max-width:640px){nav .links .navpills{flex:0 0 100%;flex-wrap:wrap;justify-content:center;row-gap:4px}}
+footer .footpills a{min-height:44px}
+footer .footpills{display:inline-flex;flex-wrap:nowrap;align-items:center;column-gap:.3em;white-space:nowrap;vertical-align:middle;max-width:100%}
+@media(max-width:600px){footer .footpills{flex-wrap:wrap;white-space:normal;row-gap:4px}}
+/* v3 (Ops re-check, Oct 23 2026): match the live header height at every width. 600-640px: the pill group flows inline (not a forced full-width row); the header MCP pill stays hidden at 600-659px as on live (it is still in the footer group); tighter column gaps at <340px and 600-609px. */
+@media(min-width:600px) and (max-width:640px){nav .links .navpills{flex:0 0 auto;flex-wrap:nowrap}}
+@media(max-width:339px){nav .links{column-gap:6px}}@media(max-width:319px){nav .links{column-gap:4px}}@media(min-width:600px) and (max-width:609px){nav .links{column-gap:1px}}
+/* Oct 23 2026: keep the header at the live site's height. >=600px: Newsletter and Leaderboard move ahead of the pill group (row 1), so row 2 = the four pills + Quiz, Saved, Submit and Submit never wraps to its own row.
+   <600px: the four pills stay adjacent and in order but flow inline with the other links (no forced full-width block), so phones keep the live row count. */
+@media(min-width:600px){nav .links .navpills,nav .links .navpills~a{order:2}nav .links .navpills~a[data-nl],nav .links .navpills~a.navlb{order:0}}
+@media(max-width:599px){nav .links .navpills{display:contents}}
+
+/* v4 (owner, Oct 23 2026): all four neon pills always show together in the header at every width; tight widths scale pill font/padding/gap instead of hiding MCP */
+@media(min-width:600px) and (max-width:739px){nav .links .navpills{column-gap:8px}}
+@media(min-width:600px) and (max-width:659px){nav .links a:not(.btn){min-width:0}nav .links{column-gap:4px}nav .links .navpills{column-gap:10px}}
+@media(max-width:599px){nav .links .navpills{display:inline-flex;flex:0 0 100%;flex-wrap:nowrap;justify-content:center;column-gap:12px;order:-1}}
+@media(max-width:430px){nav .links .navpills{column-gap:10px}nav .links .navpills .npill,nav .links .navpills .mcppill{font-size:12.5px}}
+@media(max-width:399px){nav .links .navpills{column-gap:9px}nav .links .npgen .npico,nav .links .npbt .npico{display:none}}
+@media(max-width:339px){nav .links .navpills{column-gap:8px}nav .links .navpills .npill,nav .links .navpills .mcppill{font-size:12px}}
+@media(min-width:660px) and (max-width:1023px){nav .links .navpills{column-gap:10px}}
+@media(max-width:1023px){nav .links .navpills a{min-height:44px;display:inline-flex;align-items:center}}/* Ops: pills shrink narrower, never shorter than 44px */
