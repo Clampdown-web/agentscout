@@ -1,7 +1,52 @@
 {
- "updated": "2026-10-23T14:08:03Z",
+ "updated": "2026-10-24T14:02:02Z",
  "days": 30,
  "items": [
+  {
+   "title": "Major US banks restrict or block AI agents found acting in customer accounts",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113646480732864690",
+   "date": "2026-10-24T13:45:20Z",
+   "tool": null,
+   "summary": "JPMorgan Chase, Bank of America, Wells Fargo and Morgan Stanley found third-party AI agents inside customer accounts, sometimes trying to act on their own, such as calling support lines. The banks are limiting agents to read-only access or blocking them, and several senators have raised concerns about the gaps in oversight.",
+   "page": "news/2026/10/major-us-banks-restrict-or-block-ai-agents-found-acting-in-customer.html"
+  },
+  {
+   "title": "Moonshot AI releases Kimi K3.1 Pro with stronger coding and agent scores",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113770348520890482",
+   "date": "2026-10-24T03:00:15Z",
+   "tool": null,
+   "summary": "Moonshot AI launched Kimi K3.1 Pro, an open-weights model that moved up to fourth place on the Artificial Analysis Intelligence Index with gains in coding and agent tasks. It also cut API prices by a third, and full weights are planned for release by November 4.",
+   "page": "news/2026/10/moonshot-ai-releases-kimi-k3-1-pro-with-stronger-coding-and-agent.html"
+  },
+  {
+   "title": "Cursor coding agents can now use your computer to run and test the apps they build",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113674904033714393",
+   "date": "2026-10-24T01:38:06Z",
+   "tool": null,
+   "summary": "Cursor added a Computer Use feature that lets its coding agents control a macOS or Linux desktop, clicking and typing through apps such as the iOS Simulator. That means an agent can write a feature, launch it and check that it works, though some developers raised security questions.",
+   "page": "news/2026/10/cursor-coding-agents-can-now-use-your-computer-to-run-and-test-the.html"
+  },
+  {
+   "title": "MiniMax open-sources M3.1 Flash, a model built for agentic coding and computer use",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113123833632694605",
+   "date": "2026-10-24T00:24:26Z",
+   "tool": null,
+   "summary": "MiniMax released the open weights of M3.1 Flash, a 428-billion-parameter model aimed at agentic work, coding and computer use, with a one-million-token context window. The company says it runs nearly three times faster and costs 70% less than the previous version, and hosting providers added support right away.",
+   "page": "news/2026/10/minimax-open-sources-m3-1-flash-a-model-built-for-agentic-coding-and.html"
+  },
+  {
+   "title": "Simular's Agent S4 evolves custom interfaces so a 27B open model beats bigger ones on desktop tasks",
+   "source": "X",
+   "url": "https://x.com/i/trending/2113674901399756835",
+   "date": "2026-10-23T19:50:20Z",
+   "tool": null,
+   "summary": "Simular's Agent S4 acts as a meta-agent that studies example tasks and evolves custom ways for a model to operate software, instead of relying on fixed screenshots and clicks. With it, the open Qwen3.8-27B model scored higher on the OSWorld V2 desktop benchmark than much larger closed models, at about $1.10 per task.",
+   "page": "news/2026/10/simulars-agent-s4-evolves-custom-interfaces-so-a-27b-open-model-beats.html"
+  },
   {
    "title": "Big banks spot unauthorized AI agents in customer accounts and move to restrict them",
    "source": "X",
@@ -75,6 +120,15 @@
    "page": "news/2026/10/walmart-opens-agent-gateway-an-mcp-server-that-lets-approved-ai.html"
   },
   {
+   "title": "PhoneUse gives AI agents real and cloud phones to control mobile apps",
+   "source": "X",
+   "url": "https://x.com/i/trending/2112981234360189208",
+   "date": "2026-10-22T17:16:25Z",
+   "tool": null,
+   "summary": "PhoneUse launched a service that gives AI agents cloud Android phones or real iPhones and Androids to tap and swipe through apps that have no API. It is aimed at handling things like push notifications, two-factor codes and device checks.",
+   "page": "news/2026/10/phoneuse-launches-real-and-cloud-phones-that-ai-agents-can-tap-and.html"
+  },
+  {
    "title": "Banks report third-party AI agents logging into customer accounts with shared passwords",
    "source": "X",
    "url": "https://x.com/i/trending/2113267945325613188",
@@ -84,22 +138,22 @@
    "page": "news/2026/10/banks-report-third-party-ai-agents-logging-into-customer-accounts.html"
   },
   {
-   "title": "PhoneUse launches real and cloud phones that AI agents can tap and swipe through",
-   "source": "X",
-   "url": "https://x.com/i/trending/2112981234360189208",
-   "date": "2026-10-22T13:18:30Z",
-   "tool": null,
-   "summary": "PhoneUse launched a service that gives AI agents cloud Android phones or real iPhones and Androids to tap and swipe through apps that have no API. It is aimed at handling things like push notifications, two-factor codes and device checks.",
-   "page": "news/2026/10/phoneuse-launches-real-and-cloud-phones-that-ai-agents-can-tap-and.html"
-  },
-  {
-   "title": "Breken launches an AI tester that rebuilds and stress-tests apps before release",
+   "title": "Breken's AI rebuilds and stress-tests apps to catch bugs before launch",
    "source": "X",
    "url": "https://x.com/i/trending/2113118175424602281",
    "date": "2026-10-22T12:54:15Z",
    "tool": null,
    "summary": "Breken launched an AI testing tool that recreates an app's production setup, speeds up simulated usage and injects failures to find bugs before users do. In its own test it caught about a third of 235 known open-source bugs.",
    "page": "news/2026/10/breken-launches-an-ai-tester-that-rebuilds-and-stress-tests-apps.html"
+  },
+  {
+   "title": "Blacksmith, which speeds up CI for the AI coding era, raises $66M at a $1B valuation",
+   "source": "X",
+   "url": "https://x.com/i/trending/2112899504638673048",
+   "date": "2026-10-21T19:42:54Z",
+   "tool": null,
+   "summary": "Blacksmith, which makes CI test runs faster as AI coding agents write more code, raised a $66 million Series C led by Sequoia at a $1 billion valuation. It says it now runs about 90 million CI jobs a week for more than 10,000 companies and will use the money to grow its team and compute capacity.",
+   "page": "news/2026/10/blacksmith-which-speeds-up-ci-for-the-ai-coding-era-raises-66m-at-a.html"
   },
   {
    "title": "Ex-Apple Watch lead launches Niq, an AI agent that helps manage migraines",

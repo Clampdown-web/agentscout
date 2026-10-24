@@ -1,85 +1,84 @@
 {
- "updated": "2026-10-23T14:08:03Z",
+ "updated": "2026-10-24T14:02:02Z",
  "sources": [
   "TechCrunch",
   "The Verge",
-  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
   {
-   "title": "Big banks spot unauthorized AI agents in customer accounts and move to restrict them",
+   "title": "Major US banks restrict or block AI agents found acting in customer accounts",
    "source": "X",
-   "url": "https://x.com/i/trending/2112923062404317476",
-   "date": "2026-10-23T13:24:00Z",
+   "url": "https://x.com/i/trending/2113646480732864690",
+   "date": "2026-10-24T13:45:20Z",
    "tool": null,
-   "summary": "Security firm Straiker reported that a criminal group built an automated system of AI agents, using several commercial models, to attack more than 400 Latin American financial institutions. Anthropic cut off the group's access and an investigation is under way.",
-   "page": "news/2026/10/report-criminal-group-ran-a-swarm-of-ai-agents-against-400-latin.html"
+   "summary": "JPMorgan Chase, Bank of America, Wells Fargo and Morgan Stanley found third-party AI agents inside customer accounts, sometimes trying to act on their own, such as calling support lines. The banks are limiting agents to read-only access or blocking them, and several senators have raised concerns about the gaps in oversight.",
+   "page": "news/2026/10/major-us-banks-restrict-or-block-ai-agents-found-acting-in-customer.html"
   },
   {
-   "title": "Anthropic previews Claude Duet, a proactive agent app that watches your email and calendar",
+   "title": "Moonshot AI releases Kimi K3.1 Pro with stronger coding and agent scores",
    "source": "X",
-   "url": "https://x.com/i/trending/2112987690803343606",
-   "date": "2026-10-23T08:27:41Z",
+   "url": "https://x.com/i/trending/2113770348520890482",
+   "date": "2026-10-24T03:00:15Z",
    "tool": null,
-   "summary": "Anthropic opened a research preview of Claude Duet, a standalone app that checks connected apps like email, Slack and calendar, sends a morning brief and works on tasks in its own cloud computer. It asks for approval before key actions and is on a waitlist for U.S. Pro and Max subscribers.",
-   "page": "news/2026/10/anthropic-previews-claude-duet-a-proactive-agent-app-that-watches.html"
+   "summary": "Moonshot AI launched Kimi K3.1 Pro, an open-weights model that moved up to fourth place on the Artificial Analysis Intelligence Index with gains in coding and agent tasks. It also cut API prices by a third, and full weights are planned for release by November 4.",
+   "page": "news/2026/10/moonshot-ai-releases-kimi-k3-1-pro-with-stronger-coding-and-agent.html"
   },
   {
-   "title": "Anthropic will make auto mode the default for paid Claude users next week",
+   "title": "Cursor coding agents can now use your computer to run and test the apps they build",
    "source": "X",
-   "url": "https://x.com/i/trending/2113396361819525146",
-   "date": "2026-10-23T03:58:47Z",
+   "url": "https://x.com/i/trending/2113674904033714393",
+   "date": "2026-10-24T01:38:06Z",
    "tool": null,
-   "summary": "Anthropic says auto mode will become the default for new sessions in Claude's web, desktop and mobile apps for Pro, Max and Team users starting next week. An automated check blocks risky actions while safe ones go ahead, and users can switch back to manual mode.",
-   "page": "news/2026/10/anthropic-will-make-auto-mode-the-default-for-paid-claude-users-next.html"
+   "summary": "Cursor added a Computer Use feature that lets its coding agents control a macOS or Linux desktop, clicking and typing through apps such as the iOS Simulator. That means an agent can write a feature, launch it and check that it works, though some developers raised security questions.",
+   "page": "news/2026/10/cursor-coding-agents-can-now-use-your-computer-to-run-and-test-the.html"
   },
   {
-   "title": "Coding Agent Index 2.0 ranks Claude Code with Opus 5.5 first across 290 tasks",
+   "title": "MiniMax open-sources M3.1 Flash, a model built for agentic coding and computer use",
    "source": "X",
-   "url": "https://x.com/i/trending/2113477158035153126",
-   "date": "2026-10-23T03:51:22Z",
+   "url": "https://x.com/i/trending/2113123833632694605",
+   "date": "2026-10-24T00:24:26Z",
    "tool": null,
-   "summary": "Artificial Analysis released version 2.0 of its Coding Agent Index, which scores model and harness pairings on 290 software engineering, terminal and repo Q&A tasks. Claude Code running Claude Opus 5.5 leads the ranking.",
-   "page": "news/2026/10/coding-agent-index-2-0-ranks-claude-code-with-opus-5-5-first-across.html"
+   "summary": "MiniMax released the open weights of M3.1 Flash, a 428-billion-parameter model aimed at agentic work, coding and computer use, with a one-million-token context window. The company says it runs nearly three times faster and costs 70% less than the previous version, and hosting providers added support right away.",
+   "page": "news/2026/10/minimax-open-sources-m3-1-flash-a-model-built-for-agentic-coding-and.html"
   },
   {
-   "title": "Anthropic hands its Agent Skills standard to the Agentic AI Foundation",
+   "title": "Simular's Agent S4 evolves custom interfaces so a 27B open model beats bigger ones on desktop tasks",
    "source": "X",
-   "url": "https://x.com/i/trending/2113337982409171319",
-   "date": "2026-10-23T02:42:07Z",
+   "url": "https://x.com/i/trending/2113674901399756835",
+   "date": "2026-10-23T19:50:20Z",
    "tool": null,
-   "summary": "Anthropic donated Agent Skills, its lightweight standard for agents to load tasks from folders containing SKILL.md files, to the Agentic AI Foundation. It was one of four new projects the foundation added this week.",
-   "page": "news/2026/10/anthropic-hands-its-agent-skills-standard-to-the-agentic-ai-foundation.html"
+   "summary": "Simular's Agent S4 acts as a meta-agent that studies example tasks and evolves custom ways for a model to operate software, instead of relying on fixed screenshots and clicks. With it, the open Qwen3.8-27B model scored higher on the OSWorld V2 desktop benchmark than much larger closed models, at about $1.10 per task.",
+   "page": "news/2026/10/simulars-agent-s4-evolves-custom-interfaces-so-a-27b-open-model-beats.html"
   },
   {
-   "title": "Google launches Gemini API CLI and Agent Compute Engine for running agents at scale",
+   "title": "PhoneUse gives AI agents real and cloud phones to control mobile apps",
    "source": "X",
-   "url": "https://x.com/i/trending/2113347493450698932",
-   "date": "2026-10-22T22:09:57Z",
+   "url": "https://x.com/i/trending/2112981234360189208",
+   "date": "2026-10-22T17:16:25Z",
    "tool": null,
-   "summary": "Google released the Gemini API CLI, a single command-line tool that lets AI agents generate images, video, speech and music with an API key. It pairs with Google Cloud's Agent Compute Engine, which runs agents at scale in isolated microVMs.",
-   "page": "news/2026/10/google-launches-gemini-api-cli-and-agent-compute-engine-for-running.html"
+   "summary": "PhoneUse launched a service that gives AI agents cloud Android phones or real iPhones and Androids to tap and swipe through apps that have no API. It is aimed at handling things like push notifications, two-factor codes and device checks.",
+   "page": "news/2026/10/phoneuse-launches-real-and-cloud-phones-that-ai-agents-can-tap-and.html"
   },
   {
-   "title": "Framer ships an official MCP connector so AI agents can design and publish sites",
+   "title": "Breken's AI rebuilds and stress-tests apps to catch bugs before launch",
    "source": "X",
-   "url": "https://x.com/i/trending/2113341164963426491",
-   "date": "2026-10-22T21:23:08Z",
+   "url": "https://x.com/i/trending/2113118175424602281",
+   "date": "2026-10-22T12:54:15Z",
    "tool": null,
-   "summary": "Framer launched an official MCP connector that lets AI agents such as Claude, Codex, Cursor and Grok work directly in Framer projects. Through a remote server, agents can reach the canvas, CMS, layouts and publishing tools.",
-   "page": "news/2026/10/framer-ships-an-official-mcp-connector-so-ai-agents-can-design-and.html"
+   "summary": "Breken launched an AI testing tool that recreates an app's production setup, speeds up simulated usage and injects failures to find bugs before users do. In its own test it caught about a third of 235 known open-source bugs.",
+   "page": "news/2026/10/breken-launches-an-ai-tester-that-rebuilds-and-stress-tests-apps.html"
   },
   {
-   "title": "Walmart opens Agent Gateway, an MCP server that lets approved AI agents shop for customers",
+   "title": "Blacksmith, which speeds up CI for the AI coding era, raises $66M at a $1B valuation",
    "source": "X",
-   "url": "https://x.com/i/trending/2113059266378793184",
-   "date": "2026-10-22T19:31:25Z",
+   "url": "https://x.com/i/trending/2112899504638673048",
+   "date": "2026-10-21T19:42:54Z",
    "tool": null,
-   "summary": "Walmart launched Agent Gateway, an MCP server that lets approved AI agents check stock and place orders at Walmart and Sam's Club. Agent Profiles coming next month will keep agent orders separate, require purchase approval by default and allow optional spending limits.",
-   "page": "news/2026/10/walmart-opens-agent-gateway-an-mcp-server-that-lets-approved-ai.html"
+   "summary": "Blacksmith, which makes CI test runs faster as AI coding agents write more code, raised a $66 million Series C led by Sequoia at a $1 billion valuation. It says it now runs about 90 million CI jobs a week for more than 10,000 companies and will use the money to grow its team and compute capacity.",
+   "page": "news/2026/10/blacksmith-which-speeds-up-ci-for-the-ai-coding-era-raises-66m-at-a.html"
   }
  ]
 }
