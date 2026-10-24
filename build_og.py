@@ -3,7 +3,7 @@ free-tool pages, in the og.png style (white, soft lavender glow, AgentScout word
 Sets og:image / twitter:image (+ og:image:width/height/alt) per page; every other page keeps og.png as the fallback.
 Images only use stable facts (name, category, pricing, tool counts, story date), are written only when their bytes change, and
 images for pages that no longer exist are deleted, so rebuilds don't churn the repo. Run at the end of build_site.py."""
-import glob,re,os,json,html,io,hashlib
+import glob,re,os,json,html,io,hashlib,build_og_neon
 from PIL import Image,ImageDraw,ImageFont
 B="https://agentscouthq.com/"; W,H=1200,630; OUT="og"
 FONT="data/fonts/Inter-Variable.ttf"; CACHE="data/og_cache.json"; TPL="v3"  # bump TPL when the design changes
@@ -130,6 +130,20 @@ def run(t):
             if stat and kind=="best" and not f.endswith("-alternatives.html") and not f.endswith("index.html"): stat=f"Top {k} · ranking method stated"
             if f.endswith("index.html"): stat=f"{n} {dict(best='pages',search='searches',role='roles')[kind]}" if n else None
         if not title: c["skipped"]+=1; continue
+        neon=None
+        if f.startswith("mcp/"):  # neon share cards for MCP pages (Oct 23 2026); counts from tools.json
+            nm=sum(1 for x in t if x["category"]=="MCP servers"); foot=f"· {len(t):,} AI agent tools · {nm} MCP servers"
+            sl=[m for m in dict.fromkeys(re.findall(r'tools/([a-z0-9-]+)\.html',s)) if m in bys][:3]
+            if f=="mcp/connect.html":
+                label="MCP server"; title=title; sub="Search AgentScout from Claude, Cursor, VS Code or any MCP client"
+                cards=[dict(name=f"{len(t):,}",tag="AI agent tools",size=44),dict(name=f"{nm}",tag="MCP servers",size=44),dict(name="Free",tag="read-only · no sign-up",size=44)]
+            elif f in ("mcp/link-status.html","mcp/pricing.html") or len(sl)<3:
+                label="MCP servers"; sub=None
+                cards=[dict(name=f"{nm}",tag="MCP servers",size=44),dict(name=f"{len(t):,}",tag="AI agent tools",size=44),dict(name=("Pricing" if "pricing" in f else "Link check"),tag=("free, freemium, paid" if "pricing" in f else "listing + GitHub links"),size=40)]
+            else:
+                label="MCP servers"; k=n or _num(d); sub=(f"{k} MCP servers, ranked by GitHub stars and activity" if k and not f.endswith("index.html") else "Ranked by GitHub stars and activity, sorted by task")
+                cards=[dict(name=bys[x]["name"],tag=("Top pick" if f.endswith("index.html") else f"#{i+1} by GitHub stars"),logo=bys[x].get("logo")) for i,x in enumerate(sl)]
+            title=re.sub(r"\s*\(2026\)$","",title); neon=(label,title,sub,cards,foot)
         if kind in ("category","best","search","role","free") and not sub and d:  # one line of real context from the page description
             m=re.search(r"including ([^.]+?)(?:\.|$)",d)
             sub=("Including "+m.group(1).strip()) if m and not f.endswith("index.html") else re.split(r"(?<=[.!?])\s",d)[0]
@@ -138,14 +152,14 @@ def run(t):
             if m: stat=f"{m.group(1)} tools"
         title=re.sub(r"\s*\(2026\)$","",title)
         out=f"{OUT}/{f[:-5]}.png"; keep.add(out); c["pages"]+=1
-        key=hashlib.sha1(json.dumps([TPL,label,title,sub,stat,logo,hashlib.sha1(open(logo,"rb").read()).hexdigest() if logo else ""]).encode()).hexdigest()[:16]
+        key=hashlib.sha1(json.dumps([TPL,"neon1",neon] if neon else [TPL,label,title,sub,stat,logo,hashlib.sha1(open(logo,"rb").read()).hexdigest() if logo else ""]).encode()).hexdigest()[:16]
         if cache.get(out)==key and os.path.exists(out): c["same"]+=1  # inputs unchanged: skip rendering
         else:
-            png=render(label,title,sub,stat,logo); os.makedirs(os.path.dirname(out),exist_ok=True)
+            png=build_og_neon.render(F,wrap,*neon,accent="MCP") if neon else render(label,title,sub,stat,logo); os.makedirs(os.path.dirname(out),exist_ok=True)
             if os.path.exists(out) and open(out,"rb").read()==png: c["same"]+=1
             else: open(out,"wb").write(png); c["written"]+=1
             cache[out]=key
-        url=B+out; alt=html.escape(f"{title}, on AgentScout",quote=True)
+        url=B+out+(f"?v={key[:10]}" if neon else ""); alt=html.escape(f"{title}, on AgentScout",quote=True)
         s2=re.sub(r'<meta property="og:image" content="[^"]*">(?:<meta property="og:image:(?:width|height|alt)" content="[^"]*">)*',
                   f'<meta property="og:image" content="{url}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="{alt}">',s,1)
         s2=re.sub(r'<meta name="twitter:image" content="[^"]*">',f'<meta name="twitter:image" content="{url}">',s2,1)
