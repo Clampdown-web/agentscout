@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 1,777 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
+> AgentScout is a curated, link-checked, read-only directory of 1,778 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`).
 
@@ -30,7 +30,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 1,777
+- **Total Verified AI Agent Tools**: 1,778
 - **Total Categories**: 30
 - **Verified MCP Servers**: 249
 - **Bot Templates & Installable Agent Skills**: 189 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
@@ -323,9 +323,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | OpenScience | Open source | Yes |  |  | 4,249 | write code, research the web | Research agent workbench that reads the literature, writes and runs code and experiments and logs every step, with skills and connectors for databases like PubMed, UniProt and arXiv. | https://agentscouthq.com/tools/openscience.html | https://www.openscience.sh/ |
 | 15 | Hyperresearch | Open source (MIT); hosted version pricing not verified | Yes | MIT | Self-hosted | 4,082 | build an agent, research the web | Deep research harness that turns Claude Code or Codex into a research agent building a persistent, searchable wiki, with a hosted API and MCP. | https://agentscouthq.com/tools/hyperresearch.html | https://hyperresearch.ai/ |
 
-### business agents (49 tools) — [https://agentscouthq.com/categories/business-agents.html](https://agentscouthq.com/categories/business-agents.html)
+### business agents (50 tools) — [https://agentscouthq.com/categories/business-agents.html](https://agentscouthq.com/categories/business-agents.html)
 
-- **At a glance**: 49 link-checked tools (7 open-source, 18 free or freemium, 6 local or self-hosted).
+- **At a glance**: 50 link-checked tools (7 open-source, 18 free or freemium, 6 local or self-hosted).
 - **Top picks**: [Paperclip](https://agentscouthq.com/tools/paperclip.html), [DocsGPT](https://agentscouthq.com/tools/docsgpt.html), [holaOS](https://agentscouthq.com/tools/holaos.html), [Open Executive](https://agentscouthq.com/tools/open-executive.html), [Magic](https://agentscouthq.com/tools/magic.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |

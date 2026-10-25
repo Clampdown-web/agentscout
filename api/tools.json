@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T18:14:23Z",
- "updated": "2026-10-25T18:14:23Z",
+ "generated": "2026-10-25T19:08:58Z",
+ "updated": "2026-10-25T19:08:58Z",
  "last_checked": "2026-10-25",
- "count": 1777,
+ "count": 1778,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75288,6 +75288,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/rankcaster-ai.png",
    "page": "https://agentscouthq.com/tools/rankcaster-ai.html"
+  },
+  {
+   "name": "MorPro",
+   "slug": "morpro",
+   "url": "https://www.morpro.io",
+   "website": "https://www.morpro.io",
+   "github": "",
+   "category": "business agents",
+   "description": "MorPro is an AI-native operating system (TMS) for trucking companies, owner-operators and small fleets of 1 to 25 trucks. Genie and a team of AI agents (Ava, Alex, Cece and Sage) handle dispatch and load bidding, broker ETA updates, BOL paperwork filing, hours-of-service and compliance monitoring, invoicing and settlements, with Genie asking before it acts.",
+   "key_features": [
+    "14-day free trial, no credit card. Starter $49/truck/mo (up to 5 trucks), Growth $99/truck/mo (unlimited trucks, automation tier 1, ELD + factoring integrations), Scale $179/truck/mo (LINQ carrier intelligence, full automation, API access); Enterprise custom",
+    "Active",
+    "Control a computer",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "14-day free trial, no credit card. Starter $49/truck/mo (up to 5 trucks), Growth $99/truck/mo (unlimited trucks, automation tier 1, ELD + factoring integrations), Scale $179/truck/mo (LINQ carrier intelligence, full automation, API access); Enterprise custom",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/morpro.png",
+   "page": "https://agentscouthq.com/tools/morpro.html"
   }
  ]
 }
