@@ -34,7 +34,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
-UC_SET={"neverapply":["connect tools via MCP","automate workflows"],
+UC_SET={"tanatasa-beauty-mcp":["connect tools via MCP","automate workflows"],
+"neverapply":["connect tools via MCP","automate workflows"],
 "ai-music-mastering":["mix & master"],
 "book-cover-generator":["design graphics","generate images"],
 "raydo-agent-os":["control a computer","automate the browser","automate workflows"],

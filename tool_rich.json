@@ -26783,5 +26783,111 @@
   "sources": [
    "https://aimusicmastering.app/"
   ]
+ },
+ "tanatasa-beauty-mcp": {
+  "kind": "lite",
+  "updated": "2026-10-25",
+  "cite": true,
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free API & MCP Access",
+     "$0",
+     "No API key or account required for catalog search, product details, guest carts, promo quotes and 1-hour checkout links via Streamable HTTP MCP (tanatasa.sg/mcp), catalog-only MCP (tanatasa.sg/mcp/catalog), REST (/agent/v1) or @tanatasa/cli"
+    ],
+    [
+     "Store Purchases (Singapore)",
+     "Product price in SGD",
+     "Free standard delivery across Singapore on all orders; human buyer completes delivery details and payment on tanatasa.sg via Stripe"
+    ]
+   ],
+   "note": "All API prices are returned in integer SGD cents alongside formatted SGD strings; checkout links remain valid for 1 hour.",
+   "src": "https://tanatasa.sg/ai-agent-docs",
+   "checked": "2026-10-25"
+  },
+  "facts": {
+   "repo": "https://github.com/tanatasa-beauty/tanatasa",
+   "stars": 0,
+   "license": "the MIT License",
+   "osi": true,
+   "checked": "2026-10-25",
+   "status": "Active hosted Streamable HTTP MCP server (tanatasa.sg/mcp), REST API and MIT-licensed CLI (@tanatasa/cli)"
+  },
+  "long": [
+   "Tanatasa Beauty MCP is a hosted Streamable HTTP Model Context Protocol server (tanatasa-shopping 1.0.0 at https://tanatasa.sg/mcp), public REST API (https://tanatasa.sg/agent/v1) and MIT-licensed CLI (@tanatasa/cli) for Tanatasa, a Singapore online retailer specializing in authentic Korean and Japanese skincare and beauty products. AI assistants can connect immediately with no API key or sign-in to search the live catalog, read product descriptions, ingredient lists and usage guides, and verify real-time stock and Singapore Dollar (SGD) pricing.",
+   "For shopping workflows, the server exposes ten MCP tools covering catalog discovery, guest or signed-in cart management, promo code quoting and checkout handoff, plus a read-only endpoint at https://tanatasa.sg/mcp/catalog with just search_products and get_product. Calling create_cart issues a private guest_token, and create_checkout locks the cart and returns a 1-hour checkout link on tanatasa.sg where the buyer enters a Singapore delivery address and completes payment via Stripe (with optional OAuth + PKCE scopes catalog:read, cart:write and orders:read for linked customer accounts)."
+  ],
+  "who": "Shoppers in Singapore and developers building shopping or personal-assistant workflows in Claude, Cursor or custom MCP clients who want live skincare and beauty search, inventory checks and human-in-the-loop checkout links.",
+  "features": [
+   "Hosted Streamable HTTP MCP server at https://tanatasa.sg/mcp (10 tools) and read-only catalog endpoint at https://tanatasa.sg/mcp/catalog (2 tools) with zero API key setup.",
+   "Live search and product lookup across authentic Korean and Japanese skincare and beauty products in Singapore, including ingredients, how-to-use instructions, stock status and integer SGD cent pricing.",
+   "Guest cart and checkout handoff: create_cart issues a guest_token, quote_cart previews promo discounts and free Singapore shipping, and create_checkout generates a 1-hour Stripe checkout review URL.",
+   "Multi-surface access via MCP, OpenAPI 3.1 REST endpoints (https://tanatasa.sg/agent/v1/openapi.json), the @tanatasa/cli npm package and an installable SKILL.md agent skill."
+  ],
+  "mcp": {
+   "endpoint": "https://tanatasa.sg/mcp",
+   "transport": "Streamable HTTP (remote; read-only catalog endpoint at https://tanatasa.sg/mcp/catalog)",
+   "auth": "No API key required for catalog search, guest carts (X-Guest-Token / guest_token) and checkout links; optional OAuth 2.0 with PKCE for customer accounts (scopes: catalog:read, cart:write, orders:read)",
+   "tools": [
+    [
+     "search_products",
+     "Search the live Tanatasa skincare and beauty catalog by keyword, category, brand, availability or SGD price ceiling."
+    ],
+    [
+     "get_product",
+     "Fetch full product details by slug or UUID, including description, usage steps, ingredients, images, stock and SGD price."
+    ],
+    [
+     "create_cart",
+     "Create a new shopping cart and receive a private guest_token for subsequent cart and checkout calls."
+    ],
+    [
+     "get_cart",
+     "Read the current cart contents, line items, quantities and subtotal using a guest_token or OAuth bearer token."
+    ],
+    [
+     "set_cart_item",
+     "Add, update or remove a product quantity in the active cart (quantity 0 removes the item)."
+    ],
+    [
+     "set_cart_coupon",
+     "Apply or clear a promotional coupon code on the active cart."
+    ],
+    [
+     "quote_cart",
+     "Calculate the itemized cart quote including subtotal, coupon discount, free Singapore shipping and total in SGD cents."
+    ],
+    [
+     "create_checkout",
+     "Lock the cart (with an Idempotency-Key) and generate a 1-hour checkout review URL on tanatasa.sg for human delivery and payment."
+    ],
+    [
+     "get_order",
+     "Retrieve order status and summary by order ID (for guest orders with guest_token or signed-in customer orders)."
+    ],
+    [
+     "checkout_session",
+     "Create a Stripe payment session for an active locked checkout."
+    ]
+   ],
+   "config": "{\"mcpServers\": {\"tanatasa\": {\"url\": \"https://tanatasa.sg/mcp\"}}}",
+   "docs": "https://tanatasa.sg/ai-agent-docs"
+  },
+  "faq": [
+   [
+    "How do I connect Tanatasa Beauty MCP to Claude, Cursor or another MCP client?",
+    "Add https://tanatasa.sg/mcp as a remote Streamable HTTP MCP server (or https://tanatasa.sg/mcp/catalog for read-only product search). No API key or account is required to search products, create a guest cart or generate a checkout link."
+   ],
+   [
+    "Does Tanatasa Beauty MCP charge a buyer's card automatically?",
+    "No. An AI agent can search products, build a guest cart, apply a coupon and call create_checkout, which locks the cart for 1 hour and returns a checkout URL on tanatasa.sg. The human shopper opens that link to enter their Singapore delivery address and complete payment via Stripe."
+   ]
+  ],
+  "sources": [
+   "https://tanatasa.sg/ai-agent-docs",
+   "https://github.com/tanatasa-beauty/tanatasa",
+   "https://tanatasa.sg/agent/v1/openapi.json"
+  ]
  }
 }

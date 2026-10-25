@@ -44869,5 +44869,38 @@
     "maker_submitted": true,
     "submitted": "2026-10-24",
     "good_for": "auditioning eight automated mastering profiles with loudness-matched A/B previews on recordings or AI-generated songs and exporting 24-bit/16-bit WAV or 320 kbps MP3 masters"
+  },
+  {
+    "name": "Tanatasa Beauty MCP",
+    "url": "https://tanatasa.sg/ai-agent-docs",
+    "website": "https://tanatasa.sg/ai-agent-docs",
+    "github": "https://github.com/tanatasa-beauty/tanatasa",
+    "repo": "tanatasa-beauty/tanatasa",
+    "github_stars": 0,
+    "id": 1772,
+    "slug": "tanatasa-beauty-mcp",
+    "logo": "assets/logos/tanatasa-beauty-mcp.png",
+    "category": "MCP servers",
+    "description": "Tanatasa Beauty MCP is a hosted Streamable HTTP MCP server (tanatasa-shopping 1.0.0 at tanatasa.sg/mcp), REST API and CLI for Tanatasa, a Singapore skincare and beauty store. Connect Claude, Cursor or any MCP-compatible assistant with no API key required to search authentic Korean and Japanese skincare and beauty products, inspect ingredients and usage details, verify live inventory and SGD prices, apply promo codes and create guest carts and 1-hour checkout links.",
+    "pricing": "Free",
+    "pricing_detail": "Free (no API key or account required for catalog search, guest carts and checkout links; free standard delivery in Singapore on store purchases; MIT-licensed docs and @tanatasa/cli)",
+    "use_cases": [
+      "connect tools via MCP",
+      "automate workflows"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "searching Singapore skincare and beauty products, checking live stock and SGD prices, and creating guest carts and checkout links from Claude, Cursor or any MCP client without an API key",
+    "tasks_exclude": [
+      "terminal-coding",
+      "agent-payments"
+    ]
   }
 ]
