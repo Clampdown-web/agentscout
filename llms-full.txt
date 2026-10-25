@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 1,758 AI agent tools across 30 categories, including 248 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
+> AgentScout is a curated, link-checked, read-only directory of 1,757 AI agent tools across 30 categories, including 248 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`).
 
@@ -30,13 +30,13 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 1,758
+- **Total Verified AI Agent Tools**: 1,757
 - **Total Categories**: 30
 - **Verified MCP Servers**: 248
 - **Bot Templates & Installable Agent Skills**: 189 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
-- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 854
-- **Free or Freemium Tools**: 1,305
-- **Local / Self-Hosted Tools (`runs_locally` filter)**: 792 (69 offline / on-device, 723 self-hosted)
+- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 853
+- **Free or Freemium Tools**: 1,304
+- **Local / Self-Hosted Tools (`runs_locally` filter)**: 791 (69 offline / on-device, 722 self-hosted)
 - **Catalog Last Link-Checked**: 2026-10-25 (America/Los_Angeles)
 
 ## High-Intent Ranked Guides (`/best/` & `/mcp/`)
@@ -254,9 +254,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Axle AI | Paid | No |  |  |  | edit video | AI media asset management for post houses and broadcasters. Tags faces, objects and speech so editors can search footage. | https://agentscouthq.com/tools/axle-ai.html | https://www.axle.ai |
 | 15 | Beeble | Creator $19/mo ($16/mo yearly); Professional $75/mo ($60/mo yearly) | No |  |  |  | edit video, visual effects | AI VFX for filmmakers. Relight footage after the shoot by pulling normal, depth and other passes from ordinary video. | https://agentscouthq.com/tools/beeble.html | https://beeble.ai |
 
-### memory & RAG (56 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
+### memory & RAG (55 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
 
-- **At a glance**: 56 link-checked tools (49 open-source, 51 free or freemium, 49 local or self-hosted).
+- **At a glance**: 55 link-checked tools (48 open-source, 50 free or freemium, 48 local or self-hosted).
 - **Top picks**: [MarkItDown](https://agentscouthq.com/tools/markitdown.html), [Claude-Mem](https://agentscouthq.com/tools/claude-mem.html), [RAGFlow](https://agentscouthq.com/tools/ragflow.html), [Headroom](https://agentscouthq.com/tools/headroom.html), [Mem0](https://agentscouthq.com/tools/mem0.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -355,7 +355,7 @@ Each category section below summarizes the verified tool count, open-source coun
 |---|---|---|---|---|---|---:|---|---|---|---|
 | 1 | MLflow | Open source + cloud | Yes |  | Self-hosted | 28,418 | automate workflows, monitor & evaluate agents | Open-source platform for tracing, evaluating and managing agents, LLM apps and ML models. | https://agentscouthq.com/tools/mlflow.html | https://mlflow.org/ |
 | 2 | Opik | Open source + cloud | Yes | the Apache License 2.0 | Self-hosted | 22,700 | automate workflows, monitor & evaluate agents | Comet's open-source platform for tracing, evaluating and monitoring LLM apps, RAG systems and agent workflows, self-hosted or in the cloud. | https://agentscouthq.com/tools/opik.html | https://www.comet.com/site/products/opik/ |
-| 3 | Arize Phoenix | Source-available | No |  |  | 11,828 | automate workflows, monitor & evaluate agents | Open-source tracing and evaluation for LLM apps. | https://agentscouthq.com/tools/arize-phoenix.html | https://phoenix.arize.com |
+| 3 | Arize Phoenix | Source-available | No |  |  | 11,828 | automate workflows, monitor & evaluate agents | Open-source tracing and evaluation for LLM apps. | https://agentscouthq.com/tools/arize-phoenix.html | https://arize.com/phoenix/ |
 | 4 | SWE-bench | Free and open source (MIT) | Yes | MIT | Self-hosted | 6,067 | write code, monitor & evaluate agents | Benchmark that tests whether language models and coding agents can resolve real GitHub issues, with multimodal and verified variants. | https://agentscouthq.com/tools/swe-bench.html | https://www.swebench.com/ |
 | 5 | Kiln | Free desktop app (Kiln AI Desktop EULA); Python libraries MIT | No | MIT |  | 5,223 | control a computer, build an agent | Free desktop app and open-source library for building AI systems with evals, RAG, agents, fine-tuning and synthetic data in one workbench. | https://agentscouthq.com/tools/kiln.html | https://kiln.tech/ |
 | 6 | Agenta | Open source + cloud | Yes |  | Self-hosted | 4,840 | monitor & evaluate agents | Open-source LLMOps platform for prompt management, evaluation and observability. | https://agentscouthq.com/tools/agenta.html | https://github.com/Agenta-AI/agenta |

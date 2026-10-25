@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T14:03:56Z",
- "updated": "2026-10-25T14:03:56Z",
+ "generated": "2026-10-25T16:27:13Z",
+ "updated": "2026-10-25T16:27:13Z",
  "last_checked": "2026-10-25",
- "count": 1758,
+ "count": 1757,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -3694,8 +3694,8 @@
   {
    "name": "Arize Phoenix",
    "slug": "arize-phoenix",
-   "url": "https://phoenix.arize.com",
-   "website": "https://phoenix.arize.com",
+   "url": "https://arize.com/phoenix/",
+   "website": "https://arize.com/phoenix/",
    "github": "https://github.com/Arize-ai/phoenix",
    "category": "evals & observability",
    "description": "Open-source tracing and evaluation for LLM apps.",
@@ -8885,8 +8885,8 @@
   {
    "name": "Context Mode",
    "slug": "context-mode",
-   "url": "https://context-mode.com/",
-   "website": "https://context-mode.com/",
+   "url": "https://contextmode.ai/",
+   "website": "https://contextmode.ai/",
    "github": "https://github.com/mksglu/context-mode",
    "category": "coding",
    "description": "Context window optimizer for coding agents that sandboxes tool output and persists session memory.",
@@ -15538,8 +15538,8 @@
   {
    "name": "Entire CLI",
    "slug": "entire-cli",
-   "url": "https://entire.io/",
-   "website": "https://entire.io/",
+   "url": "https://entire.com/",
+   "website": "https://entire.com/",
    "github": "https://github.com/entireio/cli",
    "category": "coding",
    "description": "CLI that captures AI agent sessions alongside your Git commits.",
@@ -17333,48 +17333,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/mirage.png",
    "page": "https://agentscouthq.com/tools/mirage.html"
-  },
-  {
-   "name": "Acontext",
-   "slug": "acontext",
-   "url": "https://acontext.io/",
-   "website": "https://acontext.io/",
-   "github": "https://github.com/memodb-io/Acontext",
-   "category": "memory & RAG",
-   "description": "Memory layer that stores agent experience as reusable skills.",
-   "key_features": [
-    "Open source",
-    "Active",
-    "3695 GitHub stars",
-    "Give agents memory"
-   ],
-   "pricing": "Open source",
-   "price_tag": "free",
-   "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
-   ],
-   "date_added": "2026-10-16",
-   "added": "2026-10-16",
-   "source": "GitHub",
-   "goals": [
-    "automation"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": false,
-   "seed": true,
-   "new_this_week": false,
-   "repo": "memodb-io/Acontext",
-   "github_stars": 3695,
-   "open_source": true,
-   "license": "",
-   "tags": [
-    "give agents memory"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/acontext.png",
-   "page": "https://agentscouthq.com/tools/acontext.html"
   },
   {
    "name": "DBHub",
@@ -45288,8 +45246,8 @@
   {
    "name": "Cloudflare Sandbox SDK",
    "slug": "cloudflare-sandbox-sdk",
-   "url": "https://sandbox.cloudflare.com/",
-   "website": "https://sandbox.cloudflare.com/",
+   "url": "https://developers.cloudflare.com/sandbox/",
+   "website": "https://developers.cloudflare.com/sandbox/",
    "github": "https://github.com/cloudflare/sandbox-sdk",
    "category": "sandboxes & code execution",
    "description": "SDK for running isolated code sandboxes on Cloudflare's network, so agents can execute commands and files safely from a Worker.",

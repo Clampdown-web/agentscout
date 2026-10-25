@@ -41,7 +41,7 @@ def build(t):
     days={}
     for x in recent: days.setdefault(x["added"],[]).append(x)
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section style="padding-top:20px;text-align:left">'
-          f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{len(recent)} tool{"s" if len(recent)!=1 else ""} added in the last 30 days, newest first. Every link is checked when it is added.{seednote}</p>')
+          f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{len(recent):,} tool{"s" if len(recent)!=1 else ""} added in the last 30 days, newest first. Every link is checked when it is added.{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
     mk=sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)))  # first submissions first (orke)
     if mk:

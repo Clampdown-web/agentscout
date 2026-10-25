@@ -2236,7 +2236,7 @@
   },
   {
     "name": "Arize Phoenix",
-    "url": "https://phoenix.arize.com",
+    "url": "https://arize.com/phoenix/",
     "description": "Open-source tracing and evaluation for LLM apps.",
     "category": "evals & observability",
     "pricing": "Source-available + cloud",
@@ -2256,7 +2256,7 @@
     "slug": "arize-phoenix",
     "logo": "assets/logos/arize-phoenix.png",
     "github": "https://github.com/Arize-ai/phoenix",
-    "website": "https://phoenix.arize.com",
+    "website": "https://arize.com/phoenix/",
     "added": "2026-10-14",
     "source": "original",
     "seed": true
@@ -5411,7 +5411,7 @@
   },
   {
     "name": "Context Mode",
-    "url": "https://context-mode.com/",
+    "url": "https://contextmode.ai/",
     "description": "Context window optimizer for coding agents that sandboxes tool output and persists session memory.",
     "category": "coding",
     "pricing": "Source-available + cloud",
@@ -5426,7 +5426,7 @@
       "run code safely",
       "give agents memory"
     ],
-    "website": "https://context-mode.com/",
+    "website": "https://contextmode.ai/",
     "github": "https://github.com/mksglu/context-mode",
     "repo": "mksglu/context-mode",
     "github_stars": 30192,
@@ -9529,7 +9529,7 @@
   },
   {
     "name": "Entire CLI",
-    "url": "https://entire.io/",
+    "url": "https://entire.com/",
     "description": "CLI that captures AI agent sessions alongside your Git commits.",
     "category": "coding",
     "pricing": "Open source",
@@ -9542,7 +9542,7 @@
     "use_cases": [
       "write code"
     ],
-    "website": "https://entire.io/",
+    "website": "https://entire.com/",
     "github": "https://github.com/entireio/cli",
     "repo": "entireio/cli",
     "github_stars": 5187,
@@ -10634,32 +10634,6 @@
     "id": 410,
     "slug": "mirage",
     "logo": "assets/logos/mirage.png",
-    "added": "2026-10-16",
-    "source": "GitHub",
-    "seed": true
-  },
-  {
-    "name": "Acontext",
-    "url": "https://acontext.io/",
-    "description": "Memory layer that stores agent experience as reusable skills.",
-    "category": "memory & RAG",
-    "pricing": "Open source",
-    "maturity": "Active",
-    "audience": "builders",
-    "featured": false,
-    "new": false,
-    "verified": "2026-10-16",
-    "pricing_detail": "",
-    "use_cases": [
-      "give agents memory"
-    ],
-    "website": "https://acontext.io/",
-    "github": "https://github.com/memodb-io/Acontext",
-    "repo": "memodb-io/Acontext",
-    "github_stars": 3695,
-    "id": 411,
-    "slug": "acontext",
-    "logo": "assets/logos/acontext.png",
     "added": "2026-10-16",
     "source": "GitHub",
     "seed": true
@@ -27411,7 +27385,7 @@
   },
   {
     "name": "Cloudflare Sandbox SDK",
-    "url": "https://sandbox.cloudflare.com/",
+    "url": "https://developers.cloudflare.com/sandbox/",
     "description": "SDK for running isolated code sandboxes on Cloudflare's network, so agents can execute commands and files safely from a Worker.",
     "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
@@ -27428,7 +27402,7 @@
       "build an agent",
       "run code safely"
     ],
-    "website": "https://sandbox.cloudflare.com/",
+    "website": "https://developers.cloudflare.com/sandbox/",
     "github": "https://github.com/cloudflare/sandbox-sdk",
     "repo": "cloudflare/sandbox-sdk",
     "github_stars": 1151,

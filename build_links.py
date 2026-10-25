@@ -177,7 +177,7 @@ def run(t):
     # (9) static pages
     edit("submit.html",lambda s:put(s,"submit",'<p style="margin:0 0 16px;font-size:14.5px"><b>Prepare your listing:</b> describe what your agent does in a sentence or two. Our free <a href="free-tools/agent-setup-generator.html">agent setup generator</a> can draft a clear system prompt and starter config to share with users.</p>','<form id="sf"'))
     ft=" · ".join(f'<a href="free-tools/{s}.html">{e(n)}</a>' for s,n,_,_ in F.TOOLS)
-    edit("generate.html",lambda s:put(s,"gen",f'<p style="margin:18px 0 0">More {X.BUILT_BY("").replace("Free AI","free AI",1)}: {ft} · <a href="free-tools.html">All free tools</a></p>','</section></main>'))
+    edit("generate.html",lambda s:put(s,"gen",f'<p style="margin:18px 0 0">More {X.BUILT_BY("").replace("Free AI","free AI",1)}: {ft} · <a href="free-tools.html">All free tools</a></p>',r'</section>(?:<span id="pfm" hidden>(?:<span[^>]*></span>)*</span>)?</main>',regex=True))  # pagefind marker sits before </main> (Oct 25 2026 audit)
     line=f'<p style="margin:18px 0 0;font-size:14px">Free tools: {ft} · Popular searches: <a href="s/free-ai-coding-agents.html">Free AI coding agents</a> · <a href="s/open-source-browser-agents.html">Free &amp; open-source browser agents</a> · <a href="s/">All searches</a></p>'
     edit("news.html",lambda s:put(s,"news",line,'</section></main>'))
     edit("newsletter.html",lambda s:put(s,"nl",line,'</section></main>'))
