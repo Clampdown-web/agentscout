@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,757 AI agent tools in 30 categories, including 248 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,772 AI agent tools in 30 categories, including 248 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscout-mcp.agentscouthq.workers.dev/mcp).
 
@@ -58,35 +58,35 @@ Catalog last checked: 2026-10-25 (Pacific)
 ## Categories
 
 - [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 248 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 199 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 201 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 137 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 92 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 93 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 84 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 79 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 77 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 81 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 78 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 55 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 55 tools
 - [research](https://agentscouthq.com/categories/research.html): 50 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 48 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 49 tools
+- [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 44 tools
 - [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 43 tools
 - [security & governance](https://agentscouthq.com/categories/security-governance.html): 43 tools
-- [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 43 tools
-- [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 40 tools
+- [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 41 tools
 - [video generation](https://agentscouthq.com/categories/video-generation.html): 40 tools
 - [music production](https://agentscouthq.com/categories/music-production.html): 40 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 39 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 36 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 39 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 35 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 28 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 29 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
 - [customer support](https://agentscouthq.com/categories/customer-support.html): 26 tools
 - [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 22 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 21 tools
 - [games](https://agentscouthq.com/categories/games.html): 20 tools
-- [app builders](https://agentscouthq.com/categories/app-builders.html): 18 tools
-- [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 14 tools
+- [app builders](https://agentscouthq.com/categories/app-builders.html): 19 tools
+- [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 15 tools
 
 ## Guides
 
@@ -135,8 +135,23 @@ Catalog last checked: 2026-10-25 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-24 to 2026-10-25): 50
+- Tools added in the last 2 days (2026-10-24 to 2026-10-25): 65
 
+- [Tesla Wrap Generator](https://agentscouthq.com/tools/tesla-wrap-generator.html) (added 2026-10-25): Tesla Wrap Generator is a browser-based AI design tool for Tesla's in-car Paint Shop where owners describe a wrap design in plain text or upload a reference photo, preview it on an interactive 3D Tesla (Model 3, Model Y, Model S, Model X or Cybertruck across 12 official UV templates), and download a Paint Shop-ready PNG template under 1 MB.
+- [Fly.io MCP](https://agentscouthq.com/tools/fly-io-mcp.html) (added 2026-10-25): The Fly.io MCP server is one endpoint that connects your coding agent to Sprites, Fly.io's sandboxes for agents, and to your Fly.io apps. The agent can build and test freely in a Sprite, then move the result to a Fly Machine in production whenever you are ready, with the rest of Fly's cloud available along the way.
+- [3Dsellers MCP](https://agentscouthq.com/tools/3dsellers-mcp.html) (added 2026-10-25): 3Dsellers MCP is a hosted MCP server with more than 150 tools that lets Claude, ChatGPT, Cursor and other AI assistants run eBay, Amazon, Walmart, Etsy and Shopify stores. Agents can manage listings, orders, messages and inventory without code or an eBay developer account.
+- [GrowSurf MCP](https://agentscouthq.com/tools/growsurf-mcp.html) (added 2026-10-25): GrowSurf's official MCP server lets AI assistants build and manage referral and affiliate programs in GrowSurf. An agent can set up a draft program, adjust rewards and pull participant and referral data for you to review, without clicking through the dashboard.
+- [Blaze MCP](https://agentscouthq.com/tools/blaze-mcp.html) (added 2026-10-25): The Blaze MCP server connects Blaze, the AI marketing platform for small businesses, to Claude and Codex. From a chat you can plan, create and schedule social posts, carousels, videos, blogs and newsletters in your brand's voice, then keep them on your Blaze content calendar.
+- [Gufo](https://agentscouthq.com/tools/gufo.html) (added 2026-10-25): Gufo is an open-source inference engine built for AMD Strix Halo machines that runs text, vision and speech models locally, with tuned kernels and published benchmarks for each supported model. It serves models through an API so local agents can use them, and image and video generation support is in progress.
+- [OpenClip](https://agentscouthq.com/tools/openclip.html) (added 2026-10-25): OpenClip is a free, open-source floating action bar for macOS that pops up when you select text. From it you can copy, calculate, transform text, run AI actions or trigger your own scripts and workflows, so quick jobs on any selection take one click instead of a trip to another app.
+- [PiG](https://agentscouthq.com/tools/pig.html) (added 2026-10-25): PiG is a faithful Go port of Pi, the open-source terminal coding agent, first developed at Hewlett Packard Enterprise. It keeps Pi's behaviour and extension model while shipping as a single fast Go binary, so you can run the same minimal, hackable coding agent without a Node.js runtime.
+- [Doory](https://agentscouthq.com/tools/doory.html) (added 2026-10-25): Doory is a free, open-source design platform in the browser for making social posts, slides, posters and logos, a self-hostable alternative to Canva. You can start designing right away without an account, using templates, text, shapes and images on a drag-and-drop canvas.
+- [Open Analytics](https://agentscouthq.com/tools/open-analytics.html) (added 2026-10-25): Open Analytics is an open-source, cookieless alternative to Google Analytics with realtime visitors, funnels and revenue attribution from one lightweight script, and no consent banner needed. It includes an MCP server, so an AI agent can query your traffic and conversions directly, and you can self-host it or use the hosted version.
+- [Elephant-Goldfish Model](https://agentscouthq.com/tools/elephant-goldfish-model.html) (added 2026-10-25): Elephant-Goldfish Model is an open-source method and plugin from Google for spec-driven development with AI coding agents. A deep-context agent drafts the design, then fresh zero-context subagents stress-test that spec for gaps and wrong assumptions before any code is written, which catches problems that a single long-running agent tends to miss.
+- [BoardUI](https://agentscouthq.com/tools/boardui.html) (added 2026-10-25): BoardUI is a React design system for building agentic products and data-heavy dashboards, with 85 components and blocks (including chart cards), Tailwind CSS styling and fully editable source. The free set ships with a working AI chat app example, and Pro templates add ready-made layouts, so teams can put a polished interface on an agent quickly.
+- [Whirl](https://agentscouthq.com/tools/whirl.html) (added 2026-10-25): Whirl is an open-source AI chat app that lets you talk to every major model in one place, remembers what matters about you across conversations, and builds living documents and visualizations as you go. You can bring your own tools, so the assistant can do more than answer, and pick up any thread exactly where you left it.
+- [axuse](https://agentscouthq.com/tools/axuse.html) (added 2026-10-25): axuse gives AI agents browser and computer use through a single MCP server that plugs into Claude Code, Codex, OpenCode and other MCP hosts. Instead of a screenshot loop it reads the DOM, the accessibility tree and Chrome DevTools, which makes actions faster and uses far fewer tokens, and it has zero dependencies, with desktop control on Windows, macOS (opt-in) and Linux.
+- [AutoCua](https://agentscouthq.com/tools/autocua.html) (added 2026-10-25): AutoCua is an open-source computer use agent that drives real desktop apps with mouse and keyboard on Windows, macOS and Linux, and also works in Chrome, Firefox and other browsers, in a real terminal and on an iPhone, iPad or iOS Simulator. It is built as a multi-agent harness you install with pip, so one agent can carry a task across the desktop, the web, the shell and a phone.
 - [OMOPHub](https://agentscouthq.com/tools/omophub.html) (added 2026-10-25): OMOPHub is a hosted MCP server (mcp.omophub.com and npm @omophub/omophub-mcp, MIT) and REST API for OHDSI OMOP standardized medical vocabularies, giving AI agents and healthcare developers instant access to 11M+ clinical concepts and 63M+ relationships across SNOMED CT, ICD-10, LOINC, RxNorm and CPT without hosting a local vocabulary database.
 - [Wenbu](https://agentscouthq.com/tools/wenbu.html) (added 2026-10-25): Wenbu is a hosted Streamable HTTP MCP server (wenbu 1.5.0 at wenbu.app/mcp, listed in the official MCP Registry as app.wenbu/mcp) and web app for traditional Chinese cultural systems and reflection. Connect Claude, Cursor or any MCP client with no API key required to call seven tools—calculate_bazi, cast_iching, draw_tarot, calculate_ziwei, search_library, read_library and get_daily_card—or run the MIT-licensed server locally.
 - [Editara](https://agentscouthq.com/tools/editara.html) (added 2026-10-25): Editara is a browser-based AI photo editor where you upload an image and describe what to change in plain English—removing objects or people, replacing or removing backgrounds, restoring and colorizing old photos, extending frames and upscaling—across eight selectable models including GPT Image 2, Nano Banana Pro and Seedream 5 Pro, with 12 free daily credits and watermark-free exports.
@@ -505,6 +520,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [Best AI agents for running business operations (2026)](https://agentscouthq.com/tasks/business-automation.html)
 - [Best AI agents for chat apps like Slack and Telegram (2026)](https://agentscouthq.com/tasks/chat-apps.html)
 - [Best tools for feeding docs to coding agents (2026)](https://agentscouthq.com/tasks/coding-docs.html)
+- [MCP servers tools for controlling a computer](https://agentscouthq.com/tasks/computer-use-mcp-servers.html)
 - [Best AI agents for controlling a computer (2026)](https://agentscouthq.com/tasks/computer-use.html)
 - [How to connect AI agents to your tools with MCP, by use case](https://agentscouthq.com/tasks/connecting-tools-mcp.html)
 - [Agent payment tools for crypto agents](https://agentscouthq.com/tasks/crypto-and-wallets-agent-payments.html)

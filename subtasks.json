@@ -6129,6 +6129,7 @@
 "agent-payments",
 "vector-rag",
 "voice-phone",
+"observability",
 "rules-config"
 ],
 "the-commons-dead-brands-collab-hub": [
@@ -6965,5 +6966,79 @@
 "text-to-sql",
 "mcp-servers",
 "local-models"
+],
+"autocua": [
+"voice-phone",
+"browser-automation",
+"computer-use",
+"multi-agent",
+"agent-frameworks",
+"terminal-agents",
+"mobile"
+],
+"axuse": [
+"browser-automation",
+"computer-use",
+"mcp-servers"
+],
+"whirl": [
+"agent-memory",
+"vector-rag",
+"images-design"
+],
+"boardui": [
+"observability",
+"video-editing",
+"images-design"
+],
+"elephant-goldfish-model": [
+"multi-agent",
+"images-design"
+],
+"open-analytics": [
+"mcp-servers"
+],
+"doory": [
+"browser-automation",
+"no-code-apps",
+"images-design"
+],
+"pig": [
+"terminal-agents"
+],
+"openclip": [
+"workflow-automation",
+"video-editing"
+],
+"gufo": [
+"voice-phone",
+"evals",
+"local-models",
+"dialogue-cleanup",
+"video",
+"images-design"
+],
+"blaze-mcp": [
+"planning-tasks",
+"voice-phone",
+"marketing-agents",
+"mcp-servers",
+"video"
+],
+"growsurf-mcp": [
+"observability",
+"mcp-servers"
+],
+"3dsellers-mcp": [
+"mcp-servers",
+"no-code-apps"
+],
+"fly-io-mcp": [
+"sandboxes",
+"mcp-servers"
+],
+"tesla-wrap-generator": [
+"browser-automation",
+"images-design"
 ]
 }
