@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-25T16:43:51Z",
- "updated": "2026-10-25T16:43:51Z",
+ "generated": "2026-10-25T16:51:29Z",
+ "updated": "2026-10-25T16:51:29Z",
  "last_checked": "2026-10-25",
  "count": 1772,
  "tools": [
@@ -31251,13 +31251,13 @@
    "category": "coding",
    "description": "Framework for building AI-native IDE products, with an MCP client and agent features.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3657 GitHub stars",
+    "3659 GitHub stars",
     "Write code",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31275,9 +31275,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "opensumi/core",
-   "github_stars": 3657,
+   "github_stars": 3659,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code",
     "connect tools via MCP"
@@ -31295,13 +31295,13 @@
    "category": "MCP servers",
    "description": "Open-source MCP and A2A agent gateway that connects copilots and agents to enterprise tools with identity, access control and observability.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Active",
-    "3648 GitHub stars",
+    "3703 GitHub stars",
     "Connect tools via mcp",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31319,9 +31319,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "ascending-llc/jarvis-registry",
-   "github_stars": 3648,
+   "github_stars": 3703,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "connect tools via MCP",
     "monitor & evaluate agents"
@@ -31339,12 +31339,12 @@
    "category": "memory & RAG",
    "description": "Zero-cloud, SQLite-backed memory layer for Hermes, Claude Code, Cursor, Codex and custom agents with a single Python dependency.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3449 GitHub stars",
+    "3515 GitHub stars",
     "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31362,9 +31362,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "mnemosyne-oss/mnemosyne",
-   "github_stars": 3449,
+   "github_stars": 3515,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "give agents memory"
    ],
@@ -31381,13 +31381,13 @@
    "category": "frameworks",
    "description": "Framework for building production-ready agents and multi-agent systems in Python or TypeScript.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0)",
     "Active",
-    "3436 GitHub stars",
+    "3443 GitHub stars",
     "Build multi-agent systems",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31405,9 +31405,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "i-am-bee/beeai-framework",
-   "github_stars": 3436,
+   "github_stars": 3443,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "build multi-agent systems",
     "build an agent"
@@ -31425,12 +31425,12 @@
    "category": "personal agents",
    "description": "Self-hosted personal AI agent with a written personality, local memory, permission-gated tools and token budgets, reachable via CLI or Telegram.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); model usage billed by your provider",
     "Active",
-    "3433 GitHub stars",
+    "3553 GitHub stars",
     "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); model usage billed by your provider",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -31449,9 +31449,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "cosmicstack-labs/mercury-agent",
-   "github_stars": 3433,
+   "github_stars": 3553,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "give agents memory"
    ],
@@ -31468,12 +31468,12 @@
    "category": "evals & observability",
    "description": "Open-source observability platform for AI agents with OpenTelemetry tracing, plain-English behavior tracking and alerts.",
    "key_features": [
-    "Open source + cloud",
+    "Self-host free (Apache-2.0); Cloud Free 1 GB, Starter $30/mo, Pro $150/mo, Enterprise custom",
     "Active",
-    "3400 GitHub stars",
+    "3441 GitHub stars",
     "Monitor & evaluate agents"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Self-host free (Apache-2.0); Cloud Free 1 GB, Starter $30/mo, Pro $150/mo, Enterprise custom",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -31489,9 +31489,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "lmnr-ai/lmnr",
-   "github_stars": 3400,
+   "github_stars": 3441,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "monitor & evaluate agents"
    ],
@@ -31508,12 +31508,12 @@
    "category": "frameworks",
    "description": "Open-source AI agent for real work from Intelligent Internet that you can run, fork and extend with your own API keys.",
    "key_features": [
-    "Open source",
+    "Free and open source (Apache-2.0); bring your own API keys",
     "Active",
-    "3391 GitHub stars",
+    "3392 GitHub stars",
     "Build an agent"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (Apache-2.0); bring your own API keys",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31531,9 +31531,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "Intelligent-Internet/ii-agent",
-   "github_stars": 3391,
+   "github_stars": 3392,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "build an agent"
    ],
@@ -31550,12 +31550,12 @@
    "category": "personal agents",
    "description": "Local-first AI agent that drives your browser, edits files and runs approved commands using local open-weight or cloud models.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3387 GitHub stars",
+    "3427 GitHub stars",
     "Automate the browser"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -31572,9 +31572,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "AtomicBot-ai/atomic-agent",
-   "github_stars": 3387,
+   "github_stars": 3427,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "automate the browser"
    ],
@@ -31637,12 +31637,12 @@
    "category": "agent infra",
    "description": "Self-hosted terminal service from the Open WebUI team that gives AI agents an API to run commands, manage files and execute code.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3368 GitHub stars",
+    "3424 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31660,9 +31660,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "open-webui/open-terminal",
-   "github_stars": 3368,
+   "github_stars": 3424,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "write code"
    ],
@@ -31722,12 +31722,12 @@
    "category": "MCP servers",
    "description": "MCP server and CLI that gives AI assistants natural-language control of Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Tasks and Chat.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3361 GitHub stars",
+    "3409 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31745,9 +31745,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "taylorwilsdon/google_workspace_mcp",
-   "github_stars": 3361,
+   "github_stars": 3409,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "connect tools via MCP"
    ],
@@ -31764,14 +31764,14 @@
    "category": "coding",
    "description": "Codebase context engine for AI agents with hybrid semantic search, dependency graphs and impact analysis, available as MCP, plugin or skill.",
    "key_features": [
-    "Open source",
+    "Open source core free (AGPL-3.0); Cloud in private beta, pricing not published",
     "Active",
-    "3341 GitHub stars",
+    "3354 GitHub stars",
     "Write code",
     "Research the web",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Open source core free (AGPL-3.0); Cloud in private beta, pricing not published",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31789,9 +31789,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "giancarloerra/SocratiCode",
-   "github_stars": 3341,
+   "github_stars": 3354,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
     "write code",
     "research the web",
@@ -31810,12 +31810,12 @@
    "category": "sales & marketing",
    "description": "Self-hosted AI agent for B2B lead generation that finds people matching your market, explains the fit and emails them from your mailbox.",
    "key_features": [
-    "Open source",
+    "Self-hosted: open source (GPL-3.0); hosted service 10 free leads then $2/lead",
     "Active",
-    "3323 GitHub stars",
+    "3409 GitHub stars",
     "Sales & support"
    ],
-   "pricing": "Open source",
+   "pricing": "Self-hosted: open source (GPL-3.0); hosted service 10 free leads then $2/lead",
    "price_tag": "free",
    "platforms": [
     "Web"
@@ -31832,9 +31832,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "eracle/OpenOutreach",
-   "github_stars": 3323,
+   "github_stars": 3409,
    "open_source": true,
-   "license": "",
+   "license": "GPL-3.0",
    "tags": [
     "sales & support"
    ],
@@ -31851,12 +31851,12 @@
    "category": "models & local runtimes",
    "description": "Native macOS app for chatting offline with a local LLM that can draw on your files, folders and websites.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3320 GitHub stars",
+    "3319 GitHub stars",
     "Research the web"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -31874,9 +31874,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "johnbean393/Sidekick",
-   "github_stars": 3320,
+   "github_stars": 3319,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "research the web"
    ],
@@ -36343,16 +36343,15 @@
    "slug": "dust",
    "url": "https://dust.tt/",
    "website": "https://dust.tt/",
-   "github": "https://github.com/dust-tt/dust",
+   "github": "",
    "category": "business agents",
    "description": "Platform for building custom AI agents connected to your company's data and tools to speed up team work.",
    "key_features": [
-    "Open source + cloud",
-    "Active",
-    "1487 GitHub stars"
+    "Paid",
+    "Active"
    ],
-   "pricing": "Open source + cloud",
-   "price_tag": "freemium",
+   "pricing": "Paid",
+   "price_tag": "paid",
    "platforms": [
     "Web"
    ],
@@ -36367,9 +36366,9 @@
    "new": true,
    "seed": false,
    "new_this_week": false,
-   "repo": "dust-tt/dust",
-   "github_stars": 1487,
-   "open_source": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
    "license": "",
    "tags": [
     "business agents"
@@ -37257,12 +37256,12 @@
    "category": "MCP servers",
    "description": "Postgres MCP server with index tuning, explain plans, health checks and safe SQL execution for agents.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT)",
     "Active",
-    "3403 GitHub stars",
+    "3425 GitHub stars",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT)",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -37280,9 +37279,9 @@
    "seed": false,
    "new_this_week": false,
    "repo": "crystaldba/postgres-mcp",
-   "github_stars": 3403,
+   "github_stars": 3425,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "connect tools via MCP"
    ],
@@ -50066,7 +50065,7 @@
    "key_features": [
     "Open source (Apache-2.0)",
     "Active",
-    "3748 GitHub stars",
+    "3752 GitHub stars",
     "Generate video"
    ],
    "pricing": "Open source (Apache-2.0)",
@@ -50087,7 +50086,7 @@
    "seed": false,
    "new_this_week": false,
    "repo": "genmoai/mochi",
-   "github_stars": 3748,
+   "github_stars": 3752,
    "open_source": true,
    "license": "Apache-2.0",
    "tags": [

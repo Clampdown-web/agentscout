@@ -223,7 +223,7 @@ $("ms").addEventListener("input",run);run();'''
          ("What is the difference between the Cursor and VS Code formats?","Cursor's mcp.json uses a top-level mcpServers object, like Claude Desktop. VS Code's .vscode/mcp.json uses a top-level servers object and a type field (stdio or http) for each server."),
          ("Does this tool install or run anything?","No. It only formats text in your browser. You still need Node.js (for npx servers) or whatever runtime each server needs, and you should only add servers you trust."),
          ("Where do I find MCP servers?",f"Browse the {sum(1 for x in t if x['category']=='MCP servers')} MCP servers in the AgentScout directory, or the free MCP servers list.")]
-    return wrap("mcp-config-builder","MCP config builder","Add your MCP servers once and get config you can paste into Claude Desktop, Cursor, VS Code and Claude Code. See also the <a href=\"../categories/mcp-servers.html\">MCP serversa category</a>.",inner,faq,js,t)
+    return wrap("mcp-config-builder","MCP config builder","Add your MCP servers once and get config you can paste into Claude Desktop, Cursor, VS Code and Claude Code. See also the <a href=\"../categories/mcp-servers.html\">MCP servers category</a>.",inner,faq,js,t)
 def llmstxt(t):
     inner=(f'<div {BOX}><label {LAB} for="ln">Site or project name</label><input id="ln" {INP} value="Acme Docs" maxlength="100">'
            f'<label {LAB} for="ls">One-sentence summary</label><input id="ls" {INP} value="Acme is an open-source library for building AI agents in Python." maxlength="300">'
