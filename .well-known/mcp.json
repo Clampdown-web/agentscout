@@ -1,13 +1,16 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
-  "version": "1.0",
+  "name": "com.agentscouthq/directory",
+  "title": "AgentScout MCP server",
+  "version": "1.0.1",
   "protocolVersion": "2025-06-18",
+  "endpoint": "https://agentscout-mcp.agentscouthq.workers.dev/mcp",
   "serverInfo": {
     "name": "agentscout",
     "title": "AgentScout directory",
     "version": "1.0.0"
   },
-  "description": "Read-only search over 1,771 AI agent tools and 248 MCP servers listed on AgentScout. No authentication.",
+  "description": "Read-only search over 1,777 AI agent tools and 249 MCP servers listed on AgentScout. No authentication.",
   "documentationUrl": "https://agentscouthq.com/mcp/connect.html",
   "transport": {
     "type": "streamable-http",

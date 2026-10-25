@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T17:09:15Z",
- "updated": "2026-10-25T17:09:15Z",
+ "generated": "2026-10-25T18:14:23Z",
+ "updated": "2026-10-25T18:14:23Z",
  "last_checked": "2026-10-25",
- "count": 1771,
+ "count": 1777,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75031,6 +75031,263 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tesla-wrap-generator.png",
    "page": "https://agentscouthq.com/tools/tesla-wrap-generator.html"
+  },
+  {
+   "name": "Sendblox",
+   "slug": "sendblox",
+   "url": "https://www.sendblox.ai/",
+   "website": "https://www.sendblox.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "B2B sales outreach platform with autonomous AI agents that research leads, draft personalized multi-channel outreach across email and SMS, check compliance before sending, and sync pipeline activity with HubSpot, Salesforce, Dynamics 365 and Airtable.",
+   "key_features": [
+    "Free quota-limited starter tier; Starter $299/mo (£299/mo, 5,000 emails/mo, 3 seats); Growth $499/mo (10,000 emails/mo, 10 seats); Scale $999/mo (30,000 emails/mo, 25 seats); Enterprise custom",
+    "Active",
+    "Research the web",
+    "Sales & support"
+   ],
+   "pricing": "Free quota-limited starter tier; Starter $299/mo (£299/mo, 5,000 emails/mo, 3 seats); Growth $499/mo (10,000 emails/mo, 10 seats); Scale $999/mo (30,000 emails/mo, 25 seats); Enterprise custom",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Daily research",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sendblox.png",
+   "page": "https://agentscouthq.com/tools/sendblox.html"
+  },
+  {
+   "name": "SwipeHarbor",
+   "slug": "swipeharbor",
+   "url": "https://swipeharbor.com/",
+   "website": "https://swipeharbor.com/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Hosted Streamable HTTP MCP server and ad intelligence library for searching direct-response ads, creative hooks, transcripts and recorded landing-page funnels across NewsBreak, Rumble and YouTube directly from Claude, Cursor or custom marketing agents.",
+   "key_features": [
+    "Pro $79.99/mo or $799/yr ($66.58/mo billed yearly); includes NewsBreak, Rumble and YouTube ad libraries plus MCP access (2,000 MCP requests and 10,000 data units per month)",
+    "Active",
+    "Build an agent",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Pro $79.99/mo or $799/yr ($66.58/mo billed yearly); includes NewsBreak, Rumble and YouTube ad libraries plus MCP access (2,000 MCP requests and 10,000 data units per month)",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Daily research",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/swipeharbor.png",
+   "page": "https://agentscouthq.com/tools/swipeharbor.html"
+  },
+  {
+   "name": "Lazy Ads",
+   "slug": "lazy-ads",
+   "url": "https://lazyads.ai/",
+   "website": "https://lazyads.ai/",
+   "github": "https://github.com/camerondwills/lazyads-mcp",
+   "category": "sales & marketing",
+   "description": "AI media buyer and hosted MCP server that creates, launches, A/B tests and optimizes paid ad campaigns across Facebook, Instagram, Google, TikTok, LinkedIn, Reddit, Apple, Bing and Snapchat, with 53 MCP tools and a REST API.",
+   "key_features": [
+    "Free tier to start; Bring Your Own Agent (BYOA) $24/mo ($19/mo billed annually, 39 MCP bridge tools); Starter $99/mo ($79/mo annually); Growth $249/mo ($199/mo annually, full 53-tool MCP server + REST API); Scale $499/mo ($399/mo annually)",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Free tier to start; Bring Your Own Agent (BYOA) $24/mo ($19/mo billed annually, 39 MCP bridge tools); Starter $99/mo ($79/mo annually); Growth $249/mo ($199/mo annually, full 53-tool MCP server + REST API); Scale $499/mo ($399/mo annually)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Daily research",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "camerondwills/lazyads-mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lazy-ads.png",
+   "page": "https://agentscouthq.com/tools/lazy-ads.html"
+  },
+  {
+   "name": "Arvow",
+   "slug": "arvow",
+   "url": "https://arvow.com/",
+   "website": "https://arvow.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "AI SEO agent platform and MCP server for marketers and agencies that researches keywords, writes and auto-publishes articles to WordPress, Shopify, Webflow and Ghost, deploys technical on-page SEO fixes and tracks brand mentions across AI answer engines.",
+   "key_features": [
+    "Solo $39/mo (1 connected website, credit allowance, MCP and API access); Business $69/mo (5 websites); Ultimate/Agency plans with white-label SEO reports and unlimited sub-accounts",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Solo $39/mo (1 connected website, credit allowance, MCP and API access); Business $69/mo (5 websites); Ultimate/Agency plans with white-label SEO reports and unlimited sub-accounts",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Daily research",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/arvow.png",
+   "page": "https://agentscouthq.com/tools/arvow.html"
+  },
+  {
+   "name": "Hoox",
+   "slug": "hoox",
+   "url": "https://tryhoox.com/",
+   "website": "https://tryhoox.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Autonomous AI Chief Marketing Officer that runs six dedicated 24/7 marketing agents for long-form SEO and GEO blog posts, social carousels, LinkedIn and Facebook updates, Reddit community replies and real-time X intent outreach.",
+   "key_features": [
+    "Base subscription $99 per 28-day billing cycle (includes 10,000 credits); pay-as-you-go additional credits at $0.0099/credit",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Base subscription $99 per 28-day billing cycle (includes 10,000 credits); pay-as-you-go additional credits at $0.0099/credit",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Daily research",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/hoox.png",
+   "page": "https://agentscouthq.com/tools/hoox.html"
+  },
+  {
+   "name": "RankCaster AI",
+   "slug": "rankcaster-ai",
+   "url": "https://rankcaster.ai/",
+   "website": "https://rankcaster.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "AI search visibility (GEO and AEO) platform and MCP server that tracks brand mention share, rankings and sentiment across ChatGPT, Claude, Gemini, Perplexity, DeepSeek and Google AI Overviews, with llms.txt optimization and weekly action briefs.",
+   "key_features": [
+    "Plans from $125/mo up to Agency $895/mo (50 projects, 250 monitoring prompts, 6 AI engines, white-label reporting) and Enterprise $2,990/mo (150 projects, API & SSO)",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Plans from $125/mo up to Agency $895/mo (50 projects, 250 monitoring prompts, 6 AI engines, white-label reporting) and Enterprise $2,990/mo (150 projects, API & SSO)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Daily research",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rankcaster-ai.png",
+   "page": "https://agentscouthq.com/tools/rankcaster-ai.html"
   }
  ]
 }

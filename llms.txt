@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,771 AI agent tools in 30 categories, including 248 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,777 AI agent tools in 30 categories, including 249 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscout-mcp.agentscouthq.workers.dev/mcp).
 
@@ -29,7 +29,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 248 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 249 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [openapi.json](https://agentscouthq.com/openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/
@@ -42,7 +42,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://agentscout-mcp.agentscouthq.workers.dev/mcp (Streamable HTTP, no key) with search_tools, get_tool, list_categories and best_for_task. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 248 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 249 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 
 ## Browse
@@ -57,7 +57,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 248 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 249 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 201 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 137 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 93 tools
@@ -69,6 +69,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 55 tools
 - [research](https://agentscouthq.com/categories/research.html): 50 tools
 - [business agents](https://agentscouthq.com/categories/business-agents.html): 49 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 44 tools
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 44 tools
 - [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 43 tools
 - [security & governance](https://agentscouthq.com/categories/security-governance.html): 43 tools
@@ -76,7 +77,6 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [video generation](https://agentscouthq.com/categories/video-generation.html): 40 tools
 - [music production](https://agentscouthq.com/categories/music-production.html): 40 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 39 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 39 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 35 tools
 - [productivity](https://agentscouthq.com/categories/productivity.html): 29 tools
@@ -135,8 +135,14 @@ Catalog last checked: 2026-10-25 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-24 to 2026-10-25): 65
+- Tools added in the last 2 days (2026-10-24 to 2026-10-25): 71
 
+- [RankCaster AI](https://agentscouthq.com/tools/rankcaster-ai.html) (added 2026-10-25): AI search visibility (GEO and AEO) platform and MCP server that tracks brand mention share, rankings and sentiment across ChatGPT, Claude, Gemini, Perplexity, DeepSeek and Google AI Overviews, with llms.txt optimization and weekly action briefs.
+- [Hoox](https://agentscouthq.com/tools/hoox.html) (added 2026-10-25): Autonomous AI Chief Marketing Officer that runs six dedicated 24/7 marketing agents for long-form SEO and GEO blog posts, social carousels, LinkedIn and Facebook updates, Reddit community replies and real-time X intent outreach.
+- [Arvow](https://agentscouthq.com/tools/arvow.html) (added 2026-10-25): AI SEO agent platform and MCP server for marketers and agencies that researches keywords, writes and auto-publishes articles to WordPress, Shopify, Webflow and Ghost, deploys technical on-page SEO fixes and tracks brand mentions across AI answer engines.
+- [Lazy Ads](https://agentscouthq.com/tools/lazy-ads.html) (added 2026-10-25): AI media buyer and hosted MCP server that creates, launches, A/B tests and optimizes paid ad campaigns across Facebook, Instagram, Google, TikTok, LinkedIn, Reddit, Apple, Bing and Snapchat, with 53 MCP tools and a REST API.
+- [SwipeHarbor](https://agentscouthq.com/tools/swipeharbor.html) (added 2026-10-25): Hosted Streamable HTTP MCP server and ad intelligence library for searching direct-response ads, creative hooks, transcripts and recorded landing-page funnels across NewsBreak, Rumble and YouTube directly from Claude, Cursor or custom marketing agents.
+- [Sendblox](https://agentscouthq.com/tools/sendblox.html) (added 2026-10-25): B2B sales outreach platform with autonomous AI agents that research leads, draft personalized multi-channel outreach across email and SMS, check compliance before sending, and sync pipeline activity with HubSpot, Salesforce, Dynamics 365 and Airtable.
 - [Tesla Wrap Generator](https://agentscouthq.com/tools/tesla-wrap-generator.html) (added 2026-10-25): Tesla Wrap Generator is a browser-based AI design tool for Tesla's in-car Paint Shop where owners describe a wrap design in plain text or upload a reference photo, preview it on an interactive 3D Tesla (Model 3, Model Y, Model S, Model X or Cybertruck across 12 official UV templates), and download a Paint Shop-ready PNG template under 1 MB.
 - [Fly.io MCP](https://agentscouthq.com/tools/fly-io-mcp.html) (added 2026-10-25): The Fly.io MCP server is one endpoint that connects your coding agent to Sprites, Fly.io's sandboxes for agents, and to your Fly.io apps. The agent can build and test freely in a Sprite, then move the result to a Fly Machine in production whenever you are ready, with the rest of Fly's cloud available along the way.
 - [3Dsellers MCP](https://agentscouthq.com/tools/3dsellers-mcp.html) (added 2026-10-25): 3Dsellers MCP is a hosted MCP server with more than 150 tools that lets Claude, ChatGPT, Cursor and other AI assistants run eBay, Amazon, Walmart, Etsy and Shopify stores. Agents can manage listings, orders, messages and inventory without code or an eBay developer account.

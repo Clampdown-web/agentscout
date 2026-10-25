@@ -133,7 +133,7 @@ def connect_page(t):
     ld={"@context":"https://schema.org","@type":"WebAPI","name":"AgentScout MCP server","alternateName":["com.agentscouthq/directory","AgentScout Directory MCP"],"identifier":"com.agentscouthq/directory","description":desc,"url":canon,"documentation":canon,"sameAs":_same,
         "provider":{"@type":"Organization","name":"AgentScout","alternateName":_alt,"url":B,"identifier":"com.agentscouthq/directory","sameAs":_same},"isAccessibleForFree":True,"potentialAction":{"@type":"SearchAction","target":MCP_URL}}
     open("mcp/connect.html","w").write(X.shell("../",title,desc,canon,body,ld))
-    card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","version":"1.0","protocolVersion":"2025-06-18",
+    card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","name":"com.agentscouthq/directory","title":"AgentScout MCP server","version":"1.0.1","protocolVersion":"2025-06-18","endpoint":MCP_URL,
           "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.0"},
           "description":f"Read-only search over {len(t):,} AI agent tools and {M:,} MCP servers listed on AgentScout. No authentication.",
           "documentationUrl":canon,"transport":{"type":"streamable-http","endpoint":MCP_URL},"authentication":{"required":False},
