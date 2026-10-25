@@ -369,7 +369,7 @@ def sitewide(t):
             # Image generator link in every footer, right after Badges (generate.html's own footer lacked it; audit Oct 18 2026)
             if 'class="footgen"' not in fn: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a class="footgen" href="{d}generate.html">✨ Free AI Image Generator</a>',fn,count=1)
             # AgentScout MCP server connect page in every footer, right after Free tools (Oct 23 2026, crawlable link for /mcp/connect.html)
-            if 'mcp/connect.html">MCP server</a>' not in fn and f!="sponsor.html": fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
+            if 'mcp/connect.html">MCP server</a>' not in fn and (f!="sponsor.html" or os.environ.get("SPONSOR_REBUILD")=="1"): fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
             # Oct 23 2026 (Ops review): 66 footers (index, saved, quiz, generate, bot-templates/*, some best/*) listed Popular lists and
             # AI agents by role twice; keep the later (standard-position) link and drop the earlier copy
             for _lk in (r'<a href="[^"]*s/index\.html">Popular lists</a>',r'<a href="[^"]*for/index\.html">AI agents by role</a>'):
@@ -377,7 +377,7 @@ def sitewide(t):
             if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Bot templates (launched Oct 19 2026 PT, owner approved): red flame nav link left of Quiz, footer link before Free tools,
         # homepage strip after the makers strip (data/bt-strip.inc). Sponsor page stays untouched.
-        if f!="sponsor.html":
+        if (f!="sponsor.html" or os.environ.get("SPONSOR_REBUILD")=="1"):
             if 'class="navbt"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navbt" href="{d}bot-templates/">Bot templates</a>'+mm.group(2),s,count=1,flags=re.S)
             # Leaderboard (Oct 21 2026, owner-approved): one nav link right before Bot templates
             if 'class="navlb"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navlb" href="{d}leaderboard/">Leaderboard</a>'+mm.group(2),s,count=1,flags=re.S)  # anchored on Quiz (Oct 23 2026: Bot templates moved into the pill group)
@@ -403,7 +403,7 @@ def sitewide(t):
         if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s and not (_hl and 'free-tools.html">Free tools</a>' in _hl.group(0)): s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
         # MCP server connect page in the main nav, right after Free tools (Oct 23 2026, owner asked; SEO advised one short link)
         s=re.sub(r'<a class="navmcp" href="[^"]*">.*?</a>','',s)  # rebuild in place so markup updates apply
-        if f!="sponsor.html": s=re.sub(r'(<div class="links">.*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f'<a class="navmcp" href="{d}mcp/connect.html"><span class="mcppill"><svg class="mcpico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg>MCP</span></a>',s,count=1,flags=re.S)
+        if (f!="sponsor.html" or os.environ.get("SPONSOR_REBUILD")=="1"): s=re.sub(r'(<div class="links">.*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f'<a class="navmcp" href="{d}mcp/connect.html"><span class="mcppill"><svg class="mcpico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg>MCP</span></a>',s,count=1,flags=re.S)
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")
         s=re.sub(r'<section id="nlblock".*?</section>',lambda mm:NL,s,count=1,flags=re.S)  # refresh older signup markup in place
         if 'id="nlblock"' not in s and "<footer" in s: s=s.replace("<footer",NL+"<footer",1)
@@ -425,7 +425,7 @@ def sitewide(t):
         if PC not in s and "share.js" in s and "</head>" in s: s=s.replace("</head>",PC+"</head>",1)
         # Oct 23 2026 (owner): the four neon header pills sit together in footer order: Image Gen, AI bot templates, Free tools, MCP.
         # Move the AI bot templates link from beside Leaderboard/Quiz to right after Image Gen; other nav links keep their places.
-        if f!="sponsor.html":
+        if (f!="sponsor.html" or os.environ.get("SPONSOR_REBUILD")=="1"):
             _lm=re.search(r'<div class="links">.*?</div>',s,re.S)
             if _lm:
                 _L=_lm.group(0); _bt=re.search(r'<a class="navbt" href="[^"]*">[^<]*</a>',_L)
@@ -433,8 +433,8 @@ def sitewide(t):
                     _L2=_L.replace(_bt.group(0),'',1)
                     _L2,_k=re.subn(r'(<a class="navgen" href="[^"]*">[^<]*</a>)',lambda mm:mm.group(1)+_bt.group(0),_L2,count=1)
                     if _k: s=s[:_lm.start()]+_L2+s[_lm.end():]
-        if f!="sponsor.html": s=_pill(s)  # Oct 23 2026 (owner): neon pills for Free tools / Image Gen / AI bot templates; sponsor page untouched
-        if f!="sponsor.html":  # wrap the four adjacent header pills in one group so they never split across rows (styles.css .navpills)
+        if (f!="sponsor.html" or os.environ.get("SPONSOR_REBUILD")=="1"): s=_pill(s)  # Oct 23 2026 (owner): neon pills for Free tools / Image Gen / AI bot templates; sponsor page untouched
+        if (f!="sponsor.html" or os.environ.get("SPONSOR_REBUILD")=="1"):  # wrap the four adjacent header pills in one group so they never split across rows (styles.css .navpills)
             s=re.sub(r'(<div class="links">.*?)(<a class="navgen" .*?<a class="navmcp" [^>]*>.*?</a>)',lambda mm:mm.group(1)+'<span class="navpills">'+mm.group(2)+'</span><!--/navpills-->',s,count=1,flags=re.S)
             _fm=re.search(r'<footer\b.*?</footer>',s,re.S)  # Oct 23 2026 (owner): the four footer pills also stay together as one no-break group
             if _fm: s=s[:_fm.start()]+re.sub(r'(<a class="footgen" .*?<a class="footmcp" [^>]*>.*?</a>)',lambda mm:'<span class="footpills">'+mm.group(1)+'</span><!--/footpills-->',_fm.group(0),count=1,flags=re.S)+s[_fm.end():]
