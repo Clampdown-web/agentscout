@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,750 AI agent tools in 30 categories, including 244 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,752 AI agent tools in 30 categories, including 245 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Site: https://agentscouthq.com/
 Contact: support@agentscouthq.com
@@ -37,7 +37,7 @@ Catalog last checked: 2026-10-24 (Pacific)
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://agentscout-mcp.agentscouthq.workers.dev/mcp (Streamable HTTP, no key) with search_tools, get_tool, list_categories and best_for_task. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 244 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 245 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 
 ## Browse
@@ -52,7 +52,7 @@ Catalog last checked: 2026-10-24 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 244 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 245 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 199 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 137 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 92 tools
@@ -69,8 +69,8 @@ Catalog last checked: 2026-10-24 (Pacific)
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 43 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 40 tools
 - [video generation](https://agentscouthq.com/categories/video-generation.html): 40 tools
+- [music production](https://agentscouthq.com/categories/music-production.html): 40 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 39 tools
-- [music production](https://agentscouthq.com/categories/music-production.html): 39 tools
 - [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 36 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 35 tools
@@ -126,8 +126,10 @@ Catalog last checked: 2026-10-24 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-23 to 2026-10-24): 71
+- Tools added in the last 2 days (2026-10-23 to 2026-10-24): 73
 
+- [AI Music Mastering](https://agentscouthq.com/tools/ai-music-mastering.html) (added 2026-10-24): AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership.
+- [NeverApply](https://agentscouthq.com/tools/neverapply.html) (added 2026-10-24): NeverApply is an AI job-search agent and hosted Streamable HTTP MCP server (neverapply.co/mcp) with 15 tools across job discovery, profile and resume preparation, and human-approved application submission. Connect Claude, ChatGPT, Codex, Cursor, VS Code, Gemini CLI, Kiro or Grok via OAuth 2.1 with PKCE to search 919,000+ live roles, inspect match scores and quiet applications, tailor resumes, generate interview prep and submit applications on employer career sites after explicit per-job approval.
 - [Book Cover Generator](https://agentscouthq.com/tools/book-cover-generator.html) (added 2026-10-24): Book Cover Generator is a story-led AI book cover design studio for indie and self-publishing authors. Enter a book title, author name, genre and plain-language story summary to generate two distinct visual cover directions with integrated typography, refine the stronger concept with focused plain-language edits, and export watermark-free covers formatted for ebooks (1600×2560 JPG), Amazon KDP front covers (6×9 in at 300 DPI PNG), audiobooks (3000×3000 JPG) and HD previews.
 - [Raydo Agent OS](https://agentscouthq.com/tools/raydo-agent-os.html) (added 2026-10-24): The AI agent operating system for real work. Raydo gives autonomous agents a dedicated desktop workspace where they can browse the web, read and edit local files, run multi-step workflows across apps, and hand off tasks for human review. Built for founders, operators, and engineering teams that want background agents executing repeatable workflows with full step logs, sandboxing, and approval checkpoints.
 - [Menlo Insurance MCP](https://agentscouthq.com/tools/menlo-insurance-mcp.html) (added 2026-10-24): Menlo Insurance MCP is a hosted MCP connector for ChatGPT and Claude (`mcp.menloinsurance.com/mcp`) from licensed California insurance brokerage Menlo Insurance Services that lets users attach renovation budgets or existing policies, answer application questions, compare quotes across carriers and follow up directly inside their AI assistant with no broker fees.

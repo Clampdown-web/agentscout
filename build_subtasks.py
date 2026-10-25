@@ -71,7 +71,7 @@ SUBTASKS=[
 ]
 _RX=[(s,l,re.compile(r,re.I)) for s,l,r in SUBTASKS]
 # Hand-checked sub-tasks for tools the regex tags wrongly (Oct 22 2026).
-TAG_OVERRIDE={"book-cover-generator":["images-design"],"raydo-agent-os":["computer-use","browser-automation","workflow-automation","sandboxes","local-models"],"havetml":["sandboxes","mcp-servers"],"hiredov":["email-agents","workflow-automation"],"system-one-api":["agent-frameworks"]}
+TAG_OVERRIDE={"neverapply":["mcp-servers","workflow-automation"],"ai-music-mastering":["mastering","mixing"],"book-cover-generator":["images-design"],"raydo-agent-os":["computer-use","browser-automation","workflow-automation","sandboxes","local-models"],"havetml":["sandboxes","mcp-servers"],"hiredov":["email-agents","workflow-automation"],"system-one-api":["agent-frameworks"]}
 def tags(x):
     if x.get("slug") in TAG_OVERRIDE: return list(TAG_OVERRIDE[x["slug"]])
     d=f'{x.get("name","")} {x.get("description","")}'

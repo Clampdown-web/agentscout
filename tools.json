@@ -44811,5 +44811,63 @@
     "maker_submitted": true,
     "submitted": "2026-10-24",
     "good_for": "turning a book title, genre and story summary into two distinct, storefront-ready cover directions for ebooks, KDP front covers and audiobooks"
+  },
+  {
+    "name": "NeverApply",
+    "url": "https://neverapply.co/features/mcp",
+    "website": "https://neverapply.co/features/mcp",
+    "github": "https://github.com/kasovy/neverapply-mcp",
+    "repo": "kasovy/neverapply-mcp",
+    "github_stars": 0,
+    "id": 1770,
+    "slug": "neverapply",
+    "logo": "assets/logos/neverapply.png",
+    "category": "MCP servers",
+    "description": "NeverApply is an AI job-search agent and hosted Streamable HTTP MCP server (neverapply.co/mcp) with 15 tools across job discovery, profile and resume preparation, and human-approved application submission. Connect Claude, ChatGPT, Codex, Cursor, VS Code, Gemini CLI, Kiro or Grok via OAuth 2.1 with PKCE to search 919,000+ live roles, inspect match scores and quiet applications, tailor resumes, generate interview prep and submit applications on employer career sites after explicit per-job approval.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free ($0 forever, no card, 10 lifetime auto-applies, 5 matches/day preview, 50 MCP reads/day per client); Pro $29/month (150 apply credits/month, up to 5 Autopilot applies/day, Resume Studio, interview prep, 2,000 MCP reads/day); Max $49/month (450 apply credits/month, up to 15 Autopilot applies/day, automatic per-job resume tailoring)",
+    "use_cases": [
+      "connect tools via MCP",
+      "automate workflows"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-24",
+    "added": "2026-10-24",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-24",
+    "good_for": "searching matched jobs, tracking quiet applications, tailoring resumes and submitting human-approved job applications from Claude, ChatGPT, Cursor or Grok via MCP",
+    "tasks_exclude": [
+      "browsing-the-web"
+    ]
+  },
+  {
+    "name": "AI Music Mastering",
+    "url": "https://aimusicmastering.app/",
+    "website": "https://aimusicmastering.app/",
+    "github": "",
+    "id": 1771,
+    "slug": "ai-music-mastering",
+    "logo": "assets/logos/ai-music-mastering.png",
+    "category": "music production",
+    "description": "AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history)",
+    "use_cases": [
+      "mix & master"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-24",
+    "added": "2026-10-24",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-24",
+    "good_for": "auditioning eight automated mastering profiles with loudness-matched A/B previews on recordings or AI-generated songs and exporting 24-bit/16-bit WAV or 320 kbps MP3 masters"
   }
 ]

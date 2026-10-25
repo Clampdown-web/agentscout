@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T04:12:07Z",
- "updated": "2026-10-25T04:12:07Z",
+ "generated": "2026-10-25T06:30:32Z",
+ "updated": "2026-10-25T06:30:32Z",
  "last_checked": "2026-10-24",
- "count": 1750,
+ "count": 1752,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -74078,6 +74078,88 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/book-cover-generator.png",
    "page": "https://agentscouthq.com/tools/book-cover-generator.html"
+  },
+  {
+   "name": "NeverApply",
+   "slug": "neverapply",
+   "url": "https://neverapply.co/features/mcp",
+   "website": "https://neverapply.co/features/mcp",
+   "github": "https://github.com/kasovy/neverapply-mcp",
+   "category": "MCP servers",
+   "description": "NeverApply is an AI job-search agent and hosted Streamable HTTP MCP server (neverapply.co/mcp) with 15 tools across job discovery, profile and resume preparation, and human-approved application submission. Connect Claude, ChatGPT, Codex, Cursor, VS Code, Gemini CLI, Kiro or Grok via OAuth 2.1 with PKCE to search 919,000+ live roles, inspect match scores and quiet applications, tailor resumes, generate interview prep and submit applications on employer career sites after explicit per-job approval.",
+   "key_features": [
+    "Free ($0 forever, no card, 10 lifetime auto-applies, 5 matches/day preview, 50 MCP reads/day per client); Pro $29/month (150 apply credits/month, up to 5 Autopilot applies/day, Resume Studio, interview prep, 2,000 MCP reads/day); Max $49/month (450 apply credits/month, up to 15 Autopilot applies/day, automatic per-job resume tailoring)",
+    "Active",
+    "Connect tools via mcp",
+    "Automate workflows"
+   ],
+   "pricing": "Free ($0 forever, no card, 10 lifetime auto-applies, 5 matches/day preview, 50 MCP reads/day per client); Pro $29/month (150 apply credits/month, up to 5 Autopilot applies/day, Resume Studio, interview prep, 2,000 MCP reads/day); Max $49/month (450 apply credits/month, up to 15 Autopilot applies/day, automatic per-job resume tailoring)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "kasovy/neverapply-mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/neverapply.png",
+   "page": "https://agentscouthq.com/tools/neverapply.html"
+  },
+  {
+   "name": "AI Music Mastering",
+   "slug": "ai-music-mastering",
+   "url": "https://aimusicmastering.app/",
+   "website": "https://aimusicmastering.app/",
+   "github": "",
+   "category": "music production",
+   "description": "AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership.",
+   "key_features": [
+    "Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history)",
+    "Active",
+    "Mix & master"
+   ],
+   "pricing": "Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "mix & master"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-music-mastering.png",
+   "page": "https://agentscouthq.com/tools/ai-music-mastering.html"
   }
  ]
 }
