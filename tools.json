@@ -44989,5 +44989,72 @@
     "maker_submitted": true,
     "submitted": "2026-10-25",
     "good_for": "removing objects, swapping backgrounds, restoring old photos and upscaling images in the browser with plain-language instructions and no watermark"
+  },
+  {
+    "name": "Wenbu",
+    "url": "https://wenbu.app/",
+    "website": "https://wenbu.app/",
+    "github": "https://github.com/wenbu-app/wenbu",
+    "repo": "wenbu-app/wenbu",
+    "github_stars": 0,
+    "id": 1776,
+    "slug": "wenbu",
+    "logo": "assets/logos/wenbu.png",
+    "category": "MCP servers",
+    "description": "Wenbu is a hosted Streamable HTTP MCP server (wenbu 1.5.0 at wenbu.app/mcp, listed in the official MCP Registry as app.wenbu/mcp) and web app for traditional Chinese cultural systems and reflection. Connect Claude, Cursor or any MCP client with no API key required to call seven tools—calculate_bazi, cast_iching, draw_tarot, calculate_ziwei, search_library, read_library and get_daily_card—or run the MIT-licensed server locally.",
+    "pricing": "Free",
+    "pricing_detail": "Free and open source (MIT license; hosted Streamable HTTP MCP endpoint at wenbu.app/mcp requires no API key or sign-up)",
+    "use_cases": [
+      "build an agent",
+      "research the web",
+      "voice & phone calls"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "calculating BaZi and Zi Wei charts, casting I Ching hexagrams, drawing tarot spreads and searching traditional texts from Claude, Cursor or any MCP client without an API key",
+    "tasks_exclude": [
+      "browsing-the-web",
+      "deep-research",
+      "knowledge-base-rag"
+    ]
+  },
+  {
+    "name": "OMOPHub",
+    "url": "https://omophub.com/",
+    "website": "https://omophub.com/",
+    "github": "https://github.com/OMOPHub/omophub-mcp",
+    "repo": "OMOPHub/omophub-mcp",
+    "github_stars": 5,
+    "id": 1777,
+    "slug": "omophub",
+    "logo": "assets/logos/omophub.png",
+    "category": "MCP servers",
+    "description": "OMOPHub is a hosted MCP server (mcp.omophub.com and npm @omophub/omophub-mcp, MIT) and REST API for OHDSI OMOP standardized medical vocabularies, giving AI agents and healthcare developers instant access to 11M+ clinical concepts and 63M+ relationships across SNOMED CT, ICD-10, LOINC, RxNorm and CPT without hosting a local vocabulary database.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free tier ($0, 100 requests/day, all standard OMOP vocabularies, Python/TypeScript SDKs and MIT-licensed MCP server); Pay-as-you-go from $10 credit pack ($0.001/request, credits never expire); Enterprise custom volume and SLA",
+    "use_cases": [
+      "connect tools via MCP"
+    ],
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "searching, mapping and navigating SNOMED CT, ICD-10, LOINC and RxNorm medical terminology concepts inside Claude, Cursor or clinical AI agents via MCP",
+    "tasks_exclude": [
+      "browsing-the-web",
+      "deep-research"
+    ]
   }
 ]

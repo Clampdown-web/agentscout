@@ -4,6 +4,7 @@
   <url><loc>https://agentscouthq.com/new.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/quiz.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://agentscouthq.com/llms.txt</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/llms-full.txt</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/generate.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://agentscouthq.com/tools/siena-social-agent.html</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://agentscouthq.com/tools/orca-agent-engine.html</loc><lastmod>2026-10-18</lastmod></url>
@@ -1761,94 +1762,96 @@
   <url><loc>https://agentscouthq.com/tools/lobstermatch.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tools/kiwi.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tools/editara.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/badges.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/tools/wenbu.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/tools/omophub.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/badges.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/compare/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/claude-code-vs-openai-codex-cli.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/cursor-vs-windsurf.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/cline-vs-roo-code.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/langgraph-vs-crewai.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/crewai-vs-autogen.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/browser-use-vs-stagehand.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/exa-vs-tavily.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/livekit-agents-vs-pipecat.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/vapi-vs-retell-ai.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/n8n-vs-make.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/dify-vs-flowise.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/langfuse-vs-langsmith.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/e2b-vs-modal.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/bolt-vs-v0.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/cursor-vs-github-copilot.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/claude-code-vs-cursor.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/claude-code-vs-gemini-cli.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/devin-vs-openhands.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/aider-vs-claude-code.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/langgraph-vs-autogen.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/llamaindex-vs-langgraph.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/pydantic-ai-vs-openai-agents-sdk-python.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/agno-vs-crewai.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/n8n-vs-zapier-agents.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/dify-vs-langflow.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/browser-use-vs-skyvern.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/bolt-vs-replit-agent.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/vapi-vs-elevenlabs-agents.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/agentcenter-vs-dart.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/ema-vs-moveworks.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/virtuals-protocol-vs-olas-autonolas.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/compare/mem0-vs-zep.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/major-us-banks-restrict-or-block-ai-agents-found-acting-in-customer.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/moonshot-ai-releases-kimi-k3-1-pro-with-stronger-coding-and-agent.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/cursor-coding-agents-can-now-use-your-computer-to-run-and-test-the.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/minimax-open-sources-m3-1-flash-a-model-built-for-agentic-coding-and.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/simulars-agent-s4-evolves-custom-interfaces-so-a-27b-open-model-beats.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/report-criminal-group-ran-a-swarm-of-ai-agents-against-400-latin.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/anthropic-previews-claude-duet-a-proactive-agent-app-that-watches.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/anthropic-will-make-auto-mode-the-default-for-paid-claude-users-next.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/coding-agent-index-2-0-ranks-claude-code-with-opus-5-5-first-across.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/anthropic-hands-its-agent-skills-standard-to-the-agentic-ai-foundation.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/google-launches-gemini-api-cli-and-agent-compute-engine-for-running.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/framer-ships-an-official-mcp-connector-so-ai-agents-can-design-and.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/walmart-opens-agent-gateway-an-mcp-server-that-lets-approved-ai.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/phoneuse-launches-real-and-cloud-phones-that-ai-agents-can-tap-and.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/banks-report-third-party-ai-agents-logging-into-customer-accounts.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/breken-launches-an-ai-tester-that-rebuilds-and-stress-tests-apps.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/blacksmith-which-speeds-up-ci-for-the-ai-coding-era-raises-66m-at-a.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/ex-apple-watch-lead-launches-niq-an-ai-agent-that-helps-manage.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/beacon-an-open-source-memory-layer-carries-coding-context-across-20.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/elevenlabs-launches-eleven-realtime-speech-to-speech-models-for-voice.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/developer-catches-an-ai-agent-firing-108-requests-at-a-server-to-hunt.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/wajo-ais-fo-mcp-update-lets-its-agent-control-lamps-vacuums-and-phones.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/wabi-2-0-adds-a-shared-ai-agent-that-plans-and-books-inside-group.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/notion-agents-get-computer-and-browser-access-plus-an-auto-model.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/openai-test-agents-slipped-their-sandboxes-and-reached-hugging-face.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/theprimeagens-oligarchy-harness-has-ai-agents-test-omarchy-releases.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/google-open-sources-harness-a-framework-that-lets-ai-agents-improve.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/hacker-used-cairn-ai-agents-to-break-into-100-company-websites-for.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/tinyfish-makes-web-search-free-for-ai-agents.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/tether-backs-aisa-a-payments-layer-that-lets-ai-agents-buy-apis-and.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/cursors-ai-agents-now-account-for-56-of-merged-pull-requests-report.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/claude-coworks-teach-a-skill-turns-a-screen-recording-into-a-reusable.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/deepseek-v4-1-flash-1017-update-targets-agent-and-coding-benchmarks.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/big-us-banks-restrict-third-party-ai-agents-from-customer-accounts.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/hidden-prompts-in-emails-can-trick-ai-inbox-agents-into-leaking-data.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/indias-cert-in-warns-ai-research-agents-reached-live-systems-and.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/wixs-symphony-agents-can-now-pay-suppliers-after-the-owner-approves.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/perplexity-open-sources-space-a-microvm-sandbox-for-running-ai-agents.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/reflection-ai-releases-beam-an-open-weight-model-aimed-at-coding-and.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/openais-always-on-dots-agents-take-overnight-on-call-pages-for.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/nvidia-app-update-turns-on-ai-agent-control-by-default-prompting.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/openui-1-0-lets-ai-agents-answer-with-interactive-maps-charts-and.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/genesys-teams-up-with-sierra-and-meta-on-a-protocol-for-personal-ai.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/self-labs-ships-agent-vault-so-agents-can-pay-and-log-in-without-real.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/manus-makes-a-us-500m-comeback-push-in-chinas-agent-market.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/ledger-adds-agent-intent-ai-agents-propose-your-hardware-wallet.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/figma-specs-feeds-design-decisions-to-coding-agents-over-mcp-open-beta.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/rivian-is-bringing-ai-agents-into-its-cars.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/gsa-hosts-a-government-hackathon-on-mcp-servers-and-ai-agents.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/figma-sets-rules-for-how-ai-agents-work-inside-its-platform.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/attio-launches-a-crm-built-for-humans-and-ai-agents-side-by-side.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/tasteskill-v2-gives-coding-agents-art-direction-and-a-browser-self.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/news/2026/10/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/claude-code-vs-openai-codex-cli.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/cursor-vs-windsurf.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/cline-vs-roo-code.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/langgraph-vs-crewai.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/crewai-vs-autogen.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/browser-use-vs-stagehand.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/exa-vs-tavily.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/livekit-agents-vs-pipecat.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/vapi-vs-retell-ai.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/n8n-vs-make.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/dify-vs-flowise.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/langfuse-vs-langsmith.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/e2b-vs-modal.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/bolt-vs-v0.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/cursor-vs-github-copilot.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/claude-code-vs-cursor.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/claude-code-vs-gemini-cli.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/devin-vs-openhands.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/aider-vs-claude-code.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/langgraph-vs-autogen.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/llamaindex-vs-langgraph.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/pydantic-ai-vs-openai-agents-sdk-python.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/agno-vs-crewai.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/n8n-vs-zapier-agents.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/dify-vs-langflow.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/browser-use-vs-skyvern.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/bolt-vs-replit-agent.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/vapi-vs-elevenlabs-agents.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/agentcenter-vs-dart.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/ema-vs-moveworks.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/virtuals-protocol-vs-olas-autonolas.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/compare/mem0-vs-zep.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/major-us-banks-restrict-or-block-ai-agents-found-acting-in-customer.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/moonshot-ai-releases-kimi-k3-1-pro-with-stronger-coding-and-agent.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/cursor-coding-agents-can-now-use-your-computer-to-run-and-test-the.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/minimax-open-sources-m3-1-flash-a-model-built-for-agentic-coding-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/simulars-agent-s4-evolves-custom-interfaces-so-a-27b-open-model-beats.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/report-criminal-group-ran-a-swarm-of-ai-agents-against-400-latin.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/anthropic-previews-claude-duet-a-proactive-agent-app-that-watches.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/anthropic-will-make-auto-mode-the-default-for-paid-claude-users-next.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/coding-agent-index-2-0-ranks-claude-code-with-opus-5-5-first-across.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/anthropic-hands-its-agent-skills-standard-to-the-agentic-ai-foundation.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/google-launches-gemini-api-cli-and-agent-compute-engine-for-running.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/framer-ships-an-official-mcp-connector-so-ai-agents-can-design-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/walmart-opens-agent-gateway-an-mcp-server-that-lets-approved-ai.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/phoneuse-launches-real-and-cloud-phones-that-ai-agents-can-tap-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/banks-report-third-party-ai-agents-logging-into-customer-accounts.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/breken-launches-an-ai-tester-that-rebuilds-and-stress-tests-apps.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/blacksmith-which-speeds-up-ci-for-the-ai-coding-era-raises-66m-at-a.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/ex-apple-watch-lead-launches-niq-an-ai-agent-that-helps-manage.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/beacon-an-open-source-memory-layer-carries-coding-context-across-20.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/elevenlabs-launches-eleven-realtime-speech-to-speech-models-for-voice.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/developer-catches-an-ai-agent-firing-108-requests-at-a-server-to-hunt.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/wajo-ais-fo-mcp-update-lets-its-agent-control-lamps-vacuums-and-phones.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/wabi-2-0-adds-a-shared-ai-agent-that-plans-and-books-inside-group.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/notion-agents-get-computer-and-browser-access-plus-an-auto-model.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/openai-test-agents-slipped-their-sandboxes-and-reached-hugging-face.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/theprimeagens-oligarchy-harness-has-ai-agents-test-omarchy-releases.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/google-open-sources-harness-a-framework-that-lets-ai-agents-improve.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/hacker-used-cairn-ai-agents-to-break-into-100-company-websites-for.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/tinyfish-makes-web-search-free-for-ai-agents.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/tether-backs-aisa-a-payments-layer-that-lets-ai-agents-buy-apis-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/cursors-ai-agents-now-account-for-56-of-merged-pull-requests-report.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/claude-coworks-teach-a-skill-turns-a-screen-recording-into-a-reusable.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/deepseek-v4-1-flash-1017-update-targets-agent-and-coding-benchmarks.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/big-us-banks-restrict-third-party-ai-agents-from-customer-accounts.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/hidden-prompts-in-emails-can-trick-ai-inbox-agents-into-leaking-data.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/indias-cert-in-warns-ai-research-agents-reached-live-systems-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/wixs-symphony-agents-can-now-pay-suppliers-after-the-owner-approves.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/perplexity-open-sources-space-a-microvm-sandbox-for-running-ai-agents.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/reflection-ai-releases-beam-an-open-weight-model-aimed-at-coding-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/openais-always-on-dots-agents-take-overnight-on-call-pages-for.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/nvidia-app-update-turns-on-ai-agent-control-by-default-prompting.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/openui-1-0-lets-ai-agents-answer-with-interactive-maps-charts-and.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/genesys-teams-up-with-sierra-and-meta-on-a-protocol-for-personal-ai.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/self-labs-ships-agent-vault-so-agents-can-pay-and-log-in-without-real.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/manus-makes-a-us-500m-comeback-push-in-chinas-agent-market.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/ledger-adds-agent-intent-ai-agents-propose-your-hardware-wallet.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/figma-specs-feeds-design-decisions-to-coding-agents-over-mcp-open-beta.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/rivian-is-bringing-ai-agents-into-its-cars.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/gsa-hosts-a-government-hackathon-on-mcp-servers-and-ai-agents.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/figma-sets-rules-for-how-ai-agents-work-inside-its-platform.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/attio-launches-a-crm-built-for-humans-and-ai-agents-side-by-side.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/tasteskill-v2-gives-coding-agents-art-direction-and-a-browser-self.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/news/2026/10/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/categories/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/categories/mcp-servers.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/categories/coding.html</loc><lastmod>2026-10-24</lastmod></url>
@@ -1885,7 +1888,7 @@
   <url><loc>https://agentscouthq.com/best/mcp-servers-for-codex.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/news.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/newsletter.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/newsletter.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/best/cursor-alternatives.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/index.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/writing-code.html</loc><lastmod>2026-10-24</lastmod></url>
@@ -1896,22 +1899,22 @@
   <url><loc>https://agentscouthq.com/tasks/web-scraping.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/automating-workflows.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/building-apps-without-code.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/building-ai-agents.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/building-ai-agents.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/multi-agent-systems.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/building-voice-agents.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/building-voice-agents.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/phone-calls.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/customer-support.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/sales-outreach.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/writing-emails.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/business-automation.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/personal-assistants.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/research.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/research.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/searching-the-web.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/reading-papers.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/data-analysis.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/data-analysis.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/documents.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/connecting-tools-mcp.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/building-mcp-servers.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/building-mcp-servers.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/agent-memory.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/evaluating-agents.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/monitoring-agents.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -1981,7 +1984,7 @@
   <url><loc>https://agentscouthq.com/tasks/building-ai-agents-multi-agent.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/building-ai-agents-vector-rag.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/building-ai-agents-agent-memory.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/building-ai-agents-voice-phone.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/building-ai-agents-voice-phone.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/building-ai-agents-fine-tuning.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/building-ai-agents-evals.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/customer-support-voice-phone.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -1993,7 +1996,7 @@
   <url><loc>https://agentscouthq.com/tasks/research-web-scraping.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/research-vector-rag.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/research-text-to-sql.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/tasks/building-mcp-servers-agent-frameworks.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/tasks/building-mcp-servers-agent-frameworks.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/agent-memory-vector-rag.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/agent-memory-codebase-context.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/agent-memory-local-models.html</loc><lastmod>2026-10-24</lastmod></url>
@@ -2002,9 +2005,9 @@
   <url><loc>https://agentscouthq.com/tasks/testing-apps-testing-qa.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/crypto-and-wallets-agent-wallets.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://agentscouthq.com/tasks/crypto-and-wallets-agent-payments.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/submit.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/submit.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/about.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/privacy.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/privacy.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/best/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/best/ai-coding-agents.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/best/ai-agent-frameworks.html</loc><lastmod>2026-10-22</lastmod></url>
@@ -2019,6 +2022,8 @@
   <url><loc>https://agentscouthq.com/best/personal-ai-agents.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/best/ai-business-agents.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/best/crypto-ai-agents.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/best/open-source-browser-automation-agents.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/best/local-offline-ai-agents.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/best/hermes-agent-nous-research-alternatives.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/best/openclaw-alternatives.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/best/rea-alternatives.html</loc><lastmod>2026-10-23</lastmod></url>
@@ -2111,24 +2116,24 @@
   <url><loc>https://agentscouthq.com/best/skills-sh-alternatives.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://agentscouthq.com/best/chatdev-alternatives.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/best/tabby-alternatives.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/ai-cost-calculator.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/token-counter.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/prompt-builder.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/ai-cost-calculator.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/token-counter.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/prompt-builder.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools/agent-setup-generator.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools/mcp-config-builder.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/llms-txt-generator.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/tool-schema-builder.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/agent-run-cost-estimator.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/rules-file-generator.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/llms-txt-generator.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/tool-schema-builder.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/agent-run-cost-estimator.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/rules-file-generator.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools/ai-agent-stack-builder.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/system-prompt-linter.html</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/context-window-planner.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/system-prompt-linter.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/context-window-planner.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools/open-source-license-checker.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/build-vs-buy-calculator.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/build-vs-buy-calculator.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools/mcp-server-picker.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/json-output-validator.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/json-output-validator.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/free-tools/ai-tool-comparison-card.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://agentscouthq.com/free-tools/ai-agent-readiness-checker.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://agentscouthq.com/free-tools/ai-agent-readiness-checker.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/s/</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/s/free-ai-coding-agents.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://agentscouthq.com/s/open-source-ai-coding-agents.html</loc><lastmod>2026-10-22</lastmod></url>
@@ -2150,7 +2155,7 @@
   <url><loc>https://agentscouthq.com/s/free-no-code-ai-agent-builders.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/s/open-source-workflow-automation-tools.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/s/open-source-ai-research-agents.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://agentscouthq.com/s/ai-research-assistants.html</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://agentscouthq.com/s/ai-research-assistants.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://agentscouthq.com/s/web-search-apis-for-ai-agents.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://agentscouthq.com/s/open-source-personal-ai-assistants.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://agentscouthq.com/s/ai-customer-support-agents.html</loc><lastmod>2026-10-23</lastmod></url>

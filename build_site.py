@@ -226,6 +226,15 @@ for x in t:
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":x["category"],"item":f"{B}categories/{build_extras.catslug(x['category'])}.html"},{"@type":"ListItem","position":3,"name":x["name"],"item":pg}]}]}
     if _rich:
         ld["@graph"][0]["name"]=_rich[3]; ld["@graph"][0]["about"]={**ld["@graph"][0]["about"],**_rich[1]}; ld["@graph"].append(_rich[2])
+    import build_api as _ba
+    _ab=ld["@graph"][0]["about"]
+    if "operatingSystem" not in _ab: _ab["operatingSystem"]=", ".join(_ba.platforms(x))
+    _pt=_ba.tag(x["pricing"])
+    _ofs=_ab.get("offers")
+    _ofl=_ofs if isinstance(_ofs,list) else ([_ofs] if isinstance(_ofs,dict) else [])
+    if _pt in ("free","freemium") or any(isinstance(o,dict) and str(o.get("price",""))=="0" for o in _ofl): _ab["isAccessibleForFree"]=True
+    elif _pt=="paid": _ab["isAccessibleForFree"]=False
+    if "offers" not in _ab and _pt=="free": _ab["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":x.get("pricing_detail") or x["pricing"]}
     out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
     open(f"tools/{x['slug']}.html","w").write(out)
 print(len(t),"pages")
@@ -289,6 +298,7 @@ import build_lighten; build_lighten.run(t)  # lighter leaderboard, writing-code 
 import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
 import build_intlinks; build_intlinks.run(t)  # Popular lists internal links on home/hub/top best pages (owner-approved Oct 22 2026)
 import build_fix1022; build_fix1022.run(t)  # category options in HTML, agent.json copy, lighter free-tools/new pages (Oct 22 2026)
+import build_aeo as _baeo; _baeo.sync_entity_schema()
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 if _SP is not None: open("sponsor.html","wb").write(_SP)  # keep the hidden sponsor page untouched
 import build_seo_new as _bsn; _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)

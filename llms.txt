@@ -1,10 +1,14 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,756 AI agent tools in 30 categories, including 246 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,758 AI agent tools in 30 categories, including 248 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+
+Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscout-mcp.agentscouthq.workers.dev/mcp).
 
 Site: https://agentscouthq.com/
 Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ
+MCP Registry ID: com.agentscouthq/directory
+MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscout-mcp.agentscouthq.workers.dev/mcp)
 Catalog last checked: 2026-10-25 (Pacific)
 
 ## For AI agents
@@ -25,6 +29,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 
 ## Machine-readable catalog
 
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 248 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [openapi.json](https://agentscouthq.com/openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/
@@ -37,7 +42,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://agentscout-mcp.agentscouthq.workers.dev/mcp (Streamable HTTP, no key) with search_tools, get_tool, list_categories and best_for_task. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 246 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 248 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 
 ## Browse
@@ -52,7 +57,7 @@ Catalog last checked: 2026-10-25 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 246 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 248 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 199 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 137 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 92 tools
@@ -123,11 +128,17 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [Best Personal AI Agents 2026](https://agentscouthq.com/best/personal-ai-agents.html)
 - [Best AI Agents for Business Teams 2026](https://agentscouthq.com/best/ai-business-agents.html)
 - [Best Crypto AI Agents 2026](https://agentscouthq.com/best/crypto-ai-agents.html)
+- [Best Open-Source Browser Automation Agents 2026](https://agentscouthq.com/best/open-source-browser-automation-agents.html)
+- [Best Local & Offline AI Agents 2026](https://agentscouthq.com/best/local-offline-ai-agents.html)
+- [Best open-source browser automation agents](https://agentscouthq.com/best/open-source-browser-automation-agents.html)
+- [Best local & offline AI agents](https://agentscouthq.com/best/local-offline-ai-agents.html)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-24 to 2026-10-25): 48
+- Tools added in the last 2 days (2026-10-24 to 2026-10-25): 50
 
+- [OMOPHub](https://agentscouthq.com/tools/omophub.html) (added 2026-10-25): OMOPHub is a hosted MCP server (mcp.omophub.com and npm @omophub/omophub-mcp, MIT) and REST API for OHDSI OMOP standardized medical vocabularies, giving AI agents and healthcare developers instant access to 11M+ clinical concepts and 63M+ relationships across SNOMED CT, ICD-10, LOINC, RxNorm and CPT without hosting a local vocabulary database.
+- [Wenbu](https://agentscouthq.com/tools/wenbu.html) (added 2026-10-25): Wenbu is a hosted Streamable HTTP MCP server (wenbu 1.5.0 at wenbu.app/mcp, listed in the official MCP Registry as app.wenbu/mcp) and web app for traditional Chinese cultural systems and reflection. Connect Claude, Cursor or any MCP client with no API key required to call seven tools—calculate_bazi, cast_iching, draw_tarot, calculate_ziwei, search_library, read_library and get_daily_card—or run the MIT-licensed server locally.
 - [Editara](https://agentscouthq.com/tools/editara.html) (added 2026-10-25): Editara is a browser-based AI photo editor where you upload an image and describe what to change in plain English—removing objects or people, replacing or removing backgrounds, restoring and colorizing old photos, extending frames and upscaling—across eight selectable models including GPT Image 2, Nano Banana Pro and Seedream 5 Pro, with 12 free daily credits and watermark-free exports.
 - [KIWI](https://agentscouthq.com/tools/kiwi.html) (added 2026-10-25): KIWI is an AI-native business workspace for freelancers, agencies and small teams featuring 24 named AI agents across operations, sales, marketing, finance and support. Sophia (Executive Assistant) is included on the free plan to triage email, schedule calendar events, prepare quotes and update the built-in CRM, while Premium unlocks 23 specialist agents, the Aukimi Creative Suite, video studio and social publishing with human approval before anything is sent.
 - [LobsterMatch](https://agentscouthq.com/tools/lobstermatch.html) (added 2026-10-25): LobsterMatch is a beta professional network for autonomous AI agents where operators register an agent with a public profile, match with complementary agents, coordinate tasks in signed 1:1 dialogs and sessions, and record completed collaborations on both profiles while keeping runtime credentials private.
@@ -266,11 +277,13 @@ Catalog last checked: 2026-10-25 (Pacific)
 - [Best AI Voice Agent Platforms](https://agentscouthq.com/best/ai-voice-agent-platforms.html)
 - [Best Crypto AI Agents](https://agentscouthq.com/best/crypto-ai-agents.html)
 - [Best Free AI Agents (Free Plans)](https://agentscouthq.com/best/free-ai-agents.html)
+- [Best Local & Offline AI Agents](https://agentscouthq.com/best/local-offline-ai-agents.html)
 - [MCP servers that work with Claude Code](https://agentscouthq.com/best/mcp-servers-for-claude-code.html)
 - [MCP servers that work with Codex](https://agentscouthq.com/best/mcp-servers-for-codex.html)
 - [MCP servers that work with Cursor](https://agentscouthq.com/best/mcp-servers-for-cursor.html)
 - [Most-Starred Open-Source AI Agent Projects](https://agentscouthq.com/best/most-starred-open-source-ai-agents.html)
 - [Best No-Code AI Agent Builders](https://agentscouthq.com/best/no-code-ai-agent-builders.html)
+- [Best Open-Source Browser Automation Agents](https://agentscouthq.com/best/open-source-browser-automation-agents.html)
 - [Best Open-Source MCP Servers](https://agentscouthq.com/best/open-source-mcp-servers.html)
 - [Best Personal AI Agents](https://agentscouthq.com/best/personal-ai-agents.html)
 - [Best Self-Hosted AI Agents](https://agentscouthq.com/best/self-hosted-ai-agents.html)

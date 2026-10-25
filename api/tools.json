@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T12:35:24Z",
- "updated": "2026-10-25T12:35:24Z",
+ "generated": "2026-10-25T13:25:13Z",
+ "updated": "2026-10-25T13:25:13Z",
  "last_checked": "2026-10-25",
- "count": 1756,
+ "count": 1758,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -74334,6 +74334,91 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/editara.png",
    "page": "https://agentscouthq.com/tools/editara.html"
+  },
+  {
+   "name": "Wenbu",
+   "slug": "wenbu",
+   "url": "https://wenbu.app/",
+   "website": "https://wenbu.app/",
+   "github": "https://github.com/wenbu-app/wenbu",
+   "category": "MCP servers",
+   "description": "Wenbu is a hosted Streamable HTTP MCP server (wenbu 1.5.0 at wenbu.app/mcp, listed in the official MCP Registry as app.wenbu/mcp) and web app for traditional Chinese cultural systems and reflection. Connect Claude, Cursor or any MCP client with no API key required to call seven tools—calculate_bazi, cast_iching, draw_tarot, calculate_ziwei, search_library, read_library and get_daily_card—or run the MIT-licensed server locally.",
+   "key_features": [
+    "Free and open source (MIT license; hosted Streamable HTTP MCP endpoint at wenbu.app/mcp requires no API key or sign-up)",
+    "Active",
+    "Build an agent",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free and open source (MIT license; hosted Streamable HTTP MCP endpoint at wenbu.app/mcp requires no API key or sign-up)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "wenbu-app/wenbu",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "build an agent",
+    "research the web",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wenbu.png",
+   "page": "https://agentscouthq.com/tools/wenbu.html"
+  },
+  {
+   "name": "OMOPHub",
+   "slug": "omophub",
+   "url": "https://omophub.com/",
+   "website": "https://omophub.com/",
+   "github": "https://github.com/OMOPHub/omophub-mcp",
+   "category": "MCP servers",
+   "description": "OMOPHub is a hosted MCP server (mcp.omophub.com and npm @omophub/omophub-mcp, MIT) and REST API for OHDSI OMOP standardized medical vocabularies, giving AI agents and healthcare developers instant access to 11M+ clinical concepts and 63M+ relationships across SNOMED CT, ICD-10, LOINC, RxNorm and CPT without hosting a local vocabulary database.",
+   "key_features": [
+    "Free tier ($0, 100 requests/day, all standard OMOP vocabularies, Python/TypeScript SDKs and MIT-licensed MCP server); Pay-as-you-go from $10 credit pack ($0.001/request, credits never expire); Enterprise custom volume and SLA",
+    "Active",
+    "5 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free tier ($0, 100 requests/day, all standard OMOP vocabularies, Python/TypeScript SDKs and MIT-licensed MCP server); Pay-as-you-go from $10 credit pack ($0.001/request, credits never expire); Enterprise custom volume and SLA",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "OMOPHub/omophub-mcp",
+   "github_stars": 5,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/omophub.png",
+   "page": "https://agentscouthq.com/tools/omophub.html"
   }
  ]
 }

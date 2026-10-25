@@ -48,6 +48,12 @@ PAGES=[
 ("crypto-ai-agents","Best Crypto AI Agents",lambda x:x["category"]=="crypto","maturity",20,
  "AI agents, MCP servers and toolkits for crypto: on-chain data, wallets, DeFi and research. None of this is financial advice.",
  '<a href="../tasks/crypto-and-wallets.html">Crypto and wallets</a> · <a href="../tasks/trading.html">Trading</a> · <a href="../tasks/smart-contract-security.html">Smart contract security</a>'),
+("open-source-browser-automation-agents","Best Open-Source Browser Automation Agents",lambda x:x["pricing"] in OS and (x["category"]=="browser/computer use" or any(u in ("browser automation","computer use","web scraping","browser & web") for u in x.get("use_cases",[]))),"stars",25,
+ "Open-source browser automation, web-scraping and computer-use agents with public GitHub repositories that you can inspect, self-host or run locally.",
+ '<a href="ai-browser-agents.html">All AI browser agents</a> · <a href="../tasks/browsing-the-web.html">Browsing the web</a> · <a href="../tasks/computer-use.html">Controlling a computer</a>'),
+("local-offline-ai-agents","Best Local & Offline AI Agents",lambda x:x["pricing"] in OS|{"Free","Freemium","Open weights"} and (x["category"]=="models & local runtimes" or any(u in ("local models","offline","privacy") for u in x.get("use_cases",[])) or bool(re.search(r"\b(offline|on-device|local-first|runs locally|local llm|ollama|gguf|llama\.cpp|mlx)\b",(x.get("description","")+" "+" ".join(x.get("use_cases",[]))).lower()))),"stars",25,
+ "AI agents, desktop coding assistants and local LLM runtimes that can run on your own machine or offline without sending data to a third-party cloud.",
+ '<a href="../categories/models-local-runtimes.html">Models &amp; local runtimes</a> · <a href="self-hosted-ai-agents.html">Self-hosted AI agents</a> · <a href="../tasks/running-agents-locally.html">Running agents locally</a>'),
 # best/ai-productivity-tools removed Oct 18 2026: same tools as categories/productivity (redirect in redirects.json)
 # ai-agent-memory-rag-tools removed Oct 18 2026: duplicated categories/memory-rag (redirect in redirects.json)
 # best/ai-agent-security-tools removed Oct 18 2026: same tools as categories/security-governance (redirect in redirects.json)
