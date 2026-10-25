@@ -44750,5 +44750,39 @@
     "tasks_exclude": [
       "browsing-the-web"
     ]
+  },
+  {
+    "name": "Raydo Agent OS",
+    "url": "https://raydo.ai/",
+    "website": "https://raydo.ai/",
+    "github": "https://github.com/RaydoAI/Raydo",
+    "repo": "RaydoAI/Raydo",
+    "github_stars": 1,
+    "socials": [
+      "https://x.com/raydoai"
+    ],
+    "runs_locally": true,
+    "id": 1768,
+    "slug": "raydo-agent-os",
+    "logo": "assets/logos/raydo-agent-os.png",
+    "category": "browser/computer use",
+    "description": "The AI agent operating system for real work. Raydo gives autonomous agents a dedicated desktop workspace where they can browse the web, read and edit local files, run multi-step workflows across apps, and hand off tasks for human review. Built for founders, operators, and engineering teams that want background agents executing repeatable workflows with full step logs, sandboxing, and approval checkpoints.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free desktop workspace for macOS (Apple Silicon) and Windows; Raydo Cloud plans Plus $20/month (20,000 shared credits), Pro $100/month (100,000 credits) and Max $200/month (200,000 credits, 30% off annual), plus credit top-ups from $20",
+    "use_cases": [
+      "control a computer",
+      "automate the browser",
+      "automate workflows"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-24",
+    "added": "2026-10-24",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-24",
+    "good_for": "running desktop AI agents across live browser pages, local files and CLI tools with step logs, approval checkpoints and reusable deliverable records"
   }
 ]

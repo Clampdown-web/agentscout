@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T02:32:07Z",
- "updated": "2026-10-25T02:32:07Z",
+ "generated": "2026-10-25T03:17:12Z",
+ "updated": "2026-10-25T03:17:12Z",
  "last_checked": "2026-10-24",
- "count": 1748,
+ "count": 1749,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -73990,6 +73990,52 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/menlo-insurance-mcp.png",
    "page": "https://agentscouthq.com/tools/menlo-insurance-mcp.html"
+  },
+  {
+   "name": "Raydo Agent OS",
+   "slug": "raydo-agent-os",
+   "url": "https://raydo.ai/",
+   "website": "https://raydo.ai/",
+   "github": "https://github.com/RaydoAI/Raydo",
+   "category": "browser/computer use",
+   "description": "The AI agent operating system for real work. Raydo gives autonomous agents a dedicated desktop workspace where they can browse the web, read and edit local files, run multi-step workflows across apps, and hand off tasks for human review. Built for founders, operators, and engineering teams that want background agents executing repeatable workflows with full step logs, sandboxing, and approval checkpoints.",
+   "key_features": [
+    "Free desktop workspace for macOS (Apple Silicon) and Windows; Raydo Cloud plans Plus $20/month (20,000 shared credits), Pro $100/month (100,000 credits) and Max $200/month (200,000 credits, 30% off annual), plus credit top-ups from $20",
+    "Active",
+    "1 GitHub stars",
+    "Control a computer",
+    "Automate the browser",
+    "Automate workflows"
+   ],
+   "pricing": "Free desktop workspace for macOS (Apple Silicon) and Windows; Raydo Cloud plans Plus $20/month (20,000 shared credits), Pro $100/month (100,000 credits) and Max $200/month (200,000 credits, 30% off annual), plus credit top-ups from $20",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "RaydoAI/Raydo",
+   "github_stars": 1,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "automate the browser",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/raydo-agent-os.png",
+   "page": "https://agentscouthq.com/tools/raydo-agent-os.html"
   }
  ]
 }
