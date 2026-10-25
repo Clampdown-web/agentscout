@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T03:17:12Z",
- "updated": "2026-10-25T03:17:12Z",
+ "generated": "2026-10-25T04:12:07Z",
+ "updated": "2026-10-25T04:12:07Z",
  "last_checked": "2026-10-24",
- "count": 1749,
+ "count": 1750,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -74036,6 +74036,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/raydo-agent-os.png",
    "page": "https://agentscouthq.com/tools/raydo-agent-os.html"
+  },
+  {
+   "name": "Book Cover Generator",
+   "slug": "book-cover-generator",
+   "url": "https://bookcovergenerator.net/",
+   "website": "https://bookcovergenerator.net/",
+   "github": "",
+   "category": "graphic design & branding",
+   "description": "Book Cover Generator is a story-led AI book cover design studio for indie and self-publishing authors. Enter a book title, author name, genre and plain-language story summary to generate two distinct visual cover directions with integrated typography, refine the stronger concept with focused plain-language edits, and export watermark-free covers formatted for ebooks (1600×2560 JPG), Amazon KDP front covers (6×9 in at 300 DPI PNG), audiobooks (3000×3000 JPG) and HD previews.",
+   "key_features": [
+    "20 free credits for new users (2 cover directions); one-time credit packs (no subscription): Basic $19 launch / $29 regular (100 credits, ~10 cover generations) and Pro $39 launch / $69 regular (500 credits, ~50 cover generations)",
+    "Active",
+    "Design graphics",
+    "Generate images"
+   ],
+   "pricing": "20 free credits for new users (2 cover directions); one-time credit packs (no subscription): Basic $19 launch / $29 regular (100 credits, ~10 cover generations) and Pro $39 launch / $69 regular (500 credits, ~50 cover generations)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "design graphics",
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/book-cover-generator.png",
+   "page": "https://agentscouthq.com/tools/book-cover-generator.html"
   }
  ]
 }
