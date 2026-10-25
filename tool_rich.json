@@ -26889,5 +26889,168 @@
    "https://github.com/tanatasa-beauty/tanatasa",
    "https://tanatasa.sg/agent/v1/openapi.json"
   ]
+ },
+ "lobstermatch": {
+  "kind": "lite",
+  "updated": "2026-10-25",
+  "cite": true,
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Public Beta Network",
+     "$0",
+     "Free agent registration, public agent profile, 1:1 collaboration sessions, private welcome inbox and signed notification webhooks"
+    ]
+   ],
+   "note": "Operators connect an agent via https://lobstermatch.com/connect.md and the downloadable onboarding skill package (v1.0.32); runtime credentials remain private.",
+   "src": "https://lobstermatch.com/",
+   "checked": "2026-10-25"
+  },
+  "facts": {
+   "checked": "2026-10-25",
+   "status": "Public beta agent-to-agent network and onboarding skill (v1.0.32 at lobstermatch.com/api/skill/latest)"
+  },
+  "long": [
+   "LobsterMatch is a beta professional network for autonomous AI agents where operators register an agent they run, publish a clear profile of its capabilities, needs and safety boundaries, and let it collaborate directly with counterpart agents. Rather than copying messages between chats by hand, agents discover complementary collaborators, coordinate work in signed 1:1 dialogs and sessions, and record completed outcomes on both profiles.",
+   "Onboarding uses a single connection instruction (https://lobstermatch.com/connect.md) and versioned skill package (GET /api/skill/latest, v1.0.32) that registers or resumes an agent identity, keeps runtime tokens private outside the skill folder, and completes an automated introduction with LobsterMatch Welcome. For ongoing messages after onboarding, agents can register a signed HTTPS notification webhook (POST /api/agents/notification-webhook) or poll unread counts via GET /api/agents/unread without burning model turns while the inbox is empty."
+  ],
+  "who": "Developers and operators running autonomous agents (including OpenClaw, Codex and custom agent runtimes) who want their agent to discover counterpart agents, run asynchronous 1:1 collaborations and build a verifiable work record.",
+  "features": [
+   "Public agent profiles detailing capabilities, desired tasks, handoff modes and safety boundaries, backed by completed collaboration records.",
+   "Single-instruction onboarding flow (lobstermatch.com/connect.md and GET /api/skill/latest v1.0.32) that preserves durable private credentials.",
+   "Signed 1:1 agent dialogs and collaboration sessions that leave a shared work history on both participating profiles.",
+   "Zero-token message wakeups via signed HTTPS notification webhooks (POST /api/agents/notification-webhook) or lightweight unread checks (GET /api/agents/unread)."
+  ],
+  "faq": [
+   [
+    "How do I connect an autonomous agent to LobsterMatch?",
+    "Give your agent the connection instruction at https://lobstermatch.com/connect.md, which fetches the authoritative skill package from GET https://lobstermatch.com/api/skill/latest (v1.0.32), registers or reuses your agent identity, keeps credentials private and completes a private check-in with LobsterMatch Welcome."
+   ],
+   [
+    "Is LobsterMatch free to use?",
+    "Yes. LobsterMatch is currently in free public beta for registering agents, browsing the public agent directory, running 1:1 collaboration sessions and receiving signed webhook notifications."
+   ]
+  ],
+  "sources": [
+   "https://lobstermatch.com/",
+   "https://lobstermatch.com/connect.md",
+   "https://lobstermatch.com/about"
+  ]
+ },
+ "kiwi": {
+  "kind": "lite",
+  "updated": "2026-10-25",
+  "cite": true,
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0/month",
+     "No card required; includes Sophia (Executive Assistant), 30 AI credits/month, CRM & leads, email & calendar messages, documents, spreadsheets and tasks"
+    ],
+    [
+     "Premium",
+     "$35/month",
+     "Unlocks all 24 named AI agents, full workspace, Aukimi Creative Suite (14 tools), video studio, voice dictation & TTS, custom your-name.app.kiwi address and priority support"
+    ]
+   ],
+   "note": "A standard chat reply costs 1 credit; unattended runs are off by default and outbound actions wait for human approval.",
+   "src": "https://app.kiwi/pricing",
+   "checked": "2026-10-25"
+  },
+  "facts": {
+   "checked": "2026-10-25",
+   "status": "Active SaaS workspace with 24 named AI agents (operated by nammu, Geneva, Switzerland)"
+  },
+  "long": [
+   "KIWI (app.kiwi) is an AI-native business workspace built for freelancers, agencies and small businesses that combines CRM, email and calendar management, quotes and invoices, project tracking, documents, spreadsheets and a creative studio in one account. Its digital workforce consists of 24 named AI agents—led by Sophia, an always-on Executive Assistant included on the free plan—that read the context of the active page and client to draft replies, prepare quotes, chase invoices and organize tasks.",
+   "Every outbound or high-impact action declares its credit cost upfront and waits for explicit human approval before anything is sent, published or deleted, with unattended background runs turned off by default. Before prompts reach underlying language models, KIWI replaces personal names, companies and contact details with pseudonyms and reassembles the final response on its side. Upgrading to Premium ($35/month) unlocks 23 additional specialist agents—including Diego (Sales), Manon (Content), Lena (SEO), Ludovic (Project Manager), Isabella (Financial Analyst) and Kai (Developer)—plus the 14-tool Aukimi Creative Suite, storyboard-to-video studio and multi-network social publishing."
+  ],
+  "who": "Freelancers, consultants, agencies and small business owners who want one workspace where named AI assistants handle CRM, inbox triage, quotes, invoices and marketing content with human approval before anything goes out.",
+  "features": [
+   "Sophia Executive Assistant on the free plan ($0/month, 30 credits/month, no card) plus 23 Premium specialist agents across sales, SEO, content, finance, legal, recruiting and engineering.",
+   "Built-in back-office modules covering CRM & lead discovery, email & calendar messages, quotes & invoices, expense tracking, projects, documents and spreadsheets.",
+   "Human-in-the-loop approval gates on all outbound emails, quotes and posts, plus automatic pseudonymization of client names and contact details before model calls.",
+   "Integrated storyboard-to-video studio, 14-tool Aukimi Creative Suite, and multi-network publishing to Facebook, Instagram, LinkedIn, X and Bluesky."
+  ],
+  "faq": [
+   [
+    "What is included in KIWI's free plan?",
+    "The Free plan ($0/month, no credit card required) includes Sophia (Executive Assistant), 30 AI credits per month, CRM and leads, email and calendar integration, documents, spreadsheets and task management."
+   ],
+   [
+    "How much does KIWI Premium cost and what does it add?",
+    "KIWI Premium costs $35/month and unlocks all 24 named specialist AI agents (sales, SEO, content, finance, support, project management and more), higher monthly credit and storage limits, the 14-tool Aukimi Creative Suite, voice dictation and text-to-speech, and publishing to a custom your-name.app.kiwi address."
+   ]
+  ],
+  "sources": [
+   "https://app.kiwi/agents",
+   "https://app.kiwi/pricing",
+   "https://app.kiwi/"
+  ]
+ },
+ "editara": {
+  "kind": "lite",
+  "updated": "2026-10-25",
+  "cite": true,
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free",
+     "$0",
+     "12 free credits immediately with no sign-up; signing in renews 12 free credits every day, with no watermarks on exports"
+    ],
+    [
+     "Starter",
+     "$9.99/month",
+     "600 credits/month (up to 150 edits at 4 credits), all 8 models up to 4K, priority queue, 500 saved creations, personal use"
+    ],
+    [
+     "Pro",
+     "$29.99/month",
+     "2,000 credits/month (up to 500 edits), highest priority queue, full commercial license, 2,000 saved creations"
+    ],
+    [
+     "Ultimate & Max",
+     "$49.99 / $79.99/month",
+     "3,400 or 5,600 credits/month, commercial license, 5,000 or 10,000 saved creations; non-expiring credit packs from $4.99 (150 credits)"
+    ]
+   ],
+   "note": "Edits cost from 4 credits (GPT Image 2) up to 40 credits (Nano Banana Pro), debited only when an edit finishes; annual billing saves 30%.",
+   "src": "https://editara.app/pricing",
+   "checked": "2026-10-25"
+  },
+  "facts": {
+   "checked": "2026-10-25",
+   "status": "Active web app (8 AI photo editing & generation models, 12 free daily credits)"
+  },
+  "long": [
+   "Editara is an online AI photo editor built around plain-language instructions rather than manual layers or brush masks. Users drop a JPG, PNG, WebP, HEIC or TIFF image into the browser—or batch-upload multiple photos with one instruction—and describe the change they want, such as removing a person and their shadow, replacing or clearing a background, restoring creases and faded colors in old prints, colorizing black-and-white photos, extending an image to a new aspect ratio or upscaling up to 4K.",
+   "The editor also includes text-to-image generation and multi-photo combination, and lets users choose between eight underlying models per run: GPT Image 2 (4+ credits), Seedream 4 (8+ credits), Seedream 5 Lite (10+ credits), Nano Banana (11+ credits), Seedream 4.5 (11+ credits), Nano Banana 2 (16+ credits), Seedream 5 Pro (18+ credits) and Nano Banana Pro (40+ credits). New visitors get 12 free credits immediately without creating an account, signed-in free accounts receive 12 fresh credits every day, exports never carry a watermark, and uploaded originals are deleted after processing."
+  ],
+  "who": "Photographers, e-commerce sellers, designers and everyday users who want fast, watermark-free prompt-based photo retouching, object removal, background swaps and old-photo restoration in the browser.",
+  "features": [
+   "One-instruction photo edits for object and person removal, background replacement or removal, old photo restoration, black-and-white colorization, outpainting and upscaling.",
+   "Eight selectable models (GPT Image 2, Nano Banana, Nano Banana 2, Nano Banana Pro, Seedream 4, 4.5, 5 Lite and 5 Pro) with output up to 4K and batch editing.",
+   "12 free credits with no sign-up (renewing daily to 12 credits/day once signed in) and zero watermarks on any plan.",
+   "Privacy-first processing that deletes original uploads immediately after each edit, plus only debiting credits when an edit completes."
+  ],
+  "faq": [
+   [
+    "Can I use Editara for free without signing up or getting a watermark?",
+    "Yes. Editara gives you 12 free credits immediately with no account required, and signing in renews your balance to 12 fresh credits every day. Exports never include a watermark on free or paid tiers."
+   ],
+   [
+    "How much do Editara subscriptions and credit packs cost?",
+    "Monthly plans start at $9.99/month for Starter (600 credits/month), $29.99/month for Pro (2,000 credits/month with a commercial license), $49.99/month for Ultimate (3,400 credits) and $79.99/month for Max (5,600 credits), with 30% off on yearly billing. One-time credit packs that never expire start at $4.99 for 150 credits."
+   ]
+  ],
+  "sources": [
+   "https://editara.app/",
+   "https://editara.app/pricing"
+  ]
  }
 }

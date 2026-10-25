@@ -44902,5 +44902,92 @@
       "terminal-coding",
       "agent-payments"
     ]
+  },
+  {
+    "name": "LobsterMatch",
+    "url": "https://lobstermatch.com/",
+    "website": "https://lobstermatch.com/",
+    "github": "",
+    "id": 1773,
+    "slug": "lobstermatch",
+    "logo": "assets/logos/lobstermatch.png",
+    "category": "agent infra",
+    "description": "LobsterMatch is a beta professional network for autonomous AI agents where operators register an agent with a public profile, match with complementary agents, coordinate tasks in signed 1:1 dialogs and sessions, and record completed collaborations on both profiles while keeping runtime credentials private.",
+    "pricing": "Free",
+    "pricing_detail": "Free beta (public agent directory, onboarding skill v1.0.32 at lobstermatch.com/connect.md, private welcome inbox and signed notification webhooks)",
+    "use_cases": [
+      "build multi-agent systems",
+      "automate workflows"
+    ],
+    "maturity": "Beta",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "giving autonomous AI agents a public profile, matching with counterpart agents for 1:1 sessions, and keeping verifiable collaboration records"
+  },
+  {
+    "name": "KIWI",
+    "url": "https://app.kiwi/agents",
+    "website": "https://app.kiwi/agents",
+    "github": "",
+    "socials": [
+      "https://x.com/Kiwi_App_ai"
+    ],
+    "id": 1774,
+    "slug": "kiwi",
+    "logo": "assets/logos/kiwi.png",
+    "category": "business agents",
+    "description": "KIWI is an AI-native business workspace for freelancers, agencies and small teams featuring 24 named AI agents across operations, sales, marketing, finance and support. Sophia (Executive Assistant) is included on the free plan to triage email, schedule calendar events, prepare quotes and update the built-in CRM, while Premium unlocks 23 specialist agents, the Aukimi Creative Suite, video studio and social publishing with human approval before anything is sent.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free ($0/month, no card required: Sophia executive assistant, 30 AI credits/month, CRM, email & calendar, documents & spreadsheets, tasks); Premium $35/month (all 24 AI agents, full workspace, Aukimi Creative Suite, voice dictation & TTS, custom your-name.app.kiwi subdomain)",
+    "use_cases": [
+      "business agents",
+      "sales & support",
+      "automate workflows"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "running back-office email, calendar, CRM, quotes, invoices and content from one workspace with Sophia and 23 specialist AI agents"
+  },
+  {
+    "name": "Editara",
+    "url": "https://editara.app/",
+    "website": "https://editara.app/",
+    "github": "",
+    "id": 1775,
+    "slug": "editara",
+    "logo": "assets/logos/editara.png",
+    "category": "photography & photo editing",
+    "description": "Editara is a browser-based AI photo editor where you upload an image and describe what to change in plain English—removing objects or people, replacing or removing backgrounds, restoring and colorizing old photos, extending frames and upscaling—across eight selectable models including GPT Image 2, Nano Banana Pro and Seedream 5 Pro, with 12 free daily credits and watermark-free exports.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free: 12 credits to start with no sign-up (renews to 12 free credits/day when signed in, no watermarks); Monthly plans: Starter $9.99/mo (600 credits), Pro $29.99/mo (2,000 credits, commercial license), Ultimate $49.99/mo (3,400 credits), Max $79.99/mo (5,600 credits); non-expiring credit packs from $4.99 (150 credits)",
+    "use_cases": [
+      "edit photos",
+      "remove backgrounds",
+      "restore photos",
+      "upscale images"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "removing objects, swapping backgrounds, restoring old photos and upscaling images in the browser with plain-language instructions and no watermark"
   }
 ]

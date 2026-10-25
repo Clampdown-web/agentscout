@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T08:36:27Z",
- "updated": "2026-10-25T08:36:27Z",
+ "generated": "2026-10-25T10:24:05Z",
+ "updated": "2026-10-25T10:24:05Z",
  "last_checked": "2026-10-25",
- "count": 1753,
+ "count": 1756,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -74202,6 +74202,138 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tanatasa-beauty-mcp.png",
    "page": "https://agentscouthq.com/tools/tanatasa-beauty-mcp.html"
+  },
+  {
+   "name": "LobsterMatch",
+   "slug": "lobstermatch",
+   "url": "https://lobstermatch.com/",
+   "website": "https://lobstermatch.com/",
+   "github": "",
+   "category": "agent infra",
+   "description": "LobsterMatch is a beta professional network for autonomous AI agents where operators register an agent with a public profile, match with complementary agents, coordinate tasks in signed 1:1 dialogs and sessions, and record completed collaborations on both profiles while keeping runtime credentials private.",
+   "key_features": [
+    "Free beta (public agent directory, onboarding skill v1.0.32 at lobstermatch.com/connect.md, private welcome inbox and signed notification webhooks)",
+    "Beta",
+    "Build multi-agent systems",
+    "Automate workflows"
+   ],
+   "pricing": "Free beta (public agent directory, onboarding skill v1.0.32 at lobstermatch.com/connect.md, private welcome inbox and signed notification webhooks)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lobstermatch.png",
+   "page": "https://agentscouthq.com/tools/lobstermatch.html"
+  },
+  {
+   "name": "KIWI",
+   "slug": "kiwi",
+   "url": "https://app.kiwi/agents",
+   "website": "https://app.kiwi/agents",
+   "github": "",
+   "category": "business agents",
+   "description": "KIWI is an AI-native business workspace for freelancers, agencies and small teams featuring 24 named AI agents across operations, sales, marketing, finance and support. Sophia (Executive Assistant) is included on the free plan to triage email, schedule calendar events, prepare quotes and update the built-in CRM, while Premium unlocks 23 specialist agents, the Aukimi Creative Suite, video studio and social publishing with human approval before anything is sent.",
+   "key_features": [
+    "Free ($0/month, no card required: Sophia executive assistant, 30 AI credits/month, CRM, email & calendar, documents & spreadsheets, tasks); Premium $35/month (all 24 AI agents, full workspace, Aukimi Creative Suite, voice dictation & TTS, custom your-name.app.kiwi subdomain)",
+    "Active",
+    "Sales & support",
+    "Automate workflows"
+   ],
+   "pricing": "Free ($0/month, no card required: Sophia executive assistant, 30 AI credits/month, CRM, email & calendar, documents & spreadsheets, tasks); Premium $35/month (all 24 AI agents, full workspace, Aukimi Creative Suite, voice dictation & TTS, custom your-name.app.kiwi subdomain)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents",
+    "sales & support",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kiwi.png",
+   "page": "https://agentscouthq.com/tools/kiwi.html"
+  },
+  {
+   "name": "Editara",
+   "slug": "editara",
+   "url": "https://editara.app/",
+   "website": "https://editara.app/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "Editara is a browser-based AI photo editor where you upload an image and describe what to change in plain English—removing objects or people, replacing or removing backgrounds, restoring and colorizing old photos, extending frames and upscaling—across eight selectable models including GPT Image 2, Nano Banana Pro and Seedream 5 Pro, with 12 free daily credits and watermark-free exports.",
+   "key_features": [
+    "Free: 12 credits to start with no sign-up (renews to 12 free credits/day when signed in, no watermarks); Monthly plans: Starter $9.99/mo (600 credits), Pro $29.99/mo (2,000 credits, commercial license), Ultimate $49.99/mo (3,400 credits), Max $79.99/mo (5,600 credits); non-expiring credit packs from $4.99 (150 credits)",
+    "Active",
+    "Edit photos",
+    "Remove backgrounds",
+    "Restore photos",
+    "Upscale images"
+   ],
+   "pricing": "Free: 12 credits to start with no sign-up (renews to 12 free credits/day when signed in, no watermarks); Monthly plans: Starter $9.99/mo (600 credits), Pro $29.99/mo (2,000 credits, commercial license), Ultimate $49.99/mo (3,400 credits), Max $79.99/mo (5,600 credits); non-expiring credit packs from $4.99 (150 credits)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit photos",
+    "remove backgrounds",
+    "restore photos",
+    "upscale images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/editara.png",
+   "page": "https://agentscouthq.com/tools/editara.html"
   }
  ]
 }
