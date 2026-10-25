@@ -8,7 +8,7 @@ WRAP=('<span class="sharewrap"><button type="button" class="btn sharebtn" data-s
 EXTRA={"index.html","new.html","news.html","quiz.html","generate.html","about.html","badges.html","newsletter.html"}  # added Oct 18 2026 share audit
 CENTER={"index.html","generate.html"}  # centered hero h1 -> centered button
 def wanted(f):
-    return (f.startswith(("tools/","best/","s/","for/","categories/","tasks/","compare/","news/","free-tools/","mcp/")) or f=="free-tools.html" or f in EXTRA)
+    return (f.startswith(("tools/","best/","s/","for/","categories/","tasks/","compare/","news/","free-tools/","mcp/","leaderboard/","skills/")) or f=="free-tools.html" or f in EXTRA)
 def apply(f,s,d,V):
     if not wanted(f) or "<h1" not in s: return s
     if 'data-share' not in s:

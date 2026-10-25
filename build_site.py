@@ -104,7 +104,6 @@ UC_SET={"editara":["edit photos","remove backgrounds","restore photos","upscale 
 "sundae":["personal agents","automate the browser"],  # Oct 21: guess gave sales & support
 "wavespeed-mcp":["connect tools via MCP","generate images","generate video"],  # Oct 21
 "trivago-mcp":["connect tools via MCP","research the web"],  # Oct 21: guess gave voice
-"sandbox0":["run code safely","build an agent"],  # submission Oct 21: managed persistent agent sandboxes
 "wren-x402-doctor":["crypto"],  # maker edit Oct 21: x402 seller tool; "30-day calls" tripped the voice rule
 "wren-pre-sign-check":["security & governance","build an agent"],  # submission Oct 21: pre-sign wallet check API
 "iart":["generate video","design graphics","voiceover"],  # submission Oct 20 PM: keyword guess gave subtitles & transcripts
@@ -136,6 +135,7 @@ UC_SET={"editara":["edit photos","remove backgrounds","restore photos","upscale 
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
+GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
     d=x["name"]+" "+x["description"]+" "+x["category"]
@@ -148,6 +148,10 @@ for x in t:
     if x["slug"] in UC_SET: x["use_cases"]=list(UC_SET[x["slug"]])
     if os.path.exists(f"assets/logos/{x['slug']}.png"): x["logo"]=f"assets/logos/{x['slug']}.png"
     else: x.pop("logo",None)
+    _g=GH.get(x["slug"]) or {}
+    if x.get("github") and _g.get("stars") is not None:
+        x["github_stars"]=_g["stars"]
+        if _g.get("fetched"): x["stars_checked"]=_g["fetched"]
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
@@ -171,7 +175,6 @@ def soc_row(x):
     a="".join(f'<a class="b" href="{e(u)}" target="_blank" rel="nofollow noopener" aria-label="{e(x["name"])} on {l}">{l} ↗</a>' for u,l in ls)
     return f'<h2 style="font-size:16px;margin-bottom:10px">Official channels</h2><div class="badges soc" style="margin-bottom:32px;flex-wrap:wrap">{a}</div>'
 
-GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
 build_rich.REL=REL
 for x in t:

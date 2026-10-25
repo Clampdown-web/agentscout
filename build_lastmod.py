@@ -32,7 +32,7 @@ def _tooldates(st,today):
     try: R=json.load(open("tool_rich.json"))
     except Exception: R={}
     if isinstance(R,list): R={r.get("slug"):r for r in R if isinstance(r,dict)}
-    V={"verified","github_stars","stars","new","featured","last_checked","link_ok","status_code"}  # daily-refreshed fields are not content changes
+    V={"verified","github_stars","stars","stars_checked","new","featured","last_checked","link_ok","status_code"}  # daily-refreshed fields are not content changes
     TS=st.setdefault("__tools__",{}); out={}
     for x in t:
         sl=x.get("slug"); 
