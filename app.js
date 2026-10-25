@@ -58,7 +58,7 @@ AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){
    (Beehiiv's page ignores ?email=, so we don't ask for the address twice.) consent.js keeps these forms hidden until
    embedded content is allowed. */
 (function(){
-var LATEST={"title": "AgentScout Weekly #2: 16 maker-built tools + 5 picks", "date": "Oct 20, 2026", "sub": "New this week: tools sent in by their makers, plus 5 picks for builders and everyday users", "url": "https://agentscout.beehiiv.com/p/agentscout-weekly-2-16-maker-built-tools-5-picks"};
+var LATEST={"title": "AgentScout Bonus: 5 agent tools worth trying this week", "date": "Oct 24, 2026", "sub": "A short mid-week pick of new additions to AgentScout", "url": "https://agentscout.beehiiv.com/p/agentscout-bonus-5-agent-tools-worth-trying-this-week"};
 var SRC="https://agentscout.beehiiv.com/subscribe";
 try{fetch("/data/latest-issue.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.title)return;LATEST={title:j.title,date:j.display_date||j.date,sub:j.subtitle||"",url:j.url};document.querySelectorAll(".nllatest").forEach(function(p){var l=p.querySelector(".nlli");if(l){l.href=LATEST.url;l.querySelector("strong").textContent=LATEST.title}var m=p.querySelector(".nlmeta");if(m)m.textContent="· "+LATEST.date+" · "+LATEST.sub})}).catch(function(){})}catch(e){}
 function open1(form,host,msg){var f=host.querySelector("iframe.nlframe");if(!f){f=document.createElement("iframe");f.className="nlframe";f.title="Newsletter signup form (Beehiiv)";f.src=SRC;host.appendChild(f)}

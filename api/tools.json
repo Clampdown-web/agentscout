@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-24T17:52:20Z",
- "updated": "2026-10-24T17:52:20Z",
+ "generated": "2026-10-25T02:32:07Z",
+ "updated": "2026-10-25T02:32:07Z",
  "last_checked": "2026-10-24",
- "count": 1737,
+ "count": 1748,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -73517,6 +73517,479 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/my-green-robot.png",
    "page": "https://agentscouthq.com/tools/my-green-robot.html"
+  },
+  {
+   "name": "Zozo HQ",
+   "slug": "zozo-hq",
+   "url": "https://zozohq.com/",
+   "website": "https://zozohq.com/",
+   "github": "",
+   "category": "coding",
+   "description": "Zozo HQ is a coding-agent harness that turns dependency-ready issues from GitHub or matched Jira Cloud and Bitbucket Cloud into reviewable pull requests using isolated git worktrees, Claude Code, Codex or OpenCode via OpenRouter, and structured human clarification before anything merges.",
+   "key_features": [
+    "Free Local Stack ($0 on your own machine, bring your own model runtime); Hosted plans $40, $50 or $60/month before tax with a dedicated machine, no inference markup and a 14-day money-back guarantee",
+    "Active",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "Free Local Stack ($0 on your own machine, bring your own model runtime); Hosted plans $40, $50 or $60/month before tax with a dedicated machine, no inference markup and a 14-day money-back guarantee",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zozo-hq.png",
+   "page": "https://agentscouthq.com/tools/zozo-hq.html"
+  },
+  {
+   "name": "Reverse Image Location (GeoSolver)",
+   "slug": "reverse-image-location-geosolver",
+   "url": "https://reverseimagelocation.com/",
+   "website": "https://reverseimagelocation.com/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Reverse Image Location (GeoSolver) is an AI photo geolocation tool and hosted Streamable HTTP MCP server (reverseimagelocation.com/mcp) that analyzes visible road signs, terrain, vegetation and architecture to suggest clue-by-clue location hypotheses for geography learning and public-place OSINT.",
+   "key_features": [
+    "Paid: Monthly $19.99/month or Yearly $69.99/year ($5.83/month) with a 7-day refund before paid use; separate EXIF viewer and geography guides are free",
+    "Active",
+    "Connect tools via mcp",
+    "Computer vision",
+    "Research the web"
+   ],
+   "pricing": "Paid: Monthly $19.99/month or Yearly $69.99/year ($5.83/month) with a 7-day refund before paid use; separate EXIF viewer and geography guides are free",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "computer vision",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/reverse-image-location-geosolver.png",
+   "page": "https://agentscouthq.com/tools/reverse-image-location-geosolver.html"
+  },
+  {
+   "name": "Mach",
+   "slug": "mach",
+   "url": "https://machgtm.com/",
+   "website": "https://machgtm.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Mach is an AI sales teammate for B2B software teams that builds an account brain from your website, finds and researches buyers with cited sources, maps account plans and writes tailored first messages that the human seller reviews and sends.",
+   "key_features": [
+    "Paid: $1,000 per seat/month in early access (includes deep research for 50 companies/month per seat; 2 months free on annual billing)",
+    "Active",
+    "Sales & support",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Paid: $1,000 per seat/month in early access (includes deep research for 50 companies/month per seat; 2 months free on annual billing)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mach.png",
+   "page": "https://agentscouthq.com/tools/mach.html"
+  },
+  {
+   "name": "tta1",
+   "slug": "tta1",
+   "url": "https://www.tta1.com/",
+   "website": "https://www.tta1.com/",
+   "github": "",
+   "category": "voice",
+   "description": "tta1 is a multilingual AI article-to-audio reader that fetches web articles, newsletters, X threads and X Articles—or accepts uploaded PDFs, Word documents and screenshots—strips menus and ads, optionally translates into your chosen language, and reads them aloud across 30 natural voices and 25 languages.",
+   "key_features": [
+    "Free ($0/month, no card, 1,000 words/month across 30 voices and 25 languages); Plus $6/month (25,000 words/month, PDF/Word/screenshot uploads, MP3 downloads); Pro $12/month (50,000 words/month); $5 per 25,000-word non-expiring top-up",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free ($0/month, no card, 1,000 words/month across 30 voices and 25 languages); Plus $6/month (25,000 words/month, PDF/Word/screenshot uploads, MP3 downloads); Pro $12/month (50,000 words/month); $5 per 25,000-word non-expiring top-up",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tta1.png",
+   "page": "https://agentscouthq.com/tools/tta1.html"
+  },
+  {
+   "name": "CCC",
+   "slug": "ccc",
+   "url": "https://ccc.amirfish.ai/",
+   "website": "https://ccc.amirfish.ai/",
+   "github": "https://github.com/amirfish1/claude-command-center",
+   "category": "coding",
+   "description": "CCC (Claude Command Center) is a free, source-available local dashboard for macOS, Linux and Windows that puts every Claude Code, Codex, Cursor and five other coding-agent sessions on one visual board, highlights which session needs your input, tracks token usage and lets sessions continue on $0 models when rate limits hit.",
+   "key_features": [
+    "Free and source-available (FSL-1.1-MIT, free for personal and commercial use, runs locally on localhost)",
+    "Active",
+    "202 GitHub stars",
+    "Write code",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Free and source-available (FSL-1.1-MIT, free for personal and commercial use, runs locally on localhost)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "coding",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "amirfish1/claude-command-center",
+   "github_stars": 202,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ccc.png",
+   "page": "https://agentscouthq.com/tools/ccc.html"
+  },
+  {
+   "name": "TokenRip",
+   "slug": "tokenrip",
+   "url": "https://tokenrip.com/",
+   "website": "https://tokenrip.com/",
+   "github": "https://github.com/tokenrip/cli",
+   "category": "agent infra",
+   "description": "TokenRip is a shared multi-agent workspace that Claude Code, Codex, Cursor, ChatGPT, Grok and MCP-connected agents read and write together, storing versioned files, decisions and task feeds with one-line setup and human approval queues for outbound actions.",
+   "key_features": [
+    "Free ($0/month, unlimited workspaces and agents, 1 GB storage); optional Pro $20/month (10 GB storage) and Team $50/month",
+    "Active",
+    "Build multi-agent systems",
+    "Give agents memory",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free ($0/month, unlimited workspaces and agents, 1 GB storage); optional Pro $20/month (10 GB storage) and Team $50/month",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "crypto",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tokenrip/cli",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "give agents memory",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tokenrip.png",
+   "page": "https://agentscouthq.com/tools/tokenrip.html"
+  },
+  {
+   "name": "Agiloop",
+   "slug": "agiloop",
+   "url": "https://agiloop.ai/",
+   "website": "https://agiloop.ai/",
+   "github": "",
+   "category": "app builders",
+   "description": "Agiloop is an AI-orchestrated software development platform that connects product requirements, architecture planning, AI coding, testing and production insights in one continuous loop, including a free Code Health and Readiness Assessment for existing repositories.",
+   "key_features": [
+    "Free planning, inspection and Code Health & Readiness Assessment; pay-as-you-go code generation at $0.25 per Agile story point with your own Anthropic/model API key or $1.00 per story point with Agiloop's key (no subscription)",
+    "Active",
+    "Build apps without code",
+    "Write code"
+   ],
+   "pricing": "Free planning, inspection and Code Health & Readiness Assessment; pay-as-you-go code generation at $0.25 per Agile story point with your own Anthropic/model API key or $1.00 per story point with Agiloop's key (no subscription)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build apps without code",
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agiloop.png",
+   "page": "https://agentscouthq.com/tools/agiloop.html"
+  },
+  {
+   "name": "Clipkai",
+   "slug": "clipkai",
+   "url": "https://clipkai.com/",
+   "website": "https://clipkai.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "Clipkai is a browser-based AI video generator and photo editor that creates watermark-free videos from text prompts or reference photos across Seedance, Kling, Wan, Veo and MiniMax models, paired with 25+ one-click AI photo editing tools on non-expiring 1-year credit packs.",
+   "key_features": [
+    "One-time credit packs (valid 1 year, no subscription, commercial use included): Starter $9.90 (1,200 credits), Pro $29.90 (4,000 credits), Ultimate $69.90",
+    "Active",
+    "Generate video",
+    "Edit video"
+   ],
+   "pricing": "One-time credit packs (valid 1 year, no subscription, commercial use included): Starter $9.90 (1,200 credits), Pro $29.90 (4,000 credits), Ultimate $69.90",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video",
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/clipkai.png",
+   "page": "https://agentscouthq.com/tools/clipkai.html"
+  },
+  {
+   "name": "Pangolinfo Amazon Data MCP",
+   "slug": "pangolinfo-amazon-data-mcp",
+   "url": "https://www.pangolinfo.com/amazon-data-mcp/",
+   "website": "https://www.pangolinfo.com/amazon-data-mcp/",
+   "github": "https://github.com/Pangolin-spg/amazon-data-mcp",
+   "category": "MCP servers",
+   "description": "Pangolinfo Amazon Data MCP is a hosted Streamable HTTP MCP server (mcp.pangolinfo.com/mcp) and MIT-licensed stdio bridge that gives AI agents 19 read-only tools for live Amazon product search, reviews, seller catalogs, category metrics, WIPO design-patent checks and Google Trends research.",
+   "key_features": [
+    "Free tier includes 60 credits/month; paid Pangolinfo API plans available for higher volume (MIT open-source stdio bridge via npx pangolinfo-amazon-data-mcp)",
+    "Active",
+    "1 GitHub stars",
+    "Connect tools via mcp",
+    "Research the web"
+   ],
+   "pricing": "Free tier includes 60 credits/month; paid Pangolinfo API plans available for higher volume (MIT open-source stdio bridge via npx pangolinfo-amazon-data-mcp)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Pangolin-spg/amazon-data-mcp",
+   "github_stars": 1,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pangolinfo-amazon-data-mcp.png",
+   "page": "https://agentscouthq.com/tools/pangolinfo-amazon-data-mcp.html"
+  },
+  {
+   "name": "imgs-ai",
+   "slug": "imgs-ai",
+   "url": "https://imgs-ai.com/",
+   "website": "https://imgs-ai.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "imgs-ai is an AI image and video creation platform with an official CLI and Agent Skill (imgs-ai-skill.md) that lets Skill-capable coding and personal agents quote live credit costs, request human approval, run text-to-image, reference-photo editing and video generation tasks, and download finished image or MP4 files.",
+   "key_features": [
+    "Pay-as-you-go credit packs ($0 monthly fee); Starter $49.99/month (1,800 monthly credits); Advanced $299.99/month (15,000 monthly credits, up to 5 concurrent tasks)",
+    "Active",
+    "Generate images",
+    "Edit photos"
+   ],
+   "pricing": "Pay-as-you-go credit packs ($0 monthly fee); Starter $49.99/month (1,800 monthly credits); Advanced $299.99/month (15,000 monthly credits, up to 5 concurrent tasks)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images",
+    "edit photos"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/imgs-ai.png",
+   "page": "https://agentscouthq.com/tools/imgs-ai.html"
+  },
+  {
+   "name": "Menlo Insurance MCP",
+   "slug": "menlo-insurance-mcp",
+   "url": "https://www.menloinsurance.com/ai-assistants",
+   "website": "https://www.menloinsurance.com/ai-assistants",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Menlo Insurance MCP is a hosted MCP connector for ChatGPT and Claude (`mcp.menloinsurance.com/mcp`) from licensed California insurance brokerage Menlo Insurance Services that lets users attach renovation budgets or existing policies, answer application questions, compare quotes across carriers and follow up directly inside their AI assistant with no broker fees.",
+   "key_features": [
+    "Free to use in ChatGPT and Claude with no broker fees (licensed brokerage in California, License #6012339)",
+    "Active",
+    "Connect tools via mcp",
+    "Automate workflows"
+   ],
+   "pricing": "Free to use in ChatGPT and Claude with no broker fees (licensed brokerage in California, License #6012339)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-24",
+   "added": "2026-10-24",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/menlo-insurance-mcp.png",
+   "page": "https://agentscouthq.com/tools/menlo-insurance-mcp.html"
   }
  ]
 }

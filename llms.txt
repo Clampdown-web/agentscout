@@ -1,11 +1,11 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,737 AI agent tools in 30 categories, including 241 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,748 AI agent tools in 30 categories, including 244 MCP servers. Listings are link-checked daily; pricing is as makers state it. This file tells AI agents and assistants how to use the directory.
 
 Site: https://agentscouthq.com/
 Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ
-Catalog last checked: 2026-10-23 (Pacific)
+Catalog last checked: 2026-10-24 (Pacific)
 
 ## For AI agents
 
@@ -37,7 +37,7 @@ Catalog last checked: 2026-10-23 (Pacific)
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://agentscout-mcp.agentscouthq.workers.dev/mcp (Streamable HTTP, no key) with search_tools, get_tool, list_categories and best_for_task. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 241 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 244 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 
 ## Browse
@@ -52,13 +52,13 @@ Catalog last checked: 2026-10-23 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 241 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 197 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 244 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 199 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 137 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 92 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 84 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 78 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 75 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 76 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 56 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 54 tools
@@ -68,19 +68,19 @@ Catalog last checked: 2026-10-23 (Pacific)
 - [security & governance](https://agentscouthq.com/categories/security-governance.html): 43 tools
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 42 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 40 tools
-- [video generation](https://agentscouthq.com/categories/video-generation.html): 39 tools
+- [video generation](https://agentscouthq.com/categories/video-generation.html): 40 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 39 tools
 - [music production](https://agentscouthq.com/categories/music-production.html): 39 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 38 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 36 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 35 tools
-- [image generation](https://agentscouthq.com/categories/image-generation.html): 34 tools
+- [image generation](https://agentscouthq.com/categories/image-generation.html): 35 tools
 - [productivity](https://agentscouthq.com/categories/productivity.html): 28 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
 - [customer support](https://agentscouthq.com/categories/customer-support.html): 26 tools
 - [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 22 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 21 tools
 - [games](https://agentscouthq.com/categories/games.html): 20 tools
-- [app builders](https://agentscouthq.com/categories/app-builders.html): 17 tools
+- [app builders](https://agentscouthq.com/categories/app-builders.html): 18 tools
 - [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 14 tools
 
 ## Guides
@@ -126,8 +126,19 @@ Catalog last checked: 2026-10-23 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-23 to 2026-10-24): 58
+- Tools added in the last 2 days (2026-10-23 to 2026-10-24): 69
 
+- [Menlo Insurance MCP](https://agentscouthq.com/tools/menlo-insurance-mcp.html) (added 2026-10-24): Menlo Insurance MCP is a hosted MCP connector for ChatGPT and Claude (`mcp.menloinsurance.com/mcp`) from licensed California insurance brokerage Menlo Insurance Services that lets users attach renovation budgets or existing policies, answer application questions, compare quotes across carriers and follow up directly inside their AI assistant with no broker fees.
+- [imgs-ai](https://agentscouthq.com/tools/imgs-ai.html) (added 2026-10-24): imgs-ai is an AI image and video creation platform with an official CLI and Agent Skill (imgs-ai-skill.md) that lets Skill-capable coding and personal agents quote live credit costs, request human approval, run text-to-image, reference-photo editing and video generation tasks, and download finished image or MP4 files.
+- [Pangolinfo Amazon Data MCP](https://agentscouthq.com/tools/pangolinfo-amazon-data-mcp.html) (added 2026-10-24): Pangolinfo Amazon Data MCP is a hosted Streamable HTTP MCP server (mcp.pangolinfo.com/mcp) and MIT-licensed stdio bridge that gives AI agents 19 read-only tools for live Amazon product search, reviews, seller catalogs, category metrics, WIPO design-patent checks and Google Trends research.
+- [Clipkai](https://agentscouthq.com/tools/clipkai.html) (added 2026-10-24): Clipkai is a browser-based AI video generator and photo editor that creates watermark-free videos from text prompts or reference photos across Seedance, Kling, Wan, Veo and MiniMax models, paired with 25+ one-click AI photo editing tools on non-expiring 1-year credit packs.
+- [Agiloop](https://agentscouthq.com/tools/agiloop.html) (added 2026-10-24): Agiloop is an AI-orchestrated software development platform that connects product requirements, architecture planning, AI coding, testing and production insights in one continuous loop, including a free Code Health and Readiness Assessment for existing repositories.
+- [TokenRip](https://agentscouthq.com/tools/tokenrip.html) (added 2026-10-24): TokenRip is a shared multi-agent workspace that Claude Code, Codex, Cursor, ChatGPT, Grok and MCP-connected agents read and write together, storing versioned files, decisions and task feeds with one-line setup and human approval queues for outbound actions.
+- [CCC](https://agentscouthq.com/tools/ccc.html) (added 2026-10-24): CCC (Claude Command Center) is a free, source-available local dashboard for macOS, Linux and Windows that puts every Claude Code, Codex, Cursor and five other coding-agent sessions on one visual board, highlights which session needs your input, tracks token usage and lets sessions continue on $0 models when rate limits hit.
+- [tta1](https://agentscouthq.com/tools/tta1.html) (added 2026-10-24): tta1 is a multilingual AI article-to-audio reader that fetches web articles, newsletters, X threads and X Articles—or accepts uploaded PDFs, Word documents and screenshots—strips menus and ads, optionally translates into your chosen language, and reads them aloud across 30 natural voices and 25 languages.
+- [Mach](https://agentscouthq.com/tools/mach.html) (added 2026-10-24): Mach is an AI sales teammate for B2B software teams that builds an account brain from your website, finds and researches buyers with cited sources, maps account plans and writes tailored first messages that the human seller reviews and sends.
+- [Reverse Image Location (GeoSolver)](https://agentscouthq.com/tools/reverse-image-location-geosolver.html) (added 2026-10-24): Reverse Image Location (GeoSolver) is an AI photo geolocation tool and hosted Streamable HTTP MCP server (reverseimagelocation.com/mcp) that analyzes visible road signs, terrain, vegetation and architecture to suggest clue-by-clue location hypotheses for geography learning and public-place OSINT.
+- [Zozo HQ](https://agentscouthq.com/tools/zozo-hq.html) (added 2026-10-24): Zozo HQ is a coding-agent harness that turns dependency-ready issues from GitHub or matched Jira Cloud and Bitbucket Cloud into reviewable pull requests using isolated git worktrees, Claude Code, Codex or OpenCode via OpenRouter, and structured human clarification before anything merges.
 - [My Green Robot](https://agentscouthq.com/tools/my-green-robot.html) (added 2026-10-24): My Green Robot is a consumer AI phone and email agent for Rhode Island homeowners that finds Google-rated local lawn care and landscaping companies, calls and emails up to three shops per request to ask your questions and book free on-site estimates, and brings back written quotes to compare side by side without phone tag.
 - [Agenvas](https://agentscouthq.com/tools/agenvas.html) (added 2026-10-24): Agenvas is an open-source (MIT), self-hosted infinite creative canvas where text, images, video, audio and AI agents work together on connected cards. Deployed with a single Docker Compose command, it connects to your own OpenAI-compatible endpoints, ComfyUI workflows and RunningHub apps, and gates agent media proposals behind human approval before generation runs.
 - [SiGameGen](https://agentscouthq.com/tools/sigamegen.html) (added 2026-10-24): SiGameGen is an AI browser-game builder and arcade where a written prompt is turned into a playable single-file HTML5 game that you can refine by chat, play in private two-player rooms, share via link or download. Builds run on Fast (DeepSeek V4 Flash, 9 credits) or Pro (Kimi K2.7 Code, 45 credits), while playing, sharing and exporting games are free.
@@ -506,6 +517,7 @@ Catalog last checked: 2026-10-23 (Pacific)
 - [Agent payment tools for crypto agents](https://agentscouthq.com/tasks/crypto-and-wallets-agent-payments.html)
 - [Agent wallet tools for crypto agents](https://agentscouthq.com/tasks/crypto-and-wallets-agent-wallets.html)
 - [Crypto AI agents by job: trading, wallets, payments and data](https://agentscouthq.com/tasks/crypto-and-wallets.html)
+- [Sales and lead generation tools for customer support](https://agentscouthq.com/tasks/customer-support-sales-agents.html)
 - [Voice and phone agents for customer support](https://agentscouthq.com/tasks/customer-support-voice-phone.html)
 - [Best AI agents for customer support (2026)](https://agentscouthq.com/tasks/customer-support.html)
 - [Best AI agents for data analysis (2026)](https://agentscouthq.com/tasks/data-analysis.html)

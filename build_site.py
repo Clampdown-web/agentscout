@@ -34,7 +34,18 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
-UC_SET={"enhancewizard":["upscale images","restore photos","edit photos"],  # Oct 24 PT: maker submissions + discovery UC overrides
+UC_SET={"zozo-hq":["write code","automate workflows"],  # Oct 24 PM PT: maker submissions
+"reverse-image-location-geosolver":["connect tools via MCP","computer vision","research the web"],
+"mach":["sales & support","research the web","automate workflows"],
+"tta1":["voice & phone calls"],
+"ccc":["write code","monitor & evaluate agents"],
+"tokenrip":["build multi-agent systems","give agents memory","connect tools via MCP"],
+"agiloop":["build apps without code","write code"],
+"clipkai":["generate video","edit video"],
+"pangolinfo-amazon-data-mcp":["connect tools via MCP","research the web"],
+"imgs-ai":["generate images","edit photos"],
+"menlo-insurance-mcp":["connect tools via MCP","automate workflows"],
+"enhancewizard":["upscale images","restore photos","edit photos"],  # Oct 24 PT: maker submissions + discovery UC overrides
 "pudding":["control a computer","automate the browser","write code"],
 "orbi":["write code","automate workflows"],
 "sora2-hub":["generate images","generate video"],
