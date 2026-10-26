@@ -15,10 +15,11 @@ MO = ("", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 
 ALT_NAMES = ["Agent Scout", "AgentScoutHQ", "agentscouthq.com"]
 SAME_AS = [
-    "https://x.com/AgentScoutHQ",
     "https://x.com/clampdown19",
-    "https://github.com/Clampdown-web/agentscout",
+    "https://x.com/AgentScoutHQ",
     "https://agentscout.beehiiv.com/",
+    "https://github.com/clampdown19/agentscout",
+    "https://github.com/Clampdown-web/agentscout",
     "https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory",
     "https://glama.ai/mcp/connectors/com.agentscouthq/directory",
     "https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html",
@@ -269,7 +270,7 @@ def write_llms_full(t):
         f"- **MCP Server Card**: {B}.well-known/mcp.json",
         "- **Official Profiles & Third-Party MCP Registry Listings**:",
         "  - X (Twitter): https://x.com/AgentScoutHQ, https://x.com/clampdown19",
-        "  - GitHub (Public Repository & Issues): https://github.com/Clampdown-web/agentscout",
+        "  - GitHub (Public Repository & Issues): https://github.com/clampdown19/agentscout (and https://github.com/Clampdown-web/agentscout)",
         "  - Newsletter: https://agentscout.beehiiv.com/",
         "  - Official MCP Registry: https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory",
         "  - Glama MCP Connector: https://glama.ai/mcp/connectors/com.agentscouthq/directory",
