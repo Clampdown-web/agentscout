@@ -211,7 +211,7 @@ def packages_grid(free_href="#free-form", free_label="Submit Free Below ↓", on
         '</div>'
         # Tier 3: $99/wk Weekly Sitewide Sponsor + Newsletter Top Slot
         '<div class="card pkg-card pkg-vip" data-pkg-card="sponsor_99">'
-        '<div class="pkg-top"><span class="npill npbt pkg-pill pkg-pill-vip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>1 EXCLUSIVE SLOT / WEEK</span></div>'
+        '<div class="pkg-top"><span class="npill npgen pkg-pill pkg-pill-vip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>1 EXCLUSIVE SLOT / WEEK</span></div>'
         '<h3>Weekly Sitewide Sponsor + Newsletter</h3>'
         '<div class="pkg-price"><span class="pkg-amt">$99</span> <span class="pkg-per">/ week · exclusive sitewide</span></div>'
         '<p class="pkg-sub">Own the top banner across every page of AgentScout + our weekly newsletter.</p>'
