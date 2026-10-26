@@ -75,6 +75,7 @@ UC_SET={"editara":["edit photos","remove backgrounds","restore photos","upscale 
 "secureauth-mcp-authority":["security & governance","connect tools via MCP"],
 "fileaify":["write code","give agents memory","connect tools via MCP"],  # Oct 23 PT: maker submission (project context, vault-brokered credentials, human-approved actions, hosted MCP)
 "diri-ai":["sales & support","voice & phone calls"],  # Oct 23 PT: maker submission (voice AI sales role-play with call reports)
+"magic-studio":["headshots","generate images","remove backgrounds"],
 "krea":["generate images","generate video","upscale images"],  # Oct 23 PT: Krea refresh (images + text/image-to-video + upscaling, per krea.ai/features/ai-video-generator)
 "crolytics":["sales & support","connect tools via MCP","automate workflows"],  # Oct 23 PT: owner request (governed GTM agent workspace; GA4/Search Console/CMS via MCP)
 "vellm":["generate video","connect tools via MCP"],  # Oct 23 PT: maker submission (photo-to-video templates with OAuth MCP)
@@ -282,8 +283,7 @@ build_recent.build(t)
 import build_sponsor
 # sponsor.html is frozen (Oct 20 2026): rebuilt only when missing or SPONSOR_REBUILD=1, and restored byte-for-byte at the end of the
 # build so sitewide passes (asset versions, nav, footer, live stats) never touch the hidden page.
-_SP=open("sponsor.html","rb").read() if os.path.exists("sponsor.html") and os.environ.get("SPONSOR_REBUILD")!="1" else None
-if _SP is None: build_sponsor.page(t)  # hidden sponsor page: noindex, not in sitemap, not linked (Oct 18 2026)
+build_sponsor.page(t)  # public sponsor & packages page (sponsor.html)
 import build_bot_templates; build_bot_templates.run()  # extra Bot templates from data/bot-templates-extra.json (Oct 21 2026)
 import build_tasks
 build_tasks.sitewide(t)
@@ -309,7 +309,7 @@ import build_intlinks; build_intlinks.run(t)  # Popular lists internal links on 
 import build_fix1022; build_fix1022.run(t)  # category options in HTML, agent.json copy, lighter free-tools/new pages (Oct 22 2026)
 import build_aeo as _baeo; _baeo.sync_entity_schema()
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
-if _SP is not None: open("sponsor.html","wb").write(_SP)  # keep the hidden sponsor page untouched
+
 import build_seo_new as _bsn; _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys

@@ -27052,5 +27052,69 @@
    "https://editara.app/",
    "https://editara.app/pricing"
   ]
+ },
+ "magic-studio": {
+  "kind": "lite",
+  "updated": "2026-10-26",
+  "cite": true,
+  "pricing_v": {
+   "free": true,
+   "tiers": [
+    [
+     "Free Tools & Preview",
+     "$0",
+     "Preview your first set of 50 watermarked AI photos for free, plus free access to web photo tools (Magic Eraser, Background Remover, AI Image Generator) with standard-resolution downloads"
+    ],
+    [
+     "AI Headshots Starter",
+     "$29 one-time",
+     "One-time AI headshot pack (formerly InstaHeadshots) at magicstudio.com/headshots/ with watermark-free HD downloads and outfit/backdrop styles"
+    ],
+    [
+     "AI Headshots Basic & Premium",
+     "$49 / $59 one-time",
+     "100 HD headshots across 40 looks ($49 Basic) or 200 HD headshots ($59 Premium) with priority turnaround"
+    ],
+    [
+     "Magic Studio Pro",
+     "From $4.99/month",
+     "High-resolution watermark-free downloads across the Magic Studio photo editor, 4K upscaler, background remover, and iOS/Android apps"
+    ]
+   ],
+   "note": "InstaHeadshots is now integrated into Magic Studio at magicstudio.com/headshots/; personal AI headshot packs are one-time purchases rather than subscriptions.",
+   "src": "https://magicstudio.com/headshots/",
+   "checked": "2026-10-26"
+  },
+  "facts": {
+   "checked": "2026-10-26",
+   "status": "Active web & mobile AI photo platform (20M+ users, 150M+ images created; includes former InstaHeadshots at magicstudio.com/headshots/)"
+  },
+  "long": [
+   "Magic Studio (formerly InstaHeadshots for its headshot product) is an AI photography and image editing platform used by over 20 million people to generate professional AI headshots, create product and social visuals, remove backgrounds, and clean up photos in the browser or on iOS and Android. Following the InstaHeadshots rebrand into Magic Studio, the dedicated AI headshot generator lives at magicstudio.com/headshots/, while the full suite of quick editing tools lives at magicstudio.com/photo-editor/.",
+   "With Magic Studio’s personal AI photographer and headshot generator, users upload a few casual selfies to train a private model of themselves, preview an initial batch of 50 watermarked photos for free, and unlock one-time HD headshot packs starting at $29 (or $49 for 100 HD headshots and $59 for 200 HD headshots) across business, casual, and studio looks. Alongside headshots, Magic Studio includes one-click tools for Magic Eraser (removing unwanted objects, people, or text), Background Remover and scene replacement, AI Image Generator (text-to-image), Magic Draw (inpainting), and 4K image upscaling."
+  ],
+  "who": "Professionals, founders, and teams who want realistic studio-style AI headshots (formerly InstaHeadshots) from a few selfies without booking a photographer, as well as marketers, e-commerce sellers, and creators who need quick browser-based background removal, object cleanup, and image generation.",
+  "features": [
+   "AI Headshots (formerly InstaHeadshots at magicstudio.com/headshots/): train a personal AI model from selfies, preview 50 watermarked photos free, and download HD portraits across business, studio, and casual styles.",
+   "Magic Eraser and Background Remover (magicstudio.com/photo-editor/): brush over unwanted objects, people, or text to remove them cleanly, or strip and replace backgrounds in one click.",
+   "Text-to-image AI Image Generator, Magic Draw inpainting, and 4K AI Image Upscaler for product shots, social posts, and ad creatives.",
+   "Automatic deletion of uploaded training photos and generated headshots after 30 days (or earlier on request), with full user ownership and commercial rights on purchased packs."
+  ],
+  "faq": [
+   [
+    "Did InstaHeadshots become Magic Studio?",
+    "Yes. InstaHeadshots rebranded into Magic Studio, and the AI headshot service now lives at https://magicstudio.com/headshots/ with the same workflow and account experience alongside Magic Studio’s photo editor tools."
+   ],
+   [
+    "How much do Magic Studio AI headshots and Pro plans cost?",
+    "You can preview your first 50 watermarked AI photos for free. One-time AI Headshot packs at magicstudio.com/headshots/ cost $29 for Starter, $49 for Basic (100 HD headshots across 40 looks), and $59 for Premium (200 HD headshots). The Magic Studio photo editor offers free basic tools and a Pro subscription starting at $4.99/month (billed annually) for unlimited high-resolution, watermark-free exports."
+   ]
+  ],
+  "sources": [
+   "https://magicstudio.com/",
+   "https://magicstudio.com/headshots/",
+   "https://magicstudio.com/photo-editor/",
+   "https://magicstudio.com/pricing/"
+  ]
  }
 }

@@ -42,7 +42,7 @@ def crypto_links(t):
 def bt_rename():
     import glob; n=0
     for f in glob.glob("*.html")+glob.glob("*/*.html")+glob.glob("*/*/*.html"):
-        if f.startswith(("pagefind","sponsor")): continue
+        if f.startswith("pagefind"): continue
         s0=s=open(f).read()
         s=re.sub(r'(<a class="navbt" href="[^"]*bot-templates/">)Bot templates</a>',r'\1AI bot templates</a>',s)
         s=re.sub(r'(<a class="navbt" href="[^"]*bot-templates/"><span class="npill npbt"><svg class="npico".*?</svg>)Bot templates</span></a>',r'\1AI bot templates</span></a>',s)  # neon pill form (Oct 23 2026): a fresh build pills the link before this rename runs
@@ -67,7 +67,7 @@ def long_titles():
 def charset_first():
     import glob; n=0
     for f in glob.glob("**/*.html",recursive=True):
-        if f.startswith(("pagefind","sponsor")): continue
+        if f.startswith("pagefind"): continue
         s0=s=open(f).read()
         if '<meta charset="utf-8">' not in s or s.find('<meta charset="utf-8">')<600: continue
         s=s.replace('<meta charset="utf-8">',"",1)

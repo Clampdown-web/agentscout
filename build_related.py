@@ -72,4 +72,4 @@ def pick(t,k=6,top=3,pool=10,frac=0.6,penalty=0.06):
         out[s]=(keep+extra)[:k]
     return out
 EXCLUDE={"keboola-mcp-server":{"robottraining-jobs"}}
-PIN={"higgsfield":["krea"],"crolytics":["bottally","wordlift-agent","bidhelm","agents24x7"],"vellm":["vidmoat","viggle","motion-transfer","reference-to-video"],"salestouch":["roverlead"],"roverlead":["salestouch"],"system-one-api":["typesafe-jev"],"typesafe-jev":["system-one-api"]}
+PIN={"higgsfield":["krea"],"crolytics":["bottally","wordlift-agent","bidhelm","agents24x7"],"vellm":["vidmoat","viggle","motion-transfer","reference-to-video"],"salestouch":["roverlead"],"roverlead":["salestouch"],"system-one-api":["typesafe-jev"],"typesafe-jev":["system-one-api"],"magic-studio":["headshotpro","aragon-ai","betterpic","secta-labs","hotpot-ai","aiartflow"],"headshotpro":["magic-studio","aragon-ai","betterpic","secta-labs"],"aragon-ai":["magic-studio","headshotpro","betterpic","secta-labs"],"betterpic":["magic-studio","headshotpro","aragon-ai","secta-labs"],"secta-labs":["magic-studio","headshotpro","aragon-ai","betterpic"]}

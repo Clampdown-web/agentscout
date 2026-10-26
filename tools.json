@@ -33310,18 +33310,19 @@
   {
     "name": "Magic Studio",
     "url": "https://magicstudio.com",
-    "description": "Quick AI image tools: generator, background remover, object eraser and headshots.",
+    "description": "AI headshots (formerly InstaHeadshots) and quick AI photo tools: image generator, background remover, and Magic Eraser.",
     "category": "image generation",
     "pricing": "Freemium",
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
     "new": true,
-    "verified": "2026-10-18",
+    "verified": "2026-10-26",
     "added": "2026-10-18",
     "source": "Research (art, design, 3D & photo sweep)",
-    "pricing_detail": "Free; paid plans: see site",
+    "pricing_detail": "Free tools; Pro plan & AI Headshots from $29",
     "use_cases": [
+      "headshots",
       "generate images",
       "remove backgrounds"
     ],

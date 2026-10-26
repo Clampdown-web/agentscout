@@ -94,7 +94,7 @@ def run(t):
     # twitter:* mirror for the other indexable pages (top-level pages and bot templates); titles left as-is (Oct 20 2026 SEO pass)
     g=set(_groups())
     for f in sorted(glob.glob("*.html"))+sorted(glob.glob("bot-templates/*.html"))+sorted(glob.glob("leaderboard/*.html"))+[]:  # leaderboard + search added Oct 21 2026 7 PM pass
-        if f in g or f.startswith("sponsor") or not __import__("os").path.exists(f): continue  # sponsor.html is frozen
+        if f in g or not __import__("os").path.exists(f): continue
         s0=s=open(f).read(); s=twitter(s,c)
         if s!=s0: open(f,"w").write(s)
     llms_extra(c)

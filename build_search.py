@@ -72,7 +72,7 @@ def navlink():
     import glob
     n=0
     for f in glob.glob("**/*.html",recursive=True):
-        if f.startswith(("sponsor","preview/","pagefind/")): continue
+        if f.startswith(("preview/","pagefind/")): continue
         s=open(f,encoding="utf-8").read(); s0=s
         s=s.replace(OLD_LINK,"")
         s=re.sub(r'<form data-navsearch.*?</form>','',s,1,flags=re.S)
