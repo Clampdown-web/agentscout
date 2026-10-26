@@ -132,7 +132,8 @@ FCSS=('<style id="btf-css">.bt-h1{flex-wrap:wrap;row-gap:4px}.bt-count{display:i
  '.bt-pills,.btf-cats{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:4px;min-width:0;max-width:100%}.bt-pills .chip,.btf-cats .chip{flex:0 0 auto;white-space:nowrap}'
  '.btf-lbl{font-size:13px;color:var(--muted);margin:0}.btf-st{font-size:14px;color:var(--muted);margin:4px 0 0}.bt-empty{display:none;padding:28px 12px;text-align:center;border:1px dashed var(--line);border-radius:12px;margin:16px 0}.bt-empty p{margin:0 0 12px}'
  '.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}'
- '@media(min-width:900px){.bt-pills,.btf-cats{flex-wrap:wrap;overflow:visible}}</style>')
+ '@media(min-width:900px){.bt-pills,.btf-cats{flex-wrap:wrap;overflow:visible}}'
+ '@media(max-width:480px){div.bt-nm{flex-wrap:wrap;row-gap:0;min-height:0}div.bt-nm>a{min-height:32px;max-width:100%}div.bt-nm>span{flex:1 1 100%;font-size:13px;flex-wrap:wrap;white-space:normal;column-gap:.25em;row-gap:0}div.bt-nm span a{flex:0 0 auto;max-width:100%;min-height:32px;line-height:32px}}</style>')  # Oct 25 2026 PT post-update pass: byline links were squeezed to 0-27px at 360px; wrap byline under name on phones
 FJS=r'''<script id="btf-js">(function(){var $=function(s){return document.querySelector(s)},A=function(s){return [].slice.call(document.querySelectorAll(s))};
 var q=$('#bt-q'),rows=A('.bt-row'),P=A('.bt-pills .chip'),C=A('.btf-cats .chip'),st=$('#bt-status'),em=$('#bt-empty'),cnt=$('#bt-count'),f='all',c='all',T=rows.length;
 if(cnt)cnt.textContent=T;
