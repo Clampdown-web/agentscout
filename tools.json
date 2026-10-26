@@ -46827,5 +46827,63 @@
     "maker_submitted": true,
     "submitted": "2026-10-25",
     "good_for": "analyzing face shape from a selfie or webcam and previewing virtual eyeglasses and frame styles before buying"
+  },
+  {
+    "name": "Mixdesk",
+    "url": "https://mixdesk.com/",
+    "website": "https://mixdesk.com/",
+    "github": "",
+    "socials": [],
+    "id": 1806,
+    "slug": "mixdesk",
+    "logo": "assets/logos/mixdesk.png",
+    "category": "customer support",
+    "description": "Multi-channel shared inbox for WhatsApp, Instagram, Messenger, TikTok, LINE, Telegram, web chat, and email with an AI Agent that gives multilingual answers from configured business knowledge, qualifies leads, and hands conversations to humans through workflows.",
+    "pricing": "Freemium",
+    "pricing_detail": "Free shared inbox plan; AI Agent requires a paid plan",
+    "use_cases": [
+      "automate workflows",
+      "sales & support"
+    ],
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "managing customer conversations across WhatsApp, Instagram, Messenger, TikTok, LINE, Telegram, web chat, and email in one shared inbox while using multilingual AI agents to answer questions, qualify leads, and hand off to human teams"
+  },
+  {
+    "name": "ml0x",
+    "url": "https://ml0x.com/",
+    "website": "https://ml0x.com/",
+    "github": "https://github.com/theluckystrike/100xagenticdev",
+    "repo": "theluckystrike/100xagenticdev",
+    "github_stars": 0,
+    "stars_checked": "2026-10-25",
+    "socials": [],
+    "id": 1807,
+    "slug": "ml0x",
+    "logo": "assets/logos/ml0x.png",
+    "category": "coding",
+    "description": "Wraps Claude Code in a 4-stage pipeline (analyze, implement, test, review) with budget limits and quality gates.",
+    "pricing": "Paid",
+    "pricing_detail": "$99 one-time for full pipeline (60-day refund); MIT-licensed open-source core at github.com/theluckystrike/100xagenticdev",
+    "use_cases": [
+      "write code"
+    ],
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-25",
+    "added": "2026-10-25",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-25",
+    "good_for": "wrapping Claude Code in a 4-stage analyze, implement, test, and review pipeline with gateway-enforced token budget caps, model routing, and automated quality gates"
   }
 ]

@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 1,784 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
+> AgentScout is a curated, link-checked, read-only directory of 1,786 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`).
 
@@ -30,12 +30,12 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 1,784
+- **Total Verified AI Agent Tools**: 1,786
 - **Total Categories**: 30
 - **Verified MCP Servers**: 249
 - **Bot Templates & Installable Agent Skills**: 189 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
 - **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 862
-- **Free or Freemium Tools**: 1,322
+- **Free or Freemium Tools**: 1,323
 - **Local / Self-Hosted Tools (`runs_locally` filter)**: 797 (70 offline / on-device, 727 self-hosted)
 - **Catalog Last Link-Checked**: 2026-10-25 (America/Los_Angeles)
 
@@ -93,9 +93,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | IDA Pro MCP | Open source | Yes |  | Self-hosted | 13,142 | connect tools via MCP | MCP server connecting IDA Pro to language models for AI-assisted reverse engineering. | https://agentscouthq.com/tools/ida-pro-mcp.html | https://plugins.hex-rays.com/mrexodia/ida-pro-mcp |
 | 15 | Apify MCP Server | Open source + cloud | Yes |  | Self-hosted | 13,062 | research the web, connect tools via MCP | Apify's MCP server giving agents access to thousands of scrapers for social media, search and maps. | https://agentscouthq.com/tools/apify-mcp-server.html | https://github.com/apify/apify-mcp-server |
 
-### coding (201 tools) — [https://agentscouthq.com/categories/coding.html](https://agentscouthq.com/categories/coding.html)
+### coding (202 tools) — [https://agentscouthq.com/categories/coding.html](https://agentscouthq.com/categories/coding.html)
 
-- **At a glance**: 201 link-checked tools (149 open-source, 175 free or freemium, 141 local or self-hosted).
+- **At a glance**: 202 link-checked tools (149 open-source, 175 free or freemium, 141 local or self-hosted).
 - **Top picks**: [opencode](https://agentscouthq.com/tools/opencode.html), [Claude Code](https://agentscouthq.com/tools/claude-code.html), [CC Switch](https://agentscouthq.com/tools/cc-switch.html), [Graphify](https://agentscouthq.com/tools/graphify.html), [OpenAI Codex CLI](https://agentscouthq.com/tools/openai-codex-cli.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -622,9 +622,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Deepdub | See site | No |  |  |  | dub & localize, voiceover | AI dubbing for studios and streamers, with emotional voice cloning and localization in many languages. | https://agentscouthq.com/tools/deepdub.html | https://deepdub.ai |
 | 15 | Dubformer | Paid | No |  |  |  | dub & localize, voiceover | AI dubbing and voiceover for media companies. Create a voice, direct how it sounds and export. | https://agentscouthq.com/tools/dubformer.html | https://dubformer.ai |
 
-### customer support (26 tools) — [https://agentscouthq.com/categories/customer-support.html](https://agentscouthq.com/categories/customer-support.html)
+### customer support (27 tools) — [https://agentscouthq.com/categories/customer-support.html](https://agentscouthq.com/categories/customer-support.html)
 
-- **At a glance**: 26 link-checked tools (1 open-source, 7 free or freemium, 1 local or self-hosted).
+- **At a glance**: 27 link-checked tools (1 open-source, 8 free or freemium, 1 local or self-hosted).
 - **Top picks**: [Tel-Agent](https://agentscouthq.com/tools/tel-agent.html), [Agentplace](https://agentscouthq.com/tools/agentplace.html), [Ask-AI](https://agentscouthq.com/tools/ask-ai.html), [Cognigy](https://agentscouthq.com/tools/cognigy.html), [CustomGPT.ai](https://agentscouthq.com/tools/customgpt-ai.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |

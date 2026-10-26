@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-26T03:48:40Z",
- "updated": "2026-10-26T03:48:40Z",
+ "generated": "2026-10-26T04:09:01Z",
+ "updated": "2026-10-26T04:09:01Z",
  "last_checked": "2026-10-25",
- "count": 1784,
+ "count": 1786,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75584,6 +75584,88 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/trybestspecs.png",
    "page": "https://agentscouthq.com/tools/trybestspecs.html"
+  },
+  {
+   "name": "Mixdesk",
+   "slug": "mixdesk",
+   "url": "https://mixdesk.com/",
+   "website": "https://mixdesk.com/",
+   "github": "",
+   "category": "customer support",
+   "description": "Multi-channel shared inbox for WhatsApp, Instagram, Messenger, TikTok, LINE, Telegram, web chat, and email with an AI Agent that gives multilingual answers from configured business knowledge, qualifies leads, and hands conversations to humans through workflows.",
+   "key_features": [
+    "Free shared inbox plan; AI Agent requires a paid plan",
+    "Active",
+    "Automate workflows",
+    "Sales & support"
+   ],
+   "pricing": "Free shared inbox plan; AI Agent requires a paid plan",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mixdesk.png",
+   "page": "https://agentscouthq.com/tools/mixdesk.html"
+  },
+  {
+   "name": "ml0x",
+   "slug": "ml0x",
+   "url": "https://ml0x.com/",
+   "website": "https://ml0x.com/",
+   "github": "https://github.com/theluckystrike/100xagenticdev",
+   "category": "coding",
+   "description": "Wraps Claude Code in a 4-stage pipeline (analyze, implement, test, review) with budget limits and quality gates.",
+   "key_features": [
+    "$99 one-time for full pipeline (60-day refund); MIT-licensed open-source core at github.com/theluckystrike/100xagenticdev",
+    "Active",
+    "Write code"
+   ],
+   "pricing": "$99 one-time for full pipeline (60-day refund); MIT-licensed open-source core at github.com/theluckystrike/100xagenticdev",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "theluckystrike/100xagenticdev",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ml0x.png",
+   "page": "https://agentscouthq.com/tools/ml0x.html"
   }
  ]
 }
