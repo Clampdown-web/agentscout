@@ -1,10 +1,10 @@
 {
- "checked": "2026-10-25 08:13",
+ "checked": "2026-10-26 07:10",
  "tz": "America/Los_Angeles",
  "results": {
   "9bot": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "aftership-mcp": {
    "url": 200
@@ -25,8 +25,8 @@
    "url": 200
   },
   "aiven-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "algolia-mcp": {
    "url": 200
@@ -391,7 +391,7 @@
    "url": 200
   },
   "lune-research": {
-   "url": 200,
+   "url": 429,
    "github": 200
   },
   "lusha-mcp": {
@@ -452,8 +452,8 @@
    "github": 200
   },
   "mcp-reference-servers": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "mcp-registry": {
    "url": 200
@@ -665,8 +665,8 @@
    "url": 200
   },
   "remotify-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "reverse-image-location-geosolver": {
    "url": 200
@@ -708,6 +708,10 @@
    "url": 200,
    "github": 200
   },
+  "senzing-mcp": {
+   "url": 200,
+   "github": 200
+  },
   "serena": {
    "url": 200,
    "github": 200
@@ -726,8 +730,8 @@
    "github": 200
   },
   "slash": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "smartbear-mcp": {
    "url": 200,
@@ -737,8 +741,8 @@
    "url": 200
   },
   "sonarqube-mcp-server": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "stack-overflow-mcp": {
    "url": 200,
@@ -799,8 +803,8 @@
    "url": 200
   },
   "tipranks-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "toolhive": {
    "url": 200,
@@ -852,8 +856,8 @@
    "url": 200
   },
   "wenbu": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "whimsical-mcp": {
    "url": 200,

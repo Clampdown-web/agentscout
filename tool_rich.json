@@ -27116,5 +27116,353 @@
    "https://magicstudio.com/photo-editor/",
    "https://magicstudio.com/pricing/"
   ]
+ },
+ "cindy": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cindy is an open-source, ready-to-run AI agent that combines several coding harnesses, models and tools into one assistant that works on your real local files and logged-in apps. The first supported harnesses are Claude Code and Codex, with a native harness in progress, and models and harnesses can be swapped mid-task while workspace, memory, skills and tools stay continuous.",
+   "The GitHub repository holds the Apache-2.0 desktop and mobile clients as a pnpm monorepo. Cindy can drive your browser, computer and phone, accept work from IM and schedules, and split one task across agents on different harness and model combinations for planning, parallel execution and review. You can sign in to the Cindy service with usage-based billing, reuse an existing Claude Code or Codex plan, bring your own API keys, or run local models."
+  ],
+  "who": "People who want one local agent that can use Claude Code, Codex and other models on their own files and apps.",
+  "features": [
+   "Combines Claude Code and Codex harnesses",
+   "Switch models and harnesses mid-task",
+   "Drives browser, desktop and phone",
+   "Takes tasks from IM and schedules",
+   "Desktop and mobile clients (Apache-2.0)"
+  ],
+  "faq": [
+   [
+    "Is Cindy free?",
+    "The desktop and mobile client is free and Apache-2.0. Model usage is either deducted from the optional Cindy service, covered by an existing Claude Code or Codex plan, or paid through your own API keys; local models are also supported."
+   ]
+  ],
+  "sources": [
+   "https://github.com/makecindy/cindy",
+   "https://cindy.app/"
+  ],
+  "facts": {
+   "repo": "https://github.com/makecindy/cindy",
+   "stars": 5840,
+   "forks": 736,
+   "checked": "2026-10-26",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "zeron": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Zeron is a native control plane for running and watching coding agents such as Claude Code, Codex, Cursor, Devin, Grok, Hermes, Pi and Antigravity from one place. The desktop app for macOS, Windows and Linux works locally by default with no account or network connection, so sessions stay on your device.",
+   "For servers and VPS machines there is a headless Linux CLI that installs the engine as a background service which survives reboots, letting agents keep working after you close your laptop. Optional multi-device sync lets you start an agent on one machine and follow or drive it from another signed-in device."
+  ],
+  "who": "Developers juggling several coding agents who want a local dashboard and an always-on headless runner.",
+  "features": [
+   "Controls Claude Code, Codex, Cursor, Devin and more",
+   "Local-first desktop app, no account needed",
+   "Headless Linux daemon for VPS use",
+   "Optional multi-device sync",
+   "Self-updating releases (MIT)"
+  ],
+  "faq": [
+   [
+    "Does Zeron need an account?",
+    "No. The desktop app runs locally without an account; signing in is only needed for optional multi-device sync."
+   ]
+  ],
+  "sources": [
+   "https://github.com/zeronsh/zeron",
+   "https://zeron.sh/"
+  ],
+  "facts": {
+   "repo": "https://github.com/zeronsh/zeron",
+   "stars": 3371,
+   "forks": 346,
+   "checked": "2026-10-26",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "mobile-use": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "mobile-use from Minitap is an open-source AI agent that operates real Android and iOS devices from natural-language instructions. It reads the app interface, taps and types through screens, and can complete tasks from sending messages to navigating multi-step app flows.",
+   "It can also scrape information from any app into structured output such as JSON from a plain-language description, and the underlying agents can be powered by OpenAI, Google, xAI, OpenRouter, MiniMax and other providers. Games are a known weak spot because they do not expose accessibility-tree data."
+  ],
+  "who": "Developers and QA teams automating or testing mobile apps with an LLM agent.",
+  "features": [
+   "Natural-language control of Android and iOS",
+   "UI-aware navigation via accessibility tree",
+   "Structured data extraction from apps",
+   "Pluggable LLM providers",
+   "Python package on PyPI (Apache-2.0)"
+  ],
+  "faq": [
+   [
+    "Does mobile-use work on iPhone?",
+    "Yes. It supports both Android and iOS devices, though apps without accessibility data, such as most games, are handled poorly."
+   ]
+  ],
+  "sources": [
+   "https://github.com/minitap-ai/mobile-use",
+   "https://www.minitap.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/minitap-ai/mobile-use",
+   "stars": 3322,
+   "forks": 304,
+   "checked": "2026-10-26",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "squad": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Squad creates a human-led AI development team for a project through GitHub Copilot. With one command you get specialist agents, such as frontend, backend, tester and lead, that live in your repository as files, persist across sessions, learn the codebase and record shared decisions.",
+   "Each team member runs in its own context, reads only its own knowledge and writes back what it learned, so the work stays inspectable in git. The project is explicit that people remain accountable for priorities, approvals and final changes, with Squad handling coordination, repetition and parallel work."
+  ],
+  "who": "Teams using GitHub Copilot who want persistent, inspectable specialist agents inside their repo.",
+  "features": [
+   "Specialist agent roles stored as repo files",
+   "Persistent memory across sessions",
+   "Per-agent context isolation",
+   "Human approval kept in the loop",
+   "npm install, MIT licence"
+  ],
+  "faq": [
+   [
+    "What does Squad need?",
+    "Squad is built on GitHub Copilot and installs into a git repository; the agents and their knowledge are stored as files in that repo."
+   ]
+  ],
+  "sources": [
+   "https://github.com/bradygaster/squad",
+   "https://bradygaster.github.io/squad/"
+  ],
+  "facts": {
+   "repo": "https://github.com/bradygaster/squad",
+   "stars": 3306,
+   "forks": 507,
+   "checked": "2026-10-26",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "nexu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "nexu (\"next to you\") is an open-source desktop client that puts an OpenClaw agent inside WeChat, Feishu, Slack, Discord and other chat apps. For WeChat you click connect, scan a code and start chatting, which keeps the agent reachable from your phone around the clock.",
+   "It offers a graphical setup, built-in Feishu skills, one-click model switching (Gemini and others, with OAuth for MiniMax, Codex and GLM) and bring-your-own API keys. Builds are available for Apple Silicon and Intel Macs and for Windows, and the project states that data stays on your own machine."
+  ],
+  "who": "OpenClaw users who want their agent available in WeChat, Feishu, Slack or Discord without manual config.",
+  "features": [
+   "One-click WeChat connection via QR scan",
+   "Feishu, Slack and Discord channels",
+   "GUI model switching and BYO keys",
+   "Built-in Feishu skills",
+   "macOS and Windows apps (MIT)"
+  ],
+  "faq": [
+   [
+    "Which agent does nexu run?",
+    "nexu is a desktop client for OpenClaw agents; it handles the chat-app connections, model selection and setup through a GUI."
+   ]
+  ],
+  "sources": [
+   "https://github.com/nexu-io/nexu",
+   "https://nexu.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/nexu-io/nexu",
+   "stars": 3279,
+   "forks": 261,
+   "checked": "2026-10-26",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "osworld": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "OSWorld is a benchmark and environment from XLang Lab for evaluating multimodal computer-use agents on open-ended tasks in real desktop operating systems. Agents work inside virtual machines running actual apps, and each task has an execution-based checker rather than a string match.",
+   "OSWorld-Verified, released in July 2025, fixed community-reported task issues, added AWS support that cuts a full evaluation to about an hour with parallelism, and refreshed the public leaderboard. The environment runs on VMware, VirtualBox, Docker, AWS and Azure, and the original paper was published in April 2024."
+  ],
+  "who": "Researchers and teams measuring how well computer-use agents complete real desktop tasks.",
+  "features": [
+   "Real desktop VMs with execution-based checks",
+   "OSWorld-Verified task set and leaderboard",
+   "VMware, VirtualBox, Docker, AWS and Azure",
+   "Parallel evaluation on AWS",
+   "Apache-2.0 code"
+  ],
+  "faq": [
+   [
+    "What is OSWorld-Verified?",
+    "An updated version of the benchmark (July 2025) with fixed tasks, faster parallel AWS evaluation and new reference results on the official site."
+   ]
+  ],
+  "sources": [
+   "https://github.com/xlang-ai/OSWorld",
+   "https://os-world.github.io/"
+  ],
+  "facts": {
+   "repo": "https://github.com/xlang-ai/OSWorld",
+   "stars": 3236,
+   "forks": 555,
+   "checked": "2026-10-26",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "godot-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Godot AI is an MCP server and editor add-on that connects Claude Code, Codex, Cursor and other MCP clients to a live Godot editor. Its 46 tools and 120+ operations build scenes, edit nodes and scripts, wire signals, and configure UI, materials, animation, particles, cameras and environments.",
+   "It needs Godot 4.7 or newer and uv to run the Python server, and installs from Godot's AssetLib or a GitHub release before being enabled in Project Settings. The maintainers report more than 21,000 monthly active installs and over 30 million tool calls in the three months to late October 2026, based on opt-out telemetry."
+  ],
+  "who": "Game developers who want an AI assistant to build and edit Godot projects directly in the editor.",
+  "features": [
+   "46 MCP tools, 120+ editor operations",
+   "Scene, node, script and signal editing",
+   "UI, materials, animation and particles",
+   "Works with Claude Code, Codex, Cursor",
+   "Godot 4.7+ add-on (MIT)"
+  ],
+  "faq": [
+   [
+    "Which Godot version is required?",
+    "Godot 4.7 or newer, plus uv to run the bundled Python MCP server."
+   ]
+  ],
+  "sources": [
+   "https://github.com/hi-godot/godot-ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/hi-godot/godot-ai",
+   "stars": 3220,
+   "forks": 190,
+   "checked": "2026-10-26",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "cheshire-cat": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cheshire Cat AI (Stregatto) is an open-source framework for building AI agents that is designed bottom-up to be easy to read and extend, including through vibe coding. Its main use cases are education and research, and many companies and institutions use it to publish agents on the web.",
+   "It installs with uv and serves a UI and a REST API playground on localhost port 1865. Version 2 is an unstable alpha under heavy development, so the maintainers do not recommend it for production yet. The code is GPL-3.0, while the name and logo belong to the founder."
+  ],
+  "who": "Learners, researchers and teams who want a hackable agent microservice to understand and extend.",
+  "features": [
+   "Readable, plugin-based agent core",
+   "Local UI and REST API playground",
+   "Quick install with uv",
+   "Education and research focus",
+   "GPL-3.0 licence"
+  ],
+  "faq": [
+   [
+    "Is Cheshire Cat ready for production?",
+    "Version 2 is labelled an unstable alpha with breaking changes expected, so the maintainers advise against production use for now."
+   ]
+  ],
+  "sources": [
+   "https://github.com/cheshire-cat-ai/core",
+   "https://cheshirecat.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/cheshire-cat-ai/core",
+   "stars": 3097,
+   "forks": 410,
+   "checked": "2026-10-26",
+   "license": "GPL-3.0",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "shadcn-ui-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Shadcn UI v4 MCP Server gives AI assistants structured access to shadcn/ui v4 components, blocks, demos and metadata. It can return React, Svelte, Vue and React Native implementations, so a coding agent pulls real component source instead of guessing.",
+   "Beyond components it exposes full blocks such as dashboards, calendars and forms, dependency metadata and directory browsing, with caching and GitHub rate-limit handling. It supports argument completion and a stateless Streamable HTTP endpoint for multi-client deployments, and ships on npm under MIT."
+  ],
+  "who": "Frontend developers using AI coding assistants with shadcn/ui.",
+  "features": [
+   "shadcn/ui v4 component source and demos",
+   "React, Svelte, Vue and React Native",
+   "Blocks for dashboards, calendars and forms",
+   "Caching and rate-limit handling",
+   "Streamable HTTP endpoint (MIT)"
+  ],
+  "faq": [
+   [
+    "Which frameworks does it cover?",
+    "React, Svelte, Vue and React Native implementations of shadcn/ui v4 components."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Jpisnice/shadcn-ui-mcp-server"
+  ],
+  "facts": {
+   "repo": "https://github.com/Jpisnice/shadcn-ui-mcp-server",
+   "stars": 3070,
+   "forks": 314,
+   "checked": "2026-10-26",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-26"
+ },
+ "qwen-audio-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Qwen Audio Agent is a real-time voice runtime from the Qwen Audio team built around \"agent presence\": the agent keeps talking with you while it thinks, calls tools or works on a longer task, then tells you when the result is ready instead of going silent.",
+   "Version 2.0.0 (September 2026) rebuilt the orchestration runtime with a unified client protocol and ACP and A2A backend integration, widened voice and video model support, improved frontend tools, memory and knowledge libraries, and added a desktop conversation panel and remote mobile access. It ships on npm under Apache-2.0 with an accompanying paper."
+  ],
+  "who": "Developers building voice agents that must stay conversational while doing background work.",
+  "features": [
+   "Talks while tools and tasks run",
+   "ACP and A2A backend integration",
+   "Multiple voice and video model frontends",
+   "Memory and knowledge libraries",
+   "npm package (Apache-2.0)"
+  ],
+  "faq": [
+   [
+    "What changed in v2.0.0?",
+    "A rebuilt orchestration runtime with a unified client protocol, ACP/A2A backends, more voice and video models, a desktop panel and remote mobile access."
+   ]
+  ],
+  "sources": [
+   "https://github.com/QwenAudio/qwen-audio-agent",
+   "https://qwenaudio.github.io/qwen-audio-agent/"
+  ],
+  "facts": {
+   "repo": "https://github.com/QwenAudio/qwen-audio-agent",
+   "stars": 3024,
+   "forks": 308,
+   "checked": "2026-10-26",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-26"
  }
 }

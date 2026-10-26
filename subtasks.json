@@ -7091,5 +7091,50 @@
 "mixing",
 "rules-config"
 ],
-"ml0x": []
+"ml0x": [],
+"open-seo-mcp-skills": [
+"marketing-agents",
+"research-agents",
+"mcp-servers",
+"local-models",
+"rules-config"
+],
+"cloudflare-cf-cli": [
+"terminal-agents"
+],
+"pinloop": [
+"terminal-agents"
+],
+"termish": [
+"computer-use",
+"workflow-automation",
+"terminal-agents",
+"mobile"
+],
+"startlux-decision": [],
+"senzing-mcp": [
+"mcp-servers"
+],
+"pomerado": [],
+"jentic-one": [
+"voice-phone",
+"guardrails",
+"agent-auth",
+"local-models"
+],
+"diffinery": [
+"code-review",
+"local-models"
+],
+"qamcp": [
+"agent-auth",
+"mcp-servers"
+],
+"strands-box": [
+"voice-phone",
+"sandboxes",
+"guardrails",
+"terminal-agents",
+"stem-separation"
+]
 }

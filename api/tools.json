@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-26T09:26:23Z",
- "updated": "2026-10-26T09:26:23Z",
+ "generated": "2026-10-26T14:11:59Z",
+ "updated": "2026-10-26T14:11:59Z",
  "last_checked": "2026-10-26",
- "count": 1786,
+ "count": 1797,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75668,6 +75668,479 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ml0x.png",
    "page": "https://agentscouthq.com/tools/ml0x.html"
+  },
+  {
+   "name": "Open SEO MCP Skills",
+   "slug": "open-seo-mcp-skills",
+   "url": "https://www.get-ryze.ai/",
+   "website": "https://www.get-ryze.ai/",
+   "github": "https://github.com/Ryze-AI-Adgent/open-seo-mcp-skills",
+   "category": "sales & marketing",
+   "description": "Free SEO MCP server plus MIT-licensed SEO and GEO skills for Claude: keyword research, rank tracking, audits, and AI visibility on your own Search Console data.",
+   "key_features": [
+    "Free; MIT skills, hosted Ryze MCP connector with Google sign-in, DataForSEO billed at cost",
+    "Mature",
+    "7376 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Free; MIT skills, hosted Ryze MCP connector with Google sign-in, DataForSEO billed at cost",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "GitHub",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
+   "github_stars": 7376,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/open-seo-mcp-skills.png",
+   "page": "https://agentscouthq.com/tools/open-seo-mcp-skills.html"
+  },
+  {
+   "name": "Cloudflare cf CLI",
+   "slug": "cloudflare-cf-cli",
+   "url": "https://developers.cloudflare.com/cf/",
+   "website": "https://developers.cloudflare.com/cf/",
+   "github": "https://github.com/cloudflare/cf",
+   "category": "agent infra",
+   "description": "Cloudflare's agentic CLI for the entire Cloudflare API, with JSON-first output, built-in command search for agents, and a typed cloudflare.config.ts.",
+   "key_features": [
+    "Free open beta CLI (npm i -g cf); Cloudflare usage billed per product",
+    "Active",
+    "950 GitHub stars",
+    "Research the web"
+   ],
+   "pricing": "Free open beta CLI (npm i -g cf); Cloudflare usage billed per product",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "cloudflare/cf",
+   "github_stars": 950,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cloudflare-cf-cli.png",
+   "page": "https://agentscouthq.com/tools/cloudflare-cf-cli.html"
+  },
+  {
+   "name": "Pinloop",
+   "slug": "pinloop",
+   "url": "https://pinloop.ai/",
+   "website": "https://pinloop.ai/",
+   "github": "https://github.com/pinloop-ai/pinloop-cli",
+   "category": "business agents",
+   "description": "Terminal job board for coding agents: searches millions of hourly-refreshed postings and has an LLM judge each one against your resume and preferences.",
+   "key_features": [
+    "MIT CLI; account required, search and LLM judging billed per use",
+    "Active",
+    "565 GitHub stars",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "MIT CLI; account required, search and LLM judging billed per use",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "GitHub",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "pinloop-ai/pinloop-cli",
+   "github_stars": 565,
+   "open_source": false,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pinloop.png",
+   "page": "https://agentscouthq.com/tools/pinloop.html"
+  },
+  {
+   "name": "Termish",
+   "slug": "termish",
+   "url": "https://termish.dev/",
+   "website": "https://termish.dev/",
+   "github": "https://github.com/farlume/termish",
+   "category": "coding",
+   "description": "Open source mobile SSH/Mosh terminal for Android and iOS with Herdr integration, SFTP files, remote screen, and native agent chat for Codex-style workflows.",
+   "key_features": [
+    "Free and open source; Android APK, iOS build from source",
+    "Active",
+    "519 GitHub stars",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "Free and open source; Android APK, iOS build from source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "farlume/termish",
+   "github_stars": 519,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/termish.png",
+   "page": "https://agentscouthq.com/tools/termish.html"
+  },
+  {
+   "name": "StartLux Decision",
+   "slug": "startlux-decision",
+   "url": "https://github.com/StartLuxLabs/StartLux-Decision",
+   "website": "",
+   "github": "https://github.com/StartLuxLabs/StartLux-Decision",
+   "category": "models & local runtimes",
+   "description": "Open decision models (0.8B to 27B) that return a calibrated probability for every option in a single pass, with an inference engine and HTTP server.",
+   "key_features": [
+    "Open weights 0.8B-27B on Hugging Face; free hosted API",
+    "Active",
+    "1579 GitHub stars"
+   ],
+   "pricing": "Open weights 0.8B-27B on Hugging Face; free hosted API",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "GitHub",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "StartLuxLabs/StartLux-Decision",
+   "github_stars": 1579,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "models & local runtimes"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/startlux-decision.png",
+   "page": "https://agentscouthq.com/tools/startlux-decision.html"
+  },
+  {
+   "name": "Senzing MCP",
+   "slug": "senzing-mcp",
+   "url": "https://senzing.com/",
+   "website": "https://senzing.com/",
+   "github": "https://github.com/Senzing/mcp",
+   "category": "MCP servers",
+   "description": "Official Senzing MCP server that grounds AI assistants in Senzing docs and code to map data, deploy the engine, and resolve and link people and company records.",
+   "key_features": [
+    "Free MCP server; Senzing engine free tier up to 100K records, paid licenses above",
+    "Active",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free MCP server; Senzing engine free tier up to 100K records, paid licenses above",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Senzing/mcp",
+   "github_stars": 0,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/senzing-mcp.png",
+   "page": "https://agentscouthq.com/tools/senzing-mcp.html"
+  },
+  {
+   "name": "Pomerado",
+   "slug": "pomerado",
+   "url": "https://pomerado.ai/",
+   "website": "https://pomerado.ai/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "YC-backed tool that turns any website, from legacy portals to consumer sites, into a reusable API/MCP tool so agents stop clicking through pages.",
+   "key_features": [
+    "Free keyless tier to try; paid plans for teams (see pricing)",
+    "Active",
+    "Automate the browser",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free keyless tier to try; paid plans for teams (see pricing)",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "X",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pomerado.png",
+   "page": "https://agentscouthq.com/tools/pomerado.html"
+  },
+  {
+   "name": "Jentic One",
+   "slug": "jentic-one",
+   "url": "https://jentic.com/",
+   "website": "https://jentic.com/",
+   "github": "https://github.com/jentic/jentic-one",
+   "category": "security & governance",
+   "description": "Self-hosted broker that lets agents call real APIs without holding keys: it checks permissions, injects credentials at call time, and logs every execution.",
+   "key_features": [
+    "Open source self-hosted (public beta); Jentic OS and enterprise plans paid",
+    "Active",
+    "205 GitHub stars",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source self-hosted (public beta); Jentic OS and enterprise plans paid",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "X",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "jentic/jentic-one",
+   "github_stars": 205,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jentic-one.png",
+   "page": "https://agentscouthq.com/tools/jentic-one.html"
+  },
+  {
+   "name": "Diffinery",
+   "slug": "diffinery",
+   "url": "https://diffinery.com/",
+   "website": "https://diffinery.com/",
+   "github": "https://github.com/codician-team/diffinery",
+   "category": "coding",
+   "description": "Open source, agent-first GitHub alternative on your own Cloudflare account: git hosting, pull requests, Actions-compatible CI, and agents with their own accounts.",
+   "key_features": [
+    "Apache-2.0, free to self-host on your own Cloudflare account; hosted early access",
+    "Active",
+    "32 GitHub stars",
+    "Write code",
+    "Sales & support"
+   ],
+   "pricing": "Apache-2.0, free to self-host on your own Cloudflare account; hosted early access",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "X",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "codician-team/diffinery",
+   "github_stars": 32,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/diffinery.png",
+   "page": "https://agentscouthq.com/tools/diffinery.html"
+  },
+  {
+   "name": "QAmcp",
+   "slug": "qamcp",
+   "url": "https://qamcp.dev/",
+   "website": "https://qamcp.dev/",
+   "github": "https://github.com/QAmcp/qamcp-cli",
+   "category": "evals & observability",
+   "description": "Free open source MCP server tester that connects like an AI app and flags hidden instructions, leaked secrets, bad inputs, slow tools, and login problems.",
+   "key_features": [
+    "Free and open source; browser tester at qamcp.dev and CLI for CI",
+    "Active",
+    "5 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Free and open source; browser tester at qamcp.dev and CLI for CI",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "X",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "QAmcp/qamcp-cli",
+   "github_stars": 5,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/qamcp.png",
+   "page": "https://agentscouthq.com/tools/qamcp.html"
+  },
+  {
+   "name": "Strands Box",
+   "slug": "strands-box",
+   "url": "https://github.com/strands-agents/box",
+   "website": "",
+   "github": "https://github.com/strands-agents/box",
+   "category": "sandboxes & code execution",
+   "description": "Open source sandbox from the Strands Agents team that pairs OS-level isolation with default-deny Dogwood policies over shell, Python, egress, and MCP calls.",
+   "key_features": [
+    "Free and open source (preview, local execution)",
+    "Active",
+    "476 GitHub stars",
+    "Write code",
+    "Voice & phone calls",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free and open source (preview, local execution)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-26",
+   "added": "2026-10-26",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "strands-agents/box",
+   "github_stars": 476,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/strands-box.png",
+   "page": "https://agentscouthq.com/tools/strands-box.html"
   }
  ]
 }
