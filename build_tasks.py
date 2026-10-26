@@ -356,7 +356,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>Get the 5 best new AI agent tools, copy-paste MCP workflows, and our high-res 50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack free every Tuesday.</p></div>'
     '<div class="nlgo"><a class="btn primary" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&amp;utm_medium=website" target="_blank" rel="noopener noreferrer" data-nl>Subscribe &amp; Get Free Cheat Sheets →</a></div>'
     '</div></div></section>')  # compact lead-magnet card; opens Beehiiv signup in a new tab (Oct 25 2026)
-ASSET_V="202610260240"  # bump when app.js/styles.css change
+ASSET_V = "202610260245"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
