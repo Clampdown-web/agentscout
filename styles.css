@@ -342,8 +342,8 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .nlbox .nltxt{flex:1 1 300px;min-width:0}
 .nlbox h2{font-size:17px;margin:0 0 4px}
 .nlbox .nltxt p{margin:0;color:var(--muted);font-size:14px}
-.nlbox .nlgo{margin:0}
-.nlbox .nlgo .btn{white-space:nowrap}
+.nlbox .nlgo{margin:0;max-width:100%}
+.nlbox .nlgo .btn,.nlin .nlgo .btn{white-space:normal;text-align:center;height:auto;min-height:40px;padding:8px 16px;line-height:1.3;max-width:100%}
 .nlbox .nlmsg{flex-basis:100%;margin:0}
 .nlbox .nlframe{flex-basis:100%;margin-top:0}
 .nlbox .as-ph{margin:0;flex:1 1 260px}

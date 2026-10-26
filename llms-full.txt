@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 1,781 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
+> AgentScout is a curated, link-checked, read-only directory of 1,784 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`).
 
@@ -30,12 +30,12 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 1,781
+- **Total Verified AI Agent Tools**: 1,784
 - **Total Categories**: 30
 - **Verified MCP Servers**: 249
 - **Bot Templates & Installable Agent Skills**: 189 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
 - **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 862
-- **Free or Freemium Tools**: 1,319
+- **Free or Freemium Tools**: 1,322
 - **Local / Self-Hosted Tools (`runs_locally` filter)**: 797 (70 offline / on-device, 727 self-hosted)
 - **Catalog Last Link-Checked**: 2026-10-25 (America/Los_Angeles)
 
@@ -254,6 +254,29 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Axle AI | Paid | No |  |  |  | edit video | AI media asset management for post houses and broadcasters. Tags faces, objects and speech so editors can search footage. | https://agentscouthq.com/tools/axle-ai.html | https://www.axle.ai |
 | 15 | Beeble | Creator $19/mo ($16/mo yearly); Professional $75/mo ($60/mo yearly) | No |  |  |  | edit video, visual effects | AI VFX for filmmakers. Relight footage after the shoot by pulling normal, depth and other passes from ordinary video. | https://agentscouthq.com/tools/beeble.html | https://beeble.ai |
 
+### photography & photo editing (56 tools) — [https://agentscouthq.com/categories/photography-photo-editing.html](https://agentscouthq.com/categories/photography-photo-editing.html)
+
+- **At a glance**: 56 link-checked tools (4 open-source, 31 free or freemium, 5 local or self-hosted).
+- **Top picks**: [Immich](https://agentscouthq.com/tools/immich.html), [Upscayl](https://agentscouthq.com/tools/upscayl.html), [PhotoPrism](https://agentscouthq.com/tools/photoprism.html), [Photoshop MCP](https://agentscouthq.com/tools/photoshop-mcp.html), [Adobe Lightroom](https://agentscouthq.com/tools/adobe-lightroom.html).
+
+| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
+|---|---|---|---|---|---|---:|---|---|---|---|
+| 1 | Immich | Free and open source (AGPL-3.0), self-hosted | Yes | AGPL-3.0 | Self-hosted | 117,169 | organize photos | Self-hosted photo and video library with AI face recognition and smart search, a private alternative to Google Photos. | https://agentscouthq.com/tools/immich.html | https://immich.app |
+| 2 | Upscayl | Free and open source (AGPL-3.0) desktop app; Upscayl Cloud free trial (10 credits), Pro $24.99/mo | Yes | AGPL-3.0 |  | 50,991 | upscale images | Free open-source desktop app for upscaling images on your own computer. | https://agentscouthq.com/tools/upscayl.html | https://upscayl.org |
+| 3 | PhotoPrism | Community edition free (AGPL-3.0, self-hosted); Essentials €2/mo, Plus from €6/mo; managed hosting via PikaPods from $6.50/mo | Yes | AGPL-3.0 | Self-hosted | 40,358 | organize photos | Self-hosted AI photo library that auto-tags, recognizes faces and finds places. | https://agentscouthq.com/tools/photoprism.html | https://www.photoprism.app |
+| 4 | Photoshop MCP | Free and open source (MIT); needs Adobe Photoshop | Yes | MIT | Self-hosted | 729 | edit photos | Community MCP server that lets AI agents drive Adobe Photoshop: layers, adjustments, text and exports. | https://agentscouthq.com/tools/photoshop-mcp.html | https://photoshop-mcp.com |
+| 5 | Adobe Lightroom | Creative Cloud plans: see site | No |  |  |  | edit photos, cull photos | Photo editor with AI masks, denoise, generative remove and assisted culling, plus batch edits through the Firefly AI Assistant. | https://agentscouthq.com/tools/adobe-lightroom.html | https://www.adobe.com/products/photoshop-lightroom.html |
+| 6 | Adobe Photoshop | Creative Cloud plans: see site | No |  |  |  | edit photos, retouch portraits | Photoshop with Generative Fill and an AI Assistant agent that carries out multi-step edits on request. | https://agentscouthq.com/tools/adobe-photoshop.html | https://www.adobe.com/products/photoshop.html |
+| 7 | Aftershoot | See site | No |  |  |  | cull photos, edit in your style | AI culling, editing in your own learned style, and retouching for working photographers. | https://agentscouthq.com/tools/aftershoot.html | https://aftershoot.com |
+| 8 | Aragon AI | One-time: Basic $35, Standard $45, Executive $75 | No |  |  |  | headshots | AI professional headshots made from your own selfies. | https://agentscouthq.com/tools/aragon-ai.html | https://www.aragon.ai |
+| 9 | Autoenhance.ai | Essential $29/mo (100 images); $0.29 per extra image; watermarked free trial | No |  |  |  | real estate photos, edit photos | AI real-estate photo editing: HDR merging, sky replacement and decluttering, with an API. | https://agentscouthq.com/tools/autoenhance-ai.html | https://www.autoenhance.ai |
+| 10 | BetterPic | From $35 one-time | No |  |  |  | headshots | AI 4K studio headshots from your own photos, with human edit requests. | https://agentscouthq.com/tools/betterpic.html | https://www.betterpic.io |
+| 11 | Botika | Pro $55/mo ($46 yearly); higher tiers: see site | No |  |  |  | product photos | Turns flat-lay or mannequin clothing photos into on-model fashion images. | https://agentscouthq.com/tools/botika.html | https://botika.com |
+| 12 | Caimera | Free (20 credits); Mini $15/user/mo, Starter $45/user/mo, Pro $117/user/mo; Enterprise from $1,500 | No |  |  |  | product photos | AI visual production for fashion brands: on-model shots and campaign images. | https://agentscouthq.com/tools/caimera.html | https://www.caimera.ai |
+| 13 | Capture One | See site | No |  |  |  | edit photos, cull photos | Pro raw editor and tethering app with AI culling, masking and retouching. | https://agentscouthq.com/tools/capture-one.html | https://www.captureone.com |
+| 14 | Claid.ai | Free trial; web and API plans: see site | No |  |  |  | product photos, upscale images | AI product photography: backgrounds, fashion models and upscaling, with an API. | https://agentscouthq.com/tools/claid-ai.html | https://claid.ai |
+| 15 | Clipdrop | Free; Pro: see site | No |  |  |  | remove backgrounds, edit photos | Image cleanup, relighting, background removal and upscaling tools (owned by Jasper). | https://agentscouthq.com/tools/clipdrop.html | https://clipdrop.co |
+
 ### memory & RAG (55 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
 
 - **At a glance**: 55 link-checked tools (48 open-source, 50 free or freemium, 48 local or self-hosted).
@@ -276,29 +299,6 @@ Each category section below summarizes the verified tool count, open-source coun
 | 13 | TencentDB-Agent-Memory | Open source | Yes |  | Self-hosted | 29,907 | write code, give agents memory | Team-level memory hub that turns conversations, docs and code into shared memory for agents. | https://agentscouthq.com/tools/tencentdb-agent-memory.html | https://tencentcloud.github.io/TencentDB-Agent-Memory/ |
 | 14 | AgentMemory | Open source | Yes |  | Self-hosted | 29,877 | write code, give agents memory | Persistent memory layer for AI coding agents. | https://agentscouthq.com/tools/agentmemory.html | https://www.agent-memory.dev/ |
 | 15 | Chroma | Open source + cloud | Yes |  | Self-hosted | 29,573 | research the web, give agents memory | Open-source search and vector database widely used for agent memory and RAG. | https://agentscouthq.com/tools/chroma.html | https://www.trychroma.com/ |
-
-### photography & photo editing (55 tools) — [https://agentscouthq.com/categories/photography-photo-editing.html](https://agentscouthq.com/categories/photography-photo-editing.html)
-
-- **At a glance**: 55 link-checked tools (4 open-source, 30 free or freemium, 5 local or self-hosted).
-- **Top picks**: [Immich](https://agentscouthq.com/tools/immich.html), [Upscayl](https://agentscouthq.com/tools/upscayl.html), [PhotoPrism](https://agentscouthq.com/tools/photoprism.html), [Photoshop MCP](https://agentscouthq.com/tools/photoshop-mcp.html), [Adobe Lightroom](https://agentscouthq.com/tools/adobe-lightroom.html).
-
-| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
-|---|---|---|---|---|---|---:|---|---|---|---|
-| 1 | Immich | Free and open source (AGPL-3.0), self-hosted | Yes | AGPL-3.0 | Self-hosted | 117,169 | organize photos | Self-hosted photo and video library with AI face recognition and smart search, a private alternative to Google Photos. | https://agentscouthq.com/tools/immich.html | https://immich.app |
-| 2 | Upscayl | Free and open source (AGPL-3.0) desktop app; Upscayl Cloud free trial (10 credits), Pro $24.99/mo | Yes | AGPL-3.0 |  | 50,991 | upscale images | Free open-source desktop app for upscaling images on your own computer. | https://agentscouthq.com/tools/upscayl.html | https://upscayl.org |
-| 3 | PhotoPrism | Community edition free (AGPL-3.0, self-hosted); Essentials €2/mo, Plus from €6/mo; managed hosting via PikaPods from $6.50/mo | Yes | AGPL-3.0 | Self-hosted | 40,358 | organize photos | Self-hosted AI photo library that auto-tags, recognizes faces and finds places. | https://agentscouthq.com/tools/photoprism.html | https://www.photoprism.app |
-| 4 | Photoshop MCP | Free and open source (MIT); needs Adobe Photoshop | Yes | MIT | Self-hosted | 729 | edit photos | Community MCP server that lets AI agents drive Adobe Photoshop: layers, adjustments, text and exports. | https://agentscouthq.com/tools/photoshop-mcp.html | https://photoshop-mcp.com |
-| 5 | Adobe Lightroom | Creative Cloud plans: see site | No |  |  |  | edit photos, cull photos | Photo editor with AI masks, denoise, generative remove and assisted culling, plus batch edits through the Firefly AI Assistant. | https://agentscouthq.com/tools/adobe-lightroom.html | https://www.adobe.com/products/photoshop-lightroom.html |
-| 6 | Adobe Photoshop | Creative Cloud plans: see site | No |  |  |  | edit photos, retouch portraits | Photoshop with Generative Fill and an AI Assistant agent that carries out multi-step edits on request. | https://agentscouthq.com/tools/adobe-photoshop.html | https://www.adobe.com/products/photoshop.html |
-| 7 | Aftershoot | See site | No |  |  |  | cull photos, edit in your style | AI culling, editing in your own learned style, and retouching for working photographers. | https://agentscouthq.com/tools/aftershoot.html | https://aftershoot.com |
-| 8 | Aragon AI | One-time: Basic $35, Standard $45, Executive $75 | No |  |  |  | headshots | AI professional headshots made from your own selfies. | https://agentscouthq.com/tools/aragon-ai.html | https://www.aragon.ai |
-| 9 | Autoenhance.ai | Essential $29/mo (100 images); $0.29 per extra image; watermarked free trial | No |  |  |  | real estate photos, edit photos | AI real-estate photo editing: HDR merging, sky replacement and decluttering, with an API. | https://agentscouthq.com/tools/autoenhance-ai.html | https://www.autoenhance.ai |
-| 10 | BetterPic | From $35 one-time | No |  |  |  | headshots | AI 4K studio headshots from your own photos, with human edit requests. | https://agentscouthq.com/tools/betterpic.html | https://www.betterpic.io |
-| 11 | Botika | Pro $55/mo ($46 yearly); higher tiers: see site | No |  |  |  | product photos | Turns flat-lay or mannequin clothing photos into on-model fashion images. | https://agentscouthq.com/tools/botika.html | https://botika.com |
-| 12 | Caimera | Free (20 credits); Mini $15/user/mo, Starter $45/user/mo, Pro $117/user/mo; Enterprise from $1,500 | No |  |  |  | product photos | AI visual production for fashion brands: on-model shots and campaign images. | https://agentscouthq.com/tools/caimera.html | https://www.caimera.ai |
-| 13 | Capture One | See site | No |  |  |  | edit photos, cull photos | Pro raw editor and tethering app with AI culling, masking and retouching. | https://agentscouthq.com/tools/capture-one.html | https://www.captureone.com |
-| 14 | Claid.ai | Free trial; web and API plans: see site | No |  |  |  | product photos, upscale images | AI product photography: backgrounds, fashion models and upscaling, with an API. | https://agentscouthq.com/tools/claid-ai.html | https://claid.ai |
-| 15 | Clipdrop | Free; Pro: see site | No |  |  |  | remove backgrounds, edit photos | Image cleanup, relighting, background removal and upscaling tools (owned by Jasper). | https://agentscouthq.com/tools/clipdrop.html | https://clipdrop.co |
 
 ### business agents (51 tools) — [https://agentscouthq.com/categories/business-agents.html](https://agentscouthq.com/categories/business-agents.html)
 
@@ -438,6 +438,29 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Agent Vault | Open source | Yes | the MIT License | Self-hosted | 2,423 | security & governance | Infisical's open-source credential broker that proxies API calls for AI agents so they never hold secrets themselves. | https://agentscouthq.com/tools/agent-vault.html | https://docs.agent-vault.dev/ |
 | 15 | open-kritt | Open source + cloud | Yes |  | Self-hosted | 2,333 | security & governance | A self-hosted AI security research tool that orchestrates agents to hunt for vulnerabilities in a codebase and then validate and rank what they find; managed scans are also offered. | https://agentscouthq.com/tools/open-kritt.html | https://kritt.ai/ |
 
+### music production (42 tools) — [https://agentscouthq.com/categories/music-production.html](https://agentscouthq.com/categories/music-production.html)
+
+- **At a glance**: 42 link-checked tools (6 open-source, 28 free or freemium, 5 local or self-hosted).
+- **Top picks**: [Spleeter](https://agentscouthq.com/tools/spleeter.html), [Ultimate Vocal Remover](https://agentscouthq.com/tools/ultimate-vocal-remover.html), [AudioCraft](https://agentscouthq.com/tools/audiocraft.html), [YuE](https://agentscouthq.com/tools/yue.html), [ACE-Step](https://agentscouthq.com/tools/ace-step.html).
+
+| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
+|---|---|---|---|---|---|---:|---|---|---|---|
+| 1 | Spleeter | Open source (MIT) | Yes | MIT | Self-hosted | 28,497 | make music, separate stems | Deezer's source separation library with pretrained models for splitting songs into stems. | https://agentscouthq.com/tools/spleeter.html | https://research.deezer.com/projects/spleeter.html |
+| 2 | Ultimate Vocal Remover | Open source (MIT) | Yes | MIT |  | 26,773 | separate stems | Free desktop app that separates vocals and instruments with deep neural networks. | https://agentscouthq.com/tools/ultimate-vocal-remover.html | https://github.com/Anjok07/ultimatevocalremovergui |
+| 3 | AudioCraft | Open source (MIT code) | Yes | MIT | Self-hosted | 23,757 | sound effects & Foley | Meta's open library for audio generation, including MusicGen for music and AudioGen for sound effects. | https://agentscouthq.com/tools/audiocraft.html | https://github.com/facebookresearch/audiocraft |
+| 4 | YuE | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 12,693 | edit video, make music | Open song-generation model (YuE2) with lyrics-to-song, zero-shot covers and agentic music editing. | https://agentscouthq.com/tools/yue.html | https://map-yue2.github.io/ |
+| 5 | ACE-Step | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 4,983 | edit video, make music | Open music generation foundation model for fast full-song generation and editing. | https://agentscouthq.com/tools/ace-step.html | https://ace-step.github.io/ |
+| 6 | Stable Audio | Free (50 credits/mo, non-commercial); Session $30/mo; Producer $90/mo; Studio $199/mo | No |  |  | 3,891 | music production | Stability AI's music and sound generation toolkit with commercially safe models. | https://agentscouthq.com/tools/stable-audio.html | https://stableaudio.com |
+| 7 | Magenta RealTime | Open weights (Apache-2.0 code) | Yes | Apache-2.0 | Self-hosted | 1,842 | music production | Google's open-weights live music model that you can play and steer in real time. | https://agentscouthq.com/tools/magenta-realtime.html | https://magenta.withgoogle.com/magenta-realtime-2 |
+| 8 | Neutone | See site | No |  |  | 633 | music production | Plugin that runs neural audio models in your DAW in real time for new sounds and timbre transfer. | https://agentscouthq.com/tools/neutone.html | https://neutone.jp |
+| 9 | ACE Studio | Artist $16.58/mo; Artist Pro $22/mo (yearly, rent-to-own) | No |  |  |  | voiceover, make music | AI singing voice and instrument studio. Turn MIDI and lyrics into vocals and convert voices. | https://agentscouthq.com/tools/ace-studio.html | https://acestudio.ai |
+| 10 | AI Music Mastering | Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history) | No |  |  |  | mix & master | AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership. | https://agentscouthq.com/tools/ai-music-mastering.html | https://aimusicmastering.app/ |
+| 11 | AIVA | Free €0; Standard €11/mo; Pro €33/mo | No |  |  |  | edit video, visual effects | AI composition assistant for soundtrack and score music in many styles, with MIDI export and editing. | https://agentscouthq.com/tools/aiva.html | https://www.aiva.ai |
+| 12 | AutoTune | Perpetual licences ($250–$450) or $17.50/mo subscription | No |  |  |  | mix & master | Antares' pitch-correction plugins plus AI-powered vocal mixing tools for vocal tuning and effects. | https://agentscouthq.com/tools/autotune.html | https://www.antarestech.com |
+| 13 | BandLab | See site | No |  |  |  | make music, mix & master | Free cloud music-making platform and DAW with AI tools such as SongStarter and AI mastering, plus collaboration. | https://agentscouthq.com/tools/bandlab.html | https://www.bandlab.com |
+| 14 | Beatoven.ai | See site | No |  |  |  | sound effects & Foley | Royalty-free AI background music and sound effects for videos, podcasts and games, with an API. | https://agentscouthq.com/tools/beatoven-ai.html | https://www.beatoven.ai |
+| 15 | Boomy | Free; Pro $29.99/mo | No |  |  |  | make music | Make generative songs with AI and release them to streaming services. | https://agentscouthq.com/tools/boomy.html | https://boomy.com |
+
 ### 3D & concept art (41 tools) — [https://agentscouthq.com/categories/3d-concept-art.html](https://agentscouthq.com/categories/3d-concept-art.html)
 
 - **At a glance**: 41 link-checked tools (10 open-source, 35 free or freemium, 6 local or self-hosted).
@@ -460,29 +483,6 @@ Each category section below summarizes the verified tool count, open-source coun
 | 13 | 3D AI Studio | Free; subscriptions: see site; credit packs from $34 (2,000 credits) | No |  |  |  | generate 3D | Text and image to 3D models with texturing and many export formats. | https://agentscouthq.com/tools/3d-ai-studio.html | https://www.3daistudio.com |
 | 14 | AccuRIG | Free (Reallusion) | No |  |  |  | animate characters | Free auto-rigging tool from Reallusion that turns static character meshes into animation-ready rigs. | https://agentscouthq.com/tools/accurig.html | https://actorcore.reallusion.com/auto-rig |
 | 15 | Adobe Substance 3D | Creative Cloud plans: see site | No |  |  |  | 3D texturing | Adobe's 3D texturing and material apps, with Firefly-powered text-to-texture and AI image staging. | https://agentscouthq.com/tools/adobe-substance-3d.html | https://www.adobe.com/products/substance3d.html |
-
-### music production (41 tools) — [https://agentscouthq.com/categories/music-production.html](https://agentscouthq.com/categories/music-production.html)
-
-- **At a glance**: 41 link-checked tools (6 open-source, 27 free or freemium, 5 local or self-hosted).
-- **Top picks**: [Spleeter](https://agentscouthq.com/tools/spleeter.html), [Ultimate Vocal Remover](https://agentscouthq.com/tools/ultimate-vocal-remover.html), [AudioCraft](https://agentscouthq.com/tools/audiocraft.html), [YuE](https://agentscouthq.com/tools/yue.html), [ACE-Step](https://agentscouthq.com/tools/ace-step.html).
-
-| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
-|---|---|---|---|---|---|---:|---|---|---|---|
-| 1 | Spleeter | Open source (MIT) | Yes | MIT | Self-hosted | 28,497 | make music, separate stems | Deezer's source separation library with pretrained models for splitting songs into stems. | https://agentscouthq.com/tools/spleeter.html | https://research.deezer.com/projects/spleeter.html |
-| 2 | Ultimate Vocal Remover | Open source (MIT) | Yes | MIT |  | 26,773 | separate stems | Free desktop app that separates vocals and instruments with deep neural networks. | https://agentscouthq.com/tools/ultimate-vocal-remover.html | https://github.com/Anjok07/ultimatevocalremovergui |
-| 3 | AudioCraft | Open source (MIT code) | Yes | MIT | Self-hosted | 23,757 | sound effects & Foley | Meta's open library for audio generation, including MusicGen for music and AudioGen for sound effects. | https://agentscouthq.com/tools/audiocraft.html | https://github.com/facebookresearch/audiocraft |
-| 4 | YuE | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 12,693 | edit video, make music | Open song-generation model (YuE2) with lyrics-to-song, zero-shot covers and agentic music editing. | https://agentscouthq.com/tools/yue.html | https://map-yue2.github.io/ |
-| 5 | ACE-Step | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 4,983 | edit video, make music | Open music generation foundation model for fast full-song generation and editing. | https://agentscouthq.com/tools/ace-step.html | https://ace-step.github.io/ |
-| 6 | Stable Audio | Free (50 credits/mo, non-commercial); Session $30/mo; Producer $90/mo; Studio $199/mo | No |  |  | 3,891 | music production | Stability AI's music and sound generation toolkit with commercially safe models. | https://agentscouthq.com/tools/stable-audio.html | https://stableaudio.com |
-| 7 | Magenta RealTime | Open weights (Apache-2.0 code) | Yes | Apache-2.0 | Self-hosted | 1,842 | music production | Google's open-weights live music model that you can play and steer in real time. | https://agentscouthq.com/tools/magenta-realtime.html | https://magenta.withgoogle.com/magenta-realtime-2 |
-| 8 | Neutone | See site | No |  |  | 633 | music production | Plugin that runs neural audio models in your DAW in real time for new sounds and timbre transfer. | https://agentscouthq.com/tools/neutone.html | https://neutone.jp |
-| 9 | ACE Studio | Artist $16.58/mo; Artist Pro $22/mo (yearly, rent-to-own) | No |  |  |  | voiceover, make music | AI singing voice and instrument studio. Turn MIDI and lyrics into vocals and convert voices. | https://agentscouthq.com/tools/ace-studio.html | https://acestudio.ai |
-| 10 | AI Music Mastering | Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history) | No |  |  |  | mix & master | AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership. | https://agentscouthq.com/tools/ai-music-mastering.html | https://aimusicmastering.app/ |
-| 11 | AIVA | Free €0; Standard €11/mo; Pro €33/mo | No |  |  |  | edit video, visual effects | AI composition assistant for soundtrack and score music in many styles, with MIDI export and editing. | https://agentscouthq.com/tools/aiva.html | https://www.aiva.ai |
-| 12 | AutoTune | Perpetual licences ($250–$450) or $17.50/mo subscription | No |  |  |  | mix & master | Antares' pitch-correction plugins plus AI-powered vocal mixing tools for vocal tuning and effects. | https://agentscouthq.com/tools/autotune.html | https://www.antarestech.com |
-| 13 | BandLab | See site | No |  |  |  | make music, mix & master | Free cloud music-making platform and DAW with AI tools such as SongStarter and AI mastering, plus collaboration. | https://agentscouthq.com/tools/bandlab.html | https://www.bandlab.com |
-| 14 | Beatoven.ai | See site | No |  |  |  | sound effects & Foley | Royalty-free AI background music and sound effects for videos, podcasts and games, with an API. | https://agentscouthq.com/tools/beatoven-ai.html | https://www.beatoven.ai |
-| 15 | Boomy | Free; Pro $29.99/mo | No |  |  |  | make music | Make generative songs with AI and release them to streaming services. | https://agentscouthq.com/tools/boomy.html | https://boomy.com |
 
 ### video generation (40 tools) — [https://agentscouthq.com/categories/video-generation.html](https://agentscouthq.com/categories/video-generation.html)
 
@@ -553,9 +553,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | PySpur | Open source | Yes |  | Self-hosted | 5,793 | write code, automate workflows | Visual playground for building and iterating on agent workflows. | https://agentscouthq.com/tools/pyspur.html | https://www.pyspur.dev/ |
 | 15 | Yuanjing Wanwu | Open source | Yes | the Apache License 2.0 | Self-hosted | 2,377 | write code, automate workflows | China Unicom's enterprise, multi-tenant platform for building agents, workflows and RAG apps with model management. | https://agentscouthq.com/tools/yuanjing-wanwu.html | https://github.com/UnicomAI/wanwu |
 
-### image generation (35 tools) — [https://agentscouthq.com/categories/image-generation.html](https://agentscouthq.com/categories/image-generation.html)
+### image generation (36 tools) — [https://agentscouthq.com/categories/image-generation.html](https://agentscouthq.com/categories/image-generation.html)
 
-- **At a glance**: 35 link-checked tools (6 open-source, 24 free or freemium, 6 local or self-hosted).
+- **At a glance**: 36 link-checked tools (6 open-source, 25 free or freemium, 6 local or self-hosted).
 - **Top picks**: [Invoke](https://agentscouthq.com/tools/invoke.html), [Stability AI](https://agentscouthq.com/tools/stability-ai.html), [Krita AI Diffusion](https://agentscouthq.com/tools/krita-ai-diffusion.html), [Qwen-Image](https://agentscouthq.com/tools/qwen-image.html), [SD.Next](https://agentscouthq.com/tools/sd-next.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -568,13 +568,13 @@ Each category section below summarizes the verified tool count, open-source coun
 | 6 | Pollinations.ai | Free open-source API (MIT); paid tiers: see site | Yes | MIT | Self-hosted | 5,242 | generate images, open image models | Open-source image and text generation API you can call with a simple URL, popular with hobby developers. | https://agentscouthq.com/tools/pollinations-ai.html | https://pollinations.ai |
 | 7 | SwarmUI | Free and open source (MIT) | Yes | MIT | Self-hosted | 4,703 | generate images, open image models | Local web UI for image and video models with a simple tab plus full ComfyUI workflows underneath. | https://agentscouthq.com/tools/swarmui.html | https://github.com/mcmonkeyprojects/SwarmUI |
 | 8 | FLUX (Black Forest Labs) | API from about $0.048 per image (FLUX.2 calculator); open-weight models free to self-host | No |  |  | 2,808 | generate images, open image models | Black Forest Labs' FLUX image models, through the API or as open weights. Many other creative apps build on them. | https://agentscouthq.com/tools/flux-black-forest-labs.html | https://bfl.ai |
-| 9 | Artbreeder | Free; Starter $7.49/mo, Advanced $15.99/mo, Champion $30.99/mo (billed yearly) | No |  |  |  | generate images, concept art | Collage-to-image and remixing tool for characters, portraits and concept art. | https://agentscouthq.com/tools/artbreeder.html | https://www.artbreeder.com |
-| 10 | Bria | Pay as you go from $0.018 per call; FIBO image generation $0.03 per image; enterprise plans | No |  |  |  | generate images, remove backgrounds | Image models trained only on licensed content, sold as an API for teams that need commercially safe output. | https://agentscouthq.com/tools/bria.html | https://bria.ai |
-| 11 | Draw Things | Free app (runs locally); Draw Things+ $8.99/mo for cloud compute | No |  | Offline |  | generate images, open image models | Runs Stable Diffusion, FLUX and other models fully on your Mac, iPhone or iPad. | https://agentscouthq.com/tools/draw-things.html | https://drawthings.ai |
-| 12 | Dzine | Free; Beginner $8.99/mo, Creator $24.99/mo, Master $59.99/mo, Master Pro $149.99/mo (about 20% off yearly) | No |  |  |  | generate images, concept art | Layer-based AI illustration and design editor with style control, inpainting and image-to-video. | https://agentscouthq.com/tools/dzine.html | https://www.dzine.ai |
-| 13 | Exactly.ai | Pilot £500/mo (3 months), Team £5,000/mo; custom style models from £6,000/year | No |  |  |  | generate images, concept art | Trains a private model on an artist's or brand's own illustrations to make new images in that style. | https://agentscouthq.com/tools/exactly-ai.html | https://exactly.ai |
-| 14 | Figma Weave | Free (150 credits/mo); Starter $24/mo, Professional $45/mo, Team $60/user/mo (about 30% off yearly) | No |  |  |  | generate images, design graphics | Figma's node-based AI workflow tool (formerly Weavy) for chaining image and video models and editing results. | https://agentscouthq.com/tools/figma-weave.html | https://weave.figma.com |
-| 15 | FLORA | Free; Starter $18/seat/mo, Pro $50/seat/mo, Max $200/seat/mo; 20% off yearly | No |  |  |  | generate images, concept art | Infinite node canvas for creative teams that chains text, image and video models into reusable workflows. | https://agentscouthq.com/tools/flora.html | https://flora.ai |
+| 9 | AIArtFlow | Free daily credits; optional paid credit packs | No |  |  |  | generate images, remove backgrounds | Browser AI image studio with text-to-image, image-to-image, background removal, upscaling, and 40+ AI image tools with daily free credits and no install. | https://agentscouthq.com/tools/aiartflow.html | https://www.aiartflow.com/ |
+| 10 | Artbreeder | Free; Starter $7.49/mo, Advanced $15.99/mo, Champion $30.99/mo (billed yearly) | No |  |  |  | generate images, concept art | Collage-to-image and remixing tool for characters, portraits and concept art. | https://agentscouthq.com/tools/artbreeder.html | https://www.artbreeder.com |
+| 11 | Bria | Pay as you go from $0.018 per call; FIBO image generation $0.03 per image; enterprise plans | No |  |  |  | generate images, remove backgrounds | Image models trained only on licensed content, sold as an API for teams that need commercially safe output. | https://agentscouthq.com/tools/bria.html | https://bria.ai |
+| 12 | Draw Things | Free app (runs locally); Draw Things+ $8.99/mo for cloud compute | No |  | Offline |  | generate images, open image models | Runs Stable Diffusion, FLUX and other models fully on your Mac, iPhone or iPad. | https://agentscouthq.com/tools/draw-things.html | https://drawthings.ai |
+| 13 | Dzine | Free; Beginner $8.99/mo, Creator $24.99/mo, Master $59.99/mo, Master Pro $149.99/mo (about 20% off yearly) | No |  |  |  | generate images, concept art | Layer-based AI illustration and design editor with style control, inpainting and image-to-video. | https://agentscouthq.com/tools/dzine.html | https://www.dzine.ai |
+| 14 | Exactly.ai | Pilot £500/mo (3 months), Team £5,000/mo; custom style models from £6,000/year | No |  |  |  | generate images, concept art | Trains a private model on an artist's or brand's own illustrations to make new images in that style. | https://agentscouthq.com/tools/exactly-ai.html | https://exactly.ai |
+| 15 | Figma Weave | Free (150 credits/mo); Starter $24/mo, Professional $45/mo, Team $60/user/mo (about 30% off yearly) | No |  |  |  | generate images, design graphics | Figma's node-based AI workflow tool (formerly Weavy) for chaining image and video models and editing results. | https://agentscouthq.com/tools/figma-weave.html | https://weave.figma.com |
 
 ### productivity (29 tools) — [https://agentscouthq.com/categories/productivity.html](https://agentscouthq.com/categories/productivity.html)
 

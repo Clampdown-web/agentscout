@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-26T02:08:03Z",
- "updated": "2026-10-26T02:08:03Z",
+ "generated": "2026-10-26T03:25:31Z",
+ "updated": "2026-10-26T03:25:31Z",
  "last_checked": "2026-10-25",
- "count": 1781,
+ "count": 1784,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75456,6 +75456,134 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/lakewood-agents.png",
    "page": "https://agentscouthq.com/tools/lakewood-agents.html"
+  },
+  {
+   "name": "AIArtFlow",
+   "slug": "aiartflow",
+   "url": "https://www.aiartflow.com/",
+   "website": "https://www.aiartflow.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "Browser AI image studio with text-to-image, image-to-image, background removal, upscaling, and 40+ AI image tools with daily free credits and no install.",
+   "key_features": [
+    "Free daily credits; optional paid credit packs",
+    "Active",
+    "Generate images",
+    "Remove backgrounds",
+    "Upscale images",
+    "Edit photos"
+   ],
+   "pricing": "Free daily credits; optional paid credit packs",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images",
+    "remove backgrounds",
+    "upscale images",
+    "edit photos"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aiartflow.png",
+   "page": "https://agentscouthq.com/tools/aiartflow.html"
+  },
+  {
+   "name": "MIDIFLOW",
+   "slug": "midiflow",
+   "url": "https://audiomidi.org/",
+   "website": "https://audiomidi.org/",
+   "github": "",
+   "category": "music production",
+   "description": "Browser-based audio-to-MIDI converter that turns MP3, WAV, M4A, FLAC, and OGG recordings into editable polyphonic MIDI notes locally in the browser using Spotify's Basic Pitch model with no signup required.",
+   "key_features": [
+    "Free in-browser audio-to-MIDI conversion with no signup",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Free in-browser audio-to-MIDI conversion with no signup",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/midiflow.png",
+   "page": "https://agentscouthq.com/tools/midiflow.html"
+  },
+  {
+   "name": "TryBestSpecs",
+   "slug": "trybestspecs",
+   "url": "https://www.trybestspecs.com/",
+   "website": "https://www.trybestspecs.com/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "AI face-shape analysis and virtual eyewear try-on tool that recommends frame styles and generates realistic glasses previews from a selfie or webcam.",
+   "key_features": [
+    "1 free credit on signup; paid credit packs for additional virtual try-ons",
+    "Active",
+    "Edit photos",
+    "Retouch portraits"
+   ],
+   "pricing": "1 free credit on signup; paid credit packs for additional virtual try-ons",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit photos",
+    "retouch portraits"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/trybestspecs.png",
+   "page": "https://agentscouthq.com/tools/trybestspecs.html"
   }
  ]
 }
