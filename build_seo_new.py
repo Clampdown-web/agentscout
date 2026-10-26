@@ -1,5 +1,5 @@
 """Hand-written, keyword-targeted titles/descriptions for new pages (Oct 21 2026 owner-approved SEO pass).
-data/seo_overrides.json: {path: [title or null, description or null]}; {crypto_n} = live crypto count.
+data/seo_overrides.json: {path: [title or null, description or null]}; {crypto_n} = live crypto count; {n} = the leading count in the page's generated description ("78 link-checked...", "All 55 ...").
 Also appends the 50 community Grok Bot templates to llms.txt. Idempotent; runs after build_seo.run()."""
 import json,re,html,os
 def _set(s,attr,name,v):
@@ -10,12 +10,13 @@ def run(t):
     for f,(ti,de) in O.items():
         if not os.path.exists(f): continue
         s0=s=open(f).read()
+        dm=re.search(r'<meta name="description" content="(?:All )?(\d[\d,]*) ',s); pn=dm.group(1) if dm else ""  # {n} = live count from the generated description (category/news pages; Search Console pass Oct 26 2026)
         if ti:
-            v=html.escape(ti,quote=True)
+            v=html.escape(ti.replace("{n}",pn),quote=True)
             s=re.sub(r"<title>.*?</title>",f"<title>{v}</title>",s,1,flags=re.S)
             s=_set(s,"property","og:title",v); s=_set(s,"name","twitter:title",v)
         if de:
-            m=re.search(r"(\d+) ready-made",s); v=html.escape(de.replace("{crypto_n}",str(cn)).replace("{mcp_n}",str(sum(1 for x in t if x["category"]=="MCP servers"))).replace("{bt_n}",m.group(1) if m else ""),quote=True)
+            m=re.search(r"(\d+) ready-made",s); v=html.escape(de.replace("{n}",pn).replace("{crypto_n}",str(cn)).replace("{mcp_n}",str(sum(1 for x in t if x["category"]=="MCP servers"))).replace("{bt_n}",m.group(1) if m else ""),quote=True)
             s=_set(s,"name","description",v); s=_set(s,"property","og:description",v); s=_set(s,"name","twitter:description",v)
         if s!=s0: open(f,"w").write(s); n+=1
     if os.path.exists("llms.txt") and os.path.exists("data/bot-templates-community.json"):
