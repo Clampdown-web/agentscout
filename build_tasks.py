@@ -203,8 +203,11 @@ def ai_ref_cta_html(d="../"):
         '<div class="arc-body"><b>📬 Free 50 AI Agents &amp; 50 MCP Servers Cheat Sheet:</b> Get our weekly builder brief + cheat sheet pack every Tuesday — or list your own AI agent tool for free.</div>'
         '<div class="arc-acts">'
         '<a class="btn primary" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&amp;utm_medium=ai_referral_cta" target="_blank" rel="noopener noreferrer" data-nl>Get Free 50-Tool Cheat Sheet →</a>'
-        f'<a class="btn" href="{d}submit.html#free-form">Submit a tool free ($0)</a>'
-        f'<a class="btn pkg-cta-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a><a class="btn" href="{d}sponsor.html#packages">All 4 Tiers ($0/$29/$49/$99)</a>'
+        f'<a class="btn primary pkg-cta-free" href="{d}submit.html#free-form">Submit Free ($0)</a>'
+        f'<a class="btn primary pkg-cta-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a>'
+        f'<a class="btn primary pkg-cta-pop" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">Category Pin ($49 ★) →</a>'
+        f'<a class="btn primary pkg-cta-vip" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>'
+        f'<a class="btn" href="{d}sponsor.html#packages">All 4 Tiers ($0/$29/$49/$99)</a>'
         '</div></aside>'
     )
 def _subpages_write(m):
@@ -392,7 +395,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<p>Get the 5 best new AI agent tools, copy-paste MCP workflows, and our high-res 50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack free every Tuesday.</p></div>'
     '<div class="nlgo"><a class="btn primary" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&amp;utm_medium=website" target="_blank" rel="noopener noreferrer" data-nl>Subscribe &amp; Get Free Cheat Sheets →</a></div>'
     '</div></div></section>')  # compact lead-magnet card; opens Beehiiv signup in a new tab (Oct 25 2026)
-ASSET_V = "202610260955"  # bump when app.js/styles.css change
+ASSET_V = "202610260956"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -552,10 +555,11 @@ def sitewide(t):
                   f'<div class="hms-top"><div class="hms-copy">'+_wrap("sp",f'For AI Makers &amp; Founders · <span data-live-tools>{_m["tools_count"]:,}</span> Tools &amp; <span data-live-mcp>{_m["mcp_servers_count"]:,}</span> MCP Servers Indexed')+
                   '<h2 id="hm-sp-h">Building an AI Agent or MCP Server? Get Featured on AgentScout</h2>'
                   f'<p class="hms-sub">Put your tool in front of <b data-live-pv30>{_m["pageviews_30d"]:,}+</b> monthly pageviews (<b data-live-pv7>{_m["weekly_page_views"]:,}+</b>/wk) of builders, developers, and AI buyers actively comparing agent tools. Choose a same-day <b>$29 Fast-Track Launch Boost</b>, a <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or our exclusive <b>$99/wk Sitewide Sponsor</b> across <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> (<span data-live-x-followers>{_m["x_combined_followers"]:,}+</span> combined reach) &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a>.</p></div>'
-                  '<div class="hms-ctas"><a class="btn primary pkg-cta-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track Boost — $29 →</a>'
-                  '<a class="btn primary hms-btn-main" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
-                  '<a class="btn hms-btn-alt" href="sponsor.html#packages">Compare All 4 Tiers ($0 / $29 / $49 / $99)</a>'
-                  '<a class="btn hms-btn-free" href="submit.html#free-form">Submit Free ($0)</a></div></div>'
+                  '<div class="hms-ctas"><a class="btn primary pkg-cta-free hms-btn-free" href="submit.html#free-form">Submit Free ($0)</a>'
+                  '<a class="btn primary pkg-cta-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track Boost — $29 →</a>'
+                  '<a class="btn primary pkg-cta-pop hms-btn-main" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
+                  '<a class="btn primary pkg-cta-vip" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor — $99/wk →</a>'
+                  '<a class="btn hms-btn-alt" href="sponsor.html#packages">Compare All 4 Tiers ($0 / $29 / $49 / $99)</a></div></div>'
                   '<div class="hms-tiers">'
                   '<a class="hms-tier hms-tier-free" href="submit.html#free-form"><span class="hmst-top"><span class="hmst-price">$0 <small>forever</small></span>'+_wrap("ft","✓ 100% Free Forever")+'</span><span class="hmst-name">Free Community Listing</span><span class="hmst-desc">✓ Standard review (3–5 days) · Permanent /tools/&lt;slug&gt;.html page + SoftwareApplication schema · Listed in llms.txt &amp; MCP server</span></a>'
                   '<a class="hms-tier hms-tier-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer"><span class="hmst-top"><span class="hmst-price">$29 <small>one-time</small></span>'+_wrap("fast","⚡ Fast-Track · $29")+'</span><span class="hmst-name">Fast-Track + 7-Day Launch Boost</span><span class="hmst-desc">⚡ Same-day priority review · 7-day pin on /new.html + category New &amp; Featured row · Full FAQPage + pros/cons · Launch post on @AgentScoutHQ</span></a>'
@@ -571,7 +575,7 @@ def sitewide(t):
                      f'<p class="muted" style="margin:0;font-size:14px;line-height:1.5">List your tool across <b data-live-tools>{_m["tools_count"]:,}</b>+ indexed pages: <b>$0 Free Community Listing</b>, <b>$29 Fast-Track + 7-Day Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent <code style="font-size:12px">/best/</code> &amp; <code style="font-size:12px">/compare/</code> Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>'
                      '</div>'
                      '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">'
-                     '<a class="btn" href="submit.html#free-form">Submit Free ($0)</a>'
+                     '<a class="btn primary pkg-cta-free" href="submit.html#free-form">Submit Free ($0)</a>'
                      '<a class="btn primary pkg-cta-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a>'
                      '<a class="btn primary pkg-cta-pop" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">Category Pin ($49 ★) →</a>'
                      '<a class="btn primary pkg-cta-vip" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>'

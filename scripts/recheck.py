@@ -12,6 +12,7 @@ run("dedupe",[sys.executable,"scripts/dedupe_check.py"])
 run("relevance",[sys.executable,"scripts/check_relevance.py","--strict","--write"])
 if os.path.exists("scripts/check_logos.py"): run("logos",[sys.executable,"scripts/check_logos.py"])
 if os.path.exists("scripts/check_overflow.py"): run("mobile overflow (360/390px, every page type, text 1x and 1.3x)",[sys.executable,"scripts/check_overflow.py"])
+if os.path.exists("/workspace/scripts/verify_4tier_ctas.py"): run("4-tier neon CTA buttons", [sys.executable, "/workspace/scripts/verify_4tier_ctas.py"])
 if os.path.exists("sponsor.html"):
     s=open("sponsor.html").read(); sub=open("submit.html").read() if os.path.exists("submit.html") else ""; sm=open("sitemap.xml").read() if os.path.exists("sitemap.xml") else ""
     linked=[f for f in glob.glob("**/*.html",recursive=True) if f!="sponsor.html" and re.search(r'href="[^"]*sponsor\.html',open(f,errors="ignore").read())]

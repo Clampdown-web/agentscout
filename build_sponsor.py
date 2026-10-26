@@ -104,7 +104,7 @@ def packages_grid(t, m=None, on_submit=False):
         </ul>
       </div>
       <div class="pkg-foot">
-        <a class="btn pkg-cta" href="{free_href}">{free_label}</a>
+        <a class="btn primary pkg-cta pkg-cta-free" href="{free_href}">{free_label}</a>
       </div>
     </div>
 
@@ -224,9 +224,10 @@ def build(t):
           </p>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <a class="btn primary pkg-cta-free" href="submit.html#free-form">Submit Free ($0)</a>
           <a class="btn primary pkg-cta-fast" href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a>
-          <a class="btn primary pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Category Pin ($49) →</a>
-          <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Weekly Sponsor ($99/wk) →</a>
+          <a class="btn primary pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Category Pin ($49 ★) →</a>
+          <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>
         </div>
       </div>
     </div>

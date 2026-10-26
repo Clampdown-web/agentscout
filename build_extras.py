@@ -306,11 +306,12 @@ def seo(t,urls):
             import build_aicite as _bac
             _lede+=f' <strong>{e(_bac.mcp_uptime_line(t))}</strong> (<a href="../mcp/link-status.html">daily MCP link status</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
         _pin_cta=(f'<div class="cat-pin-cta"><div class="cpc-body"><span class="npill npmcp cpc-pill"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>Featured Slot Open</span>'
-                  f'<span class="cpc-txt"><b>Building in {e(c)}?</b> Fast-track with a 7-day boost for <b>$29</b>, or pin your tool at the top of <b>{e(c)}</b> for a full <b>30 days</b> + permanent <code style="font-size:12px">/best/</code> &amp; <code style="font-size:12px">/compare/</code> placement + X spotlight on <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> for <b>$49</b>.</span></div>'
-                  f'<div class="cpc-acts"><a class="btn primary pkg-cta-fast cpc-btn" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track — $29 →</a>'
-                  f'<a class="btn primary cpc-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
-                  f'<a class="btn cpc-btn" href="../sponsor.html#packages">All 4 Tiers ($0/$29/$49/$99)</a>'
-                  f'<a class="btn cpc-btn" href="../submit.html#free-form">Submit Free ($0)</a></div></div>')
+                  f'<span class="cpc-txt"><b>Building in {e(c)}?</b> List free ($0 · 3–5d queue), fast-track with a 7-day boost for <b>$29</b>, pin at the top of <b>{e(c)}</b> for <b>30 days</b> + permanent <code style="font-size:12px">/best/</code> &amp; <code style="font-size:12px">/compare/</code> placement for <b>$49</b>, or book the exclusive <b>$99/wk</b> sitewide &amp; newsletter sponsor slot.</span></div>'
+                  f'<div class="cpc-acts"><a class="btn primary pkg-cta-free cpc-btn" href="../submit.html#free-form">Submit Free ($0)</a>'
+                  f'<a class="btn primary pkg-cta-fast cpc-btn" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track — $29 →</a>'
+                  f'<a class="btn primary pkg-cta-pop cpc-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
+                  f'<a class="btn primary pkg-cta-vip cpc-btn" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor — $99/wk →</a>'
+                  f'<a class="btn cpc-btn" href="../sponsor.html#packages">Compare Packages ($0/$29/$49/$99)</a></div></div>')
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips+_pin_cta
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
