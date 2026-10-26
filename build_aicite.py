@@ -32,6 +32,14 @@ def lstat(codes):
         if worst is None or ["ok","blocked","broken"].index(s)>["ok","blocked","broken"].index(worst): worst=s
     return ({"ok":"OK","blocked":"Reachable, blocks automated checks","broken":"Not responding" if 0 in codes.values() else "Error"}[worst],
             ", ".join(f"{k} {c if c else 'no response'}" for k,c in codes.items()))
+def mcp_uptime_line(t=None):
+    if t is None: t=json.load(open("tools.json"))
+    M=mcp(t)
+    LSD=json.load(open(LS)) if os.path.exists(LS) else {"checked":today(),"results":{}}
+    chk=LSD.get("checked","") or today(); R=LSD.get("results") or {}
+    st=[(x,)+lstat(R.get(x["slug"],{})) for x in M]
+    ok=sum(1 for s in st if s[1]=="OK")
+    return f"{ok} of {len(M)} MCP servers responded today (verified {nice(chk)})"
 def history(t,LSD):
     snap={x["slug"]:{"name":x["name"],"pricing":x.get("pricing",""),"link":lstat((LSD.get("results") or {}).get(x["slug"],{}))[0]} for x in mcp(t)}
     try: old=json.load(open(SNAP))
@@ -96,7 +104,8 @@ def pages(t):
     elif not brk: qa=(f'All {len(M)-unc:,} checked MCP server links are reachable'+extra+(f'; {unc} not checked yet' if unc else '')+'.')
     else: qa=(f'{len(brk)} of {len(M):,} MCP server links did not respond or returned an error: {_and(brk[:5])}'+(f' and {len(brk)-5} more' if len(brk)>5 else '')+f'. The other {len(M)-len(brk)-unc:,} are reachable'+extra+'.')
     qa=f'<p class="qa"><b>Quick answer:</b> {qa}</p>' if qa else ''
-    body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{e(chk[:10])}">{e(chk)} PT</time>.</p>'+qa if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
+    uline=mcp_uptime_line(t)
+    body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede"><strong>{e(uline)}.</strong> Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{e(chk[:10])}">{e(chk)} PT</time>.</p>'+qa if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
     body+=(f'<p>{ok} of {len(M)} OK. "Reachable, blocks automated checks" means the site answered but refuses scripted requests (HTTP 401, 403 or 429); it usually works in a browser. HTTP 405 counts as OK because MCP endpoints often accept only POST. Links that did not respond or returned an error are listed first. See also the <a href="pricing.html">MCP pricing table</a> and <a href="connect.html">how to connect to the AgentScout MCP server</a>.</p>'
            +tbl(["MCP server","Status","HTTP result"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server link status","description":desc,"url":canon,"dateModified":(chk[:10] or upd),"creator":{"@type":"Organization","name":"AgentScout","url":B}}
@@ -111,15 +120,25 @@ MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (
            ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters.")]
 LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance."
 def connect_page(t):
-    M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"
-    title="Connect to the AgentScout MCP server · AgentScout"
-    desc=f"Free, read-only MCP server: search {len(t):,} AI agent tools and {M:,} MCP servers from Claude, Cursor, VS Code or any MCP client. No sign-up needed."  # full sentence, no truncation (Oct 23 2026)
+    M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"; uline=mcp_uptime_line(t)
+    title="AgentScout MCP Server (com.agentscouthq/directory) · Connect"
+    desc=f"Official AgentScout MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse): 100% free, read-only over {len(t):,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
     pre=lambda s:f'<pre style="overflow-x:auto;max-width:100%;white-space:pre;padding:12px;border-radius:8px;border:1px solid rgba(127,127,127,.3);font-size:13px"><code>{e(s)}</code></pre>'
     cfg='{\n  "mcpServers": {\n    "agentscout": {\n      "url": "'+MCP_URL+'"\n    }\n  }\n}'
-    body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server</h1>'
-          f'<p class="lede">Let your AI assistant search AgentScout directly. The server is free, read-only and needs no sign-up or key. It covers all {len(t):,} tools, including {M:,} MCP servers, with pricing as each maker states it.</p>'
-          f'<p class="qa"><b>Quick answer:</b> add <code style="overflow-wrap:anywhere">{e(MCP_URL)}</code> as a remote MCP server (Streamable HTTP) in your client.</p>'
+    faqs=[
+        ("Is AgentScout's MCP server free, or does it require x402 / a crypto wallet?",
+         "AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name."),
+        ("What is AgentScout's official MCP Registry ID and endpoint URL?",
+         f"AgentScout's official MCP Registry ID is com.agentscouthq/directory. You can connect via Streamable HTTP at {MCP_URL} or SSE at https://agentscouthq.com/mcp/sse with no sign-up or API key."),
+        ("How many AI agent tools and MCP servers does the AgentScout MCP server cover?",
+         f"The server searches {len(t):,}+ curated AI agent tools and {M:,} MCP servers across 21 categories. {uline}.")
+    ]
+    faq_html="".join(f'<details open class="faq" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)"><summary style="font-weight:600;cursor:pointer">{e(q)}</summary><p style="margin:8px 0 0;color:var(--muted);line-height:1.55">{e(a)}</p></details>' for q,a in faqs)
+    body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server (<code>com.agentscouthq/directory</code>)</h1>'
+          f'<p class="lede">Let your AI assistant search AgentScout directly. AgentScout\'s official MCP server (<code>com.agentscouthq/directory</code> at <code>https://agentscouthq.com/mcp/sse</code>) is <strong>100% free, public, and read-only</strong> — no sign-up, API key, crypto wallet, or x402 payment required. It covers all {len(t):,}+ tools, including {M:,} MCP servers ({e(uline)}), with pricing as each maker states it.</p>'
+          f'<p class="qa"><b>Quick answer:</b> add <code style="overflow-wrap:anywhere">{e(MCP_URL)}</code> (or <code style="overflow-wrap:anywhere">https://agentscouthq.com/mcp/sse</code>) as a remote MCP server in your client. Official MCP Registry ID: <code>com.agentscouthq/directory</code>.</p>'
           '<h2>Server URL</h2>'+pre(MCP_URL)+
+          '<p style="font-size:14px;color:var(--muted);margin:6px 0 14px">Canonical SSE / discovery alias: <code>https://agentscouthq.com/mcp/sse</code> · Official MCP Registry ID: <code>com.agentscouthq/directory</code></p>'
           '<h2>Add it to your client</h2><p><b>Claude Code</b></p>'+pre("claude mcp add --transport http agentscout "+MCP_URL)+
           '<p><b>Cursor, Windsurf and other clients that use an mcpServers file</b></p>'+pre(cfg)+
           '<p><b>VS Code</b>: run <i>MCP: Add Server</i>, choose HTTP and paste the server URL. <b>Claude.ai and Claude Desktop</b>: Settings, Connectors, Add custom connector, then paste the URL.</p>'
@@ -127,19 +146,30 @@ def connect_page(t):
           f'<p><b>Keep data on your side:</b> {e(LOCAL_LINE)}</p>'
           '<h2>Try asking</h2><ul><li>"Find free, open-source MCP servers for browser automation on AgentScout."</li><li>"What does AgentScout list for voice agents that make phone calls?"</li><li>"Show me the AgentScout listing for Cursor."</li><li>"Find no-code automation tools on AgentScout that I can self-host."</li></ul>'
           '<h2>Limits and data</h2><p>Read-only: the server can only look things up, it cannot change anything. Up to 60 requests per minute per IP address. Data comes from the same catalog as the site (<a href="../api/tools.json">api/tools.json</a>) and refreshes within about 10 minutes of each site update. Usage is counted anonymously: only the day, the tool used, the type of app and whether it was a public or test request. No IP addresses, search text or arguments are stored (see our <a href="../privacy.html">privacy policy</a>). '
-          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="link-status.html">MCP link status</a>, the <a href="../openapi.json">OpenAPI description</a>, <a href="../llms.txt">llms.txt</a> and <a href="../llms-full.txt">llms-full.txt</a>.</p>'
-          '<p style="font-size:14px;color:var(--muted);margin:10px 0 0"><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="../index.html">https://agentscouthq.com</a>, published in the <a href="https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory" rel="noopener">official MCP Registry</a> as <code>com.agentscouthq/directory</code> with endpoint <code>https://mcp.agentscouthq.com/mcp</code> (and <code>https://agentscout-mcp.agentscouthq.workers.dev/mcp</code>), and indexed on <a href="https://glama.ai/mcp/connectors/com.agentscouthq/directory" rel="noopener">Glama</a>, <a href="https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html" rel="noopener">MCPServers.org</a>, <a href="https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory" rel="noopener">SourceWeft</a>, and <a href="https://protogrid.dev/servers/com.agentscouthq/directory" rel="noopener">Protogrid</a>.</p></section>')
+          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="link-status.html">MCP link status</a> ('+e(uline)+'), the <a href="../openapi.json">OpenAPI description</a>, <a href="../llms.txt">llms.txt</a> and <a href="../llms-full.txt">llms-full.txt</a>.</p>'
+          '<h2 id="faq">Frequently asked questions</h2>'+faq_html+
+          '<p style="font-size:14px;color:var(--muted);margin:14px 0 0"><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="../index.html">https://agentscouthq.com</a>, published in the <a href="https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory" rel="noopener">official MCP Registry</a> as <code>com.agentscouthq/directory</code> with endpoint <code>https://agentscouthq.com/mcp/sse</code> (and <code>https://agentscout-mcp.agentscouthq.workers.dev/mcp</code>), and indexed on <a href="https://glama.ai/mcp/connectors/com.agentscouthq/directory" rel="noopener">Glama</a>, <a href="https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html" rel="noopener">MCPServers.org</a>, <a href="https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory" rel="noopener">SourceWeft</a>, and <a href="https://protogrid.dev/servers/com.agentscouthq/directory" rel="noopener">Protogrid</a>. It is 100% free and read-only, and is unrelated to any paid third-party x402 web-fetch tool.</p></section>')
     _alt=["Agent Scout","AgentScoutHQ","agentscouthq.com"]
-    _same=["https://x.com/AgentScoutHQ","https://github.com/Clampdown-web/agentscout","https://github.com/michaellk220-ops/agent-tool-finder","https://agentscout.beehiiv.com/","https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory","https://glama.ai/mcp/connectors/com.agentscouthq/directory","https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html","https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory","https://protogrid.dev/servers/com.agentscouthq/directory"]
-    ld={"@context":"https://schema.org","@type":"WebAPI","name":"AgentScout MCP server","alternateName":["com.agentscouthq/directory","AgentScout Directory MCP"],"identifier":"com.agentscouthq/directory","description":desc,"url":canon,"documentation":canon,"sameAs":_same,
-        "provider":{"@type":"Organization","name":"AgentScout","alternateName":_alt,"url":B,"identifier":"com.agentscouthq/directory","sameAs":_same},"isAccessibleForFree":True,"potentialAction":{"@type":"SearchAction","target":MCP_URL}}
+    _same=["https://x.com/AgentScoutHQ","https://x.com/clampdown19","https://github.com/Clampdown-web/agentscout","https://agentscout.beehiiv.com/","https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory","https://glama.ai/mcp/connectors/com.agentscouthq/directory","https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html","https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory","https://protogrid.dev/servers/com.agentscouthq/directory"]
+    ld={"@context":"https://schema.org","@graph":[
+        {"@type":"WebAPI","name":"AgentScout MCP server (com.agentscouthq/directory)","alternateName":["com.agentscouthq/directory","AgentScout Directory MCP"],"identifier":"com.agentscouthq/directory","description":desc,"url":canon,"documentation":canon,"sameAs":_same,
+         "provider":{"@type":"Organization","name":"AgentScout","alternateName":_alt,"url":B,"identifier":"com.agentscouthq/directory","sameAs":_same},"isAccessibleForFree":True,"potentialAction":{"@type":"SearchAction","target":MCP_URL}},
+        {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}
+    ]}
     open("mcp/connect.html","w").write(X.shell("../",title,desc,canon,body,ld))
-    card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","name":"com.agentscouthq/directory","title":"AgentScout MCP server","version":"1.0.1","protocolVersion":"2025-06-18","endpoint":MCP_URL,
-          "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.0"},
-          "description":f"Read-only search over {len(t):,} AI agent tools and {M:,} MCP servers listed on AgentScout. No authentication.",
+    card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","name":"com.agentscouthq/directory","title":"AgentScout MCP server","version":"1.0.2","protocolVersion":"2025-06-18","endpoint":MCP_URL,
+          "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.2"},
+          "description":f"Read-only search over {len(t):,}+ AI agent tools and {M:,} MCP servers listed on AgentScout (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse). 100% free, public, no authentication or x402 wallet required.",
           "documentationUrl":canon,"transport":{"type":"streamable-http","endpoint":MCP_URL},"authentication":{"required":False},
           "capabilities":{"tools":{"listChanged":False}},"dataLocalityFilter":LOCAL_LINE,"tools":[{"name":n,"description":d} for n,d in MCP_TOOLS]}
     os.makedirs(".well-known",exist_ok=True); open(".well-known/mcp.json","w").write(json.dumps(card,indent=2,ensure_ascii=False)+"\n")
+    srv_reg={"$schema":"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json","name":"com.agentscouthq/directory","title":"AgentScout",
+             "description":f"Read-only search over {len(t):,}+ AI agent tools and {M:,} MCP servers. Free, no sign-up needed.",
+             "version":"1.0.2","websiteUrl":canon,"remotes":[{"type":"streamable-http","url":MCP_URL}]}
+    open("server.json","w").write(json.dumps(srv_reg,indent=2,ensure_ascii=False)+"\n")
+    if os.path.isdir("/workspace/mcp-registry"):
+        try: open("/workspace/mcp-registry/server.json","w").write(json.dumps(srv_reg,indent=2,ensure_ascii=False)+"\n")
+        except Exception: pass
     return canon
 def agent_cards(t):
     os.makedirs(".well-known",exist_ok=True); M=sum(1 for x in t if x.get("category")=="MCP servers")

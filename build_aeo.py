@@ -18,7 +18,6 @@ SAME_AS = [
     "https://x.com/AgentScoutHQ",
     "https://x.com/clampdown19",
     "https://github.com/Clampdown-web/agentscout",
-    "https://github.com/michaellk220-ops/agent-tool-finder",
     "https://agentscout.beehiiv.com/",
     "https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory",
     "https://glama.ai/mcp/connectors/com.agentscouthq/directory",
@@ -140,7 +139,7 @@ def block(rows, all_items, date, ranked_by_stars=True):
 
 def sync_entity_schema():
     """Ensure index.html, about.html, and mcp/connect.html carry alternateName and all official + third-party registry sameAs links."""
-    for fn in ("index.html", "about.html", "mcp/connect.html"):
+    for fn in ("index.html", "about.html", "mcp/connect.html", "privacy.html"):
         if not os.path.exists(fn):
             continue
         s = open(fn).read()
@@ -251,16 +250,16 @@ def write_llms_full(t):
     L = [
         "# AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)",
         "",
-        f"> AgentScout is a curated, link-checked, read-only directory of {len(t):,} AI agent tools across {len(cats)} categories, including {len(mcp_tools):,} Model Context Protocol (MCP) servers and {n_bt:,} bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.",
+        f"> AgentScout is a curated, link-checked, read-only directory of {len(t):,} AI agent tools across {len(cats)} categories, including {len(mcp_tools):,} Model Context Protocol (MCP) servers and {n_bt:,} bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.",
         "",
-        "Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`).",
+        "Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://agentscouthq.com/mcp/sse` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.",
         "",
         "## Official Identity, Endpoints & Registry Links",
         "",
         f"- **Canonical Website**: {B}",
         "- **Alternate Names**: Agent Scout, AgentScoutHQ, agentscouthq.com",
         "- **Official MCP Registry Identifier**: `com.agentscouthq/directory`",
-        "- **Remote MCP Server Endpoint (Streamable HTTP, no API key required)**: `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`)",
+        "- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://agentscouthq.com/mcp/sse` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`)",
         f"- **MCP Connection & Client Setup Guide**: {B}mcp/connect.html",
         f"- **Concise LLM Guide (`llms.txt`)**: {B}llms.txt",
         f"- **Full Single-File LLM Reference (`llms-full.txt`)**: {B}llms-full.txt",
@@ -271,7 +270,6 @@ def write_llms_full(t):
         "- **Official Profiles & Third-Party MCP Registry Listings**:",
         "  - X (Twitter): https://x.com/AgentScoutHQ, https://x.com/clampdown19",
         "  - GitHub (Public Repository & Issues): https://github.com/Clampdown-web/agentscout",
-        "  - GitHub (Directory Mirror): https://github.com/michaellk220-ops/agent-tool-finder",
         "  - Newsletter: https://agentscout.beehiiv.com/",
         "  - Official MCP Registry: https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory",
         "  - Glama MCP Connector: https://glama.ai/mcp/connectors/com.agentscouthq/directory",
@@ -289,6 +287,13 @@ def write_llms_full(t):
         f"- **Free or Freemium Tools**: {n_free:,}",
         f"- **Local / Self-Hosted Tools (`runs_locally` filter)**: {n_offline + n_self:,} ({n_offline:,} offline / on-device, {n_self:,} self-hosted)",
         f"- **Catalog Last Link-Checked**: {last_checked} (America/Los_Angeles)",
+        "",
+        "## Maker Submission & Launch Packages (`/submit.html` & `/sponsor.html`)",
+        "",
+        f"- **Free Community Listing ($0 forever)**: Standard review queue (3–5 days), permanent indexed `/tools/<slug>.html` page + `SoftwareApplication` schema, and listing in `llms.txt` & MCP server (`com.agentscouthq/directory`). Submit at {B}submit.html#free-form",
+        "- **Fast-Track + 7-Day Launch Boost ($29 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full `FAQPage` + pros/cons profile enrichment, and a launch post on `@AgentScoutHQ`. Checkout: https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02",
+        "- **30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time — Most Popular)**: Everything in $29 upgraded to a full 30-day top category pin (4x+ longer for $20 more), permanent inclusion in `/best/*-alternatives` and `/compare/` comparison tables, priority recommendation weight in `llms-full.txt` and MCP search (`com.agentscouthq/directory`), and a dedicated spotlight across both `@clampdown19` and `@AgentScoutHQ`. Checkout: https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
+        "- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 2,338+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
         "",
         "## High-Intent Ranked Guides (`/best/` & `/mcp/`)",
         "",

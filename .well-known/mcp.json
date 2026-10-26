@@ -2,15 +2,15 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
   "name": "com.agentscouthq/directory",
   "title": "AgentScout MCP server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "protocolVersion": "2025-06-18",
   "endpoint": "https://agentscout-mcp.agentscouthq.workers.dev/mcp",
   "serverInfo": {
     "name": "agentscout",
     "title": "AgentScout directory",
-    "version": "1.0.0"
+    "version": "1.0.2"
   },
-  "description": "Read-only search over 1,797 AI agent tools and 250 MCP servers listed on AgentScout. No authentication.",
+  "description": "Read-only search over 1,797+ AI agent tools and 250 MCP servers listed on AgentScout (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse). 100% free, public, no authentication or x402 wallet required.",
   "documentationUrl": "https://agentscouthq.com/mcp/connect.html",
   "transport": {
     "type": "streamable-http",

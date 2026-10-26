@@ -177,7 +177,7 @@ def filters():
     s=s.replace('Bot templates</h1>',f'Bot templates<span id="bt-count" class="bt-count" aria-label="{total} templates">{total}</span></h1>',1)
     s=re.sub(r'<!--btf-->.*?<!--/btf-->','',s,flags=re.S)
     s=s.replace('<input id="bt-q" type="hidden" value="">','')
-    ui=('<!--btf--><div class="btf"><div class="btf-s"><label for="bt-q" class="sr-only">Search bot templates</label><input id="bt-q" type="search" placeholder="Search by name, creator, task or platform" autocomplete="off" enterkeyhint="search"></div>'
+    ui=('<!--btf--><div class="btf"><div class="btf-s" hidden><label for="bt-q" class="sr-only">Search bot templates</label><input id="bt-q" type="search" placeholder="Search by name, creator, task or platform" autocomplete="off" enterkeyhint="search" hidden></div>'
         '<p class="btf-lbl" id="btf-cl">Use case</p><div class="btf-cats" role="group" aria-labelledby="btf-cl"><button type="button" class="chip on" data-c="all" aria-pressed="true">All uses</button>'
         +"".join(f'<button type="button" class="chip" data-c="{k}" aria-pressed="false">{esc(v)} <span aria-hidden="true">· {cnt[k]}</span></button>' for k,v in CATS.items() if cnt[k])+
         f'</div><p id="bt-status" class="btf-st" role="status" aria-live="polite">Showing {total} of {total} templates</p></div><!--/btf-->')
@@ -204,9 +204,10 @@ def tap():
 def verify_logos():
     s=open(f"{D}/index.html").read()
     srcs=re.findall(r'<img[^>]+class="bt-ic[^"]*"[^>]+src="icons/([^"]+)"',s)
-    bad=[x for x in srcs if x in ("community-bot.svg","official-use-case.svg","default.svg") or not os.path.exists(f"{D}/icons/{x}") or os.path.getsize(f"{D}/icons/{x}")<100]
-    assert not bad, f"bot templates logo check failed (generic or missing icons): {bad}"
-    print(f"bot templates logos verified: {len(srcs)}/{len(srcs)} real icons on /{D}/index.html (0 generic)")
+    bad=[x for x in srcs if x in ("community-bot.svg","official-use-case.svg","default.svg") or not os.path.exists(f"{D}/icons/{x}") or os.path.getsize(f"{D}/icons/{x}")<100 or os.path.getsize(f"{D}/icons/{x}")>20000]
+    over=[fn for fn in os.listdir(f"{D}/icons") if os.path.isfile(f"{D}/icons/{fn}") and os.path.getsize(f"{D}/icons/{fn}")>20000]
+    assert not bad and not over, f"bot templates logo check failed (generic, missing, or >20KB icons): bad={bad} over20KB={over}"
+    print(f"bot templates logos verified: {len(srcs)}/{len(srcs)} real icons <=20KB on /{D}/index.html (0 generic)")
 _run0=run
 def run():
     _run0(); filters(); tap(); verify_logos()

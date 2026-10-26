@@ -38,7 +38,7 @@ def wrap(s,h1,lede,inner,faq,js,t):
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / {e(name)}</div><section style="padding-top:20px;text-align:left;max-width:860px">'
           f'<h1 style="text-align:left;margin-left:0">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>'
           f'<p class="muted" style="margin:0 0 8px;font-size:13.5px">Free, no sign-up. Runs entirely in your browser: nothing you type is sent to AgentScout or any AI provider.</p>'
-          f'{inner}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}{rel(s)}'
+          f'{inner}{__import__("build_tasks").ai_ref_cta_html("../")}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}{rel(s)}'
           f'<p class="ftmore">More {X.BUILT_BY("../").replace("Free AI","free AI",1)}: {others(s)} · <a href="../generate.html">Free AI image generator</a> · <a href="../free-tools.html">All free tools</a></p></section><script>{TOK}\n{js}</script>')
     os.makedirs("free-tools",exist_ok=True)
     open(f"free-tools/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); return canon

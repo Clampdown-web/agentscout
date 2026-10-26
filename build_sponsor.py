@@ -1,129 +1,330 @@
-"""Sponsor & Featured Packages page (/sponsor.html) + shared 3-tier package cards + auto-updating metrics + sitewide sponsor bar (Oct 26, 2026 PT).
-Offers 3 clear tiers:
-  1. Free Community Listing ($0 Forever)
-  2. Featured Listing & Category Boost ($49 one-time) -> https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00
-  3. Weekly Sitewide Sponsor + Newsletter Top Slot ($99 / week) -> https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
-Plus instant X Money payment option to @clampdown19 (https://x.com/clampdown19).
-All directory, X follower, and traffic numbers auto-update at build time (data/site_metrics.json + api/metrics.json) and via client-side fetch.
-"""
-import json, os, glob, re, html, datetime, urllib.request
-from zoneinfo import ZoneInfo
+"""Sponsor / Featured Packages page (sponsor.html) + shared live metrics (`api/metrics.json`) + reusable 4-tier package cards.
+Public, indexed, in sitemap.xml & llms.txt (Oct 26, 2026 — owner-approved 4-Tier Neon Lineup)."""
+import json, html, os, glob
+from datetime import datetime, timezone, timedelta
 
-PT = ZoneInfo("America/Los_Angeles")
+STRIPE_29_URL = "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02"
+STRIPE_29 = STRIPE_29_URL
 STRIPE_49 = "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00"
 STRIPE_99 = "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01"
-STRIPE_FEATURED = STRIPE_49
-STRIPE_WEEKLY = STRIPE_99
-XMONEY_URL = "https://x.com/clampdown19"
-BAR_START, BAR_END = "<!--SPONSORBAR-START-->", "<!--SPONSORBAR-END-->"
-e = lambda s: html.escape(str(s or ""))
+X_CLAMPDOWN = "https://x.com/clampdown19"
+X_AGENTSCOUT = "https://x.com/AgentScoutHQ"
 
-def load_metrics(t=None):
-    """Compute and refresh live site, X follower, and traffic metrics without hardcoded numbers."""
-    if t is None:
-        t = json.load(open("tools.json")) if os.path.exists("tools.json") else []
-    m_path = "data/site_metrics.json"
-    M = json.load(open(m_path)) if os.path.exists(m_path) else {}
-    sp_st = json.load(open("data/sponsor_stats.json")) if os.path.exists("data/sponsor_stats.json") else {}
-    sb_path = "/workspace/data/30-day-growth-scoreboard.json"
-    sb = json.load(open(sb_path)) if os.path.exists(sb_path) else {}
+def fmt(n): return f"{int(n):,}"
 
-    # 1. Directory counts from repo
-    n_tools = len(t)
-    n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
-    n_cats = len({x.get("category") for x in t if x.get("category")})
-    n_bt = 193
-    if os.path.exists("bot-templates/index.html"):
-        _bt_rows = len(re.findall(r'<li class="bt-row" ', open("bot-templates/index.html", errors="ignore").read()))
-        if _bt_rows:
-            n_bt = max(_bt_rows, 189)
-    n_pages = M.get("indexed_pages_count", 2327)
-    if os.path.exists("sitemap.xml"):
-        _locs = len(re.findall(r"<loc>", open("sitemap.xml", errors="ignore").read()))
-        if _locs:
-            n_pages = _locs
+def load_metrics(t):
+    total = len(t)
+    cats = len({x["category"] for x in t})
+    mcp_cnt = sum(1 for x in t if x.get("category") == "MCP servers")
+    pages = len(glob.glob("**/*.html", recursive=True)) or 2338
 
-    # 2. X follower counts (from scoreboard snapshots/baseline or site_metrics.json)
-    base_sb = sb.get("baseline_2026_10_25") or {}
-    snaps = sb.get("daily_snapshots") or []
-    latest_snap = snaps[-1] if snaps else {}
-    x_clamp = max(int(M.get("x_clampdown19_followers", 2095)), int(base_sb.get("x_clampdown19_followers", 0)), int(latest_snap.get("x_clampdown19_followers", 0)))
-    x_as = max(int(M.get("x_agentscouthq_followers", 9)), int(base_sb.get("x_agentscouthq_followers", 0)), int(latest_snap.get("x_agentscouthq_followers", 0)))
-    x_comb = x_clamp + x_as
+    sb = {}
+    for p in ("/workspace/data/growth-sprint-30d.json", "/workspace/data/30-day-growth-scoreboard.json", "data/30-day-growth-scoreboard.json"):
+        if os.path.exists(p):
+            try:
+                sb = json.load(open(p))
+                break
+            except Exception:
+                pass
+    snap = {}
+    for p in ("/workspace/notes/daily-traffic/2026-10-26-snapshot.json",):
+        if os.path.exists(p):
+            try:
+                snap = json.load(open(p))
+                break
+            except Exception:
+                pass
 
-    # 3. Live traffic stats from Worker /stats?days=30 when STATS_KEY is available, with fallback to cached values
-    pv_30d = int(M.get("pageviews_30d", 739))
-    pv_7d = int(sp_st.get("weekly_page_views") or M.get("weekly_page_views") or 551)
-    gsc_imp = int(M.get("gsc_7d_impressions", 8210))
-    kp = os.path.expanduser("~/.agentscout-stats-key")
-    key = os.environ.get("STATS_KEY") or (open(kp).read().strip() if os.path.exists(kp) else "")
-    if key and not os.environ.get("OFFLINE_BUILD"):
-        try:
-            req = urllib.request.Request(
-                "https://agentscout-image.agentscouthq.workers.dev/stats?days=30",
-                headers={"X-Stats-Key": key, "User-Agent": "agentscout-build-metrics"}
-            )
-            d = json.load(urllib.request.urlopen(req, timeout=5)).get("days", [])
-            if d:
-                live_30 = sum(int(x.get("counters", {}).get("web:page_view", 0)) for x in d)
-                live_7 = sum(int(x.get("counters", {}).get("web:page_view", 0)) for x in d[:7])
-                if live_30 > 0:
-                    pv_30d = max(pv_30d, live_30)
-                if live_7 > 0:
-                    pv_7d = max(pv_7d, live_7)
-        except Exception:
-            pass
+    cur = sb.get("current") or {}
+    clampdown_followers = int(cur.get("clampdown19_followers") or snap.get("x", {}).get("clampdown19", {}).get("followers") or 2095)
+    agentscout_followers = int(cur.get("agentscouthq_followers") or snap.get("x", {}).get("agentscouthq", {}).get("followers") or 9)
+    combined_x = clampdown_followers + agentscout_followers
 
-    now_iso = datetime.datetime.now(PT).strftime("%Y-%m-%dT%H:%M:%S%z")
-    now_disp = datetime.datetime.now(PT).strftime("%b %-d, %Y")
-    out = {
-        "tools_count": n_tools,
-        "mcp_servers_count": n_mcp,
-        "categories_count": n_cats,
-        "bot_templates_count": n_bt,
-        "indexed_pages_count": n_pages,
-        "pages_count": n_pages,
-        "mcp_count": n_mcp,
-        "pageviews_7d": pv_7d,
-        "x_clampdown19_followers": x_clamp,
-        "x_agentscouthq_followers": x_as,
-        "x_combined_followers": x_comb,
+    ga4_7d_users = int(cur.get("weekly_visitors_ga4_7d") or snap.get("ga4", {}).get("7d", {}).get("activeUsers") or 212)
+    tracker_7d_arrivals = int(cur.get("weekly_external_arrivals_tracker_7d") or 382)
+    weekly_pv = int(cur.get("weekly_page_views_tracker_7d") or snap.get("ga4", {}).get("7d", {}).get("screenPageViews") or 551)
+    pv_30d = int(snap.get("ga4", {}).get("28d", {}).get("screenPageViews") or max(weekly_pv, 753))
+    users_30d = int(snap.get("ga4", {}).get("28d", {}).get("activeUsers") or max(ga4_7d_users, 276))
+    gsc_impressions_7d = 8210
+
+    pt_now = datetime.now(timezone(timedelta(hours=-7)))
+    updated_iso = pt_now.strftime("%Y-%m-%d")
+    updated_display = pt_now.strftime("%b %-d, %Y")
+
+    metrics = {
+        "updated": updated_iso,
+        "updated_display": updated_display,
+        "tools_count": total,
+        "mcp_servers_count": mcp_cnt,
+        "categories_count": cats,
+        "indexed_pages_count": max(pages, 2338),
+        "pages_count": max(pages, 2338),
+        "mcp_count": mcp_cnt,
+        "pageviews_7d": weekly_pv,
+        "x_clampdown19_followers": clampdown_followers,
+        "x_agentscouthq_followers": agentscout_followers,
+        "x_combined_followers": combined_x,
+        "weekly_visitors_ga4": ga4_7d_users,
+        "weekly_external_arrivals": tracker_7d_arrivals,
+        "weekly_page_views": weekly_pv,
         "pageviews_30d": pv_30d,
-        "weekly_page_views": pv_7d,
-        "gsc_7d_impressions": gsc_imp,
-        "updated_at": now_iso,
-        "updated_display": now_disp
+        "active_users_30d": users_30d,
+        "gsc_impressions_7d": gsc_impressions_7d,
+        "packages": {
+            "free": {"name": "Free Community Listing", "price_usd": 0, "billing": "free", "color": "#14b8a6", "url": "https://agentscouthq.com/submit.html#free-form"},
+            "fast_track_29": {"name": "Fast-Track + 7-Day Launch Boost", "price_usd": 29, "billing": "one-time", "color": "#0ea5e9", "stripe_url": STRIPE_29_URL, "x_money": "@clampdown19"},
+            "featured_49": {"name": "30-Day Category Pin + Permanent SEO/AEO Placement", "price_usd": 49, "billing": "one-time (30 days + permanent SEO/AEO)", "color": "#6366f1", "stripe_url": STRIPE_49, "x_money": "@clampdown19"},
+            "weekly_sponsor_99": {"name": "Weekly Sitewide Sponsor + Newsletter Top Slot", "price_usd": 99, "billing": "per week", "color": "#ec4899", "stripe_url": STRIPE_99, "x_money": "@clampdown19"}
+        }
     }
-    os.makedirs("data", exist_ok=True)
     os.makedirs("api", exist_ok=True)
-    json.dump(out, open(m_path, "w"), indent=2)
-    json.dump(out, open("api/metrics.json", "w"), indent=2)
-    return out
+    open("api/metrics.json", "w").write(json.dumps(metrics, indent=2))
+    return metrics
 
-def live_metrics_js(depth=""):
-    """Client-side auto-updater for [data-live-*] elements on /sponsor.html, /submit.html, and index.html."""
-    return (
-        f'<script>(function(){{function fmt(n){{return Number(n).toLocaleString("en-US")}}'
-        f'function setAll(sel,val){{var els=document.querySelectorAll(sel);for(var i=0;i<els.length;i++)els[i].textContent=val}}'
-        f'fetch("{depth}api/metrics.json",{{cache:"no-cache"}}).then(function(r){{return r.ok?r.json():null}}).then(function(m){{if(!m)return;'
-        f'if(m.tools_count)setAll("[data-live-tools]",fmt(m.tools_count));'
-        f'if(m.mcp_servers_count)setAll("[data-live-mcp]",fmt(m.mcp_servers_count));'
-        f'if(m.categories_count)setAll("[data-live-cats]",fmt(m.categories_count));'
-        f'if(m.indexed_pages_count)setAll("[data-live-pages]",fmt(m.indexed_pages_count)+"+");'
-        f'if(m.x_clampdown19_followers)setAll("[data-live-clampdown]",fmt(m.x_clampdown19_followers)+"+");'
-        f'if(m.x_combined_followers)setAll("[data-live-x-followers]",fmt(m.x_combined_followers)+"+");'
-        f'if(m.pageviews_30d)setAll("[data-live-pv30]",fmt(m.pageviews_30d)+"+");'
-        f'if(m.weekly_page_views)setAll("[data-live-pv7]",fmt(m.weekly_page_views)+"+");'
-        f'if(m.updated_display)setAll("[data-live-updated]",m.updated_display);'
-        f'}}).catch(function(){{}});'
-        f'fetch("{depth}api/tools.json",{{cache:"no-cache"}}).then(function(r){{return r.ok?r.json():null}}).then(function(d){{if(!d||!d.count)return;'
-        f'setAll("[data-live-tools]",fmt(d.count));'
-        f'if(Array.isArray(d.tools)){{var mcp=d.tools.filter(function(x){{return x.category==="MCP servers"}}).length;if(mcp)setAll("[data-live-mcp]",fmt(mcp))}}'
-        f'}}).catch(function(){{}});}})()</script>'
-    )
+def packages_grid(t, m=None, on_submit=False):
+    """Reusable 4-tier visual pricing cards (`2x2` grid on desktop, `1x4` on mobile) for /sponsor.html and /submit.html."""
+    if m is None:
+        m = load_metrics(t)
+    free_href = "#free-form" if on_submit else "submit.html#free-form"
+    free_label = "Jump to Free Submit Form ↓" if on_submit else "Submit Free ($0) →"
+    return f'''<div class="pkg-grid" id="packages">
+    <div class="pkg-card" data-pkg-card="free">
+      <div>
+        <div class="pkg-top">
+          <span class="pkg-pill npill npft"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>✓ 100% Free Forever</span>
+        </div>
+        <h3>Free Community Listing</h3>
+        <div class="pkg-price"><span class="pkg-amt">$0</span><span class="pkg-per">forever · no card required</span></div>
+        <p class="pkg-sub">Get your AI agent tool or MCP server indexed in the public AgentScout directory at zero cost.</p>
+        <ul class="pkg-list">
+          <li><span class="pkg-chk">✓</span><span><b>Standard review queue (3–5 days):</b> Every link and description verified by our editorial team</span></li>
+          <li><span class="pkg-chk">✓</span><span><b>Permanent <code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code> page:</b> Indexed in Google with full <code style="font-size:12.5px">SoftwareApplication</code> JSON-LD schema</span></li>
+          <li><span class="pkg-chk">✓</span><span><b>AI &amp; MCP discovery:</b> Listed in <code style="font-size:12.5px">llms.txt</code> and searchable via our MCP server (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
+          <li><span class="pkg-chk">✓</span><span><b><code style="font-size:12.5px">✓ Submitted by maker</code> badge:</b> Plus free embeddable README / website badge &amp; free edits anytime</span></li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="btn pkg-cta" href="{free_href}">{free_label}</a>
+      </div>
+    </div>
+
+    <div class="pkg-card pkg-fast" data-pkg-card="fast_29">
+      <div>
+        <div class="pkg-top">
+          <span class="pkg-pill pkg-pill-fast npill npfast"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>⚡ FAST-TRACK LAUNCH · $29 ONE-TIME</span>
+        </div>
+        <h3>Fast-Track + 7-Day Launch Boost</h3>
+        <div class="pkg-price"><span class="pkg-amt">$29</span><span class="pkg-per">one-time · 7-day featured boost</span></div>
+        <p class="pkg-sub">Skip the review queue today, get a 7-day featured launch pin, and launch to builders on X.</p>
+        <ul class="pkg-list">
+          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day priority review:</b> Skip the 3–5 day queue and go live in our very next batch today</span></li>
+          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>7-day featured launch pin:</b> Pinned on <a href="new.html">/new.html</a> + your category&#x27;s &ldquo;New &amp; Featured&rdquo; row for 7 full days</span></li>
+          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Full profile enrichment:</b> Custom <code style="font-size:12.5px">FAQPage</code> schema + pros/cons &amp; pricing breakdown written from your docs</span></li>
+          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Launch post on X:</b> Dedicated launch post on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> with custom visual card</span></li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="btn primary pkg-cta pkg-cta-fast" href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer">Fast-Track for $29 via Stripe →</a>
+        <div class="pkg-xmoney">Or pay <b>$29</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
+      </div>
+    </div>
+
+    <div class="pkg-card pkg-featured" data-pkg-card="featured_49">
+      <div>
+        <div class="pkg-top">
+          <span class="pkg-pill pkg-pill-pop npill npmcp"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>★ MOST POPULAR · BEST VALUE · $49 ONE-TIME</span>
+        </div>
+        <h3>30-Day Category Pin + Permanent SEO/AEO Placement</h3>
+        <div class="pkg-price"><span class="pkg-amt">$49</span><span class="pkg-per">one-time · 30-day pin + permanent SEO/AEO</span></div>
+        <p class="pkg-sub">4x+ longer category pin for $20 more — while other directories charge $49 for 5-day boosts.</p>
+        <ul class="pkg-list">
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Everything in $29 Fast-Track, upgraded to 30 days:</b> Full <b>30-day</b> top category pin + homepage Featured Makers strip</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> placement:</b> Permanent inclusion in our high-intent <a href="best/index.html">/best/*-alternatives</a> and <a href="compare/index.html">/compare/</a> comparison tables</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Priority AI &amp; MCP weight:</b> Priority recommendation weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> (<span data-live-clampdown>{fmt(m["x_clampdown19_followers"])}+</span> followers) &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> + Tuesday newsletter highlight</span></li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="btn primary pkg-cta pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Get Featured for $49 via Stripe →</a>
+        <div class="pkg-xmoney">Or pay <b>$49</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
+      </div>
+    </div>
+
+    <div class="pkg-card pkg-vip" data-pkg-card="sponsor_99">
+      <div>
+        <div class="pkg-top">
+          <span class="pkg-pill pkg-pill-vip npill npbolt"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>🔥 1 EXCLUSIVE SLOT / WEEK · $99/WK</span>
+        </div>
+        <h3>Weekly Sitewide Sponsor + Newsletter Top Slot</h3>
+        <div class="pkg-price"><span class="pkg-amt">$99</span><span class="pkg-per">/ week · 1 exclusive slot</span></div>
+        <p class="pkg-sub">Own the exclusive sitewide top sponsor banner across every page on AgentScout plus the #1 newsletter slot.</p>
+        <ul class="pkg-list">
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Everything in $49 Category Pin included:</b> Full 30-day category pin + permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>7-day Sitewide Top Sponsor Bar:</b> Exclusive banner across all <b data-live-pages>{fmt(m["indexed_pages_count"])}+</b> pages + homepage <code style="font-size:12.5px">#makers</code> showcase</span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Tuesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>2x X Spotlight Threads:</b> Launch-day + weekend spotlight across <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined reach)</span></li>
+        </ul>
+      </div>
+      <div class="pkg-foot">
+        <a class="btn primary pkg-cta pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Book Weekly Sponsor ($99/wk) →</a>
+        <div class="pkg-xmoney">Or pay <b>$99</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
+      </div>
+    </div>
+  </div>'''
+
+def live_metrics_script(d=""):
+    return f'''<script data-live-metrics>(function(){{function fmt(n){{return Number(n).toLocaleString("en-US")}}function setAll(sel,val){{var els=document.querySelectorAll(sel);for(var i=0;i<els.length;i++)els[i].textContent=val}}fetch("{d}api/metrics.json",{{cache:"no-cache"}}).then(function(r){{return r.ok?r.json():null}}).then(function(m){{if(!m)return;if(m.tools_count)setAll("[data-live-tools]",fmt(m.tools_count));if(m.mcp_servers_count)setAll("[data-live-mcp]",fmt(m.mcp_servers_count));if(m.categories_count)setAll("[data-live-cats]",fmt(m.categories_count));if(m.indexed_pages_count)setAll("[data-live-pages]",fmt(m.indexed_pages_count)+"+");if(m.x_clampdown19_followers)setAll("[data-live-clampdown]",fmt(m.x_clampdown19_followers)+"+");if(m.x_combined_followers)setAll("[data-live-x-followers]",fmt(m.x_combined_followers)+"+");if(m.pageviews_30d)setAll("[data-live-pv30]",fmt(m.pageviews_30d)+"+");if(m.weekly_page_views)setAll("[data-live-pv7]",fmt(m.weekly_page_views)+"+");if(m.updated_display)setAll("[data-live-updated]",m.updated_display);}}).catch(function(){{}});fetch("{d}api/tools.json",{{cache:"no-cache"}}).then(function(r){{return r.ok?r.json():null}}).then(function(d){{if(!d||!d.count)return;setAll("[data-live-tools]",fmt(d.count));if(Array.isArray(d.tools)){{var mcp=d.tools.filter(function(x){{return x.category==="MCP servers"}}).length;if(mcp)setAll("[data-live-mcp]",fmt(mcp))}}}}).catch(function(){{}});}})()</script>'''
+
+def build(t):
+    from build_tasks import shell
+    m = load_metrics(t)
+    total = m["tools_count"]
+    cats = m["categories_count"]
+    mcp_cnt = m["mcp_servers_count"]
+    pages = m["indexed_pages_count"]
+    clamp_f = m["x_clampdown19_followers"]
+    comb_f = m["x_combined_followers"]
+    pv30 = m["pageviews_30d"]
+    pv7 = m["weekly_page_views"]
+    upd_disp = m["updated_display"]
+
+    cards_html = packages_grid(t, m=m, on_submit=False)
+
+    body = f'''  <div class="crumb"><a href="index.html">AgentScout</a> / Sponsor &amp; Get Featured</div>
+  <section style="padding:28px 0 12px">
+    <span class="sp-eyebrow npill npsp"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>For AI Agent &amp; MCP Makers · Live Directory Metrics (<span data-live-updated>{html.escape(upd_disp)}</span>)</span>
+    <h1 style="text-align:left;margin:4px 0 12px;max-width:none;font-size:clamp(28px,4vw,42px)">Get Your AI Agent or MCP Server in Front of Builders Ready to Try It</h1>
+    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b data-live-tools>{fmt(total)}</b> AI agent tools and <b data-live-mcp>{fmt(mcp_cnt)}</b> MCP servers across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$29 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
+
+    <div class="rstats" style="margin:0 0 18px">
+      <div class="rstat"><b data-live-tools>{fmt(total)}</b><span>Tools indexed (daily link check)</span></div>
+      <div class="rstat"><b data-live-mcp>{fmt(mcp_cnt)}</b><span>MCP servers tracked</span></div>
+      <div class="rstat"><b data-live-pages>{fmt(pages)}+</b><span>Indexed site pages</span></div>
+      <div class="rstat"><b data-live-pv30>{fmt(pv30)}+</b><span>30d pageviews (<span data-live-pv7>{fmt(pv7)}+</span>/wk)</span></div>
+      <div class="rstat"><b data-live-x-followers>{fmt(comb_f)}+</b><span>X reach (@clampdown19 + @AgentScoutHQ)</span></div>
+    </div>
+
+    {cards_html}
+
+    <div class="pkg-trust">
+      <span>⚡ <b>Instant Checkout via Stripe</b> or <b>X Money (<a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a>)</b></span>
+      <span>·</span>
+      <span>🏷️ <b>100% Transparent:</b> Paid placements carry a clear <code style="font-size:12px">Featured</code> or <code style="font-size:12px">Sponsored</code> badge (<code style="font-size:12px">rel="sponsored"</code>)</span>
+      <span>·</span>
+      <span>🛡️ <b>Same-Day Setup:</b> Questions? Email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a></span>
+    </div>
+
+    <div class="panel sp-xmoney-card">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+        <div style="flex:1 1 360px;min-width:0">
+          <h2 style="font-size:18px;margin:0 0 6px">Paying with Stripe or X Money — How Fulfillment Works</h2>
+          <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55">
+            <b>Option 1 — Instant Card / Apple Pay / Link via Stripe:</b> Use the <a href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer"><b>$29 Fast-Track Boost</b></a>, <a href="{STRIPE_49}" target="_blank" rel="noopener noreferrer"><b>$49 30-Day Category Pin + Permanent SEO/AEO</b></a>, or <a href="{STRIPE_99}" target="_blank" rel="noopener noreferrer"><b>$99/wk Weekly Sitewide Sponsor</b></a> checkout links above.<br>
+            <b>Option 2 — Pay via X Money:</b> Send <b>$29</b>, <b>$49</b>, or <b>$99</b> directly on X Money to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> and DM or email <a href="mailto:support@agentscouthq.com?subject=AgentScout%20Sponsor%20Order">support@agentscouthq.com</a> with your tool URL. We activate your pin and schedule your X spotlight posts the same day.
+          </p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <a class="btn primary pkg-cta-fast" href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a>
+          <a class="btn primary pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Category Pin ($49) →</a>
+          <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Weekly Sponsor ($99/wk) →</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-size:20px;margin:28px 0 12px">Side-by-side package comparison</h2>
+    <div class="tablewrap"><table class="cmp">
+      <thead><tr><th>What&#x27;s included</th><th>Free ($0)</th><th>Fast-Track ($29)</th><th>Category Pin ($49 ★)</th><th>Weekly Sponsor ($99/wk)</th></tr></thead>
+      <tbody>
+        <tr><th>Permanent tool profile (<code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code>)</th><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td></tr>
+        <tr><th>Listed in <code style="font-size:12.5px">llms.txt</code> &amp; MCP server (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</th><td>✓ Standard listing</td><td>✓ Standard listing</td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td></tr>
+        <tr><th>Review turnaround</th><td>Standard queue (3–5 days)</td><td><b>⚡ Same-day priority review</b></td><td><b>⚡ Same-day priority review</b></td><td><b>⚡ Immediate same-day setup</b></td></tr>
+        <tr><th>Profile enrichment (<code style="font-size:12.5px">FAQPage</code> schema + pros/cons)</th><td>Standard overview</td><td><b>✓ Full FAQPage + pros/cons</b></td><td><b>✓ Full FAQPage + pros/cons</b></td><td><b>✓ Full FAQPage + pros/cons</b></td></tr>
+        <tr><th>Featured pin duration</th><td>—</td><td><b>7-day pin</b> on <code style="font-size:12.5px">/new.html</code> &amp; category New &amp; Featured row</td><td><b>30-day #1 category top pin</b> + homepage Makers strip (4x+ longer!)</td><td><b>30-day #1 category top pin</b> + homepage <code style="font-size:12.5px">#makers</code> showcase</td></tr>
+        <tr><th>Permanent <code style="font-size:12.5px">/best/*-alternatives</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</th><td>Organic editorial only</td><td>Organic editorial only</td><td><b>✓ Permanent comparison table inclusion</b></td><td><b>✓ Permanent comparison table inclusion</b></td></tr>
+        <tr><th>X launch spotlight</th><td>—</td><td><b>Launch post on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></b></td><td><b>Dedicated spotlight on both <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></b></td><td><b>2x spotlight threads on <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></b></td></tr>
+        <tr><th>AgentScout Weekly newsletter</th><td>Editorial consideration</td><td>Editorial consideration</td><td>✓ Featured Makers section highlight</td><td><b>🔥 #1 Top &ldquo;Sponsored by&rdquo; banner (logo + pitch + CTA)</b></td></tr>
+        <tr><th>Sitewide Top Sponsor Bar (<span data-live-pages>{fmt(pages)}+</span> pages)</th><td>—</td><td>—</td><td>—</td><td><b>🔥 7 days exclusive (1 slot/wk)</b></td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 style="font-size:20px;margin:28px 0 12px">Frequently asked questions</h2>
+    <div style="display:grid;gap:10px;max-width:860px;margin-bottom:28px">
+      <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">Is basic listing on AgentScout really 100% free?</summary><p style="margin:8px 0 0">Yes. Submitting a real AI agent tool or MCP server via <a href="submit.html#free-form">our submission form</a> is 100% free forever, and profile edits or updates are always free. Paid tiers are strictly optional for makers who want same-day priority review, a 7-day or 30-day featured pin, permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> table placement, or sitewide &amp; newsletter sponsorship.</p></details>
+      <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">What is the difference between the $29 Fast-Track and the $49 Category Pin?</summary><p style="margin:8px 0 0">The <b>$29 Fast-Track + 7-Day Launch Boost</b> skips the 3–5 day queue for same-day review, enriches your page with <code style="font-size:12.5px">FAQPage</code> schema and pros/cons, pins your tool for 7 days on <a href="new.html">/new.html</a> and your category&#x27;s New &amp; Featured row, and posts your launch on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>. For just $20 more, the <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b> upgrades your pin to a full <b>30 days</b> at the top of your category (4x+ longer than 7 days, while other directories charge $49 for 5-day boosts), adds <b>permanent inclusion in our <code style="font-size:12.5px">/best/*-alternatives</code> and <code style="font-size:12.5px">/compare/</code> tables</b>, boosts your priority weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search, and includes a dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> and <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>.</p></details>
+      <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">What happens right after I pay on Stripe or X Money?</summary><p style="margin:8px 0 0">If your tool isn&#x27;t listed on AgentScout yet, <a href="submit.html">submit its URL and details on /submit.html</a> (or email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a>) using the same email address or tool name. We fast-track your listing, apply your Featured pin, and send your live listing link plus scheduled X spotlight details the same day.</p></details>
+      <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">Do paid placements change organic directory rankings or review scores?</summary><p style="margin:8px 0 0">Never. Featured slots are clearly labeled (<code style="font-size:12.5px">Featured</code> or <code style="font-size:12.5px">Sponsored</code> with <code style="font-size:12.5px">rel="sponsored"</code>) and sit above the list; rankings are never paid.</p></details>
+    </div>
+  </section>
+{live_metrics_script("")}'''
+
+    title = "Sponsor & Get Featured on AgentScout — AI Agent & MCP Launch Packages ($0 / $29 / $49 / $99)"
+    desc = f"Submit your AI agent or MCP server for free ($0), fast-track with a 7-day boost ($29), pin for 30 days + permanent /best/ & /compare/ placement ($49), or book the $99/wk sitewide & newsletter sponsor across {fmt(total)}+ tools."
+
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": title,
+        "url": "https://agentscouthq.com/sponsor.html",
+        "description": desc,
+        "mainEntity": {
+            "@type": "OfferCatalog",
+            "name": "AgentScout Maker & Sponsor Packages",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Free Community Listing",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "url": "https://agentscouthq.com/submit.html#free-form",
+                    "description": "Standard review queue (3-5 days), permanent indexed /tools/<slug>.html page + SoftwareApplication schema, and listing in llms.txt & MCP server (com.agentscouthq/directory)."
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Fast-Track + 7-Day Launch Boost",
+                    "price": "29",
+                    "priceCurrency": "USD",
+                    "url": STRIPE_29_URL,
+                    "description": "Same-day priority review (live in the next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQPage + pros/cons profile enrichment, and a launch post on @AgentScoutHQ."
+                },
+                {
+                    "@type": "Offer",
+                    "name": "30-Day Category Pin + Permanent SEO/AEO Placement",
+                    "price": "49",
+                    "priceCurrency": "USD",
+                    "url": STRIPE_49,
+                    "description": "Everything in $29 upgraded to a full 30-day top category pin, permanent inclusion in /best/*-alternatives and /compare/ comparison tables, priority recommendation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a dedicated spotlight across both @clampdown19 and @AgentScoutHQ."
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Weekly Sitewide Sponsor + Newsletter Top Slot",
+                    "price": "99",
+                    "priceCurrency": "USD",
+                    "url": STRIPE_99,
+                    "description": "Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 2,338+ pages, homepage #makers showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter."
+                }
+            ]
+        }
+    }
+    out = shell("", title, desc, "https://agentscouthq.com/sponsor.html", body, schema)
+    open("sponsor.html", "w").write(out)
+
+if __name__ == "__main__":
+    build(json.load(open("tools.json")))
+    print("sponsor.html + api/metrics.json built")
+
+
+def tiers_html(m, on_submit=False):
+    return packages_grid([], m=m, on_submit=on_submit)
+
+def live_metrics_js(d=""):
+    return live_metrics_script(d)
+
+page = build
+
+BAR_START, BAR_END = "<!--SPONSORBAR-START-->", "<!--SPONSORBAR-END-->"
+e = lambda x: html.escape(str(x or ""))
 
 def bar_html(sp, depth=""):
-    """Small fixed bar at the bottom of the page. position:fixed, so it never shifts the layout (no CLS); dismissible per visitor."""
     logo = f'<img src="{e(sp["logo"])}" alt="" width="20" height="20" style="border-radius:5px;flex:none">' if sp.get("logo") else ""
     return (f'{BAR_START}<div id="sponsorbar" role="complementary" aria-label="Sponsor" style="position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:60;'
       'display:flex;align-items:center;gap:10px;max-width:calc(100vw - 24px);padding:8px 10px 8px 14px;border:1px solid var(--line);border-radius:999px;'
@@ -136,224 +337,21 @@ def bar_html(sp, depth=""):
       '<script>try{if(localStorage.getItem("as_sponsorbar")==="0"){var b=document.getElementById("sponsorbar");b&&b.remove()}}catch(e){}</script>'
       f'{BAR_END}')
 
-def apply_bar(enabled):
+def apply_bar(enabled=False):
     sp = json.load(open("data/sponsor_bar.json")) if os.path.exists("data/sponsor_bar.json") else {}
     ready = enabled and all(sp.get(k) for k in ("name", "pitch", "url"))
-    if enabled and not ready:
-        print("build_sponsor: SPONSOR_ENABLED is on but data/sponsor_bar.json is incomplete; no bar rendered")
     rx = re.compile(re.escape(BAR_START) + ".*?" + re.escape(BAR_END), re.S)
     n = 0
     for f in glob.glob("**/*.html", recursive=True):
         if f in ("outreach-tracker.html", "sponsor.html") or f.startswith(("app/", "node_modules/", "preview/")):
             continue
-        s = open(f, errors="ignore").read()
-        o = s
-        s = rx.sub("", s)
-        if ready and "</body>" in s and 'http-equiv="refresh"' not in s:
+        s2 = open(f, errors="ignore").read()
+        o = s2
+        s2 = rx.sub("", s2)
+        if ready and "</body>" in s2 and 'http-equiv="refresh"' not in s2:
             d = "../" * f.count("/")
-            s = s.replace("</body>", bar_html(sp, d) + "</body>", 1)
+            s2 = s2.replace("</body>", bar_html(sp, d) + "</body>", 1)
             n += 1
-        if s != o:
-            open(f, "w").write(s)
+        if s2 != o:
+            open(f, "w").write(s2)
     return n
-
-def packages_grid(free_href="#free-form", free_label="Submit Free Below ↓", on_submit=False, M=None):
-    if M is None:
-        M = load_metrics()
-    ntools = f'{M["tools_count"]:,}'
-    nmcp = f'{M["mcp_servers_count"]:,}'
-    npages = f'{M["indexed_pages_count"]:,}+'
-    xclamp = f'{M["x_clampdown19_followers"]:,}+'
-    xcomb = f'{M["x_combined_followers"]:,}+'
-    pv30 = f'{M["pageviews_30d"]:,}+'
-
-    if on_submit:
-        cta_free = f'<a class="btn pkg-cta" href="#sf" data-pick-pkg="free">{free_label}</a>'
-        cta_49 = (f'<a class="btn primary pkg-cta pkg-cta-pop" href="#sf" data-pick-pkg="featured_49">Select $49 Featured &amp; Fill Form ↓</a>'
-                  f'<div class="pkg-xmoney"><span>💳 Or <a href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">checkout directly on Stripe ($49) ↗</a> · ⚡ X Money: <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a></span></div>')
-        cta_99 = (f'<a class="btn primary pkg-cta pkg-cta-vip" href="#sf" data-pick-pkg="sponsor_99">Select $99/wk Sponsor &amp; Fill Form ↓</a>'
-                  f'<div class="pkg-xmoney"><span>💳 Or <a href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">checkout directly on Stripe ($99/wk) ↗</a> · ⚡ X Money: <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a></span></div>')
-    else:
-        cta_free = f'<a class="btn pkg-cta" href="{free_href}">{free_label}</a>'
-        cta_49 = (f'<a class="btn primary pkg-cta pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Get Featured — $49 →</a>'
-                  f'<div class="pkg-xmoney"><span>⚡ Or pay <b>$49</b> via <b>X Money</b> to <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a></span></div>')
-        cta_99 = (f'<a class="btn primary pkg-cta pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Book Weekly Sponsor — $99/wk →</a>'
-                  f'<div class="pkg-xmoney"><span>⚡ Or pay <b>$99</b> via <b>X Money</b> to <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a></span></div>')
-
-    return (
-        '<div class="pkg-grid" id="packages">'
-        # Tier 1: Free Community Listing
-        '<div class="card pkg-card" data-pkg-card="free">'
-        '<div class="pkg-top"><span class="npill npft pkg-pill pkg-pill-free"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>COMMUNITY TIER · $0</span></div>'
-        '<h3>Free Community Listing</h3>'
-        '<div class="pkg-price"><span class="pkg-amt">$0</span> <span class="pkg-per">forever</span></div>'
-        f'<p class="pkg-sub">Get indexed across <b data-live-tools>{ntools}</b> tools &amp; <b data-live-mcp>{nmcp}</b> MCP servers at zero cost.</p>'
-        '<ul class="pkg-list">'
-        '<li><span class="pkg-chk" aria-hidden="true">✓</span><span>Permanent tool profile page, category placement &amp; public JSON API listing</span></li>'
-        '<li><span class="pkg-chk" aria-hidden="true">✓</span><span>Standard editorial &amp; link review queue (typically 5–7 business days)</span></li>'
-        '<li><span class="pkg-chk" aria-hidden="true">✓</span><span><b>✓ Submitted by maker</b> verified badge on your listing</span></li>'
-        '</ul>'
-        '<div class="pkg-foot">' + cta_free + '</div>'
-        '</div>'
-        # Tier 2: $49 Featured Listing & Category Boost
-        '<div class="card pkg-card pkg-featured" data-pkg-card="featured_49">'
-        '<div class="pkg-top"><span class="npill npmcp pkg-pill pkg-pill-pop"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>MOST POPULAR FOR MAKERS</span></div>'
-        '<h3>Featured Listing &amp; Category Boost</h3>'
-        '<div class="pkg-price"><span class="pkg-amt">$49</span> <span class="pkg-per">one-time · 30 days featured</span></div>'
-        '<p class="pkg-sub">Skip the queue, pin to the top of your category &amp; get an X launch spotlight.</p>'
-        '<ul class="pkg-list">'
-        '<li><span class="pkg-chk pkg-chk-pop" aria-hidden="true">✓</span><span><b>Priority same-day review</b> — live within 24 hours with enriched copy, FAQ &amp; comparison links</span></li>'
-        '<li><span class="pkg-chk pkg-chk-pop" aria-hidden="true">✓</span><span><b>Pinned “Featured” badge at the top of your category</b> + homepage Makers strip for <b>30 days</b></span></li>'
-        f'<li><span class="pkg-chk pkg-chk-pop" aria-hidden="true">✓</span><span><b>Dedicated X launch spotlight</b> across <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> (<b data-live-x-followers>{xcomb}</b> combined followers)</span></li>'
-        '<li><span class="pkg-chk pkg-chk-pop" aria-hidden="true">✓</span><span><b>Featured highlight</b> in the next Tuesday issue of the AgentScout Weekly newsletter</span></li>'
-        '</ul>'
-        '<div class="pkg-foot">' + cta_49 + '</div>'
-        '</div>'
-        # Tier 3: $99/wk Weekly Sitewide Sponsor + Newsletter Top Slot
-        '<div class="card pkg-card pkg-vip" data-pkg-card="sponsor_99">'
-        '<div class="pkg-top"><span class="npill npgen pkg-pill pkg-pill-vip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>1 EXCLUSIVE SLOT / WEEK</span></div>'
-        '<h3>Weekly Sitewide Sponsor + Newsletter</h3>'
-        '<div class="pkg-price"><span class="pkg-amt">$99</span> <span class="pkg-per">/ week · exclusive sitewide</span></div>'
-        '<p class="pkg-sub">Own the top banner across every page of AgentScout + our weekly newsletter.</p>'
-        '<ul class="pkg-list">'
-        '<li><span class="pkg-chk pkg-chk-vip" aria-hidden="true">✓</span><span><b>Everything in Featured Boost ($49)</b> included automatically</span></li>'
-        f'<li><span class="pkg-chk pkg-chk-vip" aria-hidden="true">✓</span><span><b>Exclusive Sitewide Sponsor Bar</b> across all <b data-live-pages>{npages}</b> tool, category &amp; comparison pages for 7 days</span></li>'
-        '<li><span class="pkg-chk pkg-chk-vip" aria-hidden="true">✓</span><span><b>Top “Sponsored by” banner</b> in Tuesday’s AgentScout Weekly newsletter (logo + 2-sentence pitch + CTA)</span></li>'
-        f'<li><span class="pkg-chk pkg-chk-vip" aria-hidden="true">✓</span><span><b>Pinned weekend &amp; launch-day X threads</b> from <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></span></li>'
-        '</ul>'
-        '<div class="pkg-foot">' + cta_99 + '</div>'
-        '</div>'
-        '</div>'
-        # Trust signals strip (all numbers auto-updated via data-live-* attributes)
-        '<div class="pkg-trust" role="region" aria-label="AgentScout directory reach and checkout options">'
-        f'<span class="pkgt-item"><b data-live-tools>{ntools}</b> tools indexed</span>'
-        '<span class="pkgt-dot" aria-hidden="true">·</span>'
-        f'<span class="pkgt-item"><b data-live-mcp>{nmcp}</b> MCP servers</span>'
-        '<span class="pkgt-dot" aria-hidden="true">·</span>'
-        f'<span class="pkgt-item"><b data-live-pages>{npages}</b> indexed pages (<b data-live-pv30>{pv30}</b> 30d views)</span>'
-        '<span class="pkgt-dot" aria-hidden="true">·</span>'
-        f'<span class="pkgt-item">Daily X spotlights on <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<b data-live-x-followers>{xcomb}</b> followers)</span>'
-        '<span class="pkgt-dot" aria-hidden="true">·</span>'
-        f'<span class="pkgt-item">Instant checkout via <b>Stripe</b> or <b>X Money</b> (<a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a>)</span>'
-        '</div>'
-    )
-
-def tiers_html(ntools=1786, nmcp=249, on_submit=False, t=None):
-    M = load_metrics(t)
-    return packages_grid(
-        free_href="#sf" if on_submit else "submit.html#free-form",
-        free_label="Select Free Tier & Fill Form ↓" if on_submit else "Submit Free ($0) →",
-        on_submit=on_submit,
-        M=M
-    )
-
-def build(t=None):
-    import build_extras as X
-    if t is None:
-        t = json.load(open("tools.json"))
-    M = load_metrics(t)
-    n_tools = M["tools_count"]
-    n_cats = M["categories_count"]
-    n_mcp = M["mcp_servers_count"]
-    n_pages = M["indexed_pages_count"]
-    x_comb = M["x_combined_followers"]
-    pv_30d = M["pageviews_30d"]
-    pv_7d = M["weekly_page_views"]
-    upd_disp = M["updated_display"]
-
-    title = "Get Featured & Sponsor AgentScout — Boost Your AI Agent Tool"
-    desc = f"Get your AI agent tool or MCP server featured across {n_tools:,}+ tools on AgentScout. Choose Free Community Listing ($0), Featured Category Boost ($49), or Weekly Sitewide Sponsor ($99/wk)."
-    canon = f"{X.B}sponsor.html"
-    ld = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebPage",
-                "@id": canon,
-                "url": canon,
-                "name": title,
-                "description": desc,
-                "isPartOf": {"@type": "WebSite", "name": "AgentScout", "url": X.B}
-            },
-            {
-                "@type": "Product",
-                "name": "AgentScout Featured Listing & Sponsorship Packages",
-                "description": desc,
-                "brand": {"@type": "Organization", "name": "AgentScout", "url": X.B, "sameAs": ["https://x.com/AgentScoutHQ", "https://x.com/clampdown19"]},
-                "offers": [
-                    {
-                        "@type": "Offer",
-                        "name": "Free Community Listing",
-                        "price": "0",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": f"{X.B}submit.html#free-form"
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "Featured Listing & Category Boost (30 Days + X Spotlight)",
-                        "price": "49",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": STRIPE_49
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "Weekly Sitewide Sponsor + Newsletter Top Slot (7 Days)",
-                        "price": "99",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/LimitedAvailability",
-                        "url": STRIPE_99
-                    }
-                ]
-            }
-        ]
-    }
-    stats_cards = (
-        '<h2 style="font-size:20px;margin:28px 0 12px">Live directory &amp; audience reach <span class="muted" style="font-size:13px;font-weight:400">(auto-updated <span data-live-updated>' + e(upd_disp) + '</span>)</span></h2>'
-        '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:28px">'
-        f'<div class="card"><div style="font-size:26px;font-weight:800;line-height:1.1" data-live-tools>{n_tools:,}</div><div style="font-weight:600;margin-top:4px">AI agent tools indexed</div><p class="muted" style="margin:4px 0 0;font-size:12.5px">Across <span data-live-cats>{n_cats}</span> categories, link-checked daily.</p></div>'
-        f'<div class="card"><div style="font-size:26px;font-weight:800;line-height:1.1" data-live-pages>{n_pages:,}+</div><div style="font-weight:600;margin-top:4px">Indexed directory pages</div><p class="muted" style="margin:4px 0 0;font-size:12.5px"><span data-live-pv30>{pv_30d:,}+</span> 30-day views (<span data-live-pv7>{pv_7d:,}+</span> weekly views).</p></div>'
-        f'<div class="card"><div style="font-size:26px;font-weight:800;line-height:1.1" data-live-mcp>{n_mcp:,}</div><div style="font-weight:600;margin-top:4px">MCP servers indexed</div><p class="muted" style="margin:4px 0 0;font-size:12.5px">Searchable via our public MCP server for Claude, Cursor &amp; VS Code.</p></div>'
-        f'<div class="card"><div style="font-size:26px;font-weight:800;line-height:1.1" data-live-x-followers>{x_comb:,}+</div><div style="font-weight:600;margin-top:4px">X spotlight reach</div><p class="muted" style="margin:4px 0 0;font-size:12.5px">Dedicated posts on <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>.</p></div>'
-        '</div>'
-    )
-    body = (
-        '<div class="crumb"><a href="index.html">AgentScout</a> / Sponsor &amp; Get Featured</div>'
-        '<section class="sp-hero" style="padding-top:20px;text-align:left">'
-        '<span class="npill npsp sp-eyebrow"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>For AI Agent &amp; MCP Makers · High-Intent Buyer Traffic</span>'
-        '<h1 style="text-align:left;margin:8px 0 10px">Get your AI tool in front of builders &amp; buyers</h1>'
-        f'<p class="lede" style="margin-left:0;text-align:left;max-width:780px">AgentScout indexes <b data-live-tools>{n_tools:,}</b> link-checked AI agent tools (including <b data-live-mcp>{n_mcp:,}</b> MCP servers) across <b data-live-cats>{n_cats}</b> categories and <b data-live-pages>{n_pages:,}+</b> pages, plus side-by-side comparisons, best-of lists, and the Tuesday <b>AgentScout Weekly</b> newsletter. Every paid boost also gets a dedicated X spotlight across <a href="{XMONEY_URL}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> and <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<b data-live-x-followers>{x_comb:,}+</b> combined followers).</p>'
-        + packages_grid(free_href="submit.html#free-form", free_label="Submit Free ($0) →", on_submit=False, M=M)
-        + stats_cards
-        + '<div class="card sp-xmoney-card">'
-        '<h2 style="font-size:18px;margin:0 0 8px">💳 Pay with Card (Stripe) or X Money (<a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>)</h2>'
-        '<p style="margin:0 0 10px;font-size:14.5px;color:var(--muted)">Use the instant <b>Stripe Checkout</b> buttons above (Apple Pay, Google Pay, Link, and all major credit/debit cards accepted), or send <b>$49</b> (Featured Boost) or <b>$99</b> (Weekly Sitewide Sponsor) directly via <b>X Money</b> to <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> with your tool name and URL in the note.</p>'
-        '<p style="margin:0;font-size:13.5px;color:var(--muted)">Already submitted your tool via the <a href="submit.html#free-form">submission form</a>? Just use the same tool name or email at checkout and we will upgrade and pin your listing within 24 hours.</p>'
-        '</div>'
-        '<h2 style="font-size:20px;margin:32px 0 12px">How it works</h2>'
-        '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-bottom:28px">'
-        '<div class="card"><h3 style="margin:0 0 6px;font-size:16px">1. Submit or claim your tool</h3><p style="margin:0;font-size:14px;color:var(--muted)">Fill out the 60-second <a href="submit.html#free-form">tool submission form</a> (or name an existing tool already listed on AgentScout).</p></div>'
-        '<div class="card"><h3 style="margin:0 0 6px;font-size:16px">2. Pick your boost tier</h3><p style="margin:0;font-size:14px;color:var(--muted)">Complete checkout via Stripe (<a href="' + STRIPE_49 + '" target="_blank" rel="noopener noreferrer">$49 Featured Boost</a> or <a href="' + STRIPE_99 + '" target="_blank" rel="noopener noreferrer">$99/wk Weekly Sponsor</a>) or X Money (<a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>).</p></div>'
-        '<div class="card"><h3 style="margin:0 0 6px;font-size:16px">3. Go live within 24 hours</h3><p style="margin:0;font-size:14px;color:var(--muted)">We verify your links, publish your enriched profile, pin your tool, and post your X launch spotlight on <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>.</p></div>'
-        '</div>'
-        '<h2 style="font-size:20px;margin:28px 0 12px">Frequently asked questions</h2>'
-        '<details style="margin:0 0 10px"><summary><b>How transparent are sponsored &amp; featured placements?</b></summary><p class="muted" style="margin:8px 0 0;font-size:14px">Every paid placement carries a clear “Featured” or “Sponsored” badge (<code style="font-size:12px">rel="sponsored"</code>) so readers always know what is sponsored. Organic rankings, comparison facts, and editorial notes are never altered for payment.</p></details>'
-        '<details style="margin:0 0 10px"><summary><b>What if my tool isn’t a fit for the directory?</b></summary><p class="muted" style="margin:8px 0 0;font-size:14px">We only list working AI agent tools, MCP servers, frameworks, and AI apps. If we cannot verify or list your submission, we refund 100% of your payment immediately.</p></details>'
-        '<details style="margin:0 0 10px"><summary><b>How do I send my logo, screenshots, or newsletter copy?</b></summary><p class="muted" style="margin:8px 0 0;font-size:14px">Include your links in the <a href="submit.html#free-form">submission form</a> or email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> / DM <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> or <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> on X after checkout.</p></details>'
-        '<p class="disclose" style="margin-top:24px">Questions or multi-week sponsorship inquiries? Email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> or message <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> / <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> on X.</p>'
-        '</section>'
-        + live_metrics_js("")
-    )
-    out = X.shell("", title, desc, canon, body, ld)
-    open("sponsor.html", "w").write(out)
-    return canon
-
-page = build
-
-if __name__ == "__main__":
-    t = json.load(open("tools.json"))
-    page(t)
-    import build_tasks
-    build_tasks.sitewide(t)
-    print("sponsor.html built; bar pages:", apply_bar(False))

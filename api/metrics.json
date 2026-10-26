@@ -1,18 +1,53 @@
 {
+  "updated": "2026-10-26",
+  "updated_display": "Oct 26, 2026",
   "tools_count": 1797,
   "mcp_servers_count": 250,
   "categories_count": 30,
-  "bot_templates_count": 189,
-  "indexed_pages_count": 2338,
-  "pages_count": 2338,
+  "indexed_pages_count": 2443,
+  "pages_count": 2443,
   "mcp_count": 250,
   "pageviews_7d": 551,
   "x_clampdown19_followers": 2095,
   "x_agentscouthq_followers": 9,
   "x_combined_followers": 2104,
-  "pageviews_30d": 753,
+  "weekly_visitors_ga4": 212,
+  "weekly_external_arrivals": 382,
   "weekly_page_views": 551,
-  "gsc_7d_impressions": 8210,
-  "updated_at": "2026-10-26T07:48:56-0700",
-  "updated_display": "Oct 26, 2026"
+  "pageviews_30d": 753,
+  "active_users_30d": 276,
+  "gsc_impressions_7d": 8210,
+  "packages": {
+    "free": {
+      "name": "Free Community Listing",
+      "price_usd": 0,
+      "billing": "free",
+      "color": "#14b8a6",
+      "url": "https://agentscouthq.com/submit.html#free-form"
+    },
+    "fast_track_29": {
+      "name": "Fast-Track + 7-Day Launch Boost",
+      "price_usd": 29,
+      "billing": "one-time",
+      "color": "#0ea5e9",
+      "stripe_url": "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02",
+      "x_money": "@clampdown19"
+    },
+    "featured_49": {
+      "name": "30-Day Category Pin + Permanent SEO/AEO Placement",
+      "price_usd": 49,
+      "billing": "one-time (30 days + permanent SEO/AEO)",
+      "color": "#6366f1",
+      "stripe_url": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
+      "x_money": "@clampdown19"
+    },
+    "weekly_sponsor_99": {
+      "name": "Weekly Sitewide Sponsor + Newsletter Top Slot",
+      "price_usd": 99,
+      "billing": "per week",
+      "color": "#ec4899",
+      "stripe_url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
+      "x_money": "@clampdown19"
+    }
+  }
 }

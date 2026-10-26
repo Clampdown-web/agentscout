@@ -68,9 +68,12 @@ def pages(t):
         rows="".join(f'<tr><td><a href="../tools/{y["slug"]}.html">{e(y["name"])}</a></td><td>{e(y["pricing"])}</td><td>{e(lic(y)) or ("Yes" if y["pricing"] in S.OPEN else "No")}</td><td>{(format(y["github_stars"],",") if y.get("github_stars") else "—")}</td><td>{e(gf(y))}</td></tr>' for y in [x]+alts)
         table=(f'<h2 style="font-size:18px;margin:28px 0 10px">{e(n)} vs alternatives at a glance</h2><div class="tablewrap"><table class="cmp"><thead><tr><th scope="col">Tool</th><th scope="col">Pricing</th><th scope="col">Open source / licence</th><th scope="col">GitHub stars</th><th scope="col">Good for</th></tr></thead><tbody>{rows}</tbody></table></div>')
         cmpl=[f'<a href="../compare/{c}.html">{e(X_n(t,c))}</a>' for c in sorted({X.cslug(a,b) for a,b in X.PAIRS if x["slug"] in (a,b)})]
-        title=f"{n} alternatives (2026): {len(alts)} similar tools · AgentScout"
-        if len(title)>70: title=f"{n} alternatives: {len(alts)} similar tools · AgentScout"
-        desc=f"The {len(alts)} closest {n} alternatives, including {', '.join(y['name'] for y in alts[:3])}: pricing, open source, GitHub stars and why to switch."[:158]
+        alts_os=sum(1 for y in alts if y["pricing"] in S.OPEN); alts_fr=sum(1 for y in alts if y["pricing"] in S.FREE)
+        title=f"{len(alts)} Best {n} Alternatives (2026): Free & Open-Source · AgentScout" if alts_os else f"{len(alts)} Best {n} Alternatives (2026): Top Competitors · AgentScout"
+        if len(title)>70: title=f"{len(alts)} Best {n} Alternatives (2026) · AgentScout"
+        if len(title)>70: title=f"{n} Alternatives (2026): {len(alts)} Tools · AgentScout"
+        desc=f"Compare the {len(alts)} closest {n} alternatives in 2026 ({alts_os} open source, {alts_fr} free/freemium): {', '.join(y['name'] for y in alts[:3])}. Pricing & GitHub stars."
+        if len(desc)>158: desc=f"Compare {len(alts)} {n} alternatives ({alts_os} open source, {alts_fr} free/freemium), including {', '.join(y['name'] for y in alts[:3])}. Verified pricing & stars."[:158]
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(n)} alternatives</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(n)} alternatives (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p> + (f"<p class=\"muted\" style=\"margin:-4px 0 14px;font-size:14px\">Looking for the open-source microservice workflow engine? See <a href=\"../tools/orkes.html\">Orkes Conductor →</a>.</p>" if x["slug"]=="conductor" else "") + f"<ol style="padding-left:20px">{lines}</ol>{table}'
               +(f'<p style="margin-top:20px">Written comparisons: {" · ".join(cmpl)}</p>' if cmpl else "")

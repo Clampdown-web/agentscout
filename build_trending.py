@@ -22,6 +22,10 @@ def trending(t):
     d=_fetch(); bs={x["slug"]:x for x in t}
     items=[bs[s] for s in d.get("tools",[]) if s in bs]
     path="trending.html"
+    _redirs=json.load(open("redirects.json")) if os.path.exists("redirects.json") else {}
+    if path in _redirs:
+        if os.path.exists(path): os.remove(path)
+        print("trending: redirected in redirects.json ->",_redirs[path]); return []
     if len(items)<MIN_TOOLS:
         if os.path.exists(path): os.remove(path)
         print(f"trending: {len(items)} tools qualify (<{MIN_TOOLS}), page held"); return []

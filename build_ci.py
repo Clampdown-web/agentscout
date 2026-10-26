@@ -29,12 +29,13 @@ def cmp_table():
     return ('<div style="overflow-x:auto;margin:12px 0 16px"><table style="border-collapse:collapse;font-size:14px;min-width:0;width:100%;max-width:640px">'
      '<caption style="text-align:left;font-weight:700;margin-bottom:6px">Free listing vs $49–$437 elsewhere</caption>'
      '<thead><tr><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Directory</th><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Cost to get listed</th></tr></thead><tbody>'
-     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>AgentScout</b></td><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>Free ($0 forever).</b> Every submission is reviewed; optional $49 Featured &amp; $99/wk Sponsor boosts available.</td></tr>'
+     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>AgentScout</b></td><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>Free ($0 forever).</b> Every submission is reviewed; optional <b>$49 Featured (30 full days featured vs. 5-day boosts elsewhere)</b> &amp; $99/wk Sponsor boosts available. Featured slots are clearly labeled and sit above the list; rankings are never paid.</td></tr>'
      '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)">Other directories</td><td style="padding:6px 8px;border-bottom:1px solid var(--line)">$49 to $437 to get listed</td></tr>'
      f'</tbody></table><p class="muted" style="font-size:12.5px;margin:6px 0 0">Prices checked Oct 2026, may change.</p></div>')
 def home(t):
+    import build_aicite as _bac; _ul=_bac.mcp_uptime_line(t)
     n=mcp_n(t); s=open("index.html").read()
-    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b>{n:,} MCP servers</b>, link-checked daily</a> · <a href="skills/">Agent Skills with install commands</a></p>'
+    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b>{n:,} MCP servers</b>, link-checked daily</a> (<a href="mcp/link-status.html">{e(_ul)}</a>) · <a href="skills/">Agent Skills with install commands</a></p>'
     s=_blk(s,"mcp",line,'</p><p class="quizcta">',after=False) if '<!--ci:mcp-->' not in s else re.sub(r"<!--ci:mcp-->.*?<!--/ci:mcp-->",f"<!--ci:mcp-->{line}<!--/ci:mcp-->",s,flags=re.S)
     tot=len(t)
     d=f"AgentScout: {tot:,} AI agent tools, including {n:,} MCP servers, link-checked daily. Coding agents, frameworks, browser use, voice and no-code."
