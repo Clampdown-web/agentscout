@@ -200,8 +200,15 @@ def tap():
         t=re.sub(r'<style id="bt-tap-css">.*?</style>','',s,flags=re.S).replace('</head>',TAPCSS+'</head>',1)
         if t!=s: open(fp,"w").write(t); n+=1
     print("bot templates tap css:",n,"pages")
+
+def verify_logos():
+    s=open(f"{D}/index.html").read()
+    srcs=re.findall(r'<img[^>]+class="bt-ic[^"]*"[^>]+src="icons/([^"]+)"',s)
+    bad=[x for x in srcs if x in ("community-bot.svg","official-use-case.svg","default.svg") or not os.path.exists(f"{D}/icons/{x}") or os.path.getsize(f"{D}/icons/{x}")<100]
+    assert not bad, f"bot templates logo check failed (generic or missing icons): {bad}"
+    print(f"bot templates logos verified: {len(srcs)}/{len(srcs)} real icons on /{D}/index.html (0 generic)")
 _run0=run
 def run():
-    _run0(); filters(); tap()
+    _run0(); filters(); tap(); verify_logos()
 
 if __name__=="__main__": run()
