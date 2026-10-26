@@ -1,6 +1,6 @@
 """Sponsor / Featured Packages page (sponsor.html) + shared live metrics (`api/metrics.json`) + reusable 4-tier package cards.
 Public, indexed, in sitemap.xml & llms.txt (Oct 26, 2026 — owner-approved 4-Tier Neon Lineup)."""
-import json, html, os, glob
+import json, html, os, glob, re
 from datetime import datetime, timezone, timedelta
 
 STRIPE_29_URL = "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02"

@@ -29,7 +29,7 @@ def cmp_table():
     return ('<div style="overflow-x:auto;margin:12px 0 16px"><table style="border-collapse:collapse;font-size:14px;min-width:0;width:100%;max-width:640px">'
      '<caption style="text-align:left;font-weight:700;margin-bottom:6px">Free listing vs $49–$437 elsewhere</caption>'
      '<thead><tr><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Directory</th><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Cost to get listed</th></tr></thead><tbody>'
-     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>AgentScout</b></td><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>Free ($0 forever).</b> Every submission is reviewed; optional <b>$49 Featured (30 full days featured vs. 5-day boosts elsewhere)</b> &amp; $99/wk Sponsor boosts available. Featured slots are clearly labeled and sit above the list; rankings are never paid.</td></tr>'
+     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>AgentScout</b></td><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>Free ($0 forever · 3–5 day standard review queue).</b> Every submission is reviewed; optional <a href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer"><b>$29 Fast-Track + 7-Day Launch Boost</b></a> (same-day review), <a href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer"><b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b></a> (30 full days featured vs. 5-day boosts elsewhere), &amp; <a href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer"><b>$99/wk Weekly Sitewide Sponsor</b></a> boosts available. Featured slots are clearly labeled and sit above the list; rankings are never paid.</td></tr>'
      '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)">Other directories</td><td style="padding:6px 8px;border-bottom:1px solid var(--line)">$49 to $437 to get listed</td></tr>'
      f'</tbody></table><p class="muted" style="font-size:12.5px;margin:6px 0 0">Prices checked Oct 2026, may change.</p></div>')
 def home(t):
@@ -42,7 +42,7 @@ def home(t):
     for a,k in (("name","description"),("property","og:description"),("name","twitter:description")):
         s=re.sub(rf'(<meta {a}="{k}" content=")[^"]*',lambda m:m.group(1)+e(d),s,count=1)
     s=re.sub(r'(<a href="categories/mcp-servers.html">)\d[\d,]* MCP servers(</a>)',lambda m:m.group(1)+f"{n:,} MCP servers"+m.group(2),s)
-    blk=f'<h3 style="font-size:16px;margin:0 0 8px">Get listed free</h3>{cmp_table()}<p style="margin:0 0 16px"><a href="submit.html">Submit your tool free →</a></p>'
+    blk=f'<h3 style="font-size:16px;margin:0 0 8px">Get listed free</h3>{cmp_table()}<p style="margin:0 0 16px"><a href="submit.html#free-form">Submit your tool free ($0) →</a> · <a href="sponsor.html#packages">Compare all 4 packages ($0 / $29 / $49 / $99) →</a></p>'
     s=_blk(s,"free",blk,'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>',after=False)
     open("index.html","w").write(s)
     u=open("submit.html").read()
