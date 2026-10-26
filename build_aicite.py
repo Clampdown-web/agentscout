@@ -26,8 +26,9 @@ def ptype(x):
 def lstat(codes):
     if not codes: return ("not checked","")
     worst=None
+    gh_ok=200<=codes.get("github",0)<400
     for c in codes.values():
-        s=("ok" if 200<=c<400 or c==405 else "blocked" if c in(401,403,429) else "broken")
+        s=("ok" if 200<=c<400 or c==405 or (c in(401,403,429) and (gh_ok or len(codes)==1)) else "blocked" if c in(401,403,429) else "broken")
         if worst is None or ["ok","blocked","broken"].index(s)>["ok","blocked","broken"].index(worst): worst=s
     return ({"ok":"OK","blocked":"Reachable, blocks automated checks","broken":"Not responding" if 0 in codes.values() else "Error"}[worst],
             ", ".join(f"{k} {c if c else 'no response'}" for k,c in codes.items()))

@@ -5,8 +5,9 @@ links to written /compare/ pages. The tool page gets one link to its alternative
 import re,os,glob,json,html
 import build_extras as X, build_subtasks as S, build_tasks as BT
 B=X.B; e=X.e
-MAX_PAGES=92; MIN_PEERS=8; SHOW=10; MIN_WORDS=150
+MAX_PAGES=93; MIN_PEERS=8; SHOW=10; MIN_WORDS=150
 SKIP={"cursor","hyperframes"}  # cursor: hand-built page; hyperframes: redirected to its tool page (redirects.json), keep it that way
+FORCE_ALTS={"conductor"}  # high-impression Search Console alternatives pages
 def live(x): return "iscontinued" not in x.get("maturity","").lower() and "discontinued" not in x.get("description","").lower()[:40]
 def peers(x,t,tm,tg):
     mine=tm.get(x["slug"],set()); ms=set(tg.get(x["slug"],[]))
@@ -44,12 +45,12 @@ def pages(t):
         for y in items: tm.setdefault(y["slug"],set()).add(s)
     tg={x["slug"]:S.tags(x) for x in t}
     global ORD; ORD={k:i for i,k in enumerate(m)}
-    cands=sorted([x for x in t if live(x) and x["slug"] not in SKIP],key=lambda x:(not x.get("featured"),-(x.get("github_stars") or 0),x["name"].lower()))
+    cands=sorted([x for x in t if live(x) and x["slug"] not in SKIP],key=lambda x:(not (x.get("featured") or x["slug"] in FORCE_ALTS),-(x.get("github_stars") or 0),x["name"].lower()))
     pairs={X.cslug(a,b) for a,b in X.PAIRS}|{X.cslug(b,a) for a,b in X.PAIRS}
     made=[]; os.makedirs("best",exist_ok=True)
     for x in cands:
         if len(made)>=MAX_PAGES: break
-        if not x.get("featured") and not x.get("github_stars"): continue
+        if not x.get("featured") and not x.get("github_stars") and x["slug"] not in FORCE_ALTS: continue
         ps=peers(x,t,tm,tg)
         if len(ps)<MIN_PEERS: continue
         alts=ps[:SHOW]; n=x["name"]; sl=f"{x['slug']}-alternatives"; path=f"best/{sl}.html"; canon=B+path
@@ -71,7 +72,7 @@ def pages(t):
         if len(title)>70: title=f"{n} alternatives: {len(alts)} similar tools · AgentScout"
         desc=f"The {len(alts)} closest {n} alternatives, including {', '.join(y['name'] for y in alts[:3])}: pricing, open source, GitHub stars and why to switch."[:158]
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(n)} alternatives</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(n)} alternatives (2026)</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p><ol style="padding-left:20px">{lines}</ol>{table}'
+              f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p> + (f"<p class=\"muted\" style=\"margin:-4px 0 14px;font-size:14px\">Looking for the open-source microservice workflow engine? See <a href=\"../tools/orkes.html\">Orkes Conductor →</a>.</p>" if x["slug"]=="conductor" else "") + f"<ol style="padding-left:20px">{lines}</ol>{table}'
               +(f'<p style="margin-top:20px">Written comparisons: {" · ".join(cmpl)}</p>' if cmpl else "")
               +f'<p style="margin-top:16px">More: <a href="../tools/{x["slug"]}.html">{e(n)} listing</a> · <a href="../categories/{X.catslug(x["category"])}.html">All {e(x["category"])} tools</a> · <a href="index.html#alternatives">All alternatives pages</a></p>'
               f'<p class="disclose">Alternatives are picked from directory data only: same category plus shared tasks and sub-tasks. Pricing is as each maker states it; GitHub stars as recorded on each listing.</p></section>')

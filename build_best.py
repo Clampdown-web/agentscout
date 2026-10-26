@@ -32,7 +32,7 @@ PAGES=[
 ("no-code-ai-agent-builders","Best No-Code AI Agent Builders",lambda x:x["category"] in ("no-code builders","app builders"),"stars",20,
  "Visual, drag-and-drop and prompt-to-app builders for making AI agents and apps without writing code.",
  '<a href="../tasks/building-apps-without-code.html">Building apps without code</a> · <a href="../tasks/automating-workflows.html">Automating workflows</a>'),
-("ai-voice-agent-platforms","Best AI Voice Agent Platforms",lambda x:x["category"]=="voice","stars",20,
+("ai-voice-agent-platforms","Best AI Voice Agent Platforms",lambda x:x["category"]=="voice","maturity",25,
  "Platforms and open-source frameworks for building AI voice agents that talk, listen and handle phone calls.",
  '<a href="../tasks/building-voice-agents.html">Building voice agents</a> · <a href="../tasks/phone-calls.html">Handling phone calls</a> · <a href="../compare/livekit-agents-vs-pipecat.html">LiveKit Agents vs Pipecat</a>'),
 # best/ai-vision-tools removed Oct 18 2026: same tools as categories/vision (redirect in redirects.json)

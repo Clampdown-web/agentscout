@@ -10,9 +10,9 @@ def run(t):
     for f,(ti,de) in O.items():
         if not os.path.exists(f): continue
         s0=s=open(f).read()
-        dm=re.search(r'<meta name="description" content="(?:All )?(\d[\d,]*) ',s); pn=dm.group(1) if dm else ""  # {n} = live count from the generated description (category/news pages; Search Console pass Oct 26 2026)
+        dm=re.search(r'<meta name="description" content="(?:All |Compare )?(\d[\d,]*) ',s) or re.search(r'<strong>(\d[\d,]*)</strong> tools',s) or re.search(r'\b(\d[\d,]*) AI agents and tools',s); pn=dm.group(1) if dm else ""  # {n} = live count from the generated description (category/news pages; Search Console pass Oct 26 2026)
         if ti:
-            v=html.escape(ti.replace("{n}",pn),quote=True)
+            v=html.escape(ti.replace("{n}",pn).replace("{mcp_n}",str(sum(1 for x in t if x["category"]=="MCP servers"))),quote=True)
             s=re.sub(r"<title>.*?</title>",f"<title>{v}</title>",s,1,flags=re.S)
             s=_set(s,"property","og:title",v); s=_set(s,"name","twitter:title",v)
         if de:

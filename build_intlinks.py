@@ -10,11 +10,14 @@ def targets(t):
        ("best/mcp-servers-for-cursor.html","MCP servers for Cursor"),("best/mcp-servers-for-claude-code.html","MCP servers for Claude Code"),
        ("best/ai-coding-agents.html","Best AI coding agents"),("categories/coding.html",f"All {c:,} coding agents"),("s/free-ai-coding-agents.html","Free AI coding agents"),
        ("s/open-source-ai-coding-agents.html","Open-source coding agents"),("best/ai-browser-agents.html","Best AI browser agents"),
+       ("tasks/browsing-the-web-browser-automation.html","AI browser automation tools"),
+       ("best/ai-voice-agent-platforms.html","Best AI voice agent platforms"),("tasks/phone-calls.html","AI phone & call agents"),
+       ("best/ai-business-agents.html","AI agents for business"),("best/conductor-alternatives.html","Conductor alternatives"),
        ("best/index.html","All best-of lists")]
     return [(p,l) for p,l in L if os.path.exists(p)]
 SOURCES=["index.html","categories/index.html","best/index.html","s/index.html","mcp/index.html","leaderboard/index.html",
  "categories/mcp-servers.html","categories/coding.html","best/ai-coding-agents.html","best/ai-browser-agents.html",
- "best/mcp-servers-for-cursor.html","best/mcp-servers-for-claude-code.html","s/best-mcp-servers.html"]
+ "best/mcp-servers-for-cursor.html","best/mcp-servers-for-claude-code.html","s/best-mcp-servers.html","tasks/index.html","best/ai-voice-agent-platforms.html","best/ai-business-agents.html"]
 CH='class="chip" style="display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;text-decoration:none;color:inherit"'
 def run(t):
     T=targets(t); done=0

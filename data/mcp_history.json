@@ -44,7 +44,10 @@
   "date": "2026-10-26",
   "changes": [
    "Lune Research link status changed from OK to Reachable, blocks automated checks.",
-   "Added Senzing MCP (pricing: Freemium)."
+   "Added Senzing MCP (pricing: Freemium).",
+   "Lune Research link status changed from Reachable, blocks automated checks to OK.",
+   "Studocu MCP link status changed from Reachable, blocks automated checks to OK.",
+   "Zomato MCP link status changed from Reachable, blocks automated checks to OK."
   ]
  }
 ]
