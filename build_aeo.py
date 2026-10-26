@@ -16,6 +16,7 @@ MO = ("", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 ALT_NAMES = ["Agent Scout", "AgentScoutHQ", "agentscouthq.com"]
 SAME_AS = [
     "https://x.com/AgentScoutHQ",
+    "https://x.com/clampdown19",
     "https://github.com/Clampdown-web/agentscout",
     "https://github.com/michaellk220-ops/agent-tool-finder",
     "https://agentscout.beehiiv.com/",
@@ -268,7 +269,7 @@ def write_llms_full(t):
         f"- **A2A / Agent Card**: {B}.well-known/agent-card.json (and `{B}.well-known/agent.json`)",
         f"- **MCP Server Card**: {B}.well-known/mcp.json",
         "- **Official Profiles & Third-Party MCP Registry Listings**:",
-        "  - X (Twitter): https://x.com/AgentScoutHQ",
+        "  - X (Twitter): https://x.com/AgentScoutHQ, https://x.com/clampdown19",
         "  - GitHub (Public Repository & Issues): https://github.com/Clampdown-web/agentscout",
         "  - GitHub (Directory Mirror): https://github.com/michaellk220-ops/agent-tool-finder",
         "  - Newsletter: https://agentscout.beehiiv.com/",
