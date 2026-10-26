@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-25T19:56:24Z",
- "updated": "2026-10-25T19:56:24Z",
+ "generated": "2026-10-26T00:11:09Z",
+ "updated": "2026-10-26T00:11:09Z",
  "last_checked": "2026-10-25",
- "count": 1778,
+ "count": 1779,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75330,6 +75330,49 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/morpro.png",
    "page": "https://agentscouthq.com/tools/morpro.html"
+  },
+  {
+   "name": "Machine-like",
+   "slug": "machine-like",
+   "url": "https://machinelike.ai/",
+   "website": "https://machinelike.ai/",
+   "github": "",
+   "category": "business agents",
+   "description": "Machine-like is a managed service that designs, deploys and runs custom AI agents for small businesses (1 to 100 employees). Agents connect to tools like HubSpot, Gmail, Slack, Zendesk, QuickBooks and Stripe to handle recurring workflows across sales pipeline hygiene, lead follow-up, customer support ticket triage and finance reconciliation, with human approval gates and run receipts for every completed action.",
+   "key_features": [
+    "14-day free trial (starts when the agent goes live, no credit card). Operator $249/workload/mo (1–2 workloads), Growth $199/workload/mo (3–5 workloads), Command custom (6+ workloads); unlimited seats and connectors",
+    "Active",
+    "Sales & support",
+    "Automate workflows"
+   ],
+   "pricing": "14-day free trial (starts when the agent goes live, no credit card). Operator $249/workload/mo (1–2 workloads), Growth $199/workload/mo (3–5 workloads), Command custom (6+ workloads); unlimited seats and connectors",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "business agents",
+    "sales & support",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/machine-like.png",
+   "page": "https://agentscouthq.com/tools/machine-like.html"
   }
  ]
 }
