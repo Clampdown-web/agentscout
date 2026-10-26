@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-26T00:11:09Z",
- "updated": "2026-10-26T00:11:09Z",
+ "generated": "2026-10-26T02:08:03Z",
+ "updated": "2026-10-26T02:08:03Z",
  "last_checked": "2026-10-25",
- "count": 1779,
+ "count": 1781,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -75373,6 +75373,89 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/machine-like.png",
    "page": "https://agentscouthq.com/tools/machine-like.html"
+  },
+  {
+   "name": "PureMIDI",
+   "slug": "puremidi",
+   "url": "https://puremidi.com/",
+   "website": "https://puremidi.com/",
+   "github": "",
+   "category": "music production",
+   "description": "AI audio, video, and sheet-music to editable MIDI converter with an in-browser multi-track MIDI editor.",
+   "key_features": [
+    "Free 30-second MIDI preview; one-time credit packs for full conversions",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Free 30-second MIDI preview; one-time credit packs for full conversions",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/puremidi.png",
+   "page": "https://agentscouthq.com/tools/puremidi.html"
+  },
+  {
+   "name": "Lakewood Agents",
+   "slug": "lakewood-agents",
+   "url": "https://lakewoodagents.com/",
+   "website": "https://lakewoodagents.com/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Collection of free Grok Bot personal agents — including a Walmart receipt-to-cart Shopping Agent, Curriculum Researcher, and Teacher Agent — plus custom local AI agents for businesses.",
+   "key_features": [
+    "Free pre-built Grok Bot personal agents (Shopping Agent, Curriculum Researcher, Teacher Agent); custom business agent consulting available",
+    "Open Beta",
+    "Research the web",
+    "Automate workflows"
+   ],
+   "pricing": "Free pre-built Grok Bot personal agents (Shopping Agent, Curriculum Researcher, Teacher Agent); custom business agent consulting available",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-25",
+   "added": "2026-10-25",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "personal agents",
+    "research the web",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lakewood-agents.png",
+   "page": "https://agentscouthq.com/tools/lakewood-agents.html"
   }
  ]
 }

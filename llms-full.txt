@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 1,779 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
+> AgentScout is a curated, link-checked, read-only directory of 1,781 AI agent tools across 30 categories, including 249 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity) with zero paid placements.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`).
 
@@ -30,12 +30,12 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 1,779
+- **Total Verified AI Agent Tools**: 1,781
 - **Total Categories**: 30
 - **Verified MCP Servers**: 249
 - **Bot Templates & Installable Agent Skills**: 189 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
 - **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 862
-- **Free or Freemium Tools**: 1,317
+- **Free or Freemium Tools**: 1,319
 - **Local / Self-Hosted Tools (`runs_locally` filter)**: 797 (70 offline / on-device, 727 self-hosted)
 - **Catalog Last Link-Checked**: 2026-10-25 (America/Los_Angeles)
 
@@ -139,9 +139,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | DSPy | Open source | Yes | the MIT License | Self-hosted | 38,777 | write code, build an agent | Stanford framework for programming rather than prompting language models, with optimizers that tune prompts and weights for RAG pipelines and agent loops. | https://agentscouthq.com/tools/dspy.html | https://dspy.ai/ |
 | 15 | CopilotKit | Open source + cloud | Yes |  | Self-hosted | 38,224 | build an agent, automate workflows | Frontend stack for putting agents and generative UI into React and other apps, from the makers of the AG-UI protocol. | https://agentscouthq.com/tools/copilotkit.html | https://docs.copilotkit.ai/ |
 
-### personal agents (93 tools) — [https://agentscouthq.com/categories/personal-agents.html](https://agentscouthq.com/categories/personal-agents.html)
+### personal agents (94 tools) — [https://agentscouthq.com/categories/personal-agents.html](https://agentscouthq.com/categories/personal-agents.html)
 
-- **At a glance**: 93 link-checked tools (53 open-source, 70 free or freemium, 35 local or self-hosted).
+- **At a glance**: 94 link-checked tools (53 open-source, 71 free or freemium, 35 local or self-hosted).
 - **Top picks**: [OpenClaw](https://agentscouthq.com/tools/openclaw.html), [Open WebUI](https://agentscouthq.com/tools/open-webui.html), [LobeHub](https://agentscouthq.com/tools/lobehub.html), [Career Ops](https://agentscouthq.com/tools/career-ops.html), [AnythingLLM](https://agentscouthq.com/tools/anythingllm.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -461,6 +461,29 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | AccuRIG | Free (Reallusion) | No |  |  |  | animate characters | Free auto-rigging tool from Reallusion that turns static character meshes into animation-ready rigs. | https://agentscouthq.com/tools/accurig.html | https://actorcore.reallusion.com/auto-rig |
 | 15 | Adobe Substance 3D | Creative Cloud plans: see site | No |  |  |  | 3D texturing | Adobe's 3D texturing and material apps, with Firefly-powered text-to-texture and AI image staging. | https://agentscouthq.com/tools/adobe-substance-3d.html | https://www.adobe.com/products/substance3d.html |
 
+### music production (41 tools) — [https://agentscouthq.com/categories/music-production.html](https://agentscouthq.com/categories/music-production.html)
+
+- **At a glance**: 41 link-checked tools (6 open-source, 27 free or freemium, 5 local or self-hosted).
+- **Top picks**: [Spleeter](https://agentscouthq.com/tools/spleeter.html), [Ultimate Vocal Remover](https://agentscouthq.com/tools/ultimate-vocal-remover.html), [AudioCraft](https://agentscouthq.com/tools/audiocraft.html), [YuE](https://agentscouthq.com/tools/yue.html), [ACE-Step](https://agentscouthq.com/tools/ace-step.html).
+
+| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
+|---|---|---|---|---|---|---:|---|---|---|---|
+| 1 | Spleeter | Open source (MIT) | Yes | MIT | Self-hosted | 28,497 | make music, separate stems | Deezer's source separation library with pretrained models for splitting songs into stems. | https://agentscouthq.com/tools/spleeter.html | https://research.deezer.com/projects/spleeter.html |
+| 2 | Ultimate Vocal Remover | Open source (MIT) | Yes | MIT |  | 26,773 | separate stems | Free desktop app that separates vocals and instruments with deep neural networks. | https://agentscouthq.com/tools/ultimate-vocal-remover.html | https://github.com/Anjok07/ultimatevocalremovergui |
+| 3 | AudioCraft | Open source (MIT code) | Yes | MIT | Self-hosted | 23,757 | sound effects & Foley | Meta's open library for audio generation, including MusicGen for music and AudioGen for sound effects. | https://agentscouthq.com/tools/audiocraft.html | https://github.com/facebookresearch/audiocraft |
+| 4 | YuE | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 12,693 | edit video, make music | Open song-generation model (YuE2) with lyrics-to-song, zero-shot covers and agentic music editing. | https://agentscouthq.com/tools/yue.html | https://map-yue2.github.io/ |
+| 5 | ACE-Step | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 4,983 | edit video, make music | Open music generation foundation model for fast full-song generation and editing. | https://agentscouthq.com/tools/ace-step.html | https://ace-step.github.io/ |
+| 6 | Stable Audio | Free (50 credits/mo, non-commercial); Session $30/mo; Producer $90/mo; Studio $199/mo | No |  |  | 3,891 | music production | Stability AI's music and sound generation toolkit with commercially safe models. | https://agentscouthq.com/tools/stable-audio.html | https://stableaudio.com |
+| 7 | Magenta RealTime | Open weights (Apache-2.0 code) | Yes | Apache-2.0 | Self-hosted | 1,842 | music production | Google's open-weights live music model that you can play and steer in real time. | https://agentscouthq.com/tools/magenta-realtime.html | https://magenta.withgoogle.com/magenta-realtime-2 |
+| 8 | Neutone | See site | No |  |  | 633 | music production | Plugin that runs neural audio models in your DAW in real time for new sounds and timbre transfer. | https://agentscouthq.com/tools/neutone.html | https://neutone.jp |
+| 9 | ACE Studio | Artist $16.58/mo; Artist Pro $22/mo (yearly, rent-to-own) | No |  |  |  | voiceover, make music | AI singing voice and instrument studio. Turn MIDI and lyrics into vocals and convert voices. | https://agentscouthq.com/tools/ace-studio.html | https://acestudio.ai |
+| 10 | AI Music Mastering | Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history) | No |  |  |  | mix & master | AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership. | https://agentscouthq.com/tools/ai-music-mastering.html | https://aimusicmastering.app/ |
+| 11 | AIVA | Free €0; Standard €11/mo; Pro €33/mo | No |  |  |  | edit video, visual effects | AI composition assistant for soundtrack and score music in many styles, with MIDI export and editing. | https://agentscouthq.com/tools/aiva.html | https://www.aiva.ai |
+| 12 | AutoTune | Perpetual licences ($250–$450) or $17.50/mo subscription | No |  |  |  | mix & master | Antares' pitch-correction plugins plus AI-powered vocal mixing tools for vocal tuning and effects. | https://agentscouthq.com/tools/autotune.html | https://www.antarestech.com |
+| 13 | BandLab | See site | No |  |  |  | make music, mix & master | Free cloud music-making platform and DAW with AI tools such as SongStarter and AI mastering, plus collaboration. | https://agentscouthq.com/tools/bandlab.html | https://www.bandlab.com |
+| 14 | Beatoven.ai | See site | No |  |  |  | sound effects & Foley | Royalty-free AI background music and sound effects for videos, podcasts and games, with an API. | https://agentscouthq.com/tools/beatoven-ai.html | https://www.beatoven.ai |
+| 15 | Boomy | Free; Pro $29.99/mo | No |  |  |  | make music | Make generative songs with AI and release them to streaming services. | https://agentscouthq.com/tools/boomy.html | https://boomy.com |
+
 ### video generation (40 tools) — [https://agentscouthq.com/categories/video-generation.html](https://agentscouthq.com/categories/video-generation.html)
 
 - **At a glance**: 40 link-checked tools (12 open-source, 26 free or freemium, 10 local or self-hosted).
@@ -483,29 +506,6 @@ Each category section below summarizes the verified tool count, open-source coun
 | 13 | explainroo | Free and open source (MIT); runs locally with no API key. | Yes | MIT | Offline | 640 | video generation | Lets your AI coding agent make narrated explainer videos: it writes the script, builds the visuals and renders the voice and video on your own computer, with no API key needed. Free and open source. | https://agentscouthq.com/tools/explainroo.html | https://www.explainroo.com/ |
 | 14 | Frametell | Mac app free and open source (AGPL-3.0, bring your own API keys); Frametell Cloud starts free (300 credits), plans from $20/mo | Yes | AGPL-3.0 |  | 400 | plan & storyboard, voiceover | Frametell turns an idea, PDF, slides or notes into a narrated, hand-drawn explainer film: a director agent storyboards it with you for approval, writes and voices the script and draws every page, as an open-source Mac app or Frametell Cloud. | https://agentscouthq.com/tools/frametell.html | https://frametell.ai/ |
 | 15 | Adobe Firefly | Firefly Standard US$9.99/mo; Pro US$19.99/mo; Pro Plus US$49.99/mo; Premium US$199.99/mo; free trial | No |  |  |  | video generation, generate images | Adobe's generative app for images, video and audio, with 30+ models including Adobe's commercially safe ones and a creative agent. | https://agentscouthq.com/tools/adobe-firefly.html | https://firefly.adobe.com |
-
-### music production (40 tools) — [https://agentscouthq.com/categories/music-production.html](https://agentscouthq.com/categories/music-production.html)
-
-- **At a glance**: 40 link-checked tools (6 open-source, 26 free or freemium, 5 local or self-hosted).
-- **Top picks**: [Spleeter](https://agentscouthq.com/tools/spleeter.html), [Ultimate Vocal Remover](https://agentscouthq.com/tools/ultimate-vocal-remover.html), [AudioCraft](https://agentscouthq.com/tools/audiocraft.html), [YuE](https://agentscouthq.com/tools/yue.html), [ACE-Step](https://agentscouthq.com/tools/ace-step.html).
-
-| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
-|---|---|---|---|---|---|---:|---|---|---|---|
-| 1 | Spleeter | Open source (MIT) | Yes | MIT | Self-hosted | 28,497 | make music, separate stems | Deezer's source separation library with pretrained models for splitting songs into stems. | https://agentscouthq.com/tools/spleeter.html | https://research.deezer.com/projects/spleeter.html |
-| 2 | Ultimate Vocal Remover | Open source (MIT) | Yes | MIT |  | 26,773 | separate stems | Free desktop app that separates vocals and instruments with deep neural networks. | https://agentscouthq.com/tools/ultimate-vocal-remover.html | https://github.com/Anjok07/ultimatevocalremovergui |
-| 3 | AudioCraft | Open source (MIT code) | Yes | MIT | Self-hosted | 23,757 | sound effects & Foley | Meta's open library for audio generation, including MusicGen for music and AudioGen for sound effects. | https://agentscouthq.com/tools/audiocraft.html | https://github.com/facebookresearch/audiocraft |
-| 4 | YuE | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 12,693 | edit video, make music | Open song-generation model (YuE2) with lyrics-to-song, zero-shot covers and agentic music editing. | https://agentscouthq.com/tools/yue.html | https://map-yue2.github.io/ |
-| 5 | ACE-Step | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 4,983 | edit video, make music | Open music generation foundation model for fast full-song generation and editing. | https://agentscouthq.com/tools/ace-step.html | https://ace-step.github.io/ |
-| 6 | Stable Audio | Free (50 credits/mo, non-commercial); Session $30/mo; Producer $90/mo; Studio $199/mo | No |  |  | 3,891 | music production | Stability AI's music and sound generation toolkit with commercially safe models. | https://agentscouthq.com/tools/stable-audio.html | https://stableaudio.com |
-| 7 | Magenta RealTime | Open weights (Apache-2.0 code) | Yes | Apache-2.0 | Self-hosted | 1,842 | music production | Google's open-weights live music model that you can play and steer in real time. | https://agentscouthq.com/tools/magenta-realtime.html | https://magenta.withgoogle.com/magenta-realtime-2 |
-| 8 | Neutone | See site | No |  |  | 633 | music production | Plugin that runs neural audio models in your DAW in real time for new sounds and timbre transfer. | https://agentscouthq.com/tools/neutone.html | https://neutone.jp |
-| 9 | ACE Studio | Artist $16.58/mo; Artist Pro $22/mo (yearly, rent-to-own) | No |  |  |  | voiceover, make music | AI singing voice and instrument studio. Turn MIDI and lyrics into vocals and convert voices. | https://agentscouthq.com/tools/ace-studio.html | https://acestudio.ai |
-| 10 | AI Music Mastering | Free preview (upload, 8 sound profiles, intensity & EQ controls, loudness-matched A/B original vs. master preview, latest 3 songs in history); Membership $9.90/month (24-bit & 16-bit WAV and 320 kbps MP3 downloads, reference-track mastering, full song history) | No |  |  |  | mix & master | AI Music Mastering is a browser-based automated audio mastering studio for finished recordings, DAW mixes and AI-generated songs. Upload WAV, MP3, FLAC or AIFF tracks up to 200 MB and 10 minutes long, audition eight sound profiles (Universal, Fire, Clarity, Tape, Natural, Spatial, Cinematic and Punch) with adjustable intensity, EQ and loudness-matched A/B previews for free, and export 24-bit WAV, 16-bit WAV or 320 kbps MP3 masters with a membership. | https://agentscouthq.com/tools/ai-music-mastering.html | https://aimusicmastering.app/ |
-| 11 | AIVA | Free €0; Standard €11/mo; Pro €33/mo | No |  |  |  | edit video, visual effects | AI composition assistant for soundtrack and score music in many styles, with MIDI export and editing. | https://agentscouthq.com/tools/aiva.html | https://www.aiva.ai |
-| 12 | AutoTune | Perpetual licences ($250–$450) or $17.50/mo subscription | No |  |  |  | mix & master | Antares' pitch-correction plugins plus AI-powered vocal mixing tools for vocal tuning and effects. | https://agentscouthq.com/tools/autotune.html | https://www.antarestech.com |
-| 13 | BandLab | See site | No |  |  |  | make music, mix & master | Free cloud music-making platform and DAW with AI tools such as SongStarter and AI mastering, plus collaboration. | https://agentscouthq.com/tools/bandlab.html | https://www.bandlab.com |
-| 14 | Beatoven.ai | See site | No |  |  |  | sound effects & Foley | Royalty-free AI background music and sound effects for videos, podcasts and games, with an API. | https://agentscouthq.com/tools/beatoven-ai.html | https://www.beatoven.ai |
-| 15 | Boomy | Free; Pro $29.99/mo | No |  |  |  | make music | Make generative songs with AI and release them to streaming services. | https://agentscouthq.com/tools/boomy.html | https://boomy.com |
 
 ### voice (39 tools) — [https://agentscouthq.com/categories/voice.html](https://agentscouthq.com/categories/voice.html)
 

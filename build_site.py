@@ -35,6 +35,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
 UC_SET={"editara":["edit photos","remove backgrounds","restore photos","upscale images"],
+"puremidi":["make music"],
+"lakewood-agents":["personal agents","research the web","automate workflows"],
 "machine-like":["business agents","sales & support","automate workflows"],
 "kiwi":["business agents","sales & support","automate workflows"],
 "lobstermatch":["build multi-agent systems","automate workflows"],
