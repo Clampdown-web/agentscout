@@ -5628,34 +5628,6 @@
       "checked": "2026-10-18"
     }
   },
-  "hindsight": {
-    "kind": "lite",
-    "src_kind": "README",
-    "long": [
-      "Hindsight, from Vectorize, is an agent memory system built so agents learn over time, not just recall conversation history.",
-      "The makers say it overcomes shortcomings of RAG and knowledge-graph approaches and publish benchmarks and a paper. A hosted Hindsight Cloud is available."
-    ],
-    "who": "Developers who want agents that improve from experience.",
-    "features": [
-      "Memory focused on learning",
-      "Integrations and cookbook",
-      "Benchmarks and paper",
-      "Hindsight Cloud"
-    ],
-    "faq": [],
-    "sources": [
-      "https://github.com/vectorize-io/hindsight"
-    ],
-    "updated": "2026-10-18",
-    "facts": {
-      "repo": "https://github.com/vectorize-io/hindsight",
-      "stars": 50959,
-      "forks": 6134,
-      "checked": "2026-10-18",
-      "license": "the MIT License",
-      "osi": true
-    }
-  },
   "localai": {
     "kind": "lite",
     "src_kind": "README",

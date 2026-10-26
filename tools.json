@@ -4745,33 +4745,6 @@
     "stars_checked": "2026-10-25"
   },
   {
-    "name": "Hindsight",
-    "url": "https://hindsight.vectorize.io/",
-    "description": "Agent memory system that stores experiences and learns from them so agents improve over time.",
-    "category": "memory & RAG",
-    "pricing": "Open source + cloud",
-    "maturity": "Mature",
-    "audience": "builders",
-    "featured": false,
-    "new": false,
-    "verified": "2026-10-16",
-    "pricing_detail": "",
-    "use_cases": [
-      "give agents memory"
-    ],
-    "website": "https://hindsight.vectorize.io/",
-    "github": "https://github.com/vectorize-io/hindsight",
-    "repo": "vectorize-io/hindsight",
-    "github_stars": 53568,
-    "id": 185,
-    "slug": "hindsight",
-    "logo": "assets/logos/hindsight.png",
-    "added": "2026-10-16",
-    "source": "GitHub",
-    "seed": true,
-    "stars_checked": "2026-10-25"
-  },
-  {
     "name": "LocalAI",
     "url": "https://localai.io/",
     "description": "Self-hosted engine with an OpenAI-compatible API for running LLM, vision, voice and image models on your own hardware, including agents.",

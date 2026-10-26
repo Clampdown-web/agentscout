@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-26T17:46:15Z",
- "updated": "2026-10-26T17:46:15Z",
+ "generated": "2026-10-26T18:00:28Z",
+ "updated": "2026-10-26T18:00:28Z",
  "last_checked": "2026-10-26",
- "count": 1797,
+ "count": 1796,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -7649,48 +7649,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/cherry-studio.png",
    "page": "https://agentscouthq.com/tools/cherry-studio.html"
-  },
-  {
-   "name": "Hindsight",
-   "slug": "hindsight",
-   "url": "https://hindsight.vectorize.io/",
-   "website": "https://hindsight.vectorize.io/",
-   "github": "https://github.com/vectorize-io/hindsight",
-   "category": "memory & RAG",
-   "description": "Agent memory system that stores experiences and learns from them so agents improve over time.",
-   "key_features": [
-    "Open source + cloud",
-    "Mature",
-    "53568 GitHub stars",
-    "Give agents memory"
-   ],
-   "pricing": "Open source + cloud",
-   "price_tag": "freemium",
-   "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
-   ],
-   "date_added": "2026-10-16",
-   "added": "2026-10-16",
-   "source": "GitHub",
-   "goals": [
-    "automation"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": false,
-   "seed": true,
-   "new_this_week": false,
-   "repo": "vectorize-io/hindsight",
-   "github_stars": 53568,
-   "open_source": true,
-   "license": "",
-   "tags": [
-    "give agents memory"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/hindsight.png",
-   "page": "https://agentscouthq.com/tools/hindsight.html"
   },
   {
    "name": "LocalAI",
