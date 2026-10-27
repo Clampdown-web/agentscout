@@ -232,6 +232,7 @@ def build(t):
       </div>
     </div>
 
+    <figure style="margin:22px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-sponsor-placements-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="assets/animations/agentscout-sponsor-placements.mp4" type="video/mp4"></video></figure>
     <h2 style="font-size:20px;margin:28px 0 12px">Side-by-side package comparison</h2>
     <div class="tablewrap"><table class="cmp">
       <thead><tr><th>What&#x27;s included</th><th>Free ($0)</th><th>Fast-Track ($29)</th><th>Category Pin ($49 ★)</th><th>Weekly Sponsor ($99/wk)</th></tr></thead>
@@ -267,6 +268,7 @@ def build(t):
         "name": title,
         "url": "https://agentscouthq.com/sponsor.html",
         "description": desc,
+        "video": {"@type": "VideoObject", "name": "AgentScout 4-Tier Launch & Placement Visibility Map", "description": "Animated site architecture map showing where $0 Free, $29 Fast-Track, $49 Category Pin, and $99/wk Sitewide Sponsor listings appear across AgentScout.", "thumbnailUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements-poster.png", "contentUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements.mp4", "uploadDate": "2026-10-26T18:00:00-07:00", "duration": "PT9S"},
         "mainEntity": {
             "@type": "OfferCatalog",
             "name": "AgentScout Maker & Sponsor Packages",

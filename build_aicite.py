@@ -137,6 +137,7 @@ def connect_page(t):
     body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server (<code>com.agentscouthq/directory</code>)</h1>'
           f'<p class="lede">Let your AI assistant search AgentScout directly. AgentScout\'s official MCP server (<code>com.agentscouthq/directory</code> at <code>https://agentscouthq.com/mcp/sse</code>) is <strong>100% free, public, and read-only</strong> — no sign-up, API key, crypto wallet, or x402 payment required. It covers all {len(t):,}+ tools, including {M:,} MCP servers ({e(uline)}), with pricing as each maker states it.</p>'
           f'<p class="qa"><b>Quick answer:</b> add <code style="overflow-wrap:anywhere">{e(MCP_URL)}</code> (or <code style="overflow-wrap:anywhere">https://agentscouthq.com/mcp/sse</code>) as a remote MCP server in your client. Official MCP Registry ID: <code>com.agentscouthq/directory</code>.</p>'
+          '<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-mcp-terminal-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-mcp-terminal.mp4" type="video/mp4"></video></figure>'
           '<h2>Server URL</h2>'+pre(MCP_URL)+
           '<p style="font-size:14px;color:var(--muted);margin:6px 0 14px">Canonical SSE / discovery alias: <code>https://agentscouthq.com/mcp/sse</code> · Official MCP Registry ID: <code>com.agentscouthq/directory</code></p>'
           '<h2>Add it to your client</h2><p><b>Claude Code</b></p>'+pre("claude mcp add --transport http agentscout "+MCP_URL)+
@@ -154,7 +155,8 @@ def connect_page(t):
     ld={"@context":"https://schema.org","@graph":[
         {"@type":"WebAPI","name":"AgentScout MCP server (com.agentscouthq/directory)","alternateName":["com.agentscouthq/directory","AgentScout Directory MCP"],"identifier":"com.agentscouthq/directory","description":desc,"url":canon,"documentation":canon,"sameAs":_same,
          "provider":{"@type":"Organization","name":"AgentScout","alternateName":_alt,"url":B,"identifier":"com.agentscouthq/directory","sameAs":_same},"isAccessibleForFree":True,"potentialAction":{"@type":"SearchAction","target":MCP_URL}},
-        {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}
+        {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]},
+        {"@type":"VideoObject","name":"AgentScout MCP Command Center & Zero-Auth Setup","description":"Animated terminal walkthrough showing how to connect Claude Code, Cursor, and Windsurf to AgentScout's free MCP server (com.agentscouthq/directory).","thumbnailUrl":B+"assets/animations/agentscout-mcp-terminal-poster.png","contentUrl":B+"assets/animations/agentscout-mcp-terminal.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT9S"}
     ]}
     open("mcp/connect.html","w").write(X.shell("../",title,desc,canon,body,ld))
     card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","name":"com.agentscouthq/directory","title":"AgentScout MCP server","version":"1.0.2","protocolVersion":"2025-06-18","endpoint":MCP_URL,

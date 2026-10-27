@@ -93,11 +93,24 @@ def answer_blocks(t):
              ("How often is the directory updated?",f"New tools are added every day and links are re-checked daily. Last checked {d}."),
              ("Are there free tools on AgentScout?",'Yes. Besides free and open-source listings, AgentScout has free browser tools such as the <a href="free-tools/mcp-config-builder.html">free MCP config generator for Claude Desktop, Cursor and VS Code</a> and the <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a>. No sign-up needed.'),
              ("How much does it cost to list or feature an AI agent on AgentScout?",'Community listing is <a href="submit.html#free-form">$0 free forever</a> (standard 3–5 day review queue). Makers who want same-day priority review or featured placement can choose from optional <a href="sponsor.html#packages">launch packages</a>: <a href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">$29 Fast-Track + 7-Day Launch Boost</a>, <a href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">$49 30-Day Category Pin + Permanent /best/ &amp; /compare/ SEO/AEO Placement</a>, or <a href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">$99/wk Weekly Sitewide Sponsor + Newsletter Top Slot</a>.')]
-        blk=('<!--sn:home--><section class="band" id="about-directory"><div class="wrap" style="max-width:860px">'
-             f'<h2 style="font-size:20px;margin:0 0 10px">The AI agent directory, at a glance</h2>'
+        home_vid_html = (
+            '<div style="margin:0 0 18px;border:1px solid rgba(56,189,248,.45);border-radius:14px;overflow:hidden;background:#080a12;box-shadow:0 0 32px rgba(14,165,233,.2)">'
+            '<video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-home-terminal-poster.png" width="1200" height="620" style="display:block;width:100%;height:auto">'
+            '<source src="assets/animations/agentscout-home-terminal.mp4" type="video/mp4">'
+            '<img src="assets/animations/agentscout-home-terminal-poster.png" alt="AgentScout Live Verification Terminal — 6 AI agents verifying 1,796+ AI agent tools and 250+ MCP servers daily" width="1200" height="620" loading="lazy">'
+            '</video>'
+            '<div style="padding:10px 14px;font-size:13px;color:#cbd5e1;border-top:1px solid rgba(56,189,248,.22);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">'
+            '<span><strong style="color:#38bdf8">⚡ AgentScout Terminal v2.6-live:</strong> 6 autonomous agents scanning GitHub &amp; MCP registries, filtering dead links, benchmarking velocity &amp; verifying JSON-RPC endpoints daily.</span>'
+            '<a href="mcp/connect.html" style="color:#34d399;font-weight:700;text-decoration:none">Connect MCP server →</a>'
+            '</div></div>'
+        )
+        home_vid_ld = _ld({"@context":"https://schema.org","@type":"VideoObject","name":f"AgentScout Live Verification Terminal ({n:,}+ AI Agents & {nmcp}+ MCP Servers)","description":f"How AgentScout's 6-agent verification terminal scans, link-checks, benchmarks, and indexes {n:,}+ AI agent tools and {nmcp}+ MCP servers daily.","thumbnailUrl":"https://agentscouthq.com/assets/animations/agentscout-home-terminal-poster.png","contentUrl":"https://agentscouthq.com/assets/animations/agentscout-home-terminal.mp4","uploadDate":today.strftime("%Y-%m-%dT08:00:00-07:00"),"duration":"PT11S"})
+        blk=('<!--sn:home--><section class="band" id="about-directory"><div class="wrap" style="max-width:960px">'
+             + home_vid_html
+             + f'<h2 style="font-size:20px;margin:0 0 10px">The AI agent directory, at a glance</h2>'
              f'<p style="margin:0 0 10px">AgentScout tracks <b>{n:,}</b> AI agent tools across <b>{nc}</b> categories, including <a href="categories/mcp-servers.html">{nmcp} MCP servers</a>, coding agents, browser agents, voice agents and no-code builders. We check every link daily, describe each tool from its official site or README, show pricing as the maker states it, and never sell rankings (featured slots are clearly labeled and sit above the list; rankings are never paid). <span class="muted">Last checked {d}.</span></p>'
              '<p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
-             f'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>{_faq_html(faq)}</div></section>{_faq_ld(faq)}<!--/sn:home-->')
+             f'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>{_faq_html(faq)}</div></section>{_faq_ld(faq)}{home_vid_ld}<!--/sn:home-->')
         s=s.replace("</header>","</header>"+blk,1); open(f,"w").write(s)  # Oct 22 2026: about block goes after the top search panel
     f="bot-templates/index.html"
     if os.path.exists(f):
@@ -111,7 +124,7 @@ def answer_blocks(t):
              ("Are these templates free?","Yes. Every template here is free to import or install. Some connect to apps or APIs that have their own plans."),
              ("How are templates checked?",f"Each template's link, name, description, category and maker credit is checked before it is listed, and the list is re-checked regularly. Last checked {d}."),
              ("Can I submit my own template?",'Yes. Use the <a href="../submit.html">submit form</a> and include the share link and what the template does.')]
-        blk=(f'<!--sn:bt--><section class="wrap" style="max-width:860px;margin:28px auto"><p class="muted" style="margin:0 0 14px">Last checked {d}.</p><h2 style="font-size:18px;margin:0 0 10px">Grok Bot templates FAQ</h2>{_faq_html(faq)}</section>{_faq_ld(faq)}<!--/sn:bt-->')
+        blk=(f'<!--sn:bt--><section class="wrap" style="max-width:860px;margin:28px auto"><p class="muted" style="margin:0 0 14px">Last checked {d}.</p><h2 style="font-size:18px;margin:0 0 10px">Grok Bot templates FAQ</h2>{_faq_html(faq)}</section>{_faq_ld(faq)}{_ld({"@context":"https://schema.org","@type":"VideoObject","name":"AgentScout Multi-Agent Bot Template Constellation (193 Templates)","description":"Animated constellation showing how CEO Grok, Ops, SEO / AEO Auditor, and Competitive Intelligence Analyst orchestrate across 193 ready-made AI bot templates, skills, and plugins.","thumbnailUrl":"https://agentscouthq.com/assets/animations/agentscout-bot-constellation-poster.png","contentUrl":"https://agentscouthq.com/assets/animations/agentscout-bot-constellation.mp4","uploadDate":today.strftime("%Y-%m-%dT08:00:00-07:00"),"duration":"PT9S"})}<!--/sn:bt-->')
         s=s.replace("</main>",blk+"</main>",1); open(f,"w").write(s)
     print("answer blocks: home + bot templates")
 

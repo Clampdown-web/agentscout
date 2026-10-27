@@ -175,9 +175,10 @@ def filters():
     s=re.sub(r'<li class="bt-row".*?</li>',dq,s,flags=re.S)
     s=re.sub(r'<span id="bt-count"[^>]*>.*?</span>','',s)
     s=s.replace('Bot templates</h1>',f'Bot templates<span id="bt-count" class="bt-count" aria-label="{total} templates">{total}</span></h1>',1)
+    s=re.sub(r'<!--bt-anim-->.*?<!--/bt-anim-->','',s,flags=re.S)
     s=re.sub(r'<!--btf-->.*?<!--/btf-->','',s,flags=re.S)
     s=s.replace('<input id="bt-q" type="hidden" value="">','')
-    ui=('<!--btf--><div class="btf"><div class="btf-s" hidden><label for="bt-q" class="sr-only">Search bot templates</label><input id="bt-q" type="search" placeholder="Search by name, creator, task or platform" autocomplete="off" enterkeyhint="search" hidden></div>'
+    ui=('<!--bt-anim--><figure style="margin:16px 0 20px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-bot-constellation-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-bot-constellation.mp4" type="video/mp4"></video></figure><!--/bt-anim--><!--btf--><div class="btf"><div class="btf-s" hidden><label for="bt-q" class="sr-only">Search bot templates</label><input id="bt-q" type="search" placeholder="Search by name, creator, task or platform" autocomplete="off" enterkeyhint="search" hidden></div>'
         '<p class="btf-lbl" id="btf-cl">Use case</p><div class="btf-cats" role="group" aria-labelledby="btf-cl"><button type="button" class="chip on" data-c="all" aria-pressed="true">All uses</button>'
         +"".join(f'<button type="button" class="chip" data-c="{k}" aria-pressed="false">{esc(v)} <span aria-hidden="true">· {cnt[k]}</span></button>' for k,v in CATS.items() if cnt[k])+
         f'</div><p id="bt-status" class="btf-st" role="status" aria-live="polite">Showing {total} of {total} templates</p></div><!--/btf-->')
