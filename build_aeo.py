@@ -25,6 +25,8 @@ SAME_AS = [
     "https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html",
     "https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory",
     "https://protogrid.dev/servers/com.agentscouthq/directory",
+    "https://mcpcollection.com/server/agentscout-mcp",
+    "https://siftfox.com/tool/agentscout",
 ]
 
 OFFLINE_RE = re.compile(
