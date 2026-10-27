@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-27T12:44:26Z",
- "updated": "2026-10-27T12:44:26Z",
+ "generated": "2026-10-27T14:04:16Z",
+ "updated": "2026-10-27T14:04:16Z",
  "last_checked": "2026-10-27",
- "count": 1799,
+ "count": 1809,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -76231,6 +76231,430 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/mangatranslate.png",
    "page": "https://agentscouthq.com/tools/mangatranslate.html"
+  },
+  {
+   "name": "Zoetrope",
+   "slug": "zoetrope",
+   "url": "https://zoetrope.furkankly.dev/",
+   "website": "https://zoetrope.furkankly.dev/",
+   "github": "https://github.com/furkankly/zoetrope",
+   "category": "evals & observability",
+   "description": "Free, local viewer that turns Claude Code and Codex session transcripts into a live flow graph of every agent and subagent, with tool-call pass/fail status, time-travel replay and full prompt provenance, in the terminal or browser.",
+   "key_features": [
+    "Free, MIT licence",
+    "Active",
+    "1112 GitHub stars",
+    "Automate the browser",
+    "Build multi-agent systems",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Free, MIT licence",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "furkankly/zoetrope",
+   "github_stars": 1112,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "automate the browser",
+    "build multi-agent systems",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zoetrope.png",
+   "page": "https://agentscouthq.com/tools/zoetrope.html"
+  },
+  {
+   "name": "Scrawl",
+   "slug": "scrawl",
+   "url": "https://scrawl.kitlangton.com/",
+   "website": "https://scrawl.kitlangton.com/",
+   "github": "https://github.com/kitlangton/scrawl",
+   "category": "coding",
+   "description": "Mac app that lets you show a coding agent a problem: press a hotkey, talk, click and draw over your screen or a mirrored iPhone, and Scrawl turns it into transcribed, cropped frames you paste into your agent.",
+   "key_features": [
+    "Free, MIT licence",
+    "Active",
+    "769 GitHub stars",
+    "Write code",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free, MIT licence",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "kitlangton/scrawl",
+   "github_stars": 769,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/scrawl.png",
+   "page": "https://agentscouthq.com/tools/scrawl.html"
+  },
+  {
+   "name": "Bowmark",
+   "slug": "bowmark",
+   "url": "https://bowmark.ai/",
+   "website": "https://bowmark.ai/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Turns websites into typed functions agents can call over an HTTP API, MCP server or Claude/Codex plugin, so they can read prices, availability and listings or take actions on live sites without driving a browser.",
+   "key_features": [
+    "Usage-based; every account gets $10 of free usage each month",
+    "Active",
+    "Automate the browser",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Usage-based; every account gets $10 of free usage each month",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/bowmark.png",
+   "page": "https://agentscouthq.com/tools/bowmark.html"
+  },
+  {
+   "name": "Atlaso",
+   "slug": "atlaso",
+   "url": "https://www.atlaso.ai/",
+   "website": "https://www.atlaso.ai/",
+   "github": "",
+   "category": "memory & RAG",
+   "description": "AI memory layer that captures your decisions, preferences and projects once and recalls them across Claude Code and other connected AI tools via plugin and hosted MCP, with personal and project memory.",
+   "key_features": [
+    "Free for 1 device and 1 tool; Pro $10/month for unlimited devices and tools",
+    "Active",
+    "Connect tools via mcp",
+    "Give agents memory"
+   ],
+   "pricing": "Free for 1 device and 1 tool; Pro $10/month for unlimited devices and tools",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/atlaso.png",
+   "page": "https://agentscouthq.com/tools/atlaso.html"
+  },
+  {
+   "name": "Midplane",
+   "slug": "midplane",
+   "url": "https://midplane.ai/",
+   "website": "https://midplane.ai/",
+   "github": "https://github.com/midplaneai/midplane",
+   "category": "security & governance",
+   "description": "YC-backed MCP gateway between AI assistants and Postgres that checks every SQL statement against your policy, blocks unfiltered writes, masks sensitive fields, asks for human approval and logs everything inside your network.",
+   "key_features": [
+    "MIT-licensed gateway; managed access by request",
+    "Active",
+    "5 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "MIT-licensed gateway; managed access by request",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "midplaneai/midplane",
+   "github_stars": 5,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/midplane.png",
+   "page": "https://agentscouthq.com/tools/midplane.html"
+  },
+  {
+   "name": "Marrow AI",
+   "slug": "marrow-ai",
+   "url": "https://getmarrow.ai/",
+   "website": "https://getmarrow.ai/",
+   "github": "",
+   "category": "security & governance",
+   "description": "Control layer for AI agents that checks policy, risk and prior outcomes before an agent acts, can require a named human yes, and keeps proof and outcome history; works with Claude Code, Codex, Cursor and MCP.",
+   "key_features": [
+    "30-day evaluation; Free 1 agent / 500 decisions per month; Team $49/mo; Business $199/mo",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "30-day evaluation; Free 1 agent / 500 decisions per month; Team $49/mo; Business $199/mo",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/marrow-ai.png",
+   "page": "https://agentscouthq.com/tools/marrow-ai.html"
+  },
+  {
+   "name": "Haymon Database MCP",
+   "slug": "haymon-database-mcp",
+   "url": "https://dbmcp.haymon.ai/",
+   "website": "https://dbmcp.haymon.ai/",
+   "github": "https://github.com/haymon-ai/dbmcp",
+   "category": "MCP servers",
+   "description": "Single-binary open source MCP server that connects Claude, Cursor, VS Code and other MCP clients to MySQL, MariaDB, PostgreSQL and SQLite, with built-in PII redaction and write prevention.",
+   "key_features": [
+    "Free, MIT licence",
+    "Active",
+    "32 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Free, MIT licence",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "haymon-ai/dbmcp",
+   "github_stars": 32,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/haymon-database-mcp.png",
+   "page": "https://agentscouthq.com/tools/haymon-database-mcp.html"
+  },
+  {
+   "name": "Daiku",
+   "slug": "daiku",
+   "url": "https://daiku.ai/",
+   "website": "https://daiku.ai/",
+   "github": "",
+   "category": "browser/computer use",
+   "description": "Add-on that gives Claude, ChatGPT, Codex and other AI apps their own cloud Chrome logged in to your sites, working in many tabs at once while your laptop is shut, with every send or payment approved on your phone.",
+   "key_features": [
+    "Invite-only early access",
+    "Active",
+    "Automate the browser",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "Invite-only early access",
+   "price_tag": "unknown",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [
+    "automation",
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "voice & phone calls",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/daiku.png",
+   "page": "https://agentscouthq.com/tools/daiku.html"
+  },
+  {
+   "name": "Cardboard",
+   "slug": "cardboard",
+   "url": "https://www.cardboard.ai/",
+   "website": "https://www.cardboard.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "AI video editor for the browser and Mac that builds an editable first cut from a prompt and your footage, then lets you refine by chat or timeline; also edits video inside ChatGPT and Claude through its MCP plugin.",
+   "key_features": [
+    "Lite $8/mo, Starter $29/mo, Creator $59/mo, Pro $175/mo (annual-billing prices)",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Lite $8/mo, Starter $29/mo, Creator $59/mo, Pro $175/mo (annual-billing prices)",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "MCP registry",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/cardboard.png",
+   "page": "https://agentscouthq.com/tools/cardboard.html"
+  },
+  {
+   "name": "The Drive AI",
+   "slug": "the-drive-ai",
+   "url": "https://thedrive.ai/for-agents",
+   "website": "https://thedrive.ai/for-agents",
+   "github": "",
+   "category": "agent infra",
+   "description": "AI file workspace with an agent signup flow: any agent can create its own The Drive AI account with one CLI command, save and organize files through an MCP server, then hand the workspace to a person via a claim link.",
+   "key_features": [
+    "Agent signup via npx @thedriveai/cli; see site for plans",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Agent signup via npx @thedriveai/cli; see site for plans",
+   "price_tag": "unknown",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-27",
+   "added": "2026-10-27",
+   "source": "X",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/the-drive-ai.png",
+   "page": "https://agentscouthq.com/tools/the-drive-ai.html"
   }
  ]
 }

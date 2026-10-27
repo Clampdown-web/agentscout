@@ -7147,5 +7147,54 @@
 "vector-rag",
 "dialogue-cleanup",
 "images-design"
+],
+"zoetrope": [
+"voice-phone",
+"browser-automation",
+"multi-agent",
+"local-models",
+"terminal-agents",
+"subtitles-transcripts"
+],
+"scrawl": [
+"voice-phone",
+"web-scraping",
+"computer-use",
+"subtitles-transcripts"
+],
+"bowmark": [
+"voice-phone",
+"browser-automation",
+"mcp-servers"
+],
+"atlaso": [
+"agent-memory"
+],
+"midplane": [
+"text-to-sql",
+"guardrails",
+"mcp-gateways"
+],
+"marrow-ai": [
+"guardrails"
+],
+"haymon-database-mcp": [
+"text-to-sql",
+"mcp-servers",
+"ide-agents"
+],
+"daiku": [
+"agent-payments",
+"voice-phone"
+],
+"cardboard": [
+"browser-automation",
+"ide-agents",
+"video-editing",
+"video"
+],
+"the-drive-ai": [
+"mcp-servers",
+"terminal-agents"
 ]
 }

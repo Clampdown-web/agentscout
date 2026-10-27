@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 1,799 AI agent tools in 30 categories, including 251 MCP servers (251 of 251 MCP servers responded today (verified Oct 26, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 1,809 AI agent tools in 30 categories, including 252 MCP servers (252 of 252 MCP servers responded today (verified Oct 27, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://agentscouthq.com/mcp/sse (and https://agentscout-mcp.agentscouthq.workers.dev/mcp). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -29,7 +29,7 @@ Catalog last checked: 2026-10-27 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 251 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 252 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [openapi.json](https://agentscouthq.com/openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/
@@ -42,7 +42,7 @@ Catalog last checked: 2026-10-27 (Pacific)
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://agentscout-mcp.agentscouthq.workers.dev/mcp (Streamable HTTP, no key) with search_tools, get_tool, list_categories and best_for_task. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 251 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 252 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -61,25 +61,25 @@ Catalog last checked: 2026-10-27 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 251 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 204 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 252 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 205 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 137 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 94 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 84 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 84 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 82 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 79 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 80 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 56 tools
-- [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 54 tools
+- [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 55 tools
 - [business agents](https://agentscouthq.com/categories/business-agents.html): 52 tools
 - [research](https://agentscouthq.com/categories/research.html): 50 tools
+- [security & governance](https://agentscouthq.com/categories/security-governance.html): 46 tools
+- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 45 tools
 - [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 45 tools
-- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 44 tools
-- [security & governance](https://agentscouthq.com/categories/security-governance.html): 44 tools
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 44 tools
 - [music production](https://agentscouthq.com/categories/music-production.html): 42 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 41 tools
-- [video generation](https://agentscouthq.com/categories/video-generation.html): 40 tools
+- [video generation](https://agentscouthq.com/categories/video-generation.html): 41 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 39 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 36 tools
@@ -139,8 +139,18 @@ Catalog last checked: 2026-10-27 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-26 to 2026-10-27): 14
+- Tools added in the last 2 days (2026-10-26 to 2026-10-27): 24
 
+- [The Drive AI](https://agentscouthq.com/tools/the-drive-ai.html) (added 2026-10-27): AI file workspace with an agent signup flow: any agent can create its own The Drive AI account with one CLI command, save and organize files through an MCP server, then hand the workspace to a person via a claim link.
+- [Cardboard](https://agentscouthq.com/tools/cardboard.html) (added 2026-10-27): AI video editor for the browser and Mac that builds an editable first cut from a prompt and your footage, then lets you refine by chat or timeline; also edits video inside ChatGPT and Claude through its MCP plugin.
+- [Daiku](https://agentscouthq.com/tools/daiku.html) (added 2026-10-27): Add-on that gives Claude, ChatGPT, Codex and other AI apps their own cloud Chrome logged in to your sites, working in many tabs at once while your laptop is shut, with every send or payment approved on your phone.
+- [Haymon Database MCP](https://agentscouthq.com/tools/haymon-database-mcp.html) (added 2026-10-27): Single-binary open source MCP server that connects Claude, Cursor, VS Code and other MCP clients to MySQL, MariaDB, PostgreSQL and SQLite, with built-in PII redaction and write prevention.
+- [Marrow AI](https://agentscouthq.com/tools/marrow-ai.html) (added 2026-10-27): Control layer for AI agents that checks policy, risk and prior outcomes before an agent acts, can require a named human yes, and keeps proof and outcome history; works with Claude Code, Codex, Cursor and MCP.
+- [Midplane](https://agentscouthq.com/tools/midplane.html) (added 2026-10-27): YC-backed MCP gateway between AI assistants and Postgres that checks every SQL statement against your policy, blocks unfiltered writes, masks sensitive fields, asks for human approval and logs everything inside your network.
+- [Atlaso](https://agentscouthq.com/tools/atlaso.html) (added 2026-10-27): AI memory layer that captures your decisions, preferences and projects once and recalls them across Claude Code and other connected AI tools via plugin and hosted MCP, with personal and project memory.
+- [Bowmark](https://agentscouthq.com/tools/bowmark.html) (added 2026-10-27): Turns websites into typed functions agents can call over an HTTP API, MCP server or Claude/Codex plugin, so they can read prices, availability and listings or take actions on live sites without driving a browser.
+- [Scrawl](https://agentscouthq.com/tools/scrawl.html) (added 2026-10-27): Mac app that lets you show a coding agent a problem: press a hotkey, talk, click and draw over your screen or a mirrored iPhone, and Scrawl turns it into transcribed, cropped frames you paste into your agent.
+- [Zoetrope](https://agentscouthq.com/tools/zoetrope.html) (added 2026-10-27): Free, local viewer that turns Claude Code and Codex session transcripts into a live flow graph of every agent and subagent, with tool-call pass/fail status, time-travel replay and full prompt provenance, in the terminal or browser.
 - [MangaTranslate](https://agentscouthq.com/tools/mangatranslate.html) (added 2026-10-27): AI manga, manhwa, comic, and PDF image translator by Ficory LLC featuring multi-language OCR text recognition across 100+ languages, automatic original text removal, background inpainting, smart typesetting, batch image processing, and interactive dialogue review.
 - [Miqayel AI](https://agentscouthq.com/tools/miqayel-ai.html) (added 2026-10-27): AI workspace for live web research, image creation and editing, and code generation with an interactive live Canvas preview, file analysis, computer use, and connected app automations in one interface.
 - [Desearch](https://agentscouthq.com/tools/desearch.html) (added 2026-10-27): Hosted Streamable HTTP MCP server (https://mcp.desearch.ai/mcp) and open-source adapter (MIT) giving Claude Code, Cursor, VS Code, and AI agents citable AI search, live web search, full-page extraction, and X (Twitter) post and profile search with your Desearch API key.

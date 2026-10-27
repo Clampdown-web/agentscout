@@ -28004,5 +28004,320 @@
       "osi": false
     },
     "updated": "2026-10-26"
+  },
+  "omnara": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Omnara is an open-source managed agent platform positioned as a self-hostable alternative to Claude Managed Agents and OpenAI's Agents API. You describe an agent in a short YAML file (instruction, model provider and machine sources) and launch it through a CLI, REST API or TypeScript SDK, with tools, secrets, permissions and event streaming built in.",
+      "Agents can run on any model and any machine, including pools of managed sandboxes. The platform can be self-hosted for free under Apache-2.0 with Docker Compose, or used as Omnara Cloud, where a first project comes with an OpenRouter-backed model provider and a default sandbox pool so the sample config runs as is."
+    ],
+    "who": "Teams that want a managed-agents API they can self-host instead of relying on a single model vendor.",
+    "features": [
+      "YAML agent configs launched via CLI, API or SDK",
+      "Any model provider, any machine or sandbox pool",
+      "Tools, secrets and permissions built in",
+      "Streaming agent events and dashboard",
+      "Self-host free (Apache-2.0) or Omnara Cloud"
+    ],
+    "faq": [
+      [
+        "Can I self-host Omnara?",
+        "Yes. The platform is Apache-2.0 and can be run with Docker Compose; Omnara Cloud is the hosted option."
+      ]
+    ],
+    "sources": [
+      "https://github.com/omnara-ai/omnara",
+      "https://www.omnara.com/"
+    ],
+    "facts": {
+      "repo": "https://github.com/omnara-ai/omnara",
+      "stars": 3288,
+      "forks": 254,
+      "checked": "2026-10-27",
+      "license": "Apache 2.0",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "pezzo": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Pezzo is a cloud-native, open-source LLMOps platform for managing prompts and watching what your AI features do in production. Teams can design, version and deliver prompts from one place, then observe requests, troubleshoot issues and track cost and latency.",
+      "Client libraries for Node.js, Python and LangChain cover prompt management, observability and caching, which the project says can cut costs and latency by up to 90%. The full stack runs locally with Docker Compose on PostgreSQL, ClickHouse, Redis and Supertokens, and the code is Apache-2.0."
+    ],
+    "who": "Developers who want versioned prompt management and LLM observability they can self-host.",
+    "features": [
+      "Prompt design, versioning and instant delivery",
+      "Request observability and troubleshooting",
+      "Cost and latency monitoring with caching",
+      "Node.js, Python and LangChain clients",
+      "Self-host with Docker Compose (Apache-2.0)"
+    ],
+    "faq": [
+      [
+        "What does Pezzo run on?",
+        "PostgreSQL, ClickHouse, Redis and Supertokens, all of which can be started locally with the provided Docker Compose files."
+      ]
+    ],
+    "sources": [
+      "https://github.com/pezzolabs/pezzo",
+      "https://pezzo.ai/"
+    ],
+    "facts": {
+      "repo": "https://github.com/pezzolabs/pezzo",
+      "stars": 3276,
+      "forks": 280,
+      "checked": "2026-10-27",
+      "license": "Apache 2.0",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "opengap": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "OpenGAP (the Git Agent Protocol, formerly gitagent) is a framework-agnostic, git-native standard for defining AI agents: drop a set of files into a repository and the repo becomes a portable agent. The core is an agent.yaml manifest plus a SOUL.md identity file, with optional RULES.md, DUTIES.md, AGENTS.md, skills, MCP-compatible tool schemas, workflows, knowledge and memory folders.",
+      "The opengap CLI (npm @open-gitagent/opengap, with gitagent kept as an alias) validates and exports these definitions to frameworks such as Claude Code, OpenAI, LangChain, CrewAI and AutoGen. Because agents live in git they get versioning, branching and review for free, and the spec includes first-class segregation-of-duties and compliance support aimed at regulated finance."
+    ],
+    "who": "Teams that want portable, version-controlled agent definitions that work across frameworks.",
+    "features": [
+      "Repo-as-agent file standard (agent.yaml, SOUL.md)",
+      "Export adapters for Claude Code, OpenAI, LangChain, CrewAI",
+      "Skills, MCP tool schemas and workflows",
+      "Segregation of duties and compliance rules",
+      "MIT-licensed CLI on npm"
+    ],
+    "faq": [
+      [
+        "Is OpenGAP the same as gitagent?",
+        "Yes. The CLI was renamed from gitagent (and briefly gapman) to opengap; the gitagent command still works as an alias."
+      ]
+    ],
+    "sources": [
+      "https://github.com/open-gitagent/opengap",
+      "https://gitagent.sh/"
+    ],
+    "facts": {
+      "repo": "https://github.com/open-gitagent/opengap",
+      "stars": 2983,
+      "forks": 353,
+      "checked": "2026-10-27",
+      "license": "MIT",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "compozy": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "CompozyOS is an operating system for AI agents that wraps the agent CLIs you already use (Claude Code, Codex and Cursor, via ACP) in loops, triggers, cron schedules, permissions, approvals and observability. Sessions, agents, loops and capabilities are authored once and reused instead of being rewritten as glue scripts.",
+      "Work belongs to a background daemon, so closing a terminal does not stop a run, and everything is reachable from a web UI, CLI, HTTP/SSE, MCP and native tools. It ships as one Go binary with SQLite-backed local state and an opt-in Gateway for remote device access. v0.4.0 is the first stable CompozyOS release; it installs via a Sigstore-verified script, Homebrew, npm or Go under the MIT licence."
+    ],
+    "who": "Developers and technical operators who want coding agents to run continuously with approvals and schedules.",
+    "features": [
+      "Runs Claude Code, Codex and Cursor via ACP",
+      "Loops, cron, webhooks and triggers",
+      "Approvals, permissions and run supervision",
+      "Daemon-owned sessions survive the terminal",
+      "Single Go binary, local SQLite state (MIT)"
+    ],
+    "faq": [
+      [
+        "Which version should I install?",
+        "v0.4.0 is the first stable CompozyOS release; the older v0.2 product is end-of-life and has a migration guide."
+      ]
+    ],
+    "sources": [
+      "https://github.com/compozy/compozy",
+      "https://compozy.com/"
+    ],
+    "facts": {
+      "repo": "https://github.com/compozy/compozy",
+      "stars": 2815,
+      "forks": 182,
+      "checked": "2026-10-27",
+      "license": "MIT",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "figma-console-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Figma Console MCP from Southleft is a design-system-focused MCP server that connects Claude and other assistants to Figma in both directions. It extracts variables, components and styles, writes back to Figma, and gives the model exact tokens, variants, bindings and states as structured data so generated code follows your own stack.",
+      "It also runs deterministic checks for design-code parity, accessibility and design-system health, can mine an existing codebase into DTCG tokens and scaffold a Storybook-wired design-system package, and syncs tokens between code and Figma variables in DTCG and nine other formats. Recent releases (v1.41.x, October 2026) hardened Cloud Mode sign-in and fixed token-import and component-set data-loss bugs. It is MIT-licensed on npm."
+    ],
+    "who": "Design-system teams and frontend developers using AI assistants with Figma.",
+    "features": [
+      "Read and write Figma variables, components, styles",
+      "Design-code parity and accessibility checks",
+      "Codebase to DTCG token extraction",
+      "Bidirectional token sync, 10 formats",
+      "Local and Cloud modes (MIT)"
+    ],
+    "faq": [
+      [
+        "Can it change my Figma file?",
+        "Yes. Unlike read-only Figma MCP servers it writes to Figma, including importing tokens as variables; recent versions added safeguards against accidental deletions."
+      ]
+    ],
+    "sources": [
+      "https://github.com/southleft/figma-console-mcp",
+      "https://docs.figma-console-mcp.southleft.com/"
+    ],
+    "facts": {
+      "repo": "https://github.com/southleft/figma-console-mcp",
+      "stars": 2609,
+      "forks": 269,
+      "checked": "2026-10-27",
+      "license": "MIT",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "holyclaude": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "HolyClaude is a containerized AI coding workstation that bundles Claude Code with a web UI, a headless Chromium browser with Playwright, eight AI command-line tools and more than 50 developer tools, so the whole setup starts with a single docker compose up.",
+      "It works with an existing Claude Code subscription (Pro or Max) or an API key. Release v1.6.8 refreshed the bundled CLIs and tools from official upstream releases for AMD64 and ARM64, and the project publishes accepted upstream vulnerabilities with versions and available fixes. The image is MIT-licensed, and a separate hosted always-on version is offered at holycode.cloud."
+    ],
+    "who": "Developers who want a ready-made, self-hosted Claude Code environment in Docker.",
+    "features": [
+      "Claude Code with a browser-based UI",
+      "Headless Chromium and Playwright included",
+      "8 AI CLIs and 50+ dev tools",
+      "Uses your Claude subscription or API key",
+      "AMD64 and ARM64 Docker images (MIT)"
+    ],
+    "faq": [
+      [
+        "Do I need an Anthropic API key?",
+        "No. HolyClaude works with an existing Claude Code Pro or Max subscription as well as with an API key."
+      ]
+    ],
+    "sources": [
+      "https://github.com/CoderLuii/HolyClaude",
+      "https://holyclaude.coderluii.dev/"
+    ],
+    "facts": {
+      "repo": "https://github.com/CoderLuii/HolyClaude",
+      "stars": 2596,
+      "forks": 272,
+      "checked": "2026-10-27",
+      "license": "MIT",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "shippie": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Shippie (formerly Code Review GPT) is an extendable code-review and QA agent. It runs an agent loop that reads your diff, explores the codebase with real developer tools and posts focused review comments on issues such as exposed secrets, slow code and unhandled edge cases.",
+      "It runs as a GitHub Action (scaffolded with npx shippie init), in GitLab CI, on Cloudflare or locally against staged changes, and can be triggered on demand with a /shippie comment. Shippie is provider-agnostic across Anthropic, OpenAI, OpenRouter and Cloudflare Workers AI, acts as an MCP client for external tools, and is built on the flue framework and pi under the MIT licence."
+    ],
+    "who": "Teams that want an automated AI reviewer on every pull request.",
+    "features": [
+      "Agentic diff review with codebase exploration",
+      "GitHub Action, GitLab CI and local mode",
+      "On-demand /shippie comment trigger",
+      "Anthropic, OpenAI, OpenRouter, Workers AI",
+      "MCP client for external tools (MIT)"
+    ],
+    "faq": [
+      [
+        "Can Shippie run without CI?",
+        "Yes. npx shippie review checks your staged changes locally and writes the results to a markdown file."
+      ]
+    ],
+    "sources": [
+      "https://github.com/mattzcarey/shippie",
+      "https://shippie.dev/"
+    ],
+    "facts": {
+      "repo": "https://github.com/mattzcarey/shippie",
+      "stars": 2513,
+      "forks": 241,
+      "checked": "2026-10-27",
+      "license": "MIT",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "workflow-sdk": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Workflow SDK from Vercel makes TypeScript and JavaScript functions durable: it persists workflow progress, retries failed steps and adds built-in observability, and workflows can suspend without using compute while they wait. That makes it a fit for long-running AI agents as well as ordinary background jobs.",
+      "You install the workflow package, wrap your framework config (for example withWorkflow in Next.js) and start workflows from server code, with a local observability UI via npx workflow web. Local development needs no configuration; production can run on Vercel's managed backend, a self-hosted Postgres backend or third-party Worlds. The package ships version-matched docs for coding agents and is Apache-2.0."
+    ],
+    "who": "TypeScript developers building long-running agents and workflows that must survive failures.",
+    "features": [
+      "Durable functions with automatic step retries",
+      "Suspend without compute while waiting",
+      "Built-in observability UI",
+      "Vercel, Postgres or custom World backends",
+      "Apache-2.0, docs bundled for coding agents"
+    ],
+    "faq": [
+      [
+        "Do I have to deploy on Vercel?",
+        "No. Vercel provides managed storage and queuing, but you can self-host with the Postgres backend or use a third-party World."
+      ]
+    ],
+    "sources": [
+      "https://github.com/vercel/workflow",
+      "https://workflow-sdk.dev/"
+    ],
+    "facts": {
+      "repo": "https://github.com/vercel/workflow",
+      "stars": 2475,
+      "forks": 390,
+      "checked": "2026-10-27",
+      "license": "Apache 2.0",
+      "osi": true
+    },
+    "updated": "2026-10-27"
+  },
+  "webclaw": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "webclaw turns websites into clean Markdown, JSON and LLM-ready context instead of blocked pages or raw HTML full of boilerplate. The open-source repository contains a Rust CLI, an MCP server, the extraction engine and a self-hostable server, while webclaw.io offers a hosted extraction API.",
+      "npx create-webclaw detects Claude Code, Claude Desktop, Cursor, Windsurf, OpenCode, Codex CLI and other MCP clients and configures the server automatically. It also installs through Homebrew or prebuilt macOS, Linux and Windows binaries, and the open-source code is AGPL-3.0."
+    ],
+    "who": "Agent and RAG builders who need clean page content from the web.",
+    "features": [
+      "URL to clean Markdown or JSON",
+      "CLI, MCP server, REST API and SDKs",
+      "One-command MCP setup for major clients",
+      "Self-hostable server or hosted API",
+      "Rust binaries for macOS, Linux, Windows (AGPL-3.0)"
+    ],
+    "faq": [
+      [
+        "Is webclaw free?",
+        "The CLI, MCP server and self-hostable server are open source under AGPL-3.0; webclaw.io is the paid hosted API."
+      ]
+    ],
+    "sources": [
+      "https://github.com/0xMassi/webclaw",
+      "https://webclaw.io/"
+    ],
+    "facts": {
+      "repo": "https://github.com/0xMassi/webclaw",
+      "stars": 2391,
+      "forks": 235,
+      "checked": "2026-10-27",
+      "license": "AGPL-3.0",
+      "osi": true
+    },
+    "updated": "2026-10-27"
   }
 }
