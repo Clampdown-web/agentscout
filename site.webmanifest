@@ -1,0 +1,30 @@
+{
+  "name": "AgentScout — AI Agent & MCP Server Directory",
+  "short_name": "AgentScout",
+  "description": "Curated, daily link-checked directory of 1,809+ AI agent tools, 252 MCP servers, and 189+ installable bot templates.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#0EA5E9",
+  "categories": [
+    "developer tools",
+    "artificial intelligence",
+    "productivity",
+    "shopping"
+  ],
+  "icons": [
+    {
+      "src": "/logo-square.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

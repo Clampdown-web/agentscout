@@ -97,7 +97,7 @@ def answer_blocks(t):
             '<div style="margin:0 0 18px;border:1px solid rgba(56,189,248,.45);border-radius:14px;overflow:hidden;background:#080a12;box-shadow:0 0 32px rgba(14,165,233,.2)">'
             '<video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-home-terminal-poster.png" width="1200" height="620" style="display:block;width:100%;height:auto">'
             '<source src="assets/animations/agentscout-home-terminal.mp4" type="video/mp4">'
-            '<img src="assets/animations/agentscout-home-terminal-poster.png" alt=f"AgentScout Live Verification Terminal — 6 AI agents verifying {len(tools):,}+ AI agent tools and {mcp_count:,}+ MCP servers daily" width="1200" height="620" loading="lazy">'
+            f'<img src="assets/animations/agentscout-home-terminal-poster.png" alt="AgentScout Live Verification Terminal — 6 AI agents verifying {n:,}+ AI agent tools and {nmcp}+ MCP servers daily" width="1200" height="620" loading="lazy">'
             '</video>'
             '<div style="padding:10px 14px;font-size:13px;color:#cbd5e1;border-top:1px solid rgba(56,189,248,.22);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">'
             '<span><strong style="color:#38bdf8">⚡ AgentScout Terminal v2.6-live:</strong> 6 autonomous agents scanning GitHub &amp; MCP registries, filtering dead links, benchmarking velocity &amp; verifying JSON-RPC endpoints daily.</span>'
@@ -142,3 +142,44 @@ def mcp_links():
         s=s.replace("</main>",blk+"</main>",1)
         if s!=s0: open(f,"w").write(s); n+=1
     print("mcp guide links:",n)
+
+
+def sync_animations(t=None):
+    import json, os, re, subprocess, sys, datetime
+    if t is None:
+        t = json.load(open("tools.json", encoding="utf-8"))
+    n_tools = len(t)
+    n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
+    n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
+    state_file = "data/anim_state.json"
+    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages}
+    old_state = {}
+    if os.path.exists(state_file):
+        try:
+            old_state = json.load(open(state_file, encoding="utf-8"))
+        except Exception:
+            old_state = {}
+    script = "/workspace/notes/x-drafts/scripts/make_animated_infographics.py"
+    if old_state != cur_state and os.path.exists(script):
+        print(f"Re-rendering site animations for live counts: {cur_state}...")
+        subprocess.run([sys.executable, script, "--site-dir", os.getcwd()], check=True)
+        json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
+    elif old_state != cur_state:
+        json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
+    ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}"
+    pages = [
+        "index.html", "mcp/index.html", "mcp/connect.html", "sponsor.html",
+        "submit.html", "compare/index.html", "tasks/index.html",
+        "bot-templates/index.html", "free-tools.html", "best/index.html"
+    ]
+    for p in pages:
+        if not os.path.exists(p):
+            continue
+        txt = open(p, encoding="utf-8").read()
+        ntxt = re.sub(
+            r'((?:src|poster)="(?:\.\./)?assets/animations/[a-z0-9-]+\.(?:mp4|png))(?:\?v=[a-zA-Z0-9_-]+)?(")',
+            lambda m: f"{m.group(1)}?v={ver}{m.group(2)}",
+            txt
+        )
+        if ntxt != txt:
+            open(p, "w", encoding="utf-8").write(ntxt)

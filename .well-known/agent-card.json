@@ -1,6 +1,6 @@
 {
   "name": "AgentScout",
-  "description": "AgentScout is a read-only directory of 1,809 AI agent tools, including 252 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server (https://agentscout-mcp.agentscouthq.workers.dev/mcp).",
+  "description": "AgentScout is a read-only directory of 1,809 AI agent tools, including 252 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server (https://mcp.agentscouthq.com/mcp).",
   "url": "https://agentscouthq.com/",
   "provider": {
     "organization": "AgentScout",
@@ -25,7 +25,7 @@
     {
       "id": "find-ai-agent-tools",
       "name": "Find AI agent tools",
-      "description": "Look up AI agent tools and MCP servers by category, pricing or name by reading api/tools.json.",
+      "description": "Look up AI agent tools and MCP servers by category, pricing or name by reading api/tools.json or calling the MCP server at https://mcp.agentscouthq.com/mcp.",
       "tags": [
         "directory",
         "ai agents",
@@ -35,6 +35,21 @@
       "examples": [
         "Which MCP servers are free?",
         "List coding agents with open-source code."
+      ]
+    },
+    {
+      "id": "compare-packages-and-bots",
+      "name": "Compare Stripe listing packages & Made by AgentScout bots",
+      "description": "Read api/products.json (or /.well-known/acp.json) to compare AgentScout's 4 maker listing tiers ($0, $29, $49, $99/wk) with direct Stripe Checkout URLs and Made by AgentScout pre-trained bot templates.",
+      "tags": [
+        "commerce",
+        "stripe",
+        "sponsorship",
+        "bot templates"
+      ],
+      "examples": [
+        "How much does a 30-day category pin on AgentScout cost?",
+        "What pre-trained bots does AgentScout offer?"
       ]
     }
   ],
@@ -47,11 +62,46 @@
       "mediaType": "application/json"
     },
     {
+      "id": "products-feed",
+      "name": "Purchasable Stripe packages & bot catalog (ACP feed)",
+      "description": "Machine-readable product feed for AgentScout's 4 maker listing tiers ($0, $29, $49, $99/wk) with Stripe Checkout URLs and Made by AgentScout pre-trained bots.",
+      "url": "https://agentscouthq.com/api/products.json",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "acp-feed",
+      "name": "Agentic Commerce Protocol (ACP) feed",
+      "description": "Well-known mirror of the AgentScout Stripe Agentic Commerce product feed.",
+      "url": "https://agentscouthq.com/.well-known/acp.json",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "ai-plugin",
+      "name": "AI Plugin manifest",
+      "description": "AI plugin manifest with prompt-engineered description_for_model and OpenAPI/MCP links.",
+      "url": "https://agentscouthq.com/.well-known/ai-plugin.json",
+      "mediaType": "application/json"
+    },
+    {
       "id": "openapi",
-      "name": "OpenAPI description",
-      "description": "OpenAPI 3.1 description of the read-only JSON feeds under /api/.",
+      "name": "OpenAPI 3.1 description (JSON)",
+      "description": "OpenAPI 3.1 JSON specification of the read-only JSON feeds under /api/.",
       "url": "https://agentscouthq.com/openapi.json",
       "mediaType": "application/json"
+    },
+    {
+      "id": "openapi-yaml",
+      "name": "OpenAPI 3.1 description (YAML)",
+      "description": "OpenAPI 3.1 YAML specification of the read-only JSON feeds under /api/.",
+      "url": "https://agentscouthq.com/openapi.yaml",
+      "mediaType": "application/yaml"
+    },
+    {
+      "id": "web-manifest",
+      "name": "Web App Manifest",
+      "description": "Brand manifest with AgentScout icons and theme colors (#0B0F19 / #0EA5E9).",
+      "url": "https://agentscouthq.com/manifest.json",
+      "mediaType": "application/manifest+json"
     },
     {
       "id": "llms-txt",
@@ -82,8 +132,8 @@
     {
       "id": "mcp-server",
       "name": "AgentScout MCP server (read-only, Streamable HTTP)",
-      "description": "Search tools, get one tool, list categories, best tools for a task. No authentication.",
-      "url": "https://agentscout-mcp.agentscouthq.workers.dev/mcp",
+      "description": "Search tools, get one tool, list categories, best tools for a task, and list Stripe packages/bots. No authentication.",
+      "url": "https://mcp.agentscouthq.com/mcp",
       "mediaType": "application/json"
     },
     {

@@ -317,7 +317,7 @@ import build_fix1022; build_fix1022.run(t)  # category options in HTML, agent.js
 import build_aeo as _baeo; _baeo.sync_entity_schema()
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 
-import build_seo_new as _bsn; _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)
+import build_seo_new as _bsn; _bsn.sync_animations(t); _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)

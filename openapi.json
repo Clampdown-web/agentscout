@@ -1,10 +1,10 @@
 {
  "openapi": "3.1.0",
  "info": {
-  "title": "AgentScout public data API",
-  "version": "1.0.0",
-  "summary": "Read-only static JSON feeds of the AgentScout AI agent tool directory.",
-  "description": "AgentScout lists 1,809 AI agent tools. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. Filter client-side.",
+  "title": "AgentScout Public Data & Agentic Commerce API",
+  "version": "1.1.0",
+  "summary": "Read-only static JSON feeds and Stripe Agentic Commerce product catalog for the AgentScout AI agent & MCP server directory.",
+  "description": "AgentScout lists 1,809 daily link-checked AI agent tools (including 252 MCP servers) plus purchasable maker listing boosts and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at https://mcp.agentscouthq.com/mcp (or SSE at https://agentscouthq.com/mcp/sse).",
   "contact": {
    "name": "AgentScout",
    "email": "support@agentscouthq.com",
@@ -14,25 +14,30 @@
  },
  "servers": [
   {
-   "url": "https://agentscouthq.com"
+   "url": "https://agentscouthq.com",
+   "description": "Production static JSON & ACP feeds"
   }
  ],
  "tags": [
   {
    "name": "catalog",
-   "description": "Tool catalog data"
+   "description": "AI agent tool and MCP server catalog data"
+  },
+  {
+   "name": "commerce",
+   "description": "Purchasable Stripe listing packages and Made by AgentScout bot templates (ACP feed)"
   },
   {
    "name": "site",
-   "description": "Site sections and features"
+   "description": "Site sections, daily picks, quiz, and features"
   }
  ],
  "paths": {
   "/api/tools.json": {
    "get": {
     "operationId": "getTools",
-    "summary": "Full tool catalog",
-    "description": "Every listed AI agent tool with category, pricing, platforms, GitHub data, ratings and its AgentScout page. Rebuilt daily.",
+    "summary": "Full AI agent & MCP server catalog",
+    "description": "Use this endpoint when a user asks to search, filter, compare, or verify AI agent tools, coding agents, browser agents, voice agents, or Model Context Protocol (MCP) servers. Returns every listed tool with category, maker-stated pricing, price_tag (free/freemium/paid), platforms, open_source boolean, license, GitHub repo and stars, daily link-check date, and canonical AgentScout page URL.",
     "tags": [
      "catalog"
     ],
@@ -53,11 +58,37 @@
     }
    }
   },
+  "/api/products.json": {
+   "get": {
+    "operationId": "getProducts",
+    "summary": "Purchasable Stripe packages & Made by AgentScout bot catalog (ACP feed)",
+    "description": "Use this endpoint when a maker or purchasing agent wants to submit an AI tool, buy a featured listing boost or sponsorship on AgentScout, or purchase Made by AgentScout pre-trained bots. Returns structured product and offer metadata with pricing in USD, availability, deliverables, and direct Stripe Checkout URLs.",
+    "tags": [
+     "commerce",
+     "catalog"
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON document",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Products"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not found"
+     }
+    }
+   }
+  },
   "/api/stats.json": {
    "get": {
     "operationId": "getStats",
-    "summary": "Lightweight catalog stats",
-    "description": "Category, added date and seed flag for every tool, plus the last-checked date. Small file for homepage counters.",
+    "summary": "Lightweight catalog stats & category counts",
+    "description": "Compact summary with category, added date, and seed flag for every tool, plus the daily last_checked date.",
     "tags": [
      "catalog"
     ],
@@ -81,8 +112,8 @@
   "/api/sections.json": {
    "get": {
     "operationId": "getSections",
-    "summary": "Site sections",
-    "description": "Categories with counts, task pages, comparisons, best-of lists, news, free tools, badges, submit form fields and newsletter info.",
+    "summary": "Site sections, categories, comparisons, guides & news",
+    "description": "Categories with tool counts, task pages, side-by-side comparisons, best-of ranked lists, daily AI agent news, free calculators, badges, submit form fields, and newsletter metadata.",
     "tags": [
      "site"
     ],
@@ -107,7 +138,7 @@
    "get": {
     "operationId": "getEditorsPick",
     "summary": "Editor's Pick of the day",
-    "description": "Today's Editor's Pick and recent pick history.",
+    "description": "Today's featured Editor's Pick tool and recent daily pick history.",
     "tags": [
      "site"
     ],
@@ -131,8 +162,8 @@
   "/api/quiz.json": {
    "get": {
     "operationId": "getQuiz",
-    "summary": "Tool-finder quiz",
-    "description": "Questions, options and scoring weights used by the tool-finder quiz.",
+    "summary": "Interactive tool-finder quiz specification",
+    "description": "Questions, options, and scoring weights used by the AgentScout tool-finder quiz.",
     "tags": [
      "site"
     ],
@@ -156,8 +187,8 @@
   "/api/generator-daily.json": {
    "get": {
     "operationId": "getGeneratorDaily",
-    "summary": "Daily generator image",
-    "description": "Today's image-generator background and its overlay colours.",
+    "summary": "Daily generator background & palette",
+    "description": "Today's image-generator background asset and its overlay colors.",
     "tags": [
      "site"
     ],
@@ -382,6 +413,200 @@
      "tools"
     ],
     "title": "Tools"
+   },
+   "Products": {
+    "type": "object",
+    "properties": {
+     "schema_version": {
+      "type": "string"
+     },
+     "protocol": {
+      "type": "string"
+     },
+     "updated": {
+      "type": "string"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "merchant": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "legal_name": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       },
+       "contact_email": {
+        "type": "string"
+       },
+       "mcp_endpoint": {
+        "type": "string"
+       },
+       "mcp_sse_endpoint": {
+        "type": "string"
+       },
+       "mcp_registry_id": {
+        "type": "string"
+       },
+       "payment_methods": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "x_money_handle": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "name",
+       "legal_name",
+       "url",
+       "contact_email",
+       "mcp_endpoint",
+       "mcp_sse_endpoint",
+       "mcp_registry_id",
+       "payment_methods",
+       "x_money_handle"
+      ]
+     },
+     "packages": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "sku": {
+         "type": "string"
+        },
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": "string"
+        },
+        "price_usd": {
+         "type": "integer"
+        },
+        "billing_model": {
+         "type": "string"
+        },
+        "availability": {
+         "type": "string"
+        },
+        "badge": {
+         "type": "string"
+        },
+        "turnaround": {
+         "type": "string"
+        },
+        "checkout_url": {
+         "type": "string"
+        },
+        "page_url": {
+         "type": "string"
+        },
+        "description": {
+         "type": "string"
+        },
+        "deliverables": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        }
+       },
+       "required": [
+        "id",
+        "sku",
+        "name",
+        "category",
+        "price_usd",
+        "billing_model",
+        "availability",
+        "badge",
+        "turnaround",
+        "checkout_url",
+        "page_url",
+        "description",
+        "deliverables"
+       ]
+      }
+     },
+     "bot_templates": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "sku": {
+         "type": "string"
+        },
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": "string"
+        },
+        "price_usd": {
+         "type": "integer"
+        },
+        "billing_model": {
+         "type": "string"
+        },
+        "availability": {
+         "type": "string"
+        },
+        "page_url": {
+         "type": "string"
+        },
+        "checkout_url": {
+         "type": "string"
+        },
+        "description": {
+         "type": "string"
+        },
+        "price_range_usd": {
+         "type": "string"
+        },
+        "release_date": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "id",
+        "sku",
+        "name",
+        "category",
+        "price_usd",
+        "billing_model",
+        "availability",
+        "page_url",
+        "checkout_url",
+        "description"
+       ]
+      }
+     }
+    },
+    "required": [
+     "schema_version",
+     "protocol",
+     "updated",
+     "currency",
+     "merchant",
+     "packages",
+     "bot_templates"
+    ],
+    "title": "Products"
    },
    "Stats": {
     "type": "object",

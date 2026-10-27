@@ -113,11 +113,12 @@ def pages(t):
     urls.append(connect_page(t))
     agent_cards(t)
     return urls
-MCP_URL="https://agentscout-mcp.agentscouthq.workers.dev/mcp"  # public read-only MCP server (worker agentscout-mcp)
+MCP_URL="https://mcp.agentscouthq.com/mcp"  # public read-only MCP server (custom domain + worker agentscout-mcp)
 MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (free, freemium, paid), open-source and runs_locally filters. Up to 25 results."),
            ("get_tool","Full listing for one tool by its slug: features, platforms, GitHub repo and stars, AgentScout page."),
            ("list_categories","Every category with its tool count and page link."),
-           ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters.")]
+           ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters."),
+           ("list_packages","List AgentScout's 4 maker listing & sponsorship tiers ($0 Free, $29 Fast-Track, $49 30-Day Category Pin, $99/wk Weekly Sponsor) with direct Stripe Checkout URLs, plus the Made by AgentScout pre-trained bot catalog.")]
 LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance."
 def connect_page(t):
     M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"; uline=mcp_uptime_line(t)
@@ -177,12 +178,17 @@ def agent_cards(t):
     os.makedirs(".well-known",exist_ok=True); M=sum(1 for x in t if x.get("category")=="MCP servers")
     desc=f"AgentScout is a read-only directory of {len(t):,} AI agent tools, including {M:,} MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server ({MCP_URL})."
     feeds=[{"id":"tools-catalog","name":"Full tool catalog","description":"Every listed tool with category, pricing, platforms, GitHub stars and listing URL.","url":B+"api/tools.json","mediaType":"application/json"},
-           {"id":"openapi","name":"OpenAPI description","description":"OpenAPI 3.1 description of the read-only JSON feeds under /api/.","url":B+"openapi.json","mediaType":"application/json"},
+           {"id":"products-feed","name":"Purchasable Stripe packages & bot catalog (ACP feed)","description":"Machine-readable product feed for AgentScout's 4 maker listing tiers ($0, $29, $49, $99/wk) with Stripe Checkout URLs and Made by AgentScout pre-trained bots.","url":B+"api/products.json","mediaType":"application/json"},
+           {"id":"acp-feed","name":"Agentic Commerce Protocol (ACP) feed","description":"Well-known mirror of the AgentScout Stripe Agentic Commerce product feed.","url":B+".well-known/acp.json","mediaType":"application/json"},
+           {"id":"ai-plugin","name":"AI Plugin manifest","description":"AI plugin manifest with prompt-engineered description_for_model and OpenAPI/MCP links.","url":B+".well-known/ai-plugin.json","mediaType":"application/json"},
+           {"id":"openapi","name":"OpenAPI 3.1 description (JSON)","description":"OpenAPI 3.1 JSON specification of the read-only JSON feeds under /api/.","url":B+"openapi.json","mediaType":"application/json"},
+           {"id":"openapi-yaml","name":"OpenAPI 3.1 description (YAML)","description":"OpenAPI 3.1 YAML specification of the read-only JSON feeds under /api/.","url":B+"openapi.yaml","mediaType":"application/yaml"},
+           {"id":"web-manifest","name":"Web App Manifest","description":"Brand manifest with AgentScout icons and theme colors (#0B0F19 / #0EA5E9).","url":B+"manifest.json","mediaType":"application/manifest+json"},
            {"id":"llms-txt","name":"llms.txt","description":"Guide to the site for AI models.","url":B+"llms.txt","mediaType":"text/markdown"},
            {"id":"llms-full-txt","name":"llms-full.txt","description":"Full single-file Markdown context with category comparison tables and all verified MCP servers.","url":B+"llms-full.txt","mediaType":"text/markdown"},
            {"id":"mcp-pricing","name":"MCP server pricing table","url":B+"mcp/pricing.html","mediaType":"text/html"},
            {"id":"mcp-link-status","name":"MCP server link status","url":B+"mcp/link-status.html","mediaType":"text/html"},
-           {"id":"mcp-server","name":"AgentScout MCP server (read-only, Streamable HTTP)","description":"Search tools, get one tool, list categories, best tools for a task. No authentication.","url":MCP_URL,"mediaType":"application/json"},
+           {"id":"mcp-server","name":"AgentScout MCP server (read-only, Streamable HTTP)","description":"Search tools, get one tool, list categories, best tools for a task, and list Stripe packages/bots. No authentication.","url":MCP_URL,"mediaType":"application/json"},
            {"id":"mcp-connect","name":"How to connect to the MCP server","url":B+"mcp/connect.html","mediaType":"text/html"},
            {"id":"sitemap","name":"Sitemap","url":B+"sitemap.xml","mediaType":"application/xml"}]
     card={"name":"AgentScout","description":desc,"url":B,"provider":{"organization":"AgentScout","url":B},"version":today(),
@@ -190,7 +196,7 @@ def agent_cards(t):
           "capabilities":{"streaming":False,"pushNotifications":False,"stateTransitionHistory":False},
           "interaction":"static, read-only files over HTTPS GET, plus a read-only MCP server (Streamable HTTP); no authentication; no A2A task endpoint",
           "defaultInputModes":[],"defaultOutputModes":["application/json","text/html","text/markdown"],
-          "skills":[{"id":"find-ai-agent-tools","name":"Find AI agent tools","description":"Look up AI agent tools and MCP servers by category, pricing or name by reading api/tools.json.","tags":["directory","ai agents","mcp","tools"],"examples":["Which MCP servers are free?","List coding agents with open-source code."]}],
+          "skills":[{"id":"find-ai-agent-tools","name":"Find AI agent tools","description":"Look up AI agent tools and MCP servers by category, pricing or name by reading api/tools.json or calling the MCP server at https://mcp.agentscouthq.com/mcp.","tags":["directory","ai agents","mcp","tools"],"examples":["Which MCP servers are free?","List coding agents with open-source code."]},{"id":"compare-packages-and-bots","name":"Compare Stripe listing packages & Made by AgentScout bots","description":"Read api/products.json (or /.well-known/acp.json) to compare AgentScout's 4 maker listing tiers ($0, $29, $49, $99/wk) with direct Stripe Checkout URLs and Made by AgentScout pre-trained bot templates.","tags":["commerce","stripe","sponsorship","bot templates"],"examples":["How much does a 30-day category pin on AgentScout cost?","What pre-trained bots does AgentScout offer?"]}],
           "resources":feeds}
     s=json.dumps(card,indent=2,ensure_ascii=False)+"\n"
     for f in(".well-known/agent-card.json",".well-known/agent.json"): open(f,"w").write(s)

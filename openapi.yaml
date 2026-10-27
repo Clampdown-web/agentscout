@@ -1,0 +1,1083 @@
+openapi: "3.1.0"
+info:
+  title: "AgentScout Public Data & Agentic Commerce API"
+  version: "1.1.0"
+  summary: "Read-only static JSON feeds and Stripe Agentic Commerce product catalog for the AgentScout AI agent & MCP server directory."
+  description: "AgentScout lists 1,809 daily link-checked AI agent tools (including 252 MCP servers) plus purchasable maker listing boosts and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at https://mcp.agentscouthq.com/mcp (or SSE at https://agentscouthq.com/mcp/sse)."
+  contact:
+    name: "AgentScout"
+    email: "support@agentscouthq.com"
+    url: "https://agentscouthq.com/"
+  termsOfService: "https://agentscouthq.com/privacy.html"
+servers:
+  - url: "https://agentscouthq.com"
+    description: "Production static JSON & ACP feeds"
+tags:
+  - name: "catalog"
+    description: "AI agent tool and MCP server catalog data"
+  - name: "commerce"
+    description: "Purchasable Stripe listing packages and Made by AgentScout bot templates (ACP feed)"
+  - name: "site"
+    description: "Site sections, daily picks, quiz, and features"
+paths:
+  "/api/tools.json":
+    get:
+      operationId: "getTools"
+      summary: "Full AI agent & MCP server catalog"
+      description: "Use this endpoint when a user asks to search, filter, compare, or verify AI agent tools, coding agents, browser agents, voice agents, or Model Context Protocol (MCP) servers. Returns every listed tool with category, maker-stated pricing, price_tag (free/freemium/paid), platforms, open_source boolean, license, GitHub repo and stars, daily link-check date, and canonical AgentScout page URL."
+      tags:
+        - "catalog"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/Tools"
+        "404":
+          description: "Not found"
+  "/api/products.json":
+    get:
+      operationId: "getProducts"
+      summary: "Purchasable Stripe packages & Made by AgentScout bot catalog (ACP feed)"
+      description: "Use this endpoint when a maker or purchasing agent wants to submit an AI tool, buy a featured listing boost or sponsorship on AgentScout, or purchase Made by AgentScout pre-trained bots. Returns structured product and offer metadata with pricing in USD, availability, deliverables, and direct Stripe Checkout URLs."
+      tags:
+        - "commerce"
+        - "catalog"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/Products"
+        "404":
+          description: "Not found"
+  "/api/stats.json":
+    get:
+      operationId: "getStats"
+      summary: "Lightweight catalog stats & category counts"
+      description: "Compact summary with category, added date, and seed flag for every tool, plus the daily last_checked date."
+      tags:
+        - "catalog"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/Stats"
+        "404":
+          description: "Not found"
+  "/api/sections.json":
+    get:
+      operationId: "getSections"
+      summary: "Site sections, categories, comparisons, guides & news"
+      description: "Categories with tool counts, task pages, side-by-side comparisons, best-of ranked lists, daily AI agent news, free calculators, badges, submit form fields, and newsletter metadata."
+      tags:
+        - "site"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/Sections"
+        "404":
+          description: "Not found"
+  "/api/editors-pick.json":
+    get:
+      operationId: "getEditorsPick"
+      summary: "Editor's Pick of the day"
+      description: "Today's featured Editor's Pick tool and recent daily pick history."
+      tags:
+        - "site"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/EditorsPick"
+        "404":
+          description: "Not found"
+  "/api/quiz.json":
+    get:
+      operationId: "getQuiz"
+      summary: "Interactive tool-finder quiz specification"
+      description: "Questions, options, and scoring weights used by the AgentScout tool-finder quiz."
+      tags:
+        - "site"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/Quiz"
+        "404":
+          description: "Not found"
+  "/api/generator-daily.json":
+    get:
+      operationId: "getGeneratorDaily"
+      summary: "Daily generator background & palette"
+      description: "Today's image-generator background asset and its overlay colors."
+      tags:
+        - "site"
+      responses:
+        "200":
+          description: "JSON document"
+          content:
+            "application/json":
+              schema:
+                "$ref": "#/components/schemas/GeneratorDaily"
+        "404":
+          description: "Not found"
+components:
+  schemas:
+    Tools:
+      type: "object"
+      properties:
+        version:
+          type: "integer"
+        generated:
+          type: "string"
+        updated:
+          type: "string"
+        last_checked:
+          type: "string"
+        count:
+          type: "integer"
+        tools:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              name:
+                type: "string"
+              slug:
+                type: "string"
+              url:
+                type: "string"
+              website:
+                type: "string"
+              github:
+                type: "string"
+              category:
+                type: "string"
+              description:
+                type: "string"
+              key_features:
+                type: "array"
+                items:
+                  type: "string"
+              pricing:
+                type: "string"
+              price_tag:
+                type: "string"
+                enum:
+                  - "free"
+                  - "freemium"
+                  - "paid"
+                  - "unknown"
+              platforms:
+                type: "array"
+                items:
+                  type: "string"
+              date_added:
+                type: "string"
+              added:
+                type: "string"
+              source:
+                type: "string"
+              goals:
+                type: "array"
+                items:
+                  type: "string"
+              skill:
+                type: "string"
+                enum:
+                  - "developer"
+                  - "no-code"
+              weekly_pick:
+                type: "boolean"
+              new:
+                type: "boolean"
+              seed:
+                type: "boolean"
+              new_this_week:
+                type: "boolean"
+              repo:
+                type:
+                  - "null"
+                  - "string"
+              github_stars:
+                type:
+                  - "integer"
+                  - "null"
+              open_source:
+                type: "boolean"
+              license:
+                type: "string"
+              tags:
+                type: "array"
+                items:
+                  type: "string"
+              hybrid:
+                type: "boolean"
+              logo:
+                type: "string"
+              page:
+                type: "string"
+              rating:
+                type: "object"
+                properties:
+                  average:
+                    type: "integer"
+                  count:
+                    type: "integer"
+                  approved_reviews:
+                    type: "integer"
+                  reviews_api:
+                    type: "string"
+                required:
+                  - "average"
+                  - "count"
+                  - "approved_reviews"
+                  - "reviews_api"
+            required:
+              - "name"
+              - "slug"
+              - "url"
+              - "website"
+              - "github"
+              - "category"
+              - "description"
+              - "key_features"
+              - "pricing"
+              - "price_tag"
+              - "platforms"
+              - "date_added"
+              - "added"
+              - "source"
+              - "goals"
+              - "skill"
+              - "weekly_pick"
+              - "new"
+              - "seed"
+              - "new_this_week"
+              - "repo"
+              - "github_stars"
+              - "open_source"
+              - "license"
+              - "tags"
+              - "hybrid"
+              - "logo"
+              - "page"
+      required:
+        - "version"
+        - "generated"
+        - "updated"
+        - "last_checked"
+        - "count"
+        - "tools"
+      title: "Tools"
+    Products:
+      type: "object"
+      properties:
+        schema_version:
+          type: "string"
+        protocol:
+          type: "string"
+        updated:
+          type: "string"
+        currency:
+          type: "string"
+        merchant:
+          type: "object"
+          properties:
+            name:
+              type: "string"
+            legal_name:
+              type: "string"
+            url:
+              type: "string"
+            contact_email:
+              type: "string"
+            mcp_endpoint:
+              type: "string"
+            mcp_sse_endpoint:
+              type: "string"
+            mcp_registry_id:
+              type: "string"
+            payment_methods:
+              type: "array"
+              items:
+                type: "string"
+            x_money_handle:
+              type: "string"
+          required:
+            - "name"
+            - "legal_name"
+            - "url"
+            - "contact_email"
+            - "mcp_endpoint"
+            - "mcp_sse_endpoint"
+            - "mcp_registry_id"
+            - "payment_methods"
+            - "x_money_handle"
+        packages:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              id:
+                type: "string"
+              sku:
+                type: "string"
+              name:
+                type: "string"
+              category:
+                type: "string"
+              price_usd:
+                type: "integer"
+              billing_model:
+                type: "string"
+              availability:
+                type: "string"
+              badge:
+                type: "string"
+              turnaround:
+                type: "string"
+              checkout_url:
+                type: "string"
+              page_url:
+                type: "string"
+              description:
+                type: "string"
+              deliverables:
+                type: "array"
+                items:
+                  type: "string"
+            required:
+              - "id"
+              - "sku"
+              - "name"
+              - "category"
+              - "price_usd"
+              - "billing_model"
+              - "availability"
+              - "badge"
+              - "turnaround"
+              - "checkout_url"
+              - "page_url"
+              - "description"
+              - "deliverables"
+        bot_templates:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              id:
+                type: "string"
+              sku:
+                type: "string"
+              name:
+                type: "string"
+              category:
+                type: "string"
+              price_usd:
+                type: "integer"
+              billing_model:
+                type: "string"
+              availability:
+                type: "string"
+              page_url:
+                type: "string"
+              checkout_url:
+                type: "string"
+              description:
+                type: "string"
+              price_range_usd:
+                type: "string"
+              release_date:
+                type: "string"
+            required:
+              - "id"
+              - "sku"
+              - "name"
+              - "category"
+              - "price_usd"
+              - "billing_model"
+              - "availability"
+              - "page_url"
+              - "checkout_url"
+              - "description"
+      required:
+        - "schema_version"
+        - "protocol"
+        - "updated"
+        - "currency"
+        - "merchant"
+        - "packages"
+        - "bot_templates"
+      title: "Products"
+    Stats:
+      type: "object"
+      properties:
+        last_checked:
+          type: "string"
+        tools:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              category:
+                type: "string"
+              added:
+                type: "string"
+              seed:
+                type: "boolean"
+            required:
+              - "category"
+              - "added"
+              - "seed"
+      required:
+        - "last_checked"
+        - "tools"
+      title: "Stats"
+    Sections:
+      type: "object"
+      properties:
+        free_tools:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              name:
+                type: "string"
+              badges:
+                type: "array"
+                items:
+                  type: "string"
+              description:
+                type: "string"
+              screen:
+                type: "string"
+              url:
+                type: "string"
+            required:
+              - "name"
+              - "badges"
+              - "description"
+              - "screen"
+              - "url"
+        badges:
+          type: "object"
+          properties:
+            title:
+              type: "string"
+            lede:
+              type: "string"
+            kinds:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  id:
+                    type: "string"
+                  label:
+                    type: "string"
+                  desc:
+                    type: "string"
+                required:
+                  - "id"
+                  - "label"
+                  - "desc"
+            variants:
+              type: "array"
+              items:
+                type: "string"
+            svg:
+              type: "string"
+            png:
+              type: "string"
+            link:
+              type: "string"
+          required:
+            - "title"
+            - "lede"
+            - "kinds"
+            - "variants"
+            - "svg"
+            - "png"
+            - "link"
+        updated:
+          type: "string"
+        categories:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              name:
+                type: "string"
+              slug:
+                type: "string"
+              count:
+                type: "integer"
+              url:
+                type: "string"
+            required:
+              - "name"
+              - "slug"
+              - "count"
+              - "url"
+        tasks:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              slug:
+                type: "string"
+              title:
+                type: "string"
+              name:
+                type: "string"
+              description:
+                type: "string"
+              tools:
+                type: "array"
+                items:
+                  type: "string"
+              url:
+                type: "string"
+            required:
+              - "slug"
+              - "title"
+              - "name"
+              - "description"
+              - "tools"
+              - "url"
+        compare:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              slug:
+                type: "string"
+              a:
+                type: "string"
+              b:
+                type: "string"
+              title:
+                type: "string"
+              verdict:
+                type: "string"
+              note:
+                type: "string"
+              rows:
+                type: "array"
+                items:
+                  type: "array"
+                  items:
+                    type: "string"
+              url:
+                type: "string"
+            required:
+              - "slug"
+              - "a"
+              - "b"
+              - "title"
+              - "verdict"
+              - "note"
+              - "rows"
+              - "url"
+        best:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              slug:
+                type: "string"
+              title:
+                type: "string"
+              lede:
+                type: "string"
+              tools:
+                type: "array"
+                items:
+                  type: "string"
+              url:
+                type: "string"
+            required:
+              - "slug"
+              - "title"
+              - "lede"
+              - "tools"
+              - "url"
+        news:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              title:
+                type: "string"
+              source:
+                type: "string"
+              url:
+                type: "string"
+              date:
+                type: "string"
+              tool:
+                type: "null"
+              summary:
+                type: "string"
+              page:
+                type: "string"
+              page_url:
+                type: "string"
+            required:
+              - "title"
+              - "source"
+              - "url"
+              - "date"
+              - "tool"
+              - "summary"
+              - "page"
+              - "page_url"
+        generate:
+          type: "object"
+          properties:
+            title:
+              type: "string"
+            lede:
+              type: "string"
+            url:
+              type: "string"
+            daily:
+              type: "object"
+              properties:
+                image:
+                  type: "string"
+                path:
+                  type: "string"
+                overlay:
+                  type: "object"
+                  properties:
+                    light:
+                      type: "string"
+                    dark:
+                      type: "string"
+                  required:
+                    - "light"
+                    - "dark"
+                base:
+                  type: "object"
+                  properties:
+                    light:
+                      type: "string"
+                    dark:
+                      type: "string"
+                  required:
+                    - "light"
+                    - "dark"
+                border:
+                  type: "object"
+                  properties:
+                    light:
+                      type: "string"
+                    dark:
+                      type: "string"
+                  required:
+                    - "light"
+                    - "dark"
+                radius:
+                  type: "integer"
+                updated:
+                  type: "string"
+              required:
+                - "image"
+                - "path"
+                - "overlay"
+                - "base"
+                - "border"
+                - "radius"
+                - "updated"
+          required:
+            - "title"
+            - "lede"
+            - "url"
+            - "daily"
+        submit:
+          type: "object"
+          properties:
+            endpoint:
+              type: "string"
+            fields:
+              type: "array"
+              items:
+                type: "string"
+            categories:
+              type: "array"
+              items:
+                type: "string"
+            pricing:
+              type: "array"
+              items:
+                type: "string"
+            url:
+              type: "string"
+          required:
+            - "endpoint"
+            - "fields"
+            - "categories"
+            - "pricing"
+            - "url"
+        newsletter:
+          type: "object"
+          properties:
+            url:
+              type: "string"
+            subscribe:
+              type: "string"
+            latest:
+              type: "object"
+              properties:
+                title:
+                  type: "string"
+                date:
+                  type: "string"
+                summary:
+                  type: "string"
+                url:
+                  type: "string"
+              required:
+                - "title"
+                - "date"
+                - "summary"
+                - "url"
+          required:
+            - "url"
+            - "subscribe"
+            - "latest"
+      required:
+        - "free_tools"
+        - "badges"
+        - "updated"
+        - "categories"
+        - "tasks"
+        - "compare"
+        - "best"
+        - "news"
+        - "generate"
+        - "submit"
+        - "newsletter"
+      title: "Sections"
+    EditorsPick:
+      type: "object"
+      properties:
+        date:
+          type: "string"
+        slug:
+          type: "string"
+        name:
+          type: "string"
+        why:
+          type: "string"
+        category:
+          type: "string"
+        description:
+          type: "string"
+        logo:
+          type: "string"
+        page:
+          type: "string"
+        history:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              date:
+                type: "string"
+              slug:
+                type: "string"
+            required:
+              - "date"
+              - "slug"
+      required:
+        - "date"
+        - "slug"
+        - "name"
+        - "why"
+        - "category"
+        - "description"
+        - "logo"
+        - "page"
+        - "history"
+      title: "EditorsPick"
+    Quiz:
+      type: "object"
+      properties:
+        version:
+          type: "integer"
+        about:
+          type: "string"
+        results:
+          type: "object"
+          properties:
+            min:
+              type: "integer"
+            max:
+              type: "integer"
+          required:
+            - "min"
+            - "max"
+        questions:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              key:
+                type: "string"
+              q:
+                type: "string"
+              options:
+                type: "array"
+                items:
+                  type: "object"
+                  properties:
+                    id:
+                      type: "string"
+                    label:
+                      type: "string"
+                    hint:
+                      type: "string"
+                    goals:
+                      type: "array"
+                      items:
+                        type: "string"
+                    categories:
+                      type: "array"
+                      items:
+                        type: "string"
+                    tasks:
+                      type: "array"
+                      items:
+                        type: "string"
+                  required:
+                    - "id"
+                    - "label"
+                    - "hint"
+              optional:
+                type: "boolean"
+            required:
+              - "key"
+              - "q"
+              - "options"
+        weights:
+          type: "object"
+          properties:
+            goal:
+              type: "object"
+              properties:
+                category:
+                  type: "integer"
+                goals:
+                  type: "integer"
+                requireMatch:
+                  type: "boolean"
+              required:
+                - "category"
+                - "goals"
+                - "requireMatch"
+            skill:
+              type: "object"
+              properties:
+                no-code:
+                  type: "object"
+                  properties:
+                    no-code:
+                      type: "integer"
+                    developer:
+                      type: "integer"
+                  required:
+                    - "no-code"
+                    - "developer"
+                some:
+                  type: "object"
+                  properties:
+                    no-code:
+                      type: "integer"
+                    developer:
+                      type: "integer"
+                  required:
+                    - "no-code"
+                    - "developer"
+                developer:
+                  type: "object"
+                  properties:
+                    no-code:
+                      type: "integer"
+                    developer:
+                      type: "integer"
+                  required:
+                    - "no-code"
+                    - "developer"
+              required:
+                - "no-code"
+                - "some"
+                - "developer"
+            budget:
+              type: "object"
+              properties:
+                free:
+                  type: "object"
+                  properties:
+                    free:
+                      type: "integer"
+                    freemium:
+                      type: "integer"
+                    paid:
+                      type: "integer"
+                    unknown:
+                      type: "integer"
+                  required:
+                    - "free"
+                    - "freemium"
+                    - "paid"
+                    - "unknown"
+                freemium:
+                  type: "object"
+                  properties:
+                    free:
+                      type: "integer"
+                    freemium:
+                      type: "integer"
+                    paid:
+                      type: "integer"
+                    unknown:
+                      type: "integer"
+                  required:
+                    - "free"
+                    - "freemium"
+                    - "paid"
+                    - "unknown"
+                paid:
+                  type: "object"
+                  properties:
+                    free:
+                      type: "integer"
+                    freemium:
+                      type: "integer"
+                    paid:
+                      type: "integer"
+                    unknown:
+                      type: "integer"
+                  required:
+                    - "free"
+                    - "freemium"
+                    - "paid"
+                    - "unknown"
+              required:
+                - "free"
+                - "freemium"
+                - "paid"
+            oss:
+              type: "object"
+              properties:
+                "yes":
+                  type: "object"
+                  properties:
+                    github:
+                      type: "integer"
+                    none:
+                      type: "integer"
+                  required:
+                    - "github"
+                    - "none"
+                any:
+                  type: "object"
+                  properties:
+                    github:
+                      type: "integer"
+                    none:
+                      type: "integer"
+                  required:
+                    - "github"
+                    - "none"
+              required:
+                - "yes"
+                - "any"
+            bonus:
+              type: "object"
+              properties:
+                weekly_pick:
+                  type: "integer"
+                logo:
+                  type: "number"
+              required:
+                - "weekly_pick"
+                - "logo"
+          required:
+            - "goal"
+            - "skill"
+            - "budget"
+            - "oss"
+            - "bonus"
+      required:
+        - "version"
+        - "about"
+        - "results"
+        - "questions"
+        - "weights"
+      title: "Quiz"
+    GeneratorDaily:
+      type: "object"
+      properties:
+        image:
+          type: "string"
+        path:
+          type: "string"
+        overlay:
+          type: "object"
+          properties:
+            light:
+              type: "string"
+            dark:
+              type: "string"
+          required:
+            - "light"
+            - "dark"
+        base:
+          type: "object"
+          properties:
+            light:
+              type: "string"
+            dark:
+              type: "string"
+          required:
+            - "light"
+            - "dark"
+        border:
+          type: "object"
+          properties:
+            light:
+              type: "string"
+            dark:
+              type: "string"
+          required:
+            - "light"
+            - "dark"
+        radius:
+          type: "integer"
+        updated:
+          type: "string"
+      required:
+        - "image"
+        - "path"
+        - "overlay"
+        - "base"
+        - "border"
+        - "radius"
+        - "updated"
+      title: "GeneratorDaily"

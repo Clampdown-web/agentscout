@@ -2,13 +2,13 @@
 
 > AgentScout is a curated, read-only directory of 1,809 AI agent tools in 30 categories, including 252 MCP servers (252 of 252 MCP servers responded today (verified Oct 27, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
-Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://agentscouthq.com/mcp/sse (and https://agentscout-mcp.agentscouthq.workers.dev/mcp). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
+Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
 Site: https://agentscouthq.com/
 Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ, https://x.com/clampdown19
 MCP Registry ID: com.agentscouthq/directory
-MCP Endpoint: https://agentscouthq.com/mcp/sse (and https://agentscout-mcp.agentscouthq.workers.dev/mcp — 100% free, read-only, no API key or x402 wallet required)
+MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse — 100% free, read-only, no API key or x402 wallet required)
 Catalog last checked: 2026-10-27 (Pacific)
 
 ## For AI agents
@@ -32,8 +32,11 @@ Catalog last checked: 2026-10-27 (Pacific)
 - [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 252 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
-- [openapi.json](https://agentscouthq.com/openapi.json): OpenAPI 3.1 description of the read-only JSON feeds under /api/
-- [.well-known/openapi.json](https://agentscouthq.com/.well-known/openapi.json): same OpenAPI 3.1 description at the well-known address
+- [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $29, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
+- [.well-known/ai-plugin.json](https://agentscouthq.com/.well-known/ai-plugin.json): AI plugin manifest with prompt-engineered model instructions
+- [openapi.json](https://agentscouthq.com/openapi.json) & [openapi.yaml](https://agentscouthq.com/openapi.yaml): OpenAPI 3.1 JSON & YAML descriptions of the feeds under /api/ (also at [.well-known/openapi.json](https://agentscouthq.com/.well-known/openapi.json) and [.well-known/openapi.yaml](https://agentscouthq.com/.well-known/openapi.yaml))
+- [manifest.json](https://agentscouthq.com/manifest.json): Web app brand manifest with icons and theme colors
+- [.well-known/mcp.json](https://agentscouthq.com/.well-known/mcp.json): MCP server card pointing to https://mcp.agentscouthq.com/mcp
 - [.well-known/agent-card.json](https://agentscouthq.com/.well-known/agent-card.json): agent card describing this directory (also at /.well-known/agent.json)
 - [sitemap.xml](https://agentscouthq.com/sitemap.xml): all public pages
 
@@ -41,7 +44,7 @@ Catalog last checked: 2026-10-27 (Pacific)
 
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
-- [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://agentscout-mcp.agentscouthq.workers.dev/mcp (Streamable HTTP, no key) with search_tools, get_tool, list_categories and best_for_task. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
+- [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
 - [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 252 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources

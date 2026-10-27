@@ -4,7 +4,7 @@
   "title": "AgentScout MCP server",
   "version": "1.0.2",
   "protocolVersion": "2025-06-18",
-  "endpoint": "https://agentscout-mcp.agentscouthq.workers.dev/mcp",
+  "endpoint": "https://mcp.agentscouthq.com/mcp",
   "serverInfo": {
     "name": "agentscout",
     "title": "AgentScout directory",
@@ -14,7 +14,7 @@
   "documentationUrl": "https://agentscouthq.com/mcp/connect.html",
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://agentscout-mcp.agentscouthq.workers.dev/mcp"
+    "endpoint": "https://mcp.agentscouthq.com/mcp"
   },
   "authentication": {
     "required": false
@@ -41,6 +41,10 @@
     {
       "name": "best_for_task",
       "description": "Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters."
+    },
+    {
+      "name": "list_packages",
+      "description": "List AgentScout's 4 maker listing & sponsorship tiers ($0 Free, $29 Fast-Track, $49 30-Day Category Pin, $99/wk Weekly Sponsor) with direct Stripe Checkout URLs, plus the Made by AgentScout pre-trained bot catalog."
     }
   ]
 }

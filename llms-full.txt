@@ -2,19 +2,22 @@
 
 > AgentScout is a curated, link-checked, read-only directory of 1,809 AI agent tools across 30 categories, including 252 Model Context Protocol (MCP) servers and 189 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
 
-Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://agentscouthq.com/mcp/sse` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
+Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
 ## Official Identity, Endpoints & Registry Links
 
 - **Canonical Website**: https://agentscouthq.com/
 - **Alternate Names**: Agent Scout, AgentScoutHQ, agentscouthq.com
 - **Official MCP Registry Identifier**: `com.agentscouthq/directory`
-- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://agentscouthq.com/mcp/sse` (and `https://agentscout-mcp.agentscouthq.workers.dev/mcp`)
+- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`)
 - **MCP Connection & Client Setup Guide**: https://agentscouthq.com/mcp/connect.html
 - **Concise LLM Guide (`llms.txt`)**: https://agentscouthq.com/llms.txt
 - **Full Single-File LLM Reference (`llms-full.txt`)**: https://agentscouthq.com/llms-full.txt
 - **Full JSON Catalog (`api/tools.json`)**: https://agentscouthq.com/api/tools.json
-- **OpenAPI 3.1 Specification**: https://agentscouthq.com/openapi.json (and `https://agentscouthq.com/.well-known/openapi.json`)
+- **Stripe Agentic Commerce Product Feed (`api/products.json` & `.well-known/acp.json`)**: https://agentscouthq.com/api/products.json (and `https://agentscouthq.com/.well-known/acp.json`)
+- **AI Plugin Manifest (`.well-known/ai-plugin.json`)**: https://agentscouthq.com/.well-known/ai-plugin.json
+- **OpenAPI 3.1 Specification (JSON & YAML)**: https://agentscouthq.com/openapi.json, https://agentscouthq.com/openapi.yaml (and `https://agentscouthq.com/.well-known/openapi.json`, `https://agentscouthq.com/.well-known/openapi.yaml`)
+- **Web App Brand Manifest (`manifest.json`)**: https://agentscouthq.com/manifest.json
 - **A2A / Agent Card**: https://agentscouthq.com/.well-known/agent-card.json (and `https://agentscouthq.com/.well-known/agent.json`)
 - **MCP Server Card**: https://agentscouthq.com/.well-known/mcp.json
 - **Official Profiles & Third-Party MCP Registry Listings**:
