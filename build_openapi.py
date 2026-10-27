@@ -121,6 +121,7 @@ def build_commerce_files(tools_data):
     last_checked = (tools_data.get("last_checked") if isinstance(tools_data, dict) else None) or "2026-10-27"
     n_tools = len(tools)
     n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
+    n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
     n_bt = 189
     if os.path.exists("bot-templates/index.html"):
         m_bt = re.search(r"(\d+)\s+installable\s+bot\s+templates", open("bot-templates/index.html", encoding="utf-8").read(), re.I)
@@ -215,13 +216,13 @@ def build_commerce_files(tools_data):
                 "billing_model": "weekly",
                 "availability": "in_stock",
                 "badge": "1 Exclusive Slot / Week",
-                "turnaround": "Immediate activation across all 2,350+ pages + Tuesday newsletter",
+                "turnaround": f"Immediate activation across all {n_pages:,}+ pages + Tuesday newsletter",
                 "checkout_url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
                 "page_url": B + "/sponsor.html",
-                "description": "Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all 2,350+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
+                "description": f"Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all {n_pages:,}+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
                 "deliverables": [
                     "Everything in 30-Day Category Pin ($49) included",
-                    "7 days in the exclusive sitewide top sponsor bar across all 2,350+ pages",
+                    f"7 days in the exclusive sitewide top sponsor bar across all {n_pages:,}+ pages",
                     "Featured card in the homepage Makers showcase (#makers)",
                     "Top 'Sponsored by' slot in Tuesday's AgentScout Weekly newsletter",
                     "Custom HUD video card spotlight on X",

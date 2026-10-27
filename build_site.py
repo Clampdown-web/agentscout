@@ -315,6 +315,8 @@ import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempo
 import build_intlinks; build_intlinks.run(t)  # Popular lists internal links on home/hub/top best pages (owner-approved Oct 22 2026)
 import build_fix1022; build_fix1022.run(t)  # category options in HTML, agent.json copy, lighter free-tools/new pages (Oct 22 2026)
 import build_aeo as _baeo; _baeo.sync_entity_schema()
+build_sponsor.page(t)  # refresh with final sitemap.xml count
+build_tasks.submit_page(t)
 build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, removes it when off
 
 import build_seo_new as _bsn; _bsn.sync_animations(t); _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)

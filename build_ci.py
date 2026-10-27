@@ -35,13 +35,13 @@ def cmp_table():
 def home(t):
     import build_aicite as _bac; _ul=_bac.mcp_uptime_line(t)
     n=mcp_n(t); s=open("index.html").read()
-    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b>{n:,} MCP servers</b>, link-checked daily</a> (<a href="mcp/link-status.html">{e(_ul)}</a>) · <a href="skills/">Agent Skills with install commands</a></p>'
+    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b><span data-live-mcp>{n:,}</span> MCP servers</b>, link-checked daily</a> (<a href="mcp/link-status.html">{e(_ul)}</a>) · <a href="skills/">Agent Skills with install commands</a></p>'
     s=_blk(s,"mcp",line,'</p><p class="quizcta">',after=False) if '<!--ci:mcp-->' not in s else re.sub(r"<!--ci:mcp-->.*?<!--/ci:mcp-->",f"<!--ci:mcp-->{line}<!--/ci:mcp-->",s,flags=re.S)
     tot=len(t)
     d=f"AgentScout: {tot:,} AI agent tools, including {n:,} MCP servers, link-checked daily. Coding agents, frameworks, browser use, voice and no-code."
     for a,k in (("name","description"),("property","og:description"),("name","twitter:description")):
         s=re.sub(rf'(<meta {a}="{k}" content=")[^"]*',lambda m:m.group(1)+e(d),s,count=1)
-    s=re.sub(r'(<a href="categories/mcp-servers.html">)\d[\d,]* MCP servers(</a>)',lambda m:m.group(1)+f"{n:,} MCP servers"+m.group(2),s)
+    s=re.sub(r'(<a href="categories/mcp-servers.html">)(?:<span data-live-mcp>)?\d[\d,]*(?:</span>)? MCP servers(</a>)',lambda m:m.group(1)+f'<span data-live-mcp>{n:,}</span> MCP servers'+m.group(2),s)
     blk=f'<h3 style="font-size:16px;margin:0 0 8px">Get listed free</h3>{cmp_table()}<p style="margin:0 0 16px"><a href="submit.html#free-form">Submit your tool free ($0) →</a> · <a href="sponsor.html#packages">Compare all 4 packages ($0 / $29 / $49 / $99) →</a></p>'
     s=_blk(s,"free",blk,'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>',after=False)
     open("index.html","w").write(s)
