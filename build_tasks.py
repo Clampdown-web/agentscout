@@ -317,7 +317,7 @@ def submit_page(t):
         '<span><b>Also send me AgentScout Weekly + the free 50 AI Agents &amp; 50 MCP Servers Cheat Sheet</b> <span style="color:var(--faint);font-weight:400">(optional · 1 email/wk, unsubscribe anytime)</span></span>'
         '</label>'
     )
-    form=(f'<form id="sf" style="max-width:620px;text-align:left" novalidate>'+pkg_sel
+    form=(f'<form id="sf" action="javascript:void(0)" method="post" style="max-width:620px;text-align:left" novalidate>'+pkg_sel
           +f("name","Tool name",extra='maxlength="80"')+f("website","Website","url",extra='placeholder="https://" maxlength="300"')+f("github","GitHub repo","url",False,'placeholder="https://github.com/…" maxlength="300"')
           +f'<label style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="category">Category</label><select id="category" name="category" {inp}>{opts}</select>'
           +f'<label style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="pricing">Pricing</label><select id="pricing" name="pricing" {inp}><option>Open source</option><option>Free</option><option>Freemium</option><option>Paid</option><option>Open source + cloud</option><option>Enterprise / contact sales</option></select>'
@@ -354,32 +354,27 @@ function syncPkg(val){
     var p=this.getAttribute("data-pick-pkg");
     if(p&&PKG_CFG[p]){syncPkg(p);var fm=document.getElementById("free-form");if(fm){e.preventDefault();fm.scrollIntoView({behavior:"smooth",block:"start"})}}
   })}
-  var qp=new URLSearchParams(location.search).get("pkg");
+  var qs=new URLSearchParams(location.search),qp=qs.get("pkg");
   if(qp&&PKG_CFG[qp])syncPkg(qp);
+  if(qs.get("type")!=="update"){
+    ["name","website","github","category","pricing","desc","email","x","found","foundother"].forEach(function(k){
+      var val=qs.get(k),el=document.getElementById(k);
+      if(val&&el&&!el.value)el.value=val;
+    });
+  }
 })();
 (function(){var P=new URLSearchParams(location.search),tl=(P.get("tool")||"").toLowerCase();if(P.get("type")!=="update"||!/^[a-z0-9-]{1,100}$/.test(tl))return;
 fetch("tools.json",{cache:"no-cache"}).then(function(r){return r.json()}).then(function(T){var x=(T||[]).filter(function(y){return y.slug===tl})[0];if(!x)return;UPD=tl;function s(id,v){var el=document.getElementById(id);if(el&&v)el.value=v}
 s("name",x.name);s("website",x.website||x.url);s("github",x.github);var c=document.getElementById("category");if([].some.call(c.options,function(o){return o.text===x.category}))c.value=x.category;
 var pm={"Open source":"Open source","Free":"Free","Freemium":"Freemium","Paid":"Paid","Open source + cloud":"Open source + cloud","Enterprise":"Enterprise / contact sales"};if(pm[x.pricing])document.getElementById("pricing").value=pm[x.pricing];
-var h=document.querySelector("section h1");if(h)h.textContent="Suggest an edit: "+x.name;var l=document.querySelector("section .lede");if(l)l.innerHTML='Spotted something wrong or out of date on the <a></a> listing? Fix the fields below and tell us what changed. We check every suggestion before anything on the site changes. It's free, also for makers.';if(l){var la=l.querySelector("a");la.textContent=x.name;la.setAttribute("href","tools/"+tl+".html")}
+var h=document.querySelector("section h1");if(h)h.textContent="Suggest an edit: "+x.name;var l=document.querySelector("section .lede");if(l)l.innerHTML='Spotted something wrong or out of date on the <a></a> listing? Fix the fields below and tell us what changed. We check every suggestion before anything on the site changes. It\'s free, also for makers.';if(l){var la=l.querySelector("a");la.textContent=x.name;la.setAttribute("href","tools/"+tl+".html")}
 document.getElementById("desclab").textContent="What should change? (no links here)";document.getElementById("desc").placeholder="e.g. Pricing is now $20/month; the repo moved to a new org.";var b=document.querySelector("#sf button[type=submit]");if(b)b.textContent="Send suggested edit"}).catch(function(){})})();(function(){var f=document.getElementById("sf"),er=document.getElementById("serr");function v(id){return document.getElementById(id).value.trim()}var fs=document.getElementById("found"),fo=document.getElementById("foundotherwrap"),WD={"Another AI directory":1,"AI assistant (Grok / ChatGPT / Claude / Perplexity)":1,"X (Twitter)":1,"Other":1};if(fs&&fo)fs.addEventListener("change",function(){var sh=!!WD[fs.value],isO=fs.value==="Other",inp=document.getElementById("foundother"),rq=document.getElementById("foundotherreq"),op=document.getElementById("foundotheropt");fo.hidden=!sh;if(inp){inp.required=isO;inp.setAttribute("aria-required",isO?"true":"false")}if(rq)rq.hidden=!isO;if(op)op.hidden=isO});function fnd(){var a=v("found"),o=WD[a]?v("foundother"):"",hf=a==="Other"?(o?"Other ("+o+")":"Other"):(o?a+" ("+o+")":a),wf=(a==="AI assistant (Grok / ChatGPT / Claude / Perplexity)"||o)?"Other":a,wo=a==="Other"?o:(o?a+" ("+o+")":(a==="AI assistant (Grok / ChatGPT / Claude / Perplexity)"?a:""));return{a:a,o:o,hf:hf,wf:wf,wo:wo}}
 function okUrl(u,gh){try{var x=new URL(u);return(x.protocol==="https:"||x.protocol==="http:")&&(!gh||/(^|\.)github\.com$/.test(x.hostname))}catch(e){return false}}
 f.addEventListener("submit",function(e){e.preventDefault();var n=v("name"),w=v("website"),g=v("github"),d=v("desc"),m=v("email"),x=v("x").replace(/^@/,""),pk=curPkg(),pc=PKG_CFG[pk]||PKG_CFG.free,nlChk=document.getElementById("sf-newsletter"),nlOpt=(nlChk&&nlChk.checked)?"yes":"no";
 var bad=!n?"Please add the tool name.":!okUrl(w)?"Please add a full website link starting with https://":(g&&!okUrl(g,1))?"The GitHub link should be a github.com URL.":!d?"Please add a short description.":(m&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m))?"Please add a valid email.":(nlOpt==="yes"&&!m)?"Please enter your maker email above so we can send AgentScout Weekly + the Cheat Sheet.":(x&&!/^[A-Za-z0-9_]{1,15}$/.test(x))?"X handles use letters, numbers and _ only.":"";
 if(!bad){var F=fnd();if(!F.a){bad="Please tell us how you found us.";fs.focus()}else if(F.a==="Other"&&!F.o){bad="Please say where you found us.";document.getElementById("foundother").focus()}}er.textContent=bad;if(bad)return;
 var pkTag=(pk!=="free"?"[PACKAGE: "+pc.label+"] ":"")+(nlOpt==="yes"?"[NL_OPTIN: yes] ":"");
-var body="Package: "+pc.label+"
-Newsletter Opt-In: "+nlOpt+"
-Tool name: "+n+"
-Website: "+w+"
-GitHub: "+(g||"-")+"
-Category: "+v("category")+"
-Pricing: "+v("pricing")+"
-Description: "+d+"
-Maker email: "+(m||"-")+"
-X: "+(x?"@"+x:"-")+"
-"+(fnd().a?"How I found you: "+fnd().a+(fnd().o?" ("+fnd().o+")":"")+"
-":"");
+var body="Package: "+pc.label+"\nNewsletter Opt-In: "+nlOpt+"\nTool name: "+n+"\nWebsite: "+w+"\nGitHub: "+(g||"-")+"\nCategory: "+v("category")+"\nPricing: "+v("pricing")+"\nDescription: "+d+"\nMaker email: "+(m||"-")+"\nX: "+(x?"@"+x:"-")+"\n"+(fnd().a?"How I found you: "+fnd().a+(fnd().o?" ("+fnd().o+")":"")+"\n":"");
 var mail="mailto:support@agentscouthq.com?subject="+encodeURIComponent((pk!=="free"?"["+pc.label+"] ":"")+"Tool submission: "+n)+"&body="+encodeURIComponent(body);document.getElementById("smail").href=mail;
 var btn=f.querySelector("button[type=submit]");btn.disabled=true;btn.textContent="Sending…";
 var bhUrl="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&utm_medium=submit_form_optin"+(m?"&email="+encodeURIComponent(m):"");
