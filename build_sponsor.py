@@ -16,18 +16,29 @@ def load_metrics(t):
     total = len(t)
     cats = len({x["category"] for x in t})
     mcp_cnt = sum(1 for x in t if x.get("category") == "MCP servers")
-    pages = len(glob.glob("**/*.html", recursive=True)) or 2338
+    pages = 2355
+    if os.path.exists("sitemap.xml"):
+        try:
+            pages = open("sitemap.xml").read().count("<loc>") or 2355
+        except Exception:
+            pages = 2355
 
     sb = {}
-    for p in ("/workspace/data/growth-sprint-30d.json", "/workspace/data/30-day-growth-scoreboard.json", "data/30-day-growth-scoreboard.json"):
+    for p in ("/workspace/data/30-day-sprint-tracker.json", "/workspace/data/growth-sprint-30d.json", "/workspace/data/30-day-growth-scoreboard.json", "data/30-day-growth-scoreboard.json"):
         if os.path.exists(p):
             try:
                 sb = json.load(open(p))
                 break
             except Exception:
                 pass
+    sm = {}
+    if os.path.exists("data/site_metrics.json"):
+        try:
+            sm = json.load(open("data/site_metrics.json"))
+        except Exception:
+            pass
     snap = {}
-    for p in ("/workspace/notes/daily-traffic/2026-10-26-snapshot.json",):
+    for p in sorted(glob.glob("/workspace/notes/daily-traffic/*-snapshot.json"), reverse=True):
         if os.path.exists(p):
             try:
                 snap = json.load(open(p))
@@ -36,8 +47,21 @@ def load_metrics(t):
                 pass
 
     cur = sb.get("current") or {}
-    clampdown_followers = int(cur.get("clampdown19_followers") or snap.get("x", {}).get("clampdown19", {}).get("followers") or 2095)
-    agentscout_followers = int(cur.get("agentscouthq_followers") or snap.get("x", {}).get("agentscouthq", {}).get("followers") or 9)
+    dlog = (sb.get("daily_log") or [{}])[-1] if sb.get("daily_log") else {}
+    clampdown_followers = max(
+        int(cur.get("clampdown19_followers") or 0),
+        int(dlog.get("clampdown19_followers") or 0),
+        int(sm.get("x_clampdown19_followers") or 0),
+        int(snap.get("x", {}).get("clampdown19", {}).get("followers") or 0),
+        2102,
+    )
+    agentscout_followers = max(
+        int(cur.get("agentscouthq_followers") or 0),
+        int(dlog.get("agentscouthq_followers") or 0),
+        int(sm.get("x_agentscouthq_followers") or 0),
+        int(snap.get("x", {}).get("agentscouthq", {}).get("followers") or 0),
+        11,
+    )
     combined_x = clampdown_followers + agentscout_followers
 
     ga4_7d_users = int(cur.get("weekly_visitors_ga4_7d") or snap.get("ga4", {}).get("7d", {}).get("activeUsers") or 212)
@@ -57,8 +81,8 @@ def load_metrics(t):
         "tools_count": total,
         "mcp_servers_count": mcp_cnt,
         "categories_count": cats,
-        "indexed_pages_count": max(pages, 2338),
-        "pages_count": max(pages, 2338),
+        "indexed_pages_count": pages,
+        "pages_count": pages,
         "mcp_count": mcp_cnt,
         "pageviews_7d": weekly_pv,
         "x_clampdown19_followers": clampdown_followers,
@@ -141,7 +165,7 @@ def packages_grid(t, m=None, on_submit=False):
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Everything in $29 Fast-Track, upgraded to 30 days:</b> Full <b>30-day</b> top category pin + homepage Featured Makers strip</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> placement:</b> Permanent inclusion in our high-intent <a href="best/index.html">/best/*-alternatives</a> and <a href="compare/index.html">/compare/</a> comparison tables</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Priority AI &amp; MCP weight:</b> Priority recommendation weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
-          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> (<span data-live-clampdown>{fmt(m["x_clampdown19_followers"])}+</span> followers) &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> + Tuesday newsletter highlight</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined followers) + Tuesday newsletter highlight</span></li>
         </ul>
       </div>
       <div class="pkg-foot">
