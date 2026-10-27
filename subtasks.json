@@ -6284,8 +6284,7 @@
 "agent-frameworks"
 ],
 "bidhelm": [
-"marketing-agents",
-"research-agents"
+"marketing-agents"
 ],
 "cliptalk": [
 "voice-phone",
@@ -7131,5 +7130,22 @@
 "guardrails",
 "terminal-agents",
 "stem-separation"
+],
+"desearch": [
+"web-scraping",
+"search-apis",
+"mcp-servers",
+"ide-agents"
+],
+"miqayel-ai": [
+"research-agents",
+"computer-use",
+"video-editing",
+"images-design"
+],
+"mangatranslate": [
+"vector-rag",
+"dialogue-cleanup",
+"images-design"
 ]
 }

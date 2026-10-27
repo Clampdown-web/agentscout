@@ -42273,17 +42273,17 @@
   {
     "name": "Bidhelm",
     "url": "https://bidhelm.com/",
-    "description": "Bidhelm is your AI marketing department. It researches your market, builds ads and landing pages, runs campaigns, moves budget to what works, and learns daily. It works within your limits without waiting on approvals and reports every change and why. From your first campaign to growth. Your AI marketing department.",
+    "description": "Bidhelm is your AI marketing department. It runs your ads and posts to your X profile. Live on Google Ads and your X profile today. From $79 a month. Start 14 days free. Cancel anytime.",
     "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
     "new": true,
-    "verified": "2026-10-24",
+    "verified": "2026-10-27",
     "added": "2026-10-21",
     "source": "Submission",
-    "pricing_detail": "Paid: from $79/month plus 3% of managed ad spend; 14-day free trial (card required, renews automatically unless cancelled)",
+    "pricing_detail": "From $79/month; 14-day free trial, cancel anytime",
     "use_cases": [
       "social posts & ads",
       "automate workflows"
@@ -47180,5 +47180,97 @@
     "good_for": "running any agent harness inside an OS-isolated sandbox whose shell, Python, network, and MCP actions are allowed or denied by Dogwood policies",
     "socials": [],
     "stars_checked": "2026-10-26"
+  },
+  {
+    "id": 1819,
+    "name": "Desearch",
+    "slug": "desearch",
+    "url": "https://desearch.ai/",
+    "website": "https://desearch.ai/",
+    "github": "https://github.com/Desearch-ai/mcp-desearch",
+    "repo": "Desearch-ai/mcp-desearch",
+    "github_stars": 1,
+    "stars_checked": "2026-10-27",
+    "category": "MCP servers",
+    "description": "Hosted Streamable HTTP MCP server (https://mcp.desearch.ai/mcp) and open-source adapter (MIT) giving Claude Code, Cursor, VS Code, and AI agents citable AI search, live web search, full-page extraction, and X (Twitter) post and profile search with your Desearch API key.",
+    "pricing": "Paid",
+    "pricing_detail": "Usage-based pay-as-you-go API ($5 starter credit in Console; AI Search $0.40/1K items, Web Search $1.00/1K searches, Extract $0.50/1K pages, X Search $0.15/1K posts; bring your own Desearch API key)",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP",
+      "monitor & evaluate agents"
+    ],
+    "good_for": "connecting Claude Code, Cursor, VS Code, or custom AI agents to live web search, citable AI search, page text extraction, and X (Twitter) post and profile data over hosted Streamable HTTP MCP (https://mcp.desearch.ai/mcp)",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-27",
+    "added": "2026-10-27",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-27",
+    "logo": "assets/logos/desearch.png",
+    "socials": [
+      "https://github.com/Desearch-ai/mcp-desearch"
+    ]
+  },
+  {
+    "id": 1820,
+    "name": "Miqayel AI",
+    "slug": "miqayel-ai",
+    "url": "https://miqayel.com/",
+    "website": "https://miqayel.com/",
+    "github": "",
+    "category": "app builders",
+    "description": "AI workspace for live web research, image creation and editing, and code generation with an interactive live Canvas preview, file analysis, computer use, and connected app automations in one interface.",
+    "pricing": "Freemium",
+    "pricing_detail": "Freemium workspace with free tier and paid plans",
+    "use_cases": [
+      "write code",
+      "research the web",
+      "automate workflows"
+    ],
+    "good_for": "researching the live web, generating and editing images, and building code or apps with an interactive live Canvas preview in a single AI workspace",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-27",
+    "added": "2026-10-27",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-26",
+    "logo": "assets/logos/miqayel-ai.png",
+    "socials": [
+      "https://x.com/MiqayelAIOwner"
+    ]
+  },
+  {
+    "id": 1821,
+    "name": "MangaTranslate",
+    "slug": "mangatranslate",
+    "url": "https://www.mangatranslate.com/",
+    "website": "https://www.mangatranslate.com/",
+    "github": "",
+    "category": "vision",
+    "description": "AI manga, manhwa, comic, and PDF image translator by Ficory LLC featuring multi-language OCR text recognition across 100+ languages, automatic original text removal, background inpainting, smart typesetting, batch image processing, and interactive dialogue review.",
+    "pricing": "Freemium",
+    "pricing_detail": "Freemium online translator with free tier and paid translation plans",
+    "use_cases": [
+      "computer vision"
+    ],
+    "good_for": "translating manga, manhwa, comics, and PDF pages across 100+ languages with OCR bubble detection, original text removal, background inpainting, and batch dialogue editing",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-27",
+    "added": "2026-10-27",
+    "source": "Maker submission",
+    "maker_submitted": true,
+    "submitted": "2026-10-26",
+    "logo": "assets/logos/mangatranslate.png",
+    "socials": []
   }
 ]
