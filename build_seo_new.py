@@ -97,7 +97,7 @@ def answer_blocks(t):
             '<div style="margin:0 0 18px;border:1px solid rgba(56,189,248,.45);border-radius:14px;overflow:hidden;background:#080a12;box-shadow:0 0 32px rgba(14,165,233,.2)">'
             '<video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-home-terminal-poster.png" width="1200" height="620" style="display:block;width:100%;height:auto">'
             '<source src="assets/animations/agentscout-home-terminal.mp4" type="video/mp4">'
-            '<img src="assets/animations/agentscout-home-terminal-poster.png" alt="AgentScout Live Verification Terminal — 6 AI agents verifying 1,796+ AI agent tools and 250+ MCP servers daily" width="1200" height="620" loading="lazy">'
+            '<img src="assets/animations/agentscout-home-terminal-poster.png" alt=f"AgentScout Live Verification Terminal — 6 AI agents verifying {len(tools):,}+ AI agent tools and {mcp_count:,}+ MCP servers daily" width="1200" height="620" loading="lazy">'
             '</video>'
             '<div style="padding:10px 14px;font-size:13px;color:#cbd5e1;border-top:1px solid rgba(56,189,248,.22);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">'
             '<span><strong style="color:#38bdf8">⚡ AgentScout Terminal v2.6-live:</strong> 6 autonomous agents scanning GitHub &amp; MCP registries, filtering dead links, benchmarking velocity &amp; verifying JSON-RPC endpoints daily.</span>'

@@ -1,7 +1,7 @@
 (function(){
   /* Daily art: read the live manifest (also used by the app) so site and app show the same image URL. */
   fetch("api/generator-daily.json?t="+Math.floor(Date.now()/3e5),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.path)document.documentElement.style.setProperty("--gen-art","url("+d.path+")")}).catch(function(){});
-  var WORKER_URL="https://agentscout-image.agentscouthq.workers.dev/generate";
+  var WORKER_URL="https://api.agentscouthq.com/generate",WORKER_FB="https://agentscout-image.agentscouthq.workers.dev/generate";
   var TURNSTILE_SITEKEY=""; // optional; set with TURNSTILE_ENABLED=true on the Worker
   var EX=["A friendly robot agent sorting a toolbox of glowing app icons","A team of tiny AI agents building a website, isometric illustration","A coding agent typing at a futuristic terminal, neon blue","A voice AI assistant as a glowing sound wave character","An AI browser agent surfing the web on a paper airplane"];
   var COOL=45000,KEY="as_ig_last",f=document.getElementById("ig-form"),p=document.getElementById("ig-prompt"),
@@ -20,7 +20,7 @@
     e.preventDefault();var q=p.value.trim().slice(0,300);if(!q||busy||left()>0)return;
     busy=true;go.disabled=true;st.textContent="Generating… this usually takes a few seconds.";
     localStorage.setItem(KEY,Date.now());
-    fetch(WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({prompt:q,turnstileToken:tsToken})})
+    fetch(WORKER_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({prompt:q,turnstileToken:tsToken})}).catch(function(){return fetch(WORKER_FB,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({prompt:q,turnstileToken:tsToken})})})
     .then(function(r){
       if(r.ok&&/^image\//.test(r.headers.get("Content-Type")||""))return r.blob();
       return r.json().catch(function(){return{}}).then(function(j){throw new Error(j.error||(r.status==429?"Today's free images are used up. Please try again tomorrow.":"Image generation failed. Please try again shortly."))});

@@ -7,7 +7,7 @@
 - Adds a "rating" object to api/tools.json for tools with ratings.
 Called from build_site.py after build_api, on every build."""
 import json,os,re,html,glob,urllib.request,datetime
-W="https://agentscout-image.agentscouthq.workers.dev"
+W="https://api.agentscouthq.com"
 e=lambda s:html.escape(str(s if s is not None else ""))
 def data():
     try:

@@ -42,6 +42,10 @@ def _csp(m):
         c = re.sub(r"script-src ([^;]*)", lambda k: "script-src " + k.group(1) + " " + GTM, c, count=1)
     if "google-analytics.com" not in c:
         c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " " + GA_CONNECT, c, count=1)
+    if "https://api.agentscouthq.com" not in c:
+        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://api.agentscouthq.com", c, count=1)
+    if "https://agentscout.beehiiv.com" not in c.split("frame-src")[0]:
+        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://agentscout.beehiiv.com", c, count=1)
     return m.group(1) + c + m.group(3)
 def skip(path, s):
     p = path.replace("\\", "/").lstrip("./")

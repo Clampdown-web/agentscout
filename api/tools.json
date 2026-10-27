@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-10-27T15:48:22Z",
- "updated": "2026-10-27T15:48:22Z",
+ "generated": "2026-10-27T16:22:44Z",
+ "updated": "2026-10-27T16:22:44Z",
  "last_checked": "2026-10-27",
  "count": 1809,
  "tools": [
@@ -21869,7 +21869,7 @@
     "average": 5,
     "count": 5,
     "approved_reviews": 2,
-    "reviews_api": "https://agentscout-image.agentscouthq.workers.dev/reviews?tool=betterclaw"
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=betterclaw"
    }
   },
   {
@@ -62955,7 +62955,7 @@
     "average": 5,
     "count": 1,
     "approved_reviews": 0,
-    "reviews_api": "https://agentscout-image.agentscouthq.workers.dev/reviews?tool=monobot-ai"
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=monobot-ai"
    }
   },
   {

@@ -6,7 +6,7 @@
 import json,os,glob,datetime,urllib.request
 import build_extras as X
 B=X.B; e=X.e
-URL="https://agentscout-image.agentscouthq.workers.dev/trending"
+URL="https://api.agentscouthq.com/trending"
 MIN_TOOLS=10; MIN_STAR_DAYS=7; MIN_STAR_TOOLS=10
 def _fetch():
     try:

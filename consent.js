@@ -4,7 +4,7 @@
    Customize, and nothing optional runs until the visitor chooses. Elsewhere: a small dismissible notice, analytics
    and embeds on by default, opt-out one tap away. The choice is kept in localStorage "as_consent". */
 (function(){
-  var KEY="as_consent",V=1,GEO="https://agentscout-image.agentscouthq.workers.dev/geo",subs=[];
+  var KEY="as_consent",V=1,GEO="https://api.agentscouthq.com/geo",subs=[];
   var S={ready:false,decided:false,strict:true,analytics:false,embeds:false};
   function load(){try{var j=JSON.parse(localStorage.getItem(KEY)||"null");if(j&&j.v===V)return j}catch(e){}return null}
   function save(){try{localStorage.setItem(KEY,JSON.stringify({v:V,analytics:S.analytics,embeds:S.embeds,strict:S.strict,ts:new Date().toISOString()}))}catch(e){}}

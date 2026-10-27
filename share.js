@@ -8,7 +8,7 @@
      data-share-text. Without them a button shares this page, exactly as before.
    - Pages under /preview/ (hidden drafts) and pages that set window.ASNoTrack never POST a share, so they can't skew counts. */
 (function(){
-  var API="https://agentscout-image.agentscouthq.workers.dev",MIN=3;
+  var API="https://api.agentscouthq.com",MIN=3;
   function canon(b){if(b&&b.dataset&&b.dataset.shareUrl){try{return new URL(b.dataset.shareUrl,location.href).href}catch(e){}}var l=document.querySelector('link[rel="canonical"]');return (l&&l.href)||location.href.split("#")[0].split("?")[0]}
   function path(b){try{return new URL(canon(b)).pathname.toLowerCase()}catch(e){return location.pathname}}
   function internal(b){return !!window.ASNoTrack||/^\/preview\//.test(location.pathname.toLowerCase())||/^\/preview\//.test(path(b))}

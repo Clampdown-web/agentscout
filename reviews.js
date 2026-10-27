@@ -2,7 +2,8 @@
    Worker and handles the form. Fails silently if the API is down. No cookies; a random visitor ID in localStorage
    ("as-vid") enforces one rating per tool per visitor. */
 (function () {
-  var W = "https://agentscout-image.agentscouthq.workers.dev";
+  var W = "https://api.agentscouthq.com", W_FB = "https://agentscout-image.agentscouthq.workers.dev";
+  function wFetch(path, opts) { return fetch(W + path, opts).catch(function () { return fetch(W_FB + path, opts); }); }
   // "Rate this tool" (Oct 21 2026): jump to the form and put focus on the first star
   function rateJump(ev) { var fm = document.getElementById("rv-form"); if (!fm) return; try { loadTS() } catch (e) {} if (ev) ev.preventDefault()
     fm.scrollIntoView({ behavior: "smooth", block: "center" }); var r = fm.querySelector('input[name="rv-stars"]'); if (r) setTimeout(function () { try { r.focus({ preventScroll: true }) } catch (e) { r.focus() } }, 350) }
@@ -45,7 +46,7 @@
     }).join("");
     L.hidden = !R.length;
   }
-  fetch(W + "/reviews?tool=" + encodeURIComponent(tool)).then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
+  wFetch("/reviews?tool=" + encodeURIComponent(tool)).then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
 
   var f = $(".rv-form"); if (!f) return;
   var msg = $(".rv-msg"), btn = f.querySelector("button[type=submit]"), ta = f.querySelector("textarea"), cnt = $(".rv-cnt");
@@ -65,7 +66,7 @@
     if (TS_SITEKEY && !((f.querySelector('input[name="cf-turnstile-response"]') || {}).value)) { loadTS(); show("Please complete the quick check above, then press Submit.", "err"); return; }
     btn.disabled = true; show("Sending…");
     var ac = window.AbortController ? new AbortController() : null, tmo = setTimeout(function () { if (ac) ac.abort() }, 15000);
-    fetch(W + "/review", { signal: ac ? ac.signal : undefined, method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value, turnstileToken: (f.querySelector('input[name="cf-turnstile-response"]') || {}).value || "" }) })
+    wFetch("/review", { signal: ac ? ac.signal : undefined, method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tool: tool, stars: +s.value, text: text, name: (f.querySelector('input[name="rv-name"]').value || "").trim(), vid: vid(), website: f.querySelector('input[name="website"]').value, turnstileToken: (f.querySelector('input[name="cf-turnstile-response"]') || {}).value || "" }) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         clearTimeout(tmo); btn.disabled = false; try { window.turnstile && turnstile.reset() } catch (e) {}
@@ -73,7 +74,7 @@
         var m = mine(); m[tool] = +s.value; store("as-rated", JSON.stringify(m));
         show(x.j.pending ? "✓ Thanks! Your rating was saved. Your review will appear after a quick check." : "✓ Thanks! Your rating was saved.", "ok");
         if (x.j.pending) { ta.value = ""; if (cnt) cnt.textContent = "0 / 600"; }
-        fetch(W + "/reviews?tool=" + encodeURIComponent(tool) + "&t=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
+        wFetch("/reviews?tool=" + encodeURIComponent(tool) + "&t=" + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
         try { window.asTrack && window.asTrack("button_click", "review_submit"); } catch (e) {}
       })
       .catch(function (e) { clearTimeout(tmo); btn.disabled = false; try { window.turnstile && turnstile.reset() } catch (x) {} show(e && e.name === "AbortError" ? "This is taking too long. Please check your connection and try again." : "Couldn't send right now. Please try again later.", "err"); });

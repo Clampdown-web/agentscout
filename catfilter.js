@@ -13,5 +13,5 @@ var p=new URLSearchParams(location.search),v=function(id,x,ok){if(ok.indexOf(x)>
 v("fprice",p.get("price")||"",["free","freeplan","freemium","paid","unknown"]);v("fsort",p.get("sort")||"",["new","loved","stars","az"]);$("fos").checked=p.get("os")==="1";
 $("fprice").onchange=$("fos").onchange=$("fsort").onchange=run;$("freset").onclick=function(){$("fprice").value="";$("fos").checked=false;$("fsort").value="";run()};
 run();
-fetch("https://agentscout-image.agentscouthq.workers.dev/reviews/all",{headers:{"X-AgentScout-App":"1"}}).then(function(r){return r.ok?r.json():Promise.reject()}).catch(function(){return fetch("../reviews.json").then(function(r){return r.json()})}).then(function(j){if(j&&j.tools){RV=j.tools;if($("fsort").value==="loved")run()}}).catch(function(){});
+fetch("https://api.agentscouthq.com/reviews/all",{headers:{"X-AgentScout-App":"1"}}).then(function(r){return r.ok?r.json():Promise.reject()}).catch(function(){return fetch("../reviews.json").then(function(r){return r.json()})}).then(function(j){if(j&&j.tools){RV=j.tools;if($("fsort").value==="loved")run()}}).catch(function(){});
 })();

@@ -131,7 +131,7 @@ def connect_page(t):
         ("What is AgentScout's official MCP Registry ID and endpoint URL?",
          f"AgentScout's official MCP Registry ID is com.agentscouthq/directory. You can connect via Streamable HTTP at {MCP_URL} or SSE at https://agentscouthq.com/mcp/sse with no sign-up or API key."),
         ("How many AI agent tools and MCP servers does the AgentScout MCP server cover?",
-         f"The server searches {len(t):,}+ curated AI agent tools and {M:,} MCP servers across 21 categories. {uline}.")
+         f"The server searches {len(t):,}+ curated AI agent tools and {M:,} MCP servers across {len({x.get('category') for x in t if x.get('category')} )} categories. {uline}.")
     ]
     faq_html="".join(f'<details open class="faq" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)"><summary style="font-weight:600;cursor:pointer">{e(q)}</summary><p style="margin:8px 0 0;color:var(--muted);line-height:1.55">{e(a)}</p></details>' for q,a in faqs)
     body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server (<code>com.agentscouthq/directory</code>)</h1>'

@@ -19,7 +19,7 @@
     document.body.appendChild(d);setTimeout(function(){d.remove()},5000)}
     document.body?show():document.addEventListener("DOMContentLoaded",show)}
   if(OFF){window.ASTrack=function(){};window.ASNoTrack=true;return}
-  var URL_="https://agentscout-image.agentscouthq.workers.dev/track",q=[],t=null;
+  var URL_="https://api.agentscouthq.com/track",q=[],t=null;
   // Referrer: only the hostname of the page that linked here (e.g. "google.com"), never the full URL. "" = direct.
   var REF="";try{REF=document.referrer?new URL(document.referrer).hostname:""}catch(e){}
   // Campaign tags on the landing URL (utm_source/utm_medium/utm_campaign), lower-cased, max 40 chars each; sent with the batch, never stored per visitor.

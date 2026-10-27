@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head>
-<meta name="color-scheme" content="dark light"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: https:; connect-src 'self' https://agentscout-image.agentscouthq.workers.dev; frame-src https://challenges.cloudflare.com https://agentscout.beehiiv.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="color-scheme" content="dark light"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: https:; connect-src 'self' https://api.agentscouthq.com https://agentscout-image.agentscouthq.workers.dev https://agentscout.beehiiv.com; frame-src https://challenges.cloudflare.com https://agentscout.beehiiv.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <script>(function(){try{var t=localStorage.getItem("agentscout-theme")}catch(e){}if(t!=="dark"&&t!=="light")t="dark";document.documentElement.dataset.theme=t;window.asToggleTheme=function(){var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("agentscout-theme",n)}catch(e){}}})()</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
