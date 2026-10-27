@@ -303,7 +303,7 @@ def build(t):
                     "price": "99",
                     "priceCurrency": "USD",
                     "url": STRIPE_99,
-                    "description": "Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 2,338+ pages, homepage #makers showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter."
+                    "description": "Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 2,355+ pages, homepage #makers showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter."
                 }
             ]
         }
