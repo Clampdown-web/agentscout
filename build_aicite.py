@@ -122,7 +122,7 @@ LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offl
 def connect_page(t):
     M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"; uline=mcp_uptime_line(t)
     title="AgentScout MCP Server (com.agentscouthq/directory) · Connect"
-    desc=f"Official AgentScout MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse): 100% free, read-only over {len(t):,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
+    desc=f"Official AgentScout MCP server (com.agentscouthq/directory): free, read-only access to {len(t):,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
     pre=lambda s:f'<pre style="overflow-x:auto;max-width:100%;white-space:pre;padding:12px;border-radius:8px;border:1px solid rgba(127,127,127,.3);font-size:13px"><code>{e(s)}</code></pre>'
     cfg='{\n  "mcpServers": {\n    "agentscout": {\n      "url": "'+MCP_URL+'"\n    }\n  }\n}'
     faqs=[

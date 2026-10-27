@@ -259,8 +259,8 @@ def build(t):
   </section>
 {live_metrics_script("")}'''
 
-    title = "Sponsor & Get Featured on AgentScout — AI Agent & MCP Launch Packages ($0 / $29 / $49 / $99)"
-    desc = f"Submit your AI agent or MCP server for free ($0), fast-track with a 7-day boost ($29), pin for 30 days + permanent /best/ & /compare/ placement ($49), or book the $99/wk sitewide & newsletter sponsor across {fmt(total)}+ tools."
+    title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
+    desc = f"List your AI agent or MCP server free, fast-track it ($29), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {fmt(total)}+ tools."
 
     schema = {
         "@context": "https://schema.org",
