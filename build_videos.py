@@ -1,4 +1,4 @@
-"""Build How-To Video Guides & Pro Tips Hub (/videos/index.html) (Oct 28, 2026)."""
+"""Build Quick-Start Guides, Walkthroughs & Pro Tips hub (/videos/index.html)."""
 import os, re, json, datetime
 from build_extras import B, e, shell
 
@@ -25,7 +25,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-mcp-terminal-poster.png",
             "w": 1200,
             "h": 540,
-            "duration": "PT9S",
+            "duration": "PT20S",
             "steps": [
                 "Copy the one-line CLI command or JSON config block below (no API key or account needed).",
                 "Run it in your terminal for Claude Code, or paste into ~/.cursor/mcp.json or claude_desktop_config.json.",
@@ -52,7 +52,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-trained-bots-ad-poster.png",
             "w": 1200,
             "h": 560,
-            "duration": "PT12S",
+            "duration": "PT20S",
             "steps": [
                 "Choose any of the 4 downloadable Pro Bots separately ($39 AgentScout Operations / Monitoring Bot, $59 AgentScout SEO & AEO Growth Auditor Bot, $59 AgentScout Market & Launch Intel Bot, or $69 AgentScout CEO Coordinator Bot) or get all 4 together in the $149 4-Bot Company-in-a-Box Team Bundle (saves $77).",
                 "Unzip your instant download to get README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, custom AgentScout skills, and zero-key mcp.json.",
@@ -78,7 +78,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-vs-arena-poster.png",
             "w": 1200,
             "h": 520,
-            "duration": "PT9S",
+            "duration": "PT20S",
             "steps": [
                 "Open /compare/ to pick any two AI agents (e.g., Cursor vs Windsurf, Claude Code vs OpenCode, Browser Use vs Stagehand).",
                 "Check the verified pricing model, GitHub star growth, license type, and local/offline capability row by row.",
@@ -105,7 +105,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-home-terminal-poster.png",
             "w": 1200,
             "h": 620,
-            "duration": "PT11S",
+            "duration": "PT20S",
             "steps": [
                 "Filter the directory by price tag (Free, Freemium, Paid), open-source license, or task on the homepage.",
                 "Check the 'Links checked' badge on any tool page to see its latest HTTP 200 verification date and GitHub star count.",
@@ -132,7 +132,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-bot-constellation-poster.png",
             "w": 1200,
             "h": 540,
-            "duration": "PT9S",
+            "duration": "PT20S",
             "steps": [
                 "Open /free-tools.html and pick a calculator (all 19 run 100% client-side in your browser with zero signup).",
                 "Generate your mcp.json, system prompt cost estimate, or cron schedule expression and copy with 1 click.",
@@ -159,7 +159,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-sponsor-placements-poster.png",
             "w": 1200,
             "h": 560,
-            "duration": "PT9S",
+            "duration": "PT20S",
             "steps": [
                 "Submit your tool free at /submit.html#free-form ($0 forever, standard review queue, permanent /tools/<slug>.html page + MCP indexing).",
                 "Need same-day review + 7-day /new.html pin? Choose the $29 Fast-Track Launch Boost via Stripe or X Money (@clampdown19).",
@@ -186,7 +186,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-workflow-infographic-poster.png",
             "w": 1200,
             "h": 480,
-            "duration": "PT8S",
+            "duration": "PT20S",
             "steps": [
                 "Layer 1 & 2 (Code + Docs): Pair your terminal coding agent with Context7 MCP so it never hallucinates deprecated SDK methods.",
                 "Layer 3 & 4 (Browser + Sandbox): Run headless browser tasks and untrusted code inside an isolated sandbox runtime.",
@@ -213,7 +213,7 @@ def pages(t):
             "poster_url": f"{B}assets/animations/agentscout-radar-infographic-poster.png",
             "w": 1200,
             "h": 540,
-            "duration": "PT8S",
+            "duration": "PT20S",
             "steps": [
                 "Check /leaderboard/ to see top-rated and fastest-growing open-source AI agent repositories updated daily.",
                 "Use the 'Runs locally' filter in AgentScout MCP (runs_locally: 'offline' or 'self_hosted_or_offline') for strict privacy stacks.",
@@ -289,17 +289,16 @@ def pages(t):
             f'<a href="{e(u)}"' + (' target="_blank" rel="noopener noreferrer"' if u.startswith("http") else "") + f">{e(lbl)}</a>"
             for u, lbl in g["links"]
         )
-        vw = g.get("w", 1200)
-        vh = g.get("h", 540)
+        vw, vh = 1200, 640
         cards_html.append(
             f'<article class="vh-card" id="{e(g["id"])}" data-vh-cat="{e(g["cat"])}">'
-            f'<div class="vh-vidwrap"><video autoplay loop muted playsinline preload="metadata" poster="{e(g["poster"])}" width="{vw}" height="{vh}" style="aspect-ratio:{vw}/{vh}">'
+            f'<div class="vh-vidwrap"><video controls autoplay loop muted playsinline preload="metadata" poster="{e(g["poster"])}" width="{vw}" height="{vh}" style="aspect-ratio:{vw}/{vh}">'
             f'<source src="{e(g["video"])}" type="video/mp4">'
             f'</video></div>'
             f'<div class="vh-body">'
             f'<div class="vh-meta">'
             f'<span class="vh-badge" style="background:{g["color"]}22;border:1px solid {g["color"]}77;color:{g["color"]}">{e(g["cat_label"])} · {e(g["badge"])}</span>'
-            f'<span class="muted" style="font-size:12px">Guide #{idx} · 60fps MP4</span>'
+            f'<span class="muted" style="font-size:12px">Guide #{idx} · 20s Step-by-Step Walkthrough</span>'
             f'</div>'
             f'<h2 class="vh-title">{e(g["title"])}</h2>'
             f'<p class="vh-sum">{e(g["summary"])}</p>'
@@ -347,11 +346,11 @@ pills.forEach(function(btn){
 })();</script>'''
 
     body = (
-        '<div class="crumb"><a href="../index.html">AgentScout</a> / How-To Video Guides &amp; Pro Tips</div>'
+        '<div class="crumb"><a href="../index.html">AgentScout</a> / Quick-Start Guides, Walkthroughs &amp; Pro Tips</div>'
         '<section class="vh-hero">'
-        '<span class="vh-eyebrow">🎬 60FPS Walkthroughs · Full-Width Mobile Ready · Zero Signup</span>'
-        f'<h1>AI Agent &amp; MCP How-To Video Guides + Pro Tips ({len(guides)} Visual Walkthroughs)</h1>'
-        f'<p>Short, high-density visual walkthroughs showing how to connect AgentScout\'s free MCP server (<code>com.agentscouthq/directory</code>) to Claude Code, Cursor &amp; VS Code, compare {n_tools:,}+ AI agents side-by-side, deploy our downloadable Pro Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"> (<code>$39</code> / <code>$59</code> / <code>$59</code> / <code>$69</code> or all 4 for <code>$149</code>), and use 19 free browser calculators.</p>'
+        '<span class="vh-eyebrow">20s Step-by-Step · Pause &amp; Scrub Steps 1–3 · Zero Signup</span>'
+        f'<h1 data-pagefind-weight="10">Quick-Start Guides, Walkthroughs &amp; Pro Tips ({len(guides)})</h1>'
+        f'<p>Twenty-second walkthroughs with three steps each: connect AgentScout\'s free MCP server (<code>com.agentscouthq/directory</code>) to Claude Code, Cursor &amp; VS Code, compare {n_tools:,}+ AI agents side-by-side, deploy our downloadable Pro Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"> (<code>$39</code> / <code>$59</code> / <code>$59</code> / <code>$69</code> or all 4 for <code>$149</code>), and use 19 free browser calculators. Pause or scrub to Step 1, Step 2, or Step 3.</p>'
         '<div style="display:flex;flex-wrap:wrap;gap:8px">'
         '<a class="btn primary" href="../mcp/connect.html" style="background:#14b8a6;border-color:#14b8a6;color:#042f2e;font-weight:700">Connect Free MCP Server →</a>'
         '<a class="btn primary" href="../bot-store/" style="background:linear-gradient(135deg,#f59e0b,#f97316);border-color:#f59e0b;color:#0a0906;font-weight:800">🤖 Shop Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149) →</a>'
@@ -381,8 +380,8 @@ pills.forEach(function(btn){
     )
 
     canon = B + "videos/"
-    title = f"AI Agent & MCP Video Guides, Walkthroughs & Pro Tips ({len(guides)} Guides) · AgentScout"
-    desc = f"Watch {len(guides)} step-by-step 60fps video guides and pro tips for connecting MCP servers in Claude & Cursor, comparing {n_tools:,}+ AI agents, and deploying pre-trained Pro Bots ($39/$59/$59/$69/$149)."
+    title = "AI Agent & MCP Quick-Start Guides & Walkthroughs · AgentScout"
+    desc = "Step-by-step AI agent & MCP setup guides, 20s walkthroughs, copyable CLI snippets, and Pro Bot playbooks ($39/$59/$59/$69/$149)."
 
     video_objects = [
         {
@@ -411,10 +410,29 @@ pills.forEach(function(btn){
             },
             {
                 "@type": "ItemList",
-                "name": "AgentScout How-To Video Guides & Pro Tips",
+                "name": "AgentScout Quick-Start Guides, Walkthroughs & Pro Tips",
                 "numberOfItems": len(guides),
                 "itemListElement": video_objects,
             },
+            *[
+                {
+                    "@type": "HowTo",
+                    "name": g["title"],
+                    "description": g["summary"],
+                    "totalTime": "PT20S",
+                    "step": [
+                        {
+                            "@type": "HowToStep",
+                            "position": i,
+                            "name": f"Step {i} of 3",
+                            "text": st,
+                            "url": canon + "#" + g["id"],
+                        }
+                        for i, st in enumerate(g["steps"], 1)
+                    ],
+                }
+                for g in guides
+            ],
             {
                 "@type": "FAQPage",
                 "mainEntity": [
@@ -426,7 +444,7 @@ pills.forEach(function(btn){
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "AgentScout", "item": B},
-                    {"@type": "ListItem", "position": 2, "name": "Video Guides & Pro Tips", "item": canon},
+                    {"@type": "ListItem", "position": 2, "name": "Quick-Start Guides, Walkthroughs & Pro Tips", "item": canon},
                 ],
             },
         ],
@@ -434,6 +452,7 @@ pills.forEach(function(btn){
 
     html_out = shell("../", title, desc, canon, body, ld)
     html_out = html_out.replace("</head>", css + "</head>", 1)
+    html_out = html_out.replace('<main class="wrap">', '<main class="wrap" data-pagefind-body>', 1)
     open("videos/index.html", "w", encoding="utf-8").write(html_out)
     print(f"video guides hub: {len(guides)} guides written to videos/index.html")
     return [canon]

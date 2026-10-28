@@ -271,7 +271,7 @@ def made_by_agentscout_html(total=189):
         '<a class="bt-hub-tab pro" href="../bot-store/">🛒 Dedicated Bot Store ($39 / $59 / $59 / $69 · $149 Bundle) →</a>'
         '<a class="bt-hub-tab comm" href="#made-by-agentscout">🤖 Quick-Buy Pro Bots Below ↓</a>'
         f'<a class="bt-hub-tab comm" href="#bt-featured">📚 Browse {total} Free Community Templates ↓</a>'
-        '<a class="bt-hub-tab vid" href="../videos/">🎬 Watch How-To Video Guides (8) →</a>'
+        '<a class="bt-hub-tab vid" href="../videos/">🎬 Watch Quick-Start Guides (8) →</a>'
         '</div>'
         '<span class="muted" style="font-size:12.5px">Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex)</span>'
         '</div>'

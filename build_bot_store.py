@@ -84,8 +84,8 @@ def pages(t):
     import re
     n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
     canon = f"{B}bot-store/"
-    title = "AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69) & $149 4-Bot Team Bundle"
-    desc = "Buy the exact pre-trained autonomous bots that run AgentScout ($39 Ops Bot, $59 SEO & AEO Auditor Bot, $59 Market Intel Bot, $69 CEO Coordinator Bot, or $149 Full 4-Bot Bundle). Built natively for Grok Bot and compatible with Claude Code, Cursor & Codex."
+    title = "Pre-Trained Grok Bots ($39–$149) · AgentScout"
+    desc = "Download AgentScout Pro Bots: Ops $39, SEO & AEO $59, Market Intel $59, CEO $69, or all 4 for $149. Works with Grok, Claude, Cursor & Codex."
 
     body = (
         f'{CSS}'
@@ -105,7 +105,7 @@ def pages(t):
         f'<span>📦 <b>WHAT YOU ARE BUYING HERE:</b> Downloadable Pre-Trained AI Bot ZIP Packages (<code>SYSTEM.md</code> + Scheduled Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code>). <b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex). The 4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code>. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
         f'<a href="../sponsor.html#packages">Want to list or boost your AI tool in the AgentScout directory instead? ($0 / $29 / $49 / $99) →</a>'
         f'</div>'
-        f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=202610280208" type="video/mp4"></video></figure>'
+        f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="640" style="aspect-ratio:1200/640"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=202610280208" type="video/mp4"></video></figure>'
         f'<div class="bs-filters" role="toolbar" aria-label="Filter Bot Store by category">'
         f'<button type="button" class="bs-fbtn" data-filter="all" aria-pressed="true">All Bots (5)</button>'
         f'<button type="button" class="bs-fbtn" data-filter="ops" aria-pressed="false">🟢 Operations &amp; QA</button>'
@@ -245,7 +245,7 @@ def pages(t):
                 "thumbnailUrl": B + "assets/animations/agentscout-trained-bots-ad-poster.png",
                 "contentUrl": B + "assets/animations/agentscout-trained-bots-ad.mp4",
                 "uploadDate": "2026-10-28T02:00:00-07:00",
-                "duration": "PT11S"
+                "duration": "PT20S"
             },
             {
                 "@type": "ItemList",

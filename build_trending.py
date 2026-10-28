@@ -52,7 +52,9 @@ def star_growth(t):
     gr=sorted([(Z[s]-A[s],s) for s in Z if s in A and s in bs and Z[s]>A[s]],reverse=True)[:25]
     if len(gr)<MIN_STAR_TOOLS: return held(f"only {len(gr)} repos grew")
     items=[(bs[s],g) for g,s in gr]; days=(ld_-d0).days; canon=B+path
-    title=f"Trending open-source AI agents (GitHub stars, last {days} days) · AgentScout"[:70]
+    title=f"Trending open-source AI agents ({days}d stars) · AgentScout"
+    if len(title) > 65:
+        title=f"Trending AI agents, last {days} days · AgentScout"
     desc=f"Open-source AI agent projects gaining the most GitHub stars over the last {days} days, from AgentScout's daily snapshots."
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / Trending open source</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Trending open-source AI agents</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">The {len(items)} listed open-source projects that gained the most GitHub stars between {e(d0.strftime("%b %-d"))} and {e(ld_.strftime("%b %-d, %Y"))}, from our daily snapshots of each repo.</p>'

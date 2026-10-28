@@ -292,7 +292,7 @@ def build(t):
         "name": title,
         "url": "https://agentscouthq.com/sponsor.html",
         "description": desc,
-        "video": {"@type": "VideoObject", "name": "AgentScout 4-Tier Launch & Placement Visibility Map", "description": "Animated site architecture map showing where $0 Free, $29 Fast-Track, $49 Category Pin, and $99/wk Sitewide Sponsor listings appear across AgentScout.", "thumbnailUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements-poster.png", "contentUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements.mp4", "uploadDate": "2026-10-26T18:00:00-07:00", "duration": "PT9S"},
+        "video": {"@type": "VideoObject", "name": "AgentScout 4-Tier Launch & Placement Visibility Map", "description": "Animated site architecture map showing where $0 Free, $29 Fast-Track, $49 Category Pin, and $99/wk Sitewide Sponsor listings appear across AgentScout.", "thumbnailUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements-poster.png", "contentUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements.mp4", "uploadDate": "2026-10-26T18:00:00-07:00", "duration": "PT20S"},
         "mainEntity": {
             "@type": "OfferCatalog",
             "name": "AgentScout Maker & Sponsor Packages",
