@@ -66,15 +66,18 @@ def long_titles():
         if s!=s0: open(f,"w").write(s); n+=1
     print("long titles trimmed:",n)
 
-# <meta charset> must sit in the first 1024 bytes (Lighthouse best-practices "charset"); move it right after <head> on every page (Oct 21 2026)
+# <meta charset> must sit in the first 1024 bytes (Lighthouse best-practices "charset"); move it right after <head> on every page (Oct 21 2026).
+# Referrer policy rides with charset so it stays in the head and is not duplicated.
+REFERRER_META='<meta name="referrer" content="strict-origin-when-cross-origin">'
 def charset_first():
     import glob; n=0
     for f in glob.glob("**/*.html",recursive=True):
         if f.startswith("pagefind"): continue
         s0=s=open(f).read()
         if '<meta charset="utf-8">' not in s or s.find('<meta charset="utf-8">')<600: continue
+        s=s.replace(REFERRER_META,"")
         s=s.replace('<meta charset="utf-8">',"",1)
-        s=re.sub(r"<head>\s*",lambda m:'<head>\n<meta charset="utf-8">',s,1)
+        s=re.sub(r"<head>\s*",lambda m:'<head>\n<meta charset="utf-8">'+REFERRER_META,s,1)
         if s!=s0: open(f,"w").write(s); n+=1
     print("charset moved:",n)
 

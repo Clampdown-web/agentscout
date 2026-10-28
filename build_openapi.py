@@ -130,11 +130,15 @@ def sync_products_snapshot(src="api/products.json"):
     if not os.path.isfile(src):
         return []
     data = open(src, encoding="utf-8").read()
-    dests = ["mcp-server/src/products_snapshot.json"]
+    dests = [
+        "mcp-server/src/products_snapshot.json",
+        "cloudflare-mcp-worker/products_snapshot.json",
+    ]
     extras = []
     worker = os.environ.get("AGENTSCOUT_MCP_WORKER")
     if worker:
         extras.append(os.path.join(worker, "src", "products_snapshot.json"))
+        extras.append(os.path.join(worker, "products_snapshot.json"))
     extras.append("/workspace/agentscout-mcp-worker/src/products_snapshot.json")
     for extra in extras:
         if os.path.isdir(os.path.dirname(extra)):
@@ -147,6 +151,60 @@ def sync_products_snapshot(src="api/products.json"):
         open(dest, "w", encoding="utf-8").write(data)
         wrote.append(dest)
     return wrote
+
+
+def sync_catalog_snapshot(src="api/tools.json", dest="cloudflare-mcp-worker/catalog_snapshot.json"):
+    """Write the MCP worker catalog from api/tools.json (counts must match the live directory)."""
+    import build_aeo
+    if not os.path.isfile(src):
+        return None
+    data = json.load(open(src, encoding="utf-8"))
+    tools = catalog_tools(data)
+    cats = sorted({(t.get("category") or "") for t in tools if t.get("category")})
+    mcp = sum(1 for t in tools if t.get("category") == "MCP servers")
+    if len(tools) != 2050 or len(cats) != 40 or mcp != 272:
+        raise SystemExit(f"catalog snapshot out of sync: tools={len(tools)} categories={len(cats)} mcp={mcp}")
+    slim = []
+    for t in tools:
+        loc = build_aeo.classify_locality(t)
+        gh = t.get("github") or None
+        lic = t.get("license") or None
+        slim.append({
+            "name": t.get("name"),
+            "slug": t.get("slug"),
+            "category": t.get("category"),
+            "description": t.get("description") or "",
+            "pricing": t.get("pricing") or "",
+            "price_tag": t.get("price_tag") or "unknown",
+            "open_source": bool(t.get("open_source")),
+            "github_stars": t.get("github_stars"),
+            "website": t.get("website") or t.get("url") or "",
+            "page": t.get("page") or "",
+            "key_features": t.get("key_features") or [],
+            "platforms": t.get("platforms") or [],
+            "tags": t.get("tags") or [],
+            "github": gh,
+            "license": lic,
+            "date_added": t.get("date_added") or t.get("added") or "",
+            "data_locality": loc,
+        })
+    snap = {
+        "schema_version": "1.0",
+        "source": "https://agentscouthq.com/api/tools.json",
+        "updated": data.get("updated"),
+        "last_checked": data.get("last_checked"),
+        "count": len(slim),
+        "category_count": len(cats),
+        "mcp_count": mcp,
+        "categories": cats,
+        "tools": slim,
+    }
+    os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
+    text = json.dumps(snap, ensure_ascii=False, separators=(",", ":")) + "\n"
+    if os.path.isfile(dest) and open(dest, encoding="utf-8").read() == text:
+        return None
+    open(dest, "w", encoding="utf-8").write(text)
+    return dest
 
 
 def build_commerce_files(tools_data):
@@ -275,7 +333,7 @@ def build_commerce_files(tools_data):
                 "stripe_payment_link_id": "plink_1UVTM8KVzDFIUga8S8sTUEYk",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-                "description": "Downloadable pre-trained operations and monitoring specialist bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) with automated 4-hour inbox triage, post-deploy HTTP & JSON-LD verification, 8-viewport responsive layout checks, and routine failure recovery ($39 one-time).",
+                "description": "General-purpose uptime and inbox monitor for a customer's own SaaS ({{YOUR_COMPANY}}, {{YOUR_DOMAIN}}): scheduled HTTP checks, support-inbox triage, and routine recovery. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $39 one-time.",
             },
             {
                 "id": "made-by-agentscout-seo-aeo-auditor",
@@ -289,7 +347,7 @@ def build_commerce_files(tools_data):
                 "stripe_payment_link_id": "plink_1UVTN9KVzDFIUga8hlFF6b5m",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-                "description": "Downloadable pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that checks Search Console rankings, JSON-LD entity graphs, llms.txt, ai-plugin.json, OpenAPI 3.1 specs, and ChatGPT/Perplexity/Google AI citation visibility ($59 one-time).",
+                "description": "General-purpose technical SEO and Core Web Vitals auditor for {{YOUR_DOMAIN}}: page-speed checks, titles, canonicals, structured data, and Search Console deltas for {{YOUR_COMPANY}}. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $59 one-time.",
             },
             {
                 "id": "made-by-agentscout-ci-analyst",
@@ -303,7 +361,7 @@ def build_commerce_files(tools_data):
                 "stripe_payment_link_id": "plink_1UVTNsKVzDFIUga8L9SU6bd5",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-                "description": "Downloadable pre-trained competitive intelligence analyst bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that tracks rival launches, pricing shifts, agentic commerce endpoints, Product Hunt & Hacker News traction, and 20-account X outlier hooks ($59 one-time).",
+                "description": "General-purpose competitor and launch tracker for {{YOUR_COMPANY}}: rival product launches, pricing-page changes, and a morning brief. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $59 one-time.",
             },
             {
                 "id": "made-by-agentscout-ceo-coordinator",
@@ -317,7 +375,7 @@ def build_commerce_files(tools_data):
                 "stripe_payment_link_id": "plink_1UVTOOKVzDFIUga8XtZvvoJG",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
-                "description": "Downloadable pre-trained executive builder and multi-bot dispatcher bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X & newsletter growth ($69 one-time).",
+                "description": "General-purpose executive coordinator for {{YOUR_COMPANY}}: reads the uptime, SEO, and competitor briefs and writes the daily team plan. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $69 one-time.",
             },
             {
                 "id": "made-by-agentscout-team-bundle",
@@ -331,7 +389,7 @@ def build_commerce_files(tools_data):
                 "stripe_payment_link_id": "plink_1UVTOsKVzDFIUga8IFPBfrph",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08",
-                "description": "All 4 downloadable bots together (1. AgentScout Operations / Monitoring Bot [$39] + 2. AgentScout SEO & AEO Growth Auditor Bot [$59] + 3. AgentScout Market & Launch Intel Bot [$59] + 4. AgentScout CEO Coordinator Bot [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex).",
+                "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime and inbox monitoring, technical SEO and Core Web Vitals, competitor and launch tracking, and executive coordination, sharing one /workspace/handoff/ folder. $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex).",
             },
         ],
     }
@@ -342,6 +400,7 @@ def build_commerce_files(tools_data):
     open("api/products.json", "w", encoding="utf-8").write(prod_str)
     open(".well-known/acp.json", "w", encoding="utf-8").write(prod_str)
     sync_products_snapshot()
+    sync_catalog_snapshot()
 
     ai_plugin = {
         "schema_version": "v1",
