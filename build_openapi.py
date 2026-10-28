@@ -233,7 +233,7 @@ def build_commerce_files(tools_data):
             {
                 "id": "made-by-agentscout-ops-monitor",
                 "sku": "AS-BOT-PRO-OPS-39",
-                "name": "1. Operations / Monitoring Bot — Made by AgentScout Pro Bot (Sold Separately)",
+                "name": "1. AgentScout Operations / Monitoring Bot — Made by AgentScout Pro Bot (Sold Separately)",
                 "category": "bot_template_pro",
                 "price_usd": 39,
                 "billing_model": "one_time",
@@ -245,7 +245,7 @@ def build_commerce_files(tools_data):
             {
                 "id": "made-by-agentscout-seo-aeo-auditor",
                 "sku": "AS-BOT-PRO-SEOAEO-59",
-                "name": "2. SEO / AEO Auditor Bot — Made by AgentScout Pro Bot (Sold Separately)",
+                "name": "2. AgentScout SEO & AEO Growth Auditor Bot — Made by AgentScout Pro Bot (Sold Separately)",
                 "category": "bot_template_pro",
                 "price_usd": 59,
                 "billing_model": "one_time",
@@ -257,7 +257,7 @@ def build_commerce_files(tools_data):
             {
                 "id": "made-by-agentscout-ci-analyst",
                 "sku": "AS-BOT-PRO-CI-59",
-                "name": "3. Competitive Intelligence Analyst Bot — Made by AgentScout Pro Bot (Sold Separately)",
+                "name": "3. AgentScout Market & Launch Intel Bot — Made by AgentScout Pro Bot (Sold Separately)",
                 "category": "bot_template_pro",
                 "price_usd": 59,
                 "billing_model": "one_time",
@@ -269,7 +269,7 @@ def build_commerce_files(tools_data):
             {
                 "id": "made-by-agentscout-ceo-coordinator",
                 "sku": "AS-BOT-PRO-CEO-69",
-                "name": "4. CEO Coordinator Bot — Made by AgentScout Pro Bot (Sold Separately)",
+                "name": "4. AgentScout CEO Coordinator Bot — Made by AgentScout Pro Bot (Sold Separately)",
                 "category": "bot_template_pro",
                 "price_usd": 69,
                 "billing_model": "one_time",
@@ -288,7 +288,7 @@ def build_commerce_files(tools_data):
                 "availability": "in_stock",
                 "page_url": B + "/bot-templates/#made-by-agentscout",
                 "checkout_url": B + "/bot-templates/#made-by-agentscout",
-                "description": "All 4 downloadable bots together (1. Operations / Monitoring [$39] + 2. SEO / AEO Auditor [$59] + 3. Competitive Intelligence Analyst [$59] + 4. CEO Coordinator [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77).",
+                "description": "All 4 downloadable bots together (1. AgentScout Operations / Monitoring Bot [$39] + 2. AgentScout SEO & AEO Growth Auditor Bot [$59] + 3. AgentScout Market & Launch Intel Bot [$59] + 4. AgentScout CEO Coordinator Bot [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77).",
             },
         ],
     }

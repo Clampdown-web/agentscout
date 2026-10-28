@@ -44,7 +44,7 @@ def pages(t):
             "badge": "Downloadable Pro Bots ($39 / $59 / $69 / $149)",
             "color": "#f59e0b",
             "title": "Deploy AgentScout's Pre-Trained Pro Bots ($39 / $59 / $59 / $69) & 4-Bot 'Company-in-a-Box' Bundle ($149)",
-            "summary": "See how 1. Operations / Monitoring ($39), 2. SEO / AEO Auditor ($59), 3. Competitive Intelligence Analyst ($59), and 4. CEO Coordinator ($69) coordinate via shared workspace handoffs, scheduled routines, and MCP tools — available separately ($226 total) or together in the $149 4-Bot Team Bundle (Save $77).",
+            "summary": "See how 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), and 4. AgentScout CEO Coordinator Bot ($69) coordinate via shared workspace handoffs, scheduled routines, and MCP tools — available separately ($226 total) or together in the $149 4-Bot Team Bundle (Save $77).",
             "video": "../assets/animations/agentscout-trained-bots-ad.mp4",
             "poster": "../assets/animations/agentscout-trained-bots-ad-poster.png",
             "video_url": f"{B}assets/animations/agentscout-trained-bots-ad.mp4",
@@ -53,7 +53,7 @@ def pages(t):
             "h": 560,
             "duration": "PT12S",
             "steps": [
-                "Choose any of the 4 downloadable Pro Bots separately ($39 Ops / Monitor, $59 SEO / AEO Auditor, $59 Competitive Intel Analyst, or $69 CEO Coordinator) or get all 4 together in the $149 4-Bot Company-in-a-Box Team Bundle (saves $77).",
+                "Choose any of the 4 downloadable Pro Bots separately ($39 AgentScout Operations / Monitoring Bot, $59 AgentScout SEO & AEO Growth Auditor Bot, $59 AgentScout Market & Launch Intel Bot, or $69 AgentScout CEO Coordinator Bot) or get all 4 together in the $149 4-Bot Company-in-a-Box Team Bundle (saves $77).",
                 "Receive the sanitized SYSTEM.md instructions, cron routine schedules, shared handoff protocol, and zero-key MCP config.",
                 "Import into Grok Bot, Claude Code, or Cursor on your own computer in under 3 minutes."
             ],
