@@ -1,0 +1,28 @@
+{
+  "name": "Graphic Designer",
+  "slug": "graphic-designer",
+  "tagline": "Ads, posts and thumbnails",
+  "version": "1.0.0",
+  "skill": "skills/brand-card-system/SKILL.md",
+  "script": "scripts/generate_brand_card_spec.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "price_usd": 59,
+  "checkout_url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05"
+}

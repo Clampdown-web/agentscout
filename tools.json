@@ -53582,5 +53582,29 @@
     "id": 2076,
     "slug": "mightybot",
     "logo": "assets/logos/mightybot.png"
+  },
+  {
+    "name": "Lovable",
+    "url": "https://lovable.dev",
+    "description": "Lovable is an AI app builder that turns a prompt into a full-stack web app you can edit, publish, and connect to your own tools.",
+    "category": "app builders",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "ready to use",
+    "featured": false,
+    "new": true,
+    "verified": "2026-10-28",
+    "added": "2026-10-28",
+    "source": "directory",
+    "pricing_detail": "Free tier; paid plans on lovable.dev",
+    "use_cases": [
+      "build apps without code",
+      "automate workflows"
+    ],
+    "website": "https://lovable.dev",
+    "github": "",
+    "id": 2077,
+    "slug": "lovable",
+    "logo": "assets/logos/lovable.png"
   }
 ]

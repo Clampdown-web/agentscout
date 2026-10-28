@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Translator",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "locale-parity",
+      "cron": "0 9 * * 1",
+      "title": "Weekly locale parity",
+      "prompt": "Verify i18n keys for {{YOUR_COMPANY}}. Report mismatches. Do not publish strings. Follow skills/i18n-key-parity/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/verify_i18n_keys.py"
+    }
+  ]
+}

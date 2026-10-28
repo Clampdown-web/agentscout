@@ -1,0 +1,881 @@
+{
+  "title": "AI Agent Packs",
+  "count": 25,
+  "agents": [
+    {
+      "slug": "accountant",
+      "title": "Accountant",
+      "tagline": "Bookkeeping and tax prep",
+      "dept": "ops",
+      "deptLabel": "Operations & Admin",
+      "color": "#60a5fa",
+      "icon": "ledger",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "bookkeeping-tax-prep",
+      "script": "reconcile_ledger.py",
+      "promise": "Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional.",
+      "heuristics": [
+        "Match bank lines to invoices and receipts before you invent a category.",
+        "A tolerance of a few cents is a match. A round hundred with no document is a question.",
+        "Separate money you have collected from money you have earned.",
+        "Flag contractor payments for a 1099 conversation. Do not decide the filing.",
+        "Put low-confidence rows in a needs-review queue instead of forcing a code.",
+        "Build a 13-week cash view from dated inflows and outflows, not from a hope."
+      ],
+      "routines": [
+        {
+          "id": "weekly-reconcile",
+          "cron": "0 8 * * 1",
+          "title": "Weekly ledger reconcile"
+        },
+        {
+          "id": "month-close",
+          "cron": "0 9 1 * *",
+          "title": "Month-end close pack"
+        },
+        {
+          "id": "quarterly-estimate",
+          "cron": "0 9 1 1,4,7,10 *",
+          "title": "Quarterly estimate reminder"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "graphic-designer",
+      "title": "Graphic Designer",
+      "tagline": "Ads, posts and thumbnails",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#f59e0b",
+      "icon": "pen",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "brand-card-system",
+      "script": "generate_brand_card_spec.py",
+      "promise": "Turn a brand kit into layout specs and an SVG card that keeps color, type, and contrast consistent.",
+      "heuristics": [
+        "One accent color does the pointing. A second accent is noise.",
+        "Headline under eight words. Brand name is a signature, not a second headline.",
+        "Check ink against background before you export. Aim for a 4.5 contrast ratio on text.",
+        "Design the 9:16 story and the 1.91:1 link card from the same tokens, not as unrelated pictures.",
+        "Leave a quiet edge of at least 64px so a platform crop does not eat the offer.",
+        "Write the image-model prompt after the layout is decided, so the prompt serves the design."
+      ],
+      "routines": [
+        {
+          "id": "weekly-asset-batch",
+          "cron": "0 10 * * 2",
+          "title": "Weekly social asset batch"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "lead-gen",
+      "title": "Lead Gen Agent",
+      "tagline": "Finds qualified leads daily",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#34d399",
+      "icon": "target",
+      "price": 59,
+      "stripe": "mkt",
+      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "skill": "icp-lead-scoring",
+      "script": "score_leads_pipeline.py",
+      "promise": "Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.",
+      "heuristics": [
+        "Write the ICP and the anti-ICP before you score a single row.",
+        "A buying signal beats a big employee count.",
+        "Dedupe on the domain, not the display name.",
+        "An email that fails a basic shape check does not enter the send queue.",
+        "Log where the row came from. A lead without a source is a rumor.",
+        "Cap the daily batch. A smaller list that sales will touch beats a dump."
+      ],
+      "routines": [
+        {
+          "id": "daily-lead-batch",
+          "cron": "0 8 * * 1-5",
+          "title": "Daily qualified lead batch"
+        },
+        {
+          "id": "weekly-icp-refresh",
+          "cron": "0 11 * * 5",
+          "title": "Weekly ICP refresh"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "copywriter",
+      "title": "Copywriter",
+      "tagline": "Captions, emails, sales pages",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#2dd4bf",
+      "icon": "quote",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "conversion-copy-audit",
+      "script": "audit_sales_copy.py",
+      "promise": "Draft and edit offers with a clear problem, proof, and a single next step.",
+      "heuristics": [
+        "Name the reader's situation before you name the product.",
+        "PAS for a pain the buyer already feels. AIDA when they are still browsing.",
+        "One claim, one proof, one button above the fold.",
+        "Replace a vague intensifier with a number, a noun, or a customer sentence.",
+        "Read the line aloud. If you run out of breath, split the sentence.",
+        "A headline test needs a hypothesis, not three random puns."
+      ],
+      "routines": [
+        {
+          "id": "copy-pass",
+          "cron": "0 9 * * 3",
+          "title": "Midweek copy pass"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "video-editor",
+      "title": "Video Editor",
+      "tagline": "Cuts reels and shorts",
+      "dept": "ops",
+      "deptLabel": "Operations & Admin",
+      "color": "#a78bfa",
+      "icon": "film",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "shortform-cut-captions",
+      "script": "format_captions_and_cuts.py",
+      "promise": "Turn a transcript into captions, a silence cut list, and a 9:16 storyboard.",
+      "heuristics": [
+        "The first three seconds must contain a change, a number, or a question. A logo card does not count.",
+        "Cut filler words and dead air. Keep the breath that makes a sentence human.",
+        "Captions are a script, not a dump of every false start.",
+        "Burned-in captions stay inside the safe center so interface buttons do not cover them.",
+        "Music needs a license note. Silence is better than a track you cannot name.",
+        "One video, one job. Do not hide a second offer in the last second."
+      ],
+      "routines": [
+        {
+          "id": "caption-pass",
+          "cron": "0 15 * * 1-5",
+          "title": "Weekday caption pass"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "outreach-agent",
+      "title": "Outreach Agent",
+      "tagline": "Cold emails and follow-ups",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#22d3ee",
+      "icon": "mail",
+      "price": 59,
+      "stripe": "mkt",
+      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "skill": "cold-email-sequence",
+      "script": "lint_outreach_sequence.py",
+      "promise": "Draft a short, specific sequence and lint it before anyone hits send.",
+      "heuristics": [
+        "Under 125 words. One ask. One real detail from the prospect, not a mail-merge compliment.",
+        "Space steps two to four days apart. A next-day bump looks desperate.",
+        "Write the reply path: interested, not now, out of office, unsubscribe.",
+        "Spam-trigger words are a smell. Specifics send better than urgency.",
+        "SPF, DKIM, and DMARC are readiness checks, not a guarantee of the inbox.",
+        "CAN-SPAM still wants a real postal address and a way to stop mail."
+      ],
+      "routines": [
+        {
+          "id": "daily-draft-queue",
+          "cron": "30 8 * * 1-5",
+          "title": "Daily outreach drafts"
+        },
+        {
+          "id": "reply-triage",
+          "cron": "0 13,17 * * 1-5",
+          "title": "Reply intent pass"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "google-review-replier",
+      "title": "Google Review Replier",
+      "tagline": "Replies to every review",
+      "dept": "ops",
+      "deptLabel": "Operations & Admin",
+      "color": "#818cf8",
+      "icon": "star",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "review-reply-desk",
+      "script": "generate_review_replies.py",
+      "promise": "Draft a specific public reply for every review and a private path for anything serious.",
+      "heuristics": [
+        "Reply inside two days. A late thank-you still beats silence, but the habit is daily.",
+        "Use the name and one detail they actually wrote.",
+        "A keyword may appear once if it fits. Stuffing the city into every sentence reads as spam.",
+        "Never offer a perk to change, delete, or post a review.",
+        "Safety, health, and legal comments leave the public thread immediately.",
+        "Ask happy customers for a review without gating it on a positive score."
+      ],
+      "routines": [
+        {
+          "id": "daily-review-drafts",
+          "cron": "0 9 * * *",
+          "title": "Daily review replies"
+        },
+        {
+          "id": "monthly-themes",
+          "cron": "0 10 1 * *",
+          "title": "Monthly review themes"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "seo-specialist",
+      "title": "SEO Specialist",
+      "tagline": "Gets you ranking on Google",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#fb7185",
+      "icon": "search",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "seo-aeo-site-audit",
+      "script": "seo_site_audit.py",
+      "promise": "Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.",
+      "heuristics": [
+        "One page, one query family. Two URLs chasing the same query need a canonical decision.",
+        "Title and H1 may rhyme. They should not be copies if the title can carry the specific modifier.",
+        "JSON-LD must match the visible name, price, and organization.",
+        "Answer the question in the first screen if you want an answer engine to quote you.",
+        "Internal links use the words a buyer would type, not 'click here'.",
+        "Do not invent Core Web Vitals. Say 'not measured' until field data exists."
+      ],
+      "routines": [
+        {
+          "id": "weekly-seo-crawl",
+          "cron": "0 7 * * 1",
+          "title": "Weekly SEO and AEO audit"
+        },
+        {
+          "id": "monthly-query-map",
+          "cron": "0 8 1 * *",
+          "title": "Monthly query map"
+        }
+      ],
+      "storeNote": "Checkout for a single SEO Specialist uses the SEO & AEO Growth Auditor payment link. The downloadable package is a general-purpose auditor for the buyer's own site."
+    },
+    {
+      "slug": "email-marketer",
+      "title": "Email Marketer",
+      "tagline": "Newsletters that sell",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#f472b6",
+      "icon": "send",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "newsletter-issue-score",
+      "script": "score_newsletter_issue.py",
+      "promise": "Shape a weekly issue, score the subject and preview, and keep the list clean.",
+      "heuristics": [
+        "One story per issue. A second offer belongs next week.",
+        "The preview text finishes the subject. It does not repeat it.",
+        "Write the plain-text twin with the same links.",
+        "Segment by behavior you measured, not by a persona you like.",
+        "A win-back is one honest note to quiet readers, then a sunset.",
+        "Unsubscribe is a feature. Hide it and you buy complaints."
+      ],
+      "routines": [
+        {
+          "id": "weekly-issue",
+          "cron": "0 9 * * 2",
+          "title": "Weekly newsletter draft"
+        },
+        {
+          "id": "monthly-hygiene",
+          "cron": "0 9 1 * *",
+          "title": "List hygiene note"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "customer-support",
+      "title": "Customer Support",
+      "tagline": "Answers customers 24/7",
+      "dept": "ops",
+      "deptLabel": "Operations & Admin",
+      "color": "#fb923c",
+      "icon": "life",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "support-ticket-triage",
+      "script": "triage_support_tickets.py",
+      "promise": "Triage tickets against the written policy, draft a macro, and route anything dangerous to a person.",
+      "heuristics": [
+        "Answer from the knowledge base. If it is not written, say you do not know and escalate.",
+        "Safety and legal language is P0 even if the tone is calm.",
+        "Refunds follow the policy in the business profile. Do not invent a goodwill exception.",
+        "Tell the customer when the next update will come. Then meet that time.",
+        "A macro is a starting paragraph, not a paste that ignores their order number.",
+        "Weekly top issues become documentation, not a longer inbox."
+      ],
+      "routines": [
+        {
+          "id": "hourly-triage",
+          "cron": "15 * * * *",
+          "title": "Inbox triage"
+        },
+        {
+          "id": "weekly-gaps",
+          "cron": "0 16 * * 5",
+          "title": "Weekly knowledge gaps"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "appointment-setter",
+      "title": "Appointment Setter",
+      "tagline": "Books calls on your calendar",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#38bdf8",
+      "icon": "cal",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "call-briefing-slots",
+      "script": "build_call_briefing.py",
+      "promise": "Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller.",
+      "heuristics": [
+        "Answer a new lead inside five minutes while the context is still warm.",
+        "Qualify before you offer the calendar. A meeting with no problem is a courtesy, not a pipeline.",
+        "Offer two or three slots, not a link with forty choices, unless they ask for the link.",
+        "Show times in their zone and repeat the zone name in the sentence.",
+        "Remind at 24 hours and 1 hour. One reschedule note after a no-show, then stop.",
+        "Leave buffer between calls so the briefing can be read."
+      ],
+      "routines": [
+        {
+          "id": "reminder-sweep",
+          "cron": "0 8 * * *",
+          "title": "Reminder and no-show sweep"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "personal-assistant",
+      "title": "Personal Assistant",
+      "tagline": "Runs your inbox and diary",
+      "dept": "ops",
+      "deptLabel": "Operations & Admin",
+      "color": "#c084fc",
+      "icon": "inbox",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "daily-exec-briefing",
+      "script": "daily_exec_briefing.py",
+      "promise": "Turn the inbox and calendar into a morning brief with conflicts called out.",
+      "heuristics": [
+        "Do, schedule, delegate, defer. Urgent and unimportant is a delegation, not a crisis.",
+        "Never delete mail. Archive only when the owner has said that folder is safe.",
+        "A conflict is two holds that overlap. Propose a move. Do not decline either.",
+        "The brief leads with the one decision that cannot wait.",
+        "Meeting prep is a page of questions, not a biography of the guest.",
+        "Travel items stay on a checklist until a confirmation number exists."
+      ],
+      "routines": [
+        {
+          "id": "morning-brief",
+          "cron": "0 7 * * 1-5",
+          "title": "Morning briefing"
+        },
+        {
+          "id": "friday-review",
+          "cron": "0 16 * * 5",
+          "title": "Friday weekly review"
+        }
+      ],
+      "storeNote": "Checkout for a single Personal Assistant uses the Operations / Monitoring Bot payment link. The package itself runs the buyer's inbox and diary, not a monitoring product for any other company."
+    },
+    {
+      "slug": "data-analyst",
+      "title": "Data Analyst",
+      "tagline": "Weekly reports and insights",
+      "dept": "product",
+      "deptLabel": "Product & Data",
+      "color": "#4ade80",
+      "icon": "chart",
+      "price": 69,
+      "stripe": "ceo",
+      "checkoutUrl": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
+      "checkoutLabel": "CEO Coordinator Bot ($69)",
+      "skill": "kpi-csv-analyst",
+      "script": "analyze_kpi_csv.py",
+      "promise": "Turn a KPI export into rates, a simple LTV, and a short narrative a founder can read.",
+      "heuristics": [
+        "Define the metric before you compute it. Name the numerator and the denominator.",
+        "Check nulls, duplicate months, and a single month that is an order of magnitude off.",
+        "An anomaly is a z-score plus a sentence, not a chart decoration.",
+        "LTV from ARPU divided by logo churn is directional. Say so.",
+        "Three bullets of 'so what' beat a gallery of charts.",
+        "If the export and the finance system disagree, stop and show both numbers."
+      ],
+      "routines": [
+        {
+          "id": "weekly-kpi",
+          "cron": "0 8 * * 1",
+          "title": "Weekly KPI narrative"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "social-media-manager",
+      "title": "Social Media Manager",
+      "tagline": "Plans and posts every day",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#34d399",
+      "icon": "share",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "social-hook-desk",
+      "script": "score_social_hooks.py",
+      "promise": "Score hooks, format a native post, and keep a calendar the owner can approve.",
+      "heuristics": [
+        "A hook with a number and a concrete noun beats a tease.",
+        "Write for the platform's length. Do not paste the LinkedIn post into a short caption.",
+        "Three to five pillars. If you cannot name them, you are improvising.",
+        "Reply to real comments before you invent tomorrow's post.",
+        "Tag links with a source you can read later.",
+        "Best time is the time your own account already earns attention, not a generic chart."
+      ],
+      "routines": [
+        {
+          "id": "daily-hooks",
+          "cron": "0 8 * * 1-5",
+          "title": "Daily hook score"
+        },
+        {
+          "id": "weekly-calendar",
+          "cron": "0 11 * * 5",
+          "title": "Next week's calendar"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "recruiter",
+      "title": "Recruiter",
+      "tagline": "Screens and shortlists hires",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#a78bfa",
+      "icon": "users",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "candidate-rubric",
+      "script": "score_candidate_rubric.py",
+      "promise": "Score candidates against a written rubric and write interview questions that test the work.",
+      "heuristics": [
+        "The scorecard exists before the first resume is opened.",
+        "Outcomes in the job post beat a pile of tool requirements.",
+        "Score evidence you can point to. A vibe is not a point.",
+        "Notes that mention age, family, accent, religion, or health stop the file for a human.",
+        "Do not auto-reject. A low score is a recommendation to review.",
+        "A pass note is short, respectful, and on time."
+      ],
+      "routines": [
+        {
+          "id": "daily-pipeline",
+          "cron": "30 9 * * 1-5",
+          "title": "Candidate pipeline nudge"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "web-designer",
+      "title": "Web Designer",
+      "tagline": "Builds landing pages",
+      "dept": "product",
+      "deptLabel": "Product & Data",
+      "color": "#60a5fa",
+      "icon": "layout",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "landing-page-ux-check",
+      "script": "check_landing_page_ux.py",
+      "promise": "Lay out a page that fits a phone and makes the next step obvious.",
+      "heuristics": [
+        "Pick a type and a color on purpose. A generic purple gradient is not a brand.",
+        "The first screen holds one promise, one proof, and one button.",
+        "360px and 390px must not scroll sideways.",
+        "Text contrast aims for 4.5 against its background.",
+        "Fixed pixel widths wider than the phone are a bug, not a look.",
+        "Empty image alts fail the page even if the picture is pretty."
+      ],
+      "routines": [
+        {
+          "id": "page-check",
+          "cron": "0 14 * * 3",
+          "title": "Landing page UX check"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "meta-ads-agent",
+      "title": "Meta Ads Agent",
+      "tagline": "Runs and scales your ads",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#fbbf24",
+      "icon": "megaphone",
+      "price": 59,
+      "stripe": "mkt",
+      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "skill": "ad-roas-rules",
+      "script": "evaluate_ad_roas.py",
+      "promise": "Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.",
+      "heuristics": [
+        "Change one cell of the hook, body, or call to action. A new everything is not a test.",
+        "Do not kill a campaign that has not spent enough to learn.",
+        "Scale only after the efficiency bar and a minimum conversion count.",
+        "Fatigue is frequency up and click-through down, together.",
+        "Every ad URL carries source, medium, campaign, and content tags.",
+        "Special-category ads follow the platform's housing, credit, and employment rules. When unsure, stop."
+      ],
+      "routines": [
+        {
+          "id": "daily-ads",
+          "cron": "0 8 * * 1-5",
+          "title": "Daily ad rules check"
+        },
+        {
+          "id": "weekly-creative",
+          "cron": "0 11 * * 4",
+          "title": "Weekly creative refresh"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "market-researcher",
+      "title": "Market Researcher",
+      "tagline": "Tracks your competitors",
+      "dept": "product",
+      "deptLabel": "Product & Data",
+      "color": "#4ade80",
+      "icon": "radar",
+      "price": 59,
+      "stripe": "mkt",
+      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "skill": "competitor-diff",
+      "script": "competitor_diff_check.py",
+      "promise": "Compare a competitor on price and features with a source URL and a date on every claim.",
+      "heuristics": [
+        "No source URL, no claim. A memory of a pricing page is not a source.",
+        "Date the snapshot. A price from last quarter is history, not their offer.",
+        "Diff features as a set. Marketing adjectives are not features.",
+        "If they are cheaper, say who that plan is for.",
+        "Review mining quotes the review. It does not launder it into your voice.",
+        "A launch is a dated change, not a rumor in a chat."
+      ],
+      "routines": [
+        {
+          "id": "weekly-diff",
+          "cron": "0 9 * * 1",
+          "title": "Weekly competitor diff"
+        }
+      ],
+      "storeNote": "Checkout for a single Market Researcher uses the Market & Launch Intel payment link. The package compares the buyer's own competitors from files they provide."
+    },
+    {
+      "slug": "content-strategist",
+      "title": "Content Strategist",
+      "tagline": "Plans 30 days of content",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#f472b6",
+      "icon": "stack",
+      "price": 59,
+      "stripe": "seo",
+      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "skill": "thirty-day-calendar",
+      "script": "generate_30day_calendar.py",
+      "promise": "Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces.",
+      "heuristics": [
+        "A pillar owns a cluster. Random topics do not compound.",
+        "Map each piece to a buyer stage so the month is not all 'buy now'.",
+        "Ready-to-buy stays the minority.",
+        "Repurpose after the source piece is good, not before.",
+        "Refresh a page that already earns traffic before you start a cousin URL.",
+        "A brief names the query, the outline, the sources, and the internal links."
+      ],
+      "routines": [
+        {
+          "id": "monthly-calendar",
+          "cron": "0 10 1 * *",
+          "title": "30-day calendar"
+        },
+        {
+          "id": "quarterly-refresh",
+          "cron": "0 10 1 1,4,7,10 *",
+          "title": "Decay and refresh list"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "tiktok-shop-manager",
+      "title": "TikTok Shop Manager",
+      "tagline": "Lists and promotes products",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#fb923c",
+      "icon": "bag",
+      "price": 59,
+      "stripe": "mkt",
+      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "skill": "shop-listing-optimizer",
+      "script": "optimize_shop_listing.py",
+      "promise": "Tighten a product listing, estimate creator commission, and brief a shoppable video.",
+      "heuristics": [
+        "The title says the product and the buyer. Cleverness that hides the noun fails search.",
+        "Banned claims stay out even if they would convert.",
+        "Four images minimum: pack, in use, contents, scale.",
+        "Inventory alerts fire before you promise a creator a week of posts.",
+        "Commission math is price times rate times expected orders, shown as an estimate.",
+        "Disclosure is on screen and in the caption when a creator is paid."
+      ],
+      "routines": [
+        {
+          "id": "daily-stock",
+          "cron": "0 8 * * 1-5",
+          "title": "Inventory alert check"
+        },
+        {
+          "id": "weekly-listing",
+          "cron": "0 11 * * 2",
+          "title": "Weekly listing audit"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "influencer-scout",
+      "title": "Influencer Scout",
+      "tagline": "Finds creators to work with",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#818cf8",
+      "icon": "spark",
+      "price": 59,
+      "stripe": "mkt",
+      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "skill": "creator-roi",
+      "script": "calculate_creator_roi.py",
+      "promise": "Shortlist creators with an engagement check, a cost estimate, and a brief a person can send.",
+      "heuristics": [
+        "Audience match matters more than follower count.",
+        "An engagement rate far above the usual range is a review flag, not a verdict.",
+        "CPM is price divided by thousands of followers. It is a planning number, not a promise of reach.",
+        "ROI uses the orders you are willing to forecast, labeled as a forecast.",
+        "The brief includes disclosure, usage rights, and the live URL you will pay on.",
+        "You do not contact a creator until the owner approves the shortlist."
+      ],
+      "routines": [
+        {
+          "id": "weekly-shortlist",
+          "cron": "0 10 * * 3",
+          "title": "Weekly creator shortlist"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "invoice-chaser",
+      "title": "Invoice Chaser",
+      "tagline": "Gets you paid on time",
+      "dept": "sales",
+      "deptLabel": "Sales & Outreach",
+      "color": "#f59e0b",
+      "icon": "coin",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "ar-aging",
+      "script": "aging_ar_report.py",
+      "promise": "Show who owes what, which tone to use, and when to stop and call.",
+      "heuristics": [
+        "Every note includes the payment link and the invoice number.",
+        "Tone climbs with age: upcoming, polite, firm, owner. It does not start at a threat.",
+        "A written dispute pauses the ladder.",
+        "Late fees exist only when the contract says so.",
+        "Buckets are current, 1-30, 31-60, 61-90, and older.",
+        "Past 30 days, {{YOUR_OWNER_NAME}} sees the note before it goes out."
+      ],
+      "routines": [
+        {
+          "id": "daily-dunning",
+          "cron": "0 9 * * 1-5",
+          "title": "Dunning draft queue"
+        },
+        {
+          "id": "weekly-aging",
+          "cron": "0 9 * * 1",
+          "title": "Weekly AR aging"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "product-builder",
+      "title": "Product Builder",
+      "tagline": "Creates digital products",
+      "dept": "product",
+      "deptLabel": "Product & Data",
+      "color": "#a3e635",
+      "icon": "box",
+      "price": 69,
+      "stripe": "ceo",
+      "checkoutUrl": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
+      "checkoutLabel": "CEO Coordinator Bot ($69)",
+      "skill": "pricing-and-mvp-scope",
+      "script": "model_product_pricing.py",
+      "promise": "Cut an MVP, model three prices, and write a launch list a small team can finish.",
+      "heuristics": [
+        "Write the non-goals in the same sitting as the goals. Scope creep eats the sentence you skipped.",
+        "A feature earns its place with reach, impact, confidence, and effort.",
+        "Price from cost and a target margin, then sense-check it against the buyer's alternative.",
+        "Good, better, and best must be different products, not the same product with a louder adjective.",
+        "The success metric has a baseline and a date.",
+        "Support email is live before the first charge."
+      ],
+      "routines": [
+        {
+          "id": "weekly-scope",
+          "cron": "0 9 * * 1",
+          "title": "Weekly scope review"
+        }
+      ],
+      "storeNote": "Checkout for a single Product Builder uses the CEO Coordinator payment link. The package scopes the buyer's own product."
+    },
+    {
+      "slug": "community-manager",
+      "title": "Community Manager",
+      "tagline": "Keeps your community active",
+      "dept": "ops",
+      "deptLabel": "Operations & Admin",
+      "color": "#34d399",
+      "icon": "chat",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "community-health",
+      "script": "community_health_score.py",
+      "promise": "Measure who is quiet, welcome new members, and draft prompts a person can post.",
+      "heuristics": [
+        "A prompt is a question a member can answer from their own week.",
+        "New members get a welcome, a day-two nudge, and a day-seven check.",
+        "Lurkers are a metric, not a moral failing. Invite once. Do not nag.",
+        "Moderate the behavior against the written code. Do not improvise a new rule in public.",
+        "Personal data and harassment move to {{YOUR_SUPPORT_EMAIL}}.",
+        "FAQ entries come from questions asked twice."
+      ],
+      "routines": [
+        {
+          "id": "daily-community",
+          "cron": "0 10 * * 1-5",
+          "title": "Daily community draft"
+        },
+        {
+          "id": "weekly-digest",
+          "cron": "0 15 * * 5",
+          "title": "Weekly engagement digest"
+        }
+      ],
+      "storeNote": ""
+    },
+    {
+      "slug": "translator",
+      "title": "Translator",
+      "tagline": "Any language, instantly",
+      "dept": "marketing",
+      "deptLabel": "Marketing & Content",
+      "color": "#c084fc",
+      "icon": "lang",
+      "price": 39,
+      "stripe": "ops",
+      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "skill": "i18n-key-parity",
+      "script": "verify_i18n_keys.py",
+      "promise": "Keep translations aligned to a glossary and prove the keys and placeholders still match.",
+      "heuristics": [
+        "The glossary wins over a prettier synonym.",
+        "Do not translate the brand, the domain, or a placeholder token.",
+        "A missing key is a bug. An empty string is also a bug.",
+        "Placeholders must match the source in order and spelling.",
+        "UI strings have a length budget. A correct sentence that overflows the button is not done.",
+        "Legal and medical lines wait for a person. Fluency is not a license."
+      ],
+      "routines": [
+        {
+          "id": "locale-parity",
+          "cron": "0 9 * * 1",
+          "title": "Weekly locale parity"
+        }
+      ],
+      "storeNote": ""
+    }
+  ]
+}

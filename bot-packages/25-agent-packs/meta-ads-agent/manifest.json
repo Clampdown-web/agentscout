@@ -1,0 +1,28 @@
+{
+  "name": "Meta Ads Agent",
+  "slug": "meta-ads-agent",
+  "tagline": "Runs and scales your ads",
+  "version": "1.0.0",
+  "skill": "skills/ad-roas-rules/SKILL.md",
+  "script": "scripts/evaluate_ad_roas.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "price_usd": 59,
+  "checkout_url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Data Analyst",
+  "slug": "data-analyst",
+  "tagline": "Weekly reports and insights",
+  "version": "1.0.0",
+  "skill": "skills/kpi-csv-analyst/SKILL.md",
+  "script": "scripts/analyze_kpi_csv.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "price_usd": 69,
+  "checkout_url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07"
+}

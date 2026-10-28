@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Community Manager",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-community",
+      "cron": "0 10 * * 1-5",
+      "title": "Daily community draft",
+      "prompt": "Score health and draft one prompt for {{YOUR_COMPANY}}. Do not post or ban. Follow skills/community-health/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/community_health_score.py"
+    },
+    {
+      "id": "weekly-digest",
+      "cron": "0 15 * * 5",
+      "title": "Weekly engagement digest",
+      "prompt": "Summarize active rate, quiet new members, and FAQ gaps. Follow skills/community-health/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/community_health_score.py"
+    }
+  ]
+}

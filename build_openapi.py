@@ -6,7 +6,9 @@ Writes:
 - /manifest.json and /site.webmanifest (Web app brand manifest with #0B0F19 / #0EA5E9 & icons)
 - /openapi.json and /.well-known/openapi.json (OpenAPI 3.1 JSON)
 - /openapi.yaml and /.well-known/openapi.yaml (OpenAPI 3.1 YAML)"""
-import json, os, re
+import json, os, re, sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 
 B = "https://agentscouthq.com"
 MCP_HTTP = "https://mcp.agentscouthq.com/mcp"
@@ -114,6 +116,34 @@ def _to_yaml(v, indent=0):
     if isinstance(v, (int, float)):
         return str(v)
     return json.dumps(str(v), ensure_ascii=False)
+
+
+def _agent_packs(base):
+    """25 general-purpose business agents. Checkout reuses the flagship Stripe links."""
+    from agent_pack_catalog import public_cards
+    packs = []
+    for card in public_cards():
+        packs.append({
+            "id": "agent-pack-" + card["slug"],
+            "sku": "AS-PACK-" + card["slug"].upper().replace("-", ""),
+            "name": card["title"],
+            "tagline": card["tagline"],
+            "category": "business_agent_pack",
+            "department": card["deptLabel"],
+            "price_usd": card["price"],
+            "billing_model": "one_time",
+            "availability": "in_stock",
+            "compatibility": "Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, Lovable",
+            "page_url": base + "/bot-store/#ai-agent-packs",
+            "checkout_url": card["checkoutUrl"],
+            "checkout_label": card["checkoutLabel"],
+            "skill": "skills/" + card["skill"] + "/SKILL.md",
+            "script": "scripts/" + card["script"],
+            "routines": [r["id"] for r in card["routines"]],
+            "description": card["promise"] + " General-purpose template for the buyer's own company. Two or more agents check out on the $149 bundle link; the order note names the ZIPs.",
+            "zip": base + "/bot-packages/25-agent-packs/zips/" + card["slug"] + ".zip",
+        })
+    return packs
 
 
 def catalog_tools(data):
@@ -392,6 +422,7 @@ def build_commerce_files(tools_data):
                 "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime and inbox monitoring, technical SEO and Core Web Vitals, competitor and launch tracking, and executive coordination, sharing one /workspace/handoff/ folder. $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex).",
             },
         ],
+        "agent_packs": _agent_packs(B),
     }
 
     os.makedirs("api", exist_ok=True)
@@ -422,7 +453,9 @@ def build_commerce_files(tools_data):
             f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week); "
             f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor & OpenAI Codex) at {B}/bot-store/: "
             f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "
-            f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77)."
+            f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77). "
+            f"The Bot Store also sells a 25-role AI Agent Pack (accountant through translator) with the same Stripe links: "
+            f"$39, $59, or $149 when two or more roles are selected."
         ),
         "auth": {"type": "none"},
         "api": {

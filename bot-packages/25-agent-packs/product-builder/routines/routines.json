@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Product Builder",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "weekly-scope",
+      "cron": "0 9 * * 1",
+      "title": "Weekly scope review",
+      "prompt": "Re-score the backlog for {{YOUR_COMPANY}} and name anything that snuck into the MVP. Follow skills/pricing-and-mvp-scope/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/model_product_pricing.py"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Social Media Manager workspace rules
+
+- Company context lives in context/business-profile.md.
+- Follow skills/social-hook-desk/SKILL.md for this role.
+- Python helpers are stdlib only. Do not add a paid SDK.
+- Run scripts/score_social_hooks.py --dry-run after you change inputs.
+- Never commit real customer exports. Samples stay synthetic.
+- Do not add a tool catalog, a scraper, or a hard-coded directory endpoint.
+- Drafts only until {{YOUR_OWNER_NAME}} approves a send, post, spend, or delete.

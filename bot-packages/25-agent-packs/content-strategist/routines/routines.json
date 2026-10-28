@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Content Strategist",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "monthly-calendar",
+      "cron": "0 10 1 * *",
+      "title": "30-day calendar",
+      "prompt": "Draft next month's calendar for {{YOUR_COMPANY}}. Do not publish. Follow skills/thirty-day-calendar/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_30day_calendar.py"
+    },
+    {
+      "id": "quarterly-refresh",
+      "cron": "0 10 1 1,4,7,10 *",
+      "title": "Decay and refresh list",
+      "prompt": "List URLs that should be updated before new topics are added. Follow skills/thirty-day-calendar/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_30day_calendar.py"
+    }
+  ]
+}

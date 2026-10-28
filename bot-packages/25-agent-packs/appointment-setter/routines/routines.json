@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Appointment Setter",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "reminder-sweep",
+      "cron": "0 8 * * *",
+      "title": "Reminder and no-show sweep",
+      "prompt": "List calls in the next 24 hours and no-shows from yesterday for {{YOUR_COMPANY}}. Draft the notes. Do not send. Follow skills/call-briefing-slots/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/build_call_briefing.py"
+    }
+  ]
+}

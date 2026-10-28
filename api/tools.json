@@ -1,9 +1,9 @@
 {
  "version": 1,
- "generated": "2026-10-28T19:46:15Z",
- "updated": "2026-10-28T19:46:15Z",
+ "generated": "2026-10-28T22:38:12Z",
+ "updated": "2026-10-28T22:38:12Z",
  "last_checked": "2026-10-28",
- "count": 2050,
+ "count": 2051,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -86910,6 +86910,48 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/mightybot.png",
    "page": "https://agentscouthq.com/tools/mightybot.html"
+  },
+  {
+   "name": "Lovable",
+   "slug": "lovable",
+   "url": "https://lovable.dev",
+   "website": "https://lovable.dev",
+   "github": "",
+   "category": "app builders",
+   "description": "Lovable is an AI app builder that turns a prompt into a full-stack web app you can edit, publish, and connect to your own tools.",
+   "key_features": [
+    "Free tier; paid plans on lovable.dev",
+    "Active",
+    "Build apps without code",
+    "Automate workflows"
+   ],
+   "pricing": "Free tier; paid plans on lovable.dev",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-28",
+   "added": "2026-10-28",
+   "source": "directory",
+   "goals": [
+    "coding"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build apps without code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lovable.png",
+   "page": "https://agentscouthq.com/tools/lovable.html"
   }
  ],
  "total_tools": 2050

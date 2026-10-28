@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Personal Assistant",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "morning-brief",
+      "cron": "0 7 * * 1-5",
+      "title": "Morning briefing",
+      "prompt": "Write the morning brief for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not delete or send mail. Follow skills/daily-exec-briefing/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/daily_exec_briefing.py"
+    },
+    {
+      "id": "friday-review",
+      "cron": "0 16 * * 5",
+      "title": "Friday weekly review",
+      "prompt": "List open loops and next week's first three outcomes. Follow skills/daily-exec-briefing/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/daily_exec_briefing.py"
+    }
+  ]
+}

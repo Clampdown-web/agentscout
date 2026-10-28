@@ -1,5 +1,8 @@
-import os, re
+import os, re, sys
+from pathlib import Path
 from build_extras import B, e, shell, clip_text, clip_title
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
+from pack_builder_html import pack_section_html
 
 CSS = """<style id="bs-css">
 .bs-hero{margin:14px 0 22px;padding:24px 20px;text-align:center;border-radius:18px;border:2px solid #84cc16;background:radial-gradient(900px 280px at 0% 0%,rgba(132,204,22,.16),transparent 62%),radial-gradient(900px 280px at 100% 100%,rgba(16,185,129,.14),transparent 62%),#0b0d09;box-shadow:0 12px 34px rgba(0,0,0,.45),0 0 28px rgba(132,204,22,.15)}
@@ -97,6 +100,7 @@ def pages(t):
         f'<div class="bs-hero-badges">'
         f'<a class="bs-badge" href="#bot-packages" style="border-color:#a3e635;color:#ecfccb">🟢 $39 / 🟡 $59 / 🟠 $59 / 🔴 $69 Individual Bots</a>'
         f'<a class="bs-badge" href="#bundle-package" style="border-color:#34d399;color:#d1fae5">💚 $149 Full 4-Bot Bundle (Save $77)</a>'
+        f'<a class="bs-badge" href="#ai-agent-packs" style="border-color:#93c5fd;color:#dbeafe">AI Agent Packs · 25 trained roles</a>'
         f'<a class="bs-badge" href="../bot-templates/#bt-featured">📚 {n_bt} Free Community Bot Templates →</a>'
         f'<a class="bs-badge" href="../videos/#guide-trained-bots">🎬 Watch 60fps Video Walkthrough →</a>'
         f'</div>'
@@ -208,6 +212,7 @@ def pages(t):
         f'<a class="bs-btn" href="../bot-templates/#bt-featured" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#e5e7eb;flex:0 1 auto">Browse {n_bt} Free Community Bot Templates →</a>'
         f'</div></article>'
         f'</div>'
+        f'{pack_section_html()}'
         # FAQ & Platform Compatibility Box
         f'<section class="bs-faq" aria-labelledby="bs-faq-h">'
         f'<h2 id="bs-faq-h">What Platform Do These Run On? (Compatibility, Delivery &amp; License FAQ)</h2>'

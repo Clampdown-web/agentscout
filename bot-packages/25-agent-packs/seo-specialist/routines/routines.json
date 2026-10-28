@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "SEO Specialist",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "weekly-seo-crawl",
+      "cron": "0 7 * * 1",
+      "title": "Weekly SEO and AEO audit",
+      "prompt": "Audit the priority URLs for {{YOUR_COMPANY}}. Report issues only. Do not change the live site. Follow skills/seo-aeo-site-audit/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/seo_site_audit.py"
+    },
+    {
+      "id": "monthly-query-map",
+      "cron": "0 8 1 * *",
+      "title": "Monthly query map",
+      "prompt": "Refresh the query-to-page map and the cannibalization list. Follow skills/seo-aeo-site-audit/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/seo_site_audit.py"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Social Media Manager",
+  "slug": "social-media-manager",
+  "tagline": "Plans and posts every day",
+  "version": "1.0.0",
+  "skill": "skills/social-hook-desk/SKILL.md",
+  "script": "scripts/score_social_hooks.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "price_usd": 59,
+  "checkout_url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05"
+}

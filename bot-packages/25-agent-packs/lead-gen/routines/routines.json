@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Lead Gen Agent",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-lead-batch",
+      "cron": "0 8 * * 1-5",
+      "title": "Daily qualified lead batch",
+      "prompt": "Score today's prospect file for {{YOUR_COMPANY}}. Cap the qualified list. Do not email anyone. Follow skills/icp-lead-scoring/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/score_leads_pipeline.py"
+    },
+    {
+      "id": "weekly-icp-refresh",
+      "cron": "0 11 * * 5",
+      "title": "Weekly ICP refresh",
+      "prompt": "Compare wins and losses this week and propose one ICP edit for {{YOUR_OWNER_NAME}} to accept. Follow skills/icp-lead-scoring/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/score_leads_pipeline.py"
+    }
+  ]
+}

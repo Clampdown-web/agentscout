@@ -1,0 +1,28 @@
+{
+  "name": "Recruiter",
+  "slug": "recruiter",
+  "tagline": "Screens and shortlists hires",
+  "version": "1.0.0",
+  "skill": "skills/candidate-rubric/SKILL.md",
+  "script": "scripts/score_candidate_rubric.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "price_usd": 39,
+  "checkout_url": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03"
+}

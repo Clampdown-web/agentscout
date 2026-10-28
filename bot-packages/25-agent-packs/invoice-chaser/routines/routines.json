@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Invoice Chaser",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-dunning",
+      "cron": "0 9 * * 1-5",
+      "title": "Dunning draft queue",
+      "prompt": "Draft today's receivable notes for {{YOUR_COMPANY}}. Do not send. Follow skills/ar-aging/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/aging_ar_report.py"
+    },
+    {
+      "id": "weekly-aging",
+      "cron": "0 9 * * 1",
+      "title": "Weekly AR aging",
+      "prompt": "Produce the aging buckets and the total open receivable. Follow skills/ar-aging/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/aging_ar_report.py"
+    }
+  ]
+}

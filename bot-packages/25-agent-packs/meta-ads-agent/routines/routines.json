@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Meta Ads Agent",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-ads",
+      "cron": "0 8 * * 1-5",
+      "title": "Daily ad rules check",
+      "prompt": "Evaluate yesterday's ad export for {{YOUR_COMPANY}}. Recommend only. Do not change spend. Follow skills/ad-roas-rules/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/evaluate_ad_roas.py"
+    },
+    {
+      "id": "weekly-creative",
+      "cron": "0 11 * * 4",
+      "title": "Weekly creative refresh",
+      "prompt": "Propose the next three concepts that are not the current hook. Follow skills/ad-roas-rules/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/evaluate_ad_roas.py"
+    }
+  ]
+}

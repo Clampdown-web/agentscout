@@ -1,0 +1,28 @@
+{
+  "name": "TikTok Shop Manager",
+  "slug": "tiktok-shop-manager",
+  "tagline": "Lists and promotes products",
+  "version": "1.0.0",
+  "skill": "skills/shop-listing-optimizer/SKILL.md",
+  "script": "scripts/optimize_shop_listing.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "price_usd": 59,
+  "checkout_url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06"
+}

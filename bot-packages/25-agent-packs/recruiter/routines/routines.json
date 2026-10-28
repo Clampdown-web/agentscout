@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Recruiter",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-pipeline",
+      "cron": "30 9 * * 1-5",
+      "title": "Candidate pipeline nudge",
+      "prompt": "List candidates with no touch in three business days. Draft the next note. Do not send. Follow skills/candidate-rubric/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/score_candidate_rubric.py"
+    }
+  ]
+}

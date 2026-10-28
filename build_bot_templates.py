@@ -1,7 +1,10 @@
 """Extra Bot templates (Oct 21 2026 PT, owner request): data/bot-templates-extra.json -> rows on /bot-templates/ and
 one detail page each (bot-templates/<slug>.html). Idempotent; runs from build_site.py before build_tasks (nav/footer pass).
 The original templates (32 at launch) are static pages from the Oct 19 launch; this only adds/refreshes the extra ones."""
-import json,re,os,html
+import json,re,os,html,sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
+from pack_builder_html import pack_section_html
 esc=html.escape
 SITE="https://agentscouthq.com"; D="bot-templates"; MARK="<!-- btx-generated -->"
 SHARE_SVG='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>'
@@ -349,7 +352,9 @@ def made_by_agentscout_html(total=189):
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(12,10,6,.9);color:#d1fae5;border:1px solid #10b981">Pay $149 via X Money (@clampdown19)</a>'
         '<a class="mba-btn" href="../bot-store/" style="background:rgba(255,255,255,.08);color:#ecfccb;border:1px solid rgba(163,230,53,.5)">Full Bot Store Details →</a>'
         '</div></div>'
-        '</section><!--/bt-mba-->'
+        '</section>'
+        + pack_section_html()
+        + '<!--/bt-mba-->'
     )
 
 _run0=run
