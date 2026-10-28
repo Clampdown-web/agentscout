@@ -230,7 +230,7 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 .mba-head{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;margin-bottom:16px;padding:18px 20px;border-radius:12px;background:rgba(16,18,14,.92);border:1.5px solid rgba(52,211,153,.4);box-sizing:border-box}
 .mba-eyebrow{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(16,185,129,.18);border:1.5px solid #34d399;color:#6ee7b7;font-size:11.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin:0 auto 8px;box-shadow:0 0 12px rgba(16,185,129,.35)}
 .mba-head h2{margin:0 auto 8px;font-size:clamp(19px,2.5vw,25px);line-height:1.3;color:#fff;text-align:center;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
-.mba-head p{margin:0 auto;font-size:14px;line-height:1.55;color:#d6d3d1;max-width:820px;text-align:center}
+.mba-head p{margin:0 auto;padding:0 10px;font-size:14px;line-height:1.55;color:#d6d3d1;max-width:800px;text-align:center;box-sizing:border-box}
 .mba-vid{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(163,230,53,.45);background:#0a0906;line-height:0;box-shadow:0 0 20px rgba(132,204,22,.18)}
 .mba-vid video{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
 .mba-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}
@@ -246,7 +246,7 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 .mba-price small{font-size:12px;font-weight:600;color:#d6d3d1}
 .mba-tag{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
 .mba-card h3{margin:0 auto;font-size:16.5px;line-height:1.35;color:#fff;text-align:center}
-.mba-card p{margin:0 auto;font-size:13px;line-height:1.55;color:#d6d3d1;text-align:center}
+.mba-card p{margin:0 auto;padding:0 8px;font-size:13px;line-height:1.55;color:#d6d3d1;text-align:center;box-sizing:border-box}
 .mba-list{margin:0 auto;padding:0;list-style-position:inside;font-size:12.5px;line-height:1.5;color:#e7e5e4;text-align:center;width:100%}
 .mba-list li{margin-bottom:5px}
 .mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;width:100%;justify-content:center}
