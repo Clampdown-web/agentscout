@@ -3,7 +3,7 @@ info:
   title: "AgentScout Public Data & Agentic Commerce API"
   version: "1.1.0"
   summary: "Read-only static JSON feeds and Stripe Agentic Commerce product catalog for the AgentScout AI agent & MCP server directory."
-  description: "AgentScout lists 1,809 daily link-checked AI agent tools (including 252 MCP servers) plus purchasable maker listing boosts and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at https://mcp.agentscouthq.com/mcp (or SSE at https://agentscouthq.com/mcp/sse)."
+  description: "AgentScout lists 1,818 daily link-checked AI agent tools (including 253 MCP servers) plus purchasable maker listing boosts and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at https://mcp.agentscouthq.com/mcp (or SSE at https://agentscouthq.com/mcp/sse)."
   contact:
     name: "AgentScout"
     email: "support@agentscouthq.com"
@@ -631,7 +631,9 @@ components:
               date:
                 type: "string"
               tool:
-                type: "null"
+                type:
+                  - "null"
+                  - "string"
               summary:
                 type: "string"
               page:
@@ -644,7 +646,6 @@ components:
               - "url"
               - "date"
               - "tool"
-              - "summary"
               - "page"
               - "page_url"
         generate:

@@ -292,5 +292,29 @@
  "https://x.com/bgyankarki/status/2114767773796872322": {
   "summary": "With npx @thedriveai/cli signup, an agent gets a private workspace and MCP tools to save and organize files, then hands the human a claim link to review the work before taking it over.",
   "title": "The Drive AI lets any agent open its own file workspace with one command"
+ },
+ "https://x.com/i/trending/2115193410134987191": {
+  "summary": "Judgment Labs made its agent monitoring platform generally available: it captures full execution traces from long-running agents, runs customisable judges over them and uses a built-in agent to surface failure patterns, alerts and tests. The $32M-backed startup already counts Fluidstack and Modal as customers.",
+  "title": "Judgment Labs opens its AI agent monitoring platform to everyone"
+ },
+ "https://x.com/i/trending/2115223324565356550": {
+  "summary": "In a randomized Anthropic trial, 50 experienced analysts working with Claude Code matched the agent's secretly randomized preferences on judgment calls 86% of the time, often repeating its arguments while believing they had decided independently, even as the agent cut errors and sped up work.",
+  "title": "Anthropic study: Claude Code's hidden leanings steered expert analysts 86% of the time"
+ },
+ "https://x.com/i/trending/2115291381774340377": {
+  "summary": "Meta rolled out its Muse personal AI agent in Singapore, its fourth market, with task hand-offs to local services such as Shopee, Lazada, GrabMart, Singapore Airlines and Agoda; sensitive actions still need user approval, and paid plans start at S$22 a month.",
+  "title": "Meta's Muse personal agent launches in Singapore with Shopee, Grab and Agoda"
+ },
+ "https://x.com/i/trending/2115127969333047789": {
+  "summary": "Data platform Hex closed a $100M round at a $1.2B valuation and launched Hex 4.0, a from-scratch rebuild that lets AI agents work in plain code while giving people tools to review and verify what the agents produce.",
+  "title": "Hex raises $100M at a $1.2B valuation and rebuilds its product for AI agents"
+ },
+ "https://www.globenewswire.com/news-release/2026/10/28/3390231/0/en/jedify-launches-data-agents-autonomous-analysts-built-on-its-context-graph.html": {
+  "summary": "Jedify's new Data Agents let business teams describe an analysis in plain language and get an autonomous analyst that runs on demand, on a schedule or on a trigger, inherits the user's data permissions and can be called as an MCP tool from Claude, ChatGPT or Slack.",
+  "title": "Jedify launches Data Agents: plain-language AI analysts exposed over MCP"
+ },
+ "https://www.businesswire.com/news/home/20261028263826/en/Virtana-Launches-Agentic-Observability-Enterprise-Management-Ushering-in-a-New-Era-of-Collaborative-AI-Agents-for-Autonomous-IT": {
+  "summary": "Virtana introduced Agentic Observability Enterprise Management, where its AI agents use MCP and the Agent2Agent protocol to pull in ITSM, cloud, security and code agents into a shared war room that diagnoses and remediates incidents under enterprise approval policies; GA is planned for Q1 2027.",
+  "title": "Virtana's AOEM lets its agents recruit third-party agents over MCP and A2A to fix IT incidents"
  }
 }

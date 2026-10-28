@@ -1090,7 +1090,8 @@
 "agent-frameworks"
 ],
 "superplane": [
-"multi-agent"
+"guardrails",
+"workflow-automation"
 ],
 "steel": [
 "browser-automation",
@@ -7196,5 +7197,52 @@
 "the-drive-ai": [
 "mcp-servers",
 "terminal-agents"
+],
+"helix-foundry": [
+"text-to-sql",
+"vector-rag",
+"research-agents"
+],
+"pgx": [
+"text-to-sql",
+"sandboxes",
+"stem-separation"
+],
+"keypaste": [
+"agent-auth",
+"workflow-automation",
+"local-models",
+"terminal-agents"
+],
+"tofu": [
+"text-to-sql",
+"email-agents"
+],
+"ovis": [
+"voice-phone",
+"browser-automation",
+"computer-use",
+"terminal-agents"
+],
+"aseprite-ai-artist": [
+"evals",
+"mcp-servers",
+"terminal-agents",
+"rules-config"
+],
+"oil-ui": [
+"parallel-orchestration",
+"images-design"
+],
+"learnharness": [
+"planning-tasks",
+"computer-use",
+"agent-frameworks"
+],
+"signoz-mcp-server": [
+"observability",
+"mcp-servers",
+"local-models",
+"rules-config"
 ]
 }

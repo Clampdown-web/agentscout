@@ -1019,13 +1019,18 @@
   "name": "Serpstat MCP",
   "pricing": "Paid"
  },
+ "signoz-mcp-server": {
+  "link": "OK",
+  "name": "SigNoz MCP Server",
+  "pricing": "Open source + cloud"
+ },
  "simplebackups-mcp": {
   "link": "OK",
   "name": "SimpleBackups MCP",
   "pricing": "Freemium"
  },
  "skiplagged-mcp": {
-  "link": "OK",
+  "link": "Error",
   "name": "Skiplagged MCP",
   "pricing": "See site"
  },

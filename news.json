@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T14:00:34Z",
+ "updated": "2026-10-28T14:05:36Z",
  "sources": [
   "TechCrunch",
   "The Verge",
@@ -9,6 +9,40 @@
  ],
  "items": [
   {
+   "title": "Anthropic study: Claude Code's hidden leanings steered expert analysts 86% of the time",
+   "source": "X",
+   "url": "https://x.com/i/trending/2115223324565356550",
+   "date": "2026-10-28T13:37:00Z",
+   "tool": null,
+   "summary": "In a randomized Anthropic trial, 50 experienced analysts working with Claude Code matched the agent's secretly randomized preferences on judgment calls 86% of the time, often repeating its arguments while believing they had decided independently, even as the agent cut errors and sped up work.",
+   "page": "news/2026/10/anthropic-study-claude-codes-hidden-leanings-steered-expert-analysts.html"
+  },
+  {
+   "title": "Judgment Labs opens its AI agent monitoring platform to everyone",
+   "source": "X",
+   "url": "https://x.com/i/trending/2115193410134987191",
+   "date": "2026-10-28T00:22:00Z",
+   "tool": null,
+   "summary": "Judgment Labs made its agent monitoring platform generally available: it captures full execution traces from long-running agents, runs customisable judges over them and uses a built-in agent to surface failure patterns, alerts and tests. The $32M-backed startup already counts Fluidstack and Modal as customers.",
+   "page": "news/2026/10/judgment-labs-opens-its-ai-agent-monitoring-platform-to-everyone.html"
+  },
+  {
+   "title": "Make AI agent answers predictable and trustworthy with Analytic views in Autonomous AI…",
+   "source": "Oracle Blogs",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUzBzWUlOZ1RiZlFYS283bWNUemxRRkEtWEp4YlFzQ245T1dQV05rN3U2M05MNW1RQ1lmOW5Ua182NjhSVUlaVVZmamJiM1plaFhTRFJKYUFacVpvRzZXa0xlYi1DbVRZaVdVc1RXalRmVDVXcklPMGYxTjRNcE1zWXZnZDVLeTllS0pjdXRoN0NWRVdnQXJEczM0Zno0ZzFTclNtaFhta01ySTBDd3o0alRsMDBGUUgwdlJGaWRwSFBvREhXOU9hUVR0Z3hoWTJlMWNYc2NDT2Z0RUVM?oc=5",
+   "date": "2026-10-27T13:29:19Z",
+   "tool": "make",
+   "page": "news/2026/10/make-ai-agent-answers-predictable-and-trustworthy-with-analytic-views.html"
+  },
+  {
+   "title": "Cursor turns its coding agent into a TypeScript SDK anyone can build on",
+   "source": "Startup Fortune",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTDYzTWVQbzlrTFY2TzhBSVdkWExubjl6MmUzSUVUakF5cElQMDdVVlN1NlU1d3hqcDczMEN3NTgtTUpEcWtoUllPdHQzekJtYUxiTzhOVWgyZkI0RnJlNmVCVHJoaWRaTkZ3d1UxTlNRVzJyZnp6YU1BbHc5bzlYUUtUT19LUnhDbjY5SUFLR1VkVExLYWE0OURlZHMtQjRM?oc=5",
+   "date": "2026-10-27T04:27:54Z",
+   "tool": "cursor",
+   "page": "news/2026/10/cursor-turns-its-coding-agent-into-a-typescript-sdk-anyone-can-build.html"
+  },
+  {
    "title": "OpenAI launches GPT-6.1 Terra, a cheaper, faster model for computer-use agents",
    "source": "OpenAI",
    "url": "https://openai.com/index/introducing-gpt-6-1-terra",
@@ -16,6 +50,15 @@
    "tool": null,
    "summary": "GPT-6.1 Terra targets visual reasoning and precise computer use at API prices 50% below GPT-5.6 Terra; it is live in ChatGPT Work and Codex for paid plans and in the API as gpt-6.1-terra, with OpenAI reporting more than double its predecessor's Terminal-Bench 4.0 score.",
    "page": "news/2026/10/openai-launches-gpt-6-1-terra-a-cheaper-faster-model-for-computer-use.html"
+  },
+  {
+   "title": "Anthropic publicly files its S-1 for a Nasdaq IPO under the ticker ANT",
+   "source": "Anthropic",
+   "url": "https://www.anthropic.com/news/s1-sec",
+   "date": "2026-10-26T13:00:00Z",
+   "tool": null,
+   "summary": "Anthropic's registration statement for a proposed Class A share offering is now public, with Goldman Sachs and Morgan Stanley leading; share count and price range have not been set, and the filing gives agent builders a first audited look at the economics behind Claude.",
+   "page": "news/2026/10/anthropic-publicly-files-its-s-1-for-a-nasdaq-ipo-under-the-ticker-ant.html"
   },
   {
    "title": "Oracle launches Fusion Companion and Fusion Agentic Home at Oracle AI World",
@@ -34,51 +77,6 @@
    "tool": null,
    "summary": "Developer Theo released tstack on GitHub, a bundle of agent skills for Claude Code and Codex. Highlights include full-send, which pushes a change all the way to a merged pull request, and council, which gathers reviews from several models.",
    "page": "news/2026/10/theo-open-sources-tstack-a-set-of-practical-skills-for-claude-code.html"
-  },
-  {
-   "title": "Anthropic tells teams to fold sprawling multi-agent setups into one agent with skills and tools",
-   "source": "X",
-   "url": "https://x.com/i/trending/2114330879086461367",
-   "date": "2026-10-25T12:23:46Z",
-   "tool": null,
-   "summary": "Anthropic is advising companies to swap layered multi-agent systems for a single agent that uses skills and tools, citing faster, cheaper runs. It offers a migration kit and eval steps, while noting subagents still help for parallel or overloaded work.",
-   "page": "news/2026/10/anthropic-tells-teams-to-fold-sprawling-multi-agent-setups-into-one.html"
-  },
-  {
-   "title": "T3 Code lets developers run AI coding agents for iOS work from Ubuntu, with guest sharing",
-   "source": "X",
-   "url": "https://x.com/i/trending/2114323855044968802",
-   "date": "2026-10-25T11:55:26Z",
-   "tool": null,
-   "summary": "T3 Code, an open-source control layer for AI coding tools, was shown running a full iOS workflow from Ubuntu against a remote Mac Mini simulator. A new beta lets owners share a link so guests can suggest changes for approval.",
-   "page": "news/2026/10/t3-code-lets-developers-run-ai-coding-agents-for-ios-work-from-ubuntu.html"
-  },
-  {
-   "title": "Agentics Credit scores AI trading agents on their onchain record to unlock credit",
-   "source": "X",
-   "url": "https://x.com/i/trending/2114102906500595850",
-   "date": "2026-10-25T04:07:18Z",
-   "tool": null,
-   "summary": "Agentics Credit gives AI trading agents a 300 to 850 score based on their onchain trading record. Agents scoring 580 or higher can access non-custodial credit with strict drawdown limits.",
-   "page": "news/2026/10/agentics-credit-scores-ai-trading-agents-on-their-onchain-record-to.html"
-  },
-  {
-   "title": "Altman and Cloudflare's Prince warn AI now finds bugs faster than teams can patch",
-   "source": "X",
-   "url": "https://x.com/i/trending/2114059501561160085",
-   "date": "2026-10-25T02:00:00Z",
-   "tool": null,
-   "summary": "Speaking at Stanford, Sam Altman said AI can uncover bugs, even hardware-level issues, beyond typical attacker reach, while Matthew Prince pointed to millions of exploit attempts on new flaws, both arguing for AI-driven defense.",
-   "page": "news/2026/10/altman-and-cloudflares-prince-warn-ai-now-finds-bugs-faster-than.html"
-  },
-  {
-   "title": "Google and Anthropic publish free courses on harness engineering for AI agents",
-   "source": "X",
-   "url": "https://x.com/i/trending/2114079289687576680",
-   "date": "2026-10-24T19:46:24Z",
-   "tool": null,
-   "summary": "Google released a free two-hour course on harness engineering for agents, and Anthropic posted a short Claude Duet guide on isolated browsers and credential proxies. Both focus on the memory, tools and checks that make agents reliable on long tasks.",
-   "page": "news/2026/10/google-and-anthropic-publish-free-courses-on-harness-engineering-for.html"
   }
  ]
 }
