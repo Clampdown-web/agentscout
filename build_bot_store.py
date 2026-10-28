@@ -1,4 +1,4 @@
-import os
+import os, re
 from build_extras import B, e, shell
 
 CSS = """<style id="bs-css">
@@ -78,6 +78,8 @@ JS = """<script>
 
 def pages(t):
     os.makedirs("bot-store", exist_ok=True)
+    import re
+    n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
     canon = f"{B}bot-store/"
     title = "AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69) & $149 4-Bot Team Bundle"
     desc = "Buy the exact pre-trained autonomous bots that run AgentScout ($39 Ops Bot, $59 SEO & AEO Auditor Bot, $59 Market Intel Bot, $69 CEO Coordinator Bot, or $149 Full 4-Bot Bundle). Built natively for Grok Bot and compatible with Claude Code, Cursor & Codex."
@@ -92,7 +94,7 @@ def pages(t):
         f'<div class="bs-hero-badges">'
         f'<a class="bs-badge" href="#bot-packages" style="border-color:#a3e635;color:#ecfccb">🟢 $39 / 🟡 $59 / 🟠 $59 / 🔴 $69 Individual Bots</a>'
         f'<a class="bs-badge" href="#bundle-package" style="border-color:#34d399;color:#d1fae5">💚 $149 Full 4-Bot Bundle (Save $77)</a>'
-        f'<a class="bs-badge" href="../bot-templates/#bt-featured">📚 193 Free Community Bot Templates →</a>'
+        f'<a class="bs-badge" href="../bot-templates/#bt-featured">📚 {n_bt} Free Community Bot Templates →</a>'
         f'<a class="bs-badge" href="../videos/#guide-trained-bots">🎬 Watch 60fps Video Walkthrough →</a>'
         f'</div>'
         f'</section>'
@@ -195,7 +197,7 @@ def pages(t):
         f'<p>We are expanding the AgentScout Bot Store with new domain-specific Grok Bots (GitHub PR Reviewer Bot, Founder Outbound CRM Bot, Beehiiv Newsletter Editor Bot, and Security Watchtower Bot). Want early access to the next drop or a custom-trained bot wired for your stack?</p>'
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="mailto:support@agentscouthq.com?subject=Custom%20Bot%20Request%20%2F%20Next%20Bot%20Drop" style="background:rgba(168,85,247,.22);border:1.5px solid #c084fc;color:#f3e8ff;flex:0 1 auto">Request a Custom Bot (support@agentscouthq.com) →</a>'
-        f'<a class="bs-btn" href="../bot-templates/#bt-featured" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#e5e7eb;flex:0 1 auto">Browse 193 Free Community Bot Templates →</a>'
+        f'<a class="bs-btn" href="../bot-templates/#bt-featured" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#e5e7eb;flex:0 1 auto">Browse {n_bt} Free Community Bot Templates →</a>'
         f'</div></article>'
         f'</div>'
         # FAQ & Platform Compatibility Box
@@ -205,7 +207,7 @@ def pages(t):
         f'<div class="bs-faq-item"><h3>1. Built Natively for Grok Bot First (100% Turnkey)</h3><p>Every package is built natively for <b>Grok Bot</b> first — where 24/7 scheduled cron routines, the shared <code>/workspace/handoff/</code> Linux computer, Gmail/X/GitHub MCP connectors, and 4-bot <code>Work Chat</code> team coordination run out of the box.</p></div>'
         f'<div class="bs-faq-item"><h3>2. Also Compatible with Claude Code, Cursor &amp; OpenAI Codex</h3><p>Because each ZIP ships standard Markdown role prompts (<code>SYSTEM.md</code>), modular <code>SKILL.md</code> playbooks, standalone Python 3 audit/automation scripts, and a standard <code>mcp.json</code> configuration, you can also drop them right into <b>Claude Code, Cursor, or OpenAI Codex</b>.</p></div>'
         f'<div class="bs-faq-item"><h3>3. Instant Delivery + Single-Organization Commercial License</h3><p>After Stripe Checkout (or X Money payment to <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>), you receive the complete ZIP package with a Single-Organization Commercial License (<code>LICENSE.txt</code>) and a cryptographic per-buyer order watermark so your whole internal team can run and customize the bots.</p></div>'
-        f'<div class="bs-faq-item"><h3>4. Free Community Templates vs. Directory Listing Boosts</h3><p>Looking for free starter prompts? Explore <a href="../bot-templates/#bt-featured">193 free community bot templates</a>. Looking to list or feature your AI software product in the AgentScout directory instead? See our <a href="../sponsor.html#packages">4 Directory Listing Packages ($0 / $29 / $49 / $99)</a>.</p></div>'
+        f'<div class="bs-faq-item"><h3>4. Free Community Templates vs. Directory Listing Boosts</h3><p>Looking for free starter prompts? Explore <a href="../bot-templates/#bt-featured">{n_bt} free community bot templates</a>. Looking to list or feature your AI software product in the AgentScout directory instead? See our <a href="../sponsor.html#packages">4 Directory Listing Packages ($0 / $29 / $49 / $99)</a>.</p></div>'
         f'</div>'
         f'</section>{JS}'
     )

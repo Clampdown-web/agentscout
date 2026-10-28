@@ -174,7 +174,7 @@ def filters():
         return re.sub(r'data-q="[^"]*"',lambda _:f'data-q="{esc(txt)}"',li,count=1)
     s=re.sub(r'<li class="bt-row".*?</li>',dq,s,flags=re.S)
     s=re.sub(r'<span id="bt-count"[^>]*>.*?</span>','',s)
-    s=s.replace('Bot templates</h1>',f'Bot templates<span id="bt-count" class="bt-count" aria-label="{total} templates">{total}</span></h1>',1)
+    s=re.sub(r'((?:Bot templates|AI bot templates|Grok Bot templates, plugins &amp; skills))</h1>',rf'\1<span id="bt-count" class="bt-count" aria-label="{total} templates">{total}</span></h1>',s,count=1)
     s=re.sub(r'<!--bt-anim-->.*?<!--/bt-anim-->','',s,flags=re.S)
     s=re.sub(r'<!--btf-->.*?<!--/btf-->','',s,flags=re.S)
     s=s.replace('<input id="bt-q" type="hidden" value="">','')
@@ -189,7 +189,7 @@ def filters():
     s=re.sub(r'<script>\(function\(\)\{var pills=.*?</script>','',s,count=1,flags=re.S)
     s=s.replace('</body>',FJS+'</body>',1)  # menu search box removed Oct 23 2026
     s=re.sub(r"<!--bt-mba-->.*?<!--/bt-mba-->","",s,flags=re.S)
-    s=s.replace('<section id="bt-featured">',made_by_agentscout_html()+'<section id="bt-featured">',1)
+    s=s.replace('<section id="bt-featured">',made_by_agentscout_html(total)+'<section id="bt-featured">',1)
     open(f"{D}/index.html","w").write(s)
     print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
 # Tap targets (Oct 22 2026 PT, owner "fix what's broken"): back link + related links were 19-22px tall at 390px; >=44px via min-height/padding only, no color change.
@@ -262,14 +262,14 @@ html[data-theme="dark"] .bt-hub-tab.vid{color:#fb923c}
 .mba-sec{padding:14px}.mba-bundle{padding:13px}.mba-btn{width:100%;box-sizing:border-box}.bt-hub-tab{width:100%;justify-content:center}}
 </style>"""
 
-def made_by_agentscout_html():
+def made_by_agentscout_html(total=189):
     return (
         '<!--bt-mba-->'
         '<div class="bt-hub-bar" aria-label="Jump to Bot Store or Free Community Templates">'
         '<div class="bt-hub-tabs">'
         '<a class="bt-hub-tab pro" href="../bot-store/">🛒 Dedicated Bot Store ($39 / $59 / $59 / $69 · $149 Bundle) →</a>'
         '<a class="bt-hub-tab comm" href="#made-by-agentscout">🤖 Quick-Buy Pro Bots Below ↓</a>'
-        '<a class="bt-hub-tab comm" href="#bt-featured">📚 Browse 193 Free Community Templates ↓</a>'
+        f'<a class="bt-hub-tab comm" href="#bt-featured">📚 Browse {total} Free Community Templates ↓</a>'
         '<a class="bt-hub-tab vid" href="../videos/">🎬 Watch How-To Video Guides (8) →</a>'
         '</div>'
         '<span class="muted" style="font-size:12.5px">Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex)</span>'
@@ -285,7 +285,7 @@ def made_by_agentscout_html():
         '<div class="mba-head"><div>'
         '<span class="mba-eyebrow">⚡ Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex) · 5 Neon Bot Packages</span>'
         '<h2 id="mba-h">Pre-Trained Pro Bots &amp; "Company-in-a-Box" Team Bundle built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h2>'
-        '<p>Built natively for <b>Grok Bot</b> first — where 24/7 scheduled cron routines, shared <code>/workspace/handoff/</code> computer state, Gmail/X connectors, and 4-bot <code>Work Chat</code> team handoffs run 100% turnkey out of the box — and because each ZIP ships standard <code>SYSTEM.md</code> prompts, <code>SKILL.md</code> playbooks, standalone Python 3 scripts, and <code>mcp.json</code>, they also drop right into <b>Claude Code, Cursor, and OpenAI Codex</b>. Buy any of the 4 autonomous bots individually (<code>$39</code>, <code>$59</code>, <code>$59</code>, <code>$69</code> — <code>$226</code> total if bought separately), or get all 4 together in the <b>$149 Company-in-a-Box Team Bundle (Save $77)</b>. Explore full file manifests on the <a href="../bot-store/" style="color:#fde047;font-weight:700;text-decoration:underline">dedicated AgentScout Bot Store</a>, or browse all <a href="#bt-featured" style="color:#a3e635;text-decoration:underline">193 free community bot templates</a> right below.</p>'
+        f'<p>Built natively for <b>Grok Bot</b> first — where 24/7 scheduled cron routines, shared <code>/workspace/handoff/</code> computer state, Gmail/X connectors, and 4-bot <code>Work Chat</code> team handoffs run 100% turnkey out of the box — and because each ZIP ships standard <code>SYSTEM.md</code> prompts, <code>SKILL.md</code> playbooks, standalone Python 3 scripts, and <code>mcp.json</code>, they also drop right into <b>Claude Code, Cursor, and OpenAI Codex</b>. Buy any of the 4 autonomous bots individually (<code>$39</code>, <code>$59</code>, <code>$59</code>, <code>$69</code> — <code>$226</code> total if bought separately), or get all 4 together in the <b>$149 Company-in-a-Box Team Bundle (Save $77)</b>. Explore full file manifests on the <a href="../bot-store/" style="color:#fde047;font-weight:700;text-decoration:underline">dedicated AgentScout Bot Store</a>, or browse all <a href="#bt-featured" style="color:#a3e635;text-decoration:underline">{total} free community bot templates</a> right below.</p>'
         '</div>'
         '<div style="display:flex;flex-wrap:wrap;gap:8px;flex:1 1 100%;max-width:100%;min-width:0;box-sizing:border-box">'
         '<a class="mba-btn" href="../bot-store/" style="flex:1 1 auto;max-width:100%;box-sizing:border-box;background:linear-gradient(135deg,#10b981,#34d399);color:#031811;box-shadow:0 4px 14px rgba(16,185,129,.4)">🛒 Open Full Bot Store →</a>'
@@ -304,7 +304,7 @@ def made_by_agentscout_html():
         '<a class="mba-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
         '</div></div>'
-        # Card 2: $59 SEO / AEO Auditor Bot — Neon Electric Gold / Yellow (#eab308 / #facc15)
+        # Card 2: $59 2. AgentScout SEO & AEO Growth Auditor Bot — Neon Electric Gold / Yellow (#eab308 / #facc15)
         '<div class="mba-card neon-gold">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#facc15;text-shadow:0 0 14px rgba(250,204,21,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(234,179,8,.22);border:1.5px solid #facc15;color:#fef9c3;box-shadow:0 0 12px rgba(234,179,8,.4)">🟡 Bot #2 · Neon Gold</span></div>'
         '<h3 style="margin-top:8px">2. AgentScout SEO &amp; AEO Growth Auditor Bot (Search Console, JSON-LD, llms.txt &amp; AI Citations)</h3><div class="mba-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'

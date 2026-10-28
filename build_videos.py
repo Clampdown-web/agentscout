@@ -1,10 +1,11 @@
 """Build How-To Video Guides & Pro Tips Hub (/videos/index.html) (Oct 28, 2026)."""
-import os, json, datetime
+import os, re, json, datetime
 from build_extras import B, e, shell
 
 def pages(t):
     os.makedirs("videos", exist_ok=True)
     n_tools = len(t)
+    n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
     n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
     n_cats = len({x.get("category") for x in t if x.get("category")})
     today_iso = datetime.date.today().strftime("%Y-%m-%dT08:00:00-07:00")
@@ -60,7 +61,7 @@ def pages(t):
             "snippet": '{"mcpServers":{"agentscout":{"url":"https://mcp.agentscouthq.com/mcp"}}}',
             "links": [
                 ("../bot-templates/#made-by-agentscout", "Buy Pre-Trained Pro Bots ($39 / $59 / $69 / $149) →"),
-                ("../bot-templates/index.html#bt-featured", "Browse 193 Community Bot Templates →"),
+                ("../bot-templates/index.html#bt-featured", f"Browse {n_bt} Community Bot Templates →"),
             ],
         },
         {
@@ -370,7 +371,7 @@ pills.forEach(function(btn){
         '<div class="vh-grid">' + "".join(cards_html) + '</div>'
         '<section style="margin:28px 0">'
         '<h2 style="font-size:20px;margin:0 0 6px">6 Builder Pro Tips for Production AI Agent Stacks</h2>'
-        '<p class="muted" style="margin:0 0 14px;font-size:14px">Battle-tested shortcuts from running AgentScout\'s daily verification pipeline across 1,800+ tools and 250+ MCP servers.</p>'
+        f'<p class="muted" style="margin:0 0 14px;font-size:14px">Battle-tested shortcuts from running AgentScout\'s daily verification pipeline across <span data-live-tools>{n_tools:,}+</span> tools and <span data-live-mcp>{n_mcp:,}+</span> MCP servers.</p>'
         f'<div class="vh-tips">{tips_html}</div>'
         '</section>'
         '<section style="max-width:860px;margin:28px 0">'
