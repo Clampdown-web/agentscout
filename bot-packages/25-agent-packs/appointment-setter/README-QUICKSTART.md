@@ -1,5 +1,11 @@
 # Appointment Setter quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller.
 
 ## 1. Fill the profile

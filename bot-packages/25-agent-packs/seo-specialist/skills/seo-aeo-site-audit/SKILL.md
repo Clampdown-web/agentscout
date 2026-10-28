@@ -26,9 +26,9 @@ Read `context/business-profile.md` before every run. If a placeholder is still u
 
 ## Workflow
 
-### 1. Crawl the file you have
+### 1. Read the saved page
 
-Run scripts/seo_site_audit.py on a saved page or one URL {{YOUR_OWNER_NAME}} names.
+Run scripts/seo_site_audit.py on an HTML file {{YOUR_OWNER_NAME}} saved. The script does not fetch the network.
 
 ### 2. Fix the index basics
 

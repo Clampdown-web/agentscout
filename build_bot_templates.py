@@ -130,12 +130,14 @@ def run():
             if t2!=t: open(fp,"w").write(t2)
 
 # ---- Filters (Oct 21 2026 PT, owner request): count pill, search, use-case chips, URL params, empty state. ----
-FCSS=('<style id="btf-css">.bt-h1{flex-wrap:wrap;row-gap:4px}.bt-count{display:inline-flex;align-items:center;justify-content:center;min-width:2.2em;height:1.5em;padding:0 .45em;margin-left:.4em;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:.5em;font-weight:600;vertical-align:middle}'
+FCSS=('<style id="btf-css">.bt-h1{flex-wrap:wrap;white-space:normal;overflow-wrap:anywhere;row-gap:4px}.bt-count{display:inline-flex;align-items:center;justify-content:center;min-width:2.2em;height:1.5em;padding:0 .45em;margin-left:.4em;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:.5em;font-weight:600;vertical-align:middle}'
  '.btf{margin:14px 0 6px;display:flex;flex-direction:column;gap:10px;min-width:0}.btf-s{position:relative;max-width:520px}.btf-s input{width:100%;box-sizing:border-box;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:16px}'
- '.bt-pills,.btf-cats{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:4px;min-width:0;max-width:100%}.bt-pills .chip,.btf-cats .chip{flex:0 0 auto;white-space:nowrap}'
+ '.bt-pills,.btf-cats{display:flex;flex-wrap:wrap;gap:8px;overflow:hidden;padding-bottom:4px;min-width:0;max-width:100%}.bt-pills .chip,.btf-cats .chip{flex:0 1 auto;white-space:normal;max-width:100%;height:auto;overflow-wrap:anywhere}'
+ '.bt-row,.bt-txt,.bt-grid{min-width:0;max-width:100%}.bt-act,.bt-d,.bt-nm{white-space:normal;overflow-wrap:anywhere;text-overflow:clip;max-width:100%}'
+ '@media(max-width:1100px){.bt-pills,.btf-cats{flex-wrap:wrap!important;overflow-x:hidden!important}.bt-pills .chip,.btf-cats .chip{white-space:normal;max-width:100%}}'
  '.btf-lbl{font-size:13px;color:var(--muted);margin:0}.btf-st{font-size:14px;color:var(--muted);margin:4px 0 0}.bt-empty{display:none;padding:28px 12px;text-align:center;border:1px dashed var(--line);border-radius:12px;margin:16px 0}.bt-empty p{margin:0 0 12px}'
  '.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}'
- '@media(min-width:900px){.bt-pills,.btf-cats{flex-wrap:wrap;overflow:visible}}'
+ '@media(min-width:900px){.bt-pills,.btf-cats{overflow:visible}}'
  '@media(max-width:480px){div.bt-nm{flex-wrap:wrap;row-gap:0;min-height:0}div.bt-nm>a{min-height:32px;max-width:100%}div.bt-nm>span{flex:1 1 100%;font-size:13px;flex-wrap:wrap;white-space:normal;column-gap:.25em;row-gap:0}div.bt-nm span a{flex:0 0 auto;max-width:100%;min-height:32px;line-height:32px}}</style>')  # Oct 25 2026 PT post-update pass: byline links were squeezed to 0-27px at 360px; wrap byline under name on phones
 FJS=r'''<script id="btf-js">(function(){var $=function(s){return document.querySelector(s)},A=function(s){return [].slice.call(document.querySelectorAll(s))};
 var q=$('#bt-q'),rows=A('.bt-row'),P=A('.bt-pills .chip'),C=A('.btf-cats .chip'),st=$('#bt-status'),em=$('#bt-empty'),cnt=$('#bt-count'),f='all',c='all',T=rows.length;
@@ -269,6 +271,7 @@ section.mba-sec,.bt section.mba-sec{padding:16px}.mba-head{padding:18px 16px;tex
 def made_by_agentscout_html(total=189):
     return (
         '<!--bt-mba-->'
+        '<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AgentScout Bot Templates","applicationCategory":"BusinessApplication","operatingSystem":"Grok Bot, Claude Code, Cursor, Codex","url":"https://agentscouthq.com/bot-templates/","author":{"@type":"Organization","name":"AgentScout","url":"https://agentscouthq.com"},"brand":{"@type":"Organization","name":"AgentScout","url":"https://agentscouthq.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>'
         '<div class="bt-hub-bar" aria-label="Jump to Bot Store or Free Community Templates">'
         '<div class="bt-hub-tabs">'
         '<a class="bt-hub-tab pro" href="../bot-store/">🛒 Dedicated Bot Store ($39 / $59 / $59 / $69 · $149 Bundle) →</a>'

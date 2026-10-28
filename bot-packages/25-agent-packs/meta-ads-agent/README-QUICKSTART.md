@@ -1,5 +1,11 @@
 # Meta Ads Agent quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.
 
 ## 1. Fill the profile

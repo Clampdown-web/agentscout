@@ -33,6 +33,9 @@ CSS = """
 .ap-add{border:0;background:transparent;color:#a1a1aa;font-size:12px;font-weight:700;cursor:pointer;padding:4px 2px;white-space:nowrap}
 .ap-add[aria-pressed="true"]{color:#86efac}
 .ap-card h3{margin:0;font-size:14px;color:#fafafa;line-height:1.3;overflow-wrap:anywhere}
+.ap-card h3 a{color:inherit;text-decoration:none}
+.ap-by{margin:0;font-size:12px;font-weight:700;color:#e4e4e7;line-height:1.3}
+.ap-card img.aswm{height:1.15em;width:auto;vertical-align:-.28em;filter:invert(1) hue-rotate(180deg)}
 .ap-card .ap-tag{margin:0;color:#a1a1aa;font-size:12px;line-height:1.35;overflow-wrap:anywhere}
 .ap-preview{align-self:flex-start;background:transparent;border:0;color:#93c5fd;font-size:12px;font-weight:700;cursor:pointer;padding:0;text-align:left}
 .ap-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px 14px;border-top:1px solid rgba(255,255,255,.08);background:#101218;min-width:0}
@@ -72,7 +75,9 @@ def pack_section_html() -> str:
             f'<div class="ap-card-top"><span class="ap-ico" style="--ap:{card["color"]};color:{card["color"]}">'
             f'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{icon}"/></svg>'
             f'</span><button type="button" class="ap-add" data-add="{card["slug"]}" aria-pressed="false">+ Add</button></div>'
-            f'<h3>{card["title"]}</h3><p class="ap-tag">{card["tagline"]}</p>'
+            f'<h3><a href="/bot-store/{card["slug"]}/">AgentScout {card["title"]} Agent</a></h3>'
+            f'<p class="ap-by">built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="120" height="24"></p>'
+            f'<p class="ap-tag">{card["tagline"]}</p>'
             f'<button type="button" class="ap-preview" data-preview="{card["slug"]}">Preview Trained Skills &amp; Scripts</button>'
             f'</article>'
         )
@@ -194,7 +199,7 @@ def pack_section_html() -> str:
   function esc(s){{ return String(s).replace(/[&<>]/g, function(c){{ return {{"&":"&amp;","<":"&lt;",">":"&gt;"}}[c]; }}); }}
   function openModal(slug){{
     var a = byId[slug];
-    document.getElementById("ap-modal-title").textContent = a.title + " — " + a.tagline;
+    document.getElementById("ap-modal-title").textContent = "AgentScout " + a.title + " Agent — " + a.tagline;
     var routines = a.routines.map(function(r){{ return "<li><code>" + esc(r.cron) + "</code> " + esc(r.title) + "</li>"; }}).join("");
     var skills = a.heuristics.map(function(h){{ return "<li>" + esc(h) + "</li>"; }}).join("");
     var extra = a.storeNote ? "<p>" + esc(a.storeNote) + "</p>" : "";

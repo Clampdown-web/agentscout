@@ -1,5 +1,11 @@
 # Email Marketer quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Shape a weekly issue, score the subject and preview, and keep the list clean.
 
 ## 1. Fill the profile

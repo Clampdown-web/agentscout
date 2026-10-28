@@ -1,5 +1,11 @@
 # Social Media Manager quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Score hooks, format a native post, and keep a calendar the owner can approve.
 
 ## 1. Fill the profile

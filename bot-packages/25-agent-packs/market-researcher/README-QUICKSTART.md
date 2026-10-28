@@ -1,5 +1,11 @@
 # Market Researcher quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Compare a competitor on price and features with a source URL and a date on every claim.
 
 ## 1. Fill the profile

@@ -1,5 +1,11 @@
 # Google Review Replier quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Draft a specific public reply for every review and a private path for anything serious.
 
 ## 1. Fill the profile

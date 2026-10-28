@@ -1,5 +1,11 @@
 # Content Strategist quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces.
 
 ## 1. Fill the profile

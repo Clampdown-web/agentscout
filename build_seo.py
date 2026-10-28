@@ -115,6 +115,9 @@ def _bt_sec():
     if os.path.exists("bot-templates/index.html"):
         out.append(f"- [Made by AgentScout Pro Bots & 4-Bot Bundle on bot templates ({pkgs})]({B}bot-templates/#made-by-agentscout)")
     if os.path.exists("bot-templates/index.html") and _h1("bot-templates/index.html"): out.append(f"- [AI bot templates, plugins and skills: ready-made Grok Bot, Claude, Codex and Cursor templates]({B}bot-templates/)")
+    for f in sorted(glob.glob("bot-store/*/index.html")):
+        h=_h1(f)
+        if h: out.append(f"- [{h}]({B}{f})")
     for f in sorted(glob.glob("bot-templates/*.html")):
         if f.endswith("index.html"): continue
         h=_h1(f)

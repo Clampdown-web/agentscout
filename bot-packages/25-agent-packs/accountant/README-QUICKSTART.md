@@ -1,5 +1,11 @@
 # Accountant quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional.
 
 ## 1. Fill the profile

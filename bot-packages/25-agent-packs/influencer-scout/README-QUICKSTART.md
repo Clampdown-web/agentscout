@@ -1,5 +1,11 @@
 # Influencer Scout quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Shortlist creators with an engagement check, a cost estimate, and a brief a person can send.
 
 ## 1. Fill the profile

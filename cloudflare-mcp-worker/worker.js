@@ -404,6 +404,33 @@ function handleRpc(message) {
   return rpcError(id, -32601, `Method not found: ${method}`);
 }
 
+function registryBody() {
+  return {
+    servers: [
+      {
+        server: {
+          $schema: "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+          name: "com.agentscouthq/directory",
+          title: "AgentScout Directory",
+          description: "Read-only catalog of AI agents, app builders, and MCP servers, including Lovable and Lovable MCP.",
+          version: "1.0.2",
+          remotes: [
+            { type: "streamable-http", url: "https://mcp.agentscouthq.com/mcp" },
+            { type: "sse", url: "https://agentscouthq.com/mcp/sse" },
+          ],
+        },
+        _meta: {
+          "io.modelcontextprotocol.registry/official": {
+            status: "active",
+            isLatest: true,
+          },
+        },
+      },
+    ],
+    metadata: { count: 1, nextCursor: "" },
+  };
+}
+
 function infoBody() {
   return {
     name: "AgentScout MCP server",
@@ -436,6 +463,11 @@ export default {
         status = 429;
         console.warn(JSON.stringify({ message: "rate limited", method: request.method, path: url.pathname, status }));
         return jsonResponse({ error: "Too many requests. Slow down and retry." }, 429, extra);
+      }
+      if (request.method === "GET" && url.pathname === "/v0/servers") {
+        status = 200;
+        console.log(JSON.stringify({ message: "mcp registry", method: "GET", path: url.pathname, status }));
+        return jsonResponse(registryBody(), 200, extra);
       }
       if (request.method === "GET") {
         status = 200;

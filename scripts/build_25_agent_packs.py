@@ -15,8 +15,8 @@ OUT = ROOT / "bot-packages" / "25-agent-packs"
 ZIPS = OUT / "zips"
 BANNED = (
     "mcp.agentscouthq.com",
+    "buy.stripe.com",
     "api/tools.json",
-    "agentscouthq.com",
     "com.agentscouthq",
 )
 

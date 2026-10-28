@@ -1,5 +1,11 @@
 # Product Builder quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Cut an MVP, model three prices, and write a launch list a small team can finish.
 
 ## 1. Fill the profile

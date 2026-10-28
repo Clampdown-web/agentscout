@@ -1,5 +1,11 @@
 # Copywriter quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Draft and edit offers with a clear problem, proof, and a single next step.
 
 ## 1. Fill the profile

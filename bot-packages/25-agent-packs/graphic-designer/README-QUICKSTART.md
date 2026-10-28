@@ -1,5 +1,11 @@
 # Graphic Designer quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Turn a brand kit into layout specs and an SVG card that keeps color, type, and contrast consistent.
 
 ## 1. Fill the profile

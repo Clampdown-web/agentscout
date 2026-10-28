@@ -1,5 +1,11 @@
 # TikTok Shop Manager quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Tighten a product listing, estimate creator commission, and brief a shoppable video.
 
 ## 1. Fill the profile

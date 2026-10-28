@@ -1,5 +1,11 @@
 # SEO Specialist quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.
 
 ## 1. Fill the profile

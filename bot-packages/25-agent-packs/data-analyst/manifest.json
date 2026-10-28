@@ -23,6 +23,13 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "price_usd": 69,
-  "checkout_url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07"
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 69
 }

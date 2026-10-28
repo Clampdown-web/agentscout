@@ -1,5 +1,11 @@
 # Lead Gen Agent quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.
 
 ## 1. Fill the profile

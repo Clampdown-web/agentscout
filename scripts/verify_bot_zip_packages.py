@@ -14,7 +14,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKS = ROOT / "bot-packages" / "25-agent-packs"
-BANNED = ("mcp.agentscouthq.com", "api/tools.json", "agentscouthq.com", "com.agentscouthq")
+BANNED = ("mcp.agentscouthq.com", "buy.stripe.com", "api/tools.json", "com.agentscouthq")
+NOTICE_LINES = (
+    "coreyhaines31 (MIT, (c) 2025 Corey Haines)",
+    "ericosiu (MIT, (c) 2026 Single Grain)",
+    "aaron-he-zhu (Apache-2.0, (c) 2024 Aaron He Zhu)",
+    "kostja94 (MIT, (c) 2025 kostja94)",
+)
+FORBIDDEN_DIRS = {"tools", "clis", "connectors", "telemetry", "hooks"}
+NET = re.compile(r"\b(?:urllib|requests|http\.client|socket|subprocess)\b|\bcurl\b|\bfetch\s*\(")
 REQUIRED = (
     "SYSTEM.md",
     "README-QUICKSTART.md",
@@ -59,10 +67,31 @@ def main() -> int:
                 bad.append(f"{agent['slug']} skill missing description")
         if not script.is_file():
             bad.append(f"{agent['slug']} missing script")
-        blob = "\n".join(
-            p.read_text(encoding="utf-8", errors="ignore")
-            for p in dest.rglob("*") if p.is_file() and p.suffix != ".zip"
-        )
+        notice = (dest / "THIRD_PARTY_NOTICES.md").read_text(encoding="utf-8")
+        for line in NOTICE_LINES:
+            if line not in notice:
+                bad.append(f"{agent['slug']} notice missing {line}")
+        if "references only" not in notice.lower() or "own words" not in notice.lower():
+            bad.append(f"{agent['slug']} notice does not say references were rewritten")
+        readme = (dest / "README-QUICKSTART.md").read_text(encoding="utf-8")
+        if "Built by AgentScout" not in readme:
+            bad.append(f"{agent['slug']} README missing Built by AgentScout")
+        blob_parts = []
+        for path in dest.rglob("*"):
+            if path.is_dir():
+                if path.name in FORBIDDEN_DIRS:
+                    bad.append(f"{agent['slug']} forbidden dir {path.relative_to(dest)}")
+                continue
+            if path.name == "partners.json":
+                bad.append(f"{agent['slug']} has partners.json")
+            if path.suffix == ".py":
+                src = path.read_text(encoding="utf-8", errors="ignore")
+                if NET.search(src):
+                    bad.append(f"{agent['slug']} network call in {path.name}")
+                blob_parts.append(src)
+            elif path.suffix != ".zip":
+                blob_parts.append(path.read_text(encoding="utf-8", errors="ignore"))
+        blob = "\n".join(blob_parts)
         for token in BANNED:
             if token in blob:
                 bad.append(f"{agent['slug']} contains {token}")

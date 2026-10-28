@@ -270,7 +270,7 @@ AGENTS = [
             "Do not invent Core Web Vitals. Say 'not measured' until field data exists.",
         ],
         steps=[
-            ("Crawl the file you have", "Run scripts/seo_site_audit.py on a saved page or one URL {{YOUR_OWNER_NAME}} names."),
+            ("Read the saved page", "Run scripts/seo_site_audit.py on an HTML file {{YOUR_OWNER_NAME}} saved. The script does not fetch the network."),
             ("Fix the index basics", "Title length, meta description, single H1, canonical, and image alts come first."),
             ("Check the entity", "Organization or product JSON-LD uses the same name as the page heading."),
             ("Map queries to pages", "List the query, the URL, and any second URL that competes with it."),
@@ -935,6 +935,12 @@ Paste file names or URLs the owner provided. Do not add sources the owner has no
 def readme(agent: dict) -> str:
     return f"""# {agent['title']} quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{{{YOUR_COMPANY}}}}**. {agent['promise']}
 
 ## 1. Fill the profile
@@ -1002,8 +1008,16 @@ def notices() -> str:
     The prose, checklists, and Python helpers in this package were written for
     this template. They are not copies of another skill library.
 
+    These projects were references only, rewritten in our own words. No text,
+    code, or skill files were copied from them:
+
+    - coreyhaines31 (MIT, (c) 2025 Corey Haines)
+    - ericosiu (MIT, (c) 2026 Single Grain)
+    - aaron-he-zhu (Apache-2.0, (c) 2024 Aaron He Zhu)
+    - kostja94 (MIT, (c) 2025 kostja94)
+
     The helpers import only the Python 3 standard library. They do not bundle
-    a vendor SDK.
+    a vendor SDK and they do not open network connections.
 
     Industry methods show up as ideas the owner can recognize: plain-language
     offers, contrast math, aging buckets, and permission to email. The wording
@@ -1061,8 +1075,9 @@ def manifest(agent: dict) -> dict:
             "{{YOUR_MCP_SERVER_URL}}",
             "{{YOUR_TIMEZONE}}",
         ],
+        "brand": {"name": "AgentScout", "url": "https://agentscouthq.com"},
+        "author": {"name": "AgentScout", "url": "https://agentscouthq.com"},
         "price_usd": agent["price"],
-        "checkout_url": agent["checkout_url"],
     }
 
 

@@ -1,5 +1,11 @@
 # Translator quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Keep translations aligned to a glossary and prove the keys and placeholders still match.
 
 ## 1. Fill the profile

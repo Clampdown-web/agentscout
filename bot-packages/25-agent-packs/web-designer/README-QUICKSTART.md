@@ -1,5 +1,11 @@
 # Web Designer quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Lay out a page that fits a phone and makes the next step obvious.
 
 ## 1. Fill the profile

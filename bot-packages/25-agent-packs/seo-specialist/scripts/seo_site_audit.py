@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Audit a local HTML file or the buyer's own URL for {{YOUR_COMPANY}}.
+"""Audit a local HTML file for {{YOUR_COMPANY}}.
 
-Checks title, description, headings, canonical, JSON-LD, image alts, and a
-sibling llms.txt note. Optional --url uses the standard library to fetch one
-page the operator names. It does not crawl a directory and it does not invent
-Core Web Vitals lab numbers.
+Checks title, description, headings, canonical, JSON-LD, and image alts.
+This script reads a file on disk. It does not open a network connection
+and it does not invent Core Web Vitals lab numbers.
 """
 from __future__ import annotations
 
@@ -14,7 +13,6 @@ import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.request import Request, urlopen
 
 SAMPLE_HTML = """<!doctype html><html><head>
 <title>{{YOUR_COMPANY}} books visits the same day</title>
@@ -73,7 +71,6 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--sample", action="store_true")
     p.add_argument("--input", help="Local HTML file")
-    p.add_argument("--url", help="Fetch this single URL with urllib")
     p.add_argument("--output", help="JSON report path")
     return p
 
@@ -127,14 +124,9 @@ def analyze(html: str, source: str) -> dict:
 
 def main(argv=None) -> int:
     args = parser().parse_args(argv)
-    dry = args.dry_run or args.sample or not (args.input or args.url)
+    dry = args.dry_run or args.sample or not args.input
     if dry:
         html, source = SAMPLE_HTML, "sample"
-    elif args.url:
-        req = Request(args.url, headers={"User-Agent": "{{YOUR_COMPANY}} seo-audit"})
-        with urlopen(req, timeout=20) as resp:
-            html = resp.read().decode("utf-8", "replace")
-        source = args.url
     else:
         html, source = Path(args.input).read_text(encoding="utf-8"), args.input
     report = analyze(html, source)

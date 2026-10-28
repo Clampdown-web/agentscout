@@ -1,5 +1,11 @@
 # Outreach Agent quick start
 
+Built by AgentScout
+
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+
+[AgentScout Bot Store](https://agentscouthq.com/bot-store/)
+
 Package for **{{YOUR_COMPANY}}**. Draft a short, specific sequence and lint it before anyone hits send.
 
 ## 1. Fill the profile

@@ -33,7 +33,7 @@ Fill this in before the SEO Specialist runs. Leave a line blank rather than inve
 
 ## Questions for this role
 
-- Crawl the file you have: what does done look like?
+- Read the saved page: what does done look like?
 - Fix the index basics: what does done look like?
 - Check the entity: what does done look like?
 - Map queries to pages: what does done look like?
