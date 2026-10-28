@@ -33,7 +33,11 @@ def load_live_catalog_counts(site_dir):
         if isinstance(arr, dict):
             arr = arr.get("tools", [])
         total_tools = len(arr)
+        cat_count = len({t.get("category") for t in arr if t.get("category")})
         mcp_count = sum(1 for t in arr if t.get("category") == "MCP servers")
+        free_count = sum(1 for t in arr if "free" in (t.get("pricing") or "").lower() or "open" in (t.get("pricing") or "").lower())
+        os_count = sum(1 for t in arr if "open" in (t.get("pricing") or "").lower())
+        os_coding_count = sum(1 for t in arr if "open" in (t.get("pricing") or "").lower() and t.get("category") == "coding")
         by_slug = {t.get("slug"): t for t in arr}
         def kstar(slug, fallback):
             st = (by_slug.get(slug) or {}).get("github_stars")
@@ -51,7 +55,7 @@ def load_live_catalog_counts(site_dir):
             "stagehand": kstar("stagehand", "22k★"),
         }
     except Exception:
-        total_tools, mcp_count = 1809, 252
+        total_tools, cat_count, mcp_count, free_count, os_count, os_coding_count = 2050, 40, 272, 1621, 694, 86
         stars = {
             "opencode": "222k★", "opencode_comma": "222,000+ ★",
             "browser-use": "119k★", "context7": "64k★",
@@ -61,9 +65,9 @@ def load_live_catalog_counts(site_dir):
     try:
         page_count = open(sitemap_xml, encoding="utf-8").read().count("<loc>")
         if page_count < 1000:
-            page_count = 2355
+            page_count = 2620
     except Exception:
-        page_count = 2355
+        page_count = 2620
     bt_html = os.path.join(site_dir, "bot-templates/index.html")
     if not os.path.exists(bt_html):
         bt_html = "/workspace/agent-tool-finder/bot-templates/index.html"
@@ -80,9 +84,9 @@ def load_live_catalog_counts(site_dir):
         ft_count = len([f for f in os.listdir(ft_dir) if f.endswith(".html") and f != "index.html"]) + 1
     except Exception:
         ft_count = 19
-    return total_tools, mcp_count, page_count, bt_count, ft_count, stars
+    return total_tools, cat_count, mcp_count, page_count, bt_count, ft_count, free_count, os_count, os_coding_count, stars
 
-LIVE_TOOL_COUNT, LIVE_MCP_COUNT, LIVE_PAGE_COUNT, LIVE_BT_COUNT, LIVE_FT_COUNT, LIVE_STARS = load_live_catalog_counts(SITE_DIR)
+LIVE_TOOL_COUNT, LIVE_CAT_COUNT, LIVE_MCP_COUNT, LIVE_PAGE_COUNT, LIVE_BT_COUNT, LIVE_FT_COUNT, LIVE_FREE_COUNT, LIVE_OS_COUNT, LIVE_OS_CODING_COUNT, LIVE_STARS = load_live_catalog_counts(SITE_DIR)
 
 FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_REG = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
@@ -153,7 +157,7 @@ def build_newsletter_radar_gif():
         d.text((W - 350, 28), "agentscouthq.com · @clampdown19", font=f_card_m, fill=(196, 196, 220, 255))
 
         d.text((32, 64), "Top 6 Trending AI Agent & MCP Stacks This Week", font=f_title, fill=(255, 255, 255, 255))
-        d.text((32, 100), f"Live benchmark & adoption pulse across {LIVE_TOOL_COUNT:,}+ daily-tested AI agents & {LIVE_MCP_COUNT}+ MCP servers:", font=f_sub, fill=(200, 202, 225, 255))
+        d.text((32, 100), f"Live benchmark & adoption pulse across {LIVE_TOOL_COUNT:,}+ daily-tested AI agents ({LIVE_CAT_COUNT} categories) & {LIVE_MCP_COUNT}+ MCP servers:", font=f_sub, fill=(200, 202, 225, 255))
 
         cols, rows = 3, 2
         cw, ch = 364, 136
@@ -366,7 +370,7 @@ def build_x_4x5_60fps_mp4():
         d.text((W - 380, 47), "@clampdown19 · @AgentScoutHQ", font=f_pill, fill=(196, 196, 220, 255))
 
         d.text((44, 105), "2026 AI Agent & MCP Stack Benchmarks", font=f_title, fill=(255, 255, 255, 255))
-        d.text((44, 156), f"Daily-verified adoption velocity across {LIVE_TOOL_COUNT:,}+ AI agents & {LIVE_MCP_COUNT}+ MCP servers:", font=f_sub, fill=(200, 202, 225, 255))
+        d.text((44, 156), f"Daily-verified adoption velocity across {LIVE_TOOL_COUNT:,}+ AI agents ({LIVE_CAT_COUNT} categories) & {LIVE_MCP_COUNT}+ MCP servers:", font=f_sub, fill=(200, 202, 225, 255))
 
         sy = 210
         ch = 162
@@ -442,7 +446,7 @@ def build_mcp_terminal_infographic():
         ("search_tools", '{"query": "browser automation"}', f"Browser Use ({LIVE_STARS['browser-use']}), Stagehand ({LIVE_STARS['stagehand']})", "14ms"),
         ("best_for_task", '{"task": "coding agent + MCP"}', f"OpenCode ({LIVE_STARS['opencode']}), Claude Code, Cursor", "18ms"),
         ("get_tool", '{"slug": "context7"}', f"Context7 MCP · {LIVE_STARS['context7']} · Free · 200 OK", "11ms"),
-        ("list_categories", '{"filter": "mcp-servers"}', f"{LIVE_MCP_COUNT} Verified MCP Servers · 99.6% Uptime", "9ms"),
+        ("list_categories", '{"filter": "all"}', f"{LIVE_CAT_COUNT} Categories · {LIVE_MCP_COUNT} Verified MCP Servers · 99.6% Uptime", "9ms"),
     ]
     seed = _day_seed()
     queries = queries[seed % len(queries):] + queries[:seed % len(queries)]
@@ -631,7 +635,7 @@ def build_trained_bots_ad_infographic():
         d.text((x_sc, 54), "Scout", font=f_title, fill=(115, 115, 255, 255))
         x_rest = x_sc + int(d.textlength("Scout", font=f_title)) + 8
         d.text((x_rest, 54), "($39/$59/$59/$69 or $149 Bundle)", font=f_title, fill=(255, 255, 255, 255))
-        d.text((70, 82), f"Live across {LIVE_TOOL_COUNT:,} tools, {LIVE_MCP_COUNT:,} MCP servers & {LIVE_PAGE_COUNT:,} pages · Buy 1 bot ($39–$69) or all 4 for $149 (Save $77):", font=f_sub, fill=(214, 211, 209, 255))
+        d.text((70, 82), f"Live across {LIVE_TOOL_COUNT:,} tools, {LIVE_CAT_COUNT} categories, {LIVE_MCP_COUNT:,} MCP servers & {LIVE_PAGE_COUNT:,} pages · Buy 1 bot ($39–$69) or all 4 for $149 (Save $77):", font=f_sub, fill=(214, 211, 209, 255))
 
         # Left Panel: 4-Bot Company-in-a-Box Architecture Hub (x=24..510, y=112..506)
         d.rounded_rectangle([24, 112, 510, 506], radius=14, fill=(18, 15, 10, 255), outline=(245, 158, 11, 160), width=1)
@@ -1204,7 +1208,7 @@ def build_home_terminal_infographic():
         d.text((356, 324), "OpenCode  (CLI Coding Agent)", font=fnt(FONT_BOLD, 16), fill=(255, 255, 255, 255))
         d.rounded_rectangle([658, 322, 734, 342], radius=5, fill=(16, 185, 129, 40), outline=(16, 185, 129, 220), width=1)
         d.text((668, 326), "200 OK", font=f_mono_s, fill=(52, 211, 153, 255))
-        d.text((356, 350), "GitHub: 105,000+ ★   |   Pricing: Open Source (Free)", font=f_mono_s, fill=(125, 211, 252, 255))
+        d.text((356, 350), f"GitHub: {LIVE_STARS['opencode_comma']}   |   Pricing: Open Source (Free)", font=f_mono_s, fill=(125, 211, 252, 255))
         d.text((356, 370), "MCP Support: Native Client + Tool Server · Checked today", font=f_card_s, fill=(195, 205, 230, 255))
         d.text((356, 390), "reason: verified repo, active commits, 0 broken docs links", font=f_mono_s, fill=(251, 191, 36, 255))
 
@@ -1547,7 +1551,7 @@ def scene_home(d, F, t, ch, lp, box, accent):
     if ch == 0:
         yy = _term(d, F, x0, y0, x1, y1, "Directory filters — Free, open source, coding", accent)
         chips = [("Free", 0.18), ("Open source", 0.42), ("coding", 0.68)]
-        counts = [LIVE_TOOL_COUNT, 1405, 612, 86]
+        counts = [LIVE_TOOL_COUNT, LIVE_FREE_COUNT, LIVE_OS_COUNT, LIVE_OS_CODING_COUNT]
         stage = 0
         for i, (_name, gate) in enumerate(chips):
             if lp >= gate:
@@ -1882,7 +1886,7 @@ def _frame_for(spec, t):
     im = _base(WALK_W, WALK_H)
     d = ImageDraw.Draw(im)
     d.rectangle([10, 10, WALK_W - 11, 14], fill=spec["accent"])
-    d.text((22, 22), "AGENTSCOUT   ·   QUICK-START WALKTHROUGH", font=F["b12"], fill=spec["accent"])
+    d.text((22, 22), f"AGENTSCOUT  ·  {LIVE_TOOL_COUNT:,} TOOLS  ·  {LIVE_CAT_COUNT} CATEGORIES  ·  {LIVE_MCP_COUNT} MCP SERVERS  ·  {LIVE_PAGE_COUNT:,} PAGES", font=F["b12"], fill=spec["accent"])
     kick = spec["kicker"]
     d.text((WALK_W - 24 - _tw(F["b14"], kick), 20), kick, font=F["b14"], fill=(255, 255, 255))
     _draw_outline(d, F, spec, ch, lp)
