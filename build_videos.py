@@ -42,7 +42,7 @@ def pages(t):
             "id": "guide-trained-bots",
             "cat": "bots",
             "cat_label": "Pre-Trained Bots",
-            "badge": "Downloadable Pro Bots ($39 / $59 / $69 / $149)",
+            "badge": "Downloadable Pro Bots ($39 / $59 / $59 / $69 / $149)",
             "color": "#f59e0b",
             "title": "Deploy AgentScout's Pre-Trained Pro Bots ($39 / $59 / $59 / $69) & 4-Bot 'Company-in-a-Box' Bundle ($149)",
             "summary": "See how 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), and 4. AgentScout CEO Coordinator Bot ($69) coordinate via shared workspace handoffs, scheduled routines, and MCP tools — available separately ($226 total) or together in the $149 4-Bot Team Bundle (Save $77).",
@@ -55,12 +55,12 @@ def pages(t):
             "duration": "PT12S",
             "steps": [
                 "Choose any of the 4 downloadable Pro Bots separately ($39 AgentScout Operations / Monitoring Bot, $59 AgentScout SEO & AEO Growth Auditor Bot, $59 AgentScout Market & Launch Intel Bot, or $69 AgentScout CEO Coordinator Bot) or get all 4 together in the $149 4-Bot Company-in-a-Box Team Bundle (saves $77).",
-                "Receive the sanitized SYSTEM.md instructions, cron routine schedules, shared handoff protocol, and zero-key MCP config.",
-                "Import into Grok Bot, Claude Code, or Cursor on your own computer in under 3 minutes."
+                "Unzip your instant download to get README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, custom AgentScout skills, and zero-key mcp.json.",
+                "Run python3 setup_workspace.py --domain yoursite.com and drop the native config into Grok Bot (SYSTEM.md), Claude Code (CLAUDE.md), Cursor (.cursor/rules), OpenAI Codex (AGENTS.md), Copilot, Windsurf, Cline, or Cron in under 3 minutes."
             ],
             "snippet": '{"mcpServers":{"agentscout":{"url":"https://mcp.agentscouthq.com/mcp"}}}',
             "links": [
-                ("../bot-templates/#made-by-agentscout", "Buy Pre-Trained Pro Bots ($39 / $59 / $69 / $149) →"),
+                ("../bot-store/", "Shop Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149) →"),
                 ("../bot-templates/index.html#bt-featured", f"Browse {n_bt} Community Bot Templates →"),
             ],
         },
@@ -125,7 +125,7 @@ def pages(t):
             "badge": "19 Free Browser Calculators",
             "color": "#10b981",
             "title": "How to Combine Free Browser Calculators with Ready-Made Agent Skills",
-            "summary": "Pair AgentScout's 19 zero-signup browser calculators (Token Counter, Context Window Sizer, Cron Builder, JSON Schema Validator, AEO Checker) with installable skills for Grok Bot, Claude, and Cursor.",
+            "summary": "Pair AgentScout's 19 zero-signup browser calculators (Token Counter, Context Window Sizer, Cron Builder, JSON Schema Validator, AEO Checker) with installable skills for Grok Bot, Claude Code, Cursor, OpenAI Codex, and Windsurf.",
             "video": "../assets/animations/agentscout-bot-constellation.mp4",
             "poster": "../assets/animations/agentscout-bot-constellation-poster.png",
             "video_url": f"{B}assets/animations/agentscout-bot-constellation.mp4",
@@ -231,7 +231,7 @@ def pages(t):
     pro_tips = [
         ("⚡ Zero-Key MCP Discovery", "Point Claude Code, Cursor, or Grok Bot to https://mcp.agentscouthq.com/mcp (Streamable HTTP) or https://agentscouthq.com/mcp/sse to search all 1,800+ tools live without an API key.", "../mcp/connect.html", "Setup MCP →"),
         ("🧮 Size Context & Cost Before You Build", "Run the Token Counter, Context Window Sizer, and Agent Run Cost Estimator in your browser before picking a model tier.", "../free-tools.html", "Open 19 Free Calculators →"),
-        ("🤖 Buy Pre-Trained Pro Bots ($39 / $59 / $69 / $149)", "Buy any of our 4 Grok Bot packages separately — 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), 4. AgentScout CEO Coordinator Bot ($69) — or get all 4 together for $149 (Save $77).", "../bot-store/", "Open Bot Store ($39–$149) →"),
+        ("🤖 Buy Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149)", "Buy any of our 4 Grok Bot packages separately — 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), 4. AgentScout CEO Coordinator Bot ($69) — or get all 4 together for $149 (Save $77).", "../bot-store/", "Open Bot Store ($39–$149) →"),
         ("📄 Ground LLMs with llms-full.txt", "Pass https://agentscouthq.com/llms-full.txt into Cursor @Docs, NotebookLM, or Claude Projects for full category tables and verified MCP endpoints.", "../llms-full.txt", "Open llms-full.txt →"),
         ("🔒 Filter for Local-First & MIT/Apache", "Need zero data egress? Filter by Open Source + Local execution on /best/local-offline-ai-agents.html or query runs_locally='offline' via MCP.", "../best/local-offline-ai-agents.html", "Local AI Agents →"),
         ("🚀 List Your AI Tool in the Directory", "Building an AI agent or MCP server? Community directory listings are $0 forever, or choose a Maker Directory Boost ($29 Fast-Track, $49 30-Day Pin, or $99/wk Sponsor).", "../sponsor.html#packages", "Directory Listing Tiers →"),
@@ -240,7 +240,7 @@ def pages(t):
     faq = [
         ("Are all video guides and walkthroughs on this page free?", "Yes. Every walkthrough video, copy-paste MCP snippet, and browser calculator on AgentScout is 100% free with no sign-up required."),
         ("How do I connect AgentScout to Claude Code, Cursor, or VS Code?", "Run claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp in your terminal, or add https://mcp.agentscouthq.com/mcp (or https://agentscouthq.com/mcp/sse) to your mcp.json file. No API key is needed."),
-        ("What is the difference between Pre-Trained Pro Bots ($39 / $59 / $69 / $149) and Directory Listing Packages ($0 / $29 / $49 / $99)?", "Pre-Trained Pro Bots (on /bot-store/ and /bot-templates/#made-by-agentscout) are downloadable Grok Bot configurations (SYSTEM.md, cron routines, and skills — also compatible with Claude Code, Cursor & Codex) that you buy to run on your own computer: 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), 4. AgentScout CEO Coordinator Bot ($69), or all 4 together in the 4-Bot Company-in-a-Box Bundle ($149, saving $77). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $29 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
+        ("What is the difference between Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149) and Directory Listing Packages ($0 / $29 / $49 / $99)?", "Pre-Trained Pro Bots (on /bot-store/ and /bot-templates/#made-by-agentscout) are downloadable Grok Bot configurations (with README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, and native files for Claude Code, Cursor, OpenAI Codex, Copilot, Windsurf & Cline) that you buy to run on your own computer: 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), 4. AgentScout CEO Coordinator Bot ($69), or all 4 together in the 4-Bot Company-in-a-Box Bundle ($149, saving $77). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $29 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
         ("How often are the tools and metrics in these guides updated?", f"Every day at 7:00 AM PT. All {n_tools:,} tools and {n_mcp} MCP servers are link-checked and synced with live GitHub star counts daily."),
     ]
 
@@ -354,7 +354,7 @@ pills.forEach(function(btn){
         f'<p>Short, high-density visual walkthroughs showing how to connect AgentScout\'s free MCP server (<code>com.agentscouthq/directory</code>) to Claude Code, Cursor &amp; VS Code, compare {n_tools:,}+ AI agents side-by-side, deploy our downloadable Pro Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"> (<code>$39</code> / <code>$59</code> / <code>$59</code> / <code>$69</code> or all 4 for <code>$149</code>), and use 19 free browser calculators.</p>'
         '<div style="display:flex;flex-wrap:wrap;gap:8px">'
         '<a class="btn primary" href="../mcp/connect.html" style="background:#14b8a6;border-color:#14b8a6;color:#042f2e;font-weight:700">Connect Free MCP Server →</a>'
-        '<a class="btn primary" href="../bot-templates/#made-by-agentscout" style="background:linear-gradient(135deg,#f59e0b,#f97316);border-color:#f59e0b;color:#0a0906;font-weight:800">🤖 Shop Pre-Trained Pro Bots ($39 / $59 / $69 / $149) →</a>'
+        '<a class="btn primary" href="../bot-store/" style="background:linear-gradient(135deg,#f59e0b,#f97316);border-color:#f59e0b;color:#0a0906;font-weight:800">🤖 Shop Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149) →</a>'
         '<a class="btn" href="../free-tools.html" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">19 Free Browser Calculators →</a>'
         '</div></section>'
         '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:10px 0">'
@@ -382,7 +382,7 @@ pills.forEach(function(btn){
 
     canon = B + "videos/"
     title = f"AI Agent & MCP Video Guides, Walkthroughs & Pro Tips ({len(guides)} Guides) · AgentScout"
-    desc = f"Watch {len(guides)} step-by-step 60fps video guides and pro tips for connecting MCP servers in Claude & Cursor, comparing {n_tools:,}+ AI agents, and deploying pre-trained Pro Bots ($39/$59/$69/$149)."
+    desc = f"Watch {len(guides)} step-by-step 60fps video guides and pro tips for connecting MCP servers in Claude & Cursor, comparing {n_tools:,}+ AI agents, and deploying pre-trained Pro Bots ($39/$59/$59/$69/$149)."
 
     video_objects = [
         {

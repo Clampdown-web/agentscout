@@ -172,7 +172,7 @@ def sync_animations(t=None):
         json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
     elif old_state != cur_state:
         json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
-    ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}-{n_bt}"
+    ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}-{n_bt}-{script_mtime}"
     pages = [
         "index.html", "mcp/index.html", "mcp/connect.html", "sponsor.html",
         "submit.html", "compare/index.html", "tasks/index.html",
