@@ -109,7 +109,7 @@ def _bt_sec():
     import os
     out=[]
     if os.path.exists("videos/index.html"): out.append(f"- [How-To Video Guides & Pro Tips Hub: 8 playable 60fps walkthroughs with copyable MCP & CLI snippets]({B}videos/)")
-    if os.path.exists("bot-templates/index.html"): out.append(f"- [Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle ($0 Free Starter Pack, $29 Ops / Monitor, $49 SEO / AEO Auditor, $49 Competitive Intelligence Analyst, $99 4-Bot Team Bundle)]({B}bot-templates/#made-by-agentscout)")
+    if os.path.exists("bot-templates/index.html"): out.append(f"- [Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle ($39 Operations / Monitoring Bot, $59 SEO / AEO Auditor Bot, $59 Competitive Intelligence Analyst Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot Team Bundle — Save $77)]({B}bot-templates/#made-by-agentscout)")
     if os.path.exists("bot-templates/index.html") and _h1("bot-templates/index.html"): out.append(f"- [AI bot templates, plugins and skills: ready-made Grok Bot, Claude, Codex and Cursor templates]({B}bot-templates/)")
     for f in sorted(glob.glob("bot-templates/*.html")):
         if f.endswith("index.html"): continue
