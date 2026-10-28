@@ -22,6 +22,8 @@ def pages(t):
             "poster": "../assets/animations/agentscout-mcp-terminal-poster.png",
             "video_url": f"{B}assets/animations/agentscout-mcp-terminal.mp4",
             "poster_url": f"{B}assets/animations/agentscout-mcp-terminal-poster.png",
+            "w": 1200,
+            "h": 540,
             "duration": "PT9S",
             "steps": [
                 "Copy the one-line CLI command or JSON config block below (no API key or account needed).",
@@ -38,26 +40,27 @@ def pages(t):
         {
             "id": "guide-trained-bots",
             "cat": "bots",
-            "cat_label": "Bot Templates",
-            "badge": "New · Made by AgentScout",
-            "color": "#ec4899",
-            "title": "Launch Your Pre-Trained 4-Bot AI Team ('Company-in-a-Box') & 193 Bot Templates",
-            "summary": "See how CEO Grok, Ops / Monitor, SEO / AEO Auditor, and Competitive Intelligence Analyst coordinate via shared workspace handoffs, scheduled routines, and MCP tools — plus 193 ready-made templates.",
+            "cat_label": "Pre-Trained Bots",
+            "badge": "Downloadable Pro Bots ($39 / $59 / $69 / $149)",
+            "color": "#f59e0b",
+            "title": "Deploy AgentScout's Pre-Trained Pro Bots ($39 / $59 / $59 / $69) & 4-Bot 'Company-in-a-Box' Bundle ($149)",
+            "summary": "See how 1. Operations / Monitoring ($39), 2. SEO / AEO Auditor ($59), 3. Competitive Intelligence Analyst ($59), and 4. CEO Coordinator ($69) coordinate via shared workspace handoffs, scheduled routines, and MCP tools — available separately ($226 total) or together in the $149 4-Bot Team Bundle (Save $77).",
             "video": "../assets/animations/agentscout-trained-bots-ad.mp4",
             "poster": "../assets/animations/agentscout-trained-bots-ad-poster.png",
             "video_url": f"{B}assets/animations/agentscout-trained-bots-ad.mp4",
             "poster_url": f"{B}assets/animations/agentscout-trained-bots-ad-poster.png",
+            "w": 1200,
+            "h": 560,
             "duration": "PT12S",
             "steps": [
-                "Start with our $0 Free Starter Bot templates on /bot-templates/ (paired with AgentScout Weekly).",
-                "Add a specialist Pro Bot ($29 Ops / Monitor, $49 SEO / AEO Auditor, or $49 Competitive Intel Analyst) or the full $99 4-Bot Team Bundle.",
-                "Import the sanitized SYSTEM.md, cron routines, and MCP config into Grok Bot, Claude Code, or Cursor in under 3 minutes."
+                "Choose any of the 4 downloadable Pro Bots separately ($39 Ops / Monitor, $59 SEO / AEO Auditor, $59 Competitive Intel Analyst, or $69 CEO Coordinator) or get all 4 together in the $149 4-Bot Company-in-a-Box Team Bundle (saves $77).",
+                "Receive the sanitized SYSTEM.md instructions, cron routine schedules, shared handoff protocol, and zero-key MCP config.",
+                "Import into Grok Bot, Claude Code, or Cursor on your own computer in under 3 minutes."
             ],
             "snippet": '{"mcpServers":{"agentscout":{"url":"https://mcp.agentscouthq.com/mcp"}}}',
             "links": [
-                ("../bot-templates/#made-by-agentscout", "Explore Made by AgentScout Pro Bots →"),
-                ("../bot-templates/index.html", "Browse All 193 Bot Templates →"),
-                ("https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01", "Get 4-Bot Team Bundle ($99) →"),
+                ("../bot-templates/#made-by-agentscout", "Buy Pre-Trained Pro Bots ($39 / $59 / $69 / $149) →"),
+                ("../bot-templates/index.html#bt-featured", "Browse 193 Community Bot Templates →"),
             ],
         },
         {
@@ -72,6 +75,8 @@ def pages(t):
             "poster": "../assets/animations/agentscout-vs-arena-poster.png",
             "video_url": f"{B}assets/animations/agentscout-vs-arena.mp4",
             "poster_url": f"{B}assets/animations/agentscout-vs-arena-poster.png",
+            "w": 1200,
+            "h": 520,
             "duration": "PT9S",
             "steps": [
                 "Open /compare/ to pick any two AI agents (e.g., Cursor vs Windsurf, Claude Code vs OpenCode, Browser Use vs Stagehand).",
@@ -97,6 +102,8 @@ def pages(t):
             "poster": "../assets/animations/agentscout-home-terminal-poster.png",
             "video_url": f"{B}assets/animations/agentscout-home-terminal.mp4",
             "poster_url": f"{B}assets/animations/agentscout-home-terminal-poster.png",
+            "w": 1200,
+            "h": 620,
             "duration": "PT11S",
             "steps": [
                 "Filter the directory by price tag (Free, Freemium, Paid), open-source license, or task on the homepage.",
@@ -115,13 +122,15 @@ def pages(t):
             "cat": "bots",
             "cat_label": "Bot Templates",
             "badge": "19 Free Browser Calculators",
-            "color": "#a855f7",
+            "color": "#10b981",
             "title": "How to Combine Free Browser Calculators with Ready-Made Agent Skills",
             "summary": "Pair AgentScout's 19 zero-signup browser calculators (Token Counter, Context Window Sizer, Cron Builder, JSON Schema Validator, AEO Checker) with installable skills for Grok Bot, Claude, and Cursor.",
             "video": "../assets/animations/agentscout-bot-constellation.mp4",
             "poster": "../assets/animations/agentscout-bot-constellation-poster.png",
             "video_url": f"{B}assets/animations/agentscout-bot-constellation.mp4",
             "poster_url": f"{B}assets/animations/agentscout-bot-constellation-poster.png",
+            "w": 1200,
+            "h": 540,
             "duration": "PT9S",
             "steps": [
                 "Open /free-tools.html and pick a calculator (all 19 run 100% client-side in your browser with zero signup).",
@@ -138,15 +147,17 @@ def pages(t):
         {
             "id": "guide-sponsor-submit",
             "cat": "submit",
-            "cat_label": "Submit & Boost",
-            "badge": "For AI Makers & Founders",
-            "color": "#f59e0b",
-            "title": "How to Submit Your AI Agent or MCP Server & Pick the Right Launch Tier ($0 / $29 / $49 / $99)",
-            "summary": "Walkthrough of AgentScout's 4 maker launch packages: from the $0 Free Forever Community Listing to same-day $29 Fast-Track, $49 30-Day Category Pin + Permanent SEO/AEO Placement, and $99/wk Sitewide Sponsor.",
+            "cat_label": "Directory Listings",
+            "badge": "For AI Tool Makers & Founders",
+            "color": "#ec4899",
+            "title": "For Tool Makers: How to List Your AI Tool or MCP Server in the Directory ($0 / $29 / $49 / $99)",
+            "summary": "Walkthrough of AgentScout's 4 Directory Listing packages for tool makers: from the $0 Free Forever Community Listing to same-day $29 Fast-Track, $49 30-Day Category Pin + Permanent SEO/AEO Placement, and $99/wk Sitewide Sponsor.",
             "video": "../assets/animations/agentscout-sponsor-placements.mp4",
             "poster": "../assets/animations/agentscout-sponsor-placements-poster.png",
             "video_url": f"{B}assets/animations/agentscout-sponsor-placements.mp4",
             "poster_url": f"{B}assets/animations/agentscout-sponsor-placements-poster.png",
+            "w": 1200,
+            "h": 560,
             "duration": "PT9S",
             "steps": [
                 "Submit your tool free at /submit.html#free-form ($0 forever, standard review queue, permanent /tools/<slug>.html page + MCP indexing).",
@@ -155,8 +166,8 @@ def pages(t):
             ],
             "snippet": "curl -s https://agentscouthq.com/api/products.json | jq '.packages[] | {name, price_usd, checkout_url}'",
             "links": [
-                ("../submit.html#free-form", "Submit Free ($0 Forever) →"),
-                ("../sponsor.html#packages", "Compare All 4 Launch Tiers ($0–$99) →"),
+                ("../submit.html#free-form", "Submit Your Tool Free ($0) →"),
+                ("../sponsor.html#packages", "Compare Directory Listing Tiers ($0 / $29 / $49 / $99) →"),
                 ("../badges.html", "Get Your Free Verified README Badge →"),
             ],
         },
@@ -172,6 +183,8 @@ def pages(t):
             "poster": "../assets/animations/agentscout-workflow-poster.png",
             "video_url": f"{B}assets/animations/agentscout-workflow-infographic.mp4",
             "poster_url": f"{B}assets/animations/agentscout-workflow-poster.png",
+            "w": 1200,
+            "h": 480,
             "duration": "PT8S",
             "steps": [
                 "Layer 1 & 2 (Code + Docs): Pair your terminal coding agent with Context7 MCP so it never hallucinates deprecated SDK methods.",
@@ -197,6 +210,8 @@ def pages(t):
             "poster": "../assets/animations/agentscout-radar-poster.png",
             "video_url": f"{B}assets/animations/agentscout-radar-infographic.mp4",
             "poster_url": f"{B}assets/animations/agentscout-radar-poster.png",
+            "w": 1200,
+            "h": 540,
             "duration": "PT8S",
             "steps": [
                 "Check /leaderboard/ to see top-rated and fastest-growing open-source AI agent repositories updated daily.",
@@ -215,16 +230,16 @@ def pages(t):
     pro_tips = [
         ("⚡ Zero-Key MCP Discovery", "Point Claude Code, Cursor, or Grok Bot to https://mcp.agentscouthq.com/mcp (Streamable HTTP) or https://agentscouthq.com/mcp/sse to search all 1,800+ tools live without an API key.", "../mcp/connect.html", "Setup MCP →"),
         ("🧮 Size Context & Cost Before You Build", "Run the Token Counter, Context Window Sizer, and Agent Run Cost Estimator in your browser before picking a model tier.", "../free-tools.html", "Open 19 Free Calculators →"),
-        ("🤖 Deploy a Coordinated 4-Bot Team", "Don't run one overloaded prompt. Split duties across a Coordinator, Ops/Monitor, SEO/AEO Auditor, and Competitive Intel bot with shared markdown handoffs.", "../bot-templates/#made-by-agentscout", "See Pre-Trained Bots →"),
+        ("🤖 Buy Pre-Trained Pro Bots ($39 / $59 / $69 / $149)", "Buy any of our 4 bots separately — Operations / Monitoring ($39), SEO / AEO Auditor ($59), Competitive Intel ($59), CEO Coordinator ($69) — or get all 4 together for $149 (Save $77).", "../bot-templates/#made-by-agentscout", "Shop Pro Bots ($39–$149) →"),
         ("📄 Ground LLMs with llms-full.txt", "Pass https://agentscouthq.com/llms-full.txt into Cursor @Docs, NotebookLM, or Claude Projects for full category tables and verified MCP endpoints.", "../llms-full.txt", "Open llms-full.txt →"),
         ("🔒 Filter for Local-First & MIT/Apache", "Need zero data egress? Filter by Open Source + Local execution on /best/local-offline-ai-agents.html or query runs_locally='offline' via MCP.", "../best/local-offline-ai-agents.html", "Local AI Agents →"),
-        ("🚀 Launch & Pin Your Tool Same-Day", "Submitting a new AI agent or MCP server? Free listings are $0 forever, or unlock same-day review + a 30-day category pin + permanent /best/ & /compare/ placement for $49.", "../sponsor.html#packages", "Compare Launch Tiers →"),
+        ("🚀 List Your AI Tool in the Directory", "Building an AI agent or MCP server? Community directory listings are $0 forever, or choose a Maker Directory Boost ($29 Fast-Track, $49 30-Day Pin, or $99/wk Sponsor).", "../sponsor.html#packages", "Directory Listing Tiers →"),
     ]
 
     faq = [
         ("Are all video guides and walkthroughs on this page free?", "Yes. Every walkthrough video, copy-paste MCP snippet, and browser calculator on AgentScout is 100% free with no sign-up required."),
         ("How do I connect AgentScout to Claude Code, Cursor, or VS Code?", "Run claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp in your terminal, or add https://mcp.agentscouthq.com/mcp (or https://agentscouthq.com/mcp/sse) to your mcp.json file. No API key is needed."),
-        ("What are the 'Made by AgentScout' Pre-Trained Pro Bots?", "They are sanitized, ready-to-run versions of the exact 4-agent team that operates AgentScout daily: Ops / Monitor ($29), SEO / AEO Auditor ($49), Competitive Intelligence Analyst ($49), and the complete 4-Bot Company-in-a-Box Team Bundle ($99), plus $0 Free Starter templates."),
+        ("What is the difference between Pre-Trained Pro Bots ($39 / $59 / $69 / $149) and Directory Listing Packages ($0 / $29 / $49 / $99)?", "Pre-Trained Pro Bots (on /bot-templates/#made-by-agentscout) are downloadable AI bot configurations (SYSTEM.md, cron routines, and skills) that you buy to run on your own computer: Operations / Monitoring ($39), SEO / AEO Auditor ($59), Competitive Intelligence Analyst ($59), CEO Coordinator ($69), or all 4 together in the 4-Bot Company-in-a-Box Bundle ($149, saving $77). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $29 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
         ("How often are the tools and metrics in these guides updated?", f"Every day at 7:00 AM PT. All {n_tools:,} tools and {n_mcp} MCP servers are link-checked and synced with live GitHub star counts daily."),
     ]
 
@@ -239,8 +254,8 @@ def pages(t):
 .vh-pill.on{background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(14,165,233,.3)}
 .vh-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0 28px}
 .vh-card{display:flex;flex-direction:column;border-radius:14px;border:1px solid var(--line);background:var(--card);overflow:hidden;min-width:0;box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.vh-vidwrap{position:relative;background:#060810;border-bottom:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
-.vh-vidwrap video{display:block;width:100%;height:100%;object-fit:cover}
+.vh-vidwrap{position:relative;width:100%;background:#060810;border-bottom:1px solid var(--line);overflow:hidden;line-height:0}
+.vh-vidwrap video{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;background:#060810}
 .vh-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
 .vh-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
 .vh-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.02em}
@@ -261,7 +276,7 @@ def pages(t):
 .vh-tip p{margin:0;font-size:13px;line-height:1.5;color:var(--muted);flex:1}
 .vh-tip a{font-size:13px;font-weight:700;color:#0ea5e9;text-decoration:none;margin-top:4px;display:inline-flex;align-items:center;min-height:34px}
 @media(max-width:920px){.vh-grid{grid-template-columns:1fr}.vh-tips{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){.vh-hero{padding:16px}.vh-tips{grid-template-columns:1fr}.vh-Links a{width:100%;justify-content:center}}
+@media(max-width:560px){.vh-hero{padding:16px}.vh-tips{grid-template-columns:1fr}.vh-links a{width:100%;justify-content:center}}
 </style>'''
 
     cards_html = []
@@ -271,9 +286,11 @@ def pages(t):
             f'<a href="{e(u)}"' + (' target="_blank" rel="noopener noreferrer"' if u.startswith("http") else "") + f">{e(lbl)}</a>"
             for u, lbl in g["links"]
         )
+        vw = g.get("w", 1200)
+        vh = g.get("h", 540)
         cards_html.append(
             f'<article class="vh-card" id="{e(g["id"])}" data-vh-cat="{e(g["cat"])}">'
-            f'<div class="vh-vidwrap"><video autoplay loop muted playsinline preload="metadata" poster="{e(g["poster"])}" width="1200" height="675">'
+            f'<div class="vh-vidwrap"><video autoplay loop muted playsinline preload="metadata" poster="{e(g["poster"])}" width="{vw}" height="{vh}" style="aspect-ratio:{vw}/{vh}">'
             f'<source src="{e(g["video"])}" type="video/mp4">'
             f'</video></div>'
             f'<div class="vh-body">'
@@ -298,22 +315,6 @@ def pages(t):
     faq_html = "".join(
         f'<details style="border-bottom:1px solid var(--line);padding:10px 0"><summary style="font-weight:600;cursor:pointer">{e(q)}</summary><p style="margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.55">{e(a)}</p></details>'
         for q, a in faq
-    )
-
-    maker_cta = (
-        '<section style="margin:28px 0;padding:20px;border-radius:14px;border:1px solid rgba(14,165,233,.4);background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(236,72,153,.08))">'
-        '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">'
-        '<div style="flex:1 1 360px;min-width:0">'
-        '<span style="display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#14b8a6;margin-bottom:4px">For AI Makers &amp; Founders · 4 Launch Tiers</span>'
-        '<h2 style="margin:0 0 6px;font-size:19px">Built an AI Agent, MCP Server, or Bot Template? Get Featured</h2>'
-        f'<p class="muted" style="margin:0;font-size:13.5px;line-height:1.5">List alongside <b>{n_tools:,}+ verified AI tools</b>: <b>$0 Free Forever Community Listing</b> (3–5 day standard queue), <b>$29 Fast-Track + 7-Day Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent <code>/best/</code> &amp; <code>/compare/</code> Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>'
-        '</div>'
-        '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">'
-        '<a class="btn primary pkg-cta-free" href="../submit.html#free-form">Submit Free ($0)</a>'
-        '<a class="btn primary pkg-cta-fast" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a>'
-        '<a class="btn primary pkg-cta-pop" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Pin ($49 ★) →</a>'
-        '<a class="btn primary pkg-cta-vip" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>'
-        '</div></div></section>'
     )
 
     js = '''<script id="vid-hub-js">(function(){
@@ -345,22 +346,22 @@ pills.forEach(function(btn){
     body = (
         '<div class="crumb"><a href="../index.html">AgentScout</a> / How-To Video Guides &amp; Pro Tips</div>'
         '<section class="vh-hero">'
-        '<span class="vh-eyebrow">⚡ 60FPS Walkthroughs · Copy-Paste Configs · Zero Signup</span>'
+        '<span class="vh-eyebrow">🎬 60FPS Walkthroughs · Full-Width Mobile Ready · Zero Signup</span>'
         f'<h1>AI Agent &amp; MCP How-To Video Guides + Pro Tips ({len(guides)} Visual Walkthroughs)</h1>'
-        f'<p>Short, high-density visual walkthroughs showing how to connect AgentScout\'s free MCP server (<code>com.agentscouthq/directory</code>) to Claude Code, Cursor &amp; VS Code, compare {n_tools:,}+ AI agents side-by-side, deploy our <b>Made by AgentScout</b> pre-trained 4-bot team, and use 19 free browser calculators.</p>'
+        f'<p>Short, high-density visual walkthroughs showing how to connect AgentScout\'s free MCP server (<code>com.agentscouthq/directory</code>) to Claude Code, Cursor &amp; VS Code, compare {n_tools:,}+ AI agents side-by-side, deploy our <b>Made by AgentScout</b> downloadable Pro Bots (<code>$39</code> / <code>$59</code> / <code>$59</code> / <code>$69</code> or all 4 for <code>$149</code>), and use 19 free browser calculators.</p>'
         '<div style="display:flex;flex-wrap:wrap;gap:8px">'
         '<a class="btn primary" href="../mcp/connect.html" style="background:#14b8a6;border-color:#14b8a6;color:#042f2e;font-weight:700">Connect Free MCP Server →</a>'
-        '<a class="btn primary" href="../bot-templates/#made-by-agentscout" style="background:#ec4899;border-color:#ec4899;color:#fff;font-weight:700">Made by AgentScout Pro Bots ($0–$99) →</a>'
+        '<a class="btn primary" href="../bot-templates/#made-by-agentscout" style="background:linear-gradient(135deg,#f59e0b,#f97316);border-color:#f59e0b;color:#0a0906;font-weight:800">🤖 Shop Pre-Trained Pro Bots ($39 / $59 / $69 / $149) →</a>'
         '<a class="btn" href="../free-tools.html" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)">19 Free Browser Calculators →</a>'
         '</div></section>'
         '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:10px 0">'
         '<div class="vh-pills" role="group" aria-label="Filter video guides by topic">'
         f'<button type="button" class="vh-pill on" data-vh-filter="all" aria-pressed="true">All Guides ({len(guides)})</button>'
         '<button type="button" class="vh-pill" data-vh-filter="mcp" aria-pressed="false">MCP Setup (1)</button>'
-        '<button type="button" class="vh-pill" data-vh-filter="bots" aria-pressed="false">Bot Templates &amp; 4-Bot Team (2)</button>'
+        '<button type="button" class="vh-pill" data-vh-filter="bots" aria-pressed="false">Pre-Trained Bots &amp; Templates (2)</button>'
         '<button type="button" class="vh-pill" data-vh-filter="compare" aria-pressed="false">Compare &amp; Benchmarks (2)</button>'
         '<button type="button" class="vh-pill" data-vh-filter="protips" aria-pressed="false">Architecture &amp; Pro Tips (2)</button>'
-        '<button type="button" class="vh-pill" data-vh-filter="submit" aria-pressed="false">Submit &amp; Maker Boost (1)</button>'
+        '<button type="button" class="vh-pill" data-vh-filter="submit" aria-pressed="false">Directory Listing Guide (1)</button>'
         '</div>'
         f'<p id="vh-status" class="muted" style="margin:0;font-size:13px" role="status" aria-live="polite">Showing {len(guides)} of {len(guides)} video guides</p>'
         '</div>'
@@ -370,7 +371,6 @@ pills.forEach(function(btn){
         '<p class="muted" style="margin:0 0 14px;font-size:14px">Battle-tested shortcuts from running AgentScout\'s daily verification pipeline across 1,800+ tools and 250+ MCP servers.</p>'
         f'<div class="vh-tips">{tips_html}</div>'
         '</section>'
-        + maker_cta +
         '<section style="max-width:860px;margin:28px 0">'
         '<h2 style="font-size:19px;margin:0 0 10px">Video Guides &amp; Pro Tips FAQ</h2>'
         f'{faq_html}</section>'
@@ -379,7 +379,7 @@ pills.forEach(function(btn){
 
     canon = B + "videos/"
     title = f"AI Agent & MCP Video Guides, Walkthroughs & Pro Tips ({len(guides)} Guides) · AgentScout"
-    desc = f"Watch {len(guides)} step-by-step 60fps video guides and pro tips for connecting MCP servers in Claude & Cursor, comparing {n_tools:,}+ AI agents, and launching pre-trained Grok Bot & Claude teams."
+    desc = f"Watch {len(guides)} step-by-step 60fps video guides and pro tips for connecting MCP servers in Claude & Cursor, comparing {n_tools:,}+ AI agents, and deploying pre-trained Pro Bots ($39/$59/$69/$149)."
 
     video_objects = [
         {

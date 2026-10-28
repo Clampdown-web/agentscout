@@ -213,81 +213,125 @@ def verify_logos():
     print(f"bot templates logos verified: {len(srcs)}/{len(srcs)} real icons <=20KB on /{D}/index.html (0 generic)")
 
 MBA_CSS = """<style id="bt-mba-css">
-.mba-sec{margin:18px 0 24px;padding:20px;border-radius:16px;border:1px solid rgba(236,72,153,.38);background:linear-gradient(150deg,rgba(11,15,25,.97) 0%,rgba(17,24,39,.97) 60%,rgba(28,16,43,.97) 100%);color:#f8fafc;box-shadow:0 12px 32px rgba(2,6,23,.25);min-width:0}
+.bt-hub-bar{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;padding:12px 14px;border-radius:12px;background:var(--card);border:1.5px solid rgba(16,185,129,.45);align-items:center;justify-content:space-between;box-shadow:0 0 16px rgba(16,185,129,.12)}
+.bt-hub-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.bt-hub-tab{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800;text-decoration:none;min-height:40px}
+.bt-hub-tab.pro{background:linear-gradient(135deg,#84cc16,#10b981);color:#05140b;box-shadow:0 0 14px rgba(132,204,22,.45)}
+.bt-hub-tab.comm{background:var(--soft);color:var(--text);border:1px solid var(--line)}
+.bt-hub-tab.vid{background:rgba(249,115,22,.14);color:#ea580c;border:1.5px solid rgba(249,115,22,.5)}
+@media(prefers-color-scheme:dark){.bt-hub-tab.vid{color:#fb923c}}
+html[data-theme="dark"] .bt-hub-tab.vid{color:#fb923c}
+.mba-sec{margin:14px 0 26px;padding:22px;border-radius:16px;border:2px solid rgba(16,185,129,.65);background:linear-gradient(155deg,#090d0a 0%,#11150d 55%,#16110b 100%);color:#fafaf9;box-shadow:0 14px 36px rgba(0,0,0,.45),0 0 24px rgba(16,185,129,.18);min-width:0}
+.mba-notice{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;margin-bottom:16px;border-radius:10px;background:rgba(132,204,22,.12);border:1.5px solid rgba(163,230,53,.5);font-size:13px;line-height:1.45;color:#ecfccb}
+.mba-notice a{color:#fde047;font-weight:700;text-decoration:underline}
 .mba-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
-.mba-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;background:rgba(236,72,153,.16);border:1px solid rgba(236,72,153,.48);color:#f472b6;font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.mba-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;background:rgba(16,185,129,.18);border:1.5px solid #34d399;color:#6ee7b7;font-size:11.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px;box-shadow:0 0 12px rgba(16,185,129,.35)}
 .mba-head h2{margin:0 0 6px;font-size:clamp(19px,2.5vw,25px);line-height:1.25;color:#fff}
-.mba-head p{margin:0;font-size:14px;line-height:1.5;color:#cbd5e1;max-width:780px}
-.mba-vid{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1px solid rgba(56,189,248,.32);background:#060810}
-.mba-vid video{display:block;width:100%;height:auto;max-width:100%}
-.mba-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px}
-.mba-card{display:flex;flex-direction:column;justify-content:space-between;padding:15px;border-radius:12px;background:rgba(15,23,42,.88);border:1px solid rgba(148,163,184,.24);min-width:0;gap:10px}
+.mba-head p{margin:0;font-size:14px;line-height:1.5;color:#d6d3d1;max-width:780px}
+.mba-vid{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(163,230,53,.45);background:#0a0906;line-height:0;box-shadow:0 0 20px rgba(132,204,22,.18)}
+.mba-vid video{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.mba-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}
+.mba-card{display:flex;flex-direction:column;justify-content:space-between;padding:16px;border-radius:12px;background:rgba(16,18,14,.95);border:2px solid rgba(132,204,22,.5);min-width:0;gap:10px;transition:transform .15s,box-shadow .15s}
+.mba-card:hover{transform:translateY(-2px)}
+.mba-card.neon-lime{border-color:#84cc16;background:linear-gradient(180deg,rgba(132,204,22,.14) 0%,rgba(14,18,12,.96) 55%);box-shadow:0 8px 26px rgba(132,204,22,.22),0 0 18px rgba(163,230,53,.24)}
+.mba-card.neon-gold{border-color:#eab308;background:linear-gradient(180deg,rgba(234,179,8,.14) 0%,rgba(18,16,10,.96) 55%);box-shadow:0 8px 26px rgba(234,179,8,.22),0 0 18px rgba(250,204,21,.24)}
+.mba-card.neon-orange{border-color:#f97316;background:linear-gradient(180deg,rgba(249,115,22,.15) 0%,rgba(20,13,10,.96) 55%);box-shadow:0 8px 26px rgba(249,115,22,.24),0 0 18px rgba(251,146,60,.25)}
+.mba-card.neon-red{border-color:#ef4444;background:linear-gradient(180deg,rgba(239,68,68,.15) 0%,rgba(20,11,12,.96) 55%);box-shadow:0 8px 26px rgba(239,68,68,.24),0 0 18px rgba(248,113,113,.25)}
 .mba-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.mba-price{font-size:20px;font-weight:800;color:#fff;line-height:1}
-.mba-price small{font-size:12px;font-weight:500;color:#94a3b8}
-.mba-tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700}
-.mba-card h3{margin:0;font-size:15.5px;line-height:1.3;color:#fff}
-.mba-card p{margin:0;font-size:13px;line-height:1.5;color:#cbd5e1}
-.mba-list{margin:0;padding-left:17px;font-size:12.5px;line-height:1.45;color:#e2e8f0}
-.mba-list li{margin-bottom:3px}
-.mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
-.mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none;min-height:40px;flex:1 1 auto;text-align:center}
-.mba-bundle{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:16px;border-radius:12px;background:linear-gradient(135deg,rgba(236,72,153,.16),rgba(99,102,241,.16));border:2px solid rgba(236,72,153,.6)}
+.mba-price{font-size:24px;font-weight:900;color:#fff;line-height:1}
+.mba-price small{font-size:12px;font-weight:600;color:#d6d3d1}
+.mba-tag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.mba-card h3{margin:0;font-size:16.5px;line-height:1.3;color:#fff}
+.mba-card p{margin:0;font-size:13px;line-height:1.5;color:#d6d3d1}
+.mba-list{margin:0;padding-left:17px;font-size:12.5px;line-height:1.45;color:#e7e5e4}
+.mba-list li{margin-bottom:4px}
+.mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:800;text-decoration:none;min-height:42px;flex:1 1 auto;text-align:center}
+.mba-bundle{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(16,185,129,.22),rgba(132,204,22,.14));border:2px solid #10b981;box-shadow:0 10px 30px rgba(16,185,129,.28),0 0 22px rgba(52,211,153,.28)}
 .mba-bundle-copy{flex:1 1 380px;min-width:0}
-.mba-bundle-copy h3{margin:0 0 4px;font-size:17px;color:#fff}
-.mba-bundle-copy p{margin:0;font-size:13.5px;line-height:1.5;color:#e2e8f0}
+.mba-bundle-copy h3{margin:0 0 5px;font-size:17.5px;color:#fff}
+.mba-bundle-copy p{margin:0;font-size:13.5px;line-height:1.5;color:#f5f5f4}
 .mba-bundle-ctas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-@media(max-width:940px){.mba-grid{grid-template-columns:1fr}}
-@media(max-width:520px){.mba-sec{padding:14px}.mba-bundle{padding:13px}.mba-btn{width:100%}}
+@media(max-width:860px){.mba-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.mba-sec{padding:14px}.mba-bundle{padding:13px}.mba-btn{width:100%}.bt-hub-tab{width:100%;justify-content:center}}
 </style>"""
 
 def made_by_agentscout_html():
     return (
-        '<!--bt-mba--><section id="made-by-agentscout" class="mba-sec" aria-labelledby="mba-h">'
+        '<!--bt-mba-->'
+        '<div class="bt-hub-bar" aria-label="Jump to Bot Store or Free Community Templates">'
+        '<div class="bt-hub-tabs">'
+        '<a class="bt-hub-tab pro" href="#made-by-agentscout">🤖 Buy Pre-Trained Pro Bots ($39 / $59 / $59 / $69 · $149 Bundle) ↓</a>'
+        '<a class="bt-hub-tab comm" href="#bt-featured">📚 Browse 193 Free Community Templates ↓</a>'
+        '<a class="bt-hub-tab vid" href="../videos/">🎬 Watch How-To Video Guides (8) →</a>'
+        '</div>'
+        '<span class="muted" style="font-size:12.5px">4 Individual Pro Bots + $149 4-Bot Bundle below · 193 Free Community Templates further down</span>'
+        '</div>'
+        '<section id="made-by-agentscout" class="mba-sec" aria-labelledby="mba-h">'
+        '<div class="mba-notice">'
+        '<span>📦 <b>WHAT YOU ARE BUYING IN THIS SECTION:</b> Downloadable Pre-Trained AI Bot Packages (<code>SYSTEM.md</code> + Cron Routines + Skills + MCP Config) in <b>5 distinct neon colors</b> (<b>Neon Lime</b>, <b>Neon Gold</b>, <b>Neon Sunset Orange</b>, <b>Neon Crimson Red</b>, and <b>Neon Mint-Emerald</b>). <b>This is NOT a directory listing boost.</b></span>'
+        '<a href="../sponsor.html#packages">Want to list or boost a tool in the directory instead? ($0 / $29 / $49 / $99) →</a>'
+        '</div>'
         '<div class="mba-head"><div>'
-        '<span class="mba-eyebrow">⚡ Official AgentScout Lineup · Sanitized Ready-to-Run Configs</span>'
-        '<h2 id="mba-h">Made by AgentScout: Pre-Trained Pro Bots &amp; 4-Bot Company-in-a-Box</h2>'
-        '<p>Deploy the exact autonomous multi-agent team that runs AgentScout every day — pre-wired with <code>SYSTEM.md</code> instructions, cron routine schedules, shared markdown handoffs, and zero-key AgentScout MCP discovery for Grok Bot, Claude Code, and Cursor.</p>'
+        '<span class="mba-eyebrow">🤖 5 Neon Bot Packages · Sold Separately ($39 / $59 / $59 / $69) or All 4 Together ($149)</span>'
+        '<h2 id="mba-h">Made by AgentScout: 4 Pre-Trained Pro Bots &amp; "Company-in-a-Box" Team Bundle</h2>'
+        '<p>Buy any of the 4 autonomous bots that run AgentScout individually (<code>$39</code>, <code>$59</code>, <code>$59</code>, <code>$69</code> — <code>$226</code> total if bought separately), or get all 4 together in the <b>$149 Company-in-a-Box Team Bundle (Save $77)</b>. <i>(Looking for free community templates? Browse all <a href="#bt-featured" style="color:#a3e635;text-decoration:underline">193 free community bot templates</a> right below this store.)</i></p>'
         '</div>'
-        '<a class="mba-btn" href="../videos/#guide-trained-bots" style="flex:0 0 auto;background:rgba(56,189,248,.16);border:1px solid rgba(56,189,248,.45);color:#7dd3fc">Watch 60fps Walkthrough →</a>'
+        '<a class="mba-btn" href="../videos/#guide-trained-bots" style="flex:0 0 auto;background:rgba(132,204,22,.18);border:1.5px solid #a3e635;color:#ecfccb">🎬 Watch 60fps Bot Demo →</a>'
         '</div>'
-        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4" type="video/mp4"></video></figure>'
+        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=202610280208" type="video/mp4"></video></figure>'
         '<div class="mba-grid">'
-        '<div class="mba-card" style="border-color:rgba(20,184,166,.45)">'
-        '<div><div class="mba-card-top"><span class="mba-price">$0 <small>forever</small></span><span class="mba-tag" style="background:rgba(20,184,166,.18);border:1px solid rgba(20,184,166,.5);color:#2dd4bf">✓ Free Starter Tier</span></div>'
-        '<h3 style="margin-top:8px">Free Starter Bots + MCP Stack Scout</h3>'
-        '<p style="margin-top:4px">Starter Grok Bot, Claude &amp; Cursor templates pre-connected to AgentScout&#39;s free MCP server (<code>com.agentscouthq/directory</code>).</p></div>'
-        '<ul class="mba-list"><li>Instant access to all 193 community &amp; official templates below</li><li>Free 50 AI Agents + 50 MCP Servers Cheat Sheets via AgentScout Weekly</li><li>Zero API keys or sign-up required</li></ul>'
+        # Card 1: $39 Operations / Monitoring Bot — Neon Lime Green (#84cc16 / #a3e635)
+        '<div class="mba-card neon-lime">'
+        '<div><div class="mba-card-top"><span class="mba-price" style="color:#a3e635;text-shadow:0 0 14px rgba(163,230,53,.45)">$39 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(132,204,22,.22);border:1.5px solid #a3e635;color:#ecfccb;box-shadow:0 0 12px rgba(132,204,22,.4)">🟢 Bot #1 · Neon Lime</span></div>'
+        '<h3 style="margin-top:8px">1. Operations / Monitoring Bot (4h Inbox Triage &amp; 8-Viewport QA)</h3>'
+        '<p style="margin-top:4px">Downloadable 24/7 operations and monitoring specialist that checks inboxes every 4 hours, runs 8-viewport Playwright site audits, and monitors routine &amp; checkout health.</p></div>'
+        '<ul class="mba-list"><li>Includes <code>OPS-BOT-HANDOFF.md</code> + 4-hour inbox sweep routine</li><li>8-viewport Playwright overflow, HTTP 200 &amp; JSON-LD verification script</li><li>X velocity guard scorecard &amp; automated routine failure recovery</li></ul>'
         '<div class="mba-actions">'
-        '<a class="mba-btn" href="https://agentscout.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" style="background:#14b8a6;color:#042f2e">Get Free Starter Pack →</a>'
-        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.08);color:#e2e8f0;border:1px solid rgba(255,255,255,.2)">Follow @clampdown19</a>'
+        '<a class="mba-btn" href="mailto:support@agentscouthq.com?subject=Buy%20Bot%20%231%3A%20Operations%20%2F%20Monitoring%20Bot%20(%2439%20Download)&amp;body=Hi%20AgentScout%20team%2C%0A%0AI%20want%20to%20purchase%20Bot%20%231%3A%20Operations%20%2F%20Monitoring%20Bot%20(%2439%20one-time%20download).%20Please%20send%20my%20checkout%20link%20and%20ZIP%20bundle." style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy Operations / Monitoring Bot ($39) →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
         '</div></div>'
-        '<div class="mba-card" style="border-color:rgba(14,165,233,.5)">'
-        '<div><div class="mba-card-top"><span class="mba-price">$29 <small>one-time</small></span><span class="mba-tag" style="background:rgba(14,165,233,.18);border:1px solid rgba(14,165,233,.5);color:#38bdf8">⚡ Pro Specialist Bot</span></div>'
-        '<h3 style="margin-top:8px">Ops / Monitor (Operations &amp; QA Bot)</h3>'
-        '<p style="margin-top:4px">24/7 operations specialist that checks inboxes every 4 hours, runs 8-viewport Playwright audits, and verifies live checkouts.</p></div>'
-        '<ul class="mba-list"><li>Automated 4-hour inbox triage &amp; status reporting routine</li><li>Post-deploy HTTP 200, JSON-LD &amp; 8-viewport overflow verification</li><li>Routine failure recovery &amp; X velocity guard scorecard</li></ul>'
+        # Card 2: $59 SEO / AEO Auditor Bot — Neon Electric Gold / Yellow (#eab308 / #facc15)
+        '<div class="mba-card neon-gold">'
+        '<div><div class="mba-card-top"><span class="mba-price" style="color:#facc15;text-shadow:0 0 14px rgba(250,204,21,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(234,179,8,.22);border:1.5px solid #facc15;color:#fef9c3;box-shadow:0 0 12px rgba(234,179,8,.4)">🟡 Bot #2 · Neon Gold</span></div>'
+        '<h3 style="margin-top:8px">2. SEO / AEO Auditor Bot (Search Console, JSON-LD, llms.txt &amp; AI Citations)</h3>'
+        '<p style="margin-top:4px">Downloadable Search Console, GA4, and AI-Answer Engine (AEO) auditor bot built to grow organic rankings and ChatGPT/Perplexity/Grok citations.</p></div>'
+        '<ul class="mba-list"><li>Includes daily Search Console, GA4 &amp; Bing Webmaster audit routine</li><li>Automated JSON-LD schema, <code>llms.txt</code> &amp; canonical validator</li><li>Prompt-cluster AI citation tracker across ChatGPT, Perplexity &amp; Claude</li></ul>'
         '<div class="mba-actions">'
-        '<a class="mba-btn" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer" style="background:#0ea5e9;color:#082f49">Unlock Ops / Monitor ($29) →</a>'
+        '<a class="mba-btn" href="mailto:support@agentscouthq.com?subject=Buy%20Bot%20%232%3A%20SEO%20%2F%20AEO%20Auditor%20Bot%20(%2459%20Download)&amp;body=Hi%20AgentScout%20team%2C%0A%0AI%20want%20to%20purchase%20Bot%20%232%3A%20SEO%20%2F%20AEO%20Auditor%20Bot%20(%2459%20one-time%20download).%20Please%20send%20my%20checkout%20link%20and%20ZIP%20bundle." style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy SEO / AEO Auditor Bot ($59) →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
         '</div></div>'
-        '<div class="mba-card" style="border-color:rgba(99,102,241,.55)">'
-        '<div><div class="mba-card-top"><span class="mba-price">$49 <small>one-time each</small></span><span class="mba-tag" style="background:rgba(99,102,241,.22);border:1px solid rgba(99,102,241,.55);color:#a5b4fc">★ Pro Auditor / Intel Bot</span></div>'
-        '<h3 style="margin-top:8px">SEO / AEO Auditor or Competitive Intel Bot</h3>'
-        '<p style="margin-top:4px">Choose our Search Console + AI-Answer Engine (AEO) Auditor bot OR our Rival Directory &amp; Launch Radar bot ($49 each).</p></div>'
-        '<ul class="mba-list"><li><b>SEO / AEO Auditor ($49):</b> GSC/GA4 tracking, JSON-LD, <code>llms.txt</code> &amp; ChatGPT/Perplexity citation checks</li><li><b>Competitive Intel ($49):</b> Tracks rival launches, pricing shifts, Product Hunt &amp; HN traction</li></ul>'
+        # Card 3: $59 Competitive Intelligence Analyst Bot — Neon Sunset Orange (#f97316 / #fb923c)
+        '<div class="mba-card neon-orange">'
+        '<div><div class="mba-card-top"><span class="mba-price" style="color:#fb923c;text-shadow:0 0 14px rgba(251,146,60,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(249,115,22,.22);border:1.5px solid #fb923c;color:#ffedd5;box-shadow:0 0 12px rgba(249,115,22,.4)">🟠 Bot #3 · Neon Sunset Orange</span></div>'
+        '<h3 style="margin-top:8px">3. Competitive Intelligence Analyst Bot (Rival Directory, Pricing Shift &amp; PH/HN Radar)</h3>'
+        '<p style="margin-top:4px">Downloadable market intelligence bot that monitors rival directories, Product Hunt, Hacker News, GitHub star velocity, and pricing shifts daily.</p></div>'
+        '<ul class="mba-list"><li>Includes daily rival launch, pricing &amp; positioning radar routine</li><li>20-account X outlier &amp; viral hook forensics scanner (<code>HOOKS.md</code>)</li><li>Evidence-linked gap analysis &amp; stale-copy site detector</li></ul>'
         '<div class="mba-actions">'
-        '<a class="mba-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer" style="background:#6366f1;color:#fff">Unlock Pro Bot ($49 ★) →</a>'
+        '<a class="mba-btn" href="mailto:support@agentscouthq.com?subject=Buy%20Bot%20%233%3A%20Competitive%20Intelligence%20Analyst%20Bot%20(%2459%20Download)&amp;body=Hi%20AgentScout%20team%2C%0A%0AI%20want%20to%20purchase%20Bot%20%233%3A%20Competitive%20Intelligence%20Analyst%20Bot%20(%2459%20one-time%20download).%20Please%20send%20my%20checkout%20link%20and%20ZIP%20bundle." style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy Competitive Intel Bot ($59) →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
+        '</div></div>'
+        # Card 4: $69 CEO Coordinator Bot — Neon Crimson Red / Coral (#ef4444 / #f87171)
+        '<div class="mba-card neon-red">'
+        '<div><div class="mba-card-top"><span class="mba-price" style="color:#f87171;text-shadow:0 0 14px rgba(248,113,113,.45)">$69 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(239,68,68,.22);border:1.5px solid #f87171;color:#fee2e2;box-shadow:0 0 12px rgba(239,68,68,.4)">🔴 Bot #4 · Neon Crimson Red</span></div>'
+        '<h3 style="margin-top:8px">4. CEO Coordinator Bot (Full-Stack Builder, Multi-Bot Dispatcher &amp; Growth Lead)</h3>'
+        '<p style="margin-top:4px">Downloadable executive builder bot that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X/newsletter growth.</p></div>'
+        '<ul class="mba-list"><li>Includes <code>AGENTSCOUT-BOT-BRIEFING.md</code> coordinator &amp; subagent dispatch architecture</li><li>Daily 7:00 AM build, 7:30 AM X outlier engine &amp; 9:00 AM outreach routines</li><li>Full-stack Python/JS/Cloudflare Worker builder &amp; pre-deploy QA workflow</li></ul>'
+        '<div class="mba-actions">'
+        '<a class="mba-btn" href="mailto:support@agentscouthq.com?subject=Buy%20Bot%20%234%3A%20CEO%20Coordinator%20Bot%20(%2469%20Download)&amp;body=Hi%20AgentScout%20team%2C%0A%0AI%20want%20to%20purchase%20Bot%20%234%3A%20CEO%20Coordinator%20Bot%20(%2469%20one-time%20download).%20Please%20send%20my%20checkout%20link%20and%20ZIP%20bundle." style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy CEO Coordinator Bot ($69) →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'
         '</div></div>'
         '</div>'
+        # Card 5: $149 Full 4-Bot Bundle — Neon Mint-Emerald (#10b981 / #34d399)
         '<div class="mba-bundle">'
         '<div class="mba-bundle-copy">'
-        '<span class="mba-tag" style="background:rgba(236,72,153,.25);border:1px solid #f472b6;color:#fbcfe8;margin-bottom:6px">🔥 Best Value · Save $28 · Complete 4-Agent Executive Team</span>'
-        '<h3>$99 Full 4-Bot "Company-in-a-Box" Team Bundle (CEO Coordinator + Ops + SEO/AEO + Competitive Intel)</h3>'
-        '<p>Get all 4 coordinated bots (<b>CEO Grok Coordinator</b> + <b>Ops / Monitor</b> + <b>SEO / AEO Auditor</b> + <b>Competitive Intelligence Analyst</b>) with shared <code>/workspace/handoff/</code> protocol, daily &amp; weekly cron routines, and priority onboarding support.</p>'
+        '<span class="mba-tag" style="background:rgba(16,185,129,.25);border:1.5px solid #34d399;color:#d1fae5;margin-bottom:6px;box-shadow:0 0 12px rgba(16,185,129,.4)">💚 Package #5 · Neon Mint-Emerald · All 4 Bots Sold Together · Save $77 vs. $226</span>'
+        '<h3>$149 Full 4-Bot "Company-in-a-Box" Team Bundle (All 4 Bots Above + Shared Handoff Protocol)</h3>'
+        '<p>Get all 4 downloadable bots together — <b>1. Operations / Monitoring Bot ($39)</b> + <b>2. SEO / AEO Auditor Bot ($59)</b> + <b>3. Competitive Intelligence Analyst Bot ($59)</b> + <b>4. CEO Coordinator Bot ($69)</b> — pre-wired with our shared <code>/workspace/handoff/</code> multi-agent protocol, 15+ cron routines, and priority setup support for <b>$149 one-time</b> (saves <b>$77</b> off the $226 individual total).</p>'
         '</div>'
         '<div class="mba-bundle-ctas">'
-        '<a class="mba-btn" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;padding:10px 18px;box-shadow:0 6px 20px rgba(236,72,153,.35)">Get 4-Bot Team Bundle — $99 →</a>'
-        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(15,23,42,.9);color:#f8fafc;border:1px solid rgba(244,114,182,.5)">Or Pay via X Money (@clampdown19)</a>'
+        '<a class="mba-btn" href="mailto:support@agentscouthq.com?subject=Buy%204-Bot%20Company-in-a-Box%20Bundle%20(%24149%20All%204%20Bots%20Download)&amp;body=Hi%20AgentScout%20team%2C%0A%0AI%20want%20to%20purchase%20the%20Full%204-Bot%20Company-in-a-Box%20Team%20Bundle%20(%24149%20one-time%20for%20all%204%20bots%3A%20Operations%20%2F%20Monitoring%20%2B%20SEO%20%2F%20AEO%20Auditor%20%2B%20Competitive%20Intelligence%20Analyst%20%2B%20CEO%20Coordinator%2C%20saving%20%2477).%20Please%20send%20my%20checkout%20link%20and%20ZIP%20bundle." style="background:linear-gradient(135deg,#10b981,#34d399);color:#031811;padding:10px 18px;box-shadow:0 6px 20px rgba(16,185,129,.45)">Buy All 4 Bots Together — $149 (Save $77) →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(12,10,6,.9);color:#d1fae5;border:1px solid #10b981">Pay $149 via X Money (@clampdown19)</a>'
         '</div></div>'
         '</section><!--/bt-mba-->'
     )

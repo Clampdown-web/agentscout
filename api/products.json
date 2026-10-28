@@ -105,64 +105,64 @@
   ],
   "bot_templates": [
     {
-      "id": "made-by-agentscout-starter",
-      "sku": "AS-BOT-STARTER-FREE",
-      "name": "Made by AgentScout — Free Starter Bot Templates",
-      "category": "bot_template",
-      "price_usd": 0,
-      "billing_model": "free",
-      "availability": "in_stock",
-      "page_url": "https://agentscouthq.com/bot-templates/",
-      "checkout_url": "https://agentscouthq.com/bot-templates/",
-      "description": "Browse and install 189+ free starter bot templates and reusable agent workflows across coding, research, triage, and operations."
-    },
-    {
       "id": "made-by-agentscout-ops-monitor",
-      "sku": "AS-BOT-PRO-OPS",
-      "name": "Ops / Monitor (Operations / Monitoring) — Made by AgentScout Pro Bot",
+      "sku": "AS-BOT-PRO-OPS-39",
+      "name": "1. Operations / Monitoring Bot — Made by AgentScout Pro Bot (Sold Separately)",
       "category": "bot_template_pro",
-      "price_usd": 29,
+      "price_usd": 39,
       "billing_model": "one_time",
       "availability": "in_stock",
       "page_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
-      "checkout_url": "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02",
-      "description": "Pre-trained operations and monitoring specialist bot with automated 4-hour inbox triage, post-deploy HTTP & JSON-LD verification, 8-viewport responsive layout checks, and routine failure recovery (sanitized template, zero sensitive data)."
+      "checkout_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
+      "description": "Downloadable pre-trained operations and monitoring specialist bot with automated 4-hour inbox triage, post-deploy HTTP & JSON-LD verification, 8-viewport responsive layout checks, and routine failure recovery ($39 one-time)."
     },
     {
       "id": "made-by-agentscout-seo-aeo-auditor",
-      "sku": "AS-BOT-PRO-SEOAEO",
-      "name": "SEO / AEO Auditor — Made by AgentScout Pro Bot",
+      "sku": "AS-BOT-PRO-SEOAEO-59",
+      "name": "2. SEO / AEO Auditor Bot — Made by AgentScout Pro Bot (Sold Separately)",
       "category": "bot_template_pro",
-      "price_usd": 49,
+      "price_usd": 59,
       "billing_model": "one_time",
       "availability": "in_stock",
       "page_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
-      "checkout_url": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
-      "description": "Pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot that checks Search Console rankings, JSON-LD entity graphs, llms.txt, ai-plugin.json, OpenAPI 3.1 specs, and ChatGPT/Perplexity/Google AI citation visibility."
+      "checkout_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
+      "description": "Downloadable pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot that checks Search Console rankings, JSON-LD entity graphs, llms.txt, ai-plugin.json, OpenAPI 3.1 specs, and ChatGPT/Perplexity/Google AI citation visibility ($59 one-time)."
     },
     {
       "id": "made-by-agentscout-ci-analyst",
-      "sku": "AS-BOT-PRO-CI",
-      "name": "Competitive Intelligence Analyst — Made by AgentScout Pro Bot",
+      "sku": "AS-BOT-PRO-CI-59",
+      "name": "3. Competitive Intelligence Analyst Bot — Made by AgentScout Pro Bot (Sold Separately)",
       "category": "bot_template_pro",
-      "price_usd": 49,
+      "price_usd": 59,
       "billing_model": "one_time",
       "availability": "in_stock",
       "page_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
-      "checkout_url": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
-      "description": "Pre-trained competitive intelligence analyst bot that tracks rival launches, pricing shifts, agentic commerce endpoints, Product Hunt & Hacker News traction, and stale messaging across your site."
+      "checkout_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
+      "description": "Downloadable pre-trained competitive intelligence analyst bot that tracks rival launches, pricing shifts, agentic commerce endpoints, Product Hunt & Hacker News traction, and 20-account X outlier hooks ($59 one-time)."
+    },
+    {
+      "id": "made-by-agentscout-ceo-coordinator",
+      "sku": "AS-BOT-PRO-CEO-69",
+      "name": "4. CEO Coordinator Bot — Made by AgentScout Pro Bot (Sold Separately)",
+      "category": "bot_template_pro",
+      "price_usd": 69,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "page_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
+      "checkout_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
+      "description": "Downloadable pre-trained executive builder and multi-bot dispatcher bot that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X & newsletter growth ($69 one-time)."
     },
     {
       "id": "made-by-agentscout-team-bundle",
-      "sku": "AS-BOT-BUNDLE-4TEAM",
-      "name": "Made by AgentScout 4-Bot 'Company-in-a-Box' Team Bundle",
+      "sku": "AS-BOT-BUNDLE-4TEAM-149",
+      "name": "Full 4-Bot 'Company-in-a-Box' Team Bundle (All 4 Bots Sold Together — Save $77)",
       "category": "bot_template_bundle",
-      "price_usd": 99,
+      "price_usd": 149,
       "billing_model": "one_time",
       "availability": "in_stock",
       "page_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
-      "checkout_url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
-      "description": "Complete 4-bot coordinated executive team (CEO Coordinator, Ops / Monitor, SEO / AEO Auditor, and Competitive Intelligence Analyst) pre-wired with AgentScout MCP discovery and automated daily playbooks."
+      "checkout_url": "https://agentscouthq.com/bot-templates/#made-by-agentscout",
+      "description": "All 4 downloadable bots together (1. Operations / Monitoring [$39] + 2. SEO / AEO Auditor [$59] + 3. Competitive Intelligence Analyst [$59] + 4. CEO Coordinator [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77)."
     }
   ]
 }

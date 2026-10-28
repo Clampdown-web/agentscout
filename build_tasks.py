@@ -397,7 +397,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202610270920"  # bump when app.js/styles.css change
+ASSET_V = "202610280200"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -448,6 +448,8 @@ def sitewide(t):
         s=re.sub(r'<a href="[^"]*best/mcp-servers\.html">Best</a>',lambda mm:f'<a href="{d}best/index.html">Best</a>',s)
         # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
         s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Popular lists</a>',s)
+        s=re.sub(r'<a class="navvid" href="[^"]*videos/">Videos</a>','',s)
+        s=re.sub(r'(<div class="links">.*?<a href="[^"]*news\.html">News</a>)',lambda mm:mm.group(1)+f'<a class="navvid" href="{d}videos/">Videos</a>',s,count=1,flags=re.S)
         # Strategic header CTA: neon-glow "Get Featured" pill right before "Submit a tool" (Oct 26 2026, owner directive t2906u + t2923u)
         s=re.sub(r'<a class="[^"]*navsp[^"]*" href="[^"]*sponsor\.html">.*?</a>','',s)
         s=re.sub(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)',lambda mm:f'<a class="navsp" href="{d}sponsor.html">'+_wrap("sp","Get Featured")+'</a>'+mm.group(1),s,count=1)
