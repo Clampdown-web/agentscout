@@ -247,7 +247,7 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 .mba-tag{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
 .mba-card h3{margin:0 auto;font-size:16.5px;line-height:1.35;color:#fff;text-align:center}
 .mba-card p{margin:0 auto;padding:0 8px;font-size:13px;line-height:1.55;color:#d6d3d1;text-align:center;box-sizing:border-box}
-.mba-list{margin:0 auto;padding:0;list-style-position:inside;font-size:12.5px;line-height:1.5;color:#e7e5e4;text-align:center;width:100%}
+.mba-list{list-style:none;padding:0 8px;margin:10px auto 14px;text-align:center;box-sizing:border-box;font-size:12.5px;line-height:1.5;color:#e7e5e4;width:100%}
 .mba-list li{margin-bottom:5px}
 .mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;width:100%;justify-content:center}
 .mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:800;text-decoration:none;min-height:42px;flex:1 1 auto;text-align:center}
@@ -277,7 +277,7 @@ def made_by_agentscout_html(total=189):
         '</div>'
         '<section id="made-by-agentscout" class="mba-sec" aria-labelledby="mba-h">'
         '<div class="mba-notice">'
-        '<span>📦 <b>WHAT YOU ARE BUYING IN THIS SECTION:</b> Downloadable Pre-Trained AI Bot Packages (<code>SYSTEM.md</code> + Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code>) in <b>5 distinct neon colors</b> (<b>Neon Lime</b>, <b>Neon Gold</b>, <b>Neon Sunset Orange</b>, <b>Neon Crimson Red</b>, and <b>Neon Mint-Emerald</b>). <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
+        '<span>📦 <b>WHAT YOU ARE BUYING IN THIS SECTION:</b> Downloadable Pre-Trained AI Bot Packages (<code>SYSTEM.md</code> + Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code>) in <b>5 distinct neon colors</b> (<b>Neon Lime</b>, <b>Neon Gold</b>, <b>Neon Sunset Orange</b>, <b>Neon Crimson Red</b>, and <b>Neon Mint-Emerald</b>). <b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex). The 4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code>. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
         '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;text-align:center">'
         '<a href="../bot-store/">Open Full Bot Store (/bot-store/) →</a>'
         '<a href="../sponsor.html#packages">Want to list or boost a tool in the directory instead? ($0 / $29 / $49 / $99) →</a>'
@@ -300,7 +300,7 @@ def made_by_agentscout_html(total=189):
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#a3e635;text-shadow:0 0 14px rgba(163,230,53,.45)">$39 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(132,204,22,.22);border:1.5px solid #a3e635;color:#ecfccb;box-shadow:0 0 12px rgba(132,204,22,.4)">🟢 Bot #1 · Neon Lime</span></div>'
         '<h3 style="margin-top:8px">1. AgentScout Operations / Monitoring Bot (4h Inbox Triage &amp; 8-Viewport QA)</h3><div class="mba-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'
         '<p style="margin-top:4px">Downloadable 24/7 operations and monitoring specialist built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex) that checks inboxes every 4 hours, runs 8-viewport Playwright site audits, and monitors routine &amp; checkout health.</p></div>'
-        '<ul class="mba-list"><li>Includes <code>OPS-BOT-HANDOFF.md</code> + 4-hour inbox sweep routine</li><li>8-viewport Playwright overflow, HTTP 200 &amp; JSON-LD verification script</li><li>X velocity guard scorecard &amp; automated routine failure recovery</li></ul>'
+        '<ul class="mba-list"><li>Includes <code>OPS-BOT-HANDOFF.md</code> + 4-hour inbox sweep routine</li><li>8-viewport Playwright overflow, HTTP 200 &amp; JSON-LD verification script</li><li>X velocity guard scorecard &amp; automated routine failure recovery</li><li>Includes <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li></ul>'
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
@@ -310,7 +310,7 @@ def made_by_agentscout_html(total=189):
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#facc15;text-shadow:0 0 14px rgba(250,204,21,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(234,179,8,.22);border:1.5px solid #facc15;color:#fef9c3;box-shadow:0 0 12px rgba(234,179,8,.4)">🟡 Bot #2 · Neon Gold</span></div>'
         '<h3 style="margin-top:8px">2. AgentScout SEO &amp; AEO Growth Auditor Bot (Search Console, JSON-LD, llms.txt &amp; AI Citations)</h3><div class="mba-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'
         '<p style="margin-top:4px">Downloadable Search Console, GA4, and AI-Answer Engine (AEO) auditor bot built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex) to grow organic rankings and ChatGPT/Perplexity/Grok citations.</p></div>'
-        '<ul class="mba-list"><li>Includes daily Search Console, GA4 &amp; Bing Webmaster audit routine</li><li>Automated JSON-LD schema, <code>llms.txt</code> &amp; canonical validator</li><li>Prompt-cluster AI citation tracker across ChatGPT, Perplexity &amp; Claude</li></ul>'
+        '<ul class="mba-list"><li>Includes daily Search Console, GA4 &amp; Bing Webmaster audit routine</li><li>Automated JSON-LD schema, <code>llms.txt</code> &amp; canonical validator</li><li>Prompt-cluster AI citation tracker across ChatGPT, Perplexity &amp; Claude</li><li>Includes <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li></ul>'
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy AgentScout SEO &amp; AEO Growth Auditor Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
@@ -320,7 +320,7 @@ def made_by_agentscout_html(total=189):
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#fb923c;text-shadow:0 0 14px rgba(251,146,60,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(249,115,22,.22);border:1.5px solid #fb923c;color:#ffedd5;box-shadow:0 0 12px rgba(249,115,22,.4)">🟠 Bot #3 · Neon Sunset Orange</span></div>'
         '<h3 style="margin-top:8px">3. AgentScout Market &amp; Launch Intel Bot (Rival Directory, Pricing Shift &amp; PH/HN Radar)</h3><div class="mba-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'
         '<p style="margin-top:4px">Downloadable market intelligence bot built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex) that monitors rival directories, Product Hunt, Hacker News, GitHub star velocity, and pricing shifts daily.</p></div>'
-        '<ul class="mba-list"><li>Includes daily rival launch, pricing &amp; positioning radar routine</li><li>20-account X outlier &amp; viral hook forensics scanner (<code>HOOKS.md</code>)</li><li>Evidence-linked gap analysis &amp; stale-copy site detector</li></ul>'
+        '<ul class="mba-list"><li>Includes daily rival launch, pricing &amp; positioning radar routine</li><li>20-account X outlier &amp; viral hook forensics scanner (<code>HOOKS.md</code>)</li><li>Evidence-linked gap analysis &amp; stale-copy site detector</li><li>Includes <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li></ul>'
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/4gM8wQelt11568RaDFe7m06" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy AgentScout Market &amp; Launch Intel Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
@@ -330,7 +330,7 @@ def made_by_agentscout_html(total=189):
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#f87171;text-shadow:0 0 14px rgba(248,113,113,.45)">$69 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(239,68,68,.22);border:1.5px solid #f87171;color:#fee2e2;box-shadow:0 0 12px rgba(239,68,68,.4)">🔴 Bot #4 · Neon Crimson Red</span></div>'
         '<h3 style="margin-top:8px">4. AgentScout CEO Coordinator Bot (Full-Stack Builder, Multi-Bot Dispatcher &amp; Growth Lead)</h3><div class="mba-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'
         '<p style="margin-top:4px">Downloadable executive builder bot built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex) that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X/newsletter growth.</p></div>'
-        '<ul class="mba-list"><li>Includes <code>AGENTSCOUT-BOT-BRIEFING.md</code> coordinator &amp; subagent dispatch architecture</li><li>Daily 7:00 AM build, 7:30 AM X outlier engine &amp; 9:00 AM outreach routines</li><li>Full-stack Python/JS/Cloudflare Worker builder &amp; pre-deploy QA workflow</li></ul>'
+        '<ul class="mba-list"><li>Includes <code>AGENTSCOUT-BOT-BRIEFING.md</code> coordinator &amp; subagent dispatch architecture</li><li>Daily 7:00 AM build, 7:30 AM X outlier engine &amp; 9:00 AM outreach routines</li><li>Full-stack Python/JS/Cloudflare Worker builder &amp; pre-deploy QA workflow</li><li>Includes <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li></ul>'
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy AgentScout CEO Coordinator Bot ($69) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'
@@ -342,6 +342,7 @@ def made_by_agentscout_html(total=189):
         '<span class="mba-tag" style="background:rgba(16,185,129,.25);border:1.5px solid #34d399;color:#d1fae5;margin-bottom:6px;box-shadow:0 0 12px rgba(16,185,129,.4)">💚 Package #5 · Neon Mint-Emerald · All 4 Bots Sold Together · Save $77 vs. $226</span>'
         '<h3>$149 Full 4-Bot "Company-in-a-Box" Team Bundle (All 4 Bots Above + Shared Handoff Protocol)</h3><div class="mba-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'
         '<p>Get all 4 downloadable bots together — <b>1. AgentScout Operations / Monitoring Bot ($39)</b> + <b>2. AgentScout SEO &amp; AEO Growth Auditor Bot ($59)</b> + <b>3. AgentScout Market &amp; Launch Intel Bot ($59)</b> + <b>4. AgentScout CEO Coordinator Bot ($69)</b> — pre-wired with our shared <code>/workspace/handoff/</code> multi-agent protocol, 15+ cron routines, and priority setup support for <b>$149 one-time</b> (saves <b>$77</b> off the $226 individual total). <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b></p>'
+        '<ul class="mba-list"><li>What\'s inside every .zip: <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li><li>4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code></li></ul>'
         '</div>'
         '<div class="mba-bundle-ctas">'
         '<a class="mba-btn" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#10b981,#34d399);color:#031811;padding:10px 18px;box-shadow:0 6px 20px rgba(16,185,129,.45)">Buy All 4 Bots Together — $149 (Save $77) →</a>'
@@ -354,5 +355,10 @@ def made_by_agentscout_html(total=189):
 _run0=run
 def run():
     _run0(); filters(); tap(); verify_logos()
+
+def pages(t=None):
+    """Rebuild /bot-templates/ index (filters, counts, and the Made by AgentScout section)."""
+    filters()
+    return [f"{SITE}/{D}/"]
 
 if __name__=="__main__": run()

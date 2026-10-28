@@ -10,7 +10,7 @@ CSS = """<style id="bs-css">
 .bs-hero{text-align:center}
 .bs-compat-pill{justify-content:center;text-align:center}
 .bs-hero h1{margin:0 auto 10px;font-size:clamp(24px,3.6vw,34px);line-height:1.22;color:#fff;text-align:center;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
-.bs-hero p{margin:0 auto 14px;font-size:15px;line-height:1.6;color:#e7e5e4;max-width:860px;text-align:center}
+.bs-hero p{margin:0 auto 14px;font-size:15px;line-height:1.6;color:#e7e5e4;max-width:860px;text-align:center;padding:0 10px;box-sizing:border-box}
 .bs-hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center}
 .bs-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#f5f5f4;text-decoration:none}
 a.bs-badge:hover{border-color:#a3e635;color:#ecfccb;text-decoration:none}
@@ -34,9 +34,9 @@ a.bs-badge:hover{border-color:#a3e635;color:#ecfccb;text-decoration:none}
 .bs-price small{font-size:12px;font-weight:600;color:#d6d3d1;margin-left:4px}
 .bs-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border-radius:999px;background:rgba(245,158,11,.18);color:#fde68a;border:1px solid rgba(245,158,11,.4)}
 .bs-card h2{margin:6px auto 4px;font-size:18px;color:#fff;line-height:1.3;text-align:center}
-.bs-card p{margin:0 auto;font-size:13.5px;color:#d6d3d1;line-height:1.55;text-align:center}
+.bs-card p{margin:0 auto;font-size:13.5px;color:#d6d3d1;line-height:1.55;text-align:center;padding:0 8px;box-sizing:border-box}
 .bs-compat-line{display:inline-block;margin-top:8px;padding:4px 9px;border-radius:7px;font-size:11.5px;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#ecfccb}
-.bs-list{margin:6px auto;padding:0;list-style-position:inside;font-size:13px;color:#e7e5e4;line-height:1.55;text-align:center;width:100%}
+.bs-list{list-style:none;padding:0 8px;margin:12px auto 18px;text-align:center;box-sizing:border-box;font-size:13px;color:#e7e5e4;line-height:1.55;width:100%}
 .bs-list li{margin:4px 0}
 .bs-manifest{padding:12px 14px;border-radius:10px;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.1);font-size:12px;color:#d6d3d1;line-height:1.5;overflow-wrap:anywhere;text-align:center;width:100%;box-sizing:border-box}
 .bs-manifest b{color:#fff}
@@ -102,7 +102,7 @@ def pages(t):
         f'</div>'
         f'</section>'
         f'<div class="bs-notice">'
-        f'<span>📦 <b>WHAT YOU ARE BUYING HERE:</b> Downloadable Pre-Trained AI Bot ZIP Packages (<code>SYSTEM.md</code> + Scheduled Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code>). <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
+        f'<span>📦 <b>WHAT YOU ARE BUYING HERE:</b> Downloadable Pre-Trained AI Bot ZIP Packages (<code>SYSTEM.md</code> + Scheduled Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code>). <b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex). The 4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code>. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
         f'<a href="../sponsor.html#packages">Want to list or boost your AI tool in the AgentScout directory instead? ($0 / $29 / $49 / $99) →</a>'
         f'</div>'
         f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=202610280208" type="video/mp4"></video></figure>'
@@ -120,7 +120,8 @@ def pages(t):
         f'<span class="bs-tag" style="background:rgba(16,185,129,.25);border:1.5px solid #34d399;color:#d1fae5;box-shadow:0 0 12px rgba(16,185,129,.4)">💚 Package #5 · Neon Mint-Emerald · Best Value · Save $77 vs. $226 Separately</span>'
         f'<h2>AgentScout Full 4-Bot "Company-in-a-Box" Team Bundle ($149 One-Time)</h2><div class="bs-builtby">Pre-Trained Pro Bot built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></div>'
         f'<p>Get all 4 downloadable production bots together — <b>1. Operations / Monitoring Bot ($39)</b> + <b>2. SEO &amp; AEO Growth Auditor Bot ($59)</b> + <b>3. Market &amp; Launch Intel Bot ($59)</b> + <b>4. CEO Coordinator Bot ($69)</b> — pre-wired with our shared <code>/workspace/handoff/</code> multi-agent protocol, 15+ scheduled cron routines, <code>Work Chat</code> room coordination rules, and priority setup support for <b>$149 one-time</b> (saves <b>$77</b> off the $226 individual total).</p>'
-        f'<div class="bs-manifest"><b>📦 Bundle ZIP Manifest:</b> All 4 bot folders + <code>AGENTSCOUT-BOT-BRIEFING.md</code> + <code>OPS-BOT-HANDOFF.md</code> + 15 cron definitions + 8-viewport Playwright QA + GSC/GA4/AEO audit scripts + X outlier hook scanner + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code> (watermarked per order). <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b></div>'
+        f'<ul class="bs-list"><li><b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li><li><b>4-Bot Bundle:</b> <code>README-TEAM-BUNDLE.md</code> shared team handoff and setup guide</li></ul>'
+        f'<div class="bs-manifest"><b>📦 Bundle ZIP Manifest:</b> All 4 bot folders + <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex) + <code>README-TEAM-BUNDLE.md</code> + <code>AGENTSCOUT-BOT-BRIEFING.md</code> + <code>OPS-BOT-HANDOFF.md</code> + 15 cron definitions + 8-viewport Playwright QA + GSC/GA4/AEO audit scripts + X outlier hook scanner + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code> (watermarked per order). <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b></div>'
         f'</div>'
         f'<div class="bs-bundle-ctas">'
         f'<a class="bs-btn" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#10b981,#34d399);color:#031811;padding:12px 20px;box-shadow:0 6px 20px rgba(16,185,129,.45)">Buy All 4 Bots Together — $149 (Save $77) →</a>'
@@ -139,8 +140,9 @@ def pages(t):
         f'<li><b>4-Hour Inbox Triage:</b> Classifies maker submissions, support threads &amp; Stripe receipts with ready-to-send confirmation templates</li>'
         f'<li><b>8-Viewport Playwright QA:</b> Automated 360px/390px/768px/1280px overflow, HTTP 200, JSON-LD &amp; Stripe CTA verifier</li>'
         f'<li><b>Routine &amp; Velocity Guard:</b> Monitors scheduled jobs and X account safety thresholds</li>'
+        f'<li><b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li>'
         f'</ul>'
-        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>OPS-BOT-HANDOFF.md</code> · <code>SKILL.md</code> · <code>daily_deep_audit.py</code> · <code>verify_4tier_ctas.py</code> · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
+        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>README-QUICKSTART.md</code> · <code>OPS-BOT-HANDOFF.md</code> · <code>SKILL.md</code> · <code>daily_deep_audit.py</code> · <code>verify_4tier_ctas.py</code> · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
@@ -155,8 +157,9 @@ def pages(t):
         f'<li><b>Daily Search &amp; Analytics Audit:</b> Pulls GSC query/page deltas, CTR gaps, indexing status &amp; GA4 referral conversions</li>'
         f'<li><b>Technical Schema &amp; AEO Validator:</b> Audits JSON-LD (<code>SoftwareApplication</code>, <code>FAQPage</code>, <code>VideoObject</code>), <code>llms.txt</code> &amp; canonicals</li>'
         f'<li><b>AI Prompt Citation Radar:</b> Benchmarks your brand vs. competitors across real buyer prompts</li>'
+        f'<li><b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li>'
         f'</ul>'
-        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>ai-search-visibility-check/SKILL.md</code> · <code>check_seo_aeo.py</code> · <code>llms_validator.py</code> · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
+        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>README-QUICKSTART.md</code> · <code>ai-search-visibility-check/SKILL.md</code> · <code>check_seo_aeo.py</code> · <code>llms_validator.py</code> · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy AgentScout SEO &amp; AEO Growth Auditor Bot ($59) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
@@ -171,8 +174,9 @@ def pages(t):
         f'<li><b>Rival &amp; Pricing Shift Radar:</b> Tracks competitor launches, pricing page changes, and positioning shifts with evidence URLs</li>'
         f'<li><b>20-Account X Outlier Forensics:</b> Extracts structural viral hooks into <code>HOOKS.md</code> for daily founder content</li>'
         f'<li><b>Buying-Signal &amp; Stale-Copy Detector:</b> Flags high-intent threads on X/HN/Reddit and outdated claims on your own site</li>'
+        f'<li><b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li>'
         f'</ul>'
-        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>mention-and-buying-signal-watch/SKILL.md</code> · <code>HOOKS.md</code> · <code>outlier_scanner.py</code> · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
+        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>README-QUICKSTART.md</code> · <code>mention-and-buying-signal-watch/SKILL.md</code> · <code>HOOKS.md</code> · <code>outlier_scanner.py</code> · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/4gM8wQelt11568RaDFe7m06" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy AgentScout Market &amp; Launch Intel Bot ($59) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
@@ -187,8 +191,9 @@ def pages(t):
         f'<li><b>Multi-Bot Dispatcher:</b> Coordinates specialist bots via shared <code>/workspace/handoff/</code> state and <code>Work Chat</code></li>'
         f'<li><b>7:00 AM Daily Full-Stack Builder:</b> Ships static pages, JSON-LD, OpenAPI/MCP workers &amp; 60fps FFmpeg infographics</li>'
         f'<li><b>Growth &amp; Revenue Engine:</b> Runs daily X outlier drafts, maker outreach &amp; Tuesday Beehiiv newsletter assembly</li>'
+        f'<li><b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex)</li>'
         f'</ul>'
-        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>AGENTSCOUT-BOT-BRIEFING.md</code> · 7AM/7:30AM/9AM cron routines · builder &amp; QA scripts · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
+        f'<div class="bs-manifest"><b>ZIP Includes:</b> <code>SYSTEM.md</code> · <code>README-QUICKSTART.md</code> · <code>AGENTSCOUT-BOT-BRIEFING.md</code> · 7AM/7:30AM/9AM cron routines · builder &amp; QA scripts · <code>mcp.json</code> · <code>LICENSE.txt</code></div>'
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy AgentScout CEO Coordinator Bot ($69) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'

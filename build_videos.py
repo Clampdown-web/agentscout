@@ -279,7 +279,7 @@ def pages(t):
 .vh-tip a{font-size:13px;font-weight:700;color:#0ea5e9;text-decoration:none;margin-top:4px;display:inline-flex;align-items:center;min-height:34px}
 @media(max-width:920px){.vh-grid{grid-template-columns:1fr}.vh-tips{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.vh-hero img.aswm{filter:invert(1) hue-rotate(180deg)}
-.vh-hero{padding:16px}.vh-tips{grid-template-columns:1fr}.vh-links a{width:100%;box-sizing:border-box;justify-content:center}}
+.vh-hero{padding:16px}.vh-hero .btn{width:100%;max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;justify-content:center;height:auto;min-height:44px;line-height:1.35;padding:10px 12px}.vh-tips{grid-template-columns:1fr}.vh-links a{width:100%;box-sizing:border-box;justify-content:center}}
 </style>'''
 
     cards_html = []
