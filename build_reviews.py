@@ -74,11 +74,17 @@ def run(t):
     # API: rating object on tools that have ratings
     try:
         A=json.load(open("api/tools.json")); ch=False
-        for y in A.get("tools",[]):
+        tools=A if isinstance(A,list) else (A.get("tools",[]) if isinstance(A,dict) else [])
+        for y in tools:
             d=D.get(y.get("slug"))
             new={"average":d["avg"],"count":d["count"],"approved_reviews":len(d.get("reviews") or []),"reviews_api":f'{W}/reviews?tool={y["slug"]}'} if d and d.get("count") else None
             if new and y.get("rating")!=new: y["rating"]=new; ch=True
             elif not new and "rating" in y: y.pop("rating"); ch=True
-        if ch: json.dump(A,open("api/tools.json","w"),indent=1,ensure_ascii=False)
+        if ch or not isinstance(A,dict):
+            if isinstance(A,dict):
+                A["tools"]=tools; A["count"]=len(tools); out=A
+            else:
+                out={"count":len(tools),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"tools":tools}
+            json.dump(out,open("api/tools.json","w"),indent=1,ensure_ascii=False)
     except Exception as ex: print("reviews api:",ex)
     print("reviews:",ins,"sections,",sum(1 for v in D.values() if v.get("count")),"tools with ratings,",ld_n,"with review JSON-LD")

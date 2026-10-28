@@ -116,8 +116,41 @@ def _to_yaml(v, indent=0):
     return json.dumps(str(v), ensure_ascii=False)
 
 
+def catalog_tools(data):
+    """api/tools.json is either {"tools":[...], ...} or a bare list."""
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        return data.get("tools", [])
+    return []
+
+
+def sync_products_snapshot(src="api/products.json"):
+    """Copy api/products.json onto the MCP list_packages snapshot so page counts cannot drift."""
+    if not os.path.isfile(src):
+        return []
+    data = open(src, encoding="utf-8").read()
+    dests = ["mcp-server/src/products_snapshot.json"]
+    extras = []
+    worker = os.environ.get("AGENTSCOUT_MCP_WORKER")
+    if worker:
+        extras.append(os.path.join(worker, "src", "products_snapshot.json"))
+    extras.append("/workspace/agentscout-mcp-worker/src/products_snapshot.json")
+    for extra in extras:
+        if os.path.isdir(os.path.dirname(extra)):
+            dests.append(extra)
+    wrote = []
+    for dest in dests:
+        os.makedirs(os.path.dirname(dest) or ".", exist_ok=True)
+        if os.path.isfile(dest) and open(dest, encoding="utf-8").read() == data:
+            continue
+        open(dest, "w", encoding="utf-8").write(data)
+        wrote.append(dest)
+    return wrote
+
+
 def build_commerce_files(tools_data):
-    tools = tools_data.get("tools", []) if isinstance(tools_data, dict) else tools_data
+    tools = catalog_tools(tools_data)
     last_checked = (tools_data.get("last_checked") if isinstance(tools_data, dict) else None) or "2026-10-27"
     n_tools = len(tools)
     n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
@@ -308,6 +341,7 @@ def build_commerce_files(tools_data):
     prod_str = json.dumps(products, indent=2, ensure_ascii=False) + "\n"
     open("api/products.json", "w", encoding="utf-8").write(prod_str)
     open(".well-known/acp.json", "w", encoding="utf-8").write(prod_str)
+    sync_products_snapshot()
 
     ai_plugin = {
         "schema_version": "v1",
@@ -404,8 +438,9 @@ def run():
                 },
             }
         }
-    n = len(tools_data["tools"])
-    n_mcp = sum(1 for x in tools_data["tools"] if x.get("category") == "MCP servers")
+    tools = catalog_tools(tools_data)
+    n = len(tools)
+    n_mcp = sum(1 for x in tools if isinstance(x, dict) and x.get("category") == "MCP servers")
     spec = {
         "openapi": "3.1.0",
         "info": {

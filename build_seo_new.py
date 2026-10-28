@@ -25,6 +25,8 @@ def run(t):
         L+="\n<!-- cb:start -->\n## Community Grok Bot templates\n\n"+"\n".join(f"- [{e['name']}](https://agentscouthq.com/bot-templates/#{e['id']}): {e['desc']}" for e in cb)+"\n<!-- cb:end -->\n"
         open("llms.txt","w").write(L)
     print("seo overrides:",n,"pages"); crypto_links(t); bt_rename(); long_titles(); answer_blocks(t); mcp_links(); sync_animations(t); unify_all_nav_and_footer()
+    import build_openapi
+    build_openapi.sync_products_snapshot()
 
 # Crypto guide links (Oct 21 2026): crypto category + every crypto tool page link the two crypto guides.
 def crypto_links(t):

@@ -338,4 +338,6 @@ def pages(t):
         ]
     }
     open("bot-store/index.html", "w", encoding="utf-8").write(shell("../", title, desc, canon, body, ld))
+    import build_openapi
+    build_openapi.sync_products_snapshot()
     return [canon]

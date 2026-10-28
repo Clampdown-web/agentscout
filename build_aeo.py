@@ -220,8 +220,13 @@ def write_llms_full(t):
     import build_extras as X
     try:
         api_data = json.load(open("api/tools.json"))
-        last_checked = api_data.get("last_checked", "")
-        api_by_slug = {x["slug"]: x for x in api_data.get("tools", [])}
+        if isinstance(api_data, list):
+            last_checked, api_tools = "", api_data
+        elif isinstance(api_data, dict):
+            last_checked, api_tools = api_data.get("last_checked", ""), api_data.get("tools", [])
+        else:
+            last_checked, api_tools = "", []
+        api_by_slug = {x["slug"]: x for x in api_tools}
     except Exception:
         last_checked = max((x.get("verified", "") for x in t), default="")
         api_by_slug = {}

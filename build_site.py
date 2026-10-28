@@ -267,7 +267,9 @@ def _sync_index_counts():
     n = len(_j.load(open("tools.json")))
     s = open("index.html").read()
     try:
-        _y,_m,_d = map(int, _j.load(open("api/tools.json")).get("last_checked","").split("-"))
+        _api=_j.load(open("api/tools.json"))
+        _lc_raw=_api.get("last_checked","") if isinstance(_api,dict) else ""
+        _y,_m,_d = map(int, _lc_raw.split("-"))
         _lc = _dt.date(_y,_m,_d).strftime("%b %-d, %Y")
     except Exception:
         _lc = _dt.date.today().strftime("%b %-d, %Y")

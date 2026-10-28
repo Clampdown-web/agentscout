@@ -355,7 +355,9 @@ def seo(t,urls):
     open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
     # llms.txt
     _nm=sum(1 for _x in t if _x['category']=='MCP servers')
-    try: _lc=json.load(open("api/tools.json")).get("last_checked","")
+    try:
+        _api=json.load(open("api/tools.json"))
+        _lc=_api.get("last_checked","") if isinstance(_api,dict) else ""
     except Exception: _lc=""
     import build_aicite as _bac2; _ul2=_bac2.mcp_uptime_line(t)
     L=["# AgentScout","",f"> AgentScout is a curated, read-only directory of {len(t):,} AI agent tools in {len(cats)} categories, including {_nm:,} MCP servers ({_ul2}). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.","",f"Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.","",f"Site: {B}","Contact: support@agentscouthq.com","X: https://x.com/AgentScoutHQ, https://x.com/clampdown19","MCP Registry ID: com.agentscouthq/directory","MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse — 100% free, read-only, no API key or x402 wallet required)"]+([f"Catalog last checked: {_lc} (Pacific)"] if _lc else [])+["",

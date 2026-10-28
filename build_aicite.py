@@ -10,11 +10,19 @@ B=X.B; e=X.e
 PT=z.ZoneInfo("America/Los_Angeles")
 HIST="data/mcp_history.json"; SNAP="data/mcp_snapshot.json"; LS="data/mcp_link_status.json"
 def today(): return d.datetime.now(PT).date().isoformat()
+def load_api_tools(path="api/tools.json"):
+    """api/tools.json is either {"count","updated","tools":[...]} or a bare list."""
+    data=json.load(open(path))
+    if isinstance(data,list): return data,{}
+    if isinstance(data,dict): return data.get("tools",[]),data
+    return [],{}
 def nice(s):
     try: return d.date.fromisoformat(s[:10]).strftime("%b %-d, %Y")
     except Exception: return s
 def mcp(t):
-    try: A={a["slug"]:a for a in json.load(open("api/tools.json"))["tools"]}
+    try:
+        tools,_=load_api_tools()
+        A={a["slug"]:a for a in tools}
     except Exception: A={}
     return sorted([{**A.get(x["slug"],{}),**x} for x in t if x.get("category")=="MCP servers"],key=lambda x:x["name"].lower())
 def ptype(x):
@@ -76,7 +84,11 @@ def tbl(head,rows):
             "".join("<tr>"+"".join(f'<td style="padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;overflow-wrap:anywhere">{c}</td>' for c in r)+"</tr>" for r in rows)+"</tbody></table></div>")
 def pages(t):
     LSD=json.load(open(LS)) if os.path.exists(LS) else {}
-    H=history(t,LSD); M=mcp(t); upd=X.json.load(open("api/tools.json")).get("last_checked","") if os.path.exists("api/tools.json") else today()
+    H=history(t,LSD); M=mcp(t); upd=""
+    if os.path.exists("api/tools.json"):
+        try:
+            _,meta=load_api_tools(); upd=(meta.get("last_checked") or "") if isinstance(meta,dict) else ""
+        except Exception: upd=""
     upd=upd or today(); os.makedirs("mcp",exist_ok=True); urls=[]
     cnt={k:sum(1 for x in M if ptype(x)==k) for k in("free","freemium","paid","unknown")}
     link=lambda x:f'<a href="../tools/{e(x["slug"])}.html">{e(x["name"])}</a>'

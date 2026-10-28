@@ -53,7 +53,7 @@ CARD=re.compile(r'<a [^>]*href="(?:\.\./|/)?tools/([a-z0-9-]+)\.html"[^>]*>(.{0,
 def live(tools):
     bad=[]
     s,ct,b=get(BASE+"sitemap.xml"); urls=re.findall(r"<loc>([^<]+)</loc>",b.decode())
-    s,ct,b=get(BASE+"api/tools.json"); api=json.loads(b); api=api.get("tools",api) if isinstance(api,dict) else api
+    s,ct,b=get(BASE+"api/tools.json"); api=json.loads(b); api=api if isinstance(api,list) else (api.get("tools",[]) if isinstance(api,dict) else [])
     imgs={}
     for x in api:
         if not x.get("logo"): bad.append(("api/tools.json",x.get("slug"),"no logo")); continue

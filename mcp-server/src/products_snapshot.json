@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "protocol": "stripe-agentic-commerce",
+  "updated": "2026-10-28",
+  "currency": "USD",
+  "merchant": {
+    "name": "AgentScout",
+    "legal_name": "AgentScout",
+    "url": "https://agentscouthq.com/",
+    "contact_email": "support@agentscouthq.com",
+    "mcp_endpoint": "https://mcp.agentscouthq.com/mcp",
+    "mcp_sse_endpoint": "https://agentscouthq.com/mcp/sse",
+    "mcp_registry_id": "com.agentscouthq/directory",
+    "payment_methods": [
+      "stripe_checkout",
+      "stripe_shared_payment_tokens_ready",
+      "x_money"
+    ],
+    "x_money_handle": "@clampdown19"
+  },
+  "packages": [
+    {
+      "id": "free-community-listing",
+      "sku": "AS-LIST-FREE",
+      "name": "Free Community Listing",
+      "category": "directory_listing",
+      "price_usd": 0,
+      "billing_model": "free",
+      "availability": "in_stock",
+      "badge": "Free Forever",
+      "turnaround": "3-5 business days standard review queue",
+      "checkout_url": "https://agentscouthq.com/submit.html#free-form",
+      "page_url": "https://agentscouthq.com/submit.html",
+      "description": "Permanent indexed tool page (/tools/<slug>.html) with SoftwareApplication JSON-LD schema, daily automated HTTP link checking, and inclusion in llms.txt, api/tools.json, and the AgentScout MCP server (com.agentscouthq/directory).",
+      "deliverables": [
+        "Permanent indexed /tools/<slug>.html listing page",
+        "SoftwareApplication JSON-LD structured data",
+        "Included in llms.txt, api/tools.json, and AgentScout MCP server",
+        "Standard 3-5 day editorial review queue"
+      ]
+    },
+    {
+      "id": "fast-track-launch-boost",
+      "sku": "AS-BOOST-29",
+      "name": "Fast-Track + 7-Day Launch Boost",
+      "category": "directory_boost",
+      "price_usd": 29,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "badge": "Fast-Track",
+      "turnaround": "Same-day priority review (live in next daily build)",
+      "checkout_url": "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02",
+      "page_url": "https://agentscouthq.com/sponsor.html",
+      "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, and a dedicated launch post on @AgentScoutHQ.",
+      "deliverables": [
+        "Same-day priority review & live deployment",
+        "7-day featured pin on /new.html + category New & Featured row",
+        "Full FAQPage JSON-LD + pros/cons profile enrichment",
+        "Dedicated launch post on @AgentScoutHQ on X",
+        "Verified Maker badge on your tool card"
+      ]
+    },
+    {
+      "id": "category-pin-30-day",
+      "sku": "AS-PIN-49",
+      "name": "30-Day Category Pin + Permanent SEO/AEO Placement",
+      "category": "directory_boost",
+      "price_usd": 49,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "badge": "Most Popular",
+      "turnaround": "Same-day priority review + 30-day top category pin",
+      "checkout_url": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
+      "page_url": "https://agentscouthq.com/sponsor.html",
+      "description": "Everything in the $29 Fast-Track package upgraded to a full 30-day top category pin (4x+ longer for $20 more), permanent inclusion in /best/*-alternatives and /compare/ side-by-side comparison tables, priority citation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a launch spotlight across both @clampdown19 and @AgentScoutHQ.",
+      "deliverables": [
+        "Everything in Fast-Track ($29) included",
+        "30-day pinned placement at the top of your primary category page",
+        "Permanent inclusion in relevant /best/*-alternatives and /compare/ tables",
+        "Expanded citation context in llms-full.txt and MCP server search",
+        "Dual X spotlight across @clampdown19 and @AgentScoutHQ"
+      ]
+    },
+    {
+      "id": "weekly-sitewide-sponsor",
+      "sku": "AS-SPONSOR-99WK",
+      "name": "Weekly Sitewide Sponsor + Newsletter Top Slot",
+      "category": "sitewide_sponsorship",
+      "price_usd": 99,
+      "billing_model": "weekly",
+      "availability": "in_stock",
+      "badge": "1 Exclusive Slot / Week",
+      "turnaround": "Immediate activation across all 2,369+ pages + Tuesday newsletter",
+      "checkout_url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
+      "page_url": "https://agentscouthq.com/sponsor.html",
+      "description": "Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all 2,369+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
+      "deliverables": [
+        "Everything in 30-Day Category Pin ($49) included",
+        "7 days in the exclusive sitewide top sponsor bar across all 2,369+ pages",
+        "Featured card in the homepage Makers showcase (#makers)",
+        "Top 'Sponsored by' slot in Tuesday's AgentScout Weekly newsletter",
+        "Custom HUD video card spotlight on X"
+      ]
+    }
+  ],
+  "bot_templates": [
+    {
+      "id": "made-by-agentscout-ops-monitor",
+      "sku": "AS-BOT-PRO-OPS-39",
+      "name": "1. AgentScout Operations / Monitoring Bot — Made by AgentScout Pro Bot (Sold Separately)",
+      "category": "bot_template_pro",
+      "price_usd": 39,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+      "stripe_payment_link_id": "plink_1UVTM8KVzDFIUga8S8sTUEYk",
+      "page_url": "https://agentscouthq.com/bot-store/",
+      "checkout_url": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+      "description": "Downloadable pre-trained operations and monitoring specialist bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) with automated 4-hour inbox triage, post-deploy HTTP & JSON-LD verification, 8-viewport responsive layout checks, and routine failure recovery ($39 one-time)."
+    },
+    {
+      "id": "made-by-agentscout-seo-aeo-auditor",
+      "sku": "AS-BOT-PRO-SEOAEO-59",
+      "name": "2. AgentScout SEO & AEO Growth Auditor Bot — Made by AgentScout Pro Bot (Sold Separately)",
+      "category": "bot_template_pro",
+      "price_usd": 59,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+      "stripe_payment_link_id": "plink_1UVTN9KVzDFIUga8hlFF6b5m",
+      "page_url": "https://agentscouthq.com/bot-store/",
+      "checkout_url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+      "description": "Downloadable pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that checks Search Console rankings, JSON-LD entity graphs, llms.txt, ai-plugin.json, OpenAPI 3.1 specs, and ChatGPT/Perplexity/Google AI citation visibility ($59 one-time)."
+    },
+    {
+      "id": "made-by-agentscout-ci-analyst",
+      "sku": "AS-BOT-PRO-CI-59",
+      "name": "3. AgentScout Market & Launch Intel Bot — Made by AgentScout Pro Bot (Sold Separately)",
+      "category": "bot_template_pro",
+      "price_usd": 59,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+      "stripe_payment_link_id": "plink_1UVTNsKVzDFIUga8L9SU6bd5",
+      "page_url": "https://agentscouthq.com/bot-store/",
+      "checkout_url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+      "description": "Downloadable pre-trained competitive intelligence analyst bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that tracks rival launches, pricing shifts, agentic commerce endpoints, Product Hunt & Hacker News traction, and 20-account X outlier hooks ($59 one-time)."
+    },
+    {
+      "id": "made-by-agentscout-ceo-coordinator",
+      "sku": "AS-BOT-PRO-CEO-69",
+      "name": "4. AgentScout CEO Coordinator Bot — Made by AgentScout Pro Bot (Sold Separately)",
+      "category": "bot_template_pro",
+      "price_usd": 69,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+      "stripe_payment_link_id": "plink_1UVTOOKVzDFIUga8XtZvvoJG",
+      "page_url": "https://agentscouthq.com/bot-store/",
+      "checkout_url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
+      "description": "Downloadable pre-trained executive builder and multi-bot dispatcher bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X & newsletter growth ($69 one-time)."
+    },
+    {
+      "id": "made-by-agentscout-team-bundle",
+      "sku": "AS-BOT-BUNDLE-4TEAM-149",
+      "name": "Full 4-Bot 'Company-in-a-Box' Team Bundle (All 4 Bots Sold Together — Save $77)",
+      "category": "bot_template_bundle",
+      "price_usd": 149,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+      "stripe_payment_link_id": "plink_1UVTOsKVzDFIUga8IFPBfrph",
+      "page_url": "https://agentscouthq.com/bot-store/",
+      "checkout_url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08",
+      "description": "All 4 downloadable bots together (1. AgentScout Operations / Monitoring Bot [$39] + 2. AgentScout SEO & AEO Growth Auditor Bot [$59] + 3. AgentScout Market & Launch Intel Bot [$59] + 4. AgentScout CEO Coordinator Bot [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)."
+    }
+  ]
+}
