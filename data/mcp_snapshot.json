@@ -29,6 +29,11 @@
   "name": "Airtable MCP",
   "pricing": "Freemium"
  },
+ "aisoc": {
+  "link": "not checked",
+  "name": "AiSOC",
+  "pricing": "Open source"
+ },
  "aiven-mcp": {
   "link": "OK",
   "name": "Aiven MCP",
@@ -38,6 +43,11 @@
   "link": "OK",
   "name": "Algolia MCP",
   "pricing": "Freemium"
+ },
+ "alpaca-mcp-server": {
+  "link": "not checked",
+  "name": "Alpaca MCP Server",
+  "pricing": "Open source + cloud"
  },
  "altmetric-mcp": {
   "link": "OK",
@@ -49,9 +59,19 @@
   "name": "Amplitude MCP",
   "pricing": "Freemium"
  },
+ "annas-mcp": {
+  "link": "not checked",
+  "name": "Annas MCP",
+  "pricing": "Open source + cloud"
+ },
  "antv-mcp-server-chart": {
   "link": "OK",
   "name": "AntV MCP Server Chart",
+  "pricing": "Open source"
+ },
+ "anymd": {
+  "link": "not checked",
+  "name": "Anymd",
   "pricing": "Open source"
  },
  "anysearch": {
@@ -89,6 +109,11 @@
   "name": "Archestra",
   "pricing": "Open source + cloud"
  },
+ "arkon": {
+  "link": "not checked",
+  "name": "Arkon",
+  "pricing": "Open source"
+ },
  "arxiv-mcp-server": {
   "link": "OK",
   "name": "arXiv MCP Server",
@@ -118,11 +143,6 @@
   "link": "OK",
   "name": "Axiom MCP",
   "pricing": "Freemium"
- },
- "azure-devops-mcp": {
-  "link": "OK",
-  "name": "Azure DevOps MCP",
-  "pricing": "Open source"
  },
  "azure-mcp-server": {
   "link": "OK",
@@ -173,6 +193,11 @@
   "link": "OK",
   "name": "Canva MCP",
   "pricing": "Freemium"
+ },
+ "carbon": {
+  "link": "not checked",
+  "name": "Carbon",
+  "pricing": "Open source + cloud"
  },
  "carto-mcp": {
   "link": "OK",
@@ -229,24 +254,49 @@
   "name": "ContextForge",
   "pricing": "Open source"
  },
+ "contextplus": {
+  "link": "not checked",
+  "name": "Contextplus",
+  "pricing": "Open source"
+ },
  "credal": {
   "link": "OK",
   "name": "Credal",
   "pricing": "Paid"
+ },
+ "crosspaste-desktop": {
+  "link": "not checked",
+  "name": "Crosspaste Desktop",
+  "pricing": "Open source + cloud"
+ },
+ "crw": {
+  "link": "not checked",
+  "name": "Crw",
+  "pricing": "Open source + cloud"
+ },
+ "cve-mcp-server": {
+  "link": "not checked",
+  "name": "Cve MCP Server",
+  "pricing": "Open source + cloud"
  },
  "daily-dev-mcp": {
   "link": "OK",
   "name": "daily.dev MCP",
   "pricing": "Freemium"
  },
+ "dashboard-icons": {
+  "link": "not checked",
+  "name": "Dashboard Icons",
+  "pricing": "Open source + cloud"
+ },
+ "datagouv-mcp": {
+  "link": "not checked",
+  "name": "Datagouv MCP",
+  "pricing": "Open source + cloud"
+ },
  "davinci-resolve-mcp": {
   "link": "OK",
   "name": "DaVinci Resolve MCP",
-  "pricing": "Open source"
- },
- "dbhub": {
-  "link": "OK",
-  "name": "DBHub",
   "pricing": "Open source"
  },
  "dbt-mcp": {
@@ -254,10 +304,20 @@
   "name": "dbt MCP",
   "pricing": "Open source"
  },
+ "dbx": {
+  "link": "not checked",
+  "name": "Dbx",
+  "pricing": "Open source + cloud"
+ },
  "desearch": {
   "link": "OK",
   "name": "Desearch",
   "pricing": "Paid"
+ },
+ "design-extract": {
+  "link": "not checked",
+  "name": "Design Extract",
+  "pricing": "Open source + cloud"
  },
  "desktop-commander-mcp": {
   "link": "OK",
@@ -273,6 +333,11 @@
   "link": "OK",
   "name": "Diagrid Catalyst MCP",
   "pricing": "See site"
+ },
+ "douyin-tiktok-download-api": {
+  "link": "not checked",
+  "name": "Douyin TikTok Download API",
+  "pricing": "Open source + cloud"
  },
  "edgegap-mcp": {
   "link": "OK",
@@ -294,6 +359,11 @@
   "name": "FastMCP",
   "pricing": "Open source"
  },
+ "ffmpeg-skill": {
+  "link": "not checked",
+  "name": "Ffmpeg Skill",
+  "pricing": "Open source + cloud"
+ },
  "figma-console-mcp": {
   "link": "OK",
   "name": "Figma Console MCP",
@@ -303,11 +373,6 @@
   "link": "OK",
   "name": "Figma MCP Server",
   "pricing": "Freemium"
- },
- "financial-cents-mcp": {
-  "link": "OK",
-  "name": "Financial Cents MCP",
-  "pricing": "Paid"
  },
  "fireflies-mcp": {
   "link": "OK",
@@ -328,6 +393,11 @@
   "link": "OK",
   "name": "Frase MCP",
   "pricing": "Paid"
+ },
+ "gearboy": {
+  "link": "not checked",
+  "name": "Gearboy",
+  "pricing": "Open source"
  },
  "geckoboard-mcp": {
   "link": "OK",
@@ -364,6 +434,11 @@
   "name": "Google Workspace MCP",
   "pricing": "Open source"
  },
+ "gortex": {
+  "link": "not checked",
+  "name": "Gortex",
+  "pricing": "Open source + cloud"
+ },
  "grafana-mcp": {
   "link": "OK",
   "name": "Grafana MCP",
@@ -399,10 +474,10 @@
   "name": "Haymon Database MCP",
   "pricing": "Open source"
  },
- "hello-retail-mcp": {
-  "link": "OK",
-  "name": "Hello Retail MCP",
-  "pricing": "Paid"
+ "hexstrike-ai": {
+  "link": "not checked",
+  "name": "Hexstrike AI",
+  "pricing": "Open source + cloud"
  },
  "home-assistant-mcp-ha-mcp": {
   "link": "OK",
@@ -474,6 +549,16 @@
   "name": "joinly",
   "pricing": "Open source"
  },
+ "jscpd": {
+  "link": "not checked",
+  "name": "Jscpd",
+  "pricing": "Open source + cloud"
+ },
+ "jshookmcp": {
+  "link": "not checked",
+  "name": "Jshookmcp",
+  "pricing": "Open source"
+ },
  "jumpcloud-mcp": {
   "link": "OK",
   "name": "JumpCloud MCP",
@@ -504,15 +589,15 @@
   "name": "Klavis AI",
   "pricing": "Open source + cloud"
  },
- "kubernetes-mcp-server": {
-  "link": "OK",
-  "name": "Kubernetes MCP Server",
-  "pricing": "Open source"
- },
  "launchdarkly-mcp": {
   "link": "OK",
   "name": "LaunchDarkly MCP",
   "pricing": "Freemium"
+ },
+ "lightswind-ui-library": {
+  "link": "not checked",
+  "name": "Lightswind UI Library",
+  "pricing": "Open source + cloud"
  },
  "line-bot-mcp-server": {
   "link": "OK",
@@ -589,6 +674,11 @@
   "name": "Mapbox MCP",
   "pricing": "Open source"
  },
+ "master-fetch": {
+  "link": "not checked",
+  "name": "Master Fetch",
+  "pricing": "Open source"
+ },
  "matlab-mcp-server": {
   "link": "OK",
   "name": "MATLAB MCP Server",
@@ -607,6 +697,11 @@
  "mcp-for-blender": {
   "link": "OK",
   "name": "MCP for Blender",
+  "pricing": "Open source"
+ },
+ "mcp-gateway-registry": {
+  "link": "not checked",
+  "name": "MCP Gateway Registry",
   "pricing": "Open source"
  },
  "mcp-go-sdk": {
@@ -653,6 +748,11 @@
   "link": "OK",
   "name": "MCP Registry",
   "pricing": "Open source"
+ },
+ "mcp-remote": {
+  "link": "not checked",
+  "name": "MCP Remote",
+  "pricing": "Open source + cloud"
  },
  "mcp-rust-sdk": {
   "link": "OK",
@@ -744,11 +844,6 @@
   "name": "MongoDB MCP Server",
   "pricing": "Open source"
  },
- "motherduck-mcp": {
-  "link": "OK",
-  "name": "MotherDuck MCP",
-  "pricing": "Open source"
- },
  "mural-mcp": {
   "link": "OK",
   "name": "Mural MCP",
@@ -758,6 +853,11 @@
   "link": "OK",
   "name": "Mux MCP",
   "pricing": "Open source"
+ },
+ "mysql-mcp-server": {
+  "link": "not checked",
+  "name": "Mysql MCP Server",
+  "pricing": "Open source + cloud"
  },
  "n8n-mcp": {
   "link": "OK",
@@ -789,6 +889,11 @@
   "name": "NitroStack",
   "pricing": "Open source + cloud"
  },
+ "nornicdb": {
+  "link": "not checked",
+  "name": "NornicDB",
+  "pricing": "Open source"
+ },
  "notion-mcp": {
   "link": "OK",
   "name": "Notion MCP",
@@ -809,10 +914,10 @@
   "name": "Observal",
   "pricing": "Open source"
  },
- "omophub": {
-  "link": "OK",
-  "name": "OMOPHub",
-  "pricing": "Freemium"
+ "ollaya": {
+  "link": "not checked",
+  "name": "Ollaya",
+  "pricing": "Open source + cloud"
  },
  "onesignal-mcp": {
   "link": "OK",
@@ -864,15 +969,15 @@
   "name": "Parse.ly MCP",
   "pricing": "Paid"
  },
- "paypal-mcp": {
-  "link": "OK",
-  "name": "PayPal MCP",
-  "pricing": "Open source"
- },
  "pg-aiguide": {
   "link": "OK",
   "name": "pg-aiguide",
   "pricing": "Open source"
+ },
+ "phantom": {
+  "link": "not checked",
+  "name": "Phantom",
+  "pricing": "Open source + cloud"
  },
  "picsart-genai-mcp": {
   "link": "OK",
@@ -884,29 +989,14 @@
   "name": "PlanetScale MCP",
   "pricing": "Freemium"
  },
- "polar-analytics-mcp": {
-  "link": "OK",
-  "name": "Polar Analytics MCP",
-  "pricing": "Paid"
- },
  "porkbun-mcp": {
   "link": "OK",
   "name": "Porkbun MCP",
   "pricing": "Free"
  },
- "postgres-mcp-pro": {
-  "link": "OK",
-  "name": "Postgres MCP Pro",
-  "pricing": "Open source"
- },
  "postman-mcp-server": {
   "link": "OK",
   "name": "Postman MCP Server",
-  "pricing": "Open source"
- },
- "power-bi-modeling-mcp": {
-  "link": "OK",
-  "name": "Power BI Modeling MCP",
   "pricing": "Open source"
  },
  "printfriendly-mcp": {
@@ -914,10 +1004,10 @@
   "name": "PrintFriendly MCP",
   "pricing": "Freemium"
  },
- "radar": {
-  "link": "OK",
-  "name": "Radar",
-  "pricing": "Open source"
+ "proxima": {
+  "link": "not checked",
+  "name": "Proxima",
+  "pricing": "Open source + cloud"
  },
  "railway-mcp": {
   "link": "OK",
@@ -928,6 +1018,11 @@
   "link": "OK",
   "name": "REA",
   "pricing": "Open source"
+ },
+ "redamon": {
+  "link": "not checked",
+  "name": "Redamon",
+  "pricing": "Open source + cloud"
  },
  "redis-mcp-server": {
   "link": "OK",
@@ -949,25 +1044,20 @@
   "name": "Reverse Image Location (GeoSolver)",
   "pricing": "Paid"
  },
- "robottraining-jobs": {
-  "link": "OK",
-  "name": "RobotTraining.jobs",
-  "pricing": "Freemium"
- },
  "rocketreach-mcp": {
   "link": "OK",
   "name": "RocketReach MCP",
   "pricing": "Freemium"
  },
- "ros-mcp-server": {
-  "link": "OK",
-  "name": "ROS MCP Server",
-  "pricing": "Open source"
- },
  "sanity-mcp": {
   "link": "OK",
   "name": "Sanity MCP",
   "pricing": "Freemium"
+ },
+ "sceneview": {
+  "link": "not checked",
+  "name": "Sceneview",
+  "pricing": "Open source"
  },
  "scite-mcp": {
   "link": "OK",
@@ -1030,7 +1120,7 @@
   "pricing": "Freemium"
  },
  "skiplagged-mcp": {
-  "link": "Error",
+  "link": "OK",
   "name": "Skiplagged MCP",
   "pricing": "See site"
  },
@@ -1079,16 +1169,6 @@
   "name": "Streamkap MCP",
   "pricing": "Freemium"
  },
- "stripe-agent-toolkit": {
-  "link": "OK",
-  "name": "Stripe Agent Toolkit",
-  "pricing": "Open source"
- },
- "studocu-mcp": {
-  "link": "OK",
-  "name": "Studocu MCP",
-  "pricing": "See site"
- },
  "supabase-mcp": {
   "link": "OK",
   "name": "Supabase MCP",
@@ -1124,11 +1204,6 @@
   "name": "Teamwork.com MCP",
   "pricing": "Paid"
  },
- "terraform-mcp-server": {
-  "link": "OK",
-  "name": "Terraform MCP Server",
-  "pricing": "Open source"
- },
  "testkube-mcp": {
   "link": "OK",
   "name": "Testkube MCP",
@@ -1153,6 +1228,11 @@
   "link": "OK",
   "name": "trivago MCP",
   "pricing": "Free"
+ },
+ "tuui": {
+  "link": "not checked",
+  "name": "Tuui",
+  "pricing": "Open source + cloud"
  },
  "twelve-data-mcp": {
   "link": "OK",
@@ -1184,6 +1264,11 @@
   "name": "Unleash MCP",
   "pricing": "Open source + cloud"
  },
+ "unreal-mcp": {
+  "link": "not checked",
+  "name": "Unreal MCP",
+  "pricing": "Open source"
+ },
  "upstash-mcp": {
   "link": "OK",
   "name": "Upstash MCP",
@@ -1214,6 +1299,11 @@
   "name": "Webflow MCP",
   "pricing": "Open source"
  },
+ "webiny-js": {
+  "link": "not checked",
+  "name": "Webiny Js",
+  "pricing": "Open source + cloud"
+ },
  "wenbu": {
   "link": "OK",
   "name": "Wenbu",
@@ -1243,6 +1333,11 @@
   "link": "OK",
   "name": "WorkOS MCP",
   "pricing": "Freemium"
+ },
+ "wslmanager": {
+  "link": "not checked",
+  "name": "Wslmanager",
+  "pricing": "Open source + cloud"
  },
  "xquik": {
   "link": "OK",

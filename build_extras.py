@@ -231,6 +231,16 @@ CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use
 "MCP servers":"Model Context Protocol (MCP) servers that plug Claude, Cursor, Codex, ChatGPT and other MCP clients into databases, docs, payments, browsers and SaaS apps, plus MCP gateways, registries and frameworks for building and running them: Context7, Smithery, DBHub, Serena, ToolHive, Obot and more. For hosting, model gateways, auth and other agent plumbing, see agent infra.",
 "agent infra":"The infrastructure behind AI agents that is not primarily MCP: LLM and AI gateways, inference clouds, agent runtimes and control planes, tool-integration and auth platforms, agent email, payments and identity layers, and agent filesystems: LiteLLM, Portkey, Composio, Nango, Groq, Replicate, Together AI and more. MCP servers have their own page.",
 "models & local runtimes":"Agentic models and the apps that run open models on your own computer or server, such as Ollama, LM Studio, LocalAI and Jan.",
+"data & analytics":"SQL and BI agents, text-to-SQL copilots, and spreadsheet or data-pipeline agents that query a warehouse, build a chart, and explain the result in plain language.",
+"DevOps & cloud":"Kubernetes, cloud, and SRE agents that investigate incidents, read CI logs, and apply infrastructure changes with a human still in the loop.",
+"QA & testing":"Autonomous QA agents that write and run end-to-end or unit tests, reproduce bugs, and report failures with steps you can replay.",
+"finance & accounting":"Bookkeeping, FP&A, tax, billing, and accounts-payable agents that close the books, categorize transactions, and draft the numbers finance teams review.",
+"legal & compliance":"Contract-review, legal-research, and compliance agents for SOC 2, GDPR, and policy work, built to cite the clause and leave the signature to a person.",
+"HR & recruiting":"Sourcing, screening, and onboarding agents that search profiles, rank applicants against a role, and schedule interviews inside the ATS you already use.",
+"education & tutoring":"AI tutors, course builders, and study agents that turn notes or a syllabus into explanations, practice, and flashcards paced to the learner.",
+"healthcare & biotech":"Clinical scribes, medical-coding assistants, and bioinformatics agents that draft notes, map codes, or query public biomedical data for a clinician or scientist to check.",
+"e-commerce & retail":"Shopify, catalog, and merchandising agents that answer shoppers, update listings, and tune pricing or recommendations for online stores.",
+"robotics & physical AI":"Embodied agents, ROS and simulation stacks, and hardware-control tools that turn a language goal into motion on a robot or a simulated world.",
 }
 def catslug(c): return re.sub(r"[^a-z0-9]+","-",c.lower()).strip("-")
 def meta(x,n=155):
@@ -310,7 +320,10 @@ _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and co
   "crypto":"crypto AI agent tools","customer support":"AI customer support agents","evals & observability":"AI agent evals & observability tools","frameworks":"AI agent frameworks",
   "games":"AI game agents and tools","MCP servers":"MCP servers & MCP tools","agent infra":"AI agent infrastructure tools","film & TV production":"AI film & TV production tools","video generation":"AI video generation tools","film & TV audio":"AI film & TV audio tools","music production":"AI music production tools","image generation":"AI image generators","graphic design & branding":"AI graphic design & branding tools","3D & concept art":"AI 3D & concept art tools","photography & photo editing":"AI photography & photo editing tools","memory & RAG":"AI agent memory & RAG tools","models & local runtimes":"models & local runtimes for AI agents",
   "no-code builders":"no-code AI agent builders","personal agents":"personal AI agents","productivity":"AI productivity agents","research":"AI research agents",
-  "sales & marketing":"AI sales & marketing agents","sandboxes & code execution":"AI agent sandboxes & code execution tools","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents"}
+  "sales & marketing":"AI sales & marketing agents","sandboxes & code execution":"AI agent sandboxes & code execution tools","security & governance":"AI agent security & governance tools","vision":"AI vision agent tools","voice":"AI voice agents",
+  "data & analytics":"AI data and analytics agents","DevOps & cloud":"AI DevOps and cloud agents","QA & testing":"AI QA and testing agents","finance & accounting":"AI finance and accounting agents",
+  "legal & compliance":"AI legal and compliance agents","HR & recruiting":"AI HR and recruiting agents","education & tutoring":"AI education and tutoring agents","healthcare & biotech":"AI healthcare and biotech agents",
+  "e-commerce & retail":"AI e-commerce and retail agents","robotics & physical AI":"AI robotics and physical agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
 def cat_title(c,n): return f"{n} best {cat_phrase(c)} (2026) · AgentScout"
 def seo(t,urls):

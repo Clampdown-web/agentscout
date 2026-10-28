@@ -20,12 +20,12 @@ TASKS=[
 ("customer-support","customer support",{"customer support"},{"sales & support"},r"support|helpdesk|help desk|customer service|ticket","Agents that answer customer questions, resolve tickets and hand off to people when needed."),
 ("sales-outreach","sales outreach",{"sales & marketing"},set(),r"\bsales\b|outreach|\bSDR\b|lead|prospect|\bCRM\b","Agents that find leads, write outreach and keep your pipeline moving."),
 ("writing-emails","writing and managing email",set(),set(),r"\bemails?\b|inbox|gmail","Assistants that draft replies, sort your inbox and follow up so email takes less of your day."),
-("business-automation","running business operations",{"business agents"},{"business agents"},r"enterprise|back office|operations|business process","Ready-made agents for business teams: operations, finance, HR and other repeatable work."),
+("business-automation","running business operations",{"business agents","finance & accounting","HR & recruiting","legal & compliance","e-commerce & retail","healthcare & biotech"},{"business agents"},r"enterprise|back office|operations|business process","Ready-made agents for business teams: operations, finance, HR and other repeatable work."),
 ("personal-assistants","personal assistance",{"personal agents"},{"personal agents"},r"personal (assistant|agent)|your (day|life)|always-on","Personal agents that run errands online, keep track of tasks and act on your behalf."),
 ("research","research",{"research"},{"research the web"},r"research|cited|citation|papers","Agents that search, read many sources and come back with a cited answer or report."),
 ("searching-the-web","web search for agents",set(),set(),r"search API|web search|search engine|retriev","Search APIs and engines built for agents, returning clean results an LLM can use directly."),
 ("reading-papers","reading scientific papers",set(),set(),r"papers|scientific|academic|literature","Research assistants for academic work: finding papers, summarizing them and extracting findings."),
-("data-analysis","data analysis",set(),set(),r"\bdata\b|analytic|spreadsheet|\bSQL\b|dashboard","Agents that query, clean and chart data and explain what it shows."),
+("data-analysis","data analysis",{"data & analytics"},set(),r"\bdata\b|analytic|spreadsheet|\bSQL\b|dashboard","Agents that query, clean and chart data and explain what it shows."),
 ("documents","working with documents",set(),set(),r"document|\bPDF|\bRAG\b|knowledge base","Tools that let agents read, search and answer questions over your documents and files."),
 ("connecting-tools-mcp","connecting tools with MCP",set(),{"connect tools via MCP"},r"\bMCP\b|Model Context Protocol","MCP servers, clients and registries that give agents safe access to your apps and data."),
 ("building-mcp-servers","building MCP servers",set(),set(),r"MCP server|build(ing)? MCP|MCP SDK|MCP framework|registry","Tools and SDKs for building, hosting and publishing your own MCP servers."),
@@ -34,7 +34,7 @@ TASKS=[
 ("monitoring-agents","monitoring agents in production",set(),set(),r"observab|tracing|traces|monitor|logging","Observability for agents in production: traces, costs, latency and errors in one place."),
 ("running-code-safely","running code safely",{"sandboxes & code execution"},{"run code safely"},r"sandbox|isolated|secure (runtime|execution)|microVM","Sandboxes that let agents run code and tools in isolation, away from your machine and data."),
 ("agent-security","agent security and safety",set(),set(),r"secur|safety|guardrail|permission|policy|governance","Guardrails, policies and monitoring that keep agents from doing what they shouldn't."),
-("testing-apps","testing apps",set(),set(),r"\bQA\b|\btest(s|ing)?\b|end-to-end|\bE2E\b","Agents that write and run tests, click through your app and report what breaks."),
+("testing-apps","testing apps",{"QA & testing"},set(),r"\bQA\b|\btest(s|ing)?\b|end-to-end|\bE2E\b","Agents that write and run tests, click through your app and report what breaks."),
 ("making-videos","making videos",set(),set(),r"video","AI agents and tools that script, edit or generate video."),
 ("making-images-and-design","images and design",{"image generation","graphic design & branding","3D & concept art","photography & photo editing"},{"make diagrams","generate images","design graphics","logos & branding","UI design"},r"\bimage|design|diagram|visual","AI agents for visual work: design agents that build graphics and brand assets from a brief, image generators you can direct by chat, diagram makers, and MCP servers that let agents work in Figma, Canva and Penpot."),
 ("games","AI games and game makers",{"games"},set(),r"\bgames?\b|game master|dungeon|NPC|Minecraft","AI-made and AI-driven games: text adventures, AI game masters for tabletop, games against AI agents, AI NPC engines and tools that make games."),
@@ -43,7 +43,7 @@ TASKS=[
 ("deploying-agents","deploying and hosting agents",set(),set(),r"\bdeploy(s|ing)? (\w+ ){0,3}agents\b|\bagent (hosting|runtime|cloud)\b|\bhost(s|ing)? (AI )?agents\b|\bagents? in production\b|\bserverless\b","Infrastructure for running agents in production: hosting, scaling and serverless runtimes."),
 ("open-source-agents","open-source agents",set(),set(),r"\bopen[- ]source (\w+[- ]){0,2}(AI )?(agent|assistant)s?\b(?! (framework|platform|SDK|library|memory|infrastructure))","Open-source agents you can run yourself, inspect and extend, from coding agents to personal assistants."),
 ("security-testing","security testing",set(),set(),r"penetration|pentest|red[- ]team|vulnerab|bug bount|security (audit|analysis|scan|testing)","Agents that probe your app, code and smart contracts the way an attacker would: running penetration tests, red-teaming AI systems and flagging vulnerabilities with suggested fixes."),
-("devops-and-incidents","site reliability and incident response",set(),set(),r"\bSRE\b|incident|on-call|production alerts|root cause|Terraform|Kubernetes UI|(?<!inference )on Kubernetes|cloud infrastructure|pipelines, builds|failed jobs","AI SRE agents and MCP servers that investigate alerts, read dashboards and CI logs, and help manage cloud infrastructure, so incidents get a first look before anyone is paged."),
+("devops-and-incidents","site reliability and incident response",{"DevOps & cloud"},set(),r"\bSRE\b|incident|on-call|production alerts|root cause|Terraform|Kubernetes UI|(?<!inference )on Kubernetes|cloud infrastructure|pipelines, builds|failed jobs","AI SRE agents and MCP servers that investigate alerts, read dashboards and CI logs, and help manage cloud infrastructure, so incidents get a first look before anyone is paged."),
 ("parallel-coding-agents","running coding agents in parallel",set(),set(),r"parallel (coding )?agents|(multiple|many) coding agents|worktrees|verifies tasks in parallel|control plane for dispatching","Command centers, IDEs and CLIs for running several coding agents at once, each on its own task or Git worktree, then reviewing what they hand back."),
 ("agent-identity","agent identity and logins",set(),set(),r"\bidentity\b|\bauth\b(?! and storage)|credential handling|payment credentials|login layer","Identity, auth and credential tools that let agents sign in to apps, prove who they act for and use secrets without ever seeing the raw passwords or keys."),
 ("spreadsheets-and-slides","spreadsheets, slides and docs",set(),set(),r"spreadsheet|Excel|Google Sheets|slides|PowerPoint|office suite|Airtable|Google Workspace|Microsoft 365","AI spreadsheets, slide makers and office tools, plus MCP servers that let agents read and edit Excel, Airtable and Google Workspace files."),
@@ -218,7 +218,7 @@ def _subpages_write(m):
         T,pitems=m[p_]; plabel=T[1]; lab=_sublabel(sub); n=len(its); canon=f"{B}tasks/{sl}.html"
         its=sorted(its,key=lambda x:(not x.get("featured"),-(x.get("github_stars") or 0),x["name"].lower()))
         h1=subtask_h1(p_,sub,lab,plabel)
-        title=f"{subtask_title(p_,sub,lab,plabel,n)} · AgentScout"
+        title=build_extras.clip_title(f"{subtask_title(p_,sub,lab,plabel,n)} · AgentScout")
         _st=subtask_title(p_,sub,lab,plabel,n); _nm=', '.join(x['name'] for x in its[:3])
         desc=next((d for d in (f"{_st}, including {_nm}. Link-checked, with pricing as makers state it.",f"{_st}, including {_nm}. Link-checked.",f"{_st}, including {_nm}.") if len(d)<=158),f"{_st}, including {_nm}."[:158])
         starred=[x for x in its if x.get("github_stars")][:3]
@@ -288,7 +288,8 @@ def submit_page(t):
     desc=f"Submit your AI agent tool or MCP server to AgentScout ({m['tools_count']:,}+ tools). Free listing, $29 Fast-Track, $49 Category Pin, or $99/wk Sponsor."
     inp='style="width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;box-sizing:border-box"'
     def f(id,label,typ="text",req=True,extra=""): return f'<label style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="{id}">{label}{"" if req else " <span style=\"color:var(--faint);font-weight:400\">(optional)</span>"}</label><input id="{id}" name="{id}" type="{typ}" {"required" if req else ""} {extra} {inp}>'
-    opts="".join(f'<option>{e(c)}</option>' for c in cats)+"<option>other</option>"
+    _newcats=["data & analytics","DevOps & cloud","QA & testing","finance & accounting","legal & compliance","HR & recruiting","education & tutoring","healthcare & biotech","e-commerce & retail","robotics & physical AI"]
+    opts="".join(f'<option>{e(c)}</option>' for c in sorted(set(cats)|set(_newcats)))+"<option>other</option>"
     pkg_sel=(
         '<fieldset id="spkg-field" class="spkg-field">'
         '<legend class="spkg-legend">1. Choose your listing package</legend>'
