@@ -22,7 +22,11 @@ RX={
 "documents":(r"\bRAG\b|documents?\b|\bPDFs?\b|knowledge base|\bOCR\b|contracts?\b|invoices?",r"\bRAG\b",r"LLM-ready Markdown|RAG systems|evals, RAG|RAG pipelines|task, PDF|approvals or documents|documentation|RAG chunks|RAG evals?|for RAG|LLM-ready|smart[- ]contracts?|token transfers, contracts|discovery documents"),
 "chat-apps":(r"Telegram|WhatsApp|iMessage|\bDiscord\b",r"\bSlack\b(?! alerts)",None),
 }
-CATS={"making-videos":({"video generation","film & TV production"},set())}  # extra categories counted as a match (only agentic media tools reach this page)
+CATS={"making-videos":({"video generation","film & TV production"},set()),  # extra categories counted as a match
+ "data-analysis":({"data & analytics"},set()),
+ "testing-apps":({"QA & testing"},set()),
+ "devops-and-incidents":({"DevOps & cloud"},set()),
+ "business-automation":({"finance & accounting","legal & compliance","HR & recruiting","e-commerce & retail","healthcare & biotech"},set())}
 def text(x,pricing=False): return re.sub(NEG_GLOBAL,' ',f'{x.get("description","")}'+(f' {x.get("pricing","")}' if pricing else ''),flags=re.I)
 def score(x,T):
     slug,_,cats,ucs,rx,_=T

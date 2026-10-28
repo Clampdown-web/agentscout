@@ -1,12 +1,12 @@
 {
- "date": "2026-10-27",
- "slug": "salestouch",
- "name": "SalesTouch",
- "why": "A standout sales & marketing tool for everyday users: salesTouch is a LinkedIn MCP server for AI agents.",
- "category": "sales & marketing",
- "description": "SalesTouch is a LinkedIn MCP server for AI agents. Connect Claude, Codex, ChatGPT or any remote MCP client to https://www.salestouch.io/api/mcp and your agent can find prospects, research people and companies, send invitations and messages, and handle follow-ups through 45 purpose-built LinkedIn tools instead of browser automation. Scoped OAuth, approvals for sensitive actions, daily limits, working hours and a human-paced action queue keep the account under control.",
- "logo": "https://agentscouthq.com/assets/logos/salestouch.png",
- "page": "https://agentscouthq.com/tools/salestouch.html",
+ "date": "2026-10-28",
+ "slug": "adala",
+ "name": "Adala",
+ "why": "A standout frameworks tool for builders: humanSignal's autonomous data-labeling agent framework, where agents learn labeling skills iteratively.",
+ "category": "frameworks",
+ "description": "HumanSignal's autonomous data-labeling agent framework, where agents learn labeling skills iteratively.",
+ "logo": "https://agentscouthq.com/assets/logos/adala.png",
+ "page": "https://agentscouthq.com/tools/adala.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -55,6 +55,10 @@
   {
    "date": "2026-10-27",
    "slug": "salestouch"
+  },
+  {
+   "date": "2026-10-28",
+   "slug": "adala"
   }
  ]
 }

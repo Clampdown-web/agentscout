@@ -7200,8 +7200,7 @@
 ],
 "helix-foundry": [
 "text-to-sql",
-"vector-rag",
-"research-agents"
+"vector-rag"
 ],
 "pgx": [
 "text-to-sql",
@@ -7221,8 +7220,7 @@
 "ovis": [
 "voice-phone",
 "browser-automation",
-"computer-use",
-"terminal-agents"
+"computer-use"
 ],
 "aseprite-ai-artist": [
 "evals",
@@ -7242,7 +7240,863 @@
 "signoz-mcp-server": [
 "observability",
 "mcp-servers",
+"rules-config"
+],
+"ascendo": [],
+"rpent": [],
+"rp1": [],
+"iot-dc3": [
+"workflow-automation"
+],
+"avora": [
+"vector-rag"
+],
+"scribemedical": [],
+"biomcp": [
+"vfx-compositing"
+],
+"mirobody": [
+"local-models"
+],
+"k-dense": [
+"research-agents",
+"computer-use",
+"workflow-automation",
+"local-models"
+],
+"scienceclaw": [
+"rules-config"
+],
+"neuwark": [
+"testing-qa",
+"workflow-automation"
+],
+"chemistry-ai": [],
+"studypal": [
+"planning-tasks"
+],
+"tutorly": [],
+"longtermemory": [
+"planning-tasks"
+],
+"epa608pass": [],
+"learn-place": [],
+"snappy-learn": [],
+"recruit-crm": [
+"sales-agents"
+],
+"skima": [],
+"sproutsai": [],
+"interviewer-ai": [
+"computer-use",
+"video"
+],
+"litespace": [
+"computer-use",
+"evals"
+],
+"qode": [],
+"gohire": [],
+"humanflow": [],
+"globus": [],
+"boss-agent-cli": [
+"local-models",
+"terminal-agents"
+],
+"chamelio": [
+"guardrails"
+],
+"wolfia": [],
+"referent": [],
+"kaia": [
+"workflow-automation"
+],
+"ciso-assistant": [
+"workflow-automation"
+],
+"korean-law-mcp": [
+"research-agents",
 "local-models",
 "rules-config"
+],
+"opencontracts": [
+"vector-rag"
+],
+"taxgpt": [
+"research-agents"
+],
+"jupid": [],
+"zenskar": [],
+"taxxa": [],
+"vidur": [
+"research-agents"
+],
+"pocket-invoice-mcp": [
+"vector-rag",
+"ai-dubbing-voices"
+],
+"askspot": [],
+"flowgent": [
+"chat-app-agents"
+],
+"shopchief": [
+"marketing-agents"
+],
+"callsy": [
+"voice-phone",
+"video-editing"
+],
+"innoshop": [],
+"nexscope": [
+"mcp-gateways",
+"video"
+],
+"genflowai": [
+"marketing-agents",
+"video",
+"images-design"
+],
+"testsprite": [
+"testing-qa"
+],
+"qa-agent": [
+"testing-qa",
+"browser-automation",
+"agent-frameworks"
+],
+"agentic-qe": [
+"testing-qa"
+],
+"keploy": [
+"testing-qa",
+"sandboxes",
+"stem-separation"
+],
+"aipex": [
+"browser-automation"
+],
+"eva": [
+"penetration-testing",
+"testing-qa",
+"workflow-automation",
+"color-upscaling"
+],
+"devopness": [
+"mcp-servers"
+],
+"nightingale": [
+"text-to-sql",
+"local-models"
+],
+"openstatus": [
+"ai-sre",
+"mcp-servers"
+],
+"mirrord": [
+"local-models"
+],
+"openchoreo": [],
+"terravision": [
+"mcp-servers",
+"terminal-agents",
+"images-design"
+],
+"dory": [
+"sandboxes",
+"guardrails",
+"local-models"
+],
+"duckle": [
+"text-to-sql",
+"no-code-apps",
+"local-models",
+"images-design"
+],
+"dark-moon": [
+"penetration-testing"
+],
+"versus-incident": [
+"ai-sre",
+"observability",
+"local-models"
+],
+"mcp-gateway": [
+"mcp-gateways",
+"mcp-servers"
+],
+"k8m": [
+"ai-sre",
+"observability"
+],
+"chat2db": [
+"text-to-sql",
+"local-models"
+],
+"cube": [],
+"bambooai": [],
+"jamaibase": [],
+"saiku": [
+"observability"
+],
+"anyquery": [
+"text-to-sql"
+],
+"ecc": [
+"agent-memory",
+"research-agents",
+"agent-frameworks",
+"rules-config"
+],
+"worldmonitor": [
+"observability"
+],
+"diagram-design": [
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"siyuan": [
+"local-models"
+],
+"officecli": [
+"video-editing"
+],
+"9router": [],
+"dsh-our-free-model": [
+"agent-auth"
+],
+"dapr": [
+"workflow-automation",
+"multi-agent"
+],
+"docmost": [
+"vector-rag"
+],
+"excelize": [
+"agent-frameworks"
+],
+"iii": [],
+"toonflow-app": [
+"local-models",
+"storyboards-previs",
+"video",
+"images-design"
+],
+"dagger": [
+"codebase-context",
+"local-models"
+],
+"waoowaoo": [
+"workflow-automation",
+"video"
+],
+"video-shotcraft": [
+"video"
+],
+"kami": [
+"vector-rag",
+"video-editing",
+"rules-config"
+],
+"fireworks-tech-graph": [
+"workflow-automation",
+"images-design"
+],
+"jeecgboot": [
+"rules-config"
+],
+"ods": [],
+"yuxi": [
+"codebase-context",
+"vector-rag",
+"workflow-automation",
+"multi-agent",
+"local-models",
+"cloud-coding-agents",
+"rules-config"
+],
+"ruoyi-ai": [
+"vector-rag",
+"workflow-automation",
+"multi-agent",
+"agent-frameworks",
+"images-design"
+],
+"comfyui-copilot": [
+"workflow-automation",
+"color-upscaling",
+"images-design"
+],
+"oracle-ai-developer-hub": [
+"text-to-sql"
+],
+"53aihub": [
+"vector-rag"
+],
+"hyper-extract": [
+"web-scraping"
+],
+"ai-engineer-headquarters": [],
+"memsearch": [
+"agent-memory"
+],
+"edgeever": [
+"vector-rag",
+"local-models"
+],
+"cmux": [
+"terminal-agents"
+],
+"loop-engineering": [
+"multi-agent",
+"terminal-agents",
+"images-design"
+],
+"pi-desktop": [
+"computer-use",
+"agent-frameworks",
+"local-models"
+],
+"anti-slop": [
+"images-design",
+"rules-config"
+],
+"anus": [
+"terminal-agents"
+],
+"clawd-on-desk": [
+"computer-use"
+],
+"adhd": [
+"agent-frameworks"
+],
+"modlens": [
+"agent-frameworks",
+"images-design"
+],
+"rapid-mlx": [],
+"teaql-agent-kit": [
+"agent-frameworks"
+],
+"stop-that-shit": [
+"workflow-automation"
+],
+"better-harness": [
+"agent-frameworks"
+],
+"claude-code-tools": [
+"terminal-agents"
+],
+"zeroshot": [
+"workflow-automation",
+"multi-agent",
+"dialogue-cleanup"
+],
+"erd-editor": [
+"text-to-sql",
+"browser-automation",
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"agtx": [],
+"zerostack": [
+"agent-memory"
+],
+"cc-safety-net": [
+"voice-phone",
+"guardrails"
+],
+"spec-kitty": [
+"guardrails"
+],
+"agentic-coding-flywheel-setup": [
+"guardrails",
+"multi-agent"
+],
+"agmsg": [
+"agent-frameworks",
+"terminal-agents"
+],
+"aegis": [],
+"oh-my-agent": [
+"parallel-orchestration",
+"planning-tasks",
+"workflow-automation",
+"rules-config"
+],
+"dbx": [
+"text-to-sql",
+"computer-use",
+"mcp-servers",
+"terminal-agents"
+],
+"douyin-tiktok-download-api": [
+"voice-phone",
+"web-scraping",
+"mcp-servers",
+"local-models",
+"terminal-agents",
+"dialogue-cleanup",
+"video"
+],
+"hexstrike-ai": [
+"penetration-testing",
+"mcp-servers"
+],
+"dashboard-icons": [
+"observability",
+"mcp-servers"
+],
+"webiny-js": [
+"mcp-servers",
+"agent-frameworks",
+"local-models"
+],
+"jscpd": [
+"mcp-servers"
+],
+"design-extract": [
+"web-scraping",
+"mcp-servers",
+"vfx-compositing",
+"images-design",
+"mobile"
+],
+"wslmanager": [
+"mcp-servers",
+"terminal-agents",
+"rules-config"
+],
+"ffmpeg-skill": [
+"mcp-servers",
+"local-models",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"redamon": [
+"penetration-testing",
+"sandboxes",
+"agent-frameworks",
+"local-models",
+"cloud-coding-agents"
+],
+"carbon": [
+"text-to-sql",
+"mcp-servers"
+],
+"crosspaste-desktop": [
+"testing-qa",
+"computer-use",
+"mcp-servers",
+"terminal-agents"
+],
+"aisoc": [],
+"jshookmcp": [
+"mcp-servers"
+],
+"contextplus": [
+"mcp-servers",
+"images-design"
+],
+"gortex": [
+"mcp-servers",
+"terminal-agents",
+"ide-agents"
+],
+"mcp-remote": [
+"mcp-servers",
+"local-models"
+],
+"cve-mcp-server": [
+"mcp-servers"
+],
+"datagouv-mcp": [
+"vfx-compositing"
+],
+"arkon": [
+"vector-rag",
+"guardrails",
+"mcp-servers",
+"local-models",
+"rules-config"
+],
+"phantom": [
+"agent-memory",
+"email-agents",
+"agent-auth",
+"mcp-servers"
+],
+"ollaya": [
+"local-models"
+],
+"mysql-mcp-server": [
+"text-to-sql",
+"mcp-servers",
+"vfx-compositing"
+],
+"sceneview": [
+"agent-frameworks",
+"mobile"
+],
+"gearboy": [
+"mcp-servers",
+"games"
+],
+"proxima": [
+"mcp-servers"
+],
+"crw": [
+"web-scraping",
+"search-apis",
+"mcp-servers"
+],
+"tuui": [
+"computer-use",
+"multi-agent",
+"vfx-compositing",
+"images-design"
+],
+"lightswind-ui-library": [
+"mcp-servers",
+"agent-frameworks",
+"terminal-agents"
+],
+"annas-mcp": [
+"vector-rag",
+"mcp-servers",
+"terminal-agents"
+],
+"anymd": [
+"vector-rag",
+"mcp-servers",
+"terminal-agents",
+"subtitles-transcripts",
+"video",
+"images-design"
+],
+"alpaca-mcp-server": [
+"mcp-servers"
+],
+"mcp-gateway-registry": [
+"agent-auth",
+"mcp-gateways"
+],
+"unreal-mcp": [
+"vfx-compositing"
+],
+"nornicdb": [
+"vector-rag"
+],
+"master-fetch": [
+"web-scraping",
+"mcp-servers",
+"local-models",
+"mastering"
+],
+"openmetadata": [
+"codebase-context"
+],
+"codeburn": [
+"token-costs",
+"local-models"
+],
+"greptimedb": [
+"text-to-sql",
+"observability"
+],
+"axonhub": [
+"testing-qa",
+"voice-phone",
+"observability",
+"mcp-gateways",
+"agent-frameworks"
+],
+"claude-devtools": [
+"codebase-context",
+"token-costs",
+"voice-phone",
+"multi-agent",
+"images-design"
+],
+"proton": [
+"text-to-sql",
+"vfx-compositing"
+],
+"waku-agent": [
+"agent-memory",
+"evals",
+"agent-frameworks",
+"local-models"
+],
+"lightagent": [
+"agent-memory",
+"guardrails",
+"observability",
+"workflow-automation",
+"multi-agent",
+"agent-frameworks"
+],
+"cc-haha": [
+"code-review",
+"parallel-orchestration",
+"computer-use",
+"mcp-gateways",
+"multi-agent",
+"local-models",
+"rules-config"
+],
+"browserkitten": [
+"sandboxes",
+"video-editing"
+],
+"py-gpt": [
+"vector-rag",
+"voice-phone",
+"computer-use",
+"dialogue-cleanup",
+"video",
+"images-design"
+],
+"browserai": [
+"browser-automation",
+"local-models"
+],
+"surf": [
+"computer-use"
+],
+"appsandbox": [
+"computer-use",
+"sandboxes"
+],
+"sentient-os": [
+"computer-use",
+"local-models"
+],
+"interceptor": [
+"voice-phone",
+"browser-automation",
+"computer-use",
+"mcp-servers",
+"terminal-agents"
+],
+"fluiduse": [
+"computer-use",
+"local-models"
+],
+"anon": [
+"computer-use",
+"mastering"
+],
+"thefoundryai": [
+"evals"
+],
+"dormice": [
+"sandboxes",
+"local-models"
+],
+"code-mode": [
+"voice-phone",
+"agent-frameworks"
+],
+"okou": [
+"sales-agents",
+"marketing-agents"
+],
+"nekro-agent": [
+"chat-app-agents",
+"email-agents",
+"agent-frameworks",
+"games"
+],
+"airecon": [
+"sandboxes",
+"local-models",
+"terminal-agents",
+"images-design"
+],
+"fence": [
+"sandboxes"
+],
+"sandboxd": [
+"sandboxes",
+"no-code-apps",
+"local-models",
+"stem-separation"
+],
+"openrath": [
+"workflow-automation",
+"multi-agent"
+],
+"switch": [
+"chat-app-agents"
+],
+"sphere": [
+"agent-wallets",
+"mcp-gateways"
+],
+"clawrouter": [
+"agent-wallets",
+"agent-payments",
+"local-models"
+],
+"fresh-start": [],
+"xrp-community-wallet": [
+"agent-wallets"
+],
+"manuscript-core": [
+"agent-frameworks"
+],
+"omniclaw": [
+"agent-payments",
+"guardrails",
+"terminal-agents"
+],
+"emblemvault": [
+"trading-agents",
+"research-agents"
+],
+"agentisexchange": [
+"agent-wallets",
+"agent-memory"
+],
+"pentest-ai-agents": [
+"penetration-testing",
+"planning-tasks",
+"research-agents",
+"agent-auth",
+"multi-agent"
+],
+"artex": [
+"penetration-testing",
+"multi-agent"
+],
+"agentshield": [
+"penetration-testing",
+"guardrails",
+"mcp-servers",
+"rules-config"
+],
+"pipelock": [],
+"arcjet-js": [
+"voice-phone",
+"agent-auth"
+],
+"sandlock": [
+"sandboxes"
+],
+"ob1": [
+"text-to-sql",
+"mcp-gateways"
+],
+"butterbase": [
+"text-to-sql",
+"agent-auth",
+"mcp-gateways"
+],
+"ai-gateway": [
+"mcp-gateways",
+"mcp-servers"
+],
+"temps": [
+"terminal-agents",
+"rules-config"
+],
+"dataagent": [],
+"mnemon": [
+"agent-memory",
+"agent-frameworks"
+],
+"emilia-protocol": [
+"parallel-orchestration",
+"agent-auth",
+"vfx-compositing"
+],
+"openclaw-net": [
+"local-models"
+],
+"xpander-ai": [
+"mcp-gateways"
+],
+"voicemem": [
+"agent-memory",
+"voice-phone",
+"images-design"
+],
+"voice-ai": [
+"testing-qa",
+"voice-phone",
+"multi-agent"
+],
+"leaping-ai-voice-agents": [
+"voice-phone",
+"support-agents"
+],
+"quto-ai": [
+"voice-phone",
+"chat-app-agents"
+],
+"vinsi": [
+"testing-qa",
+"voice-phone",
+"sales-agents",
+"workflow-automation"
+],
+"dialora-ai": [
+"voice-phone",
+"sales-agents",
+"support-agents"
+],
+"botphonic": [
+"voice-phone"
+],
+"libredesk": [
+"support-agents",
+"local-models"
+],
+"hugo": [],
+"pete-gabi": [
+"voice-phone",
+"sales-agents",
+"support-agents"
+],
+"arbor": [
+"research-agents"
+],
+"odysseus-ai": [
+"research-agents"
+],
+"franco": [
+"sales-agents"
+],
+"metaflow-ai": [
+"sales-agents",
+"marketing-agents",
+"evals"
+],
+"schedx": [
+"sales-agents"
+],
+"heyyala": [
+"chat-app-agents",
+"sales-agents",
+"support-agents"
+],
+"promarkia": [
+"marketing-agents",
+"workflow-automation",
+"images-design"
+],
+"metabot": [],
+"ainisa": [
+"sales-agents"
+],
+"clinisearch": [],
+"lowtouch-ai": [],
+"mightybot": [
+"vector-rag",
+"guardrails"
 ]
 }

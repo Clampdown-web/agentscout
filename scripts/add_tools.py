@@ -12,8 +12,17 @@ from PIL import Image
 sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
 UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 GH={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
+def _gh_token():
+  import os,subprocess
+  t=os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
+  if not t:
+    try: t=subprocess.check_output(["gh","auth","token"],text=True,stderr=subprocess.DEVNULL).strip()
+    except Exception: t=""
+  return t
+_tok=_gh_token()
+if _tok: GH["Authorization"]=f"Bearer {_tok}"
 BADHOST=re.compile(r'(linkedin|discord|deepwiki|arxiv|twitter|x\.com|youtube|aka\.ms|bilibili|notion\.site|go\.novu)',re.I)
-CATS={"frameworks","coding","MCP servers","agent infra","evals & observability","voice","browser/computer use","research","no-code builders","business agents","personal agents","app builders","vision","games","crypto","productivity","models","models & local runtimes","memory & RAG","customer support","sales & marketing","security & governance","sandboxes & code execution","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing"}
+CATS={"frameworks","coding","MCP servers","agent infra","evals & observability","voice","browser/computer use","research","no-code builders","business agents","personal agents","app builders","vision","games","crypto","productivity","models","models & local runtimes","memory & RAG","customer support","sales & marketing","security & governance","sandboxes & code execution","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing","data & analytics","DevOps & cloud","QA & testing","finance & accounting","legal & compliance","HR & recruiting","education & tutoring","healthcare & biotech","e-commerce & retail","robotics & physical AI"}
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
 def is_identicon(im):
   """GitHub default avatar: #f0f0f0 background + one flat colour in a 5x5 grid."""
@@ -42,6 +51,22 @@ def getimg(u):
     if all(a==b for a,b in ex): return None  # reject blank single-color images
     return None if is_identicon(im) else im  # reject GitHub default identicons (logo audit Oct 18 2026)
   except Exception: return None
+def save_logo(im, path):
+  """RGB or RGBA PNG, at least 64px, at most 20 KB. Flattened so palette transparency cannot blank it."""
+  im=im.convert("RGBA")
+  bg=Image.new("RGBA", im.size, "white"); bg.alpha_composite(im); im=bg.convert("RGB")
+  im.thumbnail((128,128), Image.LANCZOS)
+  if min(im.size)<64:
+    im=im.resize((64,64), Image.LANCZOS)
+  for side in (128,112,96,80,72,64):
+    trial=im.copy(); trial.thumbnail((side,side), Image.LANCZOS)
+    if min(trial.size)<64: trial=trial.resize((64,64), Image.LANCZOS)
+    buf=io.BytesIO(); trial.save(buf, format="PNG", optimize=True)
+    if buf.tell()<=20480 and not all(a==b for a,b in trial.getextrema()):
+      open(path,"wb").write(buf.getvalue()); return
+  trial=im.copy(); trial.thumbnail((64,64), Image.LANCZOS)
+  buf=io.BytesIO(); trial.save(buf, format="PNG", optimize=True)
+  open(path,"wb").write(buf.getvalue())
 def verify(row):
   row+=['']*(7-len(row)); repo,cat,pr,aud,desc,name,site=row[:7]; o={"err":None}
   assert cat in CATS and pr in PRICES, (cat,pr)
@@ -110,7 +135,7 @@ if __name__=="__main__":
     if a.startswith("--cache="): CACHE={i["full_name"].lower():i for i in json.load(open(a[8:]))}
   rows=[l.rstrip('\n').split('\t') for l in open(sys.argv[1]) if l.strip() and not l.startswith('#')]
   t=json.load(open('tools.json')); K=keys(t)
-  with cf.ThreadPoolExecutor(8) as ex: res=list(ex.map(verify,rows))
+  with cf.ThreadPoolExecutor(12) as ex: res=list(ex.map(verify,rows))
   nid=max(x['id'] for x in t); added=[]; skipped={}
   for r in res:
     if r["err"]: skipped.setdefault(r["err"].split()[0],[]).append(r.get("repo") or r.get("name")); continue
@@ -119,7 +144,7 @@ if __name__=="__main__":
     for k in K: K[k]|=ks[k]
     nid+=1; e["id"]=nid; e["slug"]=re.sub(r"[^a-z0-9]+","-",e["name"].lower()).strip("-"); e["logo"]=f"assets/logos/{e['slug']}.png"
     if "--dry" not in sys.argv:
-      im=r["logo"][0].convert("RGBA"); im.thumbnail((128,128)); im.save(e["logo"])
+      save_logo(r["logo"][0], e["logo"])
     added.append(e)
   if "--dry" not in sys.argv:
     t+=added; json.dump(t,open('tools.json','w'),indent=2,ensure_ascii=False)
