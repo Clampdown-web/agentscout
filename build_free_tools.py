@@ -188,7 +188,7 @@ def pages(t):
     P=json.load(open("assets/ai-prices.json"))
     urls=[cost(t,P),tokens(t,P),prompt(t),agent(t),mcpcfg(t),llmstxt(t),toolschema(t),runcost(t,P),rules(t),stack(t),linter(t),ctxplan(t),license(t),bvb(t),mcppick(t),jsonval(t),cmpcard(t),ready(t)]
     # /free-tools/ folder URL -> hub (not in sitemap)
-    open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
+    open("free-tools/index.html","w").write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Free tools · AgentScout</title><link rel="canonical" href="'+B+'free-tools.html"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../free-tools.html"></head><body><a href="../free-tools.html">Free tools from AgentScout</a></body></html>\n')
     print("free tools:",len(urls),"pages")
     return urls
 

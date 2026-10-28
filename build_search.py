@@ -107,6 +107,7 @@ def run():
 REDIR='''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Search · AgentScout</title>
 <meta name="robots" content="noindex,follow">
