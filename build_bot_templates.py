@@ -184,10 +184,12 @@ def filters():
         f'</div><p id="bt-status" class="btf-st" role="status" aria-live="polite">Showing {total} of {total} templates</p></div><!--/btf-->')
     i=s.find('</div>',s.find('<div class="bt-pills"'))+6; s=s[:i]+ui+s[i:]
     s=re.sub(r'<div id="bt-empty" class="bt-empty">.*?</div>','<div id="bt-empty" class="bt-empty"><p>No templates match those filters.</p><button type="button" class="btn" data-bt-reset>Reset filters</button></div>',s,count=1,flags=re.S)
-    s=re.sub(r'<style id="btf-css">.*?</style>','',s,flags=re.S); s=s.replace('</head>',FCSS+'</head>',1)
+    s=re.sub(r'<style id="btf-css">.*?</style>','',s,flags=re.S); s=re.sub(r'<style id="bt-mba-css">.*?</style>','',s,flags=re.S); s=s.replace('</head>',FCSS+MBA_CSS+'</head>',1)
     s=re.sub(r'<script id="btf-js">.*?</script>','',s,flags=re.S)
     s=re.sub(r'<script>\(function\(\)\{var pills=.*?</script>','',s,count=1,flags=re.S)
     s=s.replace('</body>',FJS+'</body>',1)  # menu search box removed Oct 23 2026
+    s=re.sub(r"<!--bt-mba-->.*?<!--/bt-mba-->","",s,flags=re.S)
+    s=s.replace('<section id="bt-featured">',made_by_agentscout_html()+'<section id="bt-featured">',1)
     open(f"{D}/index.html","w").write(s)
     print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
 # Tap targets (Oct 22 2026 PT, owner "fix what's broken"): back link + related links were 19-22px tall at 390px; >=44px via min-height/padding only, no color change.
@@ -209,6 +211,87 @@ def verify_logos():
     over=[fn for fn in os.listdir(f"{D}/icons") if os.path.isfile(f"{D}/icons/{fn}") and os.path.getsize(f"{D}/icons/{fn}")>20000]
     assert not bad and not over, f"bot templates logo check failed (generic, missing, or >20KB icons): bad={bad} over20KB={over}"
     print(f"bot templates logos verified: {len(srcs)}/{len(srcs)} real icons <=20KB on /{D}/index.html (0 generic)")
+
+MBA_CSS = """<style id="bt-mba-css">
+.mba-sec{margin:18px 0 24px;padding:20px;border-radius:16px;border:1px solid rgba(236,72,153,.38);background:linear-gradient(150deg,rgba(11,15,25,.97) 0%,rgba(17,24,39,.97) 60%,rgba(28,16,43,.97) 100%);color:#f8fafc;box-shadow:0 12px 32px rgba(2,6,23,.25);min-width:0}
+.mba-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.mba-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;background:rgba(236,72,153,.16);border:1px solid rgba(236,72,153,.48);color:#f472b6;font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.mba-head h2{margin:0 0 6px;font-size:clamp(19px,2.5vw,25px);line-height:1.25;color:#fff}
+.mba-head p{margin:0;font-size:14px;line-height:1.5;color:#cbd5e1;max-width:780px}
+.mba-vid{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1px solid rgba(56,189,248,.32);background:#060810}
+.mba-vid video{display:block;width:100%;height:auto;max-width:100%}
+.mba-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.mba-card{display:flex;flex-direction:column;justify-content:space-between;padding:15px;border-radius:12px;background:rgba(15,23,42,.88);border:1px solid rgba(148,163,184,.24);min-width:0;gap:10px}
+.mba-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.mba-price{font-size:20px;font-weight:800;color:#fff;line-height:1}
+.mba-price small{font-size:12px;font-weight:500;color:#94a3b8}
+.mba-tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700}
+.mba-card h3{margin:0;font-size:15.5px;line-height:1.3;color:#fff}
+.mba-card p{margin:0;font-size:13px;line-height:1.5;color:#cbd5e1}
+.mba-list{margin:0;padding-left:17px;font-size:12.5px;line-height:1.45;color:#e2e8f0}
+.mba-list li{margin-bottom:3px}
+.mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
+.mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none;min-height:40px;flex:1 1 auto;text-align:center}
+.mba-bundle{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:16px;border-radius:12px;background:linear-gradient(135deg,rgba(236,72,153,.16),rgba(99,102,241,.16));border:2px solid rgba(236,72,153,.6)}
+.mba-bundle-copy{flex:1 1 380px;min-width:0}
+.mba-bundle-copy h3{margin:0 0 4px;font-size:17px;color:#fff}
+.mba-bundle-copy p{margin:0;font-size:13.5px;line-height:1.5;color:#e2e8f0}
+.mba-bundle-ctas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+@media(max-width:940px){.mba-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.mba-sec{padding:14px}.mba-bundle{padding:13px}.mba-btn{width:100%}}
+</style>"""
+
+def made_by_agentscout_html():
+    return (
+        '<!--bt-mba--><section id="made-by-agentscout" class="mba-sec" aria-labelledby="mba-h">'
+        '<div class="mba-head"><div>'
+        '<span class="mba-eyebrow">⚡ Official AgentScout Lineup · Sanitized Ready-to-Run Configs</span>'
+        '<h2 id="mba-h">Made by AgentScout: Pre-Trained Pro Bots &amp; 4-Bot Company-in-a-Box</h2>'
+        '<p>Deploy the exact autonomous multi-agent team that runs AgentScout every day — pre-wired with <code>SYSTEM.md</code> instructions, cron routine schedules, shared markdown handoffs, and zero-key AgentScout MCP discovery for Grok Bot, Claude Code, and Cursor.</p>'
+        '</div>'
+        '<a class="mba-btn" href="../videos/#guide-trained-bots" style="flex:0 0 auto;background:rgba(56,189,248,.16);border:1px solid rgba(56,189,248,.45);color:#7dd3fc">Watch 60fps Walkthrough →</a>'
+        '</div>'
+        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4" type="video/mp4"></video></figure>'
+        '<div class="mba-grid">'
+        '<div class="mba-card" style="border-color:rgba(20,184,166,.45)">'
+        '<div><div class="mba-card-top"><span class="mba-price">$0 <small>forever</small></span><span class="mba-tag" style="background:rgba(20,184,166,.18);border:1px solid rgba(20,184,166,.5);color:#2dd4bf">✓ Free Starter Tier</span></div>'
+        '<h3 style="margin-top:8px">Free Starter Bots + MCP Stack Scout</h3>'
+        '<p style="margin-top:4px">Starter Grok Bot, Claude &amp; Cursor templates pre-connected to AgentScout&#39;s free MCP server (<code>com.agentscouthq/directory</code>).</p></div>'
+        '<ul class="mba-list"><li>Instant access to all 193 community &amp; official templates below</li><li>Free 50 AI Agents + 50 MCP Servers Cheat Sheets via AgentScout Weekly</li><li>Zero API keys or sign-up required</li></ul>'
+        '<div class="mba-actions">'
+        '<a class="mba-btn" href="https://agentscout.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" style="background:#14b8a6;color:#042f2e">Get Free Starter Pack →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.08);color:#e2e8f0;border:1px solid rgba(255,255,255,.2)">Follow @clampdown19</a>'
+        '</div></div>'
+        '<div class="mba-card" style="border-color:rgba(14,165,233,.5)">'
+        '<div><div class="mba-card-top"><span class="mba-price">$29 <small>one-time</small></span><span class="mba-tag" style="background:rgba(14,165,233,.18);border:1px solid rgba(14,165,233,.5);color:#38bdf8">⚡ Pro Specialist Bot</span></div>'
+        '<h3 style="margin-top:8px">Ops / Monitor (Operations &amp; QA Bot)</h3>'
+        '<p style="margin-top:4px">24/7 operations specialist that checks inboxes every 4 hours, runs 8-viewport Playwright audits, and verifies live checkouts.</p></div>'
+        '<ul class="mba-list"><li>Automated 4-hour inbox triage &amp; status reporting routine</li><li>Post-deploy HTTP 200, JSON-LD &amp; 8-viewport overflow verification</li><li>Routine failure recovery &amp; X velocity guard scorecard</li></ul>'
+        '<div class="mba-actions">'
+        '<a class="mba-btn" href="https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02" target="_blank" rel="noopener noreferrer" style="background:#0ea5e9;color:#082f49">Unlock Ops / Monitor ($29) →</a>'
+        '</div></div>'
+        '<div class="mba-card" style="border-color:rgba(99,102,241,.55)">'
+        '<div><div class="mba-card-top"><span class="mba-price">$49 <small>one-time each</small></span><span class="mba-tag" style="background:rgba(99,102,241,.22);border:1px solid rgba(99,102,241,.55);color:#a5b4fc">★ Pro Auditor / Intel Bot</span></div>'
+        '<h3 style="margin-top:8px">SEO / AEO Auditor or Competitive Intel Bot</h3>'
+        '<p style="margin-top:4px">Choose our Search Console + AI-Answer Engine (AEO) Auditor bot OR our Rival Directory &amp; Launch Radar bot ($49 each).</p></div>'
+        '<ul class="mba-list"><li><b>SEO / AEO Auditor ($49):</b> GSC/GA4 tracking, JSON-LD, <code>llms.txt</code> &amp; ChatGPT/Perplexity citation checks</li><li><b>Competitive Intel ($49):</b> Tracks rival launches, pricing shifts, Product Hunt &amp; HN traction</li></ul>'
+        '<div class="mba-actions">'
+        '<a class="mba-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer" style="background:#6366f1;color:#fff">Unlock Pro Bot ($49 ★) →</a>'
+        '</div></div>'
+        '</div>'
+        '<div class="mba-bundle">'
+        '<div class="mba-bundle-copy">'
+        '<span class="mba-tag" style="background:rgba(236,72,153,.25);border:1px solid #f472b6;color:#fbcfe8;margin-bottom:6px">🔥 Best Value · Save $28 · Complete 4-Agent Executive Team</span>'
+        '<h3>$99 Full 4-Bot "Company-in-a-Box" Team Bundle (CEO Coordinator + Ops + SEO/AEO + Competitive Intel)</h3>'
+        '<p>Get all 4 coordinated bots (<b>CEO Grok Coordinator</b> + <b>Ops / Monitor</b> + <b>SEO / AEO Auditor</b> + <b>Competitive Intelligence Analyst</b>) with shared <code>/workspace/handoff/</code> protocol, daily &amp; weekly cron routines, and priority onboarding support.</p>'
+        '</div>'
+        '<div class="mba-bundle-ctas">'
+        '<a class="mba-btn" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;padding:10px 18px;box-shadow:0 6px 20px rgba(236,72,153,.35)">Get 4-Bot Team Bundle — $99 →</a>'
+        '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(15,23,42,.9);color:#f8fafc;border:1px solid rgba(244,114,182,.5)">Or Pay via X Money (@clampdown19)</a>'
+        '</div></div>'
+        '</section><!--/bt-mba-->'
+    )
+
 _run0=run
 def run():
     _run0(); filters(); tap(); verify_logos()

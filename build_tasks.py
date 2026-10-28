@@ -480,6 +480,7 @@ def sitewide(t):
             if 'class="footgen"' not in fn: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a class="footgen" href="{d}generate.html">✨ Free AI Image Generator</a>',fn,count=1)
             # AgentScout MCP server connect page in every footer, right after Free tools (Oct 23 2026, crawlable link for /mcp/connect.html)
             if 'mcp/connect.html">MCP server</a>' not in fn: fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
+            if 'videos/">Video guides</a>' not in fn: fn=re.sub(r'(<a href="[^"]*newsletter\.html">Newsletter archive</a>)',lambda mm:mm.group(1)+f' · <a href="{d}videos/">Video guides</a>',fn,count=1)
             # Oct 23 2026 (Ops review): 66 footers (index, saved, quiz, generate, bot-templates/*, some best/*) listed Popular lists and
             # AI agents by role twice; keep the later (standard-position) link and drop the earlier copy
             for _lk in (r'<a href="[^"]*s/index\.html">Popular lists</a>',r'<a href="[^"]*for/index\.html">AI agents by role</a>'):
@@ -517,7 +518,7 @@ def sitewide(t):
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")
         if 'class="ai-ref-cta"' in s:
             s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>',lambda mm:ai_ref_cta_html(d),s,count=1,flags=re.S)
-        elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","mcp/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
+        elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","mcp/","videos/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
             _arc=ai_ref_cta_html(d)
             if '<p class="disclose">' in s:
                 s=s.replace('<p class="disclose">',_arc+'<p class="disclose">',1)

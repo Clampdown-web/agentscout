@@ -574,12 +574,6 @@
         },
         "description": {
          "type": "string"
-        },
-        "price_range_usd": {
-         "type": "string"
-        },
-        "release_date": {
-         "type": "string"
         }
        },
        "required": [
