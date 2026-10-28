@@ -1,7 +1,7 @@
 /**
  * AgentScout read-only MCP worker.
  * Catalog and commerce data come from catalog_snapshot.json and products_snapshot.json
- * (2,050 tools, 40 categories, 272 MCP servers).
+ * (2,051 tools, 40 categories, 272 MCP servers).
  *
  * Every response gets the security headers below. Burst and per-minute caps are
  * per-isolate and keyed by IP. Search-engine and answer-engine crawlers are exempt.
@@ -117,7 +117,7 @@ const TOOL_DEFS = [
       type: "object",
       additionalProperties: false,
       properties: {
-        category: { type: "string", enum: ["all", "listing_package", "bot_template"], description: "Filter by product category (default 'all')." },
+        category: { type: "string", enum: ["all", "listing_package", "bot_template", "agent_pack"], description: "Filter by product category (default 'all')." },
       },
     },
     annotations: { readOnlyHint: true, openWorldHint: false, idempotentHint: true },
@@ -323,9 +323,11 @@ function listPackages(args) {
   const filter = args.category || "all";
   const listing = (products.packages || []).map((item) => ({ ...item, group: "listing_package" }));
   const bots = (products.bot_templates || []).map((item) => ({ ...item, group: "bot_template" }));
-  let rows = [...listing, ...bots];
+  const packs = (products.agent_packs || []).map((item) => ({ ...item, group: "agent_pack" }));
+  let rows = [...listing, ...bots, ...packs];
   if (filter === "listing_package") rows = listing;
   else if (filter === "bot_template") rows = bots;
+  else if (filter === "agent_pack") rows = packs;
   return {
     source: "https://agentscouthq.com/",
     catalog_updated: products.updated,
