@@ -1,0 +1,35 @@
+{
+  "name": "Invoice Chaser",
+  "slug": "invoice-chaser",
+  "tagline": "Gets you paid on time",
+  "version": "1.0.0",
+  "skill": "skills/ar-aging/SKILL.md",
+  "script": "scripts/aging_ar_report.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 39
+}

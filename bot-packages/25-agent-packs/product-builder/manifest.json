@@ -1,0 +1,35 @@
+{
+  "name": "Product Builder",
+  "slug": "product-builder",
+  "tagline": "Creates digital products",
+  "version": "1.0.0",
+  "skill": "skills/pricing-and-mvp-scope/SKILL.md",
+  "script": "scripts/model_product_pricing.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 69
+}

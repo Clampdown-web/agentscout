@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Data Analyst",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "weekly-kpi",
+      "cron": "0 8 * * 1",
+      "title": "Weekly KPI narrative",
+      "prompt": "Analyze the latest KPI CSV for {{YOUR_COMPANY}} and write three bullets. Do not email investors. Follow skills/kpi-csv-analyst/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/analyze_kpi_csv.py"
+    }
+  ]
+}

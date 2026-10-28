@@ -1,0 +1,35 @@
+{
+  "name": "Google Review Replier",
+  "slug": "google-review-replier",
+  "tagline": "Replies to every review",
+  "version": "1.0.0",
+  "skill": "skills/review-reply-desk/SKILL.md",
+  "script": "scripts/generate_review_replies.py",
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 39
+}

@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Market Researcher",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "weekly-diff",
+      "cron": "0 9 * * 1",
+      "title": "Weekly competitor diff",
+      "prompt": "Diff the saved snapshots for {{YOUR_COMPANY}}. Flag missing sources. Do not publish a teardown. Follow skills/competitor-diff/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/competitor_diff_check.py"
+    }
+  ]
+}

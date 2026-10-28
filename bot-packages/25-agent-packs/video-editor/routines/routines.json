@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Video Editor",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "caption-pass",
+      "cron": "0 15 * * 1-5",
+      "title": "Weekday caption pass",
+      "prompt": "Format captions and a cut list for the latest transcript from {{YOUR_COMPANY}}. Draft only. Follow skills/shortform-cut-captions/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/format_captions_and_cuts.py"
+    }
+  ]
+}

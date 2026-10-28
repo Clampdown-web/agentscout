@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "owner-configured": {
+      "url": "{{YOUR_MCP_SERVER_URL}}",
+      "note": "Replace this placeholder with the MCP server {{YOUR_COMPANY}} chooses. This file ships without a directory endpoint."
+    }
+  }
+}

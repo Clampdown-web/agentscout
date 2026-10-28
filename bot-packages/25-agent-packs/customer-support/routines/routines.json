@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Customer Support",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "hourly-triage",
+      "cron": "15 * * * *",
+      "title": "Inbox triage",
+      "prompt": "Triage new tickets for {{YOUR_COMPANY}}. Draft replies. Send nothing. Follow skills/support-ticket-triage/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/triage_support_tickets.py"
+    },
+    {
+      "id": "weekly-gaps",
+      "cron": "0 16 * * 5",
+      "title": "Weekly knowledge gaps",
+      "prompt": "List the questions that had no article and propose the titles. Follow skills/support-ticket-triage/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/triage_support_tickets.py"
+    }
+  ]
+}

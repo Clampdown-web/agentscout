@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Copywriter",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "copy-pass",
+      "cron": "0 9 * * 3",
+      "title": "Midweek copy pass",
+      "prompt": "Audit the live hero and one email for {{YOUR_COMPANY}}. Return a revised draft and the score. Do not publish. Follow skills/conversion-copy-audit/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/audit_sales_copy.py"
+    }
+  ]
+}

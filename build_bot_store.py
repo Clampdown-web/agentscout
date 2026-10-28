@@ -1,5 +1,8 @@
-import os, re
+import os, re, sys
+from pathlib import Path
 from build_extras import B, e, shell, clip_text, clip_title
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
+from pack_builder_html import pack_section_html
 
 CSS = """<style id="bs-css">
 .bs-hero{margin:14px 0 22px;padding:24px 20px;text-align:center;border-radius:18px;border:2px solid #84cc16;background:radial-gradient(900px 280px at 0% 0%,rgba(132,204,22,.16),transparent 62%),radial-gradient(900px 280px at 100% 100%,rgba(16,185,129,.14),transparent 62%),#0b0d09;box-shadow:0 12px 34px rgba(0,0,0,.45),0 0 28px rgba(132,204,22,.15)}
@@ -85,7 +88,7 @@ def pages(t):
     n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
     canon = f"{B}bot-store/"
     title = clip_title("AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69, $149)")
-    desc = clip_text("General-purpose bots for your SaaS: uptime, Core Web Vitals, competitor tracking, and team coordination. $39–$69 or the $149 bundle.", 160)
+    desc = clip_text("AI agent skills packs for your business: 5 flagship bots ($39–$149) and 25 role agents with skills, routines, and scripts.", 160)
 
     body = (
         f'{CSS}'
@@ -97,6 +100,7 @@ def pages(t):
         f'<div class="bs-hero-badges">'
         f'<a class="bs-badge" href="#bot-packages" style="border-color:#a3e635;color:#ecfccb">🟢 $39 / 🟡 $59 / 🟠 $59 / 🔴 $69 Individual Bots</a>'
         f'<a class="bs-badge" href="#bundle-package" style="border-color:#34d399;color:#d1fae5">💚 $149 Full 4-Bot Bundle (Save $77)</a>'
+        f'<a class="bs-badge" href="#ai-agent-packs" style="border-color:#93c5fd;color:#dbeafe">AI Agent Packs · 25 trained roles</a>'
         f'<a class="bs-badge" href="../bot-templates/#bt-featured">📚 {n_bt} Free Community Bot Templates →</a>'
         f'<a class="bs-badge" href="../videos/#guide-trained-bots">🎬 Watch 60fps Video Walkthrough →</a>'
         f'</div>'
@@ -208,12 +212,13 @@ def pages(t):
         f'<a class="bs-btn" href="../bot-templates/#bt-featured" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#e5e7eb;flex:0 1 auto">Browse {n_bt} Free Community Bot Templates →</a>'
         f'</div></article>'
         f'</div>'
+        f'{pack_section_html()}'
         # FAQ & Platform Compatibility Box
         f'<section class="bs-faq" aria-labelledby="bs-faq-h">'
         f'<h2 id="bs-faq-h">What Platform Do These Run On? (Compatibility, Delivery &amp; License FAQ)</h2>'
         f'<div class="bs-faq-grid">'
-        f'<div class="bs-faq-item"><h3>1. Built Natively for Grok Bot First (100% Turnkey)</h3><p>Every package is built natively for <b>Grok Bot</b> first — where 24/7 scheduled cron routines, the shared <code>/workspace/handoff/</code> Linux computer, Gmail/X/GitHub MCP connectors, and 4-bot <code>Work Chat</code> team coordination run out of the box.</p></div>'
-        f'<div class="bs-faq-item"><h3>2. Also Compatible with Claude Code, Cursor &amp; OpenAI Codex</h3><p>Because each ZIP ships standard Markdown role prompts (<code>SYSTEM.md</code>), modular <code>SKILL.md</code> playbooks, standalone Python 3 audit/automation scripts, and a standard <code>mcp.json</code> configuration, you can also drop them right into <b>Claude Code, Cursor, or OpenAI Codex</b>.</p></div>'
+        f'<div class="bs-faq-item"><h3>What platform are AgentScout Bot Store packages built for?</h3><p>They are built natively for Grok Bot first (where 24/7 scheduled cron routines, the shared /workspace/handoff/ computer, Gmail/X connectors, and 4-bot Work Chat team coordination run turnkey out of the box), and because each ZIP ships standard SYSTEM.md role prompts, SKILL.md playbooks, standalone Python 3 scripts, and mcp.json, they are also compatible with Claude Code, Cursor, and OpenAI Codex.</p></div>'
+        f'<div class="bs-faq-item"><h3>How is the Bot Store different from AgentScout Directory Listing packages?</h3><p>The Bot Store ($39, $59, $59, $69 individual bots and $149 4-Bot Bundle) sells downloadable pre-trained AI bot configurations and scripts you run in your own workspace. Directory Listing packages ($0 Free, $29 Fast-Track, $49 Category Pin, $99/wk Sitewide Sponsor) list and promote your AI software tool on agentscouthq.com.</p></div>'
         f'<div class="bs-faq-item"><h3>3. Instant Delivery + Single-Organization Commercial License</h3><p>After Stripe Checkout (or X Money payment to <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>), you receive the complete ZIP package with a Single-Organization Commercial License (<code>LICENSE.txt</code>) and a cryptographic per-buyer order watermark so your whole internal team can run and customize the bots.</p></div>'
         f'<div class="bs-faq-item"><h3>4. Free Community Templates vs. Directory Listing Boosts</h3><p>Looking for free starter prompts? Explore <a href="../bot-templates/#bt-featured">{n_bt} free community bot templates</a>. Looking to list or feature your AI software product in the AgentScout directory instead? See our <a href="../sponsor.html#packages">4 Directory Listing Packages ($0 / $29 / $49 / $99)</a>.</p></div>'
         f'</div>'
@@ -259,7 +264,7 @@ def pages(t):
                             "@type": "Product",
                             "name": "1. AgentScout Operations / Monitoring Bot",
                             "sku": "as-bot-ops-39",
-                            "brand": {"@type": "Brand", "name": "AgentScout"},
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                             "description": "General-purpose uptime and inbox monitor for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}). Built for Grok Bot (also compatible with Claude Code, Cursor & Codex).",
                             "offers": {"@type": "Offer", "price": "39.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03"}
                         }
@@ -271,7 +276,7 @@ def pages(t):
                             "@type": "Product",
                             "name": "2. AgentScout SEO & AEO Growth Auditor Bot",
                             "sku": "as-bot-seo-aeo-59",
-                            "brand": {"@type": "Brand", "name": "AgentScout"},
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                             "description": "General-purpose technical SEO and Core Web Vitals auditor for {{YOUR_DOMAIN}}. Built for Grok Bot (also compatible with Claude Code, Cursor & Codex).",
                             "offers": {"@type": "Offer", "price": "59.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05"}
                         }
@@ -283,7 +288,7 @@ def pages(t):
                             "@type": "Product",
                             "name": "3. AgentScout Market & Launch Intel Bot",
                             "sku": "as-bot-market-intel-59",
-                            "brand": {"@type": "Brand", "name": "AgentScout"},
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                             "description": "General-purpose competitor and launch tracker for {{YOUR_COMPANY}}. Built for Grok Bot (also compatible with Claude Code, Cursor & Codex).",
                             "offers": {"@type": "Offer", "price": "59.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06"}
                         }
@@ -295,7 +300,7 @@ def pages(t):
                             "@type": "Product",
                             "name": "4. AgentScout CEO Coordinator Bot",
                             "sku": "as-bot-ceo-69",
-                            "brand": {"@type": "Brand", "name": "AgentScout"},
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                             "description": "General-purpose executive coordinator for {{YOUR_COMPANY}}. Built for Grok Bot (also compatible with Claude Code, Cursor & Codex).",
                             "offers": {"@type": "Offer", "price": "69.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07"}
                         }
@@ -307,12 +312,22 @@ def pages(t):
                             "@type": "Product",
                             "name": "AgentScout Full 4-Bot Company-in-a-Box Team Bundle",
                             "sku": "as-bot-bundle-149",
-                            "brand": {"@type": "Brand", "name": "AgentScout"},
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                             "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime, technical SEO and Core Web Vitals, competitor tracking, and executive coordination. $149 (Save $77). Built for Grok Bot (also compatible with Claude Code, Cursor & Codex).",
                             "offers": {"@type": "Offer", "price": "149.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08"}
                         }
                     }
                 ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "AgentScout Bot Store",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Grok Bot, Claude Code, Cursor, Codex",
+                "url": canon,
+                "author": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
+                "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
+                "offers": {"@type": "AggregateOffer", "lowPrice": "39.00", "highPrice": "149.00", "priceCurrency": "USD", "offerCount": 30}
             },
             {
                 "@type": "FAQPage",
@@ -338,6 +353,8 @@ def pages(t):
         ]
     }
     open("bot-store/index.html", "w", encoding="utf-8").write(shell("../", title, desc, canon, body, ld))
+    from pack_pages import write_pack_pages
+    pack_urls = write_pack_pages()
     import build_openapi
     build_openapi.sync_products_snapshot()
-    return [canon]
+    return [canon] + pack_urls

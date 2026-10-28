@@ -1,0 +1,6 @@
+name = "agentscout-mcp-registry"
+main = "worker.js"
+compatibility_date = "2026-10-28"
+
+[vars]
+REGISTRY_ID = "com.agentscouthq/directory"

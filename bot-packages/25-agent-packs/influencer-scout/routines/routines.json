@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Influencer Scout",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "weekly-shortlist",
+      "cron": "0 10 * * 3",
+      "title": "Weekly creator shortlist",
+      "prompt": "Score the creator sheet for {{YOUR_COMPANY}}. Do not email creators. Follow skills/creator-roi/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/calculate_creator_roi.py"
+    }
+  ]
+}

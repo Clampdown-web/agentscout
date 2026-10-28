@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "TikTok Shop Manager",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-stock",
+      "cron": "0 8 * * 1-5",
+      "title": "Inventory alert check",
+      "prompt": "Check listing stock against the reorder point for {{YOUR_COMPANY}}. Do not change the live listing. Follow skills/shop-listing-optimizer/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/optimize_shop_listing.py"
+    },
+    {
+      "id": "weekly-listing",
+      "cron": "0 11 * * 2",
+      "title": "Weekly listing audit",
+      "prompt": "Re-lint the priority products and draft title edits. Follow skills/shop-listing-optimizer/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/optimize_shop_listing.py"
+    }
+  ]
+}

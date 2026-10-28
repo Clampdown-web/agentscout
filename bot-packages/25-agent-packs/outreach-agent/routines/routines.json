@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Outreach Agent",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-draft-queue",
+      "cron": "30 8 * * 1-5",
+      "title": "Daily outreach drafts",
+      "prompt": "Draft today's approved batch for {{YOUR_COMPANY}} and lint it. Leave it unsent. Follow skills/cold-email-sequence/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/lint_outreach_sequence.py"
+    },
+    {
+      "id": "reply-triage",
+      "cron": "0 13,17 * * 1-5",
+      "title": "Reply intent pass",
+      "prompt": "Classify replies as interested, not now, out of office, or unsubscribe. Draft responses. Do not send. Follow skills/cold-email-sequence/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/lint_outreach_sequence.py"
+    }
+  ]
+}

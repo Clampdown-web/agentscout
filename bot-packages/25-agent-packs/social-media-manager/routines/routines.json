@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Social Media Manager",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-hooks",
+      "cron": "0 8 * * 1-5",
+      "title": "Daily hook score",
+      "prompt": "Score today's hooks for {{YOUR_COMPANY}} and format the winner. Do not post. Follow skills/social-hook-desk/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/score_social_hooks.py"
+    },
+    {
+      "id": "weekly-calendar",
+      "cron": "0 11 * * 5",
+      "title": "Next week's calendar",
+      "prompt": "Propose five posts across the pillars. Leave them in draft. Follow skills/social-hook-desk/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/score_social_hooks.py"
+    }
+  ]
+}

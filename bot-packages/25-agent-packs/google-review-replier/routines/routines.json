@@ -1,0 +1,23 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Google Review Replier",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "daily-review-drafts",
+      "cron": "0 9 * * *",
+      "title": "Daily review replies",
+      "prompt": "Draft replies for new reviews of {{YOUR_COMPANY}}. Do not post them. Follow skills/review-reply-desk/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_review_replies.py"
+    },
+    {
+      "id": "monthly-themes",
+      "cron": "0 10 1 * *",
+      "title": "Monthly review themes",
+      "prompt": "Summarize repeated themes and the response time. No public posts. Follow skills/review-reply-desk/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_review_replies.py"
+    }
+  ]
+}

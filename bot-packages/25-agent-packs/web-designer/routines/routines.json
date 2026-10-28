@@ -1,0 +1,15 @@
+{
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "role": "Web Designer",
+  "company": "{{YOUR_COMPANY}}",
+  "routines": [
+    {
+      "id": "page-check",
+      "cron": "0 14 * * 3",
+      "title": "Landing page UX check",
+      "prompt": "Run the UX check on the current landing HTML for {{YOUR_COMPANY}}. Report issues. Do not deploy. Follow skills/landing-page-ux-check/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/check_landing_page_ux.py"
+    }
+  ]
+}
