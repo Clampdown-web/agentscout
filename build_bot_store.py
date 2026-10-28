@@ -1,5 +1,5 @@
 import os, re
-from build_extras import B, e, shell
+from build_extras import B, e, shell, clip_text, clip_title
 
 CSS = """<style id="bs-css">
 .bs-hero{margin:14px 0 22px;padding:24px 20px;text-align:center;border-radius:18px;border:2px solid #84cc16;background:radial-gradient(900px 280px at 0% 0%,rgba(132,204,22,.16),transparent 62%),radial-gradient(900px 280px at 100% 100%,rgba(16,185,129,.14),transparent 62%),#0b0d09;box-shadow:0 12px 34px rgba(0,0,0,.45),0 0 28px rgba(132,204,22,.15)}
@@ -84,8 +84,8 @@ def pages(t):
     import re
     n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
     canon = f"{B}bot-store/"
-    title = "AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69) & $149 4-Bot Team Bundle"
-    desc = "Buy the exact pre-trained autonomous bots that run AgentScout ($39 Ops Bot, $59 SEO & AEO Auditor Bot, $59 Market Intel Bot, $69 CEO Coordinator Bot, or $149 Full 4-Bot Bundle). Built natively for Grok Bot and compatible with Claude Code, Cursor & Codex."
+    title = clip_title("AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69, $149)")
+    desc = clip_text("Buy the AgentScout Bot Store's pre-trained Grok bots ($39, $59, $59, $69) or the $149 4-bot bundle. Built for Grok Bot, Claude Code, Cursor & Codex.", 160)
 
     body = (
         f'{CSS}'

@@ -1,6 +1,6 @@
 """Build How-To Video Guides & Pro Tips Hub (/videos/index.html) (Oct 28, 2026)."""
 import os, re, json, datetime
-from build_extras import B, e, shell
+from build_extras import B, e, shell, clip_text, clip_title
 
 def pages(t):
     os.makedirs("videos", exist_ok=True)
@@ -381,8 +381,8 @@ pills.forEach(function(btn){
     )
 
     canon = B + "videos/"
-    title = f"AI Agent & MCP Video Guides, Walkthroughs & Pro Tips ({len(guides)} Guides) · AgentScout"
-    desc = f"Watch {len(guides)} step-by-step 60fps video guides and pro tips for connecting MCP servers in Claude & Cursor, comparing {n_tools:,}+ AI agents, and deploying pre-trained Pro Bots ($39/$59/$59/$69/$149)."
+    title = clip_title(f"AI Agent & MCP Video Guides & Pro Tips ({len(guides)}) · AgentScout")
+    desc = clip_text(f"Watch {len(guides)} AgentScout video guides and pro tips: connect MCP servers in Claude & Cursor, compare {n_tools:,}+ AI agents, and deploy Pro Bots ($39/$59/$59/$69/$149).", 160)
 
     video_objects = [
         {
