@@ -6,6 +6,11 @@
 import json,os,glob,datetime,urllib.request
 import build_extras as X
 B=X.B; e=X.e
+def _fit_title(cands, limit=65):
+    """First candidate that fits; otherwise word-boundary clip (keeps ' · AgentScout', never cuts mid-word)."""
+    for c in cands:
+        if len(c)<=limit: return c
+    return X.clip_title(cands[0], limit)
 URL="https://api.agentscouthq.com/trending"
 MIN_TOOLS=10; MIN_STAR_DAYS=7; MIN_STAR_TOOLS=10
 def _fetch():
@@ -30,7 +35,7 @@ def trending(t):
         if os.path.exists(path): os.remove(path)
         print(f"trending: {len(items)} tools qualify (<{MIN_TOOLS}), page held"); return []
     upd=(d.get("updated") or "")[:10]; canon=B+path; title="Trending AI agent tools this week · AgentScout"
-    desc=f"The AI agent tools AgentScout visitors looked at, clicked and saved most in the last 7 days, including {', '.join(x['name'] for x in items[:3])}."[:158]
+    desc=X.clip_text(f"The AI agent tools AgentScout visitors looked at, clicked and saved most in the last 7 days, including {', '.join(x['name'] for x in items[:3])}.", 160)
     body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Trending</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Trending AI agent tools this week</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">The {len(items)} tools AgentScout visitors viewed, clicked and saved most over the last 7 days, in rank order. We show rank only, not counts. Updated {e(upd)}.</p>'
           f'<ol class="grid" style="padding:0;margin:0">{"".join(_li(i+1,x,"") for i,x in enumerate(items))}</ol>'
@@ -52,8 +57,14 @@ def star_growth(t):
     gr=sorted([(Z[s]-A[s],s) for s in Z if s in A and s in bs and Z[s]>A[s]],reverse=True)[:25]
     if len(gr)<MIN_STAR_TOOLS: return held(f"only {len(gr)} repos grew")
     items=[(bs[s],g) for g,s in gr]; days=(ld_-d0).days; canon=B+path
-    title=f"Trending open-source AI agents (GitHub stars, last {days} days) · AgentScout"[:70]
-    desc=f"Open-source AI agent projects gaining the most GitHub stars over the last {days} days, from AgentScout's daily snapshots."
+    brand=" · AgentScout"
+    title=_fit_title([
+        f"Trending open-source AI agents (GitHub stars, last {days} days){brand}",
+        f"Trending open-source AI agents (GitHub stars, {days} days){brand}",
+        f"Trending open-source AI agents (GitHub stars){brand}",
+        f"Trending open-source AI agents{brand}",
+    ])
+    desc=X.clip_text(f"Open-source AI agent projects gaining the most GitHub stars over the last {days} days, from AgentScout's daily snapshots.", 160)
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / Trending open source</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Trending open-source AI agents</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">The {len(items)} listed open-source projects that gained the most GitHub stars between {e(d0.strftime("%b %-d"))} and {e(ld_.strftime("%b %-d, %Y"))}, from our daily snapshots of each repo.</p>'
           f'<ol class="grid" style="padding:0;margin:0">{"".join(_li(i+1,x,"../",f"<span class=\"b\">+{g:,} stars</span>") for i,(x,g) in enumerate(items))}</ol>'

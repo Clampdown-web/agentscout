@@ -9,6 +9,28 @@ _ax0.register(_pf_last)  # site search index, runs after every other exit hook (
 _cap=lambda s:str(s)[:1].upper()+str(s)[1:]  # keeps acronyms (RAG, MCP, SQL, QA) intact
 B="https://agentscouthq.com/"
 e=lambda s:html.escape(str(s or ""))
+def clip_text(s, n):
+    """Shorten s to at most n characters, ending on a word boundary (never mid-word)."""
+    s=" ".join(str(s or "").split())
+    if len(s)<=n: return s
+    cut=s[:n]
+    if n<len(s) and not s[n].isspace():
+        i=cut.rfind(" ")
+        if i>0: cut=cut[:i]
+    cut=cut.rstrip(" ·-–—,;:(")
+    if cut.count("(")>cut.count(")"):
+        j=cut.rfind("(")
+        if j>0: cut=cut[:j].rstrip(" ·-–—,;:")
+    return cut or s[:n]
+def clip_title(s, n=65):
+    """Title cap (65). Keeps a trailing ' · AgentScout' / ' | AgentScout' and drops whole words so the brand is never cut mid-word."""
+    s=" ".join(str(s or "").split())
+    if len(s)<=n: return s
+    for brand in (" · AgentScout"," | AgentScout"):
+        if s.endswith(brand) and len(brand)<n:
+            head=clip_text(s[:-len(brand)].rstrip(), n-len(brand))
+            if head and len(head)+len(brand)<=n: return head+brand
+    return clip_text(s, n)
 def su(u):
     u=str(u or "").strip()
     return u if re.match(r"(?i)^https?://",u) else "#"
