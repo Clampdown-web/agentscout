@@ -449,7 +449,8 @@ def sitewide(t):
         # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
         s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Popular lists</a>',s)
         s=re.sub(r'<a class="navvid" href="[^"]*videos/">Videos</a>','',s)
-        s=re.sub(r'(<div class="links">.*?<a href="[^"]*news\.html">News</a>)',lambda mm:mm.group(1)+f'<a class="navvid" href="{d}videos/">Videos</a>',s,count=1,flags=re.S)
+        s=re.sub(r'<a class="navbs" href="[^"]*bot-store/">Bot Store</a>','',s)
+        s=re.sub(r'(<div class="links">.*?<a href="[^"]*news\.html">News</a>)',lambda mm:mm.group(1)+f'<a class="navvid" href="{d}videos/">Videos</a><a class="navbs" href="{d}bot-store/">Bot Store</a>',s,count=1,flags=re.S)
         # Strategic header CTA: neon-glow "Get Featured" pill right before "Submit a tool" (Oct 26 2026, owner directive t2906u + t2923u)
         s=re.sub(r'<a class="[^"]*navsp[^"]*" href="[^"]*sponsor\.html">.*?</a>','',s)
         s=re.sub(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)',lambda mm:f'<a class="navsp" href="{d}sponsor.html">'+_wrap("sp","Get Featured")+'</a>'+mm.group(1),s,count=1)
@@ -483,6 +484,7 @@ def sitewide(t):
             # AgentScout MCP server connect page in every footer, right after Free tools (Oct 23 2026, crawlable link for /mcp/connect.html)
             if 'mcp/connect.html">MCP server</a>' not in fn: fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
             if 'videos/">Video guides</a>' not in fn: fn=re.sub(r'(<a href="[^"]*newsletter\.html">Newsletter archive</a>)',lambda mm:mm.group(1)+f' · <a href="{d}videos/">Video guides</a>',fn,count=1)
+            if 'bot-store/">Bot Store</a>' not in fn: fn=re.sub(r'(<a href="[^"]*videos/">Video guides</a>)',lambda mm:mm.group(1)+f' · <a href="{d}bot-store/">Bot Store</a>',fn,count=1)
             # Oct 23 2026 (Ops review): 66 footers (index, saved, quiz, generate, bot-templates/*, some best/*) listed Popular lists and
             # AI agents by role twice; keep the later (standard-position) link and drop the earlier copy
             for _lk in (r'<a href="[^"]*s/index\.html">Popular lists</a>',r'<a href="[^"]*for/index\.html">AI agents by role</a>'):
@@ -491,14 +493,14 @@ def sitewide(t):
         # Bot templates (launched Oct 19 2026 PT, owner approved): red flame nav link left of Quiz, footer link before Free tools,
         # homepage strip after the makers strip (data/bt-strip.inc). Sponsor page stays untouched.
         if True:
-            if 'class="navbt"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navbt" href="{d}bot-templates/">Bot templates</a>'+mm.group(2),s,count=1,flags=re.S)
+            if 'class="navbt"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navbt" href="{d}bot-templates/">AI bot templates</a>'+mm.group(2),s,count=1,flags=re.S)
             # Leaderboard (Oct 21 2026, owner-approved): one nav link right before Bot templates
             if 'class="navlb"' not in s.split("</nav>")[0]: s=re.sub(r'(<div class="links">.*?)(<a href="[^"]*quiz\.html">Quiz</a>)',lambda mm:mm.group(1)+f'<a class="navlb" href="{d}leaderboard/">Leaderboard</a>'+mm.group(2),s,count=1,flags=re.S)  # anchored on Quiz (Oct 23 2026: Bot templates moved into the pill group)
                         # Removed Oct 23 2026 (owner): one search only, on the homepage; strip the old menu link
             s=re.sub(r'<a class="navsf" href="[^"]*">Search &amp; filters</a>','',s)
             fm2=re.search(r'<footer\b.*?</footer>',s,re.S)
             if fm2 and 'class="navbt"' not in fm2.group(0):
-                fn2=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:f'<a class="navbt" href="{d}bot-templates/">Bot templates</a> · '+mm.group(1),fm2.group(0),count=1)
+                fn2=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:f'<a class="navbt" href="{d}bot-templates/">AI bot templates</a> · '+mm.group(1),fm2.group(0),count=1)
                 s=s[:fm2.start()]+fn2+s[fm2.end():]
             if f.startswith("tools/") and os.path.exists("data/bt-links.json"):  # related Bot templates on matching tool pages (SEO pass Oct 19 2026)
                 s=re.sub(r'<p class="btrel".*?</p>','',s,flags=re.S)
@@ -520,7 +522,7 @@ def sitewide(t):
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")
         if 'class="ai-ref-cta"' in s:
             s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>',lambda mm:ai_ref_cta_html(d),s,count=1,flags=re.S)
-        elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","mcp/","videos/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
+        elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","mcp/","videos/","bot-store/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
             _arc=ai_ref_cta_html(d)
             if '<p class="disclose">' in s:
                 s=s.replace('<p class="disclose">',_arc+'<p class="disclose">',1)

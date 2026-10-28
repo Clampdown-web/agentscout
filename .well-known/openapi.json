@@ -566,6 +566,12 @@
         "availability": {
          "type": "string"
         },
+        "compatibility": {
+         "type": "string"
+        },
+        "stripe_payment_link_id": {
+         "type": "string"
+        },
         "page_url": {
          "type": "string"
         },
@@ -584,6 +590,8 @@
         "price_usd",
         "billing_model",
         "availability",
+        "compatibility",
+        "stripe_payment_link_id",
         "page_url",
         "checkout_url",
         "description"

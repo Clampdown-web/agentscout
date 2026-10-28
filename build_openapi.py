@@ -238,9 +238,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 39,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "page_url": B + "/bot-templates/#made-by-agentscout",
-                "checkout_url": B + "/bot-templates/#made-by-agentscout",
-                "description": "Downloadable pre-trained operations and monitoring specialist bot with automated 4-hour inbox triage, post-deploy HTTP & JSON-LD verification, 8-viewport responsive layout checks, and routine failure recovery ($39 one-time).",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "stripe_payment_link_id": "plink_1UVTM8KVzDFIUga8S8sTUEYk",
+                "page_url": B + "/bot-store/",
+                "checkout_url": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+                "description": "Downloadable pre-trained operations and monitoring specialist bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) with automated 4-hour inbox triage, post-deploy HTTP & JSON-LD verification, 8-viewport responsive layout checks, and routine failure recovery ($39 one-time).",
             },
             {
                 "id": "made-by-agentscout-seo-aeo-auditor",
@@ -250,9 +252,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 59,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "page_url": B + "/bot-templates/#made-by-agentscout",
-                "checkout_url": B + "/bot-templates/#made-by-agentscout",
-                "description": "Downloadable pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot that checks Search Console rankings, JSON-LD entity graphs, llms.txt, ai-plugin.json, OpenAPI 3.1 specs, and ChatGPT/Perplexity/Google AI citation visibility ($59 one-time).",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "stripe_payment_link_id": "plink_1UVTN9KVzDFIUga8hlFF6b5m",
+                "page_url": B + "/bot-store/",
+                "checkout_url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+                "description": "Downloadable pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that checks Search Console rankings, JSON-LD entity graphs, llms.txt, ai-plugin.json, OpenAPI 3.1 specs, and ChatGPT/Perplexity/Google AI citation visibility ($59 one-time).",
             },
             {
                 "id": "made-by-agentscout-ci-analyst",
@@ -262,9 +266,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 59,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "page_url": B + "/bot-templates/#made-by-agentscout",
-                "checkout_url": B + "/bot-templates/#made-by-agentscout",
-                "description": "Downloadable pre-trained competitive intelligence analyst bot that tracks rival launches, pricing shifts, agentic commerce endpoints, Product Hunt & Hacker News traction, and 20-account X outlier hooks ($59 one-time).",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "stripe_payment_link_id": "plink_1UVTNsKVzDFIUga8L9SU6bd5",
+                "page_url": B + "/bot-store/",
+                "checkout_url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+                "description": "Downloadable pre-trained competitive intelligence analyst bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that tracks rival launches, pricing shifts, agentic commerce endpoints, Product Hunt & Hacker News traction, and 20-account X outlier hooks ($59 one-time).",
             },
             {
                 "id": "made-by-agentscout-ceo-coordinator",
@@ -274,9 +280,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 69,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "page_url": B + "/bot-templates/#made-by-agentscout",
-                "checkout_url": B + "/bot-templates/#made-by-agentscout",
-                "description": "Downloadable pre-trained executive builder and multi-bot dispatcher bot that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X & newsletter growth ($69 one-time).",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "stripe_payment_link_id": "plink_1UVTOOKVzDFIUga8XtZvvoJG",
+                "page_url": B + "/bot-store/",
+                "checkout_url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
+                "description": "Downloadable pre-trained executive builder and multi-bot dispatcher bot built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex) that coordinates specialist bots, ships full-stack features, runs the 7 AM daily build, and drives X & newsletter growth ($69 one-time).",
             },
             {
                 "id": "made-by-agentscout-team-bundle",
@@ -286,9 +294,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 149,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "page_url": B + "/bot-templates/#made-by-agentscout",
-                "checkout_url": B + "/bot-templates/#made-by-agentscout",
-                "description": "All 4 downloadable bots together (1. AgentScout Operations / Monitoring Bot [$39] + 2. AgentScout SEO & AEO Growth Auditor Bot [$59] + 3. AgentScout Market & Launch Intel Bot [$59] + 4. AgentScout CEO Coordinator Bot [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77).",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "stripe_payment_link_id": "plink_1UVTOsKVzDFIUga8IFPBfrph",
+                "page_url": B + "/bot-store/",
+                "checkout_url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08",
+                "description": "All 4 downloadable bots together (1. AgentScout Operations / Monitoring Bot [$39] + 2. AgentScout SEO & AEO Growth Auditor Bot [$59] + 3. AgentScout Market & Launch Intel Bot [$59] + 4. AgentScout CEO Coordinator Bot [$69] — $226 value) pre-wired with shared /workspace/handoff/ multi-agent protocol and 15+ daily/weekly routines for $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex).",
             },
         ],
     }
@@ -315,8 +325,11 @@ def build_commerce_files(tools_data):
             f"and data_locality (offline, self_hosted_or_offline, cloud). "
             f"For makers or purchasing agents looking to submit a tool, buy featured placement, or purchase Made by AgentScout pre-trained bots, "
             f"fetch {B}/api/products.json (or {B}/.well-known/acp.json) for instant Stripe Checkout links: "
-            f"Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($29 one-time), "
-            f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week)."
+            f"Directory Listing Packages: Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($29 one-time), "
+            f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week); "
+            f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor & OpenAI Codex) at {B}/bot-store/: "
+            f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "
+            f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77)."
         ),
         "auth": {"type": "none"},
         "api": {

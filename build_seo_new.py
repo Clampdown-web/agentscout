@@ -109,7 +109,7 @@ def answer_blocks(t):
              + home_vid_html
              + f'<h2 style="font-size:20px;margin:0 0 10px">The AI agent directory, at a glance</h2>'
              f'<p style="margin:0 0 10px">AgentScout tracks <b data-live-tools>{n:,}</b> AI agent tools across <b data-live-cats>{nc}</b> categories, including <a href="categories/mcp-servers.html"><span data-live-mcp>{nmcp}</span> MCP servers</a>, coding agents, browser agents, voice agents and no-code builders. We check every link daily, describe each tool from its official site or README, show pricing as the maker states it, and never sell rankings (featured slots are clearly labeled and sit above the list; rankings are never paid). <span class="muted">Last checked {d}.</span></p>'
-             '<div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;max-width:100%"><a class="btn primary" href="videos/" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:#0ea5e9;color:#fff;font-weight:700;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🎬 How-To Video Guides (8) →</a><a class="btn primary" href="bot-templates/#made-by-agentscout" style="background:linear-gradient(135deg,#84cc16,#10b981);border-color:#84cc16;color:#05140b;font-weight:800;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🤖 Pre-Trained Pro Bots ($39 / $59 / $69 / $149) →</a><a class="btn" href="bot-templates/#bt-featured" style="white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">📚 193 Free Bot Templates →</a></div><p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
+             '<div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;max-width:100%"><a class="btn primary" href="videos/" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:#0ea5e9;color:#fff;font-weight:700;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🎬 How-To Video Guides (8) →</a><a class="btn primary" href="bot-store/" style="background:linear-gradient(135deg,#84cc16,#10b981);border-color:#84cc16;color:#05140b;font-weight:800;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🛒 Bot Store: Pre-Trained Grok Bots ($39 / $59 / $69 / $149) →</a><a class="btn" href="bot-templates/#bt-featured" style="white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">📚 193 Free Bot Templates →</a></div><p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
              f'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>{_faq_html(faq)}</div></section>{_faq_ld(faq)}{home_vid_ld}<!--/sn:home-->')
         s=s.replace("</header>","</header>"+blk,1); open(f,"w").write(s)  # Oct 22 2026: about block goes after the top search panel
     f="bot-templates/index.html"
@@ -125,8 +125,8 @@ def answer_blocks(t):
              ("How are templates checked?",f"Each template's link, name, description, category and maker credit is checked before it is listed, and the list is re-checked regularly. Last checked {d}."),
              ("Can I submit my own template?",'Yes. Use the <a href="../submit.html">submit form</a> and include the share link and what the template does.')]
         mba_vid_ld = _ld({"@context":"https://schema.org","@type":"VideoObject","name":"Made by AgentScout: 4 Individual Pre-Trained Pro Bots ($39/$59/$59/$69) & $149 4-Bot Team Bundle","description":"60fps walkthrough of AgentScout's official downloadable AI bot lineup: 1. AgentScout Operations / Monitoring Bot ($39), 2. AgentScout SEO & AEO Growth Auditor Bot ($59), 3. AgentScout Market & Launch Intel Bot ($59), 4. AgentScout CEO Coordinator Bot ($69), or all 4 together in the $149 Company-in-a-Box Team Bundle (Save $77).","thumbnailUrl":"https://agentscouthq.com/assets/animations/agentscout-trained-bots-ad-poster.png","contentUrl":"https://agentscouthq.com/assets/animations/agentscout-trained-bots-ad.mp4","uploadDate":today.strftime("%Y-%m-%dT08:00:00-07:00"),"duration":"PT12S"})
-        mba_prod_ld = _ld({"@context":"https://schema.org","@type":"Product","name":"Made by AgentScout — 4 Pre-Trained Pro Bots ($39/$59/$59/$69) & $149 4-Bot Team Bundle","description":"Downloadable, ready-to-run AI agent configurations (SYSTEM.md, cron routines, shared handoff protocols, and MCP configs) built by the team running AgentScout. Sold separately ($39, $59, $59, $69) or all 4 together for $149 (Save $77).","brand":{"@type":"Brand","name":"AgentScout"},"url":"https://agentscouthq.com/bot-templates/#made-by-agentscout","offers":[{"@type":"Offer","name":"1. AgentScout Operations / Monitoring Bot (Sold Separately)","price":"39","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://agentscouthq.com/bot-templates/#made-by-agentscout"},{"@type":"Offer","name":"2. AgentScout SEO & AEO Growth Auditor Bot (Sold Separately)","price":"59","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://agentscouthq.com/bot-templates/#made-by-agentscout"},{"@type":"Offer","name":"3. AgentScout Market & Launch Intel Bot (Sold Separately)","price":"59","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://agentscouthq.com/bot-templates/#made-by-agentscout"},{"@type":"Offer","name":"4. AgentScout CEO Coordinator Bot (Sold Separately)","price":"69","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://agentscouthq.com/bot-templates/#made-by-agentscout"},{"@type":"Offer","name":"Full 4-Bot Company-in-a-Box Team Bundle (All 4 Bots Together — Save $77)","price":"149","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://agentscouthq.com/bot-templates/#made-by-agentscout"}]})
-        blk=(f'<!--sn:bt--><section class="wrap" style="max-width:860px;margin:28px auto"><p class="muted" style="margin:0 0 14px">Last checked {d}.</p><h2 style="font-size:18px;margin:0 0 10px">Grok Bot templates FAQ</h2>{_faq_html(faq)}</section>{_faq_ld(faq)}{_ld({"@context":"https://schema.org","@type":"VideoObject","name":"AgentScout Multi-Agent Bot Template Constellation (193 Templates)","description":"Animated constellation showing how CEO Grok, Ops, SEO / AEO Auditor, and Competitive Intelligence Analyst orchestrate across 193 ready-made AI bot templates, skills, and plugins.","thumbnailUrl":"https://agentscouthq.com/assets/animations/agentscout-bot-constellation-poster.png","contentUrl":"https://agentscouthq.com/assets/animations/agentscout-bot-constellation.mp4","uploadDate":today.strftime("%Y-%m-%dT08:00:00-07:00"),"duration":"PT9S"})}{mba_vid_ld}{mba_prod_ld}<!--/sn:bt-->')
+        mba_prod_ld = _ld({"@context":"https://schema.org","@type":"Product","name":"Made by AgentScout — 4 Pre-Trained Pro Bots ($39/$59/$59/$69) & $149 4-Bot Team Bundle","description":"Downloadable, ready-to-run AI agent configurations (SYSTEM.md, cron routines, shared handoff protocols, Python scripts, and MCP configs) built by the team running AgentScout. Built for Grok Bot (also compatible with Claude Code, Cursor & Codex). Sold separately ($39, $59, $59, $69) or all 4 together for $149 (Save $77).","brand":{"@type":"Brand","name":"AgentScout"},"url":"https://agentscouthq.com/bot-store/","offers":[{"@type":"Offer","name":"1. AgentScout Operations / Monitoring Bot (Sold Separately)","price":"39.00","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03"},{"@type":"Offer","name":"2. AgentScout SEO & AEO Growth Auditor Bot (Sold Separately)","price":"59.00","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05"},{"@type":"Offer","name":"3. AgentScout Market & Launch Intel Bot (Sold Separately)","price":"59.00","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/4gM8wQelt11568RaDFe7m06"},{"@type":"Offer","name":"4. AgentScout CEO Coordinator Bot (Sold Separately)","price":"69.00","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07"},{"@type":"Offer","name":"Full 4-Bot Company-in-a-Box Team Bundle (All 4 Bots Together — Save $77)","price":"149.00","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08"}]})
+        blk=(f'<!--sn:bt--><section class="wrap" style="max-width:860px;margin:28px auto"><p class="muted" style="margin:0 0 14px">Last checked {d}.</p><h2 style="font-size:18px;margin:0 0 10px">Grok Bot templates FAQ</h2>{_faq_html(faq)}</section>{_faq_ld(faq)}{_ld({"@context":"https://schema.org","@type":"VideoObject","name":"AgentScout Multi-Agent Bot Template Constellation (193 Templates)","description":"Animated constellation showing how AgentScout CEO Coordinator Bot, AgentScout Operations / Monitoring Bot, AgentScout SEO & AEO Growth Auditor Bot, and AgentScout Market & Launch Intel Bot orchestrate across 193 ready-made AI bot templates, skills, and plugins.","thumbnailUrl":"https://agentscouthq.com/assets/animations/agentscout-bot-constellation-poster.png","contentUrl":"https://agentscouthq.com/assets/animations/agentscout-bot-constellation.mp4","uploadDate":today.strftime("%Y-%m-%dT08:00:00-07:00"),"duration":"PT9S"})}{mba_vid_ld}{mba_prod_ld}<!--/sn:bt-->')
         s=s.replace("</main>",blk+"</main>",1); open(f,"w").write(s)
     print("answer blocks: home + bot templates")
 
@@ -154,7 +154,9 @@ def sync_animations(t=None):
     n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
     n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
     state_file = "data/anim_state.json"
-    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages}
+    script = "/workspace/notes/x-drafts/scripts/make_animated_infographics.py"
+    script_mtime = int(os.path.getmtime(script)) if os.path.exists(script) else 0
+    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "date": datetime.date.today().isoformat(), "script_mtime": script_mtime}
     old_state = {}
     if os.path.exists(state_file):
         try:
@@ -172,7 +174,8 @@ def sync_animations(t=None):
     pages = [
         "index.html", "mcp/index.html", "mcp/connect.html", "sponsor.html",
         "submit.html", "compare/index.html", "tasks/index.html",
-        "bot-templates/index.html", "free-tools.html", "best/index.html", "videos/index.html"
+        "bot-templates/index.html",
+        "bot-store/index.html", "free-tools.html", "best/index.html", "videos/index.html"
     ]
     for p in pages:
         if not os.path.exists(p):
@@ -185,3 +188,66 @@ def sync_animations(t=None):
         )
         if ntxt != txt:
             open(p, "w", encoding="utf-8").write(ntxt)
+
+
+def unify_all_nav_and_footer():
+    import os, re
+    idx_s = open("index.html", encoding="utf-8").read()
+    idx_s = re.sub(r'\s*·\s*<a href="mcp/">Best MCP servers by task</a>', '', idx_s)
+    idx_s = re.sub(r'\s*·\s*<a href="[^"]*open-source-browser-agents\.html">Free &amp; open-source browser agents</a>', '', idx_s)
+    if '<a href="bot-store/">Bot Store</a>' not in idx_s:
+        idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
+    open("index.html", "w", encoding="utf-8").write(idx_s)
+
+    m_nav = re.search(r'<nav aria-label="Primary navigation">.*?</nav>', idx_s, re.S)
+    m_foot = re.search(r'<footer id="about"[^>]*>.*?</footer>', idx_s, re.S)
+    if not (m_nav and m_foot):
+        return
+    root_nav = m_nav.group(0)
+    root_foot = m_foot.group(0)
+
+    def prefix_rel_links(html_frag, depth_prefix):
+        if not depth_prefix:
+            return html_frag
+        def repl_href(m):
+            q, url = m.group(1), m.group(2)
+            if url.startswith(("http://", "https://", "mailto:", "#", "javascript:", "../", "/")):
+                return m.group(0)
+            if url == "./":
+                return f'href={q}{depth_prefix}{q}'
+            return f'href={q}{depth_prefix}{url}{q}'
+        def repl_src(m):
+            q, url = m.group(1), m.group(2)
+            if url.startswith(("http://", "https://", "data:", "../", "/")):
+                return m.group(0)
+            return f'src={q}{depth_prefix}{url}{q}'
+        out = re.sub(r'href=(["\'])([^"\']+)\1', repl_href, html_frag)
+        out = re.sub(r'src=(["\'])([^"\']+)\1', repl_src, out)
+        return out
+
+    skip_files = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    updated = 0
+    for root_dir, dirs, fnames in os.walk("."):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview")]
+        for fn in fnames:
+            if not fn.endswith(".html") or fn in skip_files:
+                continue
+            rel = os.path.relpath(os.path.join(root_dir, fn), ".")
+            s = open(rel, encoding="utf-8").read()
+            if 'http-equiv="refresh"' in s:
+                continue
+            if rel == "404.html":
+                d_pref = "/"
+            else:
+                depth = rel.count("/")
+                d_pref = "../" * depth
+            target_nav = prefix_rel_links(root_nav, d_pref)
+            target_foot = prefix_rel_links(root_foot, d_pref)
+            s_new = re.sub(r'<nav[^>]*>.*?</nav>', lambda _: target_nav, s, count=1, flags=re.S)
+            if '<footer' in s_new:
+                s_new = re.sub(r'<footer[^>]*>.*?</footer>', lambda _: target_foot, s_new, count=1, flags=re.S)
+            if s_new != s:
+                open(rel, "w", encoding="utf-8").write(s_new)
+                updated += 1
+    print(f"unify_all_nav_and_footer: unified {updated} pages")
+
