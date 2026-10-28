@@ -1,6 +1,6 @@
 """Build Quick-Start Guides, Walkthroughs & Pro Tips hub (/videos/index.html)."""
 import os, re, json, datetime
-from build_extras import B, e, shell
+from build_extras import B, e, shell, clip_text, clip_title
 
 def pages(t):
     os.makedirs("videos", exist_ok=True)
@@ -380,8 +380,8 @@ pills.forEach(function(btn){
     )
 
     canon = B + "videos/"
-    title = "AI Agent & MCP Quick-Start Guides & Walkthroughs · AgentScout"
-    desc = "Step-by-step AI agent & MCP setup guides, 20s walkthroughs, copyable CLI snippets, and Pro Bot playbooks ($39/$59/$59/$69/$149)."
+    title = clip_title("AI Agent & MCP Quick-Start Guides & Walkthroughs · AgentScout")
+    desc = clip_text("Step-by-step AI agent & MCP setup guides, 20s walkthroughs, copyable CLI snippets, and Pro Bot playbooks ($39/$59/$59/$69/$149).", 160)
 
     video_objects = [
         {

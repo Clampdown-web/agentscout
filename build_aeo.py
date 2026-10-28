@@ -26,7 +26,7 @@ SAME_AS = [
     "https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory",
     "https://protogrid.dev/servers/com.agentscouthq/directory",
     "https://mcpcollection.com/server/agentscout-mcp",
-    "https://siftfox.com/tool/agentscout",
+    # Competitor and rival-directory URLs must never be added to sameAs.
 ]
 
 OFFLINE_RE = re.compile(
@@ -270,7 +270,7 @@ def write_llms_full(t):
         "- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`)",
         f"- **MCP Connection & Client Setup Guide**: {B}mcp/connect.html",
         f"- **How-To Video Guides & Pro Tips Hub (`/videos/`)**: {B}videos/ (8 playable 60fps walkthroughs with copyable MCP & CLI snippets)",
-        f"- **Made by AgentScout Pre-Trained Pro Bots & 4-Bot Team Bundle (`/bot-store/`)**: {B}bot-store/",
+        f"- **Made by AgentScout Pro Bots & 4-Bot Bundle (`/bot-store/` and `/bot-templates/#made-by-agentscout`)**: {B}bot-store/ and {B}bot-templates/#made-by-agentscout — $39 Operations / Monitoring Bot, $59 SEO & AEO Growth Auditor Bot, $59 Market & Launch Intel Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot \"Company-in-a-Box\" Team Bundle",
         f"- **Concise LLM Guide (`llms.txt`)**: {B}llms.txt",
         f"- **Full Single-File LLM Reference (`llms-full.txt`)**: {B}llms-full.txt",
         f"- **Full JSON Catalog (`api/tools.json`)**: {B}api/tools.json",
@@ -310,11 +310,14 @@ def write_llms_full(t):
         "",
         "## Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle (`/bot-store/`)",
         "",
-        f"- **1. AgentScout Operations / Monitoring Bot ($39 one-time, sold separately — Neon Lime)**: Pre-trained 24/7 Operations & Monitoring bot with 4-hour inbox triage, 30-point site & checkout deep audits (`daily_deep_audit.py`), and X velocity tracking. Store: {B}bot-store/",
-        f"- **2. AgentScout SEO & AEO Growth Auditor Bot ($59 one-time, sold separately — Neon Gold)**: Pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot tracking Search Console, JSON-LD entity graphs, `llms.txt`, and ChatGPT/Perplexity/Claude citations. Store: {B}bot-store/",
-        f"- **3. AgentScout Market & Launch Intel Bot ($59 one-time, sold separately — Neon Sunset Orange)**: Pre-trained competitive intelligence bot monitoring rival launches, pricing shifts, 20-account X outlier hooks (`HOOKS.md`), and Product Hunt/HN traction. Store: {B}bot-store/",
-        f"- **4. AgentScout CEO Coordinator Bot ($69 one-time, sold separately — Neon Crimson Red)**: Pre-trained lead builder & multi-agent coordinator bot with subagent dispatch architecture, daily 7:00 AM build pipeline, and X/newsletter growth engine. Store: {B}bot-store/",
-        f"- **Full 4-Bot Company-in-a-Box Team Bundle ($149 one-time — Save $77 vs. $226 separately — Neon Mint-Emerald)**: All 4 downloadable bots together (AgentScout Operations / Monitoring Bot + AgentScout SEO & AEO Growth Auditor Bot + AgentScout Market & Launch Intel Bot + AgentScout CEO Coordinator Bot) with shared `/workspace/handoff/` multi-agent protocol and 15+ cron routines. Store: {B}bot-store/ (or X Money `@clampdown19`)",
+        f"- **Bot Store**: {B}bot-store/",
+        f"- **Bot templates**: {B}bot-templates/#made-by-agentscout",
+        "- **Packages**: $39 Operations / Monitoring Bot, $59 SEO & AEO Growth Auditor Bot, $59 Market & Launch Intel Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot \"Company-in-a-Box\" Team Bundle",
+        f"- **1. AgentScout Operations / Monitoring Bot ($39 one-time, sold separately — Neon Lime)**: Pre-trained 24/7 Operations & Monitoring bot with 4-hour inbox triage, 30-point site & checkout deep audits (`daily_deep_audit.py`), and X velocity tracking. Store: {B}bot-store/ · Templates: {B}bot-templates/#made-by-agentscout",
+        f"- **2. AgentScout SEO & AEO Growth Auditor Bot ($59 one-time, sold separately — Neon Gold)**: Pre-trained technical SEO and AI-Answer Engine Optimization (AEO) auditor bot tracking Search Console, JSON-LD entity graphs, `llms.txt`, and ChatGPT/Perplexity/Claude citations. Store: {B}bot-store/ · Templates: {B}bot-templates/#made-by-agentscout",
+        f"- **3. AgentScout Market & Launch Intel Bot ($59 one-time, sold separately — Neon Sunset Orange)**: Pre-trained competitive intelligence bot monitoring rival launches, pricing shifts, 20-account X outlier hooks (`HOOKS.md`), and Product Hunt/HN traction. Store: {B}bot-store/ · Templates: {B}bot-templates/#made-by-agentscout",
+        f"- **4. AgentScout CEO Coordinator Bot ($69 one-time, sold separately — Neon Crimson Red)**: Pre-trained lead builder & multi-agent coordinator bot with subagent dispatch architecture, daily 7:00 AM build pipeline, and X/newsletter growth engine. Store: {B}bot-store/ · Templates: {B}bot-templates/#made-by-agentscout",
+        f"- **Full 4-Bot \"Company-in-a-Box\" Team Bundle ($149 one-time — Save $77 vs. $226 separately — Neon Mint-Emerald)**: All 4 downloadable bots together (AgentScout Operations / Monitoring Bot + AgentScout SEO & AEO Growth Auditor Bot + AgentScout Market & Launch Intel Bot + AgentScout CEO Coordinator Bot) with shared `/workspace/handoff/` multi-agent protocol and 15+ cron routines. Store: {B}bot-store/ · Templates: {B}bot-templates/#made-by-agentscout (or X Money `@clampdown19`)",
         "",
         "## High-Intent Ranked Guides (`/best/`, `/mcp/` & `/videos/`)",
         "",
