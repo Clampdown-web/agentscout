@@ -201,8 +201,8 @@ def unify_all_nav_and_footer():
         idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
     open("index.html", "w", encoding="utf-8").write(idx_s)
 
-    m_nav = re.search(r'<nav aria-label="Primary navigation">.*?</nav>', idx_s, re.S)
-    m_foot = re.search(r'<footer id="about"[^>]*>.*?</footer>', idx_s, re.S)
+    m_nav = re.search(r'<nav[^>]*>.*?</nav>', idx_s, re.S)
+    m_foot = re.search(r'<footer[^>]*>.*?</footer>', idx_s, re.S)
     if not (m_nav and m_foot):
         return
     root_nav = m_nav.group(0)
