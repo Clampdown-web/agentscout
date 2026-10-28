@@ -181,9 +181,9 @@ def pages(t):
             "title": "How to Wire a 5-Layer Production AI Agent Stack (Coding + Browser + Memory + Sandbox + MCP)",
             "summary": "Step-by-step blueprint for combining a coding agent (OpenCode / Claude Code), browser runtime (Browser Use / Crawl4AI), live docs MCP (Context7), isolated microVM sandbox, and persistent memory.",
             "video": "../assets/animations/agentscout-workflow-infographic.mp4",
-            "poster": "../assets/animations/agentscout-workflow-poster.png",
+            "poster": "../assets/animations/agentscout-workflow-infographic-poster.png",
             "video_url": f"{B}assets/animations/agentscout-workflow-infographic.mp4",
-            "poster_url": f"{B}assets/animations/agentscout-workflow-poster.png",
+            "poster_url": f"{B}assets/animations/agentscout-workflow-infographic-poster.png",
             "w": 1200,
             "h": 480,
             "duration": "PT8S",
@@ -208,9 +208,9 @@ def pages(t):
             "title": "2026 AI Agent Category Radar: How We Score Speed, Open-Source Stars & Local Execution",
             "summary": "See how AgentScout benchmarks category leaders across Coding, Browser Automation, MCP Infrastructure, Crawling/RAG, and Multi-Agent Frameworks using live GitHub telemetry and daily link checks.",
             "video": "../assets/animations/agentscout-radar-infographic.mp4",
-            "poster": "../assets/animations/agentscout-radar-poster.png",
+            "poster": "../assets/animations/agentscout-radar-infographic-poster.png",
             "video_url": f"{B}assets/animations/agentscout-radar-infographic.mp4",
-            "poster_url": f"{B}assets/animations/agentscout-radar-poster.png",
+            "poster_url": f"{B}assets/animations/agentscout-radar-infographic-poster.png",
             "w": 1200,
             "h": 540,
             "duration": "PT8S",
@@ -279,7 +279,7 @@ def pages(t):
 .vh-tip a{font-size:13px;font-weight:700;color:#0ea5e9;text-decoration:none;margin-top:4px;display:inline-flex;align-items:center;min-height:34px}
 @media(max-width:920px){.vh-grid{grid-template-columns:1fr}.vh-tips{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.vh-hero img.aswm{filter:invert(1) hue-rotate(180deg)}
-.vh-hero{padding:16px}.vh-tips{grid-template-columns:1fr}.vh-links a{width:100%;justify-content:center}}
+.vh-hero{padding:16px}.vh-tips{grid-template-columns:1fr}.vh-links a{width:100%;box-sizing:border-box;justify-content:center}}
 </style>'''
 
     cards_html = []

@@ -222,44 +222,45 @@ MBA_CSS = """<style id="bt-mba-css">
 @media(prefers-color-scheme:dark){.bt-hub-tab.vid{color:#fb923c}}
 html[data-theme="dark"] .bt-hub-tab.vid{color:#fb923c}
 .mba-sec img.aswm{filter:invert(1) hue-rotate(180deg)}
-.mba-builtby{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;font-size:12.5px;font-weight:700;color:#e5e7eb;margin:2px 0 6px}
+.mba-builtby{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;font-size:12.5px;font-weight:700;color:#e5e7eb;margin:4px auto 6px;text-align:center}
 .mba-builtby img.aswm{height:1.38em;vertical-align:-.34em;margin:0 -.35em 0 .08em}
-.mba-sec{margin:14px 0 26px;padding:22px;border-radius:16px;border:2px solid rgba(16,185,129,.65);background:linear-gradient(155deg,#090d0a 0%,#11150d 55%,#16110b 100%);color:#fafaf9;box-shadow:0 14px 36px rgba(0,0,0,.45),0 0 24px rgba(16,185,129,.18);min-width:0}
-.mba-notice{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;margin-bottom:16px;border-radius:10px;background:rgba(132,204,22,.12);border:1.5px solid rgba(163,230,53,.5);font-size:13px;line-height:1.45;color:#ecfccb}
+section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radius:16px;border:2px solid rgba(16,185,129,.65);background:linear-gradient(155deg,#090d0a 0%,#11150d 55%,#16110b 100%);color:#fafaf9;box-shadow:0 14px 36px rgba(0,0,0,.45),0 0 24px rgba(16,185,129,.18);min-width:0}
+.mba-notice{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:14px 18px;margin-bottom:16px;border-radius:12px;background:rgba(132,204,22,.12);border:1.5px solid rgba(163,230,53,.5);font-size:13px;line-height:1.5;color:#ecfccb;box-sizing:border-box}
 .mba-notice a{color:#fde047;font-weight:700;text-decoration:underline}
-.mba-head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
-.mba-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;background:rgba(16,185,129,.18);border:1.5px solid #34d399;color:#6ee7b7;font-size:11.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px;box-shadow:0 0 12px rgba(16,185,129,.35)}
-.mba-head h2{margin:0 0 6px;font-size:clamp(19px,2.5vw,25px);line-height:1.25;color:#fff}
-.mba-head p{margin:0;font-size:14px;line-height:1.5;color:#d6d3d1;max-width:780px}
+.mba-head{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;margin-bottom:16px;padding:18px 20px;border-radius:12px;background:rgba(16,18,14,.92);border:1.5px solid rgba(52,211,153,.4);box-sizing:border-box}
+.mba-eyebrow{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(16,185,129,.18);border:1.5px solid #34d399;color:#6ee7b7;font-size:11.5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin:0 auto 8px;box-shadow:0 0 12px rgba(16,185,129,.35)}
+.mba-head h2{margin:0 auto 8px;font-size:clamp(19px,2.5vw,25px);line-height:1.3;color:#fff;text-align:center;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
+.mba-head p{margin:0 auto;font-size:14px;line-height:1.55;color:#d6d3d1;max-width:820px;text-align:center}
 .mba-vid{margin:0 0 16px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(163,230,53,.45);background:#0a0906;line-height:0;box-shadow:0 0 20px rgba(132,204,22,.18)}
 .mba-vid video{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
 .mba-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}
-.mba-card{display:flex;flex-direction:column;justify-content:space-between;padding:16px;border-radius:12px;background:rgba(16,18,14,.95);border:2px solid rgba(132,204,22,.5);min-width:0;gap:10px;transition:transform .15s,box-shadow .15s}
+.mba-card{display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:20px 18px;border-radius:12px;background:rgba(16,18,14,.95);border:2px solid rgba(132,204,22,.5);min-width:0;gap:12px;transition:transform .15s,box-shadow .15s;box-sizing:border-box}
 .mba-card:hover{transform:translateY(-2px)}
+.mba-card>div{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
 .mba-card.neon-lime{border-color:#84cc16;background:linear-gradient(180deg,rgba(132,204,22,.14) 0%,rgba(14,18,12,.96) 55%);box-shadow:0 8px 26px rgba(132,204,22,.22),0 0 18px rgba(163,230,53,.24)}
 .mba-card.neon-gold{border-color:#eab308;background:linear-gradient(180deg,rgba(234,179,8,.14) 0%,rgba(18,16,10,.96) 55%);box-shadow:0 8px 26px rgba(234,179,8,.22),0 0 18px rgba(250,204,21,.24)}
 .mba-card.neon-orange{border-color:#f97316;background:linear-gradient(180deg,rgba(249,115,22,.15) 0%,rgba(20,13,10,.96) 55%);box-shadow:0 8px 26px rgba(249,115,22,.24),0 0 18px rgba(251,146,60,.25)}
 .mba-card.neon-red{border-color:#ef4444;background:linear-gradient(180deg,rgba(239,68,68,.15) 0%,rgba(20,11,12,.96) 55%);box-shadow:0 8px 26px rgba(239,68,68,.24),0 0 18px rgba(248,113,113,.25)}
-.mba-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.mba-card-top{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;width:100%}
 .mba-price{font-size:24px;font-weight:900;color:#fff;line-height:1}
 .mba-price small{font-size:12px;font-weight:600;color:#d6d3d1}
-.mba-tag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
-.mba-card h3{margin:0;font-size:16.5px;line-height:1.3;color:#fff}
-.mba-card p{margin:0;font-size:13px;line-height:1.5;color:#d6d3d1}
-.mba-list{margin:0;padding-left:17px;font-size:12.5px;line-height:1.45;color:#e7e5e4}
-.mba-list li{margin-bottom:4px}
-.mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.mba-tag{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.mba-card h3{margin:0 auto;font-size:16.5px;line-height:1.35;color:#fff;text-align:center}
+.mba-card p{margin:0 auto;font-size:13px;line-height:1.55;color:#d6d3d1;text-align:center}
+.mba-list{margin:0 auto;padding:0;list-style-position:inside;font-size:12.5px;line-height:1.5;color:#e7e5e4;text-align:center;width:100%}
+.mba-list li{margin-bottom:5px}
+.mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;width:100%;justify-content:center}
 .mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:800;text-decoration:none;min-height:42px;flex:1 1 auto;text-align:center}
-.mba-bundle{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(16,185,129,.22),rgba(132,204,22,.14));border:2px solid #10b981;box-shadow:0 10px 30px rgba(16,185,129,.28),0 0 22px rgba(52,211,153,.28)}
-.mba-bundle-copy{flex:1 1 380px;min-width:0}
-.mba-bundle-copy h3{margin:0 0 5px;font-size:17.5px;color:#fff}
-.mba-bundle-copy p{margin:0;font-size:13.5px;line-height:1.5;color:#f5f5f4}
-.mba-bundle-ctas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.mba-bundle{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:22px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(16,185,129,.22),rgba(132,204,22,.14));border:2px solid #10b981;box-shadow:0 10px 30px rgba(16,185,129,.28),0 0 22px rgba(52,211,153,.28);box-sizing:border-box}
+.mba-bundle-copy{width:100%;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.mba-bundle-copy h3{margin:0 auto 6px;font-size:17.5px;color:#fff;text-align:center}
+.mba-bundle-copy p{margin:0 auto;font-size:13.5px;line-height:1.55;color:#f5f5f4;text-align:center;max-width:780px}
+.mba-bundle-ctas{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;width:100%}
 @media(max-width:860px){.mba-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.mba-sec img.aswm{filter:invert(1) hue-rotate(180deg)}
-.mba-builtby{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;font-size:12.5px;font-weight:700;color:#e5e7eb;margin:2px 0 6px}
+.mba-builtby{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;font-size:12.5px;font-weight:700;color:#e5e7eb;margin:4px auto 6px;text-align:center}
 .mba-builtby img.aswm{height:1.38em;vertical-align:-.34em;margin:0 -.35em 0 .08em}
-.mba-sec{padding:14px}.mba-bundle{padding:13px}.mba-btn{width:100%;box-sizing:border-box}.bt-hub-tab{width:100%;justify-content:center}}
+section.mba-sec,.bt section.mba-sec{padding:16px}.mba-head{padding:18px 16px;text-align:center}.mba-notice{padding:14px 16px;text-align:center;justify-content:center}.mba-notice div{justify-content:center;width:100%}.mba-card{padding:18px 16px}.mba-bundle{padding:18px 16px}.mba-btn{width:100%;box-sizing:border-box}.bt-hub-tab{width:100%;justify-content:center;box-sizing:border-box}}
 </style>"""
 
 def made_by_agentscout_html(total=189):
@@ -277,7 +278,7 @@ def made_by_agentscout_html(total=189):
         '<section id="made-by-agentscout" class="mba-sec" aria-labelledby="mba-h">'
         '<div class="mba-notice">'
         '<span>📦 <b>WHAT YOU ARE BUYING IN THIS SECTION:</b> Downloadable Pre-Trained AI Bot Packages (<code>SYSTEM.md</code> + Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code>) in <b>5 distinct neon colors</b> (<b>Neon Lime</b>, <b>Neon Gold</b>, <b>Neon Sunset Orange</b>, <b>Neon Crimson Red</b>, and <b>Neon Mint-Emerald</b>). <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
-        '<div style="display:flex;flex-wrap:wrap;gap:12px">'
+        '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;text-align:center">'
         '<a href="../bot-store/">Open Full Bot Store (/bot-store/) →</a>'
         '<a href="../sponsor.html#packages">Want to list or boost a tool in the directory instead? ($0 / $29 / $49 / $99) →</a>'
         '</div>'
@@ -287,7 +288,7 @@ def made_by_agentscout_html(total=189):
         '<h2 id="mba-h">Pre-Trained Pro Bots &amp; "Company-in-a-Box" Team Bundle built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h2>'
         f'<p>Built natively for <b>Grok Bot</b> first — where 24/7 scheduled cron routines, shared <code>/workspace/handoff/</code> computer state, Gmail/X connectors, and 4-bot <code>Work Chat</code> team handoffs run 100% turnkey out of the box — and because each ZIP ships standard <code>SYSTEM.md</code> prompts, <code>SKILL.md</code> playbooks, standalone Python 3 scripts, and <code>mcp.json</code>, they also drop right into <b>Claude Code, Cursor, and OpenAI Codex</b>. Buy any of the 4 autonomous bots individually (<code>$39</code>, <code>$59</code>, <code>$59</code>, <code>$69</code> — <code>$226</code> total if bought separately), or get all 4 together in the <b>$149 Company-in-a-Box Team Bundle (Save $77)</b>. Explore full file manifests on the <a href="../bot-store/" style="color:#fde047;font-weight:700;text-decoration:underline">dedicated AgentScout Bot Store</a>, or browse all <a href="#bt-featured" style="color:#a3e635;text-decoration:underline">{total} free community bot templates</a> right below.</p>'
         '</div>'
-        '<div style="display:flex;flex-wrap:wrap;gap:8px;flex:1 1 100%;max-width:100%;min-width:0;box-sizing:border-box">'
+        '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:100%;max-width:100%;min-width:0;box-sizing:border-box">'
         '<a class="mba-btn" href="../bot-store/" style="flex:1 1 auto;max-width:100%;box-sizing:border-box;background:linear-gradient(135deg,#10b981,#34d399);color:#031811;box-shadow:0 4px 14px rgba(16,185,129,.4)">🛒 Open Full Bot Store →</a>'
         '<a class="mba-btn" href="../videos/#guide-trained-bots" style="flex:1 1 auto;max-width:100%;box-sizing:border-box;background:rgba(132,204,22,.18);border:1.5px solid #a3e635;color:#ecfccb">🎬 Watch 60fps Bot Demo →</a>'
         '</div>'
