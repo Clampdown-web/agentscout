@@ -142,7 +142,7 @@ Catalog last checked: 2026-10-27 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-26 to 2026-10-27): 24
+- Tools added in the last 2 days (2026-10-27 to 2026-10-28): 13
 
 - [The Drive AI](https://agentscouthq.com/tools/the-drive-ai.html) (added 2026-10-27): AI file workspace with an agent signup flow: any agent can create its own The Drive AI account with one CLI command, save and organize files through an MCP server, then hand the workspace to a person via a claim link.
 - [Cardboard](https://agentscouthq.com/tools/cardboard.html) (added 2026-10-27): AI video editor for the browser and Mac that builds an editable first cut from a prompt and your footage, then lets you refine by chat or timeline; also edits video inside ChatGPT and Claude through its MCP plugin.
@@ -157,94 +157,8 @@ Catalog last checked: 2026-10-27 (Pacific)
 - [MangaTranslate](https://agentscouthq.com/tools/mangatranslate.html) (added 2026-10-27): AI manga, manhwa, comic, and PDF image translator by Ficory LLC featuring multi-language OCR text recognition across 100+ languages, automatic original text removal, background inpainting, smart typesetting, batch image processing, and interactive dialogue review.
 - [Miqayel AI](https://agentscouthq.com/tools/miqayel-ai.html) (added 2026-10-27): AI workspace for live web research, image creation and editing, and code generation with an interactive live Canvas preview, file analysis, computer use, and connected app automations in one interface.
 - [Desearch](https://agentscouthq.com/tools/desearch.html) (added 2026-10-27): Hosted Streamable HTTP MCP server (https://mcp.desearch.ai/mcp) and open-source adapter (MIT) giving Claude Code, Cursor, VS Code, and AI agents citable AI search, live web search, full-page extraction, and X (Twitter) post and profile search with your Desearch API key.
-- [Strands Box](https://agentscouthq.com/tools/strands-box.html) (added 2026-10-26): Open source sandbox from the Strands Agents team that pairs OS-level isolation with default-deny Dogwood policies over shell, Python, egress, and MCP calls.
-- [QAmcp](https://agentscouthq.com/tools/qamcp.html) (added 2026-10-26): Free open source MCP server tester that connects like an AI app and flags hidden instructions, leaked secrets, bad inputs, slow tools, and login problems.
-- [Diffinery](https://agentscouthq.com/tools/diffinery.html) (added 2026-10-26): Open source, agent-first GitHub alternative on your own Cloudflare account: git hosting, pull requests, Actions-compatible CI, and agents with their own accounts.
-- [Jentic One](https://agentscouthq.com/tools/jentic-one.html) (added 2026-10-26): Self-hosted broker that lets agents call real APIs without holding keys: it checks permissions, injects credentials at call time, and logs every execution.
-- [Pomerado](https://agentscouthq.com/tools/pomerado.html) (added 2026-10-26): YC-backed tool that turns any website, from legacy portals to consumer sites, into a reusable API/MCP tool so agents stop clicking through pages.
-- [Senzing MCP](https://agentscouthq.com/tools/senzing-mcp.html) (added 2026-10-26): Official Senzing MCP server that grounds AI assistants in Senzing docs and code to map data, deploy the engine, and resolve and link people and company records.
-- [StartLux Decision](https://agentscouthq.com/tools/startlux-decision.html) (added 2026-10-26): Open decision models (0.8B to 27B) that return a calibrated probability for every option in a single pass, with an inference engine and HTTP server.
-- [Termish](https://agentscouthq.com/tools/termish.html) (added 2026-10-26): Open source mobile SSH/Mosh terminal for Android and iOS with Herdr integration, SFTP files, remote screen, and native agent chat for Codex-style workflows.
-- [Pinloop](https://agentscouthq.com/tools/pinloop.html) (added 2026-10-26): Terminal job board for coding agents: searches millions of hourly-refreshed postings and has an LLM judge each one against your resume and preferences.
-- [Cloudflare cf CLI](https://agentscouthq.com/tools/cloudflare-cf-cli.html) (added 2026-10-26): Cloudflare's agentic CLI for the entire Cloudflare API, with JSON-first output, built-in command search for agents, and a typed cloudflare.config.ts.
-- [Open SEO MCP Skills](https://agentscouthq.com/tools/open-seo-mcp-skills.html) (added 2026-10-26): Free SEO MCP server plus MIT-licensed SEO and GEO skills for Claude: keyword research, rank tracking, audits, and AI visibility on your own Search Console data.
 
 
-<!-- cb:start -->
-## Community Grok Bot templates
-
-- [PR Reviewer](https://agentscouthq.com/bot-templates/#cb-pr-reviewer): Reviews pull requests for risk, missing tests, and thin context so review starts with the scary diff. Leads with what can break, what is untested.
-- [Agent Looper](https://agentscouthq.com/bot-templates/#cb-agent-looper): You say what to build and how to know it's done. It keeps a coding agent working on your computer until that check passes.
-- [Examiner](https://agentscouthq.com/bot-templates/#cb-examiner): Maintain a reliable timeline of important changes so you can reconstruct what happened when something later goes wrong. Isolated: talk only to you.
-- [AI Harness Assistant](https://agentscouthq.com/bot-templates/#cb-ai-harness-assistant): Keeps the AI coding tools you already have, like Codex, Grok Build, OpenCode, and Cursor, current on your Windows, Mac, and Linux machines.
-- [GreenBuild](https://agentscouthq.com/bot-templates/#cb-greenbuild): A senior QA and test-automation lead for testers and dev teams. It turns requirements into test plans and triages flaky tests.
-- [UI/UX/Designer. Product Engineer 1000x](https://agentscouthq.com/bot-templates/#cb-1000x-product-engineer): World-class product engineer for mobile and desktop web. Ships Convex + TanStack + React end to end. Simple, intuitive UI with real taste.
-- [illo](https://agentscouthq.com/bot-templates/#cb-illo): Editorial illustration bot that uses the illo skill (tmchow/illo-skill) to turn ideas, posts, and announcements into mascot-led images on Grok Bot.
-- [Design Expert](https://agentscouthq.com/bot-templates/#cb-design-expert): A product design lead that keeps AI-built UIs honest.
-- [Fabrication](https://agentscouthq.com/bot-templates/#cb-fabrication): Takes your parts from CAD design to a finished 3D print. It checks fit, flat bed faces and hole sizes, and shows previews.
-- [Churn retention manager](https://agentscouthq.com/bot-templates/#cb-churn-retention-manager): Catches churn before it lands, offers a real alternative, and reports why people left. For businesses saving cancellations and failed payments.
-- [Echo](https://agentscouthq.com/bot-templates/#cb-echo): Turns a customer call into slides from customer context. What we heard, next steps, project initiatives, or all of the above.
-- [Events](https://agentscouthq.com/bot-templates/#cb-events): A market and pop-up inventory desk for small sellers. It builds pack lists before a show and logs what sold afterward.
-- [Go Direct](https://agentscouthq.com/bot-templates/#cb-go-direct): Skip the press. Lulu helps founders tell their story straight to the 50 to 500 people who actually matter: investors, early customers, future hires.
-- [LinkedIn Desk](https://agentscouthq.com/bot-templates/#cb-linkedin-desk): LinkedIn Desk helps you keep network quality high without living in LinkedIn, by reviewing connection requests and LinkedIn invitations.
-- [Meeting to Money](https://agentscouthq.com/bot-templates/#cb-sumosign): Turns a sales meeting into a priced proposal, a signed go-ahead, an invoice, and payment chase. You approve every send. For freelancers and small agencies.
-- [DOGE (Department of Grok Efficiency)](https://agentscouthq.com/bot-templates/#cb-chief-of-staff-avid): A Grok Bot whose only job is to audit your other bots and routines, flag what to cut or merge, and find bottlenecks.
-- [Watchdog](https://agentscouthq.com/bot-templates/#cb-watchdog): On first install, scans email once as soon as Gmail is ready, then weekly for receipts, renewals, and trials.
-- [AIUsageBot](https://agentscouthq.com/bot-templates/#cb-ai-usage-meter): Interviews you about which AI subscriptions to track and where leftover lives (local CLIs, apps), then pings remaining % as it drops.
-- [SlowBooks Cutover](https://agentscouthq.com/bot-templates/#cb-slowbooks-cutover): Migrate one QuickBooks Desktop company into SlowBooks via Conductor (read-only), then prove Trial Balance and spot-check P&L.
-- [Newsletter Cleanup](https://agentscouthq.com/bot-templates/#cb-newsletter-cleanup): Audits Gmail newsletters (last 6 months), builds a three-bucket review.html, then unsubscribes only what you approve. Never deletes mail.
-- [Bot inbox](https://agentscouthq.com/bot-templates/#cb-bot-inbox): A weekday unread digest for Grok Bots. Lists bots and group chats with new activity, one line each. Type scan anytime.
-- [Dewey](https://agentscouthq.com/bot-templates/#cb-dewey): Watches Gmail and pings you when a message looks time-sensitive or needs a reply. Reads freely; never sends, replies, or trashes mail unless you ask.
-- [Harper](https://agentscouthq.com/bot-templates/#cb-harper): An executive assistant for email, calendar, and texting. It triages your inbox, schedules people, protects deep-work time.
-- [Backpack](https://agentscouthq.com/bot-templates/#cb-backpack): Reads school and activity emails you don't have time for and turns them into calendar events, reminders, and a weekly family plan.
-- [BFCM Email Planner](https://agentscouthq.com/bot-templates/#cb-bfcm-email-planner): Plans your full Black Friday / Cyber Monday email and SMS calendar: sends, segments, offer angles, subject lines.
-- [Be Happier](https://agentscouthq.com/bot-templates/#cb-be-happier): Looks at your email and calendar each week, then suggests 3 concrete things that would make you happier. Protects existing life, does not add new habits.
-- [Chef](https://agentscouthq.com/bot-templates/#cb-chef): A home-cooking helper that adapts to the country you live in: seasonal produce, local dishes, holidays, and grocers where you are.
-- [Interview Prep](https://agentscouthq.com/bot-templates/#cb-interview-prep): Interview prep for any topic. Pick the topic and level, then climb with examples, running code, and quizzes until it feels interview-ready.
-- [Canvas](https://agentscouthq.com/bot-templates/#cb-canvas): Keeps an eye on a student's Canvas LMS: daily reminders of what's due, overdue or missing, assignment briefs and rubrics, and pass-mark math.
-- [EG4 Monitor](https://agentscouthq.com/bot-templates/#cb-eg4-monitor): Watches your EG4 solar and battery system on EG4 Monitor Center and sends you a nightly report with estimated savings, all read-only.
-- [Human Copywriter](https://agentscouthq.com/bot-templates/#cb-human-copywriter): A human-voice rewrite desk for email, posts, blogs, DMs, landing-page bodies, and PR. American English by default.
-- [Index](https://agentscouthq.com/bot-templates/#cb-index-seo-aeo-teammate): An SEO and AEO program teammate. On first run it reads what you already connected, recommends a stack, and only asks for gaps.
-- [RedReplier](https://agentscouthq.com/bot-templates/#cb-redreplier): Watches Reddit, X, Hacker News and Bluesky for mentions of your product, competitors and buying-signal phrases.
-- [Scout](https://agentscouthq.com/bot-templates/#cb-scout-competitive-intelligence): A competitive intelligence agent for organic growth that watches rival sites, search rankings, and AI-answer visibility so real moves don’t get buried.
-- [socials](https://agentscouthq.com/bot-templates/#cb-socials-short-form-scout): Content scout for short-form creators: watches X and YouTube for filmable AI and tech stories and sends short, ready-to-film kits in chat.
-- [AI Resource Sift](https://agentscouthq.com/bot-templates/#cb-ai-resource-sift): For one AI topic, sweep papers, code, lectures, courses, Reddit, and official lab docs, then keep a large filtered stack.
-- [Research Bot](https://agentscouthq.com/bot-templates/#cb-research-bot): This bot exists to do deep research and provide verifiable answers with sources.
-- [Thoth](https://agentscouthq.com/bot-templates/#cb-thoth-researcher-archivist): Named for the Egyptian god of writing, knowledge, and the moon. He does deep research for whatever you are working on.
-- [2nd Brain](https://agentscouthq.com/bot-templates/#cb-2nd-brain): Compiles notes, PDFs, and X bookmarks into an inspectable markdown wiki (Karpathy Lattice: raw/ → wiki/).
-- [AI Radar](https://agentscouthq.com/bot-templates/#cb-ai-radar): Always-on AI news radar. Watches AI labs' official X accounts, their staff, researchers and well-known people, plus blogs and changelogs.
-- [StoriesBot](https://agentscouthq.com/bot-templates/#cb-storiesbot): Search 17 years of MacStories.net. Longform reviews, Setups, the Shortcuts Archive, and anything Federico or John published. Filter by time and author.
-- [Frontier Model Watch](https://agentscouthq.com/bot-templates/#cb-frontier-model-watch): Watches official releases from xAI, Anthropic, Google, OpenAI, Moonshot, Alibaba, Zhipu, DeepSeek, MiniMax, and Tencent. Runs at 07:30 EAT.
-- [Revenue Signal Radar](https://agentscouthq.com/bot-templates/#cb-revenue-signal-radar): Weekday revenue-action radar for HubSpot shops. Ranks expansion, stalled deals, and closed-lost revival with evidence and draft next steps.
-- [X Algo](https://agentscouthq.com/bot-templates/#cb-x-algo): Helps X posters decide when to quote, ship a new post, or wait. Reads the public For You ranking code and live post metrics.
-- [AEO Content Producer](https://agentscouthq.com/bot-templates/#cb-aeo-content-producer): Produces AEO refreshes and net-new articles from AI visibility data: briefs, drafts, and an editorial pass — then stops for your review.
-- [Gong Call Coach](https://agentscouthq.com/bot-templates/#cb-gong-call-coach): Reviews Gong call recordings and gives short, actionable coaching after the fact.
-- [Exec CoS Digest](https://agentscouthq.com/bot-templates/#cb-exec-cos-digest): Weekday chief-of-staff bot: morning calendar digest plus night-before external meeting prep. Drafts only — you approve anything irreversible.
-- [Engineer's Morning Brief](https://agentscouthq.com/bot-templates/#cb-engineer-s-morning-brief): Before standup each day, one short brief covering today's meetings, the PRs waiting on you, failing CI, and the messages that actually need you.
-- [Time Keeper](https://agentscouthq.com/bot-templates/#cb-time-keeper): A calendar assistant that sends a morning digest (one good quote, then the day) and a next-day briefing every night.
-- [Babel - live translator](https://agentscouthq.com/bot-templates/#cb-babel-live-translator): Live Zoom translator. Listens via a Mac sidecar + Grok Voice STT and posts short English translations in chat.
-- [Forge](https://agentscouthq.com/bot-templates/#cb-forge-template-foundry): One keyword in, a production-ready Grok Bot recipe out.
-- [loops](https://agentscouthq.com/bot-templates/#cb-loops): An engineering outer loop that sits above your coding agents.
-- [Grimoire](https://agentscouthq.com/bot-templates/#cb-grimoire-s-tome-the-grim-council): A 50-skill coding wizard with a 20-member advisory council.
-- [Apps](https://agentscouthq.com/bot-templates/#cb-apps): Describe an app in one sentence and get a running build back.
-- [Sable: Game Art](https://agentscouthq.com/bot-templates/#cb-sable-game-art): Generates 2D game art and sprite sheets in a style you pick.
-- [George](https://agentscouthq.com/bot-templates/#cb-george): Turns one brief into a full set of on-brand creative assets.
-- [Ralph](https://agentscouthq.com/bot-templates/#cb-ralph): Rebuilds a resume into a live portfolio of clickable work demos.
-- [DeckLens](https://agentscouthq.com/bot-templates/#cb-decklens-pitch-deck-analyzer): Interviews you to build a review rubric, then scores pitch decks against it.
-- [PG](https://agentscouthq.com/bot-templates/#cb-pg-prospecting): Researches accounts and mines podcasts for a real outreach hook.
-- [AE deal bot](https://agentscouthq.com/bot-templates/#cb-ae-deal-bot): Grades your open opportunities against MEDDPICC and names the next move to make.
-- [News Scout](https://agentscouthq.com/bot-templates/#cb-news-scout): A weekday morning news digest in your own timezone.
-- [Dealer](https://agentscouthq.com/bot-templates/#cb-dealer): Turns a repository into a two-sided summary card of its stack from .faf only.
-- [Exec Daily Ops](https://agentscouthq.com/bot-templates/#cb-exec-daily-ops): An engineering-morning brief, with draft replies left for you to send.
-- [Quill](https://agentscouthq.com/bot-templates/#cb-quill): A revision pass for your notes: voice punch-up, continuity check or depth read.
-- [Sundial](https://agentscouthq.com/bot-templates/#cb-sundial): Calendar assistant for meetings, deadlines, and focus blocks; invites only when you ask.
-- [Clipper](https://agentscouthq.com/bot-templates/#cb-clipper): Turns videos into short clips and captioned GIFs, picking the joke itself.
-- [Best Video Editor](https://agentscouthq.com/bot-templates/#cb-best-video-editor): Plans the whole edit from your footage and returns a review-ready cut.
-- [Lennybot](https://agentscouthq.com/bot-templates/#cb-lennybot): Answers product and growth questions from Lenny Rachitsky's own archive.
-- [Webby](https://agentscouthq.com/bot-templates/#cb-webby): A website admin that rebuilds, dashboards and keeps the newsletter going.
-- [Explainer Video bot](https://agentscouthq.com/bot-templates/#cb-explainer-video-bot): Makes upload-ready, data-driven explainer videos with verified numbers, AI voice-over, kinetic motion graphics and real footage.
-- [Pain in the Task](https://agentscouthq.com/bot-templates/#cb-pain-in-the-task): Finds the dull work eating your week and gets it handed off.
-<!-- cb:end -->
 
 <!-- pages:start -->
 
@@ -595,6 +509,8 @@ Catalog last checked: 2026-10-27 (Pacific)
 
 ## AI bot templates and more
 
+- [How-To Video Guides & Pro Tips Hub: 8 playable 60fps walkthroughs with copyable MCP & CLI snippets](https://agentscouthq.com/videos/)
+- [Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle ($0 Free Starter Pack, $29 Ops / Monitor, $49 SEO / AEO Auditor, $49 Competitive Intelligence Analyst, $99 4-Bot Team Bundle)](https://agentscouthq.com/bot-templates/#made-by-agentscout)
 - [AI bot templates, plugins and skills: ready-made Grok Bot, Claude, Codex and Cursor templates](https://agentscouthq.com/bot-templates/)
 - [1Password](https://agentscouthq.com/bot-templates/1password.html)
 - [AI Search Visibility](https://agentscouthq.com/bot-templates/ai-search-visibility.html)
@@ -655,3 +571,79 @@ Catalog last checked: 2026-10-27 (Pacific)
 - [“Ranked on AgentScout” badges](https://agentscouthq.com/leaderboard/badges.html)
 
 <!-- pages:end -->
+
+<!-- cb:start -->
+## Community Grok Bot templates
+
+- [PR Reviewer](https://agentscouthq.com/bot-templates/#cb-pr-reviewer): Reviews pull requests for risk, missing tests, and thin context so review starts with the scary diff. Leads with what can break, what is untested.
+- [Agent Looper](https://agentscouthq.com/bot-templates/#cb-agent-looper): You say what to build and how to know it's done. It keeps a coding agent working on your computer until that check passes.
+- [Examiner](https://agentscouthq.com/bot-templates/#cb-examiner): Maintain a reliable timeline of important changes so you can reconstruct what happened when something later goes wrong. Isolated: talk only to you.
+- [AI Harness Assistant](https://agentscouthq.com/bot-templates/#cb-ai-harness-assistant): Keeps the AI coding tools you already have, like Codex, Grok Build, OpenCode, and Cursor, current on your Windows, Mac, and Linux machines.
+- [GreenBuild](https://agentscouthq.com/bot-templates/#cb-greenbuild): A senior QA and test-automation lead for testers and dev teams. It turns requirements into test plans and triages flaky tests.
+- [UI/UX/Designer. Product Engineer 1000x](https://agentscouthq.com/bot-templates/#cb-1000x-product-engineer): World-class product engineer for mobile and desktop web. Ships Convex + TanStack + React end to end. Simple, intuitive UI with real taste.
+- [illo](https://agentscouthq.com/bot-templates/#cb-illo): Editorial illustration bot that uses the illo skill (tmchow/illo-skill) to turn ideas, posts, and announcements into mascot-led images on Grok Bot.
+- [Design Expert](https://agentscouthq.com/bot-templates/#cb-design-expert): A product design lead that keeps AI-built UIs honest.
+- [Fabrication](https://agentscouthq.com/bot-templates/#cb-fabrication): Takes your parts from CAD design to a finished 3D print. It checks fit, flat bed faces and hole sizes, and shows previews.
+- [Churn retention manager](https://agentscouthq.com/bot-templates/#cb-churn-retention-manager): Catches churn before it lands, offers a real alternative, and reports why people left. For businesses saving cancellations and failed payments.
+- [Echo](https://agentscouthq.com/bot-templates/#cb-echo): Turns a customer call into slides from customer context. What we heard, next steps, project initiatives, or all of the above.
+- [Events](https://agentscouthq.com/bot-templates/#cb-events): A market and pop-up inventory desk for small sellers. It builds pack lists before a show and logs what sold afterward.
+- [Go Direct](https://agentscouthq.com/bot-templates/#cb-go-direct): Skip the press. Lulu helps founders tell their story straight to the 50 to 500 people who actually matter: investors, early customers, future hires.
+- [LinkedIn Desk](https://agentscouthq.com/bot-templates/#cb-linkedin-desk): LinkedIn Desk helps you keep network quality high without living in LinkedIn, by reviewing connection requests and LinkedIn invitations.
+- [Meeting to Money](https://agentscouthq.com/bot-templates/#cb-sumosign): Turns a sales meeting into a priced proposal, a signed go-ahead, an invoice, and payment chase. You approve every send. For freelancers and small agencies.
+- [DOGE (Department of Grok Efficiency)](https://agentscouthq.com/bot-templates/#cb-chief-of-staff-avid): A Grok Bot whose only job is to audit your other bots and routines, flag what to cut or merge, and find bottlenecks.
+- [Watchdog](https://agentscouthq.com/bot-templates/#cb-watchdog): On first install, scans email once as soon as Gmail is ready, then weekly for receipts, renewals, and trials.
+- [AIUsageBot](https://agentscouthq.com/bot-templates/#cb-ai-usage-meter): Interviews you about which AI subscriptions to track and where leftover lives (local CLIs, apps), then pings remaining % as it drops.
+- [SlowBooks Cutover](https://agentscouthq.com/bot-templates/#cb-slowbooks-cutover): Migrate one QuickBooks Desktop company into SlowBooks via Conductor (read-only), then prove Trial Balance and spot-check P&L.
+- [Newsletter Cleanup](https://agentscouthq.com/bot-templates/#cb-newsletter-cleanup): Audits Gmail newsletters (last 6 months), builds a three-bucket review.html, then unsubscribes only what you approve. Never deletes mail.
+- [Bot inbox](https://agentscouthq.com/bot-templates/#cb-bot-inbox): A weekday unread digest for Grok Bots. Lists bots and group chats with new activity, one line each. Type scan anytime.
+- [Dewey](https://agentscouthq.com/bot-templates/#cb-dewey): Watches Gmail and pings you when a message looks time-sensitive or needs a reply. Reads freely; never sends, replies, or trashes mail unless you ask.
+- [Harper](https://agentscouthq.com/bot-templates/#cb-harper): An executive assistant for email, calendar, and texting. It triages your inbox, schedules people, protects deep-work time.
+- [Backpack](https://agentscouthq.com/bot-templates/#cb-backpack): Reads school and activity emails you don't have time for and turns them into calendar events, reminders, and a weekly family plan.
+- [BFCM Email Planner](https://agentscouthq.com/bot-templates/#cb-bfcm-email-planner): Plans your full Black Friday / Cyber Monday email and SMS calendar: sends, segments, offer angles, subject lines.
+- [Be Happier](https://agentscouthq.com/bot-templates/#cb-be-happier): Looks at your email and calendar each week, then suggests 3 concrete things that would make you happier. Protects existing life, does not add new habits.
+- [Chef](https://agentscouthq.com/bot-templates/#cb-chef): A home-cooking helper that adapts to the country you live in: seasonal produce, local dishes, holidays, and grocers where you are.
+- [Interview Prep](https://agentscouthq.com/bot-templates/#cb-interview-prep): Interview prep for any topic. Pick the topic and level, then climb with examples, running code, and quizzes until it feels interview-ready.
+- [Canvas](https://agentscouthq.com/bot-templates/#cb-canvas): Keeps an eye on a student's Canvas LMS: daily reminders of what's due, overdue or missing, assignment briefs and rubrics, and pass-mark math.
+- [EG4 Monitor](https://agentscouthq.com/bot-templates/#cb-eg4-monitor): Watches your EG4 solar and battery system on EG4 Monitor Center and sends you a nightly report with estimated savings, all read-only.
+- [Human Copywriter](https://agentscouthq.com/bot-templates/#cb-human-copywriter): A human-voice rewrite desk for email, posts, blogs, DMs, landing-page bodies, and PR. American English by default.
+- [Index](https://agentscouthq.com/bot-templates/#cb-index-seo-aeo-teammate): An SEO and AEO program teammate. On first run it reads what you already connected, recommends a stack, and only asks for gaps.
+- [RedReplier](https://agentscouthq.com/bot-templates/#cb-redreplier): Watches Reddit, X, Hacker News and Bluesky for mentions of your product, competitors and buying-signal phrases.
+- [Scout](https://agentscouthq.com/bot-templates/#cb-scout-competitive-intelligence): A competitive intelligence agent for organic growth that watches rival sites, search rankings, and AI-answer visibility so real moves don’t get buried.
+- [socials](https://agentscouthq.com/bot-templates/#cb-socials-short-form-scout): Content scout for short-form creators: watches X and YouTube for filmable AI and tech stories and sends short, ready-to-film kits in chat.
+- [AI Resource Sift](https://agentscouthq.com/bot-templates/#cb-ai-resource-sift): For one AI topic, sweep papers, code, lectures, courses, Reddit, and official lab docs, then keep a large filtered stack.
+- [Research Bot](https://agentscouthq.com/bot-templates/#cb-research-bot): This bot exists to do deep research and provide verifiable answers with sources.
+- [Thoth](https://agentscouthq.com/bot-templates/#cb-thoth-researcher-archivist): Named for the Egyptian god of writing, knowledge, and the moon. He does deep research for whatever you are working on.
+- [2nd Brain](https://agentscouthq.com/bot-templates/#cb-2nd-brain): Compiles notes, PDFs, and X bookmarks into an inspectable markdown wiki (Karpathy Lattice: raw/ → wiki/).
+- [AI Radar](https://agentscouthq.com/bot-templates/#cb-ai-radar): Always-on AI news radar. Watches AI labs' official X accounts, their staff, researchers and well-known people, plus blogs and changelogs.
+- [StoriesBot](https://agentscouthq.com/bot-templates/#cb-storiesbot): Search 17 years of MacStories.net. Longform reviews, Setups, the Shortcuts Archive, and anything Federico or John published. Filter by time and author.
+- [Frontier Model Watch](https://agentscouthq.com/bot-templates/#cb-frontier-model-watch): Watches official releases from xAI, Anthropic, Google, OpenAI, Moonshot, Alibaba, Zhipu, DeepSeek, MiniMax, and Tencent. Runs at 07:30 EAT.
+- [Revenue Signal Radar](https://agentscouthq.com/bot-templates/#cb-revenue-signal-radar): Weekday revenue-action radar for HubSpot shops. Ranks expansion, stalled deals, and closed-lost revival with evidence and draft next steps.
+- [X Algo](https://agentscouthq.com/bot-templates/#cb-x-algo): Helps X posters decide when to quote, ship a new post, or wait. Reads the public For You ranking code and live post metrics.
+- [AEO Content Producer](https://agentscouthq.com/bot-templates/#cb-aeo-content-producer): Produces AEO refreshes and net-new articles from AI visibility data: briefs, drafts, and an editorial pass — then stops for your review.
+- [Gong Call Coach](https://agentscouthq.com/bot-templates/#cb-gong-call-coach): Reviews Gong call recordings and gives short, actionable coaching after the fact.
+- [Exec CoS Digest](https://agentscouthq.com/bot-templates/#cb-exec-cos-digest): Weekday chief-of-staff bot: morning calendar digest plus night-before external meeting prep. Drafts only — you approve anything irreversible.
+- [Engineer's Morning Brief](https://agentscouthq.com/bot-templates/#cb-engineer-s-morning-brief): Before standup each day, one short brief covering today's meetings, the PRs waiting on you, failing CI, and the messages that actually need you.
+- [Time Keeper](https://agentscouthq.com/bot-templates/#cb-time-keeper): A calendar assistant that sends a morning digest (one good quote, then the day) and a next-day briefing every night.
+- [Babel - live translator](https://agentscouthq.com/bot-templates/#cb-babel-live-translator): Live Zoom translator. Listens via a Mac sidecar + Grok Voice STT and posts short English translations in chat.
+- [Forge](https://agentscouthq.com/bot-templates/#cb-forge-template-foundry): One keyword in, a production-ready Grok Bot recipe out.
+- [loops](https://agentscouthq.com/bot-templates/#cb-loops): An engineering outer loop that sits above your coding agents.
+- [Grimoire](https://agentscouthq.com/bot-templates/#cb-grimoire-s-tome-the-grim-council): A 50-skill coding wizard with a 20-member advisory council.
+- [Apps](https://agentscouthq.com/bot-templates/#cb-apps): Describe an app in one sentence and get a running build back.
+- [Sable: Game Art](https://agentscouthq.com/bot-templates/#cb-sable-game-art): Generates 2D game art and sprite sheets in a style you pick.
+- [George](https://agentscouthq.com/bot-templates/#cb-george): Turns one brief into a full set of on-brand creative assets.
+- [Ralph](https://agentscouthq.com/bot-templates/#cb-ralph): Rebuilds a resume into a live portfolio of clickable work demos.
+- [DeckLens](https://agentscouthq.com/bot-templates/#cb-decklens-pitch-deck-analyzer): Interviews you to build a review rubric, then scores pitch decks against it.
+- [PG](https://agentscouthq.com/bot-templates/#cb-pg-prospecting): Researches accounts and mines podcasts for a real outreach hook.
+- [AE deal bot](https://agentscouthq.com/bot-templates/#cb-ae-deal-bot): Grades your open opportunities against MEDDPICC and names the next move to make.
+- [News Scout](https://agentscouthq.com/bot-templates/#cb-news-scout): A weekday morning news digest in your own timezone.
+- [Dealer](https://agentscouthq.com/bot-templates/#cb-dealer): Turns a repository into a two-sided summary card of its stack from .faf only.
+- [Exec Daily Ops](https://agentscouthq.com/bot-templates/#cb-exec-daily-ops): An engineering-morning brief, with draft replies left for you to send.
+- [Quill](https://agentscouthq.com/bot-templates/#cb-quill): A revision pass for your notes: voice punch-up, continuity check or depth read.
+- [Sundial](https://agentscouthq.com/bot-templates/#cb-sundial): Calendar assistant for meetings, deadlines, and focus blocks; invites only when you ask.
+- [Clipper](https://agentscouthq.com/bot-templates/#cb-clipper): Turns videos into short clips and captioned GIFs, picking the joke itself.
+- [Best Video Editor](https://agentscouthq.com/bot-templates/#cb-best-video-editor): Plans the whole edit from your footage and returns a review-ready cut.
+- [Lennybot](https://agentscouthq.com/bot-templates/#cb-lennybot): Answers product and growth questions from Lenny Rachitsky's own archive.
+- [Webby](https://agentscouthq.com/bot-templates/#cb-webby): A website admin that rebuilds, dashboards and keeps the newsletter going.
+- [Explainer Video bot](https://agentscouthq.com/bot-templates/#cb-explainer-video-bot): Makes upload-ready, data-driven explainer videos with verified numbers, AI voice-over, kinetic motion graphics and real footage.
+- [Pain in the Task](https://agentscouthq.com/bot-templates/#cb-pain-in-the-task): Finds the dull work eating your week and gets it handed off.
+<!-- cb:end -->
