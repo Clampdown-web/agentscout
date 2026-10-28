@@ -147,7 +147,7 @@ def mcp_links():
 
 
 def sync_animations(t=None):
-    import json, os, re, subprocess, sys, datetime
+    import json, os, re, subprocess, sys, datetime, hashlib, glob
     if t is None:
         t = json.load(open("tools.json", encoding="utf-8"))
     n_tools = len(t)
@@ -157,22 +157,29 @@ def sync_animations(t=None):
     n_ft = (len([f for f in os.listdir("free-tools") if f.endswith(".html") and f != "index.html"]) + (1 if os.path.exists("generate.html") else 0)) if os.path.isdir("free-tools") else 19
     state_file = "data/anim_state.json"
     script = "/workspace/notes/x-drafts/scripts/make_animated_infographics.py"
-    script_mtime = int(os.path.getmtime(script)) if os.path.exists(script) else 0
-    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "bot_templates": n_bt, "free_tools": n_ft, "date": datetime.date.today().isoformat(), "script_mtime": script_mtime}
     old_state = {}
     if os.path.exists(state_file):
         try:
             old_state = json.load(open(state_file, encoding="utf-8"))
         except Exception:
             old_state = {}
-    script = "/workspace/notes/x-drafts/scripts/make_animated_infographics.py"
+    # A checkout without the renderer must not wipe the stored mtime, or the next
+    # machine that has the script will re-render and overwrite shipped MP4s.
+    script_mtime = int(os.path.getmtime(script)) if os.path.exists(script) else old_state.get("script_mtime", 0)
+    cur_state = {"tools": n_tools, "mcp": n_mcp, "pages": n_pages, "bot_templates": n_bt, "free_tools": n_ft, "date": datetime.date.today().isoformat(), "script_mtime": script_mtime}
     if old_state != cur_state and os.path.exists(script):
         print(f"Re-rendering site animations for live counts: {cur_state}...")
         subprocess.run([sys.executable, script, "--site-dir", os.getcwd()], check=True)
         json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
     elif old_state != cur_state:
         json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
-    ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}-{n_bt}"
+    anim_digest = hashlib.sha256()
+    for mp4 in sorted(glob.glob("assets/animations/*.mp4")):
+        with open(mp4, "rb") as fh:
+            anim_digest.update(fh.read(64 * 1024))
+        anim_digest.update(str(os.path.getsize(mp4)).encode("ascii"))
+    anim_hash = anim_digest.hexdigest()[:6]
+    ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}-{n_bt}-{anim_hash}"
     pages = [
         "index.html", "mcp/index.html", "mcp/connect.html", "sponsor.html",
         "submit.html", "compare/index.html", "tasks/index.html",
