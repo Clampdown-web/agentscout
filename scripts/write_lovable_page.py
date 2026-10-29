@@ -54,8 +54,8 @@ html = X.shell(
 )
 v0_html = Path("tools/v0.html").read_text(encoding="utf-8")
 import re as _re
-html = _re.sub(r"<nav>.*?</nav>", _re.search(r"<nav>.*?</nav>", v0_html, _re.S).group(0), html, count=1, flags=_re.S)
-html = _re.sub(r"<footer>.*?</footer>", _re.search(r"<footer>.*?</footer>", v0_html, _re.S).group(0), html, count=1, flags=_re.S)
+html = _re.sub(r"<nav\b[^>]*>.*?</nav>", lambda _m: _re.search(r"<nav\b[^>]*>.*?</nav>", v0_html, _re.S).group(0), html, count=1, flags=_re.S)
+html = _re.sub(r"<footer\b[^>]*>.*?</footer>", lambda _m: _re.search(r"<footer\b[^>]*>.*?</footer>", v0_html, _re.S).group(0), html, count=1, flags=_re.S)
 Path("tools/lovable.html").write_text(html, encoding="utf-8")
 sm = Path("sitemap.xml").read_text(encoding="utf-8")
 loc = "https://agentscouthq.com/tools/lovable.html"
