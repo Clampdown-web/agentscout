@@ -165,7 +165,7 @@ def write_pack_pages() -> list[str]:
 {note}
 </section>
 <section class="pack-pillars" aria-label="Pack highlights">
-<article><h2>Functionality &amp; Trained Judgment</h2><p>Five written heuristics, one skill, and {len(agent["routines"])} routines decide the draft before anyone sends it.</p></article>
+<article><h2>Functionality &amp; Trained Judgment</h2><p>Six written heuristics, one skill, and {len(agent["routines"])} routines decide the draft before anyone sends it.</p></article>
 <article><h2>Security &amp; Privacy by Design</h2><p>100% Python standard library, zero network calls, and no telemetry. Files stay on the machine that runs them.</p></article>
 <article><h2>5-Minute Turnkey Setup</h2><p>Run <code>python3 setup_workspace.py</code>, add your company name and domain, then dry-run <code>{X.e(agent["script"])}</code>.</p></article>
 <article><h2>Works Across All Major AI Coding &amp; Agent Hosts</h2><p>The same ZIP loads in Grok Bot, Claude Code, Cursor, Codex, and Lovable.</p></article>

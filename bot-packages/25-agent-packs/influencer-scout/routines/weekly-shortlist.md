@@ -1,24 +1,16 @@
----
-id: weekly-shortlist
-title: "Weekly creator shortlist"
-cron: "0 10 * * 3"
-timezone: "{{YOUR_TIMEZONE}}"
-requires_approval: true
-script: "scripts/calculate_creator_roi.py"
-skill: "skills/creator-roi/SKILL.md"
----
-
 # Routine: Weekly creator shortlist (`weekly-shortlist`)
 
-- **Schedule:** `0 10 * * 3` (`{{YOUR_TIMEZONE}}`)
-- **Role:** AgentScout Influencer Scout Agent for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`)
-- **Helper CLI:** `python3 scripts/calculate_creator_roi.py --self-test`
-- **Approval Gate:** Drafts only. Never send, post, spend, delete, or file without explicit approval from **{{YOUR_OWNER_NAME}}**.
+- **Agent:** AgentScout Influencer Scout Agent (`influencer-scout`)
+- **Company:** {{YOUR_COMPANY}} (`{{YOUR_DOMAIN}}`)
+- **Schedule (cron):** `0 10 * * 3` (`{{YOUR_TIMEZONE}}`)
+- **Skill:** `skills/creator-roi/SKILL.md`
+- **Helper Script:** `scripts/calculate_creator_roi.py`
+- **Approval Gate:** Mandatory owner review by {{YOUR_OWNER_NAME}} before any external action.
 
 ## Instructions
 
 Score the creator sheet for {{YOUR_COMPANY}}. Do not email creators.
 
-1. Read `context/business-profile.md` and `skills/creator-roi/SKILL.md`.
-2. Run `python3 scripts/calculate_creator_roi.py --dry-run` (or pass `--input` with the latest export for **{{YOUR_COMPANY}}**).
-3. Prepare the structured markdown report and action queue for **{{YOUR_OWNER_NAME}}**.
+1. Load `context/business-profile.md` and `skills/creator-roi/SKILL.md`.
+2. Run `python3 scripts/calculate_creator_roi.py --dry-run` (or pass the latest input file for {{YOUR_COMPANY}}).
+3. Draft the output and hold for {{YOUR_OWNER_NAME}} approval. Never send, post, spend, delete, or file automatically.

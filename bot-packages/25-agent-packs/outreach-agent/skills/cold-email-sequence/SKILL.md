@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/lint_outreach_sequence.py --help
-python3 scripts/lint_outreach_sequence.py --self-test
 python3 scripts/lint_outreach_sequence.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `reply-triage` at `0 13,17 * * 1-5`: Reply intent pass
 - `weekly-deliverability-lint` at `0 10 * * 1`: Weekly sequence & spam-word lint
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

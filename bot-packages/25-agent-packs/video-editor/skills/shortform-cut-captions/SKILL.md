@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/format_captions_and_cuts.py --help
-python3 scripts/format_captions_and_cuts.py --self-test
 python3 scripts/format_captions_and_cuts.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `tuesday-hook-storyboard` at `0 11 * * 2`: Tuesday 3-second hook storyboard
 - `friday-repurpose-cuts` at `0 14 * * 5`: Friday long-to-short cut batch
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

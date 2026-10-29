@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/generate_30day_calendar.py --help
-python3 scripts/generate_30day_calendar.py --self-test
 python3 scripts/generate_30day_calendar.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `quarterly-refresh` at `0 10 1 1,4,7,10 *`: Decay and refresh list
 - `weekly-repurpose-briefs` at `0 10 * * 1`: Weekly pillar brief & 1-to-4 repurpose plan
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

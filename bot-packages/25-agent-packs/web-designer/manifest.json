@@ -3,19 +3,17 @@
   "slug": "web-designer",
   "tagline": "Responsive landing pages, mobile UX audits & dark/light CSS polish",
   "version": "1.0.0",
+  "role_title": "Web Designer",
+  "card_title": "Web Designer Agent",
+  "brand_title": "AgentScout Web Designer Agent",
+  "department": "Product & Data",
   "skill": "skills/landing-page-ux-check/SKILL.md",
-  "skill_slug": "landing-page-ux-check",
   "script": "scripts/check_landing_page_ux.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Pick a type and a color on purpose. A generic purple gradient is not a brand.",
-    "The first screen holds one promise, one proof, and one button.",
-    "360px and 390px must not scroll sideways.",
-    "Text contrast aims for 4.5 against its background.",
-    "Fixed pixel widths wider than the phone are a bug, not a look.",
-    "Empty image alts fail the page even if the picture is pretty."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "page-check",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

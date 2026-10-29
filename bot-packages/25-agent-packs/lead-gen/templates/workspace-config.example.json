@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "lead-gen",
-    "name": "Lead Gen Agent",
-    "brand_title": "AgentScout Lead Gen Agent",
-    "department": "Sales & Outreach",
-    "skill": "skills/icp-lead-scoring/SKILL.md",
-    "script": "scripts/score_leads_pipeline.py",
-    "routines": [
-      "daily-lead-batch",
-      "weekly-icp-refresh",
-      "midweek-signal-sweep"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "lead-gen",
+  "agent_title": "AgentScout Lead Gen Agent",
+  "skill": "skills/icp-lead-scoring/SKILL.md",
+  "script": "scripts/score_leads_pipeline.py",
+  "routines_count": 3
 }

@@ -1,4 +1,8 @@
-# AgentScout Accountant Agent routines ({{YOUR_TIMEZONE}})
-0 8 * * 1 python3 scripts/reconcile_ledger.py --dry-run # weekly-reconcile: Weekly ledger reconcile
-0 9 1 * * python3 scripts/reconcile_ledger.py --dry-run # month-close: Month-end close pack
-0 9 1 1,4,7,10 * python3 scripts/reconcile_ledger.py --dry-run # quarterly-estimate: Quarterly estimate reminder
+# Scheduled routines for AgentScout Accountant Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly ledger reconcile (weekly-reconcile)
+0 8 * * 1 python3 scripts/reconcile_ledger.py --dry-run  # routine: weekly-reconcile
+# Month-end close pack (month-close)
+0 9 1 * * python3 scripts/reconcile_ledger.py --dry-run  # routine: month-close
+# Quarterly estimate reminder (quarterly-estimate)
+0 9 1 1,4,7,10 * python3 scripts/reconcile_ledger.py --dry-run  # routine: quarterly-estimate

@@ -1,4 +1,8 @@
-# AgentScout Appointment Setter Agent routines ({{YOUR_TIMEZONE}})
-0 8 * * * python3 scripts/build_call_briefing.py --dry-run # reminder-sweep: Reminder and no-show sweep
-0 9,14 * * 1-5 python3 scripts/build_call_briefing.py --dry-run # weekday-inbound-slots: Inbound lead qualification & slot prep
-0 16 * * 5 python3 scripts/build_call_briefing.py --dry-run # friday-booking-conversion-review: Weekly show-rate & briefing review
+# Scheduled routines for AgentScout Appointment Setter Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Reminder and no-show sweep (reminder-sweep)
+0 8 * * * python3 scripts/build_call_briefing.py --dry-run  # routine: reminder-sweep
+# Inbound lead qualification & slot prep (weekday-inbound-slots)
+0 9,14 * * 1-5 python3 scripts/build_call_briefing.py --dry-run  # routine: weekday-inbound-slots
+# Weekly show-rate & briefing review (friday-booking-conversion-review)
+0 16 * * 5 python3 scripts/build_call_briefing.py --dry-run  # routine: friday-booking-conversion-review

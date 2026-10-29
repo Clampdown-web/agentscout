@@ -2,11 +2,11 @@
 
 This package is the **Outreach** agent for {{YOUR_COMPANY}}.
 
-- Read `SYSTEM.md` (or `system-prompt.md`) for the role and the guardrails.
+- Read `SYSTEM.md` for the role and the guardrails.
 - Read `skills/cold-email-sequence/SKILL.md` for the procedure.
 - Read `context/business-profile.md` for the offer, the voice, and the constraints.
-- Run `python3 scripts/lint_outreach_sequence.py --self-test` before you trust a new input file.
-- Run `python3 scripts/setup_workspace.py --help` to replace placeholders.
+- Run `python3 scripts/lint_outreach_sequence.py --dry-run` before you trust a new input file.
+- Run `python3 setup_workspace.py --help` to replace placeholders.
 
 Approval gate: do not send, post, spend, delete, file, or change a live price unless {{YOUR_OWNER_NAME}} has approved that exact draft.
 

@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Translator Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "locale-parity",
@@ -10,8 +9,7 @@
       "title": "Weekly locale parity",
       "prompt": "Verify i18n keys for {{YOUR_COMPANY}}. Report mismatches. Do not publish strings. Follow skills/i18n-key-parity/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/verify_i18n_keys.py",
-      "markdown": "routines/locale-parity.md"
+      "script": "scripts/verify_i18n_keys.py"
     },
     {
       "id": "wednesday-placeholder-glossary-check",
@@ -19,8 +17,7 @@
       "title": "Midweek placeholder & glossary audit",
       "prompt": "Run scripts/verify_i18n_keys.py across active locale JSON bundles for {{YOUR_COMPANY}} to catch missing keys or broken {{tokens}}. Follow skills/i18n-key-parity/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/verify_i18n_keys.py",
-      "markdown": "routines/wednesday-placeholder-glossary-check.md"
+      "script": "scripts/verify_i18n_keys.py"
     },
     {
       "id": "friday-overflow-legal-flag",
@@ -28,8 +25,7 @@
       "title": "Friday UI length & legal/pricing string review",
       "prompt": "Flag translated strings that exceed UI button length budgets or require human review for pricing/legal terms at {{YOUR_COMPANY}}. Follow skills/i18n-key-parity/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/verify_i18n_keys.py",
-      "markdown": "routines/friday-overflow-legal-flag.md"
+      "script": "scripts/verify_i18n_keys.py"
     }
   ]
 }

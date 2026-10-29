@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Community Manager Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-community",
@@ -10,8 +9,7 @@
       "title": "Daily community draft",
       "prompt": "Score health and draft one prompt for {{YOUR_COMPANY}}. Do not post or ban. Follow skills/community-health/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/community_health_score.py",
-      "markdown": "routines/daily-community.md"
+      "script": "scripts/community_health_score.py"
     },
     {
       "id": "weekly-digest",
@@ -19,8 +17,7 @@
       "title": "Weekly engagement digest",
       "prompt": "Summarize active rate, quiet new members, and FAQ gaps. Follow skills/community-health/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/community_health_score.py",
-      "markdown": "routines/weekly-digest.md"
+      "script": "scripts/community_health_score.py"
     },
     {
       "id": "monday-new-member-onboarding",
@@ -28,8 +25,7 @@
       "title": "Monday new-member welcome & FAQ check",
       "prompt": "Run scripts/community_health_score.py to list quiet new members and repeated questions that need a new FAQ entry for {{YOUR_COMPANY}}. Follow skills/community-health/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/community_health_score.py",
-      "markdown": "routines/monday-new-member-onboarding.md"
+      "script": "scripts/community_health_score.py"
     }
   ]
 }

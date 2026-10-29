@@ -1,4 +1,8 @@
-# AgentScout Influencer Scout Agent routines ({{YOUR_TIMEZONE}})
-0 10 * * 3 python3 scripts/calculate_creator_roi.py --dry-run # weekly-shortlist: Weekly creator shortlist
-0 10 * * 1 python3 scripts/calculate_creator_roi.py --dry-run # monday-engagement-vetting: Monday engagement & CPM anomaly check
-0 14 * * 5 python3 scripts/calculate_creator_roi.py --dry-run # friday-deal-roi-tracker: Friday creator brief & forecasted ROI check
+# Scheduled routines for AgentScout Influencer Scout Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly creator shortlist (weekly-shortlist)
+0 10 * * 3 python3 scripts/calculate_creator_roi.py --dry-run  # routine: weekly-shortlist
+# Monday engagement & CPM anomaly check (monday-engagement-vetting)
+0 10 * * 1 python3 scripts/calculate_creator_roi.py --dry-run  # routine: monday-engagement-vetting
+# Friday creator brief & forecasted ROI check (friday-deal-roi-tracker)
+0 14 * * 5 python3 scripts/calculate_creator_roi.py --dry-run  # routine: friday-deal-roi-tracker

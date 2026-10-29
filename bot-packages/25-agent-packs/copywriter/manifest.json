@@ -3,19 +3,17 @@
   "slug": "copywriter",
   "tagline": "Conversion-focused landing pages, sales emails & social hooks",
   "version": "1.0.0",
+  "role_title": "Copywriter",
+  "card_title": "Copywriter Agent",
+  "brand_title": "AgentScout Copywriter Agent",
+  "department": "Marketing & Content",
   "skill": "skills/conversion-copy-audit/SKILL.md",
-  "skill_slug": "conversion-copy-audit",
   "script": "scripts/audit_sales_copy.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Name the reader's situation before you name the product.",
-    "PAS for a pain the buyer already feels. AIDA when they are still browsing.",
-    "One claim, one proof, one button above the fold.",
-    "Replace a vague intensifier with a number, a noun, or a customer sentence.",
-    "Read the line aloud. If you run out of breath, split the sentence.",
-    "A headline test needs a hypothesis, not three random puns."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "copy-pass",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

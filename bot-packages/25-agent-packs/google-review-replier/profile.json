@@ -1,26 +1,19 @@
 {
-  "name": "Google Review Replier",
-  "title": "AgentScout Google Review Replier Agent",
-  "brand_title": "AgentScout Google Review Replier Agent",
+  "name": "AgentScout Google Review Replier Agent",
   "slug": "google-review-replier",
-  "department": "Operations & Admin",
-  "tagline": "Replies to every review",
-  "description": "Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps.",
-  "promise": "Draft a specific public reply for every review and a private path for anything serious.",
+  "tagline": "Fast, on-brand replies to every 5-star and critical local review",
   "version": "1.0.0",
+  "role_title": "Google Review Replier",
+  "card_title": "Google Review Replier Agent",
+  "brand_title": "AgentScout Google Review Replier Agent",
+  "department": "Operations & Admin",
   "skill": "skills/review-reply-desk/SKILL.md",
-  "skill_slug": "review-reply-desk",
   "script": "scripts/generate_review_replies.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Reply inside two days. A late thank-you still beats silence, but the habit is daily.",
-    "Use the name and one detail they actually wrote.",
-    "A keyword may appear once if it fits. Stuffing the city into every sentence reads as spam.",
-    "Never offer a perk to change, delete, or post a review.",
-    "Safety, health, and legal comments leave the public thread immediately.",
-    "Ask happy customers for a review without gating it on a positive score."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-review-drafts",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

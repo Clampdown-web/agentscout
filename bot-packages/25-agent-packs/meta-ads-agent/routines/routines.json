@@ -1,9 +1,7 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Meta Ads Agent",
-  "brand_title": "AgentScout Meta Ads Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-ads",
@@ -11,8 +9,7 @@
       "title": "Daily ad rules check",
       "prompt": "Evaluate yesterday's ad export for {{YOUR_COMPANY}}. Recommend only. Do not change spend. Follow skills/ad-roas-rules/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/evaluate_ad_roas.py",
-      "markdown": "routines/daily-ads.md"
+      "script": "scripts/evaluate_ad_roas.py"
     },
     {
       "id": "weekly-creative",
@@ -20,8 +17,7 @@
       "title": "Weekly creative refresh",
       "prompt": "Propose the next three concepts that are not the current hook. Follow skills/ad-roas-rules/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/evaluate_ad_roas.py",
-      "markdown": "routines/weekly-creative.md"
+      "script": "scripts/evaluate_ad_roas.py"
     },
     {
       "id": "monday-fatigue-utm-audit",
@@ -29,8 +25,7 @@
       "title": "Monday creative fatigue & UTM audit",
       "prompt": "Flag high-frequency/falling-CTR ad sets and verify UTM tags across active campaigns for {{YOUR_COMPANY}}. Recommend only. Follow skills/ad-roas-rules/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/evaluate_ad_roas.py",
-      "markdown": "routines/monday-fatigue-utm-audit.md"
+      "script": "scripts/evaluate_ad_roas.py"
     }
   ]
 }

@@ -402,6 +402,9 @@
         "page"
        ]
       }
+     },
+     "total_tools": {
+      "type": "integer"
      }
     },
     "required": [
@@ -410,7 +413,8 @@
      "updated",
      "last_checked",
      "count",
-     "tools"
+     "tools",
+     "total_tools"
     ],
     "title": "Tools"
    },
@@ -639,6 +643,9 @@
         "checkout_url": {
          "type": "string"
         },
+        "stripe_payment_link_id": {
+         "type": "string"
+        },
         "checkout_label": {
          "type": "string"
         },
@@ -659,29 +666,93 @@
         },
         "zip": {
          "type": "string"
+        },
+        "regular_price_usd": {
+         "type": "integer"
+        },
+        "savings_usd": {
+         "type": "integer"
+        },
+        "bot_count": {
+         "type": "integer"
+        },
+        "per_bot_usd": {
+         "type": "number"
         }
        },
        "required": [
         "id",
         "sku",
         "name",
-        "tagline",
         "category",
-        "department",
         "price_usd",
         "billing_model",
         "availability",
-        "compatibility",
         "page_url",
         "checkout_url",
+        "stripe_payment_link_id",
         "checkout_label",
-        "skill",
-        "script",
-        "routines",
-        "description",
-        "zip"
+        "description"
        ]
       }
+     },
+     "pack_pricing": {
+      "type": "object",
+      "properties": {
+       "unit_usd": {
+        "type": "integer"
+       },
+       "note": {
+        "type": "string"
+       },
+       "tiers": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "count": {
+           "type": "integer"
+          },
+          "price_usd": {
+           "type": "integer"
+          },
+          "regular_usd": {
+           "type": "integer"
+          },
+          "save_usd": {
+           "type": "integer"
+          },
+          "per_bot_usd": {
+           "type": "number"
+          },
+          "checkout_url": {
+           "type": "string"
+          },
+          "stripe_payment_link_id": {
+           "type": "string"
+          },
+          "label": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "count",
+          "price_usd",
+          "regular_usd",
+          "save_usd",
+          "per_bot_usd",
+          "checkout_url",
+          "stripe_payment_link_id",
+          "label"
+         ]
+        }
+       }
+      },
+      "required": [
+       "unit_usd",
+       "note",
+       "tiers"
+      ]
      }
     },
     "required": [
@@ -692,7 +763,8 @@
      "merchant",
      "packages",
      "bot_templates",
-     "agent_packs"
+     "agent_packs",
+     "pack_pricing"
     ],
     "title": "Products"
    },

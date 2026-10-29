@@ -3,19 +3,17 @@
   "slug": "influencer-scout",
   "tagline": "Creator discovery, engagement-rate vetting & sponsorship ROI tracking",
   "version": "1.0.0",
+  "role_title": "Influencer Scout",
+  "card_title": "Influencer Scout Agent",
+  "brand_title": "AgentScout Influencer Scout Agent",
+  "department": "Sales & Outreach",
   "skill": "skills/creator-roi/SKILL.md",
-  "skill_slug": "creator-roi",
   "script": "scripts/calculate_creator_roi.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Audience match matters more than follower count.",
-    "An engagement rate far above the usual range is a review flag, not a verdict.",
-    "CPM is price divided by thousands of followers. It is a planning number, not a promise of reach.",
-    "ROI uses the orders you are willing to forecast, labeled as a forecast.",
-    "The brief includes disclosure, usage rights, and the live URL you will pay on.",
-    "You do not contact a creator until the owner approves the shortlist."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-shortlist",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

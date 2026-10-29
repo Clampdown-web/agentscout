@@ -1,4 +1,8 @@
-# AgentScout Recruiter Agent routines ({{YOUR_TIMEZONE}})
-30 9 * * 1-5 python3 scripts/score_candidate_rubric.py --dry-run # daily-pipeline: Candidate pipeline nudge
-0 10 * * 2 python3 scripts/score_candidate_rubric.py --dry-run # tuesday-scorecard-calibration: Tuesday rubric & scorecard audit
-0 15 * * 5 python3 scripts/score_candidate_rubric.py --dry-run # friday-hiring-sla-digest: Friday hiring stage SLA digest
+# Scheduled routines for AgentScout Recruiter Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Candidate pipeline nudge (daily-pipeline)
+30 9 * * 1-5 python3 scripts/score_candidate_rubric.py --dry-run  # routine: daily-pipeline
+# Tuesday rubric & scorecard audit (tuesday-scorecard-calibration)
+0 10 * * 2 python3 scripts/score_candidate_rubric.py --dry-run  # routine: tuesday-scorecard-calibration
+# Friday hiring stage SLA digest (friday-hiring-sla-digest)
+0 15 * * 5 python3 scripts/score_candidate_rubric.py --dry-run  # routine: friday-hiring-sla-digest

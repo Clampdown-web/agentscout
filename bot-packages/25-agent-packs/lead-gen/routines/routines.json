@@ -1,9 +1,7 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Lead Gen Agent",
-  "brand_title": "AgentScout Lead Gen Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-lead-batch",
@@ -11,8 +9,7 @@
       "title": "Daily qualified lead batch",
       "prompt": "Score today's prospect file for {{YOUR_COMPANY}}. Cap the qualified list. Do not email anyone. Follow skills/icp-lead-scoring/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_leads_pipeline.py",
-      "markdown": "routines/daily-lead-batch.md"
+      "script": "scripts/score_leads_pipeline.py"
     },
     {
       "id": "weekly-icp-refresh",
@@ -20,8 +17,7 @@
       "title": "Weekly ICP refresh",
       "prompt": "Compare wins and losses this week and propose one ICP edit for {{YOUR_OWNER_NAME}} to accept. Follow skills/icp-lead-scoring/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_leads_pipeline.py",
-      "markdown": "routines/weekly-icp-refresh.md"
+      "script": "scripts/score_leads_pipeline.py"
     },
     {
       "id": "midweek-signal-sweep",
@@ -29,8 +25,7 @@
       "title": "Midweek buying-signal sweep",
       "prompt": "Re-score nurture-band prospects (40-59 pts) for new buying signals at {{YOUR_COMPANY}}. Do not email anyone. Follow skills/icp-lead-scoring/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_leads_pipeline.py",
-      "markdown": "routines/midweek-signal-sweep.md"
+      "script": "scripts/score_leads_pipeline.py"
     }
   ]
 }

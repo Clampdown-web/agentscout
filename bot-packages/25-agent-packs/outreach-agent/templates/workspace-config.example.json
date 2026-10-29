@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "outreach-agent",
-    "name": "Outreach Agent",
-    "brand_title": "AgentScout Outreach Agent",
-    "department": "Sales & Outreach",
-    "skill": "skills/cold-email-sequence/SKILL.md",
-    "script": "scripts/lint_outreach_sequence.py",
-    "routines": [
-      "daily-draft-queue",
-      "reply-triage",
-      "weekly-deliverability-lint"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "outreach-agent",
+  "agent_title": "AgentScout Outreach Agent",
+  "skill": "skills/cold-email-sequence/SKILL.md",
+  "script": "scripts/lint_outreach_sequence.py",
+  "routines_count": 3
 }

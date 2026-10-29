@@ -43,4 +43,4 @@ Follow `skills/competitor-diff/SKILL.md` when the task matches this role.
 
 ## Script
 
-`scripts/competitor_diff_check.py` is the calculator. Trust its JSON over a mental estimate. Run `--self-test` or `--dry-run` when you are demonstrating the workflow.
+`scripts/competitor_diff_check.py` is the calculator. Trust its JSON over a mental estimate. Run `--dry-run` when you are demonstrating the workflow.

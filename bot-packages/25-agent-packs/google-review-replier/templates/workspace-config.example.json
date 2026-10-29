@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "google-review-replier",
-    "name": "Google Review Replier",
-    "brand_title": "AgentScout Google Review Replier Agent",
-    "department": "Operations & Admin",
-    "skill": "skills/review-reply-desk/SKILL.md",
-    "script": "scripts/generate_review_replies.py",
-    "routines": [
-      "daily-review-drafts",
-      "monthly-themes",
-      "friday-escalation-check"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "google-review-replier",
+  "agent_title": "AgentScout Google Review Replier Agent",
+  "skill": "skills/review-reply-desk/SKILL.md",
+  "script": "scripts/generate_review_replies.py",
+  "routines_count": 3
 }

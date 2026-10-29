@@ -1,4 +1,8 @@
-# AgentScout Social Media Manager Agent routines ({{YOUR_TIMEZONE}})
-0 8 * * 1-5 python3 scripts/score_social_hooks.py --dry-run # daily-hooks: Daily hook score
-0 11 * * 5 python3 scripts/score_social_hooks.py --dry-run # weekly-calendar: Next week's calendar
-0 14 * * 3 python3 scripts/score_social_hooks.py --dry-run # midweek-comment-pillar-review: Midweek comment & pillar check
+# Scheduled routines for AgentScout Social Media Manager Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Daily hook score (daily-hooks)
+0 8 * * 1-5 python3 scripts/score_social_hooks.py --dry-run  # routine: daily-hooks
+# Next week's calendar (weekly-calendar)
+0 11 * * 5 python3 scripts/score_social_hooks.py --dry-run  # routine: weekly-calendar
+# Midweek comment & pillar check (midweek-comment-pillar-review)
+0 14 * * 3 python3 scripts/score_social_hooks.py --dry-run  # routine: midweek-comment-pillar-review

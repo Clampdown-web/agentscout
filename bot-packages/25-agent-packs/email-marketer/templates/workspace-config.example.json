@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "email-marketer",
-    "name": "Email Marketer",
-    "brand_title": "AgentScout Email Marketer Agent",
-    "department": "Marketing & Content",
-    "skill": "skills/newsletter-issue-score/SKILL.md",
-    "script": "scripts/score_newsletter_issue.py",
-    "routines": [
-      "weekly-issue",
-      "monthly-hygiene",
-      "thursday-subject-ab-score"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "email-marketer",
+  "agent_title": "AgentScout Email Marketer Agent",
+  "skill": "skills/newsletter-issue-score/SKILL.md",
+  "script": "scripts/score_newsletter_issue.py",
+  "routines_count": 3
 }

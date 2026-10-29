@@ -1,48 +1,39 @@
-# AgentScout TikTok Shop Manager Agent — Quick Start
+# TikTok Shop Manager Agent quick start
 
 Built by AgentScout
 
-![AgentScout wordmark](assets/logo-wordmark-dark.svg)
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Tighten a product listing, estimate creator commission, and brief a shoppable video.
+Package for **{{YOUR_COMPANY}}**. Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds.
 
 ## 1. Fill the profile
 
-Edit `context/business-profile.md` or `templates/workspace-config.example.json`. Then run:
+Edit `context/business-profile.md`. Then run:
 
 ```bash
-python3 scripts/setup_workspace.py --help
-python3 scripts/setup_workspace.py --self-test
+python3 setup_workspace.py --help
+python3 setup_workspace.py --dry-run
 ```
 
-Add `--apply` with `--company "{{YOUR_COMPANY}}"`, `--domain "{{YOUR_DOMAIN}}"`, `--support-email "{{YOUR_SUPPORT_EMAIL}}"`, `--owner-name "{{YOUR_OWNER_NAME}}"`, and optionally `--mcp-url "{{YOUR_MCP_SERVER_URL}}"` when you are ready to replace placeholders across the package.
+Add `--apply` with `--company`, `--domain`, `--support-email`, `--owner-name`, and optionally `--mcp-url` when you are ready to replace placeholders.
 
 ## 2. Prove the script
 
 ```bash
 python3 scripts/optimize_shop_listing.py --help
-python3 scripts/optimize_shop_listing.py --self-test
 python3 scripts/optimize_shop_listing.py --dry-run
 ```
 
-All commands exit 0. `--self-test` and `--dry-run` print a JSON report from built-in sample rows with zero network calls and zero telemetry.
+Both commands exit 0. `--dry-run` prints a JSON report from built-in sample rows.
 
-## 3. Scheduled Routines Included (3 Cron Routines)
-
-| Routine ID | Cron Schedule (`{{YOUR_TIMEZONE}}`) | Title |
-| --- | --- | --- |
-| `daily-stock` | `0 8 * * 1-5` | Inventory alert check |
-| `weekly-listing` | `0 11 * * 2` | Weekly listing audit |
-| `thursday-creator-commission-brief` | `0 13 * * 4` | Thursday affiliate script & commission check |
-
-## 4. Load the skill
+## 3. Load the skill
 
 | Platform | What to open |
 | --- | --- |
-| Grok Bot | `system-prompt.md` (`SYSTEM.md`), `skills/shop-listing-optimizer/SKILL.md`, `routines/routines.json` |
-| Claude Code | `CLAUDE.md` and `skills/shop-listing-optimizer/SKILL.md` |
+| Grok Bot | `SYSTEM.md`, `skills/shop-listing-optimizer/SKILL.md`, `routines/routines.json` |
+| Claude Code | `CLAUDE.md` and the skill file |
 | Cursor | `.cursorrules` and `AGENTS.md` |
 | OpenAI Codex | `AGENTS.md` |
 | Windsurf | `AGENTS.md` |
@@ -50,6 +41,6 @@ All commands exit 0. `--self-test` and `--dry-run` print a JSON report from buil
 | GitHub Copilot | `AGENTS.md` |
 | Lovable | Upload the ZIP under Workspace settings → Skills → Add → Upload ZIP. `LOVABLE.md` is the workspace note. |
 
-## 5. Approval Gate
+## 4. Approval
 
 Nothing in this package sends email, posts, spends, deletes, or files. {{YOUR_OWNER_NAME}} does that after reading the draft.

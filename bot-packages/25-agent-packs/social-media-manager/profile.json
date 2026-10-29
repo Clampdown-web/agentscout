@@ -1,26 +1,19 @@
 {
-  "name": "Social Media Manager",
-  "title": "AgentScout Social Media Manager Agent",
-  "brand_title": "AgentScout Social Media Manager Agent",
+  "name": "AgentScout Social Media Manager Agent",
   "slug": "social-media-manager",
-  "department": "Marketing & Content",
-  "tagline": "Plans and posts every day",
-  "description": "Drafts daily platform-native posts, threads, and visual callouts grounded in your product wins and top-performing industry hooks. Includes a post-velocity guard so you never step on a climbing post.",
-  "promise": "Score hooks, format a native post, and keep a calendar the owner can approve.",
+  "tagline": "Daily X, LinkedIn & Instagram posts with outlier hook tracking",
   "version": "1.0.0",
+  "role_title": "Social Media Manager",
+  "card_title": "Social Media Manager Agent",
+  "brand_title": "AgentScout Social Media Manager Agent",
+  "department": "Marketing & Content",
   "skill": "skills/social-hook-desk/SKILL.md",
-  "skill_slug": "social-hook-desk",
   "script": "scripts/score_social_hooks.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "A hook with a number and a concrete noun beats a tease.",
-    "Write for the platform's length. Do not paste the LinkedIn post into a short caption.",
-    "Three to five pillars. If you cannot name them, you are improvising.",
-    "Reply to real comments before you invent tomorrow's post.",
-    "Tag links with a source you can read later.",
-    "Best time is the time your own account already earns attention, not a generic chart."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-hooks",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

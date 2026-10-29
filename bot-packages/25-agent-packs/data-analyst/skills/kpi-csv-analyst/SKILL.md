@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/analyze_kpi_csv.py --help
-python3 scripts/analyze_kpi_csv.py --self-test
 python3 scripts/analyze_kpi_csv.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `midweek-anomaly-scan` at `0 9 * * 3`: Midweek revenue & churn anomaly scan
 - `monthly-cohort-ltv-pack` at `0 9 1 * *`: Monthly LTV & retention summary
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

@@ -1,4 +1,8 @@
-# AgentScout Customer Support Agent routines ({{YOUR_TIMEZONE}})
-15 * * * * python3 scripts/triage_support_tickets.py --dry-run # hourly-triage: Inbox triage
-0 16 * * 5 python3 scripts/triage_support_tickets.py --dry-run # weekly-gaps: Weekly knowledge gaps
-0 9 * * 1-5 python3 scripts/triage_support_tickets.py --dry-run # daily-sla-escalation-sweep: Morning P0 & refund SLA sweep
+# Scheduled routines for AgentScout Customer Support Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Inbox triage (hourly-triage)
+15 * * * * python3 scripts/triage_support_tickets.py --dry-run  # routine: hourly-triage
+# Weekly knowledge gaps (weekly-gaps)
+0 16 * * 5 python3 scripts/triage_support_tickets.py --dry-run  # routine: weekly-gaps
+# Morning P0 & refund SLA sweep (daily-sla-escalation-sweep)
+0 9 * * 1-5 python3 scripts/triage_support_tickets.py --dry-run  # routine: daily-sla-escalation-sweep

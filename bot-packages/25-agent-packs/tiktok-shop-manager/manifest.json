@@ -3,19 +3,17 @@
   "slug": "tiktok-shop-manager",
   "tagline": "Product listing optimization, creator affiliate briefs & stock alerts",
   "version": "1.0.0",
+  "role_title": "TikTok Shop Manager",
+  "card_title": "TikTok Shop Manager Agent",
+  "brand_title": "AgentScout TikTok Shop Manager Agent",
+  "department": "Marketing & Content",
   "skill": "skills/shop-listing-optimizer/SKILL.md",
-  "skill_slug": "shop-listing-optimizer",
   "script": "scripts/optimize_shop_listing.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "The title says the product and the buyer. Cleverness that hides the noun fails search.",
-    "Banned claims stay out even if they would convert.",
-    "Four images minimum: pack, in use, contents, scale.",
-    "Inventory alerts fire before you promise a creator a week of posts.",
-    "Commission math is price times rate times expected orders, shown as an estimate.",
-    "Disclosure is on screen and in the caption when a creator is paid."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-stock",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "data-analyst",
-    "name": "Data Analyst",
-    "brand_title": "AgentScout Data Analyst Agent",
-    "department": "Product & Data",
-    "skill": "skills/kpi-csv-analyst/SKILL.md",
-    "script": "scripts/analyze_kpi_csv.py",
-    "routines": [
-      "weekly-kpi",
-      "midweek-anomaly-scan",
-      "monthly-cohort-ltv-pack"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "data-analyst",
+  "agent_title": "AgentScout Data Analyst Agent",
+  "skill": "skills/kpi-csv-analyst/SKILL.md",
+  "script": "scripts/analyze_kpi_csv.py",
+  "routines_count": 3
 }

@@ -72,7 +72,6 @@ Return:
 
 ```bash
 python3 scripts/score_leads_pipeline.py --help
-python3 scripts/score_leads_pipeline.py --self-test
 python3 scripts/score_leads_pipeline.py --dry-run
 ```
 
@@ -84,7 +83,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `weekly-icp-refresh` at `0 11 * * 5`: Weekly ICP refresh
 - `midweek-signal-sweep` at `0 13 * * 3`: Midweek buying-signal sweep
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

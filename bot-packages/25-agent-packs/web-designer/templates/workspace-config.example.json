@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "web-designer",
-    "name": "Web Designer",
-    "brand_title": "AgentScout Web Designer Agent",
-    "department": "Product & Data",
-    "skill": "skills/landing-page-ux-check/SKILL.md",
-    "script": "scripts/check_landing_page_ux.py",
-    "routines": [
-      "page-check",
-      "monday-mobile-viewport-audit",
-      "friday-cta-contrast-review"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "web-designer",
+  "agent_title": "AgentScout Web Designer Agent",
+  "skill": "skills/landing-page-ux-check/SKILL.md",
+  "script": "scripts/check_landing_page_ux.py",
+  "routines_count": 3
 }

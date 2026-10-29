@@ -72,7 +72,6 @@ Return:
 
 ```bash
 python3 scripts/reconcile_ledger.py --help
-python3 scripts/reconcile_ledger.py --self-test
 python3 scripts/reconcile_ledger.py --dry-run
 ```
 
@@ -84,7 +83,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `month-close` at `0 9 1 * *`: Month-end close pack
 - `quarterly-estimate` at `0 9 1 1,4,7,10 *`: Quarterly estimate reminder
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

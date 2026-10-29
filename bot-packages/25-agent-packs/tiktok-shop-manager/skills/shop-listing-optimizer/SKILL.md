@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/optimize_shop_listing.py --help
-python3 scripts/optimize_shop_listing.py --self-test
 python3 scripts/optimize_shop_listing.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `weekly-listing` at `0 11 * * 2`: Weekly listing audit
 - `thursday-creator-commission-brief` at `0 13 * * 4`: Thursday affiliate script & commission check
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

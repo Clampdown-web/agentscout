@@ -1,26 +1,19 @@
 {
-  "name": "Graphic Designer",
-  "title": "AgentScout Graphic Designer Agent",
-  "brand_title": "AgentScout Graphic Designer Agent",
+  "name": "AgentScout Graphic Designer Agent",
   "slug": "graphic-designer",
-  "department": "Marketing & Content",
-  "tagline": "Ads, posts and thumbnails",
-  "description": "Generates on-brand creative briefs, layout specs, contrast-checked color palettes, and image prompts for ads, social posts, and thumbnails. Ships with an automated brand-asset linter and multi-aspect export checklist.",
-  "promise": "Turn a brand kit into layout specs and an SVG card that keeps color, type, and contrast consistent.",
+  "tagline": "High-converting ad creatives, social graphics & YouTube thumbnails",
   "version": "1.0.0",
+  "role_title": "Graphic Designer",
+  "card_title": "Graphic Designer Agent",
+  "brand_title": "AgentScout Graphic Designer Agent",
+  "department": "Marketing & Content",
   "skill": "skills/brand-card-system/SKILL.md",
-  "skill_slug": "brand-card-system",
   "script": "scripts/generate_brand_card_spec.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "One accent color does the pointing. A second accent is noise.",
-    "Headline under eight words. Brand name is a signature, not a second headline.",
-    "Check ink against background before you export. Aim for a 4.5 contrast ratio on text.",
-    "Design the 9:16 story and the 1.91:1 link card from the same tokens, not as unrelated pictures.",
-    "Leave a quiet edge of at least 64px so a platform crop does not eat the offer.",
-    "Write the image-model prompt after the layout is decided, so the prompt serves the design."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-asset-batch",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

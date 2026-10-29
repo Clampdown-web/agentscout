@@ -3,19 +3,17 @@
   "slug": "market-researcher",
   "tagline": "Competitor pricing watch, launch tracking & side-by-side battlecards",
   "version": "1.0.0",
+  "role_title": "Market Researcher",
+  "card_title": "Market Researcher Agent",
+  "brand_title": "AgentScout Market Researcher Agent",
+  "department": "Product & Data",
   "skill": "skills/competitor-diff/SKILL.md",
-  "skill_slug": "competitor-diff",
   "script": "scripts/competitor_diff_check.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "No source URL, no claim. A memory of a pricing page is not a source.",
-    "Date the snapshot. A price from last quarter is history, not their offer.",
-    "Diff features as a set. Marketing adjectives are not features.",
-    "If they are cheaper, say who that plan is for.",
-    "Review mining quotes the review. It does not launder it into your voice.",
-    "A launch is a dated change, not a rumor in a chat."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-diff",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

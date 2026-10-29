@@ -830,902 +830,6 @@ AGENTS = [
 ]
 
 
-PACK_TIERS = [
-    {
-        "bots": 1,
-        "key": "pack_1",
-        "label": "1 AI Agent Pack ($35)",
-        "short_label": "1 Bot · $35",
-        "price": 35,
-        "per_bot": 35.00,
-        "compare_at": 35,
-        "savings": 0,
-        "url": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
-    },
-    {
-        "bots": 5,
-        "key": "pack_5",
-        "label": "5-Bot Pack ($119 · Save $56)",
-        "short_label": "5 Bots · $119",
-        "price": 119,
-        "per_bot": 23.80,
-        "compare_at": 175,
-        "savings": 56,
-        "url": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
-    },
-    {
-        "bots": 10,
-        "key": "pack_10",
-        "label": "10-Bot Pack ($199 · Save $151)",
-        "short_label": "10 Bots · $199",
-        "price": 199,
-        "per_bot": 19.90,
-        "compare_at": 350,
-        "savings": 151,
-        "url": "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
-    },
-    {
-        "bots": 20,
-        "key": "pack_20",
-        "label": "20-Bot Pack ($299 · Save $401)",
-        "short_label": "20 Bots · $299",
-        "price": 299,
-        "per_bot": 14.95,
-        "compare_at": 700,
-        "savings": 401,
-        "url": "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
-    },
-    {
-        "bots": 25,
-        "key": "pack_25",
-        "label": "All 25-Bot Mega Pack ($349 · Save $526)",
-        "short_label": "All 25 · $349",
-        "price": 349,
-        "per_bot": 13.96,
-        "compare_at": 875,
-        "savings": 526,
-        "url": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
-    },
-]
-
-STRIPE.update({
-    "pack_1": {"price": 35, "url": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09", "label": "1 AI Agent Pack ($35)"},
-    "pack_5": {"price": 119, "url": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a", "label": "5-Bot Pack ($119 · Save $56)"},
-    "pack_10": {"price": 199, "url": "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b", "label": "10-Bot Pack ($199 · Save $151)"},
-    "pack_20": {"price": 299, "url": "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c", "label": "20-Bot Pack ($299 · Save $401)"},
-    "pack_25": {"price": 349, "url": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d", "label": "All 25-Bot Mega Pack ($349 · Save $526)"},
-})
-
-UPGRADED_META = {
-    "accountant": {
-        "brand_title": "AgentScout Accountant Agent",
-        "clean_role_title": "Accountant",
-        "tagline_rich": "Automated bookkeeping, ledger reconciliation & tax-ready financials",
-        "description": "Reconciles your monthly bank and Stripe ledgers, categorizes expenses automatically, and flags P&L anomalies before tax season. Includes a zero-dependency ledger reconciliation script and weekly cash-flow routines.",
-        "chips": [
-            "Monthly P&L Audit",
-            "reconcile_ledger.py",
-            "Tax Prep Checklist",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "weekly-reconcile",
-                "0 8 * * 1",
-                "Weekly ledger reconcile",
-                "Reconcile last week's bank export for {{YOUR_COMPANY}}. Return matched rows, the needs-review queue, and one cash warning."
-            ],
-            [
-                "month-close",
-                "0 9 1 * *",
-                "Month-end close pack",
-                "Draft the month-end close checklist: accruals, prepaids, unmatched cash, and questions for the tax professional. Do not file anything."
-            ],
-            [
-                "quarterly-estimate",
-                "0 9 1 1,4,7,10 *",
-                "Quarterly estimate reminder",
-                "Prepare the quarterly estimate question list and remind {{YOUR_OWNER_NAME}} this is bookkeeping support, not a filed return."
-            ]
-        ]
-    },
-    "graphic-designer": {
-        "brand_title": "AgentScout Graphic Designer Agent",
-        "clean_role_title": "Graphic Designer",
-        "tagline_rich": "High-converting ad creatives, social graphics & YouTube thumbnails",
-        "description": "Generates on-brand creative briefs, layout specs, contrast-checked color palettes, and image prompts for ads, social posts, and thumbnails. Ships with an automated brand-asset linter and multi-aspect export checklist.",
-        "chips": [
-            "Ad & Thumbnail Specs",
-            "generate_brand_card_spec.py",
-            "WCAG Contrast Check",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "weekly-asset-batch",
-                "0 10 * * 2",
-                "Weekly social asset batch",
-                "Produce this week's card specs for {{YOUR_COMPANY}} from the approved brand tokens. Draft only. Do not publish."
-            ],
-            [
-                "ad-creative-spec-pass",
-                "0 10 * * 4",
-                "Thursday ad creative spec pass",
-                "Generate multi-ratio ad creative specs (1:1, 9:16, 1.91:1) and contrast checks for {{YOUR_COMPANY}}. Draft only."
-            ],
-            [
-                "monthly-brand-consistency-audit",
-                "0 11 1 * *",
-                "Monthly brand token & contrast audit",
-                "Audit recent visual assets and thumbnails against {{YOUR_COMPANY}} hex tokens and 4.5:1 contrast rules. Report only."
-            ]
-        ]
-    },
-    "lead-gen": {
-        "brand_title": "AgentScout Lead Gen Agent",
-        "clean_role_title": "Lead Gen Agent",
-        "tagline_rich": "Daily B2B prospect discovery, ICP scoring & verified lead lists",
-        "description": "Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors.",
-        "chips": [
-            "ICP Lead Scoring",
-            "score_leads_pipeline.py",
-            "Buying Signal Watch",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "daily-lead-batch",
-                "0 8 * * 1-5",
-                "Daily qualified lead batch",
-                "Score today's prospect file for {{YOUR_COMPANY}}. Cap the qualified list. Do not email anyone."
-            ],
-            [
-                "weekly-icp-refresh",
-                "0 11 * * 5",
-                "Weekly ICP refresh",
-                "Compare wins and losses this week and propose one ICP edit for {{YOUR_OWNER_NAME}} to accept."
-            ],
-            [
-                "midweek-signal-sweep",
-                "0 13 * * 3",
-                "Midweek buying-signal sweep",
-                "Re-score nurture-band prospects (40-59 pts) for new buying signals at {{YOUR_COMPANY}}. Do not email anyone."
-            ]
-        ]
-    },
-    "copywriter": {
-        "brand_title": "AgentScout Copywriter Agent",
-        "clean_role_title": "Copywriter",
-        "tagline_rich": "Conversion-focused landing pages, sales emails & social hooks",
-        "description": "Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clich\u00e9s. Includes a readability and conversion-rubric scorer.",
-        "chips": [
-            "Landing Page Copy",
-            "audit_sales_copy.py",
-            "Hook & CTA Library",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "copy-pass",
-                "0 9 * * 3",
-                "Midweek copy pass",
-                "Audit the live hero and one email for {{YOUR_COMPANY}}. Return a revised draft and the score. Do not publish."
-            ],
-            [
-                "weekly-headline-variants",
-                "0 9 * * 1",
-                "Monday headline & hook variants",
-                "Draft three hypothesis-backed headline and CTA variants for {{YOUR_COMPANY}} and score them with scripts/audit_sales_copy.py. Do not publish."
-            ],
-            [
-                "friday-objection-refresh",
-                "0 14 * * 5",
-                "Friday customer objection refresh",
-                "Turn this week's sales and support questions for {{YOUR_COMPANY}} into FAQ and objection-handling copy drafts."
-            ]
-        ]
-    },
-    "video-editor": {
-        "brand_title": "AgentScout Video Editor Agent",
-        "clean_role_title": "Video Editor",
-        "tagline_rich": "Short-form retention hooks, cut lists, captions & FFmpeg workflows",
-        "description": "Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker.",
-        "chips": [
-            "Shorts & Reels Cuts",
-            "format_captions_and_cuts.py",
-            "3-Second Hook Audit",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "caption-pass",
-                "0 15 * * 1-5",
-                "Weekday caption pass",
-                "Format captions and a cut list for the latest transcript from {{YOUR_COMPANY}}. Draft only."
-            ],
-            [
-                "tuesday-hook-storyboard",
-                "0 11 * * 2",
-                "Tuesday 3-second hook storyboard",
-                "Audit the opening 3 seconds of upcoming recordings for {{YOUR_COMPANY}} and draft 9:16 cut lists. Draft only."
-            ],
-            [
-                "friday-repurpose-cuts",
-                "0 14 * * 5",
-                "Friday long-to-short cut batch",
-                "Extract top 3 short-form clip timestamps and SRT captions from this week's long video for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "outreach-agent": {
-        "brand_title": "AgentScout Outreach Agent",
-        "clean_role_title": "Outreach Agent",
-        "tagline_rich": "Personalized cold emails, warm follow-ups & reply triage",
-        "description": "Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules.",
-        "chips": [
-            "Cold Email Sequences",
-            "lint_outreach_sequence.py",
-            "Spam-Word Guard",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "daily-draft-queue",
-                "30 8 * * 1-5",
-                "Daily outreach drafts",
-                "Draft today's approved batch for {{YOUR_COMPANY}} and lint it. Leave it unsent."
-            ],
-            [
-                "reply-triage",
-                "0 13,17 * * 1-5",
-                "Reply intent pass",
-                "Classify replies as interested, not now, out of office, or unsubscribe. Draft responses. Do not send."
-            ],
-            [
-                "weekly-deliverability-lint",
-                "0 10 * * 1",
-                "Weekly sequence & spam-word lint",
-                "Lint all active outreach templates for {{YOUR_COMPANY}} with scripts/lint_outreach_sequence.py and verify unsubscribe/footer readiness."
-            ]
-        ]
-    },
-    "google-review-replier": {
-        "brand_title": "AgentScout Google Review Replier Agent",
-        "clean_role_title": "Google Review Replier",
-        "tagline_rich": "Fast, on-brand replies to every 5-star and critical local review",
-        "description": "Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps.",
-        "chips": [
-            "Local SEO Replies",
-            "generate_review_replies.py",
-            "Escalation Guard",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "daily-review-drafts",
-                "0 9 * * *",
-                "Daily review replies",
-                "Draft replies for new reviews of {{YOUR_COMPANY}}. Do not post them."
-            ],
-            [
-                "monthly-themes",
-                "0 10 1 * *",
-                "Monthly review themes",
-                "Summarize repeated themes and the response time. No public posts."
-            ],
-            [
-                "friday-escalation-check",
-                "0 15 * * 5",
-                "Weekly P0 complaint & SLA check",
-                "Verify every 1-star and 2-star review for {{YOUR_COMPANY}} has an owner-reviewed recovery draft and offline support handoff."
-            ]
-        ]
-    },
-    "seo-specialist": {
-        "brand_title": "AgentScout SEO Specialist Agent",
-        "clean_role_title": "SEO Specialist",
-        "tagline_rich": "Technical SEO audits, JSON-LD schema & AI-search visibility",
-        "description": "Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator.",
-        "chips": [
-            "On-Page & AEO Audit",
-            "seo_site_audit.py",
-            "JSON-LD Validator",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "weekly-seo-crawl",
-                "0 7 * * 1",
-                "Weekly SEO and AEO audit",
-                "Audit the priority URLs for {{YOUR_COMPANY}}. Report issues only. Do not change the live site."
-            ],
-            [
-                "monthly-query-map",
-                "0 8 1 * *",
-                "Monthly query map",
-                "Refresh the query-to-page map and the cannibalization list."
-            ],
-            [
-                "thursday-schema-llms-check",
-                "0 10 * * 4",
-                "Thursday JSON-LD & llms.txt check",
-                "Validate Organization/Product JSON-LD parity and llms.txt citations across saved pages for {{YOUR_COMPANY}}. Report only."
-            ]
-        ]
-    },
-    "email-marketer": {
-        "brand_title": "AgentScout Email Marketer Agent",
-        "clean_role_title": "Email Marketer",
-        "tagline_rich": "High-open newsletters, onboarding flows & win-back campaigns",
-        "description": "Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send.",
-        "chips": [
-            "Newsletter & Drip Flows",
-            "score_newsletter_issue.py",
-            "Subject A/B Scorer",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "weekly-issue",
-                "0 9 * * 2",
-                "Weekly newsletter draft",
-                "Draft and score this week's issue for {{YOUR_COMPANY}}. Do not schedule it."
-            ],
-            [
-                "monthly-hygiene",
-                "0 9 1 * *",
-                "List hygiene note",
-                "List subscribers quiet for 90 days and propose a sunset. Do not delete them yourself."
-            ],
-            [
-                "thursday-subject-ab-score",
-                "0 11 * * 4",
-                "Thursday subject & preview A/B check",
-                "Score subject pairs, plain-text twin links, and unsubscribe headers for {{YOUR_COMPANY}} with scripts/score_newsletter_issue.py."
-            ]
-        ]
-    },
-    "customer-support": {
-        "brand_title": "AgentScout Customer Support Agent",
-        "clean_role_title": "Customer Support",
-        "tagline_rich": "24/7 inbox triage, instant FAQ answers & refund/escalation routing",
-        "description": "Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies.",
-        "chips": [
-            "Ticket Triage & SLA",
-            "triage_support_tickets.py",
-            "Help-Doc Grounded",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "hourly-triage",
-                "15 * * * *",
-                "Inbox triage",
-                "Triage new tickets for {{YOUR_COMPANY}}. Draft replies. Send nothing."
-            ],
-            [
-                "weekly-gaps",
-                "0 16 * * 5",
-                "Weekly knowledge gaps",
-                "List the questions that had no article and propose the titles."
-            ],
-            [
-                "daily-sla-escalation-sweep",
-                "0 9 * * 1-5",
-                "Morning P0 & refund SLA sweep",
-                "Surface open P0 safety/legal tickets and pending refund requests for {{YOUR_COMPANY}} for owner approval."
-            ]
-        ]
-    },
-    "appointment-setter": {
-        "brand_title": "AgentScout Appointment Setter Agent",
-        "clean_role_title": "Appointment Setter",
-        "tagline_rich": "Qualifies inbound leads, proposes times & books discovery calls",
-        "description": "Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script.",
-        "chips": [
-            "Calendar Qualification",
-            "build_call_briefing.py",
-            "No-Show Reminders",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "reminder-sweep",
-                "0 8 * * *",
-                "Reminder and no-show sweep",
-                "List calls in the next 24 hours and no-shows from yesterday for {{YOUR_COMPANY}}. Draft the notes. Do not send."
-            ],
-            [
-                "weekday-inbound-slots",
-                "0 9,14 * * 1-5",
-                "Inbound lead qualification & slot prep",
-                "Qualify new inbound inquiries for {{YOUR_COMPANY}} and build timezone-matched slot options with scripts/build_call_briefing.py."
-            ],
-            [
-                "friday-booking-conversion-review",
-                "0 16 * * 5",
-                "Weekly show-rate & briefing review",
-                "Summarize booked calls, show rate, and reschedule follow-ups for {{YOUR_COMPANY}}. Draft only."
-            ]
-        ]
-    },
-    "personal-assistant": {
-        "brand_title": "AgentScout Personal Assistant Agent",
-        "clean_role_title": "Personal Assistant",
-        "tagline_rich": "Morning inbox digest, daily priorities & meeting prep briefs",
-        "description": "Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise.",
-        "chips": [
-            "Morning Executive Brief",
-            "daily_exec_briefing.py",
-            "Meeting Dossiers",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "morning-brief",
-                "0 7 * * 1-5",
-                "Morning briefing",
-                "Write the morning brief for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not delete or send mail."
-            ],
-            [
-                "friday-review",
-                "0 16 * * 5",
-                "Friday weekly review",
-                "List open loops and next week's first three outcomes."
-            ],
-            [
-                "midday-conflict-check",
-                "0 12 * * 1-5",
-                "Midday calendar conflict & prep check",
-                "Check afternoon holds, travel gaps, and next-day meeting prep questions for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "data-analyst": {
-        "brand_title": "AgentScout Data Analyst Agent",
-        "clean_role_title": "Data Analyst",
-        "tagline_rich": "Weekly KPI reports, cohort retention & revenue anomaly alerts",
-        "description": "Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts.",
-        "chips": [
-            "Weekly KPI Scorecard",
-            "analyze_kpi_csv.py",
-            "Anomaly Detection",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "weekly-kpi",
-                "0 8 * * 1",
-                "Weekly KPI narrative",
-                "Analyze the latest KPI CSV for {{YOUR_COMPANY}} and write three bullets. Do not email investors."
-            ],
-            [
-                "midweek-anomaly-scan",
-                "0 9 * * 3",
-                "Midweek revenue & churn anomaly scan",
-                "Run scripts/analyze_kpi_csv.py on the latest export for {{YOUR_COMPANY}} and flag any z-score anomalies."
-            ],
-            [
-                "monthly-cohort-ltv-pack",
-                "0 9 1 * *",
-                "Monthly LTV & retention summary",
-                "Compile the monthly ARPU, logo churn, and directional LTV check for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "social-media-manager": {
-        "brand_title": "AgentScout Social Media Manager Agent",
-        "clean_role_title": "Social Media Manager",
-        "tagline_rich": "Daily X, LinkedIn & Instagram posts with outlier hook tracking",
-        "description": "Drafts daily platform-native posts, threads, and visual callouts grounded in your product wins and top-performing industry hooks. Includes a post-velocity guard so you never step on a climbing post.",
-        "chips": [
-            "Daily Social Queue",
-            "score_social_hooks.py",
-            "Velocity Guard",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "daily-hooks",
-                "0 8 * * 1-5",
-                "Daily hook score",
-                "Score today's hooks for {{YOUR_COMPANY}} and format the winner. Do not post."
-            ],
-            [
-                "weekly-calendar",
-                "0 11 * * 5",
-                "Next week's calendar",
-                "Propose five posts across the pillars. Leave them in draft."
-            ],
-            [
-                "midweek-comment-pillar-review",
-                "0 14 * * 3",
-                "Midweek comment & pillar check",
-                "Review top audience questions and UTM link performance for {{YOUR_COMPANY}} and draft reply notes. Do not post."
-            ]
-        ]
-    },
-    "recruiter": {
-        "brand_title": "AgentScout Recruiter Agent",
-        "clean_role_title": "Recruiter",
-        "tagline_rich": "Candidate sourcing, resume scorecarding & structured interview kits",
-        "description": "Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline.",
-        "chips": [
-            "Resume Rubric Scorer",
-            "score_candidate_rubric.py",
-            "Interview Scorecards",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "daily-pipeline",
-                "30 9 * * 1-5",
-                "Candidate pipeline nudge",
-                "List candidates with no touch in three business days. Draft the next note. Do not send."
-            ],
-            [
-                "tuesday-scorecard-calibration",
-                "0 10 * * 2",
-                "Tuesday rubric & scorecard audit",
-                "Run scripts/score_candidate_rubric.py on new applicants for {{YOUR_COMPANY}} and flag any protected-trait notes for human review."
-            ],
-            [
-                "friday-hiring-sla-digest",
-                "0 15 * * 5",
-                "Friday hiring stage SLA digest",
-                "Summarize candidate counts by stage, days-in-stage SLA breaches, and interview prep kits for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "web-designer": {
-        "brand_title": "AgentScout Web Designer Agent",
-        "clean_role_title": "Web Designer",
-        "tagline_rich": "Responsive landing pages, mobile UX audits & dark/light CSS polish",
-        "description": "Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes.",
-        "chips": [
-            "Responsive UI Audit",
-            "check_landing_page_ux.py",
-            "Dark/Light Contrast",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "page-check",
-                "0 14 * * 3",
-                "Landing page UX check",
-                "Run the UX check on the current landing HTML for {{YOUR_COMPANY}}. Report issues. Do not deploy."
-            ],
-            [
-                "monday-mobile-viewport-audit",
-                "0 10 * * 1",
-                "Monday 360px/390px mobile overflow audit",
-                "Run scripts/check_landing_page_ux.py across key landing pages for {{YOUR_COMPANY}} to verify zero horizontal scroll and alt coverage."
-            ],
-            [
-                "friday-cta-contrast-review",
-                "0 15 * * 5",
-                "Friday above-the-fold CTA & contrast check",
-                "Verify hero CTA clarity and 4.5:1 text contrast pairs on updated templates for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "meta-ads-agent": {
-        "brand_title": "AgentScout Meta Ads Agent",
-        "clean_role_title": "Meta Ads Agent",
-        "tagline_rich": "ROAS monitoring, creative fatigue alerts & ad-angle variations",
-        "description": "Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked.",
-        "chips": [
-            "ROAS & CPA Guard",
-            "evaluate_ad_roas.py",
-            "Ad Creative Variants",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "daily-ads",
-                "0 8 * * 1-5",
-                "Daily ad rules check",
-                "Evaluate yesterday's ad export for {{YOUR_COMPANY}}. Recommend only. Do not change spend."
-            ],
-            [
-                "weekly-creative",
-                "0 11 * * 4",
-                "Weekly creative refresh",
-                "Propose the next three concepts that are not the current hook."
-            ],
-            [
-                "monday-fatigue-utm-audit",
-                "0 9 * * 1",
-                "Monday creative fatigue & UTM audit",
-                "Flag high-frequency/falling-CTR ad sets and verify UTM tags across active campaigns for {{YOUR_COMPANY}}. Recommend only."
-            ]
-        ]
-    },
-    "market-researcher": {
-        "brand_title": "AgentScout Market Researcher Agent",
-        "clean_role_title": "Market Researcher",
-        "tagline_rich": "Competitor pricing watch, launch tracking & side-by-side battlecards",
-        "description": "Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims.",
-        "chips": [
-            "Weekly Intel Sweep",
-            "competitor_diff_check.py",
-            "Sales Battlecards",
-            "Evidence-Linked"
-        ],
-        "routines": [
-            [
-                "weekly-diff",
-                "0 9 * * 1",
-                "Weekly competitor diff",
-                "Diff the saved snapshots for {{YOUR_COMPANY}}. Flag missing sources. Do not publish a teardown."
-            ],
-            [
-                "thursday-pricing-battlecard-check",
-                "0 11 * * 4",
-                "Thursday pricing & feature matrix check",
-                "Run scripts/competitor_diff_check.py on saved competitor snapshots for {{YOUR_COMPANY}} and verify every claim has a dated URL."
-            ],
-            [
-                "monthly-review-pain-mining",
-                "0 10 1 * *",
-                "Monthly competitor review & launch digest",
-                "Summarize dated customer complaints and product launches across tracked competitors for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "content-strategist": {
-        "brand_title": "AgentScout Content Strategist Agent",
-        "clean_role_title": "Content Strategist",
-        "tagline_rich": "30-day editorial calendars, topic clusters & multi-channel repurposing",
-        "description": "Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets.",
-        "chips": [
-            "30-Day Content Map",
-            "generate_30day_calendar.py",
-            "1-to-5 Repurposer",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "monthly-calendar",
-                "0 10 1 * *",
-                "30-day calendar",
-                "Draft next month's calendar for {{YOUR_COMPANY}}. Do not publish."
-            ],
-            [
-                "quarterly-refresh",
-                "0 10 1 1,4,7,10 *",
-                "Decay and refresh list",
-                "List URLs that should be updated before new topics are added."
-            ],
-            [
-                "weekly-repurpose-briefs",
-                "0 10 * * 1",
-                "Weekly pillar brief & 1-to-4 repurpose plan",
-                "Turn this week's priority pillar topic for {{YOUR_COMPANY}} into an outline, email angle, short video beat, and FAQ block."
-            ]
-        ]
-    },
-    "tiktok-shop-manager": {
-        "brand_title": "AgentScout TikTok Shop Manager Agent",
-        "clean_role_title": "TikTok Shop Manager",
-        "tagline_rich": "Product listing optimization, creator affiliate briefs & stock alerts",
-        "description": "Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds.",
-        "chips": [
-            "Shop SEO & Scripts",
-            "optimize_shop_listing.py",
-            "Creator Briefs",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "daily-stock",
-                "0 8 * * 1-5",
-                "Inventory alert check",
-                "Check listing stock against the reorder point for {{YOUR_COMPANY}}. Do not change the live listing."
-            ],
-            [
-                "weekly-listing",
-                "0 11 * * 2",
-                "Weekly listing audit",
-                "Re-lint the priority products and draft title edits."
-            ],
-            [
-                "thursday-creator-commission-brief",
-                "0 13 * * 4",
-                "Thursday affiliate script & commission check",
-                "Run scripts/optimize_shop_listing.py to model creator affiliate commissions and 15-second shoppable video briefs for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "influencer-scout": {
-        "brand_title": "AgentScout Influencer Scout Agent",
-        "clean_role_title": "Influencer Scout",
-        "tagline_rich": "Creator discovery, engagement-rate vetting & sponsorship ROI tracking",
-        "description": "Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links.",
-        "chips": [
-            "Creator ROI Vetting",
-            "calculate_creator_roi.py",
-            "Sponsor Outreach",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "weekly-shortlist",
-                "0 10 * * 3",
-                "Weekly creator shortlist",
-                "Score the creator sheet for {{YOUR_COMPANY}}. Do not email creators."
-            ],
-            [
-                "monday-engagement-vetting",
-                "0 10 * * 1",
-                "Monday engagement & CPM anomaly check",
-                "Run scripts/calculate_creator_roi.py on prospective creators for {{YOUR_COMPANY}} and flag suspect engagement rates."
-            ],
-            [
-                "friday-deal-roi-tracker",
-                "0 14 * * 5",
-                "Friday creator brief & forecasted ROI check",
-                "Prepare outreach briefs, FTC disclosure lines, and forecasted order ROI for owner-approved creators at {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "invoice-chaser": {
-        "brand_title": "AgentScout Invoice Chaser Agent",
-        "clean_role_title": "Invoice Chaser",
-        "tagline_rich": "Polite, automated overdue invoice reminders & AR aging reports",
-        "description": "Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time.",
-        "chips": [
-            "AR Aging Tracker",
-            "aging_ar_report.py",
-            "Polite Follow-Ups",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "daily-dunning",
-                "0 9 * * 1-5",
-                "Dunning draft queue",
-                "Draft today's receivable notes for {{YOUR_COMPANY}}. Do not send."
-            ],
-            [
-                "weekly-aging",
-                "0 9 * * 1",
-                "Weekly AR aging",
-                "Produce the aging buckets and the total open receivable."
-            ],
-            [
-                "thursday-dispute-escalation-review",
-                "0 14 * * 4",
-                "Thursday 30+ day & disputed invoice review",
-                "Compile 30+ day overdue accounts and paused disputed invoices for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not send."
-            ]
-        ]
-    },
-    "product-builder": {
-        "brand_title": "AgentScout Product Builder Agent",
-        "clean_role_title": "Product Builder",
-        "tagline_rich": "PRDs, user stories, release checklists & feedback prioritization",
-        "description": "Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow.",
-        "chips": [
-            "PRD & RICE Scorer",
-            "model_product_pricing.py",
-            "Release QA Checklist",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "weekly-scope",
-                "0 9 * * 1",
-                "Weekly scope review",
-                "Re-score the backlog for {{YOUR_COMPANY}} and name anything that snuck into the MVP."
-            ],
-            [
-                "wednesday-pricing-tier-check",
-                "0 11 * * 3",
-                "Wednesday Good/Better/Best pricing model",
-                "Run scripts/model_product_pricing.py to stress-test unit costs, target margins, and tier boundaries for {{YOUR_COMPANY}}."
-            ],
-            [
-                "friday-launch-readiness-audit",
-                "0 15 * * 5",
-                "Friday MVP & launch readiness checklist",
-                "Verify PRD non-goals, baseline success metrics, and live support paths before any release at {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "community-manager": {
-        "brand_title": "AgentScout Community Manager Agent",
-        "clean_role_title": "Community Manager",
-        "tagline_rich": "Discord, Slack & forum engagement, member onboarding & FAQ digests",
-        "description": "Welcomes new members, surfaces unanswered questions and feature requests from community threads, and compiles weekly member spotlights and discussion prompts to keep your community active.",
-        "chips": [
-            "Community Pulse Digest",
-            "community_health_score.py",
-            "Member Onboarding",
-            "Approval-First"
-        ],
-        "routines": [
-            [
-                "daily-community",
-                "0 10 * * 1-5",
-                "Daily community draft",
-                "Score health and draft one prompt for {{YOUR_COMPANY}}. Do not post or ban."
-            ],
-            [
-                "weekly-digest",
-                "0 15 * * 5",
-                "Weekly engagement digest",
-                "Summarize active rate, quiet new members, and FAQ gaps."
-            ],
-            [
-                "monday-new-member-onboarding",
-                "0 9 * * 1",
-                "Monday new-member welcome & FAQ check",
-                "Run scripts/community_health_score.py to list quiet new members and repeated questions that need a new FAQ entry for {{YOUR_COMPANY}}."
-            ]
-        ]
-    },
-    "translator": {
-        "brand_title": "AgentScout Translator Agent",
-        "clean_role_title": "Translator",
-        "tagline_rich": "Context-aware localization for UI strings, docs & marketing copy",
-        "description": "Localizes web pages, JSON language files, help articles, and ad copy across major languages while preserving code placeholders ({{var}}), brand glossary terms, and native phrasing.",
-        "chips": [
-            "Glossary-Safe i18n",
-            "verify_i18n_keys.py",
-            "Placeholder Guard",
-            "Zero Telemetry"
-        ],
-        "routines": [
-            [
-                "locale-parity",
-                "0 9 * * 1",
-                "Weekly locale parity",
-                "Verify i18n keys for {{YOUR_COMPANY}}. Report mismatches. Do not publish strings."
-            ],
-            [
-                "wednesday-placeholder-glossary-check",
-                "0 10 * * 3",
-                "Midweek placeholder & glossary audit",
-                "Run scripts/verify_i18n_keys.py across active locale JSON bundles for {{YOUR_COMPANY}} to catch missing keys or broken {{tokens}}."
-            ],
-            [
-                "friday-overflow-legal-flag",
-                "0 14 * * 5",
-                "Friday UI length & legal/pricing string review",
-                "Flag translated strings that exceed UI button length budgets or require human review for pricing/legal terms at {{YOUR_COMPANY}}."
-            ]
-        ]
-    }
-}
-
-
-def brand_title_for(title: str) -> str:
-    t = title.strip()
-    if t.endswith(" Agent"):
-        return f"AgentScout {t}"
-    return f"AgentScout {t} Agent"
-
-
-for _ag in AGENTS:
-    _meta = UPGRADED_META.get(_ag["slug"], {})
-    _ag["brand_title"] = _meta.get("brand_title") or brand_title_for(_ag["title"])
-    _ag["clean_title"] = _ag["title"][:-6].strip() if _ag["title"].endswith(" Agent") else _ag["title"]
-    _ag["price"] = 35
-    _ag["checkout_url"] = STRIPE["pack_1"]["url"]
-    _ag["checkout_label"] = STRIPE["pack_1"]["label"]
-    _ag["description"] = _meta.get("description", _ag["promise"])
-    _ag["tagline_rich"] = _meta.get("tagline_rich", _ag["tagline"])
-    _ag["chips"] = _meta.get("chips", [_ag["skill_slug"], _ag["script"], "3 Routines", "Zero Telemetry"])
-    if _meta.get("routines"):
-        _ag["routines"] = [tuple(r) for r in _meta["routines"]]
-    if "store_note" in _ag:
-        _ag["store_note"] = (
-            f"Single-bot checkout is $35 one-time (or bundle 5 for $119, 10 for $199, 20 for $299, or all 25 for $349). "
-            f"The downloadable ZIP is pre-trained for your own company with zero telemetry."
-        )
-
-
 def _steps(agent: dict) -> str:
     blocks = []
     for i, (title, body) in enumerate(agent["steps"], start=1):
@@ -1800,7 +904,6 @@ Return:
 
 ```bash
 python3 scripts/{agent['script']} --help
-python3 scripts/{agent['script']} --self-test
 python3 scripts/{agent['script']} --dry-run
 ```
 
@@ -1810,7 +913,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 {routines}
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{{{YOUR_TIMEZONE}}}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{{{YOUR_TIMEZONE}}}}.
 
 ## Platforms
 
@@ -1859,7 +962,7 @@ Follow `skills/{agent['skill_slug']}/SKILL.md` when the task matches this role.
 
 ## Script
 
-`scripts/{agent['script']}` is the calculator. Trust its JSON over a mental estimate. Run `--self-test` or `--dry-run` when you are demonstrating the workflow.
+`scripts/{agent['script']}` is the calculator. Trust its JSON over a mental estimate. Run `--dry-run` when you are demonstrating the workflow.
 """
 
 
@@ -1868,11 +971,11 @@ def agents_md(agent: dict) -> str:
 
 This package is the **{agent['role']}** agent for {{{{YOUR_COMPANY}}}}.
 
-- Read `SYSTEM.md` (or `system-prompt.md`) for the role and the guardrails.
+- Read `SYSTEM.md` for the role and the guardrails.
 - Read `skills/{agent['skill_slug']}/SKILL.md` for the procedure.
 - Read `context/business-profile.md` for the offer, the voice, and the constraints.
-- Run `python3 scripts/{agent['script']} --self-test` before you trust a new input file.
-- Run `python3 scripts/setup_workspace.py --help` to replace placeholders.
+- Run `python3 scripts/{agent['script']} --dry-run` before you trust a new input file.
+- Run `python3 setup_workspace.py --help` to replace placeholders.
 
 Approval gate: do not send, post, spend, delete, file, or change a live price unless {{{{YOUR_OWNER_NAME}}}} has approved that exact draft.
 
@@ -1901,7 +1004,7 @@ def cursorrules(agent: dict) -> str:
 - Company context lives in context/business-profile.md.
 - Follow skills/{agent['skill_slug']}/SKILL.md for this role.
 - Python helpers are stdlib only. Do not add a paid SDK.
-- Run scripts/{agent['script']} --self-test after you change inputs.
+- Run scripts/{agent['script']} --dry-run after you change inputs.
 - Never commit real customer exports. Samples stay synthetic.
 - Do not add a tool catalog, a scraper, or a hard-coded directory endpoint.
 - Drafts only until {{{{YOUR_OWNER_NAME}}}} approves a send, post, spend, or delete.
@@ -1921,8 +1024,8 @@ When the skill is on:
 
 - Follow `skills/{agent['skill_slug']}/SKILL.md`.
 - Read `context/business-profile.md` first.
-- Use `scripts/{agent['script']}` for the deterministic check. It supports `--help`, `--self-test`, and `--dry-run`.
-- Replace placeholders with `python3 scripts/setup_workspace.py --help` before production drafts.
+- Use `scripts/{agent['script']}` for the deterministic check. It supports `--help` and `--dry-run`.
+- Replace placeholders with `python3 setup_workspace.py --help` before production drafts.
 - Treat {{{{YOUR_MCP_SERVER_URL}}}} as optional and owner-supplied.
 - Produce drafts. Do not send email, post publicly, spend money, or delete records from this skill.
 
@@ -1983,45 +1086,38 @@ def readme(agent: dict) -> str:
 
 Built by AgentScout
 
-![AgentScout wordmark](assets/logo-wordmark-dark.svg)
+![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{{{YOUR_COMPANY}}}}** (`{{{{YOUR_DOMAIN}}}}`). {agent['promise']}
+Package for **{{{{YOUR_COMPANY}}}}**. {agent['promise']}
 
 ## 1. Fill the profile
 
-Edit `context/business-profile.md` or `templates/workspace-config.example.json`. Then run:
+Edit `context/business-profile.md`. Then run:
 
 ```bash
-python3 scripts/setup_workspace.py --help
-python3 scripts/setup_workspace.py --self-test
+python3 setup_workspace.py --help
+python3 setup_workspace.py --dry-run
 ```
 
-Add `--apply` with `--company "{{{{YOUR_COMPANY}}}}"`, `--domain "{{{{YOUR_DOMAIN}}}}"`, `--support-email "{{{{YOUR_SUPPORT_EMAIL}}}}"`, `--owner-name "{{{{YOUR_OWNER_NAME}}}}"`, and optionally `--mcp-url "{{{{YOUR_MCP_SERVER_URL}}}}"` when you are ready to replace placeholders across the package.
+Add `--apply` with `--company`, `--domain`, `--support-email`, `--owner-name`, and optionally `--mcp-url` when you are ready to replace placeholders.
 
 ## 2. Prove the script
 
 ```bash
 python3 scripts/{agent['script']} --help
-python3 scripts/{agent['script']} --self-test
 python3 scripts/{agent['script']} --dry-run
 ```
 
-All commands exit 0. `--self-test` and `--dry-run` print a JSON report from built-in sample rows with zero network calls and zero telemetry.
+Both commands exit 0. `--dry-run` prints a JSON report from built-in sample rows.
 
-## 3. Scheduled Routines Included (3 Cron Routines)
-
-| Routine ID | Cron Schedule (`{{{{YOUR_TIMEZONE}}}}`) | Title |
-| --- | --- | --- |
-{routines_table}
-
-## 4. Load the skill
+## 3. Load the skill
 
 | Platform | What to open |
 | --- | --- |
-| Grok Bot | `system-prompt.md` (`SYSTEM.md`), `skills/{agent['skill_slug']}/SKILL.md`, `routines/routines.json` |
-| Claude Code | `CLAUDE.md` and `skills/{agent['skill_slug']}/SKILL.md` |
+| Grok Bot | `SYSTEM.md`, `skills/{agent['skill_slug']}/SKILL.md`, `routines/routines.json` |
+| Claude Code | `CLAUDE.md` and the skill file |
 | Cursor | `.cursorrules` and `AGENTS.md` |
 | OpenAI Codex | `AGENTS.md` |
 | Windsurf | `AGENTS.md` |
@@ -2029,7 +1125,7 @@ All commands exit 0. `--self-test` and `--dry-run` print a JSON report from buil
 | GitHub Copilot | `AGENTS.md` |
 | Lovable | Upload the ZIP under Workspace settings → Skills → Add → Upload ZIP. `LOVABLE.md` is the workspace note. |
 
-## 5. Approval Gate
+## 4. Approval
 
 Nothing in this package sends email, posts, spends, deletes, or files. {{{{YOUR_OWNER_NAME}}}} does that after reading the draft.
 """
@@ -2083,40 +1179,11 @@ def notices() -> str:
     """)
 
 
-def routine_md(agent: dict, rid: str, cron: str, title: str, prompt: str) -> str:
-    return f"""---
-id: {rid}
-title: "{title}"
-cron: "{cron}"
-timezone: "{{{{YOUR_TIMEZONE}}}}"
-requires_approval: true
-script: "scripts/{agent['script']}"
-skill: "skills/{agent['skill_slug']}/SKILL.md"
----
-
-# Routine: {title} (`{rid}`)
-
-- **Schedule:** `{cron}` (`{{{{YOUR_TIMEZONE}}}}`)
-- **Role:** {agent['brand_title']} for **{{{{YOUR_COMPANY}}}}** (`{{{{YOUR_DOMAIN}}}}`)
-- **Helper CLI:** `python3 scripts/{agent['script']} --self-test`
-- **Approval Gate:** Drafts only. Never send, post, spend, delete, or file without explicit approval from **{{{{YOUR_OWNER_NAME}}}}**.
-
-## Instructions
-
-{prompt}
-
-1. Read `context/business-profile.md` and `skills/{agent['skill_slug']}/SKILL.md`.
-2. Run `python3 scripts/{agent['script']} --dry-run` (or pass `--input` with the latest export for **{{{{YOUR_COMPANY}}}}**).
-3. Prepare the structured markdown report and action queue for **{{{{YOUR_OWNER_NAME}}}}**.
-"""
-
-
 def routines_json(agent: dict) -> dict:
     return {
         "timezone": "{{YOUR_TIMEZONE}}",
         "role": agent["card_title"],
         "company": "{{YOUR_COMPANY}}",
-        "domain": "{{YOUR_DOMAIN}}",
         "routines": [
             {
                 "id": rid,
@@ -2125,33 +1192,9 @@ def routines_json(agent: dict) -> dict:
                 "prompt": prompt + " Follow skills/" + agent["skill_slug"] + "/SKILL.md. Draft only.",
                 "requires_approval": True,
                 "script": "scripts/" + agent["script"],
-                "markdown": f"routines/{rid}.md",
             }
             for rid, cron, title, prompt in agent["routines"]
         ],
-    }
-
-
-def workspace_config_example(agent: dict) -> dict:
-    return {
-        "company": "{{YOUR_COMPANY}}",
-        "domain": "{{YOUR_DOMAIN}}",
-        "support_email": "{{YOUR_SUPPORT_EMAIL}}",
-        "owner_name": "{{YOUR_OWNER_NAME}}",
-        "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
-        "timezone": "{{YOUR_TIMEZONE}}",
-        "agent": {
-            "slug": agent["slug"],
-            "name": agent["title"],
-            "brand_title": agent["brand_title"],
-            "department": agent["dept_label"],
-            "skill": f"skills/{agent['skill_slug']}/SKILL.md",
-            "script": f"scripts/{agent['script']}",
-            "routines": [r[0] for r in agent["routines"]],
-            "telemetry": False,
-            "network_calls": False,
-            "approval_required": True,
-        },
     }
 
 
@@ -2159,17 +1202,16 @@ def manifest(agent: dict) -> dict:
     return {
         "name": agent["product_name"],
         "slug": agent["slug"],
-        "department": agent["dept_label"],
         "tagline": agent["tagline"],
-        "description": agent["description"],
-        "promise": agent["promise"],
         "version": "1.0.0",
+        "role_title": agent["role"],
+        "card_title": agent["card_title"],
+        "brand_title": agent["product_name"],
+        "department": agent["dept_label"],
         "skill": f"skills/{agent['skill_slug']}/SKILL.md",
-        "skill_slug": agent["skill_slug"],
         "script": f"scripts/{agent['script']}",
-        "setup_script": "scripts/setup_workspace.py",
-        "system_prompt": "system-prompt.md",
-        "heuristics": agent["heuristics"],
+        "setup_scripts": ["setup_workspace.py", "scripts/setup_workspace.py"],
+        "routines_count": len(agent["routines"]),
         "routines": [
             {"id": rid, "cron": cron, "title": title, "file": f"routines/{rid}.md"}
             for rid, cron, title, _prompt in agent["routines"]
@@ -2192,11 +1234,57 @@ def manifest(agent: dict) -> dict:
             "{{YOUR_MCP_SERVER_URL}}",
             "{{YOUR_TIMEZONE}}",
         ],
-        "telemetry": False,
-        "offline_capable": True,
         "brand": {"name": "AgentScout", "url": "https://agentscouthq.com"},
         "author": {"name": "AgentScout", "url": "https://agentscouthq.com"},
         "price_usd": agent_price(agent),
+    }
+
+
+
+def crontab_txt(agent: dict) -> str:
+    lines = [
+        f"# Scheduled routines for {agent['product_name']} ({{{{YOUR_COMPANY}}}})",
+        "# Timezone: {{YOUR_TIMEZONE}}",
+    ]
+    for rid, cron, title, _prompt in agent["routines"]:
+        lines.append(f"# {title} ({rid})")
+        lines.append(f"{cron} python3 scripts/{agent['script']} --dry-run  # routine: {rid}")
+    return "\n".join(lines) + "\n"
+
+
+def routine_md(agent: dict, rid: str, cron: str, title: str, prompt: str) -> str:
+    return f"""# Routine: {title} (`{rid}`)
+
+- **Agent:** {agent['product_name']} (`{agent['slug']}`)
+- **Company:** {{{{YOUR_COMPANY}}}} (`{{{{YOUR_DOMAIN}}}}`)
+- **Schedule (cron):** `{cron}` (`{{{{YOUR_TIMEZONE}}}}`)
+- **Skill:** `skills/{agent['skill_slug']}/SKILL.md`
+- **Helper Script:** `scripts/{agent['script']}`
+- **Approval Gate:** Mandatory owner review by {{{{YOUR_OWNER_NAME}}}} before any external action.
+
+## Instructions
+
+{prompt}
+
+1. Load `context/business-profile.md` and `skills/{agent['skill_slug']}/SKILL.md`.
+2. Run `python3 scripts/{agent['script']} --dry-run` (or pass the latest input file for {{{{YOUR_COMPANY}}}}).
+3. Draft the output and hold for {{{{YOUR_OWNER_NAME}}}} approval. Never send, post, spend, delete, or file automatically.
+"""
+
+
+def workspace_config_example(agent: dict) -> dict:
+    return {
+        "company": "{{YOUR_COMPANY}}",
+        "domain": "{{YOUR_DOMAIN}}",
+        "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+        "owner_name": "{{YOUR_OWNER_NAME}}",
+        "timezone": "{{YOUR_TIMEZONE}}",
+        "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+        "agent_slug": agent["slug"],
+        "agent_title": agent["product_name"],
+        "skill": f"skills/{agent['skill_slug']}/SKILL.md",
+        "script": f"scripts/{agent['script']}",
+        "routines_count": len(agent["routines"]),
     }
 
 
@@ -2211,11 +1299,8 @@ def render_package(agent: dict, dest: Path) -> None:
     (dest / "assets").mkdir()
     (dest / "tests").mkdir()
     skill_dir.mkdir(parents=True)
-
     sys_text = system_md(agent)
     readme_text = readme(agent)
-    manifest_data = manifest(agent)
-
     files = {
         "SYSTEM.md": sys_text,
         "system-prompt.md": sys_text,
@@ -2229,44 +1314,32 @@ def render_package(agent: dict, dest: Path) -> None:
         "THIRD_PARTY_NOTICES.md": notices(),
         "context/business-profile.md": business_profile(agent),
         f"skills/{agent['skill_slug']}/SKILL.md": skill_md(agent),
+        "routines/crontab.txt": crontab_txt(agent),
     }
+    for rid, cron, rtitle, rprompt in agent["routines"]:
+        files[f"routines/{rid}.md"] = routine_md(agent, rid, cron, rtitle, rprompt)
     for rel, text in files.items():
         path = dest / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text, encoding="utf-8")
-
-    for rid, cron, rtitle, rprompt in agent["routines"]:
-        (dest / "routines" / f"{rid}.md").write_text(
-            routine_md(agent, rid, cron, rtitle, rprompt), encoding="utf-8"
-        )
-    crontab_lines = [
-        f"# {agent['brand_title']} routines ({{{{YOUR_TIMEZONE}}}})",
-        *[
-            f"{cron} python3 scripts/{agent['script']} --dry-run # {rid}: {rtitle}"
-            for rid, cron, rtitle, _p in agent["routines"]
-        ],
-    ]
-    (dest / "routines" / "crontab.txt").write_text("\n".join(crontab_lines) + "\n", encoding="utf-8")
     (dest / "routines" / "routines.json").write_text(
         json.dumps(routines_json(agent), indent=2) + "\n", encoding="utf-8"
     )
-    (dest / "manifest.json").write_text(json.dumps(manifest_data, indent=2) + "\n", encoding="utf-8")
-    (dest / "profile.json").write_text(json.dumps(manifest_data, indent=2) + "\n", encoding="utf-8")
+    manifest_text = json.dumps(manifest(agent), indent=2) + "\n"
+    (dest / "manifest.json").write_text(manifest_text, encoding="utf-8")
+    (dest / "profile.json").write_text(manifest_text, encoding="utf-8")
     (dest / "templates" / "workspace-config.example.json").write_text(
         json.dumps(workspace_config_example(agent), indent=2) + "\n", encoding="utf-8"
     )
-
     shutil.copy(SRC / agent["script"], dest / "scripts" / agent["script"])
     shutil.copy(SRC / "setup_workspace.py", dest / "setup_workspace.py")
     shutil.copy(SRC / "setup_workspace.py", dest / "scripts" / "setup_workspace.py")
-
     for svg_name in ("logo-wordmark.svg", "logo-wordmark-dark.svg"):
         svg_src = ROOT / svg_name
-        if svg_src.is_file():
+        if svg_src.exists():
             shutil.copy(svg_src, dest / "assets" / svg_name)
-
     (dest / "tests" / "README.md").write_text(
-        f"# Sample & Self-Test\n\nRun `python3 scripts/{agent['script']} --self-test` or `--dry-run` from the package root.\n"
+        f"# Sample\n\nRun `python3 scripts/{agent['script']} --dry-run` from the package root.\n"
         "Expected exit code: 0. Expected stdout: a JSON object with `dry_run` true.\n",
         encoding="utf-8",
     )
@@ -2291,9 +1364,6 @@ def public_cards() -> list[dict]:
             "cardTitle": agent["card_title"],
             "productName": agent["product_name"],
             "tagline": agent["tagline"],
-            "taglineRich": agent["tagline_rich"],
-            "description": agent["description"],
-            "chips": agent["chips"],
             "dept": agent["dept"],
             "deptLabel": agent["dept_label"],
             "deptShort": agent["dept_short"],
@@ -2343,6 +1413,12 @@ def _apply_upgraded_copy() -> None:
             raise SystemExit(f"{agent['slug']} copy script {row['script']} != zip script {real_script}")
         if row.get("skill_slug") and row["skill_slug"] != agent["skill_slug"]:
             raise SystemExit(f"{agent['slug']} copy skill {row['skill_slug']} != {agent['skill_slug']}")
+        if row.get("routines"):
+            agent["routines"] = [
+                (r["id"], r["cron"], r["title"], r["prompt"]) for r in row["routines"]
+            ]
+        if row.get("heuristics"):
+            agent["heuristics"] = list(row["heuristics"])
         if row.get("routines_count") is not None and int(row["routines_count"]) != len(agent["routines"]):
             raise SystemExit(
                 f"{agent['slug']} copy routines {row['routines_count']} != {len(agent['routines'])}"

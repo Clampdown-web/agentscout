@@ -1,4 +1,8 @@
-# AgentScout Lead Gen Agent routines ({{YOUR_TIMEZONE}})
-0 8 * * 1-5 python3 scripts/score_leads_pipeline.py --dry-run # daily-lead-batch: Daily qualified lead batch
-0 11 * * 5 python3 scripts/score_leads_pipeline.py --dry-run # weekly-icp-refresh: Weekly ICP refresh
-0 13 * * 3 python3 scripts/score_leads_pipeline.py --dry-run # midweek-signal-sweep: Midweek buying-signal sweep
+# Scheduled routines for AgentScout Lead Gen Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Daily qualified lead batch (daily-lead-batch)
+0 8 * * 1-5 python3 scripts/score_leads_pipeline.py --dry-run  # routine: daily-lead-batch
+# Weekly ICP refresh (weekly-icp-refresh)
+0 11 * * 5 python3 scripts/score_leads_pipeline.py --dry-run  # routine: weekly-icp-refresh
+# Midweek buying-signal sweep (midweek-signal-sweep)
+0 13 * * 3 python3 scripts/score_leads_pipeline.py --dry-run  # routine: midweek-signal-sweep

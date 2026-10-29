@@ -25,7 +25,35 @@
       "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Accountant Agent",
-      "clean_role_title": "Accountant"
+      "clean_role_title": "Accountant",
+      "routines": [
+        {
+          "id": "weekly-reconcile",
+          "cron": "0 8 * * 1",
+          "title": "Weekly ledger reconcile",
+          "prompt": "Reconcile last week's bank export for {{YOUR_COMPANY}}. Return matched rows, the needs-review queue, and one cash warning."
+        },
+        {
+          "id": "month-close",
+          "cron": "0 9 1 * *",
+          "title": "Month-end close pack",
+          "prompt": "Draft the month-end close checklist: accruals, prepaids, unmatched cash, and questions for the tax professional. Do not file anything."
+        },
+        {
+          "id": "quarterly-estimate",
+          "cron": "0 9 1 1,4,7,10 *",
+          "title": "Quarterly estimate reminder",
+          "prompt": "Prepare the quarterly estimate question list and remind {{YOUR_OWNER_NAME}} this is bookkeeping support, not a filed return."
+        }
+      ],
+      "heuristics": [
+        "Match bank lines to invoices and receipts before you invent a category.",
+        "A tolerance of a few cents is a match. A round hundred with no document is a question.",
+        "Separate money you have collected from money you have earned.",
+        "Flag contractor payments for a 1099 conversation. Do not decide the filing.",
+        "Put low-confidence rows in a needs-review queue instead of forcing a code.",
+        "Build a 13-week cash view from dated inflows and outflows, not from a hope."
+      ]
     },
     {
       "slug": "graphic-designer",
@@ -44,10 +72,38 @@
       "price": 35,
       "script": "generate_brand_card_spec.py",
       "skill_slug": "brand-card-system",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Graphic Designer Agent",
-      "clean_role_title": "Graphic Designer"
+      "clean_role_title": "Graphic Designer",
+      "routines": [
+        {
+          "id": "weekly-asset-batch",
+          "cron": "0 10 * * 2",
+          "title": "Weekly social asset batch",
+          "prompt": "Produce this week's card specs for {{YOUR_COMPANY}} from the approved brand tokens. Draft only. Do not publish."
+        },
+        {
+          "id": "ad-creative-spec-pass",
+          "cron": "0 10 * * 4",
+          "title": "Thursday ad creative spec pass",
+          "prompt": "Generate multi-ratio ad creative specs (1:1, 9:16, 1.91:1) and contrast checks for {{YOUR_COMPANY}}. Draft only."
+        },
+        {
+          "id": "monthly-brand-consistency-audit",
+          "cron": "0 11 1 * *",
+          "title": "Monthly brand token & contrast audit",
+          "prompt": "Audit recent visual assets and thumbnails against {{YOUR_COMPANY}} hex tokens and 4.5:1 contrast rules. Report only."
+        }
+      ],
+      "heuristics": [
+        "One accent color does the pointing. A second accent is noise.",
+        "Headline under eight words. Brand name is a signature, not a second headline.",
+        "Check ink against background before you export. Aim for a 4.5 contrast ratio on text.",
+        "Design the 9:16 story and the 1.91:1 link card from the same tokens, not as unrelated pictures.",
+        "Leave a quiet edge of at least 64px so a platform crop does not eat the offer.",
+        "Write the image-model prompt after the layout is decided, so the prompt serves the design."
+      ]
     },
     {
       "slug": "lead-gen",
@@ -66,10 +122,38 @@
       "price": 35,
       "script": "score_leads_pipeline.py",
       "skill_slug": "icp-lead-scoring",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Lead Gen Agent",
-      "clean_role_title": "Lead Gen Agent"
+      "clean_role_title": "Lead Gen Agent",
+      "routines": [
+        {
+          "id": "daily-lead-batch",
+          "cron": "0 8 * * 1-5",
+          "title": "Daily qualified lead batch",
+          "prompt": "Score today's prospect file for {{YOUR_COMPANY}}. Cap the qualified list. Do not email anyone."
+        },
+        {
+          "id": "weekly-icp-refresh",
+          "cron": "0 11 * * 5",
+          "title": "Weekly ICP refresh",
+          "prompt": "Compare wins and losses this week and propose one ICP edit for {{YOUR_OWNER_NAME}} to accept."
+        },
+        {
+          "id": "midweek-signal-sweep",
+          "cron": "0 13 * * 3",
+          "title": "Midweek buying-signal sweep",
+          "prompt": "Re-score nurture-band prospects (40-59 pts) for new buying signals at {{YOUR_COMPANY}}. Do not email anyone."
+        }
+      ],
+      "heuristics": [
+        "Write the ICP and the anti-ICP before you score a single row.",
+        "A buying signal beats a big employee count.",
+        "Dedupe on the domain, not the display name.",
+        "An email that fails a basic shape check does not enter the send queue.",
+        "Log where the row came from. A lead without a source is a rumor.",
+        "Cap the daily batch. A smaller list that sales will touch beats a dump."
+      ]
     },
     {
       "slug": "copywriter",
@@ -78,7 +162,7 @@
       "department": "Marketing & Content",
       "accent": "#14b8a6",
       "tagline": "Conversion-focused landing pages, sales emails & social hooks",
-      "description": "Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clich\u00e9s. Includes a readability and conversion-rubric scorer.",
+      "description": "Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clichés. Includes a readability and conversion-rubric scorer.",
       "chips": [
         "Landing Page Copy",
         "audit_sales_copy.py",
@@ -88,10 +172,38 @@
       "price": 35,
       "script": "audit_sales_copy.py",
       "skill_slug": "conversion-copy-audit",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Copywriter Agent",
-      "clean_role_title": "Copywriter"
+      "clean_role_title": "Copywriter",
+      "routines": [
+        {
+          "id": "copy-pass",
+          "cron": "0 9 * * 3",
+          "title": "Midweek copy pass",
+          "prompt": "Audit the live hero and one email for {{YOUR_COMPANY}}. Return a revised draft and the score. Do not publish."
+        },
+        {
+          "id": "weekly-headline-variants",
+          "cron": "0 9 * * 1",
+          "title": "Monday headline & hook variants",
+          "prompt": "Draft three hypothesis-backed headline and CTA variants for {{YOUR_COMPANY}} and score them with scripts/audit_sales_copy.py. Do not publish."
+        },
+        {
+          "id": "friday-objection-refresh",
+          "cron": "0 14 * * 5",
+          "title": "Friday customer objection refresh",
+          "prompt": "Turn this week's sales and support questions for {{YOUR_COMPANY}} into FAQ and objection-handling copy drafts."
+        }
+      ],
+      "heuristics": [
+        "Name the reader's situation before you name the product.",
+        "PAS for a pain the buyer already feels. AIDA when they are still browsing.",
+        "One claim, one proof, one button above the fold.",
+        "Replace a vague intensifier with a number, a noun, or a customer sentence.",
+        "Read the line aloud. If you run out of breath, split the sentence.",
+        "A headline test needs a hypothesis, not three random puns."
+      ]
     },
     {
       "slug": "video-editor",
@@ -110,10 +222,38 @@
       "price": 35,
       "script": "format_captions_and_cuts.py",
       "skill_slug": "shortform-cut-captions",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Video Editor Agent",
-      "clean_role_title": "Video Editor"
+      "clean_role_title": "Video Editor",
+      "routines": [
+        {
+          "id": "caption-pass",
+          "cron": "0 15 * * 1-5",
+          "title": "Weekday caption pass",
+          "prompt": "Format captions and a cut list for the latest transcript from {{YOUR_COMPANY}}. Draft only."
+        },
+        {
+          "id": "tuesday-hook-storyboard",
+          "cron": "0 11 * * 2",
+          "title": "Tuesday 3-second hook storyboard",
+          "prompt": "Audit the opening 3 seconds of upcoming recordings for {{YOUR_COMPANY}} and draft 9:16 cut lists. Draft only."
+        },
+        {
+          "id": "friday-repurpose-cuts",
+          "cron": "0 14 * * 5",
+          "title": "Friday long-to-short cut batch",
+          "prompt": "Extract top 3 short-form clip timestamps and SRT captions from this week's long video for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "The first three seconds must contain a change, a number, or a question. A logo card does not count.",
+        "Cut filler words and dead air. Keep the breath that makes a sentence human.",
+        "Captions are a script, not a dump of every false start.",
+        "Burned-in captions stay inside the safe center so interface buttons do not cover them.",
+        "Music needs a license note. Silence is better than a track you cannot name.",
+        "One video, one job. Do not hide a second offer in the last second."
+      ]
     },
     {
       "slug": "outreach-agent",
@@ -132,10 +272,38 @@
       "price": 35,
       "script": "lint_outreach_sequence.py",
       "skill_slug": "cold-email-sequence",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Outreach Agent",
-      "clean_role_title": "Outreach Agent"
+      "clean_role_title": "Outreach Agent",
+      "routines": [
+        {
+          "id": "daily-draft-queue",
+          "cron": "30 8 * * 1-5",
+          "title": "Daily outreach drafts",
+          "prompt": "Draft today's approved batch for {{YOUR_COMPANY}} and lint it. Leave it unsent."
+        },
+        {
+          "id": "reply-triage",
+          "cron": "0 13,17 * * 1-5",
+          "title": "Reply intent pass",
+          "prompt": "Classify replies as interested, not now, out of office, or unsubscribe. Draft responses. Do not send."
+        },
+        {
+          "id": "weekly-deliverability-lint",
+          "cron": "0 10 * * 1",
+          "title": "Weekly sequence & spam-word lint",
+          "prompt": "Lint all active outreach templates for {{YOUR_COMPANY}} with scripts/lint_outreach_sequence.py and verify unsubscribe/footer readiness."
+        }
+      ],
+      "heuristics": [
+        "Under 125 words. One ask. One real detail from the prospect, not a mail-merge compliment.",
+        "Space steps two to four days apart. A next-day bump looks desperate.",
+        "Write the reply path: interested, not now, out of office, unsubscribe.",
+        "Spam-trigger words are a smell. Specifics send better than urgency.",
+        "SPF, DKIM, and DMARC are readiness checks, not a guarantee of the inbox.",
+        "CAN-SPAM still wants a real postal address and a way to stop mail."
+      ]
     },
     {
       "slug": "google-review-replier",
@@ -154,10 +322,38 @@
       "price": 35,
       "script": "generate_review_replies.py",
       "skill_slug": "review-reply-desk",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Google Review Replier Agent",
-      "clean_role_title": "Google Review Replier"
+      "clean_role_title": "Google Review Replier",
+      "routines": [
+        {
+          "id": "daily-review-drafts",
+          "cron": "0 9 * * *",
+          "title": "Daily review replies",
+          "prompt": "Draft replies for new reviews of {{YOUR_COMPANY}}. Do not post them."
+        },
+        {
+          "id": "monthly-themes",
+          "cron": "0 10 1 * *",
+          "title": "Monthly review themes",
+          "prompt": "Summarize repeated themes and the response time. No public posts."
+        },
+        {
+          "id": "friday-escalation-check",
+          "cron": "0 15 * * 5",
+          "title": "Weekly P0 complaint & SLA check",
+          "prompt": "Verify every 1-star and 2-star review for {{YOUR_COMPANY}} has an owner-reviewed recovery draft and offline support handoff."
+        }
+      ],
+      "heuristics": [
+        "Reply inside two days. A late thank-you still beats silence, but the habit is daily.",
+        "Use the name and one detail they actually wrote.",
+        "A keyword may appear once if it fits. Stuffing the city into every sentence reads as spam.",
+        "Never offer a perk to change, delete, or post a review.",
+        "Safety, health, and legal comments leave the public thread immediately.",
+        "Ask happy customers for a review without gating it on a positive score."
+      ]
     },
     {
       "slug": "seo-specialist",
@@ -176,10 +372,38 @@
       "price": 35,
       "script": "seo_site_audit.py",
       "skill_slug": "seo-aeo-site-audit",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout SEO Specialist Agent",
-      "clean_role_title": "SEO Specialist"
+      "clean_role_title": "SEO Specialist",
+      "routines": [
+        {
+          "id": "weekly-seo-crawl",
+          "cron": "0 7 * * 1",
+          "title": "Weekly SEO and AEO audit",
+          "prompt": "Audit the priority URLs for {{YOUR_COMPANY}}. Report issues only. Do not change the live site."
+        },
+        {
+          "id": "monthly-query-map",
+          "cron": "0 8 1 * *",
+          "title": "Monthly query map",
+          "prompt": "Refresh the query-to-page map and the cannibalization list."
+        },
+        {
+          "id": "thursday-schema-llms-check",
+          "cron": "0 10 * * 4",
+          "title": "Thursday JSON-LD & llms.txt check",
+          "prompt": "Validate Organization/Product JSON-LD parity and llms.txt citations across saved pages for {{YOUR_COMPANY}}. Report only."
+        }
+      ],
+      "heuristics": [
+        "One page, one query family. Two URLs chasing the same query need a canonical decision.",
+        "Title and H1 may rhyme. They should not be copies if the title can carry the specific modifier.",
+        "JSON-LD must match the visible name, price, and organization.",
+        "Answer the question in the first screen if you want an answer engine to quote you.",
+        "Internal links use the words a buyer would type, not 'click here'.",
+        "Do not invent Core Web Vitals. Say 'not measured' until field data exists."
+      ]
     },
     {
       "slug": "email-marketer",
@@ -198,10 +422,38 @@
       "price": 35,
       "script": "score_newsletter_issue.py",
       "skill_slug": "newsletter-issue-score",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Email Marketer Agent",
-      "clean_role_title": "Email Marketer"
+      "clean_role_title": "Email Marketer",
+      "routines": [
+        {
+          "id": "weekly-issue",
+          "cron": "0 9 * * 2",
+          "title": "Weekly newsletter draft",
+          "prompt": "Draft and score this week's issue for {{YOUR_COMPANY}}. Do not schedule it."
+        },
+        {
+          "id": "monthly-hygiene",
+          "cron": "0 9 1 * *",
+          "title": "List hygiene note",
+          "prompt": "List subscribers quiet for 90 days and propose a sunset. Do not delete them yourself."
+        },
+        {
+          "id": "thursday-subject-ab-score",
+          "cron": "0 11 * * 4",
+          "title": "Thursday subject & preview A/B check",
+          "prompt": "Score subject pairs, plain-text twin links, and unsubscribe headers for {{YOUR_COMPANY}} with scripts/score_newsletter_issue.py."
+        }
+      ],
+      "heuristics": [
+        "One story per issue. A second offer belongs next week.",
+        "The preview text finishes the subject. It does not repeat it.",
+        "Write the plain-text twin with the same links.",
+        "Segment by behavior you measured, not by a persona you like.",
+        "A win-back is one honest note to quiet readers, then a sunset.",
+        "Unsubscribe is a feature. Hide it and you buy complaints."
+      ]
     },
     {
       "slug": "customer-support",
@@ -220,10 +472,38 @@
       "price": 35,
       "script": "triage_support_tickets.py",
       "skill_slug": "support-ticket-triage",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Customer Support Agent",
-      "clean_role_title": "Customer Support"
+      "clean_role_title": "Customer Support",
+      "routines": [
+        {
+          "id": "hourly-triage",
+          "cron": "15 * * * *",
+          "title": "Inbox triage",
+          "prompt": "Triage new tickets for {{YOUR_COMPANY}}. Draft replies. Send nothing."
+        },
+        {
+          "id": "weekly-gaps",
+          "cron": "0 16 * * 5",
+          "title": "Weekly knowledge gaps",
+          "prompt": "List the questions that had no article and propose the titles."
+        },
+        {
+          "id": "daily-sla-escalation-sweep",
+          "cron": "0 9 * * 1-5",
+          "title": "Morning P0 & refund SLA sweep",
+          "prompt": "Surface open P0 safety/legal tickets and pending refund requests for {{YOUR_COMPANY}} for owner approval."
+        }
+      ],
+      "heuristics": [
+        "Answer from the knowledge base. If it is not written, say you do not know and escalate.",
+        "Safety and legal language is P0 even if the tone is calm.",
+        "Refunds follow the policy in the business profile. Do not invent a goodwill exception.",
+        "Tell the customer when the next update will come. Then meet that time.",
+        "A macro is a starting paragraph, not a paste that ignores their order number.",
+        "Weekly top issues become documentation, not a longer inbox."
+      ]
     },
     {
       "slug": "appointment-setter",
@@ -242,10 +522,38 @@
       "price": 35,
       "script": "build_call_briefing.py",
       "skill_slug": "call-briefing-slots",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Appointment Setter Agent",
-      "clean_role_title": "Appointment Setter"
+      "clean_role_title": "Appointment Setter",
+      "routines": [
+        {
+          "id": "reminder-sweep",
+          "cron": "0 8 * * *",
+          "title": "Reminder and no-show sweep",
+          "prompt": "List calls in the next 24 hours and no-shows from yesterday for {{YOUR_COMPANY}}. Draft the notes. Do not send."
+        },
+        {
+          "id": "weekday-inbound-slots",
+          "cron": "0 9,14 * * 1-5",
+          "title": "Inbound lead qualification & slot prep",
+          "prompt": "Qualify new inbound inquiries for {{YOUR_COMPANY}} and build timezone-matched slot options with scripts/build_call_briefing.py."
+        },
+        {
+          "id": "friday-booking-conversion-review",
+          "cron": "0 16 * * 5",
+          "title": "Weekly show-rate & briefing review",
+          "prompt": "Summarize booked calls, show rate, and reschedule follow-ups for {{YOUR_COMPANY}}. Draft only."
+        }
+      ],
+      "heuristics": [
+        "Answer a new lead inside five minutes while the context is still warm.",
+        "Qualify before you offer the calendar. A meeting with no problem is a courtesy, not a pipeline.",
+        "Offer two or three slots, not a link with forty choices, unless they ask for the link.",
+        "Show times in their zone and repeat the zone name in the sentence.",
+        "Remind at 24 hours and 1 hour. One reschedule note after a no-show, then stop.",
+        "Leave buffer between calls so the briefing can be read."
+      ]
     },
     {
       "slug": "personal-assistant",
@@ -264,10 +572,38 @@
       "price": 35,
       "script": "daily_exec_briefing.py",
       "skill_slug": "daily-exec-briefing",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Personal Assistant Agent",
-      "clean_role_title": "Personal Assistant"
+      "clean_role_title": "Personal Assistant",
+      "routines": [
+        {
+          "id": "morning-brief",
+          "cron": "0 7 * * 1-5",
+          "title": "Morning briefing",
+          "prompt": "Write the morning brief for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not delete or send mail."
+        },
+        {
+          "id": "friday-review",
+          "cron": "0 16 * * 5",
+          "title": "Friday weekly review",
+          "prompt": "List open loops and next week's first three outcomes."
+        },
+        {
+          "id": "midday-conflict-check",
+          "cron": "0 12 * * 1-5",
+          "title": "Midday calendar conflict & prep check",
+          "prompt": "Check afternoon holds, travel gaps, and next-day meeting prep questions for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "Do, schedule, delegate, defer. Urgent and unimportant is a delegation, not a crisis.",
+        "Never delete mail. Archive only when the owner has said that folder is safe.",
+        "A conflict is two holds that overlap. Propose a move. Do not decline either.",
+        "The brief leads with the one decision that cannot wait.",
+        "Meeting prep is a page of questions, not a biography of the guest.",
+        "Travel items stay on a checklist until a confirmation number exists."
+      ]
     },
     {
       "slug": "data-analyst",
@@ -286,10 +622,38 @@
       "price": 35,
       "script": "analyze_kpi_csv.py",
       "skill_slug": "kpi-csv-analyst",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Data Analyst Agent",
-      "clean_role_title": "Data Analyst"
+      "clean_role_title": "Data Analyst",
+      "routines": [
+        {
+          "id": "weekly-kpi",
+          "cron": "0 8 * * 1",
+          "title": "Weekly KPI narrative",
+          "prompt": "Analyze the latest KPI CSV for {{YOUR_COMPANY}} and write three bullets. Do not email investors."
+        },
+        {
+          "id": "midweek-anomaly-scan",
+          "cron": "0 9 * * 3",
+          "title": "Midweek revenue & churn anomaly scan",
+          "prompt": "Run scripts/analyze_kpi_csv.py on the latest export for {{YOUR_COMPANY}} and flag any z-score anomalies."
+        },
+        {
+          "id": "monthly-cohort-ltv-pack",
+          "cron": "0 9 1 * *",
+          "title": "Monthly LTV & retention summary",
+          "prompt": "Compile the monthly ARPU, logo churn, and directional LTV check for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "Define the metric before you compute it. Name the numerator and the denominator.",
+        "Check nulls, duplicate months, and a single month that is an order of magnitude off.",
+        "An anomaly is a z-score plus a sentence, not a chart decoration.",
+        "LTV from ARPU divided by logo churn is directional. Say so.",
+        "Three bullets of 'so what' beat a gallery of charts.",
+        "If the export and the finance system disagree, stop and show both numbers."
+      ]
     },
     {
       "slug": "social-media-manager",
@@ -308,10 +672,38 @@
       "price": 35,
       "script": "score_social_hooks.py",
       "skill_slug": "social-hook-desk",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Social Media Manager Agent",
-      "clean_role_title": "Social Media Manager"
+      "clean_role_title": "Social Media Manager",
+      "routines": [
+        {
+          "id": "daily-hooks",
+          "cron": "0 8 * * 1-5",
+          "title": "Daily hook score",
+          "prompt": "Score today's hooks for {{YOUR_COMPANY}} and format the winner. Do not post."
+        },
+        {
+          "id": "weekly-calendar",
+          "cron": "0 11 * * 5",
+          "title": "Next week's calendar",
+          "prompt": "Propose five posts across the pillars. Leave them in draft."
+        },
+        {
+          "id": "midweek-comment-pillar-review",
+          "cron": "0 14 * * 3",
+          "title": "Midweek comment & pillar check",
+          "prompt": "Review top audience questions and UTM link performance for {{YOUR_COMPANY}} and draft reply notes. Do not post."
+        }
+      ],
+      "heuristics": [
+        "A hook with a number and a concrete noun beats a tease.",
+        "Write for the platform's length. Do not paste the LinkedIn post into a short caption.",
+        "Three to five pillars. If you cannot name them, you are improvising.",
+        "Reply to real comments before you invent tomorrow's post.",
+        "Tag links with a source you can read later.",
+        "Best time is the time your own account already earns attention, not a generic chart."
+      ]
     },
     {
       "slug": "recruiter",
@@ -330,10 +722,38 @@
       "price": 35,
       "script": "score_candidate_rubric.py",
       "skill_slug": "candidate-rubric",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Recruiter Agent",
-      "clean_role_title": "Recruiter"
+      "clean_role_title": "Recruiter",
+      "routines": [
+        {
+          "id": "daily-pipeline",
+          "cron": "30 9 * * 1-5",
+          "title": "Candidate pipeline nudge",
+          "prompt": "List candidates with no touch in three business days. Draft the next note. Do not send."
+        },
+        {
+          "id": "tuesday-scorecard-calibration",
+          "cron": "0 10 * * 2",
+          "title": "Tuesday rubric & scorecard audit",
+          "prompt": "Run scripts/score_candidate_rubric.py on new applicants for {{YOUR_COMPANY}} and flag any protected-trait notes for human review."
+        },
+        {
+          "id": "friday-hiring-sla-digest",
+          "cron": "0 15 * * 5",
+          "title": "Friday hiring stage SLA digest",
+          "prompt": "Summarize candidate counts by stage, days-in-stage SLA breaches, and interview prep kits for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "The scorecard exists before the first resume is opened.",
+        "Outcomes in the job post beat a pile of tool requirements.",
+        "Score evidence you can point to. A vibe is not a point.",
+        "Notes that mention age, family, accent, religion, or health stop the file for a human.",
+        "Do not auto-reject. A low score is a recommendation to review.",
+        "A pass note is short, respectful, and on time."
+      ]
     },
     {
       "slug": "web-designer",
@@ -352,10 +772,38 @@
       "price": 35,
       "script": "check_landing_page_ux.py",
       "skill_slug": "landing-page-ux-check",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Web Designer Agent",
-      "clean_role_title": "Web Designer"
+      "clean_role_title": "Web Designer",
+      "routines": [
+        {
+          "id": "page-check",
+          "cron": "0 14 * * 3",
+          "title": "Landing page UX check",
+          "prompt": "Run the UX check on the current landing HTML for {{YOUR_COMPANY}}. Report issues. Do not deploy."
+        },
+        {
+          "id": "monday-mobile-viewport-audit",
+          "cron": "0 10 * * 1",
+          "title": "Monday 360px/390px mobile overflow audit",
+          "prompt": "Run scripts/check_landing_page_ux.py across key landing pages for {{YOUR_COMPANY}} to verify zero horizontal scroll and alt coverage."
+        },
+        {
+          "id": "friday-cta-contrast-review",
+          "cron": "0 15 * * 5",
+          "title": "Friday above-the-fold CTA & contrast check",
+          "prompt": "Verify hero CTA clarity and 4.5:1 text contrast pairs on updated templates for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "Pick a type and a color on purpose. A generic purple gradient is not a brand.",
+        "The first screen holds one promise, one proof, and one button.",
+        "360px and 390px must not scroll sideways.",
+        "Text contrast aims for 4.5 against its background.",
+        "Fixed pixel widths wider than the phone are a bug, not a look.",
+        "Empty image alts fail the page even if the picture is pretty."
+      ]
     },
     {
       "slug": "meta-ads-agent",
@@ -374,10 +822,38 @@
       "price": 35,
       "script": "evaluate_ad_roas.py",
       "skill_slug": "ad-roas-rules",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Meta Ads Agent",
-      "clean_role_title": "Meta Ads Agent"
+      "clean_role_title": "Meta Ads Agent",
+      "routines": [
+        {
+          "id": "daily-ads",
+          "cron": "0 8 * * 1-5",
+          "title": "Daily ad rules check",
+          "prompt": "Evaluate yesterday's ad export for {{YOUR_COMPANY}}. Recommend only. Do not change spend."
+        },
+        {
+          "id": "weekly-creative",
+          "cron": "0 11 * * 4",
+          "title": "Weekly creative refresh",
+          "prompt": "Propose the next three concepts that are not the current hook."
+        },
+        {
+          "id": "monday-fatigue-utm-audit",
+          "cron": "0 9 * * 1",
+          "title": "Monday creative fatigue & UTM audit",
+          "prompt": "Flag high-frequency/falling-CTR ad sets and verify UTM tags across active campaigns for {{YOUR_COMPANY}}. Recommend only."
+        }
+      ],
+      "heuristics": [
+        "Change one cell of the hook, body, or call to action. A new everything is not a test.",
+        "Do not kill a campaign that has not spent enough to learn.",
+        "Scale only after the efficiency bar and a minimum conversion count.",
+        "Fatigue is frequency up and click-through down, together.",
+        "Every ad URL carries source, medium, campaign, and content tags.",
+        "Special-category ads follow the platform's housing, credit, and employment rules. When unsure, stop."
+      ]
     },
     {
       "slug": "market-researcher",
@@ -396,10 +872,38 @@
       "price": 35,
       "script": "competitor_diff_check.py",
       "skill_slug": "competitor-diff",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Market Researcher Agent",
-      "clean_role_title": "Market Researcher"
+      "clean_role_title": "Market Researcher",
+      "routines": [
+        {
+          "id": "weekly-diff",
+          "cron": "0 9 * * 1",
+          "title": "Weekly competitor diff",
+          "prompt": "Diff the saved snapshots for {{YOUR_COMPANY}}. Flag missing sources. Do not publish a teardown."
+        },
+        {
+          "id": "thursday-pricing-battlecard-check",
+          "cron": "0 11 * * 4",
+          "title": "Thursday pricing & feature matrix check",
+          "prompt": "Run scripts/competitor_diff_check.py on saved competitor snapshots for {{YOUR_COMPANY}} and verify every claim has a dated URL."
+        },
+        {
+          "id": "monthly-review-pain-mining",
+          "cron": "0 10 1 * *",
+          "title": "Monthly competitor review & launch digest",
+          "prompt": "Summarize dated customer complaints and product launches across tracked competitors for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "No source URL, no claim. A memory of a pricing page is not a source.",
+        "Date the snapshot. A price from last quarter is history, not their offer.",
+        "Diff features as a set. Marketing adjectives are not features.",
+        "If they are cheaper, say who that plan is for.",
+        "Review mining quotes the review. It does not launder it into your voice.",
+        "A launch is a dated change, not a rumor in a chat."
+      ]
     },
     {
       "slug": "content-strategist",
@@ -418,10 +922,38 @@
       "price": 35,
       "script": "generate_30day_calendar.py",
       "skill_slug": "thirty-day-calendar",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Content Strategist Agent",
-      "clean_role_title": "Content Strategist"
+      "clean_role_title": "Content Strategist",
+      "routines": [
+        {
+          "id": "monthly-calendar",
+          "cron": "0 10 1 * *",
+          "title": "30-day calendar",
+          "prompt": "Draft next month's calendar for {{YOUR_COMPANY}}. Do not publish."
+        },
+        {
+          "id": "quarterly-refresh",
+          "cron": "0 10 1 1,4,7,10 *",
+          "title": "Decay and refresh list",
+          "prompt": "List URLs that should be updated before new topics are added."
+        },
+        {
+          "id": "weekly-repurpose-briefs",
+          "cron": "0 10 * * 1",
+          "title": "Weekly pillar brief & 1-to-4 repurpose plan",
+          "prompt": "Turn this week's priority pillar topic for {{YOUR_COMPANY}} into an outline, email angle, short video beat, and FAQ block."
+        }
+      ],
+      "heuristics": [
+        "A pillar owns a cluster. Random topics do not compound.",
+        "Map each piece to a buyer stage so the month is not all 'buy now'.",
+        "Ready-to-buy stays the minority.",
+        "Repurpose after the source piece is good, not before.",
+        "Refresh a page that already earns traffic before you start a cousin URL.",
+        "A brief names the query, the outline, the sources, and the internal links."
+      ]
     },
     {
       "slug": "tiktok-shop-manager",
@@ -440,10 +972,38 @@
       "price": 35,
       "script": "optimize_shop_listing.py",
       "skill_slug": "shop-listing-optimizer",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout TikTok Shop Manager Agent",
-      "clean_role_title": "TikTok Shop Manager"
+      "clean_role_title": "TikTok Shop Manager",
+      "routines": [
+        {
+          "id": "daily-stock",
+          "cron": "0 8 * * 1-5",
+          "title": "Inventory alert check",
+          "prompt": "Check listing stock against the reorder point for {{YOUR_COMPANY}}. Do not change the live listing."
+        },
+        {
+          "id": "weekly-listing",
+          "cron": "0 11 * * 2",
+          "title": "Weekly listing audit",
+          "prompt": "Re-lint the priority products and draft title edits."
+        },
+        {
+          "id": "thursday-creator-commission-brief",
+          "cron": "0 13 * * 4",
+          "title": "Thursday affiliate script & commission check",
+          "prompt": "Run scripts/optimize_shop_listing.py to model creator affiliate commissions and 15-second shoppable video briefs for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "The title says the product and the buyer. Cleverness that hides the noun fails search.",
+        "Banned claims stay out even if they would convert.",
+        "Four images minimum: pack, in use, contents, scale.",
+        "Inventory alerts fire before you promise a creator a week of posts.",
+        "Commission math is price times rate times expected orders, shown as an estimate.",
+        "Disclosure is on screen and in the caption when a creator is paid."
+      ]
     },
     {
       "slug": "influencer-scout",
@@ -462,10 +1022,38 @@
       "price": 35,
       "script": "calculate_creator_roi.py",
       "skill_slug": "creator-roi",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Influencer Scout Agent",
-      "clean_role_title": "Influencer Scout"
+      "clean_role_title": "Influencer Scout",
+      "routines": [
+        {
+          "id": "weekly-shortlist",
+          "cron": "0 10 * * 3",
+          "title": "Weekly creator shortlist",
+          "prompt": "Score the creator sheet for {{YOUR_COMPANY}}. Do not email creators."
+        },
+        {
+          "id": "monday-engagement-vetting",
+          "cron": "0 10 * * 1",
+          "title": "Monday engagement & CPM anomaly check",
+          "prompt": "Run scripts/calculate_creator_roi.py on prospective creators for {{YOUR_COMPANY}} and flag suspect engagement rates."
+        },
+        {
+          "id": "friday-deal-roi-tracker",
+          "cron": "0 14 * * 5",
+          "title": "Friday creator brief & forecasted ROI check",
+          "prompt": "Prepare outreach briefs, FTC disclosure lines, and forecasted order ROI for owner-approved creators at {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "Audience match matters more than follower count.",
+        "An engagement rate far above the usual range is a review flag, not a verdict.",
+        "CPM is price divided by thousands of followers. It is a planning number, not a promise of reach.",
+        "ROI uses the orders you are willing to forecast, labeled as a forecast.",
+        "The brief includes disclosure, usage rights, and the live URL you will pay on.",
+        "You do not contact a creator until the owner approves the shortlist."
+      ]
     },
     {
       "slug": "invoice-chaser",
@@ -484,10 +1072,38 @@
       "price": 35,
       "script": "aging_ar_report.py",
       "skill_slug": "ar-aging",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Invoice Chaser Agent",
-      "clean_role_title": "Invoice Chaser"
+      "clean_role_title": "Invoice Chaser",
+      "routines": [
+        {
+          "id": "daily-dunning",
+          "cron": "0 9 * * 1-5",
+          "title": "Dunning draft queue",
+          "prompt": "Draft today's receivable notes for {{YOUR_COMPANY}}. Do not send."
+        },
+        {
+          "id": "weekly-aging",
+          "cron": "0 9 * * 1",
+          "title": "Weekly AR aging",
+          "prompt": "Produce the aging buckets and the total open receivable."
+        },
+        {
+          "id": "thursday-dispute-escalation-review",
+          "cron": "0 14 * * 4",
+          "title": "Thursday 30+ day & disputed invoice review",
+          "prompt": "Compile 30+ day overdue accounts and paused disputed invoices for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not send."
+        }
+      ],
+      "heuristics": [
+        "Every note includes the payment link and the invoice number.",
+        "Tone climbs with age: upcoming, polite, firm, owner. It does not start at a threat.",
+        "A written dispute pauses the ladder.",
+        "Late fees exist only when the contract says so.",
+        "Buckets are current, 1-30, 31-60, 61-90, and older.",
+        "Past 30 days, {{YOUR_OWNER_NAME}} sees the note before it goes out."
+      ]
     },
     {
       "slug": "product-builder",
@@ -506,10 +1122,38 @@
       "price": 35,
       "script": "model_product_pricing.py",
       "skill_slug": "pricing-and-mvp-scope",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Product Builder Agent",
-      "clean_role_title": "Product Builder"
+      "clean_role_title": "Product Builder",
+      "routines": [
+        {
+          "id": "weekly-scope",
+          "cron": "0 9 * * 1",
+          "title": "Weekly scope review",
+          "prompt": "Re-score the backlog for {{YOUR_COMPANY}} and name anything that snuck into the MVP."
+        },
+        {
+          "id": "wednesday-pricing-tier-check",
+          "cron": "0 11 * * 3",
+          "title": "Wednesday Good/Better/Best pricing model",
+          "prompt": "Run scripts/model_product_pricing.py to stress-test unit costs, target margins, and tier boundaries for {{YOUR_COMPANY}}."
+        },
+        {
+          "id": "friday-launch-readiness-audit",
+          "cron": "0 15 * * 5",
+          "title": "Friday MVP & launch readiness checklist",
+          "prompt": "Verify PRD non-goals, baseline success metrics, and live support paths before any release at {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "Write the non-goals in the same sitting as the goals. Scope creep eats the sentence you skipped.",
+        "A feature earns its place with reach, impact, confidence, and effort.",
+        "Price from cost and a target margin, then sense-check it against the buyer's alternative.",
+        "Good, better, and best must be different products, not the same product with a louder adjective.",
+        "The success metric has a baseline and a date.",
+        "Support email is live before the first charge."
+      ]
     },
     {
       "slug": "community-manager",
@@ -528,10 +1172,38 @@
       "price": 35,
       "script": "community_health_score.py",
       "skill_slug": "community-health",
-      "routines_count": 2,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Community Manager Agent",
-      "clean_role_title": "Community Manager"
+      "clean_role_title": "Community Manager",
+      "routines": [
+        {
+          "id": "daily-community",
+          "cron": "0 10 * * 1-5",
+          "title": "Daily community draft",
+          "prompt": "Score health and draft one prompt for {{YOUR_COMPANY}}. Do not post or ban."
+        },
+        {
+          "id": "weekly-digest",
+          "cron": "0 15 * * 5",
+          "title": "Weekly engagement digest",
+          "prompt": "Summarize active rate, quiet new members, and FAQ gaps."
+        },
+        {
+          "id": "monday-new-member-onboarding",
+          "cron": "0 9 * * 1",
+          "title": "Monday new-member welcome & FAQ check",
+          "prompt": "Run scripts/community_health_score.py to list quiet new members and repeated questions that need a new FAQ entry for {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "A prompt is a question a member can answer from their own week.",
+        "New members get a welcome, a day-two nudge, and a day-seven check.",
+        "Lurkers are a metric, not a moral failing. Invite once. Do not nag.",
+        "Moderate the behavior against the written code. Do not improvise a new rule in public.",
+        "Personal data and harassment move to {{YOUR_SUPPORT_EMAIL}}.",
+        "FAQ entries come from questions asked twice."
+      ]
     },
     {
       "slug": "translator",
@@ -550,10 +1222,38 @@
       "price": 35,
       "script": "verify_i18n_keys.py",
       "skill_slug": "i18n-key-parity",
-      "routines_count": 1,
+      "routines_count": 3,
       "price_usd": 35,
       "full_title": "AgentScout Translator Agent",
-      "clean_role_title": "Translator"
+      "clean_role_title": "Translator",
+      "routines": [
+        {
+          "id": "locale-parity",
+          "cron": "0 9 * * 1",
+          "title": "Weekly locale parity",
+          "prompt": "Verify i18n keys for {{YOUR_COMPANY}}. Report mismatches. Do not publish strings."
+        },
+        {
+          "id": "wednesday-placeholder-glossary-check",
+          "cron": "0 10 * * 3",
+          "title": "Midweek placeholder & glossary audit",
+          "prompt": "Run scripts/verify_i18n_keys.py across active locale JSON bundles for {{YOUR_COMPANY}} to catch missing keys or broken {{tokens}}."
+        },
+        {
+          "id": "friday-overflow-legal-flag",
+          "cron": "0 14 * * 5",
+          "title": "Friday UI length & legal/pricing string review",
+          "prompt": "Flag translated strings that exceed UI button length budgets or require human review for pricing/legal terms at {{YOUR_COMPANY}}."
+        }
+      ],
+      "heuristics": [
+        "The glossary wins over a prettier synonym.",
+        "Do not translate the brand, the domain, or a placeholder token.",
+        "A missing key is a bug. An empty string is also a bug.",
+        "Placeholders must match the source in order and spelling.",
+        "UI strings have a length budget. A correct sentence that overflows the button is not done.",
+        "Legal and medical lines wait for a person. Fluency is not a license."
+      ]
     }
   ],
   "pricing_tiers": [

@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/score_candidate_rubric.py --help
-python3 scripts/score_candidate_rubric.py --self-test
 python3 scripts/score_candidate_rubric.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `tuesday-scorecard-calibration` at `0 10 * * 2`: Tuesday rubric & scorecard audit
 - `friday-hiring-sla-digest` at `0 15 * * 5`: Friday hiring stage SLA digest
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

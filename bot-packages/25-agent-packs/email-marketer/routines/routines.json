@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Email Marketer Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "weekly-issue",
@@ -10,8 +9,7 @@
       "title": "Weekly newsletter draft",
       "prompt": "Draft and score this week's issue for {{YOUR_COMPANY}}. Do not schedule it. Follow skills/newsletter-issue-score/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_newsletter_issue.py",
-      "markdown": "routines/weekly-issue.md"
+      "script": "scripts/score_newsletter_issue.py"
     },
     {
       "id": "monthly-hygiene",
@@ -19,8 +17,7 @@
       "title": "List hygiene note",
       "prompt": "List subscribers quiet for 90 days and propose a sunset. Do not delete them yourself. Follow skills/newsletter-issue-score/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_newsletter_issue.py",
-      "markdown": "routines/monthly-hygiene.md"
+      "script": "scripts/score_newsletter_issue.py"
     },
     {
       "id": "thursday-subject-ab-score",
@@ -28,8 +25,7 @@
       "title": "Thursday subject & preview A/B check",
       "prompt": "Score subject pairs, plain-text twin links, and unsubscribe headers for {{YOUR_COMPANY}} with scripts/score_newsletter_issue.py. Follow skills/newsletter-issue-score/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_newsletter_issue.py",
-      "markdown": "routines/thursday-subject-ab-score.md"
+      "script": "scripts/score_newsletter_issue.py"
     }
   ]
 }

@@ -1,4 +1,8 @@
-# AgentScout Data Analyst Agent routines ({{YOUR_TIMEZONE}})
-0 8 * * 1 python3 scripts/analyze_kpi_csv.py --dry-run # weekly-kpi: Weekly KPI narrative
-0 9 * * 3 python3 scripts/analyze_kpi_csv.py --dry-run # midweek-anomaly-scan: Midweek revenue & churn anomaly scan
-0 9 1 * * python3 scripts/analyze_kpi_csv.py --dry-run # monthly-cohort-ltv-pack: Monthly LTV & retention summary
+# Scheduled routines for AgentScout Data Analyst Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly KPI narrative (weekly-kpi)
+0 8 * * 1 python3 scripts/analyze_kpi_csv.py --dry-run  # routine: weekly-kpi
+# Midweek revenue & churn anomaly scan (midweek-anomaly-scan)
+0 9 * * 3 python3 scripts/analyze_kpi_csv.py --dry-run  # routine: midweek-anomaly-scan
+# Monthly LTV & retention summary (monthly-cohort-ltv-pack)
+0 9 1 * * python3 scripts/analyze_kpi_csv.py --dry-run  # routine: monthly-cohort-ltv-pack

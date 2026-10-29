@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Copywriter Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "copy-pass",
@@ -10,8 +9,7 @@
       "title": "Midweek copy pass",
       "prompt": "Audit the live hero and one email for {{YOUR_COMPANY}}. Return a revised draft and the score. Do not publish. Follow skills/conversion-copy-audit/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/audit_sales_copy.py",
-      "markdown": "routines/copy-pass.md"
+      "script": "scripts/audit_sales_copy.py"
     },
     {
       "id": "weekly-headline-variants",
@@ -19,8 +17,7 @@
       "title": "Monday headline & hook variants",
       "prompt": "Draft three hypothesis-backed headline and CTA variants for {{YOUR_COMPANY}} and score them with scripts/audit_sales_copy.py. Do not publish. Follow skills/conversion-copy-audit/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/audit_sales_copy.py",
-      "markdown": "routines/weekly-headline-variants.md"
+      "script": "scripts/audit_sales_copy.py"
     },
     {
       "id": "friday-objection-refresh",
@@ -28,8 +25,7 @@
       "title": "Friday customer objection refresh",
       "prompt": "Turn this week's sales and support questions for {{YOUR_COMPANY}} into FAQ and objection-handling copy drafts. Follow skills/conversion-copy-audit/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/audit_sales_copy.py",
-      "markdown": "routines/friday-objection-refresh.md"
+      "script": "scripts/audit_sales_copy.py"
     }
   ]
 }

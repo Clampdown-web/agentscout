@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Recruiter Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-pipeline",
@@ -10,8 +9,7 @@
       "title": "Candidate pipeline nudge",
       "prompt": "List candidates with no touch in three business days. Draft the next note. Do not send. Follow skills/candidate-rubric/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_candidate_rubric.py",
-      "markdown": "routines/daily-pipeline.md"
+      "script": "scripts/score_candidate_rubric.py"
     },
     {
       "id": "tuesday-scorecard-calibration",
@@ -19,8 +17,7 @@
       "title": "Tuesday rubric & scorecard audit",
       "prompt": "Run scripts/score_candidate_rubric.py on new applicants for {{YOUR_COMPANY}} and flag any protected-trait notes for human review. Follow skills/candidate-rubric/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_candidate_rubric.py",
-      "markdown": "routines/tuesday-scorecard-calibration.md"
+      "script": "scripts/score_candidate_rubric.py"
     },
     {
       "id": "friday-hiring-sla-digest",
@@ -28,8 +25,7 @@
       "title": "Friday hiring stage SLA digest",
       "prompt": "Summarize candidate counts by stage, days-in-stage SLA breaches, and interview prep kits for {{YOUR_COMPANY}}. Follow skills/candidate-rubric/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_candidate_rubric.py",
-      "markdown": "routines/friday-hiring-sla-digest.md"
+      "script": "scripts/score_candidate_rubric.py"
     }
   ]
 }

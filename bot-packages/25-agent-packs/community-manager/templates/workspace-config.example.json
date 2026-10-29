@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "community-manager",
-    "name": "Community Manager",
-    "brand_title": "AgentScout Community Manager Agent",
-    "department": "Operations & Admin",
-    "skill": "skills/community-health/SKILL.md",
-    "script": "scripts/community_health_score.py",
-    "routines": [
-      "daily-community",
-      "weekly-digest",
-      "monday-new-member-onboarding"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "community-manager",
+  "agent_title": "AgentScout Community Manager Agent",
+  "skill": "skills/community-health/SKILL.md",
+  "script": "scripts/community_health_score.py",
+  "routines_count": 3
 }

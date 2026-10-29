@@ -3,19 +3,17 @@
   "slug": "recruiter",
   "tagline": "Candidate sourcing, resume scorecarding & structured interview kits",
   "version": "1.0.0",
+  "role_title": "Recruiter",
+  "card_title": "Recruiter Agent",
+  "brand_title": "AgentScout Recruiter Agent",
+  "department": "Sales & Outreach",
   "skill": "skills/candidate-rubric/SKILL.md",
-  "skill_slug": "candidate-rubric",
   "script": "scripts/score_candidate_rubric.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "The scorecard exists before the first resume is opened.",
-    "Outcomes in the job post beat a pile of tool requirements.",
-    "Score evidence you can point to. A vibe is not a point.",
-    "Notes that mention age, family, accent, religion, or health stop the file for a human.",
-    "Do not auto-reject. A low score is a recommendation to review.",
-    "A pass note is short, respectful, and on time."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-pipeline",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

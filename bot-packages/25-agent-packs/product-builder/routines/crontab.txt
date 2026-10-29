@@ -1,4 +1,8 @@
-# AgentScout Product Builder Agent routines ({{YOUR_TIMEZONE}})
-0 9 * * 1 python3 scripts/model_product_pricing.py --dry-run # weekly-scope: Weekly scope review
-0 11 * * 3 python3 scripts/model_product_pricing.py --dry-run # wednesday-pricing-tier-check: Wednesday Good/Better/Best pricing model
-0 15 * * 5 python3 scripts/model_product_pricing.py --dry-run # friday-launch-readiness-audit: Friday MVP & launch readiness checklist
+# Scheduled routines for AgentScout Product Builder Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly scope review (weekly-scope)
+0 9 * * 1 python3 scripts/model_product_pricing.py --dry-run  # routine: weekly-scope
+# Wednesday Good/Better/Best pricing model (wednesday-pricing-tier-check)
+0 11 * * 3 python3 scripts/model_product_pricing.py --dry-run  # routine: wednesday-pricing-tier-check
+# Friday MVP & launch readiness checklist (friday-launch-readiness-audit)
+0 15 * * 5 python3 scripts/model_product_pricing.py --dry-run  # routine: friday-launch-readiness-audit

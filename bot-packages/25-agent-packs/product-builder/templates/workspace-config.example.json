@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "product-builder",
-    "name": "Product Builder",
-    "brand_title": "AgentScout Product Builder Agent",
-    "department": "Product & Data",
-    "skill": "skills/pricing-and-mvp-scope/SKILL.md",
-    "script": "scripts/model_product_pricing.py",
-    "routines": [
-      "weekly-scope",
-      "wednesday-pricing-tier-check",
-      "friday-launch-readiness-audit"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "product-builder",
+  "agent_title": "AgentScout Product Builder Agent",
+  "skill": "skills/pricing-and-mvp-scope/SKILL.md",
+  "script": "scripts/model_product_pricing.py",
+  "routines_count": 3
 }

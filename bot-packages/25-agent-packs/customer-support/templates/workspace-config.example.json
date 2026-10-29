@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "customer-support",
-    "name": "Customer Support",
-    "brand_title": "AgentScout Customer Support Agent",
-    "department": "Operations & Admin",
-    "skill": "skills/support-ticket-triage/SKILL.md",
-    "script": "scripts/triage_support_tickets.py",
-    "routines": [
-      "hourly-triage",
-      "weekly-gaps",
-      "daily-sla-escalation-sweep"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "customer-support",
+  "agent_title": "AgentScout Customer Support Agent",
+  "skill": "skills/support-ticket-triage/SKILL.md",
+  "script": "scripts/triage_support_tickets.py",
+  "routines_count": 3
 }

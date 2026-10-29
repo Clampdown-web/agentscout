@@ -1,4 +1,8 @@
-# AgentScout Community Manager Agent routines ({{YOUR_TIMEZONE}})
-0 10 * * 1-5 python3 scripts/community_health_score.py --dry-run # daily-community: Daily community draft
-0 15 * * 5 python3 scripts/community_health_score.py --dry-run # weekly-digest: Weekly engagement digest
-0 9 * * 1 python3 scripts/community_health_score.py --dry-run # monday-new-member-onboarding: Monday new-member welcome & FAQ check
+# Scheduled routines for AgentScout Community Manager Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Daily community draft (daily-community)
+0 10 * * 1-5 python3 scripts/community_health_score.py --dry-run  # routine: daily-community
+# Weekly engagement digest (weekly-digest)
+0 15 * * 5 python3 scripts/community_health_score.py --dry-run  # routine: weekly-digest
+# Monday new-member welcome & FAQ check (monday-new-member-onboarding)
+0 9 * * 1 python3 scripts/community_health_score.py --dry-run  # routine: monday-new-member-onboarding

@@ -3,19 +3,17 @@
   "slug": "video-editor",
   "tagline": "Short-form retention hooks, cut lists, captions & FFmpeg workflows",
   "version": "1.0.0",
+  "role_title": "Video Editor",
+  "card_title": "Video Editor Agent",
+  "brand_title": "AgentScout Video Editor Agent",
+  "department": "Operations & Admin",
   "skill": "skills/shortform-cut-captions/SKILL.md",
-  "skill_slug": "shortform-cut-captions",
   "script": "scripts/format_captions_and_cuts.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "The first three seconds must contain a change, a number, or a question. A logo card does not count.",
-    "Cut filler words and dead air. Keep the breath that makes a sentence human.",
-    "Captions are a script, not a dump of every false start.",
-    "Burned-in captions stay inside the safe center so interface buttons do not cover them.",
-    "Music needs a license note. Silence is better than a track you cannot name.",
-    "One video, one job. Do not hide a second offer in the last second."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "caption-pass",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

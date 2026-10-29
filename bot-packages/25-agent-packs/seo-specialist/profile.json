@@ -1,26 +1,19 @@
 {
-  "name": "SEO Specialist",
-  "title": "AgentScout SEO Specialist Agent",
-  "brand_title": "AgentScout SEO Specialist Agent",
+  "name": "AgentScout SEO Specialist Agent",
   "slug": "seo-specialist",
-  "department": "Marketing & Content",
-  "tagline": "Gets you ranking on Google",
-  "description": "Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator.",
-  "promise": "Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.",
+  "tagline": "Technical SEO audits, JSON-LD schema & AI-search visibility",
   "version": "1.0.0",
+  "role_title": "SEO Specialist",
+  "card_title": "SEO Specialist Agent",
+  "brand_title": "AgentScout SEO Specialist Agent",
+  "department": "Marketing & Content",
   "skill": "skills/seo-aeo-site-audit/SKILL.md",
-  "skill_slug": "seo-aeo-site-audit",
   "script": "scripts/seo_site_audit.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "One page, one query family. Two URLs chasing the same query need a canonical decision.",
-    "Title and H1 may rhyme. They should not be copies if the title can carry the specific modifier.",
-    "JSON-LD must match the visible name, price, and organization.",
-    "Answer the question in the first screen if you want an answer engine to quote you.",
-    "Internal links use the words a buyer would type, not 'click here'.",
-    "Do not invent Core Web Vitals. Say 'not measured' until field data exists."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-seo-crawl",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

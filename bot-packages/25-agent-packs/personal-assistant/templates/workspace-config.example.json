@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "personal-assistant",
-    "name": "Personal Assistant",
-    "brand_title": "AgentScout Personal Assistant Agent",
-    "department": "Operations & Admin",
-    "skill": "skills/daily-exec-briefing/SKILL.md",
-    "script": "scripts/daily_exec_briefing.py",
-    "routines": [
-      "morning-brief",
-      "friday-review",
-      "midday-conflict-check"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "personal-assistant",
+  "agent_title": "AgentScout Personal Assistant Agent",
+  "skill": "skills/daily-exec-briefing/SKILL.md",
+  "script": "scripts/daily_exec_briefing.py",
+  "routines_count": 3
 }

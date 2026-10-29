@@ -1,26 +1,19 @@
 {
-  "name": "Lead Gen Agent",
-  "title": "AgentScout Lead Gen Agent",
-  "brand_title": "AgentScout Lead Gen Agent",
+  "name": "AgentScout Lead Gen Agent",
   "slug": "lead-gen",
-  "department": "Sales & Outreach",
-  "tagline": "Finds qualified leads daily",
-  "description": "Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors.",
-  "promise": "Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.",
+  "tagline": "Daily B2B prospect discovery, ICP scoring & verified lead lists",
   "version": "1.0.0",
+  "role_title": "Lead Gen",
+  "card_title": "Lead Gen Agent",
+  "brand_title": "AgentScout Lead Gen Agent",
+  "department": "Sales & Outreach",
   "skill": "skills/icp-lead-scoring/SKILL.md",
-  "skill_slug": "icp-lead-scoring",
   "script": "scripts/score_leads_pipeline.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Write the ICP and the anti-ICP before you score a single row.",
-    "A buying signal beats a big employee count.",
-    "Dedupe on the domain, not the display name.",
-    "An email that fails a basic shape check does not enter the send queue.",
-    "Log where the row came from. A lead without a source is a rumor.",
-    "Cap the daily batch. A smaller list that sales will touch beats a dump."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-lead-batch",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

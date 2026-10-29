@@ -1,4 +1,8 @@
-# AgentScout Web Designer Agent routines ({{YOUR_TIMEZONE}})
-0 14 * * 3 python3 scripts/check_landing_page_ux.py --dry-run # page-check: Landing page UX check
-0 10 * * 1 python3 scripts/check_landing_page_ux.py --dry-run # monday-mobile-viewport-audit: Monday 360px/390px mobile overflow audit
-0 15 * * 5 python3 scripts/check_landing_page_ux.py --dry-run # friday-cta-contrast-review: Friday above-the-fold CTA & contrast check
+# Scheduled routines for AgentScout Web Designer Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Landing page UX check (page-check)
+0 14 * * 3 python3 scripts/check_landing_page_ux.py --dry-run  # routine: page-check
+# Monday 360px/390px mobile overflow audit (monday-mobile-viewport-audit)
+0 10 * * 1 python3 scripts/check_landing_page_ux.py --dry-run  # routine: monday-mobile-viewport-audit
+# Friday above-the-fold CTA & contrast check (friday-cta-contrast-review)
+0 15 * * 5 python3 scripts/check_landing_page_ux.py --dry-run  # routine: friday-cta-contrast-review

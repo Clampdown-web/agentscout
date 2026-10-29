@@ -3,19 +3,17 @@
   "slug": "product-builder",
   "tagline": "PRDs, user stories, release checklists & feedback prioritization",
   "version": "1.0.0",
+  "role_title": "Product Builder",
+  "card_title": "Product Builder Agent",
+  "brand_title": "AgentScout Product Builder Agent",
+  "department": "Product & Data",
   "skill": "skills/pricing-and-mvp-scope/SKILL.md",
-  "skill_slug": "pricing-and-mvp-scope",
   "script": "scripts/model_product_pricing.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Write the non-goals in the same sitting as the goals. Scope creep eats the sentence you skipped.",
-    "A feature earns its place with reach, impact, confidence, and effort.",
-    "Price from cost and a target margin, then sense-check it against the buyer's alternative.",
-    "Good, better, and best must be different products, not the same product with a louder adjective.",
-    "The success metric has a baseline and a date.",
-    "Support email is live before the first charge."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-scope",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

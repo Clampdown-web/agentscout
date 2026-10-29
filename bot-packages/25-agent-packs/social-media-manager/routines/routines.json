@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Social Media Manager Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-hooks",
@@ -10,8 +9,7 @@
       "title": "Daily hook score",
       "prompt": "Score today's hooks for {{YOUR_COMPANY}} and format the winner. Do not post. Follow skills/social-hook-desk/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_social_hooks.py",
-      "markdown": "routines/daily-hooks.md"
+      "script": "scripts/score_social_hooks.py"
     },
     {
       "id": "weekly-calendar",
@@ -19,8 +17,7 @@
       "title": "Next week's calendar",
       "prompt": "Propose five posts across the pillars. Leave them in draft. Follow skills/social-hook-desk/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_social_hooks.py",
-      "markdown": "routines/weekly-calendar.md"
+      "script": "scripts/score_social_hooks.py"
     },
     {
       "id": "midweek-comment-pillar-review",
@@ -28,8 +25,7 @@
       "title": "Midweek comment & pillar check",
       "prompt": "Review top audience questions and UTM link performance for {{YOUR_COMPANY}} and draft reply notes. Do not post. Follow skills/social-hook-desk/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/score_social_hooks.py",
-      "markdown": "routines/midweek-comment-pillar-review.md"
+      "script": "scripts/score_social_hooks.py"
     }
   ]
 }

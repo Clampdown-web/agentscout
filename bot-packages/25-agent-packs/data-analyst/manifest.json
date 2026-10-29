@@ -3,19 +3,17 @@
   "slug": "data-analyst",
   "tagline": "Weekly KPI reports, cohort retention & revenue anomaly alerts",
   "version": "1.0.0",
+  "role_title": "Data Analyst",
+  "card_title": "Data Analyst Agent",
+  "brand_title": "AgentScout Data Analyst Agent",
+  "department": "Product & Data",
   "skill": "skills/kpi-csv-analyst/SKILL.md",
-  "skill_slug": "kpi-csv-analyst",
   "script": "scripts/analyze_kpi_csv.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Define the metric before you compute it. Name the numerator and the denominator.",
-    "Check nulls, duplicate months, and a single month that is an order of magnitude off.",
-    "An anomaly is a z-score plus a sentence, not a chart decoration.",
-    "LTV from ARPU divided by logo churn is directional. Say so.",
-    "Three bullets of 'so what' beat a gallery of charts.",
-    "If the export and the finance system disagree, stop and show both numbers."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-kpi",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

@@ -1,26 +1,19 @@
 {
-  "name": "Customer Support",
-  "title": "AgentScout Customer Support Agent",
-  "brand_title": "AgentScout Customer Support Agent",
+  "name": "AgentScout Customer Support Agent",
   "slug": "customer-support",
-  "department": "Operations & Admin",
-  "tagline": "Answers customers 24/7",
-  "description": "Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies.",
-  "promise": "Triage tickets against the written policy, draft a macro, and route anything dangerous to a person.",
+  "tagline": "24/7 inbox triage, instant FAQ answers & refund/escalation routing",
   "version": "1.0.0",
+  "role_title": "Customer Support",
+  "card_title": "Customer Support Agent",
+  "brand_title": "AgentScout Customer Support Agent",
+  "department": "Operations & Admin",
   "skill": "skills/support-ticket-triage/SKILL.md",
-  "skill_slug": "support-ticket-triage",
   "script": "scripts/triage_support_tickets.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Answer from the knowledge base. If it is not written, say you do not know and escalate.",
-    "Safety and legal language is P0 even if the tone is calm.",
-    "Refunds follow the policy in the business profile. Do not invent a goodwill exception.",
-    "Tell the customer when the next update will come. Then meet that time.",
-    "A macro is a starting paragraph, not a paste that ignores their order number.",
-    "Weekly top issues become documentation, not a longer inbox."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "hourly-triage",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

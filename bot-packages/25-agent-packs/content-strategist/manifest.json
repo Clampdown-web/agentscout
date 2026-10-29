@@ -3,19 +3,17 @@
   "slug": "content-strategist",
   "tagline": "30-day editorial calendars, topic clusters & multi-channel repurposing",
   "version": "1.0.0",
+  "role_title": "Content Strategist",
+  "card_title": "Content Strategist Agent",
+  "brand_title": "AgentScout Content Strategist Agent",
+  "department": "Marketing & Content",
   "skill": "skills/thirty-day-calendar/SKILL.md",
-  "skill_slug": "thirty-day-calendar",
   "script": "scripts/generate_30day_calendar.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "A pillar owns a cluster. Random topics do not compound.",
-    "Map each piece to a buyer stage so the month is not all 'buy now'.",
-    "Ready-to-buy stays the minority.",
-    "Repurpose after the source piece is good, not before.",
-    "Refresh a page that already earns traffic before you start a cousin URL.",
-    "A brief names the query, the outline, the sources, and the internal links."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "monthly-calendar",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

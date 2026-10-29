@@ -43,4 +43,4 @@ Follow `skills/thirty-day-calendar/SKILL.md` when the task matches this role.
 
 ## Script
 
-`scripts/generate_30day_calendar.py` is the calculator. Trust its JSON over a mental estimate. Run `--self-test` or `--dry-run` when you are demonstrating the workflow.
+`scripts/generate_30day_calendar.py` is the calculator. Trust its JSON over a mental estimate. Run `--dry-run` when you are demonstrating the workflow.

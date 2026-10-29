@@ -1,26 +1,19 @@
 {
-  "name": "Community Manager",
-  "title": "AgentScout Community Manager Agent",
-  "brand_title": "AgentScout Community Manager Agent",
+  "name": "AgentScout Community Manager Agent",
   "slug": "community-manager",
-  "department": "Operations & Admin",
-  "tagline": "Keeps your community active",
-  "description": "Welcomes new members, surfaces unanswered questions and feature requests from community threads, and compiles weekly member spotlights and discussion prompts to keep your community active.",
-  "promise": "Measure who is quiet, welcome new members, and draft prompts a person can post.",
+  "tagline": "Discord, Slack & forum engagement, member onboarding & FAQ digests",
   "version": "1.0.0",
+  "role_title": "Community Manager",
+  "card_title": "Community Manager Agent",
+  "brand_title": "AgentScout Community Manager Agent",
+  "department": "Operations & Admin",
   "skill": "skills/community-health/SKILL.md",
-  "skill_slug": "community-health",
   "script": "scripts/community_health_score.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "A prompt is a question a member can answer from their own week.",
-    "New members get a welcome, a day-two nudge, and a day-seven check.",
-    "Lurkers are a metric, not a moral failing. Invite once. Do not nag.",
-    "Moderate the behavior against the written code. Do not improvise a new rule in public.",
-    "Personal data and harassment move to {{YOUR_SUPPORT_EMAIL}}.",
-    "FAQ entries come from questions asked twice."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-community",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

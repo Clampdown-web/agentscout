@@ -1,4 +1,8 @@
-# AgentScout Market Researcher Agent routines ({{YOUR_TIMEZONE}})
-0 9 * * 1 python3 scripts/competitor_diff_check.py --dry-run # weekly-diff: Weekly competitor diff
-0 11 * * 4 python3 scripts/competitor_diff_check.py --dry-run # thursday-pricing-battlecard-check: Thursday pricing & feature matrix check
-0 10 1 * * python3 scripts/competitor_diff_check.py --dry-run # monthly-review-pain-mining: Monthly competitor review & launch digest
+# Scheduled routines for AgentScout Market Researcher Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly competitor diff (weekly-diff)
+0 9 * * 1 python3 scripts/competitor_diff_check.py --dry-run  # routine: weekly-diff
+# Thursday pricing & feature matrix check (thursday-pricing-battlecard-check)
+0 11 * * 4 python3 scripts/competitor_diff_check.py --dry-run  # routine: thursday-pricing-battlecard-check
+# Monthly competitor review & launch digest (monthly-review-pain-mining)
+0 10 1 * * python3 scripts/competitor_diff_check.py --dry-run  # routine: monthly-review-pain-mining

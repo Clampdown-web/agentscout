@@ -3,19 +3,17 @@
   "slug": "invoice-chaser",
   "tagline": "Polite, automated overdue invoice reminders & AR aging reports",
   "version": "1.0.0",
+  "role_title": "Invoice Chaser",
+  "card_title": "Invoice Chaser Agent",
+  "brand_title": "AgentScout Invoice Chaser Agent",
+  "department": "Sales & Outreach",
   "skill": "skills/ar-aging/SKILL.md",
-  "skill_slug": "ar-aging",
   "script": "scripts/aging_ar_report.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Every note includes the payment link and the invoice number.",
-    "Tone climbs with age: upcoming, polite, firm, owner. It does not start at a threat.",
-    "A written dispute pauses the ladder.",
-    "Late fees exist only when the contract says so.",
-    "Buckets are current, 1-30, 31-60, 61-90, and older.",
-    "Past 30 days, {{YOUR_OWNER_NAME}} sees the note before it goes out."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-dunning",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

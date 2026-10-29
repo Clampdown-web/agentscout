@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "TikTok Shop Manager Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-stock",
@@ -10,8 +9,7 @@
       "title": "Inventory alert check",
       "prompt": "Check listing stock against the reorder point for {{YOUR_COMPANY}}. Do not change the live listing. Follow skills/shop-listing-optimizer/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/optimize_shop_listing.py",
-      "markdown": "routines/daily-stock.md"
+      "script": "scripts/optimize_shop_listing.py"
     },
     {
       "id": "weekly-listing",
@@ -19,8 +17,7 @@
       "title": "Weekly listing audit",
       "prompt": "Re-lint the priority products and draft title edits. Follow skills/shop-listing-optimizer/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/optimize_shop_listing.py",
-      "markdown": "routines/weekly-listing.md"
+      "script": "scripts/optimize_shop_listing.py"
     },
     {
       "id": "thursday-creator-commission-brief",
@@ -28,8 +25,7 @@
       "title": "Thursday affiliate script & commission check",
       "prompt": "Run scripts/optimize_shop_listing.py to model creator affiliate commissions and 15-second shoppable video briefs for {{YOUR_COMPANY}}. Follow skills/shop-listing-optimizer/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/optimize_shop_listing.py",
-      "markdown": "routines/thursday-creator-commission-brief.md"
+      "script": "scripts/optimize_shop_listing.py"
     }
   ]
 }

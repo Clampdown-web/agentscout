@@ -3,19 +3,17 @@
   "slug": "meta-ads-agent",
   "tagline": "ROAS monitoring, creative fatigue alerts & ad-angle variations",
   "version": "1.0.0",
+  "role_title": "Meta Ads",
+  "card_title": "Meta Ads Agent",
+  "brand_title": "AgentScout Meta Ads Agent",
+  "department": "Sales & Outreach",
   "skill": "skills/ad-roas-rules/SKILL.md",
-  "skill_slug": "ad-roas-rules",
   "script": "scripts/evaluate_ad_roas.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Change one cell of the hook, body, or call to action. A new everything is not a test.",
-    "Do not kill a campaign that has not spent enough to learn.",
-    "Scale only after the efficiency bar and a minimum conversion count.",
-    "Fatigue is frequency up and click-through down, together.",
-    "Every ad URL carries source, medium, campaign, and content tags.",
-    "Special-category ads follow the platform's housing, credit, and employment rules. When unsure, stop."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-ads",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

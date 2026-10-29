@@ -1,26 +1,19 @@
 {
-  "name": "Email Marketer",
-  "title": "AgentScout Email Marketer Agent",
-  "brand_title": "AgentScout Email Marketer Agent",
+  "name": "AgentScout Email Marketer Agent",
   "slug": "email-marketer",
-  "department": "Marketing & Content",
-  "tagline": "Newsletters that sell",
-  "description": "Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send.",
-  "promise": "Shape a weekly issue, score the subject and preview, and keep the list clean.",
+  "tagline": "High-open newsletters, onboarding flows & win-back campaigns",
   "version": "1.0.0",
+  "role_title": "Email Marketer",
+  "card_title": "Email Marketer Agent",
+  "brand_title": "AgentScout Email Marketer Agent",
+  "department": "Marketing & Content",
   "skill": "skills/newsletter-issue-score/SKILL.md",
-  "skill_slug": "newsletter-issue-score",
   "script": "scripts/score_newsletter_issue.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "One story per issue. A second offer belongs next week.",
-    "The preview text finishes the subject. It does not repeat it.",
-    "Write the plain-text twin with the same links.",
-    "Segment by behavior you measured, not by a persona you like.",
-    "A win-back is one honest note to quiet readers, then a sunset.",
-    "Unsubscribe is a feature. Hide it and you buy complaints."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "weekly-issue",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

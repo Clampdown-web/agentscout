@@ -43,4 +43,4 @@ Follow `skills/daily-exec-briefing/SKILL.md` when the task matches this role.
 
 ## Script
 
-`scripts/daily_exec_briefing.py` is the calculator. Trust its JSON over a mental estimate. Run `--self-test` or `--dry-run` when you are demonstrating the workflow.
+`scripts/daily_exec_briefing.py` is the calculator. Trust its JSON over a mental estimate. Run `--dry-run` when you are demonstrating the workflow.

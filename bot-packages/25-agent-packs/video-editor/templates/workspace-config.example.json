@@ -3,22 +3,11 @@
   "domain": "{{YOUR_DOMAIN}}",
   "support_email": "{{YOUR_SUPPORT_EMAIL}}",
   "owner_name": "{{YOUR_OWNER_NAME}}",
-  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
   "timezone": "{{YOUR_TIMEZONE}}",
-  "agent": {
-    "slug": "video-editor",
-    "name": "Video Editor",
-    "brand_title": "AgentScout Video Editor Agent",
-    "department": "Operations & Admin",
-    "skill": "skills/shortform-cut-captions/SKILL.md",
-    "script": "scripts/format_captions_and_cuts.py",
-    "routines": [
-      "caption-pass",
-      "tuesday-hook-storyboard",
-      "friday-repurpose-cuts"
-    ],
-    "telemetry": false,
-    "network_calls": false,
-    "approval_required": true
-  }
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "agent_slug": "video-editor",
+  "agent_title": "AgentScout Video Editor Agent",
+  "skill": "skills/shortform-cut-captions/SKILL.md",
+  "script": "scripts/format_captions_and_cuts.py",
+  "routines_count": 3
 }

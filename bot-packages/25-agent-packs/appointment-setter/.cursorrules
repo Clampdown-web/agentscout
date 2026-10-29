@@ -3,7 +3,7 @@
 - Company context lives in context/business-profile.md.
 - Follow skills/call-briefing-slots/SKILL.md for this role.
 - Python helpers are stdlib only. Do not add a paid SDK.
-- Run scripts/build_call_briefing.py --self-test after you change inputs.
+- Run scripts/build_call_briefing.py --dry-run after you change inputs.
 - Never commit real customer exports. Samples stay synthetic.
 - Do not add a tool catalog, a scraper, or a hard-coded directory endpoint.
 - Drafts only until {{YOUR_OWNER_NAME}} approves a send, post, spend, or delete.

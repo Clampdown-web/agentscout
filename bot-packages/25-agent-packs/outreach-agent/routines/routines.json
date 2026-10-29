@@ -1,9 +1,7 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Outreach Agent",
-  "brand_title": "AgentScout Outreach Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-draft-queue",
@@ -11,8 +9,7 @@
       "title": "Daily outreach drafts",
       "prompt": "Draft today's approved batch for {{YOUR_COMPANY}} and lint it. Leave it unsent. Follow skills/cold-email-sequence/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/lint_outreach_sequence.py",
-      "markdown": "routines/daily-draft-queue.md"
+      "script": "scripts/lint_outreach_sequence.py"
     },
     {
       "id": "reply-triage",
@@ -20,8 +17,7 @@
       "title": "Reply intent pass",
       "prompt": "Classify replies as interested, not now, out of office, or unsubscribe. Draft responses. Do not send. Follow skills/cold-email-sequence/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/lint_outreach_sequence.py",
-      "markdown": "routines/reply-triage.md"
+      "script": "scripts/lint_outreach_sequence.py"
     },
     {
       "id": "weekly-deliverability-lint",
@@ -29,8 +25,7 @@
       "title": "Weekly sequence & spam-word lint",
       "prompt": "Lint all active outreach templates for {{YOUR_COMPANY}} with scripts/lint_outreach_sequence.py and verify unsubscribe/footer readiness. Follow skills/cold-email-sequence/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/lint_outreach_sequence.py",
-      "markdown": "routines/weekly-deliverability-lint.md"
+      "script": "scripts/lint_outreach_sequence.py"
     }
   ]
 }

@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/generate_brand_card_spec.py --help
-python3 scripts/generate_brand_card_spec.py --self-test
 python3 scripts/generate_brand_card_spec.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `ad-creative-spec-pass` at `0 10 * * 4`: Thursday ad creative spec pass
 - `monthly-brand-consistency-audit` at `0 11 1 * *`: Monthly brand token & contrast audit
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

@@ -81,7 +81,7 @@
       "chips": [
         "\ud83e\udde0 brand-card-system/SKILL.md",
         "\ud83d\udc0d generate_brand_card_spec.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Ad & Thumbnail Specs",
         "WCAG Contrast Check",
         "Zero Telemetry"
@@ -100,6 +100,18 @@
           "cron": "0 10 * * 2",
           "title": "Weekly social asset batch",
           "prompt": "Produce this week's card specs for {{YOUR_COMPANY}} from the approved brand tokens. Draft only. Do not publish."
+        },
+        {
+          "id": "ad-creative-spec-pass",
+          "cron": "0 10 * * 4",
+          "title": "Thursday ad creative spec pass",
+          "prompt": "Generate multi-ratio ad creative specs (1:1, 9:16, 1.91:1) and contrast checks for {{YOUR_COMPANY}}. Draft only."
+        },
+        {
+          "id": "monthly-brand-consistency-audit",
+          "cron": "0 11 1 * *",
+          "title": "Monthly brand token & contrast audit",
+          "prompt": "Audit recent visual assets and thumbnails against {{YOUR_COMPANY}} hex tokens and 4.5:1 contrast rules. Report only."
         }
       ],
       "storeNote": ""
@@ -126,7 +138,7 @@
       "chips": [
         "\ud83e\udde0 icp-lead-scoring/SKILL.md",
         "\ud83d\udc0d score_leads_pipeline.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "ICP Lead Scoring",
         "Buying Signal Watch",
         "Zero Telemetry"
@@ -151,6 +163,12 @@
           "cron": "0 11 * * 5",
           "title": "Weekly ICP refresh",
           "prompt": "Compare wins and losses this week and propose one ICP edit for {{YOUR_OWNER_NAME}} to accept."
+        },
+        {
+          "id": "midweek-signal-sweep",
+          "cron": "0 13 * * 3",
+          "title": "Midweek buying-signal sweep",
+          "prompt": "Re-score nurture-band prospects (40-59 pts) for new buying signals at {{YOUR_COMPANY}}. Do not email anyone."
         }
       ],
       "storeNote": ""
@@ -177,7 +195,7 @@
       "chips": [
         "\ud83e\udde0 conversion-copy-audit/SKILL.md",
         "\ud83d\udc0d audit_sales_copy.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Landing Page Copy",
         "Hook & CTA Library",
         "Zero Telemetry"
@@ -196,6 +214,18 @@
           "cron": "0 9 * * 3",
           "title": "Midweek copy pass",
           "prompt": "Audit the live hero and one email for {{YOUR_COMPANY}}. Return a revised draft and the score. Do not publish."
+        },
+        {
+          "id": "weekly-headline-variants",
+          "cron": "0 9 * * 1",
+          "title": "Monday headline & hook variants",
+          "prompt": "Draft three hypothesis-backed headline and CTA variants for {{YOUR_COMPANY}} and score them with scripts/audit_sales_copy.py. Do not publish."
+        },
+        {
+          "id": "friday-objection-refresh",
+          "cron": "0 14 * * 5",
+          "title": "Friday customer objection refresh",
+          "prompt": "Turn this week's sales and support questions for {{YOUR_COMPANY}} into FAQ and objection-handling copy drafts."
         }
       ],
       "storeNote": ""
@@ -222,7 +252,7 @@
       "chips": [
         "\ud83e\udde0 shortform-cut-captions/SKILL.md",
         "\ud83d\udc0d format_captions_and_cuts.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Shorts & Reels Cuts",
         "3-Second Hook Audit",
         "Zero Telemetry"
@@ -241,6 +271,18 @@
           "cron": "0 15 * * 1-5",
           "title": "Weekday caption pass",
           "prompt": "Format captions and a cut list for the latest transcript from {{YOUR_COMPANY}}. Draft only."
+        },
+        {
+          "id": "tuesday-hook-storyboard",
+          "cron": "0 11 * * 2",
+          "title": "Tuesday 3-second hook storyboard",
+          "prompt": "Audit the opening 3 seconds of upcoming recordings for {{YOUR_COMPANY}} and draft 9:16 cut lists. Draft only."
+        },
+        {
+          "id": "friday-repurpose-cuts",
+          "cron": "0 14 * * 5",
+          "title": "Friday long-to-short cut batch",
+          "prompt": "Extract top 3 short-form clip timestamps and SRT captions from this week's long video for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -267,7 +309,7 @@
       "chips": [
         "\ud83e\udde0 cold-email-sequence/SKILL.md",
         "\ud83d\udc0d lint_outreach_sequence.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Cold Email Sequences",
         "Spam-Word Guard",
         "Approval-First"
@@ -292,6 +334,12 @@
           "cron": "0 13,17 * * 1-5",
           "title": "Reply intent pass",
           "prompt": "Classify replies as interested, not now, out of office, or unsubscribe. Draft responses. Do not send."
+        },
+        {
+          "id": "weekly-deliverability-lint",
+          "cron": "0 10 * * 1",
+          "title": "Weekly sequence & spam-word lint",
+          "prompt": "Lint all active outreach templates for {{YOUR_COMPANY}} with scripts/lint_outreach_sequence.py and verify unsubscribe/footer readiness."
         }
       ],
       "storeNote": ""
@@ -318,7 +366,7 @@
       "chips": [
         "\ud83e\udde0 review-reply-desk/SKILL.md",
         "\ud83d\udc0d generate_review_replies.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Local SEO Replies",
         "Escalation Guard",
         "Approval-First"
@@ -343,6 +391,12 @@
           "cron": "0 10 1 * *",
           "title": "Monthly review themes",
           "prompt": "Summarize repeated themes and the response time. No public posts."
+        },
+        {
+          "id": "friday-escalation-check",
+          "cron": "0 15 * * 5",
+          "title": "Weekly P0 complaint & SLA check",
+          "prompt": "Verify every 1-star and 2-star review for {{YOUR_COMPANY}} has an owner-reviewed recovery draft and offline support handoff."
         }
       ],
       "storeNote": ""
@@ -369,7 +423,7 @@
       "chips": [
         "\ud83e\udde0 seo-aeo-site-audit/SKILL.md",
         "\ud83d\udc0d seo_site_audit.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "On-Page & AEO Audit",
         "JSON-LD Validator",
         "Zero Telemetry"
@@ -394,6 +448,12 @@
           "cron": "0 8 1 * *",
           "title": "Monthly query map",
           "prompt": "Refresh the query-to-page map and the cannibalization list."
+        },
+        {
+          "id": "thursday-schema-llms-check",
+          "cron": "0 10 * * 4",
+          "title": "Thursday JSON-LD & llms.txt check",
+          "prompt": "Validate Organization/Product JSON-LD parity and llms.txt citations across saved pages for {{YOUR_COMPANY}}. Report only."
         }
       ],
       "storeNote": "This role pack is $35 and is separate from the $59 SEO & AEO Growth Auditor Bot. The downloadable package is a general-purpose auditor for the buyer's own site."
@@ -420,7 +480,7 @@
       "chips": [
         "\ud83e\udde0 newsletter-issue-score/SKILL.md",
         "\ud83d\udc0d score_newsletter_issue.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Newsletter & Drip Flows",
         "Subject A/B Scorer",
         "Approval-First"
@@ -445,6 +505,12 @@
           "cron": "0 9 1 * *",
           "title": "List hygiene note",
           "prompt": "List subscribers quiet for 90 days and propose a sunset. Do not delete them yourself."
+        },
+        {
+          "id": "thursday-subject-ab-score",
+          "cron": "0 11 * * 4",
+          "title": "Thursday subject & preview A/B check",
+          "prompt": "Score subject pairs, plain-text twin links, and unsubscribe headers for {{YOUR_COMPANY}} with scripts/score_newsletter_issue.py."
         }
       ],
       "storeNote": ""
@@ -471,7 +537,7 @@
       "chips": [
         "\ud83e\udde0 support-ticket-triage/SKILL.md",
         "\ud83d\udc0d triage_support_tickets.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Ticket Triage & SLA",
         "Help-Doc Grounded",
         "Approval-First"
@@ -496,6 +562,12 @@
           "cron": "0 16 * * 5",
           "title": "Weekly knowledge gaps",
           "prompt": "List the questions that had no article and propose the titles."
+        },
+        {
+          "id": "daily-sla-escalation-sweep",
+          "cron": "0 9 * * 1-5",
+          "title": "Morning P0 & refund SLA sweep",
+          "prompt": "Surface open P0 safety/legal tickets and pending refund requests for {{YOUR_COMPANY}} for owner approval."
         }
       ],
       "storeNote": ""
@@ -522,7 +594,7 @@
       "chips": [
         "\ud83e\udde0 call-briefing-slots/SKILL.md",
         "\ud83d\udc0d build_call_briefing.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Calendar Qualification",
         "No-Show Reminders",
         "Approval-First"
@@ -541,6 +613,18 @@
           "cron": "0 8 * * *",
           "title": "Reminder and no-show sweep",
           "prompt": "List calls in the next 24 hours and no-shows from yesterday for {{YOUR_COMPANY}}. Draft the notes. Do not send."
+        },
+        {
+          "id": "weekday-inbound-slots",
+          "cron": "0 9,14 * * 1-5",
+          "title": "Inbound lead qualification & slot prep",
+          "prompt": "Qualify new inbound inquiries for {{YOUR_COMPANY}} and build timezone-matched slot options with scripts/build_call_briefing.py."
+        },
+        {
+          "id": "friday-booking-conversion-review",
+          "cron": "0 16 * * 5",
+          "title": "Weekly show-rate & briefing review",
+          "prompt": "Summarize booked calls, show rate, and reschedule follow-ups for {{YOUR_COMPANY}}. Draft only."
         }
       ],
       "storeNote": ""
@@ -567,7 +651,7 @@
       "chips": [
         "\ud83e\udde0 daily-exec-briefing/SKILL.md",
         "\ud83d\udc0d daily_exec_briefing.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Morning Executive Brief",
         "Meeting Dossiers",
         "Zero Telemetry"
@@ -592,6 +676,12 @@
           "cron": "0 16 * * 5",
           "title": "Friday weekly review",
           "prompt": "List open loops and next week's first three outcomes."
+        },
+        {
+          "id": "midday-conflict-check",
+          "cron": "0 12 * * 1-5",
+          "title": "Midday calendar conflict & prep check",
+          "prompt": "Check afternoon holds, travel gaps, and next-day meeting prep questions for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": "This role pack is $35 and is separate from the $39 Operations / Monitoring Bot. The package runs the buyer's inbox and diary, not a monitoring product for any other company."
@@ -618,7 +708,7 @@
       "chips": [
         "\ud83e\udde0 kpi-csv-analyst/SKILL.md",
         "\ud83d\udc0d analyze_kpi_csv.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Weekly KPI Scorecard",
         "Anomaly Detection",
         "Zero Telemetry"
@@ -637,6 +727,18 @@
           "cron": "0 8 * * 1",
           "title": "Weekly KPI narrative",
           "prompt": "Analyze the latest KPI CSV for {{YOUR_COMPANY}} and write three bullets. Do not email investors."
+        },
+        {
+          "id": "midweek-anomaly-scan",
+          "cron": "0 9 * * 3",
+          "title": "Midweek revenue & churn anomaly scan",
+          "prompt": "Run scripts/analyze_kpi_csv.py on the latest export for {{YOUR_COMPANY}} and flag any z-score anomalies."
+        },
+        {
+          "id": "monthly-cohort-ltv-pack",
+          "cron": "0 9 1 * *",
+          "title": "Monthly LTV & retention summary",
+          "prompt": "Compile the monthly ARPU, logo churn, and directional LTV check for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -663,7 +765,7 @@
       "chips": [
         "\ud83e\udde0 social-hook-desk/SKILL.md",
         "\ud83d\udc0d score_social_hooks.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Daily Social Queue",
         "Velocity Guard",
         "Approval-First"
@@ -688,6 +790,12 @@
           "cron": "0 11 * * 5",
           "title": "Next week's calendar",
           "prompt": "Propose five posts across the pillars. Leave them in draft."
+        },
+        {
+          "id": "midweek-comment-pillar-review",
+          "cron": "0 14 * * 3",
+          "title": "Midweek comment & pillar check",
+          "prompt": "Review top audience questions and UTM link performance for {{YOUR_COMPANY}} and draft reply notes. Do not post."
         }
       ],
       "storeNote": ""
@@ -714,7 +822,7 @@
       "chips": [
         "\ud83e\udde0 candidate-rubric/SKILL.md",
         "\ud83d\udc0d score_candidate_rubric.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Resume Rubric Scorer",
         "Interview Scorecards",
         "Zero Telemetry"
@@ -733,6 +841,18 @@
           "cron": "30 9 * * 1-5",
           "title": "Candidate pipeline nudge",
           "prompt": "List candidates with no touch in three business days. Draft the next note. Do not send."
+        },
+        {
+          "id": "tuesday-scorecard-calibration",
+          "cron": "0 10 * * 2",
+          "title": "Tuesday rubric & scorecard audit",
+          "prompt": "Run scripts/score_candidate_rubric.py on new applicants for {{YOUR_COMPANY}} and flag any protected-trait notes for human review."
+        },
+        {
+          "id": "friday-hiring-sla-digest",
+          "cron": "0 15 * * 5",
+          "title": "Friday hiring stage SLA digest",
+          "prompt": "Summarize candidate counts by stage, days-in-stage SLA breaches, and interview prep kits for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -759,7 +879,7 @@
       "chips": [
         "\ud83e\udde0 landing-page-ux-check/SKILL.md",
         "\ud83d\udc0d check_landing_page_ux.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Responsive UI Audit",
         "Dark/Light Contrast",
         "Zero Telemetry"
@@ -778,6 +898,18 @@
           "cron": "0 14 * * 3",
           "title": "Landing page UX check",
           "prompt": "Run the UX check on the current landing HTML for {{YOUR_COMPANY}}. Report issues. Do not deploy."
+        },
+        {
+          "id": "monday-mobile-viewport-audit",
+          "cron": "0 10 * * 1",
+          "title": "Monday 360px/390px mobile overflow audit",
+          "prompt": "Run scripts/check_landing_page_ux.py across key landing pages for {{YOUR_COMPANY}} to verify zero horizontal scroll and alt coverage."
+        },
+        {
+          "id": "friday-cta-contrast-review",
+          "cron": "0 15 * * 5",
+          "title": "Friday above-the-fold CTA & contrast check",
+          "prompt": "Verify hero CTA clarity and 4.5:1 text contrast pairs on updated templates for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -804,7 +936,7 @@
       "chips": [
         "\ud83e\udde0 ad-roas-rules/SKILL.md",
         "\ud83d\udc0d evaluate_ad_roas.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "ROAS & CPA Guard",
         "Ad Creative Variants",
         "Approval-First"
@@ -829,6 +961,12 @@
           "cron": "0 11 * * 4",
           "title": "Weekly creative refresh",
           "prompt": "Propose the next three concepts that are not the current hook."
+        },
+        {
+          "id": "monday-fatigue-utm-audit",
+          "cron": "0 9 * * 1",
+          "title": "Monday creative fatigue & UTM audit",
+          "prompt": "Flag high-frequency/falling-CTR ad sets and verify UTM tags across active campaigns for {{YOUR_COMPANY}}. Recommend only."
         }
       ],
       "storeNote": ""
@@ -855,7 +993,7 @@
       "chips": [
         "\ud83e\udde0 competitor-diff/SKILL.md",
         "\ud83d\udc0d competitor_diff_check.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Weekly Intel Sweep",
         "Sales Battlecards",
         "Evidence-Linked"
@@ -874,6 +1012,18 @@
           "cron": "0 9 * * 1",
           "title": "Weekly competitor diff",
           "prompt": "Diff the saved snapshots for {{YOUR_COMPANY}}. Flag missing sources. Do not publish a teardown."
+        },
+        {
+          "id": "thursday-pricing-battlecard-check",
+          "cron": "0 11 * * 4",
+          "title": "Thursday pricing & feature matrix check",
+          "prompt": "Run scripts/competitor_diff_check.py on saved competitor snapshots for {{YOUR_COMPANY}} and verify every claim has a dated URL."
+        },
+        {
+          "id": "monthly-review-pain-mining",
+          "cron": "0 10 1 * *",
+          "title": "Monthly competitor review & launch digest",
+          "prompt": "Summarize dated customer complaints and product launches across tracked competitors for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": "This role pack is $35 and is separate from the $59 Market & Launch Intel Bot. The package compares the buyer's own competitors from files they provide."
@@ -900,7 +1050,7 @@
       "chips": [
         "\ud83e\udde0 thirty-day-calendar/SKILL.md",
         "\ud83d\udc0d generate_30day_calendar.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "30-Day Content Map",
         "1-to-5 Repurposer",
         "Zero Telemetry"
@@ -925,6 +1075,12 @@
           "cron": "0 10 1 1,4,7,10 *",
           "title": "Decay and refresh list",
           "prompt": "List URLs that should be updated before new topics are added."
+        },
+        {
+          "id": "weekly-repurpose-briefs",
+          "cron": "0 10 * * 1",
+          "title": "Weekly pillar brief & 1-to-4 repurpose plan",
+          "prompt": "Turn this week's priority pillar topic for {{YOUR_COMPANY}} into an outline, email angle, short video beat, and FAQ block."
         }
       ],
       "storeNote": ""
@@ -951,7 +1107,7 @@
       "chips": [
         "\ud83e\udde0 shop-listing-optimizer/SKILL.md",
         "\ud83d\udc0d optimize_shop_listing.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Shop SEO & Scripts",
         "Creator Briefs",
         "Zero Telemetry"
@@ -976,6 +1132,12 @@
           "cron": "0 11 * * 2",
           "title": "Weekly listing audit",
           "prompt": "Re-lint the priority products and draft title edits."
+        },
+        {
+          "id": "thursday-creator-commission-brief",
+          "cron": "0 13 * * 4",
+          "title": "Thursday affiliate script & commission check",
+          "prompt": "Run scripts/optimize_shop_listing.py to model creator affiliate commissions and 15-second shoppable video briefs for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -1002,7 +1164,7 @@
       "chips": [
         "\ud83e\udde0 creator-roi/SKILL.md",
         "\ud83d\udc0d calculate_creator_roi.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Creator ROI Vetting",
         "Sponsor Outreach",
         "Approval-First"
@@ -1021,6 +1183,18 @@
           "cron": "0 10 * * 3",
           "title": "Weekly creator shortlist",
           "prompt": "Score the creator sheet for {{YOUR_COMPANY}}. Do not email creators."
+        },
+        {
+          "id": "monday-engagement-vetting",
+          "cron": "0 10 * * 1",
+          "title": "Monday engagement & CPM anomaly check",
+          "prompt": "Run scripts/calculate_creator_roi.py on prospective creators for {{YOUR_COMPANY}} and flag suspect engagement rates."
+        },
+        {
+          "id": "friday-deal-roi-tracker",
+          "cron": "0 14 * * 5",
+          "title": "Friday creator brief & forecasted ROI check",
+          "prompt": "Prepare outreach briefs, FTC disclosure lines, and forecasted order ROI for owner-approved creators at {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -1047,7 +1221,7 @@
       "chips": [
         "\ud83e\udde0 ar-aging/SKILL.md",
         "\ud83d\udc0d aging_ar_report.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "AR Aging Tracker",
         "Polite Follow-Ups",
         "Approval-First"
@@ -1072,6 +1246,12 @@
           "cron": "0 9 * * 1",
           "title": "Weekly AR aging",
           "prompt": "Produce the aging buckets and the total open receivable."
+        },
+        {
+          "id": "thursday-dispute-escalation-review",
+          "cron": "0 14 * * 4",
+          "title": "Thursday 30+ day & disputed invoice review",
+          "prompt": "Compile 30+ day overdue accounts and paused disputed invoices for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not send."
         }
       ],
       "storeNote": ""
@@ -1098,7 +1278,7 @@
       "chips": [
         "\ud83e\udde0 pricing-and-mvp-scope/SKILL.md",
         "\ud83d\udc0d model_product_pricing.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "PRD & RICE Scorer",
         "Release QA Checklist",
         "Zero Telemetry"
@@ -1117,6 +1297,18 @@
           "cron": "0 9 * * 1",
           "title": "Weekly scope review",
           "prompt": "Re-score the backlog for {{YOUR_COMPANY}} and name anything that snuck into the MVP."
+        },
+        {
+          "id": "wednesday-pricing-tier-check",
+          "cron": "0 11 * * 3",
+          "title": "Wednesday Good/Better/Best pricing model",
+          "prompt": "Run scripts/model_product_pricing.py to stress-test unit costs, target margins, and tier boundaries for {{YOUR_COMPANY}}."
+        },
+        {
+          "id": "friday-launch-readiness-audit",
+          "cron": "0 15 * * 5",
+          "title": "Friday MVP & launch readiness checklist",
+          "prompt": "Verify PRD non-goals, baseline success metrics, and live support paths before any release at {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": "This role pack is $35 and is separate from the $69 CEO Coordinator Bot. The package scopes the buyer's own product."
@@ -1143,7 +1335,7 @@
       "chips": [
         "\ud83e\udde0 community-health/SKILL.md",
         "\ud83d\udc0d community_health_score.py",
-        "\u23f0 2 routines",
+        "\u23f0 3 routines",
         "Community Pulse Digest",
         "Member Onboarding",
         "Approval-First"
@@ -1168,6 +1360,12 @@
           "cron": "0 15 * * 5",
           "title": "Weekly engagement digest",
           "prompt": "Summarize active rate, quiet new members, and FAQ gaps."
+        },
+        {
+          "id": "monday-new-member-onboarding",
+          "cron": "0 9 * * 1",
+          "title": "Monday new-member welcome & FAQ check",
+          "prompt": "Run scripts/community_health_score.py to list quiet new members and repeated questions that need a new FAQ entry for {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""
@@ -1194,7 +1392,7 @@
       "chips": [
         "\ud83e\udde0 i18n-key-parity/SKILL.md",
         "\ud83d\udc0d verify_i18n_keys.py",
-        "\u23f0 1 routines",
+        "\u23f0 3 routines",
         "Glossary-Safe i18n",
         "Placeholder Guard",
         "Zero Telemetry"
@@ -1213,6 +1411,18 @@
           "cron": "0 9 * * 1",
           "title": "Weekly locale parity",
           "prompt": "Verify i18n keys for {{YOUR_COMPANY}}. Report mismatches. Do not publish strings."
+        },
+        {
+          "id": "wednesday-placeholder-glossary-check",
+          "cron": "0 10 * * 3",
+          "title": "Midweek placeholder & glossary audit",
+          "prompt": "Run scripts/verify_i18n_keys.py across active locale JSON bundles for {{YOUR_COMPANY}} to catch missing keys or broken {{tokens}}."
+        },
+        {
+          "id": "friday-overflow-legal-flag",
+          "cron": "0 14 * * 5",
+          "title": "Friday UI length & legal/pricing string review",
+          "prompt": "Flag translated strings that exceed UI button length budgets or require human review for pricing/legal terms at {{YOUR_COMPANY}}."
         }
       ],
       "storeNote": ""

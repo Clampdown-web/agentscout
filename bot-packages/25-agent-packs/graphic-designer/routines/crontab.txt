@@ -1,4 +1,8 @@
-# AgentScout Graphic Designer Agent routines ({{YOUR_TIMEZONE}})
-0 10 * * 2 python3 scripts/generate_brand_card_spec.py --dry-run # weekly-asset-batch: Weekly social asset batch
-0 10 * * 4 python3 scripts/generate_brand_card_spec.py --dry-run # ad-creative-spec-pass: Thursday ad creative spec pass
-0 11 1 * * python3 scripts/generate_brand_card_spec.py --dry-run # monthly-brand-consistency-audit: Monthly brand token & contrast audit
+# Scheduled routines for AgentScout Graphic Designer Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly social asset batch (weekly-asset-batch)
+0 10 * * 2 python3 scripts/generate_brand_card_spec.py --dry-run  # routine: weekly-asset-batch
+# Thursday ad creative spec pass (ad-creative-spec-pass)
+0 10 * * 4 python3 scripts/generate_brand_card_spec.py --dry-run  # routine: ad-creative-spec-pass
+# Monthly brand token & contrast audit (monthly-brand-consistency-audit)
+0 11 1 * * python3 scripts/generate_brand_card_spec.py --dry-run  # routine: monthly-brand-consistency-audit

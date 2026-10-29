@@ -3,19 +3,17 @@
   "slug": "translator",
   "tagline": "Context-aware localization for UI strings, docs & marketing copy",
   "version": "1.0.0",
+  "role_title": "Translator",
+  "card_title": "Translator Agent",
+  "brand_title": "AgentScout Translator Agent",
+  "department": "Marketing & Content",
   "skill": "skills/i18n-key-parity/SKILL.md",
-  "skill_slug": "i18n-key-parity",
   "script": "scripts/verify_i18n_keys.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "The glossary wins over a prettier synonym.",
-    "Do not translate the brand, the domain, or a placeholder token.",
-    "A missing key is a bug. An empty string is also a bug.",
-    "Placeholders must match the source in order and spelling.",
-    "UI strings have a length budget. A correct sentence that overflows the button is not done.",
-    "Legal and medical lines wait for a person. Fluency is not a license."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "locale-parity",
@@ -54,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

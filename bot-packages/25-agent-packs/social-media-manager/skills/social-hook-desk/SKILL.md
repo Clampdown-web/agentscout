@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/score_social_hooks.py --help
-python3 scripts/score_social_hooks.py --self-test
 python3 scripts/score_social_hooks.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `weekly-calendar` at `0 11 * * 5`: Next week's calendar
 - `midweek-comment-pillar-review` at `0 14 * * 3`: Midweek comment & pillar check
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

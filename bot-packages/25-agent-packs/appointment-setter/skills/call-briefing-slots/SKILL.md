@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/build_call_briefing.py --help
-python3 scripts/build_call_briefing.py --self-test
 python3 scripts/build_call_briefing.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `weekday-inbound-slots` at `0 9,14 * * 1-5`: Inbound lead qualification & slot prep
 - `friday-booking-conversion-review` at `0 16 * * 5`: Weekly show-rate & briefing review
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

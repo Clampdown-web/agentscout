@@ -2,7 +2,6 @@
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Accountant Agent",
   "company": "{{YOUR_COMPANY}}",
-  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "weekly-reconcile",
@@ -10,8 +9,7 @@
       "title": "Weekly ledger reconcile",
       "prompt": "Reconcile last week's bank export for {{YOUR_COMPANY}}. Return matched rows, the needs-review queue, and one cash warning. Follow skills/bookkeeping-tax-prep/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/reconcile_ledger.py",
-      "markdown": "routines/weekly-reconcile.md"
+      "script": "scripts/reconcile_ledger.py"
     },
     {
       "id": "month-close",
@@ -19,8 +17,7 @@
       "title": "Month-end close pack",
       "prompt": "Draft the month-end close checklist: accruals, prepaids, unmatched cash, and questions for the tax professional. Do not file anything. Follow skills/bookkeeping-tax-prep/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/reconcile_ledger.py",
-      "markdown": "routines/month-close.md"
+      "script": "scripts/reconcile_ledger.py"
     },
     {
       "id": "quarterly-estimate",
@@ -28,8 +25,7 @@
       "title": "Quarterly estimate reminder",
       "prompt": "Prepare the quarterly estimate question list and remind {{YOUR_OWNER_NAME}} this is bookkeeping support, not a filed return. Follow skills/bookkeeping-tax-prep/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/reconcile_ledger.py",
-      "markdown": "routines/quarterly-estimate.md"
+      "script": "scripts/reconcile_ledger.py"
     }
   ]
 }

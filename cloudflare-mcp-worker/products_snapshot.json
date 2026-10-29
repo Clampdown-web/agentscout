@@ -219,7 +219,9 @@
       "skill": "skills/brand-card-system/SKILL.md",
       "script": "scripts/generate_brand_card_spec.py",
       "routines": [
-        "weekly-asset-batch"
+        "weekly-asset-batch",
+        "ad-creative-spec-pass",
+        "monthly-brand-consistency-audit"
       ],
       "description": "Generates on-brand creative briefs, layout specs, contrast-checked color palettes, and image prompts for ads, social posts, and thumbnails. Ships with an automated brand-asset linter and multi-aspect export checklist. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/graphic-designer.zip"
@@ -243,7 +245,8 @@
       "script": "scripts/score_leads_pipeline.py",
       "routines": [
         "daily-lead-batch",
-        "weekly-icp-refresh"
+        "weekly-icp-refresh",
+        "midweek-signal-sweep"
       ],
       "description": "Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/lead-gen.zip"
@@ -266,7 +269,9 @@
       "skill": "skills/conversion-copy-audit/SKILL.md",
       "script": "scripts/audit_sales_copy.py",
       "routines": [
-        "copy-pass"
+        "copy-pass",
+        "weekly-headline-variants",
+        "friday-objection-refresh"
       ],
       "description": "Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clichés. Includes a readability and conversion-rubric scorer. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/copywriter.zip"
@@ -289,7 +294,9 @@
       "skill": "skills/shortform-cut-captions/SKILL.md",
       "script": "scripts/format_captions_and_cuts.py",
       "routines": [
-        "caption-pass"
+        "caption-pass",
+        "tuesday-hook-storyboard",
+        "friday-repurpose-cuts"
       ],
       "description": "Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/video-editor.zip"
@@ -313,7 +320,8 @@
       "script": "scripts/lint_outreach_sequence.py",
       "routines": [
         "daily-draft-queue",
-        "reply-triage"
+        "reply-triage",
+        "weekly-deliverability-lint"
       ],
       "description": "Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/outreach-agent.zip"
@@ -337,7 +345,8 @@
       "script": "scripts/generate_review_replies.py",
       "routines": [
         "daily-review-drafts",
-        "monthly-themes"
+        "monthly-themes",
+        "friday-escalation-check"
       ],
       "description": "Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/google-review-replier.zip"
@@ -361,7 +370,8 @@
       "script": "scripts/seo_site_audit.py",
       "routines": [
         "weekly-seo-crawl",
-        "monthly-query-map"
+        "monthly-query-map",
+        "thursday-schema-llms-check"
       ],
       "description": "Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/seo-specialist.zip"
@@ -385,7 +395,8 @@
       "script": "scripts/score_newsletter_issue.py",
       "routines": [
         "weekly-issue",
-        "monthly-hygiene"
+        "monthly-hygiene",
+        "thursday-subject-ab-score"
       ],
       "description": "Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/email-marketer.zip"
@@ -409,7 +420,8 @@
       "script": "scripts/triage_support_tickets.py",
       "routines": [
         "hourly-triage",
-        "weekly-gaps"
+        "weekly-gaps",
+        "daily-sla-escalation-sweep"
       ],
       "description": "Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/customer-support.zip"
@@ -432,7 +444,9 @@
       "skill": "skills/call-briefing-slots/SKILL.md",
       "script": "scripts/build_call_briefing.py",
       "routines": [
-        "reminder-sweep"
+        "reminder-sweep",
+        "weekday-inbound-slots",
+        "friday-booking-conversion-review"
       ],
       "description": "Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/appointment-setter.zip"
@@ -456,7 +470,8 @@
       "script": "scripts/daily_exec_briefing.py",
       "routines": [
         "morning-brief",
-        "friday-review"
+        "friday-review",
+        "midday-conflict-check"
       ],
       "description": "Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/personal-assistant.zip"
@@ -479,7 +494,9 @@
       "skill": "skills/kpi-csv-analyst/SKILL.md",
       "script": "scripts/analyze_kpi_csv.py",
       "routines": [
-        "weekly-kpi"
+        "weekly-kpi",
+        "midweek-anomaly-scan",
+        "monthly-cohort-ltv-pack"
       ],
       "description": "Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/data-analyst.zip"
@@ -503,7 +520,8 @@
       "script": "scripts/score_social_hooks.py",
       "routines": [
         "daily-hooks",
-        "weekly-calendar"
+        "weekly-calendar",
+        "midweek-comment-pillar-review"
       ],
       "description": "Drafts daily platform-native posts, threads, and visual callouts grounded in your product wins and top-performing industry hooks. Includes a post-velocity guard so you never step on a climbing post. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/social-media-manager.zip"
@@ -526,7 +544,9 @@
       "skill": "skills/candidate-rubric/SKILL.md",
       "script": "scripts/score_candidate_rubric.py",
       "routines": [
-        "daily-pipeline"
+        "daily-pipeline",
+        "tuesday-scorecard-calibration",
+        "friday-hiring-sla-digest"
       ],
       "description": "Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/recruiter.zip"
@@ -549,7 +569,9 @@
       "skill": "skills/landing-page-ux-check/SKILL.md",
       "script": "scripts/check_landing_page_ux.py",
       "routines": [
-        "page-check"
+        "page-check",
+        "monday-mobile-viewport-audit",
+        "friday-cta-contrast-review"
       ],
       "description": "Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/web-designer.zip"
@@ -573,7 +595,8 @@
       "script": "scripts/evaluate_ad_roas.py",
       "routines": [
         "daily-ads",
-        "weekly-creative"
+        "weekly-creative",
+        "monday-fatigue-utm-audit"
       ],
       "description": "Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/meta-ads-agent.zip"
@@ -596,7 +619,9 @@
       "skill": "skills/competitor-diff/SKILL.md",
       "script": "scripts/competitor_diff_check.py",
       "routines": [
-        "weekly-diff"
+        "weekly-diff",
+        "thursday-pricing-battlecard-check",
+        "monthly-review-pain-mining"
       ],
       "description": "Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/market-researcher.zip"
@@ -620,7 +645,8 @@
       "script": "scripts/generate_30day_calendar.py",
       "routines": [
         "monthly-calendar",
-        "quarterly-refresh"
+        "quarterly-refresh",
+        "weekly-repurpose-briefs"
       ],
       "description": "Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/content-strategist.zip"
@@ -644,7 +670,8 @@
       "script": "scripts/optimize_shop_listing.py",
       "routines": [
         "daily-stock",
-        "weekly-listing"
+        "weekly-listing",
+        "thursday-creator-commission-brief"
       ],
       "description": "Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/tiktok-shop-manager.zip"
@@ -667,7 +694,9 @@
       "skill": "skills/creator-roi/SKILL.md",
       "script": "scripts/calculate_creator_roi.py",
       "routines": [
-        "weekly-shortlist"
+        "weekly-shortlist",
+        "monday-engagement-vetting",
+        "friday-deal-roi-tracker"
       ],
       "description": "Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/influencer-scout.zip"
@@ -691,7 +720,8 @@
       "script": "scripts/aging_ar_report.py",
       "routines": [
         "daily-dunning",
-        "weekly-aging"
+        "weekly-aging",
+        "thursday-dispute-escalation-review"
       ],
       "description": "Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/invoice-chaser.zip"
@@ -714,7 +744,9 @@
       "skill": "skills/pricing-and-mvp-scope/SKILL.md",
       "script": "scripts/model_product_pricing.py",
       "routines": [
-        "weekly-scope"
+        "weekly-scope",
+        "wednesday-pricing-tier-check",
+        "friday-launch-readiness-audit"
       ],
       "description": "Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/product-builder.zip"
@@ -738,7 +770,8 @@
       "script": "scripts/community_health_score.py",
       "routines": [
         "daily-community",
-        "weekly-digest"
+        "weekly-digest",
+        "monday-new-member-onboarding"
       ],
       "description": "Welcomes new members, surfaces unanswered questions and feature requests from community threads, and compiles weekly member spotlights and discussion prompts to keep your community active. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/community-manager.zip"
@@ -761,7 +794,9 @@
       "skill": "skills/i18n-key-parity/SKILL.md",
       "script": "scripts/verify_i18n_keys.py",
       "routines": [
-        "locale-parity"
+        "locale-parity",
+        "wednesday-placeholder-glossary-check",
+        "friday-overflow-legal-flag"
       ],
       "description": "Localizes web pages, JSON language files, help articles, and ad copy across major languages while preserving code placeholders ({{var}}), brand glossary terms, and native phrasing. $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
       "zip": "https://agentscouthq.com/bot-packages/25-agent-packs/zips/translator.zip"

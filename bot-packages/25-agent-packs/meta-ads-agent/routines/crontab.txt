@@ -1,4 +1,8 @@
-# AgentScout Meta Ads Agent routines ({{YOUR_TIMEZONE}})
-0 8 * * 1-5 python3 scripts/evaluate_ad_roas.py --dry-run # daily-ads: Daily ad rules check
-0 11 * * 4 python3 scripts/evaluate_ad_roas.py --dry-run # weekly-creative: Weekly creative refresh
-0 9 * * 1 python3 scripts/evaluate_ad_roas.py --dry-run # monday-fatigue-utm-audit: Monday creative fatigue & UTM audit
+# Scheduled routines for AgentScout Meta Ads Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Daily ad rules check (daily-ads)
+0 8 * * 1-5 python3 scripts/evaluate_ad_roas.py --dry-run  # routine: daily-ads
+# Weekly creative refresh (weekly-creative)
+0 11 * * 4 python3 scripts/evaluate_ad_roas.py --dry-run  # routine: weekly-creative
+# Monday creative fatigue & UTM audit (monday-fatigue-utm-audit)
+0 9 * * 1 python3 scripts/evaluate_ad_roas.py --dry-run  # routine: monday-fatigue-utm-audit

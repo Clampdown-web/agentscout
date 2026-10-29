@@ -68,7 +68,6 @@ Return:
 
 ```bash
 python3 scripts/audit_sales_copy.py --help
-python3 scripts/audit_sales_copy.py --self-test
 python3 scripts/audit_sales_copy.py --dry-run
 ```
 
@@ -80,7 +79,7 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 - `weekly-headline-variants` at `0 9 * * 1`: Monday headline & hook variants
 - `friday-objection-refresh` at `0 14 * * 5`: Friday customer objection refresh
 
-Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

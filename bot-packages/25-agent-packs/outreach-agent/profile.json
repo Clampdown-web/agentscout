@@ -1,26 +1,19 @@
 {
-  "name": "Outreach Agent",
-  "title": "AgentScout Outreach Agent",
-  "brand_title": "AgentScout Outreach Agent",
+  "name": "AgentScout Outreach Agent",
   "slug": "outreach-agent",
-  "department": "Sales & Outreach",
-  "tagline": "Cold emails and follow-ups",
-  "description": "Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules.",
-  "promise": "Draft a short, specific sequence and lint it before anyone hits send.",
+  "tagline": "Personalized cold emails, warm follow-ups & reply triage",
   "version": "1.0.0",
+  "role_title": "Outreach",
+  "card_title": "Outreach Agent",
+  "brand_title": "AgentScout Outreach Agent",
+  "department": "Sales & Outreach",
   "skill": "skills/cold-email-sequence/SKILL.md",
-  "skill_slug": "cold-email-sequence",
   "script": "scripts/lint_outreach_sequence.py",
-  "setup_script": "scripts/setup_workspace.py",
-  "system_prompt": "system-prompt.md",
-  "heuristics": [
-    "Under 125 words. One ask. One real detail from the prospect, not a mail-merge compliment.",
-    "Space steps two to four days apart. A next-day bump looks desperate.",
-    "Write the reply path: interested, not now, out of office, unsubscribe.",
-    "Spam-trigger words are a smell. Specifics send better than urgency.",
-    "SPF, DKIM, and DMARC are readiness checks, not a guarantee of the inbox.",
-    "CAN-SPAM still wants a real postal address and a way to stop mail."
+  "setup_scripts": [
+    "setup_workspace.py",
+    "scripts/setup_workspace.py"
   ],
+  "routines_count": 3,
   "routines": [
     {
       "id": "daily-draft-queue",
@@ -59,8 +52,6 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
-  "telemetry": false,
-  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"

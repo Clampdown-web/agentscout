@@ -1,4 +1,8 @@
-# AgentScout Translator Agent routines ({{YOUR_TIMEZONE}})
-0 9 * * 1 python3 scripts/verify_i18n_keys.py --dry-run # locale-parity: Weekly locale parity
-0 10 * * 3 python3 scripts/verify_i18n_keys.py --dry-run # wednesday-placeholder-glossary-check: Midweek placeholder & glossary audit
-0 14 * * 5 python3 scripts/verify_i18n_keys.py --dry-run # friday-overflow-legal-flag: Friday UI length & legal/pricing string review
+# Scheduled routines for AgentScout Translator Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# Weekly locale parity (locale-parity)
+0 9 * * 1 python3 scripts/verify_i18n_keys.py --dry-run  # routine: locale-parity
+# Midweek placeholder & glossary audit (wednesday-placeholder-glossary-check)
+0 10 * * 3 python3 scripts/verify_i18n_keys.py --dry-run  # routine: wednesday-placeholder-glossary-check
+# Friday UI length & legal/pricing string review (friday-overflow-legal-flag)
+0 14 * * 5 python3 scripts/verify_i18n_keys.py --dry-run  # routine: friday-overflow-legal-flag

@@ -1,4 +1,8 @@
-# AgentScout Content Strategist Agent routines ({{YOUR_TIMEZONE}})
-0 10 1 * * python3 scripts/generate_30day_calendar.py --dry-run # monthly-calendar: 30-day calendar
-0 10 1 1,4,7,10 * python3 scripts/generate_30day_calendar.py --dry-run # quarterly-refresh: Decay and refresh list
-0 10 * * 1 python3 scripts/generate_30day_calendar.py --dry-run # weekly-repurpose-briefs: Weekly pillar brief & 1-to-4 repurpose plan
+# Scheduled routines for AgentScout Content Strategist Agent ({{YOUR_COMPANY}})
+# Timezone: {{YOUR_TIMEZONE}}
+# 30-day calendar (monthly-calendar)
+0 10 1 * * python3 scripts/generate_30day_calendar.py --dry-run  # routine: monthly-calendar
+# Decay and refresh list (quarterly-refresh)
+0 10 1 1,4,7,10 * python3 scripts/generate_30day_calendar.py --dry-run  # routine: quarterly-refresh
+# Weekly pillar brief & 1-to-4 repurpose plan (weekly-repurpose-briefs)
+0 10 * * 1 python3 scripts/generate_30day_calendar.py --dry-run  # routine: weekly-repurpose-briefs
