@@ -85,7 +85,7 @@ JS = """<script>
 def pages(t):
     os.makedirs("bot-store", exist_ok=True)
     import re
-    n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
+    n_bt = __import__("build_bot_templates").live_bot_template_count()
     canon = f"{B}bot-store/"
     title = clip_title("AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69, $149)")
     desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each or volume tiers $119, $199, $299, and $349.", 160)
@@ -109,7 +109,7 @@ def pages(t):
         f'<span>📦 <b>WHAT YOU ARE BUYING HERE:</b> Downloadable Pre-Trained AI Bot ZIP Packages (<code>SYSTEM.md</code> + Scheduled Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code>). <b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex). The 4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code>. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
         f'<a href="../sponsor.html#packages">Want to list or boost your AI tool in the AgentScout directory instead? ($0 / $29 / $49 / $99) →</a>'
         f'</div>'
-        f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png?v=20261028-2051-189-1793234203" width="1200" height="640" style="aspect-ratio:1200/640"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=20261028-2051-189-1793234203" type="video/mp4"></video></figure>'
+        f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png?v=20261029-2060-189-1793236665" width="1200" height="640" style="aspect-ratio:1200/640"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=20261029-2060-189-1793236665" type="video/mp4"></video></figure>'
         f'<div class="bs-filters" role="toolbar" aria-label="Filter Bot Store by category">'
         f'<button type="button" class="bs-fbtn" data-filter="all" aria-pressed="true">All Bots (5)</button>'
         f'<button type="button" class="bs-fbtn" data-filter="ops" aria-pressed="false">🟢 Operations &amp; QA</button>'

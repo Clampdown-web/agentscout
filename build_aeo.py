@@ -248,12 +248,9 @@ def write_llms_full(t):
     n_offline = sum(1 for x in t if classify_locality(x) == "offline")
     n_self = sum(1 for x in t if classify_locality(x) == "self_hosted")
 
-    # Count bot templates & skills from bot-templates/index.html if present
-    n_bt = 189
-    if os.path.exists("bot-templates/index.html"):
-        m_bt = re.search(r"(\d+)\s+installable\s+bot\s+templates", open("bot-templates/index.html").read(), re.I)
-        if m_bt:
-            n_bt = int(m_bt.group(1))
+    # Count bot templates & skills from the built /bot-templates/ rows (not a frozen total).
+    import build_bot_templates
+    n_bt = build_bot_templates.live_bot_template_count()
 
     L = [
         "# AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)",

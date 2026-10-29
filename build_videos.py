@@ -5,7 +5,7 @@ from build_extras import B, e, shell, clip_text, clip_title
 def pages(t):
     os.makedirs("videos", exist_ok=True)
     n_tools = len(t)
-    n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
+    n_bt = __import__("build_bot_templates").live_bot_template_count()
     n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
     n_cats = len({x.get("category") for x in t if x.get("category")})
     today_iso = datetime.date.today().strftime("%Y-%m-%dT08:00:00-07:00")
