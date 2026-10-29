@@ -1,7 +1,7 @@
 {
-  "name": "Copywriter",
+  "name": "AgentScout Copywriter Agent",
   "slug": "copywriter",
-  "tagline": "Captions, emails, sales pages",
+  "tagline": "Conversion-focused landing pages, sales emails & social hooks",
   "version": "1.0.0",
   "skill": "skills/conversion-copy-audit/SKILL.md",
   "script": "scripts/audit_sales_copy.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

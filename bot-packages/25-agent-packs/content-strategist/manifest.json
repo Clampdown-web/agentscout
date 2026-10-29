@@ -1,7 +1,7 @@
 {
-  "name": "Content Strategist",
+  "name": "AgentScout Content Strategist Agent",
   "slug": "content-strategist",
-  "tagline": "Plans 30 days of content",
+  "tagline": "30-day editorial calendars, topic clusters & multi-channel repurposing",
   "version": "1.0.0",
   "skill": "skills/thirty-day-calendar/SKILL.md",
   "script": "scripts/generate_30day_calendar.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

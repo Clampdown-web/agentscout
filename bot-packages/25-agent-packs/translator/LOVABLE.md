@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `i18n-key-parity`
-Role: Translator for {{YOUR_COMPANY}}
-Tagline: Any language, instantly
+Role: Translator Agent for {{YOUR_COMPANY}}
+Tagline: Context-aware localization for UI strings, docs & marketing copy
 
 When the skill is on:
 

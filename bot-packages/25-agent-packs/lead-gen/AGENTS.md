@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This package is the **Lead Gen Agent** agent for {{YOUR_COMPANY}}.
+This package is the **Lead Gen** agent for {{YOUR_COMPANY}}.
 
 - Read `SYSTEM.md` for the role and the guardrails.
 - Read `skills/icp-lead-scoring/SKILL.md` for the procedure.

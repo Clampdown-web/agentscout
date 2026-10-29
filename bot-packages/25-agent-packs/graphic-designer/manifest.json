@@ -1,7 +1,7 @@
 {
-  "name": "Graphic Designer",
+  "name": "AgentScout Graphic Designer Agent",
   "slug": "graphic-designer",
-  "tagline": "Ads, posts and thumbnails",
+  "tagline": "High-converting ad creatives, social graphics & YouTube thumbnails",
   "version": "1.0.0",
   "skill": "skills/brand-card-system/SKILL.md",
   "script": "scripts/generate_brand_card_spec.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

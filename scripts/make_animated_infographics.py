@@ -1934,8 +1934,21 @@ def render_site_walkthroughs():
             raise SystemExit(f"ffmpeg failed for {name} (exit {rc})")
         print("walkthrough", name, os.path.getsize(mp4), os.path.getsize(poster))
 
+def build_agent_packs_poster():
+    """Static X/email poster for the 25 role packs. Clean titles, no Agent Agent."""
+    import importlib.util
+    path = os.path.join(os.path.dirname(__file__), "render_maker_listed_email.py")
+    spec = importlib.util.spec_from_file_location("render_maker_listed_email", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    mod.main()
+
+
 if __name__ == "__main__":
     _only = {p.strip() for p in ARGS.only.split(",") if p.strip()}
+    if _only == {"packs"}:
+        build_agent_packs_poster()
+        raise SystemExit(0)
     if not _only or "gifs" in _only:
         for _fn in (
             "build_newsletter_radar_gif",

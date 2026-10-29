@@ -1,4 +1,4 @@
-# Email Marketer quick start
+# Email Marketer Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Shape a weekly issue, score the subject and preview, and keep the list clean.
+Package for **{{YOUR_COMPANY}}**. Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send.
 
 ## 1. Fill the profile
 

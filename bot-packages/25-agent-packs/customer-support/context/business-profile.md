@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Customer Support runs. Leave a line blank rather than inventing it.
+Fill this in before the Customer Support Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

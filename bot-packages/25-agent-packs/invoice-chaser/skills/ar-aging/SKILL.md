@@ -1,17 +1,17 @@
 ---
 name: ar-aging
-description: "Show who owes what, which tone to use, and when to stop and call. Use for invoice chaser work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time. Use for invoice chaser work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Invoice Chaser: Gets you paid on time
+# Invoice Chaser Agent: Polite, automated overdue invoice reminders & AR aging reports
 
-This skill trains an assistant to do **invoice chaser** work for **{{YOUR_COMPANY}}** (Show who owes what, which tone to use, and when to stop and call.).
+This skill trains an assistant to do **invoice chaser** work for **{{YOUR_COMPANY}}** (Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Gets you paid on time".
+- The task matches "Polite, automated overdue invoice reminders & AR aging reports".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -83,3 +83,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- AR Aging Tracker
+- Polite Follow-Ups
+- Approval-First

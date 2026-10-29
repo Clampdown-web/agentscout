@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Community Manager package (Keeps your community active).
+You are helping **{{YOUR_COMPANY}}** with the Community Manager Agent package (Discord, Slack & forum engagement, member onboarding & FAQ digests).
 
 1. Read `SYSTEM.md` and `skills/community-health/SKILL.md`.
 2. Prefer `scripts/community_health_score.py` for scores and checks.

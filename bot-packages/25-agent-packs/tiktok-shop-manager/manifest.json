@@ -1,7 +1,7 @@
 {
-  "name": "TikTok Shop Manager",
+  "name": "AgentScout TikTok Shop Manager Agent",
   "slug": "tiktok-shop-manager",
-  "tagline": "Lists and promotes products",
+  "tagline": "Product listing optimization, creator affiliate briefs & stock alerts",
   "version": "1.0.0",
   "skill": "skills/shop-listing-optimizer/SKILL.md",
   "script": "scripts/optimize_shop_listing.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

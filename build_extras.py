@@ -419,10 +419,26 @@ def seo(t,urls):
     import glob as _gpk
     _packs=sorted(_gpk.glob("bot-store/*/index.html"))
     if _packs:
-        L+=["","## AI Agent Packs","",f"- [AgentScout Bot Store]({B}bot-store/)"]
+        L+=["","## AI Agent Packs","",f"- [AgentScout Bot Store]({B}bot-store/)", "- 25 role packs are $35 each (https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09). Volume: 5 for $119 (https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a), 10 for $199 (https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b), 20 for $299 (https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c), all 25 for $349 (https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d). Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149."]
+        try:
+            import sys as _sys
+            from pathlib import Path as _Path
+            _sys.path.insert(0, str(_Path(__file__).resolve().parent / "scripts"))
+            from agent_pack_catalog import product_name_for_slug as _pack_name
+        except Exception:
+            _pack_name = None
         for _pf in _packs:
             _slug = _pf.split("/")[1]
-            L.append(f"- [AgentScout {_slug.replace('-', ' ').title()} Agent]({B}bot-store/{_slug}/)")
+            if _pack_name:
+                _name = _pack_name(_slug)
+            else:
+                _stem = _slug.replace("-", " ")
+                if _stem.lower().endswith(" agent"):
+                    _stem = _stem[: -len(" agent")]
+                _name = "AgentScout " + _stem.title() + " Agent"
+            if "Agent Agent" in _name:
+                _name = _name.replace("Agent Agent", "Agent")
+            L.append(f"- [{_name}]({B}bot-store/{_slug}/)")
         L.append("")
     L+=["","## Guides","",f"- [MCP servers]({B}categories/mcp-servers.html)",f"- [Agent Skills with install commands]({B}skills/)",f"- [Agent infra]({B}categories/agent-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",f"- [Best open-source browser automation agents]({B}best/open-source-browser-automation-agents.html)",f"- [Best local & offline AI agents]({B}best/local-offline-ai-agents.html)",""]
     # every tool added in the last 2 days (today PT + yesterday), no fixed cap (owner bug fix Oct 20 2026); falls back to the 12 newest if none

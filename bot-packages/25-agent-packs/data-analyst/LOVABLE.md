@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `kpi-csv-analyst`
-Role: Data Analyst for {{YOUR_COMPANY}}
-Tagline: Weekly reports and insights
+Role: Data Analyst Agent for {{YOUR_COMPANY}}
+Tagline: Weekly KPI reports, cohort retention & revenue anomaly alerts
 
 When the skill is on:
 

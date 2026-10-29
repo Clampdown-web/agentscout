@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Web Designer package (Builds landing pages).
+You are helping **{{YOUR_COMPANY}}** with the Web Designer Agent package (Responsive landing pages, mobile UX audits & dark/light CSS polish).
 
 1. Read `SYSTEM.md` and `skills/landing-page-ux-check/SKILL.md`.
 2. Prefer `scripts/check_landing_page_ux.py` for scores and checks.

@@ -1,4 +1,4 @@
-# Market Researcher quick start
+# Market Researcher Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Compare a competitor on price and features with a source URL and a date on every claim.
+Package for **{{YOUR_COMPANY}}**. Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims.
 
 ## 1. Fill the profile
 

@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Appointment Setter package (Books calls on your calendar).
+You are helping **{{YOUR_COMPANY}}** with the Appointment Setter Agent package (Qualifies inbound leads, proposes times & books discovery calls).
 
 1. Read `SYSTEM.md` and `skills/call-briefing-slots/SKILL.md`.
 2. Prefer `scripts/build_call_briefing.py` for scores and checks.

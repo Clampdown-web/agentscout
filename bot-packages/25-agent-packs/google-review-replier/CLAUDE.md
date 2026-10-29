@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Google Review Replier package (Replies to every review).
+You are helping **{{YOUR_COMPANY}}** with the Google Review Replier Agent package (Fast, on-brand replies to every 5-star and critical local review).
 
 1. Read `SYSTEM.md` and `skills/review-reply-desk/SKILL.md`.
 2. Prefer `scripts/generate_review_replies.py` for scores and checks.

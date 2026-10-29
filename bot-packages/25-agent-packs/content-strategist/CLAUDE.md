@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Content Strategist package (Plans 30 days of content).
+You are helping **{{YOUR_COMPANY}}** with the Content Strategist Agent package (30-day editorial calendars, topic clusters & multi-channel repurposing).
 
 1. Read `SYSTEM.md` and `skills/thirty-day-calendar/SKILL.md`.
 2. Prefer `scripts/generate_30day_calendar.py` for scores and checks.

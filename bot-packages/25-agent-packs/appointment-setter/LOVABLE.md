@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `call-briefing-slots`
-Role: Appointment Setter for {{YOUR_COMPANY}}
-Tagline: Books calls on your calendar
+Role: Appointment Setter Agent for {{YOUR_COMPANY}}
+Tagline: Qualifies inbound leads, proposes times & books discovery calls
 
 When the skill is on:
 

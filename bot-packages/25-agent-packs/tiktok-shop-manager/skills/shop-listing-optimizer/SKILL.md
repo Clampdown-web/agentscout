@@ -1,17 +1,17 @@
 ---
 name: shop-listing-optimizer
-description: "Tighten a product listing, estimate creator commission, and brief a shoppable video. Use for tiktok shop manager work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds. Use for tiktok shop manager work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# TikTok Shop Manager: Lists and promotes products
+# TikTok Shop Manager Agent: Product listing optimization, creator affiliate briefs & stock alerts
 
-This skill trains an assistant to do **tiktok shop manager** work for **{{YOUR_COMPANY}}** (Tighten a product listing, estimate creator commission, and brief a shoppable video.).
+This skill trains an assistant to do **tiktok shop manager** work for **{{YOUR_COMPANY}}** (Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Lists and promotes products".
+- The task matches "Product listing optimization, creator affiliate briefs & stock alerts".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -83,3 +83,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Shop SEO & Scripts
+- Creator Briefs
+- Zero Telemetry

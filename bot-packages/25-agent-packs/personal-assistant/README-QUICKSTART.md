@@ -1,4 +1,4 @@
-# Personal Assistant quick start
+# Personal Assistant Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Turn the inbox and calendar into a morning brief with conflicts called out.
+Package for **{{YOUR_COMPANY}}**. Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise.
 
 ## 1. Fill the profile
 

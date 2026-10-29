@@ -1,7 +1,7 @@
 {
-  "name": "Accountant",
+  "name": "AgentScout Accountant Agent",
   "slug": "accountant",
-  "tagline": "Bookkeeping and tax prep",
+  "tagline": "Automated bookkeeping, ledger reconciliation & tax-ready financials",
   "version": "1.0.0",
   "skill": "skills/bookkeeping-tax-prep/SKILL.md",
   "script": "scripts/reconcile_ledger.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

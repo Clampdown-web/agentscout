@@ -1,4 +1,4 @@
-# SEO Specialist quick start
+# SEO Specialist Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.
+Package for **{{YOUR_COMPANY}}**. Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator.
 
 ## 1. Fill the profile
 

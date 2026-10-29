@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Translator package (Any language, instantly).
+You are helping **{{YOUR_COMPANY}}** with the Translator Agent package (Context-aware localization for UI strings, docs & marketing copy).
 
 1. Read `SYSTEM.md` and `skills/i18n-key-parity/SKILL.md`.
 2. Prefer `scripts/verify_i18n_keys.py` for scores and checks.

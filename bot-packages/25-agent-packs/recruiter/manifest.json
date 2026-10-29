@@ -1,7 +1,7 @@
 {
-  "name": "Recruiter",
+  "name": "AgentScout Recruiter Agent",
   "slug": "recruiter",
-  "tagline": "Screens and shortlists hires",
+  "tagline": "Candidate sourcing, resume scorecarding & structured interview kits",
   "version": "1.0.0",
   "skill": "skills/candidate-rubric/SKILL.md",
   "script": "scripts/score_candidate_rubric.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

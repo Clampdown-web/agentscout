@@ -1,4 +1,4 @@
-# Social Media Manager quick start
+# Social Media Manager Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Score hooks, format a native post, and keep a calendar the owner can approve.
+Package for **{{YOUR_COMPANY}}**. Drafts daily platform-native posts, threads, and visual callouts grounded in your product wins and top-performing industry hooks. Includes a post-velocity guard so you never step on a climbing post.
 
 ## 1. Fill the profile
 

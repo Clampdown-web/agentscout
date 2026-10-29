@@ -1,7 +1,7 @@
 {
-  "name": "SEO Specialist",
+  "name": "AgentScout SEO Specialist Agent",
   "slug": "seo-specialist",
-  "tagline": "Gets you ranking on Google",
+  "tagline": "Technical SEO audits, JSON-LD schema & AI-search visibility",
   "version": "1.0.0",
   "skill": "skills/seo-aeo-site-audit/SKILL.md",
   "script": "scripts/seo_site_audit.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

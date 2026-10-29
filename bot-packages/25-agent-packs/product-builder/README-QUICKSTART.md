@@ -1,4 +1,4 @@
-# Product Builder quick start
+# Product Builder Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Cut an MVP, model three prices, and write a launch list a small team can finish.
+Package for **{{YOUR_COMPANY}}**. Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow.
 
 ## 1. Fill the profile
 

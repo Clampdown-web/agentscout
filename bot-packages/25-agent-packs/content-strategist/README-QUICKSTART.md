@@ -1,4 +1,4 @@
-# Content Strategist quick start
+# Content Strategist Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces.
+Package for **{{YOUR_COMPANY}}**. Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets.
 
 ## 1. Fill the profile
 

@@ -88,7 +88,7 @@ def pages(t):
     n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
     canon = f"{B}bot-store/"
     title = clip_title("AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69, $149)")
-    desc = clip_text("AI agent skills packs for your business: 5 flagship bots ($39–$149) and 25 role agents with skills, routines, and scripts.", 160)
+    desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each or volume tiers $119, $199, $299, and $349.", 160)
 
     body = (
         f'{CSS}'
@@ -100,7 +100,7 @@ def pages(t):
         f'<div class="bs-hero-badges">'
         f'<a class="bs-badge" href="#bot-packages" style="border-color:#a3e635;color:#ecfccb">🟢 $39 / 🟡 $59 / 🟠 $59 / 🔴 $69 Individual Bots</a>'
         f'<a class="bs-badge" href="#bundle-package" style="border-color:#34d399;color:#d1fae5">💚 $149 Full 4-Bot Bundle (Save $77)</a>'
-        f'<a class="bs-badge" href="#ai-agent-packs" style="border-color:#93c5fd;color:#dbeafe">AI Agent Packs · 25 trained roles</a>'
+        f'<a class="bs-badge" href="#ai-agent-packs" style="border-color:#93c5fd;color:#dbeafe">25 Role Packs · $35 · 5 for $119 · all 25 for $349</a>'
         f'<a class="bs-badge" href="../bot-templates/#bt-featured">📚 {n_bt} Free Community Bot Templates →</a>'
         f'<a class="bs-badge" href="../videos/#guide-trained-bots">🎬 Watch 60fps Video Walkthrough →</a>'
         f'</div>'
@@ -218,7 +218,7 @@ def pages(t):
         f'<h2 id="bs-faq-h">What Platform Do These Run On? (Compatibility, Delivery &amp; License FAQ)</h2>'
         f'<div class="bs-faq-grid">'
         f'<div class="bs-faq-item"><h3>What platform are AgentScout Bot Store packages built for?</h3><p>They are built natively for Grok Bot first (where 24/7 scheduled cron routines, the shared /workspace/handoff/ computer, Gmail/X connectors, and 4-bot Work Chat team coordination run turnkey out of the box), and because each ZIP ships standard SYSTEM.md role prompts, SKILL.md playbooks, standalone Python 3 scripts, and mcp.json, they are also compatible with Claude Code, Cursor, and OpenAI Codex.</p></div>'
-        f'<div class="bs-faq-item"><h3>How is the Bot Store different from AgentScout Directory Listing packages?</h3><p>The Bot Store ($39, $59, $59, $69 individual bots and $149 4-Bot Bundle) sells downloadable pre-trained AI bot configurations and scripts you run in your own workspace. Directory Listing packages ($0 Free, $29 Fast-Track, $49 Category Pin, $99/wk Sitewide Sponsor) list and promote your AI software tool on agentscouthq.com.</p></div>'
+        f'<div class="bs-faq-item"><h3>How is the Bot Store different from AgentScout Directory Listing packages?</h3><p>The Bot Store sells downloadable pre-trained AI bot configurations and scripts you run in your own workspace: flagship bots at $39, $59, $59, and $69, the $149 4-Bot Bundle, and 25 role packs at $35 each (5 for $119, 10 for $199, 20 for $299, all 25 for $349). Directory Listing packages ($0 Free, $29 Fast-Track, $49 Category Pin, $99/wk Sitewide Sponsor) list and promote your AI software tool on agentscouthq.com.</p></div>'
         f'<div class="bs-faq-item"><h3>3. Instant Delivery + Single-Organization Commercial License</h3><p>After Stripe Checkout (or X Money payment to <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>), you receive the complete ZIP package with a Single-Organization Commercial License (<code>LICENSE.txt</code>) and a cryptographic per-buyer order watermark so your whole internal team can run and customize the bots.</p></div>'
         f'<div class="bs-faq-item"><h3>4. Free Community Templates vs. Directory Listing Boosts</h3><p>Looking for free starter prompts? Explore <a href="../bot-templates/#bt-featured">{n_bt} free community bot templates</a>. Looking to list or feature your AI software product in the AgentScout directory instead? See our <a href="../sponsor.html#packages">4 Directory Listing Packages ($0 / $29 / $49 / $99)</a>.</p></div>'
         f'</div>'
@@ -327,7 +327,7 @@ def pages(t):
                 "url": canon,
                 "author": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                 "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
-                "offers": {"@type": "AggregateOffer", "lowPrice": "39.00", "highPrice": "149.00", "priceCurrency": "USD", "offerCount": 30}
+                "offers": {"@type": "AggregateOffer", "lowPrice": "35.00", "highPrice": "349.00", "priceCurrency": "USD", "offerCount": 34}
             },
             {
                 "@type": "FAQPage",
@@ -345,7 +345,7 @@ def pages(t):
                         "name": "How is the Bot Store different from AgentScout Directory Listing packages?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The Bot Store ($39, $59, $59, $69 individual bots and $149 4-Bot Bundle) sells downloadable pre-trained AI bot configurations and scripts you run in your own workspace. Directory Listing packages ($0 Free, $29 Fast-Track, $49 Category Pin, $99/wk Sitewide Sponsor) list and promote your AI software tool on agentscouthq.com."
+                            "text": "The Bot Store sells downloadable pre-trained AI bot configurations and scripts you run in your own workspace: flagship bots at $39, $59, $59, and $69, the $149 4-Bot Bundle, and 25 role packs at $35 each (5 for $119, 10 for $199, 20 for $299, all 25 for $349). Directory Listing packages ($0 Free, $29 Fast-Track, $49 Category Pin, $99/wk Sitewide Sponsor) list and promote your AI software tool on agentscouthq.com."
                         }
                     }
                 ]

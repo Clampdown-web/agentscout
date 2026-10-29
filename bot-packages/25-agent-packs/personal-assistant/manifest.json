@@ -1,7 +1,7 @@
 {
-  "name": "Personal Assistant",
+  "name": "AgentScout Personal Assistant Agent",
   "slug": "personal-assistant",
-  "tagline": "Runs your inbox and diary",
+  "tagline": "Morning inbox digest, daily priorities & meeting prep briefs",
   "version": "1.0.0",
   "skill": "skills/daily-exec-briefing/SKILL.md",
   "script": "scripts/daily_exec_briefing.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

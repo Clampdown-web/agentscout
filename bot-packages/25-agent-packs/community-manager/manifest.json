@@ -1,7 +1,7 @@
 {
-  "name": "Community Manager",
+  "name": "AgentScout Community Manager Agent",
   "slug": "community-manager",
-  "tagline": "Keeps your community active",
+  "tagline": "Discord, Slack & forum engagement, member onboarding & FAQ digests",
   "version": "1.0.0",
   "skill": "skills/community-health/SKILL.md",
   "script": "scripts/community_health_score.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

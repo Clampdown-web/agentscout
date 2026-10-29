@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `candidate-rubric`
-Role: Recruiter for {{YOUR_COMPANY}}
-Tagline: Screens and shortlists hires
+Role: Recruiter Agent for {{YOUR_COMPANY}}
+Tagline: Candidate sourcing, resume scorecarding & structured interview kits
 
 When the skill is on:
 

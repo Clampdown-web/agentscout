@@ -1,7 +1,7 @@
 {
-  "name": "Product Builder",
+  "name": "AgentScout Product Builder Agent",
   "slug": "product-builder",
-  "tagline": "Creates digital products",
+  "tagline": "PRDs, user stories, release checklists & feedback prioritization",
   "version": "1.0.0",
   "skill": "skills/pricing-and-mvp-scope/SKILL.md",
   "script": "scripts/model_product_pricing.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 69
+  "price_usd": 35
 }

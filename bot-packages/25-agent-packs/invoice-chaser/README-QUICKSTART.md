@@ -1,4 +1,4 @@
-# Invoice Chaser quick start
+# Invoice Chaser Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Show who owes what, which tone to use, and when to stop and call.
+Package for **{{YOUR_COMPANY}}**. Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time.
 
 ## 1. Fill the profile
 

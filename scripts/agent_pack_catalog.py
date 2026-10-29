@@ -42,12 +42,97 @@ STRIPE = {
     },
 }
 
+# Role-pack Stripe Payment Links. Paste the five minted URLs here.
+# Flagship bot links in STRIPE stay on the $39 / $59 / $59 / $69 / $149 products.
+PACK_TIER_URLS = {
+    "tier_1": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+    "tier_5": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
+    "tier_10": "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
+    "tier_20": "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
+    "tier_25": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
+}
+PACK_TIER_LINKS = {
+    "tier_1": "plink_1UVgsdKVzDFIUga8BkjhzuB0",
+    "tier_5": "plink_1UVgt8KVzDFIUga8ZEhI5hgn",
+    "tier_10": "plink_1UVgu0KVzDFIUga8sUwWdWLL",
+    "tier_20": "plink_1UVguRKVzDFIUga82ZYi15S2",
+    "tier_25": "plink_1UVgv8KVzDFIUga83wEaqIPN",
+}
+
+PACK_TIERS = {
+    "tier_1": {"count": 1, "price": 35, "regular": 35, "save": 0, "label": "1 AI Agent Pack ($35)", "url": PACK_TIER_URLS["tier_1"], "plink": PACK_TIER_LINKS["tier_1"]},
+    "tier_5": {"count": 5, "price": 119, "regular": 175, "save": 56, "label": "5-Bot Pack ($119 · Save $56)", "url": PACK_TIER_URLS["tier_5"], "plink": PACK_TIER_LINKS["tier_5"]},
+    "tier_10": {"count": 10, "price": 199, "regular": 350, "save": 151, "label": "10-Bot Pack ($199 · Save $151)", "url": PACK_TIER_URLS["tier_10"], "plink": PACK_TIER_LINKS["tier_10"]},
+    "tier_20": {"count": 20, "price": 299, "regular": 700, "save": 401, "label": "20-Bot Pack ($299 · Save $401)", "url": PACK_TIER_URLS["tier_20"], "plink": PACK_TIER_LINKS["tier_20"]},
+    "tier_25": {"count": 25, "price": 349, "regular": 875, "save": 526, "label": "All 25-Bot Mega Pack ($349 · Save $526)", "url": PACK_TIER_URLS["tier_25"], "plink": PACK_TIER_LINKS["tier_25"]},
+}
+
+TIER_PILLS = {
+    1: "1 Bot $35",
+    5: "5 Bots $119 · Save $56",
+    10: "10 Bots $199 · Save $151",
+    20: "20 Bots $299 · Save $401",
+    25: "All 25 Bots $349 · Save $526",
+}
+
+UNIT_PRICE = PACK_TIERS["tier_1"]["price"]
+
+
+def agent_price(agent=None) -> int:
+    """Flat $35 for every role pack. Volume discounts live in PACK_TIERS."""
+    return UNIT_PRICE
+
+
+def script_filename(agent: dict) -> str:
+    """Basename of the helper that actually ships in scripts/ inside the ZIP."""
+    script = agent["script"]
+    if isinstance(script, dict):
+        script = script.get("path") or script.get("file") or ""
+    name = str(script).replace("\\", "/").split("/")[-1]
+    if not name.endswith(".py"):
+        raise ValueError(f"{agent.get('slug')} script is not a .py file: {script}")
+    return name
+
+
+def deliverable_chips(agent: dict) -> list[str]:
+    """Chips whose filenames and routine count match the ZIP, not a shorthand."""
+    return [
+        f"🧠 {agent['skill_slug']}/SKILL.md",
+        f"🐍 {script_filename(agent)}",
+        f"⏰ {len(agent['routines'])} routines",
+    ]
+
 DEPTS = {
     "sales": "Sales & Outreach",
     "marketing": "Marketing & Content",
     "ops": "Operations & Admin",
     "product": "Product & Data",
 }
+
+DEPT_SHORT = {
+    "sales": "Sales",
+    "marketing": "Marketing",
+    "ops": "Ops & Admin",
+    "product": "Product",
+}
+
+
+def role_stem(title: str) -> str:
+    """Drop a trailing 'Agent' so titles never render as 'Agent Agent'."""
+    text = " ".join(str(title or "").split())
+    while text.lower().endswith(" agent"):
+        text = text[: -len(" agent")].rstrip()
+    return text
+
+
+def card_heading(title: str) -> str:
+    """Visual role heading: 'Lead Gen Agent'."""
+    return f"{role_stem(title)} Agent"
+
+
+def branded_name(title: str) -> str:
+    """SEO and JSON-LD name: 'AgentScout Lead Gen Agent'."""
+    return f"AgentScout {card_heading(title)}"
 
 ICONS = {
     "ledger": "M6 3h9l3 3v15H6zM9 12h6M9 16h4M9 8h3",
@@ -79,12 +164,69 @@ ICONS = {
 
 
 def agent(**kwargs):
+    stem = role_stem(kwargs["title"])
+    kwargs["role"] = stem
+    # title stays the role stem ("Lead Gen", never "Lead Gen Agent") so
+    # "**{title}** agent" cannot render "Agent** agent".
+    kwargs["title"] = stem
+    kwargs["card_title"] = card_heading(stem)
+    kwargs["product_name"] = branded_name(stem)
+    if "Agent Agent" in kwargs["title"] or "Agent Agent" in kwargs["product_name"]:
+        raise ValueError(kwargs["product_name"])
     kwargs["dept_label"] = DEPTS[kwargs["dept"]]
+    kwargs["dept_short"] = DEPT_SHORT[kwargs["dept"]]
     rail = STRIPE[kwargs["stripe"]]
-    kwargs["price"] = rail["price"]
-    kwargs["checkout_url"] = rail["url"]
-    kwargs["checkout_label"] = rail["label"]
+    kwargs["flagship_checkout_url"] = rail["url"]
+    kwargs["flagship_checkout_label"] = rail["label"]
+    kwargs["price"] = agent_price(kwargs)
+    kwargs["checkout_url"] = PACK_TIERS["tier_1"]["url"]
+    kwargs["checkout_label"] = PACK_TIERS["tier_1"]["label"]
     return kwargs
+
+
+def quote_pack(n: int) -> dict:
+    """Best price for exactly n role packs, plus a nudge to the next cheaper tier."""
+    n = max(0, int(n))
+    ladder = sorted(PACK_TIERS.values(), key=lambda row: row["count"])
+    if n == 0:
+        return {
+            "n": 0, "price": 0, "regular": 0, "save": 0, "per_bot": 0,
+            "label": "Select agents", "url": "", "nudge": "", "off": True,
+        }
+    inf = 10 ** 9
+    best = [inf] * (n + 1)
+    best[0] = 0
+    steps = [(row["count"], row["price"]) for row in ladder]
+    for have in range(n + 1):
+        if best[have] >= inf:
+            continue
+        for count, price in steps:
+            nxt = have + count
+            if nxt <= n and best[have] + price < best[nxt]:
+                best[nxt] = best[have] + price
+    price = best[n]
+    regular = n * UNIT_PRICE
+    exact = next((row for row in ladder if row["count"] == n), None)
+    nudge = ""
+    for row in ladder:
+        if row["count"] > n and row["price"] < price:
+            add = row["count"] - n
+            extra = price - row["price"]
+            noun = "bot" if add == 1 else "bots"
+            short = row["label"].split(" (")[0]
+            nudge = f"Add {add} more {noun} to unlock the {short} for ${row['price']} (save ${extra} more)!"
+            break
+    return {
+        "n": n,
+        "price": price,
+        "regular": regular,
+        "save": regular - price,
+        "per_bot": round(price / n, 2),
+        "label": exact["label"] if exact else f"{n} AI Agent Packs (${price})",
+        "url": (exact or {}).get("url", ""),
+        "nudge": nudge,
+        "off": not (exact and exact.get("url")),
+    }
 
 
 AGENTS = [
@@ -138,7 +280,7 @@ AGENTS = [
         ],
     ),
     agent(
-        slug="lead-gen", title="Lead Gen Agent", tagline="Finds qualified leads daily", dept="sales", stripe="mkt",
+        slug="lead-gen", title="Lead Gen", tagline="Finds qualified leads daily", dept="sales", stripe="mkt",
         color="#34d399", icon="target", skill_slug="icp-lead-scoring", script="score_leads_pipeline.py",
         promise="Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.",
         heuristics=[
@@ -209,7 +351,7 @@ AGENTS = [
         ],
     ),
     agent(
-        slug="outreach-agent", title="Outreach Agent", tagline="Cold emails and follow-ups", dept="sales", stripe="mkt",
+        slug="outreach-agent", title="Outreach", tagline="Cold emails and follow-ups", dept="sales", stripe="mkt",
         color="#22d3ee", icon="mail", skill_slug="cold-email-sequence", script="lint_outreach_sequence.py",
         promise="Draft a short, specific sequence and lint it before anyone hits send.",
         heuristics=[
@@ -260,7 +402,7 @@ AGENTS = [
         slug="seo-specialist", title="SEO Specialist", tagline="Gets you ranking on Google", dept="marketing", stripe="seo",
         color="#fb7185", icon="search", skill_slug="seo-aeo-site-audit", script="seo_site_audit.py",
         promise="Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.",
-        store_note="Checkout for a single SEO Specialist uses the SEO & AEO Growth Auditor payment link. The downloadable package is a general-purpose auditor for the buyer's own site.",
+        store_note="This role pack is $35 and is separate from the $59 SEO & AEO Growth Auditor Bot. The downloadable package is a general-purpose auditor for the buyer's own site.",
         heuristics=[
             "One page, one query family. Two URLs chasing the same query need a canonical decision.",
             "Title and H1 may rhyme. They should not be copies if the title can carry the specific modifier.",
@@ -357,7 +499,7 @@ AGENTS = [
         slug="personal-assistant", title="Personal Assistant", tagline="Runs your inbox and diary", dept="ops", stripe="ops",
         color="#c084fc", icon="inbox", skill_slug="daily-exec-briefing", script="daily_exec_briefing.py",
         promise="Turn the inbox and calendar into a morning brief with conflicts called out.",
-        store_note="Checkout for a single Personal Assistant uses the Operations / Monitoring Bot payment link. The package itself runs the buyer's inbox and diary, not a monitoring product for any other company.",
+        store_note="This role pack is $35 and is separate from the $39 Operations / Monitoring Bot. The package runs the buyer's inbox and diary, not a monitoring product for any other company.",
         heuristics=[
             "Do, schedule, delegate, defer. Urgent and unimportant is a delegation, not a crisis.",
             "Never delete mail. Archive only when the owner has said that folder is safe.",
@@ -472,7 +614,7 @@ AGENTS = [
         ],
     ),
     agent(
-        slug="meta-ads-agent", title="Meta Ads Agent", tagline="Runs and scales your ads", dept="sales", stripe="mkt",
+        slug="meta-ads-agent", title="Meta Ads", tagline="Runs and scales your ads", dept="sales", stripe="mkt",
         color="#fbbf24", icon="megaphone", skill_slug="ad-roas-rules", script="evaluate_ad_roas.py",
         promise="Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.",
         heuristics=[
@@ -499,7 +641,7 @@ AGENTS = [
         slug="market-researcher", title="Market Researcher", tagline="Tracks your competitors", dept="product", stripe="mkt",
         color="#4ade80", icon="radar", skill_slug="competitor-diff", script="competitor_diff_check.py",
         promise="Compare a competitor on price and features with a source URL and a date on every claim.",
-        store_note="Checkout for a single Market Researcher uses the Market & Launch Intel payment link. The package compares the buyer's own competitors from files they provide.",
+        store_note="This role pack is $35 and is separate from the $59 Market & Launch Intel Bot. The package compares the buyer's own competitors from files they provide.",
         heuristics=[
             "No source URL, no claim. A memory of a pricing page is not a source.",
             "Date the snapshot. A price from last quarter is history, not their offer.",
@@ -618,7 +760,7 @@ AGENTS = [
         slug="product-builder", title="Product Builder", tagline="Creates digital products", dept="product", stripe="ceo",
         color="#a3e635", icon="box", skill_slug="pricing-and-mvp-scope", script="model_product_pricing.py",
         promise="Cut an MVP, model three prices, and write a launch list a small team can finish.",
-        store_note="Checkout for a single Product Builder uses the CEO Coordinator payment link. The package scopes the buyer's own product.",
+        store_note="This role pack is $35 and is separate from the $69 CEO Coordinator Bot. The package scopes the buyer's own product.",
         heuristics=[
             "Write the non-goals in the same sitting as the goals. Scope creep eats the sentence you skipped.",
             "A feature earns its place with reach, impact, confidence, and effort.",
@@ -702,21 +844,28 @@ def _bullets(items: list[str]) -> str:
 def skill_md(agent: dict) -> str:
     name = agent["skill_slug"]
     description = (
-        f"{agent['promise']} Use for {agent['title'].lower()} work at "
+        f"{agent['promise']} Use for {agent['role'].lower()} work at "
         "{{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist "
         "before anything is sent, posted, spent, or filed."
     )
     routines = "\n".join(
         f"- `{rid}` at `{cron}`: {title}" for rid, cron, title, _prompt in agent["routines"]
     )
+    named = [
+        chip for chip in agent.get("chips") or []
+        if not str(chip).startswith(("🧠", "🐍", "⏰"))
+    ]
+    chip_block = ""
+    if named:
+        chip_block = "\n## Pack card deliverables\n\n" + "\n".join(f"- {item}" for item in named) + "\n"
     return f"""---
 name: {name}
 description: "{description}"
 ---
 
-# {agent['title']}: {agent['tagline']}
+# {agent['card_title']}: {agent['tagline']}
 
-This skill trains an assistant to do **{agent['title'].lower()}** work for **{{{{YOUR_COMPANY}}}}** ({agent['promise']}).
+This skill trains an assistant to do **{agent['role'].lower()}** work for **{{{{YOUR_COMPANY}}}}** ({agent['promise']}).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{{{YOUR_OWNER_NAME}}}} instead of guessing.
 
@@ -769,13 +918,13 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{{{YOUR_TI
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
-"""
+{chip_block}"""
 
 
 def system_md(agent: dict) -> str:
-    return f"""# System role: {agent['title']} for {{{{YOUR_COMPANY}}}}
+    return f"""# System role: {agent['card_title']} for {{{{YOUR_COMPANY}}}}
 
-You are the {agent['title']} for **{{{{YOUR_COMPANY}}}}** ({agent['tagline']}).
+You are the {agent['card_title']} for **{{{{YOUR_COMPANY}}}}** ({agent['tagline']}).
 
 {agent['promise']}
 
@@ -820,7 +969,7 @@ Follow `skills/{agent['skill_slug']}/SKILL.md` when the task matches this role.
 def agents_md(agent: dict) -> str:
     return f"""# AGENTS.md
 
-This package is the **{agent['title']}** agent for {{{{YOUR_COMPANY}}}}.
+This package is the **{agent['role']}** agent for {{{{YOUR_COMPANY}}}}.
 
 - Read `SYSTEM.md` for the role and the guardrails.
 - Read `skills/{agent['skill_slug']}/SKILL.md` for the procedure.
@@ -837,7 +986,7 @@ Codex, Cursor, Copilot, Windsurf, and Cline should treat this file as the worksp
 def claude_md(agent: dict) -> str:
     return f"""# Claude Code project notes
 
-You are helping **{{{{YOUR_COMPANY}}}}** with the {agent['title']} package ({agent['tagline']}).
+You are helping **{{{{YOUR_COMPANY}}}}** with the {agent['card_title']} package ({agent['tagline']}).
 
 1. Read `SYSTEM.md` and `skills/{agent['skill_slug']}/SKILL.md`.
 2. Prefer `scripts/{agent['script']}` for scores and checks.
@@ -850,7 +999,7 @@ Placeholders still in braces are unset. Ask rather than invent {{{{YOUR_DOMAIN}}
 
 
 def cursorrules(agent: dict) -> str:
-    return f"""# {agent['title']} workspace rules
+    return f"""# {agent['card_title']} workspace rules
 
 - Company context lives in context/business-profile.md.
 - Follow skills/{agent['skill_slug']}/SKILL.md for this role.
@@ -868,7 +1017,7 @@ def lovable_md(agent: dict) -> str:
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `{agent['skill_slug']}`
-Role: {agent['title']} for {{{{YOUR_COMPANY}}}}
+Role: {agent['card_title']} for {{{{YOUR_COMPANY}}}}
 Tagline: {agent['tagline']}
 
 When the skill is on:
@@ -891,7 +1040,7 @@ def business_profile(agent: dict) -> str:
     questions = "\n".join(f"- {title}: what does done look like?" for title, _body in agent["steps"][:4])
     return f"""# Business profile
 
-Fill this in before the {agent['title']} runs. Leave a line blank rather than inventing it.
+Fill this in before the {agent['card_title']} runs. Leave a line blank rather than inventing it.
 
 ## Identity
 
@@ -933,7 +1082,7 @@ Paste file names or URLs the owner provided. Do not add sources the owner has no
 
 
 def readme(agent: dict) -> str:
-    return f"""# {agent['title']} quick start
+    return f"""# {agent['card_title']} quick start
 
 Built by AgentScout
 
@@ -986,7 +1135,7 @@ def license_txt(agent: dict) -> str:
     return textwrap.dedent(f"""\
     SINGLE-ORGANIZATION LICENSE
 
-    This {agent['title']} package is original training material for the buying
+    This {agent['card_title']} package is original training material for the buying
     organization, referred to inside the files as {{{{YOUR_COMPANY}}}}.
 
     One organization may use, modify, and run these files internally for its
@@ -1033,7 +1182,7 @@ def notices() -> str:
 def routines_json(agent: dict) -> dict:
     return {
         "timezone": "{{YOUR_TIMEZONE}}",
-        "role": agent["title"],
+        "role": agent["card_title"],
         "company": "{{YOUR_COMPANY}}",
         "routines": [
             {
@@ -1051,7 +1200,7 @@ def routines_json(agent: dict) -> dict:
 
 def manifest(agent: dict) -> dict:
     return {
-        "name": agent["title"],
+        "name": agent["product_name"],
         "slug": agent["slug"],
         "tagline": agent["tagline"],
         "version": "1.0.0",
@@ -1077,7 +1226,7 @@ def manifest(agent: dict) -> dict:
         ],
         "brand": {"name": "AgentScout", "url": "https://agentscouthq.com"},
         "author": {"name": "AgentScout", "url": "https://agentscouthq.com"},
-        "price_usd": agent["price"],
+        "price_usd": agent_price(agent),
     }
 
 
@@ -1133,10 +1282,14 @@ def public_cards() -> list[dict]:
     for agent in AGENTS:
         cards.append({
             "slug": agent["slug"],
-            "title": agent["title"],
+            "role": agent["role"],
+            "title": agent["card_title"],
+            "cardTitle": agent["card_title"],
+            "productName": agent["product_name"],
             "tagline": agent["tagline"],
             "dept": agent["dept"],
             "deptLabel": agent["dept_label"],
+            "deptShort": agent["dept_short"],
             "color": agent["color"],
             "icon": agent["icon"],
             "price": agent["price"],
@@ -1146,11 +1299,56 @@ def public_cards() -> list[dict]:
             "skill": agent["skill_slug"],
             "script": agent["script"],
             "promise": agent["promise"],
+            "chips": list(agent.get("chips") or []),
             "heuristics": agent["heuristics"],
             "routines": [
-                {"id": rid, "cron": cron, "title": title}
-                for rid, cron, title, _prompt in agent["routines"]
+                {"id": rid, "cron": cron, "title": title, "prompt": prompt}
+                for rid, cron, title, prompt in agent["routines"]
             ],
             "storeNote": agent.get("store_note", ""),
         })
     return cards
+
+
+def product_name_for_slug(slug: str) -> str:
+    for agent in AGENTS:
+        if agent["slug"] == slug:
+            return agent["product_name"]
+    return branded_name(slug.replace("-", " "))
+
+
+def _apply_upgraded_copy() -> None:
+    path = ROOT / "data" / "25-agent-upgraded-copy.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    rows = {row["slug"]: row for row in data["agents"]}
+    if len(rows) != len(AGENTS):
+        raise SystemExit(f"upgraded copy has {len(rows)} agents, catalog has {len(AGENTS)}")
+    for agent in AGENTS:
+        row = rows.get(agent["slug"])
+        if not row:
+            raise SystemExit(f"upgraded copy missing {agent['slug']}")
+        if row["brand_title"] != agent["product_name"]:
+            raise SystemExit(f"{agent['slug']} brand {row['brand_title']!r} != {agent['product_name']!r}")
+        agent["tagline"] = row["tagline"].strip()
+        agent["promise"] = row["description"].strip()
+        real_script = script_filename(agent)
+        if row.get("script") and row["script"] != real_script:
+            raise SystemExit(f"{agent['slug']} copy script {row['script']} != zip script {real_script}")
+        if row.get("skill_slug") and row["skill_slug"] != agent["skill_slug"]:
+            raise SystemExit(f"{agent['slug']} copy skill {row['skill_slug']} != {agent['skill_slug']}")
+        if row.get("routines_count") is not None and int(row["routines_count"]) != len(agent["routines"]):
+            raise SystemExit(
+                f"{agent['slug']} copy routines {row['routines_count']} != {len(agent['routines'])}"
+            )
+        marketing = []
+        for chip in row["chips"]:
+            text = str(chip).strip()
+            if text.endswith(".py") or text.endswith("SKILL.md") or text.lower().startswith("⏰"):
+                continue
+            marketing.append(text)
+        agent["chips"] = deliverable_chips(agent) + marketing
+        if "Agent Agent" in agent["product_name"] or "Agent Agent" in agent["title"]:
+            raise SystemExit(agent["product_name"])
+
+
+_apply_upgraded_copy()

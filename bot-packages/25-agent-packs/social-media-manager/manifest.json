@@ -1,7 +1,7 @@
 {
-  "name": "Social Media Manager",
+  "name": "AgentScout Social Media Manager Agent",
   "slug": "social-media-manager",
-  "tagline": "Plans and posts every day",
+  "tagline": "Daily X, LinkedIn & Instagram posts with outlier hook tracking",
   "version": "1.0.0",
   "skill": "skills/social-hook-desk/SKILL.md",
   "script": "scripts/score_social_hooks.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

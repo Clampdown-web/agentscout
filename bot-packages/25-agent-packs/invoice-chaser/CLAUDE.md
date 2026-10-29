@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Invoice Chaser package (Gets you paid on time).
+You are helping **{{YOUR_COMPANY}}** with the Invoice Chaser Agent package (Polite, automated overdue invoice reminders & AR aging reports).
 
 1. Read `SYSTEM.md` and `skills/ar-aging/SKILL.md`.
 2. Prefer `scripts/aging_ar_report.py` for scores and checks.

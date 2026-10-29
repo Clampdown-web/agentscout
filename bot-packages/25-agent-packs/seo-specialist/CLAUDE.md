@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the SEO Specialist package (Gets you ranking on Google).
+You are helping **{{YOUR_COMPANY}}** with the SEO Specialist Agent package (Technical SEO audits, JSON-LD schema & AI-search visibility).
 
 1. Read `SYSTEM.md` and `skills/seo-aeo-site-audit/SKILL.md`.
 2. Prefer `scripts/seo_site_audit.py` for scores and checks.

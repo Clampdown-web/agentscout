@@ -1,7 +1,7 @@
 {
-  "name": "Market Researcher",
+  "name": "AgentScout Market Researcher Agent",
   "slug": "market-researcher",
-  "tagline": "Tracks your competitors",
+  "tagline": "Competitor pricing watch, launch tracking & side-by-side battlecards",
   "version": "1.0.0",
   "skill": "skills/competitor-diff/SKILL.md",
   "script": "scripts/competitor_diff_check.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

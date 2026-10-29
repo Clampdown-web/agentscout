@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the TikTok Shop Manager package (Lists and promotes products).
+You are helping **{{YOUR_COMPANY}}** with the TikTok Shop Manager Agent package (Product listing optimization, creator affiliate briefs & stock alerts).
 
 1. Read `SYSTEM.md` and `skills/shop-listing-optimizer/SKILL.md`.
 2. Prefer `scripts/optimize_shop_listing.py` for scores and checks.

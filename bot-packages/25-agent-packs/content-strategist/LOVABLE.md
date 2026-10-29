@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `thirty-day-calendar`
-Role: Content Strategist for {{YOUR_COMPANY}}
-Tagline: Plans 30 days of content
+Role: Content Strategist Agent for {{YOUR_COMPANY}}
+Tagline: 30-day editorial calendars, topic clusters & multi-channel repurposing
 
 When the skill is on:
 

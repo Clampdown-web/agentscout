@@ -1,7 +1,7 @@
 {
-  "name": "Appointment Setter",
+  "name": "AgentScout Appointment Setter Agent",
   "slug": "appointment-setter",
-  "tagline": "Books calls on your calendar",
+  "tagline": "Qualifies inbound leads, proposes times & books discovery calls",
   "version": "1.0.0",
   "skill": "skills/call-briefing-slots/SKILL.md",
   "script": "scripts/build_call_briefing.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

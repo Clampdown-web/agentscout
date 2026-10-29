@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `competitor-diff`
-Role: Market Researcher for {{YOUR_COMPANY}}
-Tagline: Tracks your competitors
+Role: Market Researcher Agent for {{YOUR_COMPANY}}
+Tagline: Competitor pricing watch, launch tracking & side-by-side battlecards
 
 When the skill is on:
 

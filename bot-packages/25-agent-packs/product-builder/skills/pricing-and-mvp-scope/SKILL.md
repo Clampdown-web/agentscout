@@ -1,17 +1,17 @@
 ---
 name: pricing-and-mvp-scope
-description: "Cut an MVP, model three prices, and write a launch list a small team can finish. Use for product builder work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow. Use for product builder work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Product Builder: Creates digital products
+# Product Builder Agent: PRDs, user stories, release checklists & feedback prioritization
 
-This skill trains an assistant to do **product builder** work for **{{YOUR_COMPANY}}** (Cut an MVP, model three prices, and write a launch list a small team can finish.).
+This skill trains an assistant to do **product builder** work for **{{YOUR_COMPANY}}** (Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Creates digital products".
+- The task matches "PRDs, user stories, release checklists & feedback prioritization".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -82,3 +82,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- PRD & RICE Scorer
+- Release QA Checklist
+- Zero Telemetry

@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Product Builder runs. Leave a line blank rather than inventing it.
+Fill this in before the Product Builder Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

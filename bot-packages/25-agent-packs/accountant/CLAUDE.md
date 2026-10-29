@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Accountant package (Bookkeeping and tax prep).
+You are helping **{{YOUR_COMPANY}}** with the Accountant Agent package (Automated bookkeeping, ledger reconciliation & tax-ready financials).
 
 1. Read `SYSTEM.md` and `skills/bookkeeping-tax-prep/SKILL.md`.
 2. Prefer `scripts/reconcile_ledger.py` for scores and checks.

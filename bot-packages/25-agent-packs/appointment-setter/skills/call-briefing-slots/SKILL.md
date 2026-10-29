@@ -1,17 +1,17 @@
 ---
 name: call-briefing-slots
-description: "Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller. Use for appointment setter work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script. Use for appointment setter work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Appointment Setter: Books calls on your calendar
+# Appointment Setter Agent: Qualifies inbound leads, proposes times & books discovery calls
 
-This skill trains an assistant to do **appointment setter** work for **{{YOUR_COMPANY}}** (Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller.).
+This skill trains an assistant to do **appointment setter** work for **{{YOUR_COMPANY}}** (Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Books calls on your calendar".
+- The task matches "Qualifies inbound leads, proposes times & books discovery calls".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -82,3 +82,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Calendar Qualification
+- No-Show Reminders
+- Approval-First

@@ -1,7 +1,7 @@
 {
-  "name": "Email Marketer",
+  "name": "AgentScout Email Marketer Agent",
   "slug": "email-marketer",
-  "tagline": "Newsletters that sell",
+  "tagline": "High-open newsletters, onboarding flows & win-back campaigns",
   "version": "1.0.0",
   "skill": "skills/newsletter-issue-score/SKILL.md",
   "script": "scripts/score_newsletter_issue.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

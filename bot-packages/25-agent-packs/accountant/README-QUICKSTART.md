@@ -1,4 +1,4 @@
-# Accountant quick start
+# Accountant Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional.
+Package for **{{YOUR_COMPANY}}**. Reconciles your monthly bank and Stripe ledgers, categorizes expenses automatically, and flags P&L anomalies before tax season. Includes a zero-dependency ledger reconciliation script and weekly cash-flow routines.
 
 ## 1. Fill the profile
 

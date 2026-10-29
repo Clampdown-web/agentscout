@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Appointment Setter runs. Leave a line blank rather than inventing it.
+Fill this in before the Appointment Setter Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

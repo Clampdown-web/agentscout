@@ -1,7 +1,7 @@
 {
-  "name": "Lead Gen Agent",
+  "name": "AgentScout Lead Gen Agent",
   "slug": "lead-gen",
-  "tagline": "Finds qualified leads daily",
+  "tagline": "Daily B2B prospect discovery, ICP scoring & verified lead lists",
   "version": "1.0.0",
   "skill": "skills/icp-lead-scoring/SKILL.md",
   "script": "scripts/score_leads_pipeline.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

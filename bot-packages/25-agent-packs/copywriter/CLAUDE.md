@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Copywriter package (Captions, emails, sales pages).
+You are helping **{{YOUR_COMPANY}}** with the Copywriter Agent package (Conversion-focused landing pages, sales emails & social hooks).
 
 1. Read `SYSTEM.md` and `skills/conversion-copy-audit/SKILL.md`.
 2. Prefer `scripts/audit_sales_copy.py` for scores and checks.

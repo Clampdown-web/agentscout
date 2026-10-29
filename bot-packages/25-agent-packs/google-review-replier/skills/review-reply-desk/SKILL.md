@@ -1,17 +1,17 @@
 ---
 name: review-reply-desk
-description: "Draft a specific public reply for every review and a private path for anything serious. Use for google review replier work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps. Use for google review replier work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Google Review Replier: Replies to every review
+# Google Review Replier Agent: Fast, on-brand replies to every 5-star and critical local review
 
-This skill trains an assistant to do **google review replier** work for **{{YOUR_COMPANY}}** (Draft a specific public reply for every review and a private path for anything serious.).
+This skill trains an assistant to do **google review replier** work for **{{YOUR_COMPANY}}** (Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Replies to every review".
+- The task matches "Fast, on-brand replies to every 5-star and critical local review".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -83,3 +83,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Local SEO Replies
+- Escalation Guard
+- Approval-First

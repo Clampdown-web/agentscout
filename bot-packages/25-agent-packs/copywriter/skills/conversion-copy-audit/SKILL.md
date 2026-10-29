@@ -1,17 +1,17 @@
 ---
 name: conversion-copy-audit
-description: "Draft and edit offers with a clear problem, proof, and a single next step. Use for copywriter work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clichés. Includes a readability and conversion-rubric scorer. Use for copywriter work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Copywriter: Captions, emails, sales pages
+# Copywriter Agent: Conversion-focused landing pages, sales emails & social hooks
 
-This skill trains an assistant to do **copywriter** work for **{{YOUR_COMPANY}}** (Draft and edit offers with a clear problem, proof, and a single next step.).
+This skill trains an assistant to do **copywriter** work for **{{YOUR_COMPANY}}** (Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clichés. Includes a readability and conversion-rubric scorer.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Captions, emails, sales pages".
+- The task matches "Conversion-focused landing pages, sales emails & social hooks".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -82,3 +82,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Landing Page Copy
+- Hook & CTA Library
+- Zero Telemetry

@@ -1,7 +1,7 @@
 {
-  "name": "Influencer Scout",
+  "name": "AgentScout Influencer Scout Agent",
   "slug": "influencer-scout",
-  "tagline": "Finds creators to work with",
+  "tagline": "Creator discovery, engagement-rate vetting & sponsorship ROI tracking",
   "version": "1.0.0",
   "skill": "skills/creator-roi/SKILL.md",
   "script": "scripts/calculate_creator_roi.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

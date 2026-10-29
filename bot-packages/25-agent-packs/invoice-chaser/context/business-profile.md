@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Invoice Chaser runs. Leave a line blank rather than inventing it.
+Fill this in before the Invoice Chaser Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

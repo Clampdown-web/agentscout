@@ -1,4 +1,4 @@
-# Recruiter quick start
+# Recruiter Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Score candidates against a written rubric and write interview questions that test the work.
+Package for **{{YOUR_COMPANY}}**. Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline.
 
 ## 1. Fill the profile
 

@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `community-health`
-Role: Community Manager for {{YOUR_COMPANY}}
-Tagline: Keeps your community active
+Role: Community Manager Agent for {{YOUR_COMPANY}}
+Tagline: Discord, Slack & forum engagement, member onboarding & FAQ digests
 
 When the skill is on:
 

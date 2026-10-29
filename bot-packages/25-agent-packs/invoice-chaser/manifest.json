@@ -1,7 +1,7 @@
 {
-  "name": "Invoice Chaser",
+  "name": "AgentScout Invoice Chaser Agent",
   "slug": "invoice-chaser",
-  "tagline": "Gets you paid on time",
+  "tagline": "Polite, automated overdue invoice reminders & AR aging reports",
   "version": "1.0.0",
   "skill": "skills/ar-aging/SKILL.md",
   "script": "scripts/aging_ar_report.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

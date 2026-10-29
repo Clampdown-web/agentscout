@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Social Media Manager runs. Leave a line blank rather than inventing it.
+Fill this in before the Social Media Manager Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

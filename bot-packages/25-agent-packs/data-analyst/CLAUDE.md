@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Data Analyst package (Weekly reports and insights).
+You are helping **{{YOUR_COMPANY}}** with the Data Analyst Agent package (Weekly KPI reports, cohort retention & revenue anomaly alerts).
 
 1. Read `SYSTEM.md` and `skills/kpi-csv-analyst/SKILL.md`.
 2. Prefer `scripts/analyze_kpi_csv.py` for scores and checks.

@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Translator runs. Leave a line blank rather than inventing it.
+Fill this in before the Translator Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

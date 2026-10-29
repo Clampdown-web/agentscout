@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.
+Package for **{{YOUR_COMPANY}}**. Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked.
 
 ## 1. Fill the profile
 

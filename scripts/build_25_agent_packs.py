@@ -13,6 +13,7 @@ from agent_pack_catalog import AGENTS, render_package, public_cards  # noqa: E40
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "bot-packages" / "25-agent-packs"
 ZIPS = OUT / "zips"
+# Role-pack Stripe links live on the website only. ZIPs stay free of payment URLs.
 BANNED = (
     "mcp.agentscouthq.com",
     "buy.stripe.com",
@@ -31,6 +32,8 @@ def build() -> None:
         for token in BANNED:
             if token in blob:
                 raise SystemExit(f"{agent['slug']} contains banned token {token}")
+        if "Agent Agent" in blob or "Agent** agent" in blob:
+            raise SystemExit(f"{agent['slug']} doubles Agent in the package")
         zpath = ZIPS / f"{agent['slug']}.zip"
         if zpath.exists():
             zpath.unlink()

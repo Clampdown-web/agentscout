@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Personal Assistant package (Runs your inbox and diary).
+You are helping **{{YOUR_COMPANY}}** with the Personal Assistant Agent package (Morning inbox digest, daily priorities & meeting prep briefs).
 
 1. Read `SYSTEM.md` and `skills/daily-exec-briefing/SKILL.md`.
 2. Prefer `scripts/daily_exec_briefing.py` for scores and checks.

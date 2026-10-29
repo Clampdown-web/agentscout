@@ -1,7 +1,7 @@
 {
-  "name": "Video Editor",
+  "name": "AgentScout Video Editor Agent",
   "slug": "video-editor",
-  "tagline": "Cuts reels and shorts",
+  "tagline": "Short-form retention hooks, cut lists, captions & FFmpeg workflows",
   "version": "1.0.0",
   "skill": "skills/shortform-cut-captions/SKILL.md",
   "script": "scripts/format_captions_and_cuts.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

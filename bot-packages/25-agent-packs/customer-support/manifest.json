@@ -1,7 +1,7 @@
 {
-  "name": "Customer Support",
+  "name": "AgentScout Customer Support Agent",
   "slug": "customer-support",
-  "tagline": "Answers customers 24/7",
+  "tagline": "24/7 inbox triage, instant FAQ answers & refund/escalation routing",
   "version": "1.0.0",
   "skill": "skills/support-ticket-triage/SKILL.md",
   "script": "scripts/triage_support_tickets.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

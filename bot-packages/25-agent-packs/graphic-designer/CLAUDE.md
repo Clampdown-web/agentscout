@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Graphic Designer package (Ads, posts and thumbnails).
+You are helping **{{YOUR_COMPANY}}** with the Graphic Designer Agent package (High-converting ad creatives, social graphics & YouTube thumbnails).
 
 1. Read `SYSTEM.md` and `skills/brand-card-system/SKILL.md`.
 2. Prefer `scripts/generate_brand_card_spec.py` for scores and checks.

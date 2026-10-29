@@ -1,17 +1,17 @@
 ---
 name: creator-roi
-description: "Shortlist creators with an engagement check, a cost estimate, and a brief a person can send. Use for influencer scout work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links. Use for influencer scout work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Influencer Scout: Finds creators to work with
+# Influencer Scout Agent: Creator discovery, engagement-rate vetting & sponsorship ROI tracking
 
-This skill trains an assistant to do **influencer scout** work for **{{YOUR_COMPANY}}** (Shortlist creators with an engagement check, a cost estimate, and a brief a person can send.).
+This skill trains an assistant to do **influencer scout** work for **{{YOUR_COMPANY}}** (Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Finds creators to work with".
+- The task matches "Creator discovery, engagement-rate vetting & sponsorship ROI tracking".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -82,3 +82,9 @@ Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIME
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Creator ROI Vetting
+- Sponsor Outreach
+- Approval-First

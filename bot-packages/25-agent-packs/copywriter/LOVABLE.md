@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `conversion-copy-audit`
-Role: Copywriter for {{YOUR_COMPANY}}
-Tagline: Captions, emails, sales pages
+Role: Copywriter Agent for {{YOUR_COMPANY}}
+Tagline: Conversion-focused landing pages, sales emails & social hooks
 
 When the skill is on:
 

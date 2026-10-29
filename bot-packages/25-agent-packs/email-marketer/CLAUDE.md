@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Email Marketer package (Newsletters that sell).
+You are helping **{{YOUR_COMPANY}}** with the Email Marketer Agent package (High-open newsletters, onboarding flows & win-back campaigns).
 
 1. Read `SYSTEM.md` and `skills/newsletter-issue-score/SKILL.md`.
 2. Prefer `scripts/score_newsletter_issue.py` for scores and checks.

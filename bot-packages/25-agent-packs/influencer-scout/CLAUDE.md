@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Influencer Scout package (Finds creators to work with).
+You are helping **{{YOUR_COMPANY}}** with the Influencer Scout Agent package (Creator discovery, engagement-rate vetting & sponsorship ROI tracking).
 
 1. Read `SYSTEM.md` and `skills/creator-roi/SKILL.md`.
 2. Prefer `scripts/calculate_creator_roi.py` for scores and checks.

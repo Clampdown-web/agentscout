@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This package is the **Meta Ads Agent** agent for {{YOUR_COMPANY}}.
+This package is the **Meta Ads** agent for {{YOUR_COMPANY}}.
 
 - Read `SYSTEM.md` for the role and the guardrails.
 - Read `skills/ad-roas-rules/SKILL.md` for the procedure.

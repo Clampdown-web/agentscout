@@ -1,7 +1,7 @@
 {
-  "name": "Outreach Agent",
+  "name": "AgentScout Outreach Agent",
   "slug": "outreach-agent",
-  "tagline": "Cold emails and follow-ups",
+  "tagline": "Personalized cold emails, warm follow-ups & reply triage",
   "version": "1.0.0",
   "skill": "skills/cold-email-sequence/SKILL.md",
   "script": "scripts/lint_outreach_sequence.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

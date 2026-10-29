@@ -1,4 +1,4 @@
-# Copywriter quick start
+# Copywriter Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Draft and edit offers with a clear problem, proof, and a single next step.
+Package for **{{YOUR_COMPANY}}**. Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clichés. Includes a readability and conversion-rubric scorer.
 
 ## 1. Fill the profile
 

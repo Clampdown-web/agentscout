@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `bookkeeping-tax-prep`
-Role: Accountant for {{YOUR_COMPANY}}
-Tagline: Bookkeeping and tax prep
+Role: Accountant Agent for {{YOUR_COMPANY}}
+Tagline: Automated bookkeeping, ledger reconciliation & tax-ready financials
 
 When the skill is on:
 

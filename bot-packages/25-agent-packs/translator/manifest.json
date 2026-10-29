@@ -1,7 +1,7 @@
 {
-  "name": "Translator",
+  "name": "AgentScout Translator Agent",
   "slug": "translator",
-  "tagline": "Any language, instantly",
+  "tagline": "Context-aware localization for UI strings, docs & marketing copy",
   "version": "1.0.0",
   "skill": "skills/i18n-key-parity/SKILL.md",
   "script": "scripts/verify_i18n_keys.py",
@@ -31,5 +31,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }
