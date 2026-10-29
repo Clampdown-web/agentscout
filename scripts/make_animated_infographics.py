@@ -656,7 +656,7 @@ def build_trained_bots_ad_infographic():
 
         # Left Panel: 4-Bot Company-in-a-Box Architecture Hub (x=24..510, y=112..506)
         d.rounded_rectangle([24, 112, 510, 506], radius=14, fill=(18, 15, 10, 255), outline=(245, 158, 11, 160), width=1)
-        d.text((40, 124), "4 SPECIALIST BOTS · BUY SEPARATELY OR ALL 4 TOGETHER", font=f_mono_s, fill=(251, 191, 36, 255))
+        d.text((40, 124), "WORKS WITH GROK BOT · CLAUDE CODE · CURSOR · CODEX · LOVABLE", font=f_mono_s, fill=(52, 211, 153, 255))
 
         cx, cy = 267, 286
         d.ellipse([cx - 175, cy - 114, cx + 175, cy + 114], outline=(90, 70, 30, 180), width=1)
@@ -1489,7 +1489,7 @@ def scene_bots(d, F, t, ch, lp, box, accent):
             d.text((x + 14, yy + 84), "SELECTED" if on else "option", font=F["m12"], fill=col if on else (120, 130, 150))
         _panel(d, (x0 + 18, yy + 130, x1 - 18, yy + 196), (12, 28, 24) if bundle else (12, 16, 28), (52, 211, 153) if bundle else (50, 64, 80), 3 if bundle else 1, 10)
         d.text((x0 + 34, yy + 148), "4-Bot Bundle ($149)  ·  25 AI Agent Packs ($35 / $119 / $199 / $299 / $349)", font=F["b16"], fill=(255, 255, 255))
-        d.text((x0 + 34, yy + 172), "Save $77 on 4-Bot Bundle  ·  Save up to $526 on All 25 AI Agent Packs", font=F["m13"], fill=(52, 211, 153) if bundle else (148, 163, 184))
+        d.text((x0 + 34, yy + 172), "Works with Grok Bot · Claude Code · Cursor · Codex · Lovable (Save up to $526)", font=F["m13"], fill=(52, 211, 153) if bundle else (148, 163, 184))
         if bundle:
             _button(d, F, x1 - 170, yy + 150, 130, 32, "SELECTED", (16, 185, 129), (6, 16, 14))
     elif ch == 1:
@@ -1508,7 +1508,7 @@ def scene_bots(d, F, t, ch, lp, box, accent):
         rows = [
             ("$ python3 setup_workspace.py --domain yoursite.com", (52, 211, 153)),
             ("creating /workspace for yoursite.com", (226, 232, 240)),
-            ("wrote SYSTEM.md, CLAUDE.md, AGENTS.md", (125, 211, 252)),
+            ("wrote SYSTEM.md, CLAUDE.md, .cursorrules, AGENTS.md, LOVABLE.md", (125, 211, 252)),
             ("installed cron routines", (226, 232, 240)),
             ("linked mcp.json (zero API key)", (168, 85, 247)),
             ("workspace ready", (52, 211, 153)),

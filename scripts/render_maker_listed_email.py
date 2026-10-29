@@ -26,7 +26,7 @@ def _e(value: str) -> str:
 
 def email_html() -> str:
     tiers = "".join(
-        f'<span style="display:inline-block;margin:4px 6px 0 0;padding:6px 10px;border-radius:999px;background:#172033;color:#e0f2fe;border:1px solid #334155;font:700 12px/1.3 Arial,sans-serif">{_e(TIER_PILLS[row["count"]])}</span>'
+        f'<a href="{_e(row["url"])}" style="display:inline-block;margin:4px 6px 0 0;padding:6px 10px;border-radius:999px;background:#172033;color:#e0f2fe;border:1px solid #334155;font:700 12px/1.3 Arial,sans-serif;text-decoration:none">{_e(TIER_PILLS[row["count"]])} →</a>'
         for row in PACK_TIERS.values()
     )
     flagship = []
@@ -49,13 +49,14 @@ def email_html() -> str:
             f'<span style="color:#a1a1aa;font-weight:600">built by AgentScout</span></td>'
             f'<td style="padding:10px 8px;border-bottom:1px solid #243044;color:#93c5fd">{_e(agent["dept_short"])}</td>'
             f'<td style="padding:10px 8px;border-bottom:1px solid #243044;color:#d4d4d8">{_e(agent["promise"])}<br><span style="color:#e4e4e7">{_e(chips)}</span></td>'
-            '<td style="padding:10px 8px;border-bottom:1px solid #243044;color:#fff">$35</td>'
+            f'<td style="padding:10px 8px;border-bottom:1px solid #243044;color:#fff"><a href="{_e(PACK_TIERS["tier_1"]["url"])}" style="color:#10b981;font-weight:700;text-decoration:none">$35 →</a></td>'
             "</tr>"
         )
     return f"""<section style="background:#0e1118;color:#e4e4e7;padding:20px;border-radius:18px;border:1px solid #334155;font-family:Arial,sans-serif">
   <p style="margin:0 0 6px;font-size:13px">built by AgentScout</p>
   <h2 style="margin:0 0 8px;color:#fff">Bot Store · 4 flagship bots and 25 role packs</h2>
-  <p style="margin:0 0 12px;color:#d4d4d8;line-height:1.5">Flagship Pro Bots stay $39 / $59 / $59 / $69, or $149 for the 4-Bot bundle. Role packs are a separate ladder: $35 each, 5 for $119, 10 for $199, 20 for $299, all 25 for $349.</p>
+  <p style="margin:0 0 8px;color:#d4d4d8;line-height:1.5">Flagship Pro Bots stay $39 / $59 / $59 / $69, or $149 for the 4-Bot bundle. Role packs are a separate ladder: $35 each, 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Built for Grok Bot and compatible with Claude Code (CLAUDE.md), Cursor (.cursorrules), OpenAI Codex (AGENTS.md), and Lovable (LOVABLE.md).</p>
+  <p style="margin:0 0 12px;color:#6ee7b7;font-weight:700;line-height:1.5">⚡ Works with Grok Bot · Claude Code (CLAUDE.md) · Cursor (.cursorrules) · OpenAI Codex (AGENTS.md) · Lovable (LOVABLE.md)</p>
   <div>{tiers}</div>
   <h3 style="color:#fff">Flagship bots</h3>
   <table style="width:100%;border-collapse:collapse">{''.join(flagship)}</table>
@@ -69,9 +70,9 @@ def email_html() -> str:
 def x_posts() -> str:
     posts = []
     master = (
-        "25 AI Agent Packs, built by AgentScout. $35 each, or 5 for $119, 10 for $199, "
-        "20 for $299, all 25 for $349. Lead Gen Agent, Outreach Agent, and Meta Ads Agent "
-        "are in the set. Offline. Zero telemetry. https://agentscouthq.com/bot-store/#ai-agent-packs"
+        "25 AI Agent Packs, built by AgentScout ($35 each · 5 for $119 · 10 for $199 · "
+        "20 for $299 · all 25 for $349). Works with Grok Bot, Claude Code, Cursor, Codex & Lovable. "
+        "Offline, zero telemetry: https://agentscouthq.com/bot-store/#ai-agent-packs"
     )
     posts.append(master)
     for key in ("sales", "marketing", "ops", "product"):
@@ -80,8 +81,8 @@ def x_posts() -> str:
         extra = len(group) - 4
         more = f" +{extra} more" if extra > 0 else ""
         text = (
-            f"{group[0]['dept_label']} packs, built by AgentScout. {names}{more}. "
-            f"{group[0]['tagline']}. $35 each or the volume ladder to $349. "
+            f"{group[0]['dept_label']} packs, built by AgentScout ({names}{more}). "
+            "Works with Grok Bot, Claude Code, Cursor, Codex & Lovable ($35 each or 5/$119 · 25/$349): "
             "https://agentscouthq.com/bot-store/#ai-agent-packs"
         )
         posts.append(text)
