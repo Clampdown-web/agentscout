@@ -43,5 +43,6 @@ def run(t):
         s2,n=apply(s,bys)
         if n: open(f,"w").write(s2); tot+=n; pages+=1
     print(f"listlogos: {tot} logos added on {pages} pages")
+    import build_lovable; build_lovable.run()
 if __name__=="__main__":
     run(json.load(open("tools.json")))

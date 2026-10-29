@@ -198,3 +198,4 @@ def run(t):
         return s
     edit("index.html",home)
     print("internal links:",dict(stats),"missing anchors:",dict(miss) or "none")
+    import build_lovable; build_lovable.run()

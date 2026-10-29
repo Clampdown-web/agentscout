@@ -149,6 +149,7 @@ def mcp_links():
         s=s.replace("</main>",blk+"</main>",1)
         if s!=s0: open(f,"w").write(s); n+=1
     print("mcp guide links:",n)
+    import build_lovable; build_lovable.run()
 
 
 def sync_animations(t=None):
@@ -269,6 +270,7 @@ def unify_all_nav_and_footer():
                 open(rel, "w", encoding="utf-8").write(s_new)
                 updated += 1
     print(f"unify_all_nav_and_footer: unified {updated} pages")
+    import build_lovable; build_lovable.run()
     return verify_nav_footer_unified()
 
 

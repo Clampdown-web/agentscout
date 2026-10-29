@@ -254,6 +254,8 @@ for x in t:
     if "offers" not in _ab and _pt=="free": _ab["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":x.get("pricing_detail") or x["pricing"]}
     out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
     open(f"tools/{x['slug']}.html","w").write(out)
+    if x["slug"]=="lovable":
+        import build_lovable; build_lovable.run()  # packs section, re-applied after later rewrites
 print(len(t),"pages")
 build_extras.build(t)
 import build_api
@@ -325,6 +327,7 @@ build_sponsor.apply_bar(SPONSOR_ENABLED)  # last step: adds the bar when on, rem
 build_tasks.sitewide(t)
 
 import build_seo_new as _bsn; _bsn.bt_rename(); _bsn.unify_all_nav_and_footer(); _bsn.sync_animations(t); _bsn.charset_first()  # charset within first 1024 bytes (Oct 21 2026)
+import build_lovable; build_lovable.run()  # after every tools/*.html rewrite: 25 AI Agent Packs on /tools/lovable.html
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)

@@ -99,6 +99,7 @@ def run(t):
         if s!=s0: open(f,"w").write(s)
     llms_extra(c)
     print("seo pass:",dict(c))
+    import build_lovable; build_lovable.run()
 def _h1(f):
     s=open(f,errors="ignore").read()
     if 'name="robots" content="noindex' in s: return None

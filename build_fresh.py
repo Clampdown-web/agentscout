@@ -86,4 +86,5 @@ def run(t):
                 if anchor: s=s[:anchor.end()]+tb+s[anchor.end():]; c["tables"]+=1
         if s!=s0: open(f,"w").write(s)
     print("freshness:",dict(c))
+    import build_lovable; build_lovable.run()
 if __name__=="__main__": run(json.load(open("tools.json")))
