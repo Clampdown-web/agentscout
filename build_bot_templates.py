@@ -299,7 +299,7 @@ def made_by_agentscout_html(total=189):
         '<a class="mba-btn" href="../videos/#guide-trained-bots" style="flex:1 1 auto;max-width:100%;box-sizing:border-box;background:rgba(132,204,22,.18);border:1.5px solid #a3e635;color:#ecfccb">🎬 Watch 60fps Bot Demo →</a>'
         '</div>'
         '</div>'
-        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=202610280208" type="video/mp4"></video></figure>'
+        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png?v=20261028-2051-189-1793234203" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=20261028-2051-189-1793234203" type="video/mp4"></video></figure>'
         '<div class="mba-grid">'
         # Card 1: $39 Operations / Monitoring Bot — Neon Lime Green (#84cc16 / #a3e635)
         '<div class="mba-card neon-lime">'

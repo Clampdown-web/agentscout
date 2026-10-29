@@ -48,8 +48,8 @@ CSS = """
 .ap-add{margin-left:auto;border:1px solid color-mix(in srgb, var(--ap) 45%, rgba(255,255,255,.16));background:color-mix(in srgb, var(--ap) 18%, #1e2330);color:#f4f4f5;font-size:12px;font-weight:800;cursor:pointer;padding:7px 12px;border-radius:999px;white-space:normal;line-height:1.2;box-sizing:border-box}
 .ap-add[aria-pressed="true"]{background:#052e16;color:#10b981;border-color:#10b981;box-shadow:0 0 16px -6px #10b981}
 .ap-card h3{margin:2px 0 0;font-size:16.5px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-.02em;overflow-wrap:anywhere}
-.ap-card h3 a{color:inherit;text-decoration:none}
-.ap-card h3 .ap-role{color:#fff}
+.ap-card h3 a{color:inherit;text-decoration:none;display:inline-flex;gap:.28em;flex-wrap:wrap}
+.ap-card h3 .ap-role{color:#fff;margin-right:.05em}
 .ap-card h3 .ap-kind{color:#d4d4d8;font-weight:700}
 .ap-by{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#e4e4e7;line-height:1.3}
 .ap-card img.aswm{height:1.15em;width:auto;max-width:100%;vertical-align:-.28em;filter:invert(1) hue-rotate(180deg)}
@@ -62,7 +62,7 @@ CSS = """
 .ap-preview{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 12px;border-radius:999px;border:1px solid color-mix(in srgb, var(--ap) 45%, rgba(255,255,255,.18));background:transparent;color:#e0f2fe;font-size:12.5px;font-weight:800;cursor:pointer;box-sizing:border-box;text-align:center}
 .ap-details{color:#93c5fd;font-size:12.5px;font-weight:800;text-decoration:none;overflow-wrap:anywhere}
 .ap-foot,.ap-dock{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px 14px;border-top:1px solid rgba(255,255,255,.08);background:#0e1118;min-width:0}
-#ap-dock{position:sticky;bottom:0;z-index:6;border-radius:0 0 22px 22px;box-shadow:0 -12px 28px rgba(0,0,0,.4)}
+#ap-dock{border-radius:0 0 22px 22px}
 .ap-foot p{margin:0;color:#e4e4e7;font-size:13px;line-height:1.45;min-width:0;flex:1 1 220px;overflow-wrap:anywhere}
 .ap-actions{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
 .ap-btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border-radius:10px;font-size:13px;font-weight:800;text-decoration:none;border:1px solid transparent;box-sizing:border-box;max-width:100%;cursor:pointer;text-align:center}
@@ -173,9 +173,6 @@ def pack_section_html() -> str:
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg>
       </button>
     </div>
-  </div>
-  <div class="ap-tiers" role="toolbar" aria-label="Volume discount pack tiers">
-    {tier_btns}
   </div>
   <div class="ap-filters" role="toolbar" aria-label="Filter agent packs">
     <button type="button" class="ap-pill" data-ap-filter="all" aria-pressed="true">All 25</button>
@@ -296,13 +293,19 @@ def pack_section_html() -> str:
     document.querySelectorAll("[data-ap-tier]").forEach(function(btn){
       btn.setAttribute("aria-pressed", String(quote.n) === btn.getAttribute("data-ap-tier") ? "true" : "false");
     });
+    var copyBtn = document.getElementById("ap-copy");
+    var mailBtn = document.getElementById("ap-mail");
     if (!rows.length) {
       summary.textContent = "Each role pack is $35. Volume pricing: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.";
+      if (copyBtn) copyBtn.style.display = "none";
+      if (mailBtn) mailBtn.style.display = "none";
       pay.classList.add("is-off");
       pay.setAttribute("aria-disabled", "true");
       pay.href = "#ap-dock";
-      pay.textContent = "Checkout";
+      pay.textContent = "Select agents above to checkout";
     } else {
+      if (copyBtn) copyBtn.style.display = "";
+      if (mailBtn) mailBtn.style.display = "";
       var bits = [rows.length + " selected", quote.label, "$" + money(quote.price)];
       if (quote.regular !== quote.price) bits.push("regular $" + money(quote.regular));
       if (quote.save) bits.push("Save $" + money(quote.save));
