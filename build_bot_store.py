@@ -352,7 +352,17 @@ def pages(t):
             }
         ]
     }
-    open("bot-store/index.html", "w", encoding="utf-8").write(shell("../", title, desc, canon, body, ld))
+    out_html = shell("../", title, desc, canon, body, ld)
+    try:
+        import re as _re
+        bt_ref = open("bot-templates/index.html", encoding="utf-8").read()
+        _nm = _re.search(r"<nav>.*?</nav>", bt_ref, _re.S)
+        _fm = _re.search(r"<footer[^>]*>.*?</footer>", bt_ref, _re.S)
+        if _nm: out_html = _re.sub(r"<nav>.*?</nav>", lambda _: _nm.group(0), out_html, count=1, flags=_re.S)
+        if _fm: out_html = _re.sub(r"<footer[^>]*>.*?</footer>", lambda _: _fm.group(0), out_html, count=1, flags=_re.S)
+    except Exception:
+        pass
+    open("bot-store/index.html", "w", encoding="utf-8").write(out_html)
     from pack_pages import write_pack_pages
     pack_urls = write_pack_pages()
     import build_openapi
