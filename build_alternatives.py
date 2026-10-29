@@ -97,6 +97,7 @@ def pages(t):
         s=re.sub(r'(<h2 style="font-size:16px;margin-bottom:12px">[^<]*alternatives</h2>)',lambda mm:mm.group(1)+f'<p class="altlink" style="margin:-4px 0 12px;font-size:14px"><a href="../best/{sl}.html">Compare {k} {e(x["name"])} alternatives side by side →</a></p>',s,count=1)
         open(p,"w").write(s)
     print("alternatives pages:",len(made))
+    import build_lovable; build_lovable.run()
     return made
 def X_n(t,c):
     a,b=c.split("-vs-",1); bs={y["slug"]:y["name"] for y in t}

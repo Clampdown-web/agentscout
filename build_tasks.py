@@ -666,6 +666,7 @@ def sitewide(t):
             s=s.replace('</body>',_bsp.live_metrics_script("")+'</body>',1)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
+    import build_lovable; build_lovable.run()
 
 # ---- About + Privacy pages (relative links; canonical from B, so a domain switch only changes B) ----
 def _featured_href():

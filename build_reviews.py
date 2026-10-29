@@ -88,3 +88,4 @@ def run(t):
             json.dump(out,open("api/tools.json","w"),indent=1,ensure_ascii=False)
     except Exception as ex: print("reviews api:",ex)
     print("reviews:",ins,"sections,",sum(1 for v in D.values() if v.get("count")),"tools with ratings,",ld_n,"with review JSON-LD")
+    import build_lovable; build_lovable.run()
