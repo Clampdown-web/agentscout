@@ -8,6 +8,7 @@ Also checks the Bot Store still carries those same Payment Links.
 """
 from __future__ import annotations
 
+import html
 import json
 import re
 import sys
@@ -80,6 +81,7 @@ def main() -> int:
     else:
         bad.append("bot-store/index.html missing")
     bad.extend(_follower_row_problems())
+    bad.extend(_pack_page_problems())
     _report(bad)
     return 1 if bad else 0
 
@@ -98,6 +100,105 @@ def _follower_row_problems() -> list[str]:
     except json.JSONDecodeError as exc:
         return [f"data/30-day-sprint-tracker.json is not valid JSON ({exc})"]
     return [f"sprint tracker: {line}" for line in sync_x_followers.audit_tracker(tracker)]
+
+
+def _walk_types(node, found: list) -> None:
+    if isinstance(node, dict):
+        kind = node.get("@type")
+        if isinstance(kind, str):
+            found.append((kind, node))
+        elif isinstance(kind, list):
+            for item in kind:
+                if isinstance(item, str):
+                    found.append((item, node))
+        for value in node.values():
+            _walk_types(value, found)
+    elif isinstance(node, list):
+        for item in node:
+            _walk_types(item, found)
+
+
+def _pack_page_problems() -> list[str]:
+    """Every role pack page shows its verification date and Product + HowTo JSON-LD."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from agent_pack_catalog import AGENTS
+    from start_here import GUIDE_LINE, SETUP_LINE, tested_line, verified_on, works_with_for_zip
+
+    problems = []
+    zip_root = ROOT / "bot-packages" / "25-agent-packs" / "zips"
+    for agent in AGENTS:
+        rel = f"bot-store/{agent['slug']}/index.html"
+        page = ROOT / "bot-store" / agent["slug"] / "index.html"
+        if not page.is_file():
+            problems.append(f"{rel} missing")
+            continue
+        page_html = page.read_text(encoding="utf-8")
+        tested = tested_line(agent["slug"])
+        if not tested:
+            problems.append(f"{rel} has no successful verification, so it cannot show Tested on")
+        elif tested not in page_html:
+            problems.append(f"{rel} missing {tested}")
+        works = works_with_for_zip(zip_root / f"{agent['slug']}.zip")
+        if not works:
+            problems.append(f"{rel} ZIP does not support a Works with line")
+        elif works not in page_html:
+            problems.append(f"{rel} missing {works}")
+        if GUIDE_LINE not in page_html:
+            problems.append(f"{rel} missing {GUIDE_LINE}")
+        meta = re.search(r'<meta name="description" content="([^"]*)"', page_html)
+        if not meta or not html.unescape(meta.group(1)).startswith(SETUP_LINE):
+            problems.append(f"{rel} description does not start with the 10-minute line")
+        if f'class="pack-setupline">{SETUP_LINE}' not in page_html:
+            problems.append(f"{rel} visible description does not start with the 10-minute line")
+        blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', page_html, re.S)
+        typed: list[tuple[str, dict]] = []
+        for block in blocks:
+            try:
+                data = json.loads(block)
+            except json.JSONDecodeError as exc:
+                problems.append(f"{rel} JSON-LD is not valid JSON ({exc})")
+                continue
+            _walk_types(data, typed)
+        products = [node for kind, node in typed if kind == "Product"]
+        howtos = [node for kind, node in typed if kind == "HowTo"]
+        day = verified_on(agent["slug"])
+        if len(products) != 1:
+            problems.append(f"{rel} has {len(products)} Product JSON-LD nodes")
+        else:
+            if products[0].get("dateModified") != day:
+                problems.append(f"{rel} Product dateModified is {products[0].get('dateModified')!r}, verification date is {day!r}")
+            offer = products[0].get("offers") or {}
+            if isinstance(offer, dict) and "priceValidUntil" in offer and offer.get("priceValidUntil") != day:
+                problems.append(f"{rel} Offer priceValidUntil is {offer.get('priceValidUntil')!r}")
+        if len(howtos) != 1:
+            problems.append(f"{rel} has {len(howtos)} HowTo JSON-LD nodes")
+        else:
+            steps = howtos[0].get("step") or []
+            if not isinstance(steps, list) or len(steps) < 4:
+                problems.append(f"{rel} HowTo has {0 if not isinstance(steps, list) else len(steps)} steps")
+            else:
+                names = [step.get("name") for step in steps if isinstance(step, dict)]
+                for required in ("Import the template", "Connect tools", "Run the first task"):
+                    if required not in names:
+                        problems.append(f"{rel} HowTo missing step {required}")
+                for step in steps:
+                    if not isinstance(step, dict) or step.get("@type") != "HowToStep" or not step.get("text"):
+                        problems.append(f"{rel} HowTo step is missing @type HowToStep or text")
+                        break
+    for rel in ("bot-store/index.html", "bot-templates/index.html"):
+        path = ROOT / rel
+        if not path.is_file():
+            problems.append(f"{rel} missing")
+            continue
+        text = path.read_text(encoding="utf-8")
+        shown = text.count("Tested on ")
+        if shown < 25:
+            problems.append(f"{rel} shows {shown} Tested on lines, expected 25")
+        if text.count(GUIDE_LINE) < 25:
+            problems.append(f"{rel} is missing the START HERE mention on a pack card")
+        if text.count(SETUP_LINE) < 25:
+            problems.append(f"{rel} is missing the 10-minute line on a pack card")
+    return problems
 
 
 def _report(bad: list[str]) -> None:

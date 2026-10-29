@@ -10,10 +10,12 @@ import json
 import re
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKS = ROOT / "bot-packages" / "25-agent-packs"
+FLAGSHIP = ROOT / "bot-packages" / "zips"
 BANNED = ("mcp.agentscouthq.com", "buy.stripe.com", "api/tools.json", "com.agentscouthq")
 NOTICE_LINES = (
     "coreyhaines31 (MIT, (c) 2025 Corey Haines)",
@@ -25,6 +27,7 @@ FORBIDDEN_DIRS = {"tools", "clis", "connectors", "telemetry", "hooks"}
 NET = re.compile(r"\b(?:urllib|requests|http\.client|socket|subprocess)\b|\bcurl\b|\bfetch\s*\(")
 REQUIRED = (
     "SYSTEM.md",
+    "START-HERE.md",
     "README-QUICKSTART.md",
     "AGENTS.md",
     "CLAUDE.md",
@@ -39,13 +42,49 @@ REQUIRED = (
 )
 
 
+def _unzip_ok(path: Path) -> bool:
+    run = subprocess.run(["unzip", "-t", str(path)], capture_output=True, text=True)
+    return run.returncode == 0
+
+
+def _start_here_problems(label: str, path: Path) -> list[str]:
+    from start_here import placeholder_problems
+
+    problems = []
+    if not path.is_file():
+        return [f"{label} zip missing"]
+    if not _unzip_ok(path):
+        problems.append(f"{label} unzip -t failed")
+    try:
+        with zipfile.ZipFile(path) as archive:
+            names = archive.namelist()
+            if "START-HERE.md" not in names:
+                problems.append(f"{label} zip missing root START-HERE.md")
+                return problems
+            text = archive.read("START-HERE.md").decode("utf-8")
+    except zipfile.BadZipFile:
+        problems.append(f"{label} zip is not a zip")
+        return problems
+    if "support@agentscouthq.com" not in text:
+        problems.append(f"{label} START-HERE.md missing support@agentscouthq.com")
+    for issue in placeholder_problems(text):
+        problems.append(f"{label} START-HERE.md {issue}")
+    for needle in ("What's inside", "10-minute setup", "What to expect on the first run", "Import the template"):
+        if needle not in text:
+            problems.append(f"{label} START-HERE.md missing {needle}")
+    return problems
+
+
 def main() -> int:
     sys.path.insert(0, str(ROOT / "scripts"))
     from agent_pack_catalog import AGENTS
+    from start_here import stamp_verification, success_record
     bad = []
+    passed = {}
     if len(AGENTS) != 25:
         bad.append(f"catalog has {len(AGENTS)} agents")
     for agent in AGENTS:
+        before = len(bad)
         dest = PACKS / agent["slug"]
         if not dest.is_dir():
             bad.append(f"missing package {agent['slug']}")
@@ -132,7 +171,27 @@ def main() -> int:
         routines = json.loads((dest / "routines" / "routines.json").read_text(encoding="utf-8"))
         if not routines.get("routines"):
             bad.append(f"{agent['slug']} has no routines")
-    print(f"bot zip packages: {len(AGENTS)} specs, {len(bad)} problems")
+        zpath = PACKS / "zips" / f"{agent['slug']}.zip"
+        bad.extend(_start_here_problems(agent["slug"], zpath))
+        pkg_guide = dest / "START-HERE.md"
+        if pkg_guide.is_file() and zpath.is_file():
+            try:
+                with zipfile.ZipFile(zpath) as archive:
+                    if "START-HERE.md" in archive.namelist():
+                        root_guide = archive.read("START-HERE.md").decode("utf-8")
+                        if root_guide != pkg_guide.read_text(encoding="utf-8"):
+                            bad.append(f"{agent['slug']} root START-HERE.md differs from the package copy")
+            except zipfile.BadZipFile:
+                pass
+        if len(bad) == before:
+            passed[agent["slug"]] = success_record(f"bot-packages/25-agent-packs/zips/{agent['slug']}.zip")
+    for path in sorted(FLAGSHIP.glob("*.zip")):
+        before = len(bad)
+        bad.extend(_start_here_problems(path.stem, path))
+        if len(bad) == before:
+            passed[path.stem] = success_record(f"bot-packages/zips/{path.name}")
+    stamp_verification(passed)
+    print(f"bot zip packages: {len(AGENTS)} specs, {len(list(FLAGSHIP.glob('*.zip')))} flagship zips, {len(bad)} problems")
     for line in bad:
         print("FAIL", line)
     return 1 if bad else 0

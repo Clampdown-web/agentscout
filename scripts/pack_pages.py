@@ -11,6 +11,15 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_extras as X
 from agent_pack_catalog import AGENTS, PACK_TIERS
+from start_here import (
+    GUIDE_LINE,
+    SETUP_LINE,
+    prepare_packs,
+    role_steps,
+    tested_line,
+    verified_on,
+    works_with_for_zip,
+)
 
 ORG = {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"}
 POSTER = "https://agentscouthq.com/assets/animations/agentscout-trained-bots-ad-poster.png"
@@ -63,7 +72,7 @@ def _faqs(agent: dict) -> list[tuple[str, str]]:
         ),
         (
             "How fast is setup?",
-            'About 5 minutes. Run python3 setup_workspace.py --apply --company "Your Company" --domain "yourdomain.com".',
+            'About 10 minutes. Run python3 setup_workspace.py --apply --company "Your Company" --domain "yourdomain.com".',
         ),
         (
             "Does it work in Cursor / Claude Code / Codex / Grok Bot / Lovable?",
@@ -101,13 +110,27 @@ def _related(index: int) -> list[dict]:
 
 def _desc(agent: dict) -> str:
     text = (
-        f"{agent['product_name']}: {agent['tagline']}. "
+        f"{SETUP_LINE} {agent['product_name']}: {agent['tagline']}. "
         "Ready-to-run skills, routines and scripts for Grok Bot, Claude Code, Cursor and Codex."
     )
     return X.clip_text(text, 156)
 
 
+def _offer(agent: dict, canon: str, day: str) -> dict:
+    offer = {
+        "@type": "Offer",
+        "price": f"{agent['price']:.2f}",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": agent["checkout_url"] or canon,
+    }
+    if "priceValidUntil" in offer and day:
+        offer["priceValidUntil"] = day
+    return offer
+
+
 def write_pack_pages() -> list[str]:
+    prepare_packs()
     urls = []
     for index, agent in enumerate(AGENTS):
         files, count, size = _inventory(agent)
@@ -145,13 +168,27 @@ def write_pack_pages() -> list[str]:
         kb = f"{size / 1024:.1f} KB" if size else "see the ZIP after build"
         note = f'<p class="pack-note">{X.e(agent["store_note"])}</p>' if agent.get("store_note") else ""
         color = agent["color"]
+        day = verified_on(agent["slug"])
+        zpath = ROOT / "bot-packages" / "25-agent-packs" / "zips" / f"{agent['slug']}.zip"
+        trust_bits = []
+        tested = tested_line(agent["slug"])
+        works = works_with_for_zip(zpath)
+        if tested:
+            trust_bits.append(f'<p class="pack-tested">{X.e(tested)}</p>')
+        if works:
+            trust_bits.append(f'<p class="pack-works">{X.e(works)}</p>')
+        trust_bits.append(f'<p class="pack-guide">{X.e(GUIDE_LINE)}</p>')
+        trust_html = '<div class="pack-trust">' + "".join(trust_bits) + "</div>"
+        steps = role_steps(agent)
         body = f'''
 <div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../">Bot Store</a> / {X.e(name)}</div>
 <article class="pack-page" style="--ap:{X.e(color)}">
 <section class="pack-hero">
 <p class="pack-by">built by <span class="sr-only">AgentScout</span><img class="aswm" src="../../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"><span class="pack-verified">✓ Verified pack</span></p>
 <div class="pack-badges"><span class="pack-price">${agent["price"]} One-Time · Instant ZIP Download</span><span class="pack-dept">{X.e(agent["dept_label"])}</span></div>
+{trust_html}
 <h1 data-pagefind-weight="10"><span class="pack-brand">AgentScout </span><span class="pack-role">{X.e(agent["role"])} </span><span class="pack-kind">Agent</span></h1>
+<p class="pack-setupline">{X.e(SETUP_LINE)}</p>
 <p class="lede">{X.e(lead)}</p>
 <p class="pack-outcome">{X.e(agent["promise"])}</p>
 <p class="pack-tag">{X.e(agent["tagline"])}</p>
@@ -168,7 +205,7 @@ def write_pack_pages() -> list[str]:
 <section class="pack-pillars" aria-label="Pack highlights">
 <article><h2>Functionality &amp; Trained Judgment</h2><p>Six written heuristics, one skill, and {len(agent["routines"])} routines decide the draft before anyone sends it.</p></article>
 <article><h2>Security &amp; Privacy by Design</h2><p>100% Python standard library, zero network calls, and no telemetry. Files stay on the machine that runs them.</p></article>
-<article><h2>5-Minute Turnkey Setup</h2><p>Run <code>python3 setup_workspace.py</code>, add your company name and domain, then dry-run <code>{X.e(agent["script"])}</code>.</p></article>
+<article><h2>10-Minute Setup</h2><p>Run <code>python3 setup_workspace.py</code>, add your company name and domain, then dry-run <code>{X.e(agent["script"])}</code>.</p></article>
 <article><h2>Works Across All Major AI Coding &amp; Agent Hosts</h2><p>The same ZIP loads in Grok Bot, Claude Code, Cursor, Codex, and Lovable.</p></article>
 </section>
 <section class="pack-block">
@@ -185,7 +222,7 @@ def write_pack_pages() -> list[str]:
 <tr><th scope="row">Routines</th><td>{len(agent["routines"])}</td></tr>
 <tr><th scope="row">Hosts</th><td><ul class="pack-hosts">{hosts}</ul></td></tr>
 <tr><th scope="row">Price</th><td>${agent["price"]} one-time</td></tr>
-<tr><th scope="row">Setup</th><td>About 5 minutes</td></tr>
+<tr><th scope="row">Setup</th><td>About 10 minutes</td></tr>
 </tbody>
 </table>
 <details class="pack-zip">
@@ -210,6 +247,9 @@ def write_pack_pages() -> list[str]:
 .pack-by{{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px;font-weight:700;color:#e4e4e7}}
 .pack-verified{{border-radius:999px;padding:2px 8px;font-size:11px;color:#bbf7d0;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35)}}
 .pack-badges{{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}}
+.pack-trust{{margin:0 0 10px;min-width:0}}
+.pack-trust p{{margin:2px 0;color:#e4e4e7;font-size:13.5px;line-height:1.45;overflow-wrap:anywhere}}
+.pack-setupline{{margin:0 0 8px;color:#fff;font-weight:800;font-size:16px;line-height:1.35;overflow-wrap:anywhere}}
 .pack-price,.pack-dept{{display:inline-flex;align-items:center;max-width:100%;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800;overflow-wrap:anywhere}}
 .pack-price{{color:#fff;background:color-mix(in srgb, var(--ap) 24%, #12151c);border:1px solid color-mix(in srgb, var(--ap) 55%, transparent)}}
 .pack-dept{{color:#e4e4e7;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}}
@@ -282,13 +322,8 @@ def write_pack_pages() -> list[str]:
                     "image": POSTER,
                     "sku": agent["slug"],
                     "brand": ORG,
-                    "offers": {
-                        "@type": "Offer",
-                        "price": f"{agent['price']:.2f}",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": agent["checkout_url"] or canon,
-                    },
+                    **({"dateModified": day} if day else {}),
+                    "offers": _offer(agent, canon, day),
                 },
                 {
                     "@type": "SoftwareApplication",
@@ -300,13 +335,22 @@ def write_pack_pages() -> list[str]:
                     "featureList": [agent["skill_slug"], agent["script"], "3 Scheduled Cron Routines"],
                     "author": ORG,
                     "brand": ORG,
-                    "offers": {
-                        "@type": "Offer",
-                        "price": f"{agent['price']:.2f}",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "url": agent["checkout_url"] or canon,
-                    },
+                    "offers": _offer(agent, canon, day),
+                },
+                {
+                    "@type": "HowTo",
+                    "name": f"Set up {name} in 10 minutes",
+                    "description": f"START HERE setup for {name}.",
+                    "totalTime": "PT10M",
+                    "step": [
+                        {
+                            "@type": "HowToStep",
+                            "position": index + 1,
+                            "name": step["name"],
+                            "text": step["text"],
+                        }
+                        for index, step in enumerate(steps)
+                    ],
                 },
                 {
                     "@type": "FAQPage",
