@@ -1,0 +1,4199 @@
+{
+ "catalog": {
+  "mcp_servers": 274,
+  "live": 273,
+  "down": 1,
+  "not_yet_checked": 0,
+  "directory_last_checked": "2026-10-29",
+  "mcp_last_checked": "2026-10-29 07:03",
+  "timezone": "America/Los_Angeles",
+  "history": [
+   {
+    "date": "2026-10-29",
+    "note": "273 live, 1 down",
+    "time": "07:03"
+   },
+   {
+    "date": "2026-10-29",
+    "note": "Bright Data MCP link status changed from OK to Error."
+   },
+   {
+    "date": "2026-10-28",
+    "note": "Skiplagged MCP link status changed from Error to OK."
+   },
+   {
+    "date": "2026-10-28",
+    "note": "Skiplagged MCP link status changed from OK to Error."
+   },
+   {
+    "date": "2026-10-26",
+    "note": "Zomato MCP link status changed from Reachable, blocks automated checks to OK."
+   },
+   {
+    "date": "2026-10-26",
+    "note": "Studocu MCP link status changed from Reachable, blocks automated checks to OK."
+   },
+   {
+    "date": "2026-10-26",
+    "note": "Lune Research link status changed from Reachable, blocks automated checks to OK."
+   },
+   {
+    "date": "2026-10-26",
+    "note": "Lune Research link status changed from OK to Reachable, blocks automated checks."
+   },
+   {
+    "date": "2026-10-25",
+    "note": "Picsart GenAI MCP link status changed from Reachable, blocks automated checks to OK."
+   },
+   {
+    "date": "2026-10-24",
+    "note": "Picsart GenAI MCP link status changed from OK to Reachable, blocks automated checks."
+   }
+  ]
+ },
+ "servers": [
+  {
+   "slug": "9bot",
+   "name": "9bot",
+   "page": "https://agentscouthq.com/tools/9bot.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "aftership-mcp",
+   "name": "AfterShip MCP",
+   "page": "https://agentscouthq.com/tools/aftership-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "agentdock-nexusdock",
+   "name": "AgentDock (NexusDock)",
+   "page": "https://agentscouthq.com/tools/agentdock-nexusdock.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "agentgateway",
+   "name": "agentgateway",
+   "page": "https://agentscouthq.com/tools/agentgateway.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "agentkey",
+   "name": "AgentKey",
+   "page": "https://agentscouthq.com/tools/agentkey.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "airtable-mcp",
+   "name": "Airtable MCP",
+   "page": "https://agentscouthq.com/tools/airtable-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "aisoc",
+   "name": "AiSOC",
+   "page": "https://agentscouthq.com/tools/aisoc.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "aiven-mcp",
+   "name": "Aiven MCP",
+   "page": "https://agentscouthq.com/tools/aiven-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "algolia-mcp",
+   "name": "Algolia MCP",
+   "page": "https://agentscouthq.com/tools/algolia-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "alpaca-mcp-server",
+   "name": "Alpaca MCP Server",
+   "page": "https://agentscouthq.com/tools/alpaca-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "altmetric-mcp",
+   "name": "Altmetric MCP",
+   "page": "https://agentscouthq.com/tools/altmetric-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "amplitude-mcp",
+   "name": "Amplitude MCP",
+   "page": "https://agentscouthq.com/tools/amplitude-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "annas-mcp",
+   "name": "Annas MCP",
+   "page": "https://agentscouthq.com/tools/annas-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "antv-mcp-server-chart",
+   "name": "AntV MCP Server Chart",
+   "page": "https://agentscouthq.com/tools/antv-mcp-server-chart.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "anymd",
+   "name": "Anymd",
+   "page": "https://agentscouthq.com/tools/anymd.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "anysearch",
+   "name": "AnySearch",
+   "page": "https://agentscouthq.com/tools/anysearch.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "anytype-mcp",
+   "name": "Anytype MCP",
+   "page": "https://agentscouthq.com/tools/anytype-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "apify-mcp-server",
+   "name": "Apify MCP Server",
+   "page": "https://agentscouthq.com/tools/apify-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "apm-agent-package-manager",
+   "name": "APM (Agent Package Manager)",
+   "page": "https://agentscouthq.com/tools/apm-agent-package-manager.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "appsflyer-mcp",
+   "name": "AppsFlyer MCP",
+   "page": "https://agentscouthq.com/tools/appsflyer-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "appwrite-mcp",
+   "name": "Appwrite MCP",
+   "page": "https://agentscouthq.com/tools/appwrite-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "archestra",
+   "name": "Archestra",
+   "page": "https://agentscouthq.com/tools/archestra.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "arkon",
+   "name": "Arkon",
+   "page": "https://agentscouthq.com/tools/arkon.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "arxiv-mcp-server",
+   "name": "arXiv MCP Server",
+   "page": "https://agentscouthq.com/tools/arxiv-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "atlassian-rovo-mcp-server",
+   "name": "Atlassian Rovo MCP Server",
+   "page": "https://agentscouthq.com/tools/atlassian-rovo-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "audio-studio-mcp",
+   "name": "Audio Studio MCP",
+   "page": "https://agentscouthq.com/tools/audio-studio-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "auth0-mcp-server",
+   "name": "Auth0 MCP Server",
+   "page": "https://agentscouthq.com/tools/auth0-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "automox-mcp",
+   "name": "Automox MCP",
+   "page": "https://agentscouthq.com/tools/automox-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "aws-mcp-servers",
+   "name": "AWS MCP Servers",
+   "page": "https://agentscouthq.com/tools/aws-mcp-servers.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "axiom-mcp",
+   "name": "Axiom MCP",
+   "page": "https://agentscouthq.com/tools/axiom-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "azure-mcp-server",
+   "name": "Azure MCP Server",
+   "page": "https://agentscouthq.com/tools/azure-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "beehiiv-mcp",
+   "name": "beehiiv MCP",
+   "page": "https://agentscouthq.com/tools/beehiiv-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "bird-mcp",
+   "name": "Bird MCP",
+   "page": "https://agentscouthq.com/tools/bird-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "brandfetch-mcp",
+   "name": "Brandfetch MCP",
+   "page": "https://agentscouthq.com/tools/brandfetch-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "brave-search-mcp",
+   "name": "Brave Search MCP",
+   "page": "https://agentscouthq.com/tools/brave-search-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "bright-data-mcp",
+   "name": "Bright Data MCP",
+   "page": "https://agentscouthq.com/tools/bright-data-mcp.html",
+   "status": "down",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 502, github 200",
+   "check_label": "Error",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "down (url 502, github 200)",
+     "time": "07:03"
+    },
+    {
+     "date": "2026-10-29",
+     "note": "Bright Data MCP link status changed from OK to Error."
+    }
+   ]
+  },
+  {
+   "slug": "browserstack-mcp",
+   "name": "BrowserStack MCP",
+   "page": "https://agentscouthq.com/tools/browserstack-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "browsertools-mcp",
+   "name": "BrowserTools MCP",
+   "page": "https://agentscouthq.com/tools/browsertools-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "buildkite-mcp",
+   "name": "Buildkite MCP",
+   "page": "https://agentscouthq.com/tools/buildkite-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "canva-mcp",
+   "name": "Canva MCP",
+   "page": "https://agentscouthq.com/tools/canva-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "carbon",
+   "name": "Carbon",
+   "page": "https://agentscouthq.com/tools/carbon.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "github 200, url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (github 200, url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "carto-mcp",
+   "name": "CARTO MCP",
+   "page": "https://agentscouthq.com/tools/carto-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "cdata-connect-ai-mcp",
+   "name": "CData Connect AI MCP",
+   "page": "https://agentscouthq.com/tools/cdata-connect-ai-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "churnkey-mcp",
+   "name": "Churnkey MCP",
+   "page": "https://agentscouthq.com/tools/churnkey-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "circleci-mcp",
+   "name": "CircleCI MCP",
+   "page": "https://agentscouthq.com/tools/circleci-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "clicdata-mcp",
+   "name": "ClicData MCP",
+   "page": "https://agentscouthq.com/tools/clicdata-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "clickhouse-mcp",
+   "name": "ClickHouse MCP",
+   "page": "https://agentscouthq.com/tools/clickhouse-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "cloud-run-mcp",
+   "name": "Cloud Run MCP",
+   "page": "https://agentscouthq.com/tools/cloud-run-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "cloudflare-mcp-servers",
+   "name": "Cloudflare MCP Servers",
+   "page": "https://agentscouthq.com/tools/cloudflare-mcp-servers.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "codebase-memory-mcp",
+   "name": "Codebase Memory MCP",
+   "page": "https://agentscouthq.com/tools/codebase-memory-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "context7",
+   "name": "Context7",
+   "page": "https://agentscouthq.com/tools/context7.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "contextforge",
+   "name": "ContextForge",
+   "page": "https://agentscouthq.com/tools/contextforge.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "contextplus",
+   "name": "Contextplus",
+   "page": "https://agentscouthq.com/tools/contextplus.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "credal",
+   "name": "Credal",
+   "page": "https://agentscouthq.com/tools/credal.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "crosspaste-desktop",
+   "name": "Crosspaste Desktop",
+   "page": "https://agentscouthq.com/tools/crosspaste-desktop.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "crw",
+   "name": "Crw",
+   "page": "https://agentscouthq.com/tools/crw.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "cve-mcp-server",
+   "name": "Cve MCP Server",
+   "page": "https://agentscouthq.com/tools/cve-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "daily-dev-mcp",
+   "name": "daily.dev MCP",
+   "page": "https://agentscouthq.com/tools/daily-dev-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "dashboard-icons",
+   "name": "Dashboard Icons",
+   "page": "https://agentscouthq.com/tools/dashboard-icons.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "datagouv-mcp",
+   "name": "Datagouv MCP",
+   "page": "https://agentscouthq.com/tools/datagouv-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "davinci-resolve-mcp",
+   "name": "DaVinci Resolve MCP",
+   "page": "https://agentscouthq.com/tools/davinci-resolve-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "dbt-mcp",
+   "name": "dbt MCP",
+   "page": "https://agentscouthq.com/tools/dbt-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "dbx",
+   "name": "Dbx",
+   "page": "https://agentscouthq.com/tools/dbx.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "desearch",
+   "name": "Desearch",
+   "page": "https://agentscouthq.com/tools/desearch.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "design-extract",
+   "name": "Design Extract",
+   "page": "https://agentscouthq.com/tools/design-extract.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "desktop-commander-mcp",
+   "name": "Desktop Commander MCP",
+   "page": "https://agentscouthq.com/tools/desktop-commander-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "devcycle-mcp",
+   "name": "DevCycle MCP",
+   "page": "https://agentscouthq.com/tools/devcycle-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "diagrid-catalyst-mcp",
+   "name": "Diagrid Catalyst MCP",
+   "page": "https://agentscouthq.com/tools/diagrid-catalyst-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "douyin-tiktok-download-api",
+   "name": "Douyin TikTok Download API",
+   "page": "https://agentscouthq.com/tools/douyin-tiktok-download-api.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "edgegap-mcp",
+   "name": "Edgegap MCP",
+   "page": "https://agentscouthq.com/tools/edgegap-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "egnyte-mcp",
+   "name": "Egnyte MCP",
+   "page": "https://agentscouthq.com/tools/egnyte-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "excel-mcp-server",
+   "name": "Excel MCP Server",
+   "page": "https://agentscouthq.com/tools/excel-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "fastmcp",
+   "name": "FastMCP",
+   "page": "https://agentscouthq.com/tools/fastmcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "ffmpeg-skill",
+   "name": "Ffmpeg Skill",
+   "page": "https://agentscouthq.com/tools/ffmpeg-skill.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "figma-console-mcp",
+   "name": "Figma Console MCP",
+   "page": "https://agentscouthq.com/tools/figma-console-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "figma-mcp-server",
+   "name": "Figma MCP Server",
+   "page": "https://agentscouthq.com/tools/figma-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "fireflies-mcp",
+   "name": "Fireflies MCP",
+   "page": "https://agentscouthq.com/tools/fireflies-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "flexqueries",
+   "name": "FlexQueries",
+   "page": "https://agentscouthq.com/tools/flexqueries.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "framelink-figma-mcp",
+   "name": "Framelink Figma MCP",
+   "page": "https://agentscouthq.com/tools/framelink-figma-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "frase-mcp",
+   "name": "Frase MCP",
+   "page": "https://agentscouthq.com/tools/frase-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gearboy",
+   "name": "Gearboy",
+   "page": "https://agentscouthq.com/tools/gearboy.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "geckoboard-mcp",
+   "name": "Geckoboard MCP",
+   "page": "https://agentscouthq.com/tools/geckoboard-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "github-mcp-server",
+   "name": "GitHub MCP Server",
+   "page": "https://agentscouthq.com/tools/github-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gitkraken-mcp",
+   "name": "GitKraken MCP",
+   "page": "https://agentscouthq.com/tools/gitkraken-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gitlab-mcp",
+   "name": "GitLab MCP",
+   "page": "https://agentscouthq.com/tools/gitlab-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gitmcp",
+   "name": "GitMCP",
+   "page": "https://agentscouthq.com/tools/gitmcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gocardless-mcp",
+   "name": "GoCardless MCP",
+   "page": "https://agentscouthq.com/tools/gocardless-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "google-workspace-mcp",
+   "name": "Google Workspace MCP",
+   "page": "https://agentscouthq.com/tools/google-workspace-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gortex",
+   "name": "Gortex",
+   "page": "https://agentscouthq.com/tools/gortex.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "grafana-mcp",
+   "name": "Grafana MCP",
+   "page": "https://agentscouthq.com/tools/grafana-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "grounded-docs-mcp",
+   "name": "Grounded Docs MCP",
+   "page": "https://agentscouthq.com/tools/grounded-docs-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "gtmetrix-mcp",
+   "name": "GTmetrix MCP",
+   "page": "https://agentscouthq.com/tools/gtmetrix-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "guru-mcp",
+   "name": "Guru MCP",
+   "page": "https://agentscouthq.com/tools/guru-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "happyscribe-mcp",
+   "name": "HappyScribe MCP",
+   "page": "https://agentscouthq.com/tools/happyscribe-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "havetml",
+   "name": "HaveTML",
+   "page": "https://agentscouthq.com/tools/havetml.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "haymon-database-mcp",
+   "name": "Haymon Database MCP",
+   "page": "https://agentscouthq.com/tools/haymon-database-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "hexstrike-ai",
+   "name": "Hexstrike AI",
+   "page": "https://agentscouthq.com/tools/hexstrike-ai.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "home-assistant-mcp-ha-mcp",
+   "name": "Home Assistant MCP (ha-mcp)",
+   "page": "https://agentscouthq.com/tools/home-assistant-mcp-ha-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "hugging-face-mcp-server",
+   "name": "Hugging Face MCP Server",
+   "page": "https://agentscouthq.com/tools/hugging-face-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 405, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 405, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "icons8-mcp",
+   "name": "Icons8 MCP",
+   "page": "https://agentscouthq.com/tools/icons8-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "ida-mcp-hex-rays",
+   "name": "IDA MCP (Hex-Rays)",
+   "page": "https://agentscouthq.com/tools/ida-mcp-hex-rays.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "ida-pro-mcp",
+   "name": "IDA Pro MCP",
+   "page": "https://agentscouthq.com/tools/ida-pro-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "idealo-mcp",
+   "name": "idealo MCP",
+   "page": "https://agentscouthq.com/tools/idealo-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "ifttt-mcp",
+   "name": "IFTTT MCP",
+   "page": "https://agentscouthq.com/tools/ifttt-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "imcp",
+   "name": "iMCP",
+   "page": "https://agentscouthq.com/tools/imcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "infobip-mcp",
+   "name": "Infobip MCP",
+   "page": "https://agentscouthq.com/tools/infobip-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "infranodus-mcp",
+   "name": "InfraNodus MCP",
+   "page": "https://agentscouthq.com/tools/infranodus-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jarvis-registry",
+   "name": "Jarvis Registry",
+   "page": "https://agentscouthq.com/tools/jarvis-registry.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jcodemunch-mcp",
+   "name": "jCodeMunch MCP",
+   "page": "https://agentscouthq.com/tools/jcodemunch-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jitsu-mcp",
+   "name": "Jitsu MCP",
+   "page": "https://agentscouthq.com/tools/jitsu-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "joinly",
+   "name": "joinly",
+   "page": "https://agentscouthq.com/tools/joinly.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jscpd",
+   "name": "Jscpd",
+   "page": "https://agentscouthq.com/tools/jscpd.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jshookmcp",
+   "name": "Jshookmcp",
+   "page": "https://agentscouthq.com/tools/jshookmcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jumpcloud-mcp",
+   "name": "JumpCloud MCP",
+   "page": "https://agentscouthq.com/tools/jumpcloud-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "jupyter-mcp-server",
+   "name": "Jupyter MCP Server",
+   "page": "https://agentscouthq.com/tools/jupyter-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "kagi-mcp",
+   "name": "Kagi MCP",
+   "page": "https://agentscouthq.com/tools/kagi-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "kajabi-mcp",
+   "name": "Kajabi MCP",
+   "page": "https://agentscouthq.com/tools/kajabi-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "keboola-mcp-server",
+   "name": "Keboola MCP Server",
+   "page": "https://agentscouthq.com/tools/keboola-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "klavis-ai",
+   "name": "Klavis AI",
+   "page": "https://agentscouthq.com/tools/klavis-ai.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "launchdarkly-mcp",
+   "name": "LaunchDarkly MCP",
+   "page": "https://agentscouthq.com/tools/launchdarkly-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "lightswind-ui-library",
+   "name": "Lightswind UI Library",
+   "page": "https://agentscouthq.com/tools/lightswind-ui-library.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "line-bot-mcp-server",
+   "name": "LINE Bot MCP Server",
+   "page": "https://agentscouthq.com/tools/line-bot-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "linear-mcp",
+   "name": "Linear MCP",
+   "page": "https://agentscouthq.com/tools/linear-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "liner-mcp",
+   "name": "Liner MCP",
+   "page": "https://agentscouthq.com/tools/liner-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "linkedin-mcp-server",
+   "name": "LinkedIn MCP Server",
+   "page": "https://agentscouthq.com/tools/linkedin-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "linkup-mcp",
+   "name": "Linkup MCP",
+   "page": "https://agentscouthq.com/tools/linkup-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "locize-mcp",
+   "name": "Locize MCP",
+   "page": "https://agentscouthq.com/tools/locize-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "logo-dev-mcp",
+   "name": "Logo.dev MCP",
+   "page": "https://agentscouthq.com/tools/logo-dev-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "loppee",
+   "name": "Loppee",
+   "page": "https://agentscouthq.com/tools/loppee.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "lovable-mcp",
+   "name": "Lovable MCP",
+   "page": "https://agentscouthq.com/tools/lovable-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "lucid-mcp",
+   "name": "Lucid MCP",
+   "page": "https://agentscouthq.com/tools/lucid-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "lune-research",
+   "name": "Lune Research",
+   "page": "https://agentscouthq.com/tools/lune-research.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 429, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 429, github 200)",
+     "time": "07:03"
+    },
+    {
+     "date": "2026-10-26",
+     "note": "Lune Research link status changed from Reachable, blocks automated checks to OK."
+    },
+    {
+     "date": "2026-10-26",
+     "note": "Lune Research link status changed from OK to Reachable, blocks automated checks."
+    }
+   ]
+  },
+  {
+   "slug": "lusha-mcp",
+   "name": "Lusha MCP",
+   "page": "https://agentscouthq.com/tools/lusha-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mailveri-mcp",
+   "name": "MailVeri MCP",
+   "page": "https://agentscouthq.com/tools/mailveri-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "manifold-mcp",
+   "name": "Manifold MCP",
+   "page": "https://agentscouthq.com/tools/manifold-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mapbox-mcp",
+   "name": "Mapbox MCP",
+   "page": "https://agentscouthq.com/tools/mapbox-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "master-fetch",
+   "name": "Master Fetch",
+   "page": "https://agentscouthq.com/tools/master-fetch.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "matlab-mcp-server",
+   "name": "MATLAB MCP Server",
+   "page": "https://agentscouthq.com/tools/matlab-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-apps",
+   "name": "MCP Apps",
+   "page": "https://agentscouthq.com/tools/mcp-apps.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-c-sdk",
+   "name": "MCP C# SDK",
+   "page": "https://agentscouthq.com/tools/mcp-c-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-for-blender",
+   "name": "MCP for Blender",
+   "page": "https://agentscouthq.com/tools/mcp-for-blender.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-gateway-registry",
+   "name": "MCP Gateway Registry",
+   "page": "https://agentscouthq.com/tools/mcp-gateway-registry.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-go-sdk",
+   "name": "MCP Go SDK",
+   "page": "https://agentscouthq.com/tools/mcp-go-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-inspector",
+   "name": "MCP Inspector",
+   "page": "https://agentscouthq.com/tools/mcp-inspector.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-java-sdk",
+   "name": "MCP Java SDK",
+   "page": "https://agentscouthq.com/tools/mcp-java-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-kotlin-sdk",
+   "name": "MCP Kotlin SDK",
+   "page": "https://agentscouthq.com/tools/mcp-kotlin-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-php-sdk",
+   "name": "MCP PHP SDK",
+   "page": "https://agentscouthq.com/tools/mcp-php-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-proxy",
+   "name": "mcp-proxy",
+   "page": "https://agentscouthq.com/tools/mcp-proxy.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-python-sdk",
+   "name": "MCP Python SDK",
+   "page": "https://agentscouthq.com/tools/mcp-python-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-reference-servers",
+   "name": "MCP reference servers",
+   "page": "https://agentscouthq.com/tools/mcp-reference-servers.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-registry",
+   "name": "MCP Registry",
+   "page": "https://agentscouthq.com/tools/mcp-registry.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-remote",
+   "name": "MCP Remote",
+   "page": "https://agentscouthq.com/tools/mcp-remote.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-rust-sdk",
+   "name": "MCP Rust SDK",
+   "page": "https://agentscouthq.com/tools/mcp-rust-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-toolbox-for-databases",
+   "name": "MCP Toolbox for Databases",
+   "page": "https://agentscouthq.com/tools/mcp-toolbox-for-databases.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-typescript-sdk",
+   "name": "MCP TypeScript SDK",
+   "page": "https://agentscouthq.com/tools/mcp-typescript-sdk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-ui",
+   "name": "MCP-UI",
+   "page": "https://agentscouthq.com/tools/mcp-ui.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcp-use",
+   "name": "mcp-use",
+   "page": "https://agentscouthq.com/tools/mcp-use.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcphub",
+   "name": "MCPHub",
+   "page": "https://agentscouthq.com/tools/mcphub.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcpo",
+   "name": "mcpo",
+   "page": "https://agentscouthq.com/tools/mcpo.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mcporter",
+   "name": "MCPorter",
+   "page": "https://agentscouthq.com/tools/mcporter.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "menlo-insurance-mcp",
+   "name": "Menlo Insurance MCP",
+   "page": "https://agentscouthq.com/tools/menlo-insurance-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "metamcp",
+   "name": "MetaMCP",
+   "page": "https://agentscouthq.com/tools/metamcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "metorial",
+   "name": "Metorial",
+   "page": "https://agentscouthq.com/tools/metorial.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "microsoft-learn-mcp",
+   "name": "Microsoft Learn MCP",
+   "page": "https://agentscouthq.com/tools/microsoft-learn-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mindmeister-mcp",
+   "name": "MindMeister MCP",
+   "page": "https://agentscouthq.com/tools/mindmeister-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "minimax-mcp",
+   "name": "MiniMax MCP",
+   "page": "https://agentscouthq.com/tools/minimax-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mintlify-mcp",
+   "name": "Mintlify MCP",
+   "page": "https://agentscouthq.com/tools/mintlify-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "model-context-protocol",
+   "name": "Model Context Protocol",
+   "page": "https://agentscouthq.com/tools/model-context-protocol.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "monday-com-mcp",
+   "name": "monday.com MCP",
+   "page": "https://agentscouthq.com/tools/monday-com-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mongodb-mcp-server",
+   "name": "MongoDB MCP Server",
+   "page": "https://agentscouthq.com/tools/mongodb-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mural-mcp",
+   "name": "Mural MCP",
+   "page": "https://agentscouthq.com/tools/mural-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mux-mcp",
+   "name": "Mux MCP",
+   "page": "https://agentscouthq.com/tools/mux-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "mysql-mcp-server",
+   "name": "Mysql MCP Server",
+   "page": "https://agentscouthq.com/tools/mysql-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "n8n-mcp",
+   "name": "n8n-MCP",
+   "page": "https://agentscouthq.com/tools/n8n-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "neo4j-mcp",
+   "name": "Neo4j MCP",
+   "page": "https://agentscouthq.com/tools/neo4j-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "neon-mcp",
+   "name": "Neon MCP",
+   "page": "https://agentscouthq.com/tools/neon-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "neverapply",
+   "name": "NeverApply",
+   "page": "https://agentscouthq.com/tools/neverapply.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "new-relic-mcp",
+   "name": "New Relic MCP",
+   "page": "https://agentscouthq.com/tools/new-relic-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "nitrostack",
+   "name": "NitroStack",
+   "page": "https://agentscouthq.com/tools/nitrostack.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "nornicdb",
+   "name": "NornicDB",
+   "page": "https://agentscouthq.com/tools/nornicdb.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "notion-mcp",
+   "name": "Notion MCP",
+   "page": "https://agentscouthq.com/tools/notion-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "objekts-production-desk",
+   "name": "objekts Production Desk",
+   "page": "https://agentscouthq.com/tools/objekts-production-desk.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "obot",
+   "name": "Obot",
+   "page": "https://agentscouthq.com/tools/obot.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "observal",
+   "name": "Observal",
+   "page": "https://agentscouthq.com/tools/observal.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "ollaya",
+   "name": "Ollaya",
+   "page": "https://agentscouthq.com/tools/ollaya.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "onesignal-mcp",
+   "name": "OneSignal MCP",
+   "page": "https://agentscouthq.com/tools/onesignal-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "oneuptime-mcp",
+   "name": "OneUptime MCP",
+   "page": "https://agentscouthq.com/tools/oneuptime-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "ovhcloud-mcp",
+   "name": "OVHcloud MCP",
+   "page": "https://agentscouthq.com/tools/ovhcloud-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "oxylabs-mcp",
+   "name": "Oxylabs MCP",
+   "page": "https://agentscouthq.com/tools/oxylabs-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "paddle-mcp",
+   "name": "Paddle MCP",
+   "page": "https://agentscouthq.com/tools/paddle-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "padlet-mcp",
+   "name": "Padlet MCP",
+   "page": "https://agentscouthq.com/tools/padlet-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "pandadoc-mcp",
+   "name": "PandaDoc MCP",
+   "page": "https://agentscouthq.com/tools/pandadoc-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "pangolinfo-amazon-data-mcp",
+   "name": "Pangolinfo Amazon Data MCP",
+   "page": "https://agentscouthq.com/tools/pangolinfo-amazon-data-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "parallel-search-mcp",
+   "name": "Parallel Search MCP",
+   "page": "https://agentscouthq.com/tools/parallel-search-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "parse-ly-mcp",
+   "name": "Parse.ly MCP",
+   "page": "https://agentscouthq.com/tools/parse-ly-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "pg-aiguide",
+   "name": "pg-aiguide",
+   "page": "https://agentscouthq.com/tools/pg-aiguide.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "phantom",
+   "name": "Phantom",
+   "page": "https://agentscouthq.com/tools/phantom.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "picsart-genai-mcp",
+   "name": "Picsart GenAI MCP",
+   "page": "https://agentscouthq.com/tools/picsart-genai-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 202",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 202)",
+     "time": "07:03"
+    },
+    {
+     "date": "2026-10-25",
+     "note": "Picsart GenAI MCP link status changed from Reachable, blocks automated checks to OK."
+    },
+    {
+     "date": "2026-10-24",
+     "note": "Picsart GenAI MCP link status changed from OK to Reachable, blocks automated checks."
+    }
+   ]
+  },
+  {
+   "slug": "planetscale-mcp",
+   "name": "PlanetScale MCP",
+   "page": "https://agentscouthq.com/tools/planetscale-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "porkbun-mcp",
+   "name": "Porkbun MCP",
+   "page": "https://agentscouthq.com/tools/porkbun-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "postman-mcp-server",
+   "name": "Postman MCP Server",
+   "page": "https://agentscouthq.com/tools/postman-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "printfriendly-mcp",
+   "name": "PrintFriendly MCP",
+   "page": "https://agentscouthq.com/tools/printfriendly-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "proxima",
+   "name": "Proxima",
+   "page": "https://agentscouthq.com/tools/proxima.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "railway-mcp",
+   "name": "Railway MCP",
+   "page": "https://agentscouthq.com/tools/railway-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "rea",
+   "name": "REA",
+   "page": "https://agentscouthq.com/tools/rea.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "redamon",
+   "name": "Redamon",
+   "page": "https://agentscouthq.com/tools/redamon.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "redis-mcp-server",
+   "name": "Redis MCP Server",
+   "page": "https://agentscouthq.com/tools/redis-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "redpanda-docs-mcp",
+   "name": "Redpanda Docs MCP",
+   "page": "https://agentscouthq.com/tools/redpanda-docs-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "remotify-mcp",
+   "name": "remotify-mcp",
+   "page": "https://agentscouthq.com/tools/remotify-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "reverse-image-location-geosolver",
+   "name": "Reverse Image Location (GeoSolver)",
+   "page": "https://agentscouthq.com/tools/reverse-image-location-geosolver.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "rocketreach-mcp",
+   "name": "RocketReach MCP",
+   "page": "https://agentscouthq.com/tools/rocketreach-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "sanity-mcp",
+   "name": "Sanity MCP",
+   "page": "https://agentscouthq.com/tools/sanity-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "sceneview",
+   "name": "Sceneview",
+   "page": "https://agentscouthq.com/tools/sceneview.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "scite-mcp",
+   "name": "Scite MCP",
+   "page": "https://agentscouthq.com/tools/scite-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "scrapegraph-mcp",
+   "name": "ScrapeGraph MCP",
+   "page": "https://agentscouthq.com/tools/scrapegraph-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "se-ranking-mcp",
+   "name": "SE Ranking MCP",
+   "page": "https://agentscouthq.com/tools/se-ranking-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "seal",
+   "name": "SEAL",
+   "page": "https://agentscouthq.com/tools/seal.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "searxng-mcp",
+   "name": "SearXNG MCP",
+   "page": "https://agentscouthq.com/tools/searxng-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "sendpulse-mcp",
+   "name": "SendPulse MCP",
+   "page": "https://agentscouthq.com/tools/sendpulse-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "sentry-mcp",
+   "name": "Sentry MCP",
+   "page": "https://agentscouthq.com/tools/sentry-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "senzing-mcp",
+   "name": "Senzing MCP",
+   "page": "https://agentscouthq.com/tools/senzing-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "serena",
+   "name": "Serena",
+   "page": "https://agentscouthq.com/tools/serena.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "serpstat-mcp",
+   "name": "Serpstat MCP",
+   "page": "https://agentscouthq.com/tools/serpstat-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "signoz-mcp-server",
+   "name": "SigNoz MCP Server",
+   "page": "https://agentscouthq.com/tools/signoz-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "simplebackups-mcp",
+   "name": "SimpleBackups MCP",
+   "page": "https://agentscouthq.com/tools/simplebackups-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "skiplagged-mcp",
+   "name": "Skiplagged MCP",
+   "page": "https://agentscouthq.com/tools/skiplagged-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    },
+    {
+     "date": "2026-10-28",
+     "note": "Skiplagged MCP link status changed from Error to OK."
+    },
+    {
+     "date": "2026-10-28",
+     "note": "Skiplagged MCP link status changed from OK to Error."
+    }
+   ]
+  },
+  {
+   "slug": "skybridge",
+   "name": "Skybridge",
+   "page": "https://agentscouthq.com/tools/skybridge.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "slash",
+   "name": "Slash",
+   "page": "https://agentscouthq.com/tools/slash.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "smartbear-mcp",
+   "name": "SmartBear MCP",
+   "page": "https://agentscouthq.com/tools/smartbear-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "smithery",
+   "name": "Smithery",
+   "page": "https://agentscouthq.com/tools/smithery.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "sonarqube-mcp-server",
+   "name": "SonarQube MCP Server",
+   "page": "https://agentscouthq.com/tools/sonarqube-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "stack-overflow-mcp",
+   "name": "Stack Overflow MCP",
+   "page": "https://agentscouthq.com/tools/stack-overflow-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "stackql",
+   "name": "StackQL",
+   "page": "https://agentscouthq.com/tools/stackql.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "statsig-mcp",
+   "name": "Statsig MCP",
+   "page": "https://agentscouthq.com/tools/statsig-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "streamkap-mcp",
+   "name": "Streamkap MCP",
+   "page": "https://agentscouthq.com/tools/streamkap-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "supabase-mcp",
+   "name": "Supabase MCP",
+   "page": "https://agentscouthq.com/tools/supabase-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "supermetrics-mcp",
+   "name": "Supermetrics MCP",
+   "page": "https://agentscouthq.com/tools/supermetrics-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "suprsend-mcp",
+   "name": "SuprSend MCP",
+   "page": "https://agentscouthq.com/tools/suprsend-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "swipeharbor",
+   "name": "SwipeHarbor",
+   "page": "https://agentscouthq.com/tools/swipeharbor.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "talk-to-figma-mcp",
+   "name": "Talk to Figma MCP",
+   "page": "https://agentscouthq.com/tools/talk-to-figma-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "github 200, url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (github 200, url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "tanatasa-beauty-mcp",
+   "name": "Tanatasa Beauty MCP",
+   "page": "https://agentscouthq.com/tools/tanatasa-beauty-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "teamwork-com-mcp",
+   "name": "Teamwork.com MCP",
+   "page": "https://agentscouthq.com/tools/teamwork-com-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "testkube-mcp",
+   "name": "Testkube MCP",
+   "page": "https://agentscouthq.com/tools/testkube-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "the-commons-dead-brands-collab-hub",
+   "name": "The Commons (Dead Brands Collab Hub)",
+   "page": "https://agentscouthq.com/tools/the-commons-dead-brands-collab-hub.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "tipranks-mcp",
+   "name": "TipRanks MCP",
+   "page": "https://agentscouthq.com/tools/tipranks-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "toolhive",
+   "name": "ToolHive",
+   "page": "https://agentscouthq.com/tools/toolhive.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "trivago-mcp",
+   "name": "trivago MCP",
+   "page": "https://agentscouthq.com/tools/trivago-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "tuui",
+   "name": "Tuui",
+   "page": "https://agentscouthq.com/tools/tuui.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "twelve-data-mcp",
+   "name": "Twelve Data MCP",
+   "page": "https://agentscouthq.com/tools/twelve-data-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "typeform-mcp",
+   "name": "Typeform MCP",
+   "page": "https://agentscouthq.com/tools/typeform-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "unity-mcp",
+   "name": "Unity MCP",
+   "page": "https://agentscouthq.com/tools/unity-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "unla",
+   "name": "Unla",
+   "page": "https://agentscouthq.com/tools/unla.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "unlayer-mcp",
+   "name": "Unlayer MCP",
+   "page": "https://agentscouthq.com/tools/unlayer-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "unleash-mcp",
+   "name": "Unleash MCP",
+   "page": "https://agentscouthq.com/tools/unleash-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "unreal-mcp",
+   "name": "Unreal MCP",
+   "page": "https://agentscouthq.com/tools/unreal-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "upstash-mcp",
+   "name": "Upstash MCP",
+   "page": "https://agentscouthq.com/tools/upstash-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "uptimerobot-mcp",
+   "name": "UptimeRobot MCP",
+   "page": "https://agentscouthq.com/tools/uptimerobot-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "vercel-mcp",
+   "name": "Vercel MCP",
+   "page": "https://agentscouthq.com/tools/vercel-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "vidiq-mcp",
+   "name": "vidIQ MCP",
+   "page": "https://agentscouthq.com/tools/vidiq-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "wavespeed-mcp",
+   "name": "WaveSpeed MCP",
+   "page": "https://agentscouthq.com/tools/wavespeed-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "webflow-mcp",
+   "name": "Webflow MCP",
+   "page": "https://agentscouthq.com/tools/webflow-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "webiny-js",
+   "name": "Webiny Js",
+   "page": "https://agentscouthq.com/tools/webiny-js.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "wenbu",
+   "name": "Wenbu",
+   "page": "https://agentscouthq.com/tools/wenbu.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "whimsical-mcp",
+   "name": "Whimsical MCP",
+   "page": "https://agentscouthq.com/tools/whimsical-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "wigolo",
+   "name": "Wigolo",
+   "page": "https://agentscouthq.com/tools/wigolo.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "wix-mcp",
+   "name": "Wix MCP",
+   "page": "https://agentscouthq.com/tools/wix-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "wolfram-mcp",
+   "name": "Wolfram MCP",
+   "page": "https://agentscouthq.com/tools/wolfram-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "workos-mcp",
+   "name": "WorkOS MCP",
+   "page": "https://agentscouthq.com/tools/workos-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "wslmanager",
+   "name": "Wslmanager",
+   "page": "https://agentscouthq.com/tools/wslmanager.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "x64dbg-mcp-server",
+   "name": "x64dbg-MCP Server",
+   "page": "https://agentscouthq.com/tools/x64dbg-mcp-server.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "xquik",
+   "name": "Xquik",
+   "page": "https://agentscouthq.com/tools/xquik.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "zapier-mcp",
+   "name": "Zapier MCP",
+   "page": "https://agentscouthq.com/tools/zapier-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  },
+  {
+   "slug": "zomato-mcp",
+   "name": "Zomato MCP",
+   "page": "https://agentscouthq.com/tools/zomato-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "github 200, url 403",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (github 200, url 403)",
+     "time": "07:03"
+    },
+    {
+     "date": "2026-10-26",
+     "note": "Zomato MCP link status changed from Reachable, blocks automated checks to OK."
+    }
+   ]
+  },
+  {
+   "slug": "zotero-mcp",
+   "name": "Zotero MCP",
+   "page": "https://agentscouthq.com/tools/zotero-mcp.html",
+   "status": "live",
+   "last_checked": "2026-10-29 07:03",
+   "detail": "url 200, github 200",
+   "history": [
+    {
+     "date": "2026-10-29",
+     "note": "live (url 200, github 200)",
+     "time": "07:03"
+    }
+   ]
+  }
+ ]
+}
