@@ -73,10 +73,8 @@ def load_live_catalog_counts(site_dir):
         bt_html = "/workspace/agent-tool-finder/bot-templates/index.html"
     try:
         bt_count = len(re.findall(r'<li class="bt-row"', open(bt_html, encoding="utf-8").read()))
-        if bt_count < 50:
-            bt_count = 189
     except Exception:
-        bt_count = 189
+        bt_count = 0
     ft_dir = os.path.join(site_dir, "free-tools")
     if not os.path.isdir(ft_dir):
         ft_dir = "/workspace/agent-tool-finder/free-tools"

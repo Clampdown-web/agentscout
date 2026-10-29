@@ -1,6 +1,6 @@
 """Hand-written, keyword-targeted titles/descriptions for new pages (Oct 21 2026 owner-approved SEO pass).
 data/seo_overrides.json: {path: [title or null, description or null]}; {crypto_n} = live crypto count; {n} = the leading count in the page's generated description ("78 link-checked...", "All 55 ...").
-Also appends the 50 community Grok Bot templates to llms.txt. Idempotent; runs after build_seo.run()."""
+Also appends community Grok Bot templates to llms.txt. Idempotent; runs after build_seo.run()."""
 import json,re,html,os
 def _set(s,attr,name,v):
     return re.sub(rf'(<meta {attr}="{re.escape(name)}" content=")[^"]*(")',lambda m:m.group(1)+v+m.group(2),s,1)
@@ -16,7 +16,7 @@ def run(t):
             s=re.sub(r"<title>.*?</title>",f"<title>{v}</title>",s,1,flags=re.S)
             s=_set(s,"property","og:title",v); s=_set(s,"name","twitter:title",v)
         if de:
-            m=re.search(r"(\d+) ready-made",s); v=html.escape(de.replace("{n}",pn).replace("{crypto_n}",str(cn)).replace("{mcp_n}",str(sum(1 for x in t if x["category"]=="MCP servers"))).replace("{bt_n}",m.group(1) if m else ""),quote=True)
+            m=re.search(r"(\d+) ready-made",s); cb_n=len(json.load(open("data/bot-templates-community.json"))) if os.path.exists("data/bot-templates-community.json") else 0; v=html.escape(de.replace("{n}",pn).replace("{crypto_n}",str(cn)).replace("{mcp_n}",str(sum(1 for x in t if x["category"]=="MCP servers"))).replace("{bt_n}",m.group(1) if m else "").replace("{cb_n}",str(cb_n)),quote=True)
             s=_set(s,"name","description",v); s=_set(s,"property","og:description",v); s=_set(s,"name","twitter:description",v)
         if s!=s0: open(f,"w").write(s); n+=1
     if os.path.exists("llms.txt") and os.path.exists("data/bot-templates-community.json"):
@@ -114,7 +114,7 @@ def answer_blocks(t):
              + home_vid_html
              + f'<h2 style="font-size:20px;margin:0 0 10px">The AI agent directory, at a glance</h2>'
              f'<p style="margin:0 0 10px">AgentScout tracks <b data-live-tools>{n:,}</b> AI agent tools across <b data-live-cats>{nc}</b> categories, including <a href="categories/mcp-servers.html"><span data-live-mcp>{nmcp}</span> MCP servers</a>, coding agents, browser agents, voice agents and no-code builders. We check every link daily, describe each tool from its official site or README, show pricing as the maker states it, and never sell rankings (featured slots are clearly labeled and sit above the list; rankings are never paid). <span class="muted">Last checked {d}.</span></p>'
-             f'<div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;max-width:100%"><a class="btn primary" href="videos/" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:#0ea5e9;color:#fff;font-weight:700;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🎬 Quick-Start Guides (8) →</a><a class="btn primary" href="bot-store/" style="background:linear-gradient(135deg,#84cc16,#10b981);border-color:#84cc16;color:#05140b;font-weight:800;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🛒 Bot Store: Pre-Trained Grok Bots ($39 / $59 / $69 / $149) →</a><a class="btn" href="bot-templates/#bt-featured" style="white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">📚 {len(re.findall(r'<li class=\"bt-row\"', open("bot-templates/index.html").read())) if os.path.exists("bot-templates/index.html") else 189} Free Bot Templates →</a></div><p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
+             f'<div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;max-width:100%"><a class="btn primary" href="videos/" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:#0ea5e9;color:#fff;font-weight:700;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🎬 Quick-Start Guides (8) →</a><a class="btn primary" href="bot-store/" style="background:linear-gradient(135deg,#84cc16,#10b981);border-color:#84cc16;color:#05140b;font-weight:800;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🛒 Bot Store: Pre-Trained Grok Bots ($39 / $59 / $69 / $149) →</a><a class="btn" href="bot-templates/#bt-featured" style="white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">📚 {__import__("build_bot_templates").live_bot_template_count()} Free Bot Templates →</a></div><p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
              f'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>{_faq_html(faq)}</div></section>{_faq_ld(faq)}{home_vid_ld}<!--/sn:home-->')
         s=s.replace("</header>","</header>"+blk,1); open(f,"w").write(s)  # Oct 22 2026: about block goes after the top search panel
     f="bot-templates/index.html"
@@ -159,7 +159,7 @@ def sync_animations(t=None):
     n_tools = len(t)
     n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
     n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
-    n_bt = len(re.findall(r'<li class="bt-row"', open("bot-templates/index.html", encoding="utf-8").read())) if os.path.exists("bot-templates/index.html") else 189
+    n_bt = __import__("build_bot_templates").live_bot_template_count()
     n_ft = (len([f for f in os.listdir("free-tools") if f.endswith(".html") and f != "index.html"]) + (1 if os.path.exists("generate.html") else 0)) if os.path.isdir("free-tools") else 19
     state_file = "data/anim_state.json"
     script_candidates = [
