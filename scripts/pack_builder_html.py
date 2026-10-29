@@ -37,7 +37,7 @@ CSS = """
 .ap-card{--ap:#93c5fd;position:relative;background:linear-gradient(180deg, color-mix(in srgb, var(--ap) 10%, #181c26) 0%, #141720 100%);border:1px solid color-mix(in srgb, var(--ap) 38%, rgba(255,255,255,.1));border-radius:18px;padding:14px 14px 12px;min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 28px -10px rgba(0,0,0,.6), 0 0 22px -8px color-mix(in srgb, var(--ap) 35%, transparent);overflow:hidden}
 .ap-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg, transparent, var(--ap), transparent)}
 .ap-card.is-selected,.ap-card:has(.ap-add[aria-pressed="true"]){border-color:var(--ap);box-shadow:0 12px 32px -12px rgba(0,0,0,.7), 0 0 26px -4px color-mix(in srgb, var(--ap) 72%, transparent)}
-.ap-card-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0}
+.ap-card-top{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;min-width:0}
 .ap-ico{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;background:color-mix(in srgb, var(--ap) 18%, #111);border:1px solid color-mix(in srgb, var(--ap) 45%, transparent);box-shadow:0 0 16px -6px color-mix(in srgb, var(--ap) 85%, transparent);color:var(--ap)}
 .ap-ico svg{display:block}
 .ap-badges{display:flex;flex-wrap:wrap;gap:6px;min-width:0;flex:1 1 120px}
@@ -45,10 +45,11 @@ CSS = """
 .ap-price{color:#fff;background:color-mix(in srgb, var(--ap) 24%, #12151c);border:1px solid color-mix(in srgb, var(--ap) 55%, transparent)}
 .ap-price small{font-weight:700;opacity:.8;margin-left:4px}
 .ap-dept{color:#e4e4e7;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14)}
-.ap-add{margin-left:auto;border:1px solid color-mix(in srgb, var(--ap) 45%, rgba(255,255,255,.16));background:color-mix(in srgb, var(--ap) 18%, #1e2330);color:#f4f4f5;font-size:12px;font-weight:800;cursor:pointer;padding:7px 12px;border-radius:999px;white-space:normal;line-height:1.2;box-sizing:border-box}
+.ap-add{margin-left:auto;flex:0 0 auto;border:1px solid color-mix(in srgb, var(--ap) 45%, rgba(255,255,255,.16));background:color-mix(in srgb, var(--ap) 18%, #1e2330);color:#f4f4f5;font-size:12px;font-weight:800;cursor:pointer;padding:7px 12px;border-radius:999px;white-space:nowrap;line-height:1.2;box-sizing:border-box}
 .ap-add[aria-pressed="true"]{background:#052e16;color:#10b981;border-color:#10b981;box-shadow:0 0 16px -6px #10b981}
-.ap-card h3{margin:2px 0 0;font-size:16.5px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-.02em;overflow-wrap:anywhere}
-.ap-card h3 a{color:inherit;text-decoration:none}
+.ap-card h3{margin:2px 0 0;font-size:16.5px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-.02em;overflow-wrap:anywhere;display:block}
+.ap-card h3 a{display:inline;color:inherit;text-decoration:none}
+.ap-card h3 .ap-role,.ap-card h3 .ap-kind{display:inline}
 .ap-card h3 .ap-role{color:#fff}
 .ap-card h3 .ap-kind{color:#d4d4d8;font-weight:700}
 .ap-by{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#e4e4e7;line-height:1.3}
@@ -61,9 +62,13 @@ CSS = """
 .ap-card-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto;padding-top:4px;min-width:0}
 .ap-preview{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 12px;border-radius:999px;border:1px solid color-mix(in srgb, var(--ap) 45%, rgba(255,255,255,.18));background:transparent;color:#e0f2fe;font-size:12.5px;font-weight:800;cursor:pointer;box-sizing:border-box;text-align:center}
 .ap-details{color:#93c5fd;font-size:12.5px;font-weight:800;text-decoration:none;overflow-wrap:anywhere}
-.ap-foot,.ap-dock{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px 14px;border-top:1px solid rgba(255,255,255,.08);background:#0e1118;min-width:0}
-#ap-dock{position:sticky;bottom:0;z-index:6;border-radius:0 0 22px 22px;box-shadow:0 -12px 28px rgba(0,0,0,.4)}
+.ap-foot{position:static;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 14px 14px;border-top:1px solid rgba(255,255,255,.08);background:#0e1118;min-width:0}
 .ap-foot p{margin:0;color:#e4e4e7;font-size:13px;line-height:1.45;min-width:0;flex:1 1 220px;overflow-wrap:anywhere}
+#ap-dock{position:fixed;left:max(8px, env(safe-area-inset-left));right:max(72px, calc(64px + env(safe-area-inset-right)));bottom:max(8px, env(safe-area-inset-bottom));z-index:1100;display:flex;align-items:center;gap:6px;height:56px;max-height:64px;padding:6px 8px;box-sizing:border-box;border-radius:14px;background:#0e1118;border:1px solid rgba(255,255,255,.16);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#ap-dock[hidden]{display:none !important}
+#ap-dock #ap-summary{margin:0;flex:1 1 auto;min-width:0;color:#fff;font-size:13px;font-weight:800;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#ap-dock .ap-btn{width:auto;min-height:36px;height:36px;padding:0 10px;flex:0 0 auto;font-size:12.5px}
+#ap-clear{width:36px;height:36px;flex:0 0 auto;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;font-size:16px;font-weight:800;cursor:pointer}
 .ap-actions{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
 .ap-btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border-radius:10px;font-size:13px;font-weight:800;text-decoration:none;border:1px solid transparent;box-sizing:border-box;max-width:100%;cursor:pointer;text-align:center}
 .ap-btn.pay{background:#f4f4f5;color:#18181b}
@@ -94,8 +99,9 @@ CSS = """
 @media(max-width:640px){
   .ap-chrome{flex-wrap:wrap}
   .ap-chrome-side{width:100%;justify-content:flex-end}
-  .ap-btn,.ap-sheet-cta .ap-btn{width:100%}
-  .ap-card-actions .ap-preview,.ap-card-actions .ap-details{width:100%;justify-content:center;text-align:center}
+  .ap-foot .ap-btn,.ap-sheet-cta .ap-btn{width:100%}
+  #ap-dock .ap-btn{width:auto}
+  .ap-card-actions .ap-buy,.ap-card-actions .ap-preview,.ap-card-actions .ap-details{width:100%;justify-content:center;text-align:center}
 }
 </style>
 """
@@ -138,10 +144,9 @@ def pack_section_html() -> str:
             f'</span>'
             f'<span class="ap-badges"><span class="ap-price">${card["price"]}<small>once</small></span>'
             f'<span class="ap-dept">{_e(card["deptShort"])}</span></span>'
-            f'<a class="ap-buy" href="{_e(PACK_TIERS["tier_1"]["url"])}" target="_blank" rel="noopener noreferrer">Buy $35</a>'
             f'<button type="button" class="ap-add" data-add="{_e(card["slug"])}" aria-pressed="false">+ Add ($35)</button>'
             f'</div>'
-            f'<h3><a href="/bot-store/{_e(card["slug"])}/"><span class="ap-role">{_e(card["role"])}</span> <span class="ap-kind">Agent</span></a></h3>'
+            f'<h3><a href="/bot-store/{_e(card["slug"])}/"><span class="ap-role">{_e(card["role"])} </span><span class="ap-kind">Agent</span></a></h3>'
             f'<p class="ap-by">built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="120" height="24">'
             f'<span class="ap-verified">✓ Verified</span></p>'
             f'<p class="ap-tag">{_e(card["tagline"])}</p>'
@@ -154,6 +159,7 @@ def pack_section_html() -> str:
             f'{chips}'
             f'</ul>'
             f'<div class="ap-card-actions">'
+            f'<a class="ap-buy" href="{_e(PACK_TIERS["tier_1"]["url"])}" target="_blank" rel="noopener noreferrer">Buy $35</a>'
             f'<button type="button" class="ap-preview" data-preview="{_e(card["slug"])}">Preview Skills &amp; Routines</button>'
             f'<a class="ap-details" href="/bot-store/{_e(card["slug"])}/">Full Pack Details →</a>'
             f'</div></article>'
@@ -174,9 +180,6 @@ def pack_section_html() -> str:
       </button>
     </div>
   </div>
-  <div class="ap-tiers" role="toolbar" aria-label="Volume discount pack tiers">
-    {tier_btns}
-  </div>
   <div class="ap-filters" role="toolbar" aria-label="Filter agent packs">
     <button type="button" class="ap-pill" data-ap-filter="all" aria-pressed="true">All 25</button>
     <button type="button" class="ap-pill" data-ap-filter="sales" aria-pressed="false">Sales &amp; Outreach</button>
@@ -186,16 +189,20 @@ def pack_section_html() -> str:
   </div>
   <div class="ap-tiers" role="group" aria-label="Volume discount tiers">@@TIERS@@</div>
   <div class="ap-grid">@@GRID@@</div>
-  <div class="ap-foot ap-dock" id="ap-dock">
-    <p id="ap-summary">Each role pack is $35. Volume pricing: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.</p>
+  <div class="ap-foot" id="ap-foot">
+    <p id="ap-blurb">Each role pack is $35. Volume pricing: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.</p>
     <div class="ap-actions">
-      <button type="button" class="ap-btn copy" id="ap-copy">Copy order note</button>
       <a class="ap-btn copy" id="ap-mail" href="mailto:support@agentscouthq.com?subject=AI%20Agent%20Pack%20order">Email fulfillment</a>
-      <a class="ap-btn pay is-off" id="ap-pay" href="#ap-dock" aria-disabled="true">Checkout</a>
       <a class="ap-btn x" id="ap-x" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">X Money @clampdown19</a>
     </div>
   </div>
 </section>
+<div class="ap-float" id="ap-dock" hidden>
+  <p id="ap-summary">0 selected</p>
+  <a class="ap-btn pay" id="ap-pay" href="#ap-foot">Checkout</a>
+  <button type="button" class="ap-btn copy" id="ap-copy">Copy List</button>
+  <button type="button" id="ap-clear" aria-label="Clear selection">✕</button>
+</div>
 <div class="ap-modal" id="ap-modal" hidden>
   <div class="ap-sheet" role="dialog" aria-modal="true" aria-labelledby="ap-modal-title">
     <div class="ap-sheet-top">
@@ -296,31 +303,24 @@ def pack_section_html() -> str:
     document.querySelectorAll("[data-ap-tier]").forEach(function(btn){
       btn.setAttribute("aria-pressed", String(quote.n) === btn.getAttribute("data-ap-tier") ? "true" : "false");
     });
+    var dock = document.getElementById("ap-dock");
     if (!rows.length) {
-      summary.textContent = "Each role pack is $35. Volume pricing: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.";
-      pay.classList.add("is-off");
-      pay.setAttribute("aria-disabled", "true");
-      pay.href = "#ap-dock";
+      dock.hidden = true;
+      summary.textContent = "0 selected";
+      pay.href = "#ap-foot";
       pay.textContent = "Checkout";
     } else {
-      var bits = [rows.length + " selected", quote.label, "$" + money(quote.price)];
-      if (quote.regular !== quote.price) bits.push("regular $" + money(quote.regular));
-      if (quote.save) bits.push("Save $" + money(quote.save));
-      bits.push("$" + money(quote.perBot) + "/bot");
-      if (quote.nudge) bits.push(quote.nudge);
-      if (!quote.url) bits.push("Stripe link for this tier is not connected yet. Copy the order note or pay via X Money @clampdown19.");
-      summary.textContent = bits.join(" · ").replace(" · " + quote.nudge, ". " + quote.nudge);
-      if (quote.url) {
-        pay.classList.remove("is-off");
-        pay.removeAttribute("aria-disabled");
-        pay.href = quote.url;
-        pay.textContent = "Checkout $" + money(quote.price);
-      } else {
-        pay.classList.add("is-off");
-        pay.setAttribute("aria-disabled", "true");
-        pay.href = "#ap-dock";
-        pay.textContent = "Checkout $" + money(quote.price);
-      }
+      dock.hidden = false;
+      var label = rows.length + " selected · $" + money(quote.price);
+      if (quote.save) label += " · Save $" + money(quote.save);
+      summary.textContent = label;
+      summary.title = quote.nudge || quote.label;
+      pay.classList.remove("is-off");
+      pay.removeAttribute("aria-disabled");
+      pay.href = quote.url || ("mailto:support@agentscouthq.com?subject=" + encodeURIComponent("AI Agent Pack order") + "&body=" + encodeURIComponent(note()));
+      if (quote.url) { pay.target = "_blank"; pay.rel = "noopener noreferrer"; }
+      else { pay.removeAttribute("target"); pay.removeAttribute("rel"); }
+      pay.textContent = "Checkout $" + money(quote.price) + " →";
     }
     document.getElementById("ap-mail").href = "mailto:support@agentscouthq.com?subject=" + encodeURIComponent("AI Agent Pack order") + "&body=" + encodeURIComponent(note());
   }
@@ -340,10 +340,10 @@ def pack_section_html() -> str:
       });
     });
   });
-  document.querySelectorAll("[data-ap-tier]").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      document.getElementById("ap-dock").scrollIntoView({behavior:"smooth", block:"nearest"});
-    });
+  document.getElementById("ap-clear").addEventListener("click", function(){
+    selected = {};
+    save();
+    paint();
   });
   function esc(s){ return String(s).replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
   function openModal(slug){
@@ -390,12 +390,14 @@ def pack_section_html() -> str:
   document.getElementById("ap-copy").addEventListener("click", function(){
     var text = note();
     var btn = document.getElementById("ap-copy");
-    function done(){ btn.textContent = "Copied"; setTimeout(function(){ btn.textContent = "Copy order note"; }, 1600); }
+    function done(){ btn.textContent = "Copied"; setTimeout(function(){ btn.textContent = "Copy List"; }, 1600); }
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done);
     else done();
   });
   document.getElementById("ap-cart").addEventListener("click", function(){
-    document.getElementById("ap-dock").scrollIntoView({behavior:"smooth", block:"nearest"});
+    var dock = document.getElementById("ap-dock");
+    if (!dock.hidden) dock.querySelector("#ap-pay").focus();
+    else document.getElementById("ap-foot").scrollIntoView({behavior:"smooth", block:"nearest"});
   });
   paint();
 })();
