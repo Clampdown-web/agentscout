@@ -569,6 +569,23 @@ def build_mcp_terminal_infographic():
     print("Generated Style A (MCP Terminal):", os.path.getsize(gif_out), os.path.getsize(mp4_out))
 
 
+
+# Canonical Live Stripe Payment Links (acct_1UUinCKVzDFIUga8) for the 25 Pre-Trained AI Agent Packs
+AI_AGENT_PACK_STRIPE_LINKS = {
+    "1_bot_35": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",      # plink_1UVgsdKVzDFIUga8BkjhzuB0 ($35 · $35.00/bot)
+    "5_bot_119": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",     # plink_1UVgt8KVzDFIUga8ZEhI5hgn ($119 · $23.80/bot · Save $56)
+    "10_bot_199": "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",    # plink_1UVgu0KVzDFIUga8sUwWdWLL ($199 · $19.90/bot · Save $151)
+    "20_bot_299": "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",    # plink_1UVguRKVzDFIUga82ZYi15S2 ($299 · $14.95/bot · Save $401)
+    "all_25_349": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",    # plink_1UVgv8KVzDFIUga83wEaqIPN ($349 · $13.96/bot · Save $526)
+}
+AI_AGENT_PACK_CLEAN_ROLES = [
+    "Accountant", "Graphic Designer", "Lead Gen Agent", "Copywriter", "Video Editor",
+    "Outreach Agent", "Google Review Replier", "SEO Specialist", "Email Marketer", "Customer Support",
+    "Appointment Setter", "Personal Assistant", "Data Analyst", "Social Media Manager", "Recruiter",
+    "Web Designer", "Meta Ads Agent", "Market Researcher", "Content Strategist", "TikTok Shop Manager",
+    "Influencer Scout", "Invoice Chaser", "Product Builder", "Community Manager", "Translator",
+]
+
 def build_trained_bots_ad_infographic():
     """Style F: 5-Neon-Color Pre-Trained Bots & 4-Bot Bundle (1200x560)"""
     W, H = 1200, 560
@@ -634,8 +651,8 @@ def build_trained_bots_ad_infographic():
         x_sc = x_ag + int(d.textlength("Agent", font=f_title))
         d.text((x_sc, 54), "Scout", font=f_title, fill=(115, 115, 255, 255))
         x_rest = x_sc + int(d.textlength("Scout", font=f_title)) + 8
-        d.text((x_rest, 54), "($39/$59/$59/$69 or $149 Bundle)", font=f_title, fill=(255, 255, 255, 255))
-        d.text((70, 82), f"Live across {LIVE_TOOL_COUNT:,} tools, {LIVE_CAT_COUNT} categories, {LIVE_MCP_COUNT:,} MCP servers & {LIVE_PAGE_COUNT:,} pages · Buy 1 bot ($39–$69) or all 4 for $149 (Save $77):", font=f_sub, fill=(214, 211, 209, 255))
+        d.text((x_rest, 54), "· 4 Pro Bots + 25 AI Agent Packs", font=f_title, fill=(255, 255, 255, 255))
+        d.text((70, 82), "4 Flagship Pro Bots ($39-$69 · $149 Bundle) + 25 AI Agent Packs ($35 1-Bot · $119 5-Pack · $199 10-Pack · $299 20-Pack · $349 All-25):", font=f_sub, fill=(214, 211, 209, 255))
 
         # Left Panel: 4-Bot Company-in-a-Box Architecture Hub (x=24..510, y=112..506)
         d.rounded_rectangle([24, 112, 510, 506], radius=14, fill=(18, 15, 10, 255), outline=(245, 158, 11, 160), width=1)
@@ -666,8 +683,8 @@ def build_trained_bots_ad_infographic():
 
         # Bottom of Left Panel
         d.rounded_rectangle([38, 434, 496, 494], radius=10, fill=(24, 20, 12, 255), outline=(16, 185, 129, 190), width=1)
-        d.text((50, 444), "✓ Each ZIP: SYSTEM.md + README-QUICKSTART.md + Skills + mcp.json", font=f_card_s, fill=(52, 211, 153, 255))
-        d.text((50, 466), "✓ Grok Bot, Claude, Cursor & Codex · agentscouthq.com/bot-store/", font=f_mono_s, fill=(253, 224, 71, 255))
+        d.text((50, 444), "✓ 25 AI Agent Packs: Lead Gen Agent, Outreach Agent, Meta Ads Agent +22", font=f_card_s, fill=(52, 211, 153, 255))
+        d.text((50, 466), "✓ $35 1-Bot · $119 5-Pk · $199 10-Pk · $299 20-Pk · $349 All-25 (Save $526)", font=f_mono_s, fill=(253, 224, 71, 255))
 
         # Right Panel: 5 Rows (4 Individual Bots + 1 All-4 Bundle) (x=526..1176, y=112..506)
         for idx, (t_label, t_price, t_title, t_desc, t_col, t_badge) in enumerate(tiers):
@@ -691,7 +708,7 @@ def build_trained_bots_ad_infographic():
             cta_txt = "ALL 4 $149->" if idx == 4 else "BUY BOT ->"
             d.text((W - 132, ry + 29), cta_txt, font=f_mono_s, fill=(10, 9, 6, 255))
 
-        d.text((24, H - 32), "🛒 Bot Store: Buy Separately ($39/$59/$59/$69) or All 4 ($149) -> https://agentscouthq.com/bot-store/", font=f_foot, fill=(251, 191, 36, 255))
+        d.text((24, H - 32), "🛒 Bot Store: 4 Pro Bots ($39-$149) + 25 AI Agent Packs ($35-$349) -> https://agentscouthq.com/bot-store/", font=f_foot, fill=(251, 191, 36, 255))
         d.text((W - 285, H - 32), "@clampdown19 · @AgentScoutHQ", font=f_foot, fill=(245, 245, 244, 255))
 
         im.convert("RGB").save(f"{tmp_dir}/frame_{fi:03d}.png")
@@ -1458,7 +1475,7 @@ def scene_mcp(d, F, t, ch, lp, box, accent):
 def scene_bots(d, F, t, ch, lp, box, accent):
     x0, y0, x1, y1 = box
     if ch == 0:
-        yy = _term(d, F, x0, y0, x1, y1, "Bot Store — pick a Pro Bot or the $149 bundle", accent)
+        yy = _term(d, F, x0, y0, x1, y1, "Bot Store — 4 Pro Bots ($39-$149) & 25 AI Agent Packs ($35-$349)", accent)
         cards = [("Ops", "$39", (163, 230, 53)), ("SEO & AEO", "$59", (250, 204, 21)), ("Market", "$59", (251, 146, 60)), ("CEO", "$69", (248, 113, 113))]
         pick = min(3, int(lp * 4))
         bundle = lp > 0.72
@@ -1471,8 +1488,8 @@ def scene_bots(d, F, t, ch, lp, box, accent):
             d.text((x + 14, yy + 56), price, font=F["m18"], fill=col)
             d.text((x + 14, yy + 84), "SELECTED" if on else "option", font=F["m12"], fill=col if on else (120, 130, 150))
         _panel(d, (x0 + 18, yy + 130, x1 - 18, yy + 196), (12, 28, 24) if bundle else (12, 16, 28), (52, 211, 153) if bundle else (50, 64, 80), 3 if bundle else 1, 10)
-        d.text((x0 + 34, yy + 148), "4-Bot Company-in-a-Box", font=F["b16"], fill=(255, 255, 255))
-        d.text((x0 + 34, yy + 172), "$149  ·  save $77 versus buying all four", font=F["m13"], fill=(52, 211, 153) if bundle else (148, 163, 184))
+        d.text((x0 + 34, yy + 148), "4-Bot Bundle ($149)  ·  25 AI Agent Packs ($35 / $119 / $199 / $299 / $349)", font=F["b16"], fill=(255, 255, 255))
+        d.text((x0 + 34, yy + 172), "Save $77 on 4-Bot Bundle  ·  Save up to $526 on All 25 AI Agent Packs", font=F["m13"], fill=(52, 211, 153) if bundle else (148, 163, 184))
         if bundle:
             _button(d, F, x1 - 170, yy + 150, 130, 32, "SELECTED", (16, 185, 129), (6, 16, 14))
     elif ch == 1:
@@ -1764,12 +1781,12 @@ WALKTHROUGHS = [
         "accent": (245, 158, 11),
         "labels": ["Choose a bot", "Unzip the package", "Run setup"],
         "details": [
-            ("$39 / $59 / $59 / $69", "or the $149 bundle"),
+            ("Pro Bots ($39-$149) or", "25 Agent Packs ($35-$349)"),
             ("README, SYSTEM.md,", "setup_workspace.py, mcp.json"),
             ("python3 setup_workspace.py", "--domain yoursite.com"),
         ],
         "actions": [
-            "Choosing a Pro Bot ($39 / $59 / $59 / $69) or the $149 4-bot bundle",
+            "Choosing a Pro Bot ($39-$149) or 25 Pre-Trained AI Agent Packs ($35/$119/$199/$299/$349)",
             "Unzipping README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, and mcp.json",
             "Running python3 setup_workspace.py --domain yoursite.com",
         ],

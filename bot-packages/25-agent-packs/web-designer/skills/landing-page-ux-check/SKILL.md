@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/check_landing_page_ux.py --help
+python3 scripts/check_landing_page_ux.py --self-test
 python3 scripts/check_landing_page_ux.py --dry-run
 ```
 
@@ -76,8 +77,10 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 ## Routines
 
 - `page-check` at `0 14 * * 3`: Landing page UX check
+- `monday-mobile-viewport-audit` at `0 10 * * 1`: Monday 360px/390px mobile overflow audit
+- `friday-cta-contrast-review` at `0 15 * * 5`: Friday above-the-fold CTA & contrast check
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

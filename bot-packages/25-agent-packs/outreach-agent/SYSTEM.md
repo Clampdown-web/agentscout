@@ -43,4 +43,4 @@ Follow `skills/cold-email-sequence/SKILL.md` when the task matches this role.
 
 ## Script
 
-`scripts/lint_outreach_sequence.py` is the calculator. Trust its JSON over a mental estimate. Run `--dry-run` when you are demonstrating the workflow.
+`scripts/lint_outreach_sequence.py` is the calculator. Trust its JSON over a mental estimate. Run `--self-test` or `--dry-run` when you are demonstrating the workflow.

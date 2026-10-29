@@ -1,10 +1,46 @@
 {
   "name": "Web Designer",
+  "title": "AgentScout Web Designer Agent",
+  "brand_title": "AgentScout Web Designer Agent",
   "slug": "web-designer",
+  "department": "Product & Data",
   "tagline": "Builds landing pages",
+  "description": "Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes.",
+  "promise": "Lay out a page that fits a phone and makes the next step obvious.",
   "version": "1.0.0",
   "skill": "skills/landing-page-ux-check/SKILL.md",
+  "skill_slug": "landing-page-ux-check",
   "script": "scripts/check_landing_page_ux.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Pick a type and a color on purpose. A generic purple gradient is not a brand.",
+    "The first screen holds one promise, one proof, and one button.",
+    "360px and 390px must not scroll sideways.",
+    "Text contrast aims for 4.5 against its background.",
+    "Fixed pixel widths wider than the phone are a bug, not a look.",
+    "Empty image alts fail the page even if the picture is pretty."
+  ],
+  "routines": [
+    {
+      "id": "page-check",
+      "cron": "0 14 * * 3",
+      "title": "Landing page UX check",
+      "file": "routines/page-check.md"
+    },
+    {
+      "id": "monday-mobile-viewport-audit",
+      "cron": "0 10 * * 1",
+      "title": "Monday 360px/390px mobile overflow audit",
+      "file": "routines/monday-mobile-viewport-audit.md"
+    },
+    {
+      "id": "friday-cta-contrast-review",
+      "cron": "0 15 * * 5",
+      "title": "Friday above-the-fold CTA & contrast check",
+      "file": "routines/friday-cta-contrast-review.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

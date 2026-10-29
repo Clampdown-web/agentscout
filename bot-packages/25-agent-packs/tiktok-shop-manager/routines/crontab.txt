@@ -1,0 +1,4 @@
+# AgentScout TikTok Shop Manager Agent routines ({{YOUR_TIMEZONE}})
+0 8 * * 1-5 python3 scripts/optimize_shop_listing.py --dry-run # daily-stock: Inventory alert check
+0 11 * * 2 python3 scripts/optimize_shop_listing.py --dry-run # weekly-listing: Weekly listing audit
+0 13 * * 4 python3 scripts/optimize_shop_listing.py --dry-run # thursday-creator-commission-brief: Thursday affiliate script & commission check

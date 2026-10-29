@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/aging_ar_report.py --help
+python3 scripts/aging_ar_report.py --self-test
 python3 scripts/aging_ar_report.py --dry-run
 ```
 
@@ -77,8 +78,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `daily-dunning` at `0 9 * * 1-5`: Dunning draft queue
 - `weekly-aging` at `0 9 * * 1`: Weekly AR aging
+- `thursday-dispute-escalation-review` at `0 14 * * 4`: Thursday 30+ day & disputed invoice review
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

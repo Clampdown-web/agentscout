@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "invoice-chaser",
+    "name": "Invoice Chaser",
+    "brand_title": "AgentScout Invoice Chaser Agent",
+    "department": "Sales & Outreach",
+    "skill": "skills/ar-aging/SKILL.md",
+    "script": "scripts/aging_ar_report.py",
+    "routines": [
+      "daily-dunning",
+      "weekly-aging",
+      "thursday-dispute-escalation-review"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

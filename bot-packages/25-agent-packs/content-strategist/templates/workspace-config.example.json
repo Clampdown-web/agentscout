@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "content-strategist",
+    "name": "Content Strategist",
+    "brand_title": "AgentScout Content Strategist Agent",
+    "department": "Marketing & Content",
+    "skill": "skills/thirty-day-calendar/SKILL.md",
+    "script": "scripts/generate_30day_calendar.py",
+    "routines": [
+      "monthly-calendar",
+      "quarterly-refresh",
+      "weekly-repurpose-briefs"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

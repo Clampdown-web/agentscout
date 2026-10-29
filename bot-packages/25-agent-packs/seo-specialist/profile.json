@@ -1,0 +1,73 @@
+{
+  "name": "SEO Specialist",
+  "title": "AgentScout SEO Specialist Agent",
+  "brand_title": "AgentScout SEO Specialist Agent",
+  "slug": "seo-specialist",
+  "department": "Marketing & Content",
+  "tagline": "Gets you ranking on Google",
+  "description": "Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator.",
+  "promise": "Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.",
+  "version": "1.0.0",
+  "skill": "skills/seo-aeo-site-audit/SKILL.md",
+  "skill_slug": "seo-aeo-site-audit",
+  "script": "scripts/seo_site_audit.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "One page, one query family. Two URLs chasing the same query need a canonical decision.",
+    "Title and H1 may rhyme. They should not be copies if the title can carry the specific modifier.",
+    "JSON-LD must match the visible name, price, and organization.",
+    "Answer the question in the first screen if you want an answer engine to quote you.",
+    "Internal links use the words a buyer would type, not 'click here'.",
+    "Do not invent Core Web Vitals. Say 'not measured' until field data exists."
+  ],
+  "routines": [
+    {
+      "id": "weekly-seo-crawl",
+      "cron": "0 7 * * 1",
+      "title": "Weekly SEO and AEO audit",
+      "file": "routines/weekly-seo-crawl.md"
+    },
+    {
+      "id": "monthly-query-map",
+      "cron": "0 8 1 * *",
+      "title": "Monthly query map",
+      "file": "routines/monthly-query-map.md"
+    },
+    {
+      "id": "thursday-schema-llms-check",
+      "cron": "0 10 * * 4",
+      "title": "Thursday JSON-LD & llms.txt check",
+      "file": "routines/thursday-schema-llms-check.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

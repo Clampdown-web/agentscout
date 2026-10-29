@@ -327,7 +327,7 @@ def pages(t):
                 "url": canon,
                 "author": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                 "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
-                "offers": {"@type": "AggregateOffer", "lowPrice": "39.00", "highPrice": "149.00", "priceCurrency": "USD", "offerCount": 30}
+                "offers": {"@type": "AggregateOffer", "lowPrice": "35.00", "highPrice": "349.00", "priceCurrency": "USD", "offerCount": 34}
             },
             {
                 "@type": "FAQPage",
@@ -358,3 +358,7 @@ def pages(t):
     import build_openapi
     build_openapi.sync_products_snapshot()
     return [canon] + pack_urls
+
+
+if __name__ == "__main__":
+    pages([])

@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "social-media-manager",
+    "name": "Social Media Manager",
+    "brand_title": "AgentScout Social Media Manager Agent",
+    "department": "Marketing & Content",
+    "skill": "skills/social-hook-desk/SKILL.md",
+    "script": "scripts/score_social_hooks.py",
+    "routines": [
+      "daily-hooks",
+      "weekly-calendar",
+      "midweek-comment-pillar-review"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

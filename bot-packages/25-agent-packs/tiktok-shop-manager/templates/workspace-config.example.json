@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "tiktok-shop-manager",
+    "name": "TikTok Shop Manager",
+    "brand_title": "AgentScout TikTok Shop Manager Agent",
+    "department": "Marketing & Content",
+    "skill": "skills/shop-listing-optimizer/SKILL.md",
+    "script": "scripts/optimize_shop_listing.py",
+    "routines": [
+      "daily-stock",
+      "weekly-listing",
+      "thursday-creator-commission-brief"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

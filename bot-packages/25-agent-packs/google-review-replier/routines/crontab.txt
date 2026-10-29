@@ -1,0 +1,4 @@
+# AgentScout Google Review Replier Agent routines ({{YOUR_TIMEZONE}})
+0 9 * * * python3 scripts/generate_review_replies.py --dry-run # daily-review-drafts: Daily review replies
+0 10 1 * * python3 scripts/generate_review_replies.py --dry-run # monthly-themes: Monthly review themes
+0 15 * * 5 python3 scripts/generate_review_replies.py --dry-run # friday-escalation-check: Weekly P0 complaint & SLA check

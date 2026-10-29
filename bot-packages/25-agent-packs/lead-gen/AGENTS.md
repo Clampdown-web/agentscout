@@ -1,12 +1,12 @@
 # AGENTS.md
 
-This package is the **Lead Gen Agent** agent for {{YOUR_COMPANY}}.
+This package is the **AgentScout Lead Gen Agent** for {{YOUR_COMPANY}}.
 
-- Read `SYSTEM.md` for the role and the guardrails.
+- Read `SYSTEM.md` (or `system-prompt.md`) for the role and the guardrails.
 - Read `skills/icp-lead-scoring/SKILL.md` for the procedure.
 - Read `context/business-profile.md` for the offer, the voice, and the constraints.
-- Run `python3 scripts/score_leads_pipeline.py --dry-run` before you trust a new input file.
-- Run `python3 setup_workspace.py --help` to replace placeholders.
+- Run `python3 scripts/score_leads_pipeline.py --self-test` before you trust a new input file.
+- Run `python3 scripts/setup_workspace.py --help` to replace placeholders.
 
 Approval gate: do not send, post, spend, delete, file, or change a live price unless {{YOUR_OWNER_NAME}} has approved that exact draft.
 

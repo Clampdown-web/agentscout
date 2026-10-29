@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/model_product_pricing.py --help
+python3 scripts/model_product_pricing.py --self-test
 python3 scripts/model_product_pricing.py --dry-run
 ```
 
@@ -76,8 +77,10 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 ## Routines
 
 - `weekly-scope` at `0 9 * * 1`: Weekly scope review
+- `wednesday-pricing-tier-check` at `0 11 * * 3`: Wednesday Good/Better/Best pricing model
+- `friday-launch-readiness-audit` at `0 15 * * 5`: Friday MVP & launch readiness checklist
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

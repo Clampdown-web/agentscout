@@ -1,0 +1,73 @@
+{
+  "name": "Content Strategist",
+  "title": "AgentScout Content Strategist Agent",
+  "brand_title": "AgentScout Content Strategist Agent",
+  "slug": "content-strategist",
+  "department": "Marketing & Content",
+  "tagline": "Plans 30 days of content",
+  "description": "Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets.",
+  "promise": "Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces.",
+  "version": "1.0.0",
+  "skill": "skills/thirty-day-calendar/SKILL.md",
+  "skill_slug": "thirty-day-calendar",
+  "script": "scripts/generate_30day_calendar.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "A pillar owns a cluster. Random topics do not compound.",
+    "Map each piece to a buyer stage so the month is not all 'buy now'.",
+    "Ready-to-buy stays the minority.",
+    "Repurpose after the source piece is good, not before.",
+    "Refresh a page that already earns traffic before you start a cousin URL.",
+    "A brief names the query, the outline, the sources, and the internal links."
+  ],
+  "routines": [
+    {
+      "id": "monthly-calendar",
+      "cron": "0 10 1 * *",
+      "title": "30-day calendar",
+      "file": "routines/monthly-calendar.md"
+    },
+    {
+      "id": "quarterly-refresh",
+      "cron": "0 10 1 1,4,7,10 *",
+      "title": "Decay and refresh list",
+      "file": "routines/quarterly-refresh.md"
+    },
+    {
+      "id": "weekly-repurpose-briefs",
+      "cron": "0 10 * * 1",
+      "title": "Weekly pillar brief & 1-to-4 repurpose plan",
+      "file": "routines/weekly-repurpose-briefs.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Content Strategist",
+  "brand_title": "AgentScout Content Strategist Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "monthly-calendar",
@@ -9,7 +11,8 @@
       "title": "30-day calendar",
       "prompt": "Draft next month's calendar for {{YOUR_COMPANY}}. Do not publish. Follow skills/thirty-day-calendar/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/generate_30day_calendar.py"
+      "script": "scripts/generate_30day_calendar.py",
+      "markdown": "routines/monthly-calendar.md"
     },
     {
       "id": "quarterly-refresh",
@@ -17,7 +20,17 @@
       "title": "Decay and refresh list",
       "prompt": "List URLs that should be updated before new topics are added. Follow skills/thirty-day-calendar/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/generate_30day_calendar.py"
+      "script": "scripts/generate_30day_calendar.py",
+      "markdown": "routines/quarterly-refresh.md"
+    },
+    {
+      "id": "weekly-repurpose-briefs",
+      "cron": "0 10 * * 1",
+      "title": "Weekly pillar brief & 1-to-4 repurpose plan",
+      "prompt": "Turn this week's priority pillar topic for {{YOUR_COMPANY}} into an outline, email angle, short video beat, and FAQ block. Follow skills/thirty-day-calendar/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_30day_calendar.py",
+      "markdown": "routines/weekly-repurpose-briefs.md"
     }
   ]
 }

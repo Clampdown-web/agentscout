@@ -1,0 +1,4 @@
+# AgentScout Community Manager Agent routines ({{YOUR_TIMEZONE}})
+0 10 * * 1-5 python3 scripts/community_health_score.py --dry-run # daily-community: Daily community draft
+0 15 * * 5 python3 scripts/community_health_score.py --dry-run # weekly-digest: Weekly engagement digest
+0 9 * * 1 python3 scripts/community_health_score.py --dry-run # monday-new-member-onboarding: Monday new-member welcome & FAQ check

@@ -1,0 +1,73 @@
+{
+  "name": "Email Marketer",
+  "title": "AgentScout Email Marketer Agent",
+  "brand_title": "AgentScout Email Marketer Agent",
+  "slug": "email-marketer",
+  "department": "Marketing & Content",
+  "tagline": "Newsletters that sell",
+  "description": "Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send.",
+  "promise": "Shape a weekly issue, score the subject and preview, and keep the list clean.",
+  "version": "1.0.0",
+  "skill": "skills/newsletter-issue-score/SKILL.md",
+  "skill_slug": "newsletter-issue-score",
+  "script": "scripts/score_newsletter_issue.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "One story per issue. A second offer belongs next week.",
+    "The preview text finishes the subject. It does not repeat it.",
+    "Write the plain-text twin with the same links.",
+    "Segment by behavior you measured, not by a persona you like.",
+    "A win-back is one honest note to quiet readers, then a sunset.",
+    "Unsubscribe is a feature. Hide it and you buy complaints."
+  ],
+  "routines": [
+    {
+      "id": "weekly-issue",
+      "cron": "0 9 * * 2",
+      "title": "Weekly newsletter draft",
+      "file": "routines/weekly-issue.md"
+    },
+    {
+      "id": "monthly-hygiene",
+      "cron": "0 9 1 * *",
+      "title": "List hygiene note",
+      "file": "routines/monthly-hygiene.md"
+    },
+    {
+      "id": "thursday-subject-ab-score",
+      "cron": "0 11 * * 4",
+      "title": "Thursday subject & preview A/B check",
+      "file": "routines/thursday-subject-ab-score.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

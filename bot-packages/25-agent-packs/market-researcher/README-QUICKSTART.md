@@ -1,39 +1,48 @@
-# Market Researcher quick start
+# AgentScout Market Researcher Agent — Quick Start
 
 Built by AgentScout
 
-![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+![AgentScout wordmark](assets/logo-wordmark-dark.svg)
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Compare a competitor on price and features with a source URL and a date on every claim.
+Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Compare a competitor on price and features with a source URL and a date on every claim.
 
 ## 1. Fill the profile
 
-Edit `context/business-profile.md`. Then run:
+Edit `context/business-profile.md` or `templates/workspace-config.example.json`. Then run:
 
 ```bash
-python3 setup_workspace.py --help
-python3 setup_workspace.py --dry-run
+python3 scripts/setup_workspace.py --help
+python3 scripts/setup_workspace.py --self-test
 ```
 
-Add `--apply` with `--company`, `--domain`, `--support-email`, `--owner-name`, and optionally `--mcp-url` when you are ready to replace placeholders.
+Add `--apply` with `--company "{{YOUR_COMPANY}}"`, `--domain "{{YOUR_DOMAIN}}"`, `--support-email "{{YOUR_SUPPORT_EMAIL}}"`, `--owner-name "{{YOUR_OWNER_NAME}}"`, and optionally `--mcp-url "{{YOUR_MCP_SERVER_URL}}"` when you are ready to replace placeholders across the package.
 
 ## 2. Prove the script
 
 ```bash
 python3 scripts/competitor_diff_check.py --help
+python3 scripts/competitor_diff_check.py --self-test
 python3 scripts/competitor_diff_check.py --dry-run
 ```
 
-Both commands exit 0. `--dry-run` prints a JSON report from built-in sample rows.
+All commands exit 0. `--self-test` and `--dry-run` print a JSON report from built-in sample rows with zero network calls and zero telemetry.
 
-## 3. Load the skill
+## 3. Scheduled Routines Included (3 Cron Routines)
+
+| Routine ID | Cron Schedule (`{{YOUR_TIMEZONE}}`) | Title |
+| --- | --- | --- |
+| `weekly-diff` | `0 9 * * 1` | Weekly competitor diff |
+| `thursday-pricing-battlecard-check` | `0 11 * * 4` | Thursday pricing & feature matrix check |
+| `monthly-review-pain-mining` | `0 10 1 * *` | Monthly competitor review & launch digest |
+
+## 4. Load the skill
 
 | Platform | What to open |
 | --- | --- |
-| Grok Bot | `SYSTEM.md`, `skills/competitor-diff/SKILL.md`, `routines/routines.json` |
-| Claude Code | `CLAUDE.md` and the skill file |
+| Grok Bot | `system-prompt.md` (`SYSTEM.md`), `skills/competitor-diff/SKILL.md`, `routines/routines.json` |
+| Claude Code | `CLAUDE.md` and `skills/competitor-diff/SKILL.md` |
 | Cursor | `.cursorrules` and `AGENTS.md` |
 | OpenAI Codex | `AGENTS.md` |
 | Windsurf | `AGENTS.md` |
@@ -41,6 +50,6 @@ Both commands exit 0. `--dry-run` prints a JSON report from built-in sample rows
 | GitHub Copilot | `AGENTS.md` |
 | Lovable | Upload the ZIP under Workspace settings → Skills → Add → Upload ZIP. `LOVABLE.md` is the workspace note. |
 
-## 4. Approval
+## 5. Approval Gate
 
 Nothing in this package sends email, posts, spends, deletes, or files. {{YOUR_OWNER_NAME}} does that after reading the draft.

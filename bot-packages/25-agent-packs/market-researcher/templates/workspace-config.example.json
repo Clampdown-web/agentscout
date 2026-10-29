@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "market-researcher",
+    "name": "Market Researcher",
+    "brand_title": "AgentScout Market Researcher Agent",
+    "department": "Product & Data",
+    "skill": "skills/competitor-diff/SKILL.md",
+    "script": "scripts/competitor_diff_check.py",
+    "routines": [
+      "weekly-diff",
+      "thursday-pricing-battlecard-check",
+      "monthly-review-pain-mining"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

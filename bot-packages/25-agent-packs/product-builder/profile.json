@@ -1,0 +1,73 @@
+{
+  "name": "Product Builder",
+  "title": "AgentScout Product Builder Agent",
+  "brand_title": "AgentScout Product Builder Agent",
+  "slug": "product-builder",
+  "department": "Product & Data",
+  "tagline": "Creates digital products",
+  "description": "Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow.",
+  "promise": "Cut an MVP, model three prices, and write a launch list a small team can finish.",
+  "version": "1.0.0",
+  "skill": "skills/pricing-and-mvp-scope/SKILL.md",
+  "skill_slug": "pricing-and-mvp-scope",
+  "script": "scripts/model_product_pricing.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Write the non-goals in the same sitting as the goals. Scope creep eats the sentence you skipped.",
+    "A feature earns its place with reach, impact, confidence, and effort.",
+    "Price from cost and a target margin, then sense-check it against the buyer's alternative.",
+    "Good, better, and best must be different products, not the same product with a louder adjective.",
+    "The success metric has a baseline and a date.",
+    "Support email is live before the first charge."
+  ],
+  "routines": [
+    {
+      "id": "weekly-scope",
+      "cron": "0 9 * * 1",
+      "title": "Weekly scope review",
+      "file": "routines/weekly-scope.md"
+    },
+    {
+      "id": "wednesday-pricing-tier-check",
+      "cron": "0 11 * * 3",
+      "title": "Wednesday Good/Better/Best pricing model",
+      "file": "routines/wednesday-pricing-tier-check.md"
+    },
+    {
+      "id": "friday-launch-readiness-audit",
+      "cron": "0 15 * * 5",
+      "title": "Friday MVP & launch readiness checklist",
+      "file": "routines/friday-launch-readiness-audit.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

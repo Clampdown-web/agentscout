@@ -1,10 +1,46 @@
 {
   "name": "Market Researcher",
+  "title": "AgentScout Market Researcher Agent",
+  "brand_title": "AgentScout Market Researcher Agent",
   "slug": "market-researcher",
+  "department": "Product & Data",
   "tagline": "Tracks your competitors",
+  "description": "Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims.",
+  "promise": "Compare a competitor on price and features with a source URL and a date on every claim.",
   "version": "1.0.0",
   "skill": "skills/competitor-diff/SKILL.md",
+  "skill_slug": "competitor-diff",
   "script": "scripts/competitor_diff_check.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "No source URL, no claim. A memory of a pricing page is not a source.",
+    "Date the snapshot. A price from last quarter is history, not their offer.",
+    "Diff features as a set. Marketing adjectives are not features.",
+    "If they are cheaper, say who that plan is for.",
+    "Review mining quotes the review. It does not launder it into your voice.",
+    "A launch is a dated change, not a rumor in a chat."
+  ],
+  "routines": [
+    {
+      "id": "weekly-diff",
+      "cron": "0 9 * * 1",
+      "title": "Weekly competitor diff",
+      "file": "routines/weekly-diff.md"
+    },
+    {
+      "id": "thursday-pricing-battlecard-check",
+      "cron": "0 11 * * 4",
+      "title": "Thursday pricing & feature matrix check",
+      "file": "routines/thursday-pricing-battlecard-check.md"
+    },
+    {
+      "id": "monthly-review-pain-mining",
+      "cron": "0 10 1 * *",
+      "title": "Monthly competitor review & launch digest",
+      "file": "routines/monthly-review-pain-mining.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

@@ -1,10 +1,46 @@
 {
   "name": "Appointment Setter",
+  "title": "AgentScout Appointment Setter Agent",
+  "brand_title": "AgentScout Appointment Setter Agent",
   "slug": "appointment-setter",
+  "department": "Sales & Outreach",
   "tagline": "Books calls on your calendar",
+  "description": "Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script.",
+  "promise": "Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller.",
   "version": "1.0.0",
   "skill": "skills/call-briefing-slots/SKILL.md",
+  "skill_slug": "call-briefing-slots",
   "script": "scripts/build_call_briefing.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Answer a new lead inside five minutes while the context is still warm.",
+    "Qualify before you offer the calendar. A meeting with no problem is a courtesy, not a pipeline.",
+    "Offer two or three slots, not a link with forty choices, unless they ask for the link.",
+    "Show times in their zone and repeat the zone name in the sentence.",
+    "Remind at 24 hours and 1 hour. One reschedule note after a no-show, then stop.",
+    "Leave buffer between calls so the briefing can be read."
+  ],
+  "routines": [
+    {
+      "id": "reminder-sweep",
+      "cron": "0 8 * * *",
+      "title": "Reminder and no-show sweep",
+      "file": "routines/reminder-sweep.md"
+    },
+    {
+      "id": "weekday-inbound-slots",
+      "cron": "0 9,14 * * 1-5",
+      "title": "Inbound lead qualification & slot prep",
+      "file": "routines/weekday-inbound-slots.md"
+    },
+    {
+      "id": "friday-booking-conversion-review",
+      "cron": "0 16 * * 5",
+      "title": "Weekly show-rate & briefing review",
+      "file": "routines/friday-booking-conversion-review.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Graphic Designer",
+  "brand_title": "AgentScout Graphic Designer Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "weekly-asset-batch",
@@ -9,7 +11,26 @@
       "title": "Weekly social asset batch",
       "prompt": "Produce this week's card specs for {{YOUR_COMPANY}} from the approved brand tokens. Draft only. Do not publish. Follow skills/brand-card-system/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/generate_brand_card_spec.py"
+      "script": "scripts/generate_brand_card_spec.py",
+      "markdown": "routines/weekly-asset-batch.md"
+    },
+    {
+      "id": "ad-creative-spec-pass",
+      "cron": "0 10 * * 4",
+      "title": "Thursday ad creative spec pass",
+      "prompt": "Generate multi-ratio ad creative specs (1:1, 9:16, 1.91:1) and contrast checks for {{YOUR_COMPANY}}. Draft only. Follow skills/brand-card-system/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_brand_card_spec.py",
+      "markdown": "routines/ad-creative-spec-pass.md"
+    },
+    {
+      "id": "monthly-brand-consistency-audit",
+      "cron": "0 11 1 * *",
+      "title": "Monthly brand token & contrast audit",
+      "prompt": "Audit recent visual assets and thumbnails against {{YOUR_COMPANY}} hex tokens and 4.5:1 contrast rules. Report only. Follow skills/brand-card-system/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_brand_card_spec.py",
+      "markdown": "routines/monthly-brand-consistency-audit.md"
     }
   ]
 }

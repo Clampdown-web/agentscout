@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/score_newsletter_issue.py --help
+python3 scripts/score_newsletter_issue.py --self-test
 python3 scripts/score_newsletter_issue.py --dry-run
 ```
 
@@ -77,8 +78,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `weekly-issue` at `0 9 * * 2`: Weekly newsletter draft
 - `monthly-hygiene` at `0 9 1 * *`: List hygiene note
+- `thursday-subject-ab-score` at `0 11 * * 4`: Thursday subject & preview A/B check
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

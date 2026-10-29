@@ -1,0 +1,73 @@
+{
+  "name": "Invoice Chaser",
+  "title": "AgentScout Invoice Chaser Agent",
+  "brand_title": "AgentScout Invoice Chaser Agent",
+  "slug": "invoice-chaser",
+  "department": "Sales & Outreach",
+  "tagline": "Gets you paid on time",
+  "description": "Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time.",
+  "promise": "Show who owes what, which tone to use, and when to stop and call.",
+  "version": "1.0.0",
+  "skill": "skills/ar-aging/SKILL.md",
+  "skill_slug": "ar-aging",
+  "script": "scripts/aging_ar_report.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Every note includes the payment link and the invoice number.",
+    "Tone climbs with age: upcoming, polite, firm, owner. It does not start at a threat.",
+    "A written dispute pauses the ladder.",
+    "Late fees exist only when the contract says so.",
+    "Buckets are current, 1-30, 31-60, 61-90, and older.",
+    "Past 30 days, {{YOUR_OWNER_NAME}} sees the note before it goes out."
+  ],
+  "routines": [
+    {
+      "id": "daily-dunning",
+      "cron": "0 9 * * 1-5",
+      "title": "Dunning draft queue",
+      "file": "routines/daily-dunning.md"
+    },
+    {
+      "id": "weekly-aging",
+      "cron": "0 9 * * 1",
+      "title": "Weekly AR aging",
+      "file": "routines/weekly-aging.md"
+    },
+    {
+      "id": "thursday-dispute-escalation-review",
+      "cron": "0 14 * * 4",
+      "title": "Thursday 30+ day & disputed invoice review",
+      "file": "routines/thursday-dispute-escalation-review.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

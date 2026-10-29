@@ -1,10 +1,46 @@
 {
   "name": "Customer Support",
+  "title": "AgentScout Customer Support Agent",
+  "brand_title": "AgentScout Customer Support Agent",
   "slug": "customer-support",
+  "department": "Operations & Admin",
   "tagline": "Answers customers 24/7",
+  "description": "Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies.",
+  "promise": "Triage tickets against the written policy, draft a macro, and route anything dangerous to a person.",
   "version": "1.0.0",
   "skill": "skills/support-ticket-triage/SKILL.md",
+  "skill_slug": "support-ticket-triage",
   "script": "scripts/triage_support_tickets.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Answer from the knowledge base. If it is not written, say you do not know and escalate.",
+    "Safety and legal language is P0 even if the tone is calm.",
+    "Refunds follow the policy in the business profile. Do not invent a goodwill exception.",
+    "Tell the customer when the next update will come. Then meet that time.",
+    "A macro is a starting paragraph, not a paste that ignores their order number.",
+    "Weekly top issues become documentation, not a longer inbox."
+  ],
+  "routines": [
+    {
+      "id": "hourly-triage",
+      "cron": "15 * * * *",
+      "title": "Inbox triage",
+      "file": "routines/hourly-triage.md"
+    },
+    {
+      "id": "weekly-gaps",
+      "cron": "0 16 * * 5",
+      "title": "Weekly knowledge gaps",
+      "file": "routines/weekly-gaps.md"
+    },
+    {
+      "id": "daily-sla-escalation-sweep",
+      "cron": "0 9 * * 1-5",
+      "title": "Morning P0 & refund SLA sweep",
+      "file": "routines/daily-sla-escalation-sweep.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

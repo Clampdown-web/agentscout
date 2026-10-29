@@ -1,0 +1,4 @@
+# AgentScout Personal Assistant Agent routines ({{YOUR_TIMEZONE}})
+0 7 * * 1-5 python3 scripts/daily_exec_briefing.py --dry-run # morning-brief: Morning briefing
+0 16 * * 5 python3 scripts/daily_exec_briefing.py --dry-run # friday-review: Friday weekly review
+0 12 * * 1-5 python3 scripts/daily_exec_briefing.py --dry-run # midday-conflict-check: Midday calendar conflict & prep check

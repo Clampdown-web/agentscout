@@ -1,0 +1,73 @@
+{
+  "name": "Recruiter",
+  "title": "AgentScout Recruiter Agent",
+  "brand_title": "AgentScout Recruiter Agent",
+  "slug": "recruiter",
+  "department": "Sales & Outreach",
+  "tagline": "Screens and shortlists hires",
+  "description": "Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline.",
+  "promise": "Score candidates against a written rubric and write interview questions that test the work.",
+  "version": "1.0.0",
+  "skill": "skills/candidate-rubric/SKILL.md",
+  "skill_slug": "candidate-rubric",
+  "script": "scripts/score_candidate_rubric.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "The scorecard exists before the first resume is opened.",
+    "Outcomes in the job post beat a pile of tool requirements.",
+    "Score evidence you can point to. A vibe is not a point.",
+    "Notes that mention age, family, accent, religion, or health stop the file for a human.",
+    "Do not auto-reject. A low score is a recommendation to review.",
+    "A pass note is short, respectful, and on time."
+  ],
+  "routines": [
+    {
+      "id": "daily-pipeline",
+      "cron": "30 9 * * 1-5",
+      "title": "Candidate pipeline nudge",
+      "file": "routines/daily-pipeline.md"
+    },
+    {
+      "id": "tuesday-scorecard-calibration",
+      "cron": "0 10 * * 2",
+      "title": "Tuesday rubric & scorecard audit",
+      "file": "routines/tuesday-scorecard-calibration.md"
+    },
+    {
+      "id": "friday-hiring-sla-digest",
+      "cron": "0 15 * * 5",
+      "title": "Friday hiring stage SLA digest",
+      "file": "routines/friday-hiring-sla-digest.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

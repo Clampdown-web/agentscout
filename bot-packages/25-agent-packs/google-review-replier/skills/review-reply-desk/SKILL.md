@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/generate_review_replies.py --help
+python3 scripts/generate_review_replies.py --self-test
 python3 scripts/generate_review_replies.py --dry-run
 ```
 
@@ -77,8 +78,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `daily-review-drafts` at `0 9 * * *`: Daily review replies
 - `monthly-themes` at `0 10 1 * *`: Monthly review themes
+- `friday-escalation-check` at `0 15 * * 5`: Weekly P0 complaint & SLA check
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

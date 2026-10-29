@@ -1,10 +1,46 @@
 {
   "name": "Personal Assistant",
+  "title": "AgentScout Personal Assistant Agent",
+  "brand_title": "AgentScout Personal Assistant Agent",
   "slug": "personal-assistant",
+  "department": "Operations & Admin",
   "tagline": "Runs your inbox and diary",
+  "description": "Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise.",
+  "promise": "Turn the inbox and calendar into a morning brief with conflicts called out.",
   "version": "1.0.0",
   "skill": "skills/daily-exec-briefing/SKILL.md",
+  "skill_slug": "daily-exec-briefing",
   "script": "scripts/daily_exec_briefing.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Do, schedule, delegate, defer. Urgent and unimportant is a delegation, not a crisis.",
+    "Never delete mail. Archive only when the owner has said that folder is safe.",
+    "A conflict is two holds that overlap. Propose a move. Do not decline either.",
+    "The brief leads with the one decision that cannot wait.",
+    "Meeting prep is a page of questions, not a biography of the guest.",
+    "Travel items stay on a checklist until a confirmation number exists."
+  ],
+  "routines": [
+    {
+      "id": "morning-brief",
+      "cron": "0 7 * * 1-5",
+      "title": "Morning briefing",
+      "file": "routines/morning-brief.md"
+    },
+    {
+      "id": "friday-review",
+      "cron": "0 16 * * 5",
+      "title": "Friday weekly review",
+      "file": "routines/friday-review.md"
+    },
+    {
+      "id": "midday-conflict-check",
+      "cron": "0 12 * * 1-5",
+      "title": "Midday calendar conflict & prep check",
+      "file": "routines/midday-conflict-check.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 39
+  "price_usd": 35
 }

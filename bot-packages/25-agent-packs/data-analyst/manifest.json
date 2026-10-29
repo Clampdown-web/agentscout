@@ -1,10 +1,46 @@
 {
   "name": "Data Analyst",
+  "title": "AgentScout Data Analyst Agent",
+  "brand_title": "AgentScout Data Analyst Agent",
   "slug": "data-analyst",
+  "department": "Product & Data",
   "tagline": "Weekly reports and insights",
+  "description": "Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts.",
+  "promise": "Turn a KPI export into rates, a simple LTV, and a short narrative a founder can read.",
   "version": "1.0.0",
   "skill": "skills/kpi-csv-analyst/SKILL.md",
+  "skill_slug": "kpi-csv-analyst",
   "script": "scripts/analyze_kpi_csv.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Define the metric before you compute it. Name the numerator and the denominator.",
+    "Check nulls, duplicate months, and a single month that is an order of magnitude off.",
+    "An anomaly is a z-score plus a sentence, not a chart decoration.",
+    "LTV from ARPU divided by logo churn is directional. Say so.",
+    "Three bullets of 'so what' beat a gallery of charts.",
+    "If the export and the finance system disagree, stop and show both numbers."
+  ],
+  "routines": [
+    {
+      "id": "weekly-kpi",
+      "cron": "0 8 * * 1",
+      "title": "Weekly KPI narrative",
+      "file": "routines/weekly-kpi.md"
+    },
+    {
+      "id": "midweek-anomaly-scan",
+      "cron": "0 9 * * 3",
+      "title": "Midweek revenue & churn anomaly scan",
+      "file": "routines/midweek-anomaly-scan.md"
+    },
+    {
+      "id": "monthly-cohort-ltv-pack",
+      "cron": "0 9 1 * *",
+      "title": "Monthly LTV & retention summary",
+      "file": "routines/monthly-cohort-ltv-pack.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 69
+  "price_usd": 35
 }

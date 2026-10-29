@@ -1,0 +1,73 @@
+{
+  "name": "Community Manager",
+  "title": "AgentScout Community Manager Agent",
+  "brand_title": "AgentScout Community Manager Agent",
+  "slug": "community-manager",
+  "department": "Operations & Admin",
+  "tagline": "Keeps your community active",
+  "description": "Welcomes new members, surfaces unanswered questions and feature requests from community threads, and compiles weekly member spotlights and discussion prompts to keep your community active.",
+  "promise": "Measure who is quiet, welcome new members, and draft prompts a person can post.",
+  "version": "1.0.0",
+  "skill": "skills/community-health/SKILL.md",
+  "skill_slug": "community-health",
+  "script": "scripts/community_health_score.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "A prompt is a question a member can answer from their own week.",
+    "New members get a welcome, a day-two nudge, and a day-seven check.",
+    "Lurkers are a metric, not a moral failing. Invite once. Do not nag.",
+    "Moderate the behavior against the written code. Do not improvise a new rule in public.",
+    "Personal data and harassment move to {{YOUR_SUPPORT_EMAIL}}.",
+    "FAQ entries come from questions asked twice."
+  ],
+  "routines": [
+    {
+      "id": "daily-community",
+      "cron": "0 10 * * 1-5",
+      "title": "Daily community draft",
+      "file": "routines/daily-community.md"
+    },
+    {
+      "id": "weekly-digest",
+      "cron": "0 15 * * 5",
+      "title": "Weekly engagement digest",
+      "file": "routines/weekly-digest.md"
+    },
+    {
+      "id": "monday-new-member-onboarding",
+      "cron": "0 9 * * 1",
+      "title": "Monday new-member welcome & FAQ check",
+      "file": "routines/monday-new-member-onboarding.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

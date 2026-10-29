@@ -5,15 +5,24 @@
     {
       "slug": "accountant",
       "title": "Accountant",
+      "brandTitle": "AgentScout Accountant Agent",
       "tagline": "Bookkeeping and tax prep",
+      "taglineRich": "Automated bookkeeping, ledger reconciliation & tax-ready financials",
+      "description": "Reconciles your monthly bank and Stripe ledgers, categorizes expenses automatically, and flags P&L anomalies before tax season. Includes a zero-dependency ledger reconciliation script and weekly cash-flow routines.",
+      "chips": [
+        "Monthly P&L Audit",
+        "reconcile_ledger.py",
+        "Tax Prep Checklist",
+        "Zero Telemetry"
+      ],
       "dept": "ops",
       "deptLabel": "Operations & Admin",
       "color": "#60a5fa",
       "icon": "ledger",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "bookkeeping-tax-prep",
       "script": "reconcile_ledger.py",
       "promise": "Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional.",
@@ -47,15 +56,24 @@
     {
       "slug": "graphic-designer",
       "title": "Graphic Designer",
+      "brandTitle": "AgentScout Graphic Designer Agent",
       "tagline": "Ads, posts and thumbnails",
+      "taglineRich": "High-converting ad creatives, social graphics & YouTube thumbnails",
+      "description": "Generates on-brand creative briefs, layout specs, contrast-checked color palettes, and image prompts for ads, social posts, and thumbnails. Ships with an automated brand-asset linter and multi-aspect export checklist.",
+      "chips": [
+        "Ad & Thumbnail Specs",
+        "generate_brand_card_spec.py",
+        "WCAG Contrast Check",
+        "Zero Telemetry"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#f59e0b",
       "icon": "pen",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "brand-card-system",
       "script": "generate_brand_card_spec.py",
       "promise": "Turn a brand kit into layout specs and an SVG card that keeps color, type, and contrast consistent.",
@@ -72,6 +90,16 @@
           "id": "weekly-asset-batch",
           "cron": "0 10 * * 2",
           "title": "Weekly social asset batch"
+        },
+        {
+          "id": "ad-creative-spec-pass",
+          "cron": "0 10 * * 4",
+          "title": "Thursday ad creative spec pass"
+        },
+        {
+          "id": "monthly-brand-consistency-audit",
+          "cron": "0 11 1 * *",
+          "title": "Monthly brand token & contrast audit"
         }
       ],
       "storeNote": ""
@@ -79,15 +107,24 @@
     {
       "slug": "lead-gen",
       "title": "Lead Gen Agent",
+      "brandTitle": "AgentScout Lead Gen Agent",
       "tagline": "Finds qualified leads daily",
+      "taglineRich": "Daily B2B prospect discovery, ICP scoring & verified lead lists",
+      "description": "Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors.",
+      "chips": [
+        "ICP Lead Scoring",
+        "score_leads_pipeline.py",
+        "Buying Signal Watch",
+        "Zero Telemetry"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#34d399",
       "icon": "target",
-      "price": 59,
+      "price": 35,
       "stripe": "mkt",
-      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "icp-lead-scoring",
       "script": "score_leads_pipeline.py",
       "promise": "Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.",
@@ -109,6 +146,11 @@
           "id": "weekly-icp-refresh",
           "cron": "0 11 * * 5",
           "title": "Weekly ICP refresh"
+        },
+        {
+          "id": "midweek-signal-sweep",
+          "cron": "0 13 * * 3",
+          "title": "Midweek buying-signal sweep"
         }
       ],
       "storeNote": ""
@@ -116,15 +158,24 @@
     {
       "slug": "copywriter",
       "title": "Copywriter",
+      "brandTitle": "AgentScout Copywriter Agent",
       "tagline": "Captions, emails, sales pages",
+      "taglineRich": "Conversion-focused landing pages, sales emails & social hooks",
+      "description": "Writes clear, persuasive landing page hero copy, product launches, and email sequences in your brand voice without filler or AI clich\u00e9s. Includes a readability and conversion-rubric scorer.",
+      "chips": [
+        "Landing Page Copy",
+        "audit_sales_copy.py",
+        "Hook & CTA Library",
+        "Zero Telemetry"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#2dd4bf",
       "icon": "quote",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "conversion-copy-audit",
       "script": "audit_sales_copy.py",
       "promise": "Draft and edit offers with a clear problem, proof, and a single next step.",
@@ -141,6 +192,16 @@
           "id": "copy-pass",
           "cron": "0 9 * * 3",
           "title": "Midweek copy pass"
+        },
+        {
+          "id": "weekly-headline-variants",
+          "cron": "0 9 * * 1",
+          "title": "Monday headline & hook variants"
+        },
+        {
+          "id": "friday-objection-refresh",
+          "cron": "0 14 * * 5",
+          "title": "Friday customer objection refresh"
         }
       ],
       "storeNote": ""
@@ -148,15 +209,24 @@
     {
       "slug": "video-editor",
       "title": "Video Editor",
+      "brandTitle": "AgentScout Video Editor Agent",
       "tagline": "Cuts reels and shorts",
+      "taglineRich": "Short-form retention hooks, cut lists, captions & FFmpeg workflows",
+      "description": "Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker.",
+      "chips": [
+        "Shorts & Reels Cuts",
+        "format_captions_and_cuts.py",
+        "3-Second Hook Audit",
+        "Zero Telemetry"
+      ],
       "dept": "ops",
       "deptLabel": "Operations & Admin",
       "color": "#a78bfa",
       "icon": "film",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "shortform-cut-captions",
       "script": "format_captions_and_cuts.py",
       "promise": "Turn a transcript into captions, a silence cut list, and a 9:16 storyboard.",
@@ -173,6 +243,16 @@
           "id": "caption-pass",
           "cron": "0 15 * * 1-5",
           "title": "Weekday caption pass"
+        },
+        {
+          "id": "tuesday-hook-storyboard",
+          "cron": "0 11 * * 2",
+          "title": "Tuesday 3-second hook storyboard"
+        },
+        {
+          "id": "friday-repurpose-cuts",
+          "cron": "0 14 * * 5",
+          "title": "Friday long-to-short cut batch"
         }
       ],
       "storeNote": ""
@@ -180,15 +260,24 @@
     {
       "slug": "outreach-agent",
       "title": "Outreach Agent",
+      "brandTitle": "AgentScout Outreach Agent",
       "tagline": "Cold emails and follow-ups",
+      "taglineRich": "Personalized cold emails, warm follow-ups & reply triage",
+      "description": "Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules.",
+      "chips": [
+        "Cold Email Sequences",
+        "lint_outreach_sequence.py",
+        "Spam-Word Guard",
+        "Approval-First"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#22d3ee",
       "icon": "mail",
-      "price": 59,
+      "price": 35,
       "stripe": "mkt",
-      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "cold-email-sequence",
       "script": "lint_outreach_sequence.py",
       "promise": "Draft a short, specific sequence and lint it before anyone hits send.",
@@ -210,6 +299,11 @@
           "id": "reply-triage",
           "cron": "0 13,17 * * 1-5",
           "title": "Reply intent pass"
+        },
+        {
+          "id": "weekly-deliverability-lint",
+          "cron": "0 10 * * 1",
+          "title": "Weekly sequence & spam-word lint"
         }
       ],
       "storeNote": ""
@@ -217,15 +311,24 @@
     {
       "slug": "google-review-replier",
       "title": "Google Review Replier",
+      "brandTitle": "AgentScout Google Review Replier Agent",
       "tagline": "Replies to every review",
+      "taglineRich": "Fast, on-brand replies to every 5-star and critical local review",
+      "description": "Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps.",
+      "chips": [
+        "Local SEO Replies",
+        "generate_review_replies.py",
+        "Escalation Guard",
+        "Approval-First"
+      ],
       "dept": "ops",
       "deptLabel": "Operations & Admin",
       "color": "#818cf8",
       "icon": "star",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "review-reply-desk",
       "script": "generate_review_replies.py",
       "promise": "Draft a specific public reply for every review and a private path for anything serious.",
@@ -247,6 +350,11 @@
           "id": "monthly-themes",
           "cron": "0 10 1 * *",
           "title": "Monthly review themes"
+        },
+        {
+          "id": "friday-escalation-check",
+          "cron": "0 15 * * 5",
+          "title": "Weekly P0 complaint & SLA check"
         }
       ],
       "storeNote": ""
@@ -254,15 +362,24 @@
     {
       "slug": "seo-specialist",
       "title": "SEO Specialist",
+      "brandTitle": "AgentScout SEO Specialist Agent",
       "tagline": "Gets you ranking on Google",
+      "taglineRich": "Technical SEO audits, JSON-LD schema & AI-search visibility",
+      "description": "Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator.",
+      "chips": [
+        "On-Page & AEO Audit",
+        "seo_site_audit.py",
+        "JSON-LD Validator",
+        "Zero Telemetry"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#fb7185",
       "icon": "search",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "seo-aeo-site-audit",
       "script": "seo_site_audit.py",
       "promise": "Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.",
@@ -284,22 +401,36 @@
           "id": "monthly-query-map",
           "cron": "0 8 1 * *",
           "title": "Monthly query map"
+        },
+        {
+          "id": "thursday-schema-llms-check",
+          "cron": "0 10 * * 4",
+          "title": "Thursday JSON-LD & llms.txt check"
         }
       ],
-      "storeNote": "Checkout for a single SEO Specialist uses the SEO & AEO Growth Auditor payment link. The downloadable package is a general-purpose auditor for the buyer's own site."
+      "storeNote": "Single-bot checkout is $35 one-time (or bundle 5 for $119, 10 for $199, 20 for $299, or all 25 for $349). The downloadable ZIP is pre-trained for your own company with zero telemetry."
     },
     {
       "slug": "email-marketer",
       "title": "Email Marketer",
+      "brandTitle": "AgentScout Email Marketer Agent",
       "tagline": "Newsletters that sell",
+      "taglineRich": "High-open newsletters, onboarding flows & win-back campaigns",
+      "description": "Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send.",
+      "chips": [
+        "Newsletter & Drip Flows",
+        "score_newsletter_issue.py",
+        "Subject A/B Scorer",
+        "Approval-First"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#f472b6",
       "icon": "send",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "newsletter-issue-score",
       "script": "score_newsletter_issue.py",
       "promise": "Shape a weekly issue, score the subject and preview, and keep the list clean.",
@@ -321,6 +452,11 @@
           "id": "monthly-hygiene",
           "cron": "0 9 1 * *",
           "title": "List hygiene note"
+        },
+        {
+          "id": "thursday-subject-ab-score",
+          "cron": "0 11 * * 4",
+          "title": "Thursday subject & preview A/B check"
         }
       ],
       "storeNote": ""
@@ -328,15 +464,24 @@
     {
       "slug": "customer-support",
       "title": "Customer Support",
+      "brandTitle": "AgentScout Customer Support Agent",
       "tagline": "Answers customers 24/7",
+      "taglineRich": "24/7 inbox triage, instant FAQ answers & refund/escalation routing",
+      "description": "Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies.",
+      "chips": [
+        "Ticket Triage & SLA",
+        "triage_support_tickets.py",
+        "Help-Doc Grounded",
+        "Approval-First"
+      ],
       "dept": "ops",
       "deptLabel": "Operations & Admin",
       "color": "#fb923c",
       "icon": "life",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "support-ticket-triage",
       "script": "triage_support_tickets.py",
       "promise": "Triage tickets against the written policy, draft a macro, and route anything dangerous to a person.",
@@ -358,6 +503,11 @@
           "id": "weekly-gaps",
           "cron": "0 16 * * 5",
           "title": "Weekly knowledge gaps"
+        },
+        {
+          "id": "daily-sla-escalation-sweep",
+          "cron": "0 9 * * 1-5",
+          "title": "Morning P0 & refund SLA sweep"
         }
       ],
       "storeNote": ""
@@ -365,15 +515,24 @@
     {
       "slug": "appointment-setter",
       "title": "Appointment Setter",
+      "brandTitle": "AgentScout Appointment Setter Agent",
       "tagline": "Books calls on your calendar",
+      "taglineRich": "Qualifies inbound leads, proposes times & books discovery calls",
+      "description": "Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script.",
+      "chips": [
+        "Calendar Qualification",
+        "build_call_briefing.py",
+        "No-Show Reminders",
+        "Approval-First"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#38bdf8",
       "icon": "cal",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "call-briefing-slots",
       "script": "build_call_briefing.py",
       "promise": "Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller.",
@@ -390,6 +549,16 @@
           "id": "reminder-sweep",
           "cron": "0 8 * * *",
           "title": "Reminder and no-show sweep"
+        },
+        {
+          "id": "weekday-inbound-slots",
+          "cron": "0 9,14 * * 1-5",
+          "title": "Inbound lead qualification & slot prep"
+        },
+        {
+          "id": "friday-booking-conversion-review",
+          "cron": "0 16 * * 5",
+          "title": "Weekly show-rate & briefing review"
         }
       ],
       "storeNote": ""
@@ -397,15 +566,24 @@
     {
       "slug": "personal-assistant",
       "title": "Personal Assistant",
+      "brandTitle": "AgentScout Personal Assistant Agent",
       "tagline": "Runs your inbox and diary",
+      "taglineRich": "Morning inbox digest, daily priorities & meeting prep briefs",
+      "description": "Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise.",
+      "chips": [
+        "Morning Executive Brief",
+        "daily_exec_briefing.py",
+        "Meeting Dossiers",
+        "Zero Telemetry"
+      ],
       "dept": "ops",
       "deptLabel": "Operations & Admin",
       "color": "#c084fc",
       "icon": "inbox",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "daily-exec-briefing",
       "script": "daily_exec_briefing.py",
       "promise": "Turn the inbox and calendar into a morning brief with conflicts called out.",
@@ -427,22 +605,36 @@
           "id": "friday-review",
           "cron": "0 16 * * 5",
           "title": "Friday weekly review"
+        },
+        {
+          "id": "midday-conflict-check",
+          "cron": "0 12 * * 1-5",
+          "title": "Midday calendar conflict & prep check"
         }
       ],
-      "storeNote": "Checkout for a single Personal Assistant uses the Operations / Monitoring Bot payment link. The package itself runs the buyer's inbox and diary, not a monitoring product for any other company."
+      "storeNote": "Single-bot checkout is $35 one-time (or bundle 5 for $119, 10 for $199, 20 for $299, or all 25 for $349). The downloadable ZIP is pre-trained for your own company with zero telemetry."
     },
     {
       "slug": "data-analyst",
       "title": "Data Analyst",
+      "brandTitle": "AgentScout Data Analyst Agent",
       "tagline": "Weekly reports and insights",
+      "taglineRich": "Weekly KPI reports, cohort retention & revenue anomaly alerts",
+      "description": "Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts.",
+      "chips": [
+        "Weekly KPI Scorecard",
+        "analyze_kpi_csv.py",
+        "Anomaly Detection",
+        "Zero Telemetry"
+      ],
       "dept": "product",
       "deptLabel": "Product & Data",
       "color": "#4ade80",
       "icon": "chart",
-      "price": 69,
+      "price": 35,
       "stripe": "ceo",
-      "checkoutUrl": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
-      "checkoutLabel": "CEO Coordinator Bot ($69)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "kpi-csv-analyst",
       "script": "analyze_kpi_csv.py",
       "promise": "Turn a KPI export into rates, a simple LTV, and a short narrative a founder can read.",
@@ -459,6 +651,16 @@
           "id": "weekly-kpi",
           "cron": "0 8 * * 1",
           "title": "Weekly KPI narrative"
+        },
+        {
+          "id": "midweek-anomaly-scan",
+          "cron": "0 9 * * 3",
+          "title": "Midweek revenue & churn anomaly scan"
+        },
+        {
+          "id": "monthly-cohort-ltv-pack",
+          "cron": "0 9 1 * *",
+          "title": "Monthly LTV & retention summary"
         }
       ],
       "storeNote": ""
@@ -466,15 +668,24 @@
     {
       "slug": "social-media-manager",
       "title": "Social Media Manager",
+      "brandTitle": "AgentScout Social Media Manager Agent",
       "tagline": "Plans and posts every day",
+      "taglineRich": "Daily X, LinkedIn & Instagram posts with outlier hook tracking",
+      "description": "Drafts daily platform-native posts, threads, and visual callouts grounded in your product wins and top-performing industry hooks. Includes a post-velocity guard so you never step on a climbing post.",
+      "chips": [
+        "Daily Social Queue",
+        "score_social_hooks.py",
+        "Velocity Guard",
+        "Approval-First"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#34d399",
       "icon": "share",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "social-hook-desk",
       "script": "score_social_hooks.py",
       "promise": "Score hooks, format a native post, and keep a calendar the owner can approve.",
@@ -496,6 +707,11 @@
           "id": "weekly-calendar",
           "cron": "0 11 * * 5",
           "title": "Next week's calendar"
+        },
+        {
+          "id": "midweek-comment-pillar-review",
+          "cron": "0 14 * * 3",
+          "title": "Midweek comment & pillar check"
         }
       ],
       "storeNote": ""
@@ -503,15 +719,24 @@
     {
       "slug": "recruiter",
       "title": "Recruiter",
+      "brandTitle": "AgentScout Recruiter Agent",
       "tagline": "Screens and shortlists hires",
+      "taglineRich": "Candidate sourcing, resume scorecarding & structured interview kits",
+      "description": "Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline.",
+      "chips": [
+        "Resume Rubric Scorer",
+        "score_candidate_rubric.py",
+        "Interview Scorecards",
+        "Zero Telemetry"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#a78bfa",
       "icon": "users",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "candidate-rubric",
       "script": "score_candidate_rubric.py",
       "promise": "Score candidates against a written rubric and write interview questions that test the work.",
@@ -528,6 +753,16 @@
           "id": "daily-pipeline",
           "cron": "30 9 * * 1-5",
           "title": "Candidate pipeline nudge"
+        },
+        {
+          "id": "tuesday-scorecard-calibration",
+          "cron": "0 10 * * 2",
+          "title": "Tuesday rubric & scorecard audit"
+        },
+        {
+          "id": "friday-hiring-sla-digest",
+          "cron": "0 15 * * 5",
+          "title": "Friday hiring stage SLA digest"
         }
       ],
       "storeNote": ""
@@ -535,15 +770,24 @@
     {
       "slug": "web-designer",
       "title": "Web Designer",
+      "brandTitle": "AgentScout Web Designer Agent",
       "tagline": "Builds landing pages",
+      "taglineRich": "Responsive landing pages, mobile UX audits & dark/light CSS polish",
+      "description": "Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes.",
+      "chips": [
+        "Responsive UI Audit",
+        "check_landing_page_ux.py",
+        "Dark/Light Contrast",
+        "Zero Telemetry"
+      ],
       "dept": "product",
       "deptLabel": "Product & Data",
       "color": "#60a5fa",
       "icon": "layout",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "landing-page-ux-check",
       "script": "check_landing_page_ux.py",
       "promise": "Lay out a page that fits a phone and makes the next step obvious.",
@@ -560,6 +804,16 @@
           "id": "page-check",
           "cron": "0 14 * * 3",
           "title": "Landing page UX check"
+        },
+        {
+          "id": "monday-mobile-viewport-audit",
+          "cron": "0 10 * * 1",
+          "title": "Monday 360px/390px mobile overflow audit"
+        },
+        {
+          "id": "friday-cta-contrast-review",
+          "cron": "0 15 * * 5",
+          "title": "Friday above-the-fold CTA & contrast check"
         }
       ],
       "storeNote": ""
@@ -567,15 +821,24 @@
     {
       "slug": "meta-ads-agent",
       "title": "Meta Ads Agent",
+      "brandTitle": "AgentScout Meta Ads Agent",
       "tagline": "Runs and scales your ads",
+      "taglineRich": "ROAS monitoring, creative fatigue alerts & ad-angle variations",
+      "description": "Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked.",
+      "chips": [
+        "ROAS & CPA Guard",
+        "evaluate_ad_roas.py",
+        "Ad Creative Variants",
+        "Approval-First"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#fbbf24",
       "icon": "megaphone",
-      "price": 59,
+      "price": 35,
       "stripe": "mkt",
-      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "ad-roas-rules",
       "script": "evaluate_ad_roas.py",
       "promise": "Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.",
@@ -597,6 +860,11 @@
           "id": "weekly-creative",
           "cron": "0 11 * * 4",
           "title": "Weekly creative refresh"
+        },
+        {
+          "id": "monday-fatigue-utm-audit",
+          "cron": "0 9 * * 1",
+          "title": "Monday creative fatigue & UTM audit"
         }
       ],
       "storeNote": ""
@@ -604,15 +872,24 @@
     {
       "slug": "market-researcher",
       "title": "Market Researcher",
+      "brandTitle": "AgentScout Market Researcher Agent",
       "tagline": "Tracks your competitors",
+      "taglineRich": "Competitor pricing watch, launch tracking & side-by-side battlecards",
+      "description": "Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims.",
+      "chips": [
+        "Weekly Intel Sweep",
+        "competitor_diff_check.py",
+        "Sales Battlecards",
+        "Evidence-Linked"
+      ],
       "dept": "product",
       "deptLabel": "Product & Data",
       "color": "#4ade80",
       "icon": "radar",
-      "price": 59,
+      "price": 35,
       "stripe": "mkt",
-      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "competitor-diff",
       "script": "competitor_diff_check.py",
       "promise": "Compare a competitor on price and features with a source URL and a date on every claim.",
@@ -629,22 +906,41 @@
           "id": "weekly-diff",
           "cron": "0 9 * * 1",
           "title": "Weekly competitor diff"
+        },
+        {
+          "id": "thursday-pricing-battlecard-check",
+          "cron": "0 11 * * 4",
+          "title": "Thursday pricing & feature matrix check"
+        },
+        {
+          "id": "monthly-review-pain-mining",
+          "cron": "0 10 1 * *",
+          "title": "Monthly competitor review & launch digest"
         }
       ],
-      "storeNote": "Checkout for a single Market Researcher uses the Market & Launch Intel payment link. The package compares the buyer's own competitors from files they provide."
+      "storeNote": "Single-bot checkout is $35 one-time (or bundle 5 for $119, 10 for $199, 20 for $299, or all 25 for $349). The downloadable ZIP is pre-trained for your own company with zero telemetry."
     },
     {
       "slug": "content-strategist",
       "title": "Content Strategist",
+      "brandTitle": "AgentScout Content Strategist Agent",
       "tagline": "Plans 30 days of content",
+      "taglineRich": "30-day editorial calendars, topic clusters & multi-channel repurposing",
+      "description": "Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets.",
+      "chips": [
+        "30-Day Content Map",
+        "generate_30day_calendar.py",
+        "1-to-5 Repurposer",
+        "Zero Telemetry"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#f472b6",
       "icon": "stack",
-      "price": 59,
+      "price": 35,
       "stripe": "seo",
-      "checkoutUrl": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-      "checkoutLabel": "SEO & AEO Growth Auditor Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "thirty-day-calendar",
       "script": "generate_30day_calendar.py",
       "promise": "Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces.",
@@ -666,6 +962,11 @@
           "id": "quarterly-refresh",
           "cron": "0 10 1 1,4,7,10 *",
           "title": "Decay and refresh list"
+        },
+        {
+          "id": "weekly-repurpose-briefs",
+          "cron": "0 10 * * 1",
+          "title": "Weekly pillar brief & 1-to-4 repurpose plan"
         }
       ],
       "storeNote": ""
@@ -673,15 +974,24 @@
     {
       "slug": "tiktok-shop-manager",
       "title": "TikTok Shop Manager",
+      "brandTitle": "AgentScout TikTok Shop Manager Agent",
       "tagline": "Lists and promotes products",
+      "taglineRich": "Product listing optimization, creator affiliate briefs & stock alerts",
+      "description": "Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds.",
+      "chips": [
+        "Shop SEO & Scripts",
+        "optimize_shop_listing.py",
+        "Creator Briefs",
+        "Zero Telemetry"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#fb923c",
       "icon": "bag",
-      "price": 59,
+      "price": 35,
       "stripe": "mkt",
-      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "shop-listing-optimizer",
       "script": "optimize_shop_listing.py",
       "promise": "Tighten a product listing, estimate creator commission, and brief a shoppable video.",
@@ -703,6 +1013,11 @@
           "id": "weekly-listing",
           "cron": "0 11 * * 2",
           "title": "Weekly listing audit"
+        },
+        {
+          "id": "thursday-creator-commission-brief",
+          "cron": "0 13 * * 4",
+          "title": "Thursday affiliate script & commission check"
         }
       ],
       "storeNote": ""
@@ -710,15 +1025,24 @@
     {
       "slug": "influencer-scout",
       "title": "Influencer Scout",
+      "brandTitle": "AgentScout Influencer Scout Agent",
       "tagline": "Finds creators to work with",
+      "taglineRich": "Creator discovery, engagement-rate vetting & sponsorship ROI tracking",
+      "description": "Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links.",
+      "chips": [
+        "Creator ROI Vetting",
+        "calculate_creator_roi.py",
+        "Sponsor Outreach",
+        "Approval-First"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#818cf8",
       "icon": "spark",
-      "price": 59,
+      "price": 35,
       "stripe": "mkt",
-      "checkoutUrl": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-      "checkoutLabel": "Market & Launch Intel Bot ($59)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "creator-roi",
       "script": "calculate_creator_roi.py",
       "promise": "Shortlist creators with an engagement check, a cost estimate, and a brief a person can send.",
@@ -735,6 +1059,16 @@
           "id": "weekly-shortlist",
           "cron": "0 10 * * 3",
           "title": "Weekly creator shortlist"
+        },
+        {
+          "id": "monday-engagement-vetting",
+          "cron": "0 10 * * 1",
+          "title": "Monday engagement & CPM anomaly check"
+        },
+        {
+          "id": "friday-deal-roi-tracker",
+          "cron": "0 14 * * 5",
+          "title": "Friday creator brief & forecasted ROI check"
         }
       ],
       "storeNote": ""
@@ -742,15 +1076,24 @@
     {
       "slug": "invoice-chaser",
       "title": "Invoice Chaser",
+      "brandTitle": "AgentScout Invoice Chaser Agent",
       "tagline": "Gets you paid on time",
+      "taglineRich": "Polite, automated overdue invoice reminders & AR aging reports",
+      "description": "Tracks unpaid invoices by aging bucket (3, 7, 14, and 30+ days past due) and drafts polite, relationship-safe payment reminders with direct checkout links so you get paid on time.",
+      "chips": [
+        "AR Aging Tracker",
+        "aging_ar_report.py",
+        "Polite Follow-Ups",
+        "Approval-First"
+      ],
       "dept": "sales",
       "deptLabel": "Sales & Outreach",
       "color": "#f59e0b",
       "icon": "coin",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "ar-aging",
       "script": "aging_ar_report.py",
       "promise": "Show who owes what, which tone to use, and when to stop and call.",
@@ -772,6 +1115,11 @@
           "id": "weekly-aging",
           "cron": "0 9 * * 1",
           "title": "Weekly AR aging"
+        },
+        {
+          "id": "thursday-dispute-escalation-review",
+          "cron": "0 14 * * 4",
+          "title": "Thursday 30+ day & disputed invoice review"
         }
       ],
       "storeNote": ""
@@ -779,15 +1127,24 @@
     {
       "slug": "product-builder",
       "title": "Product Builder",
+      "brandTitle": "AgentScout Product Builder Agent",
       "tagline": "Creates digital products",
+      "taglineRich": "PRDs, user stories, release checklists & feedback prioritization",
+      "description": "Turns rough feature ideas and customer requests into scoped PRDs with acceptance criteria, RICE priority scores, QA checklists, and clean changelog notes for your engineering workflow.",
+      "chips": [
+        "PRD & RICE Scorer",
+        "model_product_pricing.py",
+        "Release QA Checklist",
+        "Zero Telemetry"
+      ],
       "dept": "product",
       "deptLabel": "Product & Data",
       "color": "#a3e635",
       "icon": "box",
-      "price": 69,
+      "price": 35,
       "stripe": "ceo",
-      "checkoutUrl": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
-      "checkoutLabel": "CEO Coordinator Bot ($69)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "pricing-and-mvp-scope",
       "script": "model_product_pricing.py",
       "promise": "Cut an MVP, model three prices, and write a launch list a small team can finish.",
@@ -804,22 +1161,41 @@
           "id": "weekly-scope",
           "cron": "0 9 * * 1",
           "title": "Weekly scope review"
+        },
+        {
+          "id": "wednesday-pricing-tier-check",
+          "cron": "0 11 * * 3",
+          "title": "Wednesday Good/Better/Best pricing model"
+        },
+        {
+          "id": "friday-launch-readiness-audit",
+          "cron": "0 15 * * 5",
+          "title": "Friday MVP & launch readiness checklist"
         }
       ],
-      "storeNote": "Checkout for a single Product Builder uses the CEO Coordinator payment link. The package scopes the buyer's own product."
+      "storeNote": "Single-bot checkout is $35 one-time (or bundle 5 for $119, 10 for $199, 20 for $299, or all 25 for $349). The downloadable ZIP is pre-trained for your own company with zero telemetry."
     },
     {
       "slug": "community-manager",
       "title": "Community Manager",
+      "brandTitle": "AgentScout Community Manager Agent",
       "tagline": "Keeps your community active",
+      "taglineRich": "Discord, Slack & forum engagement, member onboarding & FAQ digests",
+      "description": "Welcomes new members, surfaces unanswered questions and feature requests from community threads, and compiles weekly member spotlights and discussion prompts to keep your community active.",
+      "chips": [
+        "Community Pulse Digest",
+        "community_health_score.py",
+        "Member Onboarding",
+        "Approval-First"
+      ],
       "dept": "ops",
       "deptLabel": "Operations & Admin",
       "color": "#34d399",
       "icon": "chat",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "community-health",
       "script": "community_health_score.py",
       "promise": "Measure who is quiet, welcome new members, and draft prompts a person can post.",
@@ -841,6 +1217,11 @@
           "id": "weekly-digest",
           "cron": "0 15 * * 5",
           "title": "Weekly engagement digest"
+        },
+        {
+          "id": "monday-new-member-onboarding",
+          "cron": "0 9 * * 1",
+          "title": "Monday new-member welcome & FAQ check"
         }
       ],
       "storeNote": ""
@@ -848,15 +1229,24 @@
     {
       "slug": "translator",
       "title": "Translator",
+      "brandTitle": "AgentScout Translator Agent",
       "tagline": "Any language, instantly",
+      "taglineRich": "Context-aware localization for UI strings, docs & marketing copy",
+      "description": "Localizes web pages, JSON language files, help articles, and ad copy across major languages while preserving code placeholders ({{var}}), brand glossary terms, and native phrasing.",
+      "chips": [
+        "Glossary-Safe i18n",
+        "verify_i18n_keys.py",
+        "Placeholder Guard",
+        "Zero Telemetry"
+      ],
       "dept": "marketing",
       "deptLabel": "Marketing & Content",
       "color": "#c084fc",
       "icon": "lang",
-      "price": 39,
+      "price": 35,
       "stripe": "ops",
-      "checkoutUrl": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-      "checkoutLabel": "Operations / Monitoring Bot ($39)",
+      "checkoutUrl": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+      "checkoutLabel": "1 AI Agent Pack ($35)",
       "skill": "i18n-key-parity",
       "script": "verify_i18n_keys.py",
       "promise": "Keep translations aligned to a glossary and prove the keys and placeholders still match.",
@@ -873,6 +1263,16 @@
           "id": "locale-parity",
           "cron": "0 9 * * 1",
           "title": "Weekly locale parity"
+        },
+        {
+          "id": "wednesday-placeholder-glossary-check",
+          "cron": "0 10 * * 3",
+          "title": "Midweek placeholder & glossary audit"
+        },
+        {
+          "id": "friday-overflow-legal-flag",
+          "cron": "0 14 * * 5",
+          "title": "Friday UI length & legal/pricing string review"
         }
       ],
       "storeNote": ""

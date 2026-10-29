@@ -1,0 +1,73 @@
+{
+  "name": "TikTok Shop Manager",
+  "title": "AgentScout TikTok Shop Manager Agent",
+  "brand_title": "AgentScout TikTok Shop Manager Agent",
+  "slug": "tiktok-shop-manager",
+  "department": "Marketing & Content",
+  "tagline": "Lists and promotes products",
+  "description": "Optimizes product titles and bullets for social-commerce search, writes 15-second shoppable video scripts for creator affiliates, and tracks margin and low-inventory thresholds.",
+  "promise": "Tighten a product listing, estimate creator commission, and brief a shoppable video.",
+  "version": "1.0.0",
+  "skill": "skills/shop-listing-optimizer/SKILL.md",
+  "skill_slug": "shop-listing-optimizer",
+  "script": "scripts/optimize_shop_listing.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "The title says the product and the buyer. Cleverness that hides the noun fails search.",
+    "Banned claims stay out even if they would convert.",
+    "Four images minimum: pack, in use, contents, scale.",
+    "Inventory alerts fire before you promise a creator a week of posts.",
+    "Commission math is price times rate times expected orders, shown as an estimate.",
+    "Disclosure is on screen and in the caption when a creator is paid."
+  ],
+  "routines": [
+    {
+      "id": "daily-stock",
+      "cron": "0 8 * * 1-5",
+      "title": "Inventory alert check",
+      "file": "routines/daily-stock.md"
+    },
+    {
+      "id": "weekly-listing",
+      "cron": "0 11 * * 2",
+      "title": "Weekly listing audit",
+      "file": "routines/weekly-listing.md"
+    },
+    {
+      "id": "thursday-creator-commission-brief",
+      "cron": "0 13 * * 4",
+      "title": "Thursday affiliate script & commission check",
+      "file": "routines/thursday-creator-commission-brief.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

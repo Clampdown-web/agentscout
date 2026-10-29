@@ -1,0 +1,4 @@
+# AgentScout Video Editor Agent routines ({{YOUR_TIMEZONE}})
+0 15 * * 1-5 python3 scripts/format_captions_and_cuts.py --dry-run # caption-pass: Weekday caption pass
+0 11 * * 2 python3 scripts/format_captions_and_cuts.py --dry-run # tuesday-hook-storyboard: Tuesday 3-second hook storyboard
+0 14 * * 5 python3 scripts/format_captions_and_cuts.py --dry-run # friday-repurpose-cuts: Friday long-to-short cut batch

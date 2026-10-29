@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Google Review Replier",
+  "brand_title": "AgentScout Google Review Replier Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-review-drafts",
@@ -9,7 +11,8 @@
       "title": "Daily review replies",
       "prompt": "Draft replies for new reviews of {{YOUR_COMPANY}}. Do not post them. Follow skills/review-reply-desk/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/generate_review_replies.py"
+      "script": "scripts/generate_review_replies.py",
+      "markdown": "routines/daily-review-drafts.md"
     },
     {
       "id": "monthly-themes",
@@ -17,7 +20,17 @@
       "title": "Monthly review themes",
       "prompt": "Summarize repeated themes and the response time. No public posts. Follow skills/review-reply-desk/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/generate_review_replies.py"
+      "script": "scripts/generate_review_replies.py",
+      "markdown": "routines/monthly-themes.md"
+    },
+    {
+      "id": "friday-escalation-check",
+      "cron": "0 15 * * 5",
+      "title": "Weekly P0 complaint & SLA check",
+      "prompt": "Verify every 1-star and 2-star review for {{YOUR_COMPANY}} has an owner-reviewed recovery draft and offline support handoff. Follow skills/review-reply-desk/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/generate_review_replies.py",
+      "markdown": "routines/friday-escalation-check.md"
     }
   ]
 }

@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/triage_support_tickets.py --help
+python3 scripts/triage_support_tickets.py --self-test
 python3 scripts/triage_support_tickets.py --dry-run
 ```
 
@@ -77,8 +78,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `hourly-triage` at `15 * * * *`: Inbox triage
 - `weekly-gaps` at `0 16 * * 5`: Weekly knowledge gaps
+- `daily-sla-escalation-sweep` at `0 9 * * 1-5`: Morning P0 & refund SLA sweep
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "SEO Specialist",
+  "brand_title": "AgentScout SEO Specialist Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "weekly-seo-crawl",
@@ -9,7 +11,8 @@
       "title": "Weekly SEO and AEO audit",
       "prompt": "Audit the priority URLs for {{YOUR_COMPANY}}. Report issues only. Do not change the live site. Follow skills/seo-aeo-site-audit/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/seo_site_audit.py"
+      "script": "scripts/seo_site_audit.py",
+      "markdown": "routines/weekly-seo-crawl.md"
     },
     {
       "id": "monthly-query-map",
@@ -17,7 +20,17 @@
       "title": "Monthly query map",
       "prompt": "Refresh the query-to-page map and the cannibalization list. Follow skills/seo-aeo-site-audit/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/seo_site_audit.py"
+      "script": "scripts/seo_site_audit.py",
+      "markdown": "routines/monthly-query-map.md"
+    },
+    {
+      "id": "thursday-schema-llms-check",
+      "cron": "0 10 * * 4",
+      "title": "Thursday JSON-LD & llms.txt check",
+      "prompt": "Validate Organization/Product JSON-LD parity and llms.txt citations across saved pages for {{YOUR_COMPANY}}. Report only. Follow skills/seo-aeo-site-audit/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/seo_site_audit.py",
+      "markdown": "routines/thursday-schema-llms-check.md"
     }
   ]
 }

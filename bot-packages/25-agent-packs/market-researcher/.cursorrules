@@ -3,7 +3,7 @@
 - Company context lives in context/business-profile.md.
 - Follow skills/competitor-diff/SKILL.md for this role.
 - Python helpers are stdlib only. Do not add a paid SDK.
-- Run scripts/competitor_diff_check.py --dry-run after you change inputs.
+- Run scripts/competitor_diff_check.py --self-test after you change inputs.
 - Never commit real customer exports. Samples stay synthetic.
 - Do not add a tool catalog, a scraper, or a hard-coded directory endpoint.
 - Drafts only until {{YOUR_OWNER_NAME}} approves a send, post, spend, or delete.

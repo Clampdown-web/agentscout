@@ -1,0 +1,4 @@
+# AgentScout SEO Specialist Agent routines ({{YOUR_TIMEZONE}})
+0 7 * * 1 python3 scripts/seo_site_audit.py --dry-run # weekly-seo-crawl: Weekly SEO and AEO audit
+0 8 1 * * python3 scripts/seo_site_audit.py --dry-run # monthly-query-map: Monthly query map
+0 10 * * 4 python3 scripts/seo_site_audit.py --dry-run # thursday-schema-llms-check: Thursday JSON-LD & llms.txt check

@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "seo-specialist",
+    "name": "SEO Specialist",
+    "brand_title": "AgentScout SEO Specialist Agent",
+    "department": "Marketing & Content",
+    "skill": "skills/seo-aeo-site-audit/SKILL.md",
+    "script": "scripts/seo_site_audit.py",
+    "routines": [
+      "weekly-seo-crawl",
+      "monthly-query-map",
+      "thursday-schema-llms-check"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

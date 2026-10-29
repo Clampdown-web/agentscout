@@ -422,7 +422,7 @@ def seo(t,urls):
         L+=["","## AI Agent Packs","",f"- [AgentScout Bot Store]({B}bot-store/)"]
         for _pf in _packs:
             _slug = _pf.split("/")[1]
-            L.append(f"- [AgentScout {_slug.replace('-', ' ').title()} Agent]({B}bot-store/{_slug}/)")
+            _nm_pk = _slug.replace("-", " ").title(); L.append(f"- [AgentScout {_nm_pk if _nm_pk.endswith(' Agent') else _nm_pk + ' Agent'}]({B}bot-store/{_slug}/)")
         L.append("")
     L+=["","## Guides","",f"- [MCP servers]({B}categories/mcp-servers.html)",f"- [Agent Skills with install commands]({B}skills/)",f"- [Agent infra]({B}categories/agent-infra.html)",f"- [Best MCP servers for Claude Code]({B}best/mcp-servers-for-claude-code.html)",f"- [Best MCP servers for Cursor]({B}best/mcp-servers-for-cursor.html)",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)",f"- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)",f"- [Best open-source browser automation agents]({B}best/open-source-browser-automation-agents.html)",f"- [Best local & offline AI agents]({B}best/local-offline-ai-agents.html)",""]
     # every tool added in the last 2 days (today PT + yesterday), no fixed cap (owner bug fix Oct 20 2026); falls back to the 12 newest if none

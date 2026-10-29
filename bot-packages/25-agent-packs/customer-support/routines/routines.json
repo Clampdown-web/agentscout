@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Customer Support",
+  "brand_title": "AgentScout Customer Support Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "hourly-triage",
@@ -9,7 +11,8 @@
       "title": "Inbox triage",
       "prompt": "Triage new tickets for {{YOUR_COMPANY}}. Draft replies. Send nothing. Follow skills/support-ticket-triage/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/triage_support_tickets.py"
+      "script": "scripts/triage_support_tickets.py",
+      "markdown": "routines/hourly-triage.md"
     },
     {
       "id": "weekly-gaps",
@@ -17,7 +20,17 @@
       "title": "Weekly knowledge gaps",
       "prompt": "List the questions that had no article and propose the titles. Follow skills/support-ticket-triage/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/triage_support_tickets.py"
+      "script": "scripts/triage_support_tickets.py",
+      "markdown": "routines/weekly-gaps.md"
+    },
+    {
+      "id": "daily-sla-escalation-sweep",
+      "cron": "0 9 * * 1-5",
+      "title": "Morning P0 & refund SLA sweep",
+      "prompt": "Surface open P0 safety/legal tickets and pending refund requests for {{YOUR_COMPANY}} for owner approval. Follow skills/support-ticket-triage/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/triage_support_tickets.py",
+      "markdown": "routines/daily-sla-escalation-sweep.md"
     }
   ]
 }

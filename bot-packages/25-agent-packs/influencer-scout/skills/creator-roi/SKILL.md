@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/calculate_creator_roi.py --help
+python3 scripts/calculate_creator_roi.py --self-test
 python3 scripts/calculate_creator_roi.py --dry-run
 ```
 
@@ -76,8 +77,10 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 ## Routines
 
 - `weekly-shortlist` at `0 10 * * 3`: Weekly creator shortlist
+- `monday-engagement-vetting` at `0 10 * * 1`: Monday engagement & CPM anomaly check
+- `friday-deal-roi-tracker` at `0 14 * * 5`: Friday creator brief & forecasted ROI check
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

@@ -43,4 +43,4 @@ Follow `skills/brand-card-system/SKILL.md` when the task matches this role.
 
 ## Script
 
-`scripts/generate_brand_card_spec.py` is the calculator. Trust its JSON over a mental estimate. Run `--dry-run` when you are demonstrating the workflow.
+`scripts/generate_brand_card_spec.py` is the calculator. Trust its JSON over a mental estimate. Run `--self-test` or `--dry-run` when you are demonstrating the workflow.

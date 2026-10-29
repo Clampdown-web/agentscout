@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Product Builder",
+  "brand_title": "AgentScout Product Builder Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "weekly-scope",
@@ -9,7 +11,26 @@
       "title": "Weekly scope review",
       "prompt": "Re-score the backlog for {{YOUR_COMPANY}} and name anything that snuck into the MVP. Follow skills/pricing-and-mvp-scope/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/model_product_pricing.py"
+      "script": "scripts/model_product_pricing.py",
+      "markdown": "routines/weekly-scope.md"
+    },
+    {
+      "id": "wednesday-pricing-tier-check",
+      "cron": "0 11 * * 3",
+      "title": "Wednesday Good/Better/Best pricing model",
+      "prompt": "Run scripts/model_product_pricing.py to stress-test unit costs, target margins, and tier boundaries for {{YOUR_COMPANY}}. Follow skills/pricing-and-mvp-scope/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/model_product_pricing.py",
+      "markdown": "routines/wednesday-pricing-tier-check.md"
+    },
+    {
+      "id": "friday-launch-readiness-audit",
+      "cron": "0 15 * * 5",
+      "title": "Friday MVP & launch readiness checklist",
+      "prompt": "Verify PRD non-goals, baseline success metrics, and live support paths before any release at {{YOUR_COMPANY}}. Follow skills/pricing-and-mvp-scope/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/model_product_pricing.py",
+      "markdown": "routines/friday-launch-readiness-audit.md"
     }
   ]
 }

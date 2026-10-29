@@ -1,10 +1,46 @@
 {
   "name": "Influencer Scout",
+  "title": "AgentScout Influencer Scout Agent",
+  "brand_title": "AgentScout Influencer Scout Agent",
   "slug": "influencer-scout",
+  "department": "Sales & Outreach",
   "tagline": "Finds creators to work with",
+  "description": "Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links.",
+  "promise": "Shortlist creators with an engagement check, a cost estimate, and a brief a person can send.",
   "version": "1.0.0",
   "skill": "skills/creator-roi/SKILL.md",
+  "skill_slug": "creator-roi",
   "script": "scripts/calculate_creator_roi.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Audience match matters more than follower count.",
+    "An engagement rate far above the usual range is a review flag, not a verdict.",
+    "CPM is price divided by thousands of followers. It is a planning number, not a promise of reach.",
+    "ROI uses the orders you are willing to forecast, labeled as a forecast.",
+    "The brief includes disclosure, usage rights, and the live URL you will pay on.",
+    "You do not contact a creator until the owner approves the shortlist."
+  ],
+  "routines": [
+    {
+      "id": "weekly-shortlist",
+      "cron": "0 10 * * 3",
+      "title": "Weekly creator shortlist",
+      "file": "routines/weekly-shortlist.md"
+    },
+    {
+      "id": "monday-engagement-vetting",
+      "cron": "0 10 * * 1",
+      "title": "Monday engagement & CPM anomaly check",
+      "file": "routines/monday-engagement-vetting.md"
+    },
+    {
+      "id": "friday-deal-roi-tracker",
+      "cron": "0 14 * * 5",
+      "title": "Friday creator brief & forecasted ROI check",
+      "file": "routines/friday-deal-roi-tracker.md"
+    }
+  ],
   "platforms": [
     "grok-bot",
     "claude-code",
@@ -23,6 +59,8 @@
     "{{YOUR_MCP_SERVER_URL}}",
     "{{YOUR_TIMEZONE}}"
   ],
+  "telemetry": false,
+  "offline_capable": true,
   "brand": {
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
@@ -31,5 +69,5 @@
     "name": "AgentScout",
     "url": "https://agentscouthq.com"
   },
-  "price_usd": 59
+  "price_usd": 35
 }

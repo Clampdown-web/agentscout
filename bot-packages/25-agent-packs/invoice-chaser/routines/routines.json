@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Invoice Chaser",
+  "brand_title": "AgentScout Invoice Chaser Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "daily-dunning",
@@ -9,7 +11,8 @@
       "title": "Dunning draft queue",
       "prompt": "Draft today's receivable notes for {{YOUR_COMPANY}}. Do not send. Follow skills/ar-aging/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/aging_ar_report.py"
+      "script": "scripts/aging_ar_report.py",
+      "markdown": "routines/daily-dunning.md"
     },
     {
       "id": "weekly-aging",
@@ -17,7 +20,17 @@
       "title": "Weekly AR aging",
       "prompt": "Produce the aging buckets and the total open receivable. Follow skills/ar-aging/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/aging_ar_report.py"
+      "script": "scripts/aging_ar_report.py",
+      "markdown": "routines/weekly-aging.md"
+    },
+    {
+      "id": "thursday-dispute-escalation-review",
+      "cron": "0 14 * * 4",
+      "title": "Thursday 30+ day & disputed invoice review",
+      "prompt": "Compile 30+ day overdue accounts and paused disputed invoices for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not send. Follow skills/ar-aging/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/aging_ar_report.py",
+      "markdown": "routines/thursday-dispute-escalation-review.md"
     }
   ]
 }

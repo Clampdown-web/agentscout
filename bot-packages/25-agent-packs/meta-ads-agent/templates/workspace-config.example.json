@@ -1,0 +1,24 @@
+{
+  "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
+  "support_email": "{{YOUR_SUPPORT_EMAIL}}",
+  "owner_name": "{{YOUR_OWNER_NAME}}",
+  "mcp_server_url": "{{YOUR_MCP_SERVER_URL}}",
+  "timezone": "{{YOUR_TIMEZONE}}",
+  "agent": {
+    "slug": "meta-ads-agent",
+    "name": "Meta Ads Agent",
+    "brand_title": "AgentScout Meta Ads Agent",
+    "department": "Sales & Outreach",
+    "skill": "skills/ad-roas-rules/SKILL.md",
+    "script": "scripts/evaluate_ad_roas.py",
+    "routines": [
+      "daily-ads",
+      "weekly-creative",
+      "monday-fatigue-utm-audit"
+    ],
+    "telemetry": false,
+    "network_calls": false,
+    "approval_required": true
+  }
+}

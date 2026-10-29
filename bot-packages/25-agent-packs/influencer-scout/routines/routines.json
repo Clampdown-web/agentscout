@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Influencer Scout",
+  "brand_title": "AgentScout Influencer Scout Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "weekly-shortlist",
@@ -9,7 +11,26 @@
       "title": "Weekly creator shortlist",
       "prompt": "Score the creator sheet for {{YOUR_COMPANY}}. Do not email creators. Follow skills/creator-roi/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/calculate_creator_roi.py"
+      "script": "scripts/calculate_creator_roi.py",
+      "markdown": "routines/weekly-shortlist.md"
+    },
+    {
+      "id": "monday-engagement-vetting",
+      "cron": "0 10 * * 1",
+      "title": "Monday engagement & CPM anomaly check",
+      "prompt": "Run scripts/calculate_creator_roi.py on prospective creators for {{YOUR_COMPANY}} and flag suspect engagement rates. Follow skills/creator-roi/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/calculate_creator_roi.py",
+      "markdown": "routines/monday-engagement-vetting.md"
+    },
+    {
+      "id": "friday-deal-roi-tracker",
+      "cron": "0 14 * * 5",
+      "title": "Friday creator brief & forecasted ROI check",
+      "prompt": "Prepare outreach briefs, FTC disclosure lines, and forecasted order ROI for owner-approved creators at {{YOUR_COMPANY}}. Follow skills/creator-roi/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/calculate_creator_roi.py",
+      "markdown": "routines/friday-deal-roi-tracker.md"
     }
   ]
 }

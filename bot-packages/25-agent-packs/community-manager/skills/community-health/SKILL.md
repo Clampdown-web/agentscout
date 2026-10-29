@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/community_health_score.py --help
+python3 scripts/community_health_score.py --self-test
 python3 scripts/community_health_score.py --dry-run
 ```
 
@@ -77,8 +78,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `daily-community` at `0 10 * * 1-5`: Daily community draft
 - `weekly-digest` at `0 15 * * 5`: Weekly engagement digest
+- `monday-new-member-onboarding` at `0 9 * * 1`: Monday new-member welcome & FAQ check
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

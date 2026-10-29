@@ -1,0 +1,73 @@
+{
+  "name": "Outreach Agent",
+  "title": "AgentScout Outreach Agent",
+  "brand_title": "AgentScout Outreach Agent",
+  "slug": "outreach-agent",
+  "department": "Sales & Outreach",
+  "tagline": "Cold emails and follow-ups",
+  "description": "Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules.",
+  "promise": "Draft a short, specific sequence and lint it before anyone hits send.",
+  "version": "1.0.0",
+  "skill": "skills/cold-email-sequence/SKILL.md",
+  "skill_slug": "cold-email-sequence",
+  "script": "scripts/lint_outreach_sequence.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Under 125 words. One ask. One real detail from the prospect, not a mail-merge compliment.",
+    "Space steps two to four days apart. A next-day bump looks desperate.",
+    "Write the reply path: interested, not now, out of office, unsubscribe.",
+    "Spam-trigger words are a smell. Specifics send better than urgency.",
+    "SPF, DKIM, and DMARC are readiness checks, not a guarantee of the inbox.",
+    "CAN-SPAM still wants a real postal address and a way to stop mail."
+  ],
+  "routines": [
+    {
+      "id": "daily-draft-queue",
+      "cron": "30 8 * * 1-5",
+      "title": "Daily outreach drafts",
+      "file": "routines/daily-draft-queue.md"
+    },
+    {
+      "id": "reply-triage",
+      "cron": "0 13,17 * * 1-5",
+      "title": "Reply intent pass",
+      "file": "routines/reply-triage.md"
+    },
+    {
+      "id": "weekly-deliverability-lint",
+      "cron": "0 10 * * 1",
+      "title": "Weekly sequence & spam-word lint",
+      "file": "routines/weekly-deliverability-lint.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Web Designer",
+  "brand_title": "AgentScout Web Designer Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "page-check",
@@ -9,7 +11,26 @@
       "title": "Landing page UX check",
       "prompt": "Run the UX check on the current landing HTML for {{YOUR_COMPANY}}. Report issues. Do not deploy. Follow skills/landing-page-ux-check/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/check_landing_page_ux.py"
+      "script": "scripts/check_landing_page_ux.py",
+      "markdown": "routines/page-check.md"
+    },
+    {
+      "id": "monday-mobile-viewport-audit",
+      "cron": "0 10 * * 1",
+      "title": "Monday 360px/390px mobile overflow audit",
+      "prompt": "Run scripts/check_landing_page_ux.py across key landing pages for {{YOUR_COMPANY}} to verify zero horizontal scroll and alt coverage. Follow skills/landing-page-ux-check/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/check_landing_page_ux.py",
+      "markdown": "routines/monday-mobile-viewport-audit.md"
+    },
+    {
+      "id": "friday-cta-contrast-review",
+      "cron": "0 15 * * 5",
+      "title": "Friday above-the-fold CTA & contrast check",
+      "prompt": "Verify hero CTA clarity and 4.5:1 text contrast pairs on updated templates for {{YOUR_COMPANY}}. Follow skills/landing-page-ux-check/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/check_landing_page_ux.py",
+      "markdown": "routines/friday-cta-contrast-review.md"
     }
   ]
 }

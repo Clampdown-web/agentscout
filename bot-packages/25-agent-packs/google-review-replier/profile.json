@@ -1,0 +1,73 @@
+{
+  "name": "Google Review Replier",
+  "title": "AgentScout Google Review Replier Agent",
+  "brand_title": "AgentScout Google Review Replier Agent",
+  "slug": "google-review-replier",
+  "department": "Operations & Admin",
+  "tagline": "Replies to every review",
+  "description": "Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps.",
+  "promise": "Draft a specific public reply for every review and a private path for anything serious.",
+  "version": "1.0.0",
+  "skill": "skills/review-reply-desk/SKILL.md",
+  "skill_slug": "review-reply-desk",
+  "script": "scripts/generate_review_replies.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Reply inside two days. A late thank-you still beats silence, but the habit is daily.",
+    "Use the name and one detail they actually wrote.",
+    "A keyword may appear once if it fits. Stuffing the city into every sentence reads as spam.",
+    "Never offer a perk to change, delete, or post a review.",
+    "Safety, health, and legal comments leave the public thread immediately.",
+    "Ask happy customers for a review without gating it on a positive score."
+  ],
+  "routines": [
+    {
+      "id": "daily-review-drafts",
+      "cron": "0 9 * * *",
+      "title": "Daily review replies",
+      "file": "routines/daily-review-drafts.md"
+    },
+    {
+      "id": "monthly-themes",
+      "cron": "0 10 1 * *",
+      "title": "Monthly review themes",
+      "file": "routines/monthly-themes.md"
+    },
+    {
+      "id": "friday-escalation-check",
+      "cron": "0 15 * * 5",
+      "title": "Weekly P0 complaint & SLA check",
+      "file": "routines/friday-escalation-check.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

@@ -36,6 +36,7 @@ KEYWORDS = [
 def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--dry-run", action="store_true", help="Use the built-in sample ledger")
+    p.add_argument("--self-test", action="store_true", help="Run built-in self-test sample and exit 0")
     p.add_argument("--sample", action="store_true", help="Same as --dry-run")
     p.add_argument("--input", help="CSV with date, description, amount, source")
     p.add_argument("--output", help="Write the JSON report here")
@@ -137,7 +138,7 @@ def analyze(rows: list[dict], days: int, tolerance: float) -> dict:
 
 def main(argv=None) -> int:
     args = parser().parse_args(argv)
-    dry = args.dry_run or args.sample or not args.input
+    dry = args.dry_run or args.sample or getattr(args, 'self_test', False) or not args.input
     rows = SAMPLE if dry else load_rows(args.input)
     report = analyze(rows, args.days, args.tolerance)
     report["dry_run"] = dry

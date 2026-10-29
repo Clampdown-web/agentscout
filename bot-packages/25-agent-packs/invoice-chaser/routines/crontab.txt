@@ -1,0 +1,4 @@
+# AgentScout Invoice Chaser Agent routines ({{YOUR_TIMEZONE}})
+0 9 * * 1-5 python3 scripts/aging_ar_report.py --dry-run # daily-dunning: Dunning draft queue
+0 9 * * 1 python3 scripts/aging_ar_report.py --dry-run # weekly-aging: Weekly AR aging
+0 14 * * 4 python3 scripts/aging_ar_report.py --dry-run # thursday-dispute-escalation-review: Thursday 30+ day & disputed invoice review

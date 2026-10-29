@@ -1,0 +1,73 @@
+{
+  "name": "Video Editor",
+  "title": "AgentScout Video Editor Agent",
+  "brand_title": "AgentScout Video Editor Agent",
+  "slug": "video-editor",
+  "department": "Operations & Admin",
+  "tagline": "Cuts reels and shorts",
+  "description": "Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker.",
+  "promise": "Turn a transcript into captions, a silence cut list, and a 9:16 storyboard.",
+  "version": "1.0.0",
+  "skill": "skills/shortform-cut-captions/SKILL.md",
+  "skill_slug": "shortform-cut-captions",
+  "script": "scripts/format_captions_and_cuts.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "The first three seconds must contain a change, a number, or a question. A logo card does not count.",
+    "Cut filler words and dead air. Keep the breath that makes a sentence human.",
+    "Captions are a script, not a dump of every false start.",
+    "Burned-in captions stay inside the safe center so interface buttons do not cover them.",
+    "Music needs a license note. Silence is better than a track you cannot name.",
+    "One video, one job. Do not hide a second offer in the last second."
+  ],
+  "routines": [
+    {
+      "id": "caption-pass",
+      "cron": "0 15 * * 1-5",
+      "title": "Weekday caption pass",
+      "file": "routines/caption-pass.md"
+    },
+    {
+      "id": "tuesday-hook-storyboard",
+      "cron": "0 11 * * 2",
+      "title": "Tuesday 3-second hook storyboard",
+      "file": "routines/tuesday-hook-storyboard.md"
+    },
+    {
+      "id": "friday-repurpose-cuts",
+      "cron": "0 14 * * 5",
+      "title": "Friday long-to-short cut batch",
+      "file": "routines/friday-repurpose-cuts.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

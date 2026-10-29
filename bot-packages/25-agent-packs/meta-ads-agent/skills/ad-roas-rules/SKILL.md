@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/evaluate_ad_roas.py --help
+python3 scripts/evaluate_ad_roas.py --self-test
 python3 scripts/evaluate_ad_roas.py --dry-run
 ```
 
@@ -77,8 +78,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `daily-ads` at `0 8 * * 1-5`: Daily ad rules check
 - `weekly-creative` at `0 11 * * 4`: Weekly creative refresh
+- `monday-fatigue-utm-audit` at `0 9 * * 1`: Monday creative fatigue & UTM audit
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

@@ -1,0 +1,73 @@
+{
+  "name": "Meta Ads Agent",
+  "title": "AgentScout Meta Ads Agent",
+  "brand_title": "AgentScout Meta Ads Agent",
+  "slug": "meta-ads-agent",
+  "department": "Sales & Outreach",
+  "tagline": "Runs and scales your ads",
+  "description": "Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked.",
+  "promise": "Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.",
+  "version": "1.0.0",
+  "skill": "skills/ad-roas-rules/SKILL.md",
+  "skill_slug": "ad-roas-rules",
+  "script": "scripts/evaluate_ad_roas.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Change one cell of the hook, body, or call to action. A new everything is not a test.",
+    "Do not kill a campaign that has not spent enough to learn.",
+    "Scale only after the efficiency bar and a minimum conversion count.",
+    "Fatigue is frequency up and click-through down, together.",
+    "Every ad URL carries source, medium, campaign, and content tags.",
+    "Special-category ads follow the platform's housing, credit, and employment rules. When unsure, stop."
+  ],
+  "routines": [
+    {
+      "id": "daily-ads",
+      "cron": "0 8 * * 1-5",
+      "title": "Daily ad rules check",
+      "file": "routines/daily-ads.md"
+    },
+    {
+      "id": "weekly-creative",
+      "cron": "0 11 * * 4",
+      "title": "Weekly creative refresh",
+      "file": "routines/weekly-creative.md"
+    },
+    {
+      "id": "monday-fatigue-utm-audit",
+      "cron": "0 9 * * 1",
+      "title": "Monday creative fatigue & UTM audit",
+      "file": "routines/monday-fatigue-utm-audit.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

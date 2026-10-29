@@ -72,6 +72,7 @@ Return:
 
 ```bash
 python3 scripts/seo_site_audit.py --help
+python3 scripts/seo_site_audit.py --self-test
 python3 scripts/seo_site_audit.py --dry-run
 ```
 
@@ -81,8 +82,9 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 
 - `weekly-seo-crawl` at `0 7 * * 1`: Weekly SEO and AEO audit
 - `monthly-query-map` at `0 8 1 * *`: Monthly query map
+- `thursday-schema-llms-check` at `0 10 * * 4`: Thursday JSON-LD & llms.txt check
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

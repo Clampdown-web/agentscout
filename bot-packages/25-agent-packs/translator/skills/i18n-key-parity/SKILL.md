@@ -68,6 +68,7 @@ Return:
 
 ```bash
 python3 scripts/verify_i18n_keys.py --help
+python3 scripts/verify_i18n_keys.py --self-test
 python3 scripts/verify_i18n_keys.py --dry-run
 ```
 
@@ -76,8 +77,10 @@ The helper uses the Python 3 standard library. A paid data vendor is optional an
 ## Routines
 
 - `locale-parity` at `0 9 * * 1`: Weekly locale parity
+- `wednesday-placeholder-glossary-check` at `0 10 * * 3`: Midweek placeholder & glossary audit
+- `friday-overflow-legal-flag` at `0 14 * * 5`: Friday UI length & legal/pricing string review
 
-Schedules live in `routines/routines.json`. Times are interpreted in {{YOUR_TIMEZONE}}.
+Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are interpreted in {{YOUR_TIMEZONE}}.
 
 ## Platforms
 

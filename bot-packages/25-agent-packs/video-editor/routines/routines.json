@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Video Editor",
+  "brand_title": "AgentScout Video Editor Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "caption-pass",
@@ -9,7 +11,26 @@
       "title": "Weekday caption pass",
       "prompt": "Format captions and a cut list for the latest transcript from {{YOUR_COMPANY}}. Draft only. Follow skills/shortform-cut-captions/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/format_captions_and_cuts.py"
+      "script": "scripts/format_captions_and_cuts.py",
+      "markdown": "routines/caption-pass.md"
+    },
+    {
+      "id": "tuesday-hook-storyboard",
+      "cron": "0 11 * * 2",
+      "title": "Tuesday 3-second hook storyboard",
+      "prompt": "Audit the opening 3 seconds of upcoming recordings for {{YOUR_COMPANY}} and draft 9:16 cut lists. Draft only. Follow skills/shortform-cut-captions/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/format_captions_and_cuts.py",
+      "markdown": "routines/tuesday-hook-storyboard.md"
+    },
+    {
+      "id": "friday-repurpose-cuts",
+      "cron": "0 14 * * 5",
+      "title": "Friday long-to-short cut batch",
+      "prompt": "Extract top 3 short-form clip timestamps and SRT captions from this week's long video for {{YOUR_COMPANY}}. Follow skills/shortform-cut-captions/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/format_captions_and_cuts.py",
+      "markdown": "routines/friday-repurpose-cuts.md"
     }
   ]
 }

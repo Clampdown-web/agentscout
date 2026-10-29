@@ -1,39 +1,48 @@
-# Copywriter quick start
+# AgentScout Copywriter Agent — Quick Start
 
 Built by AgentScout
 
-![AgentScout wordmark](https://agentscouthq.com/logo-wordmark-dark.png)
+![AgentScout wordmark](assets/logo-wordmark-dark.svg)
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}**. Draft and edit offers with a clear problem, proof, and a single next step.
+Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Draft and edit offers with a clear problem, proof, and a single next step.
 
 ## 1. Fill the profile
 
-Edit `context/business-profile.md`. Then run:
+Edit `context/business-profile.md` or `templates/workspace-config.example.json`. Then run:
 
 ```bash
-python3 setup_workspace.py --help
-python3 setup_workspace.py --dry-run
+python3 scripts/setup_workspace.py --help
+python3 scripts/setup_workspace.py --self-test
 ```
 
-Add `--apply` with `--company`, `--domain`, `--support-email`, `--owner-name`, and optionally `--mcp-url` when you are ready to replace placeholders.
+Add `--apply` with `--company "{{YOUR_COMPANY}}"`, `--domain "{{YOUR_DOMAIN}}"`, `--support-email "{{YOUR_SUPPORT_EMAIL}}"`, `--owner-name "{{YOUR_OWNER_NAME}}"`, and optionally `--mcp-url "{{YOUR_MCP_SERVER_URL}}"` when you are ready to replace placeholders across the package.
 
 ## 2. Prove the script
 
 ```bash
 python3 scripts/audit_sales_copy.py --help
+python3 scripts/audit_sales_copy.py --self-test
 python3 scripts/audit_sales_copy.py --dry-run
 ```
 
-Both commands exit 0. `--dry-run` prints a JSON report from built-in sample rows.
+All commands exit 0. `--self-test` and `--dry-run` print a JSON report from built-in sample rows with zero network calls and zero telemetry.
 
-## 3. Load the skill
+## 3. Scheduled Routines Included (3 Cron Routines)
+
+| Routine ID | Cron Schedule (`{{YOUR_TIMEZONE}}`) | Title |
+| --- | --- | --- |
+| `copy-pass` | `0 9 * * 3` | Midweek copy pass |
+| `weekly-headline-variants` | `0 9 * * 1` | Monday headline & hook variants |
+| `friday-objection-refresh` | `0 14 * * 5` | Friday customer objection refresh |
+
+## 4. Load the skill
 
 | Platform | What to open |
 | --- | --- |
-| Grok Bot | `SYSTEM.md`, `skills/conversion-copy-audit/SKILL.md`, `routines/routines.json` |
-| Claude Code | `CLAUDE.md` and the skill file |
+| Grok Bot | `system-prompt.md` (`SYSTEM.md`), `skills/conversion-copy-audit/SKILL.md`, `routines/routines.json` |
+| Claude Code | `CLAUDE.md` and `skills/conversion-copy-audit/SKILL.md` |
 | Cursor | `.cursorrules` and `AGENTS.md` |
 | OpenAI Codex | `AGENTS.md` |
 | Windsurf | `AGENTS.md` |
@@ -41,6 +50,6 @@ Both commands exit 0. `--dry-run` prints a JSON report from built-in sample rows
 | GitHub Copilot | `AGENTS.md` |
 | Lovable | Upload the ZIP under Workspace settings → Skills → Add → Upload ZIP. `LOVABLE.md` is the workspace note. |
 
-## 4. Approval
+## 5. Approval Gate
 
 Nothing in this package sends email, posts, spends, deletes, or files. {{YOUR_OWNER_NAME}} does that after reading the draft.

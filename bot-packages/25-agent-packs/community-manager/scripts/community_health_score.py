@@ -24,6 +24,7 @@ SAMPLE = [
 def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--self-test", action="store_true", help="Run built-in self-test sample and exit 0")
     p.add_argument("--sample", action="store_true")
     p.add_argument("--input", help="Member CSV")
     p.add_argument("--output", help="JSON report path")
@@ -72,7 +73,7 @@ def analyze(rows: list[dict], as_of: date) -> dict:
 
 def main(argv=None) -> int:
     args = parser().parse_args(argv)
-    dry = args.dry_run or args.sample or not args.input
+    dry = args.dry_run or args.sample or getattr(args, 'self_test', False) or not args.input
     if dry:
         rows = SAMPLE
     else:

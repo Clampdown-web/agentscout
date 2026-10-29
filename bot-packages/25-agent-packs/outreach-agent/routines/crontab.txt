@@ -1,0 +1,4 @@
+# AgentScout Outreach Agent routines ({{YOUR_TIMEZONE}})
+30 8 * * 1-5 python3 scripts/lint_outreach_sequence.py --dry-run # daily-draft-queue: Daily outreach drafts
+0 13,17 * * 1-5 python3 scripts/lint_outreach_sequence.py --dry-run # reply-triage: Reply intent pass
+0 10 * * 1 python3 scripts/lint_outreach_sequence.py --dry-run # weekly-deliverability-lint: Weekly sequence & spam-word lint

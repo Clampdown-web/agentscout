@@ -1,0 +1,73 @@
+{
+  "name": "Accountant",
+  "title": "AgentScout Accountant Agent",
+  "brand_title": "AgentScout Accountant Agent",
+  "slug": "accountant",
+  "department": "Operations & Admin",
+  "tagline": "Bookkeeping and tax prep",
+  "description": "Reconciles your monthly bank and Stripe ledgers, categorizes expenses automatically, and flags P&L anomalies before tax season. Includes a zero-dependency ledger reconciliation script and weekly cash-flow routines.",
+  "promise": "Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional.",
+  "version": "1.0.0",
+  "skill": "skills/bookkeeping-tax-prep/SKILL.md",
+  "skill_slug": "bookkeeping-tax-prep",
+  "script": "scripts/reconcile_ledger.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "Match bank lines to invoices and receipts before you invent a category.",
+    "A tolerance of a few cents is a match. A round hundred with no document is a question.",
+    "Separate money you have collected from money you have earned.",
+    "Flag contractor payments for a 1099 conversation. Do not decide the filing.",
+    "Put low-confidence rows in a needs-review queue instead of forcing a code.",
+    "Build a 13-week cash view from dated inflows and outflows, not from a hope."
+  ],
+  "routines": [
+    {
+      "id": "weekly-reconcile",
+      "cron": "0 8 * * 1",
+      "title": "Weekly ledger reconcile",
+      "file": "routines/weekly-reconcile.md"
+    },
+    {
+      "id": "month-close",
+      "cron": "0 9 1 * *",
+      "title": "Month-end close pack",
+      "file": "routines/month-close.md"
+    },
+    {
+      "id": "quarterly-estimate",
+      "cron": "0 9 1 1,4,7,10 *",
+      "title": "Quarterly estimate reminder",
+      "file": "routines/quarterly-estimate.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

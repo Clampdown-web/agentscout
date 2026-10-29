@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Appointment Setter",
+  "brand_title": "AgentScout Appointment Setter Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "reminder-sweep",
@@ -9,7 +11,26 @@
       "title": "Reminder and no-show sweep",
       "prompt": "List calls in the next 24 hours and no-shows from yesterday for {{YOUR_COMPANY}}. Draft the notes. Do not send. Follow skills/call-briefing-slots/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/build_call_briefing.py"
+      "script": "scripts/build_call_briefing.py",
+      "markdown": "routines/reminder-sweep.md"
+    },
+    {
+      "id": "weekday-inbound-slots",
+      "cron": "0 9,14 * * 1-5",
+      "title": "Inbound lead qualification & slot prep",
+      "prompt": "Qualify new inbound inquiries for {{YOUR_COMPANY}} and build timezone-matched slot options with scripts/build_call_briefing.py. Follow skills/call-briefing-slots/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/build_call_briefing.py",
+      "markdown": "routines/weekday-inbound-slots.md"
+    },
+    {
+      "id": "friday-booking-conversion-review",
+      "cron": "0 16 * * 5",
+      "title": "Weekly show-rate & briefing review",
+      "prompt": "Summarize booked calls, show rate, and reschedule follow-ups for {{YOUR_COMPANY}}. Draft only. Follow skills/call-briefing-slots/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/build_call_briefing.py",
+      "markdown": "routines/friday-booking-conversion-review.md"
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "name": "Social Media Manager",
+  "title": "AgentScout Social Media Manager Agent",
+  "brand_title": "AgentScout Social Media Manager Agent",
+  "slug": "social-media-manager",
+  "department": "Marketing & Content",
+  "tagline": "Plans and posts every day",
+  "description": "Drafts daily platform-native posts, threads, and visual callouts grounded in your product wins and top-performing industry hooks. Includes a post-velocity guard so you never step on a climbing post.",
+  "promise": "Score hooks, format a native post, and keep a calendar the owner can approve.",
+  "version": "1.0.0",
+  "skill": "skills/social-hook-desk/SKILL.md",
+  "skill_slug": "social-hook-desk",
+  "script": "scripts/score_social_hooks.py",
+  "setup_script": "scripts/setup_workspace.py",
+  "system_prompt": "system-prompt.md",
+  "heuristics": [
+    "A hook with a number and a concrete noun beats a tease.",
+    "Write for the platform's length. Do not paste the LinkedIn post into a short caption.",
+    "Three to five pillars. If you cannot name them, you are improvising.",
+    "Reply to real comments before you invent tomorrow's post.",
+    "Tag links with a source you can read later.",
+    "Best time is the time your own account already earns attention, not a generic chart."
+  ],
+  "routines": [
+    {
+      "id": "daily-hooks",
+      "cron": "0 8 * * 1-5",
+      "title": "Daily hook score",
+      "file": "routines/daily-hooks.md"
+    },
+    {
+      "id": "weekly-calendar",
+      "cron": "0 11 * * 5",
+      "title": "Next week's calendar",
+      "file": "routines/weekly-calendar.md"
+    },
+    {
+      "id": "midweek-comment-pillar-review",
+      "cron": "0 14 * * 3",
+      "title": "Midweek comment & pillar check",
+      "file": "routines/midweek-comment-pillar-review.md"
+    }
+  ],
+  "platforms": [
+    "grok-bot",
+    "claude-code",
+    "cursor",
+    "openai-codex",
+    "windsurf",
+    "cline",
+    "github-copilot",
+    "lovable"
+  ],
+  "placeholders": [
+    "{{YOUR_COMPANY}}",
+    "{{YOUR_DOMAIN}}",
+    "{{YOUR_SUPPORT_EMAIL}}",
+    "{{YOUR_OWNER_NAME}}",
+    "{{YOUR_MCP_SERVER_URL}}",
+    "{{YOUR_TIMEZONE}}"
+  ],
+  "telemetry": false,
+  "offline_capable": true,
+  "brand": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "author": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com"
+  },
+  "price_usd": 35
+}

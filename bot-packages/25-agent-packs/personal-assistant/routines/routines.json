@@ -1,7 +1,9 @@
 {
   "timezone": "{{YOUR_TIMEZONE}}",
   "role": "Personal Assistant",
+  "brand_title": "AgentScout Personal Assistant Agent",
   "company": "{{YOUR_COMPANY}}",
+  "domain": "{{YOUR_DOMAIN}}",
   "routines": [
     {
       "id": "morning-brief",
@@ -9,7 +11,8 @@
       "title": "Morning briefing",
       "prompt": "Write the morning brief for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Do not delete or send mail. Follow skills/daily-exec-briefing/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/daily_exec_briefing.py"
+      "script": "scripts/daily_exec_briefing.py",
+      "markdown": "routines/morning-brief.md"
     },
     {
       "id": "friday-review",
@@ -17,7 +20,17 @@
       "title": "Friday weekly review",
       "prompt": "List open loops and next week's first three outcomes. Follow skills/daily-exec-briefing/SKILL.md. Draft only.",
       "requires_approval": true,
-      "script": "scripts/daily_exec_briefing.py"
+      "script": "scripts/daily_exec_briefing.py",
+      "markdown": "routines/friday-review.md"
+    },
+    {
+      "id": "midday-conflict-check",
+      "cron": "0 12 * * 1-5",
+      "title": "Midday calendar conflict & prep check",
+      "prompt": "Check afternoon holds, travel gaps, and next-day meeting prep questions for {{YOUR_OWNER_NAME}} at {{YOUR_COMPANY}}. Follow skills/daily-exec-briefing/SKILL.md. Draft only.",
+      "requires_approval": true,
+      "script": "scripts/daily_exec_briefing.py",
+      "markdown": "routines/midday-conflict-check.md"
     }
   ]
 }
