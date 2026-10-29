@@ -456,3 +456,6 @@ pills.forEach(function(btn){
     open("videos/index.html", "w", encoding="utf-8").write(html_out)
     print(f"video guides hub: {len(guides)} guides written to videos/index.html")
     return [canon]
+
+if __name__ == "__main__":
+    pages(json.load(open("tools.json", encoding="utf-8")))

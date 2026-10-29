@@ -398,7 +398,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202610280200"  # bump when app.js/styles.css change
+ASSET_V = "202610290319"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -407,6 +407,7 @@ _ICO={"ft":"M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l
       "mcp":"M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5",  # plug (same as header MCP pill)
       "bt":"M12 2v3M8 5h8a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3zM9.5 10.5v1M14.5 10.5v1M9.5 15h5M2 10v3M22 10v3",  # robot head
       "sp":"M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z",  # star (Get Featured / Sponsor)
+      "bs":"M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.3h8.7a1.5 1.5 0 0 0 1.5-1.2L22 8H7M8 21m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0M18 21m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0",  # cart (Bot Store)
       "bolt":"M13 2L3 14h9l-1 8 10-12h-9l1-8z",
       "fast":"M13 2L3 14h9l-1 8 10-12h-9l1-8z"}  # bolt (Exclusive slot)
 def _wrap(k,txt): return f'<span class="npill np{k}">'+_SV.format(_ICO[k])+txt+'</span>'
@@ -415,6 +416,7 @@ def _unpill(s):
     s=re.sub(r'<span class="npill npgen"><svg class="npico".*?</svg>(.*?)</span>',r'✨ \1',s)
     s=re.sub(r'<a class="footmcp" (href="[^"]*")><span class="npill npmcp"><svg class="npico".*?</svg>(.*?)</span></a>',r'<a \1>\2</a>',s)
     s=re.sub(r'<a class="footsp" (href="[^"]*")><span class="npill npsp"><svg class="npico".*?</svg>(.*?)</span></a>',r'<a \1>\2</a>',s)
+    s=re.sub(r'<a class="(?:navbs|footbs)" (href="[^"]*")><span class="npill npbs"><svg class="npico".*?</svg>(.*?)</span></a>',r'<a class="navbs" \1>\2</a>',s)
     s=re.sub(r'<span class="npill npbt"><svg class="npico".*?</svg>(.*?)</span>',r'\1',s)
     return s
 def _pill(s):
@@ -428,6 +430,64 @@ def _pill(s):
         f0=re.sub(r'<a (href="[^"]*sponsor\.html")>(Sponsor / Get Featured)</a>',lambda mm:f'<a class="footsp" {mm.group(1)}>'+_wrap("sp",mm.group(2))+'</a>',f0)
         s=s[:fm.start()]+f0+s[fm.end():]
     return s
+def _take_anchor(html, pat):
+    """Remove every match of pat and return (html, last match without a leading separator)."""
+    found=""
+    def grab(mm):
+        nonlocal found
+        found=re.sub(r'^(?: · )+','',mm.group(0))
+        return ""
+    html=re.sub(pat, grab, html, flags=re.S)
+    return html, found
+def _bs_pill(d, label="Bot Store"):
+    return f'<a class="navbs" href="{d}bot-store/">'+_wrap("bs", label)+'</a>'
+def _cluster_nav(s, d):
+    """Plain links stay first. The six neon pills sit together immediately before Submit a tool."""
+    m=re.search(r'(<div class="links">)(.*?)(</div>)', s, re.S)
+    if not m: return s
+    inner=m.group(2)
+    inner=re.sub(r'<span class="navpills">','',inner)
+    inner=re.sub(r'</span><!--/navpills-->','',inner)
+    inner,bs=_take_anchor(inner, r'<a class="navbs" href="[^"]*">.*?</a>')
+    inner,gen=_take_anchor(inner, r'<a class="navgen" href="[^"]*">.*?</a>')
+    inner,bt=_take_anchor(inner, r'<a class="navbt" href="[^"]*">.*?</a>')
+    inner,ft=_take_anchor(inner, r'<a class="navft" href="[^"]*">.*?</a>')
+    inner,mcp=_take_anchor(inner, r'<a class="navmcp" href="[^"]*">.*?</a>')
+    inner,sp=_take_anchor(inner, r'<a class="navsp" href="[^"]*">.*?</a>')
+    if not gen or not bt or not ft or not mcp: return s
+    if 'npill npbs' not in bs: bs=_bs_pill(d)
+    if 'npill npsp' not in sp: sp=f'<a class="navsp" href="{d}sponsor.html">'+_wrap("sp","Get Featured")+'</a>'
+    cluster='<span class="navpills">'+bs+gen+bt+ft+mcp+sp+'</span><!--/navpills-->'
+    inner,k=re.subn(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)', lambda mm: cluster+mm.group(1), inner, count=1)
+    if not k: inner+=cluster
+    return s[:m.start()]+m.group(1)+inner+m.group(3)+s[m.end():]
+def _cluster_foot(s, d):
+    """Footer neon pills share one group: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured."""
+    m=re.search(r'<footer\b.*?</footer>', s, re.S)
+    if not m: return s
+    fo=m.group(0)
+    fo=re.sub(r'<span class="footpills">','',fo)
+    fo=re.sub(r'</span><!--/footpills-->','',fo)
+    fo,gen=_take_anchor(fo, r'(?: · )?<a class="footgen" href="[^"]*">.*?</a>')
+    fo,bt=_take_anchor(fo, r'(?: · )?<a class="navbt" href="[^"]*bot-templates/">.*?</a>')
+    fo,ft=_take_anchor(fo, r'(?: · )?<a class="navft" href="[^"]*">.*?</a>')
+    fo,mcp=_take_anchor(fo, r'(?: · )?<a class="footmcp" href="[^"]*">.*?</a>')
+    fo,sp=_take_anchor(fo, r'(?: · )?<a class="footsp" href="[^"]*">.*?</a>')
+    fo,bs=_take_anchor(fo, r'(?: · )?<a [^>]*href="[^"]*bot-store/"[^>]*>.*?</a>')
+    if not gen or not bt or not ft or not mcp: return s
+    if 'npill npbs' not in bs:
+        bs=f'<a class="footbs" href="{d}bot-store/">'+_wrap("bs","Bot Store")+'</a>'
+    else:
+        bs=bs.replace('class="navbs"','class="footbs"',1)
+    if 'npill npsp' not in sp: sp=f'<a class="footsp" href="{d}sponsor.html">'+_wrap("sp","Sponsor / Get Featured")+'</a>'
+    parts=[bs, gen, bt, ft, mcp, sp]
+    cluster='<span class="footpills">'+' · '.join(parts)+'</span><!--/footpills-->'
+    fo=re.sub(r'(?: · ){2,}',' · ',fo)
+    fo=re.sub(r'<p>(?: · )+','<p>',fo)
+    fo=re.sub(r'</a> \(<a href="mailto:','</a> · (<a href="mailto:',fo)
+    fo,k=re.subn(r'(<a href="[^"]*badges\.html">Badges for makers</a>)', lambda mm: mm.group(1)+' · '+cluster, fo, count=1)
+    if not k: return s
+    return s[:m.start()]+fo+s[m.end():]
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
@@ -450,8 +510,8 @@ def sitewide(t):
         # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
         s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Popular lists</a>',s)
         s=re.sub(r'<a class="navvid" href="[^"]*videos/">[^<]*</a>','',s)
-        s=re.sub(r'<a class="navbs" href="[^"]*bot-store/">Bot Store</a>','',s)
-        s=re.sub(r'(<div class="links">.*?<a href="[^"]*news\.html">News</a>)',lambda mm:mm.group(1)+f'<a class="navvid" href="{d}videos/">🎬 Guides</a><a class="navbs" href="{d}bot-store/">Bot Store</a>',s,count=1,flags=re.S)
+        s=re.sub(r'<a class="navbs" href="[^"]*bot-store/">.*?</a>','',s)  # Bot Store is reinserted as the first neon pill (_cluster_nav)
+        s=re.sub(r'(<div class="links">.*?<a href="[^"]*news\.html">News</a>)',lambda mm:mm.group(1)+f'<a class="navvid" href="{d}videos/">🎬 Guides</a>',s,count=1,flags=re.S)
         # Strategic header CTA: neon-glow "Get Featured" pill right before "Submit a tool" (Oct 26 2026, owner directive t2906u + t2923u)
         s=re.sub(r'<a class="[^"]*navsp[^"]*" href="[^"]*sponsor\.html">.*?</a>','',s)
         s=re.sub(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)',lambda mm:f'<a class="navsp" href="{d}sponsor.html">'+_wrap("sp","Get Featured")+'</a>'+mm.group(1),s,count=1)
@@ -486,7 +546,7 @@ def sitewide(t):
             if 'mcp/connect.html">MCP server</a>' not in fn: fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}mcp/connect.html">MCP server</a>',fn,count=1)
             fn=re.sub(r'<a href="[^"]*videos/">(?:Video guides|How-To Video Guides \(8\)|Quick-Start Guides \(8\))</a>', lambda mm: f'<a href="{d}videos/">Quick-Start Guides (8)</a>', fn)
             if 'videos/">Quick-Start Guides (8)</a>' not in fn: fn=re.sub(r'(<a href="[^"]*newsletter\.html">Newsletter archive</a>)',lambda mm:mm.group(1)+f' · <a href="{d}videos/">Quick-Start Guides (8)</a>',fn,count=1)
-            if 'bot-store/">Bot Store</a>' not in fn: fn=re.sub(r'(<a href="[^"]*videos/">Quick-Start Guides (8)</a>)',lambda mm:mm.group(1)+f' · <a href="{d}bot-store/">Bot Store</a>',fn,count=1)
+            if not re.search(r'href="[^"]*bot-store/"', fn): fn=re.sub(r'(<a href="[^"]*videos/">Quick-Start Guides (8)</a>)',lambda mm:mm.group(1)+f' · <a href="{d}bot-store/">Bot Store</a>',fn,count=1)
             # Oct 23 2026 (Ops review): 66 footers (index, saved, quiz, generate, bot-templates/*, some best/*) listed Popular lists and
             # AI agents by role twice; keep the later (standard-position) link and drop the earlier copy
             for _lk in (r'<a href="[^"]*s/index\.html">Popular lists</a>',r'<a href="[^"]*for/index\.html">AI agents by role</a>'):
@@ -560,10 +620,9 @@ def sitewide(t):
                     _L2,_k=re.subn(r'(<a class="navgen" href="[^"]*">[^<]*</a>)',lambda mm:mm.group(1)+_bt.group(0),_L2,count=1)
                     if _k: s=s[:_lm.start()]+_L2+s[_lm.end():]
         if True: s=_pill(s)  # Oct 23 2026 (owner): neon pills for Free tools / Image Gen / AI bot templates; sponsor page untouched
-        if True:  # wrap the four adjacent header pills in one group so they never split across rows (styles.css .navpills)
-            s=re.sub(r'(<div class="links">.*?)(<a class="navgen" .*?<a class="navmcp" [^>]*>.*?</a>)',lambda mm:mm.group(1)+'<span class="navpills">'+mm.group(2)+'</span><!--/navpills-->',s,count=1,flags=re.S)
-            _fm=re.search(r'<footer\b.*?</footer>',s,re.S)  # Oct 23 2026 (owner): the four footer pills also stay together as one no-break group
-            if _fm: s=s[:_fm.start()]+re.sub(r'(<a class="footgen" .*?<a class="footmcp" [^>]*>.*?</a>)',lambda mm:'<span class="footpills">'+mm.group(1)+'</span><!--/footpills-->',_fm.group(0),count=1,flags=re.S)+s[_fm.end():]
+        if True:  # six neon pills stay one cluster: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured
+            s=_cluster_nav(s, d)
+            s=_cluster_foot(s, d)
         _full_same = '["https://x.com/clampdown19", "https://x.com/AgentScoutHQ", "https://agentscout.beehiiv.com/", "https://github.com/clampdown19/agentscout", "https://github.com/Clampdown-web/agentscout"]'
         s=s.replace('"sameAs": ["https://x.com/AgentScoutHQ"]', '"sameAs": ' + _full_same)
         s=s.replace('"sameAs":["https://x.com/AgentScoutHQ"]', '"sameAs": ' + _full_same)
