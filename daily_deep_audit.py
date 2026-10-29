@@ -8,6 +8,7 @@ Also checks the Bot Store still carries those same Payment Links.
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -78,8 +79,25 @@ def main() -> int:
             bad.append("bot-store/index.html missing #ai-agent-packs")
     else:
         bad.append("bot-store/index.html missing")
+    bad.extend(_follower_row_problems())
     _report(bad)
     return 1 if bad else 0
+
+
+def _follower_row_problems() -> list[str]:
+    """Fail a sprint-tracker row that was copied forward instead of fetched that day."""
+    path = ROOT / "data" / "30-day-sprint-tracker.json"
+    if not path.is_file():
+        print("sprint tracker: not present, follower-row check skipped")
+        return []
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import sync_x_followers
+
+    try:
+        tracker = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"data/30-day-sprint-tracker.json is not valid JSON ({exc})"]
+    return [f"sprint tracker: {line}" for line in sync_x_followers.audit_tracker(tracker)]
 
 
 def _report(bad: list[str]) -> None:
@@ -89,6 +107,7 @@ def _report(bad: list[str]) -> None:
     if not bad:
         print("PASS tools/lovable.html has exactly one 25 AI Agent Packs section")
         print("PASS nav, footer, neon pills, JSON-LD, and Stripe Payment Links ($35/$119/$199/$299/$349)")
+        print("PASS follower rows are fetched for their own day when the sprint tracker is present")
 
 
 if __name__ == "__main__":
