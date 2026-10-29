@@ -152,6 +152,14 @@ def mcp_links():
     import build_lovable; build_lovable.run()
 
 
+def animation_cache_buster(n_tools=None):
+    """Date plus live tool count, e.g. 20261029-2060. Never a hardcoded stamp."""
+    import datetime
+    if n_tools is None:
+        n_tools = len(json.load(open("tools.json", encoding="utf-8")))
+    return f"{datetime.date.today().strftime('%Y%m%d')}-{int(n_tools)}"
+
+
 def sync_animations(t=None):
     import json, os, re, subprocess, sys, datetime
     if t is None:
@@ -184,7 +192,7 @@ def sync_animations(t=None):
             print("animation render skipped:", ex)
     elif old_state != cur_state:
         json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
-    ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}-{n_bt}-{script_mtime}"
+    ver = animation_cache_buster(n_tools)
     pages = [
         "index.html", "mcp/index.html", "mcp/connect.html", "sponsor.html",
         "submit.html", "compare/index.html", "tasks/index.html",

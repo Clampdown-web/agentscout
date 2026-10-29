@@ -37,7 +37,9 @@ def build() -> None:
         zpath = ZIPS / f"{agent['slug']}.zip"
         if zpath.exists():
             zpath.unlink()
+        start_here = (dest / "START-HERE.md").read_text(encoding="utf-8")
         with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
+            zf.writestr("START-HERE.md", start_here)
             for path in dest.rglob("*"):
                 if path.is_file():
                     zf.write(path, Path(agent["slug"]) / path.relative_to(dest))

@@ -10,6 +10,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from agent_pack_catalog import ICONS, PACK_TIERS, STRIPE, TIER_PILLS, public_cards  # noqa: E402
 
+ROLE_ZIP = Path(__file__).resolve().parents[1] / "bot-packages" / "25-agent-packs" / "zips"
+
 CSS = """
 <style id="ap-css">
 .ap-window{margin:8px 0 28px;border:1px solid rgba(255,255,255,.16);border-radius:22px;background:#101218;box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:visible;min-width:0;max-width:100%;box-sizing:border-box}
@@ -57,6 +59,8 @@ CSS = """
 .ap-verified{display:inline-flex;align-items:center;gap:3px;border-radius:999px;padding:1px 7px;font-size:10.5px;font-weight:800;letter-spacing:.02em;color:#bbf7d0;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35)}
 .ap-card .ap-tag{margin:0;color:var(--ap);font-size:13px;font-weight:700;line-height:1.4;overflow-wrap:anywhere}
 .ap-promise{margin:0;color:#d4d4d8;font-size:13.5px;line-height:1.5;overflow-wrap:anywhere}
+.ap-setupline{font-weight:800;color:#fff}
+.ap-trust{margin:0;color:#d4d4d8;font-size:12px;line-height:1.4;overflow-wrap:anywhere}
 .ap-compat{margin:0;padding:5px 9px;border-radius:10px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.28);color:#d1fae5;font-size:11.5px;line-height:1.4;overflow-wrap:anywhere}
 .ap-compat b{color:#fff;font-weight:800}
 .ap-specs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:2px 0 0;min-width:0}
@@ -113,8 +117,26 @@ def _e(value) -> str:
     return html.escape(str(value or ""), quote=True)
 
 
+def _trust_html(card: dict) -> str:
+    lines = []
+    if card.get("testedOn"):
+        lines.append(f'<p class="ap-trust">{_e(card["testedOn"])}</p>')
+    if card.get("worksWith"):
+        lines.append(f'<p class="ap-trust">{_e(card["worksWith"])}</p>')
+    if card.get("startHere"):
+        lines.append(f'<p class="ap-trust">{_e(card["startHere"])}</p>')
+    return "".join(lines)
+
+
 def pack_section_html() -> str:
+    from start_here import GUIDE_LINE, SETUP_LINE, prepare_packs, tested_line, works_with_for_zip
+
+    prepare_packs()
     cards = public_cards()
+    for card in cards:
+        card["testedOn"] = tested_line(card["slug"])
+        card["worksWith"] = works_with_for_zip(ROLE_ZIP / f"{card['slug']}.zip")
+        card["startHere"] = GUIDE_LINE
     tiers = list(PACK_TIERS.values())
     payload = json.dumps(
         {"agents": cards, "stripe": STRIPE, "packTiers": tiers},
@@ -150,11 +172,12 @@ def pack_section_html() -> str:
             f'<span class="ap-dept">{_e(card["deptShort"])}</span></span>'
             f'<button type="button" class="ap-add" data-add="{_e(card["slug"])}" aria-pressed="false">+ Add ($35)</button>'
             f'</div>'
+            f'{_trust_html(card)}'
             f'<h3><a href="/bot-store/{_e(card["slug"])}/"><span class="ap-role">{_e(card["role"])} </span><span class="ap-kind">Agent</span></a></h3>'
             f'<p class="ap-by">built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="120" height="24">'
             f'<span class="ap-verified">✓ Verified</span></p>'
             f'<p class="ap-tag">{_e(card["tagline"])}</p>'
-            f'<p class="ap-promise">{_e(card["promise"])}</p>'
+            f'<p class="ap-promise"><span class="ap-setupline">{_e(SETUP_LINE)}</span><br>{_e(card["promise"])}</p>'
             f'<p class="ap-compat">⚡ Works with <b>Grok Bot</b> · <b>Claude Code</b> · <b>Cursor</b> · <b>Codex</b> · <b>Lovable</b></p>'
             f'<ul class="ap-specs">'
             f'<li>🧠 {_e(card["skill"])}/SKILL.md</li>'
@@ -367,7 +390,10 @@ def pack_section_html() -> str:
     document.getElementById("ap-modal-body").innerHTML =
       extra +
       "<p class=\\"ap-kicker\\">" + esc(a.tagline) + "</p>" +
-      "<p>" + esc(a.promise) + "</p>" +
+      "<p><b>Set up for your business in 10 minutes.</b><br>" + esc(a.promise) + "</p>" +
+      (a.testedOn ? "<p class=\\"ap-trust\\">" + esc(a.testedOn) + "</p>" : "") +
+      (a.worksWith ? "<p class=\\"ap-trust\\">" + esc(a.worksWith) + "</p>" : "") +
+      (a.startHere ? "<p class=\\"ap-trust\\">" + esc(a.startHere) + "</p>" : "") +
       "<ul class=\\"ap-hosts\\">" + hosts + "</ul>" +
       "<ul class=\\"ap-chips\\">" + chips + "</ul>" +
       "<h4>Trained judgment</h4><ul class=\\"ap-checks\\">" + skills + "</ul>" +

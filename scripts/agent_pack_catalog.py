@@ -1352,6 +1352,9 @@ def render_package(agent: dict, dest: Path) -> None:
         }
     }
     (dest / "mcp.json").write_text(json.dumps(mcp, indent=2) + "\n", encoding="utf-8")
+    from start_here import render_role_start_here
+
+    (dest / "START-HERE.md").write_text(render_role_start_here(agent), encoding="utf-8")
 
 
 def public_cards() -> list[dict]:
