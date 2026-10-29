@@ -28736,5 +28736,350 @@
    "osi": true
   },
   "updated": "2026-10-28"
+ },
+ "orkas": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Orkas is an open-source, local-first multi-agent desktop app for macOS and Windows that works like a small team. You tell its Commander what you need; it finishes simpler tasks itself and, for bigger work, plans the steps and pulls in specialist agents plus coding and personal agents you already use, including Claude Code, Codex, OpenCode, OpenClaw and Hermes-Agent.",
+   "Work is organised into projects that hold the goal, rules, memory and files, so new conversations pick up where the last one stopped. To-dos are split between people and agents, Auto-advance lets the team take the next item on its own, and scheduled automations repeat routine work. Data stays on your computer. The download includes 500 credits for the built-in Orkas model, or you can bring keys for Claude, OpenAI, Gemini, DeepSeek, Kimi, GLM, Qwen, MiniMax, Doubao or a local endpoint. MIT."
+  ],
+  "who": "Founders and operators who want a desktop agent team that keeps ongoing projects moving.",
+  "features": [
+   "Commander agent that plans and delegates",
+   "Works with Claude Code, Codex, OpenCode, OpenClaw and Hermes-Agent",
+   "Projects with persistent goals, rules, memory and files",
+   "Auto-advance to-dos and scheduled automations",
+   "Local-first; bring your own model keys"
+  ],
+  "faq": [
+   [
+    "Do I need an API key to start?",
+    "No. The free download includes 500 credits for the built-in Orkas model; you can add your own provider keys later."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Orkas-AI/Orkas",
+   "https://orkas.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/Orkas-AI/Orkas",
+   "stars": 3880,
+   "forks": 221,
+   "checked": "2026-10-29",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "yuanjing-wanwu": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Yuanjing Wanwu is China Unicom's open-source, enterprise agent development platform, positioned as a full toolchain for forward deployed engineers who deliver AI projects inside customer systems. It is multi-tenant and released under a commercial-friendly Apache-2.0 licence.",
+   "Its capabilities centre on RAG knowledge-base agents with high-precision parsing of 12 file formats plus URL crawling and privately deployable OCR and MinerU models, alongside workflow orchestration and agent building aimed at secure, compliant enterprise deployments."
+  ],
+  "who": "Enterprise IT and delivery teams building private agent, workflow and RAG applications.",
+  "features": [
+   "Multi-tenant enterprise agent platform",
+   "RAG knowledge bases with 12 file formats and URL crawling",
+   "Private OCR and MinerU document parsing",
+   "Workflow orchestration",
+   "Apache-2.0, commercial-friendly"
+  ],
+  "faq": [
+   [
+    "Can Wanwu be deployed privately?",
+    "Yes. It is designed for enterprise deployment, including privately hosted OCR and parsing models."
+   ]
+  ],
+  "sources": [
+   "https://github.com/UnicomAI/wanwu"
+  ],
+  "facts": {
+   "repo": "https://github.com/UnicomAI/wanwu",
+   "stars": 2380,
+   "forks": 150,
+   "checked": "2026-10-29",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "lagent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Lagent is InternLM's lightweight Python framework for building LLM agents, designed by analogy with PyTorch: agents are like layers, and you define how messages pass between them. Agents communicate with AgentMessage objects, and every forward pass adds input and output messages to the agent's memory as state.",
+   "It works with locally served models such as vLLM-hosted Qwen or InternLM, supports tool use and multi-agent composition, and is installed from source with pip. Apache-2.0."
+  ],
+  "who": "Python developers and researchers who like PyTorch-style composition for multi-agent systems.",
+  "features": [
+   "PyTorch-inspired agent and message design",
+   "AgentMessage-based communication",
+   "Memory as state across forward passes",
+   "Local model backends such as vLLM",
+   "Multi-agent composition and tools"
+  ],
+  "faq": [
+   [
+    "Which models does Lagent support?",
+    "It includes wrappers for locally served models (for example via vLLM) and API models; the README examples use Qwen and InternLM."
+   ]
+  ],
+  "sources": [
+   "https://github.com/InternLM/lagent"
+  ],
+  "facts": {
+   "repo": "https://github.com/InternLM/lagent",
+   "stars": 2287,
+   "forks": 246,
+   "checked": "2026-10-29",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "justhireme": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "JustHireMe is a local-first desktop workbench for job seekers that scrapes listings from multiple sources, ranks each role against your profile with deterministic scoring and vector matching, and generates tailored resumes, cover letters and outreach. It keeps leads in a local CRM rather than a cloud account.",
+   "The stable core is the desktop frontend, a Python sidecar API, lead ingestion, ranking, profile-aware matching and document generation, with installers for Windows, macOS and Linux built from tagged releases. It also ships an agent skill and MCP server so coding agents can drive it. AGPL-3.0."
+  ],
+  "who": "Job seekers who want AI help finding and applying to roles without handing data to a cloud app.",
+  "features": [
+   "Multi-source job listing scraper",
+   "Deterministic fit ranking and vector matching",
+   "Tailored resumes, cover letters and outreach",
+   "Local CRM for leads",
+   "Agent skill and MCP server"
+  ],
+  "faq": [
+   [
+    "Does JustHireMe auto-apply to jobs?",
+    "Its focus is finding and ranking roles and generating tailored materials locally; you stay in control of applications."
+   ]
+  ],
+  "sources": [
+   "https://github.com/vasu-devs/JustHireMe",
+   "https://www.justhireme.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/vasu-devs/JustHireMe",
+   "stars": 2265,
+   "forks": 365,
+   "checked": "2026-10-29",
+   "license": "AGPL-3.0",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "unla": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Unla is a lightweight, highly available MCP gateway written in Go that turns existing REST APIs and MCP servers into MCP-compliant endpoints through YAML configuration, without changing application code. It runs on bare metal, VMs, ECS or Kubernetes without modifying existing infrastructure.",
+   "A built-in web management UI simplifies setup and operations. The project warns that it is under rapid development, so backward compatibility is not fully guaranteed between versions. MIT."
+  ],
+  "who": "Platform teams exposing internal APIs to AI agents over MCP.",
+  "features": [
+   "Convert REST APIs to MCP via YAML",
+   "Proxy existing MCP servers",
+   "Go service, lightweight and highly available",
+   "Web management UI",
+   "Runs on bare metal, VMs, ECS or Kubernetes"
+  ],
+  "faq": [
+   [
+    "Do I need to change my API to use Unla?",
+    "No. Unla maps existing APIs to MCP tools through configuration only."
+   ]
+  ],
+  "sources": [
+   "https://github.com/AmoyLab/Unla"
+  ],
+  "facts": {
+   "repo": "https://github.com/AmoyLab/Unla",
+   "stars": 2246,
+   "forks": 189,
+   "checked": "2026-10-29",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "open-cowork": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Open Cowork is a free, open-source desktop agent app for Windows and macOS that offers an open implementation of Claude Cowork with one-click installers and no coding required. It wraps Claude Code, OpenAI, Gemini, DeepSeek and other models in a GUI.",
+   "Work runs in VM-level sandboxes (WSL2 on Windows, Lima on macOS). A built-in Skills system produces PPTX, DOCX, XLSX and PDF files, MCP connects it to browsers, Notion and other apps, computer use enables GUI automation, and you can control it remotely from Feishu (Lark) or Slack. MIT."
+  ],
+  "who": "Non-developers who want a sandboxed desktop agent for documents and app automation.",
+  "features": [
+   "One-click installers for Windows and macOS",
+   "VM-level sandbox isolation",
+   "Skills for PPTX, DOCX, XLSX and PDF output",
+   "MCP connections and computer use",
+   "Remote control via Feishu or Slack"
+  ],
+  "faq": [
+   [
+    "Is Open Cowork affiliated with Anthropic?",
+    "No. It is an independent open-source implementation of the Claude Cowork idea that works with several model providers."
+   ]
+  ],
+  "sources": [
+   "https://github.com/OpenCoworkAI/open-cowork"
+  ],
+  "facts": {
+   "repo": "https://github.com/OpenCoworkAI/open-cowork",
+   "stars": 2236,
+   "forks": 324,
+   "checked": "2026-10-29",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "chatmcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ChatMCP is a cross-platform AI chat client for macOS, Windows, Linux, iOS, Android and the web that implements the Model Context Protocol, so you can attach MCP servers to conversations with your chosen LLM provider.",
+   "Desktop and Android builds are on GitHub Releases, iOS is available through TestFlight and a web version runs on GitHub Pages. Recent Linux builds follow the XDG base-directory spec and improve dark theme support. Apache-2.0."
+  ],
+  "who": "People who want one MCP-capable chat app across desktop, mobile and web.",
+  "features": [
+   "MCP client for chat",
+   "macOS, Windows, Linux, iOS, Android and web",
+   "Multiple LLM providers",
+   "Free releases on GitHub",
+   "Apache-2.0"
+  ],
+  "faq": [
+   [
+    "Is there a mobile version?",
+    "Yes. Android builds are on GitHub Releases and iOS is available via TestFlight."
+   ]
+  ],
+  "sources": [
+   "https://github.com/daodao97/chatmcp",
+   "https://daodao97.github.io/chatmcp/"
+  ],
+  "facts": {
+   "repo": "https://github.com/daodao97/chatmcp",
+   "stars": 2225,
+   "forks": 210,
+   "checked": "2026-10-29",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "future-agi": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Future AGI is an open-source platform for shipping self-improving AI agents, combining evaluations, tracing, simulations, guardrails, a gateway and optimisation in one product and one feedback loop from prototype to production.",
+   "Teams can simulate edge cases before launch, evaluate live behaviour and feed the results back into agent improvements instead of stitching separate eval, observability and guardrail tools together. It can be self-hosted or used as Future AGI Cloud, which has a free tier. Apache-2.0."
+  ],
+  "who": "AI engineering teams that want evals, tracing and guardrails in one self-hostable platform.",
+  "features": [
+   "Evaluations and tracing",
+   "Pre-launch simulations",
+   "Guardrails and gateway",
+   "Optimisation feedback loop",
+   "Self-host or free cloud tier"
+  ],
+  "faq": [
+   [
+    "Can I self-host Future AGI?",
+    "Yes. The platform is Apache-2.0 and documents a self-host path alongside the hosted cloud."
+   ]
+  ],
+  "sources": [
+   "https://github.com/future-agi/future-agi",
+   "https://futureagi.com"
+  ],
+  "facts": {
+   "repo": "https://github.com/future-agi/future-agi",
+   "stars": 2221,
+   "forks": 701,
+   "checked": "2026-10-29",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "kubernetes-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kubernetes MCP Server, from the containers project, is an MCP server for Kubernetes and OpenShift that lets AI agents view and manage cluster resources. It reads the current kubeconfig or in-cluster configuration and picks up configuration changes automatically.",
+   "Agents can perform CRUD operations on any Kubernetes or OpenShift resource, list and inspect pods across namespaces, read logs, check resource usage with top, exec into pods and run workloads. Releases ship as native binaries. Apache-2.0."
+  ],
+  "who": "Platform and DevOps engineers who want agents to inspect and operate clusters.",
+  "features": [
+   "Kubernetes and OpenShift support",
+   "CRUD on any resource",
+   "Pod logs, top, exec and run",
+   "Kubeconfig or in-cluster config with live reload",
+   "Native binary releases"
+  ],
+  "faq": [
+   [
+    "Does it need kubectl installed?",
+    "No. It is a standalone server that talks to the cluster API using your kubeconfig or in-cluster credentials."
+   ]
+  ],
+  "sources": [
+   "https://github.com/containers/kubernetes-mcp-server"
+  ],
+  "facts": {
+   "repo": "https://github.com/containers/kubernetes-mcp-server",
+   "stars": 2200,
+   "forks": 473,
+   "checked": "2026-10-29",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-29"
+ },
+ "skybridge": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Skybridge, from Alpic, is a full-stack TypeScript and React framework for building MCP Apps and MCP servers: interactive UI views rendered inside Claude, ChatGPT, VS Code and other MCP Apps-compatible clients.",
+   "It provides a dev server with a local emulator, hot module reload and a permanent tunnel to test in Claude and ChatGPT, abstracts differences between clients, offers tRPC-style type inference from tool definitions to React views and React Query-style hooks, and ships skills, a CLI and dev-tool APIs for coding agents. MIT."
+  ],
+  "who": "TypeScript developers building ChatGPT Apps and MCP Apps with rich UI.",
+  "features": [
+   "React framework for MCP Apps",
+   "Local emulator, HMR and permanent tunnel",
+   "Runs in Claude, ChatGPT and VS Code",
+   "End-to-end type safety",
+   "Agent skills and CLI"
+  ],
+  "faq": [
+   [
+    "Does a Skybridge app work in both ChatGPT and Claude?",
+    "Yes. The framework abstracts client differences so the same app runs in any MCP Apps-compatible client."
+   ]
+  ],
+  "sources": [
+   "https://github.com/alpic-ai/skybridge",
+   "https://skybridge.tech"
+  ],
+  "facts": {
+   "repo": "https://github.com/alpic-ai/skybridge",
+   "stars": 2179,
+   "forks": 142,
+   "checked": "2026-10-29",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-29"
  }
 }

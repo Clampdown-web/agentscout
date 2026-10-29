@@ -222,7 +222,11 @@ def sync_catalog_snapshot(src="api/tools.json", dest="cloudflare-mcp-worker/cata
     tools = catalog_tools(data)
     cats = sorted({(t.get("category") or "") for t in tools if t.get("category")})
     mcp = sum(1 for t in tools if t.get("category") == "MCP servers")
-    if len(tools) != 2051 or len(cats) != 40 or mcp != 272:
+    _live = json.load(open("tools.json", encoding="utf-8"))  # expected counts come from the live catalog, not hardcoded numbers (Oct 29 2026)
+    _live = _live if isinstance(_live, list) else _live.get("tools", [])
+    _lcats = {(t.get("category") or "") for t in _live if t.get("category")}
+    _lmcp = sum(1 for t in _live if t.get("category") == "MCP servers")
+    if len(tools) != len(_live) or len(cats) != len(_lcats) or mcp != _lmcp:
         raise SystemExit(f"catalog snapshot out of sync: tools={len(tools)} categories={len(cats)} mcp={mcp}")
     slim = []
     for t in tools:

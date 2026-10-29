@@ -1,5 +1,5 @@
 {
- "checked": "2026-10-28 07:14",
+ "checked": "2026-10-29 07:03",
  "tz": "America/Los_Angeles",
  "results": {
   "9bot": {
@@ -24,6 +24,10 @@
   "airtable-mcp": {
    "url": 200
   },
+  "aisoc": {
+   "url": 200,
+   "github": 200
+  },
   "aiven-mcp": {
    "url": 200,
    "github": 200
@@ -31,16 +35,28 @@
   "algolia-mcp": {
    "url": 200
   },
+  "alpaca-mcp-server": {
+   "url": 200,
+   "github": 200
+  },
   "altmetric-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "amplitude-mcp": {
    "url": 200,
    "github": 200
   },
+  "annas-mcp": {
+   "url": 200,
+   "github": 200
+  },
   "antv-mcp-server-chart": {
    "url": 200
+  },
+  "anymd": {
+   "url": 200,
+   "github": 200
   },
   "anysearch": {
    "url": 200,
@@ -67,12 +83,19 @@
    "url": 200,
    "github": 200
   },
+  "arkon": {
+   "url": 200
+  },
   "arxiv-mcp-server": {
    "url": 200
   },
   "atlassian-rovo-mcp-server": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
+  },
+  "audio-studio-mcp": {
+   "url": 200,
+   "github": 200
   },
   "auth0-mcp-server": {
    "url": 200
@@ -86,9 +109,6 @@
    "github": 200
   },
   "axiom-mcp": {
-   "url": 200
-  },
-  "azure-devops-mcp": {
    "url": 200
   },
   "azure-mcp-server": {
@@ -109,7 +129,7 @@
    "url": 200
   },
   "bright-data-mcp": {
-   "url": 200,
+   "url": 502,
    "github": 200
   },
   "browserstack-mcp": {
@@ -124,6 +144,10 @@
    "url": 200
   },
   "canva-mcp": {
+   "url": 200
+  },
+  "carbon": {
+   "github": 200,
    "url": 200
   },
   "carto-mcp": {
@@ -162,23 +186,50 @@
    "url": 200,
    "github": 200
   },
+  "contextplus": {
+   "url": 200,
+   "github": 200
+  },
   "credal": {
    "url": 200
   },
+  "crosspaste-desktop": {
+   "url": 200,
+   "github": 200
+  },
+  "crw": {
+   "url": 200,
+   "github": 200
+  },
+  "cve-mcp-server": {
+   "url": 200,
+   "github": 200
+  },
   "daily-dev-mcp": {
+   "url": 200
+  },
+  "dashboard-icons": {
+   "url": 200,
+   "github": 200
+  },
+  "datagouv-mcp": {
    "url": 200
   },
   "davinci-resolve-mcp": {
    "url": 200
   },
-  "dbhub": {
-   "url": 200,
-   "github": 200
-  },
   "dbt-mcp": {
    "url": 200
   },
+  "dbx": {
+   "url": 200,
+   "github": 200
+  },
   "desearch": {
+   "url": 200,
+   "github": 200
+  },
+  "design-extract": {
    "url": 200,
    "github": 200
   },
@@ -191,6 +242,10 @@
    "github": 200
   },
   "diagrid-catalyst-mcp": {
+   "url": 200,
+   "github": 200
+  },
+  "douyin-tiktok-download-api": {
    "url": 200,
    "github": 200
   },
@@ -209,6 +264,9 @@
    "url": 200,
    "github": 200
   },
+  "ffmpeg-skill": {
+   "url": 200
+  },
   "figma-console-mcp": {
    "url": 200,
    "github": 200
@@ -216,9 +274,6 @@
   "figma-mcp-server": {
    "url": 200,
    "github": 200
-  },
-  "financial-cents-mcp": {
-   "url": 200
   },
   "fireflies-mcp": {
    "url": 200
@@ -233,6 +288,9 @@
   "frase-mcp": {
    "url": 200,
    "github": 200
+  },
+  "gearboy": {
+   "url": 200
   },
   "geckoboard-mcp": {
    "url": 200
@@ -255,6 +313,10 @@
    "url": 200
   },
   "google-workspace-mcp": {
+   "url": 200,
+   "github": 200
+  },
+  "gortex": {
    "url": 200,
    "github": 200
   },
@@ -282,7 +344,7 @@
    "url": 200,
    "github": 200
   },
-  "hello-retail-mcp": {
+  "hexstrike-ai": {
    "url": 200
   },
   "home-assistant-mcp-ha-mcp": {
@@ -334,8 +396,15 @@
    "url": 200
   },
   "joinly": {
-   "github": 200,
+   "url": 200,
+   "github": 200
+  },
+  "jscpd": {
    "url": 200
+  },
+  "jshookmcp": {
+   "url": 200,
+   "github": 200
   },
   "jumpcloud-mcp": {
    "url": 200
@@ -358,10 +427,11 @@
    "url": 200,
    "github": 200
   },
-  "kubernetes-mcp-server": {
-   "url": 200
-  },
   "launchdarkly-mcp": {
+   "url": 200,
+   "github": 200
+  },
+  "lightswind-ui-library": {
    "url": 200,
    "github": 200
   },
@@ -417,6 +487,10 @@
    "url": 200,
    "github": 200
   },
+  "master-fetch": {
+   "url": 200,
+   "github": 200
+  },
   "matlab-mcp-server": {
    "url": 200
   },
@@ -429,6 +503,10 @@
    "github": 200
   },
   "mcp-for-blender": {
+   "url": 200,
+   "github": 200
+  },
+  "mcp-gateway-registry": {
    "url": 200,
    "github": 200
   },
@@ -465,6 +543,10 @@
   },
   "mcp-registry": {
    "url": 200
+  },
+  "mcp-remote": {
+   "url": 200,
+   "github": 200
   },
   "mcp-rust-sdk": {
    "url": 200,
@@ -523,8 +605,8 @@
    "url": 200
   },
   "model-context-protocol": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "monday-com-mcp": {
    "url": 200,
@@ -533,14 +615,15 @@
   "mongodb-mcp-server": {
    "url": 200
   },
-  "motherduck-mcp": {
-   "url": 200
-  },
   "mural-mcp": {
    "url": 200
   },
   "mux-mcp": {
    "url": 200
+  },
+  "mysql-mcp-server": {
+   "url": 200,
+   "github": 200
   },
   "n8n-mcp": {
    "url": 200,
@@ -566,6 +649,9 @@
    "url": 200,
    "github": 200
   },
+  "nornicdb": {
+   "url": 200
+  },
   "notion-mcp": {
    "url": 200
   },
@@ -581,7 +667,7 @@
    "url": 200,
    "github": 200
   },
-  "omophub": {
+  "ollaya": {
    "url": 200,
    "github": 200
   },
@@ -610,8 +696,8 @@
    "github": 200
   },
   "pangolinfo-amazon-data-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "parallel-search-mcp": {
    "url": 200,
@@ -620,11 +706,12 @@
   "parse-ly-mcp": {
    "url": 200
   },
-  "paypal-mcp": {
-   "url": 200
-  },
   "pg-aiguide": {
    "url": 200
+  },
+  "phantom": {
+   "url": 200,
+   "github": 200
   },
   "picsart-genai-mcp": {
    "url": 202
@@ -633,28 +720,19 @@
    "url": 200,
    "github": 200
   },
-  "polar-analytics-mcp": {
-   "url": 200
-  },
   "porkbun-mcp": {
    "url": 200,
    "github": 200
-  },
-  "postgres-mcp-pro": {
-   "url": 200
   },
   "postman-mcp-server": {
    "url": 200,
    "github": 200
   },
-  "power-bi-modeling-mcp": {
-   "url": 200
-  },
   "printfriendly-mcp": {
    "url": 200,
    "github": 200
   },
-  "radar": {
+  "proxima": {
    "url": 200,
    "github": 200
   },
@@ -662,6 +740,10 @@
    "url": 200
   },
   "rea": {
+   "url": 200,
+   "github": 200
+  },
+  "redamon": {
    "url": 200,
    "github": 200
   },
@@ -673,25 +755,22 @@
    "url": 200
   },
   "remotify-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "reverse-image-location-geosolver": {
-   "url": 200
-  },
-  "robottraining-jobs": {
    "url": 200
   },
   "rocketreach-mcp": {
    "url": 200,
    "github": 200
   },
-  "ros-mcp-server": {
-   "url": 200,
-   "github": 200
-  },
   "sanity-mcp": {
    "url": 200
+  },
+  "sceneview": {
+   "url": 200,
+   "github": 200
   },
   "scite-mcp": {
    "url": 200
@@ -709,8 +788,8 @@
    "url": 200
   },
   "sendpulse-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "sentry-mcp": {
    "url": 200,
@@ -771,13 +850,6 @@
    "url": 200,
    "github": 200
   },
-  "stripe-agent-toolkit": {
-   "url": 200,
-   "github": 200
-  },
-  "studocu-mcp": {
-   "url": 403
-  },
   "supabase-mcp": {
    "url": 200,
    "github": 200
@@ -797,13 +869,10 @@
    "url": 200
   },
   "tanatasa-beauty-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "teamwork-com-mcp": {
-   "url": 200
-  },
-  "terraform-mcp-server": {
    "url": 200
   },
   "testkube-mcp": {
@@ -825,6 +894,10 @@
   "trivago-mcp": {
    "url": 200
   },
+  "tuui": {
+   "url": 200,
+   "github": 200
+  },
   "twelve-data-mcp": {
    "url": 200,
    "github": 200
@@ -843,6 +916,10 @@
    "url": 200
   },
   "unleash-mcp": {
+   "url": 200,
+   "github": 200
+  },
+  "unreal-mcp": {
    "url": 200,
    "github": 200
   },
@@ -867,6 +944,10 @@
   "webflow-mcp": {
    "url": 200
   },
+  "webiny-js": {
+   "url": 200,
+   "github": 200
+  },
   "wenbu": {
    "url": 200,
    "github": 200
@@ -886,6 +967,13 @@
    "url": 200
   },
   "workos-mcp": {
+   "url": 200
+  },
+  "wslmanager": {
+   "url": 200,
+   "github": 200
+  },
+  "x64dbg-mcp-server": {
    "url": 200
   },
   "xquik": {

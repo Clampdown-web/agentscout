@@ -1,7 +1,16 @@
 {
- "updated": "2026-10-28T14:05:36Z",
+ "updated": "2026-10-29T14:00:33Z",
  "days": 30,
  "items": [
+  {
+   "title": "Particle launches particle-1, a developer model that matches DeepSeek V4.1 Flash with ~45% fewer tokens",
+   "source": "X",
+   "url": "https://x.com/Suhail/status/2115497949421883648",
+   "date": "2026-10-28T17:36:29Z",
+   "tool": null,
+   "summary": "Mixpanel founder Suhail Doshi's new company Particle released particle-1, a developer- and agent-focused model tuned for token efficiency that keeps parity with its base model while using about 45% fewer tokens; it is live via Particle's inference service, OpenRouter and Vercel AI Gateway.",
+   "page": "news/2026/10/particle-launches-particle-1-a-developer-model-that-matches-deepseek.html"
+  },
   {
    "title": "Anthropic study: Claude Code's hidden leanings steered expert analysts 86% of the time",
    "source": "X",
@@ -12,6 +21,23 @@
    "page": "news/2026/10/anthropic-study-claude-codes-hidden-leanings-steered-expert-analysts.html"
   },
   {
+   "title": "Meta's Muse personal agent launches in Singapore with Shopee, Lazada and GrabMart tasks",
+   "source": "X",
+   "url": "https://x.com/i/trending/2115291381774340377",
+   "date": "2026-10-28T12:08:00Z",
+   "tool": null,
+   "summary": "Meta brought its Muse personal AI agent to Singapore, its fourth market, where it can compare prices on Shopee and Lazada, plan groceries via GrabMart and book travel with user approval for sensitive steps; paid plans start at S$22 a month.",
+   "page": "news/2026/10/metas-muse-personal-agent-launches-in-singapore-with-shopee-lazada.html"
+  },
+  {
+   "title": "Etraveli Group adds MCP layer to flight content",
+   "source": "PhocusWire",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYjQzWlVRdnRkSFlnMGxGSnEtNGZGN0dkU2NhNVp3bmcyZW5fb3dNTVdUd2xOUHNWVjBwM3ZicmprNllRQVdmazc5bHZZWjY0NWJzRTkzOUd1c0hHaXY5OFVZT0ktaGoyUjU4STNKY29WZUdiWU1mMVRsLWxoa0FfVkg0RTBnaEhBRXpqYU5adTROQQ?oc=5",
+   "date": "2026-10-28T12:06:47Z",
+   "tool": "layer",
+   "page": "news/2026/10/etraveli-group-adds-mcp-layer-to-flight-content.html"
+  },
+  {
    "title": "Judgment Labs opens its AI agent monitoring platform to everyone",
    "source": "X",
    "url": "https://x.com/i/trending/2115193410134987191",
@@ -19,6 +45,15 @@
    "tool": null,
    "summary": "Judgment Labs made its agent monitoring platform generally available: it captures full execution traces from long-running agents, runs customisable judges over them and uses a built-in agent to surface failure patterns, alerts and tests. The $32M-backed startup already counts Fluidstack and Modal as customers.",
    "page": "news/2026/10/judgment-labs-opens-its-ai-agent-monitoring-platform-to-everyone.html"
+  },
+  {
+   "title": "Hex raises $100M at a $1.2B valuation and rebuilds its product for AI agents",
+   "source": "X",
+   "url": "https://x.com/i/trending/2115127969333047789",
+   "date": "2026-10-27T20:31:00Z",
+   "tool": null,
+   "summary": "Data platform Hex closed a $100M round at a $1.2B valuation and launched Hex 4.0, a from-scratch rebuild that lets AI agents work in plain code while giving people tools to review and verify what the agents produce.",
+   "page": "news/2026/10/hex-raises-100m-at-a-1-2b-valuation-and-rebuilds-its-product-for-ai.html"
   },
   {
    "title": "Make AI agent answers predictable and trustworthy with Analytic views in Autonomous AI…",
