@@ -57,6 +57,8 @@ CSS = """
 .ap-verified{display:inline-flex;align-items:center;gap:3px;border-radius:999px;padding:1px 7px;font-size:10.5px;font-weight:800;letter-spacing:.02em;color:#bbf7d0;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35)}
 .ap-card .ap-tag{margin:0;color:var(--ap);font-size:13px;font-weight:700;line-height:1.4;overflow-wrap:anywhere}
 .ap-promise{margin:0;color:#d4d4d8;font-size:13.5px;line-height:1.5;overflow-wrap:anywhere}
+.ap-compat{margin:0;padding:5px 9px;border-radius:10px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.28);color:#d1fae5;font-size:11.5px;line-height:1.4;overflow-wrap:anywhere}
+.ap-compat b{color:#fff;font-weight:800}
 .ap-specs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:2px 0 0;min-width:0}
 .ap-specs li{max-width:100%;overflow-wrap:anywhere;font-size:11.5px;line-height:1.35;color:#e4e4e7;background:#12151c;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 8px;box-sizing:border-box}
 .ap-card-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto;padding-top:4px;min-width:0}
@@ -151,6 +153,7 @@ def pack_section_html() -> str:
             f'<span class="ap-verified">✓ Verified</span></p>'
             f'<p class="ap-tag">{_e(card["tagline"])}</p>'
             f'<p class="ap-promise">{_e(card["promise"])}</p>'
+            f'<p class="ap-compat">⚡ Works with <b>Grok Bot</b> · <b>Claude Code</b> · <b>Cursor</b> · <b>Codex</b> · <b>Lovable</b></p>'
             f'<ul class="ap-specs">'
             f'<li>🧠 {_e(card["skill"])}/SKILL.md</li>'
             f'<li>🐍 {_e(card["script"])}</li>'
@@ -171,7 +174,7 @@ def pack_section_html() -> str:
     <span class="ap-dots" aria-hidden="true"><i class="r"></i><i class="y"></i><i class="g"></i></span>
     <div class="ap-chrome-copy">
       <h2 id="ap-title">25 Pre-Trained AI Agent Packs ($35 each · Bundle 5 for $119 · 10 for $199 · 20 for $299 · All 25 for $349)</h2>
-      <p>Pick the agents you want in your pack — each ships as a downloadable ZIP with a domain SKILL.md, 3 scheduled cron routines, and a zero-dependency Python CLI tool</p>
+      <p>Pick the agents you want in your pack — each ships as a downloadable ZIP with a domain SKILL.md, 3 scheduled cron routines, and a zero-dependency Python CLI tool. Built for Grok Bot and compatible with Claude Code (CLAUDE.md), Cursor (.cursorrules), OpenAI Codex (AGENTS.md), and Lovable (LOVABLE.md).</p>
     </div>
     <div class="ap-chrome-side">
       <span class="ap-count" id="ap-count">25 agents</span>

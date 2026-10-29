@@ -155,6 +155,7 @@ def write_pack_pages() -> list[str]:
 <p class="lede">{X.e(lead)}</p>
 <p class="pack-outcome">{X.e(agent["promise"])}</p>
 <p class="pack-tag">{X.e(agent["tagline"])}</p>
+<p class="pack-compat">⚡ Built for <b>Grok Bot</b> · Compatible with <b>Claude Code</b> (<code>CLAUDE.md</code>), <b>Cursor</b> (<code>.cursorrules</code>), <b>OpenAI Codex</b> (<code>AGENTS.md</code>) &amp; <b>Lovable</b> (<code>LOVABLE.md</code>)</p>
 <ul class="pack-chips">{chips}</ul>
 <div class="pack-cta">
 <a class="pack-btn buy" href="{X.e(agent["checkout_url"] or "../#ap-dock")}">Buy this agent — ${agent["price"]}</a>
@@ -219,6 +220,8 @@ def write_pack_pages() -> list[str]:
 .pack-page .lede{{color:#e4e4e7;font-size:15.5px;line-height:1.55}}
 .pack-outcome{{margin:8px 0;color:#d4d4d8;font-size:15px;line-height:1.55;overflow-wrap:anywhere}}
 .pack-tag{{margin:0 0 8px;color:var(--ap);font-weight:800;overflow-wrap:anywhere}}
+.pack-compat{{margin:8px 0;padding:8px 11px;border-radius:12px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.35);color:#d1fae5;font-size:13px;line-height:1.45;overflow-wrap:anywhere}}
+.pack-compat b{{color:#fff;font-weight:800}}
 .pack-chips,.pack-hosts,.pack-files{{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:8px 0}}
 .pack-chips li,.pack-hosts li,.pack-files li{{max-width:100%;overflow-wrap:anywhere;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:700;color:#e4e4e7;background:#12151c;border:1px solid rgba(255,255,255,.12)}}
 .pack-cta{{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}}
