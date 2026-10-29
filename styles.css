@@ -507,34 +507,37 @@ nav .links a.navmcp:focus-visible{outline:2px solid var(--accent);outline-offset
 .npill{--np:#0f766e;--npg:rgba(20,184,166,.35);--npb:rgba(20,184,166,.10);display:inline-flex;align-items:center;gap:4px;line-height:1.2;padding:2px 8px 2px 6px;border:1px solid var(--np);border-radius:999px;background:var(--npb);color:var(--text);font-weight:600;box-shadow:0 0 6px var(--npg);white-space:nowrap}
 .npgen{--np:#be185d;--npg:rgba(236,72,153,.35);--npb:rgba(236,72,153,.09)}
 .npbt{--np:#b45309;--npg:rgba(245,158,11,.38);--npb:rgba(245,158,11,.10)}
+.npbs{--np:#10b981;--npg:rgba(16,185,129,.48);--npb:rgba(16,185,129,.14)}
 [data-theme=dark] .npft{--np:#2dd4bf;--npg:rgba(45,212,191,.35);--npb:rgba(45,212,191,.10)}
 [data-theme=dark] .npgen{--np:#f472b6;--npg:rgba(244,114,182,.35);--npb:rgba(244,114,182,.10)}
 [data-theme=dark] .npbt{--np:#fbbf24;--npg:rgba(251,191,36,.33);--npb:rgba(251,191,36,.10)}
+[data-theme=dark] .npbs{--np:#22c55e;--npg:rgba(34,197,94,.52);--npb:rgba(34,197,94,.16)}
 .npico{flex:0 0 14px;width:14px;height:14px;color:var(--np)}
-a.navft,a.navgen,a.footgen,a.navbt{text-decoration:none}
+a.navft,a.navgen,a.footgen,a.navbt,a.navbs,a.footbs{text-decoration:none}
 a:hover>.npill{background:var(--np);color:#fff}a:hover>.npill .npico{color:#fff}
 [data-theme=dark] a:hover>.npill,[data-theme=dark] a:hover>.npill .npico{color:#0b0b12}
 a:has(>.npill):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:999px}
 a.navbt:has(>.npill)::before{display:none!important}
-a.navgen:has(>.npill),a.footgen:has(>.npill),a.navbt:has(>.npill){color:var(--text)!important}
-footer a.footgen:has(>.npill){padding:0;background:none}
+a.navgen:has(>.npill),a.footgen:has(>.npill),a.navbt:has(>.npill),a.navbs:has(>.npill),a.footbs:has(>.npill){color:var(--text)!important}
+footer a.footgen:has(>.npill),footer a.footbs:has(>.npill){padding:0;background:none}
 footer a.navft,main a.navft,section a.navft{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle}
 nav .links .npill{padding:0;border:0;gap:3px;background:none;box-shadow:0 0 0 3px var(--npb),0 0 0 4px var(--np),0 0 7px 3px var(--npg)}
 nav .links .npico{width:13px;height:13px;flex-basis:13px}
 nav .links a:hover>.npill{box-shadow:0 0 0 3px var(--np),0 0 0 4px var(--np)}
 /* 320-349px and 600-739px: the header has no spare width, so Image Gen and AI bot templates drop their icons there (the tinted ring stays); the wrench stays on Free tools. Keeps the header row count and search position unchanged. */
-@media(max-width:349px),(min-width:600px) and (max-width:739px){nav .links .npgen .npico,nav .links .npbt .npico{display:none}}
+@media(max-width:349px),(min-width:600px) and (max-width:739px){nav .links .npgen .npico,nav .links .npbt .npico,nav .links .npbs .npico{display:none}}
 @media(max-width:339px){nav .links .npft .npico{display:none}}
 .npmcp{--np:var(--accent);--npg:rgba(91,91,247,.35);--npb:var(--accent-soft)}[data-theme=dark] .npmcp{--np:#9b9bff;--npg:rgba(147,147,255,.35)}
-footer a.footmcp{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle;text-decoration:none}
-/* Oct 23 2026 (owner): the four neon header pills (Image Gen, AI bot templates, Free tools, MCP) stay together as one group, in footer order */
-nav .links .navpills{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:inherit;flex:0 0 auto}
+footer a.footmcp,footer a.footbs{display:inline-flex;align-items:center;min-height:44px;vertical-align:middle;text-decoration:none}
+/* Neon header pills stay one cluster: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured.
+   The group may wrap inside itself so a narrow viewport never grows a horizontal scrollbar. */
+nav .links .navpills{display:inline-flex;flex-wrap:wrap;align-items:center;column-gap:8px;row-gap:4px;flex:0 1 auto;min-width:0;max-width:100%;justify-content:center}
 @media(max-width:640px){nav .links .navpills{flex:0 0 100%;flex-wrap:wrap;justify-content:center;row-gap:4px}}
 footer .footpills a{min-height:44px}
-footer .footpills{display:inline-flex;flex-wrap:nowrap;align-items:center;column-gap:.3em;white-space:nowrap;vertical-align:middle;max-width:100%}
+footer .footpills{display:inline-flex;flex-wrap:wrap;align-items:center;column-gap:.35em;row-gap:2px;white-space:normal;vertical-align:middle;max-width:100%;min-width:0}
 @media(max-width:600px){footer .footpills{flex-wrap:wrap;white-space:normal;row-gap:4px}}
 /* v3 (Ops re-check, Oct 23 2026): match the live header height at every width. 600-640px: the pill group flows inline (not a forced full-width row); the header MCP pill stays hidden at 600-659px as on live (it is still in the footer group); tighter column gaps at <340px and 600-609px. */
-@media(min-width:600px) and (max-width:640px){nav .links .navpills{flex:0 0 auto;flex-wrap:nowrap}}
+@media(min-width:600px) and (max-width:640px){nav .links .navpills{flex:0 1 auto;flex-wrap:wrap;max-width:100%}}
 @media(max-width:339px){nav .links{column-gap:6px}}@media(max-width:319px){nav .links{column-gap:4px}}@media(min-width:600px) and (max-width:609px){nav .links{column-gap:1px}}
 /* Oct 23 2026: keep the header at the live site's height. >=600px: Newsletter and Leaderboard move ahead of the pill group (row 1), so row 2 = the four pills + Quiz, Saved, Submit and Submit never wraps to its own row.
    <600px: the four pills stay adjacent and in order but flow inline with the other links (no forced full-width block), so phones keep the live row count. */
@@ -544,7 +547,7 @@ footer .footpills{display:inline-flex;flex-wrap:nowrap;align-items:center;column
 /* v4 (owner, Oct 23 2026): all four neon pills always show together in the header at every width; tight widths scale pill font/padding/gap instead of hiding MCP */
 @media(min-width:600px) and (max-width:739px){nav .links .navpills{column-gap:8px}}
 @media(min-width:600px) and (max-width:659px){nav .links a:not(.btn){min-width:0}nav .links{column-gap:4px}nav .links .navpills{column-gap:10px}}
-@media(max-width:599px){nav .links .navpills{display:inline-flex;flex:0 0 100%;flex-wrap:nowrap;justify-content:center;column-gap:12px;order:-1}}
+@media(max-width:599px){nav .links .navpills{display:inline-flex;flex:0 1 100%;flex-wrap:wrap;justify-content:center;column-gap:8px;row-gap:4px;order:0;max-width:100%}}
 @media(max-width:430px){nav .links .navpills{column-gap:10px}nav .links .navpills .npill,nav .links .navpills .mcppill{font-size:12.5px}}
 @media(max-width:399px){nav .links .navpills{column-gap:9px}nav .links .npgen .npico,nav .links .npbt .npico{display:none}}
 @media(max-width:339px){nav .links .navpills{column-gap:8px}nav .links .navpills .npill,nav .links .navpills .mcppill{font-size:12px}}
@@ -552,11 +555,11 @@ footer .footpills{display:inline-flex;flex-wrap:nowrap;align-items:center;column
 @media(max-width:1023px){nav .links .navpills a{min-height:44px;display:inline-flex;align-items:center}}/* Ops: pills shrink narrower, never shorter than 44px */
 /* v5 (Ops nit + footer single-row 300-639px, Oct 23 2026): footer .footpills keeps all 4 pills on one row at 300-639px; header .npill gets inner ring padding at 300-390px without overflowing */
 footer .wrap>div{min-width:0;max-width:100%}
-@media(max-width:639px){footer .footpills{flex-wrap:nowrap;white-space:nowrap;column-gap:4px}footer .footpills .npill{font-size:12.5px;padding:2px 6px 2px 5px}}
+@media(max-width:639px){footer .footpills{flex-wrap:wrap;white-space:normal;column-gap:4px;row-gap:2px;max-width:100%}footer .footpills .npill{font-size:12.5px;padding:2px 6px 2px 5px}}
 @media(max-width:599px){nav .links .navpills{max-width:100%}nav .links .navpills a,nav .links .navpills .npill,nav .links .navpills .mcppill{min-width:0;flex-shrink:1;overflow:hidden}footer .footpills{display:flex;width:100%;justify-content:center;font-size:0;column-gap:clamp(2px,1vw,6px);margin:2px 0;max-width:100%}footer .footpills a,footer .footpills .npill{min-width:0;flex-shrink:1;overflow:hidden}footer .footpills .npill{font-size:clamp(8.5px,2.5vw,12px);padding:2px clamp(3px,1vw,6px);gap:2px}footer .footpills .npico{width:12px;height:12px;flex-basis:12px}}
-@media(max-width:539px){footer .footpills .npgen .npico,footer .footpills .npbt .npico{display:none}}
+@media(max-width:539px){footer .footpills .npgen .npico,footer .footpills .npbt .npico,footer .footpills .npbs .npico{display:none}}
 @media(max-width:489px){footer .footpills .npico{display:none}}
-@media(max-width:399px){nav .links .navpills{margin-left:-12px;margin-right:-12px;flex:0 0 calc(100% + 24px);max-width:calc(100% + 24px);column-gap:7px}nav .links .navpills .npill{padding:0 5px 0 4px}nav .links .navpills .npgen,nav .links .navpills .npbt{padding:0 5px}footer .footpills{margin-left:-12px;margin-right:-12px;width:calc(100% + 24px);max-width:calc(100% + 24px)}}
+@media(max-width:399px){nav .links .navpills{margin-left:0;margin-right:0;flex:0 1 100%;max-width:100%;column-gap:6px}nav .links .navpills .npill{padding:0 5px 0 4px}nav .links .navpills .npgen,nav .links .navpills .npbt,nav .links .navpills .npbs{padding:0 5px}footer .footpills{margin-left:0;margin-right:0;width:100%;max-width:100%}}
 @media(max-width:359px){nav .links .navpills{column-gap:5px}nav .links .navpills .npill{padding:0 4px 0 3px}nav .links .navpills .npgen,nav .links .navpills .npbt{padding:0 4px}}
 @media(max-width:339px){nav .links .navpills{column-gap:5px}nav .links .navpills .npill{padding:0 4px}footer .footpills{column-gap:2px}footer .footpills .npill{font-size:clamp(7.5px,2.6vw,9.5px);padding:2px 3px}}
 /* Paid packages & Strategic Maker Placements (Oct 26 2026 — Neon-Glow Pink & Indigo Edition t2947u) */

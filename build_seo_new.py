@@ -176,8 +176,11 @@ def sync_animations(t=None):
             old_state = {}
     if old_state != cur_state and os.path.exists(script):
         print(f"Re-rendering site animations for live counts: {cur_state}...")
-        subprocess.run([sys.executable, script, "--site-dir", os.getcwd()], check=True)
-        json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
+        try:
+            subprocess.run([sys.executable, script, "--site-dir", os.getcwd()], check=True)
+            json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
+        except Exception as ex:
+            print("animation render skipped:", ex)
     elif old_state != cur_state:
         json.dump(cur_state, open(state_file, "w", encoding="utf-8"), indent=2)
     ver = f"{datetime.date.today().strftime('%Y%m%d')}-{n_tools}-{n_bt}-{script_mtime}"
@@ -209,7 +212,9 @@ def unify_all_nav_and_footer():
     idx_s = idx_s.replace('How-To Video Guides (8) →', 'Quick-Start Guides (8) →')
     idx_s = re.sub(r'\s*·\s*<a href="mcp/">Best MCP servers by task</a>', '', idx_s)
     idx_s = re.sub(r'\s*·\s*<a href="[^"]*open-source-browser-agents\.html">Free &amp; open-source browser agents</a>', '', idx_s)
-    if '<a href="bot-store/">Bot Store</a>' not in idx_s:
+    foot = re.search(r'<footer\b.*?</footer>', idx_s, re.S)
+    # Bot Store is a neon pill inside the footer cluster. Only a footer that has no Bot Store link at all gets the plain fallback.
+    if foot and 'bot-store/' not in foot.group(0):
         idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
     open("index.html", "w", encoding="utf-8").write(idx_s)
 
@@ -264,4 +269,52 @@ def unify_all_nav_and_footer():
                 open(rel, "w", encoding="utf-8").write(s_new)
                 updated += 1
     print(f"unify_all_nav_and_footer: unified {updated} pages")
+    return verify_nav_footer_unified()
+
+
+def _canon_chrome(html):
+    """Drop relative-depth prefixes so nav/footer from any directory compare equal."""
+    html = re.sub(r'(href|src)=(["\'])(?:\.\./)+', r'\1=\2', html)
+    html = re.sub(r'(href|src)=(["\'])/(?!/)', r'\1=\2', html)
+    return re.sub(r'\s+', ' ', html).strip()
+
+
+def verify_nav_footer_unified():
+    """Every real page must carry the same nav and footer as index.html. Exit via return count of mismatches."""
+    idx = open("index.html", encoding="utf-8").read()
+    nav = re.search(r'<nav[^>]*>.*?</nav>', idx, re.S)
+    foot = re.search(r'<footer[^>]*>.*?</footer>', idx, re.S)
+    if not (nav and foot):
+        print("nav/footer verify: index.html is missing nav or footer")
+        return 1
+    want_nav, want_foot = _canon_chrome(nav.group(0)), _canon_chrome(foot.group(0))
+    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    bad = []
+    seen = 0
+    for root_dir, dirs, fnames in os.walk("."):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview")]
+        for fn in fnames:
+            if not fn.endswith(".html") or fn in skip:
+                continue
+            rel = os.path.relpath(os.path.join(root_dir, fn), ".")
+            s = open(rel, encoding="utf-8").read()
+            if 'http-equiv="refresh"' in s:
+                continue
+            n = re.search(r'<nav[^>]*>.*?</nav>', s, re.S)
+            f = re.search(r'<footer[^>]*>.*?</footer>', s, re.S)
+            if not n or not f:
+                bad.append(rel + " missing nav or footer")
+                continue
+            seen += 1
+            if _canon_chrome(n.group(0)) != want_nav:
+                bad.append(rel + " nav")
+            if _canon_chrome(f.group(0)) != want_foot:
+                bad.append(rel + " footer")
+    print(f"nav/footer verify: {seen} pages, {len(bad)} mismatches")
+    for line in bad[:20]:
+        print(" MISMATCH", line)
+    return len(bad)
+
+if __name__ == "__main__":
+    run(json.load(open("tools.json", encoding="utf-8")))
 

@@ -562,3 +562,7 @@ def _apply_featured():
         _os.chdir(_here)
     except Exception as _ex: print("featured skipped:",_ex)
 _atexit.register(_apply_featured)
+
+if __name__ == "__main__":
+    import build_seo_new
+    raise SystemExit(build_seo_new.unify_all_nav_and_footer() or 0)
