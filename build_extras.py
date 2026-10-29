@@ -419,7 +419,7 @@ def seo(t,urls):
     import glob as _gpk
     _packs=sorted(_gpk.glob("bot-store/*/index.html"))
     if _packs:
-        L+=["","## AI Agent Packs","",f"- [AgentScout Bot Store]({B}bot-store/)", "- 25 role packs are $35 each (https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09). Volume: 5 for $119 (https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a), 10 for $199 (https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b), 20 for $299 (https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c), all 25 for $349 (https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d). Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149."]
+        L+=["","## AI Agent Packs","",f"- [AgentScout Bot Store]({B}bot-store/)", "- Works with Grok Bot, Claude Code, Cursor, OpenAI Codex, and Lovable. 25 role packs are $35 each (https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09). Volume: 5 for $119 (https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a), 10 for $199 (https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b), 20 for $299 (https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c), all 25 for $349 (https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d). Flagship Pro Bots stay $39 Ops/Monitoring (https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03), $59 SEO & AEO Auditor (https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05), $59 Market & Launch Intel (https://buy.stripe.com/4gM8wQelt11568RaDFe7m06), $69 CEO Coordinator (https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07), and $149 4-Bot Company-in-a-Box Bundle (https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08)."]
         try:
             import sys as _sys
             from pathlib import Path as _Path

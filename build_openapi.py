@@ -389,11 +389,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 39,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable)",
                 "stripe_payment_link_id": "plink_1UVTM8KVzDFIUga8S8sTUEYk",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
-                "description": "General-purpose uptime and inbox monitor for a customer's own SaaS ({{YOUR_COMPANY}}, {{YOUR_DOMAIN}}): scheduled HTTP checks, support-inbox triage, and routine recovery. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $39 one-time.",
+                "description": "General-purpose uptime and inbox monitor for a customer's own SaaS ({{YOUR_COMPANY}}, {{YOUR_DOMAIN}}): scheduled HTTP checks, support-inbox triage, and routine recovery. Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable). $39 one-time.",
             },
             {
                 "id": "made-by-agentscout-seo-aeo-auditor",
@@ -403,11 +403,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 59,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable)",
                 "stripe_payment_link_id": "plink_1UVTN9KVzDFIUga8hlFF6b5m",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
-                "description": "General-purpose technical SEO and Core Web Vitals auditor for {{YOUR_DOMAIN}}: page-speed checks, titles, canonicals, structured data, and Search Console deltas for {{YOUR_COMPANY}}. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $59 one-time.",
+                "description": "General-purpose technical SEO and Core Web Vitals auditor for {{YOUR_DOMAIN}}: page-speed checks, titles, canonicals, structured data, and Search Console deltas for {{YOUR_COMPANY}}. Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable). $59 one-time.",
             },
             {
                 "id": "made-by-agentscout-ci-analyst",
@@ -417,11 +417,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 59,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable)",
                 "stripe_payment_link_id": "plink_1UVTNsKVzDFIUga8L9SU6bd5",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
-                "description": "General-purpose competitor and launch tracker for {{YOUR_COMPANY}}: rival product launches, pricing-page changes, and a morning brief. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $59 one-time.",
+                "description": "General-purpose competitor and launch tracker for {{YOUR_COMPANY}}: rival product launches, pricing-page changes, and a morning brief. Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable). $59 one-time.",
             },
             {
                 "id": "made-by-agentscout-ceo-coordinator",
@@ -431,11 +431,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 69,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable)",
                 "stripe_payment_link_id": "plink_1UVTOOKVzDFIUga8XtZvvoJG",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
-                "description": "General-purpose executive coordinator for {{YOUR_COMPANY}}: reads the uptime, SEO, and competitor briefs and writes the daily team plan. Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex). $69 one-time.",
+                "description": "General-purpose executive coordinator for {{YOUR_COMPANY}}: reads the uptime, SEO, and competitor briefs and writes the daily team plan. Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable). $69 one-time.",
             },
             {
                 "id": "made-by-agentscout-team-bundle",
@@ -445,11 +445,11 @@ def build_commerce_files(tools_data):
                 "price_usd": 149,
                 "billing_model": "one_time",
                 "availability": "in_stock",
-                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex)",
+                "compatibility": "Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable)",
                 "stripe_payment_link_id": "plink_1UVTOsKVzDFIUga8IFPBfrph",
                 "page_url": B + "/bot-store/",
                 "checkout_url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08",
-                "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime and inbox monitoring, technical SEO and Core Web Vitals, competitor and launch tracking, and executive coordination, sharing one /workspace/handoff/ folder. $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor & OpenAI Codex).",
+                "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime and inbox monitoring, technical SEO and Core Web Vitals, competitor and launch tracking, and executive coordination, sharing one /workspace/handoff/ folder. $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable).",
             },
         ],
         "agent_packs": _agent_packs(B),
@@ -498,7 +498,7 @@ def build_commerce_files(tools_data):
             f"fetch {B}/api/products.json (or {B}/.well-known/acp.json) for instant Stripe Checkout links: "
             f"Directory Listing Packages: Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($29 one-time), "
             f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week); "
-            f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor & OpenAI Codex) at {B}/bot-store/: "
+            f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable) at {B}/bot-store/: "
             f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "
             f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77). "
             f"The Bot Store also sells 25 role-trained AI Agent Packs at $35 each "
