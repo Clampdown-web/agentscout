@@ -1,17 +1,17 @@
 ---
 name: bookkeeping-tax-prep
-description: "Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional. Use for accountant work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Reconciles your monthly bank and Stripe ledgers, categorizes expenses automatically, and flags P&L anomalies before tax season. Includes a zero-dependency ledger reconciliation script and weekly cash-flow routines. Use for accountant work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Accountant: Bookkeeping and tax prep
+# Accountant Agent: Automated bookkeeping, ledger reconciliation & tax-ready financials
 
-This skill trains an assistant to do **accountant** work for **{{YOUR_COMPANY}}** (Close the month with a reconciled ledger, a categorized cash view, and a question list for a licensed tax professional.).
+This skill trains an assistant to do **accountant** work for **{{YOUR_COMPANY}}** (Reconciles your monthly bank and Stripe ledgers, categorizes expenses automatically, and flags P&L anomalies before tax season. Includes a zero-dependency ledger reconciliation script and weekly cash-flow routines.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Bookkeeping and tax prep".
+- The task matches "Automated bookkeeping, ledger reconciliation & tax-ready financials".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -89,3 +89,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Monthly P&L Audit
+- Tax Prep Checklist
+- Zero Telemetry

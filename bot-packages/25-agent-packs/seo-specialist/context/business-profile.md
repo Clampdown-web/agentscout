@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the SEO Specialist runs. Leave a line blank rather than inventing it.
+Fill this in before the SEO Specialist Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

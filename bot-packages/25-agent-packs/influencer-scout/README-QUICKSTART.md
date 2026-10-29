@@ -1,4 +1,4 @@
-# AgentScout Influencer Scout Agent — Quick Start
+# Influencer Scout Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Shortlist creators with an engagement check, a cost estimate, and a brief a person can send.
+Package for **{{YOUR_COMPANY}}**. Finds niche creators across YouTube, X, TikTok, and newsletters, scores real audience engagement versus follower inflation, and prepares personalized partnership offers and UTM tracking links.
 
 ## 1. Fill the profile
 

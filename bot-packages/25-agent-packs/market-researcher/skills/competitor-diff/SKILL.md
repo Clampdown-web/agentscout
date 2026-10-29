@@ -1,17 +1,17 @@
 ---
 name: competitor-diff
-description: "Compare a competitor on price and features with a source URL and a date on every claim. Use for market researcher work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims. Use for market researcher work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Market Researcher: Tracks your competitors
+# Market Researcher Agent: Competitor pricing watch, launch tracking & side-by-side battlecards
 
-This skill trains an assistant to do **market researcher** work for **{{YOUR_COMPANY}}** (Compare a competitor on price and features with a source URL and a date on every claim.).
+This skill trains an assistant to do **market researcher** work for **{{YOUR_COMPANY}}** (Monitors rival launches, pricing changes, and customer complaints across review sites and forums, delivering weekly evidence-linked briefs and sales battlecards with zero invented claims.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Tracks your competitors".
+- The task matches "Competitor pricing watch, launch tracking & side-by-side battlecards".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Weekly Intel Sweep
+- Sales Battlecards
+- Evidence-Linked

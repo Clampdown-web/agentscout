@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `seo-aeo-site-audit`
-Role: SEO Specialist for {{YOUR_COMPANY}}
-Tagline: Gets you ranking on Google
+Role: SEO Specialist Agent for {{YOUR_COMPANY}}
+Tagline: Technical SEO audits, JSON-LD schema & AI-search visibility
 
 When the skill is on:
 

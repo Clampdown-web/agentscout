@@ -1,17 +1,17 @@
 ---
 name: thirty-day-calendar
-description: "Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces. Use for content strategist work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets. Use for content strategist work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Content Strategist: Plans 30 days of content
+# Content Strategist Agent: 30-day editorial calendars, topic clusters & multi-channel repurposing
 
-This skill trains an assistant to do **content strategist** work for **{{YOUR_COMPANY}}** (Lay out 30 days that a buyer can follow from problem to offer, then break each idea into smaller pieces.).
+This skill trains an assistant to do **content strategist** work for **{{YOUR_COMPANY}}** (Maps buyer questions into a 30-day content calendar across blog, newsletter, YouTube, and social, turning every flagship article or video into 5 channel-ready assets.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Plans 30 days of content".
+- The task matches "30-day editorial calendars, topic clusters & multi-channel repurposing".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- 30-Day Content Map
+- 1-to-5 Repurposer
+- Zero Telemetry

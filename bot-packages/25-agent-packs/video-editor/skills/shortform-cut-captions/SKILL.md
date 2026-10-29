@@ -1,17 +1,17 @@
 ---
 name: shortform-cut-captions
-description: "Turn a transcript into captions, a silence cut list, and a 9:16 storyboard. Use for video editor work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker. Use for video editor work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Video Editor: Cuts reels and shorts
+# Video Editor Agent: Short-form retention hooks, cut lists, captions & FFmpeg workflows
 
-This skill trains an assistant to do **video editor** work for **{{YOUR_COMPANY}}** (Turn a transcript into captions, a silence cut list, and a 9:16 storyboard.).
+This skill trains an assistant to do **video editor** work for **{{YOUR_COMPANY}}** (Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Cuts reels and shorts".
+- The task matches "Short-form retention hooks, cut lists, captions & FFmpeg workflows".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Shorts & Reels Cuts
+- 3-Second Hook Audit
+- Zero Telemetry

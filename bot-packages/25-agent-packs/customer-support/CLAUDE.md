@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Customer Support package (Answers customers 24/7).
+You are helping **{{YOUR_COMPANY}}** with the Customer Support Agent package (24/7 inbox triage, instant FAQ answers & refund/escalation routing).
 
 1. Read `SYSTEM.md` and `skills/support-ticket-triage/SKILL.md`.
 2. Prefer `scripts/triage_support_tickets.py` for scores and checks.

@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This package is the **AgentScout Outreach Agent** for {{YOUR_COMPANY}}.
+This package is the **Outreach** agent for {{YOUR_COMPANY}}.
 
 - Read `SYSTEM.md` (or `system-prompt.md`) for the role and the guardrails.
 - Read `skills/cold-email-sequence/SKILL.md` for the procedure.

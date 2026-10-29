@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Market Researcher package (Tracks your competitors).
+You are helping **{{YOUR_COMPANY}}** with the Market Researcher Agent package (Competitor pricing watch, launch tracking & side-by-side battlecards).
 
 1. Read `SYSTEM.md` and `skills/competitor-diff/SKILL.md`.
 2. Prefer `scripts/competitor_diff_check.py` for scores and checks.

@@ -1,4 +1,4 @@
-# AgentScout Data Analyst Agent — Quick Start
+# Data Analyst Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Turn a KPI export into rates, a simple LTV, and a short narrative a founder can read.
+Package for **{{YOUR_COMPANY}}**. Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts.
 
 ## 1. Fill the profile
 

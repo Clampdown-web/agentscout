@@ -1,17 +1,17 @@
 ---
 name: icp-lead-scoring
-description: "Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review. Use for lead gen agent work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors. Use for lead gen work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Lead Gen Agent: Finds qualified leads daily
+# Lead Gen Agent: Daily B2B prospect discovery, ICP scoring & verified lead lists
 
-This skill trains an assistant to do **lead gen agent** work for **{{YOUR_COMPANY}}** (Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.).
+This skill trains an assistant to do **lead gen** work for **{{YOUR_COMPANY}}** (Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Finds qualified leads daily".
+- The task matches "Daily B2B prospect discovery, ICP scoring & verified lead lists".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -89,3 +89,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- ICP Lead Scoring
+- Buying Signal Watch
+- Zero Telemetry

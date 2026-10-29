@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `shop-listing-optimizer`
-Role: TikTok Shop Manager for {{YOUR_COMPANY}}
-Tagline: Lists and promotes products
+Role: TikTok Shop Manager Agent for {{YOUR_COMPANY}}
+Tagline: Product listing optimization, creator affiliate briefs & stock alerts
 
 When the skill is on:
 

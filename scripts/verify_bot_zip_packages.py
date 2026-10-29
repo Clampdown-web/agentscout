@@ -95,6 +95,31 @@ def main() -> int:
         for token in BANNED:
             if token in blob:
                 bad.append(f"{agent['slug']} contains {token}")
+        if "Agent Agent" in blob:
+            bad.append(f"{agent['slug']} doubles Agent Agent")
+        manifest_doc = json.loads((dest / "manifest.json").read_text(encoding="utf-8"))
+        if manifest_doc.get("price_usd") != 35:
+            bad.append(f"{agent['slug']} manifest price_usd {manifest_doc.get('price_usd')}")
+        if manifest_doc.get("script") != f"scripts/{agent['script']}":
+            bad.append(f"{agent['slug']} manifest script {manifest_doc.get('script')}")
+        if manifest_doc.get("skill") != f"skills/{agent['skill_slug']}/SKILL.md":
+            bad.append(f"{agent['slug']} manifest skill {manifest_doc.get('skill')}")
+        for rel in ("manifest.json", "SYSTEM.md", "LOVABLE.md", "README-QUICKSTART.md", "AGENTS.md"):
+            text = (dest / rel).read_text(encoding="utf-8")
+            if "Agent Agent" in text or "Agent** agent" in text:
+                bad.append(f"{agent['slug']} {rel} doubles Agent")
+        phrases = {
+            "accountant": "Monthly P&L Audit",
+            "google-review-replier": "Escalation Guard",
+            "social-media-manager": "Velocity Guard",
+            "web-designer": "Responsive UI Audit",
+            "market-researcher": "Sales Battlecards",
+            "content-strategist": "1-to-5 Repurposer",
+        }
+        if agent["slug"] in phrases:
+            skill_text = (dest / "skills" / agent["skill_slug"] / "SKILL.md").read_text(encoding="utf-8")
+            if phrases[agent["slug"]] not in skill_text:
+                bad.append(f"{agent['slug']} SKILL.md missing {phrases[agent['slug']]}")
         if "{{YOUR_COMPANY}}" not in blob or "{{YOUR_DOMAIN}}" not in blob:
             bad.append(f"{agent['slug']} missing company placeholders")
         for flag in ("--help", "--dry-run"):

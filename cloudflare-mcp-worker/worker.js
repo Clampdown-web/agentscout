@@ -49,6 +49,13 @@ const LOCALITY_CAVEAT =
   "Data locality is inferred from the listing text by AgentScout, not audited. Verify with the vendor before relying on it for compliance; some features may still call cloud APIs.";
 
 const PRICE_NOTE = "Pricing is as each maker states it; confirm on the maker's site.";
+const PACK_TIER_URLS = {
+  tier_1: "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
+  tier_5: "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
+  tier_10: "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
+  tier_20: "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
+  tier_25: "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
+};
 
 const TOOL_DEFS = [
   {
@@ -335,6 +342,8 @@ function listPackages(args) {
     protocol: "stripe-agentic-commerce-v1",
     products_feed_url: "https://agentscouthq.com/api/products.json",
     acp_manifest_url: "https://agentscouthq.com/.well-known/acp.json",
+    pack_pricing: products.pack_pricing || null,
+    pack_tier_urls: PACK_TIER_URLS,
     total_products: rows.length,
     products: rows,
   };

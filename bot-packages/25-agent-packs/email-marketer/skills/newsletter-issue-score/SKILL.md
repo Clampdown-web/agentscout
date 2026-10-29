@@ -1,17 +1,17 @@
 ---
 name: newsletter-issue-score
-description: "Shape a weekly issue, score the subject and preview, and keep the list clean. Use for email marketer work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send. Use for email marketer work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Email Marketer: Newsletters that sell
+# Email Marketer Agent: High-open newsletters, onboarding flows & win-back campaigns
 
-This skill trains an assistant to do **email marketer** work for **{{YOUR_COMPANY}}** (Shape a weekly issue, score the subject and preview, and keep the list clean.).
+This skill trains an assistant to do **email marketer** work for **{{YOUR_COMPANY}}** (Plans, drafts, and tests weekly newsletters, welcome sequences, and cart-recovery emails with mobile-safe HTML and subject-line A/B variants. Checks link health and deliverability before you hit send.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Newsletters that sell".
+- The task matches "High-open newsletters, onboarding flows & win-back campaigns".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Newsletter & Drip Flows
+- Subject A/B Scorer
+- Approval-First

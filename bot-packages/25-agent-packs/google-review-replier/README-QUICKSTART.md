@@ -1,4 +1,4 @@
-# AgentScout Google Review Replier Agent — Quick Start
+# Google Review Replier Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Draft a specific public reply for every review and a private path for anything serious.
+Package for **{{YOUR_COMPANY}}**. Monitors new customer reviews, drafts warm keyword-aware thank-yous for 5-star ratings, and prepares calm de-escalation responses for complaints. Keeps your local profile active and ranking higher in Maps.
 
 ## 1. Fill the profile
 

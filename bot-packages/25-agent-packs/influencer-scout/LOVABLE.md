@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `creator-roi`
-Role: Influencer Scout for {{YOUR_COMPANY}}
-Tagline: Finds creators to work with
+Role: Influencer Scout Agent for {{YOUR_COMPANY}}
+Tagline: Creator discovery, engagement-rate vetting & sponsorship ROI tracking
 
 When the skill is on:
 

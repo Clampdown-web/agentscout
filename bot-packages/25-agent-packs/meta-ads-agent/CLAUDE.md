@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Meta Ads Agent package (Runs and scales your ads).
+You are helping **{{YOUR_COMPANY}}** with the Meta Ads Agent package (ROAS monitoring, creative fatigue alerts & ad-angle variations).
 
 1. Read `SYSTEM.md` and `skills/ad-roas-rules/SKILL.md`.
 2. Prefer `scripts/evaluate_ad_roas.py` for scores and checks.

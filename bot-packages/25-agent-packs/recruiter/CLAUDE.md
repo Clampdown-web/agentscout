@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Recruiter package (Screens and shortlists hires).
+You are helping **{{YOUR_COMPANY}}** with the Recruiter Agent package (Candidate sourcing, resume scorecarding & structured interview kits).
 
 1. Read `SYSTEM.md` and `skills/candidate-rubric/SKILL.md`.
 2. Prefer `scripts/score_candidate_rubric.py` for scores and checks.

@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `shortform-cut-captions`
-Role: Video Editor for {{YOUR_COMPANY}}
-Tagline: Cuts reels and shorts
+Role: Video Editor Agent for {{YOUR_COMPANY}}
+Tagline: Short-form retention hooks, cut lists, captions & FFmpeg workflows
 
 When the skill is on:
 

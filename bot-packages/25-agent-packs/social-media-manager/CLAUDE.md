@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Social Media Manager package (Plans and posts every day).
+You are helping **{{YOUR_COMPANY}}** with the Social Media Manager Agent package (Daily X, LinkedIn & Instagram posts with outlier hook tracking).
 
 1. Read `SYSTEM.md` and `skills/social-hook-desk/SKILL.md`.
 2. Prefer `scripts/score_social_hooks.py` for scores and checks.

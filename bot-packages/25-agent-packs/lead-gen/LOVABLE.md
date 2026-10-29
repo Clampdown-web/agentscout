@@ -4,7 +4,7 @@ Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload
 
 Skill name: `icp-lead-scoring`
 Role: Lead Gen Agent for {{YOUR_COMPANY}}
-Tagline: Finds qualified leads daily
+Tagline: Daily B2B prospect discovery, ICP scoring & verified lead lists
 
 When the skill is on:
 

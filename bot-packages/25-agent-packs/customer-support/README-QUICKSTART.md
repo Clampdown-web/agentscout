@@ -1,4 +1,4 @@
-# AgentScout Customer Support Agent — Quick Start
+# Customer Support Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Triage tickets against the written policy, draft a macro, and route anything dangerous to a person.
+Package for **{{YOUR_COMPANY}}**. Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies.
 
 ## 1. Fill the profile
 

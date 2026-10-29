@@ -1,4 +1,4 @@
-# AgentScout Translator Agent — Quick Start
+# Translator Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Keep translations aligned to a glossary and prove the keys and placeholders still match.
+Package for **{{YOUR_COMPANY}}**. Localizes web pages, JSON language files, help articles, and ad copy across major languages while preserving code placeholders ({{var}}), brand glossary terms, and native phrasing.
 
 ## 1. Fill the profile
 

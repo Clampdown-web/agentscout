@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `brand-card-system`
-Role: Graphic Designer for {{YOUR_COMPANY}}
-Tagline: Ads, posts and thumbnails
+Role: Graphic Designer Agent for {{YOUR_COMPANY}}
+Tagline: High-converting ad creatives, social graphics & YouTube thumbnails
 
 When the skill is on:
 

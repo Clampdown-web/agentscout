@@ -1,17 +1,17 @@
 ---
 name: kpi-csv-analyst
-description: "Turn a KPI export into rates, a simple LTV, and a short narrative a founder can read. Use for data analyst work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts. Use for data analyst work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Data Analyst: Weekly reports and insights
+# Data Analyst Agent: Weekly KPI reports, cohort retention & revenue anomaly alerts
 
-This skill trains an assistant to do **data analyst** work for **{{YOUR_COMPANY}}** (Turn a KPI export into rates, a simple LTV, and a short narrative a founder can read.).
+This skill trains an assistant to do **data analyst** work for **{{YOUR_COMPANY}}** (Turns raw CSVs, Stripe exports, and analytics logs into plain-English weekly scorecards with cohort retention, funnel drop-offs, and statistically significant trend alerts.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Weekly reports and insights".
+- The task matches "Weekly KPI reports, cohort retention & revenue anomaly alerts".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Weekly KPI Scorecard
+- Anomaly Detection
+- Zero Telemetry

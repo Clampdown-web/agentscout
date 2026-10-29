@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Outreach Agent package (Cold emails and follow-ups).
+You are helping **{{YOUR_COMPANY}}** with the Outreach Agent package (Personalized cold emails, warm follow-ups & reply triage).
 
 1. Read `SYSTEM.md` and `skills/cold-email-sequence/SKILL.md`.
 2. Prefer `scripts/lint_outreach_sequence.py` for scores and checks.

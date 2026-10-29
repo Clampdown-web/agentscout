@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Score prospects you already have, drop duplicates, and hand sales a CSV of people worth a human review.
+Package for **{{YOUR_COMPANY}}**. Turns your Ideal Customer Profile into a ranked, deduplicated prospect pipeline with buying-signal triggers and contact verification. Runs on free web research first with optional enrichment connectors.
 
 ## 1. Fill the profile
 

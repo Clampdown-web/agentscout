@@ -4,7 +4,7 @@ Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload
 
 Skill name: `ad-roas-rules`
 Role: Meta Ads Agent for {{YOUR_COMPANY}}
-Tagline: Runs and scales your ads
+Tagline: ROAS monitoring, creative fatigue alerts & ad-angle variations
 
 When the skill is on:
 

@@ -4,7 +4,7 @@ Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload
 
 Skill name: `cold-email-sequence`
 Role: Outreach Agent for {{YOUR_COMPANY}}
-Tagline: Cold emails and follow-ups
+Tagline: Personalized cold emails, warm follow-ups & reply triage
 
 When the skill is on:
 

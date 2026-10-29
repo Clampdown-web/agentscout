@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Product Builder package (Creates digital products).
+You are helping **{{YOUR_COMPANY}}** with the Product Builder Agent package (PRDs, user stories, release checklists & feedback prioritization).
 
 1. Read `SYSTEM.md` and `skills/pricing-and-mvp-scope/SKILL.md`.
 2. Prefer `scripts/model_product_pricing.py` for scores and checks.

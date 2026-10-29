@@ -118,15 +118,23 @@ def _to_yaml(v, indent=0):
     return json.dumps(str(v), ensure_ascii=False)
 
 
+def _load_pack_catalog():
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
+    from agent_pack_catalog import PACK_TIERS, public_cards
+    return PACK_TIERS, public_cards
+
+
 def _agent_packs(base):
-    """25 general-purpose business agents. Checkout reuses the flagship Stripe links."""
-    from agent_pack_catalog import public_cards
+    """25 role packs at $35, plus the 5/10/20/25 volume tiers. Flagship bots stay separate."""
+    PACK_TIERS, public_cards = _load_pack_catalog()
     packs = []
     for card in public_cards():
         packs.append({
             "id": "agent-pack-" + card["slug"],
             "sku": "AS-PACK-" + card["slug"].upper().replace("-", ""),
-            "name": card["title"],
+            "name": card["productName"],
             "tagline": card["tagline"],
             "category": "business_agent_pack",
             "department": card["deptLabel"],
@@ -134,14 +142,36 @@ def _agent_packs(base):
             "billing_model": "one_time",
             "availability": "in_stock",
             "compatibility": "Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, Lovable",
-            "page_url": base + "/bot-store/#ai-agent-packs",
-            "checkout_url": card["checkoutUrl"],
+            "page_url": base + "/bot-store/" + card["slug"] + "/",
+            "checkout_url": card["checkoutUrl"] or PACK_TIERS["tier_1"]["url"],
+            "stripe_payment_link_id": PACK_TIERS["tier_1"]["plink"],
             "checkout_label": card["checkoutLabel"],
             "skill": "skills/" + card["skill"] + "/SKILL.md",
             "script": "scripts/" + card["script"],
             "routines": [r["id"] for r in card["routines"]],
-            "description": card["promise"] + " General-purpose template for the buyer's own company. Two or more agents check out on the $149 bundle link; the order note names the ZIPs.",
+            "description": card["promise"] + " $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
             "zip": base + "/bot-packages/25-agent-packs/zips/" + card["slug"] + ".zip",
+        })
+    for key, tier in PACK_TIERS.items():
+        if tier["count"] == 1:
+            continue
+        packs.append({
+            "id": "agent-pack-" + key.replace("_", "-"),
+            "sku": "AS-PACK-" + key.upper(),
+            "name": tier["label"],
+            "category": "business_agent_pack_volume",
+            "price_usd": tier["price"],
+            "regular_price_usd": tier["regular"],
+            "savings_usd": tier["save"],
+            "bot_count": tier["count"],
+            "per_bot_usd": round(tier["price"] / tier["count"], 2),
+            "billing_model": "one_time",
+            "availability": "in_stock",
+            "page_url": base + "/bot-store/#ap-dock",
+            "checkout_url": tier["url"],
+            "stripe_payment_link_id": tier["plink"],
+            "checkout_label": tier["label"],
+            "description": f"{tier['label']}. Regular ${tier['regular']}. ${round(tier['price'] / tier['count'], 2)} per bot.",
         })
     return packs
 
@@ -423,6 +453,23 @@ def build_commerce_files(tools_data):
             },
         ],
         "agent_packs": _agent_packs(B),
+        "pack_pricing": {
+            "unit_usd": 35,
+            "note": "25 role packs are $35 each. Volume tiers are separate from the $39/$59/$59/$69 flagship bots and the $149 4-bot bundle.",
+            "tiers": [
+                {
+                    "count": tier["count"],
+                    "price_usd": tier["price"],
+                    "regular_usd": tier["regular"],
+                    "save_usd": tier["save"],
+                    "per_bot_usd": round(tier["price"] / tier["count"], 2),
+                    "checkout_url": tier["url"],
+                    "stripe_payment_link_id": tier["plink"],
+                    "label": tier["label"],
+                }
+                for tier in _load_pack_catalog()[0].values()
+            ],
+        },
     }
 
     os.makedirs("api", exist_ok=True)
@@ -454,8 +501,13 @@ def build_commerce_files(tools_data):
             f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor & OpenAI Codex) at {B}/bot-store/: "
             f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "
             f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77). "
-            f"The Bot Store also sells a 25-role AI Agent Pack (accountant through translator) with the same Stripe links: "
-            f"$39, $59, or $149 when two or more roles are selected."
+            f"The Bot Store also sells 25 role-trained AI Agent Packs at $35 each "
+            f"(https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09), "
+            f"5 for $119 (https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a), "
+            f"10 for $199 (https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b), "
+            f"20 for $299 (https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c), "
+            f"and all 25 for $349 (https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d). "
+            f"Those prices are separate from the flagship bots."
         ),
         "auth": {"type": "none"},
         "api": {

@@ -1,17 +1,17 @@
 ---
 name: candidate-rubric
-description: "Score candidates against a written rubric and write interview questions that test the work. Use for recruiter work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline. Use for recruiter work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Recruiter: Screens and shortlists hires
+# Recruiter Agent: Candidate sourcing, resume scorecarding & structured interview kits
 
-This skill trains an assistant to do **recruiter** work for **{{YOUR_COMPANY}}** (Score candidates against a written rubric and write interview questions that test the work.).
+This skill trains an assistant to do **recruiter** work for **{{YOUR_COMPANY}}** (Screens incoming applications against weighted role rubrics, surfaces top passive candidates, and generates unbiased interview scorecards and outreach drafts for your hiring pipeline.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Screens and shortlists hires".
+- The task matches "Candidate sourcing, resume scorecarding & structured interview kits".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Resume Rubric Scorer
+- Interview Scorecards
+- Zero Telemetry

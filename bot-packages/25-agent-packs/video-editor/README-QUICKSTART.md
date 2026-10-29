@@ -1,4 +1,4 @@
-# AgentScout Video Editor Agent — Quick Start
+# Video Editor Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Turn a transcript into captions, a silence cut list, and a 9:16 storyboard.
+Package for **{{YOUR_COMPANY}}**. Turns long recordings into tight Reels, Shorts, and product demos with timestamped cut lists, burned-in caption SRTs, and silence removal. Includes a ready-to-run storyboard and caption timing checker.
 
 ## 1. Fill the profile
 

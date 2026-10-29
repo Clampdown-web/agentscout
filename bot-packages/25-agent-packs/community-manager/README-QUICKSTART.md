@@ -1,4 +1,4 @@
-# AgentScout Community Manager Agent — Quick Start
+# Community Manager Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Measure who is quiet, welcome new members, and draft prompts a person can post.
+Package for **{{YOUR_COMPANY}}**. Welcomes new members, surfaces unanswered questions and feature requests from community threads, and compiles weekly member spotlights and discussion prompts to keep your community active.
 
 ## 1. Fill the profile
 

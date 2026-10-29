@@ -1,17 +1,17 @@
 ---
 name: seo-aeo-site-audit
-description: "Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan. Use for seo specialist work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator. Use for seo specialist work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# SEO Specialist: Gets you ranking on Google
+# SEO Specialist Agent: Technical SEO audits, JSON-LD schema & AI-search visibility
 
-This skill trains an assistant to do **seo specialist** work for **{{YOUR_COMPANY}}** (Audit findability for humans and answer engines: titles, schema, internal links, and a plain llms.txt plan.).
+This skill trains an assistant to do **seo specialist** work for **{{YOUR_COMPANY}}** (Audits your pages for meta tags, internal linking, Core Web Vitals, and structured data so you rank on Google and get cited by ChatGPT and Perplexity. Includes an automated HTML and schema validator.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Gets you ranking on Google".
+- The task matches "Technical SEO audits, JSON-LD schema & AI-search visibility".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -89,3 +89,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- On-Page & AEO Audit
+- JSON-LD Validator
+- Zero Telemetry

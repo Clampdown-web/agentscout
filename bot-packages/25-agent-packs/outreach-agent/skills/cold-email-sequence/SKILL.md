@@ -1,17 +1,17 @@
 ---
 name: cold-email-sequence
-description: "Draft a short, specific sequence and lint it before anyone hits send. Use for outreach agent work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules. Use for outreach work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Outreach Agent: Cold emails and follow-ups
+# Outreach Agent: Personalized cold emails, warm follow-ups & reply triage
 
-This skill trains an assistant to do **outreach agent** work for **{{YOUR_COMPANY}}** (Draft a short, specific sequence and lint it before anyone hits send.).
+This skill trains an assistant to do **outreach** work for **{{YOUR_COMPANY}}** (Drafts concise, signal-backed cold emails under 120 words and multi-step follow-up sequences that never sound spammy. Always drafts for your approval first and checks every message against spam-trigger rules.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Cold emails and follow-ups".
+- The task matches "Personalized cold emails, warm follow-ups & reply triage".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Cold Email Sequences
+- Spam-Word Guard
+- Approval-First

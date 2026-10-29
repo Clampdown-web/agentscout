@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `support-ticket-triage`
-Role: Customer Support for {{YOUR_COMPANY}}
-Tagline: Answers customers 24/7
+Role: Customer Support Agent for {{YOUR_COMPANY}}
+Tagline: 24/7 inbox triage, instant FAQ answers & refund/escalation routing
 
 When the skill is on:
 

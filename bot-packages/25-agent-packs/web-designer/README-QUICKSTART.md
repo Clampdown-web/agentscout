@@ -1,4 +1,4 @@
-# AgentScout Web Designer Agent — Quick Start
+# Web Designer Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Lay out a page that fits a phone and makes the next step obvious.
+Package for **{{YOUR_COMPANY}}**. Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes.
 
 ## 1. Fill the profile
 

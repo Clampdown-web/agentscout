@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `pricing-and-mvp-scope`
-Role: Product Builder for {{YOUR_COMPANY}}
-Tagline: Creates digital products
+Role: Product Builder Agent for {{YOUR_COMPANY}}
+Tagline: PRDs, user stories, release checklists & feedback prioritization
 
 When the skill is on:
 

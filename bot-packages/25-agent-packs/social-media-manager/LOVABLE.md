@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `social-hook-desk`
-Role: Social Media Manager for {{YOUR_COMPANY}}
-Tagline: Plans and posts every day
+Role: Social Media Manager Agent for {{YOUR_COMPANY}}
+Tagline: Daily X, LinkedIn & Instagram posts with outlier hook tracking
 
 When the skill is on:
 

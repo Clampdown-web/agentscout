@@ -1,6 +1,6 @@
 # Claude Code project notes
 
-You are helping **{{YOUR_COMPANY}}** with the Lead Gen Agent package (Finds qualified leads daily).
+You are helping **{{YOUR_COMPANY}}** with the Lead Gen Agent package (Daily B2B prospect discovery, ICP scoring & verified lead lists).
 
 1. Read `SYSTEM.md` and `skills/icp-lead-scoring/SKILL.md`.
 2. Prefer `scripts/score_leads_pipeline.py` for scores and checks.

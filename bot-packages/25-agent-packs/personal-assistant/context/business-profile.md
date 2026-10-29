@@ -1,6 +1,6 @@
 # Business profile
 
-Fill this in before the Personal Assistant runs. Leave a line blank rather than inventing it.
+Fill this in before the Personal Assistant Agent runs. Leave a line blank rather than inventing it.
 
 ## Identity
 

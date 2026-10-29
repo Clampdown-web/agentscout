@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `ar-aging`
-Role: Invoice Chaser for {{YOUR_COMPANY}}
-Tagline: Gets you paid on time
+Role: Invoice Chaser Agent for {{YOUR_COMPANY}}
+Tagline: Polite, automated overdue invoice reminders & AR aging reports
 
 When the skill is on:
 

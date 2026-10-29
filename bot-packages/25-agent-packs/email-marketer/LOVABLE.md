@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `newsletter-issue-score`
-Role: Email Marketer for {{YOUR_COMPANY}}
-Tagline: Newsletters that sell
+Role: Email Marketer Agent for {{YOUR_COMPANY}}
+Tagline: High-open newsletters, onboarding flows & win-back campaigns
 
 When the skill is on:
 

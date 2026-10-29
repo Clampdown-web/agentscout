@@ -1,17 +1,17 @@
 ---
 name: ad-roas-rules
-description: "Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test. Use for meta ads agent work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked. Use for meta ads work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Meta Ads Agent: Runs and scales your ads
+# Meta Ads Agent: ROAS monitoring, creative fatigue alerts & ad-angle variations
 
-This skill trains an assistant to do **meta ads agent** work for **{{YOUR_COMPANY}}** (Judge campaigns with written ROAS and CPA rules and a creative matrix you can actually test.).
+This skill trains an assistant to do **meta ads** work for **{{YOUR_COMPANY}}** (Audits your ad spend by CPA, CTR, and ROAS, flags fatigued creatives before wasted budget piles up, and writes fresh hook and body variations for winning campaigns. Never changes budgets unasked.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Runs and scales your ads".
+- The task matches "ROAS monitoring, creative fatigue alerts & ad-angle variations".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- ROAS & CPA Guard
+- Ad Creative Variants
+- Approval-First

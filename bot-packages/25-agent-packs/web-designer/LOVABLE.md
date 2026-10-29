@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `landing-page-ux-check`
-Role: Web Designer for {{YOUR_COMPANY}}
-Tagline: Builds landing pages
+Role: Web Designer Agent for {{YOUR_COMPANY}}
+Tagline: Responsive landing pages, mobile UX audits & dark/light CSS polish
 
 When the skill is on:
 

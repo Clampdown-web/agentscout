@@ -1,17 +1,17 @@
 ---
 name: daily-exec-briefing
-description: "Turn the inbox and calendar into a morning brief with conflicts called out. Use for personal assistant work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise. Use for personal assistant work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Personal Assistant: Runs your inbox and diary
+# Personal Assistant Agent: Morning inbox digest, daily priorities & meeting prep briefs
 
-This skill trains an assistant to do **personal assistant** work for **{{YOUR_COMPANY}}** (Turn the inbox and calendar into a morning brief with conflicts called out.).
+This skill trains an assistant to do **personal assistant** work for **{{YOUR_COMPANY}}** (Starts your morning with a clean summary of urgent emails, calendar conflicts, and top 3 action items, plus 1-page dossier briefs before every call. Keeps your day organized without noise.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Runs your inbox and diary".
+- The task matches "Morning inbox digest, daily priorities & meeting prep briefs".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Morning Executive Brief
+- Meeting Dossiers
+- Zero Telemetry

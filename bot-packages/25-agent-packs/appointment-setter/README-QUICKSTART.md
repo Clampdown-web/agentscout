@@ -1,4 +1,4 @@
-# AgentScout Appointment Setter Agent — Quick Start
+# Appointment Setter Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Qualify quickly, offer a few real slots in the prospect's timezone, and prep the caller.
+Package for **{{YOUR_COMPANY}}**. Follows up with warm inquiries, checks qualification criteria, and sends timezone-aware booking options plus pre-call reminders to cut no-shows. Includes a slot-conflict and reminder generator script.
 
 ## 1. Fill the profile
 

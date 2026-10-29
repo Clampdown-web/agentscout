@@ -1,4 +1,4 @@
-# AgentScout Graphic Designer Agent — Quick Start
+# Graphic Designer Agent quick start
 
 Built by AgentScout
 
@@ -6,7 +6,7 @@ Built by AgentScout
 
 [AgentScout Bot Store](https://agentscouthq.com/bot-store/)
 
-Package for **{{YOUR_COMPANY}}** (`{{YOUR_DOMAIN}}`). Turn a brand kit into layout specs and an SVG card that keeps color, type, and contrast consistent.
+Package for **{{YOUR_COMPANY}}**. Generates on-brand creative briefs, layout specs, contrast-checked color palettes, and image prompts for ads, social posts, and thumbnails. Ships with an automated brand-asset linter and multi-aspect export checklist.
 
 ## 1. Fill the profile
 

@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `daily-exec-briefing`
-Role: Personal Assistant for {{YOUR_COMPANY}}
-Tagline: Runs your inbox and diary
+Role: Personal Assistant Agent for {{YOUR_COMPANY}}
+Tagline: Morning inbox digest, daily priorities & meeting prep briefs
 
 When the skill is on:
 

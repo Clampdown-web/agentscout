@@ -1,17 +1,17 @@
 ---
 name: i18n-key-parity
-description: "Keep translations aligned to a glossary and prove the keys and placeholders still match. Use for translator work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Localizes web pages, JSON language files, help articles, and ad copy across major languages while preserving code placeholders ({{var}}), brand glossary terms, and native phrasing. Use for translator work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Translator: Any language, instantly
+# Translator Agent: Context-aware localization for UI strings, docs & marketing copy
 
-This skill trains an assistant to do **translator** work for **{{YOUR_COMPANY}}** (Keep translations aligned to a glossary and prove the keys and placeholders still match.).
+This skill trains an assistant to do **translator** work for **{{YOUR_COMPANY}}** (Localizes web pages, JSON language files, help articles, and ad copy across major languages while preserving code placeholders ({{var}}), brand glossary terms, and native phrasing.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Any language, instantly".
+- The task matches "Context-aware localization for UI strings, docs & marketing copy".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Glossary-Safe i18n
+- Placeholder Guard
+- Zero Telemetry

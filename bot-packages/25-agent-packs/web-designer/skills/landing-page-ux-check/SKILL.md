@@ -1,17 +1,17 @@
 ---
 name: landing-page-ux-check
-description: "Lay out a page that fits a phone and makes the next step obvious. Use for web designer work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes. Use for web designer work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Web Designer: Builds landing pages
+# Web Designer Agent: Responsive landing pages, mobile UX audits & dark/light CSS polish
 
-This skill trains an assistant to do **web designer** work for **{{YOUR_COMPANY}}** (Lay out a page that fits a phone and makes the next step obvious.).
+This skill trains an assistant to do **web designer** work for **{{YOUR_COMPANY}}** (Designs high-converting landing page sections, checks 360px/768px/1280px responsive layouts for zero horizontal overflow, and verifies WCAG contrast across dark and light themes.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Builds landing pages".
+- The task matches "Responsive landing pages, mobile UX audits & dark/light CSS polish".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Responsive UI Audit
+- Dark/Light Contrast
+- Zero Telemetry

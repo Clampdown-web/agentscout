@@ -3,8 +3,8 @@
 Upload this ZIP in Lovable at **Workspace settings → Skills → Add → Upload ZIP**.
 
 Skill name: `review-reply-desk`
-Role: Google Review Replier for {{YOUR_COMPANY}}
-Tagline: Replies to every review
+Role: Google Review Replier Agent for {{YOUR_COMPANY}}
+Tagline: Fast, on-brand replies to every 5-star and critical local review
 
 When the skill is on:
 

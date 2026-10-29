@@ -1,17 +1,17 @@
 ---
 name: support-ticket-triage
-description: "Triage tickets against the written policy, draft a macro, and route anything dangerous to a person. Use for customer support work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
+description: "Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies. Use for customer support work at {{YOUR_COMPANY}} when the owner wants a draft, a score, or a checklist before anything is sent, posted, spent, or filed."
 ---
 
-# Customer Support: Answers customers 24/7
+# Customer Support Agent: 24/7 inbox triage, instant FAQ answers & refund/escalation routing
 
-This skill trains an assistant to do **customer support** work for **{{YOUR_COMPANY}}** (Triage tickets against the written policy, draft a macro, and route anything dangerous to a person.).
+This skill trains an assistant to do **customer support** work for **{{YOUR_COMPANY}}** (Triages incoming support tickets by urgency, drafts accurate replies from your help docs, and flags billing or bug escalations immediately. Never promises unauthorized refunds or sends unapproved replies.).
 
 Read `context/business-profile.md` before every run. If a placeholder is still unfilled, ask {{YOUR_OWNER_NAME}} instead of guessing.
 
 ## When to use
 
-- The task matches "Answers customers 24/7".
+- The task matches "24/7 inbox triage, instant FAQ answers & refund/escalation routing".
 - You have a file, a paste, or a note from the business. You do not invent source data.
 - A person will approve anything that sends, posts, spends, deletes, files, or changes a live price.
 
@@ -85,3 +85,9 @@ Schedules live in `routines/routines.json` and `routines/<id>.md`. Times are int
 ## Platforms
 
 The same folder loads in Grok Bot, Claude Code, Cursor, OpenAI Codex, Windsurf, Cline, GitHub Copilot, and Lovable. Lovable imports the ZIP from Workspace settings, then Skills, then Add, then Upload ZIP, and reads `LOVABLE.md`.
+
+## Pack card deliverables
+
+- Ticket Triage & SLA
+- Help-Doc Grounded
+- Approval-First
