@@ -277,11 +277,8 @@ def build_commerce_files(tools_data):
     n_tools = len(tools)
     n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
     n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
-    n_bt = 189
-    if os.path.exists("bot-templates/index.html"):
-        m_bt = re.search(r"(\d+)\s+installable\s+bot\s+templates", open("bot-templates/index.html", encoding="utf-8").read(), re.I)
-        if m_bt:
-            n_bt = int(m_bt.group(1))
+    import build_bot_templates
+    n_bt = build_bot_templates.live_bot_template_count()
 
     products = {
         "schema_version": "1.0",

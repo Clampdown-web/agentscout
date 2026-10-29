@@ -281,15 +281,29 @@ def pages(t):
     open("tasks/index.html","w").write(shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
     urls+=_subpages_write(m)
     urls.append(submit_page(t)); urls.append(about_page(t)); urls.append(privacy_page(t)); return urls
+def submit_categories(t):
+    """Category <option value> list for /submit.html and /categories.json."""
+    extra = [
+        "data & analytics", "DevOps & cloud", "QA & testing", "finance & accounting",
+        "legal & compliance", "HR & recruiting", "education & tutoring", "healthcare & biotech",
+        "e-commerce & retail", "robotics & physical AI",
+    ]
+    names = sorted({x["category"] for x in t} | set(extra))
+    if "other" not in names:
+        names.append("other")
+    return names
+
+
 def submit_page(t):
     import build_sponsor
     m=build_sponsor.load_metrics(t)
-    canon=B+"submit.html"; cats=sorted({x["category"] for x in t}); title="Submit an AI Agent Tool or Get Featured ($0–$99) · AgentScout"
+    canon=B+"submit.html"; cats=submit_categories(t); title="Submit an AI Agent Tool or Get Featured ($0–$99) · AgentScout"
     desc=f"Submit your AI agent tool or MCP server to AgentScout ({m['tools_count']:,}+ tools). Free listing, $29 Fast-Track, $49 Category Pin, or $99/wk Sponsor."
     inp='style="width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;box-sizing:border-box"'
     def f(id,label,typ="text",req=True,extra=""): return f'<label style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="{id}">{label}{"" if req else " <span style=\"color:var(--faint);font-weight:400\">(optional)</span>"}</label><input id="{id}" name="{id}" type="{typ}" {"required" if req else ""} {extra} {inp}>'
-    _newcats=["data & analytics","DevOps & cloud","QA & testing","finance & accounting","legal & compliance","HR & recruiting","education & tutoring","healthcare & biotech","e-commerce & retail","robotics & physical AI"]
-    opts="".join(f'<option>{e(c)}</option>' for c in sorted(set(cats)|set(_newcats)))+"<option>other</option>"
+    opts="".join(f'<option value="{e(c)}">{e(c)}</option>' for c in cats)
+    json.dump(cats, open("categories.json", "w", encoding="utf-8"), indent=2)
+    open("categories.json", "a", encoding="utf-8").write("\n")
     pkg_sel=(
         '<fieldset id="spkg-field" class="spkg-field">'
         '<legend class="spkg-legend">1. Choose your listing package</legend>'

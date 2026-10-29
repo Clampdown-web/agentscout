@@ -30,59 +30,18 @@ PRICES = ("$35", "$119", "$199", "$299", "$349")
 
 def main() -> int:
     bad: list[str] = []
-    if not LOVABLE.is_file():
-        bad.append("tools/lovable.html missing")
-        _report(bad)
-        return 1
-    html = LOVABLE.read_text(encoding="utf-8")
-    section_count = html.count(f'id="{SECTION_ID}"')
-    if section_count != 1:
-        bad.append(f"tools/lovable.html has {section_count} 25 AI Agent Packs sections, expected 1")
-    h2 = len(re.findall(r"<h2[^>]*>\s*25 AI Agent Packs\s*</h2>", html))
-    if h2 != 1:
-        bad.append(f"tools/lovable.html has {h2} '25 AI Agent Packs' headings, expected 1")
-    if "25 AI Agent Packs" not in html:
-        bad.append("tools/lovable.html lacks the 25 AI Agent Packs section")
-    m = re.search(
-        rf'<!--lovable-agent-packs-->.*?<!--/lovable-agent-packs-->',
-        html,
-        re.S,
-    )
-    block = m.group(0) if m else ""
-    if not block:
-        bad.append("tools/lovable.html lacks the marked 25 AI Agent Packs section")
-    else:
-        for price in PRICES:
-            if price not in block:
-                bad.append(f"25 AI Agent Packs section missing {price}")
-        for url in STRIPE:
-            n = block.count(url)
-            if n != 1:
-                bad.append(f"25 AI Agent Packs section has {n} copies of {url}, expected 1")
-    if "application/ld+json" not in html or "SoftwareApplication" not in html:
-        bad.append("tools/lovable.html missing SoftwareApplication JSON-LD")
-    nav = re.search(r"<nav\b[^>]*>.*?</nav>", html, re.S)
-    foot = re.search(r"<footer\b[^>]*>.*?</footer>", html, re.S)
-    if not nav:
-        bad.append("tools/lovable.html missing sitewide nav")
-    elif "npill" not in nav.group(0):
-        bad.append("tools/lovable.html nav missing neon pills")
-    if not foot:
-        bad.append("tools/lovable.html missing sitewide footer")
-    elif "bot-store/" not in foot.group(0):
-        bad.append("tools/lovable.html footer missing Bot Store")
-    if STORE.is_file():
-        store = STORE.read_text(encoding="utf-8")
-        for url in STRIPE:
-            if url not in store:
-                bad.append(f"bot-store/index.html missing Stripe Payment Link {url}")
-        if 'id="ai-agent-packs"' not in store:
-            bad.append("bot-store/index.html missing #ai-agent-packs")
-    else:
-        bad.append("bot-store/index.html missing")
-    bad.extend(_follower_row_problems())
-    bad.extend(_pack_page_problems())
-    _report(bad)
+    follower = _follower_row_problems()
+    bad.extend(follower)
+    pack_bad, pack_pass = _pack_page_problems()
+    bad.extend(pack_bad)
+    chrome = _chrome_checks()
+    ops = _ops_checks()
+    named = chrome + ops
+    bad.extend(label for ok, label in named if not ok)
+    passes = [label for ok, label in named if ok] + pack_pass
+    if not follower:
+        passes.append("follower rows are fetched for their own day when the sprint tracker is present")
+    _report(bad, passes)
     return 1 if bad else 0
 
 
@@ -118,13 +77,111 @@ def _walk_types(node, found: list) -> None:
             _walk_types(item, found)
 
 
-def _pack_page_problems() -> list[str]:
+def _chrome_checks() -> list[tuple[bool, str]]:
+    """One result per Lovable section fact and per Bot Store Payment Link."""
+    checks: list[tuple[bool, str]] = []
+    if not LOVABLE.is_file():
+        checks.append((False, "tools/lovable.html missing"))
+        return checks
+    page = LOVABLE.read_text(encoding="utf-8")
+    section_count = page.count(f'id="{SECTION_ID}"')
+    checks.append((section_count == 1, f"tools/lovable.html has {section_count} 25 AI Agent Packs sections, expected 1" if section_count != 1 else "tools/lovable.html has exactly one 25 AI Agent Packs section"))
+    h2 = len(re.findall(r"<h2[^>]*>\s*25 AI Agent Packs\s*</h2>", page))
+    checks.append((h2 == 1, f"tools/lovable.html has {h2} '25 AI Agent Packs' headings, expected 1" if h2 != 1 else "tools/lovable.html has one 25 AI Agent Packs heading"))
+    checks.append(("25 AI Agent Packs" in page, "tools/lovable.html includes the 25 AI Agent Packs section"))
+    marked = re.search(r"<!--lovable-agent-packs-->.*?<!--/lovable-agent-packs-->", page, re.S)
+    block = marked.group(0) if marked else ""
+    checks.append((bool(block), "tools/lovable.html has the marked 25 AI Agent Packs section"))
+    for price in PRICES:
+        checks.append((bool(block) and price in block, f"25 AI Agent Packs section includes {price}"))
+    for url in STRIPE:
+        count = block.count(url) if block else 0
+        checks.append((count == 1, f"25 AI Agent Packs section includes {url} once"))
+    checks.append(("application/ld+json" in page, "tools/lovable.html has JSON-LD"))
+    checks.append(("SoftwareApplication" in page, "tools/lovable.html has SoftwareApplication JSON-LD"))
+    nav = re.search(r"<nav\b[^>]*>.*?</nav>", page, re.S)
+    checks.append((bool(nav), "tools/lovable.html has the sitewide nav"))
+    checks.append((bool(nav) and "npill" in nav.group(0), "tools/lovable.html nav has neon pills"))
+    foot = re.search(r"<footer\b[^>]*>.*?</footer>", page, re.S)
+    checks.append((bool(foot), "tools/lovable.html has the sitewide footer"))
+    checks.append((bool(foot) and "bot-store/" in foot.group(0), "tools/lovable.html footer links to the Bot Store"))
+    if not STORE.is_file():
+        checks.append((False, "bot-store/index.html missing"))
+        return checks
+    store = STORE.read_text(encoding="utf-8")
+    for url in STRIPE:
+        checks.append((url in store, f"bot-store/index.html includes Stripe Payment Link {url}"))
+    checks.append(('id="ai-agent-packs"' in store, "bot-store/index.html has #ai-agent-packs"))
+    return checks
+
+
+def _ops_checks() -> list[tuple[bool, str]]:
+    """Homepage cache-buster, template total, and the submit category contract."""
+    import build_seo_new
+    from build_bot_templates import template_count_agreement
+
+    checks: list[tuple[bool, str]] = []
+    token = "?v=" + build_seo_new.animation_cache_buster()
+    index_path = ROOT / "index.html"
+    if not index_path.is_file():
+        checks.append((False, f"4b homepage animation cache-buster {token} is missing from index.html"))
+    else:
+        index = index_path.read_text(encoding="utf-8")
+        anims = re.findall(r'(?:src|poster)="(assets/animations/[^"]+)"', index)
+        stale = [url for url in anims if not url.endswith(token)]
+        if not anims or stale:
+            checks.append((False, f"4b homepage animation cache-buster {token} is missing from index.html"))
+        else:
+            checks.append((True, f"4b homepage animation cache-buster {token}"))
+    parts = template_count_agreement()
+    label = (
+        f"bot templates {parts['total']} "
+        f"(built-in {parts['builtin']} + community {parts['community']})"
+    )
+    if parts["missing"] or parts["page"] != parts["total"] or parts["total"] < 1:
+        missing = ", ".join(parts["missing"][:5])
+        checks.append((False, f"{label} but the page has {parts['page']} rows" + (f" missing {missing}" if missing else "")))
+    else:
+        checks.append((True, label))
+    submit = ROOT / "submit.html"
+    select = ""
+    if submit.is_file():
+        match = re.search(r'<select id="category"[^>]*>.*?</select>', submit.read_text(encoding="utf-8"), re.S)
+        select = match.group(0) if match else ""
+    options = re.findall(r'<option\b([^>]*)>(.*?)</option>', select, re.S) if select else []
+    values = []
+    for attrs, text in options:
+        value = ""
+        found = re.search(r'value="([^"]*)"', attrs)
+        if found:
+            value = html.unescape(found.group(1)).strip()
+        if not value:
+            value = html.unescape(re.sub(r"<[^>]+>", "", text)).strip()
+        values.append(value)
+    if not select or not values or any(not value for value in values):
+        checks.append((False, 'submit.html is missing <select id="category"> option values'))
+    else:
+        checks.append((True, f'submit.html <select id="category"> has {len(values)} option values'))
+    catalog = ROOT / "categories.json"
+    try:
+        published = json.loads(catalog.read_text(encoding="utf-8")) if catalog.is_file() else None
+    except json.JSONDecodeError:
+        published = None
+    if published != values or not values:
+        checks.append((False, "categories.json does not match the submit category option values"))
+    else:
+        checks.append((True, f"categories.json lists {len(values)} submit categories"))
+    return checks
+
+
+def _pack_page_problems() -> tuple[list[str], list[str]]:
     """Every role pack page shows its verification date and Product + HowTo JSON-LD."""
     sys.path.insert(0, str(ROOT / "scripts"))
     from agent_pack_catalog import AGENTS
     from start_here import GUIDE_LINE, SETUP_LINE, tested_line, verified_on, works_with_for_zip
 
     problems = []
+    passes: list[str] = []
     zip_root = ROOT / "bot-packages" / "25-agent-packs" / "zips"
     for agent in AGENTS:
         rel = f"bot-store/{agent['slug']}/index.html"
@@ -185,12 +242,15 @@ def _pack_page_problems() -> list[str]:
                     if not isinstance(step, dict) or step.get("@type") != "HowToStep" or not step.get("text"):
                         problems.append(f"{rel} HowTo step is missing @type HowToStep or text")
                         break
+        if not any(item.startswith(rel) for item in problems):
+            passes.append(f"{rel} Tested on, Product dateModified, and HowTo")
     for rel in ("bot-store/index.html", "bot-templates/index.html"):
         path = ROOT / rel
         if not path.is_file():
             problems.append(f"{rel} missing")
             continue
         text = path.read_text(encoding="utf-8")
+        before = len(problems)
         shown = text.count("Tested on ")
         if shown < 25:
             problems.append(f"{rel} shows {shown} Tested on lines, expected 25")
@@ -198,17 +258,22 @@ def _pack_page_problems() -> list[str]:
             problems.append(f"{rel} is missing the START HERE mention on a pack card")
         if text.count(SETUP_LINE) < 25:
             problems.append(f"{rel} is missing the 10-minute line on a pack card")
-    return problems
+        if len(problems) == before:
+            passes.append(f"{rel} shows Tested on, START HERE, and the 10-minute line")
+    return problems, passes
 
 
-def _report(bad: list[str]) -> None:
-    print(f"daily_deep_audit: {len(bad)} problems")
-    for line in bad:
-        print("FAIL", line)
-    if not bad:
-        print("PASS tools/lovable.html has exactly one 25 AI Agent Packs section")
-        print("PASS nav, footer, neon pills, JSON-LD, and Stripe Payment Links ($35/$119/$199/$299/$349)")
-        print("PASS follower rows are fetched for their own day when the sprint tracker is present")
+def _report(bad: list[str], passes: list[str] | None = None) -> None:
+    passes = passes or []
+    total = len(bad) + len(passes)
+    if bad:
+        print(f"daily_deep_audit: {len(passes)}/{total} PASS")
+        for line in bad:
+            print("FAIL", line)
+        return
+    print(f"daily_deep_audit: {total}/{total} PASS")
+    for line in passes:
+        print("PASS", line)
 
 
 if __name__ == "__main__":

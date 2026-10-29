@@ -7,6 +7,36 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 from pack_builder_html import pack_section_html
 esc=html.escape
 SITE="https://agentscouthq.com"; D="bot-templates"; MARK="<!-- btx-generated -->"
+def live_bot_template_count(html_path=None):
+    """Rows on /bot-templates/. The built page is the count; do not keep a stale literal."""
+    path=html_path or f"{D}/index.html"
+    if os.path.exists(path):
+        n=len(re.findall(r'<li class="bt-row"', open(path, encoding="utf-8").read()))
+        if n: return n
+    return 0
+
+
+def template_count_agreement(html_path=None):
+    """Built-in rows plus the community catalog. The page and the audit share this sum."""
+    path=html_path or f"{D}/index.html"
+    page=open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+    page_ids=re.findall(r'<li class="bt-row" id="([^"]+)"', page)
+    community=[]
+    cp="data/bot-templates-community.json"
+    if os.path.exists(cp):
+        community=json.load(open(cp, encoding="utf-8"))
+    community_ids=[e["id"] for e in community if isinstance(e, dict) and e.get("id")]
+    community_set=set(community_ids)
+    builtin=len([i for i in page_ids if i not in community_set])
+    on_page=len([i for i in community_ids if i in set(page_ids)])
+    return {
+        "builtin": builtin,
+        "community": len(community_ids),
+        "total": builtin + len(community_ids),
+        "page": len(page_ids),
+        "missing": [i for i in community_ids if i not in set(page_ids)],
+        "on_page": on_page,
+    }
 SHARE_SVG='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>'
 PRETTY={"slack":"Slack","notion-workspace":"Notion","linear":"Linear","figma":"Figma","hex":"Hex","pstack":"pstack"}
 TERMS=('<li>Terms for every marketplace bot (<a href="https://x.ai/legal/bot-sharing-terms" target="_blank" rel="noopener">x.ai third-party bot terms</a>): adding it lets the bot read, write and send data and use third-party services through the accounts you connect. You connect each account yourself.</li>'
@@ -122,7 +152,7 @@ def run():
     print(f"bot templates: {len(X)} extra, {total} total")
     # Keep every hardcoded template count in sync with the data (Oct 21 2026): homepage strip source + preview copy
     SUB="Ready-made bots, skills, plugins and workflows for Grok Bot, Claude, Codex, OpenClaw, Cursor and n8n."
-    for fp in ("data/bt-strip.inc","preview/site-test/index.html"):
+    for fp in ("data/bt-strip.inc","preview/site-test/index.html","index.html"):
         if os.path.exists(fp):
             t=open(fp).read(); t2=re.sub(r'See all \d+ →',f'See all {total} →',t)
             t2=re.sub(r'(<p class="btsub">)[^<]*(</p>)',lambda m:m.group(1)+SUB+m.group(2),t2)
@@ -197,6 +227,11 @@ def filters():
     s=s.replace('<section id="bt-featured">',made_by_agentscout_html(total)+'<section id="bt-featured">',1)
     open(f"{D}/index.html","w").write(s)
     print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
+    sm="data/site_metrics.json"
+    if os.path.exists(sm):
+        raw=open(sm,encoding="utf-8").read()
+        raw2=re.sub(r'("bot_templates_count": )\d+',lambda m:m.group(1)+str(total),raw,count=1)
+        if raw2!=raw: open(sm,"w",encoding="utf-8").write(raw2)
 # Tap targets (Oct 22 2026 PT, owner "fix what's broken"): back link + related links were 19-22px tall at 390px; >=44px via min-height/padding only, no color change.
 TAPCSS='<style id="bt-tap-css">.bd-back{display:inline-flex;align-items:center;min-height:44px;padding-right:8px}.bd-rel li a{display:inline-flex;align-items:center;min-height:44px}</style>'
 def tap():
@@ -268,7 +303,8 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 section.mba-sec,.bt section.mba-sec{padding:16px}.mba-head{padding:18px 16px;text-align:center}.mba-notice{padding:14px 16px;text-align:center;justify-content:center}.mba-notice div{justify-content:center;width:100%}.mba-card{padding:18px 16px}.mba-bundle{padding:18px 16px}.mba-btn{width:100%;box-sizing:border-box}.bt-hub-tab{width:100%;justify-content:center;box-sizing:border-box}}
 </style>"""
 
-def made_by_agentscout_html(total=189):
+def made_by_agentscout_html(total=None):
+    if total is None: total=live_bot_template_count()
     return (
         '<!--bt-mba-->'
         '<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AgentScout Bot Templates","applicationCategory":"BusinessApplication","operatingSystem":"Grok Bot, Claude Code, Cursor, Codex","url":"https://agentscouthq.com/bot-templates/","author":{"@type":"Organization","name":"AgentScout","url":"https://agentscouthq.com"},"brand":{"@type":"Organization","name":"AgentScout","url":"https://agentscouthq.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>'
@@ -299,7 +335,7 @@ def made_by_agentscout_html(total=189):
         '<a class="mba-btn" href="../videos/#guide-trained-bots" style="flex:1 1 auto;max-width:100%;box-sizing:border-box;background:rgba(132,204,22,.18);border:1.5px solid #a3e635;color:#ecfccb">🎬 Watch 60fps Bot Demo →</a>'
         '</div>'
         '</div>'
-        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png?v=20261028-2051-189-1793234203" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=20261028-2051-189-1793234203" type="video/mp4"></video></figure>'
+        '<figure class="mba-vid"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png" width="1200" height="560" style="aspect-ratio:1200/560"><source src="../assets/animations/agentscout-trained-bots-ad.mp4" type="video/mp4"></video></figure>'
         '<div class="mba-grid">'
         # Card 1: $39 Operations / Monitoring Bot — Neon Lime Green (#84cc16 / #a3e635)
         '<div class="mba-card neon-lime">'
