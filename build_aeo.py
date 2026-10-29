@@ -13,7 +13,7 @@ OS = {"Open source", "Open source + cloud", "Open weights", "Open standard"}
 SKIP = {"best/index.html", "mcp/index.html", "mcp/connect.html", "mcp/pricing.html", "mcp/link-status.html", "s/index.html", "categories/index.html"}
 MO = ("", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
-ALT_NAMES = ["Agent Scout", "AgentScoutHQ", "agentscouthq.com"]
+ALT_NAMES = ["Agent Scout", "AgentScoutHQ", "agentscouthq.com", "com.agentscouthq/directory"]
 SAME_AS = [
     "https://x.com/clampdown19",
     "https://x.com/AgentScoutHQ",
@@ -139,6 +139,167 @@ def block(rows, all_items, date, ranked_by_stars=True):
         f'</tr></thead><tbody>{trs}</tbody></table></div></div>'
     )
     return f"<!--ci:aeo-->{qa}{ver}{tbl}<!--/ci:aeo-->"
+
+def _words(text):
+    return len(re.findall(r"\S+", text))
+
+def _join_names(names):
+    if len(names) == 1:
+        return names[0]
+    if len(names) == 2:
+        return f"{names[0]} and {names[1]}"
+    return ", ".join(names[:-1]) + " and " + names[-1]
+
+def _fit_answer(lead, bits):
+    """Keep a Quick answer between 40 and 60 words. Drop optional sentences before the lead."""
+    required = [lead, bits["sources"], bits["paid"]]
+    optional = [bits["lead_n"], bits["price"], bits["read"]]
+    text = " ".join(required[:1] + optional + required[1:])
+    while _words(text) > 60 and optional:
+        optional.pop()
+        text = " ".join([lead] + optional + required[1:])
+    if _words(text) > 60:
+        text = " ".join(required)
+    if _words(text) < 40:
+        for extra in (bits["read"], bits["price"], bits["lead_n"]):
+            if extra not in text:
+                text = text + " " + extra
+            if _words(text) >= 40:
+                break
+    return " ".join(text.split())
+
+def catalog_check_date():
+    """Directory link-check date from api/tools.json. Empty when that file has no date."""
+    try:
+        data = json.load(open("api/tools.json"))
+    except Exception:
+        return ""
+    if isinstance(data, dict):
+        day = str(data.get("last_checked") or "")[:10]
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
+            return day
+    return ""
+
+def mcp_best_answer(by):
+    """Install-first answer for the Best MCP servers page. Names and the live check come from catalog data.
+    Playwright MCP is listed, but it is not in the MCP link-status file, so this sentence does not call it live."""
+    need = ("context7", "github-mcp-server", "playwright-mcp")
+    if any(s not in by for s in need):
+        return ""
+    import build_aicite as bac
+    try:
+        checked = json.load(open("data/mcp_link_status.json"))
+    except Exception:
+        checked = {}
+    results = checked.get("results") or {}
+    when = str(checked.get("checked") or "")
+    day = when[:10]
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
+        day = catalog_check_date()
+    live = []
+    for slug in ("context7", "github-mcp-server"):
+        label, _detail = bac.lstat(results.get(slug) or {})
+        if label == "OK":
+            live.append(by[slug]["name"])
+    opener = (
+        f"Install {by['context7']['name']}, {by['github-mcp-server']['name']} and {by['playwright-mcp']['name']} first, "
+        "then add one server for your main system (database, design, tickets). Keep 3–6 active."
+    )
+    if live and day:
+        checked_bit = f"{_join_names(live)} were link-checked live on {_fmt(day)}."
+    elif day:
+        checked_bit = f"Sources checked {_fmt(day)}."
+    else:
+        checked_bit = "Link status: not yet checked."
+    text = f"{opener} AgentScout lists all three. {checked_bit} No vendor paid for a position."
+    text = " ".join(text.split())
+    if not 40 <= _words(text) <= 60:
+        text = f"{opener} AgentScout lists all three. {checked_bit} No vendor paid for a position. Read each listing before you connect a server."
+        text = " ".join(text.split())
+    return text
+
+def best_block(path, rows, all_items, date, ranked_by_stars, by):
+    """Quick answer, dated ranked table, How we rank, and Updated / sources checked for /best/ pages."""
+    if not date or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(date)[:10]):
+        date = ""
+        pretty = "not yet checked"
+        dt = ""
+    else:
+        date = str(date)[:10]
+        months = ("", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+        y, m, d = date.split("-")
+        pretty = f"{months[int(m)]} {int(d)}, {y}"
+        dt = date
+    how = "GitHub stars on each listing" if ranked_by_stars else "listing maturity, then GitHub stars"
+    names = [x["name"] for x in rows[:3]]
+    if path == "s/best-mcp-servers.html":
+        plain = mcp_best_answer(by)
+    else:
+        plain = ""
+    if not plain:
+        if not names:
+            plain = ""
+        else:
+            if len(names) == 1:
+                lead = f"The top pick on this list is {names[0]}."
+            else:
+                lead = f"The top picks on this list are {_join_names(names)}."
+            n = len(all_items) or len(rows)
+            src = f"Sources checked {pretty}." if dt else "Sources checked: not yet checked."
+            plain = _fit_answer(lead, {
+                "lead_n": f"They lead {n:,} matching tools, ranked by {how}.",
+                "price": "Pricing is what each maker states.",
+                "read": "Read each listing before you choose.",
+                "sources": src,
+                "paid": "No vendor paid for a position.",
+            })
+    if plain and not 40 <= _words(plain) <= 60:
+        print(f"aeo: quick answer word count {_words(plain)} on {path}")
+    linked = plain
+    for x in sorted(rows, key=lambda z: len(z["name"]), reverse=True):
+        if x["name"] and x["name"] in linked:
+            linked = linked.replace(x["name"], f'<a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>', 1)
+    # Names in the MCP install line may sit outside this page's ranked rows (Playwright MCP is another category).
+    for slug in ("context7", "github-mcp-server", "playwright-mcp"):
+        tool = by.get(slug)
+        if tool and tool["name"] in linked and f'tools/{slug}.html' not in linked:
+            linked = linked.replace(tool["name"], f'<a href="../tools/{slug}.html">{e(tool["name"])}</a>', 1)
+    qa = f'<p class="qa"><b>Quick answer:</b> {linked}</p>' if plain else ""
+    time = f'<time datetime="{dt}">{e(pretty)}</time>' if dt else e(pretty)
+    trs = "".join(
+        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></th>'
+        f'<td>{e(x["pricing"])}</td><td>{e(", ".join(x.get("use_cases", [])[:2]) or x["category"])}</td>'
+        f'<td>{"Yes" if x["pricing"] in OS else "No"}</td>'
+        f'<td>{e(locality_label(x))}</td>'
+        f'<td>{x["github_stars"]:,}</td></tr>' if x.get("github_stars") else
+        f'<tr><td>{i}</td><th scope="row"><a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></th>'
+        f'<td>{e(x["pricing"])}</td><td>{e(", ".join(x.get("use_cases", [])[:2]) or x["category"])}</td>'
+        f'<td>{"Yes" if x["pricing"] in OS else "No"}</td>'
+        f'<td>{e(locality_label(x))}</td><td></td></tr>'
+        for i, x in enumerate(rows[:10], 1)
+    )
+    tbl = (
+        f'<h2 style="font-size:17px;margin:14px 0 8px">Ranked comparison (top {min(10, len(rows))})</h2>'
+        f'<p class="muted" style="font-size:13px;margin:0 0 8px">Dated {time}.</p>'
+        f'<div class="cmpwrap"><div class="cmpscroll"><table class="cmptbl"><caption class="muted" style="caption-side:bottom;text-align:left;padding:8px 10px;font-size:12.5px">Ranked {time}</caption><thead><tr>'
+        f'<th scope="col">#</th><th scope="col">Tool</th><th scope="col">Pricing</th>'
+        f'<th scope="col">Best for</th><th scope="col">Open source</th><th scope="col">Runs locally</th><th scope="col">GitHub stars</th>'
+        f'</tr></thead><tbody>{trs}</tbody></table></div></div>'
+    ) if rows else ""
+    rank = (
+        f'<p class="muted" style="margin:0 0 8px"><strong>How we rank:</strong> {e(how)}. '
+        "Stars and maturity come from each AgentScout listing. No vendor paid for a position.</p>"
+    )
+    updated = f'<p class="srcchecked" style="margin:0 0 14px">Updated / sources checked {time}.</p>'
+    return f"<!--ci:aeo-->{qa}{tbl}{rank}{updated}<!--/ci:aeo-->", plain
+
+def _place_best_block(s, block):
+    s = re.sub(r"<!--ci:aeo-->.*?<!--/ci:aeo-->", "", s, count=1, flags=re.S)
+    s = re.sub(r"<!--xl:cmp-->.*?<!--/xl:cmp-->", "", s, flags=re.S)
+    m = re.search(r"<h1\b[^>]*>.*?</h1>(\s*<div class=\"shareacts\">.*?</div>)?", s, flags=re.S)
+    if not m:
+        return s
+    return s[:m.end()] + block + s[m.end():]
 
 def sync_entity_schema():
     """Ensure index.html, about.html, and mcp/connect.html carry alternateName and all official + third-party registry sameAs links."""
@@ -378,6 +539,7 @@ def write_llms_full(t):
         f"- [Cursor Alternatives]({B}best/cursor-alternatives.html)",
         f"- [MCP Server Pricing Table (with change history)]({B}mcp/pricing.html)",
         f"- [MCP Server Link Status Table (with daily HTTP check history)]({B}mcp/link-status.html)",
+        f"- [Link-check status (JSON)]({B}status.json): last-checked time, live or down status, and check history for every MCP server",
         "",
         "---",
         "",
@@ -460,13 +622,18 @@ def run(t):
         bycat[f"categories/{X.catslug(x['category'])}.html"].append(x)
 
     today = max(x["verified"] for x in t)
+    catalog_day = catalog_check_date()
     files = sorted(
         set(glob.glob("best/*.html") + glob.glob("mcp/*.html") + glob.glob("s/*.html") + glob.glob("categories/*.html")) - SKIP
     )
     n = 0
+    answers = []
     for f in files:
         s = open(f).read()
         if 'http-equiv="refresh"' in s[:2500]:
+            continue
+        is_best = f.startswith("best/") or f == "s/best-mcp-servers.html"
+        if not is_best and os.environ.get("BEST_ONLY"):
             continue
         is_cat = f.startswith("categories/")
         if is_cat:
@@ -476,22 +643,32 @@ def run(t):
             sl = _slugs(s)
             all_items = [by[k] for k in sl if k in by]
             rows = all_items
-        if len(rows) < 3:
+        if len(rows) < (1 if is_best else 3):
             continue
         dates = [x["verified"] for x in all_items if x.get("verified")]
         d = max(dates) if dates else today
-        ranked = is_cat or ("GitHub stars" in s or f.startswith(("best/", "mcp/")))
-        b = block(rows, all_items, d, ranked)
-        if "<!--ci:aeo-->" in s:
-            s2 = re.sub(r"<!--ci:aeo-->.*?<!--/ci:aeo-->", lambda _: b, s, count=1, flags=re.S)
-            s2 = re.sub(r"<!--xl:cmp-->.*?<!--/xl:cmp-->", "", s2, flags=re.S)
-        elif "<!--xl:cmp-->" in s:
-            s2 = re.sub(r"<!--xl:cmp-->.*?<!--/xl:cmp-->", lambda _: b, s, count=1, flags=re.S)
+        if is_best:
+            d = catalog_day or d
+        ranked = is_cat or ("GitHub stars" in s or f.startswith(("best/", "mcp/", "s/")))
+        if is_best:
+            b, plain = best_block(f, rows, all_items, d, ranked, by)
+            if plain:
+                answers.append((f, plain))
+            s2 = _place_best_block(s, b)
         else:
-            s2 = re.sub(r'(<p class="lede"[^>]*>.*?</p>)', lambda m: m.group(1) + b, s, count=1, flags=re.S)
+            b = block(rows, all_items, d, ranked)
+            if "<!--ci:aeo-->" in s:
+                s2 = re.sub(r"<!--ci:aeo-->.*?<!--/ci:aeo-->", lambda _: b, s, count=1, flags=re.S)
+                s2 = re.sub(r"<!--xl:cmp-->.*?<!--/xl:cmp-->", "", s2, flags=re.S)
+            elif "<!--xl:cmp-->" in s:
+                s2 = re.sub(r"<!--xl:cmp-->.*?<!--/xl:cmp-->", lambda _: b, s, count=1, flags=re.S)
+            else:
+                s2 = re.sub(r'(<p class="lede"[^>]*>.*?</p>)', lambda m: m.group(1) + b, s, count=1, flags=re.S)
         if s2 != s:
             open(f, "w").write(s2)
             n += 1
+    if answers:
+        open("data/best-quick-answers.json", "w").write(json.dumps([{"page": p, "quick_answer": t} for p, t in answers], indent=1, ensure_ascii=False) + "\n")
     sync_entity_schema()
     sync_robots()
     write_llms_full(t)
