@@ -149,9 +149,26 @@ def _time_html(checked):
     return e(pretty)
 
 
-def _hist_html(items, limit=6):
+VC_CSS = ("<style>.vc{background:linear-gradient(180deg,#0d1222,#070a14);border:1px solid rgba(56,189,248,.28);border-radius:16px;padding:18px 20px;margin:14px 0 20px;"
+          "box-shadow:0 0 0 1px rgba(56,189,248,.06),0 10px 30px rgba(0,0,0,.35),0 0 24px rgba(56,189,248,.08);color:#cbd5e1;text-align:left;font-size:14px;line-height:1.5;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}"
+          ".vc-hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 12px}.vc-hd h2{margin:0;font-size:17px;letter-spacing:-.01em;color:#f1f5f9}"
+          ".vc-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;flex:0 0 auto;animation:vcp 2s ease-in-out infinite}"
+          "@keyframes vcp{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}@media (prefers-reduced-motion:reduce){.vc-dot{animation:none}}"
+          ".vc-upd{font-size:12px;color:#94a3b8;margin-left:auto}.vc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;padding:0;list-style:none}"
+          ".vc-chip{display:inline-flex;align-items:baseline;gap:6px;padding:5px 12px;border-radius:999px;font-size:13px;border:1px solid;background:rgba(255,255,255,.03)}.vc-chip b{font-size:15px}"
+          ".vc-ok{color:#4ade80;border-color:rgba(74,222,128,.45)}.vc-bad{color:#f87171;border-color:rgba(248,113,113,.45)}.vc-warn{color:#fbbf24;border-color:rgba(251,191,36,.45)}.vc-tot{color:#7dd3fc;border-color:rgba(125,211,252,.45)}"
+          ".vc p{margin:0 0 8px;color:#cbd5e1}.vc-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;margin:12px 0 6px!important}"
+          ".vc-pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}.vc-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12.5px;border:1px solid rgba(248,113,113,.4);color:#fca5a5;text-decoration:none;background:rgba(248,113,113,.06)}"
+          ".vc-tl{list-style:none;margin:0 0 10px;padding:0 0 0 14px;border-left:2px solid rgba(148,163,184,.25)}.vc-tl li{position:relative;margin:0 0 7px;font-size:13px;color:#cbd5e1}"
+          ".vc-tl li:before{content:\"\";position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px rgba(74,222,128,.7)}.vc-tl li.vc-e:before{background:#f87171;box-shadow:0 0 6px rgba(248,113,113,.7)}"
+          ".vc-tl time{color:#94a3b8;font-size:12px;display:block}.vc-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}"
+          ".vc-btn{display:inline-block;padding:5px 12px;border-radius:999px;font-size:12.5px;border:1px solid rgba(56,189,248,.45);color:#7dd3fc;text-decoration:none;background:rgba(56,189,248,.06)}.vc-btn:hover,.vc-pill:hover{filter:brightness(1.25)}"
+          ".panel dl .vc-row{grid-column:1/-1}.vc-row .vc{margin:6px 0 0;padding:14px}</style>")
+
+
+def _hist_html(items, limit=5):
     if not items:
-        return "<p style=\"margin:0\">Check history: not yet checked.</p>"
+        return '<p style="margin:0">Check history: not yet checked.</p>'
     lis = []
     for ev in items[:limit]:
         when = ev.get("date") or ""
@@ -159,9 +176,11 @@ def _hist_html(items, limit=6):
             when = f"{when} {ev['time']}"
         dt, pretty = _pretty_checked(when)
         label = pretty or "not yet checked"
-        stamp = f'<time datetime="{e(dt)}">{e(label)}</time>' if dt else e(label)
-        lis.append(f"<li>{stamp}: {e(ev.get('note') or '')}</li>")
-    return '<ul style="margin:0 0 8px;padding-left:1.2em">' + "".join(lis) + "</ul>"
+        stamp = f'<time datetime="{e(dt)}">{e(label)}</time>' if dt else f"<time>{e(label)}</time>"
+        note = ev.get("note") or ""
+        bad = bool(re.search(r"(?i)\berror\b|\bdown\b(?! *\d)|-> *(error|down)|→ *(error|down)", note)) and not re.search(r"(?i)-> *(ok|live)|→ *(ok|live)", note)
+        lis.append(f'<li class="{"vc-e" if bad else "vc-o"}">{stamp}{e(note)}</li>')
+    return '<ol class="vc-tl" aria-label="Check history">' + "".join(lis) + "</ol>"
 
 
 def _counts_sentence(servers):
@@ -183,18 +202,46 @@ def _down_links(servers, prefix):
     return " Down: " + ", ".join(links) + more + "."
 
 
+def _chips(servers):
+    live = sum(1 for s in servers if s.get("status") == "live")
+    down = sum(1 for s in servers if s.get("status") == "down")
+    miss = sum(1 for s in servers if s.get("status") == "not yet checked")
+    c = [f'<li class="vc-chip vc-ok"><b>{live}</b> live</li>',
+         f'<li class="vc-chip {"vc-bad" if down else "vc-warn"}"><b>{down}</b> down</li>']
+    if miss:
+        c.append(f'<li class="vc-chip vc-warn"><b>{miss}</b> not yet checked</li>')
+    c.append(f'<li class="vc-chip vc-tot"><b>{len(servers)}</b> checked</li>')
+    return '<ul class="vc-chips" aria-label="Link status counts">' + "".join(c) + "</ul>"
+
+
+def _down_pills(servers, prefix):
+    down = [s for s in servers if s.get("status") == "down"]
+    if not down:
+        return ""
+    links = [f'<a class="vc-pill" href="{prefix}tools/{e(s["slug"])}.html">{e(s["name"])}</a>' for s in down[:8]]
+    more = f'<span class="vc-pill">+{len(down) - 8} more</span>' if len(down) > 8 else ""
+    return '<p class="vc-lbl">Down right now</p><div class="vc-pills">' + "".join(links) + more + "</div>"
+
+
+def _card_head(heading):
+    return (f'<div class="vc-hd"><span class="vc-dot" aria-hidden="true"></span><h2>{e(heading)}</h2>'
+            '<span class="vc-upd">Updated daily at 7 AM PT</span></div>')
+
+
 def panel(doc, servers, prefix, heading):
     cat = doc["catalog"]
     checked = cat.get("mcp_last_checked") or ""
     directory = cat.get("directory_last_checked") or ""
-    parts = [f'<!--vs:list--><section class="verify" aria-label="Link check evidence" style="margin:12px 0 18px;overflow-wrap:anywhere;max-width:100%"><h2 style="font-size:16px;margin:0 0 6px">{e(heading)}</h2>']
-    if directory:
-        parts.append(f'<p style="margin:0 0 6px">Directory links last checked {_time_html(directory)}.</p>')
+    parts = [f'<!--vs:list-->{VC_CSS}<section class="verify vc" aria-label="Link check evidence">{_card_head(heading)}']
     if checked:
-        parts.append(f'<p style="margin:0 0 6px">MCP servers last checked {_time_html(checked)}. Status: {_counts_sentence(servers)}.{_down_links(servers, prefix)}</p>')
+        parts.append(_chips(servers))
+        parts.append(f'<p>MCP servers last checked {_time_html(checked)}. Status: {_counts_sentence(servers)}.</p>')
+        parts.append(_down_pills(servers, prefix))
     else:
-        parts.append('<p style="margin:0 0 6px">MCP link check: not yet checked.</p>')
-    parts.append('<p style="margin:0 0 4px">Check history:</p>')
+        parts.append('<p>MCP link check: not yet checked.</p>')
+    if directory:
+        parts.append(f'<p style="color:#94a3b8;font-size:13px">Directory links last checked {_time_html(directory)}.</p>')
+    parts.append('<p class="vc-lbl">Check history</p>')
     if servers is doc["servers"]:
         hist = cat.get("history") or []
     else:
@@ -207,8 +254,7 @@ def panel(doc, servers, prefix, heading):
             if any(ev["note"].startswith(name + " link status") for name in names):
                 hist.append(ev)
     parts.append(_hist_html(hist))
-    parts.append(f'<p style="margin:0"><a href="{prefix}status.json">status.json</a> · <a href="{prefix}mcp/link-status.html">Full MCP link-status table</a></p></section><!--/vs:list-->')
-    # mcp pages already live under mcp/, so the link-status href above is wrong for them.
+    parts.append(f'<div class="vc-btns"><a class="vc-btn" href="{prefix}status.json">status.json</a><a class="vc-btn" href="{prefix}mcp/link-status.html">Full MCP link-status table</a></div></section><!--/vs:list-->')
     html_ = "".join(parts)
     if prefix == "../":
         html_ = html_.replace('href="../mcp/link-status.html"', 'href="link-status.html"')
@@ -216,23 +262,27 @@ def panel(doc, servers, prefix, heading):
 
 
 def tool_rows(item):
-    rows = []
-    if item.get("last_checked"):
-        rows.append(f'<dt>Last checked</dt><dd>{_time_html(item["last_checked"])}</dd>')
     status = item.get("status") or "not yet checked"
     detail = item.get("detail") or ""
     label = item.get("check_label") or ""
     extra = ""
     if label and label not in ("OK", "not checked"):
-        extra = f' <span class="muted">({e(label)})</span>'
+        extra = f" ({e(label)})"
     elif detail:
-        extra = f' <span class="muted">({e(detail)})</span>'
-    rows.append(f"<dt>Status</dt><dd>{e(status)}{extra}</dd>")
+        extra = f" ({e(detail)})"
+    cls = "vc-ok" if status == "live" else "vc-bad" if status == "down" else "vc-warn"
+    body = [VC_CSS, '<div class="vc">', _card_head("Verification"),
+            f'<ul class="vc-chips"><li class="vc-chip {cls}">Status: <b>{e(status)}</b>{extra}</li></ul>']
+    if item.get("last_checked"):
+        body.append(f'<p>Last checked {_time_html(item["last_checked"])}.</p>')
+    body.append('<p class="vc-lbl">Check history</p>')
     if item.get("history"):
-        rows.append("<dt>Check history</dt><dd>" + _hist_html(item["history"], 5) + "</dd>")
-    elif status == "not yet checked":
-        rows.append("<dt>Check history</dt><dd>not yet checked</dd>")
-    return "<!--vs:tool-->" + "".join(rows) + "<!--/vs:tool-->"
+        body.append(_hist_html(item["history"], 5))
+    else:
+        body.append("<p>not yet checked</p>")
+    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/link-status.html">Full MCP link-status table</a></div></div>')
+    return ("<!--vs:tool--><dt>Status</dt><dd>" + e(status) + extra + "</dd>"
+            '<dd class="vc-row">' + "".join(body) + "</dd><!--/vs:tool-->")
 
 
 def _swap(s, marker, html_):

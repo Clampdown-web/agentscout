@@ -58,7 +58,9 @@ PAGES=[
 # ai-agent-memory-rag-tools removed Oct 18 2026: duplicated categories/memory-rag (redirect in redirects.json)
 # best/ai-agent-security-tools removed Oct 18 2026: same tools as categories/security-governance (redirect in redirects.json)
 # best/ai-sales-marketing-agents removed Oct 18 2026: same tools as categories/sales-marketing (redirect in redirects.json)
-# best/ai-customer-support-agents removed Oct 18 2026: same tools as categories/customer-support (redirect in redirects.json)
+("ai-customer-support-agents","Best AI Customer Support Agents",lambda x:x["category"]=="customer support","maturity",20,
+ "AI agents and platforms that answer customer questions, resolve support tickets and hand off to a person when needed.",
+ '<a href="../categories/customer-support.html">Customer support category</a> · <a href="../for/customer-support-teams.html">AI agents for customer support teams</a> · <a href="ai-business-agents.html">AI agents for business teams</a>'),  # restored as a real best-of page Oct 29 2026 (owner-approved)
 # best/local-ai-models-and-runtimes removed Oct 18 2026: same tools as categories/models-local-runtimes (redirect in redirects.json)
 ]
 OLD=[("mcp-servers-for-claude-code","Best MCP servers for Claude Code"),("mcp-servers-for-cursor","Best MCP servers for Cursor"),("mcp-servers-for-codex","Best MCP servers for Codex"),("cursor-alternatives","Cursor alternatives")]
