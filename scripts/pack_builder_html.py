@@ -135,6 +135,8 @@ def pack_section_html() -> str:
                 f"🐍 {card['script']}",
                 f"🧠 {card['skill']}/SKILL.md",
                 f"⏰ {len(card['routines'])} routines",
+                "Zero Telemetry",
+                "🔒 Offline · Zero Telemetry",
             }
             and not str(chip).endswith(".py")
         )
