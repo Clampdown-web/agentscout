@@ -151,7 +151,7 @@ def write_pack_pages() -> list[str]:
 <section class="pack-hero">
 <p class="pack-by">built by <span class="sr-only">AgentScout</span><img class="aswm" src="../../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"><span class="pack-verified">✓ Verified pack</span></p>
 <div class="pack-badges"><span class="pack-price">${agent["price"]} One-Time · Instant ZIP Download</span><span class="pack-dept">{X.e(agent["dept_label"])}</span></div>
-<h1 data-pagefind-weight="10"><span class="pack-brand">AgentScout</span> <span class="pack-role">{X.e(agent["role"])}</span> <span class="pack-kind">Agent</span></h1>
+<h1 data-pagefind-weight="10"><span class="pack-brand">AgentScout </span><span class="pack-role">{X.e(agent["role"])} </span><span class="pack-kind">Agent</span></h1>
 <p class="lede">{X.e(lead)}</p>
 <p class="pack-outcome">{X.e(agent["promise"])}</p>
 <p class="pack-tag">{X.e(agent["tagline"])}</p>
@@ -212,7 +212,8 @@ def write_pack_pages() -> list[str]:
 .pack-price,.pack-dept{{display:inline-flex;align-items:center;max-width:100%;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800;overflow-wrap:anywhere}}
 .pack-price{{color:#fff;background:color-mix(in srgb, var(--ap) 24%, #12151c);border:1px solid color-mix(in srgb, var(--ap) 55%, transparent)}}
 .pack-dept{{color:#e4e4e7;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}}
-.pack-page h1{{margin:0 0 10px;font-size:clamp(26px, 4vw, 36px);line-height:1.15;color:#fff;letter-spacing:-.03em;overflow-wrap:anywhere}}
+.pack-page h1{{display:block;margin:0 0 10px;font-size:clamp(26px, 4vw, 36px);line-height:1.15;color:#fff;letter-spacing:-.03em;overflow-wrap:anywhere}}
+.pack-page h1 span{{display:inline}}
 .pack-role{{color:var(--ap)}}
 .pack-kind{{color:#d4d4d8;font-weight:650}}
 .pack-page .lede{{color:#e4e4e7;font-size:15.5px;line-height:1.55}}
