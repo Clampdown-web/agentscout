@@ -11,35 +11,36 @@ when GenerateImage produced a file, and:
 
 otherwise.
 
-Fallback order: --image, then a live image API (unless --skip-api; skipped
-cleanly when no key is configured), then the oldest unused file in
-data/gen-bg-bank/ (least-recently-used once every file has been used), then
-keep assets/gen-art.webp and exit 2. Procedural / PIL art is forbidden.
+Fallback order: --image, then Pollinations.ai (free, no key; unless
+--skip-api), then the oldest unused file in data/gen-bg-bank/
+(least-recently-used once every file has been used), then keep
+assets/gen-art.webp and exit 2. Procedural / PIL art is forbidden.
+No paid image APIs.
 """
 from __future__ import annotations
 
 import argparse
-import base64
 import json
-import os
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
-import time
 import urllib.error
+import urllib.parse
 import urllib.request
-import uuid
 from pathlib import Path
 
-# Published Imagine list price for grok-imagine-image-2.0 (flat per image).
-XAI_IMAGE_COST = "$0.04"
 PROMPT = (
-    "Abstract 16:9 cosmic neural landscape, deep indigo and violet with magenta "
-    "and soft pink light, glowing filaments and distant stars, atmospheric, "
-    "no text, no letters, no watermark, no logo, no people, no faces, no figures"
+    "16:9 abstract cosmic neural background in AgentScout purple, indigo, and pink tones, "
+    "glowing filaments and distant stars, atmospheric, no text, no people, no faces, no letters, no watermark"
 )
+POLLINATIONS_ATTEMPTS = 2
+POLLINATIONS_TIMEOUT = 120
+MIN_IMAGE_BYTES = 20 * 1024
+TARGET_W, TARGET_H = 1280, 720
+# 16:9 is 1.777...; 1024x576 (what Pollinations returns today) matches exactly.
+ASPECT_TOLERANCE = 0.08
 CSS_RE = re.compile(r"(--gen-art:\s*url\(\s*assets/gen-art\.webp\?v=)[^)]+(\))")
 JSON_VER_RE = re.compile(r"gen-art\.webp\?v=[^\"'\s)]+")
 ARCHIVE_RE = re.compile(r"^gen-art-(\d{4}-\d{2}-\d{2})\.webp$")
@@ -64,7 +65,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--site-dir", required=True, help="Site root (the directory that contains assets/ and generate.css)")
     p.add_argument("--date", required=True, help="Day being published, YYYY-MM-DD")
     p.add_argument("--image", help="Image already generated elsewhere (webp, png, or jpeg)")
-    p.add_argument("--skip-api", action="store_true", help="Do not call a live image API; go straight to the bank")
+    p.add_argument("--skip-api", action="store_true", help="Do not call Pollinations; go straight to the bank")
     return p
 
 
@@ -80,31 +81,30 @@ def run(args) -> int:
 
     chosen = None
     if args.image:
-        chosen = ("image", load_given_image(Path(args.image)), "0")
+        chosen = ("image", load_given_image(Path(args.image)))
     if chosen is None and not args.skip_api:
-        generated = generate_via_api()
+        generated = generate_via_api(date)
         if generated is not None:
-            webp, cost = generated
-            chosen = ("api", webp, cost)
+            chosen = ("api", generated)
     bank_name = None
     if chosen is None:
         pick = pick_bank(site / "data" / "gen-bg-bank")
         if pick is not None:
             bank_name, webp = pick
-            chosen = ("bank", webp, "0")
+            chosen = ("bank", webp)
     if chosen is None:
         print(
-            "warning: no real AI image available (no --image, no image API, and "
-            "data/gen-bg-bank/ has nothing to reuse). Keeping assets/gen-art.webp. "
-            "Refusing to draw a background with code.",
+            "warning: no real AI image available (no --image, Pollinations did not "
+            "return a usable image, and data/gen-bg-bank/ has nothing to reuse). "
+            "Keeping assets/gen-art.webp. Refusing to draw a background with code.",
             file=sys.stderr,
         )
         if not live.is_file():
             print("warning: assets/gen-art.webp is missing; nothing was written.", file=sys.stderr)
-        print("source=kept-previous cost=0")
+        print("source=kept-previous")
         return 2
 
-    source, webp, cost = chosen
+    source, webp = chosen
     previous = live.read_bytes() if live.is_file() else None
     try:
         archive_previous(site, date, previous)
@@ -121,7 +121,7 @@ def run(args) -> int:
         raise
     if source == "bank" and bank_name:
         record_bank_use(site / "data" / "gen-bg-bank" / "used.json", bank_name, date)
-    print(f"source={source} cost={cost}")
+    print(f"source={source}")
     return 0
 
 
@@ -177,10 +177,16 @@ def _is_raster(data: bytes) -> bool:
 
 
 def transcode_to_webp(data: bytes) -> bytes:
+    """Resize to the site background size and encode WebP. This scales pixels; it does not draw art."""
     ffmpeg = shutil.which("ffmpeg")
     if not ffmpeg:
         raise RuntimeError("ffmpeg is not available to convert the image to webp")
-    suffix = ".png" if data.startswith(b"\x89PNG") else ".jpg"
+    if _is_webp(data):
+        suffix = ".webp"
+    elif data.startswith(b"\x89PNG"):
+        suffix = ".png"
+    else:
+        suffix = ".jpg"
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / f"in{suffix}"
         dst = Path(tmp) / "out.webp"
@@ -189,7 +195,7 @@ def transcode_to_webp(data: bytes) -> bytes:
             [
                 ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
                 "-i", str(src),
-                "-vf", "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720",
+                "-vf", f"scale={TARGET_W}:{TARGET_H}:force_original_aspect_ratio=increase,crop={TARGET_W}:{TARGET_H}",
                 "-frames:v", "1", "-c:v", "libwebp", "-quality", "82",
                 str(dst),
             ],
@@ -292,238 +298,86 @@ def record_bank_use(path: Path, name: str, date: str) -> None:
     tmp.replace(path)
 
 
-def generate_via_api(env=None):
-    """Return (webp_bytes, cost) or None when no API is configured or every call fails."""
-    env = os.environ if env is None else env
-    providers = list_providers(env)
-    if not providers:
-        return None
-    for name, fn in providers:
+def pollinations_url(date: str) -> str:
+    """Free Pollinations FLUX URL. The seed is the date, so a re-run of the same day matches and the next day does not."""
+    prompt = urllib.parse.quote(PROMPT, safe="")
+    seed = int(date.replace("-", ""))
+    return (
+        f"https://image.pollinations.ai/prompt/{prompt}"
+        f"?width=1920&height=1080&nologo=true&model=flux&seed={seed}"
+    )
+
+
+def generate_via_api(date: str):
+    """Return WebP bytes from Pollinations, or None after one retry. Never calls a paid API."""
+    url = pollinations_url(date)
+    for attempt in range(1, POLLINATIONS_ATTEMPTS + 1):
         try:
-            data, cost = fn()
-            return as_webp(data), cost
+            body, ctype = _http_get(url, POLLINATIONS_TIMEOUT)
+            _validate_generated(body, ctype)
+            return transcode_to_webp(body)
         except Exception as exc:
             detail = str(exc).splitlines()[0][:200]
-            print(f"make_gen_bg: warning: {name} image API failed ({detail}); skipping", file=sys.stderr)
+            again = "retrying" if attempt < POLLINATIONS_ATTEMPTS else "skipping"
+            print(f"make_gen_bg: warning: Pollinations attempt {attempt} failed ({detail}); {again}", file=sys.stderr)
     return None
 
 
-def list_providers(env: dict):
-    found = []
-    custom = _env(env, "GEN_BG_API_URL")
-    custom_key = _env(env, "GEN_BG_API_KEY", "XAI_API_KEY", "OPENAI_API_KEY")
-    if custom and custom_key:
-        found.append(("custom", lambda: _openai_images(custom, custom_key, env, custom=True)))
-    xai = _env(env, "XAI_API_KEY")
-    if xai:
-        found.append(("xai", lambda: _openai_images("https://api.x.ai/v1/images/generations", xai, env, xai=True)))
-    openai = _env(env, "OPENAI_API_KEY")
-    if openai:
-        found.append(("openai", lambda: _openai_images("https://api.openai.com/v1/images/generations", openai, env)))
-    fal = _env(env, "FAL_KEY", "FAL_API_KEY")
-    if fal:
-        found.append(("fal", lambda: _fal(fal)))
-    bfl = _env(env, "BFL_API_KEY")
-    if bfl:
-        found.append(("bfl", lambda: _bfl(bfl)))
-    together = _env(env, "TOGETHER_API_KEY")
-    if together:
-        found.append(("together", lambda: _together(together)))
-    stability = _env(env, "STABILITY_API_KEY")
-    if stability:
-        found.append(("stability", lambda: _stability(stability)))
-    return found
-
-
-def provider_names(env: dict) -> list[str]:
-    return [name for name, _ in list_providers(env)]
-
-
-def _env(env: dict, *names: str) -> str:
-    for name in names:
-        value = str(env.get(name) or "").strip()
-        if value:
-            return value
-    return ""
-
-
-def _openai_images(url: str, key: str, env: dict, xai: bool = False, custom: bool = False):
-    if xai or (custom and "x.ai" in url):
-        body = {
-            "model": env.get("XAI_IMAGE_MODEL") or env.get("GEN_BG_API_MODEL") or "grok-imagine-image-2.0",
-            "prompt": PROMPT,
-            "n": 1,
-            "aspect_ratio": "16:9",
-            "resolution": "1k",
-            "quality": "low",
-            "response_format": "b64_json",
-        }
-        cost = XAI_IMAGE_COST
-    else:
-        body = {
-            "model": env.get("OPENAI_IMAGE_MODEL") or env.get("GEN_BG_API_MODEL") or "gpt-image-1",
-            "prompt": PROMPT,
-            "n": 1,
-            "size": env.get("OPENAI_IMAGE_SIZE") or "1536x1024",
-            "response_format": "b64_json",
-        }
-        cost = "unknown"
-    _raw, parsed = _post_json(url, body, {"Authorization": f"Bearer {key}"})
-    return _image_bytes(parsed), _reported_cost(parsed, cost)
-
-
-def _fal(key: str):
-    _raw, parsed = _post_json(
-        "https://fal.run/fal-ai/flux/schnell",
-        {
-            "prompt": PROMPT,
-            "image_size": "landscape_16_9",
-            "num_images": 1,
-            "output_format": "jpeg",
-            "enable_safety_checker": True,
-        },
-        {"Authorization": f"Key {key}"},
-    )
-    return _image_bytes(parsed), _reported_cost(parsed, "unknown")
-
-
-def _together(key: str):
-    _raw, parsed = _post_json(
-        "https://api.together.xyz/v1/images/generations",
-        {
-            "model": "black-forest-labs/FLUX.1-schnell",
-            "prompt": PROMPT,
-            "width": 1280,
-            "height": 720,
-            "n": 1,
-            "response_format": "b64_json",
-            "steps": 4,
-        },
-        {"Authorization": f"Bearer {key}"},
-    )
-    return _image_bytes(parsed), _reported_cost(parsed, "unknown")
-
-
-def _bfl(key: str):
-    _, created = _post_json(
-        "https://api.bfl.ai/v1/flux-pro-1.1",
-        {"prompt": PROMPT, "width": 1024, "height": 576},
-        {"x-key": key},
-    )
-    request_id = created.get("id")
-    if not request_id:
-        raise RuntimeError("BFL response had no id")
-    sample = None
-    for _ in range(20):
-        time.sleep(1)
-        _, polled = _get_json(f"https://api.bfl.ai/v1/get_result?id={request_id}", {"x-key": key})
-        status = str(polled.get("status") or "")
-        if status == "Ready":
-            sample = (polled.get("result") or {}).get("sample")
-            break
-        if status in {"Error", "Request Moderated", "Content Moderated", "Task not found"}:
-            raise RuntimeError(f"BFL status {status}")
-    if not sample:
-        raise RuntimeError("BFL result was not ready")
-    return _download(sample), "unknown"
-
-
-def _stability(key: str):
-    boundary = "----AgentScoutGenBg" + uuid.uuid4().hex
-    chunks = []
-    for name, value in (("prompt", PROMPT), ("aspect_ratio", "16:9"), ("output_format", "webp")):
-        chunks.append(
-            f"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n".encode()
-        )
-    chunks.append(f"--{boundary}--\r\n".encode())
-    status, body, ctype = _request(
-        "https://api.stability.ai/v2beta/stable-image/generate/core",
-        data=b"".join(chunks),
-        headers={
-            "Authorization": f"Bearer {key}",
-            "Accept": "image/*",
-            "Content-Type": f"multipart/form-data; boundary={boundary}",
-        },
-    )
+def _validate_generated(body: bytes, content_type: str) -> None:
+    ctype = (content_type or "").split(";", 1)[0].strip().lower()
     if not ctype.startswith("image/"):
-        raise RuntimeError(f"Stability returned {ctype or 'no content type'} ({status})")
-    return body, "unknown"
+        raise RuntimeError(f"content-type is {content_type or 'missing'}")
+    if len(body) < MIN_IMAGE_BYTES:
+        raise RuntimeError(f"image is {len(body)} bytes, under 20 KB")
+    width, height = decode_size(body)
+    if height <= 0 or abs((width / height) - (16 / 9)) > ASPECT_TOLERANCE:
+        raise RuntimeError(f"aspect {width}x{height} is not about 16:9")
 
 
-def _post_json(url: str, body: dict, headers: dict):
-    data = json.dumps(body).encode()
-    hdrs = {"Content-Type": "application/json", "Accept": "application/json", **headers}
-    status, raw, _ctype = _request(url, data=data, headers=hdrs)
-    try:
-        parsed = json.loads(raw.decode("utf-8"))
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(f"HTTP {status} was not JSON") from exc
-    if not isinstance(parsed, dict):
-        raise RuntimeError("image API returned a non-object")
-    return raw, parsed
+def decode_size(data: bytes) -> tuple[int, int]:
+    """Decode the image far enough to read its pixel size. Raises if it is not a real image."""
+    ffprobe = shutil.which("ffprobe")
+    ffmpeg = shutil.which("ffmpeg")
+    if not ffprobe or not ffmpeg:
+        raise RuntimeError("ffmpeg is not available to decode the image")
+    if _is_webp(data):
+        suffix = ".webp"
+    elif data.startswith(b"\x89PNG"):
+        suffix = ".png"
+    elif data.startswith(b"\xff\xd8\xff"):
+        suffix = ".jpg"
+    else:
+        suffix = ".img"
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / f"in{suffix}"
+        src.write_bytes(data)
+        probe = subprocess.run(
+            [ffprobe, "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", str(src)],
+            capture_output=True, text=True,
+        )
+        decoded = subprocess.run([ffmpeg, "-v", "error", "-i", str(src), "-f", "null", "-"], capture_output=True)
+    if probe.returncode != 0 or decoded.returncode != 0:
+        raise RuntimeError("image did not decode")
+    parts = (probe.stdout or "").strip().split(",")
+    if len(parts) != 2 or not parts[0].isdigit() or not parts[1].isdigit():
+        raise RuntimeError("image did not decode")
+    return int(parts[0]), int(parts[1])
 
 
-def _get_json(url: str, headers: dict):
-    status, raw, _ctype = _request(url, headers={"Accept": "application/json", **headers})
-    try:
-        parsed = json.loads(raw.decode("utf-8"))
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(f"HTTP {status} was not JSON") from exc
-    if not isinstance(parsed, dict):
-        raise RuntimeError("image API returned a non-object")
-    return raw, parsed
-
-
-def _request(url: str, data=None, headers=None, timeout=120):
-    req = urllib.request.Request(url, data=data, headers=headers or {}, method="POST" if data is not None else "GET")
+def _http_get(url: str, timeout: int) -> tuple[bytes, str]:
+    req = urllib.request.Request(url, headers={"Accept": "image/*", "User-Agent": "AgentScout-gen-bg"})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = resp.read(20_000_001)
             if len(body) > 20_000_000:
                 raise RuntimeError("image response too large")
-            return resp.status, body, resp.headers.get("Content-Type", "")
+            return body, resp.headers.get("Content-Type", "")
     except urllib.error.HTTPError as exc:
         detail = exc.read(240).decode("utf-8", "replace").replace("\n", " ")
         raise RuntimeError(f"HTTP {exc.code}: {detail[:180]}") from None
-    except urllib.error.URLError as exc:
-        raise RuntimeError(f"request failed: {exc.reason}") from None
-
-
-def _image_bytes(payload: dict) -> bytes:
-    items = payload.get("data") or payload.get("images") or []
-    if not isinstance(items, list) or not items:
-        if payload.get("b64_json") or payload.get("url"):
-            items = [payload]
-        else:
-            raise RuntimeError("image API returned no image")
-    item = items[0] if isinstance(items[0], dict) else {}
-    if item.get("b64_json"):
-        return base64.b64decode(item["b64_json"])
-    url = item.get("url") or ""
-    if isinstance(url, str) and url.startswith("data:"):
-        return base64.b64decode(url.split(",", 1)[1])
-    if url:
-        return _download(url)
-    raise RuntimeError("image API item had no url or b64_json")
-
-
-def _download(url: str) -> bytes:
-    if not isinstance(url, str) or not url.startswith("https://"):
-        raise RuntimeError("refusing a non-https image url")
-    _status, body, _ctype = _request(url, timeout=60)
-    if not (_is_webp(body) or _is_raster(body)):
-        raise RuntimeError("downloaded file is not an image")
-    return body
-
-
-def _reported_cost(payload: dict, fallback: str) -> str:
-    for key in ("cost", "price"):
-        if payload.get(key) not in (None, ""):
-            return str(payload[key])
-    usage = payload.get("usage")
-    if isinstance(usage, dict) and usage.get("cost") not in (None, ""):
-        return str(usage["cost"])
-    return fallback
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        reason = getattr(exc, "reason", exc)
+        raise RuntimeError(f"request failed: {reason}") from None
 
 
 if __name__ == "__main__":
