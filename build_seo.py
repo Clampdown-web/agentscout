@@ -135,6 +135,9 @@ def llms_extra(c=None):
         out=[]
         for f in files:
             if f.endswith("index.html"): continue
+            # Already listed in the curated guides above this marker.
+            if f == "best/best-mcp-servers-2026.html" and f"{B}{f}" in L:
+                continue
             h=_h1(f)
             if h: out.append(f"- [{h.replace(strip,'').strip()}]({B}{f})")
         return [f"## {name}",""]+out+[""] if out else []

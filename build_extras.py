@@ -41,7 +41,7 @@ def su(u):
 
 # Standard outbound tracking on tool-page Visit buttons (owner-approved Oct 20 2026). Official-site links and JSON-LD stay clean.
 # Per-tool opt-out: tools.json "no_utm": true (for sites that break on query params).
-UTM="utm_source=agentscouthq&utm_medium=referral&utm_campaign=directory"
+UTM="utm_source=agentscout&utm_medium=referral&utm_campaign=directory"
 def utm(u,x=None):
     u=su(u)
     if u=="#" or (x and x.get("no_utm")) or re.search(r"(?i)[?&]utm_[a-z]+=",u): return u

@@ -211,6 +211,9 @@ def mcp_2026_page(t):
     doc={"catalog":catalog,"servers":status.get("servers") or []}
     shown=[by[x["slug"]] for x in ranked]
     verify=build_status.panel(doc, shown, "../", "Verification")
+    # panel() shortens ../mcp/link-status.html to link-status.html for pages that live in /mcp/.
+    # This page is in /best/, so that relative URL 404s. Keep the /mcp/ path.
+    verify=verify.replace('href="link-status.html"', 'href="../mcp/link-status.html"')
     share=('<div class="shareacts"><span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page">'
            '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
            '<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>Share</button>'
@@ -295,7 +298,10 @@ def _link_mcp_2026(n):
     if os.path.exists("llms.txt"):
         txt=open("llms.txt").read()
         line=f"- [Best MCP servers 2026]({loc})"
-        if line not in txt:
+        # One llms.txt entry. build_extras and build_seo.llms_extra also emit this URL.
+        if loc in txt:
+            pass
+        elif line not in txt:
             anchor="- [Best Open-Source MCP Servers 2026](https://agentscouthq.com/best/open-source-mcp-servers.html)"
             if anchor in txt:
                 txt=txt.replace(anchor, anchor+"\n"+line, 1)
