@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { allowOrigin, parseSlugs, normalizeStored, castInDoc, countsFor, isoWeek } from "../src/worker.js";
+import worker, { allowOrigin, parseSlugs, normalizeStored, castInDoc, countsFor, isoWeek } from "../src/worker.js";
 
 test("cors allowlist is the site and www only", () => {
   assert.equal(allowOrigin("https://agentscouthq.com"), "https://agentscouthq.com");
@@ -49,4 +49,59 @@ test("public counts omit the visitor flag", () => {
   assert.equal("yours" in counts.tools.sickle, false);
   assert.equal(counts.tools.missing.votes, 0);
   assert.equal(counts.today_total, 1);
+});
+
+function memoryKv() {
+  const store = new Map();
+  return {
+    async get(key, type) {
+      if (!store.has(key)) return null;
+      const value = store.get(key);
+      return type === "json" ? JSON.parse(value) : value;
+    },
+    async put(key, value) { store.set(key, String(value)); },
+    get size() { return store.size; },
+  };
+}
+
+function voteRequest(extra = {}) {
+  const headers = { "content-type": "application/json", "cf-connecting-ip": "203.0.113.8" };
+  for (const [key, value] of Object.entries(extra)) headers[key] = value;
+  return new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ slug: "sickle" }),
+  });
+}
+
+test("an allowed origin can vote", async () => {
+  const kv = memoryKv();
+  const res = await worker.fetch(voteRequest({ origin: "https://agentscouthq.com" }), { VOTES: kv });
+  assert.equal(res.status, 200);
+  const body = await res.json();
+  assert.equal(body.ok, true);
+  assert.equal(body.slug, "sickle");
+  assert.equal(body.votes, 1);
+  assert.equal(body.already, false);
+  const again = await worker.fetch(voteRequest({ origin: "https://www.agentscouthq.com" }), { VOTES: kv });
+  const second = await again.json();
+  assert.equal(again.status, 200);
+  assert.equal(second.already, true);
+  assert.equal(second.votes, 1);
+});
+
+test("a missing origin gets a 403", async () => {
+  const kv = memoryKv();
+  const res = await worker.fetch(voteRequest(), { VOTES: kv });
+  assert.equal(res.status, 403);
+  assert.equal(kv.size, 0);
+});
+
+test("evil.com gets a 403", async () => {
+  const kv = memoryKv();
+  const res = await worker.fetch(voteRequest({ origin: "https://evil.com" }), { VOTES: kv });
+  assert.equal(res.status, 403);
+  const body = await res.json();
+  assert.equal(body.error, "Votes can only be cast from agentscouthq.com.");
+  assert.equal(kv.size, 0);
 });

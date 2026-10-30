@@ -94,10 +94,19 @@ export function validateUrlShape(input) {
   return { url };
 }
 
+export function isIpLiteral(host) {
+  const raw = String(host || "").trim().toLowerCase().replace(/^\[|\]$/g, "");
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(raw)) return true;
+  return raw.includes(":");
+}
+
 export async function resolveAndCheck(hostname, fetchImpl = fetch) {
-  const host = hostname.replace(/^\[|\]$/g, "");
-  if (isBlockedIp(host)) return { error: "That address is not public." };
-  if (/^\d+\.\d+\.\d+\.\d+$/.test(host) || host.includes(":")) return { addresses: [host] };
+  const host = String(hostname || "").replace(/^\[|\]$/g, "");
+  // A public name is not an IP. Checking isBlockedIp() on it treats every hostname as blocked.
+  if (isIpLiteral(host)) {
+    if (isBlockedIp(host)) return { error: "That address is not public." };
+    return { addresses: [host] };
+  }
   const addresses = [];
   for (const type of ["A", "AAAA"]) {
     const res = await fetchImpl(`https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(host)}&type=${type}`, {
