@@ -476,7 +476,7 @@ def seo(t,urls):
           f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.",
           f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated twice daily, 7 AM and 7 PM PT.",
           f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {_bslp.LAUNCH_PACK_PROMISE} {_bslp.LAUNCH_PACK_ACCOUNTS} {_bslp.LAUNCH_PACK_SKIP} {_bslp.LAUNCH_PACK_LIMITS} Checkout: {_bslp.LAUNCH_PACK_URL}",
-          f"- Fast-Track ($15) includes: {_bslp.FAST_TRACK_INDEX_LINE}.",
+          f"- Fast-Track ($15) includes: {_bslp.FAST_TRACK_INDEX_LINE}",
           ""]
     open("llms.txt","w").write("\n".join(L)); return out
 

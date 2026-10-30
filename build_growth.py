@@ -425,19 +425,19 @@ def insert_launch_pack():
 def patch_indexnow(text):
     pairs = [
         ("and a dedicated launch post on @AgentScoutHQ.",
-         "and a dedicated launch post on @AgentScoutHQ. Same-day indexing ping to Bing and IndexNow search engines."),
+         "and a dedicated launch post on @AgentScoutHQ. Same-day indexing ping to Bing and IndexNow search engines (does not include Google)."),
         ("and a launch post on @AgentScoutHQ.",
-         "and a launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines."),
+         "and a launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google)."),
         ("Launch post on @AgentScoutHQ</span>",
-         "Launch post on @AgentScoutHQ · Same-day indexing ping to Bing and IndexNow search engines</span>"),
+         "Launch post on @AgentScoutHQ · Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</span>"),
         ("Launch post on <b>@AgentScoutHQ</b></span>",
-         "Launch post on <b>@AgentScoutHQ</b> · <b>Same-day indexing ping to Bing and IndexNow search engines</b></span>"),
+         "Launch post on <b>@AgentScoutHQ</b> · <b>Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b></span>"),
     ]
     for old, new in pairs:
         if old in text and new not in text:
             text = text.replace(old, new)
-    bullet = '<li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day indexing ping to Bing and IndexNow search engines.</b> Bing and other IndexNow engines. This does not include Google indexing.</span></li>'
-    if "pkg-chk-fast" in text and "Same-day indexing ping to Bing and IndexNow search engines.</b> Bing" not in text and "Launch post on X:" in text:
+    bullet = '<li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b></span></li>'
+    if "pkg-chk-fast" in text and "Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b> Bing" not in text and "Launch post on X:" in text:
         text = text.replace("Launch post on X:</b>", "Launch post on X:</b>", 1)
         text = re.sub(
             r'(Launch post on X:</b>.*?</li>)',
@@ -489,7 +489,7 @@ def llms():
             f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.\n"
             f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated twice daily, 7 AM & 7 PM PT.\n"
             f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {BS.LAUNCH_PACK_PROMISE} {BS.LAUNCH_PACK_ACCOUNTS} {BS.LAUNCH_PACK_SKIP} {BS.LAUNCH_PACK_LIMITS} Checkout: {BS.LAUNCH_PACK_URL}\n"
-            f"- Fast-Track ($15) includes: {BS.FAST_TRACK_INDEX_LINE}.\n"
+            f"- Fast-Track ($15) includes: {BS.FAST_TRACK_INDEX_LINE}\n"
         )
         open("llms.txt", "w", encoding="utf-8").write(s)
 
