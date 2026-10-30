@@ -650,6 +650,8 @@ def run(t):
         if is_best:
             d = catalog_day or d
         ranked = is_cat or ("GitHub stars" in s or f.startswith(("best/", "mcp/", "s/")))
+        if f.startswith("best/") and "rank by the maturity stated on each listing" in s:
+            ranked = False  # maturity-ranked best pages (build_best "maturity"): say so in the Quick answer (Oct 29 2026)
         if is_best:
             b, plain = best_block(f, rows, all_items, d, ranked, by)
             if plain:
