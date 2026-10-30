@@ -321,6 +321,10 @@ def launches(tools):
         urls += launch_page(tools, a, b, w, current=False)
         if w == wid:
             urls += launch_page(tools, a, b, w, current=True)
+    # shell() copies data/detail.tpl, whose Submit button is the old GitHub issue form.
+    # Stamp the shared index.html nav and footer before these pages are considered done.
+    import build_seo_new
+    build_seo_new.unify_all_nav_and_footer()
     return urls
 
 
@@ -559,7 +563,7 @@ def walk_indexnow():
 
 def sitemap(extra):
     sm = open("sitemap.xml", encoding="utf-8").read()
-    sm = sm.replace(B + "mcp/link-status.html", B + "mcp/status/")
+    sm = re.sub(r"\s*<url><loc>[^<]*mcp/link-status\.html</loc>.*?</url>\n?", "\n", sm)
     day = pt_today().isoformat()
     block = ""
     for u in extra:
@@ -651,6 +655,7 @@ def main():
     sitemap(extra)
     import build_seo_new
     build_seo_new.unify_all_nav_and_footer()
+    build_status.write_link_status_forward()
     if BS.LAUNCH_PACK_URL not in open("api/products.json", encoding="utf-8").read():
         raise SystemExit("Launch Pack URL missing from products.json")
     print("growth build done", len(extra), "urls")

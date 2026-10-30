@@ -211,9 +211,9 @@ def mcp_2026_page(t):
     doc={"catalog":catalog,"servers":status.get("servers") or []}
     shown=[by[x["slug"]] for x in ranked]
     verify=build_status.panel(doc, shown, "../", "Verification")
-    # panel() shortens ../mcp/link-status.html to link-status.html for pages that live in /mcp/.
+    # panel() shortens ../mcp/status/ to status/ for pages that live in /mcp/.
     # This page is in /best/, so that relative URL 404s. Keep the /mcp/ path.
-    verify=verify.replace('href="link-status.html"', 'href="../mcp/link-status.html"')
+    verify=verify.replace('href="status/"', 'href="../mcp/status/"')
     share=('<div class="shareacts"><span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page">'
            '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
            '<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>Share</button>'

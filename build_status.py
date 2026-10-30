@@ -444,6 +444,35 @@ def apply_affiliation():
             open(path, "w").write(s2)
 
 
+def write_link_status_forward():
+    """GitHub Pages ignores _redirects, so the old URL stays a real HTML page that forwards to /mcp/status/."""
+    import build_seo_new
+    nav, foot = build_seo_new.chrome_for("../")
+    canon = B + "mcp/status/"
+    page = f'''<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCP server status · AgentScout</title>
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="{canon}">
+<meta http-equiv="refresh" content="0; url=/mcp/status/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../styles.css?v=202610290319">
+<script>(function(){{try{{var t=localStorage.getItem("agentscout-theme")}}catch(e){{}}if(t!=="dark"&&t!=="light")t="dark";document.documentElement.dataset.theme=t;window.asToggleTheme=function(){{var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{{localStorage.setItem("agentscout-theme",n)}}catch(e){{}}}}}})()</script>
+</head><body>
+{nav}
+<main class="wrap"><p>This page moved. <a href="/mcp/status/">MCP server status</a>.</p></main>
+{foot}
+</body></html>
+'''
+    os.makedirs("mcp", exist_ok=True)
+    open("mcp/link-status.html", "w", encoding="utf-8").write(page)
+    print("link-status forwarder: mcp/link-status.html -> /mcp/status/")
+
+
 def write_dashboard(tools):
     """Upgrade /mcp/link-status.html in place. Status comes only from the check files."""
     import build_extras as X
@@ -541,9 +570,7 @@ def write_dashboard(tools):
             node.pop("dateModified", None)
     os.makedirs("mcp/status", exist_ok=True)
     open("mcp/status/index.html", "w").write(X.shell("../../", title, desc, canon, body, ld))
-    # /mcp/link-status.html is a Pages 301 in _redirects. A real file would override that rule.
-    if os.path.exists("mcp/link-status.html"):
-        os.remove("mcp/link-status.html")
+    write_link_status_forward()
     print(f"status dashboard: {live} up, {down} down, {miss} not yet checked")
     return canon
 

@@ -146,7 +146,7 @@ def dir_rows(x, directory_checked):
         body.append(f'<p>This listing\'s link was last checked {BS._time_html(checked)}.</p>')
     if directory_checked:
         body.append(f'<p style="color:#94a3b8;font-size:13px">Directory links last checked {BS._time_html(directory_checked)}.</p>')
-    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/link-status.html">MCP link-status table</a></div></div>')
+    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/status/">MCP status</a></div></div>')
     return "<!--vs:tool-->" + '<dd class="vc-row">' + "".join(body) + "</dd><!--/vs:tool-->"
 
 

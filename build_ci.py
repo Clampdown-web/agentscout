@@ -35,7 +35,7 @@ def cmp_table():
 def home(t):
     import build_aicite as _bac; _ul=_bac.mcp_uptime_line(t)
     n=mcp_n(t); s=open("index.html").read()
-    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b><span data-live-mcp>{n:,}</span> MCP servers</b>, link-checked daily</a> (<a href="mcp/link-status.html">{e(_ul)}</a>) · <a href="skills/">Agent Skills with install commands</a></p>'
+    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b><span data-live-mcp>{n:,}</span> MCP servers</b>, link-checked daily</a> (<a href="mcp/status/">{e(_ul)}</a>) · <a href="skills/">Agent Skills with install commands</a></p>'
     s=_blk(s,"mcp",line,'</p><p class="quizcta">',after=False) if '<!--ci:mcp-->' not in s else re.sub(r"<!--ci:mcp-->.*?<!--/ci:mcp-->",f"<!--ci:mcp-->{line}<!--/ci:mcp-->",s,flags=re.S)
     tot=len(t)
     d=f"AgentScout: {tot:,} AI agent tools, including {n:,} MCP servers, link-checked daily. Coding agents, frameworks, browser use, voice and no-code."
