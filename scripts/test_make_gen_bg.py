@@ -2,12 +2,15 @@
 """Fallback order for the daily generator background. Code never draws the art."""
 from __future__ import annotations
 
+import io
 import json
 import os
 import subprocess
 import sys
 import tempfile
 import unittest
+import urllib.parse
+from contextlib import redirect_stdout
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -48,33 +51,40 @@ class MakeGenBgTest(unittest.TestCase):
         for banned in ("import PIL", "from PIL", "ImageDraw", "ImageFont", "Image.new", "import cairo", "import wand", "import cv2", "import skimage"):
             self.assertNotIn(banned, text)
 
-    def test_no_configured_api_is_an_empty_provider_list(self):
-        self.assertEqual(bg.provider_names({}), [])
-        self.assertEqual(bg.provider_names({"XAI_API_KEY": "  ", "OPENAI_API_KEY": ""}), [])
+    def test_no_paid_image_apis(self):
+        text = Path(bg.__file__).read_text(encoding="utf-8")
+        for banned in (
+            "XAI_API_KEY", "OPENAI_API_KEY", "FAL_KEY", "FAL_API_KEY", "BFL_API_KEY",
+            "TOGETHER_API_KEY", "STABILITY_API_KEY", "GEN_BG_API_URL", "api.x.ai",
+            "api.openai.com", "fal.run", "api.bfl.ai", "api.together.xyz", "stability.ai",
+            "$0.04", "cost=",
+        ):
+            self.assertNotIn(banned, text)
 
-    def test_provider_order(self):
-        self.assertEqual(
-            bg.provider_names({
-                "XAI_API_KEY": "x",
-                "OPENAI_API_KEY": "o",
-                "FAL_API_KEY": "f",
-                "BFL_API_KEY": "b",
-                "TOGETHER_API_KEY": "t",
-                "STABILITY_API_KEY": "s",
-            }),
-            ["xai", "openai", "fal", "bfl", "together", "stability"],
-        )
-        self.assertEqual(
-            bg.provider_names({"GEN_BG_API_URL": "https://example.test/v1/images/generations", "GEN_BG_API_KEY": "k"})[0],
-            "custom",
-        )
+    def test_pollinations_url_changes_with_the_date(self):
+        first = bg.pollinations_url("2026-11-01")
+        second = bg.pollinations_url("2026-11-02")
+        self.assertTrue(first.startswith("https://image.pollinations.ai/prompt/"))
+        self.assertIn("width=1920&height=1080&nologo=true&model=flux&seed=20261101", first)
+        self.assertIn(urllib.parse.quote("no people", safe=""), first)
+        self.assertIn("AgentScout", first)
+        self.assertIn("seed=20261102", second)
+        self.assertNotEqual(first, second)
 
     def test_image_flag_installs_that_file_and_bumps_version(self):
         sample = SAMPLE.read_bytes()
         with tempfile.TemporaryDirectory() as tmp:
             root = site_with(Path(tmp), b"RIFFOLDWEBP", archives=8)
             previous = (root / "assets" / "gen-art.webp").read_bytes()
-            code = bg.main(["--site-dir", str(root), "--date", "2026-11-01", "--image", str(SAMPLE), "--skip-api"])
+            def boom(*_a, **_k):
+                raise AssertionError("Pollinations should not run when --image is set")
+
+            original = bg._http_get
+            bg._http_get = boom
+            try:
+                code = bg.main(["--site-dir", str(root), "--date", "2026-11-01", "--image", str(SAMPLE)])
+            finally:
+                bg._http_get = original
             self.assertEqual(code, 0)
             self.assertEqual((root / "assets" / "gen-art.webp").read_bytes(), sample)
             self.assertIn("?v=2026-11-01", (root / "generate.css").read_text(encoding="utf-8"))
@@ -134,38 +144,75 @@ class MakeGenBgTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = site_with(Path(tmp), sample, bank={"bank-01.webp": sample})
 
-            def boom(_env=None):
-                raise AssertionError("API helper should not run with --skip-api")
+            def boom(*_a, **_k):
+                raise AssertionError("Pollinations should not run with --skip-api")
 
-            original = bg.generate_via_api
-            bg.generate_via_api = boom
+            original = bg._http_get
+            bg._http_get = boom
             try:
                 code = bg.main(["--site-dir", str(root), "--date", "2026-11-01", "--skip-api"])
             finally:
-                bg.generate_via_api = original
+                bg._http_get = original
             self.assertEqual(code, 0)
 
-    def test_api_result_is_preferred_over_the_bank(self):
+    def test_pollinations_http_is_resized_and_preferred_over_the_bank(self):
         sample = SAMPLE.read_bytes()
-        fresh = SAMPLE.read_bytes()[:20] + b"API-IMAGE" + SAMPLE.read_bytes()[20:]
-        # fresh must still be a webp; splice after the header so the magic stays valid
-        self.assertTrue(fresh.startswith(b"RIFF"))
+        jpeg = _jpeg(1024, 576)
+        self.assertGreaterEqual(len(jpeg), 20 * 1024)
+        calls = []
+
+        def fetch(url, timeout):
+            calls.append((url, timeout))
+            if len(calls) == 1:
+                raise TimeoutError("timed out")
+            return jpeg, "image/jpeg"
+
         with tempfile.TemporaryDirectory() as tmp:
             root = site_with(Path(tmp), sample, bank={"bank-01.webp": sample})
-
-            def fake_api(_env=None):
-                return fresh, "$0.04"
-
-            original = bg.generate_via_api
-            bg.generate_via_api = fake_api
+            original = bg._http_get
+            bg._http_get = fetch
+            out = io.StringIO()
             try:
-                code = bg.main(["--site-dir", str(root), "--date", "2026-11-04"])
+                with redirect_stdout(out):
+                    code = bg.main(["--site-dir", str(root), "--date", "2026-11-06"])
             finally:
-                bg.generate_via_api = original
+                bg._http_get = original
             self.assertEqual(code, 0)
-            self.assertEqual((root / "assets" / "gen-art.webp").read_bytes(), fresh)
+            self.assertEqual(len(calls), 2)
+            self.assertEqual(calls[0][0], bg.pollinations_url("2026-11-06"))
+            self.assertEqual(calls[0][1], 120)
+            installed = (root / "assets" / "gen-art.webp").read_bytes()
+            self.assertNotEqual(installed, sample)
+            self.assertEqual(bg.decode_size(installed), (1280, 720))
             used = json.loads((root / "data" / "gen-bg-bank" / "used.json").read_text(encoding="utf-8"))
             self.assertEqual(used["entries"], {})
+            self.assertEqual(out.getvalue().strip(), "source=api")
+
+    def test_pollinations_rejects_a_bad_response_and_uses_the_bank(self):
+        sample = SAMPLE.read_bytes()
+        square = _jpeg(640, 640)
+        self.assertGreaterEqual(len(square), 20 * 1024)
+        calls = {"n": 0}
+
+        def fetch(_url, _timeout):
+            calls["n"] += 1
+            if calls["n"] == 1:
+                return b"not-an-image", "text/html"
+            return square, "image/jpeg"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = site_with(Path(tmp), sample, bank={"bank-01.webp": sample})
+            original = bg._http_get
+            bg._http_get = fetch
+            try:
+                code = bg.main(["--site-dir", str(root), "--date", "2026-11-07",])
+            finally:
+                bg._http_get = original
+            self.assertEqual(code, 0)
+            self.assertEqual(calls["n"], 2)
+            self.assertEqual((root / "assets" / "gen-art.webp").read_bytes(), sample)
+            used = json.loads((root / "data" / "gen-bg-bank" / "used.json").read_text(encoding="utf-8"))
+            self.assertEqual(used["entries"]["bank-01.webp"]["last_used"], "2026-11-07")
 
     def test_both_sources_missing_keeps_yesterday_and_exits_2(self):
         sample = SAMPLE.read_bytes()
@@ -187,6 +234,20 @@ class MakeGenBgTest(unittest.TestCase):
             )
             out = bg.as_webp(jpg.read_bytes())
             self.assertTrue(out.startswith(b"RIFF") and out[8:12] == b"WEBP")
+
+
+def _jpeg(width: int, height: int) -> bytes:
+    with tempfile.TemporaryDirectory() as tmp:
+        dest = Path(tmp) / "fixture.jpg"
+        subprocess.check_call(
+            [
+                "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+                "-f", "lavfi", "-i", f"color=c=0x4b2a86:s={width}x{height},noise=alls=40:allf=t",
+                "-frames:v", "1", "-q:v", "2", str(dest),
+            ],
+            stdout=subprocess.DEVNULL,
+        )
+        return dest.read_bytes()
 
 
 if __name__ == "__main__":
