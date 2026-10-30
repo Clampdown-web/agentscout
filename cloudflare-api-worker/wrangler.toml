@@ -23,4 +23,4 @@ routes = [
 # One-vote-per-day markers are separate keys. No D1 migration.
 [[kv_namespaces]]
 binding = "VOTES"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "ec20d8092d644a9fa24a6f05a8df0515"
