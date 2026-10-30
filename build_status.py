@@ -271,10 +271,10 @@ def panel(doc, servers, prefix, heading):
             if any(ev["note"].startswith(name + " link status") for name in names):
                 hist.append(ev)
     parts.append(_hist_html(hist))
-    parts.append(f'<div class="vc-btns"><a class="vc-btn" href="{prefix}status.json">status.json</a><a class="vc-btn" href="{prefix}mcp/link-status.html">Full MCP link-status table</a></div></section><!--/vs:list-->')
+    parts.append(f'<div class="vc-btns"><a class="vc-btn" href="{prefix}status.json">status.json</a><a class="vc-btn" href="{prefix}mcp/status/">MCP status</a></div></section><!--/vs:list-->')
     html_ = "".join(parts)
     if prefix == "../":
-        html_ = html_.replace('href="../mcp/link-status.html"', 'href="link-status.html"')
+        html_ = html_.replace('href="../mcp/status/"', 'href="status/"')
     return html_
 
 
@@ -297,7 +297,7 @@ def tool_rows(item):
         body.append(_hist_html(item["history"], 5))
     else:
         body.append("<p>not yet checked</p>")
-    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/link-status.html">Full MCP link-status table</a></div></div>')
+    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/status/">MCP status</a></div></div>')
     return ("<!--vs:tool--><dt>Status</dt><dd>" + e(status) + extra + "</dd>"
             '<dd class="vc-row">' + "".join(body) + "</dd><!--/vs:tool-->")
 
@@ -388,7 +388,7 @@ def link_llms():
     s = open(path).read()
     if "status.json" in s:
         return
-    anchor = f"- [MCP server link status]({B}mcp/link-status.html): latest automated link check for every MCP server, with change history"
+    anchor = f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history"
     if anchor in s:
         s = s.replace(anchor, anchor + "\n" + line, 1)
         open(path, "w").write(s)
@@ -442,6 +442,137 @@ def apply_affiliation():
         s2 = _expand_org(s)
         if s2 != s or AFF not in open(path).read():
             open(path, "w").write(s2)
+
+
+def write_link_status_forward():
+    """GitHub Pages ignores _redirects, so the old URL stays a real HTML page that forwards to /mcp/status/."""
+    import build_seo_new
+    nav, foot = build_seo_new.chrome_for("../")
+    canon = B + "mcp/status/"
+    page = f'''<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCP server status · AgentScout</title>
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="{canon}">
+<meta http-equiv="refresh" content="0; url=/mcp/status/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../styles.css?v=202610290319">
+<script>(function(){{try{{var t=localStorage.getItem("agentscout-theme")}}catch(e){{}}if(t!=="dark"&&t!=="light")t="dark";document.documentElement.dataset.theme=t;window.asToggleTheme=function(){{var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{{localStorage.setItem("agentscout-theme",n)}}catch(e){{}}}}}})()</script>
+</head><body>
+{nav}
+<main class="wrap"><p>This page moved. <a href="/mcp/status/">MCP server status</a>.</p></main>
+{foot}
+</body></html>
+'''
+    os.makedirs("mcp", exist_ok=True)
+    open("mcp/link-status.html", "w", encoding="utf-8").write(page)
+    print("link-status forwarder: mcp/link-status.html -> /mcp/status/")
+
+
+def write_dashboard(tools):
+    """Upgrade /mcp/link-status.html in place. Status comes only from the check files."""
+    import build_extras as X
+    doc = build_document(tools)
+    cat = doc["catalog"]
+    checked = cat.get("mcp_last_checked") or ""
+    dt, pretty = _pretty_checked(checked)
+    live, down, miss = cat.get("live", 0), cat.get("down", 0), cat.get("not_yet_checked", 0)
+    total = live + down + miss
+    when = f'<time datetime="{e(dt)}">{e(pretty)}</time>' if dt else "not yet checked"
+    rows = []
+    for s in doc["servers"]:
+        status = s.get("status") or "not yet checked"
+        hist = s.get("history") or []
+        bits = []
+        for ev in hist[:3]:
+            note = ev.get("note") or ""
+            day = ev.get("date") or ""
+            if ev.get("time"):
+                day = f"{day} {ev['time']}"
+            bits.append(f"{day}: {note}" if day else note)
+        hist_txt = " · ".join(bits) if bits else ("No earlier change is in the check log." if status != "not yet checked" else "not yet checked")
+        last = _time_html(s["last_checked"]) if s.get("last_checked") else "not yet checked"
+        detail = e(s.get("detail") or s.get("check_label") or "")
+        shown = {"live": "Up", "down": "Down", "not yet checked": "Not yet checked"}.get(status, status)
+        rows.append(
+            f'<tr data-status="{e(status)}" data-name="{e(s["name"].lower())}">'
+            f'<td><a href="../../tools/{e(s["slug"])}.html">{e(s["name"])}</a></td>'
+            f'<td><span class="st-pill st-{e(status.replace(" ", "-"))}">{e(shown)}</span></td>'
+            f'<td>{last}</td><td>{detail or "—"}</td><td>{e(hist_txt)}</td></tr>'
+        )
+    title = "MCP server status · AgentScout"
+    desc = f"Up, down, and not-yet-checked counts for {total} MCP servers on AgentScout, from the latest twice-daily link check."
+    if len(desc) > 156:
+        desc = desc[:156].rsplit(" ", 1)[0]
+    canon = B + "mcp/status/"
+    qa_bits = []
+    if checked:
+        qa_bits.append(f"{live} up, {down} down, {miss} not yet checked, out of {total} MCP servers.")
+        qa_bits.append(f"Last updated {pretty or checked} Pacific.")
+    else:
+        qa_bits.append("The MCP link check has no timestamp on file yet.")
+    body = f'''<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../index.html">MCP servers</a> / Status</div>
+<section class="st-dash" style="padding-top:20px;text-align:left">
+<h1 style="text-align:left">MCP server status</h1>
+<p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. Updated twice daily, 7 AM &amp; 7 PM PT. A server with no row in the check file is not yet checked. Nothing on this page is guessed.</p>
+<p class="st-updated"><b>Last updated:</b> {when}. Updated twice daily, 7 AM &amp; 7 PM PT. {e(qa_bits[0] if qa_bits else "")}</p>
+<div class="st-counts" role="group" aria-label="Filter by status">
+<button type="button" class="st-count on" data-filter="all"><b>{total}</b><span>All</span></button>
+<button type="button" class="st-count" data-filter="live"><b>{live}</b><span>Up</span></button>
+<button type="button" class="st-count" data-filter="down"><b>{down}</b><span>Down</span></button>
+<button type="button" class="st-count" data-filter="not yet checked"><b>{miss}</b><span>Not yet checked</span></button>
+</div>
+<label class="sr-only" for="st-q">Search MCP servers</label>
+<input id="st-q" type="search" placeholder="Search MCP servers" autocomplete="off" enterkeyhint="search">
+<p id="st-empty" class="muted" hidden>No servers match that filter.</p>
+<div style="overflow-x:auto;max-width:100%" tabindex="0" role="region" aria-label="MCP server status table">
+<table class="st-table" id="st-table"><thead><tr><th>MCP server</th><th>Status</th><th>Last checked</th><th>HTTP result</th><th>Recent history</th></tr></thead><tbody>
+{"".join(rows)}
+</tbody></table></div>
+<p class="muted" style="margin-top:14px">Up includes servers whose latest check was OK, and servers that answered but block scripted requests. Down means the check returned an error or no response. See also <a href="../pricing.html">MCP pricing</a> and <a href="../index.html">MCP servers by task</a>.</p>
+</section>
+<script>
+(function(){{
+  var q=document.getElementById("st-q"), rows=[].slice.call(document.querySelectorAll("#st-table tbody tr")), empty=document.getElementById("st-empty"), filter="all";
+  function run(){{
+    var n=0, s=(q.value||"").trim().toLowerCase();
+    rows.forEach(function(r){{
+      var ok=(filter==="all"||r.getAttribute("data-status")===filter)&&(!s||r.getAttribute("data-name").indexOf(s)>=0);
+      r.hidden=!ok; if(ok)n++;
+    }});
+    empty.hidden=n>0;
+  }}
+  document.querySelectorAll(".st-count").forEach(function(b){{b.addEventListener("click",function(){{
+    filter=b.getAttribute("data-filter");
+    document.querySelectorAll(".st-count").forEach(function(x){{x.classList.toggle("on",x===b)}});
+    run();
+  }})}});
+  q.addEventListener("input",run);
+}})();
+</script>'''
+    items = [{"@type": "ListItem", "position": i + 1, "name": s["name"], "url": s["page"]} for i, s in enumerate(doc["servers"])]
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "WebPage", "name": title, "description": desc, "url": canon, "dateModified": (checked[:10] if checked else None)},
+        {"@type": "Dataset", "name": "MCP server link status", "description": desc, "url": canon, "dateModified": (checked[:10] if checked else None), "creator": {"@type": "Organization", "name": "AgentScout", "url": B}},
+        {"@type": "ItemList", "name": "MCP server status", "numberOfItems": total, "itemListElement": items},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "AgentScout", "item": B},
+            {"@type": "ListItem", "position": 2, "name": "MCP servers", "item": B + "mcp/"},
+            {"@type": "ListItem", "position": 3, "name": "Status", "item": canon},
+        ]},
+    ]}
+    for node in ld["@graph"]:
+        if node.get("dateModified") is None:
+            node.pop("dateModified", None)
+    os.makedirs("mcp/status", exist_ok=True)
+    open("mcp/status/index.html", "w").write(X.shell("../../", title, desc, canon, body, ld))
+    write_link_status_forward()
+    print(f"status dashboard: {live} up, {down} down, {miss} not yet checked")
+    return canon
 
 
 def apply(tools):

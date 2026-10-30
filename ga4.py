@@ -46,6 +46,8 @@ def _csp(m):
         c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " " + GA_CONNECT, c, count=1)
     if "https://api.agentscouthq.com" not in c:
         c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://api.agentscouthq.com", c, count=1)
+    if "https://votes.agentscouthq.com" not in c:
+        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://votes.agentscouthq.com", c, count=1)
     if "https://agentscout.beehiiv.com" not in c.split("frame-src")[0]:
         c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://agentscout.beehiiv.com", c, count=1)
     if "https://cloudflareinsights.com" not in c.split("frame-src")[0]:

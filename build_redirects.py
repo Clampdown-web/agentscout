@@ -141,7 +141,7 @@ def detect(m):
             if src.endswith("/") and src not in m:
                 print("redirects: WARNING directory URL vanished, add a redirect by hand:", src)
             continue
-        if os.path.exists(src) and not _is_redirect(src):
+        if src in HTML_FORWARDERS or (os.path.exists(src) and not _is_redirect(src)):
             continue  # page still exists (e.g. made noindex on purpose); not a 404
         dst = _target(src, cur)
         if dst == "":  # 5: homepage fallback is a soft-404 risk, never add silently
@@ -154,8 +154,31 @@ def detect(m):
         _save(m)
     return m
 
+# GitHub Pages ignores _redirects. These paths are real HTML forwarders and must not be deleted or rewritten.
+HTML_FORWARDERS = {"mcp/link-status.html"}
+
+def ensure_cf_redirects():
+    """Drop _redirects rules for HTML forwarders. The rule is harmless on Cloudflare and ignored on GitHub Pages."""
+    path = "_redirects"
+    if not os.path.exists(path):
+        return
+    kept = []
+    for ln in open(path, encoding="utf-8"):
+        parts = ln.split()
+        if parts and parts[0].lstrip("/") in HTML_FORWARDERS:
+            continue
+        if ln.strip():
+            kept.append(ln.rstrip("\n"))
+    open(path, "w", encoding="utf-8").write(("\n".join(kept) + "\n") if kept else "")
+
 def run():
+    ensure_cf_redirects()
     m = detect(load())
+    dropped = [k for k in list(m) if k.lstrip("/") in HTML_FORWARDERS]
+    for k in dropped:
+        print("redirects: html forwarder, not a _redirects rule", k, "->", m.pop(k))
+    if dropped:
+        _save(m)
     if not m:
         print("redirects: none")
         return 0
@@ -171,6 +194,8 @@ def run():
         dst = dst.lstrip("/")
         if not src.endswith(".html") or not (dst.endswith(".html") or dst.endswith("/") or dst == ""):
             print("redirects: skip bad paths", src, "->", dst)
+            continue
+        if src in HTML_FORWARDERS:
             continue
         if src in live:
             print("redirects: page is live again, skip", src)

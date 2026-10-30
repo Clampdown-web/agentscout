@@ -10,7 +10,7 @@ import build_api
 e = html.escape
 B = "https://agentscouthq.com/"
 OS = {"Open source", "Open source + cloud", "Open weights", "Open standard"}
-SKIP = {"best/index.html", "mcp/index.html", "mcp/connect.html", "mcp/pricing.html", "mcp/link-status.html", "s/index.html", "categories/index.html"}
+SKIP = {"best/index.html", "mcp/index.html", "mcp/connect.html", "mcp/pricing.html", "mcp/status/index.html", "s/index.html", "categories/index.html"}
 MO = ("", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 ALT_NAMES = ["Agent Scout", "AgentScoutHQ", "agentscouthq.com", "com.agentscouthq/directory"]
@@ -462,7 +462,7 @@ def write_llms_full(t):
         "## Maker Submission & Launch Packages (`/submit.html` & `/sponsor.html`)",
         "",
         f"- **Free Community Listing ($0 forever)**: Standard review queue (3–5 days), permanent indexed `/tools/<slug>.html` page + `SoftwareApplication` schema, and listing in `llms.txt` & MCP server (`com.agentscouthq/directory`). Submit at {B}submit.html#free-form",
-        "- **Fast-Track + 7-Day Launch Boost ($15 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full FAQ Page + pros/cons profile enrichment, and a launch post on `@AgentScoutHQ`. Checkout: https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
+        "- **Fast-Track + 7-Day Launch Boost ($15 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on `@AgentScoutHQ`, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google). Checkout: https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
         "- **30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time — Most Popular)**: Everything in $15 upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in `/best/*-alternatives` and `/compare/` comparison tables, priority recommendation weight in `llms-full.txt` and MCP search (`com.agentscouthq/directory`), and a dedicated spotlight across both `@clampdown19` and `@AgentScoutHQ`. Checkout: https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
         f"- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {open('sitemap.xml').read().count('<loc>'):,}+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
         "",
@@ -539,7 +539,7 @@ def write_llms_full(t):
         f"- [Best MCP Servers for Codex]({B}best/mcp-servers-for-codex.html)",
         f"- [Cursor Alternatives]({B}best/cursor-alternatives.html)",
         f"- [MCP Server Pricing Table (with change history)]({B}mcp/pricing.html)",
-        f"- [MCP Server Link Status Table (with twice-daily HTTP check history)]({B}mcp/link-status.html)",
+        f"- [MCP server status (with twice-daily HTTP check history)]({B}mcp/status/)",
         f"- [Link-check status (JSON)]({B}status.json): last-checked time, live or down status, and check history for every MCP server",
         "",
         "---",
@@ -588,7 +588,7 @@ def write_llms_full(t):
         "",
         f"## Complete Verified MCP Servers Catalog ({len(ranked_mcp):,} MCP Servers)",
         "",
-        f"Full table of all {len(ranked_mcp):,} Model Context Protocol (MCP) servers listed on AgentScout, cross-referenced with `{B}mcp/pricing.html` and `{B}mcp/link-status.html`.",
+        f"Full table of all {len(ranked_mcp):,} Model Context Protocol (MCP) servers listed on AgentScout, cross-referenced with `{B}mcp/pricing.html` and `{B}mcp/status/`.",
         "",
         "| # | MCP Server | Pricing | Link Status | Runs Locally | License | GitHub Stars | Primary Use Case | Description | AgentScout Listing | Official / Repo URL |",
         "|---|---|---|---|---|---|---:|---|---|---|---|",

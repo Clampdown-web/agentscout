@@ -137,7 +137,7 @@ def run(t):
             if f=="mcp/connect.html":
                 label="MCP server"; title=title; sub="Search AgentScout from Claude, Cursor, VS Code or any MCP client"
                 cards=[dict(name=f"{len(t):,}",tag="AI agent tools",size=44),dict(name=f"{nm}",tag="MCP servers",size=44),dict(name="Free",tag="read-only · no sign-up",size=44)]
-            elif f in ("mcp/link-status.html","mcp/pricing.html") or len(sl)<3:
+            elif f in ("mcp/link-status.html","mcp/status/index.html","mcp/pricing.html") or len(sl)<3:
                 label="MCP servers"; sub=None
                 cards=[dict(name=f"{nm}",tag="MCP servers",size=44),dict(name=f"{len(t):,}",tag="AI agent tools",size=44),dict(name=("Pricing" if "pricing" in f else "Link check"),tag=("free, freemium, paid" if "pricing" in f else "listing + GitHub links"),size=40)]
             else:

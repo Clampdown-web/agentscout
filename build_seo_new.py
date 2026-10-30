@@ -212,6 +212,37 @@ def sync_animations(t=None):
             open(p, "w", encoding="utf-8").write(ntxt)
 
 
+def prefix_rel_links(html_frag, depth_prefix):
+    """Prefix root-relative nav/footer URLs for a page that lives `depth_prefix` below the site root."""
+    if not depth_prefix:
+        return html_frag
+    def repl_href(m):
+        q, url = m.group(1), m.group(2)
+        if url.startswith(("http://", "https://", "mailto:", "#", "javascript:", "../", "/")):
+            return m.group(0)
+        if url == "./":
+            return f'href={q}{depth_prefix}{q}'
+        return f'href={q}{depth_prefix}{url}{q}'
+    def repl_src(m):
+        q, url = m.group(1), m.group(2)
+        if url.startswith(("http://", "https://", "data:", "../", "/")):
+            return m.group(0)
+        return f'src={q}{depth_prefix}{url}{q}'
+    out = re.sub(r'href=(["\'])([^"\']+)\1', repl_href, html_frag)
+    out = re.sub(r'src=(["\'])([^"\']+)\1', repl_src, out)
+    return out
+
+
+def chrome_for(depth_prefix):
+    """The index.html nav and footer, rewritten for a page at this relative depth."""
+    idx = open("index.html", encoding="utf-8").read()
+    nav = re.search(r'<nav[^>]*>.*?</nav>', idx, re.S)
+    foot = re.search(r'<footer[^>]*>.*?</footer>', idx, re.S)
+    if not (nav and foot):
+        raise SystemExit("index.html is missing nav or footer")
+    return prefix_rel_links(nav.group(0), depth_prefix), prefix_rel_links(foot.group(0), depth_prefix)
+
+
 def unify_all_nav_and_footer():
     import os, re
     idx_s = open("index.html", encoding="utf-8").read()
@@ -233,25 +264,6 @@ def unify_all_nav_and_footer():
         return
     root_nav = m_nav.group(0)
     root_foot = m_foot.group(0)
-
-    def prefix_rel_links(html_frag, depth_prefix):
-        if not depth_prefix:
-            return html_frag
-        def repl_href(m):
-            q, url = m.group(1), m.group(2)
-            if url.startswith(("http://", "https://", "mailto:", "#", "javascript:", "../", "/")):
-                return m.group(0)
-            if url == "./":
-                return f'href={q}{depth_prefix}{q}'
-            return f'href={q}{depth_prefix}{url}{q}'
-        def repl_src(m):
-            q, url = m.group(1), m.group(2)
-            if url.startswith(("http://", "https://", "data:", "../", "/")):
-                return m.group(0)
-            return f'src={q}{depth_prefix}{url}{q}'
-        out = re.sub(r'href=(["\'])([^"\']+)\1', repl_href, html_frag)
-        out = re.sub(r'src=(["\'])([^"\']+)\1', repl_src, out)
-        return out
 
     skip_files = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
     updated = 0

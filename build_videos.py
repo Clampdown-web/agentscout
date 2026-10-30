@@ -114,7 +114,7 @@ def pages(t):
             "snippet": "curl -s https://agentscouthq.com/llms.txt | head -n 35",
             "links": [
                 ("../index.html#directory", f"Search All {n_tools:,} Verified Tools →"),
-                ("../mcp/link-status.html", "Live MCP Link-Status Table →"),
+                ("../mcp/status/", "MCP server status →"),
                 ("../llms.txt", "Read llms.txt Machine Catalog →"),
             ],
         },

@@ -43,7 +43,7 @@ Catalog last checked: 2026-10-30 (Pacific)
 ## Key pages
 
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
-- [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
+- [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
 - [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 276 tools
@@ -280,6 +280,15 @@ Catalog last checked: 2026-10-30 (Pacific)
 - [Pain in the Task](https://agentscouthq.com/bot-templates/#cb-pain-in-the-task): Finds the dull work eating your week and gets it handed off.
 - [Fred](https://agentscouthq.com/bot-templates/#cb-fred): Fred runs your social media: learns your niche, connects Buffer or other posting tools, researches what's going viral daily, and drafts posts for your approval. Built for creators and small businesses.
 <!-- cb:end -->
+
+
+## Launches, status, and the Directory Launch Pack
+
+- [How AgentScout started](https://agentscouthq.com/how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.
+- [Weekly launch board](https://agentscouthq.com/launches/): tools added each ISO week (Pacific), with server-side upvotes.
+- [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts. Updated twice daily, 7 AM & 7 PM PT.
+- [Directory Launch Pack](https://agentscouthq.com/submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). Submitted to ~25 hand-picked AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve). Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself. If your tool is already listed in one of those directories, we skip it and submit to another from the same hand-picked list. This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing. Checkout: https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f
+- Fast-Track ($15) includes: Same-day indexing ping to Bing and IndexNow search engines (does not include Google).
 
 <!-- pages:start -->
 
@@ -624,6 +633,7 @@ Catalog last checked: 2026-10-30 (Pacific)
 - [AI agent stack builder](https://agentscouthq.com/free-tools/ai-agent-stack-builder.html)
 - [AI API cost calculator](https://agentscouthq.com/free-tools/ai-cost-calculator.html)
 - [AI tool comparison card maker](https://agentscouthq.com/free-tools/ai-tool-comparison-card.html)
+- [AI Tool Launch Day Checklist](https://agentscouthq.com/free-tools/ai-tool-launch-day-checklist.html)
 - [Build vs buy AI agent calculator](https://agentscouthq.com/free-tools/build-vs-buy-calculator.html)
 - [Context window planner](https://agentscouthq.com/free-tools/context-window-planner.html)
 - [JSON output schema validator](https://agentscouthq.com/free-tools/json-output-validator.html)
@@ -632,6 +642,7 @@ Catalog last checked: 2026-10-30 (Pacific)
 - [MCP server picker](https://agentscouthq.com/free-tools/mcp-server-picker.html)
 - [Open-source license checker for AI tools](https://agentscouthq.com/free-tools/open-source-license-checker.html)
 - [AI prompt builder](https://agentscouthq.com/free-tools/prompt-builder.html)
+- [Roast My AI Tool Listing](https://agentscouthq.com/free-tools/roast-my-ai-tool-listing.html)
 - [AGENTS.md and rules file generator](https://agentscouthq.com/free-tools/rules-file-generator.html)
 - [System prompt linter](https://agentscouthq.com/free-tools/system-prompt-linter.html)
 - [AI token counter (estimate)](https://agentscouthq.com/free-tools/token-counter.html)

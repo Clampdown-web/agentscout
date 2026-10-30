@@ -51,12 +51,13 @@
       "turnaround": "Same-day priority review (live in next daily build)",
       "checkout_url": "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
       "page_url": "https://agentscouthq.com/sponsor.html",
-      "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, and a dedicated launch post on @AgentScoutHQ.",
+      "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, a dedicated launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google).",
       "deliverables": [
         "Same-day priority review & live deployment",
         "7-day featured pin on /new.html + category New & Featured row",
         "Full FAQPage JSON-LD + pros/cons profile enrichment",
         "Dedicated launch post on @AgentScoutHQ on X",
+        "Same-day indexing ping to Bing and IndexNow search engines (does not include Google).",
         "Verified Maker badge on your tool card"
       ]
     },
@@ -90,13 +91,13 @@
       "billing_model": "weekly",
       "availability": "in_stock",
       "badge": "1 Exclusive Slot / Week",
-      "turnaround": "Immediate activation across all 2,665+ pages + Tuesday newsletter",
+      "turnaround": "Immediate activation across all 2,666+ pages + Tuesday newsletter",
       "checkout_url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
       "page_url": "https://agentscouthq.com/sponsor.html",
-      "description": "Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all 2,665+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
+      "description": "Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all 2,666+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
       "deliverables": [
         "Everything in 30-Day Category Pin ($49) included",
-        "7 days in the exclusive sitewide top sponsor bar across all 2,665+ pages",
+        "7 days in the exclusive sitewide top sponsor bar across all 2,666+ pages",
         "Featured card in the homepage Makers showcase (#makers)",
         "Top 'Sponsored by' slot in Tuesday's AgentScout Weekly newsletter",
         "Custom HUD video card spotlight on X"
@@ -173,6 +174,30 @@
       "page_url": "https://agentscouthq.com/bot-store/",
       "checkout_url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08",
       "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime and inbox monitoring, technical SEO and Core Web Vitals, competitor and launch tracking, and executive coordination, sharing one /workspace/handoff/ folder. $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable)."
+    }
+  ],
+  "addons": [
+    {
+      "id": "directory-launch-pack",
+      "sku": "AS-ADDON-LAUNCH-49",
+      "name": "Directory Launch Pack",
+      "category": "addon",
+      "price_usd": 49,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "badge": "Add-on, not a listing tier",
+      "turnaround": "Submitted within 7 days, follow-up report at 30 days",
+      "checkout_url": "https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f",
+      "page_url": "https://agentscouthq.com/submit.html#launch-pack",
+      "description": "Submitted to ~25 hand-picked AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve). Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself. If your tool is already listed in one of those directories, we skip it and submit to another from the same hand-picked list. This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing. After you pay, reply to the receipt or email support@agentscouthq.com with your tool name, URL, one-line pitch, logo, category, and the email address to use for those directory accounts.",
+      "deliverables": [
+        "Submitted to ~25 hand-picked AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve).",
+        "Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself.",
+        "If your tool is already listed in one of those directories, we skip it and submit to another from the same hand-picked list.",
+        "Report of live and pending links; follow-up report at 30 days",
+        "After you pay, reply to the receipt or email support@agentscouthq.com with your tool name, URL, one-line pitch, logo, category, and the email address to use for those directory accounts."
+      ],
+      "limits": "This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing."
     }
   ],
   "agent_packs": [
@@ -927,6 +952,101 @@
         "checkout_url": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
         "stripe_payment_link_id": "plink_1UVgv8KVzDFIUga83wEaqIPN",
         "label": "All 25-Bot Mega Pack ($349 · Save $526)"
+      }
+    ]
+  },
+  "schema_org": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "sku": "AS-LIST-FREE",
+        "name": "Free Community Listing",
+        "description": "Permanent indexed tool page (/tools/<slug>.html) with SoftwareApplication JSON-LD schema, daily automated HTTP link checking, and inclusion in llms.txt, api/tools.json, and the AgentScout MCP server (com.agentscouthq/directory).",
+        "category": "directory_listing",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "url": "https://agentscouthq.com/submit.html#free-form",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-BOOST-29",
+        "name": "Fast-Track + 7-Day Launch Boost",
+        "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, a dedicated launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google).",
+        "category": "directory_boost",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "15",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-PIN-49",
+        "name": "30-Day Category Pin + Permanent SEO/AEO Placement",
+        "description": "Everything in the $15 Fast-Track package upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in /best/*-alternatives and /compare/ side-by-side comparison tables, priority citation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a launch spotlight across both @clampdown19 and @AgentScoutHQ.",
+        "category": "directory_boost",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "49",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-SPONSOR-99WK",
+        "name": "Weekly Sitewide Sponsor + Newsletter Top Slot",
+        "description": "Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all 2,666+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
+        "category": "sitewide_sponsorship",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "99",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-ADDON-LAUNCH-49",
+        "name": "Directory Launch Pack",
+        "description": "Submitted to ~25 hand-picked AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve). Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself. If your tool is already listed in one of those directories, we skip it and submit to another from the same hand-picked list. This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing. After you pay, reply to the receipt or email support@agentscouthq.com with your tool name, URL, one-line pitch, logo, category, and the email address to use for those directory accounts.",
+        "category": "addon",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "49",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f",
+          "availability": "https://schema.org/InStock"
+        }
       }
     ]
   }

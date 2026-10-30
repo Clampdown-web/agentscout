@@ -1,0 +1,26 @@
+# AgentScout vote + roast worker.
+# Do NOT attach this worker to api.agentscouthq.com. That hostname is a Custom Domain
+# on the existing agentscout-image worker (/submit, /generate, /reviews, /track, /readiness).
+# A route for /vote, /votes, or /roast on that host would never reach this worker.
+#
+# This worker's hostname is votes.agentscouthq.com (custom domain below).
+# Deploy:
+#   1. npx wrangler kv namespace create VOTES
+#   2. Paste the id into the kv_namespaces block below.
+#   3. npx wrangler deploy
+#      The custom_domain route creates votes.agentscouthq.com and the DNS record.
+# Redeploy the MCP worker (cloudflare-mcp-worker) separately so list_packages
+# returns the Directory Launch Pack add-on.
+name = "agentscout-api"
+main = "src/worker.js"
+compatibility_date = "2026-10-28"
+
+routes = [
+  { pattern = "votes.agentscouthq.com", custom_domain = true }
+]
+
+# Counts for one ISO week live in a single KV key (votes:2026-w44).
+# One-vote-per-day markers are separate keys. No D1 migration.
+[[kv_namespaces]]
+binding = "VOTES"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

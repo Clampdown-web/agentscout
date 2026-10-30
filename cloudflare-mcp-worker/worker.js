@@ -119,12 +119,12 @@ const TOOL_DEFS = [
   {
     name: "list_packages",
     title: "List AgentScout maker packages & pre-trained bots",
-    description: "List AgentScout's 4 maker listing & launch packages ($0 Free Community Listing, $15 Fast-Track + 7-Day Boost, $49 30-Day Category Pin + Permanent SEO/AEO Placement, $99/wk Weekly Sitewide Sponsor with direct Stripe Checkout URLs) and the Made by AgentScout pre-trained bot lineup.",
+    description: "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, $49 category pin, $99/wk sponsor), the separate $49 Directory Launch Pack add-on, and the Made by AgentScout pre-trained bot lineup. The Launch Pack is not a listing tier.",
     inputSchema: {
       type: "object",
       additionalProperties: false,
       properties: {
-        category: { type: "string", enum: ["all", "listing_package", "bot_template", "agent_pack"], description: "Filter by product category (default 'all')." },
+        category: { type: "string", enum: ["all", "listing_package", "addon", "bot_template", "agent_pack"], description: "Filter by product category (default 'all'). 'addon' is the Directory Launch Pack, not a listing tier." },
       },
     },
     annotations: { readOnlyHint: true, openWorldHint: false, idempotentHint: true },
@@ -329,10 +329,12 @@ function listCategories() {
 function listPackages(args) {
   const filter = args.category || "all";
   const listing = (products.packages || []).map((item) => ({ ...item, group: "listing_package" }));
+  const addons = (products.addons || []).map((item) => ({ ...item, group: "addon" }));
   const bots = (products.bot_templates || []).map((item) => ({ ...item, group: "bot_template" }));
   const packs = (products.agent_packs || []).map((item) => ({ ...item, group: "agent_pack" }));
-  let rows = [...listing, ...bots, ...packs];
+  let rows = [...listing, ...addons, ...bots, ...packs];
   if (filter === "listing_package") rows = listing;
+  else if (filter === "addon") rows = addons;
   else if (filter === "bot_template") rows = bots;
   else if (filter === "agent_pack") rows = packs;
   return {

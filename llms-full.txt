@@ -121,7 +121,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - [Best MCP Servers for Codex](https://agentscouthq.com/best/mcp-servers-for-codex.html)
 - [Cursor Alternatives](https://agentscouthq.com/best/cursor-alternatives.html)
 - [MCP Server Pricing Table (with change history)](https://agentscouthq.com/mcp/pricing.html)
-- [MCP Server Link Status Table (with twice-daily HTTP check history)](https://agentscouthq.com/mcp/link-status.html)
+- [MCP Server Link Status Table (with twice-daily HTTP check history)](https://agentscouthq.com/mcp/status/)
 - [Link-check status (JSON)](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 
 ---
@@ -1027,7 +1027,7 @@ Each category section below summarizes the verified tool count, open-source coun
 
 ## Complete Verified MCP Servers Catalog (276 MCP Servers)
 
-Full table of all 276 Model Context Protocol (MCP) servers listed on AgentScout, cross-referenced with `https://agentscouthq.com/mcp/pricing.html` and `https://agentscouthq.com/mcp/link-status.html`.
+Full table of all 276 Model Context Protocol (MCP) servers listed on AgentScout, cross-referenced with `https://agentscouthq.com/mcp/pricing.html` and `https://agentscouthq.com/mcp/status/`.
 
 | # | MCP Server | Pricing | Link Status | Runs Locally | License | GitHub Stars | Primary Use Case | Description | AgentScout Listing | Official / Repo URL |
 |---|---|---|---|---|---|---:|---|---|---|---|

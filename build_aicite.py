@@ -1,6 +1,6 @@
 """AI-cited directory pages, step 1 (Oct 22 2026, owner-approved):
 - /mcp/pricing.html: dated MCP server pricing table, from tools.json
-- /mcp/link-status.html: dated MCP link-status table, from data/mcp_link_status.json (scripts/check_mcp_links.py)
+- /mcp/status/: dated MCP status page, from data/mcp_link_status.json (scripts/check_mcp_links.py). /mcp/link-status.html is a noindex HTML forwarder.
 - change history on both pages, kept in data/mcp_history.json (a snapshot diff each build; only real changes are logged)
 - /.well-known/agent-card.json and /.well-known/agent.json: read-only description of the directory (no endpoints that don't exist)
 Every count, label and date is read from the data files at build time. Never names other directories."""
@@ -97,31 +97,12 @@ def pages(t):
     desc=f"Pricing for all {len(M)} MCP servers in AgentScout: {cnt['free']} free, {cnt['freemium']} free plus paid plans, {cnt['paid']} paid. As stated by makers, dated {nice(upd)}."[:158]
     rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",f'{int(x["github_stars"]):,}' if x.get("github_stars") else "–"] for x in M]
     body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for all {len(M)} MCP servers listed on AgentScout, as each maker states it. Data as of <time datetime="{e(upd)}">{e(nice(upd))}</time> (Pacific).</p>'
-          f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="link-status.html">MCP link-status table</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a> and our <a href="connect.html">read-only MCP server</a>.</p>'
+          f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="status/">MCP status</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a> and our <a href="connect.html">read-only MCP server</a>.</p>'
           +tbl(["MCP server","Pricing (as stated)","Type","Open source","GitHub stars"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server pricing table","description":desc,"url":canon,"dateModified":upd,"creator":{"@type":"Organization","name":"AgentScout","url":B},"license":B+"about.html"}
     open("mcp/pricing.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
-    # link status
-    chk=LSD.get("checked",""); R=LSD.get("results") or {}
-    st=[(x,)+lstat(R.get(x["slug"],{})) for x in M]
-    ok=sum(1 for s in st if s[1]=="OK")
-    canon=B+"mcp/link-status.html"; title=f"MCP server link status ({nice(chk) if chk else 'not yet checked'}) · AgentScout"
-    desc=f"Link check for {len(M)} MCP servers on AgentScout: {ok} OK. Listing and GitHub links requested automatically, checked {nice(chk) if chk else 'soon'} (Pacific)."[:158]
-    BROKEN=("Error","Not responding")  # only these are problems; "Reachable, blocks automated checks" answered, so it is not
-    rows=[[link(x),e(s),e(c)] for x,s,c in sorted(st,key=lambda s:(0 if s[1] in BROKEN else 1,s[0]["name"].lower()))]
-    brk=[x for x,s,c in st if s in BROKEN]; blk=sum(1 for s in st if s[1]=="Reachable, blocks automated checks"); unc=sum(1 for s in st if s[1]=="not checked")
-    def _and(n): n=[f'<a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>' for x in n]; return n[0] if len(n)==1 else ", ".join(n[:-1])+" and "+n[-1]
-    extra=(f' ({blk} of them answered but block automated checks)' if blk else '')
-    if not chk: qa=''
-    elif not brk: qa=(f'All {len(M)-unc:,} checked MCP server links are reachable'+extra+(f'; {unc} not checked yet' if unc else '')+'.')
-    else: qa=(f'{len(brk)} of {len(M):,} MCP server links did not respond or returned an error: {_and(brk[:5])}'+(f' and {len(brk)-5} more' if len(brk)>5 else '')+f'. The other {len(M)-len(brk)-unc:,} are reachable'+extra+'.')
-    qa=f'<p class="qa"><b>Quick answer:</b> {qa}</p>' if qa else ''
-    uline=mcp_uptime_line(t)
-    body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede"><strong>{e(uline)}.</strong> Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{e(chk[:10])}">{e(chk)} PT</time>.</p>'+qa if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
-    body+=(f'<p>{ok} of {len(M)} OK. "Reachable, blocks automated checks" means the site answered but refuses scripted requests (HTTP 401, 403 or 429); it usually works in a browser. HTTP 405 counts as OK because MCP endpoints often accept only POST. Links that did not respond or returned an error are listed first. See also the <a href="pricing.html">MCP pricing table</a> and <a href="connect.html">how to connect to the AgentScout MCP server</a>.</p>'
-           +tbl(["MCP server","Status","HTTP result"],rows)+hist_html(H)+"</section>")
-    ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server link status","description":desc,"url":canon,"dateModified":(chk[:10] or upd),"creator":{"@type":"Organization","name":"AgentScout","url":B}}
-    open("mcp/link-status.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
+    import build_status
+    urls.append(build_status.write_dashboard(t))
     urls.append(connect_page(t))
     agent_cards(t)
     return urls
@@ -161,7 +142,7 @@ def connect_page(t):
           f'<p><b>Keep data on your side:</b> {e(LOCAL_LINE)}</p>'
           '<h2>Try asking</h2><ul><li>"Find free, open-source MCP servers for browser automation on AgentScout."</li><li>"What does AgentScout list for voice agents that make phone calls?"</li><li>"Show me the AgentScout listing for Cursor."</li><li>"Find no-code automation tools on AgentScout that I can self-host."</li></ul>'
           '<h2>Limits and data</h2><p>Read-only: the server can only look things up, it cannot change anything. Up to 60 requests per minute per IP address. Data comes from the same catalog as the site (<a href="../api/tools.json">api/tools.json</a>) and refreshes within about 10 minutes of each site update. Usage is counted anonymously: only the day, the tool used, the type of app and whether it was a public or test request. No IP addresses, search text or arguments are stored (see our <a href="../privacy.html">privacy policy</a>). '
-          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="link-status.html">MCP link status</a> ('+e(uline)+'), the <a href="../openapi.json">OpenAPI description</a>, <a href="../llms.txt">llms.txt</a> and <a href="../llms-full.txt">llms-full.txt</a>.</p>'
+          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="status/">MCP status</a> ('+e(uline)+'), the <a href="../openapi.json">OpenAPI description</a>, <a href="../llms.txt">llms.txt</a> and <a href="../llms-full.txt">llms-full.txt</a>.</p>'
           '<h2 id="faq">Frequently asked questions</h2>'+faq_html+
           '<p style="font-size:14px;color:var(--muted);margin:14px 0 0"><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="../index.html">https://agentscouthq.com</a>, published in the <a href="https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory" rel="noopener">official MCP Registry</a> as <code>com.agentscouthq/directory</code> with endpoint <code>https://agentscouthq.com/mcp/sse</code> (and <code>https://agentscout-mcp.agentscouthq.workers.dev/mcp</code>), and indexed on <a href="https://glama.ai/mcp/connectors/com.agentscouthq/directory" rel="noopener">Glama</a>, <a href="https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html" rel="noopener">MCPServers.org</a>, <a href="https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory" rel="noopener">SourceWeft</a>, and <a href="https://protogrid.dev/servers/com.agentscouthq/directory" rel="noopener">Protogrid</a>. It is 100% free and read-only, and is unrelated to any paid third-party x402 web-fetch tool.</p></section>')
     _alt=["Agent Scout","AgentScoutHQ","agentscouthq.com","com.agentscouthq/directory"]
@@ -200,7 +181,7 @@ def agent_cards(t):
            {"id":"llms-txt","name":"llms.txt","description":"Guide to the site for AI models.","url":B+"llms.txt","mediaType":"text/markdown"},
            {"id":"llms-full-txt","name":"llms-full.txt","description":"Full single-file Markdown context with category comparison tables and all verified MCP servers.","url":B+"llms-full.txt","mediaType":"text/markdown"},
            {"id":"mcp-pricing","name":"MCP server pricing table","url":B+"mcp/pricing.html","mediaType":"text/html"},
-           {"id":"mcp-link-status","name":"MCP server link status","url":B+"mcp/link-status.html","mediaType":"text/html"},
+           {"id":"mcp-link-status","name":"MCP server status","url":B+"mcp/status/","mediaType":"text/html"},
            {"id":"mcp-server","name":"AgentScout MCP server (read-only, Streamable HTTP)","description":"Search tools, get one tool, list categories, best tools for a task, and list Stripe packages/bots. No authentication.","url":MCP_URL,"mediaType":"application/json"},
            {"id":"mcp-connect","name":"How to connect to the MCP server","url":B+"mcp/connect.html","mediaType":"text/html"},
            {"id":"sitemap","name":"Sitemap","url":B+"sitemap.xml","mediaType":"application/xml"}]

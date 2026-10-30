@@ -68,15 +68,38 @@ def ico(x,d="../",cls=""):
     return f'<span class="ico {cls}"><span aria-hidden="true" data-l="{L}"></span>{im}</span>'  # letter drawn by CSS (::before), so it never joins the name in copied or extracted text
 def ico24(x): return ico(x,"","sm").replace('width="40" height="40"','width="24" height="24"')
 def cslug(a,b): return f"{a}-vs-{b}"
+LAUNCH_RANKS={}  # slug -> (rank, week_id, week_label). Filled by build_growth before tool pages are patched.
+def _paid_listing(x):
+    tier=str(x.get("listing_tier") or "").lower().replace("-","_")
+    return bool(x.get("fast_track") or tier in ("fast_track","category_pin","featured_49","sponsor","weekly_sponsor"))
+def _embed(depth, kind, th, url, alt, w=220, h=54):
+    img=f"{B}badges/{kind}-{th}.svg" if "/" not in kind else f"{B}{kind}"
+    local=(f"{depth}badges/{kind}-{th}.svg" if "/" not in kind else f"{depth}{kind}")
+    html_snip=f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="{alt}" width="{w}" height="{h}"></a>'
+    md=f"[![{alt}]({img})]({url})"
+    return (f'<div class="embed" data-bdpanel="{e(th)}"><img src="{local}" alt="{e(alt)} ({th})" width="{w}" height="{h}">'
+            f'<label>HTML ({th})</label><textarea readonly rows="3" aria-label="HTML badge code ({th})" onclick="this.select()">{e(html_snip)}</textarea>'
+            f'<button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button>'
+            f'<label>Markdown ({th})</label><textarea readonly rows="2" aria-label="Markdown badge code ({th})" onclick="this.select()">{e(md)}</textarea>'
+            f'<button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy Markdown</button></div>')
 def badge_html(x,depth="../"):
-    url=f"{B}tools/{x['slug']}.html"; kind="featured" if x.get("featured") else "listed"; lab=kind.title()
-    out=""
-    for th in ["light","dark"]:
-        img=f"{B}badges/{kind}-{th}.svg"
-        h=f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="{lab} on AgentScout" width="220" height="54"></a>'
-        m=f"[![{lab} on AgentScout]({img})]({url})"
-        out+=f'<div class="embed"><img src="{depth}badges/{kind}-{th}.svg" alt="{lab} on AgentScout ({th})" width="220" height="54"><label>HTML</label><textarea readonly rows="3" aria-label="HTML badge code" onclick="this.select()">{e(h)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button><label>Markdown</label><textarea readonly rows="2" aria-label="Markdown badge code" onclick="this.select()">{e(m)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy Markdown</button></div>'
-    return f'<h2 style="font-size:16px;margin:36px 0 6px">Badge for makers</h2><p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? Add this badge to your README or site. It links back to this page. <a href="../badges.html">About badges</a></p><div class="embeds">{out}</div>'
+    url=f"{B}tools/{x['slug']}.html"; kind="featured" if x.get("featured") or _paid_listing(x) else "listed"; lab=("Featured" if kind=="featured" else "Listed")
+    panels="".join(_embed(depth, kind, th, url, f"{lab} on AgentScout") for th in ("light","dark")).replace('data-bdpanel="dark"','data-bdpanel="dark" hidden',1)
+    rank=LAUNCH_RANKS.get(x["slug"])
+    launch=""
+    if rank:
+        n,wid,wlabel=rank
+        path=f"badges/launch/{x['slug']}.svg"
+        alt=f"Launched on AgentScout, #{n} this week"
+        launch=(f'<h3 style="font-size:15px;margin:18px 0 8px">Launched on AgentScout · #{n} this week</h3>'
+                f'<p class="muted" style="margin:0 0 8px">Rank {n} for {e(wlabel)} ({e(wid)}). The number is baked into the image so it stays the rank from that week.</p>'
+                +_embed(depth, path, "light", url, alt, 260, 54).replace('data-bdpanel="light"','data-bdpanel="launch"',1))
+    note=("Thank you for listing with AgentScout. This badge is optional. Showing it does not change your rank or your place in the directory." if kind=="featured"
+          else "Optional. Showing this badge does not change your rank or earn a Featured spot.")
+    return (f'<h2 style="font-size:16px;margin:36px 0 6px">Get your badge</h2>'
+            f'<p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? {note} It links to this page. <a href="{depth}badges.html">About badges</a></p>'
+            f'<div class="badgebox" data-badgebox><div class="bdtabs" role="tablist"><button type="button" class="on" data-bd="light">Light</button><button type="button" data-bd="dark">Dark</button></div>'
+            f'<div class="embeds">{panels}{launch}</div></div>')
 def featured_generic():
     out=""
     for th in ["light","dark"]:
@@ -345,7 +368,7 @@ def seo(t,urls):
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
             import build_aicite as _bac
-            _lede+=f' <strong>{e(_bac.mcp_uptime_line(t))}</strong> (<a href="../mcp/link-status.html">twice-daily MCP link status</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
+            _lede+=f' <strong>{e(_bac.mcp_uptime_line(t))}</strong> (<a href="../mcp/status/">twice-daily MCP status</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
         _pin_cta=(f'<div class="cat-pin-cta"><div class="cpc-body"><span class="npill npmcp cpc-pill"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>Featured Slot Open</span>'
                   f'<span class="cpc-txt"><b>Building in {e(c)}?</b> List free ($0 · 3–5d queue), fast-track with a 7-day boost for <b>$15</b>, pin at the top of <b>{e(c)}</b> for <b>30 days</b> + permanent <code style="font-size:12px">/best/</code> &amp; <code style="font-size:12px">/compare/</code> placement for <b>$49</b>, or book the exclusive <b>$99/wk</b> sitewide &amp; newsletter sponsor slot.</span></div>'
                   f'<div class="cpc-acts"><a class="btn primary pkg-cta-free cpc-btn" href="../submit.html#free-form">Submit Free ($0)</a>'
@@ -413,7 +436,7 @@ def seo(t,urls):
     "- GitHub stars: snapshot daily.",
     f"- [sitemap.xml]({B}sitemap.xml) carries a per-page lastmod.","",
     "## Machine-readable catalog","",f"- [llms-full.txt]({B}llms-full.txt): single-file Markdown context with category comparison tables and all {_nm:,} verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)",f"- [api/tools.json]({B}api/tools.json): full catalog with counts and check date",f"- [tools.json]({B}tools.json): same tools in the site's internal format",f"- [api/products.json]({B}api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json]({B}.well-known/acp.json))",f"- [.well-known/ai-plugin.json]({B}.well-known/ai-plugin.json): AI plugin manifest with prompt-engineered model instructions",f"- [openapi.json]({B}openapi.json) & [openapi.yaml]({B}openapi.yaml): OpenAPI 3.1 JSON & YAML descriptions of the feeds under /api/ (also at [.well-known/openapi.json]({B}.well-known/openapi.json) and [.well-known/openapi.yaml]({B}.well-known/openapi.yaml))",f"- [manifest.json]({B}manifest.json): Web app brand manifest with icons and theme colors",f"- [.well-known/mcp.json]({B}.well-known/mcp.json): MCP server card pointing to https://mcp.agentscouthq.com/mcp",f"- [.well-known/agent-card.json]({B}.well-known/agent-card.json): agent card describing this directory (also at /.well-known/agent.json)",f"- [sitemap.xml]({B}sitemap.xml): all public pages","",
-    "## Key pages","",f"- [MCP server pricing table]({B}mcp/pricing.html): every MCP server's stated pricing, dated, with change history",f"- [MCP server link status]({B}mcp/link-status.html): latest automated link check for every MCP server, with change history",f"- [Link-check status]({B}status.json): last-checked time, live or down status, and check history for every MCP server",f"- [AgentScout MCP server]({B}mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance",f"- [MCP servers category]({B}categories/mcp-servers.html): {_nm:,} tools",f"- [New tools, last 30 days]({B}new.html)",f"- [AI agent news]({B}news/): daily AI agent and MCP news stories with sources",f"- [Free AI agent tools]({B}free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory",f"- [Free AI image generator]({B}generate.html): no sign-up image generator","",
+    "## Key pages","",f"- [MCP server pricing table]({B}mcp/pricing.html): every MCP server's stated pricing, dated, with change history",f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history",f"- [Link-check status]({B}status.json): last-checked time, live or down status, and check history for every MCP server",f"- [AgentScout MCP server]({B}mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance",f"- [MCP servers category]({B}categories/mcp-servers.html): {_nm:,} tools",f"- [New tools, last 30 days]({B}new.html)",f"- [AI agent news]({B}news/): daily AI agent and MCP news stories with sources",f"- [Free AI agent tools]({B}free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory",f"- [Free AI image generator]({B}generate.html): no sign-up image generator","",
     "## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Leaderboard]({B}leaderboard/): tools ranked by visitor ratings, reviews and GitHub stars",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [Sponsor & Get Featured]({B}sponsor.html): Free Community Listing ($0 forever, 3–5 day standard review queue at {B}submit.html#free-form), Fast-Track + 7-Day Launch Boost ($15 one-time at https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e), 30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time at https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week at https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01) via Stripe or X Money (@clampdown19)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     import glob as _gpk
@@ -447,6 +470,14 @@ def seo(t,urls):
     _srt=sorted(t,key=lambda x:(not x.get("seed"),x.get("added",""),x.get("id",0)),reverse=True)
     rec=[x for x in _srt if x.get("added","")>=_cut] or _srt[:12]
     L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",f"- Tools added in the last 2 days ({_cut} to {_today.isoformat()}): {len(rec)}",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
+    import build_sponsor as _bslp
+    L += ["","## Launches, status, and the Directory Launch Pack","",
+          f"- [How AgentScout started]({B}how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.",
+          f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.",
+          f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated twice daily, 7 AM and 7 PM PT.",
+          f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {_bslp.LAUNCH_PACK_PROMISE} {_bslp.LAUNCH_PACK_ACCOUNTS} {_bslp.LAUNCH_PACK_SKIP} {_bslp.LAUNCH_PACK_LIMITS} Checkout: {_bslp.LAUNCH_PACK_URL}",
+          f"- Fast-Track ($15) includes: {_bslp.FAST_TRACK_INDEX_LINE}",
+          ""]
     open("llms.txt","w").write("\n".join(L)); return out
 
 
