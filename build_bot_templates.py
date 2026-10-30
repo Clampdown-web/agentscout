@@ -322,7 +322,7 @@ def made_by_agentscout_html(total=None):
         '<span>📦 <b>WHAT YOU ARE BUYING IN THIS SECTION:</b> Downloadable Pre-Trained AI Bot Packages (<code>SYSTEM.md</code> + Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code>) in <b>5 distinct neon colors</b> (<b>Neon Lime</b>, <b>Neon Gold</b>, <b>Neon Sunset Orange</b>, <b>Neon Crimson Red</b>, and <b>Neon Mint-Emerald</b>). <b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex). The 4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code>. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
         '<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;text-align:center">'
         '<a href="../bot-store/">Open Full Bot Store (/bot-store/) →</a>'
-        '<a href="../sponsor.html#packages">Want to list or boost a tool in the directory instead? ($0 / $29 / $49 / $99) →</a>'
+        '<a href="../sponsor.html#packages">Want to list or boost a tool in the directory instead? ($0 / $15 / $49 / $99) →</a>'
         '</div>'
         '</div>'
         '<div class="mba-head"><div>'

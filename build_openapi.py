@@ -322,12 +322,12 @@ def build_commerce_files(tools_data):
                 "sku": "AS-BOOST-29",
                 "name": "Fast-Track + 7-Day Launch Boost",
                 "category": "directory_boost",
-                "price_usd": 29,
+                "price_usd": 15,
                 "billing_model": "one_time",
                 "availability": "in_stock",
                 "badge": "Fast-Track",
                 "turnaround": "Same-day priority review (live in next daily build)",
-                "checkout_url": "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02",
+                "checkout_url": "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
                 "page_url": B + "/sponsor.html",
                 "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, and a dedicated launch post on @AgentScoutHQ.",
                 "deliverables": [
@@ -350,9 +350,9 @@ def build_commerce_files(tools_data):
                 "turnaround": "Same-day priority review + 30-day top category pin",
                 "checkout_url": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
                 "page_url": B + "/sponsor.html",
-                "description": "Everything in the $29 Fast-Track package upgraded to a full 30-day top category pin (4x+ longer for $20 more), permanent inclusion in /best/*-alternatives and /compare/ side-by-side comparison tables, priority citation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a launch spotlight across both @clampdown19 and @AgentScoutHQ.",
+                "description": "Everything in the $15 Fast-Track package upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in /best/*-alternatives and /compare/ side-by-side comparison tables, priority citation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a launch spotlight across both @clampdown19 and @AgentScoutHQ.",
                 "deliverables": [
-                    "Everything in Fast-Track ($29) included",
+                    "Everything in Fast-Track ($15) included",
                     "30-day pinned placement at the top of your primary category page",
                     "Permanent inclusion in relevant /best/*-alternatives and /compare/ tables",
                     "Expanded citation context in llms-full.txt and MCP server search",
@@ -497,7 +497,7 @@ def build_commerce_files(tools_data):
             f"and data_locality (offline, self_hosted_or_offline, cloud). "
             f"For makers or purchasing agents looking to submit a tool, buy featured placement, or purchase Made by AgentScout pre-trained bots, "
             f"fetch {B}/api/products.json (or {B}/.well-known/acp.json) for instant Stripe Checkout links: "
-            f"Directory Listing Packages: Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($29 one-time), "
+            f"Directory Listing Packages: Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($15 one-time), "
             f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week); "
             f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable) at {B}/bot-store/: "
             f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "

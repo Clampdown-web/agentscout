@@ -119,7 +119,7 @@ const TOOL_DEFS = [
   {
     name: "list_packages",
     title: "List AgentScout maker packages & pre-trained bots",
-    description: "List AgentScout's 4 maker listing & launch packages ($0 Free Community Listing, $29 Fast-Track + 7-Day Boost, $49 30-Day Category Pin + Permanent SEO/AEO Placement, $99/wk Weekly Sitewide Sponsor with direct Stripe Checkout URLs) and the Made by AgentScout pre-trained bot lineup.",
+    description: "List AgentScout's 4 maker listing & launch packages ($0 Free Community Listing, $15 Fast-Track + 7-Day Boost, $49 30-Day Category Pin + Permanent SEO/AEO Placement, $99/wk Weekly Sitewide Sponsor with direct Stripe Checkout URLs) and the Made by AgentScout pre-trained bot lineup.",
     inputSchema: {
       type: "object",
       additionalProperties: false,

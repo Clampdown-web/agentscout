@@ -151,8 +151,8 @@ def pages(t):
             "cat_label": "Directory Listings",
             "badge": "For AI Tool Makers & Founders",
             "color": "#ec4899",
-            "title": "For Tool Makers: How to List Your AI Tool or MCP Server in the Directory ($0 / $29 / $49 / $99)",
-            "summary": "Walkthrough of AgentScout's 4 Directory Listing packages for tool makers: from the $0 Free Forever Community Listing to same-day $29 Fast-Track, $49 30-Day Category Pin + Permanent SEO/AEO Placement, and $99/wk Sitewide Sponsor.",
+            "title": "For Tool Makers: How to List Your AI Tool or MCP Server in the Directory ($0 / $15 / $49 / $99)",
+            "summary": "Walkthrough of AgentScout's 4 Directory Listing packages for tool makers: from the $0 Free Forever Community Listing to same-day $15 Fast-Track, $49 30-Day Category Pin + Permanent SEO/AEO Placement, and $99/wk Sitewide Sponsor.",
             "video": "../assets/animations/agentscout-sponsor-placements.mp4",
             "poster": "../assets/animations/agentscout-sponsor-placements-poster.png",
             "video_url": f"{B}assets/animations/agentscout-sponsor-placements.mp4",
@@ -162,13 +162,13 @@ def pages(t):
             "duration": "PT20S",
             "steps": [
                 "Submit your tool free at /submit.html#free-form ($0 forever, standard review queue, permanent /tools/<slug>.html page + MCP indexing).",
-                "Need same-day review + 7-day /new.html pin? Choose the $29 Fast-Track Launch Boost via Stripe or X Money (@clampdown19).",
+                "Need same-day review + 7-day /new.html pin? Choose the $15 Fast-Track Launch Boost via Stripe or X Money (@clampdown19).",
                 "Want 30-day category top pin + permanent /best/ & /compare/ placement + X spotlight? Pick the $49 Most Popular tier or $99/wk Sitewide Sponsor."
             ],
             "snippet": "curl -s https://agentscouthq.com/api/products.json | jq '.packages[] | {name, price_usd, checkout_url}'",
             "links": [
                 ("../submit.html#free-form", "Submit Your Tool Free ($0) →"),
-                ("../sponsor.html#packages", "Compare Directory Listing Tiers ($0 / $29 / $49 / $99) →"),
+                ("../sponsor.html#packages", "Compare Directory Listing Tiers ($0 / $15 / $49 / $99) →"),
                 ("../badges.html", "Get Your Free Verified README Badge →"),
             ],
         },
@@ -234,13 +234,13 @@ def pages(t):
         ("🤖 Buy Pre-Trained Pro Bots ($39–$149) & 25 AI Agent Packs ($35–$349)", "Buy our 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) or 25 role-specific AI Agent Packs ($35 single, $119 for 5, $199 for 10, $299 for 20, $349 for all 25) — compatible with Grok Bot, Claude Code, Cursor, Codex & Lovable.", "../bot-store/", "Open Bot Store →"),
         ("📄 Ground LLMs with llms-full.txt", "Pass https://agentscouthq.com/llms-full.txt into Cursor @Docs, NotebookLM, or Claude Projects for full category tables and verified MCP endpoints.", "../llms-full.txt", "Open llms-full.txt →"),
         ("🔒 Filter for Local-First & MIT/Apache", "Need zero data egress? Filter by Open Source + Local execution on /best/local-offline-ai-agents.html or query runs_locally='offline' via MCP.", "../best/local-offline-ai-agents.html", "Local AI Agents →"),
-        ("🚀 List Your AI Tool in the Directory", "Building an AI agent or MCP server? Community directory listings are $0 forever, or choose a Maker Directory Boost ($29 Fast-Track, $49 30-Day Pin, or $99/wk Sponsor).", "../sponsor.html#packages", "Directory Listing Tiers →"),
+        ("🚀 List Your AI Tool in the Directory", "Building an AI agent or MCP server? Community directory listings are $0 forever, or choose a Maker Directory Boost ($15 Fast-Track, $49 30-Day Pin, or $99/wk Sponsor).", "../sponsor.html#packages", "Directory Listing Tiers →"),
     ]
 
     faq = [
         ("Are all video guides and walkthroughs on this page free?", "Yes. Every walkthrough video, copy-paste MCP snippet, and browser calculator on AgentScout is 100% free with no sign-up required."),
         ("How do I connect AgentScout to Claude Code, Cursor, or VS Code?", "Run claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp in your terminal, or add https://mcp.agentscouthq.com/mcp (or https://agentscouthq.com/mcp/sse) to your mcp.json file. No API key is needed."),
-        ("What is the difference between Pre-Trained Pro Bots ($39–$149) / 25 AI Agent Packs ($35–$349) and Directory Listing Packages ($0 / $29 / $49 / $99)?", "Pre-Trained Pro Bots and 25 AI Agent Packs (on /bot-store/ and /bot-templates/) are downloadable agent configurations (with README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, Python CLI scripts, and native files for Grok Bot, Claude Code, Cursor, OpenAI Codex & Lovable) that you buy to run your own business: 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) and 25 role-specific AI Agent Packs ($35 single, $119 for 5, $199 for 10, $299 for 20, or $349 for all 25). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $29 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
+        ("What is the difference between Pre-Trained Pro Bots ($39–$149) / 25 AI Agent Packs ($35–$349) and Directory Listing Packages ($0 / $15 / $49 / $99)?", "Pre-Trained Pro Bots and 25 AI Agent Packs (on /bot-store/ and /bot-templates/) are downloadable agent configurations (with README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, Python CLI scripts, and native files for Grok Bot, Claude Code, Cursor, OpenAI Codex & Lovable) that you buy to run your own business: 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) and 25 role-specific AI Agent Packs ($35 single, $119 for 5, $199 for 10, $299 for 20, or $349 for all 25). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $15 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
         ("How often are the tools and metrics in these guides updated?", f"Every day at 7:00 AM PT. All {n_tools:,} tools and {n_mcp} MCP servers are link-checked and synced with live GitHub star counts daily."),
     ]
 

@@ -740,7 +740,7 @@ def build_sponsor_placements_infographic():
 
     tiers = [
         ("$0 Free Community", "FREE", (20, 184, 166), "3–5 day standard queue", "Permanent /tools/<slug> + MCP + llms.txt", 3),
-        ("$29 Fast-Track Boost", "7-DAY PIN", (14, 165, 233), "Same-day priority review", "7-day /new.html pin + FAQ schema + @AgentScoutHQ", 2),
+        ("$15 Fast-Track Boost", "7-DAY PIN", (14, 165, 233), "Same-day priority review", "7-day /new.html pin + FAQ schema + @AgentScoutHQ", 2),
         ("$49 Category Pin ★", "30-DAY PIN", (99, 102, 241), "4x+ longer top category pin", "Permanent /best/ & /compare/ tables + both X accts", 1),
         ("$99/wk Sitewide VIP", "EXCLUSIVE", (236, 72, 153), f"Top bar on all {LIVE_PAGE_COUNT:,}+ pages", "Homepage #makers + #1 Newsletter Top Banner", 0),
     ]
@@ -748,7 +748,7 @@ def build_sponsor_placements_infographic():
     zones = [
         (f"ZONE 1 · SITEWIDE TOP SPONSOR BAR ({LIVE_PAGE_COUNT:,}+ PAGES) + #1 NEWSLETTER BANNER", "Exclusive 1 slot/wk · Seen on every tool, comparison & guide page + Tuesday Beehiiv top slot", (236, 72, 153), "$99/wk VIP"),
         ("ZONE 2 · 30-DAY #1 CATEGORY PIN + PERMANENT /best/ & /compare/ TABLES", "Pinned #1 in your category for 30 full days + permanent comparison & alternatives rows + priority MCP weight", (99, 102, 241), "$49 ★ MOST POPULAR"),
-        ("ZONE 3 · SAME-DAY FAST-TRACK + 7-DAY /new.html LAUNCH BOOST + X POST", "Skip the 3–5 day queue · Full FAQPage & pros/cons enrichment · 7-day New & Featured pin", (14, 165, 233), "$29 FAST-TRACK"),
+        ("ZONE 3 · SAME-DAY FAST-TRACK + 7-DAY /new.html LAUNCH BOOST + X POST", "Skip the 3–5 day queue · Full FAQPage & pros/cons enrichment · 7-day New & Featured pin", (14, 165, 233), "$15 FAST-TRACK"),
         ("ZONE 4 · PERMANENT INDEXED TOOL PAGE + MCP SERVER + LLMS.TXT", f"100% free forever · Indexed across {LIVE_TOOL_COUNT:,}+ tools & com.agentscouthq/directory MCP server", (20, 184, 166), "$0 FREE FOREVER"),
     ]
 
@@ -814,7 +814,7 @@ def build_sponsor_placements_infographic():
                 zy_mid = zy0 + 41
                 d.line([(390, ty_mid), (424, zy_mid)], fill=(*zcol, 255), width=3)
 
-        d.text((26, H - 34), "⚡ Submit Free ($0) or Boost ($29 / $49 / $99): agentscouthq.com/submit.html  ·  agentscouthq.com/sponsor.html", font=f_foot, fill=(56, 189, 248, 255))
+        d.text((26, H - 34), "⚡ Submit Free ($0) or Boost ($15 / $49 / $99): agentscouthq.com/submit.html  ·  agentscouthq.com/sponsor.html", font=f_foot, fill=(56, 189, 248, 255))
         d.text((W - 350, H - 34), "Stripe & X Money (@clampdown19)", font=f_foot, fill=(220, 222, 242, 255))
 
         im.convert("RGB").save(f"{tmp_dir}/frame_{fi:03d}.png")
@@ -1661,8 +1661,8 @@ def scene_sponsor(d, F, t, ch, lp, box, accent):
         if sent:
             d.text((x0 + 184, yy + 148), "Queued · $0 forever · 3-5 day review", font=F["b14"], fill=(52, 211, 153))
     elif ch == 1:
-        yy = _term(d, F, x0, y0, x1, y1, "Choose $29 Fast-Track — same-day review", accent)
-        tiers = [("$0 Free", "standard queue", False), ("$29 Fast-Track", "same-day + 7-day pin", True), ("$49 Category Pin", "30 days + /best/", False)]
+        yy = _term(d, F, x0, y0, x1, y1, "Choose $15 Fast-Track — same-day review", accent)
+        tiers = [("$0 Free", "standard queue", False), ("$15 Fast-Track", "same-day + 7-day pin", True), ("$49 Category Pin", "30 days + /best/", False)]
         for i, (name, blurb, focus) in enumerate(tiers):
             y = yy + 12 + i * 64
             on = focus and lp > 0.25
@@ -1845,7 +1845,7 @@ WALKTHROUGHS = [
         "file": "agentscout-sponsor-placements",
         "kicker": "Get listed",
         "accent": (236, 72, 153),
-        "labels": ["Submit free", "Fast-track $29", "Pin or sponsor"],
+        "labels": ["Submit free", "Fast-track $15", "Pin or sponsor"],
         "details": [
             ("Send the $0 form at", "/submit.html#free-form"),
             ("Same-day review and", "a 7-day /new/ pin"),
@@ -1853,7 +1853,7 @@ WALKTHROUGHS = [
         ],
         "actions": [
             "Submitting a $0 free listing at /submit.html#free-form",
-            "Selecting the $29 Fast-Track for same-day review",
+            "Selecting the $15 Fast-Track for same-day review",
             "Placing the $49 pin and $99/wk sponsor across /best/ and /compare/",
         ],
         "scene": scene_sponsor,
