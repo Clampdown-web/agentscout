@@ -538,7 +538,7 @@ def write_llms_full(t):
         f"- [Best MCP Servers for Codex]({B}best/mcp-servers-for-codex.html)",
         f"- [Cursor Alternatives]({B}best/cursor-alternatives.html)",
         f"- [MCP Server Pricing Table (with change history)]({B}mcp/pricing.html)",
-        f"- [MCP Server Link Status Table (with daily HTTP check history)]({B}mcp/link-status.html)",
+        f"- [MCP Server Link Status Table (with twice-daily HTTP check history)]({B}mcp/link-status.html)",
         f"- [Link-check status (JSON)]({B}status.json): last-checked time, live or down status, and check history for every MCP server",
         "",
         "---",
