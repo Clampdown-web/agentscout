@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-10-30T12:53:38Z",
- "updated": "2026-10-30T12:53:38Z",
- "last_checked": "2026-10-29",
- "count": 2060,
- "total_tools": 2060,
+ "generated": "2026-10-30T14:05:21Z",
+ "updated": "2026-10-30T14:05:21Z",
+ "last_checked": "2026-10-30",
+ "count": 2065,
+ "total_tools": 2065,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -87335,6 +87335,224 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/yovoice.png",
    "page": "https://agentscouthq.com/tools/yovoice.html"
+  },
+  {
+   "name": "Answer Me with HTML",
+   "slug": "answer-me-with-html",
+   "url": "https://answer-me-with-html.com/",
+   "website": "https://answer-me-with-html.com/",
+   "github": "https://github.com/QingYunA/answer-me-with-html",
+   "category": "productivity",
+   "description": "Agent skill that makes Claude Code, Codex and other coding agents answer hard questions as a readable one-page HTML document with diagrams instead of a wall of text. The model writes only a short Markdown draft and a bundled Node CLI renders the SVG, CSS and layout in about 50 ms, which the project's benchmark shows cuts output tokens about 8x and response time about 2.6x versus asking for HTML directly. MIT.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4864 GitHub stars",
+    "Write code",
+    "Make diagrams"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-30",
+   "added": "2026-10-30",
+   "source": "GitHub",
+   "goals": [
+    "crypto",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "QingYunA/answer-me-with-html",
+   "github_stars": 4864,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "make diagrams"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/answer-me-with-html.png",
+   "page": "https://agentscouthq.com/tools/answer-me-with-html.html"
+  },
+  {
+   "name": "Sickle",
+   "slug": "sickle",
+   "url": "https://sickle.app/",
+   "website": "https://sickle.app/",
+   "github": "",
+   "category": "productivity",
+   "description": "Native macOS mail client that puts Gmail, Outlook, iCloud, Fastmail and any IMAP account in one window with a colour per mailbox and an email cleaner, plus a hosted connector (MCP server) so Claude and other AI agents can search, read and work across every mailbox you add, from any OS. 7-day free trial, then $8.99/month or $30/year including the connector.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-10-30",
+   "added": "2026-10-30",
+   "source": "X launch",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sickle.png",
+   "page": "https://agentscouthq.com/tools/sickle.html"
+  },
+  {
+   "name": "Resemble Agent Detection",
+   "slug": "resemble-agent-detection",
+   "url": "https://www.resemble.ai/products/agent-detection",
+   "website": "https://www.resemble.ai/products/agent-detection",
+   "github": "",
+   "category": "security & governance",
+   "description": "Behavioral detection service from Resemble AI that tells websites and apps whether each session is a human, a classic bot or an AI agent such as ChatGPT agent, Claude in Chrome, Browser Use or Playwright automation. A tag-manager snippet feeds cursor movement, typing rhythm, clicks and scrolling to Resemble's System One model instead of trusting spoofable user-agent strings, and per-page rules decide what agents may do. Free account to start.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Research the web",
+    "Automate workflows",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-30",
+   "added": "2026-10-30",
+   "source": "X launch",
+   "goals": [],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "automate workflows",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/resemble-agent-detection.png",
+   "page": "https://agentscouthq.com/tools/resemble-agent-detection.html"
+  },
+  {
+   "name": "StoreInspect MCP",
+   "slug": "storeinspect-mcp",
+   "url": "https://storeinspect.com/integrations/mcp",
+   "website": "https://storeinspect.com/integrations/mcp",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Remote MCP server that lets ChatGPT, Claude, Cursor and Codex search 2.3M+ Shopify stores by the apps they have installed or are missing, filtered by country, category, traffic and Shopify Plus, enrich a store or a list of domains with apps, theme, pixels and traffic tier, and preview then reveal decision-maker contacts only after explicit confirmation. Free plan with 10 reveals a month; Pro is $99/month.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Research the web",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-30",
+   "added": "2026-10-30",
+   "source": "X launch",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/storeinspect-mcp.png",
+   "page": "https://agentscouthq.com/tools/storeinspect-mcp.html"
+  },
+  {
+   "name": "DeployHQ MCP Server",
+   "slug": "deployhq-mcp-server",
+   "url": "https://www.deployhq.com/blog/introducing-the-deployhq-hosted-mcp-server",
+   "website": "https://www.deployhq.com/blog/introducing-the-deployhq-hosted-mcp-server",
+   "github": "",
+   "category": "MCP servers",
+   "description": "DeployHQ's hosted MCP server at mcp.deployhq.com: add one URL to Claude Code, Codex, Gemini CLI or Cursor, sign in to DeployHQ in the browser and ask in plain language what is deployed where, which deployments failed and how servers and auto-deploy are configured. Read-only at launch with six tools (accounts, projects, servers, deployments) and scoped to what your DeployHQ user can already see; no package or API key to manage.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Automate the browser",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-10-30",
+   "added": "2026-10-30",
+   "source": "X launch",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/deployhq-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/deployhq-mcp-server.html"
   }
  ]
 }

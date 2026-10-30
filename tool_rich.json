@@ -29081,5 +29081,320 @@
    "osi": true
   },
   "updated": "2026-10-29"
+ },
+ "pollinations-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Pollinations is an open-source generative AI platform whose unified API at gen.pollinations.ai serves text, image, audio, video, 3D and embedding models from one endpoint, including FLUX, GPT, Claude, Gemini and Seedream families. Usage is billed in Pollen credits on a simple pay-as-you-go basis (roughly $1 per Pollen), with secret keys for model calls and app keys for bring-your-own-Pollen apps.",
+   "An official CLI (npx @pollinations/cli) is built for both people and AI agents, a Model Monitor tracks model health and community trust, and a public app gallery showcases projects built on the API. The code is MIT-licensed and actively updated."
+  ],
+  "who": "Developers and hobbyists who want one cheap API for many generative models.",
+  "features": [
+   "One API for text, image, audio, video, 3D and embeddings",
+   "Pay-as-you-go Pollen credits",
+   "CLI for humans and AI agents",
+   "Model Monitor for health and trust",
+   "MIT-licensed codebase"
+  ],
+  "faq": [
+   [
+    "How is Pollinations priced?",
+    "Through Pollen credits on a pay-as-you-go basis; the README lists roughly $1 per Pollen."
+   ]
+  ],
+  "sources": [
+   "https://github.com/pollinations/pollinations",
+   "https://pollinations.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/pollinations/pollinations",
+   "stars": 5257,
+   "forks": 1212,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "stable-audio": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "stable-audio-tools is Stability AI's open training and inference code for its audio generation models, including Stable Audio Open. It requires PyTorch 2.5 or later for Flash and Flex Attention and uses uv for reproducible installs, with separate extras for inference, training and a Gradio UI.",
+   "You can load pretrained checkpoints such as stabilityai/stable-audio-open-1.0 into the bundled Gradio interface, or train and fine-tune models from your own dataset configs. Stability's hosted Stable Audio product at stableaudio.com offers the commercial app experience. MIT-licensed code."
+  ],
+  "who": "Audio ML researchers and developers fine-tuning or self-hosting text-to-audio models.",
+  "features": [
+   "Training and inference code for Stable Audio models",
+   "Gradio UI for pretrained checkpoints",
+   "Flash and Flex Attention support",
+   "uv-based reproducible installs",
+   "Also on PyPI as stable-audio-tools"
+  ],
+  "faq": [
+   [
+    "Does this include model weights?",
+    "The repo is code; weights such as Stable Audio Open 1.0 are loaded from Hugging Face under their own model licences."
+   ]
+  ],
+  "sources": [
+   "https://github.com/Stability-AI/stable-audio-tools",
+   "https://stableaudio.com"
+  ],
+  "facts": {
+   "repo": "https://github.com/Stability-AI/stable-audio-tools",
+   "stars": 3895,
+   "forks": 488,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "mmaudio": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MMAudio generates synchronised audio from video and/or text. It comes from researchers at the University of Illinois Urbana-Champaign, Sony AI and Sony Group and was published at CVPR 2025 as \"Taming Multimodal Joint Training for High-Quality Video-to-Audio Synthesis\".",
+   "Its key idea is multimodal joint training on a wide range of audio-visual and audio-text datasets, plus a synchronisation module that aligns generated sound with video frames, which makes it useful for adding Foley and ambience to silent AI-generated clips from tools like Sora or Veo. Tested on Ubuntu; MIT-licensed code."
+  ],
+  "who": "Video creators and researchers adding synced sound effects to generated or silent footage.",
+  "features": [
+   "Video-to-audio and text-to-audio",
+   "Frame-level synchronisation module",
+   "Multimodal joint training",
+   "CVPR 2025 research release",
+   "MIT-licensed code"
+  ],
+  "faq": [
+   [
+    "Can MMAudio add sound to AI-generated video?",
+    "Yes. The project demonstrates soundtracks generated for clips from Sora, Veo 2, MovieGen and Hunyuan Video."
+   ]
+  ],
+  "sources": [
+   "https://github.com/hkchengrex/MMAudio",
+   "https://hkchengrex.com/MMAudio/"
+  ],
+  "facts": {
+   "repo": "https://github.com/hkchengrex/MMAudio",
+   "stars": 2301,
+   "forks": 269,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "neuron-ai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Neuron is a PHP framework for creating and orchestrating AI agents inside PHP applications, covering the whole agentic development lifecycle: LLM interfaces, data loading, RAG, multi-agent orchestration, monitoring and debugging.",
+   "It provides event-driven workflows with checkpointing, human-in-the-loop interruption, streaming adapters for AG-UI and the Vercel AI SDK, MCP connectors and asynchronous execution, with documentation and video tutorials aimed at PHP developers. MIT."
+  ],
+  "who": "PHP and Laravel developers building agentic applications without switching stacks.",
+  "features": [
+   "Agents and multi-agent orchestration in PHP",
+   "Workflows with checkpointing and human-in-the-loop",
+   "Streaming for AG-UI and Vercel AI SDK",
+   "MCP connector",
+   "RAG and data loaders"
+  ],
+  "faq": [
+   [
+    "Does Neuron support MCP?",
+    "Yes. It includes an MCP connector so agents can use tools from MCP servers."
+   ]
+  ],
+  "sources": [
+   "https://github.com/neuron-core/neuron-ai",
+   "https://neuron-ai.dev"
+  ],
+  "facts": {
+   "repo": "https://github.com/neuron-core/neuron-ai",
+   "stars": 2163,
+   "forks": 259,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "agent-safehouse": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Agent Safehouse sandboxes LLM coding agents on macOS so they can only touch the files and integrations they actually need. It wraps macOS sandbox-exec with composable, deny-first policy profiles, including ready-made profiles for major coding agents and app-hosted agent workflows.",
+   "Policies start from deny-all and add only what the agent needs, with home-relative and workdir-scoped rules that keep normal development practical. The author is explicit that it is a hardening layer, not a perfect boundary against a determined attacker. Install with Homebrew or a standalone script. Apache-2.0."
+  ],
+  "who": "Mac developers running Claude Code, Codex or similar agents who want least-privilege file access.",
+  "features": [
+   "Deny-first sandbox-exec policies",
+   "Profiles for major coding agents",
+   "Workdir-scoped access rules",
+   "Homebrew or single-script install",
+   "Apache-2.0"
+  ],
+  "faq": [
+   [
+    "Is Agent Safehouse a complete security boundary?",
+    "No. The project describes it as a practical hardening layer that reduces risk, not a guarantee against a determined attacker."
+   ]
+  ],
+  "sources": [
+   "https://github.com/eugene1g/agent-safehouse",
+   "https://agent-safehouse.dev"
+  ],
+  "facts": {
+   "repo": "https://github.com/eugene1g/agent-safehouse",
+   "stars": 2128,
+   "forks": 99,
+   "checked": "2026-10-30",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "elatoai": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ElatoAI runs realtime voice AI on Arduino ESP32 devices, letting toys, companions and gadgets hold conversations of 20+ minutes through secure WebSockets and edge functions. It supports more than 100 voice AI models, including OpenAI Realtime, Gemini Live, xAI Grok Voice Agent, ElevenLabs conversational agents and Hume EVI.",
+   "Backends include Deno edge functions, a Pipecat FastAPI server for STT-LLM-TTS pipelines, Cloudflare Voice Agents with Durable Objects for device networks, and a local mode that runs open models such as Qwen and Mistral via MLX. Build with PlatformIO or the Arduino IDE. MIT."
+  ],
+  "who": "Hardware makers and toy builders adding conversational AI to ESP32 devices.",
+  "features": [
+   "Realtime voice on ESP32",
+   "100+ voice AI models",
+   "Deno, Pipecat and Cloudflare backends",
+   "Local models via MLX",
+   "PlatformIO and Arduino IDE builds"
+  ],
+  "faq": [
+   [
+    "Can ElatoAI run without a cloud model?",
+    "Yes. Its Local AI Toys mode runs open LLMs and TTS models locally with MLX."
+   ]
+  ],
+  "sources": [
+   "https://github.com/akdeb/ElatoAI",
+   "https://www.elatoai.com"
+  ],
+  "facts": {
+   "repo": "https://github.com/akdeb/ElatoAI",
+   "stars": 2089,
+   "forks": 257,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "langgraph4j": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "LangGraph4j is a Java library for building stateful, multi-agent LLM applications, inspired by Python's LangGraph and designed to work with LangChain4j and Spring AI. You define graphs of agents, tools and custom logic that share state and, unlike plain DAGs, can loop back for retries or clarification.",
+   "It offers stateful execution, cyclical graphs, explicit conditional control flow and modular reusable nodes, with release 1.9 as the current line. MIT."
+  ],
+  "who": "Java and Spring developers building agent workflows on the JVM.",
+  "features": [
+   "Stateful graph execution",
+   "Cyclical graphs for agent loops",
+   "Works with LangChain4j and Spring AI",
+   "Explicit conditional edges",
+   "MIT"
+  ],
+  "faq": [
+   [
+    "Is LangGraph4j an official LangChain project?",
+    "No. It is an independent Java project inspired by LangGraph."
+   ]
+  ],
+  "sources": [
+   "https://github.com/langgraph4j/langgraph4j",
+   "https://langgraph4j.github.io/langgraph4j/"
+  ],
+  "facts": {
+   "repo": "https://github.com/langgraph4j/langgraph4j",
+   "stars": 2074,
+   "forks": 292,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "azure-devops-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Azure DevOps MCP Server is Microsoft's official MCP server that gives AI agents Azure DevOps context: work items, repos, pull requests, builds, pipelines, wikis and test plans, queried through natural-language prompts in your coding assistant.",
+   "Microsoft recommends the hosted Remote MCP Server, which needs no installation and gets new features first; this repo also provides a local stdio server with domain filtering and project and team defaults for cases that need it. MIT."
+  ],
+  "who": "Teams on Azure DevOps who want Copilot, Claude or Cursor to read and act on boards, repos and pipelines.",
+  "features": [
+   "Official Microsoft MCP server",
+   "Hosted remote server or local stdio",
+   "Work items, repos, PRs and pipelines",
+   "Domain filtering to limit tools",
+   "MIT"
+  ],
+  "faq": [
+   [
+    "Should I use the local or remote server?",
+    "Microsoft recommends the remote server; use the local one when you specifically need a stdio connection."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/azure-devops-mcp",
+   "https://learn.microsoft.com/en-us/azure/devops/mcp-server/remote-mcp-server"
+  ],
+  "facts": {
+   "repo": "https://github.com/microsoft/azure-devops-mcp",
+   "stars": 2074,
+   "forks": 671,
+   "checked": "2026-10-30",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-30"
+ },
+ "magenta-realtime": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Magenta RealTime 2 (MRT2) is Google Magenta's open-weights model for real-time music generation. The project ships the model weights on Hugging Face, a magenta-rt Python library with JAX and MLX backends, and a C++ streaming inference engine optimised for Apple Silicon MacBooks.",
+   "Example apps include an all-in-one AUv3 plugin for DAWs, a standalone macOS app and a note-control jam app, so musicians can play with the model live; supervised fine-tuning is planned. The original v1 lives on a legacy branch. Apache-2.0 code."
+  ],
+  "who": "Musicians, producers and audio developers who want live AI music generation on a Mac.",
+  "features": [
+   "Open-weights real-time music model",
+   "Python library with JAX and MLX",
+   "C++ engine for Apple Silicon",
+   "AUv3 DAW plugin and standalone app",
+   "Apache-2.0 code"
+  ],
+  "faq": [
+   [
+    "Does MRT2 run locally?",
+    "Yes. The C++ engine and MLX backend run streaming generation on Apple Silicon Macs."
+   ]
+  ],
+  "sources": [
+   "https://github.com/magenta/magenta-realtime",
+   "https://magenta.withgoogle.com/magenta-realtime-2"
+  ],
+  "facts": {
+   "repo": "https://github.com/magenta/magenta-realtime",
+   "stars": 1856,
+   "forks": 207,
+   "checked": "2026-10-30",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-30"
  }
 }

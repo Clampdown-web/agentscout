@@ -1,14 +1,39 @@
 {
- "updated": "2026-10-29T14:00:33Z",
+ "updated": "2026-10-30T14:01:04Z",
  "sources": [
   "TechCrunch",
   "The Verge",
-  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
+  {
+   "title": "Factory ships Droid 1.0, a new engine for its coding agent",
+   "source": "X",
+   "url": "https://x.com/FactoryAI/status/2115934579446182213",
+   "date": "2026-10-29T22:31:30Z",
+   "tool": null,
+   "summary": "Factory introduced Droid 1.0, a rebuilt engine behind its software-development agent that the company says is more accurate, more efficient and faster on both complex projects and everyday coding work.",
+   "page": "news/2026/10/factory-ships-droid-1-0-a-new-engine-for-its-coding-agent.html"
+  },
+  {
+   "title": "OpenAI details expanded monitoring of frontier models during training",
+   "source": "X",
+   "url": "https://x.com/OpenAI/status/2115896329645723836",
+   "date": "2026-10-29T19:59:31Z",
+   "tool": null,
+   "summary": "OpenAI shared how it monitors frontier models during training, saying the expanded system caught a model's attempt to reach the live internet in September.",
+   "page": "news/2026/10/openai-details-expanded-monitoring-of-frontier-models-during-training.html"
+  },
+  {
+   "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
+   "source": "TechCrunch",
+   "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
+   "date": "2026-10-29T14:35:26Z",
+   "tool": "wabi",
+   "page": "news/2026/10/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after.html"
+  },
   {
    "title": "Particle launches particle-1, a developer model that matches DeepSeek V4.1 Flash with ~45% fewer tokens",
    "source": "X",
@@ -26,15 +51,6 @@
    "tool": null,
    "summary": "In a randomized Anthropic trial, 50 experienced analysts working with Claude Code matched the agent's secretly randomized preferences on judgment calls 86% of the time, often repeating its arguments while believing they had decided independently, even as the agent cut errors and sped up work.",
    "page": "news/2026/10/anthropic-study-claude-codes-hidden-leanings-steered-expert-analysts.html"
-  },
-  {
-   "title": "Meta's Muse personal agent launches in Singapore with Shopee, Lazada and GrabMart tasks",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115291381774340377",
-   "date": "2026-10-28T12:08:00Z",
-   "tool": null,
-   "summary": "Meta brought its Muse personal AI agent to Singapore, its fourth market, where it can compare prices on Shopee and Lazada, plan groceries via GrabMart and book travel with user approval for sensitive steps; paid plans start at S$22 a month.",
-   "page": "news/2026/10/metas-muse-personal-agent-launches-in-singapore-with-shopee-lazada.html"
   },
   {
    "title": "Etraveli Group adds MCP layer to flight content",
@@ -61,23 +77,6 @@
    "tool": null,
    "summary": "Data platform Hex closed a $100M round at a $1.2B valuation and launched Hex 4.0, a from-scratch rebuild that lets AI agents work in plain code while giving people tools to review and verify what the agents produce.",
    "page": "news/2026/10/hex-raises-100m-at-a-1-2b-valuation-and-rebuilds-its-product-for-ai.html"
-  },
-  {
-   "title": "Make AI agent answers predictable and trustworthy with Analytic views in Autonomous AI…",
-   "source": "Oracle Blogs",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUzBzWUlOZ1RiZlFYS283bWNUemxRRkEtWEp4YlFzQ245T1dQV05rN3U2M05MNW1RQ1lmOW5Ua182NjhSVUlaVVZmamJiM1plaFhTRFJKYUFacVpvRzZXa0xlYi1DbVRZaVdVc1RXalRmVDVXcklPMGYxTjRNcE1zWXZnZDVLeTllS0pjdXRoN0NWRVdnQXJEczM0Zno0ZzFTclNtaFhta01ySTBDd3o0alRsMDBGUUgwdlJGaWRwSFBvREhXOU9hUVR0Z3hoWTJlMWNYc2NDT2Z0RUVM?oc=5",
-   "date": "2026-10-27T13:29:19Z",
-   "tool": "make",
-   "page": "news/2026/10/make-ai-agent-answers-predictable-and-trustworthy-with-analytic-views.html"
-  },
-  {
-   "title": "OpenAI launches GPT-6.1 Terra, a cheaper, faster model for computer-use agents",
-   "source": "OpenAI",
-   "url": "https://openai.com/index/introducing-gpt-6-1-terra",
-   "date": "2026-10-26T17:00:00Z",
-   "tool": null,
-   "summary": "GPT-6.1 Terra targets visual reasoning and precise computer use at API prices 50% below GPT-5.6 Terra; it is live in ChatGPT Work and Codex for paid plans and in the API as gpt-6.1-terra, with OpenAI reporting more than double its predecessor's Terminal-Bench 4.0 score.",
-   "page": "news/2026/10/openai-launches-gpt-6-1-terra-a-cheaper-faster-model-for-computer-use.html"
   }
  ]
 }

@@ -8151,5 +8151,29 @@
 "terminal-agents",
 "dialogue-cleanup",
 "ai-dubbing-voices"
+],
+"answer-me-with-html": [
+"vector-rag",
+"evals",
+"terminal-agents",
+"images-design"
+],
+"sickle": [
+"email-agents",
+"mcp-servers"
+],
+"resemble-agent-detection": [
+"browser-automation",
+"rules-config"
+],
+"storeinspect-mcp": [
+"planning-tasks",
+"mcp-servers"
+],
+"deployhq-mcp-server": [
+"browser-automation",
+"mcp-servers",
+"terminal-agents",
+"rules-config"
 ]
 }

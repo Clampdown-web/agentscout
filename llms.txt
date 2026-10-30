@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 2,060 AI agent tools in 40 categories, including 274 MCP servers (274 of 274 MCP servers responded today (verified Oct 29, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 2,065 AI agent tools in 40 categories, including 276 MCP servers (276 of 276 MCP servers responded today (verified Oct 30, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -9,7 +9,7 @@ Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ, https://x.com/clampdown19
 MCP Registry ID: com.agentscouthq/directory
 MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse — 100% free, read-only, no API key or x402 wallet required)
-Catalog last checked: 2026-10-29 (Pacific)
+Catalog last checked: 2026-10-30 (Pacific)
 
 ## For AI agents
 
@@ -29,7 +29,7 @@ Catalog last checked: 2026-10-29 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 274 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 276 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $29, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
@@ -46,7 +46,7 @@ Catalog last checked: 2026-10-29 (Pacific)
 - [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 274 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 276 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -65,7 +65,7 @@ Catalog last checked: 2026-10-29 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 274 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 276 tools
 - [coding](https://agentscouthq.com/categories/coding.html): 220 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 152 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 94 tools
@@ -75,8 +75,8 @@ Catalog last checked: 2026-10-29 (Pacific)
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 67 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 56 tools
+- [security & governance](https://agentscouthq.com/categories/security-governance.html): 53 tools
 - [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 52 tools
-- [security & governance](https://agentscouthq.com/categories/security-governance.html): 52 tools
 - [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 49 tools
 - [voice](https://agentscouthq.com/categories/voice.html): 47 tools
 - [business agents](https://agentscouthq.com/categories/business-agents.html): 46 tools
@@ -88,9 +88,9 @@ Catalog last checked: 2026-10-29 (Pacific)
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 36 tools
 - [image generation](https://agentscouthq.com/categories/image-generation.html): 36 tools
 - [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 32 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 29 tools
 - [customer support](https://agentscouthq.com/categories/customer-support.html): 28 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 27 tools
 - [DevOps & cloud](https://agentscouthq.com/categories/devops-cloud.html): 23 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 22 tools
 - [vision](https://agentscouthq.com/categories/vision.html): 20 tools
@@ -185,8 +185,13 @@ Catalog last checked: 2026-10-29 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-10-29 to 2026-10-30): 9
+- Tools added in the last 2 days (2026-10-29 to 2026-10-30): 14
 
+- [DeployHQ MCP Server](https://agentscouthq.com/tools/deployhq-mcp-server.html) (added 2026-10-30): DeployHQ's hosted MCP server at mcp.deployhq.com: add one URL to Claude Code, Codex, Gemini CLI or Cursor, sign in to DeployHQ in the browser and ask in plain language what is deployed where, which deployments failed and how servers and auto-deploy are configured. Read-only at launch with six tools (accounts, projects, servers, deployments) and scoped to what your DeployHQ user can already see; no package or API key to manage.
+- [StoreInspect MCP](https://agentscouthq.com/tools/storeinspect-mcp.html) (added 2026-10-30): Remote MCP server that lets ChatGPT, Claude, Cursor and Codex search 2.3M+ Shopify stores by the apps they have installed or are missing, filtered by country, category, traffic and Shopify Plus, enrich a store or a list of domains with apps, theme, pixels and traffic tier, and preview then reveal decision-maker contacts only after explicit confirmation. Free plan with 10 reveals a month; Pro is $99/month.
+- [Resemble Agent Detection](https://agentscouthq.com/tools/resemble-agent-detection.html) (added 2026-10-30): Behavioral detection service from Resemble AI that tells websites and apps whether each session is a human, a classic bot or an AI agent such as ChatGPT agent, Claude in Chrome, Browser Use or Playwright automation. A tag-manager snippet feeds cursor movement, typing rhythm, clicks and scrolling to Resemble's System One model instead of trusting spoofable user-agent strings, and per-page rules decide what agents may do. Free account to start.
+- [Sickle](https://agentscouthq.com/tools/sickle.html) (added 2026-10-30): Native macOS mail client that puts Gmail, Outlook, iCloud, Fastmail and any IMAP account in one window with a colour per mailbox and an email cleaner, plus a hosted connector (MCP server) so Claude and other AI agents can search, read and work across every mailbox you add, from any OS. 7-day free trial, then $8.99/month or $30/year including the connector.
+- [Answer Me with HTML](https://agentscouthq.com/tools/answer-me-with-html.html) (added 2026-10-30): Agent skill that makes Claude Code, Codex and other coding agents answer hard questions as a readable one-page HTML document with diagrams instead of a wall of text. The model writes only a short Markdown draft and a bundled Node CLI renders the SVG, CSS and layout in about 50 ms, which the project's benchmark shows cuts output tokens about 8x and response time about 2.6x versus asking for HTML directly. MIT.
 - [yovoice](https://agentscouthq.com/tools/yovoice.html) (added 2026-10-29): Local-first audio and music studio for macOS, Windows and Linux that runs text-to-speech, zero-shot voice cloning, emotional delivery controls, full songs with lyrics and General MIDI score arranging entirely on your own GPU or CPU via a native C++ engine, with a CLI, agent skill and API/MCP deployment option. Apache-2.0.
 - [Superior Trade Terminal](https://agentscouthq.com/tools/superior-trade-terminal.html) (added 2026-10-29): Self-hostable AI trading terminal for Hyperliquid: sketch where you think price is going on the chart and the agent returns a rated setup with entry, stop and target, ranks alternatives and writes the Freqtrade strategy for the one you choose, refusing unsafe setups. Also offers a hosted build and a skill for agent-only trading. Apache-2.0.
 - [Spark-X2.6](https://agentscouthq.com/tools/spark-x2-6.html) (added 2026-10-29): Spark-X2.6 is a pair of compact 4B and 1.7B open-weight language models built for on-device agents, sharing Spark-X2.5's architecture but with new post-training that improves tool use, multi-step planning, coding, long context and multilingual tasks. Apache-2.0.
