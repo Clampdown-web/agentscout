@@ -104,6 +104,7 @@ def hub(t,made,alt=()):
     desc=f"{len(made)+len(OLD)} ranked and curated best-of lists from AgentScout: coding agents, agent frameworks, MCP servers, browser, voice, crypto and free AI agents."
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Top {n}, ranked</p></a>' for _,h,n,s in made)
     old="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Curated list</p></a>' for s,h in OLD)
+    old+='<a class="card" href="best-mcp-servers-2026.html"><div class="ct"><h3>Best MCP servers 2026</h3></div><p>Ranked by GitHub stars, live status from status.json</p></a>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":u} for u,h,_,_ in made]+[{"@type":"WebPage","name":h,"url":f"{B}best/{s}.html"} for s,h in OLD]},{"@type":"VideoObject","name":"Top 6 Trending AI Agent & MCP Stacks Benchmark Overview","description":"Animated benchmark and adoption overview across coding agents, browser automation and Model Context Protocol (MCP) servers on AgentScout.","thumbnailUrl":B+"assets/animations/agentscout-radar-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-radar-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Best lists</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Ranked lists built from the AgentScout directory. Each list says how it is ranked (GitHub stars or listing maturity). We use no invented scores and sell no placements.</p>'
@@ -135,5 +136,170 @@ def pages(t):
     link_in("best/mcp-servers.html",'Guides by client: ','<a href="index.html">All best lists</a> · <a href="open-source-mcp-servers.html">Best open-source MCP servers</a> · ','href="open-source-mcp-servers.html"')
     link_in("best/cursor-alternatives.html",'<a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>','. More: <a href="ai-coding-agents.html">Best AI coding agents (ranked)</a> · <a href="index.html">All best lists</a>','href="ai-coding-agents.html"')
     link_in("llms.txt",f'- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)',"\n"+f"- [All best-of lists]({B}best/)\n"+"\n".join(f"- [{h} 2026]({u})" for u,h,_,_ in made),f"]({B}best/)")
+    urls.append(mcp_2026_page(t))
     print("best-of:",len(made),"new ranked pages +hub;",len(glob.glob("best/*.html"))-1,"best pages total")
     return urls
+MCP2026_CAP=25
+MCP2026_RULE=("Ranked by GitHub stars recorded on each AgentScout listing. "
+    "Servers without a tracked public star count come after those with one, then A to Z. "
+    "Live, down, or not-yet-checked status and the last-checked time are copied from status.json. "
+    "No paid placements.")
+def _mcp_page_for(slug):
+    import build_mcp_tasks as M
+    for s,_,_,_,_,_,L in M.TASKS:
+        if slug in L: return f"../mcp/{s}.html"
+    return "../mcp/"
+def _fit_desc(text):
+    text=" ".join(text.split())
+    if len(text)<=156: return text
+    cut=text[:156]
+    if " " in cut: cut=cut.rsplit(" ",1)[0]
+    return cut
+def mcp_2026_page(t):
+    """Ranked /best/best-mcp-servers-2026.html from directory rows and status.json only."""
+    import json as _json
+    status=_json.load(open("status.json"))
+    by={s["slug"]:s for s in status.get("servers") or []}
+    pool=[x for x in t if x.get("category")=="MCP servers" and live(x) and x["slug"] in by and by[x["slug"]].get("status")]
+    ranked=rank(pool,"stars")[:MCP2026_CAP]
+    if not ranked: raise SystemExit("best MCP 2026: no servers with status.json rows")
+    catalog=status.get("catalog") or {}
+    checked=str(catalog.get("mcp_last_checked") or "")
+    tz=str(catalog.get("timezone") or "")
+    top=[x["name"] for x in ranked[:3]]
+    title="Best MCP Servers 2026 · AgentScout"
+    desc=_fit_desc(f"Best MCP servers in 2026: top {len(ranked)} by GitHub stars on AgentScout, including {', '.join(top)}. Live status from status.json.")
+    if len(title)>60 or len(desc)>156: raise SystemExit(f"seo length title={len(title)} desc={len(desc)}")
+    h1="Best MCP servers (2026)"
+    canon=B+"best/best-mcp-servers-2026.html"
+    def stars(x):
+        if x.get("github_stars") is None: return "GitHub stars not tracked on the listing"
+        return f'{x["github_stars"]:,} GitHub stars on the listing'
+    def when(st):
+        return st.get("last_checked") or "last-checked time not in status.json"
+    rows=[]
+    for i,(x, ) in enumerate(((x,) for x in ranked),1):
+        st=by[x["slug"]]
+        mcp=_mcp_page_for(x["slug"])
+        rows.append(
+            f'<li class="card tile" style="list-style:none;min-width:0;max-width:100%">'
+            f'<div class="ct">{X.ico(x)}<div class="tn"><h3>{i}. <a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></h3>'
+            f'<div class="badges"><span class="b">{e(x["pricing"])}</span><span class="b">{e(st["status"])}</span></div></div></div>'
+            f'<p class="hook">{e(x["description"])}</p>'
+            f'<p class="muted" style="font-size:12.5px;overflow-wrap:anywhere">{stars(x)} · Status {e(st["status"])}'
+            +(f' ({e(st["detail"])})' if st.get("detail") else "")
+            +f' · Checked <time datetime="{e(str(st.get("last_checked") or ""))}">{e(when(st))}</time>'
+            +f' · <a href="{mcp}">MCP page</a></p></li>')
+    names=", ".join(top)
+    checked_bit=f"status.json last checked {checked}" + (f" ({tz})" if tz else "")
+    qa=(f"The top picks on this list are {names}. "
+        f"They lead {len(ranked)} MCP servers ranked by GitHub stars recorded on each AgentScout listing. "
+        f"{checked_bit}. No vendor paid for a position.")
+    faq=[
+        (f"What are the best MCP servers in 2026?",
+         f"On this page, ranked only by GitHub stars recorded on each AgentScout listing, the top servers are {names}. "
+         f"Each row's status and last-checked time are the values in status.json ({checked_bit})."),
+        ("How are these MCP servers ranked?", MCP2026_RULE),
+        ("Where does the live status come from?",
+         f"From status.json, not from a separate estimate. {checked_bit}. "
+         "A row says live, down, or not yet checked only when status.json says that."),
+        ("Did anyone pay for a place on this list?",
+         "No. Paid placements are not part of this ranking. Order is GitHub stars on the listing, then servers without a tracked star count, then A to Z."),
+    ]
+    fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
+    import build_status
+    doc={"catalog":catalog,"servers":status.get("servers") or []}
+    shown=[by[x["slug"]] for x in ranked]
+    verify=build_status.panel(doc, shown, "../", "Verification")
+    share=('<div class="shareacts"><span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page">'
+           '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
+           '<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>Share</button>'
+           '<span class="sharecount" hidden></span></span></div>')
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h1)}</div>'
+          f'<section style="padding-top:20px;text-align:left"><h1 style="text-align:left" data-pagefind-weight="10">{e(h1)}</h1>{share}'
+          f'<p class="qa"><b>Quick answer:</b> {e(qa)}</p>'
+          f'<p class="lede" style="margin-left:0;text-align:left">These are the top {len(ranked)} of {len(pool)} MCP servers in the AgentScout directory that also have a row in status.json, ranked.</p>'
+          f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked:</strong> {e(MCP2026_RULE)}</p>'
+          f'{verify}'
+          f'<ol class="grid" style="padding:0;margin:0">{"".join(rows)}</ol>'
+          f'<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>{fq}'
+          f'<p style="margin-top:24px">More: <a href="index.html">All best lists</a> · <a href="../mcp/">MCP servers by task</a> · <a href="open-source-mcp-servers.html">Open-source MCP servers</a> · <a href="../categories/mcp-servers.html">All MCP servers</a></p>'
+          f'<p class="disclose">Stars and pricing come from each AgentScout listing. Status and check times come from status.json. Nothing else on this list is estimated.</p></section>')
+    # The quick-answer links were escaped then unescaped via replace of escaped names. Rebuild qa links cleanly.
+    linked=e(qa)
+    for x in ranked[:3]:
+        linked=linked.replace(e(x["name"]), f'<a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>', 1)
+    body=body.replace(f'<p class="qa"><b>Quick answer:</b> {e(qa)}', f'<p class="qa"><b>Quick answer:</b> {linked}', 1)
+    # The replace above may fail because body already tried a messy replace. Set qa directly.
+    body=re.sub(r'<p class="qa">.*?</p>', f'<p class="qa"><b>Quick answer:</b> {linked}</p>', body, count=1)
+    ld={"@context":"https://schema.org","@graph":[
+        {"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
+        {"@type":"ItemList","name":h1,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":len(ranked),
+         "itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(ranked)]},
+        {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]},
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"AgentScout","item":B},
+            {"@type":"ListItem","position":2,"name":"Best lists","item":B+"best/"},
+            {"@type":"ListItem","position":3,"name":h1,"item":canon}]}]}
+    _write_best_chrome("best/best-mcp-servers-2026.html", title, desc, canon, body, ld)
+    _link_mcp_2026(len(ranked))
+    print(f"best MCP 2026: {len(ranked)} servers, title {len(title)} chars, description {len(desc)} chars")
+    return canon
+def _write_best_chrome(path, title, desc, canon, body, ld):
+    donor=open("best/open-source-mcp-servers.html").read()
+    donor=re.sub(r"<title>.*?</title>", f"<title>{e(title)}</title>", donor, count=1)
+    donor=re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{e(desc)}">', donor, count=1)
+    donor=re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{canon}">', donor, count=1)
+    donor=re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{e(title)}">', donor, count=1)
+    donor=re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{e(desc)}">', donor, count=1)
+    donor=re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{canon}">', donor, count=1)
+    donor=re.sub(r'<meta property="og:image" content="[^"]*">', '<meta property="og:image" content="https://agentscouthq.com/og.png">', donor, count=1)
+    donor=re.sub(r'<meta property="og:image:alt" content="[^"]*">', f'<meta property="og:image:alt" content="{e(title)}">', donor, count=1)
+    donor=re.sub(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{e(title)}">', donor, count=1)
+    donor=re.sub(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{e(desc)}">', donor, count=1)
+    donor=re.sub(r'<meta name="twitter:image" content="[^"]*">', '<meta name="twitter:image" content="https://agentscouthq.com/og.png">', donor, count=1)
+    donor=donor.replace("styles.css?v=202610290319", "styles.css?v=202610301636")
+    import json as _json
+    script='<script type="application/ld+json">'+_json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+'</script>'
+    def repl(m):
+        raw=m.group(1)
+        if "ItemList" in raw or "BreadcrumbList" in raw:
+            return script
+        return m.group(0)
+    donor=re.sub(r'<script type="application/ld\+json">(.*?)</script>', repl, donor, count=0, flags=re.S)
+    donor=re.sub(r'<main class="wrap"[^>]*>.*?</main>', '<main class="wrap" data-pagefind-body>'+body+'</main>', donor, count=1, flags=re.S)
+    open(path,"w").write(donor)
+def _link_mcp_2026(n):
+    href="best-mcp-servers-2026.html"
+    card=(f'<a class="card" href="{href}"><div class="ct"><h3>Best MCP servers 2026</h3></div>'
+          f'<p>Top {n}, ranked by GitHub stars and live status</p></a>')
+    if os.path.exists("best/index.html"):
+        s=open("best/index.html").read()
+        if href not in s:
+            anchor='<a class="card" href="cursor-alternatives.html"><div class="ct"><h3>Cursor alternatives</h3></div><p>Curated list</p></a>'
+            if anchor in s:
+                s=s.replace(anchor, anchor+card, 1)
+                open("best/index.html","w").write(s)
+    if os.path.exists("mcp/index.html"):
+        s=open("mcp/index.html").read()
+        link='<a href="../best/best-mcp-servers-2026.html">Best MCP servers 2026</a>'
+        if "best-mcp-servers-2026.html" not in s and 'Open-source MCP servers</a>' in s:
+            s=s.replace('Open-source MCP servers</a>', 'Open-source MCP servers</a> · '+link, 1)
+            open("mcp/index.html","w").write(s)
+    loc="https://agentscouthq.com/best/best-mcp-servers-2026.html"
+    if os.path.exists("sitemap.xml"):
+        sm=open("sitemap.xml").read()
+        if loc not in sm:
+            sm=sm.replace("</urlset>", f"  <url><loc>{loc}</loc><lastmod>2026-10-30</lastmod></url>\n</urlset>")
+            open("sitemap.xml","w").write(sm)
+    if os.path.exists("llms.txt"):
+        txt=open("llms.txt").read()
+        line=f"- [Best MCP servers 2026]({loc})"
+        if line not in txt:
+            anchor="- [Best Open-Source MCP Servers 2026](https://agentscouthq.com/best/open-source-mcp-servers.html)"
+            if anchor in txt:
+                txt=txt.replace(anchor, anchor+"\n"+line, 1)
+            else:
+                txt=txt.rstrip()+"\n"+line+"\n"
+            open("llms.txt","w").write(txt)
+

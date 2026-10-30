@@ -524,6 +524,7 @@ def write_llms_full(t):
         f"- [Best Open-Source Browser Automation Agents]({B}best/open-source-browser-automation-agents.html)",
         f"- [Best Local & Offline AI Agents]({B}best/local-offline-ai-agents.html)",
         f"- [Best Open-Source MCP Servers]({B}best/open-source-mcp-servers.html)",
+        f"- [Best MCP servers 2026]({B}best/best-mcp-servers-2026.html)",
         f"- [Most-Starred Open-Source AI Agent Projects]({B}best/most-starred-open-source-ai-agents.html)",
         f"- [Best Self-Hosted AI Agents]({B}best/self-hosted-ai-agents.html)",
         f"- [Best Free AI Agents (Free Plans)]({B}best/free-ai-agents.html)",

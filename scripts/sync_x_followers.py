@@ -10,6 +10,7 @@ That warning is not a copy: the numbers still came from this run's fetch.
 """
 from __future__ import annotations
 
+import copy
 import json
 import re
 import sys
@@ -89,6 +90,42 @@ def follower_signature(row: dict) -> tuple:
     return tuple(row.get(field) for field in COUNT_FIELDS)
 
 
+def fetched_on_day(day: str, fetched_at: str) -> bool:
+    """True only when the timestamp is that calendar day, not a prefix of a later day.
+
+    `str.startswith` treats 2026-10-3 as a match for 2026-10-30. A copied row keeps
+    the previous day's fetched_at, so the day and the timestamp must match exactly.
+    """
+    return bool(re.fullmatch(rf"{re.escape(day)}T\d{{2}}:\d{{2}}:\d{{2}}.*", str(fetched_at or "")))
+
+
+def row_payload(row: dict) -> dict:
+    """Every field except the calendar date. A copied row matches this payload."""
+    return {key: row.get(key) for key in row if key != "date"}
+
+
+def is_payload_clone(row: dict, previous: dict | None) -> bool:
+    """Oct 30 was a copy of Oct 29 when only `date` changed."""
+    if not previous or not row:
+        return False
+    return row_payload(row) == row_payload(previous)
+
+
+def drop_copied_rows(log: list) -> list:
+    """Remove rows that repeat an earlier snapshot. Does not invent replacement counts."""
+    kept = []
+    for row in log:
+        previous = kept[-1] if kept else None
+        day = str(row.get("date") or "")
+        fetched_at = str(row.get("fetched_at") or "")
+        if is_payload_clone(row, previous):
+            continue
+        if day and fetched_at and not fetched_on_day(day, fetched_at):
+            continue
+        kept.append(copy.deepcopy(row))
+    return kept
+
+
 def previous_row(log: list, day: str) -> dict | None:
     """The latest row for a different date. Used only to compare, never to copy."""
     for row in reversed(log):
@@ -113,9 +150,17 @@ def warn_if_unchanged(new_row: dict, previous: dict | None, err=sys.stderr) -> b
 
 def apply_fetch(tracker: dict, day: str, fetched: dict, fetched_at: str, err=sys.stderr) -> dict:
     """Return a new tracker. Follower fields come only from `fetched`."""
+    if not fetched_on_day(day, fetched_at):
+        raise FetchError(f"fetched_at {fetched_at or 'missing'} is not from {day}")
     row = build_row(day, fetched, fetched_at)
-    log = [dict(item) for item in (tracker.get("daily_log") or [])]
-    warn_if_unchanged(row, previous_row(log, day), err)
+    log = drop_copied_rows(tracker.get("daily_log") or [])
+    previous = previous_row(log, day)
+    if is_payload_clone(row, previous):
+        raise FetchError(
+            f"{day} would duplicate {previous.get('date')} "
+            "(same follower snapshot). Refusing to copy the previous day's row."
+        )
+    warn_if_unchanged(row, previous, err)
     log = [item for item in log if item.get("date") != day]
     log.append(row)
     log.sort(key=lambda item: item.get("date") or "")
@@ -159,8 +204,15 @@ def audit_tracker(tracker: dict) -> list[str]:
         if row.get("combined_followers") != expected:
             bad.append(f"{day} combined_followers is not the sum of the two accounts")
         fetched_at = str(row.get("fetched_at") or "")
-        if not day or not fetched_at.startswith(day):
+        if not day or not fetched_on_day(day, fetched_at):
             bad.append(f"{day or 'row'} fetched_at {fetched_at or 'missing'} is not from that day")
+    # A later row that copies an earlier snapshot (only the date changed) is a duplicate.
+    for index, row in enumerate(log):
+        day = str(row.get("date") or "")
+        for earlier in log[:index]:
+            if is_payload_clone(row, earlier):
+                bad.append(f"{day or 'row'} duplicates {earlier.get('date')} (copied follower snapshot)")
+                break
     return bad
 
 

@@ -112,6 +112,43 @@ class SyncXFollowersTest(unittest.TestCase):
         )
         self.assertTrue(any("missing a live follower count" in line for line in sync.audit_tracker(nulled)))
 
+    def test_oct_30_copy_of_oct_29_is_dropped_and_not_rewritten(self):
+        oct29 = dict(OCT28)
+        oct29["date"] = "2026-10-29"
+        oct29["fetched_at"] = "2026-10-29T09:00:00-0700"
+        oct30 = dict(oct29)
+        oct30["date"] = "2026-10-30"
+        tracker = {"daily_log": [oct29, oct30], "current": {"weekly_page_views_tracker_7d": 482}}
+        problems = sync.audit_tracker(tracker)
+        self.assertTrue(any("duplicates 2026-10-29" in line for line in problems))
+        with self.assertRaises(sync.FetchError):
+            sync.apply_fetch(
+                tracker,
+                "2026-10-30",
+                {"clampdown19_followers": 2102, "agentscouthq_followers": 12},
+                oct29["fetched_at"],
+            )
+        updated = sync.apply_fetch(
+            tracker,
+            "2026-10-30",
+            {"clampdown19_followers": 2107, "agentscouthq_followers": 14},
+            "2026-10-30T09:33:00-0700",
+        )
+        dates = [row["date"] for row in updated["daily_log"]]
+        self.assertEqual(dates, ["2026-10-29", "2026-10-30"])
+        row = updated["daily_log"][-1]
+        self.assertEqual(row["clampdown19_followers"], 2107)
+        self.assertEqual(row["agentscouthq_followers"], 14)
+        self.assertEqual(row["combined_followers"], 2121)
+        self.assertTrue(row["fetched_at"].startswith("2026-10-30"))
+        self.assertNotEqual(row["fetched_at"], oct29["fetched_at"])
+        self.assertEqual(updated["daily_log"][0]["fetched_at"], oct29["fetched_at"])
+        self.assertEqual(sync.audit_tracker(updated), [])
+
+    def test_prefix_timestamp_is_not_treated_as_that_day(self):
+        self.assertFalse(sync.fetched_on_day("2026-10-3", "2026-10-30T09:00:00-0700"))
+        self.assertTrue(sync.fetched_on_day("2026-10-30", "2026-10-30T09:00:00-0700"))
+
 
 if __name__ == "__main__":
     unittest.main()
