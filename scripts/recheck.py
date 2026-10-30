@@ -17,7 +17,7 @@ if os.path.exists("scripts/check_nav_footer.py"): run("unified nav and footer", 
 if os.path.exists("sponsor.html"):
     s=open("sponsor.html").read(); sub=open("submit.html").read() if os.path.exists("submit.html") else ""; sm=open("sitemap.xml").read() if os.path.exists("sitemap.xml") else ""
     linked=[f for f in glob.glob("**/*.html",recursive=True) if f!="sponsor.html" and re.search(r'href="[^"]*sponsor\.html',open(f,errors="ignore").read())]
-    stripe_ok=('buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02' in s and 'buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00' in s and 'buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01' in s and 'buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02' in sub and 'buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00' in sub and 'buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01' in sub)
+    stripe_ok=('buy.stripe.com/3cIaEY6T15hlfJr135e7m0e' in s and 'buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00' in s and 'buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01' in s and 'buy.stripe.com/3cIaEY6T15hlfJr135e7m0e' in sub and 'buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00' in sub and 'buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01' in sub)
     ok=('noindex' not in s) and ('sponsor.html' in sm) and len(linked)>0 and stripe_ok
     print(f"[{'ok' if ok else 'FAIL'}] sponsor page public: indexed={'noindex' not in s}, in sitemap={'sponsor.html' in sm}, stripe_links={stripe_ok}, linked from {len(linked)} pages")
     if not ok: bad.append("sponsor")

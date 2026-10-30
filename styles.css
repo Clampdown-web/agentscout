@@ -684,7 +684,7 @@ nav .links a.navsp:hover>.npsp{background:var(--np);color:#fff;box-shadow:0 0 0 
 .tmc-acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .tmc-btn{padding:0 13px;font-size:13.5px;font-weight:600}
 @media(max-width:560px){.hms-card,.pkg-card,.cat-pin-cta,.tool-maker-cta{padding:14px 12px}.hms-ctas,.cpc-acts,.tmc-acts{width:100%}.hms-ctas .btn,.cpc-acts .btn,.tmc-acts .btn{flex:1 1 auto;justify-content:center;text-align:center}}
-/* 4-Tier Neon Lineup Additions (Oct 26 2026): Free Neon Teal (#14b8a6/#2dd4bf), $29 Fast-Track Neon Blue (#0ea5e9/#38bdf8), $49 Category Pin Neon Indigo (#6366f1/#818cf8), $99/wk Weekly Sponsor Neon Pink (#ec4899/#f472b6) */
+/* 4-Tier Neon Lineup Additions (Oct 26 2026): Free Neon Teal (#14b8a6/#2dd4bf), $15 Fast-Track Neon Blue (#0ea5e9/#38bdf8), $49 Category Pin Neon Indigo (#6366f1/#818cf8), $99/wk Weekly Sponsor Neon Pink (#ec4899/#f472b6) */
 .npfast,.pkg-pill-fast.npill{--np:#0284c7;--npg:rgba(14,165,233,.35);--npb:rgba(14,165,233,.12);border-color:#0ea5e9;box-shadow:0 0 8px rgba(14,165,233,.35),0 0 16px rgba(14,165,233,.22)}
 [data-theme=dark] .npfast,[data-theme=dark] .pkg-pill-fast.npill{--np:#38bdf8;--npg:rgba(14,165,233,.35);--npb:rgba(14,165,233,.16);border-color:#0ea5e9;box-shadow:0 0 10px rgba(14,165,233,.35),0 0 20px rgba(56,189,248,.28)}
 .pkg-card[data-pkg-card="free"]{border:1.5px solid #14b8a6;background:linear-gradient(180deg,rgba(20,184,166,.06) 0%,var(--card) 42%);box-shadow:0 6px 22px rgba(20,184,166,.12)}

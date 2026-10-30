@@ -40,7 +40,7 @@
     {
       "id": "compare-packages-and-bots",
       "name": "Compare Stripe listing packages & Made by AgentScout bots",
-      "description": "Read api/products.json (or /.well-known/acp.json) to compare AgentScout's 4 maker listing tiers ($0, $29, $49, $99/wk) with direct Stripe Checkout URLs and Made by AgentScout pre-trained bot templates.",
+      "description": "Read api/products.json (or /.well-known/acp.json) to compare AgentScout's 4 maker listing tiers ($0, $15, $49, $99/wk) with direct Stripe Checkout URLs and Made by AgentScout pre-trained bot templates.",
       "tags": [
         "commerce",
         "stripe",
@@ -64,7 +64,7 @@
     {
       "id": "products-feed",
       "name": "Purchasable Stripe packages & bot catalog (ACP feed)",
-      "description": "Machine-readable product feed for AgentScout's 4 maker listing tiers ($0, $29, $49, $99/wk) with Stripe Checkout URLs and Made by AgentScout pre-trained bots.",
+      "description": "Machine-readable product feed for AgentScout's 4 maker listing tiers ($0, $15, $49, $99/wk) with Stripe Checkout URLs and Made by AgentScout pre-trained bots.",
       "url": "https://agentscouthq.com/api/products.json",
       "mediaType": "application/json"
     },

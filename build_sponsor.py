@@ -3,8 +3,8 @@ Public, indexed, in sitemap.xml & llms.txt (Oct 26, 2026 — owner-approved 4-Ti
 import json, html, os, glob, re
 from datetime import datetime, timezone, timedelta
 
-STRIPE_29_URL = "https://buy.stripe.com/fZufZi7X5cJNbtbdPRe7m02"
-STRIPE_29 = STRIPE_29_URL
+STRIPE_FAST_URL = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
+STRIPE_FAST = STRIPE_FAST_URL
 STRIPE_49 = "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00"
 STRIPE_99 = "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01"
 X_CLAMPDOWN = "https://x.com/clampdown19"
@@ -96,7 +96,7 @@ def load_metrics(t):
         "gsc_impressions_7d": gsc_impressions_7d,
         "packages": {
             "free": {"name": "Free Community Listing", "price_usd": 0, "billing": "free", "color": "#14b8a6", "url": "https://agentscouthq.com/submit.html#free-form"},
-            "fast_track_29": {"name": "Fast-Track + 7-Day Launch Boost", "price_usd": 29, "billing": "one-time", "color": "#0ea5e9", "stripe_url": STRIPE_29_URL, "x_money": "@clampdown19"},
+            "fast_track_29": {"name": "Fast-Track + 7-Day Launch Boost", "price_usd": 15, "billing": "one-time", "color": "#0ea5e9", "stripe_url": STRIPE_FAST_URL, "x_money": "@clampdown19"},
             "featured_49": {"name": "30-Day Category Pin + Permanent SEO/AEO Placement", "price_usd": 49, "billing": "one-time (30 days + permanent SEO/AEO)", "color": "#6366f1", "stripe_url": STRIPE_49, "x_money": "@clampdown19"},
             "weekly_sponsor_99": {"name": "Weekly Sitewide Sponsor + Newsletter Top Slot", "price_usd": 99, "billing": "per week", "color": "#ec4899", "stripe_url": STRIPE_99, "x_money": "@clampdown19"}
         }
@@ -135,10 +135,10 @@ def packages_grid(t, m=None, on_submit=False):
     <div class="pkg-card pkg-fast" data-pkg-card="fast_29">
       <div>
         <div class="pkg-top">
-          <span class="pkg-pill pkg-pill-fast npill npfast"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>⚡ FAST-TRACK LAUNCH · $29 ONE-TIME</span>
+          <span class="pkg-pill pkg-pill-fast npill npfast"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>⚡ FAST-TRACK LAUNCH · $15 ONE-TIME</span>
         </div>
         <h3>Fast-Track + 7-Day Launch Boost</h3>
-        <div class="pkg-price"><span class="pkg-amt">$29</span><span class="pkg-per">one-time · 7-day featured boost</span></div>
+        <div class="pkg-price"><span class="pkg-amt">$15</span><span class="pkg-per">one-time · 7-day featured boost</span></div>
         <p class="pkg-sub">Skip the review queue today, get a 7-day featured launch pin, and launch to builders on X.</p>
         <ul class="pkg-list">
           <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day priority review:</b> Skip the 3–5 day queue and go live in our very next batch today</span></li>
@@ -148,8 +148,8 @@ def packages_grid(t, m=None, on_submit=False):
         </ul>
       </div>
       <div class="pkg-foot">
-        <a class="btn primary pkg-cta pkg-cta-fast" href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer">Fast-Track for $29 via Stripe →</a>
-        <div class="pkg-xmoney">Or pay <b>$29</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
+        <a class="btn primary pkg-cta pkg-cta-fast" href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer">Fast-Track for $15 via Stripe →</a>
+        <div class="pkg-xmoney">Or pay <b>$15</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
       </div>
     </div>
 
@@ -160,9 +160,9 @@ def packages_grid(t, m=None, on_submit=False):
         </div>
         <h3>30-Day Category Pin + Permanent SEO/AEO Placement</h3>
         <div class="pkg-price"><span class="pkg-amt">$49</span><span class="pkg-per">one-time · 30-day pin + permanent SEO/AEO</span></div>
-        <p class="pkg-sub">4x+ longer category pin for $20 more — while other directories charge $49 for 5-day boosts.</p>
+        <p class="pkg-sub">4x+ longer category pin for $34 more — while other directories charge $49 for 5-day boosts.</p>
         <ul class="pkg-list">
-          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Everything in $29 Fast-Track, upgraded to 30 days:</b> Full <b>30-day</b> top category pin + homepage Featured Makers strip</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Everything in $15 Fast-Track, upgraded to 30 days:</b> Full <b>30-day</b> top category pin + homepage Featured Makers strip</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> placement:</b> Permanent inclusion in our high-intent <a href="best/index.html">/best/*-alternatives</a> and <a href="compare/index.html">/compare/</a> comparison tables</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Priority AI &amp; MCP weight:</b> Priority recommendation weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined followers) + Tuesday newsletter highlight</span></li>
@@ -218,7 +218,7 @@ def build(t):
   <section style="padding:28px 0 12px">
     <span class="sp-eyebrow npill npsp"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg><span>For AI Agent &amp; MCP Makers · Live Directory Metrics (<span data-live-updated>{html.escape(upd_disp)}</span>)</span></span>
     <h1 style="text-align:left;margin:4px 0 12px;max-width:none;font-size:clamp(28px,4vw,42px)">Get Your AI Agent or MCP Server in Front of Builders Ready to Try It</h1>
-    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b data-live-tools>{fmt(total)}</b> AI agent tools and <b data-live-mcp>{fmt(mcp_cnt)}</b> MCP servers across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$29 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
+    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b data-live-tools>{fmt(total)}</b> AI agent tools and <b data-live-mcp>{fmt(mcp_cnt)}</b> MCP servers across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$15 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
 
     <div class="rstats" style="margin:0 0 18px">
       <div class="rstat"><b data-live-tools>{fmt(total)}</b><span>Tools indexed (daily link check)</span></div>
@@ -243,13 +243,13 @@ def build(t):
         <div style="flex:1 1 360px;min-width:0">
           <h2 style="font-size:18px;margin:0 0 6px">Paying with Stripe or X Money — How Fulfillment Works</h2>
           <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55">
-            <b>Option 1 — Instant Card / Apple Pay / Link via Stripe:</b> Use the <a href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer"><b>$29 Fast-Track Boost</b></a>, <a href="{STRIPE_49}" target="_blank" rel="noopener noreferrer"><b>$49 30-Day Category Pin + Permanent SEO/AEO</b></a>, or <a href="{STRIPE_99}" target="_blank" rel="noopener noreferrer"><b>$99/wk Weekly Sitewide Sponsor</b></a> checkout links above.<br>
-            <b>Option 2 — Pay via X Money:</b> Send <b>$29</b>, <b>$49</b>, or <b>$99</b> directly on X Money to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> and DM or email <a href="mailto:support@agentscouthq.com?subject=AgentScout%20Sponsor%20Order">support@agentscouthq.com</a> with your tool URL. We activate your pin and schedule your X spotlight posts the same day.
+            <b>Option 1 — Instant Card / Apple Pay / Link via Stripe:</b> Use the <a href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer"><b>$15 Fast-Track Boost</b></a>, <a href="{STRIPE_49}" target="_blank" rel="noopener noreferrer"><b>$49 30-Day Category Pin + Permanent SEO/AEO</b></a>, or <a href="{STRIPE_99}" target="_blank" rel="noopener noreferrer"><b>$99/wk Weekly Sitewide Sponsor</b></a> checkout links above.<br>
+            <b>Option 2 — Pay via X Money:</b> Send <b>$15</b>, <b>$49</b>, or <b>$99</b> directly on X Money to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> and DM or email <a href="mailto:support@agentscouthq.com?subject=AgentScout%20Sponsor%20Order">support@agentscouthq.com</a> with your tool URL. We activate your pin and schedule your X spotlight posts the same day.
           </p>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px">
           <a class="btn primary pkg-cta-free" href="submit.html#free-form">Submit Free ($0)</a>
-          <a class="btn primary pkg-cta-fast" href="{STRIPE_29_URL}" target="_blank" rel="noopener noreferrer">Fast-Track ($29) →</a>
+          <a class="btn primary pkg-cta-fast" href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer">Fast-Track ($15) →</a>
           <a class="btn primary pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Category Pin ($49 ★) →</a>
           <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>
         </div>
@@ -259,7 +259,7 @@ def build(t):
     <figure style="margin:22px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-sponsor-placements-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="assets/animations/agentscout-sponsor-placements.mp4" type="video/mp4"></video></figure>
     <h2 style="font-size:20px;margin:28px 0 12px">Side-by-side package comparison</h2>
     <div class="tablewrap"><table class="cmp">
-      <thead><tr><th>What&#x27;s included</th><th>Free ($0)</th><th>Fast-Track ($29)</th><th>Category Pin ($49 ★)</th><th>Weekly Sponsor ($99/wk)</th></tr></thead>
+      <thead><tr><th>What&#x27;s included</th><th>Free ($0)</th><th>Fast-Track ($15)</th><th>Category Pin ($49 ★)</th><th>Weekly Sponsor ($99/wk)</th></tr></thead>
       <tbody>
         <tr><th>Permanent tool profile (<code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code>)</th><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td></tr>
         <tr><th>Listed in <code style="font-size:12.5px">llms.txt</code> &amp; MCP server (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</th><td>✓ Standard listing</td><td>✓ Standard listing</td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td></tr>
@@ -276,7 +276,7 @@ def build(t):
     <h2 style="font-size:20px;margin:28px 0 12px">Frequently asked questions</h2>
     <div style="display:grid;gap:10px;max-width:860px;margin-bottom:28px">
       <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">Is basic listing on AgentScout really 100% free?</summary><p style="margin:8px 0 0">Yes. Submitting a real AI agent tool or MCP server via <a href="submit.html#free-form">our submission form</a> is 100% free forever, and profile edits or updates are always free. Paid tiers are strictly optional for makers who want same-day priority review, a 7-day or 30-day featured pin, permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> table placement, or sitewide &amp; newsletter sponsorship.</p></details>
-      <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">What is the difference between the $29 Fast-Track and the $49 Category Pin?</summary><p style="margin:8px 0 0">The <b>$29 Fast-Track + 7-Day Launch Boost</b> skips the 3–5 day queue for same-day review, enriches your page with FAQ Page schema and pros/cons, pins your tool for 7 days on <a href="new.html">/new.html</a> and your category&#x27;s New &amp; Featured row, and posts your launch on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>. For just $20 more, the <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b> upgrades your pin to a full <b>30 days</b> at the top of your category (4x+ longer than 7 days, while other directories charge $49 for 5-day boosts), adds <b>permanent inclusion in our <code style="font-size:12.5px">/best/*-alternatives</code> and <code style="font-size:12.5px">/compare/</code> tables</b>, boosts your priority weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search, and includes a dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> and <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>.</p></details>
+      <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">What is the difference between the $15 Fast-Track and the $49 Category Pin?</summary><p style="margin:8px 0 0">The <b>$15 Fast-Track + 7-Day Launch Boost</b> skips the 3–5 day queue for same-day review, enriches your page with FAQ Page schema and pros/cons, pins your tool for 7 days on <a href="new.html">/new.html</a> and your category&#x27;s New &amp; Featured row, and posts your launch on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>. For just $34 more, the <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b> upgrades your pin to a full <b>30 days</b> at the top of your category (4x+ longer than 7 days, while other directories charge $49 for 5-day boosts), adds <b>permanent inclusion in our <code style="font-size:12.5px">/best/*-alternatives</code> and <code style="font-size:12.5px">/compare/</code> tables</b>, boosts your priority weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search, and includes a dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> and <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a>.</p></details>
       <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">What happens right after I pay on Stripe or X Money?</summary><p style="margin:8px 0 0">If your tool isn&#x27;t listed on AgentScout yet, <a href="submit.html">submit its URL and details on /submit.html</a> (or email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a>) using the same email address or tool name. We fast-track your listing, apply your Featured pin, and send your live listing link plus scheduled X spotlight details the same day.</p></details>
       <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">Do paid placements change organic directory rankings or review scores?</summary><p style="margin:8px 0 0">Never. Featured slots are clearly labeled (<code style="font-size:12.5px">Featured</code> or <code style="font-size:12.5px">Sponsored</code> with <code style="font-size:12.5px">rel="sponsored"</code>) and sit above the list; rankings are never paid.</p></details>
     </div>
@@ -284,7 +284,7 @@ def build(t):
 {live_metrics_script("")}'''
 
     title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
-    desc = f"List your AI agent or MCP server free, fast-track it ($29), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {fmt(total)}+ tools."
+    desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {fmt(total)}+ tools."
 
     schema = {
         "@context": "https://schema.org",
@@ -292,7 +292,7 @@ def build(t):
         "name": title,
         "url": "https://agentscouthq.com/sponsor.html",
         "description": desc,
-        "video": {"@type": "VideoObject", "name": "AgentScout 4-Tier Launch & Placement Visibility Map", "description": "Animated site architecture map showing where $0 Free, $29 Fast-Track, $49 Category Pin, and $99/wk Sitewide Sponsor listings appear across AgentScout.", "thumbnailUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements-poster.png", "contentUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements.mp4", "uploadDate": "2026-10-26T18:00:00-07:00", "duration": "PT20S"},
+        "video": {"@type": "VideoObject", "name": "AgentScout 4-Tier Launch & Placement Visibility Map", "description": "Animated site architecture map showing where $0 Free, $15 Fast-Track, $49 Category Pin, and $99/wk Sitewide Sponsor listings appear across AgentScout.", "thumbnailUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements-poster.png", "contentUrl": "https://agentscouthq.com/assets/animations/agentscout-sponsor-placements.mp4", "uploadDate": "2026-10-26T18:00:00-07:00", "duration": "PT20S"},
         "mainEntity": {
             "@type": "OfferCatalog",
             "name": "AgentScout Maker & Sponsor Packages",
@@ -308,9 +308,9 @@ def build(t):
                 {
                     "@type": "Offer",
                     "name": "Fast-Track + 7-Day Launch Boost",
-                    "price": "29",
+                    "price": "15",
                     "priceCurrency": "USD",
-                    "url": STRIPE_29_URL,
+                    "url": STRIPE_FAST_URL,
                     "description": "Same-day priority review (live in the next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQ Page + pros/cons profile enrichment, and a launch post on @AgentScoutHQ."
                 },
                 {
@@ -319,7 +319,7 @@ def build(t):
                     "price": "49",
                     "priceCurrency": "USD",
                     "url": STRIPE_49,
-                    "description": "Everything in $29 upgraded to a full 30-day top category pin, permanent inclusion in /best/*-alternatives and /compare/ comparison tables, priority recommendation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a dedicated spotlight across both @clampdown19 and @AgentScoutHQ."
+                    "description": "Everything in $15 upgraded to a full 30-day top category pin, permanent inclusion in /best/*-alternatives and /compare/ comparison tables, priority recommendation weight in llms-full.txt and MCP search (com.agentscouthq/directory), and a dedicated spotlight across both @clampdown19 and @AgentScoutHQ."
                 },
                 {
                     "@type": "Offer",
