@@ -349,6 +349,14 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 .nlbox .as-ph{margin:0;flex:1 1 260px}
 @media (max-width:560px){.nlbox{padding:16px}.nlbox .nlgo,.nlbox .nlgo .btn{width:100%}}
 @media (max-width:560px){.nlframe{height:470px}}
+/* Inline Beehiiv signup on /submit.html and /news/2026/10/ (Oct 30 2026). Dark neon, no sideways overflow at 360/390. */
+.nlin{box-sizing:border-box;max-width:100%;overflow:hidden;margin:16px 0 20px;padding:16px 18px;border-radius:16px;border:1px solid rgba(56,189,248,.28);background:linear-gradient(180deg,#0d1222,#070a14);color:#cbd5e1;box-shadow:0 0 0 1px rgba(56,189,248,.06),0 10px 30px rgba(0,0,0,.35)}
+.nlin h2{margin:0 0 6px;font-size:17px;color:#f1f5f9}
+.nlin p{margin:0 0 12px;color:#94a3b8;font-size:14px;line-height:1.5}
+.nlin form{display:flex;flex-wrap:wrap;gap:8px;width:100%;max-width:100%;margin:0;box-sizing:border-box}
+.nlin input[type=email]{flex:1 1 160px;min-width:0;width:100%;max-width:100%;box-sizing:border-box;height:44px;padding:0 12px;border-radius:8px;border:1px solid rgba(56,189,248,.35);background:#070a14;color:#f1f5f9;font:inherit}
+.nlin .btn{flex:0 1 auto;max-width:100%;box-sizing:border-box}
+@media (max-width:390px){.nlin{padding:14px}.nlin form,.nlin input[type=email],.nlin .btn{width:100%;flex-basis:100%}}
 /* Freshness line + quick comparison table (Oct 18 2026) */
 .updated{margin:-4px 0 12px;font-size:13px;color:var(--muted)}
 .cmpwrap{margin:14px 0 22px}

@@ -96,8 +96,12 @@ def pages(t):
         for x in its: days.setdefault(_ptd(x["date"]),[]).append(x)
         lis="".join(f'<h2 class="nday">{datetime.date.fromisoformat(dd).strftime("%A, %B %-d, %Y")}</h2><ol class="nlist">'+"".join(f'<li class="nitem"><h3><a href="{d}{x["page"]}">{e(x["title"])}</a></h3><p class="nsum">{e(x["summary"])}</p><span class="nm">{e(x["source"])}</span></li>' for x in days[dd])+"</ol>" for dd in sorted(days,reverse=True))
         title=f"AI agent news, {_month(ym)} · AgentScout"; desc=f"All {len(its)} AI agent news stories AgentScout covered in {_month(ym)}, each with a short summary in our own words and a link to the source."
+        nl = ""
+        if ym == "2026-10":
+            import build_tasks
+            nl = build_tasks.INLINE_NL
         body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / {_month(ym)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news: {_month(ym)}</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{len(its)} stories about AI agents, coding agents and MCP. Open a story for its summary, related tools and the source link.</p>{lis}'
+              f'<p class="lede" style="margin-left:0;text-align:left">{len(its)} stories about AI agents, coding agents and MCP. Open a story for its summary, related tools and the source link.</p>{nl}{lis}'
               f'<p style="margin-top:24px"><a href="../../index.html">All months</a> · <a href="{d}news.html">Latest agent news</a></p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":k+1,"url":B+x["page"],"name":x["title"]} for k,x in enumerate(its)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},{"@type":"ListItem","position":3,"name":_month(ym),"item":canon}]}]}
