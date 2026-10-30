@@ -225,7 +225,7 @@ def _down_pills(servers, prefix):
 
 def _card_head(heading):
     return (f'<div class="vc-hd"><span class="vc-dot" aria-hidden="true"></span><h2>{e(heading)}</h2>'
-            '<span class="vc-upd">Updated daily at 7 AM PT</span></div>')
+            '<span class="vc-upd">Updated twice daily, 7 AM &amp; 7 PM PT</span></div>')
 
 
 def panel(doc, servers, prefix, heading):
