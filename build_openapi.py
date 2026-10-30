@@ -176,6 +176,61 @@ def _agent_packs(base):
     return packs
 
 
+def _launch_pack_addon(B):
+    import build_sponsor as BS
+    description = " ".join([
+        BS.LAUNCH_PACK_PROMISE,
+        BS.LAUNCH_PACK_ACCOUNTS,
+        BS.LAUNCH_PACK_SKIP,
+        BS.LAUNCH_PACK_LIMITS,
+        BS.LAUNCH_PACK_INTAKE,
+    ])
+    return [{
+        "id": "directory-launch-pack",
+        "sku": "AS-ADDON-LAUNCH-49",
+        "name": "Directory Launch Pack",
+        "category": "addon",
+        "price_usd": 49,
+        "billing_model": "one_time",
+        "availability": "in_stock",
+        "badge": "Add-on, not a listing tier",
+        "turnaround": "Submitted within 7 days, follow-up report at 30 days",
+        "checkout_url": BS.LAUNCH_PACK_URL,
+        "page_url": B + "/submit.html#launch-pack",
+        "description": description,
+        "deliverables": [
+            BS.LAUNCH_PACK_PROMISE,
+            BS.LAUNCH_PACK_ACCOUNTS,
+            BS.LAUNCH_PACK_SKIP,
+            "Report of live and pending links; follow-up report at 30 days",
+            BS.LAUNCH_PACK_INTAKE,
+        ],
+        "limits": BS.LAUNCH_PACK_LIMITS,
+    }]
+
+
+def _schema_org_offers(products):
+    graph = []
+    rows = list(products.get("packages") or []) + list(products.get("addons") or [])
+    for item in rows:
+        graph.append({
+            "@type": "Product",
+            "sku": item.get("sku"),
+            "name": item.get("name"),
+            "description": item.get("description"),
+            "category": item.get("category"),
+            "brand": {"@type": "Brand", "name": "AgentScout"},
+            "offers": {
+                "@type": "Offer",
+                "price": str(item.get("price_usd")),
+                "priceCurrency": "USD",
+                "url": item.get("checkout_url"),
+                "availability": "https://schema.org/InStock",
+            },
+        })
+    return {"@context": "https://schema.org", "@graph": graph}
+
+
 def catalog_tools(data):
     """api/tools.json is either {"tools":[...], ...} or a bare list."""
     if isinstance(data, list):
@@ -329,12 +384,13 @@ def build_commerce_files(tools_data):
                 "turnaround": "Same-day priority review (live in next daily build)",
                 "checkout_url": "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
                 "page_url": B + "/sponsor.html",
-                "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, and a dedicated launch post on @AgentScoutHQ.",
+                "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, a dedicated launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines.",
                 "deliverables": [
                     "Same-day priority review & live deployment",
                     "7-day featured pin on /new.html + category New & Featured row",
                     "Full FAQPage JSON-LD + pros/cons profile enrichment",
                     "Dedicated launch post on @AgentScoutHQ on X",
+                    "Same-day indexing ping to Bing and IndexNow search engines",
                     "Verified Maker badge on your tool card",
                 ],
             },
@@ -453,6 +509,7 @@ def build_commerce_files(tools_data):
                 "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime and inbox monitoring, technical SEO and Core Web Vitals, competitor and launch tracking, and executive coordination, sharing one /workspace/handoff/ folder. $149 one-time (saves $77). Built for Grok Bot (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable).",
             },
         ],
+        "addons": _launch_pack_addon(B),
         "agent_packs": _agent_packs(B),
         "pack_pricing": {
             "unit_usd": 35,
@@ -472,6 +529,7 @@ def build_commerce_files(tools_data):
             ],
         },
     }
+    products["schema_org"] = _schema_org_offers(products)
 
     os.makedirs("api", exist_ok=True)
     os.makedirs(".well-known", exist_ok=True)

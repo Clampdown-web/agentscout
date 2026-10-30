@@ -68,15 +68,38 @@ def ico(x,d="../",cls=""):
     return f'<span class="ico {cls}"><span aria-hidden="true" data-l="{L}"></span>{im}</span>'  # letter drawn by CSS (::before), so it never joins the name in copied or extracted text
 def ico24(x): return ico(x,"","sm").replace('width="40" height="40"','width="24" height="24"')
 def cslug(a,b): return f"{a}-vs-{b}"
+LAUNCH_RANKS={}  # slug -> (rank, week_id, week_label). Filled by build_growth before tool pages are patched.
+def _paid_listing(x):
+    tier=str(x.get("listing_tier") or "").lower().replace("-","_")
+    return bool(x.get("fast_track") or tier in ("fast_track","category_pin","featured_49","sponsor","weekly_sponsor"))
+def _embed(depth, kind, th, url, alt, w=220, h=54):
+    img=f"{B}badges/{kind}-{th}.svg" if "/" not in kind else f"{B}{kind}"
+    local=(f"{depth}badges/{kind}-{th}.svg" if "/" not in kind else f"{depth}{kind}")
+    html_snip=f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="{alt}" width="{w}" height="{h}"></a>'
+    md=f"[![{alt}]({img})]({url})"
+    return (f'<div class="embed" data-bdpanel="{e(th)}"><img src="{local}" alt="{e(alt)} ({th})" width="{w}" height="{h}">'
+            f'<label>HTML ({th})</label><textarea readonly rows="3" aria-label="HTML badge code ({th})" onclick="this.select()">{e(html_snip)}</textarea>'
+            f'<button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button>'
+            f'<label>Markdown ({th})</label><textarea readonly rows="2" aria-label="Markdown badge code ({th})" onclick="this.select()">{e(md)}</textarea>'
+            f'<button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy Markdown</button></div>')
 def badge_html(x,depth="../"):
-    url=f"{B}tools/{x['slug']}.html"; kind="featured" if x.get("featured") else "listed"; lab=kind.title()
-    out=""
-    for th in ["light","dark"]:
-        img=f"{B}badges/{kind}-{th}.svg"
-        h=f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="{lab} on AgentScout" width="220" height="54"></a>'
-        m=f"[![{lab} on AgentScout]({img})]({url})"
-        out+=f'<div class="embed"><img src="{depth}badges/{kind}-{th}.svg" alt="{lab} on AgentScout ({th})" width="220" height="54"><label>HTML</label><textarea readonly rows="3" aria-label="HTML badge code" onclick="this.select()">{e(h)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button><label>Markdown</label><textarea readonly rows="2" aria-label="Markdown badge code" onclick="this.select()">{e(m)}</textarea><button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy Markdown</button></div>'
-    return f'<h2 style="font-size:16px;margin:36px 0 6px">Badge for makers</h2><p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? Add this badge to your README or site. It links back to this page. <a href="../badges.html">About badges</a></p><div class="embeds">{out}</div>'
+    url=f"{B}tools/{x['slug']}.html"; kind="featured" if x.get("featured") or _paid_listing(x) else "listed"; lab=("Featured" if kind=="featured" else "Listed")
+    panels="".join(_embed(depth, kind, th, url, f"{lab} on AgentScout") for th in ("light","dark")).replace('data-bdpanel="dark"','data-bdpanel="dark" hidden',1)
+    rank=LAUNCH_RANKS.get(x["slug"])
+    launch=""
+    if rank:
+        n,wid,wlabel=rank
+        path=f"badges/launch/{x['slug']}.svg"
+        alt=f"Launched on AgentScout, #{n} this week"
+        launch=(f'<h3 style="font-size:15px;margin:18px 0 8px">Launched on AgentScout · #{n} this week</h3>'
+                f'<p class="muted" style="margin:0 0 8px">Rank {n} for {e(wlabel)} ({e(wid)}). The number is baked into the image so it stays the rank from that week.</p>'
+                +_embed(depth, path, "light", url, alt, 260, 54).replace('data-bdpanel="light"','data-bdpanel="launch"',1))
+    note=("Thank you for listing with AgentScout. This badge is optional. Showing it does not change your rank or your place in the directory." if kind=="featured"
+          else "Optional. Showing this badge does not change your rank or earn a Featured spot.")
+    return (f'<h2 style="font-size:16px;margin:36px 0 6px">Get your badge</h2>'
+            f'<p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? {note} It links to this page. <a href="{depth}badges.html">About badges</a></p>'
+            f'<div class="badgebox" data-badgebox><div class="bdtabs" role="tablist"><button type="button" class="on" data-bd="light">Light</button><button type="button" data-bd="dark">Dark</button></div>'
+            f'<div class="embeds">{panels}{launch}</div></div>')
 def featured_generic():
     out=""
     for th in ["light","dark"]:
@@ -447,6 +470,14 @@ def seo(t,urls):
     _srt=sorted(t,key=lambda x:(not x.get("seed"),x.get("added",""),x.get("id",0)),reverse=True)
     rec=[x for x in _srt if x.get("added","")>=_cut] or _srt[:12]
     L+=["## Recently added",f"- [All new tools, last 30 days]({B}new.html)",f"- Tools added in the last 2 days ({_cut} to {_today.isoformat()}): {len(rec)}",""]+[f"- [{x['name']}]({B}tools/{x['slug']}.html) (added {x.get('added','')}): {x['description']}" for x in rec]+[""]
+    import build_sponsor as _bslp
+    L += ["","## Launches, status, and the Directory Launch Pack","",
+          f"- [How AgentScout started]({B}how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.",
+          f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.",
+          f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated twice daily, 7 AM and 7 PM PT.",
+          f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {_bslp.LAUNCH_PACK_PROMISE} {_bslp.LAUNCH_PACK_ACCOUNTS} {_bslp.LAUNCH_PACK_SKIP} {_bslp.LAUNCH_PACK_LIMITS} Checkout: {_bslp.LAUNCH_PACK_URL}",
+          f"- Fast-Track ($15) includes: {_bslp.FAST_TRACK_INDEX_LINE}.",
+          ""]
     open("llms.txt","w").write("\n".join(L)); return out
 
 

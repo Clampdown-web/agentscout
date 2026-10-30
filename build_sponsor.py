@@ -7,10 +7,30 @@ STRIPE_FAST_URL = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
 STRIPE_FAST = STRIPE_FAST_URL
 STRIPE_49 = "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00"
 STRIPE_99 = "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01"
+# Directory Launch Pack ($49 add-on). This is the only definition of the Payment Link.
+LAUNCH_PACK_URL = "https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f"
+FAST_TRACK_INDEX_LINE = "Same-day indexing ping to Bing and IndexNow search engines"
+LAUNCH_PACK_PROMISE = "Submitted to ~25 hand-picked AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve)."
+LAUNCH_PACK_ACCOUNTS = "Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself."
+LAUNCH_PACK_SKIP = "If your tool is already listed in one of those directories, we skip it and submit to another from the same hand-picked list."
+LAUNCH_PACK_INTAKE = "After you pay, reply to the receipt or email support@agentscouthq.com with your tool name, URL, one-line pitch, logo, category, and the email address to use for those directory accounts."
+LAUNCH_PACK_LIMITS = "This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing."
 X_CLAMPDOWN = "https://x.com/clampdown19"
 X_AGENTSCOUT = "https://x.com/AgentScoutHQ"
 
 def fmt(n): return f"{int(n):,}"
+
+def launch_pack_html():
+    """Separate $49 add-on. Not one of the four listing tiers."""
+    return f'''<aside id="launch-pack" class="panel launch-pack" aria-labelledby="launch-pack-h">
+      <p class="lp-kicker">Add-on · not a listing tier</p>
+      <h2 id="launch-pack-h">Directory Launch Pack · $49 one-time</h2>
+      <p>{LAUNCH_PACK_PROMISE}</p>
+      <p>{LAUNCH_PACK_ACCOUNTS}</p>
+      <p>{LAUNCH_PACK_SKIP} {LAUNCH_PACK_LIMITS}</p>
+      <p><b>After you pay:</b> {LAUNCH_PACK_INTAKE}</p>
+      <p style="margin:14px 0 0"><a class="btn primary" href="{LAUNCH_PACK_URL}" target="_blank" rel="noopener noreferrer">Buy the Directory Launch Pack ($49) →</a></p>
+    </aside>'''
 
 def load_metrics(t):
     total = len(t)
@@ -144,7 +164,8 @@ def packages_grid(t, m=None, on_submit=False):
           <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day priority review:</b> Skip the 3–5 day queue and go live in our very next batch today</span></li>
           <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>7-day featured launch pin:</b> Pinned on <a href="new.html">/new.html</a> + your category&#x27;s &ldquo;New &amp; Featured&rdquo; row for 7 full days</span></li>
           <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Full profile enrichment:</b> Custom FAQ Page schema + pros/cons &amp; pricing breakdown written from your docs</span></li>
-          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Launch post on X:</b> Dedicated launch post on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> with custom visual card</span></li>
+          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Launch post on X:</b> Dedicated launch post on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> with custom visual card</span></li><li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>Same-day indexing ping to Bing and IndexNow search engines.</b> Bing and other IndexNow engines. This does not include Google indexing.</span></li>
+          <li><span class="pkg-chk pkg-chk-fast">⚡</span><span><b>{FAST_TRACK_INDEX_LINE}.</b> Bing and other IndexNow engines. This does not include Google indexing.</span></li>
         </ul>
       </div>
       <div class="pkg-foot">
@@ -230,6 +251,8 @@ def build(t):
 
     {cards_html}
 
+    {launch_pack_html()}
+
     <div class="pkg-trust">
       <span>⚡ <b>Instant Checkout via Stripe</b> or <b>X Money (<a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a>)</b></span>
       <span>·</span>
@@ -264,6 +287,7 @@ def build(t):
         <tr><th>Permanent tool profile (<code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code>)</th><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td><td>✓ Included forever</td></tr>
         <tr><th>Listed in <code style="font-size:12.5px">llms.txt</code> &amp; MCP server (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</th><td>✓ Standard listing</td><td>✓ Standard listing</td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td><td><b>✓ Priority weight in <code style="font-size:12.5px">llms-full.txt</code> &amp; MCP search</b></td></tr>
         <tr><th>Review turnaround</th><td>Standard queue (3–5 days)</td><td><b>⚡ Same-day priority review</b></td><td><b>⚡ Same-day priority review</b></td><td><b>⚡ Immediate same-day setup</b></td></tr>
+        <tr><th>Indexing ping</th><td>—</td><td><b>{FAST_TRACK_INDEX_LINE}</b> (not Google)</td><td>Included with Fast-Track benefits</td><td>Included with Fast-Track benefits</td></tr>
         <tr><th>Profile enrichment (FAQ Page schema + pros/cons)</th><td>Standard overview</td><td><b>✓ Full FAQ Page + pros/cons</b></td><td><b>✓ Full FAQ Page + pros/cons</b></td><td><b>✓ Full FAQ Page + pros/cons</b></td></tr>
         <tr><th>Featured pin duration</th><td>—</td><td><b>7-day pin</b> on <code style="font-size:12.5px">/new.html</code> &amp; category New &amp; Featured row</td><td><b>30-day #1 category top pin</b> + homepage Makers strip (4x+ longer!)</td><td><b>30-day #1 category top pin</b> + homepage <code style="font-size:12.5px">#makers</code> showcase</td></tr>
         <tr><th>Permanent <code style="font-size:12.5px">/best/*-alternatives</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</th><td>Organic editorial only</td><td>Organic editorial only</td><td><b>✓ Permanent comparison table inclusion</b></td><td><b>✓ Permanent comparison table inclusion</b></td></tr>
@@ -311,7 +335,7 @@ def build(t):
                     "price": "15",
                     "priceCurrency": "USD",
                     "url": STRIPE_FAST_URL,
-                    "description": "Same-day priority review (live in the next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQ Page + pros/cons profile enrichment, and a launch post on @AgentScoutHQ."
+                    "description": "Same-day priority review (live in the next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines."
                 },
                 {
                     "@type": "Offer",

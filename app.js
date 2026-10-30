@@ -10,7 +10,7 @@ const AS={
   savedCount(){return Object.keys(AS.get("as_saves")).length},
   up:'<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3l5 7H3z"/></svg>',
   bm:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 13.6S2 10.1 2 5.9A3.1 3.1 0 0 1 8 4.3a3.1 3.1 0 0 1 6 1.6c0 4.2-6 7.7-6 7.7z"/></svg>',
-  voteBtn(s){const on=AS.voted(s);return`<button class="vote ${on?"on":""}" data-vote="${ASe(s)}" aria-pressed="${on}" title="Upvote (saved on this device)">${AS.up}<span>${on?1:0}</span></button>`},
+  voteBtn(s){const on=AS.voted(s);return`<button class="vote ${on?"on":""}" data-vote="${ASe(s)}" aria-pressed="${on}" title="Upvote (one per visitor per day)">${AS.up}<span>0</span></button>`},
   saveBtn(s,label){const on=AS.saved(s);return`<button class="save ${on?"on":""}" data-save="${ASe(s)}" aria-pressed="${on}" title="Save to favorites (this device)" aria-label="Save to favorites">${AS.bm}${label?`<span>${on?"Saved":"Save"}</span>`:""}</button>`},
   /* Defer a large catalog fetch until after first paint: idle after load, or the first search/filter gesture. */
   deferCatalog(url, onData){
@@ -27,10 +27,16 @@ const AS={
     return p;
   },
   bind(root,onchange){if(root===document){if(AS._bound&&!onchange)return;AS._bound=1}root.addEventListener("click",e=>{const v=e.target.closest("[data-vote]"),s=e.target.closest("[data-save]");if(!v&&!s)return;e.preventDefault();e.stopPropagation();
-    if(v){const on=AS.toggle("as_votes",v.dataset.vote);document.querySelectorAll(`[data-vote="${CSS.escape(v.dataset.vote)}"]`).forEach(b=>{b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);b.querySelector("span").textContent=on?1:0})}
+    if(v){AS.castVote(v);return}
     if(s){const on=AS.toggle("as_saves",s.dataset.save);document.querySelectorAll(`[data-save="${CSS.escape(s.dataset.save)}"]`).forEach(b=>{b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);const sp=b.querySelector("span");if(sp)sp.textContent=on?"Saved":"Save"})}
     document.querySelectorAll("[data-saved-count]").forEach(n=>n.textContent=AS.savedCount());onchange&&onchange()})}
 };
+AS.VOTE_API="https://api.agentscouthq.com";
+AS.paintVote=function(btn,row){if(!row)return;var sp=btn.querySelector("span");if(sp)sp.textContent=String(row.votes||0);var on=!!row.yours;btn.classList.toggle("on",on);btn.setAttribute("aria-pressed",on?"true":"false");btn.title="Upvote (one per visitor per day)";var td=btn.parentNode&&btn.parentNode.querySelector("[data-today]");if(td)td.textContent="+"+(row.today||0)+" today"};
+AS.hydrateVotes=function(root){var btns=[].slice.call((root||document).querySelectorAll("[data-vote]"));if(!btns.length)return;var slugs=[];btns.forEach(function(b){if(slugs.indexOf(b.dataset.vote)<0)slugs.push(b.dataset.vote)});slugs=slugs.slice(0,400);fetch(AS.VOTE_API+"/votes?slugs="+encodeURIComponent(slugs.join(","))).then(function(r){return r.json()}).then(function(j){var tools=j.tools||{};btns.forEach(function(b){AS.paintVote(b,tools[b.dataset.vote]||{votes:0,today:0})});var banner=document.querySelector("[data-today-total]");if(banner&&typeof j.today_total==="number")banner.textContent=String(j.today_total)}).catch(function(){})};
+AS.castVote=function(btn){var slug=btn.dataset.vote;if(btn.disabled)return;btn.disabled=true;fetch(AS.VOTE_API+"/vote",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({slug:slug})}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j;return j})}).then(function(j){document.querySelectorAll('[data-vote="'+CSS.escape(slug)+'"]').forEach(function(b){AS.paintVote(b,{votes:j.votes,today:j.today,yours:true})})}).catch(function(){}).finally(function(){btn.disabled=false})};
+AS.hydrateVotes(document);
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-bd]");if(!b)return;var box=b.closest("[data-badgebox]");if(!box)return;var th=b.getAttribute("data-bd");box.querySelectorAll("[data-bd]").forEach(function(x){x.classList.toggle("on",x===b)});box.querySelectorAll("[data-bdpanel]").forEach(function(p){var show=p.getAttribute("data-bdpanel")===th||p.getAttribute("data-bdpanel")==="launch";p.hidden=p.getAttribute("data-bdpanel")!=="launch"&&p.getAttribute("data-bdpanel")!==th})});
 /* Scroll buttons (top + bottom). Injected on every page that loads app.js; no inline script needed. */
 (function(){if(window.__asScroll)return;window.__asScroll=1;
 function init(){var w=document.createElement("div");w.className="scrollbtns";

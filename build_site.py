@@ -213,7 +213,10 @@ for x in t:
                f'<a class="btn primary pkg-cta-pop tmc-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
                f'<a class="btn primary pkg-cta-vip tmc-btn" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor — $99/wk →</a>'
                f'<a class="btn tmc-btn" href="../sponsor.html#packages">Compare Packages ($0/$15/$49/$99)</a></div></div>')
-    out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{MAKER_CTA}}",maker_cta).replace("{{ABOUT}}",about).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
+    botstore=('<aside class="botstore-cta" aria-label="AgentScout Bot Store"><p class="lp-kicker">Bot Store</p>'
+               '<p>Separate from this listing. <a href="../bot-store/">AI Agent Packs from $35</a>. Flagship Pro Bots $39–$149.</p>'
+               '<p style="margin:8px 0 0"><a class="btn" href="../bot-store/">Browse the Bot Store</a></p></aside>')
+    out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{MAKER_CTA}}",maker_cta).replace("{{ABOUT}}",about).replace("{{BOTSTORE}}",botstore).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
     for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(build_extras.utm(x.get("visit_url") or prim,x)),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
         out=out.replace("{{"+k+"}}",v)
     # Archived GitHub repo label (tools.json "repo_archived": true, owner-approved Oct 22 2026)

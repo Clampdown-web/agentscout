@@ -101,27 +101,8 @@ def pages(t):
           +tbl(["MCP server","Pricing (as stated)","Type","Open source","GitHub stars"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server pricing table","description":desc,"url":canon,"dateModified":upd,"creator":{"@type":"Organization","name":"AgentScout","url":B},"license":B+"about.html"}
     open("mcp/pricing.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
-    # link status
-    chk=LSD.get("checked",""); R=LSD.get("results") or {}
-    st=[(x,)+lstat(R.get(x["slug"],{})) for x in M]
-    ok=sum(1 for s in st if s[1]=="OK")
-    canon=B+"mcp/link-status.html"; title=f"MCP server link status ({nice(chk) if chk else 'not yet checked'}) · AgentScout"
-    desc=f"Link check for {len(M)} MCP servers on AgentScout: {ok} OK. Listing and GitHub links requested automatically, checked {nice(chk) if chk else 'soon'} (Pacific)."[:158]
-    BROKEN=("Error","Not responding")  # only these are problems; "Reachable, blocks automated checks" answered, so it is not
-    rows=[[link(x),e(s),e(c)] for x,s,c in sorted(st,key=lambda s:(0 if s[1] in BROKEN else 1,s[0]["name"].lower()))]
-    brk=[x for x,s,c in st if s in BROKEN]; blk=sum(1 for s in st if s[1]=="Reachable, blocks automated checks"); unc=sum(1 for s in st if s[1]=="not checked")
-    def _and(n): n=[f'<a href="../tools/{x["slug"]}.html">{e(x["name"])}</a>' for x in n]; return n[0] if len(n)==1 else ", ".join(n[:-1])+" and "+n[-1]
-    extra=(f' ({blk} of them answered but block automated checks)' if blk else '')
-    if not chk: qa=''
-    elif not brk: qa=(f'All {len(M)-unc:,} checked MCP server links are reachable'+extra+(f'; {unc} not checked yet' if unc else '')+'.')
-    else: qa=(f'{len(brk)} of {len(M):,} MCP server links did not respond or returned an error: {_and(brk[:5])}'+(f' and {len(brk)-5} more' if len(brk)>5 else '')+f'. The other {len(M)-len(brk)-unc:,} are reachable'+extra+'.')
-    qa=f'<p class="qa"><b>Quick answer:</b> {qa}</p>' if qa else ''
-    uline=mcp_uptime_line(t)
-    body=(f'<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede"><strong>{e(uline)}.</strong> Every MCP server on AgentScout, with the result of an automated request to its listed link and GitHub repo. Last checked <time datetime="{e(chk[:10])}">{e(chk)} PT</time>.</p>'+qa if chk else '<section style="padding-top:28px"><h1>MCP server link status</h1><p class="lede">Not checked yet.</p>')
-    body+=(f'<p>{ok} of {len(M)} OK. "Reachable, blocks automated checks" means the site answered but refuses scripted requests (HTTP 401, 403 or 429); it usually works in a browser. HTTP 405 counts as OK because MCP endpoints often accept only POST. Links that did not respond or returned an error are listed first. See also the <a href="pricing.html">MCP pricing table</a> and <a href="connect.html">how to connect to the AgentScout MCP server</a>.</p>'
-           +tbl(["MCP server","Status","HTTP result"],rows)+hist_html(H)+"</section>")
-    ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server link status","description":desc,"url":canon,"dateModified":(chk[:10] or upd),"creator":{"@type":"Organization","name":"AgentScout","url":B}}
-    open("mcp/link-status.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
+    import build_status
+    urls.append(build_status.write_dashboard(t))
     urls.append(connect_page(t))
     agent_cards(t)
     return urls

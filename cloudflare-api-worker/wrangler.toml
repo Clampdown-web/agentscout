@@ -1,0 +1,17 @@
+# AgentScout vote + roast routes. Do NOT attach this worker to api.agentscouthq.com/* .
+# The existing API worker already serves /submit, /generate, /reviews, /track, and /readiness.
+# Add only these routes (Cloudflare uses the most specific match):
+#   api.agentscouthq.com/roast
+#   api.agentscouthq.com/vote
+#   api.agentscouthq.com/votes
+# Then redeploy THIS worker and the MCP worker (products snapshot includes the Launch Pack).
+name = "agentscout-api"
+main = "src/worker.js"
+compatibility_date = "2026-10-28"
+
+# 1. npx wrangler kv namespace create VOTES
+# 2. Paste the id below. No D1 migration: counts and one-per-day hashes live in this KV namespace.
+# 3. npx wrangler deploy
+[[kv_namespaces]]
+binding = "VOTES"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
