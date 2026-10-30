@@ -161,26 +161,36 @@ async function dailySalt(env, day) {
 }
 
 async function readLimited(response) {
-  const len = Number(response.headers.get("content-length") || 0);
-  if (len > MAX_BYTES) return { error: "That page is too large to score." };
   const reader = response.body?.getReader();
-  if (!reader) return { text: "" };
+  if (!reader) return { error: "That page had nothing to score." };
   const chunks = [];
   let size = 0;
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    size += value.byteLength;
-    if (size > MAX_BYTES) {
-      await reader.cancel();
-      return { error: "That page is too large to score." };
+  try {
+    while (size < MAX_BYTES) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value?.byteLength) continue;
+      const room = MAX_BYTES - size;
+      if (value.byteLength > room) {
+        chunks.push(value.subarray(0, room));
+        size += room;
+        break;
+      }
+      chunks.push(value);
+      size += value.byteLength;
     }
-    chunks.push(value);
+  } catch (err) {
+    if (!size) throw err;
+  } finally {
+    try { await reader.cancel(); } catch { /* already closed */ }
   }
+  if (!size) return { error: "That page had nothing to score." };
   const buf = new Uint8Array(size);
   let off = 0;
   for (const chunk of chunks) { buf.set(chunk, off); off += chunk.byteLength; }
-  return { text: new TextDecoder("utf-8", { fatal: false }).decode(buf) };
+  const text = new TextDecoder("utf-8", { fatal: false }).decode(buf);
+  if (!text.trim()) return { error: "That page had nothing to score." };
+  return { text };
 }
 
 async function fetchPublic(target, depth = 0) {
