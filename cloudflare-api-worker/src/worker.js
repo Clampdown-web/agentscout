@@ -28,6 +28,18 @@ export function allowOrigin(origin) {
   return ALLOWED_ORIGINS.has(origin) ? origin : "";
 }
 
+export function voteAllowed(request) {
+  const origin = request.headers.get("Origin") || request.headers.get("origin") || "";
+  if (origin) return ALLOWED_ORIGINS.has(origin);
+  const referer = request.headers.get("Referer") || request.headers.get("referer") || "";
+  if (!referer) return false;
+  try {
+    return ALLOWED_ORIGINS.has(new URL(referer).origin);
+  } catch {
+    return false;
+  }
+}
+
 export function corsHeaders(request) {
   const origin = allowOrigin(request.headers.get("Origin") || request.headers.get("origin") || "");
   const headers = {
@@ -244,6 +256,7 @@ async function roast(request, env) {
 }
 
 async function vote(request, env) {
+  if (!voteAllowed(request)) return json(request, { error: "Votes can only be cast from agentscouthq.com." }, 403);
   if (!env.VOTES) return json(request, { error: "Vote storage is not configured." }, 503);
   if (!(await rateLimit(env, "vote", clientIp(request), VOTE_PER_MIN))) return json(request, { error: "Too many votes. Try again in a minute." }, 429);
   const body = await request.json().catch(() => ({}));
