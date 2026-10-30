@@ -193,6 +193,51 @@ def assign_ranks(tools):
     return found
 
 
+def _added_short(iso):
+    try:
+        return datetime.date.fromisoformat(iso).strftime("%b %-d")
+    except ValueError:
+        return iso
+
+
+def _logo_file(logo):
+    path = (logo or "").strip()
+    if not path or path.startswith(("http://", "https://")):
+        return path if path.startswith("http") else ""
+    rel = path.lstrip("/")
+    return rel if os.path.isfile(rel) else ""
+
+
+def _launch_logo(x, eager):
+    """Stored logo, same file the tool page uses. A missing file falls back to the letter avatar."""
+    rel = _logo_file(x.get("logo") or "")
+    if not rel:
+        return ""
+    src = rel if rel.startswith("http") else "../" + rel
+    loading = "eager" if eager else "lazy"
+    decode = "" if eager else ' decoding="async"'
+    return (f'<img src="{e(src)}" alt="{e(x.get("name") or "Tool")} logo" width="40" height="40" loading="{loading}"{decode} {X.ONERR}>')
+
+
+def _fit_names(prefix, names, limit=156):
+    """A meta description that ends on a whole tool name. Extra names become 'and more'."""
+    chosen = []
+    for name in names:
+        body = ", ".join(chosen + [name])
+        trial = f"{prefix} Top: {body}."
+        if len(trial) <= limit:
+            chosen.append(name)
+            continue
+        break
+    if not names:
+        return prefix
+    if not chosen:
+        return f"{prefix} Top: {names[0]} and more."
+    if len(chosen) < len(names):
+        return f"{prefix} Top: {', '.join(chosen)} and more."
+    return f"{prefix} Top: {', '.join(chosen)}."
+
+
 def _page_name(wid, current, n):
     if current:
         return "index.html" if n == 1 else f"page-{n}.html"
@@ -228,12 +273,14 @@ def launch_page(tools, start, end, wid, current):
         title += " · AgentScout"
         if len(title) > 60:
             title = title[:60].rsplit(" ", 1)[0]
-        names = ", ".join(x["name"] for x in chunk[:3]) or "none yet"
-        desc = f"{len(rows)} tools added {label}."
+        top_names = [x["name"] for x in chunk[:3]]
+        prefix = f"{len(rows)} tools added {label}."
         if npages > 1:
-            desc += f" Page {n} of {npages}."
+            prefix += f" Page {n} of {npages}."
         ranked = "Ranked by votes this week, then by the date added." if open_week else "Ranked by that week’s votes, then by the date added."
-        desc = (desc + " " + ranked + f" Top: {names}.")[:156]
+        prefix = f"{prefix} {ranked}"
+        visible = _fit_names(prefix, top_names, limit=10_000)
+        desc = _fit_names(prefix, top_names, limit=156)
         when = "this week" if open_week else label
         top = chunk[:3]
         qa = (f"The newest additions on this page are {e(', '.join(x['name'] for x in top))}." if top else "No tools were added in this week.")
@@ -243,14 +290,24 @@ def launch_page(tools, start, end, wid, current):
         offset = (n - 1) * PAGE_SIZE
         for i, x in enumerate(chunk, 1):
             pos = offset + i
+            letter = e((x.get("name") or "?").strip()[:1].upper() or "?")
+            tool_url = f"../tools/{e(x['slug'])}.html"
+            img = _launch_logo(x, eager=(i <= 4))
+            rank = f" lb-rank-{pos}" if pos <= 3 else ""
             flag = '<span class="b">Fast-Track</span>' if paid(x) else ""
             items.append(
-                f'<li class="lb-row" data-slug="{e(x["slug"])}" data-added="{e(x.get("added") or "")}">'
-                f'<b class="lb-pos">{pos}</b><div><a href="../tools/{e(x["slug"])}.html"><b>{e(x["name"])}</b></a>'
-                f'<div class="lb-meta">{e(x.get("category") or "")} · added {e(x.get("added") or "")} {flag}</div>'
-                f'<p style="margin:4px 0 0">{e(x.get("description") or "")}</p></div>'
-                f'<div class="lb-vote"><button class="vote" data-vote="{e(x["slug"])}" aria-pressed="false" title="Upvote (one per visitor per day)"><span>0</span></button>'
-                f'<span class="muted" data-today>+0 today</span></div></li>'
+                f'<li class="card tile lb-card" data-slug="{e(x["slug"])}" data-added="{e(x.get("added") or "")}">'
+                f'<b class="lb-rank{rank}" aria-label="Rank {pos}">{pos}</b>'
+                f'<span class="ico"><span aria-hidden="true" data-l="{letter}"></span>{img}</span>'
+                f'<div class="lb-body"><h2 class="lb-name"><a href="{tool_url}">{e(x["name"])}</a></h2>'
+                f'<div class="lb-meta"><span class="b cat">{e(x.get("category") or "")}</span>'
+                f'<span>added {_added_short(x.get("added") or "")}</span>{flag}</div>'
+                f'<p class="lb-desc">{e(x.get("description") or "")}</p>'
+                f'<a class="lb-more" href="{tool_url}">More</a></div>'
+                f'<div class="lb-side"><div class="lb-vote">'
+                f'<button class="vote" data-vote="{e(x["slug"])}" aria-pressed="false" title="Upvote (one per visitor per day)">▲ Vote · <span>0</span></button>'
+                f'<span class="lb-today" data-today>+0 today</span></div>'
+                f'<a class="btn" href="{tool_url}">View</a></div></li>'
             )
             list_items.append({"@type": "ListItem", "position": pos, "name": x["name"], "url": f"{B}tools/{x['slug']}.html"})
         def href(k):
@@ -260,18 +317,25 @@ def launch_page(tools, start, end, wid, current):
             prev_h, next_h = href(n - 1), href(n + 1)
             bits = [f'<span>Page {n} of {npages}</span>']
             if prev_h:
-                bits.append(f'<a href="{prev_h}" rel="prev">Previous</a>')
+                bits.append(f'<a class="btn" href="{prev_h}" rel="prev">Previous</a>')
             if next_h:
-                bits.append(f'<a href="{next_h}" rel="next">Next</a>')
+                bits.append(f'<a class="btn" href="{next_h}" rel="next">Next</a>')
             pager = f'<p class="lb-pager">{"".join(bits)}</p>'
         body = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="./">Launches</a> / {e(label)}</div>
 <section class="lb-board" style="padding-top:20px;text-align:left">
-<h1 style="text-align:left">{e(h1)}</h1>
-<p class="lede" style="margin-left:0;text-align:left">{e(desc)}</p>
-<p><b>Quick answer:</b> {qa}</p>
-<p>Today’s votes on this page: <b data-today-total>0</b>. <a href="../new.html">New tools, last 30 days</a> · <a href="../submit.html">Submit free</a> · <a href="{FAST}">Fast-Track ($15)</a></p>
+<header class="lb-hero">
+<h1 class="lb-title">{e(h1)}</h1>
+<p class="lede lb-sub">{e(visible)}</p>
+<div class="st-counts lb-stats" aria-label="This launch week">
+<span class="st-count"><b>{len(rows)}</b><span>tools this week</span></span>
+<span class="st-count"><b data-today-total>0</b><span>votes today</span></span>
+<span class="st-count"><b class="lb-range">{e(label)}</b><span>{"this week" if open_week else "dates"}</span></span>
+</div>
+</header>
+<div class="lb-qa"><p><b>Quick answer:</b> {qa}</p></div>
+<p class="lb-ctas"><a class="btn primary" href="../new.html">New tools</a><a class="btn primary" href="../submit.html">Submit free</a><a class="btn primary" href="{FAST}">Fast-Track ($15)</a></p>
 {pager}
-<ol style="list-style:none;padding:0;margin:12px 0">{"".join(items) or "<li>No tools were added in this week.</li>"}</ol>
+<ol class="lb-grid">{"".join(items) or "<li>No tools were added in this week.</li>"}</ol>
 {pager}
 <p class="muted">Other weeks: {other or "—"}</p>
 </section>'''
@@ -317,6 +381,9 @@ def launches(tools):
         seen[w] = (a, b)
     seen[wid] = (start, end)
     urls = []
+    current_rows = week_tools(tools, start, end, current=True)
+    with_logo = sum(1 for x in current_rows if _logo_file(x.get("logo") or ""))
+    print(f"launch logos this week: {with_logo}/{len(current_rows)} stored logo files")
     for w, (a, b) in sorted(seen.items()):
         urls += launch_page(tools, a, b, w, current=False)
         if w == wid:
