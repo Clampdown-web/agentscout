@@ -50,6 +50,12 @@ def fmt_short(day):
     return day.strftime("%b %-d")
 
 
+# A week earns #N badges only after that Pacific Sunday, and not before 2026-11-01.
+# Earlier weeks had no vote log, so backfilling a rank would invent one.
+RANK_NOT_BEFORE = datetime.date(2026, 11, 1)
+PAGE_SIZE = 100
+
+
 def load_tools():
     return json.load(open("tools.json", encoding="utf-8"))
 
@@ -147,73 +153,162 @@ def launch_svg(slug, rank, label):
     open(f"badges/launch/{slug}.svg", "w", encoding="utf-8").write(svg)
 
 
+def clear_launch_svgs():
+    folder = "badges/launch"
+    if not os.path.isdir(folder):
+        return
+    for fn in os.listdir(folder):
+        if fn.endswith(".svg"):
+            os.remove(os.path.join(folder, fn))
+
+
+def closed_rank_week(tools):
+    """Latest ISO week that has fully ended in PT and is eligible for a rank badge."""
+    today = pt_today()
+    best = None
+    for x in tools:
+        if x.get("seed") or not x.get("added"):
+            continue
+        try:
+            a, b, w = week_span(datetime.date.fromisoformat(x["added"]))
+        except ValueError:
+            continue
+        if b < today and b >= RANK_NOT_BEFORE and (best is None or b > best[1]):
+            best = (a, b, w)
+    return best
+
+
+def assign_ranks(tools):
+    """#N this week only after the Pacific week has ended. Nothing is backfilled."""
+    X.LAUNCH_RANKS.clear()
+    clear_launch_svgs()
+    found = closed_rank_week(tools)
+    if not found:
+        return None
+    a, b, w = found
+    label = f"{fmt_short(a)}–{fmt_short(b)}"
+    for i, x in enumerate(week_tools(tools, a, b, current=False)[:10], 1):
+        launch_svg(x["slug"], i, label)
+        X.LAUNCH_RANKS[x["slug"]] = (i, w, label)
+    return found
+
+
+def _page_name(wid, current, n):
+    if current:
+        return "index.html" if n == 1 else f"page-{n}.html"
+    return f"{wid}.html" if n == 1 else f"{wid}-p{n}.html"
+
+
 def launch_page(tools, start, end, wid, current):
     rows = week_tools(tools, start, end, current=current)
     label = f"{fmt_short(start)} – {fmt_day(end)}"
-    h1 = f"AI agent tools launched this week ({label})"
-    title = f"Launches {fmt_short(start)}–{fmt_short(end)} · AgentScout"
-    if len(title) > 60:
-        title = title[:60].rsplit(" ", 1)[0]
-    names = ", ".join(x["name"] for x in rows[:3]) or "none yet"
-    desc = f"{len(rows)} tools added {label}. Ranked by votes this week, then by the date added. Top: {names}."[:156]
-    top = rows[:3]
-    qa = (f"The newest additions this week are {e(', '.join(x['name'] for x in top))}." if top else "No tools were added this week.")
-    qa += " Vote counts start at zero and come from the server, one vote per visitor per day. Ties stay in the order the tools were added, newest first."
-    items = []
-    for i, x in enumerate(rows, 1):
-        flag = '<span class="b">Fast-Track</span>' if paid(x) else ""
-        items.append(
-            f'<li class="lb-row" data-slug="{e(x["slug"])}" data-added="{e(x.get("added") or "")}">'
-            f'<b class="lb-pos">{i}</b><div><a href="../tools/{e(x["slug"])}.html"><b>{e(x["name"])}</b></a>'
-            f'<div class="lb-meta">{e(x.get("category") or "")} · added {e(x.get("added") or "")} {flag}</div>'
-            f'<p style="margin:4px 0 0">{e(x.get("description") or "")}</p></div>'
-            f'<div class="lb-vote"><button class="vote" data-vote="{e(x["slug"])}" aria-pressed="false" title="Upvote (one per visitor per day)"><span>0</span></button>'
-            f'<span class="muted" data-today>+0 today</span></div></li>'
-        )
-    canon = B + ("launches/" if current else f"launches/{wid}.html")
-    path = "launches/index.html" if current else f"launches/{wid}.html"
-    robots = "" if (current or len(rows) >= 10) else '<meta name="robots" content="noindex,follow">'
+    open_week = end >= pt_today()
     weeks = sorted({week_span(datetime.date.fromisoformat(x["added"]))[2] for x in tools if not x.get("seed") and x.get("added")})
-    links = " · ".join(f'<a href="{w}.html">{e(w)}</a>' for w in weeks if w != wid)
+    other = " · ".join(f'<a href="{w}.html">{e(w)}</a>' for w in weeks if w != wid)
     if current:
-        links = f'<a href="{wid}.html">This week’s archive</a>' + ((" · " + links) if links else "")
-    body = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="./">Launches</a> / {e(label)}</div>
+        other = f'<a href="{wid}.html">This week’s archive</a>' + ((" · " + other) if other else "")
+    pages = [rows[i:i + PAGE_SIZE] for i in range(0, len(rows), PAGE_SIZE)] or [[]]
+    npages = len(pages)
+    indexable = current or len(rows) >= 10
+    urls = []
+    os.makedirs("launches", exist_ok=True)
+    for n, chunk in enumerate(pages, 1):
+        name = _page_name(wid, current, n)
+        path = f"launches/{name}"
+        canon = B + ("launches/" if current and n == 1 else f"launches/{name}")
+        if open_week:
+            h1 = f"AI agent tools launched this week ({label})"
+        else:
+            h1 = f"AI agent tools launched {label}"
+        if n > 1:
+            h1 += f", page {n}"
+        title = f"Launches {fmt_short(start)}–{fmt_short(end)}"
+        if n > 1:
+            title += f" p{n}"
+        title += " · AgentScout"
+        if len(title) > 60:
+            title = title[:60].rsplit(" ", 1)[0]
+        names = ", ".join(x["name"] for x in chunk[:3]) or "none yet"
+        desc = f"{len(rows)} tools added {label}."
+        if npages > 1:
+            desc += f" Page {n} of {npages}."
+        ranked = "Ranked by votes this week, then by the date added." if open_week else "Ranked by that week’s votes, then by the date added."
+        desc = (desc + " " + ranked + f" Top: {names}.")[:156]
+        when = "this week" if open_week else label
+        top = chunk[:3]
+        qa = (f"The newest additions on this page are {e(', '.join(x['name'] for x in top))}." if top else "No tools were added in this week.")
+        qa += f" This page covers tools launched {e(when)}. Vote counts start at zero and come from the server, one vote per visitor per day. Ties stay in the order the tools were added, newest first."
+        items = []
+        list_items = []
+        offset = (n - 1) * PAGE_SIZE
+        for i, x in enumerate(chunk, 1):
+            pos = offset + i
+            flag = '<span class="b">Fast-Track</span>' if paid(x) else ""
+            items.append(
+                f'<li class="lb-row" data-slug="{e(x["slug"])}" data-added="{e(x.get("added") or "")}">'
+                f'<b class="lb-pos">{pos}</b><div><a href="../tools/{e(x["slug"])}.html"><b>{e(x["name"])}</b></a>'
+                f'<div class="lb-meta">{e(x.get("category") or "")} · added {e(x.get("added") or "")} {flag}</div>'
+                f'<p style="margin:4px 0 0">{e(x.get("description") or "")}</p></div>'
+                f'<div class="lb-vote"><button class="vote" data-vote="{e(x["slug"])}" aria-pressed="false" title="Upvote (one per visitor per day)"><span>0</span></button>'
+                f'<span class="muted" data-today>+0 today</span></div></li>'
+            )
+            list_items.append({"@type": "ListItem", "position": pos, "name": x["name"], "url": f"{B}tools/{x['slug']}.html"})
+        def href(k):
+            return _page_name(wid, current, k) if 1 <= k <= npages else ""
+        pager = ""
+        if npages > 1:
+            prev_h, next_h = href(n - 1), href(n + 1)
+            bits = [f'<span>Page {n} of {npages}</span>']
+            if prev_h:
+                bits.append(f'<a href="{prev_h}" rel="prev">Previous</a>')
+            if next_h:
+                bits.append(f'<a href="{next_h}" rel="next">Next</a>')
+            pager = f'<p class="lb-pager">{"".join(bits)}</p>'
+        body = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="./">Launches</a> / {e(label)}</div>
 <section class="lb-board" style="padding-top:20px;text-align:left">
 <h1 style="text-align:left">{e(h1)}</h1>
 <p class="lede" style="margin-left:0;text-align:left">{e(desc)}</p>
 <p><b>Quick answer:</b> {qa}</p>
-<p>Today’s votes on this list: <b data-today-total>0</b>. <a href="../new.html">New tools, last 30 days</a> · <a href="../submit.html">Submit free</a> · <a href="{FAST}">Fast-Track ($15)</a></p>
+<p>Today’s votes on this page: <b data-today-total>0</b>. <a href="../new.html">New tools, last 30 days</a> · <a href="../submit.html">Submit free</a> · <a href="{FAST}">Fast-Track ($15)</a></p>
+{pager}
 <ol style="list-style:none;padding:0;margin:12px 0">{"".join(items) or "<li>No tools were added in this week.</li>"}</ol>
-<p class="muted">Other weeks: {links or "—"}</p>
+{pager}
+<p class="muted">Other weeks: {other or "—"}</p>
 </section>'''
-    ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "CollectionPage", "name": h1, "description": desc, "url": canon},
-        {"@type": "ItemList", "name": h1, "numberOfItems": len(rows), "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "name": x["name"], "url": f"{B}tools/{x['slug']}.html"} for i, x in enumerate(rows)
-        ]},
-        {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "AgentScout", "item": B},
-            {"@type": "ListItem", "position": 2, "name": "Launches", "item": B + "launches/"},
-            {"@type": "ListItem", "position": 3, "name": label, "item": canon},
-        ]},
-    ]}
-    os.makedirs("launches", exist_ok=True)
-    page = X.shell("../", title, desc, canon, body, ld)
-    if robots:
-        page = page.replace("</head>", robots + "</head>", 1)
-    finish_page(path, page)
-    return canon, len(rows) >= 10 or current, wid
+        ld = {"@context": "https://schema.org", "@graph": [
+            {"@type": "CollectionPage", "name": h1, "description": desc, "url": canon},
+            {"@type": "ItemList", "name": h1, "numberOfItems": len(chunk), "itemListElement": list_items},
+            {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "AgentScout", "item": B},
+                {"@type": "ListItem", "position": 2, "name": "Launches", "item": B + "launches/"},
+                {"@type": "ListItem", "position": 3, "name": label if n == 1 else f"{label}, page {n}", "item": canon},
+            ]},
+        ]}
+        page = X.shell("../", title, desc, canon, body, ld)
+        extra = ""
+        if not indexable:
+            extra += '<meta name="robots" content="noindex,follow">'
+        if current and n == 2:
+            extra += f'<link rel="prev" href="{B}launches/">'
+        elif href(n - 1):
+            extra += f'<link rel="prev" href="{B}launches/{href(n - 1)}">'
+        if href(n + 1):
+            extra += f'<link rel="next" href="{B}launches/{href(n + 1)}">'
+        if extra:
+            page = page.replace("</head>", extra + "</head>", 1)
+        finish_page(path, page)
+        if indexable:
+            urls.append(canon)
+    return urls
 
 
 def launches(tools):
-    X.LAUNCH_RANKS.clear()
+    assign_ranks(tools)
+    if os.path.isdir("launches"):
+        for fn in os.listdir("launches"):
+            if re.fullmatch(r"page-\d+\.html", fn) or re.fullmatch(r"\d{4}-w\d{2}-p\d+\.html", fn):
+                os.remove(os.path.join("launches", fn))
     start, end, wid = week_span(pt_today())
-    current_rows = week_tools(tools, start, end, current=True)
-    label = f"{fmt_short(start)}–{fmt_short(end)}"
-    for i, x in enumerate(current_rows[:10], 1):
-        launch_svg(x["slug"], i, label)
-        X.LAUNCH_RANKS[x["slug"]] = (i, wid, label)
-    urls = []
     seen = {}
     for x in tools:
         if x.get("seed") or not x.get("added"):
@@ -221,14 +316,11 @@ def launches(tools):
         a, b, w = week_span(datetime.date.fromisoformat(x["added"]))
         seen[w] = (a, b)
     seen[wid] = (start, end)
-    urls = [B + "launches/"]
+    urls = []
     for w, (a, b) in sorted(seen.items()):
-        launch_page(tools, a, b, w, current=False)
-        rows = week_tools(tools, a, b, current=(w == wid))
-        if len(rows) >= 10:
-            urls.append(B + f"launches/{w}.html")
+        urls += launch_page(tools, a, b, w, current=False)
         if w == wid:
-            launch_page(tools, a, b, w, current=True)
+            urls += launch_page(tools, a, b, w, current=True)
     return urls
 
 
@@ -285,8 +377,8 @@ def badge_page_note():
         return
     s = open(path, encoding="utf-8").read()
     note = ('<h2 style="font-size:18px;margin:32px 0 8px">#N this week</h2>'
-            '<p>The top 10 tools on the <a href="launches/">weekly launch board</a> get a badge with the rank and the week baked into the image, so it still says the truth later. '
-            'Showing a badge is a thank-you. It does not change your rank and it does not earn a Featured spot.</p>')
+            '<p>After a Pacific week has ended (Monday through Sunday), the top 10 tools on that week’s <a href="launches/">launch board</a> get a badge with the rank and the week baked into the image, so it still says the truth later. '
+            'A week that is still open does not get a rank badge. Showing a badge is a thank-you. It does not change your rank and it does not earn a Featured spot.</p>')
     if "#N this week" not in s:
         s = s.replace("<h2 id=\"featured-badge\"", note + "<h2 id=\"featured-badge\"", 1)
         if "#N this week" not in s:
@@ -475,7 +567,17 @@ def sitemap(extra):
             block += f"  <url><loc>{u}</loc><lastmod>{day}</lastmod></url>\n"
     if block:
         sm = sm.replace("</urlset>", block + "</urlset>")
-        open("sitemap.xml", "w", encoding="utf-8").write(sm)
+
+    def keep(m):
+        loc = m.group(1)
+        if "/launches/" not in loc:
+            return m.group(0)
+        rel = loc.split("agentscouthq.com/", 1)[-1]
+        path = (rel + "index.html") if rel.endswith("/") else rel
+        return m.group(0) if os.path.exists(path) else ""
+
+    sm = re.sub(r"  <url><loc>([^<]+)</loc><lastmod>[^<]*</lastmod></url>\n", keep, sm)
+    open("sitemap.xml", "w", encoding="utf-8").write(sm)
 
 
 def llms():
@@ -508,13 +610,18 @@ def emails(tools):
         "<p>Hi {{NAME}},</p>\n<p>Thank you for the paid AgentScout listing ($15 Fast-Track or above) for {{NAME}}.</p>\n"
         + snippet + "<p>Your page: https://agentscouthq.com/tools/{{SLUG}}.html</p>\n"
     )
-    start, end, wid = week_span(pt_today())
-    rows = week_tools(tools, start, end, current=True)[:10]
+    found = closed_rank_week(tools)
     parts = ["<!doctype html><meta charset=\"utf-8\"><title>DRAFT weekly rank badges — do not send until the owner approves</title>",
-             "<p>Draft only. Not approved to send.</p>"]
-    for i, x in enumerate(rows, 1):
-        parts.append(f"<h2>#{i} {e(x['name'])}</h2><p>Thank you. Your rank for {e(wid)} is #{i}. The badge is optional and does not change placement.</p>")
-        parts.append(f'<p><img src="../../badges/launch/{e(x["slug"])}.svg" alt="Launched on AgentScout, #{i} this week" width="260" height="54"></p>')
+             "<p>Draft only. Not approved to send. A rank is final only after that Pacific week has ended.</p>"]
+    if not found:
+        start, end, wid = week_span(pt_today())
+        parts.append(f"<p>No final ranks. {e(wid)} ({e(fmt_short(start))}–{e(fmt_day(end))}) is still open, or no eligible week has closed yet. Earlier weeks are not backfilled.</p>")
+    else:
+        a, b, wid = found
+        rows = week_tools(tools, a, b, current=False)[:10]
+        for i, x in enumerate(rows, 1):
+            parts.append(f"<h2>#{i} {e(x['name'])}</h2><p>Thank you. Your rank for {e(wid)} is #{i}. The badge is optional and does not change placement.</p>")
+            parts.append(f'<p><img src="../../badges/launch/{e(x["slug"])}.svg" alt="Launched on AgentScout, #{i} this week" width="260" height="54"></p>')
     open("data/outreach/weekly-rank-badge-drafts.html", "w", encoding="utf-8").write("\n".join(parts))
 
 

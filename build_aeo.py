@@ -10,7 +10,7 @@ import build_api
 e = html.escape
 B = "https://agentscouthq.com/"
 OS = {"Open source", "Open source + cloud", "Open weights", "Open standard"}
-SKIP = {"best/index.html", "mcp/index.html", "mcp/connect.html", "mcp/pricing.html", "mcp/link-status.html", "s/index.html", "categories/index.html"}
+SKIP = {"best/index.html", "mcp/index.html", "mcp/connect.html", "mcp/pricing.html", "mcp/status/index.html", "s/index.html", "categories/index.html"}
 MO = ("", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 ALT_NAMES = ["Agent Scout", "AgentScoutHQ", "agentscouthq.com", "com.agentscouthq/directory"]
@@ -539,7 +539,7 @@ def write_llms_full(t):
         f"- [Best MCP Servers for Codex]({B}best/mcp-servers-for-codex.html)",
         f"- [Cursor Alternatives]({B}best/cursor-alternatives.html)",
         f"- [MCP Server Pricing Table (with change history)]({B}mcp/pricing.html)",
-        f"- [MCP Server Link Status Table (with twice-daily HTTP check history)]({B}mcp/link-status.html)",
+        f"- [MCP server status (with twice-daily HTTP check history)]({B}mcp/status/)",
         f"- [Link-check status (JSON)]({B}status.json): last-checked time, live or down status, and check history for every MCP server",
         "",
         "---",
@@ -588,7 +588,7 @@ def write_llms_full(t):
         "",
         f"## Complete Verified MCP Servers Catalog ({len(ranked_mcp):,} MCP Servers)",
         "",
-        f"Full table of all {len(ranked_mcp):,} Model Context Protocol (MCP) servers listed on AgentScout, cross-referenced with `{B}mcp/pricing.html` and `{B}mcp/link-status.html`.",
+        f"Full table of all {len(ranked_mcp):,} Model Context Protocol (MCP) servers listed on AgentScout, cross-referenced with `{B}mcp/pricing.html` and `{B}mcp/status/`.",
         "",
         "| # | MCP Server | Pricing | Link Status | Runs Locally | License | GitHub Stars | Primary Use Case | Description | AgentScout Listing | Official / Repo URL |",
         "|---|---|---|---|---|---|---:|---|---|---|---|",

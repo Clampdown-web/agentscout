@@ -43,7 +43,7 @@ Catalog last checked: 2026-10-30 (Pacific)
 ## Key pages
 
 - [MCP server pricing table](https://agentscouthq.com/mcp/pricing.html): every MCP server's stated pricing, dated, with change history
-- [MCP server link status](https://agentscouthq.com/mcp/link-status.html): latest automated link check for every MCP server, with change history
+- [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
 - [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 276 tools

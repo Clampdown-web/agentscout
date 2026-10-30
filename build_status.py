@@ -271,10 +271,10 @@ def panel(doc, servers, prefix, heading):
             if any(ev["note"].startswith(name + " link status") for name in names):
                 hist.append(ev)
     parts.append(_hist_html(hist))
-    parts.append(f'<div class="vc-btns"><a class="vc-btn" href="{prefix}status.json">status.json</a><a class="vc-btn" href="{prefix}mcp/link-status.html">Full MCP link-status table</a></div></section><!--/vs:list-->')
+    parts.append(f'<div class="vc-btns"><a class="vc-btn" href="{prefix}status.json">status.json</a><a class="vc-btn" href="{prefix}mcp/status/">MCP status</a></div></section><!--/vs:list-->')
     html_ = "".join(parts)
     if prefix == "../":
-        html_ = html_.replace('href="../mcp/link-status.html"', 'href="link-status.html"')
+        html_ = html_.replace('href="../mcp/status/"', 'href="status/"')
     return html_
 
 
@@ -297,7 +297,7 @@ def tool_rows(item):
         body.append(_hist_html(item["history"], 5))
     else:
         body.append("<p>not yet checked</p>")
-    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/link-status.html">Full MCP link-status table</a></div></div>')
+    body.append('<div class="vc-btns"><a class="vc-btn" href="../status.json">status.json</a><a class="vc-btn" href="../mcp/status/">MCP status</a></div></div>')
     return ("<!--vs:tool--><dt>Status</dt><dd>" + e(status) + extra + "</dd>"
             '<dd class="vc-row">' + "".join(body) + "</dd><!--/vs:tool-->")
 
@@ -388,7 +388,7 @@ def link_llms():
     s = open(path).read()
     if "status.json" in s:
         return
-    anchor = f"- [MCP server link status]({B}mcp/link-status.html): latest automated link check for every MCP server, with change history"
+    anchor = f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history"
     if anchor in s:
         s = s.replace(anchor, anchor + "\n" + line, 1)
         open(path, "w").write(s)
@@ -541,12 +541,9 @@ def write_dashboard(tools):
             node.pop("dateModified", None)
     os.makedirs("mcp/status", exist_ok=True)
     open("mcp/status/index.html", "w").write(X.shell("../../", title, desc, canon, body, ld))
-    open("mcp/link-status.html", "w").write(
-        '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>MCP server status · AgentScout</title>'
-        f'<link rel="canonical" href="{canon}"><meta name="robots" content="noindex,follow">'
-        '<meta http-equiv="refresh" content="0; url=status/"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'</head><body><a href="status/">MCP server status</a></body></html>\n'
-    )
+    # /mcp/link-status.html is a Pages 301 in _redirects. A real file would override that rule.
+    if os.path.exists("mcp/link-status.html"):
+        os.remove("mcp/link-status.html")
     print(f"status dashboard: {live} up, {down} down, {miss} not yet checked")
     return canon
 

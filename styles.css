@@ -738,6 +738,7 @@ nav .links a.navsrch{font-weight:600;color:var(--text)}
 .lb-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line);min-width:0;max-width:100%}
 .lb-row > *{min-width:0;max-width:100%}
 .lb-row a,.lb-row p,.lb-meta{overflow-wrap:anywhere}.lb-meta{font-size:13px;color:var(--muted)}
+.lb-pager{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:12px 0}
 .lb-vote{display:flex;flex-direction:column;align-items:flex-end;gap:4px;min-width:72px}
 .chk-list{list-style:none;padding:0;margin:0}.chk-list li{margin:0 0 8px}.chk-list label{display:flex;gap:10px;align-items:flex-start;min-height:44px}
 .botstore-cta{margin:28px 0;padding:14px 16px;border:1px solid rgba(163,230,53,.45);border-radius:14px;background:var(--card);max-width:100%;box-sizing:border-box}

@@ -142,7 +142,7 @@ def packages_grid(t, m=None, on_submit=False):
         <p class="pkg-sub">Get your AI agent tool or MCP server indexed in the public AgentScout directory at zero cost.</p>
         <ul class="pkg-list">
           <li><span class="pkg-chk">✓</span><span><b>Standard review queue (3–5 days):</b> Every link and description verified by our editorial team</span></li>
-          <li><span class="pkg-chk">✓</span><span><b>Permanent <code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code> page:</b> Indexed in Google with full <code style="font-size:12.5px">SoftwareApplication</code> JSON-LD schema</span></li>
+          <li><span class="pkg-chk">✓</span><span><b>Permanent <code style="font-size:12.5px">/tools/&lt;slug&gt;.html</code> page</b> with full <code style="font-size:12.5px">SoftwareApplication</code> JSON-LD schema, submitted to Bing and IndexNow search engines.</span></li>
           <li><span class="pkg-chk">✓</span><span><b>AI &amp; MCP discovery:</b> Listed in <code style="font-size:12.5px">llms.txt</code> and searchable via our MCP server (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
           <li><span class="pkg-chk">✓</span><span><b><code style="font-size:12.5px">✓ Submitted by maker</code> badge:</b> Plus free embeddable README / website badge &amp; free edits anytime</span></li>
         </ul>

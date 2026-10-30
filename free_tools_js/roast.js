@@ -1,6 +1,6 @@
 function $(i){return document.getElementById(i)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-var W="https://api.agentscouthq.com/roast",W_FB="https://agentscout-image.agentscouthq.workers.dev/roast";
+var W="https://votes.agentscouthq.com/roast";
 var FAST="https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e";
 function show(d){
   if(!d||d.error){$("rout").innerHTML='<p class="empty" role="alert">'+esc((d&&d.error)||"The check failed. Try again in a minute.")+'</p>';return}
@@ -13,7 +13,7 @@ function show(d){
 }
 function go(u){
   $("rb").disabled=true;$("rout").innerHTML='<p class="muted">Checking '+esc(u)+'…</p>';
-  fetch(W+"?url="+encodeURIComponent(u)).catch(function(){return fetch(W_FB+"?url="+encodeURIComponent(u))}).then(function(r){return r.json()}).then(show).catch(function(){show({error:"The check failed. Try again in a minute."})}).finally(function(){$("rb").disabled=false})
+  fetch(W+"?url="+encodeURIComponent(u)).then(function(r){return r.json()}).then(show).catch(function(){show({error:"The check failed. Try again in a minute."})}).finally(function(){$("rb").disabled=false})
 }
 $("rf").addEventListener("submit",function(ev){ev.preventDefault();var u=$("ru").value.trim();if(u)go(u)});
 var hs=decodeURIComponent(location.hash.slice(1));if(hs){$("ru").value=hs;$("rf").requestSubmit()}

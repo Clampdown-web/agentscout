@@ -154,7 +154,28 @@ def detect(m):
         _save(m)
     return m
 
+# Cloudflare Pages serves a real file over _redirects, so these stay as 301 rules only.
+CF_REDIRECTS = {
+    "mcp/link-status.html": ("/mcp/status/", "301"),
+}
+
+def ensure_cf_redirects():
+    path = "_redirects"
+    lines = []
+    if os.path.exists(path):
+        lines = [ln for ln in open(path, encoding="utf-8").read().splitlines() if ln.strip()]
+    have = {ln.split()[0] for ln in lines if ln.split()}
+    for src, (dst, code) in CF_REDIRECTS.items():
+        rule_src = "/" + src.lstrip("/")
+        rule = f"{rule_src} {dst} {code}"
+        if rule_src not in have:
+            lines.append(rule)
+        if os.path.exists(src):
+            os.remove(src)
+    open(path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
+
 def run():
+    ensure_cf_redirects()
     m = detect(load())
     if not m:
         print("redirects: none")
@@ -171,6 +192,8 @@ def run():
         dst = dst.lstrip("/")
         if not src.endswith(".html") or not (dst.endswith(".html") or dst.endswith("/") or dst == ""):
             print("redirects: skip bad paths", src, "->", dst)
+            continue
+        if src in CF_REDIRECTS:
             continue
         if src in live:
             print("redirects: page is live again, skip", src)
