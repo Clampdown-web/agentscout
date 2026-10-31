@@ -584,6 +584,12 @@ nav .links a.navsp:hover>.npsp{background:var(--np);color:#fff;box-shadow:0 0 0 
 [data-theme=dark] nav .links a.navsp:hover>.npsp{color:#0b0b12}
 @media(max-width:420px){nav .links a.navsp .npico{display:none}nav .links a.navsp>.npsp{font-size:12px;padding:0 4px}nav .links a.btn.primary{padding:0 9px;font-size:12.5px}}
 @media(max-width:359px){nav .links a.navsp>.npsp{font-size:11.5px;padding:0 3px}}
+/* Header neon pills: inner padding so the label never touches the ring, wrap into centered rows, never clip. Icons, colors, and labels stay as written in the nav. */
+nav .links .navpills{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:8px;row-gap:8px;max-width:100%;min-width:0}
+nav .links .navpills>a,nav .links .navpills .npill,nav .links .navpills .mcppill{overflow:visible;flex-shrink:0;max-width:100%}
+nav .links .navpills .npill,nav .links .navpills a.navmcp .mcppill,nav .links .navpills a.navsp>.npsp{padding:4px 10px;gap:5px;box-sizing:border-box}
+nav .links .navpills .npico,nav .links .navpills a.navsp .npico,nav .links .navpills a.navmcp .mcpico{display:block}
+@media(max-width:1023px){nav .links .navpills{flex:1 0 100%;width:100%}nav .links>a.btn.primary{margin-left:auto;margin-right:auto}}
 
 /* 2. Visually Attractive 3-Tier Pricing Cards (/sponsor.html & /submit.html) */
 .sp-eyebrow.npill,.hms-copy>.npill{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.01em;margin-bottom:8px;max-width:100%;white-space:normal;line-height:1.35}
