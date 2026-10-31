@@ -261,8 +261,8 @@ def _write_best_chrome(path, title, desc, canon, body, ld):
     donor=re.sub(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{e(title)}">', donor, count=1)
     donor=re.sub(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{e(desc)}">', donor, count=1)
     donor=re.sub(r'<meta name="twitter:image" content="[^"]*">', '<meta name="twitter:image" content="https://agentscouthq.com/og.png">', donor, count=1)
-    for _old in ("202610290319", "202610301636", "202610301656", "202610310006", "202610310030", "202610310039"):
-        donor=donor.replace("styles.css?v="+_old, "styles.css?v=202610310114")
+    for _old in ("202610290319", "202610301636", "202610301656", "202610310006", "202610310030", "202610310039", "202610310114", "202610310137"):
+        donor=donor.replace("styles.css?v="+_old, "styles.css?v=202610310148")
     import json as _json
     script='<script type="application/ld+json">'+_json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+'</script>'
     def repl(m):
