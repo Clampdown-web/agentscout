@@ -1,6 +1,53 @@
 {
  "items": [
   {
+   "url": "https://x.com/AnthropicAI/status/2116349211549843666",
+   "page": "news/2026/10/anthropic-sets-thousands-of-claude-agents-on-automated-red-teaming.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Anthropic sets thousands of Claude agents on automated red-teaming",
+   "source": "X",
+   "date": "2026-10-31T01:59:06Z",
+   "summary": "Anthropic tested whether red-teaming can be automated by tasking thousands of Claude agents with crafting training data that slips past a safety monitor while instilling subtle misalignment, and is using the results to harden its screens."
+  },
+  {
+   "url": "https://x.com/rauchg/status/2116345666108854781",
+   "page": "news/2026/10/vercel-labs-open-sources-agent-desktop-for-computer-use.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Vercel Labs open-sources agent-desktop for computer use",
+   "source": "X",
+   "date": "2026-10-31T01:45:01Z",
+   "tool": "agent-desktop",
+   "summary": "Vercel Labs released agent-desktop, an Apache-2.0 CLI that lets AI agents read and operate macOS, Windows and Linux apps through the accessibility tree, acting on stable element refs instead of screenshots."
+  },
+  {
+   "url": "https://x.com/OpenAIDevs/status/2116306164375863343",
+   "page": "news/2026/10/openai-ships-agents-api-updates-auto-review-async-compaction-time.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "OpenAI ships Agents API updates: auto review, async compaction, time awareness",
+   "source": "X",
+   "date": "2026-10-30T23:08:03Z",
+   "summary": "OpenAI's weekly Agents API roundup adds Auto Review to flag risky commands before they run, async compaction for long sessions and time awareness so agents can reason about deadlines."
+  },
+  {
+   "url": "https://x.com/pika_labs/status/2116288173378810003",
+   "page": "news/2026/10/pika-h3-flex-open-weights-video-model-with-audio-stems.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Pika H3 Flex: open-weights video model with audio stems",
+   "source": "X",
+   "date": "2026-10-30T21:56:33Z",
+   "summary": "Pika detailed H3 Flex, an open-weights video model post-trained to generate in six denoising steps, with exportable audio stems, up to 4K output and pricing from $0.01 per second."
+  },
+  {
+   "url": "https://www.businesswire.com/news/home/20261030731831/en/Ramen-Launches-Aura-Autopilot-its-Open-Source-Autonomous-Game-Tester-for-Unreal-Engine-Unity-and-Godot",
+   "page": "news/2026/10/ramen-open-sources-aura-autopilot-a-self-improving-game-playtester.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Ramen open-sources Aura Autopilot, a self-improving game playtester",
+   "source": "Business Wire",
+   "date": "2026-10-30T16:00:00Z",
+   "tool": "aura-autopilot",
+   "summary": "Ramen released Aura Autopilot under Apache-2.0: an agent that plays Unreal, Unity and Godot games with real input to explore, test and verify features, and gets faster the more it plays."
+  },
+  {
    "url": "https://x.com/FactoryAI/status/2115934579446182213",
    "page": "news/2026/10/factory-ships-droid-1-0-a-new-engine-for-its-coding-agent.html",
    "first_seen": "2026-10-30T14:03:21Z",
@@ -28,6 +75,34 @@
    "tool": "wabi"
   },
   {
+   "url": "https://x.com/sqs/status/2115692575730610618",
+   "page": "news/2026/10/amp-adds-macos-satellites-so-cloud-coding-agents-can-borrow-a-mac.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Amp adds macOS Satellites so cloud coding agents can borrow a Mac only when they need one",
+   "source": "X",
+   "date": "2026-10-29T06:29:52Z",
+   "tool": "amp",
+   "summary": "Amp's remote agents can now call in short-lived cloud Macs for iOS and macOS builds and simulators while doing the rest of the work on Linux; Quinn Slack says agents only needed a Mac about 35% of the time, making macOS work faster and cheaper."
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOZ3RTMTFrQlRpeGpCM3NMRjVuV0YyMDR1SFdrNjctc2NoQV9OVF9Mck9IYWdEMmdYZHFkdHFTTXlvb2lnUk1tZFdpVjdLTGxHcUliY1otdlBBSENPbEJQVlY3QWdhdVJCNHA0bWpwOTY2TUx6ZS1RT2Rka2lLZDVzNmRFLXRtNnVGRXhKYWd4TGdQeDR0RVhGa01HVWx4S1cwNkY5SnlhUVMtMFBIT2JhdGUtbDBSbnhjMXdUcURGSXliRkFKaXdrQndCUUJVMEswdno1eFlyMEFIOTJBSW9mY1ZPcjFQTk83dkVUZy1saHhHY3NTbXdKaFNnU2lsM013RzZB?oc=5",
+   "page": "news/2026/10/who-owns-the-ai-agent-what-veeams-trust-gap-research-says-about-rogue.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Who Owns the AI Agent? What Veeam's Trust Gap Research Says About Rogue AI Detection",
+   "source": "Daily Cal",
+   "date": "2026-10-28T23:00:00Z",
+   "tool": "rogue"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOWGMxV1JyV3BLbURPQTBWSHF0TmllaXRxZHVxa2hyUlptQzdyNUhpM3FkaDFXeFowNDlRYmFoZDQ4bXhUTm94c3hyWTNObzM1ZktKQXU2WHhPOG5GSEFlRC1UM2U1VEJ2aEhqSUhvSml3TnZQaUFJREdVbndUdmpLcVFXbWJSZTVxQW5mWFRtTkZqcVlZZzdtSFFOYXBNeE9PUGxXd2xHckwzTFhKQmNsN1pRTjZhbmxMTmMzWTdheUJUMmxOaXg0MmZEX1N6czZjTmc?oc=5",
+   "page": "news/2026/10/github-copilot-usage-metrics-now-identify-custom-skills-agents-and.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "GitHub Copilot Usage Metrics Now Identify Custom Skills, Agents and MCP Servers",
+   "source": "Visual Studio Magazine",
+   "date": "2026-10-28T20:13:27Z",
+   "tool": "github-copilot"
+  },
+  {
    "url": "https://x.com/Suhail/status/2115497949421883648",
    "page": "news/2026/10/particle-launches-particle-1-a-developer-model-that-matches-deepseek.html",
    "first_seen": "2026-10-29T14:03:59Z",
@@ -35,6 +110,25 @@
    "source": "X",
    "date": "2026-10-28T17:36:29Z",
    "summary": "Mixpanel founder Suhail Doshi's new company Particle released particle-1, a developer- and agent-focused model tuned for token efficiency that keeps parity with its base model while using about 45% fewer tokens; it is live via Particle's inference service, OpenRouter and Vercel AI Gateway."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2115494553780367384",
+   "page": "news/2026/10/gemini-4-carbon-takes-1-on-artificial-analysis-intelligence-index-v5.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "Gemini 4 Carbon takes #1 on Artificial Analysis Intelligence Index v5",
+   "source": "X",
+   "date": "2026-10-28T17:23:00Z",
+   "summary": "Artificial Analysis' new Intelligence Index v5, which leans on private test sets, ranks Google's Gemini 4 Carbon first at 59, with Claude Opus 5.5 still leading its Coding Agent Index."
+  },
+  {
+   "url": "https://x.com/ArtificialAnlys/status/2115477376981508419",
+   "page": "news/2026/10/github-copilot-fusion-orchestrates-anthropic-and-openai-models-at.html",
+   "first_seen": "2026-10-31T14:08:05Z",
+   "title": "GitHub Copilot Fusion orchestrates Anthropic and OpenAI models at half the cost per task",
+   "source": "X",
+   "date": "2026-10-28T16:14:44Z",
+   "tool": "github-copilot",
+   "summary": "GitHub released Copilot Fusion, a runtime orchestration system that routes work between Anthropic and OpenAI models; Artificial Analysis measured it 2 points below Opus 5.5 in Claude Code on its Coding Agent Index at about half the cost per task."
   },
   {
    "url": "https://x.com/i/trending/2115223324565356550",

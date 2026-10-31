@@ -8175,5 +8175,42 @@
 "mcp-servers",
 "terminal-agents",
 "rules-config"
+],
+"muse-meta": [
+"agent-payments",
+"planning-tasks",
+"chat-app-agents",
+"sandboxes",
+"stem-separation",
+"mobile"
+],
+"agent-desktop": [
+"parallel-orchestration",
+"computer-use",
+"agent-frameworks",
+"terminal-agents"
+],
+"aura-autopilot": [
+"testing-qa",
+"agent-memory",
+"planning-tasks",
+"computer-use",
+"mcp-servers",
+"agent-frameworks",
+"games",
+"rules-config"
+],
+"beautiful-rust": [
+"terminal-agents",
+"images-design",
+"rules-config"
+],
+"artil": [
+"planning-tasks",
+"chat-app-agents",
+"email-agents",
+"agent-auth",
+"mcp-servers",
+"terminal-agents"
 ]
 }

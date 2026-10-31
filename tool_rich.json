@@ -29396,5 +29396,355 @@
    "osi": true
   },
   "updated": "2026-10-30"
+ },
+ "intelligent-terminal": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Intelligent Terminal is an experimental Microsoft fork of Windows Terminal with agent integration built in. It keeps the tabs, profiles, themes, shells and shortcuts of Windows Terminal and adds an agent status bar, a dedicated agent pane, agent management and error detection that can hand a failed command to your agent.",
+   "It works with any Agent Client Protocol (ACP) compatible agent CLI and sets up GitHub Copilot CLI by default if you have no preference. Install it from the Microsoft Store or WinGet on Windows 10 2004 or later; you need a supported agent CLI and subscription. MIT-licensed."
+  ],
+  "who": "Windows developers who want their coding agent docked inside the terminal.",
+  "features": [
+   "Fork of Windows Terminal with an agent pane",
+   "Works with any ACP-compatible agent CLI",
+   "Agent status bar and agent management",
+   "Error detection that hands failures to the agent",
+   "Microsoft Store and WinGet installs"
+  ],
+  "faq": [
+   [
+    "Which agents does it support?",
+    "Any Agent Client Protocol (ACP) compatible CLI; GitHub Copilot CLI is the default."
+   ]
+  ],
+  "sources": [
+   "https://github.com/microsoft/intelligent-terminal",
+   "https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/"
+  ],
+  "facts": {
+   "repo": "https://github.com/microsoft/intelligent-terminal",
+   "stars": 2095,
+   "forks": 172,
+   "checked": "2026-10-31",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "adr": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "ADR (Agentic AI Detection and Response) is Uber's open-source security system for enterprise AI agents, deployed in production at Uber and described in a paper accepted to MLSys 2026. It covers employee-facing coding agents such as Cursor, Claude Code, Codex and GitHub Copilot CLI as well as customer-facing support agents.",
+   "The release includes ADR Discovery (inventories AI apps, CLI agents, IDE extensions, local model runtimes and MCP servers on endpoints), the ADR Sensor for capturing agent intent, tool use and execution traces, ADR-Bench with 300+ tasks and 134 MCP servers, and a two-tier ADR Detector. The prevention component is not yet open-sourced. Apache-2.0."
+  ],
+  "who": "Security teams rolling out coding and support agents across a company.",
+  "features": [
+   "Discovers unsanctioned AI tools and MCP servers",
+   "Traces agent intent and tool use across 7+ coding tools",
+   "ADR-Bench: 300+ tasks covering 17 attack techniques",
+   "Two-tier threat detection",
+   "In production at Uber"
+  ],
+  "faq": [
+   [
+    "Is the prevention layer included?",
+    "No. The open-source release has Discovery, Sensor, Bench and Detector; Prevention is announced as coming later."
+   ]
+  ],
+  "sources": [
+   "https://github.com/uber/ADR",
+   "https://arxiv.org/abs/2605.17380"
+  ],
+  "facts": {
+   "repo": "https://github.com/uber/ADR",
+   "stars": 2090,
+   "forks": 226,
+   "checked": "2026-10-31",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "ante": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Ante is Antigma Labs' terminal coding agent: one roughly 15 MB download that expands to a single Rust executable with zero runtime dependencies, with grep and git embedded and local inference handled through a managed llama.cpp. It works like Claude Code or Codex but with any model, and a single settings profile can define a whole agent including its system prompt.",
+   "Antigma evaluates Ante publicly as a harness across model families on Terminal-Bench 2.1, with each result pinned to a downloadable build. It is in beta preview for macOS and Linux (WSL on Windows) and can also serve as the core for building your own agent harness. Apache-2.0."
+  ],
+  "who": "Developers who want a lightweight, model-agnostic coding agent in the terminal.",
+  "features": [
+   "Single Rust binary, no runtime dependencies",
+   "Works with any model, including local via llama.cpp",
+   "Declarative agent profiles",
+   "Public Terminal-Bench evaluations",
+   "Embeddable as a harness core"
+  ],
+  "faq": [
+   [
+    "Does Ante run on Windows?",
+    "Not natively yet; it targets macOS and Linux, and the team suggests WSL on Windows."
+   ]
+  ],
+  "sources": [
+   "https://github.com/AntigmaLabs/ante",
+   "https://antigma.ai"
+  ],
+  "facts": {
+   "repo": "https://github.com/AntigmaLabs/ante",
+   "stars": 2011,
+   "forks": 78,
+   "checked": "2026-10-31",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "perplexity-space": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "SPACE (Sandboxed Platform for Agentic Code Execution) is Perplexity's open-source sandbox platform. Applications call its HTTP API to create Linux environments from templates, each sandbox in its own Firecracker microVM with a writable filesystem, then run commands, stream output and collect exit results.",
+   "Sandboxes can be kept, paused or suspended and woken later; lifecycle changes are asynchronous operations, and command output travels over a separate data-plane connection with session-scoped tokens. The setup guide deploys SPACE on a local Kind Kubernetes cluster, and hosted docs cover the guide and API reference. Apache-2.0."
+  ],
+  "who": "Platform teams that need isolated execution environments for agents or user code.",
+  "features": [
+   "Firecracker microVM per sandbox",
+   "HTTP API for sandboxes and command sessions",
+   "Pause, suspend and wake lifecycle",
+   "Template-based environments",
+   "Kubernetes deployment guide"
+  ],
+  "faq": [
+   [
+    "Does SPACE need Kubernetes?",
+    "The standard setup uses Kubernetes (Kind locally); the architecture guide explains how it can run without it."
+   ]
+  ],
+  "sources": [
+   "https://github.com/perplexityai/SPACE",
+   "https://space.docs.perplexity.ai/guide/index.html"
+  ],
+  "facts": {
+   "repo": "https://github.com/perplexityai/SPACE",
+   "stars": 2014,
+   "forks": 176,
+   "checked": "2026-10-31",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "langchain-rb": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Langchain.rb brings LLM application building to Ruby. Its Langchain::LLM module gives one interface for embeddings, completions and chat across Anthropic, AWS Bedrock, Azure OpenAI, Cohere, Google Gemini and Vertex AI, Hugging Face, Mistral, Ollama, OpenAI and Replicate, so you can switch providers without rewriting code.",
+   "On top it adds prompt management, output parsers, RAG over many vector stores, Assistants with tool calling and built-in evaluations. A companion langchainrb_rails gem adds deep Rails integration. Installed with bundle add langchainrb; MIT-licensed."
+  ],
+  "who": "Ruby and Rails developers adding LLM features, RAG or assistants to their apps.",
+  "features": [
+   "Unified API across a dozen LLM providers",
+   "RAG with vector search",
+   "Assistants with tool calling",
+   "Prompt templates and output parsers",
+   "Rails integration gem"
+  ],
+  "faq": [
+   [
+    "Is there Rails support?",
+    "Yes, through the companion langchainrb_rails gem."
+   ]
+  ],
+  "sources": [
+   "https://github.com/patterns-ai-core/langchainrb",
+   "https://rubydoc.info/gems/langchainrb"
+  ],
+  "facts": {
+   "repo": "https://github.com/patterns-ai-core/langchainrb",
+   "stars": 2006,
+   "forks": 270,
+   "checked": "2026-10-31",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "jido": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Jido (Japanese for 'automatic') is an Elixir framework for autonomous agents and multi-agent systems built as ordinary Elixir and OTP software. Agents are immutable data structures with a single cmd/2 function; actions do work and transform state, signals route events, and directives describe effects the runtime executes.",
+   "Supervision and fault tolerance come from the BEAM, keeping agent decisions explicit and testable. AI is optional in the core package; companion packages such as jido_ai add model integration, and jido.run documents the wider ecosystem. Published on Hex; Apache-2.0."
+  ],
+  "who": "Elixir teams building reliable, long-running agent workflows.",
+  "features": [
+   "Agents, actions, signals and directives",
+   "OTP supervision and fault tolerance",
+   "Explicit, testable state transitions",
+   "Optional AI via jido_ai",
+   "Hex package with full docs"
+  ],
+  "faq": [
+   [
+    "Do I need an LLM to use Jido?",
+    "No. The core is an agent runtime; LLM features come from companion packages like jido_ai."
+   ]
+  ],
+  "sources": [
+   "https://github.com/agentjido/jido",
+   "https://jido.run"
+  ],
+  "facts": {
+   "repo": "https://github.com/agentjido/jido",
+   "stars": 1900,
+   "forks": 121,
+   "checked": "2026-10-31",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "trpc-agent-go": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "tRPC-Agent-Go is a Go-native framework for production agent systems from the tRPC group. It combines LLM agents, GraphAgent type-safe graph workflows (a LangGraph-style approach for Go), chain, parallel and cycle multi-agent patterns, and function, MCP, web search and code-execution tools.",
+   "It also handles sessions, memory, artifacts and knowledge retrieval, reusable SKILL.md agent skills with self-evolution from session reviews, prompt caching, eval sets and OpenTelemetry tracing with Langfuse examples, plus A2A and AG-UI protocol support. Apache-2.0."
+  ],
+  "who": "Go teams building agent services that need to be concurrent and observable.",
+  "features": [
+   "GraphAgent typed graph workflows",
+   "Multi-agent chain, parallel and cycle",
+   "MCP, A2A and AG-UI support",
+   "Memory, sessions and RAG",
+   "OpenTelemetry observability and evals"
+  ],
+  "faq": [
+   [
+    "Is it like LangGraph?",
+    "Its GraphAgent offers comparable graph workflows, written for Go services."
+   ]
+  ],
+  "sources": [
+   "https://github.com/trpc-group/trpc-agent-go",
+   "https://trpc-group.github.io/trpc-agent-go/"
+  ],
+  "facts": {
+   "repo": "https://github.com/trpc-group/trpc-agent-go",
+   "stars": 1888,
+   "forks": 334,
+   "checked": "2026-10-31",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "grounded-docs-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Grounded Docs is a self-hosted MCP server that gives coding assistants a documentation index matching the library versions you actually use. It fetches docs from websites, GitHub repositories, npm, PyPI, local folders and archives, reads HTML, Markdown, PDF, Office, EPUB, notebooks and source code, and stores each library version separately.",
+   "Search combines full text with optional vector search through OpenAI, Ollama, Gemini, Vertex AI, Bedrock, Azure or any OpenAI-compatible server, with the index kept in local SQLite. It serves MCP over stdio or Streamable HTTP plus a CLI and web UI, and positions itself as an open-source alternative to Context7. Telemetry is on by default and can be turned off. MIT."
+  ],
+  "who": "Developers who want coding agents to answer from version-correct docs.",
+  "features": [
+   "Version-specific documentation index",
+   "Sources: web, GitHub, npm, PyPI, local",
+   "Full-text plus optional vector search",
+   "Local SQLite storage",
+   "MCP, CLI and web UI"
+  ],
+  "faq": [
+   [
+    "Does my documentation leave my machine?",
+    "Only to the embedding provider you configure; with a local provider like Ollama it stays local."
+   ]
+  ],
+  "sources": [
+   "https://github.com/arabold/docs-mcp-server",
+   "https://grounded.tools"
+  ],
+  "facts": {
+   "repo": "https://github.com/arabold/docs-mcp-server",
+   "stars": 1844,
+   "forks": 196,
+   "checked": "2026-10-31",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "stakpak": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Stakpak is an open-source DevOps agent that lives on your own machines and runs 24/7 in Autopilot mode, deploying apps and keeping them healthy while pinging a human only when needed. It can generate infrastructure code, debug Kubernetes, configure CI/CD and automate deployments.",
+   "Safety features include secret substitution so the model works with credentials without seeing them, Warden network-level guardrails that block destructive operations, and curated Rulebooks of DevOps playbooks. Install with one script, then stakpak init and stakpak up; Docker is required for Autopilot. Apache-2.0."
+  ],
+  "who": "Small teams that want PaaS-style ops automation without platform lock-in.",
+  "features": [
+   "24/7 Autopilot runtime",
+   "Secret substitution keeps credentials hidden",
+   "Warden guardrails block destructive actions",
+   "DevOps Rulebooks",
+   "Self-hosted on your own servers"
+  ],
+  "faq": [
+   [
+    "Does the model see my secrets?",
+    "No. Stakpak substitutes secrets so the LLM can use credentials without seeing their values."
+   ]
+  ],
+  "sources": [
+   "https://github.com/stakpak/agent",
+   "https://stakpak.dev"
+  ],
+  "facts": {
+   "repo": "https://github.com/stakpak/agent",
+   "stars": 1840,
+   "forks": 198,
+   "checked": "2026-10-31",
+   "license": "Apache 2.0",
+   "osi": true
+  },
+  "updated": "2026-10-31"
+ },
+ "terminator": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Terminator from Mediar is a desktop automation framework and MCP server that lets AI assistants such as Claude, Cursor and VS Code control Windows apps and the browser, working across pixels, DOM and the accessibility tree. It runs in the background without taking over your cursor or keyboard and reuses your existing browser session.",
+   "Add it to Claude Code with one command (npx terminator-mcp-agent) or to other MCP clients by config; it also offers a Node.js SDK, YAML workflows and recording OS events into workflows. Mediar's commercial IDE builds on it. MIT."
+  ],
+  "who": "Developers and ops teams automating Windows desktop workflows with AI.",
+  "features": [
+   "MCP server for desktop control",
+   "Accessibility tree, DOM and pixel modes",
+   "Runs in the background",
+   "Reuses your browser session",
+   "YAML workflows and Node.js SDK"
+  ],
+  "faq": [
+   [
+    "Does it take over my mouse?",
+    "No. Terminator is designed to run in the background without moving your cursor or typing over you."
+   ]
+  ],
+  "sources": [
+   "https://github.com/mediar-ai/terminator",
+   "https://t8r.tech/"
+  ],
+  "facts": {
+   "repo": "https://github.com/mediar-ai/terminator",
+   "stars": 1663,
+   "forks": 216,
+   "checked": "2026-10-31",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-10-31"
  }
 }

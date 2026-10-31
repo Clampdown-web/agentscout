@@ -17,7 +17,7 @@ html[data-theme=dark] .ig-out img{background:var(--soft)}
 html[data-theme=dark] .ig-cta{background:var(--accent-soft)}
 
 /* Full-page generator hero (generate.html only; scoped to .gen-hero) */
-:root{--gen-art:url(assets/gen-art.webp?v=2026-10-30)}
+:root{--gen-art:url(assets/gen-art.webp?v=2026-10-31)}
 .gen-hero{position:relative;margin:8px 0 24px;padding:14px;border-radius:20px;background:#1c1f5a}
 .gen-inner{position:relative;padding:42px 24px;border-radius:14px;overflow:hidden;isolation:isolate;background:#EFEFFE var(--gen-art) center/cover no-repeat}
 .gen-inner::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(239,239,254,.3)}

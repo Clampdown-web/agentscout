@@ -3,7 +3,7 @@ info:
   title: "AgentScout Public Data & Agentic Commerce API"
   version: "1.1.0"
   summary: "Read-only static JSON feeds and Stripe Agentic Commerce product catalog for the AgentScout AI agent & MCP server directory."
-  description: "AgentScout lists 2,065 daily link-checked AI agent tools (including 276 MCP servers) plus purchasable maker listing boosts and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at https://mcp.agentscouthq.com/mcp (or SSE at https://agentscouthq.com/mcp/sse)."
+  description: "AgentScout lists 2,070 daily link-checked AI agent tools (including 276 MCP servers) plus purchasable maker listing boosts and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at https://mcp.agentscouthq.com/mcp (or SSE at https://agentscouthq.com/mcp/sse)."
   contact:
     name: "AgentScout"
     email: "support@agentscouthq.com"
@@ -418,6 +418,56 @@ components:
               - "page_url"
               - "checkout_url"
               - "description"
+        addons:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              id:
+                type: "string"
+              sku:
+                type: "string"
+              name:
+                type: "string"
+              category:
+                type: "string"
+              price_usd:
+                type: "integer"
+              billing_model:
+                type: "string"
+              availability:
+                type: "string"
+              badge:
+                type: "string"
+              turnaround:
+                type: "string"
+              checkout_url:
+                type: "string"
+              page_url:
+                type: "string"
+              description:
+                type: "string"
+              deliverables:
+                type: "array"
+                items:
+                  type: "string"
+              limits:
+                type: "string"
+            required:
+              - "id"
+              - "sku"
+              - "name"
+              - "category"
+              - "price_usd"
+              - "billing_model"
+              - "availability"
+              - "badge"
+              - "turnaround"
+              - "checkout_url"
+              - "page_url"
+              - "description"
+              - "deliverables"
+              - "limits"
         agent_packs:
           type: "array"
           items:
@@ -525,6 +575,66 @@ components:
             - "unit_usd"
             - "note"
             - "tiers"
+        schema_org:
+          type: "object"
+          properties:
+            "@context":
+              type: "string"
+            "@graph":
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  "@type":
+                    type: "string"
+                  sku:
+                    type: "string"
+                  name:
+                    type: "string"
+                  description:
+                    type: "string"
+                  category:
+                    type: "string"
+                  brand:
+                    type: "object"
+                    properties:
+                      "@type":
+                        type: "string"
+                      name:
+                        type: "string"
+                    required:
+                      - "@type"
+                      - "name"
+                  offers:
+                    type: "object"
+                    properties:
+                      "@type":
+                        type: "string"
+                      price:
+                        type: "string"
+                      priceCurrency:
+                        type: "string"
+                      url:
+                        type: "string"
+                      availability:
+                        type: "string"
+                    required:
+                      - "@type"
+                      - "price"
+                      - "priceCurrency"
+                      - "url"
+                      - "availability"
+                required:
+                  - "@type"
+                  - "sku"
+                  - "name"
+                  - "description"
+                  - "category"
+                  - "brand"
+                  - "offers"
+          required:
+            - "@context"
+            - "@graph"
       required:
         - "schema_version"
         - "protocol"
@@ -533,8 +643,10 @@ components:
         - "merchant"
         - "packages"
         - "bot_templates"
+        - "addons"
         - "agent_packs"
         - "pack_pricing"
+        - "schema_org"
       title: "Products"
     Stats:
       type: "object"
@@ -758,6 +870,7 @@ components:
               - "url"
               - "date"
               - "tool"
+              - "summary"
               - "page"
               - "page_url"
         generate:

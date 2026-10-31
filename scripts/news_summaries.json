@@ -372,5 +372,25 @@
  "https://x.com/StoreInspect/status/2115864237394244007": {
   "summary": "StoreInspect's MCP server connects Claude, ChatGPT, Cursor and Codex to 2.3M+ Shopify stores, so sales teams can find stores by the apps they use or lack and reveal chosen decision-makers.",
   "title": "StoreInspect opens an MCP server for Shopify store data"
+ },
+ "https://x.com/rauchg/status/2116345666108854781": {
+  "summary": "Vercel Labs released agent-desktop, an Apache-2.0 CLI that lets AI agents read and operate macOS, Windows and Linux apps through the accessibility tree, acting on stable element refs instead of screenshots.",
+  "title": "Vercel Labs open-sources agent-desktop for computer use"
+ },
+ "https://x.com/AnthropicAI/status/2116349211549843666": {
+  "summary": "Anthropic tested whether red-teaming can be automated by tasking thousands of Claude agents with crafting training data that slips past a safety monitor while instilling subtle misalignment, and is using the results to harden its screens.",
+  "title": "Anthropic sets thousands of Claude agents on automated red-teaming"
+ },
+ "https://x.com/OpenAIDevs/status/2116306164375863343": {
+  "summary": "OpenAI's weekly Agents API roundup adds Auto Review to flag risky commands before they run, async compaction for long sessions and time awareness so agents can reason about deadlines.",
+  "title": "OpenAI ships Agents API updates: auto review, async compaction, time awareness"
+ },
+ "https://x.com/pika_labs/status/2116288173378810003": {
+  "summary": "Pika detailed H3 Flex, an open-weights video model post-trained to generate in six denoising steps, with exportable audio stems, up to 4K output and pricing from $0.01 per second.",
+  "title": "Pika H3 Flex: open-weights video model with audio stems"
+ },
+ "https://www.businesswire.com/news/home/20261030731831/en/Ramen-Launches-Aura-Autopilot-its-Open-Source-Autonomous-Game-Tester-for-Unreal-Engine-Unity-and-Godot": {
+  "summary": "Ramen released Aura Autopilot under Apache-2.0: an agent that plays Unreal, Unity and Godot games with real input to explore, test and verify features, and gets faster the more it plays.",
+  "title": "Ramen open-sources Aura Autopilot, a self-improving game playtester"
  }
 }

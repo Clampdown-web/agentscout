@@ -1,13 +1,59 @@
 {
- "updated": "2026-10-30T14:01:04Z",
+ "updated": "2026-10-31T14:05:06Z",
  "sources": [
   "TechCrunch",
   "The Verge",
+  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
+  {
+   "title": "Anthropic sets thousands of Claude agents on automated red-teaming",
+   "source": "X",
+   "url": "https://x.com/AnthropicAI/status/2116349211549843666",
+   "date": "2026-10-31T01:59:06Z",
+   "tool": null,
+   "summary": "Anthropic tested whether red-teaming can be automated by tasking thousands of Claude agents with crafting training data that slips past a safety monitor while instilling subtle misalignment, and is using the results to harden its screens.",
+   "page": "news/2026/10/anthropic-sets-thousands-of-claude-agents-on-automated-red-teaming.html"
+  },
+  {
+   "title": "Vercel Labs open-sources agent-desktop for computer use",
+   "source": "X",
+   "url": "https://x.com/rauchg/status/2116345666108854781",
+   "date": "2026-10-31T01:45:01Z",
+   "tool": "agent-desktop",
+   "summary": "Vercel Labs released agent-desktop, an Apache-2.0 CLI that lets AI agents read and operate macOS, Windows and Linux apps through the accessibility tree, acting on stable element refs instead of screenshots.",
+   "page": "news/2026/10/vercel-labs-open-sources-agent-desktop-for-computer-use.html"
+  },
+  {
+   "title": "OpenAI ships Agents API updates: auto review, async compaction, time awareness",
+   "source": "X",
+   "url": "https://x.com/OpenAIDevs/status/2116306164375863343",
+   "date": "2026-10-30T23:08:03Z",
+   "tool": null,
+   "summary": "OpenAI's weekly Agents API roundup adds Auto Review to flag risky commands before they run, async compaction for long sessions and time awareness so agents can reason about deadlines.",
+   "page": "news/2026/10/openai-ships-agents-api-updates-auto-review-async-compaction-time.html"
+  },
+  {
+   "title": "Pika H3 Flex: open-weights video model with audio stems",
+   "source": "X",
+   "url": "https://x.com/pika_labs/status/2116288173378810003",
+   "date": "2026-10-30T21:56:33Z",
+   "tool": null,
+   "summary": "Pika detailed H3 Flex, an open-weights video model post-trained to generate in six denoising steps, with exportable audio stems, up to 4K output and pricing from $0.01 per second.",
+   "page": "news/2026/10/pika-h3-flex-open-weights-video-model-with-audio-stems.html"
+  },
+  {
+   "title": "Ramen open-sources Aura Autopilot, a self-improving game playtester",
+   "source": "Business Wire",
+   "url": "https://www.businesswire.com/news/home/20261030731831/en/Ramen-Launches-Aura-Autopilot-its-Open-Source-Autonomous-Game-Tester-for-Unreal-Engine-Unity-and-Godot",
+   "date": "2026-10-30T16:00:00Z",
+   "tool": "aura-autopilot",
+   "summary": "Ramen released Aura Autopilot under Apache-2.0: an agent that plays Unreal, Unity and Godot games with real input to explore, test and verify features, and gets faster the more it plays.",
+   "page": "news/2026/10/ramen-open-sources-aura-autopilot-a-self-improving-game-playtester.html"
+  },
   {
    "title": "Factory ships Droid 1.0, a new engine for its coding agent",
    "source": "X",
@@ -27,14 +73,6 @@
    "page": "news/2026/10/openai-details-expanded-monitoring-of-frontier-models-during-training.html"
   },
   {
-   "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
-   "source": "TechCrunch",
-   "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
-   "date": "2026-10-29T14:35:26Z",
-   "tool": "wabi",
-   "page": "news/2026/10/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after.html"
-  },
-  {
    "title": "Particle launches particle-1, a developer model that matches DeepSeek V4.1 Flash with ~45% fewer tokens",
    "source": "X",
    "url": "https://x.com/Suhail/status/2115497949421883648",
@@ -42,41 +80,6 @@
    "tool": null,
    "summary": "Mixpanel founder Suhail Doshi's new company Particle released particle-1, a developer- and agent-focused model tuned for token efficiency that keeps parity with its base model while using about 45% fewer tokens; it is live via Particle's inference service, OpenRouter and Vercel AI Gateway.",
    "page": "news/2026/10/particle-launches-particle-1-a-developer-model-that-matches-deepseek.html"
-  },
-  {
-   "title": "Anthropic study: Claude Code's hidden leanings steered expert analysts 86% of the time",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115223324565356550",
-   "date": "2026-10-28T13:37:00Z",
-   "tool": null,
-   "summary": "In a randomized Anthropic trial, 50 experienced analysts working with Claude Code matched the agent's secretly randomized preferences on judgment calls 86% of the time, often repeating its arguments while believing they had decided independently, even as the agent cut errors and sped up work.",
-   "page": "news/2026/10/anthropic-study-claude-codes-hidden-leanings-steered-expert-analysts.html"
-  },
-  {
-   "title": "Etraveli Group adds MCP layer to flight content",
-   "source": "PhocusWire",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYjQzWlVRdnRkSFlnMGxGSnEtNGZGN0dkU2NhNVp3bmcyZW5fb3dNTVdUd2xOUHNWVjBwM3ZicmprNllRQVdmazc5bHZZWjY0NWJzRTkzOUd1c0hHaXY5OFVZT0ktaGoyUjU4STNKY29WZUdiWU1mMVRsLWxoa0FfVkg0RTBnaEhBRXpqYU5adTROQQ?oc=5",
-   "date": "2026-10-28T12:06:47Z",
-   "tool": "layer",
-   "page": "news/2026/10/etraveli-group-adds-mcp-layer-to-flight-content.html"
-  },
-  {
-   "title": "Judgment Labs opens its AI agent monitoring platform to everyone",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115193410134987191",
-   "date": "2026-10-28T00:22:00Z",
-   "tool": null,
-   "summary": "Judgment Labs made its agent monitoring platform generally available: it captures full execution traces from long-running agents, runs customisable judges over them and uses a built-in agent to surface failure patterns, alerts and tests. The $32M-backed startup already counts Fluidstack and Modal as customers.",
-   "page": "news/2026/10/judgment-labs-opens-its-ai-agent-monitoring-platform-to-everyone.html"
-  },
-  {
-   "title": "Hex raises $100M at a $1.2B valuation and rebuilds its product for AI agents",
-   "source": "X",
-   "url": "https://x.com/i/trending/2115127969333047789",
-   "date": "2026-10-27T20:31:00Z",
-   "tool": null,
-   "summary": "Data platform Hex closed a $100M round at a $1.2B valuation and launched Hex 4.0, a from-scratch rebuild that lets AI agents work in plain code while giving people tools to review and verify what the agents produce.",
-   "page": "news/2026/10/hex-raises-100m-at-a-1-2b-valuation-and-rebuilds-its-product-for-ai.html"
   }
  ]
 }
