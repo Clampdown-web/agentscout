@@ -117,4 +117,75 @@ def pages(t):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},{"@type":"ListItem","position":3,"name":"Archive","item":canon}]}]}
     os.makedirs("news",exist_ok=True); open("news/index.html","w").write(X.shell(d,title,desc,canon,body,ld)); urls.insert(0,canon)
     print("news pages:",len(items),"stories,",len(months),"months")
+    write_feed(t)
     return urls
+FEED=B+"feed.xml"
+def _xml(s):
+    from xml.sax.saxutils import escape
+    s="".join(ch for ch in str(s or "") if ch in "\t\n\r" or ord(ch)>=32)
+    return escape(s)
+def _when(iso):
+    s=str(iso or "").strip().replace("Z","+00:00")
+    if not s: return None
+    if "T" not in s: s+="T12:00:00+00:00"
+    try: d=datetime.datetime.fromisoformat(s)
+    except ValueError: return None
+    if d.tzinfo is None: d=d.replace(tzinfo=datetime.timezone.utc)
+    return d.astimezone(datetime.timezone.utc)
+def write_feed(tools=None):
+    """RSS 2.0 at /feed.xml: newest agent-news pages plus newest non-seed tools. Absolute site URLs only."""
+    import email.utils,xml.etree.ElementTree as ET
+    if tools is None: tools=json.load(open("tools.json"))
+    rows=[]; seen=set()
+    hist=json.load(open(HIST)) if os.path.exists(HIST) else {"items":[]}
+    news=[]
+    for x in hist.get("items",[]):
+        page=x.get("page"); when=_when(x.get("date"))
+        if not page or not x.get("title") or when is None: continue
+        url=B+page.lstrip("/")
+        if not url.startswith(B) or url in seen: continue
+        seen.add(url); news.append((when,x["title"],url,x.get("summary") or x["title"]))
+    news.sort(key=lambda z:z[0],reverse=True)
+    rows.extend(news[:25])
+    pool=sorted((x for x in tools if not x.get("seed") and x.get("slug") and x.get("name")),key=lambda x:(x.get("added") or "",x.get("id") or 0),reverse=True)
+    for x in pool[:20]:
+        url=f"{B}tools/{x['slug']}.html"
+        when=_when(x.get("added"))
+        if when is None or url in seen: continue
+        seen.add(url); rows.append((when,x["name"],url,x.get("description") or x["name"]))
+    rows.sort(key=lambda z:z[0],reverse=True)
+    if not rows: raise SystemExit("feed.xml: no items")
+    built=max(z[0] for z in rows)
+    items="\n".join(
+        "<item>"
+        f"<title>{_xml(title)}</title>"
+        f"<link>{_xml(url)}</link>"
+        f"<guid isPermaLink=\"true\">{_xml(url)}</guid>"
+        f"<pubDate>{email.utils.format_datetime(when,usegmt=True)}</pubDate>"
+        f"<description>{_xml(desc)}</description>"
+        "</item>"
+        for when,title,url,desc in rows)
+    doc=(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        "<channel>\n"
+        "<title>AgentScout</title>\n"
+        f"<link>{B}</link>\n"
+        "<description>Latest AI agent tools and agent news from AgentScout.</description>\n"
+        "<language>en-us</language>\n"
+        f"<lastBuildDate>{email.utils.format_datetime(built,usegmt=True)}</lastBuildDate>\n"
+        f'<atom:link href="{FEED}" rel="self" type="application/rss+xml"/>\n'
+        f"{items}\n</channel>\n</rss>\n")
+    root=ET.fromstring(doc)
+    if root.tag!="rss" or root.get("version")!="2.0": raise SystemExit("feed.xml: not RSS 2.0")
+    got=list(root.iter("item"))
+    if len(got)!=len(rows): raise SystemExit("feed.xml: item count mismatch")
+    for it in got:
+        link=it.findtext("link") or ""
+        if not link.startswith("https://agentscouthq.com/") or it.findtext("guid")!=link or not it.findtext("title") or not it.findtext("pubDate"):
+            raise SystemExit("feed.xml: item missing an absolute AgentScout link")
+    open("feed.xml","w",encoding="utf-8").write(doc)
+    print("feed.xml:",len(rows),"items")
+    return FEED
+if __name__=="__main__":
+    write_feed()

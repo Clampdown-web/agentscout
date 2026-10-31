@@ -430,6 +430,7 @@ def write_llms_full(t):
         f"- **How-To Video Guides & Pro Tips Hub (`/videos/`)**: {B}videos/ (8 playable 60fps walkthroughs with copyable MCP & CLI snippets)",
         f"- **Made by AgentScout Pro Bots & 4-Bot Bundle (`/bot-store/` and `/bot-templates/#made-by-agentscout`)**: {B}bot-store/ and {B}bot-templates/#made-by-agentscout — $39 Operations / Monitoring Bot, $59 SEO & AEO Growth Auditor Bot, $59 Market & Launch Intel Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot \"Company-in-a-Box\" Team Bundle",
         f"- **Concise LLM Guide (`llms.txt`)**: {B}llms.txt",
+        f"- **RSS feed (`feed.xml`)**: {B}feed.xml",
         f"- **Full Single-File LLM Reference (`llms-full.txt`)**: {B}llms-full.txt",
         f"- **Full JSON Catalog (`api/tools.json`)**: {B}api/tools.json",
         f"- **Stripe Agentic Commerce Product Feed (`api/products.json` & `.well-known/acp.json`)**: {B}api/products.json (and `{B}.well-known/acp.json`)",
