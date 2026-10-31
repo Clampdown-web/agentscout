@@ -555,6 +555,50 @@ def _cluster_foot(s, d):
     fo,k=re.subn(r'(<a href="[^"]*badges\.html">Badges for makers</a>)', lambda mm: mm.group(1)+' · '+cluster, fo, count=1)
     if not k: return s
     return s[:m.start()]+fo+s[m.end():]
+def _redirect_stub(s):
+    """A moved page, not a document that should load the site scripts.
+    mcp/link-status.html keeps a one-line <main> plus the nav, then refreshes to /mcp/status/.
+    """
+    head=s[:8000]
+    return 'http-equiv="refresh"' in head or "location.replace(" in head
+def shared_scripts_exempt(f, s):
+    """Pages that intentionally do not load app.js, consent.js, track.js, and share.js.
+    Kept in sync with daily_deep_audit.py.
+    - preview/: noindex redirects off the public site
+    - data/: email HTML and other raw fragments
+    - stats.js.html: a script island, not a page
+    - og.html: the 1200x630 social card (also in SKIP)
+    - redirect stubs: meta refresh or location.replace and no <main>
+    Anything else is a production page and sitewide() inserts the missing scripts.
+    """
+    if f.startswith(("preview/","node_modules/","app/","data/")) or f in ("og.html","stats.js.html"): return True
+    if os.path.basename(f) in SKIP and "app.js?v=" not in s: return True
+    if _redirect_stub(s): return True
+    low=s[:800].lower()
+    if "<html" not in low and "<!doctype" not in low: return True
+    return False
+def ensure_shared_scripts(f, s, d):
+    """Give a production page the same shared scripts the other pages load.
+    Order matches bot-templates detail pages: app.js, consent.js (defer), track.js (defer), share.js.
+    share.js on bot-templates stays without defer, the form those pages already use.
+    build_share.apply() (called next) adds the deferred share.js on the directories it covers.
+    Pages that already have the tags are left unchanged, including nav, footer, and copy.
+    """
+    if shared_scripts_exempt(f, s): return s
+    if "app.js?v=" not in s:
+        tag=f'<script src="{d}app.js?v={ASSET_V}"></script>'
+        m=re.search(r'<script src="[^"]*?share\.js\?v=\d+"[^>]*></script>', s)
+        if m: s=s[:m.start()]+tag+s[m.start():]
+        elif "</body>" in s: s=s.replace("</body>", tag+"</body>", 1)
+    if "track.js" not in s and "app.js?v=" in s:
+        s=re.sub(r'(<script src="[^"]*?)app\.js\?v=\d+"></script>', lambda mm: mm.group(0)+mm.group(1)+'track.js?v='+ASSET_V+'" defer></script>', s, count=1)
+    if "consent.js" not in s and "track.js?v=" in s:
+        s=re.sub(r'<script src="([^"]*?)track\.js\?v=\d+" defer></script>', lambda mm: f'<script src="{mm.group(1)}consent.js?v={ASSET_V}" defer></script>'+mm.group(0), s, count=1)
+    # Hand-written bot template pages (github.html, codex-security.html) shipped share.js and never app.js.
+    # Keep share.js in the non-defer form the rest of bot-templates/*.html uses.
+    if f.startswith("bot-templates/") and "share.js?v=" not in s and "track.js?v=" in s:
+        s=re.sub(r'(<script src="[^"]*?track\.js\?v=\d+" defer></script>)', lambda mm: mm.group(1)+f'<script src="{d}share.js?v={ASSET_V}"></script>', s, count=1)
+    return s
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
@@ -667,12 +711,11 @@ def sitewide(t):
             # anchor = end of the action row, with or without the Share button (build_share) inside it
             if x and x.get("good_for"): s=re.sub(r'(style="display:contents"></span>(?:<span class="sharewrap">.*?</span></span>)?</div>)',lambda mm:mm.group(1)+'<p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+e(x["good_for"])+'</p>',s,count=1,flags=re.S); ts=[]  # hand-written line (tools.json good_for) replaces the auto task links
             if ts: s=re.sub(r'(style="display:contents"></span>(?:<span class="sharewrap">.*?</span></span>)?</div>)',lambda mm:mm.group(1)+'<p class="goodfor" style="margin:-12px 0 24px;font-size:14px;color:var(--muted)">Good for: '+", ".join(f'<a href="../tasks/{T[0]}.html">{e(T[1])}</a>' for T in ts[:8])+'</p>',s,count=1,flags=re.S)
-        # Anonymous analytics (track.js) on every page, right after app.js
         # Privacy pages + choices in every footer
         s=s.replace('<p><a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> · ©',f'<p><a href="{d}about.html">About</a> · <a href="{d}privacy.html">Privacy</a> · <a href="{d}privacy.html#privacy-choices" data-consent-open>Privacy choices</a> · <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> · ©')
-        if "track.js" not in s and "app.js?v=" in s: s=re.sub(r'(<script src="[^"]*?)app\.js\?v=\d+"></script>',lambda mm:mm.group(0)+mm.group(1)+'track.js?v='+ASSET_V+'" defer></script>',s,count=1)
-        # Consent manager (consent.js) loads right before track.js so analytics wait for the visitor's choice
-        if "consent.js" not in s and "track.js?v=" in s: s=re.sub(r'<script src="([^"]*?)track\.js\?v=\d+" defer></script>',lambda mm:f'<script src="{mm.group(1)}consent.js?v={ASSET_V}" defer></script>'+mm.group(0),s,count=1)
+        # app.js, consent.js, track.js (and share.js on bot-templates) when a page was built without them.
+        # consent.js stays immediately before track.js so analytics wait for the visitor's choice.
+        s=ensure_shared_scripts(f, s, d)
         s=__import__("build_share").apply(f,s,d,ASSET_V)  # Share button + counter (Oct 18 2026)
         s=__import__("ga4").apply(s,f)  # Google Analytics 4 tag + CSP hosts, consent-aware (ga4.py, Oct 19 2026)
         PC='<link rel="preconnect" href="https://api.agentscouthq.com" crossorigin>'
