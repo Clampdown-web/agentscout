@@ -47,19 +47,29 @@ try{var NP=document.querySelectorAll("#spanel,.spanel,#filters,.filters"),vis=ne
 /* One smooth glide to the true top/bottom: own rAF animation that re-reads the page height every frame (lazy images/cards can grow the page mid-scroll, which made native smooth scroll stop short). window.__asJump tells lazy loaders (homepage directory) not to add cards during the glide. Any wheel/touch/key cancels. Oct 19 2026 */
 var raf=0;function stop(){if(raf){cancelAnimationFrame(raf);raf=0}window.__asJump=0}
 ["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,function(e){if(raf&&!(e.target.closest&&e.target.closest(".scrollbtns")))stop()},{passive:true})});
-function glide(down){stop();window.__asJump=down?1:0;var de=document.documentElement,y0=window.scrollY||0,t0=performance.now();
-var max=function(){return Math.max(0,de.scrollHeight-window.innerHeight)},dist=Math.abs((down?max():0)-y0),dur=Math.min(1100,Math.max(350,dist/6));
+function yPos(){var se=document.scrollingElement||document.documentElement,vv=window.visualViewport,y=window.scrollY||window.pageYOffset||0;
+if(se&&se.scrollTop)y=Math.max(y,se.scrollTop);if(document.body&&document.body.scrollTop)y=Math.max(y,document.body.scrollTop);
+if(vv&&typeof vv.pageTop==="number")y=Math.max(y,vv.pageTop);return y}
+function pageBox(){var se=document.scrollingElement||document.documentElement,h=Math.max(se.scrollHeight||0,document.documentElement.scrollHeight||0,document.body?document.body.scrollHeight:0);
+return {y:yPos(),h:h,v:window.innerHeight||document.documentElement.clientHeight||0}}
+function maxY(){var m=pageBox();return Math.max(0,m.h-m.v)}
+function place(top){var y=Math.max(0,top);try{window.scrollTo({top:y,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,y)}
+if(Math.abs(yPos()-y)>2){var se=document.scrollingElement||document.documentElement;if(se)se.scrollTop=y;document.documentElement.scrollTop=y;if(document.body)document.body.scrollTop=y}}
+function glide(down){stop();window.__asJump=down?1:0;var y0=yPos(),t0=performance.now();
+var dist=Math.abs((down?maxY():0)-y0),dur=Math.min(1100,Math.max(350,dist/6));
 if(matchMedia("(prefers-reduced-motion: reduce)").matches)dur=1;
-function step(now){var k=Math.min(1,(now-t0)/dur),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2,tgt=down?max():0;
-window.scrollTo({top:y0+(tgt-y0)*e,behavior:"instant"});
-if(k<1){raf=requestAnimationFrame(step)}else{raf=0;window.scrollTo({top:down?max():0,behavior:"instant"});setTimeout(function(){window.__asJump=0},400)}}
+function step(now){var k=Math.min(1,(now-t0)/dur),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+place(y0+((down?maxY():0)-y0)*e);
+if(k<1){raf=requestAnimationFrame(step)}else{var n=0;function settle(){place(down?maxY():0);if(++n<8){raf=requestAnimationFrame(settle)}else{raf=0;setTimeout(function(){window.__asJump=0;sch()},400)}}settle()}}
 raf=requestAnimationFrame(step)}
 up.onclick=function(){glide(false)};
 dn.onclick=function(){glide(true)};
-function upd(){q=0;var y=window.scrollY||0,h=document.documentElement.scrollHeight,v=window.innerHeight,fromBottom=h-(y+v);
-up.classList.toggle("show",y>400);dn.classList.toggle("show",h>v+300&&fromBottom>300)}
+function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v);
+up.classList.toggle("show",m.y>400);dn.classList.toggle("show",m.h>m.v+300&&fromBottom>300)}
 function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
-addEventListener("scroll",sch,{passive:true});addEventListener("resize",sch);addEventListener("load",sch);addEventListener("pageshow",sch);
+addEventListener("scroll",sch,{passive:true,capture:true});addEventListener("resize",sch);addEventListener("load",sch);addEventListener("pageshow",sch);
+addEventListener("touchmove",sch,{passive:true});addEventListener("touchend",sch,{passive:true});addEventListener("touchcancel",sch,{passive:true});
+if(window.visualViewport){visualViewport.addEventListener("scroll",sch,{passive:true});visualViewport.addEventListener("resize",sch,{passive:true})}
 if(window.ResizeObserver)new ResizeObserver(sch).observe(document.body);upd()}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
 /* Short landscape: text links in one scroll row, pills + Submit in a second. Portrait DOM is left as built. */
