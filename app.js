@@ -66,14 +66,14 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",ini
 (function(){var mq=window.matchMedia("(orientation: landscape) and (max-height: 500px)");
 function links(){return document.querySelector("nav .links")}
 function pack(){var box=links();if(!box||box.querySelector(":scope>.navscroll-text"))return;
-var text=document.createElement("div"),pills=document.createElement("div"),wrap=box.parentElement;
+var text=document.createElement("div"),pills=document.createElement("div");
 text.className="navscroll-text";pills.className="navscroll-pills";
 Array.prototype.slice.call(box.children).forEach(function(el){(el.classList.contains("navpills")||el.classList.contains("btn")?pills:text).appendChild(el)});
-box.appendChild(text);wrap.appendChild(pills);box.classList.add("nav-compact")}
-function unpack(){var box=links();if(!box)return;var text=box.querySelector(":scope>.navscroll-text"),pills=box.parentElement&&box.parentElement.querySelector(":scope>.navscroll-pills");if(!text||!pills)return;
+box.appendChild(text);box.appendChild(pills)}
+function unpack(){var box=links();if(!box)return;var text=box.querySelector(":scope>.navscroll-text"),pills=box.querySelector(":scope>.navscroll-pills");if(!text||!pills)return;
 Array.prototype.slice.call(text.children).concat(Array.prototype.slice.call(pills.children)).forEach(function(el){box.insertBefore(el,text)});
-text.remove();pills.remove();box.classList.remove("nav-compact")}
-function sync(){if(mq.matches)pack();else unpack()}
+text.remove();pills.remove()}
+function sync(){if(!document.querySelector("nav .navscroll-text"))pack()}
 sync();if(mq.addEventListener)mq.addEventListener("change",sync);window.addEventListener("resize",sync);
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",sync):0})();
 /* Heart (favorite) button on every static tool card; binds document clicks if the page didn't. */

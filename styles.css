@@ -829,6 +829,8 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .links>a.btn.primary{height:auto;min-height:44px;padding:6px 22px;border-radius:999px;line-height:30px;font-size:13px!important;font-weight:600;width:auto;max-width:none;flex:0 0 auto;box-sizing:border-box;white-space:nowrap}
   nav .links>a.btn.primary::after{content:none!important}
 }
+/* Wrappers are in the nav markup (and added by app.js on older pages). Outside short landscape they do not affect layout. */
+.navscroll-text,.navscroll-pills{display:contents}
 /* Phone landscape: short static header (scrolls away) plus smaller corner scroll buttons. */
 @media(orientation:landscape) and (max-height:500px){
   nav{position:static;top:auto}
@@ -836,12 +838,12 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .logo{min-height:0;height:auto;flex:0 0 auto}
   nav .logo img{height:22px}
   nav .themebtn{position:static;order:3;width:32px;height:32px;min-height:32px;margin:0;flex:none}
-  nav .links.nav-compact{display:flex;flex-direction:column;flex:1 1 auto;align-items:stretch;justify-content:flex-start;gap:1px;width:auto;min-width:0;margin:0;padding:0;overflow:visible;white-space:normal;font-size:13px;height:auto;min-height:0;max-height:none;flex-wrap:nowrap}
-  nav .navscroll-text{display:flex;flex-wrap:nowrap;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;max-width:100%;min-width:0;-webkit-overflow-scrolling:touch}
+  nav .links:has(>.navscroll-text){display:contents}
+  nav .navscroll-text{display:flex;order:2;flex:1 1 0;flex-wrap:nowrap;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;min-width:0;max-width:100%;-webkit-overflow-scrolling:touch}
   nav .navscroll-text::-webkit-scrollbar,nav .navscroll-pills .navpills::-webkit-scrollbar{display:none;height:0}
-  nav .links.nav-compact .navscroll-text>a{flex:0 0 auto;min-height:28px;height:28px;min-width:0;padding:0 2px;font-size:13px;white-space:nowrap}
-  nav .logo{order:1}nav .links.nav-compact{order:2;flex:1 1 0;min-width:0;max-width:100%}
-  nav .wrap>.navscroll-pills{order:4;display:flex;flex:1 0 100%;flex-wrap:nowrap;align-items:center;justify-content:center;gap:4px;overflow:visible;width:100%;max-width:100%;height:auto;min-height:38px;margin:0}
+  nav .navscroll-text>a{flex:0 0 auto;min-height:28px;height:28px;min-width:0;padding:0 2px;font-size:13px;white-space:nowrap}
+  nav .logo{order:1}
+  nav .navscroll-pills{order:4;display:flex;flex:1 0 100%;flex-wrap:nowrap;align-items:center;justify-content:center;gap:4px;overflow:visible;width:100%;max-width:100%;height:auto;min-height:38px;margin:0}
   nav .navscroll-pills .mcppill{border:1px solid var(--accent);background:var(--accent-soft);color:var(--text);box-shadow:0 0 6px rgba(91,91,247,.45),0 0 12px rgba(34,211,238,.25)}
   [data-theme=dark] nav .navscroll-pills .mcppill{box-shadow:0 0 8px rgba(147,147,255,.6),0 0 16px rgba(34,211,238,.35)}
   [data-theme=dark] nav .navscroll-pills .mcpico{color:#7de8f5}
