@@ -39,7 +39,7 @@ AS.hydrateVotes(document);
 document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-bd]");if(!b)return;var box=b.closest("[data-badgebox]");if(!box)return;var th=b.getAttribute("data-bd");box.querySelectorAll("[data-bd]").forEach(function(x){x.classList.toggle("on",x===b)});box.querySelectorAll("[data-bdpanel]").forEach(function(p){var show=p.getAttribute("data-bdpanel")===th||p.getAttribute("data-bdpanel")==="launch";p.hidden=p.getAttribute("data-bdpanel")!=="launch"&&p.getAttribute("data-bdpanel")!==th})});
 /* Scroll buttons (top + bottom). Injected on every page that loads app.js; no inline script needed. */
 (function(){if(window.__asScroll)return;window.__asScroll=1;
-function init(){var w=document.createElement("div");w.className="scrollbtns";
+function init(){document.querySelectorAll(".scrollbtns").forEach(function(n){n.remove()});var w=document.createElement("div");w.className="scrollbtns";
 w.innerHTML='<button type="button" class="scrollbtn up" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button><button type="button" class="scrollbtn down" aria-label="Scroll to bottom" title="Scroll to bottom"><span aria-hidden="true">↓</span></button>';
 document.body.appendChild(w);var up=w.querySelector(".up"),dn=w.querySelector(".down"),q=0;
 /* phone: hide the floating buttons while a search/filter panel is on screen so they never cover its controls (Oct 23 2026) */
@@ -62,6 +62,20 @@ function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
 addEventListener("scroll",sch,{passive:true});addEventListener("resize",sch);addEventListener("load",sch);addEventListener("pageshow",sch);
 if(window.ResizeObserver)new ResizeObserver(sch).observe(document.body);upd()}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
+/* Short landscape: text links in one scroll row, pills + Submit in a second. Portrait DOM is left as built. */
+(function(){var mq=window.matchMedia("(orientation: landscape) and (max-height: 500px)");
+function links(){return document.querySelector("nav .links")}
+function pack(){var box=links();if(!box||box.querySelector(":scope>.navscroll-text"))return;
+var text=document.createElement("div"),pills=document.createElement("div");
+text.className="navscroll-text";pills.className="navscroll-pills";
+Array.prototype.slice.call(box.children).forEach(function(el){(el.classList.contains("navpills")||el.classList.contains("btn")?pills:text).appendChild(el)});
+box.appendChild(text);box.appendChild(pills);box.classList.add("nav-compact")}
+function unpack(){var box=links();if(!box)return;var text=box.querySelector(":scope>.navscroll-text"),pills=box.querySelector(":scope>.navscroll-pills");if(!text)return;
+Array.prototype.slice.call(text.children).concat(Array.prototype.slice.call(pills.children)).forEach(function(el){box.insertBefore(el,text)});
+text.remove();pills.remove();box.classList.remove("nav-compact")}
+function sync(){if(mq.matches)pack();else unpack()}
+sync();if(mq.addEventListener)mq.addEventListener("change",sync);window.addEventListener("resize",sync);
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",sync):0})();
 /* Heart (favorite) button on every static tool card; binds document clicks if the page didn't. */
 (function(){function hearts(root){(root||document).querySelectorAll('a.card[href*="tools/"]').forEach(function(a){if(a.querySelector(".save"))return;var m=a.getAttribute("href").match(/tools\/([^\/]+)\.html/);if(!m)return;a.classList.add("hashrt");a.insertAdjacentHTML("beforeend",AS.saveBtn(m[1]).replace('class="save','class="save heart'))})}
 window.ASHearts=hearts;
