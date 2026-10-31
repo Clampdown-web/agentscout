@@ -841,7 +841,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .navscroll-text::-webkit-scrollbar,nav .navscroll-pills .navpills::-webkit-scrollbar{display:none;height:0}
   nav .links.nav-compact .navscroll-text>a{flex:0 0 auto;min-height:28px;height:28px;min-width:0;padding:0 2px;font-size:13px;white-space:nowrap}
   nav .logo{order:1}nav .links.nav-compact{order:2;flex:1 1 0;min-width:0;max-width:100%}
-  nav .wrap>.navscroll-pills{order:4;display:flex;flex:1 0 100%;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:4px;overflow:visible;width:100%;max-width:100%;height:auto;min-height:38px;margin:0}
+  nav .wrap>.navscroll-pills{order:4;display:flex;flex:1 0 100%;flex-wrap:nowrap;align-items:center;justify-content:center;gap:4px;overflow:visible;width:100%;max-width:100%;height:auto;min-height:38px;margin:0}
   nav .navscroll-pills .mcppill{border:1px solid var(--accent);background:var(--accent-soft);color:var(--text);box-shadow:0 0 6px rgba(91,91,247,.45),0 0 12px rgba(34,211,238,.25)}
   [data-theme=dark] nav .navscroll-pills .mcppill{box-shadow:0 0 8px rgba(147,147,255,.6),0 0 16px rgba(34,211,238,.35)}
   [data-theme=dark] nav .navscroll-pills .mcpico{color:#7de8f5}
