@@ -66,11 +66,11 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",ini
 (function(){var mq=window.matchMedia("(orientation: landscape) and (max-height: 500px)");
 function links(){return document.querySelector("nav .links")}
 function pack(){var box=links();if(!box||box.querySelector(":scope>.navscroll-text"))return;
-var text=document.createElement("div"),pills=document.createElement("div");
+var text=document.createElement("div"),pills=document.createElement("div"),wrap=box.parentElement;
 text.className="navscroll-text";pills.className="navscroll-pills";
 Array.prototype.slice.call(box.children).forEach(function(el){(el.classList.contains("navpills")||el.classList.contains("btn")?pills:text).appendChild(el)});
-box.appendChild(text);box.appendChild(pills);box.classList.add("nav-compact")}
-function unpack(){var box=links();if(!box)return;var text=box.querySelector(":scope>.navscroll-text"),pills=box.querySelector(":scope>.navscroll-pills");if(!text)return;
+box.appendChild(text);wrap.appendChild(pills);box.classList.add("nav-compact")}
+function unpack(){var box=links();if(!box)return;var text=box.querySelector(":scope>.navscroll-text"),pills=box.parentElement&&box.parentElement.querySelector(":scope>.navscroll-pills");if(!text||!pills)return;
 Array.prototype.slice.call(text.children).concat(Array.prototype.slice.call(pills.children)).forEach(function(el){box.insertBefore(el,text)});
 text.remove();pills.remove();box.classList.remove("nav-compact")}
 function sync(){if(mq.matches)pack();else unpack()}
