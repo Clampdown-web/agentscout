@@ -50,6 +50,10 @@ def main() -> int:
     bad.extend(scroll)
     if not scroll:
         passes.append("portrait scroll buttons stay available at max-width 640px")
+    gutter = _phone_column_padding_problems()
+    bad.extend(gutter)
+    if not gutter:
+        passes.append("phone portrait keeps symmetric horizontal padding on main.wrap, .wrap, and .layout")
     script_bad, script_pass = _shared_script_problems()
     bad.extend(script_bad)
     passes.extend(script_pass)
@@ -373,6 +377,298 @@ def _scroll_button_problems() -> list[str]:
             problems.append("app.js no longer creates the up/down scroll buttons")
         elif re.search(r"innerWidth\s*[<]=?\s*640|matchMedia\(\s*[\"'][^\"']*max-width\s*:\s*640px", chunk):
             problems.append("app.js skips scroll buttons at max-width 640px")
+    return problems
+
+
+_COLUMN_CLASS = re.compile(r"\.(?:wrap|layout)(?![A-Za-z0-9_-])")
+
+
+def _split_top(text: str, sep: str) -> list[str]:
+    """Split on sep outside (), [], {} and quotes."""
+    parts: list[str] = []
+    buf: list[str] = []
+    depth = 0
+    quote = ""
+    i = 0
+    while i < len(text):
+        ch = text[i]
+        if quote:
+            buf.append(ch)
+            if ch == "\\":
+                if i + 1 < len(text):
+                    buf.append(text[i + 1])
+                    i += 2
+                    continue
+            elif ch == quote:
+                quote = ""
+            i += 1
+            continue
+        if ch in "\"'":
+            quote = ch
+            buf.append(ch)
+        elif ch in "([{":
+            depth += 1
+            buf.append(ch)
+        elif ch in ")]}":
+            if depth:
+                depth -= 1
+            buf.append(ch)
+        elif ch == sep and depth == 0:
+            parts.append("".join(buf))
+            buf = []
+        else:
+            buf.append(ch)
+        i += 1
+    parts.append("".join(buf))
+    return parts
+
+
+def _skip_group(text: str, open_at: int, open_ch: str, close_ch: str) -> int:
+    depth = 0
+    i = open_at
+    while i < len(text):
+        if text[i] == open_ch:
+            depth += 1
+        elif text[i] == close_ch:
+            depth -= 1
+            if depth == 0:
+                return i + 1
+        i += 1
+    return len(text)
+
+
+def _last_compound(selector: str) -> str:
+    """Subject of a complex selector: the compound after the last top-level combinator."""
+    s = selector.strip()
+    depth = 0
+    last = 0
+    i = 0
+    while i < len(s):
+        ch = s[i]
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            if depth:
+                depth -= 1
+        elif depth == 0 and ch in ">+~":
+            last = i + 1
+        elif depth == 0 and ch.isspace():
+            j = i + 1
+            while j < len(s) and s[j].isspace():
+                j += 1
+            if j < len(s) and s[j] not in ">+~),":
+                last = j
+            i = j
+            continue
+        i += 1
+    return s[last:].strip()
+
+
+def _compound_targets_column(compound: str) -> bool:
+    """True when this compound's own element is main.wrap, .wrap, or .layout.
+
+    :is() and :where() count when any argument's subject matches. Classes inside
+    :has() or :not() do not: those are not the element receiving the declarations.
+    """
+    i = 0
+    own: list[str] = []
+    while i < len(compound):
+        if compound.startswith(":is(", i) or compound.startswith(":where(", i):
+            paren = compound.find("(", i)
+            end = _skip_group(compound, paren, "(", ")")
+            inner = compound[paren + 1:end - 1]
+            for arg in _split_top(inner, ","):
+                if _selector_targets_column(arg.strip()):
+                    return True
+            i = end
+            continue
+        if compound.startswith("::", i):
+            break
+        if compound[i] == ":":
+            j = i + 1
+            while j < len(compound) and (compound[j].isalnum() or compound[j] == "-"):
+                j += 1
+            if j < len(compound) and compound[j] == "(":
+                i = _skip_group(compound, j, "(", ")")
+            else:
+                i = j
+            continue
+        if compound[i] == "[":
+            i = _skip_group(compound, i, "[", "]")
+            continue
+        own.append(compound[i])
+        i += 1
+    return bool(_COLUMN_CLASS.search("".join(own)))
+
+
+def _selector_targets_column(selector: str) -> bool:
+    for part in _split_top(selector, ","):
+        part = part.strip()
+        if not part or part.startswith("@") or part.startswith(("from", "to")):
+            continue
+        if _compound_targets_column(_last_compound(part)):
+            return True
+    return False
+
+
+def _pad_tokens(value: str) -> list[str]:
+    value = re.sub(r"\s*!important\s*$", "", value.strip(), flags=re.I)
+    tokens: list[str] = []
+    buf: list[str] = []
+    depth = 0
+    for ch in value:
+        if ch == "(":
+            depth += 1
+            buf.append(ch)
+        elif ch == ")":
+            depth = max(0, depth - 1)
+            buf.append(ch)
+        elif ch.isspace() and depth == 0:
+            if buf:
+                tokens.append("".join(buf))
+                buf = []
+        else:
+            buf.append(ch)
+    if buf:
+        tokens.append("".join(buf))
+    return tokens
+
+
+def _norm_pad(token: str) -> str:
+    token = re.sub(r"\s+", "", token.lower())
+    for name in ("left", "right", "inline-start", "inline-end"):
+        token = token.replace(f"safe-area-inset-{name}", "safe-area-inset")
+    return token
+
+
+def _declarations_only(inner: str) -> str:
+    """Drop nested rule blocks so a child's padding is not the parent's."""
+    out: list[str] = []
+    i = 0
+    while i < len(inner):
+        brace = inner.find("{", i)
+        if brace < 0:
+            out.append(inner[i:])
+            break
+        chunk = inner[i:brace]
+        semi = chunk.rfind(";")
+        out.append(chunk[:semi + 1] if semi >= 0 else "")
+        _, nxt = _brace_span(inner, brace)
+        i = nxt
+    return "".join(out)
+
+
+def _padding_is_asymmetric(inner: str) -> bool:
+    """True when this declaration block sets padding-right differently from padding-left.
+
+    A shorthand that sets both sides the same value is symmetric. Matching
+    padding-left and padding-right (including each side's own safe-area inset)
+    is symmetric. padding-right alone is the portrait gutter that shifts the column.
+    """
+    left = None
+    right = None
+    saw_right = False
+    for decl in _split_top(_declarations_only(inner), ";"):
+        if ":" not in decl:
+            continue
+        prop, _, val = decl.partition(":")
+        prop = prop.strip().lower()
+        tokens = [_norm_pad(tok) for tok in _pad_tokens(val)]
+        if not tokens:
+            continue
+        if prop in {"padding-left", "padding-inline-start"}:
+            left = tokens[0]
+        elif prop in {"padding-right", "padding-inline-end"}:
+            right = tokens[0]
+            saw_right = True
+        elif prop == "padding-inline":
+            left = tokens[0]
+            right = tokens[1] if len(tokens) > 1 else tokens[0]
+            saw_right = True
+        elif prop == "padding":
+            if len(tokens) == 1:
+                left = right = tokens[0]
+            elif len(tokens) == 2 or len(tokens) == 3:
+                left = right = tokens[1]
+            else:
+                right = tokens[1]
+                left = tokens[3]
+            saw_right = True
+    if not saw_right:
+        return False
+    return left is None or left != right
+
+
+def _collect_asymmetric_column_padding(body: str, in_phone: bool, hits: list[str]) -> None:
+    i = 0
+    while i < len(body):
+        brace = body.find("{", i)
+        if brace < 0:
+            return
+        sel = body[i:brace]
+        inner, nxt = _brace_span(body, brace)
+        head = sel.strip()
+        if head.startswith("@media"):
+            phone = in_phone or bool(re.search(r"max-width\s*:\s*640px", head, re.I))
+            _collect_asymmetric_column_padding(inner, phone, hits)
+        elif head.startswith(("@supports", "@layer", "@container", "@scope")):
+            _collect_asymmetric_column_padding(inner, in_phone, hits)
+        elif in_phone and _selector_targets_column(head) and _padding_is_asymmetric(inner):
+            snippet = re.sub(r"\s+", " ", head).strip()[:140]
+            if snippet not in hits:
+                hits.append(snippet)
+        i = nxt
+
+
+def _asymmetric_column_padding(css: str) -> list[str]:
+    """Selectors inside max-width:640px that pad main.wrap, .wrap, or .layout on the right only."""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    hits: list[str] = []
+    i = 0
+    while True:
+        match = re.search(r"@media\b", css[i:])
+        if not match:
+            return hits
+        start = i + match.start()
+        brace = css.find("{", start)
+        if brace < 0:
+            return hits
+        header = css[start:brace]
+        body, end = _brace_span(css, brace)
+        phone = bool(re.search(r"max-width\s*:\s*640px", header, re.I))
+        _collect_asymmetric_column_padding(body, phone, hits)
+        i = end
+
+
+def _phone_column_padding_problems() -> list[str]:
+    """Fail if a max-width:640px rule adds asymmetric padding-right to the content column.
+
+    Symmetric padding (the 16px .wrap inset, and the leaderboard's equal 8px sides)
+    stays allowed. Short-landscape gutter lives under max-height, not this query.
+    """
+    problems: list[str] = []
+    skip = {".git", "node_modules", "preview", "pagefind", "assets"}
+    phone = re.compile(r"max-width\s*:\s*640px", re.I)
+    for path in ROOT.rglob("*"):
+        if not path.is_file() or any(part in skip for part in path.parts):
+            continue
+        if path.suffix.lower() not in {".css", ".js", ".html"}:
+            continue
+        try:
+            if path.stat().st_size > 2_000_000:
+                continue
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        if not phone.search(text):
+            continue
+        if "padding-right" not in text and "padding:" not in text and "padding-inline" not in text:
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        for selector in _asymmetric_column_padding(text):
+            problems.append(
+                f"{rel} adds asymmetric padding-right to {selector} inside max-width:640px"
+            )
     return problems
 
 
