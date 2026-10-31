@@ -39,6 +39,7 @@ Catalog last checked: 2026-10-30 (Pacific)
 - [.well-known/mcp.json](https://agentscouthq.com/.well-known/mcp.json): MCP server card pointing to https://mcp.agentscouthq.com/mcp
 - [.well-known/agent-card.json](https://agentscouthq.com/.well-known/agent-card.json): agent card describing this directory (also at /.well-known/agent.json)
 - [sitemap.xml](https://agentscouthq.com/sitemap.xml): all public pages
+- [feed.xml](https://agentscouthq.com/feed.xml): RSS 2.0 of the latest tools and agent news
 
 ## Key pages
 
