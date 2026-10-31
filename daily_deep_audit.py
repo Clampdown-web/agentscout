@@ -46,6 +46,10 @@ def main() -> int:
         passes.append("header nav has one free-tools.html link and no duplicate nav pills")
     if not follower:
         passes.append("follower rows are fetched for their own day when the sprint tracker is present")
+    scroll = _scroll_button_problems()
+    bad.extend(scroll)
+    if not scroll:
+        passes.append("portrait scroll buttons stay available at max-width 640px")
     _report(bad, passes)
     return 1 if bad else 0
 
@@ -266,6 +270,107 @@ def _pack_page_problems() -> tuple[list[str], list[str]]:
         if len(problems) == before:
             passes.append(f"{rel} shows Tested on, START HERE, and the 10-minute line")
     return problems, passes
+
+
+def _brace_span(text: str, open_at: int) -> tuple[str, int]:
+    """Return the inside of the brace that starts at open_at, and the index after its close."""
+    depth = 0
+    i = open_at
+    while i < len(text):
+        ch = text[i]
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[open_at + 1:i], i + 1
+        i += 1
+    return text[open_at + 1:], len(text)
+
+
+def _rule_hides_scrollbtns(body: str) -> bool:
+    """True when this already-matched max-width:640px block hides .scrollbtns."""
+    i = 0
+    while i < len(body):
+        brace = body.find("{", i)
+        if brace < 0:
+            return False
+        sel = body[i:brace]
+        inner, nxt = _brace_span(body, brace)
+        head = sel.strip()
+        if head.startswith("@media") or head.startswith("@supports"):
+            if _rule_hides_scrollbtns(inner):
+                return True
+        elif ".scrollbtns" in sel and re.search(r"display\s*:\s*none\b", inner, re.I):
+            return True
+        i = nxt
+    return False
+
+
+def _media_hides_scrollbtns(css: str) -> bool:
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    i = 0
+    while True:
+        match = re.search(r"@media\b", css[i:])
+        if not match:
+            return False
+        start = i + match.start()
+        brace = css.find("{", start)
+        if brace < 0:
+            return False
+        header = css[start:brace]
+        body, end = _brace_span(css, brace)
+        if re.search(r"max-width\s*:\s*640px", header, re.I) and _rule_hides_scrollbtns(body):
+            return True
+        i = end
+
+
+def _scroll_button_problems() -> list[str]:
+    """Fail if phone portrait hides .scrollbtns again, or the kept exceptions disappear."""
+    problems: list[str] = []
+    css_path = ROOT / "styles.css"
+    if not css_path.is_file():
+        return ["styles.css missing; cannot check portrait scroll buttons"]
+    css = re.sub(r"/\*.*?\*/", "", css_path.read_text(encoding="utf-8"), flags=re.S)
+    if not re.search(r"@media\s+print\s*\{[^}]*\.scrollbtns\s*\{[^}]*display\s*:\s*none\b", css):
+        problems.append("styles.css print rule no longer hides .scrollbtns")
+    if not re.search(r"@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)\s*\{[^}]*\.scrollbtn\s*\{[^}]*transition\s*:\s*none\b", css):
+        problems.append("styles.css lost prefers-reduced-motion on .scrollbtn")
+    if not re.search(r"body:has\(\.lb-board\)\s+\.scrollbtns\s*\{[^}]*display\s*:\s*none\b", css):
+        problems.append("styles.css no longer hides .scrollbtns on body:has(.lb-board)")
+    literal = re.compile(
+        r"@media[^{]{0,200}max-width\s*:\s*640px[^{]{0,120}\{[^}]{0,500}\.scrollbtns\s*\{[^}]{0,200}display\s*:\s*none\b",
+        re.I | re.S,
+    )
+    skip = {".git", "node_modules", "preview", "pagefind", "assets"}
+    for path in ROOT.rglob("*"):
+        if not path.is_file() or any(part in skip for part in path.parts):
+            continue
+        if path.suffix.lower() not in {".css", ".js", ".html"}:
+            continue
+        try:
+            if path.stat().st_size > 2_000_000:
+                continue
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        if ".scrollbtns" not in text or "640" not in text:
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        if path.suffix.lower() == ".css" and _media_hides_scrollbtns(text):
+            problems.append(f"{rel} hides .scrollbtns at max-width:640px")
+        elif literal.search(re.sub(r"/\*.*?\*/", "", text, flags=re.S)):
+            problems.append(f"{rel} hides .scrollbtns at max-width:640px")
+    js_path = ROOT / "app.js"
+    if js_path.is_file():
+        js = js_path.read_text(encoding="utf-8")
+        block = re.search(r"/\* Scroll buttons.*?\}\)\(\);", js, re.S)
+        chunk = block.group(0) if block else ""
+        if not chunk or "scrollbtn up" not in chunk or "scrollbtn down" not in chunk:
+            problems.append("app.js no longer creates the up/down scroll buttons")
+        elif re.search(r"innerWidth\s*[<]=?\s*640|matchMedia\(\s*[\"'][^\"']*max-width\s*:\s*640px", chunk):
+            problems.append("app.js skips scroll buttons at max-width 640px")
+    return problems
 
 
 def _report(bad: list[str], passes: list[str] | None = None) -> None:
