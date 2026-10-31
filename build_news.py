@@ -132,8 +132,21 @@ def _when(iso):
     except ValueError: return None
     if d.tzinfo is None: d=d.replace(tzinfo=datetime.timezone.utc)
     return d.astimezone(datetime.timezone.utc)
+def _local(url):
+    if not str(url).startswith(B): return ""
+    rel=url[len(B):].split("?",1)[0].split("#",1)[0]
+    if rel.endswith("/"): rel+="index.html"
+    return rel
+def _take(cands,limit,rows,seen):
+    """Append up to limit candidates whose local file exists. Skips missing files and keeps going."""
+    added=0
+    for when,title,url,desc,path in cands:
+        if added>=limit or len(rows)>=45: return
+        if url in seen or not path or not os.path.exists(path): continue
+        seen.add(url); rows.append((when,title,url,desc)); added+=1
 def write_feed(tools=None):
-    """RSS 2.0 at /feed.xml: newest agent-news pages plus newest non-seed tools. Absolute site URLs only."""
+    """RSS 2.0 at /feed.xml: newest agent-news pages plus newest non-seed tools. Absolute site URLs only.
+    News or tool rows whose HTML file is missing are skipped, then later rows fill back up to 45 items."""
     import email.utils,xml.etree.ElementTree as ET
     if tools is None: tools=json.load(open("tools.json"))
     rows=[]; seen=set()
@@ -143,16 +156,20 @@ def write_feed(tools=None):
         page=x.get("page"); when=_when(x.get("date"))
         if not page or not x.get("title") or when is None: continue
         url=B+page.lstrip("/")
-        if not url.startswith(B) or url in seen: continue
-        seen.add(url); news.append((when,x["title"],url,x.get("summary") or x["title"]))
+        if not url.startswith(B): continue
+        news.append((when,x["title"],url,x.get("summary") or x["title"],page))
     news.sort(key=lambda z:z[0],reverse=True)
-    rows.extend(news[:25])
     pool=sorted((x for x in tools if not x.get("seed") and x.get("slug") and x.get("name")),key=lambda x:(x.get("added") or "",x.get("id") or 0),reverse=True)
-    for x in pool[:20]:
-        url=f"{B}tools/{x['slug']}.html"
-        when=_when(x.get("added"))
-        if when is None or url in seen: continue
-        seen.add(url); rows.append((when,x["name"],url,x.get("description") or x["name"]))
+    tools_c=[]
+    for x in pool:
+        path=f"tools/{x['slug']}.html"; when=_when(x.get("added"))
+        if when is None: continue
+        tools_c.append((when,x["name"],B+path,x.get("description") or x["name"],path))
+    _take(news,25,rows,seen)
+    _take(tools_c,20,rows,seen)
+    if len(rows)<45:
+        _take(news,45,rows,seen)
+        _take(tools_c,45,rows,seen)
     rows.sort(key=lambda z:z[0],reverse=True)
     if not rows: raise SystemExit("feed.xml: no items")
     built=max(z[0] for z in rows)
@@ -182,8 +199,11 @@ def write_feed(tools=None):
     if len(got)!=len(rows): raise SystemExit("feed.xml: item count mismatch")
     for it in got:
         link=it.findtext("link") or ""
+        path=_local(link)
         if not link.startswith("https://agentscouthq.com/") or it.findtext("guid")!=link or not it.findtext("title") or not it.findtext("pubDate"):
             raise SystemExit("feed.xml: item missing an absolute AgentScout link")
+        if not path or not os.path.exists(path):
+            raise SystemExit(f"feed.xml: missing file for {link}")
     open("feed.xml","w",encoding="utf-8").write(doc)
     print("feed.xml:",len(rows),"items")
     return FEED
