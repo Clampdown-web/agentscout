@@ -39,6 +39,11 @@ def main() -> int:
     named = chrome + ops
     bad.extend(label for ok, label in named if not ok)
     passes = [label for ok, label in named if ok] + pack_pass
+    import build_seo_new
+    pill = build_seo_new.header_pill_problems()
+    bad.extend(pill)
+    if not pill:
+        passes.append("header nav has one free-tools.html link and no duplicate nav pills")
     if not follower:
         passes.append("follower rows are fetched for their own day when the sprint tracker is present")
     _report(bad, passes)
