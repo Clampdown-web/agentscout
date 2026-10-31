@@ -799,11 +799,12 @@ body:has(.lb-board) .scrollbtns{display:none!important}
 .lb-card .ico{flex:0 0 40px;width:40px;height:40px}
 .lb-card .ico img{width:40px;height:40px}
 @media(min-width:860px){.lb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* Phone: cards use nearly the full width. CTA pills stay one centered row. Horizontal padding is 22px from 461px up, 16px at 390, and 11px at 360 so the row does not overflow. */
+/* Phone: cards use nearly the full width. CTA pills stay one centered row. Horizontal padding is 22px from 461px up, 16px at 390, and 11px at 360. At 340px and under, smaller type and padding keep the row inside 320px. */
 @media(max-width:640px){main.wrap:has(.lb-board){padding-left:8px;padding-right:8px}}
 @media(max-width:460px){.lb-ctas{gap:6px}.lb-board .lb-ctas .btn{padding:10px 16px}}
 @media(max-width:389px){.lb-ctas{gap:4px}.lb-board .lb-ctas .btn{padding:10px 12px}}
 @media(max-width:370px){.lb-ctas{gap:4px}.lb-board .lb-ctas .btn{padding:10px 11px}}
+@media(max-width:340px){.lb-ctas{gap:4px}.lb-board .lb-ctas .btn{padding:8px 6px;font-size:12px}}
 .lb-vote{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;min-width:0}
 .chk-list{list-style:none;padding:0;margin:0}.chk-list li{margin:0 0 8px}.chk-list label{display:flex;gap:10px;align-items:flex-start;min-height:44px}
 .botstore-cta{margin:28px 0;padding:14px 16px;border:1px solid rgba(163,230,53,.45);border-radius:14px;background:var(--card);max-width:100%;box-sizing:border-box}
