@@ -826,7 +826,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
 .card.rcard:has(> .acts .vote) h3{overflow:hidden}
 /* Tablet widths: Submit is a slim wide pill, not a tall block. Label, link, and colors stay. */
 @media(min-width:600px) and (max-width:1023px){
-  nav .links>a.btn.primary{height:auto;min-height:36px;padding:6px 22px;border-radius:999px;line-height:24px;font-size:13px!important;font-weight:600;width:auto;max-width:none;flex:0 0 auto;box-sizing:border-box;white-space:nowrap}
+  nav .links>a.btn.primary{height:auto;min-height:44px;padding:6px 22px;border-radius:999px;line-height:30px;font-size:13px!important;font-weight:600;width:auto;max-width:none;flex:0 0 auto;box-sizing:border-box;white-space:nowrap}
   nav .links>a.btn.primary::after{content:none!important}
 }
 /* Phone landscape: short static header (scrolls away) plus smaller corner scroll buttons. */
@@ -846,7 +846,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .links.nav-compact .navscroll-pills .npill,nav .links.nav-compact .navscroll-pills .mcppill{padding:2px 8px;font-size:12px;gap:4px}
   nav .navscroll-pills>a.btn.primary{margin:0;height:auto;min-height:36px;padding:6px 22px;border-radius:999px;line-height:24px;font-size:13px!important;font-weight:600;width:auto;flex:0 0 auto;white-space:nowrap}
   nav .navscroll-pills>a.btn.primary::after{content:none!important}
-  main.wrap,main section>.wrap{padding-right:16px}
+  main.wrap,main section>.wrap,.layout{padding-right:48px}
   .scrollbtns{right:8px;bottom:8px;gap:8px}
   .scrollbtn{width:32px;height:32px;font-size:16px;border-radius:999px}
   .scrollbtn.show{opacity:.8}
