@@ -469,26 +469,65 @@ def _take_anchor(html, pat):
     return html, found
 def _bs_pill(d, label="Bot Store"):
     return f'<a class="navbs" href="{d}bot-store/">'+_wrap("bs", label)+'</a>'
+def _div_end(html, start):
+    """Index just after the balanced <div> that begins at start. None if it does not close."""
+    m=re.match(r'<div\b[^>]*>', html[start:])
+    if not m: return None
+    i=start+m.end(); depth=1
+    while i<len(html) and depth:
+        nxt=re.search(r'</?div\b[^>]*>', html[i:])
+        if not nxt: return None
+        tag=nxt.group(0); i+=nxt.end()
+        depth+=-1 if tag.startswith('</') else 1
+    return i if depth==0 else None
+def _links_bounds(s):
+    """Full <div class="links">…</div>, including navscroll-text / navscroll-pills children.
+    A non-greedy .*?</div> stops at navscroll-text and hides the pills."""
+    m=re.search(r'<div class="links">', s)
+    if not m: return None
+    end=_div_end(s, m.start())
+    if end is None: return None
+    return m.start(), end
 def _cluster_nav(s, d):
-    """Plain links stay first. The six neon pills sit together immediately before Submit a tool."""
-    m=re.search(r'(<div class="links">)(.*?)(</div>)', s, re.S)
-    if not m: return s
-    inner=m.group(2)
+    """Plain links stay first. Header neon pills, one of each, immediately before Submit a tool.
+    Order: Bot Store, Image Gen, Free tools, MCP, AI bot templates, Get Featured.
+    Idempotent when .links contains .navscroll-text and .navscroll-pills (Oct 31 2026): the old
+    first-</div> slice never saw the pills, so sitewide() inserted a second Free tools link and
+    dropped Bot Store instead of putting it back."""
+    loc=_links_bounds(s)
+    if not loc: return s
+    a,b=loc
+    inner=s[a:b]
     inner=re.sub(r'<span class="navpills">','',inner)
     inner=re.sub(r'</span><!--/navpills-->','',inner)
     inner,bs=_take_anchor(inner, r'<a class="navbs" href="[^"]*">.*?</a>')
     inner,gen=_take_anchor(inner, r'<a class="navgen" href="[^"]*">.*?</a>')
     inner,bt=_take_anchor(inner, r'<a class="navbt" href="[^"]*">.*?</a>')
     inner,ft=_take_anchor(inner, r'<a class="navft" href="[^"]*">.*?</a>')
+    if not ft:
+        inner,plain=_take_anchor(inner, r'<a href="[^"]*free-tools\.html">(?:All free tools(?: →)?|Free tools)</a>')
+        if plain:
+            href=re.search(r'href="([^"]*)"', plain)
+            label=re.sub(r'<[^>]+>','',plain) or "Free tools"
+            ft=f'<a class="navft" href="{href.group(1) if href else d+"free-tools.html"}">'+_wrap("ft", label)+'</a>'
     inner,mcp=_take_anchor(inner, r'<a class="navmcp" href="[^"]*">.*?</a>')
     inner,sp=_take_anchor(inner, r'<a class="navsp" href="[^"]*">.*?</a>')
     if not gen or not bt or not ft or not mcp: return s
     if 'npill npbs' not in bs: bs=_bs_pill(d)
+    if 'npill npft' not in ft:
+        href=re.search(r'href="([^"]*)"', ft)
+        label=re.sub(r'<[^>]+>','',ft) or "Free tools"
+        ft=f'<a class="navft" href="{href.group(1) if href else d+"free-tools.html"}">'+_wrap("ft", label)+'</a>'
     if 'npill npsp' not in sp: sp=f'<a class="navsp" href="{d}sponsor.html">'+_wrap("sp","Get Featured")+'</a>'
-    cluster='<span class="navpills">'+bs+gen+bt+ft+mcp+sp+'</span><!--/navpills-->'
-    inner,k=re.subn(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)', lambda mm: cluster+mm.group(1), inner, count=1)
+    # Free tools stays directly after Image Gen. Bot Store leads: the Oct 31 build dropped it from
+    # that slot (it was not the duplicate Free tools pill, which was a second free-tools link).
+    cluster='<span class="navpills">'+bs+gen+ft+mcp+bt+sp+'</span><!--/navpills-->'
+    if 'class="navscroll-pills"' in inner:
+        inner,k=re.subn(r'(<div class="navscroll-pills">\s*)(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)', lambda mm: mm.group(1)+cluster+mm.group(2), inner, count=1)
+    else:
+        inner,k=re.subn(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)', lambda mm: cluster+mm.group(1), inner, count=1)
     if not k: inner+=cluster
-    return s[:m.start()]+m.group(1)+inner+m.group(3)+s[m.end():]
+    return s[:a]+inner+s[b:]
 def _cluster_foot(s, d):
     """Footer neon pills share one group: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured."""
     m=re.search(r'<footer\b.*?</footer>', s, re.S)
@@ -603,9 +642,11 @@ def sitewide(t):
                 if os.path.exists("bot-templates/index.html"):
                     _n=len(re.findall(r'<li class="bt-row" ',open("bot-templates/index.html").read()))
                     if _n: s=re.sub(r'(<a href="bot-templates/">See all )\d+( →</a>)',lambda mm:mm.group(1)+str(_n)+mm.group(2),s,count=1)
-        # Free-tools hub in the main nav, right after Image Gen
-        _hl=re.search(r'<div class="links">.*?</div>',s,re.S)  # skip when the header already links Free tools (Oct 23 2026: AI bot templates now follows Image Gen)
-        if 'free-tools.html">Free tools</a><a href="https://agentscout.beehiiv.com/" data-nl>' not in s and not (_hl and 'free-tools.html">Free tools</a>' in _hl.group(0)): s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s)
+        # Free-tools hub in the main nav, once, directly after Image Gen.
+        # The whole <nav> is the guard. .*?</div> on .links stops inside .navscroll-text and
+        # used to miss the pill in .navscroll-pills, so the 7 AM build inserted a second one.
+        _navm=re.search(r'<nav\b[^>]*>.*?</nav>',s,re.S)
+        if not (_navm and re.search(r'href="[^"]*free-tools\.html"', _navm.group(0))): s=re.sub(r'(<a class="navgen" href="[^"]*generate\.html">[^<]*</a>)(?!<a href="[^"]*free-tools\.html")',lambda mm:mm.group(1)+f'<a href="{d}free-tools.html">Free tools</a>',s,count=1)
         # MCP server connect page in the main nav, right after Free tools (Oct 23 2026, owner asked; SEO advised one short link)
         s=re.sub(r'<a class="navmcp" href="[^"]*">.*?</a>','',s)  # rebuild in place so markup updates apply
         if True: s=re.sub(r'(<div class="links">.*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f'<a class="navmcp" href="{d}mcp/connect.html"><span class="mcppill"><svg class="mcpico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg>MCP</span></a>',s,count=1,flags=re.S)
@@ -637,18 +678,19 @@ def sitewide(t):
         PC='<link rel="preconnect" href="https://api.agentscouthq.com" crossorigin>'
         s=s.replace('<link rel="preconnect" href="https://agentscout-image.agentscouthq.workers.dev" crossorigin>',PC)  # share counter host (Lighthouse preconnect, Oct 19 2026)
         if PC not in s and "share.js" in s and "</head>" in s: s=s.replace("</head>",PC+"</head>",1)
-        # Oct 23 2026 (owner): the four neon header pills sit together in footer order: Image Gen, AI bot templates, Free tools, MCP.
-        # Move the AI bot templates link from beside Leaderboard/Quiz to right after Image Gen; other nav links keep their places.
+        # Oct 23 2026 (owner): pull AI bot templates off the text row onto Image Gen before the pill cluster.
+        # Full .links block: .*?</div> stops at .navscroll-text and never sees the pill row.
         if True:
-            _lm=re.search(r'<div class="links">.*?</div>',s,re.S)
-            if _lm:
-                _L=_lm.group(0); _bt=re.search(r'<a class="navbt" href="[^"]*">[^<]*</a>',_L)
+            _loc=_links_bounds(s)
+            if _loc:
+                _a,_b=_loc
+                _L=s[_a:_b]; _bt=re.search(r'<a class="navbt" href="[^"]*">[^<]*</a>',_L)
                 if _bt:
                     _L2=_L.replace(_bt.group(0),'',1)
                     _L2,_k=re.subn(r'(<a class="navgen" href="[^"]*">[^<]*</a>)',lambda mm:mm.group(1)+_bt.group(0),_L2,count=1)
-                    if _k: s=s[:_lm.start()]+_L2+s[_lm.end():]
+                    if _k: s=s[:_a]+_L2+s[_b:]
         if True: s=_pill(s)  # Oct 23 2026 (owner): neon pills for Free tools / Image Gen / AI bot templates; sponsor page untouched
-        if True:  # six neon pills stay one cluster: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured
+        if True:  # one of each header pill: Bot Store, Image Gen, Free tools, MCP, AI bot templates, Get Featured
             s=_cluster_nav(s, d)
             s=_cluster_foot(s, d)
         _full_same = '["https://x.com/clampdown19", "https://x.com/AgentScoutHQ", "https://agentscout.beehiiv.com/", "https://github.com/clampdown19/agentscout", "https://github.com/Clampdown-web/agentscout"]'

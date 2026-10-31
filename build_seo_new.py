@@ -301,6 +301,50 @@ def _canon_chrome(html):
     return re.sub(r'\s+', ' ', html).strip()
 
 
+def _pill_issues(rel, chunk, where):
+    """More than one free-tools.html link, or the same nav pill class twice."""
+    bad = []
+    n_ft = len(re.findall(r'href="[^"]*free-tools\.html"', chunk))
+    if n_ft > 1:
+        bad.append(f"{rel} {where} has {n_ft} links to free-tools.html")
+    counts = {}
+    for m in re.finditer(r'<a\b([^>]*)>', chunk):
+        cls = re.search(r'class="([^"]*)"', m.group(1))
+        if not cls:
+            continue
+        for token in cls.group(1).split():
+            if token.startswith("nav"):
+                counts[token] = counts.get(token, 0) + 1
+    for token, n in sorted(counts.items()):
+        if n > 1:
+            bad.append(f"{rel} {where} has {n} .{token} pills")
+    return bad
+
+
+def header_pill_problems():
+    """Every production header, including /bot-templates/, /bot-store/, and JS-injected header markup.
+    Fails when a header links free-tools.html more than once or repeats a nav pill class.
+    """
+    bad = []
+    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    skip_dirs = ("node_modules", "data", "scripts", "assets", "preview", "pagefind", "bot-packages")
+    for root_dir, dirs, fnames in os.walk("."):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in skip_dirs]
+        for fn in fnames:
+            rel = os.path.relpath(os.path.join(root_dir, fn), ".")
+            if fn.endswith(".html") and fn not in skip:
+                s = open(rel, encoding="utf-8", errors="replace").read()
+                nav = re.search(r'<nav\b[^>]*>.*?</nav>', s, re.S)
+                if nav:
+                    bad.extend(_pill_issues(rel, nav.group(0), "header"))
+            elif fn.endswith(".js"):
+                text = open(rel, encoding="utf-8", errors="replace").read()
+                # app.js only wraps the existing header. A script that injects pill markup is checked here.
+                if 'class="navft"' in text or "class='navft'" in text or ("free-tools.html" in text and ("navscroll-pills" in text or "<nav" in text)):
+                    bad.extend(_pill_issues(rel, text, "JS header"))
+    return bad
+
+
 def verify_nav_footer_unified():
     """Every real page must carry the same nav and footer as index.html. Exit via return count of mismatches."""
     idx = open("index.html", encoding="utf-8").read()
@@ -332,6 +376,7 @@ def verify_nav_footer_unified():
                 bad.append(rel + " nav")
             if _canon_chrome(f.group(0)) != want_foot:
                 bad.append(rel + " footer")
+    bad.extend(header_pill_problems())
     print(f"nav/footer verify: {seen} pages, {len(bad)} mismatches")
     for line in bad[:20]:
         print(" MISMATCH", line)
