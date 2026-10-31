@@ -50,6 +50,9 @@ def main() -> int:
     bad.extend(scroll)
     if not scroll:
         passes.append("portrait scroll buttons stay available at max-width 640px")
+    script_bad, script_pass = _shared_script_problems()
+    bad.extend(script_bad)
+    passes.extend(script_pass)
     _report(bad, passes)
     return 1 if bad else 0
 
@@ -371,6 +374,104 @@ def _scroll_button_problems() -> list[str]:
         elif re.search(r"innerWidth\s*[<]=?\s*640|matchMedia\(\s*[\"'][^\"']*max-width\s*:\s*640px", chunk):
             problems.append("app.js skips scroll buttons at max-width 640px")
     return problems
+
+
+# share.js is intentionally absent on pages that have no Share button.
+# build_share.py documents submit, 404, privacy, and saved. The same pass
+# does not cover sponsor, how-it-started, the video hub, launch notes, or the Bot Store.
+# Those pages still have to load app.js, consent.js, and track.js.
+SHARE_JS_OPTIONAL_FILES = {
+    "404.html",
+    "submit.html",
+    "saved.html",
+    "privacy.html",
+    "how-it-started.html",
+    "sponsor.html",
+}
+SHARE_JS_OPTIONAL_PREFIXES = ("videos/", "launches/", "bot-store/")
+
+
+def _share_js_optional(rel: str) -> bool:
+    return rel in SHARE_JS_OPTIONAL_FILES or rel.startswith(SHARE_JS_OPTIONAL_PREFIXES)
+
+
+def _shared_scripts_exempt(rel: str, text: str) -> bool:
+    """Same exceptions as build_tasks.shared_scripts_exempt.
+
+    Redirect stubs (meta refresh or location.replace, including mcp/link-status.html,
+    which keeps a one-line main before it refreshes), raw fragments (data/, stats.js.html),
+    the OG card (og.html), and preview/ are not production pages.
+    """
+    if rel.startswith(("preview/", "node_modules/", "app/", "data/")) or rel in ("og.html", "stats.js.html"):
+        return True
+    if rel in ("outreach-tracker.html",) and "app.js?v=" not in text:
+        return True
+    head = text[:8000]
+    if 'http-equiv="refresh"' in head or "location.replace(" in head:
+        return True
+    low = text[:800].lower()
+    if "<html" not in low and "<!doctype" not in low:
+        return True
+    return False
+
+
+def _shared_script_problems() -> tuple[list[str], list[str]]:
+    """Every production page loads app.js, consent.js, track.js, and share.js at the site cache-bust.
+
+    Whole-page exceptions (none of the four) live in _shared_scripts_exempt and match
+    build_tasks.shared_scripts_exempt: redirect stubs, raw fragments, and the OG card.
+    share.js alone is optional only for SHARE_JS_OPTIONAL_FILES and SHARE_JS_OPTIONAL_PREFIXES.
+    Bot template pages use the sibling form: app.js, deferred consent.js, deferred track.js,
+    then share.js without defer, and the same styles.css?v= link.
+    """
+    # Do not import build_tasks: that imports build_extras, which rebuilds the search index on exit.
+    version_match = re.search(r'^ASSET_V = "(\d+)"', (ROOT / "build_tasks.py").read_text(encoding="utf-8"), re.M)
+    version = version_match.group(1) if version_match else ""
+    problems: list[str] = []
+    if not version:
+        return ["build_tasks.py is missing ASSET_V"], []
+    checked = 0
+    skip_dirs = {".git", "node_modules", "pagefind", "preview"}
+    names = ("app.js", "consent.js", "track.js", "share.js")
+    for path in ROOT.rglob("*.html"):
+        if not path.is_file() or any(part in skip_dirs for part in path.parts):
+            continue
+        rel = path.relative_to(ROOT).as_posix()
+        try:
+            text = path.read_text(encoding="utf-8")
+        except OSError as exc:
+            problems.append(f"{rel} could not be read ({exc})")
+            continue
+        if _shared_scripts_exempt(rel, text):
+            continue
+        checked += 1
+        required = ["app.js", "consent.js", "track.js"]
+        if not _share_js_optional(rel):
+            required.append("share.js")
+        missing = []
+        positions = []
+        for name in required:
+            defer = r" defer" if name in ("consent.js", "track.js") else ""
+            if name == "share.js" and not rel.startswith("bot-templates/"):
+                found = re.search(rf'<script src="[^"]*{re.escape(name)}\?v={version}"(?: defer)?></script>', text)
+            else:
+                found = re.search(rf'<script src="[^"]*{re.escape(name)}\?v={version}"{defer}></script>', text)
+            if not found:
+                missing.append(f"{name}?v={version}")
+            else:
+                positions.append(found.start())
+        if missing:
+            problems.append(f"{rel} missing shared script(s): {', '.join(missing)}")
+            continue
+        if positions != sorted(positions):
+            problems.append(f"{rel} shared scripts are out of order (expected {', '.join(names)})")
+        if rel.startswith("bot-templates/"):
+            sheet = f'<link rel="stylesheet" href="../styles.css?v={version}">'
+            if sheet not in text:
+                problems.append(f"{rel} stylesheet is not {sheet}")
+    if problems:
+        return problems, []
+    return [], [f"shared scripts app.js, consent.js, track.js, share.js ?v={version} on {checked} production pages"]
 
 
 def _report(bad: list[str], passes: list[str] | None = None) -> None:
