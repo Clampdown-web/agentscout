@@ -208,7 +208,6 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
 @media (max-width:640px){
   .scrollbtns{right:calc(12px + env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));gap:10px}
   .scrollbtn{width:48px;height:48px;min-width:44px;min-height:44px}
-  body:not(:has(.lb-board)) :is(main.wrap,main .wrap,.nlwrap>.wrap){padding-right:calc(72px + env(safe-area-inset-right))}
   body:not(:has(.lb-board)) footer{padding-bottom:calc(128px + env(safe-area-inset-bottom))}
 }
 /* Keep the fixed scroll buttons clear of row controls (Rate etc.) */
@@ -858,7 +857,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .navscroll-pills .npill,nav .navscroll-pills .mcppill,nav .navscroll-pills>a.btn.primary{box-sizing:border-box;height:38px;min-height:38px;padding:0 8px;border-radius:999px;font-size:12px!important;font-weight:600;line-height:36px;gap:4px;white-space:nowrap;margin:0;display:inline-flex;align-items:center}
   nav .navscroll-pills>a.btn.primary{flex:0 0 auto;width:auto;justify-content:center}
   nav .navscroll-pills>a.btn.primary::after{content:none!important}
-  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-right:calc(64px + env(safe-area-inset-right))}
+  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-right:48px}
   .scrollbtns{right:calc(8px + env(safe-area-inset-right));bottom:calc(8px + env(safe-area-inset-bottom));gap:8px}
   .scrollbtn{width:44px;height:44px;min-width:44px;min-height:44px;font-size:20px;border-radius:12px}
   .scrollbtn.show{opacity:1}
