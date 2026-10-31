@@ -204,6 +204,7 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
 @media (min-width:768px){.scrollbtns{right:calc(40px + env(safe-area-inset-right));bottom:calc(40px + env(safe-area-inset-bottom))}.scrollbtn{width:52px;height:52px;font-size:24px}}
 @media (prefers-reduced-motion:reduce){.scrollbtn{transition:none}}
 @media print{.scrollbtns{display:none}}
+@media (max-width:640px){.scrollbtns{display:none!important}}
 /* Keep the fixed scroll buttons clear of row controls (Rate etc.) */
 main.wrap{padding-bottom:96px}
 @media (min-width:641px) and (max-width:767px){main.wrap,main section>.wrap{padding-right:calc(84px + env(safe-area-inset-right))}}
@@ -757,13 +758,27 @@ nav .links a.navsrch{font-weight:600;color:var(--text)}
 @supports ((-webkit-background-clip:text) or (background-clip:text)){.lb-title{background:linear-gradient(100deg,var(--text) 10%,var(--accent) 55%,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}}
 .lb-sub{margin:0 0 12px;max-width:70ch;font-size:16px;line-height:1.5;color:var(--text)}
 body:has(.lb-board) .scrollbtns{display:none!important}
-.lb-stats{margin:0}.lb-stats .st-count{max-width:100%}.lb-stats .lb-range{font-size:15px;line-height:1.25;overflow-wrap:anywhere}
+.lb-stats{margin:0}.lb-stats .st-count{max-width:100%;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:.35em;cursor:default}.lb-stats .lb-range{font-size:15px;line-height:1.25;overflow-wrap:anywhere}
 .lb-qa{margin:0 0 14px;padding:14px 16px;border-radius:14px;border:1px solid rgba(56,189,248,.35);background:linear-gradient(180deg,rgba(56,189,248,.08),var(--card));box-shadow:0 0 24px rgba(56,189,248,.08);max-width:100%;box-sizing:border-box}
 .lb-qa p{margin:0;font-size:16px;line-height:1.5;color:var(--text)}
-.lb-ctas{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.lb-ctas{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;max-width:100%}
 .lb-board .btn,.lb-board .vote{min-height:44px;border-radius:999px}
 .lb-board .btn{padding:0 16px;border-color:rgba(147,147,255,.55);box-shadow:0 0 16px rgba(91,91,247,.16)}
 .lb-board .btn.primary{background:linear-gradient(90deg,#5B5BF7,#38bdf8);color:#fff;border-color:transparent}
+.lb-board .lb-ctas .btn{max-width:100%;height:auto;white-space:normal;text-align:center;padding:8px 16px;font-weight:700;line-height:1.25;text-decoration:none;border-radius:999px}
+.lb-board .lb-ctas .btn:focus{outline:none}
+.lb-board .lb-ctas .btn:focus-visible{outline:2px solid #082f49;outline-offset:3px}
+[data-theme=dark] .lb-board .lb-ctas .btn:focus-visible{outline-color:#e0f2fe}
+.lb-board .lb-ctas .lb-cta-new{background:transparent;color:#4338ca;border:1.5px solid #4338ca;box-shadow:0 0 0 1px rgba(67,56,202,.08)}
+.lb-board .lb-ctas .lb-cta-new:hover{background:rgba(67,56,202,.08);box-shadow:0 0 12px rgba(67,56,202,.28)}
+[data-theme=dark] .lb-board .lb-ctas .lb-cta-new{color:#818cf8;border-color:#818cf8;box-shadow:0 0 12px rgba(129,140,248,.32)}
+[data-theme=dark] .lb-board .lb-ctas .lb-cta-new:hover{background:rgba(129,140,248,.14);box-shadow:0 0 16px rgba(129,140,248,.48)}
+.lb-board .lb-ctas .lb-cta-free{background:#14b8a6;color:#042f2e;border:1.5px solid #0f766e;box-shadow:0 0 12px rgba(20,184,166,.22)}
+.lb-board .lb-ctas .lb-cta-free:hover{filter:brightness(1.06);box-shadow:0 0 16px rgba(20,184,166,.38)}
+[data-theme=dark] .lb-board .lb-ctas .lb-cta-free{border-color:#2dd4bf;box-shadow:0 0 14px rgba(20,184,166,.38)}
+.lb-board .lb-ctas .lb-cta-fast{background:linear-gradient(135deg,#0ea5e9 0%,#38bdf8 100%);color:#082f49;border:1.5px solid #0369a1;box-shadow:0 4px 16px rgba(14,165,233,.35),0 0 18px rgba(56,189,248,.32)}
+.lb-board .lb-ctas .lb-cta-fast:hover{filter:brightness(1.05);box-shadow:0 6px 20px rgba(14,165,233,.45),0 0 22px rgba(56,189,248,.45)}
+[data-theme=dark] .lb-board .lb-ctas .lb-cta-fast{border-color:#7dd3fc;box-shadow:0 4px 18px rgba(14,165,233,.45),0 0 22px rgba(56,189,248,.42)}
 .lb-board{font-size:16px;line-height:1.5}
 .lb-grid{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
 .lb-card{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:12px;align-items:start;padding:16px;min-width:0;max-width:100%;box-sizing:border-box;border-color:rgba(147,147,255,.28)}

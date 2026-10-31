@@ -327,13 +327,13 @@ def launch_page(tools, start, end, wid, current):
 <h1 class="lb-title">{e(h1)}</h1>
 <p class="lede lb-sub">{e(visible)}</p>
 <div class="st-counts lb-stats" aria-label="This launch week">
-<span class="st-count"><b>{len(rows)}</b><span>tools this week</span></span>
-<span class="st-count"><b data-today-total>0</b><span>votes today</span></span>
-<span class="st-count"><b class="lb-range">{e(label)}</b><span>{"this week" if open_week else "dates"}</span></span>
+<span class="st-count"><b>{len(rows)}</b><span> tools this week</span></span>
+<span class="st-count"><b data-today-total>0</b><span> votes today</span></span>
+<span class="st-count"><b class="lb-range">{e(label)}</b><span> {"this week" if open_week else "dates"}</span></span>
 </div>
 </header>
 <div class="lb-qa"><p><b>Quick answer:</b> {qa}</p></div>
-<p class="lb-ctas"><a class="btn primary" href="../new.html">New tools</a><a class="btn primary" href="../submit.html">Submit free</a><a class="btn primary" href="{FAST}">Fast-Track ($15)</a></p>
+<p class="lb-ctas"><a class="btn lb-cta lb-cta-new" href="../new.html">New tools</a><a class="btn lb-cta lb-cta-free" href="../submit.html">Submit free</a><a class="btn lb-cta lb-cta-fast" href="{FAST}">Fast-Track ($15)</a></p>
 {pager}
 <ol class="lb-grid">{"".join(items) or "<li>No tools were added in this week.</li>"}</ol>
 {pager}
