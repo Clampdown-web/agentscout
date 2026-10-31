@@ -29,7 +29,7 @@ def launch_pack_html():
       <p>{LAUNCH_PACK_ACCOUNTS}</p>
       <p>{LAUNCH_PACK_SKIP} {LAUNCH_PACK_LIMITS}</p>
       <p><b>After you pay:</b> {LAUNCH_PACK_INTAKE}</p>
-      <p style="margin:14px 0 0"><a class="btn primary" href="{LAUNCH_PACK_URL}" target="_blank" rel="noopener noreferrer">Buy the Directory Launch Pack ($49) →</a></p>
+      <p style="margin:14px 0 0"><a class="btn primary pkg-cta pkg-cta-lp" href="{LAUNCH_PACK_URL}" target="_blank" rel="noopener noreferrer">Buy the Directory Launch Pack ($49) →</a></p>
     </aside>'''
 
 def load_metrics(t):

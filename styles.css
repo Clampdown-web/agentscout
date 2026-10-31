@@ -719,13 +719,26 @@ nav .links a.navsrch{font-weight:600;color:var(--text)}
 /* Responsive text-wrap guard for 360px/390px at 1.3x text scale */
 .hms-card,.spkg-opt,.pkg-card,#makers .card{max-width:100%;box-sizing:border-box;overflow:hidden}
 .hms-card .npill,.spkg-name .npill,.pkg-pill{white-space:normal !important;max-width:100%;line-height:1.35;height:auto}
-.hms-card .btn,#makers .btn,.pkg-cta{white-space:normal !important;height:auto !important;min-height:42px;padding-top:8px;padding-bottom:8px;text-align:center;line-height:1.3;max-width:100%;box-sizing:border-box}
+.hms-card .btn,#makers .btn,.pkg-cta,.pkg-cta-lp{white-space:normal !important;height:auto !important;min-height:42px;padding-top:8px;padding-bottom:8px;text-align:center;line-height:1.3;max-width:100%;box-sizing:border-box}
 .spkg-body,.spkg-row,.spkg-name{min-width:0;max-width:100%;overflow-wrap:anywhere}
 
 /* Stats bar, launch board, MCP status, Launch Pack, badge tabs */
 .stats{gap:12px 22px}.stats a{color:inherit;text-decoration:none;min-height:44px;display:inline-flex;align-items:baseline;gap:4px}.stats a:hover{color:var(--accent)}
-.launch-pack{margin:18px 0;padding:16px 18px;border:1px solid rgba(56,189,248,.45);border-radius:14px;background:var(--card);max-width:100%;box-sizing:border-box}
-.launch-pack p,.launch-pack h2{overflow-wrap:anywhere}.lp-kicker{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#38bdf8}
+/* Directory Launch Pack add-on. Amber/gold is unused by the four listing tiers (teal / sky / indigo / pink). */
+.launch-pack{margin:18px 0;padding:16px 18px;border:2px solid #b45309;border-radius:16px;background:linear-gradient(180deg,rgba(245,158,11,.08) 0%,var(--card) 42%);box-shadow:0 8px 28px rgba(217,119,6,.24),0 0 14px rgba(245,158,11,.22);max-width:100%;box-sizing:border-box;min-width:0}
+[data-theme=dark] .launch-pack{border-color:#fbbf24;background:linear-gradient(180deg,rgba(251,191,36,.16) 0%,var(--card) 48%);box-shadow:0 10px 32px rgba(245,158,11,.34),0 0 20px rgba(251,191,36,.30)}
+.launch-pack p,.launch-pack h2{overflow-wrap:anywhere;min-width:0;max-width:100%}
+.launch-pack h2{color:#b45309;font-weight:800}
+[data-theme=dark] .launch-pack h2{color:#fbbf24}
+.launch-pack .lp-kicker{display:inline-block;max-width:100%;margin:0 0 10px;padding:4px 11px;border-radius:999px;border:1px solid #b45309;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#111;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;line-height:1.35;white-space:normal;box-shadow:0 0 8px rgba(245,158,11,.45),0 0 16px rgba(251,191,36,.28)}
+[data-theme=dark] .launch-pack .lp-kicker{border-color:#fbbf24;box-shadow:0 0 10px rgba(251,191,36,.55),0 0 18px rgba(245,158,11,.35)}
+.lp-kicker{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#38bdf8}
+.pkg-cta-lp,.btn.primary.pkg-cta-lp{display:inline-flex;width:100%;max-width:100%;box-sizing:border-box;justify-content:center;background:linear-gradient(135deg,#fbbf24,#f59e0b 55%,#d97706) !important;border-color:#d97706 !important;color:#111 !important;font-weight:800;font-size:14.5px;border-radius:10px;padding:10px 14px;text-align:center;line-height:1.3;white-space:normal !important;height:auto !important;min-height:44px;box-shadow:0 4px 16px rgba(245,158,11,.42),0 0 12px rgba(251,191,36,.32)}
+[data-theme=dark] .pkg-cta-lp,[data-theme=dark] .btn.primary.pkg-cta-lp{background:linear-gradient(135deg,#fbbf24,#f59e0b) !important;border-color:#fbbf24 !important;color:#111 !important;box-shadow:0 4px 18px rgba(251,191,36,.48),0 0 16px rgba(245,158,11,.36)}
+.pkg-cta-lp:hover,.btn.primary.pkg-cta-lp:hover{filter:brightness(1.06);opacity:1}
+@media(max-width:420px){.launch-pack{padding:14px 12px}}
+@media(max-width:640px){.mainc>.launch-pack{margin-left:16px;margin-right:16px}}
+@media(min-width:641px) and (max-width:1099px){.mainc>.launch-pack{margin-left:24px;margin-right:24px}}
 .st-dash,.lb-board{max-width:100%}.st-counts,.lb-head{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 .st-count{min-height:44px;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;cursor:pointer;display:inline-flex;flex-direction:column;align-items:flex-start;min-width:0}
 .st-count.on{border-color:#38bdf8;box-shadow:0 0 0 1px rgba(56,189,248,.35)}
