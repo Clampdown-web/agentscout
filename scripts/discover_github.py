@@ -1,5 +1,8 @@
 """Discover agent repos from GitHub topics. Usage: python3 scripts/discover_github.py out.json [min_stars] [since YYYY-MM-DD]"""
 import json,sys,time,requests
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from takedown_blocklist import blocked as _takedown_blocked
 out=sys.argv[1]; MIN=int(sys.argv[2]) if len(sys.argv)>2 else 500; SINCE=sys.argv[3] if len(sys.argv)>3 else "2026-04-16"
 TOPICS=["ai-agents","llm-agent","agent-framework","mcp-server","browser-agent","voice-agent","coding-agent","ai-agent","agents","autonomous-agents","multi-agent","agentic-ai"]
 H={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
@@ -12,6 +15,8 @@ for t in TOPICS:
     if r.status_code!=200: print(t,page,r.status_code); break
     items=r.json().get("items",[])
     for i in items:
+      home=i.get("homepage") or ""
+      if _takedown_blocked(name=i.get("name") or "", url=home, website=home): continue
       seen.setdefault(i["full_name"].lower(),{k:i.get(k) for k in ["full_name","name","description","homepage","stargazers_count","pushed_at","topics","language","license"]}|{"owner":i["owner"]["login"],"owner_type":i["owner"]["type"],"src":"github:"+t})
     print(t,page,len(items),len(seen),flush=True); time.sleep(7)
     if len(items)<100: break

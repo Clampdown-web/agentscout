@@ -15,6 +15,7 @@ Nothing is pushed or deployed by this script.
 """
 import sys,os,re,io,json,glob,datetime
 sys.path.insert(0,'scripts'); from dedupe_check import keys
+from takedown_blocklist import blocked as _takedown_blocked
 from PIL import Image
 AUDIT="/workspace/notes/crypto-tools-audit-2026-10-17.json"; LOGODIR="/workspace/notes/crypto-logos"
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
@@ -93,6 +94,8 @@ def main():
             if x.get("github_stars") is not None: e["github_stars"]=x["github_stars"]
         if x.get("tags"): e["tags"]=x["tags"]
         ks=keys([e])
+        if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=slug):
+            skipped.setdefault("blocklist",[]).append(name); continue
         if ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]: skipped.setdefault("duplicate",[]).append(name); continue
         im=load_logo(x,slug) or (fetch_logo(site,gh) if opt.get("--fetch-missing-logos") else None)
         if im is None: skipped.setdefault("no logo",[]).append(name); continue
