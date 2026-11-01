@@ -10,6 +10,7 @@ import sys,json,re,io,requests,concurrent.futures as cf
 from urllib.parse import urljoin,urlparse
 from PIL import Image
 sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
+from takedown_blocklist import blocked as _takedown_blocked
 UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 GH={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
 def _gh_token():
@@ -140,6 +141,8 @@ if __name__=="__main__":
   for r in res:
     if r["err"]: skipped.setdefault(r["err"].split()[0],[]).append(r.get("repo") or r.get("name")); continue
     e=r["e"]; ks=keys([e])
+    if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website","")):
+      skipped.setdefault("blocklist",[]).append(e["name"]); continue
     if ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]: skipped.setdefault("duplicate",[]).append(e["name"]); continue
     for k in K: K[k]|=ks[k]
     nid+=1; e["id"]=nid; e["slug"]=re.sub(r"[^a-z0-9]+","-",e["name"].lower()).strip("-"); e["logo"]=f"assets/logos/{e['slug']}.png"

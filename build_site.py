@@ -2,6 +2,15 @@
 import subprocess as _sp,sys as _sys; _sp.run([_sys.executable,'scripts/update_latest_issue.py'])  # newsletter Latest issue (Oct 20 2026)
 import json,re,html,os,build_extras,build_rich,build_related
 t=json.load(open("tools.json"))
+_sys.path.insert(0,"scripts")
+from takedown_blocklist import blocked_tool as _blocked_tool
+_kept=[]; _dropped=0
+for _x in t:
+    if _blocked_tool(_x): _dropped+=1
+    else: _kept.append(_x)
+if _dropped:
+    print(f"takedown blocklist dropped {_dropped} listing(s) before build")
+t=_kept
 import build_logocheck; build_logocheck.run(t)  # stop the build if any tool lacks a valid local logo (Oct 18 2026)
 # Sponsor bar on every page (build_sponsor.py). OFF until a sponsor is booked: set True and fill data/sponsor_bar.json, then rebuild.
 SPONSOR_ENABLED = False
