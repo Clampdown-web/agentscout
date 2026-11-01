@@ -1,12 +1,12 @@
 {
- "date": "2026-10-30",
- "slug": "mindflow",
- "name": "Mindflow",
- "why": "A standout security & governance tool for builders: no-code automation and AI agents for security and IT operations.",
- "category": "security & governance",
- "description": "No-code automation and AI agents for security and IT operations.",
- "logo": "https://agentscouthq.com/assets/logos/mindflow.png",
- "page": "https://agentscouthq.com/tools/mindflow.html",
+ "date": "2026-10-31",
+ "slug": "butterbase",
+ "name": "Butterbase",
+ "why": "A standout agent infra tool for builders: open-source backend-as-a-service.",
+ "category": "agent infra",
+ "description": "Open-source backend-as-a-service. Postgres, auth, storage, functions, AI gateway, MCP",
+ "logo": "https://agentscouthq.com/assets/logos/butterbase.png",
+ "page": "https://agentscouthq.com/tools/butterbase.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -67,6 +67,10 @@
   {
    "date": "2026-10-30",
    "slug": "mindflow"
+  },
+  {
+   "date": "2026-10-31",
+   "slug": "butterbase"
   }
  ]
 }

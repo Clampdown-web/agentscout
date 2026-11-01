@@ -8212,5 +8212,84 @@
 "agent-auth",
 "mcp-servers",
 "terminal-agents"
+],
+"talynce": [
+"voice-phone",
+"video"
+],
+"with-you-again": [
+"video"
+],
+"hutchdb": [
+"planning-tasks",
+"text-to-sql",
+"mcp-servers",
+"ide-agents"
+],
+"readgzh": [
+"research-agents",
+"mcp-servers",
+"workflow-automation"
+],
+"favicondl": [
+"web-scraping",
+"local-models"
+],
+"jev-agent": [
+"voice-phone",
+"evals"
+],
+"love-to-color": [],
+"botsee": [
+"voice-phone",
+"research-agents",
+"workflow-automation"
+],
+"context-nest": [
+"local-models",
+"terminal-agents"
+],
+"fotoapta": [],
+"gbot": [
+"research-agents"
+],
+"tiny-desk-ai": [
+"video"
+],
+"orivox": [
+"guardrails",
+"video-editing"
+],
+"ecommerce-data-api": [
+"voice-phone",
+"sales-agents",
+"research-agents",
+"mcp-servers",
+"workflow-automation"
+],
+"agent-control": [
+"agent-payments",
+"voice-phone",
+"chat-app-agents",
+"sales-agents",
+"video-editing"
+],
+"xmcp": [
+"mcp-servers",
+"agent-frameworks"
+],
+"inkroom": [
+"workflow-automation",
+"storyboards-previs",
+"video-editing",
+"images-design",
+"rules-config"
+],
+"aifetchly": [
+"vector-rag",
+"research-agents",
+"computer-use",
+"workflow-automation",
+"local-models"
 ]
 }
