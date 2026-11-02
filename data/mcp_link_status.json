@@ -1,10 +1,10 @@
 {
- "checked": "2026-11-01 06:55",
+ "checked": "2026-11-02 06:56",
  "tz": "America/Los_Angeles",
  "results": {
   "9bot": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "aftership-mcp": {
    "url": 200
@@ -18,8 +18,8 @@
    "github": 200
   },
   "agentkey": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "airtable-mcp": {
    "url": 200
@@ -137,8 +137,8 @@
    "github": 200
   },
   "browsertools-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "buildkite-mcp": {
    "url": 200
@@ -147,8 +147,8 @@
    "url": 200
   },
   "carbon": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "carto-mcp": {
    "url": 200
@@ -233,7 +233,7 @@
    "github": 200
   },
   "design-extract": {
-   "url": 200,
+   "url": 402,
    "github": 200
   },
   "desktop-commander-mcp": {
@@ -252,6 +252,9 @@
    "url": 200,
    "github": 200
   },
+  "ecommerce-data-api": {
+   "url": 200
+  },
   "edgegap-mcp": {
    "url": 200,
    "github": 200
@@ -266,6 +269,10 @@
   "fastmcp": {
    "url": 200,
    "github": 200
+  },
+  "favicondl": {
+   "github": 200,
+   "url": 200
   },
   "ffmpeg-skill": {
    "url": 200
@@ -334,8 +341,8 @@
    "url": 200
   },
   "guru-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "happyscribe-mcp": {
    "url": 200
@@ -356,6 +363,10 @@
   },
   "hugging-face-mcp-server": {
    "url": 405,
+   "github": 200
+  },
+  "hutchdb": {
+   "url": 200,
    "github": 200
   },
   "icons8-mcp": {
@@ -392,7 +403,10 @@
    "github": 200
   },
   "jcodemunch-mcp": {
-   "github": 200,
+   "url": 200,
+   "github": 200
+  },
+  "jev-agent": {
    "url": 200
   },
   "jitsu-mcp": {
@@ -695,8 +709,8 @@
    "url": 200
   },
   "pandadoc-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "pangolinfo-amazon-data-mcp": {
    "github": 200,
@@ -713,8 +727,8 @@
    "url": 200
   },
   "phantom": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "picsart-genai-mcp": {
    "url": 202
@@ -746,6 +760,10 @@
    "url": 200,
    "github": 200
   },
+  "readgzh": {
+   "github": 200,
+   "url": 200
+  },
   "redamon": {
    "url": 200,
    "github": 200
@@ -758,15 +776,15 @@
    "url": 200
   },
   "remotify-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "reverse-image-location-geosolver": {
    "url": 200
   },
   "rocketreach-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "sanity-mcp": {
    "url": 200
@@ -835,8 +853,8 @@
    "url": 200
   },
   "sonarqube-mcp-server": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "stack-overflow-mcp": {
    "url": 200,
@@ -886,8 +904,8 @@
    "github": 200
   },
   "the-commons-dead-brands-collab-hub": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "tipranks-mcp": {
    "url": 200,
@@ -951,12 +969,12 @@
    "url": 200
   },
   "webiny-js": {
-   "github": 200,
-   "url": 200
-  },
-  "wenbu": {
    "url": 200,
    "github": 200
+  },
+  "wenbu": {
+   "github": 200,
+   "url": 200
   },
   "whimsical-mcp": {
    "url": 200,
