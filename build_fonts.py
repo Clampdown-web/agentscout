@@ -4,11 +4,13 @@ Idempotent; runs at the end of build_site.py over every HTML page and the detail
 import os,re
 OLD=re.compile(r'<link rel="preconnect" href="https://fonts\.googleapis\.com">\s*<link rel="preconnect" href="https://fonts\.gstatic\.com" crossorigin>\s*<link href="https://fonts\.googleapis\.com/css2\?family=Inter[^"]*" rel="stylesheet">|<link href="https://fonts\.googleapis\.com/css2\?family=Inter[^"]*" rel="stylesheet">')
 CSS=re.compile(r'<link rel="stylesheet" href="([^"]*?)styles\.css')
-def fix(s):
+def fix(s, boost_font=False):
     m=CSS.search(s)
     if not m: return s
     pre=m.group(1)
-    s=OLD.sub(lambda _:f'<link rel="preload" href="{pre}assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>',s)
+    s=OLD.sub(lambda _:f'<link rel="preload" href="{pre}assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">',s)
+    if boost_font:
+        s=re.sub(r'(<link rel="preload" href="[^"]*assets/fonts/inter-latin\.woff2" as="font" type="font/woff2" crossorigin)(?! fetchpriority)',r'\1 fetchpriority="high"',s)
     return s.replace("style-src 'self' 'unsafe-inline' https://fonts.googleapis.com","style-src 'self' 'unsafe-inline'").replace("font-src 'self' https://fonts.gstatic.com","font-src 'self'")
 def run():
     n=0;left=[]
@@ -18,7 +20,7 @@ def run():
         files+= [os.path.join(root,f)[2:] for f in fs if f.endswith(".html")]
     for f in files:
         if f=="outreach-tracker.html": continue
-        s=open(f).read(); t=fix(s)
+        s=open(f).read(); t=fix(s, boost_font=(f=="index.html"))
         if t!=s: open(f,"w").write(t); n+=1
         if "fonts.googleapis.com" in t: left.append(f)
     print(f"fonts: self-hosted Inter on {n} files" + (f"; still on Google Fonts: {left[:5]}" if left else ""))

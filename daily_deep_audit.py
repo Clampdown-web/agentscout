@@ -750,9 +750,13 @@ def _shared_script_problems() -> tuple[list[str], list[str]]:
             required.append("share.js")
         missing = []
         positions = []
+        # Homepage injects the shared scripts after first paint so they are not on the LCP path.
+        late = rel == "index.html" and "dispatchEvent(new Event(\"as-scripts\"))" in text
         for name in required:
             defer = r" defer" if name in ("consent.js", "track.js") else ""
-            if name == "share.js" and not rel.startswith("bot-templates/"):
+            if late:
+                found = re.search(rf'{re.escape(name)}\?v={version}', text)
+            elif name == "app.js" or (name == "share.js" and not rel.startswith("bot-templates/")):
                 found = re.search(rf'<script src="[^"]*{re.escape(name)}\?v={version}"(?: defer)?></script>', text)
             else:
                 found = re.search(rf'<script src="[^"]*{re.escape(name)}\?v={version}"{defer}></script>', text)

@@ -34,7 +34,7 @@ CSS = """
 .ap-tiers{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;min-width:0}
 .ap-tier{display:inline-flex;align-items:center;min-height:36px;padding:6px 10px;border-radius:999px;border:1px solid rgba(147,197,253,.45);background:rgba(147,197,253,.08);color:#e0f2fe;font-size:12px;font-weight:800;cursor:pointer;max-width:100%;box-sizing:border-box;text-align:left;text-decoration:none}
 .ap-buy{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 12px;border-radius:999px;background:#f4f4f5;color:#18181b;font-size:12.5px;font-weight:800;text-decoration:none;box-sizing:border-box}
-.ap-tier[aria-pressed="true"]{background:#f4f4f5;color:#18181b;border-color:#f4f4f5}
+.ap-tier.is-on{background:#f4f4f5;color:#18181b;border-color:#f4f4f5}
 .ap-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding:4px 14px 16px;min-width:0}
 .ap-card{--ap:#93c5fd;position:relative;background:linear-gradient(180deg, color-mix(in srgb, var(--ap) 10%, #181c26) 0%, #141720 100%);border:1px solid color-mix(in srgb, var(--ap) 38%, rgba(255,255,255,.1));border-radius:18px;padding:14px 14px 12px;min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 28px -10px rgba(0,0,0,.6), 0 0 22px -8px color-mix(in srgb, var(--ap) 35%, transparent);overflow:hidden}
 .ap-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg, transparent, var(--ap), transparent)}
@@ -329,7 +329,9 @@ def pack_section_html() -> str:
     var summary = document.getElementById("ap-summary");
     var pay = document.getElementById("ap-pay");
     document.querySelectorAll("[data-ap-tier]").forEach(function(btn){
-      btn.setAttribute("aria-pressed", String(quote.n) === btn.getAttribute("data-ap-tier") ? "true" : "false");
+      var on = String(quote.n) === btn.getAttribute("data-ap-tier");
+      btn.classList.toggle("is-on", on);
+      btn.removeAttribute("aria-pressed");
     });
     var dock = document.getElementById("ap-dock");
     if (!rows.length) {
