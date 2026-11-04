@@ -15,11 +15,11 @@ Target code was not executed. `unshare --net` can drop outbound network, and `un
 
 Delegated hunter and verifier agents had not returned structured JSON when this ledger was closed. The parent re-read every cited file and line against this commit and did not promote any lead to `confirmed`. A separate coverage-critic agent did not return a pass, so this report does not claim a critic-accepted clean sweep. No prior ledger was carried forward.
 
-Counts: **confirmed 0**, **needs_validation 8**, **rejected 4**.
+Counts: **confirmed 0**, **needs_validation 7**, **rejected 5**.
 
 ## Security posture
 
-The in-repo workers are a public read-only MCP catalog, a votes and roast worker, and a patch around an image worker whose inner program is not in this tree. Vote and submit routes check the site Origin. The stats-key compare fails closed when the secret is unset. The MCP limiter fails closed when its bindings are missing, and a User-Agent string is not a bypass. The roast fetcher limits scheme, port, body size, and redirect hops, and it rejects the private addresses its tests name. The gap that remains in source is that the IPv6 classifier does not decode every mapped form, and the later fetch is not bound to the addresses it checked. Browser sinks reviewed on the shared scripts escape catalog and URL text before `innerHTML`. No hardcoded cloud secret or private key literal was found.
+The in-repo workers are a public read-only MCP catalog, a votes and roast worker, and a patch around an image worker whose inner program is not in this tree. Vote and submit routes check the site Origin. The stats-key compare fails closed when the secret is unset. The MCP limiter fails closed when its bindings are missing, and a User-Agent string is not a bypass. The roast fetcher limits scheme, port, body size, and redirect hops, and it rejects the private addresses its tests name. `new URL` serializes a full-form IPv4-mapped literal to the `::ffff:` spelling that `isBlockedIp` already rejects. The fetch that follows a public DNS answer is still not bound to those addresses. Browser sinks reviewed on the shared scripts escape catalog and URL text before `innerHTML`. No hardcoded cloud secret or private key literal was found.
 
 ## Confirmed findings
 
@@ -31,7 +31,6 @@ These are source-traced leads with an exact blocker. They are not confirmed vuln
 
 | Lead | Trace | Blocker | Local next step |
 | --- | --- | --- | --- |
-| Roast SSRF guard accepts full-form IPv4-mapped addresses | `ssrf.js` `isBlockedIp` to `worker.js` `fetch` | Function not executed; Workers fetch policy is not in the repo | Scratch import of `isBlockedIp` and `validateUrlShape` on `0:0:0:0:0:ffff:a9fe:a9fe` |
 | Roast fetch is not bound to the checked DNS answers | `fetchPublic` after `resolveAndCheck` | Whether the runtime re-resolves the hostname is outside the repo | Stub `fetch` and record that the second call still uses the hostname |
 | Roast limiting is per-isolate when vote storage is absent | `rateLimit` memory fallback | Deployed KV attachment and overlapping KV writes were not run | Scratch harness with no `VOTES` binding and a double get |
 | Client address falls back to X-Forwarded-For | `clientIp` in three workers | Whether a request can arrive without `CF-Connecting-IP` is not in the repo | Call `clientIp` on two local `Request` objects |
@@ -42,7 +41,6 @@ These are source-traced leads with an exact blocker. They are not confirmed vuln
 
 The source change that closes each traced gap, once the local check agrees:
 
-- **Mapped IPv6.** In `blockedV6`, if the expanded address is IPv4-mapped, decode the last 32 bits and return `blockedV4`. Add `0:0:0:0:0:ffff:a9fe:a9fe`, `::0:ffff:7f00:1`, and `0:0:0:0:0:ffff:a00:1` to `ssrf.test.mjs`.
 - **Unpinned DNS.** Make `fetchPublic` connect to an address `resolveAndCheck` accepted, or fail closed when the runtime peer address is not in that list.
 - **Roast limiter.** Return 503 from `roast` when `env.VOTES` is missing, matching `POST /vote`.
 - **Forwarded client IP.** Read only `cf-connecting-ip` and fail closed when it is absent. Use that value for vote dedup, rate limits, and Turnstile `remoteip`.
@@ -73,10 +71,10 @@ Positive patterns: origin allowlists on vote and guarded submit routes, constant
 
 | Status | Units |
 | --- | --- |
-| covered | 16 |
-| candidate | 10 |
+| covered | 17 |
+| candidate | 9 |
 | blocked | 0 |
 | deferred | 1 |
 | out of scope | 0 |
 
-27 units. Eight fingerprints are linked from the ten candidate units (`workers.client-ip-forwarded` is one cause on three workers). The inner image worker, the advertised MCP SSE handler (`cloudflare-mcp-worker/worker.js` `registryBody`), and the deployed Turnstile flag are absent from source. The SSE handler is the deferred unit. The other absences are the blockers above. Rejected claims, kept so a later run can see the refutation: `build.faq-unescaped-answer`, `crypto.safeeq-empty-equals-empty`, `mcp.wildcard-cors`, `vote.origin-header-as-auth`.
+27 units. Seven fingerprints are linked from the nine candidate units (`workers.client-ip-forwarded` is one cause on three workers). The inner image worker, the advertised MCP SSE handler (`cloudflare-mcp-worker/worker.js` `registryBody`), and the deployed Turnstile flag are absent from source. The SSE handler is the deferred unit. The other absences are the blockers above. Rejected claims, kept so a later run can see the refutation: `build.faq-unescaped-answer`, `crypto.safeeq-empty-equals-empty`, `mcp.wildcard-cors`, `ssrf.ipv6-mapped-private`, `vote.origin-header-as-auth`.

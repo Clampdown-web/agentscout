@@ -1,32 +1,6 @@
 # Needs validation
 
-Eight leads. None is a confirmed vulnerability. None has a severity. Do not send these inputs to the production hosts.
-
-## Roast SSRF guard accepts full-form IPv4-mapped addresses
-
-Fingerprint: `ssrf.ipv6-mapped-private`
-
-Lower-trust caller: any client that can reach `GET` or `POST /roast`.
-
-Claim: `isBlockedIp` decodes a mapped IPv4 address only when the text starts with `::ffff:` and the rest is a dotted address or exactly two hextets. `blockedV6` does not look at the last 32 bits. `0:0:0:0:0:ffff:a9fe:a9fe` is the mapped form of `169.254.169.254`. `validateUrlShape` and `resolveAndCheck` then accept the literal, and `fetchPublic` calls `fetch` on that URL.
-
-Trace:
-
-1. `cloudflare-api-worker/src/worker.js:318` dispatches `/roast`.
-2. `cloudflare-api-worker/src/worker.js:249` reads the caller URL.
-3. `cloudflare-api-worker/src/ssrf.js:87` sends a colon hostname to `isBlockedIp`.
-4. `cloudflare-api-worker/src/ssrf.js:48` `blockedV6` does not reject the expanded mapped form.
-5. `cloudflare-api-worker/src/worker.js:205` fetches the original URL.
-
-Evidence: `ssrf.js:10` (the `::ffff:` decoder), `ssrf.js:106` (an allowed literal skips DNS), `ssrf.test.mjs:7` (the test list includes `::ffff:127.0.0.1` and not the full form).
-
-Blockers: the function was not executed, because this host cannot mount the repo read-only. The Workers fetch policy for that literal is not in the repository.
-
-Local check: in a scratch copy, assert `isBlockedIp` returns true for `0:0:0:0:0:ffff:a9fe:a9fe`, `::0:ffff:7f00:1`, and `0:0:0:0:0:ffff:a00:1`, and that `validateUrlShape("http://[0:0:0:0:0:ffff:a9fe:a9fe]/")` returns an error. Stub `fetch` and assert it is not called.
-
-Owner check: read the Workers fetch policy for IPv4-mapped and non-public destinations, or record the destination in local `wrangler dev`. Do not send the URL to production.
-
-Source change that closes the traced gap: in `blockedV6`, decode IPv4-mapped addresses and return `blockedV4` on those 32 bits. Add the three literals to `ssrf.test.mjs`.
+Seven leads. None is a confirmed vulnerability. None has a severity. Do not send these inputs to the production hosts.
 
 ## Roast fetch is not bound to the checked DNS answers
 

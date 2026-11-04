@@ -598,7 +598,7 @@
     "prior_status": "none",
     "attempts": [],
     "wave": 1,
-    "status": "candidate",
+    "status": "covered",
     "agent_id": "review-ssrf",
     "reviewed_paths": [
       "cloudflare-api-worker/src/ssrf.js",
@@ -613,15 +613,13 @@
           "cloudflare-api-worker/src/worker.js",
           "cloudflare-api-worker/test/ssrf.test.mjs"
         ],
-        "invariant": "An unauthenticated roast request must not pass a private or link-local address literal to fetch.",
+        "invariant": "An unauthenticated roast request must not pass a private IPv4-mapped literal to fetch.",
         "method": "source",
-        "result": "isBlockedIp decodes only a leading ::ffff: form. A full-form IPv4-mapped literal does not take that branch, and blockedV6 does not inspect the last 32 bits. validateUrlShape and resolveAndCheck then accept the literal. The existing test covers ::ffff:127.0.0.1 and not the full form. The function was not executed.",
+        "result": "new URL serializes a full-form IPv4-mapped literal to ::ffff: plus two hextets. isBlockedIp decodes that spelling and blockedV4 rejects 169.254.169.254. validateUrlShape returns an error before fetchPublic calls fetch.",
         "artifact": null
       }
     ],
-    "result_fingerprints": [
-      "ssrf.ipv6-mapped-private"
-    ],
+    "result_fingerprints": [],
     "unresolved": [],
     "hunter_group": "hunter-ssrf",
     "hardening": []

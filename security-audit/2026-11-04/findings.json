@@ -435,10 +435,11 @@
     "verdict": "needs_validation"
   },
   {
+    "verdict": "rejected",
     "fingerprint": "ssrf.ipv6-mapped-private",
-    "title": "Roast SSRF guard accepts full-form IPv4-mapped addresses",
-    "description": "An unauthenticated caller of GET or POST /roast can supply an IPv6 literal that is the standard mapped form of a private or link-local IPv4 address. isBlockedIp does not classify that form as blocked, and fetchPublic then requests it.",
-    "claimed_root_cause": "isBlockedIp decodes IPv4-mapped addresses only when the text starts with ::ffff: and the remainder is a dotted IPv4 address or exactly two hextets. blockedV6 then checks only ::, ::1, ULA, link-local, multicast, and 2001:db8. A full-form mapped address such as 0:0:0:0:0:ffff:a9fe:a9fe never enters the mapped decoder, so validateUrlShape and resolveAndCheck accept it and fetchPublic calls fetch on that URL.",
+    "title": "Full-form IPv4-mapped spelling reaches the roast fetcher",
+    "description": "A caller of GET or POST /roast supplies an IPv6 literal written as 0:0:0:0:0:ffff:a9fe:a9fe, and the roast guard was claimed to accept it because isBlockedIp only decodes a leading ::ffff: form.",
+    "claimed_root_cause": "isBlockedIp decodes IPv4-mapped addresses only when the text starts with ::ffff: and the remainder is a dotted IPv4 address or exactly two hextets. A full-form spelling was claimed to fall through blockedV6 and be fetched.",
     "trace": [
       {
         "kind": "entrypoint",
@@ -449,64 +450,37 @@
       },
       {
         "kind": "propagation",
-        "file": "cloudflare-api-worker/src/worker.js",
-        "line": 249,
-        "scope": "roast",
-        "description": "The url query parameter or JSON url field is taken as the fetch target with no origin check."
-      },
-      {
-        "kind": "propagation",
         "file": "cloudflare-api-worker/src/ssrf.js",
-        "line": 87,
+        "line": 78,
         "scope": "validateUrlShape",
-        "description": "A hostname containing a colon is passed to isBlockedIp. The full-form mapped literal does not match the ::ffff: decoder."
-      },
-      {
-        "kind": "propagation",
-        "file": "cloudflare-api-worker/src/ssrf.js",
-        "line": 48,
-        "scope": "blockedV6",
-        "description": "The expanded address begins with zeros, so the ULA, link-local, multicast, and documentation checks do not reject the embedded IPv4."
+        "description": "The caller string is parsed with new URL before any address check."
       },
       {
         "kind": "sink",
-        "file": "cloudflare-api-worker/src/worker.js",
-        "line": 205,
-        "scope": "fetchPublic",
-        "description": "fetch is called with the original URL after resolveAndCheck returns the literal as an accepted address."
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 88,
+        "scope": "validateUrlShape",
+        "description": "The bracket-stripped url.hostname is passed to isBlockedIp, which rejects the serialized ::ffff: form."
       }
     ],
     "evidence": [
       {
         "file": "cloudflare-api-worker/src/ssrf.js",
         "line": 10,
-        "description": "The mapped-IPv4 decoder runs only when the string starts with ::ffff:."
+        "description": "The mapped-IPv4 decoder runs when the checked string starts with ::ffff:."
       },
       {
         "file": "cloudflare-api-worker/src/ssrf.js",
-        "line": 48,
-        "description": "blockedV6 does not decode an embedded IPv4 address from the last 32 bits."
-      },
-      {
-        "file": "cloudflare-api-worker/src/ssrf.js",
-        "line": 106,
-        "description": "An IP literal that isBlockedIp allows is returned as the accepted address list without a DNS lookup."
+        "line": 83,
+        "description": "The checked host is url.hostname with brackets removed, not the raw caller spelling."
       },
       {
         "file": "cloudflare-api-worker/test/ssrf.test.mjs",
         "line": 7,
-        "description": "The regression list includes ::ffff:127.0.0.1 and does not include a full-form mapped literal."
+        "description": "The regression list includes ::ffff:127.0.0.1, the spelling new URL produces for a mapped address."
       }
     ],
-    "blockers": [
-      "The host cannot enforce a read-only target mount (unshare --mount-proc fails and bwrap, firejail, and nsjail are absent), so isBlockedIp was not executed.",
-      "Whether the Workers runtime connects to an IPv4-mapped literal, or drops non-public destinations itself, is not present in the repository."
-    ],
-    "validation_plan": {
-      "local": "In a scratch copy, import isBlockedIp, validateUrlShape, and resolveAndCheck. Assert isBlockedIp returns true for 0:0:0:0:0:ffff:a9fe:a9fe, ::0:ffff:7f00:1, and 0:0:0:0:0:ffff:a00:1, and that validateUrlShape returns an error for http://[0:0:0:0:0:ffff:a9fe:a9fe]/. Stub fetch and assert it is not called. Do not contact a deployed host.",
-      "deployment": "An owner checks the Workers fetch policy for IPv4-mapped and non-public destinations in the platform documentation or a local wrangler dev sink that only records the destination. Do not send this URL to the production worker."
-    },
-    "verdict": "needs_validation"
+    "reason": "The host URL parser serializes http://[0:0:0:0:0:ffff:a9fe:a9fe]/ to hostname [::ffff:a9fe:a9fe]. The same compression applies to the zero-padded form, ::0:ffff:a9fe:a9fe, and ::ffff:169.254.169.254. validateUrlShape then checks ::ffff:a9fe:a9fe. That spelling takes the two-hextet decoder and isBlockedIp rejects 169.254.169.254 before fetch. The roast path does not request the full-form literal."
   },
   {
     "verdict": "rejected",
