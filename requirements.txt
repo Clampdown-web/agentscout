@@ -1,0 +1,8 @@
+# Python packages used to build the static site (logos, OG images, link checks).
+# pillow 12.x is vulnerable; 13.0.0 is the fixed floor from the 2026-11-04 audit.
+# The other pins are the versions that audit found clean.
+pillow>=13.0.0
+lxml==6.1.3
+requests==2.34.2
+cairosvg==2.9.1
+playwright==1.64.0
