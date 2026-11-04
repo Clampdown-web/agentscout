@@ -82,6 +82,12 @@ def load_metrics(t):
         int(snap.get("x", {}).get("agentscouthq", {}).get("followers") or 0),
         11,
     )
+    # Nov 4 2026: a live X fetch for today wins over older floors/snapshots, so a
+    # real follower drop is shown instead of a stale higher number.
+    _live = sb.get("current") or {}
+    if str(_live.get("x_followers_fetched_at") or _live.get("updated_at") or "")[:10] == datetime.now(timezone(timedelta(hours=-8))).strftime("%Y-%m-%d") and _live.get("clampdown19_followers") and _live.get("agentscouthq_followers") is not None:
+        clampdown_followers = int(_live["clampdown19_followers"])
+        agentscout_followers = int(_live["agentscouthq_followers"])
     combined_x = clampdown_followers + agentscout_followers
 
     ga4_7d_users = int(cur.get("weekly_visitors_ga4_7d") or snap.get("ga4", {}).get("7d", {}).get("activeUsers") or 212)
