@@ -82,6 +82,9 @@ def _sitemap() -> None:
         return
     sm = path.read_text(encoding="utf-8")
     loc = "https://agentscouthq.com/tools/lovable.html"
+    page = Path("tools/lovable.html")
+    if page.exists() and 'name="robots" content="noindex' in page.read_text(encoding="utf-8")[:2500]:
+        return
     if loc in sm:
         return
     line = f"  <url><loc>{loc}</loc><lastmod>2026-10-28</lastmod></url>\n"

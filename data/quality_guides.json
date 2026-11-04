@@ -1,0 +1,344 @@
+[
+  {
+    "path": "index.html",
+    "anchor": "after-ci-free",
+    "what": [
+      "AgentScout is a directory of AI agent tools: coding agents, browser agents, voice agents, MCP servers, frameworks, and ready-made products. This homepage is the search box for that catalog. It currently lists {n} tools across {cats} categories, including {mcp} in the MCP servers category.",
+      "A listing is a link-checked card, not a lab report. The description is taken from the maker's site or README, the price is the maker's own wording, and GitHub stars are copied from the repository when we track one. Featured slots are labeled and sit above the list. A payment does not change sort order."
+    ],
+    "who": "Use it if you are choosing a tool, not if you want a single winner. Builders can filter to libraries, SDKs, and MCP servers. Everyone else can stay on ready-to-use products. The same split is on each tool page as For builders or Ready to use.",
+    "pros": [
+      "Every card links to an official site we have checked, and the MCP status page separates live, down, and not-yet-checked servers.",
+      "{os_n} listings are tagged open source or open source plus cloud, so you can start from code you can read.",
+      "The free calculators ({own} of them) and the bot-template index ({templates} rows) run beside the directory, with no account on this site."
+    ],
+    "cons": [
+      "{see_site} listings say See site for pricing. That means we do not have a verified price, not that the tool is free.",
+      "We do not run bake-offs. Stars and maturity are signals from the listing, and a popular repo can still be a poor fit.",
+      "New tool pages are added in small batches. A brand-new card can be on the site before it is a good page to cite."
+    ],
+    "setup": [
+      "Type the job into the search box (browser, memory, voice, MCP) or pick a category chip.",
+      "Open two or three cards. Read the maker-stated price, the audience line, and the date the link was checked.",
+      "Follow the official site, and the GitHub link when there is one, before you install anything.",
+      "If you do not know the category, use the quiz, the role pages, or a best-of list. Each of those says how the list was built."
+    ],
+    "alts": [
+      {"href": "categories/index.html", "label": "All categories"},
+      {"href": "for/index.html", "label": "Browse by role"},
+      {"href": "best/index.html", "label": "Best-of lists"},
+      {"href": "free-tools.html", "label": "Free tools"},
+      {"href": "bot-templates/", "label": "Bot templates"},
+      {"href": "categories/mcp-servers.html", "label": "MCP servers"}
+    ],
+    "faq": [
+      ["Who should start on the homepage instead of a category?", "Start here when you can describe the job in a few words. Go straight to a category, role, or best-of page when you already know the shelf, such as MCP servers, founders, or browser agents."],
+      ["What does See site mean on a card?", "The maker did not give us a price we can quote. Open the official site. It does not mean the tool is free, and it does not mean we hid a number."],
+      ["How do I compare two tools without guessing?", "Open both listings, then a written comparison if one exists under Compare. Those pages use the same fields: price as stated, audience, maturity, and use cases. They do not add a score we invented."]
+    ]
+  },
+  {
+    "path": "categories/agent-infra.html",
+    "anchor": "before-tcount",
+    "what": [
+      "Agent infrastructure is the plumbing around an agent that is not itself an MCP server: gateways, inference hosts, runtimes, control planes, auth and tool-integration platforms, agent email, payments, identity, and filesystems. This page lists {n} of those tools. The pricing mix is {price_line}.",
+      "MCP servers have their own category. If the thing you need is a connector that speaks the Model Context Protocol, start there. Stay here for the host, the gateway, the auth layer, or the runtime the agent sits on."
+    ],
+    "who": "This shelf is mostly for people running agents in production. {builders} listings are aimed at builders and {ready} are ready-to-use products. A platform team comparing gateways, and a founder who only needs a hosted endpoint, are both in the right place, but they should not pick from the same end of the list.",
+    "pros": [
+      "{os_n} listings are open source or open source plus a cloud, so you can self-host the piece you do not want to rent.",
+      "The most-starred listing on this page is {leader_html}. Stars recorded on that listing: {leader_stars}. Other heavily starred names include {top}.",
+      "Each card names the audience and the maturity, and the task chips above the grid jump to the job (deploy, monitor, identity) instead of making you read every description."
+    ],
+    "cons": [
+      "{see_site} listings leave the price as See site. Gateways and inference hosts often bill by token or seat, and that number is only on the vendor's page.",
+      "{discontinued} listings are discontinued or archived. They stay so you can see what they were. Do not start a new stack on one.",
+      "A tool can mention MCP and still live here because its main job is the gateway or the auth layer. Read the category line before you treat it as a server you drop into a client config."
+    ],
+    "setup": [
+      "Decide which layer you are buying: model gateway, runtime, auth, sandbox, or payments. Use the task chips if you already know the job.",
+      "Turn on Open source only if you need to run it yourself. Otherwise sort by GitHub stars to see what other builders have starred, then read maturity.",
+      "Open the listing. The price line is the maker's wording. The GitHub link, when present, is the repo we snapshotted.",
+      "If the missing piece is a connector rather than a host, switch to the MCP servers category and the Codex, Cursor, or Claude Code client guides."
+    ],
+    "alts": [
+      {"href": "mcp-servers.html", "label": "MCP servers"},
+      {"href": "sandboxes-code-execution.html", "label": "Sandboxes and code execution"},
+      {"href": "frameworks.html", "label": "Agent frameworks"},
+      {"href": "models-local-runtimes.html", "label": "Models and local runtimes"},
+      {"href": "../for/devops-engineers.html", "label": "For DevOps and SRE"},
+      {"href": "../best/open-source-mcp-servers.html", "label": "Open-source MCP servers"}
+    ],
+    "faq": [
+      ["What belongs in agent infra instead of MCP servers?", "Agent infra is the host and the control plane: gateways, inference, runtimes, auth, payments, identity, and filesystems. An MCP server is a connector a client such as Codex or Cursor can call. A product that is mostly a connector belongs on the MCP page even if this page mentions it as related plumbing."],
+      ["How many tools are on this page, and which is the most starred?", "There are {n} agent infra listings. The most-starred one on the page is {leader_html}. Stars recorded on that listing: {leader_stars}. Stars are popularity, not a verdict."],
+      ["Can I self-host something from this list?", "{os_n} listings are marked open source or open source plus cloud. Filter with Open source only, then read that tool's license on its listing or repo before you ship it."]
+    ]
+  },
+  {
+    "path": "categories/games.html",
+    "anchor": "before-tcount",
+    "what": [
+      "This page collects the {n} directory listings filed under games: agents and tools for making games, driving NPCs, generating game assets, or playing. The pricing mix is {price_line}.",
+      "It is not a review of games. It is a shelf of tools whose makers put them in this category. A card might be an engine plugin, a character model, or a finished app. The description on the card is the maker's line, and the category is how we grouped it."
+    ],
+    "who": "{builders} listings are for builders who want something to embed or extend. {ready} are ready-to-use products. Game developers who also need concept art, 3D, or voice should use the role page, which pulls those jobs in from other categories.",
+    "pros": [
+      "Names with the most tracked stars on this page include {top}. The leader is {leader_html}. Stars recorded on that listing: {leader_stars}.",
+      "{os_n} listings are open source or open source plus cloud, which matters if you need to ship the tool inside your own game.",
+      "The filters on this page (price, open source, stars, newest) are the same ones used across category pages, so you can narrow the shelf without leaving it."
+    ],
+    "cons": [
+      "{see_site} listings do not state a price here. Asset shops and hosted NPC services often do that. Check the official site.",
+      "A high star count can be a general model or a library that is only partly about games. Read the description before you treat the sort as a best-of list.",
+      "{discontinued} listings are discontinued or archived. Leave those for history."
+    ],
+    "setup": [
+      "Skim the top of the grid for the job you actually have: an NPC runtime, an asset generator, or a player-facing app.",
+      "If you will vendor the code, turn on Open source only and open the GitHub link from the listing.",
+      "If you need art, models, or voices around the game, leave this page for the game-developers role, which adds those categories.",
+      "Confirm the license and the price on the official site before you put the tool in a commercial build."
+    ],
+    "alts": [
+      {"href": "../for/game-developers.html", "label": "For game developers"},
+      {"href": "image-generation.html", "label": "Image generation"},
+      {"href": "3d-concept-art.html", "label": "3D and concept art"},
+      {"href": "voice.html", "label": "Voice"},
+      {"href": "frameworks.html", "label": "Agent frameworks"},
+      {"href": "../tasks/index.html", "label": "Browse by task"}
+    ],
+    "faq": [
+      ["Is this a ranking of the best AI games?", "No. It is every listing in the games category, {n} tools, with filters and a star sort. We do not score gameplay or art direction."],
+      ["Where do I look if I am building a game, not browsing toys?", "Use the game-developers role page. It keeps concept art, 3D, and voice next to this category so you are not limited to tools that happen to be tagged games."],
+      ["How do I tell a library from a finished product?", "The card says For builders or Ready to use. On this page that split is {builders} builder listings and {ready} ready-to-use listings."]
+    ]
+  },
+  {
+    "path": "free-tools.html",
+    "anchor": "after-lede",
+    "what": [
+      "This page has two different kinds of free. The first is AgentScout's own set of {own} calculators and generators. They run in your browser: no account, no API key, and nothing from the form is stored on our server. The second is the directory slice below: {n} listings in {cats} categories whose maker-stated pricing says open source, open weights, open standard, free, a free tier, or freemium.",
+      "The directory half is not a promise that the product costs zero to run. The line on the card is the maker's wording. The mix of those listings is {price_line}."
+    ],
+    "who": "Use the browser tools when you want a config file, a token estimate, a prompt, or a stack sketch and you do not want to sign up. Use the directory half when you want a real agent product or library that the maker says you can start without a paid plan.",
+    "pros": [
+      "The {own} AgentScout tools are on this site, so you can see exactly what they compute. The MCP config builder, cost estimator, and rules-file generator are typical starting points.",
+      "The directory half names {top} among the most-starred matches, so you can see popular open projects without leaving the page.",
+      "Discontinued and archived listings are left out of this hub, which keeps dead projects from looking like current free options."
+    ],
+    "cons": [
+      "Open source still needs a machine, and often a model API key. Freemium still has a paid tier. The card says which of those the maker claimed.",
+      "{see_site} of these listings have an empty or See site price label even though another field matched the free filter. Read the card before you assume a number.",
+      "A browser calculator estimates. It is not an invoice from OpenAI, Anthropic, Google, or xAI, and the model prices inside it can change."
+    ],
+    "setup": [
+      "If you need a file or a number, stay in the AgentScout tools grid. Open one tool, fill the form, and copy the result. Refreshing the page clears it.",
+      "If you need a product, jump to a category section below. The count next to the heading is how many free-matching listings are in that category.",
+      "Open the listing, then the official site. Confirm the free tier still exists. Stars on the row are from the listing, not a quality score.",
+      "For a client-specific MCP config, the MCP config builder writes Claude Desktop, Cursor, and VS Code JSON. You still paste it into the client yourself."
+    ],
+    "alts": [
+      {"href": "best/free-ai-agents.html", "label": "Best free AI agents"},
+      {"href": "s/free-mcp-servers.html", "label": "Free MCP servers"},
+      {"href": "s/open-source-browser-agents.html", "label": "Open-source browser agents"},
+      {"href": "categories/index.html", "label": "All categories"},
+      {"href": "generate.html", "label": "Free image generator"},
+      {"href": "bot-templates/", "label": "Bot templates"}
+    ],
+    "faq": [
+      ["Are the tools at the top the same as the long list?", "No. The top grid is software on this website ({own} calculators and generators). The long list is other people's tools whose listings say free or open source ({n} across {cats} categories)."],
+      ["Does open source mean I will not pay anything?", "It means the maker says the code is open source, sometimes alongside a paid cloud. You can still pay for a model API, a GPU, or their hosted plan. The pricing phrase on the row is the one to read."],
+      ["What should I open first?", "For a config, the MCP config builder. For a bill, the AI API cost calculator or the agent run cost estimator. For a product, pick the category that matches the job and open two listings before you install."]
+    ]
+  },
+  {
+    "path": "bot-templates/index.html",
+    "anchor": "after-bt-lede",
+    "what": [
+      "Bot templates are ready-made bots, skills, plugins, and workflows you add somewhere else. This index has {n} rows: {builtin} built-in rows and {community} community catalog entries. Platforms called out on the page include Grok Bot, Claude, Codex, OpenClaw, Cursor, and n8n.",
+      "AgentScout hosts the index and the short description. The Add button opens the publisher's own listing, repo, or marketplace. We do not run those bots for you, and a template is not the same thing as a tool card in the main directory."
+    ],
+    "who": "Use it when you want a starting bot or skill instead of a blank config: a Grok Bot from the community list, an official Claude or Codex plugin, an OpenClaw skill, a Cursor marketplace entry, or an n8n workflow. If you want a packaged role agent with a fixed price from us, that is the Bot Store, linked from this page, not a template row.",
+    "pros": [
+      "You can filter and search the {n} rows without creating an account here.",
+      "Each row names the platform and the publisher, and the Add button is the original install page rather than a mirror we might let go stale.",
+      "Official plugins (Claude, Codex, Cursor, OpenClaw, n8n) sit in the same index as community Grok bots, so you can see the source before you add one."
+    ],
+    "cons": [
+      "The publisher owns the bot. A community bot can change, break, or disappear on x.ai or GitHub without this index rewriting the code.",
+      "Setup is different per platform. A Grok Bot, a Claude plugin, and an n8n workflow do not install the same way. The row's Add link is the instruction, not a single button on our side.",
+      "Templates are free to browse here. Some publisher marketplaces still have their own terms, and the Bot Store packs are separate paid products."
+    ],
+    "setup": [
+      "Pick the platform chip or search for the job (review, inbox, research, support).",
+      "Read the one-line description and the byline. Open the template page on this site if there is one, then use Add.",
+      "Install on the publisher's site with the account that platform already uses. Come back to the row if you need the link again.",
+      "If you wanted a maintained pack with a checkout on this site, switch to the Bot Store instead of forcing a template to do that job."
+    ],
+    "alts": [
+      {"href": "../bot-store/", "label": "Bot Store"},
+      {"href": "../free-tools/agent-setup-generator.html", "label": "Agent setup generator"},
+      {"href": "../free-tools/rules-file-generator.html", "label": "Rules file generator"},
+      {"href": "../categories/frameworks.html", "label": "Agent frameworks"},
+      {"href": "../for/founders.html", "label": "Tools for founders"},
+      {"href": "../index.html", "label": "Full directory"}
+    ],
+    "faq": [
+      ["Does AgentScout run these bots?", "No. The index lists them and links to the publisher. Adding a bot happens on Grok, Claude, Codex, OpenClaw, Cursor, n8n, or GitHub, whichever the row names."],
+      ["How many templates are there?", "The index currently has {n} rows ({builtin} built-in and {community} from the community catalog). The count on the heading is that row count."],
+      ["What is the difference between a template and a directory listing?", "A directory listing is a product or library with a checked official site. A template is a bot, skill, plugin, or workflow you install into someone else's agent. Some products appear in both places. They are not the same page."]
+    ]
+  },
+  {
+    "path": "best/mcp-servers-for-codex.html",
+    "anchor": "after-lede",
+    "what": [
+      "This is the Codex client guide: MCP servers and MCP tools whose own listing or docs say they work with Codex. The filter is a text match on the listing, not a certification from OpenAI. It currently matches {n} tools. The most-starred names in that set include {top}.",
+      "The full MCP category is larger ({mcp_n} servers). A server can be excellent and still be absent here if nobody wrote Codex on the listing. The pricing mix of the matches is {price_line}."
+    ],
+    "who": "People who already use Codex (the CLI or the IDE) and want servers that claim Codex support. If you use Claude Code or Cursor, use those client guides. If you are choosing a server and do not care about the client yet, use the MCP category or the task pages.",
+    "pros": [
+      "Every row got here because the listing text mentions Codex, so you are not looking at a generic top-100.",
+      "{os_n} of the matches are open source or open source plus cloud. The MCP config builder can write a client config you then point at Codex.",
+      "Stars are the sort key, taken from each listing, so you can see which Codex-mentioning servers other people have starred."
+    ],
+    "cons": [
+      "A mention is not a compatibility test. The server's own docs are the setup that matters, including transport, auth, and which Codex build they tried.",
+      "{see_site} matches do not state a price on the listing. Hosted MCP products often bill separately from Codex itself.",
+      "Servers that work with Codex but never say so in our listing are missing. Check the full MCP category if a task page looks empty."
+    ],
+    "setup": [
+      "Pick the server for the job (repo, browser, docs), not the one with the largest star count alone.",
+      "Open its listing and the official docs. Copy the endpoint or the command they publish.",
+      "Use the free MCP config builder if you want a JSON block for a config-file client, then follow Codex's own MCP docs to place that block.",
+      "If the server needs OAuth or an API key, that step is on the maker's site. This page does not store keys."
+    ],
+    "alts": [
+      {"href": "mcp-servers-for-claude-code.html", "label": "MCP servers for Claude Code"},
+      {"href": "mcp-servers-for-cursor.html", "label": "MCP servers for Cursor"},
+      {"href": "../categories/mcp-servers.html", "label": "All MCP servers"},
+      {"href": "../mcp/", "label": "MCP servers by task"},
+      {"href": "../free-tools/mcp-config-builder.html", "label": "MCP config builder"},
+      {"href": "open-source-mcp-servers.html", "label": "Open-source MCP servers"}
+    ],
+    "faq": [
+      ["How does a server get onto the Codex list?", "Its AgentScout listing, or the richer notes we store from the maker's docs, has to say Codex. We then sort by GitHub stars recorded on the listing. There are {n} matches right now."],
+      ["Is this the official Codex MCP catalog?", "No. It is our directory filtered to listings that name Codex. Codex's own documentation is the source for how the client loads a server."],
+      ["What if the server I want is not here?", "Look at all {mcp_n} MCP servers, or at the task pages. Absence from this guide only means the listing text did not say Codex."]
+    ]
+  },
+  {
+    "path": "best/browser-use-alternatives.html",
+    "anchor": "after-lede",
+    "what": [
+      "Browser Use, in our listing, is {desc} The maker-stated pricing is: {pricing}. The listing records {stars} GitHub stars.",
+      "The alternatives below are other directory tools that share its category or its tasks, ranked by how many of those tasks overlap and then by stars. The browser and computer-use category itself has {peers} listings that are not discontinued, priced as {price_line}, of which {os_n} are open source or open source plus cloud. Overlap is not sameness: a workflow engine or a desktop agent can share a task and still be a bad substitute. Read the because-line under each name."
+    ],
+    "who": "Developers who want an agent to open pages, click, type, and return text, and who are deciding whether to start from Browser Use or from something else. If you need a hosted browser with proxies, a Playwright MCP server, or a full computer-use app, the because-line is there so you can see which of those you actually matched.",
+    "pros": [
+      "The table repeats maker-stated price, license when we have one, stars, and the tasks we matched, so you can scan without opening ten tabs.",
+      "Written comparisons exist for some pairs (Browser Use vs Stagehand, Browser Use vs Skyvern). Those pages use listing fields only.",
+      "{os_n} tools in the wider browser category are open source or open source plus cloud, which is the usual way to self-host a browser agent."
+    ],
+    "cons": [
+      "Shared tasks can pull in a tool whose main job is different. Do not treat rank 1 as the closest clone.",
+      "Stars are not a browser benchmark. A huge repo can be a scraper, a test runner, or a desktop stack.",
+      "Cloud browser products bill for sessions, proxies, or captchas even when the library is open source. The price cell is the maker's phrase, and it can change."
+    ],
+    "setup": [
+      "Read Browser Use's listing first so you know what you are replacing: library plus a paid cloud, per the price line above.",
+      "On each alternative, read the because-line. Keep it if the extra tasks are ones you want. Skip it if the overlap is incidental.",
+      "Open the two you kept. Check license, whether you must run a browser yourself, and the official install.",
+      "If you only need an MCP server in front of Chrome or Playwright, prefer those rows over a full agent framework."
+    ],
+    "alts": [
+      {"href": "../tools/browser-use.html", "label": "Browser Use listing"},
+      {"href": "../compare/browser-use-vs-stagehand.html", "label": "Browser Use vs Stagehand"},
+      {"href": "../compare/browser-use-vs-skyvern.html", "label": "Browser Use vs Skyvern"},
+      {"href": "ai-browser-agents.html", "label": "Best AI browser agents"},
+      {"href": "../s/open-source-browser-agents.html", "label": "Open-source browser agents"},
+      {"href": "../categories/browser-computer-use.html", "label": "Browser and computer-use category"}
+    ],
+    "faq": [
+      ["What is Browser Use, according to the directory?", "{desc} Pricing as the maker states it: {pricing}. GitHub stars on the listing: {stars}."],
+      ["Why is a tool with a different main job on this list?", "The generator keeps tools that share the browser-use category or at least one task, then sorts by overlap and stars. The because-line tells you what overlapped. If that overlap is not your job, skip the row."],
+      ["Where is the full set of browser agents?", "The category page lists the browser and computer-use tools ({peers} that are not discontinued). This page is only the closest overlap with Browser Use, capped for reading."]
+    ]
+  },
+  {
+    "path": "for/devops-engineers.html",
+    "anchor": "after-lede",
+    "what": [
+      "This is the DevOps and SRE shelf: incidents and infrastructure, monitoring agents in production, deploying and hosting agents, running code safely, and agent security. The page shows {shown} tools across {jobs} jobs, drawn from {pool} listings that match those tasks. On the shortlist, pricing reads as {price_line}.",
+      "Sections, with how many of the task's tools are actually printed: {sections}. Each heading links to the full task page. Nothing here is a status page for your cluster. It is a reading list of tools other people use for that job."
+    ],
+    "who": "On-call engineers and platform people who want an agent in the incident path, a sandbox around generated code, or a deploy target for an agent they already built. Security engineers have a separate role page if the work is pentests and guardrails rather than uptime.",
+    "pros": [
+      "The jobs are split, so an incident tool is not buried under a generic agent framework.",
+      "Names on the shortlist with the most tracked stars include {top}.",
+      "The Agent setup generator linked from the role pages can draft a starter config. It does not SSH into your account."
+    ],
+    "cons": [
+      "Six tools per job is a cap. The full task page has the rest. {pool} matches collapsed to {shown} shown names.",
+      "{see_site} shortlisted tools do not put a price on the listing. Incident products are often sales-led.",
+      "An agent that can apply infrastructure changes can also apply the wrong one. The listing does not grant it production access. You still choose the permissions."
+    ],
+    "setup": [
+      "Start with the job you have this week: an incident, a deploy, a sandbox, or a security check. Open that section.",
+      "Open the full task link if the six names are not enough.",
+      "Read maturity and whether the tool is for builders or ready to use. A framework is not a hosted SRE product.",
+      "On anything that touches production, read the official docs for the human approval step before you connect credentials."
+    ],
+    "alts": [
+      {"href": "../categories/devops-cloud.html", "label": "DevOps and cloud category"},
+      {"href": "../categories/sandboxes-code-execution.html", "label": "Sandboxes"},
+      {"href": "../categories/security-governance.html", "label": "Security and governance"},
+      {"href": "../categories/agent-infra.html", "label": "Agent infra"},
+      {"href": "security-engineers.html", "label": "For security engineers"},
+      {"href": "../tasks/devops-and-incidents.html", "label": "Incident task page"}
+    ],
+    "faq": [
+      ["How were these tools chosen?", "Each section is a task in the directory. Tools whose category and stated use cases fit the task come first, then GitHub stars. The page prints up to six per task. No one pays for a slot in that order."],
+      ["What is on the page right now?", "{shown} tools across {jobs} jobs, from {pool} matching listings. Sections: {sections}."],
+      ["Where do sandboxes and guardrails live?", "Run code safely and Agent security are sections on this page. The sandbox category and the security category are the full shelves if you want every listing, not the shortlist."]
+    ]
+  },
+  {
+    "path": "for/founders.html",
+    "anchor": "after-lede",
+    "what": [
+      "This page is for founders and small teams who need coverage, not a research stack. The jobs are business operations, workflow automation, building an app without code, customer support, marketing, and a personal assistant. It shows {shown} tools from {pool} listings that match those tasks, across {jobs} sections: {sections}.",
+      "The price mix on the shortlist is {price_line}. A startup CTO page exists if you are choosing frameworks, hosting, and security instead of the customer-facing jobs."
+    ],
+    "who": "A founder, operator, or first hire who will use a ready-made agent for support, marketing, or the first app. The page's audience label is {who}. If you want to author an agent framework, you want the developer or AI-engineer role, not this one.",
+    "pros": [
+      "Each job is a short list with a link to every matching tool, so you can stop at six or keep going.",
+      "Starred names on the shortlist include {top}.",
+      "Free browser tools linked for this role (the cost calculator and the prompt builder) do not require an account."
+    ],
+    "cons": [
+      "The cap is six tools a section. Good tools past that only appear on the task page.",
+      "{see_site} shortlisted listings do not state a price. Support and marketing agents often do that on purpose.",
+      "Ready-made does not mean unattended. Tools that send email, post, or spend still need your account and your approval."
+    ],
+    "setup": [
+      "Pick the one job that is on fire: support, marketing, the first app, or the back office.",
+      "Open two listings in that section. Compare the maker's price and whether it is ready to use.",
+      "Check the official site for the free tier before you connect a mailbox or an ad account.",
+      "If the real question is build versus buy for the whole stack, use the build-versus-buy calculator, then the startup CTO page."
+    ],
+    "alts": [
+      {"href": "startup-ctos.html", "label": "For startup CTOs"},
+      {"href": "../s/free-no-code-ai-agent-builders.html", "label": "Free no-code agent builders"},
+      {"href": "../categories/business-agents.html", "label": "Business agents"},
+      {"href": "../categories/customer-support.html", "label": "Customer support"},
+      {"href": "../categories/no-code-builders.html", "label": "No-code builders"},
+      {"href": "../free-tools/build-vs-buy-calculator.html", "label": "Build vs buy calculator"}
+    ],
+    "faq": [
+      ["What does this page cover?", "Operations, workflows, no-code apps, customer support, marketing, and personal assistants. It shows {shown} tools from {pool} matches. Sections: {sections}."],
+      ["I am technical. Is this the wrong page?", "Use it for the customer-facing and back-office jobs. Use the startup CTO page for coding agents, hosting, monitoring, and security."],
+      ["Will these tools run the company while I sleep?", "No. They are products you connect to your own accounts. Anything that emails, posts, or spends still waits on the permissions you grant and on the maker's product limits."]
+    ]
+  }
+]
