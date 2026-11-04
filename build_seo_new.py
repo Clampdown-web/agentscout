@@ -164,10 +164,12 @@ def sync_animations(t=None):
     import json, os, re, subprocess, sys, datetime
     if t is None:
         t = json.load(open("tools.json", encoding="utf-8"))
-    n_tools = len(t)
-    n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
-    n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
-    n_bt = __import__("build_bot_templates").live_bot_template_count()
+    import build_counts
+    _c = build_counts.require(t)
+    n_tools = _c["tools"]
+    n_mcp = _c["mcp_servers"]
+    n_pages = _c["pages_sitemap"] or build_counts.sitemap_count()
+    n_bt = _c["bot_templates"]
     n_ft = (len([f for f in os.listdir("free-tools") if f.endswith(".html") and f != "index.html"]) + (1 if os.path.exists("generate.html") else 0)) if os.path.isdir("free-tools") else 19
     state_file = "data/anim_state.json"
     script_candidates = [

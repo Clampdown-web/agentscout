@@ -33,69 +33,14 @@ def launch_pack_html():
     </aside>'''
 
 def load_metrics(t):
-    total = len(t)
-    cats = len({x["category"] for x in t})
-    mcp_cnt = sum(1 for x in t if x.get("category") == "MCP servers")
-    pages = 2355
-    if os.path.exists("sitemap.xml"):
-        try:
-            pages = open("sitemap.xml").read().count("<loc>") or 2355
-        except Exception:
-            pages = 2355
-
-    sb = {}
-    for p in ("/workspace/data/30-day-sprint-tracker.json", "/workspace/data/growth-sprint-30d.json", "/workspace/data/30-day-growth-scoreboard.json", "data/30-day-growth-scoreboard.json"):
-        if os.path.exists(p):
-            try:
-                sb = json.load(open(p))
-                break
-            except Exception:
-                pass
-    sm = {}
-    if os.path.exists("data/site_metrics.json"):
-        try:
-            sm = json.load(open("data/site_metrics.json"))
-        except Exception:
-            pass
-    snap = {}
-    for p in sorted(glob.glob("/workspace/notes/daily-traffic/*-snapshot.json"), reverse=True):
-        if os.path.exists(p):
-            try:
-                snap = json.load(open(p))
-                break
-            except Exception:
-                pass
-
-    cur = sb.get("current") or {}
-    dlog = (sb.get("daily_log") or [{}])[-1] if sb.get("daily_log") else {}
-    clampdown_followers = max(
-        int(cur.get("clampdown19_followers") or 0),
-        int(dlog.get("clampdown19_followers") or 0),
-        int(sm.get("x_clampdown19_followers") or 0),
-        int(snap.get("x", {}).get("clampdown19", {}).get("followers") or 0),
-        2102,
-    )
-    agentscout_followers = max(
-        int(cur.get("agentscouthq_followers") or 0),
-        int(dlog.get("agentscouthq_followers") or 0),
-        int(sm.get("x_agentscouthq_followers") or 0),
-        int(snap.get("x", {}).get("agentscouthq", {}).get("followers") or 0),
-        11,
-    )
-    # Nov 4 2026: a live X fetch for today wins over older floors/snapshots, so a
-    # real follower drop is shown instead of a stale higher number.
-    _live = sb.get("current") or {}
-    if str(_live.get("x_followers_fetched_at") or _live.get("updated_at") or "")[:10] == datetime.now(timezone(timedelta(hours=-8))).strftime("%Y-%m-%d") and _live.get("clampdown19_followers") and _live.get("agentscouthq_followers") is not None:
-        clampdown_followers = int(_live["clampdown19_followers"])
-        agentscout_followers = int(_live["agentscouthq_followers"])
-    combined_x = clampdown_followers + agentscout_followers
-
-    ga4_7d_users = int(cur.get("weekly_visitors_ga4_7d") or snap.get("ga4", {}).get("7d", {}).get("activeUsers") or 212)
-    tracker_7d_arrivals = int(cur.get("weekly_external_arrivals_tracker_7d") or 382)
-    weekly_pv = int(cur.get("weekly_page_views_tracker_7d") or snap.get("ga4", {}).get("7d", {}).get("screenPageViews") or 551)
-    pv_30d = int(snap.get("ga4", {}).get("28d", {}).get("screenPageViews") or max(weekly_pv, 753))
-    users_30d = int(snap.get("ga4", {}).get("28d", {}).get("activeUsers") or max(ga4_7d_users, 276))
-    gsc_impressions_7d = 8210
+    import build_counts
+    c = build_counts.write(t)
+    a = build_counts.analytics()
+    total = c["tools"]
+    cats = c["categories"]
+    mcp_cnt = c["mcp_servers"]
+    pages = c["pages_sitemap"]
+    fol = c["followers"]
 
     pt_now = datetime.now(timezone(timedelta(hours=-7)))
     updated_iso = pt_now.strftime("%Y-%m-%d")
@@ -110,16 +55,16 @@ def load_metrics(t):
         "indexed_pages_count": pages,
         "pages_count": pages,
         "mcp_count": mcp_cnt,
-        "pageviews_7d": weekly_pv,
-        "x_clampdown19_followers": clampdown_followers,
-        "x_agentscouthq_followers": agentscout_followers,
-        "x_combined_followers": combined_x,
-        "weekly_visitors_ga4": ga4_7d_users,
-        "weekly_external_arrivals": tracker_7d_arrivals,
-        "weekly_page_views": weekly_pv,
-        "pageviews_30d": pv_30d,
-        "active_users_30d": users_30d,
-        "gsc_impressions_7d": gsc_impressions_7d,
+        "pageviews_7d": a["pageviews_7d"],
+        "x_clampdown19_followers": fol["clampdown19"],
+        "x_agentscouthq_followers": fol["agentscouthq"],
+        "x_combined_followers": fol["combined"],
+        "weekly_visitors_ga4": a["weekly_visitors_ga4"],
+        "weekly_external_arrivals": a["weekly_external_arrivals"],
+        "weekly_page_views": a["weekly_page_views"],
+        "pageviews_30d": a["pageviews_30d"],
+        "active_users_30d": a["active_users_30d"],
+        "gsc_impressions_7d": a["gsc_impressions_7d"],
         "packages": {
             "free": {"name": "Free Community Listing", "price_usd": 0, "billing": "free", "color": "#14b8a6", "url": "https://agentscouthq.com/submit.html#free-form"},
             "fast_track_29": {"name": "Fast-Track + 7-Day Launch Boost", "price_usd": 15, "billing": "one-time", "color": "#0ea5e9", "stripe_url": STRIPE_FAST_URL, "x_money": "@clampdown19"},
@@ -128,7 +73,9 @@ def load_metrics(t):
         }
     }
     os.makedirs("api", exist_ok=True)
-    open("api/metrics.json", "w").write(json.dumps(metrics, indent=2))
+    open("api/metrics.json", "w").write(json.dumps(metrics, indent=2) + "\n")
+    build_counts.mirror_site_metrics(c, metrics)
+    build_counts.patch_origin_sentence(c)
     return metrics
 
 def packages_grid(t, m=None, on_submit=False):

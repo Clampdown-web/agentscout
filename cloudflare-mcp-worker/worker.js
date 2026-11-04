@@ -1,7 +1,6 @@
 /**
  * AgentScout read-only MCP worker.
- * Catalog and commerce data come from catalog_snapshot.json and products_snapshot.json
- * (2,051 tools, 40 categories, 272 MCP servers).
+ * Catalog and commerce data come from catalog_snapshot.json and products_snapshot.json.
  *
  * Every response gets the security headers below. Burst and per-minute caps are
  * per-isolate and keyed by IP. Search-engine and answer-engine crawlers are exempt.

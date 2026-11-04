@@ -3,9 +3,11 @@
 build_openapi, build_bot_store, and build_seo_new call the same copy on every site build.
 Run: python3 daily_update.py
 """
+import build_counts
 import build_openapi
 
 def main():
+    build_counts.write()
     wrote = build_openapi.sync_products_snapshot()
     print("products snapshot:", ", ".join(wrote) if wrote else "already matches api/products.json")
 

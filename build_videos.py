@@ -4,10 +4,12 @@ from build_extras import B, e, shell, clip_text, clip_title
 
 def pages(t):
     os.makedirs("videos", exist_ok=True)
-    n_tools = len(t)
-    n_bt = __import__("build_bot_templates").live_bot_template_count()
-    n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
-    n_cats = len({x.get("category") for x in t if x.get("category")})
+    import build_counts
+    c = build_counts.require(t)
+    n_tools = c["tools"]
+    n_bt = c["bot_templates"]
+    n_mcp = c["mcp_servers"]
+    n_cats = c["categories"]
     today_iso = datetime.date.today().strftime("%Y-%m-%dT08:00:00-07:00")
 
     guides = [
@@ -229,7 +231,7 @@ def pages(t):
     ]
 
     pro_tips = [
-        ("⚡ Zero-Key MCP Discovery", "Point Claude Code, Cursor, or Grok Bot to https://mcp.agentscouthq.com/mcp (Streamable HTTP) or https://agentscouthq.com/mcp/sse to search all 1,800+ tools live without an API key.", "../mcp/connect.html", "Setup MCP →"),
+        ("⚡ Zero-Key MCP Discovery", f"Point Claude Code, Cursor, or Grok Bot to https://mcp.agentscouthq.com/mcp (Streamable HTTP) or https://agentscouthq.com/mcp/sse to search all {n_tools:,} tools live without an API key.", "../mcp/connect.html", "Setup MCP →"),
         ("🧮 Size Context & Cost Before You Build", "Run the Token Counter, Context Window Sizer, and Agent Run Cost Estimator in your browser before picking a model tier.", "../free-tools.html", "Open 19 Free Calculators →"),
         ("🤖 Buy Pre-Trained Pro Bots ($39–$149) & 25 AI Agent Packs ($35–$349)", "Buy our 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) or 25 role-specific AI Agent Packs ($35 single, $119 for 5, $199 for 10, $299 for 20, $349 for all 25) — compatible with Grok Bot, Claude Code, Cursor, Codex & Lovable.", "../bot-store/", "Open Bot Store →"),
         ("📄 Ground LLMs with llms-full.txt", "Pass https://agentscouthq.com/llms-full.txt into Cursor @Docs, NotebookLM, or Claude Projects for full category tables and verified MCP endpoints.", "../llms-full.txt", "Open llms-full.txt →"),
