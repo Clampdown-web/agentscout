@@ -445,10 +445,22 @@ def apply_affiliation():
 
 
 def write_link_status_forward():
-    """GitHub Pages ignores _redirects, so the old URL stays a real HTML page that forwards to /mcp/status/."""
+    """GitHub Pages ignores _redirects, so the old URL stays a real HTML page that forwards to /mcp/status/.
+
+    The nav and footer are the canonical site chrome, not a mid-build copy of
+    index.html. Homepage passes insert extra header links that the nav sync
+    then removes; copying the header before that removal is what put those
+    links on this redirect page.
+    """
     import build_seo_new
     nav, foot = build_seo_new.chrome_for("../")
     canon = B + "mcp/status/"
+    nl = ""
+    if os.path.exists("mcp/link-status.html"):
+        old = open("mcp/link-status.html", encoding="utf-8").read()
+        block = re.search(r'<section id="nlblock".*?</section>', old, re.S)
+        if block:
+            nl = block.group(0)
     page = f'''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
@@ -465,10 +477,13 @@ def write_link_status_forward():
 </head><body>
 {nav}
 <main class="wrap"><p>This page moved. <a href="/mcp/status/">MCP server status</a>.</p></main>
-{foot}
+{nl}{foot}
 <script src="../app.js?v=202610312030"></script>
 </body></html>
 '''
+    problems = build_seo_new.redirect_page_chrome_problems("mcp/link-status.html", page)
+    if problems:
+        raise SystemExit("redirect nav check failed: " + "; ".join(problems))
     os.makedirs("mcp", exist_ok=True)
     open("mcp/link-status.html", "w", encoding="utf-8").write(page)
     print("link-status forwarder: mcp/link-status.html -> /mcp/status/")

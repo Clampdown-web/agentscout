@@ -235,9 +235,48 @@ def prefix_rel_links(html_frag, depth_prefix):
     return out
 
 
-def chrome_for(depth_prefix):
-    """The index.html nav and footer, rewritten for a page at this relative depth."""
-    idx = open("index.html", encoding="utf-8").read()
+def redirect_stub(html):
+    """A meta-refresh or location.replace forwarder.
+
+    Same window as build_tasks._redirect_stub: the marker sits in the head,
+    inside the first 8000 characters. Minimal stubs have no site chrome.
+    mcp/link-status.html is a stub that also keeps a nav and footer.
+    """
+    head = html[:8000]
+    return 'http-equiv="refresh"' in head or "location.replace(" in head
+
+
+def canonical_index_html(idx_s=None):
+    """index.html with the nav and footer reduced to the sitewide chrome.
+
+    Homepage passes insert "Best MCP servers by task" and "Free & open-source
+    browser agents" into the first Popular lists link, which is the header.
+    Those links are not part of the nav the rest of the site carries.
+    """
+    if idx_s is None:
+        with open("index.html", encoding="utf-8") as fh:
+            idx_s = fh.read()
+    idx_s = idx_s.replace('href="videos/">Videos</a>', 'href="videos/">🎬 Guides</a>')
+    idx_s = idx_s.replace('href="videos/">Video guides</a>', 'href="videos/">Quick-Start Guides (8)</a>')
+    idx_s = idx_s.replace('🎬 How-To Video Guides (8) →', '🎬 Quick-Start Guides (8) →')
+    idx_s = idx_s.replace('How-To Video Guides (8) →', 'Quick-Start Guides (8) →')
+    idx_s = re.sub(r'\s*·\s*<a href="(?:\.\./)*mcp/">Best MCP servers by task</a>', '', idx_s)
+    idx_s = re.sub(r'\s*·\s*<a href="[^"]*open-source-browser-agents\.html">Free &amp; open-source browser agents</a>', '', idx_s)
+    foot = re.search(r'<footer\b.*?</footer>', idx_s, re.S)
+    # Bot Store is a neon pill inside the footer cluster. Only a footer that has no Bot Store link at all gets the plain fallback.
+    if foot and 'bot-store/' not in foot.group(0):
+        idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
+    return idx_s
+
+
+def chrome_for(depth_prefix, idx_html=None):
+    """The index.html nav and footer, rewritten for a page at this relative depth.
+
+    Extra links that homepage passes inject into the header are removed first,
+    so a caller that runs before unify_all_nav_and_footer still gets the
+    canonical chrome.
+    """
+    idx = canonical_index_html(idx_html)
     nav = re.search(r'<nav[^>]*>.*?</nav>', idx, re.S)
     foot = re.search(r'<footer[^>]*>.*?</footer>', idx, re.S)
     if not (nav and foot):
@@ -245,19 +284,29 @@ def chrome_for(depth_prefix):
     return prefix_rel_links(nav.group(0), depth_prefix), prefix_rel_links(foot.group(0), depth_prefix)
 
 
+def _stamp_chrome(html, target_nav, target_foot):
+    """Replace the first nav, and the footer when the page has one."""
+    html = re.sub(r'<nav[^>]*>.*?</nav>', lambda _: target_nav, html, count=1, flags=re.S)
+    if '<footer' in html:
+        html = re.sub(r'<footer[^>]*>.*?</footer>', lambda _: target_foot, html, count=1, flags=re.S)
+    return html
+
+
+def apply_canonical_chrome(html, depth_prefix):
+    """Put the canonical nav and footer on a page that already has a nav.
+
+    A redirect stub with no nav is left unchanged. Those pages are only a
+    refresh and a one-line body.
+    """
+    if redirect_stub(html) and not re.search(r'<nav\b', html):
+        return html
+    nav, foot = chrome_for(depth_prefix)
+    return _stamp_chrome(html, nav, foot)
+
+
 def unify_all_nav_and_footer():
     import os, re
-    idx_s = open("index.html", encoding="utf-8").read()
-    idx_s = idx_s.replace('href="videos/">Videos</a>', 'href="videos/">🎬 Guides</a>')
-    idx_s = idx_s.replace('href="videos/">Video guides</a>', 'href="videos/">Quick-Start Guides (8)</a>')
-    idx_s = idx_s.replace('🎬 How-To Video Guides (8) →', '🎬 Quick-Start Guides (8) →')
-    idx_s = idx_s.replace('How-To Video Guides (8) →', 'Quick-Start Guides (8) →')
-    idx_s = re.sub(r'\s*·\s*<a href="mcp/">Best MCP servers by task</a>', '', idx_s)
-    idx_s = re.sub(r'\s*·\s*<a href="[^"]*open-source-browser-agents\.html">Free &amp; open-source browser agents</a>', '', idx_s)
-    foot = re.search(r'<footer\b.*?</footer>', idx_s, re.S)
-    # Bot Store is a neon pill inside the footer cluster. Only a footer that has no Bot Store link at all gets the plain fallback.
-    if foot and 'bot-store/' not in foot.group(0):
-        idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
+    idx_s = canonical_index_html()
     open("index.html", "w", encoding="utf-8").write(idx_s)
 
     m_nav = re.search(r'<nav[^>]*>.*?</nav>', idx_s, re.S)
@@ -276,7 +325,10 @@ def unify_all_nav_and_footer():
                 continue
             rel = os.path.relpath(os.path.join(root_dir, fn), ".")
             s = open(rel, encoding="utf-8").read()
-            if 'http-equiv="refresh"' in s:
+            # Minimal redirect stubs have no header. A stub that already has a
+            # nav (mcp/link-status.html) must carry the same nav as index.html.
+            # Skipping every refresh page left injected header links in place.
+            if redirect_stub(s) and not re.search(r'<nav\b', s):
                 continue
             if rel == "404.html":
                 d_pref = "/"
@@ -285,14 +337,18 @@ def unify_all_nav_and_footer():
                 d_pref = "../" * depth
             target_nav = prefix_rel_links(root_nav, d_pref)
             target_foot = prefix_rel_links(root_foot, d_pref)
-            s_new = re.sub(r'<nav[^>]*>.*?</nav>', lambda _: target_nav, s, count=1, flags=re.S)
-            if '<footer' in s_new:
-                s_new = re.sub(r'<footer[^>]*>.*?</footer>', lambda _: target_foot, s_new, count=1, flags=re.S)
+            s_new = _stamp_chrome(s, target_nav, target_foot)
             if s_new != s:
                 open(rel, "w", encoding="utf-8").write(s_new)
                 updated += 1
     print(f"unify_all_nav_and_footer: unified {updated} pages")
     import build_lovable; build_lovable.run()
+    left = redirect_chrome_problems()
+    if left:
+        print("redirect nav check failed:")
+        for line in left:
+            print(" FAIL", line)
+        raise SystemExit(1)
     return verify_nav_footer_unified()
 
 
@@ -347,15 +403,76 @@ def header_pill_problems():
     return bad
 
 
-def verify_nav_footer_unified():
-    """Every real page must carry the same nav and footer as index.html. Exit via return count of mismatches."""
-    idx = open("index.html", encoding="utf-8").read()
+def _want_chrome():
+    """Canonical nav and footer, with relative-depth prefixes removed."""
+    idx = canonical_index_html()
     nav = re.search(r'<nav[^>]*>.*?</nav>', idx, re.S)
     foot = re.search(r'<footer[^>]*>.*?</footer>', idx, re.S)
     if not (nav and foot):
+        raise SystemExit("index.html is missing nav or footer")
+    return _canon_chrome(nav.group(0)), _canon_chrome(foot.group(0))
+
+
+def redirect_page_chrome_problems(rel, html, want_nav=None, want_foot=None):
+    """Mismatch lines for one redirect page.
+
+    A stub with no <nav> is not a chrome page. A stub that has a <nav> must
+    match index.html. Depth prefixes (../ and a single leading /) are ignored.
+    """
+    if not redirect_stub(html):
+        return []
+    nav = re.search(r'<nav\b[^>]*>.*?</nav>', html, re.S)
+    if not nav:
+        return []
+    if want_nav is None or want_foot is None:
+        want_nav, want_foot = _want_chrome()
+    bad = []
+    if _canon_chrome(nav.group(0)) != want_nav:
+        bad.append(rel + " redirect nav does not match index.html")
+    foot = re.search(r'<footer\b[^>]*>.*?</footer>', html, re.S)
+    if foot and _canon_chrome(foot.group(0)) != want_foot:
+        bad.append(rel + " redirect footer does not match index.html")
+    return bad
+
+
+def _walk_html(skip_dirs):
+    for root_dir, dirs, fnames in os.walk("."):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in skip_dirs]
+        for fn in fnames:
+            if fn.endswith(".html"):
+                rel = os.path.relpath(os.path.join(root_dir, fn), ".")
+                yield rel
+
+
+def redirect_chrome_problems():
+    """Every redirect page that has a nav, checked against index.html."""
+    try:
+        want_nav, want_foot = _want_chrome()
+    except SystemExit:
+        return ["index.html is missing nav or footer"]
+    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    skip_dirs = ("node_modules", "data", "scripts", "assets", "preview")
+    bad = []
+    for rel in _walk_html(skip_dirs):
+        if os.path.basename(rel) in skip:
+            continue
+        with open(rel, encoding="utf-8", errors="replace") as fh:
+            s = fh.read()
+        bad.extend(redirect_page_chrome_problems(rel, s, want_nav, want_foot))
+    return bad
+
+
+def verify_nav_footer_unified():
+    """Every real page must carry the same nav and footer as index.html. Exit via return count of mismatches.
+
+    Meta-refresh and location.replace stubs with no nav are skipped. A stub
+    that has a nav must match index.html, or this check fails.
+    """
+    try:
+        want_nav, want_foot = _want_chrome()
+    except SystemExit:
         print("nav/footer verify: index.html is missing nav or footer")
         return 1
-    want_nav, want_foot = _canon_chrome(nav.group(0)), _canon_chrome(foot.group(0))
     skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
     bad = []
     seen = 0
@@ -366,7 +483,12 @@ def verify_nav_footer_unified():
                 continue
             rel = os.path.relpath(os.path.join(root_dir, fn), ".")
             s = open(rel, encoding="utf-8").read()
-            if 'http-equiv="refresh"' in s:
+            if redirect_stub(s):
+                problems = redirect_page_chrome_problems(rel, s, want_nav, want_foot)
+                if problems:
+                    bad.extend(problems)
+                elif re.search(r'<nav\b', s):
+                    seen += 1
                 continue
             n = re.search(r'<nav[^>]*>.*?</nav>', s, re.S)
             f = re.search(r'<footer[^>]*>.*?</footer>', s, re.S)
