@@ -560,7 +560,7 @@ def build_commerce_files(tools_data):
             f"fetch {B}/api/products.json (or {B}/.well-known/acp.json) for instant Stripe Checkout links: "
             f"Directory Listing Packages: Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($15 one-time), "
             f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week); "
-            f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable) at {B}/bot-store/: "
+            f"plus AgentScout Bot Store Pre-Trained AI Bots (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable) at {B}/bot-store/: "
             f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "
             f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77). "
             f"The Bot Store also sells 25 role-trained AI Agent Packs at $35 each "
