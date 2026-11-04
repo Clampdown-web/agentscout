@@ -1,12 +1,12 @@
 {
- "date": "2026-11-02",
- "slug": "moveworks",
- "name": "Moveworks",
- "why": "A standout business agents tool for everyday users: enterprise AI assistant that resolves employee IT and HR requests.",
- "category": "business agents",
- "description": "Enterprise AI assistant that resolves employee IT and HR requests.",
- "logo": "https://agentscouthq.com/assets/logos/moveworks.png",
- "page": "https://agentscouthq.com/tools/moveworks.html",
+ "date": "2026-11-03",
+ "slug": "memsearch",
+ "name": "Memsearch",
+ "why": "A standout memory & RAG tool for builders: A persistent, unified memory layer for all your AI agents (e.g.",
+ "category": "memory & RAG",
+ "description": "A persistent, unified memory layer for all your AI agents (e.g. Claude Code, Codex, DSH), backed by Markdown and Milvus",
+ "logo": "https://agentscouthq.com/assets/logos/memsearch.png",
+ "page": "https://agentscouthq.com/tools/memsearch.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -79,6 +79,10 @@
   {
    "date": "2026-11-02",
    "slug": "moveworks"
+  },
+  {
+   "date": "2026-11-03",
+   "slug": "memsearch"
   }
  ]
 }

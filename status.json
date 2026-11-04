@@ -1,16 +1,16 @@
 {
  "catalog": {
-  "mcp_servers": 281,
+  "mcp_servers": 297,
   "live": 280,
   "down": 1,
-  "not_yet_checked": 0,
-  "directory_last_checked": "2026-11-01",
+  "not_yet_checked": 16,
+  "directory_last_checked": "2026-11-04",
   "mcp_last_checked": "2026-11-03 06:59",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-03",
-    "note": "280 live, 1 down",
+    "note": "280 live, 1 down, 16 not yet checked",
     "time": "06:59"
    },
    {
@@ -60,6 +60,18 @@
   ]
  },
  "servers": [
+  {
+   "slug": "402post",
+   "name": "402post",
+   "page": "https://agentscouthq.com/tools/402post.html",
+   "status": "not yet checked"
+  },
+  {
+   "slug": "402registry",
+   "name": "402registry",
+   "page": "https://agentscouthq.com/tools/402registry.html",
+   "status": "not yet checked"
+  },
   {
    "slug": "9bot",
    "name": "9bot",
@@ -136,6 +148,12 @@
    ]
   },
   {
+   "slug": "agentweb",
+   "name": "AgentWeb",
+   "page": "https://agentscouthq.com/tools/agentweb.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "airtable-mcp",
    "name": "Airtable MCP",
    "page": "https://agentscouthq.com/tools/airtable-mcp.html",
@@ -164,6 +182,12 @@
      "time": "06:59"
     }
    ]
+  },
+  {
+   "slug": "aitho",
+   "name": "Aitho",
+   "page": "https://agentscouthq.com/tools/aitho.html",
+   "status": "not yet checked"
   },
   {
    "slug": "aiven-mcp",
@@ -1322,6 +1346,18 @@
    ]
   },
   {
+   "slug": "futureinfra-mcp",
+   "name": "FutureInfra MCP",
+   "page": "https://agentscouthq.com/tools/futureinfra-mcp.html",
+   "status": "not yet checked"
+  },
+  {
+   "slug": "g-maps-crawl",
+   "name": "G Maps Crawl",
+   "page": "https://agentscouthq.com/tools/g-maps-crawl.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "gearboy",
    "name": "Gearboy",
    "page": "https://agentscouthq.com/tools/gearboy.html",
@@ -1472,6 +1508,12 @@
    ]
   },
   {
+   "slug": "grigora-mcp",
+   "name": "Grigora MCP",
+   "page": "https://agentscouthq.com/tools/grigora-mcp.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "grounded-docs-mcp",
    "name": "Grounded Docs MCP",
    "page": "https://agentscouthq.com/tools/grounded-docs-mcp.html",
@@ -1620,6 +1662,12 @@
      "time": "06:59"
     }
    ]
+  },
+  {
+   "slug": "hypergsc",
+   "name": "HyperGSC",
+   "page": "https://agentscouthq.com/tools/hypergsc.html",
+   "status": "not yet checked"
   },
   {
    "slug": "icons8-mcp",
@@ -1922,6 +1970,12 @@
    ]
   },
   {
+   "slug": "keepbal",
+   "name": "KeepBal",
+   "page": "https://agentscouthq.com/tools/keepbal.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "klavis-ai",
    "name": "Klavis AI",
    "page": "https://agentscouthq.com/tools/klavis-ai.html",
@@ -2153,6 +2207,12 @@
      "time": "06:59"
     }
    ]
+  },
+  {
+   "slug": "mails0",
+   "name": "mails0",
+   "page": "https://agentscouthq.com/tools/mails0.html",
+   "status": "not yet checked"
   },
   {
    "slug": "mailveri-mcp",
@@ -3218,6 +3278,12 @@
    ]
   },
   {
+   "slug": "qovia",
+   "name": "Qovia",
+   "page": "https://agentscouthq.com/tools/qovia.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "railway-mcp",
    "name": "Railway MCP",
    "page": "https://agentscouthq.com/tools/railway-mcp.html",
@@ -3396,6 +3462,12 @@
      "time": "06:59"
     }
    ]
+  },
+  {
+   "slug": "scrapeatlas",
+   "name": "ScrapeAtlas",
+   "page": "https://agentscouthq.com/tools/scrapeatlas.html",
+   "status": "not yet checked"
   },
   {
    "slug": "scrapegraph-mcp",
@@ -3706,6 +3778,12 @@
    ]
   },
   {
+   "slug": "statsnet-mcp",
+   "name": "Statsnet MCP",
+   "page": "https://agentscouthq.com/tools/statsnet-mcp.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "storeinspect-mcp",
    "name": "StoreInspect MCP",
    "page": "https://agentscouthq.com/tools/storeinspect-mcp.html",
@@ -3796,6 +3874,12 @@
    ]
   },
   {
+   "slug": "tablethis",
+   "name": "TableThis",
+   "page": "https://agentscouthq.com/tools/tablethis.html",
+   "status": "not yet checked"
+  },
+  {
    "slug": "talk-to-figma-mcp",
    "name": "Talk to Figma MCP",
    "page": "https://agentscouthq.com/tools/talk-to-figma-mcp.html",
@@ -3839,6 +3923,12 @@
      "time": "06:59"
     }
    ]
+  },
+  {
+   "slug": "tessamonials",
+   "name": "Tessamonials",
+   "page": "https://agentscouthq.com/tools/tessamonials.html",
+   "status": "not yet checked"
   },
   {
    "slug": "testkube-mcp",
@@ -3899,6 +3989,12 @@
      "time": "06:59"
     }
    ]
+  },
+  {
+   "slug": "toolspad-mcp",
+   "name": "ToolsPad MCP",
+   "page": "https://agentscouthq.com/tools/toolspad-mcp.html",
+   "status": "not yet checked"
   },
   {
    "slug": "trivago-mcp",

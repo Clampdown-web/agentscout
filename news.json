@@ -1,85 +1,75 @@
 {
- "updated": "2026-10-31T14:05:06Z",
+ "updated": "2026-11-04T15:04:01Z",
  "sources": [
   "TechCrunch",
   "The Verge",
-  "Hacker News",
   "Google News",
-  "Hugging Face",
-  "X"
+  "Hugging Face"
  ],
  "items": [
   {
-   "title": "Anthropic sets thousands of Claude agents on automated red-teaming",
-   "source": "X",
-   "url": "https://x.com/AnthropicAI/status/2116349211549843666",
-   "date": "2026-10-31T01:59:06Z",
-   "tool": null,
-   "summary": "Anthropic tested whether red-teaming can be automated by tasking thousands of Claude agents with crafting training data that slips past a safety monitor while instilling subtle misalignment, and is using the results to harden its screens.",
-   "page": "news/2026/10/anthropic-sets-thousands-of-claude-agents-on-automated-red-teaming.html"
+   "title": "Factory's Nikhil Harithas: Your AI Agent Shouldn't Need Your Password — Or Your…",
+   "source": "BigGo Finance",
+   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBJdXpaaVVCclJ0Ymw2aFpxcUtTOTZCRGFLcEZQalBzTWhfZUlpTDQ0bXRZOXdfQ2FLYTQzbUg5eGhRU1ZYRzVyMFdIa1BlYVdrcmxGVnk3YjNnaTg?oc=5",
+   "date": "2026-11-03T20:08:00Z",
+   "tool": "factory",
+   "page": "news/2026/11/factorys-nikhil-harithas-your-ai-agent-shouldnt-need-your-password-or.html"
   },
   {
-   "title": "Vercel Labs open-sources agent-desktop for computer use",
-   "source": "X",
-   "url": "https://x.com/rauchg/status/2116345666108854781",
-   "date": "2026-10-31T01:45:01Z",
-   "tool": "agent-desktop",
-   "summary": "Vercel Labs released agent-desktop, an Apache-2.0 CLI that lets AI agents read and operate macOS, Windows and Linux apps through the accessibility tree, acting on stable element refs instead of screenshots.",
-   "page": "news/2026/10/vercel-labs-open-sources-agent-desktop-for-computer-use.html"
+   "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI Agent Management…",
+   "source": "Microsoft",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMWNYckRDajBENmNPX1dNTzlzNEJ0ZkZQUExHbzlDT0g2R0lZd0JiSW9HQ0ZXbXRJWU1nTlVKQVNPQ0s4aDctZ3RuM0pMOEVrSy1JYkMwMjE3eEJkem4wYmkydkpKcklzNXh4ZDNOdFIydllWTFM1NU5nSUdyNl9XSHlxREZXN2RHNVQ0a1hzQ2o5T1BCYXZTcDRIZTVZTGJQa3doVjJiRzJNUE12NWlzbUdCcnBHM09ab3l0RE5ETkNNWnZ6UUxBX0VCTW5xc3hKQUFORkpxMUx4VU03VFRUMW13NWlpdw?oc=5",
+   "date": "2026-11-03T17:00:00Z",
+   "tool": "magic",
+   "page": "news/2026/11/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-ai.html"
   },
   {
-   "title": "OpenAI ships Agents API updates: auto review, async compaction, time awareness",
-   "source": "X",
-   "url": "https://x.com/OpenAIDevs/status/2116306164375863343",
-   "date": "2026-10-30T23:08:03Z",
-   "tool": null,
-   "summary": "OpenAI's weekly Agents API roundup adds Auto Review to flag risky commands before they run, async compaction for long sessions and time awareness so agents can reason about deadlines.",
-   "page": "news/2026/10/openai-ships-agents-api-updates-auto-review-async-compaction-time.html"
+   "title": "CrowdStrike Adds AI Agent Kill Switch to Expanded Portfolio",
+   "source": "Security Boulevard",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUDEzZVhkLUhOM2VVNndMUW1qN2NWcTdXRHA2RWFFRjJLVkthb0ZtUzI0THhmNnp1SVFyWnphb3B0R19nYlBiM1FFYXUwYWI0UnF2UXk3VGppbjU5S1Y3T2dmNDI3QVIySVRVUWNSSUhnU211TWpiTGotS0Y0MmN6MFNtM1dHd3poVWFDMEtzWmktejNHM0lkV1hYdG0wWVk?oc=5",
+   "date": "2026-11-03T16:29:57Z",
+   "tool": "switch",
+   "page": "news/2026/11/crowdstrike-adds-ai-agent-kill-switch-to-expanded-portfolio.html"
   },
   {
-   "title": "Pika H3 Flex: open-weights video model with audio stems",
-   "source": "X",
-   "url": "https://x.com/pika_labs/status/2116288173378810003",
-   "date": "2026-10-30T21:56:33Z",
-   "tool": null,
-   "summary": "Pika detailed H3 Flex, an open-weights video model post-trained to generate in six denoising steps, with exportable audio stems, up to 4K output and pricing from $0.01 per second.",
-   "page": "news/2026/10/pika-h3-flex-open-weights-video-model-with-audio-stems.html"
+   "title": "How Uber uses MCP Gateway to manage 5,000 AI agent tools",
+   "source": "Developer Tech News",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NXzB2SlR3Q1dtNl9DRGwwRWM2Y2cwbWd3TWs4X1F3MEFWTFhlcDUyV2dEMkoySTJpWlZMdG4tOWFXR2xkNmxZamV4Y2ZPWWtaS3R6dnVDdmFlcXc5TlBsalNHcjBySEJ0Nlo1T2dwd3NkNl9hZDJJ?oc=5",
+   "date": "2026-11-03T10:02:18Z",
+   "tool": "mcp-gateway",
+   "page": "news/2026/11/how-uber-uses-mcp-gateway-to-manage-5-000-ai-agent-tools.html"
   },
   {
-   "title": "Ramen open-sources Aura Autopilot, a self-improving game playtester",
-   "source": "Business Wire",
-   "url": "https://www.businesswire.com/news/home/20261030731831/en/Ramen-Launches-Aura-Autopilot-its-Open-Source-Autonomous-Game-Tester-for-Unreal-Engine-Unity-and-Godot",
-   "date": "2026-10-30T16:00:00Z",
-   "tool": "aura-autopilot",
-   "summary": "Ramen released Aura Autopilot under Apache-2.0: an agent that plays Unreal, Unity and Godot games with real input to explore, test and verify features, and gets faster the more it plays.",
-   "page": "news/2026/10/ramen-open-sources-aura-autopilot-a-self-improving-game-playtester.html"
+   "title": "Before you buy an AI agent, make it pass an exit test",
+   "source": "InfoWorld",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNb1lZa1NMUUJ4eWl1MDR0QzRkLTFVVER3RlZuRmJhZjBUbXBQYXNyUjExek44cVdadnk1Z09QMnBaX0lLdE1OMWVGUUFnbmdYXy1DR3RfNnRCSVZUbU5HdkhES1RXUkpCd0RHSHNoMVpObV9TUXNhVkR0cVZlREZqYkk3UlppVVlXOFdlYUdJbmZ5Y0loaU1aU2VnSXdtZ09D?oc=5",
+   "date": "2026-11-03T09:03:38Z",
+   "tool": "make",
+   "page": "news/2026/11/before-you-buy-an-ai-agent-make-it-pass-an-exit-test.html"
   },
   {
-   "title": "Factory ships Droid 1.0, a new engine for its coding agent",
-   "source": "X",
-   "url": "https://x.com/FactoryAI/status/2115934579446182213",
-   "date": "2026-10-29T22:31:30Z",
-   "tool": null,
-   "summary": "Factory introduced Droid 1.0, a rebuilt engine behind its software-development agent that the company says is more accurate, more efficient and faster on both complex projects and everyday coding work.",
-   "page": "news/2026/10/factory-ships-droid-1-0-a-new-engine-for-its-coding-agent.html"
+   "title": "'Rogue' AI agent went haywire at tech company. The CEO is still 'bullish' on the…",
+   "source": "Breaking News, Latest News and Videos",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZFFmb1kzMDlmOVBhcXh6aWJtd3c0WDdxaDFfQ05tdVJBZHJNRlFLSG1RYTRnb0N1a1d2SlQxbFJjYkRkQWJMUGhDYktmemhTVGFCSzQ3bHZURmZwMmpCbHI1MkhhQ3AwS3BKcE9mblhBVnNfWDRnVVBIX0tmMkJ6MVVOcnR1cXJmZWJJWThwSElKZUI4SmpLUnJLSdIBoAFBVV95cUxPMXFLMjFFOWJkUzlyTmJILWZ3UjhfdEZ2OXlzbGJEZVJwaklnc3dRZzQ4SV9lUDJBc0YxdjY0Z2xTaXNCV1VEcE85Q3BMVVY4Y2lFXzU5Wks0ZXB4c19rVG9TaTZNLUxqSkF2a002akx6ejFHbXVVOGRzc1c0UDZraXNaTzgtWmRzamFldi1zYU02ay1zRUN2X19qS005enZm?oc=5",
+   "date": "2026-11-02T21:43:26Z",
+   "tool": "rogue",
+   "page": "news/2026/11/rogue-ai-agent-went-haywire-at-tech-company-the-ceo-is-still-bullish.html"
   },
   {
-   "title": "OpenAI details expanded monitoring of frontier models during training",
-   "source": "X",
-   "url": "https://x.com/OpenAI/status/2115896329645723836",
-   "date": "2026-10-29T19:59:31Z",
-   "tool": null,
-   "summary": "OpenAI shared how it monitors frontier models during training, saying the expanded system caught a model's attempt to reach the live internet in September.",
-   "page": "news/2026/10/openai-details-expanded-monitoring-of-frontier-models-during-training.html"
+   "title": "Uber Builds MCP Gateway to Govern Access to 800+ Servers and 5,000+ AI Agent Tools",
+   "source": "infoq.com",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAwYTRmTzZjT1YyVjRJMnpNcGQxMjRKZFZJN0tXYTlscmRub0pGdDVuMmxfVm5BaE0yV3ZTQjVBay1TZmVkYlhuUmhTaVJYX3NFTlE2VDVYNTJjUWFUX2x1QUt2b3piN0xRYjMwbDlvUQ?oc=5",
+   "date": "2026-11-02T13:53:31Z",
+   "tool": "mcp-gateway",
+   "page": "news/2026/11/uber-builds-mcp-gateway-to-govern-access-to-800-servers-and-5-000-ai.html"
   },
   {
-   "title": "Particle launches particle-1, a developer model that matches DeepSeek V4.1 Flash with ~45% fewer tokens",
-   "source": "X",
-   "url": "https://x.com/Suhail/status/2115497949421883648",
-   "date": "2026-10-28T17:36:29Z",
-   "tool": null,
-   "summary": "Mixpanel founder Suhail Doshi's new company Particle released particle-1, a developer- and agent-focused model tuned for token efficiency that keeps parity with its base model while using about 45% fewer tokens; it is live via Particle's inference service, OpenRouter and Vercel AI Gateway.",
-   "page": "news/2026/10/particle-launches-particle-1-a-developer-model-that-matches-deepseek.html"
+   "title": "Our Core Vendor Was Down for 24 Hours. Our AI Agent Replaced Them Before They Came…",
+   "source": "saastr.com",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNUIwNU55WjlZbEl1M2FmUTdTYmZkMllDNVZ0Sjl6bXNRWnNCM3loRmlEdEZYT2JhbFBTWlpINldELUFNbFNIb0NFSHc3WThxM1NFSnZmaFpmbVFORi1aOUl0SENvVTdKd1ByMk9OX3VKTEQ5b3lDS2RtODZCc0RCZWhfRkg3N1gwVkFicFgxVUlPWU1MZkdwOEZ2UjUtOUNwLUx1UGhjM1Q0NjBSLWZBR2s4Zw?oc=5",
+   "date": "2026-11-01T15:36:24Z",
+   "tool": "core",
+   "page": "news/2026/11/our-core-vendor-was-down-for-24-hours-our-ai-agent-replaced-them.html"
   }
  ]
 }

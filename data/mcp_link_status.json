@@ -1,7 +1,13 @@
 {
- "checked": "2026-11-03 06:59",
+ "checked": "2026-11-04 07:12",
  "tz": "America/Los_Angeles",
  "results": {
+  "402post": {
+   "url": 200
+  },
+  "402registry": {
+   "url": 200
+  },
   "9bot": {
    "url": 200,
    "github": 200
@@ -18,7 +24,10 @@
    "github": 200
   },
   "agentkey": {
-   "github": 200,
+   "url": 200,
+   "github": 200
+  },
+  "agentweb": {
    "url": 200
   },
   "airtable-mcp": {
@@ -27,6 +36,9 @@
   "aisoc": {
    "url": 200,
    "github": 200
+  },
+  "aitho": {
+   "url": 200
   },
   "aiven-mcp": {
    "url": 200,
@@ -94,8 +106,8 @@
    "github": 200
   },
   "audio-studio-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "auth0-mcp-server": {
    "url": 200
@@ -137,8 +149,8 @@
    "github": 200
   },
   "browsertools-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "buildkite-mcp": {
    "url": 200
@@ -147,8 +159,8 @@
    "url": 200
   },
   "carbon": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "carto-mcp": {
    "url": 200
@@ -198,8 +210,8 @@
    "github": 200
   },
   "crw": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "cve-mcp-server": {
    "url": 200,
@@ -271,8 +283,8 @@
    "github": 200
   },
   "favicondl": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "ffmpeg-skill": {
    "url": 200
@@ -297,6 +309,12 @@
   },
   "frase-mcp": {
    "github": 200,
+   "url": 200
+  },
+  "futureinfra-mcp": {
+   "url": 200
+  },
+  "g-maps-crawl": {
    "url": 200
   },
   "gearboy": {
@@ -331,6 +349,9 @@
    "github": 200
   },
   "grafana-mcp": {
+   "url": 200
+  },
+  "grigora-mcp": {
    "url": 200
   },
   "grounded-docs-mcp": {
@@ -368,6 +389,9 @@
   "hutchdb": {
    "url": 200,
    "github": 200
+  },
+  "hypergsc": {
+   "url": 200
   },
   "icons8-mcp": {
    "url": 200
@@ -413,8 +437,8 @@
    "url": 200
   },
   "joinly": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "jscpd": {
    "url": 200
@@ -439,6 +463,9 @@
   "keboola-mcp-server": {
    "url": 200,
    "github": 200
+  },
+  "keepbal": {
+   "url": 200
   },
   "klavis-ai": {
    "url": 200,
@@ -490,6 +517,10 @@
    "github": 200
   },
   "lusha-mcp": {
+   "url": 200,
+   "github": 200
+  },
+  "mails0": {
    "url": 200,
    "github": 200
   },
@@ -555,8 +586,8 @@
    "github": 200
   },
   "mcp-reference-servers": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "mcp-registry": {
    "url": 200
@@ -597,7 +628,7 @@
    "github": 200
   },
   "menlo-insurance-mcp": {
-   "url": 402
+   "url": 200
   },
   "metamcp": {
    "url": 200,
@@ -622,8 +653,8 @@
    "url": 200
   },
   "model-context-protocol": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "monday-com-mcp": {
    "url": 200,
@@ -709,8 +740,8 @@
    "url": 200
   },
   "pandadoc-mcp": {
-   "github": 200,
-   "url": 200
+   "url": 200,
+   "github": 200
   },
   "pangolinfo-amazon-data-mcp": {
    "url": 200,
@@ -727,8 +758,8 @@
    "url": 200
   },
   "phantom": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "picsart-genai-mcp": {
    "url": 202
@@ -753,6 +784,9 @@
    "url": 200,
    "github": 200
   },
+  "qovia": {
+   "url": 200
+  },
   "railway-mcp": {
    "url": 200
   },
@@ -765,8 +799,8 @@
    "github": 200
   },
   "redamon": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "redis-mcp-server": {
    "url": 200,
@@ -794,6 +828,9 @@
    "github": 200
   },
   "scite-mcp": {
+   "url": 200
+  },
+  "scrapeatlas": {
    "url": 200
   },
   "scrapegraph-mcp": {
@@ -867,6 +904,9 @@
   "statsig-mcp": {
    "url": 200
   },
+  "statsnet-mcp": {
+   "url": 200
+  },
   "storeinspect-mcp": {
    "url": 200
   },
@@ -888,6 +928,9 @@
   "swipeharbor": {
    "url": 200
   },
+  "tablethis": {
+   "url": 200
+  },
   "talk-to-figma-mcp": {
    "github": 200,
    "url": 200
@@ -899,13 +942,16 @@
   "teamwork-com-mcp": {
    "url": 200
   },
+  "tessamonials": {
+   "url": 200
+  },
   "testkube-mcp": {
    "url": 200,
    "github": 200
   },
   "the-commons-dead-brands-collab-hub": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "tipranks-mcp": {
    "url": 200,
@@ -914,6 +960,9 @@
   "toolhive": {
    "url": 200,
    "github": 200
+  },
+  "toolspad-mcp": {
+   "url": 200
   },
   "trivago-mcp": {
    "url": 200

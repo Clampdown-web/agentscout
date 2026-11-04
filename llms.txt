@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 2,087 AI agent tools in 40 categories, including 281 MCP servers (280 of 281 MCP servers responded today (verified Nov 3, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 2,185 AI agent tools in 40 categories, including 297 MCP servers (280 of 297 MCP servers responded today (verified Nov 3, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -9,7 +9,7 @@ Contact: support@agentscouthq.com
 X: https://x.com/AgentScoutHQ, https://x.com/clampdown19
 MCP Registry ID: com.agentscouthq/directory
 MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse — 100% free, read-only, no API key or x402 wallet required)
-Catalog last checked: 2026-11-01 (Pacific)
+Catalog last checked: 2026-11-04 (Pacific)
 
 ## For AI agents
 
@@ -29,7 +29,7 @@ Catalog last checked: 2026-11-01 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 281 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 297 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
@@ -47,7 +47,7 @@ Catalog last checked: 2026-11-01 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 281 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 297 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -66,46 +66,46 @@ Catalog last checked: 2026-11-01 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 281 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 221 tools
-- [frameworks](https://agentscouthq.com/categories/frameworks.html): 153 tools
-- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 95 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 95 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 297 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 222 tools
+- [frameworks](https://agentscouthq.com/categories/frameworks.html): 154 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 99 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 96 tools
+- [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 96 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 93 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 90 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 68 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
-- [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 57 tools
-- [security & governance](https://agentscouthq.com/categories/security-governance.html): 54 tools
-- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 53 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 49 tools
-- [business agents](https://agentscouthq.com/categories/business-agents.html): 48 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 47 tools
-- [research](https://agentscouthq.com/categories/research.html): 45 tools
+- [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 61 tools
+- [video generation](https://agentscouthq.com/categories/video-generation.html): 59 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 58 tools
+- [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 56 tools
+- [security & governance](https://agentscouthq.com/categories/security-governance.html): 56 tools
+- [business agents](https://agentscouthq.com/categories/business-agents.html): 52 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 49 tools
+- [research](https://agentscouthq.com/categories/research.html): 47 tools
+- [image generation](https://agentscouthq.com/categories/image-generation.html): 47 tools
 - [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 45 tools
-- [video generation](https://agentscouthq.com/categories/video-generation.html): 42 tools
-- [music production](https://agentscouthq.com/categories/music-production.html): 42 tools
-- [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 41 tools
-- [image generation](https://agentscouthq.com/categories/image-generation.html): 38 tools
+- [music production](https://agentscouthq.com/categories/music-production.html): 43 tools
+- [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 42 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 37 tools
+- [customer support](https://agentscouthq.com/categories/customer-support.html): 32 tools
 - [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 32 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 29 tools
-- [customer support](https://agentscouthq.com/categories/customer-support.html): 28 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 31 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 28 tools
+- [app builders](https://agentscouthq.com/categories/app-builders.html): 24 tools
 - [DevOps & cloud](https://agentscouthq.com/categories/devops-cloud.html): 23 tools
-- [app builders](https://agentscouthq.com/categories/app-builders.html): 22 tools
+- [vision](https://agentscouthq.com/categories/vision.html): 21 tools
+- [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 21 tools
 - [games](https://agentscouthq.com/categories/games.html): 21 tools
-- [vision](https://agentscouthq.com/categories/vision.html): 20 tools
 - [data & analytics](https://agentscouthq.com/categories/data-analytics.html): 18 tools
-- [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 17 tools
 - [QA & testing](https://agentscouthq.com/categories/qa-testing.html): 14 tools
 - [HR & recruiting](https://agentscouthq.com/categories/hr-recruiting.html): 14 tools
 - [e-commerce & retail](https://agentscouthq.com/categories/e-commerce-retail.html): 13 tools
 - [legal & compliance](https://agentscouthq.com/categories/legal-compliance.html): 11 tools
 - [robotics & physical AI](https://agentscouthq.com/categories/robotics-physical-ai.html): 11 tools
+- [finance & accounting](https://agentscouthq.com/categories/finance-accounting.html): 11 tools
+- [education & tutoring](https://agentscouthq.com/categories/education-tutoring.html): 11 tools
 - [healthcare & biotech](https://agentscouthq.com/categories/healthcare-biotech.html): 11 tools
-- [finance & accounting](https://agentscouthq.com/categories/finance-accounting.html): 10 tools
-- [education & tutoring](https://agentscouthq.com/categories/education-tutoring.html): 10 tools
 
 ## AI Agent Packs
 
@@ -187,20 +187,107 @@ Catalog last checked: 2026-11-01 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-11-02 to 2026-11-03): 12
+- Tools added in the last 2 days (2026-11-03 to 2026-11-04): 99
 
-- [aiFetchly](https://agentscouthq.com/tools/aifetchly.html) (added 2026-11-01): aiFetchly is a local-first desktop AI agent workspace for business automation, covering research, document processing, customer communication, scheduled workflows, plugins and a business knowledge base.
-- [InkRoom](https://agentscouthq.com/tools/inkroom.html) (added 2026-11-01): InkRoom is an infinite-canvas AI visual workspace for images, reference edits, product visuals, storyboards and batch workflows, with MCP integrations and Agent Skills so AI agents can work on the canvas too.
-- [xmcp](https://agentscouthq.com/tools/xmcp.html) (added 2026-11-01): xmcp is an open-source (MIT) TypeScript framework from basement.studio for building and shipping MCP servers, with file-based tools, prompts and resources and deploy-ready adapters.
-- [Agent Control](https://agentscouthq.com/tools/agent-control.html) (added 2026-11-01): Agent Control's Action Gate is a Claude Code hook that makes the agent ask before a Slack post, a CRM edit or a deploy; a no, or no answer in 10 minutes, stops the tool call. Connect adds ask-before-paying controls for agent payments. Action Gate is $49 for 30 days, paid in USDC on Base, Solana or Ethereum.
-- [Ecommerce Data API](https://agentscouthq.com/tools/ecommerce-data-api.html) (added 2026-11-01): Ecommerce Data API serves Amazon product, keyword, market, sales, review, traffic and trademark data through one REST API and an MCP server, built for seller research and agent workflows. New sign-ups get 5 free API calls.
-- [Orivox](https://agentscouthq.com/tools/orivox.html) (added 2026-11-01): Orivox is an AI website builder: describe your business in one sentence and it builds a real hosted site you can then change just by asking, with edits applied through a constrained set of operations and guardrails so changes stay safe and reversible. Free account, no credit card.
-- [Tiny Desk AI](https://agentscouthq.com/tools/tiny-desk-ai.html) (added 2026-11-01): Tiny Desk AI turns one photo, or a group photo of up to five people, into a 15-second vertical 9:16 Tiny Desk-style concert parody video with synced sound, starting at $9.99.
-- [GBot](https://agentscouthq.com/tools/gbot.html) (added 2026-11-01): GBot is an AI team for small businesses: you ask once and it drafts social posts, quotes, customer replies and research, and you approve each piece before anything goes out.
-- [FotoApta](https://agentscouthq.com/tools/fotoapta.html) (added 2026-11-01): FotoApta is an AI professional headshot generator that creates business headshots from a single selfie, with a free watermarked preview and a one-time paid pack of six photos. It is not meant for passport or ID photos.
-- [Context Nest](https://agentscouthq.com/tools/context-nest.html) (added 2026-11-01): Context Nest is a structured, versioned context vault for AI agents: typed Markdown nodes, selector queries, hash-chained versions and an optional review gate, served to agents over MCP or a CLI, self-hosted or in PromptOwl's cloud.
-- [BotSee](https://agentscouthq.com/tools/botsee.html) (added 2026-11-01): BotSee is an agent-native AI visibility (GEO) measurement API and skill for Claude Code, Codex and MCP workflows that audits brand mentions, citations and competitor share of voice across ChatGPT, Claude, Perplexity and Gemini, billed with usage credits.
-- [Love to Color](https://agentscouthq.com/tools/love-to-color.html) (added 2026-11-01): Love to Color is a web AI coloring-page generator that turns text prompts or photos into printable line-art sheets and can colorize them with palettes, for families, teachers and colorists. Watermarked previews are free without sign-up, and credits unlock PNG downloads.
+- [Nestack Agent Care](https://agentscouthq.com/tools/nestack-agent-care.html) (added 2026-11-04): Nestack Agent Care is a managed operations service for production AI agents, covering monitoring, evals, guardrails, human review, incident response and cost and drift control.
+- [HumanMirror Guard](https://agentscouthq.com/tools/humanmirror-guard.html) (added 2026-11-04): HumanMirror Guard is an opt-in Python and JavaScript preflight SDK that gives autonomous agents in LangGraph, CrewAI, AgentKit or AutoGen an advisory risk check before they act.
+- [Brainbaby](https://agentscouthq.com/tools/brainbaby.html) (added 2026-11-04): Brainbaby is a no-code AI builder that creates websites and web apps from a prompt, lets you refine the design in chat and exports the source code.
+- [AIReiter](https://agentscouthq.com/tools/aireiter.html) (added 2026-11-04): AIReiter is a unified AI API that gives developers one key and one bill for leading image, video and text generation models.
+- [FlicLoop](https://agentscouthq.com/tools/flicloop.html) (added 2026-11-04): FlicLoop turns two photos into a 12-second AI zombie love-story video that ends in a hug.
+- [ReplyOnSite](https://agentscouthq.com/tools/replyonsite.html) (added 2026-11-04): ReplyOnSite is website live chat with an AI agent that answers only from your help articles and hands off to your team with full context.
+- [Nab](https://agentscouthq.com/tools/nab.html) (added 2026-11-04): Nab is a family AI assistant that searches, calls, books and orders for you, with one API that gives agents scoped voice, SMS and email plus owner approval.
+- [SoftSync AI](https://agentscouthq.com/tools/softsync-ai.html) (added 2026-11-04): SoftSync is an all-in-one CRM and meeting assistant for small teams with a hosted MCP server, so Claude and ChatGPT can work with your leads and meetings.
+- [ResLeap](https://agentscouthq.com/tools/resleap.html) (added 2026-11-04): ResLeap is an AI image enhancer that unblurs and upscales photos, portraits, anime and product images up to 8K.
+- [Grigora MCP](https://agentscouthq.com/tools/grigora-mcp.html) (added 2026-11-04): Grigora MCP lets Claude or any MCP client run a Grigora website, with 65 tools to write posts, build directories, manage catalogs, pages and redirects, and publish.
+- [Floowed](https://agentscouthq.com/tools/floowed.html) (added 2026-11-04): Floowed is an AI operations platform that runs long-running business cases across people, documents and existing systems, with AI agents doing the tasks.
+- [APIMODELS](https://agentscouthq.com/tools/apimodels.html) (added 2026-11-04): APIMODELS is a unified AI API that aggregates 150+ image, video, LLM and audio models behind one key and endpoint.
+- [MagicRemover](https://agentscouthq.com/tools/magicremover.html) (added 2026-11-04): MagicRemover is a free AI tool that brushes objects, people, text or watermarks out of photos, with no signup and no watermark.
+- [SparkPix](https://agentscouthq.com/tools/sparkpix.html) (added 2026-11-04): SparkPix is a prompt-based AI photo editor: type what you want to remove backgrounds, enhance quality, restore old photos or change styles.
+- [EditTextImage](https://agentscouthq.com/tools/edittextimage.html) (added 2026-11-04): EditTextImage edits, replaces or translates text inside images with AI while keeping the original font, colour and perspective.
+- [Qovia](https://agentscouthq.com/tools/qovia.html) (added 2026-11-04): Qovia gives AI agents one API key and a remote MCP server for public data from 20+ Chinese and global platforms such as Douyin, RedNote, Weibo, TikTok and YouTube.
+- [Facetry](https://agentscouthq.com/tools/facetry.html) (added 2026-11-04): Facetry analyses one selfie with AI to find your 12-season colour type, face shape and skin undertone, with a full palette of recommended colours.
+- [Qequals](https://agentscouthq.com/tools/qequals.html) (added 2026-11-04): Qequals is an agent-first API for Google autocomplete and live search-results data, with llms.txt onboarding for AI agents.
+- [Burning Bridges AI Video Generator](https://agentscouthq.com/tools/burning-bridges-ai-video-generator.html) (added 2026-11-04): Burning Bridges AI Video Generator turns your photo into a short video in the Burning Bridges trend style, with optional background people and original sound.
+- [Chinese Stroke Order](https://agentscouthq.com/tools/chinese-stroke-order.html) (added 2026-11-04): Chinese Stroke Order shows animated stroke order for 20,000+ Chinese characters with pinyin and audio, and checks your handwriting with AI on web, iOS and Android.
+- [G Maps Crawl](https://agentscouthq.com/tools/g-maps-crawl.html) (added 2026-11-04): G Maps Crawl searches and extracts Google Maps business data through a remote MCP server, API and agent skill, with exports to CSV, JSON or Excel.
+- [Agent Lane](https://agentscouthq.com/tools/agent-lane.html) (added 2026-11-04): Agent Lane offers plain-English guides and calculators for using AI agents safely with money, including spending caps, AI scam warnings and AI API cost estimates.
+- [Zoivu](https://agentscouthq.com/tools/zoivu.html) (added 2026-11-04): Zoivu is an AI original-character generator whose Character Director keeps the same character consistent across looks, scenes and stories.
+- [ConnectVault.ai](https://agentscouthq.com/tools/connectvault-ai.html) (added 2026-11-04): ConnectVault.ai combines a business-card scanner and personal CRM with ARIA, an AI networking agent that preps meetings and drafts follow-ups, on Android and web.
+- [Renown Autopilot](https://agentscouthq.com/tools/renown-autopilot.html) (added 2026-11-04): Renown Autopilot is an AI marketing employee that lives in WhatsApp and runs your Google profile, reviews, socials, campaigns and website, with owner approval for proposals.
+- [Orylia](https://agentscouthq.com/tools/orylia.html) (added 2026-11-04): Orylia is an AI image and video generator where an agent picks the best model for your idea, plus 50+ one-click tools and templates.
+- [Modurian](https://agentscouthq.com/tools/modurian.html) (added 2026-11-04): Modurian is a multi-agent AI workspace that plans, writes code, previews live and deploys web apps from an idea to a production URL.
+- [CreateVision](https://agentscouthq.com/tools/createvision.html) (added 2026-11-04): CreateVision is an AI image and video studio with 33+ models and an assistant, Ava, that picks the right model and applies one-click edits.
+- [Reelity](https://agentscouthq.com/tools/reelity.html) (added 2026-11-04): Reelity provides agent skills for Claude Code, Codex and Cursor that turn a marketing brief into launch films, short ads and localized videos.
+- [Bellkept](https://agentscouthq.com/tools/bellkept.html) (added 2026-11-04): Bellkept is an AI receptionist for trades and small businesses that answers missed calls and texts you who called, what they need and how urgent it is.
+- [Melso](https://agentscouthq.com/tools/melso.html) (added 2026-11-04): Melso is an accounting and tax service for freelancers and businesses in Spain with a personal AI agent on WhatsApp and an MCP server, backed by human professionals.
+- [402post](https://agentscouthq.com/tools/402post.html) (added 2026-11-04): 402post is a paid classifieds board for AI agents: post listings over HTTP or MCP, pay with x402 in USDC and read them as web pages, Markdown, JSON or RSS.
+- [402cron](https://agentscouthq.com/tools/402cron.html) (added 2026-11-04): 402cron delivers signed, scheduled webhooks for AI agents, paid per run in USDC over x402 with no account, with an MCP server.
+- [402registry](https://agentscouthq.com/tools/402registry.html) (added 2026-11-04): 402registry is a pay-per-check audit, callable over HTTP or MCP, that shows what AI crawlers like GPTBot, ClaudeBot and PerplexityBot actually see on your site.
+- [AISkills402](https://agentscouthq.com/tools/aiskills402.html) (added 2026-11-04): AISkills402 sells tested SKILL.md files that AI agents can buy once over x402 with USDC on Base, with an MCP server for discovery and download.
+- [CreaLens](https://agentscouthq.com/tools/crealens.html) (added 2026-11-04): CreaLens is an AI cinematic creation platform for images and video, upscaling and music, with a library of 150+ camera techniques for film creators.
+- [AlpineLead OI](https://agentscouthq.com/tools/alpinelead-oi.html) (added 2026-11-04): AlpineLead OI finds and ranks B2B sales opportunities in Austria, Germany and Switzerland from public buying signals, via a web app, REST API and MCP server for agents.
+- [China AI](https://agentscouthq.com/tools/china-ai.html) (added 2026-11-04): China AI is a browser studio for creating images and videos with leading Chinese AI models such as Seedream, Kling, Seedance and Wan, alongside top global models.
+- [IOOK](https://agentscouthq.com/tools/iook.html) (added 2026-11-04): IOOK is a job-watch agent: tell it the company and role you want and it finds the official careers page, keeps checking it and alerts you when a matching opening appears.
+- [AI Uptown Funk](https://agentscouthq.com/tools/ai-uptown-funk.html) (added 2026-11-04): AI Uptown Funk makes a 15-second crew dance video to Uptown Funk from one to five photos using models like Seedance and Kling.
+- [TrackMCP](https://agentscouthq.com/tools/trackmcp.html) (added 2026-11-04): TrackMCP is analytics for MCP servers that shows who uses your server, which tools they call, and errors, latency, tokens and costs, installed with one line.
+- [reAPI](https://agentscouthq.com/tools/reapi.html) (added 2026-11-04): reAPI is an AI API aggregator that gives one key and endpoint for 90+ image, video, chat, music and code models, with automatic failover.
+- [Pitchly](https://agentscouthq.com/tools/pitchly.html) (added 2026-11-04): Pitchly is an AI job-search companion for Australia that finds roles, tailors resumes and cover letters, checks ATS fit and runs interview practice by voice or text.
+- [ScrapeAtlas](https://agentscouthq.com/tools/scrapeatlas.html) (added 2026-11-04): ScrapeAtlas is a social media and marketplace data API covering 48 platforms, with a hosted MCP server, npm CLI and integrations for AI agents.
+- [Scale Ova](https://agentscouthq.com/tools/scale-ova.html) (added 2026-11-04): Scale Ova is an AI agent that builds a Shopify store from a description, generating the design, product pages and collections and publishing it for you.
+- [Kling3AI](https://agentscouthq.com/tools/kling3ai.html) (added 2026-11-04): Kling3AI is an independent web app for generating videos with Kling 4.0 from text, images, keyframes and references (not the official kling.ai).
+- [Seedream55ai](https://agentscouthq.com/tools/seedream55ai.html) (added 2026-11-04): Seedream55ai is an independent, credit-based web app for Seedream 5.5 text-to-image generation and editing (not affiliated with ByteDance).
+- [Jynno](https://agentscouthq.com/tools/jynno.html) (added 2026-11-04): Jynno is an AI creative studio with a creative agent and Story Studio for generating and editing images, videos and product ads.
+- [NEON DUO](https://agentscouthq.com/tools/neon-duo.html) (added 2026-11-04): NEON DUO creates an AI dance-duo video from two photos and a dance reference, with music and private downloads.
+- [Aimake Videos](https://agentscouthq.com/tools/aimake-videos.html) (added 2026-11-04): Aimake Videos turns your photo into short vertical AI trend videos with sound using ready-made templates for TikTok, Reels and Shorts.
+- [DogRouter](https://agentscouthq.com/tools/dogrouter.html) (added 2026-11-04): DogRouter is an OpenAI-compatible gateway for routing requests across leading AI models, with budgets and automatic failover.
+- [HausDraft](https://agentscouthq.com/tools/hausdraft.html) (added 2026-11-04): HausDraft redesigns a room or home from one photo, producing photorealistic AI interior and floor-plan concepts in seconds.
+- [AgentWeb](https://agentscouthq.com/tools/agentweb.html) (added 2026-11-04): AgentWeb gives AI agents and local models web search, page reading, local search and 130M+ business records through a hosted MCP server and REST API.
+- [Suparse](https://agentscouthq.com/tools/suparse.html) (added 2026-11-04): Suparse extracts structured data from PDFs, scans, images and emails with AI, with an Autopilot mode and export to Excel or webhooks.
+- [Nolyn](https://agentscouthq.com/tools/nolyn.html) (added 2026-11-04): Nolyn is an AI analyst for Amazon, TikTok Shop and Shopee sellers that answers product research, pricing and creator-discovery questions with reports built from live marketplace and social data.
+- [Pius Bot](https://agentscouthq.com/tools/pius-bot.html) (added 2026-11-04): Pius Bot is an AI shopping assistant from products.ai that reads guides, reviews and forums, picks products that fit you, explains why and shows where to buy.
+- [Tunenoodle](https://agentscouthq.com/tools/tunenoodle.html) (added 2026-11-04): Tunenoodle is an AI music generator that makes songs from text, lyrics, images or humming, with a music agent, stem splitting, remixing and free audio tools.
+- [Tessamonials](https://agentscouthq.com/tools/tessamonials.html) (added 2026-11-04): Tessamonials runs AI customer interviews by voice or text, asks tailored follow-up questions and collects feedback and approved testimonials.
+- [TableThis](https://agentscouthq.com/tools/tablethis.html) (added 2026-11-04): TableThis is a shared database and Markdown docs workspace for internal apps built with Claude or Codex over MCP, with access control and review-and-undo for AI changes.
+- [Footalytics](https://agentscouthq.com/tools/footalytics.html) (added 2026-11-04): Footalytics is an AI football analyst: ask about an upcoming match in the top European leagues and get explained win, draw and loss probabilities, likely scores and form.
+- [RenderVibe](https://agentscouthq.com/tools/rendervibe.html) (added 2026-11-04): RenderVibe is an AI home-staging and interior design tool that turns room photos and floor plans into furnished design concepts.
+- [Marigold Bridge AI](https://agentscouthq.com/tools/marigold-bridge-ai.html) (added 2026-11-04): Marigold Bridge AI turns one adult photo into a glowing flower-bridge remembrance video in the Día de Muertos style.
+- [Day of the Dead Pet AI](https://agentscouthq.com/tools/day-of-the-dead-pet-ai.html) (added 2026-11-04): Day of the Dead Pet AI turns one photo of a dog or cat into a short Día de Muertos tribute video, such as a glowing marigold-bridge scene.
+- [Questry AI](https://agentscouthq.com/tools/questry-ai.html) (added 2026-11-04): Questry AI is an outbound sales agent for Dutch B2B companies: describe your ideal customer and it finds the companies and contacts, writes the emails, follows up and books meetings.
+- [Nexstair AI](https://agentscouthq.com/tools/nexstair-ai.html) (added 2026-11-04): Nexstair AI lets businesses deploy a custom AI chatbot that resolves support tickets, captures leads and answers customers around the clock.
+- [ToolsPad MCP](https://agentscouthq.com/tools/toolspad-mcp.html) (added 2026-11-04): ToolsPad MCP lets AI agents work with ToolsPad through WebMCP in the browser or an authenticated MCP connection with OAuth, scoped workspace access and audit history.
+- [FutureInfra MCP](https://agentscouthq.com/tools/futureinfra-mcp.html) (added 2026-11-04): FutureInfra MCP lets AI agents such as Claude Code and Cursor create and manage FutureInfra cloud servers, snapshots, IPs and firewall rules, with spending limits and human confirmation (site in Korean).
+- [Maeve Social](https://agentscouthq.com/tools/maeve-social.html) (added 2026-11-04): Maeve Social is a social media management tool with an AI assistant, client approvals and reporting, plus a REST API, CLI and MCP server for automation.
+- [FOMOChat](https://agentscouthq.com/tools/fomochat.html) (added 2026-11-04): FOMOChat is an AI chat widget for SaaS and marketing sites that answers visitors and adds social proof to lift conversions, with no coding required.
+- [PopNow](https://agentscouthq.com/tools/popnow.html) (added 2026-11-04): PopNow is an AI studio for video, images, music and voice across top models, with an API and MCP server for developers.
+- [HyperGSC](https://agentscouthq.com/tools/hypergsc.html) (added 2026-11-04): HyperGSC is a hosted, read-only Google Search Console MCP server that connects your search data to Claude, ChatGPT, Codex and Cursor over OAuth.
+- [TriRank](https://agentscouthq.com/tools/trirank.html) (added 2026-11-04): TriRank tracks whether ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews cite your website and shows the results next to your Search Console data.
+- [Zero Kit AI](https://agentscouthq.com/tools/zero-kit-ai.html) (added 2026-11-04): Zero Kit AI is a no-prompt AI image and video generator and photo editor with 500+ ready-made styles for portraits, logos and posters.
+- [KeepRouter](https://agentscouthq.com/tools/keeprouter.html) (added 2026-11-04): KeepRouter is a managed multi-model API gateway that accepts OpenAI-compatible and Anthropic Messages requests, so tools like Claude Code can use many providers through one key.
+- [mails0](https://agentscouthq.com/tools/mails0.html) (added 2026-11-04): mails0 is an open-source email API for AI agents with inboxes, OTP code extraction, thread search, replies and MCP tools, and it can be self-hosted on Cloudflare.
+- [KeepBal](https://agentscouthq.com/tools/keepbal.html) (added 2026-11-04): KeepBal gives AI agents one API key and one prepaid wallet to search, price and run thousands of data, scraping and model tools, paying only for successful runs.
+- [AI Video Trend](https://agentscouthq.com/tools/ai-video-trend.html) (added 2026-11-04): AI Video Trend recreates viral AI video effects from one or two of your photos, ready to post on TikTok and Reels.
+- [Yike AI](https://agentscouthq.com/tools/yike-ai.html) (added 2026-11-04): Yike AI is a B2B lead-generation agent that finds public buying demand matching your business, shows the source evidence and tracks leads in a built-in CRM.
+- [ModernCV](https://agentscouthq.com/tools/moderncv.html) (added 2026-11-04): ModernCV is a free, no-signup resume builder with dozens of templates, optional AI writing help, JSON Resume support and an MCP server and skill for agents.
+- [Krafty Bot](https://agentscouthq.com/tools/krafty-bot.html) (added 2026-11-04): Krafty gives you AI bots that research the web, work inside your connected apps and on a shared cloud computer, run tasks on a schedule and ask for approval before sending anything.
+- [CreateOS Sandbox](https://agentscouthq.com/tools/createos-sandbox.html) (added 2026-11-04): CreateOS Sandbox gives each AI agent its own Firecracker micro-VM with a private kernel and network, controllable through an SDK, CLI, MCP server or REST API.
+- [AI Tiny Desk](https://agentscouthq.com/tools/ai-tiny-desk.html) (added 2026-11-04): AI Tiny Desk turns one adult photo into a 19-second AI video of the person singing a desk concert with a band.
+- [Ozil Goal](https://agentscouthq.com/tools/ozil-goal.html) (added 2026-11-04): Ozil Goal turns a single photo into a 15-second AI video of you scoring a football goal, in 720p or enhanced 1080p.
+- [Bulin47VideoAI](https://agentscouthq.com/tools/bulin47videoai.html) (added 2026-11-04): Bulin47VideoAI turns one photo into a short vertical freestyle dance video inspired by the Bulin 47 trend (not affiliated with the artist).
+- [AI Product Recommender for WooCommerce](https://agentscouthq.com/tools/ai-product-recommender-for-woocommerce.html) (added 2026-11-04): AI Product Recommender for WooCommerce adds an AI shopping chat to a store that finds products, checks live price and stock, answers policy questions and hands off to a human.
+- [Agent Swipe File](https://agentscouthq.com/tools/agent-swipe-file.html) (added 2026-11-04): Agent Swipe File is a machine-readable directory of creative reference libraries (ad, UGC, email, SMS and website galleries) for AI agents, with a free Claude Code and Codex skill.
+- [Aitho](https://agentscouthq.com/tools/aitho.html) (added 2026-11-04): Aitho is a remote MCP server with 24 tools that turns a slide deck into a rehearsable talk, so you can build and practise a presentation from Claude or ChatGPT.
+- [Floatboat](https://agentscouthq.com/tools/floatboat.html) (added 2026-11-04): Floatboat is a calendar-first agent OS for Mac and Windows: connect your calendar and its agents prepare, run and follow up on each block of work at the right time.
+- [Neurobro](https://agentscouthq.com/tools/neurobro.html) (added 2026-11-04): Neurobro is a finance research assistant that answers plain-language questions about crypto, stocks, forex and commodities using 200+ specialised agents, with a self-custody wallet for trading.
+- [NovaSynth](https://agentscouthq.com/tools/novasynth.html) (added 2026-11-04): NovaSynth by Noveum stress-tests voice and chat agents with synthetic callers over real SIP phone lines, LiveKit audio and chat, recording each run for evals and regression checks.
+- [Sqwakie](https://agentscouthq.com/tools/sqwakie.html) (added 2026-11-04): Sqwakie is a walkie-talkie for teams running AI coding agents like Claude Code and Codex on shared repos, showing live what each agent is doing so they don't collide.
+- [Statsnet MCP](https://agentscouthq.com/tools/statsnet-mcp.html) (added 2026-11-04): Statsnet MCP is a remote MCP server that lets AI agents search companies worldwide and pull structured registry, financial and risk data for due diligence.
+- [Aeon](https://agentscouthq.com/tools/aeon.html) (added 2026-11-04): Aeon is an open-source autonomous agent framework that runs unattended on GitHub Actions, using a library of self-healing skills to pursue a goal without approval loops.
+- [ATCBase](https://agentscouthq.com/tools/atcbase.html) (added 2026-11-04): ATCBase is an air traffic control training simulator where you talk by voice to AI flight crews on a radar screen to practise ATC and aviation English.
+- [Avie](https://agentscouthq.com/tools/avie.html) (added 2026-11-04): Avie is an AI receptionist for clinics in Brazil that answers WhatsApp around the clock to book, reschedule and confirm appointments, plus an AI scribe that drafts consult notes.
+- [Ideoy](https://agentscouthq.com/tools/ideoy.html) (added 2026-11-04): Ideoy remakes popular meme video templates from a single photo, producing a vertical AI-generated clip in about two minutes.
+- [CoreSpaces Production Agent](https://agentscouthq.com/tools/corespaces-production-agent.html) (added 2026-11-04): CoreSpaces builds bounded, production-ready workflow agents for tasks like invoice intake, lead triage and document packs, shipped with an eval set, audit log and rollback.
+- [Muse Image](https://agentscouthq.com/tools/muse-image.html) (added 2026-11-04): Muse Image is a browser-based AI image generator and photo editor that turns text prompts and reference photos into new visuals.
+- [GenFlick](https://agentscouthq.com/tools/genflick.html) (added 2026-11-04): GenFlick is an AI video studio for finished films, series, music videos and ads that keeps the same cast and wardrobe consistent across every shot, with 30+ models to choose from.
 
 
 ## Launches, status, and the Directory Launch Pack
