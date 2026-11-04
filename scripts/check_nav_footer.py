@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Fail when any page's sitewide <nav> or <footer> differs from index.html.
 
-Relative link depth (../ and root-absolute /) is ignored. Meta-refresh stubs,
-drafts, and pages without a chrome pair are skipped the same way as
-build_seo_new.unify_all_nav_and_footer.
+Relative link depth (../ and root-absolute /) is ignored. Meta-refresh and
+location.replace stubs that have no nav are skipped. A redirect stub that has
+a nav, including mcp/link-status.html, must match index.html. Drafts are
+skipped the same way as build_seo_new.unify_all_nav_and_footer.
 """
 import os
 import sys

@@ -558,9 +558,37 @@ def _cluster_foot(s, d):
 def _redirect_stub(s):
     """A moved page, not a document that should load the site scripts.
     mcp/link-status.html keeps a one-line <main> plus the nav, then refreshes to /mcp/status/.
+    Same rule as build_seo_new.redirect_stub.
     """
     head=s[:8000]
     return 'http-equiv="refresh"' in head or "location.replace(" in head
+def _redirect_chrome(s):
+    """Nav and footer to put back after sitewide edits, or None when s is not a redirect stub.
+
+    sitewide() inserts header links on every page. On a redirect stub those
+    edits used to stick, because the nav sync skipped meta-refresh pages.
+    A stub that has no nav must not gain one.
+    """
+    if not _redirect_stub(s): return None
+    nav=re.search(r'<nav\b[^>]*>.*?</nav>', s, re.S)
+    foot=re.search(r'<footer\b[^>]*>.*?</footer>', s, re.S)
+    return (nav.group(0) if nav else "", foot.group(0) if foot else "")
+def _restore_redirect_chrome(s, held):
+    if held is None: return s
+    nav, foot = held
+    if nav:
+        if re.search(r'<nav\b', s):
+            s=re.sub(r'<nav\b[^>]*>.*?</nav>', lambda _: nav, s, count=1, flags=re.S)
+        elif "<body>" in s:
+            s=s.replace("<body>", "<body>"+nav, 1)
+    else:
+        s=re.sub(r'<nav\b[^>]*>.*?</nav>', '', s, count=1, flags=re.S)
+    if foot:
+        if re.search(r'<footer\b', s):
+            s=re.sub(r'<footer\b[^>]*>.*?</footer>', lambda _: foot, s, count=1, flags=re.S)
+    else:
+        s=re.sub(r'<footer\b[^>]*>.*?</footer>', '', s, count=1, flags=re.S)
+    return s
 def shared_scripts_exempt(f, s):
     """Pages that intentionally do not load app.js, consent.js, track.js, and share.js.
     Kept in sync with daily_deep_audit.py.
@@ -568,7 +596,7 @@ def shared_scripts_exempt(f, s):
     - data/: email HTML and other raw fragments
     - stats.js.html: a script island, not a page
     - og.html: the 1200x630 social card (also in SKIP)
-    - redirect stubs: meta refresh or location.replace and no <main>
+    - redirect stubs: meta refresh or location.replace (mcp/link-status.html included)
     Anything else is a production page and sitewide() inserts the missing scripts.
     """
     if f.startswith(("preview/","node_modules/","app/","data/")) or f in ("og.html","stats.js.html"): return True
@@ -604,6 +632,7 @@ def sitewide(t):
     for f in glob.glob("**/*.html",recursive=True):
         if os.path.basename(f) in SKIP or f.startswith(("node_modules","app/","preview/")): continue
         s=open(f).read(); o=s
+        held=_redirect_chrome(o)
         s=re.sub(r'<span class="navpills">(.*?)</span><!--/navpills-->',r'\1',s,flags=re.S)
         s=re.sub(r'<span class="footpills">(.*?)</span><!--/footpills-->',r'\1',s,flags=re.S)  # footer pill group, re-wrapped at the end  # header pill group is re-wrapped at the end
         s=_unpill(s)  # neon pills are re-applied at the end (_pill), so every rule below sees the plain links
@@ -777,6 +806,7 @@ def sitewide(t):
             s=re.sub(r'<!--MAKERS-START-->.*?<!--MAKERS-END-->',lambda _: _makers,s,count=1,flags=re.S)
             s=re.sub(r'<script data-live-metrics>.*?</script>','',s,flags=re.S)
             s=s.replace('</body>',_bsp.live_metrics_script("")+'</body>',1)
+        s=_restore_redirect_chrome(s, held)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
     import build_lovable; build_lovable.run()
