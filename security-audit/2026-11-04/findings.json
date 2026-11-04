@@ -1,0 +1,539 @@
+[
+  {
+    "verdict": "rejected",
+    "fingerprint": "build.faq-unescaped-answer",
+    "title": "FAQ builder inserts answer HTML without escaping",
+    "description": "build_seo_new.py _faq_html escapes the question and inserts the answer string as HTML.",
+    "claimed_root_cause": "A lower-trust author could store HTML in an FAQ answer and have it rendered on the public site.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "build_seo_new.py",
+        "line": 96,
+        "scope": "answer_blocks",
+        "description": "FAQ pairs are string literals in the build function."
+      },
+      {
+        "kind": "sink",
+        "file": "build_seo_new.py",
+        "line": 86,
+        "scope": "_faq_html",
+        "description": "The answer is interpolated into the details element without html.escape."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "build_seo_new.py",
+        "line": 86,
+        "description": "The question is escaped and the answer is inserted raw."
+      },
+      {
+        "file": "build_seo_new.py",
+        "line": 99,
+        "description": "The answer values are authored in this function, including intentional links."
+      }
+    ],
+    "reason": "The answer strings are written by the same operator build, not by a request or a submission handler in this repository. Raw HTML there is the author's markup. There is no lower-trust writer on this path."
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "crypto.safeeq-empty-equals-empty",
+    "title": "safeEq treats two empty strings as equal",
+    "description": "The stats-key compare returns true for two empty strings.",
+    "claimed_root_cause": "A caller who sends an empty X-Stats-Key passes the admin gate.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 145,
+        "scope": "rejectStatsKey",
+        "description": "The header is compared with env.STATS_KEY."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 82,
+        "scope": "safeEq",
+        "description": "Non-strings return false. Two strings are hashed and compared, so two empty strings match."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 82,
+        "description": "A missing or non-string STATS_KEY fails the typeof check and the route stays closed."
+      },
+      {
+        "file": "cloudflare-image-worker-patches/security.test.mjs",
+        "line": 175,
+        "description": "The test records that two empty strings compare equal."
+      }
+    ],
+    "reason": "An unset secret is not a string, so the gate fails closed. Equality of two empty strings requires the operator to configure the secret as empty. That misconfiguration is not a path a remote caller can create from this source."
+  },
+  {
+    "fingerprint": "image.generate-ungated",
+    "title": "Image patch does not origin-check or rate-limit /generate",
+    "description": "POST /generate skips gate(). Turnstile runs only when TURNSTILE_ENABLED is the string true. The patch test expects a foreign origin to reach the inner handler when the flag is unset.",
+    "claimed_root_cause": "guardedKind returns a value only for /submit, /review, and /reviews. gate() returns immediately for every other path, so /generate gets neither the origin allowlist nor IMAGE_WRITE. rejectTurnstile returns null unless the flag is exactly true. entry.js also forces that flag to false for the inner worker.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 240,
+        "scope": "protect",
+        "description": "protect() runs the stats check, gate(), and rejectTurnstile before the inner fetch."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 61,
+        "scope": "guardedKind",
+        "description": "/generate is not a guarded path, so gate() does not apply."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 171,
+        "scope": "rejectTurnstile",
+        "description": "Turnstile is skipped unless TURNSTILE_ENABLED is the string true."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-image-worker-patches/security.test.mjs",
+        "line": 283,
+        "scope": "/generate is not wrapped",
+        "description": "The test expects a POST from https://evil.example with an empty env to call the inner /generate handler and return 200."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 33,
+        "description": "TURNSTILE_PATHS includes /generate, but that set is consulted only after the flag check."
+      },
+      {
+        "file": "cloudflare-image-worker-patches/entry.js",
+        "line": 5,
+        "description": "The inner env always observes TURNSTILE_ENABLED as false."
+      },
+      {
+        "file": "generate.js",
+        "line": 25,
+        "description": "The browser posts the prompt to the image worker /generate endpoint."
+      }
+    ],
+    "blockers": [
+      "The inner image worker source is not in this repository, so its own quota, origin, or Turnstile check is unknown.",
+      "The deployed value of TURNSTILE_ENABLED is not in the repository. The patch leaves the check off until that var is the string true."
+    ],
+    "validation_plan": {
+      "local": "Run node --test cloudflare-image-worker-patches/security.test.mjs inside a sandbox that blocks network and mounts the repo read-only. Confirm the foreign /generate case returns 200 and that the same request is 403 when TURNSTILE_ENABLED is true and siteverify is stubbed to fail. Do not call the deployed worker.",
+      "deployment": "An owner checks the deployed image worker for TURNSTILE_ENABLED and reads the inner /generate handler for an origin check and a quota. Do not send generation requests to production."
+    },
+    "verdict": "needs_validation"
+  },
+  {
+    "fingerprint": "image.passthrough-handlers-absent",
+    "title": "Readiness and share routes are outside the image patch",
+    "description": "The browser sends a caller-chosen URL to /readiness, and the patch does not apply the roast SSRF checks or the origin gate to that route. The handler itself is not in the repository.",
+    "claimed_root_cause": "protect() returns the inner response unchanged when guardedKind is empty. /readiness, /track, /geo, and /share are in that set. readiness.js requests /readiness?url= with the visitor's address. No in-repo server parser applies isBlockedIp to that parameter.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "free_tools_js/readiness.js",
+        "line": 25,
+        "scope": "submit listener",
+        "description": "The page fetches the image-worker readiness URL with the validated browser URL as a query parameter."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 204,
+        "scope": "gate",
+        "description": "gate returns immediately when the path is not /submit, /review, or /reviews."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 247,
+        "scope": "protect",
+        "description": "The inner fetch runs, and its implementation is not in this repository."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 6,
+        "description": "The file comment states /track, /readiness, /geo, and /share are otherwise unchanged."
+      },
+      {
+        "file": "cloudflare-image-worker-patches/README.md",
+        "line": 3,
+        "description": "The image worker source is described as absent from this repository."
+      }
+    ],
+    "blockers": [
+      "The server implementation of /readiness, /track, /geo, and /share is not in the repository, so its URL allowlist, if any, cannot be read."
+    ],
+    "validation_plan": {
+      "local": "Review the inner worker's /readiness handler in a scratch copy and compare its URL checks with cloudflare-api-worker/src/ssrf.js. Treat a missing private-address check as the same class of bug as the roast fetcher.",
+      "deployment": "An owner identifies which deployed script serves /readiness on api.agentscouthq.com and records whether it fetches the query URL. Do not send internal URLs to production."
+    },
+    "verdict": "needs_validation"
+  },
+  {
+    "fingerprint": "image.turnstile-flag-masked",
+    "title": "Image entrypoint hides Turnstile from the inner worker",
+    "description": "entry.js proxies the environment so the inner worker always reads TURNSTILE_ENABLED as false. The wrapper verifies Turnstile only for two POST paths, and only when the real flag is true.",
+    "claimed_root_cause": "innerEnv handles the property TURNSTILE_ENABLED by returning the string false and forwards every other property. protect() performs siteverify only for POST /submit and POST /generate when the unproxied flag is true. Any Turnstile or related decision inside the unshipped inner worker therefore sees the check as off.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-image-worker-patches/entry.js",
+        "line": 7,
+        "scope": "export default",
+        "description": "The module export is protect() around the inner worker."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 171,
+        "scope": "rejectTurnstile",
+        "description": "The wrapper siteverify runs only when the real TURNSTILE_ENABLED value is the string true, and only for POST /submit and POST /generate."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-image-worker-patches/entry.js",
+        "line": 6,
+        "scope": "existing.fetch",
+        "description": "The inner fetch is then called with innerEnv, which returns the string false for TURNSTILE_ENABLED."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-image-worker-patches/entry.js",
+        "line": 4,
+        "description": "The comment says the proxy exists so the inner /generate handler does not verify the token again."
+      },
+      {
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 72,
+        "description": "turnstileEnabled is true only when the string value is exactly true."
+      }
+    ],
+    "blockers": [
+      "index.js, which entry.js imports, is not in the repository. Whether it enforces Turnstile on a route the wrapper does not cover is unknown."
+    ],
+    "validation_plan": {
+      "local": "Compare a scratch copy of the real index.js turnstile branches with TURNSTILE_PATHS in security.js. A branch on a path outside that set, or a check that inspects the flag itself, is skipped under innerEnv.",
+      "deployment": "An owner diffs the deployed image worker bundle against entry.js and confirms which routes still verify Turnstile after the proxy. Do not send tokens to production."
+    },
+    "verdict": "needs_validation"
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "mcp.wildcard-cors",
+    "title": "MCP worker allows every origin",
+    "description": "Every MCP response sets Access-Control-Allow-Origin to a star.",
+    "claimed_root_cause": "A web page can read the catalog and call tools as another user.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-mcp-worker/worker.js",
+        "line": 452,
+        "scope": "fetch",
+        "description": "Every response is built with securityHeaders."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-mcp-worker/worker.js",
+        "line": 23,
+        "scope": "CORS_HEADERS",
+        "description": "Access-Control-Allow-Origin is a star, and no cookie or authorization header is required."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-mcp-worker/worker.js",
+        "line": 22,
+        "description": "CORS is unconditional and the handler does not read cookies."
+      },
+      {
+        "file": "cloudflare-mcp-worker/worker.js",
+        "line": 358,
+        "description": "Tool calls only read the bundled public snapshot."
+      }
+    ],
+    "reason": "The catalog is public and the worker sets no credentials. A star origin does not expose another principal's data or authority. The rate limit remains the abuse control."
+  },
+  {
+    "fingerprint": "roast.rate-limit-fallback",
+    "title": "Roast limiting is per-isolate when vote storage is absent",
+    "description": "The roast endpoint keeps fetching when the VOTES binding is missing, and counts requests in a module-level Map. The KV path increments with a separate get and put.",
+    "claimed_root_cause": "rateLimit uses env.VOTES when it is set and otherwise memoryBuckets. roast calls that limiter and still fetches. Two overlapping KV updates can both read a count below the limit. The binding is declared in wrangler.toml, but a missing binding does not fail closed for roast the way POST /vote does.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 247,
+        "scope": "roast",
+        "description": "roast applies rateLimit before fetchPublic."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 134,
+        "scope": "rateLimit",
+        "description": "A missing VOTES binding selects the in-memory Map instead of returning an error."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 254,
+        "scope": "roast",
+        "description": "A limiter that returns true continues into fetchPublic."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 140,
+        "description": "The memory fallback increments memoryBuckets and returns true under the limit."
+      },
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 270,
+        "description": "POST /vote returns 503 when VOTES is missing, so the two routes do not fail the same way."
+      },
+      {
+        "file": "cloudflare-api-worker/wrangler.toml",
+        "line": 24,
+        "description": "The VOTES binding is declared for this worker. Live attachment is not proven by the file alone."
+      }
+    ],
+    "blockers": [
+      "Whether the deployed worker can run with the VOTES binding absent, and whether two overlapping KV writes can both pass the limit, was not executed and is not visible from source alone."
+    ],
+    "validation_plan": {
+      "local": "In a scratch harness, call the rate-limit function with no VOTES binding from two simulated isolates and with a KV double that returns the same count to two overlapping gets. Assert whether both fetches would be allowed. Do not stress a deployed worker.",
+      "deployment": "An owner confirms the VOTES binding is attached on the votes worker and whether KV get-plus-put is the intended limiter. Do not send a burst to production."
+    },
+    "verdict": "needs_validation"
+  },
+  {
+    "fingerprint": "ssrf.fetch-unpinned-dns",
+    "title": "Roast fetch is not bound to the checked DNS answers",
+    "description": "resolveAndCheck records the addresses it accepted, and fetchPublic then requests the hostname again. A name that answered with a public address at check time is not pinned to those addresses.",
+    "claimed_root_cause": "fetchPublic calls resolveAndCheck and, when that returns no error, calls fetch on shape.url, which still carries the hostname. The addresses array is not used as the connection target. A later resolution, including one after a manual redirect, is a separate lookup.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 254,
+        "scope": "roast",
+        "description": "roast passes the caller URL to fetchPublic."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 112,
+        "scope": "resolveAndCheck",
+        "description": "Public hostnames are resolved through DNS-over-HTTPS, and any blocked answer rejects the host."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 205,
+        "scope": "fetchPublic",
+        "description": "fetch is invoked with the original URL rather than the accepted address list."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 199,
+        "description": "The DNS result is used only as an error check. addresses is not passed to fetch."
+      },
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 215,
+        "description": "Redirects are followed manually by calling fetchPublic on the Location URL, which repeats the unpinned lookup."
+      }
+    ],
+    "blockers": [
+      "The repository does not show whether the Workers runtime re-resolves the hostname or can observe a different answer than the DNS-over-HTTPS check inside one request."
+    ],
+    "validation_plan": {
+      "local": "Stub global fetch in a scratch copy so the DNS-over-HTTPS response returns a public address and the following fetch records its URL. Assert the recorded URL still contains the hostname and not the checked address. Do not perform a live rebinding.",
+      "deployment": "An owner asks the Workers runtime owner whether fetch to a hostname is pinned to a prior DNS-over-HTTPS answer from the same isolate. Do not run a rebinding test against production."
+    },
+    "verdict": "needs_validation"
+  },
+  {
+    "fingerprint": "ssrf.ipv6-mapped-private",
+    "title": "Roast SSRF guard accepts full-form IPv4-mapped addresses",
+    "description": "An unauthenticated caller of GET or POST /roast can supply an IPv6 literal that is the standard mapped form of a private or link-local IPv4 address. isBlockedIp does not classify that form as blocked, and fetchPublic then requests it.",
+    "claimed_root_cause": "isBlockedIp decodes IPv4-mapped addresses only when the text starts with ::ffff: and the remainder is a dotted IPv4 address or exactly two hextets. blockedV6 then checks only ::, ::1, ULA, link-local, multicast, and 2001:db8. A full-form mapped address such as 0:0:0:0:0:ffff:a9fe:a9fe never enters the mapped decoder, so validateUrlShape and resolveAndCheck accept it and fetchPublic calls fetch on that URL.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 318,
+        "scope": "fetch",
+        "description": "Unauthenticated GET or POST /roast is dispatched to roast()."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 249,
+        "scope": "roast",
+        "description": "The url query parameter or JSON url field is taken as the fetch target with no origin check."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 87,
+        "scope": "validateUrlShape",
+        "description": "A hostname containing a colon is passed to isBlockedIp. The full-form mapped literal does not match the ::ffff: decoder."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 48,
+        "scope": "blockedV6",
+        "description": "The expanded address begins with zeros, so the ULA, link-local, multicast, and documentation checks do not reject the embedded IPv4."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 205,
+        "scope": "fetchPublic",
+        "description": "fetch is called with the original URL after resolveAndCheck returns the literal as an accepted address."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 10,
+        "description": "The mapped-IPv4 decoder runs only when the string starts with ::ffff:."
+      },
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 48,
+        "description": "blockedV6 does not decode an embedded IPv4 address from the last 32 bits."
+      },
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 106,
+        "description": "An IP literal that isBlockedIp allows is returned as the accepted address list without a DNS lookup."
+      },
+      {
+        "file": "cloudflare-api-worker/test/ssrf.test.mjs",
+        "line": 7,
+        "description": "The regression list includes ::ffff:127.0.0.1 and does not include a full-form mapped literal."
+      }
+    ],
+    "blockers": [
+      "The host cannot enforce a read-only target mount (unshare --mount-proc fails and bwrap, firejail, and nsjail are absent), so isBlockedIp was not executed.",
+      "Whether the Workers runtime connects to an IPv4-mapped literal, or drops non-public destinations itself, is not present in the repository."
+    ],
+    "validation_plan": {
+      "local": "In a scratch copy, import isBlockedIp, validateUrlShape, and resolveAndCheck. Assert isBlockedIp returns true for 0:0:0:0:0:ffff:a9fe:a9fe, ::0:ffff:7f00:1, and 0:0:0:0:0:ffff:a00:1, and that validateUrlShape returns an error for http://[0:0:0:0:0:ffff:a9fe:a9fe]/. Stub fetch and assert it is not called. Do not contact a deployed host.",
+      "deployment": "An owner checks the Workers fetch policy for IPv4-mapped and non-public destinations in the platform documentation or a local wrangler dev sink that only records the destination. Do not send this URL to the production worker."
+    },
+    "verdict": "needs_validation"
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "vote.origin-header-as-auth",
+    "title": "Vote origin check can be set by a non-browser client",
+    "description": "POST /vote accepts an allowlisted Origin header.",
+    "claimed_root_cause": "Any HTTP client can forge Origin and cast votes without visiting the site, defeating the vote gate.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 319,
+        "scope": "fetch",
+        "description": "POST /vote calls vote()."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 31,
+        "scope": "voteAllowed",
+        "description": "An allowlisted Origin or Referer is accepted."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 277,
+        "scope": "vote",
+        "description": "The seen key is a hash of the daily salt, client address, and slug."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 13,
+        "description": "The allowlist is the two public site origins."
+      },
+      {
+        "file": "cloudflare-api-worker/test/votes.test.mjs",
+        "line": 93,
+        "description": "A missing origin and a foreign origin are rejected in the test source."
+      }
+    ],
+    "reason": "There is no session cookie, so a browser on another site cannot attach a credential. A client that sets Origin can vote once per platform address per day, which is the same allowance as loading the site. The origin check stops cross-site browser votes. It is not an account boundary."
+  },
+  {
+    "fingerprint": "workers.client-ip-forwarded",
+    "title": "Client address falls back to X-Forwarded-For",
+    "description": "Vote dedup, roast and MCP rate limits, image-worker limits, and the Turnstile remoteip all prefer the Cloudflare client IP header and otherwise trust the first X-Forwarded-For value.",
+    "claimed_root_cause": "clientIp in the votes worker, the MCP worker, and the image patch returns cf-connecting-ip when present and otherwise the first comma-separated X-Forwarded-For value or 0.0.0.0. A caller who can reach the handler without the platform header chooses the address used for quotas and for the vote seen-key.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 66,
+        "scope": "clientIp",
+        "description": "The votes worker reads cf-connecting-ip and falls back to X-Forwarded-For."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-mcp-worker/worker.js",
+        "line": 151,
+        "scope": "clientIp",
+        "description": "The MCP worker uses the same fallback for its rate-limit key."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 116,
+        "scope": "clientIp",
+        "description": "The image patch uses the same fallback for rate limits and for Turnstile remoteip."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 278,
+        "description": "The vote seen-key hashes the value returned by clientIp."
+      },
+      {
+        "file": "cloudflare-image-worker-patches/security.js",
+        "line": 187,
+        "description": "Turnstile siteverify sends that value as remoteip."
+      }
+    ],
+    "blockers": [
+      "The repository does not show whether a request served by these workers can arrive without CF-Connecting-IP. On Cloudflare that header is normally set by the platform and is not a client field."
+    ],
+    "validation_plan": {
+      "local": "In a scratch copy, call each clientIp with a Request that sets only X-Forwarded-For and with a Request that sets cf-connecting-ip. Record which value is returned. Do not send either request to a deployed host.",
+      "deployment": "An owner confirms that every production route sets CF-Connecting-IP and strips a client-supplied copy before the worker. Do not spoof the header against production."
+    },
+    "verdict": "needs_validation"
+  }
+]

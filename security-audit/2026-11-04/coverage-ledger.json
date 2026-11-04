@@ -1,0 +1,3226 @@
+[
+  {
+    "coverage_id": "_headers%23Content-Security-Policy-Report-Only::_headers%23security-headers::static-hosting::WEB-PROTOCOL-AND-AUTH.md%23HTTP%20framing%20and%20cache%20attack%20classes",
+    "canonical_refs": {
+      "surface": "_headers#Content-Security-Policy-Report-Only",
+      "boundary": "_headers#security-headers",
+      "subsystem": "static-hosting",
+      "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes"
+    },
+    "surface": "_headers#Content-Security-Policy-Report-Only",
+    "boundary": "_headers#security-headers",
+    "subsystem": "static-hosting",
+    "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+    "starting_paths": [
+      "_headers",
+      "_redirects",
+      "redirects.json"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Obvious things",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-client",
+    "reviewed_paths": [
+      "_headers",
+      "_redirects",
+      "redirects.json"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-client",
+        "reviewed_paths": [
+          "_headers",
+          "_redirects",
+          "redirects.json"
+        ],
+        "invariant": "Browser framing and script execution are constrained by the enforcing meta CSP and the fixed redirect table.",
+        "method": "source",
+        "result": "_headers sets HSTS, nosniff, DENY framing, and a report-only CSP. Redirect targets in _redirects and redirects.json are fixed paths, not request parameters. Page meta CSP is the enforcing policy. No open redirect parameter is read.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-client",
+    "hardening": [
+      "The site-wide CSP in _headers is report-only. Enforcement depends on each page's meta CSP."
+    ]
+  },
+  {
+    "coverage_id": "app.js%23innerHTML::app.js%23ASe::static-client::CLIENT-SIDE.md%23DOM%20and%20object-state%20attack%20classes",
+    "canonical_refs": {
+      "surface": "app.js#innerHTML",
+      "boundary": "app.js#ASe",
+      "subsystem": "static-client",
+      "attack_class": "CLIENT-SIDE.md#DOM and object-state attack classes"
+    },
+    "surface": "app.js#innerHTML",
+    "boundary": "app.js#ASe",
+    "subsystem": "static-client",
+    "attack_class": "CLIENT-SIDE.md#DOM and object-state attack classes",
+    "starting_paths": [
+      "app.js",
+      "quiz.js",
+      "reviews.js",
+      "compare-picker.js",
+      "free_tools_js/roast.js",
+      "free_tools_js/readiness.js",
+      "free_tools_js/escape.test.mjs",
+      "index.html"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Injection",
+    "selected_companion_blocks": [
+      "CLIENT-SIDE.md#Core discipline",
+      "CLIENT-SIDE.md#DOM and object-state attack classes",
+      "CLIENT-SIDE.md#Universal moves",
+      "CLIENT-SIDE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-client",
+    "reviewed_paths": [
+      "app.js",
+      "quiz.js",
+      "reviews.js",
+      "compare-picker.js",
+      "free_tools_js/roast.js",
+      "free_tools_js/readiness.js",
+      "index.html"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-client",
+        "reviewed_paths": [
+          "app.js",
+          "quiz.js",
+          "reviews.js",
+          "compare-picker.js",
+          "free_tools_js/roast.js",
+          "free_tools_js/readiness.js",
+          "index.html"
+        ],
+        "invariant": "URL, hash, catalog, and API fields reach innerHTML only after escaping, or they are static strings.",
+        "method": "source",
+        "result": "quiz.js runs hash and catalog text through ASe before innerHTML. compare-picker.js uses E() for names. roast.js and readiness.js escape API text, titles, and URLs before innerHTML. Hash values are assigned to input.value, not HTML. No executable sink from location without an escape was found on these paths.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-client",
+    "hardening": [
+      "readiness.js row() does not escape its note argument. Current callers escape dynamic pieces before passing them."
+    ]
+  },
+  {
+    "coverage_id": "build_seo_new.py%23_faq_html::build_seo_new.py%23html.escape::build-scripts::ATTACK-CLASSES.md%23Injection",
+    "canonical_refs": {
+      "surface": "build_seo_new.py#_faq_html",
+      "boundary": "build_seo_new.py#html.escape",
+      "subsystem": "build-scripts",
+      "attack_class": "ATTACK-CLASSES.md#Injection"
+    },
+    "surface": "build_seo_new.py#_faq_html",
+    "boundary": "build_seo_new.py#html.escape",
+    "subsystem": "build-scripts",
+    "attack_class": "ATTACK-CLASSES.md#Injection",
+    "starting_paths": [
+      "build_seo_new.py",
+      "build_lighten.py",
+      "leaderboard/index.html"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Injection",
+    "selected_companion_blocks": [
+      "CLIENT-SIDE.md#Core discipline",
+      "CLIENT-SIDE.md#DOM and object-state attack classes",
+      "CLIENT-SIDE.md#Universal moves",
+      "CLIENT-SIDE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-client",
+    "reviewed_paths": [
+      "build_seo_new.py",
+      "build_lighten.py",
+      "leaderboard/index.html"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-client",
+        "reviewed_paths": [
+          "build_seo_new.py",
+          "build_lighten.py",
+          "leaderboard/index.html"
+        ],
+        "invariant": "HTML interpolated at build time is operator-authored source, not a lower-trust request.",
+        "method": "source",
+        "result": "_faq_html escapes the question and inserts the answer raw. The answers are string literals in the same function, including intentional anchors. leaderboard/index.html assigns build-extracted markup from extra.json. No lower-trust writer of those strings is in the repository.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-client",
+    "hardening": [
+      "_faq_html would become stored HTML injection if an untrusted string were later passed as the answer."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23GET%20%2Fvotes::cloudflare-api-worker%2Fsrc%2Fworker.js%23countsFor::cloudflare-api-worker::ATTACK-CLASSES.md%23Feature%20abuse%20and%20data%20leakage",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#GET /votes",
+      "boundary": "cloudflare-api-worker/src/worker.js#countsFor",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "ATTACK-CLASSES.md#Feature abuse and data leakage"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#GET /votes",
+    "boundary": "cloudflare-api-worker/src/worker.js#countsFor",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+    "starting_paths": [
+      "cloudflare-api-worker/src/worker.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-votes",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/worker.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-votes",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/worker.js"
+        ],
+        "invariant": "Public vote totals are the designed response of GET /votes.",
+        "method": "source",
+        "result": "parseSlugs caps the query at 400 slugs matching the slug pattern. The handler returns week and day counts from KV and sets a public 60 second cache. It does not return visitor hashes, salts, or IPs.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-votes",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23GET%7CPOST%20%2Froast::cloudflare-api-worker%2Fsrc%2Fssrf.js%23isBlockedIp::cloudflare-api-worker::ATTACK-CLASSES.md%23Resource%20and%20file%20handling",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#GET|POST /roast",
+      "boundary": "cloudflare-api-worker/src/ssrf.js#isBlockedIp",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "ATTACK-CLASSES.md#Resource and file handling"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#GET|POST /roast",
+    "boundary": "cloudflare-api-worker/src/ssrf.js#isBlockedIp",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "ATTACK-CLASSES.md#Resource and file handling",
+    "starting_paths": [
+      "cloudflare-api-worker/src/ssrf.js",
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/test/ssrf.test.mjs",
+      "cloudflare-api-worker/test/roast.test.mjs"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Resource and file handling",
+    "selected_companion_blocks": [
+      "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+      "CLOUD-AND-DEPLOYMENT.md#Ingress, network, and control-plane attack classes",
+      "CLOUD-AND-DEPLOYMENT.md#Universal moves",
+      "CLOUD-AND-DEPLOYMENT.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-ssrf",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/ssrf.js",
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/test/ssrf.test.mjs"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-ssrf",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/ssrf.js",
+          "cloudflare-api-worker/src/worker.js",
+          "cloudflare-api-worker/test/ssrf.test.mjs"
+        ],
+        "invariant": "An unauthenticated roast request must not pass a private or link-local address literal to fetch.",
+        "method": "source",
+        "result": "isBlockedIp decodes only a leading ::ffff: form. A full-form IPv4-mapped literal does not take that branch, and blockedV6 does not inspect the last 32 bits. validateUrlShape and resolveAndCheck then accept the literal. The existing test covers ::ffff:127.0.0.1 and not the full form. The function was not executed.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "ssrf.ipv6-mapped-private"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-ssrf",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23GET%7CPOST%20%2Froast::cloudflare-api-worker%2Fsrc%2Fworker.js%23fetchPublic::cloudflare-api-worker::ATTACK-CLASSES.md%23Chained%20vulnerabilities%20and%20trust%20boundaries",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#GET|POST /roast",
+      "boundary": "cloudflare-api-worker/src/worker.js#fetchPublic",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#GET|POST /roast",
+    "boundary": "cloudflare-api-worker/src/worker.js#fetchPublic",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+    "starting_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/src/ssrf.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+    "selected_companion_blocks": [
+      "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+      "CLOUD-AND-DEPLOYMENT.md#Ingress, network, and control-plane attack classes",
+      "CLOUD-AND-DEPLOYMENT.md#Universal moves",
+      "CLOUD-AND-DEPLOYMENT.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-ssrf",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/src/ssrf.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-ssrf",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/worker.js",
+          "cloudflare-api-worker/src/ssrf.js"
+        ],
+        "invariant": "The connection target must be one of the addresses resolveAndCheck accepted.",
+        "method": "source",
+        "result": "fetchPublic checks the hostname, discards the returned addresses, and fetch()es the original URL. Redirects are manual and re-enter fetchPublic. Whether a second resolution can differ is not observable from source.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "ssrf.fetch-unpinned-dns"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-ssrf",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23GET%7CPOST%20%2Froast::cloudflare-api-worker%2Fsrc%2Fworker.js%23rateLimit::cloudflare-api-worker::RESOURCE-EXHAUSTION-AND-AVAILABILITY.md%23Quota%20and%20scheduling%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#GET|POST /roast",
+      "boundary": "cloudflare-api-worker/src/worker.js#rateLimit",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#GET|POST /roast",
+    "boundary": "cloudflare-api-worker/src/worker.js#rateLimit",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes",
+    "starting_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/src/score.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+    "selected_companion_blocks": [
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Universal moves",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-ssrf",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/worker.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-ssrf",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/worker.js"
+        ],
+        "invariant": "Roast fetches stay within the stated per-IP limit for the whole worker, and a missing store fails closed.",
+        "method": "source",
+        "result": "The KV limiter is get-then-put. If env.VOTES is absent, the limiter uses a per-isolate Map and roast still runs. Vote storage fails closed in that case. A concurrent overrun was not executed.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "roast.rate-limit-fallback"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-ssrf",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23POST%20%2Fvote::cloudflare-api-worker%2Fsrc%2Fworker.js%23castInDoc::cloudflare-api-worker::ATTACK-CLASSES.md%23Business%20logic",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#POST /vote",
+      "boundary": "cloudflare-api-worker/src/worker.js#castInDoc",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "ATTACK-CLASSES.md#Business logic"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#POST /vote",
+    "boundary": "cloudflare-api-worker/src/worker.js#castInDoc",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "ATTACK-CLASSES.md#Business logic",
+    "starting_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/test/votes.test.mjs"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Business logic",
+    "selected_companion_blocks": [
+      "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+      "CLOUD-AND-DEPLOYMENT.md#Managed storage, events, and edge attack classes",
+      "CLOUD-AND-DEPLOYMENT.md#Universal moves",
+      "CLOUD-AND-DEPLOYMENT.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-votes",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/test/votes.test.mjs"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-votes",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/worker.js",
+          "cloudflare-api-worker/test/votes.test.mjs"
+        ],
+        "invariant": "A public counter may lose a concurrent increment without exposing another principal's private data.",
+        "method": "source",
+        "result": "The file header states concurrent votes can drop a count. The seen key is written only on the first vote. The affected state is the public tally, which any visitor can increment once per IP per day. This is not a cross-principal read or write.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-votes",
+    "hardening": [
+      "KV read-modify-write of the week document is last-write-wins."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23POST%20%2Fvote::cloudflare-api-worker%2Fsrc%2Fworker.js%23clientIp::cloudflare-api-worker::WEB-PROTOCOL-AND-AUTH.md%23HTTP%20framing%20and%20cache%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#POST /vote",
+      "boundary": "cloudflare-api-worker/src/worker.js#clientIp",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#POST /vote",
+    "boundary": "cloudflare-api-worker/src/worker.js#clientIp",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+    "starting_paths": [
+      "cloudflare-api-worker/src/worker.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-votes",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/worker.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-votes",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/worker.js"
+        ],
+        "invariant": "The address used for vote dedup and rate limits is the platform client address, not a caller-supplied forwarding header.",
+        "method": "source",
+        "result": "clientIp prefers cf-connecting-ip and otherwise uses the first X-Forwarded-For value. The repository does not show whether a request can reach fetch without cf-connecting-ip.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "workers.client-ip-forwarded"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-votes",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-api-worker%2Fsrc%2Fworker.js%23POST%20%2Fvote::cloudflare-api-worker%2Fsrc%2Fworker.js%23voteAllowed::cloudflare-api-worker::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "cloudflare-api-worker/src/worker.js#POST /vote",
+      "boundary": "cloudflare-api-worker/src/worker.js#voteAllowed",
+      "subsystem": "cloudflare-api-worker",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "cloudflare-api-worker/src/worker.js#POST /vote",
+    "boundary": "cloudflare-api-worker/src/worker.js#voteAllowed",
+    "subsystem": "cloudflare-api-worker",
+    "attack_class": "ATTACK-CLASSES.md#Access control",
+    "starting_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/test/votes.test.mjs",
+      "app.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#Browser-session attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-votes",
+    "reviewed_paths": [
+      "cloudflare-api-worker/src/worker.js",
+      "cloudflare-api-worker/test/votes.test.mjs",
+      "app.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-votes",
+        "reviewed_paths": [
+          "cloudflare-api-worker/src/worker.js",
+          "cloudflare-api-worker/test/votes.test.mjs",
+          "app.js"
+        ],
+        "invariant": "A browser on another origin cannot cast a vote with ambient credentials.",
+        "method": "source",
+        "result": "voteAllowed requires an allowlisted Origin, or a Referer whose origin is allowlisted. There is no session cookie. A non-browser client can set Origin, and the remaining control is the per-IP seen key. That is the same capability as visiting the site. Tests cover a missing origin and a foreign origin.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-votes",
+    "hardening": [
+      "Origin is not an authentication mechanism for non-browser clients."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-image-worker-patches%2Fsecurity.js%23POST%20%2Fgenerate::cloudflare-image-worker-patches%2Fsecurity.js%23guardedKind::cloudflare-image-worker-patches::RESOURCE-EXHAUSTION-AND-AVAILABILITY.md%23Quota%20and%20scheduling%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-image-worker-patches/security.js#POST /generate",
+      "boundary": "cloudflare-image-worker-patches/security.js#guardedKind",
+      "subsystem": "cloudflare-image-worker-patches",
+      "attack_class": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes"
+    },
+    "surface": "cloudflare-image-worker-patches/security.js#POST /generate",
+    "boundary": "cloudflare-image-worker-patches/security.js#guardedKind",
+    "subsystem": "cloudflare-image-worker-patches",
+    "attack_class": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes",
+    "starting_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/entry.js",
+      "generate.js",
+      "cloudflare-image-worker-patches/security.test.mjs"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Universal moves",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-image",
+    "reviewed_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/security.test.mjs",
+      "generate.js",
+      "cloudflare-image-worker-patches/entry.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-image",
+        "reviewed_paths": [
+          "cloudflare-image-worker-patches/security.js",
+          "cloudflare-image-worker-patches/security.test.mjs",
+          "generate.js",
+          "cloudflare-image-worker-patches/entry.js"
+        ],
+        "invariant": "POST /generate is origin-checked and rate-limited, or explicitly bot-checked, before paid work.",
+        "method": "source",
+        "result": "guardedKind does not match /generate, so gate() does not apply. rejectTurnstile runs only when TURNSTILE_ENABLED is the string true. security.test.mjs expects a foreign POST /generate to reach the inner handler with status 200 when that flag is unset. The inner handler is not in the repository. The test was not executed.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "image.generate-ungated"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-image",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-image-worker-patches%2Fsecurity.js%23POST%20%2Fsubmit::cloudflare-image-worker-patches%2Fentry.js%23innerEnv::cloudflare-image-worker-patches::ATTACK-CLASSES.md%23Chained%20vulnerabilities%20and%20trust%20boundaries",
+    "canonical_refs": {
+      "surface": "cloudflare-image-worker-patches/security.js#POST /submit",
+      "boundary": "cloudflare-image-worker-patches/entry.js#innerEnv",
+      "subsystem": "cloudflare-image-worker-patches",
+      "attack_class": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries"
+    },
+    "surface": "cloudflare-image-worker-patches/security.js#POST /submit",
+    "boundary": "cloudflare-image-worker-patches/entry.js#innerEnv",
+    "subsystem": "cloudflare-image-worker-patches",
+    "attack_class": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+    "starting_paths": [
+      "cloudflare-image-worker-patches/entry.js",
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/security.test.mjs"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+    "selected_companion_blocks": [
+      "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+      "CLOUD-AND-DEPLOYMENT.md#Configuration and secret lifecycle attack classes",
+      "CLOUD-AND-DEPLOYMENT.md#Universal moves",
+      "CLOUD-AND-DEPLOYMENT.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-image",
+    "reviewed_paths": [
+      "cloudflare-image-worker-patches/entry.js",
+      "cloudflare-image-worker-patches/security.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-image",
+        "reviewed_paths": [
+          "cloudflare-image-worker-patches/entry.js",
+          "cloudflare-image-worker-patches/security.js"
+        ],
+        "invariant": "Wrapping the image worker must not disable a Turnstile decision the inner worker still relies on.",
+        "method": "source",
+        "result": "innerEnv returns the string false for TURNSTILE_ENABLED on every inner fetch. protect() siteverify covers only POST /submit and POST /generate, and only when the real flag is true. index.js is not in the repository, so other inner checks cannot be compared.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "image.turnstile-flag-masked"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-image",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-image-worker-patches%2Fsecurity.js%23POST%20%2Fsubmit::cloudflare-image-worker-patches%2Fsecurity.js%23postAllowed::cloudflare-image-worker-patches::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "cloudflare-image-worker-patches/security.js#POST /submit",
+      "boundary": "cloudflare-image-worker-patches/security.js#postAllowed",
+      "subsystem": "cloudflare-image-worker-patches",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "cloudflare-image-worker-patches/security.js#POST /submit",
+    "boundary": "cloudflare-image-worker-patches/security.js#postAllowed",
+    "subsystem": "cloudflare-image-worker-patches",
+    "attack_class": "ATTACK-CLASSES.md#Access control",
+    "starting_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/security.test.mjs",
+      "cloudflare-image-worker-patches/README.md"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#Browser-session attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-image",
+    "reviewed_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/security.test.mjs"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-image",
+        "reviewed_paths": [
+          "cloudflare-image-worker-patches/security.js",
+          "cloudflare-image-worker-patches/security.test.mjs"
+        ],
+        "invariant": "Guarded POSTs from another origin are rejected before the inner handler.",
+        "method": "source",
+        "result": "postAllowed accepts only the two site origins, via Origin or Referer. gate() applies that check to POST /submit, /review, and /reviews. A missing rate-limit binding returns 503. Tests describe foreign origins as 403.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-image",
+    "hardening": [
+      "The origin check does not bind a non-browser client, same as the vote handler."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-image-worker-patches%2Fsecurity.js%23X-Stats-Key::cloudflare-image-worker-patches%2Fsecurity.js%23safeEq::cloudflare-image-worker-patches::ATTACK-CLASSES.md%23Cryptography%20and%20secrets",
+    "canonical_refs": {
+      "surface": "cloudflare-image-worker-patches/security.js#X-Stats-Key",
+      "boundary": "cloudflare-image-worker-patches/security.js#safeEq",
+      "subsystem": "cloudflare-image-worker-patches",
+      "attack_class": "ATTACK-CLASSES.md#Cryptography and secrets"
+    },
+    "surface": "cloudflare-image-worker-patches/security.js#X-Stats-Key",
+    "boundary": "cloudflare-image-worker-patches/security.js#safeEq",
+    "subsystem": "cloudflare-image-worker-patches",
+    "attack_class": "ATTACK-CLASSES.md#Cryptography and secrets",
+    "starting_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/security.test.mjs",
+      "scripts/sponsor_stats.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Cryptography and secrets",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#API-key and mTLS attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-image",
+    "reviewed_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "cloudflare-image-worker-patches/security.test.mjs",
+      "scripts/sponsor_stats.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-image",
+        "reviewed_paths": [
+          "cloudflare-image-worker-patches/security.js",
+          "cloudflare-image-worker-patches/security.test.mjs",
+          "scripts/sponsor_stats.py"
+        ],
+        "invariant": "Stats and review-admin routes reject a missing or unequal X-Stats-Key before the inner handler.",
+        "method": "source",
+        "result": "safeEq returns false unless both inputs are strings, hashes both to 32 bytes, and compares with timingSafeEqual or a full XOR. An unset STATS_KEY is not a string, so the compare fails closed. Equal empty strings would match, which requires the operator to set the secret to empty. sponsor_stats.py reads the key from the environment or a home file, not from git.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-image",
+    "hardening": [
+      "safeEq treats two empty strings as equal."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-image-worker-patches%2Fsecurity.js%23clientIp::cloudflare-image-worker-patches%2Fsecurity.js%23clientIp::cloudflare-image-worker-patches::WEB-PROTOCOL-AND-AUTH.md%23HTTP%20framing%20and%20cache%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-image-worker-patches/security.js#clientIp",
+      "boundary": "cloudflare-image-worker-patches/security.js#clientIp",
+      "subsystem": "cloudflare-image-worker-patches",
+      "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes"
+    },
+    "surface": "cloudflare-image-worker-patches/security.js#clientIp",
+    "boundary": "cloudflare-image-worker-patches/security.js#clientIp",
+    "subsystem": "cloudflare-image-worker-patches",
+    "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+    "starting_paths": [
+      "cloudflare-image-worker-patches/security.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-image",
+    "reviewed_paths": [
+      "cloudflare-image-worker-patches/security.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-image",
+        "reviewed_paths": [
+          "cloudflare-image-worker-patches/security.js"
+        ],
+        "invariant": "Image-worker rate limits and Turnstile remoteip use the platform client address.",
+        "method": "source",
+        "result": "clientIp uses the same cf-connecting-ip then X-Forwarded-For fallback as the votes worker. The header is also sent to siteverify as remoteip.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "workers.client-ip-forwarded"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-image",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-image-worker-patches%2Fsecurity.js%23passthrough::cloudflare-image-worker-patches%2Fsecurity.js%23protect::cloudflare-image-worker-patches::CLOUD-AND-DEPLOYMENT.md%23Ingress%2C%20network%2C%20and%20control-plane%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-image-worker-patches/security.js#passthrough",
+      "boundary": "cloudflare-image-worker-patches/security.js#protect",
+      "subsystem": "cloudflare-image-worker-patches",
+      "attack_class": "CLOUD-AND-DEPLOYMENT.md#Ingress, network, and control-plane attack classes"
+    },
+    "surface": "cloudflare-image-worker-patches/security.js#passthrough",
+    "boundary": "cloudflare-image-worker-patches/security.js#protect",
+    "subsystem": "cloudflare-image-worker-patches",
+    "attack_class": "CLOUD-AND-DEPLOYMENT.md#Ingress, network, and control-plane attack classes",
+    "starting_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "track.js",
+      "share.js",
+      "consent.js",
+      "free_tools_js/readiness.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+      "CLOUD-AND-DEPLOYMENT.md#Ingress, network, and control-plane attack classes",
+      "CLOUD-AND-DEPLOYMENT.md#Universal moves",
+      "CLOUD-AND-DEPLOYMENT.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-image",
+    "reviewed_paths": [
+      "cloudflare-image-worker-patches/security.js",
+      "free_tools_js/readiness.js",
+      "track.js",
+      "share.js",
+      "consent.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-image",
+        "reviewed_paths": [
+          "cloudflare-image-worker-patches/security.js",
+          "free_tools_js/readiness.js",
+          "track.js",
+          "share.js",
+          "consent.js"
+        ],
+        "invariant": "Routes the patch does not gate must not perform a server-side fetch of a caller URL without a visible allowlist.",
+        "method": "source",
+        "result": "protect() leaves /track, /readiness, /geo, and /share to the inner worker. readiness.js sends a caller URL to /readiness. That handler is not in the repository, so its SSRF checks cannot be compared with ssrf.js.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "image.passthrough-handlers-absent"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-image",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23POST::cloudflare-mcp-worker%2Fworker.js%23handleRpc::cloudflare-mcp-worker::PROTOCOLS-RPC-AND-MESSAGING.md%23RPC%20identity%20and%20authorization%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-mcp-worker/worker.js#POST",
+      "boundary": "cloudflare-mcp-worker/worker.js#handleRpc",
+      "subsystem": "cloudflare-mcp-worker",
+      "attack_class": "PROTOCOLS-RPC-AND-MESSAGING.md#RPC identity and authorization attack classes"
+    },
+    "surface": "cloudflare-mcp-worker/worker.js#POST",
+    "boundary": "cloudflare-mcp-worker/worker.js#handleRpc",
+    "subsystem": "cloudflare-mcp-worker",
+    "attack_class": "PROTOCOLS-RPC-AND-MESSAGING.md#RPC identity and authorization attack classes",
+    "starting_paths": [
+      "cloudflare-mcp-worker/worker.js",
+      "cloudflare-mcp-worker/wrangler.toml"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+      "PROTOCOLS-RPC-AND-MESSAGING.md#RPC identity and authorization attack classes",
+      "PROTOCOLS-RPC-AND-MESSAGING.md#Universal moves",
+      "PROTOCOLS-RPC-AND-MESSAGING.md#Validation rules",
+      "AI-AND-LLM.md#Core discipline",
+      "AI-AND-LLM.md#MCP and sub-agent trust classes",
+      "AI-AND-LLM.md#Universal moves",
+      "AI-AND-LLM.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-mcp",
+    "reviewed_paths": [
+      "cloudflare-mcp-worker/worker.js",
+      "cloudflare-mcp-worker/wrangler.toml"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-mcp",
+        "reviewed_paths": [
+          "cloudflare-mcp-worker/worker.js",
+          "cloudflare-mcp-worker/wrangler.toml"
+        ],
+        "invariant": "MCP methods stay inside the read-only catalog and the declared tool set.",
+        "method": "source",
+        "result": "There is no credential. handleRpc allows initialize, ping, tools/list, tools/call, and notifications. Unknown methods return -32601. Body size is capped at 100000 bytes. Tool handlers read the bundled snapshot and do not fetch.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-mcp",
+    "hardening": [
+      "CORS allows every origin. Responses carry no credentials."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23clientIp::cloudflare-mcp-worker%2Fworker.js%23clientIp::cloudflare-mcp-worker::WEB-PROTOCOL-AND-AUTH.md%23HTTP%20framing%20and%20cache%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-mcp-worker/worker.js#clientIp",
+      "boundary": "cloudflare-mcp-worker/worker.js#clientIp",
+      "subsystem": "cloudflare-mcp-worker",
+      "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes"
+    },
+    "surface": "cloudflare-mcp-worker/worker.js#clientIp",
+    "boundary": "cloudflare-mcp-worker/worker.js#clientIp",
+    "subsystem": "cloudflare-mcp-worker",
+    "attack_class": "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+    "starting_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+      "WEB-PROTOCOL-AND-AUTH.md#HTTP framing and cache attack classes",
+      "WEB-PROTOCOL-AND-AUTH.md#Universal moves",
+      "WEB-PROTOCOL-AND-AUTH.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "candidate",
+    "agent_id": "review-mcp",
+    "reviewed_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-mcp",
+        "reviewed_paths": [
+          "cloudflare-mcp-worker/worker.js"
+        ],
+        "invariant": "MCP rate-limit keys use the platform client address.",
+        "method": "source",
+        "result": "clientIp prefers CF-Connecting-IP and falls back to the first X-Forwarded-For value. verifiedCrawler is a separate platform field and is not derived from this header.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [
+      "workers.client-ip-forwarded"
+    ],
+    "unresolved": [],
+    "hunter_group": "hunter-mcp",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23fetch::cloudflare-mcp-worker%2Fworker.js%23verifiedCrawler::cloudflare-mcp-worker::ATTACK-CLASSES.md%23Access%20control",
+    "canonical_refs": {
+      "surface": "cloudflare-mcp-worker/worker.js#fetch",
+      "boundary": "cloudflare-mcp-worker/worker.js#verifiedCrawler",
+      "subsystem": "cloudflare-mcp-worker",
+      "attack_class": "ATTACK-CLASSES.md#Access control"
+    },
+    "surface": "cloudflare-mcp-worker/worker.js#fetch",
+    "boundary": "cloudflare-mcp-worker/worker.js#verifiedCrawler",
+    "subsystem": "cloudflare-mcp-worker",
+    "attack_class": "ATTACK-CLASSES.md#Access control",
+    "starting_paths": [
+      "cloudflare-mcp-worker/worker.js",
+      "cloudflare-mcp-worker/test/rate-limit.test.mjs"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Quota and scheduling attack classes",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Universal moves",
+      "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-mcp",
+    "reviewed_paths": [
+      "cloudflare-mcp-worker/worker.js",
+      "cloudflare-mcp-worker/test/rate-limit.test.mjs"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-mcp",
+        "reviewed_paths": [
+          "cloudflare-mcp-worker/worker.js",
+          "cloudflare-mcp-worker/test/rate-limit.test.mjs"
+        ],
+        "invariant": "A caller-controlled User-Agent cannot skip the rate limit.",
+        "method": "source",
+        "result": "verifiedCrawler reads request.cf.verifiedBotCategory or botManagement.verifiedBot. The test source says a Googlebot user agent is still limited, and an empty category is not an exemption. A missing limiter binding returns 503 before the catalog is served. request.cf is not assigned from request headers in this file.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-mcp",
+    "hardening": [
+      "Any non-empty verifiedBotCategory string skips the limiter. That field is platform-controlled in this source."
+    ]
+  },
+  {
+    "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23tools%2Fcall::cloudflare-mcp-worker%2Fworker.js%23callTool::cloudflare-mcp-worker::ATTACK-CLASSES.md%23Injection",
+    "canonical_refs": {
+      "surface": "cloudflare-mcp-worker/worker.js#tools/call",
+      "boundary": "cloudflare-mcp-worker/worker.js#callTool",
+      "subsystem": "cloudflare-mcp-worker",
+      "attack_class": "ATTACK-CLASSES.md#Injection"
+    },
+    "surface": "cloudflare-mcp-worker/worker.js#tools/call",
+    "boundary": "cloudflare-mcp-worker/worker.js#callTool",
+    "subsystem": "cloudflare-mcp-worker",
+    "attack_class": "ATTACK-CLASSES.md#Injection",
+    "starting_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Injection",
+    "selected_companion_blocks": [
+      "AI-AND-LLM.md#Core discipline",
+      "AI-AND-LLM.md#Tool and action attack classes",
+      "AI-AND-LLM.md#Universal moves",
+      "AI-AND-LLM.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-mcp",
+    "reviewed_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-mcp",
+        "reviewed_paths": [
+          "cloudflare-mcp-worker/worker.js"
+        ],
+        "invariant": "Tool arguments cannot leave the snapshot query or change authority.",
+        "method": "source",
+        "result": "callTool dispatches a fixed name set. Slugs must match a length-limited pattern. Queries and tasks are length-capped. There is no eval, shell, fetch, or file write on this path.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-mcp",
+    "hardening": []
+  },
+  {
+    "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23tools%2Fcall::cloudflare-mcp-worker%2Fworker.js%23toolResult::cloudflare-mcp-worker::AI-AND-LLM.md%23Output%20and%20disclosure%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-mcp-worker/worker.js#tools/call",
+      "boundary": "cloudflare-mcp-worker/worker.js#toolResult",
+      "subsystem": "cloudflare-mcp-worker",
+      "attack_class": "AI-AND-LLM.md#Output and disclosure attack classes"
+    },
+    "surface": "cloudflare-mcp-worker/worker.js#tools/call",
+    "boundary": "cloudflare-mcp-worker/worker.js#toolResult",
+    "subsystem": "cloudflare-mcp-worker",
+    "attack_class": "AI-AND-LLM.md#Output and disclosure attack classes",
+    "starting_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+    "selected_companion_blocks": [
+      "AI-AND-LLM.md#Core discipline",
+      "AI-AND-LLM.md#Output and disclosure attack classes",
+      "AI-AND-LLM.md#Universal moves",
+      "AI-AND-LLM.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-mcp",
+    "reviewed_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-mcp",
+        "reviewed_paths": [
+          "cloudflare-mcp-worker/worker.js"
+        ],
+        "invariant": "Tool output is the public catalog, not another principal's private data.",
+        "method": "source",
+        "result": "toolResult JSON-encodes snapshot rows. The catalog is the same data published as static JSON. No per-user record is selected.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-mcp",
+    "hardening": []
+  },
+  {
+    "coverage_id": "consent.js%23localStorage::consent.js%23ASConsent::static-client::CLIENT-SIDE.md%23Service-worker%20and%20browser-storage%20attack%20classes",
+    "canonical_refs": {
+      "surface": "consent.js#localStorage",
+      "boundary": "consent.js#ASConsent",
+      "subsystem": "static-client",
+      "attack_class": "CLIENT-SIDE.md#Service-worker and browser-storage attack classes"
+    },
+    "surface": "consent.js#localStorage",
+    "boundary": "consent.js#ASConsent",
+    "subsystem": "static-client",
+    "attack_class": "CLIENT-SIDE.md#Service-worker and browser-storage attack classes",
+    "starting_paths": [
+      "consent.js",
+      "track.js",
+      "share.js",
+      "reviews.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "CLIENT-SIDE.md#Core discipline",
+      "CLIENT-SIDE.md#Service-worker and browser-storage attack classes",
+      "CLIENT-SIDE.md#Universal moves",
+      "CLIENT-SIDE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-client",
+    "reviewed_paths": [
+      "consent.js",
+      "track.js",
+      "share.js",
+      "reviews.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-client",
+        "reviewed_paths": [
+          "consent.js",
+          "track.js",
+          "share.js",
+          "reviews.js"
+        ],
+        "invariant": "Browser storage on this origin does not grant another origin or another user a capability.",
+        "method": "source",
+        "result": "Consent, analytics opt-out, and the review visitor id are same-origin localStorage values. track.js does not send until consent allows it. No cross-window message listener without an origin check was found on these paths.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-client",
+    "hardening": []
+  },
+  {
+    "coverage_id": "requirements.txt%23dependencies::build_site.py%23orchestration::build-scripts::SUPPLY-CHAIN-AND-RELEASE.md%23Dependency%20and%20build-input%20attack%20classes",
+    "canonical_refs": {
+      "surface": "requirements.txt#dependencies",
+      "boundary": "build_site.py#orchestration",
+      "subsystem": "build-scripts",
+      "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes"
+    },
+    "surface": "requirements.txt#dependencies",
+    "boundary": "build_site.py#orchestration",
+    "subsystem": "build-scripts",
+    "attack_class": "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes",
+    "starting_paths": [
+      "requirements.txt",
+      "build_site.py",
+      "build_extras.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-supply",
+    "reviewed_paths": [
+      "requirements.txt",
+      "build_site.py",
+      "build_extras.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-supply",
+        "reviewed_paths": [
+          "requirements.txt",
+          "build_site.py",
+          "build_extras.py"
+        ],
+        "invariant": "A lower-trust actor cannot change dependency resolution or publish from this repository's CI, because no CI workflow is present.",
+        "method": "source",
+        "result": "requirements.txt pins Python packages for local builds. There is no .github workflow, lockfile, or publish step in the repository. build_site.py writes the static tree from local inputs. A missing lockfile is not by itself a boundary failure.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-supply",
+    "hardening": [
+      "Python dependencies are pinned in requirements.txt and are not locked with hashes."
+    ]
+  },
+  {
+    "coverage_id": "scripts%2Fcheck_mcp_links.py%23Guard::scripts%2Fcheck_mcp_links.py%23Guard::operator-scripts::ATTACK-CLASSES.md%23Resource%20and%20file%20handling",
+    "canonical_refs": {
+      "surface": "scripts/check_mcp_links.py#Guard",
+      "boundary": "scripts/check_mcp_links.py#Guard",
+      "subsystem": "operator-scripts",
+      "attack_class": "ATTACK-CLASSES.md#Resource and file handling"
+    },
+    "surface": "scripts/check_mcp_links.py#Guard",
+    "boundary": "scripts/check_mcp_links.py#Guard",
+    "subsystem": "operator-scripts",
+    "attack_class": "ATTACK-CLASSES.md#Resource and file handling",
+    "starting_paths": [
+      "scripts/check_mcp_links.py",
+      "scripts/add_tools.py",
+      "scripts/sync_x_followers.py",
+      "scripts/indexnow_ping.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Resource and file handling",
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-supply",
+    "reviewed_paths": [
+      "scripts/check_mcp_links.py",
+      "scripts/add_tools.py",
+      "scripts/sync_x_followers.py",
+      "scripts/indexnow_ping.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-supply",
+        "reviewed_paths": [
+          "scripts/check_mcp_links.py",
+          "scripts/add_tools.py",
+          "scripts/sync_x_followers.py",
+          "scripts/indexnow_ping.py"
+        ],
+        "invariant": "Operator link checks refuse a non-public address at request time.",
+        "method": "source",
+        "result": "public() rejects private, loopback, link-local, reserved, and multicast answers, then Guard rechecks redirects. The URLs come from tools.json, which this repository treats as operator input. add_tools.py and sync_x_followers.py are operator commands and read tokens from the environment, not from git. The IndexNow key file is published by design.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-supply",
+    "hardening": [
+      "public() and urlopen resolve separately. The 198.18.0.0/15 exception is only for the detected fake-IP sandbox."
+    ]
+  },
+  {
+    "coverage_id": "scripts%2Ffeature_tool.py%23subprocess::scripts%2Ffeature_tool.py%23main::operator-scripts::ATTACK-CLASSES.md%23Wildcard",
+    "canonical_refs": {
+      "surface": "scripts/feature_tool.py#subprocess",
+      "boundary": "scripts/feature_tool.py#main",
+      "subsystem": "operator-scripts",
+      "attack_class": "ATTACK-CLASSES.md#Wildcard"
+    },
+    "surface": "scripts/feature_tool.py#subprocess",
+    "boundary": "scripts/feature_tool.py#main",
+    "subsystem": "operator-scripts",
+    "attack_class": "ATTACK-CLASSES.md#Wildcard",
+    "starting_paths": [
+      "scripts/feature_tool.py",
+      "daily_deep_audit.py",
+      "build_redirects.py"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Wildcard",
+    "selected_companion_blocks": [
+      "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Dependency and build-input attack classes",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Universal moves",
+      "SUPPLY-CHAIN-AND-RELEASE.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-supply",
+    "reviewed_paths": [
+      "scripts/feature_tool.py",
+      "daily_deep_audit.py",
+      "build_redirects.py"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-supply",
+        "reviewed_paths": [
+          "scripts/feature_tool.py",
+          "daily_deep_audit.py",
+          "build_redirects.py"
+        ],
+        "invariant": "Operator subprocess calls do not interpolate a request into a shell.",
+        "method": "source",
+        "result": "feature_tool.py runs a fixed argv of the local interpreter and build_featured.py. daily_deep_audit.py and the build scripts are operator entry points. No web request reaches these calls.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-supply",
+    "hardening": []
+  },
+  {
+    "coverage_id": "scripts%2Fsponsor_stats.py%23STATS_KEY::cloudflare-api-worker%2Fwrangler.toml%23kv_namespaces::repo-hygiene::ATTACK-CLASSES.md%23Obvious%20things",
+    "canonical_refs": {
+      "surface": "scripts/sponsor_stats.py#STATS_KEY",
+      "boundary": "cloudflare-api-worker/wrangler.toml#kv_namespaces",
+      "subsystem": "repo-hygiene",
+      "attack_class": "ATTACK-CLASSES.md#Obvious things"
+    },
+    "surface": "scripts/sponsor_stats.py#STATS_KEY",
+    "boundary": "cloudflare-api-worker/wrangler.toml#kv_namespaces",
+    "subsystem": "repo-hygiene",
+    "attack_class": "ATTACK-CLASSES.md#Obvious things",
+    "starting_paths": [
+      "scripts/sponsor_stats.py",
+      "scripts/add_tools.py",
+      "scripts/indexnow_ping.py",
+      "cloudflare-api-worker/wrangler.toml",
+      "cloudflare-mcp-worker/wrangler.toml",
+      "generate.js",
+      "cloudflare-image-worker-patches/security.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Obvious things",
+    "selected_companion_blocks": [
+      "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+      "CLOUD-AND-DEPLOYMENT.md#Configuration and secret lifecycle attack classes",
+      "CLOUD-AND-DEPLOYMENT.md#Universal moves",
+      "CLOUD-AND-DEPLOYMENT.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Access control",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "AI-AND-LLM.md#Core discipline",
+        "reason": "No model, retrieval, memory, or tool-delegation boundary on this surface."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+        "reason": "No RPC, webhook, or message-identity boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "covered",
+    "agent_id": "review-supply",
+    "reviewed_paths": [
+      "scripts/sponsor_stats.py",
+      "scripts/add_tools.py",
+      "scripts/indexnow_ping.py",
+      "cloudflare-api-worker/wrangler.toml",
+      "cloudflare-mcp-worker/wrangler.toml",
+      "generate.js",
+      "cloudflare-image-worker-patches/security.js"
+    ],
+    "local_checks": [
+      {
+        "agent_id": "review-supply",
+        "reviewed_paths": [
+          "scripts/sponsor_stats.py",
+          "scripts/add_tools.py",
+          "scripts/indexnow_ping.py",
+          "cloudflare-api-worker/wrangler.toml",
+          "cloudflare-mcp-worker/wrangler.toml",
+          "generate.js",
+          "cloudflare-image-worker-patches/security.js"
+        ],
+        "invariant": "Git contains no usable secret for the stats, Turnstile, or GitHub APIs.",
+        "method": "source",
+        "result": "Searches of worker, script, and config source found no cloud API secret, private key, or bearer token literal. wrangler.toml records a KV namespace id. generate.js contains a Turnstile site key, which is a public widget key. sponsor_stats.py and add_tools.py read secrets from the environment. The IndexNow key is a public proof file.",
+        "artifact": null
+      }
+    ],
+    "result_fingerprints": [],
+    "unresolved": [],
+    "hunter_group": "hunter-supply",
+    "hardening": [
+      "Two MCP wrangler configs use different worker names. Which one is deployed is not selected in source."
+    ]
+  }
+]
