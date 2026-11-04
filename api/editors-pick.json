@@ -1,12 +1,12 @@
 {
- "date": "2026-11-03",
- "slug": "memsearch",
- "name": "Memsearch",
- "why": "A standout memory & RAG tool for builders: A persistent, unified memory layer for all your AI agents (e.g.",
- "category": "memory & RAG",
- "description": "A persistent, unified memory layer for all your AI agents (e.g. Claude Code, Codex, DSH), backed by Markdown and Milvus",
- "logo": "https://agentscouthq.com/assets/logos/memsearch.png",
- "page": "https://agentscouthq.com/tools/memsearch.html",
+ "date": "2026-11-04",
+ "slug": "mubert",
+ "name": "Mubert",
+ "why": "A standout music production tool for everyday users: generate royalty-free music from text prompts for videos, streams and apps.",
+ "category": "music production",
+ "description": "Generate royalty-free music from text prompts for videos, streams and apps.",
+ "logo": "https://agentscouthq.com/assets/logos/mubert.png",
+ "page": "https://agentscouthq.com/tools/mubert.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -83,6 +83,10 @@
   {
    "date": "2026-11-03",
    "slug": "memsearch"
+  },
+  {
+   "date": "2026-11-04",
+   "slug": "mubert"
   }
  ]
 }

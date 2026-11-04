@@ -29746,5 +29746,460 @@
    "osi": true
   },
   "updated": "2026-10-31"
+ },
+ "kaibanjs": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "KaibanJS is a JavaScript-native framework for building multi-agent systems, built around a Kanban metaphor: you define agents, tasks, tools and teams, and watch tasks move across stages on a board much like Trello or Jira.",
+   "`npx kaibanjs@latest init` sets up a local Kaiban Board where you click Start Workflow and follow agents completing tasks in real time. You can also import Agent, Task and Team directly into React, Next.js or Node.js projects, or run teams with no UI at all. MIT."
+  ],
+  "who": "JavaScript and TypeScript developers who want multi-agent workflows inside their own web or Node apps.",
+  "features": [
+   "Agent, Task and Team primitives for JS/TS",
+   "Kaiban Board for watching workflows live",
+   "One-command project initializer",
+   "Works in React, Next.js and Node.js",
+   "Can run headless without a UI"
+  ],
+  "faq": [
+   [
+    "Do I need Python?",
+    "No. KaibanJS is installed from npm and runs in JavaScript and TypeScript projects."
+   ]
+  ],
+  "sources": [
+   "https://github.com/kaiban-ai/KaibanJS",
+   "https://www.kaibanjs.com/"
+  ],
+  "facts": {
+   "repo": "https://github.com/kaiban-ai/KaibanJS",
+   "stars": 1486,
+   "forks": 159,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "adala": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Adala (Autonomous DAta Labeling Agent) is HumanSignal's open-source framework for agents that specialise in data processing, especially labelling. You give it a ground-truth dataset as its environment, and agents learn skills through repeated attempts, observation and reflection.",
+   "Each skill can be constrained to the output format you want, and one skill can run on several LLM runtimes, which allows setups such as a teacher model guiding a cheaper student model. It works natively in Python notebooks on large DataFrames. Apache-2.0."
+  ],
+  "who": "ML engineers and data scientists who label or clean data at scale with LLMs.",
+  "features": [
+   "Agents learn labelling skills from ground-truth data",
+   "Configurable output constraints per skill",
+   "Pluggable LLM runtimes, including teacher/student setups",
+   "Python and notebook friendly",
+   "From the team behind Label Studio"
+  ],
+  "faq": [
+   [
+    "What does Adala need from me?",
+    "A ground-truth dataset to learn from, plus access to an LLM runtime such as an OpenAI-compatible API."
+   ]
+  ],
+  "sources": [
+   "https://github.com/HumanSignal/Adala",
+   "https://humansignal.github.io/Adala/"
+  ],
+  "facts": {
+   "repo": "https://github.com/HumanSignal/Adala",
+   "stars": 1647,
+   "forks": 161,
+   "checked": "2026-11-04",
+   "license": "Apache-2.0",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "aide-ml": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "AIDE ML is the open-source reference build of the AIDE algorithm from Weco: an agent that runs a tree search over code, drafting, debugging and benchmarking ML scripts until a metric you choose is maximised or minimised.",
+   "You point it at a dataset and describe the goal and metric in plain English, for example `aide data_dir=... goal=\"Predict churn\" eval=\"AUROC\"`. It includes an HTML visualiser for the solution tree and a Streamlit UI, and works with OpenAI, Anthropic, Gemini or any OpenAI-compatible local model. OpenAI's MLE-bench used it as a baseline agent. Weco's hosted platform extends it to broader code optimisation. MIT."
+  ],
+  "who": "ML researchers and practitioners who want an agent to search for a strong pipeline on a dataset.",
+  "features": [
+   "Agentic tree search over candidate scripts",
+   "Goal and metric set in plain English",
+   "Solution-tree HTML visualiser and Streamlit UI",
+   "Model-neutral: OpenAI, Anthropic, Gemini or local",
+   "pip install aideml"
+  ],
+  "faq": [
+   [
+    "Is this the same as Weco?",
+    "AIDE ML is the open-source research package. Weco is the company's hosted product built on the same algorithm."
+   ]
+  ],
+  "sources": [
+   "https://github.com/WecoAI/aideml",
+   "https://www.weco.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/WecoAI/aideml",
+   "stars": 1608,
+   "forks": 236,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "mle-agent": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MLE-Agent is an open-source pairing agent for machine learning engineers and researchers. It builds ML baselines from your requirements, can work through Kaggle competitions end to end, and draws on arXiv and Papers with Code for current methods.",
+   "It runs from the terminal (`mle new`, `mle start`, `mle chat`), pairs a coder with a debugger agent to fix its own code, organises the project's files, and can write weekly summaries of your work. Install it with `pip install -U mle-agent`. MIT."
+  ],
+  "who": "ML engineers who want a CLI agent to scaffold baselines and experiments.",
+  "features": [
+   "Builds ML baselines from a requirement",
+   "Auto-Kaggle mode for full competitions",
+   "arXiv and Papers with Code lookups",
+   "Coder plus debugger loop",
+   "Interactive CLI chat and weekly reports"
+  ],
+  "faq": [
+   [
+    "How do I install it?",
+    "pip install -U mle-agent, then run mle new to create a project."
+   ]
+  ],
+  "sources": [
+   "https://github.com/MLSysOps/MLE-agent",
+   "https://mle-agent-site.vercel.app/"
+  ],
+  "facts": {
+   "repo": "https://github.com/MLSysOps/MLE-agent",
+   "stars": 1580,
+   "forks": 111,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "memfree": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "MemFree is an open-source hybrid AI search engine that answers from your own knowledge base and the web at the same time. It accepts text, images, files and web pages as queries and returns answers as text, mind maps, images or videos.",
+   "It works with ChatGPT, Claude and Gemini models and Google, Exa or vector search, indexes local PDF, Docx, PPTX and Markdown files, syncs Chrome bookmarks in one click and keeps search history across devices. The same project also includes an AI UI page generator that produces React, Tailwind and shadcn/ui code. A hosted version runs at memfree.me. MIT."
+  ],
+  "who": "Knowledge workers who want one search box over their notes, bookmarks and the web.",
+  "features": [
+   "Hybrid search over your files and the web",
+   "Multiple AI models and search engines",
+   "Text, image, file and URL queries",
+   "Chrome bookmark sync and cross-device history",
+   "Built-in AI UI page generator"
+  ],
+  "faq": [
+   [
+    "Can I self-host it?",
+    "Yes. The code is MIT-licensed on GitHub, and there is also a hosted version at memfree.me."
+   ]
+  ],
+  "sources": [
+   "https://github.com/memfreeme/memfree",
+   "https://www.memfree.me/"
+  ],
+  "facts": {
+   "repo": "https://github.com/memfreeme/memfree",
+   "stars": 1513,
+   "forks": 213,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "joinly": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "joinly.ai is open-source connector middleware that lets AI agents join video calls and take part in them. Through its MCP server, an agent gets meeting tools and resources so it can listen, speak or chat, and carry out tasks live while the meeting runs.",
+   "It joins Google Meet, Zoom and Microsoft Teams through the browser, handles interruptions and several speakers, and lets you choose your LLM (including local Ollama) plus speech services such as Whisper or Deepgram for transcription and Kokoro, ElevenLabs or Deepgram for voice. It runs self-hosted via Docker, and a managed cloud is offered at cloud.joinly.ai. MIT."
+  ],
+  "who": "Teams building meeting assistants that act during calls, not just after them.",
+  "features": [
+   "MCP server with meeting tools and resources",
+   "Joins Google Meet, Zoom and Teams",
+   "Bring your own LLM, STT and TTS",
+   "Handles interruptions and multiple speakers",
+   "Self-hosted with Docker, or a managed cloud"
+  ],
+  "faq": [
+   [
+    "Which meeting apps work?",
+    "Google Meet, Zoom and Microsoft Teams, plus other meetings that run in a browser."
+   ]
+  ],
+  "sources": [
+   "https://github.com/joinly-ai/joinly",
+   "https://joinly.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/joinly-ai/joinly",
+   "stars": 569,
+   "forks": 96,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "giselle": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Giselle is an open-source AI agent studio for building agentic workflows with a drag-and-drop visual builder. Workflows can chain models from OpenAI, Anthropic and Google, and draw on a knowledge store that includes a GitHub vector store of your code.",
+   "It is aimed at product delivery work: automating GitHub issues, pull requests and deployments, AI code review, and generating PRDs, specs and release notes from a codebase. Giselle now runs locally or self-hosted only; its hosted cloud service has been discontinued. Apache-2.0."
+  ],
+  "who": "Product and engineering teams who want visual AI workflows tied to their GitHub repos.",
+  "features": [
+   "Drag-and-drop visual agent builder",
+   "Multi-model workflows (OpenAI, Anthropic, Google)",
+   "GitHub vector store knowledge base",
+   "GitHub automation for issues, PRs and reviews",
+   "Local and self-hosted"
+  ],
+  "faq": [
+   [
+    "Is there a hosted version?",
+    "No longer. The project says its hosted cloud service has been discontinued, so you run it locally or self-host."
+   ]
+  ],
+  "sources": [
+   "https://github.com/giselles-ai/giselle",
+   "https://giselles.ai/"
+  ],
+  "facts": {
+   "repo": "https://github.com/giselles-ai/giselle",
+   "stars": 559,
+   "forks": 121,
+   "checked": "2026-11-04",
+   "license": "Apache-2.0",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "qdrant-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "mcp-server-qdrant is Qdrant's official MCP server that gives AI agents a semantic memory layer on top of the Qdrant vector database. It exposes two tools: qdrant-store to save information with optional metadata, and qdrant-find to retrieve the most relevant stored entries for a query.",
+   "It is configured with environment variables, connects to a remote Qdrant URL or a local path, and supports stdio, SSE and streamable HTTP transports, so it works with Claude Desktop, Cursor, VS Code and other MCP clients. It can also serve as a code-search memory for coding agents. Apache-2.0."
+  ],
+  "who": "Developers who want agents to keep and search long-term memories in Qdrant.",
+  "features": [
+   "qdrant-store and qdrant-find tools",
+   "Remote Qdrant server or local storage",
+   "stdio, SSE and streamable HTTP transports",
+   "Configurable embedding model and collection",
+   "Official server from Qdrant"
+  ],
+  "faq": [
+   [
+    "Does it need Qdrant Cloud?",
+    "No. It can point at any Qdrant server URL or a local path."
+   ]
+  ],
+  "sources": [
+   "https://github.com/qdrant/mcp-server-qdrant",
+   "https://qdrant.tech/"
+  ],
+  "facts": {
+   "repo": "https://github.com/qdrant/mcp-server-qdrant",
+   "stars": 1562,
+   "forks": 310,
+   "checked": "2026-11-04",
+   "license": "Apache-2.0",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "cloud-run-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Cloud Run MCP is Google Cloud's MCP server and Gemini CLI extension that lets AI agents deploy apps to Cloud Run. It works from Gemini CLI and other CLI agents, AI IDEs, assistant apps and agent SDKs such as the Agent Development Kit.",
+   "Tools include deploying files or a local folder, listing and inspecting services, reading service logs and errors, and listing or creating Google Cloud projects. Built-in deploy and logs prompts act as shortcuts. Install it with `npx -y @google-cloud/cloud-run-mcp`. Cloud Run usage is billed by Google Cloud. Apache-2.0."
+  ],
+  "who": "Developers who want their coding agent to ship and debug apps on Google Cloud Run.",
+  "features": [
+   "Deploy files or a local folder to Cloud Run",
+   "List services and read logs",
+   "List and create Google Cloud projects",
+   "Deploy and logs prompts",
+   "Gemini CLI extension and npx install"
+  ],
+  "faq": [
+   [
+    "Does it host MCP servers?",
+    "No. It deploys your code to Cloud Run. Google's Cloud Run docs cover hosting MCP servers separately."
+   ]
+  ],
+  "sources": [
+   "https://github.com/GoogleCloudPlatform/cloud-run-mcp",
+   "https://cloud.google.com/run/docs/host-mcp-servers"
+  ],
+  "facts": {
+   "repo": "https://github.com/GoogleCloudPlatform/cloud-run-mcp",
+   "stars": 636,
+   "forks": 128,
+   "checked": "2026-11-04",
+   "license": "Apache-2.0",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "dbt-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "dbt MCP is dbt Labs' official MCP server that gives AI agents the context of your dbt project across dbt Core, dbt Fusion and the dbt Platform.",
+   "Tool groups include SQL (execute SQL and text-to-SQL on dbt Platform), the Semantic Layer (list and query metrics, dimensions and saved queries), the Discovery API (models, sources with freshness, macros and exposures) and dbt CLI commands. An experimental MCP bundle ships with each release. Some tools need a dbt Platform account. Apache-2.0."
+  ],
+  "who": "Analytics engineers who want agents that understand and query their dbt project.",
+  "features": [
+   "Semantic Layer metric queries",
+   "Discovery API for models, sources and lineage",
+   "SQL execution and text-to-SQL",
+   "dbt CLI commands",
+   "Works with dbt Core, Fusion and Platform"
+  ],
+  "faq": [
+   [
+    "Do I need dbt Platform?",
+    "Core CLI tools work locally. The SQL, Semantic Layer and Discovery tools use dbt Platform."
+   ]
+  ],
+  "sources": [
+   "https://github.com/dbt-labs/dbt-mcp",
+   "https://docs.getdbt.com/docs/dbt-ai/about-mcp"
+  ],
+  "facts": {
+   "repo": "https://github.com/dbt-labs/dbt-mcp",
+   "stars": 616,
+   "forks": 146,
+   "checked": "2026-11-04",
+   "license": "Apache-2.0",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "kagi-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Kagi MCP is Kagi's official MCP server, backed by the Kagi API. It gives agents kagi_search_fetch for web, news, video, podcast and image search with optional page extracts, filters and Kagi lenses, and kagi_extract to fetch a full page as Markdown.",
+   "Kagi runs a hosted server at https://mcp.kagi.com/mcp that you call with your Kagi API key as a Bearer token, or you can run it locally with `uvx kagimcp` in Claude Desktop, Claude Code, Codex CLI and other clients, or self-host the HTTP server. It needs a Kagi API key, and API usage is billed by Kagi. MIT."
+  ],
+  "who": "Developers who want privacy-focused Kagi search inside their agents.",
+  "features": [
+   "kagi_search_fetch for web, news, video and images",
+   "kagi_extract returns pages as Markdown",
+   "Hosted endpoint at mcp.kagi.com",
+   "Local uvx install or self-hosting",
+   "Kagi lenses and filters"
+  ],
+  "faq": [
+   [
+    "Does it need an API key?",
+    "Yes, a Kagi API key. OAuth is on Kagi's roadmap but not supported yet."
+   ]
+  ],
+  "sources": [
+   "https://github.com/kagisearch/kagimcp",
+   "https://help.kagi.com/kagi/api/overview.html"
+  ],
+  "facts": {
+   "repo": "https://github.com/kagisearch/kagimcp",
+   "stars": 558,
+   "forks": 51,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "motherduck-mcp": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "The DuckDB / MotherDuck local MCP server connects AI assistants and IDEs to DuckDB's analytical SQL engine. It can open local DuckDB files, in-memory databases, databases on S3 and MotherDuck, run read or write queries, browse catalogs, and switch connections on the fly.",
+   "It defaults to read-only and adds write access or database switching only through flags such as --read-write and --allow-switch-databases. It runs with `uvx mcp-server-motherduck`. For zero setup, MotherDuck also offers a separate hosted remote MCP. MIT."
+  ],
+  "who": "Data engineers and analysts who want agents to run SQL on DuckDB or MotherDuck.",
+  "features": [
+   "Local DuckDB, in-memory, S3 and MotherDuck",
+   "Read-only by default with opt-in writes",
+   "Catalog browsing",
+   "Switch databases at runtime",
+   "uvx install; hosted remote option from MotherDuck"
+  ],
+  "faq": [
+   [
+    "Is it read-only?",
+    "By default when pointed at a file. You add --read-write to allow writes."
+   ]
+  ],
+  "sources": [
+   "https://github.com/motherduckdb/mcp-server-motherduck",
+   "https://motherduck.com/docs/sql-reference/mcp/"
+  ],
+  "facts": {
+   "repo": "https://github.com/motherduckdb/mcp-server-motherduck",
+   "stars": 539,
+   "forks": 91,
+   "checked": "2026-11-04",
+   "license": "MIT",
+   "osi": true
+  },
+  "updated": "2026-11-04"
+ },
+ "jupyter-mcp-server": {
+  "kind": "lite",
+  "src_kind": "README",
+  "long": [
+   "Jupyter MCP Server is Datalayer's MCP server that lets AI agents connect to Jupyter notebooks and manage them in real time: reading and editing cells, running code and working with kernels on a local Jupyter or JupyterHub.",
+   "The open-source server is free under BSD-3-Clause and needs no account. Datalayer also hosts it at https://mcp.datalayer.run/mcp, with browser sign-in and scoped permissions (notebooks:read, notebooks:write, code:execute, data:read), so work keeps running after the agent disconnects. There is a Claude Code plugin, and code sandboxes can scale out to providers such as Kaggle, Colab, Modal, Daytona and E2B."
+  ],
+  "who": "Data scientists who want coding agents working inside live Jupyter notebooks.",
+  "features": [
+   "Real-time notebook editing and execution",
+   "Works with local Jupyter and JupyterHub",
+   "Hosted endpoint with scoped permissions",
+   "Claude Code plugin",
+   "Scales sandboxes to cloud providers"
+  ],
+  "faq": [
+   [
+    "Is it free?",
+    "The open-source server is free under BSD-3-Clause. The hosted Datalayer service requires signing in to Datalayer."
+   ]
+  ],
+  "sources": [
+   "https://github.com/datalayer/jupyter-mcp-server",
+   "https://jupyter-mcp-server.datalayer.tech/"
+  ],
+  "facts": {
+   "repo": "https://github.com/datalayer/jupyter-mcp-server",
+   "stars": 1319,
+   "forks": 209,
+   "checked": "2026-11-04",
+   "license": "BSD-3-Clause",
+   "osi": true
+  },
+  "updated": "2026-11-04"
  }
 }
