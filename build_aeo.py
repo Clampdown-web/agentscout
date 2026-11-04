@@ -409,14 +409,15 @@ def write_llms_full(t):
     n_offline = sum(1 for x in t if classify_locality(x) == "offline")
     n_self = sum(1 for x in t if classify_locality(x) == "self_hosted")
 
-    # Count bot templates & skills from the built /bot-templates/ rows (not a frozen total).
-    import build_bot_templates
-    n_bt = build_bot_templates.live_bot_template_count()
+    import build_counts
+    _c = build_counts.require(t)
+    n_bt = _c["bot_templates"]
+    n_pages = _c["pages_sitemap"] or build_counts.sitemap_count()
 
     L = [
         "# AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)",
         "",
-        f"> AgentScout is a curated, link-checked, read-only directory of {len(t):,} AI agent tools across {len(cats)} categories, including {len(mcp_tools):,} Model Context Protocol (MCP) servers and {n_bt:,} bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.",
+        f"> AgentScout is a curated, link-checked, read-only directory of {_c['tools']:,} AI agent tools across {_c['categories']} categories, including {_c['mcp_servers']:,} Model Context Protocol (MCP) servers and {n_bt:,} bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.",
         "",
         "Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.",
         "",
@@ -451,9 +452,9 @@ def write_llms_full(t):
         "",
         "## Verified Directory Statistics",
         "",
-        f"- **Total Verified AI Agent Tools**: {len(t):,}",
-        f"- **Total Categories**: {len(cats)}",
-        f"- **Verified MCP Servers**: {len(mcp_tools):,}",
+        f"- **Total Verified AI Agent Tools**: {_c['tools']:,}",
+        f"- **Total Categories**: {_c['categories']}",
+        f"- **Verified MCP Servers**: {_c['mcp_servers']:,}",
         f"- **Bot Templates & Installable Agent Skills**: {n_bt:,} ({B}bot-templates/ and {B}skills/)",
         f"- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: {n_os:,}",
         f"- **Free or Freemium Tools**: {n_free:,}",
@@ -465,7 +466,7 @@ def write_llms_full(t):
         f"- **Free Community Listing ($0 forever)**: Standard review queue (3–5 days), permanent indexed `/tools/<slug>.html` page + `SoftwareApplication` schema, and listing in `llms.txt` & MCP server (`com.agentscouthq/directory`). Submit at {B}submit.html#free-form",
         "- **Fast-Track + 7-Day Launch Boost ($15 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on `@AgentScoutHQ`, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google). Checkout: https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
         "- **30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time — Most Popular)**: Everything in $15 upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in `/best/*-alternatives` and `/compare/` comparison tables, priority recommendation weight in `llms-full.txt` and MCP search (`com.agentscouthq/directory`), and a dedicated spotlight across both `@clampdown19` and `@AgentScoutHQ`. Checkout: https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
-        f"- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {open('sitemap.xml').read().count('<loc>'):,}+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
+        f"- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {n_pages:,}+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
         "",
         "## Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle (`/bot-store/`)",
         "",

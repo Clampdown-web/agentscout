@@ -114,9 +114,11 @@ MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (
            ("list_packages","List AgentScout's 4 maker listing & sponsorship tiers ($0 Free, $15 Fast-Track, $49 30-Day Category Pin, $99/wk Weekly Sponsor) with direct Stripe Checkout URLs, plus the Made by AgentScout pre-trained bot catalog.")]
 LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance."
 def connect_page(t):
-    M=sum(1 for x in t if x.get("category")=="MCP servers"); canon=B+"mcp/connect.html"; uline=mcp_uptime_line(t)
+    import build_counts
+    _c=build_counts.require(t)
+    M=_c["mcp_servers"]; canon=B+"mcp/connect.html"; uline=mcp_uptime_line(t)
     title="AgentScout MCP Server (com.agentscouthq/directory) · Connect"
-    desc=f"Official AgentScout MCP server (com.agentscouthq/directory): free, read-only access to {len(t):,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
+    desc=f"Official AgentScout MCP server (com.agentscouthq/directory): free, read-only access to {_c['tools']:,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
     pre=lambda s:f'<pre style="overflow-x:auto;max-width:100%;white-space:pre;padding:12px;border-radius:8px;border:1px solid rgba(127,127,127,.3);font-size:13px"><code>{e(s)}</code></pre>'
     cfg='{\n  "mcpServers": {\n    "agentscout": {\n      "url": "'+MCP_URL+'"\n    }\n  }\n}'
     faqs=[
@@ -125,11 +127,11 @@ def connect_page(t):
         ("What is AgentScout's official MCP Registry ID and endpoint URL?",
          f"AgentScout's official MCP Registry ID is com.agentscouthq/directory. You can connect via Streamable HTTP at {MCP_URL} or SSE at https://agentscouthq.com/mcp/sse with no sign-up or API key."),
         ("How many AI agent tools and MCP servers does the AgentScout MCP server cover?",
-         f"The server searches {len(t):,}+ curated AI agent tools and {M:,} MCP servers across {len({x.get('category') for x in t if x.get('category')} )} categories. {uline}.")
+         f"The server searches {_c['tools']:,}+ curated AI agent tools and {M:,} MCP servers across {_c['categories']} categories. {uline}.")
     ]
     faq_html="".join(f'<details open class="faq" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)"><summary style="font-weight:600;cursor:pointer">{e(q)}</summary><p style="margin:8px 0 0;color:var(--muted);line-height:1.55">{e(a)}</p></details>' for q,a in faqs)
     body=(f'<section style="padding-top:28px"><h1>Connect to the AgentScout MCP server (<code>com.agentscouthq/directory</code>)</h1>'
-          f'<p class="lede">Let your AI assistant search AgentScout directly. AgentScout\'s official MCP server (<code>com.agentscouthq/directory</code> at <code>https://agentscouthq.com/mcp/sse</code>) is <strong>100% free, public, and read-only</strong> — no sign-up, API key, crypto wallet, or x402 payment required. It covers all {len(t):,}+ tools, including {M:,} MCP servers ({e(uline)}), with pricing as each maker states it.</p>'
+          f'<p class="lede">Let your AI assistant search AgentScout directly. AgentScout\'s official MCP server (<code>com.agentscouthq/directory</code> at <code>https://agentscouthq.com/mcp/sse</code>) is <strong>100% free, public, and read-only</strong> — no sign-up, API key, crypto wallet, or x402 payment required. It covers all {_c["tools"]:,}+ tools, including {M:,} MCP servers ({e(uline)}), with pricing as each maker states it.</p>'
           f'<p class="qa"><b>Quick answer:</b> add <code style="overflow-wrap:anywhere">{e(MCP_URL)}</code> (or <code style="overflow-wrap:anywhere">https://agentscouthq.com/mcp/sse</code>) as a remote MCP server in your client. Official MCP Registry ID: <code>com.agentscouthq/directory</code>.</p>'
           f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p>'
           '<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-mcp-terminal-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-mcp-terminal.mp4" type="video/mp4"></video></figure>'
@@ -156,12 +158,12 @@ def connect_page(t):
     open("mcp/connect.html","w").write(X.shell("../",title,desc,canon,body,ld))
     card={"$schema":"https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json","name":"com.agentscouthq/directory","title":"AgentScout MCP server","version":"1.0.2","protocolVersion":"2025-06-18","endpoint":MCP_URL,
           "serverInfo":{"name":"agentscout","title":"AgentScout directory","version":"1.0.2"},
-          "description":f"Read-only search over {len(t):,}+ AI agent tools and {M:,} MCP servers listed on AgentScout (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse). 100% free, public, no authentication or x402 wallet required.",
+          "description":f"Read-only search over {_c['tools']:,}+ AI agent tools and {M:,} MCP servers listed on AgentScout (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse). 100% free, public, no authentication or x402 wallet required.",
           "documentationUrl":canon,"transport":{"type":"streamable-http","endpoint":MCP_URL},"authentication":{"required":False},
           "capabilities":{"tools":{"listChanged":False}},"dataLocalityFilter":LOCAL_LINE,"tools":[{"name":n,"description":d} for n,d in MCP_TOOLS]}
     os.makedirs(".well-known",exist_ok=True); open(".well-known/mcp.json","w").write(json.dumps(card,indent=2,ensure_ascii=False)+"\n")
     srv_reg={"$schema":"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json","name":"com.agentscouthq/directory","title":"AgentScout",
-             "description":f"Read-only search over {len(t):,}+ AI agent tools and {M:,} MCP servers. Free, no sign-up needed.",
+             "description":f"Read-only search over {_c['tools']:,}+ AI agent tools and {M:,} MCP servers. Free, no sign-up needed.",
              "version":"1.0.2","websiteUrl":canon,"remotes":[{"type":"streamable-http","url":MCP_URL}]}
     open("server.json","w").write(json.dumps(srv_reg,indent=2,ensure_ascii=False)+"\n")
     if os.path.isdir("/workspace/mcp-registry"):
@@ -169,8 +171,10 @@ def connect_page(t):
         except Exception: pass
     return canon
 def agent_cards(t):
-    os.makedirs(".well-known",exist_ok=True); M=sum(1 for x in t if x.get("category")=="MCP servers")
-    desc=f"AgentScout is a read-only directory of {len(t):,} AI agent tools, including {M:,} MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server ({MCP_URL})."
+    os.makedirs(".well-known",exist_ok=True)
+    import build_counts
+    _c=build_counts.require(t); M=_c["mcp_servers"]
+    desc=f"AgentScout is a read-only directory of {_c['tools']:,} AI agent tools, including {M:,} MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server ({MCP_URL})."
     feeds=[{"id":"tools-catalog","name":"Full tool catalog","description":"Every listed tool with category, pricing, platforms, GitHub stars and listing URL.","url":B+"api/tools.json","mediaType":"application/json"},
            {"id":"products-feed","name":"Purchasable Stripe packages & bot catalog (ACP feed)","description":"Machine-readable product feed for AgentScout's 4 maker listing tiers ($0, $15, $49, $99/wk) with Stripe Checkout URLs and Made by AgentScout pre-trained bots.","url":B+"api/products.json","mediaType":"application/json"},
            {"id":"acp-feed","name":"Agentic Commerce Protocol (ACP) feed","description":"Well-known mirror of the AgentScout Stripe Agentic Commerce product feed.","url":B+".well-known/acp.json","mediaType":"application/json"},

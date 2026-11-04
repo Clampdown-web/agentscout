@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { allowOrigin, postAllowed, guardedKind, protect } from "./security.js";
+import { allowOrigin, postAllowed, guardedKind, protect, safeEq, statsKeyPath, turnstileEnabled } from "./security.js";
 
 test("cors allowlist is the site and www only", () => {
   assert.equal(allowOrigin("https://agentscouthq.com"), "https://agentscouthq.com");
@@ -51,12 +51,32 @@ function handler(status = 200, extraHeaders = {}) {
   return { worker: protect(worker), calls };
 }
 
-function post(path, headers = {}) {
+function post(path, headers = {}, body = "{}") {
   return new Request("https://api.agentscouthq.com" + path, {
     method: "POST",
     headers: { "content-type": "text/plain", "cf-connecting-ip": "203.0.113.10", ...headers },
-    body: "{}",
+    body,
   });
+}
+
+function turnstileEnv(extra = {}) {
+  return { ...env(), TURNSTILE_ENABLED: "true", TURNSTILE_SECRET: "turnstile-secret", ...extra };
+}
+
+async function withSiteverify(impl, fn) {
+  const original = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, opts = {}) => {
+    const body = opts.body;
+    const params = body && typeof body.get === "function" ? body : new URLSearchParams(String(body || ""));
+    calls.push({ url: String(url), params });
+    return impl(params, calls);
+  };
+  try {
+    await fn(calls);
+  } finally {
+    globalThis.fetch = original;
+  }
 }
 
 test("a foreign origin cannot POST /submit or /review", async () => {
@@ -145,6 +165,119 @@ test("a missing rate limit binding fails closed", async () => {
   const res = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }), {});
   assert.equal(res.status, 503);
   assert.equal(calls.length, 0);
+});
+
+test("safeEq matches the whole secret and ignores non-strings", async () => {
+  assert.equal(await safeEq("stats-key", "stats-key"), true);
+  assert.equal(await safeEq("stats-key", "stats-key-extra"), false);
+  assert.equal(await safeEq("stats-key", "stats-kez"), false);
+  assert.equal(await safeEq("stats-key", "stats-ke"), false);
+  assert.equal(await safeEq("", ""), true);
+  assert.equal(await safeEq(null, "stats-key"), false);
+  assert.equal(await safeEq("stats-key", undefined), false);
+});
+
+test("safeEq hashes to 32 bytes and uses timingSafeEqual when it exists", async () => {
+  const seen = [];
+  const prior = crypto.subtle.timingSafeEqual;
+  crypto.subtle.timingSafeEqual = (left, right) => {
+    seen.push(left.length, right.length);
+    let diff = 0;
+    for (let i = 0; i < left.length; i++) diff |= left[i] ^ right[i];
+    return diff === 0;
+  };
+  try {
+    assert.equal(await safeEq("correct-key", "correct-key"), true);
+    assert.equal(await safeEq("correct-key", "wrong"), false);
+    assert.deepEqual(seen, [32, 32, 32, 32]);
+  } finally {
+    if (prior) crypto.subtle.timingSafeEqual = prior;
+    else delete crypto.subtle.timingSafeEqual;
+  }
+});
+
+test("admin paths reject a wrong X-Stats-Key before the inner handler", async () => {
+  const { worker, calls } = handler();
+  const binding = { ...env(), STATS_KEY: "correct-key" };
+  for (const path of ["/reviews/pending", "/reviews/admin", "/stats", "/trending/stats"]) {
+    assert.equal(statsKeyPath(path), true);
+    const denied = await worker.fetch(new Request("https://api.agentscouthq.com" + path, {
+      headers: { "X-Stats-Key": "wrong-key", "cf-connecting-ip": "203.0.113.10", origin: "https://agentscouthq.com" },
+    }), binding);
+    assert.equal(denied.status, 403);
+    const allowed = await worker.fetch(new Request("https://api.agentscouthq.com" + path + "?days=7", {
+      headers: { "x-stats-key": "correct-key", "cf-connecting-ip": "203.0.113.10", origin: "https://agentscouthq.com" },
+    }), binding);
+    assert.equal(allowed.status, 200);
+  }
+  assert.deepEqual(calls, ["/reviews/pending", "/reviews/admin", "/stats", "/trending/stats"]);
+  const missing = await worker.fetch(new Request("https://api.agentscouthq.com/stats"), binding);
+  assert.equal(missing.status, 403);
+  assert.equal(calls.length, 4);
+});
+
+test("turnstile stays off until TURNSTILE_ENABLED is true", async () => {
+  assert.equal(turnstileEnabled({}), false);
+  assert.equal(turnstileEnabled({ TURNSTILE_ENABLED: "false" }), false);
+  assert.equal(turnstileEnabled({ TURNSTILE_ENABLED: "true" }), true);
+  const { worker, calls } = handler();
+  let fetched = false;
+  const original = globalThis.fetch;
+  globalThis.fetch = async () => { fetched = true; throw new Error("siteverify should not run"); };
+  try {
+    const res = await worker.fetch(post("/generate", { origin: "https://evil.example" }), {});
+    assert.equal(res.status, 200);
+    assert.deepEqual(calls, ["/generate"]);
+    assert.equal(fetched, false);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+
+test("submit and generate require a siteverify pass for this site before other work", async () => {
+  await withSiteverify((params) => {
+    const token = params.get("response");
+    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" }));
+    if (token === "www") return new Response(JSON.stringify({ success: true, hostname: "www.agentscouthq.com" }));
+    if (token === "wrong-host") return new Response(JSON.stringify({ success: true, hostname: "evil.example" }));
+    return new Response(JSON.stringify({ success: false, hostname: "agentscouthq.com", "error-codes": ["invalid-input-response"] }));
+  }, async (calls) => {
+    let seen = "";
+    const inner = [];
+    const worker = protect({
+      async fetch(request) {
+        inner.push(new URL(request.url).pathname);
+        seen = await request.text();
+        return new Response(JSON.stringify({ ok: true }), {
+          status: 200,
+          headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
+        });
+      },
+    });
+    const binding = turnstileEnv();
+    const missing = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ name: "x" })), binding);
+    assert.equal(missing.status, 403);
+    assert.equal(inner.length, 0);
+    const failed = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }, JSON.stringify({ prompt: "cat", turnstileToken: "nope" })), binding);
+    assert.equal(failed.status, 403);
+    const wrongHost = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "wrong-host" })), binding);
+    assert.equal(wrongHost.status, 403);
+    const noSecret = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), turnstileEnv({ TURNSTILE_SECRET: "" }));
+    assert.equal(noSecret.status, 403);
+    assert.equal(inner.length, 0);
+    const ok = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ name: "Widget", turnstileToken: "good" })), binding);
+    assert.equal(ok.status, 200);
+    assert.equal(JSON.parse(seen).turnstileToken, "good");
+    const generated = await worker.fetch(post("/generate", {}, JSON.stringify({ prompt: "cat", turnstileToken: "www" })), binding);
+    assert.equal(generated.status, 200);
+    assert.equal(generated.headers.get("access-control-allow-origin"), "*");
+    assert.deepEqual(inner, ["/submit", "/generate"]);
+    const verify = calls.filter((call) => call.url.includes("siteverify"));
+    assert.equal(verify.length, 4);
+    assert.equal(verify[0].params.get("remoteip"), "203.0.113.10");
+    assert.equal(verify[0].params.get("secret"), "turnstile-secret");
+    assert.equal(verify[0].params.get("response"), "nope");
+  });
 });
 
 test("/generate is not wrapped", async () => {

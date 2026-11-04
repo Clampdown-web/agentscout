@@ -114,7 +114,7 @@ def answer_blocks(t):
              + home_vid_html
              + f'<h2 style="font-size:20px;margin:0 0 10px">The AI agent directory, at a glance</h2>'
              f'<p style="margin:0 0 10px">AgentScout tracks <b data-live-tools>{n:,}</b> AI agent tools across <b data-live-cats>{nc}</b> categories, including <a href="categories/mcp-servers.html"><span data-live-mcp>{nmcp}</span> MCP servers</a>, coding agents, browser agents, voice agents and no-code builders. We check every link daily, describe each tool from its official site or README, show pricing as the maker states it, and never sell rankings (featured slots are clearly labeled and sit above the list; rankings are never paid). <span class="muted">Last checked {d}.</span></p>'
-             f'<div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;max-width:100%"><a class="btn primary" href="videos/" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:#0ea5e9;color:#fff;font-weight:700;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🎬 Quick-Start Guides (8) →</a><a class="btn primary" href="bot-store/" style="background:linear-gradient(135deg,#84cc16,#10b981);border-color:#84cc16;color:#05140b;font-weight:800;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🛒 Bot Store: Pre-Trained Grok Bots ($39 / $59 / $69 / $149) →</a><a class="btn" href="bot-templates/#bt-featured" style="white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">📚 {__import__("build_bot_templates").live_bot_template_count()} Free Bot Templates →</a></div><p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
+             f'<div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;max-width:100%"><a class="btn primary" href="videos/" style="background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:#0ea5e9;color:#fff;font-weight:700;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🎬 Quick-Start Guides (8) →</a><a class="btn primary" href="bot-store/" style="background:linear-gradient(135deg,#84cc16,#10b981);border-color:#84cc16;color:#05140b;font-weight:800;white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">🛒 Bot Store: Pre-Trained AI Bots ($39 / $59 / $69 / $149) →</a><a class="btn" href="bot-templates/#bt-featured" style="white-space:normal;height:auto;min-height:42px;padding:8px 12px;text-align:center">📚 {__import__("build_bot_templates").live_bot_template_count()} Free Bot Templates →</a></div><p style="margin:0 0 16px">Free tools: <a href="free-tools/mcp-config-builder.html">MCP config generator for Claude Desktop, Cursor &amp; VS Code</a> · <a href="free-tools/agent-run-cost-estimator.html">AI agent cost calculator</a> · <a href="s/best-mcp-servers.html">Best MCP servers</a></p>'
              f'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>{_faq_html(faq)}</div></section>{_faq_ld(faq)}{home_vid_ld}<!--/sn:home-->')
         s=s.replace("</header>","</header>"+blk,1); open(f,"w").write(s)  # Oct 22 2026: about block goes after the top search panel
     f="bot-templates/index.html"
@@ -164,10 +164,12 @@ def sync_animations(t=None):
     import json, os, re, subprocess, sys, datetime
     if t is None:
         t = json.load(open("tools.json", encoding="utf-8"))
-    n_tools = len(t)
-    n_mcp = sum(1 for x in t if x.get("category") == "MCP servers")
-    n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
-    n_bt = __import__("build_bot_templates").live_bot_template_count()
+    import build_counts
+    _c = build_counts.require(t)
+    n_tools = _c["tools"]
+    n_mcp = _c["mcp_servers"]
+    n_pages = _c["pages_sitemap"] or build_counts.sitemap_count()
+    n_bt = _c["bot_templates"]
     n_ft = (len([f for f in os.listdir("free-tools") if f.endswith(".html") and f != "index.html"]) + (1 if os.path.exists("generate.html") else 0)) if os.path.isdir("free-tools") else 19
     state_file = "data/anim_state.json"
     script_candidates = [

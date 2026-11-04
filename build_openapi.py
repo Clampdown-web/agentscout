@@ -277,6 +277,8 @@ def sync_catalog_snapshot(src="api/tools.json", dest="cloudflare-mcp-worker/cata
     tools = catalog_tools(data)
     cats = sorted({(t.get("category") or "") for t in tools if t.get("category")})
     mcp = sum(1 for t in tools if t.get("category") == "MCP servers")
+    import build_counts
+    _c = build_counts.load() or {}
     _live = json.load(open("tools.json", encoding="utf-8"))  # expected counts come from the live catalog, not hardcoded numbers (Oct 29 2026)
     _live = _live if isinstance(_live, list) else _live.get("tools", [])
     _lcats = {(t.get("category") or "") for t in _live if t.get("category")}
@@ -312,9 +314,9 @@ def sync_catalog_snapshot(src="api/tools.json", dest="cloudflare-mcp-worker/cata
         "source": "https://agentscouthq.com/api/tools.json",
         "updated": data.get("updated"),
         "last_checked": data.get("last_checked"),
-        "count": len(slim),
-        "category_count": len(cats),
-        "mcp_count": mcp,
+        "count": _c["tools"] if _c.get("tools") == len(slim) else len(slim),
+        "category_count": _c["categories"] if _c.get("tools") == len(slim) and _c.get("categories") == len([x for x in cats if x != "other"]) else len(cats),
+        "mcp_count": _c["mcp_servers"] if _c.get("mcp_servers") == mcp else mcp,
         "categories": cats,
         "tools": slim,
     }
@@ -329,11 +331,12 @@ def sync_catalog_snapshot(src="api/tools.json", dest="cloudflare-mcp-worker/cata
 def build_commerce_files(tools_data):
     tools = catalog_tools(tools_data)
     last_checked = (tools_data.get("last_checked") if isinstance(tools_data, dict) else None) or "2026-10-27"
-    n_tools = len(tools)
-    n_mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
-    n_pages = open("sitemap.xml", encoding="utf-8").read().count("<loc>") if os.path.exists("sitemap.xml") else 2355
-    import build_bot_templates
-    n_bt = build_bot_templates.live_bot_template_count()
+    import build_counts
+    _c = build_counts.require()
+    n_tools = _c["tools"]
+    n_mcp = _c["mcp_servers"]
+    n_pages = _c["pages_sitemap"] or build_counts.sitemap_count()
+    n_bt = _c["bot_templates"]
 
     products = {
         "schema_version": "1.0",
@@ -557,7 +560,7 @@ def build_commerce_files(tools_data):
             f"fetch {B}/api/products.json (or {B}/.well-known/acp.json) for instant Stripe Checkout links: "
             f"Directory Listing Packages: Free Community Listing ($0 at {B}/submit.html#free-form), Fast-Track + 7-Day Launch Boost ($15 one-time), "
             f"30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time, Most Popular), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week); "
-            f"plus AgentScout Bot Store Pre-Trained Grok Bots (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable) at {B}/bot-store/: "
+            f"plus AgentScout Bot Store Pre-Trained AI Bots (also compatible with Claude Code, Cursor, OpenAI Codex & Lovable) at {B}/bot-store/: "
             f"1. Operations / Monitoring Bot ($39), 2. SEO & AEO Growth Auditor Bot ($59), 3. Market & Launch Intel Bot ($59), "
             f"4. CEO Coordinator Bot ($69), and Full 4-Bot Company-in-a-Box Team Bundle ($149, Save $77). "
             f"The Bot Store also sells 25 role-trained AI Agent Packs at $35 each "
@@ -642,8 +645,10 @@ def run():
             }
         }
     tools = catalog_tools(tools_data)
-    n = len(tools)
-    n_mcp = sum(1 for x in tools if isinstance(x, dict) and x.get("category") == "MCP servers")
+    import build_counts as _bcc
+    _cc = _bcc.load() or {}
+    n = _cc.get("tools") or len(tools)
+    n_mcp = _cc.get("mcp_servers") if _cc.get("mcp_servers") is not None else sum(1 for x in tools if isinstance(x, dict) and x.get("category") == "MCP servers")
     spec = {
         "openapi": "3.1.0",
         "info": {

@@ -169,6 +169,7 @@ for x in t:
         x["github_stars"]=_g["stars"]
         if _g.get("fetched"): x["stars_checked"]=_g["fetched"]
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
+import build_counts; build_counts.write(t)  # data/site_counts.json before any page that prints a total
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
 tpl=open("data/detail.tpl").read()
@@ -344,7 +345,16 @@ import build_status; build_status.apply(t)  # link-check evidence, status.json, 
 import build_seo_trim; build_seo_trim.run(t)  # title<=60 / desc<=156 trims, /best/ index Quick answer, Verification card on every listing (owner-approved Oct 29 2026)
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
+import build_counts as _bcounts
+_bcounts.refresh_pages()  # sitemap.xml is final; rewrite the page total and the files that quote it
+import build_aeo as _baeo_counts
+_baeo_counts.write_llms_full(t)
+import build_openapi as _bapi_counts
+_bapi_counts.build_commerce_files(json.load(open("api/tools.json", encoding="utf-8")))
+build_sponsor.page(t)
+build_tasks.sitewide(t)  # sponsor.html was just rewritten; put the shared scripts back
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)
+if _sp.run([_sys.executable,"scripts/check_counts.py"]).returncode: print("BUILD FAILED: count check (see scripts/check_counts.py)"); _sys.exit(1)
 
 # Thin tool pages and the daily index cap. Runs after the exit hooks that rewrite HTML and sitemap
 # (featured, GA, lastmod) and before Pagefind, which only indexes sitemap URLs that are not noindex.
@@ -437,24 +447,8 @@ def apply_thin_page_rule(tools):
         kept.append(line)
     open("sitemap.xml","w",encoding="utf-8").write("".join(kept))
     urls=open("sitemap.xml",encoding="utf-8").read().count("<loc>")
-    mp="api/metrics.json"
-    if os.path.exists(mp):
-        _met=json.load(open(mp))
-        _old=_met.get("indexed_pages_count")
-        _met["indexed_pages_count"]=urls
-        _met["pages_count"]=urls
-        json.dump(_met, open(mp,"w"), indent=2); open(mp,"a").write("\n")
-        if isinstance(_old,int) and _old!=urls:
-            _a, _b = f"{_old:,}+", f"{urls:,}+"
-            for root, dirs, files in os.walk("."):
-                dirs[:] = [d for d in dirs if d not in ("pagefind", ".git", "node_modules", ".pagefind_new")]
-                if root.startswith("./.") or "/node_modules" in root or "/pagefind" in root: continue
-                for fn in files:
-                    if not fn.endswith(".html"): continue
-                    fp=os.path.join(root, fn)
-                    tx=open(fp,encoding="utf-8").read()
-                    if _a not in tx or "data-live-pages" not in tx: continue
-                    open(fp,"w",encoding="utf-8").write(tx.replace(f"data-live-pages>{_a}", f"data-live-pages>{_b}").replace(f'data-live-pages">{_a}', f'data-live-pages">{_b}'))
+    import build_counts as _bc
+    _bc.refresh_pages()
     if any(x["slug"]=="hedra" or "hedra.com" in (x.get("url") or "")+(x.get("website") or "") for x in tools):
         raise SystemExit("Hedra is still in the catalog")
     print(f"thin-page rule: noindex {len(noindex)} tool pages ({len(queued)} queued by the {NEW_TOOL_CAP}/day cap); sitemap {urls} urls; indexed tools {len(indexed)}")
@@ -462,8 +456,16 @@ def apply_thin_page_rule(tools):
 import atexit as _axq, build_extras as _bxq
 def _quality_finish():
     _bxq._apply_featured()
+    apply_thin_page_rule(t)
+    import build_aeo as _baeo_after
+    _baeo_after.write_llms_full(t)
+    import build_openapi as _bapi_after
+    _bapi_after.build_commerce_files(json.load(open("api/tools.json", encoding="utf-8")))
+    build_tasks.sitewide(t)
+    apply_thin_page_rule(t)
+    build_sponsor.page(t)
+    build_tasks.submit_page(t)
     import build_quality
     build_quality.inject(t)
-    apply_thin_page_rule(t)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

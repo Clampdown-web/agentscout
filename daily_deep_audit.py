@@ -11,7 +11,11 @@ from __future__ import annotations
 import html
 import json
 import re
+import shutil
+import subprocess
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -61,6 +65,13 @@ def main() -> int:
     script_bad, script_pass = _shared_script_problems()
     bad.extend(script_bad)
     passes.extend(script_pass)
+    req_bad, req_pass = _requirements_audit()
+    bad.extend(req_bad)
+    passes.extend(req_pass)
+    sync = _counts_sync_problems()
+    bad.extend(sync)
+    if not sync:
+        passes.append("counts_sync")
     _report(bad, passes)
     return 1 if bad else 0
 
@@ -772,6 +783,227 @@ def _shared_script_problems() -> tuple[list[str], list[str]]:
     if problems:
         return problems, []
     return [], [f"shared scripts app.js, consent.js, track.js, share.js ?v={version} on {checked} production pages"]
+
+
+class _ScanUnavailable(Exception):
+    """pip-audit / OSV could not be reached. The audit warns and continues."""
+
+
+class _PinError(Exception):
+    """A requirement could be resolved and does not meet its pin."""
+
+
+def _requirements_audit() -> tuple[list[str], list[str]]:
+    """Pin check is local. A vulnerability hit fails. A dead network only warns."""
+    path = ROOT / "requirements.txt"
+    if not path.is_file():
+        return ["requirements.txt is missing"], []
+    text = path.read_text(encoding="utf-8")
+    problems: list[str] = []
+    if not re.search(r"(?im)^pillow\s*>=\s*13\.0\.0\b", text):
+        problems.append("requirements.txt must require pillow>=13.0.0")
+    for name in ("lxml", "requests", "cairosvg", "playwright"):
+        if not re.search(rf"(?im)^{name}\s*==\s*\d", text):
+            problems.append(f"requirements.txt must pin {name} to an exact version")
+    if problems:
+        return problems, []
+    try:
+        findings = _pip_audit(path)
+        if findings is None:
+            findings = _osv_audit(text)
+    except _PinError as exc:
+        return [str(exc)], []
+    except _ScanUnavailable as exc:
+        print(f"WARN dependency scan skipped (network unavailable: {exc})", file=sys.stderr)
+        return [], ["requirements.txt pins pillow>=13.0.0; vulnerability scan skipped because the database was unreachable"]
+    if findings:
+        return findings, []
+    return [], ["requirements.txt pins pillow>=13.0.0 and the vulnerability scan reports no known issues"]
+
+
+def _pip_audit(path: Path) -> list[str] | None:
+    """Run pip-audit when it is installed. None means try the OSV fallback."""
+    commands = []
+    exe = shutil.which("pip-audit")
+    if exe:
+        commands.append([exe])
+    commands.append([sys.executable, "-m", "pip_audit"])
+    saw_tool = False
+    for command in commands:
+        try:
+            proc = subprocess.run(
+                command + ["-r", str(path), "--format", "json", "--progress-spinner", "off"],
+                capture_output=True,
+                text=True,
+                timeout=90,
+            )
+        except FileNotFoundError:
+            continue
+        except subprocess.TimeoutExpired as exc:
+            raise _ScanUnavailable("pip-audit timed out") from exc
+        combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
+        if "No module named pip_audit" in combined or "No module named 'pip_audit'" in combined:
+            continue
+        saw_tool = True
+        findings = _pip_audit_findings(proc.stdout)
+        if findings:
+            return findings
+        if proc.returncode == 0:
+            return []
+        if proc.returncode == 1:
+            return ["pip-audit reported a vulnerability in requirements.txt"]
+        if _network_failure(proc.stderr or ""):
+            detail = (proc.stderr or "").strip().splitlines()
+            raise _ScanUnavailable(detail[-1][:200] if detail else f"pip-audit exited {proc.returncode}")
+        raise _ScanUnavailable(f"pip-audit exited {proc.returncode}")
+    if not saw_tool:
+        return None
+    return None
+
+
+def _pip_audit_findings(stdout: str) -> list[str]:
+    raw = (stdout or "").strip()
+    if not raw:
+        return []
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return []
+    deps = data.get("dependencies") if isinstance(data, dict) else data
+    if not isinstance(deps, list):
+        return []
+    findings = []
+    for dep in deps:
+        if not isinstance(dep, dict):
+            continue
+        name = dep.get("name") or "dependency"
+        version = dep.get("version") or ""
+        for vuln in dep.get("vulns") or []:
+            if isinstance(vuln, dict):
+                ident = vuln.get("id") or vuln.get("aliases") or "vulnerability"
+            else:
+                ident = str(vuln)
+            findings.append(f"requirements.txt vulnerability: {name} {version} {ident}")
+    return findings
+
+
+def _network_failure(text: str) -> bool:
+    lowered = text.lower()
+    markers = (
+        "name or service not known",
+        "temporary failure in name resolution",
+        "nodename nor servname",
+        "network is unreachable",
+        "failed to establish",
+        "connection refused",
+        "connection aborted",
+        "connection reset",
+        "timed out",
+        "timeout",
+        "urlopen error",
+        "max retries exceeded",
+        "could not connect",
+        "certificate verify failed",
+    )
+    return any(marker in lowered for marker in markers)
+
+
+def _requirement_rows(text: str) -> list[tuple[str, str]]:
+    rows = []
+    for raw in text.splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if not line or line.startswith("-"):
+            continue
+        match = re.match(r"^([A-Za-z0-9][A-Za-z0-9_.-]*)\s*(.*)$", line)
+        if match:
+            rows.append((match.group(1), match.group(2).strip()))
+    return rows
+
+
+def _version_key(value: str) -> tuple[int, ...]:
+    parts = []
+    for piece in value.split("."):
+        digits = re.match(r"(\d+)", piece)
+        parts.append(int(digits.group(1)) if digits else 0)
+    return tuple(parts)
+
+
+def _version_satisfies(version: str, spec: str) -> bool:
+    if spec.startswith("=="):
+        return version == spec[2:].strip()
+    if spec.startswith(">="):
+        return _version_key(version) >= _version_key(spec[2:].strip())
+    return not spec
+
+
+def _osv_audit(text: str) -> list[str]:
+    queries = []
+    for name, spec in _requirement_rows(text):
+        version = _resolve_version(name, spec)
+        queries.append({"version": version, "package": {"name": name, "ecosystem": "PyPI"}})
+    payload = json.dumps({"queries": queries}).encode("utf-8")
+    request = urllib.request.Request(
+        "https://api.osv.dev/v1/querybatch",
+        data=payload,
+        headers={"Content-Type": "application/json", "User-Agent": "agentscout-daily-deep-audit", "Accept": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            body = json.loads(response.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        raise _ScanUnavailable(exc) from exc
+    results = body.get("results") if isinstance(body, dict) else None
+    if not isinstance(results, list):
+        raise _ScanUnavailable("OSV returned no results list")
+    findings = []
+    for query, result in zip(queries, results):
+        vulns = (result or {}).get("vulns") or []
+        for vuln in vulns:
+            ident = vuln.get("id") if isinstance(vuln, dict) else str(vuln)
+            name = query["package"]["name"]
+            findings.append(f"requirements.txt vulnerability: {name} {query['version']} {ident}")
+    return findings
+
+
+def _resolve_version(name: str, spec: str) -> str:
+    if spec.startswith("=="):
+        return spec[2:].strip()
+    request = urllib.request.Request(
+        f"https://pypi.org/pypi/{name}/json",
+        headers={"User-Agent": "agentscout-daily-deep-audit", "Accept": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            info = json.loads(response.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        raise _ScanUnavailable(exc) from exc
+    latest = str((info.get("info") or {}).get("version") or "")
+    if latest and _version_satisfies(latest, spec):
+        return latest
+    releases = info.get("releases") if isinstance(info, dict) else None
+    if isinstance(releases, dict):
+        candidates = [version for version in releases if _version_satisfies(version, spec)]
+        if candidates:
+            return max(candidates, key=_version_key)
+    raise _PinError(f"requirements.txt: no PyPI release of {name} satisfies {spec or 'the pin'}")
+
+def _counts_sync_problems() -> list[str]:
+    """Live pages must match live api/metrics.json and a recount of live api/tools.json.
+
+    The same rules also run on the built tree, so a local build fails before it is published.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import check_counts
+
+    problems: list[str] = []
+    try:
+        local = check_counts.check_tree()
+    except Exception as exc:
+        local = [f"counts_sync: local scan failed ({exc})"]
+    problems.extend(local)
+    problems.extend(check_counts.check_live())
+    return problems
 
 
 def _report(bad: list[str], passes: list[str] | None = None) -> None:
