@@ -22,8 +22,11 @@ const AS={
     if(fr) fr.addEventListener("click",kick);
     if(sp) sp.addEventListener("submit",kick);
     if(/[?&](q|cat|price|os|sort|aud|uc|saved)=/.test(location.search)){ kick(); return p; }
-    function run(){ if(window.requestIdleCallback) requestIdleCallback(function(){go()},{timeout:2500}); else setTimeout(go,1); }
-    if(document.readyState==="complete") run(); else window.addEventListener("load", run, {once:true});
+    /* Start only after first paint. A fetch that finishes before observed LCP is treated as render-blocking. */
+    var armed=false;
+    function arm(){ if(armed)return; armed=true; if(window.requestIdleCallback) requestIdleCallback(function(){go()},{timeout:1500}); else setTimeout(go,1); }
+    try{ var po=new PerformanceObserver(function(list){ var es=list.getEntries(); for(var i=0;i<es.length;i++) if(es[i].name==="first-contentful-paint") arm(); }); po.observe({type:"paint",buffered:true}); }catch(e){}
+    addEventListener("load", function(){ setTimeout(arm, 5000); });
     return p;
   },
   bind(root,onchange){if(root===document){if(AS._bound&&!onchange)return;AS._bound=1}root.addEventListener("click",e=>{const v=e.target.closest("[data-vote]"),s=e.target.closest("[data-save]");if(!v&&!s)return;e.preventDefault();e.stopPropagation();
