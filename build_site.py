@@ -169,6 +169,7 @@ for x in t:
         x["github_stars"]=_g["stars"]
         if _g.get("fetched"): x["stars_checked"]=_g["fetched"]
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
+import build_counts; build_counts.write(t)  # data/site_counts.json before any page that prints a total
 os.makedirs("tools",exist_ok=True)
 e=lambda s:html.escape(str(s or ""))
 tpl=open("data/detail.tpl").read()
@@ -344,4 +345,13 @@ import build_status; build_status.apply(t)  # link-check evidence, status.json, 
 import build_seo_trim; build_seo_trim.run(t)  # title<=60 / desc<=156 trims, /best/ index Quick answer, Verification card on every listing (owner-approved Oct 29 2026)
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
+import build_counts as _bcounts
+_bcounts.refresh_pages()  # sitemap.xml is final; rewrite the page total and the files that quote it
+import build_aeo as _baeo_counts
+_baeo_counts.write_llms_full(t)
+import build_openapi as _bapi_counts
+_bapi_counts.build_commerce_files(json.load(open("api/tools.json", encoding="utf-8")))
+build_sponsor.page(t)
+build_tasks.sitewide(t)  # sponsor.html was just rewritten; put the shared scripts back
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)
+if _sp.run([_sys.executable,"scripts/check_counts.py"]).returncode: print("BUILD FAILED: count check (see scripts/check_counts.py)"); _sys.exit(1)

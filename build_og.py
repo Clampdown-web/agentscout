@@ -152,8 +152,17 @@ def run(t):
             if m: stat=f"{m.group(1)} tools"
         title=re.sub(r"\s*\(2026\)$","",title)
         out=f"{OUT}/{f[:-5]}.png"; keep.add(out); c["pages"]+=1
-        key=hashlib.sha1(json.dumps([TPL,"neon1",neon] if neon else [TPL,label,title,sub,stat,logo,hashlib.sha1(open(logo,"rb").read()).hexdigest() if logo else ""]).encode()).hexdigest()[:16]
+        import build_counts
+        sig=build_counts.signature()
+        key=hashlib.sha1(json.dumps([TPL,sig,"neon1",neon] if neon else [TPL,sig,label,title,sub,stat,logo,hashlib.sha1(open(logo,"rb").read()).hexdigest() if logo else ""]).encode()).hexdigest()[:16]
+        visual=" ".join(str(x) for x in (label,title,sub,stat,neon))
+        depends=False
+        for n in sig:
+            if isinstance(n,int) and n and (str(n) in visual or f"{n:,}" in visual):
+                depends=True
         if cache.get(out)==key and os.path.exists(out): c["same"]+=1  # inputs unchanged: skip rendering
+        elif os.path.exists(out) and not depends:
+            cache[out]=key; c["same"]+=1  # pixels do not include a sitewide count; the key still does
         else:
             png=build_og_neon.render(F,wrap,*neon,accent="MCP") if neon else render(label,title,sub,stat,logo); os.makedirs(os.path.dirname(out),exist_ok=True)
             if os.path.exists(out) and open(out,"rb").read()==png: c["same"]+=1

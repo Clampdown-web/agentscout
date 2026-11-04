@@ -61,6 +61,10 @@ def main() -> int:
     script_bad, script_pass = _shared_script_problems()
     bad.extend(script_bad)
     passes.extend(script_pass)
+    sync = _counts_sync_problems()
+    bad.extend(sync)
+    if not sync:
+        passes.append("counts_sync")
     _report(bad, passes)
     return 1 if bad else 0
 
@@ -772,6 +776,24 @@ def _shared_script_problems() -> tuple[list[str], list[str]]:
     if problems:
         return problems, []
     return [], [f"shared scripts app.js, consent.js, track.js, share.js ?v={version} on {checked} production pages"]
+
+
+def _counts_sync_problems() -> list[str]:
+    """Live pages must match live api/metrics.json and a recount of live api/tools.json.
+
+    The same rules also run on the built tree, so a local build fails before it is published.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import check_counts
+
+    problems: list[str] = []
+    try:
+        local = check_counts.check_tree()
+    except Exception as exc:
+        local = [f"counts_sync: local scan failed ({exc})"]
+    problems.extend(local)
+    problems.extend(check_counts.check_live())
+    return problems
 
 
 def _report(bad: list[str], passes: list[str] | None = None) -> None:
