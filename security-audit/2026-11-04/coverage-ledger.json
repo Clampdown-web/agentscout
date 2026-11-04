@@ -598,8 +598,8 @@
     "prior_status": "none",
     "attempts": [],
     "wave": 1,
-    "status": "covered",
-    "agent_id": "review-ssrf",
+    "status": "candidate",
+    "agent_id": "hunter-ssrf",
     "reviewed_paths": [
       "cloudflare-api-worker/src/ssrf.js",
       "cloudflare-api-worker/src/worker.js",
@@ -607,19 +607,21 @@
     ],
     "local_checks": [
       {
-        "agent_id": "review-ssrf",
+        "agent_id": "hunter-ssrf",
         "reviewed_paths": [
           "cloudflare-api-worker/src/ssrf.js",
           "cloudflare-api-worker/src/worker.js",
           "cloudflare-api-worker/test/ssrf.test.mjs"
         ],
-        "invariant": "An unauthenticated roast request must not pass a private IPv4-mapped literal to fetch.",
+        "invariant": "An IPv6 literal whose embedded IPv4 would be rejected by blockedV4 is rejected before fetch.",
         "method": "source",
-        "result": "new URL serializes a full-form IPv4-mapped literal to ::ffff: plus two hextets. isBlockedIp decodes that spelling and blockedV4 rejects 169.254.169.254. validateUrlShape returns an error before fetchPublic calls fetch.",
+        "result": "blockedV6 returns false for 64:ff9b::/96 and 2002::/16. The URL parser keeps those hostnames. A full-form IPv4-mapped literal is compressed to ::ffff: and rejected. Egress translation of the transition prefixes is not in the repository.",
         "artifact": null
       }
     ],
-    "result_fingerprints": [],
+    "result_fingerprints": [
+      "ssrf.isBlockedIp.transition-embed-ipv4"
+    ],
     "unresolved": [],
     "hunter_group": "hunter-ssrf",
     "hardening": []
@@ -962,26 +964,28 @@
     "prior_status": "none",
     "attempts": [],
     "wave": 1,
-    "status": "covered",
-    "agent_id": "review-votes",
+    "status": "candidate",
+    "agent_id": "hunter-votes",
     "reviewed_paths": [
       "cloudflare-api-worker/src/worker.js",
       "cloudflare-api-worker/test/votes.test.mjs"
     ],
     "local_checks": [
       {
-        "agent_id": "review-votes",
+        "agent_id": "hunter-votes",
         "reviewed_paths": [
           "cloudflare-api-worker/src/worker.js",
           "cloudflare-api-worker/test/votes.test.mjs"
         ],
-        "invariant": "A public counter may lose a concurrent increment without exposing another principal's private data.",
+        "invariant": "One client identity increments a slug once per Pacific day.",
         "method": "source",
-        "result": "The file header states concurrent votes can drop a count. The seen key is written only on the first vote. The affected state is the public tally, which any visitor can increment once per IP per day. This is not a cross-principal read or write.",
+        "result": "The seen flag, daily salt, and week document are separate unconditional KV writes. Overlapping empty reads can both call castInDoc. The interleaving was not executed.",
         "artifact": null
       }
     ],
-    "result_fingerprints": [],
+    "result_fingerprints": [
+      "votes.kv-check-then-act"
+    ],
     "unresolved": [],
     "hunter_group": "hunter-votes",
     "hardening": [
@@ -2907,28 +2911,32 @@
     "prior_status": "none",
     "attempts": [],
     "wave": 1,
-    "status": "covered",
-    "agent_id": "review-supply",
+    "status": "candidate",
+    "agent_id": "hunter-supply",
     "reviewed_paths": [
       "requirements.txt",
       "build_site.py",
-      "build_extras.py"
+      "build_logocheck.py",
+      "cloudflare-image-worker-patches/README.md"
     ],
     "local_checks": [
       {
-        "agent_id": "review-supply",
+        "agent_id": "hunter-supply",
         "reviewed_paths": [
           "requirements.txt",
           "build_site.py",
-          "build_extras.py"
+          "build_logocheck.py",
+          "cloudflare-image-worker-patches/README.md"
         ],
-        "invariant": "A lower-trust actor cannot change dependency resolution or publish from this repository's CI, because no CI workflow is present.",
+        "invariant": "The Pillow build that generates the site is a reviewed artifact.",
         "method": "source",
-        "result": "requirements.txt pins Python packages for local builds. There is no .github workflow, lockfile, or publish step in the repository. build_site.py writes the static tree from local inputs. A missing lockfile is not by itself a boundary failure.",
+        "result": "pillow>=13.0.0 is installed with pip install -U and imported by build_logocheck. No workflow shows a frozen wheel.",
         "artifact": null
       }
     ],
-    "result_fingerprints": [],
+    "result_fingerprints": [
+      "requirements.pillow.unbounded-install"
+    ],
     "unresolved": [],
     "hunter_group": "hunter-supply",
     "hardening": [
@@ -3033,30 +3041,29 @@
     "prior_status": "none",
     "attempts": [],
     "wave": 1,
-    "status": "covered",
-    "agent_id": "review-supply",
+    "status": "candidate",
+    "agent_id": "hunter-supply",
     "reviewed_paths": [
       "scripts/check_mcp_links.py",
-      "scripts/add_tools.py",
-      "scripts/sync_x_followers.py",
-      "scripts/indexnow_ping.py"
+      "scripts/add_tools.py"
     ],
     "local_checks": [
       {
-        "agent_id": "review-supply",
+        "agent_id": "hunter-supply",
         "reviewed_paths": [
           "scripts/check_mcp_links.py",
-          "scripts/add_tools.py",
-          "scripts/sync_x_followers.py",
-          "scripts/indexnow_ping.py"
+          "scripts/add_tools.py"
         ],
-        "invariant": "Operator link checks refuse a non-public address at request time.",
+        "invariant": "Operator fetches of catalog and maker URLs refuse a non-public address.",
         "method": "source",
-        "result": "public() rejects private, loopback, link-local, reserved, and multicast answers, then Guard rechecks redirects. The URLs come from tools.json, which this repository treats as operator input. add_tools.py and sync_x_followers.py are operator commands and read tokens from the environment, not from git. The IndexNow key file is published by design.",
+        "result": "public() does not reject 100.64.0.0/10. add_tools.py requests.get follows homepage and icon URLs with no address check.",
         "artifact": null
       }
     ],
-    "result_fingerprints": [],
+    "result_fingerprints": [
+      "check_mcp_links.public.shared-address-space",
+      "add_tools.verify.unguarded-fetch"
+    ],
     "unresolved": [],
     "hunter_group": "hunter-supply",
     "hardening": [

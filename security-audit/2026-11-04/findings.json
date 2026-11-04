@@ -1,5 +1,61 @@
 [
   {
+    "verdict": "needs_validation",
+    "fingerprint": "add_tools.verify.unguarded-fetch",
+    "title": "Adding a tool fetches homepage and icon URLs with no address check",
+    "description": "scripts/add_tools.py downloads a GitHub homepage when the batch row has no website, then downloads icon URLs taken from that page. Both requests.get calls omit an address check and do not disable redirects. The MCP link checker has a public-address guard. This path does not use it.",
+    "claimed_root_cause": "verify() and getimg() pass maker-controlled homepage and icon URLs to requests.get and read the response, with no public-address classification before the connection.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "scripts/add_tools.py",
+        "line": 84,
+        "scope": "verify",
+        "description": "A blank website becomes the GitHub repo homepage."
+      },
+      {
+        "kind": "propagation",
+        "file": "scripts/add_tools.py",
+        "line": 90,
+        "scope": "verify",
+        "description": "requests.get downloads that URL and keeps the final URL and HTML on HTTP 200."
+      },
+      {
+        "kind": "propagation",
+        "file": "scripts/add_tools.py",
+        "line": 100,
+        "scope": "verify",
+        "description": "Icon hrefs are resolved with urljoin and added to the download list."
+      },
+      {
+        "kind": "sink",
+        "file": "scripts/add_tools.py",
+        "line": 42,
+        "scope": "getimg",
+        "description": "Each candidate URL is downloaded with requests.get and the body is read."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "scripts/add_tools.py",
+        "line": 90,
+        "description": "The page download does not restrict the resolved address and does not pass allow_redirects=False."
+      },
+      {
+        "file": "scripts/check_mcp_links.py",
+        "line": 13,
+        "description": "The link checker already has a public-address function, and add_tools.py does not call it."
+      }
+    ],
+    "blockers": [
+      "The fetch was not executed. Whether the operator machine can reach a non-public address from this script is not in the repository."
+    ],
+    "validation_plan": {
+      "local": "Serve a local HTML fixture whose icon href points at a dummy listener on 127.0.0.1. Call getimg on that href and record whether the listener accepts a connection. Do not use a metadata address.",
+      "deployment": "Confirm which machine runs add_tools.py and whether its egress can reach link-local or private addresses. Do not ingest a live listing as the test."
+    }
+  },
+  {
     "verdict": "rejected",
     "fingerprint": "build.faq-unescaped-answer",
     "title": "FAQ builder inserts answer HTML without escaping",
@@ -34,6 +90,55 @@
       }
     ],
     "reason": "The answer strings are written by the same operator build, not by a request or a submission handler in this repository. Raw HTML there is the author's markup. There is no lower-trust writer on this path."
+  },
+  {
+    "verdict": "needs_validation",
+    "fingerprint": "check_mcp_links.public.shared-address-space",
+    "title": "MCP link checker treats shared address space as public",
+    "description": "check_mcp_links.py fetches catalog URLs after public() accepts them. public() rejects addresses flagged private, loopback, link-local, reserved, multicast, or unspecified. On this host, 100.64.0.1 sets none of those flags and is_global is false. The roast worker rejects 100.64.0.0/10. This script does not read is_global.",
+    "claimed_root_cause": "public() returns true when the listed ipaddress flags are all false, which is true for 100.64.0.0/10.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "scripts/check_mcp_links.py",
+        "line": 54,
+        "scope": "main",
+        "description": "Each MCP url and github field from tools.json is queued for probe()."
+      },
+      {
+        "kind": "propagation",
+        "file": "scripts/check_mcp_links.py",
+        "line": 21,
+        "scope": "public",
+        "description": "The predicate does not reject shared address space and does not require is_global."
+      },
+      {
+        "kind": "sink",
+        "file": "scripts/check_mcp_links.py",
+        "line": 40,
+        "scope": "probe",
+        "description": "When public() returns true, the opener requests the original URL."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "scripts/check_mcp_links.py",
+        "line": 21,
+        "description": "The implemented test is is_private, is_loopback, is_link_local, is_reserved, is_multicast, or is_unspecified."
+      },
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 39,
+        "description": "The roast blocklist rejects IPv4 addresses whose first octet is 100 and whose second octet is 64 through 127."
+      }
+    ],
+    "blockers": [
+      "Whether the operator host routes 100.64.0.0/10 is not in the repository. public() itself was not executed."
+    ],
+    "validation_plan": {
+      "local": "On the build host, record IPv4Address('100.64.0.1').is_private and is_global, then call public() with a fixture resolver that returns only that address. Stop at the boolean.",
+      "deployment": "Record whether the operator machine routes 100.64.0.0/10. Do not point the script at a live internal service."
+    }
   },
   {
     "verdict": "rejected",
@@ -269,6 +374,55 @@
   },
   {
     "verdict": "needs_validation",
+    "fingerprint": "requirements.pillow.unbounded-install",
+    "title": "Site build can install any later Pillow release",
+    "description": "requirements.txt floors Pillow at 13.0.0 and does not pin a version or a hash. The build notes say to upgrade with pip install -U. build_site.py imports Pillow while generating the published tree.",
+    "claimed_root_cause": "pillow>=13.0.0 plus python3 -m pip install -U -r requirements.txt selects an unbound index artifact, and build_site.py imports that artifact through build_logocheck before writing the site.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "requirements.txt",
+        "line": 4,
+        "scope": "pillow>=13.0.0",
+        "description": "The Pillow constraint is a lower floor. The file has no hashes."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-image-worker-patches/README.md",
+        "line": 97,
+        "scope": "pip install",
+        "description": "The build machine is told to run python3 -m pip install -U -r requirements.txt."
+      },
+      {
+        "kind": "sink",
+        "file": "build_logocheck.py",
+        "line": 9,
+        "scope": "from PIL import Image",
+        "description": "build_site.py imports build_logocheck, which executes the installed Pillow package."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "requirements.txt",
+        "line": 4,
+        "description": "pillow>=13.0.0 sits beside exact pins for lxml, requests, cairosvg, and playwright."
+      },
+      {
+        "file": "build_site.py",
+        "line": 14,
+        "description": "The generator imports build_logocheck before pages are written."
+      }
+    ],
+    "blockers": [
+      "No workflow file shows that production builds run this install versus a previously frozen environment, and the wheel an index would select was not observed."
+    ],
+    "validation_plan": {
+      "local": "In an empty virtualenv pointed at a fixture index, install requirements.txt and record the Pillow version that satisfies the floor. Do not use a public index.",
+      "deployment": "On the machine that builds the site, record the configured pip index and the installed Pillow version. Do not rebuild the live site."
+    }
+  },
+  {
+    "verdict": "needs_validation",
     "fingerprint": "reviews.stars.html-interpolation",
     "title": "Review stars are concatenated into tool-page HTML",
     "description": "reviews.js renders approved reviews into the tool page with innerHTML. Name and text pass through esc. The screen-reader span concatenates r.stars raw. A string stars value would be parsed as HTML. The form submits a number. The worker that stores POST /review is not in this repository.",
@@ -483,6 +637,72 @@
     "reason": "The host URL parser serializes http://[0:0:0:0:0:ffff:a9fe:a9fe]/ to hostname [::ffff:a9fe:a9fe]. The same compression applies to the zero-padded form, ::0:ffff:a9fe:a9fe, and ::ffff:169.254.169.254. validateUrlShape then checks ::ffff:a9fe:a9fe. That spelling takes the two-hextet decoder and isBlockedIp rejects 169.254.169.254 before fetch. The roast path does not request the full-form literal."
   },
   {
+    "verdict": "needs_validation",
+    "fingerprint": "ssrf.isBlockedIp.transition-embed-ipv4",
+    "title": "Roast filter allows transition prefixes that embed a blocked IPv4 address",
+    "description": "Anonymous GET or POST /roast fetches a caller URL after isBlockedIp. That function maps only a leading ::ffff: string through the IPv4 block list. NAT64 64:ff9b::/96 and 6to4 2002::/16 text does not use that prefix, so blockedV6 returns false when the embedded IPv4 is one blockedV4 already rejects. The host URL parser keeps those hostnames, unlike a full-form IPv4-mapped literal, which it compresses to a ::ffff: spelling the decoder rejects. Whether Workers egress translates the prefix onto the embedded address is not in the repository.",
+    "claimed_root_cause": "blockedV6 does not extract an embedded IPv4 address from 64:ff9b::/96, 64:ff9b:1::/48, or 2002::/16, and an IP literal that survives isBlockedIp is fetched directly.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 249,
+        "scope": "roast",
+        "description": "The unauthenticated /roast url is passed to fetchPublic."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 87,
+        "scope": "validateUrlShape",
+        "description": "A colon hostname is classified only by isBlockedIp."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 57,
+        "scope": "blockedV6",
+        "description": "blockedV6 returns false for transition prefixes whose first hextet is outside the ULA, link-local, multicast, and documentation checks."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 205,
+        "scope": "fetchPublic",
+        "description": "fetch is called on the URL when validateUrlShape and resolveAndCheck return no error."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 10,
+        "description": "The only mapped-IPv4 special case is a string that starts with ::ffff:."
+      },
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 48,
+        "description": "blockedV6 allows other parseable IPv6 text, including 64:ff9b::/96 and 2002::/16."
+      },
+      {
+        "file": "cloudflare-api-worker/src/ssrf.js",
+        "line": 106,
+        "description": "A colon host that isBlockedIp allows is returned without a DNS lookup."
+      },
+      {
+        "file": "cloudflare-api-worker/test/ssrf.test.mjs",
+        "line": 7,
+        "description": "The tests cover canonical private literals and ::ffff:127.0.0.1, not 64:ff9b::/96 or 2002::/16."
+      }
+    ],
+    "blockers": [
+      "Workers egress for these prefixes is not in the repository, so it is unresolved whether a subrequest to 64:ff9b::/96 or 2002::/16 is refused or translated onto the embedded IPv4 address."
+    ],
+    "validation_plan": {
+      "local": "Call validateUrlShape on http://[64:ff9b::a00:1]/ and http://[2002:a9fe:a9fe::]/ with fetch stubbed to fail the test if it is invoked. Record the hostname the URL parser keeps and whether an error is returned. Do not contact a deployed host.",
+      "deployment": "On an isolated non-production worker, read the account egress policy for those prefixes. Do not point a production worker at a link-local or metadata address."
+    }
+  },
+  {
     "verdict": "rejected",
     "fingerprint": "vote.origin-header-as-auth",
     "title": "Vote origin check can be set by a non-browser client",
@@ -524,6 +744,72 @@
       }
     ],
     "reason": "There is no session cookie, so a browser on another site cannot attach a credential. A client that sets Origin can vote once per platform address per day, which is the same allowance as loading the site. The origin check stops cross-site browser votes. It is not an account boundary."
+  },
+  {
+    "verdict": "needs_validation",
+    "fingerprint": "votes.kv-check-then-act",
+    "title": "One visitor can pass the vote dedup check twice",
+    "description": "POST /vote is supposed to add one tally per client address per slug per Pacific day. The seen flag, the daily salt, and the week document are separate KV writes. Two overlapping calls can both observe an empty seen key. dailySalt keeps a locally generated UUID when the follow-up read is empty, so the two calls can hash different salts and both increment.",
+    "claimed_root_cause": "vote() treats a non-transactional get of the seen key as permission to call castInDoc, then writes the flag and the week document with two unconditional puts. dailySalt adopts a caller-private UUID when the re-read is empty.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 319,
+        "scope": "fetch",
+        "description": "POST /vote is dispatched to vote()."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 158,
+        "scope": "dailySalt",
+        "description": "An empty salt key stores a new UUID and then keeps that UUID if the follow-up get is empty."
+      },
+      {
+        "kind": "propagation",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 280,
+        "scope": "vote",
+        "description": "An empty seen key is the only gate in front of castInDoc."
+      },
+      {
+        "kind": "sink",
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 286,
+        "scope": "vote",
+        "description": "The seen flag and the full week document are written with two unconditional puts."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 8,
+        "description": "The file header says two votes that land together can drop a count."
+      },
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 114,
+        "description": "castInDoc adds 1 and does not itself deduplicate."
+      },
+      {
+        "file": "cloudflare-api-worker/src/worker.js",
+        "line": 158,
+        "description": "The salt re-read falls back to the locally generated UUID."
+      },
+      {
+        "file": "cloudflare-api-worker/test/votes.test.mjs",
+        "line": 86,
+        "description": "The sequential test expects a second in-order vote to return already. It does not cover overlapping gets."
+      }
+    ],
+    "blockers": [
+      "The overlapping seen-key and dailySalt schedules were not executed. KV read-after-write behavior is not in the repository."
+    ],
+    "validation_plan": {
+      "local": "Drive POST /vote twice for one slug and one fixed cf-connecting-ip against a KV stub where both seen gets return empty, and again where both salt gets return empty. Record the stored week count and how many seen keys are written. Do not send the requests to a deployed host.",
+      "deployment": "No production vote is required. Owner KV metrics are optional corroboration of same-day jumps of more than one on a single slug."
+    }
   },
   {
     "fingerprint": "workers.client-ip-forwarded",

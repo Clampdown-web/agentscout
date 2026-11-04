@@ -15,7 +15,7 @@ Target code was not executed. `unshare --net` can drop outbound network, and `un
 
 Delegated hunter and verifier agents had not returned structured JSON when this ledger was closed. The parent re-read every cited file and line against this commit and did not promote any lead to `confirmed`. A separate coverage-critic agent did not return a pass, so this report does not claim a critic-accepted clean sweep. No prior ledger was carried forward.
 
-Counts: **confirmed 0**, **needs_validation 7**, **rejected 5**.
+Counts: **confirmed 0**, **needs_validation 12**, **rejected 5**.
 
 ## Security posture
 
@@ -38,6 +38,11 @@ These are source-traced leads with an exact blocker. They are not confirmed vuln
 | Image entrypoint hides Turnstile from the inner worker | `entry.js` `innerEnv` | `index.js` is not in the repo | Diff the inner Turnstile branches against `TURNSTILE_PATHS` |
 | Readiness and share routes are outside the image patch | `readiness.js` to `protect` | The server handler is not in the repo | Read the inner `/readiness` fetcher next to `ssrf.js` |
 | Review stars are concatenated into tool-page HTML | `reviews.js` review list | The review store is not in the repo | Read the owner-held `POST /review` serializer and record the JSON type of `stars` |
+| Roast filter allows NAT64 and 6to4 prefixes that embed a blocked IPv4 address | `ssrf.js` `blockedV6` | Workers egress translation is not in the repo | Call `validateUrlShape` on those literals with `fetch` stubbed |
+| One visitor can pass the vote dedup check twice | `worker.js` `dailySalt` and the seen-key puts | KV interleaving was not executed | Two overlapping `POST /vote` calls against a KV stub |
+| Site build can install any later Pillow release | `requirements.txt` `pillow>=13.0.0` | The wheel a build machine installs was not observed | Install from a fixture index and record the version |
+| MCP link checker treats 100.64.0.0/10 as public | `scripts/check_mcp_links.py` `public` | Operator routing for that range is not in the repo | Record `is_private` and `is_global` for `100.64.0.1`, then call `public()` on a fixture |
+| Adding a tool fetches homepage and icon URLs with no address check | `scripts/add_tools.py` `verify` and `getimg` | The fetch was not executed | Point an icon href at a local listener and record the connection |
 
 The source change that closes each traced gap, once the local check agrees:
 
@@ -48,6 +53,11 @@ The source change that closes each traced gap, once the local check agrees:
 - **Masked Turnstile flag.** Remove the `innerEnv` proxy until `index.js` is in the tree and its checks are compared with `protect()`.
 - **Passthrough routes.** Run `/readiness` through `validateUrlShape` and `isBlockedIp` before any server fetch. The handler has to be reviewed first.
 - **Review stars.** In `reviews.js` and `build_reviews.py`, put the star count through `esc` or the same numeric coercion `stars()` already uses before it is placed in HTML.
+- **Transition prefixes.** In `blockedV6`, decode the embedded IPv4 address for `64:ff9b::/96`, `64:ff9b:1::/48`, and `2002::/16`, and return `blockedV4` for that address.
+- **Vote dedup.** Write the seen key with a create-if-absent operation, and use only the salt value stored for that day.
+- **Pillow.** Pin an exact Pillow version next to the other exact pins in `requirements.txt`.
+- **Shared address space.** Reject an address in `public()` when `is_global` is false, including `100.64.0.0/10`.
+- **Tool ingest.** Run homepage and icon URLs through that same `public()` check before `requests.get`.
 
 Owner-observed checks are in `NEEDS-VALIDATION.md`. They do not ask anyone to send these inputs to production.
 
@@ -71,10 +81,10 @@ Positive patterns: origin allowlists on vote and guarded submit routes, constant
 
 | Status | Units |
 | --- | --- |
-| covered | 17 |
-| candidate | 9 |
+| covered | 13 |
+| candidate | 13 |
 | blocked | 0 |
 | deferred | 1 |
 | out of scope | 0 |
 
-27 units. Seven fingerprints are linked from the nine candidate units (`workers.client-ip-forwarded` is one cause on three workers). The inner image worker, the advertised MCP SSE handler (`cloudflare-mcp-worker/worker.js` `registryBody`), and the deployed Turnstile flag are absent from source. The SSE handler is the deferred unit. The other absences are the blockers above. Rejected claims, kept so a later run can see the refutation: `build.faq-unescaped-answer`, `crypto.safeeq-empty-equals-empty`, `mcp.wildcard-cors`, `ssrf.ipv6-mapped-private`, `vote.origin-header-as-auth`.
+27 units. Twelve fingerprints are linked from the thirteen candidate units (`workers.client-ip-forwarded` is one cause on three workers). Duplicate hunter fingerprints for that same client-address fallback, for `/generate`, for the Turnstile proxy, and for `/readiness` were not filed again. The inner image worker, the advertised MCP SSE handler (`cloudflare-mcp-worker/worker.js` `registryBody`), and the deployed Turnstile flag are absent from source. The SSE handler is the deferred unit. The other absences are the blockers above. Rejected claims, kept so a later run can see the refutation: `build.faq-unescaped-answer`, `crypto.safeeq-empty-equals-empty`, `mcp.wildcard-cors`, `ssrf.ipv6-mapped-private`, `vote.origin-header-as-auth`.

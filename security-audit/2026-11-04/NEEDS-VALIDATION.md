@@ -1,6 +1,6 @@
 # Needs validation
 
-Seven leads. None is a confirmed vulnerability. None has a severity. Do not send these inputs to the production hosts.
+Twelve leads. None is a confirmed vulnerability. None has a severity. Do not send these inputs to the production hosts.
 
 ## Roast fetch is not bound to the checked DNS answers
 
@@ -117,3 +117,83 @@ Local check: with the owner-held image-worker `index.js`, record whether `stars`
 Owner check: inspect the deployed review worker, or one existing review record, and record the JSON type of `stars`.
 
 Source change that closes the traced gap: in `reviews.js` and `build_reviews.py`, put the star count through `esc` or the numeric coercion `stars()` already uses before it is placed in HTML.
+
+## Roast filter allows transition prefixes that embed a blocked IPv4 address
+
+Fingerprint: `ssrf.isBlockedIp.transition-embed-ipv4`
+
+Claim: `blockedV6` returns false for NAT64 `64:ff9b::/96` and 6to4 `2002::/16`. The host URL parser keeps those hostnames. A full-form IPv4-mapped literal is a different case: it is compressed to `::ffff:` and rejected. `fetchPublic` calls `fetch` when the classifier returns no error.
+
+Trace: `worker.js:249` reads the roast URL, `ssrf.js:87` classifies a colon host, `ssrf.js:57` returns false for these prefixes, `worker.js:205` fetches the URL.
+
+Evidence: `ssrf.js:10` decodes only a leading `::ffff:` string. `ssrf.test.mjs:7` does not include these prefixes.
+
+Blocker: Workers egress translation for these prefixes is not in the repository.
+
+Local check: call `validateUrlShape` on `http://[64:ff9b::a00:1]/` and `http://[2002:a9fe:a9fe::]/` with `fetch` stubbed. Do not contact a deployed host.
+
+Owner check: read the account egress policy on an isolated worker. Do not point production at a link-local address.
+
+Source change that closes the traced gap: decode the embedded IPv4 address for `64:ff9b::/96`, `64:ff9b:1::/48`, and `2002::/16`, and return `blockedV4`.
+
+## One visitor can pass the vote dedup check twice
+
+Fingerprint: `votes.kv-check-then-act`
+
+Claim: the seen flag, the daily salt, and the week document are separate unconditional KV writes. Two overlapping calls can both see an empty seen key. `dailySalt` keeps a private UUID when the follow-up read is empty, so the seen hashes can differ and both calls can increment.
+
+Trace: `worker.js:319` dispatches `POST /vote`, `worker.js:158` mints the salt, `worker.js:280` reads the seen key, `worker.js:286` writes the flag and the document.
+
+Evidence: `worker.js:8` already says overlapping votes can drop a count. `votes.test.mjs:86` covers only an in-order second vote.
+
+Blocker: the overlapping schedules were not executed.
+
+Local check: two `POST /vote` calls for one slug and one address against a KV stub where both seen reads return empty. Record the stored count. Do not send them to a deployed host.
+
+Source change that closes the traced gap: create the seen key only if it is absent, and use only the salt value that was stored for that day.
+
+## Site build can install any later Pillow release
+
+Fingerprint: `requirements.pillow.unbounded-install`
+
+Claim: `requirements.txt` allows any Pillow at or above 13.0.0. The build notes run `pip install -U`. `build_site.py` imports that package through `build_logocheck` before it writes pages.
+
+Trace: `requirements.txt:4`, `cloudflare-image-worker-patches/README.md:97`, `build_logocheck.py:9`.
+
+Blocker: no workflow shows that the live build uses this install rather than a frozen environment.
+
+Local check: install from a fixture index and record the Pillow version. Do not use a public index.
+
+Source change that closes the traced gap: pin an exact Pillow version beside the other exact pins.
+
+## MCP link checker treats shared address space as public
+
+Fingerprint: `check_mcp_links.public.shared-address-space`
+
+Claim: `public()` rejects only the listed `ipaddress` flags. On this host, `100.64.0.1` sets none of them. The roast worker rejects `100.64.0.0/10`. This script then requests a URL `public()` accepted.
+
+Trace: `scripts/check_mcp_links.py:54` queues catalog URLs, line 21 classifies addresses, line 40 requests the URL.
+
+Evidence: `ssrf.js:39` rejects that IPv4 range.
+
+Blocker: whether the operator host routes `100.64.0.0/10` is not in the repository.
+
+Local check: record `is_private` and `is_global` for `100.64.0.1`, then call `public()` with a fixture resolver. Stop at the boolean.
+
+Source change that closes the traced gap: reject an address when `is_global` is false.
+
+## Adding a tool fetches homepage and icon URLs with no address check
+
+Fingerprint: `add_tools.verify.unguarded-fetch`
+
+Claim: `verify()` downloads a GitHub homepage when the website cell is empty, then `getimg()` downloads icon URLs from that page. Neither call classifies the address. Redirects stay enabled.
+
+Trace: `scripts/add_tools.py:84` takes the homepage, line 90 downloads it, line 100 collects icon hrefs, line 42 reads the icon body.
+
+Evidence: `scripts/check_mcp_links.py:13` already has `public()`, and `add_tools.py` does not call it.
+
+Blocker: the fetch was not executed.
+
+Local check: point an icon href at a listener on `127.0.0.1` and record whether it accepts a connection. Do not use a metadata address.
+
+Source change that closes the traced gap: run those URLs through `public()` before `requests.get`.
