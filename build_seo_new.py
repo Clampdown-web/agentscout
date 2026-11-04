@@ -100,10 +100,11 @@ def answer_blocks(t):
              ("How much does it cost to list or feature an AI agent on AgentScout?",'Community listing is <a href="submit.html#free-form">$0 free forever</a> (standard 3–5 day review queue). Makers who want same-day priority review or featured placement can choose from optional <a href="sponsor.html#packages">launch packages</a>: <a href="https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e" target="_blank" rel="noopener noreferrer">$15 Fast-Track + 7-Day Launch Boost</a>, <a href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">$49 30-Day Category Pin + Permanent /best/ &amp; /compare/ SEO/AEO Placement</a>, or <a href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">$99/wk Weekly Sitewide Sponsor + Newsletter Top Slot</a>.')]
         home_vid_html = (
             '<div style="margin:0 0 18px;border:1px solid rgba(56,189,248,.45);border-radius:14px;overflow:hidden;background:#080a12;box-shadow:0 0 32px rgba(14,165,233,.2)">'
-            '<video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-home-terminal-poster.png" width="1200" height="640" style="display:block;width:100%;height:auto">'
+            '<video loop muted playsinline preload="none" loading="lazy" data-poster="assets/animations/agentscout-home-terminal-poster.png" width="1200" height="640" style="display:block;width:100%;height:auto">'
             '<source src="assets/animations/agentscout-home-terminal.mp4" type="video/mp4">'
             f'<img src="assets/animations/agentscout-home-terminal-poster.png" alt="AgentScout Live Verification Terminal — 6 AI agents verifying {n:,}+ AI agent tools and {nmcp}+ MCP servers daily" width="1200" height="640" loading="lazy">'
             '</video>'
+            '<script>(function(){var v=document.currentScript.previousElementSibling;if(!v||v.tagName!=="VIDEO")return;function arm(){if(v.dataset.armed)return;v.dataset.armed="1";if(v.dataset.poster&&!v.getAttribute("poster"))v.poster=v.dataset.poster;v.autoplay=true;v.preload="auto";var p=v.play();if(p&&p.catch)p.catch(function(){});}if(!("IntersectionObserver" in window)){arm();return}var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){io.disconnect();arm()}},{rootMargin:"240px 0px"});io.observe(v)})();</script>'
             '<div style="padding:10px 14px;font-size:13px;color:#cbd5e1;border-top:1px solid rgba(56,189,248,.22);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">'
             '<span><strong style="color:#38bdf8">⚡ AgentScout Terminal v2.6-live:</strong> 6 autonomous agents scanning GitHub &amp; MCP registries, filtering dead links, benchmarking velocity &amp; verifying JSON-RPC endpoints daily.</span>'
             '<a href="mcp/connect.html" style="color:#34d399;font-weight:700;text-decoration:none">Connect MCP server →</a>'
@@ -206,7 +207,7 @@ def sync_animations(t=None):
             continue
         txt = open(p, encoding="utf-8").read()
         ntxt = re.sub(
-            r'((?:src|poster)="(?:\.\./)?assets/animations/[a-z0-9-]+\.(?:mp4|png))(?:\?v=[a-zA-Z0-9_-]+)?(")',
+            r'((?:src|poster|data-poster)="(?:\.\./)?assets/animations/[a-z0-9-]+\.(?:mp4|png))(?:\?v=[a-zA-Z0-9_-]+)?(")',
             lambda m: f"{m.group(1)}?v={ver}{m.group(2)}",
             txt
         )

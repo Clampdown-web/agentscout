@@ -467,5 +467,17 @@ def _quality_finish():
     build_tasks.submit_page(t)
     import build_quality
     build_quality.inject(t)
+    # Those two generators run after sitewide and write the pre-bump script tags.
+    # Put the shared scripts and the current cache-bust back before the build exits.
+    for f in ("sponsor.html", "submit.html"):
+        s = open(f, encoding="utf-8").read()
+        d = "../" * f.count("/")
+        s = build_tasks.ensure_shared_scripts(f, s, d)
+        s = re.sub(
+            r"(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+",
+            lambda mm: mm.group(1) + "?v=" + build_tasks.ASSET_V,
+            s,
+        )
+        open(f, "w", encoding="utf-8").write(s)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

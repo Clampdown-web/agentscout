@@ -17,7 +17,7 @@
   // ---- styles (theme variables from styles.css) ----
   var css='.as-ph{border:1px dashed var(--line);border-radius:10px;padding:14px;text-align:left;font-size:14px;color:var(--muted);max-width:460px;margin:0 auto}.as-ph p{margin:0 0 10px}html:not(.as-noembed) .as-ph{display:none}html.as-noembed form[action*="beehiiv.com"]{display:none!important}'+
   '.as-bar{position:fixed;z-index:999;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:calc(100% - 24px);max-width:760px;box-sizing:border-box;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.14);padding:10px 14px;font-size:13px;line-height:1.45;display:flex;align-items:center;gap:12px}'+
-  '.as-bar p{margin:0;color:var(--muted);flex:1;min-width:0}.as-bar p b{color:var(--text)}.as-bar .as-row{display:flex;flex-wrap:nowrap;gap:6px;flex:none}.as-bar .btn{height:44px;padding:0 12px;font-size:13px}.as-bar a{color:var(--accent)}'+
+  '.as-bar p{margin:0;color:var(--muted);flex:1;min-width:0}.as-bar p b{color:var(--text)}.as-bar .as-row{display:flex;flex-wrap:nowrap;gap:6px;flex:none}.as-bar .btn{height:44px;padding:0 12px;font-size:13px}.as-bar a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}'+
   '.as-note{left:16px;transform:none;width:auto;max-width:340px;padding:0 44px 0 12px;min-height:44px;display:flex;align-items:center;font-size:12.5px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.12)}.as-note .as-x{position:absolute;top:50%;right:4px;transform:translateY(-50%);width:44px;height:44px;border:0;background:none;color:var(--muted);font-size:18px;line-height:1;cursor:pointer;border-radius:50%}'+
   'html.as-pad body{padding-bottom:var(--as-pad,0px)}html.as-pad .scrollbtns{bottom:calc(var(--as-pad,0px) + 12px + env(safe-area-inset-bottom))}'+
   '.as-link{background:none;border:0;padding:0;min-height:44px;display:inline-flex;align-items:center;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline}'+
@@ -36,10 +36,21 @@
   function closeBar(){if(ro){ro.disconnect();ro=null}window.removeEventListener("resize",pad);if(bar){bar.remove();bar=null}pad()}
   var PRIV=relRoot()+"privacy.html";
   function relRoot(){var s=document.querySelector('script[src*="consent.js"]');return s?s.getAttribute("src").replace(/consent\.js.*$/,""):""}
-  function showBanner(){closeBar();
-    bar=el('<div class="as-bar" role="region" aria-labelledby="as-bt"><p><b id="as-bt">Privacy choices:</b> we\'d like to measure visits anonymously (our own cookie-free counter plus Google Analytics, which sets its own cookies; no ads) and load Beehiiv\'s newsletter sign-up, which may set its own cookies. Nothing optional runs until you choose. <a href="'+PRIV+'">Privacy policy</a></p><div class="as-row"><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button><button type="button" class="btn" data-a="custom">Customize</button></div></div>');
-    bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="all")set(1,1);else if(a==="none")set(0,0);else if(a==="custom")openPicker()});
-    mount()}
+  function wireBanner(node){
+    bar=node;
+    if(!node.isConnected) document.body.appendChild(node);
+    if(node.dataset.asWired){pad();return}
+    node.dataset.asWired="1";
+    node.addEventListener("click",function(e){var t=e.target.closest("[data-a]");if(!t)return;var a=t.getAttribute("data-a");if(a==="all")set(1,1);else if(a==="none")set(0,0);else if(a==="custom")openPicker()});
+    pad();
+    if(window.ResizeObserver){if(ro)ro.disconnect();ro=new ResizeObserver(pad);ro.observe(node)}else window.addEventListener("resize",pad);
+  }
+  function showBanner(){
+    var ex=document.querySelector(".as-bar:not(.as-note)");
+    if(ex){wireBanner(ex);return}
+    closeBar();
+    wireBanner(el('<div class="as-bar" role="region" aria-labelledby="as-bt"><p><b id="as-bt">Privacy choices:</b> we\'d like to measure visits anonymously (our own cookie-free counter plus Google Analytics, which sets its own cookies; no ads) and load Beehiiv\'s newsletter sign-up, which may set its own cookies. Nothing optional runs until you choose. <a href="'+PRIV+'">Privacy policy</a></p><div class="as-row"><button type="button" class="btn" data-a="all">Accept all</button><button type="button" class="btn" data-a="none">Reject all</button><button type="button" class="btn" data-a="custom">Customize</button></div></div>'));
+  }
   function showNotice(){closeBar();
     bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>Anonymous visit stats (incl. Google Analytics). <button type="button" class="as-link" data-a="opt">Opt out</button> · <button type="button" class="as-link" data-a="custom">Privacy choices</button></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
     bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="ok")set(S.analytics,S.embeds);else if(a==="opt")set(0,S.embeds);else if(a==="custom")openPicker()});
@@ -71,7 +82,7 @@
     if(strict){S.analytics=false;S.embeds=false;emit();showBanner()}else{S.analytics=true;S.embeds=true;emit();showNotice()}}
   var saved=load();
   function init(){boot();
-    if(saved){S.decided=true;S.strict=!!saved.strict;S.analytics=!!saved.analytics;S.embeds=!!saved.embeds;S.ready=true;emit();return}
+    if(saved){var gone=document.querySelector(".as-bar");if(gone)gone.remove();document.documentElement.classList.remove("as-pad");S.decided=true;S.strict=!!saved.strict;S.analytics=!!saved.analytics;S.embeds=!!saved.embeds;S.ready=true;emit();return}
     var g=null;try{g=JSON.parse(sessionStorage.getItem("as_geo")||"null")}catch(e){}
     if(g&&typeof g.strict==="boolean")return start(g.strict);
     var done=false,timer=setTimeout(function(){if(!done){done=true;start(true)}},3000);
