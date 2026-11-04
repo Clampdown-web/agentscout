@@ -44,6 +44,10 @@ def main() -> int:
     bad.extend(pill)
     if not pill:
         passes.append("header nav has one free-tools.html link and no duplicate nav pills")
+    redirect_nav = build_seo_new.redirect_chrome_problems()
+    bad.extend(redirect_nav)
+    if not redirect_nav:
+        passes.append("redirect pages that have a nav match index.html")
     if not follower:
         passes.append("follower rows are fetched for their own day when the sprint tracker is present")
     scroll = _scroll_button_problems()
