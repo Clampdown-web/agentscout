@@ -62,6 +62,8 @@ const existing = {
 export default protect(existing);
 ```
 
+   Use `entry.js` from this folder as the worker entry (`main` in the Wrangler config) instead of the bare wrapper above. It is the version deployed on agentscout-image. `protect()` already verifies the single-use Turnstile token on `POST /submit` and `POST /generate`, so `entry.js` hides `TURNSTILE_ENABLED` (reads as `"false"`) from the inner handler. Without it, the old `/generate` handler re-verifies the already-spent token and rejects real requests. It also re-exports `categoryOk`, `parseCategories`, `ReadyLimitDO` and `ReviewsDO` from `index.js` so the Durable Object bindings keep working.
+
 3. Add the `ratelimits` array from `wrangler.ratelimits.jsonc` to that worker's Wrangler config (the file you actually deploy). Keep the existing worker name `agentscout-image`. Do not attach this worker config to `votes.agentscouthq.com` or `mcp.agentscouthq.com`.
 4. Set the plain-text var in that same Wrangler config. **`TURNSTILE_ENABLED` must be `true` at deploy.** If it is missing or any other value, `/submit` and `/generate` skip siteverify.
 
