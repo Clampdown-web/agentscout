@@ -241,12 +241,6 @@ function acceptedAddresses(addresses) {
   return out;
 }
 
-function pinnedUrl(url, address) {
-  const next = new URL(url.toString());
-  next.hostname = String(address).trim().replace(/^\[|\]$/g, "").split("%")[0];
-  return next;
-}
-
 function reportedPeer(response) {
   if (!response || typeof response !== "object") return "";
   if (typeof response.peerAddress === "string" && response.peerAddress.trim()) return response.peerAddress.trim();
@@ -265,14 +259,14 @@ async function fetchPublic(target, depth = 0) {
   const dns = await resolveAndCheck(shape.url.hostname);
   if (dns.error) return dns;
   const allowed = acceptedAddresses(dns.addresses);
-  if (!allowed.length) return { error: "That host resolves to a blocked address." };
-  const dest = pinnedUrl(shape.url, allowed[0]);
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), FETCH_MS);
   let response;
   try {
-    // Connect to an address resolveAndCheck accepted. There is no hostname fallback.
-    response = await fetch(dest.toString(), {
+    // Fetch the hostname. Workers cannot dial an arbitrary checked address and
+    // still validate TLS. Public egress does not route to private or link-local
+    // ranges. redirect:manual so every hop runs this check again.
+    response = await fetch(shape.url.toString(), {
       redirect: "manual",
       signal: ctrl.signal,
       headers: { "user-agent": "AgentScoutRoast/1.0 (+https://agentscouthq.com/free-tools/roast-my-ai-tool-listing.html)" },
