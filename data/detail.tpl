@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="apple-touch-icon" href="../logo-square.png"><link rel="manifest" href="/manifest.json">
 <meta property="og:site_name" content="AgentScout"><meta property="og:image" content="https://agentscouthq.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@AgentScoutHQ"><meta name="twitter:creator" content="@AgentScoutHQ"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com/", "logo": "https://agentscouthq.com/logo-square.png", "sameAs": ["https://x.com/clampdown19", "https://x.com/AgentScoutHQ", "https://agentscout.beehiiv.com/", "https://github.com/clampdown19/agentscout", "https://github.com/Clampdown-web/agentscout"], "contactPoint": {"@type": "ContactPoint", "contactType": "submissions and support", "email": "support@agentscouthq.com"}}</script><meta name="theme-color" content="#0E1015">
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../styles.css?v=202610310226">
+<link rel="stylesheet" href="../styles.css?v=202611042330">
 <link rel="alternate" type="application/rss+xml" title="AgentScout" href="https://agentscouthq.com/feed.xml">
 <title>{{NAME}}: what it does, pricing and alternatives · AgentScout</title>
 <meta name="description" content="{{META}}">
@@ -20,6 +20,7 @@
   <div class="links"><a href="../categories/index.html">Categories</a><a href="../compare/index.html">Compare</a><a href="../best/index.html">Best</a><a href="../for/index.html">For you</a><a href="../s/index.html">Popular lists</a><a href="../news.html">News</a><a class="navgen" href="../generate.html">✨ Image Gen</a><a href="https://agentscout.beehiiv.com/" data-nl>Newsletter</a><a href="../quiz.html">Quiz</a><a class="hide" href="../saved.html">♥ Saved (<span data-saved-count>0</span>)</a><a class="btn primary" href="https://github.com/Clampdown-web/agentscout/issues/new?labels=submission&amp;title=Tool%20submission%3A%20" target="_blank" rel="noopener noreferrer">Submit a tool</a></div>
 </div></nav>
 <main class="wrap">
+  <a class="bsbanner" data-pagefind-ignore href="https://agentscouthq.com/bot-store/?utm_source=toolpage&utm_medium=banner&utm_campaign=botstore">Ready-made AI bots from $39 — Bot Store →</a>
   <div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../categories/{{CATSLUG}}.html">{{CAT}}</a> / {{NAME}}</div>
   <section style="padding-top:20px"><div class="detail">
     <div>

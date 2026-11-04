@@ -443,6 +443,8 @@ def patch_tool_badges(tools):
                    '<p style="margin:8px 0 0"><a class="btn" href="../bot-store/">Browse the Bot Store</a></p></aside>')
             s = s.replace(block, cta + block, 1)
         s = s.replace("Upvotes and saves stay on this device.", "Saves stay on this device. Upvotes are one per visitor per day.")
+        import tool_banner
+        s = tool_banner.ensure(s)  # keep the Bot Store strip when badge HTML is rewritten
         open(path, "w", encoding="utf-8").write(s)
         n += 1
     print("badge boxes", n)
