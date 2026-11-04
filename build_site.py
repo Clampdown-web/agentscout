@@ -266,6 +266,8 @@ for x in t:
     elif _pt=="paid": _ab["isAccessibleForFree"]=False
     if "offers" not in _ab and _pt=="free": _ab["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":x.get("pricing_detail") or x["pricing"]}
     out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
+    import tool_banner
+    out=tool_banner.ensure(out)  # Bot Store strip from data/detail.tpl, on every new tool page
     open(f"tools/{x['slug']}.html","w").write(out)
     if x["slug"]=="lovable":
         import build_lovable; build_lovable.run()  # packs section, re-applied after later rewrites
