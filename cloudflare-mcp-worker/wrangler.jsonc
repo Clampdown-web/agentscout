@@ -11,5 +11,19 @@
       "enabled": true,
       "head_sampling_rate": 0.05
     }
-  }
+  },
+  // Per-IP limits in worker.js. namespace_id must stay unique in this Cloudflare account.
+  // Counters are per location and shared by every isolate there, unlike the old in-memory Map.
+  "ratelimits": [
+    {
+      "name": "MCP_BURST",
+      "namespace_id": "481015",
+      "simple": { "limit": 15, "period": 10 }
+    },
+    {
+      "name": "MCP_MINUTE",
+      "namespace_id": "481060",
+      "simple": { "limit": 60, "period": 60 }
+    }
+  ]
 }

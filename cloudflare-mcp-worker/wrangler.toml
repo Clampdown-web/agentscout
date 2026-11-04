@@ -4,3 +4,21 @@ compatibility_date = "2026-10-28"
 
 [vars]
 REGISTRY_ID = "com.agentscouthq/directory"
+
+# Same bindings as wrangler.jsonc. namespace_id must be unique in the Cloudflare account.
+# 481015 is 15 requests / 10 seconds. 481060 is 60 requests / 60 seconds. Keyed by IP in worker.js.
+[[ratelimits]]
+name = "MCP_BURST"
+namespace_id = "481015"
+
+  [ratelimits.simple]
+  limit = 15
+  period = 10
+
+[[ratelimits]]
+name = "MCP_MINUTE"
+namespace_id = "481060"
+
+  [ratelimits.simple]
+  limit = 60
+  period = 60
