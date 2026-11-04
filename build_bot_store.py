@@ -87,7 +87,7 @@ def pages(t):
     import re
     n_bt = __import__("build_bot_templates").live_bot_template_count()
     canon = f"{B}bot-store/"
-    title = clip_title("AgentScout Bot Store — Pre-Trained Grok Bots ($39–$69, $149)")
+    title = clip_title("AgentScout Bot Store — Pre-Trained AI Bots ($39–$69, $149)")
     desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each or volume tiers $119, $199, $299, and $349.", 160)
 
     body = (
@@ -95,7 +95,7 @@ def pages(t):
         f'<div class="crumb"><a href="../index.html">AgentScout</a> / Bot Store</div>'
         f'<section class="bs-hero">'
         f'<span class="bs-compat-pill">⚡ Built Natively for Grok Bot · Also Compatible with Claude Code, Cursor &amp; OpenAI Codex</span>'
-        f'<h1>AgentScout Bot Store: Pre-Trained Grok Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h1>'
+        f'<h1>AgentScout Bot Store: Pre-Trained AI Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h1>'
         f'<p>General-purpose bots for running your own SaaS or online business. Set <code>{{{{YOUR_COMPANY}}}}</code> and <code>{{{{YOUR_DOMAIN}}}}</code>, then use them for uptime and inbox monitoring, technical SEO and Core Web Vitals auditing, competitor and launch tracking, and executive team coordination. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex)</b>: scheduled routines, a shared <code>/workspace/handoff/</code> folder, and a 4-bot <code>Work Chat</code> room. Every ZIP ships <code>SYSTEM.md</code> role prompts, <code>SKILL.md</code> playbooks, standalone Python 3 scripts, <code>mcp.json</code>, and <code>README-QUICKSTART.md</code>.</p>'
         f'<div class="bs-hero-badges">'
         f'<a class="bs-badge" href="#bot-packages" style="border-color:#a3e635;color:#ecfccb">🟢 $39 / 🟡 $59 / 🟠 $59 / 🔴 $69 Individual Bots</a>'
@@ -205,7 +205,7 @@ def pages(t):
         # Expansion card: Request a Custom Bot / Next Bot Drop
         f'<article id="custom-bot-drop" class="bs-card neon-custom" data-bs-cat="all ops seo intel exec bundle" style="grid-column:1 / -1">'
         f'<div class="bs-card-top"><span class="bs-price" style="color:#d8b4fe;font-size:20px">🚀 Next Bot Drop / Custom Bot Build</span><span class="bs-tag" style="background:rgba(168,85,247,.22);border:1.5px solid #c084fc;color:#f3e8ff">New Bots Added Regularly</span></div>'
-        f'<h2>Need a Custom Pre-Trained Grok Bot or Specialized Multi-Agent Team?</h2>'
+        f'<h2>Need a Custom Pre-Trained AI Bot or Specialized Multi-Agent Team?</h2>'
         f'<p>We are expanding the AgentScout Bot Store with new domain-specific Grok Bots (GitHub PR Reviewer Bot, Founder Outbound CRM Bot, Beehiiv Newsletter Editor Bot, and Security Watchtower Bot). Want early access to the next drop or a custom-trained bot wired for your stack?</p>'
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="mailto:support@agentscouthq.com?subject=Custom%20Bot%20Request%20%2F%20Next%20Bot%20Drop" style="background:rgba(168,85,247,.22);border:1.5px solid #c084fc;color:#f3e8ff;flex:0 1 auto">Request a Custom Bot (support@agentscouthq.com) →</a>'
@@ -245,7 +245,7 @@ def pages(t):
             },
             {
                 "@type": "VideoObject",
-                "name": "AgentScout Bot Store: 4 Pre-Trained Grok Bots ($39/$59/$59/$69) & $149 4-Bot Team Bundle",
+                "name": "AgentScout Bot Store: 4 Pre-Trained AI Bots ($39/$59/$59/$69) & $149 4-Bot Team Bundle",
                 "description": "60fps showcase of the 4 downloadable pre-trained AgentScout bots and the $149 Full 4-Bot Company-in-a-Box Team Bundle. Built for Grok Bot and compatible with Claude Code, Cursor, and OpenAI Codex.",
                 "thumbnailUrl": B + "assets/animations/agentscout-trained-bots-ad-poster.png",
                 "contentUrl": B + "assets/animations/agentscout-trained-bots-ad.mp4",

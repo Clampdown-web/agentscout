@@ -3,13 +3,36 @@
  * The worker source is not in this repo. Wrap its export with protect().
  *
  * Guards /submit, /review, and /reviews (the review form posts to /review).
- * Other routes (/generate, /track, /readiness, /geo, /share, /stats) are unchanged.
+ * /track, /readiness, /geo, and /share are otherwise unchanged.
+ *
+ * When env.TURNSTILE_ENABLED === "true", POST /submit and POST /generate
+ * are siteverify'd (secret, token, remoteip = CF-Connecting-IP) before the
+ * inner handler runs. Failure or a hostname outside the site allowlist is 403.
+ * Deploy must set that plain-text var to true or the check stays off.
+ *
+ * X-Stats-Key on /reviews/pending, /reviews/admin, /stats, and /trending/stats
+ * is compared with safeEq (SHA-256, then a constant-time compare) before the
+ * inner handler runs. A mismatch is 403.
  *
  * Bindings (Workers Rate Limiting, per CF-Connecting-IP):
  *   IMAGE_WRITE  10 requests / 60s   POST and other non-read methods
  *   IMAGE_READ  120 requests / 60s   GET and HEAD
  * A missing binding fails closed with 503. There is no User-Agent bypass.
  */
+const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const ALLOWED_HOSTS = new Set([
+  "agentscouthq.com",
+  "www.agentscouthq.com",
+]);
+const STATS_KEY_PATHS = new Set([
+  "/reviews/pending",
+  "/reviews/admin",
+  "/stats",
+  "/trending/stats",
+]);
+const TURNSTILE_PATHS = new Set(["/submit", "/generate"]);
+const MAX_TURNSTILE_BODY = 100_000;
+const MAX_TURNSTILE_TOKEN = 2048;
 const ALLOWED_ORIGINS = new Set([
   "https://agentscouthq.com",
   "https://www.agentscouthq.com",
@@ -31,11 +54,51 @@ export function postAllowed(request) {
   }
 }
 
+export function normalizePath(pathname) {
+  return String(pathname || "/").replace(/\/+$/, "") || "/";
+}
+
 export function guardedKind(pathname) {
-  const path = String(pathname || "/").replace(/\/+$/, "") || "/";
+  const path = normalizePath(pathname);
   if (path === "/submit") return "submit";
   if (path === "/review" || path === "/reviews" || path.startsWith("/reviews/")) return "reviews";
   return "";
+}
+
+export function statsKeyPath(pathname) {
+  return STATS_KEY_PATHS.has(normalizePath(pathname));
+}
+
+export function turnstileEnabled(env) {
+  return String((env && env.TURNSTILE_ENABLED) || "") === "true";
+}
+
+/**
+ * Constant-time secret compare. Both sides are hashed to 32 bytes first so a
+ * length mismatch cannot bail out early. Workers use crypto.subtle.timingSafeEqual;
+ * other runtimes fall back to a full-length XOR of those hashes.
+ */
+export async function safeEq(a, b) {
+  if (typeof a !== "string" || typeof b !== "string") return false;
+  const encoder = new TextEncoder();
+  const [providedHash, expectedHash] = await Promise.all([
+    crypto.subtle.digest("SHA-256", encoder.encode(a)),
+    crypto.subtle.digest("SHA-256", encoder.encode(b)),
+  ]);
+  const left = new Uint8Array(providedHash);
+  const right = new Uint8Array(expectedHash);
+  const timingSafeEqual = crypto.subtle.timingSafeEqual;
+  if (typeof timingSafeEqual === "function") {
+    try {
+      return timingSafeEqual.call(crypto.subtle, left, right);
+    } catch {
+      /* Lengths are already fixed by SHA-256. A runtime that rejects the
+         BufferSource still compares the same 32 bytes below. */
+    }
+  }
+  let diff = 0;
+  for (let i = 0; i < left.length; i++) diff |= left[i] ^ right[i];
+  return diff === 0;
 }
 
 export function corsHeaders(request) {
@@ -77,6 +140,66 @@ async function consume(limiter, ip) {
   return result && result.success === false ? "limited" : "ok";
 }
 
+async function rejectStatsKey(request, env) {
+  if (!statsKeyPath(new URL(request.url).pathname)) return null;
+  const provided = request.headers.get("X-Stats-Key");
+  const expected = env && env.STATS_KEY;
+  if (!(await safeEq(provided, expected))) return json(request, { error: "Forbidden." }, 403);
+  return null;
+}
+
+async function turnstileToken(request) {
+  const length = Number(request.headers.get("content-length") || "0");
+  if (Number.isFinite(length) && length > MAX_TURNSTILE_BODY) return "";
+  let text = "";
+  try {
+    text = await request.clone().text();
+  } catch {
+    return "";
+  }
+  if (text.length > MAX_TURNSTILE_BODY) return "";
+  try {
+    const data = JSON.parse(text);
+    const token = data && typeof data === "object" ? data.turnstileToken : "";
+    return typeof token === "string" ? token : "";
+  } catch {
+    return "";
+  }
+}
+
+async function rejectTurnstile(request, env) {
+  if (!turnstileEnabled(env)) return null;
+  const url = new URL(request.url);
+  if (request.method !== "POST" || !TURNSTILE_PATHS.has(normalizePath(url.pathname))) return null;
+  const secret = env && env.TURNSTILE_SECRET;
+  const token = await turnstileToken(request);
+  if (typeof secret !== "string" || !secret || !token || token.length > MAX_TURNSTILE_TOKEN) {
+    return json(request, { error: "Bot check failed." }, 403);
+  }
+  let data = null;
+  try {
+    const response = await fetch(SITEVERIFY_URL, {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret,
+        response: token,
+        remoteip: clientIp(request),
+      }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!response.ok) return json(request, { error: "Bot check failed." }, 403);
+    data = await response.json();
+  } catch {
+    return json(request, { error: "Bot check failed." }, 403);
+  }
+  const host = String((data && data.hostname) || "").toLowerCase();
+  if (!data || data.success !== true || !ALLOWED_HOSTS.has(host)) {
+    return json(request, { error: "Bot check failed." }, 403);
+  }
+  return null;
+}
+
 export async function gate(request, env) {
   if (!guardedKind(new URL(request.url).pathname)) return null;
   if (request.method === "OPTIONS") {
@@ -115,8 +238,12 @@ export function protect(worker) {
   const inner = worker.fetch.bind(worker);
   return {
     async fetch(request, env, ctx) {
+      const statsBlocked = await rejectStatsKey(request, env);
+      if (statsBlocked) return statsBlocked;
       const blocked = await gate(request, env);
       if (blocked) return blocked;
+      const turnstileBlocked = await rejectTurnstile(request, env);
+      if (turnstileBlocked) return turnstileBlocked;
       const response = await inner(request, env, ctx);
       if (!guardedKind(new URL(request.url).pathname)) return response;
       return applyCors(request, response);
