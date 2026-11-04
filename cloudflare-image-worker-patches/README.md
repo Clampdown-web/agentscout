@@ -17,7 +17,7 @@ Same origin check as `cloudflare-api-worker/src/worker.js` (`allowOrigin` / `vot
 - `OPTIONS` is not counted. A preflight from a foreign origin is 403.
 - If either binding is missing, a guarded request returns **503**. It does not fall open.
 
-The review form in `reviews.js` posts to **`/review`**, not `/reviews`. Both are guarded. `GET /reviews` and `GET /reviews/all` (used by tool pages and category sort) are the read path. `/track`, `/readiness`, `/geo`, and `/share` are passed through untouched.
+The review form in `reviews.js` posts to **`/review`**, not `/reviews`. Both are guarded. `GET /reviews` and `GET /reviews/all` (used by tool pages and category sort) are the read path. `POST /generate` uses the same origin allowlist and `IMAGE_WRITE` limit as `POST /submit`, including when `TURNSTILE_ENABLED` is unset. `GET /generate`, `/track`, `/geo`, and `/share` are passed through. `GET /readiness` is forwarded only after the `url` query passes `validateUrlShape` and `isBlockedIp` from `cloudflare-api-worker/src/ssrf.js`.
 
 `POST /submit` and `POST /generate` are checked with Turnstile only when the plain-text var **`TURNSTILE_ENABLED` is the string `true`**. That var must be set at deploy or the new widget does nothing on the server. The check runs after the origin and rate-limit gate and before the existing handler:
 
@@ -62,7 +62,7 @@ const existing = {
 export default protect(existing);
 ```
 
-   Use `entry.js` from this folder as the worker entry (`main` in the Wrangler config) instead of the bare wrapper above. It is the version deployed on agentscout-image. `protect()` already verifies the single-use Turnstile token on `POST /submit` and `POST /generate`, so `entry.js` hides `TURNSTILE_ENABLED` (reads as `"false"`) from the inner handler. Without it, the old `/generate` handler re-verifies the already-spent token and rejects real requests. It also re-exports `categoryOk`, `parseCategories`, `ReadyLimitDO` and `ReviewsDO` from `index.js` so the Durable Object bindings keep working.
+   Use `entry.js` from this folder as the worker entry (`main` in the Wrangler config) instead of the bare wrapper above. It is the version deployed on agentscout-image. `protect()` already verifies the single-use Turnstile token on `POST /submit` and `POST /generate`, so `entry.js` hides `TURNSTILE_ENABLED` (reads as `"false"`) from the inner handler on those two POSTs only. Other paths still see the real flag. Removing the mask entirely makes the old `/generate` handler re-verify the already-spent token and reject real requests. Copy `cloudflare-api-worker/src/ssrf.js` into the image worker and point the import in `security.js` at that copy; the in-repo import is the monorepo path. `entry.js` also re-exports `categoryOk`, `parseCategories`, `ReadyLimitDO` and `ReviewsDO` from `index.js` so the Durable Object bindings keep working.
 
 3. Add the `ratelimits` array from `wrangler.ratelimits.jsonc` to that worker's Wrangler config (the file you actually deploy). Keep the existing worker name `agentscout-image`. Do not attach this worker config to `votes.agentscouthq.com` or `mcp.agentscouthq.com`.
 4. Set the plain-text var in that same Wrangler config. **`TURNSTILE_ENABLED` must be `true` at deploy.** If it is missing or any other value, `/submit` and `/generate` skip siteverify.
@@ -87,11 +87,11 @@ curl -s -o /dev/null -w '%{http_code}\n' -X POST https://api.agentscouthq.com/su
   -H 'Origin: https://evil.example' -H 'Content-Type: text/plain' --data '{}'
 ```
 
-That must be `403`. The same POST with `-H 'Origin: https://agentscouthq.com'` and `TURNSTILE_ENABLED=true` must also be `403` until the body includes a token siteverify accepts for `agentscouthq.com` or `www.agentscouthq.com`. Eleven rapid POSTs from one IP must include a `429`. `GET /reviews/all` with `-H 'Origin: https://agentscouthq.com'` must answer `access-control-allow-origin: https://agentscouthq.com`. The same GET with a foreign `Origin` must not reflect that origin. With the var unset, `POST /generate` behaves as it does today. With `TURNSTILE_ENABLED=true`, `POST /generate` without a valid token is `403` and does not run image generation. `GET /stats` without `X-Stats-Key` is `403`.
+That must be `403`. The same POST with `-H 'Origin: https://agentscouthq.com'` and `TURNSTILE_ENABLED=true` must also be `403` until the body includes a token siteverify accepts for `agentscouthq.com` or `www.agentscouthq.com`. Eleven rapid POSTs from one IP must include a `429`. `GET /reviews/all` with `-H 'Origin: https://agentscouthq.com'` must answer `access-control-allow-origin: https://agentscouthq.com`. The same GET with a foreign `Origin` must not reflect that origin. With the var unset, a foreign `POST /generate` is still `403` and an allowed `POST /generate` still counts against `IMAGE_WRITE`. With `TURNSTILE_ENABLED=true`, `POST /generate` without a valid token is `403` and does not run image generation. `GET /readiness?url=http://127.0.0.1/` is `400` and does not reach the inner fetcher. `GET /stats` without `X-Stats-Key` is `403`.
 
 Publish the Pages site (this repo, after merge) before turning the var on. The submit and generate pages have to be live so they send `turnstileToken`. Turning the var on first rejects every submission and generation.
 
-On the machine that builds the site, install the pinned Python deps so Pillow is at least 13.0.0:
+On the machine that builds the site, install the pinned Python deps so Pillow is exactly 13.0.0:
 
 ```sh
 python3 -m pip install -U -r requirements.txt

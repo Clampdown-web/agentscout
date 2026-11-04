@@ -3,12 +3,16 @@
  * The worker source is not in this repo. Wrap its export with protect().
  *
  * Guards /submit, /review, and /reviews (the review form posts to /review).
- * /track, /readiness, /geo, and /share are otherwise unchanged.
+ * POST /generate gets the same origin allowlist and IMAGE_WRITE limit as
+ * POST /submit, including when TURNSTILE_ENABLED is unset. GET /generate,
+ * /track, /geo, and /share are otherwise unchanged. GET /readiness is
+ * forwarded only after its url query passes validateUrlShape and isBlockedIp.
  *
  * When env.TURNSTILE_ENABLED === "true", POST /submit and POST /generate
  * are siteverify'd (secret, token, remoteip = CF-Connecting-IP) before the
  * inner handler runs. Failure or a hostname outside the site allowlist is 403.
- * Deploy must set that plain-text var to true or the check stays off.
+ * A missing CF-Connecting-IP fails closed. Deploy must set that plain-text
+ * var to true or the check stays off.
  *
  * X-Stats-Key on /reviews/pending, /reviews/admin, /stats, and /trending/stats
  * is compared with safeEq (SHA-256, then a constant-time compare) before the
@@ -19,6 +23,8 @@
  *   IMAGE_READ  120 requests / 60s   GET and HEAD
  * A missing binding fails closed with 503. There is no User-Agent bypass.
  */
+import { isBlockedIp, isIpLiteral, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
+
 const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const ALLOWED_HOSTS = new Set([
   "agentscouthq.com",
@@ -61,8 +67,15 @@ export function normalizePath(pathname) {
 export function guardedKind(pathname) {
   const path = normalizePath(pathname);
   if (path === "/submit") return "submit";
+  if (path === "/generate") return "generate";
   if (path === "/review" || path === "/reviews" || path.startsWith("/reviews/")) return "reviews";
   return "";
+}
+
+function requestGuarded(pathname, method) {
+  const kind = guardedKind(pathname);
+  if (kind === "generate" && method !== "POST" && method !== "OPTIONS") return "";
+  return kind;
 }
 
 export function statsKeyPath(pathname) {
@@ -79,7 +92,7 @@ export function turnstileEnabled(env) {
  * other runtimes fall back to a full-length XOR of those hashes.
  */
 export async function safeEq(a, b) {
-  if (typeof a !== "string" || typeof b !== "string") return false;
+  if (typeof a !== "string" || typeof b !== "string" || !a || !b) return false;
   const encoder = new TextEncoder();
   const [providedHash, expectedHash] = await Promise.all([
     crypto.subtle.digest("SHA-256", encoder.encode(a)),
@@ -114,9 +127,17 @@ export function corsHeaders(request) {
 }
 
 function clientIp(request) {
-  return request.headers.get("cf-connecting-ip")
-    || (request.headers.get("x-forwarded-for") || "").split(",")[0].trim()
-    || "0.0.0.0";
+  return (request.headers.get("cf-connecting-ip") || "").trim();
+}
+
+// Hide TURNSTILE_ENABLED from the inner handler only on the POSTs protect()
+// already siteverified. The token is single-use; a second check on /submit or
+// /generate rejects a real visitor. Every other path sees the real flag.
+export function maskTurnstileEnv(request, env) {
+  let path = "";
+  try { path = normalizePath(new URL(request.url).pathname); } catch { return env; }
+  if (!request || request.method !== "POST" || !TURNSTILE_PATHS.has(path)) return env;
+  return new Proxy(env, { get: (target, key) => (key === "TURNSTILE_ENABLED" ? "false" : target[key]) });
 }
 
 function json(request, body, status) {
@@ -173,7 +194,8 @@ async function rejectTurnstile(request, env) {
   if (request.method !== "POST" || !TURNSTILE_PATHS.has(normalizePath(url.pathname))) return null;
   const secret = env && env.TURNSTILE_SECRET;
   const token = await turnstileToken(request);
-  if (typeof secret !== "string" || !secret || !token || token.length > MAX_TURNSTILE_TOKEN) {
+  const ip = clientIp(request);
+  if (typeof secret !== "string" || !secret || !token || token.length > MAX_TURNSTILE_TOKEN || !ip) {
     return json(request, { error: "Bot check failed." }, 403);
   }
   let data = null;
@@ -184,7 +206,7 @@ async function rejectTurnstile(request, env) {
       body: new URLSearchParams({
         secret,
         response: token,
-        remoteip: clientIp(request),
+        remoteip: ip,
       }),
       signal: AbortSignal.timeout(10_000),
     });
@@ -200,15 +222,28 @@ async function rejectTurnstile(request, env) {
   return null;
 }
 
+function rejectReadiness(request) {
+  const url = new URL(request.url);
+  if (normalizePath(url.pathname) !== "/readiness" || !url.searchParams.has("url")) return null;
+  const shape = validateUrlShape(url.searchParams.get("url"));
+  if (shape.error) return json(request, { error: shape.error }, 400);
+  const host = shape.url.hostname.replace(/^\[|\]$/g, "");
+  if (isIpLiteral(host) && isBlockedIp(host)) return json(request, { error: "That address is not public." }, 400);
+  return null;
+}
+
 export async function gate(request, env) {
-  if (!guardedKind(new URL(request.url).pathname)) return null;
+  const url = new URL(request.url);
+  if (!requestGuarded(url.pathname, request.method)) return null;
   if (request.method === "OPTIONS") {
     const origin = allowOrigin(request.headers.get("Origin") || request.headers.get("origin") || "");
     if (!origin) return new Response(null, { status: 403, headers: { vary: "Origin" } });
     return new Response(null, { status: 204, headers: corsHeaders(request) });
   }
+  const ip = clientIp(request);
+  if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
   const limiter = isRead(request.method) ? env && env.IMAGE_READ : env && env.IMAGE_WRITE;
-  const outcome = await consume(limiter, clientIp(request));
+  const outcome = await consume(limiter, ip);
   if (outcome === "unconfigured") return json(request, { error: "Rate limiting is not configured." }, 503);
   if (outcome === "limited") return json(request, { error: "Too many requests. Try again in a minute." }, 429);
   if (request.method === "POST" && !postAllowed(request)) {
@@ -244,8 +279,10 @@ export function protect(worker) {
       if (blocked) return blocked;
       const turnstileBlocked = await rejectTurnstile(request, env);
       if (turnstileBlocked) return turnstileBlocked;
+      const readinessBlocked = rejectReadiness(request);
+      if (readinessBlocked) return readinessBlocked;
       const response = await inner(request, env, ctx);
-      if (!guardedKind(new URL(request.url).pathname)) return response;
+      if (!requestGuarded(new URL(request.url).pathname, request.method)) return response;
       return applyCors(request, response);
     },
   };

@@ -28,7 +28,8 @@
     return v;
   }
   function mine() { try { return JSON.parse(store("as-rated") || "{}"); } catch (e) { return {}; } }
-  function stars(n) { return '<span class="rv-stars" style="--r:' + (+n || 0) + '" aria-hidden="true">★★★★★</span>'; }
+  function starNum(n) { var v = +n; return isFinite(v) ? v : 0; }
+  function stars(n) { return '<span class="rv-stars" style="--r:' + starNum(n) + '" aria-hidden="true">★★★★★</span>'; }
   function date(ts) { try { return new Date(ts).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); } catch (e) { return ""; } }
   function render(d) {
     if (!d || typeof d.count !== "number") return;
@@ -42,7 +43,8 @@
     }
     var L = $(".rv-list"), R = d.reviews || [];
     L.innerHTML = R.map(function (r) {
-      return '<li class="rv-item">' + stars(r.stars) + '<span class="sr">' + r.stars + ' out of 5 stars</span> <b class="rv-who">' + esc(r.name || "Anonymous") + '</b> <time class="muted" datetime="' + esc(new Date(r.ts).toISOString()) + '">' + esc(date(r.ts)) + '</time><p>' + esc(r.text) + '</p></li>';
+      var sn = starNum(r.stars);
+      return '<li class="rv-item">' + stars(sn) + '<span class="sr">' + sn + ' out of 5 stars</span> <b class="rv-who">' + esc(r.name || "Anonymous") + '</b> <time class="muted" datetime="' + esc(new Date(r.ts).toISOString()) + '">' + esc(date(r.ts)) + '</time><p>' + esc(r.text) + '</p></li>';
     }).join("");
     L.hidden = !R.length;
   }

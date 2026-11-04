@@ -61,6 +61,22 @@ test("Cloudflare verified-bot fields skip the limiter; an empty category does no
   assert.equal((await worker.fetch(hit({ "user-agent": "Googlebot" }, { botManagement: { verifiedBot: true } }), binding)).status, 200);
 });
 
+test("X-Forwarded-For is not the client address", async () => {
+  const keys = [];
+  const binding = {
+    MCP_BURST: { async limit({ key }) { keys.push(key); return { success: true }; } },
+    MCP_MINUTE: { async limit({ key }) { keys.push(key); return { success: true }; } },
+  };
+  const res = await worker.fetch(hit({ "x-forwarded-for": "198.51.100.9" }), binding);
+  assert.equal(res.status, 200);
+  assert.deepEqual(keys, ["203.0.113.8", "203.0.113.8"]);
+  const missing = await worker.fetch(new Request("https://mcp.agentscouthq.com/mcp", {
+    headers: { "x-forwarded-for": "198.51.100.9" },
+  }), binding);
+  assert.equal(missing.status, 403);
+  assert.equal(keys.length, 2);
+});
+
 test("a missing binding fails closed and does not serve the catalog", async () => {
   const res = await worker.fetch(hit({ "user-agent": "Googlebot" }, {
     verifiedBotCategory: "Search Engine Crawler",

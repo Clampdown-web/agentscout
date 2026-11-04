@@ -10,15 +10,18 @@ def _fakeip():
     try: return all(ipaddress.ip_address(i[4][0]) in FAKE for i in socket.getaddrinfo("example.com",None))
     except Exception: return False
 FAKEIP=_fakeip()
-def public(u):
-    """True only if every address the host resolves to is public (no private/loopback/link-local/reserved)."""
+def public(u, resolve=None):
+    """True only if every address the host resolves to is global (not private, shared, or reserved)."""
     try:
         p=urllib.parse.urlsplit(u); h=p.hostname
         if p.scheme not in("http","https") or not h: return False
-        for a in {i[4][0] for i in socket.getaddrinfo(h,None)}:
-            ip=ipaddress.ip_address(a.split("%")[0])
+        addrs=set(resolve(h) if resolve else {i[4][0] for i in socket.getaddrinfo(h,None)})
+        if not addrs: return False
+        for a in addrs:
+            ip=ipaddress.ip_address(str(a).split("%")[0])
             if FAKEIP and ip in FAKE: continue
-            if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved or ip.is_multicast or ip.is_unspecified: return False
+            # is_global is false for 100.64.0.0/10. is_multicast stays explicit: 224/4 is global on this interpreter.
+            if ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved or ip.is_multicast or ip.is_unspecified or not ip.is_global: return False
         return True
     except Exception: return False
 class Guard(urllib.request.HTTPRedirectHandler):

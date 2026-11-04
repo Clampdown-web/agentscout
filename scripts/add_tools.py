@@ -11,6 +11,7 @@ from urllib.parse import urljoin,urlparse
 from PIL import Image
 sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
 from takedown_blocklist import blocked as _takedown_blocked
+from check_mcp_links import public
 UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 GH={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
 def _gh_token():
@@ -37,9 +38,22 @@ def is_identicon(im):
   if sum(near(p,fg,30) for p in rest)<0.85*len(rest): return False
   g=im.convert('L').resize((64,64)); f=g.transpose(Image.FLIP_LEFT_RIGHT)  # identicons are mirror-symmetric
   return sum(abs(a-b)<24 for a,b in zip(g.getdata(),f.getdata()))>=0.95*64*64
+def open_public(u, timeout):
+  """GET a public http(s) URL. Redirects are followed only when public() accepts the next hop."""
+  if not public(u): return None
+  r=requests.get(u,headers=UA,timeout=timeout,allow_redirects=False)
+  hops=0
+  while r.is_redirect and hops<3:
+    loc=r.headers.get("Location") or ""
+    nxt=urljoin(getattr(r,"url",None) or u, loc)
+    if not public(nxt): return None
+    u=nxt; hops+=1
+    r=requests.get(u,headers=UA,timeout=timeout,allow_redirects=False)
+  return None if r.is_redirect else r
 def getimg(u):
   try:
-    r=requests.get(u,headers=UA,timeout=12)
+    r=open_public(u,12)
+    if r is None: return None
     if r.status_code!=200: return None
     data=r.content
     if u.split('?')[0].endswith('.svg') or data.lstrip()[:5] in (b'<svg ',b'<?xml'):
@@ -87,8 +101,8 @@ def verify(row):
   html=""
   if site:
     try:
-      r=requests.get(site,headers=UA,timeout=15); 
-      if r.status_code==200: site=r.url; html=r.text
+      r=open_public(site,15)
+      if r is not None and r.status_code==200: site=r.url; html=r.text
       else: site=""
     except Exception: site=""
   if not repo and not site: return {"err":"no live link","name":name}

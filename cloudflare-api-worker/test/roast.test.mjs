@@ -4,12 +4,20 @@ import worker from "../src/worker.js";
 
 const MAX_BYTES = 512_000;
 
-function roast(url, ip) {
+function kv() {
+  const store = new Map();
+  return {
+    async get(key) { return store.has(key) ? store.get(key) : null; },
+    async put(key, value) { store.set(key, String(value)); },
+  };
+}
+
+function roast(url, ip, env = { VOTES: kv() }, headers = {}) {
   return worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
     method: "POST",
-    headers: { "content-type": "application/json", "cf-connecting-ip": ip },
+    headers: { "content-type": "application/json", ...(ip ? { "cf-connecting-ip": ip } : {}), ...headers },
     body: JSON.stringify({ url }),
-  }), {});
+  }), env);
 }
 
 function dns(ip) {
@@ -38,10 +46,12 @@ describe("roast body limit", { concurrency: false }, () => {
     assert.ok(bytes.length > 1_000_000);
 
     const state = { pulled: 0, cancelled: false };
+    const calls = [];
     const chunkSize = 32 * 1024;
     const previous = globalThis.fetch;
     globalThis.fetch = async (input) => {
       const url = String(input);
+      calls.push(url);
       if (url.startsWith("https://cloudflare-dns.com/")) return dns("1.1.1.1");
       if (url.endsWith("/llms.txt")) return new Response("missing", { status: 404, headers: { "content-type": "text/plain" } });
       if (url.includes("/api/tools.json")) return new Response("[]", { status: 200, headers: { "content-type": "application/json" } });
@@ -78,6 +88,9 @@ describe("roast body limit", { concurrency: false }, () => {
       assert.equal(body.checks.find((c) => c.id === "jsonld").ok, true);
       assert.equal(body.error, undefined);
       assert.equal(state.cancelled, true);
+      const fetched = calls.filter((url) => !url.startsWith("https://cloudflare-dns.com/"));
+      assert.ok(fetched.includes("https://large.example/"));
+      assert.equal(fetched.includes("https://1.1.1.1/"), false);
       assert.ok(state.pulled < bytes.length);
       assert.ok(state.pulled <= MAX_BYTES + chunkSize * 2);
     } finally {
@@ -130,6 +143,96 @@ describe("roast body limit", { concurrency: false }, () => {
       const body = await res.json();
       assert.equal(body.error, "That page had nothing to score.");
       assert.equal(body.ok, undefined);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
+
+  test("a missing vote binding and a forwarded client address fail closed", async () => {
+    const calls = [];
+    const previous = globalThis.fetch;
+    globalThis.fetch = async (input) => {
+      calls.push(String(input));
+      throw new Error("fetched " + input);
+    };
+    try {
+      const missing = await roast("https://example.com/", "203.0.113.43", {});
+      assert.equal(missing.status, 503);
+      const forwarded = await roast("https://example.com/", "", { VOTES: kv() }, { "x-forwarded-for": "198.51.100.9" });
+      assert.equal(forwarded.status, 403);
+      const mapped = await roast("http://[0:0:0:0:0:ffff:a9fe:a9fe]/", "203.0.113.43");
+      assert.equal(mapped.status, 400);
+      assert.equal((await mapped.json()).error, "That address is not public.");
+      assert.deepEqual(calls, []);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
+
+  test("hostname fetch stays on the name, and a reported foreign peer fails closed", async () => {
+    const calls = [];
+    const previous = globalThis.fetch;
+    globalThis.fetch = async (input) => {
+      const url = String(input);
+      calls.push(url);
+      if (url.startsWith("https://cloudflare-dns.com/")) return dns("1.1.1.1");
+      const response = new Response("<title>Example</title>", { status: 200 });
+      Object.defineProperty(response, "peerAddress", { value: "10.0.0.1" });
+      return response;
+    };
+    try {
+      const res = await roast("https://pinned.example/pricing", "203.0.113.44");
+      assert.equal(res.status, 400);
+      assert.equal((await res.json()).error, "That host resolves to a blocked address.");
+      const fetched = calls.filter((url) => !url.startsWith("https://cloudflare-dns.com/"));
+      assert.deepEqual(fetched, ["https://pinned.example/pricing"]);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
+
+  test("a manual redirect is checked again before the next fetch", async () => {
+    const calls = [];
+    const previous = globalThis.fetch;
+    globalThis.fetch = async (input) => {
+      const url = String(input);
+      calls.push(url);
+      if (url.startsWith("https://cloudflare-dns.com/")) {
+        const name = new URL(url).searchParams.get("name");
+        return dns(name === "evil.example" ? "10.0.0.1" : "1.1.1.1");
+      }
+      if (url === "https://start.example/") {
+        return new Response(null, { status: 302, headers: { location: "https://evil.example/secret" } });
+      }
+      if (url === "https://loop.example/") {
+        return new Response(null, { status: 302, headers: { location: "http://127.0.0.1/latest" } });
+      }
+      if (url === "https://hop.example/") {
+        return new Response(null, { status: 302, headers: { location: "/landed" } });
+      }
+      if (url === "https://hop.example/landed") {
+        return new Response("<title>Landed</title>", { status: 200, headers: { "content-type": "text/html" } });
+      }
+      if (url.endsWith("/llms.txt")) return new Response("missing", { status: 404 });
+      if (url.includes("/api/tools.json")) return new Response("[]", { status: 200, headers: { "content-type": "application/json" } });
+      throw new Error("fetched " + url);
+    };
+    try {
+      const blocked = await roast("https://start.example/", "203.0.113.45");
+      assert.equal(blocked.status, 400);
+      assert.equal((await blocked.json()).error, "That host resolves to a blocked address.");
+      const literal = await roast("https://loop.example/", "203.0.113.46");
+      assert.equal(literal.status, 400);
+      assert.equal((await literal.json()).error, "That address is not public.");
+      const followed = await roast("https://hop.example/", "203.0.113.47");
+      assert.equal(followed.status, 200);
+      assert.equal((await followed.json()).final_url, "https://hop.example/landed");
+      const fetched = calls.filter((url) => !url.startsWith("https://cloudflare-dns.com/") && !url.includes("/api/tools.json"));
+      assert.equal(fetched.includes("https://evil.example/secret"), false);
+      assert.equal(fetched.includes("http://127.0.0.1/latest"), false);
+      assert.ok(fetched.includes("https://hop.example/"));
+      assert.ok(fetched.includes("https://hop.example/landed"));
+      assert.equal(fetched.includes("https://1.1.1.1/landed"), false);
     } finally {
       globalThis.fetch = previous;
     }
