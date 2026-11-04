@@ -61,12 +61,18 @@ def load_tools():
 
 
 def load_metrics(tools):
+    import build_counts
+    c = build_counts.require(tools)
     m = json.load(open("api/metrics.json", encoding="utf-8"))
-    import build_bot_templates
-    m["templates_count"] = int(build_bot_templates.live_bot_template_count() or m.get("templates_count") or 0)
-    m["tools_count"] = int(m.get("tools_count") or len(tools))
-    m["mcp_servers_count"] = int(m.get("mcp_servers_count") or sum(1 for x in tools if x.get("category") == "MCP servers"))
-    m["x_combined_followers"] = int(m.get("x_combined_followers") or 0)
+    m["templates_count"] = int(c["bot_templates"])
+    m["tools_count"] = int(c["tools"])
+    m["mcp_servers_count"] = int(c["mcp_servers"])
+    m["categories_count"] = int(c["categories"])
+    m["indexed_pages_count"] = int(c["pages_sitemap"])
+    m["pages_count"] = int(c["pages_sitemap"])
+    m["x_combined_followers"] = int((c.get("followers") or {}).get("combined") or m.get("x_combined_followers") or 0)
+    m["x_clampdown19_followers"] = int((c.get("followers") or {}).get("clampdown19") or m.get("x_clampdown19_followers") or 0)
+    m["x_agentscouthq_followers"] = int((c.get("followers") or {}).get("agentscouthq") or m.get("x_agentscouthq_followers") or 0)
     json.dump(m, open("api/metrics.json", "w", encoding="utf-8"), indent=2)
     open("api/metrics.json", "a", encoding="utf-8").write("\n")
     return m

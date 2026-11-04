@@ -227,11 +227,8 @@ def filters():
     s=s.replace('<section id="bt-featured">',made_by_agentscout_html(total)+'<section id="bt-featured">',1)
     open(f"{D}/index.html","w").write(s)
     print("bot templates filters:",total,"rows;",", ".join(f"{CATS[k]} {v}" for k,v in cnt.items()))
-    sm="data/site_metrics.json"
-    if os.path.exists(sm):
-        raw=open(sm,encoding="utf-8").read()
-        raw2=re.sub(r'("bot_templates_count": )\d+',lambda m:m.group(1)+str(total),raw,count=1)
-        if raw2!=raw: open(sm,"w",encoding="utf-8").write(raw2)
+    import build_counts
+    build_counts.set_bot_templates(total)
 # Tap targets (Oct 22 2026 PT, owner "fix what's broken"): back link + related links were 19-22px tall at 390px; >=44px via min-height/padding only, no color change.
 TAPCSS='<style id="bt-tap-css">.bd-back{display:inline-flex;align-items:center;min-height:44px;padding-right:8px}.bd-rel li a{display:inline-flex;align-items:center;min-height:44px}</style>'
 def tap():

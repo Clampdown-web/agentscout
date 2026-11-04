@@ -22,59 +22,56 @@ os.makedirs(OUT_DIR, exist_ok=True)
 os.makedirs(SITE_ANIM_DIR, exist_ok=True)
 
 def load_live_catalog_counts(site_dir):
+    """Catalog totals come from data/site_counts.json. Star labels still come from tools.json."""
+    counts_path = os.path.join(site_dir, "data", "site_counts.json")
+    counts = {}
+    if os.path.exists(counts_path):
+        try:
+            counts = json.load(open(counts_path, encoding="utf-8"))
+        except Exception:
+            counts = {}
     tools_json = os.path.join(site_dir, "tools.json")
     if not os.path.exists(tools_json):
         tools_json = "/workspace/agent-tool-finder/tools.json"
-    sitemap_xml = os.path.join(site_dir, "sitemap.xml")
-    if not os.path.exists(sitemap_xml):
-        sitemap_xml = "/workspace/agent-tool-finder/sitemap.xml"
+    arr = []
     try:
         arr = json.load(open(tools_json, encoding="utf-8"))
         if isinstance(arr, dict):
             arr = arr.get("tools", [])
-        total_tools = len(arr)
-        cat_count = len({t.get("category") for t in arr if t.get("category")})
-        mcp_count = sum(1 for t in arr if t.get("category") == "MCP servers")
-        free_count = sum(1 for t in arr if "free" in (t.get("pricing") or "").lower() or "open" in (t.get("pricing") or "").lower())
-        os_count = sum(1 for t in arr if "open" in (t.get("pricing") or "").lower())
-        os_coding_count = sum(1 for t in arr if "open" in (t.get("pricing") or "").lower() and t.get("category") == "coding")
-        by_slug = {t.get("slug"): t for t in arr}
-        def kstar(slug, fallback):
-            st = (by_slug.get(slug) or {}).get("github_stars")
-            if st and st >= 1000:
-                return f"{round(st / 1000)}k★"
-            return fallback
-        stars = {
-            "opencode": kstar("opencode", "222k★"),
-            "opencode_comma": f"{((by_slug.get('opencode') or {}).get('github_stars') or 222000) // 1000 * 1000:,}+ ★",
-            "browser-use": kstar("browser-use", "119k★"),
-            "context7": kstar("context7", "64k★"),
-            "crawl4ai": kstar("crawl4ai", "86k★"),
-            "fastmcp": kstar("fastmcp", "28k★"),
-            "serena": kstar("serena", "31k★"),
-            "stagehand": kstar("stagehand", "22k★"),
-        }
     except Exception:
-        total_tools, cat_count, mcp_count, free_count, os_count, os_coding_count = 2050, 40, 272, 1621, 694, 86
-        stars = {
-            "opencode": "222k★", "opencode_comma": "222,000+ ★",
-            "browser-use": "119k★", "context7": "64k★",
-            "crawl4ai": "86k★", "fastmcp": "28k★",
-            "serena": "31k★", "stagehand": "22k★",
-        }
-    try:
-        page_count = open(sitemap_xml, encoding="utf-8").read().count("<loc>")
-        if page_count < 1000:
-            page_count = 2620
-    except Exception:
-        page_count = 2620
-    bt_html = os.path.join(site_dir, "bot-templates/index.html")
-    if not os.path.exists(bt_html):
-        bt_html = "/workspace/agent-tool-finder/bot-templates/index.html"
-    try:
-        bt_count = len(re.findall(r'<li class="bt-row"', open(bt_html, encoding="utf-8").read()))
-    except Exception:
-        bt_count = 0
+        arr = []
+    total_tools = int(counts.get("tools") or len(arr) or 0)
+    cat_count = int(counts.get("categories") or len({t.get("category") for t in arr if t.get("category") and t.get("category") != "other"}) or 0)
+    mcp_count = int(counts.get("mcp_servers") or sum(1 for t in arr if t.get("category") == "MCP servers") or 0)
+    free_count = int(counts.get("free_tools") or 0)
+    os_count = sum(1 for t in arr if "open" in (t.get("pricing") or "").lower())
+    os_coding_count = sum(1 for t in arr if "open" in (t.get("pricing") or "").lower() and t.get("category") == "coding")
+    by_slug = {t.get("slug"): t for t in arr}
+    def kstar(slug, fallback):
+        st = (by_slug.get(slug) or {}).get("github_stars")
+        if st and st >= 1000:
+            return f"{round(st / 1000)}k★"
+        return fallback
+    stars = {
+        "opencode": kstar("opencode", "222k★"),
+        "opencode_comma": f"{((by_slug.get('opencode') or {}).get('github_stars') or 222000) // 1000 * 1000:,}+ ★",
+        "browser-use": kstar("browser-use", "119k★"),
+        "context7": kstar("context7", "64k★"),
+        "crawl4ai": kstar("crawl4ai", "86k★"),
+        "fastmcp": kstar("fastmcp", "28k★"),
+        "serena": kstar("serena", "31k★"),
+        "stagehand": kstar("stagehand", "22k★"),
+    }
+    page_count = int(counts.get("pages_sitemap") or 0)
+    if not page_count:
+        sitemap_xml = os.path.join(site_dir, "sitemap.xml")
+        if os.path.exists(sitemap_xml):
+            page_count = open(sitemap_xml, encoding="utf-8").read().count("<loc>")
+    bt_count = int(counts.get("bot_templates") or 0)
+    if not bt_count:
+        bt_html = os.path.join(site_dir, "bot-templates/index.html")
+        if os.path.exists(bt_html):
+            bt_count = len(re.findall(r'<li class="bt-row"', open(bt_html, encoding="utf-8").read()))
     ft_dir = os.path.join(site_dir, "free-tools")
     if not os.path.isdir(ft_dir):
         ft_dir = "/workspace/agent-tool-finder/free-tools"

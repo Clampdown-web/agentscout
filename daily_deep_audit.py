@@ -68,6 +68,10 @@ def main() -> int:
     req_bad, req_pass = _requirements_audit()
     bad.extend(req_bad)
     passes.extend(req_pass)
+    sync = _counts_sync_problems()
+    bad.extend(sync)
+    if not sync:
+        passes.append("counts_sync")
     _report(bad, passes)
     return 1 if bad else 0
 
@@ -983,6 +987,23 @@ def _resolve_version(name: str, spec: str) -> str:
         if candidates:
             return max(candidates, key=_version_key)
     raise _PinError(f"requirements.txt: no PyPI release of {name} satisfies {spec or 'the pin'}")
+
+def _counts_sync_problems() -> list[str]:
+    """Live pages must match live api/metrics.json and a recount of live api/tools.json.
+
+    The same rules also run on the built tree, so a local build fails before it is published.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import check_counts
+
+    problems: list[str] = []
+    try:
+        local = check_counts.check_tree()
+    except Exception as exc:
+        local = [f"counts_sync: local scan failed ({exc})"]
+    problems.extend(local)
+    problems.extend(check_counts.check_live())
+    return problems
 
 
 def _report(bad: list[str], passes: list[str] | None = None) -> None:
