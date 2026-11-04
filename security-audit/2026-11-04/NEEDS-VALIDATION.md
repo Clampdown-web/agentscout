@@ -1,6 +1,6 @@
 # Needs validation
 
-Seven leads. None is a confirmed vulnerability. None has a severity. Do not send these inputs to the production hosts.
+Eight leads. None is a confirmed vulnerability. None has a severity. Do not send these inputs to the production hosts.
 
 ## Roast SSRF guard accepts full-form IPv4-mapped addresses
 
@@ -119,3 +119,27 @@ Local check: place that handler next to `cloudflare-api-worker/src/ssrf.js` and 
 Owner check: identify the deployed script for `/readiness` and record whether it fetches the query URL. Do not send an internal URL to production.
 
 Source change that closes the traced gap: before that fetch, accept the URL only through `validateUrlShape` and `isBlockedIp`.
+
+## Review stars are concatenated into tool-page HTML
+
+Fingerprint: `reviews.stars.html-interpolation`
+
+Lower-trust caller: a visitor whose review is later rendered on a tool page, if the missing review store accepts a non-numeric `stars` value.
+
+Claim: `reviews.js` escapes the reviewer name and the review text, then concatenates `r.stars` into the screen-reader span and assigns the string to `innerHTML`. `stars()` coerces a separate copy for the CSS variable. `build_reviews.py` interpolates the same field without `html.escape`. The form sends a number from the 1 to 5 radios. Tool pages ship `script-src 'unsafe-inline'`.
+
+Trace:
+
+1. `reviews.js:49` loads `GET /reviews?tool=`.
+2. `reviews.js:45` concatenates the raw `r.stars` value.
+3. `reviews.js:44` assigns that HTML to the review list.
+
+Evidence: `reviews.js:23` (the escaper used for name and text), `reviews.js:31` (numeric coercion for the CSS variable only), `reviews.js:69` (the form sends a number), `build_reviews.py:26` (static HTML uses the same raw field), `cloudflare-image-worker-patches/entry.js:1` (the inner module is not in the repo).
+
+Blocker: the review store and the `GET /reviews` serializer are not in the repository, so a string `stars` value cannot be ruled in or out.
+
+Local check: with the owner-held image-worker `index.js`, record whether `stars` is forced to an integer from 1 to 5 before it is stored and before it is JSON-encoded. Do not submit markup to the deployed API.
+
+Owner check: inspect the deployed review worker, or one existing review record, and record the JSON type of `stars`.
+
+Source change that closes the traced gap: in `reviews.js` and `build_reviews.py`, put the star count through `esc` or the numeric coercion `stars()` already uses before it is placed in HTML.

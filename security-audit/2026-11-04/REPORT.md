@@ -15,7 +15,7 @@ Target code was not executed. `unshare --net` can drop outbound network, and `un
 
 Delegated hunter and verifier agents had not returned structured JSON when this ledger was closed. The parent re-read every cited file and line against this commit and did not promote any lead to `confirmed`. A separate coverage-critic agent did not return a pass, so this report does not claim a critic-accepted clean sweep. No prior ledger was carried forward.
 
-Counts: **confirmed 0**, **needs_validation 7**, **rejected 4**.
+Counts: **confirmed 0**, **needs_validation 8**, **rejected 4**.
 
 ## Security posture
 
@@ -38,6 +38,7 @@ These are source-traced leads with an exact blocker. They are not confirmed vuln
 | Image patch does not origin-check or rate-limit `/generate` | `guardedKind` and `security.test.mjs` | Inner `/generate` handler and the deployed flag are absent | Run the patch test in a network-blocked sandbox |
 | Image entrypoint hides Turnstile from the inner worker | `entry.js` `innerEnv` | `index.js` is not in the repo | Diff the inner Turnstile branches against `TURNSTILE_PATHS` |
 | Readiness and share routes are outside the image patch | `readiness.js` to `protect` | The server handler is not in the repo | Read the inner `/readiness` fetcher next to `ssrf.js` |
+| Review stars are concatenated into tool-page HTML | `reviews.js` review list | The review store is not in the repo | Read the owner-held `POST /review` serializer and record the JSON type of `stars` |
 
 The source change that closes each traced gap, once the local check agrees:
 
@@ -48,6 +49,7 @@ The source change that closes each traced gap, once the local check agrees:
 - **`/generate`.** Put `POST /generate` through the same origin allowlist and `IMAGE_WRITE` limit as `POST /submit`, including when `TURNSTILE_ENABLED` is unset.
 - **Masked Turnstile flag.** Remove the `innerEnv` proxy until `index.js` is in the tree and its checks are compared with `protect()`.
 - **Passthrough routes.** Run `/readiness` through `validateUrlShape` and `isBlockedIp` before any server fetch. The handler has to be reviewed first.
+- **Review stars.** In `reviews.js` and `build_reviews.py`, put the star count through `esc` or the same numeric coercion `stars()` already uses before it is placed in HTML.
 
 Owner-observed checks are in `NEEDS-VALIDATION.md`. They do not ask anyone to send these inputs to production.
 
@@ -71,10 +73,10 @@ Positive patterns: origin allowlists on vote and guarded submit routes, constant
 
 | Status | Units |
 | --- | --- |
-| covered | 17 |
-| candidate | 9 |
+| covered | 16 |
+| candidate | 10 |
 | blocked | 0 |
-| deferred | 0 |
+| deferred | 1 |
 | out of scope | 0 |
 
-26 units. Seven fingerprints are linked from the nine candidate units (`workers.client-ip-forwarded` is one cause on three workers). The inner image worker, the MCP SSE handler, and the deployed Turnstile flag are absent from source and are the blockers above, not covered code. Rejected claims, kept so a later run can see the refutation: `build.faq-unescaped-answer`, `crypto.safeeq-empty-equals-empty`, `mcp.wildcard-cors`, `vote.origin-header-as-auth`.
+27 units. Eight fingerprints are linked from the ten candidate units (`workers.client-ip-forwarded` is one cause on three workers). The inner image worker, the advertised MCP SSE handler (`cloudflare-mcp-worker/worker.js` `registryBody`), and the deployed Turnstile flag are absent from source. The SSE handler is the deferred unit. The other absences are the blockers above. Rejected claims, kept so a later run can see the refutation: `build.faq-unescaped-answer`, `crypto.safeeq-empty-equals-empty`, `mcp.wildcard-cors`, `vote.origin-header-as-auth`.

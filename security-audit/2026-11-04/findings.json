@@ -268,6 +268,70 @@
     "reason": "The catalog is public and the worker sets no credentials. A star origin does not expose another principal's data or authority. The rate limit remains the abuse control."
   },
   {
+    "verdict": "needs_validation",
+    "fingerprint": "reviews.stars.html-interpolation",
+    "title": "Review stars are concatenated into tool-page HTML",
+    "description": "reviews.js renders approved reviews into the tool page with innerHTML. Name and text pass through esc. The screen-reader span concatenates r.stars raw. A string stars value would be parsed as HTML. The form submits a number. The worker that stores POST /review is not in this repository.",
+    "claimed_root_cause": "render() assigns an HTML string to the review list after escaping name and text while leaving r.stars unescaped in the screen-reader span. build_reviews.py interpolates the same field without html.escape. security.js forwards /review and /reviews without reading stars, and the inner review program is absent, so a non-numeric stars value cannot be ruled in or out from this tree.",
+    "trace": [
+      {
+        "kind": "entrypoint",
+        "file": "reviews.js",
+        "line": 49,
+        "scope": "wFetch /reviews",
+        "description": "Each tool page requests GET /reviews?tool= and passes the JSON object to render."
+      },
+      {
+        "kind": "propagation",
+        "file": "reviews.js",
+        "line": 45,
+        "scope": "render review item",
+        "description": "esc is applied to name and text. The screen-reader span concatenates the raw r.stars value."
+      },
+      {
+        "kind": "sink",
+        "file": "reviews.js",
+        "line": 44,
+        "scope": "L.innerHTML",
+        "description": "The joined item HTML is assigned to the review list innerHTML."
+      }
+    ],
+    "evidence": [
+      {
+        "file": "reviews.js",
+        "line": 23,
+        "description": "esc encodes & < > \" and '. name and text use it. The stars span does not."
+      },
+      {
+        "file": "reviews.js",
+        "line": 31,
+        "description": "stars() coerces its argument with unary plus for the CSS variable. That coercion does not cover the later text concatenation."
+      },
+      {
+        "file": "reviews.js",
+        "line": 69,
+        "description": "The form body sends stars as a number from the 1 to 5 radios. A direct POST body is outside this file."
+      },
+      {
+        "file": "build_reviews.py",
+        "line": 26,
+        "description": "The static first paint interpolates r['stars'] into the same screen-reader text without html.escape."
+      },
+      {
+        "file": "cloudflare-image-worker-patches/entry.js",
+        "line": 1,
+        "description": "The wrapper imports ./index.js. That module is not in the repository."
+      }
+    ],
+    "blockers": [
+      "The review store and GET /reviews serializer are not in the repository, so whether stars is forced to an integer from 1 to 5 before it is stored and returned cannot be decided from this tree."
+    ],
+    "validation_plan": {
+      "local": "With the owner-held image-worker index.js, read the POST /review store and the GET /reviews serializer and record whether stars is forced to an integer in 1..5 before it is written and before it is JSON-encoded. Do not submit markup to the deployed API.",
+      "deployment": "The owner inspects the review worker source they deploy, or one existing review record in their own store, and records the JSON type of stars. This is an owner-side source or data inspection."
+    }
+  },
+  {
     "fingerprint": "roast.rate-limit-fallback",
     "title": "Roast limiting is per-isolate when vote storage is absent",
     "description": "The roast endpoint keeps fetching when the VOTES binding is missing, and counts requests in a module-level Map. The KV path increments with a separate get and put.",

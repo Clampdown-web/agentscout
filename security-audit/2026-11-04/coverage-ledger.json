@@ -226,40 +226,36 @@
     "prior_status": "none",
     "attempts": [],
     "wave": 1,
-    "status": "covered",
-    "agent_id": "review-client",
+    "status": "candidate",
+    "agent_id": "hunter-client",
     "reviewed_paths": [
-      "app.js",
-      "quiz.js",
       "reviews.js",
-      "compare-picker.js",
-      "free_tools_js/roast.js",
-      "free_tools_js/readiness.js",
-      "index.html"
+      "build_reviews.py",
+      "cloudflare-image-worker-patches/entry.js",
+      "cloudflare-image-worker-patches/security.js"
     ],
     "local_checks": [
       {
-        "agent_id": "review-client",
+        "agent_id": "hunter-client",
         "reviewed_paths": [
-          "app.js",
-          "quiz.js",
           "reviews.js",
-          "compare-picker.js",
-          "free_tools_js/roast.js",
-          "free_tools_js/readiness.js",
-          "index.html"
+          "build_reviews.py",
+          "cloudflare-image-worker-patches/entry.js",
+          "cloudflare-image-worker-patches/security.js"
         ],
-        "invariant": "URL, hash, catalog, and API fields reach innerHTML only after escaping, or they are static strings.",
+        "invariant": "A review star value rendered into another visitor's tool page is escaped or coerced to a number before innerHTML.",
         "method": "source",
-        "result": "quiz.js runs hash and catalog text through ASe before innerHTML. compare-picker.js uses E() for names. roast.js and readiness.js escape API text, titles, and URLs before innerHTML. Hash values are assigned to input.value, not HTML. No executable sink from location without an escape was found on these paths.",
+        "result": "reviews.js escapes name and text. The screen-reader span concatenates r.stars raw, and build_reviews.py interpolates r['stars'] without html.escape. The form sends a number. The store that would reject a string is not in the repository.",
         "artifact": null
       }
     ],
-    "result_fingerprints": [],
+    "result_fingerprints": [
+      "reviews.stars.html-interpolation"
+    ],
     "unresolved": [],
     "hunter_group": "hunter-client",
     "hardening": [
-      "readiness.js row() does not escape its note argument. Current callers escape dynamic pieces before passing them."
+      "Other catalog and quiz interpolations on this unit still pass through ASe or esc."
     ]
   },
   {
@@ -2349,6 +2345,112 @@
     "hardening": [
       "Any non-empty verifiedBotCategory string skips the limiter. That field is platform-controlled in this source."
     ]
+  },
+  {
+    "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23registryBody::cloudflare-mcp-worker%2Fworker.js%23sse-remote::cloudflare-mcp-worker::PROTOCOLS-RPC-AND-MESSAGING.md%23RPC%20identity%20and%20authorization%20attack%20classes",
+    "canonical_refs": {
+      "surface": "cloudflare-mcp-worker/worker.js#registryBody",
+      "boundary": "cloudflare-mcp-worker/worker.js#sse-remote",
+      "subsystem": "cloudflare-mcp-worker",
+      "attack_class": "PROTOCOLS-RPC-AND-MESSAGING.md#RPC identity and authorization attack classes"
+    },
+    "surface": "cloudflare-mcp-worker/worker.js#registryBody",
+    "boundary": "cloudflare-mcp-worker/worker.js#sse-remote",
+    "subsystem": "cloudflare-mcp-worker",
+    "attack_class": "PROTOCOLS-RPC-AND-MESSAGING.md#RPC identity and authorization attack classes",
+    "starting_paths": [
+      "cloudflare-mcp-worker/worker.js"
+    ],
+    "ordinary_attack_class_block": "ATTACK-CLASSES.md#Access control",
+    "selected_companion_blocks": [
+      "PROTOCOLS-RPC-AND-MESSAGING.md#Core discipline",
+      "PROTOCOLS-RPC-AND-MESSAGING.md#RPC identity and authorization attack classes",
+      "PROTOCOLS-RPC-AND-MESSAGING.md#Universal moves",
+      "PROTOCOLS-RPC-AND-MESSAGING.md#Validation rules",
+      "AI-AND-LLM.md#Core discipline",
+      "AI-AND-LLM.md#MCP and sub-agent trust classes",
+      "AI-AND-LLM.md#Universal moves",
+      "AI-AND-LLM.md#Validation rules"
+    ],
+    "excluded_blocks": [
+      {
+        "block": "ATTACK-CLASSES.md#Injection",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Resource and file handling",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Cryptography and secrets",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Business logic",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Feature abuse and data leakage",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Chained vulnerabilities and trust boundaries",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Wildcard",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "ATTACK-CLASSES.md#Obvious things",
+        "reason": "This unit is scoped to one ordinary class; a sibling unit owns the other class where that class applies."
+      },
+      {
+        "block": "WEB-PROTOCOL-AND-AUTH.md#Core discipline",
+        "reason": "No HTTP framing, cache, session, or credential-binding decision on this surface."
+      },
+      {
+        "block": "CLIENT-SIDE.md#Core discipline",
+        "reason": "No browser DOM, messaging, or storage trust decision on this surface."
+      },
+      {
+        "block": "SUPPLY-CHAIN-AND-RELEASE.md#Core discipline",
+        "reason": "No dependency, CI, release, or plugin handoff on this surface."
+      },
+      {
+        "block": "CLOUD-AND-DEPLOYMENT.md#Core discipline",
+        "reason": "No workload identity, ingress, secret, or edge-configuration boundary on this surface."
+      },
+      {
+        "block": "RESOURCE-EXHAUSTION-AND-AVAILABILITY.md#Core discipline",
+        "reason": "No shared CPU, quota, queue, or operator-spend bound on this surface."
+      },
+      {
+        "block": "MEMORY-SAFETY-AND-BINARY.md#Core discipline",
+        "reason": "No memory-unsafe, binary, FFI, or kernel code on this surface."
+      },
+      {
+        "block": "DESKTOP-MOBILE-AND-LOCAL-IPC.md#Core discipline",
+        "reason": "No native app, deep link, webview bridge, or local IPC on this surface."
+      },
+      {
+        "block": "DATA-ISOLATION-AND-LIFECYCLE.md#Core discipline",
+        "reason": "Single public directory; this surface has no tenant-scoped store or restore lifecycle."
+      }
+    ],
+    "prior_status": "none",
+    "attempts": [],
+    "wave": 1,
+    "status": "deferred",
+    "agent_id": null,
+    "reviewed_paths": [],
+    "local_checks": [],
+    "result_fingerprints": [],
+    "unresolved": [
+      "registryBody advertises https://agentscouthq.com/mcp/sse and this file does not implement that session. The handler is not in the repository, so no second wave was assigned."
+    ],
+    "hunter_group": null,
+    "hardening": []
   },
   {
     "coverage_id": "cloudflare-mcp-worker%2Fworker.js%23tools%2Fcall::cloudflare-mcp-worker%2Fworker.js%23callTool::cloudflare-mcp-worker::ATTACK-CLASSES.md%23Injection",
