@@ -804,8 +804,8 @@ def _requirements_audit() -> tuple[list[str], list[str]]:
         return ["requirements.txt is missing"], []
     text = path.read_text(encoding="utf-8")
     problems: list[str] = []
-    if not re.search(r"(?im)^pillow\s*>=\s*13\.0\.0\b", text):
-        problems.append("requirements.txt must require pillow>=13.0.0")
+    if not re.search(r"(?im)^pillow\s*==\s*13\.0\.0\b", text):
+        problems.append("requirements.txt must pin pillow==13.0.0")
     for name in ("lxml", "requests", "cairosvg", "playwright"):
         if not re.search(rf"(?im)^{name}\s*==\s*\d", text):
             problems.append(f"requirements.txt must pin {name} to an exact version")
@@ -819,10 +819,10 @@ def _requirements_audit() -> tuple[list[str], list[str]]:
         return [str(exc)], []
     except _ScanUnavailable as exc:
         print(f"WARN dependency scan skipped (network unavailable: {exc})", file=sys.stderr)
-        return [], ["requirements.txt pins pillow>=13.0.0; vulnerability scan skipped because the database was unreachable"]
+        return [], ["requirements.txt pins pillow==13.0.0; vulnerability scan skipped because the database was unreachable"]
     if findings:
         return findings, []
-    return [], ["requirements.txt pins pillow>=13.0.0 and the vulnerability scan reports no known issues"]
+    return [], ["requirements.txt pins pillow==13.0.0 and the vulnerability scan reports no known issues"]
 
 
 def _pip_audit(path: Path) -> list[str] | None:

@@ -97,6 +97,63 @@ test("a missing origin gets a 403", async () => {
   assert.equal(kv.size, 0);
 });
 
+test("a forwarded address is not a voter and a missing salt fails closed", async () => {
+  const kv = memoryKv();
+  const forwarded = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { "content-type": "application/json", origin: "https://agentscouthq.com", "x-forwarded-for": "198.51.100.9" },
+    body: JSON.stringify({ slug: "sickle" }),
+  }), { VOTES: kv });
+  assert.equal(forwarded.status, 403);
+  assert.equal(kv.size, 0);
+  const blind = {
+    async get() { return null; },
+    async put(key) { kv.put(key, "written"); },
+  };
+  const res = await worker.fetch(voteRequest({ origin: "https://agentscouthq.com" }), { VOTES: blind });
+  assert.equal(res.status, 503);
+  assert.equal((await res.json()).error, "Vote storage is not ready.");
+});
+
+test("overlapping votes for one visitor increment the tally once", async () => {
+  const kv = memoryKv();
+  const [first, second] = await Promise.all([
+    worker.fetch(voteRequest({ origin: "https://agentscouthq.com" }), { VOTES: kv }),
+    worker.fetch(voteRequest({ origin: "https://agentscouthq.com" }), { VOTES: kv }),
+  ]);
+  const bodies = [await first.json(), await second.json()];
+  assert.equal(first.status, 200);
+  assert.equal(second.status, 200);
+  assert.equal(bodies.filter((body) => body.already).length, 1);
+  assert.equal(bodies.filter((body) => body.votes === 1).length, 2);
+});
+
+test("a second seen-key write that conflicts does not increment again", async () => {
+  let seenPuts = 0;
+  const store = new Map();
+  const kv = {
+    async get(key, type) {
+      if (!store.has(key)) return null;
+      const value = store.get(key);
+      return type === "json" ? JSON.parse(value) : value;
+    },
+    async put(key, value) {
+      if (String(key).startsWith("seen:")) {
+        seenPuts += 1;
+        if (seenPuts > 1) throw new Error("KV PUT failed: 429 Too Many Requests");
+      }
+      store.set(key, String(value));
+    },
+  };
+  const [first, second] = await Promise.all([
+    worker.fetch(voteRequest({ origin: "https://agentscouthq.com" }), { VOTES: kv }),
+    worker.fetch(voteRequest({ origin: "https://agentscouthq.com" }), { VOTES: kv }),
+  ]);
+  const bodies = [await first.json(), await second.json()];
+  assert.equal(bodies.filter((body) => body.ok && !body.already).length, 1);
+  assert.equal(Math.max(...bodies.map((body) => body.votes)), 1);
+});
+
 test("evil.com gets a 403", async () => {
   const kv = memoryKv();
   const res = await worker.fetch(voteRequest({ origin: "https://evil.com" }), { VOTES: kv });

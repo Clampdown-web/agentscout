@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { allowOrigin, postAllowed, guardedKind, protect, safeEq, statsKeyPath, turnstileEnabled } from "./security.js";
+import { allowOrigin, postAllowed, guardedKind, maskTurnstileEnv, protect, safeEq, statsKeyPath, turnstileEnabled } from "./security.js";
 
 test("cors allowlist is the site and www only", () => {
   assert.equal(allowOrigin("https://agentscouthq.com"), "https://agentscouthq.com");
@@ -17,7 +17,7 @@ test("guarded paths are submit, review, and reviews", () => {
   assert.equal(guardedKind("/review"), "reviews");
   assert.equal(guardedKind("/reviews"), "reviews");
   assert.equal(guardedKind("/reviews/all"), "reviews");
-  assert.equal(guardedKind("/generate"), "");
+  assert.equal(guardedKind("/generate"), "generate");
   assert.equal(guardedKind("/readiness"), "");
   assert.equal(guardedKind("/track"), "");
 });
@@ -172,7 +172,9 @@ test("safeEq matches the whole secret and ignores non-strings", async () => {
   assert.equal(await safeEq("stats-key", "stats-key-extra"), false);
   assert.equal(await safeEq("stats-key", "stats-kez"), false);
   assert.equal(await safeEq("stats-key", "stats-ke"), false);
-  assert.equal(await safeEq("", ""), true);
+  assert.equal(await safeEq("", ""), false);
+  assert.equal(await safeEq("", "stats-key"), false);
+  assert.equal(await safeEq("stats-key", ""), false);
   assert.equal(await safeEq(null, "stats-key"), false);
   assert.equal(await safeEq("stats-key", undefined), false);
 });
@@ -225,7 +227,7 @@ test("turnstile stays off until TURNSTILE_ENABLED is true", async () => {
   const original = globalThis.fetch;
   globalThis.fetch = async () => { fetched = true; throw new Error("siteverify should not run"); };
   try {
-    const res = await worker.fetch(post("/generate", { origin: "https://evil.example" }), {});
+    const res = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }), env());
     assert.equal(res.status, 200);
     assert.deepEqual(calls, ["/generate"]);
     assert.equal(fetched, false);
@@ -268,9 +270,9 @@ test("submit and generate require a siteverify pass for this site before other w
     const ok = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ name: "Widget", turnstileToken: "good" })), binding);
     assert.equal(ok.status, 200);
     assert.equal(JSON.parse(seen).turnstileToken, "good");
-    const generated = await worker.fetch(post("/generate", {}, JSON.stringify({ prompt: "cat", turnstileToken: "www" })), binding);
+    const generated = await worker.fetch(post("/generate", { origin: "https://www.agentscouthq.com", "x-forwarded-for": "198.51.100.9" }, JSON.stringify({ prompt: "cat", turnstileToken: "www" })), binding);
     assert.equal(generated.status, 200);
-    assert.equal(generated.headers.get("access-control-allow-origin"), "*");
+    assert.equal(generated.headers.get("access-control-allow-origin"), "https://www.agentscouthq.com");
     assert.deepEqual(inner, ["/submit", "/generate"]);
     const verify = calls.filter((call) => call.url.includes("siteverify"));
     assert.equal(verify.length, 4);
@@ -280,14 +282,46 @@ test("submit and generate require a siteverify pass for this site before other w
   });
 });
 
-test("/generate is not wrapped", async () => {
+test("POST /generate is origin checked and write limited when turnstile is off", async () => {
   const { worker, calls } = handler();
-  const res = await worker.fetch(new Request("https://api.agentscouthq.com/generate", {
-    method: "POST",
-    headers: { origin: "https://evil.example", "content-type": "text/plain" },
-    body: "{}",
-  }), {});
-  assert.equal(res.status, 200);
+  const foreign = await worker.fetch(post("/generate", { origin: "https://evil.example" }), env());
+  assert.equal(foreign.status, 403);
+  assert.equal(calls.length, 0);
+  const missing = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }), {});
+  assert.equal(missing.status, 503);
+  const forwarded = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com", "cf-connecting-ip": "", "x-forwarded-for": "198.51.100.9" }), env());
+  assert.equal(forwarded.status, 403);
+  const ok = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }), env());
+  assert.equal(ok.status, 200);
+  assert.equal(ok.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
   assert.deepEqual(calls, ["/generate"]);
-  assert.equal(res.headers.get("access-control-allow-origin"), "*");
+  const read = await worker.fetch(new Request("https://api.agentscouthq.com/generate"), {});
+  assert.equal(read.status, 200);
+});
+
+test("readiness rejects a blocked url before the inner handler", async () => {
+  const { worker, calls } = handler();
+  const blocked = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[64:ff9b::a00:1]/")));
+  assert.equal(blocked.status, 400);
+  assert.equal(calls.length, 0);
+  const mapped = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[0:0:0:0:0:ffff:a9fe:a9fe]/")));
+  assert.equal(mapped.status, 400);
+  const ok = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://example.com/")));
+  assert.equal(ok.status, 200);
+  assert.deepEqual(calls, ["/readiness"]);
+});
+
+test("the turnstile flag is masked only on the paths protect already checks", () => {
+  const envBinding = { TURNSTILE_ENABLED: "true", TURNSTILE_SECRET: "turnstile-secret", IMAGE_WRITE: "binding" };
+  const generate = maskTurnstileEnv(post("/generate"), envBinding);
+  assert.equal(generate.TURNSTILE_ENABLED, "false");
+  assert.equal(generate.TURNSTILE_SECRET, "turnstile-secret");
+  assert.equal(generate.IMAGE_WRITE, "binding");
+  const submit = maskTurnstileEnv(post("/submit"), envBinding);
+  assert.equal(submit.TURNSTILE_ENABLED, "false");
+  const review = maskTurnstileEnv(post("/review"), envBinding);
+  assert.equal(review, envBinding);
+  assert.equal(review.TURNSTILE_ENABLED, "true");
+  const get = maskTurnstileEnv(new Request("https://api.agentscouthq.com/generate"), envBinding);
+  assert.equal(get, envBinding);
 });

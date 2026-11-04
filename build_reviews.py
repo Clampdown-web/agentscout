@@ -18,12 +18,19 @@ def data():
     except Exception as ex: print("reviews: using cached reviews.json (",str(ex)[:80],")")
     try: return json.load(open("reviews.json")).get("tools",{})
     except Exception: return {}
-def stars(n): return f'<span class="rv-stars" style="--r:{n}" aria-hidden="true">★★★★★</span>'
+def star_num(n):
+    try: v=float(n)
+    except (TypeError, ValueError): return 0
+    return 0 if v!=v or v in (float("inf"), float("-inf")) else v
+def star_text(n):
+    v=star_num(n)
+    return str(int(v)) if v==int(v) else str(v)
+def stars(n): return f'<span class="rv-stars" style="--r:{star_text(n)}" aria-hidden="true">★★★★★</span>'
 def day(ts): return datetime.datetime.fromtimestamp(ts/1000,datetime.timezone.utc)
 def section(x,d,V):
     n=x["name"]; s=x["slug"]; c=(d or {}).get("count",0); R=(d or {}).get("reviews",[]) if c else []
     summ=(f'{stars(d["avg"])} <span class="rv-text"><b>{d["avg"]:.1f}</b> out of 5 · {c} rating{"s" if c!=1 else ""}</span>' if c else f'<span class="rv-text">No ratings yet. Be the first to review {e(n)}.</span>')
-    lis="".join(f'<li class="rv-item">{stars(r["stars"])}<span class="sr">{r["stars"]} out of 5 stars</span> <b class="rv-who">{e(r.get("name") or "Anonymous")}</b> <time class="muted" datetime="{day(r["ts"]).isoformat()[:19]}Z">{day(r["ts"]).strftime("%b %-d, %Y")}</time><p>{e(r["text"])}</p></li>' for r in R)
+    lis="".join(f'<li class="rv-item">{stars(r["stars"])}<span class="sr">{star_text(r["stars"])} out of 5 stars</span> <b class="rv-who">{e(r.get("name") or "Anonymous")}</b> <time class="muted" datetime="{day(r["ts"]).isoformat()[:19]}Z">{day(r["ts"]).strftime("%b %-d, %Y")}</time><p>{e(r["text"])}</p></li>' for r in R)
     radios="".join(f'<input type="radio" class="sr" name="rv-stars" id="rv-s{i}" value="{i}"><label for="rv-s{i}" title="{i} star{"s" if i>1 else ""}"><span class="sr">{i} star{"s" if i>1 else ""}</span></label>' for i in range(1,6))
     return (f'<section id="reviews" class="rv" data-tool="{e(s)}" data-name="{e(n)}" aria-labelledby="rv-h"><h2 id="rv-h" style="font-size:16px;margin-bottom:10px">{e(n)} ratings and reviews</h2>'
         f'<div class="rv-sum">{summ}</div><ol class="rv-list"{"" if R else " hidden"}>{lis}</ol>'
@@ -66,7 +73,7 @@ def run(t):
                     a=nd["about"]; a.pop("aggregateRating",None); a.pop("review",None)
                     if R and d.get("count"):
                         a["aggregateRating"]={"@type":"AggregateRating","ratingValue":d["avg"],"ratingCount":d["count"],"reviewCount":len(R),"bestRating":5,"worstRating":1}
-                        a["review"]=[{"@type":"Review","author":{"@type":"Person","name":r.get("name") or "Anonymous visitor"},"datePublished":day(r["ts"]).date().isoformat(),"reviewBody":r["text"],"reviewRating":{"@type":"Rating","ratingValue":r["stars"],"bestRating":5,"worstRating":1}} for r in R[:10]]
+                        a["review"]=[{"@type":"Review","author":{"@type":"Person","name":r.get("name") or "Anonymous visitor"},"datePublished":day(r["ts"]).date().isoformat(),"reviewBody":r["text"],"reviewRating":{"@type":"Rating","ratingValue":star_num(r["stars"]),"bestRating":5,"worstRating":1}} for r in R[:10]]
             return '<script type="application/ld+json">'+json.dumps(L,ensure_ascii=False).replace("</","<\\/")+'</script>'
         h=re.sub(r'<script type="application/ld\+json">(.*?)</script>',lambda m:fix(m) if '"WebPage"' in m.group(1) else m.group(0),h,flags=re.S)
         if R and d.get("count"): ld_n+=1

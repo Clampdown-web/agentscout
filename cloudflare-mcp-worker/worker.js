@@ -149,9 +149,7 @@ function emptyResponse(status, extra) {
 }
 
 function clientIp(request) {
-  return request.headers.get("CF-Connecting-IP")
-    || (request.headers.get("X-Forwarded-For") || "").split(",")[0].trim()
-    || "0.0.0.0";
+  return (request.headers.get("CF-Connecting-IP") || "").trim();
 }
 
 // Cloudflare-verified crawlers only. A User-Agent of "Googlebot" is not evidence.
@@ -462,9 +460,14 @@ export default {
         console.error(JSON.stringify({ message: "rate limit binding missing", method: request.method, path: url.pathname, status }));
         return jsonResponse({ error: "Rate limiting is not configured." }, 503);
       }
+      const ip = clientIp(request);
+      if (!ip) {
+        status = 403;
+        return jsonResponse({ error: "Client address is unavailable." }, 403);
+      }
       const quota = verifiedCrawler(request)
         ? { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: 60 }
-        : await rateLimit(env, clientIp(request));
+        : await rateLimit(env, ip);
       const extra = rateHeaders(quota);
       if (quota.limited) {
         status = 429;

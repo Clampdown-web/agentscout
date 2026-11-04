@@ -4,10 +4,10 @@
  * Do not route these paths on api.agentscouthq.com; that host belongs to agentscout-image.
  *
  * Binding: VOTES (KV). One key per ISO week, votes:2026-w44 -> { day, week: {slug: count}, today: {slug: count} }.
- * GET /votes reads that key once. POST /vote checks a per-visitor seen key, then read-modify-writes the week document.
- * Two votes that land together can drop a count (last write wins). That race is a known pilot limitation.
+ * GET /votes reads that key once. POST /vote creates the per-visitor seen key only if it is absent, then read-modify-writes the week document.
+ * Two votes that land together can still drop a count on the week document (last write wins). That race is a known pilot limitation.
  */
-import { isBlockedIp, validateUrlShape, resolveAndCheck } from "./ssrf.js";
+import { isBlockedIp, isIpLiteral, validateUrlShape, resolveAndCheck } from "./ssrf.js";
 import { scoreListing } from "./score.js";
 
 const ALLOWED_ORIGINS = new Set([
@@ -64,9 +64,7 @@ function json(request, body, status = 200, cache = "no-store") {
 }
 
 function clientIp(request) {
-  return request.headers.get("cf-connecting-ip")
-    || (request.headers.get("x-forwarded-for") || "").split(",")[0].trim()
-    || "0.0.0.0";
+  return (request.headers.get("cf-connecting-ip") || "").trim();
 }
 
 function ptDay(now = new Date()) {
@@ -150,14 +148,49 @@ async function sha256(text) {
 
 async function dailySalt(env, day) {
   const key = `salt:${day}`;
-  if (!env.VOTES) return `memory-${day}`;
-  let salt = await env.VOTES.get(key);
-  if (!salt) {
-    salt = crypto.randomUUID();
-    await env.VOTES.put(key, salt, { expirationTtl: 60 * 60 * 72 });
-    salt = (await env.VOTES.get(key)) || salt;
+  if (!env.VOTES) return "";
+  return withSeenLock(key, async () => {
+    let salt = await env.VOTES.get(key);
+    if (typeof salt === "string" && salt) return salt;
+    try {
+      await env.VOTES.put(key, crypto.randomUUID(), { expirationTtl: 60 * 60 * 72 });
+    } catch (err) {
+      if (!kvConflict(err)) throw err;
+    }
+    salt = await env.VOTES.get(key);
+    return typeof salt === "string" && salt ? salt : "";
+  });
+}
+
+const seenLocks = new Map();
+
+function withSeenLock(key, fn) {
+  const prev = seenLocks.get(key) || Promise.resolve();
+  const run = prev.then(() => fn(), () => fn());
+  const settled = run.then(() => {}, () => {});
+  seenLocks.set(key, settled);
+  settled.then(() => { if (seenLocks.get(key) === settled) seenLocks.delete(key); });
+  return run;
+}
+
+function kvConflict(err) {
+  const msg = String((err && err.message) || err || "");
+  return msg.includes("429") || msg.toLowerCase().includes("too many requests");
+}
+
+async function claimSeen(kv, key) {
+  const claim = crypto.randomUUID();
+  const opts = { expirationTtl: 60 * 60 * 48 };
+  if (typeof kv.putIfAbsent === "function") return (await kv.putIfAbsent(key, claim, opts)) === true;
+  const existing = await kv.get(key);
+  if (existing) return false;
+  try {
+    await kv.put(key, claim, opts);
+  } catch (err) {
+    if (kvConflict(err)) return false;
+    throw err;
   }
-  return salt;
+  return (await kv.get(key)) === claim;
 }
 
 async function readLimited(response) {
@@ -193,16 +226,53 @@ async function readLimited(response) {
   return { text };
 }
 
+function sameIp(a, b) {
+  const norm = (ip) => String(ip || "").trim().toLowerCase().replace(/^\[|\]$/g, "").split("%")[0];
+  return norm(a) === norm(b);
+}
+
+function acceptedAddresses(addresses) {
+  const out = [];
+  for (const raw of addresses || []) {
+    const ip = String(raw || "").trim().replace(/\.$/, "");
+    if (!isIpLiteral(ip) || isBlockedIp(ip)) continue;
+    if (!out.some((have) => sameIp(have, ip))) out.push(ip);
+  }
+  return out;
+}
+
+function pinnedUrl(url, address) {
+  const next = new URL(url.toString());
+  next.hostname = String(address).trim().replace(/^\[|\]$/g, "").split("%")[0];
+  return next;
+}
+
+function reportedPeer(response) {
+  if (!response || typeof response !== "object") return "";
+  if (typeof response.peerAddress === "string" && response.peerAddress.trim()) return response.peerAddress.trim();
+  const cf = response.cf;
+  if (cf && typeof cf === "object") {
+    for (const key of ["resolvedIp", "originIp"]) {
+      if (typeof cf[key] === "string" && cf[key].trim()) return cf[key].trim();
+    }
+  }
+  return "";
+}
+
 async function fetchPublic(target, depth = 0) {
   const shape = validateUrlShape(target);
   if (shape.error) return shape;
   const dns = await resolveAndCheck(shape.url.hostname);
   if (dns.error) return dns;
+  const allowed = acceptedAddresses(dns.addresses);
+  if (!allowed.length) return { error: "That host resolves to a blocked address." };
+  const dest = pinnedUrl(shape.url, allowed[0]);
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), FETCH_MS);
   let response;
   try {
-    response = await fetch(shape.url.toString(), {
+    // Connect to an address resolveAndCheck accepted. There is no hostname fallback.
+    response = await fetch(dest.toString(), {
       redirect: "manual",
       signal: ctrl.signal,
       headers: { "user-agent": "AgentScoutRoast/1.0 (+https://agentscouthq.com/free-tools/roast-my-ai-tool-listing.html)" },
@@ -211,6 +281,11 @@ async function fetchPublic(target, depth = 0) {
     return { error: "The site did not respond in time." };
   } finally {
     clearTimeout(timer);
+  }
+  const peer = reportedPeer(response);
+  if (peer && !allowed.some((ip) => sameIp(ip, peer))) {
+    try { await response.body?.cancel(); } catch { /* already closed */ }
+    return { error: "That host resolves to a blocked address." };
   }
   if (response.status >= 300 && response.status < 400) {
     if (depth >= MAX_REDIRECTS) return { error: "Too many redirects." };
@@ -244,7 +319,10 @@ async function catalogMatch(finalHost) {
 }
 
 async function roast(request, env) {
-  if (!(await rateLimit(env, "roast", clientIp(request), ROAST_PER_MIN))) return json(request, { error: "Too many checks. Try again in a minute." }, 429);
+  if (!env.VOTES) return json(request, { error: "Vote storage is not configured." }, 503);
+  const ip = clientIp(request);
+  if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
+  if (!(await rateLimit(env, "roast", ip, ROAST_PER_MIN))) return json(request, { error: "Too many checks. Try again in a minute." }, 429);
   const url = new URL(request.url);
   let target = url.searchParams.get("url") || "";
   if (request.method === "POST") {
@@ -265,35 +343,40 @@ async function roast(request, env) {
   return json(request, { ok: true, final_url: page.url.toString(), ...score });
 }
 
+async function castVote(env, seenKey, slug, day, week) {
+  const won = await claimSeen(env.VOTES, seenKey);
+  const key = `votes:${week}`;
+  const stored = normalizeStored(await env.VOTES.get(key, "json"), day);
+  const doc = won ? castInDoc(stored, slug, day) : stored;
+  if (won) await env.VOTES.put(key, JSON.stringify({ day: doc.day, week: doc.week, today: doc.today }));
+  return {
+    ok: true,
+    slug,
+    week,
+    votes: Number(doc.week[slug]) || 0,
+    today: Number(doc.today[slug]) || 0,
+    already: !won,
+    yours: true,
+  };
+}
+
 async function vote(request, env) {
   if (!voteAllowed(request)) return json(request, { error: "Votes can only be cast from agentscouthq.com." }, 403);
   if (!env.VOTES) return json(request, { error: "Vote storage is not configured." }, 503);
-  if (!(await rateLimit(env, "vote", clientIp(request), VOTE_PER_MIN))) return json(request, { error: "Too many votes. Try again in a minute." }, 429);
+  const ip = clientIp(request);
+  if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
+  if (!(await rateLimit(env, "vote", ip, VOTE_PER_MIN))) return json(request, { error: "Too many votes. Try again in a minute." }, 429);
   const body = await request.json().catch(() => ({}));
   const slug = String(body.slug || "");
   if (!SLUG_RE.test(slug)) return json(request, { error: "Unknown tool." }, 400);
   const day = ptDay();
   const week = isoWeek(day);
   const salt = await dailySalt(env, day);
-  const visitor = await sha256(`${salt}\n${clientIp(request)}\n${slug}`);
+  if (!salt) return json(request, { error: "Vote storage is not ready." }, 503);
+  const visitor = await sha256(`${salt}\n${ip}\n${slug}`);
   const seenKey = `seen:${day}:${visitor}`;
-  const already = await env.VOTES.get(seenKey);
-  const key = `votes:${week}`;
-  const stored = normalizeStored(await env.VOTES.get(key, "json"), day);
-  const doc = already ? stored : castInDoc(stored, slug, day);
-  if (!already) {
-    await env.VOTES.put(seenKey, "1", { expirationTtl: 60 * 60 * 48 });
-    await env.VOTES.put(key, JSON.stringify({ day: doc.day, week: doc.week, today: doc.today }));
-  }
-  return json(request, {
-    ok: true,
-    slug,
-    week,
-    votes: Number(doc.week[slug]) || 0,
-    today: Number(doc.today[slug]) || 0,
-    already: !!already,
-    yours: true,
-  });
+  const result = await withSeenLock(seenKey, () => castVote(env, seenKey, slug, day, week));
+  return json(request, result);
 }
 
 async function votes(request, env) {

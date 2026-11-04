@@ -45,10 +45,47 @@ function blockedV4(raw) {
   return false;
 }
 
+function hextetPairToV4(hi, lo) {
+  const n = (parseInt(hi, 16) << 16) + parseInt(lo, 16);
+  return [24, 16, 8, 0].map((s) => (n >>> s) & 255).join(".");
+}
+
+// RFC 6052 embeds IPv4 after the prefix and skips the u octet at byte 8.
+function embeddedAt(full, prefixBytes) {
+  const bytes = [];
+  for (const part of full) {
+    const n = parseInt(part, 16);
+    bytes.push((n >> 8) & 255, n & 255);
+  }
+  const v4 = [];
+  let i = prefixBytes;
+  while (v4.length < 4 && i < bytes.length) {
+    if (i === 8) i += 1;
+    v4.push(bytes[i]);
+    i += 1;
+  }
+  return v4.length === 4 ? v4.join(".") : "";
+}
+
+function embeddedV4(full) {
+  const zero = (...idxs) => idxs.every((i) => full[i] === "0000");
+  // IPv4-mapped ::ffff:0:0/96, including the expanded form the ::ffff: prefix check misses.
+  if (zero(0, 1, 2, 3, 4) && full[5] === "ffff") return hextetPairToV4(full[6], full[7]);
+  // NAT64 well-known prefix 64:ff9b::/96.
+  if (full[0] === "0064" && full[1] === "ff9b" && zero(2, 3, 4, 5)) return hextetPairToV4(full[6], full[7]);
+  // NAT64 local-use prefix 64:ff9b:1::/48.
+  if (full[0] === "0064" && full[1] === "ff9b" && full[2] === "0001") return embeddedAt(full, 6);
+  // 6to4 2002::/16. The IPv4 address is the next 32 bits.
+  if (full[0] === "2002") return hextetPairToV4(full[1], full[2]);
+  return "";
+}
+
 function blockedV6(raw) {
   if (raw === "::" || raw === "::1") return true;
   const full = expandV6(raw);
   if (!full) return true;
+  const embedded = embeddedV4(full);
+  if (embedded) return blockedV4(embedded);
   const first = parseInt(full[0], 16);
   if ((first & 0xfe00) === 0xfc00) return true;
   if ((first & 0xffc0) === 0xfe80) return true;
