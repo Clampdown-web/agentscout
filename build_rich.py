@@ -2,6 +2,24 @@
 import json,html,os,re
 e=lambda s:html.escape(str(s or ""))
 R=json.load(open("tool_rich.json")) if os.path.exists("tool_rich.json") else {}
+def _merge_quality_extras():
+    """Pros, cons, setup and refreshed copy from data/quality_tool_extras.json (kept across rebuilds)."""
+    p="data/quality_tool_extras.json"
+    if not os.path.exists(p): return
+    extra=json.load(open(p))
+    for slug,add in extra.items():
+        base=R.get(slug)
+        if not base:
+            R[slug]=dict(add); continue
+        for k,v in add.items():
+            if k=="faq" and base.get("faq") and v:
+                have={q[0] for q in base["faq"] if isinstance(q,(list,tuple)) and q}
+                base["faq"]=list(base["faq"])+[q for q in v if q and q[0] not in have]
+            elif k=="sources" and base.get("sources") and v:
+                base["sources"]=list(dict.fromkeys(list(base["sources"])+list(v)))
+            else:
+                base[k]=v
+_merge_quality_extras()
 H2='<h2 style="font-size:16px;margin-bottom:10px">'
 # Tool-page FAQ "What are alternatives to X?" uses the same list as the page's alternatives section (build_related.pick,
 # set by build_site as REL), Oct 19, 2026 PT. Fewer than 3 related tools: fall back to the old category list.
@@ -109,6 +127,13 @@ def lite(out,x,t,catslug,prim,B,r):
     isfree=[a for q,a in pfq if q=="__free__"]; pfq=[(q,a) for q,a in pfq if q!="__free__"]
     if isfree: pq=isfree[0]
     faq=[(f"What is {n}?",r["long"][0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+pfq+ffq+[tuple(q) for q in r.get("faq",[])]
+    if r.get("pros") or r.get("cons"):
+        bits=[]
+        if r.get("pros"): bits.append("Pros: "+", ".join(r["pros"]))
+        if r.get("cons"): bits.append("Cons: "+", ".join(r["cons"]))
+        faq.append((f"What are the pros and cons of {n}?"," ".join(bits)))
+    if r.get("setup"):
+        faq.append((f"How do I set up {n}?", " ".join(f"{i+1}. {step}" for i,step in enumerate(r["setup"]))))
     _aa=_alt_answer(x,cat,altp)
     if _aa: faq.append((f"What are alternatives to {n}?",_aa))
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
@@ -116,6 +141,11 @@ def lite(out,x,t,catslug,prim,B,r):
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
       +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
+      +(f'{H2}Pros and cons</h2>'
+        +(f'<p style="margin:0 0 6px"><strong>Pros</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["pros"])}</ul>' if r.get("pros") else "")
+        +(f'<p style="margin:0 0 6px"><strong>Cons</strong></p><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["cons"])}</ul>' if r.get("cons") else '<div style="margin-bottom:28px"></div>')
+        if r.get("pros") or r.get("cons") else "")
+      +(f'{H2}Setup</h2><ol style="margin:0 0 28px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["setup"])}</ol>' if r.get("setup") else "")
       +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7;overflow-wrap:anywhere">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
       +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+_mcp(n,r)+phtml
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')

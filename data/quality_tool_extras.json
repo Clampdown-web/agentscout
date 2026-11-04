@@ -1,0 +1,236 @@
+{
+  "magentic-ui": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-04",
+    "long": [
+      "MagenticLite is the next generation of Magentic-UI from Microsoft AI Frontiers. The project README describes it as an agentic application that pairs an on-device-friendly orchestrator model, MagenticBrain, with a browser-use model, Fara, so tasks can run without frontier-scale models.",
+      "It works across the browser and the local file system: web research, form filling, and file management in one workflow. The README says it stops and checks in before critical actions, and that browser sessions run inside a Quicksand VM sandbox so the agent cannot reach the rest of the machine unless you allow it.",
+      "The AgentScout listing still describes the project as an experimental human-in-the-loop agent. The limitations doc calls MagenticLite a research prototype. The earlier 0.1 release, aimed at frontier models, stays on the magentic-ui-0.1 branch."
+    ],
+    "who": "People who want a local agent for browser tasks and local files, with a check-in before critical actions, and researchers comparing small-model agent setups. The README's quick start is written for macOS and Windows (WSL). Other platforms are in the installation guide.",
+    "features": [
+      "Orchestrator (MagenticBrain) plus a browser-use model (Fara), aimed at small models rather than frontier-scale compute",
+      "Browser and local file workflows in one app, including research, forms, and file management",
+      "Check-in before critical actions, so you can steer, approve, or take over",
+      "Browser sessions inside the Quicksand VM sandbox",
+      "Installable from PyPI as magentic_ui 0.2.x; the 0.1 line remains on its own branch"
+    ],
+    "pros": [
+      "The README says it is built for small models and does not require frontier-scale compute.",
+      "You stay in the loop: it checks in before critical actions, and browser sessions sit in the Quicksand sandbox.",
+      "The code is under the MIT License, and the 0.2 line installs from PyPI."
+    ],
+    "cons": [
+      "The limitations doc calls it a research prototype. Summaries of long sources often miss content, and long multi-turn chats get worse.",
+      "Steering the browser agent mid-task may not stick: MagenticBrain can send Fara back to the original sub-task.",
+      "Very large files do not fit, browser file-upload controls are not supported, and images are not supported as task inputs.",
+      "You still bring a model endpoint. The quick start is macOS or Windows via WSL."
+    ],
+    "setup": [
+      "On macOS or Windows (WSL), create a directory and a Python 3.12 virtual environment with uv, then install the PyPI package magentic_ui at version 0.2.0 or newer.",
+      "Run magentic-ui --port 8081 and open http://127.0.0.1:8081/.",
+      "Finish the in-app onboarding to connect a model endpoint. The repo's model hosting guide covers standing one up.",
+      "For a from-source run, use the build-from-source doc. The previous 0.1 release is the magentic-ui-0.1 branch, not the default install.",
+      "Read docs/limitations.md before you give it a long summary, a file upload, or an image."
+    ],
+    "faq": [
+      ["What does Magentic-UI not handle well?", "The project's limitations doc lists weak long-form summaries, degrading multi-turn chats, steering that the orchestrator may ignore, very large files, browser upload controls, and image inputs. It calls MagenticLite a research prototype."],
+      ["Which release should I install?", "The README's quick start installs magentic_ui 0.2.x from PyPI. That is MagenticLite. The Magentic-UI 0.1 release, aimed at frontier models, is on the magentic-ui-0.1 branch."]
+    ],
+    "sources": [
+      "https://github.com/microsoft/magentic-ui",
+      "https://github.com/microsoft/magentic-ui/blob/main/README.md",
+      "https://github.com/microsoft/magentic-ui/blob/main/docs/limitations.md"
+    ]
+  },
+  "orbi": {
+    "updated": "2026-11-04",
+    "pros": [
+      "Implementation and review are separate sessions. The listing describes a six-point merge gate: reviewer verdict, acceptance criteria, green CI, a clean branch, and an exact commit SHA.",
+      "Self-hosting is free under AGPL-3.0 or the Sustainable Use License, with your own model keys, via Docker or Node.js 22+.",
+      "Orbi Cloud includes 3 merged deliveries with no card, then Solo and Pro on the pricing page we cite."
+    ],
+    "cons": [
+      "Cloud Solo is $24 a month and Pro is $66 a month, both billed yearly ($290 and $790), for 1 and 5 repos.",
+      "Work starts from GitHub labels (ai-ready, and ai-release for a tagged release). No label, no run.",
+      "Self-hosting still needs your own model keys. The app does not include a model."
+    ],
+    "setup": [
+      "Self-host with Docker or Node.js 22+ (SQLite and local git worktrees), or install the Orbi Cloud GitHub App.",
+      "Add the ai-ready label to an issue to start an isolated worktree, a pull request, and the separate review session.",
+      "Let the six-point gate finish before you expect a merge. Apply ai-release when you want a tagged GitHub Release.",
+      "Read the official pricing page linked from the listing before you pick Solo or Pro."
+    ]
+  },
+  "neverapply": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The hosted MCP endpoint is https://neverapply.co/mcp, with OAuth 2.1 and PKCE, so the client config does not hold a personal API key.",
+      "Applying requires the mcp:apply scope, credits, and an explicit confirmation of the job title and company. Screening answers are not guessed.",
+      "The Free tier is $0: 10 lifetime auto-applies, a 5-matches-a-day preview, and 50 MCP reads a day per client."
+    ],
+    "cons": [
+      "Those free caps are the whole free plan. Pro is $29 a month (150 apply credits) and Max is $49 a month (450).",
+      "The job index is the maker's figure (919,000+ roles on the listing). It is not a count we re-crawled.",
+      "An assistant can prepare a resume and a cart of roles, but it cannot submit a named application until you confirm that job."
+    ],
+    "setup": [
+      "Add https://neverapply.co/mcp as a remote Streamable HTTP MCP server in Claude, Cursor, Codex, ChatGPT, VS Code, Gemini CLI, Kiro, or Grok.",
+      "Complete the browser OAuth sign-in and grant mcp:read, mcp:write, or mcp:apply.",
+      "Or install the MIT-licensed plugin and skills from the kasovy/neverapply-mcp repository.",
+      "Confirm the plan's apply credits on neverapply.co/pricing before you expect submissions."
+    ]
+  },
+  "agenvas": {
+    "updated": "2026-11-04",
+    "pros": [
+      "MIT licensed and self-hosted. The stack (React 19, Java 21, Spring Boot, PostgreSQL) starts with one Docker Compose command.",
+      "An agent only sees the cards you connect, and a media proposal waits for approval before it spends model credits.",
+      "You can import a ComfyUI API workflow JSON, map the inputs, and save it as a tool on the canvas."
+    ],
+    "cons": [
+      "OpenAI-compatible APIs, ComfyUI, and RunningHub are billed by those providers. Agenvas does not include their usage.",
+      "You run the Docker stack yourself, including PostgreSQL.",
+      "The GitHub star count on the listing is small. Popularity is not the reason to pick it."
+    ],
+    "setup": [
+      "Clone the repo and start it with Docker Compose, as the listing describes.",
+      "Connect an OpenAI-compatible endpoint, a ComfyUI workflow, or a RunningHub app.",
+      "Put text, image, video, or audio on cards and connect only the cards the agent should see.",
+      "Approve the proposal card before a generation job runs."
+    ]
+  },
+  "roo-code": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The Apache 2.0 code is still readable and forkable after the shutdown.",
+      "The README points existing users to Cline, the project Roo Code was forked from, and to ZooCode, a community fork.",
+      "The old mode design (Code, Architect, Ask, Debug, and custom modes) is still visible in the archived tree if you are studying it."
+    ],
+    "cons": [
+      "The extension shut down on May 15, 2026, and the repository is archived. There is no maintained release.",
+      "It is a poor install for a new setup. The listing says roocode.com redirects to Roomote.",
+      "Billing questions for the old product go to billing@roocode.com, not to a current in-app plan."
+    ],
+    "setup": [
+      "Do not install Roo Code for new work.",
+      "Read the archived README on github.com/RooCodeInc/Roo-Code.",
+      "If you want the maintained line it was forked from, open the Cline listing. ZooCode is the community fork the README names.",
+      "If you still have an old subscription, use the billing address in the FAQ rather than the archived extension."
+    ]
+  },
+  "flowise": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The Apache 2.0 code remains on GitHub and the team encourages a fork.",
+      "The archived product is still a useful map of a visual builder: Agentflow, Chatflow, tool calling, RAG, human review, and traces.",
+      "You can read the repo without an account."
+    ],
+    "cons": [
+      "End of life was August 31, 2026. The repo was archived on August 13, 2026, and npm packages and Docker images were marked deprecated.",
+      "The core team stopped taking part on Discord and GitHub at end of life, so issues will not be fixed upstream.",
+      "A new project should not pin those deprecated images."
+    ],
+    "setup": [
+      "Treat github.com/FlowiseAI/Flowise as an archive.",
+      "If you already run a deployment, plan a fork or a move. Do not pull a fresh deprecated image and assume it is supported.",
+      "For a builder that is still maintained, use the no-code builders category and check each listing's maturity line."
+    ]
+  },
+  "autogen": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The repo still documents AgentChat, Core, extensions for model clients and MCP, and AutoGen Studio.",
+      "Microsoft's README names Microsoft Agent Framework as the successor and points at a migration guide.",
+      "Python 3.10 or later is the stated requirement if you are only reading or migrating an existing project."
+    ],
+    "cons": [
+      "The README says the project is archived and no longer maintained: no bug fixes, security fixes, new features, or support, and it advises against production use.",
+      "AutoGen Studio is part of that archived tree, not a current hosted product.",
+      "Starting a new production agent on AutoGen means ignoring the maintainer's own advice."
+    ],
+    "setup": [
+      "For new work, start with Microsoft Agent Framework and the migration guide linked from the AutoGen README.",
+      "To study the old APIs, clone github.com/microsoft/autogen and stay on Python 3.10 or newer.",
+      "Do not ship AutoGen Studio as if Microsoft were still supporting it."
+    ]
+  },
+  "orke": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The app is free. The Microsoft Store listing says Free. Claude Code, Codex, and other accounts are signed in separately.",
+      "One desktop holds the terminal session, a web window the agent can drive, and a Git window for diffs and pushes.",
+      "Scheduled AI employees leave logins and payments as a request for a person, and the iPhone and Android apps continue the same session."
+    ],
+    "cons": [
+      "Model use bills the Claude, Codex, or other account you connect. Orke does not include that usage.",
+      "macOS is macOS 26 or later on Apple Silicon. Linux is a server build you open in a browser, x86_64.",
+      "Plain terminals work without an AI account, but the agent features do not."
+    ],
+    "setup": [
+      "Install Windows x64 from the Microsoft Store, the Apple Silicon DMG from GitHub Releases, or the Linux server build.",
+      "Sign in to the agent CLI you already use. Usage counts toward that account.",
+      "Review diffs in the Git window before you push.",
+      "If you turn on an AI employee, leave login and payment steps for yourself and read the work log it writes."
+    ]
+  },
+  "comfyui": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The desktop app and engine are free and GPL-3.0. Workflows are node graphs, so each model and step is visible.",
+      "The maker says it can run large open models on as little as 4 GB of VRAM and 8 GB of RAM via asynchronous weight streaming.",
+      "The same graph can run locally or on Comfy Cloud, and Comfy Agent can draft a workflow you then inspect."
+    ],
+    "cons": [
+      "Comfy Cloud is paid: Standard $20 a month ($16 yearly), Creator $35, Pro $100, Team $700, with Enterprise on request.",
+      "Local runs still need a machine that can hold the models you choose. Low VRAM is a maker claim, not a guarantee for every model.",
+      "Partner Nodes for closed models such as Nano Banana are separate from the open engine."
+    ],
+    "setup": [
+      "Install the desktop app or the open-source engine from the official site or the Comfy-Org/ComfyUI repo.",
+      "Load or build a node graph. Open models named on the listing include Wan, LTX, and Hunyuan.",
+      "If you use Comfy Agent, read the graph it builds before you run it.",
+      "For hosted GPUs, compare the Cloud tiers on the pricing page cited in the listing. Yearly billing is about 20% less on the tiers that show a yearly price."
+    ]
+  },
+  "penpot": {
+    "updated": "2026-11-04",
+    "pros": [
+      "The Professional cloud plan is $0, and the open-source edition (MPL-2.0) can be self-hosted.",
+      "An official MCP server and an open API let agents read and edit design files.",
+      "Files use SVG, CSS, HTML, and JSON, with design tokens plus CSS Grid and Flex layouts."
+    ],
+    "cons": [
+      "Unlimited is $7 per editor a month, capped at $175. Enterprise is $25 per member a month. Private Server is $50k a year.",
+      "Self-hosting means you run the servers. The $0 cloud plan is the path that does not.",
+      "An agent with the MCP server can edit files. Grant that only to the files you mean it to touch."
+    ],
+    "setup": [
+      "Use the Professional cloud plan or self-host the open-source edition from github.com/penpot/penpot.",
+      "Connect the official MCP server only if you want an agent to read or edit files.",
+      "Keep design tokens as the source of truth before you export.",
+      "Check penpot.app pricing before you add paid editors. Non-profit, education, and open-source discounts are mentioned on the pricing notes in the listing."
+    ]
+  },
+  "9bot": {
+    "updated": "2026-11-04",
+    "pros": [
+      "One product covers recurring WhatsApp messages, custom commands, moderation, RSS and API news, Channel posts, and an engagement dashboard.",
+      "The official MCP server is remote Streamable HTTP at https://mcp.9bot.com.br/mcp with OAuth, using the WhatsApp number on the account.",
+      "Basic Pro starts with a 7-day trial. The site is offered in English, Portuguese, Spanish, and Chinese."
+    ],
+    "cons": [
+      "After the trial, Basic Pro is US$35 a month for the first 3 months, then US$70 a month. MCP access needs an active subscription.",
+      "It is a WhatsApp groups, communities, and Channels product. It is not a general chat agent.",
+      "An agent can schedule and moderate only inside the 9bot account you connect. It does not replace WhatsApp's own rules."
+    ],
+    "setup": [
+      "Start the 7-day trial on 9bot.com.br and connect the WhatsApp account that owns the groups.",
+      "Turn on the moderation rules and any RSS, live-stream, or affiliate schedules you actually want.",
+      "To drive it from an assistant, add https://mcp.9bot.com.br/mcp and sign in with OAuth using that WhatsApp number.",
+      "Confirm the subscription is active before you expect MCP tools to run. The listing says an active plan is required."
+    ]
+  }
+}

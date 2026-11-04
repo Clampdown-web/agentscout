@@ -345,3 +345,125 @@ import build_seo_trim; build_seo_trim.run(t)  # title<=60 / desc<=156 trims, /be
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)
+
+# Thin tool pages and the daily index cap. Runs after the exit hooks that rewrite HTML and sitemap
+# (featured, GA, lastmod) and before Pagefind, which only indexes sitemap URLs that are not noindex.
+ENRICH_FIELDS=("long","who","features","pros","cons","setup","faq","pricing","pricing_v","mcp")
+THIN_WORDS=80
+NEW_TOOL_CAP=5
+def _tool_rich():
+    import build_rich
+    return build_rich.R
+def _unique_words(x,rich):
+    """Words of the listing plus enrichment prose. Boilerplate FAQ from the auto layer is not included."""
+    parts=[x.get("description") or ""]
+    r=rich.get(x["slug"]) or {}
+    parts+=[p for p in (r.get("long") or []) if isinstance(p,str)]
+    if isinstance(r.get("who"),str): parts.append(r["who"])
+    for key in ("features","pros","cons","setup"):
+        parts+=[p for p in (r.get(key) or []) if isinstance(p,str)]
+    for q in r.get("faq") or []:
+        if isinstance(q,(list,tuple)): parts+=[str(p) for p in q]
+    return len(re.findall(r"[A-Za-z0-9']+"," ".join(parts)))
+def _has_enrichment(x,rich):
+    r=rich.get(x["slug"]) or {}
+    return any(r.get(k) for k in ENRICH_FIELDS)
+def _is_thin_tool(x,rich):
+    """Short or boilerplate tool copy with no enrichment fields. Enriched pages are not thin."""
+    if _has_enrichment(x,rich): return False
+    return _unique_words(x,rich)<THIN_WORDS
+def apply_thin_page_rule(tools):
+    """Tool pages under 80 unique words and with no enrichment fields get noindex,follow and leave sitemap.xml.
+    They still render and stay linked. The daily build admits at most 5 new unenriched tool URLs; the rest stay
+    noindex until an enrichment record exists. Returns counts for the build log."""
+    import datetime as _d
+    from zoneinfo import ZoneInfo as _Zi
+    rich=_tool_rich()
+    today=_d.datetime.now(_Zi("America/Los_Angeles")).date().isoformat()
+    state_path="data/index_admit.json"
+    try: state=json.load(open(state_path))
+    except Exception: state={}
+    admitted=dict(state.get("admitted") or {})
+    slots=list((state.get("slots") or {}).get(today) or [])
+    by={x["slug"]:x for x in tools}
+    if not state.get("seeded"):
+        for x in tools:
+            if (x.get("added") or "")<today and not _is_thin_tool(x,rich):
+                admitted.setdefault(x["slug"], x.get("added") or "1970-01-01")
+        state["seeded"]=True
+    slots=[s for s in slots if s in by and not _has_enrichment(by[s],rich) and not _is_thin_tool(by[s],rich)]
+    noindex=[]; queued=[]; indexed=[]
+    for x in sorted(tools, key=lambda z:((z.get("added") or ""), z["slug"])):
+        slug=x["slug"]; enr=_has_enrichment(x,rich); thin=_is_thin_tool(x,rich)
+        grandfather=admitted.get(slug,"") not in ("", today) and admitted.get(slug,"")<today
+        if enr or (not thin and (grandfather or slug in slots)):
+            admitted.setdefault(slug, today if enr and slug not in admitted else admitted.get(slug, today))
+            indexed.append(slug); continue
+        if thin:
+            noindex.append(slug); continue
+        if len(slots)<NEW_TOOL_CAP:
+            slots.append(slug); admitted[slug]=today; indexed.append(slug)
+        else:
+            noindex.append(slug); queued.append(slug)
+    state["admitted"]=admitted
+    state.setdefault("slots",{})[today]=slots
+    state["queued"]=queued
+    json.dump(state, open(state_path,"w"), indent=1)
+    B="https://agentscouthq.com/"
+    drop={f"{B}tools/{s}.html" for s in noindex}
+    robots='<meta name="robots" content="noindex,follow">'
+    for slug in noindex:
+        path=f"tools/{slug}.html"
+        if not os.path.exists(path): continue
+        html_s=open(path,encoding="utf-8").read()
+        if 'name="robots" content="noindex' in html_s: continue
+        if re.search(r'<meta name="robots" content="[^"]*">', html_s):
+            html_s=re.sub(r'<meta name="robots" content="[^"]*">', robots, html_s, count=1)
+        else:
+            html_s=html_s.replace("<head>", "<head>\n"+robots, 1)
+        open(path,"w",encoding="utf-8").write(html_s)
+    for fn in os.listdir("tools"):
+        if fn.endswith(".html") and 'name="robots" content="noindex' in open(f"tools/{fn}",encoding="utf-8").read(2500):
+            drop.add(f"{B}tools/{fn}")
+    sm=open("sitemap.xml",encoding="utf-8").read(); kept=[]; skip=False
+    for line in sm.splitlines(True):
+        if skip:
+            if "</url>" in line: skip=False
+            continue
+        m=re.search(r"<loc>([^<]+)</loc>", line)
+        if m and m.group(1) in drop:
+            if "</url>" not in line: skip=True
+            continue
+        kept.append(line)
+    open("sitemap.xml","w",encoding="utf-8").write("".join(kept))
+    urls=open("sitemap.xml",encoding="utf-8").read().count("<loc>")
+    mp="api/metrics.json"
+    if os.path.exists(mp):
+        _met=json.load(open(mp))
+        _old=_met.get("indexed_pages_count")
+        _met["indexed_pages_count"]=urls
+        _met["pages_count"]=urls
+        json.dump(_met, open(mp,"w"), indent=2); open(mp,"a").write("\n")
+        if isinstance(_old,int) and _old!=urls:
+            _a, _b = f"{_old:,}+", f"{urls:,}+"
+            for root, dirs, files in os.walk("."):
+                dirs[:] = [d for d in dirs if d not in ("pagefind", ".git", "node_modules", ".pagefind_new")]
+                if root.startswith("./.") or "/node_modules" in root or "/pagefind" in root: continue
+                for fn in files:
+                    if not fn.endswith(".html"): continue
+                    fp=os.path.join(root, fn)
+                    tx=open(fp,encoding="utf-8").read()
+                    if _a not in tx or "data-live-pages" not in tx: continue
+                    open(fp,"w",encoding="utf-8").write(tx.replace(f"data-live-pages>{_a}", f"data-live-pages>{_b}").replace(f'data-live-pages">{_a}', f'data-live-pages">{_b}'))
+    if any(x["slug"]=="hedra" or "hedra.com" in (x.get("url") or "")+(x.get("website") or "") for x in tools):
+        raise SystemExit("Hedra is still in the catalog")
+    print(f"thin-page rule: noindex {len(noindex)} tool pages ({len(queued)} queued by the {NEW_TOOL_CAP}/day cap); sitemap {urls} urls; indexed tools {len(indexed)}")
+    return {"noindex":len(noindex),"queued":queued,"sitemap":urls,"indexed_tools":len(indexed)}
+import atexit as _axq, build_extras as _bxq
+def _quality_finish():
+    _bxq._apply_featured()
+    import build_quality
+    build_quality.inject(t)
+    apply_thin_page_rule(t)
+_axq.unregister(_bxq._apply_featured)
+_axq.register(_quality_finish)
