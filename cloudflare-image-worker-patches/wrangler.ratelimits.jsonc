@@ -1,0 +1,14 @@
+{
+  "ratelimits": [
+    {
+      "name": "IMAGE_WRITE",
+      "namespace_id": "481201",
+      "simple": { "limit": 10, "period": 60 }
+    },
+    {
+      "name": "IMAGE_READ",
+      "namespace_id": "481202",
+      "simple": { "limit": 120, "period": 60 }
+    }
+  ]
+}

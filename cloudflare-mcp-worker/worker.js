@@ -3,8 +3,12 @@
  * Catalog and commerce data come from catalog_snapshot.json and products_snapshot.json
  * (2,051 tools, 40 categories, 272 MCP servers).
  *
- * Every response gets the security headers below. Burst and per-minute caps are
- * per-isolate and keyed by IP. Search-engine and answer-engine crawlers are exempt.
+ * Every response gets the security headers below. Burst (15 / 10s) and per-minute
+ * (60 / 60s) caps use the Workers Rate Limiting bindings MCP_BURST and MCP_MINUTE,
+ * keyed by CF-Connecting-IP. Those counters are shared across isolates in a
+ * Cloudflare location. A User-Agent string is never a bypass. A request is exempt
+ * only when Cloudflare sets request.cf.verifiedBotCategory or
+ * request.cf.botManagement.verifiedBot.
  */
 import catalog from "./catalog_snapshot.json" with { type: "json" };
 import products from "./products_snapshot.json" with { type: "json" };
@@ -23,16 +27,12 @@ const CORS_HEADERS = {
   "Access-Control-Max-Age": "86400",
 };
 
-// Allowlisted crawlers skip the burst cap. Match the full token, not the substring "bot".
-const ALLOWLISTED_BOT = /Googlebot|Bingbot|OAI-SearchBot|ChatGPT-User|PerplexityBot|ClaudeBot|Applebot/i;
-
 const BURST_WINDOW_MS = 10_000;
 const BURST_MAX = 15;
 const MINUTE_WINDOW_MS = 60_000;
 const MINUTE_MAX = 60;
 const MAX_BODY = 100_000;
 
-const buckets = new Map();
 const tools = Array.isArray(catalog.tools) ? catalog.tools : [];
 const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
 
@@ -155,44 +155,33 @@ function clientIp(request) {
     || "0.0.0.0";
 }
 
-function allowlisted(request) {
-  return ALLOWLISTED_BOT.test(request.headers.get("User-Agent") || "");
+// Cloudflare-verified crawlers only. A User-Agent of "Googlebot" is not evidence.
+function verifiedCrawler(request) {
+  const cf = request.cf;
+  if (!cf || typeof cf !== "object") return false;
+  const category = typeof cf.verifiedBotCategory === "string" ? cf.verifiedBotCategory.trim() : "";
+  if (category) return true;
+  const management = cf.botManagement;
+  return !!(management && typeof management === "object" && management.verifiedBot === true);
 }
 
-function rateLimit(ip, now = Date.now()) {
-  let row = buckets.get(ip);
-  if (!row) {
-    row = { burstStart: now, burst: 0, minuteStart: now, minute: 0 };
-    buckets.set(ip, row);
+function limitersReady(env) {
+  return !!(env && env.MCP_BURST && typeof env.MCP_BURST.limit === "function"
+    && env.MCP_MINUTE && typeof env.MCP_MINUTE.limit === "function");
+}
+
+async function rateLimit(env, ip) {
+  const [burst, minute] = await Promise.all([
+    env.MCP_BURST.limit({ key: ip }),
+    env.MCP_MINUTE.limit({ key: ip }),
+  ]);
+  if (!burst || burst.success === false) {
+    return { limited: true, limit: BURST_MAX, remaining: 0, reset: BURST_WINDOW_MS / 1000 };
   }
-  if (now - row.burstStart >= BURST_WINDOW_MS) {
-    row.burstStart = now;
-    row.burst = 0;
+  if (!minute || minute.success === false) {
+    return { limited: true, limit: MINUTE_MAX, remaining: 0, reset: MINUTE_WINDOW_MS / 1000 };
   }
-  if (now - row.minuteStart >= MINUTE_WINDOW_MS) {
-    row.minuteStart = now;
-    row.minute = 0;
-  }
-  row.burst += 1;
-  row.minute += 1;
-  if (buckets.size > 8000) {
-    for (const [key, value] of buckets) {
-      if (now - value.minuteStart >= MINUTE_WINDOW_MS && now - value.burstStart >= BURST_WINDOW_MS) buckets.delete(key);
-    }
-  }
-  const burstLimited = row.burst > BURST_MAX;
-  const minuteLimited = row.minute > MINUTE_MAX;
-  const limited = burstLimited || minuteLimited;
-  const limit = burstLimited ? BURST_MAX : MINUTE_MAX;
-  const used = burstLimited ? row.burst : row.minute;
-  const windowMs = burstLimited ? BURST_WINDOW_MS : MINUTE_WINDOW_MS;
-  const started = burstLimited ? row.burstStart : row.minuteStart;
-  return {
-    limited,
-    limit,
-    remaining: Math.max(0, limit - used),
-    reset: Math.max(1, Math.ceil((windowMs - (now - started)) / 1000)),
-  };
+  return { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: MINUTE_WINDOW_MS / 1000 };
 }
 
 function rateHeaders(quota) {
@@ -461,16 +450,22 @@ function infoBody() {
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
-    const started = Date.now();
     let status = 200;
     try {
       if (request.method === "OPTIONS") {
         status = 204;
         return emptyResponse(204);
       }
-      const quota = allowlisted(request) ? { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: 60 } : rateLimit(clientIp(request), started);
+      if (!limitersReady(env)) {
+        status = 503;
+        console.error(JSON.stringify({ message: "rate limit binding missing", method: request.method, path: url.pathname, status }));
+        return jsonResponse({ error: "Rate limiting is not configured." }, 503);
+      }
+      const quota = verifiedCrawler(request)
+        ? { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: 60 }
+        : await rateLimit(env, clientIp(request));
       const extra = rateHeaders(quota);
       if (quota.limited) {
         status = 429;
