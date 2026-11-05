@@ -1,0 +1,79 @@
+{
+  "checked_month": "Nov 2026",
+  "checked_on": "2026-11-05",
+  "timezone": "America/Los_Angeles",
+  "currency": "USD",
+  "public_wording": "The comparison table says Other directories / elsewhere. Do not print entry names in HTML.",
+  "entries": [
+    {
+      "id": "taaft-launch-low",
+      "name": "There's An AI For That",
+      "offer": "Low traffic launch (basic listing)",
+      "url": "https://theresanaiforthat.com/launch/",
+      "price_usd": 49,
+      "billing": "one-time",
+      "include_in_range": true,
+      "checked_on": "2026-11-05",
+      "evidence": "Live launch page: Low traffic, basic listing, $49 one-time review fee, permanent listing."
+    },
+    {
+      "id": "taaft-launch-high",
+      "name": "There's An AI For That",
+      "offer": "Everything you need launch, and get-featured submission",
+      "url": "https://theresanaiforthat.com/launch/",
+      "also_urls": ["https://theresanaiforthat.com/get-featured/"],
+      "price_usd": 437,
+      "billing": "one-time",
+      "include_in_range": true,
+      "checked_on": "2026-11-05",
+      "evidence": "Live launch page: Everything you need, maximum exposure, $437 one-time fee. Get-featured page: Price $437 to submit a new tool. FAQ: The $437 submission fee is one-off."
+    },
+    {
+      "id": "dang-basic",
+      "name": "Dang.ai",
+      "offer": "Basic paid listing",
+      "url": "https://dang.ai/pricing",
+      "price_usd": 49,
+      "billing": "one-time",
+      "include_in_range": true,
+      "checked_on": "2026-11-05",
+      "evidence": "Live pricing page: Basic is $49. Button text is Get listed for $49 (skip the backlink, review in about 4 days, Featured badge). The same page also shows a $0 plan and Pro at $30 setup then $19/mo. Noted in the Oct 15 2026 research log as a $49 faster review."
+    },
+    {
+      "id": "toolify-submit",
+      "name": "Toolify",
+      "offer": "Submit a tool",
+      "url": "https://www.toolify.ai/submit",
+      "price_usd": 99,
+      "billing": "one-time",
+      "include_in_range": false,
+      "checked_on": "2026-11-05",
+      "evidence": "The submit page still offers a paid permanent listing (in the list and Just Launched within 48 hours, no queue, border highlight, dofollow links). A raw fetch on 2026-11-05 was blocked by Cloudflare (403), and the fetched FAQ left the price answer collapsed, so this dollar amount is not marked in the range. The last quote of their own FAQ (checked 2026-10-18) is: It costs $99 to list a tool. This is a one-time payment. $99 sits inside $49–$437. Oct 15 2026 research log also recorded $99."
+    },
+    {
+      "id": "futurepedia-verified",
+      "name": "Futurepedia",
+      "offer": "Verified / enhanced listing",
+      "url": "https://www.futurepedia.io/enhanced",
+      "also_urls": ["https://www.futurepedia.io/submit-tool", "https://www.futurepedia.io/verified"],
+      "price_usd": null,
+      "last_noted_price_usd": 497,
+      "billing": "one-time",
+      "include_in_range": false,
+      "checked_on": "2026-11-05",
+      "evidence": "Live check 2026-11-05: /enhanced, /submit-tool, and /verified returned HTTP 404, so there is no public listing price to include. The Oct 15 2026 research log recorded Verified at $497 on /enhanced."
+    },
+    {
+      "id": "aixploria-submit",
+      "name": "AIxploria",
+      "offer": "Submit a tool",
+      "url": "https://www.aixploria.com/en/submit-ai-tool-or-feature-company/",
+      "price_usd": null,
+      "last_noted_price_usd": 79,
+      "billing": "one-time",
+      "include_in_range": false,
+      "checked_on": "2026-11-05",
+      "evidence": "Live submit page on 2026-11-05 contained no dollar amount. The Oct 15 2026 research log recorded listings from $79 and featured ads up to $399. Those figures are not used for this month's range."
+    }
+  ]
+}

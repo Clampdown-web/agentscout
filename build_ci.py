@@ -1,7 +1,7 @@
 """Competitive-intel pass (owner-approved Oct 22 2026 PT):
 - /skills/: Agent Skills section with install commands copied from each project's own README (checked Oct 22 2026).
 - Homepage hero line + og/twitter description: "<N> MCP servers, link-checked daily", N from tools.json.
-- Free listing vs other directories ($49 to $437, prices checked Oct 2026; no competitor named, owner request Oct 22 2026) on index.html and submit.html.
+- Free listing vs other directories (low–high and checked month from data/competitor_listing_prices.json; no competitor named, owner request Oct 22 2026) on index.html and submit.html.
 Idempotent (marker blocks). Every count is computed from tools.json."""
 import json,re,html,os
 e=lambda s:html.escape(str(s),quote=True)
@@ -25,13 +25,59 @@ def _blk(s,tag,html_,anchor,after=True):
     b=f"<!--ci:{tag}-->{html_}<!--/ci:{tag}-->"
     if anchor not in s: raise SystemExit(f"build_ci: anchor for {tag} missing")
     return s.replace(anchor,anchor+b if after else b+anchor,1)
+def place_block(s,tag,html_,anchor,after=True):
+    """Insert a marker block, or replace it where it already sits so later passes do not move it."""
+    b=f"<!--ci:{tag}-->{html_}<!--/ci:{tag}-->"
+    pat=re.compile(rf"<!--ci:{tag}-->.*?<!--/ci:{tag}-->",re.S)
+    if pat.search(s): return pat.sub(lambda m:b,s,count=1)
+    if anchor not in s: raise SystemExit(f"build_ci: anchor for {tag} missing")
+    return s.replace(anchor,anchor+b if after else b+anchor,1)
+def _usd(n):
+    return f"${n:,}"
+def listing_prices(path="data/competitor_listing_prices.json"):
+    """Low/high listing fees and the checked month. Names in the file never reach the HTML."""
+    data=json.load(open(path,encoding="utf-8"))
+    month=str(data.get("checked_month") or "").strip()
+    if not re.fullmatch(r"[A-Z][a-z]{2,8} \d{4}", month):
+        raise SystemExit(f"build_ci: checked_month must look like 'Nov 2026' in {path}")
+    prices=[]
+    for ent in data.get("entries") or []:
+        if not ent.get("include_in_range"): continue
+        p=ent.get("price_usd")
+        if isinstance(p,bool) or not isinstance(p,int) or p<0:
+            raise SystemExit(f"build_ci: include_in_range entry {ent.get('id')} needs an integer price_usd")
+        prices.append(p)
+    if not prices: raise SystemExit(f"build_ci: no prices marked include_in_range in {path}")
+    return min(prices), max(prices), month, data
 def cmp_table():
-    return ('<div style="overflow-x:auto;margin:12px 0 16px"><table style="border-collapse:collapse;font-size:14px;min-width:0;width:100%;max-width:640px">'
-     '<caption style="text-align:left;font-weight:700;margin-bottom:6px">Free listing vs $49–$437 elsewhere</caption>'
+    lo,hi,month,data=listing_prices()
+    cap=f"Free listing vs {_usd(lo)}–{_usd(hi)} elsewhere"
+    other=f"{_usd(lo)} to {_usd(hi)} to get listed"
+    foot=f"Prices checked {month}, may change."
+    table=('<div style="overflow-x:auto;margin:12px 0 16px"><table style="border-collapse:collapse;font-size:14px;min-width:0;width:100%;max-width:640px">'
+     f'<caption style="text-align:left;font-weight:700;margin-bottom:6px">{cap}</caption>'
      '<thead><tr><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Directory</th><th style="text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)">Cost to get listed</th></tr></thead><tbody>'
      '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>AgentScout</b></td><td style="padding:6px 8px;border-bottom:1px solid var(--line)"><b>Free ($0 forever · 3–5 day standard review queue).</b> Every submission is reviewed; optional <a href="https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e" target="_blank" rel="noopener noreferrer"><b>$15 Fast-Track + 7-Day Launch Boost</b></a> (same-day review), <a href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer"><b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b></a> (30 full days featured vs. 5-day boosts elsewhere), &amp; <a href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer"><b>$99/wk Weekly Sitewide Sponsor</b></a> boosts available. Featured slots are clearly labeled and sit above the list; rankings are never paid.</td></tr>'
-     '<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)">Other directories</td><td style="padding:6px 8px;border-bottom:1px solid var(--line)">$49 to $437 to get listed</td></tr>'
-     f'</tbody></table><p class="muted" style="font-size:12.5px;margin:6px 0 0">Prices checked Oct 2026, may change.</p></div>')
+     f'<tr><td style="padding:6px 8px;border-bottom:1px solid var(--line)">Other directories</td><td style="padding:6px 8px;border-bottom:1px solid var(--line)">{other}</td></tr>'
+     f'</tbody></table><p class="muted" style="font-size:12.5px;margin:6px 0 0">{foot}</p></div>')
+    hit=[ent.get("name") for ent in (data.get("entries") or []) if ent.get("name") and ent["name"].lower() in table.lower()]
+    if hit: raise SystemExit(f"build_ci: comparison table named a competitor: {hit}")
+    return table
+def refresh_free_listing():
+    """Rewrite only the free-listing comparison on index.html and submit.html."""
+    blk=(f'<h3 style="font-size:16px;margin:0 0 8px">Get listed free</h3>{cmp_table()}'
+         '<p style="margin:0 0 16px"><a href="submit.html#free-form">Submit your tool free ($0) →</a> · '
+         '<a href="sponsor.html#packages">Compare all 4 packages ($0 / $15 / $49 / $99) →</a></p>')
+    s=place_block(open("index.html",encoding="utf-8").read(),"free",blk,'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>',after=False)
+    open("index.html","w",encoding="utf-8").write(s)
+    u=open("submit.html",encoding="utf-8").read()
+    if "<!--/xl:submit-->" in u:
+        u=place_block(u,"free",cmp_table(),"<!--/xl:submit-->",after=True)
+    else:
+        u=place_block(u,"free",cmp_table(),'<form id="sf"',after=False)
+    open("submit.html","w",encoding="utf-8").write(u)
+    lo,hi,month,_=listing_prices()
+    print(f"build_ci: free-listing comparison {_usd(lo)}–{_usd(hi)}, prices checked {month}")
 def home(t):
     import build_aicite as _bac; _ul=_bac.mcp_uptime_line(t)
     n=mcp_n(t); s=open("index.html").read()
@@ -42,13 +88,9 @@ def home(t):
     for a,k in (("name","description"),("property","og:description"),("name","twitter:description")):
         s=re.sub(rf'(<meta {a}="{k}" content=")[^"]*',lambda m:m.group(1)+e(d),s,count=1)
     s=re.sub(r'(<a href="categories/mcp-servers.html">)(?:<span data-live-mcp>)?\d[\d,]*(?:</span>)? MCP servers(</a>)',lambda m:m.group(1)+f'<span data-live-mcp>{n:,}</span> MCP servers'+m.group(2),s)
-    blk=f'<h3 style="font-size:16px;margin:0 0 8px">Get listed free</h3>{cmp_table()}<p style="margin:0 0 16px"><a href="submit.html#free-form">Submit your tool free ($0) →</a> · <a href="sponsor.html#packages">Compare all 4 packages ($0 / $15 / $49 / $99) →</a></p>'
-    s=_blk(s,"free",blk,'<h3 style="font-size:16px;margin:0 0 8px">FAQ</h3>',after=False)
     open("index.html","w").write(s)
-    u=open("submit.html").read()
-    u=_blk(u,"free",cmp_table(),"<!--/xl:submit-->") if "<!--/xl:submit-->" in u else _blk(u,"free",cmp_table(),'<form id="sf"',after=False)
-    open("submit.html","w").write(u)
-    print(f"build_ci: homepage MCP line {n}, free-listing comparison on index + submit")
+    refresh_free_listing()
+    print(f"build_ci: homepage MCP line {n}")
 def pages(t):
     import build_extras as X
     bs={x["slug"]:x for x in t}; rows=[]
