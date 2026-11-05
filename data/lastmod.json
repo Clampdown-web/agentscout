@@ -2948,10 +2948,6 @@
 "463aeb7ad4c8c8c6",
 "2026-10-26"
 ],
-"mnemosyne": [
-"e5a58f1198dc3d72",
-"2026-10-26"
-],
 "beeai-framework": [
 "21e82e706eb814f4",
 "2026-10-26"
@@ -3409,8 +3405,8 @@
 "2026-10-31"
 ],
 "agent-e": [
-"874f2ba7b5a963e1",
-"2026-10-18"
+"2f51f908c508bb0d",
+"2026-11-05"
 ],
 "dust": [
 "c99d58e13f17fdee",
@@ -3441,8 +3437,8 @@
 "2026-10-18"
 ],
 "pydantic-deep-agents": [
-"b5968b64bfde8742",
-"2026-10-18"
+"90fd2cc024ffef28",
+"2026-11-05"
 ],
 "joinly": [
 "6e1054e4b63a45bc",
@@ -3493,8 +3489,8 @@
 "2026-10-18"
 ],
 "line-bot-mcp-server": [
-"94ac446b32330f8f",
-"2026-10-18"
+"af9bd3a953439eef",
+"2026-11-05"
 ],
 "postgres-mcp-pro": [
 "0cef11bb8ec5352e",
@@ -3729,8 +3725,8 @@
 "2026-10-25"
 ],
 "browserable": [
-"cf055eb2537bdd58",
-"2026-10-22"
+"d409ca36ef790012",
+"2026-11-05"
 ],
 "buildship": [
 "35d3f6066f90df2a",
@@ -4245,40 +4241,40 @@
 "2026-10-22"
 ],
 "amd-gaia": [
-"79482d0682cc7623",
-"2026-10-18"
+"a95e2d30af6785c8",
+"2026-11-05"
 ],
 "cli-agent-orchestrator": [
-"36d54ab0531a5b99",
-"2026-10-18"
+"b6e1b145132bd9d2",
+"2026-11-05"
 ],
 "minimax-mcp": [
-"610151fd7b7a183c",
-"2026-10-18"
+"d819e9ac758e055b",
+"2026-11-05"
 ],
 "mcp-php-sdk": [
 "1022d44faaa82d77",
 "2026-10-18"
 ],
 "openinference": [
-"925420505cfbf62a",
-"2026-10-18"
+"5470df8f24ef4a58",
+"2026-11-05"
 ],
 "cloudflare-sandbox-sdk": [
 "c7b5a0b1b87a6fcc",
 "2026-10-25"
 ],
 "cisco-mcp-scanner": [
-"0edaadfb2cd2eb34",
-"2026-10-18"
+"c48154f833d5c2ed",
+"2026-11-05"
 ],
 "arcade": [
 "8b8345ea2a779dce",
 "2026-10-18"
 ],
 "judgeval": [
-"6f1a8fc7b84c1ae0",
-"2026-10-18"
+"75de57c8d36d8dbb",
+"2026-11-05"
 ],
 "tensorlake": [
 "5fc6265dba8ab5d8",
@@ -4297,8 +4293,8 @@
 "2026-10-31"
 ],
 "hercules": [
-"5429d7f038d6f1b7",
-"2026-10-28"
+"6bc19ba66c97b746",
+"2026-11-05"
 ],
 "core": [
 "211576440a76d1be",
@@ -4313,8 +4309,8 @@
 "2026-10-18"
 ],
 "mirascope": [
-"e04daa7cda97f480",
-"2026-10-18"
+"0d20a70e3d9614c2",
+"2026-11-05"
 ],
 "patter": [
 "1477a63ec8a9c418",
@@ -6968,10 +6964,6 @@
 "bde9706cf2594a13",
 "2026-10-24"
 ],
-"menlo-insurance-mcp": [
-"4e7be2e1c11a28a4",
-"2026-10-24"
-],
 "raydo-agent-os": [
 "ff8ac78ccc66521b",
 "2026-10-25"
@@ -8477,8 +8469,8 @@
 "2026-11-04"
 ],
 "toolspad-mcp": [
-"dfaa63c6568a92a7",
-"2026-11-04"
+"c083d66cc518d75e",
+"2026-11-05"
 ],
 "nexstair-ai": [
 "09ccfa07408a349f",
@@ -8739,24 +8731,172 @@
 "nestack-agent-care": [
 "d4fe9b0da2396e7b",
 "2026-11-04"
+],
+"opensquilla": [
+"764f4c3df42a26b0",
+"2026-11-05"
+],
+"aipoch-open-science": [
+"b51368bf6033ea10",
+"2026-11-05"
+],
+"fallow": [
+"a0a681ac85f9d101",
+"2026-11-05"
+],
+"agentic-resource-registry": [
+"f795e8cbe95d101f",
+"2026-11-05"
+],
+"open-intelligent-ui": [
+"31fbc28595d4e0aa",
+"2026-11-05"
+],
+"notfair-plugin": [
+"652d9915106ae56c",
+"2026-11-05"
+],
+"tutti": [
+"dd111b4a63e96d46",
+"2026-11-05"
+],
+"llmwiki": [
+"771f4d6a98708f84",
+"2026-11-05"
+],
+"skillspector": [
+"d96eb37edf1d469a",
+"2026-11-05"
+],
+"nemoclaw": [
+"5cb8a62261344cfd",
+"2026-11-05"
+],
+"html-anything": [
+"1b092a33c649461e",
+"2026-11-05"
+],
+"linkbunny-placement-checker": [
+"1b0fbe058aca0803",
+"2026-11-05"
+],
+"coat-of-arms-maker": [
+"cf7626e65ac423c4",
+"2026-11-05"
+],
+"primaryhub": [
+"dfcd6147122fb047",
+"2026-11-05"
+],
+"dreammmer": [
+"10ab2d74eedc8452",
+"2026-11-05"
+],
+"postellite": [
+"8ea42235f3b36052",
+"2026-11-05"
+],
+"ai-haircut": [
+"ee14cb7045a11ce8",
+"2026-11-05"
+],
+"gridbulk": [
+"95f8772e3857bd49",
+"2026-11-05"
+],
+"sagbot": [
+"bbe183e9c4607d71",
+"2026-11-05"
+],
+"audio-ai-studio": [
+"3f3bd416f9a0f306",
+"2026-11-05"
+],
+"carvideoai": [
+"842071c76d00a786",
+"2026-11-05"
+],
+"brandpurl": [
+"2f59e01eded05d45",
+"2026-11-05"
+],
+"colorseason-ai": [
+"b894e19ca44b15fb",
+"2026-11-05"
+],
+"weartryon": [
+"e39f75d69f8a52a1",
+"2026-11-05"
+],
+"nafy-ai": [
+"9d4c7cac918f193e",
+"2026-11-05"
+],
+"writenode": [
+"a5df906a92589e44",
+"2026-11-05"
+],
+"image-to-image": [
+"cb0a6da801b720cf",
+"2026-11-05"
+],
+"musci-io": [
+"5e28437cb0e20d0f",
+"2026-11-05"
+],
+"opco": [
+"76345e98b48fbcb5",
+"2026-11-05"
+],
+"persqo": [
+"ef8fbb8bd3b2a312",
+"2026-11-05"
+],
+"kepo-mac-desktop-widgets": [
+"bb10cd9102105e2e",
+"2026-11-05"
+],
+"life-manager": [
+"3b3cb09ebfd7c6d9",
+"2026-11-05"
+],
+"kilobat-cli": [
+"d9727a2be6d855fa",
+"2026-11-05"
+],
+"money-tracker-expense-budget": [
+"f6df2a1835a33e11",
+"2026-11-05"
+],
+"myzoqena": [
+"d1905aaf3346cf9a",
+"2026-11-05"
+],
+"folklore-clinical-variant-interpretation-mcp": [
+"8080e4226886f386",
+"2026-11-05"
+],
+"lava-mcp": [
+"48f1404673556518",
+"2026-11-05"
 ]
 },
 "__v__": 2,
 "https://agentscouthq.com/": [
-"Ld8d02e67bf2edfa7",
-"2026-11-04"
+"Lf2d4832710888a9a",
+"2026-11-05"
 ],
 "https://agentscouthq.com/about.html": [
-"8ee2685cd0796531",
-"2026-11-04"
+"5876fdc0ab953841",
+"2026-11-05"
 ],
 "https://agentscouthq.com/badges.html": [
 "49abbe0bf379a2e8",
 "2026-11-01"
 ],
 "https://agentscouthq.com/best/": [
-"3d29f60cbab5a012",
-"2026-11-04"
+"f4d9d5b7c253b20c",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/agent-reach-alternatives.html": [
 "La313533184f91cc1",
@@ -8831,12 +8971,12 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/career-ops-alternatives.html": [
-"L83c78308ec1c4b09",
-"2026-11-04"
+"L41e22be2c5cf2cea",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/cc-switch-alternatives.html": [
-"L94eaef66637086a5",
-"2026-11-04"
+"L0b25965db6247ada",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/chatdev-alternatives.html": [
 "La6409f950bfc71ec",
@@ -8851,16 +8991,16 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/claude-code-alternatives.html": [
-"Ld3709b866db68e80",
-"2026-11-04"
+"L28a4924af0229d87",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/claude-mem-alternatives.html": [
 "Lf71961b414f59246",
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/cli-anything-alternatives.html": [
-"Le3105f22396691f8",
-"2026-11-04"
+"L31e38c70425c15cc",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/cline-alternatives.html": [
 "L13558f595c113ccc",
@@ -8887,8 +9027,8 @@
 "2026-10-26"
 ],
 "https://agentscouthq.com/best/context7-alternatives.html": [
-"Ldb3d823e854d9b14",
-"2026-11-04"
+"L2a511098a9df8d7c",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/copilotkit-alternatives.html": [
 "L367c7052a1a912e2",
@@ -8911,8 +9051,8 @@
 "2026-10-29"
 ],
 "https://agentscouthq.com/best/cursor-alternatives.html": [
-"Lee06da0a86aacc93",
-"2026-11-04"
+"L2601e94af8c36815",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/deepseek-harness-alternatives.html": [
 "L2260ac4f265bd899",
@@ -8951,8 +9091,8 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/firecrawl-alternatives.html": [
-"L6fa78a9f24956260",
-"2026-11-04"
+"Ld0e93d1e8f0feca8",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/free-ai-agents.html": [
 "L8ee1cb937320304b",
@@ -8985,6 +9125,10 @@
 "https://agentscouthq.com/best/hermes-agent-nous-research-alternatives.html": [
 "L4f02fba47919daf5",
 "2026-11-04"
+],
+"https://agentscouthq.com/best/immich-alternatives.html": [
+"L77a60c5ad6610db1",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/jeecgboot-alternatives.html": [
 "L127b1fb6676638a8",
@@ -9023,12 +9167,12 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/lobehub-alternatives.html": [
-"Ld98217ad8f81d7c1",
-"2026-11-04"
+"Lf886b056f0c797fa",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/local-offline-ai-agents.html": [
-"Lcd4f78ec252abb89",
-"2026-10-30"
+"Lc697a3e3b095c414",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/localai-alternatives.html": [
 "Lee3d8c0f4c60dfc7",
@@ -9043,12 +9187,12 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/mcp-servers-for-claude-code.html": [
-"L87e74052e2f3020d",
-"2026-11-04"
+"L12ebe8b2927f5921",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/mcp-servers-for-codex.html": [
-"Leedd9bd04352e732",
-"2026-11-04"
+"L832da88c5003eebf",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/mcp-servers-for-cursor.html": [
 "Lef2eb5e2585daa40",
@@ -9107,8 +9251,8 @@
 "2026-10-26"
 ],
 "https://agentscouthq.com/best/omniroute-alternatives.html": [
-"La92b93d241b982aa",
-"2026-11-04"
+"L7f8a5f699f0a0e86",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/open-code-review-alternatives.html": [
 "Ld87a8a636ce4ec27",
@@ -9178,9 +9322,13 @@
 "Lb67180e6edc3df22",
 "2026-10-28"
 ],
+"https://agentscouthq.com/best/photoprism-alternatives.html": [
+"L77a60c5ad6610db1",
+"2026-11-05"
+],
 "https://agentscouthq.com/best/pi-alternatives.html": [
-"Lb2d5fc2fb359bf97",
-"2026-11-04"
+"L7a4f41425c431a87",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/playwright-mcp-alternatives.html": [
 "L1e558ed7d6ab1f59",
@@ -9203,8 +9351,8 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/rea-alternatives.html": [
-"Lb709260b3868f624",
-"2026-11-04"
+"L31bdc3416f0c2071",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/rtk-alternatives.html": [
 "Le4077c07686cbb54",
@@ -9247,8 +9395,8 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/understand-anything-alternatives.html": [
-"Lca2b943f608fd0b7",
-"2026-11-04"
+"L86205a63adea2529",
+"2026-11-05"
 ],
 "https://agentscouthq.com/best/upscayl-alternatives.html": [
 "L224747e72f0a4afc",
@@ -9271,12 +9419,12 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/best/zed-alternatives.html": [
-"L19f43d8a28c9d218",
-"2026-11-04"
+"L4021628d77037e5d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/bot-store/": [
-"0060caff8fc9ca71",
-"2026-11-04"
+"541a5b76f23b2b22",
+"2026-11-05"
 ],
 "https://agentscouthq.com/bot-store/accountant/": [
 "d53699a9bc50dfb4",
@@ -9379,8 +9527,8 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/bot-templates/": [
-"d70351697ba3c9dd",
-"2026-11-04"
+"ca9f4297d6f89cdb",
+"2026-11-05"
 ],
 "https://agentscouthq.com/bot-templates/1password.html": [
 "c7944ac488dc235d",
@@ -9607,16 +9755,16 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/categories/": [
-"2b32033ef147bc12",
-"2026-11-04"
+"4380bed785613b68",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/3d-concept-art.html": [
 "L90679dd19eb41319",
 "2026-11-04"
 ],
 "https://agentscouthq.com/categories/agent-infra.html": [
-"L191371c78b636c35",
-"2026-11-04"
+"L03999eeef473a109",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/app-builders.html": [
 "L50c5aeafc58672c4",
@@ -9627,12 +9775,12 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/categories/business-agents.html": [
-"Lcc2ca1044b8464d4",
-"2026-11-04"
+"L91d5173c92af39de",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/coding.html": [
-"Lee06da0a86aacc93",
-"2026-11-04"
+"L2601e94af8c36815",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/crypto.html": [
 "Le26bcc554bbc0d01",
@@ -9663,20 +9811,20 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/categories/film-tv-audio.html": [
-"Lb9a349a2643dc3c0",
-"2026-10-22"
+"Lc55e27228a601406",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/film-tv-production.html": [
 "Ld3814d88e23d600a",
 "2026-10-22"
 ],
 "https://agentscouthq.com/categories/finance-accounting.html": [
-"L6b419f537fb232d6",
-"2026-11-04"
+"La8b8915ce612f739",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/frameworks.html": [
-"L4f087ee212c75ea3",
-"2026-11-04"
+"L86280c714e5668c2",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/games.html": [
 "L002c7a10f404593f",
@@ -9695,84 +9843,84 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/categories/image-generation.html": [
-"L1193e4634f562917",
-"2026-11-04"
+"L5a61dee5e577f397",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/legal-compliance.html": [
 "L644718cceddd6873",
 "2026-10-28"
 ],
 "https://agentscouthq.com/categories/mcp-servers.html": [
-"L2e10a9de5592ffc6",
-"2026-11-04"
+"L7586e0dcfbb8b671",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/memory-rag.html": [
-"L133c21fd9481fddc",
-"2026-11-01"
+"L5c2e35498af6747e",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/models-local-runtimes.html": [
 "Lc25b6889c294a245",
 "2026-11-04"
 ],
 "https://agentscouthq.com/categories/music-production.html": [
-"L5591cfeeb8ca007e",
-"2026-11-04"
+"L57ecd7f1f4c72a63",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/no-code-builders.html": [
 "L749a1f429f078f58",
 "2026-11-01"
 ],
 "https://agentscouthq.com/categories/personal-agents.html": [
-"L91c625c24f7d2891",
-"2026-11-04"
+"L1af9645b998db1dc",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/photography-photo-editing.html": [
-"L39bd2f129595392c",
-"2026-11-04"
+"L3b4fee52668f9c4d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/productivity.html": [
-"Lcfd4c93efbc22286",
-"2026-11-04"
+"Lc65c67b3c8e7a50d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/qa-testing.html": [
-"L5e91fc67999dab78",
-"2026-10-28"
+"Lb38021c0edd1b5b7",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/research.html": [
-"L333ce8dbba7204cf",
-"2026-11-04"
+"La47ac819d51d58a5",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/robotics-physical-ai.html": [
 "L90bb0b22f38e2419",
 "2026-10-29"
 ],
 "https://agentscouthq.com/categories/sales-marketing.html": [
-"L4ab3aa8b518e1d04",
-"2026-11-04"
+"L3fdcb0d92f91ddab",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/sandboxes-code-execution.html": [
-"L268b1e55b03cf377",
-"2026-10-28"
+"Lbaeb8cb89801dc84",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/security-governance.html": [
-"L32e9a8c685cadef7",
-"2026-11-04"
+"L62edb44602d714c1",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/video-generation.html": [
-"L035af8970a87ae0a",
-"2026-11-04"
+"Lc39ec8c610fbcf3f",
+"2026-11-05"
 ],
 "https://agentscouthq.com/categories/vision.html": [
 "L9e86dfdfdd2e1151",
 "2026-11-04"
 ],
 "https://agentscouthq.com/categories/voice.html": [
-"L1b30a134b2c8a53e",
-"2026-11-04"
+"Lbeb0b7594ea62420",
+"2026-11-05"
 ],
 "https://agentscouthq.com/compare/": [
-"a06f3089e856665c",
-"2026-11-04"
+"2ca4a60cf3404404",
+"2026-11-05"
 ],
 "https://agentscouthq.com/compare/agentcenter-vs-dart.html": [
 "39fc60ec0c536626",
@@ -9903,32 +10051,32 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/feed.xml": [
-"L72a2db096dc2accd",
-"2026-11-04"
+"L00d7617b8684de0a",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/": [
 "4f37a10b7b5de730",
 "2026-11-01"
 ],
 "https://agentscouthq.com/for/agencies.html": [
-"Le11032cd8de179b4",
-"2026-10-28"
+"Ld29980885382eecb",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/ai-engineers.html": [
 "L553485f0e8f5a2ea",
 "2026-10-30"
 ],
 "https://agentscouthq.com/for/artists.html": [
-"Lde680b16c87b9f2b",
-"2026-10-25"
+"L10c3db46f7f39066",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/automation-engineers.html": [
 "L42b800fa5291de39",
 "2026-10-28"
 ],
 "https://agentscouthq.com/for/content-creators.html": [
-"L403eae722bf78351",
-"2026-10-28"
+"L2fa071678f9427a7",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/crypto-traders.html": [
 "L84ceefc3a9797d7f",
@@ -9959,32 +10107,32 @@
 "2026-10-30"
 ],
 "https://agentscouthq.com/for/ecommerce-teams.html": [
-"L2f9f5975193118bd",
-"2026-10-28"
+"Lb15412487eda13f2",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/filmmakers.html": [
 "Lba8fa4a01acb4b15",
 "2026-10-24"
 ],
 "https://agentscouthq.com/for/founders.html": [
-"Ldc737775b8b35cfa",
-"2026-10-28"
+"Lb29d1b4ce7716820",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/game-developers.html": [
 "Lc67817daf8bfff16",
 "2026-10-25"
 ],
 "https://agentscouthq.com/for/marketers.html": [
-"L02bcc0a8fd32b897",
-"2026-10-28"
+"L80e23aae540c63ec",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/mcp-developers.html": [
 "L812d0fd2d310f2ed",
 "2026-10-25"
 ],
 "https://agentscouthq.com/for/musicians-producers.html": [
-"L1d3550e486a1d456",
-"2026-10-24"
+"Lef3e1b8c7fbf2645",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/open-source-maintainers.html": [
 "Lfdd1c40e880d6b3d",
@@ -9995,8 +10143,8 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/for/photographers.html": [
-"Le289bf28c9f2273a",
-"2026-11-04"
+"L59ce3757ea5a5741",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/product-managers.html": [
 "Lb747ee2b25fa598f",
@@ -10007,12 +10155,12 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/for/researchers.html": [
-"Lec67382f97a7d159",
-"2026-10-28"
+"Lfdfbcb133e02ff09",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/sales-teams.html": [
-"L558c9a1f1a8cef05",
-"2026-10-28"
+"L69994f8a6273ad0a",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/security-engineers.html": [
 "Le8b70b9b7f7fba2e",
@@ -10023,16 +10171,16 @@
 "2026-10-30"
 ],
 "https://agentscouthq.com/for/students.html": [
-"Lbf73408ff54a6a9a",
-"2026-10-28"
+"L0f34292706325ee0",
+"2026-11-05"
 ],
 "https://agentscouthq.com/for/video-editors.html": [
-"Ld1dfaf3cdcaf6d20",
-"2026-10-22"
+"L90f1f0b853b8a7cd",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools.html": [
-"L9bdba77476c287ad",
-"2026-11-04"
+"L19e3fb7e29d6b964",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools/agent-run-cost-estimator.html": [
 "284438c02b399ee8",
@@ -10047,16 +10195,16 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/free-tools/ai-agent-stack-builder.html": [
-"7ab6980aaf8b76f5",
-"2026-11-04"
+"50523e6a99c24797",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools/ai-cost-calculator.html": [
 "6785479a918e6dd2",
 "2026-11-01"
 ],
 "https://agentscouthq.com/free-tools/ai-tool-comparison-card.html": [
-"670afcea1ef983a5",
-"2026-11-04"
+"bbe5db298e8b3727",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools/build-vs-buy-calculator.html": [
 "1506fda9a98524b8",
@@ -10075,16 +10223,16 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/free-tools/mcp-config-builder.html": [
-"122c156f0cc28107",
-"2026-11-04"
+"bedbd667235dd979",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools/mcp-server-picker.html": [
-"c66f88231e4734c2",
-"2026-11-04"
+"6e578f1e8efcfc19",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools/open-source-license-checker.html": [
-"31384b234fb89edb",
-"2026-11-04"
+"abd635c1e0a82efa",
+"2026-11-05"
 ],
 "https://agentscouthq.com/free-tools/prompt-builder.html": [
 "c85d56d07ebe33f3",
@@ -10111,20 +10259,20 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/leaderboard/": [
-"L2ba8467a692afcf1",
-"2026-11-04"
+"Ld472c9682253c152",
+"2026-11-05"
 ],
 "https://agentscouthq.com/leaderboard/badges.html": [
 "Lea5ac6d8b5f5afb0",
 "2026-11-04"
 ],
 "https://agentscouthq.com/llms-full.txt": [
-"L521c8bd814156ee9",
-"2026-11-04"
+"Lf52522d1a986ab9d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/llms.txt": [
-"L5d7a213d8e6e1c38",
-"2026-11-04"
+"L36f54d990a4b773f",
+"2026-11-05"
 ],
 "https://agentscouthq.com/mcp/": [
 "L55be16b55f914f45",
@@ -10135,8 +10283,8 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/mcp/connect.html": [
-"cebdf695360b6bac",
-"2026-11-04"
+"38c72ba02b628a26",
+"2026-11-05"
 ],
 "https://agentscouthq.com/mcp/crypto-mcp-servers.html": [
 "L7eb7e6b1230a9242",
@@ -10163,8 +10311,8 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/mcp/pricing.html": [
-"Ld0d43efadfcca85a",
-"2026-11-04"
+"L27a7a5467ce09e5f",
+"2026-11-05"
 ],
 "https://agentscouthq.com/mcp/productivity-mcp-servers.html": [
 "Lf009d54076d0ca59",
@@ -10175,24 +10323,24 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/mcp/status/": [
-"Ld0d43efadfcca85a",
-"2026-11-04"
+"L27a7a5467ce09e5f",
+"2026-11-05"
 ],
 "https://agentscouthq.com/mcp/web-search-and-scraping-mcp-servers.html": [
 "Ld084d18c4ef73445",
 "2026-10-22"
 ],
 "https://agentscouthq.com/new.html": [
-"L43a389d1eaa55aee",
-"2026-11-04"
+"L67fa8af2f4b26b5f",
+"2026-11-05"
 ],
 "https://agentscouthq.com/news.html": [
-"Leeb26c91225ed983",
-"2026-11-04"
+"L9b885b939315a06c",
+"2026-11-05"
 ],
 "https://agentscouthq.com/news/": [
-"3b0029dd11b40d38",
-"2026-11-01"
+"67b39941e5174b1d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/news/2026/10/": [
 "a2dd70c0116202d5",
@@ -10223,8 +10371,8 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/news/2026/10/anthropic-sets-thousands-of-claude-agents-on-automated-red-teaming.html": [
-"9668eeb882a8ac72",
-"2026-11-01"
+"ba5cdb57920ff0ba",
+"2026-11-05"
 ],
 "https://agentscouthq.com/news/2026/10/anthropic-study-claude-codes-hidden-leanings-steered-expert-analysts.html": [
 "b6ce1c9f60031f79",
@@ -10506,6 +10654,14 @@
 "27de421b39311c33",
 "2026-11-01"
 ],
+"https://agentscouthq.com/news/2026/11/": [
+"07c71a923cf2156a",
+"2026-11-05"
+],
+"https://agentscouthq.com/news/2026/11/luma-ships-an-mcp-connector-for-chatgpt-and-claude-image-and-video.html": [
+"10af304b274982e8",
+"2026-11-05"
+],
 "https://agentscouthq.com/newsletter.html": [
 "ceeb4fe15ecdd2ca",
 "2026-11-04"
@@ -10519,8 +10675,8 @@
 "2026-11-01"
 ],
 "https://agentscouthq.com/s/": [
-"dd506add0b0adcf3",
-"2026-11-04"
+"c419bc1e7d0526b4",
+"2026-11-05"
 ],
 "https://agentscouthq.com/s/ai-code-sandboxes.html": [
 "Lee765b2c8fb5f687",
@@ -10635,8 +10791,8 @@
 "2026-10-30"
 ],
 "https://agentscouthq.com/s/open-source-ai-research-agents.html": [
-"Lcbec511d6f80b0da",
-"2026-10-28"
+"Le0270ee522a70f96",
+"2026-11-05"
 ],
 "https://agentscouthq.com/s/open-source-ai-web-scraping-tools.html": [
 "L94844c7f728e3351",
@@ -10707,12 +10863,12 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/sponsor.html": [
-"af916b1023fcb3b2",
-"2026-11-04"
+"e7c35d0a78efe4ca",
+"2026-11-05"
 ],
 "https://agentscouthq.com/submit.html": [
-"225d191f0df523ef",
-"2026-11-04"
+"64481fe3d4f694ac",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/3d-rigging-and-animation.html": [
 "Lbb34f2f8ecbff1c9",
@@ -10735,16 +10891,16 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/agent-memory.html": [
-"L12822efb5d0a3248",
-"2026-11-01"
+"L20d65b41ffd342c8",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/agent-payments.html": [
 "L6abefa7f5f68167d",
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/agent-security.html": [
-"L4a80548774d0481a",
-"2026-11-04"
+"L70607be12b0b604c",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/ai-headshots.html": [
 "Lcb0a67f2f300e3aa",
@@ -10763,20 +10919,20 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/automating-workflows-workflow-automation.html": [
-"L5ffe505a4db24b05",
-"2026-11-04"
+"L06d3fcfd6c42fc0e",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/automating-workflows.html": [
-"Lba957a076bf6ec55",
-"2026-11-04"
+"L466cbdfcacdb6646",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/background-removal.html": [
 "L647cf111fce59cea",
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/browsing-the-web-browser-automation.html": [
-"Lb0156d9fde202a0a",
-"2026-11-04"
+"Lb55031f318333390",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/browsing-the-web-computer-use.html": [
 "L8319325d37372f78",
@@ -10787,8 +10943,8 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/browsing-the-web.html": [
-"L646c460f3c3b1a24",
-"2026-11-04"
+"L2ecf022dac48e434",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/building-ai-agents-agent-memory.html": [
 "L84cdc678d2d5c12a",
@@ -10811,8 +10967,8 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/building-ai-agents.html": [
-"L3c6df1d38ef491c2",
-"2026-11-04"
+"Lac9ff7ae7175ff7d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/building-apps-without-code.html": [
 "Lce845044c4bec24e",
@@ -10827,16 +10983,16 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/building-voice-agents.html": [
-"L148ab246f6bc00cd",
-"2026-11-04"
+"L7ebb7243fb17f89d",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/business-automation-sales-agents.html": [
 "L87dbec6f5ff14744",
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/business-automation.html": [
-"L1a215787bf052a4e",
-"2026-11-04"
+"L505da5fb0fd88db7",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/chat-apps.html": [
 "Lfdb34acc97af26a5",
@@ -10847,12 +11003,12 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/computer-use.html": [
-"L4d6ede7b7dd6ac80",
-"2026-11-04"
+"Lf12c33510ddfac05",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/connecting-tools-mcp.html": [
-"Ld932adf969c85225",
-"2026-11-04"
+"L323d8231071cd8fe",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/crypto-and-wallets-agent-payments.html": [
 "L8608c95c81c123e3",
@@ -10875,12 +11031,12 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/customer-support-voice-phone.html": [
-"L32c2c204d10cc15a",
-"2026-11-04"
+"Lac4334779249d2db",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/customer-support.html": [
-"Lf223648324a38ab4",
-"2026-11-04"
+"L1e614642cb8d2d81",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/data-analysis.html": [
 "L8123927155962bfd",
@@ -10903,12 +11059,12 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/tasks/documents.html": [
-"Lb252fedb217b5c42",
-"2026-11-04"
+"L0940172d0de789fc",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/dubbing.html": [
-"L0d6c5f805a406caf",
-"2026-11-04"
+"Le8abfee6f870fc55",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/evaluating-agents.html": [
 "L7c3a2b3e331625a2",
@@ -10919,24 +11075,24 @@
 "2026-10-24"
 ],
 "https://agentscouthq.com/tasks/index.html": [
-"1f788bdee8792d87",
-"2026-11-04"
+"6005769a4c3b362e",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/logo-and-brand-design.html": [
 "Lb68b31f9aee00704",
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/making-images-and-design.html": [
-"L82697d52ccdbe957",
-"2026-11-01"
+"L4e4ae21fe8c5e787",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/making-videos.html": [
-"L4cd2dd76baa58726",
-"2026-10-28"
+"L9be02fce68a956e7",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/marketing.html": [
-"L9310400b33ed171d",
-"2026-11-04"
+"L44364f674c371269",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/monitoring-agents-evals.html": [
 "Lbf3b5bded6dcfc39",
@@ -10955,20 +11111,20 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/multi-agent-systems-research-agents.html": [
-"L4b92c5284823c2b2",
-"2026-10-28"
+"L768dcc1d7bc2d6c8",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/multi-agent-systems.html": [
-"L8fa00a601d630035",
-"2026-11-04"
+"Lbbf8a81da775d5a5",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/music-mixing-mastering.html": [
 "Ld02f7defc4f94126",
 "2026-10-24"
 ],
 "https://agentscouthq.com/tasks/open-source-agents.html": [
-"Le99ef208f46de79b",
-"2026-10-28"
+"Lcc026013644ec1f0",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/open-source-image-generation.html": [
 "L63e69c54a0be73a2",
@@ -10999,12 +11155,12 @@
 "2026-10-25"
 ],
 "https://agentscouthq.com/tasks/personal-assistants.html": [
-"L614cbecd13b29cc3",
-"2026-11-04"
+"Lc53b35da7ae9a3b9",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/phone-calls.html": [
-"L2c3f1d017f29f92f",
-"2026-11-04"
+"L45c096d58ea0bc58",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/photo-culling.html": [
 "L991fbc10ff935f5c",
@@ -11023,8 +11179,8 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/tasks/reading-papers.html": [
-"Led33298f38a0afa9",
-"2026-10-28"
+"L379e78bcd1c96a3b",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/research-text-to-sql.html": [
 "Le0281a0514d86716",
@@ -11039,8 +11195,8 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/research.html": [
-"L0eafb587d515aec7",
-"2026-11-04"
+"L08e51bf37a848c37",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/reviewing-pull-requests.html": [
 "L3e100c2bbce88906",
@@ -11051,28 +11207,28 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/tasks/running-agents-locally.html": [
-"Le449c464c1ca954e",
-"2026-11-01"
+"L9d125afec22039b1",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/running-code-safely.html": [
-"L30bbb19a8ecd465b",
-"2026-11-04"
+"Lc86f73fc78851e5a",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/sales-outreach.html": [
-"L33caf4e995db048c",
-"2026-11-04"
+"L79af2fa00a017607",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/scoring.html": [
-"L9720d5d055e8b850",
-"2026-11-04"
+"La3420bcf71c9dd49",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/searching-the-web.html": [
 "Ld635a662bf6ed33f",
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/security-testing.html": [
-"Lca4ab89427ca83b1",
-"2026-10-28"
+"L714ed42a39a6f1f6",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/smart-contract-security.html": [
 "L9805861d741dc730",
@@ -11087,32 +11243,32 @@
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/stem-separation.html": [
-"L6f4b1b1f900f9b94",
-"2026-11-04"
+"Le98005bc05cd8571",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/storyboarding.html": [
 "L254044e7cb353a7d",
 "2026-10-22"
 ],
 "https://agentscouthq.com/tasks/subtitles.html": [
-"Ldc9792820f4c90ef",
-"2026-10-23"
+"L47b82bdfb6a8da64",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/terminal-coding-agent-frameworks.html": [
-"L1a100846a1944eca",
-"2026-11-04"
+"Le5d8f219ab5ea039",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/terminal-coding-local-models.html": [
-"Lb57c185fc8ce9db1",
-"2026-11-01"
+"L29dfeb6338d768b1",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/terminal-coding.html": [
-"L3c8556edb04cc77c",
-"2026-11-04"
+"L5fc0f1a91491a31b",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/testing-apps.html": [
-"L1eae7c09c995d895",
-"2026-10-28"
+"Lc1f7bc41be3f680e",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/text-to-3d.html": [
 "L7eb6d8cbf72843e1",
@@ -11131,8 +11287,8 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/tasks/upscaling-and-restoring-photos.html": [
-"L0a3c0840214fbe97",
-"2026-11-04"
+"L8fefeae651511e40",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/vectorizing-images.html": [
 "L7ce29e112020299a",
@@ -11143,8 +11299,8 @@
 "2026-10-22"
 ],
 "https://agentscouthq.com/tasks/video-post-production.html": [
-"Laa6f0e3de5be0029",
-"2026-11-04"
+"Lb80c32a0b2f6553f",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/web-scraping.html": [
 "L7aa1bea2fdc2734e",
@@ -11155,20 +11311,24 @@
 "2026-10-31"
 ],
 "https://agentscouthq.com/tasks/writing-code-ide-agents.html": [
-"Lc12c293d2d1b3769",
-"2026-10-28"
+"L80fd013dd30f98b4",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/writing-code-planning-tasks.html": [
 "L84095edd9f2b8baf",
 "2026-11-04"
 ],
 "https://agentscouthq.com/tasks/writing-code-rules-config.html": [
-"Ldbbceac54577b664",
-"2026-10-31"
+"L7d445eb6d00e88cc",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/writing-code-sandboxes.html": [
-"Lad5ef8c7216415a2",
-"2026-10-28"
+"Lad513aaf05a13780",
+"2026-11-05"
+],
+"https://agentscouthq.com/tasks/writing-code-terminal-agents.html": [
+"L6ebbabe5456ec1df",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/writing-code-testing-qa.html": [
 "Lf60e35dcb32f375a",
@@ -11179,15 +11339,15 @@
 "2026-10-28"
 ],
 "https://agentscouthq.com/tasks/writing-code.html": [
-"L87add76d129ca532",
-"2026-11-04"
+"L33923f3188db6419",
+"2026-11-05"
 ],
 "https://agentscouthq.com/tasks/writing-emails.html": [
-"L7c3e3df87f2fddbf",
-"2026-11-04"
+"L7924a5f02fc77e43",
+"2026-11-05"
 ],
 "https://agentscouthq.com/videos/": [
-"d76687f3a2ad35dc",
-"2026-11-04"
+"707c128bbed7355e",
+"2026-11-05"
 ]
 }

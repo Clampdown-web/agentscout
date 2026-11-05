@@ -1,19 +1,61 @@
 {
- "updated": "2026-11-04T15:04:01Z",
+ "updated": "2026-11-05T15:01:11Z",
  "sources": [
   "TechCrunch",
   "The Verge",
   "Google News",
-  "Hugging Face"
+  "Hugging Face",
+  "X"
  ],
  "items": [
   {
-   "title": "Factory's Nikhil Harithas: Your AI Agent Shouldn't Need Your Password — Or Your…",
-   "source": "BigGo Finance",
-   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBJdXpaaVVCclJ0Ymw2aFpxcUtTOTZCRGFLcEZQalBzTWhfZUlpTDQ0bXRZOXdfQ2FLYTQzbUg5eGhRU1ZYRzVyMFdIa1BlYVdrcmxGVnk3YjNnaTg?oc=5",
-   "date": "2026-11-03T20:08:00Z",
-   "tool": "factory",
-   "page": "news/2026/11/factorys-nikhil-harithas-your-ai-agent-shouldnt-need-your-password-or.html"
+   "title": "Meta Acquires Conductor, a Platform for Managing Teams of AI Coding Agents",
+   "source": "Mezha",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5SZ3pmak5fWERQdzdNRkU4SnN5ODVFOEVvakxJNS1OcFI2N0hmOWRJSFVIWlNsWGZTVDNCWThCdkdCWWhzLTRwLVpFVnRJaWM0UUdMaVBRT3ZoMDdoRC1xNDJB0gFnQVVfeXFMTjRjY2ZRUG1PcWYwQmliaV95OTdjSlpfeVhWNnV0QVl0SThjNklZcEt0R0ZDRWFVWTU3aHBRNWw5QnZsQW9GT1M1SDRfWkRBRzkyTmhEcFNHTWR3TTN1U1lCZFRKeDQxMA?oc=5",
+   "date": "2026-11-05T10:56:00Z",
+   "tool": "conductor",
+   "page": "news/2026/11/meta-acquires-conductor-a-platform-for-managing-teams-of-ai-coding.html"
+  },
+  {
+   "title": "Luma ships an MCP connector for ChatGPT and Claude image and video edits",
+   "source": "Luma / FounderHeist",
+   "url": "https://founderheist.com/briefs/luma-releases-an-ai-model-context-protocol-connector-for",
+   "date": "2026-11-05T08:00:00Z",
+   "tool": null,
+   "summary": "Luma launched an MCP connector for ChatGPT and Claude so users can restyle ads, change camera angles and generate image or video clips inside the chat, billed against existing Luma credits.",
+   "page": "news/2026/11/luma-ships-an-mcp-connector-for-chatgpt-and-claude-image-and-video.html"
+  },
+  {
+   "title": "MCP Inspector 2.14.0 fixes three privately reported vulnerabilities and changes…",
+   "source": "Forkast News",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRTk3aWo4d2plemhKUWVKaXl5REZwelV2WEFlRUdjT1FtUjBqd2p2aW1VZ3RaT2hDYTU2aDlwblcyZm54djhFYmt0dlBqWjY4eGs1bjFZX04tYklkY1ZMZE9OZkQ0YUlibHk1RU81bmhrMC1aOXR3S1NtbVhXdTV3RUtPNG1PSUJmdjYwcFJJNEZpSU9id0ZFQmpDOFRPVzJMZDZ0MjhJN3Jyb3Z6ZXNFaTZmbGxmYmgwYnptRGk2X0hrbXZPV1E?oc=5",
+   "date": "2026-11-05T03:56:00Z",
+   "tool": "mcp-inspector",
+   "page": "news/2026/11/mcp-inspector-2-14-0-fixes-three-privately-reported-vulnerabilities.html"
+  },
+  {
+   "title": "Infisical Raises $40M to Secure AI Agent Credentials",
+   "source": "BankInfoSecurity",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORWFDQVc5dFVGc29EZjBUaVUyQzEyOGozMHdBaUVyTTA5U0p3eGhYZjZKcnY5cWNad09lV3l1Yzd4N1FOUnJZdDlaUmJ4cVJXaHo2M3JwMlNZQ3dOQzBqT0V1OEdMQ011cTBKM001cXlBWlRqS3dDRGdhZmdTT01GVmNGZ3cxR0J0VWFUOU05Q1p3M3JRUlJJ?oc=5",
+   "date": "2026-11-05T00:13:37Z",
+   "tool": "infisical",
+   "page": "news/2026/11/infisical-raises-40m-to-secure-ai-agent-credentials.html"
+  },
+  {
+   "title": "Why Your AI Agent Can't Read the Web (and How to Build a Fetch Layer That Can)",
+   "source": "SitePoint",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNX1FVcm1NRU5pWTgyLXNRbFJPbkZxV1dIczZTaTJqUWpfN2NvUzZTVk42RXo5S29KbzJPVkpQdFRmM2lWZFlLdDgwYWRaOGdoUjhkN0pHWUJXSUhmWXhhZEhPX3N5TEtWQ1d1RE5KZUdCQjVzZWpsNXc1eGVMYVo5RUlrTGc1X1hWaWxQRzdPd29ocTNzaFJxTHZBMEdSa3QyVnVpSGZR?oc=5",
+   "date": "2026-11-04T08:00:07Z",
+   "tool": "layer",
+   "page": "news/2026/11/why-your-ai-agent-cant-read-the-web-and-how-to-build-a-fetch-layer.html"
+  },
+  {
+   "title": "CrowdStrike Launches AI Agent 'Kill Switch,' Plans to Acquire Fiddler AI",
+   "source": "Yahoo Finance",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQakdHM1hZN19fcVNoUnQ4bnZ6Q1U0YU43WjRzYW1zNjRTVXNlX1I1bFlmaUR0T21OSU5uMUVwNzNVYWRhbEdON2tNX1NVLVk5OHZIMzBJZUNob2d6bGg4bWo5bU5yUmpTVXdkRjVtWXNuTGlQSGU3QVlsemJIb1Y1RnJfcXh6MGl0LWJCc1VkMEhnQjNZRmFiMTY3UTdhN2M?oc=5",
+   "date": "2026-11-03T21:16:03Z",
+   "tool": "switch",
+   "page": "news/2026/11/crowdstrike-launches-ai-agent-kill-switch-plans-to-acquire-fiddler-ai.html"
   },
   {
    "title": "Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for AI Agent Management…",
@@ -24,52 +66,12 @@
    "page": "news/2026/11/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-ai.html"
   },
   {
-   "title": "CrowdStrike Adds AI Agent Kill Switch to Expanded Portfolio",
-   "source": "Security Boulevard",
-   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUDEzZVhkLUhOM2VVNndMUW1qN2NWcTdXRHA2RWFFRjJLVkthb0ZtUzI0THhmNnp1SVFyWnphb3B0R19nYlBiM1FFYXUwYWI0UnF2UXk3VGppbjU5S1Y3T2dmNDI3QVIySVRVUWNSSUhnU211TWpiTGotS0Y0MmN6MFNtM1dHd3poVWFDMEtzWmktejNHM0lkV1hYdG0wWVk?oc=5",
-   "date": "2026-11-03T16:29:57Z",
-   "tool": "switch",
-   "page": "news/2026/11/crowdstrike-adds-ai-agent-kill-switch-to-expanded-portfolio.html"
-  },
-  {
-   "title": "How Uber uses MCP Gateway to manage 5,000 AI agent tools",
-   "source": "Developer Tech News",
-   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9NXzB2SlR3Q1dtNl9DRGwwRWM2Y2cwbWd3TWs4X1F3MEFWTFhlcDUyV2dEMkoySTJpWlZMdG4tOWFXR2xkNmxZamV4Y2ZPWWtaS3R6dnVDdmFlcXc5TlBsalNHcjBySEJ0Nlo1T2dwd3NkNl9hZDJJ?oc=5",
-   "date": "2026-11-03T10:02:18Z",
-   "tool": "mcp-gateway",
-   "page": "news/2026/11/how-uber-uses-mcp-gateway-to-manage-5-000-ai-agent-tools.html"
-  },
-  {
    "title": "Before you buy an AI agent, make it pass an exit test",
    "source": "InfoWorld",
    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNb1lZa1NMUUJ4eWl1MDR0QzRkLTFVVER3RlZuRmJhZjBUbXBQYXNyUjExek44cVdadnk1Z09QMnBaX0lLdE1OMWVGUUFnbmdYXy1DR3RfNnRCSVZUbU5HdkhES1RXUkpCd0RHSHNoMVpObV9TUXNhVkR0cVZlREZqYkk3UlppVVlXOFdlYUdJbmZ5Y0loaU1aU2VnSXdtZ09D?oc=5",
    "date": "2026-11-03T09:03:38Z",
    "tool": "make",
    "page": "news/2026/11/before-you-buy-an-ai-agent-make-it-pass-an-exit-test.html"
-  },
-  {
-   "title": "'Rogue' AI agent went haywire at tech company. The CEO is still 'bullish' on the…",
-   "source": "Breaking News, Latest News and Videos",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZFFmb1kzMDlmOVBhcXh6aWJtd3c0WDdxaDFfQ05tdVJBZHJNRlFLSG1RYTRnb0N1a1d2SlQxbFJjYkRkQWJMUGhDYktmemhTVGFCSzQ3bHZURmZwMmpCbHI1MkhhQ3AwS3BKcE9mblhBVnNfWDRnVVBIX0tmMkJ6MVVOcnR1cXJmZWJJWThwSElKZUI4SmpLUnJLSdIBoAFBVV95cUxPMXFLMjFFOWJkUzlyTmJILWZ3UjhfdEZ2OXlzbGJEZVJwaklnc3dRZzQ4SV9lUDJBc0YxdjY0Z2xTaXNCV1VEcE85Q3BMVVY4Y2lFXzU5Wks0ZXB4c19rVG9TaTZNLUxqSkF2a002akx6ejFHbXVVOGRzc1c0UDZraXNaTzgtWmRzamFldi1zYU02ay1zRUN2X19qS005enZm?oc=5",
-   "date": "2026-11-02T21:43:26Z",
-   "tool": "rogue",
-   "page": "news/2026/11/rogue-ai-agent-went-haywire-at-tech-company-the-ceo-is-still-bullish.html"
-  },
-  {
-   "title": "Uber Builds MCP Gateway to Govern Access to 800+ Servers and 5,000+ AI Agent Tools",
-   "source": "infoq.com",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAwYTRmTzZjT1YyVjRJMnpNcGQxMjRKZFZJN0tXYTlscmRub0pGdDVuMmxfVm5BaE0yV3ZTQjVBay1TZmVkYlhuUmhTaVJYX3NFTlE2VDVYNTJjUWFUX2x1QUt2b3piN0xRYjMwbDlvUQ?oc=5",
-   "date": "2026-11-02T13:53:31Z",
-   "tool": "mcp-gateway",
-   "page": "news/2026/11/uber-builds-mcp-gateway-to-govern-access-to-800-servers-and-5-000-ai.html"
-  },
-  {
-   "title": "Our Core Vendor Was Down for 24 Hours. Our AI Agent Replaced Them Before They Came…",
-   "source": "saastr.com",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNUIwNU55WjlZbEl1M2FmUTdTYmZkMllDNVZ0Sjl6bXNRWnNCM3loRmlEdEZYT2JhbFBTWlpINldELUFNbFNIb0NFSHc3WThxM1NFSnZmaFpmbVFORi1aOUl0SENvVTdKd1ByMk9OX3VKTEQ5b3lDS2RtODZCc0RCZWhfRkg3N1gwVkFicFgxVUlPWU1MZkdwOEZ2UjUtOUNwLUx1UGhjM1Q0NjBSLWZBR2s4Zw?oc=5",
-   "date": "2026-11-01T15:36:24Z",
-   "tool": "core",
-   "page": "news/2026/11/our-core-vendor-was-down-for-24-hours-our-ai-agent-replaced-them.html"
   }
  ]
 }

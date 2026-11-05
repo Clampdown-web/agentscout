@@ -2636,9 +2636,6 @@
 "observability",
 "mcp-gateways"
 ],
-"mnemosyne": [
-"agent-memory"
-],
 "beeai-framework": [
 "multi-agent",
 "agent-frameworks"
@@ -6896,9 +6893,6 @@
 "images-design",
 "personal-assistants"
 ],
-"menlo-insurance-mcp": [
-"guardrails"
-],
 "raydo-agent-os": [
 "computer-use",
 "browser-automation",
@@ -8409,8 +8403,8 @@
 "rules-config"
 ],
 "toolspad-mcp": [
-"browser-automation",
-"agent-auth"
+"mcp-servers",
+"rules-config"
 ],
 "nexstair-ai": [
 "sales-agents",
@@ -8646,5 +8640,134 @@
 "guardrails",
 "observability",
 "evals"
-]
+],
+"opensquilla": [
+"terminal-agents"
+],
+"aipoch-open-science": [
+"research-agents",
+"computer-use",
+"local-models",
+"rules-config"
+],
+"fallow": [
+"codebase-context",
+"mcp-servers",
+"terminal-agents",
+"ide-agents"
+],
+"agentic-resource-registry": [
+"mcp-gateways",
+"local-models",
+"terminal-agents"
+],
+"open-intelligent-ui": [],
+"notfair-plugin": [
+"marketing-agents",
+"rules-config"
+],
+"tutti": [],
+"llmwiki": [],
+"skillspector": [
+"penetration-testing",
+"rules-config"
+],
+"nemoclaw": [
+"sandboxes",
+"guardrails",
+"terminal-agents"
+],
+"html-anything": [
+"sandboxes",
+"local-models",
+"terminal-agents",
+"ide-agents",
+"vfx-compositing",
+"video-editing",
+"images-design",
+"rules-config"
+],
+"linkbunny-placement-checker": [
+"mcp-servers"
+],
+"coat-of-arms-maker": [
+"images-design"
+],
+"primaryhub": [
+"email-agents"
+],
+"dreammmer": [
+"color-upscaling",
+"video-editing",
+"video",
+"images-design"
+],
+"postellite": [
+"marketing-agents",
+"research-agents",
+"multi-agent"
+],
+"ai-haircut": [
+"local-models"
+],
+"gridbulk": [
+"images-design"
+],
+"sagbot": [
+"marketing-agents"
+],
+"audio-ai-studio": [
+"voice-phone",
+"browser-automation",
+"subtitles-transcripts",
+"ai-dubbing-voices",
+"stem-separation"
+],
+"carvideoai": [
+"video"
+],
+"brandpurl": [
+"video",
+"images-design"
+],
+"colorseason-ai": [],
+"weartryon": [
+"images-design"
+],
+"nafy-ai": [],
+"writenode": [
+"vector-rag",
+"voice-phone"
+],
+"image-to-image": [
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"musci-io": [],
+"opco": [
+"workflow-automation",
+"ai-dubbing-voices"
+],
+"persqo": [],
+"kepo-mac-desktop-widgets": [
+"computer-use"
+],
+"life-manager": [
+"email-agents"
+],
+"kilobat-cli": [
+"mcp-servers",
+"agent-frameworks",
+"local-models",
+"terminal-agents"
+],
+"money-tracker-expense-budget": [
+"voice-phone"
+],
+"myzoqena": [
+"voice-phone"
+],
+"folklore-clinical-variant-interpretation-mcp": [],
+"lava-mcp": []
 }

@@ -69,6 +69,14 @@ def listing_missing(h,where=""):
         hm=_re.search(r'(?:^|/)tools/([a-z0-9-]+)\.html$',a.get("href") or "")
         if not hm: continue
         if a.xpath('.//img[contains(@src,"assets/logos/")]'): continue
+        # Quality-guide prose (<div class="qguide">) is not a listing; skip those links.
+        anc=a.getparent(); skip=False
+        while anc is not None:
+            cls=" "+(anc.get("class") or "")+" "
+            if " qguide " in cls or (anc.get("id") or "")=="quality-guide":
+                skip=True; break
+            anc=anc.getparent()
+        if skip: continue
         box=None; p=a.getparent(); depth=0
         while p is not None and depth<6:
             cls=" "+(p.get("class") or "")+" "

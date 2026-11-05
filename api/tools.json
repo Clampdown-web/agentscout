@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-04T19:54:39Z",
- "updated": "2026-11-04T19:54:39Z",
- "last_checked": "2026-11-04",
- "count": 2185,
- "total_tools": 2185,
+ "generated": "2026-11-05T15:06:44Z",
+ "updated": "2026-11-05T15:06:44Z",
+ "last_checked": "2026-11-05",
+ "count": 2220,
+ "total_tools": 2220,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -31272,48 +31272,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/jarvis-registry.png",
    "page": "https://agentscouthq.com/tools/jarvis-registry.html"
-  },
-  {
-   "name": "Mnemosyne",
-   "slug": "mnemosyne",
-   "url": "https://mnemosyne.site/",
-   "website": "https://mnemosyne.site/",
-   "github": "https://github.com/mnemosyne-oss/mnemosyne",
-   "category": "memory & RAG",
-   "description": "Zero-cloud, SQLite-backed memory layer for Hermes, Claude Code, Cursor, Codex and custom agents with a single Python dependency.",
-   "key_features": [
-    "Free and open source (MIT)",
-    "Active",
-    "3554 GitHub stars",
-    "Give agents memory"
-   ],
-   "pricing": "Free and open source (MIT)",
-   "price_tag": "free",
-   "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
-   ],
-   "date_added": "2026-10-18",
-   "added": "2026-10-18",
-   "source": "GitHub",
-   "goals": [
-    "automation"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": false,
-   "seed": false,
-   "new_this_week": false,
-   "repo": "mnemosyne-oss/mnemosyne",
-   "github_stars": 3554,
-   "open_source": true,
-   "license": "MIT",
-   "tags": [
-    "give agents memory"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/mnemosyne.png",
-   "page": "https://agentscouthq.com/tools/mnemosyne.html"
   },
   {
    "name": "BeeAI Framework",
@@ -69711,7 +69669,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -69755,7 +69713,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -69799,7 +69757,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -69844,7 +69802,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -69886,7 +69844,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -69926,7 +69884,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -69967,7 +69925,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70009,7 +69967,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70054,7 +70012,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70097,7 +70055,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "omnirush-ai/omnirush-gui",
@@ -70142,7 +70100,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "unreallabsai/unreal-agent",
@@ -70187,7 +70145,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "memorax-ai/memorax-code",
@@ -70232,7 +70190,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "aoci-spec/aoci-code",
@@ -70275,7 +70233,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "autonomous-ai/openharness",
@@ -70316,7 +70274,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "xuzhougeng/wisp-science",
@@ -70360,7 +70318,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "thruwire/foreman",
@@ -70402,7 +70360,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "ronak-create/FableCut",
@@ -70445,7 +70403,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "diagridio/catalyst-ai",
@@ -70491,7 +70449,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "cayu-dev/cayu",
@@ -70536,7 +70494,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "inngest/inngest",
@@ -70582,7 +70540,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "windmill-labs/windmill",
@@ -70629,7 +70587,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "kestra-io/kestra",
@@ -70673,7 +70631,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70713,7 +70671,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70754,7 +70712,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70796,7 +70754,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -70840,7 +70798,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -73773,48 +73731,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/imgs-ai.png",
    "page": "https://agentscouthq.com/tools/imgs-ai.html"
-  },
-  {
-   "name": "Menlo Insurance MCP",
-   "slug": "menlo-insurance-mcp",
-   "url": "https://www.menloinsurance.com/ai-assistants",
-   "website": "https://www.menloinsurance.com/ai-assistants",
-   "github": "",
-   "category": "MCP servers",
-   "description": "Menlo Insurance MCP is a hosted MCP connector for ChatGPT and Claude (`mcp.menloinsurance.com/mcp`) from licensed California insurance brokerage Menlo Insurance Services that lets users attach renovation budgets or existing policies, answer application questions, compare quotes across carriers and follow up directly inside their AI assistant with no broker fees.",
-   "key_features": [
-    "Free to use in ChatGPT and Claude with no broker fees (licensed brokerage in California, License #6012339)",
-    "Active",
-    "Connect tools via mcp",
-    "Automate workflows"
-   ],
-   "pricing": "Free to use in ChatGPT and Claude with no broker fees (licensed brokerage in California, License #6012339)",
-   "price_tag": "free",
-   "platforms": [
-    "Developer (API/SDK)"
-   ],
-   "date_added": "2026-10-24",
-   "added": "2026-10-24",
-   "source": "Maker submission",
-   "goals": [
-    "automation"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": true,
-   "seed": false,
-   "new_this_week": false,
-   "repo": null,
-   "github_stars": null,
-   "open_source": false,
-   "license": "",
-   "tags": [
-    "connect tools via MCP",
-    "automate workflows"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/menlo-insurance-mcp.png",
-   "page": "https://agentscouthq.com/tools/menlo-insurance-mcp.html"
   },
   {
    "name": "Raydo Agent OS",
@@ -86907,7 +86823,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "reality-opened/openreality",
    "github_stars": 536,
    "open_source": true,
@@ -86949,7 +86865,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "TulipFarm/tulipfarm",
    "github_stars": 10,
    "open_source": true,
@@ -86991,7 +86907,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "rociiu/talorys",
    "github_stars": 1419,
    "open_source": true,
@@ -87034,7 +86950,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "kanaworksai-hue/audio-studio-mcp",
    "github_stars": 541,
    "open_source": true,
@@ -87077,7 +86993,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "duty1g/x64dbg-mcp-server",
    "github_stars": 2631,
    "open_source": true,
@@ -87121,7 +87037,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "opensec-git/Pi-Bolt",
    "github_stars": 665,
    "open_source": true,
@@ -87164,7 +87080,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "XHToken/Spark-X2.6",
    "github_stars": 869,
    "open_source": true,
@@ -87205,7 +87121,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "Superior-Trade/trading-terminal",
    "github_stars": 1005,
    "open_source": true,
@@ -87247,7 +87163,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "leemysw/yovoice",
    "github_stars": 1984,
    "open_source": true,
@@ -89032,7 +88948,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-swipe-file.png",
-   "page": "https://agentscouthq.com/tools/agent-swipe-file.html"
+   "page": "https://agentscouthq.com/tools/agent-swipe-file.html",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=agent-swipe-file"
+   }
   },
   {
    "name": "AI Product Recommender for WooCommerce",
@@ -89842,11 +89764,10 @@
    "website": "https://toolspad.com/mcp",
    "github": "",
    "category": "MCP servers",
-   "description": "ToolsPad MCP lets AI agents work with ToolsPad through WebMCP in the browser or an authenticated MCP connection with OAuth, scoped workspace access and audit history.",
+   "description": "ToolsPad's hosted MCP server lets approved clients access one selected existing ToolsPad workspace through OAuth. Read/write access is enabled by default, with an optional read-only mode and revocation in Settings.",
    "key_features": [
     "Freemium",
     "Active",
-    "Automate the browser",
     "Connect tools via mcp"
    ],
    "pricing": "Freemium",
@@ -89858,7 +89779,8 @@
    "added": "2026-11-04",
    "source": "Submission",
    "goals": [
-    "automation"
+    "automation",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -89870,7 +89792,6 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "automate the browser",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -92508,6 +92429,1538 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/nestack-agent-care.png",
    "page": "https://agentscouthq.com/tools/nestack-agent-care.html"
+  },
+  {
+   "name": "OpenSquilla",
+   "slug": "opensquilla",
+   "url": "https://opensquilla.ai/",
+   "website": "https://opensquilla.ai/",
+   "github": "https://github.com/TokenRhythm/opensquilla",
+   "category": "personal agents",
+   "description": "An open-source microkernel AI agent built for token efficiency, with a CLI, a web UI and chat-channel front ends. The team has published a technical report on its agentic routing.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "7103 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "crypto"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "TokenRhythm/opensquilla",
+   "github_stars": 7103,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/opensquilla.png",
+   "page": "https://agentscouthq.com/tools/opensquilla.html"
+  },
+  {
+   "name": "AIPOCH Open-Science",
+   "slug": "aipoch-open-science",
+   "url": "https://aipoch.com/open-science",
+   "website": "https://aipoch.com/open-science",
+   "github": "https://github.com/aipoch/open-science",
+   "category": "research",
+   "description": "A local-first, model-agnostic desktop research workbench. You work with an agent on papers and data through skills, MCP tools, and Python/R execution, then export traceable .science packages for reproducible results. It runs on macOS, Windows and Linux.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5469 GitHub stars",
+    "Control a computer",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "research"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "aipoch/open-science",
+   "github_stars": 5469,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aipoch-open-science.png",
+   "page": "https://agentscouthq.com/tools/aipoch-open-science.html"
+  },
+  {
+   "name": "Fallow",
+   "slug": "fallow",
+   "url": "https://fallow.tools/docs/",
+   "website": "https://fallow.tools/docs/",
+   "github": "https://github.com/fallow-rs/fallow",
+   "category": "coding",
+   "description": "Codebase intelligence for TypeScript and JavaScript in a single Rust binary. It reports health, complexity hotspots, duplication, circular dependencies, architecture boundaries and unused code, and ships as a CLI, a GitHub Action, an LSP, an MCP server and a VS Code extension.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "5300 GitHub stars",
+    "Write code",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "fallow-rs/fallow",
+   "github_stars": 5300,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/fallow.png",
+   "page": "https://agentscouthq.com/tools/fallow.html"
+  },
+  {
+   "name": "Agentic Resource Registry",
+   "slug": "agentic-resource-registry",
+   "url": "https://agenticresourceregistry.io/",
+   "website": "https://agenticresourceregistry.io/",
+   "github": "https://github.com/AgenticResourceRegistry/AgenticResourceRegistry",
+   "category": "agent infra",
+   "description": "A self-hosted registry where teams share and discover coding-agent resources across Claude Code, Kiro, Cursor, Codex and Pi, used through the observal CLI.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4390 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "AgenticResourceRegistry/AgenticResourceRegistry",
+   "github_stars": 4390,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agentic-resource-registry.png",
+   "page": "https://agentscouthq.com/tools/agentic-resource-registry.html"
+  },
+  {
+   "name": "Open Intelligent UI",
+   "slug": "open-intelligent-ui",
+   "url": "https://opengenerativeui.copilotkit.ai/",
+   "website": "https://opengenerativeui.copilotkit.ai/",
+   "github": "https://github.com/CopilotKit/OpenIntelligentUI",
+   "category": "frameworks",
+   "description": "CopilotKit's open-source generative UI chat interface that turns questions into interactive explanations, comparisons and working tools. It is built on CopilotKit and AG-UI.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4157 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "CopilotKit/OpenIntelligentUI",
+   "github_stars": 4157,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/open-intelligent-ui.png",
+   "page": "https://agentscouthq.com/tools/open-intelligent-ui.html"
+  },
+  {
+   "name": "NotFair Plugin",
+   "slug": "notfair-plugin",
+   "url": "https://notfair.co/?nf_pricing_assignment_attempted=1",
+   "website": "https://notfair.co/?nf_pricing_assignment_attempted=1",
+   "github": "https://github.com/nowork-studio/notfair-plugin",
+   "category": "sales & marketing",
+   "description": "Open-source SEO, GEO and marketing skills for Claude Code, Codex, Hermes and other agents. They cover site audits, traffic-drop checks, GA4 and Search Console analysis, and ad-waste reviews across Google, Meta, X, LinkedIn, Reddit and TikTok.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4112 GitHub stars",
+    "Sales & support"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "nowork-studio/notfair-plugin",
+   "github_stars": 4112,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/notfair-plugin.png",
+   "page": "https://agentscouthq.com/tools/notfair-plugin.html"
+  },
+  {
+   "name": "Tutti",
+   "slug": "tutti",
+   "url": "https://tutti.sh/",
+   "website": "https://tutti.sh/",
+   "github": "https://github.com/tutti-os/tutti",
+   "category": "productivity",
+   "description": "An open-source, real-time collaboration space where several people and several agents build together. A hosted Tutti VM version is also offered.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "3894 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tutti-os/tutti",
+   "github_stars": 3894,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "productivity"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tutti.png",
+   "page": "https://agentscouthq.com/tools/tutti.html"
+  },
+  {
+   "name": "llmwiki",
+   "slug": "llmwiki",
+   "url": "https://llmwiki.atomicstrata.ai/introduction",
+   "website": "https://llmwiki.atomicstrata.ai/introduction",
+   "github": "https://github.com/atomicstrata/llm-wiki-compiler",
+   "category": "memory & RAG",
+   "description": "A knowledge compiler inspired by Karpathy's LLM Wiki pattern. It turns raw sources into an interlinked wiki that you can view and query. Install it with npm install -g llm-wiki-compiler.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2239 GitHub stars",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "atomicstrata/llm-wiki-compiler",
+   "github_stars": 2239,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/llmwiki.png",
+   "page": "https://agentscouthq.com/tools/llmwiki.html"
+  },
+  {
+   "name": "SkillSpector",
+   "slug": "skillspector",
+   "url": "https://docs.nvidia.com/skills/scanning-agent-skills",
+   "website": "https://docs.nvidia.com/skills/scanning-agent-skills",
+   "github": "https://github.com/NVIDIA/SkillSpector",
+   "category": "security & governance",
+   "description": "NVIDIA's open-source security scanner for agent skills. It checks Claude Code, Codex and MCP skills for vulnerabilities, prompt injection, data exfiltration and supply-chain risks before you install them, and it is part of the NVIDIA Verified Skills pipeline.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/skillspector.png",
+   "page": "https://agentscouthq.com/tools/skillspector.html"
+  },
+  {
+   "name": "NemoClaw",
+   "slug": "nemoclaw",
+   "url": "https://docs.nvidia.com/nemoclaw/latest/",
+   "website": "https://docs.nvidia.com/nemoclaw/latest/",
+   "github": "https://github.com/NVIDIA/NemoClaw",
+   "category": "sandboxes & code execution",
+   "description": "NVIDIA's open-source reference stack for running agents such as OpenClaw, Hermes and LangChain Deep Agents inside NVIDIA OpenShell sandboxes. It adds guided onboarding, managed inference, network policy and lifecycle commands through a CLI.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Write code",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nemoclaw.png",
+   "page": "https://agentscouthq.com/tools/nemoclaw.html"
+  },
+  {
+   "name": "HTML Anything",
+   "slug": "html-anything",
+   "url": "https://open-design.ai/html-anything/",
+   "website": "https://open-design.ai/html-anything/",
+   "github": "https://github.com/nexu-io/html-anything",
+   "category": "coding",
+   "description": "An agentic HTML editor from the Open Design team. Your local coding-agent CLI (Claude Code, Cursor, Codex, Gemini and others) writes HTML decks, posters, reports and prototypes from 75 skills, shows them in a sandboxed preview, and exports in one click. No API key is needed.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Write code",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/html-anything.png",
+   "page": "https://agentscouthq.com/tools/html-anything.html"
+  },
+  {
+   "name": "LinkBunny Placement Checker",
+   "slug": "linkbunny-placement-checker",
+   "url": "https://getlinkbunny.com/tools/backlink-placement-checker",
+   "website": "https://getlinkbunny.com/tools/backlink-placement-checker",
+   "github": "",
+   "category": "MCP servers",
+   "description": "LinkBunny Placement Checker is a free remote MCP server that inspects whether a page links to your URL, including the anchor text, rel/nofollow and canonical status, with no API key required.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/linkbunny-placement-checker.png",
+   "page": "https://agentscouthq.com/tools/linkbunny-placement-checker.html"
+  },
+  {
+   "name": "Coat of Arms Maker",
+   "slug": "coat-of-arms-maker",
+   "url": "https://coatofarmsmaker.org/",
+   "website": "https://coatofarmsmaker.org/",
+   "github": "",
+   "category": "image generation",
+   "description": "Coat of Arms Maker generates heraldic crests and coats of arms from prompts and reference images, with free watermarked previews and paid 2K/4K downloads.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "image generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/coat-of-arms-maker.png",
+   "page": "https://agentscouthq.com/tools/coat-of-arms-maker.html"
+  },
+  {
+   "name": "PrimaryHub",
+   "slug": "primaryhub",
+   "url": "https://primaryhub.ai/",
+   "website": "https://primaryhub.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "PrimaryHub is cold-email software for agencies that covers sending, warmup, deliverability, AI reply categorization and a unified inbox.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/primaryhub.png",
+   "page": "https://agentscouthq.com/tools/primaryhub.html"
+  },
+  {
+   "name": "DreamMMer",
+   "slug": "dreammmer",
+   "url": "https://dreammmer.com/minimax-h3",
+   "website": "https://dreammmer.com/minimax-h3",
+   "github": "",
+   "category": "image generation",
+   "description": "DreamMMer is a chat-based image and video editing agent that writes the prompt, picks a model such as MiniMax, Kling, Seedance or Nano Banana Pro, and can upscale the result.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Upscale images"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "upscale images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dreammmer.png",
+   "page": "https://agentscouthq.com/tools/dreammmer.html"
+  },
+  {
+   "name": "Postellite",
+   "slug": "postellite",
+   "url": "https://www.postellite.com/",
+   "website": "https://www.postellite.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Postellite is a multi-agent AI marketing platform for research, SEO writing, scheduling and publishing with client workspaces and approval controls.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Build multi-agent systems",
+    "Research the web",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build multi-agent systems",
+    "research the web",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/postellite.png",
+   "page": "https://agentscouthq.com/tools/postellite.html"
+  },
+  {
+   "name": "AI Haircut",
+   "slug": "ai-haircut",
+   "url": "https://aihaircut.net/",
+   "website": "https://aihaircut.net/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "AI Haircut lets you try hairstyles and hair colors on your own photo across 160+ styles before you commit.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "photography & photo editing"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-haircut.png",
+   "page": "https://agentscouthq.com/tools/ai-haircut.html"
+  },
+  {
+   "name": "GridBulk",
+   "slug": "gridbulk",
+   "url": "https://www.gridbulk.com/",
+   "website": "https://www.gridbulk.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "GridBulk is an AI batch image grid generator that splits one prompt into up to 16 assets and ships a REST API plus MCP for agents.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "image generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gridbulk.png",
+   "page": "https://agentscouthq.com/tools/gridbulk.html"
+  },
+  {
+   "name": "SagBot",
+   "slug": "sagbot",
+   "url": "https://sagbot.app/",
+   "website": "https://sagbot.app/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "SagBot is a free AI-readiness checker that scores Agent-ready and Answer-ready (SEO/GEO/AEO) and returns copy-paste fixes for a coding agent.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sagbot.png",
+   "page": "https://agentscouthq.com/tools/sagbot.html"
+  },
+  {
+   "name": "Audio AI Studio",
+   "slug": "audio-ai-studio",
+   "url": "https://audioaistudio.com/",
+   "website": "https://audioaistudio.com/",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "Audio AI Studio is a browser voice studio with 400+ voices in 36 languages, voice cloning, AI music, stem splitting and transcription.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Subtitles & transcripts",
+    "Voiceover",
+    "Separate stems"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "subtitles & transcripts",
+    "voiceover",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/audio-ai-studio.png",
+   "page": "https://agentscouthq.com/tools/audio-ai-studio.html"
+  },
+  {
+   "name": "CarVideoAI",
+   "slug": "carvideoai",
+   "url": "https://carvideoai.com/",
+   "website": "https://carvideoai.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "CarVideoAI turns prompts or photos into cinematic car videos with showroom pans in 9:16, 16:9 and 1:1 formats.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/carvideoai.png",
+   "page": "https://agentscouthq.com/tools/carvideoai.html"
+  },
+  {
+   "name": "BrandPurl",
+   "slug": "brandpurl",
+   "url": "https://brandpurl.com/",
+   "website": "https://brandpurl.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "BrandPurl turns one ecommerce brief into GEO-aware social content—copy, images and video—ready for 20+ channels.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/brandpurl.png",
+   "page": "https://agentscouthq.com/tools/brandpurl.html"
+  },
+  {
+   "name": "ColorSeason AI",
+   "slug": "colorseason-ai",
+   "url": "https://colorseasonai.com/",
+   "website": "https://colorseasonai.com/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "ColorSeason AI analyzes a selfie into one of 12 color seasons and returns palettes plus makeup and wardrobe shade picks.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "photography & photo editing"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/colorseason-ai.png",
+   "page": "https://agentscouthq.com/tools/colorseason-ai.html"
+  },
+  {
+   "name": "WearTryOn",
+   "slug": "weartryon",
+   "url": "https://weartryon.com/",
+   "website": "https://weartryon.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "WearTryOn is an AI virtual try-on app: upload your photo plus a clothing image and see the outfit on you before buying.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "image generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/weartryon.png",
+   "page": "https://agentscouthq.com/tools/weartryon.html"
+  },
+  {
+   "name": "Nafy AI",
+   "slug": "nafy-ai",
+   "url": "https://nafy.ai/",
+   "website": "https://nafy.ai/",
+   "github": "",
+   "category": "music production",
+   "description": "Nafy AI turns text or lyrics into full songs with vocals.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nafy-ai.png",
+   "page": "https://agentscouthq.com/tools/nafy-ai.html"
+  },
+  {
+   "name": "writenode",
+   "slug": "writenode",
+   "url": "https://writenode.app/",
+   "website": "https://writenode.app/",
+   "github": "",
+   "category": "productivity",
+   "description": "writenode is a Chrome extension that captures pages, highlights and voice notes into a personal knowledge base, then answers questions from what you saved.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/writenode.png",
+   "page": "https://agentscouthq.com/tools/writenode.html"
+  },
+  {
+   "name": "Image To Image",
+   "slug": "image-to-image",
+   "url": "https://image-to-image.org/",
+   "website": "https://image-to-image.org/",
+   "github": "",
+   "category": "image generation",
+   "description": "Image To Image is an online AI image-to-image generator and editor: upload a photo, describe the change in plain English, and get a new version.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Generate images"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate images"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/image-to-image.png",
+   "page": "https://agentscouthq.com/tools/image-to-image.html"
+  },
+  {
+   "name": "Musci.io",
+   "slug": "musci-io",
+   "url": "https://musci.io/",
+   "website": "https://musci.io/",
+   "github": "",
+   "category": "music production",
+   "description": "Musci.io turns a text prompt into a complete royalty-free song with vocals, lyrics and instruments across 6 AI music models and 100+ genres.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Make music"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "make music"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/musci-io.png",
+   "page": "https://agentscouthq.com/tools/musci-io.html"
+  },
+  {
+   "name": "OpCo",
+   "slug": "opco",
+   "url": "https://getopco.co.uk/",
+   "website": "https://getopco.co.uk/",
+   "github": "",
+   "category": "business agents",
+   "description": "OpCo is a plug-and-play operations coordinator for UK trade firms: diary, CIS-aware pay drafts, invoices and day-to-day office workflows without an office.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/opco.png",
+   "page": "https://agentscouthq.com/tools/opco.html"
+  },
+  {
+   "name": "Persqo",
+   "slug": "persqo",
+   "url": "https://persqo.com/",
+   "website": "https://persqo.com/",
+   "github": "",
+   "category": "QA & testing",
+   "description": "Persqo's AI personas use your web app like real customers, find UX problems and bugs, and hand you a ready-to-fix list, with 3 free sessions and no card.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "coding",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/persqo.png",
+   "page": "https://agentscouthq.com/tools/persqo.html"
+  },
+  {
+   "name": "Kepo Mac Desktop Widgets",
+   "slug": "kepo-mac-desktop-widgets",
+   "url": "https://kepo.ai/",
+   "website": "https://kepo.ai/",
+   "github": "",
+   "category": "productivity",
+   "description": "Kepo adds Mac desktop widgets for RSS feeds, calendars and productivity tiles on macOS.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Control a computer"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kepo-mac-desktop-widgets.png",
+   "page": "https://agentscouthq.com/tools/kepo-mac-desktop-widgets.html"
+  },
+  {
+   "name": "Life Manager",
+   "slug": "life-manager",
+   "url": "https://github.com/Daisuke134/life-manager",
+   "website": "",
+   "github": "https://github.com/Daisuke134/life-manager",
+   "category": "personal agents",
+   "description": "Life Manager is an open-source AI manager that runs by email: it picks your top priorities for the day, moves delegated tasks forward and reports back.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "8 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Daisuke134/life-manager",
+   "github_stars": 8,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/life-manager.png",
+   "page": "https://agentscouthq.com/tools/life-manager.html"
+  },
+  {
+   "name": "Kilobat CLI",
+   "slug": "kilobat-cli",
+   "url": "https://kilobat.app/",
+   "website": "https://kilobat.app/",
+   "github": "https://github.com/seifip/kilobat-cli",
+   "category": "MCP servers",
+   "description": "Kilobat CLI is a macOS network diagnostics toolkit with a local stdio MCP server so coding agents can probe DNS, TLS, routes and connectivity from the terminal.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Write code",
+    "Build an agent",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "build an agent",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kilobat-cli.png",
+   "page": "https://agentscouthq.com/tools/kilobat-cli.html"
+  },
+  {
+   "name": "Money Tracker Expense & Budget",
+   "slug": "money-tracker-expense-budget",
+   "url": "https://money.quhou123.com/en/",
+   "website": "https://money.quhou123.com/en/",
+   "github": "",
+   "category": "finance & accounting",
+   "description": "Money Tracker logs expenses by typing, AI voice or receipt photo, with confirm-before-save, budgets, multi-currency and AA splits.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/money-tracker-expense-budget.png",
+   "page": "https://agentscouthq.com/tools/money-tracker-expense-budget.html"
+  },
+  {
+   "name": "myZOQENA",
+   "slug": "myzoqena",
+   "url": "https://myzoqena.com/",
+   "website": "https://myzoqena.com/",
+   "github": "",
+   "category": "voice",
+   "description": "myZOQENA is an AI receptionist that answers business calls when you cannot, greets callers, books appointments and follows up.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/myzoqena.png",
+   "page": "https://agentscouthq.com/tools/myzoqena.html"
+  },
+  {
+   "name": "Folklore Clinical Variant Interpretation MCP",
+   "slug": "folklore-clinical-variant-interpretation-mcp",
+   "url": "https://folklore.helena.bio/integrations/mcp",
+   "website": "https://folklore.helena.bio/integrations/mcp",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Folklore Clinical Variant Interpretation MCP by Helena Bioinformatics gives agents genomic variant interpretation, gene-disease evidence and literature tools over MCP.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/folklore-clinical-variant-interpretation-mcp.png",
+   "page": "https://agentscouthq.com/tools/folklore-clinical-variant-interpretation-mcp.html"
+  },
+  {
+   "name": "Lava MCP",
+   "slug": "lava-mcp",
+   "url": "https://lava.ai-dolphin.com/subscribe/docs",
+   "website": "https://lava.ai-dolphin.com/subscribe/docs",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Lava MCP is a China A-share news-heat MCP for AI agents covering hot stocks, concepts, weighted heat and hourly windows via MCP and a read-only REST API.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-05",
+   "added": "2026-11-05",
+   "source": "Submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lava-mcp.png",
+   "page": "https://agentscouthq.com/tools/lava-mcp.html"
   }
  ]
 }
