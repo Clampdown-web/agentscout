@@ -54366,7 +54366,6 @@
     "source": "Submission",
     "pricing_detail": "",
     "use_cases": [
-      "voice & phone calls",
       "automate workflows",
       "connect tools via MCP"
     ],
@@ -54374,7 +54373,10 @@
     "github": "",
     "id": 2105,
     "slug": "botsee",
-    "logo": "assets/logos/botsee.png"
+    "logo": "assets/logos/botsee.png",
+    "tasks_exclude": [
+      "building-voice-agents"
+    ]
   },
   {
     "name": "Context Nest",
