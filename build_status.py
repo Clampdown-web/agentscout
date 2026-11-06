@@ -13,6 +13,8 @@ B = "https://agentscouthq.com/"
 AFF = "AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout."
 MONTHS = ("", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 SKIP_MCP = {"mcp/connect.html", "mcp/pricing.html", "mcp/link-status.html"}
+# Public copy for the MCP/directory link check: once daily around 7 AM Pacific (a run may finish later).
+VERIFY_CADENCE = "Updated daily, around 7 AM PT"
 
 
 def _pretty_day(day):
@@ -242,7 +244,7 @@ def _down_pills(servers, prefix):
 def _card_head(heading, down=0):
     dot = "vc-dot vc-dn" if down else "vc-dot"
     return (f'<div class="vc-hd"><span class="{dot}" aria-hidden="true"></span><h2>{e(heading)}</h2>'
-            '<span class="vc-upd">Updated twice daily, 7 AM &amp; 7 PM PT</span></div>')
+            f'<span class="vc-upd">{VERIFY_CADENCE}</span></div>')
 
 
 def panel(doc, servers, prefix, heading):
@@ -521,7 +523,7 @@ def write_dashboard(tools):
             f'<td>{last}</td><td>{detail or "—"}</td><td>{e(hist_txt)}</td></tr>'
         )
     title = "MCP server status · AgentScout"
-    desc = f"Up, down, and not-yet-checked counts for {total} MCP servers on AgentScout, from the latest twice-daily link check."
+    desc = f"Up, down, and not-yet-checked counts for {total} MCP servers on AgentScout. {VERIFY_CADENCE}."
     if len(desc) > 156:
         desc = desc[:156].rsplit(" ", 1)[0]
     canon = B + "mcp/status/"
@@ -534,8 +536,8 @@ def write_dashboard(tools):
     body = f'''<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../index.html">MCP servers</a> / Status</div>
 <section class="st-dash" style="padding-top:20px;text-align:left">
 <h1 style="text-align:left">MCP server status</h1>
-<p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. Updated twice daily, 7 AM &amp; 7 PM PT. A server with no row in the check file is not yet checked. Nothing on this page is guessed.</p>
-<p class="st-updated"><b>Last updated:</b> {when}. Updated twice daily, 7 AM &amp; 7 PM PT. {e(qa_bits[0] if qa_bits else "")}</p>
+<p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. {VERIFY_CADENCE}. A server with no row in the check file is not yet checked. Nothing on this page is guessed.</p>
+<p class="st-updated"><b>Last updated:</b> {when}. {VERIFY_CADENCE}. {e(qa_bits[0] if qa_bits else "")}</p>
 <div class="st-counts" role="group" aria-label="Filter by status">
 <button type="button" class="st-count on" data-filter="all"><b>{total}</b><span>All</span></button>
 <button type="button" class="st-count" data-filter="live"><b>{live}</b><span>Up</span></button>
