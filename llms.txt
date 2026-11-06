@@ -1,6 +1,6 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 2,273 AI agent tools in 40 categories, including 304 MCP servers (304 of 304 MCP servers responded today (verified Nov 6, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 2,274 AI agent tools in 40 categories, including 305 MCP servers (304 of 305 MCP servers responded today (verified Nov 6, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -29,7 +29,7 @@ Catalog last checked: 2026-11-06 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 304 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 305 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
@@ -47,7 +47,7 @@ Catalog last checked: 2026-11-06 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://agentscouthq.com/mcp/sse) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 304 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 305 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -66,15 +66,15 @@ Catalog last checked: 2026-11-06 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 304 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 231 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 305 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 230 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 157 tools
 - [personal agents](https://agentscouthq.com/categories/personal-agents.html): 105 tools
 - [agent infra](https://agentscouthq.com/categories/agent-infra.html): 100 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 99 tools
 - [crypto](https://agentscouthq.com/categories/crypto.html): 93 tools
 - [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 70 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 68 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 69 tools
 - [video generation](https://agentscouthq.com/categories/video-generation.html): 65 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 63 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
@@ -187,8 +187,9 @@ Catalog last checked: 2026-11-06 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-11-05 to 2026-11-06): 90
+- Tools added in the last 2 days (2026-11-05 to 2026-11-06): 91
 
+- [Firecrawl MCP Server](https://agentscouthq.com/tools/firecrawl-mcp-server.html) (added 2026-11-06): Firecrawl MCP lets coding agents scrape and crawl the web through MCP with keyless access, account sign-in or an API key.
 - [LAMDA](https://agentscouthq.com/tools/lamda.html) (added 2026-11-06): LAMDA is an open-source Android full-stack device control platform with WebRTC desktop, UI/OCR automation, Frida, MITM and MCP/agent APIs.
 - [Tabularis](https://agentscouthq.com/tools/tabularis.html) (added 2026-11-06): Tabularis is an open-source desktop SQL workspace with built-in drivers plus an MCP server so Claude, Cursor and Devin can query your databases.
 - [AppLlama Skills](https://agentscouthq.com/tools/appllama-skills.html) (added 2026-11-06): AppLlama Skills is an MCP and skill pack that lets agents search top-grossing iOS apps, open the screens they ship, and build from those patterns.
@@ -542,7 +543,6 @@ Catalog last checked: 2026-11-06 (Pacific)
 - [Free & open-source browser agents and browser automation tools](https://agentscouthq.com/s/open-source-browser-agents.html)
 - [Open-source crypto AI agents](https://agentscouthq.com/s/open-source-crypto-ai-agents.html)
 - [Open-source LLM observability and eval tools](https://agentscouthq.com/s/open-source-llm-observability-tools.html)
-- [Open-source MCP servers for databases](https://agentscouthq.com/s/open-source-mcp-servers-for-databases.html)
 - [Open-source personal AI assistants](https://agentscouthq.com/s/open-source-personal-ai-assistants.html)
 - [Open-source voice AI agent frameworks](https://agentscouthq.com/s/open-source-voice-ai-agents.html)
 - [Open-source AI workflow automation tools](https://agentscouthq.com/s/open-source-workflow-automation-tools.html)

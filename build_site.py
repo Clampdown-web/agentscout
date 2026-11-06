@@ -92,7 +92,7 @@ UC_SET={"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: 
 "vidmoat":["edit video","connect tools via MCP"],"salestouch":["sales & support","connect tools via MCP"],  # Oct 23 PT: maker submissions (hosted AI video editor with MCP; LinkedIn MCP for sales agents)
 "system-one-api":["build an agent","automate workflows"],"peekpanda":["research the web","social posts & ads","connect tools via MCP"],"hiredov":["business agents","automate workflows"],  # Oct 23 PT: maker submissions, hand-checked ("call logs" wrongly matched voice)
 "flogpt":["voice & phone calls","sales & support"],  # Oct 22 PT: "website" keyword wrongly added research the web
-"superagnt":["connect tools via MCP","research the web","give agents memory"],  # submission Oct 22: hosted MCP server + REST API (social data, scraping, enrichment, Postgres, memory, inbox)
+"superagnt":["sales & support","research the web","social posts & ads"],  # Nov 6 2026: maker Ellie rewrite — marketing plugin for Claude/ChatGPT (outbound, SEO, ads); was MCP/memory stack
 "gmapsscraper-ai":["sales & support","research the web","connect tools via MCP"],  # submission Oct 21: AI Google Maps lead scraper with REST API and MCP server
 "metix-ai":["business agents","automate workflows"],  # submission Oct 21: AI recruiter agent (Mira) that sources, does approved outreach and books interviews
 "playable-notes":["make music"],  # submission Oct 21: AI piano sheet music reader and arranger for teachers

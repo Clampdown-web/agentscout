@@ -6384,13 +6384,8 @@
 "mcp-servers"
 ],
 "superagnt": [
-"agent-memory",
-"text-to-sql",
-"voice-phone",
-"email-agents",
 "sales-agents",
-"web-scraping",
-"mcp-servers"
+"marketing-agents"
 ],
 "claude-duet": [
 "planning-tasks",
@@ -8964,5 +8959,9 @@
 "lamda": [
 "computer-use",
 "mobile"
+],
+"firecrawl-mcp-server": [
+"web-scraping",
+"mcp-servers"
 ]
 }

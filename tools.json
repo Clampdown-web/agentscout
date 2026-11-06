@@ -42922,21 +42922,21 @@
   {
     "name": "superagnt",
     "url": "https://www.superagnt.com/",
-    "description": "superagnt is a hosted MCP server and REST API that gives AI agents one key for the tools they lack: Instagram, TikTok, LinkedIn, YouTube, Reddit and X data, web scraping to clean markdown or JSON, email finding and lead enrichment, plus a real Postgres database, memory, schedules, queues and an inbox. Credits are charged only on successful calls, and it plugs into Claude, Cursor, Codex and other agents.",
-    "category": "coding",
+    "description": "superagnt is a marketing plugin for Claude and ChatGPT that helps businesses find customers through outbound, SEO and ads. With it, your AI can find the people worth reaching and load them into your outbound, see what you and your competitors rank for, and see the ads your competitors run.",
+    "category": "sales & marketing",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
     "new": false,
-    "verified": "2026-10-22",
+    "verified": "2026-11-06",
     "added": "2026-10-22",
     "source": "Submission",
     "pricing_detail": "Paid: free 7-day trial with no card ($3 of data credits and Growth limits), then Starter $49/month, Growth $149/month or Scale $399/month, each with monthly data credits included; Enterprise is custom; prices as listed on its site",
     "use_cases": [
-      "connect tools via MCP",
+      "sales & support",
       "research the web",
-      "give agents memory"
+      "social posts & ads"
     ],
     "website": "https://www.superagnt.com/",
     "github": "",
@@ -59156,5 +59156,30 @@
     "id": 2306,
     "slug": "lamda",
     "logo": "assets/logos/lamda.png"
+  },
+  {
+    "name": "Firecrawl MCP Server",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "description": "Firecrawl MCP lets coding agents scrape and crawl the web through MCP with keyless access, account sign-in or an API key.",
+    "category": "MCP servers",
+    "pricing": "Freemium",
+    "maturity": "Active",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-11-06",
+    "added": "2026-11-06",
+    "source": "Submission",
+    "pricing_detail": "",
+    "use_cases": [
+      "write code",
+      "connect tools via MCP",
+      "sales & support"
+    ],
+    "website": "https://docs.firecrawl.dev/mcp-server",
+    "github": "",
+    "id": 2308,
+    "slug": "firecrawl-mcp-server",
+    "logo": "assets/logos/firecrawl-mcp-server.png"
   }
 ]
