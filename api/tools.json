@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-06T16:08:16Z",
- "updated": "2026-11-06T16:08:16Z",
+ "generated": "2026-11-06T16:27:29Z",
+ "updated": "2026-11-06T16:27:29Z",
  "last_checked": "2026-11-06",
- "count": 2275,
- "total_tools": 2275,
+ "count": 2273,
+ "total_tools": 2273,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -96190,93 +96190,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/lamda.png",
    "page": "https://agentscouthq.com/tools/lamda.html"
-  },
-  {
-   "name": "InvoiceKoi",
-   "slug": "invoicekoi",
-   "url": "https://www.invoicekoi.com/",
-   "website": "https://www.invoicekoi.com/",
-   "github": "",
-   "category": "finance & accounting",
-   "description": "InvoiceKoi is an offline-friendly invoice app for electricians, plumbers and builders: draft invoices without an account, then subscribe when you are ready to send them.",
-   "key_features": [
-    "Freemium",
-    "Active",
-    "Voice & phone calls",
-    "Sales & support"
-   ],
-   "pricing": "Freemium",
-   "price_tag": "freemium",
-   "platforms": [
-    "Web"
-   ],
-   "date_added": "2026-11-06",
-   "added": "2026-11-06",
-   "source": "Submission",
-   "goals": [
-    "automation",
-    "media"
-   ],
-   "skill": "no-code",
-   "weekly_pick": false,
-   "new": true,
-   "seed": false,
-   "new_this_week": true,
-   "repo": null,
-   "github_stars": null,
-   "open_source": false,
-   "license": "",
-   "tags": [
-    "voice & phone calls",
-    "sales & support"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/invoicekoi.png",
-   "page": "https://agentscouthq.com/tools/invoicekoi.html"
-  },
-  {
-   "name": "Firecrawl MCP Server",
-   "slug": "firecrawl-mcp-server",
-   "url": "https://docs.firecrawl.dev/mcp-server",
-   "website": "https://docs.firecrawl.dev/mcp-server",
-   "github": "",
-   "category": "MCP servers",
-   "description": "Firecrawl MCP lets coding agents scrape and crawl the web through MCP with keyless access, account sign-in or an API key.",
-   "key_features": [
-    "Freemium",
-    "Active",
-    "Write code",
-    "Connect tools via mcp",
-    "Sales & support"
-   ],
-   "pricing": "Freemium",
-   "price_tag": "freemium",
-   "platforms": [
-    "Developer (API/SDK)"
-   ],
-   "date_added": "2026-11-06",
-   "added": "2026-11-06",
-   "source": "Submission",
-   "goals": [
-    "automation"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": true,
-   "seed": false,
-   "new_this_week": true,
-   "repo": null,
-   "github_stars": null,
-   "open_source": false,
-   "license": "",
-   "tags": [
-    "write code",
-    "connect tools via MCP",
-    "sales & support"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/firecrawl-mcp-server.png",
-   "page": "https://agentscouthq.com/tools/firecrawl-mcp-server.html"
   }
  ]
 }

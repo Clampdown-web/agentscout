@@ -59156,54 +59156,5 @@
     "id": 2306,
     "slug": "lamda",
     "logo": "assets/logos/lamda.png"
-  },
-  {
-    "name": "InvoiceKoi",
-    "url": "https://www.invoicekoi.com/",
-    "description": "InvoiceKoi is an offline-friendly invoice app for electricians, plumbers and builders: draft invoices without an account, then subscribe when you are ready to send them.",
-    "category": "finance & accounting",
-    "pricing": "Freemium",
-    "maturity": "Active",
-    "audience": "ready to use",
-    "featured": false,
-    "new": true,
-    "verified": "2026-11-06",
-    "added": "2026-11-06",
-    "source": "Submission",
-    "pricing_detail": "",
-    "use_cases": [
-      "voice & phone calls",
-      "sales & support"
-    ],
-    "website": "https://www.invoicekoi.com/",
-    "github": "",
-    "id": 2307,
-    "slug": "invoicekoi",
-    "logo": "assets/logos/invoicekoi.png"
-  },
-  {
-    "name": "Firecrawl MCP Server",
-    "url": "https://docs.firecrawl.dev/mcp-server",
-    "description": "Firecrawl MCP lets coding agents scrape and crawl the web through MCP with keyless access, account sign-in or an API key.",
-    "category": "MCP servers",
-    "pricing": "Freemium",
-    "maturity": "Active",
-    "audience": "builders",
-    "featured": false,
-    "new": true,
-    "verified": "2026-11-06",
-    "added": "2026-11-06",
-    "source": "Submission",
-    "pricing_detail": "",
-    "use_cases": [
-      "write code",
-      "connect tools via MCP",
-      "sales & support"
-    ],
-    "website": "https://docs.firecrawl.dev/mcp-server",
-    "github": "",
-    "id": 2308,
-    "slug": "firecrawl-mcp-server",
-    "logo": "assets/logos/firecrawl-mcp-server.png"
   }
 ]

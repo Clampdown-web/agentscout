@@ -1,16 +1,16 @@
 {
  "catalog": {
-  "mcp_servers": 305,
+  "mcp_servers": 304,
   "live": 304,
   "down": 0,
-  "not_yet_checked": 1,
+  "not_yet_checked": 0,
   "directory_last_checked": "2026-11-06",
   "mcp_last_checked": "2026-11-06 07:59",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-06",
-    "note": "304 live, 0 down, 1 not yet checked",
+    "note": "304 live, 0 down",
     "time": "07:59"
    },
    {
@@ -1350,12 +1350,6 @@
      "time": "07:59"
     }
    ]
-  },
-  {
-   "slug": "firecrawl-mcp-server",
-   "name": "Firecrawl MCP Server",
-   "page": "https://agentscouthq.com/tools/firecrawl-mcp-server.html",
-   "status": "not yet checked"
   },
   {
    "slug": "fireflies-mcp",
