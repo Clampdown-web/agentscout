@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T15:01:11Z",
+ "updated": "2026-11-06T15:55:41Z",
  "sources": [
   "TechCrunch",
   "The Verge",
@@ -9,12 +9,38 @@
  ],
  "items": [
   {
-   "title": "Meta Acquires Conductor, a Platform for Managing Teams of AI Coding Agents",
-   "source": "Mezha",
-   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5SZ3pmak5fWERQdzdNRkU4SnN5ODVFOEVvakxJNS1OcFI2N0hmOWRJSFVIWlNsWGZTVDNCWThCdkdCWWhzLTRwLVpFVnRJaWM0UUdMaVBRT3ZoMDdoRC1xNDJB0gFnQVVfeXFMTjRjY2ZRUG1PcWYwQmliaV95OTdjSlpfeVhWNnV0QVl0SThjNklZcEt0R0ZDRWFVWTU3aHBRNWw5QnZsQW9GT1M1SDRfWkRBRzkyTmhEcFNHTWR3TTN1U1lCZFRKeDQxMA?oc=5",
-   "date": "2026-11-05T10:56:00Z",
-   "tool": "conductor",
-   "page": "news/2026/11/meta-acquires-conductor-a-platform-for-managing-teams-of-ai-coding.html"
+   "title": "Wolters Kluwer ships TyMetrix 360 MCP for governed legal agent workflows",
+   "source": "Business Wire",
+   "url": "https://www.businesswire.com/news/home/20261106646088/en/Wolters-Kluwer-brings-TyMetrix-360-data-into-enterprise-AI-workflows-with-new-MCP-server",
+   "date": "2026-11-06T12:00:00Z",
+   "tool": null,
+   "summary": "Wolters Kluwer launched a TyMetrix 360 MCP server so legal teams can create matters, adjust invoices and assign follow-ups inside their existing AI assistants under current permissions.",
+   "page": "news/2026/11/wolters-kluwer-ships-tymetrix-360-mcp-for-governed-legal-agent.html"
+  },
+  {
+   "title": "Boomi Named a Visionary in the 2026 Gartner® Magic Quadrant™ for AI Agent Management…",
+   "source": "Rutland Herald",
+   "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOSXlTdndKU2N1QmtMcGRvT3RBYjFEYWFLNHZtNG10SW4yUVVGQkZSX09uX0xPZUFrNTE2RGEzX2hOeW16MHNFZlB0ek94Zlc0OW5IQ2dfX2lvTzBsemVIVnRZZTZuQmZVVl9UT04wMTM3X0VoTzJPVnk2a1ZBNE1xQkw4bGFnd0NLUTZMOWJqMG00Tko2OFJfQTJDb0ZOeUVBcnZzSjQ0ZzlUNGs3NXNJdF9qckRpU1JXTDJjODcwMnEyUFJudTQ3S2dLbG1CVWFWOU1ybF8wbFJONmRJdFd0YlFXZEVEWFZtT09Bd2ZQZHJsSVN3U0ZVR29fS3IzZFVNbzg3anpuV01kaTd3MzU3VzlkYWg?oc=5",
+   "date": "2026-11-05T16:25:48Z",
+   "tool": "boomi",
+   "page": "news/2026/11/boomi-named-a-visionary-in-the-2026-gartner-magic-quadrant-for-ai.html"
+  },
+  {
+   "title": "Cognitum One Unveils MetaLLM, Self-Improving Model Control Plane for AI Agent Swarms -…",
+   "source": "Google News",
+   "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPbEM5QmViaFJmTjVvd0NQVl9GdnNYalFqMllYTjF6YjNaY25Bc3ZIUW1UZ3VIblhwMF9UN1l2TWRPRkFrbHFUY3pfUEdNcEliQ1U2RnA1cUQtTTc0bXRudTc4RXdFd0lnaHNMMGVOZ0JBakZ4NzdTZzZiRFZmTkNJbHhOdGJ4WU5pdGg1N3h6WEFRTzhFUjdFMWJhZG84LXpQNjY5ZFFhRk1PTXRTd25hMU5UOE8waEZRMW5mWURFNTVBU1lyalZHVEROcGR2Uko5aVpFdzVkWnJXcHdJNUp3UGMwaG44c18xVVVnZzY0YzJ4Yi1TSHN4c29lRHdNY1B0NEdGQ21sZw?oc=5",
+   "date": "2026-11-05T12:01:57Z",
+   "tool": "swarms",
+   "page": "news/2026/11/cognitum-one-unveils-metallm-self-improving-model-control-plane-for.html"
+  },
+  {
+   "title": "Adobe wires CX Enterprise Coworker into ChatGPT, Claude and Gemini via MCP",
+   "source": "AICentralResources",
+   "url": "https://www.aicentralresources.com/news/adobe-cx-enterprise-coworker-mcp-chatgpt-claude-gemini",
+   "date": "2026-11-05T12:00:00Z",
+   "tool": null,
+   "summary": "Adobe embedded its CX Enterprise Coworker marketing agent into ChatGPT, Claude, Gemini, Copilot and Databricks Genie through MCP and A2A, with human approval still required for major spend changes.",
+   "page": "news/2026/11/adobe-wires-cx-enterprise-coworker-into-chatgpt-claude-and-gemini-via.html"
   },
   {
    "title": "Luma ships an MCP connector for ChatGPT and Claude image and video edits",
@@ -26,28 +52,12 @@
    "page": "news/2026/11/luma-ships-an-mcp-connector-for-chatgpt-and-claude-image-and-video.html"
   },
   {
-   "title": "MCP Inspector 2.14.0 fixes three privately reported vulnerabilities and changes…",
-   "source": "Forkast News",
-   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRTk3aWo4d2plemhKUWVKaXl5REZwelV2WEFlRUdjT1FtUjBqd2p2aW1VZ3RaT2hDYTU2aDlwblcyZm54djhFYmt0dlBqWjY4eGs1bjFZX04tYklkY1ZMZE9OZkQ0YUlibHk1RU81bmhrMC1aOXR3S1NtbVhXdTV3RUtPNG1PSUJmdjYwcFJJNEZpSU9id0ZFQmpDOFRPVzJMZDZ0MjhJN3Jyb3Z6ZXNFaTZmbGxmYmgwYnptRGk2X0hrbXZPV1E?oc=5",
-   "date": "2026-11-05T03:56:00Z",
-   "tool": "mcp-inspector",
-   "page": "news/2026/11/mcp-inspector-2-14-0-fixes-three-privately-reported-vulnerabilities.html"
-  },
-  {
    "title": "Infisical Raises $40M to Secure AI Agent Credentials",
    "source": "BankInfoSecurity",
    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORWFDQVc5dFVGc29EZjBUaVUyQzEyOGozMHdBaUVyTTA5U0p3eGhYZjZKcnY5cWNad09lV3l1Yzd4N1FOUnJZdDlaUmJ4cVJXaHo2M3JwMlNZQ3dOQzBqT0V1OEdMQ011cTBKM001cXlBWlRqS3dDRGdhZmdTT01GVmNGZ3cxR0J0VWFUOU05Q1p3M3JRUlJJ?oc=5",
    "date": "2026-11-05T00:13:37Z",
    "tool": "infisical",
    "page": "news/2026/11/infisical-raises-40m-to-secure-ai-agent-credentials.html"
-  },
-  {
-   "title": "Why Your AI Agent Can't Read the Web (and How to Build a Fetch Layer That Can)",
-   "source": "SitePoint",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNX1FVcm1NRU5pWTgyLXNRbFJPbkZxV1dIczZTaTJqUWpfN2NvUzZTVk42RXo5S29KbzJPVkpQdFRmM2lWZFlLdDgwYWRaOGdoUjhkN0pHWUJXSUhmWXhhZEhPX3N5TEtWQ1d1RE5KZUdCQjVzZWpsNXc1eGVMYVo5RUlrTGc1X1hWaWxQRzdPd29ocTNzaFJxTHZBMEdSa3QyVnVpSGZR?oc=5",
-   "date": "2026-11-04T08:00:07Z",
-   "tool": "layer",
-   "page": "news/2026/11/why-your-ai-agent-cant-read-the-web-and-how-to-build-a-fetch-layer.html"
   },
   {
    "title": "CrowdStrike Launches AI Agent 'Kill Switch,' Plans to Acquire Fiddler AI",
@@ -64,14 +74,6 @@
    "date": "2026-11-03T17:00:00Z",
    "tool": "magic",
    "page": "news/2026/11/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-ai.html"
-  },
-  {
-   "title": "Before you buy an AI agent, make it pass an exit test",
-   "source": "InfoWorld",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNb1lZa1NMUUJ4eWl1MDR0QzRkLTFVVER3RlZuRmJhZjBUbXBQYXNyUjExek44cVdadnk1Z09QMnBaX0lLdE1OMWVGUUFnbmdYXy1DR3RfNnRCSVZUbU5HdkhES1RXUkpCd0RHSHNoMVpObV9TUXNhVkR0cVZlREZqYkk3UlppVVlXOFdlYUdJbmZ5Y0loaU1aU2VnSXdtZ09D?oc=5",
-   "date": "2026-11-03T09:03:38Z",
-   "tool": "make",
-   "page": "news/2026/11/before-you-buy-an-ai-agent-make-it-pass-an-exit-test.html"
   }
  ]
 }

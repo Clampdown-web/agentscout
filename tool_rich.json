@@ -30537,5 +30537,588 @@
       "license": "the Apache License 2.0",
       "osi": true
     }
+  },
+  "ecc": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<p align=\"center\" <img src=\"assets/hero.png\" alt=\"ECC - the agent harness operating system\" width=\"100%\" / </p.",
+      "It is published on GitHub as affaan-m/ECC under the MIT license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "Recommended default: run the guided Claude plugin setup above",
+      "Also supported for Claude Code: use the native plugin commands#claude-code-details",
+      "Available in release 2.2: guided package setup for Claude Code, Codex, and Kimi Code",
+      "Works: Claude Code plugin + Codex native plugin"
+    ],
+    "sources": [
+      "https://github.com/affaan-m/ECC"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "MIT",
+      "repo": "https://github.com/affaan-m/ECC",
+      "stars": 298331,
+      "forks": 44107,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "worldmonitor": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Real-time global intelligence dashboard — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.",
+      "It is published on GitHub as koala73/worldmonitor under the AGPL-3.0 license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "Curated news feeds across global and regional categories, AI-synthesized into briefs",
+      "Dual map engine — 3D globe globe.gl and WebGL flat map deck.gl with a shared map-layer catalog",
+      "Panel inventory — concrete panel implementations across specialized variants",
+      "Cross-stream correlation — military, economic, disaster, and escalation signal convergence"
+    ],
+    "sources": [
+      "https://github.com/koala73/worldmonitor"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "AGPL-3.0",
+      "repo": "https://github.com/koala73/worldmonitor",
+      "stars": 90269,
+      "forks": 13964,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "understand-anything": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<p align=\"center\" <strong Turn any codebase, knowledge base, or docs into an interactive knowledge graph you can explore, search, and ask questions about.</strong <br / <em Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.</em </p.",
+      "It is published on GitHub as Egonex-AI/Understand-Anything under the MIT license."
+    ],
+    "who": "Builders and teams looking for an open-source coding option they can self-host or extend.",
+    "features": [
+      "Node summaries and descriptions in the knowledge graph",
+      "Dashboard UI labels, buttons, and tooltips",
+      "Guided tour explanations",
+      "macOS / Linux: ./install.sh --update"
+    ],
+    "sources": [
+      "https://github.com/Egonex-AI/Understand-Anything"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "MIT",
+      "repo": "https://github.com/Egonex-AI/Understand-Anything",
+      "stars": 91069,
+      "forks": 7781,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "rtk": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<p align=\"center\" <img src=\"https://avatars.githubusercontent.com/u/258253854?v=4\" alt=\"RTK - Rust Token Killer\" width=\"500\" </p.",
+      "It is published on GitHub as rtk-ai/rtk under the Apache-2.0 license."
+    ],
+    "who": "Builders and teams looking for an open-source coding option they can self-host or extend.",
+    "features": [
+      "rtk proxy <cmd> is a deprecated alias of rtk bypass <cmd>.",
+      "Patrick Szymkowiak — Founder",
+      "Florian Bruniaux — Core contributor",
+      "Adrien Eppling — Core contributor"
+    ],
+    "sources": [
+      "https://github.com/rtk-ai/rtk"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "Apache-2.0",
+      "repo": "https://github.com/rtk-ai/rtk",
+      "stars": 85720,
+      "forks": 5489,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "diagram-design": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<h1 <picture <source media=\" prefers-color-scheme: dark \" srcset=\"docs/hero/hero-dark.webp\" <img alt=\"Diagram Design. Editorial diagrams your designer won't hate.\" src=\"docs/hero/hero-light.webp\" </picture </h1.",
+      "It is published on GitHub as cathrynlavery/diagram-design under the MIT license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "\"Make me an architecture diagram of my app: frontend, backend, database, Redis cache.\"",
+      "\"I need a quadrant showing Q2 projects by impact vs effort.\"",
+      "\"Give me a sequence of a bearer call with token refresh on 401.\"",
+      "Before drawing, the agent states the chosen type, pattern, size, and planned cuts, then renders."
+    ],
+    "sources": [
+      "https://github.com/cathrynlavery/diagram-design"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "MIT",
+      "repo": "https://github.com/cathrynlavery/diagram-design",
+      "stars": 65442,
+      "forks": 4337,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "dsh-our-free-model": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<div align=\"center\" <img src=\"icon.svg\" alt=\"Our Free Model — DeepSeek Harness 免费模型插件\" width=\"120\".",
+      "It is published on GitHub as Ebony-Vinyl/dsh-our-free-model under the MIT license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "开箱即用，无配置环节——不需要账号、不需要 Key、不需要在后台申请配额。",
+      "清单跟随上游——模型集合、上下文长度与能力在每次刷新时向上游重新拉取，插件内不保存静态快照。",
+      "公告中心 + 实时推送——仓库维护者在仓库中编辑 JSON 并推送后，所有已安装实例最迟在一个轮询周期内收到；正文为白名单约束下的 HTML，支持图文排版；urgent 级别触发全屏弹窗；可选系统级通知。",
+      "应用内升级——设置页一键升级：下载 → SHA-256 校验 → 备份 → 原子替换 → 校验回读 → 热重载，任一步失败自动回滚至上一版本。"
+    ],
+    "sources": [
+      "https://github.com/Ebony-Vinyl/dsh-our-free-model"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "MIT",
+      "repo": "https://github.com/Ebony-Vinyl/dsh-our-free-model",
+      "stars": 63673,
+      "forks": 1722,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "jeecgboot": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "AUR https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg https://github.com/jeecgboot/JeecgBoot/blob/master/LICENSE https://img.shields.io/badge/Author-北京国炬软件-orange.svg https://jeecg.com https://img.shields.io/badge/blog-技术博客-orange.svg https://www.toutiao.com/c/user/token/CiZtC9Gn_yl2qDcTF9Kqhh9LV7tW1.",
+      "It is published on GitHub as jeecgboot/JeecgBoot under the Apache-2.0 license."
+    ],
+    "who": "Builders and teams looking for an open-source memory & RAG option they can self-host or extend.",
+    "features": [
+      "一句话生成完整系统： 使用自然语言描述需求，AI 自动完成建表、生成前后端 CRUD 代码、配置菜单权限和页面渲染，实现从需求到可运行系统的全流程自动化。",
+      "零代码模式： 提供在线应用搭建能力，无需编写代码，5 分钟即可快速创建完整业务系统，让业务人员也能轻松参与企业数字化建设。",
+      "AI 应用平台： 提供 AI 应用管理、模型配置、智能聊天、流程编排、MCP 和插件等能力，兼容多种主流大模型，帮助企业快速构建和发布智能应用。",
+      "强大代码生成器： 支持单表、树表、一对一、一对多等多种数据模型，一键生成前后端代码、建表 SQL 和菜单权限，生成后可直接运行，也可继续扩展。"
+    ],
+    "sources": [
+      "https://github.com/jeecgboot/JeecgBoot"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "Apache-2.0",
+      "repo": "https://github.com/jeecgboot/JeecgBoot",
+      "stars": 48390,
+      "forks": 16219,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "siyuan": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<p align=\"center\" <img alt=\"SiYuan\" src=\"https://b3log.org/images/brand/siyuan-128.png\" <br <em From thought to insight, with agents</em <br <br <a title=\"Build Status\" target=\"_blank\" href=\"https://github.com/siyuan-note/siyuan/actions/workflows/cd.yml\" <img src=\"https://img.shields.io/github/actions/workflow/status/s.",
+      "It is published on GitHub as siyuan-note/siyuan under the AGPL-3.0 license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "💡 Introduction#-introduction",
+      "🔮 Features#-features",
+      "🏗️ Architecture and Ecosystem#-architecture-and-ecosystem",
+      "🗺️ Roadmap#️-roadmap"
+    ],
+    "sources": [
+      "https://github.com/siyuan-note/siyuan"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "AGPL-3.0",
+      "repo": "https://github.com/siyuan-note/siyuan",
+      "stars": 47103,
+      "forks": 3098,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "officecli": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Give any AI agent full control over Word, Excel, and PowerPoint — in one line of code.",
+      "It is published on GitHub as iOfficeAI/OfficeCLI under the Apache-2.0 license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "Create documents from scratch -- blank or with content",
+      "Read text, structure, styles, formulas -- in plain text or structured JSON",
+      "Analyze formatting issues, style inconsistencies, and structural problems",
+      "Modify any element -- text, fonts, colors, layout, formulas, charts, images"
+    ],
+    "sources": [
+      "https://github.com/iOfficeAI/OfficeCLI"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "Apache-2.0",
+      "repo": "https://github.com/iOfficeAI/OfficeCLI",
+      "stars": 33089,
+      "forks": 2259,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "9router": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<div align=\"center\" <img src=\"./images/9router.png?1\" alt=\"9Router Dashboard\" width=\"800\"/.",
+      "It is published on GitHub as decolua/9router under the MIT license."
+    ],
+    "who": "Builders and teams looking for an open-source frameworks option they can self-host or extend.",
+    "features": [
+      "❌ Subscription quota expires unused every month",
+      "❌ Rate limits stop you mid-coding",
+      "❌ Tool outputs git diff, grep, ls... burn tokens fast",
+      "❌ Expensive APIs $20-50/month per provider"
+    ],
+    "sources": [
+      "https://github.com/decolua/9router"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": true,
+      "license": "MIT",
+      "repo": "https://github.com/decolua/9router",
+      "stars": 32030,
+      "forks": 6251,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "infisical": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<h1 align=\"center\" <picture <source media=\" prefers-color-scheme: dark \" srcset=\"/img/logoname-white.svg\" <img width=\"300\" src=\"/img/logoname-black.svg\" alt=\"infisical\" </picture </h1 <p align=\"center\" <p align=\"center\" <b The open-source security infrastructure platform</b : Manage secrets, certificates, keys, privile.",
+      "It is published on GitHub as Infisical/infisical."
+    ],
+    "who": "Builders and teams looking for an open-source security & governance option they can self-host or extend.",
+    "features": [
+      "Infisical APIhttps://infisical.com/docs/api-reference/overview/introduction: Interact with Infisical via API.",
+      "Join our <a href=\"https://community.infisical.com/\">community</a>, and ask us any questions there."
+    ],
+    "sources": [
+      "https://github.com/Infisical/infisical"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": false,
+      "license": "NOASSERTION",
+      "repo": "https://github.com/Infisical/infisical",
+      "stars": 30311,
+      "forks": 2414,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "cmux": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "<h1 align=\"center\" cmux</h1 <p align=\"center\" A Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents</p.",
+      "It is published on GitHub as manaflow-ai/cmux."
+    ],
+    "who": "Builders and teams looking for an open-source coding option they can self-host or extend.",
+    "features": [
+      "Programmable — CLI and socket API to create workspaces, split panes, send keystrokes, and automate the browser",
+      "Native macOS app — Built with Swift and AppKit, not Electron. Fast startup, low memory.",
+      "Ghostty compatible — Reads your existing ~/.config/ghostty/config for themes, fonts, and colors",
+      "GPU-accelerated — Powered by libghostty for smooth rendering"
+    ],
+    "sources": [
+      "https://github.com/manaflow-ai/cmux"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "osi": false,
+      "license": "NOASSERTION",
+      "repo": "https://github.com/manaflow-ai/cmux",
+      "stars": 28728,
+      "forks": 2627,
+      "checked": "2026-11-06",
+      "archived": false
+    }
+  },
+  "patter": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Patter is an open-source voice-AI SDK for building conversational voice agents you host yourself, positioned as an alternative to hosted stacks like Vapi or Retell.",
+      "It is published on GitHub as PatterAI/Patter under the MIT License."
+    ],
+    "who": "Builders who want to own the voice-agent stack and run realtime speech agents without a closed hosted platform.",
+    "features": [
+      "Open-source voice-AI SDK for conversational agents",
+      "Self-hostable alternative to hosted voice-agent platforms",
+      "MIT-licensed building blocks for realtime voice experiences",
+      "Aimed at teams that need control over telephony and model choices"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/PatterAI/Patter"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/PatterAI/Patter",
+      "license": "MIT",
+      "homepage": "https://getpatter.com"
+    }
+  },
+  "arcade": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Arcade is an MCP server framework and tool-development library for adding custom capabilities to AI agents through the Model Context Protocol.",
+      "It is published on GitHub as ArcadeAI/arcade-mcp under the MIT License."
+    ],
+    "who": "Builders creating custom MCP tools and servers that plug into Claude, Cursor and other MCP clients.",
+    "features": [
+      "MCP server framework for custom agent tools",
+      "Tool-development library for packaging capabilities agents can call",
+      "MIT-licensed open source from ArcadeAI",
+      "Fits agent stacks that already speak Model Context Protocol"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/ArcadeAI/arcade-mcp"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/ArcadeAI/arcade-mcp",
+      "license": "MIT",
+      "homepage": "https://docs.arcade.dev"
+    }
+  },
+  "bolna": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Bolna is an open-source framework for conversational voice AI agents that handle spoken dialogs end to end.",
+      "It is published on GitHub as bolna-ai/bolna under the MIT License."
+    ],
+    "who": "Teams building phone or voice agents who want an open stack they can customize and deploy themselves.",
+    "features": [
+      "Conversational voice AI agent framework",
+      "Open-source path to spoken dialog agents",
+      "MIT License on GitHub",
+      "Suitable for custom telephony and voice workflows"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/bolna-ai/bolna"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/bolna-ai/bolna",
+      "license": "MIT",
+      "homepage": "https://www.bolna.ai"
+    }
+  },
+  "photoshop-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Photoshop MCP exposes Adobe Photoshop to coding agents over the Model Context Protocol, with a large tool surface for edits driven from Cursor, Claude or custom LLMs.",
+      "It is published on GitHub as alisaitteke/photoshop-mcp under the MIT License."
+    ],
+    "who": "Designers and builders who want agents to drive Photoshop actions instead of only generating flat images.",
+    "features": [
+      "MCP bridge into Adobe Photoshop",
+      "Large tool set (100+ tools reported upstream) for agent-driven edits",
+      "Works with Cursor, Claude and custom LLM clients",
+      "MIT-licensed open source"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/alisaitteke/photoshop-mcp"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/alisaitteke/photoshop-mcp",
+      "license": "MIT",
+      "homepage": "https://photoshop-mcp.com"
+    }
+  },
+  "agentkey": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "AgentKey connects AI agents to web search, social, crypto and on-chain data through one integration surface so agents can act on external world data.",
+      "It is published on GitHub as chainbase-labs/AgentKey under the Apache-2.0 License."
+    ],
+    "who": "Agent builders who need search, social and on-chain data tools without wiring each API by hand.",
+    "features": [
+      "Unified connectors for search, social and crypto/on-chain data",
+      "Built for AI agents that need live external context",
+      "Apache-2.0 open source from Chainbase Labs",
+      "One integration path instead of many one-off API clients"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/chainbase-labs/AgentKey"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/chainbase-labs/AgentKey",
+      "license": "Apache-2.0",
+      "homepage": "https://agentkey.app"
+    }
+  },
+  "buildship": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "BuildShip is a low-code visual backend builder powered by AI for creating APIs, scheduled jobs and backend workflows with less boilerplate.",
+      "It is published on GitHub as buildship-ai/buildship under the MIT License."
+    ],
+    "who": "Makers and teams who want AI-assisted backend APIs and jobs without starting from a blank server repo.",
+    "features": [
+      "Low-code visual backend builder",
+      "AI-assisted APIs, scheduled jobs and backend tasks",
+      "MIT-licensed open source",
+      "Useful when agents need durable HTTP/backends behind them"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/buildship-ai/buildship"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/buildship-ai/buildship",
+      "license": "MIT",
+      "homepage": "http://buildship.com/"
+    }
+  },
+  "svelte-mcp": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Svelte MCP is the official Svelte Model Context Protocol server for agentic tooling around the Svelte ecosystem.",
+      "It is published on GitHub as sveltejs/ai-tools under the MIT License."
+    ],
+    "who": "Developers using coding agents on Svelte projects who want first-party MCP tools instead of generic file edits only.",
+    "features": [
+      "Official Svelte MCP for agent workflows",
+      "Helps agents work with Svelte projects more accurately",
+      "MIT License via the sveltejs/ai-tools repo",
+      "Fits Claude, Cursor and other MCP clients"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/sveltejs/ai-tools"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/sveltejs/ai-tools",
+      "license": "MIT",
+      "homepage": "https://mcp.svelte.dev"
+    }
+  },
+  "atomic-mail": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Atomic Mail is an agentic email runtime that lets AI agents read, send and react to email autonomously without waiting on a human for every message.",
+      "It is published on GitHub as Atomic-Mail/atomic-mail-agentic under the MIT License."
+    ],
+    "who": "Builders shipping agents that need a mailbox they can operate, not just draft text for a person to paste.",
+    "features": [
+      "Agent-native read/send/react email workflows",
+      "Designed for autonomous agent loops over inbox events",
+      "MIT-licensed open source",
+      "Useful for support, ops and personal-agent email automation"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/Atomic-Mail/atomic-mail-agentic"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/Atomic-Mail/atomic-mail-agentic",
+      "license": "MIT",
+      "homepage": "https://atomicmail.ai"
+    }
+  },
+  "mirror-cli": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Mirror is Reflection's coding harness—a CLI-oriented environment for running coding agents with a structured harness around tools and sessions.",
+      "It is published on GitHub as reflection-oss/mirror under the Apache-2.0 License."
+    ],
+    "who": "Builders who want a dedicated coding-agent harness rather than raw chat with ad-hoc shell access.",
+    "features": [
+      "Coding harness CLI from Reflection",
+      "Structured environment for coding agents",
+      "Apache-2.0 open source",
+      "Fits local agent coding workflows"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/reflection-oss/mirror"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/reflection-oss/mirror",
+      "license": "Apache-2.0"
+    }
+  },
+  "zoo-zookeeper": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Zoo Zookeeper is listed on AgentScout from its public GitHub project; The Zoo Design Studio app.",
+      "It is published on GitHub as KittyCAD/modeling-app under the MIT License."
+    ],
+    "who": "Builders evaluating open-source agent tooling from the Oct 18 catalog who want a short factual overview before opening the repo.",
+    "features": [
+      "The Zoo Design Studio app.",
+      "MIT license on GitHub",
+      "Repository: KittyCAD/modeling-app",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/KittyCAD/modeling-app"
+    ],
+    "updated": "2026-11-06",
+    "facts": {
+      "repo": "https://github.com/KittyCAD/modeling-app",
+      "license": "MIT",
+      "homepage": "https://zoo.dev/design-studio/download"
+    }
   }
 }
