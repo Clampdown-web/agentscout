@@ -10299,25 +10299,30 @@
     "kind": "lite",
     "src_kind": "README",
     "long": [
-      "Magentic-UI is an agentic application from Microsoft; its next generation, MagenticLite, pairs an on-device-friendly orchestrator model (MagenticBrain) with a browser-use model (Fara).",
-      "Our listing describes it as an experimental human-in-the-loop agent working across the browser and local files."
+      "MagenticLite is the next generation of Magentic-UI from Microsoft AI Frontiers. The project README describes it as an agentic application that pairs an on-device-friendly orchestrator model, MagenticBrain, with a browser-use model, Fara, so tasks can run without frontier-scale models.",
+      "It works across the browser and the local file system: web research, form filling, and file management in one workflow. The README says it stops and checks in before critical actions, and that browser sessions run inside a Quicksand VM sandbox so the agent cannot reach the rest of the machine unless you allow it.",
+      "The limitations doc calls MagenticLite a research prototype. The earlier Magentic-UI 0.1 release, aimed at frontier models, stays on the magentic-ui-0.1 branch. The default branch and the PyPI quick start are MagenticLite."
     ],
-    "who": "Researchers and developers experimenting with human-in-the-loop agents.",
+    "who": "People who want a local agent for browser tasks and local files, with a check-in before critical actions, and researchers comparing small-model agent setups. The README's quick start is written for macOS and Windows (WSL). Other platforms are in the installation guide.",
     "features": [
-      "Human-in-the-loop",
-      "Browser automation",
-      "Local files"
+      "Orchestrator (MagenticBrain) plus a browser-use model (Fara), aimed at small models rather than frontier-scale compute",
+      "Browser and local file workflows in one app, including research, forms, and file management",
+      "Check-in before critical actions, so you can steer, approve, or take over",
+      "Browser sessions inside the Quicksand VM sandbox",
+      "Installable from PyPI as magentic_ui 0.2.x; the 0.1 line remains on its own branch"
     ],
     "faq": [],
     "sources": [
-      "https://github.com/microsoft/magentic-ui"
+      "https://github.com/microsoft/magentic-ui",
+      "https://github.com/microsoft/magentic-ui/blob/main/README.md",
+      "https://www.microsoft.com/en-us/research/blog/magenticlite-magenticbrain-fara1-5-an-agentic-experience-optimized-for-small-models/"
     ],
-    "updated": "2026-10-18",
+    "updated": "2026-11-07",
+    "cite": true,
     "facts": {
       "repo": "https://github.com/microsoft/magentic-ui",
-      "checked": "2026-10-18",
-      "stars": 10098,
-      "forks": 1018,
+      "checked": "2026-10-30",
+      "stars": 10108,
       "license": "the MIT License",
       "osi": true
     }
