@@ -74,6 +74,8 @@ TURNSTILE_ENABLED = "true"
 
 `TURNSTILE_SECRET` must stay the existing secret binding for the review widget. Do not copy the secret into git or into `wrangler.toml`.
 
+`GET /reviews/export` is admin-only, read-only, and not part of the captured running script. Copy `reviews-backup.js` with `entry.js` before a deploy that should include it. Until that deploy, the route does not exist. The response is plaintext JSON with `Cache-Control: private, no-store` and no allow-origin header. Put the body in the encrypted archive. This repository does not restore the Durable Object.
+
 5. From the image-worker project, deploy **only** that worker:
 
 ```sh

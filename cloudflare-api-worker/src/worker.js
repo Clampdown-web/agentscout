@@ -127,9 +127,27 @@ export function countsFor(doc, slugs, day) {
   return { tools, today_total: todayTotal };
 }
 
-// One isolate runs this chain in order, so concurrent requests here cannot all
-// read the same count. KV put is not atomic across isolates or locations.
+// ROAST_RL / VOTE_RL are optional Workers Rate Limiting bindings. They are shared
+// by isolates in one Cloudflare location. They are not a worldwide counter, and
+// this file does not create the namespaces. Without them, one isolate serializes
+// its own KV read-modify-write. Two isolates can still both pass.
+function rateBinding(env, bucket) {
+  if (!env) return null;
+  if (bucket === "roast") return env.ROAST_RL;
+  if (bucket === "vote") return env.VOTE_RL;
+  return null;
+}
+
 async function rateLimit(env, bucket, ip, limit) {
+  const binding = rateBinding(env, bucket);
+  if (binding && typeof binding.limit === "function") {
+    try {
+      const result = await binding.limit({ key: ip });
+      return !!(result && result.success === true);
+    } catch {
+      return false;
+    }
+  }
   const key = `rl:${bucket}:${ip}:${Math.floor(Date.now() / 60000)}`;
   if (env.VOTES) {
     return withSeenLock(key, async () => {

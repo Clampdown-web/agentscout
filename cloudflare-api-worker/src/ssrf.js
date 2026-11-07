@@ -155,10 +155,14 @@ export async function resolveAndCheck(hostname, fetchImpl = fetch) {
     const data = await res.json();
     for (const ans of data.Answer || []) {
       if (typeof ans.data !== "string") continue;
-      // A CNAME (type 5) is a name, not an address. isBlockedIp() would reject it.
-      // Answers with no type are still checked, so a bare address cannot skip the filter.
-      if (ans.type != null && ans.type !== 1 && ans.type !== 28) continue;
-      addresses.push(ans.data.replace(/\.$/, ""));
+      const address = ans.data.replace(/\.$/, "");
+      // Integer 5 is a CNAME. Numeric strings are accepted so "28" is still AAAA.
+      // A missing or non-numeric type is still checked, so a private address cannot hide.
+      if (ans.type != null && ans.type !== "") {
+        const recordType = Number(ans.type);
+        if (Number.isInteger(recordType) && recordType !== 1 && recordType !== 28) continue;
+      }
+      addresses.push(address);
     }
   }
   if (!addresses.length) return { error: "That host has no public address." };

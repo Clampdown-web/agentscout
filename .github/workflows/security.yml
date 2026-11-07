@@ -30,6 +30,7 @@ jobs:
           cloudflare-api-worker/test/ratelimit.test.mjs
           cloudflare-mcp-worker/test/rate-limit.test.mjs
           cloudflare-image-worker-patches/security.test.mjs
+          cloudflare-image-worker-patches/backup.test.mjs
           free_tools_js/escape.test.mjs
           free_tools_js/reviews.test.mjs
 

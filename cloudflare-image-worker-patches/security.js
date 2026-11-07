@@ -15,9 +15,11 @@
  * A missing CF-Connecting-IP fails closed. Deploy must set that plain-text
  * var to true or the check stays off.
  *
- * X-Stats-Key on /reviews/pending, /reviews/admin, /stats, and /trending/stats
- * is compared with safeEq (SHA-256, then a constant-time compare) before the
- * inner handler runs. A mismatch is 403.
+ * X-Stats-Key on /reviews/pending, /reviews/admin, /reviews/export, /stats,
+ * and /trending/stats is compared with safeEq (SHA-256, then a constant-time
+ * compare) before the inner handler runs. A mismatch is 403. /reviews/export
+ * is served here and is not cached and has no CORS allow-origin header. It is
+ * not on the captured running script until that script is deployed.
  *
  * Bindings (Workers Rate Limiting, per CF-Connecting-IP):
  *   IMAGE_WRITE  10 requests / 60s   POST and other non-read methods
@@ -25,6 +27,7 @@
  * A missing binding fails closed with 503. There is no User-Agent bypass.
  */
 import { resolveAndCheck, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
+import { EXPORT_PATH, handleReviewsExport } from "./reviews-backup.js";
 
 const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const ALLOWED_HOSTS = new Set([
@@ -34,6 +37,7 @@ const ALLOWED_HOSTS = new Set([
 const STATS_KEY_PATHS = new Set([
   "/reviews/pending",
   "/reviews/admin",
+  "/reviews/export",
   "/stats",
   "/trending/stats",
 ]);
@@ -289,6 +293,7 @@ export function protect(worker) {
       if (statsBlocked) return statsBlocked;
       const blocked = await gate(request, env);
       if (blocked) return blocked;
+      if (normalizePath(new URL(request.url).pathname) === EXPORT_PATH) return handleReviewsExport(request, env);
       const turnstileBlocked = await rejectTurnstile(request, env);
       if (turnstileBlocked) return turnstileBlocked;
       const readinessBlocked = await rejectReadiness(request);

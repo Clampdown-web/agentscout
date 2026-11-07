@@ -71,6 +71,10 @@ test("public hostnames are looked up and bare private IPs are blocked", async ()
     Answer: [{ type: 5, data: "example.com." }],
   }), { status: 200 }));
   assert.equal(cnameOnly.error, "That host has no public address.");
+  const stringAaaa = await resolveAndCheck("www.example.com", async () => new Response(JSON.stringify({
+    Answer: [{ type: 1, data: "1.1.1.1" }, { type: "28", data: "::7f00:1" }],
+  }), { status: 200 }));
+  assert.equal(stringAaaa.error, "That host resolves to a blocked address.");
 });
 
 test("score names concrete fixes and does not invent a listing", () => {

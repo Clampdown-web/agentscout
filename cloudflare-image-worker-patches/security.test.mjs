@@ -409,6 +409,74 @@ test("protect masks TURNSTILE_ENABLED only after it has checked submit and gener
   });
 });
 
+test("readiness DNS checks the first url only", async () => {
+  const calls = [];
+  const worker = protect({
+    async fetch(request) {
+      calls.push(new URL(request.url).search);
+      return new Response("{}", { status: 200, headers: { "content-type": "application/json" } });
+    },
+  });
+  const original = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    const name = new URL(String(input)).searchParams.get("name");
+    if (name === "ok.example") return new Response(JSON.stringify({ Answer: [{ type: 1, data: "1.1.1.1" }] }), { status: 200 });
+    throw new Error("unexpected lookup");
+  };
+  try {
+    const dup = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://ok.example/") + "&url=" + encodeURIComponent("http://127.0.0.1/")));
+    assert.equal(dup.status, 200);
+    const named = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?target=" + encodeURIComponent("http://127.0.0.1/")));
+    assert.equal(named.status, 200);
+    assert.equal(calls.length, 2);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+
+test("reviews export requires the stats key and does not add CORS or a cache", async () => {
+  const calls = [];
+  const reviews = {
+    idFromName(name) { calls.push(name); return "id-all"; },
+    get() {
+      return {
+        async backupPage(spec) {
+          calls.push(spec.table);
+          return { table: spec.table, rows: [{ id: "018f2b3c-7c3a-7c3a-8c3a-7c3a7c3a7c3a" }], next: null, secret: "nope" };
+        },
+      };
+    },
+  };
+  const worker = protect({
+    async fetch() {
+      calls.push("inner");
+      return new Response("{}", { status: 200 });
+    },
+  });
+  const binding = { ...env(), STATS_KEY: "correct-key", REVIEWS: reviews };
+  const headers = { "cf-connecting-ip": "203.0.113.10", origin: "https://evil.example" };
+  const denied = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", { headers }), binding);
+  assert.equal(denied.status, 403);
+  assert.equal(calls.length, 0);
+  const missingBinding = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), { STATS_KEY: "correct-key", REVIEWS: reviews });
+  assert.equal(missingBinding.status, 503);
+  assert.equal(calls.length, 0);
+  const ok = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), binding);
+  assert.equal(ok.status, 200);
+  assert.equal(ok.headers.get("access-control-allow-origin"), null);
+  assert.match(ok.headers.get("cache-control"), /no-store/);
+  const body = await ok.json();
+  assert.equal(body.secret, undefined);
+  assert.equal(JSON.stringify(body).includes("TURNSTILE"), false);
+  assert.equal(JSON.stringify(body).includes("REVIEW_HMAC"), false);
+  assert.deepEqual(calls, ["all", "reviews"]);
+  assert.equal(calls.includes("inner"), false);
+});
+
 test("the turnstile flag is masked only on the paths protect already checks", () => {
   const envBinding = { TURNSTILE_ENABLED: "true", TURNSTILE_SECRET: "turnstile-secret", IMAGE_WRITE: "binding" };
   const generate = maskTurnstileEnv(post("/generate"), envBinding);

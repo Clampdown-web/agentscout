@@ -65,3 +65,44 @@ test("roast and vote fail closed without the KV binding", async () => {
     globalThis.fetch = original;
   }
 });
+
+test("optional rate limit bindings fail closed and do not write the KV counter", async () => {
+  const original = globalThis.fetch;
+  globalThis.fetch = publicFetch();
+  const puts = [];
+  const store = {
+    async get() { return null; },
+    async put(key) { puts.push(key); },
+  };
+  const roast = (env) => worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
+    method: "POST",
+    headers: { "content-type": "application/json", "cf-connecting-ip": "203.0.113.79" },
+    body: JSON.stringify({ url: "https://example.com/" }),
+  }), env);
+  try {
+    const denied = await roast({
+      VOTES: store,
+      ROAST_RL: { async limit() { return { success: false }; } },
+    });
+    assert.equal(denied.status, 429);
+    const thrown = await roast({
+      VOTES: store,
+      ROAST_RL: { async limit() { throw new Error("limiter down"); } },
+    });
+    assert.equal(thrown.status, 429);
+    const vote = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+      method: "POST",
+      headers: { "content-type": "application/json", origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.79" },
+      body: "{}",
+    }), { VOTES: store, VOTE_RL: { async limit() { return {}; } } });
+    assert.equal(vote.status, 429);
+    const allowed = await roast({
+      VOTES: store,
+      ROAST_RL: { async limit() { return { success: true }; } },
+    });
+    assert.equal(allowed.status, 200);
+    assert.deepEqual(puts.filter((key) => key.startsWith("rl:")), []);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
