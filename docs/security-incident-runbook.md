@@ -34,7 +34,7 @@ Confirm these in the Cloudflare and GitHub dashboards before treating production
 6. Worker logs do not contain tokens, `STATS_KEY`, or `TURNSTILE_SECRET`. The MCP logger in git records method, path, status, the RPC method name, and `error.message` only.
 7. Pages still sends `Content-Security-Policy-Report-Only`. That is a defense-in-depth gap. It is not, by itself, a demonstrated exploit, and it is not fixed by flipping the header to enforce.
 8. GitHub Dependabot alerts are enabled for the repository. This adds `.github/dependabot.yml`. The setting is still a dashboard switch. There is no npm manifest; the Python pins are `requirements.txt`.
-9. Off-box backups and a tested restore are not in git. Stripe Payment Links on the site are public URLs. Webhook fulfillment is not in this repository.
+9. The Drive archive is outside git. It is not a tested full restore. `docs/recovery-plan.md` lists what it covers. SSL certificate alert policy `b470d63a005a4d548e00f488e1a888e3` notifies AgentScoutHQ@gmail.com. Worker error alerts are not enabled. This branch does not change those settings. Stripe Payment Links on the site are public URLs. Webhook fulfillment is not in this repository.
 
 ## Known limits that this pass does not close
 

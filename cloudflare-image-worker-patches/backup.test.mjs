@@ -63,4 +63,7 @@ test("the recovery plan does not embed a secret value", () => {
   assert.equal(text.includes("STATS_KEY="), false);
   assert.match(text, /1c6368ca-f9d5-403e-92c2-7954641c2153/);
   assert.match(text, /agentscout-x-media/);
+  assert.match(text, /b470d63a005a4d548e00f488e1a888e3/);
+  assert.match(text, /Worker error alerts are not enabled/);
+  assert.match(text, /value was not read/);
 });

@@ -31,6 +31,7 @@ jobs:
           cloudflare-mcp-worker/test/rate-limit.test.mjs
           cloudflare-image-worker-patches/security.test.mjs
           cloudflare-image-worker-patches/backup.test.mjs
+          cloudflare-image-worker-patches/captured-handler.test.mjs
           free_tools_js/escape.test.mjs
           free_tools_js/reviews.test.mjs
 

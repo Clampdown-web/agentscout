@@ -282,6 +282,98 @@ export function applyCors(request, response) {
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
+const READINESS_UA = "AgentScoutReadinessChecker/";
+let fetchDelegate = null;
+
+function requestUrl(input) {
+  if (typeof input === "string") return input;
+  if (input instanceof URL) return input.toString();
+  if (input && typeof input.url === "string") return input.url;
+  return "";
+}
+
+function headerValue(init, name) {
+  const headers = init && init.headers;
+  if (!headers) return "";
+  if (typeof headers.get === "function") return headers.get(name) || "";
+  const target = name.toLowerCase();
+  for (const key of Object.keys(headers)) {
+    if (key.toLowerCase() === target) return String(headers[key] || "");
+  }
+  return "";
+}
+
+// DNS lookup and the following fetch are still two steps. The runtime resolves
+// the name again. Connecting to the looked-up address would skip the certificate
+// check for the hostname, so this does not pin the address. A change between
+// the lookup and the fetch is still possible.
+export async function guardedPublicFetch(original, input, init) {
+  if (!headerValue(init, "user-agent").startsWith(READINESS_UA)) return original(input, init);
+  const shape = validateUrlShape(requestUrl(input));
+  if (shape.error) throw new Error("blocked public fetch");
+  const dns = await resolveAndCheck(shape.url.hostname, original);
+  if (dns.error) throw new Error("blocked public fetch");
+  return original(input, init);
+}
+
+function installFetchGuard() {
+  const current = globalThis.fetch;
+  if (current && current.__agentscoutPublicFetch) return;
+  fetchDelegate = current.bind(globalThis);
+  const guarded = (input, init) => guardedPublicFetch(fetchDelegate, input, init);
+  guarded.__agentscoutPublicFetch = true;
+  globalThis.fetch = guarded;
+}
+
+function failClosedLimit(binding) {
+  if (!binding || typeof binding.limit !== "function") return binding;
+  return {
+    async limit(arg) {
+      try {
+        const result = await binding.limit(arg);
+        return result && result.success === true ? { success: true } : { success: false };
+      } catch {
+        return { success: false };
+      }
+    },
+  };
+}
+
+function failClosedReady(namespace) {
+  if (!namespace || typeof namespace.get !== "function") return namespace;
+  return {
+    idFromName(name) {
+      return namespace.idFromName(name);
+    },
+    get(id) {
+      const stub = namespace.get(id);
+      return {
+        async fetch(...args) {
+          try {
+            const response = await stub.fetch(...args);
+            const data = await response.json();
+            const body = data && data.ok === true ? data : { ok: false, retry: data && data.retry };
+            return new Response(JSON.stringify(body), { status: 200, headers: { "content-type": "application/json" } });
+          } catch {
+            return new Response(JSON.stringify({ ok: false, retry: 60 }), { status: 200, headers: { "content-type": "application/json" } });
+          }
+        },
+      };
+    },
+  };
+}
+
+export function hardenLimiters(env) {
+  if (!env || typeof env !== "object") return env;
+  return new Proxy(env, {
+    get(target, key) {
+      if (key === "REVIEW_RL" || key === "TRACK_RL" || key === "READY_RL") return failClosedLimit(target[key]);
+      if (key === "READY_LIMIT") return failClosedReady(target[key]);
+      return target[key];
+    },
+  });
+}
+
 export function protect(worker) {
   if (!worker || typeof worker.fetch !== "function") {
     throw new TypeError("protect() expects the existing worker export");
@@ -309,7 +401,8 @@ export function protect(worker) {
       if (turnstileBlocked) return turnstileBlocked;
       const readinessBlocked = await rejectReadiness(request);
       if (readinessBlocked) return readinessBlocked;
-      const response = await inner(request, maskTurnstileEnv(request, env), ctx);
+      installFetchGuard();
+      const response = await inner(request, hardenLimiters(maskTurnstileEnv(request, env)), ctx);
       if (!requestGuarded(new URL(request.url).pathname, request.method)) return response;
       return applyCors(request, response);
     },

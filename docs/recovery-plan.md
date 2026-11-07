@@ -28,16 +28,16 @@ Distinct rate-limit namespaces on that script: `TRACK_RL` 1001 at 20/min, `REVIE
 Compared with the earlier skeptical notes, using the captured `index.js`:
 
 - Duplicate `url` values are not a second fetch. Readiness uses the first `url` only. A parameter named `target` is ignored. The outer gate does the same. This is not a bypass of the fetcher.
-- Readiness blocks IP literals, `localhost`, and names ending in `.local`, `.internal`, or `.invalid` before fetch. Redirects are manual, at most four hops, and each hop repeats that check. A redirect to `127.0.0.1` or `metadata.google.internal` stops. A hostname that is not an IP literal is not DNS-checked. The outer DNS check in this branch is still the only DNS check, and it is not deployed. Check-then-fetch can still race, and a redirect to another hostname is not resolved by either layer.
+- Readiness blocks IP literals, `localhost`, and names ending in `.local`, `.internal`, or `.invalid` before fetch. Redirects are manual, at most four hops, and each hop repeats that name check. A redirect to `127.0.0.1` or `metadata.google.internal` stops. A normal hostname is not DNS-checked by that loop. The captured loop will fetch it. `protect()` in this branch, which is not the running script, checks DNS on every request that uses the readiness User-Agent, including later hops, and does not perform the fetch when the lookup fails or returns a blocked address. The lookup and the fetch are still two steps. The runtime resolves the name again. The address is not pinned, because connecting to the raw address would skip the certificate check for the hostname. A change in that gap is still possible. This is not a proof that every SSRF path is closed.
 - `POST /generate` siteverify in the inner handler runs only when it sees `TURNSTILE_ENABLED === "true"`. Live `entry.js` masks that flag on `POST /submit` and `POST /generate` after the outer check. With the flag truly `true`, the token is spent once. `POST /submit` does not siteverify again inside `handleSubmit`.
 - `POST /review` is not siteverified by the outer guard. The inner handler siteverifies only when `REVIEW_TURNSTILE` is the string `true` and `TURNSTILE_SECRET` is set. It checks `success` and does not check `hostname`. Because the value of `REVIEW_TURNSTILE` was not read, this plan does not say whether review tokens are required in production. The outer guard does not mask `REVIEW_TURNSTILE`. Adding an outer siteverify without masking that flag would spend the token twice.
-- `REVIEW_RL.limit()` and `TRACK_RL.limit()` treat a thrown call as success. That is fail-open for that binding only. `POST /review` still hits the outer `IMAGE_WRITE` gate first. `READY_RL` does not use that catch. The readiness Durable Object path treats a thrown call as allowed; whether that binding exists was not in the capture.
+- The captured `REVIEW_RL` and `TRACK_RL` calls treat a thrown `limit()` as success. The captured readiness object call does the same with `ok: true`. `READY_RL` has no catch. `protect()` in this branch wraps those four bindings when they exist: a throw or a result other than success or `ok: true` becomes a rejection, and a real success is unchanged. A missing binding is left missing. That does not add a global cap. `POST /review` still has the outer `IMAGE_WRITE` gate. `/track` does not. Do not remove `TRACK_RL`, `REVIEW_RL`, `READY_RL`, `IMAGE_READ`, or `IMAGE_WRITE`. The votes worker's `ROAST_RL` and `VOTE_RL` stay optional and are not created here.
 - `/reviews/pending` and `/reviews/admin` compare `X-Stats-Key` with `!==` inside the handler and return 401. The outer guard compares with a hash and returns 403 before the handler. `/review/moderate` is a separate HMAC link, not a stats-key route. The inner router has no `/reviews/admin/extra` style path.
 - `ReviewsDO` is one SQLite object named `all`. Tables are `ratings (tool, vid, iph, stars, ts)`, `reviews (id, tool, vid, iph, stars, name, body, status, ts)`, and `limits (k, n, exp)`. `iph` is a hash, not a raw address. `ReadyLimitDO` uses the key-value storage API, not SQL.
 
 ## Drive archive, and what it is not
 
-The current encrypted Drive archive contains older `main` `24ac42ab`, the deployed image sources, and a separate DNS/votes supplement. Its round trip checksum was verified. It does not contain the reviews rows, an `agentscout-x-media` script, or secret values. Key-independent storage is still pending. That archive is not a tested full-service restore.
+The encrypted Drive archive has been uploaded and its round trip checksum was verified. It contains older `main` `24ac42ab`, the deployed image sources, and a separate DNS/votes supplement. It does not contain the reviews rows, an `agentscout-x-media` script, or secret values. Key-independent storage is still pending. That archive is not a tested full-service restore.
 
 ## Stages
 
@@ -50,7 +50,17 @@ Do these only after an explicit approval for that stage. Rolling one stage back 
 5. **MCP.** Source is `cloudflare-mcp-worker/`. This follow-up does not change its runtime. Wildcard CORS stays.
 6. **`agentscout-x-media`.** No worker source, Wrangler file, or package by that name is in this repository. Static clips that are in git and can be copied from the tree are `assets/x/` and `assets/animations/`. If a separate media worker exists, its script is missing from this repo and from the Drive archive described above.
 7. **Secrets.** They stay in the existing encrypted bindings. This plan does not rotate them and does not store them.
-8. **Notifications and a full restore drill.** Still absent. This branch does not create notification policies and does not claim an off-box restore succeeded.
+8. **Alerts.** SSL certificate alert policy `b470d63a005a4d548e00f488e1a888e3` exists and notifies AgentScoutHQ@gmail.com. Worker error alerts are not enabled. This branch does not change alert settings and does not claim an off-box restore succeeded.
+
+## Isolated check
+
+From the repo root, with no network and no Cloudflare credentials:
+
+```sh
+node --test cloudflare-image-worker-patches/captured-handler.test.mjs cloudflare-image-worker-patches/security.test.mjs cloudflare-image-worker-patches/backup.test.mjs cloudflare-api-worker/test/ssrf.test.mjs cloudflare-api-worker/test/ratelimit.test.mjs
+```
+
+That runs the captured readiness loop and the captured limiter catches through `protect()`. It does not restore production.
 
 ## Smallest approval package
 
