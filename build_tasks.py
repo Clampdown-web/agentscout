@@ -2,6 +2,7 @@ import build_extras,build_subtasks
 _cap=lambda s:str(s)[:1].upper()+str(s)[1:]  # keeps acronyms (RAG, MCP, SQL, QA) intact
 """Task pages (/tasks/), submit page, and sitewide nav/footer/newsletter injection. Called from build_extras/build_site; reads tools at build time."""
 import re,os,json,glob,urllib.parse
+import as_boot
 from build_extras import e,B,shell,card
 # (slug, label, categories, use_cases, keyword regex over name+description, intro)
 TASKS=[
@@ -748,6 +749,7 @@ def sitewide(t):
         # app.js, consent.js, track.js (and share.js on bot-templates) when a page was built without them.
         # consent.js stays immediately before track.js so analytics wait for the visitor's choice.
         s=ensure_shared_scripts(f, s, d)
+        s=as_boot.guard(s)
         s=__import__("build_share").apply(f,s,d,ASSET_V)  # Share button + counter (Oct 18 2026)
         s=__import__("ga4").apply(s,f)  # Google Analytics 4 tag + CSP hosts, consent-aware (ga4.py, Oct 19 2026)
         PC='<link rel="preconnect" href="https://api.agentscouthq.com" crossorigin>'
