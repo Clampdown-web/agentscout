@@ -301,14 +301,186 @@ test("POST /generate is origin checked and write limited when turnstile is off",
 
 test("readiness rejects a blocked url before the inner handler", async () => {
   const { worker, calls } = handler();
-  const blocked = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[64:ff9b::a00:1]/")));
-  assert.equal(blocked.status, 400);
+  const original = globalThis.fetch;
+  const lookups = [];
+  globalThis.fetch = async (url) => {
+    const name = new URL(String(url)).searchParams.get("name");
+    lookups.push(name);
+    if (name === "rebind.example") {
+      return new Response(JSON.stringify({ Answer: [{ type: 5, data: "rebind.example." }, { type: 1, data: "10.0.0.1" }] }), { status: 200 });
+    }
+    if (name === "cdn.example") {
+      return new Response(JSON.stringify({ Answer: [{ type: 5, data: "cdn.example.net." }, { type: 1, data: "1.1.1.1" }] }), { status: 200 });
+    }
+    if (name === "down.example") return new Response("no", { status: 503 });
+    throw new Error("unexpected lookup");
+  };
+  try {
+    const blocked = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[64:ff9b::a00:1]/")));
+    assert.equal(blocked.status, 400);
+    const mapped = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[0:0:0:0:0:ffff:a9fe:a9fe]/")));
+    assert.equal(mapped.status, 400);
+    const compatible = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[::7f00:1]/")));
+    assert.equal(compatible.status, 400);
+    assert.equal(lookups.length, 0);
+    const privateName = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://rebind.example/path")));
+    assert.equal(privateName.status, 400);
+    const down = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://down.example/")));
+    assert.equal(down.status, 400);
+    const literal = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://1.1.1.1/")));
+    assert.equal(literal.status, 200);
+    const beforeName = lookups.length;
+    const ok = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://cdn.example/")));
+    assert.equal(ok.status, 200);
+    assert.ok(lookups.length > beforeName);
+    assert.equal(lookups.includes("1.1.1.1"), false);
+    assert.deepEqual(calls, ["/readiness", "/readiness"]);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+
+test("a missing STATS_KEY binding fails closed", async () => {
+  const { worker, calls } = handler();
+  for (const path of ["/stats", "/reviews/pending", "/reviews/admin", "/trending/stats"]) {
+    const res = await worker.fetch(new Request("https://api.agentscouthq.com" + path, {
+      headers: { "X-Stats-Key": "present", "cf-connecting-ip": "203.0.113.10", origin: "https://agentscouthq.com" },
+    }), env());
+    assert.equal(res.status, 403, path);
+  }
   assert.equal(calls.length, 0);
-  const mapped = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://[0:0:0:0:0:ffff:a9fe:a9fe]/")));
-  assert.equal(mapped.status, 400);
-  const ok = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://example.com/")));
+});
+
+test("a rate limiter that does not report success fails closed", async () => {
+  const { worker, calls } = handler();
+  const binding = env();
+  binding.IMAGE_WRITE = { async limit() { return {}; } };
+  const empty = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }), binding);
+  assert.equal(empty.status, 429);
+  binding.IMAGE_WRITE = { async limit() { throw new Error("limiter down"); } };
+  const thrown = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }), binding);
+  assert.equal(thrown.status, 503);
+  assert.equal(calls.length, 0);
+});
+
+test("turnstile siteverify failures fail closed before the inner handler", async () => {
+  const { worker, calls } = handler();
+  const original = globalThis.fetch;
+  const body = JSON.stringify({ turnstileToken: "good" });
+  try {
+    globalThis.fetch = async () => { throw new Error("network"); };
+    const offline = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, body), turnstileEnv());
+    assert.equal(offline.status, 403);
+    globalThis.fetch = async () => new Response("nope", { status: 502 });
+    const http = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }, body), turnstileEnv());
+    assert.equal(http.status, 403);
+    let called = false;
+    globalThis.fetch = async () => { called = true; return new Response("{}"); };
+    const huge = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "x".repeat(2049) })), turnstileEnv());
+    assert.equal(huge.status, 403);
+    assert.equal(called, false);
+    const noIp = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com", "cf-connecting-ip": "", "x-forwarded-for": "198.51.100.9" }, body), turnstileEnv());
+    assert.equal(noIp.status, 403);
+    assert.equal(called, false);
+    assert.equal(calls.length, 0);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+
+test("protect masks TURNSTILE_ENABLED only after it has checked submit and generate", async () => {
+  await withSiteverify(() => new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" })), async () => {
+    const seen = [];
+    const worker = protect({
+      async fetch(request, binding) {
+        seen.push({ path: new URL(request.url).pathname, flag: binding.TURNSTILE_ENABLED, secret: binding.TURNSTILE_SECRET });
+        return new Response("{}", { status: 200, headers: { "content-type": "application/json" } });
+      },
+    });
+    const binding = turnstileEnv();
+    const submit = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), binding);
+    assert.equal(submit.status, 200);
+    const review = await worker.fetch(post("/review", { origin: "https://agentscouthq.com" }, "{}"), binding);
+    assert.equal(review.status, 200);
+    assert.deepEqual(seen, [
+      { path: "/submit", flag: "false", secret: "turnstile-secret" },
+      { path: "/review", flag: "true", secret: "turnstile-secret" },
+    ]);
+  });
+});
+
+test("readiness DNS checks the first url only", async () => {
+  const calls = [];
+  const worker = protect({
+    async fetch(request) {
+      calls.push(new URL(request.url).search);
+      return new Response("{}", { status: 200, headers: { "content-type": "application/json" } });
+    },
+  });
+  const original = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    const name = new URL(String(input)).searchParams.get("name");
+    if (name === "ok.example") return new Response(JSON.stringify({ Answer: [{ type: 1, data: "1.1.1.1" }] }), { status: 200 });
+    throw new Error("unexpected lookup");
+  };
+  try {
+    const dup = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://ok.example/") + "&url=" + encodeURIComponent("http://127.0.0.1/")));
+    assert.equal(dup.status, 200);
+    const named = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?target=" + encodeURIComponent("http://127.0.0.1/")));
+    assert.equal(named.status, 200);
+    assert.equal(calls.length, 2);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+
+test("reviews export requires the stats key and does not add CORS or a cache", async () => {
+  const calls = [];
+  const reviews = {
+    idFromName(name) { calls.push(name); return "id-all"; },
+    get() {
+      return {
+        async backupPage(spec) {
+          calls.push(spec.table);
+          return { table: spec.table, rows: [{ id: "018f2b3c-7c3a-7c3a-8c3a-7c3a7c3a7c3a" }], next: null, secret: "nope" };
+        },
+      };
+    },
+  };
+  const worker = protect({
+    async fetch() {
+      calls.push("inner");
+      return new Response("{}", { status: 200 });
+    },
+  });
+  const binding = { ...env(), STATS_KEY: "correct-key", REVIEWS_EXPORT: "true", REVIEWS: reviews };
+  const headers = { "cf-connecting-ip": "203.0.113.10", origin: "https://evil.example" };
+  const off = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), { ...binding, REVIEWS_EXPORT: "" });
+  assert.equal(off.status, 404);
+  assert.equal(off.headers.get("access-control-allow-origin"), null);
+  assert.equal(calls.length, 0);
+  const denied = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", { headers }), binding);
+  assert.equal(denied.status, 403);
+  assert.equal(calls.length, 0);
+  const missingBinding = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), { STATS_KEY: "correct-key", REVIEWS_EXPORT: "true", REVIEWS: reviews });
+  assert.equal(missingBinding.status, 503);
+  assert.equal(calls.length, 0);
+  const ok = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), binding);
   assert.equal(ok.status, 200);
-  assert.deepEqual(calls, ["/readiness"]);
+  assert.equal(ok.headers.get("access-control-allow-origin"), null);
+  assert.match(ok.headers.get("cache-control"), /no-store/);
+  const body = await ok.json();
+  assert.equal(body.secret, undefined);
+  assert.equal(JSON.stringify(body).includes("TURNSTILE"), false);
+  assert.equal(JSON.stringify(body).includes("REVIEW_HMAC"), false);
+  assert.deepEqual(calls, ["all", "reviews"]);
+  assert.equal(calls.includes("inner"), false);
 });
 
 test("the turnstile flag is masked only on the paths protect already checks", () => {

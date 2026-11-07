@@ -6,7 +6,8 @@
  * POST /generate gets the same origin allowlist and IMAGE_WRITE limit as
  * POST /submit, including when TURNSTILE_ENABLED is unset. GET /generate,
  * /track, /geo, and /share are otherwise unchanged. GET /readiness is
- * forwarded only after its url query passes validateUrlShape and isBlockedIp.
+ * forwarded only after its url query passes validateUrlShape and resolveAndCheck.
+ * A blocked address, a blocked DNS answer, or a lookup failure is 400.
  *
  * When env.TURNSTILE_ENABLED === "true", POST /submit and POST /generate
  * are siteverify'd (secret, token, remoteip = CF-Connecting-IP) before the
@@ -14,16 +15,19 @@
  * A missing CF-Connecting-IP fails closed. Deploy must set that plain-text
  * var to true or the check stays off.
  *
- * X-Stats-Key on /reviews/pending, /reviews/admin, /stats, and /trending/stats
- * is compared with safeEq (SHA-256, then a constant-time compare) before the
- * inner handler runs. A mismatch is 403.
+ * X-Stats-Key on /reviews/pending, /reviews/admin, /reviews/export, /stats,
+ * and /trending/stats is compared with safeEq (SHA-256, then a constant-time
+ * compare) before the inner handler runs. A mismatch is 403. /reviews/export
+ * is served here and is not cached and has no CORS allow-origin header. It is
+ * not on the captured running script until that script is deployed.
  *
  * Bindings (Workers Rate Limiting, per CF-Connecting-IP):
  *   IMAGE_WRITE  10 requests / 60s   POST and other non-read methods
  *   IMAGE_READ  120 requests / 60s   GET and HEAD
  * A missing binding fails closed with 503. There is no User-Agent bypass.
  */
-import { isBlockedIp, isIpLiteral, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
+import { resolveAndCheck, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
+import { EXPORT_PATH, exportEnabled, handleReviewsExport } from "./reviews-backup.js";
 
 const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const ALLOWED_HOSTS = new Set([
@@ -33,6 +37,7 @@ const ALLOWED_HOSTS = new Set([
 const STATS_KEY_PATHS = new Set([
   "/reviews/pending",
   "/reviews/admin",
+  "/reviews/export",
   "/stats",
   "/trending/stats",
 ]);
@@ -157,8 +162,14 @@ function isRead(method) {
 
 async function consume(limiter, ip) {
   if (!limiter || typeof limiter.limit !== "function") return "unconfigured";
-  const result = await limiter.limit({ key: ip });
-  return result && result.success === false ? "limited" : "ok";
+  let result;
+  try {
+    result = await limiter.limit({ key: ip });
+  } catch {
+    return "unconfigured";
+  }
+  if (!result || result.success !== true) return "limited";
+  return "ok";
 }
 
 async function rejectStatsKey(request, env) {
@@ -222,13 +233,18 @@ async function rejectTurnstile(request, env) {
   return null;
 }
 
-function rejectReadiness(request) {
+async function rejectReadiness(request) {
   const url = new URL(request.url);
   if (normalizePath(url.pathname) !== "/readiness" || !url.searchParams.has("url")) return null;
   const shape = validateUrlShape(url.searchParams.get("url"));
   if (shape.error) return json(request, { error: shape.error }, 400);
   const host = shape.url.hostname.replace(/^\[|\]$/g, "");
-  if (isIpLiteral(host) && isBlockedIp(host)) return json(request, { error: "That address is not public." }, 400);
+  try {
+    const dns = await resolveAndCheck(host);
+    if (dns.error) return json(request, { error: dns.error }, 400);
+  } catch {
+    return json(request, { error: "Could not look up that host." }, 400);
+  }
   return null;
 }
 
@@ -266,6 +282,98 @@ export function applyCors(request, response) {
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
+const READINESS_UA = "AgentScoutReadinessChecker/";
+let fetchDelegate = null;
+
+function requestUrl(input) {
+  if (typeof input === "string") return input;
+  if (input instanceof URL) return input.toString();
+  if (input && typeof input.url === "string") return input.url;
+  return "";
+}
+
+function headerValue(init, name) {
+  const headers = init && init.headers;
+  if (!headers) return "";
+  if (typeof headers.get === "function") return headers.get(name) || "";
+  const target = name.toLowerCase();
+  for (const key of Object.keys(headers)) {
+    if (key.toLowerCase() === target) return String(headers[key] || "");
+  }
+  return "";
+}
+
+// DNS lookup and the following fetch are still two steps. The runtime resolves
+// the name again. Connecting to the looked-up address would skip the certificate
+// check for the hostname, so this does not pin the address. A change between
+// the lookup and the fetch is still possible.
+export async function guardedPublicFetch(original, input, init) {
+  if (!headerValue(init, "user-agent").startsWith(READINESS_UA)) return original(input, init);
+  const shape = validateUrlShape(requestUrl(input));
+  if (shape.error) throw new Error("blocked public fetch");
+  const dns = await resolveAndCheck(shape.url.hostname, original);
+  if (dns.error) throw new Error("blocked public fetch");
+  return original(input, init);
+}
+
+function installFetchGuard() {
+  const current = globalThis.fetch;
+  if (current && current.__agentscoutPublicFetch) return;
+  fetchDelegate = current.bind(globalThis);
+  const guarded = (input, init) => guardedPublicFetch(fetchDelegate, input, init);
+  guarded.__agentscoutPublicFetch = true;
+  globalThis.fetch = guarded;
+}
+
+function failClosedLimit(binding) {
+  if (!binding || typeof binding.limit !== "function") return binding;
+  return {
+    async limit(arg) {
+      try {
+        const result = await binding.limit(arg);
+        return result && result.success === true ? { success: true } : { success: false };
+      } catch {
+        return { success: false };
+      }
+    },
+  };
+}
+
+function failClosedReady(namespace) {
+  if (!namespace || typeof namespace.get !== "function") return namespace;
+  return {
+    idFromName(name) {
+      return namespace.idFromName(name);
+    },
+    get(id) {
+      const stub = namespace.get(id);
+      return {
+        async fetch(...args) {
+          try {
+            const response = await stub.fetch(...args);
+            const data = await response.json();
+            const body = data && data.ok === true ? data : { ok: false, retry: data && data.retry };
+            return new Response(JSON.stringify(body), { status: 200, headers: { "content-type": "application/json" } });
+          } catch {
+            return new Response(JSON.stringify({ ok: false, retry: 60 }), { status: 200, headers: { "content-type": "application/json" } });
+          }
+        },
+      };
+    },
+  };
+}
+
+export function hardenLimiters(env) {
+  if (!env || typeof env !== "object") return env;
+  return new Proxy(env, {
+    get(target, key) {
+      if (key === "REVIEW_RL" || key === "TRACK_RL" || key === "READY_RL") return failClosedLimit(target[key]);
+      if (key === "READY_LIMIT") return failClosedReady(target[key]);
+      return target[key];
+    },
+  });
+}
+
 export function protect(worker) {
   if (!worker || typeof worker.fetch !== "function") {
     throw new TypeError("protect() expects the existing worker export");
@@ -273,15 +381,28 @@ export function protect(worker) {
   const inner = worker.fetch.bind(worker);
   return {
     async fetch(request, env, ctx) {
+      const path = normalizePath(new URL(request.url).pathname);
+      if (path === EXPORT_PATH && !exportEnabled(env)) {
+        return new Response(JSON.stringify({ error: "Not found." }), {
+          status: 404,
+          headers: {
+            "content-type": "application/json; charset=utf-8",
+            "cache-control": "private, no-store",
+            "x-content-type-options": "nosniff",
+          },
+        });
+      }
       const statsBlocked = await rejectStatsKey(request, env);
       if (statsBlocked) return statsBlocked;
       const blocked = await gate(request, env);
       if (blocked) return blocked;
+      if (normalizePath(new URL(request.url).pathname) === EXPORT_PATH) return handleReviewsExport(request, env);
       const turnstileBlocked = await rejectTurnstile(request, env);
       if (turnstileBlocked) return turnstileBlocked;
-      const readinessBlocked = rejectReadiness(request);
+      const readinessBlocked = await rejectReadiness(request);
       if (readinessBlocked) return readinessBlocked;
-      const response = await inner(request, env, ctx);
+      installFetchGuard();
+      const response = await inner(request, hardenLimiters(maskTurnstileEnv(request, env)), ctx);
       if (!requestGuarded(new URL(request.url).pathname, request.method)) return response;
       return applyCors(request, response);
     },
