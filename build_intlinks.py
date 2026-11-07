@@ -5,7 +5,9 @@ import json,os,re,html
 e=lambda s:html.escape(str(s),quote=True)
 def targets(t):
     n=sum(1 for x in t if x["category"]=="MCP servers"); c=sum(1 for x in t if x["category"]=="coding")
-    L=[("categories/mcp-servers.html",f"All {n:,} MCP servers"),("mcp/index.html","Best MCP servers by task"),
+    infra=sum(1 for x in t if x["category"]=="agent infra")
+    # agent-infra earned clicks at position 6.5 in the Oct 20-24 Web export, then had no row in the Oct 26-Nov 5 page export.
+    L=[("categories/mcp-servers.html",f"All {n:,} MCP servers"),("categories/agent-infra.html",f"All {infra:,} agent infra tools"),("mcp/index.html","Best MCP servers by task"),
        ("mcp/pricing.html","MCP server pricing"),("mcp/status/","MCP status"),
        ("best/mcp-servers-for-cursor.html","MCP servers for Cursor"),("best/mcp-servers-for-claude-code.html","MCP servers for Claude Code"),
        ("best/ai-coding-agents.html","Best AI coding agents"),("categories/coding.html",f"All {c:,} coding agents"),("s/free-ai-coding-agents.html","Free AI coding agents"),

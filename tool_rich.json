@@ -1,4 +1,95 @@
 {
+  "cloudcli": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-07",
+    "sources": [
+      "https://cloudcli.ai/",
+      "https://github.com/siteboon/claudecodeui"
+    ],
+    "long": [
+      "CloudCLI is a persistent cloud development environment for AI coding agents, from the makers of the open-source CloudCLI UI (the claudecodeui repository). The AgentScout listing describes it as a web and mobile interface for Claude Code, Codex and Gemini CLI. On 7 Nov 2026 the maker's site also named Cursor CLI and OpenCode, and said you start a session from a phone, browser, Linear, Jira or API and continue the same session in VS Code or Cursor over SSH.",
+      "The hosted service is not the model. You bring your own key or subscription. Each developer gets a separate container. The maker's site says there is no permanent free hosted tier. A new account gets a trial of 2 hours of environment runtime, to be used within 2 days, with no card. The open-source UI is free to self-host; the listing states the licence as AGPL."
+    ],
+    "who": "Developers who want Claude Code, Cursor CLI, Codex, Gemini CLI or OpenCode to keep running after they close the laptop, including from a phone browser.",
+    "features": [
+      "Persistent container per developer, with SSH back into VS Code or Cursor",
+      "Claude Code, Cursor CLI, Codex, Gemini CLI and OpenCode, using your own key",
+      "Hosted plans stated on cloudcli.ai on 7 Nov 2026: Hobby €7/month (1 environment, 2 CPU cores, 4 GB RAM), Growth €20/month (5 environments), Team €39/month (5 environments and 5 members). Enterprise is custom",
+      "Hosted trial: 2 hours of runtime within 2 days, no card; no permanent free hosted tier",
+      "Open-source UI you can self-host (listing: AGPL; repository siteboon/claudecodeui)"
+    ],
+    "facts": {
+      "repo": "https://github.com/siteboon/claudecodeui",
+      "checked": "2026-10-30",
+      "stars": 14347
+    }
+  },
+  "antinode-clear": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-07",
+    "sources": [
+      "https://antinodeaudio.com"
+    ],
+    "long": [
+      "Antinode Clear is a one-time audio plugin for dialogue. On 7 Nov 2026 the maker's site described it as separating voice from background noise and reverb, with de-noise, de-reverb and de-voice in real time, and listed it at $49, shown as $20 off $69.",
+      "The AgentScout listing identifies this product as formerly Supertone Clear and keeps the pricing label as a one-time purchase rather than a permanent dollar amount, because the marked-down price can change. The same site also sells other Antinode plugins (Air and Shift); those are separate products and are not this listing."
+    ],
+    "who": "Dialogue editors who need to pull a voice out of noise and reverb and rebalance it.",
+    "features": [
+      "Separate voice from background noise and reverb",
+      "De-noise, de-reverb and de-voice, described by the maker as real time",
+      "One-time purchase. Maker's site on 7 Nov 2026: $49, shown as reduced from $69"
+    ]
+  },
+  "luma-dream-machine": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-07",
+    "sources": [
+      "https://lumalabs.ai/dream-machine"
+    ],
+    "long": [
+      "Luma Dream Machine is Luma's creative workspace. On 7 Nov 2026 the Dream Machine page described an agent that plans, generates and edits images, video, audio and text on one canvas, and said the agent can choose a model or you can pick one yourself. Models named on that page include Luma's Ray3 family and third-party image, video and audio models.",
+      "Monthly prices on that page: Plus $30 with 10,000 credits, Pro $90 with 40,000 credits, Ultra $300 with 150,000 credits. Plus lists commercial use. Yearly billing was shown at a lower monthly equivalent. Team and Enterprise were contact-sales. The page says unused credits expire at the end of the billing cycle. The directory listing already states Plus $30/mo and Pro $90/mo."
+    ],
+    "who": "Creative teams producing images, video and campaign variants in one workspace.",
+    "features": [
+      "Image, video, audio and text in one workspace",
+      "Agent-chosen or manually chosen models, including the maker's Ray3 family",
+      "Plus $30/mo (10,000 credits), Pro $90/mo (40,000), Ultra $300/mo (150,000), as listed on 7 Nov 2026",
+      "Commercial use is listed on the Plus plan"
+    ]
+  },
+  "scout-outcrawl": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-07",
+    "sources": [
+      "https://github.com/outcrawlai/scout",
+      "https://outcrawl.ai/"
+    ],
+    "long": [
+      "Scout is Outcrawl's open-source browser agent. The AgentScout listing says it opens a real browser and clicks, types and reads pages to finish a task you describe. The listing records 947 GitHub stars on outcrawlai/scout as of 2026-10-30.",
+      "Outcrawl's marketing site describes a separate hosted platform: scrape, crawl, search, cloud browsers and task agents, with a free monthly credit allowance and no card. This listing does not treat that platform's prices or its published browser benchmark as facts about the open-source Scout package. The directory pricing label stays Open source + cloud."
+    ],
+    "who": "People who want an open-source browser agent they can inspect, from the maker of Outcrawl.",
+    "features": [
+      "Opens a real browser and clicks, types and reads pages",
+      "Open-source repository outcrawlai/scout",
+      "947 GitHub stars on the AgentScout listing as of 2026-10-30"
+    ],
+    "facts": {
+      "repo": "https://github.com/outcrawlai/scout",
+      "checked": "2026-10-30",
+      "stars": 947
+    }
+  },
   "agentcenter": {
     "meta": "AgentCenter is a mission-control dashboard for OpenClaw AI agents: Kanban tasks, live agent status and deliverable review. Plans from $14/mo.",
     "long": [
