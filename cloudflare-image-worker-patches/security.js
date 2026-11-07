@@ -27,7 +27,7 @@
  * A missing binding fails closed with 503. There is no User-Agent bypass.
  */
 import { resolveAndCheck, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
-import { EXPORT_PATH, handleReviewsExport } from "./reviews-backup.js";
+import { EXPORT_PATH, exportEnabled, handleReviewsExport } from "./reviews-backup.js";
 
 const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const ALLOWED_HOSTS = new Set([
@@ -289,6 +289,17 @@ export function protect(worker) {
   const inner = worker.fetch.bind(worker);
   return {
     async fetch(request, env, ctx) {
+      const path = normalizePath(new URL(request.url).pathname);
+      if (path === EXPORT_PATH && !exportEnabled(env)) {
+        return new Response(JSON.stringify({ error: "Not found." }), {
+          status: 404,
+          headers: {
+            "content-type": "application/json; charset=utf-8",
+            "cache-control": "private, no-store",
+            "x-content-type-options": "nosniff",
+          },
+        });
+      }
       const statsBlocked = await rejectStatsKey(request, env);
       if (statsBlocked) return statsBlocked;
       const blocked = await gate(request, env);

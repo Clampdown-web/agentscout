@@ -7,6 +7,10 @@
 export const EXPORT_PATH = "/reviews/export";
 export const BACKUP_LIMIT_MAX = 100;
 
+export function exportEnabled(env) {
+  return String((env && env.REVIEWS_EXPORT) || "") === "true";
+}
+
 const TABLES = {
   ratings: {
     columns: ["tool", "vid", "iph", "stars", "ts"],

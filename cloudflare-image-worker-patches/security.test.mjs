@@ -453,14 +453,20 @@ test("reviews export requires the stats key and does not add CORS or a cache", a
       return new Response("{}", { status: 200 });
     },
   });
-  const binding = { ...env(), STATS_KEY: "correct-key", REVIEWS: reviews };
+  const binding = { ...env(), STATS_KEY: "correct-key", REVIEWS_EXPORT: "true", REVIEWS: reviews };
   const headers = { "cf-connecting-ip": "203.0.113.10", origin: "https://evil.example" };
+  const off = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), { ...binding, REVIEWS_EXPORT: "" });
+  assert.equal(off.status, 404);
+  assert.equal(off.headers.get("access-control-allow-origin"), null);
+  assert.equal(calls.length, 0);
   const denied = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", { headers }), binding);
   assert.equal(denied.status, 403);
   assert.equal(calls.length, 0);
   const missingBinding = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
     headers: { ...headers, "x-stats-key": "correct-key" },
-  }), { STATS_KEY: "correct-key", REVIEWS: reviews });
+  }), { STATS_KEY: "correct-key", REVIEWS_EXPORT: "true", REVIEWS: reviews });
   assert.equal(missingBinding.status, 503);
   assert.equal(calls.length, 0);
   const ok = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/export?table=reviews", {
