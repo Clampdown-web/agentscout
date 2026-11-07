@@ -77,6 +77,8 @@ function embeddedV4(full) {
   if (full[0] === "0064" && full[1] === "ff9b" && full[2] === "0001") return embeddedAt(full, 6);
   // 6to4 2002::/16. The IPv4 address is the next 32 bits.
   if (full[0] === "2002") return hextetPairToV4(full[1], full[2]);
+  // Deprecated IPv4-compatible ::/96. ::ffff:0:0/96 is the mapped form above.
+  if (zero(0, 1, 2, 3, 4, 5)) return hextetPairToV4(full[6], full[7]);
   return "";
 }
 
@@ -152,7 +154,11 @@ export async function resolveAndCheck(hostname, fetchImpl = fetch) {
     if (!res.ok) return { error: "Could not look up that host." };
     const data = await res.json();
     for (const ans of data.Answer || []) {
-      if (typeof ans.data === "string") addresses.push(ans.data.replace(/\.$/, ""));
+      if (typeof ans.data !== "string") continue;
+      // A CNAME (type 5) is a name, not an address. isBlockedIp() would reject it.
+      // Answers with no type are still checked, so a bare address cannot skip the filter.
+      if (ans.type != null && ans.type !== 1 && ans.type !== 28) continue;
+      addresses.push(ans.data.replace(/\.$/, ""));
     }
   }
   if (!addresses.length) return { error: "That host has no public address." };

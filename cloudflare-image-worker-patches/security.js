@@ -6,7 +6,8 @@
  * POST /generate gets the same origin allowlist and IMAGE_WRITE limit as
  * POST /submit, including when TURNSTILE_ENABLED is unset. GET /generate,
  * /track, /geo, and /share are otherwise unchanged. GET /readiness is
- * forwarded only after its url query passes validateUrlShape and isBlockedIp.
+ * forwarded only after its url query passes validateUrlShape and resolveAndCheck.
+ * A blocked address, a blocked DNS answer, or a lookup failure is 400.
  *
  * When env.TURNSTILE_ENABLED === "true", POST /submit and POST /generate
  * are siteverify'd (secret, token, remoteip = CF-Connecting-IP) before the
@@ -23,7 +24,7 @@
  *   IMAGE_READ  120 requests / 60s   GET and HEAD
  * A missing binding fails closed with 503. There is no User-Agent bypass.
  */
-import { isBlockedIp, isIpLiteral, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
+import { resolveAndCheck, validateUrlShape } from "../cloudflare-api-worker/src/ssrf.js";
 
 const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const ALLOWED_HOSTS = new Set([
@@ -157,8 +158,14 @@ function isRead(method) {
 
 async function consume(limiter, ip) {
   if (!limiter || typeof limiter.limit !== "function") return "unconfigured";
-  const result = await limiter.limit({ key: ip });
-  return result && result.success === false ? "limited" : "ok";
+  let result;
+  try {
+    result = await limiter.limit({ key: ip });
+  } catch {
+    return "unconfigured";
+  }
+  if (!result || result.success !== true) return "limited";
+  return "ok";
 }
 
 async function rejectStatsKey(request, env) {
@@ -222,13 +229,18 @@ async function rejectTurnstile(request, env) {
   return null;
 }
 
-function rejectReadiness(request) {
+async function rejectReadiness(request) {
   const url = new URL(request.url);
   if (normalizePath(url.pathname) !== "/readiness" || !url.searchParams.has("url")) return null;
   const shape = validateUrlShape(url.searchParams.get("url"));
   if (shape.error) return json(request, { error: shape.error }, 400);
   const host = shape.url.hostname.replace(/^\[|\]$/g, "");
-  if (isIpLiteral(host) && isBlockedIp(host)) return json(request, { error: "That address is not public." }, 400);
+  try {
+    const dns = await resolveAndCheck(host);
+    if (dns.error) return json(request, { error: dns.error }, 400);
+  } catch {
+    return json(request, { error: "Could not look up that host." }, 400);
+  }
   return null;
 }
 
@@ -279,9 +291,9 @@ export function protect(worker) {
       if (blocked) return blocked;
       const turnstileBlocked = await rejectTurnstile(request, env);
       if (turnstileBlocked) return turnstileBlocked;
-      const readinessBlocked = rejectReadiness(request);
+      const readinessBlocked = await rejectReadiness(request);
       if (readinessBlocked) return readinessBlocked;
-      const response = await inner(request, env, ctx);
+      const response = await inner(request, maskTurnstileEnv(request, env), ctx);
       if (!requestGuarded(new URL(request.url).pathname, request.method)) return response;
       return applyCors(request, response);
     },

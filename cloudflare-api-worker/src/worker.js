@@ -127,13 +127,17 @@ export function countsFor(doc, slugs, day) {
   return { tools, today_total: todayTotal };
 }
 
+// One isolate runs this chain in order, so concurrent requests here cannot all
+// read the same count. KV put is not atomic across isolates or locations.
 async function rateLimit(env, bucket, ip, limit) {
   const key = `rl:${bucket}:${ip}:${Math.floor(Date.now() / 60000)}`;
   if (env.VOTES) {
-    const cur = Number(await env.VOTES.get(key)) || 0;
-    if (cur >= limit) return false;
-    await env.VOTES.put(key, String(cur + 1), { expirationTtl: 120 });
-    return true;
+    return withSeenLock(key, async () => {
+      const cur = Number(await env.VOTES.get(key)) || 0;
+      if (cur >= limit) return false;
+      await env.VOTES.put(key, String(cur + 1), { expirationTtl: 120 });
+      return true;
+    });
   }
   const cur = memoryBuckets.get(key) || 0;
   if (cur >= limit) return false;

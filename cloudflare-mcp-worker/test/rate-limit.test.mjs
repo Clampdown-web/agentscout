@@ -77,6 +77,30 @@ test("X-Forwarded-For is not the client address", async () => {
   assert.equal(keys.length, 2);
 });
 
+test("a thrown limiter and a minute rejection fail closed", async () => {
+  const thrown = await worker.fetch(hit(), {
+    MCP_BURST: { async limit() { throw new Error("binding down"); } },
+    MCP_MINUTE: { async limit() { return { success: true }; } },
+  });
+  assert.equal(thrown.status, 500);
+  const thrownBody = await thrown.json();
+  assert.equal(thrownBody.tools, undefined);
+  assert.equal(thrownBody.tools_indexed, undefined);
+  const minute = await worker.fetch(hit(), {
+    MCP_BURST: { async limit() { return { success: true }; } },
+    MCP_MINUTE: { async limit() { return { success: false }; } },
+  });
+  assert.equal(minute.status, 429);
+});
+
+test("wildcard CORS stays on read responses and credentials are not allowed", async () => {
+  const res = await worker.fetch(hit(), env());
+  assert.equal(res.headers.get("access-control-allow-origin"), "*");
+  assert.equal(res.headers.get("access-control-allow-credentials"), null);
+  const body = await res.json();
+  assert.equal(body.read_only, true);
+});
+
 test("a missing binding fails closed and does not serve the catalog", async () => {
   const res = await worker.fetch(hit({ "user-agent": "Googlebot" }, {
     verifiedBotCategory: "Search Engine Crawler",
