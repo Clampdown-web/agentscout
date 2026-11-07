@@ -425,7 +425,7 @@
   "pricing": "Freemium"
  },
  "firecrawl-mcp-server": {
-  "link": "not checked",
+  "link": "OK",
   "name": "Firecrawl MCP Server",
   "pricing": "Freemium"
  },
@@ -658,6 +658,11 @@
   "link": "OK",
   "name": "Jupyter MCP Server",
   "pricing": "Open source"
+ },
+ "justblogged": {
+  "link": "OK",
+  "name": "JustBlogged",
+  "pricing": "Freemium"
  },
  "kagi-mcp": {
   "link": "OK",
@@ -974,6 +979,11 @@
   "name": "n8n-MCP",
   "pricing": "Open source"
  },
+ "nektar-mcp": {
+  "link": "OK",
+  "name": "Nektar MCP",
+  "pricing": "Paid"
+ },
  "neo4j-mcp": {
   "link": "OK",
   "name": "Neo4j MCP",
@@ -1159,6 +1169,11 @@
   "name": "remotify-mcp",
   "pricing": "Open source"
  },
+ "repostit": {
+  "link": "OK",
+  "name": "Repostit",
+  "pricing": "Freemium"
+ },
  "reverse-image-location-geosolver": {
   "link": "OK",
   "name": "Reverse Image Location (GeoSolver)",
@@ -1314,6 +1329,11 @@
   "name": "Supabase MCP",
   "pricing": "Open source"
  },
+ "superanalyst-mcp": {
+  "link": "OK",
+  "name": "SuperAnalyst MCP",
+  "pricing": "Paid"
+ },
  "supermetrics-mcp": {
   "link": "OK",
   "name": "Supermetrics MCP",
@@ -1384,6 +1404,11 @@
   "name": "ToolsPad MCP",
   "pricing": "Freemium"
  },
+ "tracebit-mcp": {
+  "link": "OK",
+  "name": "Tracebit MCP",
+  "pricing": "Paid"
+ },
  "trivago-mcp": {
   "link": "OK",
   "name": "trivago MCP",
@@ -1447,6 +1472,11 @@
  "vidiq-mcp": {
   "link": "OK",
   "name": "vidIQ MCP",
+  "pricing": "Freemium"
+ },
+ "wash-bodega-service-discovery-mcp": {
+  "link": "OK",
+  "name": "Wash Bodega Service Discovery MCP",
   "pricing": "Freemium"
  },
  "wavespeed-mcp": {

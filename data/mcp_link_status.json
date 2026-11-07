@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-06 07:59",
+ "checked": "2026-11-07 07:07",
  "tz": "America/Los_Angeles",
  "results": {
   "402post": {
@@ -24,8 +24,8 @@
    "github": 200
   },
   "agentkey": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "agentweb": {
    "url": 200
@@ -163,8 +163,8 @@
    "url": 200
   },
   "carbon": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "carto-mcp": {
    "url": 200
@@ -305,6 +305,9 @@
    "url": 200,
    "github": 200
   },
+  "firecrawl-mcp-server": {
+   "url": 200
+  },
   "fireflies-mcp": {
    "url": 200
   },
@@ -352,8 +355,8 @@
    "url": 200
   },
   "google-workspace-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "gortex": {
    "url": 200,
@@ -448,8 +451,8 @@
    "url": 200
   },
   "joinly": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "jscpd": {
    "url": 200
@@ -464,6 +467,9 @@
   "jupyter-mcp-server": {
    "url": 200,
    "github": 200
+  },
+  "justblogged": {
+   "url": 200
   },
   "kagi-mcp": {
    "url": 200
@@ -695,6 +701,9 @@
    "url": 200,
    "github": 200
   },
+  "nektar-mcp": {
+   "url": 200
+  },
   "neo4j-mcp": {
    "url": 200,
    "github": 200
@@ -758,8 +767,8 @@
    "url": 200
   },
   "pandadoc-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "pangolinfo-amazon-data-mcp": {
    "url": 200,
@@ -829,6 +838,9 @@
   },
   "remotify-mcp": {
    "github": 200,
+   "url": 200
+  },
+  "repostit": {
    "url": 200
   },
   "reverse-image-location-geosolver": {
@@ -911,8 +923,8 @@
    "url": 200
   },
   "sonarqube-mcp-server": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "stack-overflow-mcp": {
    "url": 200,
@@ -938,6 +950,9 @@
   "supabase-mcp": {
    "url": 200,
    "github": 200
+  },
+  "superanalyst-mcp": {
+   "url": 200
   },
   "supermetrics-mcp": {
    "url": 200
@@ -978,14 +993,17 @@
    "url": 200
   },
   "tipranks-mcp": {
-   "url": 200,
-   "github": 200
+   "github": 200,
+   "url": 200
   },
   "toolhive": {
    "url": 200,
    "github": 200
   },
   "toolspad-mcp": {
+   "url": 200
+  },
+  "tracebit-mcp": {
    "url": 200
   },
   "trivago-mcp": {
@@ -1032,6 +1050,9 @@
    "github": 200
   },
   "vidiq-mcp": {
+   "url": 200
+  },
+  "wash-bodega-service-discovery-mcp": {
    "url": 200
   },
   "wavespeed-mcp": {

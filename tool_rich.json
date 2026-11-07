@@ -31120,5 +31120,437 @@
       "license": "MIT",
       "homepage": "https://zoo.dev/design-studio/download"
     }
+  },
+  "kestra": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Kestra is listed on AgentScout from its public GitHub project; Kestra is an open-source, event-driven orchestration and scheduling platform where workflows are declared in YAML or built in a no-code editor. It includes an AI Agent task that gives flows an LLM with memory and tools, supports nested agents and the Agent-to-Agent (A2A) protocol, and can expose any flow as a tool to external AI agents through its MCP server. It runs in the cloud, on-prem or air-gapped and is Apache 2.0 licensed.",
+      "It is published on GitHub as kestra-io/kestra under the Apache-2.0 license with about 30,166 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Kestra is an open-source, event-driven orchestration and scheduling platform where workflows are declared in YAML or bui",
+      "Apache-2.0 license on GitHub",
+      "Repository: kestra-io/kestra",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/kestra-io/kestra",
+      "https://go.kestra.io/home"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/kestra-io/kestra",
+      "license": "Apache-2.0",
+      "homepage": "https://go.kestra.io/home",
+      "stars": 30166
+    }
+  },
+  "onlook": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Onlook is listed on AgentScout from its public GitHub project; An open-source visual editor for React and Tailwind apps where you design on a canvas and an AI agent writes the code. Edit layouts like in Figma, then export clean code to your own repo.",
+      "It is published on GitHub as onlook-dev/onlook under the Apache-2.0 license with about 27,134 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "An open-source visual editor for React and Tailwind apps where you design on a canvas and an AI agent writes the code. E",
+      "Apache-2.0 license on GitHub",
+      "Repository: onlook-dev/onlook",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/onlook-dev/onlook",
+      "https://onlook.com"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/onlook-dev/onlook",
+      "license": "Apache-2.0",
+      "homepage": "https://onlook.com",
+      "stars": 27134
+    }
+  },
+  "opcode": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "opcode is listed on AgentScout from its public GitHub project; A desktop app for Claude Code that lets you manage sessions, build custom agents, track usage and browse project history from a GUI instead of the terminal.",
+      "It is published on GitHub as winfunc/opcode under the AGPL-3.0 license with about 22,431 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "A desktop app for Claude Code that lets you manage sessions, build custom agents, track usage and browse project history",
+      "AGPL-3.0 license on GitHub",
+      "Repository: winfunc/opcode",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/winfunc/opcode",
+      "https://opcode.sh"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/winfunc/opcode",
+      "license": "AGPL-3.0",
+      "homepage": "https://opcode.sh",
+      "stars": 22431
+    }
+  },
+  "docmost": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Docmost is listed on AgentScout from its public GitHub project; Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence and Notion.",
+      "It is published on GitHub as docmost/docmost under the AGPL-3.0 license with about 22,254 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Docmost is an open-source collaborative wiki and documentation software. It is an open-source alternative to Confluence ",
+      "AGPL-3.0 license on GitHub",
+      "Repository: docmost/docmost",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/docmost/docmost",
+      "https://docmost.com"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/docmost/docmost",
+      "license": "AGPL-3.0",
+      "homepage": "https://docmost.com",
+      "stars": 22254
+    }
+  },
+  "keploy": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Keploy is listed on AgentScout from its public GitHub project; Keploy records API traffic and turns it into isolated integration and end-to-end tests.",
+      "It is published on GitHub as keploy/keploy under the Apache-2.0 license with about 19,520 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Keploy records API traffic and turns it into isolated integration and end-to-end tests.",
+      "Apache-2.0 license on GitHub",
+      "Repository: keploy/keploy",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/keploy/keploy",
+      "https://keploy.io"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/keploy/keploy",
+      "license": "Apache-2.0",
+      "homepage": "https://keploy.io",
+      "stars": 19520
+    }
+  },
+  "xerj": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "xerj is listed on AgentScout from its public GitHub project; A local-first search engine and MCP server for agents: one Rust binary indexes code, docs, logs, CSV/JSONL and PDFs for full-text, vector and hybrid search plus agent memory, behind an Elasticsearch-compatible API.",
+      "It is published on GitHub as xerj-org/xerj under the Apache-2.0 license with about 18,540 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "A local-first search engine and MCP server for agents: one Rust binary indexes code, docs, logs, CSV/JSONL and PDFs for ",
+      "Apache-2.0 license on GitHub",
+      "Repository: xerj-org/xerj",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/xerj-org/xerj",
+      "https://xerj.org"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/xerj-org/xerj",
+      "license": "Apache-2.0",
+      "homepage": "https://xerj.org",
+      "stars": 18540
+    }
+  },
+  "opencodex": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "opencodex is listed on AgentScout from its public GitHub project; A local provider proxy that lets OpenAI Codex (CLI, app and SDK) and Claude Code run on other model providers such as Claude, Gemini, Grok, DeepSeek or local Ollama models.",
+      "It is published on GitHub as lidge-jun/opencodex under the MIT license with about 18,282 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "A local provider proxy that lets OpenAI Codex (CLI, app and SDK) and Claude Code run on other model providers such as Cl",
+      "MIT license on GitHub",
+      "Repository: lidge-jun/opencodex",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/lidge-jun/opencodex",
+      "https://opencodex.me/"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/lidge-jun/opencodex",
+      "license": "MIT",
+      "homepage": "https://opencodex.me/",
+      "stars": 18282
+    }
+  },
+  "pascal-editor": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Pascal Editor is listed on AgentScout from its public GitHub project; Local-first 3D building and architecture editor in the browser or CLI that AI agents can drive through MCP tools.",
+      "It is published on GitHub as pascalorg/editor under the MIT license with about 25,377 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Local-first 3D building and architecture editor in the browser or CLI that AI agents can drive through MCP tools.",
+      "MIT license on GitHub",
+      "Repository: pascalorg/editor",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/pascalorg/editor",
+      "https://editor.pascal.app"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/pascalorg/editor",
+      "license": "MIT",
+      "homepage": "https://editor.pascal.app",
+      "stars": 25377
+    }
+  },
+  "hindsight": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Hindsight is listed on AgentScout from its public GitHub project; Hindsight by Vectorize is open-source agent memory that stores, retrieves and reasons over long-term context so AI agents keep durable knowledge across sessions without rebuilding RAG each time.",
+      "It is published on GitHub as vectorize-io/hindsight under the MIT license with about 59,648 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Hindsight by Vectorize is open-source agent memory that stores, retrieves and reasons over long-term context so AI agent",
+      "MIT license on GitHub",
+      "Repository: vectorize-io/hindsight",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/vectorize-io/hindsight",
+      "https://hindsight.vectorize.io/"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/vectorize-io/hindsight",
+      "license": "MIT",
+      "homepage": "https://hindsight.vectorize.io/",
+      "stars": 59648
+    }
+  },
+  "marketing-skills": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Marketing Skills is listed on AgentScout from its public GitHub project; Marketing Skills is an open collection of agent skills for SEO, GEO, ads and growth workflows so Claude Code, Codex and similar agents can run marketing tasks from skill files.",
+      "It is published on GitHub as coreyhaines31/marketingskills under the MIT license with about 59,012 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Marketing Skills is an open collection of agent skills for SEO, GEO, ads and growth workflows so Claude Code, Codex and ",
+      "MIT license on GitHub",
+      "Repository: coreyhaines31/marketingskills",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/coreyhaines31/marketingskills",
+      "https://marketing-skills.com"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "license": "MIT",
+      "homepage": "https://marketing-skills.com",
+      "stars": 59012
+    }
+  },
+  "dbx": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Dbx is listed on AgentScout from its public GitHub project; 25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker.",
+      "It is published on GitHub as t8y2/dbx under the Apache-2.0 license with about 29,457 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB",
+      "Apache-2.0 license on GitHub",
+      "Repository: t8y2/dbx",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/t8y2/dbx",
+      "https://dbxio.com"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/t8y2/dbx",
+      "license": "Apache-2.0",
+      "homepage": "https://dbxio.com",
+      "stars": 29457
+    }
+  },
+  "aitoearn": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "AiToEarn is listed on AgentScout from its public GitHub project; AiToEarn is an open-source creator toolkit that uses AI agents and skills to publish and monetize content across major social platforms.",
+      "It is published on GitHub as yikart/AiToEarn under the MIT license with about 27,415 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "AiToEarn is an open-source creator toolkit that uses AI agents and skills to publish and monetize content across major s",
+      "MIT license on GitHub",
+      "Repository: yikart/AiToEarn",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/yikart/AiToEarn",
+      "https://aitoearn.ai/"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/yikart/AiToEarn",
+      "license": "MIT",
+      "homepage": "https://aitoearn.ai/",
+      "stars": 27415
+    }
+  },
+  "open-seo": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Open SEO is listed on AgentScout from its public GitHub project; Open SEO is an open-source SEO toolkit for AI agents that audits sites, tracks opportunities and helps agents ship search improvements without a closed SaaS lock-in.",
+      "It is published on GitHub as every-app/open-seo under the MIT license with about 26,715 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Open SEO is an open-source SEO toolkit for AI agents that audits sites, tracks opportunities and helps agents ship searc",
+      "MIT license on GitHub",
+      "Repository: every-app/open-seo",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/every-app/open-seo",
+      "https://openseo.so"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/every-app/open-seo",
+      "license": "MIT",
+      "homepage": "https://openseo.so",
+      "stars": 26715
+    }
+  },
+  "dapr": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Dapr is listed on AgentScout from its public GitHub project; Dapr is a portable runtime for building distributed applications across cloud and edge, combining event-driven architecture with workflow orchestration.",
+      "It is published on GitHub as dapr/dapr under the Apache-2.0 license with about 26,177 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Dapr is a portable runtime for building distributed applications across cloud and edge, combining event-driven architect",
+      "Apache-2.0 license on GitHub",
+      "Repository: dapr/dapr",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/dapr/dapr",
+      "https://dapr.io"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/dapr/dapr",
+      "license": "Apache-2.0",
+      "homepage": "https://dapr.io",
+      "stars": 26177
+    }
+  },
+  "excelize": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Excelize is listed on AgentScout from its public GitHub project; Go language library for reading and writing Microsoft Excel™ (XLAM / XLSM / XLSX / XLTM / XLTX) spreadsheets.",
+      "It is published on GitHub as qax-os/excelize under the BSD-3-Clause license with about 21,112 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "Go language library for reading and writing Microsoft Excel™ (XLAM / XLSM / XLSX / XLTM / XLTX) spreadsheets.",
+      "BSD-3-Clause license on GitHub",
+      "Repository: qax-os/excelize",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/qax-os/excelize",
+      "https://xuri.me/excelize"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/qax-os/excelize",
+      "license": "BSD-3-Clause",
+      "homepage": "https://xuri.me/excelize",
+      "stars": 21112
+    }
+  },
+  "douyin-tiktok-download-api": {
+    "kind": "lite",
+    "src_kind": "README",
+    "long": [
+      "Douyin TikTok Download API is listed on AgentScout from its public GitHub project; 、TikTok API， AI agent MCP ，Docker 。 Self-hosted TikTok & Douyin scraper and no-watermark video downloader — async REST API, MCP server for AI agents, CLI and web console, plus offline speech-to-text.",
+      "It is published on GitHub as Evil0ctal/Douyin_TikTok_Download_API under the Apache-2.0 license with about 21,251 stars."
+    ],
+    "who": "Builders evaluating open-source agent tooling who want a short factual overview before opening the repo.",
+    "features": [
+      "、TikTok API， AI agent MCP ，Docker 。 Self-hosted TikTok & Douyin scraper and no-watermark video downloader — async REST A",
+      "Apache-2.0 license on GitHub",
+      "Repository: Evil0ctal/Douyin_TikTok_Download_API",
+      "See the upstream README for install and usage details"
+    ],
+    "faq": [],
+    "sources": [
+      "https://github.com/Evil0ctal/Douyin_TikTok_Download_API",
+      "https://douyin.wtf"
+    ],
+    "updated": "2026-11-07",
+    "facts": {
+      "repo": "https://github.com/Evil0ctal/Douyin_TikTok_Download_API",
+      "license": "Apache-2.0",
+      "homepage": "https://douyin.wtf",
+      "stars": 21251
+    }
   }
 }
