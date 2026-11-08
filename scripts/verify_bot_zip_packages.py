@@ -7,6 +7,7 @@ directory leakage, and that every helper exits 0 for --help and --dry-run.
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -14,8 +15,16 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKS = ROOT / "bot-packages" / "25-agent-packs"
-FLAGSHIP = ROOT / "bot-packages" / "zips"
+
+
+def package_root() -> Path:
+    """Site tree under review. Never the retired /workspace/agent-tool-finder default."""
+    override = os.environ.get("AGENTSCOUT_ROOT")
+    if override:
+        return Path(override).resolve()
+    return ROOT
+
+
 BANNED = ("mcp.agentscouthq.com", "buy.stripe.com", "api/tools.json", "com.agentscouthq")
 NOTICE_LINES = (
     "coreyhaines31 (MIT, (c) 2025 Corey Haines)",
@@ -40,6 +49,24 @@ REQUIRED = (
     "context/business-profile.md",
     "routines/routines.json",
 )
+
+
+def compare_start_here(label: str, package_guide: Path, zip_path: Path) -> list[str]:
+    """Compare the package guide with the zip copy. A broken zip is a reported problem."""
+    if not zip_path.is_file():
+        return [f"{label} zip missing for START-HERE comparison"]
+    if not package_guide.is_file():
+        return [f"{label} package START-HERE.md missing for comparison"]
+    try:
+        with zipfile.ZipFile(zip_path) as archive:
+            if "START-HERE.md" not in archive.namelist():
+                return [f"{label} zip has no START-HERE.md to compare"]
+            archived = archive.read("START-HERE.md").decode("utf-8")
+    except zipfile.BadZipFile:
+        return [f"{label} START-HERE comparison could not read a broken zip"]
+    if archived != package_guide.read_text(encoding="utf-8"):
+        return [f"{label} root START-HERE.md differs from the package copy"]
+    return []
 
 
 def _unzip_ok(path: Path) -> bool:
@@ -75,17 +102,21 @@ def _start_here_problems(label: str, path: Path) -> list[str]:
     return problems
 
 
-def main() -> int:
+def _audit(root: Path | None = None) -> tuple[list[str], dict]:
+    """Read-only package check. Does not write the verification stamp."""
+    root = (root or package_root()).resolve()
+    packs = root / "bot-packages" / "25-agent-packs"
+    flagship = root / "bot-packages" / "zips"
     sys.path.insert(0, str(ROOT / "scripts"))
     from agent_pack_catalog import AGENTS
-    from start_here import stamp_verification, success_record
+    from start_here import success_record
     bad = []
     passed = {}
     if len(AGENTS) != 25:
         bad.append(f"catalog has {len(AGENTS)} agents")
     for agent in AGENTS:
         before = len(bad)
-        dest = PACKS / agent["slug"]
+        dest = packs / agent["slug"]
         if not dest.is_dir():
             bad.append(f"missing package {agent['slug']}")
             continue
@@ -171,27 +202,25 @@ def main() -> int:
         routines = json.loads((dest / "routines" / "routines.json").read_text(encoding="utf-8"))
         if not routines.get("routines"):
             bad.append(f"{agent['slug']} has no routines")
-        zpath = PACKS / "zips" / f"{agent['slug']}.zip"
+        zpath = packs / "zips" / f"{agent['slug']}.zip"
         bad.extend(_start_here_problems(agent["slug"], zpath))
-        pkg_guide = dest / "START-HERE.md"
-        if pkg_guide.is_file() and zpath.is_file():
-            try:
-                with zipfile.ZipFile(zpath) as archive:
-                    if "START-HERE.md" in archive.namelist():
-                        root_guide = archive.read("START-HERE.md").decode("utf-8")
-                        if root_guide != pkg_guide.read_text(encoding="utf-8"):
-                            bad.append(f"{agent['slug']} root START-HERE.md differs from the package copy")
-            except zipfile.BadZipFile:
-                pass
+        bad.extend(compare_start_here(agent["slug"], dest / "START-HERE.md", zpath))
         if len(bad) == before:
             passed[agent["slug"]] = success_record(f"bot-packages/25-agent-packs/zips/{agent['slug']}.zip")
-    for path in sorted(FLAGSHIP.glob("*.zip")):
+    for path in sorted(flagship.glob("*.zip")):
         before = len(bad)
         bad.extend(_start_here_problems(path.stem, path))
         if len(bad) == before:
             passed[path.stem] = success_record(f"bot-packages/zips/{path.name}")
+    return bad, passed
+
+
+def main() -> int:
+    from start_here import stamp_verification
+    bad, passed = _audit()
     stamp_verification(passed)
-    print(f"bot zip packages: {len(AGENTS)} specs, {len(list(FLAGSHIP.glob('*.zip')))} flagship zips, {len(bad)} problems")
+    flagship = package_root() / "bot-packages" / "zips"
+    print(f"bot zip packages: {len(bad)} problems, flagship zips on disk {len(list(flagship.glob('*.zip')))}")
     for line in bad:
         print("FAIL", line)
     return 1 if bad else 0
