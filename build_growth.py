@@ -96,13 +96,13 @@ def stats_bar(m):
     bar = (
         f'<div class="stats" id="dir-stats">'
         f'<a href="categories/index.html"><b id="s-total">{comma(m["tools_count"])}</b> tools</a>'
-        f'<a href="categories/mcp-servers.html"><b>{comma(m["mcp_servers_count"])}</b> MCP servers</a>'
+        f'<a href="categories/mcp-servers.html"><b id="s-mcp">{comma(m["mcp_servers_count"])}</b> MCP servers</a>'
         f'<a href="mcp/status/">MCP status</a>'
         f'<a href="bot-templates/"><b>{comma(m["templates_count"])}</b> templates</a>'
         f'<a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer"><b>{comma(m["x_combined_followers"])}</b> combined followers</a>'
         f'<a href="how-it-started.html">How it started</a></div>'
     )
-    s2, n = re.subn(r'<div class="stats">.*?</div>', bar, s, count=1, flags=re.S)
+    s2, n = re.subn(r'<div class="stats"(?: id="dir-stats")?>.*?</div>', bar, s, count=1, flags=re.S)
     if not n:
         raise SystemExit("stats bar not found on index.html")
     s2 = s2.replace(

@@ -712,7 +712,7 @@
   "fetched": "2026-11-08"
  },
  "agent-manager": {
-  "repo": "YoanWai/agent-manager",
+  "repo": "wainmann/agent-manager",
   "stars": 646,
   "archived": false,
   "releases": [
@@ -1819,33 +1819,6 @@
   "release_url": "https://github.com/affaan-m/agentshield/releases/tag/v1.6.0",
   "pushed": "2026-09-10",
   "fetched": "2026-11-08"
- },
- "agentsmesh": {
-  "repo": "AgentsMesh/AgentsMesh",
-  "stars": 2361,
-  "archived": false,
-  "releases": [
-   [
-    "AgentsMesh Runner v0.44.8-nightly.20260923 (nightly)",
-    "2026-09-23",
-    "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.8-nightly.20260923"
-   ],
-   [
-    "AgentsMesh Runner v0.44.7",
-    "2026-07-25",
-    "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.7"
-   ],
-   [
-    "AgentsMesh Runner v0.44.6",
-    "2026-07-24",
-    "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.6"
-   ]
-  ],
-  "release_tag": "AgentsMesh Runner v0.44.8-nightly.20260923 (nightly)",
-  "release_date": "2026-09-23",
-  "release_url": "https://github.com/AgentsMesh/AgentsMesh/releases/tag/v0.44.8-nightly.20260923",
-  "pushed": "2026-09-23",
-  "fetched": "2026-10-27"
  },
  "agentuniverse": {
   "repo": "agentuniverse-ai/agentUniverse",
@@ -3435,23 +3408,6 @@
   "pushed": "2026-06-02",
   "fetched": "2026-11-08"
  },
- "artex": {
-  "repo": "trhhubsd/ARTEX",
-  "stars": 2276,
-  "archived": false,
-  "releases": [
-   [
-    "v0.3.15",
-    "2026-10-18",
-    "https://github.com/trhhubsd/ARTEX/releases/tag/v0.3.15"
-   ]
-  ],
-  "release_tag": "v0.3.15",
-  "release_date": "2026-10-18",
-  "release_url": "https://github.com/trhhubsd/ARTEX/releases/tag/v0.3.15",
-  "pushed": "2026-10-19",
-  "fetched": "2026-10-30"
- },
  "arxiv-mcp-server": {
   "repo": "blazickjp/arxiv-mcp-server",
   "stars": 3259,
@@ -3623,7 +3579,7 @@
   "fetched": "2026-11-08"
  },
  "atlas": {
-  "repo": "pacifio/atlas",
+  "repo": "tryatlas/atlas",
   "stars": 9403,
   "archived": false,
   "releases": [
@@ -6884,7 +6840,7 @@
   "fetched": "2026-11-08"
  },
  "cloudroom": {
-  "repo": "davidondrej/cloudroom-core",
+  "repo": "davidondrej/cloudroom",
   "stars": 1524,
   "archived": false,
   "releases": [
@@ -7971,7 +7927,7 @@
   "fetched": "2026-11-08"
  },
  "cozyclay": {
-  "repo": "NomaDamas/CozyClay",
+  "repo": "HaD0Yun/CozyClay",
   "stars": 1574,
   "archived": false,
   "releases": [
@@ -11009,7 +10965,7 @@
   "fetched": "2026-11-08"
  },
  "forkd": {
-  "repo": "deeplethe/forkd",
+  "repo": "deeplethe/sandstorm",
   "stars": 5670,
   "archived": false,
   "releases": [
@@ -15147,7 +15103,7 @@
   "fetched": "2026-11-08"
  },
  "kortix-suna": {
-  "repo": "kortix-ai/suna",
+  "repo": "kortix-ai/CompanyOS",
   "stars": 20570,
   "archived": false,
   "releases": [
@@ -21450,7 +21406,7 @@
   "fetched": "2026-11-08"
  },
  "open-dungeon-master": {
-  "repo": "Lebbitheplow/open-dungeon-master",
+  "repo": "Lebbitheplow/open-game-master",
   "stars": 76,
   "archived": false,
   "releases": [
@@ -22600,7 +22556,7 @@
   "fetched": "2026-11-08"
  },
  "openmontage": {
-  "repo": "calesthio/OpenMontage",
+  "repo": "OpenMontageInc/OpenMontage",
   "stars": 78566,
   "archived": false,
   "releases": [],
@@ -26916,33 +26872,6 @@
   "pushed": "2026-11-06",
   "fetched": "2026-11-08"
  },
- "sema4-ai": {
-  "repo": "Sema4AI/actions",
-  "stars": 141,
-  "archived": false,
-  "releases": [
-   [
-    "sema4ai-action_server-3.2.0",
-    "2026-04-10",
-    "https://github.com/Sema4AI/actions/releases/tag/sema4ai-action_server-3.2.0"
-   ],
-   [
-    "sema4ai-action_server-3.1.1",
-    "2026-03-09",
-    "https://github.com/Sema4AI/actions/releases/tag/sema4ai-action_server-3.1.1"
-   ],
-   [
-    "sema4ai-action_server-3.1.0",
-    "2026-03-09",
-    "https://github.com/Sema4AI/actions/releases/tag/sema4ai-action_server-3.1.0"
-   ]
-  ],
-  "release_tag": "sema4ai-action_server-3.2.0",
-  "release_date": "2026-04-10",
-  "release_url": "https://github.com/Sema4AI/actions/releases/tag/sema4ai-action_server-3.2.0",
-  "pushed": "2026-04-10",
-  "fetched": "2026-10-30"
- },
  "semble": {
   "repo": "MinishLab/semble",
   "stars": 6380,
@@ -29013,7 +28942,7 @@
   "fetched": "2026-11-08"
  },
  "tanatasa-beauty-mcp": {
-  "repo": "tanatasa-beauty/tanatasa",
+  "repo": "tanatasa-ai/tanatasa",
   "stars": 0,
   "archived": false,
   "releases": [],

@@ -3571,17 +3571,14 @@
     "slug": "sema4-ai",
     "logo": "assets/logos/sema4-ai.png",
     "website": "https://sema4.ai",
-    "github": "https://github.com/Sema4AI/actions",
-    "repo": "Sema4AI/actions",
-    "github_stars": 141,
+    "github": "https://github.com/Sema4AI",
     "use_cases": [
       "business agents"
     ],
     "pricing_detail": "",
     "added": "2026-10-16",
     "source": "directory",
-    "seed": true,
-    "stars_checked": "2026-10-30"
+    "seed": true
   },
   {
     "name": "Simple Phones",
@@ -4592,8 +4589,8 @@
       "edit video"
     ],
     "website": "https://www.openmontage.video/",
-    "github": "https://github.com/calesthio/OpenMontage",
-    "repo": "calesthio/OpenMontage",
+    "github": "https://github.com/OpenMontageInc/OpenMontage",
+    "repo": "OpenMontageInc/OpenMontage",
     "github_stars": 78566,
     "id": 178,
     "slug": "openmontage",
@@ -6299,7 +6296,7 @@
   },
   {
     "name": "Kortix Suna",
-    "url": "https://github.com/kortix-ai/suna",
+    "url": "https://github.com/kortix-ai/CompanyOS",
     "description": "Kortix, an open-source platform for building and running general-purpose AI agents.",
     "category": "personal agents",
     "pricing": "Source-available + cloud",
@@ -6313,8 +6310,8 @@
       "personal agents"
     ],
     "website": "",
-    "github": "https://github.com/kortix-ai/suna",
-    "repo": "kortix-ai/suna",
+    "github": "https://github.com/kortix-ai/CompanyOS",
+    "repo": "kortix-ai/CompanyOS",
     "github_stars": 20570,
     "id": 242,
     "slug": "kortix-suna",
@@ -14989,7 +14986,7 @@
       "games"
     ],
     "website": "https://opendungeonmaster.com/",
-    "github": "https://github.com/Lebbitheplow/open-dungeon-master",
+    "github": "https://github.com/Lebbitheplow/open-game-master",
     "id": 566,
     "slug": "open-dungeon-master",
     "logo": "assets/logos/open-dungeon-master.png",
@@ -14997,7 +14994,7 @@
       "hybrid"
     ],
     "seed": true,
-    "repo": "Lebbitheplow/open-dungeon-master",
+    "repo": "Lebbitheplow/open-game-master",
     "github_stars": 76,
     "stars_checked": "2026-11-08"
   },
@@ -20038,7 +20035,7 @@
   },
   {
     "name": "Squad",
-    "url": "https://bradygaster.github.io/squad/",
+    "url": "https://github.github.io/squad/",
     "description": "Human-led AI agent teams for GitHub Copilot that live in your repo as files and act as frontend, backend, tester and lead specialists.",
     "category": "coding",
     "pricing": "Open source",
@@ -20053,7 +20050,7 @@
     "use_cases": [
       "write code"
     ],
-    "website": "https://bradygaster.github.io/squad/",
+    "website": "https://github.github.io/squad/",
     "github": "https://github.com/bradygaster/squad",
     "repo": "bradygaster/squad",
     "github_stars": 0,
@@ -20303,7 +20300,7 @@
   },
   {
     "name": "forkd",
-    "url": "https://github.com/deeplethe/forkd",
+    "url": "https://github.com/deeplethe/sandstorm",
     "description": "MicroVM sandbox runtime for AI agent fan-out that forks KVM-isolated child VMs from a warm snapshot in milliseconds.",
     "category": "sandboxes & code execution",
     "pricing": "Open source",
@@ -20320,8 +20317,8 @@
       "run code safely"
     ],
     "website": "",
-    "github": "https://github.com/deeplethe/forkd",
-    "repo": "deeplethe/forkd",
+    "github": "https://github.com/deeplethe/sandstorm",
+    "repo": "deeplethe/sandstorm",
     "github_stars": 5670,
     "id": 780,
     "slug": "forkd",
@@ -20733,32 +20730,6 @@
     "slug": "agent-vault",
     "logo": "assets/logos/agent-vault.png",
     "stars_checked": "2026-11-08"
-  },
-  {
-    "name": "AgentsMesh",
-    "url": "https://agentsmesh.ai/",
-    "description": "Platform for running many AI coding agents across your own machines and scheduling, isolating and steering them from one console.",
-    "category": "coding",
-    "pricing": "Source-available",
-    "maturity": "Active",
-    "audience": "builders",
-    "featured": false,
-    "new": false,
-    "verified": "2026-10-18",
-    "added": "2026-10-18",
-    "source": "GitHub",
-    "pricing_detail": "",
-    "use_cases": [
-      "write code"
-    ],
-    "website": "https://agentsmesh.ai/",
-    "github": "https://github.com/AgentsMesh/AgentsMesh",
-    "repo": "AgentsMesh/AgentsMesh",
-    "github_stars": 2361,
-    "id": 796,
-    "slug": "agentsmesh",
-    "logo": "assets/logos/agentsmesh.png",
-    "stars_checked": "2026-10-27"
   },
   {
     "name": "Conduit",
@@ -36616,8 +36587,8 @@
       "write code"
     ],
     "website": "https://www.tryatlas.cc/",
-    "github": "https://github.com/pacifio/atlas",
-    "repo": "pacifio/atlas",
+    "github": "https://github.com/tryatlas/atlas",
+    "repo": "tryatlas/atlas",
     "github_stars": 9403,
     "id": 1440,
     "slug": "atlas",
@@ -38108,8 +38079,8 @@
       "run code safely"
     ],
     "website": "https://www.cloudroom.dev/",
-    "github": "https://github.com/davidondrej/cloudroom-core",
-    "repo": "davidondrej/cloudroom-core",
+    "github": "https://github.com/davidondrej/cloudroom",
+    "repo": "davidondrej/cloudroom",
     "github_stars": 1524,
     "id": 1494,
     "slug": "cloudroom",
@@ -41154,8 +41125,8 @@
       "generate video"
     ],
     "website": "https://cozyclay.org/",
-    "github": "https://github.com/NomaDamas/CozyClay",
-    "repo": "NomaDamas/CozyClay",
+    "github": "https://github.com/HaD0Yun/CozyClay",
+    "repo": "HaD0Yun/CozyClay",
     "github_stars": 1574,
     "id": 1606,
     "slug": "cozyclay",
@@ -44177,8 +44148,8 @@
       "write code"
     ],
     "website": "https://agent-manager.dev/",
-    "github": "https://github.com/YoanWai/agent-manager",
-    "repo": "YoanWai/agent-manager",
+    "github": "https://github.com/wainmann/agent-manager",
+    "repo": "wainmann/agent-manager",
     "github_stars": 646,
     "id": 1716,
     "slug": "agent-manager",
@@ -45729,8 +45700,8 @@
     "name": "Tanatasa Beauty MCP",
     "url": "https://tanatasa.sg/ai-agent-docs",
     "website": "https://tanatasa.sg/ai-agent-docs",
-    "github": "https://github.com/tanatasa-beauty/tanatasa",
-    "repo": "tanatasa-beauty/tanatasa",
+    "github": "https://github.com/tanatasa-ai/tanatasa",
+    "repo": "tanatasa-ai/tanatasa",
     "github_stars": 0,
     "id": 1772,
     "slug": "tanatasa-beauty-mcp",
@@ -52771,7 +52742,7 @@
     "url": "https://artex-demo.vercel.app/function/tasks",
     "description": "ARTEX · AI autonomous penetration testing system (multi-agent LLM, Go + Next.js) · AI · agent+",
     "category": "security & governance",
-    "pricing": "Open source",
+    "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
@@ -52784,13 +52755,9 @@
       "build multi-agent systems"
     ],
     "website": "https://artex-demo.vercel.app/function/tasks",
-    "github": "https://github.com/trhhubsd/ARTEX",
-    "repo": "trhhubsd/ARTEX",
-    "github_stars": 2276,
     "id": 2040,
     "slug": "artex",
-    "logo": "assets/logos/artex.png",
-    "stars_checked": "2026-10-30"
+    "logo": "assets/logos/artex.png"
   },
   {
     "name": "Agentshield",

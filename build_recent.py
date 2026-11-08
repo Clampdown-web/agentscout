@@ -51,9 +51,10 @@ def build(t):
     for label,cond in (("This week",lambda d:d>=wk),("Earlier this month",lambda d:d<wk)):
       ds=[d for d in days if cond(d)]
       if not ds: continue
-      body+=f'<h2 class="rgroup">{label} <span class="muted">· {sum(len(days[d]) for d in ds)} tools</span></h2>'
+      _ng=sum(len(days[d]) for d in ds)
+      body+=f'<h2 class="rgroup">{label} <span class="muted">· {_ng:,} tool{"s" if _ng!=1 else ""}</span></h2>'
       for d in ds:
-        xs=days[d]; body+=f'<h2 class="rday">{e(fmt(d))} <span class="muted">· {len(xs)} tool{"s" if len(xs)!=1 else ""}</span></h2><div class="grid rgrid">'+"".join(card(x,"") for x in xs)+'</div>'
+        xs=days[d]; body+=f'<h2 class="rday">{e(fmt(d))} <span class="muted">· {len(xs):,} tool{"s" if len(xs)!=1 else ""}</span></h2><div class="grid rgrid">'+"".join(card(x,"") for x in xs)+'</div>'
     body+='</section>'
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":"New AI agent tools","url":B+"new.html","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":f"{B}tools/{x['slug']}.html","name":x["name"]} for i,x in enumerate(recent[:50])]}}
     open("new.html","w").write(build_extras.shell("","New AI agent tools (last 30 days) · AgentScout","The newest AI agent tools added to AgentScout in the last 30 days, grouped by date: coding agents, MCP servers, frameworks and more.",B+"new.html",body,ld))

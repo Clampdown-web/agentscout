@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-08T17:30:17Z",
- "updated": "2026-11-08T17:30:17Z",
+ "generated": "2026-11-08T17:53:57Z",
+ "updated": "2026-11-08T17:53:57Z",
  "last_checked": "2026-11-08",
- "count": 2366,
- "total_tools": 2366,
+ "count": 2365,
+ "total_tools": 2365,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -5752,13 +5752,12 @@
    "slug": "sema4-ai",
    "url": "https://sema4.ai",
    "website": "https://sema4.ai",
-   "github": "https://github.com/Sema4AI/actions",
+   "github": "https://github.com/Sema4AI",
    "category": "business agents",
    "description": "Enterprise AI agents platform, with open-source actions for connecting agents to systems.",
    "key_features": [
     "Enterprise",
-    "Active",
-    "141 GitHub stars"
+    "Active"
    ],
    "pricing": "Enterprise",
    "price_tag": "paid",
@@ -5776,8 +5775,8 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "Sema4AI/actions",
-   "github_stars": 141,
+   "repo": null,
+   "github_stars": null,
    "open_source": false,
    "license": "",
    "tags": [
@@ -7392,7 +7391,7 @@
    "slug": "openmontage",
    "url": "https://www.openmontage.video/",
    "website": "https://www.openmontage.video/",
-   "github": "https://github.com/calesthio/OpenMontage",
+   "github": "https://github.com/OpenMontageInc/OpenMontage",
    "category": "film & TV production",
    "description": "Open-source agentic video production system with ready pipelines and tools that agents use to edit and assemble videos.",
    "key_features": [
@@ -7418,7 +7417,7 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "calesthio/OpenMontage",
+   "repo": "OpenMontageInc/OpenMontage",
    "github_stars": 78566,
    "open_source": true,
    "license": "",
@@ -10075,9 +10074,9 @@
   {
    "name": "Kortix Suna",
    "slug": "kortix-suna",
-   "url": "https://github.com/kortix-ai/suna",
+   "url": "https://github.com/kortix-ai/CompanyOS",
    "website": "",
-   "github": "https://github.com/kortix-ai/suna",
+   "github": "https://github.com/kortix-ai/CompanyOS",
    "category": "personal agents",
    "description": "Kortix, an open-source platform for building and running general-purpose AI agents.",
    "key_features": [
@@ -10101,7 +10100,7 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "kortix-ai/suna",
+   "repo": "kortix-ai/CompanyOS",
    "github_stars": 20570,
    "open_source": false,
    "license": "",
@@ -23661,7 +23660,7 @@
    "slug": "open-dungeon-master",
    "url": "https://opendungeonmaster.com/",
    "website": "https://opendungeonmaster.com/",
-   "github": "https://github.com/Lebbitheplow/open-dungeon-master",
+   "github": "https://github.com/Lebbitheplow/open-game-master",
    "category": "games",
    "description": "Free multiplayer D&D 5e app with app-enforced rules, where an AI or human runs the table using a local model, API key or CLI agent.",
    "key_features": [
@@ -23683,7 +23682,7 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "Lebbitheplow/open-dungeon-master",
+   "repo": "Lebbitheplow/open-game-master",
    "github_stars": 76,
    "open_source": true,
    "license": "",
@@ -31829,8 +31828,8 @@
   {
    "name": "Squad",
    "slug": "squad",
-   "url": "https://bradygaster.github.io/squad/",
-   "website": "https://bradygaster.github.io/squad/",
+   "url": "https://github.github.io/squad/",
+   "website": "https://github.github.io/squad/",
    "github": "https://github.com/bradygaster/squad",
    "category": "coding",
    "description": "Human-led AI agent teams for GitHub Copilot that live in your repo as files and act as frontend, backend, tester and lead specialists.",
@@ -32256,9 +32255,9 @@
   {
    "name": "forkd",
    "slug": "forkd",
-   "url": "https://github.com/deeplethe/forkd",
+   "url": "https://github.com/deeplethe/sandstorm",
    "website": "",
-   "github": "https://github.com/deeplethe/forkd",
+   "github": "https://github.com/deeplethe/sandstorm",
    "category": "sandboxes & code execution",
    "description": "MicroVM sandbox runtime for AI agent fan-out that forks KVM-isolated child VMs from a warm snapshot in milliseconds.",
    "key_features": [
@@ -32285,7 +32284,7 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": "deeplethe/forkd",
+   "repo": "deeplethe/sandstorm",
    "github_stars": 5670,
    "open_source": true,
    "license": "",
@@ -32953,47 +32952,6 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/agent-vault.png",
    "page": "https://agentscouthq.com/tools/agent-vault.html"
-  },
-  {
-   "name": "AgentsMesh",
-   "slug": "agentsmesh",
-   "url": "https://agentsmesh.ai/",
-   "website": "https://agentsmesh.ai/",
-   "github": "https://github.com/AgentsMesh/AgentsMesh",
-   "category": "coding",
-   "description": "Platform for running many AI coding agents across your own machines and scheduling, isolating and steering them from one console.",
-   "key_features": [
-    "Source-available",
-    "Active",
-    "2361 GitHub stars",
-    "Write code"
-   ],
-   "pricing": "Source-available",
-   "price_tag": "unknown",
-   "platforms": [
-    "Developer (API/SDK)"
-   ],
-   "date_added": "2026-10-18",
-   "added": "2026-10-18",
-   "source": "GitHub",
-   "goals": [
-    "coding"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": false,
-   "seed": false,
-   "new_this_week": false,
-   "repo": "AgentsMesh/AgentsMesh",
-   "github_stars": 2361,
-   "open_source": false,
-   "license": "",
-   "tags": [
-    "write code"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/agentsmesh.png",
-   "page": "https://agentscouthq.com/tools/agentsmesh.html"
   },
   {
    "name": "Conduit",
@@ -59718,7 +59676,7 @@
    "slug": "atlas",
    "url": "https://www.tryatlas.cc/",
    "website": "https://www.tryatlas.cc/",
-   "github": "https://github.com/pacifio/atlas",
+   "github": "https://github.com/tryatlas/atlas",
    "category": "coding",
    "description": "Source control for coding agents that checkpoints every agent run, links commits back to the prompts behind them and lets you query changes across agents.",
    "key_features": [
@@ -59744,7 +59702,7 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": "pacifio/atlas",
+   "repo": "tryatlas/atlas",
    "github_stars": 9403,
    "open_source": true,
    "license": "",
@@ -62022,7 +61980,7 @@
    "slug": "cloudroom",
    "url": "https://www.cloudroom.dev/",
    "website": "https://www.cloudroom.dev/",
-   "github": "https://github.com/davidondrej/cloudroom-core",
+   "github": "https://github.com/davidondrej/cloudroom",
    "category": "coding",
    "description": "Cloudroom runs Claude Code, Codex, Pi and other coding agents in the cloud, each in its own isolated sandbox on its own Git branch, using your own model logins; the Rust core is open source to self-host, and a desktop app manages local and cloud agents.",
    "key_features": [
@@ -62050,7 +62008,7 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": "davidondrej/cloudroom-core",
+   "repo": "davidondrej/cloudroom",
    "github_stars": 1524,
    "open_source": true,
    "license": "Apache-2.0",
@@ -66870,7 +66828,7 @@
    "slug": "cozyclay",
    "url": "https://cozyclay.org/",
    "website": "https://cozyclay.org/",
-   "github": "https://github.com/NomaDamas/CozyClay",
+   "github": "https://github.com/HaD0Yun/CozyClay",
    "category": "film & TV production",
    "description": "Free browser-based 3D previs software: block a scene, pose characters and author camera moves and cuts, then hand the same shots to an AI video model.",
    "key_features": [
@@ -66897,7 +66855,7 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": "NomaDamas/CozyClay",
+   "repo": "HaD0Yun/CozyClay",
    "github_stars": 1574,
    "open_source": true,
    "license": "",
@@ -71548,7 +71506,7 @@
    "slug": "agent-manager",
    "url": "https://agent-manager.dev/",
    "website": "https://agent-manager.dev/",
-   "github": "https://github.com/YoanWai/agent-manager",
+   "github": "https://github.com/wainmann/agent-manager",
    "category": "coding",
    "description": "agent-manager is a terminal app built on tmux for running many AI coding agents at once. It shows live status for Claude Code, Codex, OpenCode, Gemini, Grok, Cursor and other sessions in a foldable project tree, adds a quick prompt bar, and has a diff reviewer whose line comments are sent straight back to the right agent, on macOS, Linux and Windows.",
    "key_features": [
@@ -71574,7 +71532,7 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": "YoanWai/agent-manager",
+   "repo": "wainmann/agent-manager",
    "github_stars": 646,
    "open_source": true,
    "license": "",
@@ -73904,7 +73862,7 @@
    "slug": "tanatasa-beauty-mcp",
    "url": "https://tanatasa.sg/ai-agent-docs",
    "website": "https://tanatasa.sg/ai-agent-docs",
-   "github": "https://github.com/tanatasa-beauty/tanatasa",
+   "github": "https://github.com/tanatasa-ai/tanatasa",
    "category": "MCP servers",
    "description": "Tanatasa Beauty MCP is a hosted Streamable HTTP MCP server (tanatasa-shopping 1.0.0 at tanatasa.sg/mcp), REST API and CLI for Tanatasa, a Singapore skincare and beauty store. Connect Claude, Cursor or any MCP-compatible assistant with no API key required to search authentic Korean and Japanese skincare and beauty products, inspect ingredients and usage details, verify live inventory and SGD prices, apply promo codes and create guest carts and 1-hour checkout links.",
    "key_features": [
@@ -73929,7 +73887,7 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": "tanatasa-beauty/tanatasa",
+   "repo": "tanatasa-ai/tanatasa",
    "github_stars": 0,
    "open_source": false,
    "license": "MIT",
@@ -85249,20 +85207,18 @@
    "slug": "artex",
    "url": "https://artex-demo.vercel.app/function/tasks",
    "website": "https://artex-demo.vercel.app/function/tasks",
-   "github": "https://github.com/trhhubsd/ARTEX",
+   "github": "",
    "category": "security & governance",
    "description": "ARTEX · AI autonomous penetration testing system (multi-agent LLM, Go + Next.js) · AI · agent+",
    "key_features": [
-    "Open source",
+    "See site",
     "Active",
-    "2276 GitHub stars",
     "Build multi-agent systems"
    ],
-   "pricing": "Open source",
-   "price_tag": "free",
+   "pricing": "See site",
+   "price_tag": "unknown",
    "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
+    "Developer (API/SDK)"
    ],
    "date_added": "2026-10-28",
    "added": "2026-10-28",
@@ -85273,9 +85229,9 @@
    "new": true,
    "seed": false,
    "new_this_week": false,
-   "repo": "trhhubsd/ARTEX",
-   "github_stars": 2276,
-   "open_source": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
    "license": "",
    "tags": [
     "build multi-agent systems"
@@ -99884,7 +99840,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tracekit.png",
-   "page": "https://agentscouthq.com/tools/tracekit.html"
+   "page": "https://agentscouthq.com/tools/tracekit.html",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=tracekit"
+   }
   },
   {
    "name": "Babysitter",

@@ -5,7 +5,7 @@
      a type filter, tool filters (pricing, open source, category) and a date sort key;
   2) runs `python3 -m pagefind` into ./pagefind/. Pages not in sitemap.xml (sponsor, redirects, noindex) are never annotated,
      and Pagefind only indexes annotated pages, so they stay out. Set NO_PAGEFIND=1 to skip (e.g. quick local tests)."""
-import os,re,json,html,subprocess,sys
+import os,re,json,html,subprocess,sys,glob
 B="https://agentscouthq.com/"
 MK_RE=re.compile(r'<span id="pfm".*?</span></span>|<span id="pfm"[^>]*></span>')
 def ptype(p):
@@ -57,11 +57,19 @@ def annotate():
             m=re.search(r'"datePublished": ?"(\d{4}-\d\d-\d\d)',s); date=m.group(1) if m else lm
         a.append(f'data-pagefind-sort="date:{date}"'); a.append(f'data-pagefind-meta="type:{ptype(p)}"')
         mk='<span id="pfm" hidden>'+"".join(f'<span {z}></span>' for z in a)+(f'<span data-pagefind-weight="7">{html.escape(kw)}</span>' if kw else "")+'</span>'
-        s2=MK_RE.sub("",s)
+        # Pagefind markers stay out of <script> (JSON-LD). A weight attribute with raw quotes
+        # inside a JSON string makes the block invalid.
+        _held=[]
+        def _hold(m):
+            _held.append(m.group(0)); return f"\0PF{len(_held)-1}\0"
+        s2=re.sub(r"(?is)<script\b[^>]*>.*?</script>",_hold,s)
+        s2=MK_RE.sub("",s2)
         s2=re.sub(r'<main(?![^>]*data-pagefind-body)([^>]*)>',r'<main\1 data-pagefind-body>',s2,1)
-        if "data-pagefind-body" not in s2: continue
-        s2=re.sub(r'<h1(?![^>]*data-pagefind-weight)([^>]*)>',r'<h1\1 data-pagefind-weight="10">',s2,1)  # titles outrank body mentions
+        if "data-pagefind-body" not in s2:
+            continue
+        s2=re.sub(r'<h1(?![^<>]*data-pagefind-weight)([^<>]*)>',r'<h1\1 data-pagefind-weight="10">',s2,1)  # titles outrank body mentions; do not span into the next tag
         s2=s2.replace("</main>",mk+"</main>",1)
+        for _i,_sc in enumerate(_held): s2=s2.replace(f"\0PF{_i}\0",_sc)
         if s2!=s: open(p,"w",encoding="utf-8").write(s2)
         n+=1
     print("search: annotated",n,"pages")
@@ -94,9 +102,7 @@ def run():
     if os.environ.get("NO_PAGEFIND"): print("search: skipped (NO_PAGEFIND)"); return
     if not os.path.exists("sitemap.xml"): return
     navlink(); annotate()
-    if os.path.exists("search/index.html"):  # Pagefind runs WebAssembly: allow it on the search page only
-        z=open("search/index.html",encoding="utf-8").read()
-        if "'wasm-unsafe-eval'" not in z: open("search/index.html","w",encoding="utf-8").write(z.replace("script-src 'self'","script-src 'self' 'wasm-unsafe-eval'",1))
+    # Do not edit CSP here. wasm-unsafe-eval belongs in the site's header policy, not this builder.
     # Build into a temp dir, then swap it in, so stale index/fragment files from old builds never pile up (Oct 21 2026: 85 stale builds, ~16.8k files)
     import shutil; tmp=".pagefind_new"; shutil.rmtree(tmp,ignore_errors=True)
     # -P: the built index directory is also named pagefind, and it would shadow this module on sys.path.
@@ -105,6 +111,21 @@ def run():
     print("search: pagefind",("ok" if r.returncode==0 else "FAILED")," | ".join(l for l in out if "Indexed" in l or "rror" in l)[:300])
     if r.returncode or not os.path.exists(os.path.join(tmp,"pagefind-entry.json")): shutil.rmtree(tmp,ignore_errors=True); sys.exit(1)
     shutil.rmtree("pagefind",ignore_errors=True); os.rename(tmp,"pagefind")
+    validate_jsonld()
+def validate_jsonld():
+    """Every application/ld+json block on a generated page must parse."""
+    n=bad=0
+    for f in glob.glob("**/*.html",recursive=True):
+        if f.startswith(("preview/","pagefind/","bot-packages/")): continue
+        try: s=open(f,encoding="utf-8").read()
+        except Exception: continue
+        for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S):
+            n+=1
+            try: json.loads(b)
+            except Exception as ex:
+                bad+=1; print("JSON-LD FAIL",f,ex)
+    print(f"json-ld: {n} blocks, {bad} invalid")
+    if bad: sys.exit(1)
 REDIR='''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">

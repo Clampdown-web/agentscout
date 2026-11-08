@@ -269,7 +269,13 @@ for x in t:
     if _pt in ("free","freemium") or any(isinstance(o,dict) and str(o.get("price",""))=="0" for o in _ofl): _ab["isAccessibleForFree"]=True
     elif _pt=="paid": _ab["isAccessibleForFree"]=False
     if "offers" not in _ab and _pt=="free": _ab["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":x.get("pricing_detail") or x["pricing"]}
-    out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
+    def _ld_text(o):
+        if isinstance(o,str):
+            return re.sub(r"\s+"," ",re.sub(r"<[^>]*>","",o)).strip()
+        if isinstance(o,list): return [_ld_text(v) for v in o]
+        if isinstance(o,dict): return {k:_ld_text(v) for k,v in o.items()}
+        return o
+    out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(_ld_text(ld),ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
     import tool_banner
     out=tool_banner.ensure(out)  # Bot Store strip from data/detail.tpl, on every new tool page
     open(f"tools/{x['slug']}.html","w").write(out)
@@ -298,6 +304,11 @@ def _sync_index_counts():
     s = re.sub(r"Directory of \d[\d,]* link-checked", f"Directory of {n:,} link-checked", s)
     s = re.sub(r'(id="s-eyebrow">)\d[\d,]* tools · Links checked [^<]+', lambda m: m.group(1) + f"{n:,} tools · Links checked " + _lc, s)
     s = re.sub(r'(id="s-total">)\d[\d,]*', lambda m: m.group(1) + f"{n:,}", s)
+    try:
+        _mcp=int(_j.load(open("data/site_counts.json")).get("mcp_servers") or 0)
+    except Exception:
+        _mcp=sum(1 for _x in _j.load(open("tools.json")) if _x.get("category")=="MCP servers")
+    s = re.sub(r'(id="s-mcp">)\d[\d,]*', lambda m: m.group(1) + f"{_mcp:,}", s)
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
@@ -485,5 +496,7 @@ def _quality_finish():
             s,
         )
         open(f, "w", encoding="utf-8").write(s)
+    import build_seo_new as _nav_final
+    _nav_final.unify_all_nav_and_footer()
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

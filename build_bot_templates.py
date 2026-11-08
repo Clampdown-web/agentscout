@@ -60,9 +60,10 @@ def oss_row(e):
             f'<a class="btn bt-btn" href="{u}" target="_blank" rel="noopener" aria-label="View {n} on GitHub (opens in new tab)">GitHub</a></li>')
 CB_LABEL="Community bot (via awesome-grokbot), vetted by AgentScout"
 def cb_row(e):
-    n=esc(e["name"]); h=esc(e["handle"])
-    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["handle"]).lower())}"><img class="bt-ic logo" src="icons/{esc(e.get('logo') or 'community-bot.svg')}" alt="{n} logo" width="32" height="32" loading="lazy">'
-            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by <a href="https://x.com/{h}" target="_blank" rel="noopener">@{h}</a> · {CB_LABEL}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+    n=esc(e["name"]); h=(e.get("handle") or "").strip()
+    by=f'<a href="https://x.com/{esc(h)}" target="_blank" rel="noopener">@{esc(h)}</a> · ' if h else ""
+    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+h).lower())}"><img class="bt-ic logo" src="icons/{esc(e.get('logo') or 'community-bot.svg')}" alt="{n} logo" width="32" height="32" loading="lazy">'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by {by}{CB_LABEL}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Community</span>'
             f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
 UC_LABEL="Official x.ai use case"

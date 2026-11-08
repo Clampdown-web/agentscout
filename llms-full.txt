@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 2,366 AI agent tools across 40 categories, including 320 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
+> AgentScout is a curated, link-checked, read-only directory of 2,365 AI agent tools across 40 categories, including 320 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -35,13 +35,13 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 2,366
+- **Total Verified AI Agent Tools**: 2,365
 - **Total Categories**: 40
 - **Verified MCP Servers**: 320
 - **Bot Templates & Installable Agent Skills**: 190 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
-- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,138
-- **Free or Freemium Tools**: 1,784
-- **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,077 (105 offline / on-device, 972 self-hosted)
+- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,137
+- **Free or Freemium Tools**: 1,783
+- **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,076 (105 offline / on-device, 971 self-hosted)
 - **Catalog Last Link-Checked**: 2026-11-08 (America/Los_Angeles)
 
 ## Maker Submission & Launch Packages (`/submit.html` & `/sponsor.html`)
@@ -49,7 +49,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - **Free Community Listing ($0 forever)**: Standard review queue (3–5 days), permanent indexed `/tools/<slug>.html` page + `SoftwareApplication` schema, and listing in `llms.txt` & MCP server (`com.agentscouthq/directory`). Submit at https://agentscouthq.com/submit.html#free-form
 - **Fast-Track + 7-Day Launch Boost ($15 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on `@AgentScoutHQ`, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google). Checkout: https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e
 - **30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time — Most Popular)**: Everything in $15 upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in `/best/*-alternatives` and `/compare/` comparison tables, priority recommendation weight in `llms-full.txt` and MCP search (`com.agentscouthq/directory`), and a dedicated spotlight across both `@clampdown19` and `@AgentScoutHQ`. Checkout: https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00
-- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 1,668+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
+- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 1,670+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
 
 ## Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle (`/bot-store/`)
 
@@ -155,9 +155,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Framelink Figma MCP | Open source | Yes | the MIT License | Self-hosted | 16,176 | write code, connect tools via MCP | MCP server that gives Cursor and other coding agents Figma layout data so they can implement designs accurately in one shot. | https://agentscouthq.com/tools/framelink-figma-mcp.html | https://www.framelink.ai/ |
 | 15 | Apify MCP Server | Open source + cloud | Yes |  | Self-hosted | 15,289 | research the web, connect tools via MCP | Apify's MCP server giving agents access to thousands of scrapers for social media, search and maps. | https://agentscouthq.com/tools/apify-mcp-server.html | https://github.com/apify/apify-mcp-server |
 
-### coding (237 tools) — [https://agentscouthq.com/categories/coding.html](https://agentscouthq.com/categories/coding.html)
+### coding (236 tools) — [https://agentscouthq.com/categories/coding.html](https://agentscouthq.com/categories/coding.html)
 
-- **At a glance**: 237 link-checked tools (188 open-source, 214 free or freemium, 178 local or self-hosted).
+- **At a glance**: 236 link-checked tools (188 open-source, 214 free or freemium, 178 local or self-hosted).
 - **Top picks**: [opencode](https://agentscouthq.com/tools/opencode.html), [Claude Code](https://agentscouthq.com/tools/claude-code.html), [CC Switch](https://agentscouthq.com/tools/cc-switch.html), [Graphify](https://agentscouthq.com/tools/graphify.html), [OpenAI Codex CLI](https://agentscouthq.com/tools/openai-codex-cli.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -222,7 +222,7 @@ Each category section below summarizes the verified tool count, open-source coun
 | 12 | NanoClaw | Open source | Yes |  | Self-hosted | 31,096 | personal agents | Lightweight personal agent that runs in containers and connects to WhatsApp, Telegram and Slack. | https://agentscouthq.com/tools/nanoclaw.html | https://nanoclaw.dev/ |
 | 13 | agenticSeek | Open source | Yes |  | Offline | 27,640 | write code | Fully local autonomous agent that browses, codes and plans without paid APIs. | https://agentscouthq.com/tools/agenticseek.html | https://github.com/Fosowl/agenticSeek |
 | 14 | Screenpipe | Source-available + cloud | No |  | Offline | 22,271 | research the web | Records your screen and audio locally so AI agents can search and act on your computer history. | https://agentscouthq.com/tools/screenpipe.html | https://screenpipe.com/ |
-| 15 | Kortix Suna | Source-available + cloud | No |  |  | 20,570 | personal agents | Kortix, an open-source platform for building and running general-purpose AI agents. | https://agentscouthq.com/tools/kortix-suna.html | https://github.com/kortix-ai/suna |
+| 15 | Kortix Suna | Source-available + cloud | No |  |  | 20,570 | personal agents | Kortix, an open-source platform for building and running general-purpose AI agents. | https://agentscouthq.com/tools/kortix-suna.html | https://github.com/kortix-ai/CompanyOS |
 
 ### agent infra (107 tools) — [https://agentscouthq.com/categories/agent-infra.html](https://agentscouthq.com/categories/agent-infra.html)
 
@@ -387,7 +387,7 @@ Each category section below summarizes the verified tool count, open-source coun
 
 ### security & governance (62 tools) — [https://agentscouthq.com/categories/security-governance.html](https://agentscouthq.com/categories/security-governance.html)
 
-- **At a glance**: 62 link-checked tools (38 open-source, 49 free or freemium, 38 local or self-hosted).
+- **At a glance**: 62 link-checked tools (37 open-source, 48 free or freemium, 37 local or self-hosted).
 - **Top picks**: [Strix](https://agentscouthq.com/tools/strix.html), [PentAGI](https://agentscouthq.com/tools/pentagi.html), [Infisical](https://agentscouthq.com/tools/infisical.html), [SkillSpector](https://agentscouthq.com/tools/skillspector.html), [Failproof AI](https://agentscouthq.com/tools/failproof-ai.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -448,11 +448,11 @@ Each category section below summarizes the verified tool count, open-source coun
 | 8 | GoRaven | Open source | Yes |  | Self-hosted | 846 | write code, voice & phone calls | A self-hosted AI agent platform for teams where agents read files, run code, call APIs and work through tasks instead of just chatting. | https://agentscouthq.com/tools/goraven.html | https://goraven.dev/ |
 | 9 | Don't Be Michael | Free and open source (MIT). | Yes | MIT |  | 590 | business agents | A free, open-source AI office for small businesses on Mac and Windows: pick your type of business, get a ready team of AI agents for each department, and a manager agent hands out the work and flags what needs you. | https://agentscouthq.com/tools/don-t-be-michael.html | https://dontbemichael.com/ |
 | 10 | Bops | Free $0 (1 computer, 10 hours/month, $5 AI credit once), Pro $20/mo, Max $200/mo; source on GitHub under FSL-1.1-ALv2 | No |  |  | 516 | automate workflows, control a computer | Bops, from Orgo, is a Mac app for a team of AI bots that handle business ops such as inbox triage, CRM follow-ups, invoices and reports, each with its own cloud computer, email address, phone number and shared memory. | https://agentscouthq.com/tools/bops.html | https://bops.bot/ |
-| 11 | Sema4.ai | Enterprise | No |  |  | 141 | business agents | Enterprise AI agents platform, with open-source actions for connecting agents to systems. | https://agentscouthq.com/tools/sema4-ai.html | https://sema4.ai |
-| 12 | TulipFarm | Open source + cloud | Yes | AGPL-3.0 |  | 11 | automate workflows | Open-source workspace that puts a company's records, docs, agents and workflows in one place so agents work from the same information as the team. Ask in Slack or chat, a built-in assistant called Bud and saved agents do the work, and you choose which actions wait for a human OK. AGPL-3.0, with TulipFarm Cloud in public beta. | https://agentscouthq.com/tools/tulipfarm.html | https://tulipfarm.ai/ |
-| 13 | Accordio AI | Freemium | No |  |  |  | connect tools via MCP, monitor & evaluate agents | Adds time tracking, contract signing, invoicing and payments to Claude through a free MCP connector. | https://agentscouthq.com/tools/accordio-ai.html | https://accordio.ai/ |
-| 14 | Agentforce | Free to start; Flex Credits $500 per 100k; $2 per conversation | No |  |  |  | sales & support | Salesforce's platform for building and customizing autonomous AI agents that support employees and customers around the clock inside the Salesforce ecosystem. | https://agentscouthq.com/tools/agentforce.html | https://www.salesforce.com/agentforce/ |
-| 15 | Agently | Paid | No |  |  |  | business agents | AI chief of staff that learns how your company works from connected tools and then handles routine work. | https://agentscouthq.com/tools/agently.html | https://agently.dev/ |
+| 11 | TulipFarm | Open source + cloud | Yes | AGPL-3.0 |  | 11 | automate workflows | Open-source workspace that puts a company's records, docs, agents and workflows in one place so agents work from the same information as the team. Ask in Slack or chat, a built-in assistant called Bud and saved agents do the work, and you choose which actions wait for a human OK. AGPL-3.0, with TulipFarm Cloud in public beta. | https://agentscouthq.com/tools/tulipfarm.html | https://tulipfarm.ai/ |
+| 12 | Accordio AI | Freemium | No |  |  |  | connect tools via MCP, monitor & evaluate agents | Adds time tracking, contract signing, invoicing and payments to Claude through a free MCP connector. | https://agentscouthq.com/tools/accordio-ai.html | https://accordio.ai/ |
+| 13 | Agentforce | Free to start; Flex Credits $500 per 100k; $2 per conversation | No |  |  |  | sales & support | Salesforce's platform for building and customizing autonomous AI agents that support employees and customers around the clock inside the Salesforce ecosystem. | https://agentscouthq.com/tools/agentforce.html | https://www.salesforce.com/agentforce/ |
+| 14 | Agently | Paid | No |  |  |  | business agents | AI chief of staff that learns how your company works from connected tools and then handles routine work. | https://agentscouthq.com/tools/agently.html | https://agently.dev/ |
+| 15 | aiFetchly | See site | No |  | Offline |  | control a computer, research the web | aiFetchly is a local-first desktop AI agent workspace for business automation, covering research, document processing, customer communication, scheduled workflows, plugins and a business knowledge base. | https://agentscouthq.com/tools/aifetchly.html | https://www.aifetchly.com/ |
 
 ### evals & observability (57 tools) — [https://agentscouthq.com/categories/evals-observability.html](https://agentscouthq.com/categories/evals-observability.html)
 
@@ -699,7 +699,7 @@ Each category section below summarizes the verified tool count, open-source coun
 | 6 | microsandbox | Open source | Yes |  | Offline | 8,988 | write code, run code safely | Local-first microVM runtime for running untrusted agent code safely. | https://agentscouthq.com/tools/microsandbox.html | https://docs.microsandbox.dev/getting-started/introduction |
 | 7 | smolvm | Open source | Yes |  | Offline | 7,036 | run code safely | Portable, branchable virtual machine for running agents safely on your computer. | https://agentscouthq.com/tools/smolvm.html | https://smolmachines.com/ |
 | 8 | AIO Sandbox | Free and open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 6,305 | write code, automate the browser | All-in-one Docker sandbox for AI agents that combines a browser, shell, files, MCP, VS Code Server and Jupyter in one container. | https://agentscouthq.com/tools/aio-sandbox.html | https://sandbox.agent-infra.com/ |
-| 9 | forkd | Open source | Yes | the Apache License 2.0 | Self-hosted | 5,670 | write code, run code safely | MicroVM sandbox runtime for AI agent fan-out that forks KVM-isolated child VMs from a warm snapshot in milliseconds. | https://agentscouthq.com/tools/forkd.html | https://github.com/deeplethe/forkd |
+| 9 | forkd | Open source | Yes | the Apache License 2.0 | Self-hosted | 5,670 | write code, run code safely | MicroVM sandbox runtime for AI agent fan-out that forks KVM-isolated child VMs from a warm snapshot in milliseconds. | https://agentscouthq.com/tools/forkd.html | https://github.com/deeplethe/sandstorm |
 | 10 | nono | Open source | Yes |  | Self-hosted | 4,894 | write code, run code safely | Zero-trust sandboxing for agent runtimes. | https://agentscouthq.com/tools/nono.html | https://nono.sh/ |
 | 11 | agentOS | Free and open source; managed hosting through Rivet Cloud. | Yes |  | Self-hosted | 4,860 | run code safely, write code | A lightweight operating system for agents from Rivet that runs coding agents and their tools inside fast WebAssembly sandboxes with a file system, processes and networking, so you can spin up thousands cheaply. | https://agentscouthq.com/tools/agentos.html | https://rivet.dev/agentos/ |
 | 12 | Agent Sandbox (Kubernetes) | Open source | Yes |  | Self-hosted | 4,551 | run code safely, automate the browser | A Kubernetes project that adds a Sandbox resource for running isolated, stateful agent workloads such as code execution and browsers, with warm pools and fast startup on your own cluster. | https://agentscouthq.com/tools/agent-sandbox-kubernetes.html | https://agent-sandbox.sigs.k8s.io/ |
