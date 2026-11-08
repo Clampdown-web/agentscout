@@ -16,7 +16,7 @@ for t in TOPICS:
     items=r.json().get("items",[])
     for i in items:
       home=i.get("homepage") or ""
-      if _takedown_blocked(name=i.get("name") or "", url=home, website=home): continue
+      if _takedown_blocked(name=i.get("name") or "", url=home, website=home, repo=i.get("full_name") or ""): continue
       seen.setdefault(i["full_name"].lower(),{k:i.get(k) for k in ["full_name","name","description","homepage","stargazers_count","pushed_at","topics","language","license"]}|{"owner":i["owner"]["login"],"owner_type":i["owner"]["type"],"src":"github:"+t})
     print(t,page,len(items),len(seen),flush=True); time.sleep(7)
     if len(items)<100: break

@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 2,366 AI agent tools across 40 categories, including 320 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
+> AgentScout is a curated, link-checked, read-only directory of 2,365 AI agent tools across 40 categories, including 320 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -35,13 +35,13 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 2,366
+- **Total Verified AI Agent Tools**: 2,365
 - **Total Categories**: 40
 - **Verified MCP Servers**: 320
 - **Bot Templates & Installable Agent Skills**: 190 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
-- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,138
-- **Free or Freemium Tools**: 1,784
-- **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,077 (105 offline / on-device, 972 self-hosted)
+- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,137
+- **Free or Freemium Tools**: 1,783
+- **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,076 (105 offline / on-device, 971 self-hosted)
 - **Catalog Last Link-Checked**: 2026-11-08 (America/Los_Angeles)
 
 ## Maker Submission & Launch Packages (`/submit.html` & `/sponsor.html`)
@@ -49,7 +49,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - **Free Community Listing ($0 forever)**: Standard review queue (3–5 days), permanent indexed `/tools/<slug>.html` page + `SoftwareApplication` schema, and listing in `llms.txt` & MCP server (`com.agentscouthq/directory`). Submit at https://agentscouthq.com/submit.html#free-form
 - **Fast-Track + 7-Day Launch Boost ($15 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on `@AgentScoutHQ`, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google). Checkout: https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e
 - **30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time — Most Popular)**: Everything in $15 upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in `/best/*-alternatives` and `/compare/` comparison tables, priority recommendation weight in `llms-full.txt` and MCP search (`com.agentscouthq/directory`), and a dedicated spotlight across both `@clampdown19` and `@AgentScoutHQ`. Checkout: https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00
-- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 1,668+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
+- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 1,666+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
 
 ## Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle (`/bot-store/`)
 
@@ -316,9 +316,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | ChatCut | Freemium | No |  |  | 1,017 | edit video, subtitles & transcripts | ChatCut is an AI video editor for agents: its MCP server and plugins let Codex, ChatGPT, Claude Code, Cursor and others edit your footage, add captions, remove silences and filler words, create motion graphics, generate voiceovers and music and export an editable timeline. | https://agentscouthq.com/tools/chatcut.html | https://chatcut.io/ |
 | 15 | explainroo | Free and open source (MIT); runs locally with no API key. | Yes | MIT | Offline | 690 | video generation | Lets your AI coding agent make narrated explainer videos: it writes the script, builds the visuals and renders the voice and video on your own computer, with no API key needed. Free and open source. | https://agentscouthq.com/tools/explainroo.html | https://www.explainroo.com/ |
 
-### memory & RAG (72 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
+### memory & RAG (71 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
 
-- **At a glance**: 72 link-checked tools (63 open-source, 67 free or freemium, 63 local or self-hosted).
+- **At a glance**: 71 link-checked tools (62 open-source, 66 free or freemium, 62 local or self-hosted).
 - **Top picks**: [MarkItDown](https://agentscouthq.com/tools/markitdown.html), [Claude-Mem](https://agentscouthq.com/tools/claude-mem.html), [RAGFlow](https://agentscouthq.com/tools/ragflow.html), [Headroom](https://agentscouthq.com/tools/headroom.html), [Mem0](https://agentscouthq.com/tools/mem0.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -329,15 +329,15 @@ Each category section below summarizes the verified tool count, open-source coun
 | 4 | Headroom | Open source | Yes | the Apache License 2.0 | Self-hosted | 78,329 | write code, connect tools via MCP | Library, proxy and MCP server that compresses tool outputs, logs, files and RAG chunks locally before they reach the LLM, cutting tokens for coding agents. | https://agentscouthq.com/tools/headroom.html | https://docs.headroomlabs.ai/docs |
 | 5 | Mem0 | Open source SDK (Apache-2.0); managed platform: Hobby free, Starter $19/mo, Pro $249/mo, Enterprise custom | Yes | Apache-2.0 | Self-hosted | 68,097 | give agents memory, build an agent | Mem0 is an open-source memory layer for AI agents that extracts facts from conversations in a single add-only pass, links entities across memories and retrieves them in later sessions, with an Apache-2.0 SDK and a managed platform. | https://agentscouthq.com/tools/mem0.html | https://mem0.ai |
 | 6 | MemPalace | Open source | Yes | the MIT License | Offline | 60,133 | give agents memory | Local-first AI memory system that stores conversations verbatim with a pluggable backend and serves recall to agents without API calls. | https://agentscouthq.com/tools/mempalace.html | https://github.com/MemPalace/mempalace |
-| 7 | Hindsight | Open-source (MIT); see site for any hosted plans | Yes | MIT | Self-hosted | 59,367 | give agents memory | Hindsight by Vectorize is open-source agent memory that stores, retrieves and reasons over long-term context so AI agents keep durable knowledge across sessions without rebuilding RAG each time. | https://agentscouthq.com/tools/hindsight.html | https://hindsight.vectorize.io/ |
-| 8 | JeecgBoot | Open source + cloud | Yes |  | Self-hosted | 48,343 | connect tools via MCP, give agents memory | 【 v2.0， 】 AI ， 。 AI Skills 、 、 、 。 AI ：AI 、 、 、MCP ， 。 AI 「Skills → → → - AI 」 ， Java 90% ， 。 | https://agentscouthq.com/tools/jeecgboot.html | https://www.jeecg.com/ |
-| 9 | OpenViking | Open source | Yes | the GNU Affero General Public License v3.0 | Self-hosted | 41,191 | give agents memory | Context database for AI agents that keeps memory, knowledge and skills in one inspectable virtual filesystem agents can navigate. | https://agentscouthq.com/tools/openviking.html | https://openviking.ai/ |
-| 10 | PageIndex | Open source + cloud | Yes |  | Self-hosted | 39,909 | give agents memory | Document index for reasoning-based, vectorless RAG that lets agents navigate long documents like a table of contents. | https://agentscouthq.com/tools/pageindex.html | https://pageindex.ai/ |
-| 11 | Cognee | Open source + cloud | Yes |  | Self-hosted | 32,918 | give agents memory | Open-source memory platform that builds knowledge graphs so agents keep long-term memory. | https://agentscouthq.com/tools/cognee.html | https://www.cognee.ai/ |
-| 12 | Graphiti | Open source | Yes |  | Self-hosted | 32,365 | give agents memory | Builds real-time, temporal knowledge graphs that serve as memory for AI agents. | https://agentscouthq.com/tools/graphiti.html | https://help.getzep.com/graphiti/getting-started/welcome |
-| 13 | Supermemory | Open source + cloud | Yes | the MIT License | Offline | 31,466 | connect tools via MCP, give agents memory | Memory and context engine for agents with an API, app and MCP server, which can also run fully locally. | https://agentscouthq.com/tools/supermemory.html | https://supermemory.ai/ |
-| 14 | TencentDB-Agent-Memory | Open source | Yes |  | Self-hosted | 30,239 | write code, give agents memory | Team-level memory hub that turns conversations, docs and code into shared memory for agents. | https://agentscouthq.com/tools/tencentdb-agent-memory.html | https://tencentcloud.github.io/TencentDB-Agent-Memory/ |
-| 15 | AgentMemory | Open source | Yes |  | Self-hosted | 30,024 | write code, give agents memory | Persistent memory layer for AI coding agents. | https://agentscouthq.com/tools/agentmemory.html | https://www.agent-memory.dev/ |
+| 7 | JeecgBoot | Open source + cloud | Yes |  | Self-hosted | 48,343 | connect tools via MCP, give agents memory | 【 v2.0， 】 AI ， 。 AI Skills 、 、 、 。 AI ：AI 、 、 、MCP ， 。 AI 「Skills → → → - AI 」 ， Java 90% ， 。 | https://agentscouthq.com/tools/jeecgboot.html | https://www.jeecg.com/ |
+| 8 | OpenViking | Open source | Yes | the GNU Affero General Public License v3.0 | Self-hosted | 41,191 | give agents memory | Context database for AI agents that keeps memory, knowledge and skills in one inspectable virtual filesystem agents can navigate. | https://agentscouthq.com/tools/openviking.html | https://openviking.ai/ |
+| 9 | PageIndex | Open source + cloud | Yes |  | Self-hosted | 39,909 | give agents memory | Document index for reasoning-based, vectorless RAG that lets agents navigate long documents like a table of contents. | https://agentscouthq.com/tools/pageindex.html | https://pageindex.ai/ |
+| 10 | Cognee | Open source + cloud | Yes |  | Self-hosted | 32,918 | give agents memory | Open-source memory platform that builds knowledge graphs so agents keep long-term memory. | https://agentscouthq.com/tools/cognee.html | https://www.cognee.ai/ |
+| 11 | Graphiti | Open source | Yes |  | Self-hosted | 32,365 | give agents memory | Builds real-time, temporal knowledge graphs that serve as memory for AI agents. | https://agentscouthq.com/tools/graphiti.html | https://help.getzep.com/graphiti/getting-started/welcome |
+| 12 | Supermemory | Open source + cloud | Yes | the MIT License | Offline | 31,466 | connect tools via MCP, give agents memory | Memory and context engine for agents with an API, app and MCP server, which can also run fully locally. | https://agentscouthq.com/tools/supermemory.html | https://supermemory.ai/ |
+| 13 | TencentDB-Agent-Memory | Open source | Yes |  | Self-hosted | 30,239 | write code, give agents memory | Team-level memory hub that turns conversations, docs and code into shared memory for agents. | https://agentscouthq.com/tools/tencentdb-agent-memory.html | https://tencentcloud.github.io/TencentDB-Agent-Memory/ |
+| 14 | AgentMemory | Open source | Yes |  | Self-hosted | 30,024 | write code, give agents memory | Persistent memory layer for AI coding agents. | https://agentscouthq.com/tools/agentmemory.html | https://www.agent-memory.dev/ |
+| 15 | Chroma | Open source + cloud | Yes |  | Self-hosted | 29,609 | research the web, give agents memory | Open-source search and vector database widely used for agent memory and RAG. | https://agentscouthq.com/tools/chroma.html | https://www.trychroma.com/ |
 
 ### sales & marketing (70 tools) — [https://agentscouthq.com/categories/sales-marketing.html](https://agentscouthq.com/categories/sales-marketing.html)
 

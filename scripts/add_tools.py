@@ -155,7 +155,7 @@ if __name__=="__main__":
   for r in res:
     if r["err"]: skipped.setdefault(r["err"].split()[0],[]).append(r.get("repo") or r.get("name")); continue
     e=r["e"]; ks=keys([e])
-    if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website","")):
+    if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=e.get("slug",""), repo=e.get("repo") or e.get("github") or ""):
       skipped.setdefault("blocklist",[]).append(e["name"]); continue
     if ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]: skipped.setdefault("duplicate",[]).append(e["name"]); continue
     for k in K: K[k]|=ks[k]

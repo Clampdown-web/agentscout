@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-08T15:41:13Z",
- "updated": "2026-11-08T15:41:13Z",
+ "generated": "2026-11-08T18:05:00Z",
+ "updated": "2026-11-08T18:05:00Z",
  "last_checked": "2026-11-08",
- "count": 2366,
- "total_tools": 2366,
+ "count": 2365,
+ "total_tools": 2365,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -95142,48 +95142,6 @@
    "page": "https://agentscouthq.com/tools/arsenal.html"
   },
   {
-   "name": "Hindsight",
-   "slug": "hindsight",
-   "url": "https://hindsight.vectorize.io/",
-   "website": "https://hindsight.vectorize.io/",
-   "github": "https://github.com/vectorize-io/hindsight",
-   "category": "memory & RAG",
-   "description": "Hindsight by Vectorize is open-source agent memory that stores, retrieves and reasons over long-term context so AI agents keep durable knowledge across sessions without rebuilding RAG each time.",
-   "key_features": [
-    "Open-source (MIT); see site for any hosted plans",
-    "Mature",
-    "59367 GitHub stars",
-    "Give agents memory"
-   ],
-   "pricing": "Open-source (MIT); see site for any hosted plans",
-   "price_tag": "free",
-   "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
-   ],
-   "date_added": "2026-11-06",
-   "added": "2026-11-06",
-   "source": "GitHub",
-   "goals": [
-    "automation"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": true,
-   "seed": false,
-   "new_this_week": true,
-   "repo": "vectorize-io/hindsight",
-   "github_stars": 59367,
-   "open_source": true,
-   "license": "MIT",
-   "tags": [
-    "give agents memory"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/hindsight.png",
-   "page": "https://agentscouthq.com/tools/hindsight.html"
-  },
-  {
    "name": "Marketing Skills",
    "slug": "marketing-skills",
    "url": "https://marketing-skills.com/",
@@ -99879,7 +99837,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tracekit.png",
-   "page": "https://agentscouthq.com/tools/tracekit.html"
+   "page": "https://agentscouthq.com/tools/tracekit.html",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=tracekit"
+   }
   },
   {
    "name": "Babysitter",

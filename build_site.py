@@ -485,5 +485,7 @@ def _quality_finish():
             s,
         )
         open(f, "w", encoding="utf-8").write(s)
+    import build_seo_new as _nav_final
+    _nav_final.unify_all_nav_and_footer()
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

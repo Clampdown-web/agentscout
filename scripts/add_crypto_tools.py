@@ -94,7 +94,7 @@ def main():
             if x.get("github_stars") is not None: e["github_stars"]=x["github_stars"]
         if x.get("tags"): e["tags"]=x["tags"]
         ks=keys([e])
-        if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=slug):
+        if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=slug, repo=e.get("repo") or e.get("github") or ""):
             skipped.setdefault("blocklist",[]).append(name); continue
         if ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]: skipped.setdefault("duplicate",[]).append(name); continue
         im=load_logo(x,slug) or (fetch_logo(site,gh) if opt.get("--fetch-missing-logos") else None)
