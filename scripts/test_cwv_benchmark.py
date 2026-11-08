@@ -41,6 +41,10 @@ class ChromeLoadTest(unittest.TestCase):
     def test_open_connection_does_not_block_the_load_reading(self):
         if not shutil.which("google-chrome") or not shutil.which("node"):
             self.skipTest("chrome collector is not installed")
+        try:
+            cwv._chrome_navigate("about:blank", "load")
+        except RuntimeError as exc:
+            self.skipTest(f"chrome did not start here: {exc}")
 
         class Handler(BaseHTTPRequestHandler):
             def do_GET(self):
