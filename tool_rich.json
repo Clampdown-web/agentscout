@@ -72,22 +72,33 @@
     "updated": "2026-11-07",
     "sources": [
       "https://github.com/outcrawlai/scout",
+      "https://github.com/outcrawlai/scout/blob/main/README.md",
       "https://outcrawl.ai/"
     ],
     "long": [
-      "Scout is Outcrawl's open-source browser agent. The AgentScout listing says it opens a real browser and clicks, types and reads pages to finish a task you describe. The listing records 947 GitHub stars on outcrawlai/scout as of 2026-10-30.",
-      "Outcrawl's marketing site describes a separate hosted platform: scrape, crawl, search, cloud browsers and task agents, with a free monthly credit allowance and no card. This listing does not treat that platform's prices or its published browser benchmark as facts about the open-source Scout package. The directory pricing label stays Open source + cloud."
+      "Scout is Outcrawl's open-source browser agent. The README says you describe a task in plain words and Scout reads the page, clicks, types and scrolls, then returns an answer or says what is missing. The listing records 947 GitHub stars on outcrawlai/scout as of 2026-10-30.",
+      "The README quick start installs the npm package @outcrawl/scout (Node 22 or later). Scout has no built-in model: the required hands job has to point at a chat-completions endpoint you choose. The sample sets browser to 'outcrawl', which is Outcrawl's cloud browser and needs an Outcrawl API key. The README says every account gets 1,000 credits a month, no card. A browser on your own machine is a different setting, browser: { launch: {} }, after you install Playwright's Chromium, and the README says replay links stay empty there. The repository is Apache-2.0, except packages/agenthands, which stays MIT. This listing still does not treat Outcrawl's published cloud-browser benchmark, or the hosted platform's other prices, as facts about the open-source package. The directory pricing label stays Open source + cloud."
     ],
-    "who": "People who want an open-source browser agent they can inspect, from the maker of Outcrawl.",
+    "who": "People who will bring their own model and want the open-source Scout package, either on Outcrawl's cloud browser or on a Chromium they install.",
     "features": [
-      "Opens a real browser and clicks, types and reads pages",
-      "Open-source repository outcrawlai/scout",
+      "npm package @outcrawl/scout; the README requires Node 22 or later",
+      "No built-in model. The hands job needs a chat-completions endpoint",
+      "Quick start uses Outcrawl's cloud browser. A local Chromium is a separate browser setting",
+      "Apache-2.0, except packages/agenthands, which stays MIT",
       "947 GitHub stars on the AgentScout listing as of 2026-10-30"
+    ],
+    "setup": [
+      "Install with npm i @outcrawl/scout. The README requires Node 22 or later. The cloud browser does not need a local browser install.",
+      "Point the required hands job at your model. Set SCOUT_BASE_URL, SCOUT_API_KEY and SCOUT_HANDS_MODEL. The README says any chat-completions API works, including a model on your own computer. brain, eyes and extract are optional jobs.",
+      "The sample task uses Outcrawl's cloud browser, written as browser: 'outcrawl', plus an Outcrawl API key. The README says every account gets 1,000 credits a month, no card.",
+      "For a browser on your machine, the README says to run npm i playwright-core && npx playwright install chromium and set browser to { launch: {} }. It says replayUrl stays empty on that browser."
     ],
     "facts": {
       "repo": "https://github.com/outcrawlai/scout",
       "checked": "2026-10-30",
-      "stars": 947
+      "stars": 947,
+      "license": "Apache-2.0, except packages/agenthands which stays MIT",
+      "osi": true
     }
   },
   "agentcenter": {
