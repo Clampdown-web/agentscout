@@ -59,3 +59,5 @@ jobs:
         run: |
           python3 scripts/test_publish_gate.py
           python3 scripts/test_morning_audit.py
+          python3 scripts/test_submit_widget.py
+          python3 scripts/test_cwv_benchmark.py

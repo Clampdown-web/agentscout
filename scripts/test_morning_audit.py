@@ -86,6 +86,7 @@ def _fixture(tools: int = 2, mcp: int = 1) -> Path:
     key = "abcdef0123456789abcdef0123456789"
     _write(tmp, f"{key}.txt", key)
     _write(tmp, "data/cwv-seo-benchmark.json", json.dumps(_benchmark(tools)))
+    _write(tmp, "data/cwv-candidate-local.json", json.dumps(_benchmark(tools)))
     _write(tmp, "data/seo-vitals-latest.json", json.dumps(_vitals()))
     _pack_surface(tmp)
     return tmp
@@ -93,7 +94,7 @@ def _fixture(tools: int = 2, mcp: int = 1) -> Path:
 
 def _benchmark(tools: int) -> dict:
     pages = []
-    for i, path in enumerate(("/", "/bot-store/", "/videos/", "/bot-templates/", "/mcp/", "/tools/noteboxd.html")):
+    for i, path in enumerate(("/", "/bot-store/", "/videos/", "/bot-templates/", "/mcp/", "/tools/noteboxd.html", "/submit.html")):
         pages.append({
             "url": f"http://127.0.0.1:8766{path}",
             "lcp_ms": 100 + i,
@@ -110,7 +111,7 @@ def _benchmark(tools: int) -> dict:
         "thresholds": {"lcp_ms": 2500, "cls": 0.1, "ttfb_ms": 800},
         "scope": {"artifact_date": "2026-11-08", "artifact_tools": tools},
         "targets": [page["url"] for page in pages],
-        "not_measured": [{"url": "http://127.0.0.1:8766/submit.html", "reason": "networkidle timeout"}],
+        "not_measured": [],
         "pages": pages,
     }
 
@@ -293,6 +294,16 @@ class EntrypointTest(unittest.TestCase):
         self.assertTrue(any("Throttled Lighthouse" in item for item in problems), problems)
         fresh_problems, fresh_note = morning_audit.measurement_evidence(_benchmark(2), "cwv", "2026-11-08", 2)
         self.assertEqual(fresh_problems, [], fresh_problems)
+        stalled = _benchmark(2)
+        stalled["not_measured"] = [{"url": "http://127.0.0.1:8766/submit.html", "reason": "networkidle timeout"}]
+        stalled_problems, _stalled_note = morning_audit.measurement_evidence(stalled, "cwv", "2026-11-08", 2)
+        self.assertTrue(any("networkidle" in item for item in stalled_problems), stalled_problems)
+        omitted = _benchmark(2)
+        omitted["pages"] = [page for page in omitted["pages"] if not page["url"].endswith("/submit.html")]
+        omitted["targets"] = [url for url in omitted["targets"] if not url.endswith("/submit.html")]
+        omitted["not_measured"] = []
+        omitted_problems, _omitted_note = morning_audit.measurement_evidence(omitted, "cwv", "2026-11-08", 2)
+        self.assertTrue(any("/submit.html" in item for item in omitted_problems), omitted_problems)
         self.assertIn("not field CWV", fresh_note)
         seo69 = _vitals()
         seo69["pagespeed_and_vitals"][seo69["targets"][0]]["mobile"]["scores"]["seo"] = 69
@@ -300,10 +311,10 @@ class EntrypointTest(unittest.TestCase):
         root = _fixture()
         (root / "data" / "cwv-seo-benchmark.json").unlink()
         result = morning_audit.live(root, lambda *args: (500, {}, ""))
-        self.assertTrue(any("cwv-seo-benchmark.json" in item for item in result.unverified), result.unverified)
+        self.assertTrue(any("cwv-seo-benchmark.json" in item and "missing" in item for item in result.problems), result.problems)
+        self.assertFalse(any("cwv-seo-benchmark.json" in item for item in result.unverified), result.unverified)
         pre = morning_audit.predeploy(root)
-        self.assertTrue(any(item.startswith("postdeploy-vitals:") for item in pre.deferred), pre.deferred)
-        self.assertTrue(all("cwv-seo-benchmark" not in item for item in pre.problems))
+        self.assertTrue(any("cwv-seo-benchmark.json" in item and "missing" in item for item in pre.problems), pre.problems)
 
     def test_nav_mismatch_fails_the_predeploy_path(self):
         root = _fixture()
