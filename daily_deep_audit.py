@@ -32,7 +32,12 @@ STRIPE = (
 PRICES = ("$35", "$119", "$199", "$299", "$349")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    args = list(sys.argv[1:] if argv is None else argv)
+    if "--predeploy" in args or "--live" in args:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import morning_audit
+        return morning_audit.main(args)
     bad: list[str] = []
     follower = _follower_row_problems()
     bad.extend(follower)

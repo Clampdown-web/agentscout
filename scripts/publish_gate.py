@@ -11,6 +11,8 @@ import re
 from pathlib import Path
 
 TURNSTILE_REJECTION = "Bot check failed."
+CATEGORY_REJECTION = "Please pick a category."
+PRICING_REJECTION = "Please pick a pricing option."
 PRODUCT_GROUPS = ("packages", "addons", "bot_templates", "agent_packs")
 ANIMATION_PAGES = ("index.html", "bot-store/index.html", "videos/index.html")
 
@@ -48,6 +50,19 @@ def category_names_problems(option_values: list[str], catalog: list[str]) -> lis
 def category_accepted(name: str, catalog: list[str]) -> bool:
     """Local allowlist check. It does not contact Turnstile or /submit."""
     return name in catalog
+
+
+def inner_submit_decision(category: str, pricing: str, catalog: list[str], pricing_options: list[str]) -> str | None:
+    """Inner /submit validation after Turnstile. None means the body would be stored.
+
+    The audit must call this with an invalid pricing value. A None result is not a
+    license to POST, and a Turnstile rejection is not this function's result.
+    """
+    if category not in catalog:
+        return CATEGORY_REJECTION
+    if pricing not in pricing_options:
+        return PRICING_REJECTION
+    return None
 
 
 def product_rows(document: dict) -> list[dict]:

@@ -2,10 +2,18 @@
 """Confirm the five flagship bot cards, Stripe links, neon colors, and wordmark stay intact."""
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def package_root() -> Path:
+    override = os.environ.get("AGENTSCOUT_ROOT")
+    if override:
+        return Path(override).resolve()
+    return ROOT
 LINKS = (
     "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
     "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
@@ -17,10 +25,11 @@ PRICES = ("$39", "$59", "$69", "$149")
 PAGES = ("bot-store/index.html", "bot-templates/index.html")
 
 
-def main() -> int:
+def problems(root: Path | None = None) -> list[str]:
+    root = root or package_root()
     bad = []
     for rel in PAGES:
-        text = (ROOT / rel).read_text(encoding="utf-8")
+        text = (root / rel).read_text(encoding="utf-8")
         for link in LINKS:
             if text.count(link) < 1:
                 bad.append(f"{rel} missing {link}")
@@ -37,12 +46,17 @@ def main() -> int:
             bad.append(f"{rel} missing AI Agent Packs section")
         if text.count('data-pack="') < 25:
             bad.append(f"{rel} has fewer than 25 agent cards")
-    store = (ROOT / "bot-store/index.html").read_text(encoding="utf-8")
+    store = (root / "bot-store/index.html").read_text(encoding="utf-8")
     for klass in ("neon-lime", "neon-gold", "neon-orange", "neon-red"):
         if klass not in store:
             bad.append(f"bot-store missing {klass}")
     if "#10b981" not in store:
         bad.append("bot-store missing mint bundle color")
+    return bad
+
+
+def main() -> int:
+    bad = problems()
     print(f"4-tier CTAs: {len(bad)} problems")
     for line in bad:
         print("FAIL", line)

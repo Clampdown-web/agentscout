@@ -125,12 +125,44 @@ class PackagesTest(unittest.TestCase):
     def test_a_non_200_fails_closed(self):
         self.assertEqual(publish_gate.list_packages_problems(500, {"products": []}), ["list_packages HTTP 500"])
 
+    def test_duplicate_id_and_total_mismatch_fail(self):
+        row = {"id": "same", "name": "One", "price_usd": 0}
+        duplicate = {"total_products": 2, "products": [row, dict(row)]}
+        problems = publish_gate.product_catalog_problems(duplicate)
+        self.assertIn("duplicate product id same", problems)
+        mismatch = {"total_products": 9, "products": [row]}
+        self.assertIn("total_products is 9, product rows are 1", publish_gate.product_catalog_problems(mismatch))
+
+    def test_invalid_product_json_fails(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "api").mkdir()
+            (root / "cloudflare-mcp-worker").mkdir()
+            (root / "api" / "products.json").write_text("{", encoding="utf-8")
+            (root / "cloudflare-mcp-worker" / "products_snapshot.json").write_text("{", encoding="utf-8")
+            problems = publish_gate.product_snapshot_problems(root)
+            self.assertTrue(any("not valid JSON" in item for item in problems))
+
+    def test_inner_submit_accepts_a_known_category_without_storing_it(self):
+        catalog = ["coding", "other"]
+        pricing = ["Free", "Paid"]
+        self.assertEqual(
+            publish_gate.inner_submit_decision("coding", "__audit_invalid__", catalog, pricing),
+            publish_gate.PRICING_REJECTION,
+        )
+        self.assertEqual(
+            publish_gate.inner_submit_decision("nope", "__audit_invalid__", catalog, pricing),
+            publish_gate.CATEGORY_REJECTION,
+        )
+        self.assertIsNone(publish_gate.inner_submit_decision("coding", "Free", catalog, pricing))
+
 
 class AnimationTest(unittest.TestCase):
     def test_the_morning_live_token_is_not_a_defect_in_the_newer_artifact(self):
         local = publish_gate.animation_token(PREPARED_STATE)
         self.assertEqual(local, "20261108-2366")
-        self.assertEqual("?v=20261108-2325", "?v=20261108-2325")
+        self.assertNotEqual(local, "20261108-2325")
         defect = publish_gate.animation_live_token_is_artifact_defect(PREPARED_STATE, 2325, pages_contain_live_token=False)
         self.assertIs(defect, False)
         pages = {name: f'<source src="assets/animations/clip.mp4?v={local}">' for name in ("index.html", "bot-store/index.html", "videos/index.html")}
