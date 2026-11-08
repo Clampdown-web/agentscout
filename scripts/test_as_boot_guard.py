@@ -62,14 +62,19 @@ class AsBootGuardTests(unittest.TestCase):
         pages = [
             ROOT / "data" / "detail.tpl",
             ROOT / "tools" / "magentic-ui.html",
+            ROOT / "tools" / "scout-outcrawl.html",
+            ROOT / "tools" / "cloudcli.html",
+            ROOT / "tools" / "antinode-clear.html",
+            ROOT / "tools" / "luma-dream-machine.html",
+            ROOT / "categories" / "agent-infra.html",
             ROOT / "tools" / "cursor.html",
             ROOT / "tools" / "koog.html",
-            ROOT / "categories" / "agent-infra.html",
         ]
         for path in pages:
             text = path.read_text(encoding="utf-8")
             self.assertNotIn(as_boot.OLD, text, path.name)
             self.assertIn(as_boot.NEW, text, path.name)
+            self.assertNotIn("window.AS", as_boot.NEW)
             script = as_boot.NEW[len("<script>"):-len("</script>")]
             out = subprocess.run(
                 ["node", "-e", NODE, script],
@@ -98,6 +103,55 @@ try {
         )
         self.assertEqual(out.returncode, 0, out.stderr)
         self.assertIn("ReferenceError", out.stdout)
+
+    def test_an_empty_window_as_does_not_count_as_loaded(self):
+        """app.js binds lexical AS. window.AS is a later empty object."""
+        script = as_boot.NEW[len("<script>"):-len("</script>")]
+        node = r"""
+const vm = require("vm");
+const boot = process.argv[1];
+const calls = [];
+const el = () => ({
+  dataset: { actions: "x", save: "x", vote: "x" },
+  parentNode: { querySelector() { return {}; } },
+  classList: { toggle() {} },
+  setAttribute() {},
+  querySelector() { return { textContent: "" }; },
+});
+const document = { querySelectorAll() { return { forEach(fn) { fn(el()); } }; } };
+const windowAS = { saveBtn() { calls.push("window"); return ""; } };
+vm.runInContext(boot, vm.createContext({ document, window: { AS: windowAS } }));
+if (calls.length) process.exit(2);
+const AS = {
+  saveBtn() { return ""; }, voteBtn() { return ""; },
+  saved() { return false; }, voted() { return false; },
+  bind() { calls.push("bind"); }, savedCount() { calls.push("count"); return 0; },
+};
+vm.runInContext(boot, vm.createContext({ document, AS, window: { AS: {} } }));
+if (!calls.includes("bind") || !calls.includes("count") || calls.includes("window")) process.exit(3);
+console.log("lexical");
+"""
+        out = subprocess.run(
+            ["node", "-e", node, script],
+            check=False, capture_output=True, text=True,
+        )
+        self.assertEqual(out.returncode, 0, out.stderr or out.stdout)
+        self.assertIn("lexical", out.stdout)
+
+    def test_priority_listing_text_stays_with_the_guard(self):
+        checks = {
+            "tools/scout-outcrawl.html": "npm i @outcrawl/scout",
+            "tools/cloudcli.html": "€7/month",
+            "tools/antinode-clear.html": "formerly Supertone Clear",
+            "tools/luma-dream-machine.html": "Plus $30/mo",
+            "tools/magentic-ui.html": "MagenticLite is the next generation of Magentic-UI",
+            "categories/agent-infra.html": 'id="choose"',
+        }
+        for rel, marker in checks.items():
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn(marker, text, rel)
+            self.assertIn(as_boot.NEW, text, rel)
+            self.assertNotIn('content="noindex', text, rel)
 
     def test_guard_is_idempotent_and_the_next_build_applies_it(self):
         self.assertEqual(as_boot.guard(as_boot.OLD), as_boot.NEW)
