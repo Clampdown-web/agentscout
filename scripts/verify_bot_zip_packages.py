@@ -51,6 +51,24 @@ REQUIRED = (
 )
 
 
+def compare_start_here(label: str, package_guide: Path, zip_path: Path) -> list[str]:
+    """Compare the package guide with the zip copy. A broken zip is a reported problem."""
+    if not zip_path.is_file():
+        return [f"{label} zip missing for START-HERE comparison"]
+    if not package_guide.is_file():
+        return [f"{label} package START-HERE.md missing for comparison"]
+    try:
+        with zipfile.ZipFile(zip_path) as archive:
+            if "START-HERE.md" not in archive.namelist():
+                return [f"{label} zip has no START-HERE.md to compare"]
+            archived = archive.read("START-HERE.md").decode("utf-8")
+    except zipfile.BadZipFile:
+        return [f"{label} START-HERE comparison could not read a broken zip"]
+    if archived != package_guide.read_text(encoding="utf-8"):
+        return [f"{label} root START-HERE.md differs from the package copy"]
+    return []
+
+
 def _unzip_ok(path: Path) -> bool:
     run = subprocess.run(["unzip", "-t", str(path)], capture_output=True, text=True)
     return run.returncode == 0
@@ -186,16 +204,7 @@ def _audit(root: Path | None = None) -> tuple[list[str], dict]:
             bad.append(f"{agent['slug']} has no routines")
         zpath = packs / "zips" / f"{agent['slug']}.zip"
         bad.extend(_start_here_problems(agent["slug"], zpath))
-        pkg_guide = dest / "START-HERE.md"
-        if pkg_guide.is_file() and zpath.is_file():
-            try:
-                with zipfile.ZipFile(zpath) as archive:
-                    if "START-HERE.md" in archive.namelist():
-                        root_guide = archive.read("START-HERE.md").decode("utf-8")
-                        if root_guide != pkg_guide.read_text(encoding="utf-8"):
-                            bad.append(f"{agent['slug']} root START-HERE.md differs from the package copy")
-            except zipfile.BadZipFile:
-                pass
+        bad.extend(compare_start_here(agent["slug"], dest / "START-HERE.md", zpath))
         if len(bad) == before:
             passed[agent["slug"]] = success_record(f"bot-packages/25-agent-packs/zips/{agent['slug']}.zip")
     for path in sorted(flagship.glob("*.zip")):

@@ -28,8 +28,12 @@ STALE_ROOT = Path("/workspace/agent-tool-finder")
 SUBMIT_URL = "https://api.agentscouthq.com/submit"
 MCP_URL = "https://mcp.agentscouthq.com/mcp"
 ALLOWED_ORIGIN = "https://agentscouthq.com"
-FULL_SITE_TOOLS = 2000
 NAV_SKIP = {"404.html", "google823b89b55b70e740.html"}
+LAB_SOURCES = {"lab-lighthouse", "lab-pagespeed", "lab-unthrottled-benchmark"}
+FIELD_SOURCES = {"field-crux", "field-search-console"}
+BENCHMARK_SOURCE = "lab-unthrottled-benchmark"
+BENCHMARK_METHOD = "cwv_seo_benchmark.measure_url"
+UNTHROTTLED_THRESHOLDS = {"lcp_ms": 2500, "cls": 0.1, "ttfb_ms": 800}
 STALE_TOKENS = ("2,467+", "2,095+", "2,104+", "2,350+")
 DIRECTORY_STRIPE = {
     "$15 Fast-Track": "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
@@ -92,6 +96,13 @@ class AuditResult:
     def unknown(self, message: str) -> None:
         self.unverified.append(message)
 
+    def settle(self, name: str, problems: list[str], ok_detail: str) -> None:
+        if problems:
+            for item in problems:
+                self.err(f"{name}: {item}")
+            return
+        self.ok(f"{name}: {ok_detail}")
+
 
 def resolve_root(explicit: str | None = None) -> Path:
     raw = explicit if explicit is not None else os.environ.get("AGENTSCOUT_ROOT")
@@ -135,8 +146,9 @@ def _catalog_counts(root: Path) -> tuple[int, int]:
         return 0, 0
 
 
-def _full_site(tool_count: int) -> bool:
-    return tool_count >= FULL_SITE_TOOLS
+def _large_catalog(tool_count: int) -> bool:
+    """Only the nav page-count minimum uses this. Other checks are not skipped by size."""
+    return tool_count >= 2000
 
 
 def nav_footer_problems(root: Path, tool_count: int) -> list[str]:
@@ -172,7 +184,7 @@ def nav_footer_problems(root: Path, tool_count: int) -> list[str]:
                 nav_mismatches.append(rel)
             if ft_links != ref_ft:
                 ft_mismatches.append(rel)
-    if _full_site(tool_count) and checked <= 2000:
+    if _large_catalog(tool_count) and checked <= 2000:
         problems.append(f"nav/footer checked {checked} pages, a full catalog needs more than 2000")
     if checked == 0:
         problems.append("nav/footer found no pages with both nav and footer")
@@ -277,35 +289,34 @@ def synthetic_category_problems(root: Path) -> tuple[list[str], int]:
     return problems, accepted
 
 
-def coverage_problems(root: Path, tool_count: int) -> list[str]:
-    """Nav, footer, submit links, scroll arrows, and the read-only zip and CTA checks."""
+def record_coverage(result: AuditResult, root: Path, tool_count: int) -> None:
+    """Every local surface gets its own named line. Size does not skip a surface."""
     import verify_4tier_ctas
     import verify_bot_zip_packages
 
-    problems = []
-    problems.extend(nav_footer_problems(root, tool_count))
-    problems.extend(submit_link_problems(root))
-    problems.extend(scroll_problems(root))
-    if not _full_site(tool_count):
-        return problems
+    result.settle("nav-footer", nav_footer_problems(root, tool_count), "nav and footer match on the pages that have both")
+    result.settle("submit-links", submit_link_problems(root), "Submit a tool links resolve and the form endpoint is present")
+    result.settle("scroll-arrows", scroll_problems(root), "app.js creates the buttons and styles.css keeps them")
     packs = root / "bot-packages" / "25-agent-packs"
     if not packs.is_dir():
-        problems.append("bot packages are missing from a full catalog")
+        zip_problems = ["bot-packages/25-agent-packs is missing"]
     else:
-        bad, _passed = verify_bot_zip_packages._audit(root)
-        problems.extend(bad)
+        zip_problems, _passed = verify_bot_zip_packages._audit(root)
+    result.settle("zip-packages", zip_problems, "package tree and START-HERE copies match; no verification file was written")
     try:
-        problems.extend(verify_4tier_ctas.problems(root))
+        cta_problems = verify_4tier_ctas.problems(root)
     except OSError as exc:
-        problems.append(f"4-tier CTA check could not read the tree ({exc})")
+        cta_problems = [f"could not read the tree ({exc})"]
+    result.settle("four-tier-ctas", cta_problems, "flagship links, prices, and 25 cards are present")
     pack_pages = list((root / "bot-store").glob("*/index.html")) if (root / "bot-store").is_dir() else []
+    pack_problems = []
     if len(pack_pages) != 25:
-        problems.append(f"bot-store pack pages are {len(pack_pages)}, expected 25")
+        pack_problems.append(f"bot-store pack pages are {len(pack_pages)}, expected 25")
     for page in pack_pages:
         if "Agent Agent" in page.read_text(encoding="utf-8", errors="ignore"):
-            problems.append(f"{page.relative_to(root).as_posix()} contains Agent Agent")
-    problems.extend(pack_ux_problems(root))
-    return problems
+            pack_problems.append(f"{page.relative_to(root).as_posix()} contains Agent Agent")
+    result.settle("pack-pages", pack_problems, "25 pack pages and no Agent Agent title")
+    result.settle("pack-ux", pack_ux_problems(root), "hosts, cache buster, dock, and outreach email are present")
 
 
 def template_count_problems(root: Path) -> list[str]:
@@ -326,8 +337,6 @@ def template_count_problems(root: Path) -> list[str]:
 
 def pack_ux_problems(root: Path) -> list[str]:
     """Local pack-builder checks from the box audit. They do not fetch the live site."""
-    if not _full_site(_catalog_counts(root)[0]):
-        return []
     store = _read(root, "bot-store/index.html")
     templates = _read(root, "bot-templates/index.html")
     videos = _read(root, "videos/index.html")
@@ -468,29 +477,95 @@ def indexnow_key_problems(root: Path) -> tuple[str, list[str]]:
     return keys[0].stem, []
 
 
-def measurement_problems(document: object, kind: str) -> list[str]:
+def measurement_evidence(document: object, kind: str, artifact_date: str, artifact_tools: int | None = None) -> tuple[list[str], str]:
+    """The unthrottled numeric gate stays. A throttled Lighthouse file cannot pass it."""
+    label = "cwv-seo-benchmark.json" if kind == "cwv" else "seo-vitals-latest.json"
+    if not isinstance(document, dict):
+        return [f"{label} is not an object"], ""
+    problems = []
+    generated = str(document.get("generated_at") or "")[:10]
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", generated):
+        problems.append(f"{label} generated_at must be YYYY-MM-DD")
+    elif not re.fullmatch(r"\d{4}-\d{2}-\d{2}", artifact_date or ""):
+        problems.append(f"{label} cannot be dated because anim_state date is missing")
+    elif generated < artifact_date:
+        problems.append(f"{label} generated_at {generated} is older than the artifact date {artifact_date}")
+    scope = document.get("scope") if isinstance(document.get("scope"), dict) else {}
+    if scope.get("artifact_date") != artifact_date:
+        problems.append(f"{label} scope.artifact_date does not match anim_state")
+    if artifact_tools is not None and scope.get("artifact_tools") != artifact_tools:
+        problems.append(f"{label} scope.artifact_tools does not match anim_state")
+    source = document.get("source")
+    if source not in LAB_SOURCES | FIELD_SOURCES:
+        problems.append(f"{label} source is not a known lab or field source")
+    if document.get("field_cwv") is True and source not in FIELD_SOURCES:
+        problems.append(f"{label} field_cwv true is not valid for a lab source")
+    targets = document.get("targets")
+    if not isinstance(targets, list) or not targets or not all(isinstance(item, str) and item.startswith("http") for item in targets):
+        problems.append(f"{label} targets must list the measured URLs")
+        targets = []
     if kind == "cwv":
-        if not isinstance(document, dict):
-            return ["cwv-seo-benchmark.json is not an object"]
+        if source != BENCHMARK_SOURCE or document.get("method") != BENCHMARK_METHOD or document.get("throttle") != "none":
+            problems.append(
+                f"{label} must be method {BENCHMARK_METHOD} with throttle none. "
+                "Throttled Lighthouse is a separate lab signal and does not pass this gate."
+            )
+        thresholds = document.get("thresholds")
+        if thresholds != UNTHROTTLED_THRESHOLDS:
+            problems.append(f"{label} thresholds must stay LCP 2500, CLS 0.1, and TTFB 800")
         pages = document.get("pages")
         if not isinstance(pages, list) or len(pages) < 6:
-            return ["cwv-seo-benchmark.json needs 6 graded pages"]
-        if not all(isinstance(page, dict) and page.get("grade") == "PASS" for page in pages):
-            return ["cwv-seo-benchmark.json has a page that is not PASS"]
-        return []
-    if not isinstance(document, dict):
-        return ["seo-vitals-latest.json is not an object"]
-    vitals = document.get("pagespeed_and_vitals")
-    if not isinstance(vitals, dict) or len(vitals) < 5:
-        return ["seo-vitals-latest.json needs 5 templates"]
-    for url, modes in vitals.items():
-        if not isinstance(modes, dict):
-            return [f"seo-vitals-latest.json {url} is not an object"]
-        for mode in ("mobile", "desktop"):
-            scores = (modes.get(mode) or {}).get("scores") or {}
-            if scores.get("seo") != 100 or scores.get("best_practices") != 100:
-                return [f"seo-vitals-latest.json {url} {mode} is not SEO 100 and Best Practices 100"]
-    return []
+            problems.append(f"{label} needs the measured pages")
+        else:
+            for page in pages:
+                if not isinstance(page, dict):
+                    problems.append(f"{label} has a page that is not an object")
+                    continue
+                url = page.get("url")
+                if not isinstance(url, str) or url not in targets:
+                    problems.append(f"{label} page {url} is not in targets")
+                lcp, cls, ttfb = page.get("lcp_ms"), page.get("cls"), page.get("ttfb_ms")
+                if isinstance(lcp, bool) or not isinstance(lcp, (int, float)) or lcp > 2500:
+                    problems.append(f"{label} {url} lcp_ms {lcp} is over 2500 or missing")
+                if isinstance(cls, bool) or not isinstance(cls, (int, float)) or cls > 0.1:
+                    problems.append(f"{label} {url} cls {cls} is over 0.1 or missing")
+                if isinstance(ttfb, bool) or not isinstance(ttfb, (int, float)) or ttfb > 800:
+                    problems.append(f"{label} {url} ttfb_ms {ttfb} is over 800 or missing")
+                if page.get("grade") == "PASS" and (
+                    not isinstance(lcp, (int, float)) or lcp > 2500
+                    or not isinstance(cls, (int, float)) or cls > 0.1
+                    or not isinstance(ttfb, (int, float)) or ttfb > 800
+                ):
+                    problems.append(f"{label} {url} grade PASS contradicts the numeric gate")
+        omitted = document.get("not_measured")
+        if not isinstance(omitted, list):
+            problems.append(f"{label} not_measured must list pages this method did not time, including submit when it timed out")
+    else:
+        if document.get("throttle") not in (None, "none"):
+            problems.append(f"{label} throttled Lighthouse does not meet the SEO 100 and Best Practices 100 gate")
+        vitals = document.get("pagespeed_and_vitals")
+        if not isinstance(vitals, dict) or len(vitals) < 5:
+            problems.append(f"{label} needs 5 templates")
+        else:
+            for url, modes in vitals.items():
+                if url not in targets:
+                    problems.append(f"{label} template {url} is not in targets")
+                if not isinstance(modes, dict):
+                    problems.append(f"{label} {url} is not an object")
+                    continue
+                for mode in ("mobile", "desktop"):
+                    scores = (modes.get(mode) or {}).get("scores") or {}
+                    if scores.get("seo") != 100 or scores.get("best_practices") != 100:
+                        problems.append(f"{label} {url} {mode} is not SEO 100 and Best Practices 100")
+    if source == BENCHMARK_SOURCE:
+        note = f"unthrottled lab benchmark dated {generated or 'unknown'}; not field CWV"
+    elif source in LAB_SOURCES:
+        note = f"source {source} is lab data and does not prove field CWV"
+    elif source in FIELD_SOURCES:
+        note = f"source {source} is field data, not a lab run"
+    else:
+        note = "source missing"
+    return problems, note
 
 
 def inline_script_problems(label: str, html: str) -> list[str]:
@@ -532,46 +607,45 @@ def header_problems(headers: dict) -> list[str]:
 def predeploy(root: Path) -> AuditResult:
     result = AuditResult()
     tool_count, _mcp = _catalog_counts(root)
-    problems, accepted = local_contract_problems(root)
-    result.synthetic_accepted = accepted
     result.category_acceptance_claimed = False
-    for item in problems:
-        result.err(item)
-    for item in coverage_problems(root, tool_count):
-        result.err(item)
-    for item in form_field_problems(root):
-        result.err(item)
-    for item in template_count_problems(root):
-        result.err(item)
-    for item in stripe_file_problems(root):
-        result.err(item)
+    result.settle("animation", publish_gate.artifact_animation_problems(root), "stamp matches anim_state and tools.json")
+    result.settle("products", publish_gate.product_snapshot_problems(root), "snapshot matches api/products.json")
+    category_problems, accepted = synthetic_category_problems(root)
+    result.synthetic_accepted = accepted
+    result.settle("categories", category_problems, f"synthetic inner check accepted {accepted}; no live POST")
+    record_coverage(result, root, tool_count)
+    result.settle("form-fields", form_field_problems(root), "14 submit form ids are present")
+    result.settle("template-count", template_count_problems(root), "bot-templates rows match anim_state")
+    result.settle("stripe-files", stripe_file_problems(root), "directory and bot Stripe URLs are wired in the tree")
     labels, label_problems = _artifact_labels(root)
-    for item in label_problems:
-        result.unknown(item)
-    if labels:
-        text, html = preview_listed_email(labels["pages"], labels["followers"])
-        for item in listed_email_problems(text, html, labels["pages"], labels["followers"]):
-            result.err(item)
-        else:
-            if not listed_email_problems(text, html, labels["pages"], labels["followers"]):
-                result.ok("listed email preview kept the artifact counts, Stripe links, and dark wordmark in memory")
-    for rel in ("index.html", "submit.html", "sponsor.html"):
-        for item in inline_script_problems(rel, _read(root, rel)):
-            result.err(item)
-    _key, key_problems = indexnow_key_problems(root)
-    for item in key_problems:
-        result.err(item)
+    if label_problems:
+        result.unknown("listed-email: " + "; ".join(label_problems))
     else:
-        if _key and not key_problems:
-            result.ok(f"IndexNow key file {_key}.txt matches its body; no IndexNow submission was sent")
-    result.later("Stripe Checkout HTTP, live page counts, Cloudflare headers, and the cloner block run in --live")
-    result.later("Core Web Vitals and seo-vitals-latest.json are postdeploy measurements and are not generated here")
-    result.later("Live animation lag is reported by --live and does not fail this artifact")
-    if not result.problems and not result.unverified:
-        result.ok(
-            f"predeploy artifact checks passed for {root} "
-            f"({result.synthetic_accepted} categories accepted by the synthetic inner check, no live POST)"
+        text, html = preview_listed_email(labels["pages"], labels["followers"])
+        result.settle(
+            "listed-email",
+            listed_email_problems(text, html, labels["pages"], labels["followers"]),
+            "in-memory preview has the artifact counts, Stripe links, and dark wordmark",
         )
+    script_problems = []
+    for rel in ("index.html", "submit.html", "sponsor.html"):
+        script_problems.extend(inline_script_problems(rel, _read(root, rel)))
+    result.settle("inline-scripts", script_problems, "node --check passed on index, submit, and sponsor")
+    key, key_problems = indexnow_key_problems(root)
+    detail = f"{key}.txt matches its body; api.indexnow.org was not called" if key else "key file checked"
+    result.settle("indexnow-file", key_problems, detail)
+    result.later("postdeploy-http: Stripe Checkout, live page counts, Cloudflare headers, and the cloner block run in --live")
+    result.later(
+        "postdeploy-vitals: --live reads AGENTSCOUT_CWV_JSON and AGENTSCOUT_VITALS_JSON "
+        "(or data/cwv-seo-benchmark.json and data/seo-vitals-latest.json under the root). "
+        "Keep those files outside the prepared tree. "
+        "The benchmark file must be method cwv_seo_benchmark.measure_url, throttle none, "
+        "thresholds LCP 2500 / CLS 0.1 / TTFB 800, generated_at on or after anim_state date, "
+        "and scope.artifact_date plus scope.artifact_tools. "
+        "Do not copy throttled Lighthouse numbers into that file and do not set field_cwv true. "
+        "scripts/pack_src/seo_site_audit.py does not measure CWV."
+    )
+    result.later("postdeploy-animation: live stamp lag is reported by --live and does not fail this artifact")
     return result
 
 
@@ -716,23 +790,42 @@ def indexnow_live(result: AuditResult, root: Path, fetch) -> None:
         result.ok(f"IndexNow key URL returned the file body; api.indexnow.org was not called")
 
 
+def _artifact_binding(root: Path) -> tuple[str, int | None]:
+    path = root / "data" / "anim_state.json"
+    if not path.is_file():
+        return "", None
+    try:
+        state = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return "", None
+    tools = state.get("tools")
+    return str(state.get("date") or ""), tools if isinstance(tools, int) else None
+
+
 def measurements_live(result: AuditResult, root: Path) -> None:
     cwv_path = Path(os.environ["AGENTSCOUT_CWV_JSON"]) if os.environ.get("AGENTSCOUT_CWV_JSON") else root / "data" / "cwv-seo-benchmark.json"
     vitals_path = Path(os.environ["AGENTSCOUT_VITALS_JSON"]) if os.environ.get("AGENTSCOUT_VITALS_JSON") else root / "data" / "seo-vitals-latest.json"
-    for path, kind in ((cwv_path, "cwv"), (vitals_path, "vitals")):
+    artifact_date, artifact_tools = _artifact_binding(root)
+    how = (
+        "Keep the file outside the prepared tree and point AGENTSCOUT_CWV_JSON or AGENTSCOUT_VITALS_JSON at it. "
+        "cwv-seo-benchmark.json must use method cwv_seo_benchmark.measure_url, throttle none, "
+        "thresholds lcp_ms 2500, cls 0.1, ttfb_ms 800, generated_at on or after anim_state date, "
+        "and scope.artifact_date plus scope.artifact_tools. "
+        "Do not copy throttled Lighthouse LCP into that file or set field_cwv true. "
+        "seo-vitals-latest.json still requires SEO 100 and Best Practices 100 with throttle none. "
+        "scripts/pack_src/seo_site_audit.py does not measure CWV. This audit does not write either file."
+    )
+    for path, kind, name in ((cwv_path, "cwv", "cwv-lab-or-field"), (vitals_path, "vitals", "seo-vitals")):
         if not path.is_file():
-            result.unknown(f"{path} is not in the tree. This audit does not generate it and does not treat it as passed.")
+            result.unknown(f"{name}: {path} is not in the tree. {how}")
             continue
         try:
             document = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError as exc:
-            result.err(f"{path.name} is not valid JSON ({exc})")
+            result.err(f"{name}: {path.name} is not valid JSON ({exc})")
             continue
-        for item in measurement_problems(document, kind):
-            result.err(item)
-        else:
-            if not measurement_problems(document, kind):
-                result.ok(f"{path.name} matches the box grade rules")
+        problems, note = measurement_evidence(document, kind, artifact_date, artifact_tools)
+        result.settle(name, problems, note)
 
 
 def lead_gen_live(result: AuditResult, fetch) -> None:

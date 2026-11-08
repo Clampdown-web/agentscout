@@ -85,19 +85,72 @@ def _fixture(tools: int = 2, mcp: int = 1) -> Path:
     (tmp / "submit.html").write_text(submit + "".join(morning_audit.BOT_STRIPE.values()), encoding="utf-8")
     key = "abcdef0123456789abcdef0123456789"
     _write(tmp, f"{key}.txt", key)
-    _write(tmp, "data/cwv-seo-benchmark.json", json.dumps({
-        "pages": [{"grade": "PASS", "lcp_ms": 100, "cls": 0.01} for _ in range(6)],
-    }))
-    _write(tmp, "data/seo-vitals-latest.json", json.dumps({
+    _write(tmp, "data/cwv-seo-benchmark.json", json.dumps(_benchmark(tools)))
+    _write(tmp, "data/seo-vitals-latest.json", json.dumps(_vitals()))
+    _pack_surface(tmp)
+    return tmp
+
+
+def _benchmark(tools: int) -> dict:
+    pages = []
+    for i, path in enumerate(("/", "/bot-store/", "/videos/", "/bot-templates/", "/mcp/", "/tools/noteboxd.html")):
+        pages.append({
+            "url": f"http://127.0.0.1:8766{path}",
+            "lcp_ms": 100 + i,
+            "cls": 0,
+            "ttfb_ms": 50,
+            "grade": "PASS",
+        })
+    return {
+        "generated_at": "2026-11-08",
+        "source": "lab-unthrottled-benchmark",
+        "method": "cwv_seo_benchmark.measure_url",
+        "throttle": "none",
+        "field_cwv": False,
+        "thresholds": {"lcp_ms": 2500, "cls": 0.1, "ttfb_ms": 800},
+        "scope": {"artifact_date": "2026-11-08", "artifact_tools": tools},
+        "targets": [page["url"] for page in pages],
+        "not_measured": [{"url": "http://127.0.0.1:8766/submit.html", "reason": "networkidle timeout"}],
+        "pages": pages,
+    }
+
+
+def _vitals() -> dict:
+    urls = [f"https://agentscouthq.com/hub/{i}" for i in range(5)]
+    return {
+        "generated_at": "2026-11-08",
+        "source": "lab-pagespeed",
+        "throttle": "none",
+        "field_cwv": False,
+        "scope": {"artifact_date": "2026-11-08", "artifact_tools": 2},
+        "targets": urls,
         "pagespeed_and_vitals": {
-            f"https://example.test/{i}": {
+            url: {
                 "mobile": {"scores": {"seo": 100, "best_practices": 100}},
                 "desktop": {"scores": {"seo": 100, "best_practices": 100}},
             }
-            for i in range(5)
+            for url in urls
         },
-    }))
-    return tmp
+    }
+
+
+def _pack_surface(tmp: Path) -> None:
+    hosts = "Claude Code Cursor Codex Grok Bot Lovable"
+    cards = "".join(f'<div class="ap-compat" data-pack="p{i}"></div>' for i in range(25))
+    section = f'<section id="ai-agent-packs">{hosts}{cards}</section>'
+    dock = 'id="ap-dock" hidden #ap-dock[hidden]{display:none'
+    prices = "$39 $59 $69 $149 clampdown19 built by logo-wordmark.svg neon-lime neon-gold neon-orange neon-red #10b981"
+    for rel in ("bot-store/index.html", "bot-templates/index.html"):
+        path = tmp / rel
+        path.write_text(path.read_text(encoding="utf-8") + section + dock + prices, encoding="utf-8")
+    templates = tmp / "bot-templates" / "index.html"
+    templates.write_text(templates.read_text(encoding="utf-8") + "agentscout-bot-constellation.mp4?v=1", encoding="utf-8")
+    videos = tmp / "videos" / "index.html"
+    videos.write_text(videos.read_text(encoding="utf-8") + "$35 25 AI Agent Packs Lovable", encoding="utf-8")
+    _write(tmp, "tools/lovable.html", "#ai-agent-packs $35")
+    _write(tmp, "data/outreach/25-agent-packs-email.html", "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09 Claude")
+    for i in range(25):
+        _write(tmp, f"bot-store/p{i}/index.html", 'class="pack-compat"')
 
 
 class EntrypointTest(unittest.TestCase):
@@ -113,8 +166,11 @@ class EntrypointTest(unittest.TestCase):
             capture_output=True,
             text=True,
         )
-        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
-        self.assertIn("synthetic inner check", proc.stdout)
+        self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        self.assertIn("[PASS] categories:", proc.stdout)
+        self.assertIn("[PASS] animation:", proc.stdout)
+        self.assertIn("[PASS] form-fields:", proc.stdout)
+        self.assertIn("[FAIL] zip-packages:", proc.stdout)
         self.assertNotIn("API accepts", proc.stdout)
         self.assertNotIn("https://api.agentscouthq.com/submit", proc.stdout.split("SUMMARY")[0].replace("submit endpoint", ""))
 
@@ -202,40 +258,51 @@ class EntrypointTest(unittest.TestCase):
         self.assertEqual(publish_gate.category_probe_problems(responses), [])
         root = _fixture()
         result = morning_audit.predeploy(root)
-        self.assertEqual(result.problems, [], result.problems)
+        self.assertTrue(any(item.startswith("zip-packages:") for item in result.problems), result.problems)
+        self.assertFalse(any(item.startswith("categories:") for item in result.problems))
         self.assertEqual(result.synthetic_accepted, 2)
         self.assertIs(result.category_acceptance_claimed, False)
 
     def test_a_full_catalog_without_packages_fails_closed(self):
         root = _fixture(tools=2000, mcp=10)
         result = morning_audit.predeploy(root)
-        self.assertTrue(any("bot packages are missing" in item for item in result.problems), result.problems)
-        self.assertTrue(any("pack pages" in item for item in result.problems))
+        self.assertTrue(any("25-agent-packs is missing" in item for item in result.problems), result.problems)
 
     def test_email_wordmark_and_missing_measurement_are_visible(self):
         problems = morning_audit.listed_email_problems("4+\n3+", "<img src=logo-wordmark.svg>", "4+", "3+")
         self.assertTrue(any("logo-wordmark-dark.png" in item for item in problems))
         self.assertTrue(any("logo-wordmark.svg" in item for item in problems))
         root = _fixture()
+        self.assertEqual(morning_audit.pack_ux_problems(root), [])
         (root / "bot-store" / "index.html").write_text(
             (root / "bot-store" / "index.html").read_text(encoding="utf-8") + "{tier_btns}",
             encoding="utf-8",
         )
-        # A two-tool fixture is not a full catalog, so pack UX stays quiet.
-        self.assertEqual(morning_audit.pack_ux_problems(root), [])
-        state = json.loads((root / "data" / "anim_state.json").read_text(encoding="utf-8"))
-        state["tools"] = 2000
-        (root / "data" / "anim_state.json").write_text(json.dumps(state), encoding="utf-8")
-        tools = json.loads((root / "tools.json").read_text(encoding="utf-8"))
-        tools.extend({"category": "coding"} for _ in range(1998))
-        (root / "tools.json").write_text(json.dumps(tools), encoding="utf-8")
         self.assertTrue(any("{tier_btns}" in item for item in morning_audit.pack_ux_problems(root)))
+        stale = _benchmark(2)
+        stale["generated_at"] = "2026-11-04"
+        problems, _note = morning_audit.measurement_evidence(stale, "cwv", "2026-11-08", 2)
+        self.assertTrue(any("older than the artifact date" in item for item in problems), problems)
+        throttled = _benchmark(2)
+        throttled["source"] = "lab-lighthouse"
+        throttled["method"] = "lighthouse-mobile-throttled"
+        throttled["throttle"] = "mobile-simulated"
+        throttled["pages"][1]["lcp_ms"] = 3376
+        throttled["pages"][1]["grade"] = "PASS"
+        problems, _note = morning_audit.measurement_evidence(throttled, "cwv", "2026-11-08", 2)
+        self.assertTrue(any("Throttled Lighthouse" in item for item in problems), problems)
+        fresh_problems, fresh_note = morning_audit.measurement_evidence(_benchmark(2), "cwv", "2026-11-08", 2)
+        self.assertEqual(fresh_problems, [], fresh_problems)
+        self.assertIn("not field CWV", fresh_note)
+        seo69 = _vitals()
+        seo69["pagespeed_and_vitals"][seo69["targets"][0]]["mobile"]["scores"]["seo"] = 69
+        self.assertTrue(any("SEO 100" in item or "not SEO 100" in item for item in morning_audit.measurement_evidence(seo69, "vitals", "2026-11-08", 2)[0]))
         root = _fixture()
         (root / "data" / "cwv-seo-benchmark.json").unlink()
         result = morning_audit.live(root, lambda *args: (500, {}, ""))
         self.assertTrue(any("cwv-seo-benchmark.json" in item for item in result.unverified), result.unverified)
         pre = morning_audit.predeploy(root)
-        self.assertTrue(any("Core Web Vitals" in item for item in pre.deferred), pre.deferred)
+        self.assertTrue(any(item.startswith("postdeploy-vitals:") for item in pre.deferred), pre.deferred)
         self.assertTrue(all("cwv-seo-benchmark" not in item for item in pre.problems))
 
     def test_nav_mismatch_fails_the_predeploy_path(self):
@@ -243,7 +310,18 @@ class EntrypointTest(unittest.TestCase):
         page = (root / "videos" / "index.html").read_text(encoding="utf-8")
         (root / "videos" / "index.html").write_text(page.replace(">Home<", ">Elsewhere<", 1), encoding="utf-8")
         result = morning_audit.predeploy(root)
-        self.assertTrue(any("nav/footer mismatch" in item for item in result.problems), result.problems)
+        self.assertTrue(any("nav/footer mismatch" in item or "nav-footer:" in item for item in result.problems), result.problems)
+
+    def test_a_broken_zip_is_reported_by_the_start_here_comparison(self):
+        import verify_bot_zip_packages
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            guide = root / "START-HERE.md"
+            guide.write_text("package copy\n", encoding="utf-8")
+            broken = root / "pack.zip"
+            broken.write_bytes(b"not a zip")
+            problems = verify_bot_zip_packages.compare_start_here("pack", guide, broken)
+            self.assertEqual(problems, ["pack START-HERE comparison could not read a broken zip"])
 
 
 if __name__ == "__main__":
