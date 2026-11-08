@@ -1,21 +1,39 @@
 {
- "updated": "2026-11-07T15:04:39Z",
+ "updated": "2026-11-08T15:02:33Z",
  "sources": [
   "TechCrunch",
   "The Verge",
-  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
   {
+   "title": "Coinbase CEO Brian Armstrong runs a chief-of-staff AI agent over a team of specialist agents",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2119298665034437048",
+   "date": "2026-11-08T11:21:05Z",
+   "tool": null,
+   "summary": "Brian Armstrong described a setup where a chief-of-staff agent directs lead agents for coding, research and team ops, all feeding one prioritized review queue that still needs his sign-off.",
+   "page": "news/2026/11/coinbase-ceo-brian-armstrong-runs-a-chief-of-staff-ai-agent-over-a.html"
+  },
+  {
    "title": "METR: AI assistance nearly doubles Anthropic research iteration speed",
    "source": "X News",
    "url": "https://x.com/i/trending/2118427442922901851",
    "date": "2026-11-07T13:19:56Z",
    "tool": null,
+   "summary": "Evaluator METR reported that since late 2025 Anthropic's research iteration on key tasks sped up about 1.9x, largely from AI assistance inside the lab.",
    "page": "news/2026/11/metr-ai-assistance-nearly-doubles-anthropic-research-iteration-speed.html"
+  },
+  {
+   "title": "OpenCode Browse pairs a Chromium extension with an MCP server for on-device browser agents",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2119010813126365592",
+   "date": "2026-11-07T10:19:42Z",
+   "tool": null,
+   "summary": "OpenCode's Browse lets agents drive background tabs in Chrome, Edge or Brave with your real logins through an MCP server, handing control back to you for logins, 2FA and payments.",
+   "page": "news/2026/11/opencode-browse-pairs-a-chromium-extension-with-an-mcp-server-for-on.html"
   },
   {
    "title": "Anthropic Claude Duet app can steer cloud Claude Code sessions from a phone",
@@ -23,6 +41,7 @@
    "url": "https://x.com/i/trending/2118812904648794590",
    "date": "2026-11-07T08:36:33Z",
    "tool": null,
+   "summary": "Anthropic linked the Claude Duet mobile app to Claude Code cloud sessions so developers can check progress and approve changes from their phone on Pro, Max and Ultra plans.",
    "page": "news/2026/11/anthropic-claude-duet-app-can-steer-cloud-claude-code-sessions-from-a.html"
   },
   {
@@ -35,46 +54,29 @@
    "page": "news/2026/11/wolters-kluwer-ships-tymetrix-360-mcp-for-governed-legal-agent.html"
   },
   {
-   "title": "Cognitum One Unveils MetaLLM, Self-Improving Model Control Plane for AI Agent Swarms -…",
-   "source": "Google News",
-   "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPbEM5QmViaFJmTjVvd0NQVl9GdnNYalFqMllYTjF6YjNaY25Bc3ZIUW1UZ3VIblhwMF9UN1l2TWRPRkFrbHFUY3pfUEdNcEliQ1U2RnA1cUQtTTc0bXRudTc4RXdFd0lnaHNMMGVOZ0JBakZ4NzdTZzZiRFZmTkNJbHhOdGJ4WU5pdGg1N3h6WEFRTzhFUjdFMWJhZG84LXpQNjY5ZFFhRk1PTXRTd25hMU5UOE8waEZRMW5mWURFNTVBU1lyalZHVEROcGR2Uko5aVpFdzVkWnJXcHdJNUp3UGMwaG44c18xVVVnZzY0YzJ4Yi1TSHN4c29lRHdNY1B0NEdGQ21sZw?oc=5",
-   "date": "2026-11-05T12:01:57Z",
-   "tool": "swarms",
-   "page": "news/2026/11/cognitum-one-unveils-metallm-self-improving-model-control-plane-for.html"
-  },
-  {
-   "title": "Parallel MCP 2.0 packs search, extract, decisions and deep research for agents",
-   "source": "Parallel",
-   "url": "https://parallel.ai/blog/parallel-mcp-2",
-   "date": "2026-11-05T12:00:00Z",
+   "title": "Vercel Labs agent-desktop 1.2.0 exposes desktop CLI commands as MCP tools",
+   "source": "PulseAugur",
+   "url": "https://pulseaugur.com/cluster/344584-vercel-labs-ships-agent-desktop-1-2-0-with-model-context-protocol-integration",
+   "date": "2026-11-06T07:18:00Z",
    "tool": null,
-   "page": "news/2026/11/parallel-mcp-2-0-packs-search-extract-decisions-and-deep-research-for.html"
+   "summary": "Vercel Labs shipped agent-desktop 1.2.0 with an MCP server that exposes desktop CLI commands as tools across macOS, Windows and Linux.",
+   "page": "news/2026/11/vercel-labs-agent-desktop-1-2-0-exposes-desktop-cli-commands-as-mcp.html"
   },
   {
-   "title": "Adobe wires CX Enterprise Coworker into ChatGPT, Claude and Gemini via MCP",
-   "source": "AICentralResources",
-   "url": "https://www.aicentralresources.com/news/adobe-cx-enterprise-coworker-mcp-chatgpt-claude-gemini",
-   "date": "2026-11-05T12:00:00Z",
-   "tool": null,
-   "summary": "Adobe embedded its CX Enterprise Coworker marketing agent into ChatGPT, Claude, Gemini, Copilot and Databricks Genie through MCP and A2A, with human approval still required for major spend changes.",
-   "page": "news/2026/11/adobe-wires-cx-enterprise-coworker-into-chatgpt-claude-and-gemini-via.html"
+   "title": "Boomi Named a Visionary in the 2026 Gartner® Magic Quadrant™ for AI Agent Management…",
+   "source": "Rutland Herald",
+   "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOSXlTdndKU2N1QmtMcGRvT3RBYjFEYWFLNHZtNG10SW4yUVVGQkZSX09uX0xPZUFrNTE2RGEzX2hOeW16MHNFZlB0ek94Zlc0OW5IQ2dfX2lvTzBsemVIVnRZZTZuQmZVVl9UT04wMTM3X0VoTzJPVnk2a1ZBNE1xQkw4bGFnd0NLUTZMOWJqMG00Tko2OFJfQTJDb0ZOeUVBcnZzSjQ0ZzlUNGs3NXNJdF9qckRpU1JXTDJjODcwMnEyUFJudTQ3S2dLbG1CVWFWOU1ybF8wbFJONmRJdFd0YlFXZEVEWFZtT09Bd2ZQZHJsSVN3U0ZVR29fS3IzZFVNbzg3anpuV01kaTd3MzU3VzlkYWg?oc=5",
+   "date": "2026-11-05T16:25:48Z",
+   "tool": "boomi",
+   "page": "news/2026/11/boomi-named-a-visionary-in-the-2026-gartner-magic-quadrant-for-ai.html"
   },
   {
-   "title": "Luma ships an MCP connector for ChatGPT and Claude image and video edits",
-   "source": "Luma / FounderHeist",
-   "url": "https://founderheist.com/briefs/luma-releases-an-ai-model-context-protocol-connector-for",
-   "date": "2026-11-05T08:00:00Z",
-   "tool": null,
-   "summary": "Luma launched an MCP connector for ChatGPT and Claude so users can restyle ads, change camera angles and generate image or video clips inside the chat, billed against existing Luma credits.",
-   "page": "news/2026/11/luma-ships-an-mcp-connector-for-chatgpt-and-claude-image-and-video.html"
-  },
-  {
-   "title": "Infisical Raises $40M to Secure AI Agent Credentials",
-   "source": "BankInfoSecurity",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORWFDQVc5dFVGc29EZjBUaVUyQzEyOGozMHdBaUVyTTA5U0p3eGhYZjZKcnY5cWNad09lV3l1Yzd4N1FOUnJZdDlaUmJ4cVJXaHo2M3JwMlNZQ3dOQzBqT0V1OEdMQ011cTBKM001cXlBWlRqS3dDRGdhZmdTT01GVmNGZ3cxR0J0VWFUOU05Q1p3M3JRUlJJ?oc=5",
-   "date": "2026-11-05T00:13:37Z",
-   "tool": "infisical",
-   "page": "news/2026/11/infisical-raises-40m-to-secure-ai-agent-credentials.html"
+   "title": "Meta Brings Edits to Mac With AI Agent Controls, Taking Aim at CapCut's Desktop Turf",
+   "source": "BigGo Finance",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5QZ2c5aHhER0FfaHNHbUM5WjRiallpVXRPbS1JWUxIbm5udUhXMXBCcEZib3puRV9wY29qaEh6YmNsVG5rRVREbTdZdXdCakNSeGtseVJ2YVFCc0FBV0hVVUdnX1g5U3VNZVN4N3BaMkhIZTlZaHc?oc=5",
+   "date": "2026-11-05T16:25:00Z",
+   "tool": "capcut",
+   "page": "news/2026/11/meta-brings-edits-to-mac-with-ai-agent-controls-taking-aim-at-capcuts.html"
   }
  ]
 }

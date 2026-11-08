@@ -1,14 +1,33 @@
 {
- "updated": "2026-11-07T15:04:39Z",
+ "updated": "2026-11-08T15:02:33Z",
  "days": 30,
  "items": [
+  {
+   "title": "Coinbase CEO Brian Armstrong runs a chief-of-staff AI agent over a team of specialist agents",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2119298665034437048",
+   "date": "2026-11-08T11:21:05Z",
+   "tool": null,
+   "summary": "Brian Armstrong described a setup where a chief-of-staff agent directs lead agents for coding, research and team ops, all feeding one prioritized review queue that still needs his sign-off.",
+   "page": "news/2026/11/coinbase-ceo-brian-armstrong-runs-a-chief-of-staff-ai-agent-over-a.html"
+  },
   {
    "title": "METR: AI assistance nearly doubles Anthropic research iteration speed",
    "source": "X News",
    "url": "https://x.com/i/trending/2118427442922901851",
    "date": "2026-11-07T13:19:56Z",
    "tool": null,
-   "page": "news/2026/11/metr-ai-assistance-nearly-doubles-anthropic-research-iteration-speed.html"
+   "page": "news/2026/11/metr-ai-assistance-nearly-doubles-anthropic-research-iteration-speed.html",
+   "summary": "Evaluator METR reported that since late 2025 Anthropic's research iteration on key tasks sped up about 1.9x, largely from AI assistance inside the lab."
+  },
+  {
+   "title": "OpenCode Browse pairs a Chromium extension with an MCP server for on-device browser agents",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2119010813126365592",
+   "date": "2026-11-07T10:19:42Z",
+   "tool": null,
+   "summary": "OpenCode's Browse lets agents drive background tabs in Chrome, Edge or Brave with your real logins through an MCP server, handing control back to you for logins, 2FA and payments.",
+   "page": "news/2026/11/opencode-browse-pairs-a-chromium-extension-with-an-mcp-server-for-on.html"
   },
   {
    "title": "Anthropic Claude Duet app can steer cloud Claude Code sessions from a phone",
@@ -16,7 +35,8 @@
    "url": "https://x.com/i/trending/2118812904648794590",
    "date": "2026-11-07T08:36:33Z",
    "tool": null,
-   "page": "news/2026/11/anthropic-claude-duet-app-can-steer-cloud-claude-code-sessions-from-a.html"
+   "page": "news/2026/11/anthropic-claude-duet-app-can-steer-cloud-claude-code-sessions-from-a.html",
+   "summary": "Anthropic linked the Claude Duet mobile app to Claude Code cloud sessions so developers can check progress and approve changes from their phone on Pro, Max and Ultra plans."
   },
   {
    "title": "Wolters Kluwer ships TyMetrix 360 MCP for governed legal agent workflows",
@@ -26,6 +46,15 @@
    "tool": null,
    "summary": "Wolters Kluwer launched a TyMetrix 360 MCP server so legal teams can create matters, adjust invoices and assign follow-ups inside their existing AI assistants under current permissions.",
    "page": "news/2026/11/wolters-kluwer-ships-tymetrix-360-mcp-for-governed-legal-agent.html"
+  },
+  {
+   "title": "Vercel Labs agent-desktop 1.2.0 exposes desktop CLI commands as MCP tools",
+   "source": "PulseAugur",
+   "url": "https://pulseaugur.com/cluster/344584-vercel-labs-ships-agent-desktop-1-2-0-with-model-context-protocol-integration",
+   "date": "2026-11-06T07:18:00Z",
+   "tool": null,
+   "summary": "Vercel Labs shipped agent-desktop 1.2.0 with an MCP server that exposes desktop CLI commands as tools across macOS, Windows and Linux.",
+   "page": "news/2026/11/vercel-labs-agent-desktop-1-2-0-exposes-desktop-cli-commands-as-mcp.html"
   },
   {
    "title": "AgentKit by Scalekit for AI agent authentication",
@@ -60,6 +89,14 @@
    "page": "news/2026/11/boomi-named-a-visionary-in-the-2026-gartner-magic-quadrant-for-ai.html"
   },
   {
+   "title": "Meta Brings Edits to Mac With AI Agent Controls, Taking Aim at CapCut's Desktop Turf",
+   "source": "BigGo Finance",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5QZ2c5aHhER0FfaHNHbUM5WjRiallpVXRPbS1JWUxIbm5udUhXMXBCcEZib3puRV9wY29qaEh6YmNsVG5rRVREbTdZdXdCakNSeGtseVJ2YVFCc0FBV0hVVUdnX1g5U3VNZVN4N3BaMkhIZTlZaHc?oc=5",
+   "date": "2026-11-05T16:25:00Z",
+   "tool": "capcut",
+   "page": "news/2026/11/meta-brings-edits-to-mac-with-ai-agent-controls-taking-aim-at-capcuts.html"
+  },
+  {
    "title": "Cognitum One Unveils MetaLLM, Self-Improving Model Control Plane for AI Agent Swarms -…",
    "source": "Google News",
    "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPbEM5QmViaFJmTjVvd0NQVl9GdnNYalFqMllYTjF6YjNaY25Bc3ZIUW1UZ3VIblhwMF9UN1l2TWRPRkFrbHFUY3pfUEdNcEliQ1U2RnA1cUQtTTc0bXRudTc4RXdFd0lnaHNMMGVOZ0JBakZ4NzdTZzZiRFZmTkNJbHhOdGJ4WU5pdGg1N3h6WEFRTzhFUjdFMWJhZG84LXpQNjY5ZFFhRk1PTXRTd25hMU5UOE8waEZRMW5mWURFNTVBU1lyalZHVEROcGR2Uko5aVpFdzVkWnJXcHdJNUp3UGMwaG44c18xVVVnZzY0YzJ4Yi1TSHN4c29lRHdNY1B0NEdGQ21sZw?oc=5",
@@ -82,7 +119,8 @@
    "url": "https://parallel.ai/blog/parallel-mcp-2",
    "date": "2026-11-05T12:00:00Z",
    "tool": null,
-   "page": "news/2026/11/parallel-mcp-2-0-packs-search-extract-decisions-and-deep-research-for.html"
+   "page": "news/2026/11/parallel-mcp-2-0-packs-search-extract-decisions-and-deep-research-for.html",
+   "summary": "Parallel MCP 2.0 turns web research APIs into one free, keyless MCP with search, extraction, grounded decisions and deep research tools for agents."
   },
   {
    "title": "Meta Acquires Conductor, a Platform for Managing Teams of AI Coding Agents",

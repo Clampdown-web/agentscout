@@ -152,6 +152,9 @@ UC_SET={"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: 
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
+# Slugs that must not follow the display name (Nov 8 2026): MagenticLite keeps its indexed magentic-ui URL (PR #70 renamed the tool);
+# names with accents keep a readable ASCII slug.
+SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots"}
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
@@ -160,7 +163,7 @@ for x in t:
         _k=[u for u in (x.get("use_cases") or []) if u in ART_UC]
         x["use_cases"]=_k or [u for u,p in ART_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]
     else: x["use_cases"]=([u for u,p in MEDIA_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]) if x["category"] in MEDIA_CATS else ([u for u,p in RULES if re.search(p,d)][:3] or [x["category"]])
-    x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
+    x["slug"]=SLUG_PIN.get(x["name"]) or re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
     if x["slug"] in ART_XLINK_UC: x["use_cases"]=list(dict.fromkeys(x["use_cases"]+ART_XLINK_UC[x["slug"]]))
     if x["slug"] in UC_SET: x["use_cases"]=list(UC_SET[x["slug"]])
     if os.path.exists(f"assets/logos/{x['slug']}.png"): x["logo"]=f"assets/logos/{x['slug']}.png"

@@ -995,7 +995,6 @@
 "token-costs"
 ],
 "magentic-ui": [
-"research-agents",
 "browser-automation",
 "local-models"
 ],
@@ -9133,5 +9132,201 @@
 "planning-tasks",
 "voice-phone",
 "research-agents"
+],
+"dessa-ai": [
+"planning-tasks",
+"voice-phone",
+"dialogue-cleanup",
+"ai-dubbing-voices"
+],
+"edit-image-text-online": [
+"video-editing",
+"images-design"
+],
+"ploutos": [
+"planning-tasks",
+"chat-app-agents"
+],
+"staffly": [
+"marketing-agents"
+],
+"founderomni": [
+"email-agents",
+"marketing-agents",
+"mcp-servers"
+],
+"anon-li": [
+"testing-qa",
+"email-agents",
+"mcp-servers"
+],
+"petpedia-ai-doctor": [
+"agent-memory"
+],
+"ai-image-to-video": [
+"planning-tasks",
+"marketing-agents",
+"video-editing",
+"video",
+"images-design"
+],
+"editableppt": [
+"vector-rag",
+"video-editing",
+"stem-separation",
+"images-design"
+],
+"scapesome": [
+"planning-tasks",
+"browser-automation"
+],
+"froging-ai": [
+"browser-automation",
+"video-editing",
+"video",
+"images-design"
+],
+"ai-floor-plan": [
+"planning-tasks",
+"images-design",
+"rules-config"
+],
+"ai-trend-video": [
+"video-editing",
+"video"
+],
+"domain-search-king": [
+"mcp-gateways",
+"mcp-servers"
+],
+"therouter-ai": [
+"guardrails",
+"mcp-gateways"
+],
+"else": [
+"research-agents"
+],
+"imagesvg": [
+"vector-rag",
+"video-editing",
+"images-design"
+],
+"eluxai": [
+"voice-phone",
+"email-agents"
+],
+"let-s-pick-my-car-mcp": [
+"mcp-servers"
+],
+"whaleblip": [
+"trading-agents",
+"voice-phone"
+],
+"spiritt": [
+"agent-memory",
+"computer-use",
+"workflow-automation"
+],
+"real-extent": [
+"planning-tasks",
+"voice-phone",
+"email-agents"
+],
+"truescope": [
+"mobile"
+],
+"celebrity-kitchen-ai": [
+"video"
+],
+"noteboxd": [
+"mcp-servers"
+],
+"esta-no-ir-for-bots": [
+"notebooks",
+"mcp-servers"
+],
+"gsd-core": [
+"planning-tasks",
+"research-agents",
+"multi-agent",
+"agent-frameworks"
+],
+"mika": [
+"voice-phone",
+"computer-use",
+"local-models",
+"mobile"
+],
+"mcp-atlassian": [
+"mcp-servers"
+],
+"longhorizon-harness": [
+"planning-tasks",
+"computer-use",
+"agent-frameworks",
+"terminal-agents"
+],
+"mex": [
+"agent-memory",
+"mcp-servers",
+"local-models",
+"terminal-agents",
+"rules-config"
+],
+"muesli": [
+"planning-tasks",
+"local-models",
+"subtitles-transcripts"
+],
+"relaticle": [
+"sales-agents",
+"mcp-servers",
+"stem-separation"
+],
+"nexting": [
+"planning-tasks",
+"voice-phone",
+"agent-frameworks",
+"local-models",
+"mobile"
+],
+"chatcut": [
+"mcp-servers",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"dialogue-cleanup",
+"ai-dubbing-voices",
+"video"
+],
+"phone-harness": [
+"voice-phone",
+"computer-use",
+"mcp-servers",
+"agent-frameworks",
+"local-models",
+"mobile"
+],
+"tracekit": [
+"voice-phone",
+"guardrails"
+],
+"babysitter": [
+"workflow-automation",
+"multi-agent"
+],
+"anymodelbot": [
+"agent-memory",
+"computer-use",
+"local-models"
+],
+"pullboard": [
+"parallel-orchestration",
+"stem-separation"
+],
+"converly-ai-voice-agents": [
+"planning-tasks",
+"voice-phone",
+"mobile"
 ]
 }

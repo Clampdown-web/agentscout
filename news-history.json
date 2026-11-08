@@ -1,12 +1,31 @@
 {
  "items": [
   {
+   "url": "https://x.com/i/trending/2119298665034437048",
+   "page": "news/2026/11/coinbase-ceo-brian-armstrong-runs-a-chief-of-staff-ai-agent-over-a.html",
+   "first_seen": "2026-11-08T15:10:08Z",
+   "title": "Coinbase CEO Brian Armstrong runs a chief-of-staff AI agent over a team of specialist agents",
+   "source": "X News",
+   "date": "2026-11-08T11:21:05Z",
+   "summary": "Brian Armstrong described a setup where a chief-of-staff agent directs lead agents for coding, research and team ops, all feeding one prioritized review queue that still needs his sign-off."
+  },
+  {
    "url": "https://x.com/i/trending/2118427442922901851",
    "page": "news/2026/11/metr-ai-assistance-nearly-doubles-anthropic-research-iteration-speed.html",
    "first_seen": "2026-11-07T15:07:22Z",
    "title": "METR: AI assistance nearly doubles Anthropic research iteration speed",
    "source": "X News",
-   "date": "2026-11-07T13:19:56Z"
+   "date": "2026-11-07T13:19:56Z",
+   "summary": "Evaluator METR reported that since late 2025 Anthropic's research iteration on key tasks sped up about 1.9x, largely from AI assistance inside the lab."
+  },
+  {
+   "url": "https://x.com/i/trending/2119010813126365592",
+   "page": "news/2026/11/opencode-browse-pairs-a-chromium-extension-with-an-mcp-server-for-on.html",
+   "first_seen": "2026-11-08T15:10:08Z",
+   "title": "OpenCode Browse pairs a Chromium extension with an MCP server for on-device browser agents",
+   "source": "X News",
+   "date": "2026-11-07T10:19:42Z",
+   "summary": "OpenCode's Browse lets agents drive background tabs in Chrome, Edge or Brave with your real logins through an MCP server, handing control back to you for logins, 2FA and payments."
   },
   {
    "url": "https://x.com/i/trending/2118812904648794590",
@@ -14,7 +33,8 @@
    "first_seen": "2026-11-07T15:07:22Z",
    "title": "Anthropic Claude Duet app can steer cloud Claude Code sessions from a phone",
    "source": "X News",
-   "date": "2026-11-07T08:36:33Z"
+   "date": "2026-11-07T08:36:33Z",
+   "summary": "Anthropic linked the Claude Duet mobile app to Claude Code cloud sessions so developers can check progress and approve changes from their phone on Pro, Max and Ultra plans."
   },
   {
    "url": "https://www.businesswire.com/news/home/20261106646088/en/Wolters-Kluwer-brings-TyMetrix-360-data-into-enterprise-AI-workflows-with-new-MCP-server",
@@ -24,6 +44,15 @@
    "source": "Business Wire",
    "date": "2026-11-06T12:00:00Z",
    "summary": "Wolters Kluwer launched a TyMetrix 360 MCP server so legal teams can create matters, adjust invoices and assign follow-ups inside their existing AI assistants under current permissions."
+  },
+  {
+   "url": "https://pulseaugur.com/cluster/344584-vercel-labs-ships-agent-desktop-1-2-0-with-model-context-protocol-integration",
+   "page": "news/2026/11/vercel-labs-agent-desktop-1-2-0-exposes-desktop-cli-commands-as-mcp.html",
+   "first_seen": "2026-11-08T15:10:08Z",
+   "title": "Vercel Labs agent-desktop 1.2.0 exposes desktop CLI commands as MCP tools",
+   "source": "PulseAugur",
+   "date": "2026-11-06T07:18:00Z",
+   "summary": "Vercel Labs shipped agent-desktop 1.2.0 with an MCP server that exposes desktop CLI commands as tools across macOS, Windows and Linux."
   },
   {
    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPLWhSZVNZY0NJSjlRVDFVWDVnTlFpN0VLczdMUmFpeTdRbklucVdiUGFCTFduLWx6T293VlNCbW5VWE41c2IyZ1lhRnFsX090NVptTE5PUExUWWREdlZuM0wxMXdLTldVOXdEUGxDRElfWE5VYzBIcDJpWnpTbkl3T09pVEhBdFV5S1hadFpfMU5scGM1?oc=5",
@@ -62,6 +91,15 @@
    "tool": "boomi"
   },
   {
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5QZ2c5aHhER0FfaHNHbUM5WjRiallpVXRPbS1JWUxIbm5udUhXMXBCcEZib3puRV9wY29qaEh6YmNsVG5rRVREbTdZdXdCakNSeGtseVJ2YVFCc0FBV0hVVUdnX1g5U3VNZVN4N3BaMkhIZTlZaHc?oc=5",
+   "page": "news/2026/11/meta-brings-edits-to-mac-with-ai-agent-controls-taking-aim-at-capcuts.html",
+   "first_seen": "2026-11-08T15:10:08Z",
+   "title": "Meta Brings Edits to Mac With AI Agent Controls, Taking Aim at CapCut's Desktop Turf",
+   "source": "BigGo Finance",
+   "date": "2026-11-05T16:25:00Z",
+   "tool": "capcut"
+  },
+  {
    "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPbEM5QmViaFJmTjVvd0NQVl9GdnNYalFqMllYTjF6YjNaY25Bc3ZIUW1UZ3VIblhwMF9UN1l2TWRPRkFrbHFUY3pfUEdNcEliQ1U2RnA1cUQtTTc0bXRudTc4RXdFd0lnaHNMMGVOZ0JBakZ4NzdTZzZiRFZmTkNJbHhOdGJ4WU5pdGg1N3h6WEFRTzhFUjdFMWJhZG84LXpQNjY5ZFFhRk1PTXRTd25hMU5UOE8waEZRMW5mWURFNTVBU1lyalZHVEROcGR2Uko5aVpFdzVkWnJXcHdJNUp3UGMwaG44c18xVVVnZzY0YzJ4Yi1TSHN4c29lRHdNY1B0NEdGQ21sZw?oc=5",
    "page": "news/2026/11/cognitum-one-unveils-metallm-self-improving-model-control-plane-for.html",
    "first_seen": "2026-11-06T15:59:46Z",
@@ -85,7 +123,8 @@
    "first_seen": "2026-11-07T15:07:22Z",
    "title": "Parallel MCP 2.0 packs search, extract, decisions and deep research for agents",
    "source": "Parallel",
-   "date": "2026-11-05T12:00:00Z"
+   "date": "2026-11-05T12:00:00Z",
+   "summary": "Parallel MCP 2.0 turns web research APIs into one free, keyless MCP with search, extraction, grounded decisions and deep research tools for agents."
   },
   {
    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5SZ3pmak5fWERQdzdNRkU4SnN5ODVFOEVvakxJNS1OcFI2N0hmOWRJSFVIWlNsWGZTVDNCWThCdkdCWWhzLTRwLVpFVnRJaWM0UUdMaVBRT3ZoMDdoRC1xNDJB0gFnQVVfeXFMTjRjY2ZRUG1PcWYwQmliaV95OTdjSlpfeVhWNnV0QVl0SThjNklZcEt0R0ZDRWFVWTU3aHBRNWw5QnZsQW9GT1M1SDRfWkRBRzkyTmhEcFNHTWR3TTN1U1lCZFRKeDQxMA?oc=5",
