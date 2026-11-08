@@ -23,6 +23,17 @@ def _contrast(rgb, bg):
 
 
 class SubmitWidgetTest(unittest.TestCase):
+    def test_css_and_js_share_the_asset_stamp(self):
+        tasks = (ROOT / "build_tasks.py").read_text(encoding="utf-8")
+        stamp = re.search(r'ASSET_V = "(\d+)"', tasks).group(1)
+        self.assertNotEqual(stamp, "202611042330")
+        html = (ROOT / "submit.html").read_text(encoding="utf-8")
+        self.assertIn(f"styles.css?v={stamp}", html)
+        self.assertIn(f"app.js?v={stamp}", html)
+        self.assertNotIn("styles.css?v=202611042330", html)
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("@media(max-width:640px){.pkg-grid{margin-right:calc(56px + env(safe-area-inset-right))}}", css)
+        self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
     def test_error_callback_keeps_the_token_gate_and_the_csp(self):
         html = (ROOT / "submit.html").read_text(encoding="utf-8")
         self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
