@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { createBackupDO, parseBackupRequest, readBackupPage, readConsistentSnapshot } from "./reviews-backup.js";
+import { createBackupDO, parseBackupRequest, readBackupPage, readConsistentSnapshot, snapshotEnabled } from "./reviews-backup.js";
 
 function sqlOf(rows) {
   const calls = [];
@@ -64,7 +64,9 @@ function storageOf(tables, options = {}) {
         calls.push(query);
         if (options.throwOn) throw new Error("leak synthetic-body-token");
         const rows = tables[query] || [];
-        return { toArray() { return rows; }, rowsWritten: options.rowsWritten ?? 0 };
+        const cursor = { toArray() { return rows; } };
+        if (options.rowsWritten !== "omit") cursor.rowsWritten = options.rowsWritten ?? 0;
+        return cursor;
       },
     },
     transactionSync(fn) {
@@ -104,6 +106,36 @@ test("snapshot stays disabled and a storage error does not echo row text", () =>
     "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id": [],
   }, { rowsWritten: 1 });
   assert.throws(() => readConsistentSnapshot(wrote), (error) => error.code === "rows_written");
+  const missingCount = storageOf({
+    "SELECT tool, vid, iph, stars, ts FROM ratings ORDER BY tool, vid": [],
+    "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id": [],
+  }, { rowsWritten: "omit" });
+  assert.throws(() => readConsistentSnapshot(missingCount), (error) => error.code === "rows_written");
+  const malformed = storageOf({
+    "SELECT tool, vid, iph, stars, ts FROM ratings ORDER BY tool, vid": [{ tool: "cursor" }],
+    "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id": [],
+  });
+  assert.throws(() => readConsistentSnapshot(malformed), (error) => error.code === "bad_row");
+  const tooMany = Array.from({ length: 10001 }, (_, index) => ({ tool: "t", vid: String(index), iph: "i", stars: 1, ts: 1 }));
+  const overCap = storageOf({
+    "SELECT tool, vid, iph, stars, ts FROM ratings ORDER BY tool, vid": tooMany,
+    "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id": [],
+  });
+  assert.throws(() => readConsistentSnapshot(overCap), (error) => error.code === "records_cap");
+  const heavy = Array.from({ length: 4200 }, (_, index) => ({
+    id: String(index), tool: "t", vid: "v", iph: "i", stars: 1, name: "n", body: "x".repeat(8000), status: "pending", ts: 1,
+  }));
+  const overSize = storageOf({
+    "SELECT tool, vid, iph, stars, ts FROM ratings ORDER BY tool, vid": [],
+    "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id": heavy,
+  });
+  assert.throws(() => readConsistentSnapshot(overSize), (error) => error.code === "size_cap" && !String(error.message).includes("xxxx"));
+  assert.equal(snapshotEnabled(undefined), false);
+  assert.equal(snapshotEnabled({ REVIEWS_SNAPSHOT: "TRUE" }), false);
+  assert.equal(snapshotEnabled({ REVIEWS_SNAPSHOT: "true" }), true);
+  const asyncTxn = storageOf({}, {});
+  asyncTxn.transactionSync = () => Promise.resolve({ ratings: [], reviews: [] });
+  assert.throws(() => readConsistentSnapshot(asyncTxn), (error) => error.code === "snapshot_unavailable");
 });
 
 test("the recovery plan does not embed a secret value", () => {
