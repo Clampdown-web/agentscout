@@ -110,7 +110,7 @@ def _benchmark(tools: int) -> dict:
         "thresholds": {"lcp_ms": 2500, "cls": 0.1, "ttfb_ms": 800},
         "scope": {"artifact_date": "2026-11-08", "artifact_tools": tools},
         "targets": [page["url"] for page in pages],
-        "not_measured": [{"url": "http://127.0.0.1:8766/submit.html", "reason": "networkidle timeout"}],
+        "not_measured": [],
         "pages": pages,
     }
 
@@ -293,6 +293,10 @@ class EntrypointTest(unittest.TestCase):
         self.assertTrue(any("Throttled Lighthouse" in item for item in problems), problems)
         fresh_problems, fresh_note = morning_audit.measurement_evidence(_benchmark(2), "cwv", "2026-11-08", 2)
         self.assertEqual(fresh_problems, [], fresh_problems)
+        stalled = _benchmark(2)
+        stalled["not_measured"] = [{"url": "http://127.0.0.1:8766/submit.html", "reason": "networkidle timeout"}]
+        stalled_problems, _stalled_note = morning_audit.measurement_evidence(stalled, "cwv", "2026-11-08", 2)
+        self.assertTrue(any("networkidle" in item for item in stalled_problems), stalled_problems)
         self.assertIn("not field CWV", fresh_note)
         seo69 = _vitals()
         seo69["pagespeed_and_vitals"][seo69["targets"][0]]["mobile"]["scores"]["seo"] = 69

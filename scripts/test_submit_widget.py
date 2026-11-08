@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+"""Submit widget and leaderboard contrast. No live POST and no CSP edit."""
+from __future__ import annotations
+
+import pathlib
+import re
+import unittest
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+
+def _contrast(rgb, bg):
+    def lin(c):
+        c = c / 255
+        return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+    def lum(color):
+        r, g, b = color
+        return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b)
+
+    hi, lo = max(lum(rgb), lum(bg)), min(lum(rgb), lum(bg))
+    return (hi + 0.05) / (lo + 0.05)
+
+
+class SubmitWidgetTest(unittest.TestCase):
+    def test_error_callback_keeps_the_token_gate_and_the_csp(self):
+        html = (ROOT / "submit.html").read_text(encoding="utf-8")
+        self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
+        self.assertIn('data-error-callback="asTsErr"', html)
+        self.assertIn('data-callback="asTsOk"', html)
+        self.assertIn("https://challenges.cloudflare.com/turnstile/v0/api.js", html)
+        self.assertIn("window.asTsErr=function(code)", html)
+        self.assertIn("return true", html.split("window.asTsErr=")[1].split("window.asTsOk=")[0])
+        gate = html.split("var ts=sfTs()", 1)[1][:180]
+        self.assertIn("!ts", gate)
+        self.assertIn("Please complete the quick check", gate)
+        csp = re.search(r'Content-Security-Policy" content="([^"]+)"', html).group(1)
+        connect = csp.split("connect-src ", 1)[1].split(";", 1)[0]
+        self.assertNotIn("data:", connect)
+        self.assertNotIn("challenges.cloudflare.com", connect)
+        self.assertIn("https://challenges.cloudflare.com", csp.split("script-src ", 1)[1].split(";", 1)[0])
+        self.assertIn("https://challenges.cloudflare.com", csp.split("frame-src ", 1)[1].split(";", 1)[0])
+
+    def test_phone_package_gutter_does_not_hide_scroll_buttons(self):
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
+        block = re.search(r"@media \(max-width:640px\)\{(.*?)\n\}", css, re.S).group(1)
+        self.assertIn(".pkg-grid{margin-right:calc(56px + env(safe-area-inset-right))}", css)
+        self.assertNotIn(".pkg-grid", block)
+        self.assertNotIn("display:none", block)
+        js = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn("#sf-turnstile", js)
+        self.assertIn('role="tab"', js)
+
+    def test_leaderboard_arrow_contrast_clears_4_5(self):
+        css = (ROOT / "leaderboard/index.html").read_text(encoding="utf-8")
+        white = (255, 255, 255)
+        dark = (14, 16, 21)
+        self.assertGreaterEqual(_contrast((0x0D, 0x6B, 0x34), white), 4.5)
+        self.assertGreaterEqual(_contrast((0x3D, 0xD6, 0x78), dark), 4.5)
+        self.assertGreaterEqual(_contrast((0xC1, 0x40, 0x36), white), 4.5)
+        self.assertGreaterEqual(_contrast((0xDA, 0x6B, 0x62), dark), 4.5)
+        self.assertIn(".lbm.up{color:#0d6b34}", css)
+        self.assertIn("html[data-theme=dark] .lbm.up{color:#3dd678}", css)
+        self.assertIn(".lbm.dn{color:#c14036}", css)
+        self.assertIn("html[data-theme=dark] .lbm.dn{color:#da6b62}", css)
+        self.assertNotIn("#1a9a4b", css)
+
+
+if __name__ == "__main__":
+    unittest.main()

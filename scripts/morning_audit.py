@@ -539,7 +539,16 @@ def measurement_evidence(document: object, kind: str, artifact_date: str, artifa
                     problems.append(f"{label} {url} grade PASS contradicts the numeric gate")
         omitted = document.get("not_measured")
         if not isinstance(omitted, list):
-            problems.append(f"{label} not_measured must list pages this method did not time, including submit when it timed out")
+            problems.append(f"{label} not_measured must be a list")
+        else:
+            for item in omitted:
+                reason = str(item.get("reason") or "") if isinstance(item, dict) else str(item)
+                url = str(item.get("url") or "a page") if isinstance(item, dict) else "a page"
+                if "networkidle" in reason.lower():
+                    problems.append(
+                        f"{label} {url} was skipped on networkidle. "
+                        "Wait for load and read LCP, CLS, and TTFB. Leave Turnstile on the page."
+                    )
     else:
         if document.get("throttle") not in (None, "none"):
             problems.append(f"{label} throttled Lighthouse does not meet the SEO 100 and Best Practices 100 gate")
@@ -643,6 +652,7 @@ def predeploy(root: Path) -> AuditResult:
         "thresholds LCP 2500 / CLS 0.1 / TTFB 800, generated_at on or after anim_state date, "
         "and scope.artifact_date plus scope.artifact_tools. "
         "Do not copy throttled Lighthouse numbers into that file and do not set field_cwv true. "
+        "A networkidle timeout is not a measured page: wait for load, then read the performance entries. "
         "scripts/pack_src/seo_site_audit.py does not measure CWV."
     )
     result.later("postdeploy-animation: live stamp lag is reported by --live and does not fail this artifact")
@@ -812,6 +822,7 @@ def measurements_live(result: AuditResult, root: Path) -> None:
         "thresholds lcp_ms 2500, cls 0.1, ttfb_ms 800, generated_at on or after anim_state date, "
         "and scope.artifact_date plus scope.artifact_tools. "
         "Do not copy throttled Lighthouse LCP into that file or set field_cwv true. "
+        "A networkidle timeout is not a measured page: wait for load, then read the performance entries. "
         "seo-vitals-latest.json still requires SEO 100 and Best Practices 100 with throttle none. "
         "scripts/pack_src/seo_site_audit.py does not measure CWV. This audit does not write either file."
     )
