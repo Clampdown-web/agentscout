@@ -39,6 +39,7 @@
       ["What does Magentic-UI not handle well?", "The project's limitations doc lists weak long-form summaries, degrading multi-turn chats, steering that the orchestrator may ignore, very large files, browser upload controls, and image inputs. It calls MagenticLite a research prototype."],
       ["Which release should I install?", "The README's quick start installs magentic_ui 0.2.x from PyPI. That is MagenticLite. The Magentic-UI 0.1 release, aimed at frontier models, is on the magentic-ui-0.1 branch."]
     ],
+    "needs_model": true,
     "sources": [
       "https://github.com/microsoft/magentic-ui",
       "https://github.com/microsoft/magentic-ui/blob/main/README.md",

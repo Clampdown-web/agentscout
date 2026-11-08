@@ -56,10 +56,18 @@
       "A tool can mention MCP and still live here because its main job is the gateway or the auth layer. Read the category line before you treat it as a server you drop into a client config."
     ],
     "setup": [
-      "Decide which layer you are buying: model gateway, runtime, auth, sandbox, or payments. Use the task chips if you already know the job.",
+      "Use Start with the job when you already know the layer: model gateway, auth, or inference. Use the task chips for the other jobs on this page.",
       "Turn on Open source only if you need to run it yourself. Otherwise sort by GitHub stars to see what other builders have starred, then read maturity.",
       "Open the listing. The price line is the maker's wording. The GitHub link, when present, is the repo we snapshotted.",
       "If the missing piece is a connector rather than a host, switch to the MCP servers category and the Codex, Cursor, or Claude Code client guides."
+    ],
+    "picks_bridge": true,
+    "picks": [
+      {"label": "One OpenAI-format API for many models", "slugs": ["litellm"]},
+      {"label": "Routing, fallbacks and guardrails in front of many models", "slugs": ["portkey-ai-gateway"]},
+      {"label": "Logins and actions in other apps", "slugs": ["composio", "nango"]},
+      {"label": "Fast inference for open models", "slugs": ["groq"]},
+      {"label": "An API gateway that also sees LLM and MCP traffic", "slugs": ["kong-gateway"]}
     ],
     "alts": [
       {"href": "mcp-servers.html", "label": "MCP servers"},
