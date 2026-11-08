@@ -22,6 +22,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+import cwv_seo_benchmark
 import publish_gate
 
 STALE_ROOT = Path("/workspace/agent-tool-finder")
@@ -514,7 +515,8 @@ def measurement_evidence(document: object, kind: str, artifact_date: str, artifa
         if thresholds != UNTHROTTLED_THRESHOLDS:
             problems.append(f"{label} thresholds must stay LCP 2500, CLS 0.1, and TTFB 800")
         pages = document.get("pages")
-        if not isinstance(pages, list) or len(pages) < 6:
+        measured: list[str] = []
+        if not isinstance(pages, list) or not pages:
             problems.append(f"{label} needs the measured pages")
         else:
             for page in pages:
@@ -524,6 +526,8 @@ def measurement_evidence(document: object, kind: str, artifact_date: str, artifa
                 url = page.get("url")
                 if not isinstance(url, str) or url not in targets:
                     problems.append(f"{label} page {url} is not in targets")
+                    continue
+                measured.append(cwv_seo_benchmark.page_path(url))
                 lcp, cls, ttfb = page.get("lcp_ms"), page.get("cls"), page.get("ttfb_ms")
                 if isinstance(lcp, bool) or not isinstance(lcp, (int, float)) or lcp > 2500:
                     problems.append(f"{label} {url} lcp_ms {lcp} is over 2500 or missing")
@@ -537,10 +541,14 @@ def measurement_evidence(document: object, kind: str, artifact_date: str, artifa
                     or not isinstance(ttfb, (int, float)) or ttfb > 800
                 ):
                     problems.append(f"{label} {url} grade PASS contradicts the numeric gate")
+            missing = [path for path in cwv_seo_benchmark.REQUIRED_PATHS if path not in measured]
+            if missing:
+                problems.append(f"{label} did not measure {', '.join(missing)}")
         omitted = document.get("not_measured")
         if not isinstance(omitted, list):
             problems.append(f"{label} not_measured must be a list")
-        else:
+        elif omitted:
+            problems.append(f"{label} not_measured must be empty; an omitted page is not a reading")
             for item in omitted:
                 reason = str(item.get("reason") or "") if isinstance(item, dict) else str(item)
                 url = str(item.get("url") or "a page") if isinstance(item, dict) else "a page"

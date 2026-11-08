@@ -211,6 +211,8 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
   body:not(:has(.lb-board)) footer{padding-bottom:calc(128px + env(safe-area-inset-bottom))}
 }
 #sf-turnstile{scroll-margin-bottom:160px}
+#serr,#sfts,.reqmark{color:#9f1239}
+html[data-theme=dark] #serr,html[data-theme=dark] #sfts,html[data-theme=dark] .reqmark{color:#fda4af}
 /* Keep the fixed scroll buttons clear of row controls (Rate etc.) */
 main.wrap{padding-bottom:96px}
 @media (min-width:641px) and (max-width:767px){main.wrap,main section>.wrap{padding-right:calc(84px + env(safe-area-inset-right))}}

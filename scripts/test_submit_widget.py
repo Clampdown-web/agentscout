@@ -30,7 +30,15 @@ class SubmitWidgetTest(unittest.TestCase):
         self.assertIn('data-callback="asTsOk"', html)
         self.assertIn("https://challenges.cloudflare.com/turnstile/v0/api.js", html)
         self.assertIn("window.asTsErr=function(code)", html)
-        self.assertIn("return true", html.split("window.asTsErr=")[1].split("window.asTsOk=")[0])
+        err_fn = html.split("window.asTsErr=")[1].split("window.asTsOk=")[0]
+        ok_fn = html.split("window.asTsOk=")[1].split(";(function()")[0]
+        self.assertIn("return true", err_fn)
+        self.assertIn('getElementById("sfts")', err_fn)
+        self.assertNotIn('getElementById("serr")', err_fn)
+        self.assertIn('getElementById("sfts")', ok_fn)
+        self.assertNotIn('getElementById("serr")', ok_fn)
+        self.assertIn('id="sfts"', html)
+        self.assertNotIn('id="serr" role="alert" style="color:#e5484d"', html)
         gate = html.split("var ts=sfTs()", 1)[1][:180]
         self.assertIn("!ts", gate)
         self.assertIn("Please complete the quick check", gate)
@@ -64,6 +72,12 @@ class SubmitWidgetTest(unittest.TestCase):
         self.assertIn(".lbm.dn{color:#c14036}", css)
         self.assertIn("html[data-theme=dark] .lbm.dn{color:#da6b62}", css)
         self.assertNotIn("#1a9a4b", css)
+        self.assertGreaterEqual(_contrast((0x9F, 0x12, 0x39), white), 4.5)
+        self.assertGreaterEqual(_contrast((0xFD, 0xA4, 0xAF), dark), 4.5)
+        self.assertLess(_contrast((0xE5, 0x48, 0x4D), white), 4.5)
+        css_site = (ROOT / "styles.css").read_text(encoding="utf-8")
+        self.assertIn("#serr,#sfts,.reqmark{color:#9f1239}", css_site)
+        self.assertIn("html[data-theme=dark] #serr,html[data-theme=dark] #sfts,html[data-theme=dark] .reqmark{color:#fda4af}", css_site)
 
 
 if __name__ == "__main__":

@@ -93,7 +93,7 @@ def _fixture(tools: int = 2, mcp: int = 1) -> Path:
 
 def _benchmark(tools: int) -> dict:
     pages = []
-    for i, path in enumerate(("/", "/bot-store/", "/videos/", "/bot-templates/", "/mcp/", "/tools/noteboxd.html")):
+    for i, path in enumerate(("/", "/bot-store/", "/videos/", "/bot-templates/", "/mcp/", "/tools/noteboxd.html", "/submit.html")):
         pages.append({
             "url": f"http://127.0.0.1:8766{path}",
             "lcp_ms": 100 + i,
@@ -297,6 +297,12 @@ class EntrypointTest(unittest.TestCase):
         stalled["not_measured"] = [{"url": "http://127.0.0.1:8766/submit.html", "reason": "networkidle timeout"}]
         stalled_problems, _stalled_note = morning_audit.measurement_evidence(stalled, "cwv", "2026-11-08", 2)
         self.assertTrue(any("networkidle" in item for item in stalled_problems), stalled_problems)
+        omitted = _benchmark(2)
+        omitted["pages"] = [page for page in omitted["pages"] if not page["url"].endswith("/submit.html")]
+        omitted["targets"] = [url for url in omitted["targets"] if not url.endswith("/submit.html")]
+        omitted["not_measured"] = []
+        omitted_problems, _omitted_note = morning_audit.measurement_evidence(omitted, "cwv", "2026-11-08", 2)
+        self.assertTrue(any("/submit.html" in item for item in omitted_problems), omitted_problems)
         self.assertIn("not field CWV", fresh_note)
         seo69 = _vitals()
         seo69["pagespeed_and_vitals"][seo69["targets"][0]]["mobile"]["scores"]["seo"] = 69
