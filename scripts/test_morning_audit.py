@@ -86,6 +86,7 @@ def _fixture(tools: int = 2, mcp: int = 1) -> Path:
     key = "abcdef0123456789abcdef0123456789"
     _write(tmp, f"{key}.txt", key)
     _write(tmp, "data/cwv-seo-benchmark.json", json.dumps(_benchmark(tools)))
+    _write(tmp, "data/cwv-candidate-local.json", json.dumps(_benchmark(tools)))
     _write(tmp, "data/seo-vitals-latest.json", json.dumps(_vitals()))
     _pack_surface(tmp)
     return tmp
@@ -310,10 +311,10 @@ class EntrypointTest(unittest.TestCase):
         root = _fixture()
         (root / "data" / "cwv-seo-benchmark.json").unlink()
         result = morning_audit.live(root, lambda *args: (500, {}, ""))
-        self.assertTrue(any("cwv-seo-benchmark.json" in item for item in result.unverified), result.unverified)
+        self.assertTrue(any("cwv-seo-benchmark.json" in item and "missing" in item for item in result.problems), result.problems)
+        self.assertFalse(any("cwv-seo-benchmark.json" in item for item in result.unverified), result.unverified)
         pre = morning_audit.predeploy(root)
-        self.assertTrue(any(item.startswith("postdeploy-vitals:") for item in pre.deferred), pre.deferred)
-        self.assertTrue(all("cwv-seo-benchmark" not in item for item in pre.problems))
+        self.assertTrue(any("cwv-seo-benchmark.json" in item and "missing" in item for item in pre.problems), pre.problems)
 
     def test_nav_mismatch_fails_the_predeploy_path(self):
         root = _fixture()

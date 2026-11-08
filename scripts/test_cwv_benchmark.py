@@ -2,12 +2,29 @@
 """The unthrottled collector waits for load and grades with the original limits."""
 from __future__ import annotations
 
+import json
 import shutil
 import threading
 import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 
 import cwv_seo_benchmark as cwv
+
+
+class CommittedEvidenceTest(unittest.TestCase):
+    def test_live_and_candidate_documents_pass_the_release_gate(self):
+        import morning_audit
+        root = Path(__file__).resolve().parents[1]
+        for name in ("cwv-seo-benchmark.json", "cwv-candidate-local.json"):
+            document = json.loads((root / "data" / name).read_text(encoding="utf-8"))
+            problems, note = morning_audit.measurement_evidence(document, "cwv", "2026-11-08", 2366)
+            self.assertEqual(problems, [], (name, problems))
+            self.assertIn("not field CWV", note)
+            self.assertEqual(document["throttle"], "none")
+            self.assertIs(document["field_cwv"], False)
+            self.assertEqual(len(document["pages"]), 7)
+            self.assertEqual(document["not_measured"], [])
 
 
 class CollectorLogicTest(unittest.TestCase):

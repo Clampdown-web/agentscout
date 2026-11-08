@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-11-08",
+  "source": "lab-unthrottled-benchmark",
+  "method": "cwv_seo_benchmark.measure_url",
+  "throttle": "none",
+  "field_cwv": false,
+  "thresholds": {
+    "lcp_ms": 2500,
+    "cls": 0.1,
+    "ttfb_ms": 800
+  },
+  "scope": {
+    "artifact_date": "2026-11-08",
+    "artifact_tools": 2366
+  },
+  "subject": "candidate-local",
+  "note": "This checkout served at http://127.0.0.1:8771 on 2026-11-08, headless Chrome, cache disabled, wait=load. Not production. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
+  "not_measured": [],
+  "targets": [
+    "http://127.0.0.1:8771/",
+    "http://127.0.0.1:8771/bot-store/",
+    "http://127.0.0.1:8771/videos/",
+    "http://127.0.0.1:8771/bot-templates/",
+    "http://127.0.0.1:8771/mcp/",
+    "http://127.0.0.1:8771/tools/noteboxd.html",
+    "http://127.0.0.1:8771/submit.html?notrack=1"
+  ],
+  "pages": [
+    {
+      "url": "http://127.0.0.1:8771/",
+      "lcp_ms": 176.0,
+      "cls": 0.06865494632166842,
+      "ttfb_ms": 5.7999999998137355,
+      "grade": "PASS",
+      "wait": "load"
+    },
+    {
+      "url": "http://127.0.0.1:8771/bot-store/",
+      "lcp_ms": 220.0,
+      "cls": 0.004756769311574407,
+      "ttfb_ms": 6.7000000001862645,
+      "grade": "PASS",
+      "wait": "load"
+    },
+    {
+      "url": "http://127.0.0.1:8771/videos/",
+      "lcp_ms": 208.0,
+      "cls": 0.004756769311574407,
+      "ttfb_ms": 2.8999999999068677,
+      "grade": "PASS",
+      "wait": "load"
+    },
+    {
+      "url": "http://127.0.0.1:8771/bot-templates/",
+      "lcp_ms": 244.0,
+      "cls": 0.004756769311574407,
+      "ttfb_ms": 3.1000000000931323,
+      "grade": "PASS",
+      "wait": "load"
+    },
+    {
+      "url": "http://127.0.0.1:8771/mcp/",
+      "lcp_ms": 140.0,
+      "cls": 0.004756769311574407,
+      "ttfb_ms": 3.0,
+      "grade": "PASS",
+      "wait": "load"
+    },
+    {
+      "url": "http://127.0.0.1:8771/tools/noteboxd.html",
+      "lcp_ms": 280.0,
+      "cls": 0.005194958656301195,
+      "ttfb_ms": 3.6000000000931323,
+      "grade": "PASS",
+      "wait": "load"
+    },
+    {
+      "url": "http://127.0.0.1:8771/submit.html?notrack=1",
+      "lcp_ms": 288.0,
+      "cls": 0.004756769311574407,
+      "ttfb_ms": 6.100000000093132,
+      "grade": "PASS",
+      "wait": "load"
+    }
+  ]
+}

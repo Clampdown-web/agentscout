@@ -651,16 +651,18 @@ def predeploy(root: Path) -> AuditResult:
     key, key_problems = indexnow_key_problems(root)
     detail = f"{key}.txt matches its body; api.indexnow.org was not called" if key else "key file checked"
     result.settle("indexnow-file", key_problems, detail)
+    artifact_date, artifact_tools = _artifact_binding(root)
+    for rel in ("data/cwv-seo-benchmark.json", "data/cwv-candidate-local.json"):
+        result.settle(
+            rel,
+            benchmark_document_problems(root / rel, artifact_date, artifact_tools),
+            "unthrottled load readings for the six fixture targets and submit.html",
+        )
     result.later("postdeploy-http: Stripe Checkout, live page counts, Cloudflare headers, and the cloner block run in --live")
     result.later(
-        "postdeploy-vitals: --live reads AGENTSCOUT_CWV_JSON and AGENTSCOUT_VITALS_JSON "
-        "(or data/cwv-seo-benchmark.json and data/seo-vitals-latest.json under the root). "
-        "Keep those files outside the prepared tree. "
-        "The benchmark file must be method cwv_seo_benchmark.measure_url, throttle none, "
-        "thresholds LCP 2500 / CLS 0.1 / TTFB 800, generated_at on or after anim_state date, "
-        "and scope.artifact_date plus scope.artifact_tools. "
-        "Do not copy throttled Lighthouse numbers into that file and do not set field_cwv true. "
-        "A networkidle timeout is not a measured page: wait for load, then read the performance entries. "
+        "postdeploy-vitals: predeploy requires data/cwv-seo-benchmark.json (current live) and "
+        "data/cwv-candidate-local.json (this tree on 127.0.0.1). A missing file is a failure. "
+        "seo-vitals-latest.json is still optional and is not Lighthouse-simulated LCP. "
         "scripts/pack_src/seo_site_audit.py does not measure CWV."
     )
     result.later("postdeploy-animation: live stamp lag is reported by --live and does not fail this artifact")
@@ -820,12 +822,24 @@ def _artifact_binding(root: Path) -> tuple[str, int | None]:
     return str(state.get("date") or ""), tools if isinstance(tools, int) else None
 
 
+def benchmark_document_problems(path: Path, artifact_date: str, artifact_tools: int | None) -> list[str]:
+    """A missing or incomplete seven-URL reading is a failure, not an unknown."""
+    if not path.is_file():
+        return [f"{path.name} is missing; an unmeasured benchmark is not a pass"]
+    try:
+        document = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"{path.name} is not valid JSON ({exc})"]
+    problems, _note = measurement_evidence(document, "cwv", artifact_date, artifact_tools)
+    return problems
+
+
 def measurements_live(result: AuditResult, root: Path) -> None:
     cwv_path = Path(os.environ["AGENTSCOUT_CWV_JSON"]) if os.environ.get("AGENTSCOUT_CWV_JSON") else root / "data" / "cwv-seo-benchmark.json"
     vitals_path = Path(os.environ["AGENTSCOUT_VITALS_JSON"]) if os.environ.get("AGENTSCOUT_VITALS_JSON") else root / "data" / "seo-vitals-latest.json"
     artifact_date, artifact_tools = _artifact_binding(root)
     how = (
-        "Keep the file outside the prepared tree and point AGENTSCOUT_CWV_JSON or AGENTSCOUT_VITALS_JSON at it. "
+        "data/cwv-seo-benchmark.json is required in the tree. A missing file fails. "
         "cwv-seo-benchmark.json must use method cwv_seo_benchmark.measure_url, throttle none, "
         "thresholds lcp_ms 2500, cls 0.1, ttfb_ms 800, generated_at on or after anim_state date, "
         "and scope.artifact_date plus scope.artifact_tools. "
@@ -834,7 +848,11 @@ def measurements_live(result: AuditResult, root: Path) -> None:
         "seo-vitals-latest.json still requires SEO 100 and Best Practices 100 with throttle none. "
         "scripts/pack_src/seo_site_audit.py does not measure CWV. This audit does not write either file."
     )
-    for path, kind, name in ((cwv_path, "cwv", "cwv-lab-or-field"), (vitals_path, "vitals", "seo-vitals")):
+    if not cwv_path.is_file():
+        result.err(f"cwv-lab-or-field: {cwv_path} is missing; an unmeasured benchmark is not a pass. {how}")
+    else:
+        result.settle("cwv-lab-or-field", benchmark_document_problems(cwv_path, artifact_date, artifact_tools), "committed unthrottled readings match the gate")
+    for path, kind, name in ((vitals_path, "vitals", "seo-vitals"),):
         if not path.is_file():
             result.unknown(f"{name}: {path} is not in the tree. {how}")
             continue
