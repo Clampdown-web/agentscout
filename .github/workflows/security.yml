@@ -1,6 +1,7 @@
 name: security
 
-# Offline worker tests plus an advisory scan of requirements.txt.
+# Worker tests plus an advisory scan of requirements.txt.
+# The snapshot step installs Miniflare locally. It does not call Cloudflare.
 # contents: read. No secrets, no pull_request_target, no deploy.
 on:
   pull_request:
@@ -34,6 +35,11 @@ jobs:
           cloudflare-image-worker-patches/captured-handler.test.mjs
           free_tools_js/escape.test.mjs
           free_tools_js/reviews.test.mjs
+      - name: Snapshot runtime
+        run: >-
+          npm install --prefix /tmp/mf-test --no-fund --no-audit miniflare@4.20260730.0 &&
+          MINIFLARE_MODULE=/tmp/mf-test/node_modules/miniflare/dist/src/index.js node --test
+          cloudflare-image-worker-patches/snapshot.runtime.test.mjs
 
   python-requirements:
     runs-on: ubuntu-latest

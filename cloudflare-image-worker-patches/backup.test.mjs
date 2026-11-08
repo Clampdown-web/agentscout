@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { createBackupDO, parseBackupRequest, readBackupPage } from "./reviews-backup.js";
+import { createBackupDO, parseBackupRequest, readBackupPage, readConsistentSnapshot } from "./reviews-backup.js";
 
 function sqlOf(rows) {
   const calls = [];
@@ -53,6 +53,57 @@ test("the subclass reads through the base sql handle and rejects a bad spec", as
   assert.equal(page.rows[0].token, undefined);
   assert.equal(page.rows[0].k, "mn:abc:2026-11-07T18:43");
   await assert.rejects(() => new ReviewsDO().backupPage({ table: "sqlite_master", limit: 10, cursor: {} }));
+});
+
+function storageOf(tables, options = {}) {
+  const calls = [];
+  return {
+    calls,
+    sql: {
+      exec(query) {
+        calls.push(query);
+        if (options.throwOn) throw new Error("leak synthetic-body-token");
+        const rows = tables[query] || [];
+        return { toArray() { return rows; }, rowsWritten: options.rowsWritten ?? 0 };
+      },
+    },
+    transactionSync(fn) {
+      calls.push("transactionSync");
+      return fn();
+    },
+  };
+}
+
+test("the snapshot reads both tables in one synchronous transaction and drops extra columns", () => {
+  const ratingsSql = "SELECT tool, vid, iph, stars, ts FROM ratings ORDER BY tool, vid";
+  const reviewsSql = "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id";
+  const storage = storageOf({
+    [ratingsSql]: [{ tool: "cursor", vid: "aa", iph: "bb", stars: 5, ts: 1, secret: "nope" }],
+    [reviewsSql]: [{ id: "r1", tool: "cursor", vid: "aa", iph: "bb", stars: 5, name: "A", body: "synthetic-body-token", status: "pending", ts: 1 }],
+  });
+  const snap = readConsistentSnapshot(storage);
+  assert.equal(snap.rows_written, 0);
+  assert.equal(snap.ratings[0].secret, undefined);
+  assert.equal(storage.calls[0], "transactionSync");
+  assert.equal(storage.calls.includes(ratingsSql), true);
+  assert.equal(storage.calls.includes(reviewsSql), true);
+  assert.equal(storage.calls.some((query) => String(query).includes("limits")), false);
+});
+
+test("snapshot stays disabled and a storage error does not echo row text", () => {
+  class Base { constructor() { this.sql = {}; this.env = {}; this.ctx = { storage: { transactionSync() { throw new Error("no"); } } }; } }
+  const ReviewsDO = createBackupDO(Base);
+  assert.throws(() => new ReviewsDO().snapshotRatingsReviews(), (error) => error.code === "snapshot_disabled");
+  const enabled = new ReviewsDO();
+  enabled.env = { REVIEWS_SNAPSHOT: "true" };
+  assert.throws(() => enabled.snapshotRatingsReviews(), (error) => error.code === "snapshot_unavailable");
+  const leaking = storageOf({}, { throwOn: true });
+  assert.throws(() => readConsistentSnapshot(leaking), (error) => error.code === "snapshot_failed" && !error.message.includes("synthetic-body-token"));
+  const wrote = storageOf({
+    "SELECT tool, vid, iph, stars, ts FROM ratings ORDER BY tool, vid": [],
+    "SELECT id, tool, vid, iph, stars, name, body, status, ts FROM reviews ORDER BY id": [],
+  }, { rowsWritten: 1 });
+  assert.throws(() => readConsistentSnapshot(wrote), (error) => error.code === "rows_written");
 });
 
 test("the recovery plan does not embed a secret value", () => {
