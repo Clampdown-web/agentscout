@@ -7,6 +7,7 @@ Tool pros, cons, and setup are rendered by build_rich from data/quality_tool_ext
 import html, json, os, re
 import build_extras as X
 import build_subtasks as S
+import quality_picks
 
 e = html.escape
 MARK_A = "<!--quality-guide-->"
@@ -163,7 +164,7 @@ def _fill(text, facts):
         return str(v) if k.endswith("_html") else e(str(v))
     return re.sub(r"\{([a-z_]+)\}", repl, text)
 
-def _block(g, facts):
+def _block(g, facts, tools=None):
     def P(s):
         return f'<p style="margin:0 0 12px">{_fill(s, facts)}</p>'
     def items(key):
@@ -178,7 +179,8 @@ def _block(g, facts):
         f'<p style="margin:0 0 6px"><strong>Pros</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">{items("pros")}</ul>'
         f'<p style="margin:0 0 6px"><strong>Cons</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">{items("cons")}</ul>'
         f'<h2 style="font-size:18px;margin:18px 0 8px">How to use it</h2><ol style="margin:0 0 12px;padding-left:20px;line-height:1.7">{items("setup")}</ol>'
-        f'<h2 style="font-size:18px;margin:18px 0 8px">Alternatives</h2><div class="badges" style="margin:0 0 12px">{alts}</div>'
+        + (quality_picks.choice_html(g.get("picks"), {x["slug"]: x for x in (tools or [])}, bridge=bool(g.get("picks_bridge"))) if g.get("picks") else "")
+        + f'<h2 style="font-size:18px;margin:18px 0 8px">Alternatives</h2><div class="badges" style="margin:0 0 12px">{alts}</div>'
         f'<h2 style="font-size:18px;margin:18px 0 8px">FAQ</h2>'
         + "".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{a}</p></details>' for q, a in faq)
         + "</div>" + MARK_B
@@ -247,7 +249,7 @@ def inject(t):
             print("quality guide missing file", path)
             continue
         facts = FACTS[path](t) if path in FACTS else {}
-        block, faq = _block(g, facts)
+        block, faq = _block(g, facts, t)
         html_s = open(path, encoding="utf-8").read()
         html_s = re.sub(re.escape(MARK_A) + r".*?" + re.escape(MARK_B), "", html_s, flags=re.S)
         at = _anchor_end(html_s, g.get("anchor") or "after-lede")

@@ -1,5 +1,6 @@
 """Optional rich SEO content for tool pages, from tool_rich.json (keyed by slug). Tools without an entry are unchanged."""
 import json,html,os,re
+import quality_picks
 e=lambda s:html.escape(str(s or ""))
 R=json.load(open("tool_rich.json")) if os.path.exists("tool_rich.json") else {}
 def _merge_quality_extras():
@@ -145,7 +146,7 @@ def lite(out,x,t,catslug,prim,B,r):
         +(f'<p style="margin:0 0 6px"><strong>Pros</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["pros"])}</ul>' if r.get("pros") else "")
         +(f'<p style="margin:0 0 6px"><strong>Cons</strong></p><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["cons"])}</ul>' if r.get("cons") else '<div style="margin-bottom:28px"></div>')
         if r.get("pros") or r.get("cons") else "")
-      +(f'{H2}Setup</h2><ol style="margin:0 0 28px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["setup"])}</ol>' if r.get("setup") else "")
+      +(f'{H2}Setup</h2><ol style="margin:0 0 {12 if r.get("needs_model") else 28}px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["setup"])}</ol>' + (quality_picks.model_note() if r.get("needs_model") else "") if r.get("setup") else "")
       +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7;overflow-wrap:anywhere">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
       +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+_mcp(n,r)+phtml
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
