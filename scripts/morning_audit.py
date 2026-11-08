@@ -7,9 +7,10 @@ bypass Turnstile, and does not write the tree it reads.
   AGENTSCOUT_ROOT=<tree> python3 daily_deep_audit.py --predeploy
   AGENTSCOUT_ROOT=<tree> python3 daily_deep_audit.py --live
 
---predeploy is the publish gate (local artifact, nav, footer, zips, categories).
---live checks the deployed origin rule and list_packages shape. A live page that
-still shows yesterday's animation stamp is reported and does not fail --predeploy.
+--predeploy is the publish gate. It reads the tree and does not write it.
+--live reads the deployed site. It does not POST /submit and it does not call
+api.indexnow.org. A live page that still shows the previous stamp is DEFERRED,
+not an artifact failure. A measurement file that is absent is UNVERIFIED, not a pass.
 """
 from __future__ import annotations
 
@@ -29,12 +30,52 @@ MCP_URL = "https://mcp.agentscouthq.com/mcp"
 ALLOWED_ORIGIN = "https://agentscouthq.com"
 FULL_SITE_TOOLS = 2000
 NAV_SKIP = {"404.html", "google823b89b55b70e740.html"}
+STALE_TOKENS = ("2,467+", "2,095+", "2,104+", "2,350+")
+DIRECTORY_STRIPE = {
+    "$15 Fast-Track": "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e",
+    "$49 30-Day Category Pin": "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00",
+    "$99/wk Weekly Sitewide Sponsor": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
+}
+BOT_STRIPE = {
+    "$39 Operations Bot": "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03",
+    "$59 SEO Bot": "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05",
+    "$59 Market Bot": "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06",
+    "$69 CEO Bot": "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07",
+    "$149 Bundle": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08",
+}
+FORM_IDS = (
+    "sf", "spkg-field", "name", "website", "category", "pricing", "desc", "email",
+    "found", "sbtn", "sdone", "sdone-msg", "sdone-pay", "sdone-pay-btn",
+)
+LIVE_PAGES = (
+    "https://agentscouthq.com/",
+    "https://agentscouthq.com/submit.html",
+    "https://agentscouthq.com/sponsor.html",
+    "https://agentscouthq.com/new.html",
+    "https://agentscouthq.com/mcp/",
+    "https://agentscouthq.com/mcp/connect.html",
+    "https://agentscouthq.com/bot-store/",
+    "https://agentscouthq.com/bot-templates/",
+    "https://agentscouthq.com/videos/",
+    "https://agentscouthq.com/newsletter.html",
+    "https://agentscouthq.com/api/products.json",
+    "https://agentscouthq.com/.well-known/acp.json",
+    "https://agentscouthq.com/.well-known/ai-plugin.json",
+    "https://agentscouthq.com/.well-known/mcp.json",
+    "https://agentscouthq.com/openapi.yaml",
+    "https://agentscouthq.com/llms.txt",
+    "https://agentscouthq.com/llms-full.txt",
+)
+CRAWLER_UA = "Mozilla/5.0 (compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)"
+CLONER_UA = "Mozilla/4.5 (compatible; HTTrack 3.0x)"
 
 
 class AuditResult:
     def __init__(self) -> None:
         self.problems: list[str] = []
         self.passes: list[str] = []
+        self.deferred: list[str] = []
+        self.unverified: list[str] = []
         self.synthetic_accepted = 0
         self.category_acceptance_claimed = False
         self.live_posts = 0
@@ -44,6 +85,12 @@ class AuditResult:
 
     def err(self, message: str) -> None:
         self.problems.append(message)
+
+    def later(self, message: str) -> None:
+        self.deferred.append(message)
+
+    def unknown(self, message: str) -> None:
+        self.unverified.append(message)
 
 
 def resolve_root(explicit: str | None = None) -> Path:
@@ -257,6 +304,66 @@ def coverage_problems(root: Path, tool_count: int) -> list[str]:
     for page in pack_pages:
         if "Agent Agent" in page.read_text(encoding="utf-8", errors="ignore"):
             problems.append(f"{page.relative_to(root).as_posix()} contains Agent Agent")
+    problems.extend(pack_ux_problems(root))
+    return problems
+
+
+def template_count_problems(root: Path) -> list[str]:
+    state_path = root / "data" / "anim_state.json"
+    page = _read(root, "bot-templates/index.html")
+    if not state_path.is_file() or not page:
+        return ["bot template count cannot be checked: anim_state or bot-templates/index.html is missing"]
+    try:
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"anim_state.json is not valid JSON ({exc})"]
+    rows = len(re.findall(r'<li class="bt-row"', page))
+    expected = state.get("bot_templates")
+    if expected != rows:
+        return [f"bot-templates rows {rows} != anim_state bot_templates {expected}"]
+    return []
+
+
+def pack_ux_problems(root: Path) -> list[str]:
+    """Local pack-builder checks from the box audit. They do not fetch the live site."""
+    if not _full_site(_catalog_counts(root)[0]):
+        return []
+    store = _read(root, "bot-store/index.html")
+    templates = _read(root, "bot-templates/index.html")
+    videos = _read(root, "videos/index.html")
+    lovable = _read(root, "tools/lovable.html")
+    outreach = _read(root, "data/outreach/25-agent-packs-email.html")
+    problems = []
+    if not store or not templates:
+        return ["pack UX cannot be checked: bot-store or bot-templates index is missing"]
+    if "{tier_btns}" in store or "{tier_btns}" in templates:
+        problems.append("literal {tier_btns} in bot-store or bot-templates")
+    if "#ap-dock{position:sticky" in store or 'id="ap-dock" hidden' not in store or "#ap-dock[hidden]{display:none" not in store:
+        problems.append("#ap-dock is not hidden on load or still uses sticky positioning")
+    if '</span><span class="ap-kind">Agent</span>' in store and ' </span><span class="ap-kind">Agent</span>' not in store:
+        problems.append("bot-store card title is missing the space before Agent")
+    for rel, text in (("bot-store/index.html", store), ("bot-templates/index.html", templates)):
+        section = re.search(r'<section[^>]*id="ai-agent-packs"[^>]*>.*?</section>', text, re.S)
+        block = section.group(0) if section else ""
+        for host in ("Claude Code", "Cursor", "Codex", "Grok Bot", "Lovable"):
+            if host not in block:
+                problems.append(f"{rel} #ai-agent-packs is missing {host}")
+        if text.count('class="ap-compat"') != 25:
+            problems.append(f"{rel} ap-compat count is {text.count('class=\"ap-compat\"')}, expected 25")
+        if "<li>Zero Telemetry</li>" in text:
+            problems.append(f"{rel} contains a duplicate Zero Telemetry chip")
+    pack_pages = list((root / "bot-store").glob("*/index.html"))
+    compat = sum('class="pack-compat"' in page.read_text(encoding="utf-8", errors="ignore") for page in pack_pages)
+    if compat != 25:
+        problems.append(f"pack-compat is on {compat}/25 pack pages")
+    if not videos or "$35" not in videos or "25 AI Agent Packs" not in videos or "Lovable" not in videos:
+        problems.append("videos/index.html is missing the 25 AI Agent Packs guide")
+    if "agentscout-bot-constellation.mp4?v=" not in templates:
+        problems.append("bot-templates/index.html constellation video is missing its cache buster")
+    if not lovable or "#ai-agent-packs" not in lovable or "$35" not in lovable:
+        problems.append("tools/lovable.html is missing the pack link")
+    if "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" not in outreach or "Claude" not in outreach:
+        problems.append("data/outreach/25-agent-packs-email.html is missing the Stripe link or host list")
     return problems
 
 
@@ -269,6 +376,159 @@ def local_contract_problems(root: Path) -> tuple[list[str], int]:
     return problems, accepted
 
 
+def _read(root: Path, rel: str) -> str:
+    path = root / rel
+    if not path.is_file():
+        return ""
+    return path.read_text(encoding="utf-8", errors="ignore")
+
+
+def form_field_problems(root: Path) -> list[str]:
+    html = _read(root, "submit.html")
+    if not html:
+        return ["submit.html is missing"]
+    missing = [item for item in FORM_IDS if not re.search(rf'\bid=["\']?{re.escape(item)}["\'\s>]', html)]
+    if missing:
+        return [f"submit.html is missing form ids: {', '.join(missing)}"]
+    return []
+
+
+def stripe_file_problems(root: Path) -> list[str]:
+    submit = _read(root, "submit.html")
+    sponsor = _read(root, "sponsor.html")
+    acp = _read(root, ".well-known/acp.json")
+    store = _read(root, "bot-store/index.html")
+    templates = _read(root, "bot-templates/index.html")
+    problems = []
+    if not sponsor:
+        problems.append("sponsor.html is missing")
+    if not acp:
+        problems.append(".well-known/acp.json is missing")
+    for label, url in DIRECTORY_STRIPE.items():
+        if url not in submit or url not in sponsor or url not in acp:
+            problems.append(f"{label} is not wired in submit.html, sponsor.html, and acp.json")
+    for label, url in BOT_STRIPE.items():
+        if url not in store or url not in templates or url not in acp:
+            problems.append(f"{label} is not wired in bot-store, bot-templates, and acp.json")
+    if "logo-wordmark.svg" not in store:
+        problems.append("bot-store/index.html is missing logo-wordmark.svg")
+    return problems
+
+
+def listed_email_problems(text: str, html: str, pages_label: str, followers_label: str) -> list[str]:
+    """Assertions from the box email check. The strings are not written to disk."""
+    problems = []
+    if pages_label not in text:
+        problems.append(f"listed email text is missing {pages_label}")
+    if followers_label not in text:
+        problems.append(f"listed email text is missing {followers_label}")
+    for url in list(DIRECTORY_STRIPE.values()) + list(BOT_STRIPE.values()):
+        if url not in text:
+            problems.append(f"listed email text is missing {url}")
+    if "logo-wordmark-dark.png" not in html:
+        problems.append("listed email html is missing logo-wordmark-dark.png")
+    if "logo-wordmark.svg" in html:
+        problems.append("listed email html includes logo-wordmark.svg")
+    return problems
+
+
+def preview_listed_email(pages_label: str, followers_label: str) -> tuple[str, str]:
+    """In-memory preview. It does not write a file and it does not send mail."""
+    links = "\n".join(list(DIRECTORY_STRIPE.values()) + list(BOT_STRIPE.values()))
+    text = f"{pages_label}\n{followers_label}\n{links}\n"
+    html = '<img src="https://agentscouthq.com/logo-wordmark-dark.png" alt="built by AgentScout">'
+    return text, html
+
+
+def _artifact_labels(root: Path) -> tuple[dict, list[str]]:
+    problems = []
+    metrics_path = root / "api" / "metrics.json"
+    if not metrics_path.is_file():
+        return {}, ["api/metrics.json is missing, so the listed email has no artifact counts"]
+    try:
+        metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return {}, [f"api/metrics.json is not valid JSON ({exc})"]
+    try:
+        tools = f"{int(metrics['tools_count']):,}"
+        pages = f"{int(metrics.get('pages_count') or metrics.get('indexed_pages_count')):,}+"
+        followers = f"{int(metrics['x_combined_followers']):,}+"
+    except (KeyError, TypeError, ValueError) as exc:
+        return {}, [f"api/metrics.json is missing a count ({exc})"]
+    return {"tools": tools, "pages": pages, "followers": followers}, problems
+
+
+def indexnow_key_problems(root: Path) -> tuple[str, list[str]]:
+    keys = [path for path in root.glob("*.txt") if re.fullmatch(r"[0-9a-f]{32}", path.stem)]
+    if len(keys) != 1:
+        return "", [f"expected one IndexNow key file at the tree root, found {len(keys)}"]
+    body = keys[0].read_text(encoding="utf-8").strip()
+    if body != keys[0].stem:
+        return "", ["IndexNow key file body does not match its name"]
+    return keys[0].stem, []
+
+
+def measurement_problems(document: object, kind: str) -> list[str]:
+    if kind == "cwv":
+        if not isinstance(document, dict):
+            return ["cwv-seo-benchmark.json is not an object"]
+        pages = document.get("pages")
+        if not isinstance(pages, list) or len(pages) < 6:
+            return ["cwv-seo-benchmark.json needs 6 graded pages"]
+        if not all(isinstance(page, dict) and page.get("grade") == "PASS" for page in pages):
+            return ["cwv-seo-benchmark.json has a page that is not PASS"]
+        return []
+    if not isinstance(document, dict):
+        return ["seo-vitals-latest.json is not an object"]
+    vitals = document.get("pagespeed_and_vitals")
+    if not isinstance(vitals, dict) or len(vitals) < 5:
+        return ["seo-vitals-latest.json needs 5 templates"]
+    for url, modes in vitals.items():
+        if not isinstance(modes, dict):
+            return [f"seo-vitals-latest.json {url} is not an object"]
+        for mode in ("mobile", "desktop"):
+            scores = (modes.get(mode) or {}).get("scores") or {}
+            if scores.get("seo") != 100 or scores.get("best_practices") != 100:
+                return [f"seo-vitals-latest.json {url} {mode} is not SEO 100 and Best Practices 100"]
+    return []
+
+
+def inline_script_problems(label: str, html: str) -> list[str]:
+    import subprocess
+    import tempfile
+    scripts = re.findall(
+        r"<script(?![^>]*type=['\"]application/(?:ld\+json|json)['\"])(?![^>]*src=)[^>]*>(.*?)</script>",
+        html, re.S | re.I,
+    )
+    problems = []
+    for index, code in enumerate(scripts, start=1):
+        if not code.strip():
+            continue
+        with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as handle:
+            handle.write(code)
+            path = handle.name
+        result = subprocess.run(["node", "--check", path], capture_output=True, text=True)
+        if result.returncode != 0:
+            problems.append(f"{label} inline script {index} failed node --check")
+    return problems
+
+
+def header_problems(headers: dict) -> list[str]:
+    lowered = {str(key).lower(): str(value) for key, value in headers.items()}
+    problems = []
+    if "cloudflare" not in lowered.get("server", "").lower():
+        problems.append("live homepage server is not Cloudflare")
+    if "max-age=31536000" not in lowered.get("strict-transport-security", ""):
+        problems.append("live homepage is missing HSTS max-age=31536000")
+    if lowered.get("x-frame-options", "").upper() not in ("DENY", "SAMEORIGIN"):
+        problems.append("live homepage X-Frame-Options is not DENY or SAMEORIGIN")
+    if lowered.get("x-content-type-options", "").lower() != "nosniff":
+        problems.append("live homepage is missing nosniff")
+    if "strict-origin" not in lowered.get("referrer-policy", "").lower():
+        problems.append("live homepage Referrer-Policy is not strict-origin")
+    return problems
+
+
 def predeploy(root: Path) -> AuditResult:
     result = AuditResult()
     tool_count, _mcp = _catalog_counts(root)
@@ -279,7 +539,35 @@ def predeploy(root: Path) -> AuditResult:
         result.err(item)
     for item in coverage_problems(root, tool_count):
         result.err(item)
-    if not result.problems:
+    for item in form_field_problems(root):
+        result.err(item)
+    for item in template_count_problems(root):
+        result.err(item)
+    for item in stripe_file_problems(root):
+        result.err(item)
+    labels, label_problems = _artifact_labels(root)
+    for item in label_problems:
+        result.unknown(item)
+    if labels:
+        text, html = preview_listed_email(labels["pages"], labels["followers"])
+        for item in listed_email_problems(text, html, labels["pages"], labels["followers"]):
+            result.err(item)
+        else:
+            if not listed_email_problems(text, html, labels["pages"], labels["followers"]):
+                result.ok("listed email preview kept the artifact counts, Stripe links, and dark wordmark in memory")
+    for rel in ("index.html", "submit.html", "sponsor.html"):
+        for item in inline_script_problems(rel, _read(root, rel)):
+            result.err(item)
+    _key, key_problems = indexnow_key_problems(root)
+    for item in key_problems:
+        result.err(item)
+    else:
+        if _key and not key_problems:
+            result.ok(f"IndexNow key file {_key}.txt matches its body; no IndexNow submission was sent")
+    result.later("Stripe Checkout HTTP, live page counts, Cloudflare headers, and the cloner block run in --live")
+    result.later("Core Web Vitals and seo-vitals-latest.json are postdeploy measurements and are not generated here")
+    result.later("Live animation lag is reported by --live and does not fail this artifact")
+    if not result.problems and not result.unverified:
         result.ok(
             f"predeploy artifact checks passed for {root} "
             f"({result.synthetic_accepted} categories accepted by the synthetic inner check, no live POST)"
@@ -355,10 +643,104 @@ def live(root: Path, fetch=None) -> AuditResult:
     )
     for item in mcp_body_problems(mcp_status, mcp_body):
         result.err(item)
-    if not any(item.startswith("OPTIONS") or item.startswith("list_packages") or "allow-origin" in item for item in result.problems):
-        result.ok("live origin rule and list_packages shape passed; category acceptance was not claimed from the network")
+    live_pages(result, fetch)
+    stripe_live(result, fetch)
+    edge_live(result, fetch)
+    indexnow_live(result, root, fetch)
+    measurements_live(result, root)
+    lead_gen_live(result, fetch)
+    result.ok("category acceptance was not claimed from the network and /submit was not posted")
     result.live_posts = 0
     return result
+
+
+def live_pages(result: AuditResult, fetch) -> None:
+    try:
+        status, _headers, body = fetch("https://agentscouthq.com/api/metrics.json", "GET", None, None)
+        metrics = json.loads(body) if status == 200 else {}
+        tools = int(metrics["tools_count"])
+        pages = f"{int(metrics.get('pages_count') or metrics['indexed_pages_count']):,}+"
+    except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+        result.err("live /api/metrics.json did not return the tool and page counts")
+        return
+    if status != 200:
+        result.err(f"live /api/metrics.json HTTP {status}")
+        return
+    result.ok(f"live metrics HTTP 200 tools={tools:,} pages={pages}")
+    for url in LIVE_PAGES:
+        page_status, _page_headers, page = fetch(url, "GET", None, None)
+        stale = [token for token in STALE_TOKENS if token in page]
+        if page_status != 200 or stale:
+            result.err(f"{url} HTTP {page_status} stale={stale}")
+    home_status, _home_headers, home = fetch("https://agentscouthq.com/", "GET", None, None)
+    if pages not in home:
+        result.later(f"live homepage does not yet show {pages}; that is postdeploy lag, not an artifact failure")
+    else:
+        result.ok(f"live homepage shows {pages}")
+
+
+def stripe_live(result: AuditResult, fetch) -> None:
+    for label, url in DIRECTORY_STRIPE.items():
+        status, _headers, body = fetch(url, "GET", None, {"User-Agent": "Mozilla/5.0"})
+        stale = [token for token in STALE_TOKENS if token in body]
+        if status != 200 or stale or "no longer active" in body.lower():
+            result.err(f"Stripe Checkout {label} HTTP {status} stale={stale}")
+        else:
+            result.ok(f"Stripe Checkout {label} HTTP 200")
+
+
+def edge_live(result: AuditResult, fetch) -> None:
+    status, headers, _body = fetch("https://agentscouthq.com/", "GET", None, {"User-Agent": CRAWLER_UA})
+    if status != 200:
+        result.err(f"crawler homepage HTTP {status}")
+    else:
+        for item in header_problems(headers or {}):
+            result.err(item)
+    blocked, _blocked_headers, _blocked_body = fetch("https://agentscouthq.com/", "GET", None, {"User-Agent": CLONER_UA})
+    if blocked != 403:
+        result.err(f"HTTrack homepage HTTP {blocked}, expected 403")
+    else:
+        result.ok("HTTrack is blocked with HTTP 403")
+
+
+def indexnow_live(result: AuditResult, root: Path, fetch) -> None:
+    key, problems = indexnow_key_problems(root)
+    for item in problems:
+        result.err(item)
+    if not key:
+        return
+    status, _headers, body = fetch(f"https://agentscouthq.com/{key}.txt", "GET", None, None)
+    if status != 200 or body.strip() != key:
+        result.err(f"IndexNow key URL HTTP {status}; body matches the file: {body.strip() == key}")
+    else:
+        result.ok(f"IndexNow key URL returned the file body; api.indexnow.org was not called")
+
+
+def measurements_live(result: AuditResult, root: Path) -> None:
+    cwv_path = Path(os.environ["AGENTSCOUT_CWV_JSON"]) if os.environ.get("AGENTSCOUT_CWV_JSON") else root / "data" / "cwv-seo-benchmark.json"
+    vitals_path = Path(os.environ["AGENTSCOUT_VITALS_JSON"]) if os.environ.get("AGENTSCOUT_VITALS_JSON") else root / "data" / "seo-vitals-latest.json"
+    for path, kind in ((cwv_path, "cwv"), (vitals_path, "vitals")):
+        if not path.is_file():
+            result.unknown(f"{path} is not in the tree. This audit does not generate it and does not treat it as passed.")
+            continue
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            result.err(f"{path.name} is not valid JSON ({exc})")
+            continue
+        for item in measurement_problems(document, kind):
+            result.err(item)
+        else:
+            if not measurement_problems(document, kind):
+                result.ok(f"{path.name} matches the box grade rules")
+
+
+def lead_gen_live(result: AuditResult, fetch) -> None:
+    status, _headers, body = fetch("https://agentscouthq.com/bot-store/lead-gen/", "GET", None, None)
+    if status != 200 or "Agent Agent" in body:
+        result.err(f"live lead-gen HTTP {status}, Agent Agent present: {'Agent Agent' in body}")
+    else:
+        result.ok("live lead-gen HTTP 200 with no Agent Agent title")
 
 
 def render(result: AuditResult, label: str) -> int:
@@ -367,8 +749,15 @@ def render(result: AuditResult, label: str) -> int:
         print(f"  [PASS] {line}")
     for line in result.problems:
         print(f"  [FAIL] {line}")
-    print(f"\nSUMMARY: {len(result.passes)} PASSED, {len(result.problems)} FAILED")
-    return 1 if result.problems else 0
+    for line in result.deferred:
+        print(f"  [DEFERRED] {line}")
+    for line in result.unverified:
+        print(f"  [UNVERIFIED] {line}")
+    print(
+        f"\nSUMMARY: {len(result.passes)} PASSED, {len(result.problems)} FAILED, "
+        f"{len(result.deferred)} DEFERRED, {len(result.unverified)} UNVERIFIED"
+    )
+    return 1 if result.problems or result.unverified else 0
 
 
 def main(argv: list[str] | None = None) -> int:
