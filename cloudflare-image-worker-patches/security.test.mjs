@@ -481,6 +481,12 @@ test("reviews export requires the stats key and does not add CORS or a cache", a
   assert.equal(JSON.stringify(body).includes("REVIEW_HMAC"), false);
   assert.deepEqual(calls, ["all", "reviews"]);
   assert.equal(calls.includes("inner"), false);
+  const snapshot = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/snapshot", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), { ...binding, REVIEWS_SNAPSHOT: "true" });
+  assert.equal(snapshot.status, 200);
+  assert.equal(calls.includes("snapshot"), false);
+  assert.equal(calls.includes("inner"), true);
 });
 
 test("the turnstile flag is masked only on the paths protect already checks", () => {

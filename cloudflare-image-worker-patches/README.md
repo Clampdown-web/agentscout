@@ -76,6 +76,8 @@ TURNSTILE_ENABLED = "true"
 
 `GET /reviews/export` is off unless the plain-text var `REVIEWS_EXPORT` is the string `true`. This repository does not set that var. While it is unset, the route is a 404 and does not call the reviews object, even if these files are deployed. After it is set, the route is admin-only and read-only. The response is plaintext JSON with `Cache-Control: private, no-store` and no allow-origin header on the row payload. Put the body in the encrypted archive. This repository does not restore the Durable Object.
 
+`ReviewsDO.snapshotRatingsReviews` is a separate read. It is not a route. It runs only when `REVIEWS_SNAPSHOT` is the string `true`, which this repository does not set. The read is two fixed SELECTs inside `ctx.storage.transactionSync`, with both cursors consumed before the callback returns. It does not accept SQL, does not read Workers KV, and does not include the `limits` table. A local Miniflare run showed a pair of inserts is visible entirely or not at all through that callback, while an awaited gap between the two SELECTs can see one table updated and the other not. Turning the flag on, and any route that would return the rows, needs its own approval. Encrypt before anything is written to disk. Key custody is not handled here.
+
 5. From the image-worker project, deploy **only** that worker:
 
 ```sh
