@@ -271,7 +271,17 @@ for x in t:
     if _pt in ("free","freemium") or any(isinstance(o,dict) and str(o.get("price",""))=="0" for o in _ofl): _ab["isAccessibleForFree"]=True
     elif _pt=="paid": _ab["isAccessibleForFree"]=False
     if "offers" not in _ab and _pt=="free": _ab["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":x.get("pricing_detail") or x["pricing"]}
-    out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+"</script></head>",1)
+    def _schema_text(v):
+        return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",str(v or ""))).strip()
+    def _scrub(node):
+        if isinstance(node,dict):
+            for k,v in list(node.items()):
+                if k in ("description","text","name") and isinstance(v,str): node[k]=_schema_text(v)
+                else: _scrub(v)
+        elif isinstance(node,list):
+            for v in node: _scrub(v)
+    _scrub(ld)
+    out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("<","\\u003c")+"</script></head>",1)
     import tool_banner
     out=tool_banner.ensure(out)  # Bot Store strip from data/detail.tpl, on every new tool page
     open(f"tools/{x['slug']}.html","w").write(out)
