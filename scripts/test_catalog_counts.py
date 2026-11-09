@@ -63,8 +63,9 @@ def plus_ok(n: int, value: int, plus: bool) -> bool:
 
 
 def visible(html: str) -> str:
-    text = re.sub(r"(?is)<script\b.*?</script>", " ", html)
-    text = re.sub(r"(?is)<style\b.*?</style>", " ", text)
+    """Drop script and style, including end tags with whitespace or attributes (``</script >``)."""
+    text = re.sub(r"(?is)<script\b.*?</script\b[^>]*>", " ", html)
+    text = re.sub(r"(?is)<style\b.*?</style\b[^>]*>", " ", text)
     text = re.sub(r"<[^>]+>", " ", text)
     return re.sub(r"\s+", " ", text)
 
@@ -177,6 +178,19 @@ def catalog_problems(tools: int | None = None, mcp: int | None = None) -> list[s
 
 
 class CatalogCountTests(unittest.TestCase):
+    def test_visible_strips_script_and_style_end_tags_with_whitespace(self):
+        html = (
+            "<p>2,407 tools</p>"
+            "<script type=\"text/javascript\">2,316 tools</script >"
+            "<style type=\"text/css\">233 MCP servers</style >"
+        )
+        text = visible(html)
+        self.assertIn("2,407 tools", text)
+        self.assertNotIn("2,316", text)
+        self.assertNotIn("233", text)
+        self.assertNotIn("<script", text)
+        self.assertNotIn("<style", text)
+
     def test_generated_pages_match_metrics(self):
         bad = catalog_problems()
         self.assertFalse(bad, "\n".join(bad[:40]))
