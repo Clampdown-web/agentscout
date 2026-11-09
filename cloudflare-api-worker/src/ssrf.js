@@ -91,6 +91,8 @@ function blockedV6(raw) {
   const first = parseInt(full[0], 16);
   if ((first & 0xfe00) === 0xfc00) return true;
   if ((first & 0xffc0) === 0xfe80) return true;
+  // Deprecated site-local fec0::/10. Not a public website address.
+  if ((first & 0xffc0) === 0xfec0) return true;
   if ((first & 0xff00) === 0xff00) return true;
   if (full[0] === "2001" && full[1] === "0db8") return true;
   return false;
@@ -119,7 +121,10 @@ export function validateUrlShape(input) {
   if (url.username || url.password) return { error: "URLs with a username or password are blocked." };
   const port = url.port;
   if (port && port !== "80" && port !== "443") return { error: "Only ports 80 and 443 can be checked." };
-  const host = url.hostname.replace(/^\[|\]$/g, "").toLowerCase();
+  // WHATWG keeps a trailing dot on names (metadata.google.internal.). The blocklist
+  // is written without it. Stripping the dot does not change a public lookup.
+  let host = url.hostname.replace(/^\[|\]$/g, "").toLowerCase();
+  while (host.endsWith(".")) host = host.slice(0, -1);
   if (!host || BLOCKED_HOST.test(host) || host === "0.0.0.0" || host === "metadata.google.internal") {
     return { error: "That host is not a public website." };
   }
@@ -140,7 +145,8 @@ export function isIpLiteral(host) {
 }
 
 export async function resolveAndCheck(hostname, fetchImpl = fetch) {
-  const host = String(hostname || "").replace(/^\[|\]$/g, "");
+  let host = String(hostname || "").replace(/^\[|\]$/g, "");
+  while (host.endsWith(".")) host = host.slice(0, -1);
   // A public name is not an IP. Checking isBlockedIp() on it treats every hostname as blocked.
   if (isIpLiteral(host)) {
     if (isBlockedIp(host)) return { error: "That address is not public." };

@@ -8,7 +8,8 @@ function show(d){
   var rows=(d.checks||[]).map(function(c){
     return '<li style="margin:0 0 10px;list-style:none"><b>'+(c.ok?"✅":"❌")+" "+esc(c.label)+'</b> <span class="muted">'+nesc(c.points)+' pts</span>'+(c.ok?"":'<br><span class="muted" style="font-size:13.5px">'+esc(c.fix)+'</span>')+'</li>'
   }).join("");
-  var listed=d.listed?'<p>Already listed on AgentScout: <a href="../tools/'+esc(d.listed.slug)+'.html">'+esc(d.listed.name)+'</a>.</p>':'<p>Not in the AgentScout directory yet.</p>';
+  var slugOk=/^[a-z0-9][a-z0-9-]{0,80}$/.test(String(d.listed&&d.listed.slug||""));
+  var listed=d.listed&&slugOk?'<p>Already listed on AgentScout: <a href="../tools/'+esc(d.listed.slug)+'.html">'+esc(d.listed.name)+'</a>.</p>':'<p>Not in the AgentScout directory yet.</p>';
   $("rout").innerHTML='<div style="border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0;background:var(--card)"><h2 style="font-size:22px;margin:0 0 6px">'+nesc(d.score)+'/100</h2><p class="muted" style="margin:0 0 12px;overflow-wrap:anywhere">'+esc(d.final_url||"")+'</p>'+listed+'<ul style="padding:0;margin:0">'+rows+'</ul>'
     +'<p style="margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px"><a class="btn primary" href="../submit.html">Submit free</a><a class="btn primary" href="'+FAST+'" target="_blank" rel="noopener noreferrer">Fast-Track ($15) →</a></p></div>'
 }

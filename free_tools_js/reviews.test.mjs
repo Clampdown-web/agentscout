@@ -49,7 +49,10 @@ test("reviews.js puts the star count through a number before innerHTML", async (
         json: async () => ({
           count: 1,
           avg: 5,
-          reviews: [{ stars: "<img src=x onerror=alert(1)>", name: "A", text: "hello", ts: 0 }],
+          reviews: [
+            { stars: "<img src=x onerror=alert(1)>", name: "A", text: "hello", ts: 0 },
+            { stars: 4, name: "<b>Eve</b>", text: "ok", ts: "not-a-date" },
+          ],
         }),
       });
     },
@@ -66,4 +69,6 @@ test("reviews.js puts the star count through a number before innerHTML", async (
   assert.equal(html.includes("onerror"), false);
   assert.match(html, /0 out of 5 stars/);
   assert.match(html, /--r:0/);
+  assert.match(html, /&lt;b&gt;Eve&lt;\/b&gt;/);
+  assert.match(html, /datetime=""/);
 });

@@ -168,14 +168,22 @@ function limitersReady(env) {
 }
 
 async function rateLimit(env, ip) {
-  const [burst, minute] = await Promise.all([
-    env.MCP_BURST.limit({ key: ip }),
-    env.MCP_MINUTE.limit({ key: ip }),
-  ]);
-  if (!burst || burst.success === false) {
+  let burst;
+  let minute;
+  try {
+    [burst, minute] = await Promise.all([
+      env.MCP_BURST.limit({ key: ip }),
+      env.MCP_MINUTE.limit({ key: ip }),
+    ]);
+  } catch {
+    // Do not log the thrown message. A binding error can include account detail.
+    return { unconfigured: true };
+  }
+  // Cloudflare returns success: true. Anything else, including a missing field, is a refusal.
+  if (!burst || burst.success !== true) {
     return { limited: true, limit: BURST_MAX, remaining: 0, reset: BURST_WINDOW_MS / 1000 };
   }
-  if (!minute || minute.success === false) {
+  if (!minute || minute.success !== true) {
     return { limited: true, limit: MINUTE_MAX, remaining: 0, reset: MINUTE_WINDOW_MS / 1000 };
   }
   return { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: MINUTE_WINDOW_MS / 1000 };
@@ -468,6 +476,11 @@ export default {
       const quota = verifiedCrawler(request)
         ? { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: 60 }
         : await rateLimit(env, ip);
+      if (quota.unconfigured) {
+        status = 503;
+        console.error(JSON.stringify({ message: "rate limit binding failed", method: request.method, path: url.pathname, status }));
+        return jsonResponse({ error: "Rate limiting is not configured." }, 503);
+      }
       const extra = rateHeaders(quota);
       if (quota.limited) {
         status = 429;

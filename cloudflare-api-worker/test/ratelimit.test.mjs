@@ -32,7 +32,7 @@ test("parallel roast requests in one isolate stay inside the per-minute cap", as
     const env = { VOTES: kv() };
     const responses = await Promise.all(Array.from({ length: 20 }, () => worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
       method: "POST",
-      headers: { "content-type": "application/json", "cf-connecting-ip": "203.0.113.77" },
+      headers: { "content-type": "application/json", origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.77" },
       body: JSON.stringify({ url: "https://example.com/" }),
     }), env)));
     const statuses = await Promise.all(responses.map((res) => res.status));
@@ -51,7 +51,7 @@ test("roast and vote fail closed without the KV binding", async () => {
   globalThis.fetch = async () => { fetched = true; throw new Error("should not fetch"); };
   try {
     const roast = await worker.fetch(new Request("https://votes.agentscouthq.com/roast?url=https://example.com/", {
-      headers: { "cf-connecting-ip": "203.0.113.78" },
+      headers: { origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.78" },
     }), {});
     assert.equal(roast.status, 503);
     const vote = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
@@ -76,7 +76,7 @@ test("optional rate limit bindings fail closed and do not write the KV counter",
   };
   const roast = (env) => worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
     method: "POST",
-    headers: { "content-type": "application/json", "cf-connecting-ip": "203.0.113.79" },
+    headers: { "content-type": "application/json", origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.79" },
     body: JSON.stringify({ url: "https://example.com/" }),
   }), env);
   try {

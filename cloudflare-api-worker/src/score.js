@@ -31,8 +31,8 @@ export function scoreListing({ html = "", llmsStatus = 0, llmsText = "", listed 
   return {
     score,
     max: 100,
-    title,
-    pitch,
+    title: title.slice(0, 300),
+    pitch: pitch.slice(0, 300),
     checks: checks.map((c) => ({ id: c.id, label: c.label, ok: c.ok, points: c.points, fix: c.ok ? "" : c.fix })),
     listed: listed && listed.slug ? { slug: listed.slug, name: listed.name, page: listed.page } : null,
   };

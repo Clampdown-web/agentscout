@@ -31,6 +31,7 @@
   function starNum(n) { var v = +n; return isFinite(v) ? v : 0; }
   function stars(n) { return '<span class="rv-stars" style="--r:' + starNum(n) + '" aria-hidden="true">★★★★★</span>'; }
   function date(ts) { try { return new Date(ts).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); } catch (e) { return ""; } }
+  function iso(ts) { try { var d = new Date(ts); if (!isFinite(d.getTime())) return ""; return d.toISOString(); } catch (e) { return ""; } }
   function render(d) {
     if (!d || typeof d.count !== "number") return;
     var s = $(".rv-sum");
@@ -44,7 +45,7 @@
     var L = $(".rv-list"), R = d.reviews || [];
     L.innerHTML = R.map(function (r) {
       var sn = starNum(r.stars);
-      return '<li class="rv-item">' + stars(sn) + '<span class="sr">' + sn + ' out of 5 stars</span> <b class="rv-who">' + esc(r.name || "Anonymous") + '</b> <time class="muted" datetime="' + esc(new Date(r.ts).toISOString()) + '">' + esc(date(r.ts)) + '</time><p>' + esc(r.text) + '</p></li>';
+      return '<li class="rv-item">' + stars(sn) + '<span class="sr">' + sn + ' out of 5 stars</span> <b class="rv-who">' + esc(r.name || "Anonymous") + '</b> <time class="muted" datetime="' + esc(iso(r.ts)) + '">' + esc(date(r.ts)) + '</time><p>' + esc(r.text) + '</p></li>';
     }).join("");
     L.hidden = !R.length;
   }

@@ -9,6 +9,7 @@ test("blocks private, loopback, link-local, and metadata addresses", () => {
     "0:0:0:0:0:ffff:a9fe:a9fe", "::0:ffff:7f00:1", "0:0:0:0:0:ffff:a00:1",
     "64:ff9b::a00:1", "64:ff9b:1:a00:0:100::", "2002:a9fe:a9fe::",
     "::7f00:1", "::a00:1", "::a9fe:a9fe", "0:0:0:0:0:0:7f00:1",
+    "fec0::1", "fec0:0:0:1::", "feff::1",
   ]) {
     assert.equal(isBlockedIp(ip), true, ip);
   }
@@ -42,6 +43,14 @@ test("url shape allows only public http(s)", () => {
   assert.ok(validateUrlShape("http://[::a00:1]/").error);
   assert.ok(validateUrlShape("http://[::a9fe:a9fe]/").error);
   assert.equal(validateUrlShape("http://[::808:808]/").error, undefined);
+  assert.ok(validateUrlShape("http://[fec0::1]/").error);
+  assert.ok(validateUrlShape("http://metadata.google.internal./").error);
+  assert.ok(validateUrlShape("http://localhost./").error);
+  assert.ok(validateUrlShape("http://foo.internal./").error);
+  const dotted = validateUrlShape("https://example.com./pricing");
+  assert.equal(dotted.error, undefined);
+  assert.equal(dotted.url.hostname, "example.com");
+  assert.equal(dotted.url.pathname, "/pricing");
 });
 
 test("public hostnames are looked up and bare private IPs are blocked", async () => {
@@ -88,4 +97,8 @@ test("score names concrete fixes and does not invent a listing", () => {
   assert.ok(result.checks.find((c) => c.id === "title" && !c.ok).fix.includes("Title"));
   assert.equal(result.listed, null);
   assert.equal(result.checks.find((c) => c.id === "pricing").ok, true);
+  const huge = "T".repeat(500);
+  const capped = scoreListing({ html: `<title>${huge}</title>`, llmsStatus: 0, llmsText: "", listed: null });
+  assert.equal(capped.title.length, 300);
+  assert.equal(capped.checks.find((c) => c.id === "title").ok, false);
 });

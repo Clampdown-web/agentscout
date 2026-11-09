@@ -15,7 +15,7 @@ function kv() {
 function roast(url, ip, env = { VOTES: kv() }, headers = {}) {
   return worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
     method: "POST",
-    headers: { "content-type": "application/json", ...(ip ? { "cf-connecting-ip": ip } : {}), ...headers },
+    headers: { "content-type": "application/json", origin: "https://agentscouthq.com", ...(ip ? { "cf-connecting-ip": ip } : {}), ...headers },
     body: JSON.stringify({ url }),
   }), env);
 }
@@ -237,4 +237,77 @@ describe("roast body limit", { concurrency: false }, () => {
       globalThis.fetch = previous;
     }
   });
+});
+
+test("roast rejects a foreign origin before any fetch and keeps the site origin", async () => {
+  const calls = [];
+  const previous = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    calls.push(String(input));
+    throw new Error("fetched " + input);
+  };
+  try {
+    const foreign = await roast("https://example.com/", "203.0.113.50", { VOTES: kv() }, { origin: "https://evil.example" });
+    assert.equal(foreign.status, 403);
+    assert.equal((await foreign.json()).error, "This check can only be sent from agentscouthq.com.");
+    const bare = await worker.fetch(new Request("https://votes.agentscouthq.com/roast?url=https://example.com/", {
+      headers: { "cf-connecting-ip": "203.0.113.51" },
+    }), { VOTES: kv() });
+    assert.equal(bare.status, 403);
+    assert.equal(calls.length, 0);
+  } finally {
+    globalThis.fetch = previous;
+  }
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url.startsWith("https://cloudflare-dns.com/")) return dns("10.0.0.1");
+    throw new Error("fetched " + url);
+  };
+  try {
+    const referer = await worker.fetch(new Request("https://votes.agentscouthq.com/roast?url=https://example.com/", {
+      headers: { referer: "https://www.agentscouthq.com/free-tools/roast-my-ai-tool-listing.html", "cf-connecting-ip": "203.0.113.52" },
+    }), { VOTES: kv() });
+    assert.equal(referer.status, 400);
+    assert.equal((await referer.json()).error, "That host resolves to a blocked address.");
+  } finally {
+    globalThis.fetch = previous;
+  }
+});
+
+test("an oversized roast body is rejected and a bad catalog slug is not linked", async () => {
+  const previous = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url.startsWith("https://cloudflare-dns.com/")) return dns("1.1.1.1");
+    if (url.endsWith("/llms.txt")) return new Response("missing", { status: 404 });
+    if (url.includes("/api/tools.json")) {
+      return new Response(JSON.stringify([
+        { slug: "cursor", name: "Cursor", website: "https://cursor.example/" },
+        { slug: "../<script>", name: "<img src=x onerror=alert(1)>", website: "https://evil.example/" },
+      ]), { status: 200, headers: { "content-type": "application/json" } });
+    }
+    return new Response("<title>Cursor The AI Code Editor Online</title><meta name=\"description\" content=\"Agents write and review code in the repository beside the editor you already use daily.\"><p>Free plan $20/mo</p>", {
+      status: 200,
+      headers: { "content-type": "text/html" },
+    });
+  };
+  try {
+    const huge = await worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
+      method: "POST",
+      headers: { "content-type": "application/json", origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.53" },
+      body: JSON.stringify({ url: "https://example.com/", pad: "x".repeat(9000) }),
+    }), { VOTES: kv() });
+    assert.equal(huge.status, 413);
+    const listed = await roast("https://cursor.example/pricing", "203.0.113.54");
+    assert.equal(listed.status, 200);
+    const body = await listed.json();
+    assert.equal(body.listed.slug, "cursor");
+    assert.equal(body.listed.name, "Cursor");
+    const evil = await roast("https://evil.example/", "203.0.113.55");
+    assert.equal(evil.status, 200);
+    assert.equal((await evil.json()).listed, null);
+    assert.equal(listed.headers.get("x-content-type-options"), "nosniff");
+  } finally {
+    globalThis.fetch = previous;
+  }
 });

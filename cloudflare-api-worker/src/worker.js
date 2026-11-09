@@ -21,6 +21,8 @@ const ROAST_PER_MIN = 8;
 const VOTE_PER_MIN = 30;
 const MAX_SLUGS = 400;
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
+const MAX_VOTE_BODY = 4_096;
+const MAX_ROAST_BODY = 8_192;
 
 const memoryBuckets = new Map();
 
@@ -58,6 +60,7 @@ function json(request, body, status = 200, cache = "no-store") {
     headers: {
       "content-type": "application/json; charset=utf-8",
       "cache-control": cache,
+      "x-content-type-options": "nosniff",
       ...corsHeaders(request),
     },
   });
@@ -65,6 +68,27 @@ function json(request, body, status = 200, cache = "no-store") {
 
 function clientIp(request) {
   return (request.headers.get("cf-connecting-ip") || "").trim();
+}
+
+// Reject a declared or actual body over max. Invalid JSON stays an empty object,
+// which is what the vote and roast handlers already did.
+async function readJsonObject(request, max) {
+  const declared = Number(request.headers.get("content-length") || "0");
+  if (Number.isFinite(declared) && declared > max) return { error: "too_large" };
+  let text = "";
+  try {
+    text = await request.text();
+  } catch {
+    return { data: {} };
+  }
+  if (text.length > max) return { error: "too_large" };
+  if (!text.trim()) return { data: {} };
+  try {
+    const data = JSON.parse(text);
+    return { data: data && typeof data === "object" ? data : {} };
+  } catch {
+    return { data: {} };
+  }
 }
 
 function ptDay(now = new Date()) {
@@ -320,13 +344,14 @@ async function catalogMatch(finalHost) {
   if (!res.ok) return null;
   const data = await res.json();
   const tools = Array.isArray(data) ? data : data.tools || [];
-  const host = finalHost.replace(/^www\./, "");
+  const host = String(finalHost || "").replace(/^www\./, "").toLowerCase();
   for (const tool of tools) {
     for (const field of ["website", "url"]) {
       try {
         const h = new URL(tool[field]).hostname.replace(/^www\./, "").toLowerCase();
-        if (h && h === host) {
-          return { slug: tool.slug, name: tool.name, page: `https://agentscouthq.com/tools/${tool.slug}.html` };
+        if (h && h === host && SLUG_RE.test(String(tool.slug || ""))) {
+          const name = String(tool.name || "").replace(/[\u0000-\u001f\u007f]/g, "").slice(0, 200);
+          return { slug: tool.slug, name, page: `https://agentscouthq.com/tools/${tool.slug}.html` };
         }
       } catch { /* skip bad urls */ }
     }
@@ -335,6 +360,7 @@ async function catalogMatch(finalHost) {
 }
 
 async function roast(request, env) {
+  if (!voteAllowed(request)) return json(request, { error: "This check can only be sent from agentscouthq.com." }, 403);
   if (!env.VOTES) return json(request, { error: "Vote storage is not configured." }, 503);
   const ip = clientIp(request);
   if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
@@ -342,8 +368,9 @@ async function roast(request, env) {
   const url = new URL(request.url);
   let target = url.searchParams.get("url") || "";
   if (request.method === "POST") {
-    const body = await request.json().catch(() => ({}));
-    target = body.url || target;
+    const parsed = await readJsonObject(request, MAX_ROAST_BODY);
+    if (parsed.error) return json(request, { error: "Payload too large." }, 413);
+    target = (parsed.data && parsed.data.url) || target;
   }
   const page = await fetchPublic(target);
   if (page.error) return json(request, { error: page.error }, 400);
@@ -382,8 +409,9 @@ async function vote(request, env) {
   const ip = clientIp(request);
   if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
   if (!(await rateLimit(env, "vote", ip, VOTE_PER_MIN))) return json(request, { error: "Too many votes. Try again in a minute." }, 429);
-  const body = await request.json().catch(() => ({}));
-  const slug = String(body.slug || "");
+  const parsed = await readJsonObject(request, MAX_VOTE_BODY);
+  if (parsed.error) return json(request, { error: "Payload too large." }, 413);
+  const slug = String((parsed.data && parsed.data.slug) || "");
   if (!SLUG_RE.test(slug)) return json(request, { error: "Unknown tool." }, 400);
   const day = ptDay();
   const week = isoWeek(day);

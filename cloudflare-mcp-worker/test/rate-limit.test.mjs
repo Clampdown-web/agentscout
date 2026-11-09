@@ -79,13 +79,20 @@ test("X-Forwarded-For is not the client address", async () => {
 
 test("a thrown limiter and a minute rejection fail closed", async () => {
   const thrown = await worker.fetch(hit(), {
-    MCP_BURST: { async limit() { throw new Error("binding down"); } },
+    MCP_BURST: { async limit() { throw new Error("binding down secret-detail"); } },
     MCP_MINUTE: { async limit() { return { success: true }; } },
   });
-  assert.equal(thrown.status, 500);
+  assert.equal(thrown.status, 503);
   const thrownBody = await thrown.json();
+  assert.equal(thrownBody.error, "Rate limiting is not configured.");
+  assert.equal(JSON.stringify(thrownBody).includes("secret-detail"), false);
   assert.equal(thrownBody.tools, undefined);
   assert.equal(thrownBody.tools_indexed, undefined);
+  const vague = await worker.fetch(hit(), {
+    MCP_BURST: { async limit() { return {}; } },
+    MCP_MINUTE: { async limit() { return { success: true }; } },
+  });
+  assert.equal(vague.status, 429);
   const minute = await worker.fetch(hit(), {
     MCP_BURST: { async limit() { return { success: true }; } },
     MCP_MINUTE: { async limit() { return { success: false }; } },

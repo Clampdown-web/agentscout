@@ -154,6 +154,19 @@ test("a second seen-key write that conflicts does not increment again", async ()
   assert.equal(Math.max(...bodies.map((body) => body.votes)), 1);
 });
 
+test("an oversized vote body is rejected before a vote is stored", async () => {
+  const kv = memoryKv();
+  const res = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { "content-type": "application/json", origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.60" },
+    body: JSON.stringify({ slug: "sickle", pad: "x".repeat(5000) }),
+  }), { VOTES: kv });
+  assert.equal(res.status, 413);
+  assert.equal((await res.json()).error, "Payload too large.");
+  const small = await worker.fetch(voteRequest({ origin: "https://www.agentscouthq.com" }), { VOTES: kv });
+  assert.equal(small.status, 200);
+});
+
 test("evil.com gets a 403", async () => {
   const kv = memoryKv();
   const res = await worker.fetch(voteRequest({ origin: "https://evil.com" }), { VOTES: kv });
