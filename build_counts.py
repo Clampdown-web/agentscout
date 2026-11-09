@@ -201,6 +201,24 @@ def require(tools=None):
     return cur
 
 
+def metrics_catalog():
+    """Directory totals the homepage reads from api/metrics.json.
+
+    tools_count and mcp_servers_count are the source of truth for a catalog claim.
+    A missing file falls back to the same recount that writes those fields.
+    """
+    m = _read(METRICS)
+    tools = int(m.get("tools_count") or 0)
+    mcp = int(m.get("mcp_servers_count") or m.get("mcp_count") or 0)
+    if not tools or not mcp:
+        counted = require()
+        tools = tools or int(counted.get("tools") or 0)
+        mcp = mcp or int(counted.get("mcp_servers") or 0)
+    updated = str(m.get("updated") or "")
+    display = str(m.get("updated_display") or updated)
+    return {"tools": tools, "mcp": mcp, "updated": updated, "updated_display": display}
+
+
 def write(tools=None):
     counts = compute(tools)
     save(counts)

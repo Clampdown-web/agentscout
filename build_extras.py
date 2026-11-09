@@ -356,6 +356,28 @@ _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and co
   "e-commerce & retail":"AI e-commerce and retail agents","robotics & physical AI":"AI robotics and physical agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
 def cat_title(c,n): return f"{n} best {cat_phrase(c)} (2026) · AgentScout"
+def mcp_client_copy(client, named, cat):
+    """Subset size for one MCP client, next to the live directory totals.
+
+    named mixes MCP servers with other tools whose listings mention the client.
+    The directory totals are api/metrics.json, the same file the homepage reads.
+    The date is in the same sentence as the subset count.
+    """
+    n=len(named)
+    n_mcp=sum(1 for x in named if x.get("category")=="MCP servers")
+    when=cat.get("updated_display") or cat.get("updated") or ""
+    tools_n, mcp_n = f"{cat['tools']:,}", f"{cat['mcp']:,}"
+    count_sentence=(
+        f"As of {when}, AgentScout lists {tools_n} tools, including {mcp_n} MCP servers. "
+        f"These {n} listings say in their own listing or docs that they work with {e(client)} "
+        f"({n_mcp} are MCP servers), sorted by GitHub stars."
+    )
+    desc=clip_text(
+        f"As of {when}: {tools_n} tools and {mcp_n} MCP servers. "
+        f"{n} listings say they work with {client} ({n_mcp} are MCP servers).",
+        156,
+    )
+    return {"n":n,"n_mcp":n_mcp,"desc":desc,"count_sentence":count_sentence}
 def seo(t,urls):
     import os,collections
     os.makedirs("categories",exist_ok=True); os.makedirs("best",exist_ok=True)
@@ -408,14 +430,17 @@ def seo(t,urls):
         return bool(re.search(pat,txt))
     CLIENTS=[("claude-code","Claude Code",r"\bClaude\b(?! (?:Sonnet|Opus|Haiku|models?\b))"),("cursor","Cursor",r"\bCursor\b"),("codex","Codex",r"\bCodex\b")]
     guides=' · '.join(f'<a href="mcp-servers-for-{s}.html">MCP servers for {c}</a>' for s,c,_ in CLIENTS)
+    import build_counts as _bccat
+    _cat=_bccat.metrics_catalog()
     for s,client,pat in CLIENTS:
         named=[x for x in mcp if _says(x,pat)]
         named=sorted(named,key=lambda x:(x.get("github_stars") is None,-(x.get("github_stars") or 0),x["name"].lower()))
         cl=[x for x in t if x["name"] in {"Claude Code":["Claude Code"],"Cursor":["Cursor"],"Codex":["OpenAI Codex CLI"]}[client]]
         cll=f' See our <a href="../tools/{cl[0]["slug"]}.html">{e(cl[0]["name"])} listing</a>.' if cl else ""
+        copy=mcp_client_copy(client, named, _cat)
         out.append(listing_page(f"best/mcp-servers-for-{s}.html",f"Best MCP servers for {client} (2026) · AgentScout",
-            f"{len(named)} MCP servers whose listings say they work with {client}, including {', '.join(x['name'] for x in named[:3])}. Link-checked, pricing as stated."[:158],
-            f"MCP servers that work with {client}",f"{client} is an MCP client. These {len(named)} MCP servers and MCP tools say in their own listing or docs that they work with {e(client)}, sorted by GitHub stars. Check each tool's docs for {e(client)} setup.{cll} For every MCP server in the directory, see the <a href=\"../categories/mcp-servers.html\">MCP servers category</a>.",named,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: <a href="../categories/mcp-servers.html">All MCP servers</a> · '+guides+'</p>'))
+            copy["desc"],
+            f"MCP servers that work with {client}",f"{client} is an MCP client. {copy['count_sentence']} Check each tool's docs for {e(client)} setup.{cll} For every MCP server in the directory, see the <a href=\"../categories/mcp-servers.html\">MCP servers category</a>.",named,f"MCP servers for {client}",'<p style="margin-top:24px">More guides: <a href="../categories/mcp-servers.html">All MCP servers</a> · '+guides+'</p>'))
     out.append(news_page(t)); out.append(free_tools(t)); out.append(newsletter_page())
     alt=[x for x in t if x["category"]=="coding" and x["slug"]!="cursor"]
     out.append(listing_page("best/cursor-alternatives.html",f"{len(alt)} Best Cursor Alternatives (2026): Free & Open-Source · AgentScout",
