@@ -2,6 +2,30 @@
 /* Logo img error: retry twice with a cache-busting query, then show the letter (Oct 18 2026 logo fix). */
 function ASimgErr(i){var n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()}
 const ASe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function asListingHttp(u){
+  var s=String(u==null?"":u).trim();
+  if(!s)return "";
+  try{
+    var x=new URL(s);
+    if((x.protocol!=="http:"&&x.protocol!=="https:")||x.username||x.password)return "";
+    return s;
+  }catch(e){return ""}
+}
+function asListingLogo(u){
+  var raw=String(u==null?"":u).trim().replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,"assets/");
+  if(!raw||raw.indexOf("..")>=0)return "";
+  if(/^https?:\/\//i.test(raw)){
+    try{
+      var x=new URL(raw);
+      if(x.protocol!=="https:"||x.username||x.password)return "";
+      if(x.hostname!=="agentscouthq.com"&&x.hostname!=="www.agentscouthq.com")return "";
+      if(!/^\/assets\/[A-Za-z0-9._/-]+$/.test(x.pathname))return "";
+      return raw;
+    }catch(e){return ""}
+  }
+  if(!/^\/?assets\/[A-Za-z0-9._/-]+$/.test(raw))return "";
+  return raw;
+}
 const AS={
   get(k){try{return JSON.parse(localStorage.getItem(k)||"{}")}catch{return{}}},
   set(k,v){localStorage.setItem(k,JSON.stringify(v))},
@@ -103,8 +127,8 @@ function init(){hearts();if(!AS._bound)AS.bind(document);document.querySelectorA
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
 /* Standard site tool card for JS-rendered lists (quiz, saved). Same markup as the built category/task cards. */
 AS.wk=function(){var t;try{t=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}catch(e){t=new Date(Date.now()-7*36e5).toISOString().slice(0,10)}var d=new Date(t+"T00:00:00Z");d.setUTCDate(d.getUTCDate()-6);return d.toISOString().slice(0,10)};
-AS.card=function(t,extra){var logo=t.logo?t.logo.replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,""):"";
-return '<a class="card tile" href="tools/'+ASe(t.slug)+'.html">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true" data-l="'+ASe((t.name||"?")[0].toUpperCase())+'"></span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async" onerror="ASimgErr(this)">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span>'+(t.moves_funds?'<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>':'')+'</div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
+AS.card=function(t,extra){var logo=asListingLogo(t.logo);var slug=String(t.slug||"");if(!/^[a-z0-9][a-z0-9-]{0,80}$/.test(slug))slug="";
+return '<a class="card tile" href="'+(slug?"tools/"+slug+".html":"#")+'">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true" data-l="'+ASe((t.name||"?")[0].toUpperCase())+'"></span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async" onerror="ASimgErr(this)">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span>'+(t.moves_funds?'<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>':'')+'</div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
 AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){i.addEventListener("error",function(){i.remove()})})};
 /* Newsletter: Beehiiv returns HTTP 403 + X-Frame-Options: SAMEORIGIN inside iframes, so clicking a[data-nl] or submitting
    form[data-nlform] opens https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&utm_medium=website in a new tab
@@ -113,7 +137,7 @@ AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){
 (function(){
 var LATEST={"title": "AgentScout Weekly #4: OpenAI Auto Review + 10 new AI agents", "date": "Nov 4, 2026", "sub": "The AI agent tools actually worth trying. A weekly pick of new agent tools for builders and everyday users.", "url": "https://agentscout.beehiiv.com/p/agentscout-weekly-4-openai-auto-review-10-new-ai-agents"};
 var SRC="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&utm_medium=website";
-try{fetch("/data/latest-issue.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.title)return;LATEST={title:j.title,date:j.display_date||j.date,sub:j.subtitle||"",url:j.url};document.querySelectorAll(".nllatest").forEach(function(p){var l=p.querySelector(".nlli");if(l){l.href=LATEST.url;l.querySelector("strong").textContent=LATEST.title}var m=p.querySelector(".nlmeta");if(m)m.textContent="· "+LATEST.date+" · "+LATEST.sub})}).catch(function(){})}catch(e){}
+try{fetch("/data/latest-issue.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.title)return;var next=asListingHttp(j.url);LATEST={title:j.title,date:j.display_date||j.date,sub:j.subtitle||"",url:(next&&next.slice(0,8)==="https://")?next:LATEST.url};document.querySelectorAll(".nllatest").forEach(function(p){var l=p.querySelector(".nlli");if(l){l.href=LATEST.url;l.querySelector("strong").textContent=LATEST.title}var m=p.querySelector(".nlmeta");if(m)m.textContent="· "+LATEST.date+" · "+LATEST.sub})}).catch(function(){})}catch(e){}
 function statusHtml(){var u=ASe(LATEST.url||"https://agentscout.beehiiv.com/p/agentscout-bonus-5-agent-tools-worth-trying-this-week"),t=ASe(LATEST.title||"AgentScout Bonus: 5 agent tools worth trying this week");return '✓ Opened Beehiiv signup in a new tab — enter your email there to get the free <b>50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack</b>. Read the latest visual issue: <a href="'+u+'" target="_blank" rel="noopener noreferrer"><strong>'+t+'</strong> →</a> · <strong>Follow <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> on X for daily 60fps stack demos &amp; MCP drops →</strong>'}
 function markStatus(host,msg,btn){if(!msg&&host){msg=host.querySelector(".nlmsg");if(!msg){msg=document.createElement("p");msg.className="nlmsg muted";msg.setAttribute("aria-live","polite");host.appendChild(msg)}}if(msg)msg.innerHTML=statusHtml();if(btn&&btn.classList&&btn.classList.contains("btn"))btn.textContent="Opened Beehiiv Signup ↗"}
 function open1(form,host,msg){try{window.open(SRC,"_blank","noopener,noreferrer")}catch(e){location.href=SRC}markStatus(host,msg,form&&form.querySelector("button"))}

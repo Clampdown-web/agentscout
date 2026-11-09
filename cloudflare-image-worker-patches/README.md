@@ -28,7 +28,7 @@ The review form in `reviews.js` posts to **`/review`**, not `/reviews`. Both are
 
 The site key on `/submit` and `/generate` is the same public key already used for reviews (`0x4AAAAAAFfaxf14aQF-sky1` in `reviews.js`).
 
-`X-Stats-Key` on `/reviews/pending`, `/reviews/admin`, `/stats`, and `/trending/stats` is compared with `safeEq` before the inner worker. Both values are SHA-256 hashed, then compared with `crypto.subtle.timingSafeEqual` (or a full-length XOR of those hashes). A mismatch is **403** and the inner `!==` check never sees the candidate.
+`X-Stats-Key` on `/reviews/pending`, `/reviews/admin`, `/stats`, and `/trending/stats` is compared with `safeEq` before the inner worker. Both values are SHA-256 hashed, then compared with `crypto.subtle.timingSafeEqual` (or a full-length XOR of those hashes). A mismatch is **403** and the inner `!==` check never sees the candidate. Those requests consume `IMAGE_READ` (GET/HEAD) or `IMAGE_WRITE` (other methods) before the compare, so a wrong key is capped the same way as a guarded read. `/reviews/pending`, `/reviews/admin`, and `/reviews/export` are also guarded, so a request that passes the key is counted a second time by that gate. A person checking the queue stays under the cap. While `REVIEWS_EXPORT` is unset, `/reviews/export` is still a 404 and does not use the limiter. A missing `IMAGE_READ` binding makes `/stats` and `/trending/stats` return **503**.
 
 These limits are per Cloudflare location and approximate. They are still shared by every isolate in that location, which is the failure mode of an in-memory `Map`.
 

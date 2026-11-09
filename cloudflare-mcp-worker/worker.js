@@ -168,10 +168,16 @@ function limitersReady(env) {
 }
 
 async function rateLimit(env, ip) {
-  const [burst, minute] = await Promise.all([
-    env.MCP_BURST.limit({ key: ip }),
-    env.MCP_MINUTE.limit({ key: ip }),
-  ]);
+  let burst;
+  let minute;
+  try {
+    [burst, minute] = await Promise.all([
+      env.MCP_BURST.limit({ key: ip }),
+      env.MCP_MINUTE.limit({ key: ip }),
+    ]);
+  } catch {
+    return { unconfigured: true };
+  }
   if (!burst || burst.success === false) {
     return { limited: true, limit: BURST_MAX, remaining: 0, reset: BURST_WINDOW_MS / 1000 };
   }
@@ -468,6 +474,11 @@ export default {
       const quota = verifiedCrawler(request)
         ? { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: 60 }
         : await rateLimit(env, ip);
+      if (quota.unconfigured) {
+        status = 503;
+        console.error(JSON.stringify({ message: "rate limit binding failed", method: request.method, path: url.pathname, status }));
+        return jsonResponse({ error: "Rate limiting is not configured." }, 503);
+      }
       const extra = rateHeaders(quota);
       if (quota.limited) {
         status = 429;

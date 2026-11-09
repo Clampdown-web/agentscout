@@ -248,6 +248,16 @@ async function rejectReadiness(request) {
   return null;
 }
 
+async function limitByIp(request, env) {
+  const ip = clientIp(request);
+  if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
+  const limiter = isRead(request.method) ? env && env.IMAGE_READ : env && env.IMAGE_WRITE;
+  const outcome = await consume(limiter, ip);
+  if (outcome === "unconfigured") return json(request, { error: "Rate limiting is not configured." }, 503);
+  if (outcome === "limited") return json(request, { error: "Too many requests. Try again in a minute." }, 429);
+  return null;
+}
+
 export async function gate(request, env) {
   const url = new URL(request.url);
   if (!requestGuarded(url.pathname, request.method)) return null;
@@ -256,12 +266,8 @@ export async function gate(request, env) {
     if (!origin) return new Response(null, { status: 403, headers: { vary: "Origin" } });
     return new Response(null, { status: 204, headers: corsHeaders(request) });
   }
-  const ip = clientIp(request);
-  if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
-  const limiter = isRead(request.method) ? env && env.IMAGE_READ : env && env.IMAGE_WRITE;
-  const outcome = await consume(limiter, ip);
-  if (outcome === "unconfigured") return json(request, { error: "Rate limiting is not configured." }, 503);
-  if (outcome === "limited") return json(request, { error: "Too many requests. Try again in a minute." }, 429);
+  const limited = await limitByIp(request, env);
+  if (limited) return limited;
   if (request.method === "POST" && !postAllowed(request)) {
     return json(request, { error: "Submissions can only be sent from agentscouthq.com." }, 403);
   }
@@ -391,6 +397,13 @@ export function protect(worker) {
             "x-content-type-options": "nosniff",
           },
         });
+      }
+      // Count a guess against IMAGE_READ/IMAGE_WRITE before comparing X-Stats-Key.
+      // Guarded stats paths (/reviews/pending, /reviews/admin, /reviews/export) are
+      // counted again by gate(). A person checking pending reviews stays under 120/min.
+      if (statsKeyPath(path) && request.method !== "OPTIONS") {
+        const limited = await limitByIp(request, env);
+        if (limited) return limited;
       }
       const statsBlocked = await rejectStatsKey(request, env);
       if (statsBlocked) return statsBlocked;

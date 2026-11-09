@@ -82,6 +82,12 @@ function embeddedV4(full) {
   return "";
 }
 
+function isatap(full) {
+  // Interface ID 0000:5efe or 0200:5efe plus an embedded IPv4. Tunnel literals are not websites.
+  if (full[5] !== "5efe") return false;
+  return full[4] === "0000" || full[4] === "0200";
+}
+
 function blockedV6(raw) {
   if (raw === "::" || raw === "::1") return true;
   const full = expandV6(raw);
@@ -91,8 +97,14 @@ function blockedV6(raw) {
   const first = parseInt(full[0], 16);
   if ((first & 0xfe00) === 0xfc00) return true;
   if ((first & 0xffc0) === 0xfe80) return true;
+  if ((first & 0xffc0) === 0xfec0) return true;
   if ((first & 0xff00) === 0xff00) return true;
   if (full[0] === "2001" && full[1] === "0db8") return true;
+  // Teredo 2001:0000::/32. 2001:1:: and 2001:4860:: stay public.
+  if (full[0] === "2001" && full[1] === "0000") return true;
+  // Discard-only 100::/64.
+  if (full[0] === "0100" && full[1] === "0000" && full[2] === "0000" && full[3] === "0000") return true;
+  if (isatap(full)) return true;
   return false;
 }
 

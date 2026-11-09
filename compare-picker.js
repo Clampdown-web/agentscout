@@ -1,12 +1,36 @@
 /* Compare any two tools: type-ahead pickers over api/tools.json, side-by-side table, shareable ?a=slug&b=slug. */
+function asSlug(s){s=String(s==null?"":s);return /^[a-z0-9][a-z0-9-]{0,80}$/.test(s)?s:""}
+function asListingHttp(u){
+  var s=String(u==null?"":u).trim();
+  if(!s)return "";
+  try{
+    var x=new URL(s);
+    if((x.protocol!=="http:"&&x.protocol!=="https:")||x.username||x.password)return "";
+    return s;
+  }catch(e){return ""}
+}
+function asListingLogo(u){
+  var raw=String(u==null?"":u).trim().replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,"assets/");
+  if(!raw||raw.indexOf("..")>=0)return "";
+  if(/^https?:\/\//i.test(raw)){
+    try{
+      var x=new URL(raw);
+      if(x.protocol!=="https:"||x.username||x.password)return "";
+      if(x.hostname!=="agentscouthq.com"&&x.hostname!=="www.agentscouthq.com")return "";
+      if(!/^\/assets\/[A-Za-z0-9._/-]+$/.test(x.pathname))return "";
+      return raw;
+    }catch(e){return ""}
+  }
+  if(!/^\/?assets\/[A-Za-z0-9._/-]+$/.test(raw))return "";
+  return raw;
+}
 (function(){
 if(!window.ASimgErr)window.ASimgErr=function(i){var n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()};
 var root=document.getElementById("cpick");if(!root)return;
 var T=[],BS={},sel={a:"",b:""},PAIRS=(root.dataset.pairs||"").split(",");
 var E=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
-var rel=function(u){return u?String(u).replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,"../"):""};
 var res=document.getElementById("cp-res");
-function ico(t){return '<span class="ico sm"><span aria-hidden="true" data-l="'+E((t.name||"?")[0].toUpperCase())+'"></span>'+(t.logo?'<img src="'+E(rel(t.logo))+'" alt="'+E(t.name)+' logo" width="40" height="40" loading="lazy" onerror="ASimgErr(this)">':"")+'</span>'}
+function ico(t){var src=asListingLogo(t.logo);return '<span class="ico sm"><span aria-hidden="true" data-l="'+E((t.name||"?")[0].toUpperCase())+'"></span>'+(src?'<img src="'+E(src)+'" alt="'+E(t.name)+' logo" width="40" height="40" loading="lazy" onerror="ASimgErr(this)">':"")+'</span>'}
 function box(k){
   var inp=document.getElementById("cp-"+k),list=document.getElementById("cp-"+k+"-l"),hi=-1,cur=[];
   function show(){var q=inp.value.trim().toLowerCase();
@@ -31,11 +55,12 @@ function render(push){
   var a=BS[sel.a],b=BS[sel.b];
   if(!a||!b){res.innerHTML='<p class="muted" style="margin:14px 0 0">'+(sel.a||sel.b?"Pick a second tool.":"")+'</p>';return}
   if(a.slug===b.slug){res.innerHTML='<p class="muted" style="margin:14px 0 0">Pick two different tools.</p>';return}
-  var m=PAIRS.indexOf(a.slug+"-vs-"+b.slug)>=0?a.slug+"-vs-"+b.slug:PAIRS.indexOf(b.slug+"-vs-"+a.slug)>=0?b.slug+"-vs-"+a.slug:"";
+  var sa=asSlug(a.slug),sb=asSlug(b.slug);
+  var m=sa&&sb&&PAIRS.indexOf(sa+"-vs-"+sb)>=0?sa+"-vs-"+sb:sa&&sb&&PAIRS.indexOf(sb+"-vs-"+sa)>=0?sb+"-vs-"+sa:"";
   var row=function(l,f){return "<tr><th>"+l+"</th><td>"+f(a)+"</td><td>"+f(b)+"</td></tr>"};
-  var btns=function(t){var w=t.website||t.url;return (w?'<a class="btn" href="'+E(w)+'" target="_blank" rel="noopener noreferrer">Website ↗</a> ':"")+(t.github?'<a class="btn" href="'+E(t.github)+'" target="_blank" rel="noopener noreferrer">GitHub ↗</a>':"")};
+  var btns=function(t){var w=asListingHttp(t.website||t.url),g=asListingHttp(t.github);return (w?'<a class="btn" href="'+E(w)+'" target="_blank" rel="noopener noreferrer">Website ↗</a> ':"")+(g?'<a class="btn" href="'+E(g)+'" target="_blank" rel="noopener noreferrer">GitHub ↗</a>':"")};
   res.innerHTML=(m?'<p class="cp-match">We have a written comparison for this pair: <a href="'+m+'.html">'+E(BS[m.split("-vs-")[0]]?BS[m.split("-vs-")[0]].name:a.name)+' vs '+E(BS[m.split("-vs-")[1]]?BS[m.split("-vs-")[1]].name:b.name)+' →</a></p>':"")+
-   '<div class="tablewrap"><table class="cmp cp-t"><thead><tr><th><span class="sr">Feature</span></th>'+[a,b].map(function(t){return '<th><div class="cp-h"><a class="icol" href="../tools/'+E(t.slug)+'.html">'+ico(t)+E(t.name)+'</a>'+AS.saveBtn(t.slug).replace('class="save','class="save heart cp-heart')+'</div></th>'}).join("")+'</tr></thead><tbody>'+
+   '<div class="tablewrap"><table class="cmp cp-t"><thead><tr><th><span class="sr">Feature</span></th>'+[a,b].map(function(t){var slug=asSlug(t.slug);return '<th><div class="cp-h"><a class="icol" href="'+(slug?"../tools/"+slug+".html":"#")+'">'+ico(t)+E(t.name)+'</a>'+(typeof AS!=="undefined"&&AS.saveBtn?AS.saveBtn(slug||t.slug).replace('class="save','class="save heart cp-heart'):"")+'</div></th>'}).join("")+'</tr></thead><tbody>'+
    row("Category",function(t){return '<span class="b cat">'+E(t.category)+'</span>'})+
    row("Pricing",function(t){return E(t.pricing)})+
    row("Open source",function(t){return t.open_source?"Yes"+(t.license?" ("+E(t.license)+")":""):"No"})+

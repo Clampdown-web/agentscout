@@ -1,6 +1,12 @@
+function asSafeArt(path){
+  var s=String(path==null?"":path);
+  if(!s||s.indexOf("..")>=0||/[\\"'()<>\s]/.test(s))return "";
+  if(!/^assets\/[A-Za-z0-9._/-]+(?:\?[A-Za-z0-9._=&%-]+)?$/.test(s))return "";
+  return s;
+}
 (function(){
   /* Daily art: read the live manifest (also used by the app) so site and app show the same image URL. */
-  fetch("api/generator-daily.json?t="+Math.floor(Date.now()/3e5),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.path)document.documentElement.style.setProperty("--gen-art","url("+d.path+")")}).catch(function(){});
+  fetch("api/generator-daily.json?t="+Math.floor(Date.now()/3e5),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){var art=d&&asSafeArt(d.path);if(art)document.documentElement.style.setProperty("--gen-art","url("+art+")")}).catch(function(){});
   var WORKER_URL="https://api.agentscouthq.com/generate",WORKER_FB="https://agentscout-image.agentscouthq.workers.dev/generate";
   var TURNSTILE_SITEKEY="0x4AAAAAAFfaxf14aQF-sky1"; // same site key as reviews.js; the Worker checks it when TURNSTILE_ENABLED==="true"
   var EX=["A friendly robot agent sorting a toolbox of glowing app icons","A team of tiny AI agents building a website, isometric illustration","A coding agent typing at a futuristic terminal, neon blue","A voice AI assistant as a glowing sound wave character","An AI browser agent surfing the web on a paper airplane"];
@@ -8,6 +14,7 @@
       go=document.getElementById("ig-go"),st=document.getElementById("ig-status"),cnt=document.getElementById("ig-count"),
       out=document.getElementById("ig-out"),img=document.getElementById("ig-img"),op=document.getElementById("ig-open"),nw=document.getElementById("ig-new"),
       ex=document.getElementById("ig-ex"),busy=false,t,last,tsToken="";
+  if(!f||!p||!go||!ex)return;
   if(TURNSTILE_SITEKEY&&f&&go){window.asTs=function(k){tsToken=k};var tsLoaded=false;function loadTs(){if(tsLoaded)return;tsLoaded=true;var d=document.createElement("div");d.className="cf-turnstile";d.id="ig-turnstile";d.setAttribute("data-sitekey",TURNSTILE_SITEKEY);d.style.margin="12px 0 0";d.style.minHeight="65px";d.dataset.callback="asTs";var row=go.parentNode;if(row&&row.parentNode)row.parentNode.insertBefore(d,row.nextSibling);var s=document.createElement("script");s.src="https://challenges.cloudflare.com/turnstile/v0/api.js";s.async=true;document.head.appendChild(s)}f.addEventListener("focusin",loadTs);f.addEventListener("pointerdown",loadTs)}
   var SH=["Robot toolbox","Tiny agents","Neon coder","Voice wave","Paper plane"],short=ex.hasAttribute("data-short");
   EX.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=short?SH[i]:s;b.title=s;b.onclick=function(){p.value=s;upd()};ex.appendChild(b)});
