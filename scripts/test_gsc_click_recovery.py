@@ -80,8 +80,12 @@ class ClickRecoveryTests(unittest.TestCase):
         self.assertIn('("categories/agent-infra.html"', self.links)
         self.assertNotIn("best/mcp-servers.html", self.links)
         n = sum(1 for tool in self.tools.values() if tool["category"] == "agent infra")
+        # Nov 9 2026: homepage Popular lists pills removed; hub pages still carry the chip block.
+        hub = (ROOT / "categories" / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'href="../categories/agent-infra.html">All {n:,} agent infra tools</a>', hub)
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn(f'href="categories/agent-infra.html">All {n:,} agent infra tools</a>', home)
+        self.assertNotIn("<!--il:pop-->", home)
+        self.assertIn("<!--il:footpop-->", home)
         self.assertIn(
             'name="robots" content="noindex,follow"',
             (ROOT / "best" / "mcp-servers.html").read_text(encoding="utf-8")[:2000],
