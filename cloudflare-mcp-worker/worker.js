@@ -19,6 +19,8 @@ const SECURITY_HEADERS = {
   "Referrer-Policy": "strict-origin-when-cross-origin",
 };
 
+// Desktop and server MCP clients ignore CORS. The site does not call this host
+// from the browser. A wildcard without credentials keeps browser MCP clients working.
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "Content-Type, Accept, Mcp-Protocol-Version, Mcp-Session-Id, X-AgentScout-Test",
@@ -31,6 +33,10 @@ const BURST_MAX = 15;
 const MINUTE_WINDOW_MS = 60_000;
 const MINUTE_MAX = 60;
 const MAX_BODY = 100_000;
+const MAX_QUERY = 8_192;
+const MAX_IP_LEN = 128;
+const MAX_RPC_ID = 256;
+const MAX_METHOD = 128;
 
 const tools = Array.isArray(catalog.tools) ? catalog.tools : [];
 const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
@@ -149,7 +155,57 @@ function emptyResponse(status, extra) {
 }
 
 function clientIp(request) {
-  return (request.headers.get("CF-Connecting-IP") || "").trim();
+  const ip = (request.headers.get("CF-Connecting-IP") || "").trim();
+  if (!ip || ip.length > MAX_IP_LEN || /[\u0000-\u0020]/.test(ip)) return "";
+  return ip;
+}
+
+function logToken(value) {
+  return String(value ?? "").replace(/[\u0000-\u001f]/g, " ").slice(0, 80);
+}
+
+function plainObject(value) {
+  return !!value && typeof value === "object" && !Array.isArray(value);
+}
+
+async function readCapped(request, max) {
+  const declared = Number(request.headers.get("Content-Length"));
+  if (Number.isFinite(declared) && declared > max) return { error: "too_large" };
+  const reader = request.body?.getReader?.();
+  if (!reader) {
+    const text = typeof request.text === "function" ? await request.text() : "";
+    if (text.length > max) return { error: "too_large" };
+    return { text };
+  }
+  const chunks = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value?.byteLength) continue;
+      size += value.byteLength;
+      if (size > max) return { error: "too_large" };
+      chunks.push(value);
+    }
+  } catch {
+    return { error: "bad_body" };
+  } finally {
+    try { await reader.cancel(); } catch { /* already closed */ }
+  }
+  const buf = new Uint8Array(size);
+  let off = 0;
+  for (const chunk of chunks) { buf.set(chunk, off); off += chunk.byteLength; }
+  return { text: new TextDecoder("utf-8", { fatal: false }).decode(buf) };
+}
+
+function rpcId(message) {
+  if (!Object.prototype.hasOwnProperty.call(message, "id")) return { id: null };
+  const id = message.id;
+  if (id === null) return { id: null };
+  if (typeof id === "number" && Number.isFinite(id)) return { id };
+  if (typeof id === "string" && id.length <= MAX_RPC_ID && !/[\u0000-\u001f]/.test(id)) return { id };
+  return { error: true };
 }
 
 // Cloudflare-verified crawlers only. A User-Agent of "Googlebot" is not evidence.
@@ -168,10 +224,16 @@ function limitersReady(env) {
 }
 
 async function rateLimit(env, ip) {
-  const [burst, minute] = await Promise.all([
-    env.MCP_BURST.limit({ key: ip }),
-    env.MCP_MINUTE.limit({ key: ip }),
-  ]);
+  let burst;
+  let minute;
+  try {
+    [burst, minute] = await Promise.all([
+      env.MCP_BURST.limit({ key: ip }),
+      env.MCP_MINUTE.limit({ key: ip }),
+    ]);
+  } catch {
+    return { unconfigured: true };
+  }
   if (!burst || burst.success === false) {
     return { limited: true, limit: BURST_MAX, remaining: 0, reset: BURST_WINDOW_MS / 1000 };
   }
@@ -265,14 +327,22 @@ function matchTools(query, args, cap) {
 }
 
 function searchTools(args) {
+  const query = args.query == null || args.query === "" ? "" : args.query;
+  if (typeof query !== "string" || query.length > 200) return { error: "query must be a string of at most 200 characters." };
+  const category = args.category == null || args.category === "" ? "" : args.category;
+  if (typeof category !== "string" || category.length > 80) return { error: "category must be a string of at most 80 characters." };
   const limit = Math.min(25, Math.max(1, Number(args.limit) || 10));
-  const found = matchTools(args.query || "", args, limit);
+  const found = matchTools(query, { ...args, category }, limit);
   return { ...baseEnvelope(), total_matches: found.total, results: found.rows };
 }
 
 function bestForTask(args) {
+  const task = args.task == null ? "" : args.task;
+  if (typeof task !== "string" || task.length > 200) return { error: "task must be a string of at most 200 characters." };
+  const category = args.category == null || args.category === "" ? "" : args.category;
+  if (typeof category !== "string" || category.length > 80) return { error: "category must be a string of at most 80 characters." };
   const limit = Math.min(10, Math.max(1, Number(args.limit) || 5));
-  const found = matchTools(args.task || "", args, limit);
+  const found = matchTools(task, { ...args, category }, limit);
   return { ...baseEnvelope(), total_matches: found.total, results: found.rows };
 }
 
@@ -354,12 +424,19 @@ function rpcError(id, code, message) {
 }
 
 function callTool(name, args) {
-  if (name === "search_tools") return { data: searchTools(args || {}) };
+  const input = plainObject(args) ? args : {};
+  if (name === "search_tools") {
+    const data = searchTools(input);
+    if (data.error) return { error: data.error };
+    return { data };
+  }
   if (name === "best_for_task") {
-    if (!args || typeof args.task !== "string" || args.task.trim().length < 2) {
+    if (typeof input.task !== "string" || input.task.trim().length < 2) {
       return { error: "task is required (at least 2 characters)." };
     }
-    return { data: bestForTask(args) };
+    const data = bestForTask(input);
+    if (data.error) return { error: data.error };
+    return { data };
   }
   if (name === "get_tool") {
     if (!args || typeof args.slug !== "string" || !/^[a-z0-9][a-z0-9-]{0,99}$/.test(args.slug)) {
@@ -370,13 +447,17 @@ function callTool(name, args) {
     return { data };
   }
   if (name === "list_categories") return { data: listCategories() };
-  if (name === "list_packages") return { data: listPackages(args || {}) };
+  if (name === "list_packages") return { data: listPackages(input) };
+  if (typeof name !== "string" || name.length > 80 || /[\u0000-\u001f]/.test(name)) return { error: "Unknown tool." };
   return { error: `Unknown tool '${name}'.` };
 }
 
 function handleRpc(message) {
-  const id = Object.prototype.hasOwnProperty.call(message, "id") ? message.id : null;
+  const parsedId = rpcId(message);
+  if (parsedId.error) return rpcError(null, -32600, "Invalid Request");
+  const id = parsedId.id;
   const method = message.method;
+  if (message.params != null && !plainObject(message.params)) return rpcError(id, -32600, "Invalid Request");
   const params = message.params || {};
   if (typeof method !== "string") return rpcError(id, -32600, "Invalid Request");
   if (method === "initialize") {
@@ -400,6 +481,7 @@ function handleRpc(message) {
     return toolResult(id, called.data, !!called.isError);
   }
   if (method.startsWith("notifications/")) return null;
+  if (method.length > MAX_METHOD || /[\u0000-\u001f]/.test(method)) return rpcError(id, -32601, "Method not found");
   return rpcError(id, -32601, `Method not found: ${method}`);
 }
 
@@ -457,8 +539,12 @@ export default {
       }
       if (!limitersReady(env)) {
         status = 503;
-        console.error(JSON.stringify({ message: "rate limit binding missing", method: request.method, path: url.pathname, status }));
+        console.error(JSON.stringify({ message: "rate limit binding missing", method: request.method, path: logToken(url.pathname), status }));
         return jsonResponse({ error: "Rate limiting is not configured." }, 503);
+      }
+      if (url.search.length > MAX_QUERY) {
+        status = 400;
+        return jsonResponse({ error: "Query too large" }, 400);
       }
       const ip = clientIp(request);
       if (!ip) {
@@ -468,46 +554,54 @@ export default {
       const quota = verifiedCrawler(request)
         ? { limited: false, limit: MINUTE_MAX, remaining: MINUTE_MAX, reset: 60 }
         : await rateLimit(env, ip);
+      if (quota.unconfigured) {
+        status = 503;
+        console.error(JSON.stringify({ message: "rate limit binding failed", method: request.method, path: logToken(url.pathname), status }));
+        return jsonResponse({ error: "Rate limiting is not configured." }, 503);
+      }
       const extra = rateHeaders(quota);
       if (quota.limited) {
         status = 429;
-        console.warn(JSON.stringify({ message: "rate limited", method: request.method, path: url.pathname, status }));
+        console.warn(JSON.stringify({ message: "rate limited", method: request.method, path: logToken(url.pathname), status }));
         return jsonResponse({ error: "Too many requests. Slow down and retry." }, 429, extra);
       }
       if (request.method === "GET" && url.pathname === "/v0/servers") {
         status = 200;
-        console.log(JSON.stringify({ message: "mcp registry", method: "GET", path: url.pathname, status }));
+        console.log(JSON.stringify({ message: "mcp registry", method: "GET", path: logToken(url.pathname), status }));
         return jsonResponse(registryBody(), 200, extra);
       }
       if (request.method === "GET") {
         status = 200;
-        console.log(JSON.stringify({ message: "mcp request", method: "GET", path: url.pathname, status }));
+        console.log(JSON.stringify({ message: "mcp request", method: "GET", path: logToken(url.pathname), status }));
         return jsonResponse(infoBody(), 200, extra);
       }
       if (request.method !== "POST") {
         status = 405;
         return jsonResponse({ error: "Method not allowed" }, 405, { ...extra, Allow: "GET, POST, OPTIONS" });
       }
-      const declared = Number(request.headers.get("Content-Length") || 0);
-      if (declared > MAX_BODY) {
-        status = 413;
-        return jsonResponse({ error: "Payload too large" }, 413, extra);
-      }
-      const text = await request.text();
-      if (text.length > MAX_BODY) {
-        status = 413;
-        return jsonResponse({ error: "Payload too large" }, 413, extra);
+      const read = await readCapped(request, MAX_BODY);
+      if (read.error) {
+        status = read.error === "too_large" ? 413 : 400;
+        return jsonResponse(
+          read.error === "too_large" ? { error: "Payload too large" } : rpcError(null, -32700, "Parse error"),
+          status,
+          extra,
+        );
       }
       let message;
       try {
-        message = JSON.parse(text || "{}");
+        message = JSON.parse(read.text || "{}");
       } catch {
         status = 400;
         return jsonResponse(rpcError(null, -32700, "Parse error"), 400, extra);
       }
+      if (!plainObject(message)) {
+        status = 400;
+        return jsonResponse(rpcError(null, -32600, "Invalid Request"), 400, extra);
+      }
       if (message && typeof message === "object" && message.method && String(message.method).startsWith("notifications/")) {
         status = 202;
-        console.log(JSON.stringify({ message: "mcp notification", method: "POST", path: url.pathname, status }));
+        console.log(JSON.stringify({ message: "mcp notification", method: "POST", path: logToken(url.pathname), status }));
         return emptyResponse(202, extra);
       }
       const result = handleRpc(message);
@@ -516,16 +610,16 @@ export default {
         return emptyResponse(202, extra);
       }
       status = 200;
-      console.log(JSON.stringify({ message: "mcp request", method: "POST", path: url.pathname, rpc: message.method, status }));
+      console.log(JSON.stringify({ message: "mcp request", method: "POST", path: logToken(url.pathname), rpc: logToken(message.method), status }));
       return jsonResponse(result, 200, extra);
     } catch (error) {
       status = 500;
       console.error(JSON.stringify({
         message: "mcp request failed",
         method: request.method,
-        path: url.pathname,
+        path: logToken(url.pathname),
         status,
-        error: error instanceof Error ? error.message : String(error),
+        error: logToken(error instanceof Error ? error.message : "error"),
       }));
       return jsonResponse({ error: "Internal server error" }, 500);
     }

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { allowOrigin, postAllowed, guardedKind, maskTurnstileEnv, protect, safeEq, statsKeyPath, turnstileEnabled } from "./security.js";
+import { allowOrigin, postAllowed, guardedKind, maskTurnstileEnv, protect, safeEq, statsKeyPath, submitActionDecision, submitActionRequired, turnstileEnabled } from "./security.js";
 
 test("cors allowlist is the site and www only", () => {
   assert.equal(allowOrigin("https://agentscouthq.com"), "https://agentscouthq.com");
@@ -218,6 +218,27 @@ test("admin paths reject a wrong X-Stats-Key before the inner handler", async ()
   assert.equal(calls.length, 4);
 });
 
+test("stats routes consume the read limit before the key is compared", async () => {
+  const { worker, calls } = handler();
+  const tight = limiter(2);
+  const binding = { ...env(), IMAGE_READ: tight, STATS_KEY: "correct-key" };
+  const headers = { "cf-connecting-ip": "203.0.113.77", "x-stats-key": "guess" };
+  assert.equal((await worker.fetch(new Request("https://api.agentscouthq.com/stats", { headers }), binding)).status, 403);
+  assert.equal((await worker.fetch(new Request("https://api.agentscouthq.com/stats", { headers }), binding)).status, 403);
+  const limited = await worker.fetch(new Request("https://api.agentscouthq.com/trending/stats", { headers }), binding);
+  assert.equal(limited.status, 429);
+  assert.equal(calls.length, 0);
+  const ok = await worker.fetch(new Request("https://api.agentscouthq.com/stats", {
+    headers: { "cf-connecting-ip": "203.0.113.78", "x-stats-key": "correct-key" },
+  }), { ...env(), STATS_KEY: "correct-key" });
+  assert.equal(ok.status, 200);
+  const unconfigured = await worker.fetch(new Request("https://api.agentscouthq.com/stats", {
+    headers: { "cf-connecting-ip": "203.0.113.79", "x-stats-key": "correct-key" },
+  }), { STATS_KEY: "correct-key" });
+  assert.equal(unconfigured.status, 503);
+  assert.equal(calls.length, 1);
+});
+
 test("turnstile stays off until TURNSTILE_ENABLED is true", async () => {
   assert.equal(turnstileEnabled({}), false);
   assert.equal(turnstileEnabled({ TURNSTILE_ENABLED: "false" }), false);
@@ -239,9 +260,12 @@ test("turnstile stays off until TURNSTILE_ENABLED is true", async () => {
 test("submit and generate require a siteverify pass for this site before other work", async () => {
   await withSiteverify((params) => {
     const token = params.get("response");
-    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" }));
+    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" }));
     if (token === "www") return new Response(JSON.stringify({ success: true, hostname: "www.agentscouthq.com" }));
-    if (token === "wrong-host") return new Response(JSON.stringify({ success: true, hostname: "evil.example" }));
+    if (token === "wrong-host") return new Response(JSON.stringify({ success: true, hostname: "evil.example", action: "submit" }));
+    if (token === "wrong-action") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "generate" }));
+    if (token === "spent") return new Response(JSON.stringify({ success: false, hostname: "agentscouthq.com", "error-codes": ["timeout-or-duplicate"] }));
+    if (token === "secret") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }));
     return new Response(JSON.stringify({ success: false, hostname: "agentscouthq.com", "error-codes": ["invalid-input-response"] }));
   }, async (calls) => {
     let seen = "";
@@ -388,8 +412,78 @@ test("turnstile siteverify failures fail closed before the inner handler", async
   }
 });
 
+test("submit action transition accepts an empty action and rejects a different one", async () => {
+  assert.equal(submitActionRequired({}), false);
+  assert.equal(submitActionRequired({ TURNSTILE_REQUIRE_SUBMIT_ACTION: "false" }), false);
+  assert.equal(submitActionRequired({ TURNSTILE_REQUIRE_SUBMIT_ACTION: "true" }), true);
+  assert.equal(submitActionDecision(undefined, false), "ok");
+  assert.equal(submitActionDecision("", false), "ok");
+  assert.equal(submitActionDecision("submit", false), "ok");
+  assert.equal(submitActionDecision("generate", false), "mismatch");
+  assert.equal(submitActionDecision("review", false), "mismatch");
+  assert.equal(submitActionDecision(undefined, true), "missing");
+  assert.equal(submitActionDecision("", true), "missing");
+  assert.equal(submitActionDecision("submit", true), "ok");
+  assert.equal(submitActionDecision("generate", true), "mismatch");
+
+  await withSiteverify((params) => {
+    const token = params.get("response");
+    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" }));
+    if (token === "plain") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" }));
+    if (token === "blank") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "" }));
+    if (token === "generate") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "generate" }));
+    if (token === "review") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "review" }));
+    if (token === "spent") return new Response(JSON.stringify({ success: false, "error-codes": ["timeout-or-duplicate"] }));
+    if (token === "malformed") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-response"] }));
+    if (token === "secret") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }));
+    return new Response(JSON.stringify({ success: false }));
+  }, async () => {
+    const seen = [];
+    const worker = protect({
+      async fetch(request) {
+        seen.push(new URL(request.url).pathname);
+        return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { "content-type": "application/json" } });
+      },
+    });
+    const open = turnstileEnv();
+    const strict = turnstileEnv({ TURNSTILE_REQUIRE_SUBMIT_ACTION: "true" });
+    const missing = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), open);
+    assert.equal(missing.status, 200);
+    const blank = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "blank" })), open);
+    assert.equal(blank.status, 200);
+    const generateAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "generate" })), open);
+    assert.equal(generateAction.status, 403);
+    assert.match((await generateAction.json()).error, /Reload it/);
+    const reviewAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "review" })), open);
+    assert.equal(reviewAction.status, 403);
+    const strictMissing = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), strict);
+    assert.equal(strictMissing.status, 403);
+    assert.match((await strictMissing.json()).error, /Reload it/);
+    const strictBlank = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "blank" })), strict);
+    assert.equal(strictBlank.status, 403);
+    const strictOther = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "generate" })), strict);
+    assert.equal(strictOther.status, 403);
+    const strictOk = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), strict);
+    assert.equal(strictOk.status, 200);
+    const spent = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "spent" })), open);
+    assert.equal(spent.status, 403);
+    assert.equal((await spent.json()).error, "The check expired or was already used. Complete it again, then submit.");
+    const malformed = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "malformed" })), open);
+    assert.equal(malformed.status, 403);
+    assert.match((await malformed.json()).error, /Complete it again/);
+    const secret = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "secret" })), open);
+    assert.equal(secret.status, 403);
+    assert.equal((await secret.json()).error, "Bot check failed.");
+    const generated = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), open);
+    assert.equal(generated.status, 200);
+    const ok = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), open);
+    assert.equal(ok.status, 200);
+    assert.deepEqual(seen, ["/submit", "/submit", "/submit", "/generate", "/submit"]);
+  });
+});
+
 test("protect masks TURNSTILE_ENABLED only after it has checked submit and generate", async () => {
-  await withSiteverify(() => new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" })), async () => {
+  await withSiteverify(() => new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" })), async () => {
     const seen = [];
     const worker = protect({
       async fetch(request, binding) {
@@ -481,6 +575,213 @@ test("reviews export requires the stats key and does not add CORS or a cache", a
   assert.equal(JSON.stringify(body).includes("REVIEW_HMAC"), false);
   assert.deepEqual(calls, ["all", "reviews"]);
   assert.equal(calls.includes("inner"), false);
+  const snapshot = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/snapshot", {
+    headers: { ...headers, "x-stats-key": "correct-key" },
+  }), { ...binding, REVIEWS_SNAPSHOT: "true" });
+  assert.equal(snapshot.status, 200);
+  assert.equal(calls.includes("snapshot"), false);
+  assert.equal(calls.includes("inner"), true);
+});
+
+test("public image routes keep status, JSON shape, and CORS without calling siteverify", async () => {
+  const seen = [];
+  const worker = protect({
+    async fetch(request) {
+      const url = new URL(request.url);
+      seen.push(request.method + " " + url.pathname);
+      return new Response(JSON.stringify({ ok: true, path: url.pathname, query: url.searchParams.get("url") || url.searchParams.get("tool") || "" }), {
+        status: 200,
+        headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
+      });
+    },
+  });
+  const binding = env();
+  const ip = { "cf-connecting-ip": "203.0.113.50" };
+  const site = { ...ip, origin: "https://agentscouthq.com" };
+
+  const preflight = await worker.fetch(new Request("https://api.agentscouthq.com/reviews", {
+    method: "OPTIONS",
+    headers: { origin: "https://www.agentscouthq.com", "access-control-request-headers": "content-type, x-agentscout-app" },
+  }), binding);
+  assert.equal(preflight.status, 204);
+  assert.equal(preflight.headers.get("access-control-allow-origin"), "https://www.agentscouthq.com");
+  assert.match(preflight.headers.get("access-control-allow-headers"), /content-type/);
+  assert.match(preflight.headers.get("access-control-allow-headers"), /x-agentscout-app/);
+  assert.equal(preflight.headers.get("access-control-allow-credentials"), null);
+
+  const review = await worker.fetch(new Request("https://api.agentscouthq.com/review", {
+    method: "POST",
+    headers: { ...site, "content-type": "application/json" },
+    body: JSON.stringify({ tool: "cursor", stars: 5, text: "Works well for agents.", name: "Ada", vid: "ab".repeat(16) }),
+  }), binding);
+  assert.equal(review.status, 200);
+  assert.equal(review.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
+  assert.deepEqual(await review.json(), { ok: true, path: "/review", query: "" });
+
+  const reviews = await worker.fetch(new Request("https://api.agentscouthq.com/reviews?tool=cursor", { headers: site }), binding);
+  assert.equal(reviews.status, 200);
+  assert.equal(reviews.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
+  assert.equal((await reviews.json()).query, "cursor");
+
+  const all = await worker.fetch(new Request("https://api.agentscouthq.com/reviews/all", { headers: site }), binding);
+  assert.equal(all.status, 200);
+  assert.equal((await all.json()).path, "/reviews/all");
+
+  const submit = await worker.fetch(new Request("https://api.agentscouthq.com/submit", {
+    method: "POST",
+    headers: { ...site, "content-type": "text/plain;charset=UTF-8" },
+    body: JSON.stringify({ name: "Widget", url: "https://example.com" }),
+  }), binding);
+  assert.equal(submit.status, 200);
+  assert.equal(submit.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
+
+  const generate = await worker.fetch(new Request("https://api.agentscouthq.com/generate", {
+    method: "POST",
+    headers: { ...site, "content-type": "text/plain;charset=UTF-8" },
+    body: JSON.stringify({ prompt: "A friendly robot", turnstileToken: "" }),
+  }), binding);
+  assert.equal(generate.status, 200);
+  assert.equal((await generate.json()).path, "/generate");
+
+  const generateGet = await worker.fetch(new Request("https://api.agentscouthq.com/generate", { headers: ip }), {});
+  assert.equal(generateGet.status, 200);
+  assert.equal(generateGet.headers.get("access-control-allow-origin"), "*");
+
+  for (const path of ["/track", "/geo", "/share"]) {
+    const res = await worker.fetch(new Request("https://api.agentscouthq.com" + path, { headers: ip }), {});
+    assert.equal(res.status, 200, path);
+    assert.equal((await res.json()).path, path);
+  }
+  const sharePost = await worker.fetch(new Request("https://api.agentscouthq.com/share", {
+    method: "POST",
+    headers: { ...site, "content-type": "text/plain" },
+    body: JSON.stringify({ path: "/tools/cursor.html" }),
+  }), {});
+  assert.equal(sharePost.status, 200);
+  assert.equal((await sharePost.json()).path, "/share");
+
+  const original = globalThis.fetch;
+  globalThis.fetch = async (input) => {
+    const name = new URL(String(input)).searchParams.get("name");
+    if (name === "example.com") return new Response(JSON.stringify({ Answer: [{ type: 1, data: "1.1.1.1" }] }), { status: 200 });
+    throw new Error("unexpected lookup " + input);
+  };
+  try {
+    const ready = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://example.com/")), {});
+    assert.equal(ready.status, 200);
+    assert.equal((await ready.json()).query, "https://example.com/");
+  } finally {
+    globalThis.fetch = original;
+  }
+
+  const stats = await worker.fetch(new Request("https://api.agentscouthq.com/stats", {
+    headers: { ...site, "x-stats-key": "correct-key" },
+  }), { ...binding, STATS_KEY: "correct-key" });
+  assert.equal(stats.status, 200);
+  assert.equal((await stats.json()).path, "/stats");
+  assert.deepEqual(seen, [
+    "POST /review",
+    "GET /reviews",
+    "GET /reviews/all",
+    "POST /submit",
+    "POST /generate",
+    "GET /generate",
+    "GET /track",
+    "GET /geo",
+    "GET /share",
+    "POST /share",
+    "GET /readiness",
+    "GET /stats",
+  ]);
+});
+
+test("review and track bodies, readiness URLs, and admin CORS stay bounded", async () => {
+  const calls = [];
+  const worker = protect({
+    async fetch(request) {
+      calls.push(new URL(request.url).pathname);
+      if (new URL(request.url).pathname === "/track" && request.headers.get("x-throw") === "1") {
+        throw new Error("internal token=super-secret");
+      }
+      return new Response(JSON.stringify({ ok: true }), {
+        status: 200,
+        headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
+      });
+    },
+  });
+  const binding = env();
+  const site = { origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.60", "content-type": "application/json" };
+  const bigReview = await worker.fetch(new Request("https://api.agentscouthq.com/review", {
+    method: "POST",
+    headers: site,
+    body: JSON.stringify({ tool: "cursor", text: "x".repeat(40_000) }),
+  }), binding);
+  assert.equal(bigReview.status, 413);
+  assert.deepEqual(await bigReview.json(), { error: "Payload too large." });
+  assert.equal(bigReview.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(calls.length, 0);
+
+  const submit = await worker.fetch(new Request("https://api.agentscouthq.com/submit", {
+    method: "POST",
+    headers: { ...site, "content-type": "text/plain" },
+    body: "x".repeat(50_000),
+  }), binding);
+  assert.equal(submit.status, 200);
+  assert.deepEqual(calls, ["/submit"]);
+
+  const bigTrack = await worker.fetch(new Request("https://api.agentscouthq.com/track", {
+    method: "POST",
+    headers: { "content-type": "text/plain", "cf-connecting-ip": "203.0.113.60" },
+    body: "y".repeat(70_000),
+  }), {});
+  assert.equal(bigTrack.status, 413);
+  assert.equal(calls.length, 1);
+
+  const original = globalThis.fetch;
+  let lookups = 0;
+  globalThis.fetch = async () => { lookups += 1; throw new Error("dns"); };
+  try {
+    const long = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("https://example.com/" + "a".repeat(5000))), {});
+    assert.equal(long.status, 400);
+    assert.equal((await long.json()).error, "That address is not a valid URL.");
+    assert.equal(lookups, 0);
+  } finally {
+    globalThis.fetch = original;
+  }
+
+  const limited = env();
+  limited.IMAGE_READ = limiter(1);
+  const first = await worker.fetch(new Request("https://api.agentscouthq.com/readiness?url=" + encodeURIComponent("http://127.0.0.1/"), {
+    headers: { "cf-connecting-ip": "203.0.113.61" },
+  }), limited);
+  assert.equal(first.status, 400);
+  const second = await worker.fetch(new Request("https://api.agentscouthq.com/readiness", {
+    headers: { "cf-connecting-ip": "203.0.113.61" },
+  }), limited);
+  assert.equal(second.status, 429);
+  const open = await worker.fetch(new Request("https://api.agentscouthq.com/readiness"), {});
+  assert.equal(open.status, 200);
+
+  const statsBinding = { ...env(), STATS_KEY: "correct-key" };
+  const foreign = await worker.fetch(new Request("https://api.agentscouthq.com/stats", {
+    headers: { "x-stats-key": "correct-key", origin: "https://evil.example", "cf-connecting-ip": "203.0.113.62" },
+  }), statsBinding);
+  assert.equal(foreign.status, 200);
+  assert.equal(foreign.headers.get("access-control-allow-origin"), null);
+  const home = await worker.fetch(new Request("https://api.agentscouthq.com/trending/stats", {
+    headers: { "x-stats-key": "correct-key", origin: "https://agentscouthq.com", "cf-connecting-ip": "203.0.113.62" },
+  }), statsBinding);
+  assert.equal(home.status, 200);
+  assert.equal(home.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
+  assert.equal(home.headers.get("x-frame-options"), "DENY");
+
+  const boom = await worker.fetch(new Request("https://api.agentscouthq.com/track", {
+    headers: { "x-throw": "1" },
+  }), {});
+  assert.equal(boom.status, 500);
+  const boomText = await boom.text();
+  assert.equal(boomText.includes("super-secret"), false);
+  assert.deepEqual(JSON.parse(boomText), { error: "The request failed." });
 });
 
 test("the turnstile flag is masked only on the paths protect already checks", () => {

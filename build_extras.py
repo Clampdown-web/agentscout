@@ -1,5 +1,5 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
-import html,json,re,datetime
+import json,re,datetime
 import atexit as _ax0
 def _pf_last():
     import sys as _s
@@ -12,7 +12,8 @@ B="https://agentscouthq.com/"
 NAV_GUIDES = '<a class="navvid" href="videos/">🎬 Guides</a>'
 FOOT_GUIDES = '<a href="videos/">Quick-Start Guides (8)</a>'
 HERO_GUIDES = '🎬 Quick-Start Guides (8) →'
-e=lambda s:html.escape(str(s or ""))
+import csp as _csp
+e=_csp.escape  # one escape for maker-supplied text in every generator
 def clip_text(s, n):
     """Shorten s to at most n characters, ending on a word boundary (never mid-word)."""
     s=" ".join(str(s or "").split())
@@ -72,12 +73,13 @@ LAUNCH_RANKS={}  # slug -> (rank, week_id, week_label). Filled by build_growth b
 def _paid_listing(x):
     tier=str(x.get("listing_tier") or "").lower().replace("-","_")
     return bool(x.get("fast_track") or tier in ("fast_track","category_pin","featured_49","sponsor","weekly_sponsor"))
-def _embed(depth, kind, th, url, alt, w=220, h=54):
+def _embed(depth, kind, th, url, alt, w=220, h=54, tab=True):
     img=f"{B}badges/{kind}-{th}.svg" if "/" not in kind else f"{B}{kind}"
     local=(f"{depth}badges/{kind}-{th}.svg" if "/" not in kind else f"{depth}{kind}")
     html_snip=f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img}" alt="{alt}" width="{w}" height="{h}"></a>'
     md=f"[![{alt}]({img})]({url})"
-    return (f'<div class="embed" data-bdpanel="{e(th)}"><img src="{local}" alt="{e(alt)} ({th})" width="{w}" height="{h}">'
+    role=(f' role="tabpanel" id="bd-panel-{e(th)}" aria-labelledby="bd-tab-{e(th)}"' if tab else "")
+    return (f'<div class="embed"{role} data-bdpanel="{e(th)}"><img src="{local}" alt="{e(alt)} ({th})" width="{w}" height="{h}">'
             f'<label>HTML ({th})</label><textarea readonly rows="3" aria-label="HTML badge code ({th})" onclick="this.select()">{e(html_snip)}</textarea>'
             f'<button class="btn" type="button" onclick="navigator.clipboard.writeText(this.previousElementSibling.value);this.textContent=\'Copied\'">Copy HTML</button>'
             f'<label>Markdown ({th})</label><textarea readonly rows="2" aria-label="Markdown badge code ({th})" onclick="this.select()">{e(md)}</textarea>'
@@ -93,12 +95,12 @@ def badge_html(x,depth="../"):
         alt=f"Launched on AgentScout, #{n} this week"
         launch=(f'<h3 style="font-size:15px;margin:18px 0 8px">Launched on AgentScout · #{n} this week</h3>'
                 f'<p class="muted" style="margin:0 0 8px">Rank {n} for {e(wlabel)} ({e(wid)}). The number is baked into the image so it stays the rank from that week.</p>'
-                +_embed(depth, path, "light", url, alt, 260, 54).replace('data-bdpanel="light"','data-bdpanel="launch"',1))
+                +_embed(depth, path, "light", url, alt, 260, 54, tab=False).replace('data-bdpanel="light"','data-bdpanel="launch"',1))
     note=("Thank you for listing with AgentScout. This badge is optional. Showing it does not change your rank or your place in the directory." if kind=="featured"
           else "Optional. Showing this badge does not change your rank or earn a Featured spot.")
     return (f'<h2 style="font-size:16px;margin:36px 0 6px">Get your badge</h2>'
             f'<p class="muted" style="margin:0 0 14px">Built {e(x["name"])}? {note} It links to this page. <a href="{depth}badges.html">About badges</a></p>'
-            f'<div class="badgebox" data-badgebox><div class="bdtabs" role="tablist"><button type="button" class="on" data-bd="light">Light</button><button type="button" data-bd="dark">Dark</button></div>'
+            f'<div class="badgebox" data-badgebox><div class="bdtabs" role="tablist" aria-label="Badge color"><button type="button" role="tab" id="bd-tab-light" class="on" data-bd="light" aria-selected="true" aria-controls="bd-panel-light" tabindex="0">Light</button><button type="button" role="tab" id="bd-tab-dark" data-bd="dark" aria-selected="false" aria-controls="bd-panel-dark" tabindex="-1">Dark</button></div>'
             f'<div class="embeds">{panels}{launch}</div></div>')
 def featured_generic():
     out=""
@@ -230,7 +232,7 @@ def build(t):
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in [B,B+"feed.xml",B+"new.html",B+"quiz.html",B+"llms.txt",B+"llms-full.txt",B+"generate.html",B+"sponsor.html"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
+    for u in [B,B+"feed.xml",B+"new.html",B+"quiz.html",B+"llms.txt",B+"llms-full.txt",B+"generate.html",B+"sponsor.html",B+"how-it-started.html",B+"launches/"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}
         sm.append(f"  <url><loc>{u}</loc><lastmod>{max(today,_r.get('updated',today))}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))

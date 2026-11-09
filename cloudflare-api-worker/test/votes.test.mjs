@@ -162,3 +162,164 @@ test("evil.com gets a 403", async () => {
   assert.equal(body.error, "Votes can only be cast from agentscouthq.com.");
   assert.equal(kv.size, 0);
 });
+
+function assertVoteCors(res, origin) {
+  assert.equal(res.headers.get("access-control-allow-methods"), "GET, POST, OPTIONS");
+  assert.equal(res.headers.get("access-control-allow-headers"), "content-type");
+  assert.equal(res.headers.get("vary"), "Origin");
+  if (origin) assert.equal(res.headers.get("access-control-allow-origin"), origin);
+  else assert.equal(res.headers.get("access-control-allow-origin"), null);
+  assert.equal(res.headers.get("access-control-allow-credentials"), null);
+}
+
+test("public vote routes keep status, JSON shape, and CORS", async () => {
+  const kv = memoryKv();
+  const origin = "https://agentscouthq.com";
+  const ip = "203.0.113.60";
+  const preflight = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "OPTIONS",
+    headers: { origin, "access-control-request-headers": "content-type" },
+  }), { VOTES: kv });
+  assert.equal(preflight.status, 204);
+  assert.equal(await preflight.text(), "");
+  assertVoteCors(preflight, origin);
+  assert.equal(preflight.headers.get("access-control-max-age"), "86400");
+
+  const foreign = await worker.fetch(new Request("https://votes.agentscouthq.com/votes", {
+    method: "OPTIONS",
+    headers: { origin: "https://evil.example" },
+  }), { VOTES: kv });
+  assert.equal(foreign.status, 204);
+  assertVoteCors(foreign, "");
+
+  const counts = await worker.fetch(new Request("https://votes.agentscouthq.com/votes?slugs=sickle,cursor", {
+    headers: { origin, "cf-connecting-ip": ip },
+  }), { VOTES: kv });
+  assert.equal(counts.status, 200);
+  assert.equal(counts.headers.get("content-type"), "application/json; charset=utf-8");
+  assert.equal(counts.headers.get("cache-control"), "public, max-age=60");
+  assertVoteCors(counts, origin);
+  const listed = await counts.json();
+  assert.equal(listed.ok, true);
+  assert.equal(listed.week, isoWeek(listed.day));
+  assert.deepEqual(listed.tools.sickle, { votes: 0, today: 0 });
+  assert.deepEqual(listed.tools.cursor, { votes: 0, today: 0 });
+  assert.equal(listed.today_total, 0);
+  assert.equal(listed.yours, undefined);
+  assert.equal(listed.storage, undefined);
+
+  const slashed = await worker.fetch(new Request("https://votes.agentscouthq.com/votes/?slugs=sickle", {
+    headers: { origin: "https://www.agentscouthq.com" },
+  }), { VOTES: kv });
+  assert.equal(slashed.status, 200);
+  assert.equal((await slashed.json()).tools.sickle.votes, 0);
+  assertVoteCors(slashed, "https://www.agentscouthq.com");
+
+  const bare = await worker.fetch(new Request("https://votes.agentscouthq.com/votes?slugs=sickle"), { VOTES: kv });
+  assert.equal(bare.status, 200);
+  assertVoteCors(bare, "");
+
+  const unconfigured = await worker.fetch(new Request("https://votes.agentscouthq.com/votes?slugs=sickle", {
+    headers: { origin },
+  }), {});
+  assert.equal(unconfigured.status, 200);
+  assert.equal(unconfigured.headers.get("cache-control"), "no-store");
+  const empty = await unconfigured.json();
+  assert.equal(empty.ok, true);
+  assert.equal(empty.storage, "unconfigured");
+  assert.deepEqual(empty.tools.sickle, { votes: 0, today: 0 });
+
+  const cast = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { origin, "content-type": "application/json", "cf-connecting-ip": ip },
+    body: JSON.stringify({ slug: "sickle" }),
+  }), { VOTES: kv });
+  assert.equal(cast.status, 200);
+  assert.equal(cast.headers.get("content-type"), "application/json; charset=utf-8");
+  assert.equal(cast.headers.get("cache-control"), "no-store");
+  assertVoteCors(cast, origin);
+  const voted = await cast.json();
+  assert.equal(voted.ok, true);
+  assert.equal(voted.slug, "sickle");
+  assert.equal(voted.votes, 1);
+  assert.equal(voted.today, 1);
+  assert.equal(voted.already, false);
+  assert.equal(voted.yours, true);
+  assert.equal(typeof voted.week, "string");
+
+  const badSlug = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { origin, "content-type": "application/json", "cf-connecting-ip": "203.0.113.61" },
+    body: JSON.stringify({ slug: "Not A Slug" }),
+  }), { VOTES: kv });
+  assert.equal(badSlug.status, 400);
+  assert.deepEqual(await badSlug.json(), { error: "Unknown tool." });
+  assertVoteCors(badSlug, origin);
+
+  const missing = await worker.fetch(new Request("https://votes.agentscouthq.com/nope", {
+    headers: { origin },
+  }), { VOTES: kv });
+  assert.equal(missing.status, 404);
+  assert.deepEqual(await missing.json(), { error: "Not found", endpoints: ["/roast", "/vote", "/votes"] });
+  assertVoteCors(missing, origin);
+
+  const wrongVote = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    headers: { origin },
+  }), { VOTES: kv });
+  assert.equal(wrongVote.status, 404);
+  const wrongCounts = await worker.fetch(new Request("https://votes.agentscouthq.com/votes", {
+    method: "POST",
+    headers: { origin, "content-type": "application/json" },
+    body: "{}",
+  }), { VOTES: kv });
+  assert.equal(wrongCounts.status, 404);
+  assert.equal(cast.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(cast.headers.get("x-frame-options"), "DENY");
+  assert.equal(cast.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+});
+
+test("vote and count inputs over the limit are rejected without a stack", async () => {
+  const kv = memoryKv();
+  const origin = "https://agentscouthq.com";
+  const huge = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { origin, "content-type": "application/json", "cf-connecting-ip": "203.0.113.80" },
+    body: JSON.stringify({ slug: "sickle", pad: "x".repeat(20_000) }),
+  }), { VOTES: kv });
+  assert.equal(huge.status, 413);
+  const hugeBody = await huge.json();
+  assert.deepEqual(hugeBody, { error: "Payload too large." });
+  assert.equal(JSON.stringify(hugeBody).includes("pad"), false);
+
+  const slugs = "a".repeat(40_001);
+  const many = await worker.fetch(new Request("https://votes.agentscouthq.com/votes?slugs=" + slugs, {
+    headers: { origin },
+  }), { VOTES: kv });
+  assert.equal(many.status, 400);
+  assert.deepEqual(await many.json(), { error: "Too many tools." });
+
+  const broken = {
+    async get() { throw new Error("postgres://user:secret-token@internal/db"); },
+    async put() { throw new Error("postgres://user:secret-token@internal/db"); },
+  };
+  const leaked = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { origin, "content-type": "application/json", "cf-connecting-ip": "203.0.113.81" },
+    body: JSON.stringify({ slug: "sickle" }),
+  }), { VOTES: broken });
+  assert.equal(leaked.status, 500);
+  const text = await leaked.text();
+  assert.equal(text.includes("secret-token"), false);
+  assert.equal(text.includes("postgres"), false);
+  assert.equal(text.includes("Error"), false);
+  assert.deepEqual(JSON.parse(text), { error: "The check failed. Try again in a minute." });
+
+  const fresh = memoryKv();
+  const longIp = await worker.fetch(new Request("https://votes.agentscouthq.com/vote", {
+    method: "POST",
+    headers: { origin, "content-type": "application/json", "cf-connecting-ip": "x".repeat(200) },
+    body: JSON.stringify({ slug: "sickle" }),
+  }), { VOTES: fresh });
+  assert.equal(longIp.status, 403);
+  assert.equal(fresh.size, 0);
+});

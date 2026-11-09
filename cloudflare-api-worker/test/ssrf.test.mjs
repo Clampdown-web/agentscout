@@ -9,6 +9,8 @@ test("blocks private, loopback, link-local, and metadata addresses", () => {
     "0:0:0:0:0:ffff:a9fe:a9fe", "::0:ffff:7f00:1", "0:0:0:0:0:ffff:a00:1",
     "64:ff9b::a00:1", "64:ff9b:1:a00:0:100::", "2002:a9fe:a9fe::",
     "::7f00:1", "::a00:1", "::a9fe:a9fe", "0:0:0:0:0:0:7f00:1",
+    "2001:0:4136:e378:8000:63bf:3fff:fdd2", "2001::", "fec0::1", "100::1",
+    "2001:db8:1:1:0:5efe:a9fe:a9fe", "2001:4860:4860:0:0:5efe:a9fe:a9fe",
   ]) {
     assert.equal(isBlockedIp(ip), true, ip);
   }
@@ -20,6 +22,8 @@ test("blocks private, loopback, link-local, and metadata addresses", () => {
   assert.equal(isBlockedIp("0:0:0:0:0:ffff:808:808"), false);
   assert.equal(isBlockedIp("::808:808"), false);
   assert.equal(isBlockedIp("0:0:0:0:0:0:808:808"), false);
+  assert.equal(isBlockedIp("2606:4700:4700::1111"), false);
+  assert.equal(isBlockedIp("2001:4860:4860::8888"), false);
 });
 
 test("url shape allows only public http(s)", () => {
@@ -42,6 +46,11 @@ test("url shape allows only public http(s)", () => {
   assert.ok(validateUrlShape("http://[::a00:1]/").error);
   assert.ok(validateUrlShape("http://[::a9fe:a9fe]/").error);
   assert.equal(validateUrlShape("http://[::808:808]/").error, undefined);
+  for (const raw of ["http://2130706433/", "http://0x7f000001/", "http://0177.0.0.1/", "http://127.1/", "http://0/", "http://[2001::]/", "http://[fec0::1]/", "http://[100::]/"]) {
+    assert.ok(validateUrlShape(raw).error, raw);
+  }
+  assert.equal(validateUrlShape("https://example.com/pricing").url.hostname, "example.com");
+  assert.equal(validateUrlShape("https://example.com:443/pricing").url.port, "");
 });
 
 test("public hostnames are looked up and bare private IPs are blocked", async () => {

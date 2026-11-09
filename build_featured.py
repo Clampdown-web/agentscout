@@ -3,7 +3,7 @@ Data: featured.json (list). Each entry:
   {"slug":"tool-slug", "scope":["homepage","crypto"], "expires":"2026-12-31", "paid":false, "note":"optional"}
 scope: "homepage" and/or category slugs (as in categories/<slug>.html). Omit scope = homepage + the tool's own category.
 expires: optional ISO date (Pacific); the entry stops showing after that day.
-paid: true makes outbound links rel="sponsored noopener" and the label reads "Sponsored".
+paid: true makes outbound links rel="sponsored noopener noreferrer" and the label reads "Sponsored".
 reason: why it's featured: "badge_backlink" (maker shows our AgentScout badge or a link; check with scripts/check_badge.py),
 "editorial" or "paid". Add/remove entries with scripts/feature_tool.py. Not shown on the page; kept for our records.
 With no active entries for a page, the block (and its markers) is removed entirely: no empty box.
@@ -25,7 +25,7 @@ def load():
     return out
 def card(x,f,d):
     paid=bool(f.get("paid")); lab="Sponsored" if paid else "Featured"
-    rel="sponsored noopener" if paid else "noopener"; url=x.get("website") or x.get("url") or ""
+    rel="sponsored noopener noreferrer" if paid else "noopener noreferrer"; url=x.get("website") or x.get("url") or ""
     out=f'<a class="fvisit" href="{e(url)}" target="_blank" rel="{rel}">Visit site<span class="sr-only"> for {e(x["name"])} (opens in new tab)</span> ↗</a>' if url else ""
     return (f'<li class="card fcard"><span class="flabel">{lab}</span><div class="ct">{build_extras.ico(x,d)}<div class="tn"><h3><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a></h3>'
             f'<div class="badges"><span class="b cat">{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span></div></div></div><p class="hook">{e(x["description"])}</p>{out}</li>')

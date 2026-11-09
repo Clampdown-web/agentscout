@@ -42,7 +42,7 @@ def probe(u):
         try:
             r=OPEN(urllib.request.Request(u,headers=UA,method=m),timeout=20); return r.status
         except urllib.error.HTTPError as ex:
-            if m=="GET" or ex.code not in (403,405,400,404,429,501): return ex.code
+            if m=="GET" or ex.code not in (403,405,406,400,404,429,501): return ex.code  # 406: some hosts reject HEAD only (WordRadar, Nov 9 2026)
         except Exception as ex: err=ex
     if err is None: return 0
     try:

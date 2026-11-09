@@ -32,7 +32,12 @@ STRIPE = (
 PRICES = ("$35", "$119", "$199", "$299", "$349")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    args = list(sys.argv[1:] if argv is None else argv)
+    if "--predeploy" in args or "--live" in args:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import morning_audit
+        return morning_audit.main(args)
     bad: list[str] = []
     follower = _follower_row_problems()
     bad.extend(follower)
@@ -147,23 +152,26 @@ def _chrome_checks() -> list[tuple[bool, str]]:
 
 
 def _ops_checks() -> list[tuple[bool, str]]:
-    """Homepage cache-buster, template total, and the submit category contract."""
-    import build_seo_new
+    """Artifact cache-buster, template total, and the submit category contract.
+
+    The cache buster comes from data/anim_state.json and tools.json. It is not
+    recomputed from today's date or from the count already on the live site.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import publish_gate
     from build_bot_templates import template_count_agreement
 
     checks: list[tuple[bool, str]] = []
-    token = "?v=" + build_seo_new.animation_cache_buster()
-    index_path = ROOT / "index.html"
-    if not index_path.is_file():
-        checks.append((False, f"4b homepage animation cache-buster {token} is missing from index.html"))
+    animation = publish_gate.artifact_animation_problems(ROOT)
+    if animation:
+        checks.extend((False, item) for item in animation)
     else:
-        index = index_path.read_text(encoding="utf-8")
-        anims = re.findall(r'(?:src|poster)="(assets/animations/[^"]+)"', index)
-        stale = [url for url in anims if not url.endswith(token)]
-        if not anims or stale:
-            checks.append((False, f"4b homepage animation cache-buster {token} is missing from index.html"))
-        else:
-            checks.append((True, f"4b homepage animation cache-buster {token}"))
+        checks.append((True, "animation cache-buster matches anim_state and the local catalog"))
+    products = publish_gate.product_snapshot_problems(ROOT)
+    if products:
+        checks.extend((False, item) for item in products)
+    else:
+        checks.append((True, "list_packages snapshot matches api/products.json"))
     parts = template_count_agreement()
     label = (
         f"bot templates {parts['total']} "

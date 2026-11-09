@@ -9747,8 +9747,8 @@
           "RPCs use the $10 credit, then $0.10 per 1K; managed OAuth, persistent connections"
         ]
       ],
-      "note": "",
-      "src": "https://smithery.ai/pricing",
+      "note": "Recorded from https://smithery.ai/pricing on 2026-10-18. On 2026-11-08 that URL returned 404 and the homepage did not show these tiers. Not a current price.",
+      "src": "",
       "checked": "2026-10-18"
     }
   },
@@ -14424,14 +14424,12 @@
     ],
     "faq": [],
     "sources": [
-      "https://github.com/Sema4AI/actions"
+      "https://github.com/Sema4AI"
     ],
     "updated": "2026-10-18",
     "facts": {
-      "repo": "https://github.com/Sema4AI/actions",
+      "repo": "https://github.com/Sema4AI",
       "checked": "2026-10-18",
-      "stars": 140,
-      "forks": 34,
       "license": "the Apache License 2.0",
       "osi": true
     }
@@ -16871,8 +16869,8 @@
           ""
         ]
       ],
-      "note": "Annual billing saves 20%.",
-      "src": "https://lorekeeper.tech/pricing",
+      "note": "Recorded from https://lorekeeper.tech/pricing on 2026-10-18. On 2026-11-09 that host returned HTTP 402 (deployment disabled). Not a current price.",
+      "src": "",
       "checked": "2026-10-18"
     }
   },
@@ -27324,7 +27322,7 @@
     ],
     "sources": [
       "https://github.com/bradygaster/squad",
-      "https://bradygaster.github.io/squad/"
+      "https://github.github.io/squad/"
     ],
     "facts": {
       "repo": "https://github.com/bradygaster/squad",
@@ -31659,5 +31657,485 @@
       "homepage": "https://douyin.wtf",
       "stars": 21251
     }
+  },
+  "palmier-pro": {
+    "long": [
+      "Palmier Pro is a Swift-native macOS video editor modelled on Premiere-style timeline editing, with generative video and image models such as Seedance, Kling and Nano Banana Pro available directly inside the timeline.",
+      "While the app is open it runs a local MCP server at http://127.0.0.1:19789/mcp, so Claude Code, Codex, Cursor or Claude Desktop (via a bundled one-click extension) can create and edit on the same project as you, or you can use the built-in in-app agent.",
+      "Releases through v0.7.6 and the last-gpl-source branch were published under GPLv3; later binary releases are proprietary and their source is not published, so the GitHub repository now mainly hosts binaries and historical source."
+    ],
+    "who": "Mac video editors and creators on Apple Silicon (macOS 26 Tahoe) who want an AI agent to search footage, assemble cuts and generate clips on a real editing timeline.",
+    "features": [
+      "Native Swift timeline editor for macOS 26 on Apple Silicon",
+      "Built-in AI video and image generation (Seedance, Kling, Nano Banana Pro) inside the timeline",
+      "Local HTTP MCP server for Claude Code, Codex and Cursor",
+      "One-click Claude Desktop extension (mcpb) bundled with the app",
+      "In-app agent that edits the same project you are working on",
+      "Interface available in 15+ languages"
+    ],
+    "faq": [
+      [
+        "Is Palmier Pro open source?",
+        "Only partly. Releases up to v0.7.6 and the last-gpl-source branch are GPLv3; newer binary releases are proprietary and their source code is not published."
+      ],
+      [
+        "How do I connect Claude Code to Palmier Pro?",
+        "With the app open, run: claude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/palmier-io/palmier-pro",
+      "stars": 14700,
+      "checked": "2026-11-08",
+      "status": "Latest release v0.12.1 (2026-11-02)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/palmier-io/palmier-pro",
+      "https://www.palmier.io/"
+    ]
+  },
+  "solidcraft": {
+    "long": [
+      "SolidCraft is an open-source parametric 3D CAD application written in pure Rust. You sketch, add constraints and build solids on a parametric feature timeline, and changing a dimension rebuilds the whole model.",
+      "It runs as a desktop app on Windows, macOS and Linux or directly in the browser, and a built-in MCP server lets AI agents create and modify models. The project describes itself as early but usable for simple parts, reporting that 75 of 76 public reference parts match their analytic or FreeCAD-computed properties."
+    ],
+    "who": "Makers, engineers and hobbyists who want a free parametric CAD tool, and developers who want AI agents to design printable or machinable parts through MCP.",
+    "features": [
+      "Parametric feature timeline: sketch, constrain, extrude, fillet, shell and pattern",
+      "Change a parameter and the model rebuilds",
+      "Desktop builds for Windows, macOS and Linux (AppImage, Snap, deb, rpm, Flatpak)",
+      "Runs in the browser with no install",
+      "Built-in MCP server so AI agents can model parts",
+      "Materials with mass properties"
+    ],
+    "faq": [
+      [
+        "Can AI agents use SolidCraft?",
+        "Yes. SolidCraft includes a built-in MCP server so agents can sketch and build models."
+      ],
+      [
+        "Does SolidCraft run in the browser?",
+        "Yes, there is a web version alongside the desktop installers."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/tangency-labs/solidcraft",
+      "stars": 14932,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release v0.30.1 (2026-11-02)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/tangency-labs/solidcraft",
+      "https://solidcraft.io/"
+    ]
+  },
+  "codecompanion-nvim": {
+    "long": [
+      "CodeCompanion is a Neovim plugin that brings AI chat, inline editing and agentic workflows into the editor, combining ideas from Copilot Chat and Zed AI.",
+      "It supports many model providers out of the box, including Anthropic, OpenAI, Gemini, GitHub Copilot, DeepSeek, Mistral, Ollama, OpenRouter and xAI, plus custom adapters. Through the Agent Client Protocol it can also drive CLI agents such as Claude Code, Codex, Gemini CLI, Goose, Cursor CLI and OpenCode, and it supports MCP tools."
+    ],
+    "who": "Neovim users who want an AI pair programmer and coding agents inside their editor without switching to a separate IDE.",
+    "features": [
+      "Chat buffer and inline edits inside Neovim",
+      "Adapters for Anthropic, OpenAI, Gemini, Copilot, Ollama, OpenRouter, xAI and more",
+      "Agent Client Protocol support for Claude Code, Codex, Gemini CLI, OpenCode and others",
+      "Model Context Protocol (MCP) support",
+      "Tools that let the model read files, run commands and edit code",
+      "Bring-your-own adapters for other providers"
+    ],
+    "faq": [
+      [
+        "Does CodeCompanion work with Claude Code?",
+        "Yes. It supports the Agent Client Protocol, which lets it drive Claude Code, Codex, Gemini CLI and other CLI agents from Neovim."
+      ],
+      [
+        "Which models can CodeCompanion use?",
+        "Anthropic, OpenAI, Gemini, GitHub Copilot, DeepSeek, Mistral, Ollama, OpenRouter, Hugging Face, xAI and others, or any provider via a custom adapter."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/olimorris/codecompanion.nvim",
+      "stars": 6931,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release v20.0.1 (2026-10-17)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/olimorris/codecompanion.nvim",
+      "https://codecompanion.olimorris.dev/"
+    ]
+  },
+  "thinkrail": {
+    "long": [
+      "ThinkRail is JetBrains' open-source agentic IDE built around the pi coding agent. Each task gets its own isolated git-worktree workspace with its own branch, so several agents can work in parallel without touching your main checkout.",
+      "Around the agent it adds a real IDE: Monaco editor tabs, a file tree with live git status, terminals, diffs and GitHub pull-request handling with CI checks and review status. It keeps durable project knowledge through living specs and reusable skills, and the team says full extension support is next."
+    ],
+    "who": "Developers who want a lightweight IDE designed around a coding agent, with parallel isolated workspaces and built-in pull-request flow.",
+    "features": [
+      "Built around the open-source pi coding agent",
+      "Isolated workspaces as git worktrees with their own branches",
+      "Monaco editor tabs, file tree, terminals and diffs",
+      "Publish, push and open pull requests; view CI checks and review decisions",
+      "Living specs and reusable skills for durable project knowledge",
+      "Finished workspaces shelve themselves after a PR merges or closes"
+    ],
+    "faq": [
+      [
+        "Who makes ThinkRail?",
+        "ThinkRail is published by JetBrains on GitHub under the Apache-2.0 licence."
+      ],
+      [
+        "Which agent does ThinkRail use?",
+        "It is built around the pi coding agent."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/JetBrains/thinkrail",
+      "stars": 7943,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release v0.3.2 (2026-11-06)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/JetBrains/thinkrail",
+      "https://thinkrail.ai/"
+    ]
+  },
+  "emdash": {
+    "long": [
+      "Emdash is a free, open-source desktop app for running several AI coding agents in parallel. Every task runs in its own Git worktree and branch, so you can try multiple fixes or features at once, compare the diffs and merge what works.",
+      "It works with local projects and with your own remote machines over SSH, and you bring the CLI agents you already use, such as Claude Code, Codex, OpenCode and Amp. Issues from Linear, GitHub, Jira, GitLab, Asana and other trackers can be sent straight to an agent, and pull requests and CI checks are reviewed in the same window."
+    ],
+    "who": "Developers who juggle several coding agents and want one place to dispatch tickets, isolate work in worktrees and review and merge the results.",
+    "features": [
+      "Run multiple coding agents at once, each in its own worktree",
+      "Works with Claude Code, Codex, OpenCode, Amp and other CLI agents",
+      "Send Linear, GitHub, Jira, GitLab, Asana and other tickets to an agent",
+      "Review diffs, open pull requests, inspect CI and merge in one place",
+      "Local projects or remote machines over SSH/SFTP",
+      "Installers for macOS, Windows and Linux"
+    ],
+    "faq": [
+      [
+        "Is Emdash free?",
+        "Yes. Emdash is open source under Apache-2.0 and free to download; you pay only for the agents or model plans you use."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/generalaction/emdash",
+      "stars": 6217,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release v1.2.11 (2026-11-06)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/generalaction/emdash",
+      "https://emdash.com/"
+    ]
+  },
+  "draw-io-mcp": {
+    "long": [
+      "The draw.io MCP server is the official integration from the draw.io team (JGraph) that lets AI assistants create and open diagrams in draw.io.",
+      "It offers four approaches: a hosted MCP App server at mcp.draw.io that renders interactive diagrams inline in Claude.ai, ChatGPT, VS Code and other MCP Apps hosts; an npm MCP tool server that opens diagrams in the draw.io editor; plugins for Claude Code, Codex CLI, GitHub Copilot and others that write .drawio files; and project instructions that need no MCP at all. Diagrams can be generated from draw.io XML, CSV or Mermaid."
+    ],
+    "who": "Anyone who wants an AI assistant to draw flowcharts, architecture diagrams or org charts that stay editable in draw.io.",
+    "features": [
+      "Official server from the draw.io team",
+      "Hosted MCP App at mcp.draw.io with inline interactive diagrams",
+      "Local npm MCP tool server that opens the draw.io editor",
+      "Plugins for Claude Code, Codex CLI, GitHub Copilot, Cursor and OpenCode",
+      "Accepts draw.io XML, CSV and Mermaid input",
+      "Diagrams stay fully editable in draw.io"
+    ],
+    "faq": [
+      [
+        "Do I need to install anything to use the draw.io MCP server?",
+        "Not for the hosted MCP App server at mcp.draw.io; the local tool server is an npm package."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/jgraph/drawio-mcp",
+      "stars": 5792,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/jgraph/drawio-mcp",
+      "https://www.drawio.com/mcp/"
+    ]
+  },
+  "eve": {
+    "long": [
+      "eve is Vercel's open-source, filesystem-first framework for durable AI agents. An agent's capabilities live in conventional folders: instructions.md for the system prompt, tools/ for typed functions, skills/ for procedures loaded on demand, channels/ for HTTP, Slack or Discord and schedules/ for recurring jobs.",
+      "Running npx eve@latest init scaffolds a project, installs dependencies and opens an interactive terminal UI, with models chosen through Vercel's AI Gateway. The package ships its full documentation so coding agents can read it locally from node_modules."
+    ],
+    "who": "TypeScript developers who want a convention-based way to build, inspect and run production agents, especially teams already deploying on Vercel.",
+    "features": [
+      "Filesystem conventions for instructions, tools, skills, channels and schedules",
+      "Typed tools defined with zod schemas",
+      "Channels for HTTP, Slack and Discord",
+      "Cron-style schedules for recurring agent jobs",
+      "npx eve init scaffolding with an interactive terminal UI",
+      "Any AI Gateway model selectable at init"
+    ],
+    "faq": [
+      [
+        "What is eve by Vercel?",
+        "An open-source (Apache-2.0) framework for durable AI agents where the project folder structure defines the agent's prompts, tools, skills, channels and schedules."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/vercel/eve",
+      "stars": 5827,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release eve@0.91.0 (2026-10-30)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/vercel/eve",
+      "https://eve.dev/"
+    ]
+  },
+  "mcp-ui": {
+    "long": [
+      "mcp-ui is an SDK for sending interactive user interfaces over the Model Context Protocol. It pioneered UI over MCP, and its patterns fed into the official MCP Apps specification; the @mcp-ui packages now implement that standard.",
+      "Servers create UI resources with @mcp-ui/server (TypeScript), mcp_ui_server (Ruby) or mcp-ui-server (Python) and link them to tools, while hosts render them with @mcp-ui/client, so a tool can return forms, charts or buttons inside the chat instead of plain text."
+    ],
+    "who": "Developers building MCP servers or MCP host apps who want tools to return interactive widgets.",
+    "features": [
+      "Implements the MCP Apps standard for UI over MCP",
+      "Server SDKs in TypeScript, Ruby and Python",
+      "@mcp-ui/client AppRenderer for MCP Apps hosts",
+      "Legacy UIResourceRenderer for older MCP-UI hosts",
+      "Tools link to UIs via _meta.ui.resourceUri",
+      "Examples and a security guide"
+    ],
+    "faq": [
+      [
+        "How does mcp-ui relate to MCP Apps?",
+        "mcp-ui's patterns influenced the MCP Apps specification, and the @mcp-ui packages are compliant implementations of it."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/MCP-UI-Org/mcp-ui",
+      "stars": 5255,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release client/v7.1.1 (2026-05-09)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/MCP-UI-Org/mcp-ui",
+      "https://mcpui.dev/"
+    ]
+  },
+  "agent-sandbox-kubernetes": {
+    "long": [
+      "Agent Sandbox is a Kubernetes SIG Apps project that adds a Sandbox custom resource and controller for isolated, stateful, singleton workloads such as AI agent runtimes, code execution and reinforcement learning environments.",
+      "Each Sandbox gets a stable identity, optional persistent storage and lifecycle controls such as scheduled deletion, pausing and resuming. Extensions add SandboxTemplate and warm pools for fast startup, and container isolation is delegated to secure runtimes like gVisor or Kata Containers through RuntimeClass."
+    ],
+    "who": "Platform teams that want to run agent code-execution or browser sandboxes on their own Kubernetes clusters with a standard API.",
+    "features": [
+      "Sandbox CRD for a single stateful pod with stable hostname",
+      "Persistent storage that survives restarts",
+      "Pause, resume and scheduled deletion",
+      "SandboxTemplate and warm pools for fast startup",
+      "Works with gVisor or Kata Containers via RuntimeClass",
+      "Official kubernetes-sigs project under SIG Apps"
+    ],
+    "faq": [
+      [
+        "Does Agent Sandbox provide isolation itself?",
+        "No. It orchestrates sandboxes and delegates low-level isolation to runtimes such as gVisor or Kata Containers."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/kubernetes-sigs/agent-sandbox",
+      "stars": 4550,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release v1.0.10 (2026-11-06)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/kubernetes-sigs/agent-sandbox",
+      "https://agent-sandbox.sigs.k8s.io/"
+    ]
+  },
+  "toad": {
+    "long": [
+      "Toad is a terminal user interface for AI coding agents from Will McGugan, the creator of Rich and Textual. It gives Claude, Gemini, Codex, OpenHands and many other agents one consistent, fast interface in the terminal.",
+      "Unlike most agent TUIs it embeds a fully working shell with colour output, interactive commands and tab completion, so you can interleave agent prompts and normal terminal work. It includes a Markdown prompt editor, an @ fuzzy file picker and an agent 'app store' for finding and installing agents that speak the Agent Client Protocol."
+    ],
+    "who": "Terminal-first developers who use several coding agents and want one polished TUI with a real shell built in.",
+    "features": [
+      "One terminal interface for Claude, Gemini, Codex, OpenHands and more",
+      "Built-in shell with persistent directory and environment, interactive commands and tab completion",
+      "Markdown prompt editor with syntax highlighting and mouse support",
+      "@ fuzzy file picker for adding files to prompts",
+      "Agent directory to find, install and run agents",
+      "Agent Client Protocol support for adding new agents"
+    ],
+    "faq": [
+      [
+        "How do I install Toad?",
+        "Run curl -fsSL batrachian.ai/install | sh, then start it with toad."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/batrachianai/toad",
+      "stars": 3501,
+      "checked": "2026-11-08",
+      "license": "AGPL-3.0",
+      "osi": true,
+      "status": "Latest release v0.6.20 (2026-05-26)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/batrachianai/toad",
+      "https://www.batrachian.ai/"
+    ]
+  },
+  "home-assistant-mcp-ha-mcp": {
+    "long": [
+      "HA-MCP is a community MCP server for managing Home Assistant with Claude, ChatGPT and other AI assistants. Assistants can read entity states, control devices and create or edit automations, scripts and configuration in plain language.",
+      "The recommended setup is the HA-MCP integration, installed through HACS or, on Home Assistant 2026.11 and newer, the built-in Marketplace. It runs the server in-process on every Home Assistant installation type and asks during setup which administrator account it acts as and how clients may connect."
+    ],
+    "who": "Home Assistant users who want an AI assistant to control their smart home and help write automations.",
+    "features": [
+      "Control devices and read entity states from an AI assistant",
+      "Create and edit automations and scripts in plain language",
+      "HACS and Home Assistant Marketplace install",
+      "Runs in-process on HA OS, Supervised, Container and Core",
+      "Works with Claude, ChatGPT and other MCP clients",
+      "Requires Home Assistant 2026.8 or newer for the integration"
+    ],
+    "faq": [
+      [
+        "Is HA-MCP an official Home Assistant project?",
+        "No. It is a community project published under the MIT licence by the homeassistant-ai GitHub organisation."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/homeassistant-ai/ha-mcp",
+      "stars": 5499,
+      "checked": "2026-11-08",
+      "license": "MIT",
+      "osi": true,
+      "status": "Latest release v9.1.1 (2026-11-07)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/homeassistant-ai/ha-mcp",
+      "https://homeassistant-ai.github.io/ha-mcp/"
+    ]
+  },
+  "longmemory": {
+    "long": [
+      "LongMemory is a local-first memory engine for LLM applications and autonomous agents. It stores durable memories in SQLite with immutable content, provenance and temporal history, so an agent can recall what was true at a given time rather than just the nearest vector match.",
+      "One TypeScript engine is exposed through an npm library, a CLI, an HTTP server, an MCP server, a dashboard and a VS Code extension, with a Python SDK and integrations for agent hosts. Recall modes include strict, historical, associative and grounded, with explainable evidence selection and token-bounded context."
+    ],
+    "who": "Developers who want self-hosted, auditable long-term memory for agents and coding assistants without a separate vector database service.",
+    "features": [
+      "Durable local-first storage in SQLite",
+      "Temporal truth and provenance for every memory",
+      "Strict, historical, associative, grounded and multilingual recall",
+      "Token-bounded, explainable context selection",
+      "Library, CLI, HTTP, MCP, dashboard and VS Code extension",
+      "Python SDK and agent-host integrations"
+    ],
+    "faq": [
+      [
+        "Does LongMemory need an external database?",
+        "No. It runs in memory with no service, or persists to a local SQLite file."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/CaviraOSS/LongMemory",
+      "stars": 4571,
+      "checked": "2026-11-08",
+      "license": "Apache-2.0",
+      "osi": true,
+      "status": "Latest release v1.3.0 (2025-12-20)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/CaviraOSS/LongMemory",
+      "https://cavira.app/projects/longmemory"
+    ]
+  },
+  "memori": {
+    "long": [
+      "Memori is a memory layer for AI agents that turns what agents do and say into structured, persistent state they can recall in later runs. It is designed to be agnostic to the LLM, the datastore and the agent framework.",
+      "Developers install the Python (pip install memori) or TypeScript (@memorilabs/memori) SDK, register their LLM client and set an attribution such as a user and process ID; conversations are then persisted and recalled automatically. Memori Cloud provides a zero-config hosted option with an API key."
+    ],
+    "who": "Developers adding persistent memory to chatbots and agents who want a drop-in SDK around their existing LLM client.",
+    "features": [
+      "Python and TypeScript SDKs",
+      "Wraps your existing LLM client and recalls memory automatically",
+      "Attribution by entity and process (for example user and agent)",
+      "LLM-, datastore- and framework-agnostic",
+      "Hosted Memori Cloud with API key",
+      "Published benchmark page"
+    ],
+    "faq": [
+      [
+        "How does Memori add memory to an agent?",
+        "You register your LLM client with Memori and set an attribution; Memori then persists conversations and recalls relevant memories automatically in the background."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/MemoriLabs/Memori",
+      "stars": 17464,
+      "checked": "2026-11-08",
+      "status": "Latest release v3.3.6 (2026-05-28)"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "updated": "2026-11-08",
+    "sources": [
+      "https://github.com/MemoriLabs/Memori",
+      "https://memorilabs.ai/"
+    ]
   }
 }

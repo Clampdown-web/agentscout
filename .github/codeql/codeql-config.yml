@@ -1,0 +1,20 @@
+name: AgentScout
+# First-party JavaScript and Python. Generated pages, images, and the vendored
+# Pagefind bundle are not the application source.
+paths-ignore:
+  - pagefind
+  - og
+  - assets
+  - preview
+  - tools
+  - news
+  - bot-store
+  - bot-templates
+  - "**/*.html"
+  - "**/*.png"
+  - "**/*.jpg"
+  - "**/*.jpeg"
+  - "**/*.gif"
+  - "**/*.webp"
+  - "**/*.mp4"
+  - "**/*.woff2"

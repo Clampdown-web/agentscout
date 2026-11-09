@@ -43,7 +43,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
-UC_SET={"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: maker correction. "share of voice" (brand GEO) matched the voice rule; BotSee measures AI visibility, it does not handle phone or voice calls. tasks_exclude keeps it off the voice-agent task.
+UC_SET={"1zheai":["write code","automate workflows","generate images"],  # Nov 9 2026: maker correction. "account" in the approved description matched sales & support; this is a developer API for coding assistants, text workflows and image apps.
+"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: maker correction. "share of voice" (brand GEO) matched the voice rule; BotSee measures AI visibility, it does not handle phone or voice calls. tasks_exclude keeps it off the voice-agent task.
 "editara":["edit photos","remove backgrounds","restore photos","upscale images"],
 "puremidi":["make music"],
 "lakewood-agents":["personal agents","research the web","automate workflows"],
@@ -152,6 +153,9 @@ UC_SET={"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: 
 import datetime as _dt
 from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
+# Slugs that must not follow the display name (Nov 8 2026): MagenticLite keeps its indexed magentic-ui URL (PR #70 renamed the tool);
+# names with accents keep a readable ASCII slug.
+SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots"}
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
@@ -160,7 +164,7 @@ for x in t:
         _k=[u for u in (x.get("use_cases") or []) if u in ART_UC]
         x["use_cases"]=_k or [u for u,p in ART_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]
     else: x["use_cases"]=([u for u,p in MEDIA_RULES if re.search(p,x["name"]+" "+x["description"],re.I)][:3] or [x["category"]]) if x["category"] in MEDIA_CATS else ([u for u,p in RULES if re.search(p,d)][:3] or [x["category"]])
-    x["slug"]=re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
+    x["slug"]=SLUG_PIN.get(x["name"]) or re.sub(r"[^a-z0-9]+","-",x["name"].lower()).strip("-")
     if x["slug"] in ART_XLINK_UC: x["use_cases"]=list(dict.fromkeys(x["use_cases"]+ART_XLINK_UC[x["slug"]]))
     if x["slug"] in UC_SET: x["use_cases"]=list(UC_SET[x["slug"]])
     if os.path.exists(f"assets/logos/{x['slug']}.png"): x["logo"]=f"assets/logos/{x['slug']}.png"
@@ -172,7 +176,8 @@ for x in t:
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 import build_counts; build_counts.write(t)  # data/site_counts.json before any page that prints a total
 os.makedirs("tools",exist_ok=True)
-e=lambda s:html.escape(str(s or ""))
+import csp as _csp
+e=_csp.escape  # maker text and URLs; quote=True so a quote cannot break an attribute
 tpl=open("data/detail.tpl").read()
 SOC=[("x.com","X"),("twitter.com","X"),("discord.gg","Discord"),("discord.com","Discord"),("reddit.com","Reddit"),("github.com","GitHub"),("linkedin.com","LinkedIn"),("youtube.com","YouTube")]
 def soc_lab(u):
@@ -185,12 +190,12 @@ def demo_row(x):
     src=x.get("demo_video_local") or v
     pos=x.get("demo_poster")
     pa=f' poster="{e(pos)}"' if pos else ""
-    return f'<h2 style="font-size:16px;margin-bottom:10px">Demo video</h2><div style="margin-bottom:32px;max-width:100%"><video controls preload="none" playsinline{pa} style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000" aria-label="{e(x["name"])} demo video"><source src="{e(src)}" type="video/mp4"></video><p style="margin:8px 0 0;font-size:14px"><a href="{e(v)}" target="_blank" rel="nofollow noopener">Watch the original demo video ↗</a> (MP4, from the maker)</p></div>'
+    return f'<h2 style="font-size:16px;margin-bottom:10px">Demo video</h2><div style="margin-bottom:32px;max-width:100%"><video controls preload="none" playsinline{pa} style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000" aria-label="{e(x["name"])} demo video"><source src="{e(src)}" type="video/mp4"></video><p style="margin:8px 0 0;font-size:14px"><a href="{e(v)}" target="_blank" rel="nofollow noopener noreferrer">Watch the original demo video ↗</a> (MP4, from the maker)</p></div>'
 def soc_row(x):
     # verified official social links only (tools.json "socials"); no block when empty
     ls=[(u,soc_lab(u)) for u in x.get("socials") or [] if soc_lab(u)]
     if not ls: return ""
-    a="".join(f'<a class="b" href="{e(u)}" target="_blank" rel="nofollow noopener" aria-label="{e(x["name"])} on {l}">{l} ↗</a>' for u,l in ls)
+    a="".join(f'<a class="b" href="{e(u)}" target="_blank" rel="nofollow noopener noreferrer" aria-label="{e(x["name"])} on {l}">{l} ↗</a>' for u,l in ls)
     return f'<h2 style="font-size:16px;margin-bottom:10px">Official channels</h2><div class="badges soc" style="margin-bottom:32px;flex-wrap:wrap">{a}</div>'
 
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
@@ -295,6 +300,16 @@ def _sync_index_counts():
     s = re.sub(r"Directory of \d[\d,]* link-checked", f"Directory of {n:,} link-checked", s)
     s = re.sub(r'(id="s-eyebrow">)\d[\d,]* tools · Links checked [^<]+', lambda m: m.group(1) + f"{n:,} tools · Links checked " + _lc, s)
     s = re.sub(r'(id="s-total">)\d[\d,]*', lambda m: m.group(1) + f"{n:,}", s)
+    try:
+        _mcp = int(_j.load(open("data/site_counts.json")).get("mcp_servers") or 0)
+    except Exception:
+        _mcp = sum(1 for _x in _j.load(open("tools.json")) if _x.get("category") == "MCP servers")
+    s = re.sub(
+        r'(<a href="categories/mcp-servers.html"><b)(?: id="s-mcp")?(>)\d[\d,]*',
+        lambda m: m.group(1) + ' id="s-mcp"' + m.group(2) + f"{_mcp:,}",
+        s,
+        count=1,
+    )
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
@@ -452,8 +467,8 @@ def apply_thin_page_rule(tools):
     urls=open("sitemap.xml",encoding="utf-8").read().count("<loc>")
     import build_counts as _bc
     _bc.refresh_pages()
-    if any(x["slug"]=="hedra" or "hedra.com" in (x.get("url") or "")+(x.get("website") or "") for x in tools):
-        raise SystemExit("Hedra is still in the catalog")
+    if any(_blocked_tool(x) for x in tools):
+        raise SystemExit("A takedown listing is still in the catalog")
     print(f"thin-page rule: noindex {len(noindex)} tool pages ({len(queued)} queued by the {NEW_TOOL_CAP}/day cap); sitemap {urls} urls; indexed tools {len(indexed)}")
     return {"noindex":len(noindex),"queued":queued,"sitemap":urls,"indexed_tools":len(indexed)}
 import atexit as _axq, build_extras as _bxq
@@ -477,10 +492,13 @@ def _quality_finish():
         d = "../" * f.count("/")
         s = build_tasks.ensure_shared_scripts(f, s, d)
         s = re.sub(
-            r"(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+",
+            r"(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+",
             lambda mm: mm.group(1) + "?v=" + build_tasks.ASSET_V,
             s,
         )
+        # submit_page / sponsor.page run after ga4.apply_all and would otherwise
+        # leave the template's older policy in place.
+        s = _csp.harden(s, f)
         open(f, "w", encoding="utf-8").write(s)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

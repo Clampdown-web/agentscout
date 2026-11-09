@@ -7,6 +7,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 from pack_builder_html import pack_section_html
 esc=html.escape
 SITE="https://agentscouthq.com"; D="bot-templates"; MARK="<!-- btx-generated -->"
+def ld_script(obj):
+    """JSON-LD that cannot close the surrounding script tag."""
+    body=json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
+    return '<script type="application/ld+json">'+body+"</script>"
 def live_bot_template_count(html_path=None):
     """Rows on /bot-templates/. The built page is the count; do not keep a stale literal."""
     path=html_path or f"{D}/index.html"
@@ -39,9 +43,9 @@ def template_count_agreement(html_path=None):
     }
 SHARE_SVG='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>'
 PRETTY={"slack":"Slack","notion-workspace":"Notion","linear":"Linear","figma":"Figma","hex":"Hex","pstack":"pstack"}
-TERMS=('<li>Terms for every marketplace bot (<a href="https://x.ai/legal/bot-sharing-terms" target="_blank" rel="noopener">x.ai third-party bot terms</a>): adding it lets the bot read, write and send data and use third-party services through the accounts you connect. You connect each account yourself.</li>'
- '<li>License (<a href="https://x.ai/legal/bot-sharing-terms" target="_blank" rel="noopener">x.ai third-party bot terms</a>): a limited, non-exclusive, revocable license to use the bot for your own purposes. You can\'t redistribute or re-share it without the creator\'s permission.</li>'
- '<li>What a template copies (<a href="https://x.ai/bot/guides/templates-for-grok-bot" target="_blank" rel="noopener">x.ai template guide</a>): instructions, memories, skills and first-party plugins, but not the creator\'s secrets, private skills or custom code.</li>')
+TERMS=('<li>Terms for every marketplace bot (<a href="https://x.ai/legal/bot-sharing-terms" target="_blank" rel="noopener noreferrer">x.ai third-party bot terms</a>): adding it lets the bot read, write and send data and use third-party services through the accounts you connect. You connect each account yourself.</li>'
+ '<li>License (<a href="https://x.ai/legal/bot-sharing-terms" target="_blank" rel="noopener noreferrer">x.ai third-party bot terms</a>): a limited, non-exclusive, revocable license to use the bot for your own purposes. You can\'t redistribute or re-share it without the creator\'s permission.</li>'
+ '<li>What a template copies (<a href="https://x.ai/bot/guides/templates-for-grok-bot" target="_blank" rel="noopener noreferrer">x.ai template guide</a>): instructions, memories, skills and first-party plugins, but not the creator\'s secrets, private skills or custom code.</li>')
 def share(e,cls,label,txt=""):
     return (f'<button type="button" class="{cls}" data-share data-share-url="{SITE}/{D}/{e["slug"]}.html" data-share-title="{esc(e["name"])}: Grok Bot template by {esc(e["creator"])}" '
             f'data-share-text="{esc(e["desc"])}" aria-label="{label}">{SHARE_SVG}{txt}</button>')
@@ -50,28 +54,29 @@ def row(e):
     return (f'<li class="bt-row" id="grok-{s}" data-plat="grok" data-q="{esc((e["name"]+" "+e["creator"]).lower())}"><img class="bt-ic logo" src="icons/creator-{s}.jpg" alt="{n} logo" width="32" height="32" loading="lazy" data-icon="official">'
             f'<div class="bt-txt"><div class="bt-nm"><a href="{s}.html"><b>{n}</b></a> <span>by {esc(e["creator"])}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Grok Bot</span><span class="sharewrap bt-share">{share(e,"btn sharebtn bt-sbtn","Share "+n)}<span class="sharecount" hidden></span></span>'
-            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens original listing)">Add</a></li>')
+            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer" aria-label="Add {n} (opens original listing)">Add</a></li>')
 def oss_row(e):
     n=esc(e["name"]); o=e["repo"].split("/")[0]; u="https://github.com/"+e["repo"]; st=f'{e["stars"]:,}'
     lic=f' · {esc(e["license"])}' if e.get("license") and e["license"]!="NOASSERTION" else ""
     return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+o).lower())}"><img class="bt-ic logo" src="icons/gh-{o.lower()}.png" alt="{esc(o)} avatar" width="32" height="32" loading="lazy">'
-            f'<div class="bt-txt"><div class="bt-nm"><a href="{u}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by @{esc(o)} · ★ {st} on GitHub{lic}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{u}" target="_blank" rel="noopener noreferrer"><b>{n}</b></a> <span>by @{esc(o)} · ★ {st} on GitHub{lic}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Open source</span>'
-            f'<a class="btn bt-btn" href="{u}" target="_blank" rel="noopener" aria-label="View {n} on GitHub (opens in new tab)">GitHub</a></li>')
+            f'<a class="btn bt-btn" href="{u}" target="_blank" rel="noopener noreferrer" aria-label="View {n} on GitHub (opens in new tab)">GitHub</a></li>')
 CB_LABEL="Community bot (via awesome-grokbot), vetted by AgentScout"
 def cb_row(e):
-    n=esc(e["name"]); h=esc(e["handle"])
-    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["handle"]).lower())}"><img class="bt-ic logo" src="icons/{esc(e.get('logo') or 'community-bot.svg')}" alt="{n} logo" width="32" height="32" loading="lazy">'
-            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by <a href="https://x.com/{h}" target="_blank" rel="noopener">@{h}</a> · {CB_LABEL}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+    n=esc(e["name"]); h=(e.get("handle") or "").strip()
+    by=f'<a href="https://x.com/{esc(h)}" target="_blank" rel="noopener noreferrer">@{esc(h)}</a> · ' if h else ""
+    return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+h).lower())}"><img class="bt-ic logo" src="icons/{esc(e.get('logo') or 'community-bot.svg')}" alt="{n} logo" width="32" height="32" loading="lazy">'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer"><b>{n}</b></a> <span>by {by}{CB_LABEL}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Community</span>'
-            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
+            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
 UC_LABEL="Official x.ai use case"
 def uc_row(e):
     n=esc(e["name"]); act=' · <span class="bt-act">Acts with your approval</span>' if e.get("acts") else ""
     return (f'<li class="bt-row" id="{e["id"]}" data-plat="grok" data-q="{esc((e["name"]+" "+e["creator"]).lower())}"><img class="bt-ic logo" src="icons/{esc(e.get('logo') or 'official-use-case.svg')}" alt="{n} icon" width="32" height="32" loading="lazy">'
-            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener"><b>{n}</b></a> <span>by {esc(e["creator"])} · <a href="https://x.ai/bot/use-cases" target="_blank" rel="noopener">{UC_LABEL}</a>{act}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
+            f'<div class="bt-txt"><div class="bt-nm"><a href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer"><b>{n}</b></a> <span>by {esc(e["creator"])} · <a href="https://x.ai/bot/use-cases" target="_blank" rel="noopener noreferrer">{UC_LABEL}</a>{act}</span></div><p class="bt-d" title="{esc(e["desc"])}">{esc(e["desc"])}</p></div>'
             f'<span class="b bt-badge">Official</span>'
-            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
+            f'<a class="btn bt-btn" href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer" aria-label="Add {n} (opens share page on x.ai)">Add</a></li>')
 def tabs(e):
     T=[]
     if e["memories"]:
@@ -95,14 +100,14 @@ def detail(e,shell,rel):
     h=re.sub(r'(<link rel="canonical" href=")[^"]*',lambda m:m.group(1)+url,h,count=1)
     for k,v in (("og:title",title),("og:description",md),("og:url",url)): h=re.sub(rf'(<meta property="{k}" content=")[^"]*',lambda m:m.group(1)+esc(v),h,count=1)
     for k,v in (("twitter:title",title),("twitter:description",md)): h=re.sub(rf'(<meta name="{k}" content=")[^"]*',lambda m:m.group(1)+esc(v),h,count=1)
-    cw=json.dumps({"@context":"https://schema.org","@type":"CreativeWork","name":e["name"],"description":e["desc"],"url":url,"sameAs":e["url"],"author":{"@type":"Person","name":e["creator"]}},ensure_ascii=False)
-    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "CreativeWork".*?</script>',lambda m:f'<script type="application/ld+json">{cw}</script>',h,count=1,flags=re.S)
-    bc=json.dumps({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Bot templates","item":f"{SITE}/{D}/"},{"@type":"ListItem","position":3,"name":e["name"],"item":url}]},ensure_ascii=False)
-    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "BreadcrumbList".*?</script>',lambda m:f'<script type="application/ld+json">{bc}</script>',h,count=1,flags=re.S)
+    cw=ld_script({"@context":"https://schema.org","@type":"CreativeWork","name":e["name"],"description":e["desc"],"url":url,"sameAs":e["url"],"author":{"@type":"Person","name":e["creator"]}})
+    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "CreativeWork".*?</script>',lambda m:cw,h,count=1,flags=re.S)
+    bc=ld_script({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Bot templates","item":f"{SITE}/{D}/"},{"@type":"ListItem","position":3,"name":e["name"],"item":url}]})
+    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "BreadcrumbList".*?</script>',lambda m:bc,h,count=1,flags=re.S)
     main=(f'<main class="wrap bt" data-pagefind-body>{MARK}\n<a class="bd-back" href="index.html">← Bot templates</a>\n'
       f'<div class="bd-top"><img class="bt-ic big logo" src="icons/creator-{s}.jpg" alt="{nm} logo" width="84" height="84" loading="lazy" data-icon="official"><div><h1 data-pagefind-weight="10">{nm}</h1><div class="bd-meta"><span>by {cr}</span><span class="b">Grok Bot</span></div></div></div>\n'
       f'<p class="bd-long">{esc(e["long"])}</p>\n'
-      f'<div class="bd-cta"><a class="btn primary" href="{esc(e["url"])}" target="_blank" rel="noopener">Add on x.ai ↗</a><span class="sharewrap">{share(e,"btn sharebtn","Share this page","Share")}<span class="sharecount" hidden></span></span></div>\n'
+      f'<div class="bd-cta"><a class="btn primary" href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer">Add on x.ai ↗</a><span class="sharewrap">{share(e,"btn sharebtn","Share this page","Share")}<span class="sharecount" hidden></span></span></div>\n'
       +tabs(e)+
       f'\n<p class="bd-src">Taken from the {nm} listing on x.ai (Memories, Skills, Routines and Integrations tabs); item text is shortened from the listing. Anything stated nowhere is marked "Not stated".</p>\n'
       '<section class="bd-rel"><h2 class="bt-h">More Grok Bot templates</h2><ul>'+"".join(f'<li><a href="{a}.html">{esc(b)}</a> <span class="bt-by">by {esc(c)}</span></li>' for a,b,c in rel)+'</ul></section>\n'
@@ -141,7 +146,7 @@ def run():
             u=h.group(1) if h.group(1).startswith("http") else f"{SITE}/{D}/{h.group(1)}"
             L.append({"@type":"ListItem","position":len(L)+1,"name":old.get(u) or html.unescape(re.sub(r'<[^>]+>','',h.group(2))),"url":u})
         o["itemListElement"]=L; o["numberOfItems"]=len(L)
-        return '<script type="application/ld+json">'+json.dumps(o)+'</script>'
+        return ld_script(o)
     s=re.sub(r'<script type="application/ld\+json">(\{"@context": "https://schema.org", "@type": "ItemList".*?)</script>',il_all,s,count=1,flags=re.S)
     open(ip,"w").write(s)
     shell=open(f"{D}/haggle-bot.html").read()

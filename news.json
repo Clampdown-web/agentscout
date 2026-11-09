@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T15:04:39Z",
+ "updated": "2026-11-09T15:07:37Z",
  "sources": [
   "TechCrunch",
   "The Verge",
@@ -10,12 +10,39 @@
  ],
  "items": [
   {
+   "title": "Apple is racing to make Siri more agentic",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+   "date": "2026-11-08T19:18:19Z",
+   "tool": "make",
+   "page": "news/2026/11/apple-is-racing-to-make-siri-more-agentic.html"
+  },
+  {
+   "title": "Coinbase CEO Brian Armstrong runs a chief-of-staff AI agent over a team of specialist agents",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2119298665034437048",
+   "date": "2026-11-08T11:21:05Z",
+   "tool": null,
+   "summary": "Brian Armstrong described a setup where a chief-of-staff agent directs lead agents for coding, research and team ops, all feeding one prioritized review queue that still needs his sign-off.",
+   "page": "news/2026/11/coinbase-ceo-brian-armstrong-runs-a-chief-of-staff-ai-agent-over-a.html"
+  },
+  {
    "title": "METR: AI assistance nearly doubles Anthropic research iteration speed",
    "source": "X News",
    "url": "https://x.com/i/trending/2118427442922901851",
    "date": "2026-11-07T13:19:56Z",
    "tool": null,
+   "summary": "Evaluator METR reported that since late 2025 Anthropic's research iteration on key tasks sped up about 1.9x, largely from AI assistance inside the lab.",
    "page": "news/2026/11/metr-ai-assistance-nearly-doubles-anthropic-research-iteration-speed.html"
+  },
+  {
+   "title": "OpenCode Browse pairs a Chromium extension with an MCP server for on-device browser agents",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2119010813126365592",
+   "date": "2026-11-07T10:19:42Z",
+   "tool": null,
+   "summary": "OpenCode's Browse lets agents drive background tabs in Chrome, Edge or Brave with your real logins through an MCP server, handing control back to you for logins, 2FA and payments.",
+   "page": "news/2026/11/opencode-browse-pairs-a-chromium-extension-with-an-mcp-server-for-on.html"
   },
   {
    "title": "Anthropic Claude Duet app can steer cloud Claude Code sessions from a phone",
@@ -23,58 +50,35 @@
    "url": "https://x.com/i/trending/2118812904648794590",
    "date": "2026-11-07T08:36:33Z",
    "tool": null,
+   "summary": "Anthropic linked the Claude Duet mobile app to Claude Code cloud sessions so developers can check progress and approve changes from their phone on Pro, Max and Ultra plans.",
    "page": "news/2026/11/anthropic-claude-duet-app-can-steer-cloud-claude-code-sessions-from-a.html"
   },
   {
-   "title": "Wolters Kluwer ships TyMetrix 360 MCP for governed legal agent workflows",
-   "source": "Business Wire",
-   "url": "https://www.businesswire.com/news/home/20261106646088/en/Wolters-Kluwer-brings-TyMetrix-360-data-into-enterprise-AI-workflows-with-new-MCP-server",
-   "date": "2026-11-06T12:00:00Z",
+   "title": "Claude Code leaked user emails in User-Agent headers; Anthropic ships privacy fix",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2118630191685914974",
+   "date": "2026-11-06T22:48:14Z",
    "tool": null,
-   "summary": "Wolters Kluwer launched a TyMetrix 360 MCP server so legal teams can create matters, adjust invoices and assign follow-ups inside their existing AI assistants under current permissions.",
-   "page": "news/2026/11/wolters-kluwer-ships-tymetrix-360-mcp-for-governed-legal-agent.html"
+   "summary": "Claude Code had been putting user emails into outbound User-Agent headers, sparking spam reports; Anthropic shipped a privacy plugin in 2.1.317 and plans to drop emails from context.",
+   "page": "news/2026/11/claude-code-leaked-user-emails-in-user-agent-headers-anthropic-ships.html"
   },
   {
-   "title": "Cognitum One Unveils MetaLLM, Self-Improving Model Control Plane for AI Agent Swarms -…",
-   "source": "Google News",
-   "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPbEM5QmViaFJmTjVvd0NQVl9GdnNYalFqMllYTjF6YjNaY25Bc3ZIUW1UZ3VIblhwMF9UN1l2TWRPRkFrbHFUY3pfUEdNcEliQ1U2RnA1cUQtTTc0bXRudTc4RXdFd0lnaHNMMGVOZ0JBakZ4NzdTZzZiRFZmTkNJbHhOdGJ4WU5pdGg1N3h6WEFRTzhFUjdFMWJhZG84LXpQNjY5ZFFhRk1PTXRTd25hMU5UOE8waEZRMW5mWURFNTVBU1lyalZHVEROcGR2Uko5aVpFdzVkWnJXcHdJNUp3UGMwaG44c18xVVVnZzY0YzJ4Yi1TSHN4c29lRHdNY1B0NEdGQ21sZw?oc=5",
-   "date": "2026-11-05T12:01:57Z",
-   "tool": "swarms",
-   "page": "news/2026/11/cognitum-one-unveils-metallm-self-improving-model-control-plane-for.html"
-  },
-  {
-   "title": "Parallel MCP 2.0 packs search, extract, decisions and deep research for agents",
-   "source": "Parallel",
-   "url": "https://parallel.ai/blog/parallel-mcp-2",
-   "date": "2026-11-05T12:00:00Z",
+   "title": "Cursor Build Live Apps turns a cloud-agent prompt into a shareable URL",
+   "source": "X",
+   "url": "https://x.com/eggbaby/status/2118731209245155352",
+   "date": "2026-11-06T15:44:19Z",
    "tool": null,
-   "page": "news/2026/11/parallel-mcp-2-0-packs-search-extract-decisions-and-deep-research-for.html"
+   "summary": "Cursor's Build Live Apps flow lets a cloud agent scaffold a web app with optional Postgres and SSO, then hand back a shareable URL.",
+   "page": "news/2026/11/cursor-build-live-apps-turns-a-cloud-agent-prompt-into-a-shareable-url.html"
   },
   {
-   "title": "Adobe wires CX Enterprise Coworker into ChatGPT, Claude and Gemini via MCP",
-   "source": "AICentralResources",
-   "url": "https://www.aicentralresources.com/news/adobe-cx-enterprise-coworker-mcp-chatgpt-claude-gemini",
-   "date": "2026-11-05T12:00:00Z",
+   "title": "Oren MCP launches stock research and trading inside Claude, Cursor and Codex",
+   "source": "X / Oren",
+   "url": "https://x.com/orenfinance_/status/2118728334440018074",
+   "date": "2026-11-06T15:32:53Z",
    "tool": null,
-   "summary": "Adobe embedded its CX Enterprise Coworker marketing agent into ChatGPT, Claude, Gemini, Copilot and Databricks Genie through MCP and A2A, with human approval still required for major spend changes.",
-   "page": "news/2026/11/adobe-wires-cx-enterprise-coworker-into-chatgpt-claude-and-gemini-via.html"
-  },
-  {
-   "title": "Luma ships an MCP connector for ChatGPT and Claude image and video edits",
-   "source": "Luma / FounderHeist",
-   "url": "https://founderheist.com/briefs/luma-releases-an-ai-model-context-protocol-connector-for",
-   "date": "2026-11-05T08:00:00Z",
-   "tool": null,
-   "summary": "Luma launched an MCP connector for ChatGPT and Claude so users can restyle ads, change camera angles and generate image or video clips inside the chat, billed against existing Luma credits.",
-   "page": "news/2026/11/luma-ships-an-mcp-connector-for-chatgpt-and-claude-image-and-video.html"
-  },
-  {
-   "title": "Infisical Raises $40M to Secure AI Agent Credentials",
-   "source": "BankInfoSecurity",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORWFDQVc5dFVGc29EZjBUaVUyQzEyOGozMHdBaUVyTTA5U0p3eGhYZjZKcnY5cWNad09lV3l1Yzd4N1FOUnJZdDlaUmJ4cVJXaHo2M3JwMlNZQ3dOQzBqT0V1OEdMQ011cTBKM001cXlBWlRqS3dDRGdhZmdTT01GVmNGZ3cxR0J0VWFUOU05Q1p3M3JRUlJJ?oc=5",
-   "date": "2026-11-05T00:13:37Z",
-   "tool": "infisical",
-   "page": "news/2026/11/infisical-raises-40m-to-secure-ai-agent-credentials.html"
+   "summary": "Oren MCP went live, letting Claude, Cursor and Codex research stocks, check portfolios and place trades with user-set limits.",
+   "page": "news/2026/11/oren-mcp-launches-stock-research-and-trading-inside-claude-cursor-and.html"
   }
  ]
 }

@@ -2,6 +2,30 @@
 /* Logo img error: retry twice with a cache-busting query, then show the letter (Oct 18 2026 logo fix). */
 function ASimgErr(i){var n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()}
 const ASe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function asListingHttp(u){
+  var s=String(u==null?"":u).trim();
+  if(!s)return "";
+  try{
+    var x=new URL(s);
+    if((x.protocol!=="http:"&&x.protocol!=="https:")||x.username||x.password)return "";
+    return s;
+  }catch(e){return ""}
+}
+function asListingLogo(u){
+  var raw=String(u==null?"":u).trim().replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,"assets/");
+  if(!raw||raw.indexOf("..")>=0)return "";
+  if(/^https?:\/\//i.test(raw)){
+    try{
+      var x=new URL(raw);
+      if(x.protocol!=="https:"||x.username||x.password)return "";
+      if(x.hostname!=="agentscouthq.com"&&x.hostname!=="www.agentscouthq.com")return "";
+      if(!/^\/assets\/[A-Za-z0-9._/-]+$/.test(x.pathname))return "";
+      return raw;
+    }catch(e){return ""}
+  }
+  if(!/^\/?assets\/[A-Za-z0-9._/-]+$/.test(raw))return "";
+  return raw;
+}
 const AS={
   get(k){try{return JSON.parse(localStorage.getItem(k)||"{}")}catch{return{}}},
   set(k,v){localStorage.setItem(k,JSON.stringify(v))},
@@ -39,14 +63,21 @@ AS.paintVote=function(btn,row){if(!row)return;var sp=btn.querySelector("span");i
 AS.hydrateVotes=function(root){var btns=[].slice.call((root||document).querySelectorAll("[data-vote]"));if(!btns.length)return;var slugs=[];btns.forEach(function(b){if(slugs.indexOf(b.dataset.vote)<0)slugs.push(b.dataset.vote)});slugs=slugs.slice(0,400);fetch(AS.VOTE_API+"/votes?slugs="+encodeURIComponent(slugs.join(","))).then(function(r){return r.json()}).then(function(j){var tools=j.tools||{};btns.forEach(function(b){AS.paintVote(b,tools[b.dataset.vote]||{votes:0,today:0})});var banner=document.querySelector("[data-today-total]");if(banner&&typeof j.today_total==="number")banner.textContent=String(j.today_total)}).catch(function(){})};
 AS.castVote=function(btn){var slug=btn.dataset.vote;if(btn.disabled)return;btn.disabled=true;fetch(AS.VOTE_API+"/vote",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({slug:slug})}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j;return j})}).then(function(j){document.querySelectorAll('[data-vote="'+CSS.escape(slug)+'"]').forEach(function(b){AS.paintVote(b,{votes:j.votes,today:j.today,yours:true})})}).catch(function(){}).finally(function(){btn.disabled=false})};
 AS.hydrateVotes(document);
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-bd]");if(!b)return;var box=b.closest("[data-badgebox]");if(!box)return;var th=b.getAttribute("data-bd");box.querySelectorAll("[data-bd]").forEach(function(x){x.classList.toggle("on",x===b)});box.querySelectorAll("[data-bdpanel]").forEach(function(p){var show=p.getAttribute("data-bdpanel")===th||p.getAttribute("data-bdpanel")==="launch";p.hidden=p.getAttribute("data-bdpanel")!=="launch"&&p.getAttribute("data-bdpanel")!==th})});
+(function(){if(window.__bdTabs)return;window.__bdTabs=1;
+function bdGo(b){var box=b.closest("[data-badgebox]");if(!box)return;var th=b.getAttribute("data-bd");box.querySelectorAll("[data-bd]").forEach(function(x){var on=x===b;x.classList.toggle("on",on);if(x.getAttribute("role")==="tab"){x.setAttribute("aria-selected",on?"true":"false");x.tabIndex=on?0:-1}});box.querySelectorAll("[data-bdpanel]").forEach(function(p){p.hidden=p.getAttribute("data-bdpanel")!=="launch"&&p.getAttribute("data-bdpanel")!==th})}
+function bdPrepare(box){var tabs=[].slice.call(box.querySelectorAll("[data-bd]"));var list=box.querySelector(".bdtabs");if(list){if(!list.getAttribute("role"))list.setAttribute("role","tablist");if(!list.getAttribute("aria-label"))list.setAttribute("aria-label","Badge color")}var n=0;tabs.forEach(function(x){var th=x.getAttribute("data-bd");var on=x.classList.contains("on");if(!x.id)x.id="bd-tab-"+th+"-"+n;x.setAttribute("role","tab");x.setAttribute("aria-selected",on?"true":"false");x.tabIndex=on?0:-1;n++});box.querySelectorAll("[data-bdpanel]").forEach(function(p){var th=p.getAttribute("data-bdpanel");if(th==="launch")return;if(!p.getAttribute("role"))p.setAttribute("role","tabpanel");var tab=box.querySelector('[data-bd="'+th+'"]');if(tab){p.id=p.id||("bd-panel-"+th+"-"+tab.id);tab.setAttribute("aria-controls",p.id);p.setAttribute("aria-labelledby",tab.id)}})}
+function bdAll(){document.querySelectorAll("[data-badgebox]").forEach(bdPrepare)}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-bd]");if(!b||!b.closest("[data-badgebox]"))return;bdGo(b)});
+document.addEventListener("keydown",function(e){var b=e.target.closest&&e.target.closest('[role="tab"][data-bd]');if(!b)return;var k=e.key;if(k!=="ArrowRight"&&k!=="ArrowLeft"&&k!=="Home"&&k!=="End")return;var tabs=[].slice.call(b.closest("[data-badgebox]").querySelectorAll('[role="tab"][data-bd]'));var i=tabs.indexOf(b);if(i<0)return;e.preventDefault();var n=k==="Home"?0:k==="End"?tabs.length-1:k==="ArrowRight"?(i+1)%tabs.length:(i+tabs.length-1)%tabs.length;bdGo(tabs[n]);tabs[n].focus()});
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",bdAll):bdAll();
+})();
 /* Scroll buttons (top + bottom). Injected on every page that loads app.js; no inline script needed. */
 (function(){if(window.__asScroll)return;window.__asScroll=1;
 function init(){document.querySelectorAll(".scrollbtns").forEach(function(n){n.remove()});var w=document.createElement("div");w.className="scrollbtns";
 w.innerHTML='<button type="button" class="scrollbtn up" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button><button type="button" class="scrollbtn down" aria-label="Scroll to bottom" title="Scroll to bottom"><span aria-hidden="true">↓</span></button>';
 document.body.appendChild(w);var up=w.querySelector(".up"),dn=w.querySelector(".down"),q=0;
 /* phone: hide the floating buttons while a search/filter panel is on screen so they never cover its controls (Oct 23 2026) */
-try{var NP=document.querySelectorAll("#spanel,.spanel,#filters,.filters"),vis=new Set();if(NP.length&&"IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target)});w.classList.toggle("nearpanel",vis.size>0&&innerWidth<768)});NP.forEach(function(n){io.observe(n)})}}catch(_){}
+try{var NP=document.querySelectorAll("#spanel,.spanel,#filters,.filters,#sf-turnstile"),vis=new Set();if(NP.length&&"IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target)});w.classList.toggle("nearpanel",vis.size>0&&innerWidth<768)});NP.forEach(function(n){io.observe(n)})}}catch(_){}
 /* One smooth glide to the true top/bottom: own rAF animation that re-reads the page height every frame (lazy images/cards can grow the page mid-scroll, which made native smooth scroll stop short). window.__asJump tells lazy loaders (homepage directory) not to add cards during the glide. Any wheel/touch/key cancels. Oct 19 2026 */
 var raf=0;function stop(){if(raf){cancelAnimationFrame(raf);raf=0}window.__asJump=0}
 ["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,function(e){if(raf&&!(e.target.closest&&e.target.closest(".scrollbtns")))stop()},{passive:true})});
@@ -96,8 +127,8 @@ function init(){hearts();if(!AS._bound)AS.bind(document);document.querySelectorA
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
 /* Standard site tool card for JS-rendered lists (quiz, saved). Same markup as the built category/task cards. */
 AS.wk=function(){var t;try{t=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Los_Angeles",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date())}catch(e){t=new Date(Date.now()-7*36e5).toISOString().slice(0,10)}var d=new Date(t+"T00:00:00Z");d.setUTCDate(d.getUTCDate()-6);return d.toISOString().slice(0,10)};
-AS.card=function(t,extra){var logo=t.logo?t.logo.replace(/^https:\/\/clampdown-web\.github\.io\/agentscout\//,""):"";
-return '<a class="card tile" href="tools/'+ASe(t.slug)+'.html">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true" data-l="'+ASe((t.name||"?")[0].toUpperCase())+'"></span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async" onerror="ASimgErr(this)">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span>'+(t.moves_funds?'<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>':'')+'</div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
+AS.card=function(t,extra){var logo=asListingLogo(t.logo);var slug=String(t.slug||"");if(!/^[a-z0-9][a-z0-9-]{0,80}$/.test(slug))slug="";
+return '<a class="card tile" href="'+(slug?"tools/"+slug+".html":"#")+'">'+(extra||"")+'<div class="ct"><span class="ico "><span aria-hidden="true" data-l="'+ASe((t.name||"?")[0].toUpperCase())+'"></span>'+(logo?'<img src="'+ASe(logo)+'" alt="'+ASe(t.name)+' logo" width="40" height="40" loading="lazy" decoding="async" onerror="ASimgErr(this)">':"")+'</span><div class="tn"><h3>'+ASe(t.name)+'</h3><div class="badges">'+((t.added||"")>=AS.wk()?'<span class="b new">New</span>':"")+'<span class="b cat">'+ASe(t.category)+'</span><span class="b">'+ASe(t.pricing)+'</span>'+(t.moves_funds?'<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>':'')+'</div></div></div><p class="hook">'+ASe(t.description)+'</p></a>'};
 AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){i.addEventListener("error",function(){i.remove()})})};
 /* Newsletter: Beehiiv returns HTTP 403 + X-Frame-Options: SAMEORIGIN inside iframes, so clicking a[data-nl] or submitting
    form[data-nlform] opens https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&utm_medium=website in a new tab
@@ -106,7 +137,7 @@ AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){
 (function(){
 var LATEST={"title": "AgentScout Weekly #4: OpenAI Auto Review + 10 new AI agents", "date": "Nov 4, 2026", "sub": "The AI agent tools actually worth trying. A weekly pick of new agent tools for builders and everyday users.", "url": "https://agentscout.beehiiv.com/p/agentscout-weekly-4-openai-auto-review-10-new-ai-agents"};
 var SRC="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&utm_medium=website";
-try{fetch("/data/latest-issue.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.title)return;LATEST={title:j.title,date:j.display_date||j.date,sub:j.subtitle||"",url:j.url};document.querySelectorAll(".nllatest").forEach(function(p){var l=p.querySelector(".nlli");if(l){l.href=LATEST.url;l.querySelector("strong").textContent=LATEST.title}var m=p.querySelector(".nlmeta");if(m)m.textContent="· "+LATEST.date+" · "+LATEST.sub})}).catch(function(){})}catch(e){}
+try{fetch("/data/latest-issue.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.title)return;var next=asListingHttp(j.url);LATEST={title:j.title,date:j.display_date||j.date,sub:j.subtitle||"",url:(next&&next.slice(0,8)==="https://")?next:LATEST.url};document.querySelectorAll(".nllatest").forEach(function(p){var l=p.querySelector(".nlli");if(l){l.href=LATEST.url;l.querySelector("strong").textContent=LATEST.title}var m=p.querySelector(".nlmeta");if(m)m.textContent="· "+LATEST.date+" · "+LATEST.sub})}).catch(function(){})}catch(e){}
 function statusHtml(){var u=ASe(LATEST.url||"https://agentscout.beehiiv.com/p/agentscout-bonus-5-agent-tools-worth-trying-this-week"),t=ASe(LATEST.title||"AgentScout Bonus: 5 agent tools worth trying this week");return '✓ Opened Beehiiv signup in a new tab — enter your email there to get the free <b>50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack</b>. Read the latest visual issue: <a href="'+u+'" target="_blank" rel="noopener noreferrer"><strong>'+t+'</strong> →</a> · <strong>Follow <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> on X for daily 60fps stack demos &amp; MCP drops →</strong>'}
 function markStatus(host,msg,btn){if(!msg&&host){msg=host.querySelector(".nlmsg");if(!msg){msg=document.createElement("p");msg.className="nlmsg muted";msg.setAttribute("aria-live","polite");host.appendChild(msg)}}if(msg)msg.innerHTML=statusHtml();if(btn&&btn.classList&&btn.classList.contains("btn"))btn.textContent="Opened Beehiiv Signup ↗"}
 function open1(form,host,msg){try{window.open(SRC,"_blank","noopener,noreferrer")}catch(e){location.href=SRC}markStatus(host,msg,form&&form.querySelector("button"))}

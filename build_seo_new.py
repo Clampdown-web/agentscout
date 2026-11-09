@@ -186,7 +186,7 @@ def sync_animations(t=None):
             old_state = json.load(open(state_file, encoding="utf-8"))
         except Exception:
             old_state = {}
-    if old_state != cur_state and os.path.exists(script):
+    if old_state != cur_state and os.path.exists(script) and os.environ.get("SKIP_ANIMATION_RENDER") != "1":
         print(f"Re-rendering site animations for live counts: {cur_state}...")
         try:
             subprocess.run([sys.executable, script, "--site-dir", os.getcwd()], check=True)

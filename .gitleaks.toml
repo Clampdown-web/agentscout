@@ -1,0 +1,28 @@
+title = "AgentScout current-tree scan"
+
+# Default rules stay on. The allowlist is the set of hits on this tree that are
+# not private credentials. Do not add a path here to hide a real secret.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public verification file, generated catalog output, and known non-secrets."
+paths = [
+  '''(?:^|/)\.git/''',
+  '''(?:^|/)pagefind/''',
+  '''(?:^|/)og/''',
+  '''(?:^|/)assets/''',
+  '''(?:^|/)preview/''',
+  '''(?:^|/)tools/.*\.html$''',
+  '''(?:^|/)bot-store/''',
+  '''(?:^|/)news/''',
+  '''(?:^|/)data/og_cache\.json$''',
+  # Brave asks publishers to host this file. The token is public by design.
+  '''(?:^|/)\.well-known/brave-rewards-verification\.txt$''',
+]
+regexes = [
+  # build_counts.py metric name matched generic-api-key because it contains "key".
+  '''^weekly_visitors_ga4$''',
+  # Synthetic fixture written by scripts/test_morning_audit.py. Not a credential.
+  '''^abcdef0123456789abcdef0123456789$''',
+]
