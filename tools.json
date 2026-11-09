@@ -40107,15 +40107,15 @@
     "url": "https://hypit.ai/",
     "description": "An open-source agent workflow that takes a viral short video and rebuilds it as an editable template, letting you swap the presenter, script, voice and B-roll to produce many new variants with your own API keys.",
     "category": "video generation",
-    "pricing": "Freemium",
+    "pricing": "Open source",
     "maturity": "Mature",
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-20",
+    "verified": "2026-11-09",
     "added": "2026-10-20",
     "source": "GitHub",
-    "pricing_detail": "Open-source core $0; Starter $9.90/mo; Pro $39.90/mo; Ultra $99.90/mo (cloud credits)",
+    "pricing_detail": "Free to use (no Hypit seat price or per-render fee). Modified Apache-2.0; model APIs you connect are billed separately.",
     "use_cases": [
       "edit video"
     ],
@@ -55327,7 +55327,7 @@
     "source": "Submission",
     "pricing_detail": "",
     "use_cases": [
-      "video generation"
+      "make music"
     ],
     "website": "https://popnow.ai/",
     "github": "https://github.com/popnow-ai/popnow-mcp",

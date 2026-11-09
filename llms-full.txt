@@ -53,7 +53,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - **Total Categories**: 40
 - **Verified MCP Servers**: 323
 - **Bot Templates & Installable Agent Skills**: 190 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
-- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,151
+- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,152
 - **Free or Freemium Tools**: 1,812
 - **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,092 (110 offline / on-device, 982 self-hosted)
 - **Catalog Last Link-Checked**: 2026-11-09 (America/Los_Angeles)
@@ -63,7 +63,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - **Free Community Listing ($0 forever)**: Standard review queue (3–5 days), permanent indexed `/tools/<slug>.html` page + `SoftwareApplication` schema, and listing in `llms.txt` & MCP server (`com.agentscouthq/directory`). Submit at https://agentscouthq.com/submit.html#free-form
 - **Fast-Track + 7-Day Launch Boost ($15 one-time)**: Same-day priority review (live in the next batch), 7-day featured pin on `/new.html` + category New & Featured row, full FAQ Page + pros/cons profile enrichment, a launch post on `@AgentScoutHQ`, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google). Checkout: https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e
 - **30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time — Most Popular)**: Everything in $15 upgraded to a full 30-day top category pin (4x+ longer for $34 more), permanent inclusion in `/best/*-alternatives` and `/compare/` comparison tables, priority recommendation weight in `llms-full.txt` and MCP search (`com.agentscouthq/directory`), and a dedicated spotlight across both `@clampdown19` and `@AgentScoutHQ`. Checkout: https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00
-- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 1,681+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
+- **Weekly Sitewide Sponsor + Newsletter Top Slot ($99/wk — 1 Exclusive Slot/Week)**: Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all 1,688+ pages, homepage `#makers` showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. Checkout: https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01
 
 ## Made by AgentScout — Pre-Trained Pro Bots & 4-Bot Company-in-a-Box Bundle (`/bot-store/`)
 
@@ -308,13 +308,13 @@ Each category section below summarizes the verified tool count, open-source coun
 
 ### video generation (85 tools) — [https://agentscouthq.com/categories/video-generation.html](https://agentscouthq.com/categories/video-generation.html)
 
-- **At a glance**: 85 link-checked tools (13 open-source, 53 free or freemium, 11 local or self-hosted).
+- **At a glance**: 85 link-checked tools (14 open-source, 53 free or freemium, 11 local or self-hosted).
 - **Top picks**: [ComfyUI](https://agentscouthq.com/tools/comfyui.html), [Hypit](https://agentscouthq.com/tools/hypit.html), [Wan 2.2](https://agentscouthq.com/tools/wan-2-2.html), [CogVideoX](https://agentscouthq.com/tools/cogvideox.html), [HunyuanVideo](https://agentscouthq.com/tools/hunyuanvideo.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
 |---|---|---|---|---|---|---:|---|---|---|---|
 | 1 | ComfyUI | Desktop app free and open source (GPL-3.0); Comfy Cloud Standard $20/mo ($16 yearly), Creator $35/mo, Pro $100/mo, Team $700/mo | Yes | GPL-3.0 |  | 144,113 | generate video, generate images | Node-based open-source engine for image and video generation workflows. Run models like Wan, LTX and Hunyuan locally or in Comfy Cloud, with an agent that builds workflows. | https://agentscouthq.com/tools/comfyui.html | https://www.comfy.org |
-| 2 | Hypit | Open-source core $0; Starter $9.90/mo; Pro $39.90/mo; Ultra $99.90/mo (cloud credits) | No |  |  | 26,753 | edit video | An open-source agent workflow that takes a viral short video and rebuilds it as an editable template, letting you swap the presenter, script, voice and B-roll to produce many new variants with your own API keys. | https://agentscouthq.com/tools/hypit.html | https://hypit.ai/ |
+| 2 | Hypit | Free to use (no Hypit seat price or per-render fee). Modified Apache-2.0; model APIs you connect are billed separately. | Yes |  |  | 26,753 | edit video | An open-source agent workflow that takes a viral short video and rebuilds it as an editable template, letting you swap the presenter, script, voice and B-roll to produce many new variants with your own API keys. | https://agentscouthq.com/tools/hypit.html | https://hypit.ai/ |
 | 3 | Wan 2.2 | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 18,270 | generate video | Alibaba's open, large-scale video generation models for text to video and image to video. | https://agentscouthq.com/tools/wan-2-2.html | https://wan.video |
 | 4 | CogVideoX | Open source (Apache-2.0) | Yes | Apache-2.0 | Self-hosted | 13,157 | generate video | Open text-to-video and image-to-video models from Zhipu AI (Z.ai) and Tsinghua. | https://agentscouthq.com/tools/cogvideox.html | https://github.com/zai-org/CogVideo |
 | 5 | HunyuanVideo | Open weights (Tencent Hunyuan Community License; not valid in the EU, UK and South Korea) | Yes |  | Self-hosted | 12,694 | generate video | Tencent's open large video generation model and framework. | https://agentscouthq.com/tools/hunyuanvideo.html | https://github.com/Tencent-Hunyuan/HunyuanVideo |

@@ -65214,13 +65214,13 @@
    "category": "video generation",
    "description": "An open-source agent workflow that takes a viral short video and rebuilds it as an editable template, letting you swap the presenter, script, voice and B-roll to produce many new variants with your own API keys.",
    "key_features": [
-    "Open-source core $0; Starter $9.90/mo; Pro $39.90/mo; Ultra $99.90/mo (cloud credits)",
+    "Free to use (no Hypit seat price or per-render fee). Modified Apache-2.0; model APIs you connect are billed separately.",
     "Mature",
     "26753 GitHub stars",
     "Edit video"
    ],
-   "pricing": "Open-source core $0; Starter $9.90/mo; Pro $39.90/mo; Ultra $99.90/mo (cloud credits)",
-   "price_tag": "freemium",
+   "pricing": "Free to use (no Hypit seat price or per-render fee). Modified Apache-2.0; model APIs you connect are billed separately.",
+   "price_tag": "free",
    "platforms": [
     "Web"
    ],
@@ -65237,8 +65237,8 @@
    "new_this_week": false,
    "repo": "hypit-ai/hypit",
    "github_stars": 26753,
-   "open_source": false,
-   "license": "",
+   "open_source": true,
+   "license": "Apache-2.0",
    "tags": [
     "edit video"
    ],

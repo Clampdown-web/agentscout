@@ -430,9 +430,14 @@ def apply_thin_page_rule(tools):
                 admitted.setdefault(x["slug"], x.get("added") or "1970-01-01")
         state["seeded"]=True
     slots=[s for s in slots if s in by and not _has_enrichment(by[s],rich) and not _is_thin_tool(by[s],rich)]
+    import index_hold as _ih
+    try: _hold=json.load(open("data/index_hold.json"))
+    except Exception: _hold={}
+    # Dated batches stay noindex until that LA date, one batch of NEW_TOOL_CAP per day.
+    held=_ih.held_slugs(today, _hold, state, NEW_TOOL_CAP)
     noindex=[]; queued=[]; indexed=[]
     for x in sorted(tools, key=lambda z:((z.get("added") or ""), z["slug"])):
-        slug=x["slug"]; enr=_has_enrichment(x,rich); thin=_is_thin_tool(x,rich)
+        slug=x["slug"]; enr=_has_enrichment(x,rich) and slug not in held; thin=_is_thin_tool(x,rich) or slug in held
         grandfather=admitted.get(slug,"") not in ("", today) and admitted.get(slug,"")<today
         if enr or (not thin and (grandfather or slug in slots)):
             admitted.setdefault(slug, today if enr and slug not in admitted else admitted.get(slug, today))
