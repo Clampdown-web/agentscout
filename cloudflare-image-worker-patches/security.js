@@ -19,10 +19,12 @@
  * When env.TURNSTILE_ENABLED === "true", POST /submit and POST /generate
  * are siteverify'd (secret, token, remoteip = CF-Connecting-IP) before the
  * inner handler runs. Failure or a hostname outside the site allowlist is 403.
- * POST /submit also requires the widget action "submit". POST /generate does
- * not: generate.js does not send an action, and requiring one here would
- * reject every generation until that page changes. A missing CF-Connecting-IP
- * fails closed. Deploy must set that plain-text var to true or the check stays off.
+ * POST /submit rejects a token whose action is present and not "submit"
+ * (for example "generate" or "review"). An empty or missing action is still
+ * accepted until TURNSTILE_REQUIRE_SUBMIT_ACTION is the string "true".
+ * That var defaults off so a cached copy of the previous page can submit.
+ * POST /generate does not check action. A missing CF-Connecting-IP fails
+ * closed. Deploy must set TURNSTILE_ENABLED to true or the check stays off.
  *
  * X-Stats-Key on /reviews/pending, /reviews/admin, /reviews/export, /stats,
  * and /trending/stats is compared with safeEq (SHA-256, then a constant-time
@@ -315,21 +317,34 @@ async function rejectTurnstile(request, env) {
   } catch {
     return json(request, { error: "Bot check failed." }, 403);
   }
-  return turnstileRejection(request, data, expectedTurnstileAction(url.pathname));
+  return turnstileRejection(request, data, {
+    pathname: url.pathname,
+    requireSubmitAction: submitActionRequired(env),
+  });
 }
 
-// /submit tokens are minted with action "submit". Other actions, and tokens
-// minted by the review or generate widgets on this same sitekey, are rejected.
-// /generate still accepts any successful token for this hostname.
-export function expectedTurnstileAction(pathname) {
-  return normalizePath(pathname) === "/submit" ? SUBMIT_ACTION : "";
+// Exact "true" only, same rule as TURNSTILE_ENABLED. Unset, "false", or any
+// other value leaves the transition behavior on: a /submit token with no
+// action is accepted, and any other action is not.
+export function submitActionRequired(env) {
+  return String((env && env.TURNSTILE_REQUIRE_SUBMIT_ACTION) || "") === "true";
 }
 
-export function turnstileRejection(request, data, expectedAction) {
+export function submitActionDecision(action, requireExact) {
+  const value = typeof action === "string" ? action.trim() : "";
+  if (value === SUBMIT_ACTION) return "ok";
+  if (!value) return requireExact ? "missing" : "ok";
+  return "mismatch";
+}
+
+export function turnstileRejection(request, data, options = {}) {
   const host = String((data && data.hostname) || "").toLowerCase();
-  const actionOk = !expectedAction || (data && data.action === expectedAction);
-  if (data && data.success === true && ALLOWED_HOSTS.has(host) && actionOk) return null;
-  if (data && data.success === true && ALLOWED_HOSTS.has(host) && !actionOk) {
+  const onSubmit = normalizePath(options.pathname) === "/submit";
+  const actionDecision = onSubmit
+    ? submitActionDecision(data && data.action, options.requireSubmitAction === true)
+    : "ok";
+  if (data && data.success === true && ALLOWED_HOSTS.has(host) && actionDecision === "ok") return null;
+  if (data && data.success === true && ALLOWED_HOSTS.has(host) && actionDecision !== "ok") {
     return json(request, { error: TURNSTILE_STALE_PAGE }, 403);
   }
   const codes = data && Array.isArray(data["error-codes"]) ? data["error-codes"] : [];

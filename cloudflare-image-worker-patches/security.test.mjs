@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { allowOrigin, postAllowed, guardedKind, maskTurnstileEnv, protect, safeEq, statsKeyPath, turnstileEnabled } from "./security.js";
+import { allowOrigin, postAllowed, guardedKind, maskTurnstileEnv, protect, safeEq, statsKeyPath, submitActionDecision, submitActionRequired, turnstileEnabled } from "./security.js";
 
 test("cors allowlist is the site and www only", () => {
   assert.equal(allowOrigin("https://agentscouthq.com"), "https://agentscouthq.com");
@@ -412,12 +412,27 @@ test("turnstile siteverify failures fail closed before the inner handler", async
   }
 });
 
-test("submit requires action submit and tells a person when the token was spent", async () => {
+test("submit action transition accepts an empty action and rejects a different one", async () => {
+  assert.equal(submitActionRequired({}), false);
+  assert.equal(submitActionRequired({ TURNSTILE_REQUIRE_SUBMIT_ACTION: "false" }), false);
+  assert.equal(submitActionRequired({ TURNSTILE_REQUIRE_SUBMIT_ACTION: "true" }), true);
+  assert.equal(submitActionDecision(undefined, false), "ok");
+  assert.equal(submitActionDecision("", false), "ok");
+  assert.equal(submitActionDecision("submit", false), "ok");
+  assert.equal(submitActionDecision("generate", false), "mismatch");
+  assert.equal(submitActionDecision("review", false), "mismatch");
+  assert.equal(submitActionDecision(undefined, true), "missing");
+  assert.equal(submitActionDecision("", true), "missing");
+  assert.equal(submitActionDecision("submit", true), "ok");
+  assert.equal(submitActionDecision("generate", true), "mismatch");
+
   await withSiteverify((params) => {
     const token = params.get("response");
     if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" }));
     if (token === "plain") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" }));
-    if (token === "other") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "generate" }));
+    if (token === "blank") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "" }));
+    if (token === "generate") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "generate" }));
+    if (token === "review") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "review" }));
     if (token === "spent") return new Response(JSON.stringify({ success: false, "error-codes": ["timeout-or-duplicate"] }));
     if (token === "malformed") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-response"] }));
     if (token === "secret") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }));
@@ -430,27 +445,40 @@ test("submit requires action submit and tells a person when the token was spent"
         return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { "content-type": "application/json" } });
       },
     });
-    const binding = turnstileEnv();
-    const missingAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), binding);
-    assert.equal(missingAction.status, 403);
-    assert.match((await missingAction.json()).error, /Reload it/);
-    const otherAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "other" })), binding);
-    assert.equal(otherAction.status, 403);
-    assert.match((await otherAction.json()).error, /Reload it/);
-    const spent = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "spent" })), binding);
+    const open = turnstileEnv();
+    const strict = turnstileEnv({ TURNSTILE_REQUIRE_SUBMIT_ACTION: "true" });
+    const missing = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), open);
+    assert.equal(missing.status, 200);
+    const blank = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "blank" })), open);
+    assert.equal(blank.status, 200);
+    const generateAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "generate" })), open);
+    assert.equal(generateAction.status, 403);
+    assert.match((await generateAction.json()).error, /Reload it/);
+    const reviewAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "review" })), open);
+    assert.equal(reviewAction.status, 403);
+    const strictMissing = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), strict);
+    assert.equal(strictMissing.status, 403);
+    assert.match((await strictMissing.json()).error, /Reload it/);
+    const strictBlank = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "blank" })), strict);
+    assert.equal(strictBlank.status, 403);
+    const strictOther = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "generate" })), strict);
+    assert.equal(strictOther.status, 403);
+    const strictOk = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), strict);
+    assert.equal(strictOk.status, 200);
+    const spent = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "spent" })), open);
     assert.equal(spent.status, 403);
     assert.equal((await spent.json()).error, "The check expired or was already used. Complete it again, then submit.");
-    const malformed = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "malformed" })), binding);
+    const malformed = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "malformed" })), open);
     assert.equal(malformed.status, 403);
     assert.match((await malformed.json()).error, /Complete it again/);
-    const secret = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "secret" })), binding);
+    const secret = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "secret" })), open);
     assert.equal(secret.status, 403);
     assert.equal((await secret.json()).error, "Bot check failed.");
-    const generated = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), binding);
+    const generated = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), open);
     assert.equal(generated.status, 200);
-    const ok = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), binding);
+    const ok = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), open);
     assert.equal(ok.status, 200);
-    assert.deepEqual(seen, ["/generate", "/submit"]);
+    assert.deepEqual(seen, ["/submit", "/submit", "/submit", "/generate", "/submit"]);
   });
 });
 
