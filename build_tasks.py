@@ -395,7 +395,7 @@ var mail="mailto:support@agentscouthq.com?subject="+encodeURIComponent((pk!=="fr
 var btn=f.querySelector("button[type=submit]");btn.disabled=true;btn.textContent="Sending…";
 var bhUrl="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&utm_medium=submit_form_optin&utm_campaign=newsletter"+(m?"&email="+encodeURIComponent(m):"");
 if(nlOpt==="yes"){try{fetch(bhUrl,{mode:"no-cors",credentials:"omit"}).catch(function(){})}catch(_e){}}
-postSub(JSON.stringify({name:n,website:w,github:g,category:({"MCP servers":"MCP & infra","agent infra":"MCP & infra"})[v("category")]||v("category"),pricing:v("pricing"),desc:(pkTag+d).slice(0,500),email:m,x:x,newsletter_optin:nlOpt,company:v("company"),type:UPD?"update":"new",tool:UPD||"",how_found:(pkTag+fnd().hf).slice(0,120),found:fnd().wf,found_other:(pkTag+fnd().wo).slice(0,100),turnstileToken:ts})).then(function(j){if(true){f.hidden=true;var sd=document.getElementById("sdone");sd.hidden=false;if(nlOpt==="yes"){var snl=document.getElementById("sdone-nl"),snb=document.getElementById("sdone-nl-btn");if(snl)snl.hidden=false;if(snb)snb.href=bhUrl;if(!pc.url){try{window.open(bhUrl,"_blank","noopener")}catch(_e2){}}}if(pc.url){var sp=document.getElementById("sdone-pay"),sb=document.getElementById("sdone-pay-btn"),sm=document.getElementById("sdone-msg");if(sp)sp.hidden=false;if(sb){sb.href=pc.url;sb.textContent="Continue to Stripe Checkout ("+pc.label+") →"}if(sm)sm.textContent="Your tool is in our priority same-day launch queue! Complete your "+pc.label+" checkout below:";window.open(pc.url,"_blank","noopener")}}}).catch(function(e){try{window.AgentScoutTurnstile&&AgentScoutTurnstile.invalidate()}catch(_r){}var msg=window.AgentScoutTurnstile?AgentScoutTurnstile.submitFailureText(e&&e.message):(e&&e.message&&e.message!=="Failed to fetch"?e.message:"We could not send it right now.");er.innerHTML="";er.appendChild(document.createTextNode(msg+" "));var a=document.createElement("a");a.href=mail;a.textContent="Send it by email instead";er.appendChild(a);}).finally(function(){btn.disabled=false;btn.textContent=UPD?"Send suggested edit":pc.btn;});})})()</script>"""+build_sponsor.live_metrics_script("")
+postSub(JSON.stringify({name:n,website:w,github:g,category:({"MCP servers":"MCP & infra","agent infra":"MCP & infra"})[v("category")]||v("category"),pricing:v("pricing"),desc:(pkTag+d).slice(0,500),email:m,x:x,newsletter_optin:nlOpt,company:v("company"),type:UPD?"update":"new",tool:UPD||"",how_found:(pkTag+fnd().hf).slice(0,120),found:fnd().wf,found_other:(pkTag+fnd().wo).slice(0,100),turnstileToken:ts})).then(function(j){if(true){f.hidden=true;var sd=document.getElementById("sdone");sd.hidden=false;if(nlOpt==="yes"){var snl=document.getElementById("sdone-nl"),snb=document.getElementById("sdone-nl-btn");if(snl)snl.hidden=false;if(snb)snb.href=bhUrl;if(!pc.url){try{window.open(bhUrl,"_blank","noopener")}catch(_e2){}}}if(pc.url){var sp=document.getElementById("sdone-pay"),sb=document.getElementById("sdone-pay-btn"),sm=document.getElementById("sdone-msg");if(sp)sp.hidden=false;if(sb){sb.href=pc.url;sb.textContent="Continue to Stripe Checkout ("+pc.label+") →"}if(sm)sm.textContent="Your tool is in our priority same-day launch queue! Complete your "+pc.label+" checkout below:";window.open(pc.url,"_blank","noopener")}}}).catch(function(e){try{window.AgentScoutTurnstile&&AgentScoutTurnstile.invalidate()}catch(_r){}var msg=window.AgentScoutTurnstile?AgentScoutTurnstile.submitFailureText(e&&e.message):(e&&e.message&&e.message!=="Failed to fetch"?e.message:"We could not send it right now.");er.innerHTML="";er.appendChild(document.createTextNode(msg+" "));var a=document.createElement("a");a.href=mail;a.textContent="Send it by email instead";er.appendChild(a);}).finally(function(){btn.disabled=false;btn.textContent=UPD?"Send suggested edit":pc.btn;});})})()</script>"""+build_sponsor.live_metrics_script("", catalog=False)
     tiers=build_sponsor.packages_grid(t,m=m,on_submit=True)
     body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Submit a tool</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Submit your AI agent tool</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Basic community listings on AgentScout (<span data-live-tools>{m["tools_count"]:,}</span>+ tools across <span data-live-pages>{m["indexed_pages_count"]:,}+</span> pages) are 100% free forever. We review every submission, verify links, and write the description in plain words. Want same-day priority review, a 7-day Launch Boost ($15), a 30-day Category Pin + permanent <code style="font-size:13px">/best/</code> &amp; <code style="font-size:13px">/compare/</code> placement ($49), or sitewide sponsorship ($99/wk)? Pick a package below or <a href="sponsor.html">see full sponsor details →</a>.</p>'
@@ -408,7 +408,47 @@ postSub(JSON.stringify({name:n,website:w,github:g,category:({"MCP servers":"MCP 
     page=shell("",title,desc,canon,body,ld)
     import build_ci
     page=build_ci.place_block(page,"free",build_ci.cmp_table(),'<form id="sf"',after=False)
+    page=tune_submit_paint(page)
     open("submit.html","w").write(page); return canon
+
+
+def tune_submit_paint(s):
+    """Keep the submit lede off the critical path of parser-blocking scripts.
+
+    submit-turnstile.js and app.js sit at the bottom of the body. While they
+    block the parser, Lighthouse counts them as render-blocking and the lede
+    (the LCP element) waits. defer keeps the same run order: both files run
+    before DOMContentLoaded, and the form script starts Turnstile then.
+    """
+    if '<script defer src="submit-turnstile.js' not in s:
+        s=s.replace('<script src="submit-turnstile.js','<script defer src="submit-turnstile.js',1)
+    if '<script defer src="app.js' not in s:
+        s=s.replace('<script src="app.js','<script defer src="app.js',1)
+    if 'DOMContentLoaded",function(){var SUBMIT_URL=' not in s and '<script>var SUBMIT_URL=' in s:
+        s=s.replace('<script>var SUBMIT_URL=','<script>document.addEventListener("DOMContentLoaded",function(){var SUBMIT_URL=',1)
+        s=s.replace('</script><script data-live-metrics>','});</script><script data-live-metrics>',1)
+    boot=as_boot.NEW
+    wrapped='<script>document.addEventListener("DOMContentLoaded",function(){'+boot[len("<script>"):-len("</script>")]+'});</script>'
+    if boot in s and wrapped not in s:
+        s=s.replace(boot, wrapped, 1)
+    # styles.css blocks the lede. The rules the first screen actually uses are inlined
+    # from submit-critical.css. The full file loads after first paint, so it is not
+    # on the LCP path, and no-JS still gets it from the noscript link.
+    if 'id="submit-critical"' not in s:
+        css=open("submit-critical.css",encoding="utf-8").read().replace("</","<\\/")
+        s=s.replace("</head>", f'<style id="submit-critical">{css}</style></head>', 1)
+    def _defer_sheet(m):
+        href=m.group(1)
+        return ('<noscript><link rel="stylesheet" href="%s"></noscript>'
+                '<script id="submit-css">(function(){function go(){if(go.ran)return;go.ran=1;var l=document.createElement("link");l.rel="stylesheet";l.href="%s";document.head.appendChild(l)}'
+                'try{var po=new PerformanceObserver(function(list){var es=list.getEntries();for(var i=0;i<es.length;i++)if(es[i].name==="first-contentful-paint")go()});po.observe({type:"paint",buffered:true})}catch(e){}'
+                'addEventListener("load",function(){setTimeout(go,5000)})})()</script>')%(href,href)
+    if 'id="submit-css"' not in s:
+        s=re.sub(r'<link rel="stylesheet" href="(styles\.css\?v=\d+)">', _defer_sheet, s, count=1)
+    # Yield after the lede so the first paint is not stuck behind the rest of the form.
+    if 'id="submit-paint"' not in s:
+        s=s.replace('</p><!--nl:inline-->','</p><script id="submit-paint">void 0</script><!--nl:inline-->',1)
+    return s
 # Inline Beehiiv signup (owner-approved Oct 30 2026). Same subscribe endpoint as the site footer form.
 # UTMs: utm_source=agentscout&utm_medium=inline&utm_campaign=newsletter_push
 INLINE_NL=('<!--nl:inline--><aside class="nlin" aria-label="Newsletter signup">'
