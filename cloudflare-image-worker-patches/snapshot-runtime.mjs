@@ -35,6 +35,45 @@ export class ReviewsDO extends DurableObject {
       });
       return new Response("ok");
     }
+    if (url.pathname === "/seed-mixed") {
+      // Synthetic only: one rating per tool, reviews in every moderation state.
+      this.ctx.storage.transactionSync(() => {
+        this.ctx.storage.sql.exec("DELETE FROM reviews");
+        this.ctx.storage.sql.exec("DELETE FROM ratings");
+        const rows = [["alpha", "va", 5, "approved"], ["beta", "vb", 3, "pending"], ["gamma", "vc", 1, "rejected"]];
+        let i = 0;
+        for (const [tool, vid, stars, status] of rows) {
+          i += 1;
+          this.ctx.storage.sql.exec("INSERT INTO ratings (tool, vid, iph, stars, ts) VALUES (?, ?, ?, ?, ?)", tool, vid, "h" + i, stars, 1000 + i);
+          this.ctx.storage.sql.exec(
+            "INSERT INTO reviews (id, tool, vid, iph, stars, name, body, status, ts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            "s" + i, tool, vid, "h" + i, stars, "Synthetic " + i, "synthetic-body-token " + status, status, 2000 + i,
+          );
+        }
+      });
+      return new Response("ok");
+    }
+    if (url.pathname === "/import" && request.method === "POST") {
+      // Test-harness restore only. The deployed worker has no import route.
+      const snap = await request.json();
+      const ratingCols = ["tool", "vid", "iph", "stars", "ts"];
+      const reviewCols = ["id", "tool", "vid", "iph", "stars", "name", "body", "status", "ts"];
+      const ok = (rows, cols) => Array.isArray(rows) && rows.every((row) => row && cols.every((c) => Object.prototype.hasOwnProperty.call(row, c)) && Object.keys(row).length === cols.length);
+      if (!snap || !ok(snap.ratings, ratingCols) || !ok(snap.reviews, reviewCols)) return new Response("bad", { status: 400 });
+      const existing = this.ctx.storage.sql.exec("SELECT (SELECT COUNT(*) FROM ratings) + (SELECT COUNT(*) FROM reviews) AS n").one().n;
+      if (existing !== 0) return new Response("not_empty", { status: 409 });
+      this.ctx.storage.transactionSync(() => {
+        for (const r of snap.ratings) this.ctx.storage.sql.exec("INSERT INTO ratings (tool, vid, iph, stars, ts) VALUES (?, ?, ?, ?, ?)", r.tool, r.vid, r.iph, r.stars, r.ts);
+        for (const r of snap.reviews) this.ctx.storage.sql.exec("INSERT INTO reviews (id, tool, vid, iph, stars, name, body, status, ts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", r.id, r.tool, r.vid, r.iph, r.stars, r.name, r.body, r.status, r.ts);
+      });
+      return new Response("ok");
+    }
+    if (url.pathname === "/public") {
+      // Mirrors what the public reviews endpoint may show: approved bodies only, counts from ratings.
+      const ratings = this.ctx.storage.sql.exec("SELECT tool, COUNT(*) AS n, AVG(stars) AS avg FROM ratings GROUP BY tool ORDER BY tool").toArray();
+      const approved = this.ctx.storage.sql.exec("SELECT id FROM reviews WHERE status = 'approved' ORDER BY id").toArray().map((r) => r.id);
+      return Response.json({ ratings, approved });
+    }
     if (url.pathname === "/raw") {
       return Response.json(readConsistentSnapshot(this.ctx.storage));
     }
