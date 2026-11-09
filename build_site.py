@@ -466,10 +466,8 @@ def apply_thin_page_rule(tools):
     urls=open("sitemap.xml",encoding="utf-8").read().count("<loc>")
     import build_counts as _bc
     _bc.refresh_pages()
-    if any(x["slug"]=="hedra" or "hedra.com" in (x.get("url") or "")+(x.get("website") or "") for x in tools):
-        raise SystemExit("Hedra is still in the catalog")
-    if any(x["slug"]=="hindsight" or "hindsight.vectorize.io" in (x.get("url") or "")+(x.get("website") or "") or "vectorize-io/hindsight" in ((x.get("repo") or "")+" "+(x.get("github") or "")) for x in tools):
-        raise SystemExit("Hindsight is still in the catalog")
+    if any(_blocked_tool(x) for x in tools):
+        raise SystemExit("A takedown listing is still in the catalog")
     print(f"thin-page rule: noindex {len(noindex)} tool pages ({len(queued)} queued by the {NEW_TOOL_CAP}/day cap); sitemap {urls} urls; indexed tools {len(indexed)}")
     return {"noindex":len(noindex),"queued":queued,"sitemap":urls,"indexed_tools":len(indexed)}
 import atexit as _axq, build_extras as _bxq

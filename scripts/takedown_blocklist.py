@@ -63,7 +63,7 @@ def blocked(name="", url="", website="", slug="", repo=""):
         host = _host(candidate)
         if host and (host in domains or any(host.endswith("." + domain) for domain in domains)):
             return True
-        if "github.com" in str(candidate or "").lower():
+        if _host(candidate) == "github.com":
             key = _repo_key(candidate)
             if key:
                 keys.add(key)

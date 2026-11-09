@@ -24,6 +24,12 @@ def _gh_token():
 _tok=_gh_token()
 if _tok: GH["Authorization"]=f"Bearer {_tok}"
 BADHOST=re.compile(r'(linkedin|discord|deepwiki|arxiv|twitter|x\.com|youtube|aka\.ms|bilibili|notion\.site|go\.novu)',re.I)
+def _host_is(url, root):
+    raw = str(url or "").strip()
+    if "://" not in raw:
+        raw = "https://" + raw
+    host = (urlparse(raw).hostname or "").lower().rstrip(".")
+    return host == root or host.endswith("." + root)
 CATS={"frameworks","coding","MCP servers","agent infra","evals & observability","voice","browser/computer use","research","no-code builders","business agents","personal agents","app builders","vision","games","crypto","productivity","models","models & local runtimes","memory & RAG","customer support","sales & marketing","security & governance","sandboxes & code execution","film & TV production","video generation","film & TV audio","music production","image generation","graphic design & branding","3D & concept art","photography & photo editing","data & analytics","DevOps & cloud","QA & testing","finance & accounting","legal & compliance","HR & recruiting","education & tutoring","healthcare & biotech","e-commerce & retail","robotics & physical AI"}
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
 def is_identicon(im):
@@ -97,7 +103,7 @@ def verify(row):
     repo=j["full_name"]; stars=j["stargazers_count"]; owner_avatar=f"https://github.com/{j.get('owner_login') or j.get('owner')}.png?size=200"
     name=name or j["name"]; site=site or (j.get("homepage") or "")
   if site and not site.startswith('http'): site='https://'+site
-  if site and (BADHOST.search(site) or 'github.com' in site or 'github.io' in site and not repo): site=""
+  if site and (BADHOST.search(site) or _host_is(site, "github.com") or (_host_is(site, "github.io") and not repo)): site=""
   html=""
   if site:
     try:
