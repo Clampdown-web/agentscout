@@ -194,7 +194,7 @@ def pages(t):
                 "Layer 3 & 4 (Browser + Sandbox): Run headless browser tasks and untrusted code inside an isolated sandbox runtime.",
                 "Layer 5 (Discovery): Connect AgentScout MCP (https://mcp.agentscouthq.com/mcp) so your agent can discover new tools on demand."
             ],
-            "snippet": 'claude mcp add --transport sse agentscout-sse https://agentscouthq.com/mcp/sse',
+            "snippet": 'claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp',
             "links": [
                 ("../tasks/index.html", "Browse AI Agents by Task (86 Guides) →"),
                 ("../best/mcp-servers-for-claude-code.html", "Best MCP Servers for Claude Code →"),
@@ -231,7 +231,7 @@ def pages(t):
     ]
 
     pro_tips = [
-        ("⚡ Zero-Key MCP Discovery", f"Point Claude Code, Cursor, or Grok Bot to https://mcp.agentscouthq.com/mcp (Streamable HTTP) or https://agentscouthq.com/mcp/sse to search all {n_tools:,} tools live without an API key.", "../mcp/connect.html", "Setup MCP →"),
+        ("⚡ Zero-Key MCP Discovery", f"Point Claude Code, Cursor, or Grok Bot to https://mcp.agentscouthq.com/mcp (Streamable HTTP) or https://mcp.agentscouthq.com/mcp to search all {n_tools:,} tools live without an API key.", "../mcp/connect.html", "Setup MCP →"),
         ("🧮 Size Context & Cost Before You Build", "Run the Token Counter, Context Window Sizer, and Agent Run Cost Estimator in your browser before picking a model tier.", "../free-tools.html", "Open 19 Free Calculators →"),
         ("🤖 Buy Pre-Trained Pro Bots ($39–$149) & 25 AI Agent Packs ($35–$349)", "Buy our 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) or 25 role-specific AI Agent Packs ($35 single, $119 for 5, $199 for 10, $299 for 20, $349 for all 25) — compatible with Grok Bot, Claude Code, Cursor, Codex & Lovable.", "../bot-store/", "Open Bot Store →"),
         ("📄 Ground LLMs with llms-full.txt", "Pass https://agentscouthq.com/llms-full.txt into Cursor @Docs, NotebookLM, or Claude Projects for full category tables and verified MCP endpoints.", "../llms-full.txt", "Open llms-full.txt →"),
@@ -241,7 +241,7 @@ def pages(t):
 
     faq = [
         ("Are all video guides and walkthroughs on this page free?", "Yes. Every walkthrough video, copy-paste MCP snippet, and browser calculator on AgentScout is 100% free with no sign-up required."),
-        ("How do I connect AgentScout to Claude Code, Cursor, or VS Code?", "Run claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp in your terminal, or add https://mcp.agentscouthq.com/mcp (or https://agentscouthq.com/mcp/sse) to your mcp.json file. No API key is needed."),
+        ("How do I connect AgentScout to Claude Code, Cursor, or VS Code?", "Run claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp in your terminal, or add https://mcp.agentscouthq.com/mcp to your mcp.json file. No API key is needed."),
         ("What is the difference between Pre-Trained Pro Bots ($39–$149) / 25 AI Agent Packs ($35–$349) and Directory Listing Packages ($0 / $15 / $49 / $99)?", "Pre-Trained Pro Bots and 25 AI Agent Packs (on /bot-store/ and /bot-templates/) are downloadable agent configurations (with README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, Python CLI scripts, and native files for Grok Bot, Claude Code, Cursor, OpenAI Codex & Lovable) that you buy to run your own business: 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) and 25 role-specific AI Agent Packs ($35 single, $119 for 5, $199 for 10, $299 for 20, or $349 for all 25). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $15 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
         ("How often are the tools and metrics in these guides updated?", f"Every day at 7:00 AM PT. All {n_tools:,} tools and {n_mcp} MCP servers are link-checked and synced with live GitHub star counts daily."),
     ]

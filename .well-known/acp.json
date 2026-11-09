@@ -9,7 +9,7 @@
     "url": "https://agentscouthq.com/",
     "contact_email": "support@agentscouthq.com",
     "mcp_endpoint": "https://mcp.agentscouthq.com/mcp",
-    "mcp_sse_endpoint": "https://agentscouthq.com/mcp/sse",
+    "mcp_sse_endpoint": "https://mcp.agentscouthq.com/mcp",
     "mcp_registry_id": "com.agentscouthq/directory",
     "payment_methods": [
       "stripe_checkout",

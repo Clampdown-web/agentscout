@@ -13,6 +13,7 @@ loudly as "REDIRECT AUTO-ADDED" so it can be reviewed in the commit diff; edit r
 to change a target. Targets may be .html pages or directory URLs ending in "/".
 """
 import json, os, html, re
+import csp
 B = "https://agentscouthq.com/"
 
 def load():
@@ -37,6 +38,7 @@ def page(src, dst):
     return f"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
+{csp._meta(csp.POLICY)}
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Moved · AgentScout</title>

@@ -311,19 +311,42 @@ def _swap(s, marker, html_):
     return None
 
 
+def home_slim(doc):
+    """One line under the homepage search. Counts and the timestamp come from the link-check document."""
+    servers = doc["servers"]
+    cat = doc["catalog"]
+    live = sum(1 for s in servers if s.get("status") == "live")
+    total = len(servers)
+    down = sum(1 for s in servers if s.get("status") == "down")
+    checked = cat.get("mcp_last_checked") or ""
+    when = _time_html(checked) if checked else "not yet checked"
+    dot = "vc-dot vc-dn" if down else "vc-dot"
+    hist = _hist_html(cat.get("history") or [], 3)
+    return (
+        f'<!--vs:home--><section class="verify-slim" aria-label="MCP server link check">'
+        f'<span class="{dot}" aria-hidden="true"></span>'
+        f'<p><b>{live} of {total}</b> MCP servers live · checked daily · last checked {when}</p>'
+        f'<a href="mcp/status/">MCP status →</a>'
+        f'<details><summary>Recent checks</summary>{hist}</details>'
+        f'</section><!--/vs:home-->'
+    )
+
+
 def apply_home(doc):
     path = "index.html"
     if not os.path.exists(path):
         return
-    block = panel(doc, doc["servers"], "", "Verification")
+    block = home_slim(doc)
     s = open(path).read()
-    swapped = _swap(s, "vs:list", block)
+    swapped = _swap(s, "vs:home", block)
     if swapped is None:
-        anchor = "<!--/ci:mcp--></p>"
+        anchor = "<!--/il:pop-->"
         if anchor in s:
             swapped = s.replace(anchor, anchor + block, 1)
         else:
             swapped = s
+    # The old chip-and-history card is not the homepage treatment.
+    swapped = re.sub(r'<!--vs:list-->.*?<!--/vs:list-->', '', swapped, count=1, flags=re.S)
     if swapped != s:
         open(path, "w").write(swapped)
 
@@ -474,13 +497,13 @@ def write_link_status_forward():
 <link rel="canonical" href="{canon}">
 <meta http-equiv="refresh" content="0; url=/mcp/status/">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="stylesheet" href="../styles.css?v=202611082000">
+<link rel="stylesheet" href="../styles.css?v=202611092245">
 <script>(function(){{try{{var t=localStorage.getItem("agentscout-theme")}}catch(e){{}}if(t!=="dark"&&t!=="light")t="dark";document.documentElement.dataset.theme=t;window.asToggleTheme=function(){{var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{{localStorage.setItem("agentscout-theme",n)}}catch(e){{}}}}}})()</script>
 </head><body>
 {nav}
 <main class="wrap"><p>This page moved. <a href="/mcp/status/">MCP server status</a>.</p></main>
 {nl}{foot}
-<script src="../app.js?v=202611082000"></script>
+<script src="../app.js?v=202611092245"></script>
 </body></html>
 '''
     problems = build_seo_new.redirect_page_chrome_problems("mcp/link-status.html", page)

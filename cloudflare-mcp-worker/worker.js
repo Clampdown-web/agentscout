@@ -497,7 +497,6 @@ function registryBody() {
           version: "1.0.2",
           remotes: [
             { type: "streamable-http", url: "https://mcp.agentscouthq.com/mcp" },
-            { type: "sse", url: "https://agentscouthq.com/mcp/sse" },
           ],
         },
         _meta: {

@@ -482,7 +482,7 @@ def build_mcp_terminal_infographic():
         # Top header bar inside terminal
         im.paste(brand_logo, (26, 58), brand_logo)
         d.text((66, 56), "AgentScout MCP Command Center", font=f_title, fill=(255, 255, 255, 255))
-        d.text((66, 84), f"Official Registry ID: com.agentscouthq/directory  ·  Endpoint: https://agentscouthq.com/mcp/sse", font=f_sub, fill=(148, 163, 184, 255))
+        d.text((66, 84), f"Official Registry ID: com.agentscouthq/directory  ·  Endpoint: https://mcp.agentscouthq.com/mcp", font=f_sub, fill=(148, 163, 184, 255))
 
         # Big KPI counters top-right (Mario Nawfal / Grok Bot Terminal style)
         d.text((W - 390, 54), f"{LIVE_TOOL_COUNT:,}+", font=fnt(FONT_MONO, 26), fill=(56, 189, 248, 255))
@@ -536,7 +536,7 @@ def build_mcp_terminal_infographic():
 
         # RIGHT BOTTOM PANEL: Live tail -f mcp-stream.log (x=322..1176, y=280..488)
         d.rounded_rectangle([322, 280, W - 24, 488], radius=12, fill=(9, 12, 22, 255), outline=(20, 184, 166, 150), width=1)
-        d.text((338, 290), "$ claude mcp add --transport http agentscout https://agentscouthq.com/mcp/sse", font=f_mono_b, fill=(52, 211, 153, 255))
+        d.text((338, 290), "$ claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp", font=f_mono_b, fill=(52, 211, 153, 255))
         d.text((W - 230, 292), "tail -f mcp-rpc.log", font=f_mono_s, fill=(120, 135, 170, 255))
 
         for qi, (fn_name, args_str, res_str, lat) in enumerate(queries):
