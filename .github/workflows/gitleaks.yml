@@ -1,0 +1,96 @@
+name: gitleaks
+
+# Secret scan of the current tree on pull requests.
+# Direct pushes to main do not run this job, so the morning build is not blocked by it.
+# The OSS gitleaks CLI is used instead of gitleaks-action. Organization repos need a
+# GITLEAKS_LICENSE for that action, and the action comments on pull requests.
+# This job has contents: read, prints no secret values, and does not comment.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Install gitleaks
+        run: |
+          set -euo pipefail
+          version=8.30.1
+          # sha256 of gitleaks_8.30.1_linux_x64.tar.gz from the v8.30.1 release.
+          expected=551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+          archive="${RUNNER_TEMP}/gitleaks_${version}_linux_x64.tar.gz"
+          curl -fsSL --retry 3 --retry-delay 2 -o "${archive}" \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_x64.tar.gz"
+          echo "${expected}  ${archive}" | sha256sum -c -
+          tar -xzf "${archive}" -C "${RUNNER_TEMP}" gitleaks
+          echo "${RUNNER_TEMP}" >> "${GITHUB_PATH}"
+          "${RUNNER_TEMP}/gitleaks" version
+
+      - name: Scan the current tree
+        run: |
+          set -euo pipefail
+          report="${RUNNER_TEMP}/gitleaks-report.json"
+          log="${RUNNER_TEMP}/gitleaks-log.txt"
+          set +e
+          gitleaks detect \
+            --no-git \
+            --redact=100 \
+            --no-banner \
+            --config .gitleaks.toml \
+            --report-format json \
+            --report-path "${report}" \
+            --exit-code 2 \
+            --max-target-megabytes 20 \
+            --log-level error \
+            >"${log}" 2>&1
+          status=$?
+          set -e
+          SCAN_STATUS="${status}" GITLEAKS_REPORT="${report}" GITLEAKS_LOG="${log}" python3 - << 'PY'
+          import json, os, sys
+
+          report = os.environ["GITLEAKS_REPORT"]
+          log = os.environ["GITLEAKS_LOG"]
+          status = int(os.environ["SCAN_STATUS"])
+          findings = None
+          parse_error = False
+          if os.path.exists(report):
+              try:
+                  with open(report, encoding="utf-8") as handle:
+                      findings = json.load(handle) or []
+              except (OSError, json.JSONDecodeError):
+                  parse_error = True
+          for path in (report, log):
+              try:
+                  os.remove(path)
+              except FileNotFoundError:
+                  pass
+          if parse_error:
+              print("gitleaks: report could not be read. The raw report was discarded.")
+              sys.exit(1)
+          if not findings:
+              if status != 0:
+                  print(f"gitleaks: exited {status} without findings. The raw log was discarded.")
+                  sys.exit(status if status != 0 else 1)
+              print("gitleaks: no findings in the current tree")
+              sys.exit(0)
+          print(f"gitleaks: {len(findings)} finding(s). Secret values are not printed.")
+          for finding in findings:
+              path = finding.get("File") or "?"
+              line = finding.get("StartLine") or "?"
+              rule = finding.get("RuleID") or "?"
+              print(f"{path}:{line}: {rule}")
+          sys.exit(1)
+          PY

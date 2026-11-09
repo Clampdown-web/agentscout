@@ -1,12 +1,38 @@
 version: 2
 updates:
-  - package-ecosystem: pip
-    directory: /
-    schedule:
-      interval: weekly
-    open-pull-requests-limit: 5
+  # Weekly, one grouped version-update PR per ecosystem.
+  # Security updates stay ungrouped so a patched release is not held for the weekly rollup.
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        applies-to: version-updates
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      python:
+        patterns:
+          - "*"
+        applies-to: version-updates
+
+  # The site and the workers do not npm-install this manifest.
+  # It exists so the npm updater is configured and stays quiet until a dependency is added.
+  - package-ecosystem: npm
+    directory: /.github/npm
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      npm:
+        patterns:
+          - "*"
+        applies-to: version-updates
