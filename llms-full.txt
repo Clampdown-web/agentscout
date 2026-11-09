@@ -16,14 +16,14 @@ Once a day, AgentScout requests each listed MCP server URL and, when it is a dif
 
 <!-- mcp-reach:end -->
 
-Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
+Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp`. AgentScout's official MCP server (`com.agentscouthq/directory` at `https://mcp.agentscouthq.com/mcp`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
 ## Official Identity, Endpoints & Registry Links
 
 - **Canonical Website**: https://agentscouthq.com/
 - **Alternate Names**: Agent Scout, AgentScoutHQ, agentscouthq.com
 - **Official MCP Registry Identifier**: `com.agentscouthq/directory`
-- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`)
+- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://mcp.agentscouthq.com/mcp`
 - **MCP Connection & Client Setup Guide**: https://agentscouthq.com/mcp/connect.html
 - **How-To Video Guides & Pro Tips Hub (`/videos/`)**: https://agentscouthq.com/videos/ (8 playable 60fps walkthroughs with copyable MCP & CLI snippets)
 - **Made by AgentScout Pro Bots & 4-Bot Bundle (`/bot-store/` and `/bot-templates/#made-by-agentscout`)**: https://agentscouthq.com/bot-store/ and https://agentscouthq.com/bot-templates/#made-by-agentscout — $39 Operations / Monitoring Bot, $59 SEO & AEO Growth Auditor Bot, $59 Market & Launch Intel Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot "Company-in-a-Box" Team Bundle

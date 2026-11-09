@@ -430,7 +430,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611091930"  # bump when app.js/styles.css change
+ASSET_V = "202611092245"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -534,10 +534,30 @@ def _cluster_nav(s, d):
         inner,k=re.subn(r'(<a class="btn primary" href="[^"]*submit\.html">Submit a tool</a>)', lambda mm: cluster+mm.group(1), inner, count=1)
     if not k: inner+=cluster
     return s[:a]+inner+s[b:]
+def _park_chrome(s):
+    """Hold the grouped header and column footer out of the legacy link rewriter.
+    sitewide() still inserts scripts, asset stamps, and JSON-LD around them.
+    """
+    held={}
+    m=re.search(r'<nav class="sitenav"\b.*?</nav>', s, re.S)
+    if m:
+        held["nav"]=m.group(0)
+        s=s[:m.start()]+"\x00ASNAV\x00"+s[m.end():]
+    m=re.search(r'<footer\b[^>]*\bfootcols\b[^>]*>.*?</footer>', s, re.S)
+    if m:
+        held["foot"]=m.group(0)
+        s=s[:m.start()]+"\x00ASFOOT\x00"+s[m.end():]
+    return s, held
+def _unpark_chrome(s, held):
+    if held.get("nav"): s=s.replace("\x00ASNAV\x00", held["nav"], 1)
+    if held.get("foot"): s=s.replace("\x00ASFOOT\x00", held["foot"], 1)
+    return s
 def _cluster_foot(s, d):
-    """Footer neon pills share one group: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured."""
+    """Footer neon pills share one group: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured.
+    A column footer (class footcols) is the canonical chrome and is left unchanged.
+    """
     m=re.search(r'<footer\b.*?</footer>', s, re.S)
-    if not m: return s
+    if not m or 'footcols' in m.group(0): return s
     fo=m.group(0)
     fo=re.sub(r'<span class="footpills">','',fo)
     fo=re.sub(r'</span><!--/footpills-->','',fo)
@@ -639,6 +659,7 @@ def sitewide(t):
         if os.path.basename(f) in SKIP or f.startswith(("node_modules","app/","preview/")): continue
         s=open(f).read(); o=s
         held=_redirect_chrome(o)
+        s, chrome=_park_chrome(s)
         s=re.sub(r'<span class="navpills">(.*?)</span><!--/navpills-->',r'\1',s,flags=re.S)
         s=re.sub(r'<span class="footpills">(.*?)</span><!--/footpills-->',r'\1',s,flags=re.S)  # footer pill group, re-wrapped at the end  # header pill group is re-wrapped at the end
         s=_unpill(s)  # neon pills are re-applied at the end (_pill), so every rule below sees the plain links
@@ -666,7 +687,12 @@ def sitewide(t):
         # (generate.html has no footer Free tools link: after Badges)
         # Paid listings on hold (Oct 18 2026, owner-approved): strip the footer 'Get featured' link + sponsorship mailto and the
         # 'sponsorships' JSON-LD contactType sitewide so no rebuild/daily routine brings them back. Hidden Featured machinery untouched.
-        s=re.sub(r'(?: · )?<a [^>]*>Get featured(?: →)?</a>(?: \(<a href="mailto:[^"]*Sponsorship[^"]*">or email</a>\))?','',s)
+        def _drop_featured(mm, src=s):
+            start=src.rfind("<p", 0, mm.start())
+            if start>=0 and "quiet-feature" in src[start:mm.start()] and "</p>" not in src[start:mm.start()]:
+                return mm.group(0)
+            return ""
+        s=re.sub(r'(?: · )?<a [^>]*>Get featured(?: →)?</a>(?: \(<a href="mailto:[^"]*Sponsorship[^"]*">or email</a>\))?',_drop_featured,s)
         s=s.replace('"contactType": "sponsorships and submissions"','"contactType": "submissions and support"')
         fm=re.search(r'<footer\b.*?</footer>',s,re.S)
         if fm:
@@ -813,6 +839,7 @@ def sitewide(t):
             s=re.sub(r'<!--MAKERS-START-->.*?Launch on AgentScout.*?</section><!--MAKERS-END-->','<!--MAKERS-START--><!--MAKERS-END-->',s,count=1,flags=re.S)
             s=re.sub(r'<script data-live-metrics>.*?</script>','',s,flags=re.S)
             s=s.replace('</body>',_bsp.live_metrics_script("")+'</body>',1)
+        s=_unpark_chrome(s, chrome)
         s=_restore_redirect_chrome(s, held)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
@@ -835,7 +862,7 @@ def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):
 def about_page(t):
     import build_counts
     _c=build_counts.require(t); n=_c["tools"]; nc=_c["categories"]
-    inner=(f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p><h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="index.html#directory">directory</a>, <a href="categories/index.html">categories</a> or <a href="tasks/index.html">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p><p><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="https://agentscouthq.com">https://agentscouthq.com</a>, published in the official MCP Registry as <code>com.agentscouthq/directory</code> with SSE endpoint <code>https://agentscouthq.com/mcp/sse</code> and Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (free, read-only, no API key required; unrelated to the paid x402 npm package). Machine-readable catalogs: <a href="llms.txt">llms.txt</a>, <a href="llms-full.txt">llms-full.txt</a>, and <a href="api/tools.json">api/tools.json</a>.</p>'
+    inner=(f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p><h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="index.html#directory">directory</a>, <a href="categories/index.html">categories</a> or <a href="tasks/index.html">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p><p><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="https://agentscouthq.com">https://agentscouthq.com</a>, published in the official MCP Registry as <code>com.agentscouthq/directory</code> with SSE endpoint <code>https://mcp.agentscouthq.com/mcp</code> and Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (free, read-only, no API key required; unrelated to the paid x402 npm package). Machine-readable catalogs: <a href="llms.txt">llms.txt</a>, <a href="llms-full.txt">llms-full.txt</a>, and <a href="api/tools.json">api/tools.json</a>.</p>'
       f'<h2 {H2}>How tools are picked</h2><p>New tools are found every day. Our main sources are:</p><ul>'
       '<li><b>GitHub</b>: agent-related topics such as ai-agents, agent-framework, mcp-server, coding-agent and browser-agent.</li>'
       '<li><b>The official MCP registry</b>, keeping well-known publishers and popular repositories.</li>'
