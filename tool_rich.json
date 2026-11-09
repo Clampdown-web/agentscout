@@ -32137,5 +32137,1017 @@
       "https://github.com/MemoriLabs/Memori",
       "https://memorilabs.ai/"
     ]
+  },
+  "ponytail": {
+    "sources": [
+      "https://github.com/DietrichGebert/ponytail",
+      "https://github.com/DietrichGebert/ponytail/blob/main/README.md",
+      "https://ponytail.dev/"
+    ],
+    "long": [
+      "Ponytail is an MIT-licensed skill that loads one prompt into a coding agent. The README describes it as a ladder the agent walks after it has read the code: reuse what is already in the repo, then the standard library, a platform feature, or an installed dependency, and only then write the smallest change that works. Validation, error handling, security and accessibility are not on the list of things it cuts.",
+      "The README's published Ponytail 5 benchmark, run in Claude Code on 39 tasks including a FastAPI and React repo, with Opus 5.5 and 5 runs each, reports 53% less code, 41% less time, 26% less cost and 45% fewer tokens, and says 98% of risky logic shipped with a test against 68% with no skill. Those figures are the maker's, from benchmarks/results/2026-10-07-agentic.md. Commands include /ponytail-review, /ponytail-audit and /ponytail-debt. A status band above the Claude Code prompt needs Claude Code 2.1.290 or later and, the README says, does not show in the VS Code chat panel, cloud sessions or claude -p."
+    ],
+    "who": "People who already use a skill-capable coding agent and want it to write less code without dropping tests, validation or security checks.",
+    "features": [
+      "One skill prompt, skills/ponytail/SKILL.md, plus a compact AGENTS.md for agents that read a rules file",
+      "Levels lite, full, ultra and off, plus /ponytail-review, /ponytail-audit and /ponytail-debt",
+      "Claude Code band for cost, tokens, agent time and whether tests passed after the last change (Claude Code 2.1.290 or later)",
+      "Install paths for Claude Code and Codex plugins; other agents copy AGENTS.md or the skill. INSTALL.md covers Copilot, Cursor, OpenCode and Gemini",
+      "MIT license. The README says to install only from DietrichGebert/ponytail or the npm package @dietrichgebert/ponytail"
+    ],
+    "pros": [
+      "The prompt is explicit that it must not cut validation, error handling, security or accessibility.",
+      "Review and audit commands are documented, and the README says each finding states what the code does, what goes wrong, and how to fix it.",
+      "No config file is required. An optional config or PONYTAIL_DEFAULT_MODE can set the default level."
+    ],
+    "cons": [
+      "The README says Cursor with its hooks gets /ponytail level switching only. Instruction-only adapters (a Cursor rule file, Windsurf, Cline, Copilot, Kiro, and Antigravity's AGENTS.md fallback) load the rules without the slash commands.",
+      "The band does not show in the VS Code chat panel, in cloud sessions, or under claude -p.",
+      "The benchmark numbers above are the maker's published run, not a measurement AgentScout repeated."
+    ],
+    "setup": [
+      "In Claude Code, run /plugin marketplace add DietrichGebert/ponytail and then /plugin install ponytail@ponytail.",
+      "In Codex, run codex plugin marketplace add DietrichGebert/ponytail and codex plugin add ponytail@ponytail, then open /hooks, trust the two lifecycle hooks, and start a new thread.",
+      "For another agent, copy AGENTS.md into the project or install skills/ponytail/SKILL.md. The README points to INSTALL.md for Copilot, Cursor, OpenCode and Gemini.",
+      "Install only from DietrichGebert/ponytail on GitHub or @dietrichgebert/ponytail on npm. The README says a copy that ships .exe or .dll files is not the project."
+    ],
+    "facts": {
+      "repo": "https://github.com/DietrichGebert/ponytail",
+      "license": "the MIT License",
+      "osi": true,
+      "stars": 187364,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "ui-ux-pro-max": {
+    "sources": [
+      "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/README.md",
+      "https://www.uupm.cc/"
+    ],
+    "long": [
+      "UI UX Pro Max is an MIT-licensed agent skill that recommends a design system for a product. The README's v2 generator searches product type, style, colour, landing-page pattern and typography, then prints a pattern, style, colours, type, effects, anti-patterns and a pre-delivery checklist. The open-source repository is the Basic version.",
+      "The README says the Basic version includes 80 searchable UI styles (51 active), 192 product types, colour palettes, font pairings, a BM25 search, and stack guidelines for 22 frameworks including React, Vue, Tailwind, iOS and Android. Brand identity, logo design, presentation slides and AI image generation are listed as Premium and are not part of this repository. The CLI package is ui-ux-pro-max-cli and the command is uipro. Python 3 is required for the design-system scripts."
+    ],
+    "who": "Developers who want a coding agent to pick colours, type, layout and UX rules for a web or mobile UI, using the open-source skill rather than the Premium add-ons.",
+    "features": [
+      "Design-system generator that outputs pattern, style, colours, typography, effects, anti-patterns and a checklist",
+      "README counts for this repository: 80 searchable UI styles (51 active), 192 product types, and guidelines for 22 frameworks",
+      "Claude Code marketplace install, or uipro init --ai for Claude Code, Cursor, Codex, Copilot, Gemini CLI, OpenCode and others",
+      "Persist a master design system to design-system/<name>/MASTER.md, with an optional per-page override",
+      "MIT license. Premium (brand, logos, slides, generated image assets) is a separate offer on uupm.cc"
+    ],
+    "pros": [
+      "The skill and the design-system generator are in the public repository under the MIT License.",
+      "The README lists stack-specific guidelines, including React, Vue, Tailwind, iOS and Android.",
+      "uipro init can target one assistant or --ai all, and --global installs the skill for every project."
+    ],
+    "cons": [
+      "Brand identity, logo design, slides and AI-generated visual assets are Premium. They are not in this repository.",
+      "Design-system commands need Python. The README's troubleshooting section says the command fails when Python is not found.",
+      "The README says Claude.ai's skill upload rejects a zip with more than 200 files, and the Claude marketplace install can fail on a symbolic link."
+    ],
+    "setup": [
+      "In Claude Code, run /plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill and /plugin install ui-ux-pro-max@ui-ux-pro-max-skill.",
+      "Or install the CLI with npm install -g ui-ux-pro-max-cli, change to the project, and run uipro init --ai with your assistant (claude, cursor, codex, gemini, opencode, or all).",
+      "Use Python 3. The design-system search scripts are Python. If the command cannot find Python, the README's troubleshooting section is the place to look.",
+      "Treat uupm.cc as the Premium upgrade. Do not expect logo, brand-system or image-generation features from this repository."
+    ],
+    "facts": {
+      "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "license": "the MIT License",
+      "osi": true,
+      "stars": 147219,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "caveman": {
+    "sources": [
+      "https://github.com/JuliusBrussee/caveman",
+      "https://github.com/JuliusBrussee/caveman/blob/main/README.md",
+      "https://docs.caveman.so/caveman"
+    ],
+    "long": [
+      "Caveman is an Apache-2.0 skill and local proxy for coding agents. The README says it shortens what the agent says and what it reads, and leaves code, commands, paths and error messages unchanged. One installer, npx @caveman-ai/cli@latest, turns on six parts: a shorter voice, compressed logs and files, an Auto model router, Blocks that reuse scripts, waste fixes, and compressed web pages.",
+      "The README's own session measurement says 33.2% fewer input tokens across six file types on Claude Code, with HTML still uncompressed and that HTML session worse. It also says Auto was 54% cheaper than Opus at xhigh on 85 coding tasks at the same score, and that this figure is interim. Caveman Cloud is a separate product for agents you ship: traces, evals and an autopilot that opens a pull request. The local skill does not require an account. Auto does, and the README says the account is free."
+    ],
+    "who": "People running Claude Code, Codex, Gemini CLI, OpenCode or another supported coding agent who want shorter replies and less tool output sent to the model, on their own machine and keys.",
+    "features": [
+      "Installer npx @caveman-ai/cli@latest for macOS, Linux and Windows. The README requires Node.js 22.13 or newer",
+      "Six switches: say less, read less, Auto, Blocks, waste fixes, and browse. caveman status shows what is on",
+      "Skill-only path with no proxy: npx skills add JuliusBrussee/caveman -g, then /caveman (or $caveman in Codex)",
+      "Apache-2.0. Caveman Cloud (observability, evals, autopilot) is a separate signup at app.caveman.so",
+      "Telemetry is on by default for the CLI. caveman telemetry off or DO_NOT_TRACK=1 turns it off"
+    ],
+    "pros": [
+      "The README says code, commands, paths and error messages stay character for character, and that your own prompts are not rewritten.",
+      "The local skill sends nothing, with one stated exception: /caveman-compress sends the file you compress to your configured model provider.",
+      "Each of the six parts can be turned off. Only Auto needs an account."
+    ],
+    "cons": [
+      "The README says the HTML compressor does not exist yet, and that the HTML session in its suite used more tokens.",
+      "Auto, once you sign in, sends the latest ask and attached context to Caveman Cloud. The README says the Free plan may keep that to improve routing. caveman off routing stops it.",
+      "The README says shorter answers save nothing on a per-request plan such as GitHub Copilot, and that the voice rules themselves cost about 1,160 input tokens.",
+      "The percentage savings are the maker's published runs, including an August 2026 session on an older engine. AgentScout did not re-run them."
+    ],
+    "setup": [
+      "Install Node.js 22.13 or newer, then run npx @caveman-ai/cli@latest. The README says it finds the agents already on the machine and shows what it will change.",
+      "Leave plain claude, Codex, Gemini CLI and OpenCode as they are. The README says they stay on Caveman after that install, using your existing keys.",
+      "If you only want shorter answers, skip the proxy and run npx skills add JuliusBrussee/caveman -g, then type /caveman. stop caveman turns the voice off.",
+      "Turn CLI telemetry off with caveman telemetry off or DO_NOT_TRACK=1 if you do not want the usage stats the README lists."
+    ],
+    "facts": {
+      "repo": "https://github.com/JuliusBrussee/caveman",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 118539,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "agent-skills-addy-osmani": {
+    "sources": [
+      "https://github.com/addyosmani/agent-skills",
+      "https://github.com/addyosmani/agent-skills/blob/main/README.md",
+      "https://skills.addy.ie/"
+    ],
+    "long": [
+      "Agent Skills by Addy Osmani is an MIT-licensed pack of workflow skills for coding agents. The README maps nine slash commands onto a lifecycle: /spec, /plan, /build, /test, /constraints, /review, /webperf, /code-simplify and /ship. It says the repository holds 25 skills, and that skills also turn on from the work in front of the agent, such as API design or UI.",
+      "/build auto generates a plan and implements every task in one approved pass. The README says each task stays test-driven and is committed on its own, and that the run pauses on failures or risky steps. A one-skill npx install copies only that skill's folder, not the repo-level references/ checklists. The lifecycle slash commands are Claude Code plugin commands. The README says GitHub Copilot does not get those commands and that you invoke the skill names instead."
+    ],
+    "who": "Engineers who want a coding agent to follow a spec, plan, test and review sequence instead of jumping straight to a patch.",
+    "features": [
+      "Nine slash commands from /spec through /ship, plus /constraints, /webperf and /code-simplify",
+      "25 skills in the repository, installable together or one at a time with npx skills add addyosmani/agent-skills",
+      "Claude Code marketplace install, a Codex plugin (Codex CLI v0.122 or later), and documented setups for Cursor, Gemini CLI, Copilot, OpenCode, Windsurf and others",
+      "/build auto: one approval, then test-driven tasks that commit individually and pause on failure",
+      "MIT license"
+    ],
+    "pros": [
+      "The commands are tied to a written sequence: spec before code, tests as proof, review before merge.",
+      "You can install all 25 skills or name one skill. The skills CLI is documented for many agents.",
+      "The README says automatic activation still applies when you are designing an API or building UI, without typing a command."
+    ],
+    "cons": [
+      "A per-skill npx install does not copy references/. Shared checklists are missing until you clone the repo or copy them. The README tracks that gap in issue 361.",
+      "Where Claude Code already has /review, the README says to use /agent-skills:review.",
+      "The lifecycle slash commands do not appear in GitHub Copilot. Copilot uses the skill names.",
+      "The Claude Code marketplace clones over SSH. The README documents an HTTPS URL and a git-insteadOf rewrite when you have no SSH key."
+    ],
+    "setup": [
+      "For any agent, run npx skills add addyosmani/agent-skills to install all 25 skills, or add --skill and a skill name for one.",
+      "In Claude Code, run /plugin marketplace add addyosmani/agent-skills and /plugin install agent-skills@addy-agent-skills. If SSH fails, the README says to add the https://github.com/addyosmani/agent-skills.git URL instead.",
+      "In Cursor, copy workflow skills into .cursor/skills/ and short policies into .cursor/rules. The README says this repo does not ship a .cursor folder, and points to docs/cursor-setup.md.",
+      "If you installed a single skill and a checklist path is missing, clone the repository or copy the references/ files into the installed skill."
+    ],
+    "facts": {
+      "repo": "https://github.com/addyosmani/agent-skills",
+      "license": "the MIT License",
+      "osi": true,
+      "stars": 114397,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "taste-skill": {
+    "sources": [
+      "https://github.com/Leonxlnx/taste-skill",
+      "https://github.com/Leonxlnx/taste-skill/blob/main/README.md",
+      "https://www.tasteskill.dev/"
+    ],
+    "long": [
+      "Taste Skill is an MIT-licensed agent skill for company websites. The README documents version 2.5.1 and one skill, design-taste-frontend. It classifies the business as software, gaming, tech, product, service or place, deals a palette and a hero layout, and starts from a static starter page with one section per screen. Photographs come from the skill's library and are credited in the footer. Shader and scroll effects are limited to software, tech and gaming pages.",
+      "Checks run in headless Chrome over HTTP at several widths. scripts/gate.mjs holds the finish until no fixable FAIL remains, for at most three rounds. The skill needs Node 22 or newer and Chrome, Edge or Chromium. It installs nothing and needs no API key. The README says an empty folder becomes a static page, and an existing React, Vue, Svelte, Astro or Tailwind project stays in that stack. Other skills that used to live here moved to taste-skill-classics and imagegen-skills. TasteCode, linked from the README, is a separate desktop app."
+    ],
+    "who": "People using a coding agent to build or redesign a company site, who want one design system, real photographs and a browser check before the page is called done.",
+    "features": [
+      "One skill, design-taste-frontend, at the version the README names as 2.5.1",
+      "Node scripts for palette, type, hero layout, photographs, icons, and a headless-Chrome checker",
+      "Widths the checker names include 1440, 1024, 768 and 390",
+      "Install with npx skills add, or as a Claude Code or Codex plugin",
+      "MIT license. Needs Node 22+ and Chrome, Edge or Chromium. ffmpeg is optional"
+    ],
+    "pros": [
+      "The README says the skill installs nothing and does not need an API key. Bundled photographs work offline.",
+      "A finish gate blocks on fixable failures, and the checker looks for placeholder text, contrast drops and misaligned columns.",
+      "Shader effects are kept off cafes, hotels, shops, studios and services. Those pages stay on photographs and type."
+    ],
+    "cons": [
+      "You need Node 22 or newer and a Chromium-family browser. Set CHROME_PATH if the browser is not in a standard location.",
+      "Older skills (high-end-visual-design, minimalist-ui, imagegen-frontend-web and others) are no longer in this repo. The README lists their new repositories.",
+      "A single image cannot be passed off as the client's own room or staff. The skill credits library photographs and can mark them as draft stand-ins.",
+      "TasteCode is a different product. This repository is the agent skill."
+    ],
+    "setup": [
+      "Install with npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend. That uses the skills CLI.",
+      "Install Node 22 or newer and Chrome, Edge or Chromium. ffmpeg is only needed for WebP output and the phone crop of a hero photograph.",
+      "In Claude Code, the README's plugin path is /plugin marketplace add Leonxlnx/taste-skill and /plugin install taste-skill@taste-skill. Codex has its own marketplace and plugin add commands in the README.",
+      "Ask the agent to build or redesign the site. The README says the agent copies assets/, starts from assets/starter.html, and runs the checker before it hands the page over."
+    ],
+    "facts": {
+      "repo": "https://github.com/Leonxlnx/taste-skill",
+      "license": "the MIT License",
+      "osi": true,
+      "stars": 112355,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "impeccable": {
+    "sources": [
+      "https://github.com/pbakaus/impeccable",
+      "https://github.com/pbakaus/impeccable/blob/main/README.md",
+      "https://impeccable.style/"
+    ],
+    "long": [
+      "Impeccable is an Apache-2.0 design vocabulary for coding agents. From the project root, npx impeccable install detects the coding tool. You then run /impeccable init (or $impeccable init on Codex), which writes PRODUCT.md. Later commands read that file. The README lists 24 commands in groups: steer (bolder, quieter, distill, and others), review (critique and audit), finish (polish, harden, clarify), live iteration, and setup (shape, init, document, extract). craft is a deprecated alias.",
+      "A detector of 62 deterministic rules flags common generated-UI patterns. The README says it uses no LLM and no API key. It can run as an agent hook, as npx impeccable detect on a directory or a URL, or as a Chrome extension. Live mode opens a local dev server overlay and writes an accepted variant back to source. The README says live mode is for a local checkout, and that Apply can fall back to the codex or claude CLI with approvals and sandboxing off unless you set IMPECCABLE_LIVE_COPY_AGENT."
+    ],
+    "who": "People who already have a UI in a repo and want a coding agent to restyle, review or audit one section at a time, with a detector that does not call a model.",
+    "features": [
+      "npx impeccable install, then /impeccable init to write PRODUCT.md",
+      "24 commands, including critique, audit, polish, live, document and extract",
+      "62-rule detector with no LLM and no API key, plus a Chrome extension",
+      "Live mode for Vite, Next, SvelteKit, Astro, Nuxt and plain HTML",
+      "Apache-2.0. Docs at impeccable.style/docs"
+    ],
+    "pros": [
+      "The detector is deterministic. The README says it does not call an LLM or need an API key.",
+      "Commands take a target, such as the pricing cards, instead of restyling the whole product at once.",
+      "The same detector runs in the agent, in CI, and in a Chrome extension."
+    ],
+    "cons": [
+      "Live mode's Apply path can launch codex or claude with sandboxing and approvals off if no chat session has polled in the last minute. The README says to set IMPECCABLE_LIVE_COPY_AGENT=chat or off to change that.",
+      "The README says not to inject live mode into a deployed site or weaken a production content-security policy for it.",
+      "In Claude Code, installed command hooks run even when you deny the model's own commands, so the first edit can download the engine.",
+      "Codex, Grok Build and Hermes Agent each need an extra trust step before the hook runs. The README lists those steps."
+    ],
+    "setup": [
+      "From the project root, run npx impeccable install. The installer asks whether this project or a global install, and offers the design hook where the tool supports one.",
+      "Reload the coding tool, then run /impeccable init. On Codex, use $impeccable init. That writes PRODUCT.md.",
+      "In Codex, open /hooks and approve the project hook. In Grok Build, run /hooks-trust or launch with --trust. In Hermes Agent, run hermes plugins enable impeccable-design-hook once.",
+      "Point a command at one target, for example /impeccable critique the pricing cards. Run npx impeccable detect on src or on a local URL when you want the detector without an agent."
+    ],
+    "facts": {
+      "repo": "https://github.com/pbakaus/impeccable",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 106611,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "archify": {
+    "sources": [
+      "https://github.com/tt-a1i/archify",
+      "https://github.com/tt-a1i/archify/blob/main/README.md",
+      "https://archify.si/"
+    ],
+    "long": [
+      "Archify is an Apache-2.0 agent skill that turns a description or a repository into an interactive HTML diagram. The README's current stable version is v3.2.0. Diagram types it names are Architecture, Workflow, Sequence, Data Flow, Lifecycle, ERD, Class, Tree, Timeline and Waterfall. The result is one HTML file you can open locally. The README says Archify is not a general-purpose drawing editor and not a Mermaid theme.",
+      "Generation goes through a typed JSON source. The README says schema, layout, HTML/SVG, route and label checks have to pass before a new artifact replaces the last good one. Evidence-backed architecture nodes can open Git-verified files at a pinned commit, and only when you ask for that. Timeline and Waterfall examples in the repo use illustrative times unless the times come from logs or traces. An optional update check can remind you of a newer stable release. The README says it does not download or install updates, and ARCHIFY_UPDATE_CHECK_DISABLED=1 turns the check off."
+    ],
+    "who": "People who want a coding agent to produce a shareable architecture, sequence, data-flow or schema diagram from a sentence or from a repository, as HTML rather than a hosted whiteboard.",
+    "features": [
+      "Ten diagram types, including ERD, class, tree, timeline and waterfall added in 3.1",
+      "One self-contained HTML file, plus image, video and share-card export",
+      "Validation before a new diagram replaces the last good output, with rule codes in validate --json and deliver --json",
+      "Install by asking an agent to read the llms.txt URL, or with npx skills for Cursor and Codex",
+      "Apache-2.0. Stable version named in the README: v3.2.0"
+    ],
+    "pros": [
+      "You can start from a sentence. A repository is optional.",
+      "The README says ordinary diagrams do not invent runtime impact, and source links appear only when you ask for evidence.",
+      "The update checker is a reminder. It does not install a new version by itself."
+    ],
+    "cons": [
+      "The deployment-ownership profile fails closed when owners, regions or database scope are missing. It does not inspect live infrastructure.",
+      "Timeline and Waterfall examples ship with illustrative times. The README says to treat a time as real only when it comes from logs or traces.",
+      "The optional update check makes a GET and sees normal HTTP metadata. Set ARCHIFY_UPDATE_CHECK_DISABLED=1 to stop it.",
+      "It is not a freeform drawing tool. The README says it will not act as a Mermaid theme."
+    ],
+    "setup": [
+      "Ask the agent to install Archify by reading https://raw.githubusercontent.com/tt-a1i/archify/main/llms.txt, which is the README's install line.",
+      "For a non-interactive Cursor install, the README gives npx -y skills@latest add https://archify.si --skill archify --agent cursor --global --copy --yes.",
+      "To try Codex without installing, the README gives npx skills use tt-a1i/archify@archify --agent codex.",
+      "Describe the diagram, or open a repository and ask for a runtime architecture. Refine in chat. The README's guide command is node archify/bin/archify.mjs guide followed by a sentence."
+    ],
+    "facts": {
+      "repo": "https://github.com/tt-a1i/archify",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 94965,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "oh-my-openagent-omo": {
+    "sources": [
+      "https://github.com/code-yeongyu/oh-my-openagent",
+      "https://github.com/code-yeongyu/oh-my-openagent/blob/main/README.md",
+      "https://github.com/code-yeongyu/oh-my-openagent/blob/main/LICENSE.md",
+      "https://omo.dev/"
+    ],
+    "long": [
+      "OmO is a coding-agent app from the oh-my-openagent repository. The README says one omo command runs on senpi, a fork of pi, and that the install script puts a native binary in ~/.local/bin. Typing ultrawork or ulw is the README's way to make the agent read the codebase, plan, and check the result. mass ulw turns the job into a graph of agents that run in parallel on different models.",
+      "Memory is a git repository of markdown files, with a smaller model that reads earlier work before the main agent repeats it. /login covers Claude, ChatGPT, Kimi and GLM subscriptions. The licence file is the Sustainable Use License 1.0 for the project's own content: internal business use, or non-commercial and personal use. You may distribute it only free of charge for non-commercial purposes. That is not an OSI-approved open-source licence. The npm package is omo-ai. The README says the unrelated npm package named omo is someone else's."
+    ],
+    "who": "People who want a local coding agent they launch with omo, can sign into more than one model subscription, and accept the Sustainable Use License rather than an OSI licence.",
+    "features": [
+      "Installer: curl -fsSL https://get.omo.dev/install.sh | bash, then omo. Windows uses the PowerShell script on the same host",
+      "Package install: bun add -g omo-ai or npm i -g omo-ai. The command is still omo",
+      "ultrawork / ulw and mass ulw, plus /login for Claude, ChatGPT, Kimi and GLM subscriptions",
+      "Memory in a git repo of markdown, skills loaded per task, and config in ~/.omo/omo.jsonc or a project .omo/omo.jsonc",
+      "Sustainable Use License 1.0 for the project content. Third-party components keep their own licences"
+    ],
+    "pros": [
+      "The installer checks the binary against release checksums and falls back to GitHub Releases if the mirror is down.",
+      "omo setup copies provider keys, MCP servers, skills and model picks from an older OpenCode or LazyCodex install. omo doctor shows what that left behind.",
+      "Config, skills and prompts reload live. The README says you do not restart to pick up a change."
+    ],
+    "cons": [
+      "The Sustainable Use License is not OSI open source. Distribution is only free and non-commercial, and commercial use is limited to your own internal business.",
+      "Computer use is marked experimental in the docs link the README gives.",
+      "The in-app /bug report can include the session transcript, environment and, from the desktop app, account details. The README says secrets are blanked and you can read the report before it sends.",
+      "Coming from OpenCode, you run omo setup once. The old install is not picked up automatically."
+    ],
+    "setup": [
+      "Run curl -fsSL https://get.omo.dev/install.sh | bash, then omo in the project. On Windows PowerShell, the README's line is irm https://get.omo.dev/install.ps1 | iex.",
+      "If you use a package manager, install omo-ai, not the npm package named omo. Update a package install with omo update. Remove a binary install by deleting ~/.local/bin/omo.",
+      "Sign in with /login if you want a Claude, ChatGPT, Kimi or GLM subscription. Settings live in ~/.omo/omo.jsonc.",
+      "If you are leaving OpenCode or LazyCodex, run omo setup once, then omo doctor. Read the Sustainable Use License in LICENSE.md before you ship OmO to anyone else."
+    ],
+    "facts": {
+      "repo": "https://github.com/code-yeongyu/oh-my-openagent",
+      "license": "the Sustainable Use License 1.0 (not an OSI licence)",
+      "osi": false,
+      "stars": 70496,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "claude-code-templates": {
+    "sources": [
+      "https://github.com/davila7/claude-code-templates",
+      "https://github.com/davila7/claude-code-templates/blob/main/README.md",
+      "https://www.aitmpl.com/",
+      "https://docs.aitmpl.com/"
+    ],
+    "long": [
+      "Claude Code Templates is an MIT-licensed catalog and CLI of Claude Code components. The README says the catalog at aitmpl.com holds more than 1,980 components and that you can preview every file a component writes before you install it. The CLI merges into the configuration you already have instead of replacing it. A table in the README breaks the catalog down as 918 skills, 422 agents, 288 commands, 119 MCPs, 80 settings, 63 hooks, 50 mods, 18 loops, 14 templates, 11 sandboxes and 1 plugin, and points at dashboard/public/counts.json for live counts.",
+      "npx claude-code-templates@latest browses and installs with no global install. One command can pass --skill, --agent, --command and --mcp together. --yes skips the confirmation. Three local tools are documented: --analytics on localhost:3333, --chats on localhost:9876, and --health-check. The README says the two dashboards listen on 127.0.0.1 only because they serve conversation history. A list of flags removed in 1.31.0 is in the README."
+    ],
+    "who": "Claude Code users who want to preview and install skills, agents, hooks, MCP servers or settings from one catalog, without hand-copying each file.",
+    "features": [
+      "Catalog of skills, agents, commands, MCP servers, settings, hooks, mods, loops, templates, sandboxes and plugins",
+      "npx claude-code-templates@latest, with --search and a one-shot install of several component types",
+      "Preview of the files a component writes, on aitmpl.com",
+      "Local analytics and chat browser bound to localhost, plus a health check",
+      "MIT license. Docs at docs.aitmpl.com"
+    ],
+    "pros": [
+      "The CLI merges existing configuration. The README says it does not overwrite it.",
+      "Every component page shows the install command, and --search finds one from the terminal.",
+      "Pull requests are checked by Claude Code's plugin validator and scanned by NVIDIA SkillSpector, according to the README."
+    ],
+    "cons": [
+      "The dashboards read your conversation history. They are bound to localhost. Reaching --chats from another machine means an SSH port forward you set up yourself.",
+      "The README's component counts are a snapshot. It says live counts are in dashboard/public/counts.json, so the table can go stale.",
+      "Mods need Claude Code 2.1.287 or later, and the plugin example needs 2.1.288 or later.",
+      "Flags removed in 1.31.0 still print a replacement when you run them. They no longer do the old job."
+    ],
+    "setup": [
+      "Run npx claude-code-templates@latest to browse, or add --skill, --agent, --command or --mcp and the component id from the catalog.",
+      "Add --yes only when you already know the component. The default asks you to confirm.",
+      "Open docs.aitmpl.com for the CLI reference. Use --health-check to diagnose the local Claude Code install.",
+      "Leave --analytics and --chats on localhost. The README's SSH example is ssh -L 9876:localhost:9876 if you need the chat browser from another device."
+    ],
+    "facts": {
+      "repo": "https://github.com/davila7/claude-code-templates",
+      "license": "the MIT License",
+      "osi": true,
+      "stars": 33232,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "chat2db": {
+    "sources": [
+      "https://github.com/OtterMind/Chat2DB",
+      "https://github.com/OtterMind/Chat2DB/blob/main/README.md",
+      "https://github.com/OtterMind/Chat2DB/blob/main/LICENSE",
+      "https://chat2db.ai/"
+    ],
+    "long": [
+      "Chat2DB Community is a local-first database client for Windows, macOS and Linux. The README says it runs on your machine, with a SQL workspace and an AI assistant you connect to your own model. It lists more than 40 databases, including MySQL, PostgreSQL, Oracle, SQL Server, ClickHouse, MongoDB, Redis, SQLite, Snowflake and BigQuery, and says a new JDBC database can be added by configuration. There is also an open-source CLI with MCP support in a separate repository, OtterMind/Chat2DB-CLI.",
+      "Community 5.3.0 and later uses a modified Apache License 2.0. The licence allows personal self-use and internal use, and source redistribution under the same terms. It does not let you offer the software as a hosted service, managed delivery, or embedded product to an outside party without written commercial authorization. Releases before 5.3.0 stay Apache-2.0. The README says the Community edition has no user accounts, and that the HTTP service should stay on 127.0.0.1. Pro and Enterprise, described on chat2db.ai, add hosted AI, accounts, cloud sync and team controls. This listing does not repeat a dollar price, because the public pages we checked did not name a plan next to one."
+    ],
+    "who": "People who want a desktop or local Docker SQL client with their own model for text-to-SQL, and who can accept the Community licence limits on hosting it for others.",
+    "features": [
+      "SQL editor, completion, formatting, history, metadata browser, import and export, dashboards and ER diagrams",
+      "AI assistant that uses a model you connect. An early preview, 5.4.0-beta.1, adds an optional local agent runtime",
+      "Desktop installers, or Docker publishing 127.0.0.1:10825",
+      "AES-256-GCM encryption of stored datasource passwords and model API keys, with a key you create",
+      "Community 5.3.0+ licence is a modified Apache-2.0 (LicenseRef-Chat2DB). Earlier releases remain Apache-2.0"
+    ],
+    "pros": [
+      "The Community client runs locally. The README says there is no Chat2DB account inside that edition.",
+      "You bring the model. Hosted AI is a commercial-edition feature, not a requirement of the Community build.",
+      "Datasource passwords and model keys are encrypted with a per-install key."
+    ],
+    "cons": [
+      "The Community licence is not plain Apache-2.0 from 5.3.0 on. Hosting it as a service for outside parties needs written authorization.",
+      "It is single-user. The README says there is no authorization boundary between users, so do not expose port 10825.",
+      "Custom JDBC drivers are executable Java. The README says to install them only from sources you trust.",
+      "Docker data is not migrated automatically from images that used /root/.chat2db. Community 5.3.0 uses /root/.chat2db-community."
+    ],
+    "setup": [
+      "Download a desktop installer from the GitHub releases, or clone the repo and run ./script/security/init-community-encryption-key.sh before Docker.",
+      "The README's docker run publishes 127.0.0.1:10825, mounts the encryption key read-only, and stores data under $HOME/.chat2db-community-docker. Then open http://localhost:10825.",
+      "Keep the encryption key. The README says a rebuild needs the same key, and that creating it requires openssl.",
+      "Do not publish the HTTP port. Connect your own model in the app if you want text-to-SQL. Read LICENSE before you offer Chat2DB to anyone outside your organization."
+    ],
+    "facts": {
+      "repo": "https://github.com/OtterMind/Chat2DB",
+      "license": "a modified Apache License 2.0 for Community 5.3.0 and later (not OSI open source)",
+      "osi": false,
+      "stars": 28348,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "hypit": {
+    "sources": [
+      "https://github.com/hypit-ai/hypit",
+      "https://github.com/hypit-ai/hypit/blob/main/README.md",
+      "https://github.com/hypit-ai/hypit/blob/main/LICENSE",
+      "https://hypit.ai/"
+    ],
+    "long": [
+      "Hypit is a skill and local toolchain that lets a coding agent build video as an editable workflow. The README says you can drop in a reference video and the agent rebuilds footage, captions, B-roll and effects anchored to words, or you can start from a template or a description with no reference. Generation models are optional. A workflow can render captions, motion graphics and code-driven visuals without calling a model.",
+      "Install is npx skills add hypit-ai/hypit -g. The README says Hypit is free to use, with no Hypit seat price, per-render fee or added watermark, and that your coding agent and any model service have their own charges. The licence is a modified Apache-2.0. It allows your own organization's use, including commercial work you do for clients, and forbids a multi-tenant hosted service and selling the software or a derivative unless Hypit.AI authorizes it in writing. The homepage comparison we checked on 9 Nov 2026 marks Hypit's software cost as included and does not list the Starter, Pro or Ultra monthly prices an older directory line carried, so those dollar amounts are not repeated here."
+    ],
+    "who": "People who use Claude Code, Codex or another coding agent to produce short videos, and who will run Hypit themselves rather than resell it as a hosted service.",
+    "features": [
+      "Skill install: npx skills add hypit-ai/hypit -g. The agent checks for the Hypit executable on first use",
+      "SVML workflows: clone a reference video, start from a template, or describe the video",
+      "Optional models. The README says a workflow can compile without a generation API call",
+      "Pluggable pieces: swap a host, a product or a language and keep the rest of the composition",
+      "Modified Apache-2.0. No Hypit seat price or per-render fee, according to the README"
+    ],
+    "pros": [
+      "The software cost is zero in the README. You pay the model provider only if you call one.",
+      "The same composition can be re-run with a different host, script or language. The README's examples ship as source, not only as rendered files.",
+      "You can point the agent at HypiHub or at your own API or a local model."
+    ],
+    "cons": [
+      "The licence is not OSI Apache-2.0. Multi-tenant hosting and commercial redistribution need written permission from Hypit.AI.",
+      "You may not remove the Hypit name, logo or copyright from the CLI, run reports or other user-facing surfaces the licence lists.",
+      "Example videos in the README name specific models and a dollar cost for that example. Those costs are the maker's example runs, not a price list.",
+      "The agent and the model still bill you on their own accounts. Hypit does not include a model."
+    ],
+    "setup": [
+      "Run npx skills add hypit-ai/hypit -g in the environment your coding agent uses.",
+      "Start a session and use /hypit with either a path to a reference video or a description. The README says the project directory can be empty or existing.",
+      "On first use, let the agent install the Hypit executable if it is missing.",
+      "If you want generated footage, tell the agent which model service and docs to use. Read LICENSE before you offer Hypit as a service to other organizations."
+    ],
+    "facts": {
+      "repo": "https://github.com/hypit-ai/hypit",
+      "license": "a modified Apache License 2.0 (not an OSI licence)",
+      "osi": false,
+      "stars": 26753,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "cube": {
+    "sources": [
+      "https://github.com/cube-js/cube",
+      "https://github.com/cube-js/cube/blob/master/README.md",
+      "https://cube.dev/pricing",
+      "https://docs.cube.dev/"
+    ],
+    "long": [
+      "Cube Core is the open-source semantic layer in cube-js/cube. The README says you define metrics, dimensions, joins and access rules in code and expose them through SQL, REST and GraphQL to BI tools, applications or AI agents. It does not ship a UI. It works with SQL warehouses such as Snowflake, Databricks and BigQuery, engines such as Presto and Athena, and application databases such as Postgres, and it includes a relational cache.",
+      "The backend is Apache-2.0 and the client is MIT, according to the README. Cube, the commercial product, is a separate hosted analytics platform on the same model. Its pricing page on 9 Nov 2026 lists a free developer seat, Starter at $40 per developer a month, Premium at $80 per developer a month, and Enterprise as custom. A Premium viewer seat is $20 per user a month. Development mode on a self-hosted Cube Core turns off API authentication. The README says never to expose that mode to the internet."
+    ],
+    "who": "Data teams who want one metric definition for BI tools and for agents, either by running Cube Core themselves or by using the hosted Cube product.",
+    "features": [
+      "Code-defined semantic layer with SQL, REST and GraphQL APIs",
+      "SQL sources, including Snowflake, Databricks, BigQuery, Presto, Athena and Postgres",
+      "Built-in relational cache. Headless: no bundled BI UI in Cube Core",
+      "Docker quick start on ports 4000 and 15432",
+      "Apache-2.0 backend and MIT client. Hosted Cube is a separate commercial product"
+    ],
+    "pros": [
+      "A model built in Cube Core runs in the hosted product and the other way around, according to the README.",
+      "Agents and BI tools can share one definition instead of a copy in each tool.",
+      "The source licences for the client and the backend are OSI licences."
+    ],
+    "cons": [
+      "CUBEJS_DEV_MODE=true disables JWT checks on the REST and GraphQL APIs and serves the Playground with no authentication. The README says this is for a local machine only.",
+      "Cube Core has no workbook UI. Dashboards, Analytics Chat and managed deployment are the hosted Cube product.",
+      "Hosted seats are per developer. The pricing page bills self-serve customers monthly through Stripe.",
+      "The SQL API accepts any credentials when CUBEJS_SQL_PASSWORD is unset, which the README ties to development mode."
+    ],
+    "setup": [
+      "Install Docker. In an empty project folder, run the README's docker run of cubejs/cube with ports 4000 and 15432, a volume on /cube/conf, and CUBEJS_DEV_MODE=true only on your machine.",
+      "Open http://localhost:4000. Do not expose that development port. The README links the production configuration docs for a real deployment.",
+      "Define the data model in code. Point BI tools or agents at the SQL, REST or GraphQL API.",
+      "For the hosted product, read cube.dev/pricing. Starter is $40 per developer a month and Premium is $80, as listed on 9 Nov 2026. Cube Core itself stays the open-source repository."
+    ],
+    "pricing_v": {
+      "checked": "2026-11-09",
+      "src": "https://cube.dev/pricing",
+      "free": true,
+      "note": "Cube Core, the open-source semantic layer in this repository, is free to run yourself. The dollar amounts are the hosted Cube product on cube.dev/pricing. Premium also lists a Viewer seat at $20 per user a month.",
+      "tiers": [
+        [
+          "Cube Core",
+          "Free",
+          "Open-source semantic layer you run"
+        ],
+        [
+          "Cube Cloud Starter",
+          "$40/user/month",
+          "Hosted product, per developer"
+        ],
+        [
+          "Cube Cloud Premium",
+          "$80/user/month",
+          "Hosted product, per developer"
+        ],
+        [
+          "Cube Cloud Enterprise",
+          "Custom",
+          "Dedicated or bring-your-own-cloud options on the pricing page"
+        ]
+      ]
+    },
+    "facts": {
+      "repo": "https://github.com/cube-js/cube",
+      "license": "the Apache License 2.0 for the backend and the MIT License for the client",
+      "osi": true,
+      "stars": 21133,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "kortix-companyos": {
+    "sources": [
+      "https://github.com/kortix-ai/CompanyOS",
+      "https://github.com/kortix-ai/CompanyOS/blob/main/README.md",
+      "https://github.com/kortix-ai/CompanyOS/blob/main/LICENSE",
+      "https://kortix.com/docs/guide"
+    ],
+    "long": [
+      "Kortix CompanyOS is a cloud-native agent harness. The README says you write agents on pi, keep them in one git repo, and start them from schedules, signed webhooks, connector events, app events or team messages. Each session gets its own cloud computer that sleeps after it is idle and wakes with its history. A built-in agent, My Kortix, routes work. Changes that land on main go through a change request a person approves.",
+      "The README says agents can use more than 3,000 apps plus MCP, OpenAPI, GraphQL and raw HTTP, and that credentials stay on the server. You can run it on Kortix Cloud, in a VPC, or on your own network from the same images. The licence file is the Elastic License 2.0. That is not an OSI open-source licence: you may not offer the software to third parties as a hosted or managed service that exposes a substantial part of its features. The README still describes the project as open source. The licence text is the restriction that applies."
+    ],
+    "who": "Teams who want always-on agents in a repo they own, with a human approval before a change reaches main, and who have read the Elastic License before they host it for anyone else.",
+    "features": [
+      "Agents declared in a git repo, with kortix.yaml, skills and runtime config",
+      "Triggers from schedules, signed webhooks, connectors, app events and merged change requests",
+      "One cloud computer per session, plus an option to attach your own computer",
+      "Connectors the README counts as 3,000+ apps, with Allow, Ask or Block per tool",
+      "Elastic License 2.0. CLI, REST API, @kortix/sdk and a web, desktop and mobile client are named in the README"
+    ],
+    "pros": [
+      "The README says a person approves what reaches main, and that a filter in code can drop events before a model runs.",
+      "The same images run on Kortix Cloud, a VPC or an on-prem network.",
+      "Secrets are encrypted at rest with a key per project, according to the README."
+    ],
+    "cons": [
+      "Elastic License 2.0 forbids offering the software as a hosted or managed service. Read LICENSE before you resell access.",
+      "The 3,000+ app figure is the README's count. This listing did not re-count the connector catalog.",
+      "Models are separate. The README lists Kortix-managed models, your own keys, or a ChatGPT or Claude subscription, through the Kortix LLM gateway.",
+      "A sleeping computer is the idle behaviour the README describes, about 15 to 20 minutes after the last turn. It is not a machine that stays up with no idle timeout."
+    ],
+    "setup": [
+      "Install the CLI with the README's command, curl -fsSL https://kortix.com/install | bash.",
+      "Run kortix init to scaffold kortix.yaml, agents, skills and runtime config.",
+      "Run kortix ship to push the repo and bring it up in the cloud. kortix cr ls lists change requests. kortix chat talks to a session from the terminal.",
+      "Or sign up at kortix.com and create a project with no CLI. Read the Elastic License in the repository before you expose the software as a service."
+    ],
+    "facts": {
+      "repo": "https://github.com/kortix-ai/CompanyOS",
+      "license": "the Elastic License 2.0 (not an OSI licence)",
+      "osi": false,
+      "stars": 20592,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "toonflow-app": {
+    "sources": [
+      "https://github.com/HBAI-Ltd/Toonflow-app",
+      "https://github.com/HBAI-Ltd/Toonflow-app/blob/main/README.md",
+      "https://api.toonflow.net/toonflow/"
+    ],
+    "long": [
+      "Toonflow is an open-source AI workspace for short dramas, motion comics and short video. The README says it keeps the script, assets and video clips on one infinite canvas. You can run it on your own desktop, on Android, with Docker, or on a server. It connects external tools over MCP, has a plugin market, and lets you point text, image and video nodes at a third-party API, a local model, or a local ComfyUI workflow.",
+      "The current licence is MIT. The README's non-retroactive note says use before v1.0.8 stays under AGPL-3.0, and v1.0.8 through v1.1.8 stays under Apache-2.0 plus its extra terms. The interface lists 21 languages. The README says you still review and edit what the models produce, and that reference types, duration, resolution and audio depend on the model you configured. Third-party API calls can cost money. A local model or ComfyUI needs the hardware you supply. Example production costs in the README are for that example, not a price list."
+    ],
+    "who": "Creators who want a self-hosted canvas for AI short-form video, with their own model keys, rather than a hosted editor that stores the project for them.",
+    "features": [
+      "Infinite canvas for script, characters, scenes and video clips",
+      "Text, image and video nodes, plus a 3D director preview shown in the README screenshots",
+      "MCP connections, a plugin market, and open prompts, tools and A2A for custom agents",
+      "Desktop, Android, Docker and server installs. Projects stay on your machine or server",
+      "MIT license for the current release, with the older-version carve-out in the README"
+    ],
+    "pros": [
+      "You can self-host. The README says project files and media stay on your device or server.",
+      "Models are pluggable, including a local ComfyUI workflow through a custom provider.",
+      "The current code is MIT, so you can read and run it without a seat fee from Toonflow."
+    ],
+    "cons": [
+      "Model APIs can charge you. Local models still need your own GPU or ComfyUI setup.",
+      "Output quality, length and audio follow the model you picked. The README does not promise a fixed capability.",
+      "Older tags are not MIT. v1.0.8 through v1.1.8 stay on Apache-2.0 plus the extra terms the README names.",
+      "The README is primarily Chinese. The English description here follows that README's feature and licence sections."
+    ],
+    "setup": [
+      "Pick a client install, Docker, or a server build from section 4 of the README. Desktop builds are the path that does not need you to compile.",
+      "On first launch, configure a language-model and a media-model provider, or a local ComfyUI endpoint.",
+      "Write the script and shot list in text nodes, generate or import character and scene images, then generate video shots from those references.",
+      "Review the output before you download it. If you are on a tag older than the current MIT release, read the licence note in section 8 before you redistribute it."
+    ],
+    "facts": {
+      "repo": "https://github.com/HBAI-Ltd/Toonflow-app",
+      "license": "the MIT License for the current release",
+      "osi": true,
+      "stars": 19961,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "img2threejs": {
+    "sources": [
+      "https://github.com/img2threejs/img2threejs",
+      "https://github.com/img2threejs/img2threejs/blob/main/README.md",
+      "https://img2threejs.io/"
+    ],
+    "long": [
+      "img2threejs is an Apache-2.0 agent skill that takes one reference image and writes a THREE.Group factory in TypeScript. The README says the object is rebuilt from primitives, procedural shaders and generated geometry, with pivots, sockets and colliders so it can be animated. It runs under Hermes, Claude Code, Codex or OpenCode, and uses whatever image reading or browser tool that host already has.",
+      "The pipeline classifies the subject as object, character or hybrid, inventories small details, and walks passes from blockout to optimization. Deterministic Python checks gate the result. The honesty section says a single image cannot show hidden sides or guarantee exact geometry, that unseen faces are mirrored rather than invented with confidence, and that characters are stylized reconstructions, not photoreal likeness. Unity, Unreal, auto-rigging and a web UI are on the roadmap, not the current install."
+    ],
+    "who": "Developers who want a coding agent to turn one photo or concept image into Three.js code they can read, instead of a mesh file.",
+    "features": [
+      "One reference image in, a TypeScript THREE.Group factory out",
+      "Passes from blockout through structure, form, material, surface, lighting, interaction and optimization",
+      "Works with Hermes, Claude Code, Codex or OpenCode",
+      "Optional domain plugins. The README says not to install every plugin by default",
+      "Apache-2.0. Needs Node.js 18 or newer, Git, and Python 3.10 or newer"
+    ],
+    "pros": [
+      "The output is code in the repo, with a hierarchy meant for animation, not a baked mesh you cannot diff.",
+      "The README tells the agent to say when the image is not enough, instead of claiming a perfect match.",
+      "Python gates the build. The README says model tokens are spent on visual judgment and code, not on the checks."
+    ],
+    "cons": [
+      "One photo does not reveal the back of an object. The README says hidden sides are inferred by mirroring and may be approximate, stylized or low-poly.",
+      "Characters are stylized. A projection path for likeness is opt-in and still asks for more views when confidence is low.",
+      "Roadmap items such as Unity and Unreal exporters, auto-rigging and a web UI are not in the current quick start.",
+      "You bring the coding agent and its model. The skill does not include one."
+    ],
+    "setup": [
+      "Install Node.js 18 or newer, Git, and Python 3.10 or newer, and use Claude Code, Codex, OpenCode or Hermes.",
+      "Run npx --yes img2threejs@latest install, then npx --yes img2threejs@latest doctor. The README says managed means the agent has the skill.",
+      "Hermes also needs the symlink in the README into the active profile's skills directory. Restart the agent after installing.",
+      "Install only the plugins you need. Give the agent one reference image. Read the honesty section before you expect a photoreal person."
+    ],
+    "facts": {
+      "repo": "https://github.com/img2threejs/img2threejs",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 19844,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "iii": {
+    "sources": [
+      "https://github.com/iii-hq/iii",
+      "https://github.com/iii-hq/iii/blob/main/README.md",
+      "https://iii.dev/"
+    ],
+    "long": [
+      "iii is a runtime for composing workers in one live system. The README defines three primitives. Workers are processes that register triggers and functions. Triggers are calls, HTTP endpoints, cron, queues, state changes or stream events. Functions are named units of work such as content::classify. Adding a worker notifies the others, so they can call it immediately. The same catalog is what an agent uses when it needs a capability the system does not have yet.",
+      "The engine and the CLI are under the Elastic License 2.0. The SDKs, docs and website are Apache-2.0. Elastic License 2.0 is not an OSI open-source licence. SDKs exist for Node.js (iii-sdk), Python, Rust and Go. Agent skills for other harnesses install with npx skills add iii-hq/iii/skills. There is no single OSI licence for the whole repository."
+    ],
+    "who": "Platform engineers who want HTTP, cron, queues, state and agents on one catalog, and who can accept the Elastic License on the engine.",
+    "features": [
+      "Workers, triggers and functions as the three primitives",
+      "CLI: iii compose --namespace dev --up, and iii trigger to add a worker at runtime",
+      "SDKs for Node.js, Python, Rust and Go",
+      "A worker catalog at workers.iii.dev",
+      "Elastic License 2.0 on engine/ and the CLI. Apache-2.0 on sdk/, docs/ and website/"
+    ],
+    "pros": [
+      "A new queue, cron job or agent is the same kind of worker, declared in worker-compose.yaml.",
+      "The README says every call is traceable through the same system.",
+      "SDKs and docs are Apache-2.0 even though the engine is not."
+    ],
+    "cons": [
+      "The engine and CLI are Elastic License 2.0, so you cannot treat the whole repo as OSI open source.",
+      "Elastic License 2.0 limits offering the software as a hosted or managed service. Read engine/LICENSE before you do that.",
+      "Agent skills are automatic only in the iii harness. Other harnesses need a separate npx skills add.",
+      "The README does not list a hosted price. This page does not invent one."
+    ],
+    "setup": [
+      "Install the CLI with curl -fsSL https://install.iii.dev/iii/main/install.sh | sh.",
+      "Declare workers in worker-compose.yaml, or add one to a running daemon with iii trigger -n dev compose::add worker=queue.",
+      "Browse packages at workers.iii.dev. Use pnpm add iii-sdk, pip install iii-sdk, or the Go or Rust package named in the README.",
+      "On a harness that is not iii, run npx skills add iii-hq/iii/skills. Read the Elastic License on the engine before you offer iii as a service."
+    ],
+    "facts": {
+      "repo": "https://github.com/iii-hq/iii",
+      "license": "Elastic License 2.0 for the engine and CLI; Apache-2.0 for the SDKs, docs and website",
+      "osi": false,
+      "stars": 18876,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "windmill": {
+    "sources": [
+      "https://github.com/windmill-labs/windmill",
+      "https://github.com/windmill-labs/windmill/blob/main/README.md",
+      "https://www.windmill.dev/pricing",
+      "https://www.windmill.dev/docs/advanced/self_host"
+    ],
+    "long": [
+      "Windmill is a platform for scripts, flows, internal apps and AI agents. The README says you write a Python, TypeScript, Go or Bash script, Windmill turns the arguments into a form and an HTTP endpoint, and you chain scripts into a flow or build a UI on top. Schedules, webhooks, HTTP routes, Kafka, WebSockets and email can start a run. AI sessions build scripts, flows and apps in a workspace fork, with a diff to review before deploy.",
+      "The source you compile without the enterprise flag is AGPLv3. API clients and the OpenAPI spec are Apache-2.0. Community Edition images also include proprietary code. Using that edition internally or through its APIs is free inside the quotas in the software. Selling it as a managed service, wrapping it, or re-exposing it to your users needs a commercial licence, with iframed public apps excepted. The pricing page on 9 Nov 2026 lists the free self-hosted tier at $0 a month and Enterprise from $120 a month."
+    ],
+    "who": "Teams who want to self-host scripts and flows, let an AI session draft them, and still require a person to review before production.",
+    "features": [
+      "Scripts in Python, TypeScript, Go or Bash, with generated forms and HTTP endpoints",
+      "Flows, apps, schedules, webhooks and other triggers named in the README",
+      "AI sessions in a workspace fork, with protection rules that block a direct deploy",
+      "Docker Compose and Helm installs. Workers are sized in the README at about 1 vCPU and 1 to 2 GB RAM",
+      "AGPLv3 for a source build without the enterprise flag. Community Edition images include proprietary features"
+    ],
+    "pros": [
+      "The free self-hosted tier lists unlimited executions. The pricing page caps SSO at 10 users on that tier.",
+      "AI output is an ordinary script, flow or app and goes through the same review as handwritten code.",
+      "You can develop in the browser or sync a Git repo with the CLI and the VS Code extension."
+    ],
+    "cons": [
+      "Community Edition binaries are not pure AGPL. They include proprietary code. Reselling them as a managed service needs a commercial licence.",
+      "The project is not seeking outside features. The README says small, trivially verified pull requests are still accepted.",
+      "Enterprise SSO above the free cap, audit logs and SAML are paid features on the pricing page.",
+      "The Docker Compose quick start publishes a default login. Change it before anyone else can reach the instance."
+    ],
+    "setup": [
+      "For Docker Compose, download docker-compose.yml, Caddyfile and .env from the repository paths in the README, then run docker compose up -d.",
+      "Open http://localhost. The README's default login is admin@windmill.dev with password changeme. Change that password.",
+      "For Kubernetes, add the helm repo windmill-labs.github.io/windmill-helm-charts and install the chart. Set DATABASE_URL if you use an external Postgres.",
+      "Read the pricing page before you enable Enterprise features. The free tier is $0 a month. Enterprise starts at $120 a month, as listed on 9 Nov 2026."
+    ],
+    "pricing_v": {
+      "checked": "2026-11-09",
+      "src": "https://www.windmill.dev/pricing",
+      "free": true,
+      "note": "The same page also lists a $170 a month configuration for 1 builder, then $20 a month per additional builder and $10 a month per non-builder. Community Edition SSO is capped at 10 users.",
+      "tiers": [
+        [
+          "Free and open-source",
+          "$0/mo",
+          "Self-hosted, unlimited executions, max 10 SSO users"
+        ],
+        [
+          "Enterprise",
+          "from $120/mo",
+          "Audit logs, SAML, commercial licence and SLA on the pricing page"
+        ]
+      ]
+    },
+    "facts": {
+      "repo": "https://github.com/windmill-labs/windmill",
+      "license": "AGPLv3 for a source build without the enterprise flag; Community Edition images include proprietary code",
+      "osi": false,
+      "stars": 18323,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "a2ui": {
+    "sources": [
+      "https://github.com/a2ui-project/a2ui",
+      "https://github.com/a2ui-project/a2ui/blob/main/README.md",
+      "https://a2ui.org/"
+    ],
+    "long": [
+      "A2UI is an Apache-2.0 format and set of renderers for agent-generated interfaces. An agent sends a declarative JSON description of components and data. The client renders that JSON with its own catalog of widgets, such as Flutter, Angular, Lit, React, SwiftUI or Jetpack Compose. The README says the agent can only ask for components the client has already approved, so the payload is data rather than executable code.",
+      "The README recommends A2UI when the agent is remote or across a trust boundary, or when one agent should drive more than one client platform. It says a React-only chat that renders tool results as your own components may not need it. Renderers include @a2ui/react, @a2ui/angular and @a2ui/lit, plus a2ui_flutter. The quickstart is a restaurant-finder demo that needs Node.js 18 or newer, uv, and a Gemini API key."
+    ],
+    "who": "Developers whose agents must show forms, cards or dashboards inside an app they control, without letting the model send executable UI code.",
+    "features": [
+      "Declarative JSON for components and a data model, updated incrementally",
+      "Client-side catalogs. The agent cannot invent a widget the app did not register",
+      "Renderers for web frameworks and Flutter. The README also names SwiftUI and Jetpack Compose as targets",
+      "Transports the README names: A2A and AG-UI",
+      "Apache-2.0. A visual composer and a theater of streaming examples run in the browser with no install"
+    ],
+    "pros": [
+      "The client decides which components exist. A model cannot ship a new executable widget.",
+      "The same JSON can be rendered by different frameworks.",
+      "You can try the composer and the theater without cloning the repo."
+    ],
+    "cons": [
+      "You still build and trust the catalog. A2UI does not review a widget you registered yourself.",
+      "The restaurant-finder quickstart needs a Gemini API key and the uv package manager.",
+      "A single-platform React chat may not need the format. The README says so.",
+      "Host frameworks in the dependencies section are listed as web or Flutter today. Other platforms depend on the renderer you add."
+    ],
+    "setup": [
+      "For a client you already have, npm install the renderer (@a2ui/react, @a2ui/angular or @a2ui/lit) and follow the client setup guide on a2ui.org.",
+      "For Flutter, the README's command is flutter pub add a2ui_flutter a2ui_core.",
+      "For the full demo, clone a2ui-project/a2ui, install Node.js 18 or newer and uv, set GEMINI_API_KEY, and follow the quickstart linked from the README.",
+      "Register only components you trust. The agent can request those components and no others."
+    ],
+    "facts": {
+      "repo": "https://github.com/a2ui-project/a2ui",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 16999,
+      "checked": "2026-11-06"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "dagger": {
+    "sources": [
+      "https://github.com/dagger/dagger",
+      "https://github.com/dagger/dagger/blob/main/README.md",
+      "https://docs.dagger.io/",
+      "https://dagger.io/"
+    ],
+    "long": [
+      "Dagger is an Apache-2.0 engine for building, testing and shipping a codebase. The README says a pipeline runs on your laptop, in CI, or in the cloud, and that the only dependency is a Linux container runtime such as Docker. Functions are typed. SDKs are generated for Go, Python, TypeScript, PHP, Java, .NET, Elixir and Rust. Custom types can cross language and module boundaries.",
+      "Every operation is cached by its inputs, so a one-file change re-runs only what that change affects. Every operation emits an OpenTelemetry trace. The CLI includes a terminal UI, and traces can be exported to Jaeger, Honeycomb or another OTel backend. The README's install line for macOS is brew install dagger/tap/dagger. Further steps are in the quickstart at docs.dagger.io."
+    ],
+    "who": "Engineers who want one pipeline definition that behaves the same on a laptop and in CI, and who already have a container runtime.",
+    "features": [
+      "Typed API for containers, files, secrets, git repositories and network tunnels",
+      "SDKs in eight languages, generated from the API schema",
+      "Content-addressed cache shared by local runs and CI",
+      "OpenTelemetry traces, a CLI terminal UI, and export to an OTel backend",
+      "Apache-2.0. Runs locally, in CI, or in Dagger's cloud"
+    ],
+    "pros": [
+      "The same function runs wherever a Linux container runtime is available, including an AI sandbox the README names.",
+      "Caching is on by default. You do not write a cache key for each step.",
+      "Traces are part of the engine, not a separate agent you attach later."
+    ],
+    "cons": [
+      "You need a container runtime. macOS and Windows go through Docker Desktop or a similar product. There is no native Windows container path in the README.",
+      "The README does not list cloud prices. This page does not add any.",
+      "Host dependencies have to be declared. The README says they are explicit and strictly typed, so an undeclared tool on your laptop will not quietly exist in CI.",
+      "The quickstart lives in the docs, not in the short GitHub README."
+    ],
+    "setup": [
+      "Install a container runtime such as Docker.",
+      "On macOS, the README's install is brew install dagger/tap/dagger. Use the docs for other operating systems.",
+      "Follow the quickstart at docs.dagger.io/quickstart and write the pipeline in one of the eight SDKs.",
+      "Open the trace from the CLI when a run fails. Export OpenTelemetry if you already have Jaeger or Honeycomb."
+    ],
+    "facts": {
+      "repo": "https://github.com/dagger/dagger",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 16550,
+      "checked": "2026-10-30"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
+  },
+  "zvec": {
+    "sources": [
+      "https://github.com/alibaba/zvec",
+      "https://github.com/alibaba/zvec/blob/main/README.md",
+      "https://zvec.org/en/docs/db/quickstart/"
+    ],
+    "long": [
+      "Zvec is Alibaba's Apache-2.0 vector database that runs inside your process. The README says there is no separate server to deploy. It stores dense and sparse vectors, supports multi-vector queries, and names index types that cover memory and disk, including HNSW, IVF and DiskANN. It also has full-text search and a hybrid query that combines vector similarity, keywords and structured filters. A write-ahead log is how it keeps data across a crash. Several processes may read one collection. Writes are single-process.",
+      "Official SDKs in the README are Python (pip install zvec, 64-bit Python 3.10 through 3.14), Node.js (@zvec/zvec), Go, Rust, Java 8 or newer, and Dart or Flutter. Platforms listed are Linux, macOS, Windows, Android and iOS. The v0.8.0 notes add Intel Mac and Windows ARM64 builds and extend DiskANN to Windows, Android and iOS. Related tools, zvec-grep and Zvec Studio, are separate repositories. The README's line about searching billions of vectors in milliseconds is the project's description, not a benchmark AgentScout re-ran."
+    ],
+    "who": "Developers embedding similarity search in an application, a notebook, a CLI or an on-device agent, who want the index in-process instead of a vector service to operate.",
+    "features": [
+      "In-process library. No server process in the default install",
+      "Dense and sparse vectors, HNSW, IVF, DiskANN, full-text search and hybrid queries",
+      "Write-ahead log, multi-process readers, single-process writer",
+      "Python, Node.js, Go, Rust, Java and Dart or Flutter SDKs",
+      "Apache-2.0. Linux, macOS, Windows, Android and iOS builds"
+    ],
+    "pros": [
+      "Install and call it from the application. The README's Python quick start creates a collection, inserts documents and searches.",
+      "Full-text and vector conditions can be one query.",
+      "The licence is Apache-2.0, including the SDKs the README points at."
+    ],
+    "cons": [
+      "Writes are exclusive to one process. Concurrent writers are not the documented model.",
+      "Uniform quantization can cut recall. The v0.8.0 notes say a shared min/max range can raise quantization error.",
+      "Chinese full-text search in v0.8.0 embeds a Jieba dictionary. You do not configure that path, but tokenization still follows that dictionary.",
+      "zvec-grep and Zvec Studio are not part of this repository."
+    ],
+    "setup": [
+      "Install a SDK. For Python, use 64-bit Python 3.10 through 3.14 and pip install zvec. Node is npm install @zvec/zvec. Java needs Java 8 or newer.",
+      "Follow the quickstart at zvec.org to define a collection, insert vectors and search.",
+      "Pick an index from the vector-index docs. DiskANN is the disk-scale option the README names.",
+      "If you need keyword search over a repo, look at zvec-grep separately. It is not installed with the database library."
+    ],
+    "facts": {
+      "repo": "https://github.com/alibaba/zvec",
+      "license": "the Apache License 2.0",
+      "osi": true,
+      "stars": 16219,
+      "checked": "2026-11-09"
+    },
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "show_alts": true
   }
 }

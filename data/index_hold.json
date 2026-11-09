@@ -1,0 +1,43 @@
+{
+  "purpose": "Enriched tool pages stay noindex until the build's America/Los_Angeles date reaches the batch date. The build releases at most one batch per day, oldest first, and never more than five slugs. Progress is recorded in data/index_admit.json (hold_released_slugs, hold_release_day) so a second build the same day does not release the next batch.",
+  "checked": "2026-11-09",
+  "indexable_now": [
+    "ponytail",
+    "ui-ux-pro-max",
+    "caveman",
+    "agent-skills-addy-osmani",
+    "taste-skill"
+  ],
+  "releases": [
+    {
+      "date": "2026-11-10",
+      "slugs": [
+        "impeccable",
+        "archify",
+        "oh-my-openagent-omo",
+        "claude-code-templates",
+        "chat2db"
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "slugs": [
+        "hypit",
+        "cube",
+        "kortix-companyos",
+        "toonflow-app",
+        "img2threejs"
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "slugs": [
+        "iii",
+        "windmill",
+        "a2ui",
+        "dagger",
+        "zvec"
+      ]
+    }
+  ]
+}
