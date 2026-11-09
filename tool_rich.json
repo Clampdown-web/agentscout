@@ -33149,5 +33149,204 @@
     "cite": true,
     "updated": "2026-11-09",
     "show_alts": true
+  },
+  "filesystem-mcp-server": {
+    "kind": "lite",
+    "src_kind": "README",
+    "cite": true,
+    "updated": "2026-11-09",
+    "sources": [
+      "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "https://github.com/modelcontextprotocol/servers/blob/main/src/filesystem/README.md",
+      "https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem",
+      "https://modelcontextprotocol.io/examples"
+    ],
+    "long": [
+      "The Filesystem MCP Server is the official reference server from the Model Context Protocol project for giving an AI agent file access on your own machine. It is a Node.js server that runs locally over stdio, published on npm as @modelcontextprotocol/server-filesystem (version 2.2.0 when we checked on Nov 9, 2026) and as the mcp/filesystem Docker image. It can only touch the allowed directories you pass on the command line, and every requested path is resolved and checked against them, including paths reached through symlinks.",
+      "The README lists tools to read text files, media files and several files at once; write, append to and edit files, with a dry-run diff preview for edit_file; create and list directories, with optional file sizes; move, rename and copy files; find files by name with glob patterns; return a JSON directory tree; read file metadata; and show the allowed directories. Starting it with --read-only registers only the read and list tools. Clients on the 2025-era protocol can swap the allowed directories through MCP Roots, which is deprecated in the 2026-07-28 protocol, and --confine-roots keeps those Roots inside the command-line folders. The MCP project describes the servers in this repository as reference implementations and educational examples rather than production-ready solutions, so check its access rules against your own security needs."
+    ],
+    "who": "Developers who want Claude Desktop, Claude Code, Cursor, VS Code or another MCP client to read and edit files in a few chosen project folders, with a hard limit on what the agent can reach.",
+    "features": [
+      "Read text, media and multiple files; write, append and edit files with a dry-run diff preview",
+      "Create, list, move, rename and copy files and folders; glob search by file name; JSON directory tree; file metadata",
+      "Access limited to the allowed directories given on the command line, checked on every path including symlinks",
+      "--read-only mode serves only the read and list tools; --confine-roots keeps client Roots inside your folders",
+      "Install with npx -y @modelcontextprotocol/server-filesystem <folders> (Node.js 24 or later) or the mcp/filesystem Docker image with folders mounted under /projects",
+      "Tool annotations mark read-only, idempotent and destructive tools for clients"
+    ],
+    "pros": [
+      "Maintained in the official modelcontextprotocol/servers repository and published on npm and Docker Hub.",
+      "The agent can only reach the folders you pass in, and a read-only mode removes every write tool.",
+      "edit_file can preview a git-style diff before it changes anything."
+    ],
+    "cons": [
+      "The MCP project calls its reference servers educational examples, not production-ready solutions.",
+      "write_file overwrites in place, and the README warns that hard-linked files can change outside the allowed folders.",
+      "search_files matches file names only, not file contents, and large trees stop at 100,000 entries."
+    ],
+    "setup": [
+      "Install Node.js 24 or later, or use Docker.",
+      "Add the server to your MCP client config with npx -y @modelcontextprotocol/server-filesystem followed by each folder the agent may use. With Docker, run mcp/filesystem and bind-mount the folders under /projects, adding ro for read-only mounts.",
+      "Add --read-only if the agent should only read and list files.",
+      "Restart the client and ask it to call list_allowed_directories to confirm which folders it can reach."
+    ],
+    "mcp": {
+      "endpoint": "Local stdio: npx -y @modelcontextprotocol/server-filesystem /path/to/allowed/dir",
+      "transport": "stdio (runs on your machine; Docker image mcp/filesystem)",
+      "auth": "None: access is limited to the allowed directories you pass in",
+      "registry": "io.github.modelcontextprotocol/server-filesystem",
+      "tools": [
+        [
+          "read_file",
+          "Deprecated alias of read_text_file, still listed by version 2.2.0."
+        ],
+        [
+          "read_text_file",
+          "Read a file as UTF-8 text, optionally only the first or last N lines."
+        ],
+        [
+          "read_media_file",
+          "Read an image, audio or other binary file as base64 with its MIME type."
+        ],
+        [
+          "read_multiple_files",
+          "Read several files at once; one failed read does not stop the rest."
+        ],
+        [
+          "write_file",
+          "Create a file or overwrite an existing one."
+        ],
+        [
+          "append_file",
+          "Append text to the end of a file, creating it if needed."
+        ],
+        [
+          "edit_file",
+          "Make find-and-replace edits, with a dry-run mode that returns a git-style diff."
+        ],
+        [
+          "create_directory",
+          "Create a directory, including parent directories."
+        ],
+        [
+          "list_directory",
+          "List a directory's entries with [FILE] or [DIR] prefixes."
+        ],
+        [
+          "list_directory_with_sizes",
+          "List a directory with file sizes, sorted by name or size."
+        ],
+        [
+          "move_file",
+          "Move or rename a file or directory; fails if the destination exists."
+        ],
+        [
+          "copy_file",
+          "Copy one file to a new path; never overwrites."
+        ],
+        [
+          "search_files",
+          "Find files and folders by name with glob patterns (not by content)."
+        ],
+        [
+          "directory_tree",
+          "Return a recursive JSON tree of a directory, with optional depth."
+        ],
+        [
+          "get_file_info",
+          "Get size, timestamps, type, permissions and hard-link count."
+        ],
+        [
+          "list_allowed_directories",
+          "Show the directories the server is allowed to access."
+        ]
+      ],
+      "config": "{\"mcpServers\": {\"filesystem\": {\"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"/path/to/allowed/dir\"]}}}",
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+    },
+    "faq": [
+      [
+        "Can the Filesystem MCP Server access my whole computer?",
+        "No. It only works inside the allowed directories you pass when it starts, and the list_allowed_directories tool shows them. Clients on the older 2025-era protocol can replace that list through MCP Roots unless you start the server with --confine-roots."
+      ],
+      [
+        "Can I make the Filesystem MCP Server read-only?",
+        "Yes. Start it with --read-only and it registers only the tools that read and list files, so write_file, edit_file and the other write tools are not available. With Docker you can also mount folders with the ro flag."
+      ]
+    ],
+    "facts": {
+      "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "checked": "2026-11-09",
+      "license": "MIT, moving to Apache-2.0 for new contributions",
+      "osi": true
+    }
+  },
+  "folklore-clinical-variant-interpretation-mcp": {
+    "kind": "lite",
+    "src_kind": "site",
+    "updated": "2026-11-09",
+    "sources": [
+      "https://folklore.helena.bio/integrations/mcp",
+      "https://folklore.helena.bio/.well-known/mcp/server-card.json",
+      "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.helena-bioinformatics%2Ffolklore&version=latest"
+    ],
+    "long": [
+      "Folklore MCP 2.0.0 by Helena Bioinformatics provides ACMG/AMP germline variant classification, gene profiles, disease associations and literature through 11 tools (10 scientific; separate opt-in support_helena). The public MCP is free, with no account or API key. Public data only; automated evidence requires professional review and is not diagnosis or treatment."
+    ],
+    "who": "Builders and genetics teams who want an MCP client to look up germline variant classifications, gene profiles, gene-disease associations and literature from public data, with professional review of the output.",
+    "features": [],
+    "mcp": {
+      "endpoint": "https://api.helena.bio/folklore/v1/mcp",
+      "transport": "Streamable HTTP (remote)",
+      "auth": "None for the 11 public tools; a Folklore API key adds 18 case-analysis tools at the same endpoint",
+      "registry": "io.github.helena-bioinformatics/folklore",
+      "tools": [
+        [
+          "classify_germline_variant",
+          "Classify one GRCh38 germline SNV or small indel under ACMG/AMP."
+        ],
+        [
+          "search_variant_literature",
+          "Find publications that mention a germline variant."
+        ],
+        [
+          "get_publication_details",
+          "Read one PubMed article's details by PMID."
+        ],
+        [
+          "search_literature_corpus",
+          "Search the genetics literature corpus by question or identifier."
+        ],
+        [
+          "support_helena",
+          "Information about Helena Good (separate, opt-in)."
+        ],
+        [
+          "get_gene_disease_associations",
+          "ClinGen gene-disease validity for a gene symbol or HGNC ID."
+        ],
+        [
+          "search_disease_genes",
+          "Genes linked to a disease name or MONDO ID."
+        ],
+        [
+          "resolve_gene",
+          "Resolve a gene symbol, alias or identifier to an HGNC gene."
+        ],
+        [
+          "get_gene_profile",
+          "Read a resolved gene's profile."
+        ],
+        [
+          "get_gene_section",
+          "Page through one section of a gene profile."
+        ],
+        [
+          "search_gene_literature",
+          "Live publication search for a resolved gene."
+        ]
+      ],
+      "docs": "https://folklore.helena.bio/integrations/mcp"
+    }
   }
 }

@@ -57795,14 +57795,14 @@
   {
     "name": "Folklore Clinical Variant Interpretation MCP",
     "url": "https://folklore.helena.bio/integrations/mcp",
-    "description": "Folklore MCP 1.7.0 by Helena Bioinformatics provides ACMG/AMP germline variant classification, gene profiles, disease associations and literature through 11 tools (10 scientific; separate opt-in support_helena). The public MCP is free, with no account or API key. Public data only; automated evidence requires professional review and is not diagnosis or treatment.",
+    "description": "Folklore MCP 2.0.0 by Helena Bioinformatics provides ACMG/AMP germline variant classification, gene profiles, disease associations and literature through 11 tools (10 scientific; separate opt-in support_helena). The public MCP is free, with no account or API key. Public data only; automated evidence requires professional review and is not diagnosis or treatment.",
     "category": "MCP servers",
     "pricing": "Free",
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
     "new": true,
-    "verified": "2026-11-05",
+    "verified": "2026-11-09",
     "added": "2026-11-05",
     "source": "Submission",
     "pricing_detail": "",
@@ -62420,5 +62420,30 @@
     "id": 2443,
     "slug": "novera",
     "logo": "assets/logos/novera.png"
+  },
+  {
+    "name": "Filesystem MCP Server",
+    "url": "https://modelcontextprotocol.io/examples",
+    "description": "The official Filesystem MCP Server from the Model Context Protocol project gives Claude, Cursor, VS Code and other MCP clients sandboxed read, write, edit, search and move access to only the folders you allow, installed with npx @modelcontextprotocol/server-filesystem or the mcp/filesystem Docker image.",
+    "category": "MCP servers",
+    "pricing": "Open source",
+    "maturity": "Mature",
+    "audience": "builders",
+    "featured": false,
+    "new": true,
+    "verified": "2026-11-09",
+    "added": "2026-11-09",
+    "source": "GitHub",
+    "pricing_detail": "Free and open source (MIT, moving to Apache-2.0 for new contributions)",
+    "use_cases": [
+      "research the web",
+      "connect tools via MCP",
+      "run code safely"
+    ],
+    "website": "https://modelcontextprotocol.io/examples",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "id": 2444,
+    "slug": "filesystem-mcp-server",
+    "logo": "assets/logos/filesystem-mcp-server.png"
   }
 ]

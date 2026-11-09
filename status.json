@@ -1,16 +1,16 @@
 {
  "catalog": {
-  "mcp_servers": 323,
+  "mcp_servers": 324,
   "live": 323,
   "down": 0,
-  "not_yet_checked": 0,
+  "not_yet_checked": 1,
   "directory_last_checked": "2026-11-09",
   "mcp_last_checked": "2026-11-09 07:21",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-09",
-    "note": "323 live, 0 down",
+    "note": "323 live, 0 down, 1 not yet checked",
     "time": "07:21"
    },
    {
@@ -1410,6 +1410,12 @@
      "time": "07:21"
     }
    ]
+  },
+  {
+   "slug": "filesystem-mcp-server",
+   "name": "Filesystem MCP Server",
+   "page": "https://agentscouthq.com/tools/filesystem-mcp-server.html",
+   "status": "not yet checked"
   },
   {
    "slug": "firecrawl-mcp-server",
