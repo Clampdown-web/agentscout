@@ -12,7 +12,37 @@ CSS = """<style id="bs-css">
 .bs-builtby img.aswm{height:1.38em;vertical-align:-.34em;margin:0 -.35em 0 .08em}
 .bs-hero{text-align:center}
 .bs-compat-pill{justify-content:center;text-align:center}
-.bs-hero h1{margin:0 auto 10px;font-size:clamp(24px,3.6vw,34px);line-height:1.22;color:#fff;text-align:center;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
+.bs-hero h2{margin:0 auto 10px;font-size:clamp(24px,3.6vw,34px);line-height:1.22;color:#fff;text-align:center;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
+.bs-lead{margin:4px 0 18px;text-align:left}
+.bs-lead h1{margin:0 0 8px;font-size:clamp(28px,8vw,40px);line-height:1.12;color:#fff;letter-spacing:-.03em;text-align:left;display:block}
+.bs-lead p{margin:0;max-width:38rem;color:#d6d3d1;font-size:16px;line-height:1.5;text-align:left;padding:0}
+.bs-launch{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0 0 16px;padding:14px 16px;border-radius:14px;border:1px dashed rgba(255,255,255,.28);background:rgba(255,255,255,.03)}
+.bs-launch-label{margin:0;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#a3e635}
+.bs-launch-code{min-height:44px;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#1c1f27;color:#a1a1aa;font:inherit;font-weight:700;cursor:not-allowed}
+.bs-launch-code:disabled{opacity:.72}
+.bs-launch-note{margin:0;color:#a1a1aa;font-size:14px;line-height:1.45}
+.bs-pick-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin:0 0 16px}
+.bs-pick{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:20px;border-radius:16px;background:#12141a;border:1px solid rgba(163,230,53,.38);min-width:0;box-sizing:border-box;text-align:left}
+.bs-pick-featured{border:2px solid #10b981;box-shadow:0 0 0 1px rgba(16,185,129,.28),0 16px 36px rgba(0,0,0,.35)}
+.bs-pick-kicker{margin:0;font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#a3e635}
+.bs-pick h2{margin:0;font-size:22px;line-height:1.25;color:#fff;text-align:left}
+.bs-pick-price{margin:0;font-size:40px;font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1}
+.bs-pick-price small{display:block;margin:6px 0 0;font-size:13px;font-weight:650;color:#d6d3d1;letter-spacing:0}
+.bs-pick p{margin:0;color:#d6d3d1;font-size:15px;line-height:1.5;text-align:left;padding:0}
+.bs-pick .bs-btn{width:100%;margin-top:auto;min-height:48px;font-size:15px;flex:0 0 auto}
+.bs-pick-buy{background:#a3e635;color:#081202}
+.bs-pick-featured .bs-pick-buy{background:#34d399;color:#031811}
+.bs-all{margin:0 0 28px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#101218}
+.bs-all>summary{cursor:pointer;min-height:52px;padding:16px;font-size:16px;font-weight:800;color:#fff;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bs-all>summary::-webkit-details-marker{display:none}
+.bs-all>summary::after{content:"Show";font-size:13px;font-weight:800;color:#052e16;background:#a3e635;border-radius:999px;padding:6px 12px;flex:0 0 auto}
+.bs-all[open]>summary::after{content:"Hide"}
+.bs-all>summary:focus-visible{outline:2px solid #a3e635;outline-offset:3px}
+.bs-all-hint{display:block;margin-top:4px;font-size:13px;font-weight:650;color:#a1a1aa;letter-spacing:0;text-transform:none}
+.bs-all-body{padding:4px 16px 16px}
+.bs-all:not([open]) > .bs-all-body{display:none}
+@media(min-width:840px){.bs-pick-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}}
+@media(prefers-reduced-motion:reduce){.bs-pick .bs-btn:hover{transform:none}}
 .bs-hero p{margin:0 auto 14px;font-size:15px;line-height:1.6;color:#e7e5e4;max-width:860px;text-align:center;padding:0 10px;box-sizing:border-box}
 .bs-hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center}
 .bs-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#f5f5f4;text-decoration:none}
@@ -80,7 +110,32 @@ JS = """<script>
     });
   });
 })();
+document.addEventListener("click", function (ev) {
+  var a = ev.target && ev.target.closest && ev.target.closest('a[href*="buy.stripe.com/"]');
+  if (!a || typeof window.gtag !== "function") return;
+  var href = String(a.href || "").split("?")[0].replace(/\\/$/, "");
+  var known = {
+    "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09": ["as-pack-1", 35],
+    "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08": ["as-bot-bundle-149", 149],
+    "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d": ["as-pack-25", 349],
+    "https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03": ["as-bot-ops-39", 39],
+    "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05": ["as-bot-seo-aeo-59", 59],
+    "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06": ["as-bot-market-intel-59", 59],
+    "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07": ["as-bot-ceo-69", 69],
+    "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a": ["as-pack-5", 119],
+    "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b": ["as-pack-10", 199],
+    "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c": ["as-pack-20", 299]
+  };
+  var row = known[href] || null;
+  var id = a.getAttribute("data-product") || (row && row[0]) || "";
+  var price = a.getAttribute("data-price");
+  if (price == null || price === "") price = row ? row[1] : "";
+  if (!id || price === "" || price == null) return;
+  window.gtag("event", "store_buy_click", {product_id: id, price: Number(price), transport_type: "beacon"});
+}, true);
 </script>"""
+
+LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section><!-- TODO(owner): No Stripe coupon or promotion code exists in this repo. Create the coupon in Stripe, then replace this disabled placeholder with the real promotion code and prefilled checkout links. Do not invent a percent off or a strikethrough price. --><div class="bs-launch" role="group" aria-labelledby="bs-launch-label"><p id="bs-launch-label" class="bs-launch-label">Launch discount</p><button type="button" class="bs-launch-code" disabled aria-disabled="true">Not available yet</button><p class="bs-launch-note">Checkout still charges the listed price. This site has no Stripe coupon to apply.</p></div><div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Best value</p><h2>Full 4-Bot Bundle</h2><p class="bs-pick-price">$149 <small>one time</small></p><p>Operations, SEO, market intel, and the CEO coordinator together. Bought separately those four list at $226.</p><a class="bs-btn bs-pick-buy" data-product="as-bot-bundle-149" data-price="149" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer">Buy the 4-bot bundle — $149</a></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a></article></div>"""
 
 def pages(t):
     os.makedirs("bot-store", exist_ok=True)
@@ -93,9 +148,11 @@ def pages(t):
     body = (
         f'{CSS}'
         f'<div class="crumb"><a href="../index.html">AgentScout</a> / Bot Store</div>'
+        f'{LEAD}'
+        f'<details class="bs-all" id="see-all"><summary><span>See all products<span class="bs-all-hint">Flagship bots, 25 role packs, video, and FAQ</span></span></summary><div class="bs-all-body">'
         f'<section class="bs-hero">'
         f'<span class="bs-compat-pill">⚡ Built Natively for Grok Bot · Also Compatible with Claude Code, Cursor &amp; OpenAI Codex</span>'
-        f'<h1>AgentScout Bot Store: Pre-Trained AI Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h1>'
+        f'<h2>AgentScout Bot Store: Pre-Trained AI Bots built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h2>'
         f'<p>General-purpose bots for running your own SaaS or online business. Set <code>{{{{YOUR_COMPANY}}}}</code> and <code>{{{{YOUR_DOMAIN}}}}</code>, then use them for uptime and inbox monitoring, technical SEO and Core Web Vitals auditing, competitor and launch tracking, and executive team coordination. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex)</b>: scheduled routines, a shared <code>/workspace/handoff/</code> folder, and a 4-bot <code>Work Chat</code> room. Every ZIP ships <code>SYSTEM.md</code> role prompts, <code>SKILL.md</code> playbooks, standalone Python 3 scripts, <code>mcp.json</code>, and <code>README-QUICKSTART.md</code>.</p>'
         f'<div class="bs-hero-badges">'
         f'<a class="bs-badge" href="#bot-packages" style="border-color:#a3e635;color:#ecfccb">🟢 $39 / 🟡 $59 / 🟠 $59 / 🔴 $69 Individual Bots</a>'
@@ -222,7 +279,7 @@ def pages(t):
         f'<div class="bs-faq-item"><h3>3. Instant Delivery + Single-Organization Commercial License</h3><p>After Stripe Checkout (or X Money payment to <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>), you receive the complete ZIP package with a Single-Organization Commercial License (<code>LICENSE.txt</code>) and a cryptographic per-buyer order watermark so your whole internal team can run and customize the bots.</p></div>'
         f'<div class="bs-faq-item"><h3>4. Free Community Templates vs. Directory Listing Boosts</h3><p>Looking for free starter prompts? Explore <a href="../bot-templates/#bt-featured">{n_bt} free community bot templates</a>. Looking to list or feature your AI software product in the AgentScout directory instead? See our <a href="../sponsor.html#packages">4 Directory Listing Packages ($0 / $15 / $49 / $99)</a>.</p></div>'
         f'</div>'
-        f'</section>{JS}'
+        f'</section></div></details>{JS}'
     )
 
     ld = {
