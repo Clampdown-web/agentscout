@@ -946,3 +946,7 @@ footer.footcols .footbase p{margin:8px 0 0}
 footer.footcols .footmeta{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center}
 footer.footcols .footmeta a,footer.footcols .footmeta span{color:var(--muted);min-height:36px;display:inline-flex;align-items:center}
 @media(min-width:900px){footer.footcols .footgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 24px}}
+footer.footcols .footpop{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:12px 0;border-top:1px solid var(--line);max-width:100%;box-sizing:border-box}
+footer.footcols .footpop-label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:650;margin:0 4px 0 0}
+footer.footcols .footpop a{display:inline-flex;align-items:center;min-height:44px;color:var(--text);font-size:14px;font-weight:500;text-decoration:none}
+footer.footcols .footpop a:hover{color:var(--accent)}

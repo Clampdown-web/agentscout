@@ -349,7 +349,7 @@ import build_og; build_og.run(t)  # per-page share images (Oct 18 2026)
 build_logocheck.listings_gate()  # stop the build if any tool link in a listing lacks its logo (Oct 18 2026)
 import build_lighten; build_lighten.run(t)  # lighter leaderboard, writing-code and mcp-servers pages (Oct 22 2026)
 import build_fonts; build_fonts.run()  # self-hosted Inter on every page (idempotent)
-import build_intlinks; build_intlinks.run(t)  # Popular lists internal links on home/hub/top best pages (owner-approved Oct 22 2026)
+import build_intlinks; build_intlinks.run(t)  # Popular lists chips on hubs + footer line site-wide (home pills removed Nov 9 2026)
 import build_fix1022; build_fix1022.run(t)  # category options in HTML, agent.json copy, lighter free-tools/new pages (Oct 22 2026)
 import build_aeo as _baeo; _baeo.sync_entity_schema()
 build_sponsor.page(t)  # refresh with final sitemap.xml count
