@@ -915,7 +915,8 @@ nav.sitenav .navpanel .npico,nav.sitenav .navpanel .mcpico{width:16px;height:16p
   nav.sitenav .nav-submit>summary::after{border-color:currentColor}
 }
 @media(min-width:1180px){
-  nav.sitenav .desk-store{display:inline-flex}
+  nav.sitenav .desk-store{display:inline-flex;margin-left:auto}
+  nav.sitenav .navlinks{margin-left:8px}
   nav.sitenav .navgroup>summary{padding:0 10px;font-size:14px}
 }
 .quiet-feature{margin:4px 0 18px;font-size:14px;color:var(--muted)}
