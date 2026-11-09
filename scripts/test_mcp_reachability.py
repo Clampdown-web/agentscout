@@ -20,8 +20,8 @@ atexit._clear()  # importing the builders registers site-wide exit hooks; tests 
 
 
 def _visible(html):
-    html = re.sub(r"(?is)<script\b.*?</script>", " ", html)
-    html = re.sub(r"(?is)<style\b.*?</style>", " ", html)
+    html = re.sub(r"(?is)<script\b.*?</script\b[^>]*>", " ", html)
+    html = re.sub(r"(?is)<style\b.*?</style\b[^>]*>", " ", html)
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", html))
 
 
