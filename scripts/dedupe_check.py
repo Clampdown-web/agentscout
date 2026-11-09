@@ -11,7 +11,9 @@ def repo_of(x):
   out=set()
   for u in (x.get('github'),x.get('repo'),x.get('url')):
     if u and ('github.com' in u or u.count('/')==1 and '.' not in u.split('/')[0]):
-      out.add('/'.join(u.lower().replace('https://github.com/','').strip('/').split('/')[:2]))
+      p=u.lower().replace('https://github.com/','').strip('/').split('/')
+      # A monorepo subfolder (owner/repo/tree/<branch>/<path>) is its own package, e.g. the official MCP reference servers
+      out.add('/'.join(p if len(p)>4 and p[2]=='tree' else p[:2]))
   return out
 def keys(t):
   K={"name":set(),"domain":set(),"repo":set()}

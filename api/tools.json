@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-09T17:42:12Z",
- "updated": "2026-11-09T17:42:12Z",
+ "generated": "2026-11-09T21:20:13Z",
+ "updated": "2026-11-09T21:20:13Z",
  "last_checked": "2026-11-09",
- "count": 2407,
- "total_tools": 2407,
+ "count": 2408,
+ "total_tools": 2408,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -89577,7 +89577,8 @@
    "key_features": [
     "Paid",
     "Active",
-    "1 GitHub stars"
+    "1 GitHub stars",
+    "Make music"
    ],
    "pricing": "Paid",
    "price_tag": "paid",
@@ -89600,7 +89601,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "video generation"
+    "make music"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/popnow.png",
@@ -93864,7 +93865,7 @@
    "website": "https://folklore.helena.bio/integrations/mcp",
    "github": "",
    "category": "MCP servers",
-   "description": "Folklore MCP 1.7.0 by Helena Bioinformatics provides ACMG/AMP germline variant classification, gene profiles, disease associations and literature through 11 tools (10 scientific; separate opt-in support_helena). The public MCP is free, with no account or API key. Public data only; automated evidence requires professional review and is not diagnosis or treatment.",
+   "description": "Folklore MCP 2.0.0 by Helena Bioinformatics provides ACMG/AMP germline variant classification, gene profiles, disease associations and literature through 11 tools (10 scientific; separate opt-in support_helena). The public MCP is free, with no account or API key. Public data only; automated evidence requires professional review and is not diagnosis or treatment.",
    "key_features": [
     "Free",
     "Active",
@@ -101825,6 +101826,53 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/novera.png",
    "page": "https://agentscouthq.com/tools/novera.html"
+  },
+  {
+   "name": "Filesystem MCP Server",
+   "slug": "filesystem-mcp-server",
+   "url": "https://modelcontextprotocol.io/examples",
+   "website": "https://modelcontextprotocol.io/examples",
+   "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+   "category": "MCP servers",
+   "description": "The official Filesystem MCP Server from the Model Context Protocol project gives Claude, Cursor, VS Code and other MCP clients sandboxed read, write, edit, search and move access to only the folders you allow, installed with npx @modelcontextprotocol/server-filesystem or the mcp/filesystem Docker image.",
+   "key_features": [
+    "Free and open source (MIT, moving to Apache-2.0 for new contributions)",
+    "Mature",
+    "Research the web",
+    "Connect tools via mcp",
+    "Run code safely"
+   ],
+   "pricing": "Free and open source (MIT, moving to Apache-2.0 for new contributions)",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "media",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/filesystem-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/filesystem-mcp-server.html"
   }
  ]
 }

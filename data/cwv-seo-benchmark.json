@@ -11,7 +11,7 @@
   },
   "scope": {
     "artifact_date": "2026-11-09",
-    "artifact_tools": 2407
+    "artifact_tools": 2408
   },
   "subject": "current-live",
   "note": "https://agentscouthq.com measured 2026-11-09 before this push with headless Chrome, cache disabled, wait=load (second run; the first run ~2 min earlier read homepage TTFB 1113 ms / LCP 1568 ms, kept at /tmp/cwv1109/cwv-live-run1.json). This is production main efea6f66e4 (2,366-tool catalog), not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
