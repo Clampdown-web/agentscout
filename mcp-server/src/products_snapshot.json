@@ -28,7 +28,7 @@
       "billing_model": "free",
       "availability": "in_stock",
       "badge": "Free Forever",
-      "turnaround": "5 business days standard review queue",
+      "turnaround": "5-day review",
       "checkout_url": "https://agentscouthq.com/submit.html#free-form",
       "page_url": "https://agentscouthq.com/submit.html",
       "description": "Permanent indexed tool page (/tools/<slug>.html) with SoftwareApplication JSON-LD schema, daily automated HTTP link checking, and inclusion in llms.txt, api/tools.json, and the AgentScout MCP server (com.agentscouthq/directory).",
@@ -36,12 +36,12 @@
         "Permanent indexed /tools/<slug>.html listing page",
         "SoftwareApplication JSON-LD structured data",
         "Included in llms.txt, api/tools.json, and AgentScout MCP server",
-        "Standard 5-day editorial review queue"
+        "5-day review"
       ]
     },
     {
       "id": "fast-track-launch-boost",
-      "sku": "AS-BOOST-29",
+      "sku": "AS-BOOST-15",
       "name": "Fast-Track + 7-Day Launch Boost",
       "category": "directory_boost",
       "price_usd": 15,
@@ -978,7 +978,7 @@
       },
       {
         "@type": "Product",
-        "sku": "AS-BOOST-29",
+        "sku": "AS-BOOST-15",
         "name": "Fast-Track + 7-Day Launch Boost",
         "description": "Same-day priority review and verification, 7-day featured pin on /new.html and your category's New & Featured row, full FAQPage + pros/cons AEO enrichment, a dedicated launch post on @AgentScoutHQ, and a same-day indexing ping to Bing and IndexNow search engines (does not include Google).",
         "category": "directory_boost",
