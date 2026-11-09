@@ -288,7 +288,7 @@ def history(t,LSD):
     try: H=json.load(open(HIST))
     except Exception: H=[]
     day=today(); ev=[]
-    if old is None: ev.append(f"Tables started with {len(snap)} MCP servers.")
+    if old is None: ev.append(dated_start(day, len(snap)))
     else:
         for s,v in snap.items():
             o=old.get(s)
@@ -304,11 +304,20 @@ def history(t,LSD):
         json.dump(H,open(HIST,"w"),indent=1)
     if old!=snap: json.dump(snap,open(SNAP,"w"),indent=1,sort_keys=True)
     return H
+_OLD_START=re.compile(r"^Tables started with ([\d,]+) MCP servers\.$")
+def dated_start(day, n):
+    """Opening snapshot. The date is inside the sentence so it cannot be read as today's total."""
+    return f"On {nice(day)}, the tables started with {int(n):,} MCP servers."
+def render_change(date, change):
+    m=_OLD_START.match((change or "").strip())
+    if m: return f"On {nice(date)}, the tables started with {m.group(1)} MCP servers."
+    return change
 def hist_html(H):
     if not H: return ""
     r=['<h2 style="font-size:18px;margin:28px 0 6px">Change history</h2><p class="muted">Logged automatically each time the site is rebuilt, newest first (Pacific dates).</p><ul>']
     for h in reversed(H[-60:]):
-        ch=h["changes"]; more=f" <span class=\"muted\">(+{len(ch)-25} more)</span>" if len(ch)>25 else ""
+        ch=[render_change(h["date"], c) for c in h["changes"]]
+        more=f" <span class=\"muted\">(+{len(ch)-25} more)</span>" if len(ch)>25 else ""
         r.append(f'<li><b>{e(nice(h["date"]))}</b>: '+" ".join(e(c) for c in ch[:25])+more+"</li>")
     return "".join(r)+"</ul>"
 def tbl(head,rows):
@@ -325,11 +334,24 @@ def pages(t):
     upd=upd or today(); os.makedirs("mcp",exist_ok=True); urls=[]
     cnt={k:sum(1 for x in M if ptype(x)==k) for k in("free","freemium","paid","unknown")}
     link=lambda x:f'<a href="../tools/{e(x["slug"])}.html">{e(x["name"])}</a>'
-    # pricing
+    import build_counts
+    cat=build_counts.metrics_catalog()
+    tools_n, mcp_n = cat["tools"], cat["mcp"]
+    when=cat["updated_display"] or nice(upd)
+    if len(M)==mcp_n:
+        scope=f"all {mcp_n:,} MCP servers"
+    else:
+        scope=f"the {len(M):,} MCP servers in this table ({mcp_n:,} in the directory)"
+    # pricing. Directory totals come from api/metrics.json, the same file the homepage reads.
     canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"
-    desc=f"Pricing for all {len(M)} MCP servers in AgentScout: {cnt['free']} free, {cnt['freemium']} free plus paid plans, {cnt['paid']} paid. As stated by makers, dated {nice(upd)}."[:158]
-    rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",f'{int(x["github_stars"]):,}' if x.get("github_stars") else "–"] for x in M]
-    body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for all {len(M)} MCP servers listed on AgentScout, as each maker states it. Data as of <time datetime="{e(upd)}">{e(nice(upd))}</time> (Pacific).</p>'
+    desc=f"As of {when}, AgentScout lists {tools_n:,} tools and {mcp_n:,} MCP servers. Pricing: {cnt['free']} free, {cnt['freemium']} free plus paid, {cnt['paid']} paid."
+    if len(desc)>158: desc=f"As of {when}: {tools_n:,} tools, {mcp_n:,} MCP servers. {cnt['free']} free, {cnt['freemium']} freemium, {cnt['paid']} paid."[:158]
+    def stars_cell(x):
+        n=x.get("github_stars")
+        if not n: return "–"
+        return f"{int(n):,} GitHub stars"
+    rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",stars_cell(x)] for x in M]
+    body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for {scope} listed on AgentScout, part of {tools_n:,} tools as of {e(when)}, as each maker states it. Data as of <time datetime="{e(upd)}">{e(nice(upd))}</time> (Pacific).</p>'
           f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="status/">MCP status</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a> and our <a href="connect.html">read-only MCP server</a>.</p>'
           +tbl(["MCP server","Pricing (as stated)","Type","Open source","GitHub stars"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server pricing table","description":desc,"url":canon,"dateModified":upd,"creator":{"@type":"Organization","name":"AgentScout","url":B},"license":B+"about.html"}
