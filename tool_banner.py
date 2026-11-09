@@ -20,10 +20,5 @@ def banner_html() -> str:
 
 
 def ensure(html: str) -> str:
-    """Insert the template banner once, or refresh an existing one to match it."""
-    banner = banner_html()
-    if 'class="bsbanner"' in html:
-        return _BANNER.sub(banner, html, count=1)
-    if "<main" not in html:
-        return html
-    return re.sub(r"(<main\b[^>]*>)", lambda m: m.group(1) + "\n  " + banner, html, count=1)
+    """The tool-page Bot Store strip is retired. Drop a leftover banner."""
+    return _BANNER.sub("", html)

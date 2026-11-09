@@ -174,3 +174,49 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",ini
 /* Relative "Added X days ago" for <time class="ago" datetime="YYYY-MM-DD"> (static date stays as fallback/tooltip) */
 (function(){function ago(r){(r||document).querySelectorAll("time.ago:not([data-ago])").forEach(function(t){var d=t.getAttribute("datetime");if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return;var p=d.split("-"),then=new Date(+p[0],p[1]-1,+p[2]),now=new Date(),n=Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate())-then)/864e5);if(n<0)return;t.title=t.textContent;t.textContent=n===0?"today":n===1?"yesterday":n<60?n+" days ago":n<730?Math.round(n/30.4)+" months ago":Math.round(n/365)+" years ago";t.setAttribute("data-ago","1")})}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){ago()}):ago();window.asAgo=ago})();
+
+/* Grouped header. Details and the menu checkbox work without this; it adds Escape, outside click, and one-open menus. */
+(function(){
+  var nav=document.querySelector("nav.sitenav");
+  if(!nav)return;
+  var box=nav.querySelector(".nav-open");
+  var groups=Array.prototype.slice.call(nav.querySelectorAll(".navgroup"));
+  var wide=function(){return window.matchMedia("(min-width:960px)").matches};
+  var lock=false;
+  function sync(){
+    groups.forEach(function(d){
+      var s=d.querySelector("summary");
+      if(s)s.setAttribute("aria-expanded",d.open?"true":"false");
+    });
+    if(box)box.setAttribute("aria-expanded",box.checked?"true":"false");
+  }
+  groups.forEach(function(d){
+    d.addEventListener("toggle",function(){
+      if(lock)return;
+      if(d.open&&wide()){
+        lock=true;
+        groups.forEach(function(o){if(o!==d)o.open=false});
+        lock=false;
+      }
+      sync();
+    });
+  });
+  if(box)box.addEventListener("change",sync);
+  document.addEventListener("keydown",function(e){
+    if(e.key!=="Escape")return;
+    lock=true;
+    groups.forEach(function(d){d.open=false});
+    lock=false;
+    if(box){box.checked=false;box.focus()}
+    sync();
+  });
+  document.addEventListener("click",function(e){
+    if(nav.contains(e.target))return;
+    lock=true;
+    groups.forEach(function(d){d.open=false});
+    lock=false;
+    if(box)box.checked=false;
+    sync();
+  });
+  sync();
+})();

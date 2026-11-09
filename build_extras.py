@@ -383,7 +383,7 @@ def seo(t,urls):
                   f'<a class="btn primary pkg-cta-pop cpc-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
                   f'<a class="btn primary pkg-cta-vip cpc-btn" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor — $99/wk →</a>'
                   f'<a class="btn cpc-btn" href="../sponsor.html#packages">Compare Packages ($0/$15/$49/$99)</a></div></div>')
-        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips+_pin_cta
+        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
             if _ws: _pre+=(f'<section id="wallet-safety" aria-labelledby="wallet-safety-h"><h2 id="wallet-safety-h" style="font-size:18px;margin:24px 0 6px">Wallet safety</h2>'

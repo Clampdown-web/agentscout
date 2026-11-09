@@ -872,3 +872,46 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   .scrollbtn.show{opacity:1}
   body:not(:has(.lb-board)) footer{padding-bottom:calc(112px + env(safe-area-inset-bottom))}
 }
+
+/* Homepage + shared header. Loaded on the homepage; the nav half is also appended to styles.css. */
+nav.sitenav{position:sticky;top:0;z-index:40;background:var(--navbg);border-bottom:1px solid var(--line);backdrop-filter:saturate(180%) blur(12px)}
+nav.sitenav .wrap{display:flex;align-items:center;gap:8px;height:56px;flex-wrap:nowrap;position:relative}
+nav.sitenav .logo{margin-right:auto;min-width:0}
+nav.sitenav .logo img{height:28px;width:auto}
+nav.sitenav .themebtn{position:static;order:4;margin:0;width:44px;height:44px;flex:none}
+nav.sitenav .nav-open{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0}
+nav.sitenav .navburger{order:5;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+nav.sitenav .navburger-bars{display:flex;flex-direction:column;gap:4px;width:16px}
+nav.sitenav .navburger-bars span{display:block;height:2px;border-radius:2px;background:currentColor}
+nav.sitenav .nav-open:focus-visible+.navburger,nav.sitenav summary:focus-visible,nav.sitenav .navpanel a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav.sitenav .navlinks{order:3;display:none;margin:0}
+nav.sitenav .nav-open:checked~.navlinks{display:flex}
+nav.sitenav summary{list-style:none;cursor:pointer}
+nav.sitenav summary::-webkit-details-marker{display:none}
+nav.sitenav .navgroup>summary{display:flex;align-items:center;gap:6px;min-height:48px;font-weight:650;font-size:15px}
+nav.sitenav .navgroup>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.7}
+nav.sitenav .navgroup[open]>summary::after{transform:rotate(225deg) translateY(-2px)}
+nav.sitenav .navpanel{display:flex;flex-direction:column;padding:0 0 8px}
+nav.sitenav .navpanel a{display:flex;align-items:center;gap:0;min-height:44px;padding:0 8px;border-radius:8px;color:var(--text);font-size:15px;font-weight:500}
+nav.sitenav .navpanel a:hover{background:var(--soft)}
+nav.sitenav .navpanel .npill,nav.sitenav .navpanel .mcppill{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;box-shadow:none;color:inherit;font-weight:500;animation:none}
+nav.sitenav .navpanel .npico,nav.sitenav .navpanel .mcpico{width:16px;height:16px;flex:0 0 16px;margin-right:8px}
+@media(max-width:959px){
+  nav.sitenav .navlinks{position:absolute;top:100%;left:0;right:0;z-index:50;flex-direction:column;align-items:stretch;max-height:calc(100dvh - 56px);overflow:auto;padding:4px 16px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+  nav.sitenav .navgroup{border-top:1px solid var(--line)}
+  nav.sitenav .nav-submit>summary{color:var(--accent)}
+}
+@media(min-width:960px){
+  nav.sitenav .navburger,nav.sitenav .nav-open{display:none}
+  nav.sitenav .navlinks{display:flex;align-items:center;gap:4px;margin-left:auto}
+  nav.sitenav .navgroup{position:relative}
+  nav.sitenav .navgroup>summary{min-height:40px;padding:0 12px;border-radius:8px;font-size:14px}
+  nav.sitenav .navgroup>summary:hover{background:var(--soft)}
+  nav.sitenav .navpanel{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:240px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;z-index:60}
+  nav.sitenav .navgroup[open]>.navpanel{display:flex}
+  nav.sitenav .navgroup:last-child .navpanel{left:auto;right:0}
+  nav.sitenav .nav-submit>summary{background:var(--text);color:var(--bg)}
+  nav.sitenav .nav-submit>summary::after{border-color:currentColor}
+}
+.quiet-feature{margin:4px 0 18px;font-size:14px;color:var(--muted)}
+.quiet-feature a{color:var(--accent);font-weight:600}

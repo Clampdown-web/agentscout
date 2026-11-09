@@ -430,7 +430,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611082000"  # bump when app.js/styles.css change
+ASSET_V = "202611091930"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -493,6 +493,8 @@ def _links_bounds(s):
     if end is None: return None
     return m.start(), end
 def _cluster_nav(s, d):
+    if 'class="sitenav"' in s:
+        return s
     """Plain links stay first. Header neon pills, one of each, immediately before Submit a tool.
     Order: Bot Store, Image Gen, Free tools, MCP, AI bot templates, Get Featured.
     Idempotent when .links contains .navscroll-text and .navscroll-pills (Oct 31 2026): the old
@@ -793,8 +795,8 @@ def sitewide(t):
                   '<a class="hms-tier hms-tier-pop" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer"><span class="hmst-top"><span class="hmst-price">$49 <small>one-time</small></span>'+_wrap("mcp","★ Most Popular · $49")+f'</span><span class="hmst-name">30-Day Category Pin + Permanent SEO/AEO</span><span class="hmst-desc">★ Full 30-day top category pin (4x+ longer for $34 more) · Permanent /best/*-alternatives &amp; /compare/ tables · Priority llms-full.txt &amp; MCP weight · @clampdown19 &amp; @AgentScoutHQ spotlight (<span data-live-x-followers>{_m["x_combined_followers"]:,}+</span> combined reach)</span></a>'
                   f'<a class="hms-tier hms-tier-vip" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer"><span class="hmst-top"><span class="hmst-price">$99 <small>/ week</small></span>'+_wrap("bolt","🔥 1 Slot/Wk · $99/wk")+f'</span><span class="hmst-name">Weekly Sitewide Sponsor + Newsletter Top Slot</span><span class="hmst-desc">🔥 Everything in $49 + 7 days in the exclusive sitewide top sponsor bar across <span data-live-pages>{_m["indexed_pages_count"]:,}+</span> pages, homepage #makers, &amp; Tuesday newsletter top slot</span></a>'
                   '</div></div></section><!--SPONSOR-CTA-END-->')
+            # Package boxes stay off the homepage. Get featured remains one header link.
             s=re.sub(r'<!--SPONSOR-CTA-START-->.*?<!--SPONSOR-CTA-END-->','',s,flags=re.S)
-            s=s.replace('<!--PICK-END-->','<!--PICK-END-->'+_hms,1)
             _makers=('<!--MAKERS-START--><section id="makers" class="wrap" style="padding-top:16px;padding-bottom:8px">'
                      '<div class="panel" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;border-color:var(--accent)">'
                      '<div style="flex:1 1 380px;min-width:0">'
@@ -808,7 +810,7 @@ def sitewide(t):
                      '<a class="btn primary pkg-cta-vip" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>'
                      '<a class="btn" href="badges.html">Free README badge</a>'
                      '</div></div></section><!--MAKERS-END-->')
-            s=re.sub(r'<!--MAKERS-START-->.*?<!--MAKERS-END-->',lambda _: _makers,s,count=1,flags=re.S)
+            s=re.sub(r'<!--MAKERS-START-->.*?Launch on AgentScout.*?</section><!--MAKERS-END-->','<!--MAKERS-START--><!--MAKERS-END-->',s,count=1,flags=re.S)
             s=re.sub(r'<script data-live-metrics>.*?</script>','',s,flags=re.S)
             s=s.replace('</body>',_bsp.live_metrics_script("")+'</body>',1)
         s=_restore_redirect_chrome(s, held)
