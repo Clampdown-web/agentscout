@@ -79,9 +79,10 @@ PAGE_HEADER_FRAGMENTS = {
 PAGES = (
     {"path": "/", "title": ("AgentScout", "AI Agent"), "canonical": f"{SITE}/", "fast_track": True},
     {"path": "/mcp/", "title": ("Best MCP Servers", "AgentScout"), "canonical": f"{SITE}/mcp/", "fast_track": True},
-    {"path": "/tools/zed.html", "title": ("Zed", "AgentScout"), "canonical": f"{SITE}/tools/zed.html", "fast_track": True},
-    {"path": "/tools/crewai.html", "title": ("CrewAI", "AgentScout"), "canonical": f"{SITE}/tools/crewai.html", "fast_track": True},
-    {"path": "/tools/cursor.html", "title": ("Cursor", "AgentScout"), "canonical": f"{SITE}/tools/cursor.html", "fast_track": True},
+    # Tool pages post-#102 link to Get Featured /sponsor.html; Stripe Fast-Track lives on sponsor/home/etc.
+    {"path": "/tools/zed.html", "title": ("Zed", "AgentScout"), "canonical": f"{SITE}/tools/zed.html", "fast_track": False},
+    {"path": "/tools/crewai.html", "title": ("CrewAI", "AgentScout"), "canonical": f"{SITE}/tools/crewai.html", "fast_track": False},
+    {"path": "/tools/cursor.html", "title": ("Cursor", "AgentScout"), "canonical": f"{SITE}/tools/cursor.html", "fast_track": False},
     {
         "path": "/submit",
         "title": ("Submit an AI Tool", "AgentScout"),
