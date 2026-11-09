@@ -21,6 +21,19 @@ const ROAST_PER_MIN = 8;
 const VOTE_PER_MIN = 30;
 const MAX_SLUGS = 400;
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
+const MAX_JSON_BODY = 16_384;
+const MAX_URL_PARAM = 4_096;
+const MAX_SLUGS_PARAM = 40_000;
+const MAX_CATALOG_BYTES = 6_000_000;
+const MAX_IP_LEN = 128;
+
+const SECURITY_HEADERS = {
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+};
 
 const memoryBuckets = new Map();
 
@@ -56,6 +69,7 @@ function json(request, body, status = 200, cache = "no-store") {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
+      ...SECURITY_HEADERS,
       "content-type": "application/json; charset=utf-8",
       "cache-control": cache,
       ...corsHeaders(request),
@@ -64,7 +78,51 @@ function json(request, body, status = 200, cache = "no-store") {
 }
 
 function clientIp(request) {
-  return (request.headers.get("cf-connecting-ip") || "").trim();
+  const ip = (request.headers.get("cf-connecting-ip") || "").trim();
+  if (!ip || ip.length > MAX_IP_LEN || /[\u0000-\u0020]/.test(ip)) return "";
+  return ip;
+}
+
+async function readCapped(response, max) {
+  const declared = Number(response.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > max) return { error: "too_large" };
+  const reader = response.body?.getReader?.();
+  if (!reader) {
+    const text = typeof response.text === "function" ? await response.text() : "";
+    if (text.length > max) return { error: "too_large" };
+    return { text };
+  }
+  const chunks = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (!value?.byteLength) continue;
+      size += value.byteLength;
+      if (size > max) return { error: "too_large" };
+      chunks.push(value);
+    }
+  } catch {
+    return { error: "bad_body" };
+  } finally {
+    try { await reader.cancel(); } catch { /* already closed */ }
+  }
+  const buf = new Uint8Array(size);
+  let off = 0;
+  for (const chunk of chunks) { buf.set(chunk, off); off += chunk.byteLength; }
+  return { text: new TextDecoder("utf-8", { fatal: false }).decode(buf) };
+}
+
+function parseObject(text) {
+  if (!text) return {};
+  try {
+    const value = JSON.parse(text);
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+    return value;
+  } catch {
+    return {};
+  }
 }
 
 function ptDay(now = new Date()) {
@@ -318,7 +376,9 @@ async function fetchPublic(target, depth = 0) {
 async function catalogMatch(finalHost) {
   const res = await fetch("https://agentscouthq.com/api/tools.json", { cf: { cacheTtl: 3600 } });
   if (!res.ok) return null;
-  const data = await res.json();
+  const body = await readCapped(res, MAX_CATALOG_BYTES);
+  if (body.error) return null;
+  const data = JSON.parse(body.text);
   const tools = Array.isArray(data) ? data : data.tools || [];
   const host = finalHost.replace(/^www\./, "");
   for (const tool of tools) {
@@ -338,13 +398,21 @@ async function roast(request, env) {
   if (!env.VOTES) return json(request, { error: "Vote storage is not configured." }, 503);
   const ip = clientIp(request);
   if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
+  if (request.method === "POST") {
+    const declared = Number(request.headers.get("content-length"));
+    if (Number.isFinite(declared) && declared > MAX_JSON_BODY) return json(request, { error: "Payload too large." }, 413);
+  }
   if (!(await rateLimit(env, "roast", ip, ROAST_PER_MIN))) return json(request, { error: "Too many checks. Try again in a minute." }, 429);
   const url = new URL(request.url);
   let target = url.searchParams.get("url") || "";
   if (request.method === "POST") {
-    const body = await request.json().catch(() => ({}));
-    target = body.url || target;
+    const body = await readCapped(request, MAX_JSON_BODY);
+    if (body.error === "too_large") return json(request, { error: "Payload too large." }, 413);
+    if (body.error) return json(request, { error: "The check failed. Try again in a minute." }, 400);
+    const parsed = parseObject(body.text);
+    target = (typeof parsed.url === "string" ? parsed.url : "") || target;
   }
+  if (target.length > MAX_URL_PARAM) return json(request, { error: "Enter a public http or https URL." }, 400);
   const page = await fetchPublic(target);
   if (page.error) return json(request, { error: page.error }, 400);
   const origin = page.url.origin;
@@ -381,9 +449,14 @@ async function vote(request, env) {
   if (!env.VOTES) return json(request, { error: "Vote storage is not configured." }, 503);
   const ip = clientIp(request);
   if (!ip) return json(request, { error: "Client address is unavailable." }, 403);
+  const declared = Number(request.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > MAX_JSON_BODY) return json(request, { error: "Payload too large." }, 413);
   if (!(await rateLimit(env, "vote", ip, VOTE_PER_MIN))) return json(request, { error: "Too many votes. Try again in a minute." }, 429);
-  const body = await request.json().catch(() => ({}));
-  const slug = String(body.slug || "");
+  const raw = await readCapped(request, MAX_JSON_BODY);
+  if (raw.error === "too_large") return json(request, { error: "Payload too large." }, 413);
+  if (raw.error) return json(request, { error: "The check failed. Try again in a minute." }, 400);
+  const body = parseObject(raw.text);
+  const slug = typeof body.slug === "string" ? body.slug : "";
   if (!SLUG_RE.test(slug)) return json(request, { error: "Unknown tool." }, 400);
   const day = ptDay();
   const week = isoWeek(day);
@@ -397,7 +470,9 @@ async function vote(request, env) {
 
 async function votes(request, env) {
   const url = new URL(request.url);
-  const slugs = parseSlugs(url.searchParams.get("slugs"));
+  const rawSlugs = url.searchParams.get("slugs") || "";
+  if (rawSlugs.length > MAX_SLUGS_PARAM) return json(request, { error: "Too many tools." }, 400);
+  const slugs = parseSlugs(rawSlugs);
   const day = ptDay();
   const week = isoWeek(day);
   if (!env.VOTES) {
@@ -411,14 +486,21 @@ async function votes(request, env) {
 
 export default {
   async fetch(request, env) {
-    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(request) });
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: { ...SECURITY_HEADERS, ...corsHeaders(request) } });
+    }
     const path = new URL(request.url).pathname.replace(/\/$/, "") || "/";
     try {
       if (path === "/roast" && (request.method === "GET" || request.method === "POST")) return await roast(request, env);
       if (path === "/vote" && request.method === "POST") return await vote(request, env);
       if (path === "/votes" && request.method === "GET") return await votes(request, env);
       return json(request, { error: "Not found", endpoints: ["/roast", "/vote", "/votes"] }, 404);
-    } catch (err) {
+    } catch {
+      console.error(JSON.stringify({
+        message: "vote request failed",
+        path,
+        status: 500,
+      }));
       return json(request, { error: "The check failed. Try again in a minute." }, 500);
     }
   },

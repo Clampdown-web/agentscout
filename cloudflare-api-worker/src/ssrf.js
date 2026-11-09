@@ -151,6 +151,46 @@ export function isIpLiteral(host) {
   return raw.includes(":");
 }
 
+const MAX_DNS_BYTES = 262_144;
+
+async function readDnsJson(res) {
+  const declared = Number(res.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > MAX_DNS_BYTES) return null;
+  const reader = res.body?.getReader?.();
+  let text = "";
+  if (!reader) {
+    text = typeof res.text === "function" ? await res.text() : "";
+  } else {
+    const chunks = [];
+    let size = 0;
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        if (!value?.byteLength) continue;
+        size += value.byteLength;
+        if (size > MAX_DNS_BYTES) return null;
+        chunks.push(value);
+      }
+    } catch {
+      return null;
+    } finally {
+      try { await reader.cancel(); } catch { /* already closed */ }
+    }
+    const buf = new Uint8Array(size);
+    let off = 0;
+    for (const chunk of chunks) { buf.set(chunk, off); off += chunk.byteLength; }
+    text = new TextDecoder("utf-8", { fatal: false }).decode(buf);
+  }
+  if (text.length > MAX_DNS_BYTES) return null;
+  try {
+    const data = JSON.parse(text || "null");
+    return data && typeof data === "object" ? data : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function resolveAndCheck(hostname, fetchImpl = fetch) {
   const host = String(hostname || "").replace(/^\[|\]$/g, "");
   // A public name is not an IP. Checking isBlockedIp() on it treats every hostname as blocked.
@@ -164,7 +204,8 @@ export async function resolveAndCheck(hostname, fetchImpl = fetch) {
       headers: { accept: "application/dns-json" },
     });
     if (!res.ok) return { error: "Could not look up that host." };
-    const data = await res.json();
+    const data = await readDnsJson(res);
+    if (!data) return { error: "Could not look up that host." };
     for (const ans of data.Answer || []) {
       if (typeof ans.data !== "string") continue;
       const address = ans.data.replace(/\.$/, "");
