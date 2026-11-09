@@ -615,6 +615,8 @@ def write_llms_full(t):
 
     out_txt = "\n".join(L)
     open("llms-full.txt", "w").write(out_txt)
+    import build_aicite as _bac_reach
+    _bac_reach.stamp_llms_docs()
     print(f"aeo: wrote llms-full.txt ({len(out_txt):,} bytes, {len(L):,} lines)")
 
 def run(t):

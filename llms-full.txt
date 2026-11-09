@@ -2,6 +2,20 @@
 
 > AgentScout is a curated, link-checked, read-only directory of 2,407 AI agent tools across 40 categories, including 323 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
 
+<!-- mcp-reach:start -->
+
+## MCP server reachability
+
+Checked daily, 323 of 323 reachable, last checked 2026-11-09.
+
+Once a day, AgentScout requests each listed MCP server URL and, when it is a different link, its GitHub URL. The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. A server counts as reachable when its stored label is OK or Reachable, blocks automated checks. OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. Any other checked result is not reachable. A server missing from the check file is not yet checked and is not counted. The last-checked time is the checked field, in America/Los_Angeles. The rows are on the MCP status page and in status.json.
+
+- [MCP server status](https://agentscouthq.com/mcp/status/): the same reachability rows, with HTTP result and history
+- [status.json](https://agentscouthq.com/status.json): machine-readable rows for every listed MCP server
+- [Best MCP servers by task](https://agentscouthq.com/mcp/): ranked lists, with the same daily check
+
+<!-- mcp-reach:end -->
+
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
 ## Official Identity, Endpoints & Registry Links
@@ -98,7 +112,6 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - **AgentScout Translator Agent ($35 one-time · Marketing & Content)**: Context-aware localization for UI strings, docs & marketing copy. Includes `skills/i18n-key-parity/SKILL.md`, `scripts/verify_i18n_keys.py`, 3 scheduled cron routines, and multi-host configs (`SYSTEM.md`, `CLAUDE.md`, `.cursorrules`, `AGENTS.md`, `LOVABLE.md`). Details: https://agentscouthq.com/bot-store/translator/ · Checkout: https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09
 
 ## High-Intent Ranked Guides (`/best/`, `/mcp/` & `/videos/`)
-
 
 - [How-To Video Guides & Builder Pro Tips Hub (8 60fps Walkthroughs)](https://agentscouthq.com/videos/)
 - [All Best AI Agent Lists](https://agentscouthq.com/best/)
