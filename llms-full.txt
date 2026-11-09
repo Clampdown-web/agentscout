@@ -224,9 +224,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Screenpipe | Source-available + cloud | No |  | Offline | 22,173 | research the web | Records your screen and audio locally so AI agents can search and act on your computer history. | https://agentscouthq.com/tools/screenpipe.html | https://screenpipe.com/ |
 | 15 | Kortix Suna | Source-available + cloud | No |  |  | 20,336 | personal agents | Kortix, an open-source platform for building and running general-purpose AI agents. | https://agentscouthq.com/tools/kortix-suna.html | https://github.com/kortix-ai/suna |
 
-### agent infra (108 tools) — [https://agentscouthq.com/categories/agent-infra.html](https://agentscouthq.com/categories/agent-infra.html)
+### agent infra (109 tools) — [https://agentscouthq.com/categories/agent-infra.html](https://agentscouthq.com/categories/agent-infra.html)
 
-- **At a glance**: 108 link-checked tools (62 open-source, 86 free or freemium, 63 local or self-hosted).
+- **At a glance**: 109 link-checked tools (62 open-source, 86 free or freemium, 63 local or self-hosted).
 - **Top picks**: [OmniRoute](https://agentscouthq.com/tools/omniroute.html), [LiteLLM](https://agentscouthq.com/tools/litellm.html), [CLI-Anything](https://agentscouthq.com/tools/cli-anything.html), [Kong Gateway](https://agentscouthq.com/tools/kong-gateway.html), [Novu](https://agentscouthq.com/tools/novu.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -707,9 +707,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | BoxLite | Open source | Yes |  | Self-hosted | 2,644 | write code, run code safely | Embeddable micro-VM for running AI agents. | https://agentscouthq.com/tools/boxlite.html | https://boxlite.ai/ |
 | 15 | Zeroboot | Open source + cloud | Yes |  | Self-hosted | 2,467 | write code, run code safely | VM sandboxes for running agent code that start in under a millisecond by forking a warm snapshot with copy-on-write memory. | https://agentscouthq.com/tools/zeroboot.html | https://github.com/zerobootdev/zeroboot |
 
-### models & local runtimes (29 tools) — [https://agentscouthq.com/categories/models-local-runtimes.html](https://agentscouthq.com/categories/models-local-runtimes.html)
+### models & local runtimes (28 tools) — [https://agentscouthq.com/categories/models-local-runtimes.html](https://agentscouthq.com/categories/models-local-runtimes.html)
 
-- **At a glance**: 29 link-checked tools (14 open-source, 24 free or freemium, 29 local or self-hosted).
+- **At a glance**: 28 link-checked tools (14 open-source, 24 free or freemium, 28 local or self-hosted).
 - **Top picks**: [Ollama](https://agentscouthq.com/tools/ollama.html), [LocalAI](https://agentscouthq.com/tools/localai.html), [Jan](https://agentscouthq.com/tools/jan.html), [Oumi](https://agentscouthq.com/tools/oumi.html), [MiroThinker](https://agentscouthq.com/tools/mirothinker.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -727,8 +727,8 @@ Each category section below summarizes the verified tool count, open-source coun
 | 11 | Spark-X2.6 | Open weights | Yes | Apache-2.0 | Offline | 869 | write code | Spark-X2.6 is a pair of compact 4B and 1.7B open-weight language models built for on-device agents, sharing Spark-X2.5's architecture but with new post-training that improves tool use, multi-step planning, coding, long context and multilingual tasks. Apache-2.0. | https://agentscouthq.com/tools/spark-x2-6.html | https://github.com/XHToken/Spark-X2.6 |
 | 12 | Strands Decider | Open source | Yes |  | Offline | 743 | automate workflows | Strands Decider is a small, fast decision model from Strands Labs for agent workflows. Rather than asking a full LLM every time, an agent can use it to choose between options or score something on a scale in a fraction of the time, with calibrated confidence so the workflow knows when to fall back to a bigger model. | https://agentscouthq.com/tools/strands-decider.html | https://strandsagents.com/docs/labs/ |
 | 13 | pooled | Open source | Yes |  | Offline | 619 | build an agent | Peer-to-peer LLM inference in the browser: pool your laptops, phones and other devices into a room to run large open models for chat and coding agents, with no GPU server. | https://agentscouthq.com/tools/pooled.html | https://pooled.run/ |
-| 14 | 1ZheAI | Usage-based | No |  | Offline |  | sales & support | 1ZheAI is a model API hub that connects Claude, GPT and image models through one OpenAI-compatible endpoint with setup snippets for Claude Code, Cursor, Python and Node, and also lists AI account and subscription offers; check the terms of each underlying provider before use. | https://agentscouthq.com/tools/1zheai.html | https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104 |
-| 15 | AIReiter | Freemium | No |  | Offline |  | models & local runtimes | AIReiter is a unified AI API that gives developers one key and one bill for leading image, video and text generation models. | https://agentscouthq.com/tools/aireiter.html | https://aireiter.com/ |
+| 14 | AIReiter | Freemium | No |  | Offline |  | models & local runtimes | AIReiter is a unified AI API that gives developers one key and one bill for leading image, video and text generation models. | https://agentscouthq.com/tools/aireiter.html | https://aireiter.com/ |
+| 15 | APIMODELS | Freemium | No |  | Offline |  | models & local runtimes | APIMODELS is a unified AI API that aggregates 150+ image, video, LLM and audio models behind one key and endpoint. | https://agentscouthq.com/tools/apimodels.html | https://apimodels.app/ |
 
 ### film & TV audio (29 tools) — [https://agentscouthq.com/categories/film-tv-audio.html](https://agentscouthq.com/categories/film-tv-audio.html)
 
