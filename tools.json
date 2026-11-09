@@ -3580,9 +3580,8 @@
     "slug": "sema4-ai",
     "logo": "assets/logos/sema4-ai.png",
     "website": "https://sema4.ai",
-    "github": "https://github.com/Sema4AI/actions",
-    "repo": "Sema4AI/actions",
-    "github_stars": 141,
+    "github": "https://github.com/Sema4AI",
+    "repo": "",
     "use_cases": [
       "business agents"
     ],
@@ -20743,32 +20742,6 @@
     "slug": "agent-vault",
     "logo": "assets/logos/agent-vault.png",
     "stars_checked": "2026-10-30"
-  },
-  {
-    "name": "AgentsMesh",
-    "url": "https://agentsmesh.ai/",
-    "description": "Platform for running many AI coding agents across your own machines and scheduling, isolating and steering them from one console.",
-    "category": "coding",
-    "pricing": "Source-available",
-    "maturity": "Active",
-    "audience": "builders",
-    "featured": false,
-    "new": false,
-    "verified": "2026-10-18",
-    "added": "2026-10-18",
-    "source": "GitHub",
-    "pricing_detail": "",
-    "use_cases": [
-      "write code"
-    ],
-    "website": "https://agentsmesh.ai/",
-    "github": "https://github.com/AgentsMesh/AgentsMesh",
-    "repo": "AgentsMesh/AgentsMesh",
-    "github_stars": 2361,
-    "id": 796,
-    "slug": "agentsmesh",
-    "logo": "assets/logos/agentsmesh.png",
-    "stars_checked": "2026-10-27"
   },
   {
     "name": "Conduit",
@@ -52494,7 +52467,7 @@
   },
   {
     "name": "OpenRath",
-    "url": "https://www.openrath.com/",
+    "url": "https://github.com/Rath-Team/OpenRath",
     "description": "An open-source, PyTorch-like runtime for dynamic multi-agent and multi-session workflows",
     "category": "sandboxes & code execution",
     "pricing": "Open source + cloud",
@@ -52511,7 +52484,7 @@
       "build multi-agent systems",
       "automate workflows"
     ],
-    "website": "https://www.openrath.com/",
+    "website": "https://github.com/Rath-Team/OpenRath",
     "github": "https://github.com/Rath-Team/OpenRath",
     "repo": "Rath-Team/OpenRath",
     "github_stars": 959,
@@ -52781,7 +52754,7 @@
     "url": "https://artex-demo.vercel.app/function/tasks",
     "description": "ARTEX · AI autonomous penetration testing system (multi-agent LLM, Go + Next.js) · AI · agent+",
     "category": "security & governance",
-    "pricing": "Open source",
+    "pricing": "See site",
     "maturity": "Active",
     "audience": "builders",
     "featured": false,
@@ -52794,9 +52767,8 @@
       "build multi-agent systems"
     ],
     "website": "https://artex-demo.vercel.app/function/tasks",
-    "github": "https://github.com/trhhubsd/ARTEX",
-    "repo": "trhhubsd/ARTEX",
-    "github_stars": 2276,
+    "github": "",
+    "repo": "",
     "id": 2040,
     "slug": "artex",
     "logo": "assets/logos/artex.png",
@@ -58546,31 +58518,6 @@
     "id": 2282,
     "slug": "arsenal",
     "logo": "assets/logos/arsenal.png"
-  },
-  {
-    "name": "Hindsight",
-    "url": "https://hindsight.vectorize.io/",
-    "description": "Hindsight by Vectorize is open-source agent memory that stores, retrieves and reasons over long-term context so AI agents keep durable knowledge across sessions without rebuilding RAG each time.",
-    "category": "memory & RAG",
-    "pricing": "Open source",
-    "maturity": "Mature",
-    "audience": "builders",
-    "featured": false,
-    "new": true,
-    "verified": "2026-11-06",
-    "added": "2026-11-06",
-    "source": "GitHub",
-    "pricing_detail": "Open-source (MIT); see site for any hosted plans",
-    "use_cases": [
-      "give agents memory"
-    ],
-    "website": "https://hindsight.vectorize.io/",
-    "github": "https://github.com/vectorize-io/hindsight",
-    "repo": "vectorize-io/hindsight",
-    "github_stars": 59367,
-    "id": 2283,
-    "slug": "hindsight",
-    "logo": "assets/logos/hindsight.png"
   },
   {
     "name": "Marketing Skills",

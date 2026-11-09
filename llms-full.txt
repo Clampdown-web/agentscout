@@ -1,6 +1,6 @@
 # AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)
 
-> AgentScout is a curated, link-checked, read-only directory of 2,409 AI agent tools across 40 categories, including 323 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
+> AgentScout is a curated, link-checked, read-only directory of 2,407 AI agent tools across 40 categories, including 323 Model Context Protocol (MCP) servers and 190 bot templates & skills. Every listing is checked daily; pricing is stated as each maker publishes it; rankings use verifiable public signals (GitHub stars, visitor ratings, and listing maturity). Featured slots are clearly labeled and sit above the list; rankings are never paid.
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as `com.agentscouthq/directory` with endpoint `https://mcp.agentscouthq.com/mcp` (and `https://agentscouthq.com/mcp/sse`). AgentScout's official MCP server (`com.agentscouthq/directory` at `https://agentscouthq.com/mcp/sse`) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -35,13 +35,13 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 
 ## Verified Directory Statistics
 
-- **Total Verified AI Agent Tools**: 2,409
+- **Total Verified AI Agent Tools**: 2,407
 - **Total Categories**: 40
 - **Verified MCP Servers**: 323
 - **Bot Templates & Installable Agent Skills**: 190 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
-- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,153
-- **Free or Freemium Tools**: 1,814
-- **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,094 (110 offline / on-device, 984 self-hosted)
+- **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 1,151
+- **Free or Freemium Tools**: 1,812
+- **Local / Self-Hosted Tools (`runs_locally` filter)**: 1,092 (110 offline / on-device, 982 self-hosted)
 - **Catalog Last Link-Checked**: 2026-11-09 (America/Los_Angeles)
 
 ## Maker Submission & Launch Packages (`/submit.html` & `/sponsor.html`)
@@ -155,9 +155,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | Framelink Figma MCP | Open source | Yes | the MIT License | Self-hosted | 16,114 | write code, connect tools via MCP | MCP server that gives Cursor and other coding agents Figma layout data so they can implement designs accurately in one shot. | https://agentscouthq.com/tools/framelink-figma-mcp.html | https://www.framelink.ai/ |
 | 15 | Apify MCP Server | Open source + cloud | Yes |  | Self-hosted | 13,893 | research the web, connect tools via MCP | Apify's MCP server giving agents access to thousands of scrapers for social media, search and maps. | https://agentscouthq.com/tools/apify-mcp-server.html | https://github.com/apify/apify-mcp-server |
 
-### coding (245 tools) — [https://agentscouthq.com/categories/coding.html](https://agentscouthq.com/categories/coding.html)
+### coding (244 tools) — [https://agentscouthq.com/categories/coding.html](https://agentscouthq.com/categories/coding.html)
 
-- **At a glance**: 245 link-checked tools (196 open-source, 222 free or freemium, 186 local or self-hosted).
+- **At a glance**: 244 link-checked tools (196 open-source, 222 free or freemium, 186 local or self-hosted).
 - **Top picks**: [opencode](https://agentscouthq.com/tools/opencode.html), [Ponytail](https://agentscouthq.com/tools/ponytail.html), [Claude Code](https://agentscouthq.com/tools/claude-code.html), [CC Switch](https://agentscouthq.com/tools/cc-switch.html), [UI UX Pro Max](https://agentscouthq.com/tools/ui-ux-pro-max.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -339,9 +339,9 @@ Each category section below summarizes the verified tool count, open-source coun
 | 14 | 11x | Enterprise | No |  |  |  | research the web, voice & phone calls | Digital AI workers for go-to-market teams, including an SDR agent that researches prospects and runs outbound and a phone agent that handles calls. | https://agentscouthq.com/tools/11x.html | https://www.11x.ai |
 | 15 | AlpineLead OI | Freemium | No |  |  |  | connect tools via MCP, sales & support | AlpineLead OI finds and ranks B2B sales opportunities in Austria, Germany and Switzerland from public buying signals, via a web app, REST API and MCP server for agents. | https://agentscouthq.com/tools/alpinelead-oi.html | https://alpinelead-oi.io/ |
 
-### memory & RAG (73 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
+### memory & RAG (72 tools) — [https://agentscouthq.com/categories/memory-rag.html](https://agentscouthq.com/categories/memory-rag.html)
 
-- **At a glance**: 73 link-checked tools (64 open-source, 68 free or freemium, 64 local or self-hosted).
+- **At a glance**: 72 link-checked tools (63 open-source, 67 free or freemium, 63 local or self-hosted).
 - **Top picks**: [MarkItDown](https://agentscouthq.com/tools/markitdown.html), [Claude-Mem](https://agentscouthq.com/tools/claude-mem.html), [RAGFlow](https://agentscouthq.com/tools/ragflow.html), [Headroom](https://agentscouthq.com/tools/headroom.html), [Mem0](https://agentscouthq.com/tools/mem0.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -352,15 +352,15 @@ Each category section below summarizes the verified tool count, open-source coun
 | 4 | Headroom | Open source | Yes | the Apache License 2.0 | Self-hosted | 78,329 | write code, connect tools via MCP | Library, proxy and MCP server that compresses tool outputs, logs, files and RAG chunks locally before they reach the LLM, cutting tokens for coding agents. | https://agentscouthq.com/tools/headroom.html | https://docs.headroomlabs.ai/docs |
 | 5 | Mem0 | Open source SDK (Apache-2.0); managed platform: Hobby free, Starter $19/mo, Pro $249/mo, Enterprise custom | Yes | Apache-2.0 | Self-hosted | 68,097 | give agents memory, build an agent | Mem0 is an open-source memory layer for AI agents that extracts facts from conversations in a single add-only pass, links entities across memories and retrieves them in later sessions, with an Apache-2.0 SDK and a managed platform. | https://agentscouthq.com/tools/mem0.html | https://mem0.ai |
 | 6 | MemPalace | Open source | Yes | the MIT License | Offline | 60,133 | give agents memory | Local-first AI memory system that stores conversations verbatim with a pluggable backend and serves recall to agents without API calls. | https://agentscouthq.com/tools/mempalace.html | https://github.com/MemPalace/mempalace |
-| 7 | Hindsight | Open-source (MIT); see site for any hosted plans | Yes | MIT | Self-hosted | 59,367 | give agents memory | Hindsight by Vectorize is open-source agent memory that stores, retrieves and reasons over long-term context so AI agents keep durable knowledge across sessions without rebuilding RAG each time. | https://agentscouthq.com/tools/hindsight.html | https://hindsight.vectorize.io/ |
-| 8 | JeecgBoot | Open source + cloud | Yes |  | Self-hosted | 48,343 | connect tools via MCP, give agents memory | 【 v2.0， 】 AI ， 。 AI Skills 、 、 、 。 AI ：AI 、 、 、MCP ， 。 AI 「Skills → → → - AI 」 ， Java 90% ， 。 | https://agentscouthq.com/tools/jeecgboot.html | https://www.jeecg.com/ |
-| 9 | OpenViking | Open source | Yes | the GNU Affero General Public License v3.0 | Self-hosted | 41,191 | give agents memory | Context database for AI agents that keeps memory, knowledge and skills in one inspectable virtual filesystem agents can navigate. | https://agentscouthq.com/tools/openviking.html | https://openviking.ai/ |
-| 10 | PageIndex | Open source + cloud | Yes |  | Self-hosted | 39,909 | give agents memory | Document index for reasoning-based, vectorless RAG that lets agents navigate long documents like a table of contents. | https://agentscouthq.com/tools/pageindex.html | https://pageindex.ai/ |
-| 11 | Cognee | Open source + cloud | Yes |  | Self-hosted | 32,918 | give agents memory | Open-source memory platform that builds knowledge graphs so agents keep long-term memory. | https://agentscouthq.com/tools/cognee.html | https://www.cognee.ai/ |
-| 12 | Graphiti | Open source | Yes |  | Self-hosted | 32,365 | give agents memory | Builds real-time, temporal knowledge graphs that serve as memory for AI agents. | https://agentscouthq.com/tools/graphiti.html | https://help.getzep.com/graphiti/getting-started/welcome |
-| 13 | Supermemory | Open source + cloud | Yes | the MIT License | Offline | 31,466 | connect tools via MCP, give agents memory | Memory and context engine for agents with an API, app and MCP server, which can also run fully locally. | https://agentscouthq.com/tools/supermemory.html | https://supermemory.ai/ |
-| 14 | TencentDB-Agent-Memory | Open source | Yes |  | Self-hosted | 30,239 | write code, give agents memory | Team-level memory hub that turns conversations, docs and code into shared memory for agents. | https://agentscouthq.com/tools/tencentdb-agent-memory.html | https://tencentcloud.github.io/TencentDB-Agent-Memory/ |
-| 15 | AgentMemory | Open source | Yes |  | Self-hosted | 30,024 | write code, give agents memory | Persistent memory layer for AI coding agents. | https://agentscouthq.com/tools/agentmemory.html | https://www.agent-memory.dev/ |
+| 7 | JeecgBoot | Open source + cloud | Yes |  | Self-hosted | 48,343 | connect tools via MCP, give agents memory | 【 v2.0， 】 AI ， 。 AI Skills 、 、 、 。 AI ：AI 、 、 、MCP ， 。 AI 「Skills → → → - AI 」 ， Java 90% ， 。 | https://agentscouthq.com/tools/jeecgboot.html | https://www.jeecg.com/ |
+| 8 | OpenViking | Open source | Yes | the GNU Affero General Public License v3.0 | Self-hosted | 41,191 | give agents memory | Context database for AI agents that keeps memory, knowledge and skills in one inspectable virtual filesystem agents can navigate. | https://agentscouthq.com/tools/openviking.html | https://openviking.ai/ |
+| 9 | PageIndex | Open source + cloud | Yes |  | Self-hosted | 39,909 | give agents memory | Document index for reasoning-based, vectorless RAG that lets agents navigate long documents like a table of contents. | https://agentscouthq.com/tools/pageindex.html | https://pageindex.ai/ |
+| 10 | Cognee | Open source + cloud | Yes |  | Self-hosted | 32,918 | give agents memory | Open-source memory platform that builds knowledge graphs so agents keep long-term memory. | https://agentscouthq.com/tools/cognee.html | https://www.cognee.ai/ |
+| 11 | Graphiti | Open source | Yes |  | Self-hosted | 32,365 | give agents memory | Builds real-time, temporal knowledge graphs that serve as memory for AI agents. | https://agentscouthq.com/tools/graphiti.html | https://help.getzep.com/graphiti/getting-started/welcome |
+| 12 | Supermemory | Open source + cloud | Yes | the MIT License | Offline | 31,466 | connect tools via MCP, give agents memory | Memory and context engine for agents with an API, app and MCP server, which can also run fully locally. | https://agentscouthq.com/tools/supermemory.html | https://supermemory.ai/ |
+| 13 | TencentDB-Agent-Memory | Open source | Yes |  | Self-hosted | 30,239 | write code, give agents memory | Team-level memory hub that turns conversations, docs and code into shared memory for agents. | https://agentscouthq.com/tools/tencentdb-agent-memory.html | https://tencentcloud.github.io/TencentDB-Agent-Memory/ |
+| 14 | AgentMemory | Open source | Yes |  | Self-hosted | 30,024 | write code, give agents memory | Persistent memory layer for AI coding agents. | https://agentscouthq.com/tools/agentmemory.html | https://www.agent-memory.dev/ |
+| 15 | Chroma | Open source + cloud | Yes |  | Self-hosted | 29,609 | research the web, give agents memory | Open-source search and vector database widely used for agent memory and RAG. | https://agentscouthq.com/tools/chroma.html | https://www.trychroma.com/ |
 
 ### photography & photo editing (66 tools) — [https://agentscouthq.com/categories/photography-photo-editing.html](https://agentscouthq.com/categories/photography-photo-editing.html)
 
@@ -387,7 +387,7 @@ Each category section below summarizes the verified tool count, open-source coun
 
 ### security & governance (62 tools) — [https://agentscouthq.com/categories/security-governance.html](https://agentscouthq.com/categories/security-governance.html)
 
-- **At a glance**: 62 link-checked tools (38 open-source, 49 free or freemium, 38 local or self-hosted).
+- **At a glance**: 62 link-checked tools (37 open-source, 48 free or freemium, 37 local or self-hosted).
 - **Top picks**: [Strix](https://agentscouthq.com/tools/strix.html), [PentAGI](https://agentscouthq.com/tools/pentagi.html), [Infisical](https://agentscouthq.com/tools/infisical.html), [Guardrails AI](https://agentscouthq.com/tools/guardrails-ai.html), [AI-Infra-Guard](https://agentscouthq.com/tools/ai-infra-guard.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -449,10 +449,10 @@ Each category section below summarizes the verified tool count, open-source coun
 | 9 | GoRaven | Open source | Yes |  | Self-hosted | 830 | write code, voice & phone calls | A self-hosted AI agent platform for teams where agents read files, run code, call APIs and work through tasks instead of just chatting. | https://agentscouthq.com/tools/goraven.html | https://goraven.dev/ |
 | 10 | Don't Be Michael | Free and open source (MIT). | Yes | MIT |  | 593 | business agents | A free, open-source AI office for small businesses on Mac and Windows: pick your type of business, get a ready team of AI agents for each department, and a manager agent hands out the work and flags what needs you. | https://agentscouthq.com/tools/don-t-be-michael.html | https://dontbemichael.com/ |
 | 11 | Bops | Free $0 (1 computer, 10 hours/month, $5 AI credit once), Pro $20/mo, Max $200/mo; source on GitHub under FSL-1.1-ALv2 | No |  |  | 345 | automate workflows, control a computer | Bops, from Orgo, is a Mac app for a team of AI bots that handle business ops such as inbox triage, CRM follow-ups, invoices and reports, each with its own cloud computer, email address, phone number and shared memory. | https://agentscouthq.com/tools/bops.html | https://bops.bot/ |
-| 12 | Sema4.ai | Enterprise | No |  |  | 141 | business agents | Enterprise AI agents platform, with open-source actions for connecting agents to systems. | https://agentscouthq.com/tools/sema4-ai.html | https://sema4.ai |
-| 13 | TulipFarm | Open source + cloud | Yes | AGPL-3.0 |  | 10 | automate workflows | Open-source workspace that puts a company's records, docs, agents and workflows in one place so agents work from the same information as the team. Ask in Slack or chat, a built-in assistant called Bud and saved agents do the work, and you choose which actions wait for a human OK. AGPL-3.0, with TulipFarm Cloud in public beta. | https://agentscouthq.com/tools/tulipfarm.html | https://tulipfarm.ai/ |
-| 14 | Accordio AI | Freemium | No |  |  |  | connect tools via MCP, monitor & evaluate agents | Adds time tracking, contract signing, invoicing and payments to Claude through a free MCP connector. | https://agentscouthq.com/tools/accordio-ai.html | https://accordio.ai/ |
-| 15 | Agentforce | Free to start; Flex Credits $500 per 100k; $2 per conversation | No |  |  |  | sales & support | Salesforce's platform for building and customizing autonomous AI agents that support employees and customers around the clock inside the Salesforce ecosystem. | https://agentscouthq.com/tools/agentforce.html | https://www.salesforce.com/agentforce/ |
+| 12 | TulipFarm | Open source + cloud | Yes | AGPL-3.0 |  | 10 | automate workflows | Open-source workspace that puts a company's records, docs, agents and workflows in one place so agents work from the same information as the team. Ask in Slack or chat, a built-in assistant called Bud and saved agents do the work, and you choose which actions wait for a human OK. AGPL-3.0, with TulipFarm Cloud in public beta. | https://agentscouthq.com/tools/tulipfarm.html | https://tulipfarm.ai/ |
+| 13 | Accordio AI | Freemium | No |  |  |  | connect tools via MCP, monitor & evaluate agents | Adds time tracking, contract signing, invoicing and payments to Claude through a free MCP connector. | https://agentscouthq.com/tools/accordio-ai.html | https://accordio.ai/ |
+| 14 | Agentforce | Free to start; Flex Credits $500 per 100k; $2 per conversation | No |  |  |  | sales & support | Salesforce's platform for building and customizing autonomous AI agents that support employees and customers around the clock inside the Salesforce ecosystem. | https://agentscouthq.com/tools/agentforce.html | https://www.salesforce.com/agentforce/ |
+| 15 | Agently | Paid | No |  |  |  | business agents | AI chief of staff that learns how your company works from connected tools and then handles routine work. | https://agentscouthq.com/tools/agently.html | https://agently.dev/ |
 
 ### image generation (58 tools) — [https://agentscouthq.com/categories/image-generation.html](https://agentscouthq.com/categories/image-generation.html)
 

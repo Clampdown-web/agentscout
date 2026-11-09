@@ -92,10 +92,14 @@ def _facts(n,r):
 def _pricing(n,r):
     P=r.get("pricing_v")
     if not P: return "",[],None
-    tiers=P["tiers"]; ck=_mdy(P.get("checked"))
+    tiers=P["tiers"]; ck=_mdy(P.get("checked")); src=(P.get("src") or "").strip()
+    if src:
+        source=f'Source: <a href="{e(src)}" target="_blank" rel="noopener noreferrer">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.'
+    else:
+        source=f'Checked {e(ck)}. No live pricing page was available for this listing. Prices change; check the maker before buying.'
     html_=(f'{H2}{e(n)} pricing</h2><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(a)}</strong>: {e(b)}{(' · '+e(c)) if c else ''}</li>" for a,b,c in tiers)+"</ul>"
         +(f'<p style="margin:0 0 8px">{e(P["note"])}</p>' if P.get("note") else "")
-        +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener noreferrer">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
+        +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">{source}</p>')
     plans="; ".join(f"{a}: {b}" for a,b,c in tiers)
     fq=[(f"How much does {n} cost?",f"As of {ck}, {n}'s official pricing page lists: {plans}."+(" "+P["note"] if P.get("note") else ""))]
     free=[a for a,b,c in tiers if re.match(r"(?i)^([$€£¥]0(?![\d.,])|free\b)",b)]  # any currency (Oct 19 PT: Pragor lists €0 plans)
@@ -104,7 +108,9 @@ def _pricing(n,r):
     for a,b,c in tiers:
         m=re.match(r"^(?:from )?\$([\d,]+(?:\.\d+)?)(?:\s*/\s*mo|/mo|/month| per month|\b)",b)
         if (m and ("/mo" in b or "month" in b or re.match(r"^\$0(?![\d.])",b.strip()))) or re.match(r"(?i)^free$",b):
-            offers.append({"@type":"Offer","name":f"{n} {a}","price":(m.group(1).replace(",","") if m else "0"),"priceCurrency":"USD","url":P["src"],"description":b+((" · "+c) if c else "")})
+            offer={"@type":"Offer","name":f"{n} {a}","price":(m.group(1).replace(",","") if m else "0"),"priceCurrency":"USD","description":b+((" · "+c) if c else "")}
+            if src: offer["url"]=src
+            offers.append(offer)
     return html_,fq+[("__free__",isfree)],offers
 
 def _mcp(n,r):

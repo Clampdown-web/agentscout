@@ -14,6 +14,7 @@ Only tools whose name or slug is approved are added; duplicates of existing list
 Nothing is pushed or deployed by this script.
 """
 import sys,os,re,io,json,glob,datetime
+from urllib.parse import urlparse
 sys.path.insert(0,'scripts'); from dedupe_check import keys
 from takedown_blocklist import blocked as _takedown_blocked
 from PIL import Image
@@ -21,6 +22,12 @@ AUDIT="/workspace/notes/crypto-tools-audit-2026-10-17.json"; LOGODIR="/workspace
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
 BUILDER_SUB={"frameworks","wallets and payments","wallets","payments","blockchain mcp servers","mcp","security and audit","security"}
 def slugify(s): return re.sub(r"[^a-z0-9]+","-",(s or "").lower()).strip("-")
+def _on_github(url):
+    raw = str(url or "").strip()
+    if "://" not in raw:
+        raw = "https://" + raw
+    host = (urlparse(raw).hostname or "").lower().rstrip(".")
+    return host == "github.com" or host.endswith(".github.com")
 def first(d,*ks):
     for k in ks:
         v=d.get(k)
@@ -80,21 +87,21 @@ def main():
         site=first(x,"website","url","listing_url"); gh=first(x,"github","gh","repo","gh_candidates")
         if gh and not re.match(r"^(https?://github\.com/)?[A-Za-z0-9_.-]+(/[A-Za-z0-9_.-]+)?/?$",gh): gh=""  # audit placeholders like "N/A (closed-source ...)" or "none found"
         if gh and not gh.startswith("http"): gh="https://github.com/"+gh
-        if site and "github.com" in site and not gh: gh=site
+        if site and _on_github(site) and not gh: gh=site
         desc=(x.get("description") or "").strip()
         if not (name and desc and (site or gh)): skipped.setdefault("missing name/description/link",[]).append(name); continue
         sub=(x.get("subcategory") or "").lower()
-        pr=x.get("pricing") if x.get("pricing") in PRICES else ("Open source" if gh and (not site or "github.com" in site) else "See site")
+        pr=x.get("pricing") if x.get("pricing") in PRICES else ("Open source" if gh and (not site or _on_github(site)) else "See site")
         aud=x.get("audience") if x.get("audience") in ("builders","ready to use") else ("builders" if sub in BUILDER_SUB or "mcp" in name.lower() or "sdk" in name.lower() else "ready to use")
         e={"name":name,"url":site or gh,"description":desc,"category":"crypto","pricing":pr,"maturity":x.get("maturity") or "Active","audience":aud,
            "featured":False,"new":True,"verified":today,"added":today,"source":(first(x,"sources","source") or "Web search"),"pricing_detail":x.get("pricing_detail",""),
-           "use_cases":[],"website":site if site and "github.com" not in site else "","github":gh or ""}
+           "use_cases":[],"website":site if site and not _on_github(site) else "","github":gh or ""}
         if gh:
             e["repo"]="/".join(gh.replace("https://github.com/","").strip("/").split("/")[:2])
             if x.get("github_stars") is not None: e["github_stars"]=x["github_stars"]
         if x.get("tags"): e["tags"]=x["tags"]
         ks=keys([e])
-        if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=slug):
+        if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=slug, repo=e.get("repo") or e.get("github") or ""):
             skipped.setdefault("blocklist",[]).append(name); continue
         if ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]: skipped.setdefault("duplicate",[]).append(name); continue
         im=load_logo(x,slug) or (fetch_logo(site,gh) if opt.get("--fetch-missing-logos") else None)

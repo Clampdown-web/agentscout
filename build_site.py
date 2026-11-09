@@ -299,6 +299,16 @@ def _sync_index_counts():
     s = re.sub(r"Directory of \d[\d,]* link-checked", f"Directory of {n:,} link-checked", s)
     s = re.sub(r'(id="s-eyebrow">)\d[\d,]* tools · Links checked [^<]+', lambda m: m.group(1) + f"{n:,} tools · Links checked " + _lc, s)
     s = re.sub(r'(id="s-total">)\d[\d,]*', lambda m: m.group(1) + f"{n:,}", s)
+    try:
+        _mcp = int(_j.load(open("data/site_counts.json")).get("mcp_servers") or 0)
+    except Exception:
+        _mcp = sum(1 for _x in _j.load(open("tools.json")) if _x.get("category") == "MCP servers")
+    s = re.sub(
+        r'(<a href="categories/mcp-servers.html"><b)(?: id="s-mcp")?(>)\d[\d,]*',
+        lambda m: m.group(1) + ' id="s-mcp"' + m.group(2) + f"{_mcp:,}",
+        s,
+        count=1,
+    )
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
     s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
@@ -456,8 +466,8 @@ def apply_thin_page_rule(tools):
     urls=open("sitemap.xml",encoding="utf-8").read().count("<loc>")
     import build_counts as _bc
     _bc.refresh_pages()
-    if any(x["slug"]=="hedra" or "hedra.com" in (x.get("url") or "")+(x.get("website") or "") for x in tools):
-        raise SystemExit("Hedra is still in the catalog")
+    if any(_blocked_tool(x) for x in tools):
+        raise SystemExit("A takedown listing is still in the catalog")
     print(f"thin-page rule: noindex {len(noindex)} tool pages ({len(queued)} queued by the {NEW_TOOL_CAP}/day cap); sitemap {urls} urls; indexed tools {len(indexed)}")
     return {"noindex":len(noindex),"queued":queued,"sitemap":urls,"indexed_tools":len(indexed)}
 import atexit as _axq, build_extras as _bxq

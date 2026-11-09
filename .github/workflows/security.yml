@@ -70,3 +70,4 @@ jobs:
           python3 scripts/test_submit_widget.py
           python3 scripts/test_static_csp.py
           python3 scripts/test_cwv_benchmark.py
+          python3 scripts/test_takedown_blocklist.py
