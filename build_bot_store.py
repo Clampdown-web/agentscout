@@ -16,11 +16,6 @@ CSS = """<style id="bs-css">
 .bs-lead{margin:4px 0 18px;text-align:left}
 .bs-lead h1{margin:0 0 8px;font-size:clamp(28px,8vw,40px);line-height:1.12;color:#fff;letter-spacing:-.03em;text-align:left;display:block}
 .bs-lead p{margin:0;max-width:38rem;color:#d6d3d1;font-size:16px;line-height:1.5;text-align:left;padding:0}
-.bs-launch{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0 0 16px;padding:14px 16px;border-radius:14px;border:1px dashed rgba(255,255,255,.28);background:rgba(255,255,255,.03)}
-.bs-launch-label{margin:0;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#a3e635}
-.bs-launch-code{min-height:44px;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#1c1f27;color:#a1a1aa;font:inherit;font-weight:700;cursor:not-allowed}
-.bs-launch-code:disabled{opacity:.72}
-.bs-launch-note{margin:0;color:#a1a1aa;font-size:14px;line-height:1.45}
 .bs-pick-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin:0 0 16px}
 .bs-pick{display:flex;flex-direction:column;align-items:stretch;gap:12px;padding:20px;border-radius:16px;background:#12141a;border:1px solid rgba(163,230,53,.38);min-width:0;box-sizing:border-box;text-align:left}
 .bs-pick-featured{border:2px solid #10b981;box-shadow:0 0 0 1px rgba(16,185,129,.28),0 16px 36px rgba(0,0,0,.35)}
@@ -135,7 +130,18 @@ document.addEventListener("click", function (ev) {
 }, true);
 </script>"""
 
-LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section><!-- TODO(owner): No Stripe coupon or promotion code exists in this repo. Create the coupon in Stripe, then replace this disabled placeholder with the real promotion code and prefilled checkout links. Do not invent a percent off or a strikethrough price. --><div class="bs-launch" role="group" aria-labelledby="bs-launch-label"><p id="bs-launch-label" class="bs-launch-label">Launch discount</p><button type="button" class="bs-launch-code" disabled aria-disabled="true">Not available yet</button><p class="bs-launch-note">Checkout still charges the listed price. This site has no Stripe coupon to apply.</p></div><div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Best value</p><h2>Full 4-Bot Bundle</h2><p class="bs-pick-price">$149 <small>one time</small></p><p>Operations, SEO, market intel, and the CEO coordinator together. Bought separately those four list at $226.</p><a class="bs-btn bs-pick-buy" data-product="as-bot-bundle-149" data-price="149" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer">Buy the 4-bot bundle — $149</a></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a></article></div>"""
+# Off until a real Stripe promotion code exists. An empty value renders no
+# launch-discount element. Do not invent a percent off or a strikethrough price.
+LAUNCH_PROMO = ""
+
+def _launch_markup():
+    # A promotion code alone is not a discount line. Add the real prefilled
+    # checkout markup here before returning any element.
+    if LAUNCH_PROMO:
+        return ""
+    return "<!-- TODO(owner): LAUNCH_PROMO in build_bot_store.py is off. Create the Stripe promotion code, set LAUNCH_PROMO to that code, and only then add a launch-discount line with prefilled checkout links. Do not invent a percent off or a strikethrough price. -->"
+
+LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section>""" + _launch_markup() + """<div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Best value</p><h2>Full 4-Bot Bundle</h2><p class="bs-pick-price">$149 <small>one time</small></p><p>Operations, SEO, market intel, and the CEO coordinator together. Bought separately those four list at $226.</p><a class="bs-btn bs-pick-buy" data-product="as-bot-bundle-149" data-price="149" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer">Buy the 4-bot bundle — $149</a></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a></article></div>"""
 
 def pages(t):
     os.makedirs("bot-store", exist_ok=True)
