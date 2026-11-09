@@ -15,8 +15,9 @@ test("the security workflow is read-only, pinned, and does not deploy", () => {
   for (const action of uses) {
     assert.match(action, /@[0-9a-f]{40}$/);
   }
-  assert.match(text, /persist-credentials: false/);
+  const dropped = [...text.matchAll(/persist-credentials:\s*false/g)];
+  assert.equal(dropped.length, 2);
   const pythonJob = text.split("python-requirements:")[1] || "";
   assert.equal(pythonJob.includes("pip-audit"), true);
-  assert.equal(pythonJob.includes("persist-credentials"), false);
+  assert.match(pythonJob, /persist-credentials:\s*false/);
 });
