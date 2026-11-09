@@ -36,23 +36,37 @@ class SubmitWidgetTest(unittest.TestCase):
         self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
     def test_error_callback_keeps_the_token_gate_and_the_csp(self):
         html = (ROOT / "submit.html").read_text(encoding="utf-8")
+        widget = (ROOT / "submit-turnstile.js").read_text(encoding="utf-8")
         self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
-        self.assertIn('data-error-callback="asTsErr"', html)
-        self.assertIn('data-callback="asTsOk"', html)
-        self.assertIn("https://challenges.cloudflare.com/turnstile/v0/api.js", html)
-        self.assertIn("window.asTsErr=function(code)", html)
-        err_fn = html.split("window.asTsErr=")[1].split("window.asTsOk=")[0]
-        ok_fn = html.split("window.asTsOk=")[1].split(";(function()")[0]
+        self.assertIn('id="sfts-retry"', html)
+        self.assertIn("Try the check again", html)
+        self.assertIn('type="button" class="btn" id="sfts-retry"', html)
+        self.assertIn("submit-turnstile.js?v=", html)
+        self.assertNotIn('class="cf-turnstile"', html)
+        self.assertNotIn('rootMargin:"240px', html)
+        self.assertNotIn("r.status>=500", html)
+        self.assertIn("AgentScoutTurnstile.start", html)
+        self.assertIn("AgentScoutTurnstile.invalidate", html)
+        self.assertIn("https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=asTsLoad", widget)
+        self.assertIn('action: ACTION', widget)
+        self.assertIn('retry: "never"', widget)
+        err_fn = widget.split("function onError")[1].split("function onSuccess")[0]
+        ok_fn = widget.split("function onSuccess")[1].split("function onExpired")[0]
+        status_fn = widget.split("function setStatus")[1].split("function showRetry")[0]
         self.assertIn("return true", err_fn)
-        self.assertIn('getElementById("sfts")', err_fn)
-        self.assertNotIn('getElementById("serr")', err_fn)
-        self.assertIn('getElementById("sfts")', ok_fn)
-        self.assertNotIn('getElementById("serr")', ok_fn)
+        self.assertIn("setStatus(plan.text)", err_fn)
+        self.assertNotIn('("serr")', err_fn)
+        self.assertIn('("sfts")', status_fn)
+        self.assertNotIn('("serr")', status_fn)
+        self.assertIn("setStatus(", ok_fn)
+        self.assertNotIn('("serr")', ok_fn)
+        self.assertIn("nextEndpoint(null", widget)
+        self.assertNotIn("r.status>=500", widget)
         self.assertIn('id="sfts"', html)
         self.assertNotIn('id="serr" role="alert" style="color:#e5484d"', html)
-        gate = html.split("var ts=sfTs()", 1)[1][:180]
+        gate = html.split("var ts=sfTs()", 1)[1][:260]
         self.assertIn("!ts", gate)
-        self.assertIn("Please complete the quick check", gate)
+        self.assertIn("missingTokenText", gate)
         csp = re.search(r'Content-Security-Policy" content="([^"]+)"', html).group(1)
         connect = csp.split("connect-src ", 1)[1].split(";", 1)[0]
         self.assertNotIn("data:", connect)

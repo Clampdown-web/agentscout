@@ -260,9 +260,12 @@ test("turnstile stays off until TURNSTILE_ENABLED is true", async () => {
 test("submit and generate require a siteverify pass for this site before other work", async () => {
   await withSiteverify((params) => {
     const token = params.get("response");
-    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" }));
+    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" }));
     if (token === "www") return new Response(JSON.stringify({ success: true, hostname: "www.agentscouthq.com" }));
-    if (token === "wrong-host") return new Response(JSON.stringify({ success: true, hostname: "evil.example" }));
+    if (token === "wrong-host") return new Response(JSON.stringify({ success: true, hostname: "evil.example", action: "submit" }));
+    if (token === "wrong-action") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "generate" }));
+    if (token === "spent") return new Response(JSON.stringify({ success: false, hostname: "agentscouthq.com", "error-codes": ["timeout-or-duplicate"] }));
+    if (token === "secret") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }));
     return new Response(JSON.stringify({ success: false, hostname: "agentscouthq.com", "error-codes": ["invalid-input-response"] }));
   }, async (calls) => {
     let seen = "";
@@ -409,8 +412,50 @@ test("turnstile siteverify failures fail closed before the inner handler", async
   }
 });
 
+test("submit requires action submit and tells a person when the token was spent", async () => {
+  await withSiteverify((params) => {
+    const token = params.get("response");
+    if (token === "good") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" }));
+    if (token === "plain") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" }));
+    if (token === "other") return new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "generate" }));
+    if (token === "spent") return new Response(JSON.stringify({ success: false, "error-codes": ["timeout-or-duplicate"] }));
+    if (token === "malformed") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-response"] }));
+    if (token === "secret") return new Response(JSON.stringify({ success: false, "error-codes": ["invalid-input-secret"] }));
+    return new Response(JSON.stringify({ success: false }));
+  }, async () => {
+    const seen = [];
+    const worker = protect({
+      async fetch(request) {
+        seen.push(new URL(request.url).pathname);
+        return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { "content-type": "application/json" } });
+      },
+    });
+    const binding = turnstileEnv();
+    const missingAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), binding);
+    assert.equal(missingAction.status, 403);
+    assert.match((await missingAction.json()).error, /Reload it/);
+    const otherAction = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "other" })), binding);
+    assert.equal(otherAction.status, 403);
+    assert.match((await otherAction.json()).error, /Reload it/);
+    const spent = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "spent" })), binding);
+    assert.equal(spent.status, 403);
+    assert.equal((await spent.json()).error, "The check expired or was already used. Complete it again, then submit.");
+    const malformed = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "malformed" })), binding);
+    assert.equal(malformed.status, 403);
+    assert.match((await malformed.json()).error, /Complete it again/);
+    const secret = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "secret" })), binding);
+    assert.equal(secret.status, 403);
+    assert.equal((await secret.json()).error, "Bot check failed.");
+    const generated = await worker.fetch(post("/generate", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "plain" })), binding);
+    assert.equal(generated.status, 200);
+    const ok = await worker.fetch(post("/submit", { origin: "https://agentscouthq.com" }, JSON.stringify({ turnstileToken: "good" })), binding);
+    assert.equal(ok.status, 200);
+    assert.deepEqual(seen, ["/generate", "/submit"]);
+  });
+});
+
 test("protect masks TURNSTILE_ENABLED only after it has checked submit and generate", async () => {
-  await withSiteverify(() => new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com" })), async () => {
+  await withSiteverify(() => new Response(JSON.stringify({ success: true, hostname: "agentscouthq.com", action: "submit" })), async () => {
     const seen = [];
     const worker = protect({
       async fetch(request, binding) {

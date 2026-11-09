@@ -39,6 +39,7 @@ jobs:
           free_tools_js/reviews.test.mjs
           free_tools_js/listing-url.test.mjs
           scripts/test_actions_permissions.mjs
+          submit-turnstile.test.mjs
       - name: JSON-LD script escape
         run: python3 scripts/test_jsonld_script.py
       - name: Snapshot runtime
