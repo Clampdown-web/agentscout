@@ -10,6 +10,17 @@ Every agent news item gets a permanent page at /news/YYYY/MM/<slug>.html, plus m
 Called from build_extras.build() on every build_site.py run, before news.html is generated."""
 import json,os,re,html,datetime
 B="https://agentscouthq.com/"
+# Same cache-bust as build_tasks.sitewide(). Read the constant from the file so this
+# module can load while build_extras is still importing (build_tasks imports build_extras).
+_ASSET_RE=re.compile(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+')
+def asset_v():
+    m=re.search(r'^ASSET_V = "(\d+)"', open("build_tasks.py",encoding="utf-8").read(), re.M)
+    if not m: raise SystemExit("build_tasks.py is missing ASSET_V")
+    return m.group(1)
+def stamp_assets(html):
+    """News pages are copied from data/detail.tpl. Replace its frozen ?v= with the live ASSET_V."""
+    v=asset_v()
+    return _ASSET_RE.sub(lambda mm: mm.group(1)+"?v="+v, html)
 e=lambda s:html.escape(str(s or ""))
 HIST="news-history.json"
 GENERIC={"agent","agents","claude","openai","google","cursor","replit"}  # names too generic to auto-link from a headline (tool field still links)
@@ -89,7 +100,7 @@ def pages(t):
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},
              {"@type":"ListItem","position":3,"name":_month(ym),"item":f"{B}news/{ym[:4]}/{ym[5:]}/"},{"@type":"ListItem","position":4,"name":x["title"][:110],"item":canon}]}]}
         s=X.shell(d,title,desc,canon,body,ld).replace('<meta property="og:type" content="article">',f'<meta property="og:type" content="article"><meta property="article:published_time" content="{e(x["date"])}"><meta property="article:section" content="AI agents">',1)
-        os.makedirs(os.path.dirname(x["page"]),exist_ok=True); open(x["page"],"w").write(s); urls.append(canon)
+        os.makedirs(os.path.dirname(x["page"]),exist_ok=True); open(x["page"],"w").write(stamp_assets(s)); urls.append(canon)
     # monthly archives
     for ym,its in sorted(months.items(),reverse=True):
         d="../../../"; canon=f"{B}news/{ym[:4]}/{ym[5:]}/"; days={}
@@ -105,7 +116,7 @@ def pages(t):
               f'<p style="margin-top:24px"><a href="../../index.html">All months</a> · <a href="{d}news.html">Latest agent news</a></p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":k+1,"url":B+x["page"],"name":x["title"]} for k,x in enumerate(its)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},{"@type":"ListItem","position":3,"name":_month(ym),"item":canon}]}]}
-        os.makedirs(f"news/{ym[:4]}/{ym[5:]}",exist_ok=True); open(f"news/{ym[:4]}/{ym[5:]}/index.html","w").write(X.shell(d,title,desc,canon,body,ld)); urls.append(canon)
+        os.makedirs(f"news/{ym[:4]}/{ym[5:]}",exist_ok=True); open(f"news/{ym[:4]}/{ym[5:]}/index.html","w").write(stamp_assets(X.shell(d,title,desc,canon,body,ld))); urls.append(canon)
     # hub
     d="../"; canon=B+"news/"
     rows="".join(f'<li><a href="{ym[:4]}/{ym[5:]}/index.html">{_month(ym)}</a> <span class="muted">({len(its)} stories)</span></li>' for ym,its in sorted(months.items(),reverse=True))
@@ -115,7 +126,7 @@ def pages(t):
           f'<p class="lede" style="margin-left:0;text-align:left">{len(items)} stories so far. Each one has its own page with a summary, related tools and the source link. For today\'s stories, see <a href="{d}news.html">Agent news</a>.</p>'
           f'<h2 style="font-size:18px;margin:24px 0 8px">By month</h2><ul>{rows}</ul><h2 style="font-size:18px;margin:24px 0 8px">Latest stories</h2><ul>{latest}</ul></section>')
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},{"@type":"ListItem","position":3,"name":"Archive","item":canon}]}]}
-    os.makedirs("news",exist_ok=True); open("news/index.html","w").write(X.shell(d,title,desc,canon,body,ld)); urls.insert(0,canon)
+    os.makedirs("news",exist_ok=True); open("news/index.html","w").write(stamp_assets(X.shell(d,title,desc,canon,body,ld))); urls.insert(0,canon)
     print("news pages:",len(items),"stories,",len(months),"months")
     write_feed(t)
     return urls

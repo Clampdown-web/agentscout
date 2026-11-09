@@ -552,7 +552,8 @@ def news_page(t):
     title="AI Agent News Today: Daily Agent Launches & Updates | AgentScout"
     desc="Daily AI agent news: new agent launches, coding agents, MCP servers and agent frameworks, summarized in plain words with links to the original sources."
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":(B+x["page"]) if x.get("page") else x["url"],**({"isBasedOn":x["url"]} if x.get("page") else {}),"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
-    open("news.html","w").write(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1)); return canon
+    import build_news as _bn
+    open("news.html","w").write(_bn.stamp_assets(shell("",title,desc,canon,body,ld).replace('<script type="application/ld+json">','<script type="application/ld+json">',1))); return canon
 
 # Past issues on the public Beehiiv archive (https://agentscout.beehiiv.com/archive), checked read-only 2026-10-18.
 NL_ISSUES=json.load(open("data/newsletter-issues.json"))  # refreshed by scripts/update_latest_issue.py (Oct 20 2026)
