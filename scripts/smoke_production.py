@@ -35,6 +35,11 @@ TIMEOUT_SECONDS = 20
 MAX_BYTES = 1_000_000
 MAX_ASSETS = 12
 TURNSTILE_SCRIPT = "https://challenges.cloudflare.com/turnstile/v0/api.js"
+# Submit loads this helper, which then loads api.js with render=explicit.
+# The sitekey stays the public widget key. Generate still embeds api.js itself.
+SUBMIT_SITEKEY = "0x4AAAAAAFfaxf14aQF-sky1"
+SUBMIT_TURNSTILE_JS = "submit-turnstile.js"
+EXPLICIT_TURNSTILE = TURNSTILE_SCRIPT + "?render=explicit"
 FAST_TRACK = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
 # Retired $29 Fast-Track payment link, replaced by FAST_TRACK in cd1f95b3cb.
 RETIRED_FAST_TRACK = "fZufZi7X5cJNbtbdPRe7m02"
@@ -287,10 +292,29 @@ def html_page_problems(spec: dict, fetched: Fetched) -> list[str]:
     problems.extend(header_problems(fetched.headers))
     problems.extend(fast_track_problems(document, spec.get("fast_track", False)))
     if spec.get("turnstile"):
-        if TURNSTILE_SCRIPT not in document:
-            problems.append(f"Turnstile widget script is missing ({TURNSTILE_SCRIPT})")
-        if "cf-turnstile" not in document:
-            problems.append("Turnstile widget marker cf-turnstile is missing")
+        problems.extend(submit_turnstile_page_problems(document))
+    return problems
+
+
+def submit_turnstile_page_problems(document: str) -> list[str]:
+    problems: list[str] = []
+    if SUBMIT_SITEKEY not in document:
+        problems.append(f"Turnstile sitekey is missing ({SUBMIT_SITEKEY})")
+    if SUBMIT_TURNSTILE_JS not in document:
+        problems.append(f"{SUBMIT_TURNSTILE_JS} is not referenced")
+    return problems
+
+
+def submit_turnstile_script_problems(fetched: Fetched | None) -> list[str]:
+    if fetched is None:
+        return [f"{SUBMIT_TURNSTILE_JS} was not fetched"]
+    problems: list[str] = []
+    if fetched.error:
+        problems.append(fetched.error)
+    if fetched.status != 200:
+        problems.append(f"status {fetched.status}, expected 200")
+    if EXPLICIT_TURNSTILE not in fetched.text:
+        problems.append(f"explicit Turnstile loader is missing ({EXPLICIT_TURNSTILE})")
     return problems
 
 
@@ -516,6 +540,19 @@ def run_live(client: SmokeClient | None = None) -> Report:
                 script_problems.append("generate.js does not create a cf-turnstile widget")
             record(report, "GET /generate Turnstile widget script", script_problems)
 
+        submit = next((fetched for spec, fetched in pages if spec.get("turnstile")), None)
+        submit_script = ""
+        if submit and submit.status == 200:
+            for asset in cache_busted_assets(submit.text, submit.final_url):
+                if urllib.parse.urlsplit(asset).path.endswith("/" + SUBMIT_TURNSTILE_JS):
+                    submit_script = asset
+                    break
+        record(
+            report,
+            "GET /submit Turnstile loader",
+            submit_turnstile_script_problems(asset_bodies.get(submit_script) if submit_script else None),
+        )
+
     record(report, "GET votes.agentscouthq.com/votes?slugs=zed (agentscout-api)", votes_problems(client.get(f"{VOTES}/votes?slugs=zed")))
     record(report, "GET mcp.agentscouthq.com/ (agentscout-mcp)", mcp_info_problems(client.get(f"{MCP}/")))
     record(report, "GET mcp.agentscouthq.com/mcp (agentscout-mcp)", mcp_info_problems(client.get(f"{MCP}/mcp")))
@@ -546,6 +583,28 @@ def self_test() -> None:
     assert any("retired" in item for item in fast_track_problems(document + RETIRED_FAST_TRACK, False))
     assert any("$29" in item for item in fast_track_problems("Fast-Track for $29 today", False))
     assert fast_track_problems('fast_29:{url:"https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"}', True) == []
+    submit_page = (
+        '<div id="sf-turnstile" data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"></div>'
+        '<script src="submit-turnstile.js?v=202611082000"></script>'
+    )
+    assert submit_turnstile_page_problems(submit_page) == []
+    assert any("sitekey" in item for item in submit_turnstile_page_problems("<div id=\"sf-turnstile\"></div>"))
+    assert any("submit-turnstile.js" in item for item in submit_turnstile_page_problems(f'data-sitekey="{SUBMIT_SITEKEY}"'))
+    explicit = Fetched(
+        f"{SITE}/submit-turnstile.js?v=202611082000",
+        200,
+        f"{SITE}/submit-turnstile.js?v=202611082000",
+        {"content-type": "text/javascript"},
+        b'var s="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=asTsLoad";',
+    )
+    assert submit_turnstile_script_problems(explicit) == []
+    assert submit_turnstile_script_problems(None) != []
+    assert any("200" in item for item in submit_turnstile_script_problems(
+        Fetched(explicit.url, 404, explicit.url, explicit.headers, explicit.body)
+    ))
+    assert any("explicit" in item for item in submit_turnstile_script_problems(
+        Fetched(explicit.url, 200, explicit.url, explicit.headers, b"https://challenges.cloudflare.com/turnstile/v0/api.js")
+    ))
 
     headers = {
         **PAGE_HEADER_VALUES,
