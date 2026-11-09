@@ -237,4 +237,81 @@ describe("roast body limit", { concurrency: false }, () => {
       globalThis.fetch = previous;
     }
   });
+
+  test("GET and POST /roast keep the score shape and site CORS", async () => {
+    const previous = globalThis.fetch;
+    globalThis.fetch = async (input) => {
+      const url = String(input);
+      if (url.startsWith("https://cloudflare-dns.com/")) return dns("1.1.1.1");
+      if (url.endsWith("/llms.txt")) return new Response("# Title\n\n" + "a".repeat(30), { status: 200, headers: { "content-type": "text/plain" } });
+      if (url.includes("/api/tools.json")) {
+        return new Response(JSON.stringify([{ slug: "example", name: "Example", website: "https://listed.example" }]), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        });
+      }
+      return new Response("<title>Example Public Tool Listing</title><meta name=\"description\" content=\"Agents write and review code in the repository beside the editor you already use daily.\"><p>Free plan $0</p>", {
+        status: 200,
+        headers: { "content-type": "text/html" },
+      });
+    };
+    try {
+      const origin = "https://www.agentscouthq.com";
+      const get = await worker.fetch(new Request("https://votes.agentscouthq.com/roast?url=" + encodeURIComponent("https://listed.example/pricing"), {
+        headers: { origin, "cf-connecting-ip": "203.0.113.70" },
+      }), { VOTES: kv() });
+      assert.equal(get.status, 200);
+      assert.equal(get.headers.get("content-type"), "application/json; charset=utf-8");
+      assert.equal(get.headers.get("cache-control"), "no-store");
+      assert.equal(get.headers.get("access-control-allow-origin"), origin);
+      assert.equal(get.headers.get("access-control-allow-credentials"), null);
+      const body = await get.json();
+      assert.equal(body.ok, true);
+      assert.equal(body.final_url, "https://listed.example/pricing");
+      assert.equal(typeof body.score, "number");
+      assert.equal(body.max, 100);
+      assert.equal(typeof body.title, "string");
+      assert.ok(Array.isArray(body.checks));
+      assert.equal(body.checks.length, 7);
+      assert.deepEqual(body.listed, {
+        slug: "example",
+        name: "Example",
+        page: "https://agentscouthq.com/tools/example.html",
+      });
+      const post = await worker.fetch(new Request("https://votes.agentscouthq.com/roast/", {
+        method: "POST",
+        headers: { origin: "https://agentscouthq.com", "content-type": "application/json", "cf-connecting-ip": "203.0.113.71" },
+        body: JSON.stringify({ url: "https://listed.example/" }),
+      }), { VOTES: kv() });
+      assert.equal(post.status, 200);
+      assert.equal(post.headers.get("access-control-allow-origin"), "https://agentscouthq.com");
+      const posted = await post.json();
+      assert.equal(posted.ok, true);
+      assert.equal(posted.final_url, "https://listed.example/");
+      const missing = await worker.fetch(new Request("https://votes.agentscouthq.com/roast", {
+        headers: { "cf-connecting-ip": "203.0.113.72" },
+      }), { VOTES: kv() });
+      assert.equal(missing.status, 400);
+      const err = await missing.json();
+      assert.equal(typeof err.error, "string");
+      assert.equal(err.ok, undefined);
+      assert.equal(JSON.stringify(err).includes("\n"), false);
+      assert.equal(get.headers.get("x-content-type-options"), "nosniff");
+      assert.equal(get.headers.get("x-frame-options"), "DENY");
+      const calls = [];
+      globalThis.fetch = async (input) => {
+        calls.push(String(input));
+        throw new Error("should not fetch");
+      };
+      const longUrl = "https://listed.example/" + "a".repeat(5000);
+      const tooLong = await worker.fetch(new Request("https://votes.agentscouthq.com/roast?url=" + encodeURIComponent(longUrl), {
+        headers: { "cf-connecting-ip": "203.0.113.73" },
+      }), { VOTES: kv() });
+      assert.equal(tooLong.status, 400);
+      assert.equal((await tooLong.json()).error, "Enter a public http or https URL.");
+      assert.deepEqual(calls, []);
+    } finally {
+      globalThis.fetch = previous;
+    }
+  });
 });
