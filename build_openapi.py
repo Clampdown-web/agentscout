@@ -364,7 +364,7 @@ def build_commerce_files(tools_data):
                 "billing_model": "free",
                 "availability": "in_stock",
                 "badge": "Free Forever",
-                "turnaround": "3-5 business days standard review queue",
+                "turnaround": "5 business days standard review queue",
                 "checkout_url": B + "/submit.html#free-form",
                 "page_url": B + "/submit.html",
                 "description": "Permanent indexed tool page (/tools/<slug>.html) with SoftwareApplication JSON-LD schema, daily automated HTTP link checking, and inclusion in llms.txt, api/tools.json, and the AgentScout MCP server (com.agentscouthq/directory).",
@@ -372,7 +372,7 @@ def build_commerce_files(tools_data):
                     "Permanent indexed /tools/<slug>.html listing page",
                     "SoftwareApplication JSON-LD structured data",
                     "Included in llms.txt, api/tools.json, and AgentScout MCP server",
-                    "Standard 3-5 day editorial review queue",
+                    "Standard 5-day editorial review queue",
                 ],
             },
             {
