@@ -19,7 +19,10 @@ GOALS={"coding":["coding","app builders","sandboxes & code execution","DevOps & 
 KW={"crypto":["crypto","wallet","trading","defi","onchain","token"],"support":["support","customer","helpdesk"],"writing":["writ","content","copy"],"media":["video","voice","image","speech"]}
 def goals(x):
     txt=(x["name"]+" "+x["description"]).lower()
-    return sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
+    out=sorted({g for g,c in GOALS.items() if x["category"] in c}|{g for g,k in KW.items() if any(w in txt for w in k)})
+    # Nov 9 2026: "Supports selected … integrations" is not a customer-support product.
+    if x.get("slug")=="1zheai": out=[g for g in out if g!="support"]
+    return out
 # DIY hardware/firmware projects: real voice projects, but not ready-made voice agents, so free-tool picks rank them after software.
 HW={"xiaozhi-esp32","elatoai"}
 DEV_CATS=("coding","frameworks","MCP servers","agent infra","DevOps & cloud","QA & testing")  # always developer tools, even when "ready to use" (Cursor is not "no code needed")

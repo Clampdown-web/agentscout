@@ -89573,7 +89573,7 @@
    "website": "https://popnow.ai/",
    "github": "https://github.com/popnow-ai/popnow-mcp",
    "category": "video generation",
-   "description": "PopNow is an AI studio for video, images, music and voice across top models, with an API and MCP server for developers.",
+   "description": "PopNow is an AI video, image and audio studio with automatic credit refunds for eligible failed generations. Its conditional price-beat guarantee offers 2× an eligible price difference after human review, in non-cash credits or API balance, subject to limits.",
    "key_features": [
     "Paid",
     "Active",
@@ -100343,12 +100343,14 @@
    "url": "https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104",
    "website": "https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104",
    "github": "",
-   "category": "models & local runtimes",
-   "description": "1ZheAI is a model API hub that connects Claude, GPT and image models through one OpenAI-compatible endpoint with setup snippets for Claude Code, Cursor, Python and Node, and also lists AI account and subscription offers; check the terms of each underlying provider before use.",
+   "category": "agent infra",
+   "description": "Independent usage-based AI API service for developers building coding assistants, text workflows and image applications. Supports selected OpenAI-compatible integrations; model and feature availability depend on the endpoint. Requires an account, API key and balance. Check live model prices and billing notes before use. USDT top-ups supported. Not affiliated with model providers.",
    "key_features": [
     "Usage-based",
     "Active",
-    "Sales & support"
+    "Write code",
+    "Automate workflows",
+    "Generate images"
    ],
    "pricing": "Usage-based",
    "price_tag": "paid",
@@ -100359,8 +100361,8 @@
    "added": "2026-11-09",
    "source": "maker submission",
    "goals": [
-    "media",
-    "writing"
+    "automation",
+    "media"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -100372,7 +100374,9 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "sales & support"
+    "write code",
+    "automate workflows",
+    "generate images"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/1zheai.png",

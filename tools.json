@@ -55315,7 +55315,7 @@
   {
     "name": "PopNow",
     "url": "https://popnow.ai/",
-    "description": "PopNow is an AI studio for video, images, music and voice across top models, with an API and MCP server for developers.",
+    "description": "PopNow is an AI video, image and audio studio with automatic credit refunds for eligible failed generations. Its conditional price-beat guarantee offers 2× an eligible price difference after human review, in non-cash credits or API balance, subject to limits.",
     "category": "video generation",
     "pricing": "Paid",
     "maturity": "Active",
@@ -61564,8 +61564,8 @@
   {
     "name": "1ZheAI",
     "url": "https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104",
-    "description": "1ZheAI is a model API hub that connects Claude, GPT and image models through one OpenAI-compatible endpoint with setup snippets for Claude Code, Cursor, Python and Node, and also lists AI account and subscription offers; check the terms of each underlying provider before use.",
-    "category": "models & local runtimes",
+    "description": "Independent usage-based AI API service for developers building coding assistants, text workflows and image applications. Supports selected OpenAI-compatible integrations; model and feature availability depend on the endpoint. Requires an account, API key and balance. Check live model prices and billing notes before use. USDT top-ups supported. Not affiliated with model providers.",
+    "category": "agent infra",
     "pricing": "Usage-based",
     "maturity": "Active",
     "audience": "builders",
@@ -61576,13 +61576,18 @@
     "source": "maker submission",
     "pricing_detail": "",
     "use_cases": [
-      "sales & support"
+      "write code",
+      "automate workflows",
+      "generate images"
     ],
     "website": "https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104",
     "github": "",
     "id": 2409,
     "slug": "1zheai",
-    "logo": "assets/logos/1zheai.png"
+    "logo": "assets/logos/1zheai.png",
+    "tasks_exclude": [
+      "agent-payments"
+    ]
   },
   {
     "name": "Put Me In",

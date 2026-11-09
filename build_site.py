@@ -43,7 +43,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 # its site says it does not claim MCP or A2A support, so the MCP & infra category default ("connect tools via MCP") would be wrong.
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
-UC_SET={"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: maker correction. "share of voice" (brand GEO) matched the voice rule; BotSee measures AI visibility, it does not handle phone or voice calls. tasks_exclude keeps it off the voice-agent task.
+UC_SET={"1zheai":["write code","automate workflows","generate images"],  # Nov 9 2026: maker correction. "account" in the approved description matched sales & support; this is a developer API for coding assistants, text workflows and image apps.
+"botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: maker correction. "share of voice" (brand GEO) matched the voice rule; BotSee measures AI visibility, it does not handle phone or voice calls. tasks_exclude keeps it off the voice-agent task.
 "editara":["edit photos","remove backgrounds","restore photos","upscale images"],
 "puremidi":["make music"],
 "lakewood-agents":["personal agents","research the web","automate workflows"],
