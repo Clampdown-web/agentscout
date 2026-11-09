@@ -880,10 +880,11 @@ nav.sitenav .logo{margin-right:auto;min-width:0}
 nav.sitenav .logo img{height:28px;width:auto}
 nav.sitenav .themebtn{position:static;order:4;margin:0;width:44px;height:44px;flex:none}
 nav.sitenav .nav-open{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0}
-nav.sitenav .navburger{order:5;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+nav.sitenav .navburger{order:5;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}
 nav.sitenav .navburger-bars{display:flex;flex-direction:column;gap:4px;width:16px}
 nav.sitenav .navburger-bars span{display:block;height:2px;border-radius:2px;background:currentColor}
 nav.sitenav .nav-open:focus-visible+.navburger,nav.sitenav summary:focus-visible,nav.sitenav .navpanel a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav.sitenav .desk-store{order:2;display:none;align-items:center;min-height:40px;padding:0 10px;border-radius:8px;font-size:14px;font-weight:650;color:var(--text)}
 nav.sitenav .navlinks{order:3;display:none;margin:0}
 nav.sitenav .nav-open:checked~.navlinks{display:flex}
 nav.sitenav summary{list-style:none;cursor:pointer}
@@ -903,15 +904,19 @@ nav.sitenav .navpanel .npico,nav.sitenav .navpanel .mcpico{width:16px;height:16p
 }
 @media(min-width:960px){
   nav.sitenav .navburger,nav.sitenav .nav-open{display:none}
-  nav.sitenav .navlinks{display:flex;align-items:center;gap:4px;margin-left:auto}
+  nav.sitenav .navlinks{display:flex;align-items:center;gap:2px;margin-left:auto}
   nav.sitenav .navgroup{position:relative}
-  nav.sitenav .navgroup>summary{min-height:40px;padding:0 12px;border-radius:8px;font-size:14px}
+  nav.sitenav .navgroup>summary{min-height:40px;padding:0 8px;border-radius:8px;font-size:13.5px}
   nav.sitenav .navgroup>summary:hover{background:var(--soft)}
   nav.sitenav .navpanel{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:240px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;z-index:60}
   nav.sitenav .navgroup[open]>.navpanel{display:flex}
   nav.sitenav .navgroup:last-child .navpanel{left:auto;right:0}
   nav.sitenav .nav-submit>summary{background:var(--text);color:var(--bg)}
   nav.sitenav .nav-submit>summary::after{border-color:currentColor}
+}
+@media(min-width:1180px){
+  nav.sitenav .desk-store{display:inline-flex}
+  nav.sitenav .navgroup>summary{padding:0 10px;font-size:14px}
 }
 .quiet-feature{margin:4px 0 18px;font-size:14px;color:var(--muted)}
 .quiet-feature a{color:var(--accent);font-weight:600}
