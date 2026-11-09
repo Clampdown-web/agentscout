@@ -28,6 +28,9 @@ REL={}; FALLBACK=[]
 def _dedupe(faq):
     """One answer per question (first wins), so the visible FAQ and FAQPage JSON-LD never repeat a question."""
     seen=set(); return [(q,a) for q,a in faq if not (q in seen or seen.add(q))]
+def schema_text(s):
+    """Plain text for JSON-LD. README markup in a listing must not land in the script as tags."""
+    return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",str(s or ""))).strip()
 def _join(ns): return ns[0] if len(ns)==1 else ", ".join(ns[:-1])+" and "+ns[-1]
 def _alt_answer(x,cat,old):
     rel=REL.get(x["slug"]) or []
@@ -64,8 +67,8 @@ def apply(out,x,t,catslug,prim,B):
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
     offers=[{"@type":"Offer","name":f"{n} {a}","price":re.match(r"\$([\d.]+)",b).group(1) if re.match(r"\$[\d.]+",b) else None,"priceCurrency":"USD","url":p["src"]} for a,b,c in p["tiers"]]
     offers=[o for o in offers if o["price"] is not None]
-    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":r["meta"],"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"operatingSystem":"macOS" if x["slug"]=="coddo" else "Web","offers":offers}
-    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
+    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":schema_text(r["meta"]),"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"operatingSystem":"macOS" if x["slug"]=="coddo" else "Web","offers":offers}
+    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":schema_text(a)}} for q,a in faq]}
     return out,(sec,app,fq,title)
 
 OSI_NOTE="(verified on GitHub)"
@@ -156,14 +159,14 @@ def lite(out,x,t,catslug,prim,B,r):
       +(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7;overflow-wrap:anywhere">'+"".join(f"<li><strong>{e(k)}</strong>: {v[0] if isinstance(v,tuple) else (v if len(it)>2 else e(v))}</li>" for it in fli for k,v in [(it[0],it[1])])+"</ul>" if fli else "")
       +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+_mcp(n,r)+phtml
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
-    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":" ".join(r["long"])[:500],"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"applicationSubCategory":cat}
+    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":schema_text(" ".join(r["long"]))[:500],"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"applicationSubCategory":cat}
     # Offer only when the price is verified: official pricing page tiers, or a verified OSI open-source licence (free to use)
     F=r.get("facts") or {}
     if offers: app["offers"]=offers
     elif F.get("osi") and F.get("license") and not F.get("archived"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",F["license"])+")"}
     if F.get("repo"): app["sameAs"]=F["repo"]
     if r.get("features"): app["featureList"]=r["features"]
-    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
+    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":schema_text(a)}} for q,a in faq]}
     return out,(sec,app,fq,f"{n}: what it does, pricing and alternatives","lite")
 
 
@@ -208,9 +211,9 @@ def auto(out,x,t,catslug,prim,B):
     sec=(f'{H2}{e(n)} at a glance</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7;overflow-wrap:anywhere">'+"".join(f"<li><strong>{e(k)}</strong>: {v}</li>" for k,v in li)+"</ul>"
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)
       +f'<p class="muted" style="margin:10px 0 28px">Facts from our link-checked listing{", the GitHub repository" if repo else ""} and the official site. See something wrong? <a href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a>.</p>')
-    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":x["description"],"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"applicationSubCategory":cat}
+    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":schema_text(x["description"]),"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"applicationSubCategory":cat}
     if osi and lic and not g.get("archived"): app["offers"]={"@type":"Offer","price":"0","priceCurrency":"USD","description":"Open source ("+re.sub(r"^the ","",lic)+")"}
     if repo: app["sameAs"]=repo
     if g.get("release_tag") and len(g["release_tag"])<=40: app["softwareVersion"]=g["release_tag"]
-    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]}
+    fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":schema_text(a)}} for q,a in faq]}
     return out,(sec,app,fq,f"{n}: what it does, pricing and alternatives","lite")

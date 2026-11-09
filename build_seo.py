@@ -16,7 +16,7 @@ def _settitle(s,new):
     s=re.sub(r'(<meta property="og:title" content=")[^"]*(")',lambda m:m.group(1)+v+m.group(2),s,1)
     s=re.sub(r'(<meta name="twitter:title" content=")[^"]*(")',lambda m:m.group(1)+v+m.group(2),s,1)
     return s
-MAXT=65  # Google shows ~60-65 chars; was 70 (Oct 18 2026)
+MAXT=65  # tool pages; Google shows about 60. Guide and category titles use 60 (see shorten).
 def _generic(t):
     """Brand first, then the year, then both; keeps the meaning of the title."""
     a=re.sub(r" · AgentScout$| \| AgentScout$","",t); b=t.replace(" (2026)",""); c=a.replace(" (2026)","")
@@ -25,7 +25,8 @@ def shorten(f,s,names,c):
     t=_attr(s,r"<title>(.*?)</title>"); 
     if not t: return s
     t=html.unescape(t.strip())
-    if len(t)<=MAXT: return s
+    limit=60 if not f.startswith("tools/") else MAXT
+    if len(t)<=limit: return s
     cands=[]
     if f.startswith("tools/"):
         n=names.get(f[6:-5])
@@ -39,7 +40,7 @@ def shorten(f,s,names,c):
     else:
         cands=_generic(t)
     for cand in cands:
-        if cand!=t and len(cand)<=MAXT: c["title_shortened"]+=1; return _settitle(s,cand)
+        if cand!=t and len(cand)<=limit: c["title_shortened"]+=1; return _settitle(s,cand)
     if f.startswith("news/"):  # headline is the meaning: keep it whole, just drop the brand suffix
         a=_generic(t)[0]
         if a!=t: c["title_shortened"]+=1; s=_settitle(s,a); t=a

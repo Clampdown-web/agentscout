@@ -60,7 +60,11 @@ def annotate():
         s2=MK_RE.sub("",s)
         s2=re.sub(r'<main(?![^>]*data-pagefind-body)([^>]*)>',r'<main\1 data-pagefind-body>',s2,1)
         if "data-pagefind-body" not in s2: continue
-        s2=re.sub(r'<h1(?![^>]*data-pagefind-weight)([^>]*)>',r'<h1\1 data-pagefind-weight="10">',s2,1)  # titles outrank body mentions
+        # Only the first real heading in the body. A `<h1` inside head JSON must not
+        # swallow the next `>` (that was the JSON-LD script closer on two tool pages).
+        _head,_body=s2.split("</head>",1) if "</head>" in s2 else ("",s2)
+        _body=re.sub(r'<h1(?![^>]*data-pagefind-weight)(\s[^>]{0,300})?>',lambda m:'<h1'+(m.group(1) or '')+' data-pagefind-weight="10">',_body,count=1)
+        s2=_head+"</head>"+_body if _head else _body
         s2=s2.replace("</main>",mk+"</main>",1)
         if s2!=s: open(p,"w",encoding="utf-8").write(s2)
         n+=1
