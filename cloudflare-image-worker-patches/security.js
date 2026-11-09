@@ -19,8 +19,12 @@
  * When env.TURNSTILE_ENABLED === "true", POST /submit and POST /generate
  * are siteverify'd (secret, token, remoteip = CF-Connecting-IP) before the
  * inner handler runs. Failure or a hostname outside the site allowlist is 403.
- * A missing CF-Connecting-IP fails closed. Deploy must set that plain-text
- * var to true or the check stays off.
+ * POST /submit rejects a token whose action is present and not "submit"
+ * (for example "generate" or "review"). An empty or missing action is still
+ * accepted until TURNSTILE_REQUIRE_SUBMIT_ACTION is the string "true".
+ * That var defaults off so a cached copy of the previous page can submit.
+ * POST /generate does not check action. A missing CF-Connecting-IP fails
+ * closed. Deploy must set TURNSTILE_ENABLED to true or the check stays off.
  *
  * X-Stats-Key on /reviews/pending, /reviews/admin, /reviews/export, /stats,
  * and /trending/stats is compared with safeEq (SHA-256, then a constant-time
@@ -49,11 +53,14 @@ const STATS_KEY_PATHS = new Set([
   "/trending/stats",
 ]);
 const TURNSTILE_PATHS = new Set(["/submit", "/generate"]);
+const SUBMIT_ACTION = "submit";
 const MAX_TURNSTILE_BODY = 100_000;
 const MAX_TURNSTILE_TOKEN = 2048;
 const MAX_REVIEW_BODY = 32_768;
 const MAX_TRACK_BODY = 65_536;
 const MAX_READY_URL = 4_096;
+const TURNSTILE_RETRY_ERROR = "The check expired or was already used. Complete it again, then submit.";
+const TURNSTILE_STALE_PAGE = "This page needs a fresh check. Reload it, complete the check again, then submit.";
 
 const SECURITY_HEADERS = {
   "x-content-type-options": "nosniff",
@@ -310,11 +317,40 @@ async function rejectTurnstile(request, env) {
   } catch {
     return json(request, { error: "Bot check failed." }, 403);
   }
+  return turnstileRejection(request, data, {
+    pathname: url.pathname,
+    requireSubmitAction: submitActionRequired(env),
+  });
+}
+
+// Exact "true" only, same rule as TURNSTILE_ENABLED. Unset, "false", or any
+// other value leaves the transition behavior on: a /submit token with no
+// action is accepted, and any other action is not.
+export function submitActionRequired(env) {
+  return String((env && env.TURNSTILE_REQUIRE_SUBMIT_ACTION) || "") === "true";
+}
+
+export function submitActionDecision(action, requireExact) {
+  const value = typeof action === "string" ? action.trim() : "";
+  if (value === SUBMIT_ACTION) return "ok";
+  if (!value) return requireExact ? "missing" : "ok";
+  return "mismatch";
+}
+
+export function turnstileRejection(request, data, options = {}) {
   const host = String((data && data.hostname) || "").toLowerCase();
-  if (!data || data.success !== true || !ALLOWED_HOSTS.has(host)) {
-    return json(request, { error: "Bot check failed." }, 403);
+  const onSubmit = normalizePath(options.pathname) === "/submit";
+  const actionDecision = onSubmit
+    ? submitActionDecision(data && data.action, options.requireSubmitAction === true)
+    : "ok";
+  if (data && data.success === true && ALLOWED_HOSTS.has(host) && actionDecision === "ok") return null;
+  if (data && data.success === true && ALLOWED_HOSTS.has(host) && actionDecision !== "ok") {
+    return json(request, { error: TURNSTILE_STALE_PAGE }, 403);
   }
-  return null;
+  const codes = data && Array.isArray(data["error-codes"]) ? data["error-codes"] : [];
+  const retry = !!(data && data.success !== true && codes.some((code) =>
+    code === "timeout-or-duplicate" || code === "invalid-input-response"));
+  return json(request, { error: retry ? TURNSTILE_RETRY_ERROR : "Bot check failed." }, 403);
 }
 
 async function rejectReadiness(request) {

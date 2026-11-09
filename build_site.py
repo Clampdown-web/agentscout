@@ -492,7 +492,7 @@ def _quality_finish():
         d = "../" * f.count("/")
         s = build_tasks.ensure_shared_scripts(f, s, d)
         s = re.sub(
-            r"(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js)\?v=\d+",
+            r"(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+",
             lambda mm: mm.group(1) + "?v=" + build_tasks.ASSET_V,
             s,
         )

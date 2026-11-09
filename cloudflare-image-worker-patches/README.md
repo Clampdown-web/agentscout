@@ -22,9 +22,11 @@ The review form in `reviews.js` posts to **`/review`**, not `/reviews`. Both are
 `POST /submit` and `POST /generate` are checked with Turnstile only when the plain-text var **`TURNSTILE_ENABLED` is the string `true`**. That var must be set at deploy or the new widget does nothing on the server. The check runs after the origin and rate-limit gate and before the existing handler:
 
 - Read `turnstileToken` from the JSON body (the same field `reviews.js` sends).
-- `POST https://challenges.cloudflare.com/turnstile/v0/siteverify` with `secret` (`TURNSTILE_SECRET`), `response` (the token), and `remoteip` (`CF-Connecting-IP`).
-- Return **403** unless `success` is true and `hostname` is `agentscouthq.com` or `www.agentscouthq.com`.
-- A missing secret, a missing token, a siteverify error, or any other hostname is 403. The existing submit or generate handler does not run.
+- `POST https://challenges.cloudflare.com/turnstile/v0/siteverify` with `secret` (`TURNSTILE_SECRET`), `response` (the token), and `remoteip` (`CF-Connecting-IP`). The call aborts after 10 seconds. There is no client-supplied idempotency key: one token must not validate twice.
+- Return **403** unless `success` is true and `hostname` is `agentscouthq.com` or `www.agentscouthq.com`. `POST /generate` does not check `action`.
+- On `POST /submit`, a token whose `action` is present and not `submit` (for example `generate` or `review`) is 403. An empty or missing `action` is accepted. That is the transition default, so a cached copy of the previous submit page still works. It is not controlled by `TURNSTILE_ENABLED`.
+- After the new submit page has been the live page for about 48 hours, set the plain-text var `TURNSTILE_REQUIRE_SUBMIT_ACTION` to the string `true` and redeploy **only** `agentscout-image`. From then on, `/submit` requires `action` exactly `submit`. Leave the var unset until then. Anything other than the string `true` keeps the transition default.
+- A spent or malformed token (`timeout-or-duplicate`, `invalid-input-response`) is still 403, with the message `The check expired or was already used. Complete it again, then submit.` A rejected action is 403 with `This page needs a fresh check. Reload it, complete the check again, then submit.` Every other failure, including a bad secret or a foreign hostname, stays `Bot check failed.` The existing submit or generate handler does not run.
 
 The site key on `/submit` and `/generate` is the same public key already used for reviews (`0x4AAAAAAFfaxf14aQF-sky1` in `reviews.js`).
 
@@ -78,11 +80,23 @@ TURNSTILE_ENABLED = "true"
 
 `ReviewsDO.snapshotRatingsReviews` is a separate read. It is not a route. It runs only when `REVIEWS_SNAPSHOT` is the string `true`, which this repository does not set. The read is two fixed SELECTs inside `ctx.storage.transactionSync`, with both cursors consumed before the callback returns. It does not accept SQL, does not read Workers KV, and does not include the `limits` table. A local Miniflare run showed a pair of inserts is visible entirely or not at all through that callback, while an awaited gap between the two SELECTs can see one table updated and the other not. Turning the flag on, and any route that would return the rows, needs its own approval. Encrypt before anything is written to disk. Key custody is not handled here.
 
-5. From the image-worker project, deploy **only** that worker:
+5. From the image-worker project, deploy **only** that worker, and only after the Pages site is serving the new submit page:
 
 ```sh
 npx wrangler deploy
 ```
+
+Do not set `TURNSTILE_REQUIRE_SUBMIT_ACTION` in that first deploy. About 48 hours after the new submit page is what visitors load, set it to `true` in the same Wrangler config and deploy `agentscout-image` again:
+
+```toml
+[vars]
+TURNSTILE_ENABLED = "true"
+TURNSTILE_REQUIRE_SUBMIT_ACTION = "true"
+```
+
+To undo only that stricter check, remove the var or set it to anything other than `true`, then deploy the worker again. Cached pages that send no action work again. Tokens with action `generate` or `review` stay rejected.
+
+Rollback of the whole worker is the previous `agentscout-image` deployment in the Cloudflare dashboard (Workers, `agentscout-image`, Deployments). Do not deploy this folder from the Agentscout repo to roll back. The previous worker ignores `action`, so the new submit page keeps working after a worker rollback.
 
 6. Check, from outside the site origin:
 
@@ -91,7 +105,7 @@ curl -s -o /dev/null -w '%{http_code}\n' -X POST https://api.agentscouthq.com/su
   -H 'Origin: https://evil.example' -H 'Content-Type: text/plain' --data '{}'
 ```
 
-That must be `403`. The same POST with `-H 'Origin: https://agentscouthq.com'` and `TURNSTILE_ENABLED=true` must also be `403` until the body includes a token siteverify accepts for `agentscouthq.com` or `www.agentscouthq.com`. Eleven rapid POSTs from one IP must include a `429`. `GET /reviews/all` with `-H 'Origin: https://agentscouthq.com'` must answer `access-control-allow-origin: https://agentscouthq.com`. The same GET with a foreign `Origin` must not reflect that origin. With the var unset, a foreign `POST /generate` is still `403` and an allowed `POST /generate` still counts against `IMAGE_WRITE`. With `TURNSTILE_ENABLED=true`, `POST /generate` without a valid token is `403` and does not run image generation. `GET /readiness?url=http://127.0.0.1/` is `400` and does not reach the inner fetcher. `GET /stats` without `X-Stats-Key` is `403`.
+That must be `403`. The same POST with `-H 'Origin: https://agentscouthq.com'` and `TURNSTILE_ENABLED=true` must also be `403` until the body includes a token siteverify accepts for `agentscouthq.com` or `www.agentscouthq.com`. With `TURNSTILE_REQUIRE_SUBMIT_ACTION` unset, a token with an empty action is enough. A token whose action is `generate` or `review` is `403` either way. Confirm the live submit page source contains `submit-turnstile.js` before this deploy. Eleven rapid POSTs from one IP must include a `429`. `GET /reviews/all` with `-H 'Origin: https://agentscouthq.com'` must answer `access-control-allow-origin: https://agentscouthq.com`. The same GET with a foreign `Origin` must not reflect that origin. With the var unset, a foreign `POST /generate` is still `403` and an allowed `POST /generate` still counts against `IMAGE_WRITE`. With `TURNSTILE_ENABLED=true`, `POST /generate` without a valid token is `403` and does not run image generation. `GET /readiness?url=http://127.0.0.1/` is `400` and does not reach the inner fetcher. `GET /stats` without `X-Stats-Key` is `403`.
 
 Publish the Pages site (this repo, after merge) before turning the var on. The submit and generate pages have to be live so they send `turnstileToken`. Turning the var on first rejects every submission and generation.
 
