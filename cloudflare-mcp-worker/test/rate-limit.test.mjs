@@ -82,8 +82,9 @@ test("a thrown limiter and a minute rejection fail closed", async () => {
     MCP_BURST: { async limit() { throw new Error("binding down"); } },
     MCP_MINUTE: { async limit() { return { success: true }; } },
   });
-  assert.equal(thrown.status, 500);
+  assert.equal(thrown.status, 503);
   const thrownBody = await thrown.json();
+  assert.equal(thrownBody.error, "Rate limiting is not configured.");
   assert.equal(thrownBody.tools, undefined);
   assert.equal(thrownBody.tools_indexed, undefined);
   const minute = await worker.fetch(hit(), {

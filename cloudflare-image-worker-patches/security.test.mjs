@@ -218,6 +218,27 @@ test("admin paths reject a wrong X-Stats-Key before the inner handler", async ()
   assert.equal(calls.length, 4);
 });
 
+test("stats routes consume the read limit before the key is compared", async () => {
+  const { worker, calls } = handler();
+  const tight = limiter(2);
+  const binding = { ...env(), IMAGE_READ: tight, STATS_KEY: "correct-key" };
+  const headers = { "cf-connecting-ip": "203.0.113.77", "x-stats-key": "guess" };
+  assert.equal((await worker.fetch(new Request("https://api.agentscouthq.com/stats", { headers }), binding)).status, 403);
+  assert.equal((await worker.fetch(new Request("https://api.agentscouthq.com/stats", { headers }), binding)).status, 403);
+  const limited = await worker.fetch(new Request("https://api.agentscouthq.com/trending/stats", { headers }), binding);
+  assert.equal(limited.status, 429);
+  assert.equal(calls.length, 0);
+  const ok = await worker.fetch(new Request("https://api.agentscouthq.com/stats", {
+    headers: { "cf-connecting-ip": "203.0.113.78", "x-stats-key": "correct-key" },
+  }), { ...env(), STATS_KEY: "correct-key" });
+  assert.equal(ok.status, 200);
+  const unconfigured = await worker.fetch(new Request("https://api.agentscouthq.com/stats", {
+    headers: { "cf-connecting-ip": "203.0.113.79", "x-stats-key": "correct-key" },
+  }), { STATS_KEY: "correct-key" });
+  assert.equal(unconfigured.status, 503);
+  assert.equal(calls.length, 1);
+});
+
 test("turnstile stays off until TURNSTILE_ENABLED is true", async () => {
   assert.equal(turnstileEnabled({}), false);
   assert.equal(turnstileEnabled({ TURNSTILE_ENABLED: "false" }), false);

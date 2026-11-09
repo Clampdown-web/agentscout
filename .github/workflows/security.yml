@@ -37,6 +37,10 @@ jobs:
           cloudflare-image-worker-patches/captured-handler.test.mjs
           free_tools_js/escape.test.mjs
           free_tools_js/reviews.test.mjs
+          free_tools_js/listing-url.test.mjs
+          scripts/test_actions_permissions.mjs
+      - name: JSON-LD script escape
+        run: python3 scripts/test_jsonld_script.py
       - name: Snapshot runtime
         run: >-
           npm install --prefix /tmp/mf-test --no-fund --no-audit miniflare@4.20260730.0 &&

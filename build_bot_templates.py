@@ -7,6 +7,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 from pack_builder_html import pack_section_html
 esc=html.escape
 SITE="https://agentscouthq.com"; D="bot-templates"; MARK="<!-- btx-generated -->"
+def ld_script(obj):
+    """JSON-LD that cannot close the surrounding script tag."""
+    body=json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
+    return '<script type="application/ld+json">'+body+"</script>"
 def live_bot_template_count(html_path=None):
     """Rows on /bot-templates/. The built page is the count; do not keep a stale literal."""
     path=html_path or f"{D}/index.html"
@@ -95,10 +99,10 @@ def detail(e,shell,rel):
     h=re.sub(r'(<link rel="canonical" href=")[^"]*',lambda m:m.group(1)+url,h,count=1)
     for k,v in (("og:title",title),("og:description",md),("og:url",url)): h=re.sub(rf'(<meta property="{k}" content=")[^"]*',lambda m:m.group(1)+esc(v),h,count=1)
     for k,v in (("twitter:title",title),("twitter:description",md)): h=re.sub(rf'(<meta name="{k}" content=")[^"]*',lambda m:m.group(1)+esc(v),h,count=1)
-    cw=json.dumps({"@context":"https://schema.org","@type":"CreativeWork","name":e["name"],"description":e["desc"],"url":url,"sameAs":e["url"],"author":{"@type":"Person","name":e["creator"]}},ensure_ascii=False)
-    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "CreativeWork".*?</script>',lambda m:f'<script type="application/ld+json">{cw}</script>',h,count=1,flags=re.S)
-    bc=json.dumps({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Bot templates","item":f"{SITE}/{D}/"},{"@type":"ListItem","position":3,"name":e["name"],"item":url}]},ensure_ascii=False)
-    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "BreadcrumbList".*?</script>',lambda m:f'<script type="application/ld+json">{bc}</script>',h,count=1,flags=re.S)
+    cw=ld_script({"@context":"https://schema.org","@type":"CreativeWork","name":e["name"],"description":e["desc"],"url":url,"sameAs":e["url"],"author":{"@type":"Person","name":e["creator"]}})
+    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "CreativeWork".*?</script>',lambda m:cw,h,count=1,flags=re.S)
+    bc=ld_script({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Bot templates","item":f"{SITE}/{D}/"},{"@type":"ListItem","position":3,"name":e["name"],"item":url}]})
+    h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "BreadcrumbList".*?</script>',lambda m:bc,h,count=1,flags=re.S)
     main=(f'<main class="wrap bt" data-pagefind-body>{MARK}\n<a class="bd-back" href="index.html">← Bot templates</a>\n'
       f'<div class="bd-top"><img class="bt-ic big logo" src="icons/creator-{s}.jpg" alt="{nm} logo" width="84" height="84" loading="lazy" data-icon="official"><div><h1 data-pagefind-weight="10">{nm}</h1><div class="bd-meta"><span>by {cr}</span><span class="b">Grok Bot</span></div></div></div>\n'
       f'<p class="bd-long">{esc(e["long"])}</p>\n'
@@ -141,7 +145,7 @@ def run():
             u=h.group(1) if h.group(1).startswith("http") else f"{SITE}/{D}/{h.group(1)}"
             L.append({"@type":"ListItem","position":len(L)+1,"name":old.get(u) or html.unescape(re.sub(r'<[^>]+>','',h.group(2))),"url":u})
         o["itemListElement"]=L; o["numberOfItems"]=len(L)
-        return '<script type="application/ld+json">'+json.dumps(o)+'</script>'
+        return ld_script(o)
     s=re.sub(r'<script type="application/ld\+json">(\{"@context": "https://schema.org", "@type": "ItemList".*?)</script>',il_all,s,count=1,flags=re.S)
     open(ip,"w").write(s)
     shell=open(f"{D}/haggle-bot.html").read()
