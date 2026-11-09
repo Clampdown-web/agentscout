@@ -20,7 +20,6 @@
   <div class="links"><a href="../categories/index.html">Categories</a><a href="../compare/index.html">Compare</a><a href="../best/index.html">Best</a><a href="../for/index.html">For you</a><a href="../s/index.html">Popular lists</a><a href="../news.html">News</a><a class="navgen" href="../generate.html">✨ Image Gen</a><a href="https://agentscout.beehiiv.com/" data-nl>Newsletter</a><a href="../quiz.html">Quiz</a><a class="hide" href="../saved.html">♥ Saved (<span data-saved-count>0</span>)</a><a class="btn primary" href="https://github.com/Clampdown-web/agentscout/issues/new?labels=submission&amp;title=Tool%20submission%3A%20" target="_blank" rel="noopener noreferrer">Submit a tool</a></div>
 </div></nav>
 <main class="wrap">
-  <a class="bsbanner" data-pagefind-ignore href="https://agentscouthq.com/bot-store/?utm_source=toolpage&utm_medium=banner&utm_campaign=botstore">Ready-made AI bots from $39 — Bot Store →</a>
   <div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../categories/{{CATSLUG}}.html">{{CAT}}</a> / {{NAME}}</div>
   <section style="padding-top:20px"><div class="detail">
     <div>

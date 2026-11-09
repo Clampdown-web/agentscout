@@ -437,11 +437,7 @@ def patch_tool_badges(tools):
             continue
         block = X.badge_html(x, "../")
         s = s[:h] + block + s[end:]
-        if 'class="botstore-cta"' not in s:
-            cta = ('<aside class="botstore-cta" aria-label="AgentScout Bot Store"><p class="lp-kicker">Bot Store</p>'
-                   '<p>Separate from this listing. <a href="../bot-store/">AI Agent Packs from $35</a>. Flagship Pro Bots $39–$149.</p>'
-                   '<p style="margin:8px 0 0"><a class="btn" href="../bot-store/">Browse the Bot Store</a></p></aside>')
-            s = s.replace(block, cta + block, 1)
+        s = re.sub(r'<aside class="botstore-cta".*?</aside>', '', s, count=1, flags=re.S)
         s = s.replace("Upvotes and saves stay on this device.", "Saves stay on this device. Upvotes are one per visitor per day.")
         import tool_banner
         s = tool_banner.ensure(s)  # keep the Bot Store strip when badge HTML is rewritten
