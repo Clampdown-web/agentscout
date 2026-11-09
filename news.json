@@ -1,13 +1,22 @@
 {
- "updated": "2026-11-08T15:02:33Z",
+ "updated": "2026-11-09T15:07:37Z",
  "sources": [
   "TechCrunch",
   "The Verge",
+  "Hacker News",
   "Google News",
   "Hugging Face",
   "X"
  ],
  "items": [
+  {
+   "title": "Apple is racing to make Siri more agentic",
+   "source": "The Verge",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+   "date": "2026-11-08T19:18:19Z",
+   "tool": "make",
+   "page": "news/2026/11/apple-is-racing-to-make-siri-more-agentic.html"
+  },
   {
    "title": "Coinbase CEO Brian Armstrong runs a chief-of-staff AI agent over a team of specialist agents",
    "source": "X News",
@@ -45,38 +54,31 @@
    "page": "news/2026/11/anthropic-claude-duet-app-can-steer-cloud-claude-code-sessions-from-a.html"
   },
   {
-   "title": "Wolters Kluwer ships TyMetrix 360 MCP for governed legal agent workflows",
-   "source": "Business Wire",
-   "url": "https://www.businesswire.com/news/home/20261106646088/en/Wolters-Kluwer-brings-TyMetrix-360-data-into-enterprise-AI-workflows-with-new-MCP-server",
-   "date": "2026-11-06T12:00:00Z",
+   "title": "Claude Code leaked user emails in User-Agent headers; Anthropic ships privacy fix",
+   "source": "X News",
+   "url": "https://x.com/i/trending/2118630191685914974",
+   "date": "2026-11-06T22:48:14Z",
    "tool": null,
-   "summary": "Wolters Kluwer launched a TyMetrix 360 MCP server so legal teams can create matters, adjust invoices and assign follow-ups inside their existing AI assistants under current permissions.",
-   "page": "news/2026/11/wolters-kluwer-ships-tymetrix-360-mcp-for-governed-legal-agent.html"
+   "summary": "Claude Code had been putting user emails into outbound User-Agent headers, sparking spam reports; Anthropic shipped a privacy plugin in 2.1.317 and plans to drop emails from context.",
+   "page": "news/2026/11/claude-code-leaked-user-emails-in-user-agent-headers-anthropic-ships.html"
   },
   {
-   "title": "Vercel Labs agent-desktop 1.2.0 exposes desktop CLI commands as MCP tools",
-   "source": "PulseAugur",
-   "url": "https://pulseaugur.com/cluster/344584-vercel-labs-ships-agent-desktop-1-2-0-with-model-context-protocol-integration",
-   "date": "2026-11-06T07:18:00Z",
+   "title": "Cursor Build Live Apps turns a cloud-agent prompt into a shareable URL",
+   "source": "X",
+   "url": "https://x.com/eggbaby/status/2118731209245155352",
+   "date": "2026-11-06T15:44:19Z",
    "tool": null,
-   "summary": "Vercel Labs shipped agent-desktop 1.2.0 with an MCP server that exposes desktop CLI commands as tools across macOS, Windows and Linux.",
-   "page": "news/2026/11/vercel-labs-agent-desktop-1-2-0-exposes-desktop-cli-commands-as-mcp.html"
+   "summary": "Cursor's Build Live Apps flow lets a cloud agent scaffold a web app with optional Postgres and SSO, then hand back a shareable URL.",
+   "page": "news/2026/11/cursor-build-live-apps-turns-a-cloud-agent-prompt-into-a-shareable-url.html"
   },
   {
-   "title": "Boomi Named a Visionary in the 2026 Gartner® Magic Quadrant™ for AI Agent Management…",
-   "source": "Rutland Herald",
-   "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOSXlTdndKU2N1QmtMcGRvT3RBYjFEYWFLNHZtNG10SW4yUVVGQkZSX09uX0xPZUFrNTE2RGEzX2hOeW16MHNFZlB0ek94Zlc0OW5IQ2dfX2lvTzBsemVIVnRZZTZuQmZVVl9UT04wMTM3X0VoTzJPVnk2a1ZBNE1xQkw4bGFnd0NLUTZMOWJqMG00Tko2OFJfQTJDb0ZOeUVBcnZzSjQ0ZzlUNGs3NXNJdF9qckRpU1JXTDJjODcwMnEyUFJudTQ3S2dLbG1CVWFWOU1ybF8wbFJONmRJdFd0YlFXZEVEWFZtT09Bd2ZQZHJsSVN3U0ZVR29fS3IzZFVNbzg3anpuV01kaTd3MzU3VzlkYWg?oc=5",
-   "date": "2026-11-05T16:25:48Z",
-   "tool": "boomi",
-   "page": "news/2026/11/boomi-named-a-visionary-in-the-2026-gartner-magic-quadrant-for-ai.html"
-  },
-  {
-   "title": "Meta Brings Edits to Mac With AI Agent Controls, Taking Aim at CapCut's Desktop Turf",
-   "source": "BigGo Finance",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5QZ2c5aHhER0FfaHNHbUM5WjRiallpVXRPbS1JWUxIbm5udUhXMXBCcEZib3puRV9wY29qaEh6YmNsVG5rRVREbTdZdXdCakNSeGtseVJ2YVFCc0FBV0hVVUdnX1g5U3VNZVN4N3BaMkhIZTlZaHc?oc=5",
-   "date": "2026-11-05T16:25:00Z",
-   "tool": "capcut",
-   "page": "news/2026/11/meta-brings-edits-to-mac-with-ai-agent-controls-taking-aim-at-capcuts.html"
+   "title": "Oren MCP launches stock research and trading inside Claude, Cursor and Codex",
+   "source": "X / Oren",
+   "url": "https://x.com/orenfinance_/status/2118728334440018074",
+   "date": "2026-11-06T15:32:53Z",
+   "tool": null,
+   "summary": "Oren MCP went live, letting Claude, Cursor and Codex research stocks, check portfolios and place trades with user-set limits.",
+   "page": "news/2026/11/oren-mcp-launches-stock-research-and-trading-inside-claude-cursor-and.html"
   }
  ]
 }

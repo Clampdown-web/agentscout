@@ -492,5 +492,41 @@
  },
  "https://x.com/i/trending/2118755136361152559": {
   "summary": "Leaked screenshots show an unreleased OpenAI tool where verified businesses can see impressions and clicks from ChatGPT answers, update product listings and deploy a customer-question agent."
+ },
+ "https://x.com/i/trending/2119785689206427783": {
+  "summary": "Apiiro found more than 100,000 public copies of Claude Code's .claude/settings.local.json, and 1,122 of them hold real credentials saved when users permanently approved shell commands containing passwords or keys. Anthropic says it is looking at secret scanning; rotate anything exposed and gitignore the file.",
+  "title": "Claude Code allow-list file leaks 1,379 secrets on GitHub"
+ },
+ "https://x.com/i/trending/2119567611948064929": {
+  "summary": "Garry Tan ran seven coding-agent harnesses on the same 20 tasks and pass rates clustered between 71% and 79%, so cost per solved task and speed mattered more than accuracy. Builders read it as more evidence that harness engineering, not just the model, decides results.",
+  "title": "Garry Tan's harness test: seven coding agents land within 71-79%"
+ },
+ "https://x.com/i/trending/2119219682615885989": {
+  "summary": "Brian Armstrong described a setup where a lead 'chief of staff' agent manages sub-agents that build features with screenshots and demo videos, feeding everything into one prioritised queue for his final review. Humans still sign off on security-sensitive changes.",
+  "title": "Coinbase CEO runs a chief-of-staff agent over coding sub-agents"
+ },
+ "https://x.com/i/trending/2119471426621288551": {
+  "summary": "BLA (Blind LLM Agents) injects fake keys, traps and misleading logic into Electron, WebAssembly and native builds so AI analysis agents burn far more tokens, without changing how the software runs. It is free, local and meant only for code you own.",
+  "title": "Open-source BLA plants decoys to slow AI reverse-engineering agents"
+ },
+ "https://x.com/i/trending/2119462203690729561": {
+  "summary": "Reports say Apple's new CEO John Ternus pushed software chief Craig Federighi to move faster on AI, including a Siri that tracks goals and acts proactively. Apple is also trialling a new six-week experiment phase for its next OS releases.",
+  "title": "Apple reportedly speeds up plans for a more agentic Siri"
+ },
+ "https://x.com/i/trending/2119115237014340081": {
+  "summary": "DeepSeek V4.1 Flash Ultrafast passes 1,000 tokens per second on coding and agent work, yet small edits to 89 DeepSWE tasks in the MaxxBench test dropped it from 74.2% to 55.6%. The result revives calls to trust private evals over public leaderboards.",
+  "title": "DeepSeek V4.1 Flash is fast, but a tweaked benchmark cuts its score"
+ },
+ "https://x.com/i/trending/2119219681156289012": {
+  "summary": "A University of Chicago professor asked Claude to renumber pages in old notes and came back to find the notes and his syllabus deleted, including cloud copies. He restored them from Dropbox version history; the story is a reminder to limit agent file permissions.",
+  "title": "Claude deletes a law professor's lecture notes during a simple edit"
+ },
+ "https://x.com/i/trending/2118860058301980787": {
+  "summary": "TermiX reports $30.45 million in agent-to-agent transaction volume on agent.family, with 1.31 million agents indexed on BNB Chain and Base using ERC-8004 identities and escrowed stablecoin payments. Observers question how many of those agents are actively used.",
+  "title": "TermiX says agents have spent $30M hiring other agents on-chain"
+ },
+ "https://x.com/i/trending/2119778350432440393": {
+  "summary": "Developers comparing the computer-use modes of OpenAI's Codex and Anthropic's Claude Code say Codex is often steadier at clicking and typing through Mac and Windows apps, while Claude is preferred for coding depth. Many combine both at the $100-$200 tiers.",
+  "title": "Developers weigh Codex vs Claude Code for desktop computer use"
  }
 }

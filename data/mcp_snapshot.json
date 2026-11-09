@@ -184,6 +184,11 @@
   "name": "Azure MCP Server",
   "pricing": "Open source"
  },
+ "beatapi": {
+  "link": "OK",
+  "name": "BeatAPI",
+  "pricing": "Usage-based"
+ },
  "beehiiv-mcp": {
   "link": "OK",
   "name": "beehiiv MCP",
@@ -1074,6 +1079,11 @@
   "name": "Observal",
   "pricing": "Open source"
  },
+ "oh-my-android": {
+  "link": "OK",
+  "name": "Oh My Android",
+  "pricing": "Open source"
+ },
  "ollaya": {
   "link": "OK",
   "name": "Ollaya",
@@ -1562,6 +1572,11 @@
  "wolfram-mcp": {
   "link": "OK",
   "name": "Wolfram MCP",
+  "pricing": "Paid"
+ },
+ "wordradar": {
+  "link": "OK",
+  "name": "WordRadar",
   "pricing": "Paid"
  },
  "workos-mcp": {

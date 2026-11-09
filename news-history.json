@@ -1,6 +1,15 @@
 {
  "items": [
   {
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+   "page": "news/2026/11/apple-is-racing-to-make-siri-more-agentic.html",
+   "first_seen": "2026-11-09T15:09:36Z",
+   "title": "Apple is racing to make Siri more agentic",
+   "source": "The Verge",
+   "date": "2026-11-08T19:18:19Z",
+   "tool": "make"
+  },
+  {
    "url": "https://x.com/i/trending/2119298665034437048",
    "page": "news/2026/11/coinbase-ceo-brian-armstrong-runs-a-chief-of-staff-ai-agent-over-a.html",
    "first_seen": "2026-11-08T15:10:08Z",
@@ -35,6 +44,33 @@
    "source": "X News",
    "date": "2026-11-07T08:36:33Z",
    "summary": "Anthropic linked the Claude Duet mobile app to Claude Code cloud sessions so developers can check progress and approve changes from their phone on Pro, Max and Ultra plans."
+  },
+  {
+   "url": "https://x.com/i/trending/2118630191685914974",
+   "page": "news/2026/11/claude-code-leaked-user-emails-in-user-agent-headers-anthropic-ships.html",
+   "first_seen": "2026-11-09T15:09:36Z",
+   "title": "Claude Code leaked user emails in User-Agent headers; Anthropic ships privacy fix",
+   "source": "X News",
+   "date": "2026-11-06T22:48:14Z",
+   "summary": "Claude Code had been putting user emails into outbound User-Agent headers, sparking spam reports; Anthropic shipped a privacy plugin in 2.1.317 and plans to drop emails from context."
+  },
+  {
+   "url": "https://x.com/eggbaby/status/2118731209245155352",
+   "page": "news/2026/11/cursor-build-live-apps-turns-a-cloud-agent-prompt-into-a-shareable-url.html",
+   "first_seen": "2026-11-09T15:09:36Z",
+   "title": "Cursor Build Live Apps turns a cloud-agent prompt into a shareable URL",
+   "source": "X",
+   "date": "2026-11-06T15:44:19Z",
+   "summary": "Cursor's Build Live Apps flow lets a cloud agent scaffold a web app with optional Postgres and SSO, then hand back a shareable URL."
+  },
+  {
+   "url": "https://x.com/orenfinance_/status/2118728334440018074",
+   "page": "news/2026/11/oren-mcp-launches-stock-research-and-trading-inside-claude-cursor-and.html",
+   "first_seen": "2026-11-09T15:09:36Z",
+   "title": "Oren MCP launches stock research and trading inside Claude, Cursor and Codex",
+   "source": "X / Oren",
+   "date": "2026-11-06T15:32:53Z",
+   "summary": "Oren MCP went live, letting Claude, Cursor and Codex research stocks, check portfolios and place trades with user-set limits."
   },
   {
    "url": "https://www.businesswire.com/news/home/20261106646088/en/Wolters-Kluwer-brings-TyMetrix-360-data-into-enterprise-AI-workflows-with-new-MCP-server",

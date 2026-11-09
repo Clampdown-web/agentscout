@@ -17,8 +17,12 @@
 "evals"
 ],
 "hermes-agent-nous-research": [
+"agent-memory",
+"chat-app-agents",
 "research-agents",
-"agent-frameworks"
+"mcp-gateways",
+"terminal-agents",
+"rules-config"
 ],
 "openai-agents-sdk-python": [
 "workflow-automation",
@@ -103,11 +107,16 @@
 ],
 "meta-muse-wonder": [],
 "claude-code": [
-"terminal-agents",
-"video-editing"
+"codebase-context",
+"workflow-automation",
+"terminal-agents"
 ],
 "openai-codex-cli": [
-"terminal-agents"
+"computer-use",
+"local-models",
+"terminal-agents",
+"ide-agents",
+"video-editing"
 ],
 "cursor": [
 "ide-agents",
@@ -117,6 +126,9 @@
 "cloud-coding-agents"
 ],
 "openhands": [
+"chat-app-agents",
+"local-models",
+"terminal-agents",
 "cloud-coding-agents"
 ],
 "aider": [
@@ -134,7 +146,9 @@
 "ide-agents"
 ],
 "opencode": [
-"terminal-agents"
+"computer-use",
+"terminal-agents",
+"video-editing"
 ],
 "amp": [
 "terminal-agents",
@@ -142,7 +156,9 @@
 "video-editing"
 ],
 "gemini-cli": [
-"terminal-agents"
+"planning-tasks",
+"terminal-agents",
+"video-editing"
 ],
 "github-copilot": [],
 "replit-agent": [
@@ -158,7 +174,8 @@
 ],
 "browser-use": [
 "browser-automation",
-"agent-frameworks"
+"local-models",
+"terminal-agents"
 ],
 "browserbase": [
 "browser-automation"
@@ -180,7 +197,13 @@
 "research-agents"
 ],
 "openclaw": [
-"personal-assistants"
+"agent-memory",
+"chat-app-agents",
+"agent-auth",
+"mcp-gateways",
+"agent-frameworks",
+"local-models",
+"mobile"
 ],
 "langgraph": [
 "workflow-automation",
@@ -274,7 +297,10 @@
 "vfx-compositing"
 ],
 "mcp-reference-servers": [
-"mcp-servers"
+"mcp-gateways",
+"mcp-servers",
+"agent-frameworks",
+"vfx-compositing"
 ],
 "smithery": [
 "mcp-gateways",
@@ -585,11 +611,14 @@
 "local-models"
 ],
 "ragflow": [
-"vector-rag"
+"vector-rag",
+"local-models"
 ],
 "crawl4ai": [
 "vector-rag",
-"web-scraping"
+"web-scraping",
+"search-apis",
+"browser-automation"
 ],
 "deer-flow": [
 "agent-memory",
@@ -8257,11 +8286,11 @@
 "agent-frameworks"
 ],
 "inkroom": [
+"mcp-servers",
 "workflow-automation",
 "storyboards-previs",
 "video-editing",
-"images-design",
-"rules-config"
+"images-design"
 ],
 "aifetchly": [
 "vector-rag",
@@ -9327,6 +9356,208 @@
 "converly-ai-voice-agents": [
 "planning-tasks",
 "voice-phone",
+"mobile"
+],
+"wordradar": [
+"marketing-agents",
+"research-agents",
+"mcp-servers"
+],
+"ai-story-writer": [],
+"ai-kissing-video-generator": [
+"video-editing",
+"video"
+],
+"remove-moire": [
+"planning-tasks",
+"computer-use",
+"video",
+"images-design"
+],
+"gal": [
+"browser-automation",
+"computer-use",
+"sandboxes",
+"agent-auth",
+"terminal-agents"
+],
+"overdrive-lab": [
+"marketing-agents",
+"research-agents"
+],
+"beatapi": [
+"search-apis",
+"workflow-automation",
+"stem-separation",
+"video",
+"images-design"
+],
+"jev-api": [
+"voice-phone"
+],
+"1zheai": [
+"images-design"
+],
+"put-me-in": [
+"video"
+],
+"tattoogen-ai": [
+"planning-tasks",
+"local-models",
+"images-design"
+],
+"imagetoexcel": [
+"vector-rag",
+"video-editing",
+"ai-dubbing-voices",
+"images-design"
+],
+"aitranscribe": [
+"subtitles-transcripts",
+"video"
+],
+"virvy": [
+"planning-tasks",
+"video",
+"images-design"
+],
+"radarkit": [
+"marketing-agents",
+"local-models"
+],
+"tokenhot": [
+"mcp-gateways"
+],
+"pomelu": [
+"voice-phone",
+"research-agents",
+"mcp-gateways",
+"local-models",
+"mobile"
+],
+"trackaimentions": [
+"observability"
+],
+"airbuild": [
+"no-code-apps",
+"mobile"
+],
+"ai-video-generator": [
+"planning-tasks",
+"video",
+"images-design"
+],
+"jersey-generator": [
+"planning-tasks",
+"images-design"
+],
+"rezloom": [
+"agent-frameworks"
+],
+"dime-dime-baby-ai": [
+"video"
+],
+"genjutsu-ai": [
+"video-editing",
+"video"
+],
+"facetiers": [
+"planning-tasks",
+"vector-rag",
+"browser-automation"
+],
+"ponytail": [
+"evals"
+],
+"ui-ux-pro-max": [
+"agent-frameworks",
+"images-design",
+"mobile",
+"rules-config"
+],
+"caveman": [
+"mcp-gateways"
+],
+"agent-skills-addy-osmani": [
+"planning-tasks",
+"workflow-automation",
+"rules-config"
+],
+"taste-skill": [
+"browser-automation",
+"images-design",
+"rules-config"
+],
+"impeccable": [
+"terminal-agents",
+"images-design"
+],
+"archify": [
+"codebase-context",
+"planning-tasks",
+"terminal-agents",
+"images-design"
+],
+"kortix-companyos": [
+"parallel-orchestration",
+"agent-memory",
+"multi-agent",
+"agent-frameworks",
+"personal-assistants"
+],
+"ekko-studio": [
+"voice-phone",
+"computer-use",
+"workflow-automation",
+"multi-agent",
+"local-models",
+"images-design"
+],
+"refly": [
+"mcp-gateways",
+"workflow-automation",
+"images-design",
+"rules-config"
+],
+"claude-code-templates": [
+"mcp-servers",
+"multi-agent",
+"terminal-agents",
+"rules-config"
+],
+"zvec": [
+"agent-memory",
+"text-to-sql",
+"vector-rag",
+"mobile"
+],
+"oh-my-android": [
+"mcp-servers",
+"mobile"
+],
+"youtube-summarizer": [
+"subtitles-transcripts",
+"video"
+],
+"lanesra-ai": [
+"planning-tasks"
+],
+"seedance-2-5": [
+"planning-tasks",
+"video-editing",
+"video",
+"images-design"
+],
+"html2mp4": [
+"mcp-servers",
+"video-editing",
+"video"
+],
+"novera": [
+"search-apis",
+"browser-automation",
+"local-models",
+"images-design",
 "mobile"
 ]
 }

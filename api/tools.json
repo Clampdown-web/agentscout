@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-08T15:41:13Z",
- "updated": "2026-11-08T15:41:13Z",
- "last_checked": "2026-11-08",
- "count": 2366,
- "total_tools": 2366,
+ "generated": "2026-11-09T15:23:43Z",
+ "updated": "2026-11-09T15:23:43Z",
+ "last_checked": "2026-11-09",
+ "count": 2409,
+ "total_tools": 2409,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -179,15 +179,16 @@
    "website": "https://hermes-agent.nousresearch.com",
    "github": "https://github.com/NousResearch/hermes-agent",
    "category": "frameworks",
-   "description": "Open-source agent harness; v0.21.7 stable shipped Oct 12, v0.22.0 RCs Oct 13-14.",
+   "description": "Hermes Agent is Nous Research's MIT-licensed, self-improving agent with a built-in learning loop: it writes skills from completed tasks, refines them in use, keeps agent-curated memory and searches its own past conversations. It runs on anything from a $5 VPS to serverless infrastructure, offers a full terminal UI, and one gateway serves Telegram, Discord, Slack, WhatsApp, Signal and the CLI, with any model via Nous Portal, OpenRouter, OpenAI or your own endpoint.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); model usage billed by your chosen provider.",
     "Active, frequent releases",
     "258708 GitHub stars",
     "Build an agent",
-    "Research the web"
+    "Research the web",
+    "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); model usage billed by your chosen provider.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -197,7 +198,8 @@
    "added": "2026-10-14",
    "source": "original",
    "goals": [
-    "automation"
+    "automation",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": true,
@@ -207,10 +209,11 @@
    "repo": "NousResearch/hermes-agent",
    "github_stars": 258708,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "build an agent",
-    "research the web"
+    "research the web",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/hermes-agent-nous-research.png",
@@ -1123,14 +1126,15 @@
    "website": "https://www.claude.com/product/claude-code",
    "github": "https://github.com/anthropics/claude-code",
    "category": "coding",
-   "description": "Anthropic's terminal coding agent that edits code, runs commands and handles git.",
+   "description": "Claude Code is Anthropic's agentic coding tool that lives in your terminal, understands your codebase and carries out routine tasks, explains complex code and handles git workflows through natural-language commands. It also runs in IDEs and on GitHub when you tag @claude, and installs via a native script, Homebrew or WinGet (the npm install is deprecated).",
    "key_features": [
-    "Paid (Claude plan or API)",
+    "Requires a paid Claude plan or Anthropic API usage.",
     "Mature",
     "153919 GitHub stars",
-    "Write code"
+    "Write code",
+    "Automate workflows"
    ],
-   "pricing": "Paid (Claude plan or API)",
+   "pricing": "Requires a paid Claude plan or Anthropic API usage.",
    "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
@@ -1151,7 +1155,8 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "write code"
+    "write code",
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/claude-code.png",
@@ -1164,14 +1169,15 @@
    "website": "https://learn.chatgpt.com/docs/codex/cli",
    "github": "https://github.com/openai/codex",
    "category": "coding",
-   "description": "OpenAI's open-source coding agent for the terminal; also runs in the cloud.",
+   "description": "Codex CLI is OpenAI's Apache-2.0 coding agent that runs locally in your terminal, reading your repository, editing files and running commands, with standalone installers for macOS, Linux and Windows plus npm and Homebrew. The same agent is available as IDE extensions for VS Code, Cursor and Windsurf, a desktop app via codex app, and the cloud-based Codex Web in ChatGPT.",
    "key_features": [
-    "Open source; uses ChatGPT plan or API",
+    "Open source CLI; usage through a ChatGPT plan or OpenAI API key.",
     "Mature",
     "131661 GitHub stars",
-    "Write code"
+    "Write code",
+    "Control a computer"
    ],
-   "pricing": "Open source; uses ChatGPT plan or API",
+   "pricing": "Open source CLI; usage through a ChatGPT plan or OpenAI API key.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -1191,9 +1197,10 @@
    "repo": "openai/codex",
    "github_stars": 131661,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
-    "write code"
+    "write code",
+    "control a computer"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openai-codex-cli.png",
@@ -1287,14 +1294,15 @@
    "website": "https://openhands.dev",
    "github": "https://github.com/OpenHands/OpenHands",
    "category": "coding",
-   "description": "Open-source platform for autonomous coding agents.",
+   "description": "OpenHands is an MIT-licensed platform for autonomous coding agents whose Agent Canvas acts as a self-hosted control center: start conversations and automations such as Slack reports or splitting GitHub issues into tasks, and run the OpenHands agent or ACP-compatible agents like Claude Code, Codex, Gemini CLI and OpenCode on local, Docker, VM or company backends, with optional OpenHands Cloud and Enterprise.",
    "key_features": [
-    "Open source + paid cloud",
+    "Free and open source to self-host; OpenHands Cloud and Enterprise are paid.",
     "Mature",
     "92255 GitHub stars",
-    "Write code"
+    "Write code",
+    "Automate workflows"
    ],
-   "pricing": "Open source + paid cloud",
+   "pricing": "Free and open source to self-host; OpenHands Cloud and Enterprise are paid.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -1314,9 +1322,10 @@
    "repo": "OpenHands/OpenHands",
    "github_stars": 92255,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code"
+    "write code",
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openhands.png",
@@ -1496,14 +1505,15 @@
    "website": "https://opencode.ai",
    "github": "https://github.com/anomalyco/opencode",
    "category": "coding",
-   "description": "Open-source terminal coding agent that works with many model providers.",
+   "description": "OpenCode is an MIT-licensed open-source AI coding agent for the terminal, with a beta desktop app, that works with many model providers instead of locking you to one. Install it with a one-line script, npm, Homebrew, pacman, mise or Nix, then let it read your repository, edit files and run commands from a keyboard-driven TUI.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); bring your own model provider.",
     "Active",
     "223180 GitHub stars",
-    "Write code"
+    "Write code",
+    "Control a computer"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); bring your own model provider.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -1523,9 +1533,10 @@
    "repo": "anomalyco/opencode",
    "github_stars": 223180,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "write code"
+    "write code",
+    "control a computer"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/opencode.png",
@@ -1578,14 +1589,14 @@
    "website": "https://geminicli.com",
    "github": "https://github.com/google-gemini/gemini-cli",
    "category": "coding",
-   "description": "Google's open-source terminal agent powered by Gemini.",
+   "description": "Gemini CLI is Google's Apache-2.0 open-source terminal agent that brings Gemini models into your shell to read code, edit files and run commands. As of June 18, 2026 it is aimed at Gemini Code Assist Standard/Enterprise and Code Assist for GitHub users; free individual access and Google AI Pro/Ultra plans moved to Antigravity CLI, and the project says it is not tuned for the Gemini 4 series.",
    "key_features": [
-    "Open source; free tier",
+    "Open source; access through Gemini Code Assist Standard/Enterprise licences.",
     "Mature",
     "108626 GitHub stars",
     "Write code"
    ],
-   "pricing": "Open source; free tier",
+   "pricing": "Open source; access through Gemini Code Assist Standard/Enterprise licences.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -1605,7 +1616,7 @@
    "repo": "google-gemini/gemini-cli",
    "github_stars": 108626,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code"
    ],
@@ -1790,14 +1801,14 @@
    "website": "https://browser-use.com",
    "github": "https://github.com/browser-use/browser-use",
    "category": "browser/computer use",
-   "description": "Library that lets AI agents control a web browser.",
+   "description": "Browser Use is an MIT-licensed open-source browser agent for Python and TypeScript that lets an LLM navigate sites, fill forms and complete multi-step tasks like booking an appointment, running locally with any model. Browser Use Cloud adds hosted stealth browsers with CAPTCHA handling and residential proxies, a CLI for your own browser tasks, and a hosted agent API.",
    "key_features": [
-    "Open source + paid cloud",
+    "Open source library is free; cloud browsers from about $0.02 per browser-hour.",
     "Mature",
     "119558 GitHub stars",
     "Automate the browser"
    ],
-   "pricing": "Open source + paid cloud",
+   "pricing": "Open source library is free; cloud browsers from about $0.02 per browser-hour.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -1818,7 +1829,7 @@
    "repo": "browser-use/browser-use",
    "github_stars": 119558,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
     "automate the browser"
    ],
@@ -2055,14 +2066,16 @@
    "website": "https://openclaw.ai",
    "github": "https://github.com/openclaw/openclaw",
    "category": "personal agents",
-   "description": "Open-source personal agent you run yourself and reach over chat apps.",
+   "description": "OpenClaw is an MIT-licensed personal AI assistant that runs on your own computer and answers in the chat apps you already use, including Discord, iMessage, Slack, Teams, Telegram and WhatsApp, with native apps for macOS, iOS, Android, Windows and Linux. State, memory and credentials stay on your hardware, models and harnesses such as Claude, Codex or local models are swappable plugins, and one gateway can run a personal or shared multiplayer assistant. It is stewarded by the non-profit OpenClaw Foundation with no paid tier or hosted service.",
    "key_features": [
-    "Open source",
+    "Free and open source (MIT); you pay only for the model providers you connect.",
     "Active",
     "393429 GitHub stars",
-    "Automate workflows"
+    "Build an agent",
+    "Automate workflows",
+    "Give agents memory"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source (MIT); you pay only for the model providers you connect.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -2082,9 +2095,11 @@
    "repo": "openclaw/openclaw",
    "github_stars": 393429,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "automate workflows"
+    "build an agent",
+    "automate workflows",
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/openclaw.png",
@@ -3296,14 +3311,16 @@
    "website": "https://modelcontextprotocol.io",
    "github": "https://github.com/modelcontextprotocol/servers",
    "category": "MCP servers",
-   "description": "Official collection of reference MCP servers.",
+   "description": "The Model Context Protocol servers repository holds the small set of reference MCP servers maintained by the MCP steering group, showing protocol features and SDK usage for builders writing their own servers. The project warns they are educational examples rather than production-ready, and points to the official MCP Registry for discovering published servers.",
    "key_features": [
-    "Open source",
+    "Free and open source.",
     "Mature",
     "91693 GitHub stars",
+    "Write code",
+    "Build an agent",
     "Connect tools via mcp"
    ],
-   "pricing": "Open source",
+   "pricing": "Free and open source.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -3313,7 +3330,8 @@
    "added": "2026-10-14",
    "source": "original",
    "goals": [
-    "automation"
+    "automation",
+    "writing"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -3325,6 +3343,8 @@
    "open_source": true,
    "license": "",
    "tags": [
+    "write code",
+    "build an agent",
     "connect tools via MCP"
    ],
    "hybrid": false,
@@ -7181,14 +7201,14 @@
    "website": "https://ragflow.io/",
    "github": "https://github.com/infiniflow/ragflow",
    "category": "memory & RAG",
-   "description": "Open-source RAG engine with deep document parsing and agent features for building grounded question-answering over your files.",
+   "description": "RAGFlow is an Apache-2.0 retrieval-augmented generation engine that combines deep document parsing with agent capabilities, a converged context engine and pre-built agent templates to build grounded question answering over complex files. It reached v1.0 on November 6, 2026, and can be deployed locally with Docker or used through RAGFlow Cloud.",
    "key_features": [
-    "Open source + cloud",
+    "Open source to self-host; RAGFlow Cloud is a hosted option.",
     "Mature",
     "93182 GitHub stars",
     "Give agents memory"
    ],
-   "pricing": "Open source + cloud",
+   "pricing": "Open source to self-host; RAGFlow Cloud is a hosted option.",
    "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
@@ -7208,7 +7228,7 @@
    "repo": "infiniflow/ragflow",
    "github_stars": 93182,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "give agents memory"
    ],
@@ -7223,15 +7243,16 @@
    "website": "https://crawl4ai.com/",
    "github": "https://github.com/unclecode/crawl4ai",
    "category": "browser/computer use",
-   "description": "Open-source crawler that turns websites into clean, LLM-ready Markdown for agents and RAG pipelines.",
+   "description": "Crawl4AI is an Apache-2.0 web crawler that turns pages into clean, LLM-ready Markdown, extracts structured JSON and handles browser automation for RAG pipelines and agents, runnable yourself with Python or Docker. Crawl4AI Cloud offers the same capabilities as a hosted scrape, extract and search API with managed browsers and proxies, plus setup for Claude Code, Cursor and Codex.",
    "key_features": [
-    "Open source",
+    "Open source to self-host; Crawl4AI Cloud includes 1,000 free credits a month.",
     "Mature",
     "86582 GitHub stars",
     "Automate the browser",
-    "Research the web"
+    "Research the web",
+    "Automate workflows"
    ],
-   "pricing": "Open source",
+   "pricing": "Open source to self-host; Crawl4AI Cloud includes 1,000 free credits a month.",
    "price_tag": "free",
    "platforms": [
     "Developer (API/SDK)",
@@ -7252,10 +7273,11 @@
    "repo": "unclecode/crawl4ai",
    "github_stars": 86582,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "automate the browser",
-    "research the web"
+    "research the web",
+    "automate workflows"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/crawl4ai.png",
@@ -75479,7 +75501,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "Ryze-AI-Adgent/open-seo-mcp-skills",
@@ -75523,7 +75545,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "cloudflare/cf",
@@ -75565,7 +75587,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "pinloop-ai/pinloop-cli",
@@ -75608,7 +75630,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "farlume/termish",
@@ -75650,7 +75672,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "StartLuxLabs/StartLux-Decision",
@@ -75691,7 +75713,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "Senzing/mcp",
@@ -75735,7 +75757,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -75777,7 +75799,7 @@
    "goals": [],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "jentic/jentic-one",
@@ -75820,7 +75842,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "codician-team/diffinery",
@@ -75862,7 +75884,7 @@
    "goals": [],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "QAmcp/qamcp-cli",
@@ -75907,7 +75929,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "strands-agents/box",
@@ -88293,12 +88315,13 @@
    "website": "https://inkroom.ai/",
    "github": "https://github.com/InkRoom-AI/inkroom-client",
    "category": "image generation",
-   "description": "InkRoom is an infinite-canvas AI visual workspace for images, reference edits, product visuals, storyboards and batch workflows, with MCP integrations and Agent Skills so AI agents can work on the canvas too.",
+   "description": "InkRoom is an infinite-canvas AI visual workspace for image generation, reference edits, e-commerce product visuals, storyboards and batch workflows. It also runs a hosted Streamable HTTP MCP server at mcp.inkroom.ai, so Claude Code, Cursor and custom agents can generate and edit images, preview credit costs and resume async tasks; model lists and prompt discovery work anonymously, while generation needs an InkRoom account.",
    "key_features": [
-    "Freemium",
-    "Active"
+    "Freemium; image generation uses InkRoom credits.",
+    "Active",
+    "Generate images"
    ],
-   "pricing": "Freemium",
+   "pricing": "Freemium; image generation uses InkRoom credits.",
    "price_tag": "freemium",
    "platforms": [
     "Web"
@@ -88319,7 +88342,7 @@
    "open_source": false,
    "license": "",
    "tags": [
-    "image generation"
+    "generate images"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/inkroom.png",
@@ -99879,7 +99902,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/tracekit.png",
-   "page": "https://agentscouthq.com/tools/tracekit.html"
+   "page": "https://agentscouthq.com/tools/tracekit.html",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=tracekit"
+   }
   },
   {
    "name": "Babysitter",
@@ -100052,6 +100081,1832 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/converly-ai-voice-agents.png",
    "page": "https://agentscouthq.com/tools/converly-ai-voice-agents.html"
+  },
+  {
+   "name": "WordRadar",
+   "slug": "wordradar",
+   "url": "https://www.wordradar.dev/",
+   "website": "https://www.wordradar.dev/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "WordRadar is a keyword radar for indie SEO builders that flags brand-new search terms as they first appear in a 1M-word ledger, watches new Hacker News launches and Google Trends risers, and scores SERP difficulty, all served over a REST API and an MCP server so coding agents can research niches; credits from $19, with free starter credits.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Write code",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wordradar.png",
+   "page": "https://agentscouthq.com/tools/wordradar.html"
+  },
+  {
+   "name": "AI Story Writer",
+   "slug": "ai-story-writer",
+   "url": "https://aistorywriter.org/",
+   "website": "https://aistorywriter.org/",
+   "github": "",
+   "category": "education & tutoring",
+   "description": "AI Story Writer helps parents turn a small idea, such as a favourite toy or a holiday, into a personalised illustrated storybook for their child, asking one question at a time to shape the plot and then producing pages you can read together and keep.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "research",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "education & tutoring"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-story-writer.png",
+   "page": "https://agentscouthq.com/tools/ai-story-writer.html"
+  },
+  {
+   "name": "AI Kissing Video Generator",
+   "slug": "ai-kissing-video-generator",
+   "url": "https://aikissingvideogenerator.online/",
+   "website": "https://aikissingvideogenerator.online/",
+   "github": "",
+   "category": "video generation",
+   "description": "AI Kissing Video Generator turns one or two uploaded photos into a short HD video of the two people kissing, with free generations without a watermark and paid credits for more; meant for playful couple and fan edits with consent from the people pictured.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Edit video",
+    "Generate video"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-kissing-video-generator.png",
+   "page": "https://agentscouthq.com/tools/ai-kissing-video-generator.html"
+  },
+  {
+   "name": "Remove Moire",
+   "slug": "remove-moire",
+   "url": "https://removemoire.com/",
+   "website": "https://removemoire.com/",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "Remove Moire cleans moiré patterns, screen-door lines and halftone artifacts from photos of screens, scanned prints and fabrics with an AI model, and also offers a video descreen mode; try it free, then monthly plans from $5 or one-time packs billed per processed image.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "photography & photo editing"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/remove-moire.png",
+   "page": "https://agentscouthq.com/tools/remove-moire.html"
+  },
+  {
+   "name": "GAL",
+   "slug": "gal",
+   "url": "https://agent-home.ai/",
+   "website": "https://agent-home.ai/",
+   "github": "https://github.com/gal-agent/gal-release",
+   "category": "personal agents",
+   "description": "GAL (General Agent Loop & Executor) is a self-contained agent runtime shipped as a single binary for Linux, macOS and Windows that you drive from a CLI, desktop app, browser, chat apps or HTTP, with a kernel-enforced sandbox and scoped one-time authorizations so every agent step is contained and auditable without Docker, Python or Node.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4 GitHub stars",
+    "Automate the browser",
+    "Control a computer",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "gal-agent/gal-release",
+   "github_stars": 4,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "control a computer",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/gal.png",
+   "page": "https://agentscouthq.com/tools/gal.html"
+  },
+  {
+   "name": "Overdrive Lab",
+   "slug": "overdrive-lab",
+   "url": "https://overdrivelab.com/",
+   "website": "https://overdrivelab.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Overdrive Lab is a digital social media agency run by a team of connected software agents that research topics, draft posts, review them and publish to your linked channels, while you set direction and approve work; built-in scheduling rotates approved content, currently through a founding beta.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/overdrive-lab.png",
+   "page": "https://agentscouthq.com/tools/overdrive-lab.html"
+  },
+  {
+   "name": "BeatAPI",
+   "slug": "beatapi",
+   "url": "https://beatapi.io/",
+   "website": "https://beatapi.io/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "BeatAPI gives AI agents one key for discounted LLM, image and video model APIs, more than 1,000 data APIs (X, Instagram, TikTok, YouTube, Reddit), web search and production workflows, available over REST and MCP so an agent can add capabilities without juggling separate providers; pay per use.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Research the web",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/beatapi.png",
+   "page": "https://agentscouthq.com/tools/beatapi.html"
+  },
+  {
+   "name": "Jev API",
+   "slug": "jev-api",
+   "url": "https://jevapi.io/",
+   "website": "https://jevapi.io/",
+   "github": "",
+   "category": "agent infra",
+   "description": "Jev API returns fast, typed decisions for software: you send state and the possible outcomes, and it answers with a choice, a yes/no or a score plus probabilities, so apps and agents can make routine judgments without a full LLM call; a free jev-1.13 tier is available and paid access runs through BeatAPI.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jev-api.png",
+   "page": "https://agentscouthq.com/tools/jev-api.html"
+  },
+  {
+   "name": "1ZheAI",
+   "slug": "1zheai",
+   "url": "https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104",
+   "website": "https://1zheai.com/en/?utm_source=agentscout&utm_medium=directory&utm_campaign=20261104",
+   "github": "",
+   "category": "models & local runtimes",
+   "description": "1ZheAI is a model API hub that connects Claude, GPT and image models through one OpenAI-compatible endpoint with setup snippets for Claude Code, Cursor, Python and Node, and also lists AI account and subscription offers; check the terms of each underlying provider before use.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/1zheai.png",
+   "page": "https://agentscouthq.com/tools/1zheai.html"
+  },
+  {
+   "name": "Put Me In",
+   "slug": "put-me-in",
+   "url": "https://putmein.app/",
+   "website": "https://putmein.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "Put Me In turns one to five of your photos into a 10 to 15 second AI video of you acting out a trending meme template such as Tiny Desk, Hotel Lobby or Gangnam Style, ready to download from your videos page; priced per video from $4.99.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/put-me-in.png",
+   "page": "https://agentscouthq.com/tools/put-me-in.html"
+  },
+  {
+   "name": "TattooGen AI",
+   "slug": "tattoogen-ai",
+   "url": "https://tattoogenai.com/",
+   "website": "https://tattoogenai.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "TattooGen AI generates four original tattoo designs from a text idea or a photo in about 20 seconds, then lets you try a design on your own skin, make a stencil for your artist or plan a cover-up; free with Google sign-in, with a $4.99 one-time pack or monthly plans for print-ready 2K files.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "image generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tattoogen-ai.png",
+   "page": "https://agentscouthq.com/tools/tattoogen-ai.html"
+  },
+  {
+   "name": "ImageToExcel",
+   "slug": "imagetoexcel",
+   "url": "https://imagetoexcel.io/",
+   "website": "https://imagetoexcel.io/",
+   "github": "",
+   "category": "productivity",
+   "description": "ImageToExcel uses AI OCR to turn photos, screenshots, scanned documents and PDFs that contain tables into editable Excel spreadsheets, keeping rows and columns intact, with extra tools for image-to-text and finance documents such as statements and invoices.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/imagetoexcel.png",
+   "page": "https://agentscouthq.com/tools/imagetoexcel.html"
+  },
+  {
+   "name": "AITranscribe",
+   "slug": "aitranscribe",
+   "url": "https://aitranscribe.net/",
+   "website": "https://aitranscribe.net/",
+   "github": "",
+   "category": "voice",
+   "description": "AITranscribe converts Facebook videos and Reels, Instagram videos and uploaded audio into clean text transcripts and timestamped SRT or VTT subtitle files, with a translation mode and privacy-friendly processing after sign-in.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Voice & phone calls"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/aitranscribe.png",
+   "page": "https://agentscouthq.com/tools/aitranscribe.html"
+  },
+  {
+   "name": "Virvy",
+   "slug": "virvy",
+   "url": "https://virvy.app/",
+   "website": "https://virvy.app/",
+   "github": "",
+   "category": "video generation",
+   "description": "Virvy is an AI video and image studio built around trending effects: upload a photo or write a prompt and pick from about 20 video models such as Seedance, Kling and Veo plus image models, paying with one-time credit packs from $9.99 that never expire or a monthly plan.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/virvy.png",
+   "page": "https://agentscouthq.com/tools/virvy.html"
+  },
+  {
+   "name": "Radarkit",
+   "slug": "radarkit",
+   "url": "https://radarkit.ai/",
+   "website": "https://radarkit.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Radarkit tracks how your brand appears in Google AI Overviews, AI Mode, ChatGPT, Perplexity and other AI answers across 50+ countries, with local and shopping radars, ads tracking, LLM referral traffic and agents for outreach and content, plus an MCP and API; free trial available.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "support",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/radarkit.png",
+   "page": "https://agentscouthq.com/tools/radarkit.html"
+  },
+  {
+   "name": "TokenHot",
+   "slug": "tokenhot",
+   "url": "https://tokenhot.ai/",
+   "website": "https://tokenhot.ai/",
+   "github": "",
+   "category": "models & local runtimes",
+   "description": "Tokenhot is a unified, OpenAI-compatible LLM API gateway for OpenAI, Claude, Gemini, DeepSeek and 30+ other providers, advertised at well below official per-token prices, with a playground, console and pay-as-you-go billing and no subscription.",
+   "key_features": [
+    "Usage-based",
+    "Active"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "crypto",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "models & local runtimes"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tokenhot.png",
+   "page": "https://agentscouthq.com/tools/tokenhot.html"
+  },
+  {
+   "name": "Pomelu",
+   "slug": "pomelu",
+   "url": "https://royan.se/pomelu/",
+   "website": "https://royan.se/pomelu/",
+   "github": "",
+   "category": "personal agents",
+   "description": "Pomelu is an unofficial iPhone and Android app for Hermes Agent by Nous Research that connects to your own self-hosted Hermes gateway, giving one chat per bot with live answers, visible tool activity, approvals, voice messages and file sharing.",
+   "key_features": [
+    "Free",
+    "Active",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pomelu.png",
+   "page": "https://agentscouthq.com/tools/pomelu.html"
+  },
+  {
+   "name": "TrackAIMentions",
+   "slug": "trackaimentions",
+   "url": "https://trackaimentions.com/",
+   "website": "https://trackaimentions.com/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "TrackAIMentions runs a free AI visibility check that asks ChatGPT-style models and Perplexity five organic questions about your category and shows whether they recommend your brand, list a competitor first or skip you, with sample reports, methodology notes and paid monitoring for agencies.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Monitor & evaluate agents",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "monitor & evaluate agents",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/trackaimentions.png",
+   "page": "https://agentscouthq.com/tools/trackaimentions.html"
+  },
+  {
+   "name": "AirBuild",
+   "slug": "airbuild",
+   "url": "https://air.build/",
+   "website": "https://air.build/",
+   "github": "",
+   "category": "app builders",
+   "description": "AirBuild is an AI app builder for native iOS apps in which a team of specialised agents writes the app and then handles App Store Review for you, submitting, answering reviewer feedback, fixing and resubmitting; free with your own key, Pro $20 and Max $200, currently via waitlist.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate workflows"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/airbuild.png",
+   "page": "https://agentscouthq.com/tools/airbuild.html"
+  },
+  {
+   "name": "AI Video Generator",
+   "slug": "ai-video-generator",
+   "url": "https://aivideogenerator.video/",
+   "website": "https://aivideogenerator.video/",
+   "github": "",
+   "category": "video generation",
+   "description": "AI Video Generator turns a single photo into a short viral-style video using trend templates such as dances, transformations and Tiny Desk, plus image effects, with refunds for failed runs; credit packs from $6.99 and monthly plans from $24.90.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-video-generator.png",
+   "page": "https://agentscouthq.com/tools/ai-video-generator.html"
+  },
+  {
+   "name": "Jersey Generator",
+   "slug": "jersey-generator",
+   "url": "https://jerseygenerator.com/",
+   "website": "https://jerseygenerator.com/",
+   "github": "",
+   "category": "image generation",
+   "description": "Jersey Generator designs custom sports jerseys with AI on real blank kit templates: choose colours, pattern, crest and lettering, then download a photoreal PNG render with a commercial licence; one-time packs from $19 or monthly plans from $9.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "image generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/jersey-generator.png",
+   "page": "https://agentscouthq.com/tools/jersey-generator.html"
+  },
+  {
+   "name": "Rezloom",
+   "slug": "rezloom",
+   "url": "https://rezloom.com/",
+   "website": "https://rezloom.com/",
+   "github": "",
+   "category": "HR & recruiting",
+   "description": "Rezloom tailors your resume to a specific job description by pulling evidence from your own career library, keeping every claim traceable to real experience, producing matching English and Chinese versions, and sharing through public, private or expiring links you can revoke.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Build an agent",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/rezloom.png",
+   "page": "https://agentscouthq.com/tools/rezloom.html"
+  },
+  {
+   "name": "Dime Dime Baby AI",
+   "slug": "dime-dime-baby-ai",
+   "url": "https://dimedimebaby-ai.org/",
+   "website": "https://dimedimebaby-ai.org/",
+   "github": "",
+   "category": "video generation",
+   "description": "Dime Dime Baby AI turns one adult photo into a short vertical dance-inspired party-entrance video in the style of the Dime Dime Baby trend, in 480p or 720p without audio so you add the sound when posting; one-time credit packs from $9.90.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/dime-dime-baby-ai.png",
+   "page": "https://agentscouthq.com/tools/dime-dime-baby-ai.html"
+  },
+  {
+   "name": "Genjutsu AI",
+   "slug": "genjutsu-ai",
+   "url": "https://genjutsuai.studio/",
+   "website": "https://genjutsuai.studio/",
+   "github": "",
+   "category": "video generation",
+   "description": "Genjutsu AI turns a single portrait photo into a short motion clip using six templates such as Neon Rain or Red Smoke Entrance, with no source video or prompt needed; one-time credit packs from $9, about $1.37 per 5-second 720p video, and refunds for failed runs.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/genjutsu-ai.png",
+   "page": "https://agentscouthq.com/tools/genjutsu-ai.html"
+  },
+  {
+   "name": "FaceTiers",
+   "slug": "facetiers",
+   "url": "https://facetiers.com/",
+   "website": "https://facetiers.com/",
+   "github": "",
+   "category": "vision",
+   "description": "FaceTiers is a free in-browser face-analysis test that measures 478 facial landmarks such as canthal tilt, jaw angle and facial thirds and gives a 1 to 8 score without uploading your photo; an optional one-time $9.90 PDF plan is written by AI from the measurements only. For adults 18+.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Automate the browser",
+    "Computer vision"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "computer vision"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/facetiers.png",
+   "page": "https://agentscouthq.com/tools/facetiers.html"
+  },
+  {
+   "name": "Ponytail",
+   "slug": "ponytail",
+   "url": "https://ponytail.dev/",
+   "website": "https://ponytail.dev/",
+   "github": "https://github.com/DietrichGebert/ponytail",
+   "category": "coding",
+   "description": "Ponytail is an MIT-licensed skill for Claude Code and other coding agents that makes them write like a terse senior engineer: only the code a task needs, without cutting validation, error handling, security or accessibility; its published benchmark on 39 tasks reports roughly half the code, time and tokens while more risky logic ships with tests.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "187364 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "crypto",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "DietrichGebert/ponytail",
+   "github_stars": 187364,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ponytail.png",
+   "page": "https://agentscouthq.com/tools/ponytail.html"
+  },
+  {
+   "name": "UI UX Pro Max",
+   "slug": "ui-ux-pro-max",
+   "url": "https://www.uupm.cc/",
+   "website": "https://www.uupm.cc/",
+   "github": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+   "category": "coding",
+   "description": "UI UX Pro Max is an open-source agent skill that gives coding agents design intelligence for web and mobile UI, with a design-system generator that reasons over your product type and outputs matching styles, colour palettes, font pairings, layout patterns and UX rules for many frameworks.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "147219 GitHub stars",
+    "Write code",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+   "github_stars": 147219,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ui-ux-pro-max.png",
+   "page": "https://agentscouthq.com/tools/ui-ux-pro-max.html"
+  },
+  {
+   "name": "Caveman",
+   "slug": "caveman",
+   "url": "https://docs.caveman.so/caveman",
+   "website": "https://docs.caveman.so/caveman",
+   "github": "https://github.com/JuliusBrussee/caveman",
+   "category": "coding",
+   "description": "Caveman is an Apache-2.0 skill and proxy for coding agents that cuts tokens by making the agent answer in clipped \"caveman\" prose and read less context, while keeping code exact; it reports about a third fewer input tokens in Claude Code sessions and offers an Auto mode and a hosted Caveman Cloud.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "118539 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "JuliusBrussee/caveman",
+   "github_stars": 118539,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/caveman.png",
+   "page": "https://agentscouthq.com/tools/caveman.html"
+  },
+  {
+   "name": "Agent Skills (Addy Osmani)",
+   "slug": "agent-skills-addy-osmani",
+   "url": "https://skills.addy.ie/",
+   "website": "https://skills.addy.ie/",
+   "github": "https://github.com/addyosmani/agent-skills",
+   "category": "coding",
+   "description": "Agent Skills by Addy Osmani packages senior-engineer workflows and quality gates as skills for AI coding agents, with nine slash commands such as /spec, /plan, /build, /test, /review and /ship that walk an agent from idea to production with tests and review at each step.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "114397 GitHub stars",
+    "Write code",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "addyosmani/agent-skills",
+   "github_stars": 114397,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-skills-addy-osmani.png",
+   "page": "https://agentscouthq.com/tools/agent-skills-addy-osmani.html"
+  },
+  {
+   "name": "Taste Skill",
+   "slug": "taste-skill",
+   "url": "https://www.tasteskill.dev/",
+   "website": "https://www.tasteskill.dev/",
+   "github": "https://github.com/Leonxlnx/taste-skill",
+   "category": "coding",
+   "description": "Taste Skill is an MIT Agent Skill that pushes coding agents to build polished company websites instead of generic landing pages, enforcing one design system, plain copy, real photos and brand icons, restrained motion, and a browser-based checker and finish gate that verify the rules before a page is done.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "112355 GitHub stars",
+    "Write code",
+    "Automate the browser",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Leonxlnx/taste-skill",
+   "github_stars": 112355,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/taste-skill.png",
+   "page": "https://agentscouthq.com/tools/taste-skill.html"
+  },
+  {
+   "name": "Impeccable",
+   "slug": "impeccable",
+   "url": "https://impeccable.style/",
+   "website": "https://impeccable.style/",
+   "github": "https://github.com/pbakaus/impeccable",
+   "category": "coding",
+   "description": "Impeccable gives coding agents a design vocabulary: install it into a project and steer with commands such as polish and bolder, review with critique and audit, and catch typical AI-generated design clichés before they ship; works with Claude Code, Cursor, Codex CLI, Copilot, Gemini CLI and more.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "106611 GitHub stars",
+    "Write code"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "pbakaus/impeccable",
+   "github_stars": 106611,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/impeccable.png",
+   "page": "https://agentscouthq.com/tools/impeccable.html"
+  },
+  {
+   "name": "Archify",
+   "slug": "archify",
+   "url": "https://archify.si/",
+   "website": "https://archify.si/",
+   "github": "https://github.com/tt-a1i/archify",
+   "category": "coding",
+   "description": "Archify is an Apache-2.0 agent skill for Cursor, Claude Code, Codex CLI and OpenCode that turns an idea, plan or whole codebase into an interactive HTML diagram you can explore, follow source links through and share, from repository maps to learning paths and travel plans.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "94965 GitHub stars",
+    "Write code",
+    "Make diagrams"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tt-a1i/archify",
+   "github_stars": 94965,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "write code",
+    "make diagrams"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/archify.png",
+   "page": "https://agentscouthq.com/tools/archify.html"
+  },
+  {
+   "name": "Kortix CompanyOS",
+   "slug": "kortix-companyos",
+   "url": "https://github.com/kortix-ai/CompanyOS",
+   "website": "",
+   "github": "https://github.com/kortix-ai/CompanyOS",
+   "category": "business agents",
+   "description": "Kortix CompanyOS is an open-source, cloud-native agent harness for companies: always-on agents start from schedules, webhooks, app events or team messages, run in parallel swarms on their own persistent cloud computers with shared company memory, connect to 3,000+ apps and land changes through team-approved reviews.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "20592 GitHub stars",
+    "Control a computer",
+    "Build multi-agent systems",
+    "Build an agent"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "kortix-ai/CompanyOS",
+   "github_stars": 20592,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "build multi-agent systems",
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kortix-companyos.png",
+   "page": "https://agentscouthq.com/tools/kortix-companyos.html"
+  },
+  {
+   "name": "Ekko Studio",
+   "slug": "ekko-studio",
+   "url": "https://ekkostudio.xyz/",
+   "website": "https://ekkostudio.xyz/",
+   "github": "https://github.com/EKKOLearnAI/ekko-studio",
+   "category": "personal agents",
+   "description": "Ekko Studio (formerly Hermes Studio / Hermes Web UI) is a local-first desktop app and self-hosted web console for multi-agent chat, coding and visual workflows, supporting Hermes Agent, Ekko Agent and 14 coding-agent integrations including Claude Code and Codex, with group chat, voice, files and human approval gates.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "11731 GitHub stars",
+    "Write code",
+    "Control a computer",
+    "Build multi-agent systems"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "EKKOLearnAI/ekko-studio",
+   "github_stars": 11731,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "control a computer",
+    "build multi-agent systems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ekko-studio.png",
+   "page": "https://agentscouthq.com/tools/ekko-studio.html"
+  },
+  {
+   "name": "Refly",
+   "slug": "refly",
+   "url": "https://refly.ai/",
+   "website": "https://refly.ai/",
+   "github": "https://github.com/refly-ai/refly",
+   "category": "no-code builders",
+   "description": "Refly is an open-source platform for building stable, versioned agent skills through a visual \"vibe workflow\": it compiles your team's SOPs into executable skills you can run in Refly, export to Claude Code or deploy as APIs and webhooks, with a community skill registry; self-host or use the cloud.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "7551 GitHub stars",
+    "Write code",
+    "Automate workflows",
+    "Build apps without code"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "refly-ai/refly",
+   "github_stars": 7551,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate workflows",
+    "build apps without code"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/refly.png",
+   "page": "https://agentscouthq.com/tools/refly.html"
+  },
+  {
+   "name": "Claude Code Templates",
+   "slug": "claude-code-templates",
+   "url": "https://www.aitmpl.com/",
+   "website": "https://www.aitmpl.com/",
+   "github": "https://github.com/davila7/claude-code-templates",
+   "category": "coding",
+   "description": "Claude Code Templates is an open catalog and CLI of more than 1,980 Claude Code components (skills, subagents, slash commands, hooks, MCP servers and settings) at aitmpl.com, where you preview each file and combine components into one npx install that merges with your existing configuration.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "33232 GitHub stars",
+    "Write code",
+    "Build multi-agent systems",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "davila7/claude-code-templates",
+   "github_stars": 33232,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "build multi-agent systems",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/claude-code-templates.png",
+   "page": "https://agentscouthq.com/tools/claude-code-templates.html"
+  },
+  {
+   "name": "Zvec",
+   "slug": "zvec",
+   "url": "https://zvec.org/",
+   "website": "https://zvec.org/",
+   "github": "https://github.com/alibaba/zvec",
+   "category": "memory & RAG",
+   "description": "Zvec is Alibaba's open-source, in-process vector database that embeds directly in your application for low-latency similarity search in RAG and agent memory, with HNSW, IVF and DiskANN indexes, quantisation, full-text search and builds for Linux, macOS, Windows, Android and iOS.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "16219 GitHub stars",
+    "Research the web",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "alibaba/zvec",
+   "github_stars": 16219,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "research the web",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zvec.png",
+   "page": "https://agentscouthq.com/tools/zvec.html"
+  },
+  {
+   "name": "Oh My Android",
+   "slug": "oh-my-android",
+   "url": "https://github.com/ateymoori/oh-my-android",
+   "website": "",
+   "github": "https://github.com/ateymoori/oh-my-android",
+   "category": "MCP servers",
+   "description": "Oh My Android is a free, open-source (MIT) macOS control panel for the Android Emulator that toggles dark mode, font size, RTL, TalkBack, network speed and GPS in one click without adb, adds a Layout Inspector in dp and an accessibility audit, and ships an MCP server so AI agents can drive the emulator.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "121 GitHub stars",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ateymoori/oh-my-android",
+   "github_stars": 121,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/oh-my-android.png",
+   "page": "https://agentscouthq.com/tools/oh-my-android.html"
+  },
+  {
+   "name": "YouTube Summarizer",
+   "slug": "youtube-summarizer",
+   "url": "https://youtubesummarizer.org/",
+   "website": "https://youtubesummarizer.org/",
+   "github": "",
+   "category": "productivity",
+   "description": "YouTube Summarizer turns a public YouTube link into notes built from the video's captions, with key takeaways, connected ideas, a structured summary or a long-form article view, free and without an account.",
+   "key_features": [
+    "Free",
+    "Active",
+    "Sales & support"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/youtube-summarizer.png",
+   "page": "https://agentscouthq.com/tools/youtube-summarizer.html"
+  },
+  {
+   "name": "Lanesra AI",
+   "slug": "lanesra-ai",
+   "url": "https://lanesra.ai/",
+   "website": "https://lanesra.ai/",
+   "github": "",
+   "category": "sales & marketing",
+   "description": "Lanesra AI is an analytics layer for AI search that tracks how ChatGPT, Gemini and other answer engines describe, rank and recommend your brand against named competitors, then suggests fixes for AEO, GEO and agent experience; plans from about €150 a month with a 3-day free trial.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web",
+    "Monitor & evaluate agents",
+    "Sales & support"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "monitor & evaluate agents",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lanesra-ai.png",
+   "page": "https://agentscouthq.com/tools/lanesra-ai.html"
+  },
+  {
+   "name": "Seedance 2.5",
+   "slug": "seedance-2-5",
+   "url": "https://seedance25.video/",
+   "website": "https://seedance25.video/",
+   "github": "",
+   "category": "video generation",
+   "description": "Seedance 2.5 is a web studio for generating cinematic videos from text, images or multiple references with the Seedance 2.5 model and others, then continuing in built-in image, audio, editing and asset tools; monthly credit plans start at $29.90.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/seedance-2-5.png",
+   "page": "https://agentscouthq.com/tools/seedance-2-5.html"
+  },
+  {
+   "name": "Html2MP4",
+   "slug": "html2mp4",
+   "url": "https://html2mp4.com/",
+   "website": "https://html2mp4.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "Html2MP4 converts HTML, CSS and GSAP animations or a text prompt into downloadable MP4 videos for launches, product showcases and social stories, with editable templates, brand kits, a website-to-video mode and an MCP server for agents; new accounts start with 3 free credits.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Edit video"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/html2mp4.png",
+   "page": "https://agentscouthq.com/tools/html2mp4.html"
+  },
+  {
+   "name": "Novera",
+   "slug": "novera",
+   "url": "https://tron-abs.github.io/Novera/",
+   "website": "https://tron-abs.github.io/Novera/",
+   "github": "",
+   "category": "models & local runtimes",
+   "description": "Novera is an independent AI assistant from TRON-ABS for Windows, Linux, macOS and Android that runs local text models with a 32k context, plus key-free web search and local FLUX.2 Klein image and ACE-Step music trials, with an experimental WebGPU browser version.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "Automate the browser",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-09",
+   "added": "2026-11-09",
+   "source": "maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "automate the browser",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/novera.png",
+   "page": "https://agentscouthq.com/tools/novera.html"
   }
  ]
 }
