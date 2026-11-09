@@ -23,7 +23,7 @@ NL = ('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"
       '</div></div></div></section>')
 SIGNUP = ('<aside class="nlin" aria-label="Newsletter signup"><h2>Email me maker notes</h2>'
           '<p>The score stays on this page. Subscribe if you want the Tuesday maker brief. One email. Unsubscribe anytime.</p>'
-          '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" target="_blank" data-nlform>'
+          '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" target="_blank" rel="noopener noreferrer" data-nlform>'
           '<input type="hidden" name="utm_source" value="agentscout"><input type="hidden" name="utm_medium" value="roast">'
           '<label class="sr-only" for="nl-roast-email">Email</label>'
           '<input id="nl-roast-email" name="email" type="email" required autocomplete="email" maxlength="120" placeholder="you@example.com">'

@@ -175,7 +175,8 @@ for x in t:
 json.dump(t,open("tools.json","w"),indent=2,ensure_ascii=False)
 import build_counts; build_counts.write(t)  # data/site_counts.json before any page that prints a total
 os.makedirs("tools",exist_ok=True)
-e=lambda s:html.escape(str(s or ""))
+import csp as _csp
+e=_csp.escape  # maker text and URLs; quote=True so a quote cannot break an attribute
 tpl=open("data/detail.tpl").read()
 SOC=[("x.com","X"),("twitter.com","X"),("discord.gg","Discord"),("discord.com","Discord"),("reddit.com","Reddit"),("github.com","GitHub"),("linkedin.com","LinkedIn"),("youtube.com","YouTube")]
 def soc_lab(u):
@@ -188,12 +189,12 @@ def demo_row(x):
     src=x.get("demo_video_local") or v
     pos=x.get("demo_poster")
     pa=f' poster="{e(pos)}"' if pos else ""
-    return f'<h2 style="font-size:16px;margin-bottom:10px">Demo video</h2><div style="margin-bottom:32px;max-width:100%"><video controls preload="none" playsinline{pa} style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000" aria-label="{e(x["name"])} demo video"><source src="{e(src)}" type="video/mp4"></video><p style="margin:8px 0 0;font-size:14px"><a href="{e(v)}" target="_blank" rel="nofollow noopener">Watch the original demo video ↗</a> (MP4, from the maker)</p></div>'
+    return f'<h2 style="font-size:16px;margin-bottom:10px">Demo video</h2><div style="margin-bottom:32px;max-width:100%"><video controls preload="none" playsinline{pa} style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000" aria-label="{e(x["name"])} demo video"><source src="{e(src)}" type="video/mp4"></video><p style="margin:8px 0 0;font-size:14px"><a href="{e(v)}" target="_blank" rel="nofollow noopener noreferrer">Watch the original demo video ↗</a> (MP4, from the maker)</p></div>'
 def soc_row(x):
     # verified official social links only (tools.json "socials"); no block when empty
     ls=[(u,soc_lab(u)) for u in x.get("socials") or [] if soc_lab(u)]
     if not ls: return ""
-    a="".join(f'<a class="b" href="{e(u)}" target="_blank" rel="nofollow noopener" aria-label="{e(x["name"])} on {l}">{l} ↗</a>' for u,l in ls)
+    a="".join(f'<a class="b" href="{e(u)}" target="_blank" rel="nofollow noopener noreferrer" aria-label="{e(x["name"])} on {l}">{l} ↗</a>' for u,l in ls)
     return f'<h2 style="font-size:16px;margin-bottom:10px">Official channels</h2><div class="badges soc" style="margin-bottom:32px;flex-wrap:wrap">{a}</div>'
 
 REL=build_related.pick(t)  # similarity + load-balanced, so no tool in a category is left unlinked
@@ -484,6 +485,9 @@ def _quality_finish():
             lambda mm: mm.group(1) + "?v=" + build_tasks.ASSET_V,
             s,
         )
+        # submit_page / sponsor.page run after ga4.apply_all and would otherwise
+        # leave the template's older policy in place.
+        s = _csp.harden(s, f)
         open(f, "w", encoding="utf-8").write(s)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

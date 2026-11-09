@@ -57,9 +57,9 @@ def apply(out,x,t,catslug,prim,B):
     faq=[q for q in faq if q[1]]
     faq=_dedupe(faq)
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(s)}</p>' for s in r["long"])
-      +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Listed in our <a href="../categories/{cs}.html">{e(cat)}</a> category. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",prim).rstrip("/"))}</a>.</p>'
+      +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Listed in our <a href="../categories/{cs}.html">{e(cat)}</a> category. Official site: <a href="{e(prim)}" target="_blank" rel="noopener noreferrer">{e(re.sub(r"^https?://(www\.)?","",prim).rstrip("/"))}</a>.</p>'
       +f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>"
-      +f'{H2}{e(n)} pricing</h2><p style="margin:0 0 8px">{"Free plan available. " if p["free"] else ""}Paid plans from ${p["start"]:g}/month{(". "+e(p["trial"][0].upper()+p["trial"][1:])) if p["trial"] else ""}.</p><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">{tiers}</ul><p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">{e(p.get("note",""))} Prices as of Oct 2026, from the <a href="{e(p["src"])}" target="_blank" rel="noopener">official pricing page</a>.</p>'
+      +f'{H2}{e(n)} pricing</h2><p style="margin:0 0 8px">{"Free plan available. " if p["free"] else ""}Paid plans from ${p["start"]:g}/month{(". "+e(p["trial"][0].upper()+p["trial"][1:])) if p["trial"] else ""}.</p><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">{tiers}</ul><p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">{e(p.get("note",""))} Prices as of Oct 2026, from the <a href="{e(p["src"])}" target="_blank" rel="noopener noreferrer">official pricing page</a>.</p>'
       +f'{H2}{e(n)} alternatives</h2><p style="margin:0 0 28px">Similar {e(cat)} tools: {altl}. <a href="../categories/{cs}.html">Browse all {e(cat)} tools →</a></p>'
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
     offers=[{"@type":"Offer","name":f"{n} {a}","price":re.match(r"\$([\d.]+)",b).group(1) if re.match(r"\$[\d.]+",b) else None,"priceCurrency":"USD","url":p["src"]} for a,b,c in p["tiers"]]
@@ -85,7 +85,7 @@ def _facts(n,r):
         _rp=F["repo"].replace("https://github.com/","").strip("/").lower()
         for _g in _GH.values():  # prefer the newer daily snapshot (data/github.json) over the one-off repo_facts stars
             if (_g.get("repo") or "").lower()==_rp and _g.get("stars") and (_g.get("fetched") or "")>(_ck or ""): st=_g["stars"]; _ck=_g["fetched"]; F=dict(F,forks=None); break
-        F=dict(F,checked=_ck); li.append(("GitHub",f'<a href="{e(F["repo"])}" target="_blank" rel="noopener">{e(F["repo"].replace("https://github.com/",""))}</a>'+(f" · {st:,} stars" if st else "")+(f" · {F['forks']:,} forks" if F.get("forks") else "")+(f" (as of {_mdy(F.get('checked'))})" if st else ""),True))
+        F=dict(F,checked=_ck); li.append(("GitHub",f'<a href="{e(F["repo"])}" target="_blank" rel="noopener noreferrer">{e(F["repo"].replace("https://github.com/",""))}</a>'+(f" · {st:,} stars" if st else "")+(f" · {F['forks']:,} forks" if F.get("forks") else "")+(f" (as of {_mdy(F.get('checked'))})" if st else ""),True))
     if F.get("archived"): li.append(("Status","Archived: the GitHub repository is read-only and no longer maintained"))
     if F.get("status"): li.append(("Status",F["status"]))
     return li,fq
@@ -95,7 +95,7 @@ def _pricing(n,r):
     tiers=P["tiers"]; ck=_mdy(P.get("checked"))
     html_=(f'{H2}{e(n)} pricing</h2><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{e(a)}</strong>: {e(b)}{(' · '+e(c)) if c else ''}</li>" for a,b,c in tiers)+"</ul>"
         +(f'<p style="margin:0 0 8px">{e(P["note"])}</p>' if P.get("note") else "")
-        +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
+        +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Source: <a href="{e(P["src"])}" target="_blank" rel="noopener noreferrer">official pricing page</a>, checked {e(ck)}. Prices change; check the source before buying.</p>')
     plans="; ".join(f"{a}: {b}" for a,b,c in tiers)
     fq=[(f"How much does {n} cost?",f"As of {ck}, {n}'s official pricing page lists: {plans}."+(" "+P["note"] if P.get("note") else ""))]
     free=[a for a,b,c in tiers if re.match(r"(?i)^([$€£¥]0(?![\d.,])|free\b)",b)]  # any currency (Oct 19 PT: Pragor lists €0 plans)
@@ -115,7 +115,7 @@ def _mcp(n,r):
     return (f'{H2}{e(n)} MCP server</h2><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">'+"".join(f"<li><strong>{k}</strong>: {v}</li>" for k,v in li)+"</ul>"
       +(f'<p style="margin:0 0 6px"><strong>Tools</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">'+"".join(f"<li><code>{e(a)}</code>: {e(b)}</li>" for a,b in M["tools"])+"</ul>" if M.get("tools") else "")
       +(f'<p style="margin:0 0 6px">Client config (Cursor, VS Code, Claude Code and other config-file clients):</p><pre style="margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-all;font-size:13px"><code>{e(M["config"])}</code></pre>' if M.get("config") else "")
-      +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Setup docs: <a href="{e(M["docs"])}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",M["docs"]).rstrip("/"))}</a>. Tool list checked live on {e(r.get("updated",""))}.</p>' if M.get("docs") else '<div style="margin-bottom:28px"></div>'))
+      +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Setup docs: <a href="{e(M["docs"])}" target="_blank" rel="noopener noreferrer">{e(re.sub(r"^https?://(www\.)?","",M["docs"]).rstrip("/"))}</a>. Tool list checked live on {e(r.get("updated",""))}.</p>' if M.get("docs") else '<div style="margin-bottom:28px"></div>'))
 
 def lite(out,x,t,catslug,prim,B,r):
     """Lighter rich section (Oct 2026 enrichment): grounded description, who it's for, key features, FAQ.
@@ -140,7 +140,7 @@ def lite(out,x,t,catslug,prim,B,r):
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
     faq=_dedupe(faq)
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
-      +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>.</p>')
+      +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener noreferrer">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener noreferrer">{e(hst)}</a>.</p>')
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
       +(f'{H2}Pros and cons</h2>'
         +(f'<p style="margin:0 0 6px"><strong>Pros</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["pros"])}</ul>' if r.get("pros") else "")
@@ -182,11 +182,11 @@ def auto(out,x,t,catslug,prim,B):
     if lic: li.append(("Licence",e(re.sub(r"^the ","",lic))+(" (OSI-approved open source)" if osi else "")))
     if repo:
         rp=repo.replace("https://github.com/","").strip("/")
-        li.append(("GitHub",f'<a href="{e(repo)}" target="_blank" rel="noopener">{e(rp)}</a>'+(f" · {stars:,} stars" if stars else "")+(f" (as of {_mdy(g.get('fetched') or x.get('stars_checked') or x.get('verified'))})" if stars else "")))
+        li.append(("GitHub",f'<a href="{e(repo)}" target="_blank" rel="noopener noreferrer">{e(rp)}</a>'+(f" · {stars:,} stars" if stars else "")+(f" (as of {_mdy(g.get('fetched') or x.get('stars_checked') or x.get('verified'))})" if stars else "")))
     if g.get("release_tag"): li.append(("Latest release",e((g["release_tag"] if len(g["release_tag"])<=40 else g["release_tag"][:39]+"…")+", "+_mdy(g.get("release_date")))))
     if g.get("pushed"): li.append(("Last commit",e(_mdy(g["pushed"]))))
     if g.get("archived"): li.append(("Status","Archived: the GitHub repository is read-only"))
-    li.append(("Official site",f'<a href="{e(prim)}" target="_blank" rel="noopener">{e(hst)}</a>'))
+    li.append(("Official site",f'<a href="{e(prim)}" target="_blank" rel="noopener noreferrer">{e(hst)}</a>'))
     if x.get("added"): li.append(("Listed on AgentScout",e(_mdy(x["added"]))))
     alts=sorted([y for y in t if y is not x and y["category"]==cat and "discontinu" not in (y.get("maturity","")+y["description"]).lower()],key=lambda y:(-(y.get("github_stars") or 0),y["name"].lower()))[:5]
     altp=", ".join(y["name"] for y in alts)
