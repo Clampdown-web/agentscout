@@ -16,9 +16,12 @@ class CommittedEvidenceTest(unittest.TestCase):
     def test_live_and_candidate_documents_pass_the_release_gate(self):
         import morning_audit
         root = Path(__file__).resolve().parents[1]
+        # The morning build refreshes both files with the artifact it publishes, so
+        # read the artifact date and tool count from anim_state instead of pinning a day.
+        state = json.loads((root / "data" / "anim_state.json").read_text(encoding="utf-8"))
         for name in ("cwv-seo-benchmark.json", "cwv-candidate-local.json"):
             document = json.loads((root / "data" / name).read_text(encoding="utf-8"))
-            problems, note = morning_audit.measurement_evidence(document, "cwv", "2026-11-08", 2366)
+            problems, note = morning_audit.measurement_evidence(document, "cwv", state["date"], state["tools"])
             self.assertEqual(problems, [], (name, problems))
             self.assertIn("not field CWV", note)
             self.assertEqual(document["throttle"], "none")
