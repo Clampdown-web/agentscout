@@ -1,5 +1,5 @@
 """Badges section, comparison pages, badges page and sitemap. Called from build_site.py."""
-import html,json,re,datetime
+import json,re,datetime
 import atexit as _ax0
 def _pf_last():
     import sys as _s
@@ -12,7 +12,8 @@ B="https://agentscouthq.com/"
 NAV_GUIDES = '<a class="navvid" href="videos/">🎬 Guides</a>'
 FOOT_GUIDES = '<a href="videos/">Quick-Start Guides (8)</a>'
 HERO_GUIDES = '🎬 Quick-Start Guides (8) →'
-e=lambda s:html.escape(str(s or ""))
+import csp as _csp
+e=_csp.escape  # one escape for maker-supplied text in every generator
 def clip_text(s, n):
     """Shorten s to at most n characters, ending on a word boundary (never mid-word)."""
     s=" ".join(str(s or "").split())

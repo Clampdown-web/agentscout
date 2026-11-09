@@ -1,5 +1,6 @@
 """Google Analytics 4 tag for every page (added 2026-10-19, owner-approved). Property 559504931, stream 16160444227.
-apply(html) inserts/refreshes one marked <script> block before </head> and adds GA hosts to the page CSP; idempotent.
+apply(html) inserts/refreshes one marked <script> block before </head>, then csp.harden()
+sets the canonical Content-Security-Policy (GA and Turnstile hosts included) and noopener; idempotent.
 Called from build_tasks.sitewide() and from build_extras' atexit hook, so every generator run keeps the tag.
 Behaviour (all in the inline snippet below):
 - Skipped entirely (gtag.js never requested) when the owner opt-out flag is set (?notrack or ?notrack=1 / any value but 0 -> localStorage as_notrack=1,
@@ -33,26 +34,6 @@ SNIPPET = (START + '<script>(function(){var ID="' + ID + '",off=false,LOC=locati
   'function hook(){if(window.ASConsent)ASConsent.on(c);else start()}'
   'document.readyState==="loading"?document.addEventListener("DOMContentLoaded",hook):hook()})();</script>' + END)
 _BLOCK = re.compile(re.escape(START) + r".*?" + re.escape(END), re.S)
-_CSP = re.compile(r'(<meta http-equiv="Content-Security-Policy" content=")([^"]*)(")')
-GTM = "https://www.googletagmanager.com"
-GA_CONNECT = "https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com"
-def _csp(m):
-    c = m.group(2)
-    if GTM not in c.split("connect-src")[0]:
-        c = re.sub(r"script-src ([^;]*)", lambda k: "script-src " + k.group(1) + " " + GTM, c, count=1)
-    if "https://static.cloudflareinsights.com" not in c.split("connect-src")[0]:
-        c = re.sub(r"script-src ([^;]*)", lambda k: "script-src " + k.group(1) + " https://static.cloudflareinsights.com", c, count=1)
-    if "google-analytics.com" not in c:
-        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " " + GA_CONNECT, c, count=1)
-    if "https://api.agentscouthq.com" not in c:
-        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://api.agentscouthq.com", c, count=1)
-    if "https://votes.agentscouthq.com" not in c:
-        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://votes.agentscouthq.com", c, count=1)
-    if "https://agentscout.beehiiv.com" not in c.split("frame-src")[0]:
-        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://agentscout.beehiiv.com", c, count=1)
-    if "https://cloudflareinsights.com" not in c.split("frame-src")[0]:
-        c = re.sub(r"connect-src ([^;]*)", lambda k: "connect-src " + k.group(1) + " https://cloudflareinsights.com https://static.cloudflareinsights.com", c, count=1)
-    return m.group(1) + c + m.group(3)
 def skip(path, s):
     p = path.replace("\\", "/").lstrip("./")
     if os.path.basename(p) in {"og.html", "outreach-tracker.html", "stats.js.html"}: return True
@@ -60,10 +41,13 @@ def skip(path, s):
     if re.search(r'<meta http-equiv="refresh"', s, re.I): return True   # redirect stubs: no analytics (same as track.js)
     return "</head>" not in s
 def apply(s, path="x.html"):
-    if skip(path, s): return s
-    s = _CSP.sub(_csp, s, count=1)
-    if _BLOCK.search(s): return _BLOCK.sub(lambda m: SNIPPET, s, count=1)
-    return s.replace("</head>", SNIPPET + "</head>", 1)
+    import csp
+    # Snippet first, then the canonical meta policy (csp.py). Pages ga4 does not
+    # tag (redirect stubs) still get the policy and noopener when they are real documents.
+    if not skip(path, s):
+        if _BLOCK.search(s): s = _BLOCK.sub(lambda m: SNIPPET, s, count=1)
+        elif "</head>" in s: s = s.replace("</head>", SNIPPET + "</head>", 1)
+    return csp.harden(s, path)
 def apply_all(root="."):
     n = 0
     for f in glob.glob(os.path.join(root, "**/*.html"), recursive=True):
