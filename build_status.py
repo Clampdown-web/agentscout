@@ -601,6 +601,9 @@ def apply(tools):
     apply_tool_pages(doc, tools)
     link_llms()
     apply_affiliation()
+    import build_aicite as _reach
+    _reach.stamp_mcp_pages(tools)
+    _reach.stamp_llms_docs()
     print(f"status: wrote status.json ({doc['catalog'].get('live', 0)} live, {doc['catalog'].get('down', 0)} down, {doc['catalog'].get('not_yet_checked', 0)} not yet checked)")
 
 

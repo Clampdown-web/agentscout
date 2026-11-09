@@ -370,7 +370,7 @@ def seo(t,urls):
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
             import build_aicite as _bac
-            _lede+=f' <strong>{e(_bac.mcp_uptime_line(t))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
+            _lede+=f' <strong>{e(_bac.reach_sentence(_bac.mcp_reachability(t)))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
         _pin_cta=(f'<div class="cat-pin-cta"><div class="cpc-body"><span class="npill npmcp cpc-pill"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>Featured Slot Open</span>'
                   f'<span class="cpc-txt"><b>Building in {e(c)}?</b> List free ($0 · 3–5d queue), fast-track with a 7-day boost for <b>$15</b>, pin at the top of <b>{e(c)}</b> for <b>30 days</b> + permanent <code style="font-size:12px">/best/</code> &amp; <code style="font-size:12px">/compare/</code> placement for <b>$49</b>, or book the exclusive <b>$99/wk</b> sitewide &amp; newsletter sponsor slot.</span></div>'
                   f'<div class="cpc-acts"><a class="btn primary pkg-cta-free cpc-btn" href="../submit.html#free-form">Submit Free ($0)</a>'
@@ -425,8 +425,8 @@ def seo(t,urls):
         _api=json.load(open("api/tools.json"))
         _lc=_api.get("last_checked","") if isinstance(_api,dict) else ""
     except Exception: _lc=""
-    import build_aicite as _bac2; _ul2=_bac2.mcp_uptime_line(t)
-    L=["# AgentScout","",f"> AgentScout is a curated, read-only directory of {_cc['tools']:,} AI agent tools in {_cc['categories']} categories, including {_nm:,} MCP servers ({_ul2}). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.","",f"Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.","",f"Site: {B}","Contact: support@agentscouthq.com","X: https://x.com/AgentScoutHQ, https://x.com/clampdown19","MCP Registry ID: com.agentscouthq/directory","MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse — 100% free, read-only, no API key or x402 wallet required)"]+([f"Catalog last checked: {_lc} (Pacific)"] if _lc else [])+["",
+    import build_aicite as _bac2; _ul2=_bac2.reach_sentence(_bac2.mcp_reachability(t))
+    L=["# AgentScout","",f"> AgentScout is a curated, read-only directory of {_cc['tools']:,} AI agent tools in {_cc['categories']} categories, including {_nm:,} MCP servers. {_ul2} Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.","",f"Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.","",f"Site: {B}","Contact: support@agentscouthq.com","X: https://x.com/AgentScoutHQ, https://x.com/clampdown19","MCP Registry ID: com.agentscouthq/directory","MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse — 100% free, read-only, no API key or x402 wallet required)"]+([f"Catalog last checked: {_lc} (Pacific)"] if _lc else [])+["",
     "## For AI agents","",
     f"- Fastest path: fetch [api/tools.json]({B}api/tools.json) once and filter it locally. No key, no rate-limited API, plain HTTPS GET.",
     "- api/tools.json is an object with `count`, `last_checked` (YYYY-MM-DD, Pacific) and `tools`, an array where each tool has `name`, `slug`, `category`, `description`, `url`, `website`, `github`, `pricing` (maker's wording), `price_tag` (free / freemium / paid), `platforms`, `open_source`, `license`, `github_stars`, `tags`, `added` and `page` (its AgentScout listing).",
@@ -482,7 +482,9 @@ def seo(t,urls):
           f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {_bslp.LAUNCH_PACK_PROMISE} {_bslp.LAUNCH_PACK_ACCOUNTS} {_bslp.LAUNCH_PACK_SKIP} {_bslp.LAUNCH_PACK_LIMITS} Checkout: {_bslp.LAUNCH_PACK_URL}",
           f"- Fast-Track ($15) includes: {_bslp.FAST_TRACK_INDEX_LINE}",
           ""]
-    open("llms.txt","w").write("\n".join(L)); return out
+    open("llms.txt","w").write("\n".join(L))
+    import build_aicite as _bac_reach; _bac_reach.stamp_llms_docs()
+    return out
 
 
 # Pacific display for stored UTC timestamps (Oct 18 2026: site shows Pacific, never UTC; datetime attrs/JSON-LD stay ISO UTC)

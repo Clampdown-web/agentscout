@@ -1,6 +1,20 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 2,407 AI agent tools in 40 categories, including 323 MCP servers (323 of 323 MCP servers responded today (verified Nov 9, 2026)). Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 2,407 AI agent tools in 40 categories, including 323 MCP servers. Checked daily, 323 of 323 reachable, last checked 2026-11-09. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+
+<!-- mcp-reach:start -->
+
+## MCP server reachability
+
+Checked daily, 323 of 323 reachable, last checked 2026-11-09.
+
+Once a day, AgentScout requests each listed MCP server URL and, when it is a different link, its GitHub URL. The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. A server counts as reachable when its stored label is OK or Reachable, blocks automated checks. OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. Any other checked result is not reachable. A server missing from the check file is not yet checked and is not counted. The last-checked time is the checked field, in America/Los_Angeles. The rows are on the MCP status page and in status.json.
+
+- [MCP server status](https://agentscouthq.com/mcp/status/): the same reachability rows, with HTTP result and history
+- [status.json](https://agentscouthq.com/status.json): machine-readable rows for every listed MCP server
+- [Best MCP servers by task](https://agentscouthq.com/mcp/): ranked lists, with the same daily check
+
+<!-- mcp-reach:end -->
 
 Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp (and https://agentscouthq.com/mcp/sse). AgentScout's official MCP server (com.agentscouthq/directory at https://agentscouthq.com/mcp/sse) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.
 
@@ -136,7 +150,6 @@ Catalog last checked: 2026-11-09 (Pacific)
 - [AgentScout Translator Agent](https://agentscouthq.com/bot-store/translator/)
 - [AgentScout Video Editor Agent](https://agentscouthq.com/bot-store/video-editor/)
 - [AgentScout Web Designer Agent](https://agentscouthq.com/bot-store/web-designer/)
-
 
 ## Guides
 
@@ -274,7 +287,6 @@ Catalog last checked: 2026-11-09 (Pacific)
 - [Edit Image Text Online](https://agentscouthq.com/tools/edit-image-text-online.html) (added 2026-11-08): Edit Image Text Online replaces or fixes text inside JPG, PNG and WebP images, such as typos, event dates or prices, while matching the original font, colour and background, so you can update posters, menus and screenshots without the source file; one free edit, then one-time credit packs with no subscription.
 - [Dessa AI](https://agentscouthq.com/tools/dessa-ai.html) (added 2026-11-08): Dessa AI is a real-time voice chat and text-to-speech studio: talk out loud with a lifelike AI voice that you can interrupt mid-sentence, or paste a script and download natural speech as a WAV file, with 46 voices across 39 languages and paid monthly plans billed by the seconds you use.
 
-
 ## Launches, status, and the Directory Launch Pack
 
 - [How AgentScout started](https://agentscouthq.com/how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.
@@ -282,7 +294,6 @@ Catalog last checked: 2026-11-09 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts. Updated daily, around 7 AM PT.
 - [Directory Launch Pack](https://agentscouthq.com/submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). Submitted to ~25 curated AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve). Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself. If your tool is already listed in one of those directories, we skip it and submit to another from the same curated list. This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing. Checkout: https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f
 - Fast-Track ($15) includes: Same-day indexing ping to Bing and IndexNow search engines (does not include Google).
-
 
 <!-- cb:start -->
 ## Community Grok Bot templates
