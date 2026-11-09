@@ -736,7 +736,7 @@ def build_sponsor_placements_infographic():
     brand_logo = load_logo(LOGO_PATH, 30)
 
     tiers = [
-        ("$0 Free Community", "FREE", (20, 184, 166), "3–5 day standard queue", "Permanent /tools/<slug> + MCP + llms.txt", 3),
+        ("$0 Free Community", "FREE", (20, 184, 166), "5-day review", "Permanent /tools/<slug> + MCP + llms.txt", 3),
         ("$15 Fast-Track Boost", "7-DAY PIN", (14, 165, 233), "Same-day priority review", "7-day /new.html pin + FAQ schema + @AgentScoutHQ", 2),
         ("$49 Category Pin ★", "30-DAY PIN", (99, 102, 241), "4x+ longer top category pin", "Permanent /best/ & /compare/ tables + both X accts", 1),
         ("$99/wk Sitewide VIP", "EXCLUSIVE", (236, 72, 153), f"Top bar on all {LIVE_PAGE_COUNT:,}+ pages", "Homepage #makers + #1 Newsletter Top Banner", 0),
@@ -745,7 +745,7 @@ def build_sponsor_placements_infographic():
     zones = [
         (f"ZONE 1 · SITEWIDE TOP SPONSOR BAR ({LIVE_PAGE_COUNT:,}+ PAGES) + #1 NEWSLETTER BANNER", "Exclusive 1 slot/wk · Seen on every tool, comparison & guide page + Tuesday Beehiiv top slot", (236, 72, 153), "$99/wk VIP"),
         ("ZONE 2 · 30-DAY #1 CATEGORY PIN + PERMANENT /best/ & /compare/ TABLES", "Pinned #1 in your category for 30 full days + permanent comparison & alternatives rows + priority MCP weight", (99, 102, 241), "$49 ★ MOST POPULAR"),
-        ("ZONE 3 · SAME-DAY FAST-TRACK + 7-DAY /new.html LAUNCH BOOST + X POST", "Skip the 3–5 day queue · Full FAQPage & pros/cons enrichment · 7-day New & Featured pin", (14, 165, 233), "$15 FAST-TRACK"),
+        ("ZONE 3 · SAME-DAY FAST-TRACK + 7-DAY /new.html LAUNCH BOOST + X POST", "Skip the 5-day review queue · Full FAQPage & pros/cons enrichment · 7-day New & Featured pin", (14, 165, 233), "$15 FAST-TRACK"),
         ("ZONE 4 · PERMANENT INDEXED TOOL PAGE + MCP SERVER + LLMS.TXT", f"100% free forever · Indexed across {LIVE_TOOL_COUNT:,}+ tools & com.agentscouthq/directory MCP server", (20, 184, 166), "$0 FREE FOREVER"),
     ]
 
@@ -1656,7 +1656,7 @@ def scene_sponsor(d, F, t, ch, lp, box, accent):
         sent = lp > 0.78
         _button(d, F, x0 + 18, yy + 140, 150, 34, "SUBMITTED" if sent else "SUBMIT FREE", (16, 185, 129) if sent else accent, (6, 16, 14))
         if sent:
-            d.text((x0 + 184, yy + 148), "Queued · $0 forever · 3-5 day review", font=F["b14"], fill=(52, 211, 153))
+            d.text((x0 + 184, yy + 148), "Queued · $0 forever · 5-day review", font=F["b14"], fill=(52, 211, 153))
     elif ch == 1:
         yy = _term(d, F, x0, y0, x1, y1, "Choose $15 Fast-Track — same-day review", accent)
         tiers = [("$0 Free", "standard queue", False), ("$15 Fast-Track", "same-day + 7-day pin", True), ("$49 Category Pin", "30 days + /best/", False)]
