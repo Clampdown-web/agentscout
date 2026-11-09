@@ -95,3 +95,50 @@ body.home #list .card.tile,body.home .rcard,body.home .cattile,body.home .btcard
 @media(max-width:720px){body.home #list.grid{grid-template-columns:minmax(0,1fr)}}
 body.home .home-later,body.home #about-directory,body.home #xfree,body.home .homegen,body.home #recent,body.home #feed,body.home #browse,body.home #xcats,body.home #xroles,body.home #bt-strip,body.home #epick,body.home #nlblock{content-visibility:auto;contain-intrinsic-size:auto 480px}
 @media(min-width:960px){body.home .filter-more[open]>summary{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
+/* Phase 1 (Nov 9 2026): calm design system. Accent stays #5B5BF7 / #9393FF. */
+.card.tile{border-radius:14px;padding:16px;gap:12px}
+.card.tile .ico{flex-basis:44px;width:44px;height:44px;border-radius:12px}
+.card.tile:hover,.card.tile:focus-within{transform:translateY(-1px);box-shadow:0 8px 20px rgba(91,91,247,.10);border-color:var(--accent)}
+.chip{height:32px;padding:0 12px}
+.btn{border-radius:10px;font-weight:600}
+.btn.primary{background:#5B5BF7;color:#fff;border-color:#5B5BF7}
+.btn.primary:hover{opacity:.92;background:#5B5BF7;color:#fff;border-color:#5B5BF7}
+html[data-theme=dark] .btn.primary{background:#5B5BF7;color:#fff;border-color:#5B5BF7}
+nav.sitenav{box-shadow:none}
+nav.sitenav .wrap{height:60px;gap:12px;padding-left:24px;padding-right:24px}
+nav.sitenav .navburger{border:0;background:transparent;width:44px;height:44px}
+nav.sitenav .navburger:hover{background:var(--soft)}
+nav.sitenav .desk-store{font-weight:600;color:var(--muted);text-decoration:none}
+nav.sitenav .desk-store:hover{color:var(--accent)}
+nav.sitenav .npill,nav.sitenav .mcppill{box-shadow:none;animation:none}
+@media(max-width:959px){
+  nav.sitenav .navlinks{max-height:calc(100dvh - 60px);box-sizing:border-box}
+}
+@media(min-width:960px){
+  nav.sitenav .navpanel{padding:8px;border-radius:12px;box-shadow:0 12px 32px rgba(16,24,40,.08)}
+  nav.sitenav .nav-submit>summary{background:#5B5BF7;color:#fff;border-radius:10px}
+  nav.sitenav .nav-submit>summary::after{border-color:#fff}
+}
+footer.footcols{padding:48px 0 32px}
+footer.footcols .wrap{padding-left:24px;padding-right:24px}
+@media(max-width:640px){
+  nav.sitenav .wrap,footer.footcols .wrap,body.home .wrap{padding-left:16px;padding-right:16px}
+}
+footer.footcols .footgrid{gap:32px 24px}
+footer.footcols .footpop{gap:8px 16px;padding:16px 0 8px}
+body.home .hero{padding:16px 0 4px;text-align:left;background:linear-gradient(180deg,var(--hero2),var(--bg) 88%);border-bottom:0}
+body.home .hero h1{font-size:clamp(30px,4.2vw,44px);letter-spacing:-.03em;margin:0 0 8px;max-width:16em}
+body.home .hero .lede{font-size:16px;line-height:1.45;margin:0 0 16px;max-width:38rem}
+body.home .hero .eyebrow{margin-bottom:12px}
+body.home .sprow input{border-radius:12px}
+body.home .hero-actions{gap:12px 16px;margin:12px 0 4px}
+body.home .hero-quiet{display:inline-flex;align-items:center;min-height:44px;color:var(--accent);font-weight:600;font-size:14px}
+body.home .hero-quiet:hover{text-decoration:underline}
+body.home .verify-slim{background:var(--soft);box-shadow:none;border-radius:12px;margin:8px 0 12px}
+body.home .verify-slim .vc-dot,body.home .verify-slim .vc-dot.vc-dn{box-shadow:none}
+body.home #directory{padding-top:8px}
+body.home .stats{max-width:100%}
+body.home #about-directory .home-terminal{border:1px solid var(--line)!important;box-shadow:none!important}
+body.home .homegen{border:1px solid var(--line);background:var(--card);box-shadow:none}
+body.home .npill{box-shadow:none;animation:none}
