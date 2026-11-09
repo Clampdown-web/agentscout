@@ -151,21 +151,8 @@ def _time_html(checked):
     return e(pretty)
 
 
-VC_CSS = ("<style>.vc{background:linear-gradient(180deg,#0d1222,#070a14);border:1px solid rgba(56,189,248,.28);border-radius:16px;padding:18px 20px;margin:14px 0 20px;"
-          "box-shadow:0 0 0 1px rgba(56,189,248,.06),0 10px 30px rgba(0,0,0,.35),0 0 24px rgba(56,189,248,.08);color:#cbd5e1;text-align:left;font-size:14px;line-height:1.5;overflow-wrap:anywhere;max-width:100%;box-sizing:border-box}"
-          ".vc-hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 12px}.vc-hd h2{margin:0;font-size:17px;letter-spacing:-.01em;color:#f1f5f9}"
-          ".vc-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;flex:0 0 auto;animation:vcp 2s ease-in-out infinite}"
-          "@keyframes vcp{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}@media (prefers-reduced-motion:reduce){.vc-dot{animation:none}}.vc-dot.vc-dn{background:#f87171;box-shadow:0 0 8px #f87171;animation:none}"
-          ".vc-upd{font-size:12px;color:#94a3b8;margin-left:auto}.vc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;padding:0;list-style:none}"
-          ".vc-chip{display:inline-flex;align-items:baseline;gap:6px;padding:5px 12px;border-radius:999px;font-size:13px;border:1px solid;background:rgba(255,255,255,.03)}.vc-chip b{font-size:15px}"
-          ".vc-ok{color:#4ade80;border-color:rgba(74,222,128,.45)}.vc-bad{color:#f87171;border-color:rgba(248,113,113,.45)}.vc-warn{color:#fbbf24;border-color:rgba(251,191,36,.45)}.vc-tot{color:#7dd3fc;border-color:rgba(125,211,252,.45)}"
-          ".vc p{margin:0 0 8px;color:#cbd5e1}.vc-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8;margin:12px 0 6px!important}"
-          ".vc-pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}.vc-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12.5px;border:1px solid rgba(248,113,113,.4);color:#fca5a5;text-decoration:none;background:rgba(248,113,113,.06)}"
-          ".vc-tl{list-style:none;margin:0 0 10px;padding:0 0 0 14px;border-left:2px solid rgba(148,163,184,.25)}.vc-tl li{position:relative;margin:0 0 7px;font-size:13px;color:#cbd5e1}"
-          ".vc-tl li:before{content:\"\";position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px rgba(74,222,128,.7)}.vc-tl li.vc-o:before{background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,.75)}.vc-tl li.vc-e:before{background:#f87171;box-shadow:0 0 6px rgba(248,113,113,.7)}.vc-tl li.vc-n:before{background:#22d3ee;box-shadow:0 0 6px rgba(34,211,238,.6)}"
-          ".vc-tl time{color:#94a3b8;font-size:12px;display:block}.vc-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}"
-          ".vc-btn{display:inline-block;padding:5px 12px;border-radius:999px;font-size:12.5px;border:1px solid rgba(56,189,248,.45);color:#7dd3fc;text-decoration:none;background:rgba(56,189,248,.06)}.vc-btn:hover,.vc-pill:hover{filter:brightness(1.25)}"
-          ".panel dl .vc-row{grid-column:1/-1}.vc-row .vc{margin:6px 0 0;padding:14px}</style>")
+# Look lives in styles.css (.vc). Do not inline a second neon stylesheet.
+VC_CSS = ""
 
 
 def _hist_cls(note):
@@ -259,7 +246,7 @@ def panel(doc, servers, prefix, heading):
     else:
         parts.append('<p>MCP link check: not yet checked.</p>')
     if directory:
-        parts.append(f'<p style="color:#94a3b8;font-size:13px">Directory links last checked {_time_html(directory)}.</p>')
+        parts.append(f'<p class="muted" style="font-size:13px">Directory links last checked {_time_html(directory)}.</p>')
     parts.append('<p class="vc-lbl">Check history</p>')
     if servers is doc["servers"]:
         hist = cat.get("history") or []
@@ -499,13 +486,13 @@ def write_link_status_forward():
 <link rel="canonical" href="{canon}">
 <meta http-equiv="refresh" content="0; url=/mcp/status/">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="stylesheet" href="../styles.css?v=202611092330">
+<link rel="stylesheet" href="../styles.css?v={__import__('build_tasks').ASSET_V}">
 <script>(function(){{try{{var t=localStorage.getItem("agentscout-theme")}}catch(e){{}}if(t!=="dark"&&t!=="light")t="dark";document.documentElement.dataset.theme=t;window.asToggleTheme=function(){{var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{{localStorage.setItem("agentscout-theme",n)}}catch(e){{}}}}}})()</script>
 </head><body>
 {nav}
 <main class="wrap"><p>This page moved. <a href="/mcp/status/">MCP server status</a>.</p></main>
 {nl}{foot}
-<script src="../app.js?v=202611092330"></script>
+<script src="../app.js?v={__import__('build_tasks').ASSET_V}"></script>
 </body></html>
 '''
     problems = build_seo_new.redirect_page_chrome_problems("mcp/link-status.html", page)
@@ -559,7 +546,7 @@ def write_dashboard(tools):
     else:
         qa_bits.append("The MCP link check has no timestamp on file yet.")
     body = f'''<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../index.html">MCP servers</a> / Status</div>
-<section class="st-dash" style="padding-top:20px;text-align:left">
+<section class="st-dash sheet">
 <h1 style="text-align:left">MCP server status</h1>
 <p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. {VERIFY_CADENCE}. A server with no row in the check file is not yet checked. Nothing on this page is guessed.</p>
 <p class="st-updated"><b>Last updated:</b> {when}. {VERIFY_CADENCE}. {e(qa_bits[0] if qa_bits else "")}</p>
@@ -572,7 +559,7 @@ def write_dashboard(tools):
 <label class="sr-only" for="st-q">Search MCP servers</label>
 <input id="st-q" type="search" placeholder="Search MCP servers" autocomplete="off" enterkeyhint="search">
 <p id="st-empty" class="muted" hidden>No servers match that filter.</p>
-<div style="overflow-x:auto;max-width:100%" tabindex="0" role="region" aria-label="MCP server status table">
+<div class="cmpscroll" tabindex="0" role="region" aria-label="MCP server status table">
 <table class="st-table" id="st-table"><thead><tr><th>MCP server</th><th>Status</th><th>Last checked</th><th>HTTP result</th><th>Recent history</th></tr></thead><tbody>
 {"".join(rows)}
 </tbody></table></div>

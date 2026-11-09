@@ -86,7 +86,7 @@ def item(i,x):
     return h.replace(f'· {e(x["maturity"])}</p></li>',f'· {e(x["maturity"])}{extra}</p></li>',1)
 def mini(x):
     gs=f' · ★ {x["github_stars"]:,}' if x.get("github_stars") is not None else ""
-    return f'<li style="margin:0 0 10px"><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span><span class="muted" style="font-size:12.5px">{gs}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span></li>'
+    return f'<li class="mcp-row"><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span><span class="muted" style="font-size:12.5px">{gs}</span><br><span class="mcp-hook">{e(x["description"])}</span></li>'
 H2='style="font-size:18px;margin:32px 0 8px"'
 def _catlink(made):
     p="categories/mcp-servers.html"
@@ -125,7 +125,7 @@ def pages(t):
             {"@type":"ItemList","name":h1,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(it)]},
             {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":B+"mcp/"},{"@type":"ListItem","position":3,"name":h1,"item":canon}]}]}
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">MCP servers by task</a> / {e(lab)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h1)} (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">MCP servers by task</a> / {e(lab)}</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h1)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Here are the {n} we list, ranked.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked them:</strong> each server here is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a> and its listing says it does this job. We order them by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come last. Links checked {asof}. No paid placements.</p>'
               f'<h2 {H2}>The {n} MCP servers for {e(job)}, ranked</h2>'
@@ -160,7 +160,7 @@ def pages(t):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"hasPart":[{"@type":"WebPage","name":f"Best MCP servers for {a[1]}","url":f"{B}mcp/{a[0]}.html"} for a in made]},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":canon}]},{"@type":"VideoObject","name":"AgentScout MCP Command Center & Live JSON-RPC Stream","description":"Animated terminal and pipeline overview showing how Claude Code, Cursor, and Windsurf query AgentScout's free MCP server (com.agentscouthq/directory).","thumbnailUrl":B+"assets/animations/agentscout-mcp-terminal-poster.png","contentUrl":B+"assets/animations/agentscout-mcp-terminal.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT20S"}]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / MCP servers by task</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">Best MCP servers by task (2026)</h1>'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / MCP servers by task</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">Best MCP servers by task (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">MCP (Model Context Protocol) servers plug Claude, Cursor, Codex and other AI clients into your databases, apps and data. Instead of one giant list, start with the job you need done. Each task links to a ranked page with a short guide to choosing.</p>'
           f'<p style="font-size:14px">Use AgentScout from your AI client: <a href="connect.html">connect to the free AgentScout MCP server</a>.</p>'
           f'<p style="font-size:14px">Jump to: {jump}</p>'

@@ -1223,13 +1223,13 @@
           "string"
          ]
         },
+        "summary": {
+         "type": "string"
+        },
         "page": {
          "type": "string"
         },
         "page_url": {
-         "type": "string"
-        },
-        "summary": {
          "type": "string"
         }
        },
@@ -1239,6 +1239,7 @@
         "url",
         "date",
         "tool",
+        "summary",
         "page",
         "page_url"
        ]

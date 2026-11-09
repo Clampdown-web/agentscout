@@ -858,11 +858,11 @@ components:
                 type:
                   - "null"
                   - "string"
+              summary:
+                type: "string"
               page:
                 type: "string"
               page_url:
-                type: "string"
-              summary:
                 type: "string"
             required:
               - "title"
@@ -870,6 +870,7 @@ components:
               - "url"
               - "date"
               - "tool"
+              - "summary"
               - "page"
               - "page_url"
         generate:

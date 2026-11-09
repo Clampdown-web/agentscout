@@ -368,18 +368,18 @@ h1.has-cico>.cico{width:.9em;height:.9em;color:var(--accent);margin-right:10px;v
 @media (max-width:390px){.nlin{padding:14px}.nlin form,.nlin input[type=email],.nlin .btn{width:100%;flex-basis:100%}}
 /* Freshness line + quick comparison table (Oct 18 2026) */
 .updated{margin:-4px 0 12px;font-size:13px;color:var(--muted)}
-.cmpwrap{margin:14px 0 22px}
+.cmpwrap{margin:14px 0 22px;max-width:100%;min-width:0}
 .cmph{font-size:16px;margin:0 0 8px}.cmph span{display:block;font-size:12.5px;font-weight:400;color:var(--muted);margin-top:2px}
-.cmpscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:var(--card)}
-.cmptbl{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+.cmpscroll{display:block;width:100%;max-width:100%;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.cmptbl{width:max-content;min-width:720px;border-collapse:collapse;font-size:14px}
 .cmptbl th,.cmptbl td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 .cmptbl thead th{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--soft)}
 .cmptbl tbody tr:last-child th,.cmptbl tbody tr:last-child td{border-bottom:0}
 .cmptbl tbody th{font-weight:600}.cmptbl td{color:var(--muted)}
-@media (max-width:560px){.cmptbl{min-width:0;font-size:13px}.cmptbl th,.cmptbl td{padding:7px 8px}.cmptbl thead th{font-size:11px;letter-spacing:.02em}}
+@media (max-width:560px){.cmptbl{font-size:13px}.cmptbl th,.cmptbl td{padding:7px 8px}.cmptbl thead th{font-size:11px;letter-spacing:.02em}}
 
-/* Quick comparison + other listing tables on phones: fit 390px without sideways scroll; logos next to names (Oct 18 2026) */
-@media (max-width:520px){.cmptbl{min-width:0;font-size:13px}.cmptbl th,.cmptbl td{padding:8px 7px}.cmptbl thead th{font-size:10.5px;letter-spacing:.02em}.cmptbl th:first-child,.cmptbl td:first-child{padding-left:10px}}
+/* Comparison tables scroll inside .cmpscroll. The page itself does not scroll sideways. */
+@media (max-width:520px){.cmptbl{font-size:13px}.cmptbl th,.cmptbl td{padding:8px 7px}.cmptbl thead th{font-size:10.5px;letter-spacing:.02em}.cmptbl th:first-child,.cmptbl td:first-child{padding-left:10px}}
 .cmptbl a.icol,table a.icol{align-items:flex-start;gap:8px}.cmptbl a.icol .ico,table a.icol .ico{margin-top:-1px}
 /* tap targets at least 24px (a11y audit Oct 18 2026) */
 .ghx{display:inline-block;min-width:24px;min-height:24px;line-height:24px;text-align:center}.b{padding-top:2.5px;padding-bottom:2.5px}
@@ -760,8 +760,8 @@ nav .links a.navsrch{font-weight:600;color:var(--text)}
 .st-count.on{border-color:#38bdf8;box-shadow:0 0 0 1px rgba(56,189,248,.35)}
 .st-count b{font-size:18px}.st-count span{font-size:12px;color:var(--muted)}
 #st-q{width:100%;max-width:420px;min-height:44px;margin:0 0 12px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;box-sizing:border-box}
-.st-table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
-.st-table th,.st-table td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.st-table{width:max-content;min-width:880px;border-collapse:collapse;font-size:14px}
+.st-table th,.st-table td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap}
 .st-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid var(--line)}
 .st-live{color:#4ade80;border-color:rgba(74,222,128,.45)}.st-down{color:#f87171;border-color:rgba(248,113,113,.45)}.st-not-yet-checked{color:#fbbf24;border-color:rgba(251,191,36,.45)}
 .lb-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line);min-width:0;max-width:100%}
@@ -866,7 +866,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .navscroll-pills .npill,nav .navscroll-pills .mcppill,nav .navscroll-pills>a.btn.primary{box-sizing:border-box;height:38px;min-height:38px;padding:0 8px;border-radius:999px;font-size:12px!important;font-weight:600;line-height:36px;gap:4px;white-space:nowrap;margin:0;display:inline-flex;align-items:center}
   nav .navscroll-pills>a.btn.primary{flex:0 0 auto;width:auto;justify-content:center}
   nav .navscroll-pills>a.btn.primary::after{content:none!important}
-  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-right:48px}
+  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-left:16px;padding-right:16px}
   .scrollbtns{right:calc(8px + env(safe-area-inset-right));bottom:calc(8px + env(safe-area-inset-bottom));gap:8px}
   .scrollbtn{width:44px;height:44px;min-width:44px;min-height:44px;font-size:20px;border-radius:12px}
   .scrollbtn.show{opacity:1}
@@ -997,3 +997,38 @@ body.home .stats{max-width:100%}
 body.home #about-directory .home-terminal{border:1px solid var(--line)!important;box-shadow:none!important}
 body.home .homegen{border:1px solid var(--line);background:var(--card);box-shadow:none}
 body.home .npill{box-shadow:none;animation:none}
+
+/* Phase 2: tool, category, and MCP pages. Same cards, chips, and spacing as the homepage. */
+.sheet{padding:8px 0 48px;text-align:left;max-width:100%;min-width:0}
+.sheet>h1,.sheet .detail h1{font-size:clamp(28px,4.2vw,40px);line-height:1.12;letter-spacing:-.03em;text-align:left;margin:0 0 12px;max-width:none}
+.sheet>.lede,.sheet .lede{margin:0 0 16px;text-align:left;max-width:68ch}
+.sheet .shareacts{margin:0 0 16px}
+.sheet .qa{margin:0 0 24px;padding:16px 18px;max-width:72ch;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow);font-size:15px;line-height:1.55;color:var(--text)}
+.sheet .qa b{font-weight:650}
+.sheet h2{font-size:18px;letter-spacing:-.02em;margin:32px 0 12px}
+.sheet .grid{gap:16px}
+.sheet .mcp-row,.sheet li:has(>.ico),.sheet li:has(>a .ico){margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow);list-style:none;min-width:0;max-width:100%}
+.sheet .mcp-hook{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.45}
+.sheet .detail{gap:32px}
+.sheet .detail .acts{margin-bottom:24px}
+.sheet .panel{padding:20px}
+.gencall{border-style:solid;box-shadow:none;background:var(--accent-soft)}
+.st-count.on{border-color:var(--accent);box-shadow:none;background:var(--accent-soft)}
+.st-dash .cmpscroll{margin:8px 0 16px}
+/* Verification card follows the design tokens. Beats the old inline neon sheet. */
+.vc{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:12px!important;box-shadow:var(--shadow)!important;color:var(--text)!important;padding:16px 18px!important}
+.vc-hd h2,.vc h2{color:var(--text)!important;font-size:16px!important;letter-spacing:-.01em}
+.vc p,.vc-tl li{color:var(--muted)!important}
+.vc-upd,.vc-lbl,.vc-tl time{color:var(--faint)!important}
+.vc-chip{background:var(--soft)!important;border-color:var(--line)!important;color:var(--text)!important;box-shadow:none!important}
+.vc-ok,.vc-bad,.vc-warn,.vc-tot{color:var(--text)!important;border-color:var(--line)!important}
+.vc-dot{box-shadow:none!important;animation:none!important}
+.vc-tl{border-left-color:var(--line)!important}
+.vc-tl li:before,.vc-tl li.vc-o:before,.vc-tl li.vc-e:before,.vc-tl li.vc-n:before{box-shadow:none!important}
+.vc-btn,.vc-pill{border:1px solid var(--line)!important;color:var(--accent)!important;background:var(--soft)!important;border-radius:8px!important;box-shadow:none!important;min-height:36px;display:inline-flex;align-items:center}
+.vc-btn:hover,.vc-pill:hover{filter:none!important;border-color:var(--accent)!important}
+@media(max-width:640px){
+  .sheet{padding-bottom:40px}
+  .sheet>h1,.sheet .detail h1{font-size:28px}
+  .wrap{padding-left:16px;padding-right:16px}
+}

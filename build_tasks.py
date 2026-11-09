@@ -470,7 +470,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611092330"  # bump when app.js/styles.css change
+ASSET_V = "202611100030"  # bump when app.js/styles.css change
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -796,9 +796,13 @@ def sitewide(t):
         s=re.sub(r'<a class="navmcp" href="[^"]*">.*?</a>','',s)  # rebuild in place so markup updates apply
         if True: s=re.sub(r'(<div class="links">.*?<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f'<a class="navmcp" href="{d}mcp/connect.html"><span class="mcppill"><svg class="mcpico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg>MCP</span></a>',s,count=1,flags=re.S)
         s=s.replace("form-action 'self'\"","form-action 'self' https://agentscout.beehiiv.com\"")
-        if 'class="ai-ref-cta"' in s:
+        # Phase 2 pages keep at most the header store link. No package wall.
+        _phase2 = f.startswith(("tools/","categories/","mcp/")) or f == "s/best-mcp-servers.html"
+        if _phase2:
+            s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>','',s,count=1,flags=re.S)
+        elif 'class="ai-ref-cta"' in s:
             s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>',lambda mm:ai_ref_cta_html(d),s,count=1,flags=re.S)
-        elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","mcp/","videos/","bot-store/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
+        elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","videos/","bot-store/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
             _arc=ai_ref_cta_html(d)
             if '<p class="disclose">' in s:
                 s=s.replace('<p class="disclose">',_arc+'<p class="disclose">',1)

@@ -117,18 +117,24 @@ def cmp_links(x,t):
     bs={y["slug"]:y for y in t}
     li="".join(f'<a class="b uc" href="../compare/{cslug(a,b)}.html">{e(bs[a]["name"])} vs {e(bs[b]["name"])}</a>' for a,b in ps)
     return f'<h2 style="font-size:16px;margin:0 0 10px">Compare</h2><div class="badges" style="margin-bottom:32px">{li}</div>'
+def stamp_assets(s):
+    """Every generator, including news via shell(), writes styles.css?v= at ASSET_V."""
+    import build_tasks
+    v=build_tasks.ASSET_V
+    return re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+', lambda mm: mm.group(1)+"?v="+v, s)
 def shell(depth,title,desc,canon,body,ld):
     tpl=open("data/detail.tpl").read()
     head=tpl.split("<title>")[0].replace("../",depth)
     foot="<footer"+tpl.split("<footer",1)[1].replace("../",depth)
     nav=tpl.split("</head>",1)[1].split("<main")[0].replace("../",depth)
-    return f'''{head}<title>{e(title)}</title>
+    html=f'''{head}<title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canon}">
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta name="twitter:title" content="{e(title)}">
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False).replace("</","<\\/")}</script>
 </head>{nav}<main class="wrap">{body}</main>
 {foot}'''
+    return stamp_assets(html)
 def facts(x):
     f=[("Description",x["description"]),("Category",x["category"]),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),
        ("Pricing (as stated)",(x.get("pricing_detail") or x["pricing"])),("Maturity",x["maturity"]),
@@ -343,7 +349,8 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","numberOfItems":len(rows),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(rows)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items)) if path.startswith("categories/") else ""}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{'<script src="../catfilter.js?v=20261022a" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    _sheet=' class="sheet"' if path.startswith("categories/") else ""
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div><section{_sheet} style="padding-top:8px;text-align:left"><h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items)) if path.startswith("categories/") else ""}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{'<script src="../catfilter.js?v=20261022a" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
@@ -398,13 +405,6 @@ def seo(t,urls):
         if c=="MCP servers":
             import build_aicite as _bac
             _lede+=f' <strong>{e(_bac.reach_sentence(_bac.mcp_reachability(t)))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
-        _pin_cta=(f'<div class="cat-pin-cta"><div class="cpc-body"><span class="npill npmcp cpc-pill"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>Featured Slot Open</span>'
-                  f'<span class="cpc-txt"><b>Building in {e(c)}?</b> List free ($0 · 5-day queue), fast-track with a 7-day boost for <b>$15</b>, pin at the top of <b>{e(c)}</b> for <b>30 days</b> + permanent <code style="font-size:12px">/best/</code> &amp; <code style="font-size:12px">/compare/</code> placement for <b>$49</b>, or book the exclusive <b>$99/wk</b> sitewide &amp; newsletter sponsor slot.</span></div>'
-                  f'<div class="cpc-acts"><a class="btn primary pkg-cta-free cpc-btn" href="../submit.html#free-form">Submit Free ($0)</a>'
-                  f'<a class="btn primary pkg-cta-fast cpc-btn" href="https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e" target="_blank" rel="noopener noreferrer">Fast-Track — $15 →</a>'
-                  f'<a class="btn primary pkg-cta-pop cpc-btn" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin — $49 ★ →</a>'
-                  f'<a class="btn primary pkg-cta-vip cpc-btn" href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Sitewide Sponsor — $99/wk →</a>'
-                  f'<a class="btn cpc-btn" href="../sponsor.html#packages">Compare Packages ($0/$15/$49/$99)</a></div></div>')
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
@@ -417,7 +417,7 @@ def seo(t,urls):
         out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,({"MCP servers":"MCP servers and MCP tools","agent infra":"AI agent infrastructure tools"}.get(c) or (f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools")),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre,more=_more))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
-    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
+    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)
     mcp=[x for x in t if x["category"]=="MCP servers" or "connect tools via MCP" in x["use_cases"]]
     # MCP cluster (Oct 18 2026; Oct 20 split): categories/mcp-servers is the main "MCP servers" page (best/mcp-servers redirects there).
