@@ -499,13 +499,13 @@ def write_link_status_forward():
 <link rel="canonical" href="{canon}">
 <meta http-equiv="refresh" content="0; url=/mcp/status/">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="stylesheet" href="../styles.css?v=202611092150">
+<link rel="stylesheet" href="../styles.css?v=202611092330">
 <script>(function(){{try{{var t=localStorage.getItem("agentscout-theme")}}catch(e){{}}if(t!=="dark"&&t!=="light")t="dark";document.documentElement.dataset.theme=t;window.asToggleTheme=function(){{var n=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{{localStorage.setItem("agentscout-theme",n)}}catch(e){{}}}}}})()</script>
 </head><body>
 {nav}
 <main class="wrap"><p>This page moved. <a href="/mcp/status/">MCP server status</a>.</p></main>
 {nl}{foot}
-<script src="../app.js?v=202611092150"></script>
+<script src="../app.js?v=202611092330"></script>
 </body></html>
 '''
     problems = build_seo_new.redirect_page_chrome_problems("mcp/link-status.html", page)
