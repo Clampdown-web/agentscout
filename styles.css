@@ -1068,9 +1068,19 @@ html[data-theme=dark] .lb-board .lb-ctas .lb-cta-new,html[data-theme=dark] .lb-b
 .guide-list li:first-child a{border-top:0}
 .guide-list a:hover{color:var(--accent)}
 .panel .guide-list{margin-top:4px}
-/* 641–1440: the corner buttons sit over the right column unless that column stops short of them.
-   The extra right inset shrinks by the free margin once the column is centered, so 1440 stays even. */
+/* 641–1440: equal inset on both sides, large enough that text and buttons end before the scroll controls.
+   Once the column is centered with room to spare, this falls back to the normal 24px gutter. */
 @media (min-width:641px) and (max-width:1440px){
-  body:not(:has(.lb-board)) .layout{padding-right:max(24px,calc(108px - max(0px,(100vw - 1200px) / 2) + env(safe-area-inset-right)))}
-  body:not(:has(.lb-board)) main.wrap{padding-right:max(24px,calc(108px - max(0px,(100vw - 1120px) / 2) + env(safe-area-inset-right)))}
+  body:not(:has(.lb-board)) .layout{
+    --as-side:max(24px,calc(104px - max(0px,(100vw - 1200px) / 2)));
+    padding-left:var(--as-side);padding-right:var(--as-side)
+  }
+  body:not(:has(.lb-board)) :is(main.wrap,.wrap:has(.homegen)){
+    --as-side:max(24px,calc(104px - max(0px,(100vw - 1120px) / 2)));
+    padding-left:var(--as-side);padding-right:var(--as-side)
+  }
 }
+.home-later{box-sizing:border-box;max-width:1120px;margin:0 auto;padding:16px 24px 8px}
+.home-later .guide-list{max-width:40rem;margin:12px auto 0;padding:4px 12px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.home-later .quizcta{max-width:40rem;margin:16px auto 8px;text-align:center}
+@media(max-width:640px){.home-later{padding-left:16px;padding-right:16px}}

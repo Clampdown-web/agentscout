@@ -98,7 +98,17 @@ if(k<1){raf=requestAnimationFrame(step)}else{var n=0;function settle(){place(dow
 raf=requestAnimationFrame(step)}
 up.onclick=function(){glide(false)};
 dn.onclick=function(){glide(true)};
-function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v),scrolled=m.y>48;
+var phoneT=0,hideT=0;
+function hidePhone(){up.classList.remove("show");dn.classList.remove("show")}
+function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v);
+if(matchMedia("(max-width:640px)").matches){
+hidePhone();clearTimeout(phoneT);clearTimeout(hideT);
+if(m.y<=48)return;
+phoneT=setTimeout(function(){var n=pageBox(),fb=n.h-(n.y+n.v);if(n.y<=48)return;
+up.classList.toggle("show",n.y>400);dn.classList.toggle("show",n.h>n.v+300&&fb>300);
+hideT=setTimeout(hidePhone,2000)},220);return}
+clearTimeout(phoneT);clearTimeout(hideT);
+var scrolled=m.y>48;
 up.classList.toggle("show",scrolled&&m.y>400);dn.classList.toggle("show",scrolled&&m.h>m.v+300&&fromBottom>300)}
 function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
 addEventListener("scroll",sch,{passive:true,capture:true});addEventListener("resize",sch);addEventListener("load",sch);addEventListener("pageshow",sch);
