@@ -12,9 +12,11 @@ per-page inline scripts (theme boot, GA4, counts, JSON-LD is not a script,
 onclick handlers). Hashing those would break the next rebuild.
 
 Third parties this policy allows, and why:
-- challenges.cloudflare.com: Turnstile script + iframe (script-src, frame-src).
-  Not connect-src: the widget talks from its frame, and the submit check
-  forbids that host on connect-src.
+- challenges.cloudflare.com: Turnstile script, iframe, and the parent-page
+  api.js calls (script-src, frame-src, and connect-src). The iframe has its
+  own origin, but api.js also connects from this page. Blocking that is what
+  leaves real makers on error 600010 ("The anti-bot check did not finish").
+  The host is already on the Report-Only header. 'unsafe-eval' stays off.
 - www.googletagmanager.com: gtag.js injected by the GA4 snippet.
 - *.google-analytics.com and *.analytics.google.com: GA4 collection.
 - static.cloudflareinsights.com and cloudflareinsights.com: Cloudflare Web
@@ -41,7 +43,7 @@ POLICY = (
     "style-src 'self' 'unsafe-inline'; "
     "font-src 'self'; "
     "img-src 'self' data: blob: https:; "
-    "connect-src 'self' https://api.agentscouthq.com https://votes.agentscouthq.com https://agentscout-image.agentscouthq.workers.dev https://agentscout.beehiiv.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://cloudflareinsights.com https://static.cloudflareinsights.com; "
+    "connect-src 'self' https://api.agentscouthq.com https://votes.agentscouthq.com https://agentscout-image.agentscouthq.workers.dev https://agentscout.beehiiv.com https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://cloudflareinsights.com https://static.cloudflareinsights.com; "
     "frame-src https://challenges.cloudflare.com https://agentscout.beehiiv.com; "
     "object-src 'none'; "
     "base-uri 'self'; "

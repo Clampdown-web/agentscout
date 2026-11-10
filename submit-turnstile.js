@@ -1,5 +1,7 @@
-/* Submit-form Turnstile. The page loads this, then calls AgentScoutTurnstile.start().
-   Siteverify stays on the worker. This file never calls challenges.cloudflare.com/siteverify. */
+/* Submit-form Turnstile. api.js is in the page head (explicit render, onload=asTsLoad).
+   This file installs asTsLoad as soon as it runs, and honors a head stub that set
+   asTsLoaded if api.js finished first. Siteverify stays on the worker.
+   This file never calls challenges.cloudflare.com/siteverify. */
 (function (root) {
   var SITEKEY = "0x4AAAAAAFfaxf14aQF-sky1";
   var ACTION = "submit";
@@ -14,6 +16,9 @@
   var started = false;
   var widgetId = null;
   var attempts = 0;
+  var freshUsed = 0;
+  var apiReady = false;
+  var lastCode = "";
   var timer = 0;
 
   function codeOf(code) {
@@ -68,9 +73,17 @@
     return -1;
   }
 
-  function planWidgetError(code, attemptCount) {
+  function is600(code) {
+    return codeOf(code).slice(0, 3) === "600";
+  }
+
+  /* freshCount is how many remove()+render() recoveries already ran.
+     Two reset() attempts come first. One fresh render follows only for 600* codes. */
+  function planWidgetError(code, attemptCount, freshCount) {
+    var used = freshCount == null ? 0 : freshCount;
     var auto = shouldAutoReset(code, attemptCount);
-    return { auto: auto, text: widgetErrorText(code, auto), suppressBuiltinRetry: true };
+    var fresh = !auto && is600(code) && used < 1;
+    return { auto: auto, fresh: fresh, text: widgetErrorText(code, auto || fresh), suppressBuiltinRetry: true };
   }
 
   function $(id) {
@@ -148,12 +161,34 @@
     setStatus(message || "Starting the check again.");
   }
 
+  /* A stuck 600* widget often ignores reset(). Drop it and render a new one.
+     Still no token, so the form cannot send. */
+  function freshRender(message) {
+    clearTimer();
+    showRetry(false);
+    var api = root.turnstile;
+    var old = widgetId;
+    widgetId = null;
+    if (api && old != null && typeof api.remove === "function") {
+      try { api.remove(old); } catch (e) {}
+    }
+    renderWidget();
+    if (widgetId == null) {
+      setStatus(widgetErrorText(lastCode, false));
+      showRetry(true);
+      try { reveal(); } catch (e) {}
+      return;
+    }
+    setStatus(message || "Starting the check again.");
+  }
+
   /* api.js retries on its own unless this returns true AND the widget retry mode is not auto.
      render() sets retry to never, so this return stops that scheduler, including the immediate
      retry it otherwise uses for challenge-crash codes. */
   function onError(code) {
     clearTimer();
-    var plan = planWidgetError(code, attempts);
+    lastCode = codeOf(code);
+    var plan = planWidgetError(code, attempts, freshUsed);
     setStatus(plan.text);
     if (plan.auto) {
       attempts += 1;
@@ -161,6 +196,12 @@
       timer = setTimeout(function () {
         resetWidget("Starting the check again.");
       }, AUTO_MS);
+    } else if (plan.fresh) {
+      freshUsed += 1;
+      showRetry(false);
+      timer = setTimeout(function () {
+        freshRender("Starting the check again.");
+      }, 0);
     } else {
       showRetry(true);
       try { reveal(); } catch (e) {}
@@ -170,6 +211,7 @@
 
   function onSuccess() {
     attempts = 0;
+    freshUsed = 0;
     clearTimer();
     showRetry(false);
     setStatus("");
@@ -192,6 +234,7 @@
 
   function onManual() {
     attempts = 0;
+    freshUsed = 0;
     resetWidget("Starting the check again. Wait until it finishes, then press Submit.");
   }
 
@@ -234,7 +277,15 @@
   }
 
   function onLoad() {
-    renderWidget();
+    apiReady = true;
+    if (started) renderWidget();
+  }
+
+  /* Run at parse time, not from start(). api.js may call asTsLoad before or after
+     this file, and before DOMContentLoaded calls start(). */
+  function bindApiLoad() {
+    root.asTsLoad = onLoad;
+    if (root.asTsLoaded || (root.turnstile && typeof root.turnstile.render === "function")) apiReady = true;
   }
 
   function start() {
@@ -257,12 +308,8 @@
         try { clearOfFixedBars(); } catch (e) {}
       }, { passive: true });
     }
-    if (!$("sf-turnstile") || !document.head) return;
-    var s = document.createElement("script");
-    s.src = SCRIPT;
-    s.async = true;
-    s.defer = true;
-    document.head.appendChild(s);
+    if (!apiReady && (root.asTsLoaded || (root.turnstile && typeof root.turnstile.render === "function"))) apiReady = true;
+    if (apiReady) renderWidget();
   }
 
   function readToken() {
@@ -304,8 +351,11 @@
 
   function invalidate() {
     attempts = 0;
+    freshUsed = 0;
     resetWidget("Complete the check again, then press Submit.");
   }
+
+  bindApiLoad();
 
   root.AgentScoutTurnstile = {
     SITEKEY: SITEKEY,
