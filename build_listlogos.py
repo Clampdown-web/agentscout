@@ -3,6 +3,7 @@ Idempotent post-processing over the built HTML, run near the end of build_site.p
 - table cells: a tool link at the start of a <th>/<td> (Quick comparison tables on category, best-of, alternatives, task,
   /s/ and /for/ pages, GitHub-repo tables, compare tables) gets the tool's logo before its name;
 - inline tool lists: 'Related: A · B' lines (compare pages) and 'pages on AgentScout: A · B' lines (free tools).
+- spaced rows: a tool link inside ul.linkpile or ul.guide-list (the middot runs those lines became).
 Logo markup is the site's standard small icon (build_extras.ico, 24px): same local asset, letter fallback underneath,
 explicit width/height, loading=lazy, and the retry-on-error handler. alt="" because the tool name follows as text.
 Prose mentions (sentences in ledes and paragraphs) are left as plain links on purpose."""
@@ -16,6 +17,14 @@ def _icon(x,d):
 CELL=re.compile(r'(<t[hd]\b[^>]*>\s*)<a ((?:class="[^"]*" )?)href="((?:\.\./)*)tools/([a-z0-9-]+)\.html"([^>]*)>(?!<span class="ico)')
 INL=re.compile(r'<a href="((?:\.\./)*)tools/([a-z0-9-]+)\.html">(?!<span class="ico)')
 LISTP=re.compile(r'<p\b[^>]*>(?:Related:|[^<]{0,200}pages on AgentScout:).*?</p>',re.S)
+ROWS=re.compile(r'<ul class="[^"]*\b(?:linkpile|guide-list)\b[^"]*">.*?</ul>',re.S)
+ROW_A=re.compile(r'<a\b([^>]*?)href="((?:\.\./)*)tools/([a-z0-9-]+)\.html"([^>]*)>(?!<span class="ico)')
+def _with_icol(before, after):
+    if 'class="' in before:
+        return before.replace('class="', 'class="icol ', 1), after
+    if 'class="' in after:
+        return before, after.replace('class="', 'class="icol ', 1)
+    return before, after+' class="icol"'
 def apply(s,bys):
     n=0
     def cell(m):
@@ -33,6 +42,14 @@ def apply(s,bys):
         if not x or not x.get("logo"): return m.group(0)
         n+=1; return f'<a class="icol" href="{m.group(1)}tools/{m.group(2)}.html">{_icon(x,m.group(1))}'
     s=LISTP.sub(lambda p:INL.sub(inl,p.group(0)),s)
+    def row_link(m):
+        nonlocal n
+        x=bys.get(m.group(3))
+        if not x or not x.get("logo"): return m.group(0)
+        before, after=_with_icol(m.group(1), m.group(4))
+        n+=1
+        return f'<a{before}href="{m.group(2)}tools/{m.group(3)}.html"{after}>{_icon(x,m.group(2))}'
+    s=ROWS.sub(lambda m:ROW_A.sub(row_link, m.group(0)),s)
     return s,n
 def run(t):
     bys={x["slug"]:x for x in t}; tot=0; pages=0
