@@ -757,8 +757,16 @@ nav .links a.navsrch{font-weight:600;color:var(--text)}
 .st-count.on{border-color:#38bdf8;box-shadow:0 0 0 1px rgba(56,189,248,.35)}
 .st-count b{font-size:18px}.st-count span{font-size:12px;color:var(--muted)}
 #st-q{width:100%;max-width:420px;min-height:44px;margin:0 0 12px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;box-sizing:border-box}
-.st-table{width:max-content;min-width:880px;border-collapse:collapse;font-size:14px}
-.st-table th,.st-table td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap}
+.st-table{width:max-content;min-width:100%;table-layout:auto;border-collapse:collapse;font-size:13.5px}
+.st-table th,.st-table td{text-align:left;padding:4px 8px;border-bottom:1px solid var(--line);vertical-align:middle;line-height:1.25;white-space:nowrap}
+.st-table th:first-child,.st-table td:first-child{position:sticky;left:0;z-index:1;background:var(--card);width:11rem;max-width:42vw;overflow:hidden}
+.st-table td:first-child a.icol{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.st-table td:first-child .ico{display:inline-grid;vertical-align:middle;margin-right:6px}
+.st-table td:last-child,.st-table th:last-child{white-space:normal}
+.st-hist{max-width:14rem;white-space:normal;overflow-wrap:break-word}
+.st-pill{white-space:nowrap}
+.st-table a.icol{min-height:0;height:auto;align-items:center;gap:6px}
+.st-table .ico.sm{width:20px;height:20px;flex-basis:20px}
 .st-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid var(--line)}
 .st-live{color:#4ade80;border-color:rgba(74,222,128,.45)}.st-down{color:#f87171;border-color:rgba(248,113,113,.45)}.st-not-yet-checked{color:#fbbf24;border-color:rgba(251,191,36,.45)}
 .lb-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line);min-width:0;max-width:100%}
@@ -1075,12 +1083,72 @@ html[data-theme=dark] .lb-board .lb-ctas .lb-cta-new,html[data-theme=dark] .lb-b
     --as-side:max(24px,calc(104px - max(0px,(100vw - 1200px) / 2)));
     padding-left:var(--as-side);padding-right:var(--as-side)
   }
-  body:not(:has(.lb-board)) :is(main.wrap,.wrap:has(.homegen)){
+  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.wrap:has(.homegen),footer.footcols .wrap){
     --as-side:max(24px,calc(104px - max(0px,(100vw - 1120px) / 2)));
     padding-left:var(--as-side);padding-right:var(--as-side)
   }
 }
 .home-later{box-sizing:border-box;max-width:1120px;margin:0 auto;padding:16px 24px 8px}
 .home-later .guide-list{max-width:40rem;margin:12px auto 0;padding:4px 12px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.home-later .guide-list a{display:flex;width:100%;box-sizing:border-box}
 .home-later .quizcta{max-width:40rem;margin:16px auto 8px;text-align:center}
 @media(max-width:640px){.home-later{padding-left:16px;padding-right:16px}}
+@media (min-width:641px) and (max-width:1440px){
+  .home-later{
+    --as-side:max(24px,calc(104px - max(0px,(100vw - 1120px) / 2)));
+    padding-left:var(--as-side);padding-right:var(--as-side)
+  }
+}
+/* Homepage count strip scrolls sideways. Padding matches the directory column's content edge on both sides, including when a scrollbar makes 100vw wider than the page. */
+body.home #dir-stats{box-sizing:border-box;--as-free:max(0px,(100% - 1120px) / 2);--as-vw:max(0px,(100vw - 1120px) / 2);padding-left:calc(var(--as-free) + max(24px,104px - var(--as-vw)));padding-right:calc(var(--as-free) + max(24px,104px - var(--as-vw)))}
+@media(max-width:640px){body.home #dir-stats{padding-left:16px;padding-right:16px}}
+/* At a glance: the verification card's layout used to live in an inlined stylesheet. Keep the calm colors above, and give the head, chips, timeline and pricing note real boxes so nothing overlaps or leaves the panel. */
+.vc-hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 12px}
+.sheet .vc-hd h2,.vc-hd h2{margin:0}
+.vc-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#22c55e;flex:0 0 auto}
+.vc-dot.vc-dn{background:#f87171}
+.vc-upd{margin-left:auto;font-size:12px}
+.vc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;padding:0;list-style:none}
+.vc-chip{display:inline-flex;align-items:baseline;gap:6px;padding:5px 12px;border-radius:999px;font-size:13px;border:1px solid var(--line)}
+.vc p{margin:0 0 8px}
+.vc-lbl{display:block;margin:12px 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.vc-tl{list-style:none;margin:0 0 10px;padding:0 0 0 16px;border-left:2px solid var(--line)}
+.vc-tl li{position:relative;margin:0 0 8px;padding:0;font-size:13px}
+.vc-tl li:before{content:"";position:absolute;left:-21px;top:.45em;width:8px;height:8px;border-radius:50%;background:#22c55e}
+.vc-tl li.vc-e:before{background:#f87171}
+.vc-tl li.vc-n:before{background:#94a3b8}
+.vc-tl time{display:block;font-size:12px}
+.vc{height:auto;max-height:none;overflow:visible}
+aside.panel{height:auto;max-height:none;overflow:visible}
+aside.panel dl>.vc-row{height:auto;overflow:visible}
+aside.panel>.disclose{margin:16px 0 0;overflow-wrap:anywhere}
+/* Footer: equal columns, centered as a group, so the left gap matches the gap past the longest link. */
+footer.footcols .footgrid{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;justify-content:center;justify-items:center;grid-template-columns:repeat(2,max-content)}
+footer.footcols .footcol{align-items:center;text-align:center}
+footer.footcols .footcol h2{width:100%;text-align:center}
+footer.footcols .footcol a{justify-content:center;width:max-content;max-width:100%;text-align:center}
+footer.footcols .footpop{display:flex;flex-flow:row wrap;justify-content:center;align-items:center;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;box-sizing:border-box;text-align:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--soft);gap:4px 12px}
+footer.footcols .footpop-label{display:block;flex:1 0 100%;width:100%;margin:0 0 2px;text-align:center}
+footer.footcols .footpop a{justify-content:center}
+footer.footcols .footbase{width:100%;max-width:100%;margin-left:auto;margin-right:auto;text-align:center}
+footer.footcols .footbase .logo,footer.footcols .footmeta{justify-content:center}
+@media(min-width:1100px){footer.footcols .footgrid{grid-template-columns:repeat(4,max-content);column-gap:28px}}
+@media(max-width:640px){
+  footer.footcols .footcol{max-width:min(42vw,16rem)}
+  footer.footcols .footcol a{white-space:normal}
+  footer.footcols .footpop{flex-direction:column;align-items:center;padding:8px 12px}
+  footer.footcols .footpop a{min-height:44px}
+}
+/* Category and related-link walls: one tap row per link, two columns once there is room. */
+.linkpile{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0;padding:0;min-width:0;max-width:100%}
+.linkpile li{min-width:0;margin:0}
+.linkpile a{display:flex;align-items:center;justify-content:space-between;gap:8px;box-sizing:border-box;width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);line-height:1.3;text-decoration:none}
+.linkpile-label{margin:16px 0 0;font-size:14px;font-weight:650}
+@media(max-width:480px){.linkpile{grid-template-columns:minmax(0,1fr)}}
+/* Short wide viewports: the desktop button clearance is too wide. Keep both gutters equal and still clear the smaller corner buttons. */
+@media (min-width:641px) and (max-height:520px){
+  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.wrap:has(.homegen),footer.footcols .wrap,.layout,.home-later){
+    --as-side:max(16px,calc(72px - max(0px,(100vw - 1120px) / 2)));
+    padding-left:var(--as-side);padding-right:var(--as-side)
+  }
+}

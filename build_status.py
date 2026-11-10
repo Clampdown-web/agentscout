@@ -541,7 +541,7 @@ def write_dashboard(tools):
             f'<tr data-status="{e(status)}" data-name="{e(s["name"].lower())}">'
             f'<td><a href="../../tools/{e(s["slug"])}.html">{e(s["name"])}</a></td>'
             f'<td><span class="st-pill st-{e(status.replace(" ", "-"))}">{e(shown)}</span></td>'
-            f'<td>{last}</td><td>{detail or "—"}</td><td>{e(hist_txt)}</td></tr>'
+            f'<td>{last}</td><td>{detail or "—"}</td><td><div class="st-hist">{e(hist_txt)}</div></td></tr>'
         )
     title = "MCP server status · AgentScout"
     desc = f"{live} of {checked_n} checked MCP servers live. +{miss} listed, not yet checked. {VERIFY_CADENCE}."

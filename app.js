@@ -100,16 +100,34 @@ up.onclick=function(){glide(false)};
 dn.onclick=function(){glide(true)};
 var phoneT=0,hideT=0;
 function hidePhone(){up.classList.remove("show");dn.classList.remove("show")}
+/* True when a visible button would sit on a link, control, or text. Empty page padding does not count. */
+function overlapsContent(){
+var pu=up.style.pointerEvents,pd=dn.style.pointerEvents,pw=w.style.pointerEvents;
+up.style.pointerEvents="none";dn.style.pointerEvents="none";w.style.pointerEvents="none";
+var bad=false,nodes=[up,dn];
+for(var i=0;i<nodes.length&&!bad;i++){
+var r=nodes[i].getBoundingClientRect();
+if(r.width<2||r.height<2)continue;
+var pts=[[r.left+6,r.top+6],[r.right-6,r.top+6],[r.left+6,r.bottom-6],[r.right-6,r.bottom-6],[(r.left+r.right)/2,(r.top+r.bottom)/2]];
+for(var j=0;j<pts.length;j++){
+var el=document.elementFromPoint(pts[j][0],pts[j][1]);
+if(!el||el===document.body||el===document.documentElement)continue;
+if(el.closest&&el.closest(".scrollbtns,.as-bar"))continue;
+if(el.closest&&el.closest("a,button,input,select,textarea,summary,p,h1,h2,h3,h4,li,td,th,label,.card,.st-pill,table,.cmpscroll,aside.panel")){bad=true;break}
+}}
+up.style.pointerEvents=pu;dn.style.pointerEvents=pd;w.style.pointerEvents=pw;
+return bad}
 function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v);
 if(matchMedia("(max-width:640px)").matches){
 hidePhone();clearTimeout(phoneT);clearTimeout(hideT);
 if(m.y<=48)return;
 phoneT=setTimeout(function(){var n=pageBox(),fb=n.h-(n.y+n.v);if(n.y<=48)return;
-up.classList.toggle("show",n.y>400);dn.classList.toggle("show",n.h>n.v+300&&fb>300);
-hideT=setTimeout(hidePhone,2000)},220);return}
+var showUp=n.y>400&&!overlapsContent(),showDn=n.h>n.v+300&&fb>300&&!overlapsContent();
+up.classList.toggle("show",showUp);dn.classList.toggle("show",showDn);
+if(showUp||showDn)hideT=setTimeout(hidePhone,2000)},220);return}
 clearTimeout(phoneT);clearTimeout(hideT);
-var scrolled=m.y>48;
-up.classList.toggle("show",scrolled&&m.y>400);dn.classList.toggle("show",scrolled&&m.h>m.v+300&&fromBottom>300)}
+var scrolled=m.y>48,clear=!overlapsContent();
+up.classList.toggle("show",scrolled&&m.y>400&&clear);dn.classList.toggle("show",scrolled&&m.h>m.v+300&&fromBottom>300&&clear)}
 function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
 addEventListener("scroll",sch,{passive:true,capture:true});addEventListener("resize",sch);addEventListener("load",sch);addEventListener("pageshow",sch);
 addEventListener("touchmove",sch,{passive:true});addEventListener("touchend",sch,{passive:true});addEventListener("touchcancel",sch,{passive:true});

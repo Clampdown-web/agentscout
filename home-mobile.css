@@ -63,6 +63,8 @@ footer.footcols .footmeta{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:c
 footer.footcols .footmeta a,footer.footcols .footmeta span{color:var(--muted);min-height:36px;display:inline-flex;align-items:center}
 @media(min-width:900px){footer.footcols .footgrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 24px}}
 body.home .stats{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;margin:0 0 8px;gap:8px 14px}
+body.home #dir-stats{box-sizing:border-box;--as-free:max(0px,(100% - 1120px) / 2);--as-vw:max(0px,(100vw - 1120px) / 2);padding-left:calc(var(--as-free) + max(24px,104px - var(--as-vw)));padding-right:calc(var(--as-free) + max(24px,104px - var(--as-vw)))}
+@media(max-width:640px){body.home #dir-stats{padding-left:16px;padding-right:16px}}
 body.home .stats a{white-space:nowrap}
 body.home .hero-picks,body.home section.hero-picks{padding:0;margin:0 0 8px}
 body.home .hero-picks h2{font-size:13px;margin:0 0 6px;color:var(--muted);font-weight:650}
@@ -107,6 +109,15 @@ footer.footcols .wrap{padding-left:24px;padding-right:24px}
 }
 footer.footcols .footgrid{gap:32px 24px}
 footer.footcols .footpop{gap:8px 16px;padding:16px 0 8px}
+footer.footcols .footgrid{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;justify-content:center;justify-items:center;grid-template-columns:repeat(2,max-content)}
+footer.footcols .footcol{align-items:center;text-align:center}
+footer.footcols .footcol h2,footer.footcols .footcol a{text-align:center}
+footer.footcols .footcol a{justify-content:center;width:max-content;max-width:100%}
+footer.footcols .footpop{display:flex;flex-flow:column nowrap;align-items:center;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;box-sizing:border-box;text-align:center;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:var(--soft)}
+footer.footcols .footpop-label{display:block;width:100%;margin:0 0 2px;text-align:center}
+footer.footcols .footbase{text-align:center}
+footer.footcols .footmeta{justify-content:center}
+@media(min-width:1100px){footer.footcols .footgrid{grid-template-columns:repeat(4,max-content);column-gap:28px}}
 body.home .hero{padding:16px 0 4px;text-align:left;background:linear-gradient(180deg,var(--hero2),var(--bg) 88%);border-bottom:0}
 body.home .hero h1{font-size:clamp(30px,4.2vw,44px);letter-spacing:-.03em;margin:0 0 8px;max-width:16em}
 body.home .hero .lede{font-size:16px;line-height:1.45;margin:0 0 16px;max-width:38rem}

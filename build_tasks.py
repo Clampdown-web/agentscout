@@ -470,7 +470,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611102000"  # bump when app.js/styles.css/consent.js change
+ASSET_V = "202611110530"  # bump when app.js/styles.css/consent.js change
 def stamp(s):
     """Put the current styles.css/app.js cache-bust on a page a generator just wrote.
 
@@ -755,6 +755,28 @@ def ensure_shared_scripts(f, s, d):
             s=s[:track.end()]+f'<script src="{d}share.js?v={ASSET_V}"></script>'+s[track.end():]
     s=ensure_consent_banner(f, s, d)
     return s
+_LINK_A=re.compile(r"<a\b[^>]*>.*?</a>", re.S)
+_LINK_LABEL=re.compile(r"^(related|see also|jump to|other roles|popular searches|popular with|similar searches|by role|more|free tools|you might also like)(\b[^.]{0,60})?:?$", re.I)
+def burst_link_piles(html):
+    """Turn a paragraph that is only a middot run of links into spaced tap rows.
+    A sentence that happens to contain a few links is left as written."""
+    def repl(m):
+        p=m.group(0)
+        if "linkpile" in p or "guide-list" in p or "disclose" in p or "footmeta" in p or "goodfor" in p:
+            return p
+        anchors=_LINK_A.findall(p)
+        if len(anchors)<3:
+            return p
+        rest=_LINK_A.sub("", p)
+        rest=re.sub(r"<[^>]+>", " ", rest)
+        rest=rest.replace("·", " ").replace("&middot;", " ").replace("&#183;", " ")
+        rest=re.sub(r"\s+", " ", rest).strip(" :")
+        if rest and not _LINK_LABEL.match(rest):
+            return p
+        label=f'<p class="linkpile-label">{rest}</p>' if rest else ""
+        items="".join(f"<li>{a}</li>" for a in anchors)
+        return label+f'<ul class="linkpile">{items}</ul>'
+    return re.sub(r"<p\b[^>]*>.*?</p>", repl, html, flags=re.S)
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
@@ -949,6 +971,7 @@ def sitewide(t):
         s=_once_submit_menu(s)
         s=_restore_redirect_chrome(s, held)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
+        s=burst_link_piles(s)
         if s!=o: open(f,"w").write(s)
     import build_lovable; build_lovable.run()
 
