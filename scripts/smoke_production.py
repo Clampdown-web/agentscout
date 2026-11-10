@@ -78,7 +78,8 @@ PAGE_HEADER_FRAGMENTS = {
 
 PAGES = (
     {"path": "/", "title": ("AgentScout", "AI Agent"), "canonical": f"{SITE}/", "fast_track": True},
-    {"path": "/mcp/", "title": ("Best MCP Servers", "AgentScout"), "canonical": f"{SITE}/mcp/", "fast_track": True},
+    # Phase 2 dropped the body promo on /mcp/. The $15 link stays required on /, /submit, /sponsor.html, and /best/.
+    {"path": "/mcp/", "title": ("Best MCP Servers", "AgentScout"), "canonical": f"{SITE}/mcp/", "fast_track": False},
     # Tool pages post-#102 link to Get Featured /sponsor.html; Stripe Fast-Track lives on sponsor/home/etc.
     {"path": "/tools/zed.html", "title": ("Zed", "AgentScout"), "canonical": f"{SITE}/tools/zed.html", "fast_track": False},
     {"path": "/tools/crewai.html", "title": ("CrewAI", "AgentScout"), "canonical": f"{SITE}/tools/crewai.html", "fast_track": False},

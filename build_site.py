@@ -507,5 +507,8 @@ def _quality_finish():
         # leave the template's older policy in place.
         s = _csp.harden(s, f)
         open(f, "w", encoding="utf-8").write(s)
+    # submit and sponsor are rewritten after the footer pass, so put the Popular lists line back.
+    import build_intlinks
+    build_intlinks.apply_footer_line()
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)
