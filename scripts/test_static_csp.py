@@ -69,8 +69,9 @@ class StaticCspTest(unittest.TestCase):
             for bit in REQUIRED:
                 self.assertIn(bit, policy, rel)
             connect = policy.split("connect-src ", 1)[1].split(";", 1)[0]
-            self.assertNotIn("challenges.cloudflare.com", connect, rel)
+            self.assertIn("https://challenges.cloudflare.com", connect, rel)
             self.assertNotIn("data:", connect, rel)
+            self.assertNotIn("unsafe-eval", policy.replace("'wasm-unsafe-eval'", ""), rel)
             self.assertIn("'wasm-unsafe-eval'" if rel == "index.html" else "script-src", policy)
 
     def test_template_is_the_source_of_the_policy(self):
@@ -78,6 +79,9 @@ class StaticCspTest(unittest.TestCase):
         policy = _policy(tpl)
         for bit in REQUIRED:
             self.assertIn(bit, policy)
+        connect = policy.split("connect-src ", 1)[1].split(";", 1)[0]
+        self.assertIn("https://challenges.cloudflare.com", connect)
+        self.assertNotIn("unsafe-eval", policy.replace("'wasm-unsafe-eval'", ""))
         # Tool pages do not compile WebAssembly. The homepage keeps its own token.
         self.assertNotIn("wasm-unsafe-eval", policy)
 

@@ -37,6 +37,7 @@ class SubmitWidgetTest(unittest.TestCase):
     def test_error_callback_keeps_the_token_gate_and_the_csp(self):
         html = (ROOT / "submit.html").read_text(encoding="utf-8")
         widget = (ROOT / "submit-turnstile.js").read_text(encoding="utf-8")
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
         self.assertIn('data-sitekey="0x4AAAAAAFfaxf14aQF-sky1"', html)
         self.assertIn('id="sfts-retry"', html)
         self.assertIn("Try the check again", html)
@@ -70,9 +71,28 @@ class SubmitWidgetTest(unittest.TestCase):
         csp = re.search(r'Content-Security-Policy" content="([^"]+)"', html).group(1)
         connect = csp.split("connect-src ", 1)[1].split(";", 1)[0]
         self.assertNotIn("data:", connect)
-        self.assertNotIn("challenges.cloudflare.com", connect)
+        self.assertIn("https://challenges.cloudflare.com", connect)
+        self.assertNotIn("unsafe-eval", csp.replace("'wasm-unsafe-eval'", ""))
         self.assertIn("https://challenges.cloudflare.com", csp.split("script-src ", 1)[1].split(";", 1)[0])
         self.assertIn("https://challenges.cloudflare.com", csp.split("frame-src ", 1)[1].split(";", 1)[0])
+        head = html.split("</head>", 1)[0]
+        pre = head.find('<link rel="preconnect" href="https://challenges.cloudflare.com">')
+        stub = head.find("window.asTsLoad=window.asTsLoad||function(){window.asTsLoaded=1}")
+        api = head.find("https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=asTsLoad")
+        body_js = html.find("submit-turnstile.js?v=")
+        self.assertGreaterEqual(pre, 0)
+        self.assertLess(pre, stub)
+        self.assertLess(stub, api)
+        self.assertLess(api, body_js)
+        tag = head[api - 8:head.find(">", api) + 1]
+        self.assertIn("async", tag)
+        self.assertIn("defer", tag)
+        self.assertNotIn('document.createElement("script")', widget)
+        self.assertNotIn("document.head.appendChild(s)", widget)
+        self.assertIn("api.remove", widget)
+        self.assertIn('padding-left:0;padding-right:0', css)
+        self.assertIn("margin-left:auto;margin-right:auto", css)
+        self.assertIn('padding-left:0;padding-right:0', html)
 
     def test_phone_package_gutter_does_not_hide_scroll_buttons(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")

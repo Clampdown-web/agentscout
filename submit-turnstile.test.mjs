@@ -46,10 +46,17 @@ function mountDom() {
 
 test("retryable widget codes get a bounded automatic reset", () => {
   assert.equal(ts.planWidgetError("600010", 0).auto, true);
+  assert.equal(ts.planWidgetError("600010", 0).fresh, false);
   assert.equal(ts.planWidgetError(600010, 1).auto, true);
   assert.equal(ts.planWidgetError("600010", 2).auto, false);
-  assert.match(ts.planWidgetError("600010", 2).text, /Try the check again/);
+  assert.equal(ts.planWidgetError("600010", 2).fresh, true);
+  assert.match(ts.planWidgetError("600010", 2).text, /Trying again automatically/);
   assert.match(ts.planWidgetError("600010", 2).text, /Nothing was sent/);
+  assert.equal(ts.planWidgetError("600010", 2, 1).fresh, false);
+  assert.match(ts.planWidgetError("600010", 2, 1).text, /Try the check again/);
+  assert.equal(ts.planWidgetError("300010", 2, 0).fresh, false);
+  assert.match(ts.planWidgetError("300010", 2, 0).text, /Try the check again/);
+  assert.equal(ts.planWidgetError("110200", 0, 0).fresh, false);
   assert.equal(ts.planWidgetError("600010", 0).suppressBuiltinRetry, true);
   assert.equal(ts.retryable("110200"), false);
   assert.equal(ts.retryable("400020"), false);
@@ -110,6 +117,9 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
 
   const { nodes, head } = mountDom();
   const resets = [];
+  const removed = [];
+  const renders = [];
+  let seq = 0;
   globalThis.turnstile = {
     render(el, options) {
       assert.equal(el, nodes["sf-turnstile"]);
@@ -117,19 +127,24 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
       assert.equal(options.action, "submit");
       assert.equal(options.retry, "never");
       assert.equal(options["refresh-expired"], "auto");
+      assert.equal(options["refresh-timeout"], "auto");
       assert.equal(typeof options["error-callback"], "function");
       this.options = options;
-      return "widget-1";
+      const id = "widget-" + (++seq);
+      renders.push(id);
+      return id;
     },
     reset(id) { resets.push(id); },
-    getResponse(id) { return id === "widget-1" ? "token-1" : ""; },
+    remove(id) { removed.push(id); },
+    getResponse(id) { return renders.includes(id) ? "token-1" : ""; },
     isExpired() { return false; },
   };
   globalThis.scrollBy = () => {};
   ts.start();
-  assert.match(head.child.src, /^https:\/\/challenges\.cloudflare\.com\/turnstile\/v0\/api\.js\?render=explicit/);
+  assert.equal(head.child, null);
   globalThis.asTsLoad();
   globalThis.asTsLoad();
+  assert.deepEqual(renders, ["widget-1"]);
   assert.equal(ts.readToken(), "token-1");
   assert.equal(globalThis.asTsErr(600010), true);
   assert.match(nodes.sfts.textContent, /600010/);
@@ -140,14 +155,23 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
   assert.equal(globalThis.asTsErr("600010"), true);
   await new Promise((resolve) => setTimeout(resolve, ts.AUTO_MS + 50));
   assert.equal(resets.length, 2);
+  assert.deepEqual(removed, []);
+  assert.equal(globalThis.asTsErr(600010), true);
+  assert.equal(nodes["sfts-retry-wrap"].hidden, true);
+  assert.match(nodes.sfts.textContent, /Trying again automatically/);
+  await new Promise((resolve) => setTimeout(resolve, 30));
+  assert.deepEqual(removed, ["widget-1"]);
+  assert.deepEqual(renders, ["widget-1", "widget-2"]);
+  assert.equal(resets.length, 2);
   assert.equal(globalThis.asTsErr(600010), true);
   assert.equal(nodes["sfts-retry-wrap"].hidden, false);
   assert.match(nodes.sfts.textContent, /Try the check again/);
   await new Promise((resolve) => setTimeout(resolve, 30));
+  assert.deepEqual(removed, ["widget-1"]);
   assert.equal(resets.length, 2);
   nodes["sfts-retry"].listeners.click();
   assert.equal(resets.length, 3);
-  assert.equal(resets[2], "widget-1");
+  assert.equal(resets[2], "widget-2");
   globalThis.asTsOk("token-2");
   assert.equal(nodes.sfts.textContent, "");
   assert.equal(nodes["sfts-retry-wrap"].hidden, true);
@@ -160,4 +184,77 @@ test("an explicit widget renders once, retries twice, then offers a button", asy
   ts.invalidate();
   assert.equal(resets.length, 4);
   assert.match(nodes.sfts.textContent, /Complete the check again/);
+  assert.equal(ts.readToken() === "stale-spent-token", false);
+});
+
+test("asTsLoad works whether api.js finishes before or after this file", () => {
+  function boot(extra) {
+    const renders = [];
+    const turnstileEl = {
+      id: "sf-turnstile",
+      attributes: { "data-sitekey": "0x4AAAAAAFfaxf14aQF-sky1" },
+      getAttribute(name) { return this.attributes[name]; },
+      getBoundingClientRect() { return { width: 360, height: 65, top: 400, left: 16, right: 316, bottom: 465 }; },
+    };
+    const sandbox = {
+      asTsLoaded: extra.loaded ? 1 : 0,
+      renders,
+      document: {
+        getElementById(id) { return id === "sf-turnstile" ? turnstileEl : null; },
+        head: { child: null, appendChild(node) { this.child = node; } },
+        querySelector() { return null; },
+        querySelectorAll() { return []; },
+        createElement() { return { src: "", async: false, defer: false }; },
+        documentElement: { getAttribute() { return "light"; } },
+      },
+      setTimeout,
+      clearTimeout,
+    };
+    if (extra.turnstileReady) {
+      sandbox.turnstile = {
+        render() { renders.push("now"); return "now"; },
+        reset() {},
+        remove() {},
+        getResponse() { return ""; },
+        isExpired() { return false; },
+      };
+    }
+    vm.createContext(sandbox);
+    vm.runInContext(source, sandbox);
+    return sandbox;
+  }
+
+  const early = boot({ loaded: true, turnstileReady: true });
+  early.AgentScoutTurnstile.start();
+  assert.deepEqual(early.renders, ["now"]);
+  assert.equal(early.document.head.child, null);
+
+  const late = boot({ loaded: false, turnstileReady: false });
+  late.AgentScoutTurnstile.start();
+  assert.deepEqual(late.renders, []);
+  late.turnstile = {
+    render() { late.renders.push("late"); return "late"; },
+    reset() {},
+    remove() {},
+    getResponse() { return "late-token"; },
+    isExpired() { return false; },
+  };
+  late.asTsLoad();
+  assert.deepEqual(late.renders, ["late"]);
+  assert.equal(late.AgentScoutTurnstile.readToken(), "late-token");
+  assert.equal(late.document.head.child, null);
+
+  const queued = boot({ loaded: false, turnstileReady: false });
+  queued.turnstile = {
+    render() { queued.renders.push("queued"); return "queued"; },
+    reset() {},
+    remove() {},
+    getResponse() { return ""; },
+    isExpired() { return false; },
+  };
+  queued.asTsLoad();
+  assert.deepEqual(queued.renders, []);
+  queued.AgentScoutTurnstile.start();
+  assert.deepEqual(queued.renders, ["queued"]);
+  assert.equal(queued.document.head.child, null);
 });

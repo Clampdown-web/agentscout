@@ -213,7 +213,15 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
   body.home .sprow{flex-wrap:wrap}
   body.home .sprow input{flex:1 1 100%;width:100%}
 }
-#sf-turnstile{scroll-margin-bottom:160px}
+/* Keep the Turnstile check above the fixed consent bar and the corner buttons.
+   The side inset is the same on the left and the right, so the widget stays centered. */
+html:has(#sf){scroll-padding-bottom:calc(280px + env(safe-area-inset-bottom))}
+#sf{scroll-margin-bottom:calc(280px + env(safe-area-inset-bottom))}
+#sf-turnstile{scroll-margin-top:24px;scroll-margin-bottom:calc(280px + env(safe-area-inset-bottom))}
+@media (max-width:430px){
+  #sf{padding-bottom:calc(220px + env(safe-area-inset-bottom));padding-left:0;padding-right:0}
+  #sf-turnstile{width:min(300px,calc(100% - 2 * (56px + env(safe-area-inset-right))));max-width:100%;margin-left:auto;margin-right:auto}
+}
 #serr,#sfts,.reqmark{color:#9f1239}
 html[data-theme=dark] #serr,html[data-theme=dark] #sfts,html[data-theme=dark] .reqmark{color:#fda4af}
 /* Room to scroll the last line above the fixed buttons. */
