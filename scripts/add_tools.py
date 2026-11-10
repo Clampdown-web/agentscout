@@ -3,10 +3,10 @@ Input TSV columns: repo_or_blank  category  pricing  audience  description  [nam
   - repo: owner/name on GitHub (or blank for closed products; then name+website required)
 Checks: GitHub repo exists & not archived, website returns 200 (bot-blocked 403 => website dropped, github kept),
 logo = site apple-touch-icon / icon >=64px, else a logo/icon file in the repo, else the GitHub owner avatar ONLY if the owner is an Organization (never a personal User avatar); dedupe by name/domain/repo against tools.json.
-Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"Product Hunt"|"Hugging Face"|"directory"|...] [--dry]
+Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"awesome lists"|...] [--catalog-only] [--dry]
 Each new tool is stamped added=today and source; build_site.py then refreshes the homepage Recently added section, new.html and llms.txt.
  [--cache=discovered.json from discover_github.py]"""
-import sys,json,re,io,requests,concurrent.futures as cf
+import os,sys,json,re,io,requests,concurrent.futures as cf
 from urllib.parse import urljoin,urlparse
 from PIL import Image
 sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
@@ -145,29 +145,43 @@ def verify(row):
      "maturity":"Mature" if (stars or 0)>=5000 else "Active","audience":aud,"featured":False,"new":True,
      "verified":__import__('datetime').date.today().isoformat(),"added":__import__('datetime').date.today().isoformat(),"source":SOURCE,"pricing_detail":"","use_cases":[],
      "website":site,"github":f"https://github.com/{repo}" if repo else ""}
+  if CATALOG_ONLY: e["catalog_only"]=True
   if repo: e["repo"]=repo; e["github_stars"]=stars
   return {"err":None,"e":e,"logo":logo}
-CACHE={};SOURCE="manual"
+CACHE={};SOURCE="manual";CATALOG_ONLY=False
 if __name__=="__main__":
   for a in sys.argv:
-    if a.startswith("--source="): SOURCE=a[9:]
+    if a=="--catalog-only": CATALOG_ONLY=True
+    elif a.startswith("--source="): SOURCE=a[9:]
     elif a.startswith("--cache=") and SOURCE=="manual": SOURCE="GitHub"
   for a in sys.argv:
     if a.startswith("--cache="): CACHE={i["full_name"].lower():i for i in json.load(open(a[8:]))}
   rows=[l.rstrip('\n').split('\t') for l in open(sys.argv[1]) if l.strip() and not l.startswith('#')]
-  t=json.load(open('tools.json')); K=keys(t)
+  t=json.load(open('tools.json')); K=keys(t); slugs={x["slug"] for x in t}
   with cf.ThreadPoolExecutor(12) as ex: res=list(ex.map(verify,rows))
   nid=max(x['id'] for x in t); added=[]; skipped={}
   for r in res:
-    if r["err"]: skipped.setdefault(r["err"].split()[0],[]).append(r.get("repo") or r.get("name")); continue
-    e=r["e"]; ks=keys([e])
+    if r["err"]: skipped.setdefault(r["err"],[]).append(r.get("repo") or r.get("name")); continue
+    e=r["e"]; e["slug"]=re.sub(r"[^a-z0-9]+","-",e["name"].lower()).strip("-") or ""
+    ks=keys([e])
     if _takedown_blocked(name=e.get("name",""), url=e.get("url",""), website=e.get("website",""), slug=e.get("slug",""), repo=e.get("repo") or e.get("github") or ""):
       skipped.setdefault("blocklist",[]).append(e["name"]); continue
-    if ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]: skipped.setdefault("duplicate",[]).append(e["name"]); continue
+    if not e["slug"] or e["slug"] in slugs or ks["name"]&K["name"] or ks["domain"]&K["domain"] or ks["repo"]&K["repo"]:
+      skipped.setdefault("duplicate",[]).append(e["name"]); continue
     for k in K: K[k]|=ks[k]
-    nid+=1; e["id"]=nid; e["slug"]=re.sub(r"[^a-z0-9]+","-",e["name"].lower()).strip("-"); e["logo"]=f"assets/logos/{e['slug']}.png"
+    slugs.add(e["slug"])
+    nid+=1; e["id"]=nid; e["logo"]=f"assets/logos/{e['slug']}.png"
     if "--dry" not in sys.argv:
       save_logo(r["logo"][0], e["logo"])
+      try:
+        flat=Image.open(e["logo"]).convert("RGBA")
+        bg=Image.new("RGBA", flat.size, "white"); bg.alpha_composite(flat)
+        if all(a==b for a,b in bg.convert("RGB").getextrema()):
+          os.remove(e["logo"]); skipped.setdefault("no logo",[]).append(e["name"]); continue
+      except Exception:
+        try: os.remove(e["logo"])
+        except OSError: pass
+        skipped.setdefault("no logo",[]).append(e["name"]); continue
     added.append(e)
   if "--dry" not in sys.argv:
     t+=added; json.dump(t,open('tools.json','w'),indent=2,ensure_ascii=False)

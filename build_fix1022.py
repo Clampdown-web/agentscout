@@ -12,8 +12,22 @@ def run(t=None):
         n,k=re.subn(r'(<select id="fcat"[^>]*>)(.*?)(</select>)',lambda m:m.group(1)+first+opts+m.group(3),s,count=1,flags=re.S)
         if not k: raise SystemExit(f"build_catopts: no #fcat in {f}")
         open(f,"w",encoding="utf-8").write(n)
-    lighten(); agent_json()
+    lighten(); agent_json(); refresh_rest_counts()
     return len(cats)
+def refresh_rest_counts():
+    """free-tools-rest.html is a stashed directory tail the splitter no longer rewrites.
+    Its video description still has to use the live MCP total."""
+    import build_counts
+    path="free-tools-rest.html"
+    if not __import__("os").path.exists(path):
+        return
+    mcp=int(build_counts.require().get("mcp_servers") or 0)
+    if not mcp:
+        return
+    s=open(path,encoding="utf-8").read()
+    n=re.sub(r"\d[\d,]*\+ MCP servers", f"{mcp}+ MCP servers", s, count=1)
+    if n!=s:
+        open(path,"w",encoding="utf-8").write(n)
 
 ONERR=''' onerror="var i=this,n=+(i.dataset.r||0);if(n<2){i.dataset.r=n+1;setTimeout(function(){i.src=i.src.split('?')[0]+'?r='+(n+1)},1500*(n+1))}else i.remove()"'''
 # one shared logo-retry handler instead of ~300 bytes inline on every <img> (same behaviour)

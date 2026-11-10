@@ -45,7 +45,7 @@ def pages(t):
         for y in items: tm.setdefault(y["slug"],set()).add(s)
     tg={x["slug"]:S.tags(x) for x in t}
     global ORD; ORD={k:i for i,k in enumerate(m)}
-    cands=sorted([x for x in t if live(x) and x["slug"] not in SKIP],key=lambda x:(not (x.get("featured") or x["slug"] in FORCE_ALTS),-(x.get("github_stars") or 0),x["name"].lower()))
+    cands=sorted([x for x in t if live(x) and x["slug"] not in SKIP and not x.get("catalog_only")],key=lambda x:(not (x.get("featured") or x["slug"] in FORCE_ALTS),-(x.get("github_stars") or 0),x["name"].lower()))
     pairs={X.cslug(a,b) for a,b in X.PAIRS}|{X.cslug(b,a) for a,b in X.PAIRS}
     made=[]; os.makedirs("best",exist_ok=True)
     for x in cands:
