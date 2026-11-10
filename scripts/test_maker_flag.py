@@ -42,6 +42,8 @@ class MakerFlagTest(unittest.TestCase):
         self.assertIn("elif MAKER or is_submission_source(SOURCE):", src)
         self.assertIn("stamp_new(e)", src)
         self.assertIn("catalog-only imports are not submit-form listings", src)
+        # The requirements CI job has no Pillow. The importer must still import.
+        self.assertNotIn("PIL", src.split("def is_identicon", 1)[0])
         self.assertLess(src.index("if CATALOG_ONLY:"), src.index("elif MAKER or is_submission_source(SOURCE):"))
         site = (ROOT / "build_site.py").read_text(encoding="utf-8")
         self.assertIn("from maker_flag import check as _maker_check", site)
@@ -163,6 +165,15 @@ class MakerFlagTest(unittest.TestCase):
         self.assertEqual(html.count('class="card rcard"'), build_recent.MAKER_PAGE)
         self.assertIn('id="makers-more"', html)
         self.assertIn("Show 18 more", html)
+        # Newest added date first. Oct 27 (m26) is the only latest day in this set, and it is on the first page.
+        self.assertLess(html.find('href="tools/m26.html"'), html.find('href="tools/m25.html"'))
+        self.assertIn('<div class="grid rgrid" id="makers-grid"><a class="card rcard" href="tools/m26.html">', html)
+        dated = [
+            {"slug": "old", "name": "Old", "description": "Earlier add.", "added": "2026-10-01", "submitted": "2026-11-09", "id": 1, "maker_submitted": True, "logo": "assets/logos/orke.png"},
+            {"slug": "new", "name": "New", "description": "Later add.", "added": "2026-11-09", "submitted": "2026-10-01", "id": 2, "maker_submitted": True, "logo": "assets/logos/orke.png"},
+        ]
+        ordered = build_recent.makers_section(dated)
+        self.assertLess(ordered.find('href="tools/new.html"'), ordered.find('href="tools/old.html"'))
         one = build_recent.makers_section(rows[:1])
         self.assertIn("· 1 tool</span>", one)
         self.assertNotIn("makers-more", one)

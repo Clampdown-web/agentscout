@@ -9,7 +9,6 @@ A submit-form source ("Submission" or "Maker submission", any case) always sets 
  [--cache=discovered.json from discover_github.py]"""
 import os,sys,json,re,io,requests,concurrent.futures as cf
 from urllib.parse import urljoin,urlparse
-from PIL import Image
 sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
 from takedown_blocklist import blocked as _takedown_blocked
 from maker_flag import is_submission_source, stamp_new
@@ -36,6 +35,7 @@ CATS={"frameworks","coding","MCP servers","agent infra","evals & observability",
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
 def is_identicon(im):
   """GitHub default avatar: #f0f0f0 background + one flat colour in a 5x5 grid."""
+  from PIL import Image
   import collections
   px=list(im.convert('RGB').resize((64,64),Image.NEAREST).getdata())
   near=lambda a,b,d:all(abs(p-q)<=d for p,q in zip(a,b))
@@ -59,6 +59,7 @@ def open_public(u, timeout):
     r=requests.get(u,headers=UA,timeout=timeout,allow_redirects=False)
   return None if r.is_redirect else r
 def getimg(u):
+  from PIL import Image
   try:
     r=open_public(u,12)
     if r is None: return None
@@ -76,6 +77,7 @@ def getimg(u):
   except Exception: return None
 def save_logo(im, path):
   """RGB or RGBA PNG, at least 64px, at most 20 KB. Flattened so palette transparency cannot blank it."""
+  from PIL import Image
   im=im.convert("RGBA")
   bg=Image.new("RGBA", im.size, "white"); bg.alpha_composite(im); im=bg.convert("RGB")
   im.thumbnail((128,128), Image.LANCZOS)
@@ -186,6 +188,7 @@ if __name__=="__main__":
     if "--dry" not in sys.argv:
       save_logo(r["logo"][0], e["logo"])
       try:
+        from PIL import Image
         flat=Image.open(e["logo"]).convert("RGBA")
         bg=Image.new("RGBA", flat.size, "white"); bg.alpha_composite(flat)
         if all(a==b for a,b in bg.convert("RGB").getextrema()):

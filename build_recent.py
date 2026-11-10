@@ -17,16 +17,17 @@ def card(x,d):
 MAKER_PAGE=12  # first screen of /new.html#makers (3 rows at 4 columns, one column on a phone)
 MAKER_STEP=24
 def maker_rows(t):
-    return sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)))
+    """Newest added date first (the date printed on the card), then higher id."""
+    return sorted([x for x in t if x.get("maker_submitted")],key=lambda x:((x.get("added") or x.get("submitted") or ""),x.get("id",0)),reverse=True)
 def makers_strip(t,n=6):
     """Homepage 'Submitted by makers' strip (Oct 18, 2026 PT): newest maker submissions, static HTML (no layout shift); empty when there are none."""
-    mk=list(reversed(maker_rows(t)))[:n]
+    mk=maker_rows(t)[:n]
     if not mk: return ""
     cards="".join(f'<a class="mkcard" href="tools/{e(x["slug"])}.html">{build_extras.ico24(x)}<span class="mkname">{e(x["name"])}</span><span class="b maker">✓ Submitted by maker</span></a>' for x in mk)
     return ('<section id="makers-strip" class="mkstrip" aria-labelledby="mk-h"><div class="wrap"><div class="rhead"><h2 id="mk-h">Submitted by makers</h2>'
             '<a href="new.html#makers">See all →</a></div><div class="mkrow">'+cards+'</div></div></section>')
 def makers_section(t):
-    """new.html 'Submitted by makers'. The count is len() of the flagged rows. Past the first page, cards stay in the HTML and open with Show more."""
+    """new.html 'Submitted by makers', newest added first. The count is len() of the flagged rows. Past the first page, cards stay in the HTML and open with Show more."""
     mk=maker_rows(t)
     if not mk: return ""
     n=len(mk)
@@ -76,7 +77,7 @@ def build(t):
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section class="calm">'
           f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{len(recent):,} tool{"s" if len(recent)!=1 else ""} added in the last 30 days, newest first. Every link is checked when it is added.{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
-    body+=makers_section(t)  # first submissions first; count comes from the flagged rows
+    body+=makers_section(t)  # newest added first; count comes from the flagged rows
     for label,cond in (("This week",lambda d:d>=wk),("Earlier this month",lambda d:d<wk)):
       ds=[d for d in days if cond(d)]
       if not ds: continue
