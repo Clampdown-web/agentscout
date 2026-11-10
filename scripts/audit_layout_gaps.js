@@ -75,7 +75,7 @@ const expr=`(()=>{
     for (const [x,y] of pts){
       const el=document.elementFromPoint(x,y);
       if(!el||el.closest(".scrollbtns,.as-bar")) continue;
-      const host=el.closest("a,button,input,select,textarea,summary,p,h1,h2,h3,li,td,th,label,.card");
+      const host=el.closest("a,button,input,select,textarea,summary,p,h1,h2,h3,li,td,th,label,.card,footer,.footpop,.footspan");
       if(host){hits.push((host.innerText||host.tagName).trim().replace(/\\s+/g," ").slice(0,50)); break;}
     }
     btn.style.pointerEvents=prev;

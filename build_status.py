@@ -608,7 +608,11 @@ def write_dashboard(tools):
         if node.get("dateModified") is None:
             node.pop("dateModified", None)
     os.makedirs("mcp/status", exist_ok=True)
-    open("mcp/status/index.html", "w").write(X.shell("../../", title, desc, canon, body, ld))
+    import build_tasks as _bt
+    page = X.shell("../../", title, desc, canon, body, ld)
+    page = _bt.ensure_shared_scripts("mcp/status/index.html", page, "../../")
+    page = __import__("build_share").apply("mcp/status/index.html", page, "../../", _bt.ASSET_V)
+    open("mcp/status/index.html", "w").write(page)
     write_link_status_forward()
     print(f"status dashboard: {live} up, {down} down, {miss} not yet checked")
     return canon

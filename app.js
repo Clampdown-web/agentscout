@@ -113,10 +113,19 @@ for(var j=0;j<pts.length;j++){
 var el=document.elementFromPoint(pts[j][0],pts[j][1]);
 if(!el||el===document.body||el===document.documentElement)continue;
 if(el.closest&&el.closest(".scrollbtns,.as-bar"))continue;
-if(el.closest&&el.closest("a,button,input,select,textarea,summary,p,h1,h2,h3,h4,li,td,th,label,.card,.st-pill,table,.cmpscroll,aside.panel")){bad=true;break}
+if(el.closest&&el.closest("a,button,input,select,textarea,summary,p,h1,h2,h3,h4,li,td,th,label,.card,.st-pill,table,.cmpscroll,aside.panel,footer,.footpop,.footspan,.footgrid")){bad=true;break}
 }}
 up.style.pointerEvents=pu;dn.style.pointerEvents=pd;w.style.pointerEvents=pw;
-return bad}
+if(bad)return true;
+var foot=document.querySelector("footer");
+if(!foot)return false;
+var fr=foot.getBoundingClientRect(),nodes2=[up,dn];
+for(var k=0;k<nodes2.length;k++){
+var b=nodes2[k].getBoundingClientRect();
+if(b.width<2||b.height<2)continue;
+if(b.bottom>fr.top+4&&b.top<fr.bottom-4&&b.right>fr.left+4&&b.left<fr.right-4)return true;
+}
+return false}
 function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v);
 if(matchMedia("(max-width:640px)").matches){
 hidePhone();clearTimeout(phoneT);clearTimeout(hideT);
