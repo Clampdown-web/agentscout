@@ -499,7 +499,7 @@ def write_link_status_forward():
     if problems:
         raise SystemExit("redirect nav check failed: " + "; ".join(problems))
     os.makedirs("mcp", exist_ok=True)
-    open("mcp/link-status.html", "w", encoding="utf-8").write(page)
+    open("mcp/link-status.html", "w", encoding="utf-8").write(__import__("build_tasks").stamp(page))
     print("link-status forwarder: mcp/link-status.html -> /mcp/status/")
 
 

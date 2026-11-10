@@ -175,48 +175,61 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",ini
 (function(){function ago(r){(r||document).querySelectorAll("time.ago:not([data-ago])").forEach(function(t){var d=t.getAttribute("datetime");if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return;var p=d.split("-"),then=new Date(+p[0],p[1]-1,+p[2]),now=new Date(),n=Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate())-then)/864e5);if(n<0)return;t.title=t.textContent;t.textContent=n===0?"today":n===1?"yesterday":n<60?n+" days ago":n<730?Math.round(n/30.4)+" months ago":Math.round(n/365)+" years ago";t.setAttribute("data-ago","1")})}
 document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){ago()}):ago();window.asAgo=ago})();
 
-/* Grouped header. Details and the menu checkbox work without this; it adds Escape, outside click, and one-open menus. */
+/* Hamburger at every width. The button opens the same grouped panel on phone and desktop. */
 (function(){
   var nav=document.querySelector("nav.sitenav");
   if(!nav)return;
-  var box=nav.querySelector(".nav-open");
+  var btn=nav.querySelector(".navburger");
+  var panel=nav.querySelector(".navlinks");
   var groups=Array.prototype.slice.call(nav.querySelectorAll(".navgroup"));
-  var wide=function(){return window.matchMedia("(min-width:960px)").matches};
   var lock=false;
+  function items(){
+    return panel?Array.prototype.slice.call(panel.querySelectorAll("a, summary, button")):[];
+  }
   function sync(){
     groups.forEach(function(d){
       var s=d.querySelector("summary");
       if(s)s.setAttribute("aria-expanded",d.open?"true":"false");
     });
-    if(box)box.setAttribute("aria-expanded",box.checked?"true":"false");
+  }
+  function openMenu(){
+    nav.classList.add("is-open");
+    if(btn)btn.setAttribute("aria-expanded","true");
+    var first=items()[0];
+    if(first)first.focus();
+  }
+  function closeMenu(restore){
+    nav.classList.remove("is-open");
+    if(btn)btn.setAttribute("aria-expanded","false");
+    lock=true;
+    groups.forEach(function(d){d.open=false});
+    lock=false;
+    sync();
+    if(restore&&btn)btn.focus();
   }
   groups.forEach(function(d){
-    d.addEventListener("toggle",function(){
-      if(lock)return;
-      if(d.open&&wide()){
-        lock=true;
-        groups.forEach(function(o){if(o!==d)o.open=false});
-        lock=false;
-      }
-      sync();
-    });
+    d.addEventListener("toggle",function(){if(!lock)sync()});
   });
-  if(box)box.addEventListener("change",sync);
+  if(btn)btn.addEventListener("click",function(){
+    if(nav.classList.contains("is-open"))closeMenu(false);
+    else openMenu();
+  });
   document.addEventListener("keydown",function(e){
     if(e.key!=="Escape")return;
-    lock=true;
-    groups.forEach(function(d){d.open=false});
-    lock=false;
-    if(box){box.checked=false;box.focus()}
-    sync();
+    if(!nav.classList.contains("is-open"))return;
+    closeMenu(true);
   });
   document.addEventListener("click",function(e){
-    if(nav.contains(e.target))return;
-    lock=true;
-    groups.forEach(function(d){d.open=false});
-    lock=false;
-    if(box)box.checked=false;
-    sync();
+    if(!nav.classList.contains("is-open")||nav.contains(e.target))return;
+    closeMenu(false);
+  });
+  if(panel)panel.addEventListener("keydown",function(e){
+    if(e.key!=="Tab"||!nav.classList.contains("is-open"))return;
+    var list=items();
+    if(!list.length||!btn)return;
+    var first=list[0],last=list[list.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();btn.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();closeMenu(true)}
   });
   sync();
 })();

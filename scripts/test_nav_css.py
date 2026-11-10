@@ -17,7 +17,8 @@ sys.path.insert(0, ROOT)
 import build_tasks  # noqa: E402
 
 ASSET = build_tasks.ASSET_V
-MARKERS = ("nav.sitenav .nav-open", "summary::-webkit-details-marker")
+MARKERS = ("nav.sitenav .navburger", "nav.sitenav.is-open .navlinks", "summary::-webkit-details-marker")
+DESKTOP_BAR = "nav.sitenav .navburger,nav.sitenav .nav-open{display:none}"
 SKIP_DIRS = {".git", "node_modules", "preview", "assets", "__pycache__"}
 DEAD = "/mcp/" + "sse"
 
@@ -38,6 +39,10 @@ def problems():
             bad.append(f"styles.css missing {mark}")
         if mark not in home:
             bad.append(f"home-mobile.css missing {mark}")
+    if DESKTOP_BAR in css:
+        bad.append("styles.css still hides the hamburger at desktop width")
+    if DESKTOP_BAR in home:
+        bad.append("home-mobile.css still hides the hamburger at desktop width")
     for rel in _walk():
         if not rel.endswith((".html", ".py", ".js", ".mjs", ".json", ".txt", ".yaml", ".yml", ".md")):
             continue

@@ -88,6 +88,22 @@ a.bs-badge:hover{border-color:#a3e635;color:#ecfccb;text-decoration:none}
   .bs-hero,.bs-bundle,.bs-faq{padding:16px}
   .bs-btn{width:100%}
 }
+/* Phase 3 calm: same products, no neon glow */
+.bs-hero,.bs-pick,.bs-all,.bs-card,.bs-bundle,.bs-faq,.bs-faq-item,.bs-notice,.bs-vid,.bs-badge{background:var(--card);color:var(--text);border:1px solid var(--line);box-shadow:var(--shadow)}
+.bs-hero h2,.bs-lead h1,.bs-pick h2,.bs-card h2,.bs-price,.bs-pick-price,.bs-bundle-copy h2,.bs-faq h2,.bs-faq-item h3,.bs-all>summary,.bs-manifest b{color:var(--text)}
+.bs-lead p,.bs-hero p,.bs-pick p,.bs-card p,.bs-bundle-copy p,.bs-faq-item p,.bs-list,.bs-manifest,.bs-pick-price small,.bs-price small,.bs-all-hint,.bs-builtby{color:var(--muted)}
+.bs-card.neon-lime,.bs-card.neon-gold,.bs-card.neon-orange,.bs-card.neon-red,.bs-card.neon-custom,.bs-pick-featured,.bs-bundle{background:var(--card);box-shadow:var(--shadow);border:1px solid var(--line)}
+.bs-card.neon-lime,.bs-pick-featured{border-color:var(--accent)}
+.bs-compat-pill,.bs-tag,.bs-pick-kicker,.bs-notice{background:var(--accent-soft);color:var(--accent);border-color:transparent;box-shadow:none}
+.bs-btn,.bs-pick-buy,.bs-pick-featured .bs-pick-buy{background:var(--text)!important;color:var(--bg)!important;box-shadow:none!important;border:0}
+.bs-hero img.aswm,.bs-card img.aswm,.bs-bundle img.aswm{filter:none}
+html[data-theme=dark] .bs-hero img.aswm,html[data-theme=dark] .bs-card img.aswm,html[data-theme=dark] .bs-bundle img.aswm{filter:invert(1) hue-rotate(180deg)}
+.bs-all>summary::after{color:var(--bg);background:var(--text)}
+.bs-fbtn{background:var(--card);color:var(--text);border-color:var(--line);box-shadow:none}
+.bs-fbtn:hover,.bs-fbtn[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text);box-shadow:none}
+.bs-faq-item a,.bs-notice a,a.bs-badge:hover{color:var(--accent);border-color:var(--accent)}
+.bs-vid{background:var(--soft)}
+.bs-compat-line{background:var(--soft);color:var(--muted);border-color:var(--line)}
 </style>"""
 
 JS = """<script>

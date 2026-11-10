@@ -91,7 +91,7 @@ def page(t,P,asof):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","name":h,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":len(items),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best lists","item":B+"best/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h)} (2026)</h1>'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h)}</div><section class="calm"><h1 style="text-align:left">{e(h)} (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Below are {more} in the AgentScout directory, ranked.</p>'
           f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked:</strong> {method(how,asof)}</p>'
           f'<ol class="grid" style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(items))}</ol>'
@@ -106,10 +106,10 @@ def hub(t,made,alt=()):
     old="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Curated list</p></a>' for s,h in OLD)
     old+='<a class="card" href="best-mcp-servers-2026.html"><div class="ct"><h3>Best MCP servers 2026</h3></div><p>Ranked by GitHub stars, live status from status.json</p></a>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":u} for u,h,_,_ in made]+[{"@type":"WebPage","name":h,"url":f"{B}best/{s}.html"} for s,h in OLD]},{"@type":"VideoObject","name":"Top 6 Trending AI Agent & MCP Stacks Benchmark Overview","description":"Animated benchmark and adoption overview across coding agents, browser automation and Model Context Protocol (MCP) servers on AgentScout.","thumbnailUrl":B+"assets/animations/agentscout-radar-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-radar-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Best lists</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Best lists</div><section class="calm"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Ranked lists built from the AgentScout directory. Each list says how it is ranked (GitHub stars or listing maturity). We use no invented scores and sell no placements.</p>'
           f'<p style="margin:0 0 8px">See also: <a href="../tasks/index.html">AI agents by task</a> · <a href="../categories/index.html">All categories</a> · <a href="../compare/index.html">Comparisons</a></p>'
-          f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-radar-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-radar-infographic.mp4" type="video/mp4"></video></figure>'
+          f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-radar-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-radar-infographic.mp4" type="video/mp4"></video></figure>'
           f'<h2 style="font-size:16px;margin:24px 0 10px">Ranked lists</h2><div class="grid">{tiles}</div><h2 style="font-size:16px;margin:32px 0 10px">MCP and coding guides</h2><div class="grid">{old}</div>'
           +(f'<h2 id="alternatives" style="font-size:16px;margin:32px 0 10px">Tool alternatives ({len(alt)})</h2><div class="badges">'+"".join(f'<a class="b uc" href="{sl}.html">{e(x["name"])} alternatives</a>' for x,sl,_ in sorted(alt,key=lambda z:z[0]["name"].lower()))+'</div>' if alt else "")
           +'</section>')
@@ -261,8 +261,8 @@ def _write_best_chrome(path, title, desc, canon, body, ld):
     donor=re.sub(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{e(title)}">', donor, count=1)
     donor=re.sub(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{e(desc)}">', donor, count=1)
     donor=re.sub(r'<meta name="twitter:image" content="[^"]*">', '<meta name="twitter:image" content="https://agentscouthq.com/og.png">', donor, count=1)
-    import build_tasks as _bt
-    donor=re.sub(r'(app\.js|styles\.css|track\.js|consent\.js|share\.js|reviews\.js)\?v=\d+', lambda mm: mm.group(1)+"?v="+_bt.ASSET_V, donor)
+    import build_tasks
+    donor = build_tasks.stamp(donor)
     import json as _json
     script='<script type="application/ld+json">'+_json.dumps(ld,ensure_ascii=False).replace("</","<\\/")+'</script>'
     def repl(m):

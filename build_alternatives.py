@@ -74,7 +74,7 @@ def pages(t):
         if len(title)>70: title=f"{n} Alternatives (2026): {len(alts)} Tools · AgentScout"
         desc=f"Compare the {len(alts)} closest {n} alternatives in 2026 ({alts_os} open source, {alts_fr} free/freemium): {', '.join(y['name'] for y in alts[:3])}. Pricing & GitHub stars."
         if len(desc)>158: desc=f"Compare {len(alts)} {n} alternatives ({alts_os} open source, {alts_fr} free/freemium), including {', '.join(y['name'] for y in alts[:3])}. Verified pricing & stars."[:158]
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(n)} alternatives</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(n)} alternatives (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(n)} alternatives</div><section class="calm"><h1 style="text-align:left">{e(n)} alternatives (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p>'+(f'<p class="muted" style="margin:-4px 0 14px;font-size:14px">Looking for the open-source microservice workflow engine? See <a href="../tools/orkes.html">Orkes Conductor →</a>.</p>' if x["slug"]=="conductor" else "")+f'<ol style="padding-left:20px">{lines}</ol>{table}'
               +(f'<p style="margin-top:20px">Written comparisons: {" · ".join(cmpl)}</p>' if cmpl else "")
               +f'<p style="margin-top:16px">More: <a href="../tools/{x["slug"]}.html">{e(n)} listing</a> · <a href="../categories/{X.catslug(x["category"])}.html">All {e(x["category"])} tools</a> · <a href="index.html#alternatives">All alternatives pages</a></p>'

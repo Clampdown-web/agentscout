@@ -324,9 +324,10 @@ def search_pages(t,m,asof):
             {"@type":"ItemList","name":h,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":len(items),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
             {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Popular lists","item":B+"s/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
-        _sheet=' class="sheet"' if s=="best-mcp-servers" else ""
+        # s/best-mcp-servers.html stays on Phase 2's sheet. Every other popular list uses .calm.
         _cta="" if s=="best-mcp-servers" else T.ai_ref_cta_html("../")
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Popular lists</a> / {e(h)}</div><section{_sheet} style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
+        _sec = '<section class="sheet" style="padding-top:8px;text-align:left">' if s=="best-mcp-servers" else '<section class="calm">'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Popular lists</a> / {e(h)}</div>{_sec}<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} {"Here are the top "+str(len(items))+" of "+str(n) if n>len(items) else "Here are all "+str(n)} from the AgentScout directory.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we picked and ranked:</strong> tools are matched by category, the pricing each maker states and what each tool says it does. They are ranked by GitHub stars as recorded on each listing (link checks {asof}); tools without a tracked repo follow, by listing maturity. No paid placements.</p>'
               f'<ol class="grid" style="padding:0;margin:0">{"".join(BB.item(i+1,x) for i,x in enumerate(items))}</ol>'
@@ -349,7 +350,7 @@ def search_pages(t,m,asof):
     desc=f"{len(made)} focused lists of AI agent tools: free coding agents, open-source browser agents, Python frameworks, MCP servers, voice and more."[:158]
     tiles="".join(f'<a class="card" href="{a[0]}.html"><div class="ct"><h3>{e(a[1])}</h3></div><p>{a[3]} tools · {e(", ".join(x["name"] for x in a[4][:3]))}</p></a>' for a in made)
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":a[1],"url":f"{B}s/{a[0]}.html"} for a in made]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Popular lists</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">Popular AI agent tool lists</h1>'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Popular lists</div><section class="calm"><h1 style="text-align:left;margin-left:0">Popular AI agent tool lists</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Quick answers to the searches people make most, each built from the AgentScout directory with the ranking method stated.</p><div class="grid">{tiles}</div>'
           f'<p style="margin-top:24px">See also: <a href="../for/index.html">AI agents by role</a> · <a href="../best/index.html">Best lists</a> · <a href="../tasks/index.html">AI agents by task</a> · <a href="../free-tools.html">Free tools</a></p></section>')
     open("s/index.html","w").write(X.shell("../",title,desc,canon,body,ld))
@@ -379,7 +380,7 @@ def role_pages(t,m,made):
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"audience":{"@type":"Audience","audienceType":who}},
             {"@type":"ItemList","numberOfItems":len(allitems),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(allitems)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"By role","item":B+"for/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">By role</a> / {e(CAP(who))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">By role</a> / {e(CAP(who))}</div><section class="calm"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We picked the top tools for {len(secs)} jobs {e(who)} do every day: {n} tools in all, {free_n} of them free or with a free tier.</p>'
               f'<p style="font-size:14px">Jump to: {jump}</p>'
               +(f'<p style="font-size:14px">Free tools from AgentScout for {e(who)}: {ft}</p>' if ft else "")+
@@ -392,7 +393,7 @@ def role_pages(t,m,made):
     desc=f"AI agent tools picked for {len(info)} roles: developers, marketers, sales, support, designers, researchers, crypto traders and more."[:158]
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>For {e(who)}</h3></div><p>{n} tools picked</p></a>' for s,who,h,n in info)
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":f"{B}for/{s}.html"} for s,_,h,_ in info]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / By role</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left;margin-left:0">AI agents by role</h1>'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / By role</div><section class="calm"><h1 style="text-align:left;margin-left:0">AI agents by role</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Pick your job and see the AI agent tools that fit the work you actually do, grouped by task.</p><div class="grid">{tiles}</div>'
           f'<p style="margin-top:24px">See also: <a href="../s/">Popular lists</a> · <a href="../tasks/index.html">AI agents by task</a> · <a href="../best/index.html">Best lists</a> · <a href="../free-tools.html">Free tools</a></p></section>')
     open("for/index.html","w").write(X.shell("../",title,desc,canon,body,ld))

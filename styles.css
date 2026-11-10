@@ -879,14 +879,14 @@ nav.sitenav .wrap{display:flex;align-items:center;gap:8px;height:56px;flex-wrap:
 nav.sitenav .logo{margin-right:auto;min-width:0}
 nav.sitenav .logo img{height:28px;width:auto}
 nav.sitenav .themebtn{position:static;order:4;margin:0;width:44px;height:44px;flex:none}
-nav.sitenav .nav-open{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;appearance:none}
-nav.sitenav .navburger{order:5;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}
+nav.sitenav .navburger{order:5;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer;flex:none}
 nav.sitenav .navburger-bars{display:flex;flex-direction:column;gap:4px;width:16px}
 nav.sitenav .navburger-bars span{display:block;height:2px;border-radius:2px;background:currentColor}
-nav.sitenav .nav-open:focus-visible+.navburger,nav.sitenav summary:focus-visible,nav.sitenav .navpanel a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-nav.sitenav .desk-store{order:2;display:none;align-items:center;min-height:40px;padding:0 10px;border-radius:8px;font-size:14px;font-weight:650;color:var(--text)}
-nav.sitenav .navlinks{order:3;display:none;margin:0}
-nav.sitenav .nav-open:checked~.navlinks{display:flex}
+nav.sitenav .navburger:focus-visible,nav.sitenav summary:focus-visible,nav.sitenav .navpanel a:focus-visible,nav.sitenav .nav-store:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav.sitenav .navlinks{display:none;margin:0;position:absolute;top:100%;left:0;right:0;z-index:50;flex-direction:column;align-items:stretch;max-height:min(70vh,calc(100dvh - 60px));max-width:100%;box-sizing:border-box;overflow:auto;padding:4px 16px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+nav.sitenav.is-open .navlinks{display:flex}
+nav.sitenav .nav-store{display:flex;align-items:center;min-height:48px;padding:0 8px;border-bottom:1px solid var(--line);font-weight:650;font-size:15px;color:var(--text)}
+nav.sitenav .nav-store:hover{background:var(--soft)}
 nav.sitenav summary{list-style:none;cursor:pointer}
 nav.sitenav summary::-webkit-details-marker,nav.sitenav summary::marker{display:none;content:""}
 nav.sitenav .navgroup>summary{display:flex;align-items:center;gap:6px;min-height:48px;font-weight:650;font-size:15px}
@@ -897,28 +897,8 @@ nav.sitenav .navpanel a{display:flex;align-items:center;gap:0;min-height:44px;pa
 nav.sitenav .navpanel a:hover{background:var(--soft)}
 nav.sitenav .navpanel .npill,nav.sitenav .navpanel .mcppill{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;box-shadow:none;color:inherit;font-weight:500;animation:none}
 nav.sitenav .navpanel .npico,nav.sitenav .navpanel .mcpico{width:16px;height:16px;flex:0 0 16px;margin-right:8px}
-@media(max-width:959px){
-  nav.sitenav .navlinks{position:absolute;top:100%;left:0;right:0;z-index:50;flex-direction:column;align-items:stretch;max-height:calc(100dvh - 56px);overflow:auto;padding:4px 16px 16px;background:var(--card);border-bottom:1px solid var(--line)}
-  nav.sitenav .navgroup{border-top:1px solid var(--line)}
-  nav.sitenav .nav-submit>summary{color:var(--accent)}
-}
-@media(min-width:960px){
-  nav.sitenav .navburger,nav.sitenav .nav-open{display:none}
-  nav.sitenav .navlinks{display:flex;align-items:center;gap:2px;margin-left:auto}
-  nav.sitenav .navgroup{position:relative}
-  nav.sitenav .navgroup>summary{min-height:40px;padding:0 8px;border-radius:8px;font-size:13.5px}
-  nav.sitenav .navgroup>summary:hover{background:var(--soft)}
-  nav.sitenav .navpanel{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:240px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;z-index:60}
-  nav.sitenav .navgroup[open]>.navpanel{display:flex}
-  nav.sitenav .navgroup:last-child .navpanel{left:auto;right:0}
-  nav.sitenav .nav-submit>summary{background:var(--text);color:var(--bg)}
-  nav.sitenav .nav-submit>summary::after{border-color:currentColor}
-}
-@media(min-width:1180px){
-  nav.sitenav .desk-store{display:inline-flex;margin-left:auto}
-  nav.sitenav .navlinks{margin-left:8px}
-  nav.sitenav .navgroup>summary{padding:0 10px;font-size:14px}
-}
+nav.sitenav .navgroup{border-top:1px solid var(--line)}
+nav.sitenav .nav-submit>summary{color:var(--accent)}
 .quiet-feature{margin:4px 0 18px;font-size:14px;color:var(--muted)}
 .quiet-feature a{color:var(--accent);font-weight:600}
 body.home .hero-actions .mcp-entry{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:44px;min-height:44px;padding:0 16px;line-height:1;white-space:nowrap;text-align:center}
@@ -1031,4 +1011,48 @@ body.home .npill{box-shadow:none;animation:none}
   .sheet{padding-bottom:40px}
   .sheet>h1,.sheet .detail h1{font-size:28px}
   .wrap{padding-left:16px;padding-right:16px}
+}
+
+/* Phase 3 calm pages (tasks, best except Best MCP servers, compare, popular lists, roles, bots, free tools, submit/sponsor, news, guides, and the other remaining templates).
+   Additive only. Tool pages (.detail), category pages (h1.has-cico / categories/), and MCP hubs do not use .calm.
+   Shared lines this block adds start here and run to EOF. It does not rewrite earlier rules.
+   The phone package gutter @media(max-width:640px){.pkg-grid{margin-right:...}} above is unchanged (scroll buttons). */
+.pkg-chip{display:inline-flex;align-items:center;gap:6px;max-width:100%;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:650;line-height:1.35;box-shadow:none;border:0;white-space:normal}
+.pkg-card .pkg-chip svg,.spkg-name .pkg-chip svg,.sp-eyebrow svg{color:var(--accent)}
+section.calm,article.calm,div.calm{padding:32px 0 48px;text-align:left;max-width:100%;min-width:0}
+section.calm.prose,article.calm.prose{max-width:760px}
+section.calm.prose.wide{max-width:860px}
+section.calm h1,article.calm h1,div.calm>h1{font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.03em;text-align:left;margin:8px 0 12px;max-width:22em}
+section.calm .lede,article.calm .lede,div.calm>.lede,div.calm>p{text-align:left;margin:0 0 24px;max-width:66ch}
+section.calm .grid{gap:16px}
+section.calm figure{margin:16px 0 24px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--soft)}
+section.calm figure video,section.calm img,section.calm table,section.calm pre{max-width:100%}
+section.calm figure video{display:block;width:100%;height:auto}
+@media(max-width:640px){section.calm,article.calm{padding:24px 0 40px}section.calm h1,article.calm h1{font-size:28px}}
+.pkg-card.pkg-featured,.pkg-card.pkg-vip,.pkg-card.pkg-fast,.pkg-card[data-pkg-card="free"]{background:var(--card);box-shadow:var(--shadow);border-width:1px;border-color:var(--line)}
+.pkg-card.pkg-featured{border-color:var(--accent)}
+.pkg-featured .pkg-amt,.pkg-vip .pkg-amt,.pkg-fast .pkg-amt,.pkg-card[data-pkg-card="free"] .pkg-amt,
+html[data-theme=dark] .pkg-featured .pkg-amt,html[data-theme=dark] .pkg-vip .pkg-amt,html[data-theme=dark] .pkg-fast .pkg-amt,html[data-theme=dark] .pkg-card[data-pkg-card="free"] .pkg-amt{color:var(--text)}
+html[data-theme=dark] .pkg-card.pkg-featured,html[data-theme=dark] .pkg-card.pkg-vip,html[data-theme=dark] .pkg-card.pkg-fast,html[data-theme=dark] .pkg-card[data-pkg-card="free"]{background:var(--card);box-shadow:var(--shadow);border:1px solid var(--line)}
+html[data-theme=dark] .pkg-card.pkg-featured{border-color:var(--accent)}
+.pkg-cta-free,.btn.primary.pkg-cta-free,html[data-theme=dark] .pkg-cta-free,html[data-theme=dark] .btn.primary.pkg-cta-free,html[data-theme=dark] .pkg-cta-fast,html[data-theme=dark] .btn.primary.pkg-cta-fast,html[data-theme=dark] .pkg-cta-pop,html[data-theme=dark] .btn.primary.pkg-cta-pop,html[data-theme=dark] .pkg-cta-vip,html[data-theme=dark] .btn.primary.pkg-cta-vip{background:#5B5BF7!important;color:#fff!important;border-color:#5B5BF7!important;box-shadow:none!important}
+html[data-theme=dark] .spkg-opt.spkg-active,html[data-theme=dark] .spkg-opt-fast.spkg-active,html[data-theme=dark] .spkg-opt-vip.spkg-active{background:var(--accent-soft);box-shadow:none;border-color:var(--accent)}
+.ai-ref-cta{border-color:var(--line);background:var(--card);box-shadow:var(--shadow)}
+.lb-title{background:none;color:var(--text);-webkit-text-fill-color:var(--text);background-clip:border-box;-webkit-background-clip:border-box}
+.lb-board .lb-ctas .lb-cta-new,.lb-board .lb-ctas .lb-cta-free,.lb-board .lb-ctas .lb-cta-fast,
+html[data-theme=dark] .lb-board .lb-ctas .lb-cta-new,html[data-theme=dark] .lb-board .lb-ctas .lb-cta-free,html[data-theme=dark] .lb-board .lb-ctas .lb-cta-fast{background:var(--card)!important;color:var(--text)!important;border:1px solid var(--line)!important;box-shadow:var(--shadow)!important;filter:none}
+.pkg-cta-pop,.btn.primary.pkg-cta-pop,.pkg-cta-vip,.btn.primary.pkg-cta-vip,.pkg-cta-fast,.btn.primary.pkg-cta-fast,.hms-btn-main{background:#5B5BF7!important;color:#fff!important;border-color:#5B5BF7!important;box-shadow:none!important}
+.spkg-opt.spkg-active,.spkg-opt-vip.spkg-active{background:var(--accent-soft);box-shadow:none}
+.nlin{background:var(--card);color:var(--text);border:1px solid var(--line);box-shadow:var(--shadow)}
+.nlin h2,.nlin p{color:inherit}
+.nlin p{color:var(--muted)}
+.nlin h2{color:var(--text)}
+.nlin input[type=email]{background:var(--bg);color:var(--text);border-color:var(--line)}
+.lb-rank-1,.lb-rank-2,.lb-rank-3{box-shadow:none;color:var(--text);border-color:var(--line);background:var(--soft)}
+.lb-board .vote{box-shadow:none;border-color:var(--line)}
+.gen-pg .homegen{border-color:var(--line);background:var(--card);box-shadow:var(--shadow)}
+.gen-pg .hg-head h2{color:var(--text)}
+@media(max-width:640px){main.wrap:has(.lb-board){padding-left:16px;padding-right:16px}}
+@media(orientation:landscape) and (max-height:500px){
+  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-left:48px}
 }

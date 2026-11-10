@@ -235,7 +235,7 @@ def _subpages_write(m):
         faq=[(f"What are the best AI tools for {plabel} focused on {lab}?",f"We list {n}. The first three by GitHub stars and featured status are "+"; ".join(f"{x['name']}: {x['description']}" for x in top)),
              (f"Are there free or open-source options?",f"Yes: {build_subtasks.price_line(its)}. Pricing is as each maker states it." if any(x["pricing"] in build_subtasks.OPEN|build_subtasks.FREE for x in its) else f"Pricing breakdown: {build_subtasks.price_line(its)}.")]
         faqh='<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>'+"".join(f'<h3 style="font-size:15px;margin:16px 0 6px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / <a href="{p_}.html">{e(_cap(plabel))}</a> / {e(_cap(lab))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / <a href="{p_}.html">{e(_cap(plabel))}</a> / {e(_cap(lab))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p><div class="grid">{"".join(card(x) for x in its)}</div>{ai_ref_cta_html("../")}{build_subtasks.repo_table(its)}{faqh}{sibh}<p class="disclose">Tools are grouped by what each says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(its)]},
@@ -267,7 +267,7 @@ def pages(t):
             from collections import Counter
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">{e(h1)}</h1>'
+        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+_MEDIA_PTR.get(s,"")+
               f'{_grid(items,s)}{ai_ref_cta_html("../")}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
@@ -277,7 +277,7 @@ def pages(t):
     canon=B+"tasks/index.html"; title=f"AI Agents by Task: {len(m)} Jobs, Best Tools for Each · AgentScout"
     desc=f"Find the best AI agents for {len(m)} tasks, from writing code and browsing the web to voice agents, research and customer support."[:158]
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(_cap(T[1]))}</h3></div><p>{len(items)} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / Tasks</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-workflow-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-workflow-infographic.mp4" type="video/mp4"></video></figure><div class="grid">{tiles}</div>{_subindex(m)}</section>'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / Tasks</div><section class="calm"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-workflow-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-workflow-infographic.mp4" type="video/mp4"></video></figure><div class="grid">{tiles}</div>{_subindex(m)}</section>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"AI agents by task","description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":canon}]},{"@type":"VideoObject","name":"3-Stage Autonomous AI Agent & MCP Production Pipeline","description":"Animated architecture breakdown showing how engineering teams chain MCP context servers, coding agents, and browser verification across tasks.","thumbnailUrl":B+"assets/animations/agentscout-workflow-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-workflow-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
     open("tasks/index.html","w").write(shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
     urls+=_subpages_write(m)
@@ -311,19 +311,19 @@ def submit_page(t):
         '<div class="spkg-grid">'
         '<label class="spkg-opt spkg-active" data-pkg-card="free">'
         '<input type="radio" name="pkg" value="free" checked>'
-        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">Free Community Listing '+_wrap("ft","✓ 100% Free Forever")+'</span><span class="spkg-price">$0 <small>forever</small></span></span>'
+        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">Free Community Listing '+_chip("✓ 100% Free Forever")+'</span><span class="spkg-price">$0 <small>forever</small></span></span>'
         '<span class="spkg-desc">Standard editorial review queue (5-day review) · Permanent <code style="font-size:12px">/tools/&lt;slug&gt;.html</code> page + <code style="font-size:12px">SoftwareApplication</code> schema · Listed in <code style="font-size:12px">llms.txt</code> &amp; MCP server (<code style="font-size:12px">com.agentscouthq/directory</code>)</span></span></label>'
         '<label class="spkg-opt spkg-opt-fast" data-pkg-card="fast_29">'
         '<input type="radio" name="pkg" value="fast_29">'
-        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">Fast-Track + 7-Day Launch Boost '+_wrap("fast","⚡ FAST-TRACK LAUNCH · $15 ONE-TIME")+'</span><span class="spkg-price">$15 <small>one-time</small></span></span>'
+        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">Fast-Track + 7-Day Launch Boost '+_chip("⚡ FAST-TRACK LAUNCH · $15 ONE-TIME")+'</span><span class="spkg-price">$15 <small>one-time</small></span></span>'
         '<span class="spkg-desc"><b>Same-day priority review (live in the next batch)</b> · <b>7-day featured pin</b> on <code style="font-size:12px">/new.html</code> + category &ldquo;New &amp; Featured&rdquo; row · Full FAQ Page + pros/cons enrichment · Launch post on <b>@AgentScoutHQ</b> · <b>Same-day indexing ping to Bing and IndexNow search engines (does not include Google).</b></span></span></label>'
         '<label class="spkg-opt spkg-opt-pop" data-pkg-card="featured_49">'
         '<input type="radio" name="pkg" value="featured_49">'
-        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">30-Day Category Pin + Permanent SEO/AEO Placement '+_wrap("mcp","★ MOST POPULAR · BEST VALUE · $49 ONE-TIME")+'</span><span class="spkg-price">$49 <small>one-time</small></span></span>'
+        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">30-Day Category Pin + Permanent SEO/AEO Placement '+_chip("★ MOST POPULAR · BEST VALUE · $49 ONE-TIME")+'</span><span class="spkg-price">$49 <small>one-time</small></span></span>'
         '<span class="spkg-desc"><b>Everything in $15 upgraded to a full 30-day top category pin</b> (4x+ longer for $34 more) · <b>Permanent inclusion in <code style="font-size:12px">/best/*-alternatives</code> &amp; <code style="font-size:12px">/compare/</code> tables</b> · Priority weight in <code style="font-size:12px">llms-full.txt</code> &amp; MCP search · Dedicated spotlight on <b>both @clampdown19 &amp; @AgentScoutHQ</b></span></span></label>'
         '<label class="spkg-opt spkg-opt-vip" data-pkg-card="sponsor_99">'
         '<input type="radio" name="pkg" value="sponsor_99">'
-        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">Weekly Sitewide Sponsor + Newsletter Top Slot '+_wrap("bolt","🔥 1 EXCLUSIVE SLOT / WEEK · $99/WK")+'</span><span class="spkg-price">$99 <small>/ week</small></span></span>'
+        '<span class="spkg-body"><span class="spkg-row"><span class="spkg-name">Weekly Sitewide Sponsor + Newsletter Top Slot '+_chip("🔥 1 EXCLUSIVE SLOT / WEEK · $99/WK")+'</span><span class="spkg-price">$99 <small>/ week</small></span></span>'
         f'<span class="spkg-desc"><b>Everything in $49</b> + 7 days in the exclusive sitewide top sponsor bar across all <span data-live-pages>{m["indexed_pages_count"]:,}+</span> pages, homepage <code style="font-size:12px">#makers</code> showcase, and the top &ldquo;Sponsored by&rdquo; slot in Tuesday&#39;s AgentScout Weekly newsletter</span></span></label>'
         '</div></fieldset>'
     )
@@ -397,11 +397,11 @@ var bhUrl="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&utm_me
 if(nlOpt==="yes"){try{fetch(bhUrl,{mode:"no-cors",credentials:"omit"}).catch(function(){})}catch(_e){}}
 postSub(JSON.stringify({name:n,website:w,github:g,category:({"MCP servers":"MCP & infra","agent infra":"MCP & infra"})[v("category")]||v("category"),pricing:v("pricing"),desc:(pkTag+d).slice(0,500),email:m,x:x,newsletter_optin:nlOpt,company:v("company"),type:UPD?"update":"new",tool:UPD||"",how_found:(pkTag+fnd().hf).slice(0,120),found:fnd().wf,found_other:(pkTag+fnd().wo).slice(0,100),turnstileToken:ts})).then(function(j){if(true){f.hidden=true;var sd=document.getElementById("sdone");sd.hidden=false;if(nlOpt==="yes"){var snl=document.getElementById("sdone-nl"),snb=document.getElementById("sdone-nl-btn");if(snl)snl.hidden=false;if(snb)snb.href=bhUrl;if(!pc.url){try{window.open(bhUrl,"_blank","noopener")}catch(_e2){}}}if(pc.url){var sp=document.getElementById("sdone-pay"),sb=document.getElementById("sdone-pay-btn"),sm=document.getElementById("sdone-msg");if(sp)sp.hidden=false;if(sb){sb.href=pc.url;sb.textContent="Continue to Stripe Checkout ("+pc.label+") →"}if(sm)sm.textContent="Your tool is in our priority same-day launch queue! Complete your "+pc.label+" checkout below:";window.open(pc.url,"_blank","noopener")}}}).catch(function(e){try{window.AgentScoutTurnstile&&AgentScoutTurnstile.invalidate()}catch(_r){}var msg=window.AgentScoutTurnstile?AgentScoutTurnstile.submitFailureText(e&&e.message):(e&&e.message&&e.message!=="Failed to fetch"?e.message:"We could not send it right now.");er.innerHTML="";er.appendChild(document.createTextNode(msg+" "));var a=document.createElement("a");a.href=mail;a.textContent="Send it by email instead";er.appendChild(a);}).finally(function(){btn.disabled=false;btn.textContent=UPD?"Send suggested edit":pc.btn;});})})()</script>"""+build_sponsor.live_metrics_script("", catalog=False)
     tiers=build_sponsor.packages_grid(t,m=m,on_submit=True)
-    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Submit a tool</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Submit your AI agent tool</h1>'
+    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Submit a tool</div><section class="calm"><h1 style="text-align:left">Submit your AI agent tool</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Basic community listings on AgentScout (<span data-live-tools>{m["tools_count"]:,}</span>+ tools across <span data-live-pages>{m["indexed_pages_count"]:,}+</span> pages) are 100% free forever. We review every submission, verify links, and write the description in plain words. Want same-day priority review, a 7-day Launch Boost ($15), a 30-day Category Pin + permanent <code style="font-size:13px">/best/</code> &amp; <code style="font-size:13px">/compare/</code> placement ($49), or sitewide sponsorship ($99/wk)? Pick a package below or <a href="sponsor.html">see full sponsor details →</a>.</p>'
           f'{INLINE_NL}'
           f'<h2 id="packages" style="font-size:19px;margin:22px 0 8px">Listing &amp; launch packages</h2>{tiers}'
-          f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video muted playsinline preload="none" data-defer-video poster="assets/animations/agentscout-sponsor-placements-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="assets/animations/agentscout-sponsor-placements.mp4" type="video/mp4"></video></figure>'
+          f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video muted playsinline preload="none" data-defer-video poster="assets/animations/agentscout-sponsor-placements-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="assets/animations/agentscout-sponsor-placements.mp4" type="video/mp4"></video></figure>'
           f'<h2 id="free-form" style="font-size:19px;margin:28px 0 6px">Submit your tool details</h2><p class="muted" style="margin:0 0 12px;font-size:14px">Select your package below and fill out your tool details. Choosing a paid boost ($15 Fast-Track, $49 Category Pin, or $99/wk Sponsor) saves your submission to our priority same-day queue and opens Stripe Checkout (or pay via X Money to <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a>).</p>'
           f'{form}<p class="disclose" style="max-width:620px">Submissions go straight to the AgentScout team. Prefer email? <a id="smail" href="mailto:support@agentscouthq.com?subject=Tool%20submission">Send it from your email app instead</a>. After you&#39;re listed, add a <a href="badges.html">free AgentScout badge</a> or <a href="sponsor.html">get featured</a>.</p></section>{js}')
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon,"video":{"@type":"VideoObject","name":"AgentScout 4-Tier Launch & Placement Visibility Map","description":"Animated site placement guide showing where $0 Free, $15 Fast-Track, $49 Category Pin, and $99/wk Sitewide Sponsor tools appear across AgentScout.","thumbnailUrl":"https://agentscouthq.com/assets/animations/agentscout-sponsor-placements-poster.png","contentUrl":"https://agentscouthq.com/assets/animations/agentscout-sponsor-placements.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT20S"},"mainEntity":{"@type":"OfferCatalog","name":"AgentScout Submission & Launch Packages","itemListElement":[{"@type":"Offer","name":"Free Community Listing","price":"0","priceCurrency":"USD","url":"https://agentscouthq.com/submit.html#free-form","description":"Standard review queue (5-day review), permanent indexed /tools/<slug>.html page + SoftwareApplication schema, and listing in llms.txt & MCP server."},{"@type":"Offer","name":"Fast-Track + 7-Day Launch Boost","price":"15","priceCurrency":"USD","url":"https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e","description":"Same-day priority review (live in next batch), 7-day featured pin on /new.html + category New & Featured row, full FAQ Page + pros/cons profile enrichment, and launch post on @AgentScoutHQ."},{"@type":"Offer","name":"30-Day Category Pin + Permanent SEO/AEO Placement","price":"49","priceCurrency":"USD","url":"https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00","description":"Everything in $15 Fast-Track upgraded to a full 30-day top category pin, permanent inclusion in /best/*-alternatives and /compare/ comparison tables, priority weight in llms-full.txt & MCP search, and dedicated X spotlight across @clampdown19 & @AgentScoutHQ."},{"@type":"Offer","name":"Weekly Sitewide Sponsor + Newsletter Top Slot","price":"99","priceCurrency":"USD","url":"https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01","description":f"Everything in $49 Category Pin plus 7 days in the exclusive sitewide top sponsor bar across all {m['indexed_pages_count']:,}+ pages, homepage #makers showcase, and #1 Sponsored by slot in Tuesday's AgentScout Weekly newsletter."},{"@type":"Offer","name":"Directory Launch Pack","price":"49","priceCurrency":"USD","category":"AddOn","url":build_sponsor.LAUNCH_PACK_URL,"description":build_sponsor.LAUNCH_PACK_PROMISE+" "+build_sponsor.LAUNCH_PACK_ACCOUNTS+" Separate from the four listing tiers ($0 / $15 / $49 / $99/wk). Does not promise rankings or Google indexing."}]}}
@@ -470,7 +470,23 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611100030"  # bump when app.js/styles.css change
+ASSET_V = "202611100200"  # bump when app.js/styles.css change
+def stamp(s):
+    """Put the current styles.css/app.js cache-bust on a page a generator just wrote.
+
+    sitewide() does this at the end of a full build. News, submit, sponsor, and the
+    other Phase 3 generators also stamp here so a page written after that pass still
+    matches the publish audit.
+    """
+    return re.sub(
+        r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',
+        lambda mm: mm.group(1)+"?v="+ASSET_V,
+        s,
+    )
+def calm_open(extra=""):
+    """Left-aligned directory section. Spacing lives in styles.css (.calm), not inline padding."""
+    cls = "calm" + ((" " + extra) if extra else "")
+    return f'<section class="{cls}">'
 SKIP={"og.html","outreach-tracker.html"}
 # ---- Neon link pills (Oct 23 2026, owner). MCP keeps its own strongest pulsing pill (navmcp); these three get a softer static glow. ----
 _SV='<svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="{}"/></svg>'
@@ -483,6 +499,7 @@ _ICO={"ft":"M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l
       "bolt":"M13 2L3 14h9l-1 8 10-12h-9l1-8z",
       "fast":"M13 2L3 14h9l-1 8 10-12h-9l1-8z"}  # bolt (Exclusive slot)
 def _wrap(k,txt): return f'<span class="npill np{k}">'+_SV.format(_ICO[k])+txt+'</span>'
+def _chip(txt): return f'<span class="pkg-chip">{txt}</span>'
 def _unpill(s):
     s=re.sub(r'<a class="navft" (href="[^"]*")><span class="npill npft"><svg class="npico".*?</svg>(.*?)</span></a>',r'<a \1>\2</a>',s)
     s=re.sub(r'<span class="npill npgen"><svg class="npico".*?</svg>(.*?)</span>',r'✨ \1',s)
@@ -592,6 +609,17 @@ def _unpark_chrome(s, held):
     if held.get("nav"): s=s.replace("\x00ASNAV\x00", held["nav"], 1)
     if held.get("foot"): s=s.replace("\x00ASFOOT\x00", held["foot"], 1)
     return s
+
+def _once_submit_menu(s):
+    """Submit lists Get Featured once. Drop the star pill when the plain link is already there."""
+    def fix(m):
+        block = m.group(0)
+        plain = re.search(r'<a href="[^"]*sponsor\.html">Get Featured</a>', block)
+        pill = re.search(r'<a class="navsp" href="[^"]*sponsor\.html">.*?</a>', block, re.S)
+        if plain and pill:
+            block = block.replace(pill.group(0), '', 1)
+        return block
+    return re.sub(r'<details class="navgroup nav-submit">.*?</details>', fix, s, count=1, flags=re.S)
 def _cluster_foot(s, d):
     """Footer neon pills share one group: Bot Store, Image Gen, AI bot templates, Free tools, MCP, Get Featured.
     A column footer (class footcols) is the canonical chrome and is left unchanged.
@@ -884,6 +912,7 @@ def sitewide(t):
             s=re.sub(r'<script data-live-metrics>.*?</script>','',s,flags=re.S)
             s=s.replace('</body>',_bsp.live_metrics_script("")+'</body>',1)
         s=_unpark_chrome(s, chrome)
+        s=_once_submit_menu(s)
         s=_restore_redirect_chrome(s, held)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
         if s!=o: open(f,"w").write(s)
@@ -898,7 +927,7 @@ def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):
     canon=B+fn
     _alt=["Agent Scout","AgentScoutHQ","agentscouthq.com","com.agentscouthq/directory"]
     _same=["https://x.com/clampdown19","https://x.com/AgentScoutHQ","https://agentscout.beehiiv.com/","https://github.com/clampdown19/agentscout","https://github.com/Clampdown-web/agentscout","https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory","https://glama.ai/mcp/connectors/com.agentscouthq/directory","https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html","https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory","https://protogrid.dev/servers/com.agentscouthq/directory","https://mcpcollection.com/server/agentscout-mcp"]
-    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / {e(crumb)}</div><section style="padding-top:20px;text-align:left;max-width:760px">'
+    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / {e(crumb)}</div><section class="calm prose">'
           f'<h1 style="text-align:left">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{inner}</section>')
     ld={"@context":"https://schema.org","@graph":[{"@type":ld_type,"name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","alternateName":_alt,"url":B,"sameAs":_same},**({"mainEntity":{"@type":"Organization","name":"AgentScout","alternateName":_alt,"url":B,"identifier":"com.agentscouthq/directory","sameAs":_same}} if ld_type=="AboutPage" else {})},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}

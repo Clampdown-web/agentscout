@@ -282,6 +282,21 @@ def pages(t):
 @media(max-width:920px){.vh-grid{grid-template-columns:1fr}.vh-tips{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.vh-hero img.aswm{filter:invert(1) hue-rotate(180deg)}
 .vh-hero{padding:16px}.vh-hero .btn{width:100%;max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;justify-content:center;height:auto;min-height:44px;line-height:1.35;padding:10px 12px}.vh-tips{grid-template-columns:1fr}.vh-links a{width:100%;box-sizing:border-box;justify-content:center}}
+/* Phase 3 calm */
+.vh-hero{background:var(--card);color:var(--text);border:1px solid var(--line);box-shadow:var(--shadow)}
+.vh-hero h1,.vh-title{color:var(--text)}
+.vh-hero p{color:var(--muted)}
+.vh-eyebrow{background:var(--accent-soft);color:var(--accent);border-color:transparent;text-transform:none;letter-spacing:0;box-shadow:none}
+.vh-pill.on{background:var(--text);color:var(--bg);border-color:var(--text);box-shadow:none}
+.vh-pill:hover,.vh-links a:hover,.vh-tip a{color:var(--accent);border-color:var(--accent)}
+.vh-code{background:var(--soft);border:1px solid var(--line)}
+.vh-code code{color:var(--text)}
+.vh-copy{background:var(--card);color:var(--text);border:1px solid var(--line)}
+.vh-hero .btn.primary{background:var(--text)!important;color:var(--bg)!important;border-color:var(--text)!important;box-shadow:none!important}
+.vh-hero .btn:not(.primary){background:var(--card)!important;color:var(--text)!important;border-color:var(--line)!important}
+.vh-hero img.aswm{filter:none}
+html[data-theme=dark] .vh-hero img.aswm{filter:invert(1) hue-rotate(180deg)}
+.vh-vidwrap,.vh-vidwrap video{background:var(--soft)}
 </style>'''
 
     cards_html = []

@@ -119,7 +119,7 @@ def how_it_started(tools, m):
     title = "How AgentScout started · AgentScout"
     desc = "Founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls. Counts come from the directory metrics file."
     body = f'''<div class="crumb"><a href="index.html">AgentScout</a> / How it started</div>
-<section style="padding-top:20px;text-align:left;max-width:760px">
+<section class="calm prose">
 <h1 style="text-align:left">How it started</h1>
 <p class="lede" style="margin-left:0;text-align:left">Founder-run, mostly automated with AI agents.</p>
 <p>I'm <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> (m lk). I make the calls. AI agents do most of the daily work: tool checks, listings, link and status checks, and reports.</p>
@@ -328,7 +328,7 @@ def launch_page(tools, start, end, wid, current):
                 bits.append(f'<a class="btn" href="{next_h}" rel="next">Next</a>')
             pager = f'<p class="lb-pager">{"".join(bits)}</p>'
         body = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="./">Launches</a> / {e(label)}</div>
-<section class="lb-board" style="padding-top:20px;text-align:left">
+<section class="lb-board calm">
 <header class="lb-hero">
 <h1 class="lb-title">{e(h1)}</h1>
 <p class="lede lb-sub">{e(visible)}</p>
@@ -471,7 +471,7 @@ def tool_card(slug, name, desc, icon):
 def free_tools():
     os.makedirs("free-tools", exist_ok=True)
     roast_inner = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / Roast My AI Tool Listing</div>
-<section style="padding-top:20px;text-align:left;max-width:860px"><h1 style="text-align:left">Roast My AI Tool Listing</h1>
+<section class="calm prose wide"><h1 style="text-align:left">Roast My AI Tool Listing</h1>
 <p class="lede" style="margin-left:0;text-align:left">Paste a tool URL. We fetch the public page and score the title, one-line pitch, pricing clarity, OG image, JSON-LD, llms.txt, and whether AgentScout already lists it.</p>
 <p class="muted">The URL is sent to the AgentScout worker so it can fetch the page. No paid APIs. Private and local addresses are blocked.</p>
 <div style="border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0;background:var(--card)">
@@ -498,7 +498,7 @@ def free_tools():
     ]
     lis = "".join(f'<li><label><input type="checkbox" value="{i}"> {e(lab)}</label></li>' for i, lab in check_items)
     check_inner = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / Launch day checklist</div>
-<section style="padding-top:20px;text-align:left;max-width:860px"><h1 style="text-align:left">AI Tool Launch Day Checklist</h1>
+<section class="calm prose wide"><h1 style="text-align:left">AI Tool Launch Day Checklist</h1>
 <p class="lede" style="margin-left:0;text-align:left">Work through launch day. Progress stays in this browser.</p>
 <p id="lprog" style="font-weight:700">0 of {len(check_items)} done</p>
 <ul class="chk-list" id="lchks">{lis}</ul>
