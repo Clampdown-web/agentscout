@@ -13,6 +13,7 @@ import re
 import sys
 from collections import defaultdict
 from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,7 +23,61 @@ PLACEHOLDER = re.compile(r"\b(?:TODO|lorem ipsum|undefined|NaN)\b")
 # Named tokens such as {{YOUR_COMPANY}} and {{var}} are copy. An unclosed "{{" is a miss.
 BARE_BRACE = re.compile(r"\{\{(?![A-Za-z0-9_]+\}\})")
 TAG_RE = re.compile(r"<[^>]+>")
-SCRIPT_RE = re.compile(r"(?is)<script\b.*?</script>|<style\b.*?</style>|<textarea\b.*?</textarea>|<pre\b.*?</pre>")
+_HIDDEN = {"script", "style", "textarea", "pre"}
+
+
+class _DropHidden(HTMLParser):
+    """Drop script, style, textarea, and pre elements, including odd end tags.
+
+    html.parser accepts </script >, </SCRIPT\\n>, and the same forms for the
+    other hidden elements. A closing-tag regexp does not.
+    """
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.parts: list[str] = []
+        self._depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() in _HIDDEN:
+            self._depth += 1
+            return
+        if not self._depth:
+            self.parts.append(self.get_starttag_text() or "")
+
+    def handle_endtag(self, tag):
+        if tag.lower() in _HIDDEN and self._depth:
+            self._depth -= 1
+            return
+        if not self._depth:
+            self.parts.append(f"</{tag}>")
+
+    def handle_data(self, data):
+        if not self._depth:
+            self.parts.append(data)
+
+    def handle_entityref(self, name):
+        if not self._depth:
+            self.parts.append(f"&{name};")
+
+    def handle_charref(self, name):
+        if not self._depth:
+            self.parts.append(f"&#{name};")
+
+    def handle_comment(self, data):
+        if not self._depth:
+            self.parts.append(f"<!--{data}-->")
+
+    def handle_decl(self, decl):
+        if not self._depth:
+            self.parts.append(f"<!{decl}>")
+
+
+def _without_hidden(html: str) -> str:
+    parser = _DropHidden()
+    parser.feed(html)
+    parser.close()
+    return "".join(parser.parts)
 
 
 def _read(path: Path) -> str:
@@ -30,8 +85,7 @@ def _read(path: Path) -> str:
 
 
 def _visible(html: str) -> str:
-    text = SCRIPT_RE.sub(" ", html)
-    text = TAG_RE.sub(" ", text)
+    text = TAG_RE.sub(" ", _without_hidden(html))
     return re.sub(r"\s+", " ", text)
 
 
@@ -40,7 +94,7 @@ def _is_redirect(html: str) -> bool:
 
 
 def _h1_count(html: str) -> int:
-    body = SCRIPT_RE.sub(" ", html)
+    body = _without_hidden(html)
     return len(re.findall(r"<h1\b", body, re.I))
 
 
@@ -262,7 +316,7 @@ def problems(root: Path | None = None) -> list[str]:
     saved = ROOT / "saved.html"
     if saved.is_file():
         text = _read(saved)
-        if "saved" not in text.lower() or "<h1" not in SCRIPT_RE.sub(" ", text):
+        if "saved" not in text.lower() or "<h1" not in _without_hidden(text):
             bad.append("saved.html has no saved-tools heading")
         by_kind["saved.html"].append("checked")
 

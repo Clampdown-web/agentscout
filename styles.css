@@ -860,7 +860,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .navscroll-pills .npill,nav .navscroll-pills .mcppill,nav .navscroll-pills>a.btn.primary{box-sizing:border-box;height:38px;min-height:38px;padding:0 8px;border-radius:999px;font-size:12px!important;font-weight:600;line-height:36px;gap:4px;white-space:nowrap;margin:0;display:inline-flex;align-items:center}
   nav .navscroll-pills>a.btn.primary{flex:0 0 auto;width:auto;justify-content:center}
   nav .navscroll-pills>a.btn.primary::after{content:none!important}
-  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-left:calc(64px + env(safe-area-inset-left));padding-right:calc(64px + env(safe-area-inset-right))}
+  body:not(:has(.lb-board)) :is(main,main section>.wrap,.layout){padding-left:calc(64px + env(safe-area-inset-left));padding-right:calc(64px + env(safe-area-inset-right))}
   .scrollbtns{right:calc(8px + env(safe-area-inset-right));bottom:calc(8px + env(safe-area-inset-bottom));gap:8px}
   .scrollbtn{width:44px;height:44px;min-width:44px;min-height:44px;font-size:20px;border-radius:12px}
   .scrollbtn.show{opacity:1}
@@ -1067,8 +1067,8 @@ html[data-theme=dark] .lb-board .lb-ctas .lb-cta-new,html[data-theme=dark] .lb-b
 .panel .guide-list{margin-top:4px}
 /* Scroll buttons sit in the corner. The text column keeps an equal gutter on both sides so a wrapping line never runs under them. */
 @media (max-width:640px){
-  body:not(:has(.lb-board)) main.wrap{padding-left:calc(72px + env(safe-area-inset-left));padding-right:calc(72px + env(safe-area-inset-right))}
+  body:not(:has(.lb-board)) main{padding-left:calc(72px + env(safe-area-inset-left));padding-right:calc(72px + env(safe-area-inset-right))}
 }
 @media (min-width:641px) and (max-width:1240px){
-  body:not(:has(.lb-board)) main.wrap{padding-left:calc(100px + env(safe-area-inset-left));padding-right:calc(100px + env(safe-area-inset-right))}
+  body:not(:has(.lb-board)) main{padding-left:calc(100px + env(safe-area-inset-left));padding-right:calc(100px + env(safe-area-inset-right))}
 }

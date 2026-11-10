@@ -69,6 +69,8 @@ jobs:
           python3 scripts/test_publish_gate.py
           python3 scripts/test_morning_audit.py
           python3 scripts/content_check.py
+          python3 scripts/test_html_filter.py
+          python3 scripts/test_mcp_reachability.py
           python3 scripts/test_submit_widget.py
           python3 scripts/test_static_csp.py
           python3 scripts/test_nav_css.py

@@ -66,6 +66,9 @@ class ReachabilityTests(unittest.TestCase):
         self.assertIsNotNone(card, "homepage card is missing the checked-server denominator")
         self.assertEqual(int(card.group(1)), self.st["reachable"])
         self.assertEqual(int(card.group(2)), self.st["checked_count"])
+        self.assertNotIn("responded today", home)
+        self.assertIsNone(re.search(r'<p class="lede"[^>]*>\(\s*\)</p>', home))
+        self.assertIn(bac.reach_card_phrase(self.st), home)
         self.assertNotIn(str(self.st["reachable"]), Path("build_aicite.py").read_text().split("def reach_sentence")[1].split("def ")[0])
 
     def test_daily_check_includes_catalog_only_servers(self):

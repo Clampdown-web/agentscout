@@ -92,6 +92,15 @@ def finish_page(path, html_text):
 
 
 def stats_bar(m):
+    """Follower total is data/site_counts.json. Other bar figures stay on the metrics row."""
+    try:
+        counted = json.load(open("data/site_counts.json", encoding="utf-8"))
+        combined = (counted.get("followers") or {}).get("combined")
+        if combined is not None:
+            m = dict(m)
+            m["x_combined_followers"] = int(combined)
+    except (OSError, ValueError, TypeError):
+        pass
     s = open("index.html", encoding="utf-8").read()
     bar = (
         f'<div class="stats" id="dir-stats">'

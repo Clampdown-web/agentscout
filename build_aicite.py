@@ -73,6 +73,15 @@ def mcp_reachability(t=None):
     # with no row, including catalog_only imports, stay out of that denominator.
     return {"reachable":reachable,"total":len(listed),"checked_count":reachable+down,"down":down,
             "not_yet_checked":unchecked,"checked":checked if day else "","day":day,"by_slug":by}
+def reach_card_phrase(st):
+    """Homepage status card and the verify block. Denominator is the checked set."""
+    if not st.get("day") or st.get("checked_count") is None:
+        return "The daily MCP reachability check has no timestamp on file yet."
+    line = f"{st['reachable']} of {st['checked_count']} checked servers live"
+    extra = int(st.get("not_yet_checked") or 0)
+    if extra:
+        line += f" · +{extra} listed, not yet checked"
+    return line
 def reach_sentence(st):
     """Quotable line. The denominator is the checked set, never the full directory."""
     if not st.get("day") or st.get("checked_count") is None:
@@ -296,7 +305,29 @@ def stamp_mcp_pages(t=None):
         s=_patch_graph(s, st, meta, faq, slugs, names, allow_list=path!="mcp/connect.html")
         open(path,"w",encoding="utf-8").write(s); n+=1
     print(f"mcp reachability: stamped {n} pages; {sentence}")
+    stamp_home_mcp(st)
     return st
+def stamp_home_mcp(st=None):
+    """The homepage verify block is not an /mcp/ page. Keep its link on the checked set."""
+    if not os.path.exists("index.html"):
+        return
+    st = st or mcp_reachability()
+    phrase = reach_card_phrase(st)
+    s = open("index.html", encoding="utf-8").read()
+    def repl(m):
+        block = re.sub(r'<p class="lede"[^>]*>\(\s*\)</p>', "", m.group(0))
+        block = re.sub(
+            r'(<a href="mcp/status/">)(?:(?!</a>).)*(</a>)',
+            lambda mm: mm.group(1) + phrase + mm.group(2),
+            block,
+            count=1,
+            flags=re.S,
+        )
+        return block
+    s2 = re.sub(r"<!--ci:mcp-->.*?<!--/ci:mcp-->", repl, s, count=1, flags=re.S)
+    s2 = re.sub(r"\d[\d,]* of \d[\d,]* MCP servers responded today \(verified [^)]+\)", phrase, s2)
+    if s2 != s:
+        open("index.html", "w", encoding="utf-8").write(s2)
 def history(t,LSD):
     snap={x["slug"]:{"name":x["name"],"pricing":x.get("pricing",""),"link":lstat((LSD.get("results") or {}).get(x["slug"],{}))[0]} for x in mcp(t)}
     try: old=json.load(open(SNAP))

@@ -585,13 +585,53 @@ def measurement_evidence(document: object, kind: str, artifact_date: str, artifa
     return problems, note
 
 
+def inline_scripts(html: str) -> list[str]:
+    """Inline script bodies. Skips src= and JSON-LD. End tags may contain whitespace."""
+    from html.parser import HTMLParser
+
+    class _Scripts(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=False)
+            self.found: list[str] = []
+            self._buf: list[str] | None = None
+
+        def handle_starttag(self, tag, attrs):
+            if tag.lower() != "script":
+                return
+            attr = {key.lower(): (value or "") for key, value in attrs}
+            kind = attr.get("type", "").lower().replace(" ", "")
+            if "src" in attr or kind in ("application/ld+json", "application/json"):
+                self._buf = None
+                return
+            self._buf = []
+
+        def handle_endtag(self, tag):
+            if tag.lower() == "script" and self._buf is not None:
+                self.found.append("".join(self._buf))
+                self._buf = None
+
+        def handle_data(self, data):
+            if self._buf is not None:
+                self._buf.append(data)
+
+        def handle_entityref(self, name):
+            if self._buf is not None:
+                self._buf.append(f"&{name};")
+
+        def handle_charref(self, name):
+            if self._buf is not None:
+                self._buf.append(f"&#{name};")
+
+    parser = _Scripts()
+    parser.feed(html)
+    parser.close()
+    return parser.found
+
+
 def inline_script_problems(label: str, html: str) -> list[str]:
     import subprocess
     import tempfile
-    scripts = re.findall(
-        r"<script(?![^>]*type=['\"]application/(?:ld\+json|json)['\"])(?![^>]*src=)[^>]*>(.*?)</script>",
-        html, re.S | re.I,
-    )
+    scripts = inline_scripts(html)
     problems = []
     for index, code in enumerate(scripts, start=1):
         if not code.strip():
