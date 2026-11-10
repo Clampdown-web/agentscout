@@ -14,14 +14,47 @@ def short(s,n=110): return s if len(s)<=n else s[:n].rsplit(" ",1)[0]+"…"
 def card(x,d):
     return (f'<a class="card rcard" href="{d}tools/{x["slug"]}.html"><div class="ct">{build_extras.ico(x,d,"sm")}<h3>{e(x["name"])}</h3></div>'
             f'<p>{e(short(x["description"]))}</p><div class="rmeta">{"<span class=\"b new\">New</span>" if is_week(x) else ""}<span class="muted">Added <time class="ago" datetime="{e(x["added"])}">{e(fmt(x["added"]))}</time></span></div></a>')
+MAKER_PAGE=12  # first screen of /new.html#makers (3 rows at 4 columns, one column on a phone)
+MAKER_STEP=24
+def maker_rows(t):
+    return sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)))
 def makers_strip(t,n=6):
     """Homepage 'Submitted by makers' strip (Oct 18, 2026 PT): newest maker submissions, static HTML (no layout shift); empty when there are none."""
-    mk=sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)),reverse=True)[:n]
+    mk=list(reversed(maker_rows(t)))[:n]
     if not mk: return ""
     cards="".join(f'<a class="mkcard" href="tools/{e(x["slug"])}.html">{build_extras.ico24(x)}<span class="mkname">{e(x["name"])}</span><span class="b maker">✓ Submitted by maker</span></a>' for x in mk)
     return ('<section id="makers-strip" class="mkstrip" aria-labelledby="mk-h"><div class="wrap"><div class="rhead"><h2 id="mk-h">Submitted by makers</h2>'
             '<a href="new.html#makers">See all →</a></div><div class="mkrow">'+cards+'</div></div></section>')
+def makers_section(t):
+    """new.html 'Submitted by makers'. The count is len() of the flagged rows. Past the first page, cards stay in the HTML and open with Show more."""
+    mk=maker_rows(t)
+    if not mk: return ""
+    n=len(mk)
+    cards=[]
+    for i,x in enumerate(mk):
+        c=card(x,"")
+        if i>=MAKER_PAGE: c=c.replace('<a class="card rcard"','<a class="card rcard mk-rest"',1)
+        cards.append(c)
+    more=""
+    hide=""
+    if n>MAKER_PAGE:
+        step=min(MAKER_STEP, n-MAKER_PAGE)
+        # Hide rule comes before the cards so the extra rows never paint as a pile.
+        hide='<style>#makers-grid .mk-rest{display:none}</style>'
+        more=(f'<p id="makers-morep" style="text-align:center;margin:4px 0 22px"><button type="button" class="btn" id="makers-more" style="min-height:44px" aria-controls="makers-grid">Show {step} more</button></p>'
+              '<script>(function(){var g=document.getElementById("makers-grid"),b=document.getElementById("makers-more"),p=document.getElementById("makers-morep");if(!g||!b)return;var step=24,hid=[].slice.call(g.querySelectorAll("a.mk-rest"));'
+              'function label(){var n=hid.length;b.textContent="Show "+Math.min(step,n)+" more"}'
+              'b.addEventListener("click",function(){hid.splice(0,step).forEach(function(el){el.classList.remove("mk-rest")});if(!hid.length)p.remove();else label()});label()})();</script>'
+              '<noscript><style>#makers-grid .mk-rest{display:flex}</style></noscript>')
+    word="tool" if n==1 else "tools"
+    return (f'<h2 class="rgroup" id="makers" style="scroll-margin-top:90px">Submitted by makers <span class="muted">· {n} {word}</span></h2>'
+            '<p class="muted" style="margin:0 0 12px;font-size:14px">Tools their makers sent us through the <a href="submit.html">submit form</a>. We review each one and write the listing ourselves.</p>'
+            f'{hide}<div class="grid rgrid" id="makers-grid">{"".join(cards)}</div>{more}')
 def build(t):
+    import sys
+    sys.path.insert(0,"scripts")
+    from maker_flag import check as _maker_check
+    _maker_check(t)
     top=(newest(fresh(t))+[x for x in newest(t) if x.get("seed")])[:12]
     nw=sum(1 for x in t if is_week(x))
     sec=('<!--RECENT-START--><section id="recent" aria-labelledby="recent-h"><div class="wrap"><div class="rhead"><h2 id="recent-h">Recently added</h2>'
@@ -43,11 +76,7 @@ def build(t):
     body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section class="calm">'
           f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{len(recent):,} tool{"s" if len(recent)!=1 else ""} added in the last 30 days, newest first. Every link is checked when it is added.{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
-    mk=sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)))  # first submissions first (orke)
-    if mk:
-        body+=(f'<h2 class="rgroup" id="makers">Submitted by makers <span class="muted">· {len(mk)} tool{"s" if len(mk)!=1 else ""}</span></h2>'
-               '<p class="muted" style="margin:0 0 12px;font-size:14px">Tools their makers sent us through the <a href="submit.html">submit form</a>. We review each one and write the listing ourselves.</p>'
-               '<div class="grid rgrid">'+"".join(card(x,"") for x in mk)+'</div>')
+    body+=makers_section(t)  # first submissions first; count comes from the flagged rows
     for label,cond in (("This week",lambda d:d>=wk),("Earlier this month",lambda d:d<wk)):
       ds=[d for d in days if cond(d)]
       if not ds: continue
@@ -58,3 +87,23 @@ def build(t):
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":"New AI agent tools","url":B+"new.html","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":f"{B}tools/{x['slug']}.html","name":x["name"]} for i,x in enumerate(recent[:50])]}}
     open("new.html","w").write(build_extras.shell("","New AI agent tools (last 30 days) · AgentScout","The newest AI agent tools added to AgentScout in the last 30 days, grouped by date: coding agents, MCP servers, frameworks and more.",B+"new.html",body,ld))
     return B+"new.html"
+def refresh_published_maker_sections(t=None):
+    """Rewrite the homepage strip and the new.html makers block from tools.json. Leaves the rest of each page in place."""
+    import sys
+    sys.path.insert(0,"scripts")
+    from maker_flag import check as _maker_check
+    if t is None: t=json.load(open("tools.json"))
+    _maker_check(t)
+    s=open("index.html",encoding="utf-8").read()
+    mk="<!--MAKERS-START-->"+makers_strip(t)+"<!--MAKERS-END-->"
+    n,k=re.subn(r"<!--MAKERS-START-->.*?<!--MAKERS-END-->",lambda m:mk,s,count=1,flags=re.S)
+    if not k: raise SystemExit("index.html has no makers strip")
+    open("index.html","w",encoding="utf-8").write(n)
+    s=open("new.html",encoding="utf-8").read()
+    mark=s.find('id="makers"')
+    start=s.rfind("<h2", 0, mark+1) if mark>=0 else -1
+    if start<0: raise SystemExit("new.html has no makers section")
+    end=s.find('<h2 class="rgroup"', mark+1)
+    if end<0: raise SystemExit("new.html makers section has no following group")
+    open("new.html","w",encoding="utf-8").write(s[:start]+makers_section(t)+s[end:])
+    return len(maker_rows(t))

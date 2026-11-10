@@ -4,6 +4,8 @@ import json,re,html,os,build_extras,build_rich,build_related
 t=json.load(open("tools.json"))
 _sys.path.insert(0,"scripts")
 from takedown_blocklist import blocked_tool as _blocked_tool
+from maker_flag import check as _maker_check, badge_html as _maker_badge
+_maker_check(t)  # submit-form sources must already carry maker_submitted + submitted
 _kept=[]; _dropped=0
 for _x in t:
     if _blocked_tool(_x): _dropped+=1
@@ -238,9 +240,7 @@ for x in t:
         out=out.replace('<p class="lede">'+e(x["description"])+'</p>','<p class="lede">'+e(x["description"])+'</p><p class="statusnote" role="note" style="margin:-6px 0 16px;padding:10px 14px;border:1px solid #b45309;border-radius:10px;font-size:14px">⚠️ '+e(x["status_note"])+'</p>',1)
     # Maker-submitted listings (tools.json "maker_submitted": true + "submitted": YYYY-MM-DD, Pacific): small badge by the name (standing perk, Oct 18 2026)
     if x.get("maker_submitted"):
-        _sd=x.get("submitted") or x.get("added","")
-        _sdt=_dt.date.fromisoformat(_sd).strftime("%b %-d, %Y") if _sd else ""
-        out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+f'<span class="b maker" title="The maker submitted this tool through our submit form{(" on "+_sdt) if _sdt else ""}. We reviewed and wrote the listing.">✓ Submitted by maker</span>'+m.group(2),out,count=1,flags=re.S)
+        out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh")',lambda m:m.group(1)+_maker_badge(x)+m.group(2),out,count=1,flags=re.S)
     # Moves funds label (Oct 21 2026, owner-approved): tools that can sign or send transactions from a wallet
     if x.get("moves_funds"):
         out=re.sub(r'(<div class="badges">.*?)(</div>\s*<h1 class="icoh">)',lambda m:m.group(1)+'<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>'+m.group(2),out,count=1,flags=re.S)
