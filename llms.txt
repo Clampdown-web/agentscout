@@ -1,12 +1,12 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 3,449 AI agent tools in 40 categories, including 1,065 MCP servers. Checked daily, 1064 of 1065 checked servers live, last checked 2026-11-09. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 3,491 AI agent tools in 40 categories, including 1,070 MCP servers. Checked daily, 1068 of 1070 checked servers live, last checked 2026-11-10. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 <!-- mcp-reach:start -->
 
 ## MCP server reachability
 
-Checked daily, 1064 of 1065 checked servers live, last checked 2026-11-09.
+Checked daily, 1068 of 1070 checked servers live, last checked 2026-11-10.
 
 Once a day, AgentScout requests every MCP server in the directory, including catalog-only listings, and, when it is a different link, its GitHub URL. The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. A server counts as live when its stored label is OK or Reachable, blocks automated checks. OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. Any other checked result is not live. The live percentage uses only servers with a row in the check file: live plus down. A server with no row is listed, not yet checked, and is not part of that percentage. Catalog-only listings stay unverified until that daily check opens them. The last-checked time is the checked field, in America/Los_Angeles. The rows are on the MCP status page and in status.json.
 
@@ -43,7 +43,7 @@ Catalog last checked: 2026-11-10 (Pacific)
 
 ## Machine-readable catalog
 
-- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 1,065 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
+- [llms-full.txt](https://agentscouthq.com/llms-full.txt): single-file Markdown context with category comparison tables and all 1,070 verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)
 - [api/tools.json](https://agentscouthq.com/api/tools.json): full catalog with counts and check date
 - [tools.json](https://agentscouthq.com/tools.json): same tools in the site's internal format
 - [api/products.json](https://agentscouthq.com/api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json](https://agentscouthq.com/.well-known/acp.json))
@@ -61,7 +61,7 @@ Catalog last checked: 2026-11-10 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history
 - [Link-check status](https://agentscouthq.com/status.json): last-checked time, live or down status, and check history for every MCP server
 - [AgentScout MCP server](https://agentscouthq.com/mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://mcp.agentscouthq.com/mcp) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance
-- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 1,065 tools
+- [MCP servers category](https://agentscouthq.com/categories/mcp-servers.html): 1,070 tools
 - [New tools, last 30 days](https://agentscouthq.com/new.html)
 - [AI agent news](https://agentscouthq.com/news/): daily AI agent and MCP news stories with sources
 - [Free AI agent tools](https://agentscouthq.com/free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory
@@ -80,43 +80,43 @@ Catalog last checked: 2026-11-10 (Pacific)
 
 ## Categories
 
-- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 1065 tools
+- [MCP servers](https://agentscouthq.com/categories/mcp-servers.html): 1070 tools
 - [frameworks](https://agentscouthq.com/categories/frameworks.html): 387 tools
-- [coding](https://agentscouthq.com/categories/coding.html): 275 tools
-- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 112 tools
-- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 109 tools
+- [coding](https://agentscouthq.com/categories/coding.html): 282 tools
+- [personal agents](https://agentscouthq.com/categories/personal-agents.html): 113 tools
+- [agent infra](https://agentscouthq.com/categories/agent-infra.html): 110 tools
 - [browser/computer use](https://agentscouthq.com/categories/browser-computer-use.html): 106 tools
-- [crypto](https://agentscouthq.com/categories/crypto.html): 94 tools
-- [video generation](https://agentscouthq.com/categories/video-generation.html): 85 tools
-- [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 77 tools
-- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 75 tools
-- [security & governance](https://agentscouthq.com/categories/security-governance.html): 66 tools
+- [crypto](https://agentscouthq.com/categories/crypto.html): 96 tools
+- [video generation](https://agentscouthq.com/categories/video-generation.html): 92 tools
+- [memory & RAG](https://agentscouthq.com/categories/memory-rag.html): 78 tools
+- [sales & marketing](https://agentscouthq.com/categories/sales-marketing.html): 76 tools
+- [security & governance](https://agentscouthq.com/categories/security-governance.html): 68 tools
 - [photography & photo editing](https://agentscouthq.com/categories/photography-photo-editing.html): 66 tools
-- [voice](https://agentscouthq.com/categories/voice.html): 61 tools
+- [voice](https://agentscouthq.com/categories/voice.html): 63 tools
 - [film & TV production](https://agentscouthq.com/categories/film-tv-production.html): 61 tools
+- [image generation](https://agentscouthq.com/categories/image-generation.html): 60 tools
 - [evals & observability](https://agentscouthq.com/categories/evals-observability.html): 59 tools
+- [research](https://agentscouthq.com/categories/research.html): 59 tools
 - [business agents](https://agentscouthq.com/categories/business-agents.html): 59 tools
-- [research](https://agentscouthq.com/categories/research.html): 58 tools
-- [image generation](https://agentscouthq.com/categories/image-generation.html): 58 tools
-- [music production](https://agentscouthq.com/categories/music-production.html): 48 tools
-- [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 46 tools
+- [music production](https://agentscouthq.com/categories/music-production.html): 50 tools
+- [graphic design & branding](https://agentscouthq.com/categories/graphic-design-branding.html): 47 tools
+- [productivity](https://agentscouthq.com/categories/productivity.html): 46 tools
 - [3D & concept art](https://agentscouthq.com/categories/3d-concept-art.html): 45 tools
-- [productivity](https://agentscouthq.com/categories/productivity.html): 44 tools
+- [customer support](https://agentscouthq.com/categories/customer-support.html): 38 tools
 - [no-code builders](https://agentscouthq.com/categories/no-code-builders.html): 38 tools
-- [customer support](https://agentscouthq.com/categories/customer-support.html): 37 tools
 - [sandboxes & code execution](https://agentscouthq.com/categories/sandboxes-code-execution.html): 33 tools
+- [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 29 tools
 - [film & TV audio](https://agentscouthq.com/categories/film-tv-audio.html): 29 tools
-- [models & local runtimes](https://agentscouthq.com/categories/models-local-runtimes.html): 28 tools
 - [DevOps & cloud](https://agentscouthq.com/categories/devops-cloud.html): 28 tools
 - [app builders](https://agentscouthq.com/categories/app-builders.html): 27 tools
-- [vision](https://agentscouthq.com/categories/vision.html): 23 tools
+- [vision](https://agentscouthq.com/categories/vision.html): 24 tools
 - [data & analytics](https://agentscouthq.com/categories/data-analytics.html): 21 tools
 - [games](https://agentscouthq.com/categories/games.html): 21 tools
+- [education & tutoring](https://agentscouthq.com/categories/education-tutoring.html): 16 tools
+- [HR & recruiting](https://agentscouthq.com/categories/hr-recruiting.html): 16 tools
 - [QA & testing](https://agentscouthq.com/categories/qa-testing.html): 15 tools
 - [finance & accounting](https://agentscouthq.com/categories/finance-accounting.html): 15 tools
-- [education & tutoring](https://agentscouthq.com/categories/education-tutoring.html): 15 tools
 - [e-commerce & retail](https://agentscouthq.com/categories/e-commerce-retail.html): 15 tools
-- [HR & recruiting](https://agentscouthq.com/categories/hr-recruiting.html): 15 tools
 - [legal & compliance](https://agentscouthq.com/categories/legal-compliance.html): 11 tools
 - [robotics & physical AI](https://agentscouthq.com/categories/robotics-physical-ai.html): 11 tools
 - [healthcare & biotech](https://agentscouthq.com/categories/healthcare-biotech.html): 11 tools
@@ -189,8 +189,50 @@ Catalog last checked: 2026-11-10 (Pacific)
 
 ## Recently added
 - [All new tools, last 30 days](https://agentscouthq.com/new.html)
-- Tools added in the last 2 days (2026-11-09 to 2026-11-10): 1085
+- Tools added in the last 2 days (2026-11-09 to 2026-11-10): 1127
 
+- [MeiGen AI Design MCP](https://agentscouthq.com/tools/meigen-ai-design-mcp.html) (added 2026-11-10): MeiGen AI Design MCP is an MIT-licensed remote MCP server and ChatGPT plugin that lets ChatGPT, Claude, Cursor, OpenClaw and other assistants search MeiGen's library of reference images and prompts for inspiration and then generate images and videos with current AI models; searching is free, and generation uses purchased MeiGen credits after an OAuth sign-in.
+- [vAPI Network](https://agentscouthq.com/tools/vapi-network.html) (added 2026-11-10): vapi-network is an Apache-2.0, non-custodial TypeScript client from vAPI Network for finding and paying x402 APIs in USDC on Base from a terminal, an MCP client or your own code; keys stay encrypted on your device, a spend policy is checked before each payment is signed, payments go straight to the provider with no vAPI fee, and each call leaves a local receipt. It is not related to the voice company Vapi.ai.
+- [avoid-ai-writing](https://agentscouthq.com/tools/avoid-ai-writing.html) (added 2026-11-10): avoid-ai-writing is an MIT-licensed skill for Claude Code, Codex, OpenClaw, Hermes and other Agent Skills-compatible agents that finds and removes common AI writing patterns in English text, with a rewrite mode that edits in up to two passes, a detect-only mode that separates real problems from judgment calls, voice profiles and a bundled npm detector.
+- [peon-ping](https://agentscouthq.com/tools/peon-ping.html) (added 2026-11-10): peon-ping is an MIT-licensed notifier that plays game character voice lines, from Warcraft, StarCraft, Portal, Zelda and more, and shows bold on-screen banners when an AI coding agent finishes or needs permission, so you do not lose time after tabbing away; it works with Claude Code, Codex, Cursor, Copilot, Windsurf, OpenCode, Kiro and many others, and includes an MCP server so the agent can pick its own sound.
+- [bb](https://agentscouthq.com/tools/bb.html) (added 2026-11-10): bb is an MIT-licensed agentic IDE that can control, customise and automate itself, which you drive from its desktop app, web app, CLI or HTTP API; work runs in threads you can watch live, steer at any point or hand to another agent. The macOS Apple Silicon app is the main build, with alpha Linux and Windows versions and an npx option.
+- [obsidian-second-brain](https://agentscouthq.com/tools/obsidian-second-brain.html) (added 2026-11-10): obsidian-second-brain is an MIT-licensed setup that turns an Obsidian vault of plain Markdown files into persistent memory shared by Claude Code, Codex, Cursor, Grok Bot and other agents, rewriting existing pages as new sources come in rather than just appending; its Crew feature gives several agents one shared logbook of finished jobs in any folder, where a lesson becomes a rule only after a human approves it.
+- [HAPI](https://agentscouthq.com/tools/hapi.html) (added 2026-11-10): HAPI is an AGPL-3.0, local-first app that wraps official coding-agent sessions such as Claude Code, Codex, Cursor Agent, OpenCode, Copilot and Kimi and lets you control them remotely from native iOS and Android apps, a web app or a Telegram Mini App, so you can approve requests with one tap, run terminal commands from your phone, dictate by voice and switch between desk and phone without restarting the session.
+- [DevSpace](https://agentscouthq.com/tools/devspace.html) (added 2026-11-10): DevSpace is an MIT-licensed local layer that lets ChatGPT, Claude, Grok Bot, OpenClaw and Hermes, acting as MCP hosts, open a workspace on your own machine, edit files, run tests and show a diff for review through a tunnel you control, and lets one coding agent hand work to others such as Codex, Claude Code, OpenCode, Cursor or Copilot as subagents in separate git worktrees, using the CLIs and subscriptions you already have.
+- [OpenCreator](https://agentscouthq.com/tools/opencreator.html) (added 2026-11-10): OpenCreator, formerly KrillinAI, is an Apache-2.0 workspace for creators that runs locally and brings reusable skills and agents together for scripts, video, images, voice, translation and editing, building on its original strength of translating and dubbing videos into more than 120 languages, with a desktop app.
+- [TrendRadar](https://agentscouthq.com/tools/trendradar.html) (added 2026-11-10): TrendRadar is a GPL-3.0 trending-news assistant that you can deploy in minutes with Docker, locally or on Cloudflare; it gathers hot lists and RSS feeds from many platforms, filters them by your keywords or with AI, adds AI analysis and translation, and pushes alerts to WeChat Work, Feishu, Telegram, Slack, ntfy, Bark or email, with an MCP server so AI clients can query the news. Its main docs are in Chinese.
+- [App Store Screenshots (agent skill)](https://agentscouthq.com/tools/app-store-screenshots-agent-skill.html) (added 2026-11-10): App Store Screenshots is an MIT-licensed skill that has a coding agent scaffold a Next.js editor for App Store and Google Play marketing screenshots, with real device frames for iPhone, iPad, Mac, Apple Watch, Android and more, captions and graphics that can span adjacent slides, project state saved to a JSON file in git, and one-click export of PNG bundles at the exact store sizes.
+- [PM Skills Marketplace](https://agentscouthq.com/tools/pm-skills-marketplace.html) (added 2026-11-10): PM Skills Marketplace by Paweł Huryn is an MIT-licensed set of 72 product-management skills and 42 chained workflows in nine plugins for Claude Code and Cowork, with commands like /discover, /strategy, /write-prd, /plan-launch and /north-star that walk you through established discovery, prioritisation, strategy and launch frameworks step by step.
+- [Agentic Awesome Skills](https://agentscouthq.com/tools/agentic-awesome-skills.html) (added 2026-11-10): Agentic Awesome Skills, formerly Antigravity Awesome Skills, is a library of more than 2,900 installable SKILL.md playbooks for Claude Code, Codex, Cursor, Gemini CLI and other coding agents, with AAS Core, a tool that lets Codex or Claude search the full local catalog, record the skills it picks and preview a plan before changing your project; the code is MIT and imported skills keep their own licences.
+- [rea-video](https://agentscouthq.com/tools/rea-video.html) (added 2026-11-10): rea-video is an Apache-2.0 CLI and agent skill that reverse-engineers a video shot by shot, judging whether each part was filmed, AI-generated or coded, and explaining how to remake it; you ask Claude Code, Codex or another agent to install it and break down a file, and it needs ffmpeg and Python 3.10 or later.
+- [GPT-Load](https://agentscouthq.com/tools/gpt-load.html) (added 2026-11-10): GPT-Load is an MIT-licensed, self-hosted AI gateway written in Go that puts many API keys and subscription accounts across model providers behind one endpoint, with traffic scheduling, automatic failover when a key or channel fails, request logs and usage accounting, and it ships as a Docker image.
+- [Claurst](https://agentscouthq.com/tools/claurst.html) (added 2026-11-10): Claurst is a GPL-3.0 terminal coding agent written in Rust that began as a clean-room reimplementation of Claude Code's behaviour and now works with several model providers, with a rich TUI, plugins, hooks, chat forking, memory consolidation, per-command approvals and, on macOS, a sandbox that limits shell writes to the workspace and blocks network by default; it has no telemetry and is in beta.
+- [CodexBar](https://agentscouthq.com/tools/codexbar.html) (added 2026-11-10): CodexBar is an MIT-licensed macOS menu bar app, with a Linux desktop version, that keeps the usage limits of AI coding providers such as Codex and Claude Code in view, showing session, weekly and monthly windows with countdowns to each reset, credit balances, spend and live provider incident badges, so you can tell whether there is room to start a long agent task; it reuses existing local sign-ins rather than asking for a new login.
+- [RouteMux](https://agentscouthq.com/tools/routemux.html) (added 2026-11-10): RouteMux is an AI gateway with one OpenAI-compatible API and key for hundreds of text, image and video models from OpenAI, MiniMax, xAI and others, routed across redundant providers so that only successful calls are billed; there is no subscription, you pay from a prepaid, refundable balance, and many models are priced below list.
+- [Bad Times AI](https://agentscouthq.com/tools/bad-times-ai.html) (added 2026-11-10): Bad Times AI, from LipsyncX, swaps you into the 20-second "Bad Times" meme clip from one uploaded photo, keeping the raised-palm, pointed-finger performance and the original audio, so there is no video or sound file to upload; it runs on LipsyncX credits.
+- [British Accent Generator](https://agentscouthq.com/tools/british-accent-generator.html) (added 2026-11-10): British Accent Generator is a text-to-speech tool with 315 British voices across Received Pronunciation, Scottish, Welsh and Northern Irish accents and a range of ages, which lets you preview each voice on your own text and download the audio.
+- [Nova AI Trader](https://agentscouthq.com/tools/nova-ai-trader.html) (added 2026-11-10): Nova AI Trader is a Windows desktop app that connects to your own exchange API keys on MEXC, KuCoin, Bitget, Kraken and others and trades crypto automatically within the risk limits you set, so your funds stay in your exchange account; it costs €39 a month or €390 a year, and crypto trading can lose all the money you put in.
+- [AnyCrawler](https://agentscouthq.com/tools/anycrawler.html) (added 2026-11-10): AnyCrawler is a web data API for AI agents and RAG that searches the web, turns pages into clean Markdown, renders JavaScript-heavy pages and captures screenshots, and you can try it on a public URL without signing up; the free plan includes one-time starter credits.
+- [Loquendo](https://agentscouthq.com/tools/loquendo.html) (added 2026-11-10): Loquendo is an online text-to-speech studio for Spanish and English that reads your script in a chosen narrator voice, lets you listen and download the result as an MP3, and also offers voice cloning and audiobook narration.
+- [AgentSEO](https://agentscouthq.com/tools/agentseo.html) (added 2026-11-10): AgentSEO is an SEO data API for building SEO agents, returning compact SERP evidence for rank tracking, content gaps, local visibility and AI search workflows over REST or MCP; a free tier has 100 live credits and paid plans start at $9 a month with a hard spending cap.
+- [MoZhu](https://agentscouthq.com/tools/mozhu.html) (added 2026-11-10): MoZhu is a Chinese-language site that calculates a BaZi (four pillars) birth chart, almanac and name suggestions from your birth date with rule-based code, then adds an AI-written reading, presented as cultural entertainment rather than advice; the charts are free, with one free AI reading a day and paid deeper readings.
+- [SimilarTube](https://agentscouthq.com/tools/similartube.html) (added 2026-11-10): SimilarTube finds YouTube channels similar to one you paste in, matched by content, niche and audience with AI search, and shows channel stats and public business emails for influencer outreach; plans start with a $1.99 three-day trial, then $25.90 a month.
+- [ImageToImageAI](https://agentscouthq.com/tools/imagetoimageai.html) (added 2026-11-10): ImageToImageAI restyles your own photos: you upload up to five JPG, PNG or WebP images, describe what to change and what to keep, such as the background or an outfit, and get a new image in about a minute from models like GPT Image 2, Nano Banana and Ideogram; sign-up gives 10 free credits.
+- [Wishora](https://agentscouthq.com/tools/wishora.html) (added 2026-11-10): Wishora writes a personalised song from a name and three small details you remember about someone, with music generated by Suno, and lets you hear a free 30-second preview before you pay $39 once for the full song and MP3.
+- [PayGuard (YourAITools)](https://agentscouthq.com/tools/payguard-youraitools.html) (added 2026-11-10): PayGuard, from YourAITools, is an x402 pay-per-call API that lets an agent check a crypto wallet address against the US Treasury OFAC SDN sanctions list before it pays, returning matches, programs and the list date for $0.001 USDC a check (or $0.01 for 50) on Base, Polygon, Arbitrum or Solana, with no API key or signup; it is informational screening, not legal advice.
+- [Taraki](https://agentscouthq.com/tools/taraki.html) (added 2026-11-10): Taraki is an applicant tracking and recruiting system built for companies hiring in Pakistan, which helps teams post jobs, reach candidates, screen applicants with AI and manage hiring in one place; pricing is by enquiry.
+- [MusiCraft AI](https://agentscouthq.com/tools/musicraft-ai.html) (added 2026-11-10): MusiCraft AI's Stem Splitter separates a song into vocals, drums, bass, guitar, piano and dozens of other stems, with 75 separation modes, from an uploaded MP3, WAV, M4A or FLAC file; the free plan handles tracks up to 10 minutes, and paid plans take files up to 60 minutes.
+- [EzImageAI](https://agentscouthq.com/tools/ezimageai.html) (added 2026-11-10): EzImageAI is a prompt-driven photo editor: you upload an image, describe the change you want, such as a new background or a holiday wallpaper, pick a model and see the credit cost before it runs; monthly plans start at about $9.50 a month billed yearly.
+- [EzAiRapVideo](https://agentscouthq.com/tools/ezairapvideo.html) (added 2026-11-10): EzAiRapVideo turns one or two photos, or just a text idea, into a rap performance video in your browser: you add your own lyrics or an occasion, pick a stage and style, and download the clip; credit packs start at $6.99 for one video, with monthly plans too.
+- [Kavel](https://agentscouthq.com/tools/kavel.html) (added 2026-11-10): Kavel is a browser-based AI video and image generator that gives one place to run models such as Seedance, Veo, Kling, Wan and Nano Banana, with up to 4K clips with sound, trend templates and a free daily allowance you can use without a card; credit packs start at $19.90 and a yearly plan is $100.
+- [WhimKid](https://agentscouthq.com/tools/whimkid.html) (added 2026-11-10): WhimKid is an AI storybook generator that turns an idea, a photo or a child's name into an illustrated children's book with pages you can edit and export as a PDF, in several art styles; credit plans start at $9.90 a month.
+- [Morphic](https://agentscouthq.com/tools/morphic.html) (added 2026-11-10): Morphic is an AI workspace for hands-on Airbnb hosts in which its agent, Morph, answers routine guest messages, coordinates cleaners and other team members over WhatsApp, and sends sensitive or risky requests back to the host; it costs about $9.90 per listing per month after a 21-day trial that needs no card.
+- [Christmas Rap Video Generator](https://agentscouthq.com/tools/christmas-rap-video-generator.html) (added 2026-11-10): Christmas Rap Video Generator, from AI Rap Video Creator, turns one portrait into a personal holiday rap greeting: it writes festive lyrics or polishes yours, puts you in a Christmas scene and gives you a video to download and share.
+- [VeritasChain Protocol](https://agentscouthq.com/tools/veritaschain-protocol.html) (added 2026-11-10): VeritasChain Protocol comes from the VeritasChain Standards Organization, which publishes VAP, an open framework for tamper-evident "flight recorder" logs of AI decisions and actions, and VCP, its version for algorithmic trading; the site has the specifications, an SDK, sample evidence and a browser demo for verifying a record.
+- [Bicep Heart AI Video Generator](https://agentscouthq.com/tools/bicep-heart-ai-video-generator.html) (added 2026-11-10): Bicep Heart AI Video Generator turns one portrait into a seven-second clip of the "Bicep Heart" pose trend for TikTok, Reels and Shorts, with two templates, 9:16, 1:1 or 16:9 output and 768p or 2K quality; one-time credit packs start at $6.99 for about two videos.
+- [1ToolRing](https://agentscouthq.com/tools/1toolring.html) (added 2026-11-10): 1ToolRing gives an AI agent one key and one prepaid balance for thousands of paid tools such as web search, maps, shopping, market data, page fetching and image generation; you paste its llms.txt into Claude Code, Codex, Cursor or ChatGPT to set it up, top up from $1, and each call is billed per use, with failed calls free.
+- [KingAI](https://agentscouthq.com/tools/kingai.html) (added 2026-11-10): King AI is an online AI video and image generator that makes short cinematic clips from a text prompt, a still image, keyframes or mixed references, aimed at sellers animating product shots and creators making short-form posts; monthly credit plans start at about $12 a month billed yearly.
+- [Irmu](https://agentscouthq.com/tools/irmu.html) (added 2026-11-10): Irmu is a web scraping API for developers that renders JavaScript, captures screenshots, gets past common anti-bot walls and returns structured JSON extracted with AI, and it ships an MCP server so Claude, ChatGPT, Cursor and Lovable can call it directly; a free plan gives 200 credits a month, paid plans start at $19, and only successful requests use credits.
 - [AIPPT.org](https://agentscouthq.com/tools/aippt-org.html) (added 2026-11-10): AIPPT.org is a free-to-try PowerPoint toolkit that merges and compresses decks in your browser without uploading files, turns PDFs into editable slides, and uses AI to draft a native .pptx presentation from a topic, pasted text, Markdown or a PDF, with paid credits or a Pro plan to download the full deck.
 - [Gis Mcp](https://agentscouthq.com/tools/gis-mcp.html) (added 2026-11-10): Gis Mcp is an MCP server that gives agents a way to handle implementation that connects Large Language Models (LLMs) to GIS operations using GIS.
 - [Engrim](https://agentscouthq.com/tools/engrim.html) (added 2026-11-10): Engrim is an MCP server that gives agents a way to handle universal Cross-Model Episodic Memory Standard.
@@ -1391,6 +1433,7 @@ Catalog last checked: 2026-11-10 (Pacific)
 
 - [Agent-Reach alternatives](https://agentscouthq.com/best/agent-reach-alternatives.html)
 - [Agent Skills (Addy Osmani) alternatives](https://agentscouthq.com/best/agent-skills-addy-osmani-alternatives.html)
+- [Agentic Awesome Skills alternatives](https://agentscouthq.com/best/agentic-awesome-skills-alternatives.html)
 - [AgentScope alternatives](https://agentscouthq.com/best/agentscope-alternatives.html)
 - [Agno alternatives](https://agentscouthq.com/best/agno-alternatives.html)
 - [Aider alternatives](https://agentscouthq.com/best/aider-alternatives.html)
@@ -1500,6 +1543,7 @@ Catalog last checked: 2026-11-10 (Pacific)
 - [Strix alternatives](https://agentscouthq.com/best/strix-alternatives.html)
 - [Tabby alternatives](https://agentscouthq.com/best/tabby-alternatives.html)
 - [Taste Skill alternatives](https://agentscouthq.com/best/taste-skill-alternatives.html)
+- [TrendRadar alternatives](https://agentscouthq.com/best/trendradar-alternatives.html)
 - [UI-TARS-desktop alternatives](https://agentscouthq.com/best/ui-tars-desktop-alternatives.html)
 - [UI UX Pro Max alternatives](https://agentscouthq.com/best/ui-ux-pro-max-alternatives.html)
 - [Understand-Anything alternatives](https://agentscouthq.com/best/understand-anything-alternatives.html)
@@ -1622,6 +1666,7 @@ Catalog last checked: 2026-11-10 (Pacific)
 - [Best AI agents for building apps without code (2026)](https://agentscouthq.com/tasks/building-apps-without-code.html)
 - [Agent frameworks and SDKs for building MCP servers](https://agentscouthq.com/tasks/building-mcp-servers-agent-frameworks.html)
 - [Best AI agents for building MCP servers (2026)](https://agentscouthq.com/tasks/building-mcp-servers.html)
+- [Agent payment tools for voice agents](https://agentscouthq.com/tasks/building-voice-agents-agent-payments.html)
 - [Best tools for building voice agents (2026)](https://agentscouthq.com/tasks/building-voice-agents.html)
 - [Sales and lead generation tools for running business operations](https://agentscouthq.com/tasks/business-automation-sales-agents.html)
 - [Best AI agents for running business operations (2026)](https://agentscouthq.com/tasks/business-automation.html)

@@ -1,86 +1,86 @@
 {
-  "generated_at": "2026-11-10",
-  "source": "lab-unthrottled-benchmark",
-  "method": "cwv_seo_benchmark.measure_url",
-  "throttle": "none",
-  "field_cwv": false,
-  "thresholds": {
-    "lcp_ms": 2500,
-    "cls": 0.1,
-    "ttfb_ms": 800
+ "generated_at": "2026-11-10",
+ "source": "lab-unthrottled-benchmark",
+ "method": "cwv_seo_benchmark.measure_url",
+ "throttle": "none",
+ "field_cwv": false,
+ "thresholds": {
+  "lcp_ms": 2500,
+  "cls": 0.1,
+  "ttfb_ms": 800
+ },
+ "scope": {
+  "artifact_date": "2026-11-10",
+  "artifact_tools": 3491
+ },
+ "subject": "current-live",
+ "note": "https://agentscouthq.com measured 2026-11-10 before this push with headless Chrome, cache disabled, wait=load. This is production main before the morning push, not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
+ "not_measured": [],
+ "targets": [
+  "https://agentscouthq.com/",
+  "https://agentscouthq.com/bot-store/",
+  "https://agentscouthq.com/videos/",
+  "https://agentscouthq.com/bot-templates/",
+  "https://agentscouthq.com/mcp/",
+  "https://agentscouthq.com/tools/noteboxd.html",
+  "https://agentscouthq.com/submit.html?notrack=1"
+ ],
+ "pages": [
+  {
+   "url": "https://agentscouthq.com/",
+   "lcp_ms": 932.0,
+   "cls": 0.0229023059992269,
+   "ttfb_ms": 522.8000000007451,
+   "grade": "PASS",
+   "wait": "load"
   },
-  "scope": {
-    "artifact_date": "2026-11-10",
-    "artifact_tools": 3449
+  {
+   "url": "https://agentscouthq.com/bot-store/",
+   "lcp_ms": 308.0,
+   "cls": 0.0007504750387695237,
+   "ttfb_ms": 103.10000000149012,
+   "grade": "PASS",
+   "wait": "load"
   },
-  "subject": "current-live",
-  "note": "https://agentscouthq.com measured 2026-11-09 before this push with headless Chrome, cache disabled, wait=load (second run; the first run ~2 min earlier read homepage TTFB 1113 ms / LCP 1568 ms, kept at /tmp/cwv1109/cwv-live-run1.json). This is production main efea6f66e4 (2,366-tool catalog), not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
-  "not_measured": [],
-  "targets": [
-    "https://agentscouthq.com/",
-    "https://agentscouthq.com/bot-store/",
-    "https://agentscouthq.com/videos/",
-    "https://agentscouthq.com/bot-templates/",
-    "https://agentscouthq.com/mcp/",
-    "https://agentscouthq.com/tools/noteboxd.html",
-    "https://agentscouthq.com/submit.html?notrack=1"
-  ],
-  "pages": [
-    {
-      "url": "https://agentscouthq.com/",
-      "lcp_ms": 476.0,
-      "cls": 0.08541071086457361,
-      "ttfb_ms": 102.19999992847443,
-      "grade": "PASS",
-      "wait": "load"
-    },
-    {
-      "url": "https://agentscouthq.com/bot-store/",
-      "lcp_ms": 412.0,
-      "cls": 0.0,
-      "ttfb_ms": 93.0,
-      "grade": "PASS",
-      "wait": "load"
-    },
-    {
-      "url": "https://agentscouthq.com/videos/",
-      "lcp_ms": 428.0,
-      "cls": 0.0026377192177520184,
-      "ttfb_ms": 105.70000004768372,
-      "grade": "PASS",
-      "wait": "load"
-    },
-    {
-      "url": "https://agentscouthq.com/bot-templates/",
-      "lcp_ms": 416.0,
-      "cls": 0.0026377192177520184,
-      "ttfb_ms": 96.89999997615814,
-      "grade": "PASS",
-      "wait": "load"
-    },
-    {
-      "url": "https://agentscouthq.com/mcp/",
-      "lcp_ms": 376.0,
-      "cls": 0.0026377192177520184,
-      "ttfb_ms": 107.40000009536743,
-      "grade": "PASS",
-      "wait": "load"
-    },
-    {
-      "url": "https://agentscouthq.com/tools/noteboxd.html",
-      "lcp_ms": 416.0,
-      "cls": 0.00038841530151238616,
-      "ttfb_ms": 87.5,
-      "grade": "PASS",
-      "wait": "load"
-    },
-    {
-      "url": "https://agentscouthq.com/submit.html?notrack=1",
-      "lcp_ms": 416.0,
-      "cls": 0.0026377192177520184,
-      "ttfb_ms": 120.30000007152557,
-      "grade": "PASS",
-      "wait": "load"
-    }
-  ]
+  {
+   "url": "https://agentscouthq.com/videos/",
+   "lcp_ms": 532.0,
+   "cls": 0.0007504750387695237,
+   "ttfb_ms": 167.69999999925494,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "https://agentscouthq.com/bot-templates/",
+   "lcp_ms": 944.0,
+   "cls": 0.0007504750387695237,
+   "ttfb_ms": 112.89999999850988,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "https://agentscouthq.com/mcp/",
+   "lcp_ms": 320.0,
+   "cls": 0.0007504750387695237,
+   "ttfb_ms": 129.5,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "https://agentscouthq.com/tools/noteboxd.html",
+   "lcp_ms": 688.0,
+   "cls": 0.001334539852522872,
+   "ttfb_ms": 99.19999999925494,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "https://agentscouthq.com/submit.html?notrack=1",
+   "lcp_ms": 380.0,
+   "cls": 0.005687311714249395,
+   "ttfb_ms": 109.80000000074506,
+   "grade": "PASS",
+   "wait": "load"
+  }
+ ]
 }
