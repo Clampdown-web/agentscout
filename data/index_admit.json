@@ -1049,7 +1049,12 @@
   "ponytail": "2026-11-09",
   "taste-skill": "2026-11-09",
   "ui-ux-pro-max": "2026-11-09",
-  "aippt-org": "2026-11-10"
+  "aippt-org": "2026-11-10",
+  "oh-my-openagent-omo": "2026-11-10",
+  "chat2db": "2026-11-10",
+  "archify": "2026-11-10",
+  "claude-code-templates": "2026-11-10",
+  "impeccable": "2026-11-10"
  },
  "slots": {
   "2026-11-04": [],
@@ -1058,9 +1063,18 @@
   "2026-11-07": [],
   "2026-11-08": [],
   "2026-11-09": [],
-  "2026-11-10": [
-   "aippt-org"
-  ]
+  "2026-11-10": []
  },
- "queued": []
+ "queued": [],
+ "hold_released_slugs": [
+  "archify",
+  "chat2db",
+  "claude-code-templates",
+  "impeccable",
+  "oh-my-openagent-omo"
+ ],
+ "hold_release_day": "2026-11-10",
+ "hold_released": [
+  "2026-11-10"
+ ]
 }

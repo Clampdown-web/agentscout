@@ -445,20 +445,18 @@ def tune_submit_paint(s):
     wrapped='<script>document.addEventListener("DOMContentLoaded",function(){'+boot[len("<script>"):-len("</script>")]+'});</script>'
     if boot in s and wrapped not in s:
         s=s.replace(boot, wrapped, 1)
-    # styles.css blocks the lede. The rules the first screen actually uses are inlined
-    # from submit-critical.css. The full file loads after first paint, so it is not
-    # on the LCP path, and no-JS still gets it from the noscript link.
+    # Critical rules cover the first screen. styles.css stays a blocking link:
+    # loading it after first paint moved the banner, the logo, and the short-viewport gutters.
     if 'id="submit-critical"' not in s:
         css=open("submit-critical.css",encoding="utf-8").read().replace("</","<\\/")
         s=s.replace("</head>", f'<style id="submit-critical">{css}</style></head>', 1)
-    def _defer_sheet(m):
-        href=m.group(1)
-        return ('<noscript><link rel="stylesheet" href="%s"></noscript>'
-                '<script id="submit-css">(function(){function go(){if(go.ran)return;go.ran=1;var l=document.createElement("link");l.rel="stylesheet";l.href="%s";document.head.appendChild(l)}'
-                'try{var po=new PerformanceObserver(function(list){var es=list.getEntries();for(var i=0;i<es.length;i++)if(es[i].name==="first-contentful-paint")go()});po.observe({type:"paint",buffered:true})}catch(e){}'
-                'addEventListener("load",function(){setTimeout(go,5000)})})()</script>')%(href,href)
-    if 'id="submit-css"' not in s:
-        s=re.sub(r'<link rel="stylesheet" href="(styles\.css\?v=\d+)">', _defer_sheet, s, count=1)
+    s=re.sub(
+        r'<noscript><link rel="stylesheet" href="(styles\.css\?v=\d+)"></noscript><script id="submit-css">.*?</script>',
+        r'<link rel="stylesheet" href="\1">',
+        s,
+        count=1,
+        flags=re.S,
+    )
     # Yield after the lede so the first paint is not stuck behind the rest of the form.
     if 'id="submit-paint"' not in s:
         s=s.replace('</p><!--nl:inline-->','</p><script id="submit-paint">void 0</script><!--nl:inline-->',1)
@@ -484,7 +482,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611111430"  # bump when app.js/styles.css/consent.js change
+ASSET_V = "202611111800"  # bump when app.js/styles.css/consent.js change
 def stamp(s):
     """Put the current styles.css/app.js cache-bust on a page a generator just wrote.
 

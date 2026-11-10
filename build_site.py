@@ -374,7 +374,6 @@ _bapi_counts.build_commerce_files(json.load(open("api/tools.json", encoding="utf
 build_sponsor.page(t)
 build_tasks.sitewide(t)  # sponsor.html was just rewritten; put the shared scripts back
 if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).returncode: print("BUILD FAILED: relevance check (see data/relevance_report.json)"); _sys.exit(1)
-if _sp.run([_sys.executable,"scripts/check_counts.py"]).returncode: print("BUILD FAILED: count check (see scripts/check_counts.py)"); _sys.exit(1)
 
 # Thin tool pages and the daily index cap. Runs after the exit hooks that rewrite HTML and sitemap
 # (featured, GA, lastmod) and before Pagefind, which only indexes sitemap URLs that are not noindex.
@@ -519,6 +518,17 @@ def _quality_finish():
     # frames and the cache buster have to use that page total, not the pre-thin one.
     import build_seo_new as _bsn_final
     _bsn_final.sync_animations(t)
+    # Later passes rebuild compare/best rows and a few heads. Logos and charset
+    # have to be last, or the predeploy gate sees the pre-fix tree.
+    import build_listlogos
+    build_listlogos.run(t)
+    build_logocheck.listings_gate()
+    _bsn_final.charset_first()
+    # Count check runs after catalog-only rows leave the sitemap. Checking earlier
+    # fails the build on those URLs before the thin-page rule can drop them.
+    if _sp.run([_sys.executable,"scripts/check_counts.py"]).returncode:
+        print("BUILD FAILED: count check (see scripts/check_counts.py)")
+        _sys.exit(1)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)
 # The thin-page filter is also the last step of the main process. An atexit hook that
