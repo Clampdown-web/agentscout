@@ -9559,5 +9559,3874 @@
 "vfx-compositing",
 "video-editing",
 "images-design"
+],
+"netdata": [
+"observability",
+"mcp-servers"
+],
+"reactive-resume": [
+"mcp-servers"
+],
+"posthog-mcp-server": [
+"mcp-servers"
+],
+"seleniumbase-mcp": [
+"web-scraping",
+"browser-automation",
+"mcp-servers"
+],
+"nhost": [
+"mcp-servers"
+],
+"openscreen": [
+"computer-use",
+"mcp-servers",
+"ide-agents",
+"video-editing",
+"video"
+],
+"jobspy": [
+"voice-phone",
+"mcp-servers"
+],
+"kubefwd": [
+"mcp-servers",
+"local-models"
+],
+"semiotic": [
+"mcp-servers",
+"dialogue-cleanup"
+],
+"solana-mcp-by-vybe": [
+"trading-agents",
+"agent-wallets",
+"mcp-servers",
+"agent-frameworks"
+],
+"letsfg": [
+"voice-phone",
+"mcp-servers"
+],
+"aktools": [
+"voice-phone",
+"mcp-servers"
+],
+"obsei": [
+"mcp-servers"
+],
+"tradememory-protocol": [
+"trading-agents",
+"agent-memory",
+"mcp-servers",
+"vfx-compositing"
+],
+"emailmd": [
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"arcadedb-mcp-server": [
+"text-to-sql",
+"vector-rag",
+"mcp-servers"
+],
+"bernstein": [
+"guardrails",
+"mcp-servers"
+],
+"agentrq": [
+"mcp-servers"
+],
+"cloudbase": [
+"mcp-servers"
+],
+"safedep-vet-mcp": [
+"mcp-servers"
+],
+"openpost": [
+"voice-phone",
+"mcp-servers",
+"workflow-automation"
+],
+"trypost": [
+"voice-phone",
+"marketing-agents",
+"mcp-servers"
+],
+"opentakeoff": [
+"planning-tasks",
+"mcp-servers"
+],
+"anythingmcp": [
+"text-to-sql",
+"mcp-gateways",
+"mcp-servers"
+],
+"yutu": [
+"mcp-servers",
+"workflow-automation"
+],
+"attestix": [
+"guardrails",
+"agent-auth",
+"mcp-servers"
+],
+"sandbase-harness": [
+"mcp-servers",
+"agent-frameworks"
+],
+"marmot-data-catalog": [
+"mcp-servers"
+],
+"claude-ops": [
+"chat-app-agents",
+"agent-auth",
+"mcp-servers",
+"vfx-compositing"
+],
+"oxynote": [
+"mcp-servers"
+],
+"octocode": [
+"codebase-context",
+"mcp-servers"
+],
+"telemem": [
+"agent-memory",
+"mcp-servers",
+"local-models"
+],
+"flyto-core": [
+"mcp-servers"
+],
+"openaccountants": [
+"mcp-servers",
+"rules-config"
+],
+"orcareplay": [
+"voice-phone",
+"mcp-servers"
+],
+"code-context-engine": [
+"codebase-context",
+"voice-phone",
+"mcp-servers"
+],
+"beever-atlas": [
+"codebase-context",
+"vector-rag",
+"mcp-servers"
+],
+"mcp-fiscal-brasil": [
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"shaft-mcp": [
+"browser-automation",
+"mcp-servers",
+"local-models"
+],
+"network-sketcher-local-mcp": [
+"mcp-servers",
+"local-models",
+"images-design"
+],
+"bagel": [
+"mcp-servers"
+],
+"flutter-skill": [
+"testing-qa",
+"mcp-servers"
+],
+"cotal-actions-cotal-ai": [
+"mcp-servers"
+],
+"learn-claude-code": [
+"agent-frameworks"
+],
+"openclaude": [],
+"learn-harness-engineering": [
+"agent-frameworks"
+],
+"camofox-browser": [
+"browser-automation"
+],
+"trek": [
+"mcp-servers"
+],
+"metaclaw": [],
+"natively-cluely-ai-assistant": [],
+"kite": [
+"observability"
+],
+"bitterbot-desktop": [
+"computer-use"
+],
+"fulling": [],
+"tourmind-booking-skills": [
+"testing-qa",
+"rules-config"
+],
+"paca": [],
+"flint-chart": [
+"mcp-servers",
+"images-design"
+],
+"team9": [],
+"nano-banana-pro-prompts-recommend-skill": [],
+"opengui": [
+"planning-tasks",
+"voice-phone",
+"agent-frameworks",
+"mobile"
+],
+"textbee": [
+"mcp-gateways",
+"mcp-servers"
+],
+"fim-one": [],
+"cortex": [
+"vector-rag",
+"mcp-servers"
+],
+"user-research-skill": [
+"testing-qa",
+"research-agents"
+],
+"silex": [
+"mcp-servers",
+"images-design"
+],
+"thesvg": [
+"voice-phone",
+"mcp-servers",
+"agent-frameworks"
+],
+"openroom": [
+"browser-automation",
+"computer-use"
+],
+"solon": [
+"mcp-servers",
+"agent-frameworks"
+],
+"octo-web": [
+"computer-use"
+],
+"nunu": [
+"mcp-servers"
+],
+"innovation-lab-examples": [
+"multi-agent"
+],
+"mysti": [
+"parallel-orchestration",
+"ide-agents"
+],
+"dockit": [
+"text-to-sql",
+"computer-use"
+],
+"fusio": [
+"mcp-servers"
+],
+"ai-prompts": [
+"rules-config"
+],
+"rulego": [
+"mcp-servers",
+"multi-agent",
+"agent-frameworks"
+],
+"knowledge-agent-template": [
+"vector-rag"
+],
+"mcpjungle": [
+"mcp-servers"
+],
+"openjudge": [
+"evals",
+"agent-frameworks"
+],
+"phi": [
+"video-editing"
+],
+"paperdebugger": [
+"mcp-servers",
+"multi-agent",
+"ide-agents",
+"video-editing"
+],
+"masteragent": [
+"local-models",
+"mastering"
+],
+"data-api-builder": [
+"text-to-sql",
+"mcp-servers"
+],
+"filtmall-shopping-skill": [
+"agent-payments"
+],
+"heym": [
+"voice-phone",
+"mcp-servers"
+],
+"windowsagentarena": [],
+"chunkhound": [
+"mcp-servers"
+],
+"memind": [
+"agent-memory"
+],
+"ima2-gen": [
+"local-models",
+"images-design"
+],
+"local-ci": [
+"local-models"
+],
+"sourcey": [
+"vector-rag",
+"mcp-servers"
+],
+"prismercloud": [
+"mcp-servers"
+],
+"aiflowy": [],
+"pilot": [],
+"stirrup": [
+"agent-frameworks"
+],
+"openyak": [],
+"better-chatbot": [
+"mcp-servers"
+],
+"python-utcp": [],
+"slides-maker": [
+"research-agents",
+"video-editing"
+],
+"dexto": [
+"agent-frameworks"
+],
+"casbin-gateway": [
+"mcp-gateways"
+],
+"openops": [
+"mcp-servers",
+"workflow-automation",
+"no-code-apps"
+],
+"server": [
+"email-agents",
+"mcp-servers",
+"local-models"
+],
+"agentty": [
+"terminal-agents"
+],
+"mcp": [
+"mcp-servers"
+],
+"oneshot-gtm": [],
+"wassette": [
+"mcp-servers"
+],
+"aish": [
+"terminal-agents"
+],
+"blender-plugin": [
+"mcp-servers",
+"video",
+"images-design"
+],
+"plugnmeet-server": [
+"local-models",
+"video"
+],
+"ruby-sdk": [
+"mcp-servers",
+"agent-frameworks",
+"vfx-compositing"
+],
+"franklin": [
+"agent-wallets"
+],
+"skills": [
+"video",
+"rules-config"
+],
+"geoagent": [
+"images-design"
+],
+"browser-use-mcp-server": [
+"voice-phone",
+"browser-automation",
+"mcp-servers"
+],
+"clawwork": [],
+"golf": [
+"mcp-servers",
+"agent-frameworks"
+],
+"hob": [
+"local-models"
+],
+"yokai": [
+"observability",
+"mcp-servers",
+"agent-frameworks"
+],
+"catchme": [],
+"rssh": [
+"mobile"
+],
+"aderyn": [
+"mcp-servers",
+"ide-agents",
+"video-editing"
+],
+"flock": [],
+"storybloq": [
+"agent-memory",
+"mcp-servers",
+"workflow-automation"
+],
+"flowtrace": [],
+"flux-operator": [
+"mcp-servers"
+],
+"aser": [],
+"bux": [
+"browser-automation"
+],
+"unifiedmodel": [],
+"elementor-mcp": [
+"mcp-servers"
+],
+"dsh-game-studio": [
+"games"
+],
+"trinity": [
+"mcp-servers"
+],
+"velocut": [
+"browser-automation",
+"local-models",
+"ide-agents",
+"video-editing",
+"video"
+],
+"capa": [
+"mcp-servers",
+"rules-config"
+],
+"swarmvault": [
+"codebase-context",
+"vector-rag",
+"mcp-servers",
+"multi-agent",
+"local-models"
+],
+"deepagent-code": [
+"parallel-orchestration",
+"agent-memory"
+],
+"mcp-server-elasticsearch": [
+"mcp-servers"
+],
+"odevio-cli": [
+"terminal-agents",
+"mobile"
+],
+"phibrowser-mac": [
+"browser-automation"
+],
+"swarmclaw": [
+"mcp-servers",
+"multi-agent",
+"agent-frameworks"
+],
+"mira": [
+"penetration-testing",
+"code-review"
+],
+"vibe": [
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"agentseal": [
+"agent-frameworks"
+],
+"kuvasz": [
+"observability",
+"mcp-servers"
+],
+"astron-harness-tutorial": [
+"agent-frameworks"
+],
+"os-clovy": [],
+"lemma-platform": [
+"mcp-servers",
+"agent-frameworks"
+],
+"sdk-js": [
+"email-agents",
+"agent-frameworks"
+],
+"testdriverai": [
+"testing-qa",
+"computer-use",
+"agent-frameworks"
+],
+"kooboo": [],
+"ratel": [
+"mcp-servers"
+],
+"devo": [],
+"caura": [
+"agent-memory",
+"mcp-servers"
+],
+"cortico": [
+"agent-frameworks"
+],
+"blave-agent": [
+"computer-use"
+],
+"codealta": [],
+"unity-mcp-server": [
+"mcp-servers",
+"games"
+],
+"lyrie-ai": [],
+"agent": [
+"mcp-servers",
+"vfx-compositing"
+],
+"concierge": [
+"mcp-servers",
+"agent-frameworks"
+],
+"structurizr": [
+"mcp-servers",
+"images-design"
+],
+"agent-systems-handbook": [],
+"gugu": [],
+"pullmd": [
+"mcp-servers"
+],
+"chmonitor": [
+"observability"
+],
+"memtrace-public": [
+"agent-memory",
+"mcp-servers"
+],
+"acryl": [],
+"lunar": [
+"guardrails",
+"mcp-gateways",
+"mcp-servers"
+],
+"open-vetta": [
+"local-models"
+],
+"agent-desk": [
+"support-agents"
+],
+"notebooklm-skill": [
+"notebooks",
+"research-agents",
+"mcp-servers"
+],
+"open-net-worth": [],
+"qknow": [],
+"r3bl-open-core": [
+"mcp-servers",
+"terminal-agents"
+],
+"red": [
+"ide-agents",
+"video-editing"
+],
+"researchclawbench": [
+"research-agents",
+"evals"
+],
+"govctl": [
+"guardrails",
+"agent-frameworks"
+],
+"director": [
+"mcp-servers"
+],
+"nodecode": [],
+"bitget-wallet-skill": [
+"trading-agents",
+"agent-wallets"
+],
+"bitloops": [],
+"minthcm": [
+"mcp-servers"
+],
+"mixdog": [
+"planning-tasks",
+"token-costs",
+"sales-agents",
+"computer-use",
+"mixing"
+],
+"bitrouter": [],
+"siclaw": [
+"ai-sre",
+"guardrails"
+],
+"ansvisor": [],
+"laradashboard": [
+"observability",
+"mcp-servers"
+],
+"kubeterm": [
+"computer-use",
+"mobile"
+],
+"studio": [
+"parallel-orchestration",
+"voice-phone",
+"mcp-servers"
+],
+"qz-browser-agent": [
+"research-agents",
+"web-scraping",
+"browser-automation",
+"local-models"
+],
+"slashdocs": [
+"vector-rag",
+"mcp-servers"
+],
+"crewai-gui-qt": [
+"workflow-automation",
+"multi-agent"
+],
+"kindly-web-search-mcp-server": [
+"vector-rag",
+"search-apis",
+"mcp-servers"
+],
+"mkagent": [
+"computer-use",
+"local-models",
+"terminal-agents"
+],
+"feedlog": [
+"support-agents"
+],
+"context-engine": [
+"mcp-servers"
+],
+"coddy-agent": [
+"terminal-agents"
+],
+"adminforth": [
+"mcp-servers"
+],
+"weworker": [
+"computer-use"
+],
+"eddi": [
+"mcp-servers"
+],
+"dim0": [],
+"rosetta": [
+"mcp-servers"
+],
+"boltmcp": [
+"mcp-servers"
+],
+"cairn": [
+"penetration-testing",
+"search-apis"
+],
+"tableau-mcp": [
+"mcp-servers"
+],
+"liteflow": [
+"multi-agent"
+],
+"cli": [
+"mcp-servers",
+"terminal-agents"
+],
+"storybook": [
+"vector-rag",
+"mcp-servers"
+],
+"swe-agent": [],
+"continue": [
+"mcp-servers"
+],
+"semgrep": [
+"mcp-servers"
+],
+"xagent": [],
+"apisix": [
+"mcp-gateways",
+"mcp-servers"
+],
+"guardrails": [
+"guardrails",
+"agent-frameworks"
+],
+"instant": [
+"mcp-servers"
+],
+"lingo-dev": [
+"mcp-servers",
+"local-models"
+],
+"vizro": [
+"mcp-servers",
+"agent-frameworks",
+"images-design"
+],
+"connectonion": [],
+"youtube-skills": [
+"subtitles-transcripts",
+"rules-config"
+],
+"foundry": [],
+"moss": [
+"vector-rag"
+],
+"meta-ads-mcp": [
+"marketing-agents",
+"mcp-servers"
+],
+"busabase": [
+"text-to-sql"
+],
+"mcp-nixos": [
+"mcp-servers",
+"vfx-compositing"
+],
+"fazm": [
+"computer-use"
+],
+"mcp-server-airbnb": [
+"voice-phone",
+"mcp-servers"
+],
+"sayna": [
+"voice-phone"
+],
+"code-cli": [
+"terminal-agents"
+],
+"jev-social": [
+"marketing-agents",
+"research-agents",
+"local-models"
+],
+"gpt-pilot": [],
+"mergekit": [],
+"oya-browser": [
+"browser-automation",
+"mcp-servers"
+],
+"mikrotik-mcp": [
+"mcp-servers"
+],
+"no-human": [
+"mcp-servers",
+"local-models"
+],
+"squirrelscan": [
+"testing-qa",
+"marketing-agents",
+"mcp-servers"
+],
+"dexsql": [
+"text-to-sql",
+"mcp-servers",
+"mobile"
+],
+"geolens": [
+"text-to-sql",
+"voice-phone",
+"sandboxes",
+"mcp-servers",
+"local-models"
+],
+"crowdstrike-falcon-mcp-server": [
+"mcp-servers"
+],
+"superlocalmemory": [
+"agent-memory",
+"vector-rag",
+"mcp-servers",
+"local-models"
+],
+"qveris": [
+"voice-phone",
+"mcp-servers"
+],
+"mcp-video": [
+"mcp-servers",
+"video"
+],
+"mcp-victoriametrics": [
+"mcp-servers"
+],
+"servicenow-mcp-server-nowaikit": [
+"mcp-servers"
+],
+"node9": [
+"voice-phone",
+"mcp-servers"
+],
+"mneme-memory": [
+"agent-memory",
+"mcp-servers",
+"local-models"
+],
+"glif": [
+"voice-phone",
+"mcp-servers",
+"video",
+"images-design"
+],
+"remote-desktop-commander": [
+"computer-use",
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"oh-my-cassette": [
+"mcp-servers",
+"video-editing",
+"video"
+],
+"aisix-ai-gateway": [
+"mcp-gateways",
+"mcp-servers"
+],
+"umouse-mcp": [
+"voice-phone",
+"computer-use",
+"mcp-servers"
+],
+"bitbybit-cad-mcp": [
+"mcp-servers"
+],
+"watermelon-ui": [
+"voice-phone",
+"observability",
+"mcp-servers"
+],
+"asobeast": [
+"voice-phone",
+"mcp-servers"
+],
+"githits": [
+"penetration-testing",
+"vector-rag",
+"voice-phone",
+"mcp-servers"
+],
+"yandex-tools-mcp": [
+"mcp-servers",
+"mastering"
+],
+"spytrend": [
+"marketing-agents",
+"mcp-servers"
+],
+"trade-it": [
+"voice-phone",
+"mcp-servers"
+],
+"vaaya": [
+"mcp-servers"
+],
+"robosystems": [
+"codebase-context",
+"mcp-servers"
+],
+"munin": [
+"sales-agents",
+"mcp-servers"
+],
+"chiplab": [
+"voice-phone",
+"mcp-servers"
+],
+"longbridge-mcp": [
+"mcp-servers"
+],
+"debuff": [
+"mcp-servers",
+"games"
+],
+"fynk-mcp-server": [
+"mcp-servers"
+],
+"fulcra": [
+"mcp-servers"
+],
+"mcp-analytics": [
+"mcp-servers"
+],
+"blindpay": [
+"agent-payments",
+"mcp-servers"
+],
+"sfxmint-mcp": [
+"mcp-servers",
+"foley-sfx",
+"games"
+],
+"prereason": [
+"mcp-servers"
+],
+"spicy-api": [
+"mcp-servers",
+"video",
+"images-design"
+],
+"stuga": [
+"mcp-servers",
+"local-models"
+],
+"preclick": [
+"mcp-servers"
+],
+"chia-health-mcp-server": [
+"mcp-servers"
+],
+"hookdeck-cli": [
+"mcp-gateways",
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"skillclaw": [
+"rules-config"
+],
+"tinystruct": [
+"mcp-servers",
+"agent-frameworks",
+"terminal-agents",
+"images-design"
+],
+"gini-agent": [
+"agent-memory"
+],
+"xalgorix": [
+"penetration-testing",
+"testing-qa",
+"multi-agent"
+],
+"plane-mcp-server": [
+"mcp-servers",
+"vfx-compositing"
+],
+"pokeclaw": [
+"voice-phone",
+"local-models",
+"mobile"
+],
+"building-a-coding-agent-from-scratch-course": [
+"agent-frameworks"
+],
+"motion-anything": [],
+"re-gent": [],
+"generator": [
+"mcp-servers"
+],
+"lazymind": [],
+"synapse-ai": [
+"voice-phone",
+"mcp-servers"
+],
+"velobase-harness": [
+"agent-frameworks"
+],
+"dext": [
+"mcp-servers",
+"agent-frameworks"
+],
+"design-agent": [
+"images-design"
+],
+"fuji-web": [
+"browser-automation"
+],
+"weftcut": [
+"mcp-servers",
+"ide-agents",
+"video-editing",
+"video"
+],
+"debugmcp": [
+"ide-agents"
+],
+"facebook-ads-library-mcp": [
+"marketing-agents",
+"mcp-servers",
+"agent-frameworks"
+],
+"amadeus": [
+"computer-use"
+],
+"bld": [
+"mcp-servers"
+],
+"cordum": [],
+"agent-trade-kit": [
+"trading-agents",
+"mcp-servers"
+],
+"lumen": [
+"mcp-servers"
+],
+"swiftstreamingmarkdown": [
+"agent-frameworks",
+"mobile"
+],
+"nowledge-mem": [
+"agent-memory",
+"mcp-servers"
+],
+"vue-tui": [
+"agent-frameworks",
+"terminal-agents"
+],
+"sico": [],
+"ai4s-skills": [
+"rules-config"
+],
+"guild": [
+"agent-memory",
+"mcp-servers"
+],
+"agent-launcher": [
+"computer-use",
+"rules-config"
+],
+"noobi-ai": [
+"browser-automation",
+"computer-use",
+"local-models"
+],
+"claude-remember": [
+"agent-memory",
+"agent-auth"
+],
+"hull": [
+"mcp-servers",
+"agent-frameworks"
+],
+"opsy": [
+"ai-sre"
+],
+"1flowbase": [
+"voice-phone",
+"mcp-gateways",
+"mcp-servers"
+],
+"suparagent": [
+"local-models"
+],
+"oh-my-hermes": [],
+"pctx": [
+"voice-phone",
+"mcp-servers"
+],
+"sellbird": [],
+"uteke": [
+"agent-memory",
+"mcp-servers"
+],
+"noria": [
+"web-scraping"
+],
+"hycanvas": [
+"mcp-servers",
+"video"
+],
+"mistgate": [
+"mcp-servers"
+],
+"video-talkcraft": [
+"video",
+"images-design"
+],
+"wazuh-mcp-server": [
+"mcp-servers"
+],
+"agent-master-skills": [
+"marketing-agents",
+"mastering",
+"images-design",
+"rules-config"
+],
+"hermes-cn-desktop": [
+"computer-use"
+],
+"mcpfusion": [
+"mcp-servers",
+"agent-frameworks"
+],
+"netbox-mcp-server": [
+"voice-phone",
+"mcp-servers"
+],
+"mcp-defender": [
+"computer-use",
+"mcp-servers"
+],
+"skills-hub": [
+"computer-use",
+"rules-config"
+],
+"nota": [
+"mcp-servers"
+],
+"observer": [
+"observability"
+],
+"asset-intel-orchestration-engine": [
+"mcp-servers",
+"workflow-automation",
+"multi-agent"
+],
+"webbrain": [
+"codebase-context",
+"browser-automation"
+],
+"mcd-mcp-server": [
+"mcp-servers"
+],
+"meldwork": [
+"guardrails",
+"multi-agent",
+"local-models"
+],
+"mcp-1c": [
+"mcp-servers",
+"rules-config"
+],
+"agenticos": [
+"voice-phone",
+"mcp-servers",
+"local-models"
+],
+"phoneclaw": [
+"voice-phone",
+"local-models",
+"mobile"
+],
+"consensus-osint": [
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"opendroid": [
+"planning-tasks",
+"mobile"
+],
+"agentic-tools": [
+"mcp-servers",
+"rules-config"
+],
+"mateclaw": [
+"agent-memory",
+"multi-agent",
+"vfx-compositing",
+"rules-config"
+],
+"google-tag-manager-mcp-server": [
+"mcp-servers"
+],
+"minicode": [
+"workflow-automation",
+"terminal-agents"
+],
+"capcut-cli": [
+"terminal-agents",
+"video-editing"
+],
+"portainer-mcp": [
+"mcp-servers"
+],
+"uniterm": [
+"text-to-sql",
+"terminal-agents",
+"vfx-compositing"
+],
+"codex-pooler": [
+"mcp-gateways",
+"mcp-servers",
+"local-models"
+],
+"agenticx": [
+"multi-agent",
+"agent-frameworks",
+"terminal-agents"
+],
+"razorpay-mcp-server": [
+"mcp-servers"
+],
+"wesight": [
+"computer-use"
+],
+"orbital": [],
+"parse-dmarc": [
+"observability",
+"mcp-servers"
+],
+"deepseek-harness-desktop": [
+"computer-use",
+"agent-frameworks"
+],
+"uni-cli": [
+"mcp-servers",
+"terminal-agents"
+],
+"clawcodex": [],
+"gitranks-ui": [
+"mcp-servers"
+],
+"scarf": [
+"mobile"
+],
+"leankg": [
+"mcp-servers"
+],
+"obelisk": [
+"workflow-automation",
+"multi-agent"
+],
+"pi-agent-desktop": [
+"computer-use"
+],
+"light-science": [
+"agent-memory",
+"research-agents",
+"workflow-automation"
+],
+"growth-engineer": [
+"mcp-servers",
+"workflow-automation"
+],
+"piclaw": [],
+"rmcp": [
+"mcp-servers"
+],
+"exam-platform": [],
+"openclaw-nerve": [
+"planning-tasks",
+"voice-phone",
+"ai-dubbing-voices"
+],
+"third-eye": [],
+"agentor": [
+"mcp-servers"
+],
+"pi-pocket": [
+"mobile"
+],
+"academic-commercialization-agent": [
+"research-agents",
+"multi-agent"
+],
+"mcptools": [
+"mcp-servers"
+],
+"openmcp-client": [],
+"pad": [
+"mcp-servers"
+],
+"dsh-desktop": [
+"computer-use",
+"agent-frameworks",
+"terminal-agents"
+],
+"flow-next": [],
+"www-project-agent-memory-guard": [
+"agent-memory",
+"mcp-servers"
+],
+"nomi": [
+"video"
+],
+"mcp-security-checklists": [
+"mcp-servers"
+],
+"agent-me": [],
+"wayland": [],
+"deep-skill-finder": [
+"rules-config"
+],
+"the-architect": [
+"images-design"
+],
+"alphacode": [],
+"n8n-claw": [],
+"godotmaker": [
+"games"
+],
+"hermes-conduit": [
+"mobile"
+],
+"ian-xiaohei-scenes": [],
+"browser-search": [
+"browser-automation"
+],
+"hermes-plugins": [],
+"vibearound": [],
+"designing-real-world-ai-agents-workshop": [
+"research-agents",
+"multi-agent",
+"images-design"
+],
+"percho": [
+"computer-use"
+],
+"read-aware": [
+"agent-memory"
+],
+"pbi-cli": [
+"terminal-agents"
+],
+"open-ai-design-agent": [
+"images-design"
+],
+"codexbridge": [],
+"radare2-mcp": [
+"mcp-servers"
+],
+"doris-mcp-server": [
+"mcp-servers"
+],
+"quackback": [
+"mcp-servers"
+],
+"llm-context-py": [
+"mcp-servers",
+"vfx-compositing"
+],
+"contracts-wizard": [
+"smart-contracts",
+"mcp-servers"
+],
+"kolibri": [
+"mcp-servers"
+],
+"agixt": [
+"workflow-automation",
+"multi-agent"
+],
+"smart-tree": [
+"mcp-servers"
+],
+"healthchain": [
+"mcp-servers",
+"agent-frameworks"
+],
+"fsb": [
+"browser-automation",
+"mcp-servers"
+],
+"agentbox": [
+"parallel-orchestration",
+"sandboxes"
+],
+"pathrule": [
+"mcp-servers",
+"rules-config"
+],
+"canopy-api": [
+"mcp-servers"
+],
+"getmattered": [
+"mcp-servers"
+],
+"aeo-visibility": [
+"mcp-servers"
+],
+"ramus-android": [
+"mcp-servers",
+"mobile"
+],
+"sugra-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"glim-sh": [
+"mcp-servers"
+],
+"goanyapi-mcp": [
+"marketing-agents",
+"mcp-servers"
+],
+"pairoa": [
+"mcp-servers"
+],
+"savvly-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"octri-cli": [
+"mcp-servers",
+"terminal-agents"
+],
+"upgrowth-growth-toolkit": [
+"mcp-servers",
+"agent-frameworks"
+],
+"otinstaller": [
+"sandboxes",
+"mcp-servers",
+"local-models"
+],
+"shippo": [
+"mcp-servers"
+],
+"rampify": [
+"marketing-agents",
+"mcp-servers"
+],
+"openswitchboard": [
+"mcp-servers"
+],
+"aura-historia": [
+"voice-phone",
+"mcp-servers"
+],
+"bisibility": [
+"voice-phone",
+"marketing-agents",
+"research-agents",
+"mcp-servers"
+],
+"my-cahut": [
+"vector-rag",
+"observability",
+"mcp-servers"
+],
+"loomascale-ads": [
+"voice-phone",
+"marketing-agents",
+"mcp-servers"
+],
+"unipile-mcp": [
+"chat-app-agents",
+"email-agents",
+"sales-agents",
+"mcp-servers"
+],
+"woopsocial-social-media-mcp": [
+"voice-phone",
+"marketing-agents",
+"mcp-servers"
+],
+"cueframe": [
+"mcp-servers",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"durely-insights-mcp-for-garmin": [
+"mcp-servers",
+"local-models"
+],
+"memeboat-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"dabra-mcp": [
+"mcp-gateways",
+"mcp-servers"
+],
+"handlepilot": [
+"planning-tasks",
+"research-agents",
+"mcp-servers"
+],
+"tollwarden": [
+"agent-payments",
+"mcp-servers"
+],
+"simulateurs-salaire-et-freelance-france": [
+"mcp-servers"
+],
+"grovs": [
+"voice-phone",
+"mcp-servers"
+],
+"mlab-sh": [
+"agent-memory",
+"mcp-servers"
+],
+"shumi-mcp": [
+"research-agents",
+"mcp-servers"
+],
+"adcopilot": [
+"marketing-agents",
+"mcp-servers"
+],
+"hong-kong-company-registry-due-diligence": [
+"voice-phone",
+"mcp-gateways",
+"mcp-servers"
+],
+"bigdata-com": [
+"research-agents",
+"mcp-servers",
+"subtitles-transcripts"
+],
+"eximagent": [
+"sales-agents",
+"mcp-servers"
+],
+"xbrlkit": [
+"voice-phone",
+"mcp-servers"
+],
+"skyelight": [
+"mcp-servers"
+],
+"cardog": [
+"mcp-servers"
+],
+"everloot-wow-forever-data": [
+"mcp-servers"
+],
+"deyaho-phone-calls-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"hitpay-mcp-server": [
+"agent-payments",
+"sales-agents",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"maplith-bridge": [
+"mcp-servers"
+],
+"monetize-marketing": [
+"marketing-agents",
+"fine-tuning",
+"mcp-servers",
+"agent-frameworks",
+"rules-config"
+],
+"nextool-mcp-for-glpi": [
+"vector-rag",
+"mcp-servers"
+],
+"olbrain-alchemist": [
+"voice-phone",
+"mcp-servers"
+],
+"feldspar-free-repository-security-scan": [
+"penetration-testing",
+"agent-auth",
+"mcp-servers"
+],
+"arcnm": [
+"mcp-servers"
+],
+"forrt-research": [
+"research-agents",
+"mcp-servers"
+],
+"openmail": [
+"email-agents",
+"mcp-servers"
+],
+"aitopia": [
+"voice-phone",
+"mcp-servers",
+"video-editing",
+"video",
+"images-design"
+],
+"deepledger-quickbooks-mcp-server-for-chatgpt": [
+"voice-phone",
+"mcp-servers"
+],
+"elicitly": [
+"research-agents",
+"mcp-servers"
+],
+"kadal-deck": [
+"voice-phone",
+"mcp-servers",
+"video-editing"
+],
+"pagespeed-insights-mcp": [
+"mcp-servers",
+"dialogue-cleanup"
+],
+"generative-icons": [
+"mcp-servers"
+],
+"mailbuttons": [
+"email-agents",
+"sandboxes",
+"mcp-servers"
+],
+"phototology": [
+"agent-memory",
+"mcp-servers",
+"images-design"
+],
+"scigantic": [
+"voice-phone",
+"mcp-servers"
+],
+"transcript1": [
+"voice-phone",
+"marketing-agents",
+"mcp-servers",
+"subtitles-transcripts"
+],
+"true-value-rankings": [
+"mcp-servers"
+],
+"urantia-papers": [
+"research-agents",
+"mcp-servers"
+],
+"wraps-js": [
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"arcaeon": [
+"mcp-servers"
+],
+"rundata-re-la-r-union-974-en-direct": [
+"mcp-servers",
+"local-models"
+],
+"upstream-so": [
+"voice-phone",
+"mcp-servers"
+],
+"ravenpost": [
+"voice-phone",
+"marketing-agents",
+"mcp-servers"
+],
+"agent-tools": [
+"agent-payments",
+"vector-rag",
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"quantplay": [
+"mcp-servers"
+],
+"neum": [
+"mcp-servers"
+],
+"achromat-machine-operational-memory": [
+"agent-memory",
+"voice-phone",
+"guardrails",
+"mcp-servers"
+],
+"anomalyarmor": [
+"observability",
+"mcp-servers"
+],
+"memcell": [
+"agent-memory",
+"mcp-servers"
+],
+"presentations-ai": [
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"hostilo": [
+"mcp-servers"
+],
+"amber": [
+"agent-memory",
+"mcp-servers"
+],
+"dubai-data": [
+"sales-agents",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"audiopod-ai-core": [
+"voice-phone",
+"mcp-servers",
+"subtitles-transcripts",
+"dialogue-cleanup",
+"stem-separation"
+],
+"commercializer": [
+"mcp-servers"
+],
+"empiriolabs-ai": [
+"mcp-servers"
+],
+"makeaivideo": [
+"mcp-servers",
+"ai-dubbing-voices",
+"video"
+],
+"merget": [
+"mcp-servers"
+],
+"monthlet-mcp": [
+"voice-phone",
+"mcp-servers",
+"local-models",
+"video-editing"
+],
+"rithmo": [
+"guardrails",
+"mcp-servers"
+],
+"taasky": [
+"mcp-servers"
+],
+"tommos": [
+"sales-agents",
+"mcp-servers"
+],
+"aide": [
+"support-agents",
+"mcp-servers"
+],
+"bannerproof": [
+"mcp-servers"
+],
+"bewary-scam-phishing-and-fraud-detection": [
+"agent-wallets",
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"command-mail": [
+"email-agents",
+"mcp-servers"
+],
+"flashift": [
+"trading-agents",
+"mcp-servers"
+],
+"keeploop": [
+"chat-app-agents",
+"mcp-servers"
+],
+"flowleap-patent-ai": [
+"text-to-sql",
+"research-agents",
+"mcp-servers"
+],
+"ogave-sms": [
+"mcp-servers"
+],
+"product-aura": [
+"marketing-agents",
+"mcp-servers",
+"images-design"
+],
+"dna": [
+"mcp-servers",
+"rules-config"
+],
+"100hires": [
+"mcp-servers"
+],
+"agentmsgr": [
+"email-agents",
+"mcp-servers"
+],
+"arcnautical-mcp": [
+"computer-use",
+"mcp-servers"
+],
+"biglysales": [
+"voice-phone",
+"sales-agents",
+"mcp-servers",
+"rules-config"
+],
+"borme-api": [
+"mcp-gateways",
+"mcp-servers"
+],
+"browsersolver": [
+"web-scraping",
+"mcp-servers"
+],
+"chaink9-mcp": [
+"trading-agents",
+"mcp-servers"
+],
+"chartquery": [
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"countersignatory": [
+"mcp-servers"
+],
+"greca-house-greek-property": [
+"research-agents",
+"mcp-servers"
+],
+"hedwigai": [
+"vector-rag",
+"mcp-servers"
+],
+"house-ai": [
+"mcp-servers",
+"images-design"
+],
+"huntapi": [
+"voice-phone",
+"web-scraping",
+"mcp-servers",
+"video"
+],
+"justclaw-it": [
+"mcp-servers"
+],
+"floe-agent": [
+"voice-phone",
+"local-models",
+"video-editing",
+"mobile"
+],
+"hermes-relay": [
+"voice-phone"
+],
+"clawmetry": [],
+"terminai": [
+"local-models",
+"terminal-agents"
+],
+"peerd": [
+"browser-automation",
+"agent-frameworks"
+],
+"openabcode": [],
+"comfyui-skills-openclaw": [
+"workflow-automation",
+"rules-config"
+],
+"reflex": [],
+"abu-cowork": [
+"computer-use"
+],
+"physiclaw": [
+"voice-phone"
+],
+"open-browser-use": [
+"browser-automation",
+"terminal-agents"
+],
+"hermes-studio": [
+"agent-memory",
+"observability",
+"terminal-agents",
+"rules-config"
+],
+"sutando": [],
+"tia-portal-openness-mcp": [],
+"openvort": [],
+"lattice": [
+"vector-rag",
+"research-agents",
+"local-models"
+],
+"sciagent-skills": [
+"rules-config"
+],
+"refactoring-ui-skill": [
+"images-design"
+],
+"memdoor": [
+"terminal-agents"
+],
+"clanker": [
+"terminal-agents"
+],
+"home-generative-agent": [],
+"chengos": [
+"workflow-automation",
+"images-design"
+],
+"zot": [
+"agent-frameworks"
+],
+"velaterm": [],
+"dsh-trading": [
+"trading-agents",
+"agent-frameworks",
+"terminal-agents"
+],
+"eda-agent": [
+"mcp-servers"
+],
+"cryptocurrency-cv": [],
+"datastoria": [],
+"claude-code-android": [
+"mobile"
+],
+"golembot": [],
+"seekerclaw": [
+"voice-phone",
+"mobile"
+],
+"loomic": [
+"video",
+"images-design"
+],
+"deep-student": [
+"local-models"
+],
+"meetcap": [
+"subtitles-transcripts"
+],
+"bloks": [
+"computer-use",
+"local-models"
+],
+"bloom": [],
+"opencode-mobile": [
+"mobile"
+],
+"iva-agent": [
+"agent-memory",
+"chat-app-agents"
+],
+"openghost": [
+"computer-use"
+],
+"kmsg": [
+"mcp-servers",
+"terminal-agents"
+],
+"casecite": [
+"vector-rag",
+"research-agents",
+"local-models"
+],
+"mue-x": [],
+"kyllene": [
+"mobile"
+],
+"gg-framework": [
+"agent-frameworks"
+],
+"nextclaw": [
+"agent-memory"
+],
+"whatsapp-ai-agent-sdk": [
+"chat-app-agents",
+"agent-frameworks"
+],
+"gogogot": [],
+"9remote": [
+"terminal-agents"
+],
+"texel-studio": [],
+"dorabot": [
+"agent-memory",
+"ide-agents"
+],
+"contribai": [],
+"pi-rust": [
+"agent-frameworks",
+"terminal-agents"
+],
+"business-leads-ai-automation": [
+"sales-agents",
+"marketing-agents"
+],
+"and-code": [
+"local-models",
+"mobile"
+],
+"skilless-ai": [
+"web-scraping",
+"search-apis"
+],
+"bettergravity": [],
+"contrabass": [
+"multi-agent"
+],
+"saas-builder": [
+"agent-frameworks"
+],
+"pawwork": [
+"computer-use"
+],
+"runjam": [
+"computer-use"
+],
+"graphmind": [
+"local-models"
+],
+"emperor-agent": [
+"local-models"
+],
+"kasetto": [],
+"flowcraft": [
+"workflow-automation"
+],
+"station": [
+"multi-agent"
+],
+"alysiscode": [
+"research-agents",
+"workflow-automation"
+],
+"kheish": [
+"multi-agent"
+],
+"ai-agents-tutorial": [],
+"openseek": [
+"terminal-agents"
+],
+"wirken": [
+"mcp-gateways"
+],
+"distribb-skill": [
+"marketing-agents",
+"terminal-agents"
+],
+"cutcli-cookbook": [],
+"anything-about-game": [
+"games"
+],
+"artex-global": [
+"penetration-testing",
+"multi-agent",
+"agent-frameworks",
+"video-editing"
+],
+"solidworks-automation-skill": [
+"computer-use",
+"agent-frameworks"
+],
+"hermes-browser-extension": [
+"browser-automation"
+],
+"alphaclaw": [
+"agent-frameworks"
+],
+"agent-deck": [
+"terminal-agents"
+],
+"dorothy": [],
+"aiwg": [
+"workflow-automation"
+],
+"livepublicator": [
+"voice-phone",
+"mcp-servers"
+],
+"loadster": [
+"browser-automation",
+"observability",
+"mcp-servers"
+],
+"momentum-analyzer": [
+"research-agents",
+"mcp-servers"
+],
+"nilyo": [
+"chat-app-agents",
+"email-agents",
+"mcp-servers"
+],
+"photo2skin": [
+"mcp-servers",
+"games"
+],
+"piloterr": [
+"voice-phone",
+"web-scraping",
+"mcp-servers"
+],
+"purchaseplus": [
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"rhylthyme": [
+"mcp-servers",
+"vfx-compositing"
+],
+"rubiic": [
+"mcp-servers",
+"video"
+],
+"schedule-chill": [
+"marketing-agents",
+"mcp-servers"
+],
+"scrapercompany-hotel-rental-and-flight-prices": [
+"web-scraping",
+"mcp-servers"
+],
+"securealy": [
+"mcp-servers"
+],
+"a4sx-sessions": [
+"voice-phone",
+"mcp-servers"
+],
+"socialtoai": [
+"marketing-agents",
+"mcp-servers"
+],
+"sprixen": [
+"mcp-servers",
+"games"
+],
+"signal-by-stackenhance": [
+"email-agents",
+"marketing-agents",
+"mcp-servers",
+"color-upscaling"
+],
+"submitator": [
+"mcp-servers"
+],
+"teamhood": [
+"mcp-servers"
+],
+"tektolo": [
+"research-agents",
+"mcp-servers",
+"rules-config"
+],
+"weav": [
+"voice-phone",
+"support-agents",
+"mcp-servers"
+],
+"workspace369": [
+"sales-agents",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"maprouter": [
+"mcp-servers"
+],
+"agent-output-verifier-by-sarnai": [
+"mcp-servers"
+],
+"replio": [
+"voice-phone",
+"fine-tuning",
+"mcp-servers"
+],
+"fibx": [
+"trading-agents",
+"mcp-servers"
+],
+"blogseo": [
+"marketing-agents",
+"mcp-servers"
+],
+"helipod": [
+"text-to-sql",
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"index-one": [
+"voice-phone",
+"mcp-servers"
+],
+"kaidn": [
+"mcp-servers"
+],
+"menso": [
+"mcp-servers"
+],
+"testchimp": [
+"testing-qa",
+"planning-tasks",
+"mcp-servers"
+],
+"veille": [
+"email-agents",
+"mcp-servers"
+],
+"fabrica": [
+"mcp-servers"
+],
+"bezbaseina": [
+"sales-agents",
+"mcp-servers"
+],
+"food-near-me": [
+"guardrails",
+"mcp-servers"
+],
+"genebe": [
+"mcp-servers"
+],
+"taxapp-nz": [
+"mcp-servers",
+"video-editing"
+],
+"ireceipt-pro": [
+"agent-auth",
+"mcp-servers"
+],
+"horizon-ai-news-ai-regulation-tracker": [
+"mcp-servers"
+],
+"fline": [
+"mcp-servers"
+],
+"banquish": [
+"mcp-servers"
+],
+"hptsu-mcp": [
+"vector-rag",
+"voice-phone",
+"mcp-servers"
+],
+"finology-software-for-advisors": [
+"planning-tasks",
+"mcp-servers"
+],
+"cola-cloud": [
+"voice-phone",
+"mcp-servers"
+],
+"curo-peptide-research-mcp-pepbank-studies": [
+"research-agents",
+"mcp-servers"
+],
+"blip-zone-the-agent-bazaar": [
+"voice-phone",
+"mcp-servers"
+],
+"ask-your-audience": [
+"voice-phone",
+"marketing-agents",
+"mcp-servers"
+],
+"auten": [
+"computer-use",
+"mcp-servers"
+],
+"beefi": [
+"trading-agents",
+"mcp-servers"
+],
+"betslip-doctor": [
+"mcp-servers"
+],
+"darkfunnels": [
+"chat-app-agents",
+"sales-agents",
+"mcp-servers",
+"local-models"
+],
+"datavidence-financials": [
+"mcp-servers"
+],
+"everpod": [
+"mcp-servers",
+"personal-assistants"
+],
+"fgac-ai-multiple-gmail-accounts-google-sheets": [
+"email-agents",
+"mcp-servers",
+"video-editing"
+],
+"homesage-ai-mcp": [
+"mcp-servers"
+],
+"hypnothera": [
+"mcp-servers",
+"agent-frameworks"
+],
+"ship": [
+"mcp-servers",
+"cloud-coding-agents"
+],
+"ndaa-ai-fy2027-tracker": [
+"code-review",
+"mcp-servers"
+],
+"nourva-mind": [
+"agent-memory",
+"mcp-servers"
+],
+"verifeye": [
+"mcp-servers"
+],
+"saypage": [
+"voice-phone",
+"mcp-servers"
+],
+"sekura": [
+"penetration-testing",
+"voice-phone",
+"mcp-servers"
+],
+"sikaru-docs": [
+"vector-rag",
+"voice-phone",
+"evals",
+"mcp-servers"
+],
+"slackline": [
+"voice-phone",
+"chat-app-agents",
+"mcp-servers"
+],
+"speakeroo-speaking-coach": [
+"voice-phone",
+"mcp-servers",
+"dialogue-cleanup"
+],
+"truthspine": [
+"mcp-servers"
+],
+"usehourly": [
+"mcp-servers"
+],
+"brandrail": [
+"voice-phone",
+"guardrails",
+"mcp-servers",
+"images-design"
+],
+"automo-build": [
+"testing-qa",
+"mcp-servers",
+"no-code-apps"
+],
+"mumo": [
+"mcp-servers"
+],
+"multi-mail": [
+"email-agents",
+"mcp-servers"
+],
+"adona-robot-market-data": [
+"mcp-servers"
+],
+"apextick-market-data-options-mcp": [
+"mcp-servers"
+],
+"ai": [
+"mcp-servers"
+],
+"bidsparq": [
+"mcp-servers",
+"local-models"
+],
+"conv2pdf": [
+"vector-rag",
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"dronebundle": [
+"guardrails",
+"mcp-servers"
+],
+"fashio-ai": [
+"mcp-servers"
+],
+"final-pos": [
+"agent-payments",
+"voice-phone",
+"mcp-servers",
+"mobile"
+],
+"marsell": [
+"voice-phone",
+"sales-agents",
+"marketing-agents",
+"mcp-servers"
+],
+"headcount-labs": [
+"mcp-servers"
+],
+"hustle-got-real": [
+"mcp-servers"
+],
+"idos-games": [
+"voice-phone",
+"mcp-servers",
+"games",
+"rules-config"
+],
+"immersive-commons": [
+"mcp-servers"
+],
+"insertchat": [
+"email-agents",
+"sales-agents",
+"mcp-servers"
+],
+"goldseam": [
+"mcp-servers"
+],
+"kyma-api": [
+"token-costs",
+"mcp-servers"
+],
+"kythene": [
+"agent-memory",
+"mcp-servers"
+],
+"leonida-lab-gta-6-facts-official-or-not": [
+"mcp-servers"
+],
+"mcplookup": [
+"mcp-servers"
+],
+"offhand": [
+"mcp-servers"
+],
+"pointrover": [
+"mcp-servers",
+"local-models",
+"rules-config"
+],
+"qodflow": [
+"planning-tasks",
+"mcp-servers"
+],
+"relvato": [
+"agent-payments",
+"marketing-agents",
+"observability",
+"mcp-servers"
+],
+"rooyun": [
+"mcp-servers",
+"storyboards-previs",
+"video",
+"images-design"
+],
+"schelling-add-forward": [
+"mcp-servers",
+"multi-agent"
+],
+"scrapingbee": [
+"voice-phone",
+"web-scraping",
+"mcp-servers"
+],
+"snipzr": [
+"mcp-servers"
+],
+"socialseal": [
+"mcp-servers"
+],
+"symvanta": [
+"mcp-servers"
+],
+"tlders-domain-prices": [
+"mcp-servers"
+],
+"traffic-parrot": [
+"mcp-servers"
+],
+"tsenta-ai-job-application-agent": [
+"mcp-servers"
+],
+"vixel-film": [
+"mcp-servers",
+"storyboards-previs",
+"images-design"
+],
+"zarla-website-builder": [
+"voice-phone",
+"mcp-servers",
+"video-editing"
+],
+"zoho-crm-ai-assistant": [
+"sales-agents",
+"mcp-servers"
+],
+"autom": [
+"mcp-servers"
+],
+"nucleo-for-wordpress": [
+"mcp-servers",
+"images-design"
+],
+"phonebox": [
+"voice-phone",
+"computer-use",
+"mcp-servers",
+"mobile"
+],
+"agent-discovery-board-by-sarnai": [
+"agent-payments",
+"mcp-servers"
+],
+"spacepost": [
+"voice-phone",
+"email-agents",
+"mcp-servers"
+],
+"txn-dev-mcp-server": [
+"agent-wallets",
+"agent-payments",
+"mcp-servers"
+],
+"urlpipe": [
+"voice-phone",
+"mcp-servers"
+],
+"zopdev-mcp": [
+"guardrails",
+"mcp-servers"
+],
+"subo": [
+"voice-phone",
+"chat-app-agents",
+"mcp-servers"
+],
+"getrun": [
+"mcp-servers",
+"video",
+"images-design"
+],
+"carchat-inventory": [
+"voice-phone",
+"mcp-servers"
+],
+"corespeed": [
+"agent-memory",
+"search-apis",
+"mcp-servers"
+],
+"gingerlive": [
+"marketing-agents",
+"mcp-servers"
+],
+"iqfluence": [
+"voice-phone",
+"mcp-servers"
+],
+"mysocial": [
+"marketing-agents",
+"mcp-servers"
+],
+"onlinecompiler-io": [
+"voice-phone",
+"mcp-servers"
+],
+"manylives-paid-tools": [
+"voice-phone",
+"mcp-servers"
+],
+"remember-me": [
+"agent-memory",
+"mcp-servers"
+],
+"uptimy": [
+"ai-sre",
+"observability",
+"mcp-servers"
+],
+"faceless": [
+"mcp-servers",
+"video"
+],
+"biovet-mcp": [
+"mcp-servers"
+],
+"monapay-mcp": [
+"agent-payments",
+"mcp-servers"
+],
+"agentic-web-wiki": [
+"mcp-servers"
+],
+"sbor": [
+"mcp-servers"
+],
+"tereno-on-base": [
+"mcp-servers"
+],
+"wrdo": [
+"mcp-servers",
+"local-models"
+],
+"a1-lane": [
+"mcp-servers",
+"video"
+],
+"agentic-terminal-directory": [
+"agent-payments",
+"mcp-servers",
+"terminal-agents"
+],
+"ahel": [
+"marketing-agents",
+"mcp-servers"
+],
+"bankrolled-ai-agent-hub": [
+"mcp-servers"
+],
+"hypotize": [
+"mcp-servers"
+],
+"just-domain": [
+"mcp-servers"
+],
+"lead-green": [
+"sales-agents",
+"mcp-servers",
+"rules-config"
+],
+"markettrace-crypto-mcp": [
+"trading-agents",
+"mcp-servers"
+],
+"ohmybug": [
+"code-review",
+"mcp-servers"
+],
+"proxyllm-mcp": [
+"email-agents",
+"mcp-gateways",
+"mcp-servers"
+],
+"robowrite": [
+"mcp-servers",
+"workflow-automation"
+],
+"sentfromai-mcp": [
+"email-agents",
+"mcp-servers"
+],
+"theskillvault": [
+"voice-phone",
+"mcp-servers",
+"agent-frameworks",
+"rules-config"
+],
+"goldenratio-app": [
+"mcp-servers",
+"images-design"
+],
+"letterly": [
+"voice-phone",
+"mcp-servers"
+],
+"postel": [
+"voice-phone",
+"mcp-servers"
+],
+"singit-x402": [
+"agent-payments",
+"voice-phone",
+"search-apis",
+"mcp-servers"
+],
+"catalunya-2022": [
+"planning-tasks",
+"mcp-servers"
+],
+"datamagnet": [
+"mcp-servers"
+],
+"dopost": [
+"voice-phone",
+"mcp-servers"
+],
+"indexmachine": [
+"mcp-servers"
+],
+"4chems-platform": [
+"mcp-servers"
+],
+"adswipefile": [
+"marketing-agents",
+"mcp-servers"
+],
+"aim-workout-journal": [
+"voice-phone",
+"mcp-servers"
+],
+"aipozi": [
+"mcp-servers"
+],
+"anaella": [
+"agent-payments",
+"chat-app-agents",
+"email-agents",
+"marketing-agents",
+"mcp-servers"
+],
+"aso-atlas": [
+"research-agents",
+"mcp-servers"
+],
+"atly": [
+"mcp-servers"
+],
+"cybermes": [
+"penetration-testing",
+"agent-frameworks"
+],
+"atom": [
+"local-models"
+],
+"locus": [],
+"project-golem": [
+"agent-memory",
+"multi-agent"
+],
+"herald-os": [],
+"compose-skill": [
+"mobile"
+],
+"velocity": [],
+"finsight-ai": [
+"vector-rag",
+"research-agents",
+"workflow-automation"
+],
+"better-agent-terminal": [
+"terminal-agents"
+],
+"deepseek-harness-local-android": [
+"agent-frameworks",
+"local-models",
+"mobile"
+],
+"openmozi": [],
+"zeroscript-free": [],
+"codex-rehome": [
+"computer-use",
+"local-models"
+],
+"one-mcp": [
+"mcp-gateways",
+"mcp-servers"
+],
+"pi-app": [
+"computer-use"
+],
+"mobileclaw": [
+"voice-phone",
+"computer-use",
+"mobile"
+],
+"openaver": [
+"web-scraping",
+"computer-use"
+],
+"bladebro": [
+"browser-automation"
+],
+"ultragamestudio": [
+"workflow-automation",
+"games"
+],
+"neuraldeskapp": [
+"local-models"
+],
+"spring-ai-loom-agent": [],
+"apexo-code": [
+"computer-use",
+"terminal-agents"
+],
+"endoplexity": [
+"browser-automation"
+],
+"pilot-harness": [
+"computer-use",
+"agent-frameworks"
+],
+"pix": [],
+"mineecho": [
+"agent-memory",
+"local-models"
+],
+"booksmate": [
+"voice-phone",
+"email-agents",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"calibrd-agent": [
+"mcp-servers"
+],
+"cashly": [
+"mcp-servers"
+],
+"crustapi-google-linkedin-data": [
+"mcp-servers"
+],
+"cspriceapi": [
+"mcp-servers"
+],
+"tavily-mcp": [
+"search-apis",
+"mcp-servers"
+],
+"paperbanana": [
+"voice-phone",
+"mcp-servers",
+"multi-agent",
+"images-design"
+],
+"microsoft-365-mcp-server": [
+"voice-phone",
+"mcp-servers"
+],
+"workopia-mcp": [
+"vector-rag",
+"mcp-servers"
+],
+"oss-snowflake-mcp-server": [
+"mcp-servers"
+],
+"alfanous": [
+"voice-phone",
+"mcp-servers"
+],
+"openimagedebugger-mcp": [
+"mcp-servers"
+],
+"mineru-open-mcp": [
+"vector-rag",
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"gemini-mcp": [
+"research-agents",
+"mcp-servers",
+"video",
+"images-design"
+],
+"branderux-mcp": [
+"mcp-servers"
+],
+"docstox": [
+"research-agents",
+"mcp-servers"
+],
+"front-end-checklist": [
+"voice-phone",
+"mcp-servers",
+"rules-config"
+],
+"autoclip": [
+"mcp-servers",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"ouroboros": [
+"mcp-servers"
+],
+"remove-ai-watermarks": [
+"mcp-servers",
+"video",
+"images-design"
+],
+"finance-toolkit": [
+"mcp-servers",
+"agent-frameworks"
+],
+"tradingmcp": [
+"mcp-servers"
+],
+"gitlab-mcp-server": [
+"mcp-servers"
+],
+"mcp-server-for-windbg-crash-analysis": [
+"mcp-servers"
+],
+"pm-claude-skills": [
+"mcp-servers",
+"workflow-automation",
+"rules-config"
+],
+"solomd": [
+"voice-phone",
+"mcp-servers"
+],
+"best-of-agent-harnesses": [
+"mcp-servers",
+"agent-frameworks",
+"rules-config"
+],
+"deja-vu": [
+"agent-memory",
+"mcp-servers",
+"local-models"
+],
+"magic-cloud": [
+"text-to-sql",
+"voice-phone",
+"mcp-servers"
+],
+"grandet": [
+"mcp-servers"
+],
+"unifi-access-mcp": [
+"voice-phone",
+"guardrails",
+"agent-auth",
+"mcp-servers"
+],
+"memorix": [
+"agent-memory",
+"mcp-servers",
+"local-models"
+],
+"comfyui-mcp": [
+"mcp-servers",
+"workflow-automation",
+"images-design"
+],
+"skylos": [
+"agent-auth",
+"mcp-servers"
+],
+"mcp-server-for-excel": [
+"mcp-servers"
+],
+"invisible-playwright-mcp": [
+"browser-automation",
+"mcp-servers"
+],
+"thoughtdag": [
+"voice-phone",
+"mcp-servers",
+"local-models"
+],
+"sqz": [
+"mcp-servers"
+],
+"rustunnel": [
+"mcp-servers",
+"local-models"
+],
+"haiku-rag": [
+"vector-rag",
+"research-agents",
+"mcp-servers",
+"local-models"
+],
+"xactions": [
+"web-scraping",
+"mcp-servers"
+],
+"proxmoxmcp-plus": [
+"mcp-servers"
+],
+"compartment": [
+"agent-memory",
+"mcp-servers"
+],
+"misakanet": [
+"agent-memory",
+"mcp-servers"
+],
+"hevy-mcp-server": [
+"voice-phone",
+"mcp-servers"
+],
+"claudexor": [
+"voice-phone",
+"mcp-servers"
+],
+"mcp-server": [
+"voice-phone",
+"mcp-servers"
+],
+"vibe-check-mcp-server": [
+"guardrails",
+"mcp-servers"
+],
+"mcp-for-adobe-premiere-pro": [
+"mcp-servers",
+"workflow-automation",
+"local-models"
+],
+"droidline": [
+"voice-phone",
+"mcp-servers",
+"mobile"
+],
+"entroly": [
+"mcp-servers"
+],
+"iphone-use": [
+"voice-phone",
+"computer-use",
+"mcp-servers"
+],
+"airtable": [
+"text-to-sql",
+"voice-phone",
+"mcp-servers"
+],
+"molio-knowledge-base": [
+"vector-rag",
+"voice-phone",
+"mcp-servers",
+"local-models"
+],
+"mcptoon": [
+"mcp-servers",
+"terminal-agents",
+"rules-config"
+],
+"finlab-ai": [
+"trading-agents",
+"mcp-servers",
+"agent-frameworks"
+],
+"clawdcursor": [
+"computer-use",
+"mcp-servers"
+],
+"flutter-mcp-toolkit": [
+"voice-phone",
+"mcp-servers",
+"agent-frameworks",
+"games"
+],
+"computer-use": [
+"voice-phone",
+"computer-use",
+"mcp-servers"
+],
+"sec-edgar-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"wireshark-mcp": [
+"mcp-servers"
+],
+"emisar": [
+"mcp-servers"
+],
+"everything-search": [
+"mcp-servers",
+"agent-frameworks"
+],
+"tw-legal-rag": [
+"vector-rag",
+"research-agents",
+"mcp-servers"
+],
+"ori-mnemos": [
+"agent-memory",
+"mcp-servers"
+],
+"showtime": [
+"voice-phone",
+"mcp-servers",
+"local-models",
+"subtitles-transcripts",
+"video"
+],
+"kokon": [
+"voice-phone",
+"mcp-servers",
+"local-models",
+"video-editing",
+"images-design"
+],
+"shodh-memory": [
+"codebase-context",
+"agent-memory",
+"mcp-servers"
+],
+"dashclaw": [
+"guardrails",
+"mcp-servers"
+],
+"homebutler": [
+"mcp-servers"
+],
+"bankmcp": [
+"voice-phone",
+"mcp-servers"
+],
+"guaardvark": [
+"vector-rag",
+"voice-phone",
+"mcp-servers",
+"local-models",
+"video",
+"images-design"
+],
+"emulo": [
+"mcp-servers"
+],
+"adloop": [
+"marketing-agents",
+"mcp-servers"
+],
+"mirroir-mcp": [
+"voice-phone",
+"mcp-servers"
+],
+"martin-loop": [
+"mcp-servers"
+],
+"browsentic": [
+"browser-automation",
+"mcp-servers",
+"agent-frameworks",
+"terminal-agents"
+],
+"kill-my-idea": [
+"mcp-servers"
+],
+"yourmemory": [
+"agent-memory",
+"mcp-servers"
+],
+"pyscrappy": [
+"web-scraping",
+"mcp-servers",
+"agent-frameworks"
+],
+"semanticops-mcp-for-power-bi": [
+"mcp-servers"
+],
+"google-analytics-mcp": [
+"mcp-servers"
+],
+"safari-mcp": [
+"browser-automation",
+"mcp-servers"
+],
+"notebooklm-mcp": [
+"notebooks",
+"mcp-servers",
+"local-models"
+],
+"ui-beats": [
+"mcp-servers"
+],
+"homelab-monitor": [
+"observability",
+"mcp-servers"
+],
+"moneymatter": [
+"mcp-servers"
+],
+"pymemoryeditor": [
+"agent-memory",
+"voice-phone",
+"mcp-servers",
+"ide-agents"
+],
+"omega-memory": [
+"agent-memory",
+"mcp-servers"
+],
+"antigravity-link": [
+"mcp-servers",
+"ide-agents",
+"mobile"
+],
+"taisly-social-media-posting": [
+"marketing-agents",
+"mcp-servers",
+"video"
+],
+"buddy-phone-tools": [
+"voice-phone",
+"computer-use",
+"mcp-servers",
+"mobile"
+],
+"microcharts": [
+"mcp-servers"
+],
+"mengram": [
+"agent-memory",
+"mcp-servers",
+"workflow-automation"
+],
+"trace-mcp": [
+"mcp-servers",
+"agent-frameworks"
+],
+"nibomo-flashcards": [
+"voice-phone",
+"mcp-servers"
+],
+"gtm-api-linkedin-mcp-server": [
+"mcp-servers"
+],
+"aginx-browser": [
+"browser-automation",
+"mcp-servers"
+],
+"neuronto-ard-registry-agentic-resource": [
+"mcp-gateways",
+"mcp-servers"
+],
+"adrkit-decision-memory": [
+"agent-memory",
+"mcp-servers",
+"local-models",
+"ai-dubbing-voices"
+],
+"perfboard-designer": [
+"voice-phone",
+"mcp-servers",
+"images-design"
+],
+"verified-handles": [
+"marketing-agents",
+"mcp-servers"
+],
+"mcpemails": [
+"email-agents",
+"mcp-servers"
+],
+"thiri-chord-intelligence": [
+"voice-phone",
+"mcp-servers"
+],
+"aviansuite": [
+"mcp-servers"
+],
+"vitrus-analytics": [
+"voice-phone",
+"mcp-servers"
+],
+"mnema": [
+"mcp-servers"
+],
+"changethisfile": [
+"web-scraping",
+"mcp-servers"
+],
+"agent-guild": [
+"mcp-servers",
+"terminal-agents"
+],
+"star-wars-api-mcp-server-swapi-build": [
+"mcp-servers"
+],
+"fers": [
+"mcp-servers"
+],
+"hemmabo-host-booking-engine": [
+"mcp-servers"
+],
+"flaim-fantasy": [
+"mcp-servers"
+],
+"linkmcp-hosted-linkedin-mcp-server": [
+"mcp-servers",
+"local-models"
+],
+"dc-hub": [
+"mcp-servers"
+],
+"recued": [
+"mcp-servers"
+],
+"wingmanprotocol-agent-gateway": [
+"agent-memory",
+"research-agents",
+"browser-automation",
+"mcp-gateways",
+"mcp-servers",
+"vfx-compositing"
+],
+"csv2zugferd": [
+"mcp-servers",
+"local-models"
+],
+"altscan-explorers": [
+"mcp-servers"
+],
+"spiderbrain": [
+"codebase-context",
+"mcp-servers"
+],
+"domainscout": [
+"voice-phone",
+"research-agents",
+"mcp-servers"
+],
+"spain-legal-by-legal-fournier": [
+"mcp-servers",
+"video",
+"rules-config"
+],
+"scoopkit": [
+"mcp-servers"
+],
+"flybest-travel": [
+"mcp-servers"
+],
+"travel-art": [
+"mcp-servers"
+],
+"ip-for-ai": [
+"mcp-gateways",
+"mcp-servers"
+],
+"quran-reels-mcp": [
+"browser-automation",
+"mcp-servers",
+"video"
+],
+"bykaranteli-mcp": [
+"mcp-servers"
+],
+"ankidecks": [
+"vector-rag",
+"mcp-servers",
+"video"
+],
+"seomatic": [
+"marketing-agents",
+"mcp-servers",
+"local-models"
+],
+"vig-a": [
+"penetration-testing",
+"mcp-servers"
+],
+"shapelessai": [
+"marketing-agents",
+"mcp-servers",
+"video"
+],
+"silicon-floor": [
+"mcp-servers"
+],
+"smklog-parcel-shipping-rates": [
+"mcp-servers"
+],
+"agent-surface": [
+"voice-phone",
+"mcp-servers"
+],
+"inbin-agent-email": [
+"email-agents",
+"mcp-servers"
+],
+"small-print": [
+"mcp-servers"
+],
+"nebula": [
+"marketing-agents",
+"mcp-servers"
+],
+"cliphou-se-release-videos": [
+"mcp-servers",
+"video"
+],
+"mcp-for-beginners": [
+"mcp-servers",
+"vfx-compositing"
+],
+"mcp-brasil": [
+"voice-phone",
+"mcp-servers"
+],
+"dive": [
+"voice-phone",
+"computer-use",
+"mcp-servers"
+],
+"npcpy": [
+"research-agents",
+"mcp-servers",
+"agent-frameworks",
+"games"
+],
+"android-mcp": [
+"mcp-servers",
+"mobile"
+],
+"figma-mcp-bridge": [
+"mcp-servers"
+],
+"hyper-mcp": [
+"mcp-servers"
+],
+"memora": [
+"agent-memory",
+"mcp-servers"
+],
+"corbell": [
+"mcp-servers"
+],
+"tunnel-client": [
+"mcp-servers",
+"local-models"
+],
+"agent-opfor": [
+"mcp-servers"
+],
+"mcp-security": [
+"mcp-servers"
+],
+"iam-policy-autopilot": [
+"voice-phone",
+"guardrails",
+"mcp-servers"
+],
+"db-mcp-server": [
+"text-to-sql",
+"mcp-servers",
+"vfx-compositing"
+],
+"mcp-teams-server": [
+"mcp-servers",
+"vfx-compositing"
+],
+"official-mcp-servers": [
+"mcp-servers"
+],
+"mcp-massive": [
+"mcp-servers"
+],
+"whatsapp-mcp": [
+"voice-phone",
+"chat-app-agents",
+"mcp-servers"
+],
+"gimp-mcp": [
+"mcp-servers"
+],
+"apple-health-mcp-server": [
+"voice-phone",
+"mcp-servers"
+],
+"open-claude-in-chrome": [
+"mcp-servers"
+],
+"dataverse-skills": [
+"mcp-servers",
+"rules-config"
+],
+"zabbix-mcp-server": [
+"vector-rag",
+"agent-auth",
+"mcp-servers"
+],
+"best-agent-memory-mcp": [
+"agent-memory",
+"mcp-servers"
+],
+"macos-mcp": [
+"computer-use",
+"mcp-servers"
+],
+"football-docs": [
+"vector-rag",
+"mcp-servers"
+],
+"airbroke": [
+"text-to-sql",
+"mcp-servers"
+],
+"mcp-apache-spark-history-server": [
+"mcp-servers",
+"terminal-agents"
+],
+"nuclear": [
+"mcp-servers"
+],
+"nginx-ui": [
+"mcp-servers"
+],
+"viper": [
+"penetration-testing",
+"mcp-servers"
+],
+"bla": [
+"mcp-servers"
+],
+"buildwithclaude": [
+"mcp-gateways",
+"mcp-servers",
+"rules-config"
+],
+"py-xiaozhi": [
+"mcp-servers",
+"workflow-automation"
+],
+"flyenv": [
+"mcp-servers",
+"local-models"
+],
+"open-ontologies": [
+"planning-tasks",
+"voice-phone",
+"mcp-servers"
+],
+"papersgpt-for-zotero": [
+"vector-rag",
+"research-agents",
+"mcp-servers",
+"agent-frameworks"
+],
+"mailcheap": [
+"agent-payments",
+"email-agents",
+"mcp-servers"
+],
+"openserp": [
+"marketing-agents",
+"search-apis",
+"mcp-servers"
+],
+"rocketmq-rust": [
+"agent-memory",
+"mcp-servers"
+],
+"nocturne-memory": [
+"agent-memory",
+"mcp-servers",
+"images-design"
+],
+"stashbase": [
+"voice-phone",
+"mcp-servers",
+"local-models"
+],
+"search2ai": [
+"voice-phone",
+"mcp-gateways",
+"mcp-servers"
+],
+"opentabs": [
+"browser-automation",
+"mcp-servers"
+],
+"box": [
+"mcp-servers",
+"local-models",
+"mobile"
+],
+"x-reader": [
+"mcp-servers"
+],
+"kubectl-mcp-server": [
+"mcp-servers"
+],
+"vmlx": [
+"mcp-servers"
+],
+"vibeue": [
+"mcp-servers"
+],
+"hippo-memory": [
+"agent-memory",
+"mcp-servers"
+],
+"codanna": [
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"metaharness": [
+"mcp-servers",
+"agent-frameworks"
+],
+"javis-os": [
+"mcp-servers"
+],
+"maverick-mcp": [
+"mcp-servers"
+],
+"flujo": [
+"mcp-servers",
+"workflow-automation",
+"multi-agent",
+"agent-frameworks"
+],
+"home-assistant-vibecode-agent": [
+"mcp-servers"
+],
+"phpmyfaq": [
+"text-to-sql",
+"mcp-servers"
+],
+"cti-expert": [
+"mcp-servers"
+],
+"line-harness-oss": [
+"sales-agents",
+"mcp-servers",
+"agent-frameworks",
+"local-models"
+],
+"blockbench-mcp-plugin": [
+"mcp-servers"
+],
+"asm": [
+"mcp-gateways",
+"mcp-servers",
+"terminal-agents"
+],
+"deft": [
+"mcp-servers"
+],
+"agenvoy": [
+"mcp-servers",
+"agent-frameworks",
+"local-models"
+],
+"better-design": [
+"voice-phone",
+"mcp-gateways",
+"mcp-servers",
+"images-design"
+],
+"runs-on-dev": [
+"mcp-servers"
+],
+"performancemonitor": [
+"text-to-sql",
+"observability",
+"mcp-servers"
+],
+"roam-code": [
+"codebase-context",
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"scrumboy": [
+"mcp-servers"
+],
+"wmux": [
+"mcp-servers"
+],
+"daybee": [
+"voice-phone",
+"computer-use",
+"mcp-servers",
+"local-models",
+"subtitles-transcripts"
+],
+"evil-winrm-py": [
+"mcp-servers",
+"vfx-compositing"
+],
+"wocart": [
+"voice-phone",
+"mcp-servers"
+],
+"mars": [
+"mcp-servers",
+"agent-frameworks"
+],
+"truememory": [
+"agent-memory",
+"mcp-servers"
+],
+"sandbox-mcp": [
+"testing-qa",
+"sandboxes",
+"mcp-servers"
+],
+"redd-archiver": [
+"text-to-sql",
+"mcp-servers"
+],
+"frappe-assistant-core": [
+"mcp-servers"
+],
+"boot-ui": [
+"mcp-servers"
+],
+"cheap-ag": [
+"mcp-servers"
+],
+"agentring": [
+"voice-phone",
+"mcp-servers"
+],
+"fennara-godot-ai": [
+"mcp-servers"
+],
+"mcpsvr": [
+"mcp-servers"
+],
+"ha-mcp-for-xiaozhi": [
+"mcp-servers"
+],
+"monet": [
+"mcp-servers"
+],
+"mcp-maigret": [
+"mcp-servers"
+],
+"freecad-addon-robust-mcp-server": [
+"mcp-servers"
+],
+"mcp-3d-printer-server": [
+"mcp-servers"
+],
+"pagesift": [
+"vector-rag",
+"web-scraping",
+"mcp-servers"
+],
+"arkana": [
+"mcp-servers"
+],
+"equibles": [
+"mcp-servers",
+"local-models"
+],
+"toolport": [
+"mcp-gateways",
+"mcp-servers",
+"local-models"
+],
+"civ6-mcp": [
+"mcp-servers"
+],
+"overlook": [
+"mcp-servers"
+],
+"remnic": [
+"agent-memory",
+"vector-rag",
+"mcp-servers"
+],
+"unrealmotiongraphicsmcp": [
+"mcp-servers"
+],
+"claude-mermaid": [
+"mcp-servers",
+"images-design"
+],
+"spanish-top-tech-companies": [
+"mcp-servers"
+],
+"lnwjud": [
+"mcp-gateways",
+"mcp-servers",
+"local-models"
+],
+"bear-notes-mcp": [
+"computer-use",
+"mcp-servers"
+],
+"exstruct": [
+"vector-rag",
+"mcp-servers"
+],
+"mind": [
+"agent-memory",
+"mcp-servers",
+"local-models"
+],
+"notion-mcp-server": [
+"mcp-servers"
+],
+"stack-chan": [
+"mcp-servers"
+],
+"aperag": [
+"mcp-servers"
+],
+"claude-skills-mcp": [
+"vector-rag",
+"voice-phone",
+"mcp-servers",
+"rules-config"
+],
+"xero-mcp-server": [
+"mcp-servers",
+"vfx-compositing"
+],
+"facebook-ads-mcp-server": [
+"marketing-agents",
+"mcp-servers"
+],
+"mcp-server-simulator-ios-idb": [
+"mcp-servers",
+"mobile"
+],
+"mcp-server-milvus": [
+"mcp-servers"
+],
+"opentelemetry-mcp-server": [
+"observability",
+"mcp-servers"
+],
+"isaac-sim-mcp": [
+"mcp-servers"
+],
+"filestash": [
+"mcp-servers"
+],
+"opengist": [
+"mcp-servers"
+],
+"notediscovery": [
+"vector-rag",
+"mcp-servers",
+"local-models"
+],
+"mcp-server-kubernetes": [
+"mcp-servers"
+],
+"fetcher-mcp": [
+"voice-phone",
+"browser-automation",
+"mcp-servers"
+],
+"reactuse": [
+"browser-automation",
+"mcp-servers"
+],
+"intlayer": [
+"mcp-servers"
+],
+"godot-mcp-pro": [
+"mcp-servers"
+],
+"engrim": [
+"agent-memory",
+"mcp-servers"
+],
+"gis-mcp": [
+"mcp-servers"
 ]
 }

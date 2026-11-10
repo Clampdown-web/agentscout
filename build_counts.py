@@ -202,18 +202,16 @@ def require(tools=None):
 
 
 def metrics_catalog():
-    """Directory totals the homepage reads from api/metrics.json.
+    """Directory totals for sentences baked into HTML.
 
-    tools_count and mcp_servers_count are the source of truth for a catalog claim.
-    A missing file falls back to the same recount that writes those fields.
+    site_counts.json is written before pages render. api/metrics.json can still
+    hold the previous catalog until refresh_pages(), so the baked sentence reads
+    the live count file and only the display date from metrics.
     """
     m = _read(METRICS)
-    tools = int(m.get("tools_count") or 0)
-    mcp = int(m.get("mcp_servers_count") or m.get("mcp_count") or 0)
-    if not tools or not mcp:
-        counted = require()
-        tools = tools or int(counted.get("tools") or 0)
-        mcp = mcp or int(counted.get("mcp_servers") or 0)
+    counted = require()
+    tools = int(counted.get("tools") or 0) or int(m.get("tools_count") or 0)
+    mcp = int(counted.get("mcp_servers") or 0) or int(m.get("mcp_servers_count") or m.get("mcp_count") or 0)
     updated = str(m.get("updated") or "")
     display = str(m.get("updated_display") or updated)
     return {"tools": tools, "mcp": mcp, "updated": updated, "updated_display": display}

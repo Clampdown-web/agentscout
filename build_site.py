@@ -405,7 +405,8 @@ def _is_thin_tool(x,rich):
 def apply_thin_page_rule(tools):
     """Tool pages under 80 unique words and with no enrichment fields get noindex,follow and leave sitemap.xml.
     They still render and stay linked. The daily build admits at most 5 new unenriched tool URLs; the rest stay
-    noindex until an enrichment record exists. Returns counts for the build log."""
+    noindex until an enrichment record exists. catalog_only listings are always noindex and never take one of
+    those slots, even when the blurb is long. Returns counts for the build log."""
     import datetime as _d
     from zoneinfo import ZoneInfo as _Zi
     rich=_tool_rich()
@@ -418,10 +419,11 @@ def apply_thin_page_rule(tools):
     by={x["slug"]:x for x in tools}
     if not state.get("seeded"):
         for x in tools:
+            if x.get("catalog_only"): continue
             if (x.get("added") or "")<today and not _is_thin_tool(x,rich):
                 admitted.setdefault(x["slug"], x.get("added") or "1970-01-01")
         state["seeded"]=True
-    slots=[s for s in slots if s in by and not _has_enrichment(by[s],rich) and not _is_thin_tool(by[s],rich)]
+    slots=[s for s in slots if s in by and not by[s].get("catalog_only") and not _has_enrichment(by[s],rich) and not _is_thin_tool(by[s],rich)]
     import index_hold as _ih
     try: _hold=json.load(open("data/index_hold.json"))
     except Exception: _hold={}
@@ -429,7 +431,10 @@ def apply_thin_page_rule(tools):
     held=_ih.held_slugs(today, _hold, state, NEW_TOOL_CAP)
     noindex=[]; queued=[]; indexed=[]
     for x in sorted(tools, key=lambda z:((z.get("added") or ""), z["slug"])):
-        slug=x["slug"]; enr=_has_enrichment(x,rich) and slug not in held; thin=_is_thin_tool(x,rich) or slug in held
+        slug=x["slug"]
+        if x.get("catalog_only"):
+            noindex.append(slug); continue
+        enr=_has_enrichment(x,rich) and slug not in held; thin=_is_thin_tool(x,rich) or slug in held
         grandfather=admitted.get(slug,"") not in ("", today) and admitted.get(slug,"")<today
         if enr or (not thin and (grandfather or slug in slots)):
             admitted.setdefault(slug, today if enr and slug not in admitted else admitted.get(slug, today))
@@ -510,5 +515,9 @@ def _quality_finish():
     # submit and sponsor are rewritten after the footer pass, so put the Popular lists line back.
     import build_intlinks
     build_intlinks.apply_footer_line()
+    # Sitemap is final here, after catalog_only pages have left it. Animation
+    # frames and the cache buster have to use that page total, not the pre-thin one.
+    import build_seo_new as _bsn_final
+    _bsn_final.sync_animations(t)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)

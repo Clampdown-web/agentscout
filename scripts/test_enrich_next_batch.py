@@ -57,6 +57,11 @@ class EnrichNextBatchTests(unittest.TestCase):
         self.assertIn("NEW_TOOL_CAP=5", self.rule)
         self.assertIn("THIN_WORDS=80", self.rule)
         self.assertIn("if enr or (not thin and (grandfather or slug in slots)):", self.rule)
+        self.assertLess(
+            self.rule.index('if x.get("catalog_only"):'),
+            self.rule.index("if enr or (not thin and (grandfather or slug in slots)):"),
+        )
+        self.assertIn('not by[s].get("catalog_only")', self.rule)
         self.assertIn("data/index_hold.json", self.rule)
 
     def test_hold_list_is_the_fifteen_on_dated_batches(self):
