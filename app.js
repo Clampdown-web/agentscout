@@ -98,8 +98,8 @@ if(k<1){raf=requestAnimationFrame(step)}else{var n=0;function settle(){place(dow
 raf=requestAnimationFrame(step)}
 up.onclick=function(){glide(false)};
 dn.onclick=function(){glide(true)};
-function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v);
-up.classList.toggle("show",m.y>400);dn.classList.toggle("show",m.h>m.v+300&&fromBottom>300)}
+function upd(){q=0;var m=pageBox(),fromBottom=m.h-(m.y+m.v),scrolled=m.y>48;
+up.classList.toggle("show",scrolled&&m.y>400);dn.classList.toggle("show",scrolled&&m.h>m.v+300&&fromBottom>300)}
 function sch(){if(!q){q=1;requestAnimationFrame(upd)}}
 addEventListener("scroll",sch,{passive:true,capture:true});addEventListener("resize",sch);addEventListener("load",sch);addEventListener("pageshow",sch);
 addEventListener("touchmove",sch,{passive:true});addEventListener("touchend",sch,{passive:true});addEventListener("touchcancel",sch,{passive:true});

@@ -94,9 +94,16 @@
     if(location.hash==="#privacy-choices")openPicker()}
 
   function start(strict){if(S.decided)return;S.strict=strict;S.ready=true;
-    // Every template matches the homepage: the choice banner is first, analytics
-    // stays off, and the stats notice appears only after Accept.
-    S.analytics=false;S.embeds=false;noticeAfter=true;emit();showBanner()}
+    var painted=document.querySelector(".as-bar:not(.as-note)");
+    var home=!!document.getElementById("main");
+    if(strict){S.analytics=false;S.embeds=false;emit();showBanner()}
+    else if(painted&&home){
+      // Homepage paints the banner before region is known. Keep that choice.
+      S.analytics=false;S.embeds=false;noticeAfter=true;emit();showBanner()
+    }else{
+      if(painted)painted.remove();
+      S.analytics=true;S.embeds=true;emit();showNotice()
+    }}
   var saved=load();
   function init(){boot();
     if(saved){document.querySelectorAll(".as-bar").forEach(function(n){n.remove()});document.documentElement.classList.remove("as-pad");document.documentElement.style.removeProperty("--as-pad");S.decided=true;S.strict=!!saved.strict;S.analytics=!!saved.analytics;S.embeds=!!saved.embeds;S.ready=true;emit();return}
