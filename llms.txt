@@ -6,7 +6,7 @@
 
 ## MCP server reachability
 
-Checked daily, 323 of 323 checked servers live, last checked 2026-11-09. +742 listed, not yet checked.
+Checked daily, 1064 of 1065 checked servers live, last checked 2026-11-09.
 
 Once a day, AgentScout requests every MCP server in the directory, including catalog-only listings, and, when it is a different link, its GitHub URL. The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. A server counts as live when its stored label is OK or Reachable, blocks automated checks. OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. Any other checked result is not live. The live percentage uses only servers with a row in the check file: live plus down. A server with no row is listed, not yet checked, and is not part of that percentage. Catalog-only listings stay unverified until that daily check opens them. The last-checked time is the checked field, in America/Los_Angeles. The rows are on the MCP status page and in status.json.
 
@@ -1324,7 +1324,6 @@ Catalog last checked: 2026-11-10 (Pacific)
 - [MCP server status](https://agentscouthq.com/mcp/status/): up, down, and not-yet-checked counts. Updated daily, around 7 AM PT.
 - [Directory Launch Pack](https://agentscouthq.com/submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). Submitted to ~25 curated AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve). Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself. If your tool is already listed in one of those directories, we skip it and submit to another from the same curated list. This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing. Checkout: https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f
 - Fast-Track ($15) includes: Same-day indexing ping to Bing and IndexNow search engines (does not include Google).
-
 
 <!-- cb:start -->
 ## Community Grok Bot templates
