@@ -3,14 +3,15 @@ Input TSV columns: repo_or_blank  category  pricing  audience  description  [nam
   - repo: owner/name on GitHub (or blank for closed products; then name+website required)
 Checks: GitHub repo exists & not archived, website returns 200 (bot-blocked 403 => website dropped, github kept),
 logo = site apple-touch-icon / icon >=64px, else a logo/icon file in the repo, else the GitHub owner avatar ONLY if the owner is an Organization (never a personal User avatar); dedupe by name/domain/repo against tools.json.
-Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"awesome lists"|...] [--catalog-only] [--dry]
+Usage: python3 scripts/add_tools.py batch.tsv [--source="GitHub"|"MCP registry"|"awesome lists"|...] [--catalog-only] [--maker-submitted] [--dry]
 Each new tool is stamped added=today and source; build_site.py then refreshes the homepage Recently added section, new.html and llms.txt.
+A submit-form source ("Submission" or "Maker submission", any case) always sets maker_submitted and submitted (Pacific YYYY-MM-DD). --maker-submitted does the same for any other source. --catalog-only cannot be combined with either.
  [--cache=discovered.json from discover_github.py]"""
 import os,sys,json,re,io,requests,concurrent.futures as cf
 from urllib.parse import urljoin,urlparse
-from PIL import Image
 sys.path.insert(0,'scripts'); from dedupe_check import norm,dom,keys
 from takedown_blocklist import blocked as _takedown_blocked
+from maker_flag import is_submission_source, stamp_new
 from check_mcp_links import public
 UA={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"}
 GH={"Accept":"application/vnd.github+json","User-Agent":"agentscout"}
@@ -34,6 +35,7 @@ CATS={"frameworks","coding","MCP servers","agent infra","evals & observability",
 PRICES={"Open source","Freemium","Open source + cloud","Paid","Usage-based","Enterprise","See site","Open weights","Open standard"}
 def is_identicon(im):
   """GitHub default avatar: #f0f0f0 background + one flat colour in a 5x5 grid."""
+  from PIL import Image
   import collections
   px=list(im.convert('RGB').resize((64,64),Image.NEAREST).getdata())
   near=lambda a,b,d:all(abs(p-q)<=d for p,q in zip(a,b))
@@ -57,6 +59,7 @@ def open_public(u, timeout):
     r=requests.get(u,headers=UA,timeout=timeout,allow_redirects=False)
   return None if r.is_redirect else r
 def getimg(u):
+  from PIL import Image
   try:
     r=open_public(u,12)
     if r is None: return None
@@ -74,6 +77,7 @@ def getimg(u):
   except Exception: return None
 def save_logo(im, path):
   """RGB or RGBA PNG, at least 64px, at most 20 KB. Flattened so palette transparency cannot blank it."""
+  from PIL import Image
   im=im.convert("RGBA")
   bg=Image.new("RGBA", im.size, "white"); bg.alpha_composite(im); im=bg.convert("RGB")
   im.thumbnail((128,128), Image.LANCZOS)
@@ -145,13 +149,18 @@ def verify(row):
      "maturity":"Mature" if (stars or 0)>=5000 else "Active","audience":aud,"featured":False,"new":True,
      "verified":__import__('datetime').date.today().isoformat(),"added":__import__('datetime').date.today().isoformat(),"source":SOURCE,"pricing_detail":"","use_cases":[],
      "website":site,"github":f"https://github.com/{repo}" if repo else ""}
-  if CATALOG_ONLY: e["catalog_only"]=True
-  elif MAKER:
-    e["maker_submitted"]=True
-    e["submitted"]=__import__("datetime").datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date().isoformat()
+  listing_flags(e)
   if repo: e["repo"]=repo; e["github_stars"]=stars
   return {"err":None,"e":e,"logo":logo}
 CACHE={};SOURCE="manual";CATALOG_ONLY=False;MAKER=False
+def listing_flags(e):
+  """catalog_only and a submit-form listing are different rows. A submission source is enough; --maker-submitted covers any other source."""
+  if CATALOG_ONLY: e["catalog_only"]=True
+  elif MAKER or is_submission_source(SOURCE): stamp_new(e)
+  return e
+def guard_import_flags():
+  if CATALOG_ONLY and (MAKER or is_submission_source(SOURCE)):
+    raise SystemExit("catalog-only imports are not submit-form listings; do not pass --maker-submitted or a submission source with --catalog-only")
 if __name__=="__main__":
   for a in sys.argv:
     if a=="--catalog-only": CATALOG_ONLY=True
@@ -160,8 +169,7 @@ if __name__=="__main__":
     elif a.startswith("--cache=") and SOURCE=="manual": SOURCE="GitHub"
   for a in sys.argv:
     if a.startswith("--cache="): CACHE={i["full_name"].lower():i for i in json.load(open(a[8:]))}
-  if CATALOG_ONLY and MAKER:
-    raise SystemExit("catalog-only imports are not submit-form listings; do not pass --maker-submitted with --catalog-only")
+  guard_import_flags()
   rows=[l.rstrip('\n').split('\t') for l in open(sys.argv[1]) if l.strip() and not l.startswith('#')]
   t=json.load(open('tools.json')); K=keys(t); slugs={x["slug"] for x in t}
   with cf.ThreadPoolExecutor(12) as ex: res=list(ex.map(verify,rows))
@@ -180,6 +188,7 @@ if __name__=="__main__":
     if "--dry" not in sys.argv:
       save_logo(r["logo"][0], e["logo"])
       try:
+        from PIL import Image
         flat=Image.open(e["logo"]).convert("RGBA")
         bg=Image.new("RGBA", flat.size, "white"); bg.alpha_composite(flat)
         if all(a==b for a,b in bg.convert("RGB").getextrema()):
