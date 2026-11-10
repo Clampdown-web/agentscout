@@ -84,7 +84,7 @@ def pages(t):
         sd=("<h2 style=\"font-size:18px;margin:32px 0 8px\">More agent news from "+_fmt(x["date"])+"</h2><ul>"+"".join(f'<li><a href="{d}{y["page"]}">{e(y["title"])}</a> <span class="muted">({e(y["source"])})</span></li>' for y in sameday)+"</ul>") if sameday else ""
         nav=" · ".join(z for z in [f'<a href="{d}{newer["page"]}" rel="next">Newer: {e(newer["title"])}</a>' if newer else "",f'<a href="{d}{older["page"]}" rel="prev">Older: {e(older["title"])}</a>' if older else ""] if z)
         body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / <a href="index.html">{_month(ym)}</a></div>'
-              f'<article style="padding-top:20px;text-align:left;max-width:760px"><h1 style="text-align:left">{e(x["title"])}</h1>'
+              f'<article class="calm prose"><h1 style="text-align:left">{e(x["title"])}</h1>'
               f'<p class="muted" style="margin:0 0 18px"><time datetime="{e(x["date"])}">{_fmt(x["date"])}</time> · Source: {e(x["source"])}</p>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(x["summary"])}</p>'
               f'<p><a class="btn" href="{e(src)}" target="_blank" rel="noopener noreferrer">Read the original on {e(x["source"])} ↗</a></p>'
@@ -111,7 +111,7 @@ def pages(t):
         if ym == "2026-10":
             import build_tasks
             nl = build_tasks.INLINE_NL
-        body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / {_month(ym)}</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">AI agent news: {_month(ym)}</h1>'
+        body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / {_month(ym)}</div><section class="calm"><h1 style="text-align:left">AI agent news: {_month(ym)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{len(its)} stories about AI agents, coding agents and MCP. Open a story for its summary, related tools and the source link.</p>{nl}{lis}'
               f'<p style="margin-top:24px"><a href="../../index.html">All months</a> · <a href="{d}news.html">Latest agent news</a></p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":k+1,"url":B+x["page"],"name":x["title"]} for k,x in enumerate(its)]},
@@ -122,7 +122,7 @@ def pages(t):
     rows="".join(f'<li><a href="{ym[:4]}/{ym[5:]}/index.html">{_month(ym)}</a> <span class="muted">({len(its)} stories)</span></li>' for ym,its in sorted(months.items(),reverse=True))
     latest="".join(f'<li><a href="{d}{x["page"]}">{e(x["title"])}</a> <span class="muted">({_fmt(x["date"])}, {e(x["source"])})</span></li>' for x in items[:10])
     title="AI agent news archive · AgentScout"; desc=f"Every AI agent news story AgentScout has covered ({len(items)} so far), by month, with summaries in our own words and links to the sources."
-    body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / Archive</div><section style="padding-top:20px;text-align:left;max-width:760px"><h1 style="text-align:left">AI agent news archive</h1>'
+    body=(f'<div class="crumb"><a href="{d}index.html">AgentScout</a> / <a href="{d}news.html">Agent news</a> / Archive</div><section class="calm prose"><h1 style="text-align:left">AI agent news archive</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">{len(items)} stories so far. Each one has its own page with a summary, related tools and the source link. For today\'s stories, see <a href="{d}news.html">Agent news</a>.</p>'
           f'<h2 style="font-size:18px;margin:24px 0 8px">By month</h2><ul>{rows}</ul><h2 style="font-size:18px;margin:24px 0 8px">Latest stories</h2><ul>{latest}</ul></section>')
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Agent news","item":B+"news.html"},{"@type":"ListItem","position":3,"name":"Archive","item":canon}]}]}

@@ -36,7 +36,7 @@ def trending(t):
         print(f"trending: {len(items)} tools qualify (<{MIN_TOOLS}), page held"); return []
     upd=(d.get("updated") or "")[:10]; canon=B+path; title="Trending AI agent tools this week · AgentScout"
     desc=X.clip_text(f"The AI agent tools AgentScout visitors looked at, clicked and saved most in the last 7 days, including {', '.join(x['name'] for x in items[:3])}.", 160)
-    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Trending</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Trending AI agent tools this week</h1>'
+    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Trending</div><section class="calm"><h1 style="text-align:left">Trending AI agent tools this week</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">The {len(items)} tools AgentScout visitors viewed, clicked and saved most over the last 7 days, in rank order. We show rank only, not counts. Updated {e(upd)}.</p>'
           f'<ol class="grid" style="padding:0;margin:0">{"".join(_li(i+1,x,"") for i,x in enumerate(items))}</ol>'
           f'<p style="margin-top:20px">See also: <a href="new.html">New tools</a> · <a href="best/most-starred-open-source-ai-agents.html">Most-starred open-source agents</a> · <a href="best/index.html">All best lists</a></p>'
@@ -65,7 +65,7 @@ def star_growth(t):
         f"Trending open-source AI agents{brand}",
     ])
     desc=X.clip_text(f"Open-source AI agent projects gaining the most GitHub stars over the last {days} days, from AgentScout's daily snapshots.", 160)
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / Trending open source</div><section style="padding-top:20px;text-align:left"><h1 style="text-align:left">Trending open-source AI agents</h1>'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / Trending open source</div><section class="calm"><h1 style="text-align:left">Trending open-source AI agents</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">The {len(items)} listed open-source projects that gained the most GitHub stars between {e(d0.strftime("%b %-d"))} and {e(ld_.strftime("%b %-d, %Y"))}, from our daily snapshots of each repo.</p>'
           f'<ol class="grid" style="padding:0;margin:0">{"".join(_li(i+1,x,"../",f"<span class=\"b\">+{g:,} stars</span>") for i,(x,g) in enumerate(items))}</ol>'
           '<p style="margin-top:20px">See also: <a href="most-starred-open-source-ai-agents.html">Most-starred open-source agents (all time)</a> · <a href="index.html">All best lists</a></p></section>')

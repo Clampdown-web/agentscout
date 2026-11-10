@@ -35,7 +35,7 @@ def wrap(s,h1,lede,inner,faq,js,t):
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Free tools","item":B+"free-tools.html"},{"@type":"ListItem","position":3,"name":name,"item":canon}]}]}
     fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / {e(name)}</div><section style="padding-top:20px;text-align:left;max-width:860px">'
+    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / {e(name)}</div><section class="calm prose wide">'
           f'<h1 style="text-align:left;margin-left:0">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>'
           f'<p class="muted" style="margin:0 0 8px;font-size:13.5px">Free, no sign-up. Runs entirely in your browser: nothing you type is sent to AgentScout or any AI provider.</p>'
           f'{inner}{__import__("build_tasks").ai_ref_cta_html("../")}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}{rel(s)}'

@@ -303,6 +303,21 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 .mba-builtby{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;font-size:12.5px;font-weight:700;color:#e5e7eb;margin:4px auto 6px;text-align:center}
 .mba-builtby img.aswm{height:1.38em;vertical-align:-.34em;margin:0 -.35em 0 .08em}
 section.mba-sec,.bt section.mba-sec{padding:16px}.mba-head{padding:18px 16px;text-align:center}.mba-notice{padding:14px 16px;text-align:center;justify-content:center}.mba-notice div{justify-content:center;width:100%}.mba-card{padding:18px 16px}.mba-bundle{padding:18px 16px}.mba-btn{width:100%;box-sizing:border-box}.bt-hub-tab{width:100%;justify-content:center;box-sizing:border-box}}
+/* Phase 3 calm */
+.bt-hub-bar,section.mba-sec,.bt section.mba-sec,.mba-card,.mba-bundle,.mba-head,.mba-notice{background:var(--card);color:var(--text);border:1px solid var(--line);box-shadow:var(--shadow)}
+.bt-hub-tab.pro{background:var(--text);color:var(--bg);box-shadow:none}
+.bt-hub-tab.vid{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.mba-card.neon-lime,.mba-card.neon-gold,.mba-card.neon-orange,.mba-card.neon-red{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+.mba-card.neon-lime{border-color:var(--accent)}
+.mba-eyebrow,.mba-tag{background:var(--accent-soft);color:var(--accent);border-color:transparent;box-shadow:none}
+.mba-head h2,.mba-card h3,.mba-price,.mba-bundle-copy h3{color:var(--text)}
+.mba-head p,.mba-card p,.mba-list,.mba-bundle-copy p,.mba-builtby,.mba-price small{color:var(--muted)}
+.mba-notice{color:var(--text)}
+.mba-notice a,.mba-btn{color:var(--accent)}
+.mba-btn{background:var(--text)!important;color:var(--bg)!important;box-shadow:none!important}
+.mba-sec img.aswm{filter:none}
+html[data-theme=dark] .mba-sec img.aswm{filter:invert(1) hue-rotate(180deg)}
+.mba-vid{background:var(--soft);border-color:var(--line);box-shadow:none}
 </style>"""
 
 def made_by_agentscout_html(total=None):

@@ -40,7 +40,7 @@ def build(t):
     seednote=(f' The starting catalog of {len(seed):,} tools ({e(datetime.date.fromisoformat(sd[0]).strftime("%b %-d"))}–{e(fmt(sd[-1]))}) is not counted as new. <a href="index.html#feed">Browse all {len(t):,} tools</a>.' if seed and sd else "")
     days={}
     for x in recent: days.setdefault(x["added"],[]).append(x)
-    body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section style="padding-top:20px;text-align:left">'
+    body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section class="calm">'
           f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{len(recent):,} tool{"s" if len(recent)!=1 else ""} added in the last 30 days, newest first. Every link is checked when it is added.{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
     mk=sorted([x for x in t if x.get("maker_submitted")],key=lambda x:(x.get("submitted") or x.get("added",""),x.get("id",0)))  # first submissions first (orke)

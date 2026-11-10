@@ -88,7 +88,7 @@ def packages_grid(t, m=None, on_submit=False):
     <div class="pkg-card" data-pkg-card="free">
       <div>
         <div class="pkg-top">
-          <span class="pkg-pill npill npft"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>✓ 100% Free Forever</span>
+          <span class="pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>✓ 100% Free Forever</span>
         </div>
         <h3>Free Community Listing</h3>
         <div class="pkg-price"><span class="pkg-amt">$0</span><span class="pkg-per">forever · no card required</span></div>
@@ -108,7 +108,7 @@ def packages_grid(t, m=None, on_submit=False):
     <div class="pkg-card pkg-fast" data-pkg-card="fast_29">
       <div>
         <div class="pkg-top">
-          <span class="pkg-pill pkg-pill-fast npill npfast"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>⚡ FAST-TRACK LAUNCH · $15 ONE-TIME</span>
+          <span class="pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>⚡ FAST-TRACK LAUNCH · $15 ONE-TIME</span>
         </div>
         <h3>Fast-Track + 7-Day Launch Boost</h3>
         <div class="pkg-price"><span class="pkg-amt">$15</span><span class="pkg-per">one-time · 7-day featured boost</span></div>
@@ -130,7 +130,7 @@ def packages_grid(t, m=None, on_submit=False):
     <div class="pkg-card pkg-featured" data-pkg-card="featured_49">
       <div>
         <div class="pkg-top">
-          <span class="pkg-pill pkg-pill-pop npill npmcp"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>★ MOST POPULAR · BEST VALUE · $49 ONE-TIME</span>
+          <span class="pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>★ MOST POPULAR · BEST VALUE · $49 ONE-TIME</span>
         </div>
         <h3>30-Day Category Pin + Permanent SEO/AEO Placement</h3>
         <div class="pkg-price"><span class="pkg-amt">$49</span><span class="pkg-per">one-time · 30-day pin + permanent SEO/AEO</span></div>
@@ -151,7 +151,7 @@ def packages_grid(t, m=None, on_submit=False):
     <div class="pkg-card pkg-vip" data-pkg-card="sponsor_99">
       <div>
         <div class="pkg-top">
-          <span class="pkg-pill pkg-pill-vip npill npbolt"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>🔥 1 EXCLUSIVE SLOT / WEEK · $99/WK</span>
+          <span class="pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>🔥 1 EXCLUSIVE SLOT / WEEK · $99/WK</span>
         </div>
         <h3>Weekly Sitewide Sponsor + Newsletter Top Slot</h3>
         <div class="pkg-price"><span class="pkg-amt">$99</span><span class="pkg-per">/ week · 1 exclusive slot</span></div>
@@ -205,8 +205,8 @@ def build(t):
     cards_html = packages_grid(t, m=m, on_submit=False)
 
     body = f'''  <div class="crumb"><a href="index.html">AgentScout</a> / Sponsor &amp; Get Featured</div>
-  <section style="padding:28px 0 12px">
-    <span class="sp-eyebrow npill npsp"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg><span>For AI Agent &amp; MCP Makers · Live Directory Metrics (<span data-live-updated>{html.escape(upd_disp)}</span>)</span></span>
+  <section class="calm">
+    <span class="sp-eyebrow pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg><span>For AI Agent &amp; MCP Makers · Live Directory Metrics (<span data-live-updated>{html.escape(upd_disp)}</span>)</span></span>
     <h1 style="text-align:left;margin:4px 0 12px;max-width:none;font-size:clamp(28px,4vw,42px)">Get Your AI Agent or MCP Server in Front of Builders Ready to Try It</h1>
     <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b data-live-tools>{fmt(total)}</b> AI agent tools and <b data-live-mcp>{fmt(mcp_cnt)}</b> MCP servers across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$15 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
 
@@ -248,7 +248,7 @@ def build(t):
       </div>
     </div>
 
-    <figure style="margin:22px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-sponsor-placements-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="assets/animations/agentscout-sponsor-placements.mp4" type="video/mp4"></video></figure>
+    <figure style="margin:22px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-sponsor-placements-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="assets/animations/agentscout-sponsor-placements.mp4" type="video/mp4"></video></figure>
     <h2 style="font-size:20px;margin:28px 0 12px">Side-by-side package comparison</h2>
     <div class="tablewrap"><table class="cmp">
       <thead><tr><th>What&#x27;s included</th><th>Free ($0)</th><th>Fast-Track ($15)</th><th>Category Pin ($49 ★)</th><th>Weekly Sponsor ($99/wk)</th></tr></thead>
