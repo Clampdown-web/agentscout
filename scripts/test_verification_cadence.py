@@ -56,8 +56,8 @@ class VerificationCadenceTest(unittest.TestCase):
         servers = []
         doc = {"catalog": {}, "servers": servers}
         rendered = [
-            build_status._card_head("Verification", 0),
-            build_status._card_head("Verification for this list", 1),
+            build_status._card_head("Verification", 1, 1),
+            build_status._card_head("Verification for this list", 95, 100),
             build_status.tool_rows({"status": "live", "check_label": "OK"}),
             build_status.panel(doc, servers, "", "Verification"),
             build_seo_trim.dir_rows({}, ""),

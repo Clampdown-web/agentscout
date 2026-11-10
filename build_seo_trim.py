@@ -140,7 +140,7 @@ def best_index_quick_answer():
 
 def dir_rows(x, directory_checked):
     checked = x.get("verified") or ""
-    body = [BS.VC_CSS, '<div class="vc">', BS._card_head("Verification", 0),
+    body = [BS.VC_CSS, '<div class="vc">', BS._card_head("Verification", 1, 1, directory_checked or ""),
             '<ul class="vc-chips"><li class="vc-chip vc-ok">Listing link: <b>checked</b></li></ul>']
     if checked:
         body.append(f'<p>This listing\'s link was last checked {BS._time_html(checked)}.</p>')
