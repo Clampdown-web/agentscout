@@ -911,6 +911,7 @@ body.home .verify-slim{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14
 body.home .verify-slim p{margin:0;flex:1 1 200px;color:var(--text)}
 body.home .verify-slim .vc-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;flex:none}
 body.home .verify-slim .vc-dot.vc-dn{background:#f87171;box-shadow:0 0 6px #f87171}
+body.home .verify-slim .vc-dot.vc-warn-dot{background:#fbbf24;box-shadow:none;animation:none!important}
 body.home .verify-slim>a{font-weight:650;color:var(--accent);white-space:nowrap;min-height:36px;display:inline-flex;align-items:center}
 body.home .verify-slim details{flex:1 1 100%}
 body.home .verify-slim summary{min-height:32px;display:flex;align-items:center;color:var(--muted);font-size:13px;cursor:pointer;list-style:none}
@@ -976,7 +977,7 @@ body.home .hero-actions{gap:12px 16px;margin:12px 0 4px}
 body.home .hero-quiet{display:inline-flex;align-items:center;min-height:44px;color:var(--accent);font-weight:600;font-size:14px}
 body.home .hero-quiet:hover{text-decoration:underline}
 body.home .verify-slim{background:var(--soft);box-shadow:none;border-radius:12px;margin:8px 0 12px}
-body.home .verify-slim .vc-dot,body.home .verify-slim .vc-dot.vc-dn{box-shadow:none}
+body.home .verify-slim .vc-dot,body.home .verify-slim .vc-dot.vc-dn,body.home .verify-slim .vc-dot.vc-warn-dot{box-shadow:none}
 body.home #directory{padding-top:8px}
 body.home .stats{max-width:100%}
 body.home #about-directory .home-terminal{border:1px solid var(--line)!important;box-shadow:none!important}
@@ -1106,7 +1107,10 @@ body.home #dir-stats{box-sizing:border-box;--as-free:max(0px,(100% - 1120px) / 2
 .vc-hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 12px}
 .sheet .vc-hd h2,.vc-hd h2{margin:0}
 .vc-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#22c55e;flex:0 0 auto}
-.vc-dot.vc-dn{background:#f87171}
+.vc-dot.vc-dn{background:#f87171;animation:none!important}
+.vc-dot.vc-warn-dot{background:#fbbf24;box-shadow:none!important;animation:none!important}
+@keyframes vc-live{0%,100%{opacity:1}50%{opacity:.55}}
+@media (prefers-reduced-motion:no-preference){.vc-dot:not(.vc-dn):not(.vc-warn-dot){animation:vc-live 2.2s ease-in-out infinite!important}}
 .vc-upd{margin-left:auto;font-size:12px}
 .vc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;padding:0;list-style:none}
 .vc-chip{display:inline-flex;align-items:baseline;gap:6px;padding:5px 12px;border-radius:999px;font-size:13px;border:1px solid var(--line)}

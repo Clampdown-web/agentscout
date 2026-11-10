@@ -2,9 +2,18 @@
 
 Every time, status, and history line is read from data/mcp_link_status.json,
 data/mcp_history.json, or api/tools.json. A server with no link-status row is
-"not yet checked". Nothing here is inferred from the clock.
+"not yet checked". Counts come only from those files. The status dot uses the
+live share of checked servers, and is red when that share is below 90% or the
+stored check time is older than 36 hours.
 """
 import glob, html, json, os, re
+from datetime import datetime, timedelta, timezone
+
+try:
+    from zoneinfo import ZoneInfo
+    _PT = ZoneInfo("America/Los_Angeles")
+except Exception:
+    _PT = timezone(timedelta(hours=-8))
 
 import build_aeo
 
@@ -15,6 +24,11 @@ MONTHS = ("", "January", "February", "March", "April", "May", "June", "July", "A
 SKIP_MCP = {"mcp/connect.html", "mcp/pricing.html", "mcp/link-status.html"}
 # Public copy for the MCP/directory link check: once daily around 7 AM Pacific (a run may finish later).
 VERIFY_CADENCE = "Updated daily, around 7 AM PT"
+# Health dot, shared by the homepage strip and every verification card.
+# Green at or above 98% live, amber from 90% up to 98%, red below 90%.
+DOT_LIVE_OK_PCT = 98
+DOT_LIVE_WARN_PCT = 90
+DOT_STALE = timedelta(hours=36)
 
 
 def _pretty_day(day):
@@ -234,8 +248,53 @@ def _down_pills(servers, prefix):
     return '<p class="vc-lbl">Down right now</p><div class="vc-pills">' + "".join(links) + more + "</div>"
 
 
-def _card_head(heading, down=0):
-    dot = "vc-dot vc-dn" if down else "vc-dot"
+def _checked_at(checked):
+    """Pacific time of a stored check. Date-only stamps use 23:59 so a same-day check is not stale."""
+    checked = (checked or "").strip()
+    m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?", checked)
+    if not m:
+        return None
+    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if m.group(4) is None:
+        return datetime(y, mo, d, 23, 59, tzinfo=_PT)
+    return datetime(y, mo, d, int(m.group(4)), int(m.group(5)), tzinfo=_PT)
+
+
+def _as_pt(now):
+    if now is None:
+        return datetime.now(_PT)
+    if now.tzinfo is None:
+        return now.replace(tzinfo=_PT)
+    return now.astimezone(_PT)
+
+
+def status_dot_class(live, checked, last_checked="", now=None):
+    """Class for the health dot from the live share of checked servers.
+
+    Green (`vc-dot`, the pulsing default) when at least 98% are live.
+    Amber (`vc-dot vc-warn-dot`, no pulse) when the share is at least 90% and below 98%.
+    Red (`vc-dot vc-dn`) below 90%, or when the stored check is older than 36 hours.
+    Nothing checked has no share, so the dot stays green unless the timestamp is stale.
+    """
+    when = _checked_at(last_checked)
+    if when is not None and _as_pt(now) - when > DOT_STALE:
+        return "vc-dot vc-dn"
+    try:
+        live_n = int(live)
+        checked_n = int(checked)
+    except (TypeError, ValueError):
+        return "vc-dot vc-dn"
+    if checked_n <= 0:
+        return "vc-dot"
+    if live_n * 100 >= checked_n * DOT_LIVE_OK_PCT:
+        return "vc-dot"
+    if live_n * 100 >= checked_n * DOT_LIVE_WARN_PCT:
+        return "vc-dot vc-warn-dot"
+    return "vc-dot vc-dn"
+
+
+def _card_head(heading, live, checked, last_checked=""):
+    dot = status_dot_class(live, checked, last_checked)
     return (f'<div class="vc-hd"><span class="{dot}" aria-hidden="true"></span><h2>{e(heading)}</h2>'
             f'<span class="vc-upd">{VERIFY_CADENCE}</span></div>')
 
@@ -244,7 +303,9 @@ def panel(doc, servers, prefix, heading):
     cat = doc["catalog"]
     checked = cat.get("mcp_last_checked") or ""
     directory = cat.get("directory_last_checked") or ""
-    parts = [f'<!--vs:list-->{VC_CSS}<section class="verify vc" aria-label="Link check evidence">{_card_head(heading, sum(1 for s in servers if s.get("status") == "down"))}']
+    live_n = sum(1 for s in servers if s.get("status") == "live")
+    down_n = sum(1 for s in servers if s.get("status") == "down")
+    parts = [f'<!--vs:list-->{VC_CSS}<section class="verify vc" aria-label="Link check evidence">{_card_head(heading, live_n, live_n + down_n, checked)}']
     if checked:
         parts.append(_chips(servers))
         parts.append(f'<p>MCP servers last checked {_time_html(checked)}. Status: {_counts_sentence(servers)}.</p>')
@@ -283,7 +344,13 @@ def tool_rows(item):
     elif detail:
         extra = f" ({e(detail)})"
     cls = "vc-ok" if status == "live" else "vc-bad" if status == "down" else "vc-warn"
-    body = [VC_CSS, '<div class="vc">', _card_head("Verification", 1 if status == "down" else 0),
+    if status == "live":
+        dot_live, dot_checked = 1, 1
+    elif status == "down":
+        dot_live, dot_checked = 0, 1
+    else:
+        dot_live, dot_checked = 0, 0
+    body = [VC_CSS, '<div class="vc">', _card_head("Verification", dot_live, dot_checked, item.get("last_checked") or ""),
             f'<ul class="vc-chips"><li class="vc-chip {cls}">Status: <b>{e(status)}</b>{extra}</li></ul>']
     if item.get("last_checked"):
         body.append(f'<p>Last checked {_time_html(item["last_checked"])}.</p>')
@@ -314,7 +381,7 @@ def home_slim(doc):
     miss = sum(1 for s in servers if s.get("status") == "not yet checked")
     checked = cat.get("mcp_last_checked") or ""
     when = _time_html(checked) if checked else "not yet checked"
-    dot = "vc-dot vc-dn" if down else "vc-dot"
+    dot = status_dot_class(live, checked_n, checked)
     hist = _hist_html(cat.get("history") or [], 3)
     extra = f' · +{miss} listed, not yet checked' if miss else ""
     return (
