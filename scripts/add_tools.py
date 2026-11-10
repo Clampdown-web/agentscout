@@ -146,16 +146,22 @@ def verify(row):
      "verified":__import__('datetime').date.today().isoformat(),"added":__import__('datetime').date.today().isoformat(),"source":SOURCE,"pricing_detail":"","use_cases":[],
      "website":site,"github":f"https://github.com/{repo}" if repo else ""}
   if CATALOG_ONLY: e["catalog_only"]=True
+  elif MAKER:
+    e["maker_submitted"]=True
+    e["submitted"]=__import__("datetime").datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date().isoformat()
   if repo: e["repo"]=repo; e["github_stars"]=stars
   return {"err":None,"e":e,"logo":logo}
-CACHE={};SOURCE="manual";CATALOG_ONLY=False
+CACHE={};SOURCE="manual";CATALOG_ONLY=False;MAKER=False
 if __name__=="__main__":
   for a in sys.argv:
     if a=="--catalog-only": CATALOG_ONLY=True
+    elif a=="--maker-submitted": MAKER=True
     elif a.startswith("--source="): SOURCE=a[9:]
     elif a.startswith("--cache=") and SOURCE=="manual": SOURCE="GitHub"
   for a in sys.argv:
     if a.startswith("--cache="): CACHE={i["full_name"].lower():i for i in json.load(open(a[8:]))}
+  if CATALOG_ONLY and MAKER:
+    raise SystemExit("catalog-only imports are not submit-form listings; do not pass --maker-submitted with --catalog-only")
   rows=[l.rstrip('\n').split('\t') for l in open(sys.argv[1]) if l.strip() and not l.startswith('#')]
   t=json.load(open('tools.json')); K=keys(t); slugs={x["slug"] for x in t}
   with cf.ThreadPoolExecutor(12) as ex: res=list(ex.map(verify,rows))

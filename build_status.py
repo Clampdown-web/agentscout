@@ -94,7 +94,11 @@ def build_document(tools):
         else:
             status = "not yet checked"
             item["status"] = status
-            detail = ""
+            item["unverified"] = True
+            if x.get("catalog_only"):
+                item["catalog_only"] = True
+                item["detail"] = "Listed, not yet checked"
+            detail = item.get("detail") or ""
             label = "not checked"
         own = [ev for ev in events if ev["note"].startswith(x["name"] + " link status")]
         history = []
@@ -108,10 +112,12 @@ def build_document(tools):
             item["history"] = history[:8]
         counts[status] = counts.get(status, 0) + 1
         servers.append(item)
+    checked_count = counts["live"] + counts["down"]
     catalog = {
         "mcp_servers": len(mcp),
         "live": counts["live"],
         "down": counts["down"],
+        "checked": checked_count,
         "not_yet_checked": counts["not yet checked"],
     }
     day = build_aeo.catalog_check_date()
@@ -122,9 +128,9 @@ def build_document(tools):
         catalog["timezone"] = raw.get("tz") or "America/Los_Angeles"
     hist = []
     if checked:
-        note = f'{counts["live"]} live, {counts["down"]} down'
+        note = f'{counts["live"]} of {checked_count} checked servers live, {counts["down"]} down'
         if counts["not yet checked"]:
-            note += f', {counts["not yet checked"]} not yet checked'
+            note += f', +{counts["not yet checked"]} listed, not yet checked'
         hist.append({"date": checked[:10], "note": note, **({"time": checked[11:16]} if len(checked) >= 16 else {})})
     hist.extend(reversed(events))
     if hist:
@@ -215,7 +221,7 @@ def _chips(servers):
          f'<li class="vc-chip {"vc-bad" if down else "vc-ok"}"><b>{down}</b> down</li>']
     if miss:
         c.append(f'<li class="vc-chip vc-warn"><b>{miss}</b> not yet checked</li>')
-    c.append(f'<li class="vc-chip vc-tot"><b>{len(servers)}</b> checked</li>')
+    c.append(f'<li class="vc-chip vc-tot"><b>{live + down}</b> checked</li>')
     return '<ul class="vc-chips" aria-label="Link status counts">' + "".join(c) + "</ul>"
 
 
@@ -303,16 +309,18 @@ def home_slim(doc):
     servers = doc["servers"]
     cat = doc["catalog"]
     live = sum(1 for s in servers if s.get("status") == "live")
-    total = len(servers)
     down = sum(1 for s in servers if s.get("status") == "down")
+    checked_n = live + down
+    miss = sum(1 for s in servers if s.get("status") == "not yet checked")
     checked = cat.get("mcp_last_checked") or ""
     when = _time_html(checked) if checked else "not yet checked"
     dot = "vc-dot vc-dn" if down else "vc-dot"
     hist = _hist_html(cat.get("history") or [], 3)
+    extra = f' · +{miss} listed, not yet checked' if miss else ""
     return (
         f'<!--vs:home--><section class="verify-slim" aria-label="MCP server link check">'
         f'<span class="{dot}" aria-hidden="true"></span>'
-        f'<p><b>{live} of {total}</b> MCP servers live · checked daily · last checked {when}</p>'
+        f'<p><b>{live} of {checked_n}</b> checked servers live{extra} · checked daily · last checked {when}</p>'
         f'<a href="mcp/status/">MCP status →</a>'
         f'<details><summary>Recent checks</summary>{hist}</details>'
         f'</section><!--/vs:home-->'
@@ -511,7 +519,8 @@ def write_dashboard(tools):
     checked = cat.get("mcp_last_checked") or ""
     dt, pretty = _pretty_checked(checked)
     live, down, miss = cat.get("live", 0), cat.get("down", 0), cat.get("not_yet_checked", 0)
-    total = live + down + miss
+    checked_n = live + down
+    total = checked_n + miss
     when = f'<time datetime="{e(dt)}">{e(pretty)}</time>' if dt else "not yet checked"
     rows = []
     for s in doc["servers"]:
@@ -532,23 +541,23 @@ def write_dashboard(tools):
             f'<tr data-status="{e(status)}" data-name="{e(s["name"].lower())}">'
             f'<td><a href="../../tools/{e(s["slug"])}.html">{e(s["name"])}</a></td>'
             f'<td><span class="st-pill st-{e(status.replace(" ", "-"))}">{e(shown)}</span></td>'
-            f'<td>{last}</td><td>{detail or "—"}</td><td>{e(hist_txt)}</td></tr>'
+            f'<td>{last}</td><td>{detail or "—"}</td><td><div class="st-hist">{e(hist_txt)}</div></td></tr>'
         )
     title = "MCP server status · AgentScout"
-    desc = f"Up, down, and not-yet-checked counts for {total} MCP servers on AgentScout. {VERIFY_CADENCE}."
+    desc = f"{live} of {checked_n} checked MCP servers live. +{miss} listed, not yet checked. {VERIFY_CADENCE}."
     if len(desc) > 156:
         desc = desc[:156].rsplit(" ", 1)[0]
     canon = B + "mcp/status/"
     qa_bits = []
     if checked:
-        qa_bits.append(f"{live} up, {down} down, {miss} not yet checked, out of {total} MCP servers.")
+        qa_bits.append(f"{live} of {checked_n} checked servers live. +{miss} listed, not yet checked. {total} MCP servers are in the directory.")
         qa_bits.append(f"Last updated {pretty or checked} Pacific.")
     else:
         qa_bits.append("The MCP link check has no timestamp on file yet.")
     body = f'''<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../index.html">MCP servers</a> / Status</div>
 <section class="st-dash sheet">
 <h1 style="text-align:left">MCP server status</h1>
-<p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. {VERIFY_CADENCE}. A server with no row in the check file is not yet checked. Nothing on this page is guessed.</p>
+<p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. {VERIFY_CADENCE}. The live count is {live} of {checked_n} checked servers. A server with no row in the check file, including a catalog-only listing, is listed and not yet checked, and is not part of that percentage. The daily check includes catalog-only servers the next time it runs. Nothing on this page is guessed.</p>
 <p class="st-updated"><b>Last updated:</b> {when}. {VERIFY_CADENCE}. {e(qa_bits[0] if qa_bits else "")}</p>
 <div class="st-counts" role="group" aria-label="Filter by status">
 <button type="button" class="st-count on" data-filter="all"><b>{total}</b><span>All</span></button>
@@ -563,7 +572,7 @@ def write_dashboard(tools):
 <table class="st-table" id="st-table"><thead><tr><th>MCP server</th><th>Status</th><th>Last checked</th><th>HTTP result</th><th>Recent history</th></tr></thead><tbody>
 {"".join(rows)}
 </tbody></table></div>
-<p class="muted" style="margin-top:14px">Up includes servers whose latest check was OK, and servers that answered but block scripted requests. Down means the check returned an error or no response. See also <a href="../pricing.html">MCP pricing</a> and <a href="../index.html">MCP servers by task</a>.</p>
+<p class="muted" style="margin-top:14px">Up and down are the checked set. Not yet checked, including catalog-only listings the daily check has not opened, are labeled unverified and stay out of the live percentage. Up includes servers whose latest check was OK, and servers that answered but block scripted requests. Down means the check returned an error or no response. See also <a href="../pricing.html">MCP pricing</a> and <a href="../index.html">MCP servers by task</a>.</p>
 </section>
 <script>
 (function(){{
@@ -599,7 +608,11 @@ def write_dashboard(tools):
         if node.get("dateModified") is None:
             node.pop("dateModified", None)
     os.makedirs("mcp/status", exist_ok=True)
-    open("mcp/status/index.html", "w").write(X.shell("../../", title, desc, canon, body, ld))
+    import build_tasks as _bt
+    page = X.shell("../../", title, desc, canon, body, ld)
+    page = _bt.ensure_shared_scripts("mcp/status/index.html", page, "../../")
+    page = __import__("build_share").apply("mcp/status/index.html", page, "../../", _bt.ASSET_V)
+    open("mcp/status/index.html", "w").write(page)
     write_link_status_forward()
     print(f"status dashboard: {live} up, {down} down, {miss} not yet checked")
     return canon

@@ -521,3 +521,6 @@ def _quality_finish():
     _bsn_final.sync_animations(t)
 _axq.unregister(_bxq._apply_featured)
 _axq.register(_quality_finish)
+# The thin-page filter is also the last step of the main process. An atexit hook that
+# calls sys.exit (pagefind) must not be the only pass that drops catalog_only URLs.
+apply_thin_page_rule(t)

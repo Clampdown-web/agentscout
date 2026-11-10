@@ -195,14 +195,32 @@
     resetWidget("Starting the check again. Wait until it finishes, then press Submit.");
   }
 
-  function onLoad() {
+  /* Normal and flexible widgets are 300px wide. A narrower box (or a box that
+     has not been laid out yet) makes Turnstile return 400020, which is not a
+     visitor-retryable code, so the same render would fail again. Compact is 150px. */
+  function widgetSize(width) {
+    var n = Number(width);
+    if (!isFinite(n) || n < 300) return "compact";
+    return "flexible";
+  }
+
+  function themeNow() {
+    var theme = document.documentElement && document.documentElement.getAttribute("data-theme");
+    return theme === "dark" || theme === "light" ? theme : "auto";
+  }
+
+  function renderWidget() {
     if (widgetId != null) return;
     var el = $("sf-turnstile");
     var api = root.turnstile;
     if (!el || !api || typeof api.render !== "function") return;
+    var width = 0;
+    try { width = el.getBoundingClientRect().width; } catch (e) {}
     widgetId = api.render(el, {
       sitekey: el.getAttribute("data-sitekey") || SITEKEY,
       action: ACTION,
+      size: widgetSize(width),
+      theme: themeNow(),
       retry: "never",
       "refresh-expired": "auto",
       "refresh-timeout": "auto",
@@ -212,6 +230,11 @@
       "timeout-callback": onTimeout,
       "before-interactive-callback": onBeforeInteractive
     });
+    root.setTimeout(function () { try { clearOfFixedBars(); } catch (e) {} }, 0);
+  }
+
+  function onLoad() {
+    renderWidget();
   }
 
   function start() {
@@ -227,6 +250,12 @@
     if (btn && !btn.dataset.bound) {
       btn.dataset.bound = "1";
       btn.addEventListener("click", onManual);
+    }
+    if (root.addEventListener && !root.asTsScroll) {
+      root.asTsScroll = 1;
+      root.addEventListener("scroll", function () {
+        try { clearOfFixedBars(); } catch (e) {}
+      }, { passive: true });
     }
     if (!$("sf-turnstile") || !document.head) return;
     var s = document.createElement("script");
@@ -294,6 +323,7 @@
     tokenUsable: tokenUsable,
     nextEndpoint: nextEndpoint,
     planWidgetError: planWidgetError,
+    widgetSize: widgetSize,
     start: start,
     readToken: readToken,
     postJson: postJson,

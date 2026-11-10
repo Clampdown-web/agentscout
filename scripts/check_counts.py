@@ -216,11 +216,28 @@ def stale_literals(text, rel):
     return bad
 
 
+def catalog_only_problems(tools, counts):
+    """Directory totals include catalog_only rows. Those rows stay noindex and out of the sitemap."""
+    bad = []
+    only = [row for row in tools if row.get("catalog_only")]
+    if counts.get("tools") != len(tools):
+        bad.append(f"site_counts.tools is {counts.get('tools')}, tools.json has {len(tools)}")
+    if counts.get("catalog_only") != len(only):
+        bad.append(f"site_counts.catalog_only is {counts.get('catalog_only')}, tools.json has {len(only)}")
+    sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8") if (ROOT / "sitemap.xml").is_file() else ""
+    for row in only:
+        slug = row.get("slug") or ""
+        if slug and f"tools/{slug}.html" in sitemap:
+            bad.append(f"sitemap includes catalog_only tools/{slug}.html")
+            break
+    return bad
+
+
 def check_tree(counts=None):
     counts = counts or load_counts()
     tools = json.loads((ROOT / "tools.json").read_text(encoding="utf-8"))
     by_slug = category_index(tools)
-    bad = []
+    bad = catalog_only_problems(tools, counts)
     for rel, path in iter_built():
         try:
             text = path.read_text(encoding="utf-8")

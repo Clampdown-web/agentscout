@@ -79,9 +79,13 @@ def refresh_free_listing():
     lo,hi,month,_=listing_prices()
     print(f"build_ci: free-listing comparison {_usd(lo)}–{_usd(hi)}, prices checked {month}")
 def home(t):
-    import build_aicite as _bac; _ul=_bac.mcp_uptime_line(t)
+    import build_aicite as _bac
+    phrase=_bac.reach_card_phrase(_bac.mcp_reachability(t))
     n=mcp_n(t); s=open("index.html").read()
-    line=f'<p class="lede" style="margin-top:6px"><a href="categories/mcp-servers.html"><b><span data-live-mcp>{n:,}</span> MCP servers</b>, link-checked daily</a> (<a href="mcp/status/">{e(_ul)}</a>) · <a href="skills/">Agent Skills with install commands</a></p>'
+    line=('<ul class="guide-list">'
+          f'<li><a href="categories/mcp-servers.html"><b><span data-live-mcp>{n:,}</span> MCP servers</b>, link-checked daily</a></li>'
+          f'<li><a href="mcp/status/">{e(phrase)}</a></li>'
+          '<li><a href="skills/">Agent Skills with install commands</a></li></ul>')
     s=_blk(s,"mcp",line,'</p><p class="quizcta">',after=False) if '<!--ci:mcp-->' not in s else re.sub(r"<!--ci:mcp-->.*?<!--/ci:mcp-->",f"<!--ci:mcp-->{line}<!--/ci:mcp-->",s,flags=re.S)
     tot=len(t)
     d=f"AgentScout: {tot:,} AI agent tools, including {n:,} MCP servers, link-checked daily. Coding agents, frameworks, browser use, voice and no-code."

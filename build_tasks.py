@@ -341,7 +341,7 @@ def submit_page(t):
           +f("email","Your email (maker)","email",False,'maxlength="120"')+f("x","Your X handle","text",False,'placeholder="@yourhandle" maxlength="30"')
           +'<label style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="found">How did you find us? <span aria-hidden="true" class="reqmark">*</span><span class="sr-only" style="position:absolute;left:-9999px">(required)</span></label><select id="found" name="found" required aria-required="true" style="width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;box-sizing:border-box"><option value="">Choose one</option><option value="X (Twitter)">X (Twitter)</option><option value="Google search">Google search</option><option value="Another AI directory">Another AI directory</option><option value="AI assistant (Grok / ChatGPT / Claude / Perplexity)">AI assistant (Grok / ChatGPT / Claude / Perplexity)</option><option value="Newsletter">Newsletter</option><option value="Friend or colleague">Friend or colleague</option><option value="Reddit">Reddit</option><option value="Product Hunt">Product Hunt</option><option value="GitHub">GitHub</option><option value="Other">Other</option></select><div id="foundotherwrap" hidden><label id="foundotherlab" style="display:block;margin:14px 0 6px;font-weight:600;font-size:14px" for="foundother">Where did you find us? <span id="foundotherreq" aria-hidden="true" class="reqmark">*</span><span id="foundotheropt" style="color:var(--faint);font-weight:400" hidden>(optional)</span></label><input id="foundother" name="foundother" type="text" maxlength="100" aria-required="false" placeholder="Which directory, AI assistant, or X post? (optional for dropdowns, required for Other)" style="width:100%;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;box-sizing:border-box"></div>'
           +nl_opt
-          +'<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="company">Company (leave empty)</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div><div id="sf-turnstile" data-sitekey="0x4AAAAAAFfaxf14aQF-sky1" style="margin:12px 0 0;min-height:65px"></div><p id="sfts" role="status" style="min-height:20px;margin:12px 0 0;font-size:14px"></p><p id="sfts-retry-wrap" hidden style="margin:8px 0 0"><button type="button" class="btn" id="sfts-retry" style="min-height:44px;height:44px">Try the check again</button></p><p id="serr" role="alert" style="min-height:0;margin:0;font-size:14px"></p><button id="sbtn" class="btn primary" type="submit" style="height:46px;margin-top:6px">Submit for free review</button><p id="spkg-note" class="spkg-note" hidden></p><p style="margin:4px 0 0;font-size:14px">Follow <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px"><b>@clampdown19</b></a> (Founder) &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px"><b>@AgentScoutHQ</b></a> on X for daily founder stack teardowns and launch shoutouts.</p></form>'
+          +'<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="company">Company (leave empty)</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div><div id="sf-turnstile" data-sitekey="0x4AAAAAAFfaxf14aQF-sky1" style="margin:12px 0 0;min-height:65px;max-width:100%"></div><p id="sfts" role="status" style="min-height:20px;margin:12px 0 0;font-size:14px"></p><p id="sfts-retry-wrap" hidden style="margin:8px 0 0"><button type="button" class="btn" id="sfts-retry" style="min-height:44px;height:44px">Try the check again</button></p><p id="serr" role="alert" style="min-height:0;margin:0;font-size:14px"></p><button id="sbtn" class="btn primary" type="submit" style="height:46px;margin-top:6px">Submit for free review</button><p id="spkg-note" class="spkg-note" hidden></p><p style="margin:4px 0 0;font-size:14px">Follow <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px"><b>@clampdown19</b></a> (Founder) &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px"><b>@AgentScoutHQ</b></a> on X for daily founder stack teardowns and launch shoutouts.</p></form>'
           +'<div id="sdone" hidden style="max-width:620px;text-align:left;border:1px solid var(--accent);border-radius:12px;padding:18px;margin-top:8px"><b>Thanks, your submission is in!</b> <span id="sdone-msg">Your tool is in our standard 5-day editorial review queue — check your inbox for your expected delivery date and confirmation details.</span> Questions? Email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a>.<p id="sdone-pay" hidden style="margin:12px 0"><a id="sdone-pay-btn" class="btn primary" href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">Complete Stripe Checkout →</a></p><p id="sdone-nl" hidden style="margin:10px 0"><a id="sdone-nl-btn" class="btn" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&amp;utm_medium=submit_form_optin&amp;utm_campaign=newsletter" target="_blank" rel="noopener noreferrer">Confirm Free Newsletter &amp; 50-Tool Cheat Sheet →</a></p><div class="builder-loop" style="margin:14px 0;padding:14px 16px;border:1px solid var(--accent);border-radius:10px;background:var(--card)"><h3 style="font-size:16px;margin:0 0 6px">🚀 While your listing is in review — join the builder loop</h3><p style="margin:0 0 12px;color:var(--muted);font-size:13.8px;line-height:1.5">We post daily founder stack teardowns and launch shoutouts from both <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> (Founder) and <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a>. Follow both and tag us in your launch post so we can quote-post you, and grab the free 50-tool cheat sheet + weekly newsletter.</p><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><a class="btn primary" href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer" style="height:auto;min-height:40px;padding:8px 14px;white-space:normal;text-align:center;line-height:1.3">Follow @clampdown19 (Founder) on X →</a><a class="btn primary" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer" style="height:auto;min-height:40px;padding:8px 14px;white-space:normal;text-align:center;line-height:1.3">Follow @AgentScoutHQ on X →</a><a class="btn" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&amp;utm_medium=submit_page&amp;utm_campaign=newsletter" target="_blank" rel="noopener noreferrer" data-nl style="height:auto;min-height:40px;padding:8px 14px;white-space:normal;text-align:center;line-height:1.3">Get the Free 50-Tool AI Agent Cheat Sheet + Weekly Newsletter →</a></div></div><p style="margin:10px 0 0"><b>Want same-day priority review, a Featured category pin &amp; X spotlight?</b> <a href="https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e" target="_blank" rel="noopener noreferrer">Fast-Track + 7-Day Boost ($15) →</a> · <a href="https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00" target="_blank" rel="noopener noreferrer">30-Day Category Pin + Permanent SEO/AEO ($49 ★) →</a> · <a href="https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01" target="_blank" rel="noopener noreferrer">Weekly Sitewide Sponsor ($99/wk) →</a>.</p><p style="margin:10px 0 0">While you wait, grab a <a href="badges.html#featured-badge">Featured on AgentScout badge</a> for your site or README.</p></div>'          +'<div class="nlspot builder-loop" style="max-width:620px;text-align:left;border:1.5px solid var(--accent);border-radius:12px;padding:16px 18px;margin:16px 0;background:var(--card);box-shadow:var(--shadow);box-sizing:border-box"><h2 style="font-size:16px;margin:0 0 6px">🚀 While your listing is in review — join the builder loop</h2><p style="margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.5">We post daily founder stack teardowns and launch shoutouts from both <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> (Founder) and <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> — and every approved tool is eligible for our Tuesday newsletter&#39;s Maker Spotlight. Follow both accounts on X and grab the free 50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack below.</p><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><a class="btn primary" href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer" style="height:auto;min-height:40px;padding:8px 14px;white-space:normal;text-align:center;line-height:1.3;max-width:100%">Follow @clampdown19 (Founder) on X →</a><a class="btn primary" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer" style="height:auto;min-height:40px;padding:8px 14px;white-space:normal;text-align:center;line-height:1.3;max-width:100%">Follow @AgentScoutHQ on X →</a><a class="btn" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&amp;utm_medium=submit_page&amp;utm_campaign=newsletter" target="_blank" rel="noopener noreferrer" data-nl style="height:auto;min-height:40px;padding:8px 14px;white-space:normal;text-align:center;line-height:1.3;max-width:100%">Get the Free 50-Tool AI Agent Cheat Sheet + Weekly Newsletter →</a></div><p class="nlmsg muted" aria-live="polite" style="margin:10px 0 0;font-size:13.5px"></p></div>')
     js='<script src="submit-turnstile.js?v=' + ASSET_V + '"></script>' + r"""<script>var SUBMIT_URL="https://api.agentscouthq.com/submit",SUBMIT_URLS=["https://api.agentscouthq.com/submit","https://agentscout-image.agentscouthq.workers.dev/submit"];var UPD="";var TS_SITEKEY=(window.AgentScoutTurnstile&&AgentScoutTurnstile.SITEKEY)||"0x4AAAAAAFfaxf14aQF-sky1";if(window.AgentScoutTurnstile)AgentScoutTurnstile.start();function sfTs(){return window.AgentScoutTurnstile?AgentScoutTurnstile.readToken():"";}function postSub(bodyStr){return window.AgentScoutTurnstile.postJson(SUBMIT_URLS,bodyStr);}
 (function(){var v=document.querySelector("[data-defer-video]");if(v&&"IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){var vo=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){v.setAttribute("loop","");v.play().catch(function(){});vo.disconnect()}},{rootMargin:"200px 0px"});vo.observe(v)}})();
@@ -470,7 +470,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611100430"  # bump when app.js/styles.css/consent.js change
+ASSET_V = "202611110800"  # bump when app.js/styles.css/consent.js change
 def stamp(s):
     """Put the current styles.css/app.js cache-bust on a page a generator just wrote.
 
@@ -699,28 +699,84 @@ def shared_scripts_exempt(f, s):
     low=s[:800].lower()
     if "<html" not in low and "<!doctype" not in low: return True
     return False
+def _src_script(s, filename):
+    """A script tag for filename?v=N. defer, async, and src may be in any order."""
+    return re.search(
+        r'<script\b[^>]*\bsrc="([^"]*?)' + re.escape(filename) + r'\?v=\d+"[^>]*>\s*</script>',
+        s,
+        re.I,
+    )
+def _defer_script(prefix, filename):
+    return f'<script defer src="{prefix}{filename}?v={ASSET_V}"></script>'
+CONSENT_BANNER = (
+    '<div class="as-bar" role="region" aria-labelledby="as-bt"><p><b id="as-bt">Privacy choices:</b> '
+    "we'd like to measure visits anonymously (our own cookie-free counter plus Google Analytics, which sets its own cookies; no ads) "
+    "and load Beehiiv's newsletter sign-up, which may set its own cookies. Nothing optional runs until you choose. "
+    '<a href="{priv}">Privacy policy</a></p><div class="as-row">'
+    '<button type="button" class="btn" data-a="all">Accept all</button>'
+    '<button type="button" class="btn" data-a="none">Reject all</button>'
+    '<button type="button" class="btn" data-a="custom">Customize</button></div></div>'
+)
+def ensure_consent_banner(f, s, d):
+    """Paint the privacy banner in the first HTML, the same way the homepage does.
+    consent.js keeps the stats notice hidden until the visitor accepts.
+    """
+    if shared_scripts_exempt(f, s) or 'class="as-bar"' in s: return s
+    priv = "/privacy.html" if f == "404.html" else f"{d}privacy.html"
+    html = CONSENT_BANNER.format(priv=priv)
+    m = re.search(r"<body\b[^>]*>", s, re.I)
+    if not m: return s
+    return s[:m.end()] + html + s[m.end():]
 def ensure_shared_scripts(f, s, d):
     """Give a production page the same shared scripts the other pages load.
     Order matches bot-templates detail pages: app.js, consent.js (defer), track.js (defer), share.js.
     share.js on bot-templates stays without defer, the form those pages already use.
     build_share.apply() (called next) adds the deferred share.js on the directories it covers.
     Pages that already have the tags are left unchanged, including nav, footer, and copy.
+    defer may sit before src. The old pattern only matched `<script src="…app.js`.
     """
     if shared_scripts_exempt(f, s): return s
     if "app.js?v=" not in s:
         tag=f'<script src="{d}app.js?v={ASSET_V}"></script>'
-        m=re.search(r'<script src="[^"]*?share\.js\?v=\d+"[^>]*></script>', s)
+        m=re.search(r'<script\b[^>]*\bsrc="[^"]*?share\.js\?v=\d+"[^>]*>\s*</script>', s, re.I)
         if m: s=s[:m.start()]+tag+s[m.start():]
         elif "</body>" in s: s=s.replace("</body>", tag+"</body>", 1)
-    if "track.js" not in s and "app.js?v=" in s:
-        s=re.sub(r'(<script src="[^"]*?)app\.js\?v=\d+"></script>', lambda mm: mm.group(0)+mm.group(1)+'track.js?v='+ASSET_V+'" defer></script>', s, count=1)
-    if "consent.js" not in s and "track.js?v=" in s:
-        s=re.sub(r'<script src="([^"]*?)track\.js\?v=\d+" defer></script>', lambda mm: f'<script src="{mm.group(1)}consent.js?v={ASSET_V}" defer></script>'+mm.group(0), s, count=1)
+    app=_src_script(s, "app.js")
+    if "track.js" not in s and app:
+        s=s[:app.end()]+_defer_script(app.group(1), "track.js")+s[app.end():]
+    track=_src_script(s, "track.js")
+    if "consent.js" not in s and track:
+        s=s[:track.start()]+_defer_script(track.group(1), "consent.js")+s[track.start():]
     # Hand-written bot template pages (github.html, codex-security.html) shipped share.js and never app.js.
     # Keep share.js in the non-defer form the rest of bot-templates/*.html uses.
     if f.startswith("bot-templates/") and "share.js?v=" not in s and "track.js?v=" in s:
-        s=re.sub(r'(<script src="[^"]*?track\.js\?v=\d+" defer></script>)', lambda mm: mm.group(1)+f'<script src="{d}share.js?v={ASSET_V}"></script>', s, count=1)
+        track=_src_script(s, "track.js")
+        if track:
+            s=s[:track.end()]+f'<script src="{d}share.js?v={ASSET_V}"></script>'+s[track.end():]
+    s=ensure_consent_banner(f, s, d)
     return s
+_LINK_A=re.compile(r"<a\b[^>]*>.*?</a>", re.S)
+_LINK_LABEL=re.compile(r"^(related|see also|jump to|other roles|popular searches|popular with|similar searches|by role|more|free tools|you might also like)(\b[^.]{0,60})?:?$", re.I)
+def burst_link_piles(html):
+    """Turn a paragraph that is only a middot run of links into spaced tap rows.
+    A sentence that happens to contain a few links is left as written."""
+    def repl(m):
+        p=m.group(0)
+        if "linkpile" in p or "guide-list" in p or "disclose" in p or "footmeta" in p or "goodfor" in p:
+            return p
+        anchors=_LINK_A.findall(p)
+        if len(anchors)<3:
+            return p
+        rest=_LINK_A.sub("", p)
+        rest=re.sub(r"<[^>]+>", " ", rest)
+        rest=rest.replace("·", " ").replace("&middot;", " ").replace("&#183;", " ")
+        rest=re.sub(r"\s+", " ", rest).strip(" :")
+        if rest and not _LINK_LABEL.match(rest):
+            return p
+        label=f'<p class="linkpile-label">{rest}</p>' if rest else ""
+        items="".join(f"<li>{a}</li>" for a in anchors)
+        return label+f'<ul class="linkpile">{items}</ul>'
+    return re.sub(r"<p\b[^>]*>.*?</p>", repl, html, flags=re.S)
 def sitewide(t):
     m=mapping(t); bys={x["slug"]:x for x in t}
     for f in glob.glob("**/*.html",recursive=True):
@@ -915,6 +971,7 @@ def sitewide(t):
         s=_once_submit_menu(s)
         s=_restore_redirect_chrome(s, held)
         s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
+        s=burst_link_piles(s)
         if s!=o: open(f,"w").write(s)
     import build_lovable; build_lovable.run()
 

@@ -71,6 +71,10 @@ test("a token is not replayed after any HTTP response", () => {
   assert.equal(ts.tokenUsable("fresh-token", false), true);
   assert.match(ts.submitFailureText("Bot check failed."), /Complete the check again/);
   assert.match(ts.submitFailureText("The check expired or was already used. Complete it again, then submit."), /Complete it again/);
+  assert.equal(ts.widgetSize(0), "compact");
+  assert.equal(ts.widgetSize(288), "compact");
+  assert.equal(ts.widgetSize(300), "flexible");
+  assert.equal(ts.widgetSize(358), "flexible");
   assert.equal(ts.ACTION, "submit");
   assert.equal(ts.SITEKEY, "0x4AAAAAAFfaxf14aQF-sky1");
   assert.match(ts.SCRIPT, /render=explicit&onload=asTsLoad/);
