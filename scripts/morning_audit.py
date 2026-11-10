@@ -658,6 +658,9 @@ def predeploy(root: Path) -> AuditResult:
             benchmark_document_problems(root / rel, artifact_date, artifact_tools),
             "unthrottled load readings for the six fixture targets and submit.html",
         )
+    if (root / "sitemap.xml").is_file():
+        import content_check
+        result.settle("content", content_check.problems(root), "templates have their promised content; catalog_only stays noindex")
     result.later("postdeploy-http: Stripe Checkout, live page counts, Cloudflare headers, and the cloner block run in --live")
     result.later(
         "postdeploy-vitals: predeploy requires data/cwv-seo-benchmark.json (current live) and "

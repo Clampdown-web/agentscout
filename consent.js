@@ -28,14 +28,14 @@
   var css='.as-ph{border:1px dashed var(--line);border-radius:10px;padding:14px;text-align:left;font-size:14px;color:var(--muted);max-width:460px;margin:0 auto}.as-ph p{margin:0 0 10px}html:not(.as-noembed) .as-ph{display:none}html.as-noembed form[action*="beehiiv.com"]{display:none!important}'+
   '.as-bar{position:fixed;z-index:999;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:calc(100% - 24px);max-width:760px;box-sizing:border-box;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.14);padding:10px 14px;font-size:13px;line-height:1.45;display:flex;align-items:center;gap:12px}'+
   '.as-bar p{margin:0;color:var(--muted);flex:1;min-width:0}.as-bar p b{color:var(--text)}.as-bar .as-row{display:flex;flex-wrap:nowrap;gap:6px;flex:none}.as-bar .btn{height:44px;padding:0 12px;font-size:13px}.as-bar a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}'+
-  '.as-note{left:16px;right:auto;transform:none;width:auto;max-width:min(340px,calc(100% - 32px));padding:0 44px 0 12px;min-height:44px;display:flex;align-items:center;font-size:12.5px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.12)}.as-note .as-x{position:absolute;top:50%;right:4px;transform:translateY(-50%);width:44px;height:44px;border:0;background:none;color:var(--muted);font-size:18px;line-height:1;cursor:pointer;border-radius:50%}'+
+  '.as-note{left:16px;right:auto;transform:none;width:auto;max-width:min(420px,calc(100% - 32px));padding:8px 44px 8px 12px;min-height:44px;display:flex;align-items:center;font-size:12.5px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.12)}.as-note p{display:block;line-height:1.35}.as-note .as-actions{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:4px;white-space:nowrap;vertical-align:middle}.as-note .as-x{position:absolute;top:50%;right:4px;transform:translateY(-50%);width:44px;height:44px;border:0;background:none;color:var(--muted);font-size:18px;line-height:1;cursor:pointer;border-radius:50%}'+
   'html.as-pad body{padding-bottom:var(--as-pad,0px)}html.as-pad .scrollbtns{bottom:calc(var(--as-pad,0px) + 12px + env(safe-area-inset-bottom))}'+
   '.as-link{background:none;border:0;padding:0;min-height:44px;display:inline-flex;align-items:center;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline}'+
   '.as-ov{position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px}'+
   '.as-dlg{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:14px;max-width:520px;width:100%;max-height:90vh;overflow:auto;padding:20px;font-size:14px;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.3)}'+
   '.as-dlg h2{font-size:18px;margin:0 0 6px}.as-dlg>p{color:var(--muted);margin:0 0 14px}.as-dlg a{color:var(--accent)}.as-cat{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);padding:12px 0}.as-cat div{flex:1}.as-cat b{display:block}.as-cat span{color:var(--muted);font-size:13px}'+
   '.as-sw{appearance:none;-webkit-appearance:none;flex:none;width:42px;height:24px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;margin:2px 0 0;transition:background .15s}.as-sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}.as-sw:checked{background:var(--accent)}.as-sw:checked::after{left:21px}.as-sw:disabled{opacity:.6;cursor:not-allowed}.as-sw:focus-visible,.as-bar .btn:focus-visible,.as-dlg .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}'+
-  '.as-dlg .as-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}@media(max-width:640px){.as-bar{flex-wrap:wrap;gap:8px;bottom:calc(8px + env(safe-area-inset-bottom));width:calc(100% - 16px);padding:9px 12px}.as-bar .as-row{width:100%}.as-bar .as-row .btn,.as-dlg .as-row .btn{flex:1}.as-note{left:8px;right:auto;width:auto;max-width:calc(100% - 16px);border-radius:12px}}'+
+  '.as-dlg .as-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}@media(max-width:640px){.as-bar{flex-wrap:wrap;gap:8px;bottom:calc(8px + env(safe-area-inset-bottom));width:calc(100% - 16px);padding:9px 12px}.as-bar .as-row{width:100%}.as-bar .as-row .btn,.as-dlg .as-row .btn{flex:1}.as-note{left:8px;right:auto;width:auto;max-width:calc(100% - 16px);border-radius:12px;padding:8px 44px 8px 12px}.as-note .as-actions{display:flex;margin-top:2px}}'+
   '.as-bar:not(.as-note)~.as-note{display:none!important}';
   var st=document.createElement("style");st.textContent=css;document.head.appendChild(st);
 
@@ -67,8 +67,8 @@
     // While the consent banner is on screen, do not cover its buttons with the stats notice.
     if(!S.decided&&document.querySelector(".as-bar:not(.as-note)")){noticeAfter=true;return}
     closeBar();
-    bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>Anonymous visit stats (incl. Google Analytics). <button type="button" class="as-link" data-a="opt">Opt out</button> · <button type="button" class="as-link" data-a="custom">Privacy choices</button></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
-    bar.addEventListener("click",function(e){var a=e.target.getAttribute("data-a");if(a==="ok")set(S.analytics,S.embeds);else if(a==="opt")set(0,S.embeds);else if(a==="custom")openPicker()});
+    bar=el('<div class="as-bar as-note" role="region" aria-label="Privacy notice"><p>Anonymous visit stats (incl. Google Analytics). <span class="as-actions"><button type="button" class="as-link" data-a="opt">Opt out</button><span aria-hidden="true">·</span><button type="button" class="as-link" data-a="custom">Privacy choices</button></span></p><button type="button" class="as-x" data-a="ok" aria-label="Dismiss privacy notice">×</button></div>');
+    bar.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-a]");if(!t)return;var a=t.getAttribute("data-a");if(a==="ok")set(S.analytics,S.embeds);else if(a==="opt")set(0,S.embeds);else if(a==="custom")openPicker()});
     mount()}
   function openPicker(){
     if(document.querySelector(".as-ov"))return;lastFocus=document.activeElement;
@@ -94,14 +94,9 @@
     if(location.hash==="#privacy-choices")openPicker()}
 
   function start(strict){if(S.decided)return;S.strict=strict;S.ready=true;
-    var painted=document.querySelector(".as-bar:not(.as-note)");
-    if(strict){S.analytics=false;S.embeds=false;emit();showBanner()}
-    else if(painted){
-      // Homepage paints the banner before region is known. Keep that banner as the
-      // choice (its copy says nothing optional runs yet) and save the stats notice
-      // for after a choice, only if analytics stays on.
-      S.analytics=false;S.embeds=false;noticeAfter=true;emit();showBanner()
-    }else{S.analytics=true;S.embeds=true;emit();showNotice()}}
+    // Every template matches the homepage: the choice banner is first, analytics
+    // stays off, and the stats notice appears only after Accept.
+    S.analytics=false;S.embeds=false;noticeAfter=true;emit();showBanner()}
   var saved=load();
   function init(){boot();
     if(saved){document.querySelectorAll(".as-bar").forEach(function(n){n.remove()});document.documentElement.classList.remove("as-pad");document.documentElement.style.removeProperty("--as-pad");S.decided=true;S.strict=!!saved.strict;S.analytics=!!saved.analytics;S.embeds=!!saved.embeds;S.ready=true;emit();return}

@@ -29,8 +29,29 @@ def _dedupe(faq):
     """One answer per question (first wins), so the visible FAQ and FAQPage JSON-LD never repeat a question."""
     seen=set(); return [(q,a) for q,a in faq if not (q in seen or seen.add(q))]
 def schema_text(s):
-    """Plain text for JSON-LD. README markup in a listing must not land in the script as tags."""
-    return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",str(s or ""))).strip()
+    """Plain text for JSON-LD. README markup in a listing must not land in the script as tags.
+
+    Broken README tags often omit the closing >, so a normal tag strip leaves them.
+    """
+    text=str(s or "")
+    text=re.sub(r"<[^>]*>"," ",text)
+    text=re.sub(r"</?[A-Za-z][^<\n]{0,160}"," ",text)
+    return re.sub(r"\s+"," ",text).strip()
+def clean_long(paras, fallback):
+    """Drop README fragments that are still markup. Keep real sentences."""
+    kept=[]; dropped=False
+    for para in paras or []:
+        if not isinstance(para, str): continue
+        if re.search(r"<(?:h1|h2|h3|div|p|img|picture|source|br)\b", para, re.I) or para.count("<")>=2:
+            dropped=True
+            continue
+        text=para.strip()
+        if text: kept.append(text)
+    if dropped and fallback and fallback not in kept:
+        kept.insert(0, fallback)
+    if not kept and fallback:
+        kept=[fallback]
+    return kept
 def _join(ns): return ns[0] if len(ns)==1 else ", ".join(ns[:-1])+" and "+ns[-1]
 def _alt_answer(x,cat,old):
     rel=REL.get(x["slug"]) or []
@@ -56,10 +77,11 @@ def apply(out,x,t,catslug,prim,B):
     tiers="".join(f"<li><strong>{e(a)}</strong>: {e(b)}{(' · '+e(c)) if c else ''}</li>" for a,b,c in p["tiers"])
     freeq="Yes. "+e(n)+" has a free plan"+(f" ({e(p['tiers'][0][2])})" if p["tiers"][0][1] in ("$0","Free") else "")+"." if p["free"] else f"No free plan is listed{(', but there is a '+e(p['trial'])) if p['trial'] else ''}. Paid plans start at ${p['start']:g} a month."
     cost=f"{n} pricing starts at ${p['start']:g} a month for paid plans"+(", with a free plan available" if p["free"] else "")+". Plans: "+"; ".join(f"{a} {b}" for a,b,c in p["tiers"])+". "+p.get("note","")+" (as of Oct 2026)"
-    faq=[(f"What is {n}?"," ".join(r["long"])),(f"How much does {n} cost?",cost),(f"Does {n} have a free plan?",re.sub("<[^>]+>","",html.unescape(freeq))),(f"What are alternatives to {n}?",_alt_answer(x,cat,altp))]
+    longs=clean_long(r.get("long"), x.get("description"))
+    faq=[(f"What is {n}?"," ".join(longs)),(f"How much does {n} cost?",cost),(f"Does {n} have a free plan?",re.sub("<[^>]+>","",html.unescape(freeq))),(f"What are alternatives to {n}?",_alt_answer(x,cat,altp))]
     faq=[q for q in faq if q[1]]
     faq=_dedupe(faq)
-    sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(s)}</p>' for s in r["long"])
+    sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(s)}</p>' for s in longs)
       +f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Listed in our <a href="../categories/{cs}.html">{e(cat)}</a> category. Official site: <a href="{e(prim)}" target="_blank" rel="noopener noreferrer">{e(re.sub(r"^https?://(www\.)?","",prim).rstrip("/"))}</a>.</p>'
       +f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>"
       +f'{H2}{e(n)} pricing</h2><p style="margin:0 0 8px">{"Free plan available. " if p["free"] else ""}Paid plans from ${p["start"]:g}/month{(". "+e(p["trial"][0].upper()+p["trial"][1:])) if p["trial"] else ""}.</p><ul style="margin:0 0 8px;padding-left:20px;line-height:1.7">{tiers}</ul><p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">{e(p.get("note",""))} Prices as of Oct 2026, from the <a href="{e(p["src"])}" target="_blank" rel="noopener noreferrer">official pricing page</a>.</p>'
@@ -136,7 +158,8 @@ def lite(out,x,t,catslug,prim,B,r):
     fli,ffq=_facts(n,r); phtml,pfq,offers=_pricing(n,r)
     isfree=[a for q,a in pfq if q=="__free__"]; pfq=[(q,a) for q,a in pfq if q!="__free__"]
     if isfree: pq=isfree[0]
-    faq=[(f"What is {n}?",r["long"][0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+pfq+ffq+[tuple(q) for q in r.get("faq",[])]
+    longs=clean_long(r.get("long"), x.get("description"))
+    faq=[(f"What is {n}?",longs[0]),(f"Who is {n} for?",r["who"]),(f"Is {n} free?",pq)]+pfq+ffq+[tuple(q) for q in r.get("faq",[])]
     if r.get("pros") or r.get("cons"):
         bits=[]
         if r.get("pros"): bits.append("Pros: "+", ".join(r["pros"]))
@@ -148,7 +171,7 @@ def lite(out,x,t,catslug,prim,B,r):
     if _aa: faq.append((f"What are alternatives to {n}?",_aa))
     hst=re.sub(r"^https?://(www\.)?","",prim).rstrip("/")
     faq=_dedupe(faq)
-    sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in r["long"])
+    sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in longs)
       +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener noreferrer">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener noreferrer">{e(hst)}</a>.</p>')
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
       +(f'{H2}Pros and cons</h2>'
@@ -160,7 +183,7 @@ def lite(out,x,t,catslug,prim,B,r):
       +(f'{H2}Key features</h2><ul style="margin:0 0 28px;padding-left:20px;line-height:1.7">'+"".join(f"<li>{e(f)}</li>" for f in r["features"])+"</ul>" if r.get("features") else "")+_mcp(n,r)+phtml
       +(f'{H2}{e(n)} alternatives</h2><p style="margin:0 0 28px">Similar {e(cat)} tools: {altl}. <a href="../categories/{cs}.html">Browse all {e(cat)} tools →</a></p>' if r.get("show_alts") and altl else "")
       +f'{H2}{e(n)} FAQ</h2>'+"".join(f'<details style="margin:0 0 10px"><summary style="cursor:pointer;font-weight:600">{e(q)}</summary><p style="margin:8px 0 0">{e(a)}</p></details>' for q,a in faq)+'<div style="margin-bottom:28px"></div>')
-    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":schema_text(" ".join(r["long"]))[:500],"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"applicationSubCategory":cat}
+    app={"@type":"SoftwareApplication","name":n,"url":prim,"description":schema_text(" ".join(longs))[:500],"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"applicationSubCategory":cat}
     # Offer only when the price is verified: official pricing page tiers, or a verified OSI open-source licence (free to use)
     F=r.get("facts") or {}
     if offers: app["offers"]=offers

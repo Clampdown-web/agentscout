@@ -213,14 +213,8 @@ html[data-theme=dark] .ft-pg .ft-card{background:linear-gradient(rgba(37,38,77,.
 #sf-turnstile{scroll-margin-bottom:160px}
 #serr,#sfts,.reqmark{color:#9f1239}
 html[data-theme=dark] #serr,html[data-theme=dark] #sfts,html[data-theme=dark] .reqmark{color:#fda4af}
-/* Keep the fixed scroll buttons clear of row controls (Rate etc.) */
+/* Room to scroll the last line above the fixed buttons. */
 main.wrap{padding-bottom:96px}
-@media (min-width:641px) and (max-width:767px){main.wrap,main section>.wrap{padding-right:calc(84px + env(safe-area-inset-right))}}
-@media (min-width:768px) and (max-width:1279px){main.wrap,main section>.wrap{padding-right:calc(104px + env(safe-area-inset-right))}}
-/* Home sidebar layout (1100px+) and hero generator box: keep clear of the scroll buttons */
-@media (min-width:1100px) and (max-width:1319px){.layout{padding-right:calc(104px + env(safe-area-inset-right))}}
-@media (min-width:641px) and (max-width:767px){.homegen{margin-right:60px}}
-@media (min-width:768px) and (max-width:1279px){.homegen{margin-right:80px}}
 /* Recently added */
 #recent{padding:28px 0 8px}
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
@@ -866,7 +860,7 @@ body:has(.lb-board) .scrollbtns{display:none!important}
   nav .navscroll-pills .npill,nav .navscroll-pills .mcppill,nav .navscroll-pills>a.btn.primary{box-sizing:border-box;height:38px;min-height:38px;padding:0 8px;border-radius:999px;font-size:12px!important;font-weight:600;line-height:36px;gap:4px;white-space:nowrap;margin:0;display:inline-flex;align-items:center}
   nav .navscroll-pills>a.btn.primary{flex:0 0 auto;width:auto;justify-content:center}
   nav .navscroll-pills>a.btn.primary::after{content:none!important}
-  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-left:16px;padding-right:16px}
+  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-left:calc(64px + env(safe-area-inset-left));padding-right:calc(64px + env(safe-area-inset-right))}
   .scrollbtns{right:calc(8px + env(safe-area-inset-right));bottom:calc(8px + env(safe-area-inset-bottom));gap:8px}
   .scrollbtn{width:44px;height:44px;min-width:44px;min-height:44px;font-size:20px;border-radius:12px}
   .scrollbtn.show{opacity:1}
@@ -1057,6 +1051,24 @@ html[data-theme=dark] .lb-board .lb-ctas .lb-cta-new,html[data-theme=dark] .lb-b
 .gen-pg .homegen{border-color:var(--line);background:var(--card);box-shadow:var(--shadow)}
 .gen-pg .hg-head h2{color:var(--text)}
 @media(max-width:640px){main.wrap:has(.lb-board){padding-left:16px;padding-right:16px}}
-@media(orientation:landscape) and (max-height:500px){
-  body:not(:has(.lb-board)) :is(main.wrap,main section>.wrap,.layout){padding-left:48px}
+/* Connect page code samples scroll inside the block. The page gutter stays equal on both sides. */
+.mcp-how{max-width:100%;min-width:0}
+.mcp-how h2{margin:28px 0 8px}
+.mcp-how h3{margin:18px 0 6px;font-size:16px}
+.mcp-copy{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;min-width:0;max-width:100%;margin:0 0 14px}
+.mcp-how pre{flex:1 1 220px;min-width:0;max-width:100%;margin:0;overflow-x:auto;white-space:pre;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--soft);font-size:13px;line-height:1.45;box-sizing:border-box}
+.mcp-how .btn{flex:none}
+/* Guide lists: one link per row, 44px tap, no middot runs. */
+.guide-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:0;min-width:0}
+.guide-list li{margin:0;min-width:0}
+.guide-list a{display:flex;align-items:center;min-height:44px;padding:8px 2px;border-top:1px solid var(--line);color:var(--text);font-weight:550;line-height:1.3;text-decoration:none}
+.guide-list li:first-child a{border-top:0}
+.guide-list a:hover{color:var(--accent)}
+.panel .guide-list{margin-top:4px}
+/* Scroll buttons sit in the corner. The text column keeps an equal gutter on both sides so a wrapping line never runs under them. */
+@media (max-width:640px){
+  body:not(:has(.lb-board)) main.wrap{padding-left:calc(72px + env(safe-area-inset-left));padding-right:calc(72px + env(safe-area-inset-right))}
+}
+@media (min-width:641px) and (max-width:1240px){
+  body:not(:has(.lb-board)) main.wrap{padding-left:calc(100px + env(safe-area-inset-left));padding-right:calc(100px + env(safe-area-inset-right))}
 }

@@ -163,6 +163,7 @@ def compute(tools=None, pages=None, bot_templates=None):
     free_cats = {x.get("category") for x in items if x.get("category") and x.get("category") != "other"}
     used = {x.get("category") for x in tools if x.get("category") and x.get("category") != "other"}
     mcp = sum(1 for x in tools if x.get("category") == "MCP servers")
+    catalog_only = sum(1 for x in tools if x.get("catalog_only"))
     pages = sitemap_count() if pages is None else pages
     if bot_templates is None:
         bot_templates = bot_template_count()
@@ -170,6 +171,7 @@ def compute(tools=None, pages=None, bot_templates=None):
             bot_templates = int((_read(PATH).get("bot_templates") or 0))
     return {
         "tools": len(tools),
+        "catalog_only": catalog_only,
         "free_tools": len(items),
         "free_categories": len(free_cats),
         "mcp_servers": mcp,
@@ -196,7 +198,7 @@ def require(tools=None):
     """Return site_counts, recomputing when the tool list length has moved."""
     tools = load_tools() if tools is None else tools
     cur = load()
-    if not cur or cur.get("tools") != len(tools) or "free_tools" not in cur:
+    if not cur or cur.get("tools") != len(tools) or "free_tools" not in cur or "catalog_only" not in cur:
         return write(tools)
     return cur
 
@@ -287,6 +289,7 @@ def mirror_site_metrics(counts, metrics=None):
         "pages_count": counts["pages_sitemap"],
         "mcp_count": counts["mcp_servers"],
         "free_tools_count": counts["free_tools"],
+        "catalog_only_count": counts.get("catalog_only") or 0,
         "free_categories_count": counts["free_categories"],
         "pageviews_7d": int(metrics.get("pageviews_7d") or a["pageviews_7d"] or 0),
         "x_clampdown19_followers": int(fol.get("clampdown19") or 0),

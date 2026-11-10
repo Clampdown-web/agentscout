@@ -54,14 +54,35 @@ class ReachabilityTests(unittest.TestCase):
         self.assertEqual(self.st["not_yet_checked"], doc["catalog"]["not_yet_checked"])
         self.assertEqual(self.st["day"], self.checked[:10])
         self.assertEqual(self.st["reachable"] + self.st["down"] + self.st["not_yet_checked"], self.st["total"])
-        self.assertIn(f"{self.st['reachable']} of {self.st['total']}", self.sentence)
+        self.assertEqual(self.st["checked_count"], self.st["reachable"] + self.st["down"])
+        self.assertLessEqual(self.st["reachable"], self.st["checked_count"])
+        self.assertIn(f"{self.st['reachable']} of {self.st['checked_count']} checked servers live", self.sentence)
+        self.assertNotIn(f"of {self.st['total']} reachable", self.sentence)
+        if self.st["not_yet_checked"]:
+            self.assertIn(f"+{self.st['not_yet_checked']} listed, not yet checked", self.sentence)
         self.assertIn(f"last checked {self.st['day']}", self.sentence)
+        home = Path("index.html").read_text(encoding="utf-8")
+        card = re.search(r'<b>(\d+) of (\d+)</b> checked servers live', home)
+        self.assertIsNotNone(card, "homepage card is missing the checked-server denominator")
+        self.assertEqual(int(card.group(1)), self.st["reachable"])
+        self.assertEqual(int(card.group(2)), self.st["checked_count"])
         self.assertNotIn(str(self.st["reachable"]), Path("build_aicite.py").read_text().split("def reach_sentence")[1].split("def ")[0])
+
+    def test_daily_check_includes_catalog_only_servers(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("check_mcp_links", ROOT / "scripts" / "check_mcp_links.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        targets = mod.mcp_targets(self.tools)
+        only = [row for row in self.tools if row.get("catalog_only") and row.get("category") == "MCP servers"]
+        self.assertTrue(only)
+        slugs = {row["slug"] for row in targets}
+        self.assertTrue(all(row["slug"] in slugs for row in only))
 
     def test_missing_check_file_does_not_invent_today(self):
         missing = bac.mcp_reachability([])
         self.assertEqual(missing["total"], 0)
-        self.assertIn("no timestamp", bac.reach_sentence({"reachable": 0, "total": 0, "day": ""}))
+        self.assertIn("no timestamp", bac.reach_sentence({"reachable": 0, "total": 0, "checked_count": 0, "day": ""}))
 
     def test_mcp_pages_lead_with_the_check_and_valid_schema(self):
         pages = list(Path("mcp").glob("*.html")) + [Path("mcp/status/index.html"), Path("categories/mcp-servers.html")]

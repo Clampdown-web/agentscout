@@ -1,5 +1,8 @@
 """MCP link check (Oct 22 2026): requests every MCP server's listed link (and GitHub repo when set) and writes
-data/mcp_link_status.json. Read by build_aicite.py for /mcp/link-status.html. Run before a build; network only here."""
+data/mcp_link_status.json. Read by build_aicite.py for /mcp/link-status.html. Run before a build; network only here.
+
+The population is every MCP server in tools.json, including catalog_only. A catalog-only
+server with no row yet is unverified and is not part of the live percentage."""
 import json,os,sys,socket,ipaddress,urllib.parse,datetime as d,zoneinfo as z,urllib.request,urllib.error,concurrent.futures as cf
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 UA={"User-Agent":"Mozilla/5.0 (compatible; AgentScoutLinkCheck/1.0; +https://agentscouthq.com/about.html)"}
@@ -50,8 +53,11 @@ def probe(u):
     except urllib.error.HTTPError as ex: return ex.code if ex.code not in (200,) else 403
     except Exception as ex2:
         return 403 if (_tls(err) or _tls(ex2)) else 0
+def mcp_targets(tools):
+    """Every MCP server, including catalog_only. The daily run does not skip the bulk import."""
+    return [x for x in tools if x.get("category")=="MCP servers"]
 def main():
-    t=[x for x in json.load(open("tools.json")) if x.get("category")=="MCP servers"]
+    t=mcp_targets(json.load(open("tools.json")))
     jobs={}
     for x in t:
         jobs[(x["slug"],"url")]=x["url"]
@@ -61,7 +67,7 @@ def main():
         fs={ex.submit(probe,u):k for k,u in jobs.items()}
         for f in cf.as_completed(fs): out.setdefault(fs[f][0],{})[fs[f][1]]=f.result()
     now=d.datetime.now(z.ZoneInfo("America/Los_Angeles"))
-    json.dump({"checked":now.strftime("%Y-%m-%d %H:%M"),"tz":"America/Los_Angeles","results":dict(sorted(out.items()))},open("data/mcp_link_status.json","w"),indent=1)
+    json.dump({"checked":now.strftime("%Y-%m-%d %H:%M"),"tz":"America/Los_Angeles","includes_catalog_only":True,"results":dict(sorted(out.items()))},open("data/mcp_link_status.json","w"),indent=1)
     ok_code=lambda c,v:(200<=c<400) or c==405 or (c in (401,403,429) and (200<=v.get("github",0)<400 or len(v)==1))
     bad=sum(1 for v in out.values() if not all(ok_code(c,v) for c in v.values()))
     print(f"checked {len(jobs)} links for {len(out)} MCP servers; {bad} broken links")
