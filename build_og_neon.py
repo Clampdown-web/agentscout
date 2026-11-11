@@ -1,16 +1,17 @@
-"""Neon share images for /mcp/ pages (Oct 23 2026, owner request): dark background, purple/pink glow, glassy tool cards,
-AgentScout logo top-left, matching the 'Fresh AI agents on AgentScout' video post. Tool and MCP server counts come from
-tools.json on every build. Called from build_og.run for mcp/*.html; only the share image changes, never page colors."""
+"""Neon share images for /mcp/ pages. Dark #0b0d12 background, purple/cyan glow, glassy tool cards,
+AgentScout logo top-left. Tool and MCP server counts come from tools.json on every build.
+Called from build_og.run for mcp/*.html; only the share image changes, never page colors.
+These files are produced by the site build. The Cloudflare image worker is not involved."""
 import io,os
 from PIL import Image,ImageDraw,ImageFilter
 W,H=1200,630
-BG=(11,9,22); INK=(246,244,255); MUTED=(190,184,214); PUR=(167,139,250); PINK=(244,114,182); LINE=(120,100,190)
+BG=(11,13,18); INK=(246,244,255); MUTED=(186,194,208); PUR=(147,147,255); PINK=(45,226,230); LINE=(90,110,160)
 def _glow():
     im=Image.new("RGB",(W,H),BG); g=Image.new("RGB",(W,H),(0,0,0)); d=ImageDraw.Draw(g)
-    for (cx,cy,r,col) in ((180,560,520,(110,40,220)),(1080,80,480,(200,40,150)),(760,640,380,(80,30,170))):
+    for (cx,cy,r,col) in ((160,540,520,(70,40,180)),(1040,70,460,(10,130,160)),(760,640,360,(36,28,110))):
         d.ellipse([cx-r,cy-r,cx+r,cy+r],fill=col)
-    g=g.filter(ImageFilter.GaussianBlur(170))
-    return Image.blend(im,g,0.55)
+    g=g.filter(ImageFilter.GaussianBlur(160))
+    return Image.blend(im,g,0.5)
 def _grad_text(im,xy,text,font):
     d=ImageDraw.Draw(im); w=int(d.textlength(text,font=font))+4; b=font.getbbox(text); h=b[3]+8
     m=Image.new("L",(w,h),0); ImageDraw.Draw(m).text((0,0),text,font=font,fill=255)
@@ -59,9 +60,9 @@ def render(F,wrap,label,title,sub,cards,foot,accent=None):
         bx=64+i*(cw+gap); im=_glass(im,[bx,cy0,bx+cw,cy0+ch],hi=(i==0)); d=ImageDraw.Draw(im); tx=bx+24
         if c.get("logo") and os.path.exists(c["logo"]):
             try:
-                L=Image.open(c["logo"]).convert("RGBA"); L.thumbnail((52,52),Image.LANCZOS)
-                t=Image.new("RGBA",(60,60),(255,255,255,255)); t.alpha_composite(L,((60-L.width)//2,(60-L.height)//2))
-                m=Image.new("L",(60,60),0); ImageDraw.Draw(m).rounded_rectangle([0,0,59,59],radius=14,fill=255); im.paste(t.convert("RGB"),(bx+22,cy0+22),m); d=ImageDraw.Draw(im); tx=bx+22+60+16
+                import build_og
+                tile=build_og.logo_tile(c["logo"],52,60,14)
+                im.paste(tile,(bx+22,cy0+22),tile); d=ImageDraw.Draw(im); tx=bx+22+60+16
             except Exception: pass
         name=c["name"]; sz=c.get("size",30)
         while sz>22 and d.textlength(name,font=F(sz,700))>bx+cw-20-tx: sz-=2
@@ -72,5 +73,6 @@ def render(F,wrap,label,title,sub,cards,foot,accent=None):
         d.rounded_rectangle([bx+22,cy0+96,bx+22+tw,cy0+128],radius=16,fill=(70,35,120),outline=PUR,width=1); d.text((bx+22+tw/2,cy0+112),c["tag"],font=tg,fill=(232,220,255),anchor="mm")
     ff=F(24,650); d.text((64,H-34),"agentscouthq.com",font=ff,fill=INK,anchor="ls")
     d.text((64+d.textlength("agentscouthq.com",font=ff)+18,H-34),foot,font=F(22,450),fill=MUTED,anchor="ls")
-    im=im.quantize(colors=200,method=Image.Quantize.MEDIANCUT,dither=Image.Dither.FLOYDSTEINBERG)
+    im=im.quantize(colors=192,method=Image.Quantize.MEDIANCUT,dither=Image.Dither.FLOYDSTEINBERG).convert("RGB")
+    d=ImageDraw.Draw(im); d.rectangle([0,0,W//2,5],fill=PUR); d.rectangle([W//2,0,W,5],fill=PINK)
     b=io.BytesIO(); im.save(b,"PNG",optimize=True); return b.getvalue()

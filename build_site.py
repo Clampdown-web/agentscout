@@ -548,6 +548,8 @@ def _quality_finish():
     build_listlogos.run(t)
     build_logocheck.listings_gate()
     _bsn_final.charset_first()
+    import build_og as _bog
+    _bog.stamp_share_tags()  # submit/sponsor are rewritten from the template after the image pass
     # Count check runs after catalog-only rows leave the sitemap. Checking earlier
     # fails the build on those URLs before the thin-page rule can drop them.
     if _sp.run([_sys.executable,"scripts/check_counts.py"]).returncode:
