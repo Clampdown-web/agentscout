@@ -106,45 +106,45 @@ def pages(t):
     nmcp=sum(1 for x in t if x["category"]=="MCP servers")
     for s,job,lab,intro,how,kw,it in made:
         n=len(it); canon=f"{B}mcp/{s}.html"; h1=f"Best MCP servers for {job}"
-        title=f"{h1} (2026): {n} ranked · AgentScout"
+        title=f"{h1} (2026): {n:,} ranked · AgentScout"
         if len(title)>70: title=f"Best MCP servers for {SHORT.get(s,lab)} (2026) · AgentScout"
-        desc=f"The {n} best MCP servers for {job} in 2026, ranked by GitHub stars, ratings and recent activity: {', '.join(x['name'] for x in it[:3])} and more."
-        if len(desc)>158: desc=f"{n} MCP servers for {job}, ranked by GitHub stars and activity: {', '.join(x['name'] for x in it[:2])} and more. Pricing as stated."
+        desc=f"The {n:,} best MCP servers for {job} in 2026, ranked by GitHub stars, ratings and recent activity: {', '.join(x['name'] for x in it[:3])} and more."
+        if len(desc)>158: desc=f"{n:,} MCP servers for {job}, ranked by GitHub stars and activity: {', '.join(x['name'] for x in it[:2])} and more. Pricing as stated."
         if len(desc)>158: desc=desc[:157].rsplit(" ",1)[0]+"…"
         osn=sum(1 for x in it if x["pricing"].startswith("Open source")); st=[x for x in it if x.get("github_stars")]
         pc=collections.Counter(x["pricing"] for x in it)
         faq=[(f"What are the best MCP servers for {job}?",f"Ranked by tracked GitHub stars, then visitor ratings and recent code activity, the top MCP servers for {job} in our directory are "+", ".join(x["name"] for x in it[:5])+". Stars show popularity, not fit, so try two or three on your own setup."),
-             (f"Are there free MCP servers for {job}?",(f"{osn} of the {n} servers here are listed as open source" if osn else "None of the servers here are listed as open source")+". Pricing on this page, as each maker states it: "+", ".join(f"{k} ({v})" for k,v in pc.most_common())+". Open-source servers can still need a paid account with the service they connect to."),
+             (f"Are there free MCP servers for {job}?",(f"{osn:,} of the {n:,} servers here are listed as open source" if osn else "None of the servers here are listed as open source")+". Pricing on this page, as each maker states it: "+", ".join(f"{k} ({v:,})" for k,v in pc.most_common())+". Open-source servers can still need a paid account with the service they connect to."),
              ("How does AgentScout rank these MCP servers?","By the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come after those with one. There are no paid placements."),
              ("Which apps can use these MCP servers?","Any MCP client: Claude Desktop, Claude Code, Cursor, Codex, VS Code with Copilot, Windsurf and others. Each server's own docs give the exact config; our free MCP config builder can write the JSON for you.")]
         fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(a)}</h3><p style="margin:0">{e(b)}</p>' for a,b in faq)
         rel=[f'<a href="{a[0]}.html">{e(a[2])}</a>' for a in made if a[0]!=s]+['<a href="index.html">All MCP servers by task</a>']
-        facts=(f'<div class="badges" style="margin:0 0 18px"><span class="b">{n} MCP servers</span><span class="b">{osn} open source</span>'
+        facts=(f'<div class="badges" style="margin:0 0 18px"><span class="b">{n:,} MCP servers</span><span class="b">{osn:,} open source</span>'
                +(f'<span class="b">Most starred: {e(st[0]["name"])} (★ {st[0]["github_stars"]:,})</span>' if st else "")+'</div>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","name":h1,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(it)]},
             {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":B+"mcp/"},{"@type":"ListItem","position":3,"name":h1,"item":canon}]}]}
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">MCP servers by task</a> / {e(lab)}</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h1)} (2026)</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Here are the {n} we list, ranked.</p>{facts}'
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Here are the {n:,} we list, ranked.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked them:</strong> each server here is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a> and its listing says it does this job. We order them by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come last. Links checked {asof}. No paid placements.</p>'
-              f'<h2 {H2}>The {n} MCP servers for {e(job)}, ranked</h2>'
+              f'<h2 {H2}>The {n:,} MCP servers for {e(job)}, ranked</h2>'
               f'<ol class="grid" style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(it))}</ol>'
               f'<p style="margin:18px 0 0"><a href="{flink(kw)}">Filter these live in the directory</a>: MCP servers matching “{e(kw)}”, sorted by GitHub stars. You can add pricing and open-source filters there.</p>'
               f'<h2 {H2}>How to choose</h2><ul>{"".join(f"<li>{e(b)}</li>" for b in how)}<li>Only connect servers you trust: an MCP server can read and act on whatever its credentials allow.</li></ul>'
               f'<h2 {H2}>FAQ</h2>{fq}'
               f'<h2 {H2}>Related tasks</h2><ul class="guide-list">{"".join(f"<li>{a}</li>" for a in rel)}</ul>'
-              f'<p>More</p><ul class="guide-list"><li><a href="../categories/mcp-servers.html">All {nmcp} MCP servers</a></li><li><a href="../s/free-mcp-servers.html">Free MCP servers</a></li><li><a href="../best/mcp-servers-for-claude-code.html">For Claude Code</a></li><li><a href="../best/mcp-servers-for-cursor.html">For Cursor</a></li><li><a href="../free-tools/mcp-config-builder.html">MCP config builder</a></li></ul>'
+              f'<p>More</p><ul class="guide-list"><li><a href="../categories/mcp-servers.html">All {nmcp:,} MCP servers</a></li><li><a href="../s/free-mcp-servers.html">Free MCP servers</a></li><li><a href="../best/mcp-servers-for-claude-code.html">For Claude Code</a></li><li><a href="../best/mcp-servers-for-cursor.html">For Cursor</a></li><li><a href="../free-tools/mcp-config-builder.html">MCP config builder</a></li></ul>'
               f'<p class="disclose">Facts come from our directory listings and each project\'s GitHub repo; pricing is as each maker states it and can change. Missing a server? <a href="../submit.html">Submit it free</a>.</p></section>')
         open(f"mcp/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)
     # hub
     canon=B+"mcp/"; title="Best MCP Servers by Task (2026): Ranked Picks · AgentScout"
     tot=len({x["slug"] for a in made for x in a[6]}|{s for f in FOLD for s in f[2] if s in bs})
-    desc=f"The best MCP servers by task in 2026: databases, web search, GitHub and CI, monitoring, gateways, productivity and marketing. {tot} servers, ranked."[:158]
+    desc=f"The best MCP servers by task in 2026: databases, web search, GitHub and CI, monitoring, gateways, productivity and marketing. {tot:,} servers, ranked."[:158]
     secs=""
     for s,job,lab,intro,how,kw,it in made:
         secs+=(f'<h2 id="{s}" {H2}><a href="{s}.html">Best MCP servers for {e(job)}</a></h2><p class="muted" style="margin:0 0 10px;font-size:14px">{e(intro)}</p>'
-               f'<ul style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in it[:4])}</ul><p style="margin:4px 0 0"><a href="{s}.html">See all {len(it)} ranked →</a></p>')
+               f'<ul style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in it[:4])}</ul><p style="margin:4px 0 0"><a href="{s}.html">See all {len(it):,} ranked →</a></p>')
     fold=""
     for lab,txt,L,lnk in FOLD:
         it=rank(members(L))
@@ -154,7 +154,7 @@ def pages(t):
     faq=[("What is the best MCP server?","It depends on the job. By tracked GitHub stars, the leaders on this page are "+", ".join(f"{a[6][0]['name']} for {a[1]}" for a in made[:4])+". Pick the task first, then compare two or three servers."),
          ("How are these MCP servers ranked?","Within each task, by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push, then listing maturity. No paid placements."),
          ("Why do some tasks not have their own page?",f"We only build a task page when at least {MIN} solid MCP servers in our directory do that job and no other AgentScout page already covers the same list. Docs, cloud and design already have focused pages, and payments has fewer than {MIN} servers, so they're listed here instead."),
-         ("How many MCP servers does AgentScout list?",f"{nmcp} in the MCP servers category, each with a link-checked listing. This page covers {tot} of them, grouped by task.")]
+         ("How many MCP servers does AgentScout list?",f"{nmcp:,} in the MCP servers category, each with a link-checked listing. This page covers {tot:,} of them, grouped by task.")]
     fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(a)}</h3><p style="margin:0">{e(b)}</p>' for a,b in faq)
     jump='<ul class="guide-list">'+"".join(f'<li><a href="#{a[0]}">{e(a[2])}</a></li>' for a in made)+'<li><a href="#more">More tasks</a></li></ul>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"hasPart":[{"@type":"WebPage","name":f"Best MCP servers for {a[1]}","url":f"{B}mcp/{a[0]}.html"} for a in made]},
@@ -168,7 +168,7 @@ def pages(t):
           f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we ranked them:</strong> GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push, then listing maturity. Every server is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a>; links checked {asof}. No paid placements.</p>'
           f'{secs}<h2 id="more" {H2}>More tasks</h2>{fold}'
           f'<h2 {H2}>FAQ</h2>{fq}'
-          f'<p style="margin-top:28px">More</p><ul class="guide-list"><li><a href="../categories/mcp-servers.html">All {nmcp} MCP servers</a></li><li><a href="{flink("mcp").replace("&q=mcp","")}">Filter MCP servers by pricing and open source</a></li><li><a href="../s/free-mcp-servers.html">Free MCP servers</a></li><li><a href="../best/open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../best/best-mcp-servers-2026.html">Best MCP servers 2026</a></li><li><a href="../best/mcp-servers-for-claude-code.html">For Claude Code</a></li><li><a href="../best/mcp-servers-for-cursor.html">For Cursor</a></li><li><a href="../best/mcp-servers-for-codex.html">For Codex</a></li><li><a href="../free-tools/mcp-server-picker.html">MCP server picker</a></li></ul>'
+          f'<p style="margin-top:28px">More</p><ul class="guide-list"><li><a href="../categories/mcp-servers.html">All {nmcp:,} MCP servers</a></li><li><a href="{flink("mcp").replace("&q=mcp","")}">Filter MCP servers by pricing and open source</a></li><li><a href="../s/free-mcp-servers.html">Free MCP servers</a></li><li><a href="../best/open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../best/best-mcp-servers-2026.html">Best MCP servers 2026</a></li><li><a href="../best/mcp-servers-for-claude-code.html">For Claude Code</a></li><li><a href="../best/mcp-servers-for-cursor.html">For Cursor</a></li><li><a href="../best/mcp-servers-for-codex.html">For Codex</a></li><li><a href="../free-tools/mcp-server-picker.html">MCP server picker</a></li></ul>'
           f'<p class="disclose">Facts come from our directory listings and each project\'s GitHub repo; pricing is as each maker states it and can change. Missing a server? <a href="../submit.html">Submit it free</a>.</p></section>')
     open("mcp/index.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
     # inbound links (idempotent)

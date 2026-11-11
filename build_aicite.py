@@ -80,7 +80,7 @@ def reach_card_phrase(st):
     line = f"{st['reachable']:,} of {st['checked_count']:,} checked servers live"
     extra = int(st.get("not_yet_checked") or 0)
     if extra:
-        line += f" · +{extra} listed, not yet checked"
+        line += f" · +{extra:,} listed, not yet checked"
     return line
 def reach_sentence(st):
     """Quotable line. The denominator is the checked set, never the full directory."""
@@ -89,7 +89,7 @@ def reach_sentence(st):
     line=f"Checked daily, {st['reachable']:,} of {st['checked_count']:,} checked servers live, last checked {st['day']}."
     extra=st.get("not_yet_checked") or 0
     if extra:
-        line+=f" +{extra} listed, not yet checked."
+        line+=f" +{extra:,} listed, not yet checked."
     return line
 def methodology_plain():
     return ("Once a day, AgentScout requests every MCP server in the directory, including catalog-only listings, and, when it is a different link, its GitHub URL. "
@@ -110,7 +110,7 @@ def reach_sentence_html(st):
     line=f"Checked daily, {st['reachable']:,} of {st['checked_count']:,} checked servers live, last checked {_reach_time(st)}."
     extra=st.get("not_yet_checked") or 0
     if extra:
-        line+=f" +{extra} listed, not yet checked."
+        line+=f" +{extra:,} listed, not yet checked."
     return line
 def llms_reach_section(st=None):
     st=st or mcp_reachability()
@@ -391,15 +391,15 @@ def pages(t):
         scope=f"the {len(M):,} MCP servers in this table ({mcp_n:,} in the directory)"
     # pricing. Directory totals come from api/metrics.json, the same file the homepage reads.
     canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"
-    desc=f"As of {when}, AgentScout lists {tools_n:,} tools and {mcp_n:,} MCP servers. Pricing: {cnt['free']} free, {cnt['freemium']} free plus paid, {cnt['paid']} paid."
-    if len(desc)>158: desc=f"As of {when}: {tools_n:,} tools, {mcp_n:,} MCP servers. {cnt['free']} free, {cnt['freemium']} freemium, {cnt['paid']} paid."[:158]
+    desc=f"As of {when}, AgentScout lists {tools_n:,} tools and {mcp_n:,} MCP servers. Pricing: {cnt['free']:,} free, {cnt['freemium']:,} free plus paid, {cnt['paid']:,} paid."
+    if len(desc)>158: desc=f"As of {when}: {tools_n:,} tools, {mcp_n:,} MCP servers. {cnt['free']:,} free, {cnt['freemium']:,} freemium, {cnt['paid']:,} paid."[:158]
     def stars_cell(x):
         n=x.get("github_stars")
         if not n: return "–"
         return f"{int(n):,} GitHub stars"
     rows=[[link(x),e(x.get("pricing") or "Not stated"),{"free":"Free","freemium":"Free + paid","paid":"Paid","unknown":"Not stated"}[ptype(x)],"Yes" if x.get("open_source") else "No",stars_cell(x)] for x in M]
     body=(f'<section style="padding-top:28px"><h1>MCP server pricing table</h1><p class="lede">Pricing for {scope} listed on AgentScout, part of {tools_n:,} tools as of {e(when)}, as each maker states it. Data as of <time datetime="{e(upd)}">{e(nice(upd))}</time> (Pacific).</p>'
-          f'<p>{cnt["free"]} free, {cnt["freemium"]} free with paid plans, {cnt["paid"]} paid'+(f', {cnt["unknown"]} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="status/">MCP status</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a> and our <a href="connect.html">read-only MCP server</a>.</p>'
+          f'<p>{cnt["free"]:,} free, {cnt["freemium"]:,} free with paid plans, {cnt["paid"]:,} paid'+(f', {cnt["unknown"]:,} not stated' if cnt["unknown"] else "")+'. Always confirm on the maker\'s site before you buy. See also the <a href="status/">MCP status</a>, <a href="./">best MCP servers by task</a> and the <a href="../categories/mcp-servers.html">MCP servers category</a>. The same data is in <a href="../api/tools.json">api/tools.json</a> and our <a href="connect.html">read-only MCP server</a>.</p>'
           +tbl(["MCP server","Pricing (as stated)","Type","Open source","GitHub stars"],rows)+hist_html(H)+"</section>")
     ld={"@context":"https://schema.org","@type":"Dataset","name":"MCP server pricing table","description":desc,"url":canon,"dateModified":upd,"creator":{"@type":"Organization","name":"AgentScout","url":B},"license":B+"about.html"}
     open("mcp/pricing.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon)

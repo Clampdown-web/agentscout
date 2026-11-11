@@ -24,11 +24,35 @@ concurrency:
 
 jobs:
   smoke:
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') || (github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'github-pages')
+    # The event filter stays on the steps, not the job. When every job is
+    # skipped, GitHub can leave the run in_progress and hold this concurrency
+    # group (cancel-in-progress is false), so the next smoke stays pending.
+    # A job that always starts still finishes, and releases the group, when
+    # the check itself is skipped.
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Decide
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          DEPLOY_STATE: ${{ github.event.deployment_status.state }}
+          DEPLOY_ENV: ${{ github.event.deployment.environment }}
+        run: |
+          run=false
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] || [ "$EVENT_NAME" = "schedule" ]; then
+            run=true
+          elif [ "$EVENT_NAME" = "workflow_run" ] && [ "$RUN_CONCLUSION" = "success" ]; then
+            run=true
+          elif [ "$EVENT_NAME" = "deployment_status" ] && [ "$DEPLOY_STATE" = "success" ] && [ "$DEPLOY_ENV" = "github-pages" ]; then
+            run=true
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "production smoke will run: $run"
       - name: Checkout
+        if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Check production
+        if: steps.gate.outputs.run == 'true'
         run: python3 scripts/smoke_production.py

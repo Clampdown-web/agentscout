@@ -8,6 +8,7 @@ where a reader can take them as a tool count ("2,316 ToolsPad").
 """
 from __future__ import annotations
 
+import html as html_lib
 import json
 import os
 import re
@@ -171,6 +172,75 @@ def iter_pages():
             yield rel, path.read_text(encoding="utf-8", errors="ignore")
 
 
+# Visible catalog counts (tools, categories, MCP, stars). A 4-digit year is left alone.
+_COUNT_BEFORE = re.compile(
+    r"(?<![\w.$])(\d{4,})(?![\d,])"
+    r"(?=(?:</(?:b|span|strong)>)?\s*\+?\s+"
+    r"(?:tools?|MCPs?\b|listings|pricing\b|link-checked|servers\b|of\b|[Bb]est\b|live\b|checked\b|repos\b|AI\b|in the MCP))"
+)
+_COUNT_OF = re.compile(r"(?<![\w.$])of\s+(\d{4,})(?![\d,])")
+_COUNT_PAREN = re.compile(r"\((\d{4,})\)")
+
+
+def _year_number(n: int) -> bool:
+    return 1900 <= n <= 2099
+
+
+def count_token_spans(text: str) -> list[tuple[int, int, str]]:
+    """Unformatted count tokens of 1000 or more. Years in 1900-2099 are not counts."""
+    spans = set()
+    for rx in (_COUNT_BEFORE, _COUNT_OF, _COUNT_PAREN):
+        for m in rx.finditer(text):
+            raw = m.group(1)
+            n = int(raw)
+            if n < 1000 or _year_number(n):
+                continue
+            spans.add((m.start(1), m.end(1), raw))
+    return sorted(spans)
+
+
+def insert_count_commas(text: str) -> str:
+    """Comma-format count tokens, leaving tool-card blurbs alone."""
+    parts = re.split(r'(<p class="hook">.*?</p>)', text, flags=re.S)
+    out = []
+    for part in parts:
+        if part.startswith('<p class="hook">'):
+            out.append(part)
+            continue
+        hits = count_token_spans(part)
+        if not hits:
+            out.append(part)
+            continue
+        buf = part
+        for start, end, raw in reversed(hits):
+            buf = buf[:start] + f"{int(raw):,}" + buf[end:]
+        out.append(buf)
+    return "".join(out)
+
+
+def visible_count_problems(rel: str, html: str) -> list[str]:
+    """Title, meta, and visible copy. Scripts, styles, and tool blurbs are not copy."""
+    bad = []
+    title = re.search(r"<title>(.*?)</title>", html, flags=re.I | re.S)
+    bits = [("title", html_lib.unescape(title.group(1)))] if title else []
+    for pat, name in (
+        (r'<meta name="description" content="([^"]*)"', "meta"),
+        (r'<meta property="og:description" content="([^"]*)"', "og"),
+        (r'<meta name="twitter:description" content="([^"]*)"', "twitter"),
+    ):
+        for m in re.finditer(pat, html, flags=re.I):
+            bits.append((name, html_lib.unescape(m.group(1))))
+    body = re.sub(r'(?is)<p class="hook">.*?</p>', " ", html)
+    body = visible(body)
+    bits.append(("body", html_lib.unescape(body)))
+    for where, text in bits:
+        for _start, _end, raw in count_token_spans(text):
+            ctx_at = text.find(raw)
+            ctx = text[max(0, ctx_at - 28):ctx_at + len(raw) + 28].strip()
+            bad.append(f"{rel} {where}: {raw} in {ctx}")
+    return bad
+
+
 def catalog_problems(tools: int | None = None, mcp: int | None = None) -> list[str]:
     metrics = json.loads(METRICS.read_text(encoding="utf-8"))
     tools = int(metrics["tools_count"] if tools is None else tools)
@@ -197,6 +267,26 @@ class CatalogCountTests(unittest.TestCase):
 
     def test_generated_pages_match_metrics(self):
         bad = catalog_problems()
+        self.assertFalse(bad, "\n".join(bad[:40]))
+
+    def test_count_token_spans_ignore_years_prices_and_formatted_numbers(self):
+        self.assertEqual(count_token_spans("Browse 5716 AI agent tools"), [(7, 11, "5716")])
+        self.assertEqual(count_token_spans("40 categories, 5,716 tools."), [])
+        self.assertEqual(count_token_spans("Top 15 of 1344 by stars."), [(10, 14, "1344")])
+        self.assertEqual(count_token_spans("MCP servers (2026)"), [])
+        self.assertEqual(count_token_spans("Fast-Track $5716"), [])
+        self.assertEqual(count_token_spans("Showing 3177 of 3177 tools"), [(8, 12, "3177"), (16, 20, "3177")])
+
+    def test_public_pages_use_thousands_separators(self):
+        bad = []
+        for rel in ("index.html", "categories/index.html", "categories/mcp-servers.html"):
+            raw = (ROOT / rel).read_text(encoding="utf-8", errors="ignore")
+            bad.extend(visible_count_problems(rel, raw))
+        js = (ROOT / "catfilter.js").read_text(encoding="utf-8")
+        if 'toLocaleString("en-US")' not in js and "toLocaleString('en-US')" not in js:
+            bad.append("catfilter.js does not format counts with toLocaleString('en-US')")
+        if 'Showing "+n+' in js or "Showing \"+n+" in js:
+            bad.append("catfilter.js still writes a raw Showing count")
         self.assertFalse(bad, "\n".join(bad[:40]))
 
     def test_generators_read_metrics_and_date_snapshots(self):

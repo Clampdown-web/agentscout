@@ -403,7 +403,7 @@ def seo(t,urls):
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
         _tc=[z for z in _tc if z[2]>=3][:14]
-        _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
+        _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({fmt_n(k)})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
         _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{fmt_n(n)} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
