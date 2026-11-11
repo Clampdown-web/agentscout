@@ -1,12 +1,12 @@
 {
- "date": "2026-11-10",
- "slug": "github-mcp-server",
- "name": "GitHub MCP Server",
- "why": "A standout MCP servers tool for builders: gitHub's official MCP server for letting agents work with repositories, issues, pull requests and Actions.",
- "category": "MCP servers",
- "description": "GitHub's official MCP server for letting agents work with repositories, issues, pull requests and Actions.",
- "logo": "https://agentscouthq.com/assets/logos/github-mcp-server.png",
- "page": "https://agentscouthq.com/tools/github-mcp-server.html",
+ "date": "2026-11-11",
+ "slug": "holmesgpt",
+ "name": "HolmesGPT",
+ "why": "A standout DevOps & cloud tool for builders: CNCF sandbox SRE agent that investigates alerts and incidents.",
+ "category": "DevOps & cloud",
+ "description": "CNCF sandbox SRE agent that investigates alerts and incidents.",
+ "logo": "https://agentscouthq.com/assets/logos/holmesgpt.png",
+ "page": "https://agentscouthq.com/tools/holmesgpt.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -111,6 +111,10 @@
   {
    "date": "2026-11-10",
    "slug": "github-mcp-server"
+  },
+  {
+   "date": "2026-11-11",
+   "slug": "holmesgpt"
   }
  ]
 }

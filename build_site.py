@@ -157,7 +157,7 @@ from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 # Slugs that must not follow the display name (Nov 8 2026): MagenticLite keeps its indexed magentic-ui URL (PR #70 renamed the tool);
 # names with accents keep a readable ASCII slug.
-SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots"}
+SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots","Sandstorm (formerly forkd)":"forkd","MachGTM":"mach"}
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
@@ -534,6 +534,10 @@ def _quality_finish():
     # submit and sponsor are rewritten after the footer pass, so put the Popular lists line back.
     import build_intlinks
     build_intlinks.apply_footer_line()
+    # submit_page/sponsor.page run after the main nav unify and would otherwise
+    # miss later chrome links (MCP test report, AI visibility check).
+    import build_seo_new as _bsn_nav
+    _bsn_nav.unify_all_nav_and_footer()
     # Sitemap is final here, after catalog_only pages have left it. Animation
     # frames and the cache buster have to use that page total, not the pre-thin one.
     import build_seo_new as _bsn_final

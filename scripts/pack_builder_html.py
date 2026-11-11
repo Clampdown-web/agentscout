@@ -217,7 +217,7 @@ def pack_section_html() -> str:
     <button type="button" class="ap-pill" data-ap-filter="product" aria-pressed="false">Product &amp; Data</button>
   </div>
   <div class="ap-tiers" role="group" aria-label="Volume discount tiers">@@TIERS@@</div>
-  <p class="paynote" style="flex:1 0 100%;box-sizing:border-box;margin:8px auto 0;max-width:40rem;width:100%;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p>
+  <p class="paynote" style="flex:1 1 100%;min-width:0;max-width:calc(100vw - 48px);width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p>
   <div class="ap-grid">@@GRID@@</div>
   <div class="ap-foot" id="ap-foot">
     <p id="ap-blurb">Each role pack is $35. Volume pricing: 5 for $119, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.</p>

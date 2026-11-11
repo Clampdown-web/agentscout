@@ -318,7 +318,7 @@ def unify_all_nav_and_footer():
     root_nav = m_nav.group(0)
     root_foot = m_foot.group(0)
 
-    skip_files = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    skip_files = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html", "free-tools-rest.html"}
     updated = 0
     for root_dir, dirs, fnames in os.walk("."):
         dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview", "r", "report-kit")]
@@ -386,7 +386,7 @@ def header_pill_problems():
     Fails when a header links free-tools.html more than once or repeats a nav pill class.
     """
     bad = []
-    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html", "free-tools-rest.html"}
     skip_dirs = ("node_modules", "data", "scripts", "assets", "preview", "pagefind", "bot-packages", "r", "report-kit")
     for root_dir, dirs, fnames in os.walk("."):
         dirs[:] = [d for d in dirs if not d.startswith(".") and d not in skip_dirs]
@@ -452,7 +452,7 @@ def redirect_chrome_problems():
         want_nav, want_foot = _want_chrome()
     except SystemExit:
         return ["index.html is missing nav or footer"]
-    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html", "free-tools-rest.html"}
     skip_dirs = ("node_modules", "data", "scripts", "assets", "preview", "r", "report-kit")
     bad = []
     for rel in _walk_html(skip_dirs):
@@ -475,7 +475,6 @@ def verify_nav_footer_unified():
     except SystemExit:
         print("nav/footer verify: index.html is missing nav or footer")
         return 1
-    # free-tools-rest.html is a stashed directory fragment, not a page.
     skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html", "free-tools-rest.html"}
     bad = []
     seen = 0

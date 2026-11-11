@@ -649,8 +649,11 @@
 "penetration-testing"
 ],
 "openmontage": [
+"research-agents",
+"vfx-compositing",
 "video-editing",
-"video"
+"video",
+"images-design"
 ],
 "anythingllm": [
 "vector-rag",
@@ -2373,6 +2376,7 @@
 ],
 "mempalace": [
 "agent-memory",
+"vector-rag",
 "voice-phone",
 "local-models"
 ],
@@ -2389,7 +2393,15 @@
 "agent-frameworks"
 ],
 "deeptutor": [
-"agent-memory"
+"agent-memory",
+"notebooks",
+"voice-phone",
+"computer-use",
+"terminal-agents",
+"dialogue-cleanup",
+"mastering",
+"video",
+"rules-config"
 ],
 "novu": [
 "chat-app-agents",
@@ -2781,8 +2793,8 @@
 "voice-phone"
 ],
 "forkd": [
-"sandboxes",
-"stem-separation"
+"parallel-orchestration",
+"sandboxes"
 ],
 "holyclaude": [
 "browser-automation"
@@ -2967,7 +2979,10 @@
 "agent-frameworks"
 ],
 "ollama": [
-"local-models"
+"agent-frameworks",
+"local-models",
+"terminal-agents",
+"images-design"
 ],
 "markitdown": [
 "vector-rag",
@@ -2992,8 +3007,9 @@
 "privategpt": [
 "text-to-sql",
 "vector-rag",
-"local-models",
-"rules-config"
+"research-agents",
+"search-apis",
+"local-models"
 ],
 "open-code-review": [
 "code-review",
@@ -3843,6 +3859,8 @@
 "terminal-agents"
 ],
 "omniroute": [
+"token-costs",
+"observability",
 "mcp-gateways",
 "local-models"
 ],
@@ -3979,7 +3997,13 @@
 "multi-agent"
 ],
 "obot": [
+"guardrails",
+"agent-auth",
+"mcp-gateways",
 "mcp-servers",
+"terminal-agents",
+"ide-agents",
+"stem-separation",
 "rules-config"
 ],
 "jido": [
@@ -4040,6 +4064,7 @@
 "computer-use"
 ],
 "warp": [
+"computer-use",
 "terminal-agents"
 ],
 "hark-pro": [
@@ -19349,5 +19374,206 @@
 ],
 "marimo": [
 "vfx-compositing"
+],
+"prelulu": [
+"agent-memory",
+"planning-tasks",
+"voice-phone",
+"video"
+],
+"tella": [
+"planning-tasks",
+"voice-phone",
+"marketing-agents",
+"video-editing",
+"video"
+],
+"aigrow": [
+"observability"
+],
+"autorouter": [
+"token-costs",
+"agent-frameworks"
+],
+"heyeddi-ci": [
+"sales-agents"
+],
+"octuedit": [
+"ide-agents",
+"video-editing",
+"video"
+],
+"bonfire-gtm": [
+"agent-payments",
+"email-agents",
+"sales-agents",
+"stem-separation"
+],
+"imagetopsd-ai": [
+"ide-agents",
+"video-editing",
+"video",
+"images-design"
+],
+"ai-raphael": [
+"planning-tasks",
+"color-upscaling",
+"video-editing",
+"video",
+"images-design"
+],
+"aigptimage": [
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"codingpass": [
+"planning-tasks"
+],
+"effect-farm": [
+"browser-automation",
+"video-editing",
+"video"
+],
+"zombie-hug": [
+"agent-memory",
+"video-editing",
+"video"
+],
+"solmiai": [
+"video"
+],
+"faceloria": [
+"planning-tasks",
+"mobile"
+],
+"360-alert": [
+"guardrails"
+],
+"mandapi": [
+"planning-tasks",
+"mcp-gateways"
+],
+"headshotsly": [],
+"lastbrowser": [
+"browser-automation",
+"sandboxes",
+"workflow-automation",
+"local-models",
+"terminal-agents",
+"stem-separation"
+],
+"enhance-place": [
+"browser-automation",
+"local-models",
+"color-upscaling",
+"video-editing",
+"dialogue-cleanup",
+"video",
+"images-design"
+],
+"squeezeos": [
+"agent-payments",
+"voice-phone",
+"mcp-gateways",
+"vfx-compositing",
+"mastering"
+],
+"sml-url-to-markdown-api": [
+"agent-wallets",
+"agent-payments",
+"vector-rag",
+"vfx-compositing",
+"mastering"
+],
+"lfm": [
+"agent-payments",
+"marketing-agents",
+"research-agents",
+"terminal-agents",
+"rules-config"
+],
+"daily-stock-analysis": [
+"chat-app-agents",
+"email-agents",
+"computer-use",
+"observability",
+"local-models"
+],
+"scientific-agent-skills": [
+"text-to-sql",
+"computer-use",
+"agent-frameworks",
+"local-models",
+"rules-config"
+],
+"skillopt": [
+"video-editing",
+"rules-config"
+],
+"rikkahub": [
+"mobile"
+],
+"desktop-cc-gui": [
+"token-costs",
+"voice-phone",
+"computer-use",
+"agent-frameworks",
+"local-models",
+"terminal-agents",
+"rules-config"
+],
+"hithink-finance-tonghuashun-financial-data": [
+"voice-phone",
+"research-agents",
+"mcp-servers",
+"agent-frameworks",
+"local-models",
+"terminal-agents",
+"rules-config"
+],
+"finance-skills": [
+"trading-agents",
+"vector-rag",
+"research-agents",
+"mcp-servers",
+"rules-config"
+],
+"aaron-marketing-skills": [
+"email-agents",
+"marketing-agents",
+"rules-config"
+],
+"paperasse": [
+"rules-config"
+],
+"magic-context": [
+"agent-memory",
+"observability",
+"rules-config"
+],
+"agency-orchestrator": [
+"planning-tasks",
+"computer-use",
+"workflow-automation",
+"multi-agent",
+"local-models",
+"terminal-agents",
+"images-design"
+],
+"rlinf": [
+"vector-rag",
+"guardrails",
+"fine-tuning",
+"vocal-tuning"
+],
+"modulify": [
+"planning-tasks",
+"text-to-sql",
+"marketing-agents",
+"observability",
+"vfx-compositing",
+"video-editing",
+"images-design"
 ]
 }

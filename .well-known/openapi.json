@@ -681,6 +681,83 @@
        ]
       }
      },
+     "reports": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "sku": {
+         "type": "string"
+        },
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": "string"
+        },
+        "price_usd": {
+         "type": "integer"
+        },
+        "regular_price_usd": {
+         "type": "integer"
+        },
+        "intro_price_usd": {
+         "type": "integer"
+        },
+        "billing_model": {
+         "type": "string"
+        },
+        "availability": {
+         "type": "string"
+        },
+        "badge": {
+         "type": "string"
+        },
+        "checkout_url": {
+         "type": "string"
+        },
+        "checkout_url_regular": {
+         "type": "string"
+        },
+        "intro_checkout_url": {
+         "type": "string"
+        },
+        "page_url": {
+         "type": "string"
+        },
+        "description": {
+         "type": "string"
+        },
+        "deliverables": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        }
+       },
+       "required": [
+        "id",
+        "sku",
+        "name",
+        "category",
+        "price_usd",
+        "regular_price_usd",
+        "intro_price_usd",
+        "billing_model",
+        "availability",
+        "badge",
+        "checkout_url",
+        "checkout_url_regular",
+        "intro_checkout_url",
+        "page_url",
+        "description",
+        "deliverables"
+       ]
+      }
+     },
      "agent_packs": {
       "type": "array",
       "items": {
@@ -929,6 +1006,7 @@
      "packages",
      "bot_templates",
      "addons",
+     "reports",
      "agent_packs",
      "pack_pricing",
      "schema_org"
@@ -953,6 +1031,9 @@
          "type": "string"
         },
         "seed": {
+         "type": "boolean"
+        },
+        "catalog_only": {
          "type": "boolean"
         }
        },

@@ -1054,7 +1054,12 @@
   "chat2db": "2026-11-10",
   "archify": "2026-11-10",
   "claude-code-templates": "2026-11-10",
-  "impeccable": "2026-11-10"
+  "impeccable": "2026-11-10",
+  "hypit": "2026-11-11",
+  "img2threejs": "2026-11-11",
+  "cube": "2026-11-11",
+  "toonflow-app": "2026-11-11",
+  "kortix-companyos": "2026-11-11"
  },
  "slots": {
   "2026-11-04": [],
@@ -1069,6 +1074,13 @@
    "archify",
    "claude-code-templates",
    "impeccable"
+  ],
+  "2026-11-11": [
+   "hypit",
+   "img2threejs",
+   "cube",
+   "toonflow-app",
+   "kortix-companyos"
   ]
  },
  "queued": [],
@@ -1076,11 +1088,17 @@
   "archify",
   "chat2db",
   "claude-code-templates",
+  "cube",
+  "hypit",
+  "img2threejs",
   "impeccable",
-  "oh-my-openagent-omo"
+  "kortix-companyos",
+  "oh-my-openagent-omo",
+  "toonflow-app"
  ],
- "hold_release_day": "2026-11-10",
+ "hold_release_day": "2026-11-11",
  "hold_released": [
-  "2026-11-10"
+  "2026-11-10",
+  "2026-11-11"
  ]
 }

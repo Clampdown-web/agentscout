@@ -293,6 +293,8 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 .mba-list{list-style:none;padding:0 8px;margin:10px auto 14px;text-align:center;box-sizing:border-box;font-size:12.5px;line-height:1.5;color:#e7e5e4;width:100%}
 .mba-list li{margin-bottom:5px}
 .mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;width:100%;justify-content:center}
+.mba-actions,.mba-bundle-ctas{min-width:0;max-width:100%;box-sizing:border-box}
+.mba-actions .paynote,.mba-bundle-ctas .paynote,p.paynote{flex:1 1 100%;min-width:0;max-width:calc(100vw - 48px);width:100%;white-space:normal;overflow-wrap:anywhere;box-sizing:border-box}
 .mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:800;text-decoration:none;min-height:42px;flex:1 1 auto;text-align:center}
 .mba-bundle{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:22px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(16,185,129,.22),rgba(132,204,22,.14));border:2px solid #10b981;box-shadow:0 10px 30px rgba(16,185,129,.28),0 0 22px rgba(52,211,153,.28);box-sizing:border-box}
 .mba-bundle-copy{width:100%;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center}
