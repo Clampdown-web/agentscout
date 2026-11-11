@@ -156,15 +156,15 @@ def _launch_markup():
         return ""
     return "<!-- TODO(owner): LAUNCH_PROMO in build_bot_store.py is off. Create the Stripe promotion code, set LAUNCH_PROMO to that code, and only then add a launch-discount line with prefilled checkout links. Do not invent a percent off or a strikethrough price. -->"
 
-LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section>""" + _launch_markup() + """<div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a><p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Best value</p><h2>Full 4-Bot Bundle</h2><p class="bs-pick-price">$149 <small>one time</small></p><p>Operations, SEO, market intel, and the CEO coordinator together. Bought separately those four list at $226.</p><a class="bs-btn bs-pick-buy" data-product="as-bot-bundle-149" data-price="149" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer">Buy the 4-bot bundle — $149</a><p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a><p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article></div>"""
+LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section>""" + _launch_markup() + """<div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a><p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Five roles</p><h2>5-Pack</h2><p class="bs-pick-price">$119 <small>one time</small></p><p>Five role packs in one checkout. Pick the roles in the full catalog. The $149 flagship 4-bot bundle stays under See all.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-5" data-price="119" href="https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a" target="_blank" rel="noopener noreferrer">Buy 5 packs — $119</a><p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a><p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article></div>"""
 
 def pages(t):
     os.makedirs("bot-store", exist_ok=True)
     import re
     n_bt = __import__("build_bot_templates").live_bot_template_count()
     canon = f"{B}bot-store/"
-    title = clip_title("AgentScout Bot Store — Pre-Trained AI Bots ($39–$69, $149)")
-    desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each, 5 for $119, or all 25 for $349.", 160)
+    title = clip_title("AgentScout Bot Store — Role Packs $35, $119, or $349")
+    desc = clip_text("Role packs: one for $35, five for $119, or all 25 for $349. The $149 flagship 4-bot bundle is under See all.", 160)
 
     body = (
         f'{CSS}'
@@ -398,6 +398,42 @@ def pages(t):
                             "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                             "description": "All 4 general-purpose bots for {{YOUR_COMPANY}} ({{YOUR_DOMAIN}}): uptime, technical SEO and Core Web Vitals, competitor tracking, and executive coordination. $149 (Save $77). Built for Grok Bot (also compatible with Claude Code, Cursor & Codex).",
                             "offers": {"@type": "Offer", "price": "149.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08"}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Single AI Agent Pack",
+                            "sku": "as-pack-1",
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
+                            "description": "One downloadable role pack: a skill file, three scheduled routines, and a Python script.",
+                            "offers": {"@type": "Offer", "price": "35.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09"}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "Product",
+                            "name": "5-Pack of AI Agent Role Packs",
+                            "sku": "as-pack-5",
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
+                            "description": "Five role packs in one checkout.",
+                            "offers": {"@type": "Offer", "price": "119.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a"}
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "Product",
+                            "name": "All 25 Mega Pack",
+                            "sku": "as-pack-25",
+                            "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
+                            "description": "Every role pack in one checkout.",
+                            "offers": {"@type": "Offer", "price": "349.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d"}
                         }
                     }
                 ]

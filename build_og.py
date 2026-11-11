@@ -120,7 +120,7 @@ def static_specs():
         ("ai-visibility-check.html","og/ai-visibility-check.png","Check","AI visibility check","How a public site shows up in AI answers, with rivals and cited sources. Bundle with the MCP server test.",None),
         ("refunds.html","og/refunds.png","Refunds","Refund policy","When a paid listing, sponsorship, Bot Store download, or paid report can be refunded.",None),
         ("new.html","og/new.png","New","New AI agent tools","The newest AI agent tools added in the last 30 days.",tools_pitch),
-        ("bot-store/index.html","og/bot-store.png","Bot Store","Bot Store","Flagship bots, role packs, and the 4-bot bundle.","$39–$149"),
+        ("bot-store/index.html","og/bot-store.png","Bot Store","Bot Store","Role packs at $35, five for $119, or all 25 for $349.","$35 · $119 · $349"),
     ]
 def apply_meta(s,url,alt):
     """Absolute image URL, 1200x630, alt, summary_large_image, and a matching twitter:image."""

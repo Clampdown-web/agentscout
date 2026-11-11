@@ -1247,9 +1247,16 @@ body.home #recent .rcard .rmeta{grid-column:2}
 body.home #mcp-rows{display:flex;flex-direction:column;gap:8px}
 body.home #mcp-rows .mtool{text-decoration:none;color:inherit;border:1px solid var(--line);background:var(--soft)}
 body.home #mcp-rows .mtool:hover{border-color:var(--accent)}
-body.home #xcats .badges,body.home #xroles .badges{display:flex;flex-wrap:nowrap;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
-body.home #xcats .badges a,body.home #xroles .badges a{flex:0 0 148px;min-height:132px;border-radius:18px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;white-space:normal;font-size:15px;font-weight:700;line-height:1.25;background:var(--soft);border:1px solid var(--line);color:var(--text)}
-body.home #xcats .badges a:nth-child(n+9),body.home #xroles .badges a:nth-child(n+9){display:none}
+body.home #xcats .scrow,body.home #xroles .scrow{display:flex;flex-wrap:nowrap;align-items:stretch;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:4px;padding:2px 20px 14px 2px;scrollbar-width:thin;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+body.home .scard{flex:0 0 min(248px,calc(100% - 72px));min-width:0;max-width:min(248px,calc(100% - 72px));scroll-snap-align:start;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px;min-height:0;height:auto;padding:12px 14px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--text);text-decoration:none;box-sizing:border-box;white-space:normal}
+body.home .scard:hover{border-color:var(--accent)}
+body.home .scard-ico{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:12px;background:var(--accent-soft);color:var(--accent)}
+body.home .scard-ico .cico,body.home .scard-ico svg{width:22px;height:22px}
+body.home .scard-copy{min-width:0;display:flex;flex-direction:column;justify-content:center;gap:2px}
+body.home .scard-title{font-size:16px;font-weight:700;line-height:1.2;letter-spacing:-.015em}
+body.home .scard-meta{font-size:13.5px;font-weight:650;color:var(--accent);line-height:1.25}
+body.home .scard-desc{font-size:12.5px;font-weight:500;color:var(--muted);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.home #guides-band .guide-list li a{min-height:56px;font-size:15.5px;align-items:center}
 body.home #guides-band .guide-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;list-style:none;padding:0;margin:0}
 body.home #guides-band .guide-list li a{display:flex;align-items:center;min-height:88px;padding:12px 14px;border-radius:18px;border:1px solid var(--line);background:var(--soft);font-weight:700}
 @media(max-width:520px){body.home #guides-band .guide-list{grid-template-columns:1fr}}
@@ -1293,7 +1300,14 @@ footer .nlform{display:flex;gap:8px;flex-wrap:wrap}
 body.home #about-directory,body.home #xfree,body.home #bt-strip,body.home #recent,body.home #browse,body.home #xcats,body.home #xroles,body.home #guides-band,body.home #nlblock,body.home .homegen{border-radius:22px}
 
 /* Keep sideways rows inside the viewport. */
-body.home .hero-chips,body.home #xcats .badges,body.home #xroles .badges,body.home #newslist,body.home #mcp-rows{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+body.home .hero-chips,body.home #xcats .scrow,body.home #xroles .scrow,body.home #newslist,body.home #mcp-rows{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+.detail .grid>.card{align-self:start}
+.detail .grid>.card>p{display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;flex:0 1 auto}
+ul.catmore{list-style:none;margin:8px 0 16px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+ul.catmore a{display:flex;align-items:center;min-height:44px;padding:6px 0;border-top:1px solid var(--line);font-weight:600}
+.catpager{margin:12px 0;font-size:14.5px}
+.catpager a{display:inline-flex;align-items:center;min-height:44px;margin-right:10px;color:var(--accent);font-weight:650}
+@media(max-width:520px){ul.catmore{grid-template-columns:1fr}}
 body.home .hsec,body.home .wrap,footer.footcols .wrap{min-width:0}
 nav.sitenav .navsheet{max-width:100%}
 @media(max-width:720px){nav.sitenav .navsheet{width:min(88vw,440px);max-width:min(88vw,440px);flex:0 0 auto}}

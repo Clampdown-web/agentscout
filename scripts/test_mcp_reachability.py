@@ -56,7 +56,7 @@ class ReachabilityTests(unittest.TestCase):
         self.assertEqual(self.st["reachable"] + self.st["down"] + self.st["not_yet_checked"], self.st["total"])
         self.assertEqual(self.st["checked_count"], self.st["reachable"] + self.st["down"])
         self.assertLessEqual(self.st["reachable"], self.st["checked_count"])
-        self.assertIn(f"{self.st['reachable']} of {self.st['checked_count']} checked servers live", self.sentence)
+        self.assertIn(f"{self.st['reachable']:,} of {self.st['checked_count']:,} checked servers live", self.sentence)
         self.assertNotIn(f"of {self.st['total']} reachable", self.sentence)
         if self.st["not_yet_checked"]:
             self.assertIn(f"+{self.st['not_yet_checked']} listed, not yet checked", self.sentence)

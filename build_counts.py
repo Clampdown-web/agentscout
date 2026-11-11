@@ -221,6 +221,11 @@ def pitch_mcp_label(n):
     return f"{thousand_floor(n):,}+ MCP servers"
 
 
+def pitch_pages_floor(n):
+    """Sitemap page pitches use the same thousand floor as the tool and MCP lines."""
+    return thousand_floor(n)
+
+
 def metrics_catalog():
     """Directory totals for sentences baked into HTML.
 

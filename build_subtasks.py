@@ -161,7 +161,7 @@ def price_line(items):
     o=sum(x["pricing"] in OPEN for x in items); s=sum(x["pricing"] in SRC for x in items)
     f=sum(x["pricing"] in FREE for x in items); p=sum(x["pricing"] in PAID for x in items); u=len(items)-o-s-f-p
     parts=[(o,"open source"),(s,"source-available"),(f,"free or freemium"),(p,"paid, usage-based or enterprise"),(u,"pricing on the maker's site")]
-    return ", ".join(f"{n} {l}" for n,l in parts if n)
+    return ", ".join(f"{n:,} {l}" for n,l in parts if n)
 def dump(t):
     json.dump({x["slug"]:tags(x) for x in t},open("subtasks.json","w"),indent=0,ensure_ascii=False)
 # One-line explanations used on sub-task pages (only sub-tasks that can get a page need one).

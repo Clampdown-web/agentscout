@@ -164,7 +164,7 @@ def packages_grid(t, m=None, on_submit=False):
         <p class="pkg-sub">Own the exclusive sitewide top sponsor banner across every page on AgentScout plus the #1 newsletter slot.</p>
         <ul class="pkg-list">
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Everything in $49 Category Pin included:</b> Full 30-day category pin + permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</span></li>
-          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>7-day Sitewide Top Sponsor Bar:</b> Exclusive banner across all <b data-live-pages>{fmt(m["indexed_pages_count"])}+</b> pages + homepage <code style="font-size:12.5px">#makers</code> showcase</span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>7-day Sitewide Top Sponsor Bar:</b> Exclusive banner across all <b data-live-pages>{fmt(__import__("build_counts").pitch_pages_floor(m["indexed_pages_count"]))}+</b> pages + homepage <code style="font-size:12.5px">#makers</code> showcase</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Tuesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>2x X Spotlight Threads:</b> Launch-day + weekend spotlight across <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined reach)</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span>{SPONSOR_INCLUDED_LINE}</span></li>
@@ -194,7 +194,8 @@ def live_metrics_script(d="", catalog=True):
         )
     return (
         f'<script data-live-metrics>(function(){{function fmt(n){{return Number(n).toLocaleString("en-US")}}function setAll(sel,val){{var els=document.querySelectorAll(sel);for(var i=0;i<els.length;i++){assign}}}'
-        f'fetch("{d}api/metrics.json",{{cache:"no-cache"}}).then(function(r){{return r.ok?r.json():null}}).then(function(m){{if(!m)return;if(m.tools_count)setAll("[data-live-tools]",fmt(m.tools_count));if(m.mcp_servers_count)setAll("[data-live-mcp]",fmt(m.mcp_servers_count));if(m.categories_count)setAll("[data-live-cats]",fmt(m.categories_count));if(m.indexed_pages_count)setAll("[data-live-pages]",fmt(m.indexed_pages_count)+"+");if(m.x_clampdown19_followers)setAll("[data-live-clampdown]",fmt(m.x_clampdown19_followers)+"+");if(m.x_combined_followers)setAll("[data-live-x-followers]",fmt(m.x_combined_followers)+"+");if(m.pageviews_30d)setAll("[data-live-pv30]",fmt(m.pageviews_30d)+"+");if(m.weekly_page_views)setAll("[data-live-pv7]",fmt(m.weekly_page_views)+"+");if(m.updated_display)setAll("[data-live-updated]",m.updated_display);}}).catch(function(){{}});{tail}}})()</script>'
+        f'function floorK(n){{n=Number(n)||0;var f=Math.floor(n/1000)*1000;return f||n}}'
+        f'fetch("{d}api/metrics.json",{{cache:"no-cache"}}).then(function(r){{return r.ok?r.json():null}}).then(function(m){{if(!m)return;if(m.tools_count)setAll("[data-live-tools]",fmt(m.tools_count));if(m.mcp_servers_count)setAll("[data-live-mcp]",fmt(m.mcp_servers_count));if(m.categories_count)setAll("[data-live-cats]",fmt(m.categories_count));if(m.indexed_pages_count)setAll("[data-live-pages]",fmt(floorK(m.indexed_pages_count))+"+");if(m.x_clampdown19_followers)setAll("[data-live-clampdown]",fmt(m.x_clampdown19_followers)+"+");if(m.x_combined_followers)setAll("[data-live-x-followers]",fmt(m.x_combined_followers)+"+");if(m.pageviews_30d)setAll("[data-live-pv30]",fmt(m.pageviews_30d)+"+");if(m.weekly_page_views)setAll("[data-live-pv7]",fmt(m.weekly_page_views)+"+");if(m.updated_display)setAll("[data-live-updated]",m.updated_display);}}).catch(function(){{}});{tail}}})()</script>'
     )
 
 def build(t):
@@ -203,7 +204,7 @@ def build(t):
     total = m["tools_count"]
     cats = m["categories_count"]
     mcp_cnt = m["mcp_servers_count"]
-    pages = m["indexed_pages_count"]
+    pages = __import__("build_counts").pitch_pages_floor(m["indexed_pages_count"])
     clamp_f = m["x_clampdown19_followers"]
     comb_f = m["x_combined_followers"]
     pv30 = m["pageviews_30d"]
@@ -220,12 +221,12 @@ def build(t):
   <section class="calm">
     <span class="sp-eyebrow pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg><span>For AI Agent &amp; MCP Makers · Live Directory Metrics (<span data-live-updated>{html.escape(upd_disp)}</span>)</span></span>
     <h1 style="text-align:left;margin:4px 0 12px;max-width:none;font-size:clamp(28px,4vw,42px)">Get Your AI Agent or MCP Server in Front of Builders Ready to Try It</h1>
-    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b>{tools_pitch}</b> and <b>{mcp_pitch}</b> across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$15 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
+    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b>{tools_pitch}</b> and <b>{mcp_pitch}</b> across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> sitemap pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$15 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
 
     <div class="rstats" style="margin:0 0 18px">
       <div class="rstat"><b data-live-tools>{fmt(total)}</b><span>Tools indexed (daily link check)</span></div>
       <div class="rstat"><b data-live-mcp>{fmt(mcp_cnt)}</b><span>MCP servers tracked</span></div>
-      <div class="rstat"><b data-live-pages>{fmt(pages)}+</b><span>Indexed site pages</span></div>
+      <div class="rstat"><b data-live-pages>{fmt(pages)}+</b><span>Sitemap pages</span></div>
       <div class="rstat"><b data-live-pv30>{fmt(pv30)}+</b><span>30d pageviews (<span data-live-pv7>{fmt(pv7)}+</span>/wk)</span></div>
       <div class="rstat"><b data-live-x-followers>{fmt(comb_f)}+</b><span>X reach (@clampdown19 + @AgentScoutHQ)</span></div>
     </div>
