@@ -403,6 +403,7 @@ def launches(tools):
         urls += launch_page(tools, a, b, w, current=False)
         if w == wid:
             urls += launch_page(tools, a, b, w, current=True)
+    import build_redirects; build_redirects.scrub_redirected_listings(tools)
     # shell() copies data/detail.tpl, whose Submit button is the old GitHub issue form.
     # Stamp the shared index.html nav and footer before these pages are considered done.
     import build_seo_new
