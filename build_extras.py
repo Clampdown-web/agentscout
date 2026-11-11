@@ -348,8 +348,9 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     for x in more or []:
         if x["slug"] not in seen:
             rows.append(x); seen.add(x["slug"])
+    listed=rows[:60] if path.startswith("categories/") and len(rows)>60 else rows
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
-        {"@type":"ItemList","numberOfItems":len(rows),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(rows)]},
+        {"@type":"ItemList","numberOfItems":len(listed),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(listed)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
     _sec = '<section class="sheet" style="padding-top:8px;text-align:left">' if path.startswith("categories/") else '<section class="calm">'
     body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items)) if path.startswith("categories/") else ""}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{'<script src="../catfilter.js?v=20261022a" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
@@ -364,7 +365,8 @@ _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and co
   "legal & compliance":"AI legal and compliance agents","HR & recruiting":"AI HR and recruiting agents","education & tutoring":"AI education and tutoring agents","healthcare & biotech":"AI healthcare and biotech agents",
   "e-commerce & retail":"AI e-commerce and retail agents","robotics & physical AI":"AI robotics and physical agents"}
 def cat_phrase(c): return _CAT_TT.get(c, c+' AI agent tools')
-def cat_title(c,n): return f"{n} best {cat_phrase(c)} (2026) · AgentScout"
+def fmt_n(n): return f"{int(n):,}"
+def cat_title(c,n): return f"{fmt_n(n)} best {cat_phrase(c)} (2026) · AgentScout"
 def mcp_client_copy(client, named, cat):
     """Subset size for one MCP client, next to the live directory totals.
 
@@ -391,23 +393,23 @@ def seo(t,urls):
     import os,collections
     os.makedirs("categories",exist_ok=True); os.makedirs("best",exist_ok=True)
     cats=collections.Counter(x["category"] for x in t); out=[]
-    nav='<h2 style="font-size:16px;margin:32px 0 10px">All categories</h2><div class="badges">'+"".join(f'<a class="b uc has-cico" href="{catslug(c)}.html">{cico(c)}{e(c)} ({n})</a>' for c,n in cats.most_common())+'</div>'
+    nav='<h2 style="font-size:16px;margin:32px 0 10px">All categories</h2><div class="badges">'+"".join(f'<a class="b uc has-cico" href="{catslug(c)}.html">{cico(c)}{e(c)} ({fmt_n(n)})</a>' for c,n in cats.most_common())+'</div>'
     for c,n in cats.most_common():
         items=[x for x in t if x["category"]==c]
         title=cat_title(c,n)
         _nm=', '.join(x['name'] for x in (agentic_first(f"categories/{catslug(c)}.html",newfirst(items)) if c in LEAD_CATS else items)[:3])
-        desc=next((d for d in (f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"{n} link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"{n} link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"{n} link-checked {cat_phrase(c)}, including {_nm}."[:158])
+        desc=next((d for d in (f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}. Pricing as stated by makers, audience and maturity.",f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}. Pricing as makers state it.",f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}.") if len(d)<=158),f"{fmt_n(n)} link-checked {cat_phrase(c)}, including {_nm}."[:158])
         import build_tasks as _bt,build_subtasks as _bs
         _tm=_bt.mapping(t); _ids={id(x) for x in items}
         _tc=sorted([(s2,T2[1],sum(id(y) in _ids for y in i2)) for s2,(T2,i2) in _tm.items()],key=lambda z:(-z[2],z[1]))
         _tc=[z for z in _tc if z[2]>=3][:14]
         _chips=('<h2 style="font-size:16px;margin:18px 0 8px">Tasks in this category</h2><div class="badges">'+"".join(f'<a class="b uc" href="../tasks/{s2}.html">{e(_cap(l))} ({k})</a>' for s2,l,k in _tc)+'</div>') if _tc else ""
-        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{n} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
+        _cn={"MCP servers":"MCP servers and MCP tools","agent infra":"agent infrastructure tools"}.get(c,c+" tools"); _lede=f"{fmt_n(n)} {e(_cn)} in the AgentScout directory, each with a link-checked listing."
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
             import build_aicite as _bac
             _lede+=f' <strong>{e(_bac.reach_sentence(_bac.mcp_reachability(t)))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
-        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {n} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
+        _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {fmt_n(n)} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
             if _ws: _pre+=(f'<section id="wallet-safety" aria-labelledby="wallet-safety-h"><h2 id="wallet-safety-h" style="font-size:18px;margin:24px 0 6px">Wallet safety</h2>'
@@ -417,9 +419,9 @@ def seo(t,urls):
         _by={x["slug"]:x for x in t}
         _more=[_by[s] for s in MEDIA_XLINK.get(c,[]) if s in _by]
         out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,({"MCP servers":"MCP servers and MCP tools","agent infra":"AI agent infrastructure tools"}.get(c) or (f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools")),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre,more=_more))
-    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{n} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
-    canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {len(t)} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
-    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {len(t)} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
+    tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{fmt_n(n)} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
+    canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {fmt_n(len(t))} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
+    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {fmt_n(len(t))} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)
     mcp=[x for x in t if x["category"]=="MCP servers" or "connect tools via MCP" in x["use_cases"]]
     # MCP cluster (Oct 18 2026; Oct 20 split): categories/mcp-servers is the main "MCP servers" page (best/mcp-servers redirects there).

@@ -317,7 +317,7 @@ def build_commerce_files(tools_data):
     _c = build_counts.require()
     n_tools = _c["tools"]
     n_mcp = _c["mcp_servers"]
-    n_pages = _c["pages_sitemap"] or build_counts.sitemap_count()
+    n_pages = build_counts.pitch_pages_floor(_c["pages_sitemap"] or build_counts.sitemap_count())
     n_bt = _c["bot_templates"]
 
     products = {

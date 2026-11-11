@@ -77,7 +77,7 @@ def reach_card_phrase(st):
     """Homepage status card and the verify block. Denominator is the checked set."""
     if not st.get("day") or st.get("checked_count") is None:
         return "The daily MCP reachability check has no timestamp on file yet."
-    line = f"{st['reachable']} of {st['checked_count']} checked servers live"
+    line = f"{st['reachable']:,} of {st['checked_count']:,} checked servers live"
     extra = int(st.get("not_yet_checked") or 0)
     if extra:
         line += f" · +{extra} listed, not yet checked"
@@ -86,7 +86,7 @@ def reach_sentence(st):
     """Quotable line. The denominator is the checked set, never the full directory."""
     if not st.get("day") or st.get("checked_count") is None:
         return "The daily MCP reachability check has no timestamp on file yet."
-    line=f"Checked daily, {st['reachable']} of {st['checked_count']} checked servers live, last checked {st['day']}."
+    line=f"Checked daily, {st['reachable']:,} of {st['checked_count']:,} checked servers live, last checked {st['day']}."
     extra=st.get("not_yet_checked") or 0
     if extra:
         line+=f" +{extra} listed, not yet checked."
@@ -107,7 +107,7 @@ def _reach_time(st):
 def reach_sentence_html(st):
     if not st.get("day"):
         return e(reach_sentence(st))
-    line=f"Checked daily, {st['reachable']} of {st['checked_count']} checked servers live, last checked {_reach_time(st)}."
+    line=f"Checked daily, {st['reachable']:,} of {st['checked_count']:,} checked servers live, last checked {_reach_time(st)}."
     extra=st.get("not_yet_checked") or 0
     if extra:
         line+=f" +{extra} listed, not yet checked."
