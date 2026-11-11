@@ -59,8 +59,9 @@ ASSET_RE = re.compile(
 WEEK_RE = re.compile(r"^\d{4}-w\d{2}$")
 DAY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
-# Headers the live Pages responses sent on 2026-11-09. Presence is the guard:
+# Headers Pages should send once _headers is deployed. Presence is the guard:
 # a later allowlist addition still passes, and a dropped directive fails.
+# The CSP header is enforced. Report-Only is no longer accepted.
 # The repo _headers file also lists payment=(self "https://buy.stripe.com").
 # Production does not send that directive, so it is not required here.
 PAGE_HEADER_VALUES = {
@@ -71,7 +72,7 @@ PAGE_HEADER_VALUES = {
 }
 PAGE_HEADER_FRAGMENTS = {
     "permissions-policy": ("camera=()", "microphone=()", "geolocation=()"),
-    "content-security-policy-report-only": (
+    "content-security-policy": (
         "default-src 'self'",
         "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://challenges.cloudflare.com",
         "object-src 'none'",
@@ -639,11 +640,14 @@ def self_test() -> None:
     headers = {
         **PAGE_HEADER_VALUES,
         "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(self)",
-        "content-security-policy-report-only": " ".join(
+        "content-security-policy": " ".join(
             fragment for fragments in PAGE_HEADER_FRAGMENTS.values() for fragment in fragments
         ),
     }
     assert header_problems(headers) == []
+    report_only = dict(headers)
+    report_only["content-security-policy-report-only"] = report_only.pop("content-security-policy")
+    assert any("content-security-policy" in item for item in header_problems(report_only))
     broken = dict(headers)
     del broken["x-frame-options"]
     assert any("x-frame-options" in item for item in header_problems(broken))

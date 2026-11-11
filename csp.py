@@ -1,9 +1,10 @@
 """Content-Security-Policy and outbound-link hardening for the static site.
 
-GitHub Pages cannot set response headers, and a meta tag cannot carry
-Content-Security-Policy-Report-Only, frame-ancestors, or report-uri. Every
-real page therefore gets one enforcing policy via
-<meta http-equiv="Content-Security-Policy">.
+The HTTP policy in _headers is enforced (Content-Security-Policy). A meta tag
+cannot carry frame-ancestors or report-uri, so frame-ancestors stays on the
+header. There is no report-uri or report-to endpoint. Every real page also
+gets one enforcing policy via <meta http-equiv="Content-Security-Policy">.
+The browser applies both, so a host has to be allowed by each.
 
 The policy is the one already proven on tool pages, plus 'wasm-unsafe-eval'
 kept only where a page already has it (homepage search compiles Pagefind
@@ -16,7 +17,7 @@ Third parties this policy allows, and why:
   api.js calls (script-src, frame-src, and connect-src). The iframe has its
   own origin, but api.js also connects from this page. Blocking that is what
   leaves real makers on error 600010 ("The anti-bot check did not finish").
-  The host is already on the Report-Only header. 'unsafe-eval' stays off.
+  The host is on the enforcing header as well. 'unsafe-eval' stays off.
 - www.googletagmanager.com: gtag.js injected by the GA4 snippet.
 - *.google-analytics.com and *.analytics.google.com: GA4 collection.
 - static.cloudflareinsights.com and cloudflareinsights.com: Cloudflare Web
