@@ -123,28 +123,52 @@ def _linklist(s, removed, names, head="All tools on this page", src=""):
     lst=" · ".join(f'<a href="../tools/{x}.html">{html.escape(names.get(x,x))}</a>' for x in miss)
     blk=f'<!--lt:all--><section class="alltools" style="margin:28px 0 0"><h2 style="font-size:16px;margin:0 0 8px">{head}</h2><p class="muted" style="font-size:13.5px;line-height:1.9;overflow-wrap:anywhere">{lst}</p></section><!--/lt:all-->'
     return s.replace("</main>", blk+"</main>", 1), len(miss)
+def _slices(s, i, opener, closer):
+    """Consecutive opener…closer pieces starting at i. One forward scan, no nested quantifiers."""
+    items=[]
+    while s.startswith(opener, i):
+        end=s.find(closer, i+len(opener))
+        if end<0: return [], i
+        end+=len(closer)
+        items.append(s[i:end])
+        i=end
+    return items, i
 def grids(f,names):
     K=KEEP_BY.get(f, CAT_KEEP if f.startswith("categories/") else KEEP)
     s=open(f).read(); base=os.path.basename(f)[:-5]; mj=f[:-5]+".more.json"; J={}; removed=[]; gi=0
-    def grid(m):
+    def trim_grids(s):
         nonlocal gi
-        open_,body=m.group(1),m.group(2)
-        cards=re.findall(r'<a class="card tile".*?</a>',body,re.S)
-        if len(cards)<=K+4 or "".join(cards)!=body.strip(): return m.group(0)
-        k=f"g{gi}"; gi+=1; J[k]="".join(cards[K:])
-        removed.extend(re.search(r'data-s="([^"]+)"',c).group(1) for c in cards[K:])
-        o2=open_[:-1]+f' data-mg="{k}" data-total="{len(cards)}">'
-        btn=f'<div class="morewrap" style="margin:14px 0 0;text-align:center"><button type="button" class="btn" data-more="{base}.more.json">Show all {len(cards):,} tools ({len(cards)-K:,} more)</button></div>'
-        return o2+"".join(cards[:K])+"</div>"+btn
-    s=re.sub(r'(<div class="grid"(?: id="cgrid")?>)((?:<a class="card tile".*?</a>)+)</div>',grid,s,flags=re.S)
-    def table(m):
+        out=[]; pos=0
+        for m in re.finditer(r'<div class="grid"(?: id="cgrid")?>', s):
+            if m.start()<pos: continue
+            cards, i=_slices(s, m.end(), '<a class="card tile"', '</a>')
+            if not s.startswith('</div>', i) or len(cards)<=K+4 or "".join(cards)!=s[m.end():i].strip():
+                continue
+            out.append(s[pos:m.start()])
+            k=f"g{gi}"; gi+=1; J[k]="".join(cards[K:])
+            removed.extend(re.search(r'data-s="([^"]+)"',c).group(1) for c in cards[K:])
+            btn=f'<div class="morewrap" style="margin:14px 0 0;text-align:center"><button type="button" class="btn" data-more="{base}.more.json">Show all {len(cards):,} tools ({len(cards)-K:,} more)</button></div>'
+            out.append(s[m.start():m.end()-1]+f' data-mg="{k}" data-total="{len(cards)}">'+"".join(cards[:K])+"</div>"+btn)
+            pos=i+len('</div>')
+        out.append(s[pos:])
+        return "".join(out)
+    def trim_tables(s):
         nonlocal gi
-        rows=re.findall(r'<tr>.*?</tr>',m.group(2),re.S)
-        if len(rows)<=KEEP or "".join(rows)!=m.group(2).strip(): return m.group(0)
-        k=f"g{gi}"; gi+=1; J[k]="".join(rows[KEEP:])
-        removed.extend(x for r in rows[KEEP:] for x in re.findall(r'href="\.\./tools/([a-z0-9-]+)\.html"',r)[:1])
-        return m.group(1)[:-1]+f' data-mg="{k}">'+"".join(rows[:KEEP])+'</tbody></table></div>'+f'<div class="morewrap" style="margin:14px 0 0;text-align:center"><button type="button" class="btn" data-more="{base}.more.json">Show all {len(rows):,} rows ({len(rows)-KEEP:,} more)</button></div>'
-    s=re.sub(r'(<tbody>)((?:<tr>.*?</tr>)+)</tbody></table></div>',table,s,flags=re.S)
+        out=[]; pos=0; open_='<tbody>'; close_='</tbody></table></div>'
+        while True:
+            j=s.find(open_, pos)
+            if j<0: out.append(s[pos:]); break
+            rows, i=_slices(s, j+len(open_), '<tr>', '</tr>')
+            if not s.startswith(close_, i) or len(rows)<=KEEP or "".join(rows)!=s[j+len(open_):i].strip():
+                out.append(s[pos:j+len(open_)]); pos=j+len(open_); continue
+            out.append(s[pos:j])
+            k=f"g{gi}"; gi+=1; J[k]="".join(rows[KEEP:])
+            removed.extend(x for r in rows[KEEP:] for x in re.findall(r'href="\.\./tools/([a-z0-9-]+)\.html"', r)[:1])
+            btn=f'<div class="morewrap" style="margin:14px 0 0;text-align:center"><button type="button" class="btn" data-more="{base}.more.json">Show all {len(rows):,} rows ({len(rows)-KEEP:,} more)</button></div>'
+            out.append(open_[:-1]+f' data-mg="{k}">'+"".join(rows[:KEEP])+close_+btn)
+            pos=i+len(close_)
+        return "".join(out)
+    s=trim_tables(trim_grids(s))
     if not J: print("lighten: no grid trimmed in",f); open(f,"w").write(_common(s)); return
     json.dump(J,open(mj,"w"),ensure_ascii=False,separators=(",",":"))
     m=re.search(r'<script src="([^"]*catfilter\.js[^"]*)"',s)
