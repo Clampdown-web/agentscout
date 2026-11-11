@@ -61,7 +61,7 @@ DAY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 # Headers Pages should send once _headers is deployed. Presence is the guard:
 # a later allowlist addition still passes, and a dropped directive fails.
-# The CSP header is enforced. Report-Only is no longer accepted.
+# Temporary: accept report-only until the Cloudflare CSP rule is enforced after the redesign (owner decision Nov 11, 2026). Restore enforced-only then.
 # The repo _headers file also lists payment=(self "https://buy.stripe.com").
 # Production does not send that directive, so it is not required here.
 PAGE_HEADER_VALUES = {
@@ -272,6 +272,10 @@ def header_problems(headers: dict[str, str]) -> list[str]:
         if actual != expected:
             problems.append(f"{name} is {actual or 'missing'}, expected {expected}")
     for name, fragments in PAGE_HEADER_FRAGMENTS.items():
+        if name == "content-security-policy":
+            # Temporary: accept report-only until the Cloudflare CSP rule is enforced after the redesign (owner decision Nov 11, 2026). Restore enforced-only then.
+            problems.extend(csp_directive_problems(headers, fragments))
+            continue
         actual = headers.get(name, "")
         if not actual:
             problems.append(f"{name} is missing")
@@ -280,6 +284,22 @@ def header_problems(headers: dict[str, str]) -> list[str]:
             if fragment not in actual:
                 problems.append(f"{name} is missing {fragment}")
     return problems
+
+
+def csp_directive_problems(headers: dict[str, str], fragments: tuple[str, ...]) -> list[str]:
+    """Pass when either CSP header contains every required directive."""
+    candidates = [
+        (name, headers.get(name, ""))
+        for name in ("content-security-policy", "content-security-policy-report-only")
+    ]
+    candidates = [(name, value) for name, value in candidates if value]
+    if not candidates:
+        return ["content-security-policy is missing"]
+    for _name, value in candidates:
+        if all(fragment in value for fragment in fragments):
+            return []
+    name, value = candidates[0]
+    return [f"{name} is missing {fragment}" for fragment in fragments if fragment not in value]
 
 
 def fast_track_problems(document: str, require_current: bool) -> list[str]:
@@ -647,7 +667,30 @@ def self_test() -> None:
     assert header_problems(headers) == []
     report_only = dict(headers)
     report_only["content-security-policy-report-only"] = report_only.pop("content-security-policy")
-    assert any("content-security-policy" in item for item in header_problems(report_only))
+    assert header_problems(report_only) == []
+    missing_csp = dict(report_only)
+    del missing_csp["content-security-policy-report-only"]
+    assert any(item == "content-security-policy is missing" for item in header_problems(missing_csp))
+    dropped_report = dict(report_only)
+    dropped_report["content-security-policy-report-only"] = dropped_report[
+        "content-security-policy-report-only"
+    ].replace("object-src 'none'", "")
+    assert any("object-src 'none'" in item for item in header_problems(dropped_report))
+    dropped_enforced = dict(headers)
+    dropped_enforced["content-security-policy"] = dropped_enforced["content-security-policy"].replace(
+        "frame-ancestors 'none'", ""
+    )
+    assert any("frame-ancestors 'none'" in item for item in header_problems(dropped_enforced))
+    report_wins = dict(report_only)
+    report_wins["content-security-policy"] = "default-src 'none'"
+    assert header_problems(report_wins) == []
+    both_weak = dict(headers)
+    both_weak["content-security-policy"] = "default-src 'none'"
+    both_weak["content-security-policy-report-only"] = "default-src 'none'"
+    assert any("default-src 'self'" in item for item in header_problems(both_weak))
+    perms = dict(headers)
+    perms["permissions-policy"] = "microphone=(), geolocation=()"
+    assert any("camera=()" in item for item in header_problems(perms))
     broken = dict(headers)
     del broken["x-frame-options"]
     assert any("x-frame-options" in item for item in header_problems(broken))
