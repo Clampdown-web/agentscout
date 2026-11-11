@@ -569,8 +569,6 @@ def build_mcp_terminal_infographic():
 AI_AGENT_PACK_STRIPE_LINKS = {
     "1_bot_35": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",      # plink_1UVgsdKVzDFIUga8BkjhzuB0 ($35 · $35.00/bot)
     "5_bot_119": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",     # plink_1UVgt8KVzDFIUga8ZEhI5hgn ($119 · $23.80/bot · Save $56)
-    "10_bot_199": "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",    # plink_1UVgu0KVzDFIUga8sUwWdWLL ($199 · $19.90/bot · Save $151)
-    "20_bot_299": "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",    # plink_1UVguRKVzDFIUga82ZYi15S2 ($299 · $14.95/bot · Save $401)
     "all_25_349": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",    # plink_1UVgv8KVzDFIUga83wEaqIPN ($349 · $13.96/bot · Save $526)
 }
 AI_AGENT_PACK_CLEAN_ROLES = [
@@ -647,7 +645,7 @@ def build_trained_bots_ad_infographic():
         d.text((x_sc, 54), "Scout", font=f_title, fill=(115, 115, 255, 255))
         x_rest = x_sc + int(d.textlength("Scout", font=f_title)) + 8
         d.text((x_rest, 54), "· 4 Pro Bots + 25 AI Agent Packs", font=f_title, fill=(255, 255, 255, 255))
-        d.text((70, 82), "4 Flagship Pro Bots ($39-$69 · $149 Bundle) + 25 AI Agent Packs ($35 1-Bot · $119 5-Pack · $199 10-Pack · $299 20-Pack · $349 All-25):", font=f_sub, fill=(214, 211, 209, 255))
+        d.text((70, 82), "4 Flagship Pro Bots ($39-$69 · $149 Bundle) + 25 AI Agent Packs ($35 1-Bot · $119 5-Pack · $349 All-25):", font=f_sub, fill=(214, 211, 209, 255))
 
         # Left Panel: 4-Bot Company-in-a-Box Architecture Hub (x=24..510, y=112..506)
         d.rounded_rectangle([24, 112, 510, 506], radius=14, fill=(18, 15, 10, 255), outline=(245, 158, 11, 160), width=1)
@@ -679,7 +677,7 @@ def build_trained_bots_ad_infographic():
         # Bottom of Left Panel
         d.rounded_rectangle([38, 434, 496, 494], radius=10, fill=(24, 20, 12, 255), outline=(16, 185, 129, 190), width=1)
         d.text((50, 444), "✓ 25 AI Agent Packs: Lead Gen Agent, Outreach Agent, Meta Ads Agent +22", font=f_card_s, fill=(52, 211, 153, 255))
-        d.text((50, 466), "✓ $35 1-Bot · $119 5-Pk · $199 10-Pk · $299 20-Pk · $349 All-25 (Save $526)", font=f_mono_s, fill=(253, 224, 71, 255))
+        d.text((50, 466), "✓ $35 1-Bot · $119 5-Pk · $349 All-25 (Save $526)", font=f_mono_s, fill=(253, 224, 71, 255))
 
         # Right Panel: 5 Rows (4 Individual Bots + 1 All-4 Bundle) (x=526..1176, y=112..506)
         for idx, (t_label, t_price, t_title, t_desc, t_col, t_badge) in enumerate(tiers):
@@ -1483,7 +1481,7 @@ def scene_bots(d, F, t, ch, lp, box, accent):
             d.text((x + 14, yy + 56), price, font=F["m18"], fill=col)
             d.text((x + 14, yy + 84), "SELECTED" if on else "option", font=F["m12"], fill=col if on else (120, 130, 150))
         _panel(d, (x0 + 18, yy + 130, x1 - 18, yy + 196), (12, 28, 24) if bundle else (12, 16, 28), (52, 211, 153) if bundle else (50, 64, 80), 3 if bundle else 1, 10)
-        d.text((x0 + 34, yy + 148), "4-Bot Bundle ($149)  ·  25 AI Agent Packs ($35 / $119 / $199 / $299 / $349)", font=F["b16"], fill=(255, 255, 255))
+        d.text((x0 + 34, yy + 148), "4-Bot Bundle ($149)  ·  25 AI Agent Packs ($35 / $119 / $349)", font=F["b16"], fill=(255, 255, 255))
         d.text((x0 + 34, yy + 172), "Works with Grok Bot · Claude Code · Cursor · Codex · Lovable (Save up to $526)", font=F["m13"], fill=(52, 211, 153) if bundle else (148, 163, 184))
         if bundle:
             _button(d, F, x1 - 170, yy + 150, 130, 32, "SELECTED", (16, 185, 129), (6, 16, 14))
@@ -1781,7 +1779,7 @@ WALKTHROUGHS = [
             ("python3 setup_workspace.py", "--domain yoursite.com"),
         ],
         "actions": [
-            "Choosing a Pro Bot ($39-$149) or 25 Pre-Trained AI Agent Packs ($35/$119/$199/$299/$349)",
+            "Choosing a Pro Bot ($39-$149) or 25 Pre-Trained AI Agent Packs ($35/$119/$349)",
             "Unzipping README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, and mcp.json",
             "Running python3 setup_workspace.py --domain yoursite.com",
         ],

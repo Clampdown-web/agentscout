@@ -201,7 +201,7 @@ def write_pack_pages() -> list[str]:
 <a class="pack-btn back" href="../#ai-agent-packs">← Back to All 25 Packs</a>
 {build_sponsor.pay_note("../../")}
 </div>
-<p class="pack-volume">Volume packs: <b>5-Bot Pack ($119)</b>, <b>10-Bot Pack ($199)</b>, <b>20-Bot Pack ($299)</b>, <b>All 25 Bots ($349)</b>. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the <a href="../#bundle-package">$149 4-Bot Bundle</a> is separate.</p>
+<p class="pack-volume">Volume packs: <b>5-Bot Pack ($119)</b> and <b>All 25 Bots ($349)</b>. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the <a href="../#bundle-package">$149 4-Bot Bundle</a> is separate.</p>
 {note}
 </section>
 <section class="pack-pillars" aria-label="Pack highlights">

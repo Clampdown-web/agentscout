@@ -134,9 +134,7 @@ document.addEventListener("click", function (ev) {
     "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05": ["as-bot-seo-aeo-59", 59],
     "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06": ["as-bot-market-intel-59", 59],
     "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07": ["as-bot-ceo-69", 69],
-    "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a": ["as-pack-5", 119],
-    "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b": ["as-pack-10", 199],
-    "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c": ["as-pack-20", 299]
+    "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a": ["as-pack-5", 119]
   };
   var row = known[href] || null;
   var id = a.getAttribute("data-product") || (row && row[0]) || "";
@@ -166,7 +164,7 @@ def pages(t):
     n_bt = __import__("build_bot_templates").live_bot_template_count()
     canon = f"{B}bot-store/"
     title = clip_title("AgentScout Bot Store — Pre-Trained AI Bots ($39–$69, $149)")
-    desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each or volume tiers $119, $199, $299, and $349.", 160)
+    desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each, 5 for $119, or all 25 for $349.", 160)
 
     body = (
         f'{CSS}'
@@ -189,7 +187,7 @@ def pages(t):
         f'<span>📦 <b>WHAT YOU ARE BUYING HERE:</b> Downloadable Pre-Trained AI Bot ZIP Packages (<code>SYSTEM.md</code> + Scheduled Cron Routines + <code>SKILL.md</code> Playbooks + Python 3 Scripts + <code>mcp.json</code> + Single-Organization <code>LICENSE.txt</code>). <b>What\'s inside every .zip:</b> <code>README-QUICKSTART.md</code> (5-minute step-by-step setup guide for Grok Bot, Claude Code, Cursor &amp; OpenAI Codex). The 4-Bot Bundle also includes <code>README-TEAM-BUNDLE.md</code>. <b>Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex).</b> <b>This is NOT a directory listing boost.</b></span>'
         f'<a href="../sponsor.html#packages">Want to list or boost your AI tool in the AgentScout directory instead? ($0 / $15 / $49 / $99) →</a>'
         f'</div>'
-        f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png?v=20261029-2060-189-1793236665" width="1200" height="640" style="aspect-ratio:1200/640"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v=20261029-2060-189-1793236665" type="video/mp4"></video></figure>'
+        f'<figure class="bs-vid"><video autoplay loop muted playsinline controls preload="metadata" poster="../assets/animations/agentscout-trained-bots-ad-poster.png?v={__import__("build_seo_new").animation_cache_buster()}" width="1200" height="640" style="aspect-ratio:1200/640"><source src="../assets/animations/agentscout-trained-bots-ad.mp4?v={__import__("build_seo_new").animation_cache_buster()}" type="video/mp4"></video></figure>'
         f'<div class="bs-filters" role="toolbar" aria-label="Filter Bot Store by category">'
         f'<button type="button" class="bs-fbtn" data-filter="all" aria-pressed="true">All Bots (5)</button>'
         f'<button type="button" class="bs-fbtn" data-filter="ops" aria-pressed="false">🟢 Operations &amp; QA</button>'
@@ -412,7 +410,7 @@ def pages(t):
                 "url": canon,
                 "author": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
                 "brand": {"@type": "Organization", "name": "AgentScout", "url": "https://agentscouthq.com"},
-                "offers": {"@type": "AggregateOffer", "lowPrice": "35.00", "highPrice": "349.00", "priceCurrency": "USD", "offerCount": 34}
+                "offers": {"@type": "AggregateOffer", "lowPrice": "35.00", "highPrice": "349.00", "priceCurrency": "USD", "offerCount": 32}
             },
             {
                 "@type": "FAQPage",

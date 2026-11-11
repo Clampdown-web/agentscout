@@ -415,6 +415,21 @@ MCP_TOOLS=[("search_tools","Search by keyword, with optional category, pricing (
            ("best_for_task","Describe a task in plain words and get the most relevant tools, with optional pricing, open-source and runs_locally filters."),
            ("list_packages","List AgentScout's 4 maker listing & sponsorship tiers ($0 Free, $15 Fast-Track, $49 30-Day Category Pin, $99/wk Weekly Sponsor) with direct Stripe Checkout URLs, plus the Made by AgentScout pre-trained bot catalog.")]
 LOCAL_LINE="Optional runs_locally filter on search_tools and best_for_task: offline (runs fully on your own machine), self_hosted_or_offline (also tools you can deploy on your own server) or any. Each result has a data_locality label inferred from its listing; verify with the vendor before relying on it for compliance."
+LIST_PACKAGES_DESC = (
+    "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, "
+    "$49 category pin, $99/wk sponsor), and the Made by AgentScout pre-trained bot lineup. "
+    "The $99 weekly sponsorship includes submissions to about 25 other AI directories, with a report of the links."
+)
+
+def scrub_live_tool_copy(doc):
+    """Keep the site copy on the current packages even if the live worker text is older."""
+    if not isinstance(doc, dict):
+        return doc
+    for tool in doc.get("tools") or []:
+        if isinstance(tool, dict) and tool.get("name") == "list_packages":
+            tool["description"] = LIST_PACKAGES_DESC
+    return doc
+
 def live_mcp_tools(timeout=20):
     """Read tools/list from the live Streamable HTTP server.
 
@@ -444,7 +459,7 @@ def live_mcp_tools(timeout=20):
     except Exception as exc:
         print("mcp tools/list fetch failed:", exc)
     if tools and protocol:
-        doc={"endpoint":MCP_URL,"transport":"streamable-http","protocolVersion":protocol,"serverInfo":info,"tools":tools}
+        doc=scrub_live_tool_copy({"endpoint":MCP_URL,"transport":"streamable-http","protocolVersion":protocol,"serverInfo":info,"tools":tools})
         os.makedirs("data", exist_ok=True)
         open(snap,"w",encoding="utf-8").write(json.dumps(doc,indent=2,ensure_ascii=False)+"\n")
         return doc
@@ -452,7 +467,7 @@ def live_mcp_tools(timeout=20):
         doc=json.load(open(snap,encoding="utf-8"))
         if isinstance(doc, dict) and doc.get("endpoint")==MCP_URL and doc.get("transport")=="streamable-http" and doc.get("tools"):
             print("mcp tools/list: using the last live snapshot")
-            return doc
+            return scrub_live_tool_copy(doc)
     raise SystemExit("mcp tools/list returned no tools and data/mcp_live_tools.json is missing")
 def _copy_row(block_id, text, label):
     return (f'<div class="mcp-copy"><pre><code id="{block_id}">{e(text)}</code></pre>'

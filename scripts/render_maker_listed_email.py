@@ -55,7 +55,7 @@ def email_html() -> str:
     return f"""<section style="background:#0e1118;color:#e4e4e7;padding:20px;border-radius:18px;border:1px solid #334155;font-family:Arial,sans-serif">
   <p style="margin:0 0 6px;font-size:13px">built by AgentScout</p>
   <h2 style="margin:0 0 8px;color:#fff">Bot Store · 4 flagship bots and 25 role packs</h2>
-  <p style="margin:0 0 8px;color:#d4d4d8;line-height:1.5">Flagship Pro Bots stay $39 / $59 / $59 / $69, or $149 for the 4-Bot bundle. Role packs are a separate ladder: $35 each, 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Built for Grok Bot and compatible with Claude Code (CLAUDE.md), Cursor (.cursorrules), OpenAI Codex (AGENTS.md), and Lovable (LOVABLE.md).</p>
+  <p style="margin:0 0 8px;color:#d4d4d8;line-height:1.5">Flagship Pro Bots stay $39 / $59 / $59 / $69, or $149 for the 4-Bot bundle. Role packs are a separate ladder: $35 each, 5 for $119, all 25 for $349. Built for Grok Bot and compatible with Claude Code (CLAUDE.md), Cursor (.cursorrules), OpenAI Codex (AGENTS.md), and Lovable (LOVABLE.md).</p>
   <p style="margin:0 0 12px;color:#6ee7b7;font-weight:700;line-height:1.5">⚡ Works with Grok Bot · Claude Code (CLAUDE.md) · Cursor (.cursorrules) · OpenAI Codex (AGENTS.md) · Lovable (LOVABLE.md)</p>
   <div>{tiers}</div>
   <h3 style="color:#fff">Flagship bots</h3>
@@ -71,8 +71,8 @@ def email_html() -> str:
 def x_posts() -> str:
     posts = []
     master = (
-        "25 AI Agent Packs, built by AgentScout ($35 each · 5 for $119 · 10 for $199 · "
-        "20 for $299 · all 25 for $349). Works with Grok Bot, Claude Code, Cursor, Codex & Lovable. "
+        "25 AI Agent Packs, built by AgentScout ($35 each · 5 for $119 · "
+        "all 25 for $349). Works with Grok Bot, Claude Code, Cursor, Codex & Lovable. "
         "Offline, zero telemetry: https://agentscouthq.com/bot-store/#ai-agent-packs"
     )
     posts.append(master)
@@ -111,7 +111,7 @@ def write_poster() -> Path | None:
     draw = ImageDraw.Draw(image)
     draw.rounded_rectangle((16, 16, width - 16, height - 16), 24, outline=(147, 197, 253), width=2)
     draw.text((36, 32), "25 AI Agent Packs", font=font_b, fill=(255, 255, 255))
-    draw.text((36, 64), "built by AgentScout  ·  $35 each  ·  5 $119  ·  10 $199  ·  20 $299  ·  25 $349", font=font_s, fill=(212, 212, 216))
+    draw.text((36, 64), "built by AgentScout  ·  $35 each  ·  5 $119  ·  25 $349", font=font_s, fill=(212, 212, 216))
     y = 110
     for agent in AGENTS:
         color = tuple(int(agent["color"].lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
