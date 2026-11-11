@@ -27,6 +27,43 @@ def edit(path,fn):
     s=open(path).read(); o=s; s=fn(s)
     if s!=o: open(path,"w").write(s)
 def chips(items): return '<div class="badges">'+"".join(f'<a class="b uc" href="{h}">{e(t)}</a>' for h,t in items)+'</div>'
+# Existing category icons only. Role pages have no icon of their own.
+ROLE_ICON={
+ "developers":"coding","ai-engineers":"frameworks","marketers":"sales & marketing","sales-teams":"sales & marketing",
+ "customer-support-teams":"customer support","designers":"graphic design & branding","artists":"image generation",
+ "photographers":"photography & photo editing","filmmakers":"film & TV production","video-editors":"video generation",
+ "musicians-producers":"music production","researchers":"research","data-analysts":"data & analytics","crypto-traders":"crypto",
+ "founders":"business agents","devops-engineers":"DevOps & cloud","security-engineers":"security & governance",
+ "game-developers":"games","content-creators":"image generation","qa-engineers":"QA & testing","data-engineers":"data & analytics",
+ "product-managers":"productivity","students":"education & tutoring","operations-teams":"business agents",
+ "startup-ctos":"agent infra","agencies":"sales & marketing","open-source-maintainers":"coding","mcp-developers":"MCP servers",
+ "automation-engineers":"browser/computer use","ecommerce-teams":"e-commerce & retail",
+}
+def _one_line(text):
+    text=re.sub(r"\s+"," ",(text or "")).strip()
+    if not text: return ""
+    return re.split(r"(?<=[.!?])\s+", text, maxsplit=1)[0]
+def scard(href, title, count, desc, icon):
+    """Compact homepage row card. Copy is the category intro or role intro already in the repo."""
+    ico=f'<span class="scard-ico" aria-hidden="true">{X.cico(icon)}</span>' if icon else ""
+    meta=f'<span class="scard-meta">{count:,} tools</span>' if isinstance(count,int) else ""
+    line=_one_line(desc)
+    dhtml=f'<span class="scard-desc">{e(line)}</span>' if line else ""
+    return (f'<a class="scard" href="{href}">{ico}<span class="scard-copy">'
+            f'<span class="scard-title">{e(title)}</span>{meta}{dhtml}</span></a>')
+def scrow(cards):
+    return '<div class="scrow" tabindex="0">'+"".join(cards)+'</div>'
+def home_rows(t, roles):
+    """All categories + Browse by role. Counts use the same en-US grouping as the rest of the site."""
+    intros={r[0]:r[3] for r in L.R}
+    cc=collections.Counter(x["category"] for x in t)
+    cats=[scard(f"categories/{X.catslug(c)}.html", CAP(c), n, X.CAT_INTRO.get(c,""), c) for c,n in cc.most_common()]
+    rcards=[scard(f"for/{r[0]}.html", CAP(r[1]), len(r[4]) if len(r)>4 else None, intros.get(r[0],""), ROLE_ICON.get(r[0])) for r in roles]
+    cats_=(f'<section id="xcats" class="band" aria-labelledby="xcats-h"><div class="wrap"><div class="sh"><div><h2 id="xcats-h">All categories</h2><p>Every AI agent tool category, with its own page. <a href="categories/index.html">All categories →</a></p></div></div>'
+           +scrow(cats)+'</div></section>')
+    role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'
+          +scrow(rcards)+'</div></section>')
+    return cats_+role
 def guide_rows(items):
     """One tappable row per link. No middot runs."""
     return '<ul class="guide-list">'+"".join(f'<li><a href="{h}">{e(t)}</a></li>' for h,t in items)+'</ul>'
@@ -206,13 +243,7 @@ def run(t):
         strip=(f'<section id="xfree" class="band" aria-labelledby="xfree-h"><div class="wrap"><div class="sh"><div><h2 id="xfree-h">{X.BUILT_BY("")}</h2><p>Calculators and generators that run in your browser. No sign-up. <a class="navft" href="free-tools.html">'+__import__("build_tasks")._wrap("ft","All free tools →")+'</a></p></div></div>'
                f'<div class="grid fill">{F.hub_cards("")}{F.see_all_card("")}</div></div></section>')
         s=put(s,"homefree",strip,'<div class="layout">')
-        role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'
-              +chips([(f"for/{r[0]}.html",CAP(r[1])) for r in RO])+'</div></section>')
-        cc=collections.Counter(x["category"] for x in t)
-        cats_=(f'<section id="xcats" class="band" aria-labelledby="xcats-h"><div class="wrap"><div class="sh"><div><h2 id="xcats-h">All categories</h2><p>Every AI agent tool category, with its own page. <a href="categories/index.html">All categories →</a></p></div></div>'
-              +chips([(f"categories/{X.catslug(c)}.html",f"{CAP(c)} ({n:,})") for c,n in cc.most_common()])+'</div></section>')
-        role=cats_+role
-        s=put(s,"homeroles",role,r'<div class="cats" id="catgrid"></div>\s*</div></section>',before=False,regex=True)
+        s=put(s,"homeroles",home_rows(t, RO),r'<div class="cats" id="catgrid"></div>\s*</div></section>',before=False,regex=True)
         guides=[(h,t) for h,t in HOME_GUIDES if os.path.exists(h)]
         block='<h3>Browse by guide</h3>'+guide_rows(guides)
         s=re.sub(r'<h3>Browse by guide</h3>(?:<p>.*?</p>|<ul class="guide-list">.*?</ul>)', block, s, count=1, flags=re.S)

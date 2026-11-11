@@ -412,7 +412,7 @@ def write_llms_full(t):
     import build_counts
     _c = build_counts.require(t)
     n_bt = _c["bot_templates"]
-    n_pages = _c["pages_sitemap"] or build_counts.sitemap_count()
+    n_pages = build_counts.pitch_pages_floor(_c["pages_sitemap"] or build_counts.sitemap_count())
 
     L = [
         "# AgentScout — Full AI Agent & MCP Server Directory Reference (`llms-full.txt`)",
