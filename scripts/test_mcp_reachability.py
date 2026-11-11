@@ -62,13 +62,20 @@ class ReachabilityTests(unittest.TestCase):
             self.assertIn(f"+{self.st['not_yet_checked']} listed, not yet checked", self.sentence)
         self.assertIn(f"last checked {self.st['day']}", self.sentence)
         home = Path("index.html").read_text(encoding="utf-8")
-        card = re.search(r'<b>(\d+) of (\d+)</b> checked servers live', home)
+        # The homepage card uses thousands separators and "reachable". The
+        # denominator is still the checked set from the link-check file.
+        card = re.search(r'<b>([\d,]+) of ([\d,]+)</b> checked servers reachable', home)
         self.assertIsNotNone(card, "homepage card is missing the checked-server denominator")
-        self.assertEqual(int(card.group(1)), self.st["reachable"])
-        self.assertEqual(int(card.group(2)), self.st["checked_count"])
+        self.assertEqual(int(card.group(1).replace(",", "")), self.st["reachable"])
+        self.assertEqual(int(card.group(2).replace(",", "")), self.st["checked_count"])
         self.assertNotIn("responded today", home)
         self.assertIsNone(re.search(r'<p class="lede"[^>]*>\(\s*\)</p>', home))
-        self.assertIn(bac.reach_card_phrase(self.st), home)
+        shown = f"{self.st['reachable']:,} of {self.st['checked_count']:,}"
+        self.assertIn(f"<b>{shown}</b> checked servers reachable", home)
+        extra = int(self.st.get("not_yet_checked") or 0)
+        if extra:
+            catalog_n = self.st["checked_count"] + extra
+            self.assertIn(f"{extra:,} of {catalog_n:,} listed servers not checked yet", home)
         self.assertNotIn(str(self.st["reachable"]), Path("build_aicite.py").read_text().split("def reach_sentence")[1].split("def ")[0])
 
     def test_daily_check_includes_catalog_only_servers(self):
