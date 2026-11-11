@@ -16,7 +16,7 @@ import catalog  # noqa: E402
 from redact import redact_obj, redact_text  # noqa: E402
 
 PRICES = json.loads((ROOT / "data" / "mcp_test_report.json").read_text(encoding="utf-8"))
-TOKEN = PRICES["sample_token"]
+TOKEN = PRICES["sample_slug"]
 
 
 class PriceConfigTest(unittest.TestCase):
@@ -102,17 +102,18 @@ class PriceConfigTest(unittest.TestCase):
             self.assertIn(f'${row["intro"]}', text)
 
     def test_harness_redacts_session_tokens(self):
-        secret = "sess-9f3c0a7b6e1d4c8a91"
+        # A fixed stand-in, not a credential. The redactor must remove it before print or save.
+        marker = "example-session-value"
         payload = {
-            "response_headers": {"mcp-session-id": secret},
-            "raw_preview": f"hello {secret} bearer {secret}",
-            "note": "Authorization: Bearer " + secret,
+            "response_headers": {"mcp-session-id": marker},
+            "raw_preview": f"hello {marker} bearer {marker}",
+            "note": "Authorization: Bearer " + marker,
         }
-        cleaned = redact_obj(payload, (secret,))
+        cleaned = redact_obj(payload, (marker,))
         blob = json.dumps(cleaned)
-        self.assertNotIn(secret, blob)
+        self.assertNotIn(marker, blob)
         self.assertIn("[redacted]", blob)
-        self.assertNotIn(secret, redact_text(f"session={secret}", (secret,)))
+        self.assertNotIn(marker, redact_text(f"session={marker}", (marker,)))
 
 
 if __name__ == "__main__":

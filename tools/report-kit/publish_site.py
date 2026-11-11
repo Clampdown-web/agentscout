@@ -62,7 +62,7 @@ def copy_assets() -> None:
 
 
 def render_sample(doc: dict) -> str:
-    token = doc["sample_token"]
+    token = doc["sample_slug"]
     if len(token) < 24:
         raise SystemExit("sample token must be at least 24 characters")
     transcript = json.loads((KIT / "samples" / "mcp-test-report-sample-2026-11-11.transcript.json").read_text(encoding="utf-8"))
