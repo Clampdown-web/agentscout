@@ -285,35 +285,35 @@ def search_pages(t,m,asof):
     titles={a[0]:a[1] for a in made}
     DATA['search']=made
     for s,h,q,n,items,intro,task,best,allm in made:
-        canon=f"{B}s/{s}.html"; title=f"{h} (2026): {len(items)} picks · AgentScout"
-        if s in MERGED: ST=site_stats(t); title=f"Free & Open-Source Browser Agents: {len(items)} Tools · AgentScout"
-        cnt=f"top {len(items)} of {n} matching tools" if n>len(items) else f"{n} matching tools"  # same count basis as the title's "{len(items)} picks" (Oct 18 2026)
+        canon=f"{B}s/{s}.html"; title=f"{h} (2026): {len(items):,} picks · AgentScout"
+        if s in MERGED: ST=site_stats(t); title=f"Free & Open-Source Browser Agents: {len(items):,} Tools · AgentScout"
+        cnt=f"top {len(items):,} of {n:,} matching tools" if n>len(items) else f"{n:,} matching tools"  # same count basis as the title's "{len(items)} picks" (Oct 18 2026)
         desc=f"{h} in 2026: {cnt} in AgentScout's link-checked directory, including {', '.join(x['name'] for x in items[:3])}. Pricing as makers state it."
         if len(desc)>158: desc=f"{h} (2026): {cnt}, including {', '.join(x['name'] for x in items[:2])}. Link-checked; pricing as stated."
         if len(desc)>158: desc=f"{h} (2026): {cnt}, including {items[0]['name']}. Link-checked; pricing as stated."
         if len(desc)>158: desc=desc[:157].rsplit(" ",1)[0]+"…"
         if s in MERGED:
-            desc=f"{len(items)} free and open-source browser agents and automation tools, including {items[0]['name']} and {items[1]['name']}. From a link-checked directory of {ST['total']:,}."
-            if len(desc)>155: desc=f"{len(items)} free and open-source browser agents and automation tools, from a link-checked directory of {ST['total']:,} AI tools."
+            desc=f"{len(items):,} free and open-source browser agents and automation tools, including {items[0]['name']} and {items[1]['name']}. From a link-checked directory of {ST['total']:,}."
+            if len(desc)>155: desc=f"{len(items):,} free and open-source browser agents and automation tools, from a link-checked directory of {ST['total']:,} AI tools."
         pc=collections.Counter(x["pricing"] for x in items); cats=collections.Counter(x["category"] for x in allm).most_common()
         star=[x for x in items if x.get("github_stars")]
         osn=sum(1 for x in allm if x["pricing"] in OS); frn=sum(1 for x in allm if isfree(x))
-        facts=(f'<div class="badges" style="margin:0 0 18px"><span class="b">{n} matching tools</span><span class="b">{osn} open source</span><span class="b">{frn} free or with a free tier</span>'
+        facts=(f'<div class="badges" style="margin:0 0 18px"><span class="b">{n:,} matching tools</span><span class="b">{osn:,} open source</span><span class="b">{frn:,} free or with a free tier</span>'
                +(f'<span class="b">Most starred: {e(star[0]["name"])} (★ {star[0]["github_stars"]:,})</span>' if star else "")+'</div>')
         faq=[(f"What are the best {q}?",f"Ranked by tracked GitHub stars, the top {q} in our directory are "+", ".join(x["name"] for x in items[:5])+". Stars measure popularity, not fit, so compare a few against your own task."),
-             (f"How many {q} does AgentScout list?",f"{n} tools match. This page shows the top {len(items)}. Pricing mix on this page: "+", ".join(f"{k} ({v})" for k,v in pc.most_common())+"."),
+             (f"How many {q} does AgentScout list?",f"{n:,} tools match. This page shows the top {len(items):,}. Pricing mix on this page: "+", ".join(f"{k} ({v:,})" for k,v in pc.most_common())+"."),
              ("Are these tools really free?" if "free" in s else "How much do these tools cost?","Pricing is what each maker states on their site. Open-source tools are free to self-host but may need a paid model API key or offer paid cloud plans; freemium tools have a free plan with limits. Check each official site.")]
-        if task in m: faq.append((f"Where can I see every tool for {m[task][0][1]}?",f"Our task page lists all {len(m[task][1])} tools we match to {m[task][0][1]}."))
+        if task in m: faq.append((f"Where can I see every tool for {m[task][0][1]}?",f"Our task page lists all {len(m[task][1]):,} tools we match to {m[task][0][1]}."))
         if s in MERGED:
             nos=sum(1 for x in items if x["pricing"] in OS)
-            faq=[("What are open source browser agents?",f"Open-source browser agents are tools with public source code that let an AI model drive a real web browser: open pages, click, type, fill forms and pull out data. {nos} of the {len(items)} tools on this page are open source, including "+", ".join(x["name"] for x in items[:3])+"."),
+            faq=[("What are open source browser agents?",f"Open-source browser agents are tools with public source code that let an AI model drive a real web browser: open pages, click, type, fill forms and pull out data. {nos:,} of the {len(items):,} tools on this page are open source, including "+", ".join(x["name"] for x in items[:3])+"."),
                  ("What are the best free browser automation tools?","Ranked by tracked GitHub stars, the most popular free browser automation tools in our directory are "+", ".join(x["name"] for x in items[:5])+". Stars measure popularity, not fit, so try two or three on your own task."),
-                 ("Are these browser agents really free?",f"Every tool here is open source or has a free plan. Pricing mix on this page: "+", ".join(f"{k} ({v})" for k,v in pc.most_common())+". Open-source tools may still need a paid model API key, and some sell an optional hosted cloud."),
-                 (f"How many browser agents does AgentScout list?",f"{n} free or open-source tools match browser automation in our directory of {ST['total']:,} tools across {ST['categories']} categories. This page shows the top {len(items)}.")]
+                 ("Are these browser agents really free?",f"Every tool here is open source or has a free plan. Pricing mix on this page: "+", ".join(f"{k} ({v:,})" for k,v in pc.most_common())+". Open-source tools may still need a paid model API key, and some sell an optional hosted cloud."),
+                 (f"How many browser agents does AgentScout list?",f"{n:,} free or open-source tools match browser automation in our directory of {ST['total']:,} tools across {ST['categories']} categories. This page shows the top {len(items):,}.")]
         fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(a)}</h3><p style="margin:0">{e(b)}</p>' for a,b in faq)
         rel=[f'<a href="../tasks/{task}.html">All tools for {e(m[task][0][1])}</a>'] if task in m else []
         if best: rel.append(f'<a href="../best/{best}.html">{e(next((p[1] for p in BB.PAGES if p[0]==best),"Best list"))}</a>')
-        rel+=[f'<a href="../categories/{X.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cats[:4]]
+        rel+=[f'<a href="../categories/{X.catslug(c)}.html">{e(c)} ({k:,})</a>' for c,k in cats[:4]]
         sib=[a for a in made if a[0]!=s and (a[6]==task or (best and a[7]==best))][:5]
         sibh=" · ".join(f'<a href="{a[0]}.html">{e(a[1])}</a>' for a in sib)
         roles=[r for r in R if s in r[6]]
@@ -369,12 +369,12 @@ def role_pages(t,m,made):
         for hd,task in secs:
             items=[y for y in m[task][1] if live(y)][:6]  # build_tasks order: category match, use-case match, then stars
             allitems+=[x for x in items if x["slug"] not in seen]; seen|={x["slug"] for x in items}
-            body_s+=(f'<h2 style="font-size:18px;margin:32px 0 6px">{e(hd)}</h2><p class="muted" style="margin:0 0 10px;font-size:14px">{e(m[task][0][5])} <a href="../tasks/{task}.html">All {len(m[task][1])} tools →</a></p>'
+            body_s+=(f'<h2 style="font-size:18px;margin:32px 0 6px">{e(hd)}</h2><p class="muted" style="margin:0 0 10px;font-size:14px">{e(m[task][0][5])} <a href="../tasks/{task}.html">All {len(m[task][1]):,} tools →</a></p>'
                      f'<ul style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in items)}</ul>')
         n=len(seen)
         if n<10: print('skip role page (too few tools):',s,n); continue
-        desc=f"{h} in 2026: {n} picks across {len(secs)} jobs, including {', '.join(x['name'] for x in allitems[:3])}. Link-checked; pricing as makers state it."
-        if len(desc)>158: desc=f"{h} (2026): {n} picks across {len(secs)} jobs, including {', '.join(x['name'] for x in allitems[:2])}."[:158]
+        desc=f"{h} in 2026: {n:,} picks across {len(secs)} jobs, including {', '.join(x['name'] for x in allitems[:3])}. Link-checked; pricing as makers state it."
+        if len(desc)>158: desc=f"{h} (2026): {n:,} picks across {len(secs)} jobs, including {', '.join(x['name'] for x in allitems[:2])}."[:158]
         jump=" · ".join(f'<a href="#{T2}">{e(a)}</a>' for a,T2 in [(a,X.catslug(a)) for a,_ in secs])
         body_s=re.sub(r'<h2 style="font-size:18px;margin:32px 0 6px">([^<]+)</h2>',lambda mm:f'<h2 id="{X.catslug(__import__("html").unescape(mm.group(1)))}" style="font-size:18px;margin:32px 0 6px">{mm.group(1)}</h2>',body_s)
         ft=" · ".join(f'<a href="{ftl(a)}">{e(b)}</a>' for a,b in fts)
@@ -385,7 +385,7 @@ def role_pages(t,m,made):
             {"@type":"ItemList","numberOfItems":len(allitems),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(allitems)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"By role","item":B+"for/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">By role</a> / {e(CAP(who))}</div><section class="calm"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We picked the top tools for {len(secs)} jobs {e(who)} do every day: {n} tools in all, {free_n} of them free or with a free tier.</p>'
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We picked the top tools for {len(secs)} jobs {e(who)} do every day: {n:,} tools in all, {free_n:,} of them free or with a free tier.</p>'
               f'<p style="font-size:14px">Jump to: {jump}</p>'
               +(f'<p style="font-size:14px">Free tools from AgentScout for {e(who)}: {ft}</p>' if ft else "")+
               f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we picked:</strong> each section takes the tools matched to that task in our directory, putting tools whose category and stated use cases fit the task first, then ordering by tracked GitHub stars. No paid placements.</p>'

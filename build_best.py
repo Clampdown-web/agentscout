@@ -88,8 +88,8 @@ def page(t,P,asof):
     desc=f"{h} in 2026: top {len(items)} from AgentScout's link-checked directory, including {top}. Ranking method stated; pricing as makers state it."
     if len(desc)>158: desc=f"{h} (2026): top {len(items)}, including {top}. Ranking method stated; pricing as stated."[:158]
     cats=collections.Counter(x["category"] for x in allm).most_common()
-    catl="".join(f'<a class="b uc has-cico" href="../categories/{X.catslug(c)}.html">{X.cico(c)}{e(c)} ({n})</a>' for c,n in cats)
-    more=f"the top {len(items)} of {len(allm)} matching tools" if len(allm)>len(items) else f"all {len(items)} matching tools"
+    catl="".join(f'<a class="b uc has-cico" href="../categories/{X.catslug(c)}.html">{X.cico(c)}{e(c)} ({n:,})</a>' for c,n in cats)
+    more=f"the top {len(items):,} of {len(allm):,} matching tools" if len(allm)>len(items) else f"all {len(items):,} matching tools"
     mcp_list=bool(items) and all(x.get("category")=="MCP servers" for x in items)
     bar=attr=""
     if mcp_list:
@@ -226,7 +226,7 @@ def mcp_2026_page(t):
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h1)}</div>'
           f'<section style="padding-top:20px;text-align:left"><h1 style="text-align:left" data-pagefind-weight="10">{e(h1)}</h1>{share}'
           f'<p class="qa"><b>Quick answer:</b> {e(qa)}</p>'
-          f'<p class="lede" style="margin-left:0;text-align:left">These are the top {len(ranked)} of {len(pool)} MCP servers in the AgentScout directory that also have a row in status.json, ranked.</p>'
+          f'<p class="lede" style="margin-left:0;text-align:left">These are the top {len(ranked):,} of {len(pool):,} MCP servers in the AgentScout directory that also have a row in status.json, ranked.</p>'
           f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked:</strong> {e(MCP2026_RULE)}</p>'
           f'{verify}'
           f'{_hm.responds_bar()}{_hm.responds_script("../")}<ol class="grid" data-responds-list style="padding:0;margin:0">{"".join(rows)}</ol>'

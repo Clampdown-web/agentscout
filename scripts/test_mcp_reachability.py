@@ -59,7 +59,7 @@ class ReachabilityTests(unittest.TestCase):
         self.assertIn(f"{self.st['reachable']:,} of {self.st['checked_count']:,} checked servers live", self.sentence)
         self.assertNotIn(f"of {self.st['total']} reachable", self.sentence)
         if self.st["not_yet_checked"]:
-            self.assertIn(f"+{self.st['not_yet_checked']} listed, not yet checked", self.sentence)
+            self.assertIn(f"+{self.st['not_yet_checked']:,} listed, not yet checked", self.sentence)
         self.assertIn(f"last checked {self.st['day']}", self.sentence)
         home = Path("index.html").read_text(encoding="utf-8")
         # The homepage card uses thousands separators and "reachable". The

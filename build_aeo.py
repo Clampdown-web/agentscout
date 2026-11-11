@@ -559,9 +559,9 @@ def write_llms_full(t):
         c_free = sum(1 for x in c_items if x.get("pricing") in ("Free", "Freemium") or x.get("pricing") in OS)
         c_loc = sum(1 for x in c_items if classify_locality(x) in ("offline", "self_hosted"))
         L.extend([
-            f"### {c} ({n} tools) — [{B}categories/{c_slug}.html]({B}categories/{c_slug}.html)",
+            f"### {c} ({n:,} tools) — [{B}categories/{c_slug}.html]({B}categories/{c_slug}.html)",
             "",
-            f"- **At a glance**: {n} link-checked tools ({c_os} open-source, {c_free} free or freemium, {c_loc} local or self-hosted).",
+            f"- **At a glance**: {n:,} link-checked tools ({c_os:,} open-source, {c_free:,} free or freemium, {c_loc:,} local or self-hosted).",
             f"- **Top picks**: {', '.join(f'[{x['name']}]({B}tools/{x['slug']}.html)' for x in ranked[:5])}.",
             "",
             "| # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |",

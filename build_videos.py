@@ -19,8 +19,8 @@ def pages(t):
             "cat_label": "MCP Setup",
             "badge": "60s Quickstart · Zero API Keys",
             "color": "#14b8a6",
-            "title": f"Connect AgentScout's Free MCP Server to Claude, Cursor & VS Code ({n_mcp}+ MCPs)",
-            "summary": f"Query all {n_tools:,}+ verified AI agent tools and {n_mcp}+ MCP servers directly inside Claude Desktop, Claude Code, Cursor, Windsurf, or Codex over Streamable HTTP or SSE — 100% free and read-only.",
+            "title": f"Connect AgentScout's Free MCP Server to Claude, Cursor & VS Code ({n_mcp:,}+ MCPs)",
+            "summary": f"Query all {n_tools:,}+ verified AI agent tools and {n_mcp:,}+ MCP servers directly inside Claude Desktop, Claude Code, Cursor, Windsurf, or Codex over Streamable HTTP or SSE — 100% free and read-only.",
             "video": "../assets/animations/agentscout-mcp-terminal.mp4",
             "poster": "../assets/animations/agentscout-mcp-terminal-poster.png",
             "video_url": f"{B}assets/animations/agentscout-mcp-terminal.mp4",
@@ -37,7 +37,7 @@ def pages(t):
             "links": [
                 ("../mcp/connect.html", "Open MCP Server Setup Guide →"),
                 ("../free-tools/mcp-config-builder.html", "Interactive MCP Config Builder →"),
-                ("../mcp/index.html", f"Browse All {n_mcp} MCP Servers →"),
+                ("../mcp/index.html", f"Browse All {n_mcp:,} MCP Servers →"),
             ],
         },
         {
@@ -63,7 +63,7 @@ def pages(t):
             "snippet": '{"mcpServers":{"agentscout":{"url":"https://mcp.agentscouthq.com/mcp"}}}',
             "links": [
                 ("../bot-store/", "Shop Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149) →"),
-                ("../bot-templates/index.html#bt-featured", f"Browse {n_bt} Community Bot Templates →"),
+                ("../bot-templates/index.html#bt-featured", f"Browse {n_bt:,} Community Bot Templates →"),
             ],
         },
         {
@@ -243,7 +243,7 @@ def pages(t):
         ("Are all video guides and walkthroughs on this page free?", "Yes. Every walkthrough video, copy-paste MCP snippet, and browser calculator on AgentScout is 100% free with no sign-up required."),
         ("How do I connect AgentScout to Claude Code, Cursor, or VS Code?", "Run claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp in your terminal, or add https://mcp.agentscouthq.com/mcp to your mcp.json file. No API key is needed."),
         ("What is the difference between Pre-Trained Pro Bots ($39–$149) / 25 AI Agent Packs ($35–$349) and Directory Listing Packages ($0 / $15 / $49 / $99)?", "Pre-Trained Pro Bots and 25 AI Agent Packs (on /bot-store/ and /bot-templates/) are downloadable agent configurations (with README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, Python CLI scripts, and native files for Grok Bot, Claude Code, Cursor, OpenAI Codex & Lovable) that you buy to run your own business: 4 Flagship Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) and 25 role-specific AI Agent Packs ($35 single, $119 for 5, or $349 for all 25). Directory Listing Packages (on /submit.html and /sponsor.html) are for AI tool makers who want to list and promote their own software product inside the AgentScout directory ($0 Free, $15 Fast-Track, $49 30-Day Category Pin, or $99/wk Sitewide Sponsor)."),
-        ("How often are the tools and metrics in these guides updated?", f"Every day at 7:00 AM PT. All {n_tools:,} tools and {n_mcp} MCP servers are link-checked and synced with live GitHub star counts daily."),
+        ("How often are the tools and metrics in these guides updated?", f"Every day at 7:00 AM PT. All {n_tools:,} tools and {n_mcp:,} MCP servers are link-checked and synced with live GitHub star counts daily."),
     ]
 
     css = '''<style id="vid-hub-css">
