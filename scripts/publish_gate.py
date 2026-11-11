@@ -13,7 +13,7 @@ from pathlib import Path
 TURNSTILE_REJECTION = "Bot check failed."
 CATEGORY_REJECTION = "Please pick a category."
 PRICING_REJECTION = "Please pick a pricing option."
-PRODUCT_GROUPS = ("packages", "addons", "bot_templates", "agent_packs")
+PRODUCT_GROUPS = ("packages", "addons", "bot_templates", "agent_packs", "reports")
 ANIMATION_PAGES = ("index.html", "bot-store/index.html", "videos/index.html")
 
 

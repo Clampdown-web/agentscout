@@ -321,7 +321,7 @@ def unify_all_nav_and_footer():
     skip_files = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
     updated = 0
     for root_dir, dirs, fnames in os.walk("."):
-        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview")]
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview", "r", "report-kit")]
         for fn in fnames:
             if not fn.endswith(".html") or fn in skip_files:
                 continue
@@ -387,7 +387,7 @@ def header_pill_problems():
     """
     bad = []
     skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
-    skip_dirs = ("node_modules", "data", "scripts", "assets", "preview", "pagefind", "bot-packages")
+    skip_dirs = ("node_modules", "data", "scripts", "assets", "preview", "pagefind", "bot-packages", "r", "report-kit")
     for root_dir, dirs, fnames in os.walk("."):
         dirs[:] = [d for d in dirs if not d.startswith(".") and d not in skip_dirs]
         for fn in fnames:
@@ -453,7 +453,7 @@ def redirect_chrome_problems():
     except SystemExit:
         return ["index.html is missing nav or footer"]
     skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
-    skip_dirs = ("node_modules", "data", "scripts", "assets", "preview")
+    skip_dirs = ("node_modules", "data", "scripts", "assets", "preview", "r", "report-kit")
     bad = []
     for rel in _walk_html(skip_dirs):
         if os.path.basename(rel) in skip:
@@ -479,7 +479,7 @@ def verify_nav_footer_unified():
     bad = []
     seen = 0
     for root_dir, dirs, fnames in os.walk("."):
-        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview")]
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("node_modules", "data", "scripts", "assets", "preview", "r", "report-kit")]
         for fn in fnames:
             if not fn.endswith(".html") or fn in skip:
                 continue

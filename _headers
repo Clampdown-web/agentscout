@@ -7,6 +7,9 @@
 # stays off. 'wasm-unsafe-eval' is only for Pagefind compiling same-origin
 # wasm.*.pagefind bytes. frame-ancestors cannot be set from a meta tag, so it
 # lives here. There is no report-uri or report-to endpoint to keep.
+/r/*
+  X-Robots-Tag: noindex, nofollow
+
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff

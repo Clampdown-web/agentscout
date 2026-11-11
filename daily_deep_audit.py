@@ -720,9 +720,9 @@ def _shared_scripts_exempt(rel: str, text: str) -> bool:
 
     Redirect stubs (meta refresh or location.replace, including mcp/link-status.html,
     which keeps a one-line main before it refreshes), raw fragments (data/, stats.js.html),
-    the OG card (og.html), and preview/ are not production pages.
+    the OG card (og.html), preview/, and private reports under r/ are not production pages.
     """
-    if rel.startswith(("preview/", "node_modules/", "app/", "data/")) or rel in ("og.html", "stats.js.html"):
+    if rel.startswith(("preview/", "node_modules/", "app/", "data/", "r/", "tools/report-kit/")) or rel in ("og.html", "stats.js.html"):
         return True
     if rel in ("outreach-tracker.html",) and "app.js?v=" not in text:
         return True
