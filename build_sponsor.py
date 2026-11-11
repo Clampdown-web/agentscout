@@ -225,11 +225,15 @@ def build(t):
 
     cards_html = packages_grid(t, m=m, on_submit=False)
 
+    import build_counts
+    tools_pitch = build_counts.pitch_tools_label(total)
+    mcp_pitch = build_counts.pitch_mcp_label(mcp_cnt)
+
     body = f'''  <div class="crumb"><a href="index.html">AgentScout</a> / Sponsor &amp; Get Featured</div>
   <section class="calm">
     <span class="sp-eyebrow pkg-chip"><svg class="npico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.5 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg><span>For AI Agent &amp; MCP Makers · Live Directory Metrics (<span data-live-updated>{html.escape(upd_disp)}</span>)</span></span>
     <h1 style="text-align:left;margin:4px 0 12px;max-width:none;font-size:clamp(28px,4vw,42px)">Get Your AI Agent or MCP Server in Front of Builders Ready to Try It</h1>
-    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b data-live-tools>{fmt(total)}</b> AI agent tools and <b data-live-mcp>{fmt(mcp_cnt)}</b> MCP servers across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$15 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
+    <p class="lede" style="text-align:left;margin:0 0 18px;max-width:820px">AgentScout tracks <b>{tools_pitch}</b> and <b>{mcp_pitch}</b> across <b data-live-cats>{cats}</b> categories (<b data-live-pages>{fmt(pages)}+</b> indexed pages). Every standard community listing is <b>100% free forever</b> — or upgrade to our <b>$15 Fast-Track Launch Boost</b>, <b>$49 30-Day Category Pin + Permanent SEO/AEO Placement</b>, or <b>$99/wk Exclusive Sitewide Sponsor</b>.</p>
 
     <div class="rstats" style="margin:0 0 18px">
       <div class="rstat"><b data-live-tools>{fmt(total)}</b><span>Tools indexed (daily link check)</span></div>
@@ -299,7 +303,7 @@ def build(t):
 {live_metrics_script("")}'''
 
     title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
-    desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {fmt(total)}+ tools."
+    desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {tools_pitch}."
 
     schema = {
         "@context": "https://schema.org",
