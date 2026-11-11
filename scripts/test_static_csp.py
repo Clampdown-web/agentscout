@@ -62,6 +62,35 @@ def _policy(html):
 
 
 class StaticCspTest(unittest.TestCase):
+    def test_headers_file_enforces_the_same_allowlist(self):
+        text = (ROOT / "_headers").read_text(encoding="utf-8")
+        directives = "\n".join(line for line in text.splitlines() if not line.startswith("#"))
+        self.assertNotIn("Content-Security-Policy-Report-Only", directives)
+        self.assertNotIn("report-uri", directives)
+        self.assertNotIn("report-to", directives)
+        match = re.search(r"(?m)^  Content-Security-Policy: (.+)$", directives)
+        self.assertIsNotNone(match)
+        header = match.group(1)
+        for bit in (
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://challenges.cloudflare.com",
+            "connect-src",
+            "https://challenges.cloudflare.com",
+            "https://api.agentscouthq.com",
+            "https://votes.agentscouthq.com",
+            "https://agentscout-image.agentscouthq.workers.dev",
+            "https://mcp.agentscouthq.com",
+            "https://agentscout.beehiiv.com",
+            "frame-src https://challenges.cloudflare.com",
+            "worker-src 'self'",
+            "frame-ancestors 'none'",
+            "object-src 'none'",
+            "base-uri 'self'",
+            "form-action 'self' https://agentscout.beehiiv.com",
+        ):
+            self.assertIn(bit, header)
+        self.assertNotIn("unsafe-eval", header.replace("'wasm-unsafe-eval'", ""))
+
     def test_key_pages_keep_the_allowlist(self):
         for rel in PAGES:
             html = (ROOT / rel).read_text(encoding="utf-8")

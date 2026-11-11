@@ -1,16 +1,16 @@
 /feed.xml
   Content-Type: application/rss+xml; charset=utf-8
 
-# Report-Only on purpose. Pages ship inline scripts (theme bootstrap, GA4 consent,
-# submit and free-tool pages) plus onclick/onerror handlers, so an enforcing
-# script-src would need 'unsafe-inline'. A static _headers file cannot set a
-# per-response nonce. 'wasm-unsafe-eval' is for Pagefind's same-origin worker,
-# which compiles wasm.*.pagefind bytes. The meta CSP on each page stays the
-# enforcing policy and does not yet include 'wasm-unsafe-eval'.
+# Enforced on purpose (owner, 2026-11-10). The same allowlist was Report-Only
+# until this change. Inline scripts stay under 'unsafe-inline' because the
+# morning build rewrites them; there is no per-response nonce. 'unsafe-eval'
+# stays off. 'wasm-unsafe-eval' is only for Pagefind compiling same-origin
+# wasm.*.pagefind bytes. frame-ancestors cannot be set from a meta tag, so it
+# lives here. There is no report-uri or report-to endpoint to keep.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(self "https://buy.stripe.com")
-  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://challenges.cloudflare.com https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob:; connect-src 'self' https://api.agentscouthq.com https://votes.agentscouthq.com https://agentscout-image.agentscouthq.workers.dev https://mcp.agentscouthq.com https://agentscout.beehiiv.com https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net https://cloudflareinsights.com https://static.cloudflareinsights.com; frame-src https://challenges.cloudflare.com https://agentscout.beehiiv.com; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://agentscout.beehiiv.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://challenges.cloudflare.com https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob:; connect-src 'self' https://api.agentscouthq.com https://votes.agentscouthq.com https://agentscout-image.agentscouthq.workers.dev https://mcp.agentscouthq.com https://agentscout.beehiiv.com https://challenges.cloudflare.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net https://cloudflareinsights.com https://static.cloudflareinsights.com; frame-src https://challenges.cloudflare.com https://agentscout.beehiiv.com; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://agentscout.beehiiv.com; frame-ancestors 'none'
