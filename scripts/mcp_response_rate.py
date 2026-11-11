@@ -98,22 +98,39 @@ def load_tools(path: Path) -> list:
 
 
 def github_key(value: str | None) -> str | None:
+    """owner/repo from a GitHub URL, a git@github.com path, or an owner/repo string.
+
+    The host is compared exactly. A github.com substring in another host or in the path is not a match.
+    """
     if not value or not isinstance(value, str):
         return None
     text = value.strip()
-    if text.lower().startswith(("http://", "https://", "git@")) or "github.com" in text.lower():
-        match = re.search(r"github\.com[:/]+([^/\s:#]+)/([^/\s:#?]+)", text, re.I)
-        if not match:
+    lowered = text.lower()
+    owner = repo = None
+    if lowered.startswith("git@"):
+        host, sep, path = text[4:].partition(":")
+        if not sep or host.lower() != "github.com" or "/" not in path:
             return None
-        owner, repo = match.group(1), match.group(2)
-    elif text.count("/") == 1 and " " not in text:
+        owner, _, repo = path.partition("/")
+    elif "://" in text:
+        try:
+            parts = urllib.parse.urlsplit(text)
+        except ValueError:
+            return None
+        if (parts.hostname or "").lower() not in ("github.com", "www.github.com"):
+            return None
+        segments = [segment for segment in parts.path.split("/") if segment]
+        if len(segments) < 2:
+            return None
+        owner, repo = segments[0], segments[1]
+    elif text.count("/") == 1 and " " not in text and "\\" not in text:
         owner, repo = text.split("/", 1)
     else:
         return None
     if repo.endswith(".git"):
         repo = repo[:-4]
     owner, repo = owner.strip().lower(), repo.strip().lower()
-    if not owner or not repo:
+    if not owner or not repo or "/" in owner or "/" in repo:
         return None
     return f"{owner}/{repo}"
 

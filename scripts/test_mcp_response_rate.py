@@ -369,6 +369,15 @@ class ClassifyTests(unittest.TestCase):
         self.assertNotIn("unknown", found)
         self.assertNotIn("not-mcp", found)
 
+    def test_github_host_must_be_exact(self):
+        self.assertEqual(mrr.github_key("https://github.com/b/b.git"), "b/b")
+        self.assertEqual(mrr.github_key("https://www.github.com/b/b/tree/main"), "b/b")
+        self.assertEqual(mrr.github_key("git@github.com:b/b.git"), "b/b")
+        self.assertEqual(mrr.github_key("b/b"), "b/b")
+        self.assertIsNone(mrr.github_key("https://evil.example/github.com/b/b"))
+        self.assertIsNone(mrr.github_key("https://github.com.evil.example/b/b"))
+        self.assertIsNone(mrr.github_key("https://notgithub.com/b/b"))
+
     def test_shared_registry_repo_is_not_a_join(self):
         tools = [
             {
