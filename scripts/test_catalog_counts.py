@@ -59,7 +59,11 @@ def plus_ok(n: int, value: int, plus: bool) -> bool:
     if not plus or n > value:
         return False
     floor = int(value * 0.95 // 50) * 50
-    return n >= floor
+    if n >= floor:
+        return True
+    # Same rule as scripts/check_counts.py: a listing pitch may use the nearest-1,000 floor.
+    thousand = (int(value) // 1000) * 1000
+    return thousand > 0 and n == thousand
 
 
 def visible(html: str) -> str:

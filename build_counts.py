@@ -203,6 +203,24 @@ def require(tools=None):
     return cur
 
 
+def thousand_floor(n):
+    """Rounded floor for listing pitches: nearest 1,000, so the claim stays true as the catalog grows.
+
+    A total under 1,000 stays exact. A pitch must not say 0+.
+    """
+    n = int(n or 0)
+    floored = (n // 1000) * 1000
+    return floored if floored else n
+
+
+def pitch_tools_label(n):
+    return f"{thousand_floor(n):,}+ AI agent tools"
+
+
+def pitch_mcp_label(n):
+    return f"{thousand_floor(n):,}+ MCP servers"
+
+
 def metrics_catalog():
     """Directory totals for sentences baked into HTML.
 

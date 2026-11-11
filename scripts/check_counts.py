@@ -4,7 +4,8 @@
 Skips pagefind, data/stars, the news archive, and tools.json item records.
 "Showing X of Y" is not a sitewide total. A category hub's own "N tools" is
 checked against that category. "N+" is allowed when N is at most the real
-total and at least 95% of it, rounded down to the nearest 50.
+total and at least 95% of it, rounded down to the nearest 50, or when N is
+that total rounded down to the nearest 1,000 (the listing-pitch floor).
 """
 from __future__ import annotations
 
@@ -81,7 +82,10 @@ def plus_ok(n, value, plus):
     if not plus or value is None or n > value:
         return False
     floor = int(value * 0.95 // 50) * 50
-    return n >= floor
+    if n >= floor:
+        return True
+    thousand = (int(value) // 1000) * 1000
+    return thousand > 0 and n == thousand
 
 
 def _int(text):
