@@ -59,7 +59,28 @@ def problems():
             homepage_css = "home-mobile.css" in text
             if not stamped and not homepage_css:
                 bad.append(f"{rel} has the grouped nav without styles.css?v={ASSET}")
+            if "navburger" in text or 'id="nav-open"' in text:
+                if not re.search(r'<script\b[^>]*\bsrc="[^"]*app\.js\?v=' + re.escape(ASSET) + r'"', text):
+                    bad.append(f"{rel} has the hamburger without a real app.js?v={ASSET} tag")
             bad.extend(_duplicate_menu_hrefs(rel, text))
+        if rel == "index.html":
+            if f"home-mobile.css?v={ASSET}" not in text:
+                bad.append(f"index.html home-mobile.css is not ?v={ASSET}")
+            if 'var urls=["app.js' in text or re.search(r'var urls=\[[^\]]*"app\.js\?v=', text):
+                bad.append("index.html still defers app.js in the after-paint list")
+            svc = text.find('id="services"')
+            directory = text.find('id="directory"')
+            nl = text.find('id="nlblock"')
+            if svc < 0 or directory < 0 or not (svc < directory):
+                bad.append("index.html Services block is not above the directory")
+            if nl < 0 or svc > nl:
+                bad.append("index.html moved the weekly signup")
+            if text.count('id="services"') != 1:
+                bad.append("index.html Services block is duplicated")
+            if 'class="svc-back"' not in text:
+                bad.append("index.html is missing the footer link back to Services")
+        if rel == "sponsor.html" and "api/tools.json" in text:
+            bad.append("sponsor.html still fetches api/tools.json")
         if rel.endswith(".tpl") and 'class="sitenav"' in text:
             bad.extend(_duplicate_menu_hrefs(rel, text))
     return bad

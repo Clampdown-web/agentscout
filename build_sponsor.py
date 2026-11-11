@@ -300,7 +300,7 @@ def build(t):
       <details class="panel" style="padding:14px 18px"><summary style="cursor:pointer;font-weight:600">Do paid placements change organic directory rankings or review scores?</summary><p style="margin:8px 0 0">Never. Featured slots are clearly labeled (<code style="font-size:12.5px">Featured</code> or <code style="font-size:12.5px">Sponsored</code> with <code style="font-size:12.5px">rel="sponsored"</code>) and sit above the list; rankings are never paid.</p></details>
     </div>
   </section>
-{live_metrics_script("")}'''
+{live_metrics_script("", catalog=False)}'''
 
     title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
     desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {tools_pitch}."

@@ -484,19 +484,70 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611112430"  # bump when app.js/styles.css/consent.js change
+ASSET_V = "202611112700"  # bump when app.js/styles.css/home-mobile.css/consent.js change
+_ASSET_FILES = r"app\.js|styles\.css|home-mobile\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js"
 def stamp(s):
-    """Put the current styles.css/app.js cache-bust on a page a generator just wrote.
+    """Put the current styles.css/app.js/home-mobile.css cache-bust on a page a generator just wrote.
 
     sitewide() does this at the end of a full build. News, submit, sponsor, and the
     other Phase 3 generators also stamp here so a page written after that pass still
-    matches the publish audit.
+    matches the publish audit. home-mobile.css is only linked from the homepage, and
+    a stale ?v= there keeps phones on the pre-redesign sheet.
     """
     return re.sub(
-        r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',
+        r'('+_ASSET_FILES+r')\?v=\d+',
         lambda mm: mm.group(1)+"?v="+ASSET_V,
         s,
     )
+def ensure_home_nav_script(s):
+    """The homepage menu needs a real app.js tag, same as every other page.
+
+    The after-paint loader is not a click handler. Leaving app.js in that list as
+    well would run the menu binder twice, so the second click handler closes what
+    the first one just opened.
+    """
+    s = re.sub(r'(var urls=\[)"app\.js\?v=\d+",', r"\1", s, count=1)
+    if not re.search(r'<script\b[^>]*\bsrc="app\.js\?v=\d+"[^>]*>\s*</script>', s, re.I):
+        tag = f'<script src="app.js?v={ASSET_V}"></script>'
+        m = re.search(r'<script>\(function\(\)\{function start\(\)', s)
+        if m:
+            s = s[:m.start()] + tag + s[m.start():]
+        elif "</body>" in s:
+            s = s.replace("</body>", tag + "</body>", 1)
+    return s
+_SERVICES_RE = re.compile(r'<section id="services" class="hsec".*?</section>', re.S)
+_SVC_BACK = '<!--svc:back--><p class="svc-back"><a href="#services">MCP server test and AI visibility reports</a></p><!--/svc:back-->'
+def place_home_services(s):
+    """Keep the Services cards directly after the hero.
+
+    The weekly signup stays above the footer. One text link in the footer points
+    back, so the block is not copied to the bottom.
+    """
+    m = _SERVICES_RE.search(s)
+    if not m:
+        return s
+    block = m.group(0)
+    if "svc-note" not in block:
+        block = block.replace(
+            '<div class="svc-grid">',
+            '<p class="svc-note">Written reports, separate from directory listing packages.</p><div class="svc-grid">',
+            1,
+        )
+    s = s[:m.start()] + s[m.end():]
+    mcp = s.find('<section id="mcp-home"')
+    h = s.rfind("</header>", 0, mcp if mcp > 0 else len(s))
+    if h < 0:
+        s = block + s
+    else:
+        at = h + len("</header>")
+        s = s[:at] + block + s[at:]
+    s = re.sub(r'<!--svc:back-->.*?<!--/svc:back-->', '', s, flags=re.S)
+    foot = s.find('<div class="nlfoot"')
+    if foot < 0:
+        foot = s.find("<footer")
+    if foot > 0:
+        s = s[:foot] + _SVC_BACK + s[foot:]
+    return s
 def calm_open(extra=""):
     """Left-aligned directory section. Spacing lives in styles.css (.calm), not inline padding."""
     cls = "calm" + ((" " + extra) if extra else "")
@@ -999,7 +1050,10 @@ def sitewide(t):
         s=ensure_refund_footer(s)
         s=_once_submit_menu(s)
         s=_restore_redirect_chrome(s, held)
-        s=re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+',lambda mm:mm.group(1)+"?v="+ASSET_V,s)
+        if f=="index.html":
+            s=place_home_services(s)
+            s=ensure_home_nav_script(s)
+        s=stamp(s)
         s=burst_link_piles(s)
         if s!=o: open(f,"w").write(s)
     import build_lovable; build_lovable.run()
