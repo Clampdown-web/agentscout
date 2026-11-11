@@ -3,7 +3,8 @@
 
 Checks production with GET requests only. It does not POST to /submit or any
 other write route, does not read secrets, and does not follow a redirect off
-the AgentScout hosts. A run is about 25 requests, spaced out.
+the AgentScout hosts. A run stays under about 40 requests: the pages, robots,
+sitemap, the worker checks, and at most MAX_ASSETS cache-busted files.
 
   python3 scripts/smoke_production.py --self-test
   python3 scripts/smoke_production.py
@@ -33,7 +34,12 @@ USER_AGENT = "AgentScoutSmoke/1.0 (+https://agentscouthq.com; read-only; no POST
 PAUSE_SECONDS = 0.35
 TIMEOUT_SECONDS = 20
 MAX_BYTES = 1_000_000
-MAX_ASSETS = 12
+# Union of cache-busted css/js the smoked pages may reference. Run 42791724517
+# on a3ce6e2 failed because production referenced 14 and the old cap was 12.
+# 18 covers that set and a couple of new shared files. A page that references
+# more than MAX_PAGE_ASSETS fails on its own, so one document cannot blow the budget.
+MAX_ASSETS = 18
+MAX_PAGE_ASSETS = 16
 TURNSTILE_SCRIPT = "https://challenges.cloudflare.com/turnstile/v0/api.js"
 # Submit loads this helper, which then loads api.js with render=explicit.
 # The sitekey stays the public widget key. Generate still embeds api.js itself.
@@ -231,6 +237,20 @@ def page_canonical(document: str) -> str:
             href = re.search(r"""\bhref=["']([^"']+)["']""", tag, re.IGNORECASE)
             return href.group(1) if href else ""
     return ""
+
+
+def asset_budget_problems(union_count: int, page_counts: list[int]) -> list[str]:
+    """Bound the asset GETs. An empty set fails. The live set of 14 passes. A runaway page fails."""
+    problems: list[str] = []
+    if union_count == 0:
+        problems.append("cache-busted assets: none were referenced by the pages")
+    elif union_count > MAX_ASSETS:
+        problems.append(f"cache-busted assets: {union_count} references exceeds the {MAX_ASSETS} request cap")
+    for count in page_counts:
+        if count > MAX_PAGE_ASSETS:
+            problems.append(f"cache-busted assets: one page references {count}, above the {MAX_PAGE_ASSETS} page cap")
+            break
+    return problems
 
 
 def cache_busted_assets(document: str, page_url: str) -> list[str]:
@@ -506,17 +526,20 @@ def run_live(client: SmokeClient | None = None) -> Report:
 
     assets: list[str] = []
     seen_assets: set[str] = set()
+    page_counts: list[int] = []
     for spec, fetched in pages:
         if fetched.status != 200:
             continue
-        for asset in cache_busted_assets(fetched.text, fetched.final_url):
+        page_assets = cache_busted_assets(fetched.text, fetched.final_url)
+        page_counts.append(len(page_assets))
+        for asset in page_assets:
             if asset not in seen_assets:
                 seen_assets.add(asset)
                 assets.append(asset)
-    if not assets:
-        report.bad("cache-busted assets: none were referenced by the pages")
-    elif len(assets) > MAX_ASSETS:
-        report.bad(f"cache-busted assets: {len(assets)} references exceeds the {MAX_ASSETS} request cap")
+    budget = asset_budget_problems(len(assets), page_counts)
+    if budget:
+        for problem in budget:
+            report.bad(problem)
     else:
         asset_bodies: dict[str, Fetched] = {}
         for asset in assets:
@@ -578,6 +601,11 @@ def self_test() -> None:
     assert page_title(document) == "AgentScout: sample & title"
     assert page_canonical(document) == "https://agentscouthq.com/"
     assets = cache_busted_assets(document, f"{SITE}/")
+    assert asset_budget_problems(14, [9, 6, 5]) == []
+    assert asset_budget_problems(MAX_ASSETS, [MAX_PAGE_ASSETS]) == []
+    assert any("exceeds" in item for item in asset_budget_problems(MAX_ASSETS + 1, [4]))
+    assert any("page cap" in item for item in asset_budget_problems(4, [MAX_PAGE_ASSETS + 1]))
+    assert any("none" in item for item in asset_budget_problems(0, []))
     assert f"{SITE}/styles.css?v=202611082000" in assets
     assert f"{SITE}/app.js?v=202611082000" in assets
     assert all(not item.endswith(".mp4?v=20261109-1") and ".mp4" not in item for item in assets)
