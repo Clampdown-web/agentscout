@@ -74,8 +74,11 @@ def method(how,asof):
     return "Most tools here are commercial products without public GitHub repos, so we rank by the maturity stated on each listing: Mature first, then Active, then newer launches. Within each group, tools with more tracked GitHub stars come first, then alphabetical order. This is not a quality score. No paid placements."
 def item(i,x):
     gs=f'<span class="b">★ {x["github_stars"]:,} GitHub stars</span>' if x.get("github_stars") is not None else ""
-    return (f'<li class="card tile" style="list-style:none"><a class="stretch" href="../tools/{x["slug"]}.html" aria-label="{e(x["name"])}"></a><div class="ct">{X.ico(x)}<div class="tn"><h3>{i}. {e(x["name"])}</h3><div class="badges">'
-            f'<a class="b cat has-cico" href="../categories/{X.catslug(x["category"])}.html">{X.cico(x["category"])}{e(x["category"])}</a><span class="b">{e(x["pricing"])}</span>{gs}</div></div></div>'
+    attrs=health=""
+    if x.get("category")=="MCP servers":
+        m=X._mrr(); attrs=m.responds_attrs(x["slug"]); health=m.badge_html_for(x["slug"])
+    return (f'<li class="card tile"{attrs} style="list-style:none"><a class="stretch" href="../tools/{x["slug"]}.html" aria-label="{e(x["name"])}"></a><div class="ct">{X.ico(x)}<div class="tn"><h3>{i}. {e(x["name"])}</h3><div class="badges">'
+            f'<a class="b cat has-cico" href="../categories/{X.catslug(x["category"])}.html">{X.cico(x["category"])}{e(x["category"])}</a><span class="b">{e(x["pricing"])}</span>{health}{gs}</div></div></div>'
             f'<p class="hook">{e(x["description"])}</p><p class="muted" style="font-size:12.5px;flex:0">Pricing (as stated): {e(x.get("pricing_detail") or x["pricing"])} · {e(x["maturity"])}</p></li>')
 def page(t,P,asof):
     s,h,f,how,cap,intro,see=P
@@ -87,6 +90,10 @@ def page(t,P,asof):
     cats=collections.Counter(x["category"] for x in allm).most_common()
     catl="".join(f'<a class="b uc has-cico" href="../categories/{X.catslug(c)}.html">{X.cico(c)}{e(c)} ({n:,})</a>' for c,n in cats)
     more=f"the top {len(items):,} of {len(allm):,} matching tools" if len(allm)>len(items) else f"all {len(items):,} matching tools"
+    mcp_list=bool(items) and all(x.get("category")=="MCP servers" for x in items)
+    bar=attr=""
+    if mcp_list:
+        m=X._mrr(); bar=m.responds_bar()+m.responds_script("../"); attr=" data-responds-list"
     related=[p.strip() for p in re.split(r"\s*·\s*", see) if "<a " in p]
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","name":h,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":len(items),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
@@ -94,7 +101,7 @@ def page(t,P,asof):
     body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h)}</div><section class="calm"><h1 style="text-align:left">{e(h)} (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Below are {more} in the AgentScout directory, ranked.</p>'
           f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked:</strong> {method(how,asof)}</p>'
-          f'<ol class="grid" style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(items))}</ol>'
+          f'{bar}<ol class="grid"{attr} style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(items))}</ol>'
           f'<h2 style="font-size:16px;margin:32px 0 10px">Browse by category</h2><div class="badges">{catl}</div>'
           f'<h2 style="font-size:16px;margin:24px 0 8px">Related</h2><ul class="guide-list">{"".join(f"<li>{a}</li>" for a in related)}</ul>'
           f'<p style="margin-top:12px"><a href="index.html">All best lists →</a></p>'
@@ -175,13 +182,14 @@ def mcp_2026_page(t):
     def when(st):
         return st.get("last_checked") or "last-checked time not in status.json"
     rows=[]
+    _hm=X._mrr()
     for i,(x, ) in enumerate(((x,) for x in ranked),1):
         st=by[x["slug"]]
         mcp=_mcp_page_for(x["slug"])
         rows.append(
-            f'<li class="card tile" style="list-style:none;min-width:0;max-width:100%">'
+            f'<li class="card tile"{_hm.responds_attrs(x["slug"])} style="list-style:none;min-width:0;max-width:100%">'
             f'<div class="ct">{X.ico(x)}<div class="tn"><h3>{i}. <a href="../tools/{x["slug"]}.html">{e(x["name"])}</a></h3>'
-            f'<div class="badges"><span class="b">{e(x["pricing"])}</span><span class="b">{e(st["status"])}</span></div></div></div>'
+            f'<div class="badges"><span class="b">{e(x["pricing"])}</span><span class="b">{e(st["status"])}</span>{_hm.badge_html_for(x["slug"])}</div></div></div>'
             f'<p class="hook">{e(x["description"])}</p>'
             f'<p class="muted" style="font-size:12.5px;overflow-wrap:anywhere">{stars(x)} · Status {e(st["status"])}'
             +(f' ({e(st["detail"])})' if st.get("detail") else "")
@@ -221,7 +229,7 @@ def mcp_2026_page(t):
           f'<p class="lede" style="margin-left:0;text-align:left">These are the top {len(ranked):,} of {len(pool):,} MCP servers in the AgentScout directory that also have a row in status.json, ranked.</p>'
           f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked:</strong> {e(MCP2026_RULE)}</p>'
           f'{verify}'
-          f'<ol class="grid" style="padding:0;margin:0">{"".join(rows)}</ol>'
+          f'{_hm.responds_bar()}{_hm.responds_script("../")}<ol class="grid" data-responds-list style="padding:0;margin:0">{"".join(rows)}</ol>'
           f'<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>{fq}'
           f'<p style="margin-top:24px">More</p><ul class="guide-list"><li><a href="index.html">All best lists</a></li><li><a href="../mcp/">MCP servers by task</a></li><li><a href="open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../categories/mcp-servers.html">All MCP servers</a></li></ul>'
           f'<p class="disclose">Stars and pricing come from each AgentScout listing. Status and check times come from status.json. Nothing else on this list is estimated.</p></section>')

@@ -2,6 +2,8 @@
 """Probe listed MCP servers with initialize and tools/list. Never calls a tool.
 
 History is append-only JSONL under data/mcp-health/. The summary is derived.
+badge_text() is the only badge wording. responds_sort() orders a thick sample
+by rate_30d then n_30d and leaves everyone else in today's order.
 See docs/mcp-response-rate.md.
 
   python3 scripts/mcp_response_rate.py --limit 20 --dry-run
@@ -10,6 +12,7 @@ See docs/mcp-response-rate.md.
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import socket
@@ -990,6 +993,111 @@ def badge_text(row: dict | None) -> str:
     if display == "rate":
         return f"Responded {int(row.get('ok_30d') or 0)}/{int(row.get('n_30d') or 0)} checks in last 30 days"
     return "Not yet checked"
+
+
+_SUMMARY: dict | None = None
+RESPONDS_JS_V = "20261111b"
+
+
+def summary_servers(root: Path | None = None, *, reload: bool = False) -> dict:
+    """Servers object from data/mcp-health/summary.json. Missing file is an empty map."""
+    global _SUMMARY
+    if _SUMMARY is not None and not reload and root is None:
+        return _SUMMARY
+    path = (root or repo_root()) / "data" / "mcp-health" / "summary.json"
+    data = load_json(path, {})
+    servers = data.get("servers") if isinstance(data, dict) else None
+    if not isinstance(servers, dict):
+        servers = {}
+    if root is None:
+        _SUMMARY = servers
+    return servers
+
+
+def summary_row(slug: str | None, servers: dict | None = None) -> dict | None:
+    if not isinstance(slug, str) or not slug:
+        return None
+    servers = summary_servers() if servers is None else servers
+    row = servers.get(slug) if isinstance(servers, dict) else None
+    return row if isinstance(row, dict) else None
+
+
+def _num(value) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    return float(value)
+
+
+def rate_sample(row: dict | None) -> tuple[float, int] | None:
+    """(rate_30d, n_30d) only when display is rate and at least MIN_PROBES counted checks.
+
+    A thinner sample is not a rate, even if the row also carries a ratio.
+    """
+    if not isinstance(row, dict) or row.get("display") != "rate":
+        return None
+    n = _num(row.get("n_30d"))
+    rate = _num(row.get("rate_30d"))
+    if n is None or rate is None or int(n) < MIN_PROBES:
+        return None
+    return rate, int(n)
+
+
+def badge_html(row: dict | None) -> str:
+    """The only badge markup phase 2 prints. Wording comes from badge_text()."""
+    text = badge_text(row if isinstance(row, dict) else None)
+    return f'<span class="b" data-mcp-health="1">{html.escape(text)}</span>'
+
+
+def badge_html_for(slug: str | None, servers: dict | None = None) -> str:
+    return badge_html(summary_row(slug, servers))
+
+
+def responds_attrs(slug: str | None, servers: dict | None = None) -> str:
+    """data-resp is 1 only for a thick rate sample. Everyone else is 0 and does not move."""
+    sample = rate_sample(summary_row(slug, servers))
+    if sample is None:
+        return ' data-resp="0"'
+    rate, n = sample
+    return f' data-resp="1" data-rr="{rate:.3f}" data-rn="{n}"'
+
+
+def responds_sort(items: list, servers: dict | None = None) -> list:
+    """Order rate-display servers by rate_30d, then n_30d. Everyone else keeps today's order.
+
+    `items` is already in today's order (GitHub stars, then ratings, then recent push,
+    then maturity). Only a display of rate with at least 3 responded-or-failed checks
+    moves. A thin sample stays where today's order put it.
+    """
+    if servers is None:
+        servers = summary_servers()
+
+    def key(pair):
+        index, item = pair
+        slug = item.get("slug") if isinstance(item, dict) else None
+        sample = rate_sample(summary_row(slug, servers))
+        if sample is None:
+            return (1, index)
+        rate, n = sample
+        return (0, -rate, -n, index)
+
+    return [item for _, item in sorted(enumerate(items), key=key)]
+
+
+def responds_bar(select_id: str = "rsort") -> str:
+    sid = html.escape(select_id, quote=True)
+    title = html.escape(
+        "Responds orders servers with at least 3 checks by their 30-day response rate. Everyone else stays in the recommended order.",
+        quote=True,
+    )
+    return (
+        f'<p class="filters" style="margin:0 0 14px"><label for="{sid}">Sort</label> '
+        f'<select id="{sid}" class="ucsel" data-responds-sort title="{title}">'
+        f'<option value="">Recommended</option><option value="responds">Responds</option></select></p>'
+    )
+
+
+def responds_script(depth: str = "../") -> str:
+    return f'<script src="{depth}mcp-responds.js?v={RESPONDS_JS_V}" defer></script>'
 
 
 def build_summary(history: list[dict], classifications: dict[str, Classification], now: datetime, *, previous: dict | None, registry_complete: bool) -> dict:

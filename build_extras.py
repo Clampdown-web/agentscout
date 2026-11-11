@@ -299,7 +299,18 @@ def ptag(p):
     if re.match(r"^(paid|usage|enterprise)",p): return "paid"
     return "unknown"
 FUNDS='<span class="b funds" title="Can move money: this tool can sign or send crypto transactions from a connected wallet. Use spend limits, a separate wallet and human approval for large amounts.">⚠ Moves funds</span>'
-def card(x,d="../"): return f'<a class="card tile" data-s="{e(x["slug"])}" data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
+def _mrr():
+    import sys
+    from pathlib import Path
+    p=str(Path(__file__).resolve().parent/"scripts")
+    if p not in sys.path: sys.path.insert(0,p)
+    import mcp_response_rate as mrr
+    return mrr
+def card(x,d="../"):
+    attrs=health=""
+    if x.get("category")=="MCP servers":
+        m=_mrr(); attrs=m.responds_attrs(x["slug"]); health=m.badge_html_for(x["slug"])
+    return f'<a class="card tile" data-s="{e(x["slug"])}"{attrs} data-p="{ptag(x.get("pricing"))}" data-o="{1 if (x.get("pricing") or "").lower().startswith("open") else 0}" data-a="{e(x.get("added") or "")}" data-g="{x.get("github_stars") if x.get("github_stars") is not None else -1}" href="{d}tools/{x["slug"]}.html"><div class="ct">{ico(x,d)}<div class="tn"><h3>{e(x["name"])}</h3><div class="badges">{"<span class=\"b new\">New</span>" if week_new(x) else ""}<span class="b cat has-cico">{cico(x["category"])}{e(x["category"])}</span><span class="b">{e(x["pricing"])}</span>{health}{FUNDS if x.get("moves_funds") else ""}</div></div></div><p class="hook">{e(x["description"])}</p>{added_line(x)}</a>'
 
 # Category icons baked into HTML (paths read from app.js so site JS and build share one map; "tag" fallback).
 def _load_icons():
@@ -338,8 +349,10 @@ def agentic_first(path,items):
     """Media category pages (Oct 18, 2026) lead with agentic tools; the order is otherwise unchanged."""
     if path in {f"categories/{catslug(c)}.html" for c in LEAD_CATS}: return sorted(items,key=lambda x:not x.get("agentic"))
     return items
-def catbar(n): return ('<div class="filters cfilters" id="cfilters" role="group" aria-label="Filter and sort these tools"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option value="free">Free</option><option value="freeplan">Free or free plan</option><option value="freemium">Freemium</option><option value="paid">Paid</option><option value="unknown">Pricing not listed</option></select>'
- '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label><label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option></select>'
+def catbar(n, responds=False):
+    opt='<option value="responds">Responds</option>' if responds else ''
+    return ('<div class="filters cfilters" id="cfilters" role="group" aria-label="Filter and sort these tools"><label for="fprice">Pricing</label><select id="fprice" class="ucsel"><option value="">Any pricing</option><option value="free">Free</option><option value="freeplan">Free or free plan</option><option value="freemium">Freemium</option><option value="paid">Paid</option><option value="unknown">Pricing not listed</option></select>'
+ '<label class="fchk"><input type="checkbox" id="fos"> Open source only</label><label for="fsort">Sort</label><select id="fsort" class="ucsel"><option value="">Recommended</option><option value="new">Newest first</option><option value="loved">Most loved</option><option value="stars">GitHub stars</option><option value="az">Name A–Z</option>'+opt+'</select>'
  '<button type="button" class="chip" id="freset" hidden>Clear all filters</button></div><p class="count" id="ccount" aria-live="polite">Showing {n} of {n} tools</p><p class="snote muted" id="snote" hidden></p>').replace("{n}",str(n))
 def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     canon=B+path
@@ -353,7 +366,12 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
         {"@type":"ItemList","numberOfItems":len(listed),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(listed)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
     _sec = '<section class="sheet" style="padding-top:8px;text-align:left">' if path.startswith("categories/") else '<section class="calm">'
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items)) if path.startswith("categories/") else ""}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{'<script src="../catfilter.js?v=20261022a" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    _mcp_cat = path=="categories/mcp-servers.html"
+    _mcp_best = path.startswith("best/mcp-servers-for-")
+    _bar = _script = _list = ""
+    if _mcp_best:
+        _m=_mrr(); _bar=_m.responds_bar(); _script=_m.responds_script("../"); _list=' data-responds-list'
+    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",

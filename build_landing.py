@@ -327,10 +327,14 @@ def search_pages(t,m,asof):
         # s/best-mcp-servers.html stays on Phase 2's sheet. Every other popular list uses .calm.
         _cta="" if s=="best-mcp-servers" else T.ai_ref_cta_html("../")
         _sec = '<section class="sheet" style="padding-top:8px;text-align:left">' if s=="best-mcp-servers" else '<section class="calm">'
+        _mcp_list=bool(items) and all(x.get("category")=="MCP servers" for x in items)
+        _bar=_attr=""
+        if _mcp_list:
+            _hm=X._mrr(); _bar=_hm.responds_bar()+_hm.responds_script("../"); _attr=" data-responds-list"
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Popular lists</a> / {e(h)}</div>{_sec}<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} {"Here are the top "+str(len(items))+" of "+str(n) if n>len(items) else "Here are all "+str(n)} from the AgentScout directory.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we picked and ranked:</strong> tools are matched by category, the pricing each maker states and what each tool says it does. They are ranked by GitHub stars as recorded on each listing (link checks {asof}); tools without a tracked repo follow, by listing maturity. No paid placements.</p>'
-              f'<ol class="grid" style="padding:0;margin:0">{"".join(BB.item(i+1,x) for i,x in enumerate(items))}</ol>'
+              f'{_bar}<ol class="grid"{_attr} style="padding:0;margin:0">{"".join(BB.item(i+1,x) for i,x in enumerate(items))}</ol>'
               f'{_cta}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}'
               f'<p style="margin-top:28px">Related: {" · ".join(rel)}</p>'+(f'<p>Similar searches: {sibh}</p>' if sibh else "")+(f'<p>By role: {roleh}</p>' if roleh else "")+
               f'<p><a href="index.html">All popular searches</a> · <a href="../for/index.html">AI agents by role</a> · <a href="../free-tools.html">Free tools</a></p>'

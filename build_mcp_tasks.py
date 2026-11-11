@@ -86,7 +86,8 @@ def item(i,x):
     return h.replace(f'· {e(x["maturity"])}</p></li>',f'· {e(x["maturity"])}{extra}</p></li>',1)
 def mini(x):
     gs=f' · ★ {x["github_stars"]:,}' if x.get("github_stars") is not None else ""
-    return f'<li class="mcp-row"><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span><span class="muted" style="font-size:12.5px">{gs}</span><br><span class="mcp-hook">{e(x["description"])}</span></li>'
+    m=X._mrr()
+    return f'<li class="mcp-row"{m.responds_attrs(x["slug"])}><a href="../tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{X.ico(x,"../","sm").replace('width="40" height="40"','width="24" height="24"')}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(x["pricing"])}</span>{m.badge_html_for(x["slug"])}<span class="muted" style="font-size:12.5px">{gs}</span><br><span class="mcp-hook">{e(x["description"])}</span></li>'
 H2='style="font-size:18px;margin:32px 0 8px"'
 def _catlink(made):
     p="categories/mcp-servers.html"
@@ -129,7 +130,7 @@ def pages(t):
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Here are the {n:,} we list, ranked.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked them:</strong> each server here is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a> and its listing says it does this job. We order them by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come last. Links checked {asof}. No paid placements.</p>'
               f'<h2 {H2}>The {n:,} MCP servers for {e(job)}, ranked</h2>'
-              f'<ol class="grid" style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(it))}</ol>'
+              f'{X._mrr().responds_bar()}{X._mrr().responds_script("../")}<ol class="grid" data-responds-list style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(it))}</ol>'
               f'<p style="margin:18px 0 0"><a href="{flink(kw)}">Filter these live in the directory</a>: MCP servers matching “{e(kw)}”, sorted by GitHub stars. You can add pricing and open-source filters there.</p>'
               f'<h2 {H2}>How to choose</h2><ul>{"".join(f"<li>{e(b)}</li>" for b in how)}<li>Only connect servers you trust: an MCP server can read and act on whatever its credentials allow.</li></ul>'
               f'<h2 {H2}>FAQ</h2>{fq}'
@@ -144,12 +145,12 @@ def pages(t):
     secs=""
     for s,job,lab,intro,how,kw,it in made:
         secs+=(f'<h2 id="{s}" {H2}><a href="{s}.html">Best MCP servers for {e(job)}</a></h2><p class="muted" style="margin:0 0 10px;font-size:14px">{e(intro)}</p>'
-               f'<ul style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in it[:4])}</ul><p style="margin:4px 0 0"><a href="{s}.html">See all {len(it):,} ranked →</a></p>')
+               f'<ul data-responds-list style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in it[:4])}</ul><p style="margin:4px 0 0"><a href="{s}.html">See all {len(it):,} ranked →</a></p>')
     fold=""
     for lab,txt,L,lnk in FOLD:
         it=rank(members(L))
         if not it: continue
-        fold+=(f'<h3 style="font-size:16px;margin:22px 0 6px">{e(lab)}</h3><p class="muted" style="margin:0 0 8px;font-size:14px">{e(txt)}</p><ul style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in it)}</ul>'
+        fold+=(f'<h3 style="font-size:16px;margin:22px 0 6px">{e(lab)}</h3><p class="muted" style="margin:0 0 8px;font-size:14px">{e(txt)}</p><ul data-responds-list style="list-style:none;padding:0;margin:0">{"".join(mini(x) for x in it)}</ul>'
                +(f'<p style="margin:4px 0 0"><a href="{lnk[0]}">{e(lnk[1])} →</a></p>' if lnk else ""))
     faq=[("What is the best MCP server?","It depends on the job. By tracked GitHub stars, the leaders on this page are "+", ".join(f"{a[6][0]['name']} for {a[1]}" for a in made[:4])+". Pick the task first, then compare two or three servers."),
          ("How are these MCP servers ranked?","Within each task, by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push, then listing maturity. No paid placements."),
@@ -166,6 +167,7 @@ def pages(t):
           f'<p style="font-size:14px">Jump to</p>{jump}'
           f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#080810"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-mcp-terminal-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-mcp-terminal.mp4" type="video/mp4"></video></figure>'
           f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we ranked them:</strong> GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push, then listing maturity. Every server is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a>; links checked {asof}. No paid placements.</p>'
+          f'{X._mrr().responds_bar()}{X._mrr().responds_script("../")}'
           f'{secs}<h2 id="more" {H2}>More tasks</h2>{fold}'
           f'<h2 {H2}>FAQ</h2>{fq}'
           f'<p style="margin-top:28px">More</p><ul class="guide-list"><li><a href="../categories/mcp-servers.html">All {nmcp:,} MCP servers</a></li><li><a href="{flink("mcp").replace("&q=mcp","")}">Filter MCP servers by pricing and open source</a></li><li><a href="../s/free-mcp-servers.html">Free MCP servers</a></li><li><a href="../best/open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../best/best-mcp-servers-2026.html">Best MCP servers 2026</a></li><li><a href="../best/mcp-servers-for-claude-code.html">For Claude Code</a></li><li><a href="../best/mcp-servers-for-cursor.html">For Cursor</a></li><li><a href="../best/mcp-servers-for-codex.html">For Codex</a></li><li><a href="../free-tools/mcp-server-picker.html">MCP server picker</a></li></ul>'
