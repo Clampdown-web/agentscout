@@ -112,7 +112,7 @@ def pitches():
 def static_specs():
     tools_pitch,mcp_pitch=pitches()
     return [
-        ("index.html","og.png","AgentScout","The AI agent tools actually worth trying.","Curated, link-checked, updated weekly.",None),
+        ("index.html","og.png","AgentScout","The AI agent tools actually worth trying.","Curated, link-checked, updated daily.",None),
         ("submit.html","og/submit.png","Submit","Submit your AI agent tool","Free community listing. We review every submission and check the links.",tools_pitch),
         ("sponsor.html","og/sponsor.png","Sponsor","Get Your AI Agent or MCP Server in Front of Builders Ready to Try It","Free listing, fast-track, category pin, or a sitewide sponsor.",tools_pitch),
         ("newsletter.html","og/newsletter.png","Newsletter","AgentScout Weekly","One short email a week with the best new AI agents, launches and what's worth trying.",None),
