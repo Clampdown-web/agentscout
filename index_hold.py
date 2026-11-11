@@ -2,13 +2,13 @@
 
 A batch in data/index_hold.json stays out of the sitemap until its date,
 in America/Los_Angeles. The build lets out at most one batch per calendar
-day, oldest first, and each batch is capped at `cap` slugs (the same five
-a day as new unenriched URLs). Progress is stored on the index state dict
+day, oldest first, and each batch is capped at `cap` slugs (the same daily
+limit as new full tool URLs). Progress is stored on the index state dict
 the caller saves, so a second build the same day does not release another batch.
 """
 
 
-def held_slugs(today, hold, state, cap=5):
+def held_slugs(today, hold, state, cap=15):
     """Slugs that stay noindex. Updates `state` when a batch is released."""
     if not isinstance(hold, dict):
         return set()

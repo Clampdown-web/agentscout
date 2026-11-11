@@ -54,7 +54,7 @@ class EnrichNextBatchTests(unittest.TestCase):
         cls.sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
 
     def test_cap_and_threshold_stay(self):
-        self.assertIn("NEW_TOOL_CAP=5", self.rule)
+        self.assertIn("NEW_TOOL_CAP=15", self.rule)
         self.assertIn("THIN_WORDS=80", self.rule)
         self.assertIn("if enr or (not thin and (grandfather or slug in slots)):", self.rule)
         self.assertLess(
@@ -67,11 +67,11 @@ class EnrichNextBatchTests(unittest.TestCase):
     def test_hold_list_is_the_fifteen_on_dated_batches(self):
         self.assertEqual(list(self.hold["indexable_now"]), list(INDEXABLE))
         releases = self.hold["releases"]
-        self.assertEqual([b["date"] for b in releases], ["2026-11-10", "2026-11-11", "2026-11-12"])
-        flat = [s for b in releases for s in b["slugs"]]
+        self.assertEqual([b["date"] for b in releases[:3]], ["2026-11-10", "2026-11-11", "2026-11-12"])
+        flat = [s for b in releases[:3] for s in b["slugs"]]
         self.assertEqual(flat, list(HELD))
         for batch in releases:
-            self.assertLessEqual(len(batch["slugs"]), 5)
+            self.assertLessEqual(len(batch["slugs"]), 15)
         for slug in INDEXABLE:
             self.assertNotIn(slug, flat)
 
@@ -103,51 +103,70 @@ class EnrichNextBatchTests(unittest.TestCase):
             self.assertIn("alternatives</h2>", page, slug)
             self.assertIn(f"https://agentscouthq.com/tools/{slug}.html", self.sitemap)
             self.assertIn('if(typeof AS!=="undefined"&&AS.saveBtn)', page, slug)
+        released = set(json.loads((ROOT / "data" / "index_admit.json").read_text(encoding="utf-8")).get("hold_released_slugs") or [])
         for slug in HELD:
             page = (ROOT / "tools" / f"{slug}.html").read_text(encoding="utf-8")
-            self.assertIn('name="robots" content="noindex,follow"', page[:2500], slug)
             self.assertIn(f'rel="canonical" href="https://agentscouthq.com/tools/{slug}.html"', page)
             self.assertIn("FAQPage", page, slug)
-            self.assertNotIn(f"https://agentscouthq.com/tools/{slug}.html", self.sitemap, slug)
+            loc = f"https://agentscouthq.com/tools/{slug}.html"
+            if slug in released:
+                self.assertNotIn('name="robots" content="noindex', page[:2500], slug)
+                self.assertIn(loc, self.sitemap, slug)
+            else:
+                self.assertIn('name="robots" content="noindex,follow"', page[:2500], slug)
+                self.assertNotIn(loc, self.sitemap, slug)
 
 
 class HoldReleaseTests(unittest.TestCase):
     def schedule(self):
         return json.loads((ROOT / "data" / "index_hold.json").read_text(encoding="utf-8"))
 
+    def _slugs(self):
+        return [s for b in self.schedule()["releases"] for s in b["slugs"]]
+
     def test_nothing_releases_before_nov_10(self):
         state = {}
         held = index_hold.held_slugs("2026-11-09", self.schedule(), state, 5)
-        self.assertEqual(held, set(HELD))
+        self.assertEqual(held, set(self._slugs()))
         self.assertNotIn("hold_release_day", state)
 
     def test_nov_10_releases_only_the_first_batch(self):
         state = {}
+        slugs = self._slugs()
         held = index_hold.held_slugs("2026-11-10", self.schedule(), state, 5)
         self.assertEqual(state["hold_release_day"], "2026-11-10")
         self.assertEqual(state["hold_released"], ["2026-11-10"])
         released = set(state["hold_released_slugs"])
-        self.assertEqual(released, set(HELD[:5]))
-        self.assertEqual(held, set(HELD[5:]))
+        self.assertEqual(released, set(slugs[:5]))
+        self.assertEqual(held, set(slugs[5:]))
         again = index_hold.held_slugs("2026-11-10", self.schedule(), state, 5)
         self.assertEqual(again, held)
         self.assertEqual(state["hold_released"], ["2026-11-10"])
 
     def test_a_later_build_releases_one_overdue_batch_per_day(self):
         state = {}
+        slugs = self._slugs()
         held = index_hold.held_slugs("2026-11-12", self.schedule(), state, 5)
-        self.assertEqual(set(state["hold_released_slugs"]), set(HELD[:5]))
-        self.assertEqual(held, set(HELD[5:]))
+        self.assertEqual(set(state["hold_released_slugs"]), set(slugs[:5]))
+        self.assertEqual(held, set(slugs[5:]))
         held = index_hold.held_slugs("2026-11-13", self.schedule(), state, 5)
-        self.assertEqual(set(state["hold_released_slugs"]), set(HELD[:10]))
-        self.assertEqual(held, set(HELD[10:]))
-        held = index_hold.held_slugs("2026-11-14", self.schedule(), state, 5)
+        self.assertEqual(set(state["hold_released_slugs"]), set(slugs[:10]))
+        self.assertEqual(held, set(slugs[10:]))
+        released = 10
+        day = 14
+        while released < len(slugs):
+            held = index_hold.held_slugs(f"2026-11-{day:02d}", self.schedule(), state, 5)
+            released = min(released + 5, len(slugs))
+            self.assertEqual(set(state["hold_released_slugs"]), set(slugs[:released]))
+            self.assertEqual(held, set(slugs[released:]))
+            day += 1
+        held = index_hold.held_slugs(f"2026-11-{day:02d}", self.schedule(), state, 5)
         self.assertEqual(held, set())
 
     def test_the_rule_uses_the_dated_hold_and_keeps_the_cap(self):
         rule = (ROOT / "build_site.py").read_text(encoding="utf-8")
         self.assertIn("held=_ih.held_slugs(today, _hold, state, NEW_TOOL_CAP)", rule)
-        self.assertIn("NEW_TOOL_CAP=5", rule)
+        self.assertIn("NEW_TOOL_CAP=15", rule)
 
 
 if __name__ == "__main__":

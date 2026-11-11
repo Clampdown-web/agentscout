@@ -1,5 +1,5 @@
 {
-  "purpose": "Enriched tool pages stay noindex until the build's America/Los_Angeles date reaches the batch date. The build releases at most one batch per day, oldest first, and never more than five slugs. Progress is recorded in data/index_admit.json (hold_released_slugs, hold_release_day) so a second build the same day does not release the next batch.",
+  "purpose": "Enriched tool pages stay noindex until the build's America/Los_Angeles date reaches the batch date. The build releases at most one batch per day, oldest first, and never more than fifteen slugs. Progress is recorded in data/index_admit.json (hold_released_slugs, hold_release_day) so a second build the same day does not release the next batch.",
   "checked": "2026-11-09",
   "indexable_now": [
     "ponytail",

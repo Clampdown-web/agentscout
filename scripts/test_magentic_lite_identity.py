@@ -63,7 +63,7 @@ class MagenticLiteIdentityTests(unittest.TestCase):
         self.assertIn("<span>MagenticLite</span>", self.html)
         self.assertIn("10,108 (as of 2026-10-30)", self.html)
         self.assertNotIn("42.52", self.html)
-        self.assertIn("NEW_TOOL_CAP=5", self.rule)
+        self.assertIn("NEW_TOOL_CAP=15", self.rule)
         self.assertIn("THIN_WORDS=80", self.rule)
 
 
