@@ -243,3 +243,6 @@ body.home #about-directory,body.home #xfree,body.home #bt-strip,body.home #recen
 body.home .hero-chips,body.home #xcats .badges,body.home #xroles .badges,body.home #newslist,body.home #mcp-rows{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
 body.home .hsec,body.home .wrap,footer.footcols .wrap{min-width:0}
 nav.sitenav .navsheet{max-width:100%}
+nav.sitenav{backdrop-filter:none;background:transparent}
+nav.sitenav.is-open{z-index:1000}
+nav.sitenav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--navbg);backdrop-filter:saturate(180%) blur(12px)}

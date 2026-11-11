@@ -171,26 +171,55 @@ AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){
    form as agentscout.beehiiv.com/subscribe). No API key. utm_source=agentscout.
    A plain .nl-fallback link is the only off-site signup. */
 (function(){
-var LATEST={"title": "AgentScout Weekly #5: Steer Claude Code from your phone + 10 new agents", "date": "Nov 11, 2026", "sub": "The AI agent tools actually worth trying. A weekly pick of new agent tools for builders and everyday users.", "url": "https://agentscout.beehiiv.com/p/agentscout-weekly-5-steer-claude-code-from-your-phone-10-new-agents"};
-var SRC="https://agentscout.beehiiv.com/subscribe?utm_source=agentscouthq&utm_medium=website";
-try{fetch("/data/latest-issue.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.title)return;var next=asListingHttp(j.url);LATEST={title:j.title,date:j.display_date||j.date,sub:j.subtitle||"",url:(next&&next.slice(0,8)==="https://")?next:LATEST.url};document.querySelectorAll(".nllatest").forEach(function(p){var l=p.querySelector(".nlli");if(l){l.href=LATEST.url;l.querySelector("strong").textContent=LATEST.title}var m=p.querySelector(".nlmeta");if(m)m.textContent="· "+LATEST.date+" · "+LATEST.sub})}).catch(function(){})}catch(e){}
-function statusHtml(){var u=ASe(LATEST.url||"https://agentscout.beehiiv.com/p/agentscout-bonus-5-agent-tools-worth-trying-this-week"),t=ASe(LATEST.title||"AgentScout Bonus: 5 agent tools worth trying this week");return '✓ Opened Beehiiv signup in a new tab — enter your email there to get the free <b>50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack</b>. Read the latest visual issue: <a href="'+u+'" target="_blank" rel="noopener noreferrer"><strong>'+t+'</strong> →</a> · <strong>Follow <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> on X for daily 60fps stack demos &amp; MCP drops →</strong>'}
-function markStatus(host,msg,btn){if(!msg&&host){msg=host.querySelector(".nlmsg");if(!msg){msg=document.createElement("p");msg.className="nlmsg muted";msg.setAttribute("aria-live","polite");host.appendChild(msg)}}if(msg)msg.innerHTML=statusHtml();if(btn&&btn.classList&&btn.classList.contains("btn"))btn.textContent="Opened Beehiiv Signup ↗"}
-function open1(form,host,msg){try{window.open(SRC,"_blank","noopener,noreferrer")}catch(e){location.href=SRC}markStatus(host,msg,form&&form.querySelector("button"))}
-function wire(form,host,msg){if(!form)return;form.addEventListener("submit",function(e){e.preventDefault();open1(form,host,msg)})}
-function panel(){var p=document.createElement("div");p.className="nlpanel";p.setAttribute("role","region");p.setAttribute("aria-label","Newsletter signup");
-p.innerHTML='<div class="nlin"><button type="button" class="nlx" aria-label="Close newsletter panel">×</button><h3>AgentScout Weekly + Free 50 AI Agents &amp; 50 MCP Servers Cheat Sheets</h3><p class="muted">Get the 5 best new AI agent tools, copy-paste MCP workflows, and our high-res 50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack free every Tuesday.</p><p class="nllatest"><span class="b">Latest issue</span> <a class="nlli" href="'+ASe(LATEST.url||"https://agentscout.beehiiv.com/p/agentscout-bonus-5-agent-tools-worth-trying-this-week")+'" target="_blank" rel="noopener noreferrer"><strong>'+ASe(LATEST.title)+'</strong></a> <span class="muted nlmeta">· '+ASe(LATEST.date)+' · '+ASe(LATEST.sub)+'</span></p><div class="nlgo" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><a class="btn primary" href="'+SRC+'" target="_blank" rel="noopener noreferrer" data-nl>Subscribe &amp; Get Free Cheat Sheets →</a><a class="btn" href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer">Follow @clampdown19 on X ↗</a><a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ on X ↗</a></div><p class="nlmsg muted" aria-live="polite">'+statusHtml()+'</p></div>';
-p.querySelector(".nlx").onclick=function(){p.remove();document.querySelectorAll("[data-nl][aria-expanded=true]").forEach(function(a){a.setAttribute("aria-expanded","false")})};return p}
-function anchorFor(a){var nav=a.closest("nav");if(nav)return nav;return a.closest("p,li,.card,.cta,.about,div")||a}
-document.addEventListener("click",function(e){var a=e.target.closest("a[data-nl]");if(!a)return;
- if(!a.getAttribute("href")||a.getAttribute("href")==="https://agentscout.beehiiv.com/"||a.getAttribute("href")==="https://agentscout.beehiiv.com/subscribe")a.href=SRC;
- a.target="_blank";a.rel="noopener noreferrer";
- var box=a.closest(".nlbox,.nlin,.nlspot");if(box){markStatus(box,box.querySelector(".nlmsg"),a);return}
- var at=anchorFor(a);document.querySelectorAll(".nlpanel").forEach(function(x){x.remove()});
- var p=panel();at.insertAdjacentElement("afterend",p);a.setAttribute("aria-expanded","true")});
-function init(){document.querySelectorAll("form[data-nlform]").forEach(function(f){var m=document.createElement("p");m.className="nlmsg muted";m.setAttribute("aria-live","polite");f.insertAdjacentElement("afterend",m);wire(f,f.closest(".nlbox")||f.parentNode,m)});
- document.querySelectorAll("a[data-nl]").forEach(function(a){if(!a.getAttribute("href")||a.getAttribute("href")==="https://agentscout.beehiiv.com/"||a.getAttribute("href")==="https://agentscout.beehiiv.com/subscribe")a.href=SRC;a.target="_blank";a.rel="noopener noreferrer"})}
-document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init()})();
+var EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function msgEl(form){
+  var box=form.closest(".nlsign")||form.parentNode;
+  var m=box.querySelector(".nlmsg");
+  if(!m){m=document.createElement("p");m.className="nlmsg";m.setAttribute("role","status");m.setAttribute("aria-live","polite");form.insertAdjacentElement("afterend",m)}
+  return m;
+}
+function show(form,kind,text){
+  var m=msgEl(form);
+  m.className="nlmsg nlmsg-"+kind;
+  m.textContent=text;
+}
+function focusForm(){
+  var input=document.querySelector("form[data-nlform] input[type=email]");
+  if(!input)return;
+  var box=input.closest(".nlsign")||input;
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+  input.focus();
+}
+function wire(form){
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var email=(form.email&&form.email.value||"").trim();
+    if(!EMAIL.test(email)){show(form,"err","Enter a valid email address.");if(form.email)form.email.focus();return}
+    var btn=form.querySelector("button");
+    if(btn)btn.disabled=true;
+    var body=new URLSearchParams(new FormData(form));
+    fetch(form.action,{method:"POST",body:body,mode:"cors",credentials:"omit",headers:{Accept:"application/json, text/html"}}).then(function(r){
+      if(btn)btn.disabled=false;
+      if(r.ok||r.status===302||r.status===303){show(form,"ok","You're subscribed. Check your inbox to confirm.");form.reset();return}
+      show(form,"err","Beehiiv didn't accept that signup ("+r.status+"). Use the Beehiiv link below.");
+    }).catch(function(){
+      if(btn)btn.disabled=false;
+      var frame=form.parentNode.querySelector("iframe.nlframe");
+      if(!frame){show(form,"err","Couldn't reach Beehiiv from this page. Use the Beehiiv link below.");return}
+      var once=function(){frame.removeEventListener("load",once);show(form,"ok","Sent to Beehiiv. Check your inbox to confirm. If nothing arrives, use the Beehiiv link.");};
+      frame.addEventListener("load",once);
+      HTMLFormElement.prototype.submit.call(form);
+    });
+  });
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest("a[data-nl]");
+  if(!a||a.classList.contains("nl-fallback"))return;
+  if(document.querySelector("form[data-nlform]")){e.preventDefault();focusForm()}
+});
+function init(){document.querySelectorAll("form[data-nlform]").forEach(wire)}
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init();
+})();
 /* Category icons (Lucide-style inline SVG, stroke currentColor). Mirrors app v10 catIcons.js; unknown categories fall back to "tag". */
 (function(){var P={"image generation":'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/>',"graphic design & branding":'<path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.6 7.6"/><circle cx="11" cy="11" r="2"/>',"3d & concept art":'<path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/>',"photography & photo editing":'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',games:'<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/>',coding:'<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',voice:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/>',vision:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',research:'<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',frameworks:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/>',"mcp servers":'<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4M12 11l-6 6M12 11l6 6"/>',"agent infra":'<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/>',"mcp & infra":'<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4M12 11l-6 6M12 11l6 6"/>',"evals & observability":'<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/>',"browser/computer use":'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>',"no-code builders":'<path d="m15 4 5 5L9 20H4v-5z"/><path d="M12 7l5 5"/>',"business agents":'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/>',"personal agents":'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',"app builders":'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',productivity:'<path d="M18 6 7 17l-5-5M22 10l-7.5 7.5L13 16"/>',models:'<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/>',"memory & rag":'<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',"customer support":'<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',"sales & marketing":'<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',"sandboxes & code execution":'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3M12 15h5"/>',"security & governance":'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',"film & tv production":'<path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9M12.4 3.4l3.1 4M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>',"video generation":'<path d="m16 13 5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>',"film & tv audio":'<path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/>',"music production":'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',"models & local runtimes":'<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/>',crypto:'<circle cx="12" cy="12" r="10"/><path d="M9 8h4.5a2 2 0 0 1 0 4H9h5a2 2 0 0 1 0 4H9zM9 8v8M11 6v2M11 16v2"/>',"data & analytics":'<path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/>',"devops & cloud":'<path d="M17.5 19a4.5 4.5 0 0 0 .4-9 6 6 0 0 0-11.6-1.5A4.5 4.5 0 0 0 6.5 19z"/>',"qa & testing":'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',"finance & accounting":'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v4M16 4v4"/>',"legal & compliance":'<path d="M12 3v18M4 8h16M6 8l-2 8a4 4 0 0 0 8 0L10 8M14 8l-2 8a4 4 0 0 0 8 0l-2-8"/>',"hr & recruiting":'<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="m16 11 2 2 4-4"/>',"education & tutoring":'<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/>',"healthcare & biotech":'<path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/>',"e-commerce & retail":'<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',"robotics & physical ai":'<rect x="4" y="8" width="16" height="10" rx="2"/><path d="M12 8V5M9 5h6M8 13h.01M16 13h.01M9 18v2M15 18v2"/>',image:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>'},FB='<path d="M12 2H2v10l9.3 9.3a1 1 0 0 0 1.4 0l8.6-8.6a1 1 0 0 0 0-1.4z"/><circle cx="7" cy="7" r="1.5"/>';
 var S={};Object.keys(P).forEach(function(k){S[k.replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")]=k});
