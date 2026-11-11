@@ -353,6 +353,7 @@ def build_commerce_files(tools_data):
             "mcp_registry_id": "com.agentscouthq/directory",
             "payment_methods": ["stripe_checkout", "stripe_shared_payment_tokens_ready", "x_money"],
             "x_money_handle": "@clampdown19",
+            "refund_policy_url": B + "/refunds.html",
         },
         "packages": [
             {
@@ -569,7 +570,8 @@ def build_commerce_files(tools_data):
             f"10 for $199 (https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b), "
             f"20 for $299 (https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c), "
             f"and all 25 for $349 (https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d). "
-            f"Those prices are separate from the flagship bots."
+            f"Those prices are separate from the flagship bots. "
+            f"Refunds: {B}/refunds.html."
         ),
         "auth": {"type": "none"},
         "api": {
@@ -592,6 +594,7 @@ def build_commerce_files(tools_data):
         "logo_url": B + "/logo-square.png",
         "contact_email": "support@agentscouthq.com",
         "legal_info_url": B + "/privacy.html",
+        "refund_policy_url": B + "/refunds.html",
     }
     open(".well-known/ai-plugin.json", "w", encoding="utf-8").write(json.dumps(ai_plugin, indent=2, ensure_ascii=False) + "\n")
 
@@ -658,7 +661,8 @@ def run():
             "description": (
                 f"AgentScout lists {n:,} daily link-checked AI agent tools (including {n_mcp:,} MCP servers) plus purchasable maker listing boosts "
                 f"and Made by AgentScout pre-trained bots. These endpoints are static JSON files rebuilt daily: no authentication, no query parameters, "
-                f"GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at {MCP_HTTP}."
+                f"GET only. For interactive search and tool calls over Streamable HTTP, connect to our free MCP server at {MCP_HTTP}. "
+                f"Refunds: {B}/refunds.html."
             ),
             "contact": {"name": "AgentScout", "email": "support@agentscouthq.com", "url": B + "/"},
             "termsOfService": B + "/privacy.html",

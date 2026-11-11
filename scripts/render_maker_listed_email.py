@@ -62,6 +62,7 @@ def email_html() -> str:
   <table style="width:100%;border-collapse:collapse">{''.join(flagship)}</table>
   <h3 style="color:#fff">25 AI Agent Packs · $35</h3>
   <table style="width:100%;border-collapse:collapse">{''.join(rows)}</table>
+  <p style="margin:14px 0 0">Refunds: <a href="https://agentscouthq.com/refunds.html" style="color:#93c5fd">agentscouthq.com/refunds.html</a>. EU and UK buyers agree that paying starts delivery right away, which ends the 14-day cancellation right.</p>
   <p style="margin:14px 0 0"><a href="https://agentscouthq.com/bot-store/#ap-dock" style="color:#93c5fd">Build a pack on the Bot Store</a> · <a href="https://x.com/clampdown19" style="color:#93c5fd">Pay via X Money @clampdown19</a></p>
 </section>
 """
