@@ -58,7 +58,9 @@ class VisibilityPriceTest(unittest.TestCase):
         self.assertIn('href="mcp-test-report.html"', page)
         self.assertIn("G-TGDXK5F13D", page)
         self.assertIn("default-src 'self'", page)
-        self.assertNotIn("<form", page.lower())
+        # The shared footer newsletter form is the only form. The report itself is a Stripe link.
+        without_newsletter = re.sub(r'<form class="nlform\b.*?</form>', "", page, flags=re.S | re.I)
+        self.assertNotIn("<form", without_newsletter.lower())
         self.assertNotIn("noindex", page[:2500])
         self.assertIn("styles.css?v=", page)
         self.assertIn("ai-visibility-check.css?v=", page)

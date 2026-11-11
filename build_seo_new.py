@@ -475,7 +475,8 @@ def verify_nav_footer_unified():
     except SystemExit:
         print("nav/footer verify: index.html is missing nav or footer")
         return 1
-    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html"}
+    # free-tools-rest.html is a stashed directory fragment, not a page.
+    skip = {"googlee55704a7d5d75240.html", "og.html", "stats.js.html", "outreach-tracker.html", "free-tools-rest.html"}
     bad = []
     seen = 0
     for root_dir, dirs, fnames in os.walk("."):

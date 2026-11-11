@@ -346,7 +346,7 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-head"><div>'
         '<span class="mba-eyebrow">⚡ Built for Grok Bot (also compatible with Claude Code, Cursor &amp; Codex) · 5 Neon Bot Packages</span>'
         '<h2 id="mba-h">Pre-Trained Pro Bots &amp; "Company-in-a-Box" Team Bundle built by <span class="sr-only">AgentScout</span><img class="aswm" src="../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"></h2>'
-        f'<p>General-purpose bots for your own SaaS or online business. Set <code>{{{{YOUR_COMPANY}}}}</code> and <code>{{{{YOUR_DOMAIN}}}}</code> for uptime and inbox monitoring, technical SEO and Core Web Vitals auditing, competitor and launch tracking, and executive team coordination. Built natively for <b>Grok Bot</b> first — scheduled routines, a shared <code>/workspace/handoff/</code> folder, and 4-bot <code>Work Chat</code> run out of the box — and each ZIP also drops into <b>Claude Code, Cursor, and OpenAI Codex</b>. Buy any flagship bot individually (<code>$39</code>, <code>$59</code>, <code>$59</code>, <code>$69</code> — <code>$226</code> separately) or all 4 in the <b>$149 Company-in-a-Box Team Bundle (Save $77)</b>. The 25 role packs below are separate: <b>$35 each</b>, or <b>5 for $119</b>, <b>10 for $199</b>, <b>20 for $299</b>, and <b>all 25 for $349</b>. File lists are on the <a href="../bot-store/" style="color:#fde047;font-weight:700;text-decoration:underline">dedicated AgentScout Bot Store</a>, and <a href="#bt-featured" style="color:#a3e635;text-decoration:underline">{total} free community bot templates</a> are below.</p>'
+        f'<p>General-purpose bots for your own SaaS or online business. Set <code>{{{{YOUR_COMPANY}}}}</code> and <code>{{{{YOUR_DOMAIN}}}}</code> for uptime and inbox monitoring, technical SEO and Core Web Vitals auditing, competitor and launch tracking, and executive team coordination. Built natively for <b>Grok Bot</b> first — scheduled routines, a shared <code>/workspace/handoff/</code> folder, and 4-bot <code>Work Chat</code> run out of the box — and each ZIP also drops into <b>Claude Code, Cursor, and OpenAI Codex</b>. Buy any flagship bot individually (<code>$39</code>, <code>$59</code>, <code>$59</code>, <code>$69</code> — <code>$226</code> separately) or all 4 in the <b>$149 Company-in-a-Box Team Bundle (Save $77)</b>. The 25 role packs below are separate: <b>$35 each</b>, or <b>5 for $119</b>, <b>all 25 for $349</b>. File lists are on the <a href="../bot-store/" style="color:#fde047;font-weight:700;text-decoration:underline">dedicated AgentScout Bot Store</a>, and <a href="#bt-featured" style="color:#a3e635;text-decoration:underline">{total} free community bot templates</a> are below.</p>'
         '</div>'
         '<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;width:100%;max-width:100%;min-width:0;box-sizing:border-box">'
         '<a class="mba-btn" href="../bot-store/" style="flex:1 1 auto;max-width:100%;box-sizing:border-box;background:linear-gradient(135deg,#10b981,#34d399);color:#031811;box-shadow:0 4px 14px rgba(16,185,129,.4)">🛒 Open Full Bot Store →</a>'
@@ -364,8 +364,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         # Card 2: $59 2. AgentScout SEO & AEO Growth Auditor Bot — Neon Electric Gold / Yellow (#eab308 / #facc15)
         '<div class="mba-card neon-gold">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#facc15;text-shadow:0 0 14px rgba(250,204,21,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(234,179,8,.22);border:1.5px solid #facc15;color:#fef9c3;box-shadow:0 0 12px rgba(234,179,8,.4)">🟡 Bot #2 · Neon Gold</span></div>'
@@ -375,8 +376,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy AgentScout SEO &amp; AEO Growth Auditor Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         # Card 3: $59 Market & Launch Intel Bot — Neon Sunset Orange (#f97316 / #fb923c)
         '<div class="mba-card neon-orange">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#fb923c;text-shadow:0 0 14px rgba(251,146,60,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(249,115,22,.22);border:1.5px solid #fb923c;color:#ffedd5;box-shadow:0 0 12px rgba(249,115,22,.4)">🟠 Bot #3 · Neon Sunset Orange</span></div>'
@@ -386,8 +388,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/4gM8wQelt11568RaDFe7m06" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy AgentScout Market &amp; Launch Intel Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         # Card 4: $69 CEO Coordinator Bot — Neon Crimson Red / Coral (#ef4444 / #f87171)
         '<div class="mba-card neon-red">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#f87171;text-shadow:0 0 14px rgba(248,113,113,.45)">$69 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(239,68,68,.22);border:1.5px solid #f87171;color:#fee2e2;box-shadow:0 0 12px rgba(239,68,68,.4)">🔴 Bot #4 · Neon Crimson Red</span></div>'
@@ -397,8 +400,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy AgentScout CEO Coordinator Bot ($69) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         '</div>'
         # Card 5: $149 Full 4-Bot Bundle — Neon Mint-Emerald (#10b981 / #34d399)
         '<div class="mba-bundle">'

@@ -48,7 +48,9 @@ class PriceConfigTest(unittest.TestCase):
         self.assertIn("Refund policy", page)
         self.assertIn('href="refunds.html"', page)
         self.assertIn("Questions? Email support@agentscouthq.com", page)
-        self.assertNotIn("<form", page.lower())
+        # The shared footer newsletter form is the only form. The report itself is a Stripe link.
+        without_newsletter = re.sub(r'<form class="nlform\b.*?</form>', "", page, flags=re.S | re.I)
+        self.assertNotIn("<form", without_newsletter.lower())
         self.assertNotIn("noindex", page[:2500])
         self.assertIn("styles.css?v=", page)
         self.assertIn("mcp-test-report.css?v=", page)
