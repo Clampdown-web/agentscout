@@ -3,9 +3,9 @@
    Strict regions (from the Worker's /geo; any failure counts as strict): banner with Accept all / Reject all /
    Customize, and nothing optional runs until the visitor chooses. Elsewhere, when that banner is not already
    on the page: a small dismissible notice, analytics and embeds on by default, opt-out one tap away.
-   The homepage paints the banner before region is known. While it is visible the stats notice stays hidden,
-   and analytics stays off so the banner copy stays true. After a choice, the notice shows only if analytics
-   is still on. The choice is kept in localStorage "as_consent". */
+   Production pages paint the choice banner before region is known. While it is visible the stats notice
+   stays hidden, and analytics stays off so the banner copy stays true. After a choice, the notice shows
+   only if analytics is still on. The choice is kept in localStorage "as_consent". */
 (function(){
   var KEY="as_consent",V=1,GEO="https://api.agentscouthq.com/geo",subs=[];
   var S={ready:false,decided:false,strict:true,analytics:false,embeds:false};
@@ -37,20 +37,24 @@
   '.as-sw{appearance:none;-webkit-appearance:none;flex:none;width:42px;height:24px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;margin:2px 0 0;transition:background .15s}.as-sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}.as-sw:checked{background:var(--accent)}.as-sw:checked::after{left:21px}.as-sw:disabled{opacity:.6;cursor:not-allowed}.as-sw:focus-visible,.as-bar .btn:focus-visible,.as-dlg .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}'+
   '.as-dlg .as-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}@media(max-width:640px){.as-bar{flex-wrap:wrap;gap:8px;bottom:calc(8px + env(safe-area-inset-bottom));width:calc(100% - 16px);padding:9px 12px}.as-bar .as-row{width:100%}.as-bar .as-row .btn,.as-dlg .as-row .btn{flex:1}.as-note{left:8px;right:auto;width:auto;max-width:calc(100% - 16px);border-radius:12px;padding:8px 44px 8px 12px}.as-note .as-actions{display:flex;margin-top:2px}}'+
   '.as-bar:not(.as-note)~.as-note{display:none!important}'+
+  '.as-bar:not(.as-note){position:relative;left:auto;right:auto;bottom:auto;transform:none;z-index:1;width:calc(100% - 32px);max-width:1120px;margin:8px auto}'+
+  '.as-bar.as-note{position:relative;left:auto;right:auto;bottom:auto;transform:none;z-index:1;width:auto;max-width:min(420px,calc(100% - 32px));margin:8px 16px}'+
+  'html.as-pad:has(.as-bar) body{padding-bottom:0}html.as-pad:has(.as-bar) .scrollbtns{bottom:calc(12px + env(safe-area-inset-bottom))}'+
   '@media (max-height:520px){.as-bar:not(.as-note){position:relative;left:auto;right:auto;bottom:auto;transform:none;z-index:1;width:calc(100% - 32px);max-width:1120px;margin:8px auto}html.as-pad:has(.as-bar:not(.as-note)) body{padding-bottom:0}}';
   var st=document.createElement("style");st.textContent=css;document.head.appendChild(st);
 
   function el(h){var d=document.createElement("div");d.innerHTML=h.trim();return d.firstChild}
   var bar=null,lastFocus=null;
   var ro=null;
-  function pad(){var r=document.documentElement;if(!bar){r.classList.remove("as-pad");r.style.removeProperty("--as-pad");return}r.style.setProperty("--as-pad",(bar.offsetHeight+24)+"px");r.classList.add("as-pad")}
-  function mount(){document.body.appendChild(bar);pad();if(window.ResizeObserver){ro=new ResizeObserver(pad);ro.observe(bar)}else window.addEventListener("resize",pad)}
+  function pad(){var r=document.documentElement;if(!bar){r.classList.remove("as-pad");r.style.removeProperty("--as-pad");return}var fixed=false;try{fixed=getComputedStyle(bar).position==="fixed"}catch(e){}r.style.setProperty("--as-pad",fixed?(bar.offsetHeight+24)+"px":"0px");r.classList.add("as-pad")}
+  function attach(node){if(node.isConnected)return;var first=document.body.firstChild;if(first)document.body.insertBefore(node,first);else document.body.appendChild(node)}
+  function mount(){attach(bar);pad();if(window.ResizeObserver){ro=new ResizeObserver(pad);ro.observe(bar)}else window.addEventListener("resize",pad)}
   function closeBar(){if(ro){ro.disconnect();ro=null}window.removeEventListener("resize",pad);document.querySelectorAll(".as-bar").forEach(function(n){n.remove()});bar=null;pad()}
   var PRIV=relRoot()+"privacy.html";
   function relRoot(){var s=document.querySelector('script[src*="consent.js"]');return s?s.getAttribute("src").replace(/consent\.js.*$/,""):""}
   function wireBanner(node){
     bar=node;
-    if(!node.isConnected) document.body.appendChild(node);
+    attach(node);
     if(node.dataset.asWired){pad();return}
     node.dataset.asWired="1";
     node.addEventListener("click",function(e){var t=e.target.closest("[data-a]");if(!t)return;var a=t.getAttribute("data-a");if(a==="all")set(1,1);else if(a==="none")set(0,0);else if(a==="custom")openPicker()});
@@ -96,13 +100,12 @@
 
   function start(strict){if(S.decided)return;S.strict=strict;S.ready=true;
     var painted=document.querySelector(".as-bar:not(.as-note)");
-    var home=!!document.getElementById("main");
     if(strict){S.analytics=false;S.embeds=false;emit();showBanner()}
-    else if(painted&&home){
-      // Homepage paints the banner before region is known. Keep that choice.
+    else if(painted){
+      // The page already painted the choice banner. Keep it, and keep analytics off,
+      // so the notice does not replace that banner on a first visit.
       S.analytics=false;S.embeds=false;noticeAfter=true;emit();showBanner()
     }else{
-      if(painted)painted.remove();
       S.analytics=true;S.embeds=true;emit();showNotice()
     }}
   var saved=load();

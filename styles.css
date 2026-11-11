@@ -1148,6 +1148,9 @@ body.home #dir-stats{box-sizing:border-box;--as-free:max(0px,(100% - 1120px) / 2
 .vc-chip{display:inline-flex;align-items:baseline;gap:6px;padding:5px 12px;border-radius:999px;font-size:13px;border:1px solid var(--line)}
 .vc p{margin:0 0 8px}
 .vc-lbl{display:block;margin:12px 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+/* Down-server names are separate links with no whitespace between tags. Without a gap they read as one string. */
+.vc-pills{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;margin:0;min-width:0;max-width:100%}
+.vc-pills .vc-pill{flex:0 1 auto;min-width:0;max-width:100%;padding:6px 10px;white-space:normal;overflow-wrap:anywhere;line-height:1.35;text-decoration:none;box-sizing:border-box;text-align:left;justify-content:flex-start}
 .vc-tl{list-style:none;margin:0 0 10px;padding:0 0 0 16px;border-left:2px solid var(--line)}
 .vc-tl li{position:relative;margin:0 0 8px;padding:0;font-size:13px}
 .vc-tl li:before{content:"";position:absolute;left:-21px;top:.45em;width:8px;height:8px;border-radius:50%;background:#22c55e}
@@ -1204,7 +1207,14 @@ footer.footcols .footbase .logo,footer.footcols .footmeta{justify-content:center
   .as-bar .as-row{width:100%}
   .as-bar .as-row .btn{flex:1}
 }
-/* Short viewports: a fixed bar covers the search field and the category chips. Keep the first-visit banner in normal flow, above the nav, so it takes space instead of painting over the page. consent.js repeats this rule. */
+/* The choice banner and the compact stats note take space in the page, above the nav.
+   A fixed bar covers the reachability card, Services, and the lower comparison rows, and body padding only clears the very end of the scroll.
+   Short screens (max-height 520px) use this same in-flow placement, so the banner still does not cover #q or .hero-chips.
+   consent.js repeats this rule. */
+.as-bar:not(.as-note){position:relative;left:auto;right:auto;bottom:auto;transform:none;z-index:1;width:calc(100% - 32px);max-width:1120px;margin:8px auto}
+.as-bar.as-note{position:relative;left:auto;right:auto;bottom:auto;transform:none;z-index:1;width:auto;max-width:min(420px,calc(100% - 32px));margin:8px 16px}
+html.as-pad:has(.as-bar) body{padding-bottom:0}
+html.as-pad:has(.as-bar) .scrollbtns{bottom:calc(12px + env(safe-area-inset-bottom))}
 @media (max-height:520px){
   .as-bar:not(.as-note){position:relative;left:auto;right:auto;bottom:auto;transform:none;z-index:1;width:calc(100% - 32px);max-width:1120px;margin:8px auto}
   html.as-pad:has(.as-bar:not(.as-note)) body{padding-bottom:0}
