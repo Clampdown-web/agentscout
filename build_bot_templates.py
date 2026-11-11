@@ -293,6 +293,8 @@ section.mba-sec,.bt section.mba-sec{margin:14px 0 26px;padding:22px;border-radiu
 .mba-list{list-style:none;padding:0 8px;margin:10px auto 14px;text-align:center;box-sizing:border-box;font-size:12.5px;line-height:1.5;color:#e7e5e4;width:100%}
 .mba-list li{margin-bottom:5px}
 .mba-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px;width:100%;justify-content:center}
+.mba-actions,.mba-bundle-ctas{min-width:0;max-width:100%;box-sizing:border-box}
+.mba-actions .paynote,.mba-bundle-ctas .paynote,p.paynote{flex:1 1 100%;min-width:0;max-width:calc(100vw - 48px);width:100%;white-space:normal;overflow-wrap:anywhere;box-sizing:border-box}
 .mba-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:800;text-decoration:none;min-height:42px;flex:1 1 auto;text-align:center}
 .mba-bundle{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:22px 20px;border-radius:12px;background:linear-gradient(135deg,rgba(16,185,129,.22),rgba(132,204,22,.14));border:2px solid #10b981;box-shadow:0 10px 30px rgba(16,185,129,.28),0 0 22px rgba(52,211,153,.28);box-sizing:border-box}
 .mba-bundle-copy{width:100%;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -364,8 +366,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         # Card 2: $59 2. AgentScout SEO & AEO Growth Auditor Bot — Neon Electric Gold / Yellow (#eab308 / #facc15)
         '<div class="mba-card neon-gold">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#facc15;text-shadow:0 0 14px rgba(250,204,21,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(234,179,8,.22);border:1.5px solid #facc15;color:#fef9c3;box-shadow:0 0 12px rgba(234,179,8,.4)">🟡 Bot #2 · Neon Gold</span></div>'
@@ -375,8 +378,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy AgentScout SEO &amp; AEO Growth Auditor Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         # Card 3: $59 Market & Launch Intel Bot — Neon Sunset Orange (#f97316 / #fb923c)
         '<div class="mba-card neon-orange">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#fb923c;text-shadow:0 0 14px rgba(251,146,60,.45)">$59 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(249,115,22,.22);border:1.5px solid #fb923c;color:#ffedd5;box-shadow:0 0 12px rgba(249,115,22,.4)">🟠 Bot #3 · Neon Sunset Orange</span></div>'
@@ -386,8 +390,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/4gM8wQelt11568RaDFe7m06" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy AgentScout Market &amp; Launch Intel Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         # Card 4: $69 CEO Coordinator Bot — Neon Crimson Red / Coral (#ef4444 / #f87171)
         '<div class="mba-card neon-red">'
         '<div><div class="mba-card-top"><span class="mba-price" style="color:#f87171;text-shadow:0 0 14px rgba(248,113,113,.45)">$69 <small>one-time · sold separately</small></span><span class="mba-tag" style="background:rgba(239,68,68,.22);border:1.5px solid #f87171;color:#fee2e2;box-shadow:0 0 12px rgba(239,68,68,.4)">🔴 Bot #4 · Neon Crimson Red</span></div>'
@@ -397,8 +402,9 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy AgentScout CEO Coordinator Bot ($69) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'
+        '</div>'
         + pay_note("../") +
-        '</div></div>'
+        '</div>'
         '</div>'
         # Card 5: $149 Full 4-Bot Bundle — Neon Mint-Emerald (#10b981 / #34d399)
         '<div class="mba-bundle">'

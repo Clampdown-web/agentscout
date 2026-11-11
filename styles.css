@@ -1180,3 +1180,5 @@ footer.footcols .footbase .logo,footer.footcols .footmeta{justify-content:center
   .as-bar .as-row{width:100%}
   .as-bar .as-row .btn{flex:1}
 }
+
+p.paynote{flex:1 1 100%;min-width:0;max-width:calc(100vw - 48px);width:100%;white-space:normal;overflow-wrap:anywhere;box-sizing:border-box}

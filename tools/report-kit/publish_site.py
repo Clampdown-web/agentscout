@@ -31,7 +31,7 @@ import csp as site_csp  # noqa: E402
 CSS_V = "202611111902"
 ASSET_V = re.search(r'ASSET_V = "(\d+)"', (ROOT / "build_tasks.py").read_text(encoding="utf-8")).group(1)
 PAYNOTE = (
-    '<p class="paynote" style="flex:1 0 100%;box-sizing:border-box;margin:8px auto 0;max-width:40rem;width:100%;'
+    '<p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;'
     'font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">'
     "EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. "
     '<a href="refunds.html">Refund policy</a>.</p>'
