@@ -171,6 +171,7 @@ AS.fixImgs=function(root){root.querySelectorAll(".ico img").forEach(function(i){
    form as agentscout.beehiiv.com/subscribe). No API key. utm_source=agentscout.
    A plain .nl-fallback link is the only off-site signup. */
 (function(){
+if(window.__asNl)return;window.__asNl=1;
 var EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function msgEl(form){
   var box=form.closest(".nlsign")||form.parentNode;
@@ -242,6 +243,8 @@ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",fun
 
 /* Icon-only hamburger at every width. Full-height sheet, focus trap, Escape closes. */
 (function(){
+  if(window.__asNav)return;
+  window.__asNav=1;
   var nav=document.querySelector("nav.sitenav");
   if(!nav)return;
   var btn=nav.querySelector(".navburger");

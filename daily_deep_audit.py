@@ -770,8 +770,17 @@ def _shared_script_problems() -> tuple[list[str], list[str]]:
             required.append("share.js")
         missing = []
         positions = []
-        # Homepage injects the shared scripts after first paint so they are not on the LCP path.
+        # Homepage still defers consent/track/share/generate until after first paint.
+        # app.js itself has to be a real tag: the menu button is dead without it,
+        # and it must not also sit in the after-paint list (that binds the menu twice).
         late = rel == "index.html" and "dispatchEvent(new Event(\"as-scripts\"))" in text
+        if rel == "index.html":
+            if not re.search(r'<script\b[^>]*\bsrc="app\.js\?v=' + re.escape(version) + r'"[^>]*>\s*</script>', text):
+                problems.append(f"{rel} menu toggle must load app.js?v={version} as a script tag")
+            if re.search(r'var urls=\[[^\]]*"app\.js\?v=', text):
+                problems.append(f"{rel} loads app.js twice (script tag and after-paint list)")
+        if rel == "sponsor.html" and "api/tools.json" in text:
+            problems.append(f"{rel} still fetches api/tools.json; metrics.json already has the counts")
         for name in required:
             defer = r" defer" if name in ("consent.js", "track.js") else ""
             if late:
