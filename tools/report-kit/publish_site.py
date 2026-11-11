@@ -331,8 +331,8 @@ def patch_refunds(doc: dict) -> None:
     short = "<li>An MCP server test report, an AI visibility check, or the bundle of both is fully refunded if you ask before testing starts, or if we cannot run the test at all. Once the report is delivered, there is no refund, and you get one free retest or fix check of the same server or site within 30 days.</li>"
     if short not in text:
         text = text.replace(
-            "<li>The Directory Launch Pack is a paid add-on, not a download. You get a full refund if you ask before we start the submissions. After we start, the refund is prorated, or there is no refund once the work is delivered.</li></ul>",
-            "<li>The Directory Launch Pack is a paid add-on, not a download. You get a full refund if you ask before we start the submissions. After we start, the refund is prorated, or there is no refund once the work is delivered.</li>" + short + "</ul>",
+            "<li>Directory submissions included with the $99 weekly sponsorship follow the sponsorship refund. If you paid for those submissions on their own before this change, you get a full refund if you ask before we start. After we start, the refund is prorated, or there is no refund once the work is delivered.</li></ul>",
+            "<li>Directory submissions included with the $99 weekly sponsorship follow the sponsorship refund. If you paid for those submissions on their own before this change, you get a full refund if you ask before we start. After we start, the refund is prorated, or there is no refund once the work is delivered.</li>" + short + "</ul>",
             1,
         )
     parts = [f'{p["name"]} is ${p["price"]}, or ${p["intro"]} intro' for p in doc["products"]]

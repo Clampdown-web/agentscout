@@ -202,11 +202,15 @@ test("public MCP routes keep status, JSON-RPC shape, registry shape, and CORS", 
   assert.equal(typeof catsBody.result.structuredContent.categories[0].name, "string");
   assert.equal(typeof catsBody.result.structuredContent.categories[0].tools, "number");
 
-  const packs = await rpc({ jsonrpc: "2.0", id: 7, method: "tools/call", params: { name: "list_packages", arguments: { category: "addon" } } });
+  const packs = await rpc({ jsonrpc: "2.0", id: 7, method: "tools/call", params: { name: "list_packages", arguments: { category: "listing_package" } } });
   const packsBody = await packs.json();
   assert.equal(packsBody.result.isError, false);
   assert.ok(packsBody.result.structuredContent.products.length >= 1);
-  assert.ok(packsBody.result.structuredContent.products.every((item) => item.group === "addon"));
+  assert.ok(packsBody.result.structuredContent.products.every((item) => item.group === "listing_package"));
+  const addons = await rpc({ jsonrpc: "2.0", id: 8, method: "tools/call", params: { name: "list_packages", arguments: { category: "addon" } } });
+  const addonsBody = await addons.json();
+  assert.equal(addonsBody.result.isError, false);
+  assert.deepEqual(addonsBody.result.structuredContent.products, []);
 
   const note = await rpc({ jsonrpc: "2.0", method: "notifications/initialized" });
   assert.equal(note.status, 202);

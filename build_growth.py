@@ -133,7 +133,7 @@ def how_it_started(tools, m):
 <p class="lede" style="margin-left:0;text-align:left">Founder-run, mostly automated with AI agents.</p>
 <p>I'm <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> (m lk). I make the calls. AI agents do most of the daily work: tool checks, listings, link and status checks, and reports.</p>
 <p>The starting catalog is {seed_n:,} tools dated {e(seed_a)} through {e(seed_b)}. As of {e(m.get("updated_display") or m.get("updated"))}, this site lists {comma(m["tools_count"])} tools, including {comma(m["mcp_servers_count"])} MCP servers, and {comma(m["templates_count"])} templates. Combined followers of @clampdown19 and @AgentScoutHQ: {comma(m["x_combined_followers"])}. Those figures are read from <a href="api/metrics.json">api/metrics.json</a> and the directory file when the page is built.</p>
-<p>Listing prices are $0, $15, $49, and $99 per week. The <a href="submit.html#launch-pack">Directory Launch Pack</a> is a separate $49 add-on, not a listing tier. Refunds are on the <a href="refunds.html">refund policy</a>.</p>
+<p>Listing prices are $0, $15, $49, and $99 per week. The $99 weekly sponsorship includes submissions to about 25 other AI directories, with a report of the links. Refunds are on the <a href="refunds.html">refund policy</a>.</p>
 <p>MCP server links are checked daily, around 7 AM PT. The <a href="mcp/status/">status page</a> shows up, down, and not-yet-checked counts from those checks. Updated daily, around 7 AM PT. A server with no check on file stays not yet checked.</p>
 <p>More</p><ul class="guide-list"><li><a href="about.html">About</a></li><li><a href="launches/">This week's launches</a></li><li><a href="submit.html">Submit a tool</a></li><li><a href="refunds.html">Refunds</a></li></ul>
 </section>'''
@@ -670,13 +670,13 @@ def llms():
     import build_seo
     build_seo.llms_extra()
     s = open("llms.txt", encoding="utf-8").read()
-    if "Directory Launch Pack" not in s:
+    if "## Launches and status" not in s and "about 25 other AI directories" not in s:
         s += (
-            "\n## Launches, status, and the Directory Launch Pack\n\n"
+            "\n## Launches and status\n\n"
             f"- [How AgentScout started]({B}how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.\n"
             f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.\n"
             f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated daily, around 7 AM PT.\n"
-            f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {BS.LAUNCH_PACK_PROMISE} {BS.LAUNCH_PACK_ACCOUNTS} {BS.LAUNCH_PACK_SKIP} {BS.LAUNCH_PACK_LIMITS} Checkout: {BS.LAUNCH_PACK_URL} Refunds: {B}refunds.html\n"
+            f"- The $99 weekly sponsorship includes submissions to about 25 other AI directories, with a report of the links. Refunds: {B}refunds.html\n"
             f"- Fast-Track ($15) includes: {BS.FAST_TRACK_INDEX_LINE}\n"
         )
         open("llms.txt", "w", encoding="utf-8").write(s)
@@ -738,8 +738,11 @@ def main():
     import build_seo_new
     build_seo_new.unify_all_nav_and_footer()
     build_status.write_link_status_forward()
-    if BS.LAUNCH_PACK_URL not in open("api/products.json", encoding="utf-8").read():
-        raise SystemExit("Launch Pack URL missing from products.json")
+    products = open("api/products.json", encoding="utf-8").read()
+    if "28EfZidhp6lp9l3aDFe7m0f" in products or "6oU8wQ4KT4dh0OxeTVe7m0b" in products or "5kQ28s1yH5hl8gZ8vxe7m0c" in products:
+        raise SystemExit("retired checkout is still in products.json")
+    if BS.STRIPE_99 not in products:
+        raise SystemExit("$99 sponsor checkout missing from products.json")
     print("growth build done", len(extra), "urls")
 
 

@@ -149,7 +149,7 @@ def _agent_packs(base):
             "skill": "skills/" + card["skill"] + "/SKILL.md",
             "script": "scripts/" + card["script"],
             "routines": [r["id"] for r in card["routines"]],
-            "description": card["promise"] + " $35 one-time. Volume tiers: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
+            "description": card["promise"] + " $35 one-time. Volume tiers: 5 for $119, or all 25 for $349. Separate from the flagship $39/$59/$69 bots and the $149 bundle.",
             "zip": base + "/bot-packages/25-agent-packs/zips/" + card["slug"] + ".zip",
         })
     for key, tier in PACK_TIERS.items():
@@ -177,36 +177,8 @@ def _agent_packs(base):
 
 
 def _launch_pack_addon(B):
-    import build_sponsor as BS
-    description = " ".join([
-        BS.LAUNCH_PACK_PROMISE,
-        BS.LAUNCH_PACK_ACCOUNTS,
-        BS.LAUNCH_PACK_SKIP,
-        BS.LAUNCH_PACK_LIMITS,
-        BS.LAUNCH_PACK_INTAKE,
-    ])
-    return [{
-        "id": "directory-launch-pack",
-        "sku": "AS-ADDON-LAUNCH-49",
-        "name": "Directory Launch Pack",
-        "category": "addon",
-        "price_usd": 49,
-        "billing_model": "one_time",
-        "availability": "in_stock",
-        "badge": "Add-on, not a listing tier",
-        "turnaround": "Submitted within 7 days, follow-up report at 30 days",
-        "checkout_url": BS.LAUNCH_PACK_URL,
-        "page_url": B + "/submit.html#launch-pack",
-        "description": description,
-        "deliverables": [
-            BS.LAUNCH_PACK_PROMISE,
-            BS.LAUNCH_PACK_ACCOUNTS,
-            BS.LAUNCH_PACK_SKIP,
-            "Report of live and pending links; follow-up report at 30 days",
-            BS.LAUNCH_PACK_INTAKE,
-        ],
-        "limits": BS.LAUNCH_PACK_LIMITS,
-    }]
+    """Directory submissions are included with the $99 sponsorship. No separate checkout."""
+    return []
 
 
 def _report_catalog():
@@ -441,13 +413,14 @@ def build_commerce_files(tools_data):
                 "turnaround": f"Immediate activation across all {n_pages:,}+ pages + Tuesday newsletter",
                 "checkout_url": "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01",
                 "page_url": B + "/sponsor.html",
-                "description": f"Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all {n_pages:,}+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv.",
+                "description": f"Everything in the $49 package plus 7 days in the exclusive sitewide top sponsor banner across all {n_pages:,}+ pages on agentscouthq.com, homepage #makers showcase card, and the #1 Sponsored by slot at the top of Tuesday's AgentScout Weekly newsletter on Beehiiv. Includes submissions to about 25 other AI directories, with a report of the links.",
                 "deliverables": [
                     "Everything in 30-Day Category Pin ($49) included",
                     f"7 days in the exclusive sitewide top sponsor bar across all {n_pages:,}+ pages",
                     "Featured card in the homepage Makers showcase (#makers)",
                     "Top 'Sponsored by' slot in Tuesday's AgentScout Weekly newsletter",
                     "Custom HUD video card spotlight on X",
+                    "Submissions to about 25 other AI directories, with a report of the links",
                 ],
             },
         ],
@@ -578,8 +551,6 @@ def build_commerce_files(tools_data):
             f"The Bot Store also sells 25 role-trained AI Agent Packs at $35 each "
             f"(https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09), "
             f"5 for $119 (https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a), "
-            f"10 for $199 (https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b), "
-            f"20 for $299 (https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c), "
             f"and all 25 for $349 (https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d). "
             f"Those prices are separate from the flagship bots. "
             f"Refunds: {B}/refunds.html."

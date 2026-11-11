@@ -7,7 +7,7 @@ inserts the packs section once. A second run replaces the same marked block,
 so the section is never duplicated.
 
 Nav, footer, neon pills, and JSON-LD already on the page are left in place.
-Stripe Payment Links for the $35 / $119 / $199 / $299 / $349 packs are the
+Stripe Payment Links for the $35 / $119 / $349 packs are the
 same Payment Links as the Bot Store.
 """
 from __future__ import annotations
@@ -23,8 +23,6 @@ ROOT = Path(__file__).resolve().parents[1]
 STRIPE = {
     35: "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
     119: "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
-    199: "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
-    299: "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
     349: "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
 }
 
@@ -41,7 +39,7 @@ SECTION_INNER = f'''<section id="{SECTION_ID}">
 <h2 style="font-size:16px;margin:28px 0 10px">25 AI Agent Packs</h2>
 <p>Every one of the <a href="../bot-store/#ai-agent-packs">25 AI Agent Packs ($35–$349) on the AgentScout Bot Store</a> includes a ready-to-import <code>LOVABLE.md</code> project knowledge file and skill ZIP compatible with Lovable alongside Grok Bot, Claude Code, Cursor, and Codex.</p>
 <h2 style="font-size:16px;margin:28px 0 10px">Pre-Trained Lovable AI Agent Packs &amp; MCP Registry</h2>
-<p>All <a href="../bot-store/#ai-agent-packs">25 Pre-Trained AI Agent Packs</a> ({_pay(35, "$35")} single, {_pay(119, "$119")} for 5, {_pay(199, "$199")} for 10, {_pay(299, "$299")} for 20, or {_pay(349, "$349")} for all 25) and our <a href="../bot-store/">4 Flagship Pro Bots ($39–$149)</a> include a ready-to-paste <code>LOVABLE.md</code> Custom Knowledge file plus an importable <code>SKILL.md</code> playbook (Workspace Settings → Skills → Add → Upload ZIP). You can also connect AgentScout's MCP Registry directly in Lovable at <code>https://mcp.agentscouthq.com/v0/servers</code>.</p>
+<p>All <a href="../bot-store/#ai-agent-packs">25 Pre-Trained AI Agent Packs</a> ({_pay(35, "$35")} single, {_pay(119, "$119")} for 5, or {_pay(349, "$349")} for all 25) and our <a href="../bot-store/">4 Flagship Pro Bots ($39–$149)</a> include a ready-to-paste <code>LOVABLE.md</code> Custom Knowledge file plus an importable <code>SKILL.md</code> playbook (Workspace Settings → Skills → Add → Upload ZIP). You can also connect AgentScout's MCP Registry directly in Lovable at <code>https://mcp.agentscouthq.com/v0/servers</code>.</p>
 </section>'''
 
 BLOCK = f"{MARK_START}{SECTION_INNER}{MARK_END}"

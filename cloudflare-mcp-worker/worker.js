@@ -57,8 +57,6 @@ const PRICE_NOTE = "Pricing is as each maker states it; confirm on the maker's s
 const PACK_TIER_URLS = {
   tier_1: "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
   tier_5: "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
-  tier_10: "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
-  tier_20: "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
   tier_25: "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
 };
 
@@ -124,12 +122,12 @@ const TOOL_DEFS = [
   {
     name: "list_packages",
     title: "List AgentScout maker packages & pre-trained bots",
-    description: "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, $49 category pin, $99/wk sponsor), the separate $49 Directory Launch Pack add-on, and the Made by AgentScout pre-trained bot lineup. The Launch Pack is not a listing tier.",
+    description: "List AgentScout's 4 maker listing packages ($0, $15 Fast-Track with a same-day Bing and IndexNow ping, $49 category pin, $99/wk sponsor) and the Made by AgentScout pre-trained bot lineup. The $99 weekly sponsorship includes submissions to about 25 other AI directories. That work is not a separate listing tier.",
     inputSchema: {
       type: "object",
       additionalProperties: false,
       properties: {
-        category: { type: "string", enum: ["all", "listing_package", "addon", "bot_template", "agent_pack"], description: "Filter by product category (default 'all'). 'addon' is the Directory Launch Pack, not a listing tier." },
+        category: { type: "string", enum: ["all", "listing_package", "addon", "bot_template", "agent_pack"], description: "Filter by product category (default 'all'). Directory submissions come with the $99 weekly sponsor, not a separate addon." },
       },
     },
     annotations: { readOnlyHint: true, openWorldHint: false, idempotentHint: true },

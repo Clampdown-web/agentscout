@@ -251,6 +251,10 @@ components:
                 type: "boolean"
               submitted:
                 type: "string"
+              pricing_detail:
+                type: "string"
+              verified:
+                type: "string"
             required:
               - "name"
               - "slug"
@@ -427,54 +431,7 @@ components:
               - "description"
         addons:
           type: "array"
-          items:
-            type: "object"
-            properties:
-              id:
-                type: "string"
-              sku:
-                type: "string"
-              name:
-                type: "string"
-              category:
-                type: "string"
-              price_usd:
-                type: "integer"
-              billing_model:
-                type: "string"
-              availability:
-                type: "string"
-              badge:
-                type: "string"
-              turnaround:
-                type: "string"
-              checkout_url:
-                type: "string"
-              page_url:
-                type: "string"
-              description:
-                type: "string"
-              deliverables:
-                type: "array"
-                items:
-                  type: "string"
-              limits:
-                type: "string"
-            required:
-              - "id"
-              - "sku"
-              - "name"
-              - "category"
-              - "price_usd"
-              - "billing_model"
-              - "availability"
-              - "badge"
-              - "turnaround"
-              - "checkout_url"
-              - "page_url"
-              - "description"
-              - "deliverables"
-              - "limits"
+          items: {}
         reports:
           type: "array"
           items:
