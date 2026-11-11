@@ -149,8 +149,8 @@ def repo_table(items,d="../",title="GitHub repos"):
     haspush=any(r[3] for r in rows)
     th='<tr><th scope="col">Repo</th><th scope="col">GitHub stars</th><th scope="col">Licence</th>'+('<th scope="col">Last push</th>' if haspush else "")+'</tr>'
     tr="".join(f'<tr><td><a href="{d}tools/{x["slug"]}.html">{e(x["name"])}</a> <a class="ghx" href="{e(x["github"])}" target="_blank" rel="noopener noreferrer" aria-label="{e(x["name"])} on GitHub">↗</a></td><td>{s:,}</td><td>{e(l) or "—"}</td>'+(f'<td>{e(p[:10]) or "—"}</td>' if haspush else "")+'</tr>' for x,s,l,p in rows)
-    note=f"Top {len(rows)} of {total} by stars." if total>len(rows) else f"{total} repos."
-    return (f'<h2 id="repos" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(title)} <span style="color:var(--muted);font-weight:400">({total})</span></h2>'
+    note=f"Top {len(rows):,} of {total:,} by stars." if total>len(rows) else f"{total:,} repos."
+    return (f'<h2 id="repos" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(title)} <span style="color:var(--muted);font-weight:400">({total:,})</span></h2>'
             f'<div style="overflow-x:auto"><table class="cmp" style="width:100%;border-collapse:collapse;font-size:14px"><thead>{th}</thead><tbody>{tr}</tbody></table></div>'
             f'<p class="muted" style="font-size:13px;margin:6px 0 0">{note} Stars and licence come from each repo, checked when the listing was last verified.</p>')
 OPEN={"Open source","Open source + cloud","Open standard","Open weights"}
@@ -161,7 +161,7 @@ def price_line(items):
     o=sum(x["pricing"] in OPEN for x in items); s=sum(x["pricing"] in SRC for x in items)
     f=sum(x["pricing"] in FREE for x in items); p=sum(x["pricing"] in PAID for x in items); u=len(items)-o-s-f-p
     parts=[(o,"open source"),(s,"source-available"),(f,"free or freemium"),(p,"paid, usage-based or enterprise"),(u,"pricing on the maker's site")]
-    return ", ".join(f"{n} {l}" for n,l in parts if n)
+    return ", ".join(f"{n:,} {l}" for n,l in parts if n)
 def dump(t):
     json.dump({x["slug"]:tags(x) for x in t},open("subtasks.json","w"),indent=0,ensure_ascii=False)
 # One-line explanations used on sub-task pages (only sub-tasks that can get a page need one).

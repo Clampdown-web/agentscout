@@ -121,9 +121,9 @@ def _grid(items,task=None):
     r=build_subtasks.sections(items,task=task)
     if not r: return f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(items))}</div>'
     secs,other=r
-    chips='<div class="badges stchips" role="navigation" aria-label="Sub-tasks" style="margin:10px 0 4px">'+"".join(f'<a class="b uc" href="#st-{sl}">{e(l[0].upper()+l[1:])} ({len(v)})</a>' for sl,l,v in secs)+(f'<a class="b uc" href="#st-more">More tools ({len(other)})</a>' if other else "")+('<a class="b uc" href="#repos">GitHub repos</a>' if len(build_subtasks.repo_rows(items)[0])>=3 else "")+'</div>'
+    chips='<div class="badges stchips" role="navigation" aria-label="Sub-tasks" style="margin:10px 0 4px">'+"".join(f'<a class="b uc" href="#st-{sl}">{e(l[0].upper()+l[1:])} ({len(v):,})</a>' for sl,l,v in secs)+(f'<a class="b uc" href="#st-more">More tools ({len(other):,})</a>' if other else "")+('<a class="b uc" href="#repos">GitHub repos</a>' if len(build_subtasks.repo_rows(items)[0])>=3 else "")+'</div>'
     sp={(p_,sub):sl for sl,p_,sub,_ in SUBP}
-    h=lambda i,l,n:f'<h2 id="st-{i}" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(l)} <span style="color:var(--muted);font-weight:400">({n})</span>'+(f' <a href="{sp[(task,i)]}.html" style="font-size:14px;font-weight:500;margin-left:6px">See the full list →</a>' if (task,i) in sp else "")+'</h2>'
+    h=lambda i,l,n:f'<h2 id="st-{i}" style="font-size:18px;margin:32px 0 10px;scroll-margin-top:84px">{e(l)} <span style="color:var(--muted);font-weight:400">({n:,})</span>'+(f' <a href="{sp[(task,i)]}.html" style="font-size:14px;font-weight:500;margin-left:6px">See the full list →</a>' if (task,i) in sp else "")+'</h2>'
     out=chips+"".join(h(sl,l[0].upper()+l[1:],len(v))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(v))}</div>' for sl,l,v in secs)
     if other: out+=h("more","More tools",len(other))+f'<div class="grid">{"".join(card(x) for x in build_extras.newfirst(other))}</div>'
     return out
@@ -155,19 +155,19 @@ _MEDIA_PTR={"making-images-and-design":'<p style="margin:0 0 6px;font-size:14px"
 # target for the head keyword; the task page answers "how do I add X", grouped by use case.
 _TASK_ANGLE={"agent-memory":{"h1":"How to add long-term memory to AI agents: tools by use case",
   "title":"Add long-term memory to AI agents: tools by use case (2026)",
-  "desc":lambda n,items:f"How to add long-term memory to an AI agent: {n} tools grouped by use case, from RAG over documents to local memory and codebase context."[:158],
+  "desc":lambda n,items:f"How to add long-term memory to an AI agent: {n:,} tools grouped by use case, from RAG over documents to local memory and codebase context."[:158],
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the ranked list of memory and RAG products? See the <a href="../categories/memory-rag.html">Memory &amp; RAG category</a>.</p>'},
  "personal-assistants":{"h1":"What a personal AI assistant can do for you: tools by use case",
   "title":"Personal AI assistants by use case: desktop, chat, local (2026)",
-  "desc":lambda n,items:f"Pick a personal AI assistant by what you need it to do: {n} tools grouped by use case, from desktop control and chat apps to local and private setups."[:158],
+  "desc":lambda n,items:f"Pick a personal AI assistant by what you need it to do: {n:,} tools grouped by use case, from desktop control and chat apps to local and private setups."[:158],
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Want the full ranked list? See the <a href="../categories/personal-agents.html">Personal agents category</a>.</p>'},
  "crypto-and-wallets":{"h1":"Crypto AI agents by job: trading, wallets, payments and data",
   "title":"Crypto AI agents by job: trading, wallets and payments (2026)",
-  "desc":lambda n,items:f"Find a crypto AI agent by job: {n} tools grouped into trading agents, agent wallets, agent payments and on-chain data MCP servers. Not financial advice."[:158],
+  "desc":lambda n,items:f"Find a crypto AI agent by job: {n:,} tools grouped into trading agents, agent wallets, agent payments and on-chain data MCP servers. Not financial advice."[:158],
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Want every crypto tool in one list? See the <a href="../categories/crypto.html">Crypto category</a>.</p>'},
  "connecting-tools-mcp":{"h1":"How to connect AI agents to your tools with MCP, by use case",
   "title":"Connect AI agents to your tools with MCP: picks by use case (2026)",
-  "desc":lambda n,items:f"How to connect an AI agent to apps and data with MCP: {n} servers, gateways and tools grouped by job, from databases to browsers and auth."[:158],
+  "desc":lambda n,items:f"How to connect an AI agent to apps and data with MCP: {n:,} servers, gateways and tools grouped by job, from databases to browsers and auth."[:158],
   "pointer":'<p style="margin:0 0 6px;font-size:14px">Looking for the full list of MCP servers? See the <a href="../categories/mcp-servers.html">MCP servers category</a>.</p>'}}
 def task_title(s,label):
     if s in _TT_FULL: return _TT_FULL[s]
@@ -189,7 +189,7 @@ def subtask_title(parent,sub,lab,plabel,n):
     ctx=_SUB_CTX.get(parent,plabel)
     stop={"and","for","the","with","tool","tools","agen","ai"}
     overlap={_stem(w) for w in noun.split()}&{_stem(w) for w in ctx.split()}-stop
-    return f"{n} AI {noun}" if overlap else f"{n} {noun} for {ctx}"
+    return f"{n:,} AI {noun}" if overlap else f"{n:,} {noun} for {ctx}"
 def subtask_h1(parent,sub,lab,plabel):
     t=subtask_title(parent,sub,lab,plabel,0)[2:]
     return t[0].upper()+t[1:]
@@ -225,14 +225,14 @@ def _subpages_write(m):
         starred=[x for x in its if x.get("github_stars")][:3]
         from collections import Counter
         cats=Counter(x["category"] for x in its).most_common(3)
-        intro=(f"{e(build_subtasks.SUBDESC[sub])} Of the {len(pitems)} tools on our <a href=\"{p_}.html\">{e(plabel)}</a> page, {n} fit this narrower job. "
+        intro=(f"{e(build_subtasks.SUBDESC[sub])} Of the {len(pitems):,} tools on our <a href=\"{p_}.html\">{e(plabel)}</a> page, {n:,} fit this narrower job. "
                f"By pricing: {e(build_subtasks.price_line(its))}. "
                +(f"The most-starred open repos here are "+", ".join(f'<a href="../tools/{x["slug"]}.html">{e(x["name"])}</a> ({x["github_stars"]:,} stars)' for x in starred)+". " if starred else "")
                +"Most come from the "+", ".join(f'<a href="../categories/{build_extras.catslug(c)}.html">{e(c)}</a> ({k})' for c,k in cats)+" categor"+("ies." if len(cats)>1 else "y."))
         sibs=[(sl2,sub2,its2) for sl2,p2,sub2,its2 in SUBP if p2==p_ and sl2!=sl]
-        sibh=('<h2 style="font-size:16px;margin:32px 0 10px">More from '+e(plabel)+'</h2><div class="badges"><a class="b uc" href="'+p_+'.html">All '+e(plabel)+f' tools ({len(pitems)})</a>'+"".join(f'<a class="b uc" href="{sl2}.html">{e(_sublabel(sub2).capitalize())} ({len(i2)})</a>' for sl2,sub2,i2 in sibs)+'<a class="b uc" href="index.html">All tasks →</a></div>')
+        sibh=('<h2 style="font-size:16px;margin:32px 0 10px">More from '+e(plabel)+'</h2><div class="badges"><a class="b uc" href="'+p_+'.html">All '+e(plabel)+f' tools ({len(pitems):,})</a>'+"".join(f'<a class="b uc" href="{sl2}.html">{e(_sublabel(sub2).capitalize())} ({len(i2):,})</a>' for sl2,sub2,i2 in sibs)+'<a class="b uc" href="index.html">All tasks →</a></div>')
         top=its[:3]
-        faq=[(f"What are the best AI tools for {plabel} focused on {lab}?",f"We list {n}. The first three by GitHub stars and featured status are "+"; ".join(f"{x['name']}: {x['description']}" for x in top)),
+        faq=[(f"What are the best AI tools for {plabel} focused on {lab}?",f"We list {n:,}. The first three by GitHub stars and featured status are "+"; ".join(f"{x['name']}: {x['description']}" for x in top)),
              (f"Are there free or open-source options?",f"Yes: {build_subtasks.price_line(its)}. Pricing is as each maker states it." if any(x["pricing"] in build_subtasks.OPEN|build_subtasks.FREE for x in its) else f"Pricing breakdown: {build_subtasks.price_line(its)}.")]
         faqh='<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>'+"".join(f'<h3 style="font-size:15px;margin:16px 0 6px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / <a href="{p_}.html">{e(_cap(plabel))}</a> / {e(_cap(lab))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
@@ -255,7 +255,7 @@ def pages(t):
         _,label,_,_,_,intro=T; n=len(items); canon=f"{B}tasks/{s}.html"
         h1=f"{task_title(s,label)} (2026)"
         title=f"{task_title(s,label)} (2026) · AgentScout"
-        desc=f"Compare {n} AI agents and tools for {label}, including {', '.join(x['name'] for x in items[:3])}. Link-checked, with pricing as makers state it."[:158]
+        desc=f"Compare {n:,} AI agents and tools for {label}, including {', '.join(x['name'] for x in items[:3])}. Link-checked, with pricing as makers state it."[:158]
         _ang=_TASK_ANGLE.get(s)
         if _ang: h1,title,desc=_ang["h1"],_ang["title"]+" · AgentScout",_ang["desc"](n,items)
         rel=[(s2,T2) for s2,(T2,i2) in m.items() if s2!=s and len(set(id(a) for a in i2)&set(id(a) for a in items))>=2]
@@ -268,7 +268,7 @@ def pages(t):
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+_MEDIA_PTR.get(s,"")+
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n:,} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n:,} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+_MEDIA_PTR.get(s,"")+
               f'{_grid(items,s)}{ai_ref_cta_html("../")}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
@@ -276,7 +276,7 @@ def pages(t):
         open(f"tasks/{s}.html","w").write(shell("../",title,desc,canon,body,ld)); urls.append(canon)
     canon=B+"tasks/index.html"; title=f"AI Agents by Task: {len(m)} Jobs, Best Tools for Each · AgentScout"
     desc=f"Find the best AI agents for {len(m)} tasks, from writing code and browsing the web to voice agents, research and customer support."[:158]
-    tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(_cap(T[1]))}</h3></div><p>{len(items)} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
+    tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(_cap(T[1]))}</h3></div><p>{len(items):,} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
     body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / Tasks</div><section class="calm"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-workflow-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-workflow-infographic.mp4" type="video/mp4"></video></figure><div class="grid">{tiles}</div>{_subindex(m)}</section>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"AI agents by task","description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":canon}]},{"@type":"VideoObject","name":"3-Stage Autonomous AI Agent & MCP Production Pipeline","description":"Animated architecture breakdown showing how engineering teams chain MCP context servers, coding agents, and browser verification across tasks.","thumbnailUrl":B+"assets/animations/agentscout-workflow-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-workflow-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
     open("tasks/index.html","w").write(shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
@@ -1075,7 +1075,7 @@ def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):
 def about_page(t):
     import build_counts
     _c=build_counts.require(t); n=_c["tools"]; nc=_c["categories"]
-    inner=(f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p><h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="index.html#directory">directory</a>, <a href="categories/index.html">categories</a> or <a href="tasks/index.html">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p><p><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="https://agentscouthq.com">https://agentscouthq.com</a>, published in the official MCP Registry as <code>com.agentscouthq/directory</code> with SSE endpoint <code>https://mcp.agentscouthq.com/mcp</code> and Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (free, read-only, no API key required; unrelated to the paid x402 npm package). Machine-readable catalogs: <a href="llms.txt">llms.txt</a>, <a href="llms-full.txt">llms-full.txt</a>, and <a href="api/tools.json">api/tools.json</a>.</p>'
+    inner=(f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p><h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n:,} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="index.html#directory">directory</a>, <a href="categories/index.html">categories</a> or <a href="tasks/index.html">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p><p><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="https://agentscouthq.com">https://agentscouthq.com</a>, published in the official MCP Registry as <code>com.agentscouthq/directory</code> with SSE endpoint <code>https://mcp.agentscouthq.com/mcp</code> and Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (free, read-only, no API key required; unrelated to the paid x402 npm package). Machine-readable catalogs: <a href="llms.txt">llms.txt</a>, <a href="llms-full.txt">llms-full.txt</a>, and <a href="api/tools.json">api/tools.json</a>.</p>'
       f'<h2 {H2}>How tools are picked</h2><p>New tools are found every day. Our main sources are:</p><ul>'
       '<li><b>GitHub</b>: agent-related topics such as ai-agents, agent-framework, mcp-server, coding-agent and browser-agent.</li>'
       '<li><b>The official MCP registry</b>, keeping well-known publishers and popular repositories.</li>'
@@ -1094,8 +1094,8 @@ def about_page(t):
       f'<h2 {H2}>The app</h2><p>An AgentScout app for phones and tablets is in testing. It uses the same live directory as this site, with search, saved tools, the quiz, comparisons and the newsletter. It isn\'t in the App Store or Google Play yet; we\'ll announce it here and on X when it is.</p>'
       f'<h2 {H2}>Contact</h2><p>Email <a href="mailto:support@agentscouthq.com">support@agentscouthq.com</a> or find us on X at <a href="https://x.com/AgentScoutHQ" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a> and <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>. See our <a href="privacy.html">privacy policy</a> for how we handle data.</p>')
     return _page("about.html","About","About AgentScout: how AI agent tools are picked and checked",
-        f"AgentScout is a curated directory of {n} AI agents and tools. How we find tools, what gets in, how listings are checked daily, and how to submit a tool.",
-        "About AgentScout",f"A curated, link-checked directory of {n} AI agents and agent tools, updated daily. Founder-run, mostly automated with AI agents.",inner,"AboutPage")
+        f"AgentScout is a curated directory of {n:,} AI agents and tools. How we find tools, what gets in, how listings are checked daily, and how to submit a tool.",
+        "About AgentScout",f"A curated, link-checked directory of {n:,} AI agents and agent tools, updated daily. Founder-run, mostly automated with AI agents.",inner,"AboutPage")
 def privacy_page(t):
     li=lambda *xs:"<ul>"+"".join(f"<li>{x}</li>" for x in xs)+"</ul>"
     inner=('<p><b>Effective date:</b> October 23, 2026</p>'

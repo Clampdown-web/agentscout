@@ -130,7 +130,7 @@ def role_facts(t, slug):
             pool[y["slug"]] = y
         take = items[:6]
         shown.extend(take)
-        bits.append(f"{hd} ({len(take)} of {len(items)})")
+        bits.append(f"{hd} ({len(take):,} of {len(items):,})")
     uniq = {y["slug"]: y for y in shown}
     return {
         "who": who,
@@ -161,6 +161,8 @@ def _fill(text, facts):
         if k not in facts:
             return m.group(0)
         v = facts[k]
+        if isinstance(v, int) and not isinstance(v, bool):
+            v = f"{v:,}"
         return str(v) if k.endswith("_html") else e(str(v))
     return re.sub(r"\{([a-z_]+)\}", repl, text)
 

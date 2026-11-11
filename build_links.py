@@ -210,7 +210,7 @@ def run(t):
               +chips([(f"for/{r[0]}.html",CAP(r[1])) for r in RO])+'</div></section>')
         cc=collections.Counter(x["category"] for x in t)
         cats_=(f'<section id="xcats" class="band" aria-labelledby="xcats-h"><div class="wrap"><div class="sh"><div><h2 id="xcats-h">All categories</h2><p>Every AI agent tool category, with its own page. <a href="categories/index.html">All categories →</a></p></div></div>'
-              +chips([(f"categories/{X.catslug(c)}.html",f"{CAP(c)} ({n})") for c,n in cc.most_common()])+'</div></section>')
+              +chips([(f"categories/{X.catslug(c)}.html",f"{CAP(c)} ({n:,})") for c,n in cc.most_common()])+'</div></section>')
         role=cats_+role
         s=put(s,"homeroles",role,r'<div class="cats" id="catgrid"></div>\s*</div></section>',before=False,regex=True)
         guides=[(h,t) for h,t in HOME_GUIDES if os.path.exists(h)]

@@ -41,7 +41,7 @@ def build(t):
     for x in t:
         f=[x["pricing_detail"] or x["pricing"]]
         if x.get("maturity"): f.append(x["maturity"])
-        if x.get("github_stars"): f.append(f"{x['github_stars']} GitHub stars")
+        if x.get("github_stars"): f.append(f"{x['github_stars']:,} GitHub stars")
         f+= [u.capitalize() for u in x.get("use_cases",[]) if u!=x["category"]]
         item={"name":x["name"],"slug":x["slug"],"url":x["url"],"website":x.get("website",""),"github":x.get("github",""),"category":x["category"],
           "description":x["description"],"key_features":f,"pricing":x.get("pricing_detail") or x["pricing"],
