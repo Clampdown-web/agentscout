@@ -1048,7 +1048,89 @@
           "url": "https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f",
           "availability": "https://schema.org/InStock"
         }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-REPORT-MCP",
+        "name": "MCP Server Test Report",
+        "description": "A protocol test of one public MCP server: connectivity, tool calls, latency, schema, and a written score with the fixes that would raise it. Intro price for the first 10 reports or until December 31, 2026, whichever comes first.",
+        "category": "report",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "79",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/14A4gA0uD6lp8gZbHJe7m0g",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-REPORT-BUNDLE",
+        "name": "Bundle: MCP server test and AI visibility check",
+        "description": "Both reports: the MCP server test and an AI visibility check of the site you name. Intro price for the first 10 reports or until December 31, 2026, whichever comes first.",
+        "category": "report",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "119",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/bJe8wQ2CL39d0Ox8vxe7m0k",
+          "availability": "https://schema.org/InStock"
+        }
       }
     ]
-  }
+  },
+  "reports": [
+    {
+      "id": "mcp-server-test",
+      "sku": "AS-REPORT-MCP",
+      "name": "MCP Server Test Report",
+      "category": "report",
+      "price_usd": 79,
+      "regular_price_usd": 99,
+      "intro_price_usd": 79,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "badge": "Intro",
+      "checkout_url": "https://buy.stripe.com/14A4gA0uD6lp8gZbHJe7m0g",
+      "checkout_url_regular": "https://buy.stripe.com/eVqaEY2CL6lp54Nh23e7m0h",
+      "intro_checkout_url": "https://buy.stripe.com/14A4gA0uD6lp8gZbHJe7m0g",
+      "page_url": "https://agentscouthq.com/mcp-test-report.html",
+      "description": "A protocol test of one public MCP server: connectivity, tool calls, latency, schema, and a written score with the fixes that would raise it. Intro price for the first 10 reports or until December 31, 2026, whichever comes first.",
+      "deliverables": [
+        "Private noindex report page and PDF",
+        "Tested by AgentScout badge for the dated result",
+        "One free retest or fix check of the same server or site within 30 days after delivery"
+      ]
+    },
+    {
+      "id": "bundle",
+      "sku": "AS-REPORT-BUNDLE",
+      "name": "Bundle: MCP server test and AI visibility check",
+      "category": "report",
+      "price_usd": 119,
+      "regular_price_usd": 149,
+      "intro_price_usd": 119,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "badge": "Intro",
+      "checkout_url": "https://buy.stripe.com/bJe8wQ2CL39d0Ox8vxe7m0k",
+      "checkout_url_regular": "https://buy.stripe.com/28E6oI7X59xB2WF3bde7m0l",
+      "intro_checkout_url": "https://buy.stripe.com/bJe8wQ2CL39d0Ox8vxe7m0k",
+      "page_url": "https://agentscouthq.com/mcp-test-report.html",
+      "description": "Both reports: the MCP server test and an AI visibility check of the site you name. Intro price for the first 10 reports or until December 31, 2026, whichever comes first.",
+      "deliverables": [
+        "Private noindex report page and PDF",
+        "Tested by AgentScout badge for the dated result",
+        "One free retest or fix check of the same server or site within 30 days after delivery"
+      ]
+    }
+  ]
 }

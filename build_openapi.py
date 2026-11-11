@@ -209,9 +209,19 @@ def _launch_pack_addon(B):
     }]
 
 
+def _report_catalog():
+    """MCP report and bundle, from data/mcp_test_report.json. Intro vs full is the sell flag there."""
+    import importlib.util
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools", "report-kit", "catalog.py")
+    spec = importlib.util.spec_from_file_location("report_catalog", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.catalog_entries()
+
+
 def _schema_org_offers(products):
     graph = []
-    rows = list(products.get("packages") or []) + list(products.get("addons") or [])
+    rows = list(products.get("packages") or []) + list(products.get("addons") or []) + list(products.get("reports") or [])
     for item in rows:
         graph.append({
             "@type": "Product",
@@ -514,6 +524,7 @@ def build_commerce_files(tools_data):
             },
         ],
         "addons": _launch_pack_addon(B),
+        "reports": _report_catalog(),
         "agent_packs": _agent_packs(B),
         "pack_pricing": {
             "unit_usd": 35,

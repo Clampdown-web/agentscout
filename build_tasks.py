@@ -715,13 +715,14 @@ def shared_scripts_exempt(f, s):
     """Pages that intentionally do not load app.js, consent.js, track.js, and share.js.
     Kept in sync with daily_deep_audit.py.
     - preview/: noindex redirects off the public site
+    - r/: private noindex test reports (not the site chrome)
     - data/: email HTML and other raw fragments
     - stats.js.html: a script island, not a page
     - og.html: the 1200x630 social card (also in SKIP)
     - redirect stubs: meta refresh or location.replace (mcp/link-status.html included)
     Anything else is a production page and sitewide() inserts the missing scripts.
     """
-    if f.startswith(("preview/","node_modules/","app/","data/")) or f in ("og.html","stats.js.html"): return True
+    if f.startswith(("preview/","node_modules/","app/","data/","r/","tools/report-kit/")) or f in ("og.html","stats.js.html"): return True
     if os.path.basename(f) in SKIP and "app.js?v=" not in s: return True
     if _redirect_stub(s): return True
     low=s[:800].lower()
@@ -1069,6 +1070,25 @@ def privacy_page(t):
       f'<h2 {H2}>Changes</h2><p>If what we collect changes, we\'ll update this page and the effective date at the top. See also <a href="about.html">About AgentScout</a> and the <a href="refunds.html">refund policy</a>.</p>')
     return _page("privacy.html","Privacy","Privacy policy · AgentScout","How AgentScout handles data: anonymous analytics (consent where required), no cookies of our own, the submit form, image generator, newsletter and your choices.",
         "Privacy policy","What the AgentScout website and app collect, why, and how to change your choices.",inner)
+def _report_prices():
+    return json.loads(open("data/mcp_test_report.json", encoding="utf-8").read())
+def _report_refunds_html(h):
+    doc = _report_prices()
+    parts = []
+    for product in doc["products"]:
+        parts.append(f'{product["name"]} is ${product["price"]}, or ${product["intro"]} intro')
+    offered = ". ".join(parts) + "."
+    note = doc["intro"]["note"]
+    return (
+      f'<h2 {h}>MCP server test reports and AI visibility checks</h2>'
+      f'<p>{offered} {note}</p>'
+      '<ul>'
+      '<li>You get a full refund if you ask before testing starts.</li>'
+      '<li>You get a full refund if we cannot run the test at all, for example when the MCP server or site cannot be reached and you cannot fix access.</li>'
+      '<li>Once a report is delivered, there is no refund. You get one free retest or fix check of the same server or site within 30 days.</li>'
+      '</ul>'
+      '<p>Email <a href="mailto:support@agentscouthq.com?subject=Report%20refund">support@agentscouthq.com</a>. The offer is on the <a href="mcp-test-report.html">MCP server test report</a> page.</p>'
+    )
 def refunds_inner():
     h=H2
     return (
@@ -1079,25 +1099,30 @@ def refunds_inner():
       '<li>A sponsorship is fully refunded if you cancel before the slot starts. After it starts, the refund is prorated for the time left, or there is no refund if the placement has already run.</li>'
       '<li>Bot Store packs are downloads. There is no refund after you download a pack, unless the pack is broken or not as described and you report that within 7 days.</li>'
       '<li>The Directory Launch Pack is a paid add-on, not a download. You get a full refund if you ask before we start the submissions. After we start, the refund is prorated, or there is no refund once the work is delivered.</li>'
+      '<li>An MCP server test report, an AI visibility check, or the bundle of both is fully refunded if you ask before testing starts, or if we cannot run the test at all. Once the report is delivered, there is no refund, and you get one free retest or fix check of the same server or site within 30 days.</li>'
       '</ul>'
       f'<h2 {h}>$15 fast-track listing</h2><p>Fast-track is a one-time $15 fee to skip the standard review queue. You get a full refund if we decline the tool, or if the tool is not listed within 5 days of payment. Once the listing is live on AgentScout, the $15 fee is not refunded.</p>'
       f'<h2 {h}>Sponsorships</h2><p>Sponsorships are the paid placement slots, including the category pin and the weekly sitewide sponsor. You get a full refund if you cancel before the slot starts. After the slot starts, we refund the unused time (a prorated refund), or none of it if the placement has already run.</p>'
       f'<h2 {h}>Bot Store packs</h2><p>Bot Store packs and the flagship bots are downloads. There is no refund after you download the pack. If the pack is broken or not as described, email us within 7 days of the purchase and we will refund it.</p>'
       f'<h2 {h}>Directory Launch Pack</h2><p>The Directory Launch Pack is a separate paid add-on. We submit your tool to other directories. It is not a listing tier and it is not a download. You get a full refund if you ask before we start those submissions. After we start, the refund is prorated, or there is no refund once the work is delivered.</p>'
+      + _report_refunds_html(h) +
       f'<h2 {h}>EU and UK buyers</h2><p>By the pay buttons, you agree that delivery starts right away. If you are in the EU or the UK, that agreement ends the 14-day right to cancel. The refund rules above still apply when we decline a listing, miss the 5-day window, have not started a slot, or a download is broken or not as described.</p>'
       f'<h2 {h}>How to ask for a refund</h2><p>Email <a href="mailto:support@agentscouthq.com?subject=Refund%20request">support@agentscouthq.com</a>. Include the product, the date you paid, and the email address on the receipt. We reply to that address.</p>'
       '<p>See also <a href="privacy.html">Privacy</a> and <a href="sponsor.html">Sponsor and Get Featured</a>.</p>'
     )
 def refunds_page():
     title="Refund policy · AgentScout"
-    desc="Refunds for the $15 fast-track listing, sponsorships, and Bot Store downloads. Email support@agentscouthq.com to ask."
+    desc="Refunds for the $15 fast-track listing, sponsorships, Bot Store downloads, and paid reports. Email support@agentscouthq.com to ask."
+    prices=_report_prices()
+    named="; ".join(f'{p["name"]} ${p["price"]} (${p["intro"]} intro)' for p in prices["products"])
     faqs=[
         ("What is the refund for the $15 fast-track listing?","You get a full refund if we decline the tool, or if it is not listed within 5 days. Once the listing is live, the $15 fee is not refunded."),
         ("What is the refund for a sponsorship?","You get a full refund if you cancel before the slot starts. After it starts, the refund is prorated for the time left, or there is no refund if the placement has already run."),
         ("What is the refund for a Bot Store pack?","There is no refund after you download a pack, unless the pack is broken or not as described and you report that within 7 days."),
+        ("What is the refund for an MCP server test report, an AI visibility check, or the bundle?","You get a full refund if you ask before testing starts, or if we cannot run the test at all (for example the MCP server or site cannot be reached and you cannot fix access). Once a report is delivered, there is no refund, and you get one free retest or fix check of the same server or site within 30 days. The priced products are: "+named+". Email support@agentscouthq.com."),
         ("How do I ask for a refund?","Email support@agentscouthq.com with the product, the date you paid, and the email on the receipt."),
     ]
-    canon=_page("refunds.html","Refunds",title,desc,"Refund policy","When a paid listing, sponsorship, or Bot Store download can be refunded, and how to ask.",refunds_inner())
+    canon=_page("refunds.html","Refunds",title,desc,"Refund policy","When a paid listing, sponsorship, Bot Store download, or paid report can be refunded, and how to ask.",refunds_inner())
     faq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}
     s=open("refunds.html",encoding="utf-8").read()
     def _add_faq(m):

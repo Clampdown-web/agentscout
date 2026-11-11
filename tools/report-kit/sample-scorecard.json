@@ -1,0 +1,126 @@
+{
+  "product_title": "MCP Server Test Report",
+  "sample": true,
+  "score": 90,
+  "score_max": 100,
+  "tested_display": "Wednesday, November 11, 2026, 1:00 AM PT",
+  "timezone_label": "America/Los_Angeles (Pacific Time)",
+  "verdict": "Microsoft Learn MCP is a strong, public, first-party server. It negotiates protocol 2025-06-18, issues a session, lists three well-described read-only tools, and returned useful documentation and code samples on every call, in well under a second. The daily AgentScout HTTP reachability check already had this listing as live (homepage and GitHub both HTTP 200, checked November 10, 2026, 7:03 AM PT).\n\nThe score is not 100. The server advertises prompts and resources, then returns empty lists for both. microsoft_docs_search does not mark its query argument as required. microsoft_docs_fetch has no outputSchema, unlike the other two tools. serverInfo is only a name and version. Those are fixable.",
+  "cover_blurb": "A strong, public, first-party documentation server. Every tool call succeeded, in well under a second. A handful of schema and capability-honesty issues keep the score short of 100 \u2014 and they are fixable.",
+  "scorecard": [
+    {
+      "id": "protocol",
+      "area": "Protocol and connectivity",
+      "points": 25,
+      "max": 25,
+      "tone": "pass",
+      "why": "Initialize HTTP 200, protocol 2025-06-18 accepted, session header set, notification accepted, 5/5 connects."
+    },
+    {
+      "id": "correctness",
+      "area": "Correctness and reliability",
+      "points": 25,
+      "max": 25,
+      "tone": "pass",
+      "why": "3/3 tool calls succeeded on every run. Search, fetch, and code-sample results were substantial and on-topic. Zero errors."
+    },
+    {
+      "id": "latency",
+      "area": "Latency",
+      "points": 14,
+      "max": 15,
+      "tone": "warn",
+      "why": "Connect p50 145.2 ms. Tool calls p50 272.7\u2013515.6 ms. One notifications/initialized outlier at 551.5 ms."
+    },
+    {
+      "id": "schema",
+      "area": "Schema and tool quality",
+      "points": 16,
+      "max": 20,
+      "tone": "warn",
+      "why": "Excellent titles, descriptions, annotations (readOnlyHint, idempotentHint, destructiveHint: false). Search query is not required and has \"default\": null. Fetch has no outputSchema."
+    },
+    {
+      "id": "honesty",
+      "area": "Capability honesty and metadata",
+      "points": 10,
+      "max": 15,
+      "tone": "fail",
+      "why": "Advertises prompts and resources with listChanged: true, but both lists are empty. serverInfo has only name and version (no title, website URL, or description). Initialize instructions themselves are excellent."
+    }
+  ],
+  "daily_http_check": {
+    "checked": "November 10, 2026, 7:03 AM PT",
+    "url": 200,
+    "github": 200,
+    "label": "OK"
+  },
+  "top_fixes": [
+    {
+      "title": "Mark query as required on microsoft_docs_search, and remove \"default\": null.",
+      "why": "The property exists and is well described, but it is omitted from required and is given \"default\": null. A client can legally call the tool with no query. The other two tools correctly require their main argument. This is a one-line schema change that prevents empty searches.",
+      "steps": [
+        "Open the inputSchema for microsoft_docs_search.",
+        "Add query to the required array, matching microsoft_code_sample_search and microsoft_docs_fetch.",
+        "Remove \"default\": null from the query property.",
+        "Redeploy and confirm that a call with no query is rejected."
+      ],
+      "effort": "about 5 min, one-line schema change"
+    },
+    {
+      "title": "Stop advertising empty surfaces \u2014 or fill them.",
+      "why": "initialize capabilities include prompts.listChanged and resources.listChanged, but prompts/list and resources/list both returned empty arrays with HTTP 200. Clients may offer empty menus, or assume list-changed notifications that never matter.",
+      "steps": [
+        "Decide whether prompts and resources are in scope for this server.",
+        "Option A \u2014 fill them: add one or two prompts that wrap the documented workflow (for example \u201cSearch Microsoft docs\u201d and \u201cFetch a Learn page\u201d), and/or a resource template for Learn URLs.",
+        "Option B \u2014 be honest: omit prompts and resources from initialize capabilities until there is something to list.",
+        "Redeploy and confirm that prompts/list and resources/list match the advertised capabilities."
+      ],
+      "effort": "rough estimate: a small capability change"
+    },
+    {
+      "title": "Add outputSchema to microsoft_docs_fetch, and enrich serverInfo.",
+      "why": "Search and code-sample search both declare an outputSchema. Fetch is the tool that returns the largest body, and it only has unstructured content. serverInfo is only a name and version. A small metadata change makes this clearer for registries, catalogs, and typed clients.",
+      "steps": [
+        "Declare an outputSchema on microsoft_docs_fetch (for example Markdown text plus the canonical URL).",
+        "Add title, websiteUrl, and a one-line description to serverInfo. A website URL here should be https://learn.microsoft.com/ (or the GitHub repo).",
+        "Optional: add icons so MCP client UIs can display the server consistently.",
+        "Redeploy and confirm typed clients can validate the fetch result."
+      ],
+      "effort": "rough estimate: a small metadata change"
+    }
+  ],
+  "further_improvements": [
+    "serverInfo is thin. Only name and version. Context7, by comparison, also returns title, websiteUrl, and description on initialize. Optional icons would help MCP client UIs.",
+    "Search results are double-encoded as text. The content[0].text value is a JSON string of the same results already present in structuredContent. Harmless, but messier for clients that only read text content."
+  ],
+  "further_note": "These two items did not cost as many points as the top three fixes. They are still worth fixing.",
+  "methodology": [
+    "Reused AgentScout's existing daily MCP reachability result (HTTP HEAD-then-GET of the listed website and GitHub URL \u2014 this does not speak MCP).",
+    "Connected for real over Streamable HTTP: JSON-RPC initialize, then notifications/initialized, then tools/list, resources/list, and prompts/list.",
+    "Called three safe, read-only tools with harmless documentation queries. No write, send, pay, or delete tools were present or called.",
+    "Repeated initialize and the same three tool calls for five runs and took the median (p50) latency.",
+    "Linted tool schemas (descriptions, required fields, types, annotations)."
+  ],
+  "out_of_scope": [
+    "Authenticated or paid MCP servers (OAuth, API keys, x402).",
+    "stdio / npx servers (not needed here; this endpoint is public HTTP).",
+    "Write-path or destructive tool calls (none were offered).",
+    "Changing the AgentScout daily check, the listing page, or Microsoft's server."
+  ],
+  "disclaimer": "This is a point-in-time test of a public MCP endpoint. All protocol calls were read-only. Results can change as the server is updated. The existing daily AgentScout check only requests the listed website and GitHub URL over HTTP; this report is the protocol-level step on top of that. Nothing in this sample was published, emailed, or changed on agentscouthq.com.",
+  "whats_great": "Every connection and tool call succeeded on all 5 runs, and each one finished in under 1 second.",
+  "what_this_means": [
+    "You can rely on this server for everyday use. It is a public Microsoft service, and every documentation search, page fetch, and code-sample lookup we ran came back successfully.",
+    "It is fast, too: connecting and every request finished in well under a second.",
+    "What holds the score at 90, not 100, is incomplete self-description. The server says it offers extra menus (prompts and resources), but both lists were empty, and two of the tool definitions are missing small but important details.",
+    "Make the three fixes listed on the cover, then book a free retest so we can show the score improving."
+  ],
+  "badge_date": "Nov 11, 2026",
+  "next_step": {
+    "title": "Next step",
+    "body": "After you make the three fixes, book a free retest. We will run the same checks again and show whether the score improved.",
+    "link_label": "https://agentscouthq.com/ (booking link added at launch)"
+  },
+  "badge_disclaimer": "This badge is a dated test result, not an AgentScout endorsement. Scores can change as the server is updated."
+}

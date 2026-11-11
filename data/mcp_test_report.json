@@ -1,0 +1,51 @@
+{
+  "currency": "USD",
+  "sell": "intro",
+  "intro": {
+    "first_n": 10,
+    "until": "2026-12-31",
+    "until_label": "December 31, 2026",
+    "note": "Intro price for the first 10 reports or until December 31, 2026, whichever comes first."
+  },
+  "products": [
+    {
+      "id": "mcp-server-test",
+      "sku": "AS-REPORT-MCP",
+      "name": "MCP Server Test Report",
+      "price": 99,
+      "intro": 79,
+      "checkout_url": "https://buy.stripe.com/eVqaEY2CL6lp54Nh23e7m0h",
+      "intro_checkout_url": "https://buy.stripe.com/14A4gA0uD6lp8gZbHJe7m0g",
+      "on_page": true,
+      "in_catalog": true,
+      "blurb": "A protocol test of one public MCP server: connectivity, tool calls, latency, schema, and a written score with the fixes that would raise it."
+    },
+    {
+      "id": "ai-visibility",
+      "sku": "AS-REPORT-VIS",
+      "name": "AI Visibility Check",
+      "price": 99,
+      "intro": 79,
+      "checkout_url": "https://buy.stripe.com/8x26oI6T15hl2WF7rte7m0j",
+      "intro_checkout_url": "https://buy.stripe.com/14A4gAdhpeRV2WFaDFe7m0i",
+      "on_page": false,
+      "in_catalog": false,
+      "blurb": "A written check of how AI answer engines describe one public site. The sample is not published yet, so this page does not sell it on its own."
+    },
+    {
+      "id": "bundle",
+      "sku": "AS-REPORT-BUNDLE",
+      "name": "Bundle: MCP server test and AI visibility check",
+      "price": 149,
+      "intro": 119,
+      "checkout_url": "https://buy.stripe.com/28E6oI7X59xB2WF3bde7m0l",
+      "intro_checkout_url": "https://buy.stripe.com/bJe8wQ2CL39d0Ox8vxe7m0k",
+      "on_page": true,
+      "in_catalog": true,
+      "blurb": "Both reports: the MCP server test and an AI visibility check of the site you name."
+    }
+  ],
+  "questions_email": "support@agentscouthq.com",
+  "sample_slug": "r43ay13wYZLIK8LsX9Oe_CMy",
+  "refund_note": "EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right."
+}
