@@ -1087,7 +1087,7 @@ def _report_refunds_html(h):
       '<li>You get a full refund if we cannot run the test at all, for example when the MCP server or site cannot be reached and you cannot fix access.</li>'
       '<li>Once a report is delivered, there is no refund. You get one free retest or fix check of the same server or site within 30 days.</li>'
       '</ul>'
-      '<p>Email <a href="mailto:support@agentscouthq.com?subject=Report%20refund">support@agentscouthq.com</a>. The offer is on the <a href="mcp-test-report.html">MCP server test report</a> page.</p>'
+      '<p>Email <a href="mailto:support@agentscouthq.com?subject=Report%20refund">support@agentscouthq.com</a>. The offers are on the <a href="mcp-test-report.html">MCP server test report</a> page and the <a href="ai-visibility-check.html">AI visibility check</a> page.</p>'
     )
 def refunds_inner():
     h=H2

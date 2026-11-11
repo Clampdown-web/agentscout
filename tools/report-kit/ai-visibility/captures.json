@@ -1,0 +1,662 @@
+{
+  "product_title": "AI Visibility Check",
+  "sample": true,
+  "subject": {
+    "name": "AgentScout",
+    "url": "https://agentscouthq.com/",
+    "domain": "agentscouthq.com",
+    "aliases": [
+      "AgentScout",
+      "agentscouthq",
+      "agentscouthq.com"
+    ],
+    "description": "A curated, daily link-checked directory of AI agent tools and MCP servers."
+  },
+  "rivals": [
+    {
+      "id": "pulsemcp",
+      "name": "PulseMCP",
+      "url": "https://www.pulsemcp.com/",
+      "aliases": [
+        "PulseMCP",
+        "pulsemcp.com",
+        "PulseMCP.com"
+      ]
+    },
+    {
+      "id": "mcpso",
+      "name": "mcp.so",
+      "url": "https://mcp.so/",
+      "aliases": [
+        "mcp.so",
+        "MCP.so",
+        "MCP.so"
+      ]
+    },
+    {
+      "id": "glama",
+      "name": "Glama",
+      "url": "https://glama.ai/",
+      "aliases": [
+        "Glama",
+        "glama.ai",
+        "Glama.ai"
+      ]
+    },
+    {
+      "id": "taaft",
+      "name": "There's An AI For That",
+      "url": "https://theresanaiforthat.com/",
+      "aliases": [
+        "There's An AI For That",
+        "TheresAnAIForThat",
+        "TAAFT",
+        "theresanaiforthat"
+      ]
+    }
+  ],
+  "timezone": "America/Los_Angeles",
+  "timezone_label": "America/Los_Angeles (Pacific Time)",
+  "checked_display": "Wednesday, November 11, 2026, 2:24–2:26 AM PT",
+  "baseline": true,
+  "prior_run": null,
+  "method_skill": "ai-search-visibility-check",
+  "surfaces_run": [
+    "Web search results, via the source links returned with each AI-style answer",
+    "AI-answer style search (WebSearch synthesis plus its cited URLs), run on November 11, 2026",
+    "Third-party pages that the answers cited for MCP-directory and AI-directory comparisons, opened and checked so a mention was not missed or mis-attributed"
+  ],
+  "surfaces_not_run": [
+    "ChatGPT, Claude, or Gemini chat answers (would need a signed-in surface or a pasted assistant answer)",
+    "Perplexity",
+    "Google AI Overviews / AI Mode as a separate capture from WebSearch",
+    "Any other signed-in answer surface"
+  ],
+  "name_collisions": [
+    "Unrelated GitHub repositories also named 'agentscout' exist (for example implicit-labs/agentscout and agentx402-ai/agentscout). They did not appear in the brand result set for 'AgentScout AI agent tools.' They were not counted as citations or as competitors."
+  ],
+  "scoring_rungs": [
+    "recommended",
+    "cited",
+    "mentioned",
+    "absent"
+  ],
+  "rung_definitions": {
+    "recommended": "Named in the answer synthesis as a pick, a practical choice, or a place to start or submit.",
+    "cited": "The site's own page is among the answer's source links, but the synthesis does not clearly recommend it.",
+    "mentioned": "Named in passing in the synthesis, or named on a cited page we opened, but not recommended and not a source URL. A product that is only the subject of the query is scored mentioned, not recommended.",
+    "absent": "Not in the synthesis, not a source URL, and not found on the cited pages we opened."
+  },
+  "prompts": [
+    {
+      "id": 1,
+      "prompt": "best directory of AI agent tools",
+      "kind": "category",
+      "top": true,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links",
+      "checked_at": "2026-11-11T02:24:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:24 AM PT",
+      "synthesis": "For broad discovery, Skillful.sh is the strongest option: it aggregates 50+ directories and indexes agents, skills, and MCP servers with security scores and cross-references. For a curated, link-checked directory with pricing and categories, AgentScout is a practical choice. For focused, high-quality rankings by use case, AgentShortlist is excellent.",
+      "sources": [
+        {
+          "title": "Skillful.sh | The Definitive AI Agent Ecosystem Directory",
+          "url": "https://skillful.sh/"
+        },
+        {
+          "title": "AgentScout: 3,491 AI Agent Tools & MCP Servers (2026)",
+          "url": "https://agentscouthq.com/"
+        },
+        {
+          "title": "AgentShortlist: Best AI Agents, Ranked by Real Signals",
+          "url": "https://agentshortlist.dev/"
+        },
+        {
+          "title": "DeepYard — The AI Agent Ecosystem Directory",
+          "url": "https://deepyard.dev/"
+        },
+        {
+          "title": "Fushu — Where AI Agents Live",
+          "url": "https://fushu.dev/"
+        }
+      ],
+      "pages_opened": [],
+      "notes": "The official AgentScout homepage was source 2 and was named in the synthesis as a practical, curated, link-checked choice. Skillful.sh was framed as the strongest option for broad discovery. PulseMCP, mcp.so, Glama, and There's An AI For That did not appear in the synthesis or the source list. The homepage capture in this result set described 3,491 tools across 40 categories, including 1,070 MCP servers, with 1,068 of 1,070 checked servers live, last checked November 10, 2026, 7:03 AM PT.",
+      "scores": {
+        "subject": "recommended",
+        "pulsemcp": "absent",
+        "mcpso": "absent",
+        "glama": "absent",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Named in the answer as a practical choice, and the official homepage was a cited source."
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "where to find MCP servers",
+      "kind": "problem",
+      "top": true,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links; opened automationswitch.com/mcp",
+      "checked_at": "2026-11-11T02:24:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:24 AM PT",
+      "synthesis": "Find MCP servers in the official MCP Registry at registry.modelcontextprotocol.io, which lists community servers and supports search. For broader discovery, use directories such as PulseMCP, MCP.so, Smithery, Glama, and MCP.Directory.",
+      "sources": [
+        {
+          "title": "MCP Registry · Connect Agents to tools · GitHub",
+          "url": "https://github.com/mcp/"
+        },
+        {
+          "title": "Official MCP Registry",
+          "url": "https://registry.modelcontextprotocol.io/"
+        },
+        {
+          "title": "MCP Directories: Where to Find MCP Servers",
+          "url": "https://automationswitch.com/mcp"
+        },
+        {
+          "title": "How to Find MCP Servers (and Check One Works Before You Install It) | MCP Hunter",
+          "url": "https://mcp-hunter.com/docs/how-to-find-mcp-servers"
+        },
+        {
+          "title": "MCP Registry Aggregators",
+          "url": "https://modelcontextprotocol.io/registry/registry-aggregators"
+        }
+      ],
+      "pages_opened": [
+        {
+          "url": "https://automationswitch.com/mcp",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "mcp.so",
+            "Glama"
+          ],
+          "note": "Indexes 18 directories and 74,658+ servers. Featured PulseMCP and the official registry. Also lists MCP.so, Smithery, Glama, MCP.Directory, Protodex, MCPMarket, and others. AgentScout is not among the 18."
+        }
+      ],
+      "notes": "The answer recommended the official registry first, then PulseMCP (called the largest actively-maintained directory), mcp.so (largest by raw count), Smithery, Glama (security-scanned), and MCP.Directory. AgentScout was not in the synthesis, not in the source list, and not on the 18-directory index we opened.",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "recommended",
+        "mcpso": "recommended",
+        "glama": "recommended",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis, not a source, and not listed on automationswitch.com/mcp, which the answer cited.",
+        "pulsemcp": "Named in the synthesis as a place to look, and featured on the cited directory index.",
+        "mcpso": "Named in the synthesis as a place to look, and listed on the cited directory index.",
+        "glama": "Named in the synthesis as a place to look, and listed on the cited directory index."
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "list my AI agent tool",
+      "kind": "problem",
+      "top": true,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links",
+      "checked_at": "2026-11-11T02:24:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:24 AM PT",
+      "synthesis": "The results were catalogs of AI agent tools, frameworks and MCP servers (Agent Field Guide, AIMap, agentools.sh, AgentToolsList, aiagenttools.dev), not instructions for submitting a tool to a directory.",
+      "sources": [
+        {
+          "title": "Agent Field Guide: The Directory of AI Agent Tools, Frameworks & MCP Servers",
+          "url": "https://agentfieldguide.net/"
+        },
+        {
+          "title": "708 AI Agent Tools & 101 MCP Servers, by Type & Licence | AIMap",
+          "url": "https://aimap.page/en/for-ai/all/"
+        },
+        {
+          "title": "All 235 AI agents, tools and MCP servers | agentools.sh",
+          "url": "https://agentools.sh/tools/"
+        },
+        {
+          "title": "AgentToolsList — The AI agent tools directory",
+          "url": "https://agenttoolslist.com/"
+        },
+        {
+          "title": "AI Agent Tools — Mapping the AI Agent Internet | 510+ Tools",
+          "url": "https://aiagenttools.dev/"
+        }
+      ],
+      "pages_opened": [],
+      "notes": "This prompt was chosen as maker language ('list my tool'). The AI-style answer treated it as a request for a catalog, not a submit form. AgentScout and all four scored rivals were absent. The clearer submit-intent wording was run separately as prompt 5.",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "absent",
+        "mcpso": "absent",
+        "glama": "absent",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis or source list. The query was interpreted as 'show me a list of tools,' not 'where do I list my tool.'"
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "best MCP server directory 2026",
+      "kind": "category",
+      "top": true,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links; opened explainx.ai roundup",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "For most users in 2026, Glama is the best MCP server directory: it has the broadest catalog and adds security, quality, health, and hosting/observability tooling. Use the Official MCP Registry as the canonical, vendor-neutral metadata source, especially for publishing or programmatic discovery. Smithery remains useful for browsing vendor URLs, but its hosting, API, and CLI ended October 31, 2026.",
+      "sources": [
+        {
+          "title": "Smithery vs Glama vs the Official MCP Registry (2026)",
+          "url": "https://agentopsguide.com/smithery-vs-glama-vs-official-mcp-registry/"
+        },
+        {
+          "title": "The MCP Server Registry, Inspector & Gateway | Glama",
+          "url": "https://glama.ai/"
+        },
+        {
+          "title": "Codex CLI and MCP Server Discovery: Navigating Registries, Smithery, Glama, and the Official MCP Registry",
+          "url": "https://codex.danielvaughan.com/2026/05/27/codex-cli-mcp-server-discovery-registries-smithery-glama-official-registry/"
+        },
+        {
+          "title": "Top 10 MCP Server Directories & Registries (2026) | explainx.ai",
+          "url": "https://explainx.ai/blog/top-10-mcp-server-directories-2026"
+        },
+        {
+          "title": "AI Skill Registries Compared for 2026 | Skillburst Blog",
+          "url": "https://skillburst.ai/blog/skill-registries-compared/"
+        }
+      ],
+      "pages_opened": [
+        {
+          "url": "https://explainx.ai/blog/top-10-mcp-server-directories-2026",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "Glama"
+          ],
+          "note": "Ranks explainx.ai, Smithery, official registry, LobeHub, PulseMCP, Anthropic reference servers, MCP.directory, Glama, Awesome MCP List, and ClaudePro.directory. AgentScout is not in the top 10 or the comparison table."
+        }
+      ],
+      "notes": "Glama was the recommended pick in the synthesis and its official site was a cited source. PulseMCP is named in the explainx.ai roundup (a cited source) as a pick for 'bleeding-edge research,' but was not named in the synthesis, so it is scored mentioned, not recommended. mcp.so is described in the Codex Knowledge Base article (a cited source) as a community directory of ~19,700 servers, also scored mentioned. AgentScout was not in the synthesis, not a source, and not in the explainx.ai top 10 we opened.",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "mentioned",
+        "mcpso": "mentioned",
+        "glama": "recommended",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis, not a source, and not in the cited explainx.ai top-10 roundup we opened.",
+        "pulsemcp": "Named in a cited roundup, not in the answer synthesis itself, and not a source URL.",
+        "mcpso": "Named in a cited article (Codex Knowledge Base), not in the answer synthesis, and not a source URL.",
+        "glama": "The synthesis called Glama the best directory, and glama.ai was a cited source."
+      }
+    },
+    {
+      "id": 5,
+      "prompt": "where to submit an AI agent tool",
+      "kind": "problem",
+      "top": true,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "Submit your AI agent tool to directories such as Agent Field Guide, AgentStackd, SkillsIndex, AI Agent Directory, AgentScout, and AgentoolRank. Most offer free listings and manual review.",
+      "sources": [
+        {
+          "title": "Submit an AI Agent Tool | Agent Field Guide",
+          "url": "https://agentfieldguide.net/submit/"
+        },
+        {
+          "title": "Submit Your AI Tool for Free | AgentStackd",
+          "url": "https://agentstackd.com/submit/"
+        },
+        {
+          "title": "Submit a Tool | SkillsIndex",
+          "url": "https://skillsindex.dev/submit/"
+        },
+        {
+          "title": "Submit a Tool — AI Agent Directory",
+          "url": "https://aiagenttools.dev/submit"
+        },
+        {
+          "title": "Submit an AI Tool or Get Featured ($0–$99) · AgentScout",
+          "url": "https://agentscouthq.com/submit.html"
+        }
+      ],
+      "pages_opened": [],
+      "notes": "AgentScout's official submit page was source 5 and the synthesis named AgentScout among the places to submit. The four scored rivals did not appear. This is the clearer wording of the maker-intent question; contrast with prompt 3, where 'list my AI agent tool' was read as a catalog request and AgentScout was absent.",
+      "scores": {
+        "subject": "recommended",
+        "pulsemcp": "absent",
+        "mcpso": "absent",
+        "glama": "absent",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Named in the answer as a place to submit, and the official submit page was a cited source."
+      }
+    },
+    {
+      "id": 6,
+      "prompt": "best AI tools directory 2026",
+      "kind": "category",
+      "top": false,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "For a broad, frequently updated directory, Raunak’s Radar lists 6,505 tools with category-specific rankings and weekly updates. For independent, hands-on testing and pricing comparisons, Chat AI Tools covers 74 tested tools, while AIToolCrux evaluates 533+ tools using standardized scoring. For a smaller, editorially reviewed directory focused on practical use and cost, The Independent AI lists 331 tools across 17 categories.",
+      "sources": [
+        {
+          "title": "Best AI Tools on the Radar: 6,505 AI tools, ranked and updated weekly",
+          "url": "https://raunakpatil.com/ai-tools/"
+        },
+        {
+          "title": "Best AI Tools (2026) — Tested & Ranked · Chat AI Tools",
+          "url": "https://chataitools.com/"
+        },
+        {
+          "title": "Best AI Tools 2026: Expert Reviews | AIToolCrux",
+          "url": "https://www.aitoolcrux.com/"
+        },
+        {
+          "title": "331 AI tools,",
+          "url": "https://theindependentai.com/directory"
+        },
+        {
+          "title": "AI Tools Directory 2026 | Compare 3,900+ Tools",
+          "url": "https://best-ai.org/"
+        }
+      ],
+      "pages_opened": [],
+      "notes": "Neither AgentScout nor the four scored rivals appeared in the synthesis or the five source links. There's An AI For That and Futurepedia, which are often treated as the default general AI directories, were also missing from this particular result set. That is a finding about this surface on this date, not a claim that those incumbents are generally invisible. The sources here were smaller 2026 directories and review sites.",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "absent",
+        "mcpso": "absent",
+        "glama": "absent",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis or source list.",
+        "taaft": "Also absent from this result set, despite being a major general AI directory. Recorded as absent, not assumed present."
+      }
+    },
+    {
+      "id": 7,
+      "prompt": "PulseMCP alternative",
+      "kind": "comparison",
+      "top": false,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links; opened five cited comparison pages",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "Best PulseMCP alternatives depend on your need: Glama for the largest searchable registry with quality grades and hosting; the official MCP Registry for canonical publisher metadata; Docker MCP Catalog for signed containerized servers; mcp.so for setup guides and community discovery; and MCPVault for live-verified listings.",
+      "sources": [
+        {
+          "title": "Top 5 PulseMCP Alternatives & Competitors",
+          "url": "https://faun.dev/toolbox/alternatives/pulsemcp-alternatives/"
+        },
+        {
+          "title": "MCP Directory Alternatives | MCPVault",
+          "url": "https://mcpvault.io/alternatives"
+        },
+        {
+          "title": "Best MCP Marketplaces in 2026 (Compared) | MCPifex",
+          "url": "https://mcpifex.com/compare/best-mcp-marketplaces"
+        },
+        {
+          "title": "PulseMCP alternatives, and how to submit · IndieLaunch",
+          "url": "https://indielaunch.dev/directories/pulsemcp"
+        },
+        {
+          "title": "The 5 Best PulseMCP Alternatives in 2026 · SkillzBench",
+          "url": "https://skillzbench.com/compare/the-5-best-pulsemcp-alternatives-in-2026"
+        }
+      ],
+      "pages_opened": [
+        {
+          "url": "https://faun.dev/toolbox/alternatives/pulsemcp-alternatives/",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "Glama",
+            "mcp.so"
+          ],
+          "note": "Rates official MCP Registry, Docker MCP Catalog, Glama, Smithery, and mcp.so. AgentScout is not listed."
+        },
+        {
+          "url": "https://mcpvault.io/alternatives",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "mcp.so",
+            "Glama"
+          ],
+          "note": "Compares MCPVault to Smithery, mcp.so, Glama, and PulseMCP. AgentScout is not listed."
+        },
+        {
+          "url": "https://mcpifex.com/compare/best-mcp-marketplaces",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "mcp.so",
+            "Glama"
+          ],
+          "note": "Compares official registry, Glama, Smithery, mcp.so, PulseMCP, Docker MCP Catalog, awesome-mcp-servers, Claude connectors, and MCPifex. AgentScout is not listed. Updated October 30, 2026."
+        },
+        {
+          "url": "https://indielaunch.dev/directories/pulsemcp",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "Glama",
+            "mcp.so"
+          ],
+          "note": "Eight alternatives: MCP Market, Glama, Cline MCP Marketplace, Smithery, Cursor Directory, MCP.so, LibHunt, Raycast Store. AgentScout is not listed. Verified October 18, 2026."
+        },
+        {
+          "url": "https://skillzbench.com/compare/the-5-best-pulsemcp-alternatives-in-2026",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP"
+          ],
+          "note": "Compares MCP Hive, Ref, Context7, Tavily, Exa, and SkillzBench — mostly access or search tools, not peer directories. AgentScout is not listed."
+        }
+      ],
+      "notes": "The synthesis recommended Glama, the official registry, Docker MCP Catalog, mcp.so, and MCPVault. All five cited pages were opened. None of them name AgentScout. PulseMCP is the subject of the query, so it is scored mentioned (subject), not recommended.",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "mentioned",
+        "mcpso": "recommended",
+        "glama": "recommended",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis. Not named on any of the five cited comparison pages we opened.",
+        "pulsemcp": "Subject of the query; named throughout, but not recommended as an alternative to itself.",
+        "mcpso": "Named in the synthesis as a recommended alternative.",
+        "glama": "Named in the synthesis as a recommended alternative (largest searchable registry with grades and hosting)."
+      }
+    },
+    {
+      "id": 8,
+      "prompt": "There's An AI For That alternative",
+      "kind": "comparison",
+      "top": false,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links; opened three cited alternative listicles",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "Best alternatives depend on your goal: Futurepedia for broad, curated discovery and learning; Future Tools for a smaller, curated selection; Toolify.ai for the largest catalog and traffic data; PoweredByAI for deals, prompts, and comparisons; and Product Hunt for newly launched tools. For task-based search like There’s An AI For That, Futurepedia and TopAI.tools are strong options.",
+      "sources": [
+        {
+          "title": "6 Best 'There's An AI For That' Alternatives in 2026",
+          "url": "https://poweredbyai.app/alternatives/theresanaiforthat"
+        },
+        {
+          "title": "10 Best AI Tool Directories in 2026: Traffic & Submissions",
+          "url": "https://www.aicentralresources.com/top-10-best-ai-tool-directories"
+        },
+        {
+          "title": "There's An AI For That Alternatives (2026): 13 Checked",
+          "url": "https://launchit.fast/blog/theres-an-ai-for-that-alternatives-2026"
+        },
+        {
+          "title": "GitHub - DirectorySurf/awesome-theresanaiforthat-alternatives",
+          "url": "https://github.com/DirectorySurf/awesome-theresanaiforthat-alternatives"
+        },
+        {
+          "title": "ToolJunction vs the Alternatives (2026): Honest Comparisons",
+          "url": "https://www.tooljunction.io/vs"
+        }
+      ],
+      "pages_opened": [
+        {
+          "url": "https://poweredbyai.app/alternatives/theresanaiforthat",
+          "found_subject": false,
+          "found_rivals": [
+            "There's An AI For That"
+          ],
+          "note": "Lists PoweredByAI, Futurepedia, Toolify.ai, Product Hunt, TopAI.tools, and AI Tool Hunt. AgentScout is not listed. Page last updated April 2026."
+        },
+        {
+          "url": "https://www.aicentralresources.com/top-10-best-ai-tool-directories",
+          "found_subject": false,
+          "found_rivals": [
+            "There's An AI For That"
+          ],
+          "note": "Top 10: AICentralResources, TopAI.tools, Futurepedia, Future Tools, There's An AI For That, Toolify.ai, AIxploria, PoweredByAI, Product Hunt, AlternativeTo. Updated November 2026. AgentScout is not listed. Submit advice also omits AgentScout."
+        },
+        {
+          "url": "https://launchit.fast/blog/theres-an-ai-for-that-alternatives-2026",
+          "found_subject": false,
+          "found_rivals": [
+            "There's An AI For That"
+          ],
+          "note": "13 alternatives checked November 4, 2026 (Future Tools, Dang.ai, Toolify, TopAI.tools, Toolpilot, AI Tools Directory, AI Tools Inc, LaunchIt, Launch Llama, The Rundown, Insidr AI, BAI.tools, AI With Me). AgentScout is not listed."
+        }
+      ],
+      "notes": "The conversation is about general AI-tool directories, not agent or MCP specialists. Futurepedia is recommended in the synthesis but was not one of the four scored rivals. AgentScout was not in the synthesis and was not named on the three listicles we opened. There's An AI For That is the subject of the query, scored mentioned (subject).",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "absent",
+        "mcpso": "absent",
+        "glama": "absent",
+        "taaft": "mentioned"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis and not named on the three cited alternative listicles we opened.",
+        "taaft": "Subject of the query; named throughout, but not recommended as an alternative to itself."
+      }
+    },
+    {
+      "id": 9,
+      "prompt": "AgentScout AI agent tools",
+      "kind": "brand",
+      "top": false,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "AgentScout is a curated, daily link-checked directory of 3,491 AI agent tools and MCP servers across 40 categories, including coding, browser, voice, research, evaluation, and no-code agents. It helps builders and users compare ready-made products and open-source tools, with pricing, alternatives, and task-based recommendations.",
+      "sources": [
+        {
+          "title": "AgentScout: 3,491 AI Agent Tools & MCP Servers (2026)",
+          "url": "https://agentscouthq.com/"
+        },
+        {
+          "title": "About AgentScout: how AI agent tools are picked and checked",
+          "url": "https://agentscouthq.com/about.html"
+        },
+        {
+          "title": "New AI agent tools (last 30 days) · AgentScout",
+          "url": "https://agentscouthq.com/new.html"
+        },
+        {
+          "title": "Best AI Agent Tools Lists (2026) · AgentScout",
+          "url": "https://agentscouthq.com/best/"
+        },
+        {
+          "title": "AI Agents by Task: 77 Jobs, Best Tools for Each · AgentScout",
+          "url": "https://agentscouthq.com/tasks/index.html"
+        }
+      ],
+      "pages_opened": [],
+      "notes": "All five sources are official AgentScout pages. The official site leads, as it should. No third-party review, news article, or directory listing appeared in this result set. A separate search for the bare name plus GitHub surfaced unrelated repositories also named 'agentscout' (for example implicit-labs/agentscout). Those did not appear in this brand result set, which used the more specific query 'AgentScout AI agent tools.' The four scored rivals were absent, which is expected on a brand query.",
+      "scores": {
+        "subject": "recommended",
+        "pulsemcp": "absent",
+        "mcpso": "absent",
+        "glama": "absent",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "The official site leads and the synthesis describes the product from its own pages. This is brand control, not a discovery win. No third-party source appeared."
+      }
+    },
+    {
+      "id": 10,
+      "prompt": "how to find MCP servers for Claude",
+      "kind": "problem",
+      "top": false,
+      "run": true,
+      "surface": "WebSearch (AI-answer style search) plus source links; opened mcpstepbystep.com guide",
+      "checked_at": "2026-11-11T02:25:00-08:00",
+      "checked_display": "Wednesday, November 11, 2026, 2:25 AM PT",
+      "synthesis": "Browse Anthropic’s Connectors Directory in Claude: open Customize > Connectors, then select “+” to search verified and community MCP connectors. For Claude Code, use `claude mcp add --transport http <name> <url>` to add a remote server. If you find a server elsewhere, add it as a custom connector by entering its remote MCP URL in Customize > Connectors > Add > Custom.",
+      "sources": [
+        {
+          "title": "Connectors directory",
+          "url": "https://claude.com/docs/connectors/directory"
+        },
+        {
+          "title": "Use connectors to extend Claude's capabilities | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+        },
+        {
+          "title": "Connect Claude Code to tools via MCP",
+          "url": "https://code.claude.com/docs/en/mcp"
+        },
+        {
+          "title": "Add a connector that isn't in the directory",
+          "url": "https://claude.com/docs/connectors/custom/add-unlisted"
+        },
+        {
+          "title": "MCP Registry Guide: Where to Find MCP Servers (2026)",
+          "url": "https://mcpstepbystep.com/learn/finding-servers/"
+        }
+      ],
+      "pages_opened": [
+        {
+          "url": "https://mcpstepbystep.com/learn/finding-servers/",
+          "found_subject": false,
+          "found_rivals": [
+            "PulseMCP",
+            "mcp.so",
+            "Glama"
+          ],
+          "note": "Guide verified October 8, 2026. Lists official registry, GitHub MCP Registry, Claude Connectors, Cursor, Docker MCP Catalog, Smithery, PulseMCP, Glama, mcp.so, and mcpservers.org. AgentScout is not mentioned."
+        }
+      ],
+      "notes": "The answer itself is about Anthropic's official connectors directory and Claude Code commands. PulseMCP, mcp.so, and Glama are named in the cited mcpstepbystep.com guide we opened, so they are scored mentioned, not recommended (they were not picks in the synthesis). AgentScout is not in the synthesis, not a source, and not in that guide.",
+      "scores": {
+        "subject": "absent",
+        "pulsemcp": "mentioned",
+        "mcpso": "mentioned",
+        "glama": "mentioned",
+        "taaft": "absent"
+      },
+      "score_why": {
+        "subject": "Not in the synthesis, not a source, and not named in the cited mcpstepbystep.com guide we opened.",
+        "pulsemcp": "Named in a cited guide, not in the answer synthesis itself.",
+        "mcpso": "Named in a cited guide, not in the answer synthesis itself.",
+        "glama": "Named in a cited guide, not in the answer synthesis itself."
+      }
+    }
+  ]
+}

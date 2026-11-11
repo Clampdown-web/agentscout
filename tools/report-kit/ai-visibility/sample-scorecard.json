@@ -1,0 +1,202 @@
+{
+  "product_title": "AI Visibility Check",
+  "sample": true,
+  "score": 27,
+  "score_max": 100,
+  "tested_display": "November 11, 2026, 2:24–2:26 AM PT",
+  "timezone_label": "America/Los_Angeles (Pacific Time)",
+  "subject_name": "AgentScout",
+  "subject_url": "https://agentscouthq.com/",
+  "cover_blurb": "AgentScout shows up when the question is about AI agent directories or submitting a tool, but only from its own pages. On the questions people type to find MCP servers, it is missing from the answers and from the roundups those answers cite.",
+  "whats_great": "On “best directory of AI agent tools,” the answer named AgentScout as a practical, curated, link-checked choice, and the official site was a cited source. A search for the brand itself is clean: official pages lead.",
+  "verdict": "AgentScout is easy to find if you already know its name, and it is recommended on two buyer questions — “best directory of AI agent tools” and “where to submit an AI agent tool.” In both cases the citations are AgentScout’s own homepage and submit page, not third-party reviews or listicles.\n\nOn the questions people type to find MCP servers, AgentScout is absent. Those answers send readers to the official MCP Registry, PulseMCP, mcp.so, and Glama. We opened the roundup pages those answers cite, including one index of 18 MCP directories. AgentScout is on none of them. There is no earlier dated check to compare against; this is the baseline run.",
+  "what_this_means": [
+    "When someone asks for a directory of AI agent tools, or where to submit one, you do show up — and the answer describes you accurately as a curated, link-checked directory.",
+    "When someone asks where to find MCP servers, you disappear. Those answers send people to the official registry, PulseMCP, mcp.so, and Glama. The articles those answers already cite list as many as 18 directories and still skip you.",
+    "Your own name search is fine. What you are missing is other people writing about you. Every time you appeared in this check, the source was your own site.",
+    "Start with the MCP roundups and with first-party comparison pages the answers can cite, then book a free retest within 30 days so we can show whether the score improved."
+  ],
+  "scorecard": [
+    {
+      "id": "category",
+      "area": "Category discovery",
+      "points": 10,
+      "max": 30,
+      "tone": "warn",
+      "why": "Three category prompts, 10 points each if recommended (cited 6, mentioned 3, absent 0). Recommended on “best directory of AI agent tools.” Absent on “best MCP server directory 2026” and “best AI tools directory 2026.”"
+    },
+    {
+      "id": "problem",
+      "area": "Problem and how-to queries",
+      "points": 7,
+      "max": 28,
+      "tone": "fail",
+      "why": "Four problem prompts, 7 points each if recommended (cited 4, mentioned 2, absent 0). Recommended on “where to submit an AI agent tool.” Absent on “where to find MCP servers,” “list my AI agent tool,” and “how to find MCP servers for Claude.”"
+    },
+    {
+      "id": "comparison",
+      "area": "Comparison queries",
+      "points": 0,
+      "max": 16,
+      "tone": "fail",
+      "why": "Two comparison prompts, 8 points each if recommended (cited 5, mentioned 2, absent 0). Absent from both “PulseMCP alternative” and “There’s An AI For That alternative,” including the cited listicles we opened."
+    },
+    {
+      "id": "brand",
+      "area": "Brand search",
+      "points": 10,
+      "max": 10,
+      "tone": "pass",
+      "why": "Official pages lead for “AgentScout AI agent tools,” and the synthesis describes the product correctly. This is expected brand control, not a discovery win. No third-party source appeared in that result set."
+    },
+    {
+      "id": "citations",
+      "area": "Third-party citations",
+      "points": 0,
+      "max": 16,
+      "tone": "fail",
+      "why": "4 points for each distinct third-party page that was a source of a non-brand answer and that actually names AgentScout, up to 16. Own-site pages do not count. Zero third-party citations in this run."
+    }
+  ],
+  "scoring_method": [
+    "Category discovery (30): three category prompts, 10 points each if recommended, 6 if cited, 3 if mentioned, 0 if absent.",
+    "Problem and how-to queries (28): four problem prompts, 7 points each if recommended, 4 if cited, 2 if mentioned, 0 if absent.",
+    "Comparison queries (16): two comparison prompts, 8 points each if recommended, 5 if cited, 2 if mentioned, 0 if absent.",
+    "Brand search (10): 10 if official pages lead or are recommended, 6 if the official site is cited but a third party leads, 3 if only mentioned, 0 if the official site is absent.",
+    "Third-party citations (16): 4 points for each distinct third-party page that was a source of a non-brand answer and that names the subject, up to four pages. The subject’s own pages do not count."
+  ],
+  "rung_definitions": {
+    "recommended": "Named in the answer synthesis as a pick, a practical choice, or a place to start or submit.",
+    "cited": "The site’s own page is among the answer’s source links, but the synthesis does not clearly recommend it.",
+    "mentioned": "Named in passing in the synthesis, or named on a cited page we opened, but not recommended and not a source URL. A product that is only the subject of the query is scored mentioned, not recommended.",
+    "absent": "Not in the synthesis, not a source URL, and not found on the cited pages we opened."
+  },
+  "top_fixes": [
+    {
+      "title": "Get onto the MCP directory roundups the answers already cite.",
+      "why": "On the MCP discovery questions, answers recommend PulseMCP, mcp.so, Glama, and the official registry. The pages they cite — including an index of 18 MCP directories — do not mention AgentScout. This is the highest-leverage path into the prompts that currently return Absent.",
+      "steps": [
+        "Start with automationswitch.com/mcp, mcpifex.com, faun.dev, explainx.ai’s 2026 top 10, mcpstepbystep.com, and IndieLaunch’s PulseMCP alternatives page.",
+        "Pitch a factual listing, not a paid rank: a curated, daily link-checked directory that includes MCP servers, with pricing as the maker states it, and rankings that are never sold.",
+        "Ask each editor to add AgentScout to the existing table or index, and keep a list of which pages change so the next check can measure it."
+      ],
+      "effort": "a few days of outreach to 6–8 existing pages"
+    },
+    {
+      "title": "Publish first-party comparison and “where to find MCP servers” pages.",
+      "why": "Prompts 1 and 5 show that AgentScout’s own pages can move an AI answer when they rank. The MCP queries currently have no AgentScout page in the citation set. These are pages you can ship without waiting on a roundup.",
+      "steps": [
+        "Publish honest /vs/ pages for PulseMCP, mcp.so, and Glama, plus a guide titled close to the buyer query “where to find MCP servers.”",
+        "State plainly how AgentScout differs: daily link checks, pricing as stated, MCP servers inside a broader agent-tools catalog, and that rankings are never sold.",
+        "Request crawls after the pages are live, and include them in llms.txt. Do not invent claims the live catalog cannot support."
+      ],
+      "effort": "a few days of writing on pages you control"
+    },
+    {
+      "title": "Match maker language for submit and listing queries.",
+      "why": "“list my AI agent tool” was read as a catalog request, and AgentScout was absent. “where to submit an AI agent tool” found the official submit page and recommended AgentScout. Makers type both.",
+      "steps": [
+        "Add a clearly titled page or section that uses the phrases “list my AI agent tool,” “submit my MCP server,” and “where to list an AI agent tool.”",
+        "Keep /submit.html; give the new wording a path the answers can cite. Say in the open that a basic listing is free, and that featured slots are labeled and do not change rankings.",
+        "Re-run both phrasings on the next check."
+      ],
+      "effort": "about a day of copy and a new or expanded page"
+    },
+    {
+      "title": "Get onto general AI-directory alternative listicles as the agent and MCP specialist.",
+      "why": "“There’s An AI For That alternative” answers recommend Futurepedia, Future Tools, Toolify, PoweredByAI, and Product Hunt. The three listicles we opened do not mention AgentScout. That is a different audience from MCP buyers, but it is where many makers start.",
+      "steps": [
+        "Pitch AICentral Resources, LaunchIt’s TAAFT-alternatives post, and similar 2026 listicles.",
+        "Position AgentScout as the specialist directory for AI agent tools and MCP servers, not as a generic TAAFT clone. A factual row in those tables is enough."
+      ],
+      "effort": "a few days of outreach"
+    },
+    {
+      "title": "Earn one independent third-party mention that is not your own page.",
+      "why": "Every non-brand appearance in this check was a first-party AgentScout URL. Third-party citations are worth 16 points on this scorecard, and they currently contribute zero.",
+      "steps": [
+        "Place one honest review or comparison outside a directory you control: a builder newsletter, a community thread, or an independent blog.",
+        "Give the writer current, checkable facts from the live site, then include the URL in the next check’s citation audit."
+      ],
+      "effort": "weeks, and it depends on a relationship"
+    }
+  ],
+  "further_improvements": [
+    "Skillful.sh, AgentShortlist, DeepYard, and Fushu appeared on the headline “best directory of AI agent tools” query. They are closer peers than There’s An AI For That on that question, and are worth watching on the next run.",
+    "Unrelated GitHub repositories also named “agentscout” exist. The brand query used here (“AgentScout AI agent tools”) returned only official pages, but a bare-name search can collide. A consistent “AgentScout HQ” or agentscouthq.com mention in third-party writeups would reduce that risk."
+  ],
+  "further_note": "These two items did not cost points on this scorecard. They are still worth acting on.",
+  "methodology": [
+    "Followed the ai-search-visibility-check skill. Ten buyer prompts (five marked top) were written as questions real buyers or makers type, not as vanity queries.",
+    "For each prompt, ran an AI-answer style web search (WebSearch) on November 11, 2026, and saved the synthesis plus its source links.",
+    "Scored AgentScout and four rivals on one rung: recommended > cited > mentioned > absent, using the definitions in this report. Scoring is conservative.",
+    "Opened the main third-party comparison and directory-index pages the answers cited for MCP and general-directory queries, and checked each one for an AgentScout mention so a citation was not missed.",
+    "Did not invent results. Anything not measured is labeled as not run."
+  ],
+  "out_of_scope": [
+    "ChatGPT, Claude, or Gemini chat answers.",
+    "Perplexity.",
+    "Google AI Overviews or AI Mode as a separate capture from WebSearch.",
+    "Any signed-in answer surface.",
+    "Changing agentscouthq.com, sending outreach, or publishing this sample."
+  ],
+  "disclaimer": "This is a point-in-time visibility check of a public website. Results can change as search indexes and answer engines update. Share-of-answer figures apply only to the surfaces that were actually run (AI-answer style web search and the cited pages we opened). They are not a claim about ChatGPT, Perplexity, or Google AI Overviews, which were not measured. Nothing in this sample was published, emailed, or changed on agentscouthq.com.",
+  "badge_date": "Nov 11, 2026",
+  "next_step": {
+    "title": "Next step",
+    "body": "After you make these fixes, book a free retest within 30 days. We will run the same prompts again and show whether the score improved.",
+    "link_label": "https://agentscouthq.com/ (booking link added at launch)"
+  },
+  "citation_targets": [
+    {
+      "url": "https://automationswitch.com/mcp",
+      "why": "Cited for “where to find MCP servers.” Indexes 18 MCP directories. AgentScout is not among them.",
+      "realistic": "Yes — ask to be added to the index."
+    },
+    {
+      "url": "https://mcpifex.com/compare/best-mcp-marketplaces",
+      "why": "Cited for “PulseMCP alternative.” Compares the official registry, Glama, mcp.so, PulseMCP, and others as of October 30, 2026.",
+      "realistic": "Yes"
+    },
+    {
+      "url": "https://faun.dev/toolbox/alternatives/pulsemcp-alternatives/",
+      "why": "Cited for “PulseMCP alternative.” Rates official registry, Docker MCP Catalog, Glama, Smithery, and mcp.so.",
+      "realistic": "Yes"
+    },
+    {
+      "url": "https://explainx.ai/blog/top-10-mcp-server-directories-2026",
+      "why": "Cited for “best MCP server directory 2026.” Top 10 does not include AgentScout.",
+      "realistic": "Yes, though the page also promotes explainx.ai itself."
+    },
+    {
+      "url": "https://mcpstepbystep.com/learn/finding-servers/",
+      "why": "Cited for “how to find MCP servers for Claude.” Lists official registry, GitHub, Claude, Docker, Smithery, PulseMCP, Glama, and mcp.so. Verified October 8, 2026.",
+      "realistic": "Yes"
+    },
+    {
+      "url": "https://indielaunch.dev/directories/pulsemcp",
+      "why": "Cited for “PulseMCP alternative.” Eight alternatives, no AgentScout. Verified October 18, 2026.",
+      "realistic": "Yes"
+    },
+    {
+      "url": "https://www.aicentralresources.com/top-10-best-ai-tool-directories",
+      "why": "Cited for “There’s An AI For That alternative.” November 2026 top 10 of general AI directories, no AgentScout.",
+      "realistic": "Yes — pitch as the agent and MCP specialist."
+    },
+    {
+      "url": "https://launchit.fast/blog/theres-an-ai-for-that-alternatives-2026",
+      "why": "Cited for the same comparison. 13 alternatives checked November 4, 2026, no AgentScout.",
+      "realistic": "Yes"
+    }
+  ],
+  "first_party_already_working": [
+    {
+      "url": "https://agentscouthq.com/",
+      "why": "Cited and recommended on “best directory of AI agent tools,” and led the brand query."
+    },
+    {
+      "url": "https://agentscouthq.com/submit.html",
+      "why": "Cited and recommended on “where to submit an AI agent tool.”"
+    }
+  ]
+}
