@@ -2,7 +2,7 @@
 
 HTML + CSS report that prints to a branded, dark-mode PDF. The same builder publishes a noindex web page and the public product page.
 
-Prices and all six Stripe links live only in `data/mcp_test_report.json`. `sell` is `intro` or `full`. The product page and the product feed use that flag. The page sells the MCP server test and the bundle. The AI visibility check links stay in the file until that page exists. Questions still go to support@agentscouthq.com.
+Prices and Stripe links for the MCP server test and the bundle live in `data/mcp_test_report.json`. The AI visibility check has its own file, `data/ai_visibility_check.json`. `sell` is `intro` or `full`. Each product page and the product feed use that flag. Questions still go to support@agentscouthq.com.
 
 ## What the harness is allowed to keep
 
@@ -86,7 +86,17 @@ That command:
 - keeps `/r/` out of `sitemap.xml`
 - adds the product page to the sitemap and the footer / MCP menu
 
-The sample is the only private report linked from a public page. Booking inside a report stays the placeholder already in the scorecard. Do not invent a live booking URL.
+The MCP sample is the only private MCP report linked from a public page. The AI visibility sample is separate. Booking inside a report stays the placeholder already in the scorecard. Do not invent a live booking URL.
+
+## AI visibility check
+
+The near-black report (page `#0A0A0B`, orange `#FF8A3D`) lives in `ai-visibility/`. It does not use this indigo template. Prices and Stripe links for that product live in `data/ai_visibility_check.json`. From the repo root:
+
+```bash
+python3 tools/report-kit/publish_visibility.py
+```
+
+That writes `/ai-visibility-check.html`, the noindex sample at `/r/<sample_slug>/` (page and `report.pdf`), and the sitemap row. `/r/` stays out of the sitemap. See `ai-visibility/README.md` for how to build the next customer report.
 
 ## Brand
 

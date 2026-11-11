@@ -70,12 +70,13 @@ class PriceConfigTest(unittest.TestCase):
         headers = (ROOT / "_headers").read_text(encoding="utf-8")
         self.assertIn("X-Robots-Tag: noindex, nofollow", headers)
         self.assertIn("Content-Security-Policy:", headers)
-        # Public pages may link the sample. They may not link any other /r/ token.
+        # Public pages may link the two samples. They may not link any other /r/ path.
+        visibility = json.loads((ROOT / "data" / "ai_visibility_check.json").read_text(encoding="utf-8"))
         linked = set(re.findall(r'href="(?:\.\./)*r/([^"/]+)/', "\n".join(
             p.read_text(encoding="utf-8", errors="ignore")
             for p in ROOT.glob("*.html")
         )))
-        self.assertEqual(linked, {TOKEN})
+        self.assertEqual(linked, {TOKEN, visibility["sample_slug"]})
 
     def test_catalog_lists_the_report_and_the_bundle_at_the_intro_price(self):
         products = json.loads((ROOT / "api" / "products.json").read_text(encoding="utf-8"))
@@ -84,7 +85,7 @@ class PriceConfigTest(unittest.TestCase):
         self.assertEqual(products, acp)
         self.assertEqual(products, snap)
         rows = {row["id"]: row for row in products["reports"]}
-        self.assertEqual(set(rows), {"mcp-server-test", "bundle"})
+        self.assertEqual(set(rows), {"mcp-server-test", "ai-visibility", "bundle"})
         for row in catalog.catalog_entries(PRICES):
             self.assertEqual(rows[row["id"]]["checkout_url"], row["checkout_url"])
             self.assertEqual(rows[row["id"]]["price_usd"], row["price_usd"])

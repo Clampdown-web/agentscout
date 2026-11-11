@@ -151,6 +151,7 @@ def product_main(doc: dict, token: str) -> str:
 <section class="calm">
 <h1 style="text-align:left" data-pagefind-weight="10">MCP server test report</h1>
 <p class="lede" style="margin-left:0;text-align:left">A written test of one public MCP server: we connect over the protocol, call the safe read-only tools, time the round trips, and score the schema. You get a private page, a PDF, and a dated badge.</p>
+<p>For how a site shows up in AI answers, see the <a href="ai-visibility-check.html">AI visibility check</a>.</p>
 <p class="report-intro">{esc(doc["intro"]["note"])}</p>
 <div class="report-offers">{cards}</div>
 <p class="report-ask"><a href="mailto:{esc(email)}">Questions? Email {esc(email)}</a></p>
@@ -348,7 +349,7 @@ def patch_refunds(doc: dict) -> None:
         '<li>You get a full refund if we cannot run the test at all, for example when the MCP server or site cannot be reached and you cannot fix access.</li>'
         '<li>Once a report is delivered, there is no refund. You get one free retest or fix check of the same server or site within 30 days.</li>'
         '</ul>'
-        '<p>Email <a href="mailto:support@agentscouthq.com?subject=Report%20refund">support@agentscouthq.com</a>. The offer is on the <a href="mcp-test-report.html">MCP server test report</a> page.</p>'
+        '<p>Email <a href="mailto:support@agentscouthq.com?subject=Report%20refund">support@agentscouthq.com</a>. The offers are on the <a href="mcp-test-report.html">MCP server test report</a> page and the <a href="ai-visibility-check.html">AI visibility check</a> page.</p>'
     )
     marker = '<h2 style="font-size:19px;margin:32px 0 8px">EU and UK buyers</h2>'
     if "MCP server test reports and AI visibility checks" not in text:

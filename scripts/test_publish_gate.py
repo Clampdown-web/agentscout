@@ -110,8 +110,8 @@ class PackagesTest(unittest.TestCase):
         rows = []
         for key in publish_gate.PRODUCT_GROUPS:
             rows.extend(document[key])
-        self.assertEqual(len(rows), 41)
-        live = {"total_products": 41, "products": rows}
+        self.assertEqual(len(rows), 42)
+        live = {"total_products": 42, "products": rows}
         self.assertIsNone(live.get("pages"))
         self.assertEqual(publish_gate.list_packages_problems(200, live, stale=[]), [])
         self.assertEqual(publish_gate.product_snapshot_problems(ROOT), [])

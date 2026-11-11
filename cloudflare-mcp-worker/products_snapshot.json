@@ -1084,6 +1084,24 @@
           "url": "https://buy.stripe.com/bJe8wQ2CL39d0Ox8vxe7m0k",
           "availability": "https://schema.org/InStock"
         }
+      },
+      {
+        "@type": "Product",
+        "sku": "AS-REPORT-VIS",
+        "name": "AI Visibility Check",
+        "description": "A written check of how one public site shows up in AI answers for real buyer questions, with the rivals compared and the cited sources listed. Intro price for the first 10 sold or until December 31, 2026, whichever comes first.",
+        "category": "report",
+        "brand": {
+          "@type": "Brand",
+          "name": "AgentScout"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "79",
+          "priceCurrency": "USD",
+          "url": "https://buy.stripe.com/14A4gAdhpeRV2WFaDFe7m0i",
+          "availability": "https://schema.org/InStock"
+        }
       }
     ]
   },
@@ -1108,6 +1126,27 @@
         "Private noindex report page and PDF",
         "Tested by AgentScout badge for the dated result",
         "One free retest or fix check of the same server or site within 30 days after delivery"
+      ]
+    },
+    {
+      "id": "ai-visibility",
+      "sku": "AS-REPORT-VIS",
+      "name": "AI Visibility Check",
+      "category": "report",
+      "price_usd": 79,
+      "regular_price_usd": 99,
+      "intro_price_usd": 79,
+      "billing_model": "one_time",
+      "availability": "in_stock",
+      "badge": "Intro",
+      "checkout_url": "https://buy.stripe.com/14A4gAdhpeRV2WFaDFe7m0i",
+      "checkout_url_regular": "https://buy.stripe.com/8x26oI6T15hl2WF7rte7m0j",
+      "intro_checkout_url": "https://buy.stripe.com/14A4gAdhpeRV2WFaDFe7m0i",
+      "page_url": "https://agentscouthq.com/ai-visibility-check.html",
+      "description": "A written check of how one public site shows up in AI answers for real buyer questions, with the rivals compared and the cited sources listed. Intro price for the first 10 sold or until December 31, 2026, whichever comes first.",
+      "deliverables": [
+        "Private noindex report page and PDF",
+        "One free retest or fix check of the same site within 30 days after delivery"
       ]
     },
     {
