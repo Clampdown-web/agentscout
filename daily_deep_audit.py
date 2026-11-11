@@ -704,6 +704,7 @@ SHARE_JS_OPTIONAL_FILES = {
     "submit.html",
     "saved.html",
     "privacy.html",
+    "refunds.html",
     "how-it-started.html",
     "sponsor.html",
 }

@@ -1,6 +1,7 @@
 import os, re, sys
 from pathlib import Path
 from build_extras import B, e, shell, clip_text, clip_title
+from build_sponsor import pay_note
 sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 from pack_builder_html import pack_section_html
 
@@ -157,7 +158,7 @@ def _launch_markup():
         return ""
     return "<!-- TODO(owner): LAUNCH_PROMO in build_bot_store.py is off. Create the Stripe promotion code, set LAUNCH_PROMO to that code, and only then add a launch-discount line with prefilled checkout links. Do not invent a percent off or a strikethrough price. -->"
 
-LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section>""" + _launch_markup() + """<div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Best value</p><h2>Full 4-Bot Bundle</h2><p class="bs-pick-price">$149 <small>one time</small></p><p>Operations, SEO, market intel, and the CEO coordinator together. Bought separately those four list at $226.</p><a class="bs-btn bs-pick-buy" data-product="as-bot-bundle-149" data-price="149" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer">Buy the 4-bot bundle — $149</a></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a></article></div>"""
+LEAD = """<section class="bs-lead" aria-labelledby="bs-lead-h"><h1 id="bs-lead-h" data-pagefind-weight="10">Bot Store</h1><p>Three checkouts. Every other bot, pack, and Stripe link is under See all.</p></section>""" + _launch_markup() + """<div class="bs-pick-grid"><article class="bs-pick"><p class="bs-pick-kicker">One role</p><h2>Single AI Agent Pack</h2><p class="bs-pick-price">$35 <small>one time</small></p><p>One downloadable role pack: a skill file, three scheduled routines, and a Python script. Choose the role in the full catalog.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-1" data-price="35" href="https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09" target="_blank" rel="noopener noreferrer">Buy one pack — $35</a><p class="paynote" style="flex:1 0 100%;box-sizing:border-box;margin:8px auto 0;max-width:40rem;width:100%;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article><article class="bs-pick bs-pick-featured"><p class="bs-pick-kicker">Best value</p><h2>Full 4-Bot Bundle</h2><p class="bs-pick-price">$149 <small>one time</small></p><p>Operations, SEO, market intel, and the CEO coordinator together. Bought separately those four list at $226.</p><a class="bs-btn bs-pick-buy" data-product="as-bot-bundle-149" data-price="149" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer">Buy the 4-bot bundle — $149</a><p class="paynote" style="flex:1 0 100%;box-sizing:border-box;margin:8px auto 0;max-width:40rem;width:100%;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article><article class="bs-pick"><p class="bs-pick-kicker">All 25 roles</p><h2>All 25 Mega Pack</h2><p class="bs-pick-price">$349 <small>one time</small></p><p>Every role pack in one checkout. That works out to $13.96 a pack, against $35 bought one at a time.</p><a class="bs-btn bs-pick-buy" data-product="as-pack-25" data-price="349" href="https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d" target="_blank" rel="noopener noreferrer">Buy all 25 — $349</a><p class="paynote" style="flex:1 0 100%;box-sizing:border-box;margin:8px auto 0;max-width:40rem;width:100%;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p></article></div>"""
 
 def pages(t):
     os.makedirs("bot-store", exist_ok=True)
@@ -209,6 +210,7 @@ def pages(t):
         f'<div class="bs-bundle-ctas">'
         f'<a class="bs-btn" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#10b981,#34d399);color:#031811;padding:12px 20px;box-shadow:0 6px 20px rgba(16,185,129,.45)">Buy All 4 Bots Together — $149 (Save $77) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(12,10,6,.9);color:#d1fae5;border:1px solid #10b981">Pay $149 via X Money (@clampdown19)</a>'
+        f'{pay_note("../")}'
         f'</div>'
         f'</div>'
         # 4 Individual Bots + Custom Bot Drop Card
@@ -229,6 +231,7 @@ def pages(t):
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
+        f'{pay_note("../")}'
         f'</div></article>'
         # Card 2
         f'<article id="seo-aeo-auditor-bot" class="bs-card neon-gold" data-bs-cat="seo">'
@@ -246,6 +249,7 @@ def pages(t):
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy AgentScout SEO &amp; AEO Growth Auditor Bot ($59) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
+        f'{pay_note("../")}'
         f'</div></article>'
         # Card 3
         f'<article id="market-launch-intel-bot" class="bs-card neon-orange" data-bs-cat="intel">'
@@ -263,6 +267,7 @@ def pages(t):
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/4gM8wQelt11568RaDFe7m06" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy AgentScout Market &amp; Launch Intel Bot ($59) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
+        f'{pay_note("../")}'
         f'</div></article>'
         # Card 4
         f'<article id="ceo-coordinator-bot" class="bs-card neon-red" data-bs-cat="exec">'
@@ -280,6 +285,7 @@ def pages(t):
         f'<div class="bs-actions">'
         f'<a class="bs-btn" href="https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy AgentScout CEO Coordinator Bot ($69) →</a>'
         f'<a class="bs-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'
+        f'{pay_note("../")}'
         f'</div></article>'
         # Expansion card: Request a Custom Bot / Next Bot Drop
         f'<article id="custom-bot-drop" class="bs-card neon-custom" data-bs-cat="all ops seo intel exec bundle" style="grid-column:1 / -1">'

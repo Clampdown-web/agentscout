@@ -5,6 +5,7 @@ import json,re,os,html,sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 from pack_builder_html import pack_section_html
+from build_sponsor import pay_note
 esc=html.escape
 SITE="https://agentscouthq.com"; D="bot-templates"; MARK="<!-- btx-generated -->"
 def ld_script(obj):
@@ -363,6 +364,7 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/cNidRa0uDdNRgNvaDFe7m03" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#84cc16,#a3e635);color:#081202;box-shadow:0 4px 16px rgba(132,204,22,.45)">Buy AgentScout Operations / Monitoring Bot ($39) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ecfccb;border:1px solid #84cc16">Pay $39 on X Money (@clampdown19)</a>'
+        + pay_note("../") +
         '</div></div>'
         # Card 2: $59 2. AgentScout SEO & AEO Growth Auditor Bot — Neon Electric Gold / Yellow (#eab308 / #facc15)
         '<div class="mba-card neon-gold">'
@@ -373,6 +375,7 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#eab308,#facc15);color:#141002;box-shadow:0 4px 16px rgba(234,179,8,.45)">Buy AgentScout SEO &amp; AEO Growth Auditor Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fef9c3;border:1px solid #eab308">Pay $59 on X Money (@clampdown19)</a>'
+        + pay_note("../") +
         '</div></div>'
         # Card 3: $59 Market & Launch Intel Bot — Neon Sunset Orange (#f97316 / #fb923c)
         '<div class="mba-card neon-orange">'
@@ -383,6 +386,7 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/4gM8wQelt11568RaDFe7m06" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f97316,#fb923c);color:#140702;box-shadow:0 4px 16px rgba(249,115,22,.45)">Buy AgentScout Market &amp; Launch Intel Bot ($59) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#ffedd5;border:1px solid #f97316">Pay $59 on X Money (@clampdown19)</a>'
+        + pay_note("../") +
         '</div></div>'
         # Card 4: $69 CEO Coordinator Bot — Neon Crimson Red / Coral (#ef4444 / #f87171)
         '<div class="mba-card neon-red">'
@@ -393,6 +397,7 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-actions">'
         '<a class="mba-btn" href="https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#ef4444,#f87171);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,.45)">Buy AgentScout CEO Coordinator Bot ($69) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,.07);color:#fee2e2;border:1px solid #ef4444">Pay $69 on X Money (@clampdown19)</a>'
+        + pay_note("../") +
         '</div></div>'
         '</div>'
         # Card 5: $149 Full 4-Bot Bundle — Neon Mint-Emerald (#10b981 / #34d399)
@@ -406,6 +411,7 @@ def made_by_agentscout_html(total=None):
         '<div class="mba-bundle-ctas">'
         '<a class="mba-btn" href="https://buy.stripe.com/fZueVe5OX7pt1SB6npe7m08" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#10b981,#34d399);color:#031811;padding:10px 18px;box-shadow:0 6px 20px rgba(16,185,129,.45)">Buy All 4 Bots Together — $149 (Save $77) →</a>'
         '<a class="mba-btn" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer" style="background:rgba(12,10,6,.9);color:#d1fae5;border:1px solid #10b981">Pay $149 via X Money (@clampdown19)</a>'
+        + pay_note("../") +
         '<a class="mba-btn" href="../bot-store/" style="background:rgba(255,255,255,.08);color:#ecfccb;border:1px solid rgba(163,230,53,.5)">Full Bot Store Details →</a>'
         '</div></div>'
         '</section>'

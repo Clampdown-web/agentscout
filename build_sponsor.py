@@ -17,6 +17,23 @@ LAUNCH_PACK_INTAKE = "After you pay, reply to the receipt or email support@agent
 LAUNCH_PACK_LIMITS = "This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing."
 X_CLAMPDOWN = "https://x.com/clampdown19"
 X_AGENTSCOUT = "https://x.com/AgentScoutHQ"
+REFUND_URL = "https://agentscouthq.com/refunds.html"
+REFUND_LINE = (
+    "Refunds: full refund on the $15 fast-track if we decline the tool or it is not listed within 5 days "
+    "(no refund once it is live); full refund on a sponsorship before the slot starts, then a prorated refund "
+    "or no refund; no refund on a Bot Store download unless it is broken or not as described and reported within 7 days. "
+    f"Email support@agentscouthq.com. Policy: {REFUND_URL}"
+)
+
+def pay_note(prefix=""):
+    """EU/UK immediate-delivery line and the refund policy, placed by a pay button."""
+    href = f"{prefix}refunds.html"
+    return (
+        '<p class="paynote" style="flex:1 0 100%;box-sizing:border-box;margin:8px auto 0;max-width:40rem;width:100%;'
+        'font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">'
+        "EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. "
+        f'<a href="{href}">Refund policy</a>.</p>'
+    )
 
 def fmt(n): return f"{int(n):,}"
 
@@ -30,6 +47,7 @@ def launch_pack_html():
       <p>{LAUNCH_PACK_SKIP} {LAUNCH_PACK_LIMITS}</p>
       <p><b>After you pay:</b> {LAUNCH_PACK_INTAKE}</p>
       <p style="margin:14px 0 0"><a class="btn primary pkg-cta pkg-cta-lp" href="{LAUNCH_PACK_URL}" target="_blank" rel="noopener noreferrer">Buy the Directory Launch Pack ($49) →</a></p>
+      {pay_note("")}
     </aside>'''
 
 def load_metrics(t):
@@ -123,6 +141,7 @@ def packages_grid(t, m=None, on_submit=False):
       </div>
       <div class="pkg-foot">
         <a class="btn primary pkg-cta pkg-cta-fast" href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer">Fast-Track for $15 via Stripe →</a>
+        {pay_note("")}
         <div class="pkg-xmoney">Or pay <b>$15</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
       </div>
     </div>
@@ -144,6 +163,7 @@ def packages_grid(t, m=None, on_submit=False):
       </div>
       <div class="pkg-foot">
         <a class="btn primary pkg-cta pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Get Featured for $49 via Stripe →</a>
+        {pay_note("")}
         <div class="pkg-xmoney">Or pay <b>$49</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
       </div>
     </div>
@@ -165,6 +185,7 @@ def packages_grid(t, m=None, on_submit=False):
       </div>
       <div class="pkg-foot">
         <a class="btn primary pkg-cta pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Book Weekly Sponsor ($99/wk) →</a>
+        {pay_note("")}
         <div class="pkg-xmoney">Or pay <b>$99</b> via <b>X Money</b> to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a></div>
       </div>
     </div>
@@ -236,7 +257,7 @@ def build(t):
           <h2 style="font-size:18px;margin:0 0 6px">Paying with Stripe or X Money — How Fulfillment Works</h2>
           <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55">
             <b>Option 1 — Instant Card / Apple Pay / Link via Stripe:</b> Use the <a href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer"><b>$15 Fast-Track Boost</b></a>, <a href="{STRIPE_49}" target="_blank" rel="noopener noreferrer"><b>$49 30-Day Category Pin + Permanent SEO/AEO</b></a>, or <a href="{STRIPE_99}" target="_blank" rel="noopener noreferrer"><b>$99/wk Weekly Sitewide Sponsor</b></a> checkout links above.<br>
-            <b>Option 2 — Pay via X Money:</b> Send <b>$15</b>, <b>$49</b>, or <b>$99</b> directly on X Money to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> and DM or email <a href="mailto:support@agentscouthq.com?subject=AgentScout%20Sponsor%20Order">support@agentscouthq.com</a> with your tool URL. We activate your pin and schedule your X spotlight posts the same day.
+            <b>Option 2 — Pay via X Money:</b> Send <b>$15</b>, <b>$49</b>, or <b>$99</b> directly on X Money to <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> and DM or email <a href="mailto:support@agentscouthq.com?subject=AgentScout%20Sponsor%20Order">support@agentscouthq.com</a> with your tool URL. We activate your pin and schedule your X spotlight posts the same day. Refunds are on the <a href="refunds.html">refund policy</a>.
           </p>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -244,6 +265,7 @@ def build(t):
           <a class="btn primary pkg-cta-fast" href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer">Fast-Track ($15) →</a>
           <a class="btn primary pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Category Pin ($49 ★) →</a>
           <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>
+          {pay_note("")}
         </div>
       </div>
     </div>
