@@ -123,7 +123,7 @@ def stamp_assets(s):
     """Every generator, including news via shell(), writes styles.css?v= at ASSET_V."""
     import build_tasks
     v=build_tasks.ASSET_V
-    return re.sub(r'(app\.js|styles\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+', lambda mm: mm.group(1)+"?v="+v, s)
+    return re.sub(r'(app\.js|styles\.css|home-mobile\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js)\?v=\d+', lambda mm: mm.group(1)+"?v="+v, s)
 def shell(depth,title,desc,canon,body,ld):
     tpl=open("data/detail.tpl").read()
     head=tpl.split("<title>")[0].replace("../",depth)

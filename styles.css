@@ -1193,7 +1193,7 @@ nav.sitenav:not(.is-open) .navlinks,nav.sitenav:not(.is-open) .navsheet{display:
 nav.sitenav.is-open{overflow:visible}
 nav.sitenav.is-open .navlinks{visibility:visible;pointer-events:auto}
 nav.sitenav .navsheet{width:min(440px,100%);height:100%;height:100dvh;max-height:100dvh;overflow:auto;overscroll-behavior:contain;background:var(--bg);color:var(--text);padding:8px 14px calc(28px + env(safe-area-inset-bottom));box-sizing:border-box;box-shadow:-16px 0 40px rgba(0,0,0,.28)}
-@media(max-width:720px){nav.sitenav .navlinks{justify-content:stretch}nav.sitenav .navsheet{width:100%;box-shadow:none}}
+@media(max-width:720px){nav.sitenav .navlinks{justify-content:flex-end}nav.sitenav .navsheet{width:min(88vw,440px);max-width:min(88vw,440px);flex:0 0 auto}}
 @media(max-width:959px){nav.sitenav .navlinks{position:fixed;inset:0;top:0;max-height:none}}
 @media(min-width:960px){nav.sitenav .navlinks{position:fixed;inset:0;top:0;max-height:none}nav.sitenav .nav-submit>summary{background:transparent;color:var(--accent);border-radius:0}}
 .mtop{display:flex;align-items:center;justify-content:space-between;min-height:56px;margin:0 0 8px}
@@ -1265,6 +1265,7 @@ body.home .mkcard{min-height:56px}
 body.home #makers-strip .mkrow{gap:12px}
 body.home .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:720px){body.home .svc-grid{grid-template-columns:1fr}body.home .svc-tile{min-height:0;padding:12px}body.home #services{margin-top:8px}}
+#services{scroll-margin-top:73px}
 @media(min-width:721px){body.home .svc-grid{grid-template-columns:1fr 1fr}}
 body.home .svc-note{margin:0 0 12px;color:var(--muted);font-size:14px}
 .svc-back{margin:0 0 12px;font-size:14px}
@@ -1295,6 +1296,7 @@ body.home #about-directory,body.home #xfree,body.home #bt-strip,body.home #recen
 body.home .hero-chips,body.home #xcats .badges,body.home #xroles .badges,body.home #newslist,body.home #mcp-rows{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
 body.home .hsec,body.home .wrap,footer.footcols .wrap{min-width:0}
 nav.sitenav .navsheet{max-width:100%}
+@media(max-width:720px){nav.sitenav .navsheet{width:min(88vw,440px);max-width:min(88vw,440px);flex:0 0 auto}}
 /* backdrop-filter on the bar would trap the fixed sheet inside the header. Keep the frost on a bar-sized layer. */
 nav.sitenav{backdrop-filter:none;background:transparent}
 nav.sitenav.is-open{z-index:1000}
