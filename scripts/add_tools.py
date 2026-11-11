@@ -1,5 +1,5 @@
 """Verify and append tools to tools.json.
-Input TSV columns: repo_or_blank  category  pricing  audience  description  [name]  [website]
+Input TSV columns: repo_or_blank  category  pricing  audience  description  [name]  [website]  [icon_url]
   - repo: owner/name on GitHub (or blank for closed products; then name+website required)
 Checks: GitHub repo exists & not archived, website returns 200 (bot-blocked 403 => website dropped, github kept),
 logo = site apple-touch-icon / icon >=64px, else a logo/icon file in the repo, else the GitHub owner avatar ONLY if the owner is an Organization (never a personal User avatar); dedupe by name/domain/repo against tools.json.
@@ -93,7 +93,7 @@ def save_logo(im, path):
   buf=io.BytesIO(); trial.save(buf, format="PNG", optimize=True)
   open(path,"wb").write(buf.getvalue())
 def verify(row):
-  row+=['']*(7-len(row)); repo,cat,pr,aud,desc,name,site=row[:7]; o={"err":None}
+  row+=['']*(8-len(row)); repo,cat,pr,aud,desc,name,site,icon=row[:8]; o={"err":None}
   assert cat in CATS and pr in PRICES, (cat,pr)
   stars=None;owner_avatar=None
   if repo:
@@ -123,8 +123,9 @@ def verify(row):
       h=re.search(r'href=["\']([^"\']+)',t)
       if h: cands.append(urljoin(site,h.group(1)))
   cands.sort(key=lambda u:0 if 'apple' in u else 1)
+  if icon and public(icon): cands.insert(0, icon)
   if site: cands+= [urljoin(site,'/apple-touch-icon.png'),urljoin(site,'/favicon.ico')]
-  if repo:  # official logo files in the repo itself (README logo, logo/icon files), before any avatar
+  if repo and not icon:  # official logo files in the repo itself, before any avatar. A supplied icon is already the maker's logo.
     try:
       tr=requests.get(f"https://api.github.com/repos/{repo}/git/trees/HEAD?recursive=1",headers=GH,timeout=15).json().get("tree",[])
       hits=sorted([x["path"] for x in tr if re.search(r'(^|/)(logo|icon|brand)[^/]*\.(png|svg|jpg|webp)$',x["path"],re.I) and not re.search(r'node_modules|test|vendor|third_party|templates?/icons',x["path"],re.I)],key=lambda q:(q.count('/'),len(q)))
@@ -132,7 +133,7 @@ def verify(row):
     except Exception: pass
   # GitHub owner avatar ONLY for organisation accounts. A User account's avatar is a personal photo, not a logo
   # (logo audit Oct 18 2026: 43 tools had a maintainer's face/landscape as their logo). Users -> "no logo" -> review by hand.
-  if owner_avatar:
+  if owner_avatar and not icon:
     login=owner_avatar.split("github.com/")[1].split(".png")[0]
     try: otype=requests.get(f"https://api.github.com/users/{login}",headers=GH,timeout=15).json().get("type")
     except Exception: otype=None

@@ -3,9 +3,9 @@
 
 Four tool URLs that earned a click were later marked noindex by the thin-page
 rule (under 80 unique words and no enrichment). Enrichment from the maker's
-own pages is the rule's existing way back into the sitemap. This test does
-not raise the 5-new-URL cap and does not treat an unenriched short page as
-indexable.
+own pages is the rule's existing way back into the sitemap. The daily cap
+for new full pages is 15. This test does not treat an unenriched short page
+as indexable.
 """
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ class ClickRecoveryTests(unittest.TestCase):
         cls.links = (ROOT / "build_intlinks.py").read_text(encoding="utf-8")
 
     def test_daily_cap_and_thin_threshold_unchanged(self):
-        self.assertIn("NEW_TOOL_CAP=5", self.rule)
+        self.assertIn("NEW_TOOL_CAP=15", self.rule)
         self.assertIn("THIN_WORDS=80", self.rule)
         self.assertIn("if enr or (not thin and (grandfather or slug in slots)):", self.rule)
 

@@ -379,7 +379,7 @@ if _sp.run([_sys.executable,"scripts/check_relevance.py","--strict","--write"]).
 # (featured, GA, lastmod) and before Pagefind, which only indexes sitemap URLs that are not noindex.
 ENRICH_FIELDS=("long","who","features","pros","cons","setup","faq","pricing","pricing_v","mcp")
 THIN_WORDS=80
-NEW_TOOL_CAP=5
+NEW_TOOL_CAP=15
 def _tool_rich():
     import build_rich
     return build_rich.R
@@ -401,11 +401,20 @@ def _is_thin_tool(x,rich):
     """Short or boilerplate tool copy with no enrichment fields. Enriched pages are not thin."""
     if _has_enrichment(x,rich): return False
     return _unique_words(x,rich)<THIN_WORDS
+def _well_filled(x,rich):
+    """A full indexable page needs a real description, features, use cases and a logo."""
+    if len(re.findall(r"[A-Za-z0-9']+", x.get("description") or ""))<12: return False
+    if not any(str(u).strip() for u in (x.get("use_cases") or [])): return False
+    feats=(rich.get(x["slug"]) or {}).get("features") or []
+    if not any(isinstance(p,str) and p.strip() for p in feats): return False
+    logo=x.get("logo") or ""
+    return logo==f"assets/logos/{x['slug']}.png" and os.path.isfile(logo)
 def apply_thin_page_rule(tools):
     """Tool pages under 80 unique words and with no enrichment fields get noindex,follow and leave sitemap.xml.
-    They still render and stay linked. The daily build admits at most 5 new unenriched tool URLs; the rest stay
-    noindex until an enrichment record exists. catalog_only listings are always noindex and never take one of
-    those slots, even when the blurb is long. Returns counts for the build log."""
+    They still render and stay linked. The daily build admits at most NEW_TOOL_CAP new full tool URLs. A new
+    full page, including a catalog_only row promoted by dropping that flag, needs a real description, features,
+    use cases and a logo, and it takes one of those slots. Thin pages stay noindex. catalog_only listings are
+    always noindex and never take a slot, even when the blurb is long. Returns counts for the build log."""
     import datetime as _d
     from zoneinfo import ZoneInfo as _Zi
     rich=_tool_rich()
@@ -422,12 +431,14 @@ def apply_thin_page_rule(tools):
             if (x.get("added") or "")<today and not _is_thin_tool(x,rich):
                 admitted.setdefault(x["slug"], x.get("added") or "1970-01-01")
         state["seeded"]=True
-    slots=[s for s in slots if s in by and not by[s].get("catalog_only") and not _has_enrichment(by[s],rich) and not _is_thin_tool(by[s],rich)]
     import index_hold as _ih
     try: _hold=json.load(open("data/index_hold.json"))
     except Exception: _hold={}
     # Dated batches stay noindex until that LA date, one batch of NEW_TOOL_CAP per day.
     held=_ih.held_slugs(today, _hold, state, NEW_TOOL_CAP)
+    # Slots are today's new full pages. A promoted catalog_only row stays in the count
+    # after it is enriched, so a second build the same day does not open another batch.
+    slots=[s for s in slots if s in by and s not in held and not by[s].get("catalog_only") and _well_filled(by[s],rich) and not _is_thin_tool(by[s],rich)]
     noindex=[]; queued=[]; indexed=[]
     for x in sorted(tools, key=lambda z:((z.get("added") or ""), z["slug"])):
         slug=x["slug"]
@@ -435,10 +446,19 @@ def apply_thin_page_rule(tools):
             noindex.append(slug); continue
         enr=_has_enrichment(x,rich) and slug not in held; thin=_is_thin_tool(x,rich) or slug in held
         grandfather=admitted.get(slug,"") not in ("", today) and admitted.get(slug,"")<today
+        filled=_well_filled(x, rich)
         if enr or (not thin and (grandfather or slug in slots)):
+            # Pages admitted on an earlier day stay. A new full page, including one
+            # promoted out of catalog_only, has to be well-filled and takes a slot.
+            if not grandfather:
+                if not filled or (slug not in slots and len(slots)>=NEW_TOOL_CAP):
+                    noindex.append(slug)
+                    if filled and not thin: queued.append(slug)
+                    continue
+                if slug not in slots: slots.append(slug)
             admitted.setdefault(slug, today if enr and slug not in admitted else admitted.get(slug, today))
             indexed.append(slug); continue
-        if thin:
+        if thin or not filled:
             noindex.append(slug); continue
         if len(slots)<NEW_TOOL_CAP:
             slots.append(slug); admitted[slug]=today; indexed.append(slug)
