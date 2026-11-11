@@ -314,7 +314,7 @@ def _sync_index_counts():
     )
     # homepage JS re-renders the counts from tools.json: keep thousands separators (Oct 18 2026)
     s = s.replace('$("s-total").textContent=d.length;$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^\\d+/,d.length)','$("s-total").textContent=d.length.toLocaleString("en-US");$("s-eyebrow").textContent=$("s-eyebrow").textContent.replace(/^[\\d,]+/,d.length.toLocaleString("en-US"))')
-    s = s.replace('fetch("tools.json").then', 'fetch("tools.json",{cache:"no-cache"}).then')
+    s = s.replace('fetch("tools.json",{cache:"no-cache"})', 'fetch("tools.json")')
     # main landmark for screen readers (a11y audit Oct 18 2026): hero through the newsletter box, footer stays outside
     if "<main" not in s and '<header class="hero">' in s and "<footer" in s:
         s = s.replace('<header class="hero">', '<main id="main"><header class="hero">', 1)

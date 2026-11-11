@@ -55,5 +55,10 @@ def build(t):
     lc=max((x.get("verified") or "") for x in t)
     json.dump({"version":1,"generated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"updated":datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),"last_checked":lc,"count":len(tools),"total_tools":len(tools),"tools":tools},open("api/tools.json","w"),indent=1,ensure_ascii=False)
     # small file for the homepage "Recently added" stats (stats.js.html), so the homepage doesn't download the full 1.5 MB API
-    json.dump({"last_checked":lc,"tools":[{"category":x.get("category"),"added":x.get("added"),"seed":bool(x.get("seed"))} for x in t]},open("api/stats.json","w"),separators=(",",":"),ensure_ascii=False)
+    stats=[]
+    for x in t:
+        row={"category":x.get("category"),"added":x.get("added"),"seed":bool(x.get("seed"))}
+        if x.get("catalog_only"): row["catalog_only"]=True
+        stats.append(row)
+    json.dump({"last_checked":lc,"tools":stats},open("api/stats.json","w"),separators=(",",":"),ensure_ascii=False)
 if __name__=="__main__": build(json.load(open("tools.json")))

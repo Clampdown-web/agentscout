@@ -217,5 +217,72 @@ def run():
     print(f"redirects: wrote {n}/{len(m)}")
     return n
 
+def redirected_slugs(tools=None):
+    """Tool slugs whose page is a redirect and which are not in the live catalog."""
+    live=set()
+    if tools:
+        live={x.get("slug") for x in tools if x.get("slug")}
+    out=set()
+    for src in load():
+        if not isinstance(src,str): continue
+        src=src.lstrip("/")
+        if src.startswith("tools/") and src.endswith(".html"):
+            slug=src[len("tools/"):-len(".html")]
+            if slug not in live: out.add(slug)
+    return out
+def _drop_slug_html(html, slug):
+    """Remove a generated card, table row, or list item that links at a removed tool. Leaves the redirect stub page alone."""
+    html=re.sub(rf'<li class="card tile lb-card" data-slug="{re.escape(slug)}"[\s\S]*?</li>','',html,count=1)
+    html=re.sub(rf'<li style="margin:0 0 10px"><a href="(?:\.\./)?tools/{re.escape(slug)}\.html"[\s\S]*?</li>','',html,count=1)
+    html=re.sub(rf'<tr><td><a class="icol" href="(?:\.\./)?tools/{re.escape(slug)}\.html"[\s\S]*?</tr>','',html,count=1)
+    html=re.sub(rf'<tr><td><a href="(?:\.\./)?tools/{re.escape(slug)}\.html"[\s\S]*?</tr>','',html,count=1)
+    html=re.sub(rf',?\s*\{{"@type": "ListItem", "position": \d+, "name": "[^"]*", "url": "https://agentscouthq.com/tools/{re.escape(slug)}\.html"\}}','',html)
+    html=re.sub(rf',?\s*\{{"@type":"ListItem","position":\d+,"name":"[^"]*","url":"https://agentscouthq.com/tools/{re.escape(slug)}\.html"\}}','',html)
+    return html.replace("[,","[").replace(",]","]")
+def _sync_itemlist_counts(html):
+    """Keep numberOfItems equal to the list after a removed tool is dropped, without reformatting the script."""
+    def repl(m):
+        raw=m.group(1)
+        try:
+            data=json.loads(raw)
+        except Exception:
+            return m.group(0)
+        nodes=data.get("@graph") if isinstance(data, dict) else None
+        nodes=nodes if isinstance(nodes, list) else [data]
+        out=m.group(0)
+        for node in nodes:
+            if not isinstance(node, dict) or node.get("@type")!="ItemList": continue
+            items=node.get("itemListElement")
+            if not isinstance(items, list): continue
+            old=node.get("numberOfItems")
+            if old==len(items): continue
+            out=out.replace(f'"numberOfItems": {old}', f'"numberOfItems": {len(items)}', 1)
+        return out
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', repl, html, flags=re.S)
+def scrub_redirected_listings(tools=None):
+    """Drop internal cards that point at tool pages which now redirect. The daily build calls this so a kept page cannot grow the link back."""
+    slugs=redirected_slugs(tools)
+    if not slugs: return 0
+    n=0
+    roots=("launches","best")
+    for root in roots:
+        if not os.path.isdir(root): continue
+        for dirpath, dirs, files in os.walk(root):
+            for fn in files:
+                if not fn.endswith(".html"): continue
+                path=os.path.join(dirpath, fn)
+                if os.path.basename(path)[:-5] in slugs and path.startswith("tools/"): continue
+                html=open(path,encoding="utf-8").read()
+                nxt=html
+                for slug in slugs:
+                    if f"tools/{slug}.html" in nxt or f'data-slug="{slug}"' in nxt:
+                        nxt=_drop_slug_html(nxt, slug)
+                if nxt!=html:
+                    nxt=_sync_itemlist_counts(nxt)
+                    open(path,"w",encoding="utf-8").write(nxt)
+                    n+=1
+    if n: print(f"redirects: removed links to {len(slugs)} redirected tools from {n} pages")
+    return n
+
 if __name__ == "__main__":
     run()

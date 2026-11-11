@@ -994,7 +994,7 @@ def sitewide(t):
                      '</div></div></section><!--MAKERS-END-->')
             s=re.sub(r'<!--MAKERS-START-->.*?Launch on AgentScout.*?</section><!--MAKERS-END-->','<!--MAKERS-START--><!--MAKERS-END-->',s,count=1,flags=re.S)
             s=re.sub(r'<script data-live-metrics>.*?</script>','',s,flags=re.S)
-            s=s.replace('</body>',_bsp.live_metrics_script("")+'</body>',1)
+            s=s.replace('</body>',_bsp.live_metrics_script("", catalog=False)+'</body>',1)
         s=_unpark_chrome(s, chrome)
         s=ensure_refund_footer(s)
         s=_once_submit_menu(s)

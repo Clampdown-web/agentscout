@@ -76,5 +76,6 @@ jobs:
           python3 scripts/test_nav_css.py
           python3 scripts/test_consent_pages.py
           python3 scripts/test_maker_flag.py
+          python3 scripts/test_page_weight.py
           python3 scripts/test_cwv_benchmark.py
           python3 scripts/test_takedown_blocklist.py
