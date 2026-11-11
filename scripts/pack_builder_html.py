@@ -199,7 +199,7 @@ def pack_section_html() -> str:
   <div class="ap-chrome">
     <span class="ap-dots" aria-hidden="true"><i class="r"></i><i class="y"></i><i class="g"></i></span>
     <div class="ap-chrome-copy">
-      <h2 id="ap-title">25 Pre-Trained AI Agent Packs ($35 each · Bundle 5 for $119 · 10 for $199 · 20 for $299 · All 25 for $349)</h2>
+      <h2 id="ap-title">25 Pre-Trained AI Agent Packs ($35 each · Bundle 5 for $119 · All 25 for $349)</h2>
       <p>Pick the agents you want in your pack — each ships as a downloadable ZIP with a domain SKILL.md, 3 scheduled cron routines, and a zero-dependency Python CLI tool. Built for Grok Bot and compatible with Claude Code (CLAUDE.md), Cursor (.cursorrules), OpenAI Codex (AGENTS.md), and Lovable (LOVABLE.md).</p>
     </div>
     <div class="ap-chrome-side">
@@ -220,7 +220,7 @@ def pack_section_html() -> str:
   <p class="paynote" style="flex:1 1 100%;min-width:0;max-width:calc(100vw - 48px);width:100%;box-sizing:border-box;margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. <a href="../refunds.html">Refund policy</a>.</p>
   <div class="ap-grid">@@GRID@@</div>
   <div class="ap-foot" id="ap-foot">
-    <p id="ap-blurb">Each role pack is $35. Volume pricing: 5 for $119, 10 for $199, 20 for $299, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.</p>
+    <p id="ap-blurb">Each role pack is $35. Volume pricing: 5 for $119, all 25 for $349. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the 4-Bot bundle stays $149.</p>
     <div class="ap-actions">
       <a class="ap-btn copy" id="ap-mail" href="mailto:support@agentscouthq.com?subject=AI%20Agent%20Pack%20order">Email fulfillment</a>
       <a class="ap-btn x" id="ap-x" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">X Money @clampdown19</a>

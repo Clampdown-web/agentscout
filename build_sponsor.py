@@ -46,7 +46,7 @@ def launch_pack_html():
       <p>{LAUNCH_PACK_ACCOUNTS}</p>
       <p>{LAUNCH_PACK_SKIP} {LAUNCH_PACK_LIMITS}</p>
       <p><b>After you pay:</b> {LAUNCH_PACK_INTAKE}</p>
-      <p style="margin:14px 0 0"><a class="btn primary pkg-cta pkg-cta-lp" href="{LAUNCH_PACK_URL}" target="_blank" rel="noopener noreferrer">Buy the Directory Launch Pack ($49) →</a></p>
+      <p style="margin:14px 0 0">The Directory Launch Pack is included with a homepage and newsletter sponsorship. It is not sold on its own. <a href="#packages">See sponsorship</a></p>
       {pay_note("")}
     </aside>'''
 
@@ -268,7 +268,7 @@ def build(t):
           <a class="btn primary pkg-cta-free" href="submit.html#free-form">Submit Free ($0)</a>
           <a class="btn primary pkg-cta-fast" href="{STRIPE_FAST_URL}" target="_blank" rel="noopener noreferrer">Fast-Track ($15) →</a>
           <a class="btn primary pkg-cta-pop" href="{STRIPE_49}" target="_blank" rel="noopener noreferrer">Category Pin ($49 ★) →</a>
-          <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Sitewide Sponsor ($99/wk) →</a>
+          <a class="btn primary pkg-cta-vip" href="{STRIPE_99}" target="_blank" rel="noopener noreferrer">Homepage and newsletter sponsorship →</a>
           {pay_note("")}
         </div>
       </div>

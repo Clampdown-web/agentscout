@@ -383,11 +383,12 @@ def home_slim(doc):
     when = _time_html(checked) if checked else "not yet checked"
     dot = status_dot_class(live, checked_n, checked)
     hist = _hist_html(cat.get("history") or [], 3)
-    extra = f' · +{miss} listed, not yet checked' if miss else ""
+    catalog_n = checked_n + miss
+    extra = f" · {miss:,} of {catalog_n:,} listed servers not checked yet" if miss else ""
     return (
         f'<!--vs:home--><section class="verify-slim" aria-label="MCP server link check">'
         f'<span class="{dot}" aria-hidden="true"></span>'
-        f'<p><b>{live} of {checked_n}</b> checked servers live{extra} · checked daily · last checked {when}</p>'
+        f'<p><b>{live:,} of {checked_n:,}</b> checked servers reachable{extra} · checked daily · last checked {when}</p>'
         f'<a href="mcp/status/">MCP status →</a>'
         f'<details><summary>Recent checks</summary>{hist}</details>'
         f'</section><!--/vs:home-->'

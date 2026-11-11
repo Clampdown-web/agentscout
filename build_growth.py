@@ -147,7 +147,7 @@ def paid(x):
 
 
 def week_tools(tools, start, end, current=False):
-    rows = [x for x in tools if not x.get("seed") and start.isoformat() <= (x.get("added") or "") <= end.isoformat()]
+    rows = [x for x in tools if not x.get("seed") and not x.get("catalog_only") and start.isoformat() <= (x.get("added") or "") <= end.isoformat()]
     if current:
         have = {x["slug"] for x in rows}
         rows += [x for x in tools if paid(x) and x["slug"] not in have]
@@ -263,7 +263,8 @@ def launch_page(tools, start, end, wid, current):
     rows = week_tools(tools, start, end, current=current)
     label = f"{fmt_short(start)} – {fmt_day(end)}"
     open_week = end >= pt_today()
-    weeks = sorted({week_span(datetime.date.fromisoformat(x["added"]))[2] for x in tools if not x.get("seed") and x.get("added")})
+    weeks = sorted({week_span(datetime.date.fromisoformat(x["added"]))[2] for x in tools if not x.get("seed") and not x.get("catalog_only") and x.get("added")})
+    weeks = [w for w in weeks if os.path.exists(f"launches/{w}.html")]
     other = " · ".join(f'<a href="{w}.html">{e(w)}</a>' for w in weeks if w != wid)
     if current:
         other = f'<a href="{wid}.html">This week’s archive</a>' + ((" · " + other) if other else "")

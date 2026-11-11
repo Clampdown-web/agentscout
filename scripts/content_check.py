@@ -260,10 +260,10 @@ def problems(root: Path | None = None) -> list[str]:
                     f"MCP live count {published.get('live')} / checked {published.get('checked')} "
                     f"does not match the checked set ({live_n} of {checked_n})"
                 )
-            card = re.search(r"<b>(\d+) of (\d+)</b> checked servers live", _read(home))
+            card = re.search(r"<b>([\d,]+) of ([\d,]+)</b> checked servers reachable", _read(home))
             if not card:
                 bad.append("index.html MCP status card does not use the checked-server denominator")
-            elif int(card.group(1)) != live_n or int(card.group(2)) != checked_n:
+            elif int(card.group(1).replace(",", "")) != live_n or int(card.group(2).replace(",", "")) != checked_n:
                 bad.append(
                     f"index.html says {card.group(1)} of {card.group(2)}, checked set is {live_n} of {checked_n}"
                 )
