@@ -56,7 +56,7 @@ def pages(t):
             "h": 560,
             "duration": "PT20S",
             "steps": [
-                "Choose any of the 4 downloadable Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) or mix-and-match from 25 Pre-Trained AI Agent Packs ($35 single, $119 5-Bot Pack, $199 10-Bot Pack, $299 20-Bot Pack, or $349 All-25 Mega Pack).",
+                "Choose any of the 4 downloadable Pro Bots ($39 / $59 / $59 / $69 or $149 4-Bot Bundle) or mix-and-match from 25 Pre-Trained AI Agent Packs ($35 single, $119 5-Bot Pack, or $349 All-25 Mega Pack).",
                 "Unzip your instant download to get README-QUICKSTART.md, setup_workspace.py, SYSTEM.md, cron routines, custom AgentScout skills, and zero-key mcp.json.",
                 "Run python3 setup_workspace.py --domain yoursite.com and drop the native config into Grok Bot (SYSTEM.md), Claude Code (CLAUDE.md), Cursor (.cursorrules), OpenAI Codex (AGENTS.md), Lovable (LOVABLE.md), Copilot, Windsurf, Cline, or Cron in under 3 minutes."
             ],

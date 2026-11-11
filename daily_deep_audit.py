@@ -3,7 +3,7 @@
 
 Fails when tools/lovable.html is missing the 25 AI Agent Packs section,
 when that section is duplicated, or when the page lost its nav, footer,
-neon pills, JSON-LD, or the $35/$119/$199/$299/$349 Stripe Payment Links.
+neon pills, JSON-LD, or the $35/$119/$349 Stripe Payment Links.
 Also checks the Bot Store still carries those same Payment Links.
 """
 from __future__ import annotations
@@ -25,11 +25,9 @@ SECTION_ID = "lovable-agent-packs"
 STRIPE = (
     "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
     "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
-    "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
-    "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
     "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
 )
-PRICES = ("$35", "$119", "$199", "$299", "$349")
+PRICES = ("$35", "$119", "$349")
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -1,6 +1,6 @@
-## Post 1 (244 chars)
+## Post 1 (216 chars)
 
-25 AI Agent Packs, built by AgentScout ($35 each · 5 for $119 · 10 for $199 · 20 for $299 · all 25 for $349). Works with Grok Bot, Claude Code, Cursor, Codex & Lovable. Offline, zero telemetry: https://agentscouthq.com/bot-store/#ai-agent-packs
+25 AI Agent Packs, built by AgentScout ($35 each · 5 for $119 · all 25 for $349). Works with Grok Bot, Claude Code, Cursor, Codex & Lovable. Offline, zero telemetry: https://agentscouthq.com/bot-store/#ai-agent-packs
 
 ## Post 2 (269 chars)
 

@@ -134,9 +134,7 @@ document.addEventListener("click", function (ev) {
     "https://buy.stripe.com/14A7sMfpx6lp9l3aDFe7m05": ["as-bot-seo-aeo-59", 59],
     "https://buy.stripe.com/4gM8wQelt11568RaDFe7m06": ["as-bot-market-intel-59", 59],
     "https://buy.stripe.com/9B69AU2CLh031SB8vxe7m07": ["as-bot-ceo-69", 69],
-    "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a": ["as-pack-5", 119],
-    "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b": ["as-pack-10", 199],
-    "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c": ["as-pack-20", 299]
+    "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a": ["as-pack-5", 119]
   };
   var row = known[href] || null;
   var id = a.getAttribute("data-product") || (row && row[0]) || "";
@@ -166,7 +164,7 @@ def pages(t):
     n_bt = __import__("build_bot_templates").live_bot_template_count()
     canon = f"{B}bot-store/"
     title = clip_title("AgentScout Bot Store — Pre-Trained AI Bots ($39–$69, $149)")
-    desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each or volume tiers $119, $199, $299, and $349.", 160)
+    desc = clip_text("Flagship bots $39–$149, plus 25 role packs at $35 each or volume tiers $119 and $349.", 160)
 
     body = (
         f'{CSS}'

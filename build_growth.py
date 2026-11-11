@@ -133,7 +133,7 @@ def how_it_started(tools, m):
 <p class="lede" style="margin-left:0;text-align:left">Founder-run, mostly automated with AI agents.</p>
 <p>I'm <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> (m lk). I make the calls. AI agents do most of the daily work: tool checks, listings, link and status checks, and reports.</p>
 <p>The starting catalog is {seed_n:,} tools dated {e(seed_a)} through {e(seed_b)}. As of {e(m.get("updated_display") or m.get("updated"))}, this site lists {comma(m["tools_count"])} tools, including {comma(m["mcp_servers_count"])} MCP servers, and {comma(m["templates_count"])} templates. Combined followers of @clampdown19 and @AgentScoutHQ: {comma(m["x_combined_followers"])}. Those figures are read from <a href="api/metrics.json">api/metrics.json</a> and the directory file when the page is built.</p>
-<p>Listing prices are $0, $15, $49, and $99 per week. The <a href="submit.html#launch-pack">Directory Launch Pack</a> is a separate $49 add-on, not a listing tier. Refunds are on the <a href="refunds.html">refund policy</a>.</p>
+<p>Listing prices are $0, $15, $49, and $99 per week. The Directory Launch Pack is included with the <a href="sponsor.html">$99/week Sitewide Sponsor</a>. It is not a listing tier and it is not sold on its own. Refunds are on the <a href="refunds.html">refund policy</a>.</p>
 <p>MCP server links are checked daily, around 7 AM PT. The <a href="mcp/status/">status page</a> shows up, down, and not-yet-checked counts from those checks. Updated daily, around 7 AM PT. A server with no check on file stays not yet checked.</p>
 <p>More</p><ul class="guide-list"><li><a href="about.html">About</a></li><li><a href="launches/">This week's launches</a></li><li><a href="submit.html">Submit a tool</a></li><li><a href="refunds.html">Refunds</a></li></ul>
 </section>'''
@@ -583,21 +583,14 @@ def chrome():
 
 
 def insert_launch_pack():
-    block = BS.launch_pack_html()
-    targets = {
-        "submit.html": '<h2 id="free-form"',
-        "sponsor.html": '<div class="pkg-trust">',
-        "index.html": "<!--SPONSOR-CTA-END-->",
-    }
-    for path, anchor in targets.items():
+    """Strip any leftover standalone Directory Launch Pack buy box. It is part of the $99 sponsor."""
+    for path in ("submit.html", "sponsor.html", "index.html"):
         if not os.path.exists(path):
             continue
         s = open(path, encoding="utf-8").read()
-        s = re.sub(r'<aside id="launch-pack".*?</aside>', "", s, count=1, flags=re.S)
-        if anchor not in s:
-            continue
-        s = s.replace(anchor, block + anchor, 1)
-        open(path, "w", encoding="utf-8").write(s)
+        n = re.sub(r'\s*<aside id="launch-pack".*?</aside>', "", s, count=1, flags=re.S)
+        if n != s:
+            open(path, "w", encoding="utf-8").write(n)
 
 
 def patch_indexnow(text):
@@ -676,7 +669,7 @@ def llms():
             f"- [How AgentScout started]({B}how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.\n"
             f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.\n"
             f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated daily, around 7 AM PT.\n"
-            f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {BS.LAUNCH_PACK_PROMISE} {BS.LAUNCH_PACK_ACCOUNTS} {BS.LAUNCH_PACK_SKIP} {BS.LAUNCH_PACK_LIMITS} Checkout: {BS.LAUNCH_PACK_URL} Refunds: {B}refunds.html\n"
+            f"- [Directory Launch Pack]({B}sponsor.html): included with the $99/week Sitewide Sponsor, not sold on its own. {BS.LAUNCH_PACK_PROMISE} {BS.LAUNCH_PACK_ACCOUNTS} {BS.LAUNCH_PACK_SKIP} {BS.LAUNCH_PACK_LIMITS} {BS.LAUNCH_PACK_INTAKE} Sponsor checkout: {BS.STRIPE_99} Refunds: {B}refunds.html\n"
             f"- Fast-Track ($15) includes: {BS.FAST_TRACK_INDEX_LINE}\n"
         )
         open("llms.txt", "w", encoding="utf-8").write(s)
@@ -738,8 +731,11 @@ def main():
     import build_seo_new
     build_seo_new.unify_all_nav_and_footer()
     build_status.write_link_status_forward()
-    if BS.LAUNCH_PACK_URL not in open("api/products.json", encoding="utf-8").read():
-        raise SystemExit("Launch Pack URL missing from products.json")
+    products_text = open("api/products.json", encoding="utf-8").read()
+    if "28EfZidhp6lp9l3aDFe7m0f" in products_text:
+        raise SystemExit("standalone Directory Launch Pack checkout is still in products.json")
+    if "directory-launch-pack" in products_text:
+        raise SystemExit("Directory Launch Pack is still a standalone product")
     print("growth build done", len(extra), "urls")
 
 

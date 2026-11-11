@@ -7,14 +7,21 @@ STRIPE_FAST_URL = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
 STRIPE_FAST = STRIPE_FAST_URL
 STRIPE_49 = "https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00"
 STRIPE_99 = "https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01"
-# Directory Launch Pack ($49 add-on). This is the only definition of the Payment Link.
-LAUNCH_PACK_URL = "https://buy.stripe.com/28EfZidhp6lp9l3aDFe7m0f"
+# Directory Launch Pack is included with the $99/week Sitewide Sponsor. It is not sold on its own.
 FAST_TRACK_INDEX_LINE = "Same-day indexing ping to Bing and IndexNow search engines (does not include Google)."
 LAUNCH_PACK_PROMISE = "Submitted to ~25 curated AI directories within 7 days, with a report of live and pending links, plus a follow-up report at 30 days (some directories take weeks to approve)."
 LAUNCH_PACK_ACCOUNTS = "Listings use your own email so you own every account. A few directories (e.g. ones that use GitHub or Google sign-in) may need you to click a quick sign-in yourself."
 LAUNCH_PACK_SKIP = "If your tool is already listed in one of those directories, we skip it and submit to another from the same curated list."
 LAUNCH_PACK_INTAKE = "After you pay, reply to the receipt or email support@agentscouthq.com with your tool name, URL, one-line pitch, logo, category, and the email address to use for those directory accounts."
-LAUNCH_PACK_LIMITS = "This is a separate add-on, not one of the four listing tiers ($0 / $15 / $49 / $99/wk). It does not change your rank on AgentScout and does not include Google indexing."
+LAUNCH_PACK_LIMITS = "Included with the $99/week Sitewide Sponsor. It is not sold on its own and it is not a listing tier. It does not change your rank on AgentScout and does not include Google indexing."
+LAUNCH_PACK_BLURB = " ".join([
+    "Directory Launch Pack included.",
+    LAUNCH_PACK_PROMISE,
+    LAUNCH_PACK_ACCOUNTS,
+    LAUNCH_PACK_SKIP,
+    LAUNCH_PACK_LIMITS,
+    LAUNCH_PACK_INTAKE,
+])
 X_CLAMPDOWN = "https://x.com/clampdown19"
 X_AGENTSCOUT = "https://x.com/AgentScoutHQ"
 REFUND_URL = "https://agentscouthq.com/refunds.html"
@@ -38,17 +45,8 @@ def pay_note(prefix=""):
 def fmt(n): return f"{int(n):,}"
 
 def launch_pack_html():
-    """Separate $49 add-on. Not one of the four listing tiers."""
-    return f'''<aside id="launch-pack" class="panel launch-pack" aria-labelledby="launch-pack-h">
-      <p class="lp-kicker">Add-on · not a listing tier</p>
-      <h2 id="launch-pack-h">Directory Launch Pack · $49 one-time</h2>
-      <p>{LAUNCH_PACK_PROMISE}</p>
-      <p>{LAUNCH_PACK_ACCOUNTS}</p>
-      <p>{LAUNCH_PACK_SKIP} {LAUNCH_PACK_LIMITS}</p>
-      <p><b>After you pay:</b> {LAUNCH_PACK_INTAKE}</p>
-      <p style="margin:14px 0 0">The Directory Launch Pack is included with a homepage and newsletter sponsorship. It is not sold on its own. <a href="#packages">See sponsorship</a></p>
-      {pay_note("")}
-    </aside>'''
+    """The pack is not a standalone section. It is a line on the $99 sponsor card."""
+    return ""
 
 def load_metrics(t):
     import build_counts
@@ -181,6 +179,7 @@ def packages_grid(t, m=None, on_submit=False):
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>7-day Sitewide Top Sponsor Bar:</b> Exclusive banner across all <b data-live-pages>{fmt(m["indexed_pages_count"])}+</b> pages + homepage <code style="font-size:12.5px">#makers</code> showcase</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Tuesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>2x X Spotlight Threads:</b> Launch-day + weekend spotlight across <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined reach)</span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>{LAUNCH_PACK_BLURB}</b></span></li>
         </ul>
       </div>
       <div class="pkg-foot">
@@ -245,8 +244,6 @@ def build(t):
 
     {cards_html}
 
-    {launch_pack_html()}
-
     <div class="pkg-trust">
       <span>⚡ <b>Instant Checkout via Stripe</b> or <b>X Money (<a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a>)</b></span>
       <span>·</span>
@@ -289,6 +286,7 @@ def build(t):
         <tr><th>X launch spotlight</th><td>—</td><td><b>Launch post on <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></b></td><td><b>Dedicated spotlight on both <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></b></td><td><b>2x spotlight threads on <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer">@clampdown19</a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer">@AgentScoutHQ</a></b></td></tr>
         <tr><th>AgentScout Weekly newsletter</th><td>Editorial consideration</td><td>Editorial consideration</td><td>✓ Featured Makers section highlight</td><td><b>🔥 #1 Top &ldquo;Sponsored by&rdquo; banner (logo + pitch + CTA)</b></td></tr>
         <tr><th>Sitewide Top Sponsor Bar (<span data-live-pages>{fmt(pages)}+</span> pages)</th><td>—</td><td>—</td><td>—</td><td><b>🔥 7 days exclusive (1 slot/wk)</b></td></tr>
+        <tr><th>Directory Launch Pack</th><td>—</td><td>—</td><td>—</td><td><b>{LAUNCH_PACK_PROMISE} {LAUNCH_PACK_ACCOUNTS} {LAUNCH_PACK_SKIP} {LAUNCH_PACK_LIMITS}</b></td></tr>
       </tbody>
     </table></div>
 
@@ -346,7 +344,7 @@ def build(t):
                     "price": "99",
                     "priceCurrency": "USD",
                     "url": STRIPE_99,
-                    "description": f"Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {fmt(pages)}+ pages, homepage #makers showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter."
+                    "description": f"Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {fmt(pages)}+ pages, homepage #makers showcase, the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter, and the Directory Launch Pack. {LAUNCH_PACK_BLURB}"
                 }
             ]
         }

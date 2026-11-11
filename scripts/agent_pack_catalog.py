@@ -42,36 +42,28 @@ STRIPE = {
     },
 }
 
-# Role-pack Stripe Payment Links. Paste the five minted URLs here.
+# Role-pack Stripe Payment Links. Owner cut the ladder to 1 / 5 / all 25 on Nov 10, 2026.
 # Flagship bot links in STRIPE stay on the $39 / $59 / $59 / $69 / $149 products.
 PACK_TIER_URLS = {
     "tier_1": "https://buy.stripe.com/00w6oI0uDaBF8gZ5jle7m09",
     "tier_5": "https://buy.stripe.com/9B600kfpx4dhbtb8vxe7m0a",
-    "tier_10": "https://buy.stripe.com/6oU8wQ4KT4dh0OxeTVe7m0b",
-    "tier_20": "https://buy.stripe.com/5kQ28s1yH5hl8gZ8vxe7m0c",
     "tier_25": "https://buy.stripe.com/28E9AUdhpfVZ0OxbHJe7m0d",
 }
 PACK_TIER_LINKS = {
     "tier_1": "plink_1UVgsdKVzDFIUga8BkjhzuB0",
     "tier_5": "plink_1UVgt8KVzDFIUga8ZEhI5hgn",
-    "tier_10": "plink_1UVgu0KVzDFIUga8sUwWdWLL",
-    "tier_20": "plink_1UVguRKVzDFIUga82ZYi15S2",
     "tier_25": "plink_1UVgv8KVzDFIUga83wEaqIPN",
 }
 
 PACK_TIERS = {
     "tier_1": {"count": 1, "price": 35, "regular": 35, "save": 0, "label": "1 AI Agent Pack ($35)", "url": PACK_TIER_URLS["tier_1"], "plink": PACK_TIER_LINKS["tier_1"]},
     "tier_5": {"count": 5, "price": 119, "regular": 175, "save": 56, "label": "5-Bot Pack ($119 · Save $56)", "url": PACK_TIER_URLS["tier_5"], "plink": PACK_TIER_LINKS["tier_5"]},
-    "tier_10": {"count": 10, "price": 199, "regular": 350, "save": 151, "label": "10-Bot Pack ($199 · Save $151)", "url": PACK_TIER_URLS["tier_10"], "plink": PACK_TIER_LINKS["tier_10"]},
-    "tier_20": {"count": 20, "price": 299, "regular": 700, "save": 401, "label": "20-Bot Pack ($299 · Save $401)", "url": PACK_TIER_URLS["tier_20"], "plink": PACK_TIER_LINKS["tier_20"]},
     "tier_25": {"count": 25, "price": 349, "regular": 875, "save": 526, "label": "All 25-Bot Mega Pack ($349 · Save $526)", "url": PACK_TIER_URLS["tier_25"], "plink": PACK_TIER_LINKS["tier_25"]},
 }
 
 TIER_PILLS = {
     1: "1 Bot $35",
     5: "5 Bots $119 · Save $56",
-    10: "10 Bots $199 · Save $151",
-    20: "20 Bots $299 · Save $401",
     25: "All 25 Bots $349 · Save $526",
 }
 
