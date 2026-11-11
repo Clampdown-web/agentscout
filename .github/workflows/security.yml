@@ -72,6 +72,7 @@ jobs:
           python3 scripts/test_html_filter.py
           python3 scripts/test_mcp_reachability.py
           python3 scripts/test_mcp_response_rate.py
+          python3 scripts/test_mcp_response_display.py
           python3 scripts/test_submit_widget.py
           python3 scripts/test_static_csp.py
           python3 scripts/test_nav_css.py

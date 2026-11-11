@@ -67,14 +67,12 @@ Timestamps are UTC. A month at 200 probes a day is on the order of 1–2 MB, whi
 
 A partial registry download does not delete local-only rows already in the summary. A complete download replaces them.
 
-## 3. Display (not in this change)
+## 3. Display
 
-Badges and ranking are not wired into HTML here. Tool pages, `categories/mcp-servers.html`, and the ranked MCP lists are generated (`build_rich.py`, `build_mcp_tasks.py`, `build_best.py`, and the category build). This checkout has `categories/mcp-servers.html` and no `mcp-servers-p2`…`p21` files. Rebuilding those pages, or bumping `ASSET_V` in `build_tasks.py` (the `styles.css?v=` / `app.js?v=` cache-buster), would rewrite the static site. That stays a follow-up.
-
-When it lands:
+Tool pages, `categories/mcp-servers.html`, and the ranked MCP lists are generated (`build_rich.py`, `build_mcp_tasks.py`, `build_best.py`, `build_landing.py` for the `s/` MCP lists, and the category build in `build_extras.py`). They read `data/mcp-health/summary.json`. This checkout has `categories/mcp-servers.html` and no `mcp-servers-p2`…`p21` files. The rest of a heavy category loads from `categories/mcp-servers.more.json`.
 
 - On each `tools/{slug}.html`, a badge in the existing `.badges` / `.b` style, using `badge_text()`. No percentage and no “down” when `display` is `insufficient`.
-- On `/mcp/` task lists and `best/mcp-servers*.html`, a “Responds” sort that only orders servers whose `display` is `rate`, by `rate_30d` then `n_30d`. Everyone else keeps today’s order (GitHub stars, then ratings, then recent push, then maturity in `build_mcp_tasks.py`). A thin sample must not jump the list.
+- On `/mcp/` task lists and `best/mcp-servers*.html` (and the same kind of ranked MCP list under `best/` and `s/`), a “Responds” sort that only orders servers whose `display` is `rate`, by `rate_30d` then `n_30d`. Everyone else keeps today’s order (GitHub stars, then ratings, then recent push, then maturity in `build_mcp_tasks.py`). A thin sample must not jump the list. The recommended order stays that star ranking; Responds is the extra sort.
 - Do not rewrite the PR #97 reachability sentence. Link-check “live” and MCP “responded” stay separate facts.
 - If CSS is added, bump `ASSET_V` and regenerate the `?v=` stamps. Do not weaken CSP or Turnstile.
 

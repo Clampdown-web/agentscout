@@ -59,10 +59,25 @@ def _alt_answer(x,cat,old):
     FALLBACK.append(x["slug"])
     return f"Other {cat} tools on AgentScout include {old}." if old else None
 
+def stamp_tool_badge(out,x):
+    """Header badge on an MCP listing. Wording is badge_text(); a missing summary row is Not yet checked."""
+    if not isinstance(x,dict) or x.get("category")!="MCP servers" or 'data-mcp-health="1"' in out.split("<h1",1)[0]:
+        return out
+    import sys
+    from pathlib import Path
+    p=str(Path(__file__).resolve().parent/"scripts")
+    if p not in sys.path: sys.path.insert(0,p)
+    import mcp_response_rate as mrr
+    span=mrr.badge_html_for(x.get("slug"))
+    return re.sub(r'(<div class="badges">(?:(?!</div>).)*?)(</div>\s*<h1 class="icoh")',lambda m:m.group(1)+span+m.group(2),out,count=1,flags=re.S)
 def apply(out,x,t,catslug,prim,B):
     r=R.get(x["slug"])
-    if not r: return auto(out,x,t,catslug,prim,B)
-    if r.get("kind")=="lite": return lite(out,x,t,catslug,prim,B,r)
+    if not r:
+        out,extra=auto(out,x,t,catslug,prim,B)
+        return stamp_tool_badge(out,x),extra
+    if r.get("kind")=="lite":
+        out,extra=lite(out,x,t,catslug,prim,B,r)
+        return stamp_tool_badge(out,x),extra
     n=x["name"];p=r["pricing"];cat=x["category"];cs=catslug(cat);pg=f"{B}tools/{x['slug']}.html"
     title=f"{n}: Features, Pricing & Alternatives | AgentScout"
     out=re.sub(r"<title>.*?</title>",f"<title>{e(title)}</title>",out,1,flags=re.S)
@@ -91,7 +106,7 @@ def apply(out,x,t,catslug,prim,B):
     offers=[o for o in offers if o["price"] is not None]
     app={"@type":"SoftwareApplication","name":n,"url":prim,"description":schema_text(r["meta"]),"applicationCategory":{"krea":"MultimediaApplication"}.get(x["slug"],"DeveloperApplication" if x["audience"]=="builders" else "BusinessApplication"),"operatingSystem":"macOS" if x["slug"]=="coddo" else "Web","offers":offers}
     fq={"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":schema_text(a)}} for q,a in faq]}
-    return out,(sec,app,fq,title)
+    return stamp_tool_badge(out,x),(sec,app,fq,title)
 
 OSI_NOTE="(verified on GitHub)"
 def _mdy(d):
