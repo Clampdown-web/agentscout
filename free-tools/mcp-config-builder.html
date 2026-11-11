@@ -28,7 +28,7 @@ function q(s){return /^[A-Za-z0-9_./:@=-]+$/.test(s)?s:"'"+s.replace(/'/g,"'\\''
 function run(){var S=parse(),cd={},cu={},vs={},cc=[];S.forEach(function(s){if(s.url){cd[s.name]={command:"npx",args:["-y","mcp-remote",s.url]};cu[s.name]={url:s.url};vs[s.name]={type:"http",url:s.url};cc.push("claude mcp add --transport http "+q(s.name)+" "+q(s.url))}
 else{var b={command:s.command,args:s.args};if(s.env)b.env=s.env;cd[s.name]=b;cu[s.name]=JSON.parse(JSON.stringify(b));var v={type:"stdio",command:s.command,args:s.args};if(s.env)v.env=s.env;vs[s.name]=v;cc.push("claude mcp add "+q(s.name)+(s.env?" "+Object.keys(s.env).map(function(k){return"--env "+q(k+"="+s.env[k])}).join(" "):"")+" -- "+[s.command].concat(s.args).map(q).join(" "))}});
 $("mo1").value=JSON.stringify({mcpServers:cd},null,2);$("mo2").value=JSON.stringify({mcpServers:cu},null,2);$("mo3").value=JSON.stringify({servers:vs},null,2);$("mo4").value=cc.join("\n")}
-$("ms").addEventListener("input",run);run();</script><span id="pfm" hidden><span data-pagefind-filter="type:Free tools"></span><span data-pagefind-sort="date:2026-11-10"></span><span data-pagefind-meta="type:Free tools"></span></span></main>
+$("ms").addEventListener("input",run);run();</script><span id="pfm" hidden><span data-pagefind-filter="type:Free tools"></span><span data-pagefind-sort="date:2026-11-11"></span><span data-pagefind-meta="type:Free tools"></span></span></main>
 <footer id="about" class="band footcols" style="border-bottom:0"><div class="wrap">
 <div class="footgrid">
 <div class="footcol"><h2>Browse</h2><a href="../categories/index.html">Categories</a><a href="../tasks/index.html">Tasks</a><a href="../compare/index.html">Compare</a><a href="../new.html">New tools</a></div>

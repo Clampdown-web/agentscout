@@ -45,7 +45,7 @@ $("rf").addEventListener("submit",function(ev){ev.preventDefault();var u=$("ru")
 try{history.replaceState(null,"","#"+encodeURIComponent(u))}catch(e){}
 fetch(W+"?url="+encodeURIComponent(u)).catch(function(){return fetch(W_FB+"?url="+encodeURIComponent(u))}).then(function(r){if(r.status===429)return r.json().then(function(j){return{error:j.error||"Too many checks. Try again in a minute."}});return r.json()}).then(show).catch(function(){$("rout").innerHTML='<p class="empty">The check failed. Please try again in a minute.</p>'}).finally(function(){$("rb").disabled=false})});
 var hs=decodeURIComponent(location.hash.slice(1));if(hs){$("ru").value=hs;$("rf").requestSubmit()}
-</script><span id="pfm" hidden><span data-pagefind-filter="type:Free tools"></span><span data-pagefind-sort="date:2026-11-10"></span><span data-pagefind-meta="type:Free tools"></span></span></main>
+</script><span id="pfm" hidden><span data-pagefind-filter="type:Free tools"></span><span data-pagefind-sort="date:2026-11-11"></span><span data-pagefind-meta="type:Free tools"></span></span></main>
 <footer id="about" class="band footcols" style="border-bottom:0"><div class="wrap">
 <div class="footgrid">
 <div class="footcol"><h2>Browse</h2><a href="../categories/index.html">Categories</a><a href="../tasks/index.html">Tasks</a><a href="../compare/index.html">Compare</a><a href="../new.html">New tools</a></div>
