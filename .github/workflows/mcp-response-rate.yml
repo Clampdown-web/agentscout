@@ -1,0 +1,65 @@
+name: mcp response rate
+
+# Daily read-only MCP initialize + tools/list for a rotating slice of listed
+# servers that publish a public remote endpoint. Appends data/mcp-health and
+# commits that directory only. No secrets, no deploy, no tool calls.
+on:
+  schedule:
+    # 15:15 UTC. 7:15 AM Pacific during standard time, 8:15 AM during daylight time.
+    - cron: "15 15 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Servers to probe this run"
+        required: false
+        default: "200"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mcp-response-rate
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The job commits data/mcp-health. The token is not stored in the remote.
+          persist-credentials: true
+      - name: Setup Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Probe
+        run: |
+          set -euo pipefail
+          limit="${PROBE_LIMIT:-200}"
+          case "$limit" in
+            ''|*[!0-9]*) limit=200 ;;
+          esac
+          python3 scripts/mcp_response_rate.py --limit "$limit"
+        env:
+          PROBE_LIMIT: ${{ github.event.inputs.limit }}
+      - name: Commit health data
+        run: |
+          set -euo pipefail
+          git add -- data/mcp-health
+          extra=$(git diff --cached --name-only | grep -v '^data/mcp-health/' || true)
+          if [ -n "$extra" ]; then
+            echo "refusing to commit unexpected paths" >&2
+            printf '%s\n' "$extra" >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then
+            echo "no health changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Record daily MCP response probes"
+          git push
