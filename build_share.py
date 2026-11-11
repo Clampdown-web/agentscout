@@ -3,7 +3,7 @@ import re
 ICON='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>'
 WRAP=('<span class="sharewrap"><button type="button" class="btn sharebtn" data-share aria-label="Share this page">'+ICON+'Share</button>'
       '<span class="sharecount" hidden></span></span>')
-# Pages with no share button on purpose: submit.html (form), 404.html, privacy.html (legal), saved.html (personal list), og.html/outreach-tracker.html (internal)
+# Pages with no share button on purpose: submit.html (form), 404.html, privacy.html and refunds.html (legal), saved.html (personal list), og.html/outreach-tracker.html (internal)
 # mcp/ hub + MCP task pages added Oct 21 2026 upkeep (they had no share button)
 EXTRA={"index.html","new.html","news.html","quiz.html","generate.html","about.html","badges.html","newsletter.html"}  # added Oct 18 2026 share audit
 CENTER={"index.html","generate.html"}  # centered hero h1 -> centered button

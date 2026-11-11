@@ -348,7 +348,7 @@ def problems(root: Path | None = None) -> list[str]:
         kind = _kind(rel)
         visible = _visible(html)
         if kind in {"tool", "category", "best", "task", "popular", "mcp-list", "news-story", "free-tool", "bot-store-item", "home"} or rel in {
-            "submit.html", "sponsor.html", "about.html", "privacy.html", "quiz.html", "generate.html", "newsletter.html", "news.html", "badges.html"
+            "submit.html", "sponsor.html", "about.html", "privacy.html", "refunds.html", "quiz.html", "generate.html", "newsletter.html", "news.html", "badges.html"
         }:
             if _h1_count(html) != 1 and kind != "home":
                 # home may use a header h1; still require one

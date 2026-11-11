@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_extras as X
+import build_sponsor
 from agent_pack_catalog import AGENTS, PACK_TIERS
 from start_here import (
     GUIDE_LINE,
@@ -84,7 +85,7 @@ def _faqs(agent: dict) -> list[tuple[str, str]]:
         ),
         (
             "What's the license and refund policy?",
-            "The ZIP includes a single-organization LICENSE.txt for internal use by the buying company. Refund questions go to support@agentscouthq.com.",
+            "The ZIP includes a single-organization LICENSE.txt for internal use by the buying company. There is no refund after you download the pack, unless it is broken or not as described and you report that within 7 days. Email support@agentscouthq.com. Refund policy: https://agentscouthq.com/refunds.html.",
         ),
     ]
 
@@ -198,6 +199,7 @@ def write_pack_pages() -> list[str]:
 <a class="pack-btn buy" href="{X.e(agent["checkout_url"] or "../#ap-dock")}">Buy this agent — ${agent["price"]}</a>
 <a class="pack-btn x" href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">Pay via X Money (@clampdown19)</a>
 <a class="pack-btn back" href="../#ai-agent-packs">← Back to All 25 Packs</a>
+{build_sponsor.pay_note("../../")}
 </div>
 <p class="pack-volume">Volume packs: <b>5-Bot Pack ($119)</b>, <b>10-Bot Pack ($199)</b>, <b>20-Bot Pack ($299)</b>, <b>All 25 Bots ($349)</b>. Flagship Pro Bots stay $39 / $59 / $59 / $69, and the <a href="../#bundle-package">$149 4-Bot Bundle</a> is separate.</p>
 {note}

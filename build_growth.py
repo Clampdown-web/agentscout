@@ -133,9 +133,9 @@ def how_it_started(tools, m):
 <p class="lede" style="margin-left:0;text-align:left">Founder-run, mostly automated with AI agents.</p>
 <p>I'm <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a> (m lk). I make the calls. AI agents do most of the daily work: tool checks, listings, link and status checks, and reports.</p>
 <p>The starting catalog is {seed_n:,} tools dated {e(seed_a)} through {e(seed_b)}. As of {e(m.get("updated_display") or m.get("updated"))}, this site lists {comma(m["tools_count"])} tools, including {comma(m["mcp_servers_count"])} MCP servers, and {comma(m["templates_count"])} templates. Combined followers of @clampdown19 and @AgentScoutHQ: {comma(m["x_combined_followers"])}. Those figures are read from <a href="api/metrics.json">api/metrics.json</a> and the directory file when the page is built.</p>
-<p>Listing prices are $0, $15, $49, and $99 per week. The <a href="submit.html#launch-pack">Directory Launch Pack</a> is a separate $49 add-on, not a listing tier.</p>
+<p>Listing prices are $0, $15, $49, and $99 per week. The <a href="submit.html#launch-pack">Directory Launch Pack</a> is a separate $49 add-on, not a listing tier. Refunds are on the <a href="refunds.html">refund policy</a>.</p>
 <p>MCP server links are checked daily, around 7 AM PT. The <a href="mcp/status/">status page</a> shows up, down, and not-yet-checked counts from those checks. Updated daily, around 7 AM PT. A server with no check on file stays not yet checked.</p>
-<p>More: <a href="about.html">About</a> · <a href="launches/">This week's launches</a> · <a href="submit.html">Submit a tool</a>.</p>
+<p>More</p><ul class="guide-list"><li><a href="about.html">About</a></li><li><a href="launches/">This week's launches</a></li><li><a href="submit.html">Submit a tool</a></li><li><a href="refunds.html">Refunds</a></li></ul>
 </section>'''
     ld = {"@context": "https://schema.org", "@type": "AboutPage", "name": title, "description": desc, "url": B + "how-it-started.html"}
     finish_page("how-it-started.html", X.shell("", title, desc, B + "how-it-started.html", body, ld))
@@ -674,7 +674,7 @@ def llms():
             f"- [How AgentScout started]({B}how-it-started.html): founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls.\n"
             f"- [Weekly launch board]({B}launches/): tools added each ISO week (Pacific), with server-side upvotes.\n"
             f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts. Updated daily, around 7 AM PT.\n"
-            f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {BS.LAUNCH_PACK_PROMISE} {BS.LAUNCH_PACK_ACCOUNTS} {BS.LAUNCH_PACK_SKIP} {BS.LAUNCH_PACK_LIMITS} Checkout: {BS.LAUNCH_PACK_URL}\n"
+            f"- [Directory Launch Pack]({B}submit.html#launch-pack): $49 one-time add-on, separate from the four listing tiers ($0 / $15 / $49 / $99/wk). {BS.LAUNCH_PACK_PROMISE} {BS.LAUNCH_PACK_ACCOUNTS} {BS.LAUNCH_PACK_SKIP} {BS.LAUNCH_PACK_LIMITS} Checkout: {BS.LAUNCH_PACK_URL} Refunds: {B}refunds.html\n"
             f"- Fast-Track ($15) includes: {BS.FAST_TRACK_INDEX_LINE}\n"
         )
         open("llms.txt", "w", encoding="utf-8").write(s)
