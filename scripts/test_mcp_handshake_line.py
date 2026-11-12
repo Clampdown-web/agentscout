@@ -241,6 +241,97 @@ class HandshakeWordingTests(unittest.TestCase):
         self.assertIn(hs, count)
         self.assertNotIn("checked servers live", count)
 
+    def test_homepage_line_reuses_the_tally_and_stays_compact(self):
+        data = json.loads((ROOT / "data" / "mcp-health" / "summary.json").read_text(encoding="utf-8"))
+        expect = _independent(data["servers"])
+        facts = bac.handshake_home_facts(data)
+        self.assertEqual(facts["remote"], expect["remote"])
+        self.assertEqual(facts["probed"], expect["probed"])
+        self.assertEqual(facts["responded"], expect["responded"])
+        self.assertEqual(facts["needs_auth"], expect["needs_auth"])
+        self.assertEqual(facts["failed"], expect["failed"])
+        self.assertEqual(facts["complete"], expect["complete"])
+        self.assertEqual(facts["so_far"], not expect["complete"])
+        text = bac.handshake_home_text(data)
+        html = bac.handshake_home_html(data)
+        self.assertIn(f"{expect['probed']:,} of {expect['remote']:,}", text)
+        self.assertIn(f"{expect['responded']:,} answered", text)
+        self.assertIn(f"{expect['needs_auth']:,} asked for auth", text)
+        self.assertIn(f"{expect['failed']:,} failed", text)
+        self.assertNotIn("tools/list", text)
+        self.assertNotIn("7:15", text)
+        self.assertNotIn("live", text.lower())
+        self.assertNotIn("reachable", text.lower())
+        self.assertNotIn(bac.HANDSHAKE_CADENCE, text)
+        self.assertIn(f"<b>{expect['probed']:,} of {expect['remote']:,}</b>", html)
+        self.assertIn(f"<b>{expect['responded']:,}</b><span>answered</span>", html)
+        self.assertIn(f"<b>{expect['needs_auth']:,}</b><span>asked for auth</span>", html)
+        self.assertIn(f"<b>{expect['failed']:,}</b><span>failed</span>", html)
+        self.assertNotIn("live", html.lower())
+        self.assertNotIn("reachable", html.lower())
+        self.assertNotIn("tools/list", html)
+        if expect["complete"]:
+            self.assertNotIn("so far", text)
+            self.assertNotIn("so far", html)
+            self.assertIn("% of remote servers handshake-checked", text)
+            self.assertIn("% of remote servers handshake-checked", html)
+        else:
+            self.assertIn("checked so far", text)
+            self.assertIn("checked so far", html)
+            self.assertNotIn("%", text)
+            self.assertNotIn("%", html)
+            self.assertIsNone(facts["pct"])
+
+    def test_homepage_line_drops_local_only_and_keeps_so_far(self):
+        servers = {
+            "ok": {"disposition": "remote", "probes": 1, "last_outcome": "responded"},
+            "auth": {"disposition": "remote", "probes": 4, "last_outcome": "needs_auth"},
+            "down": {"disposition": "remote", "probes": 1, "last_outcome": "failed"},
+            "waiting": {"disposition": "remote", "probes": 0},
+            "local": {"disposition": "local_only", "probes": 9, "last_outcome": "responded"},
+        }
+        text = bac.handshake_home_text(servers)
+        html = bac.handshake_home_html(servers)
+        self.assertEqual(text, "Handshake: 3 of 4 remote servers checked so far. 1 answered, 1 asked for auth, 1 failed.")
+        self.assertIn("<b>3 of 4</b>", html)
+        self.assertIn("remote servers checked so far", html)
+        self.assertNotIn("%", html)
+        self.assertNotIn("of 5", text)
+        self.assertNotIn("9 answered", text)
+        self.assertNotIn("live", html.lower())
+
+    def test_homepage_line_states_the_remote_share_only_after_a_full_pass(self):
+        servers = {
+            "a": {"disposition": "remote", "probes": 1, "last_outcome": "responded"},
+            "b": {"disposition": "remote", "probes": 1, "last_outcome": "responded"},
+            "c": {"disposition": "remote", "probes": 1, "last_outcome": "needs_auth"},
+            "local": {"disposition": "local_only", "probes": 4, "last_outcome": "responded"},
+        }
+        text = bac.handshake_home_text(servers)
+        self.assertEqual(
+            text,
+            "Handshake: 3 of 3 remote servers checked. 2 answered (66.7% of remote servers handshake-checked), 1 asked for auth, 0 failed.",
+        )
+        self.assertNotIn("so far", text)
+        self.assertIn("66.7% of remote servers handshake-checked", bac.handshake_home_html(servers))
+        self.assertNotIn("of 4", text)
+
+    def test_homepage_line_uses_the_singular_and_skips_an_empty_breakdown(self):
+        done = bac.handshake_home_text({"only": {"disposition": "remote", "probes": 1, "last_outcome": "failed"}})
+        self.assertIn("1 of 1 remote server checked.", done)
+        self.assertNotIn("1 of 1 remote servers", done)
+        waiting = bac.handshake_home_html({"only": {"disposition": "remote", "probes": 0}, "next": {"disposition": "remote"}})
+        self.assertIn("0 of 2", waiting)
+        self.assertIn("checked so far", waiting)
+        self.assertNotIn("vs-figs", waiting)
+        self.assertNotIn("%", waiting)
+
+    def test_homepage_line_omits_a_count_it_cannot_read(self):
+        self.assertIsNone(bac.handshake_home_facts({"local": {"disposition": "local_only", "probes": 3, "last_outcome": "responded"}}))
+        self.assertEqual(bac.handshake_home_text({"local": {"disposition": "local_only", "probes": 3}}), "")
+        self.assertEqual(bac.handshake_home_html(path=str(ROOT / "data" / "mcp-health" / "missing-summary.json")), "")
+        self.assertEqual(bac.handshake_home_text(path=str(ROOT / "data" / "mcp-health" / "missing-summary.json")), "")
+
 
 class PublishedPageTests(unittest.TestCase):
     @classmethod
@@ -324,6 +415,40 @@ class PublishedPageTests(unittest.TestCase):
                 self.assertNotIn("Handshake", by_q[bac._Q_COUNT], path)
                 answer = re.search(r'id="mcp-reachable-a">(.*?)</p>', text, re.S).group(1)
                 self.assertNotIn("Handshake", answer, path)
+
+    def test_homepage_card_shows_both_counts_without_the_status_paragraph(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        doc = __import__("build_status").build_document(json.loads((ROOT / "tools.json").read_text(encoding="utf-8")))
+        block = __import__("build_status").home_slim(doc)
+        self.assertIn(block, home)
+        card = re.search(r"<!--vs:home-->(.*)<!--/vs:home-->", home, re.S).group(1)
+        hand = re.search(r'<div class="vs-row vs-hand">.*?</div>', card, re.S).group(0)
+        tally = bac.handshake_tally()
+        self.assertIn(f"<b>{self.st['reachable']:,} of {self.st['checked_count']:,}</b> checked servers reachable", card)
+        self.assertIn(f"<b>{tally['probed']:,} of {tally['remote']:,}</b>", hand)
+        self.assertIn("asked for auth", hand)
+        self.assertNotIn("live", hand.lower())
+        self.assertNotIn("reachable", hand.lower())
+        self.assertNotIn("tools/list", card)
+        self.assertNotIn("7:15 AM Pacific", card)
+        self.assertNotIn(bac.HANDSHAKE_CADENCE, home)
+        self.assertNotIn(bac.handshake_sentence(), home)
+        self.assertIn('href="mcp/status/"', card)
+        self.assertIn(">MCP status", card)
+        self.assertIn("Recent checks", card)
+        self.assertIn('aria-label="Check history"', card)
+        if tally["complete"]:
+            self.assertNotIn("so far", hand)
+            self.assertIn("% of remote servers handshake-checked", hand)
+        else:
+            self.assertIn("checked so far", hand)
+            self.assertNotIn("%", hand)
+        for name in ("styles.css", "home-mobile.css"):
+            css = (ROOT / name).read_text(encoding="utf-8")
+            self.assertIn(".vs-reach", css)
+            self.assertIn(".vs-hand", css)
+            self.assertIn(".vs-figs", css)
+            self.assertNotIn(".verify-slim time{display:block", css)
 
 
 if __name__ == "__main__":

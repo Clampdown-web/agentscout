@@ -184,6 +184,9 @@ def handshake_tally(source=None, path=None):
             failed+=1
     return {"remote":remote,"local_only":local_only,"probed":probed,"responded":responded,
             "needs_auth":needs_auth,"failed":failed,"complete":remote>0 and probed>=remote}
+def _remote_pct(responded, remote):
+    """Responded share of remote servers, one decimal. Same figure on every surface."""
+    return f"{(100.0*int(responded)/int(remote)):.1f}"
 def handshake_sentence(source=None, path=None):
     """Public running count. No catalog-wide percentage until every remote server has a probe."""
     tally=source if _is_tally(source) else handshake_tally(source, path)
@@ -206,7 +209,7 @@ def handshake_sentence(source=None, path=None):
     if probed>0:
         answered=f"{responded:,} answered with a tools list"
         if complete:
-            answered+=f" ({(100.0*responded/remote):.1f}% of remote servers handshake-checked)"
+            answered+=f" ({_remote_pct(responded, remote)}% of remote servers handshake-checked)"
         head+=f" Of those, {answered}, {needs_auth:,} asked for auth, {failed:,} failed."
     return head+" "+HANDSHAKE_CADENCE
 def handshake_count_html(source=None):
@@ -215,6 +218,76 @@ def handshake_count_html(source=None):
     if not hs:
         return ""
     return f'<p id="mcp-handshake-count">{e(hs)}</p>'
+def handshake_home_facts(source=None, path=None):
+    """Compact homepage facts from handshake_tally. None when there is no remote count.
+
+    Local-only rows stay out of remote. so_far stays until probed >= remote.
+    pct is set only on a complete remote pass, and it is the remote share from
+    handshake_sentence, not a share of the whole catalog.
+    """
+    tally=source if _is_tally(source) else handshake_tally(source, path)
+    if not tally:
+        return None
+    remote=int(tally["remote"])
+    if remote<=0:
+        return None
+    probed=int(tally["probed"])
+    responded=int(tally["responded"])
+    needs_auth=int(tally["needs_auth"])
+    failed=int(tally["failed"])
+    complete=bool(tally["complete"])
+    return {
+        "probed":probed,"remote":remote,"responded":responded,"needs_auth":needs_auth,
+        "failed":failed,"complete":complete,
+        "noun":"remote server" if remote==1 else "remote servers",
+        "so_far":not complete,
+        "pct":_remote_pct(responded, remote) if complete else None,
+    }
+def handshake_home_text(source=None, path=None):
+    """One compact sentence. Empty when the homepage should omit the handshake line.
+
+    This is not the status-page paragraph: no cadence, no tools/list wording.
+    """
+    facts=source if isinstance(source, dict) and "so_far" in source and "noun" in source else handshake_home_facts(source, path)
+    if not facts:
+        return ""
+    head=f"Handshake: {int(facts['probed']):,} of {int(facts['remote']):,} {facts['noun']} checked"
+    head+=" so far." if facts["so_far"] else "."
+    if int(facts["probed"])<=0:
+        return head
+    answered=f"{int(facts['responded']):,} answered"
+    if facts.get("pct"):
+        answered+=f" ({facts['pct']}% of remote servers handshake-checked)"
+    return f"{head} {answered}, {int(facts['needs_auth']):,} asked for auth, {int(facts['failed']):,} failed."
+def handshake_home_html(source=None, path=None):
+    """Homepage card row under the link check. Not a live count, and not the status paragraph."""
+    facts=handshake_home_facts(source, path)
+    if not facts:
+        return ""
+    scope=f"{facts['noun']} checked"
+    if facts["so_far"]:
+        scope+=" so far"
+    count=f"{facts['probed']:,} of {facts['remote']:,}"
+    figs=""
+    if facts["probed"]>0:
+        label="Handshake results so far" if facts["so_far"] else "Handshake results"
+        figs=(
+            f'<ul class="vs-figs" aria-label="{e(label)}">'
+            f'<li><b>{facts["responded"]:,}</b><span>answered</span></li>'
+            f'<li><b>{facts["needs_auth"]:,}</b><span>asked for auth</span></li>'
+            f'<li><b>{facts["failed"]:,}</b><span>failed</span></li>'
+            "</ul>"
+        )
+    pct=""
+    if facts["pct"]:
+        pct=f'<p class="vs-pct">{e(facts["pct"])}% of remote servers handshake-checked</p>'
+    return (
+        '<div class="vs-row vs-hand">'
+        '<p class="vs-kicker">Handshake</p>'
+        f'<p class="vs-main"><span class="vs-phrase"><b>{count}</b> <span class="vs-scope">{e(scope)}</span></span></p>'
+        f"{figs}{pct}"
+        "</div>"
+    )
 def _skip_scripts(html, edit):
     # Closing tags may include whitespace or attributes before ">". A tighter pattern would treat that block as page text.
     parts=re.split(r'(?is)(<script\b[^>]*>.*?</script\b[^>]*>|<style\b[^>]*>.*?</style\b[^>]*>)', html)

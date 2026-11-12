@@ -372,7 +372,12 @@ def _swap(s, marker, html_):
 
 
 def home_slim(doc):
-    """One line under the homepage search. Counts and the timestamp come from the link-check document."""
+    """Link check plus the separate handshake running count, under the homepage search.
+
+    The reachable figure comes from the link-check document. The handshake row
+    comes from handshake_home_html, which reads summary.json through the same
+    tally as the status page. The two counts are not combined.
+    """
     servers = doc["servers"]
     cat = doc["catalog"]
     live = sum(1 for s in servers if s.get("status") == "live")
@@ -384,14 +389,24 @@ def home_slim(doc):
     dot = status_dot_class(live, checked_n, checked)
     hist = _hist_html(cat.get("history") or [], 3)
     catalog_n = checked_n + miss
-    extra = f" · {miss:,} of {catalog_n:,} listed servers not checked yet" if miss else ""
+    extra = f'<span class="vs-extra">{miss:,} of {catalog_n:,} listed servers not checked yet</span>' if miss else ""
+    import build_aicite as bac_home
+    hand = bac_home.handshake_home_html()
     return (
-        f'<!--vs:home--><section class="verify-slim" aria-label="MCP server link check">'
-        f'<span class="{dot}" aria-hidden="true"></span>'
-        f'<p><b>{live:,} of {checked_n:,}</b> checked servers reachable{extra} · checked daily · last checked {when}</p>'
-        f'<a href="mcp/status/">MCP status →</a>'
+        '<!--vs:home--><section class="verify-slim" aria-label="MCP server link check and handshake">'
+        '<div class="vs-row vs-reach">'
+        '<div class="vs-copy">'
+        '<p class="vs-kicker">Link check</p>'
+        f'<p class="vs-main"><span class="{dot}" aria-hidden="true"></span>'
+        f'<span class="vs-phrase"><b>{live:,} of {checked_n:,}</b> checked servers reachable</span></p>'
+        f'<p class="vs-sub"><span class="vs-cadence">Checked daily</span>'
+        f'<span class="vs-when">Last checked {when}</span>{extra}</p>'
+        '</div>'
+        '<a href="mcp/status/">MCP status →</a>'
+        '</div>'
+        f'{hand}'
         f'<details><summary>Recent checks</summary>{hist}</details>'
-        f'</section><!--/vs:home-->'
+        '</section><!--/vs:home-->'
     )
 
 

@@ -122,7 +122,7 @@ class StatusDotTest(unittest.TestCase):
         live_dot = build_status.status_dot_class(cat["live"], cat["checked"], cat.get("mcp_last_checked") or "")
         self.assertEqual(_dot(home), live_dot)
         self.assertEqual(_dot(panel), live_dot)
-        self.assertIn(f"<b>{cat['live']} of {cat['checked']}</b>", home)
+        self.assertIn(f"<b>{cat['live']:,} of {cat['checked']:,}</b>", home)
         self.assertIn(f"<b>{cat['down']}</b> down", panel)
         if cat["down"]:
             self.assertIn("Down right now", panel)
