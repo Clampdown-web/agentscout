@@ -40,7 +40,7 @@ Each attempt records: pass/fail outcome, HTTP status, latency (milliseconds, all
 
 Reason categories: `timeout`, `auth`, `not_mcp`, `tls`, `dns`, `http_5xx`, `http_4xx`, `protocol` (JSON-RPC error that is not auth), `connection`, `non_public` (we refused the address or a redirect). Timeout is 10 seconds per request. Politeness: about 5 requests per second across the whole run, at most one request per second to a single host, and at most 8 servers per host in one run. Extra servers on a busy host are deferred to a later day instead of being marked down.
 
-The registry walk stops at 1,200 pages (100 servers each) or at the end cursor, whichever comes first. A run that hits the cap still probes the matches it has and does not delete local-only rows from the summary. The daily job probes at most 200 remote servers. `data/mcp-health/state.json` stores the next slug and any host-capped deferrals so the slice rotates. Local-only rows are refreshed from the classification and are not part of that 200.
+The registry walk stops at 1,200 pages (100 servers each) or at the end cursor, whichever comes first. A run that hits the cap still probes the matches it has and does not delete local-only rows from the summary. The daily job probes at most 600 remote servers. `data/mcp-health/state.json` stores the next slug and any host-capped deferrals so the slice rotates. Local-only rows are refreshed from the classification and are not part of that 600.
 
 ## 2. Storage
 
@@ -50,7 +50,7 @@ Append-only history is `data/mcp-health/YYYY-MM.jsonl`, one JSON object per line
 {"endpoint":"https://example.com/mcp","http_status":200,"latency_ms":180,"outcome":"responded","protocol_version":"2025-06-18","reason":null,"slug":"example","tool_count":3,"transport":"streamable-http","ts":"2026-11-11T15:15:02Z"}
 ```
 
-Timestamps are UTC. A month at 200 probes a day is on the order of 1–2 MB, which GitHub Pages can serve. The script does not delete old months. If a file grows past a few megabytes, drop months older than 90 days in a later change; the summary is rebuilt from whatever lines remain.
+Timestamps are UTC. A month at 600 probes a day is on the order of 3–6 MB, which GitHub Pages can serve. The script does not delete old months. If a file grows past a few megabytes, drop months older than 90 days in a later change; the summary is rebuilt from whatever lines remain.
 
 `data/mcp-health/summary.json` is derived. For each remote slug it stores probe count, last checked, last success, last outcome, and 7-day and 30-day counts. The response rate denominator is `responded` plus `failed` in that window. `needs_auth` is excluded, so an auth wall does not lower the rate. `rate_7d` and `rate_30d` are the responded share of that denominator, rounded to three decimals. Local-only rows are `{disposition, display, probes}` only.
 
@@ -83,7 +83,7 @@ Tool pages, `categories/mcp-servers.html`, and the ranked MCP lists are generate
 `.github/workflows/mcp-response-rate.yml` runs at 15:15 UTC (7:15 AM Pacific during standard time, 8:15 AM during daylight time) and on `workflow_dispatch`. It checks out the repo, runs:
 
 ```bash
-python3 scripts/mcp_response_rate.py --limit 200
+python3 scripts/mcp_response_rate.py --limit 600
 ```
 
 and commits only `data/mcp-health/` as `github-actions[bot]`. No secrets, no deploy, no Cloudflare worker changes. The link-check script is unchanged.
@@ -94,7 +94,7 @@ From the repo root, with network access:
 
 ```bash
 python3 scripts/mcp_response_rate.py --limit 20 --dry-run
-python3 scripts/mcp_response_rate.py --limit 200
+python3 scripts/mcp_response_rate.py --limit 600
 ```
 
 `--dry-run` performs the handshakes and prints counts. It does not write history. Omit `--dry-run` to append `data/mcp-health/YYYY-MM.jsonl`, rebuild `summary.json`, and advance `state.json`. Tests use a local mock server and do not open the network:

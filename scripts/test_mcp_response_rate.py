@@ -634,6 +634,16 @@ class WorkflowTests(unittest.TestCase):
         source = (ROOT / "scripts" / "mcp_response_rate.py").read_text(encoding="utf-8")
         self.assertNotIn("tools/call", source)
         self.assertEqual(mrr.USER_AGENT, "AgentScoutBot/1.0 (+https://agentscouthq.com)")
+        self.assertEqual(mrr.DEFAULT_LIMIT, 600)
+        self.assertEqual(mrr.MIN_PROBES, 3)
+        self.assertIn('default: "600"', text)
+        self.assertIn('limit="${PROBE_LIMIT:-600}"', text)
+        self.assertIn("limit=600", text)
+        self.assertNotIn('limit="${PROBE_LIMIT:-200}"', text)
+        self.assertNotIn("--limit 200", source)
+        self.assertIn("--limit 600", source)
+        self.assertIn("--limit 20 --dry-run", source)
+        self.assertIn("timeout-minutes: 60", text)
 
 
 if __name__ == "__main__":

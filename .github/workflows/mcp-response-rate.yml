@@ -12,7 +12,7 @@ on:
       limit:
         description: "Servers to probe this run"
         required: false
-        default: "200"
+        default: "600"
 
 permissions:
   contents: write
@@ -38,9 +38,9 @@ jobs:
       - name: Probe
         run: |
           set -euo pipefail
-          limit="${PROBE_LIMIT:-200}"
+          limit="${PROBE_LIMIT:-600}"
           case "$limit" in
-            ''|*[!0-9]*) limit=200 ;;
+            ''|*[!0-9]*) limit=600 ;;
           esac
           python3 scripts/mcp_response_rate.py --limit "$limit"
         env:
