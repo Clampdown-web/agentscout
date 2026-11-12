@@ -1272,6 +1272,8 @@ body.home .hero-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;mar
 body.home .hero-chips::-webkit-scrollbar{display:none}
 body.home .hero-chips a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);font-weight:650;font-size:14px}
 body.home .hero-chips a:hover{border-color:var(--accent);color:var(--accent)}
+/* Phones: the hidden scroller cut the next chip off at the edge. Wrap instead, once the row no longer fits. */
+@media(max-width:640px){body.home .hero-chips{flex-wrap:wrap;overflow:visible}}
 body.home .hsec{margin:16px auto;width:min(1120px,calc(100% - 32px));background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px 16px 18px;box-sizing:border-box}
 body.home .hsec .sh{margin-bottom:12px}
 body.home .hsec h2{display:flex;align-items:center;gap:8px;font-size:18px}
