@@ -484,7 +484,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611115300"  # bump when app.js/styles.css/home-mobile.css/consent.js change
+ASSET_V = "202611120230"  # bump when app.js/styles.css/home-mobile.css/consent.js change
 _ASSET_FILES = r"app\.js|styles\.css|home-mobile\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js"
 def stamp(s):
     """Put the current styles.css/app.js/home-mobile.css cache-bust on a page a generator just wrote.
@@ -516,12 +516,14 @@ def ensure_home_nav_script(s):
             s = s.replace("</body>", tag + "</body>", 1)
     return s
 _SERVICES_RE = re.compile(r'<section id="services" class="hsec".*?</section>', re.S)
-_SVC_BACK = '<!--svc:back--><p class="svc-back"><a href="#services">MCP server test and AI visibility reports</a></p><!--/svc:back-->'
+_SVC_BACK = '<!--svc:back--><a class="svc-back" href="#services">MCP server test and AI visibility reports</a><!--/svc:back-->'
 def place_home_services(s):
     """Keep the Services cards directly after the hero.
 
-    The weekly signup stays above the footer. One text link in the footer points
-    back, so the block is not copied to the bottom.
+    The weekly signup stays above the footer. The jump-back link sits in the MCP
+    footer column with the other report links, so it does not read as a second
+    signup heading under the weekly box. The homepage already has that signup,
+    so the footer Newsletter link points at it.
     """
     m = _SERVICES_RE.search(s)
     if not m:
@@ -542,11 +544,19 @@ def place_home_services(s):
         at = h + len("</header>")
         s = s[:at] + block + s[at:]
     s = re.sub(r'<!--svc:back-->.*?<!--/svc:back-->', '', s, flags=re.S)
-    foot = s.find('<div class="nlfoot"')
-    if foot < 0:
-        foot = s.find("<footer")
-    if foot > 0:
-        s = s[:foot] + _SVC_BACK + s[foot:]
+    if 'id="nlblock"' in s:
+        s = s.replace('href="#nl-foot"', 'href="#nlblock"', 1)
+    marker = '>AI visibility check</a>'
+    at = s.rfind(marker)
+    if at > 0:
+        at += len(marker)
+        s = s[:at] + _SVC_BACK + s[at:]
+    else:
+        foot = s.find('<div class="nlfoot"')
+        if foot < 0:
+            foot = s.find("<footer")
+        if foot > 0:
+            s = s[:foot] + _SVC_BACK + s[foot:]
     return s
 def calm_open(extra=""):
     """Left-aligned directory section. Spacing lives in styles.css (.calm), not inline padding."""
