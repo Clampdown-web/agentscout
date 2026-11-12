@@ -428,7 +428,7 @@ def write_llms_full(t):
         "- **Official MCP Registry Identifier**: `com.agentscouthq/directory`",
         "- **Remote MCP Server Endpoint (Streamable HTTP & SSE, 100% free, read-only, no API key or x402 wallet required)**: `https://mcp.agentscouthq.com/mcp`",
         f"- **MCP Connection & Client Setup Guide**: {B}mcp/connect.html",
-        f"- **How-To Video Guides & Pro Tips Hub (`/videos/`)**: {B}videos/ (8 playable 60fps walkthroughs with copyable MCP & CLI snippets)",
+        f"- **How-To Video Guides & Pro Tips Hub (`/videos/`)**: {B}videos/ (8 playable 30 fps walkthroughs with copyable MCP & CLI snippets)",
         f"- **Made by AgentScout Pro Bots & 4-Bot Bundle (`/bot-store/` and `/bot-templates/#made-by-agentscout`)**: {B}bot-store/ and {B}bot-templates/#made-by-agentscout — $39 Operations / Monitoring Bot, $59 SEO & AEO Growth Auditor Bot, $59 Market & Launch Intel Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot \"Company-in-a-Box\" Team Bundle",
         f"- **Concise LLM Guide (`llms.txt`)**: {B}llms.txt",
         f"- **RSS feed (`feed.xml`)**: {B}feed.xml",
@@ -517,7 +517,7 @@ def write_llms_full(t):
         "",
 
         "",
-        f"- [How-To Video Guides & Builder Pro Tips Hub (8 60fps Walkthroughs)]({B}videos/)",
+        f"- [How-To Video Guides & Builder Pro Tips Hub (8 30 fps Walkthroughs)]({B}videos/)",
         f"- [All Best AI Agent Lists]({B}best/)",
         f"- [Best AI Coding Agents]({B}best/ai-coding-agents.html)",
         f"- [Best AI Agent Frameworks]({B}best/ai-agent-frameworks.html)",
