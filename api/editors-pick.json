@@ -1,12 +1,12 @@
 {
- "date": "2026-11-11",
- "slug": "holmesgpt",
- "name": "HolmesGPT",
- "why": "A standout DevOps & cloud tool for builders: CNCF sandbox SRE agent that investigates alerts and incidents.",
- "category": "DevOps & cloud",
- "description": "CNCF sandbox SRE agent that investigates alerts and incidents.",
- "logo": "https://agentscouthq.com/assets/logos/holmesgpt.png",
- "page": "https://agentscouthq.com/tools/holmesgpt.html",
+ "date": "2026-11-12",
+ "slug": "activeloop",
+ "name": "Activeloop",
+ "why": "A standout memory & RAG tool for builders: deep Lake, a multimodal database for AI that stores vectors, images, text and video so agents and RAG apps can search and retrieve them.",
+ "category": "memory & RAG",
+ "description": "Deep Lake, a multimodal database for AI that stores vectors, images, text and video so agents and RAG apps can search and retrieve them.",
+ "logo": "https://agentscouthq.com/assets/logos/activeloop.png",
+ "page": "https://agentscouthq.com/tools/activeloop.html",
  "history": [
   {
    "date": "2026-10-16",
@@ -115,6 +115,10 @@
   {
    "date": "2026-11-11",
    "slug": "holmesgpt"
+  },
+  {
+   "date": "2026-11-12",
+   "slug": "activeloop"
   }
  ]
 }
