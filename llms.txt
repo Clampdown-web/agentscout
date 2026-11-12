@@ -1,12 +1,14 @@
 # AgentScout
 
-> AgentScout is a curated, read-only directory of 5,752 AI agent tools in 40 categories, including 3,180 MCP servers. Checked daily, 3,173 of 3,180 checked servers live, last checked 2026-11-12. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
+> AgentScout is a curated, read-only directory of 5,752 AI agent tools in 40 categories, including 3,180 MCP servers. Checked daily, 3,173 of 3,180 checked servers live, last checked 2026-11-12. Handshake check: 200 of 1,766 remote servers checked so far. Of those, 66 answered with a tools list, 131 asked for auth, 3 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT. Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.
 
 <!-- mcp-reach:start -->
 
 ## MCP server reachability
 
 Checked daily, 3,173 of 3,180 checked servers live, last checked 2026-11-12.
+
+Handshake check: 200 of 1,766 remote servers checked so far. Of those, 66 answered with a tools list, 131 asked for auth, 3 failed. This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, separate from the link check around 7 AM PT.
 
 Once a day, AgentScout requests every MCP server in the directory, including catalog-only listings, and, when it is a different link, its GitHub URL. The request is HEAD, then GET, with a 20-second timeout. If that fails on TLS or gets no response, it retries once with a browser user agent. A server counts as live when its stored label is OK or Reachable, blocks automated checks. OK is HTTP 200-399 or 405, and also 401, 403 or 429 when the GitHub URL succeeded or that URL is the only one checked. Reachable, blocks automated checks means those 401, 403 or 429 responses without a harder error. Any other checked result is not live. The live percentage uses only servers with a row in the check file: live plus down. A server with no row is listed, not yet checked, and is not part of that percentage. Catalog-only listings stay unverified until that daily check opens them. The last-checked time is the checked field, in America/Los_Angeles. The rows are on the MCP status page and in status.json.
 

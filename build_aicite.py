@@ -112,22 +112,207 @@ def reach_sentence_html(st):
     if extra:
         line+=f" +{extra:,} listed, not yet checked."
     return line
+# Running initialize + tools/list count. Separate from the link-check sentence above.
+# Local-only rows stay out of the denominator. Needs-auth is not a tools/list answer.
+HEALTH_SUMMARY="data/mcp-health/summary.json"
+HANDSHAKE_CADENCE=("This is the initialize + tools/list probe, updated daily around 7:15 AM Pacific, "
+                   "separate from the link check around 7 AM PT.")
+_TALLY_KEYS=("remote","local_only","probed","responded","needs_auth","failed","complete")
+def _is_tally(obj):
+    return isinstance(obj, dict) and all(k in obj for k in _TALLY_KEYS)
+def _as_int(value):
+    if isinstance(value, bool) or isinstance(value, str):
+        if isinstance(value, str) and value.isdigit():
+            return int(value)
+        return 0
+    if isinstance(value, int):
+        return value if value>0 else 0
+    if isinstance(value, float):
+        return int(value) if value>=1 else 0
+    return 0
+def _load_handshake_summary(path):
+    try:
+        with open(path, encoding="utf-8") as f:
+            data=json.load(f)
+    except Exception:
+        return None
+    return data if isinstance(data, dict) else None
+def _handshake_servers(source, path):
+    """Server map, or None when the summary cannot be read. A tally is not a server map."""
+    if _is_tally(source):
+        return None
+    if source is None:
+        source=_load_handshake_summary(path or HEALTH_SUMMARY)
+        if source is None:
+            return None
+    if not isinstance(source, dict):
+        return None
+    if isinstance(source.get("servers"), dict):
+        return source["servers"]
+    if source and not all(isinstance(v, dict) for v in source.values()):
+        return None
+    return source
+def handshake_tally(source=None, path=None):
+    """Remote handshake counts from summary.json. Local-only rows are not included.
+
+    `responded`, `needs_auth`, and `failed` are last_outcome on remote servers
+    with at least one probe. Any other outcome, including a missing one, counts
+    as failed. needs_auth is not a tools/list answer.
+    """
+    servers=_handshake_servers(source, path)
+    if servers is None:
+        return None
+    remote=local_only=probed=responded=needs_auth=failed=0
+    for row in servers.values():
+        if not isinstance(row, dict):
+            continue
+        if row.get("disposition")=="local_only":
+            local_only+=1
+            continue
+        if row.get("disposition")!="remote":
+            continue
+        remote+=1
+        if _as_int(row.get("probes"))<1:
+            continue
+        probed+=1
+        outcome=row.get("last_outcome")
+        if outcome=="responded":
+            responded+=1
+        elif outcome=="needs_auth":
+            needs_auth+=1
+        else:
+            failed+=1
+    return {"remote":remote,"local_only":local_only,"probed":probed,"responded":responded,
+            "needs_auth":needs_auth,"failed":failed,"complete":remote>0 and probed>=remote}
+def handshake_sentence(source=None, path=None):
+    """Public running count. No catalog-wide percentage until every remote server has a probe."""
+    tally=source if _is_tally(source) else handshake_tally(source, path)
+    if not tally:
+        return ""
+    remote=int(tally["remote"])
+    probed=int(tally["probed"])
+    responded=int(tally["responded"])
+    needs_auth=int(tally["needs_auth"])
+    failed=int(tally["failed"])
+    if remote<=0:
+        return ("Handshake check: no remote servers are in the summary yet. "
+                "Local-only servers are not part of this probe. "+HANDSHAKE_CADENCE)
+    noun="remote server" if remote==1 else "remote servers"
+    complete=bool(tally["complete"])
+    head=f"Handshake check: {probed:,} of {remote:,} {noun} checked"
+    head += "." if complete else " so far."
+    if complete:
+        head+=" The catalog of remote endpoints has been checked once."
+    if probed>0:
+        answered=f"{responded:,} answered with a tools list"
+        if complete:
+            answered+=f" ({(100.0*responded/remote):.1f}% of remote servers handshake-checked)"
+        head+=f" Of those, {answered}, {needs_auth:,} asked for auth, {failed:,} failed."
+    return head+" "+HANDSHAKE_CADENCE
+def handshake_count_html(source=None):
+    """The status-page line that sits beside the link-check numbers."""
+    hs=handshake_sentence(source)
+    if not hs:
+        return ""
+    return f'<p id="mcp-handshake-count">{e(hs)}</p>'
+def _skip_scripts(html, edit):
+    parts=re.split(r'(?is)(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)', html)
+    out=[]
+    for i, part in enumerate(parts):
+        out.append(part if i%2 else edit(part))
+    return "".join(out)
+def _beside_plain_reach_sentence(html, sentence, hs):
+    """Add the handshake sentence to other paragraphs that already quote the link-check line.
+
+    The quick answer and the "how many are reachable" answer stay the link-check
+    sentence. Those use a <time> tag, or id mcp-reach / mcp-reachable-a.
+    """
+    if not hs or "checked servers live" not in (sentence or ""):
+        return html
+    esc=e(hs)
+    def edit(part):
+        def repl(m):
+            block=m.group(0)
+            if 'id="mcp-reach"' in block or 'id="mcp-reachable-a"' in block or 'id="mcp-handshake"' in block:
+                return block
+            if sentence not in block or "Handshake check:" in block:
+                return block
+            if not block.endswith("</p>"):
+                return block
+            return block[:-4]+" "+esc+"</p>"
+        return re.sub(r"<p\b[^>]*>.*?</p>", repl, part, flags=re.S)
+    return _skip_scripts(html, edit)
+def _extend_other_faq_answers(html, sentence, hs):
+    """FAQ answers that already include the link-check sentence gain the handshake sentence.
+
+    The answer to "How many listed MCP servers are reachable?" stays that sentence alone.
+    """
+    if not hs or "checked servers live" not in (sentence or ""):
+        return html
+    def fix(m):
+        raw=m.group(1)
+        try:
+            data=json.loads(raw)
+        except Exception:
+            return m.group(0)
+        changed=False
+        def walk(node):
+            nonlocal changed
+            if isinstance(node, dict):
+                if node.get("@type")=="Question" and node.get("name")!=_Q_COUNT:
+                    ans=node.get("acceptedAnswer")
+                    if isinstance(ans, dict) and isinstance(ans.get("text"), str):
+                        text=ans["text"]
+                        if text.strip()!=sentence and sentence in text and "Handshake check:" not in text:
+                            ans["text"]=text.rstrip()+" "+hs
+                            changed=True
+                for value in node.values():
+                    walk(value)
+            elif isinstance(node, list):
+                for value in node:
+                    walk(value)
+        walk(data)
+        if not changed:
+            return m.group(0)
+        return '<script type="application/ld+json">'+json.dumps(data, ensure_ascii=False).replace("</","<\\/")+"</script>"
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, html, flags=re.S)
+def stamp_status_handshake_line(path="mcp/status/index.html", source=None):
+    """Put the running count directly after the status page's link-check numbers."""
+    if not os.path.exists(path):
+        return
+    block=handshake_count_html(source)
+    s=open(path, encoding="utf-8").read()
+    pat=re.compile(r'\n?<p id="mcp-handshake-count">.*?</p>', re.S)
+    if not block:
+        s2=pat.sub("", s, count=1)
+    elif pat.search(s):
+        s2=pat.sub("\n"+block, s, count=1)
+    else:
+        m=re.search(r'<p class="st-updated">.*?</p>', s, re.S)
+        if not m:
+            return
+        s2=s[:m.end()]+"\n"+block+s[m.end():]
+    if s2!=s:
+        open(path,"w",encoding="utf-8").write(s2)
 def llms_reach_section(st=None):
     st=st or mcp_reachability()
     sentence=reach_sentence(st)
-    return "\n".join(["<!-- mcp-reach:start -->","",
-        "## MCP server reachability","",
-        sentence,"",
-        methodology_plain(),"",
+    hs=handshake_sentence()
+    lines=["<!-- mcp-reach:start -->","","## MCP server reachability","",sentence,""]
+    if hs:
+        lines+=[hs,""]
+    lines+=[methodology_plain(),"",
         f"- [MCP server status]({B}mcp/status/): the same reachability rows, with HTTP result and history",
         f"- [status.json]({B}status.json): machine-readable rows for every listed MCP server",
         f"- [Best MCP servers by task]({B}mcp/): ranked lists, with the same daily check",
-        "","<!-- mcp-reach:end -->"])
+        "","<!-- mcp-reach:end -->"]
+    return "\n".join(lines)
 def stamp_llms_docs(st=None):
     """Put the reachability section in llms.txt and llms-full.txt. Idempotent. Does not rewrite the homepage."""
     st=st or mcp_reachability()
     section=llms_reach_section(st)
     sentence=reach_sentence(st)
+    hs=handshake_sentence()
     old=re.compile(r" \(\d+ of \d+ MCP servers responded today \(verified [^)]+\)\)")
     for path in ("llms.txt","llms-full.txt"):
         if not os.path.exists(path): continue
@@ -143,11 +328,17 @@ def stamp_llms_docs(st=None):
                 s2=s2[:m.end()]+"\n\n"+section+"\n"+s2[m.end():]
             else:
                 s2=section+"\n\n"+s2
+        if hs and sentence:
+            head, sep, tail=s2.partition("<!-- mcp-reach:start -->")
+            if sentence in head and hs not in head:
+                head=head.replace(sentence, sentence+" "+hs, 1)
+                s2=head+sep+tail
         s2=re.sub(r"\n{3,}","\n\n",s2)
         if s2!=s: open(path,"w",encoding="utf-8").write(s2)
     return sentence
 _SEARCH={"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://agentscouthq.com/?q={search_term_string}#directory"},"query-input":"required name=search_term_string"}
 _Q_COUNT="How many listed MCP servers are reachable?"
+_Q_ANSWER="How many MCP servers actually answer?"
 _Q_HOW="How does AgentScout check which MCP servers are reachable?"
 def _fit_desc(desc, n=156):
     desc=" ".join(str(desc).split())
@@ -174,9 +365,15 @@ def _json_href(path):
     return "/status.json"
 def _reach_block(st, path):
     method=e(methodology_plain()).replace("MCP status page", f'<a href="{_status_href(path)}">MCP status page</a>').replace("status.json", f'<a href="{_json_href(path)}">status.json</a>')
+    hs=handshake_sentence()
+    hs_html=e(hs) if hs else ""
+    handshake_qa=f'<p class="qa" id="mcp-handshake">{hs_html}</p>\n' if hs else ""
+    handshake_faq=f'<h2 id="mcp-answer">{e(_Q_ANSWER)}</h2>\n<p>{hs_html}</p>\n' if hs else ""
     return ("<!--mcp:reach-->\n"
             f'<p class="qa" id="mcp-reach"><b>Quick answer:</b> {reach_sentence_html(st)}</p>\n'
-            f'<h2 id="mcp-reachable">{e(_Q_COUNT)}</h2>\n<p>{reach_sentence_html(st)}</p>\n'
+            f'{handshake_qa}'
+            f'<h2 id="mcp-reachable">{e(_Q_COUNT)}</h2>\n<p id="mcp-reachable-a">{reach_sentence_html(st)}</p>\n'
+            f'{handshake_faq}'
             f'<h2 id="mcp-check">{e(_Q_HOW)}</h2>\n<p>{method}</p>\n'
             "<!--/mcp:reach-->")
 def _is_header_org(data):
@@ -265,7 +462,10 @@ def stamp_mcp_pages(t=None):
     names={x.get("slug"):x.get("name") for x in t if x.get("slug")}
     st=mcp_reachability(t)
     sentence=reach_sentence(st)
+    hs=handshake_sentence()
     faq=[(_Q_COUNT, sentence), (_Q_HOW, methodology_plain())]
+    if hs:
+        faq.insert(1, (_Q_ANSWER, hs))
     tails={"mcp/index.html":"Best MCP servers by task: databases, web search, GitHub, monitoring, gateways and more.",
            "mcp/status/index.html":"Up, down and not-yet-checked for every listed MCP server.",
            "mcp/pricing.html":"Pricing for every listed MCP server, as each maker states it.",
@@ -303,7 +503,10 @@ def stamp_mcp_pages(t=None):
             meta=_fit_desc(sentence+" "+tail)
             s=_set_desc(s, meta)
         s=_patch_graph(s, st, meta, faq, slugs, names, allow_list=path!="mcp/connect.html")
+        s=_beside_plain_reach_sentence(s, sentence, hs)
+        s=_extend_other_faq_answers(s, sentence, hs)
         open(path,"w",encoding="utf-8").write(s); n+=1
+    stamp_status_handshake_line()
     print(f"mcp reachability: stamped {n} pages; {sentence}")
     stamp_home_mcp(st)
     return st
@@ -476,6 +679,7 @@ def connect_page(t):
     import build_counts
     _c=build_counts.require(t)
     M=_c["mcp_servers"]; canon=B+"mcp/connect.html"; uline=reach_sentence(mcp_reachability(t))
+    _hs=handshake_sentence(); _hs_suf=(" "+_hs) if _hs else ""
     title="AgentScout MCP Server (com.agentscouthq/directory) · Connect"
     desc=f"Official AgentScout MCP server (com.agentscouthq/directory): free, read-only access to {_c['tools']:,}+ AI agent tools & {M:,} MCP servers. No API key or x402 wallet."
     doc=live_mcp_tools()
@@ -492,7 +696,7 @@ def connect_page(t):
         ("What is AgentScout's official MCP Registry ID and endpoint URL?",
          f"AgentScout's official MCP Registry ID is com.agentscouthq/directory. You can connect via Streamable HTTP at {MCP_URL} with no sign-up or API key."),
         ("How many AI agent tools and MCP servers does the AgentScout MCP server cover?",
-         f"The server searches {_c['tools']:,}+ curated AI agent tools and {M:,} MCP servers across {_c['categories']} categories. {uline}")
+         f"The server searches {_c['tools']:,}+ curated AI agent tools and {M:,} MCP servers across {_c['categories']} categories. {uline}{_hs_suf}")
     ]
     faq_html="".join(f'<details open class="faq" style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)"><summary style="font-weight:600;cursor:pointer">{e(q)}</summary><p style="margin:8px 0 0;color:var(--muted);line-height:1.55">{e(a)}</p></details>' for q,a in faqs)
     rows=[[f'<code>{e(tool["name"])}</code>', e(tool.get("title") or tool["name"]), e(tool.get("description") or "")] for tool in live_tools]
@@ -515,12 +719,12 @@ def connect_page(t):
            '</div><!--/mcp:howto-->')
     copy_js=('<script>(function(){document.querySelectorAll("[data-mcp-copy-for]").forEach(function(b){if(b.dataset.bound)return;b.dataset.bound="1";b.addEventListener("click",function(){var node=document.getElementById(b.getAttribute("data-mcp-copy-for"));var text=node?node.textContent:"";var done=function(){var o=b.textContent;b.textContent="Copied";setTimeout(function(){b.textContent=o},1400)};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){})}else{var ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done()}catch(err){}ta.remove()}})})})();</script>')
     body=(f'<section class="calm"><h1>Connect to the AgentScout MCP server (<code>com.agentscouthq/directory</code>)</h1>'
-          f'<p class="lede">Let your AI assistant search AgentScout directly. AgentScout\'s official MCP server (<code>com.agentscouthq/directory</code> at <code>{e(MCP_URL)}</code>) is <strong>100% free, public, and read-only</strong>. No sign-up, API key, crypto wallet, or x402 payment. It covers all {_c["tools"]:,}+ tools, including {M:,} MCP servers ({e(uline)}), with pricing as each maker states it.</p>'
+          f'<p class="lede">Let your AI assistant search AgentScout directly. AgentScout\'s official MCP server (<code>com.agentscouthq/directory</code> at <code>{e(MCP_URL)}</code>) is <strong>100% free, public, and read-only</strong>. No sign-up, API key, crypto wallet, or x402 payment. It covers all {_c["tools"]:,}+ tools, including {M:,} MCP servers ({e(uline)}), with pricing as each maker states it.{e(_hs_suf)}</p>'
           f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p>'
           +howto+
           '<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-mcp-terminal-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-mcp-terminal.mp4" type="video/mp4"></video></figure>'
           '<h2>Limits and data</h2><p>Read-only: the server can only look things up. It cannot change the directory. Up to 60 requests per minute per IP address. Data comes from the same catalog as the site (<a href="../api/tools.json">api/tools.json</a>) and refreshes within about 10 minutes of each site update. Usage is counted anonymously: only the day, the tool used, the type of app and whether it was a public or test request. No IP addresses, search text or arguments are stored (see our <a href="../privacy.html">privacy policy</a>). '
-          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="status/">MCP status</a> ('+e(uline)+'), the <a href="../openapi.json">OpenAPI description</a>, <a href="../llms.txt">llms.txt</a> and <a href="../llms-full.txt">llms-full.txt</a>.</p>'
+          'Also see the <a href="pricing.html">MCP pricing table</a>, <a href="status/">MCP status</a> ('+e(uline)+'), the <a href="../openapi.json">OpenAPI description</a>, <a href="../llms.txt">llms.txt</a> and <a href="../llms-full.txt">llms-full.txt</a>.'+e(_hs_suf)+'</p>'
           '<h2 id="faq">Frequently asked questions</h2>'+faq_html+
           '<p style="font-size:14px;color:var(--muted);margin:14px 0 0"><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="../index.html">https://agentscouthq.com</a>, published in the <a href="https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory" rel="noopener noreferrer">official MCP Registry</a> as <code>com.agentscouthq/directory</code> with Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (the same worker also answers at <code>https://agentscout-mcp.agentscouthq.workers.dev/mcp</code>), and indexed on <a href="https://glama.ai/mcp/connectors/com.agentscouthq/directory" rel="noopener noreferrer">Glama</a>, <a href="https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html" rel="noopener noreferrer">MCPServers.org</a>, <a href="https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory" rel="noopener noreferrer">SourceWeft</a>, and <a href="https://protogrid.dev/servers/com.agentscouthq/directory" rel="noopener noreferrer">Protogrid</a>. It is 100% free and read-only, and is unrelated to any paid third-party x402 web-fetch tool.</p>'
           +copy_js+'</section>')

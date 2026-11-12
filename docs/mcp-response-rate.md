@@ -74,6 +74,7 @@ Tool pages, `categories/mcp-servers.html`, and the ranked MCP lists are generate
 - On each `tools/{slug}.html`, a badge in the existing `.badges` / `.b` style, using `badge_text()`. No percentage and no “down” when `display` is `insufficient`.
 - On `/mcp/` task lists and `best/mcp-servers*.html` (and the same kind of ranked MCP list under `best/` and `s/`), a “Responds” sort that only orders servers whose `display` is `rate`, by `rate_30d` then `n_30d`. Everyone else keeps today’s order (GitHub stars, then ratings, then recent push, then maturity in `build_mcp_tasks.py`). A thin sample must not jump the list. The recommended order stays that star ranking; Responds is the extra sort.
 - Do not rewrite the PR #97 reachability sentence. Link-check “live” and MCP “responded” stay separate facts.
+- `/mcp/status/`, the reachability quick answer on `/mcp/` pages, and `llms.txt` also show a running handshake count from `summary.json`, as its own sentence beside that line. It counts remote servers with at least one initialize + tools/list probe (answered with a tools list, asked for auth, or failed). Local-only servers are outside that denominator. Until every remote server has been probed, the line says “checked so far” and does not state a catalog-wide percentage. Once that first pass is done, a share is of remote servers handshake-checked, not of every listed MCP server.
 - If CSS is added, bump `ASSET_V` and regenerate the `?v=` stamps. Do not weaken CSP or Turnstile.
 
 `summary.json` is the input. Absence of a slug is “Not yet checked”.

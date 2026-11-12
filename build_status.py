@@ -622,11 +622,14 @@ def write_dashboard(tools):
         qa_bits.append(f"Last updated {pretty or checked} Pacific.")
     else:
         qa_bits.append("The MCP link check has no timestamp on file yet.")
+    import build_aicite as bac_hs
+    handshake_line = bac_hs.handshake_count_html()
     body = f'''<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../index.html">MCP servers</a> / Status</div>
 <section class="st-dash sheet">
 <h1 style="text-align:left">MCP server status</h1>
 <p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. {VERIFY_CADENCE}. The live count is {live:,} of {checked_n:,} checked servers. A server with no row in the check file, including a catalog-only listing, is listed and not yet checked, and is not part of that percentage. The daily check includes catalog-only servers the next time it runs. Nothing on this page is guessed.</p>
 <p class="st-updated"><b>Last updated:</b> {when}. {VERIFY_CADENCE}. {e(qa_bits[0] if qa_bits else "")}</p>
+{handshake_line}
 <div class="st-counts" role="group" aria-label="Filter by status">
 <button type="button" class="st-count on" data-filter="all"><b>{total:,}</b><span>All</span></button>
 <button type="button" class="st-count" data-filter="live"><b>{live:,}</b><span>Up</span></button>
