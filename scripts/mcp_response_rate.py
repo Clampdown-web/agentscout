@@ -7,7 +7,7 @@ by rate_30d then n_30d and leaves everyone else in today's order.
 See docs/mcp-response-rate.md.
 
   python3 scripts/mcp_response_rate.py --limit 20 --dry-run
-  python3 scripts/mcp_response_rate.py --limit 200
+  python3 scripts/mcp_response_rate.py --limit 600
 """
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ ALLOWED_METHODS = frozenset({"initialize", "notifications/initialized", "tools/l
 REGISTRY = "https://registry.modelcontextprotocol.io/v0.1/servers"
 MIN_PROBES = 3
 MAX_BODY = 2_000_000
-DEFAULT_LIMIT = 200
+DEFAULT_LIMIT = 600
 DEFAULT_PER_HOST = 8
 DEFAULT_RPS = 5.0
 DEFAULT_TIMEOUT = 10.0
