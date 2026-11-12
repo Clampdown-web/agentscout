@@ -216,7 +216,8 @@ def handshake_count_html(source=None):
         return ""
     return f'<p id="mcp-handshake-count">{e(hs)}</p>'
 def _skip_scripts(html, edit):
-    parts=re.split(r'(?is)(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)', html)
+    # End tags may have whitespace before ">". A tighter pattern would treat that script as page text.
+    parts=re.split(r'(?is)(<script\b[^>]*>.*?</script\s*>|<style\b[^>]*>.*?</style\s*>)', html)
     out=[]
     for i, part in enumerate(parts):
         out.append(part if i%2 else edit(part))

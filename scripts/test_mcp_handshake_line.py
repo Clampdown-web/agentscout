@@ -188,6 +188,17 @@ class HandshakeWordingTests(unittest.TestCase):
         self.assertNotIn("so far", text)
         self.assertNotIn("checked once", text)
 
+    def test_script_end_tag_with_space_is_not_rewritten(self):
+        sentence = "Checked daily, 1 of 1 checked servers live, last checked 2026-11-12."
+        hs = "Handshake check: 1 of 1 remote server checked so far."
+        script = f"<script>{sentence}</script >"
+        html = f"<p>{sentence}</p>{script}<style>{sentence}</style >"
+        out = bac._beside_plain_reach_sentence(html, sentence, hs)
+        self.assertIn(script, out)
+        self.assertIn(f"<style>{sentence}</style >", out)
+        self.assertIn(f"<p>{sentence} {hs}</p>", out)
+        self.assertEqual(out.count(hs), 1)
+
     def test_missing_summary_does_not_invent_counts(self):
         self.assertIsNone(bac.handshake_tally(path=str(ROOT / "data" / "mcp-health" / "missing-summary.json")))
         self.assertEqual(bac.handshake_sentence(path=str(ROOT / "data" / "mcp-health" / "missing-summary.json")), "")
