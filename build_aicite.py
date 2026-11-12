@@ -216,8 +216,8 @@ def handshake_count_html(source=None):
         return ""
     return f'<p id="mcp-handshake-count">{e(hs)}</p>'
 def _skip_scripts(html, edit):
-    # End tags may have whitespace before ">". A tighter pattern would treat that script as page text.
-    parts=re.split(r'(?is)(<script\b[^>]*>.*?</script\s*>|<style\b[^>]*>.*?</style\s*>)', html)
+    # Closing tags may include whitespace or attributes before ">". A tighter pattern would treat that block as page text.
+    parts=re.split(r'(?is)(<script\b[^>]*>.*?</script\b[^>]*>|<style\b[^>]*>.*?</style\b[^>]*>)', html)
     out=[]
     for i, part in enumerate(parts):
         out.append(part if i%2 else edit(part))
@@ -276,7 +276,7 @@ def _extend_other_faq_answers(html, sentence, hs):
         if not changed:
             return m.group(0)
         return '<script type="application/ld+json">'+json.dumps(data, ensure_ascii=False).replace("</","<\\/")+"</script>"
-    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, html, flags=re.S)
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script\b[^>]*>', fix, html, flags=re.S)
 def stamp_status_handshake_line(path="mcp/status/index.html", source=None):
     """Put the running count directly after the status page's link-check numbers."""
     if not os.path.exists(path):
@@ -454,7 +454,7 @@ def _patch_graph(s, st, meta_desc, faq, slugs=None, names=None, allow_list=True)
             ctx=data.get("@context","https://schema.org")
             data=graph[0]; data["@context"]=ctx
         return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False).replace("</","<\\/")+"</script>"
-    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, s, flags=re.S)
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script\b[^>]*>', fix, s, flags=re.S)
 def stamp_mcp_pages(t=None):
     """Answer-first reachability block, methodology, and Dataset JSON-LD on /mcp/ pages and the MCP category.
     Skips the homepage, the shared header, and tool pages. Idempotent."""

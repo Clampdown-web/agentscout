@@ -192,12 +192,24 @@ class HandshakeWordingTests(unittest.TestCase):
         sentence = "Checked daily, 1 of 1 checked servers live, last checked 2026-11-12."
         hs = "Handshake check: 1 of 1 remote server checked so far."
         script = f"<script>{sentence}</script >"
-        html = f"<p>{sentence}</p>{script}<style>{sentence}</style >"
+        style = f"<style>{sentence}</style >"
+        html = f"<p>{sentence}</p>{script}{style}<p>tail</p>"
         out = bac._beside_plain_reach_sentence(html, sentence, hs)
         self.assertIn(script, out)
-        self.assertIn(f"<style>{sentence}</style >", out)
+        self.assertIn(style, out)
         self.assertIn(f"<p>{sentence} {hs}</p>", out)
         self.assertEqual(out.count(hs), 1)
+        edited = []
+
+        def edit(part):
+            edited.append(part)
+            return part.replace(sentence, "EDITED")
+
+        split = bac._skip_scripts(html, edit)
+        self.assertEqual(split, f"<p>EDITED</p>{script}{style}<p>tail</p>")
+        self.assertTrue(edited)
+        self.assertTrue(all("<script" not in part and "</script" not in part for part in edited))
+        self.assertTrue(all("<style" not in part and "</style" not in part for part in edited))
 
     def test_missing_summary_does_not_invent_counts(self):
         self.assertIsNone(bac.handshake_tally(path=str(ROOT / "data" / "mcp-health" / "missing-summary.json")))
