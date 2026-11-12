@@ -73,7 +73,8 @@ def listing_missing(h,where=""):
         anc=a.getparent(); skip=False
         while anc is not None:
             cls=" "+(anc.get("class") or "")+" "
-            if " qguide " in cls or (anc.get("id") or "")=="quality-guide":
+            # ul.catmore = name-only "more tools" piles on category -pN pages (PR #135 replaced the logo dump on purpose).
+            if " qguide " in cls or " catmore " in cls or (anc.get("id") or "")=="quality-guide":
                 skip=True; break
             anc=anc.getparent()
         if skip: continue

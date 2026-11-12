@@ -25,14 +25,25 @@
 "rules-config"
 ],
 "openai-agents-sdk-python": [
+"voice-phone",
+"sandboxes",
+"guardrails",
+"observability",
 "workflow-automation",
 "multi-agent",
-"agent-frameworks"
+"agent-frameworks",
+"dialogue-cleanup"
 ],
 "langchain-deep-agents": [
-"multi-agent",
+"codebase-context",
+"agent-memory",
+"sandboxes",
+"observability",
+"evals",
 "agent-frameworks",
-"rules-config"
+"local-models",
+"terminal-agents",
+"stem-separation"
 ],
 "github-agentic-workflows-gh-aw": [
 "workflow-automation"
@@ -666,6 +677,10 @@
 "agent-frameworks"
 ],
 "goose": [
+"research-agents",
+"computer-use",
+"local-models",
+"terminal-agents",
 "video-editing"
 ],
 "chrome-devtools-mcp": [
@@ -673,12 +688,20 @@
 "mcp-servers"
 ],
 "cherry-studio": [
-"computer-use"
+"parallel-orchestration",
+"vector-rag",
+"computer-use",
+"local-models",
+"images-design",
+"mobile"
 ],
 "localai": [
 "voice-phone",
+"mcp-servers",
 "local-models",
-"images-design"
+"video",
+"images-design",
+"rules-config"
 ],
 "nanobot": [
 "agent-memory",
@@ -2381,16 +2404,21 @@
 "local-models"
 ],
 "librechat": [
+"agent-auth",
 "local-models",
 "rules-config"
 ],
 "kong-gateway": [
 "agent-auth",
-"mcp-gateways"
+"mcp-gateways",
+"video-editing"
 ],
 "astrbot": [
 "vector-rag",
-"agent-frameworks"
+"chat-app-agents",
+"sandboxes",
+"personal-assistants",
+"rules-config"
 ],
 "deeptutor": [
 "agent-memory",
@@ -3013,6 +3041,9 @@
 ],
 "open-code-review": [
 "code-review",
+"codebase-context",
+"text-to-sql",
+"guardrails",
 "terminal-agents"
 ],
 "jan": [
@@ -3025,7 +3056,8 @@
 ],
 "dspy": [
 "vector-rag",
-"agent-frameworks"
+"agent-frameworks",
+"video-editing"
 ],
 "lightpanda": [
 "agent-memory",
@@ -8702,8 +8734,11 @@
 "images-design"
 ],
 "humanmirror-guard": [
-"multi-agent",
-"agent-frameworks"
+"agent-wallets",
+"agent-payments",
+"voice-phone",
+"agent-auth",
+"workflow-automation"
 ],
 "nestack-agent-care": [
 "ai-sre",
@@ -10540,6 +10575,7 @@
 ],
 "sfxmint-mcp": [
 "mcp-servers",
+"agent-frameworks",
 "foley-sfx",
 "games"
 ],
@@ -13552,6 +13588,7 @@
 "stem-separation"
 ],
 "taraki": [
+"planning-tasks",
 "computer-use"
 ],
 "payguard-youraitools": [
@@ -19575,5 +19612,206 @@
 "vfx-compositing",
 "video-editing",
 "images-design"
+],
+"makememe": [
+"video-editing",
+"video"
+],
+"datrace": [
+"mcp-gateways",
+"mcp-servers"
+],
+"influ-mcp-server": [
+"planning-tasks",
+"mcp-servers"
+],
+"backtest-lie-detector": [
+"trading-agents",
+"browser-automation",
+"local-models"
+],
+"mapitt": [],
+"hostly": [
+"planning-tasks"
+],
+"property-index-dubai-mcp": [
+"planning-tasks",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"deskconcert": [
+"sales-agents",
+"video-editing",
+"video"
+],
+"hit-the-road-dude-ai": [
+"dialogue-cleanup",
+"video"
+],
+"lesson-dino": [
+"planning-tasks",
+"research-agents",
+"video"
+],
+"kinovi": [
+"no-code-apps",
+"video",
+"images-design"
+],
+"videoify": [
+"planning-tasks",
+"video-editing",
+"video",
+"images-design"
+],
+"crew-ai-by-flightatom": [
+"guardrails",
+"observability",
+"multi-agent"
+],
+"openstays": [
+"agent-payments",
+"chat-app-agents"
+],
+"disconfirmai": [
+"agent-memory",
+"research-agents"
+],
+"imagera-studio": [
+"planning-tasks",
+"voice-phone",
+"marketing-agents",
+"video-editing",
+"video",
+"images-design"
+],
+"imagera-code": [
+"planning-tasks",
+"terminal-agents"
+],
+"ai-calculators": [
+"codebase-context",
+"token-costs",
+"vector-rag",
+"voice-phone",
+"browser-automation",
+"images-design"
+],
+"t3-code": [
+"parallel-orchestration",
+"computer-use",
+"local-models",
+"mobile"
+],
+"nod": [
+"planning-tasks",
+"voice-phone",
+"chat-app-agents",
+"email-agents",
+"ai-dubbing-voices",
+"personal-assistants"
+],
+"trustgraph": [
+"codebase-context",
+"vector-rag",
+"local-models",
+"images-design"
+],
+"dstack": [
+"parallel-orchestration",
+"fine-tuning",
+"mcp-gateways",
+"multi-agent"
+],
+"sheprd": [
+"code-review",
+"parallel-orchestration",
+"voice-phone",
+"browser-automation",
+"local-models",
+"terminal-agents"
+],
+"cyberverse": [
+"agent-memory",
+"vector-rag",
+"voice-phone",
+"agent-frameworks",
+"local-models",
+"video"
+],
+"bub": [
+"rules-config"
+],
+"ava-antv": [
+"text-to-sql",
+"evals",
+"agent-frameworks",
+"local-models",
+"images-design"
+],
+"crabbox": [
+"local-models",
+"video-editing"
+],
+"agentes-chat": [
+"agent-memory",
+"text-to-sql",
+"voice-phone",
+"chat-app-agents",
+"browser-automation",
+"computer-use",
+"local-models",
+"mobile"
+],
+"genex-desktop": [
+"browser-automation",
+"computer-use",
+"local-models",
+"mixing",
+"games"
+],
+"yogurt": [
+"voice-phone",
+"subtitles-transcripts"
+],
+"solongate-agent-security": [
+"voice-phone",
+"guardrails",
+"agent-auth",
+"mcp-gateways",
+"local-models"
+],
+"devvm": [
+"sandboxes",
+"stem-separation"
+],
+"abacusai-bot": [
+"agent-memory",
+"chat-app-agents",
+"email-agents",
+"computer-use",
+"guardrails",
+"personal-assistants"
+],
+"minutes": [
+"agent-memory",
+"voice-phone",
+"computer-use",
+"local-models",
+"terminal-agents",
+"subtitles-transcripts"
+],
+"ai-devkit": [
+"parallel-orchestration",
+"agent-memory",
+"local-models",
+"terminal-agents",
+"rules-config"
+],
+"poki": [
+"voice-phone",
+"mcp-servers",
+"local-models",
+"mobile"
 ]
 }

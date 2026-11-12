@@ -37,6 +37,9 @@ SKIP_REL = {
     "data/lastmod.json",
     "data/mcp_snapshot.json",
     "data/mcp_link_status.json",
+    # Recorded AI-search answers for the paid report sample. They quote the counts
+    # the answer engines saw on the capture date and must not be rewritten.
+    "tools/report-kit/ai-visibility/captures.json",
 }
 SUBSET = (
     "cheat sheet",
