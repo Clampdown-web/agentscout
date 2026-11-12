@@ -137,8 +137,13 @@ class PageTests(unittest.TestCase):
         cat = (ROOT / "categories" / "mcp-servers.html").read_text(encoding="utf-8")
         self.assertIn('<span class="b" data-mcp-health="1">Not yet checked</span>', cat)
         self.assertIn('<option value="responds">Responds</option>', cat)
-        self.assertIn("3,177 MCP servers", cat)
-        self.assertIn("3,169 of 3,177 checked servers live", cat)
+        # Counts move with every catalog build, so read them from the published count file.
+        total = json.loads((ROOT / "data" / "site_counts.json").read_text(encoding="utf-8"))["mcp_servers"]
+        self.assertIn(f"{total:,} MCP servers", cat)
+        live = re.search(r"([\d,]+) of ([\d,]+) checked servers live", cat)
+        self.assertIsNotNone(live)
+        self.assertEqual(live.group(2), f"{total:,}")
+        self.assertLessEqual(int(live.group(1).replace(",", "")), total)
         self.assertNotIn("responded today", cat[:8000])
 
         best = (ROOT / "best" / "open-source-mcp-servers.html").read_text(encoding="utf-8")
@@ -158,8 +163,9 @@ class PageTests(unittest.TestCase):
         self.assertIn("GitHub stars recorded on each listing", task)
 
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn("5,716", home)
-        self.assertIn("3,177", home)
+        tools = json.loads((ROOT / "data" / "site_counts.json").read_text(encoding="utf-8"))["tools"]
+        self.assertIn(f"{tools:,}", home)
+        self.assertIn(f"{total:,}", home)
 
     def test_deferred_category_cards_carry_the_same_badge(self):
         data = json.loads((ROOT / "categories" / "mcp-servers.more.json").read_text(encoding="utf-8"))
