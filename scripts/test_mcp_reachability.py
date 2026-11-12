@@ -72,6 +72,22 @@ class ReachabilityTests(unittest.TestCase):
         self.assertIsNone(re.search(r'<p class="lede"[^>]*>\(\s*\)</p>', home))
         shown = f"{self.st['reachable']:,} of {self.st['checked_count']:,}"
         self.assertIn(f"<b>{shown}</b> checked servers reachable", home)
+        card = re.search(r"<!--vs:home-->(.*)<!--/vs:home-->", home, re.S)
+        self.assertIsNotNone(card)
+        hand = re.search(r'<div class="vs-row vs-hand">.*?</div>', card.group(1), re.S)
+        tally = bac.handshake_tally()
+        self.assertIsNotNone(tally)
+        self.assertIsNotNone(hand, "homepage card is missing the handshake running count")
+        self.assertIn(f"<b>{tally['probed']:,} of {tally['remote']:,}</b>", hand.group(0))
+        self.assertIn(f"<b>{tally['responded']:,}</b><span>answered</span>", hand.group(0))
+        self.assertNotIn("live", hand.group(0).lower())
+        self.assertNotIn("reachable", hand.group(0).lower())
+        self.assertNotIn(bac.HANDSHAKE_CADENCE, card.group(1))
+        if tally["complete"]:
+            self.assertNotIn("so far", hand.group(0))
+        else:
+            self.assertIn("checked so far", hand.group(0))
+            self.assertNotIn("%", hand.group(0))
         extra = int(self.st.get("not_yet_checked") or 0)
         if extra:
             catalog_n = self.st["checked_count"] + extra
