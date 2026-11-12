@@ -110,7 +110,7 @@ def _bt_sec():
     """Bot templates hub + every template detail page, and the leaderboard badges and site search pages (Oct 21 2026 7 PM pass)."""
     import os
     out=[]
-    if os.path.exists("videos/index.html"): out.append(f"- [How-To Video Guides & Pro Tips Hub: 8 playable 60fps walkthroughs with copyable MCP & CLI snippets]({B}videos/)")
+    if os.path.exists("videos/index.html"): out.append(f"- [How-To Video Guides & Pro Tips Hub: 8 playable 30 fps walkthroughs with copyable MCP & CLI snippets]({B}videos/)")
     pkgs = '$39 Operations / Monitoring Bot, $59 SEO & AEO Growth Auditor Bot, $59 Market & Launch Intel Bot, $69 CEO Coordinator Bot, $149 Full 4-Bot "Company-in-a-Box" Team Bundle'
     if os.path.exists("bot-store/index.html"):
         out.append(f"- [Made by AgentScout Pro Bots & 4-Bot Bundle ({pkgs})]({B}bot-store/)")

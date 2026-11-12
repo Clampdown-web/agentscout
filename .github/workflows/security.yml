@@ -78,6 +78,7 @@ jobs:
           python3 scripts/test_nav_css.py
           python3 scripts/test_consent_pages.py
           python3 scripts/test_maker_flag.py
+          python3 scripts/test_outreach_copy.py
           python3 scripts/test_page_weight.py
           python3 scripts/test_mcp_test_report.py
           python3 scripts/test_ai_visibility_check.py

@@ -180,7 +180,7 @@ def pages(t):
         f'<a class="bs-badge" href="#bundle-package" style="border-color:#34d399;color:#d1fae5">💚 $149 Full 4-Bot Bundle (Save $77)</a>'
         f'<a class="bs-badge" href="#ai-agent-packs" style="border-color:#93c5fd;color:#dbeafe">25 Role Packs · $35 · 5 for $119 · all 25 for $349</a>'
         f'<a class="bs-badge" href="../bot-templates/#bt-featured">📚 {n_bt} Free Community Bot Templates →</a>'
-        f'<a class="bs-badge" href="../videos/#guide-trained-bots">🎬 Watch 60fps Video Walkthrough →</a>'
+        f'<a class="bs-badge" href="../videos/#guide-trained-bots">🎬 Watch Video Walkthrough →</a>'
         f'</div>'
         f'</section>'
         f'<div class="bs-notice">'
@@ -329,7 +329,7 @@ def pages(t):
             {
                 "@type": "VideoObject",
                 "name": "AgentScout Bot Store: 4 Pre-Trained AI Bots ($39/$59/$59/$69) & $149 4-Bot Team Bundle",
-                "description": "60fps showcase of the 4 downloadable pre-trained AgentScout bots and the $149 Full 4-Bot Company-in-a-Box Team Bundle. Built for Grok Bot and compatible with Claude Code, Cursor, and OpenAI Codex.",
+                "description": "30 fps showcase of the 4 downloadable pre-trained AgentScout bots and the $149 Full 4-Bot Company-in-a-Box Team Bundle. Built for Grok Bot and compatible with Claude Code, Cursor, and OpenAI Codex.",
                 "thumbnailUrl": B + "assets/animations/agentscout-trained-bots-ad-poster.png",
                 "contentUrl": B + "assets/animations/agentscout-trained-bots-ad.mp4",
                 "uploadDate": "2026-10-28T02:00:00-07:00",

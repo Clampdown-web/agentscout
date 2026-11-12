@@ -361,7 +361,7 @@ def build_x_4x5_60fps_mp4():
         d.rounded_rectangle([290, 38, 630, 74], radius=18, fill=(88, 28, 135, 120), outline=(236, 72, 153, 220), width=2)
         dot_r = int(5 + 3 * pulse)
         d.ellipse([312 - dot_r, 56 - dot_r, 312 + dot_r, 56 + dot_r], fill=(52, 211, 153, 255))
-        d.text((330, 47), "60FPS LIVE STACK TELEMETRY", font=f_pill, fill=(253, 224, 247, 255))
+        d.text((330, 47), "LIVE STACK TELEMETRY", font=f_pill, fill=(253, 224, 247, 255))
         d.text((W - 380, 47), "@clampdown19 · @AgentScoutHQ", font=f_pill, fill=(196, 196, 220, 255))
 
         d.text((44, 105), "2026 AI Agent & MCP Stack Benchmarks", font=f_title, fill=(255, 255, 255, 255))
