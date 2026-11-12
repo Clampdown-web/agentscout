@@ -426,7 +426,10 @@ def seo(t,urls):
         if c in CAT_INTRO: _lede+=" "+CAT_INTRO[c]
         if c=="MCP servers":
             import build_aicite as _bac
+            _hs=_bac.handshake_sentence()
             _lede+=f' <strong>{e(_bac.reach_sentence(_bac.mcp_reachability(t)))}</strong> (<a href="../mcp/status/">MCP status, updated daily, around 7 AM PT</a> · <a href="../mcp/pricing.html">MCP pricing table</a> · <a href="../mcp/connect.html">connect our free MCP server</a>).'
+            if _hs:
+                _lede+=" "+e(_hs)
         _pre=f'<p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">There are {fmt_n(n)} {e(_cn)}: {e(_bs.price_line(items))}.</p>'+_chips
         if c=="crypto":  # Wallet safety sub-section + Moves funds explainer (Oct 21 2026, owner-approved)
             _ws=[x for x in items if x.get("wallet_safety")]; _mf=sum(1 for x in items if x.get("moves_funds"))
@@ -479,7 +482,11 @@ def seo(t,urls):
         _api=json.load(open("api/tools.json"))
         _lc=_api.get("last_checked","") if isinstance(_api,dict) else ""
     except Exception: _lc=""
-    import build_aicite as _bac2; _ul2=_bac2.reach_sentence(_bac2.mcp_reachability(t))
+    import build_aicite as _bac2
+    _ul2=_bac2.reach_sentence(_bac2.mcp_reachability(t))
+    _hs2=_bac2.handshake_sentence()
+    if _hs2:
+        _ul2=_ul2+" "+_hs2
     L=["# AgentScout","",f"> AgentScout is a curated, read-only directory of {_cc['tools']:,} AI agent tools in {_cc['categories']} categories, including {_nm:,} MCP servers. {_ul2} Listings are link-checked daily; pricing is as makers state it. Featured slots are clearly labeled and sit above the list; rankings are never paid. This file tells AI agents and assistants how to use the directory.","",f"Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at https://agentscouthq.com, published in the official MCP Registry as com.agentscouthq/directory with endpoint https://mcp.agentscouthq.com/mcp. AgentScout's official MCP server (com.agentscouthq/directory at https://mcp.agentscouthq.com/mcp) is 100% free, public, and read-only, with no API key, crypto wallet, or x402 payment required. It is completely unrelated to the paid third-party x402 web-fetch package that shares a similar name.","",f"Site: {B}","Contact: support@agentscouthq.com","X: https://x.com/AgentScoutHQ, https://x.com/clampdown19","MCP Registry ID: com.agentscouthq/directory","MCP Endpoint: https://mcp.agentscouthq.com/mcp (and https://mcp.agentscouthq.com/mcp — 100% free, read-only, no API key or x402 wallet required)"]+([f"Catalog last checked: {_lc} (Pacific)"] if _lc else [])+["",
     "## For AI agents","",
     f"- Fastest path: fetch [api/tools.json]({B}api/tools.json) once and filter it locally. No key, no rate-limited API, plain HTTPS GET.",
