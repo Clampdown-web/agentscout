@@ -1064,7 +1064,8 @@
   "dagger": "2026-11-12",
   "iii": "2026-11-12",
   "a2ui": "2026-11-12",
-  "zvec": "2026-11-12"
+  "zvec": "2026-11-12",
+  "filesystem-mcp-server": "2026-11-13"
  },
  "slots": {
   "2026-11-04": [],
@@ -1093,6 +1094,9 @@
    "iii",
    "a2ui",
    "zvec"
+  ],
+  "2026-11-13": [
+   "filesystem-mcp-server"
   ]
  },
  "queued": [],
@@ -1103,6 +1107,8 @@
   "claude-code-templates",
   "cube",
   "dagger",
+  "filesystem-mcp-server",
+  "folklore-clinical-variant-interpretation-mcp",
   "hypit",
   "iii",
   "img2threejs",
@@ -1113,10 +1119,11 @@
   "windmill",
   "zvec"
  ],
- "hold_release_day": "2026-11-12",
+ "hold_release_day": "2026-11-13",
  "hold_released": [
   "2026-11-10",
   "2026-11-11",
-  "2026-11-12"
+  "2026-11-12",
+  "2026-11-13"
  ]
 }

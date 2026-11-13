@@ -495,7 +495,7 @@
   "pricing": "Open source"
  },
  "agentic-web-wiki": {
-  "link": "OK",
+  "link": "Error",
   "name": "Agentic Web Wiki",
   "pricing": "Open source"
  },
@@ -2070,7 +2070,7 @@
   "pricing": "See site"
  },
  "besidka": {
-  "link": "Not responding",
+  "link": "OK",
   "name": "Besidka",
   "pricing": "See site"
  },
@@ -2195,7 +2195,7 @@
   "pricing": "See site"
  },
  "binderwork": {
-  "link": "OK",
+  "link": "Error",
   "name": "Binderwork",
   "pricing": "See site"
  },
@@ -3554,6 +3554,11 @@
   "name": "Cloudflare MCP Servers",
   "pricing": "Open source"
  },
+ "cloudgpu-compute": {
+  "link": "not checked",
+  "name": "CloudGPU Compute",
+  "pricing": "Usage-based"
+ },
  "cnaps-studio": {
   "link": "OK",
   "name": "CNAPS Studio",
@@ -4488,6 +4493,11 @@
   "link": "OK",
   "name": "Declarar F\u00e1cil",
   "pricing": "See site"
+ },
+ "deed-page": {
+  "link": "not checked",
+  "name": "deed.page",
+  "pricing": "Freemium"
  },
  "deep-recall-getdeeprecall-com": {
   "link": "OK",
@@ -6004,6 +6014,11 @@
   "name": "Fluxmail Cloud",
   "pricing": "See site"
  },
+ "fluxtail": {
+  "link": "not checked",
+  "name": "Fluxtail",
+  "pricing": "Paid"
+ },
  "flyaigh": {
   "link": "OK",
   "name": "FlyAIgh",
@@ -6895,7 +6910,7 @@
   "pricing": "Open source"
  },
  "green-pharmacies": {
-  "link": "OK",
+  "link": "Error",
   "name": "Green Pharmacies",
   "pricing": "See site"
  },
@@ -9730,7 +9745,7 @@
   "pricing": "Freemium"
  },
  "mailveri-mcp": {
-  "link": "OK",
+  "link": "Error",
   "name": "MailVeri MCP",
   "pricing": "Open source + cloud"
  },
@@ -12054,6 +12069,11 @@
   "name": "Orlandu's Arcade",
   "pricing": "See site"
  },
+ "ormas-outcomes": {
+  "link": "not checked",
+  "name": "Ormas Outcomes",
+  "pricing": "Paid"
+ },
  "ortexo": {
   "link": "OK",
   "name": "Ortexo",
@@ -12735,7 +12755,7 @@
   "pricing": "See site"
  },
  "plainradar-news-search": {
-  "link": "Not responding",
+  "link": "OK",
   "name": "Plainradar news search",
   "pricing": "See site"
  },

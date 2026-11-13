@@ -142,8 +142,15 @@ class PageTests(unittest.TestCase):
         self.assertIn(f"{total:,} MCP servers", cat)
         live = re.search(r"([\d,]+) of ([\d,]+) checked servers live", cat)
         self.assertIsNotNone(live)
-        self.assertEqual(live.group(2), f"{total:,}")
-        self.assertLessEqual(int(live.group(1).replace(",", "")), total)
+        live_n = int(live.group(1).replace(",", ""))
+        checked_n = int(live.group(2).replace(",", ""))
+        # The live sentence uses the checked set (live + down), not the
+        # catalog total. New MCP listings can sit in "listed, not yet
+        # checked" until the next daily link check.
+        self.assertLessEqual(live_n, checked_n)
+        self.assertLessEqual(checked_n, total)
+        if checked_n < total:
+            self.assertIn(f"+{total - checked_n:,} listed, not yet checked", cat)
         self.assertNotIn("responded today", cat[:8000])
 
         best = (ROOT / "best" / "open-source-mcp-servers.html").read_text(encoding="utf-8")

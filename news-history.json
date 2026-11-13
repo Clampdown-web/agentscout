@@ -1,6 +1,78 @@
 {
  "items": [
   {
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZ3RlTUEycGJwdUF5c3ZuVmhfUkdMZ19jd2RXNUFNSl9Cby0wOWFFWnJfQ05UUFo4SDVKd0JsU3VHZzZmMXk1ZDgxNnBoRzZjU2FvaWtfX0UxTVhQUDFJYWZWVGdyQWhFVFY3dnU3MEtwWE9vRWVscl9Md3pwdUJyZWdXU2JETHVYaFZNQW5XWTZ1aFpWcm5XeE4zeHpyS2h5Q2ZTbngxM2RlSTBUY1FrTw?oc=5",
+   "page": "news/2026/11/how-one-ai-agent-exposed-five-critical-enterprise-security-gaps.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "How one AI agent exposed five critical enterprise security gaps",
+   "source": "BleepingComputer",
+   "date": "2026-11-13T15:01:00Z",
+   "tool": "agent"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYUVNZ0EzaUZ3SnJoSG93ZjZBMGtJaG5UdFVQSmx6Q0lvWjRYSHZsXzg0RWtHcF9ndzdUUlBXZzBQeU03dmVPekN2SHpYSlNDaEVEbklzUnQ1TEdybllEeDZNTlFielI1U3dKeU1CVkl4dTZlNHFSU2RQMnYwX3dIdk8wSHM1OUIwankzSGpYT0JqZG43Y2VqT19R?oc=5",
+   "page": "news/2026/11/iterable-launches-hosted-mcp-server-for-claude-chatgpt-and-cursor.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "Iterable Launches Hosted MCP Server for Claude, ChatGPT and Cursor",
+   "source": "MarTech Cube",
+   "date": "2026-11-13T14:54:11Z",
+   "tool": "mcp-server"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcTF3SDZydGgyYy1wdFdVTThhdXplU0tGbnV1N05wbFZLd1o4UWozMGlFSUEzZjlvY2hNcW9tX3l6RWtFMHRCQzFHWEpOdjNHSURmYXFvdXBOWkxFaFJ0Qm1sYVJkRFd6UV9sd0QyeXQzeWF1UXdEZFhlcUpCMXFqak1iU09Ub1lWaW43cmFHaEZPMWRpQm9BOGs2OGk?oc=5",
+   "page": "news/2026/11/saleshood-mcp-brings-revenue-enablement-to-ai-tools-for-sales-teams.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "SalesHood MCP Brings Revenue Enablement to AI Tools for Sales Teams",
+   "source": "MarTech Cube",
+   "date": "2026-11-13T14:49:27Z",
+   "tool": "cube"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPX3VhWmdPcUxvb01XYnhFQlZ3TzBUNEJncTNsR3U2dy02aFpPVGw4N0t3VE1iblZtQ0d2N3puQnJJYUl2UWNYWmJ4SzE3RkdFTC0xRnByRTBfcXpFZzl2bkJOdVpQSDc5QzhPaWU1d3djY0tvTDdMalktVnJ6NldxLWxB?oc=5",
+   "page": "news/2026/11/ai-agent-traffic-is-now-a-two-company-town-meta-and-openai.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "AI agent traffic is now a two-company town: Meta and OpenAI",
+   "source": "PPC Land",
+   "date": "2026-11-13T14:38:13Z",
+   "tool": "agent"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMk51RUhjbkZtQnpMckpaYXFIaUxoZTZGeGlsT01tazhKbmEyemlPdjBxRUJwUjBNYXItU2l3QTk3Z0xrSGJxSllmR0N1OU9hbzRzYTZzWlh4b1ZWOHBZWlVXSVpTbjZJajBnTjdocnBVVHVxLXFka245SnBNdEtxVEpxdkdoVnp0Y2RkLW5kWHBiUGlvSUdN?oc=5",
+   "page": "news/2026/11/stopping-a-rogue-ai-agent-takes-more-than-turning-off-the-model.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "Stopping a Rogue AI Agent Takes More Than Turning Off the Model",
+   "source": "news.lavx.hu",
+   "date": "2026-11-13T14:34:05Z",
+   "tool": "rogue"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQjBSRmx0N2FQbm8tQWY1b1lZdXFQM2FoXzhpVHRlYTdfaGRwWE9pZHJ1QktnbndkYmx0YmFlRWF1QWNkbldxT0cyT1N4SnhEb090WEE5UGhDYXpvOHNDcXE0Z1IxbDkwRHhYOXNJam9LZ2JVbHotdDV4U2RWRDNjSUcxaE5tMWktbWE5YUdkbFVLYjh0WXdEajJGNmhZNWVCWGhyZWJmczNIT0VWTDhxd3J3am53SHBsNENuZnRiQUZtYXNsT3dXZVFHcWdETGpaYm1FNTBSQ0xrdDF2cU50d1JNWl8?oc=5",
+   "page": "news/2026/11/call-e-lets-ai-agents-in-chatgpt-muse-and-openclaw-make-real-phone.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "CALL-E Lets AI Agents in ChatGPT, Muse and OpenClaw Make Real Phone Calls on Their…",
+   "source": "The Detroit News",
+   "date": "2026-11-13T14:27:07Z",
+   "tool": "openclaw"
+  },
+  {
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNLU5ZaS1xSmRXTzJiQWk1b0Ewb3E3bHpLNlVDT2lmRFhkdTlvc1VVV21DaXdFM1kySU5hVHI5U21UaHdUOXNRWEFrZGQ0dnFZdExaWXRGUEttMndiTW5GZHQ1WWlsRmgxakNNOV9fNVE1NGZJZll6V1hweDhxUjhac05XUWNjbHR6Wkctbmk0UjRXSnQ4NW5z?oc=5",
+   "page": "news/2026/11/career-driver-s-ai-agent-helps-drivers-connect-with-carriers.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "Career Driver’s AI Agent Helps Drivers Connect With Carriers",
+   "source": "AftermarketNews",
+   "date": "2026-11-13T14:24:48Z",
+   "tool": "agent"
+  },
+  {
+   "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/",
+   "page": "news/2026/11/nectar-launches-an-ai-agent-to-automate-creator-discovery-and.html",
+   "first_seen": "2026-11-13T15:14:28Z",
+   "title": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
+   "source": "TechCrunch",
+   "date": "2026-11-12T19:11:00Z",
+   "tool": "agent"
+  },
+  {
    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVktLajhxaHpldVZuWGJFZVVNb2lQTjBNYVlOdkFPTUw4cnNCa18wNk5iMHJVcFFBcVpab2YyYnhwR0k1RGhzYzV1NTJtcnpUVEhvaDBSRS1JYnppd1p1TC1qaG5YOUlzWlNnNHdELUw1MkgzSkg4ZlU5bVNJbmtJd0N4UXpJRUFjZGFDbnBoUlNYdVV0d2N3ZHJzbWlQN29TWDRTQ05YbnVlUQ?oc=5",
    "page": "news/2026/11/feedzai-adds-ai-agent-detection-to-digital-banking-fraud-prevention.html",
    "first_seen": "2026-11-12T15:09:09Z",
