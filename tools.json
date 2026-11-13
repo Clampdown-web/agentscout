@@ -30522,22 +30522,24 @@
   {
     "name": "Kling AI",
     "url": "https://kling.ai",
-    "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips.",
+    "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips. A hosted MCP server at https://kling.ai/mcp lets compatible assistants run Kling image and video workflows. Users authorize a Kling account through OAuth, and generation consumes account credits. The official Claude Code plugin provides three Skills for request routing, image generation, and video generation.",
     "category": "video generation",
     "pricing": "Paid",
     "maturity": "Active",
     "audience": "ready to use",
     "featured": false,
     "new": false,
-    "verified": "2026-10-18",
+    "verified": "2026-11-13",
     "added": "2026-10-18",
     "source": "Research (film, TV, video & music sweep)",
     "pricing_detail": "API: prepaid credit packages (per-second units)",
     "use_cases": [
-      "video generation"
+      "video generation",
+      "connect tools via MCP"
     ],
     "website": "https://kling.ai",
-    "github": "",
+    "github": "https://github.com/klingai-tech/claude-plugin",
+    "repo": "klingai-tech/claude-plugin",
     "id": 1188,
     "slug": "kling-ai",
     "logo": "assets/logos/kling-ai.png"
