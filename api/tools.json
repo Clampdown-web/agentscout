@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-11-13T15:39:53Z",
- "updated": "2026-11-13T15:39:53Z",
+ "generated": "2026-11-13T17:20:48Z",
+ "updated": "2026-11-13T17:20:48Z",
  "last_checked": "2026-11-13",
  "count": 5784,
  "total_tools": 5784,
@@ -49405,12 +49405,13 @@
    "slug": "kling-ai",
    "url": "https://kling.ai",
    "website": "https://kling.ai",
-   "github": "",
+   "github": "https://github.com/klingai-tech/claude-plugin",
    "category": "video generation",
-   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips.",
+   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips. A hosted MCP server at https://kling.ai/mcp lets compatible assistants run Kling image and video workflows. Users authorize a Kling account through OAuth, and generation consumes account credits. The official Claude Code plugin provides three Skills for request routing, image generation, and video generation.",
    "key_features": [
     "API: prepaid credit packages (per-second units)",
-    "Active"
+    "Active",
+    "Connect tools via mcp"
    ],
    "pricing": "API: prepaid credit packages (per-second units)",
    "price_tag": "paid",
@@ -49428,12 +49429,13 @@
    "new": false,
    "seed": false,
    "new_this_week": false,
-   "repo": null,
+   "repo": "klingai-tech/claude-plugin",
    "github_stars": null,
    "open_source": false,
    "license": "",
    "tags": [
-    "video generation"
+    "video generation",
+    "connect tools via MCP"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/kling-ai.png",
