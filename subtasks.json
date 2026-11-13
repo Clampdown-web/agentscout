@@ -46,7 +46,8 @@
 "stem-separation"
 ],
 "github-agentic-workflows-gh-aw": [
-"workflow-automation"
+"workflow-automation",
+"terminal-agents"
 ],
 "jevgrep": [
 "token-costs",
@@ -56,7 +57,8 @@
 "sandboxes",
 "guardrails",
 "agent-auth",
-"terminal-agents"
+"terminal-agents",
+"stem-separation"
 ],
 "nvidia-open-agent-safety-platform": [
 "guardrails",
@@ -143,11 +145,20 @@
 "cloud-coding-agents"
 ],
 "aider": [
-"terminal-agents"
+"codebase-context",
+"voice-phone",
+"local-models",
+"terminal-agents",
+"video-editing",
+"images-design"
 ],
 "cline": [
+"browser-automation",
+"computer-use",
+"agent-frameworks",
+"terminal-agents",
 "ide-agents",
-"cloud-coding-agents"
+"video-editing"
 ],
 "roo-code": [
 "ide-agents"
@@ -192,17 +203,25 @@
 "browser-automation"
 ],
 "stagehand": [
+"voice-phone",
+"web-scraping",
 "browser-automation",
 "agent-frameworks",
+"local-models",
 "mixing"
 ],
 "playwright-mcp": [
 "browser-automation",
-"mcp-servers"
+"mcp-servers",
+"terminal-agents",
+"ide-agents",
+"rules-config"
 ],
 "skyvern": [
 "browser-automation",
-"workflow-automation"
+"workflow-automation",
+"no-code-apps",
+"agent-frameworks"
 ],
 "manus": [
 "research-agents"
@@ -221,15 +240,22 @@
 "agent-frameworks"
 ],
 "crewai": [
+"voice-phone",
+"observability",
 "multi-agent",
-"agent-frameworks"
+"agent-frameworks",
+"mixing"
 ],
 "autogen": [
 "multi-agent",
 "agent-frameworks"
 ],
 "pydantic-ai": [
-"agent-frameworks"
+"trading-agents",
+"voice-phone",
+"agent-frameworks",
+"terminal-agents",
+"images-design"
 ],
 "google-adk": [],
 "mastra": [
@@ -242,6 +268,8 @@
 ],
 "llamaindex": [
 "vector-rag",
+"web-scraping",
+"workflow-automation",
 "agent-frameworks"
 ],
 "vercel-ai-sdk": [
@@ -19813,5 +19841,163 @@
 "mcp-servers",
 "local-models",
 "mobile"
+],
+"402proof": [
+"agent-payments",
+"vfx-compositing",
+"stem-separation",
+"mastering"
+],
+"kdptop": [
+"planning-tasks",
+"sales-agents",
+"research-agents",
+"agent-auth"
+],
+"reelai": [
+"planning-tasks",
+"video"
+],
+"tikfilmer": [
+"planning-tasks",
+"script-tools",
+"storyboards-previs",
+"video-editing",
+"video"
+],
+"deed-page": [
+"planning-tasks",
+"voice-phone",
+"mcp-servers"
+],
+"ormas-outcomes": [
+"mcp-servers",
+"local-models"
+],
+"enzo-celebration": [
+"video"
+],
+"vistella": [
+"video-editing",
+"images-design"
+],
+"two-mountains": [],
+"searchbyvideo": [
+"computer-use",
+"video-editing",
+"video"
+],
+"halloween-ai": [],
+"cloudgpu-compute": [
+"mcp-servers"
+],
+"vibelisting": [
+"planning-tasks",
+"marketing-agents",
+"images-design"
+],
+"fluxtail": [
+"planning-tasks",
+"browser-automation",
+"mcp-servers",
+"terminal-agents",
+"ide-agents"
+],
+"okdoc-ai": [
+"agent-payments",
+"vector-rag",
+"chat-app-agents"
+],
+"ui-sdk": [
+"agent-frameworks",
+"rules-config"
+],
+"agent-of-empires": [
+"code-review",
+"parallel-orchestration",
+"voice-phone",
+"observability",
+"terminal-agents",
+"stem-separation"
+],
+"deep-code-cli": [
+"terminal-agents",
+"ide-agents",
+"rules-config"
+],
+"kept": [
+"mcp-servers",
+"local-models"
+],
+"kwant": [
+"local-models",
+"stem-separation"
+],
+"soduwork": [
+"computer-use",
+"agent-frameworks",
+"local-models"
+],
+"tastecode": [
+"code-review",
+"computer-use",
+"multi-agent",
+"terminal-agents",
+"video-editing",
+"images-design"
+],
+"kinetograph": [
+"browser-automation",
+"vfx-compositing",
+"video"
+],
+"67js": [
+"mcp-servers",
+"video-editing",
+"video"
+],
+"affectui": [
+"voice-phone",
+"observability",
+"mcp-servers",
+"agent-frameworks",
+"terminal-agents"
+],
+"tobs": [
+"agent-memory",
+"chat-app-agents",
+"research-agents",
+"guardrails",
+"agent-frameworks"
+],
+"dbt-charts": [
+"text-to-sql",
+"observability",
+"terminal-agents",
+"images-design",
+"rules-config"
+],
+"opc-skills": [
+"marketing-agents",
+"research-agents",
+"workflow-automation",
+"images-design",
+"rules-config"
+],
+"shipswift": [
+"mcp-servers",
+"agent-frameworks",
+"mobile",
+"rules-config"
+],
+"synthadoc": [
+"vector-rag",
+"local-models"
+],
+"insomnia": [],
+"stack-diagram": [
+"text-to-sql",
+"images-design",
+"rules-config"
 ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12",
+ "generated_at": "2026-11-13",
  "source": "lab-unthrottled-benchmark",
  "method": "cwv_seo_benchmark.measure_url",
  "throttle": "none",
@@ -10,11 +10,11 @@
   "ttfb_ms": 800
  },
  "scope": {
-  "artifact_date": "2026-11-12",
-  "artifact_tools": 5752
+  "artifact_date": "2026-11-13",
+  "artifact_tools": 5784
  },
  "subject": "candidate-local",
- "note": "This checkout served at http://127.0.0.1:8767 on 2026-11-12, headless Chrome, cache disabled, wait=load. Not production. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
+ "note": "This checkout served at http://127.0.0.1:8767 on 2026-11-13, headless Chrome, cache disabled, wait=load. Not production. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
  "not_measured": [],
  "targets": [
   "http://127.0.0.1:8767/",
@@ -30,55 +30,55 @@
    "url": "http://127.0.0.1:8767/",
    "lcp_ms": 204.0,
    "cls": 0.02290030957563261,
-   "ttfb_ms": 5.200000002980232,
+   "ttfb_ms": 4.100000001490116,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/bot-store/",
-   "lcp_ms": 188.0,
+   "lcp_ms": 216.0,
+   "cls": 0.0,
+   "ttfb_ms": 2.8000000044703484,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "http://127.0.0.1:8767/videos/",
+   "lcp_ms": 268.0,
    "cls": 0.0,
    "ttfb_ms": 1.8999999985098839,
    "grade": "PASS",
    "wait": "load"
   },
   {
-   "url": "http://127.0.0.1:8767/videos/",
-   "lcp_ms": 256.0,
+   "url": "http://127.0.0.1:8767/bot-templates/",
+   "lcp_ms": 284.0,
    "cls": 0.0,
    "ttfb_ms": 2.100000001490116,
    "grade": "PASS",
    "wait": "load"
   },
   {
-   "url": "http://127.0.0.1:8767/bot-templates/",
-   "lcp_ms": 296.0,
-   "cls": 0.0,
-   "ttfb_ms": 5.200000002980232,
-   "grade": "PASS",
-   "wait": "load"
-  },
-  {
    "url": "http://127.0.0.1:8767/mcp/",
-   "lcp_ms": 224.0,
+   "lcp_ms": 164.0,
    "cls": 0.0,
-   "ttfb_ms": 2.899999998509884,
+   "ttfb_ms": 2.1999999955296516,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/tools/noteboxd.html",
-   "lcp_ms": 236.0,
+   "lcp_ms": 248.0,
    "cls": 0.0006628126333061164,
-   "ttfb_ms": 1.8999999985098839,
+   "ttfb_ms": 2.7000000029802322,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "http://127.0.0.1:8767/submit.html?notrack=1",
-   "lcp_ms": 248.0,
+   "lcp_ms": 224.0,
    "cls": 0.0002475565256926459,
-   "ttfb_ms": 4.799999997019768,
+   "ttfb_ms": 7.5,
    "grade": "PASS",
    "wait": "load"
   }
