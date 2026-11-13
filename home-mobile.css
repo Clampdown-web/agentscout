@@ -232,6 +232,9 @@ body.home #recent .rcard .ct,body.home #mcp-rows .mtool .ct{display:contents}
 body.home #recent .rcard h3,body.home #mcp-rows .mtool strong{grid-column:2;margin:0;font-size:16px}
 body.home #recent .rcard p,body.home #mcp-rows .mtool p{grid-column:2;margin:0;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 body.home #recent .rcard .rmeta{grid-column:2}
+/* Category chips belong in the text column (not the 44px icon track) and size to one line of label. */
+body.home #recent .rcard .b,body.home #mcp-rows .mtool .b,body.home .hsec .mtool .b{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:0;width:max-content;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;height:auto;box-sizing:border-box}
+body.home #recent .rcard .b .cico,body.home #mcp-rows .mtool .b .cico,body.home .hsec .mtool .b .cico{flex:none}
 body.home #mcp-rows{display:flex;flex-direction:column;gap:8px}
 body.home #mcp-rows .mtool{text-decoration:none;color:inherit;border:1px solid var(--line);background:var(--soft)}
 body.home #mcp-rows .mtool:hover{border-color:var(--accent)}

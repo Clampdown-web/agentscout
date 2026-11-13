@@ -291,7 +291,8 @@ nav+.nlpanel .nlin{max-width:620px;margin:0 auto;padding:22px 20px}
 /* category icons */
 .cico{flex:none;vertical-align:-2px;margin-right:4px}
 .b.has-cico,.chip.has-cico{display:inline-flex;align-items:center;gap:0}
-.b.has-cico .cico{width:12px;height:12px;margin-right:4px}
+.b.cat,.b.has-cico{display:inline-flex;align-items:center;width:max-content;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box;height:auto}
+.b.has-cico .cico{width:12px;height:12px;margin-right:4px;flex:none}
 .chip.has-cico .cico{margin-right:5px;opacity:.85}
 .cattile.has-cico>.cico{width:18px;height:18px;color:var(--accent);margin-right:8px;vertical-align:-4px}
 h3.has-cico>.cico{width:18px;height:18px;color:var(--accent);margin-right:8px;vertical-align:-3px}
@@ -443,7 +444,7 @@ html[data-theme=dark] img.aswm{filter:invert(1) hue-rotate(180deg)}
 .detail .acts a.btn{max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:center;height:auto;min-height:38px;padding-top:7px;padding-bottom:7px}
 
 /* phone: 1-column cards, full names and badges wrap (no ellipsis) */
-@media(max-width:560px){#list.grid{grid-template-columns:minmax(0,1fr)}#list .tile h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}#list .badges{flex-wrap:wrap}#list .badges .b{white-space:normal;overflow:visible;text-overflow:clip}}
+@media(max-width:560px){#list.grid{grid-template-columns:minmax(0,1fr)}#list .tile h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}#list .badges{flex-wrap:wrap}#list .badges .b{white-space:normal;overflow:visible;text-overflow:clip}#list .badges .b.cat,#list .badges .b.has-cico{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:max-content;max-width:100%}}
 #count{scroll-margin-top:90px}@media(max-width:560px){#count{scroll-margin-top:200px}}
 /* phone: full tool names on every card grid and makers strip (audit Oct 19 2026: category/new/free-tools cards cut names like "GitHub Agentic Workflows (gh-aw)") */
 @media(max-width:560px){.tile h3,.rcard h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}.mkname{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}}
@@ -1315,6 +1316,9 @@ body.home #recent .rcard .ct,body.home #mcp-rows .mtool .ct{display:contents}
 body.home #recent .rcard h3,body.home #mcp-rows .mtool strong{grid-column:2;margin:0;font-size:16px}
 body.home #recent .rcard p,body.home #mcp-rows .mtool p{grid-column:2;margin:0;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 body.home #recent .rcard .rmeta{grid-column:2}
+/* Category chips belong in the text column (not the 44px icon track) and size to one line of label. */
+body.home #recent .rcard .b,body.home #mcp-rows .mtool .b,body.home .hsec .mtool .b{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:0;width:max-content;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;height:auto;box-sizing:border-box}
+body.home #recent .rcard .b .cico,body.home #mcp-rows .mtool .b .cico,body.home .hsec .mtool .b .cico{flex:none}
 body.home #mcp-rows{display:flex;flex-direction:column;gap:8px}
 body.home #mcp-rows .mtool{text-decoration:none;color:inherit;border:1px solid var(--line);background:var(--soft)}
 body.home #mcp-rows .mtool:hover{border-color:var(--accent)}

@@ -484,7 +484,7 @@ NL=('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><
     '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
     '</div>'
     '</div></div></section>')  # compact lead-magnet + X funnel card (Oct 26 2026)
-ASSET_V = "202611121900"  # bump when app.js/styles.css/home-mobile.css/consent.js change
+ASSET_V = "202611131215"  # bump when app.js/styles.css/home-mobile.css/consent.js change
 _ASSET_FILES = r"app\.js|styles\.css|home-mobile\.css|track\.js|compare-picker\.js|consent\.js|share\.js|reviews\.js|submit-turnstile\.js"
 def stamp(s):
     """Put the current styles.css/app.js/home-mobile.css cache-bust on a page a generator just wrote.
