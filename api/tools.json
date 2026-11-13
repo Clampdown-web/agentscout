@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated": "2026-11-13T17:20:48Z",
- "updated": "2026-11-13T17:20:48Z",
+ "generated": "2026-11-13T19:08:42Z",
+ "updated": "2026-11-13T19:08:42Z",
  "last_checked": "2026-11-13",
  "count": 5784,
  "total_tools": 5784,
@@ -78459,7 +78459,13 @@
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/ciso-assistant.png",
-   "page": "https://agentscouthq.com/tools/ciso-assistant.html"
+   "page": "https://agentscouthq.com/tools/ciso-assistant.html",
+   "rating": {
+    "average": 5,
+    "count": 1,
+    "approved_reviews": 0,
+    "reviews_api": "https://api.agentscouthq.com/reviews?tool=ciso-assistant"
+   }
   },
   {
    "name": "Korean Law MCP",
@@ -148231,16 +148237,16 @@
    "website": "https://www.agentseo.dev/",
    "github": "",
    "category": "MCP servers",
-   "description": "AgentSEO is an SEO data API for building SEO agents, returning compact SERP evidence for rank tracking, content gaps, local visibility and AI search workflows over REST or MCP; a free tier has 100 live credits and paid plans start at $9 a month with a hard spending cap.",
+   "description": "AgentSEO is an SEO data API for building SEO agents, returning compact SERP evidence for rank tracking, content gaps, local visibility and AI search workflows over REST or MCP; the $0 Hobby plan has 100 one-time introductory credits, and paid plans start at $9 a month with a hard spending cap.",
    "key_features": [
-    "Freemium",
+    "100 one-time introductory credits; paid plans from $9/month",
     "Active",
     "Research the web",
     "Automate workflows",
     "Connect tools via mcp"
    ],
-   "pricing": "Freemium",
-   "price_tag": "freemium",
+   "pricing": "100 one-time introductory credits; paid plans from $9/month",
+   "price_tag": "paid",
    "platforms": [
     "Developer (API/SDK)"
    ],
