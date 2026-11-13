@@ -56,7 +56,7 @@ Entity note: AgentScout (also searched as Agent Scout or AgentScoutHQ) is the in
 - **Verified MCP Servers**: 3,184
 - **Bot Templates & Installable Agent Skills**: 190 (https://agentscouthq.com/bot-templates/ and https://agentscouthq.com/skills/)
 - **Open-Source Tools (`Open source` / `Open source + cloud` / `Open weights`)**: 2,209
-- **Free or Freemium Tools**: 2,913
+- **Free or Freemium Tools**: 2,912
 - **Local / Self-Hosted Tools (`runs_locally` filter)**: 2,160 (183 offline / on-device, 1,977 self-hosted)
 - **Catalog Last Link-Checked**: 2026-11-13 (America/Los_Angeles)
 
@@ -148,7 +148,7 @@ Each category section below summarizes the verified tool count, open-source coun
 
 ### MCP servers (3,184 tools) — [https://agentscouthq.com/categories/mcp-servers.html](https://agentscouthq.com/categories/mcp-servers.html)
 
-- **At a glance**: 3,184 link-checked tools (834 open-source, 948 free or freemium, 844 local or self-hosted).
+- **At a glance**: 3,184 link-checked tools (834 open-source, 947 free or freemium, 844 local or self-hosted).
 - **Top picks**: [REA](https://agentscouthq.com/tools/rea.html), [MCP reference servers](https://agentscouthq.com/tools/mcp-reference-servers.html), [Storybook](https://agentscouthq.com/tools/storybook.html), [Netdata](https://agentscouthq.com/tools/netdata.html), [Front-End Checklist](https://agentscouthq.com/tools/front-end-checklist.html).
 
 | # | Tool | Pricing | Open Source | License | Runs Locally | GitHub Stars | Best For | Description | AgentScout Listing | Official URL |
@@ -2094,7 +2094,7 @@ Full table of all 3,184 Model Context Protocol (MCP) servers listed on AgentScou
 | 1028 | AgentProof | See site | OK (url 200) |  |  |  | write code, research the web | Start AgentProof security audits of websites you own or may test, and read reports and findings. | https://agentscouthq.com/tools/agentproof.html | https://isagentproof.com/docs/install-mcp-server/ |
 | 1029 | Agents on Leave | See site | OK (url 200) |  |  |  | connect tools via MCP | Free vacation worlds for AI agents: wander, meet other agents, and buy small treats over x402. | https://agentscouthq.com/tools/agents-on-leave.html | https://agentsonleave.com/ |
 | 1030 | AgentsBooks Commons | See site | OK (url 200) |  |  |  | connect tools via MCP | Open, vote-ranked forum, Q&A knowledge base and inbox for AI agents | https://agentscouthq.com/tools/agentsbooks-commons.html | https://agentsbooks.com/commons |
-| 1031 | AgentSEO | Freemium | OK (url 200) |  |  |  | research the web, automate workflows | AgentSEO is an SEO data API for building SEO agents, returning compact SERP evidence for rank tracking, content gaps, local visibility and AI search workflows over REST or MCP; a free tier has 100 live credits and paid plans start at $9 a month with a hard spending cap. | https://agentscouthq.com/tools/agentseo.html | https://www.agentseo.dev/ |
+| 1031 | AgentSEO | 100 one-time introductory credits; paid plans from $9/month | OK (url 200) |  |  |  | research the web, automate workflows | AgentSEO is an SEO data API for building SEO agents, returning compact SERP evidence for rank tracking, content gaps, local visibility and AI search workflows over REST or MCP; the $0 Hobby plan has 100 one-time introductory credits, and paid plans start at $9 a month with a hard spending cap. | https://agentscouthq.com/tools/agentseo.html | https://www.agentseo.dev/ |
 | 1032 | AgentsIndex | See site | OK (url 200) |  |  |  | build an agent, connect tools via MCP | The editors' index of AI-native software, from AI agents to the models and frameworks behind them. | https://agentscouthq.com/tools/agentsindex.html | https://agentsindex.ai/ |
 | 1033 | AgentSpace | See site | OK (url 200) |  |  |  | write code, connect tools via MCP | Give your agent a persistent workspace: files, a code sandbox and a public URL to publish to. | https://agentscouthq.com/tools/agentspace.html | https://agentspace.com.br/agents |
 | 1034 | AgentWeb | Freemium | OK (url 200) |  |  |  | research the web, connect tools via MCP | AgentWeb gives AI agents and local models web search, page reading, local search and 130M+ business records through a hosted MCP server and REST API. | https://agentscouthq.com/tools/agentweb.html | https://agentweb.live/ |
