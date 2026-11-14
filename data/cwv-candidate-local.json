@@ -22,7 +22,8 @@
   "http://127.0.0.1:8767/videos/",
   "http://127.0.0.1:8767/bot-templates/",
   "http://127.0.0.1:8767/mcp/",
-  "http://127.0.0.1:8767/tools/noteboxd.html"
+  "http://127.0.0.1:8767/tools/noteboxd.html",
+  "http://127.0.0.1:8767/submit.html?notrack=1"
  ],
  "pages": [
   {
@@ -70,6 +71,14 @@
    "lcp_ms": 180.0,
    "cls": 0.0006628126333061164,
    "ttfb_ms": 3.7999999970197678,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "http://127.0.0.1:8767/submit.html?notrack=1",
+   "lcp_ms": 224.0,
+   "cls": 0.0002475565256926459,
+   "ttfb_ms": 5.0999999940395355,
    "grade": "PASS",
    "wait": "load"
   }

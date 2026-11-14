@@ -22,7 +22,8 @@
   "https://agentscouthq.com/videos/",
   "https://agentscouthq.com/bot-templates/",
   "https://agentscouthq.com/mcp/",
-  "https://agentscouthq.com/tools/noteboxd.html"
+  "https://agentscouthq.com/tools/noteboxd.html",
+  "https://agentscouthq.com/submit.html?notrack=1"
  ],
  "pages": [
   {
@@ -70,6 +71,14 @@
    "lcp_ms": 292.0,
    "cls": 0.0006628126333061164,
    "ttfb_ms": 102.5,
+   "grade": "PASS",
+   "wait": "load"
+  },
+  {
+   "url": "https://agentscouthq.com/submit.html?notrack=1",
+   "lcp_ms": 580.0,
+   "cls": 0.0002475565256926459,
+   "ttfb_ms": 114.6000000089407,
    "grade": "PASS",
    "wait": "load"
   }
