@@ -600,7 +600,7 @@
   "pricing": "Freemium"
  },
  "agentworkmark": {
-  "link": "OK",
+  "link": "Error",
   "name": "AgentWorkmark",
   "pricing": "See site"
  },
@@ -3555,7 +3555,7 @@
   "pricing": "Open source"
  },
  "cloudgpu-compute": {
-  "link": "not checked",
+  "link": "OK",
   "name": "CloudGPU Compute",
   "pricing": "Usage-based"
  },
@@ -4495,7 +4495,7 @@
   "pricing": "See site"
  },
  "deed-page": {
-  "link": "not checked",
+  "link": "OK",
   "name": "deed.page",
   "pricing": "Freemium"
  },
@@ -6015,7 +6015,7 @@
   "pricing": "See site"
  },
  "fluxtail": {
-  "link": "not checked",
+  "link": "OK",
   "name": "Fluxtail",
   "pricing": "Paid"
  },
@@ -8533,6 +8533,11 @@
   "link": "OK",
   "name": "KI Tools Heute",
   "pricing": "See site"
+ },
+ "kicad-mcp-server": {
+  "link": "OK",
+  "name": "KiCAD-MCP-Server",
+  "pricing": "Open source"
  },
  "kill-my-idea": {
   "link": "OK",
@@ -11719,6 +11724,11 @@
   "name": "OmniaAuto \u2014 Canadian Vehicle Listings",
   "pricing": "See site"
  },
+ "omniget": {
+  "link": "OK",
+  "name": "Omniget",
+  "pricing": "Open source"
+ },
  "omniyond": {
   "link": "OK",
   "name": "Omniyond",
@@ -11830,7 +11840,7 @@
   "pricing": "See site"
  },
  "open-uncensored": {
-  "link": "OK",
+  "link": "Error",
   "name": "Open Uncensored",
   "pricing": "See site"
  },
@@ -12070,7 +12080,7 @@
   "pricing": "See site"
  },
  "ormas-outcomes": {
-  "link": "not checked",
+  "link": "OK",
   "name": "Ormas Outcomes",
   "pricing": "Paid"
  },
@@ -12405,7 +12415,7 @@
   "pricing": "See site"
  },
  "passport-sorted-passport-visa-photo-rules": {
-  "link": "OK",
+  "link": "Error",
   "name": "Passport Sorted: passport & visa photo rules",
   "pricing": "See site"
  },
@@ -13168,6 +13178,11 @@
   "link": "OK",
   "name": "Priomate",
   "pricing": "See site"
+ },
+ "priorivo": {
+  "link": "OK",
+  "name": "Priorivo",
+  "pricing": "Freemium"
  },
  "priorstates-studio-free-apps": {
   "link": "OK",
@@ -15878,6 +15893,11 @@
   "link": "OK",
   "name": "Zabbix Mcp Server",
   "pricing": "Open source"
+ },
+ "zambo": {
+  "link": "OK",
+  "name": "Zambo",
+  "pricing": "Freemium"
  },
  "zapier-mcp": {
   "link": "OK",

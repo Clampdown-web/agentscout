@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generated": "2026-11-13T19:08:42Z",
- "updated": "2026-11-13T19:08:42Z",
- "last_checked": "2026-11-13",
- "count": 5784,
- "total_tools": 5784,
+ "generated": "2026-11-14T15:37:05Z",
+ "updated": "2026-11-14T15:37:05Z",
+ "last_checked": "2026-11-14",
+ "count": 5822,
+ "total_tools": 5822,
  "tools": [
   {
    "name": "Siena Social Agent",
@@ -2127,13 +2127,14 @@
    "website": "https://www.langchain.com/langgraph",
    "github": "https://github.com/langchain-ai/langgraph",
    "category": "frameworks",
-   "description": "Framework for stateful, graph-based agent workflows.",
+   "description": "LangGraph is LangChain's MIT-licensed low-level orchestration framework for long-running, stateful agents in Python, with a JavaScript/TypeScript sibling (LangGraph.js). You model an agent as a graph of steps with durable execution that resumes after failures, human-in-the-loop checkpoints for inspecting and editing state, short- and long-term memory, and streaming; Deep Agents is the higher-level package built on it for planning, subagents and file systems. Used by Klarna, Replit and Elastic.",
    "key_features": [
     "Open source",
     "Mature",
     "44,156 GitHub stars",
+    "Build multi-agent systems",
     "Build an agent",
-    "Automate workflows"
+    "Give agents memory"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -2155,10 +2156,11 @@
    "repo": "langchain-ai/langgraph",
    "github_stars": 44156,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "build multi-agent systems",
     "build an agent",
-    "automate workflows"
+    "give agents memory"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/langgraph.png",
@@ -2392,13 +2394,14 @@
    "website": "https://huggingface.co/docs/smolagents",
    "github": "https://github.com/huggingface/smolagents",
    "category": "frameworks",
-   "description": "Hugging Face's minimal library for code-writing agents.",
+   "description": "smolagents is Hugging Face's Apache-2.0 Python library for agents that think in code: its CodeAgent writes each action as a Python snippet rather than a JSON tool call, and the core agent logic fits in about 1,000 lines. Generated code can run in sandboxes such as E2B, Modal, Blaxel or Docker, tools and agents can be shared to and pulled from the Hugging Face Hub, and it works with any model, from local transformers or Ollama to OpenAI, Anthropic and other providers via LiteLLM.",
    "key_features": [
     "Open source",
     "Active",
     "30,144 GitHub stars",
     "Write code",
-    "Build an agent"
+    "Build an agent",
+    "Run code safely"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -2421,10 +2424,11 @@
    "repo": "huggingface/smolagents",
    "github_stars": 30144,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
-    "build an agent"
+    "build an agent",
+    "run code safely"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/smolagents.png",
@@ -2527,12 +2531,13 @@
    "website": "https://gptr.dev",
    "github": "https://github.com/assafelovic/gpt-researcher",
    "category": "research",
-   "description": "Autonomous agent that researches the web and writes cited reports.",
+   "description": "GPT Researcher is an Apache-2.0 open deep-research agent that investigates any topic on the web or in your local documents and writes a detailed, cited report. Planner and execution agents split the task into research questions and run them in parallel, context filtering keeps only useful sources, recursive deep research goes both broad and deep, and a multi-agent mode carries work from planning to publication. It works with most LLM providers and runs as a Python package, Docker app, web UI or MCP server.",
    "key_features": [
     "Open source",
     "Mature",
     "30,378 GitHub stars",
     "Write code",
+    "Build multi-agent systems",
     "Research the web"
    ],
    "pricing": "Open source",
@@ -2556,9 +2561,10 @@
    "repo": "assafelovic/gpt-researcher",
    "github_stars": 30378,
    "open_source": true,
-   "license": "",
+   "license": "Apache-2.0",
    "tags": [
     "write code",
+    "build multi-agent systems",
     "research the web"
    ],
    "hybrid": false,
@@ -2612,15 +2618,63 @@
    "website": "https://storm.genie.stanford.edu",
    "github": "https://github.com/stanford-oval/storm",
    "category": "research",
-   "description": "Stanford system that writes Wikipedia-style articles from web research.",
+   "description": "STORM is Stanford OVAL's MIT-licensed research system that writes Wikipedia-style, citation-backed articles from scratch: it researches a topic by asking questions from several perspectives against web search, builds an outline, then writes the full report with references. Co-STORM adds a collaborative mode where you join the discussion between AI agents to steer the research. It installs as the knowledge-storm Python package, supports many LLMs through LiteLLM and can ground on your own documents through a vector store.",
    "key_features": [
     "Open source",
     "Research project; no recent updates (last commit Sep 2025)",
     "31,749 GitHub stars",
+    "Write code",
     "Research the web"
    ],
    "pricing": "Open source",
    "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-10-14",
+   "added": "2026-10-14",
+   "source": "original",
+   "goals": [
+    "research",
+    "support",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": false,
+   "seed": true,
+   "new_this_week": false,
+   "repo": "stanford-oval/storm",
+   "github_stars": 31749,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/storm.png",
+   "page": "https://agentscouthq.com/tools/storm.html"
+  },
+  {
+   "name": "Firecrawl",
+   "slug": "firecrawl",
+   "url": "https://firecrawl.dev",
+   "website": "https://firecrawl.dev",
+   "github": "https://github.com/firecrawl/firecrawl",
+   "category": "research",
+   "description": "Firecrawl is an AGPL-3.0 web data API for AI agents, open source and available as a hosted service: Search returns full page content for web results, Scrape turns any URL into clean Markdown, HTML, screenshots or structured JSON, Crawl and Map cover whole sites, Interact clicks, scrolls and types before extracting, and Parse converts PDFs and DOCX files. It handles proxies, rate limits and JavaScript-heavy pages for you, and connects to any agent or MCP client with a single command.",
+   "key_features": [
+    "Open source + paid cloud",
+    "Mature",
+    "196,925 GitHub stars",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source + paid cloud",
+   "price_tag": "freemium",
    "platforms": [
     "Developer (API/SDK)",
     "Self-host"
@@ -2637,54 +2691,14 @@
    "new": false,
    "seed": true,
    "new_this_week": false,
-   "repo": "stanford-oval/storm",
-   "github_stars": 31749,
-   "open_source": true,
-   "license": "",
-   "tags": [
-    "research the web"
-   ],
-   "hybrid": false,
-   "logo": "https://agentscouthq.com/assets/logos/storm.png",
-   "page": "https://agentscouthq.com/tools/storm.html"
-  },
-  {
-   "name": "Firecrawl",
-   "slug": "firecrawl",
-   "url": "https://firecrawl.dev",
-   "website": "https://firecrawl.dev",
-   "github": "https://github.com/firecrawl/firecrawl",
-   "category": "research",
-   "description": "Turns websites into clean, LLM-ready data for agents.",
-   "key_features": [
-    "Open source + paid cloud",
-    "Mature",
-    "196,925 GitHub stars",
-    "Research the web"
-   ],
-   "pricing": "Open source + paid cloud",
-   "price_tag": "freemium",
-   "platforms": [
-    "Developer (API/SDK)",
-    "Self-host"
-   ],
-   "date_added": "2026-10-14",
-   "added": "2026-10-14",
-   "source": "original",
-   "goals": [
-    "research"
-   ],
-   "skill": "developer",
-   "weekly_pick": false,
-   "new": false,
-   "seed": true,
-   "new_this_week": false,
    "repo": null,
    "github_stars": 196925,
    "open_source": true,
-   "license": "",
+   "license": "AGPL-3.0",
    "tags": [
-    "research the web"
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/firecrawl.png",
@@ -3508,12 +3522,14 @@
    "website": "https://composio.dev",
    "github": "https://github.com/ComposioHQ/composio",
    "category": "agent infra",
-   "description": "Tool integrations and auth for agents across hundreds of apps.",
+   "description": "Composio gives AI agents more than 1,000 pre-authenticated toolkits for apps such as Gmail, Slack, GitHub and Salesforce, with per-user sessions, managed OAuth, tool search, triggers and a sandboxed workbench, so an agent can act in a user's accounts without you building each integration. The MIT-licensed monorepo ships TypeScript and Python SDKs, a CLI for searching and running tools from the shell, and adapters for the OpenAI Agents SDK, Claude Agent SDK, Vercel AI SDK, LangChain and more; the hosted platform has a free tier.",
    "key_features": [
     "Free tier + paid plans",
     "Mature",
     "30,828 GitHub stars",
-    "Automate workflows"
+    "Write code",
+    "Build an agent",
+    "Research the web"
    ],
    "pricing": "Free tier + paid plans",
    "price_tag": "freemium",
@@ -3534,9 +3550,11 @@
    "repo": null,
    "github_stars": 30828,
    "open_source": false,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "automate workflows"
+    "write code",
+    "build an agent",
+    "research the web"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/composio.png",
@@ -34173,12 +34191,13 @@
    "website": "https://rubydoc.info/gems/langchainrb",
    "github": "https://github.com/patterns-ai-core/langchainrb",
    "category": "frameworks",
-   "description": "Ruby library for building LLM-powered applications, RAG and assistants.",
+   "description": "Langchain.rb is an MIT-licensed Ruby gem for building LLM-powered applications: a unified interface across providers such as OpenAI, Anthropic, Google Gemini, AWS Bedrock, Mistral and Ollama, plus prompt management, output parsers, retrieval-augmented generation over vector stores, tool-using Assistants and evaluations. A companion langchainrb_rails gem adds deep Rails integration.",
    "key_features": [
     "Open source",
     "Active",
     "2,006 GitHub stars",
-    "Build an agent"
+    "Build an agent",
+    "Monitor & evaluate agents"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -34200,9 +34219,10 @@
    "repo": "patterns-ai-core/langchainrb",
    "github_stars": 2006,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
-    "build an agent"
+    "build an agent",
+    "monitor & evaluate agents"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/langchain-rb.png",
@@ -39608,14 +39628,14 @@
    "website": "https://www.browserable.ai/",
    "github": "https://github.com/browserable/browserable",
    "category": "browser/computer use",
-   "description": "Open-source JavaScript browser automation library for AI agents.",
+   "description": "Browserable is an MIT-licensed, self-hostable browser automation library for building AI agents that navigate sites, fill in forms, click buttons and extract information, reporting 90.4% on the WebVoyager benchmark. You start it with npx browserable or Docker Compose, add a key for Gemini, OpenAI or Claude and a remote browser provider such as Hyperbrowser or Steel, then run tasks from its dashboard, task API or JavaScript SDK.",
    "key_features": [
     "Open source",
     "No recent updates (last commit Aug 2025)",
     "1,209 GitHub stars",
+    "Write code",
     "Automate the browser",
-    "Build an agent",
-    "Automate workflows"
+    "Build an agent"
    ],
    "pricing": "Open source",
    "price_tag": "free",
@@ -39637,11 +39657,11 @@
    "repo": "browserable/browserable",
    "github_stars": 1209,
    "open_source": true,
-   "license": "",
+   "license": "MIT",
    "tags": [
+    "write code",
     "automate the browser",
-    "build an agent",
-    "automate workflows"
+    "build an agent"
    ],
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/browserable.png",
@@ -49407,7 +49427,7 @@
    "website": "https://kling.ai",
    "github": "https://github.com/klingai-tech/claude-plugin",
    "category": "video generation",
-   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips. A hosted MCP server at https://kling.ai/mcp lets compatible assistants run Kling image and video workflows. Users authorize a Kling account through OAuth, and generation consumes account credits. The official Claude Code plugin provides three Skills for request routing, image generation, and video generation.",
+   "description": "Kuaishou's AI video and image generator. Turn text, images and references into high-quality video clips. A hosted MCP server at https://kling.ai/mcp/plugin, the endpoint in Kling's official Claude Code plugin and MCP Registry entry, lets compatible assistants run Kling image and video workflows. Users authorize a Kling account through OAuth, and generation consumes account credits. The official Claude Code plugin provides three Skills for request routing, image generation, and video generation.",
    "key_features": [
     "API: prepaid credit packages (per-second units)",
     "Active",
@@ -50022,7 +50042,7 @@
    "website": "https://github.com/zai-org/CogVideo",
    "github": "https://github.com/zai-org/CogVideo",
    "category": "video generation",
-   "description": "Open text-to-video and image-to-video models from Zhipu AI (Z.ai) and Tsinghua.",
+   "description": "CogVideoX is Zhipu AI (Z.ai) and Tsinghua's Apache-2.0 open video generation model family: CogVideoX-2B and 5B generate short clips from text, the I2V variants animate a still image, and CogVideoX1.5-5B produces 10-second videos at higher resolution. Weights are on Hugging Face and ModelScope with diffusers support, LoRA fine-tuning code that fits on a single RTX 4090, and the companion CogKit toolkit for inference and fine-tuning.",
    "key_features": [
     "Open source (Apache-2.0)",
     "No recent updates (last commit Nov 2025)",
@@ -50039,7 +50059,8 @@
    "added": "2026-10-18",
    "source": "Research (film, TV, video & music sweep)",
    "goals": [
-    "media"
+    "media",
+    "support"
    ],
    "skill": "developer",
    "weekly_pick": false,
@@ -57819,7 +57840,7 @@
    "website": "https://upscayl.org",
    "github": "https://github.com/upscayl/upscayl",
    "category": "photography & photo editing",
-   "description": "Free open-source desktop app for upscaling images on your own computer.",
+   "description": "Upscayl is a free, AGPL-3.0 desktop app for Linux, macOS and Windows that enlarges and sharpens low-resolution images with AI upscaling models on your own computer, so pictures never leave your machine. You pick a model and a scale, process single images or whole folders, and can add your own compatible models. It needs a Vulkan-capable GPU and installs from upscayl.org, Flatpak, Snap or the GitHub releases.",
    "key_features": [
     "Free and open source (AGPL-3.0) desktop app; Upscayl Cloud free trial (10 credits), Pro $24.99/mo",
     "Active",
@@ -87691,7 +87712,7 @@
    ],
    "skill": "no-code",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -87737,7 +87758,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "vercel-labs/agent-desktop",
@@ -87783,7 +87804,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "ramenvr/autopilot",
@@ -87828,7 +87849,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": "morganlinton/BeautifulRust",
@@ -87870,7 +87891,7 @@
    ],
    "skill": "developer",
    "weekly_pick": false,
-   "new": true,
+   "new": false,
    "seed": false,
    "new_this_week": false,
    "repo": null,
@@ -96843,7 +96864,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -96884,7 +96905,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -96926,7 +96947,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -96967,7 +96988,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97008,7 +97029,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97049,7 +97070,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97091,7 +97112,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97132,7 +97153,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97175,7 +97196,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97220,7 +97241,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97267,7 +97288,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": true,
@@ -97309,7 +97330,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97353,7 +97374,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97397,7 +97418,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97440,7 +97461,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97482,7 +97503,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97523,7 +97544,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97564,7 +97585,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97603,7 +97624,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97643,7 +97664,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97685,7 +97706,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97726,7 +97747,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97768,7 +97789,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97809,7 +97830,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97851,7 +97872,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97893,7 +97914,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -97937,7 +97958,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "HODLERSS/assetly",
    "github_stars": 0,
    "open_source": false,
@@ -97980,7 +98001,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98024,7 +98045,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98067,7 +98088,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98108,7 +98129,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98149,7 +98170,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98191,7 +98212,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98233,7 +98254,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "awarexone/Agentic-Bug-Hunter",
    "github_stars": 5648,
    "open_source": true,
@@ -98275,7 +98296,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "FlowElement-xinliuyuansu/m_flow",
    "github_stars": 4509,
    "open_source": true,
@@ -98316,7 +98337,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "clidey/whodb",
    "github_stars": 5050,
    "open_source": true,
@@ -98359,7 +98380,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "happier-dev/happier",
    "github_stars": 2166,
    "open_source": true,
@@ -98404,7 +98425,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "alookai/alook",
    "github_stars": 1492,
    "open_source": true,
@@ -98449,7 +98470,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "Team-Commonly/commonly",
    "github_stars": 1391,
    "open_source": true,
@@ -98493,7 +98514,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "modu-ai/moai-adk",
    "github_stars": 1252,
    "open_source": true,
@@ -98536,7 +98557,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "i365dev/free4chat",
    "github_stars": 1227,
    "open_source": true,
@@ -98579,7 +98600,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "Chorus-AIDLC/Chorus",
    "github_stars": 1223,
    "open_source": true,
@@ -98625,7 +98646,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "CelestoAI/celesto",
    "github_stars": 1162,
    "open_source": true,
@@ -98669,7 +98690,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "desplega-ai/agent-swarm",
    "github_stars": 1025,
    "open_source": true,
@@ -98711,7 +98732,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "superdesigndev/superdesign-skill",
    "github_stars": 959,
    "open_source": true,
@@ -98756,7 +98777,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "Lumiwealth/lumibot",
    "github_stars": 2216,
    "open_source": true,
@@ -98799,7 +98820,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "Prism-Shadow/penguin-harness",
    "github_stars": 3174,
    "open_source": true,
@@ -98841,7 +98862,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": "TIGER-AI-Lab/ClawBench",
    "github_stars": 1223,
    "open_source": true,
@@ -98884,7 +98905,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98929,7 +98950,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -98973,7 +98994,7 @@
    "weekly_pick": false,
    "new": true,
    "seed": false,
-   "new_this_week": true,
+   "new_this_week": false,
    "repo": null,
    "github_stars": null,
    "open_source": false,
@@ -244466,6 +244487,1683 @@
    "hybrid": false,
    "logo": "https://agentscouthq.com/assets/logos/stack-diagram.png",
    "page": "https://agentscouthq.com/tools/stack-diagram.html"
+  },
+  {
+   "name": "Diagnosed by AI",
+   "slug": "diagnosed-by-ai",
+   "url": "https://diagnosedbyai.com/",
+   "website": "https://diagnosedbyai.com/",
+   "github": "",
+   "category": "healthcare & biotech",
+   "description": "Diagnosed by AI is a public board where people post a health question or symptom pattern as an open case and registered AI agents answer it with educational opinions: possible conditions to raise with a clinician, questions worth asking and general next steps. Several agents can answer the same case, humans add context in a separately labeled discussion, and developers connect their own agent through a documented REST API with an instant API key. Every answer is labeled AI-generated opinion, not a diagnosis.",
+   "key_features": [
+    "Free",
+    "Active"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "healthcare & biotech"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/diagnosed-by-ai.png",
+   "page": "https://agentscouthq.com/tools/diagnosed-by-ai.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Priorivo",
+   "slug": "priorivo",
+   "url": "https://getpriorivo.com/",
+   "website": "https://getpriorivo.com/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Priorivo is a technical SEO checker that crawls up to 100 public pages of a site, opens ten selected pages on desktop and mobile, and returns the few issues worth fixing first, each with the exact URL, the HTML evidence it observed and a recommended next step. People can run a free scan without signing up; AI agents can order the same check through its remote MCP server at getpriorivo.com/mcp or a REST/n8n workflow for €9.90 per site and get the findings back as private JSON.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Control a computer",
+    "Automate workflows",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "control a computer",
+    "automate workflows",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/priorivo.png",
+   "page": "https://agentscouthq.com/tools/priorivo.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Qstudy AI",
+   "slug": "qstudy-ai",
+   "url": "https://qstudy.ai/",
+   "website": "https://qstudy.ai/",
+   "github": "",
+   "category": "education & tutoring",
+   "description": "Qstudy AI is a study companion for college students: you drop in a lecture PDF, an audio recording or just a topic, and it returns the material as structured notes, adaptive quizzes, flashcards, an animated explainer, a study plan or even a revision song, in your own language. It offers 18 output formats with streaks and progress tracking, a free account without a card and a cancel-anytime Premium plan.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Monitor & evaluate agents",
+    "Sales & support",
+    "Computer vision"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents",
+    "sales & support",
+    "computer vision"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/qstudy-ai.png",
+   "page": "https://agentscouthq.com/tools/qstudy-ai.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "AgentPawn",
+   "slug": "agentpawn",
+   "url": "https://agentpawn.com/",
+   "website": "https://agentpawn.com/",
+   "github": "",
+   "category": "agent infra",
+   "description": "AgentPawn is a free job board where AI agents post work for other agents and pick it up: jobs in categories such as code, research, data, writing and verification can be posted, browsed, claimed, completed and reopened entirely through its API, and agents discuss results in comment threads. Claims are time-boxed, so an agent registers, takes a task, does it and submits proof without a human in the loop.",
+   "key_features": [
+    "Free",
+    "Active",
+    "Write code",
+    "Research the web"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agentpawn.png",
+   "page": "https://agentscouthq.com/tools/agentpawn.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "SandBase",
+   "slug": "sandbase",
+   "url": "https://www.sandbase.ai/",
+   "website": "https://www.sandbase.ai/",
+   "github": "",
+   "category": "sandboxes & code execution",
+   "description": "SandBase gives an AI agent one account and one API key for LLMs, image and video models, live data APIs (search, social and company data) and a code sandbox, so it can fetch data, call models and run Python in the same pay-per-call workflow. It adds Skills and ready-made agents, can be added to Claude Code in one step, and starts with 100 free API calls a day and no card.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Write code",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "coding",
+    "media"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/sandbase.png",
+   "page": "https://agentscouthq.com/tools/sandbase.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "ComVise AI",
+   "slug": "comvise-ai",
+   "url": "https://shangtuce.cn/",
+   "website": "https://shangtuce.cn/",
+   "github": "",
+   "category": "e-commerce & retail",
+   "description": "ComVise AI (商图策 AI) is a product-image workspace for e-commerce sellers: upload a flat-lay garment or product photo and it generates on-model shots, pose variations, a full nine-image product-detail set and short product videos, treating the garment's outline, print and stitching as a locked layer so the clothes are not redrawn. It also upscales, retouches and removes watermarks, charges roughly ¥0.2–0.4 per image with no subscription, and offers a REST API and MCP server for batch pipelines.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/comvise-ai.png",
+   "page": "https://agentscouthq.com/tools/comvise-ai.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Corint AI",
+   "slug": "corint-ai",
+   "url": "https://corint.ai/",
+   "website": "https://corint.ai/",
+   "github": "",
+   "category": "data & analytics",
+   "description": "Corint is an agentic risk-operations platform for banks, lenders, fintechs, insurers and payment companies: AI agents monitor connected business data, detect rising risk, investigate root causes and prepare candidate strategy changes, which are tested, validated and approved by people before Corint's decision engine runs them in production. Its three products, Work, Intelligence and Decision, keep data, policies and decision history in one governed loop. Pricing is by demo.",
+   "key_features": [
+    "Enterprise",
+    "Active",
+    "Run code safely",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Enterprise",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "run code safely",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/corint-ai.png",
+   "page": "https://agentscouthq.com/tools/corint-ai.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Movmix",
+   "slug": "movmix",
+   "url": "https://movmix.ai/",
+   "website": "https://movmix.ai/",
+   "github": "",
+   "category": "video generation",
+   "description": "Movmix is an AI video and image studio with pre-tuned templates, so you get cinematic clips without prompt engineering: text-to-video, image-to-video, reference-to-video, video extend, AI dance and product-ad generators run on models such as Kling, Seedance, Wan, MiniMax and GPT Images. It covers ad templates for product shots, anime-to-video and image tools like upscaling, with an Android app.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Visual effects"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "visual effects"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/movmix.png",
+   "page": "https://agentscouthq.com/tools/movmix.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Lium",
+   "slug": "lium",
+   "url": "https://lium.io/",
+   "website": "https://lium.io/",
+   "github": "",
+   "category": "agent infra",
+   "description": "Lium is a GPU marketplace built for agent-driven compute: an agent installs the CLI, starts a pod with one command such as lium up --gpu H100 --ttl 1h, runs its job and has the pod removed automatically within the budget you set. It lists RTX 5090 to H100, H200, B200 and B300 machines from many providers with per-second billing, spot pricing, volumes, backups, a Python SDK and an API.",
+   "key_features": [
+    "Usage-based",
+    "Active",
+    "Build an agent"
+   ],
+   "pricing": "Usage-based",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/lium.png",
+   "page": "https://agentscouthq.com/tools/lium.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "WaveXML",
+   "slug": "wavexml",
+   "url": "https://wavexml.com/",
+   "website": "https://wavexml.com/",
+   "github": "",
+   "category": "film & TV audio",
+   "description": "WaveXML syncs multi-camera footage and separate Zoom or Sound Devices audio recorders by sound, working from timelines exported by DaVinci Resolve, Premiere Pro or Final Cut and sending synced XML back. Version 2.0 lets your own Claude, ChatGPT (Codex) or Cursor cut a first edit inside the app: it measures every shot for shake, focus and exposure, follows your saved editing rules and hands over a switchable multicam. Footage stays on your Mac or Windows PC; the beta is free.",
+   "key_features": [
+    "Free",
+    "Active",
+    "Edit video",
+    "Separate stems"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit video",
+    "separate stems"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wavexml.png",
+   "page": "https://agentscouthq.com/tools/wavexml.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "MemeBoing",
+   "slug": "memeboing",
+   "url": "https://memeboing.com/",
+   "website": "https://memeboing.com/",
+   "github": "",
+   "category": "video generation",
+   "description": "MemeBoing turns a single photo into a six-second vertical meme video: you pick a trending template, such as a dance, a dramatic entrance or a two-person comedy bit, upload a face, and it animates you into the scene with no prompt and no watermark. Templates cover solo, friends and pet scenes; browsing is free and each video uses credits.",
+   "key_features": [
+    "Paid",
+    "Active"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/memeboing.png",
+   "page": "https://agentscouthq.com/tools/memeboing.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Agent Garrett",
+   "slug": "agent-garrett",
+   "url": "https://agent.garrettstimpson.ca/",
+   "website": "https://agent.garrettstimpson.ca/",
+   "github": "",
+   "category": "security & governance",
+   "description": "Agent Garrett is a personal cybersecurity agent that hunts down your exposed personal information across data-broker sites, files and tracks removal requests, monitors your identity and websites, and checks suspicious texts, emails, links or screenshots you bring it. Work runs as scheduled agent tasks with evidence you can review, and it exposes MCP and API access. The Agent plan is US$4.99 a month.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/agent-garrett.png",
+   "page": "https://agentscouthq.com/tools/agent-garrett.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "LoraAI Pro",
+   "slug": "loraai-pro",
+   "url": "https://www.loraai.pro/",
+   "website": "https://www.loraai.pro/",
+   "github": "",
+   "category": "image generation",
+   "description": "LoraAI Pro is a LoRA image and video generator: you browse a directory of community LoRA models for SDXL, Qwen Image and other bases, generate with one in the browser, or train your own LoRA on reference photos to keep a character, style or product consistent across images and videos. It also supports reference-photo editing and API workflows.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Edit photos"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "edit photos"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/loraai-pro.png",
+   "page": "https://agentscouthq.com/tools/loraai-pro.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Pumli",
+   "slug": "pumli",
+   "url": "https://www.pumliai.com/",
+   "website": "https://www.pumliai.com/",
+   "github": "",
+   "category": "productivity",
+   "description": "Pumli is a private AI companion for iPhone and iPad that runs local language models on the device, up to 35B parameters on compatible hardware, so chats and dictation work offline and stay on the phone. When you choose, it connects to Notion, GitHub, Exa, Context7, Calendar, Messages, Reminders and Health, drafts email, researches with sources and makes AI images and video through online providers, with memories you can review and edit.",
+   "key_features": [
+    "Free",
+    "Active",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Free",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pumli.png",
+   "page": "https://agentscouthq.com/tools/pumli.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Prizm",
+   "slug": "prizm",
+   "url": "https://heyprizm.com/en",
+   "website": "https://heyprizm.com/en",
+   "github": "",
+   "category": "HR & recruiting",
+   "description": "Prizm tailors your CV and cover letter to each job: you add your CV once as Word, PDF or a photo, paste a job link or text, and it first gives an honest assessment of your chances with real strengths and gaps, then rewrites both documents for that role in your own Word layout or one of five templates. You review every change and nothing is invented; the first check is free with no card.",
+   "key_features": [
+    "Freemium",
+    "Active"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "HR & recruiting"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/prizm.png",
+   "page": "https://agentscouthq.com/tools/prizm.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "EveryGen AI",
+   "slug": "everygen-ai",
+   "url": "https://everygenai.video/",
+   "website": "https://everygenai.video/",
+   "github": "",
+   "category": "video generation",
+   "description": "EveryGen AI is a web video studio that puts models such as Seedance 2.5, Kling 3.0 Turbo, Veo 3.1, MiniMax and Grok Imagine behind one prompt box for text-to-video and image-to-video, plus trend templates for viral dances and memes. Its Marketing Studio turns a product photo into a UGC-style ad, unboxing, product-hero or before-and-after video with captions and lip-synced creators, and it includes a 4K image generator.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Subtitles & transcripts",
+    "Dub & localize"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "subtitles & transcripts",
+    "dub & localize"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/everygen-ai.png",
+   "page": "https://agentscouthq.com/tools/everygen-ai.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "EverygenAI Photo to Sketch",
+   "slug": "everygenai-photo-to-sketch",
+   "url": "https://everygenai.org/photo-effects/photo-to-sketch",
+   "website": "https://everygenai.org/photo-effects/photo-to-sketch",
+   "github": "",
+   "category": "photography & photo editing",
+   "description": "EverygenAI Photo to Sketch turns a single portrait or object photo into a clean pencil drawing with defined contours and natural graphite shading, from light line art to a fully shaded study. You upload a PNG, JPG or WebP up to 10 MB, optionally describe the style, pick a model and generate; the page also explains how to choose sources with clear edges and simple backgrounds for better sketches. Generations use credits.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Retouch portraits"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "crypto",
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "retouch portraits"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/everygenai-photo-to-sketch.png",
+   "page": "https://agentscouthq.com/tools/everygenai-photo-to-sketch.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "Zambo",
+   "slug": "zambo",
+   "url": "https://zambo.dev/",
+   "website": "https://zambo.dev/",
+   "github": "",
+   "category": "MCP servers",
+   "description": "Zambo is a hosted MCP server you add to Claude, ChatGPT, Cursor, VS Code or Grok with one URL, no key and no signup: it gives your AI tools to check sites, protect bots and find customers, keeps the job's notes so another chat or another AI can pick it up, and issues a verifiable receipt link for every step that you can send a client. Every tool is free once a day; a $0.99 day pass or $29 30-day pass unlocks unlimited use.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Connect tools via mcp",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "connect tools via MCP",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/zambo.png",
+   "page": "https://agentscouthq.com/tools/zambo.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "AI Rap Video.cc",
+   "slug": "ai-rap-video-cc",
+   "url": "https://airapvideo.cc/",
+   "website": "https://airapvideo.cc/",
+   "github": "",
+   "category": "video generation",
+   "description": "AI Rap Video.cc turns one or two portrait photos into a short AI rap performance with vocals and music, set in a studio, street or party scene, or recasts a reference clip with your faces in Video Remix. You choose the video model (Seedance, Wan or Kling) and resolution, and credits are refunded when a run is blocked; one-time credit packs start at $9.99.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Generate video"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "media"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "generate video"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/ai-rap-video-cc.png",
+   "page": "https://agentscouthq.com/tools/ai-rap-video-cc.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "contracts.io",
+   "slug": "contracts-io",
+   "url": "https://contracts.io/",
+   "website": "https://contracts.io/",
+   "github": "",
+   "category": "legal & compliance",
+   "description": "contracts.io drafts a contract from one sentence: its assistant Lex writes a plain-English agreement such as a statement of work for England and Wales, you send a single link, and the other side reads, counters clause by clause with tracked redlines and e-signs without an account or fee. Lex also explains contracts you have been sent. The free plan covers three active contracts; Plus (£15/month) adds unlimited contracts and templates.",
+   "key_features": [
+    "Freemium",
+    "Active",
+    "Monitor & evaluate agents",
+    "Sales & support"
+   ],
+   "pricing": "Freemium",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "monitor & evaluate agents",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/contracts-io.png",
+   "page": "https://agentscouthq.com/tools/contracts-io.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "AskMed",
+   "slug": "askmed",
+   "url": "https://getaskmed.com/",
+   "website": "https://getaskmed.com/",
+   "github": "",
+   "category": "healthcare & biotech",
+   "description": "AskMed answers medical questions with cited sources: you ask about a condition, drug, interaction or guideline and get a clear answer that links to the journal articles, clinical guidelines and drug labels it relies on, plus a research mode for deeper literature work. It is built for physicians, nurses, pharmacists and medical students, on the web and iOS.",
+   "key_features": [
+    "Paid",
+    "Active",
+    "Research the web"
+   ],
+   "pricing": "Paid",
+   "price_tag": "paid",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "Maker submission",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": null,
+   "github_stars": null,
+   "open_source": false,
+   "license": "",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/askmed.png",
+   "page": "https://agentscouthq.com/tools/askmed.html",
+   "maker_submitted": true,
+   "submitted": "2026-11-14"
+  },
+  {
+   "name": "PDFMathTranslate",
+   "slug": "pdfmathtranslate",
+   "url": "https://pdf2zh.com/",
+   "website": "https://pdf2zh.com/",
+   "github": "https://github.com/PDFMathTranslate/PDFMathTranslate",
+   "category": "research",
+   "description": "PDFMathTranslate (pdf2zh) translates scientific PDFs while keeping the original layout: formulas, charts, tables of contents and annotations stay in place and it outputs bilingual or translated-only files. It works with Google, DeepL, OpenAI, Ollama and other translation services, adds experimental OCR and an ultrafast mode for native-text PDFs, and runs as a CLI, a desktop or web GUI, Docker, an MCP server or a Zotero plugin. AGPL-3.0; an EMNLP 2025 demo paper.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "38,419 GitHub stars",
+    "Control a computer",
+    "Research the web",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "research",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "PDFMathTranslate/PDFMathTranslate",
+   "github_stars": 38419,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "control a computer",
+    "research the web",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/pdfmathtranslate.png",
+   "page": "https://agentscouthq.com/tools/pdfmathtranslate.html"
+  },
+  {
+   "name": "FinceptTerminal",
+   "slug": "finceptterminal",
+   "url": "https://fincept.in/",
+   "website": "https://fincept.in/",
+   "github": "https://github.com/Fincept-Corporation/FinceptTerminal",
+   "category": "finance & accounting",
+   "description": "Fincept Terminal is an AGPL-3.0 desktop finance terminal for market analytics, investment research and economic data, with multi-agent AI research, portfolio tools, backtesting and data from hundreds of sources in one interface. The open-source edition is free; a paid Enterprise edition adds real-time data, live broker and algorithmic execution and priority support from $15 per user a month.",
+   "key_features": [
+    "Open source + cloud",
+    "Mature",
+    "33,795 GitHub stars",
+    "Control a computer",
+    "Build multi-agent systems",
+    "Research the web"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Fincept-Corporation/FinceptTerminal",
+   "github_stars": 33795,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "control a computer",
+    "build multi-agent systems",
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/finceptterminal.png",
+   "page": "https://agentscouthq.com/tools/finceptterminal.html"
+  },
+  {
+   "name": "WeClone",
+   "slug": "weclone",
+   "url": "https://www.weclone.love/en/",
+   "website": "https://www.weclone.love/en/",
+   "github": "https://github.com/xming521/WeClone",
+   "category": "personal agents",
+   "description": "WeClone distills your identity, goals, preferences and current situation from your chat history and other digital records into a reviewable life portrait organized by domains such as work, family and health, where every fact traces back to its source. That portrait serves as long-term memory for your personal assistants and can power a clone that writes in your own style. Extraction runs through Codex or any OpenAI-compatible API. AGPL-3.0.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "18,405 GitHub stars",
+    "Monitor & evaluate agents",
+    "Give agents memory"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "xming521/WeClone",
+   "github_stars": 18405,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "monitor & evaluate agents",
+    "give agents memory"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/weclone.png",
+   "page": "https://agentscouthq.com/tools/weclone.html"
+  },
+  {
+   "name": "Omniget",
+   "slug": "omniget",
+   "url": "https://getomniget.com/",
+   "website": "https://getomniget.com/",
+   "github": "https://github.com/tonhowtf/omniget",
+   "category": "MCP servers",
+   "description": "OmniGet is a local MCP server that gives coding agents such as Claude Code, Codex, Cursor and Gemini CLI a desktop toolbox: downloads from YouTube, torrents and every site yt-dlp supports, media conversion, file handling, chat exports and system cleanup, all running on your own machine. You connect an agent with one pasted line and approve it with a short code, and sensitive actions wait for your click. GPL-3.0, for Windows, macOS and Linux.",
+   "key_features": [
+    "Open source",
+    "Mature",
+    "14,430 GitHub stars",
+    "Write code",
+    "Control a computer",
+    "Connect tools via mcp"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "tonhowtf/omniget",
+   "github_stars": 14430,
+   "open_source": true,
+   "license": "GPL-3.0",
+   "tags": [
+    "write code",
+    "control a computer",
+    "connect tools via MCP"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/omniget.png",
+   "page": "https://agentscouthq.com/tools/omniget.html"
+  },
+  {
+   "name": "Locally Uncensored",
+   "slug": "locally-uncensored",
+   "url": "https://locallyuncensored.com/",
+   "website": "https://locallyuncensored.com/",
+   "github": "https://github.com/PurpleDoubleD/locally-uncensored",
+   "category": "models & local runtimes",
+   "description": "Locally Uncensored is a free AGPL-3.0 desktop studio that puts local AI chat, image generation, video generation and a coding agent in one app: you install it, pick a model and run everything on your own machine with no Docker, terminal or config files. It targets Windows and Linux and works fully offline in local mode.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4,230 GitHub stars",
+    "Write code",
+    "Control a computer"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "PurpleDoubleD/locally-uncensored",
+   "github_stars": 4230,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "write code",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/locally-uncensored.png",
+   "page": "https://agentscouthq.com/tools/locally-uncensored.html"
+  },
+  {
+   "name": "KiCAD-MCP-Server",
+   "slug": "kicad-mcp-server",
+   "url": "https://kicad.orchis.ai/",
+   "website": "https://kicad.orchis.ai/",
+   "github": "https://github.com/mixelpixx/KiCAD-MCP-Server",
+   "category": "MCP servers",
+   "description": "KiCAD MCP Server is an MIT-licensed Model Context Protocol server that lets Claude and other LLM clients drive KiCad for printed circuit board design: creating projects and schematics, placing and moving components, routing traces, running design-rule checks and exporting fabrication files from natural-language instructions. Its successor, Konnect-EDA at Orchis.ai, is a native KiCad 10 plugin with 228 tools and bundled skills for Claude and Codex.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "3,322 GitHub stars",
+    "Connect tools via mcp",
+    "Monitor & evaluate agents"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "mixelpixx/KiCAD-MCP-Server",
+   "github_stars": 3322,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "connect tools via MCP",
+    "monitor & evaluate agents"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/kicad-mcp-server.png",
+   "page": "https://agentscouthq.com/tools/kicad-mcp-server.html"
+  },
+  {
+   "name": "Mlx Serve",
+   "slug": "mlx-serve",
+   "url": "https://mlxserve.com/",
+   "website": "https://mlxserve.com/",
+   "github": "https://github.com/ddalcu/mlx-serve",
+   "category": "models & local runtimes",
+   "description": "MLX-Serve runs open models on Apple Silicon Macs from one native app and one local server that speaks the OpenAI, Anthropic and Ollama APIs, so chat apps and coding agents like Claude Code can use local models. Beyond chat it generates images, video, music, speech and 3D, works offline with no Python or account, suggests a model that fits your Mac and installs via download or Homebrew (macOS 26.2+).",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2,452 GitHub stars",
+    "Write code",
+    "Voice & phone calls",
+    "Automate workflows"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "ddalcu/mlx-serve",
+   "github_stars": 2452,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "voice & phone calls",
+    "automate workflows"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/mlx-serve.png",
+   "page": "https://agentscouthq.com/tools/mlx-serve.html"
+  },
+  {
+   "name": "Raea",
+   "slug": "raea",
+   "url": "https://raea.io/",
+   "website": "https://raea.io/",
+   "github": "https://github.com/shinyobjectz/raea",
+   "category": "video generation",
+   "description": "raea (Render Anything Engine) lets your AI make videos, motion graphics, 3D scenes and games written as React and TypeScript, then renders them on your own GPU faster than real time with a Rust and Bevy engine. The installer adds raea's agent skills to Claude Code, and a desktop app for macOS, Linux and Windows shows previews and exports. v0.1 is an early release.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2,439 GitHub stars"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "media",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "shinyobjectz/raea",
+   "github_stars": 2439,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "video generation"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/raea.png",
+   "page": "https://agentscouthq.com/tools/raea.html"
+  },
+  {
+   "name": "Qualitylayer",
+   "slug": "qualitylayer",
+   "url": "https://qualitylayer.dev/",
+   "website": "https://qualitylayer.dev/",
+   "github": "https://github.com/maxritter/qualitylayer",
+   "category": "coding",
+   "description": "QualityLayer is a workflow layer for coding agents that keeps you in the loop: your agent (Claude Code, Codex, Cursor and others, on your existing login) drafts a plan with diagrams and clickable screens for you to approve, then writes tests before code, splits independent parts across agents and verifies each small change. You work in its desktop app, the browser or your own terminal, IDE or agent app.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "2,148 GitHub stars",
+    "Write code",
+    "Automate the browser",
+    "Control a computer"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "maxritter/qualitylayer",
+   "github_stars": 2148,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "automate the browser",
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/qualitylayer.png",
+   "page": "https://agentscouthq.com/tools/qualitylayer.html"
+  },
+  {
+   "name": "Yomo",
+   "slug": "yomo",
+   "url": "https://yomo.run/introduction",
+   "website": "https://yomo.run/introduction",
+   "github": "https://github.com/yomorun/yomo",
+   "category": "frameworks",
+   "description": "YoMo is an open-source LLM function-calling framework for building fast, scalable AI agents: you deploy tools as serverless functions, and its geo-distributed edge infrastructure runs them close to users over QUIC with TLS 1.3 on every packet. It streamlines the lifecycle of LLM tools from development to deployment and supports strongly typed functions in TypeScript and Go.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "1,930 GitHub stars",
+    "Build an agent"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "yomorun/yomo",
+   "github_stars": 1930,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "build an agent"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/yomo.png",
+   "page": "https://agentscouthq.com/tools/yomo.html"
+  },
+  {
+   "name": "Vork",
+   "slug": "vork",
+   "url": "https://voyager.so/vork",
+   "website": "https://voyager.so/vork",
+   "github": "https://github.com/voyager-so/vork",
+   "category": "3D & concept art",
+   "description": "vork is a headless 3D and VFX engine built for AI agents: the agent writes the whole scene as code, including its own shaders, materials, cameras and physics, and vork renders it on the GPU through a core API of about 2,500 tokens. Written in Rust and Slang for Vulkan and Metal, it benchmarks faster than Blender EEVEE, and vork cloud renders on Voyager's GPUs if you have none. Research preview.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "1,556 GitHub stars"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "crypto",
+    "media",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "voyager-so/vork",
+   "github_stars": 1556,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "3D & concept art"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/vork.png",
+   "page": "https://agentscouthq.com/tools/vork.html"
+  },
+  {
+   "name": "Wu",
+   "slug": "wu",
+   "url": "https://wu.dstrml.org/",
+   "website": "https://wu.dstrml.org/",
+   "github": "https://github.com/dstrml/wu",
+   "category": "coding",
+   "description": "Wu is a fast native code editor and agent workspace written in Rust, a heavily diverged fork of Zed that renders on the GPU with a lower memory footprint than VS Code. Claude Code, Codex and OpenCode are built in as coding agents, there is no account or telemetry, and it installs on macOS, Windows and Linux.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "753 GitHub stars",
+    "Write code",
+    "Give agents memory",
+    "Sales & support"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "writing"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "dstrml/wu",
+   "github_stars": 753,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "give agents memory",
+    "sales & support"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/wu.png",
+   "page": "https://agentscouthq.com/tools/wu.html"
+  },
+  {
+   "name": "LoopForge",
+   "slug": "loopforge",
+   "url": "https://loopforge.cn/",
+   "website": "https://loopforge.cn/",
+   "github": "https://github.com/Tencent/LoopForge",
+   "category": "coding",
+   "description": "LoopForge is Tencent's self-hosted, MIT-licensed workspace for shipping software with coding agents: you describe a requirement to its Main Bot in chat, and it opens a Docker sandbox, checks out your repositories, delegates to project roles and opens the pull request. Proven ways of working are saved as SOPs that combine agents, scripts and human approval gates, and it drives CLIs such as CodeBuddy, Codex, Claude Code, OpenCode and Cursor CLI.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "734 GitHub stars",
+    "Write code",
+    "Run code safely"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "coding"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Tencent/LoopForge",
+   "github_stars": 734,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "run code safely"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/loopforge.png",
+   "page": "https://agentscouthq.com/tools/loopforge.html"
+  },
+  {
+   "name": "Tavotto",
+   "slug": "tavotto",
+   "url": "https://www.tavotto.com/",
+   "website": "https://www.tavotto.com/",
+   "github": "https://github.com/Tavotto/Tavotto",
+   "category": "research",
+   "description": "Tavotto makes AI-drawn research figures publication-ready: it opens a figure produced by an AI assistant or your own matplotlib script, lets you edit titles, legends, curves and multi-panel page layout in millimetres on a canvas while the script stays untouched, and checks the result against a journal profile (font size floor, column width, dpi) before export. Free and AGPL-3.0, for macOS, Windows and Linux (PyPI beta).",
+   "key_features": [
+    "Open source",
+    "Active",
+    "707 GitHub stars",
+    "Research the web"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "research"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "Tavotto/Tavotto",
+   "github_stars": 707,
+   "open_source": true,
+   "license": "AGPL-3.0",
+   "tags": [
+    "research the web"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/tavotto.png",
+   "page": "https://agentscouthq.com/tools/tavotto.html"
+  },
+  {
+   "name": "Axiomcodegraph",
+   "slug": "axiomcodegraph",
+   "url": "https://axiomcode.ai/",
+   "website": "https://axiomcode.ai/",
+   "github": "https://github.com/AxiomCodeAI/axiomcodegraph",
+   "category": "coding",
+   "description": "AxiomCode Graph turns a repository into a knowledge graph built with formal methods: for every function it derives exactly who calls it and what it calls, including calls through interfaces and subclasses that grep misses. Coding agents then explore, search and edit from that map to see what each change breaks, saving time and tokens. It runs locally with a CLI.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "667 GitHub stars",
+    "Write code",
+    "Research the web",
+    "Voice & phone calls"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "coding",
+    "crypto"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "AxiomCodeAI/axiomcodegraph",
+   "github_stars": 667,
+   "open_source": true,
+   "license": "",
+   "tags": [
+    "write code",
+    "research the web",
+    "voice & phone calls"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/axiomcodegraph.png",
+   "page": "https://agentscouthq.com/tools/axiomcodegraph.html"
+  },
+  {
+   "name": "Nuphos",
+   "slug": "nuphos",
+   "url": "https://nuphos.ai/",
+   "website": "https://nuphos.ai/",
+   "github": "https://github.com/nuphos/nuphos",
+   "category": "personal agents",
+   "description": "Nuphos is an Apache-2.0, open-source alternative to Grok Bot for teams: always-on bots that run on the Claude Code or Codex subscription you already pay for, on a managed cloud computer or a machine you own, in chats your whole team can join. Teammates share the same live session, see every tool call and steer a bot together, and a bot keeps working after you close your laptop, with an iOS app to pick it up. Not affiliated with xAI.",
+   "key_features": [
+    "Open source + cloud",
+    "Active",
+    "559 GitHub stars",
+    "Control a computer"
+   ],
+   "pricing": "Open source + cloud",
+   "price_tag": "freemium",
+   "platforms": [
+    "Web"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation"
+   ],
+   "skill": "no-code",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "nuphos/nuphos",
+   "github_stars": 559,
+   "open_source": true,
+   "license": "Apache-2.0",
+   "tags": [
+    "control a computer"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/nuphos.png",
+   "page": "https://agentscouthq.com/tools/nuphos.html"
+  },
+  {
+   "name": "Terminal Browser",
+   "slug": "terminal-browser",
+   "url": "https://terminal-browser.com/",
+   "website": "https://terminal-browser.com/",
+   "github": "https://github.com/zenbu-labs/terminal-browser",
+   "category": "browser/computer use",
+   "description": "terminal-browser runs a real web browser inside your terminal, rendering pages through terminals with kitty graphics support, so you can browse in a split pane beside your shell or route requests through a remote server over SSH. It installs with curl or Homebrew on macOS and Linux (WSL on Windows) and ships a Claude Code plugin so a coding agent can open and inspect pages in the same terminal. MIT.",
+   "key_features": [
+    "Open source",
+    "Active",
+    "4,639 GitHub stars",
+    "Write code",
+    "Automate the browser"
+   ],
+   "pricing": "Open source",
+   "price_tag": "free",
+   "platforms": [
+    "Developer (API/SDK)",
+    "Self-host"
+   ],
+   "date_added": "2026-11-14",
+   "added": "2026-11-14",
+   "source": "GitHub",
+   "goals": [
+    "automation",
+    "research",
+    "support"
+   ],
+   "skill": "developer",
+   "weekly_pick": false,
+   "new": true,
+   "seed": false,
+   "new_this_week": true,
+   "repo": "zenbu-labs/terminal-browser",
+   "github_stars": 4639,
+   "open_source": true,
+   "license": "MIT",
+   "tags": [
+    "write code",
+    "automate the browser"
+   ],
+   "hybrid": false,
+   "logo": "https://agentscouthq.com/assets/logos/terminal-browser.png",
+   "page": "https://agentscouthq.com/tools/terminal-browser.html"
   }
  ]
 }

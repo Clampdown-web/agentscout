@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13",
+ "generated_at": "2026-11-14",
  "source": "lab-unthrottled-benchmark",
  "method": "cwv_seo_benchmark.measure_url",
  "throttle": "none",
@@ -10,11 +10,11 @@
   "ttfb_ms": 800
  },
  "scope": {
-  "artifact_date": "2026-11-13",
-  "artifact_tools": 5784
+  "artifact_date": "2026-11-14",
+  "artifact_tools": 5822
  },
  "subject": "current-live",
- "note": "https://agentscouthq.com measured 2026-11-13 before this push with headless Chrome, cache disabled, wait=load. This is production main before the morning push, not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
+ "note": "https://agentscouthq.com measured 2026-11-14 before this push with headless Chrome, cache disabled, wait=load. This is production main before the morning push, not the candidate tree. Not Lighthouse. Not field CWV. Not a human Turnstile solve.",
  "not_measured": [],
  "targets": [
   "https://agentscouthq.com/",
@@ -28,25 +28,25 @@
  "pages": [
   {
    "url": "https://agentscouthq.com/",
-   "lcp_ms": 248.0,
+   "lcp_ms": 496.0,
    "cls": 0.013085891186075777,
-   "ttfb_ms": 38.899999998509884,
+   "ttfb_ms": 143.20000000298023,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "https://agentscouthq.com/bot-store/",
-   "lcp_ms": 304.0,
+   "lcp_ms": 308.0,
    "cls": 0.0,
-   "ttfb_ms": 154.10000000149012,
+   "ttfb_ms": 167.3999999910593,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "https://agentscouthq.com/videos/",
-   "lcp_ms": 484.0,
+   "lcp_ms": 408.0,
    "cls": 0.0,
-   "ttfb_ms": 213.0,
+   "ttfb_ms": 149.40000000596046,
    "grade": "PASS",
    "wait": "load"
   },
@@ -54,31 +54,31 @@
    "url": "https://agentscouthq.com/bot-templates/",
    "lcp_ms": 456.0,
    "cls": 0.0,
-   "ttfb_ms": 156.90000000596046,
+   "ttfb_ms": 199.90000000596046,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "https://agentscouthq.com/mcp/",
-   "lcp_ms": 292.0,
+   "lcp_ms": 268.0,
    "cls": 0.0,
-   "ttfb_ms": 108.40000000596046,
+   "ttfb_ms": 115.70000000298023,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "https://agentscouthq.com/tools/noteboxd.html",
-   "lcp_ms": 344.0,
+   "lcp_ms": 292.0,
    "cls": 0.0006628126333061164,
-   "ttfb_ms": 104.0,
+   "ttfb_ms": 102.5,
    "grade": "PASS",
    "wait": "load"
   },
   {
    "url": "https://agentscouthq.com/submit.html?notrack=1",
-   "lcp_ms": 220.0,
+   "lcp_ms": 580.0,
    "cls": 0.0002475565256926459,
-   "ttfb_ms": 92.20000000298023,
+   "ttfb_ms": 114.6000000089407,
    "grade": "PASS",
    "wait": "load"
   }

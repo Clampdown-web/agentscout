@@ -236,8 +236,11 @@
 "mobile"
 ],
 "langgraph": [
-"workflow-automation",
-"agent-frameworks"
+"agent-memory",
+"planning-tasks",
+"multi-agent",
+"agent-frameworks",
+"video-editing"
 ],
 "crewai": [
 "voice-phone",
@@ -264,7 +267,10 @@
 "agent-frameworks"
 ],
 "smolagents": [
-"agent-frameworks"
+"voice-phone",
+"sandboxes",
+"agent-frameworks",
+"local-models"
 ],
 "llamaindex": [
 "vector-rag",
@@ -276,15 +282,25 @@
 "agent-frameworks"
 ],
 "gpt-researcher": [
-"research-agents"
+"parallel-orchestration",
+"planning-tasks",
+"vector-rag",
+"research-agents",
+"mcp-servers",
+"multi-agent",
+"local-models"
 ],
 "elicit": [
 "research-agents"
 ],
 "storm": [
-"research-agents"
+"vector-rag",
+"research-agents",
+"search-apis",
+"local-models"
 ],
 "firecrawl": [
+"vector-rag",
 "web-scraping"
 ],
 "exa": [
@@ -352,7 +368,13 @@
 "sandboxes"
 ],
 "composio": [
-"agent-auth"
+"codebase-context",
+"chat-app-agents",
+"email-agents",
+"sandboxes",
+"agent-auth",
+"agent-frameworks",
+"terminal-agents"
 ],
 "mem0": [
 "agent-memory",
@@ -3032,7 +3054,7 @@
 ],
 "langchain-rb": [
 "vector-rag",
-"agent-frameworks"
+"evals"
 ],
 "ollama": [
 "agent-frameworks",
@@ -3516,7 +3538,10 @@
 "support-agents"
 ],
 "browserable": [
+"web-scraping",
 "browser-automation",
+"observability",
+"evals",
 "agent-frameworks"
 ],
 "buildship": [
@@ -4510,6 +4535,7 @@
 ],
 "kling-ai": [
 "agent-auth",
+"mcp-gateways",
 "mcp-servers",
 "workflow-automation",
 "video-editing",
@@ -4577,6 +4603,10 @@
 "video"
 ],
 "cogvideox": [
+"fine-tuning",
+"agent-frameworks",
+"video-editing",
+"vocal-tuning",
 "video",
 "images-design"
 ],
@@ -20003,5 +20033,220 @@
 "text-to-sql",
 "images-design",
 "rules-config"
+],
+"diagnosed-by-ai": [
+"vector-rag",
+"stem-separation"
+],
+"priorivo": [
+"marketing-agents",
+"web-scraping",
+"computer-use",
+"mcp-servers",
+"workflow-automation",
+"mobile"
+],
+"qstudy-ai": [
+"planning-tasks",
+"vector-rag"
+],
+"agentpawn": [
+"research-agents"
+],
+"sandbase": [
+"voice-phone",
+"sandboxes",
+"workflow-automation",
+"video",
+"images-design",
+"rules-config"
+],
+"comvise-ai": [
+"mcp-servers",
+"color-upscaling",
+"video",
+"images-design"
+],
+"corint-ai": [
+"ai-sre",
+"agent-payments",
+"guardrails",
+"observability"
+],
+"movmix": [
+"marketing-agents",
+"color-upscaling",
+"video-editing",
+"video",
+"images-design",
+"mobile"
+],
+"lium": [
+"mcp-gateways",
+"agent-frameworks",
+"terminal-agents"
+],
+"wavexml": [
+"video-editing",
+"stem-separation",
+"rules-config"
+],
+"memeboing": [
+"video"
+],
+"agent-garrett": [
+"planning-tasks",
+"email-agents",
+"agent-auth",
+"observability"
+],
+"loraai-pro": [
+"browser-automation",
+"workflow-automation",
+"video-editing",
+"video",
+"images-design"
+],
+"pumli": [
+"voice-phone",
+"email-agents",
+"research-agents",
+"local-models",
+"video-editing",
+"video",
+"images-design"
+],
+"prizm": [
+"vector-rag"
+],
+"everygen-ai": [
+"marketing-agents",
+"visual-dubbing",
+"subtitles-transcripts",
+"video",
+"images-design"
+],
+"everygenai-photo-to-sketch": [],
+"zambo": [
+"mcp-servers",
+"ide-agents"
+],
+"ai-rap-video-cc": [
+"video-editing",
+"video"
+],
+"contracts-io": [
+"planning-tasks"
+],
+"askmed": [
+"research-agents",
+"mobile"
+],
+"pdfmathtranslate": [
+"vector-rag",
+"computer-use",
+"mcp-servers",
+"terminal-agents"
+],
+"finceptterminal": [
+"research-agents",
+"computer-use",
+"multi-agent",
+"terminal-agents",
+"video-editing"
+],
+"weclone": [
+"agent-memory",
+"web-scraping",
+"agent-auth",
+"observability",
+"personal-assistants"
+],
+"omniget": [
+"computer-use",
+"mcp-servers",
+"local-models",
+"terminal-agents"
+],
+"locally-uncensored": [
+"computer-use",
+"local-models",
+"terminal-agents",
+"video",
+"images-design"
+],
+"kicad-mcp-server": [
+"observability",
+"mcp-servers",
+"vfx-compositing",
+"images-design",
+"rules-config"
+],
+"mlx-serve": [
+"voice-phone",
+"local-models",
+"dialogue-cleanup",
+"video",
+"images-design"
+],
+"raea": [
+"computer-use",
+"local-models",
+"video",
+"games",
+"rules-config"
+],
+"qualitylayer": [
+"testing-qa",
+"planning-tasks",
+"browser-automation",
+"computer-use",
+"agent-auth",
+"workflow-automation",
+"terminal-agents",
+"ide-agents",
+"images-design"
+],
+"yomo": [
+"ai-sre",
+"agent-frameworks"
+],
+"vork": [
+"research-agents",
+"browser-automation",
+"evals",
+"vfx-compositing"
+],
+"wu": [
+"agent-memory",
+"ide-agents",
+"video-editing"
+],
+"loopforge": [
+"code-review",
+"sandboxes",
+"local-models",
+"terminal-agents"
+],
+"tavotto": [
+"research-agents",
+"video-editing"
+],
+"axiomcodegraph": [
+"codebase-context",
+"voice-phone",
+"local-models",
+"terminal-agents",
+"video-editing"
+],
+"nuphos": [
+"agent-payments",
+"voice-phone",
+"personal-assistants",
+"mobile"
+],
+"terminal-browser": [
+"browser-automation",
+"terminal-agents"
 ]
 }
