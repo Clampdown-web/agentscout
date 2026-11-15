@@ -149196,7 +149196,7 @@
   {
     "name": "Priorivo",
     "url": "https://getpriorivo.com/",
-    "description": "Priorivo is a read-only technical SEO and indexability checker that crawls up to 100 public pages of a site, opens ten selected pages on desktop and mobile, and returns the few issues worth fixing first, each with the exact URL, the HTML evidence it observed and a recommended next step. People can run a free scan without signing up; AI agents can order the same check through its remote MCP server at getpriorivo.com/mcp or a REST/n8n workflow for €9.90 per site, buyer-approved, and get the findings back as private JSON. Setup and a free preview are documented at getpriorivo.com/developers/agents.",
+    "description": "Priorivo is a read-only technical SEO and indexability checker that checks up to 100 public pages of a site, opens ten selected pages on desktop and mobile, and returns the few issues worth fixing first, each with the exact URL, the HTML evidence it observed and a recommended next step. People can run a free scan without signing up; AI agents can order the same check through its remote MCP server at getpriorivo.com/mcp or a REST/n8n workflow for €9.90 per site, buyer-approved, and get the findings back as private JSON. Setup and a free preview are documented at getpriorivo.com/developers/agents.",
     "category": "MCP servers",
     "pricing": "Freemium",
     "maturity": "Active",
@@ -149217,7 +149217,9 @@
     "submitted": "2026-11-14",
     "slug": "priorivo",
     "id": 5835,
-    "logo": "assets/logos/priorivo.png"
+    "logo": "assets/logos/priorivo.png",
+    "docs_url": "https://getpriorivo.com/developers/agents/?utm_source=agentscout&utm_medium=referral&utm_campaign=mcp_setup",
+    "docs_label": "MCP/API setup & free preview"
   },
   {
     "name": "Qstudy AI",
