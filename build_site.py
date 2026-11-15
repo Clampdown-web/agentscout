@@ -226,6 +226,8 @@ for x in t:
     host=re.sub(r"^https?://(www\.)?","",prim).split("/")[0]
     gh=build_extras.su(x.get("github","")) if x.get("github") else ""
     ghb=f' <a class="btn" href="{e(gh)}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>' if gh and gh!=prim else ""
+    # maker-requested setup/docs link (tools.json "docs_url" + optional "docs_label"); no button when empty
+    if x.get("docs_url"): ghb+=f' <a class="btn" href="{e(x["docs_url"])}" target="_blank" rel="noopener noreferrer">{e(x.get("docs_label") or "Docs")} ↗</a>'
     aud="builders" if x["audience"]=="builders" else "people who want a ready-to-use product"
     about=f'<h2 style="font-size:16px;margin-bottom:10px">About {e(x["name"])}</h2><p style="margin:0 0 28px">{e(x["name"])} is listed in our {e(x["category"])} category and is aimed at {aud}. {e(x["description"])} Pricing, as the maker states it: {e((x.get("pricing_detail") or x["pricing"]))}. Maturity: {e(x["maturity"])}. We last checked the official link on {e(x["verified"])}.</p>'
     maker_cta='<p class="quiet-feature"><a href="../sponsor.html">Get featured</a></p>'
