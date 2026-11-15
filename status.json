@@ -1,17 +1,17 @@
 {
  "catalog": {
-  "mcp_servers": 3188,
-  "live": 3176,
+  "mcp_servers": 3190,
+  "live": 3175,
   "down": 12,
-  "checked": 3188,
-  "not_yet_checked": 0,
-  "directory_last_checked": "2026-11-14",
+  "checked": 3187,
+  "not_yet_checked": 3,
+  "directory_last_checked": "2026-11-15",
   "mcp_last_checked": "2026-11-14 07:26",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-14",
-    "note": "3,176 of 3,188 checked servers live, 12 down",
+    "note": "3,175 of 3,187 checked servers live, 12 down, +3 listed, not yet checked",
     "time": "07:26"
    },
    {
@@ -2638,21 +2638,6 @@
    ]
   },
   {
-   "slug": "aisub",
-   "name": "AISub",
-   "page": "https://agentscouthq.com/tools/aisub.html",
-   "status": "live",
-   "last_checked": "2026-11-14 07:26",
-   "detail": "url 200, github 200",
-   "history": [
-    {
-     "date": "2026-11-14",
-     "note": "live (url 200, github 200)",
-     "time": "07:26"
-    }
-   ]
-  },
-  {
    "slug": "aitho",
    "name": "Aitho",
    "page": "https://agentscouthq.com/tools/aitho.html",
@@ -3701,6 +3686,13 @@
      "time": "07:26"
     }
    ]
+  },
+  {
+   "slug": "api-indonesia",
+   "name": "API Indonesia",
+   "page": "https://agentscouthq.com/tools/api-indonesia.html",
+   "status": "not yet checked",
+   "unverified": true
   },
   {
    "slug": "apiant",
@@ -38676,6 +38668,13 @@
    ]
   },
   {
+   "slug": "plushsource",
+   "name": "PlushSource",
+   "page": "https://agentscouthq.com/tools/plushsource.html",
+   "status": "not yet checked",
+   "unverified": true
+  },
+  {
    "slug": "plyto",
    "name": "Plyto",
    "page": "https://agentscouthq.com/tools/plyto.html",
@@ -44952,6 +44951,13 @@
      "time": "07:26"
     }
    ]
+  },
+  {
+   "slug": "speedbot",
+   "name": "Speedbot",
+   "page": "https://agentscouthq.com/tools/speedbot.html",
+   "status": "not yet checked",
+   "unverified": true
   },
   {
    "slug": "spicy-api",

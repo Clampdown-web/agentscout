@@ -33348,5 +33348,68 @@
       ],
       "docs": "https://folklore.helena.bio/integrations/mcp"
     }
+  },
+  "openmausbot": {
+    "kind": "lite",
+    "src_kind": "README + website",
+    "cite": true,
+    "updated": "2026-11-15",
+    "sources": [
+      "https://mausbot.com/",
+      "https://github.com/milind-soni/OpenMausBot",
+      "https://github.com/milind-soni/OpenMausBot/blob/main/README.md"
+    ],
+    "long": [
+      "MausBot, published on GitHub as OpenMausBot by Milind Soni and contributors, is a desktop chat app where each contact is an AI bot with its own job. You create a bot, give it a name, pick the engine and model it thinks with, and talk to it like a person in a messaging app. The bots run in parallel on your machine and come back to you when something needs a decision. The project calls itself an open-source alternative to Grok Bot and similar hosted assistants, and states it is independent and not affiliated with xAI. The repository had about 23,100 GitHub stars when we checked on Nov 15, 2026.",
+      "Under the hood, one local harness server on 127.0.0.1 owns every agent process. It drives the claude, codex and grok CLIs you already have installed and signed in, so bots use your own subscriptions or API keys with no proxy in between, and the model picker also lists engines such as Cursor, Kimi, Qwen, OpenCode, Hermes, Pi, Antigravity and Droid. Transcripts, keys and events stay in ~/.openmausbot on your disk. Bots can get a cloud desktop with a live screen preview (via boat.dev, using the Cua driver) or work on the local computer, use Gmail, Slack, GitHub, Notion, Linear and other apps through Composio, and run on schedules or webhooks set up from one sentence. Supported actions show an approval request in chat first, though the project notes that approval coverage depends on the engine and tool.",
+      "The desktop app is free under Apache 2.0 for macOS (Apple silicon and Intel), Windows x64 and Ubuntu 24.04 x64 (beta), in 10 languages, with Android and iOS companion apps. It also ships a stdio MCP server so Claude Desktop or Cursor can manage bots, and an openmausbot command for scripts and CI. MausBot Cloud is optional: Starter at $15 a month, Pro at $49 and Max at $99 give the bots an always-on cloud machine with monthly computer-hour and voice allowances, and a Team plan lets up to 5 people share bots. Model usage is billed separately by your provider. The README calls the project early: hosted and mobile connectivity are still being built, and webhook triggers use a local receiver."
+    ],
+    "who": "People and small teams who already pay for Claude, ChatGPT or Grok and want several always-available AI helpers (inbox triage, sales follow-ups, bookkeeping reminders, bug fixing, research) in one local app, without handing their data and logins to a hosted service.",
+    "features": [
+      "A team of bots in a chat app: each bot has its own name, job, engine and model, and you can switch the model mid-conversation",
+      "Runs the claude, codex and grok CLIs on your machine with your own subscriptions or API keys; more engines through ACP or OpenAI-compatible endpoints",
+      "One local harness on 127.0.0.1; transcripts, keys and events stored in ~/.openmausbot",
+      "Per-bot computer use: a cloud desktop with live preview, or the local machine",
+      "Gmail, Slack, GitHub, Notion, Linear and more through Composio; automations on schedules or webhooks",
+      "Approval requests in chat for supported actions; voice calls with your own OpenAI key",
+      "Stdio MCP server for Claude Desktop and Cursor, plus an openmausbot CLI for scripts and CI",
+      "macOS, Windows and Ubuntu desktop builds; Android and iOS companion apps; 10 languages"
+    ],
+    "pros": [
+      "Free and Apache 2.0, with no proxy between you and your model provider",
+      "Uses agent CLIs and subscriptions you already have",
+      "Data stays on your disk by default"
+    ],
+    "cons": [
+      "Early project: hosted and mobile connectivity still being built",
+      "You need at least one agent CLI or API key, and provider fees apply",
+      "Windows installer is not code-signed yet; Ubuntu build is beta"
+    ],
+    "setup": [
+      "Download the desktop app for macOS, Windows or Ubuntu from mausbot.com or the GitHub releases page",
+      "Install and sign in to one agent CLI (Claude Code, Codex or Grok), then use the onboarding engine check",
+      "Create a bot (New bot), pick its engine and model, and send it a small first task"
+    ],
+    "facts": {
+      "repo": "https://github.com/milind-soni/OpenMausBot",
+      "checked": "2026-11-15",
+      "stars": 23098,
+      "license": "Apache-2.0"
+    },
+    "faq": [
+      [
+        "Is MausBot free?",
+        "Yes. The desktop and companion apps are free and open source under Apache 2.0. You pay your own model provider, and MausBot Cloud hosting ($15, $49 or $99 a month) is optional."
+      ],
+      [
+        "Which AI models does MausBot use?",
+        "Bots run on agent CLIs installed on your computer, such as Claude Code (claude), Codex (codex) and Grok (grok), with your own logins or API keys. Other engines such as Kimi, Qwen and OpenCode can be added."
+      ],
+      [
+        "Where is my data stored?",
+        "Transcripts, keys and events are stored locally in ~/.openmausbot. Nothing leaves your machine unless a bot sends it through a connected app or provider."
+      ]
+    ],
+    "pricing": "Free desktop app (Apache 2.0). Optional MausBot Cloud: Starter $15/month, Pro $49/month, Max $99/month, and a Team plan for up to 5 people. Model usage is billed by your own provider."
   }
 }
