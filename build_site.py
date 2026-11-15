@@ -46,6 +46,8 @@ ART_XLINK_UC={"canva-mcp":["design graphics","social posts & ads"],"figma-mcp-se
 APP_CAT={"krea":"MultimediaApplication"}  # Oct 23 PT: per-tool JSON-LD applicationCategory overrides
 LD_KW={"krea":["video generation","text to video","image to video"]}  # Oct 23 PT: extra JSON-LD keywords (Krea video refresh)
 UC_SET={"disconfirmai":["research the web"],  # Nov 14 2026: maker correction. "account" in the approved description matched sales & support; this is a research workspace, not sales or support.
+"priorivo":["research the web","connect tools via MCP"],  # Nov 15 2026: maker correction. Read-only technical SEO/indexability checks; "control a computer" was a keyword guess.
+"morphic":["business agents","automate workflows"],  # Nov 15 2026: maker correction. AI assistant for Airbnb hosts, not a helpdesk/chat app.
 "kling-ai":["video generation","connect tools via MCP"],  # Nov 13 2026: listing-edit. Hosted MCP for image/video workflows; MEDIA_RULES would drop the MCP tag and leave only the category fallback.
 "1zheai":["write code","automate workflows","generate images"],  # Nov 9 2026: maker correction. "account" in the approved description matched sales & support; this is a developer API for coding assistants, text workflows and image apps.
 "botsee":["automate workflows","connect tools via MCP"],  # Nov 5 2026: maker correction. "share of voice" (brand GEO) matched the voice rule; BotSee measures AI visibility, it does not handle phone or voice calls. tasks_exclude keeps it off the voice-agent task.
@@ -159,7 +161,7 @@ from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 # Slugs that must not follow the display name (Nov 8 2026): MagenticLite keeps its indexed magentic-ui URL (PR #70 renamed the tool);
 # names with accents keep a readable ASCII slug.
-SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots","Sandstorm (formerly forkd)":"forkd","MachGTM":"mach"}
+SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots","Sandstorm (formerly forkd)":"forkd","MachGTM":"mach","MausBot (OpenMausBot)":"openmausbot"}  # Nov 15 2026: keep /tools/openmausbot.html after the MausBot rename
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"
