@@ -195,6 +195,7 @@ def run(t):
     for f in sorted(glob.glob("s/*.html")): jobs.append(("search",f))
     for f in sorted(glob.glob("mcp/*.html")): jobs.append(("best",f))
     for f in sorted(glob.glob("for/*.html")): jobs.append(("role",f))
+    for f in sorted(glob.glob("guides/*.html")): jobs.append(("guide",f))
     for f in ["free-tools.html"]+sorted(glob.glob("free-tools/*.html")): jobs.append(("free",f))
     for f in sorted(glob.glob("news/**/*.html",recursive=True)): jobs.append(("news",f))
     keep=set(); c={"pages":0,"written":0,"same":0,"skipped":0}
@@ -231,7 +232,7 @@ def run(t):
         elif kind=="free":
             title=h1; label="Free tool"; stat="Free · runs in your browser · no sign-up"
         else:
-            title=h1; label={"best":"Best-of list","search":"Search","role":"By role"}[kind]
+            title=h1; label={"best":"Best-of list","search":"Search","role":"By role","guide":"Guide"}[kind]
             if f.endswith("-alternatives.html"): label="Alternatives"
             k=n or _num(d); stat=(f"{int(str(k).replace(',','')):,} tools" if k else None)
             if stat and kind=="best" and not f.endswith("-alternatives.html") and not f.endswith("index.html"): stat=f"Top {k} · ranking method stated"
@@ -251,7 +252,7 @@ def run(t):
                 label="MCP servers"; k=n or _num(d); sub=(f"{k} MCP servers, ranked by GitHub stars and activity" if k and not f.endswith("index.html") else "Ranked by GitHub stars and activity, sorted by task")
                 cards=[dict(name=bys[x]["name"],tag=("Top pick" if f.endswith("index.html") else f"#{i+1} by GitHub stars"),logo=bys[x].get("logo")) for i,x in enumerate(sl)]
             title=re.sub(r"\s*\(2026\)$","",title); neon=(label,title,sub,cards,foot)
-        if kind in ("category","best","search","role","free") and not sub and d:  # one line of real context from the page description
+        if kind in ("category","best","search","role","free","guide") and not sub and d:  # one line of real context from the page description
             m=re.search(r"including ([^.]+?)(?:\.|$)",d)
             sub=("Including "+m.group(1).strip()) if m and not f.endswith("index.html") else re.split(r"(?<=[.!?])\s",d)[0]
         if kind in ("best","search","role") and not stat:

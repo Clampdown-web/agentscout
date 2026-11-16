@@ -7,7 +7,7 @@ import glob,re,json,html
 B="https://agentscouthq.com/"
 def _groups():
     return (sorted(glob.glob("tools/*.html"))+sorted(glob.glob("best/*.html"))+sorted(glob.glob("s/*.html"))+sorted(glob.glob("for/*.html"))+sorted(glob.glob("mcp/*.html"))
-        +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+sorted(glob.glob("tasks/*.html"))+sorted(glob.glob("compare/*.html"))+sorted(glob.glob("news/**/*.html",recursive=True))+["index.html"])
+        +["free-tools.html"]+sorted(f for f in glob.glob("free-tools/*.html") if not f.endswith("index.html"))+sorted(glob.glob("categories/*.html"))+sorted(glob.glob("tasks/*.html"))+sorted(glob.glob("compare/*.html"))+sorted(glob.glob("guides/*.html"))+sorted(glob.glob("news/**/*.html",recursive=True))+["index.html"])
 def _attr(s,pat):
     m=re.search(pat,s); return m.group(1) if m else None
 def _settitle(s,new):
@@ -143,6 +143,6 @@ def llms_extra(c=None):
             if h: out.append(f"- [{h.replace(strip,'').strip()}]({B}{f})")
         return [f"## {name}",""]+out+[""] if out else []
     best=sorted(glob.glob("best/*.html")); alt=[f for f in best if f.endswith("-alternatives.html")]
-    S=["<!-- pages:start -->",""]+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular lists",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+_bt_sec()+["<!-- pages:end -->"]
+    S=["<!-- pages:start -->",""]+sec("How-to guides",sorted(glob.glob("guides/*.html")))+sec("Best-of lists",[f for f in best if f not in alt]," (2026)")+sec("Alternatives pages",alt," (2026)")+sec("Popular lists",sorted(glob.glob("s/*.html"))," (2026)")+sec("AI agents by role",sorted(glob.glob("for/*.html"))," (2026)")+sec("AI agents by task",sorted(glob.glob("tasks/*.html")))+sec("Free tools",sorted(glob.glob("free-tools/*.html")))+_bt_sec()+["<!-- pages:end -->"]
     open("llms.txt","w").write(L+"\n"+"\n".join(S)+"\n")
     if c is not None: c["llms_pages"]=sum(1 for z in S if z.startswith("- ["))

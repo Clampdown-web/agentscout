@@ -190,6 +190,11 @@ def build(t):
             fa=fa[:1]+[(k,va) for k,va,_ in ex]+fa[1:]; fb=fb[:1]+[(k,vb) for k,_,vb in ex]+fb[1:]
             rel=f'<p style="margin-top:20px">Related: <a href="../tools/{a}.html">{e(A["name"])}</a> · <a href="../tools/{b}.html">{e(Bt["name"])}</a> · '+" · ".join(f'<a href="../categories/{catslug(c)}.html">More {e(c)} tools</a>' for c in dict.fromkeys([A["category"],Bt["category"]]))+' · <a href="../categories/mcp-servers.html">MCP servers</a></p>'
             faqh=f'<h2 style="font-size:18px;margin:32px 0 8px">Our recommendation</h2><p style="margin:0 0 8px"><b>Choose <a href="../tools/{a}.html">{e(A["name"])}</a> if</b> {e(N["choose"][0])}</p><p style="margin:0"><b>Choose <a href="../tools/{b}.html">{e(Bt["name"])}</a> if</b> {e(N["choose"][1])}</p>'+faqh
+        guide=""
+        if s in ("n8n-vs-make","n8n-vs-zapier-agents"):
+            guide=('<p>Approval gates and long waits are where these two split from the rest of the field. '
+                   '<a href="../guides/how-to-automate-workflows-with-ai-agents.html">How to automate workflows with AI agents</a> '
+                   'maps that against Zapier, Make, code frameworks, and durable engines.</p>')
         rows="".join(f"<tr><th>{e(k)}</th><td>{e(va)}</td><td>{e(vb)}</td></tr>" for (k,va),(_,vb) in zip(fa,fb))
         shared=sorted(set(A["use_cases"])&set(Bt["use_cases"]))
         sh=f"Both are listed for: {', '.join(shared)}." if shared else "They're listed under different use cases, so check which fits your job."
@@ -199,7 +204,7 @@ def build(t):
 <div class="tablewrap"><table class="cmp"><thead><tr><th><span class="sr">Feature</span></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a></th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
 <tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td></tr></tbody></table></div>
 <p class="disclose">{"We don't run benchmarks. The recommendation below is based on the listing facts in this table, not on testing." if N else "We don't benchmark tools or rank one above the other here."} Check each official site for current pricing and features before you choose.</p>
-{faqh}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
+{faqh}{guide}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
         ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
             "about":[{"@type":"SoftwareApplication","name":x["name"],"url":x["url"],"applicationCategory":x["category"]} for x in (A,Bt)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Compare","item":B+"compare/"},{"@type":"ListItem","position":3,"name":f"{A['name']} vs {Bt['name']}","item":canon}]}]}
@@ -239,6 +244,7 @@ def build(t):
     import os as _os2
     import glob as _g; urls+=[B+"bot-templates/"]+[B+"bot-templates/"+_os2.path.basename(x) for x in sorted(_g.glob("bot-templates/*.html")) if not x.endswith("/index.html")]  # Bot templates (launched Oct 19 2026 PT)
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
+    import build_guides; urls+=build_guides.pages()
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B,B+"feed.xml",B+"new.html",B+"quiz.html",B+"llms.txt",B+"llms-full.txt",B+"generate.html",B+"sponsor.html",B+"how-it-started.html",B+"mcp-test-report.html",B+"ai-visibility-check.html",B+"launches/"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}

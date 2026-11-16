@@ -331,8 +331,15 @@ def search_pages(t,m,asof):
         _bar=_attr=""
         if _mcp_list:
             _hm=X._mrr(); _bar=_hm.responds_bar()+_hm.responds_script("../"); _attr=" data-responds-list"
+        gnote=""
+        if s=="free-ai-workflow-automation-tools":
+            gnote=('<p>A free plan and a fit are different questions. <a href="../guides/how-to-automate-workflows-with-ai-agents.html">How to automate workflows with AI agents</a> '
+                   'maps which tool type fits, including the ones you can run without a hosted meter.</p>')
+        elif s=="open-source-workflow-automation-tools":
+            gnote=('<p>Self-hosting is one part of the choice. <a href="../guides/how-to-automate-workflows-with-ai-agents.html">How to automate workflows with AI agents</a> '
+                   'shows which engines you can run yourself, and which approval and pricing models stay on a hosted plan.</p>')
         body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Popular lists</a> / {e(h)}</div>{_sec}<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
-              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} {"Here are the top "+str(len(items))+" of "+str(n) if n>len(items) else "Here are all "+str(n)} from the AgentScout directory.</p>{facts}'
+              f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} {"Here are the top "+str(len(items))+" of "+str(n) if n>len(items) else "Here are all "+str(n)} from the AgentScout directory.</p>{gnote}{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we picked and ranked:</strong> tools are matched by category, the pricing each maker states and what each tool says it does. They are ranked by GitHub stars as recorded on each listing (link checks {asof}); tools without a tracked repo follow, by listing maturity. No paid placements.</p>'
               f'{_bar}<ol class="grid"{_attr} style="padding:0;margin:0">{"".join(BB.item(i+1,x) for i,x in enumerate(items))}</ol>'
               f'{_cta}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}'
