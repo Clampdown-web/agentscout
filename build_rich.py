@@ -188,6 +188,7 @@ def lite(out,x,t,catslug,prim,B,r):
     faq=_dedupe(faq)
     sec=(f'{H2}What is {e(n)}?</h2>'+"".join(f'<p style="margin:0 0 12px">{e(p)}</p>' for p in longs)
       +(f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: '+", ".join(f'<a href="{e(u)}" target="_blank" rel="noopener noreferrer">{e(re.sub(r"^https?://(www\.)?","",u).rstrip("/")[:70])}</a>' for u in r["sources"])+f' and our directory listing, checked {e(r.get("updated",""))}.</p>' if r.get("cite") else f'<p class="muted" style="margin:0 0 28px;overflow-wrap:anywhere">Sources: the official {"README" if r.get("src_kind")=="README" else "site"} and our directory listing, checked {e(r.get("updated",""))}. Official site: <a href="{e(prim)}" target="_blank" rel="noopener noreferrer">{e(hst)}</a>.</p>')
+      +(('<p style="margin:-12px 0 28px">If you are choosing n8n against Zapier, Make, or a code runtime, read <a href="../guides/how-to-automate-workflows-with-ai-agents.html">how to automate workflows with AI agents</a>.</p>') if x["slug"]=="n8n" else "")
       +f'{H2}Who is {e(n)} for?</h2><p style="margin:0 0 28px">{e(r["who"])}</p>'
       +(f'{H2}Pros and cons</h2>'
         +(f'<p style="margin:0 0 6px"><strong>Pros</strong></p><ul style="margin:0 0 12px;padding-left:20px;line-height:1.7">{"".join(f"<li>{e(s)}</li>" for s in r["pros"])}</ul>' if r.get("pros") else "")
