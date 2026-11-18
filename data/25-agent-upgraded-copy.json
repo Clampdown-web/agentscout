@@ -236,7 +236,7 @@
         {
           "id": "tuesday-hook-storyboard",
           "cron": "0 11 * * 2",
-          "title": "Tuesday 3-second hook storyboard",
+          "title": "Wednesday 3-second hook storyboard",
           "prompt": "Audit the opening 3 seconds of upcoming recordings for {{YOUR_COMPANY}} and draft 9:16 cut lists. Draft only."
         },
         {
@@ -736,7 +736,7 @@
         {
           "id": "tuesday-scorecard-calibration",
           "cron": "0 10 * * 2",
-          "title": "Tuesday rubric & scorecard audit",
+          "title": "Wednesday rubric & scorecard audit",
           "prompt": "Run scripts/score_candidate_rubric.py on new applicants for {{YOUR_COMPANY}} and flag any protected-trait notes for human review."
         },
         {

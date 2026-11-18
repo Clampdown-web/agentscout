@@ -741,7 +741,7 @@ def build_sponsor_placements_infographic():
     ]
 
     zones = [
-        (f"ZONE 1 · SITEWIDE TOP SPONSOR BAR ({LIVE_PAGE_COUNT:,}+ PAGES) + #1 NEWSLETTER BANNER", "Exclusive 1 slot/wk · Seen on every tool, comparison & guide page + Tuesday Beehiiv top slot", (236, 72, 153), "$99/wk VIP"),
+        (f"ZONE 1 · SITEWIDE TOP SPONSOR BAR ({LIVE_PAGE_COUNT:,}+ PAGES) + #1 NEWSLETTER BANNER", "Exclusive 1 slot/wk · Seen on every tool, comparison & guide page + Wednesday Beehiiv top slot", (236, 72, 153), "$99/wk VIP"),
         ("ZONE 2 · 30-DAY #1 CATEGORY PIN + PERMANENT /best/ & /compare/ TABLES", "Pinned #1 in your category for 30 full days + permanent comparison & alternatives rows + priority MCP weight", (99, 102, 241), "$49 ★ MOST POPULAR"),
         ("ZONE 3 · SAME-DAY FAST-TRACK + 7-DAY /new.html LAUNCH BOOST + X POST", "Skip the 5-day review queue · Full FAQPage & pros/cons enrichment · 7-day New & Featured pin", (14, 165, 233), "$15 FAST-TRACK"),
         ("ZONE 4 · PERMANENT INDEXED TOOL PAGE + MCP SERVER + LLMS.TXT", f"100% free forever · Indexed across {LIVE_TOOL_COUNT:,}+ tools & com.agentscouthq/directory MCP server", (20, 184, 166), "$0 FREE FOREVER"),
@@ -1740,12 +1740,12 @@ def scene_radar(d, F, t, ch, lp, box, accent):
         if on:
             d.text((x0 + 250, yy + 14), "Cloud-only rows hidden. Metrics still link-checked.", font=F["r12"], fill=(186, 196, 214))
     else:
-        yy = _term(d, F, x0, y0, x1, y1, "Tuesday AgentScout radar digest", accent)
+        yy = _term(d, F, x0, y0, x1, y1, "Wednesday AgentScout radar digest", accent)
         d.text((x0 + 18, yy + 16), "Email", font=F["b12"], fill=(148, 163, 184))
         _panel(d, (x0 + 18, yy + 36, x1 - 18, yy + 72), (14, 20, 34), accent, 2, 8)
         d.text((x0 + 30, yy + 46), _typed("you@studio.dev", min(1, lp / 0.4)) + _caret(t, lp > 0.4), font=F["m13"], fill=(255, 255, 255))
         joined = lp > 0.62
-        _button(d, F, x0 + 18, yy + 90, 200, 34, "SUBSCRIBED" if joined else "GET TUESDAY RADAR", (16, 185, 129) if joined else accent, (6, 16, 14))
+        _button(d, F, x0 + 18, yy + 90, 200, 34, "SUBSCRIBED" if joined else "GET WEDNESDAY RADAR", (16, 185, 129) if joined else accent, (6, 16, 14))
         if joined:
             d.text((x0 + 18, yy + 140), "6-block visual radar + 50-tool cheat sheet queued.", font=F["b14"], fill=(52, 211, 153))
 
@@ -1878,12 +1878,12 @@ WALKTHROUGHS = [
         "details": [
             ("Sort /leaderboard/ by", "7-day star growth"),
             ("Filter runs_locally", "and recheck the metrics"),
-            ("Queue Tuesday's", "6-block radar digest"),
+            ("Queue Wednesday's", "6-block radar digest"),
         ],
         "actions": [
             "Opening /leaderboard/ and sorting by 7-day GitHub star growth",
             "Filtering runs_locally = offline and checking verified metrics",
-            "Subscribing to the Tuesday AgentScout radar digest",
+            "Subscribing to the Wednesday AgentScout radar digest",
         ],
         "scene": scene_radar,
     },

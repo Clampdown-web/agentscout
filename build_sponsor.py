@@ -144,7 +144,7 @@ def packages_grid(t, m=None, on_submit=False):
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Everything in $15 Fast-Track, upgraded to 30 days:</b> Full <b>30-day</b> top category pin + homepage Featured Makers strip</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> placement:</b> Permanent inclusion in our high-intent <a href="best/index.html">/best/*-alternatives</a> and <a href="compare/index.html">/compare/</a> comparison tables</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Priority AI &amp; MCP weight:</b> Priority recommendation weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
-          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined followers) + Tuesday newsletter highlight</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined followers) + Wednesday newsletter highlight</span></li>
         </ul>
       </div>
       <div class="pkg-foot">
@@ -165,7 +165,7 @@ def packages_grid(t, m=None, on_submit=False):
         <ul class="pkg-list">
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Everything in $49 Category Pin included:</b> Full 30-day category pin + permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>7-day Sitewide Top Sponsor Bar:</b> Exclusive banner across all <b data-live-pages>{fmt(__import__("build_counts").pitch_pages_floor(m["indexed_pages_count"]))}+</b> pages + homepage <code style="font-size:12.5px">#makers</code> showcase</span></li>
-          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Tuesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Wednesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>2x X Spotlight Threads:</b> Launch-day + weekend spotlight across <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined reach)</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span>{SPONSOR_INCLUDED_LINE}</span></li>
         </ul>
@@ -334,7 +334,7 @@ def build(t):
                     "price": "99",
                     "priceCurrency": "USD",
                     "url": STRIPE_99,
-                    "description": f"Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {fmt(pages)}+ pages, homepage #makers showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. {SPONSOR_INCLUDED_LINE}"
+                    "description": f"Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {fmt(pages)}+ pages, homepage #makers showcase, and the top Sponsored by slot in Wednesday's AgentScout Weekly newsletter. {SPONSOR_INCLUDED_LINE}"
                 }
             ]
         }

@@ -14,7 +14,7 @@
     {
       "id": "tuesday-hook-storyboard",
       "cron": "0 11 * * 2",
-      "title": "Tuesday 3-second hook storyboard",
+      "title": "Wednesday 3-second hook storyboard",
       "prompt": "Audit the opening 3 seconds of upcoming recordings for {{YOUR_COMPANY}} and draft 9:16 cut lists. Draft only. Follow skills/shortform-cut-captions/SKILL.md. Draft only.",
       "requires_approval": true,
       "script": "scripts/format_captions_and_cuts.py"
