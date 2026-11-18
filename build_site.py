@@ -335,6 +335,7 @@ import build_sponsor
 # build so sitewide passes (asset versions, nav, footer, live stats) never touch the hidden page.
 build_sponsor.page(t)  # public sponsor & packages page (sponsor.html)
 import build_bot_templates; build_bot_templates.run()  # extra Bot templates from data/bot-templates-extra.json (Oct 21 2026)
+import build_prompts; build_prompts.run()  # /prompts/ library from data/prompts.json (Nov 18 2026)
 import build_tasks
 build_tasks.sitewide(t)
 import build_sections
