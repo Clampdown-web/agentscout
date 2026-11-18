@@ -33411,5 +33411,243 @@
       ]
     ],
     "pricing": "Free desktop app (Apache 2.0). Optional MausBot Cloud: Starter $15/month, Pro $49/month, Max $99/month, and a Team plan for up to 5 people. Model usage is billed by your own provider."
+  },
+  "contextbolt-seo": {
+    "kind": "lite",
+    "src_kind": "site",
+    "updated": "2026-11-18",
+    "cite": true,
+    "sources": [
+      "https://contextbolt.com/seo/",
+      "https://contextbolt.com/seo/how-it-works/",
+      "https://contextbolt.com/docs/seo/",
+      "https://contextbolt.com/docs/seo/faq/"
+    ],
+    "long": [
+      "ContextBolt SEO is a hosted MCP server that gives an AI agent live SEO data. You add https://seo.contextbolt.app/mcp to Claude Code, Claude Desktop, Cursor, Codex or another MCP client, sign in with your account email, the emailed code and an approval step, and then ask SEO questions in plain English. The agent picks the tool, ContextBolt fetches the data, and the answer comes back in the chat, so the research and the fix to your pages can happen in the same conversation.",
+      "The tools cover keyword research and difficulty, Google's live top 10, domain and competitor analysis, backlinks and backlink gaps, on-page site audits, and AI visibility: how often ChatGPT and Google's AI answers name you and what they cite. You can connect your own Google Search Console read-only for no credits. Every lookup is saved to a private SEO Dashboard and remembered between sessions, so asking about a keyword again leads with what changed. Keyword and backlink estimates come from DataForSEO, which ContextBolt describes as decision-useful rather than an exact match for Ahrefs or Semrush numbers.",
+      "Pricing is one flat plan: $35 a month with 1,000 credits, after a 7-day free trial that needs a card and includes 100 credits. Most research tools cost 1 credit, backlink tools 3, AI-visibility checks 8 and site audits 1 per audited page. Search Console, memory, the dashboard and credit checks are free, and optional top-up packs ($9 for 250 credits, $19 for 600, $39 for 1,500) never expire. Billing runs through Lemon Squeezy and you can cancel any time."
+    ],
+    "who": "Founders, marketers and indie hackers who already work inside Claude, Cursor or Codex, run their own site and do their own SEO, and want real keyword, backlink and AI-answer data without paying for a full Ahrefs or Semrush seat.",
+    "features": [
+      "Keyword research, keyword difficulty, AI keyword volume and Google top-10 SERP lookups (1 credit each)",
+      "Domain overview, ranked keywords and competitor keywords for any site",
+      "Backlink overview, referring domains and backlink gap against rivals (3 credits each)",
+      "Site audit and single-page audit: titles, meta descriptions, H1s, thin content, broken pages, canonicals, HTTPS and alt text, worst first (1 credit per page, up to 50 per run)",
+      "AI visibility: mentions in ChatGPT and Google AI, share of voice against competitors, and the answer ChatGPT, Gemini, Claude or Perplexity gives with its citations",
+      "Free read-only Google Search Console connection, cross-session memory, a saved SEO plan and a private SEO Dashboard"
+    ],
+    "pros": [
+      "Works inside the agent you already use, so an agent with your files can fix what the audit flags and a second audit confirms it.",
+      "Your own Search Console data, memory and the dashboard cost no credits.",
+      "One flat $35 plan with no seats or tiers; top-up packs never expire."
+    ],
+    "cons": [
+      "No free plan for the MCP tools: the 7-day trial needs a card and comes with 100 credits.",
+      "Data comes from DataForSEO, so numbers will not match what Ahrefs or Semrush show.",
+      "AI-visibility work is credit-heavy: 8 credits a check, and the full report is 50 credits plus 8 per competitor.",
+      "The audit checks mechanical and technical issues; it does not judge content quality on its own."
+    ],
+    "setup": [
+      "Start the 7-day trial or a subscription on contextbolt.com/seo/. The setup guide and your dashboard link arrive by email.",
+      "Claude Code: claude mcp add --transport http contextbolt-seo https://seo.contextbolt.app/mcp",
+      "Codex: codex mcp add contextbolt-seo --url https://seo.contextbolt.app/mcp, then codex mcp login contextbolt-seo.",
+      "Cursor: add \"contextbolt-seo\": {\"url\": \"https://seo.contextbolt.app/mcp\"} under mcpServers in mcp.json, then Authenticate. Claude Desktop: Customize, Connectors, Add custom connector.",
+      "Sign in with your account email, enter the emailed code, approve, then ask \"Where do I start?\""
+    ],
+    "mcp": {
+      "endpoint": "https://seo.contextbolt.app/mcp",
+      "transport": "Streamable HTTP (remote, hosted)",
+      "auth": "OAuth with your trial or subscription email, an emailed code and approval; a private personal URL for clients without OAuth",
+      "tools": [
+        [
+          "keyword_research",
+          "Related keywords with volume, difficulty and intent. 1 credit."
+        ],
+        [
+          "keyword_difficulty",
+          "How hard one keyword is to rank for. 1 credit."
+        ],
+        [
+          "serp_overview",
+          "Who ranks in Google's top 10. 1 credit."
+        ],
+        [
+          "domain_overview",
+          "A domain's traffic, keyword count and authority. 1 credit."
+        ],
+        [
+          "ranked_keywords",
+          "What a domain already ranks for. 1 credit."
+        ],
+        [
+          "competitor_keywords",
+          "The domains competing for your keywords. 1 credit."
+        ],
+        [
+          "ai_keyword_volume",
+          "How often a term is asked in AI rather than Google. 1 credit."
+        ],
+        [
+          "site_audit",
+          "On-page checks across your key pages, worst first; reruns lead with what changed. 1 credit per page."
+        ],
+        [
+          "page_audit",
+          "The same checks for one URL. 1 credit."
+        ],
+        [
+          "backlink_overview",
+          "Authority, total backlinks and spam score. 3 credits."
+        ],
+        [
+          "referring_domains",
+          "Sites linking to a domain, ranked. 3 credits."
+        ],
+        [
+          "backlink_gap",
+          "Links your rivals have and you don't. 3 credits."
+        ],
+        [
+          "ai_visibility",
+          "How often ChatGPT and Google AI mention you. 8 credits."
+        ],
+        [
+          "ai_share_of_voice",
+          "Your share of AI answers against competitors. 8 credits."
+        ],
+        [
+          "ai_answer",
+          "The answer ChatGPT, Gemini, Claude or Perplexity gives, and what it cited. 2 credits."
+        ],
+        [
+          "ai_visibility_report",
+          "Full AI visibility sweep with 12 months of history. 50 credits plus 8 per competitor."
+        ],
+        [
+          "seo_brief / save_plan / get_board_link / check_credits",
+          "Your plan, dashboard link and credit balance, plus Google Search Console reads. Free."
+        ]
+      ]
+    },
+    "pricing_v": {
+      "free": false,
+      "tiers": [
+        [
+          "Free trial",
+          "$0 for 7 days",
+          "100 credits; card required; cancel before it ends and you are not charged"
+        ],
+        [
+          "ContextBolt SEO",
+          "$35/month",
+          "1,000 credits a month, Search Console, memory and SEO Dashboard; no seats or tiers; cancel any time"
+        ]
+      ],
+      "note": "Most research tools cost 1 credit, backlink tools 3, AI-visibility checks 8, site audits 1 per audited page. Optional top-up packs never expire: $9 for 250 credits, $19 for 600, $39 for 1,500.",
+      "src": "https://contextbolt.com/seo/",
+      "checked": "2026-11-18"
+    },
+    "faq": [
+      [
+        "Which AI tools does ContextBolt SEO work with?",
+        "Any MCP client. ContextBolt names Claude Code, Claude Desktop, Cursor, Codex, ChatGPT, Windsurf, Gemini CLI, VS Code, Cline and n8n."
+      ],
+      [
+        "Is there a free plan?",
+        "No. There is a 7-day free trial with 100 credits that needs a card, then $35 a month with 1,000 credits. Search Console reads, memory and the dashboard do not use credits."
+      ],
+      [
+        "Where does the SEO data come from?",
+        "Keyword, SERP and backlink estimates come from DataForSEO. Search Console data is your own, read-only."
+      ]
+    ]
+  },
+  "lamp-lampos": {
+    "kind": "lite",
+    "src_kind": "site",
+    "updated": "2026-11-18",
+    "cite": true,
+    "sources": [
+      "https://www.autonomous.ai/lamp",
+      "https://github.com/autonomous-ai/lampOS"
+    ],
+    "facts": {
+      "repo": "https://github.com/autonomous-ai/lampOS",
+      "stars": 576,
+      "forks": 86,
+      "license": "Apache-2.0",
+      "osi": true,
+      "checked": "2026-11-18",
+      "status": "Active: lampOS (Physical AI Operating System) repo pushed Nov 18, 2026; Lamp hardware on sale"
+    },
+    "long": [
+      "Lamp is a fully assembled desktop companion robot from Autonomous, built as a robotic desk lamp. It has a wide-angle camera with face tracking and motion sensing, a microphone array, stereo speakers, a light ring and five position-feedback servos, so it can turn to look at you, nod, tilt and play recorded gestures. Inside are an 8-core ARM64 CPU and 6 GB of RAM. You talk to it, show it things through the camera, and give it its own name, voice and personality. Lamp Pro adds sensors for CO2, airborne particles (PM1.0 to PM10), temperature and humidity, so you can ask about the room or set an alert when readings leave a range you choose.",
+      "Lamp runs lampOS, which the GitHub repo calls the Physical AI Operating System and describes as an Android for physical AI agents. It is open source under Apache-2.0. It gives an agent eyes, ears, a voice and a body: you pick Hermes, Claude Code, Codex, OpenClaw, OpenCode or PicoClaw as the brain, connect a cloud model or a compatible local one, and the OS coordinates the hardware. Behaviors are skills, one SKILL.md per folder, installed from a Skill Store or written from a typed description in the Autonomous app, and the robot's character lives in an editable SOUL.md. Through Harness it can hand coding and research tasks to agents on a paired computer and speak the result.",
+      "Autonomous pitches three uses: enjoy it as a companion, build physical and digital skills and connect your own apps and tools (Home Assistant, calendars, your own APIs), or build paid robot experiences for shops, teams, schools, creators and events on its hardware and OS. The same OS also runs on Autonomous Intern, Hugging Face's Reachy Mini, or a robot you describe in four markdown files."
+    ],
+    "who": "Builders who want to give Claude Code, Codex, Hermes or another agent a physical body with a camera, voice and movement, and people who want a programmable desk companion robot they can shape themselves.",
+    "features": [
+      "Five-axis robotic desk lamp with wide-angle camera, face tracking, microphone array, stereo speakers and a light ring",
+      "Choose the agent: Hermes, Claude Code, Codex, OpenClaw, OpenCode or PicoClaw, with a cloud or compatible local model",
+      "Open-source lampOS (Apache-2.0): skills as SKILL.md files, an editable SOUL.md personality and a Skill Store",
+      "Harness integration to delegate coding and research tasks to agents on a paired computer and hear the result",
+      "Physical APIs for your own scripts, services and agents; Home Assistant and custom app connections",
+      "Lamp Pro adds CO2, particle (PM1.0 to PM10), temperature and humidity sensing"
+    ],
+    "pros": [
+      "Ships fully assembled with the OS already on it; setup runs through the Autonomous app on iOS or Android.",
+      "The OS is Apache-2.0 and also runs on Reachy Mini, Autonomous Intern or your own robot.",
+      "You are not locked to one AI: switch between six supported agent runtimes."
+    ],
+    "cons": [
+      "It is hardware: $699 for Lamp and $999 for Lamp Pro.",
+      "Model inference may use remote services depending on how you configure it, per the lampOS README.",
+      "Some camera-based skills need a supported sensing service, and voices come from supported speech services."
+    ],
+    "setup": [
+      "In the Autonomous app (iOS or Android), tap Add robot, then Lamp.",
+      "Pick your Wi-Fi network in the app; it joins the robot's hotspot and handles pairing.",
+      "Say something: Lamp turns to look at you, the ring lights up and it answers.",
+      "Install a skill from the Skill Store, or type what you want and the app writes the skill.",
+      "Edit SOUL.md to give it a different character on the next turn."
+    ],
+    "pricing_v": {
+      "free": false,
+      "tiers": [
+        [
+          "Lamp",
+          "$699",
+          "Fully assembled robot with lampOS; volume pricing from $678 each for 3-4 units down to $650 for 30+"
+        ],
+        [
+          "Lamp Pro",
+          "$999",
+          "Everything in Lamp plus CO2, particle, temperature and humidity sensors"
+        ],
+        [
+          "lampOS",
+          "$0",
+          "Open source under Apache-2.0"
+        ]
+      ],
+      "note": "Free shipping; 1-year warranty.",
+      "src": "https://www.autonomous.ai/lamp",
+      "checked": "2026-11-18"
+    },
+    "faq": [
+      [
+        "Which AI agents can run on Lamp?",
+        "Hermes, Claude Code, Codex, OpenClaw, OpenCode and PicoClaw are supported, with a cloud model or a compatible local model on your own hardware."
+      ],
+      [
+        "Is lampOS open source?",
+        "Yes. The Physical AI Operating System repo (autonomous-ai/lampOS) is Apache-2.0 and runs on Lamp, Autonomous Intern, Reachy Mini or your own robot."
+      ],
+      [
+        "What does Lamp Pro add?",
+        "Room sensing: CO2, airborne particles from PM1.0 to PM10, temperature and humidity, which skills can turn into spoken alerts or light cues."
+      ]
+    ]
   }
 }

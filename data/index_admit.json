@@ -1066,7 +1066,9 @@
   "a2ui": "2026-11-12",
   "zvec": "2026-11-12",
   "filesystem-mcp-server": "2026-11-13",
-  "openmausbot": "2026-11-15"
+  "openmausbot": "2026-11-15",
+  "contextbolt-seo": "2026-11-18",
+  "lamp-lampos": "2026-11-18"
  },
  "slots": {
   "2026-11-04": [],
@@ -1104,7 +1106,10 @@
    "openmausbot"
   ],
   "2026-11-16": [],
-  "2026-11-18": []
+  "2026-11-18": [
+   "contextbolt-seo",
+   "lamp-lampos"
+  ]
  },
  "queued": [],
  "hold_released_slugs": [
