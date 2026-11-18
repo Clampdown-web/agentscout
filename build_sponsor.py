@@ -293,8 +293,22 @@ def build(t):
     title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
     desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {tools_pitch}."
 
+    # Visible FAQ (the <details> block above) as structured data; keep the two in sync.
+    faq = [
+        ("Is basic listing on AgentScout really 100% free?",
+         "Yes. Submitting a real AI agent tool or MCP server via our submission form is 100% free forever, and profile edits or updates are always free. Paid tiers are strictly optional for makers who want same-day priority review, a 7-day or 30-day featured pin, permanent /best/ & /compare/ table placement, or sitewide & newsletter sponsorship."),
+        ("What is the difference between the $15 Fast-Track and the $49 Category Pin?",
+         "The $15 Fast-Track + 7-Day Launch Boost skips the 5-day queue for same-day review, enriches your page with FAQ Page schema and pros/cons, pins your tool for 7 days on /new.html and your category's New & Featured row, and posts your launch on @AgentScoutHQ. For just $34 more, the $49 30-Day Category Pin + Permanent SEO/AEO Placement upgrades your pin to a full 30 days at the top of your category (4x+ longer than 7 days, while other directories charge $49 for 5-day boosts), adds permanent inclusion in our /best/*-alternatives and /compare/ tables, boosts your priority weight in llms-full.txt and MCP search, and includes a dedicated spotlight across both @clampdown19 and @AgentScoutHQ."),
+        ("What happens right after I pay on Stripe or X Money?",
+         "If your tool isn't listed on AgentScout yet, submit its URL and details on /submit.html (or email support@agentscouthq.com) using the same email address or tool name. We fast-track your listing, apply your Featured pin, and send your live listing link plus scheduled X spotlight details the same day."),
+        ("Do paid placements change organic directory rankings or review scores?",
+         "Never. Featured slots are clearly labeled (Featured or Sponsored with rel=\"sponsored\") and sit above the list; rankings are never paid."),
+    ]
+
     schema = {
         "@context": "https://schema.org",
+        "@graph": [
+        {
         "@type": "WebPage",
         "name": title,
         "url": "https://agentscouthq.com/sponsor.html",
@@ -338,6 +352,9 @@ def build(t):
                 }
             ]
         }
+        },
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+        ]
     }
     out = shell("", title, desc, "https://agentscouthq.com/sponsor.html", body, schema)
     open("sponsor.html", "w").write(out)
