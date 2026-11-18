@@ -54,16 +54,16 @@ CAT_DESC = {
 
 # Alt text describes the frame in assets/prompts/thumbs/<slug>.webp.
 THUMB_ALT = {
-    "plan-before-you-code": "Terminal showing a written plan to add a SAVE10 discount, with git status clean and no code written yet.",
-    "review-my-diff": "Terminal review of a diff that drops the last receipt line and subtracts an extra cent, with the verdict fix first.",
-    "fix-the-failure-not-the-test": "Terminal showing pytest fail on assert 1000 equals 1250, then pass after the loop fix, with the test file unchanged.",
-    "refactor-without-changing-behavior": "Terminal showing pytest passing before and after format_refund starts calling format_cents.",
-    "reproduce-the-bug-first": "Terminal showing format_cents of 5 print $0.5, then $0.05 after the padding fix, with pytest still passing.",
-    "wire-up-mcp-server": "Terminal showing the time MCP server initialized and get_current_time returning a UTC timestamp.",
-    "audit-mcp-permissions": "Terminal audit of the filesystem MCP server with the verdict connect with limits, and the server not connected.",
-    "debug-mcp-tool-call": "Terminal showing an invalid Mars/Olympus timezone error, then one successful UTC retry.",
-    "pick-the-right-mcp-server": "Terminal comparing the time, fetch, and everything MCP servers and picking the time server.",
-    "minimal-mcp-server-spec": "Terminal showing a two-tool timebox MCP spec and a Cursor config command.",
+    "plan-before-you-code": "Illustration of a checklist with arrows pointing at code blocks.",
+    "review-my-diff": "Illustration of a diff panel with red and green lines and two comment bubbles.",
+    "fix-the-failure-not-the-test": "Illustration of a failing test turning into a passing test, with the test file locked.",
+    "refactor-without-changing-behavior": "Illustration of tangled blocks becoming tidy blocks beside an equals sign.",
+    "reproduce-the-bug-first": "Illustration of a bug inside a loop, then a checkmark.",
+    "wire-up-mcp-server": "Illustration of an agent node linked to a server node with a green handshake.",
+    "audit-mcp-permissions": "Illustration of a server node with permission rays, a shield, and one red flag.",
+    "debug-mcp-tool-call": "Illustration of a broken link between two nodes under a magnifying glass.",
+    "pick-the-right-mcp-server": "Illustration of three server cards with the middle one selected.",
+    "minimal-mcp-server-spec": "Illustration of a short spec card with two tool chips and a lock.",
     "browse-with-citations": "Illustration of a browser window with three numbered citation badges linked to source cards and a small flag.",
     "fill-form-without-guessing": "Illustration of a form with three checked fields, two empty fields marked with a question, and a disabled submit bar.",
     "compare-prices-three-stores": "Illustration of three store cards and a bar chart, with the shortest bar and store B marked lowest.",
@@ -72,31 +72,45 @@ THUMB_ALT = {
 }
 
 CSS = """<style id="pr-css">
-.pr-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0 24px}
+main.wrap{max-width:1280px}
+.pr-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.pr-nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);text-decoration:none;font-size:14px;font-weight:650}
+.pr-nav a[aria-current=page]{background:#4338CA;border-color:#4338CA;color:#fff}
+.pr-nav a:hover{border-color:#9393FF}
+.pr-nav a:focus-visible,.pr-card .pr-copy:focus-visible,.pr-share:focus-visible,.pr-more summary:focus-visible{outline:2px solid #C4C4FF;outline-offset:2px}
+.pr-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:0 0 22px}
 .pr-cat{display:block;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card);text-decoration:none;color:var(--text)}
 .pr-cat b{display:block;font-size:17px;margin-bottom:4px}.pr-cat span{color:var(--muted);font-size:13.5px;line-height:1.5;display:block}
-.pr-grid{display:grid;gap:20px;margin:14px 0 28px}
-.pr-card{position:relative;border:1px solid #2A2F3A;border-radius:16px;background:#171A22;color:#E8EAF0;min-width:0;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.35);transition:border-color .15s,box-shadow .15s}
-.pr-card:hover{border-color:#9393FF;box-shadow:0 0 0 1px rgba(147,147,255,.55),0 0 22px rgba(91,91,247,.38),0 0 36px rgba(34,211,238,.16)}
-.pr-thumb{display:block;width:calc(100% + 32px);max-width:none;height:auto;margin:-14px -16px 14px;border-radius:16px 16px 0 0;background:#0E1015}
-.pr-lead{padding:14px 16px 4px}
-.pr-badge{display:inline-flex;align-items:center;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:#25264D;color:#C4C4FF;font-size:12px;font-weight:650;letter-spacing:.02em}
-.pr-card h3{margin:0 0 10px;font-size:20px;font-weight:700;line-height:1.25;color:#E8EAF0}
-.pr-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
-.pr-chip{display:inline-flex;align-items:center;gap:5px;max-width:100%;padding:3px 9px;border:1px solid #2A2F3A;border-radius:999px;background:#12151c;color:#A9B0BE;font-size:12px;line-height:1.4}
-.pr-chip.cat{color:#D2D2FF;border-color:#3C3C78}
+.pr-grid{display:grid;gap:16px;margin:8px 0 28px;grid-template-columns:1fr;align-items:stretch}
+@media(min-width:760px){.pr-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.pr-grid{grid-template-columns:1fr 1fr 1fr}}
+.pr-card{position:relative;display:flex;flex-direction:column;height:100%;border:1px solid #2A2F3A;border-radius:16px;background:#171A22;color:#E8EAF0;min-width:0;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.35);transition:border-color .15s,box-shadow .15s,transform .15s}
+.pr-card:hover{transform:translateY(-2px);border-color:#9393FF;box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 0 1px rgba(147,147,255,.55),0 0 22px rgba(91,91,247,.32)}
+@media(prefers-reduced-motion:reduce){.pr-card{transition:none}.pr-card:hover{transform:none}}
+.pr-thumb{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin:0 0 12px;border-radius:16px 16px 0 0;background:#0E1015}
+.pr-lead{display:flex;flex-direction:column;flex:1 1 auto;padding:0}
+.pr-badge{display:inline-flex;align-items:center;align-self:flex-start;margin:0 14px 6px;padding:2px 9px;border-radius:999px;background:#25264D;color:#E4E4FF;font-size:12px;font-weight:650;letter-spacing:.02em}
+.pr-card h3{margin:0 14px 8px;font-size:17px;font-weight:700;line-height:1.3;color:#E8EAF0}
+.pr-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 14px 8px}
+.pr-chip{display:inline-flex;align-items:center;gap:5px;max-width:100%;padding:2px 8px;border:1px solid #2A2F3A;border-radius:999px;background:#12151c;color:#C5CDD8;font-size:12px;line-height:1.45}
+.pr-chip.cat{color:#E4E4FF;border-color:#3C3C78}
 .pr-ico{width:14px;height:14px;flex:0 0 14px}
-.pr-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0 0 8px;color:#A9B0BE;font-size:14.5px;line-height:1.45}
-.pr-when{margin:0 16px 12px;color:#8E97A8;font-size:13px}
-.pr-code{white-space:pre-wrap;overflow-wrap:anywhere;background:#0E1015;color:#E8EAF0;border:1px solid #2A2F3A;border-radius:10px;padding:12px;font-size:13px;line-height:1.55;margin:0 16px 14px;max-width:calc(100% - 32px);box-sizing:border-box}
-.pr-foot{display:flex;align-items:center;gap:8px;padding:0 16px 16px}
-.pr-card .pr-copy{flex:1;min-width:0;min-height:44px;margin:0;background:#5B5BF7;color:#fff;border-color:#5B5BF7}
-.pr-card .pr-copy:hover{background:#6d6df8;border-color:#6d6df8;color:#fff}
-.pr-share{flex:0 0 44px;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid #2A2F3A;background:#0E1015;color:#E8EAF0;cursor:pointer}
+.pr-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em;margin:0 14px 8px;color:#C5CDD8;font-size:14px;line-height:1.45}
+.pr-when{margin:0 14px 8px;color:#C5CDD8;font-size:13px;line-height:1.4}
+.pr-more{margin:0 14px 10px}
+.pr-more summary{cursor:pointer;color:#E4E4FF;font-size:13.5px;font-weight:650;list-style:none}
+.pr-more summary::-webkit-details-marker{display:none}
+.pr-more .pr-hide{display:none}
+.pr-more[open] .pr-show{display:none}
+.pr-more[open] .pr-hide{display:inline}
+.pr-code{white-space:pre-wrap;overflow-wrap:anywhere;background:#0E1015;color:#E8EAF0;border:1px solid #2A2F3A;border-radius:10px;padding:12px;font-size:13px;line-height:1.5;margin:8px 0 0;max-height:220px;overflow:auto}
+.pr-foot{display:flex;align-items:center;gap:8px;margin-top:auto;padding:0 14px 14px}
+.pr-card .pr-copy{flex:1;min-width:0;min-height:44px;margin:0;background:#4338CA;color:#fff;border-color:#4338CA}
+.pr-card .pr-copy:hover{background:#5145E5;border-color:#5145E5;color:#fff}
+.pr-share{flex:0 0 44px;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid #3A4150;background:#0E1015;color:#E8EAF0;cursor:pointer}
 .pr-share:hover,.pr-share[data-done]{border-color:#9393FF;color:#fff;box-shadow:0 0 12px rgba(147,147,255,.45)}
 .pr-cta{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:20px 0}
 .pr-cta h2{margin:0 0 6px;font-size:17px}.pr-cta p{margin:0 0 10px}
-@media(max-width:420px){.pr-card h3{font-size:18px}.pr-lead{padding:12px 12px 2px}.pr-thumb{width:calc(100% + 24px);margin:-12px -12px 12px}.pr-when{margin-left:12px;margin-right:12px}.pr-code{margin-left:12px;margin-right:12px;max-width:calc(100% - 24px)}.pr-foot{padding:0 12px 12px}}
 </style>"""
 
 JS = """<script id="pr-js">(function(){
@@ -218,11 +232,35 @@ def _agent_tags(p):
     return names[:2]
 
 
+def _when_repeats_desc(p):
+    """True when the when-line mostly restates the description."""
+    stop = {"a", "an", "the", "to", "of", "and", "or", "you", "your", "it", "is", "with", "for", "on", "in"}
+    def words(s):
+        return [w for w in re.findall(r"[a-z0-9]+", s.lower()) if w not in stop and len(w) > 2]
+    desc, when = set(words(p["desc"])), words(p["when"])
+    if not when:
+        return True
+    def hit(w):
+        return w in desc or any(len(d) > 3 and (w.startswith(d[:5]) or d.startswith(w[:5])) for d in desc)
+    return sum(hit(w) for w in when) / len(when) >= 0.65
+
+
+def _tabs(current):
+    items = [("index.html", "All prompts", "index")]
+    items += [(f"{c}.html", CATS[c][0], c) for c in CATS]
+    links = []
+    for href, label, key in items:
+        current_attr = ' aria-current="page"' if key == current else ""
+        links.append(f'<a href="{href}"{current_attr}>{esc(label)}</a>')
+    return '<nav class="pr-nav" aria-label="Prompt categories">' + "".join(links) + "</nav>"
+
+
 def _card(p):
     slug = p["slug"]
     chips = (f'<span class="pr-chip cat">{_icon(p["category"])}{esc(CATS[p["category"]][0])}</span>'
              + "".join(f'<span class="pr-chip">{esc(name)}</span>' for name in _agent_tags(p)))
     badge = (f'<span class="pr-badge">{esc(p["badge"])}</span>' if p.get("badge") else "")
+    when = "" if _when_repeats_desc(p) else f'<p class="pr-when">Use it when: {esc(p["when"])}</p>'
     return (f'<article class="pr-card" id="{esc(slug)}">'
             f'<div class="pr-lead">'
             f'<img class="pr-thumb" src="../{esc(p["thumb"])}" alt="{esc(THUMB_ALT[slug])}" '
@@ -232,8 +270,10 @@ def _card(p):
             f'<p class="pr-tags">{chips}</p>'
             f'<p class="pr-desc">{esc(p["desc"])}</p>'
             f'</div>'
-            f'<p class="pr-when">Use it when: {esc(p["when"])}</p>'
-            f'<pre class="pr-code">{esc(p["prompt"])}</pre>'
+            f'{when}'
+            f'<details class="pr-more"><summary>'
+            f'<span class="pr-show">Show prompt</span><span class="pr-hide">Hide prompt</span>'
+            f'</summary><pre class="pr-code">{esc(p["prompt"])}</pre></details>'
             f'<div class="pr-foot">'
             f'<button type="button" class="btn pr-copy" data-copy>Copy prompt</button>'
             f'<button type="button" class="pr-share" data-share="{esc(slug)}" '
@@ -335,7 +375,7 @@ def run():
         for c in CATS)
     body = (CSS + '<div class="crumb"><a href="../index.html">AgentScout</a> / Prompt library</div>'
             f'<h1>Prompt library</h1><p class="lede">{esc(LANDING_DESC)}</p>'
-            f'<div class="pr-cats">{cards}</div>{sections}{_cta()}'
+            f'{_tabs("index")}<div class="pr-cats">{cards}</div>{sections}{_cta()}'
             '<p>Related: <a href="../best/ai-coding-agents.html">Best AI coding agents</a> \u00b7 '
             '<a href="../s/best-mcp-servers.html">Best MCP servers</a> \u00b7 '
             '<a href="../best/ai-browser-agents.html">Best AI browser agents</a> \u00b7 '
@@ -362,6 +402,7 @@ def run():
         body = (CSS + '<div class="crumb"><a href="../index.html">AgentScout</a> / '
                 f'<a href="index.html">Prompt library</a> / {esc(name)}</div>'
                 f'<h1>{esc(name)} prompts</h1><p class="lede">{esc(blurb)}</p>'
+                f'{_tabs(c)}'
                 '<div class="pr-grid">' + "".join(_card(p) for p in by_cat[c]) + '</div>'
                 f'<p>More prompts: <a href="index.html">All prompts</a> \u00b7 {others}</p>'
                 f'{_cta()}{_related(c)}' + JS)
