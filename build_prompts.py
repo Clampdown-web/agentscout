@@ -52,15 +52,36 @@ CAT_DESC = {
                        "without guessing, compare prices, and watch pages."),
 }
 
+# Alt text describes the frame in assets/prompts/thumbs/<slug>.webp.
+THUMB_ALT = {
+    "plan-before-you-code": "Terminal showing a written plan to add a SAVE10 discount, with git status clean and no code written yet.",
+    "review-my-diff": "Terminal review of a diff that drops the last receipt line and subtracts an extra cent, with the verdict fix first.",
+    "fix-the-failure-not-the-test": "Terminal showing pytest fail on assert 1000 equals 1250, then pass after the loop fix, with the test file unchanged.",
+    "refactor-without-changing-behavior": "Terminal showing pytest passing before and after format_refund starts calling format_cents.",
+    "reproduce-the-bug-first": "Terminal showing format_cents of 5 print $0.5, then $0.05 after the padding fix, with pytest still passing.",
+    "wire-up-mcp-server": "Terminal showing the time MCP server initialized and get_current_time returning a UTC timestamp.",
+    "audit-mcp-permissions": "Terminal audit of the filesystem MCP server with the verdict connect with limits, and the server not connected.",
+    "debug-mcp-tool-call": "Terminal showing an invalid Mars/Olympus timezone error, then one successful UTC retry.",
+    "pick-the-right-mcp-server": "Terminal comparing the time, fetch, and everything MCP servers and picking the time server.",
+    "minimal-mcp-server-spec": "Terminal showing a two-tool timebox MCP spec and a Cursor config command.",
+    "browse-with-citations": "Browser on the Python 3.13 docs section A better interactive interpreter, quoting the new default REPL.",
+    "fill-form-without-guessing": "Browser on the httpbin form filled with Harbor Demo, telephone and delivery left blank, order not submitted.",
+    "compare-prices-three-stores": "Browser on SparkFun's Raspberry Pi 5 8GB page showing a $180.00 price and an in-stock label.",
+    "watch-page-for-changes": "Browser on the GitHub status page with the banner All Systems Operational.",
+    "summarize-page-for-decision": "Browser on python-httpx.org showing HTTPX as a next-generation HTTP client for Python.",
+}
+
 CSS = ('<style id="pr-css">.pr-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0 24px}'
        '.pr-cat{display:block;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card);text-decoration:none;color:var(--text)}'
        '.pr-cat b{display:block;font-size:17px;margin-bottom:4px}.pr-cat span{color:var(--muted);font-size:13.5px;line-height:1.5;display:block}'
        '.pr-grid{display:grid;gap:16px;margin:14px 0 28px}'
-       '.pr-card{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card);min-width:0}'
-       '.pr-card h3{margin:0 0 6px;font-size:18px}.pr-card p{margin:0 0 8px}'
+       '.pr-card{border:1px solid var(--line);border-radius:12px;padding:0 0 18px;background:var(--card);min-width:0;overflow:hidden}'
+       '.pr-lead{margin:0}'
+       '.pr-thumb{display:block;width:100%;height:auto;border-radius:12px 12px 0 0;margin:0}'
+       '.pr-card h3{margin:14px 18px 6px;font-size:18px}.pr-card p{margin:0 18px 8px}'
        '.pr-meta{font-size:13.5px;color:var(--muted)}'
-       '.pr-code{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13.5px;line-height:1.55;margin:10px 0;max-width:100%;box-sizing:border-box}'
-       '.pr-copy{min-height:44px}.pr-cta{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:20px 0}'
+       '.pr-code{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13.5px;line-height:1.55;margin:10px 18px;max-width:calc(100% - 36px);box-sizing:border-box}'
+       '.pr-copy{min-height:44px;margin-left:18px}.pr-cta{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:20px 0}'
        '.pr-cta h2{margin:0 0 6px;font-size:17px}.pr-cta p{margin:0 0 10px}</style>')
 
 JS = ('<script id="pr-js">(function(){document.querySelectorAll("[data-copy]").forEach(function(b){'
@@ -79,10 +100,28 @@ def _asset_v():
     return m.group(1) if m else "0"
 
 
-def _shell(title, desc, canon, body, ld):
+def _social_image(head, image, alt):
+    """Replace the template's default share image with one absolute thumbnail URL."""
+    slots = (
+        ('<meta property="og:image" content="', image),
+        ('<meta property="og:image:width" content="', "1200"),
+        ('<meta property="og:image:height" content="', "675"),
+        ('<meta property="og:image:alt" content="', esc(alt)),
+        ('<meta name="twitter:image" content="', image),
+    )
+    for prefix, value in slots:
+        start = head.find(prefix)
+        if start < 0:
+            raise SystemExit(f"prompt pages: missing {prefix}")
+        end = head.find('"', start + len(prefix))
+        head = head[:start + len(prefix)] + value + head[end:]
+    return head
+
+
+def _shell(title, desc, canon, body, ld, image, image_alt):
     """Same head/nav/footer slicing as build_extras.shell (see module docstring)."""
     tpl = open("data/detail.tpl", encoding="utf-8").read()
-    head = tpl.split("<title>")[0].replace("../", "../")
+    head = _social_image(tpl.split("<title>")[0].replace("../", "../"), image, image_alt)
     foot = "<footer" + tpl.split("<footer", 1)[1].replace("../", "../")
     nav = tpl.split("</head>", 1)[1].split("<main")[0].replace("../", "../")
     page = (f'{head}<title>{esc(title)}</title>\n'
@@ -122,9 +161,14 @@ def _ld(title, desc, canon, crumbs, items):
 
 
 def _card(p):
-    return (f'<article class="pr-card" id="{esc(p["slug"])}">'
+    slug = p["slug"]
+    return (f'<article class="pr-card" id="{esc(slug)}">'
+            f'<div class="pr-lead">'
+            f'<img class="pr-thumb" src="../{esc(p["thumb"])}" alt="{esc(THUMB_ALT[slug])}" '
+            f'width="1200" height="675" loading="lazy">'
             f'<h3>{esc(p["title"])}</h3>'
             f'<p>{esc(p["desc"])}</p>'
+            f'</div>'
             f'<p class="pr-meta">Works with: {esc(p["works_with"])}</p>'
             f'<p class="pr-meta">Use it when: {esc(p["when"])}</p>'
             f'<pre class="pr-code">{esc(p["prompt"])}</pre>'
@@ -165,6 +209,38 @@ def _sitemap_add(rels):
     return extra.count("<url>")
 
 
+def _thumb_url(p):
+    return f"{SITE}/{p['thumb']}"
+
+
+def _assert_cards(html, expected, label):
+    """Each card's image slug matches that card, and the title and description sit under it."""
+    cards = re.findall(r'<article class="pr-card" id="([^"]+)">(.*?)</article>', html, re.S)
+    slugs = [slug for slug, _ in cards]
+    want = [p["slug"] for p in expected]
+    if slugs != want:
+        raise SystemExit(f"{label}: card order {slugs} != {want}")
+    for slug, body in cards:
+        prompt = next(p for p in expected if p["slug"] == slug)
+        lead = re.search(r'<div class="pr-lead">(.*?)</div>', body, re.S)
+        if not lead:
+            raise SystemExit(f"{label}: {slug} has no lead")
+        block = lead.group(1)
+        img = re.search(
+            r'<img class="pr-thumb" src="([^"]+)" alt="[^"]*" width="1200" height="675" loading="lazy">',
+            block)
+        if not img:
+            raise SystemExit(f"{label}: {slug} missing thumb img")
+        src_slug = img.group(1).rsplit("/", 1)[-1].removesuffix(".webp")
+        if src_slug != slug:
+            raise SystemExit(f"{label}: img {img.group(1)} does not match card {slug}")
+        if not (block.find("<img") < block.find("<h3>") < block.find("<p>")):
+            raise SystemExit(f"{label}: {slug} image, title, and description are out of order")
+        if f'<h3>{esc(prompt["title"])}</h3>' not in block or esc(prompt["desc"]) not in block:
+            raise SystemExit(f"{label}: {slug} title or description missing under the image")
+    return len(cards)
+
+
 def run():
     prompts = json.load(open(DATA, encoding="utf-8"))
     seen = set()
@@ -172,6 +248,10 @@ def run():
         assert p["category"] in CATS, f"unknown category {p['category']} on {p['id']}"
         assert p["slug"] not in seen, f"duplicate slug {p['slug']}"
         assert p["prompt"].strip() and p["title"].strip(), f"empty prompt {p['id']}"
+        expect = f"assets/prompts/thumbs/{p['slug']}.webp"
+        assert p.get("thumb") == expect, f"thumb path {p.get('thumb')} != {expect}"
+        assert os.path.isfile(p["thumb"]), f"missing {p['thumb']}"
+        assert p["slug"] in THUMB_ALT, f"no alt for {p['slug']}"
         seen.add(p["slug"])
     by_cat = {c: [p for p in prompts if p["category"] == c] for c in CATS}
     os.makedirs(D, exist_ok=True)
@@ -197,8 +277,11 @@ def run():
     ld = _ld("Prompt library for AI agents", LANDING_DESC, canon,
              [("AgentScout", SITE + "/"), ("Prompt library", canon)],
              [(p["title"], f"{canon}#{p['slug']}") for p in prompts])
-    open(f"{D}/index.html", "w", encoding="utf-8").write(
-        _shell(LANDING_TITLE, LANDING_DESC, canon, body, ld))
+    cover = prompts[0]
+    page = _shell(LANDING_TITLE, LANDING_DESC, canon, body, ld,
+                  _thumb_url(cover), THUMB_ALT[cover["slug"]])
+    checked = _assert_cards(page, prompts, "prompts/index.html")
+    open(f"{D}/index.html", "w", encoding="utf-8").write(page)
     rels.append(f"{D}/index.html")
 
     # One page per category.
@@ -220,12 +303,18 @@ def run():
                  [("AgentScout", SITE + "/"), ("Prompt library", SITE + f"/{D}/"),
                   (f"{name} prompts", canon)],
                  [(p["title"], f"{canon}#{p['slug']}") for p in by_cat[c]])
-        open(f"{D}/{c}.html", "w", encoding="utf-8").write(_shell(title, desc, canon, body, ld))
+        cover = by_cat[c][0]
+        page = _shell(title, desc, canon, body, ld, _thumb_url(cover), THUMB_ALT[cover["slug"]])
+        checked += _assert_cards(page, by_cat[c], f"prompts/{c}.html")
+        open(f"{D}/{c}.html", "w", encoding="utf-8").write(page)
         rels.append(f"{D}/{c}.html")
 
+    if checked != len(prompts) + sum(len(v) for v in by_cat.values()):
+        raise SystemExit(f"card check count {checked}")
     added = _sitemap_add(rels)
-    print(f"prompts: {len(prompts)} prompts, {len(rels)} pages, sitemap +{added}")
-    return {"prompts": len(prompts), "pages": len(rels), "sitemap_added": added}
+    print(f"prompts: {len(prompts)} prompts, {len(rels)} pages, sitemap +{added}, "
+          f"card thumbs checked {checked}")
+    return {"prompts": len(prompts), "pages": len(rels), "sitemap_added": added, "cards_checked": checked}
 
 
 if __name__ == "__main__":
