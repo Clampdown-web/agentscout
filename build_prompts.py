@@ -64,11 +64,11 @@ THUMB_ALT = {
     "debug-mcp-tool-call": "Terminal showing an invalid Mars/Olympus timezone error, then one successful UTC retry.",
     "pick-the-right-mcp-server": "Terminal comparing the time, fetch, and everything MCP servers and picking the time server.",
     "minimal-mcp-server-spec": "Terminal showing a two-tool timebox MCP spec and a Cursor config command.",
-    "browse-with-citations": "Browser on the Python 3.13 docs section A better interactive interpreter, quoting the new default REPL.",
-    "fill-form-without-guessing": "Browser on the httpbin form filled with Harbor Demo, telephone and delivery left blank, order not submitted.",
-    "compare-prices-three-stores": "Browser on SparkFun's Raspberry Pi 5 8GB page showing a $180.00 price and an in-stock label.",
-    "watch-page-for-changes": "Browser on the GitHub status page with the banner All Systems Operational.",
-    "summarize-page-for-decision": "Browser on python-httpx.org showing HTTPX as a next-generation HTTP client for Python.",
+    "browse-with-citations": "Terminal answer with claim tags [1] [2] [3], a Sources list, and one line marked UNVERIFIED.",
+    "fill-form-without-guessing": "Terminal form with given fields filled, telephone and delivery left BLANK, and the line Not submitted.",
+    "compare-prices-three-stores": "Terminal table of Store A, B, and C with price, shipping, total, and stock, cheapest landed Store B.",
+    "watch-page-for-changes": "Terminal daily check log with two no-change lines and one CHANGED price alert.",
+    "summarize-page-for-decision": "Terminal decision summary with what it is, three facts, cost and catch, what is not stated, and a recommendation.",
 }
 
 CSS = ('<style id="pr-css">.pr-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0 24px}'
