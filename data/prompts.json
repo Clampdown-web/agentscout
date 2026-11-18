@@ -8,7 +8,8 @@
     "title": "Plan first, code second",
     "when": "Starting any change bigger than a one-line fix.",
     "works_with": "Claude Code, Codex, Cursor",
-    "thumb": "assets/prompts/thumbs/plan-before-you-code.webp"
+    "thumb": "assets/prompts/thumbs/plan-before-you-code.webp",
+    "badge": "Starter"
   },
   {
     "category": "coding-agents",
@@ -63,7 +64,8 @@
     "title": "Wire up an MCP server, then prove it works",
     "when": "Adding a new MCP server to your agent.",
     "works_with": "Claude Code, Cursor, any MCP client",
-    "thumb": "assets/prompts/thumbs/wire-up-mcp-server.webp"
+    "thumb": "assets/prompts/thumbs/wire-up-mcp-server.webp",
+    "badge": "Starter"
   },
   {
     "category": "mcp",
@@ -118,7 +120,8 @@
     "title": "Browse, but cite every claim",
     "when": "Research where a wrong answer costs you.",
     "works_with": "Browser Use, OpenAI Operator, Claude computer use",
-    "thumb": "assets/prompts/thumbs/browse-with-citations.webp"
+    "thumb": "assets/prompts/thumbs/browse-with-citations.webp",
+    "badge": "Starter"
   },
   {
     "category": "browser-agents",

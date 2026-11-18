@@ -64,33 +64,59 @@ THUMB_ALT = {
     "debug-mcp-tool-call": "Terminal showing an invalid Mars/Olympus timezone error, then one successful UTC retry.",
     "pick-the-right-mcp-server": "Terminal comparing the time, fetch, and everything MCP servers and picking the time server.",
     "minimal-mcp-server-spec": "Terminal showing a two-tool timebox MCP spec and a Cursor config command.",
-    "browse-with-citations": "Terminal answer with claim tags [1] [2] [3], a Sources list, and one line marked UNVERIFIED.",
-    "fill-form-without-guessing": "Terminal form with given fields filled, telephone and delivery left BLANK, and the line Not submitted.",
-    "compare-prices-three-stores": "Terminal table of Store A, B, and C with price, shipping, total, and stock, cheapest landed Store B.",
-    "watch-page-for-changes": "Terminal daily check log with two no-change lines and one CHANGED price alert.",
-    "summarize-page-for-decision": "Terminal decision summary with what it is, three facts, cost and catch, what is not stated, and a recommendation.",
+    "browse-with-citations": "Illustration of a browser window with three numbered citation badges linked to source cards and a small flag.",
+    "fill-form-without-guessing": "Illustration of a form with three checked fields, two empty fields marked with a question, and a disabled submit bar.",
+    "compare-prices-three-stores": "Illustration of three store cards and a bar chart, with the shortest bar and store B marked lowest.",
+    "watch-page-for-changes": "Illustration of three page thumbnails on a timeline, the last one highlighted, with an eye and a bell.",
+    "summarize-page-for-decision": "Illustration of a long page shrinking into a short card with three icon rows and a checkmark.",
 }
 
-CSS = ('<style id="pr-css">.pr-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0 24px}'
-       '.pr-cat{display:block;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card);text-decoration:none;color:var(--text)}'
-       '.pr-cat b{display:block;font-size:17px;margin-bottom:4px}.pr-cat span{color:var(--muted);font-size:13.5px;line-height:1.5;display:block}'
-       '.pr-grid{display:grid;gap:16px;margin:14px 0 28px}'
-       '.pr-card{border:1px solid var(--line);border-radius:12px;padding:0 0 18px;background:var(--card);min-width:0;overflow:hidden}'
-       '.pr-lead{margin:0}'
-       '.pr-thumb{display:block;width:100%;height:auto;border-radius:12px 12px 0 0;margin:0}'
-       '.pr-card h3{margin:14px 18px 6px;font-size:18px}.pr-card p{margin:0 18px 8px}'
-       '.pr-meta{font-size:13.5px;color:var(--muted)}'
-       '.pr-code{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:13.5px;line-height:1.55;margin:10px 18px;max-width:calc(100% - 36px);box-sizing:border-box}'
-       '.pr-copy{min-height:44px;margin-left:18px}.pr-cta{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:20px 0}'
-       '.pr-cta h2{margin:0 0 6px;font-size:17px}.pr-cta p{margin:0 0 10px}</style>')
+CSS = """<style id="pr-css">
+.pr-cats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0 24px}
+.pr-cat{display:block;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card);text-decoration:none;color:var(--text)}
+.pr-cat b{display:block;font-size:17px;margin-bottom:4px}.pr-cat span{color:var(--muted);font-size:13.5px;line-height:1.5;display:block}
+.pr-grid{display:grid;gap:20px;margin:14px 0 28px}
+.pr-card{position:relative;border:1px solid #2A2F3A;border-radius:16px;background:#171A22;color:#E8EAF0;min-width:0;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.35);transition:border-color .15s,box-shadow .15s}
+.pr-card:hover{border-color:#9393FF;box-shadow:0 0 0 1px rgba(147,147,255,.55),0 0 22px rgba(91,91,247,.38),0 0 36px rgba(34,211,238,.16)}
+.pr-thumb{display:block;width:calc(100% + 32px);max-width:none;height:auto;margin:-14px -16px 14px;border-radius:16px 16px 0 0;background:#0E1015}
+.pr-lead{padding:14px 16px 4px}
+.pr-badge{display:inline-flex;align-items:center;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:#25264D;color:#C4C4FF;font-size:12px;font-weight:650;letter-spacing:.02em}
+.pr-card h3{margin:0 0 10px;font-size:20px;font-weight:700;line-height:1.25;color:#E8EAF0}
+.pr-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.pr-chip{display:inline-flex;align-items:center;gap:5px;max-width:100%;padding:3px 9px;border:1px solid #2A2F3A;border-radius:999px;background:#12151c;color:#A9B0BE;font-size:12px;line-height:1.4}
+.pr-chip.cat{color:#D2D2FF;border-color:#3C3C78}
+.pr-ico{width:14px;height:14px;flex:0 0 14px}
+.pr-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0 0 8px;color:#A9B0BE;font-size:14.5px;line-height:1.45}
+.pr-when{margin:0 16px 12px;color:#8E97A8;font-size:13px}
+.pr-code{white-space:pre-wrap;overflow-wrap:anywhere;background:#0E1015;color:#E8EAF0;border:1px solid #2A2F3A;border-radius:10px;padding:12px;font-size:13px;line-height:1.55;margin:0 16px 14px;max-width:calc(100% - 32px);box-sizing:border-box}
+.pr-foot{display:flex;align-items:center;gap:8px;padding:0 16px 16px}
+.pr-card .pr-copy{flex:1;min-width:0;min-height:44px;margin:0;background:#5B5BF7;color:#fff;border-color:#5B5BF7}
+.pr-card .pr-copy:hover{background:#6d6df8;border-color:#6d6df8;color:#fff}
+.pr-share{flex:0 0 44px;width:44px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid #2A2F3A;background:#0E1015;color:#E8EAF0;cursor:pointer}
+.pr-share:hover,.pr-share[data-done]{border-color:#9393FF;color:#fff;box-shadow:0 0 12px rgba(147,147,255,.45)}
+.pr-cta{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:20px 0}
+.pr-cta h2{margin:0 0 6px;font-size:17px}.pr-cta p{margin:0 0 10px}
+@media(max-width:420px){.pr-card h3{font-size:18px}.pr-lead{padding:12px 12px 2px}.pr-thumb{width:calc(100% + 24px);margin:-12px -12px 12px}.pr-when{margin-left:12px;margin-right:12px}.pr-code{margin-left:12px;margin-right:12px;max-width:calc(100% - 24px)}.pr-foot{padding:0 12px 12px}}
+</style>"""
 
-JS = ('<script id="pr-js">(function(){document.querySelectorAll("[data-copy]").forEach(function(b){'
-      'b.addEventListener("click",function(){var c=b.closest(".pr-card");var t=c?c.querySelector(".pr-code"):null;'
-      'if(!t)return;var txt=t.textContent;'
-      'function done(){var o=b.textContent;b.textContent="Copied";setTimeout(function(){b.textContent=o},2000)}'
-      'function fb(){var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();'
-      'try{document.execCommand("copy");done()}catch(e){}document.body.removeChild(ta)}'
-      'if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fb()})}else{fb()}})})})();</script>')
+JS = """<script id="pr-js">(function(){
+function copyText(txt, done){
+  function fb(){var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");done()}catch(e){}document.body.removeChild(ta)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fb)}else{fb()}
+}
+document.querySelectorAll("[data-copy]").forEach(function(b){
+  b.addEventListener("click",function(){var c=b.closest(".pr-card");var t=c?c.querySelector(".pr-code"):null;
+    if(!t)return;var o=b.textContent;
+    copyText(t.textContent,function(){b.textContent="Copied";setTimeout(function(){b.textContent=o},2000)})});
+});
+document.querySelectorAll("[data-share]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var url=location.href.split("#")[0]+"#"+b.getAttribute("data-share");
+    copyText(url,function(){b.setAttribute("data-done","1");setTimeout(function(){b.removeAttribute("data-done")},2000)});
+  });
+});
+})();</script>"""
 
 esc = html.escape
 
@@ -160,20 +186,60 @@ def _ld(title, desc, canon, crumbs, items):
     return {"@context": "https://schema.org", "@graph": graph}
 
 
+def _icon(cat):
+    if cat == "coding-agents":
+        return ('<svg class="pr-ico" viewBox="0 0 16 16" aria-hidden="true">'
+                '<path d="M6 3.5 2.5 8 6 12.5M10 3.5 13.5 8 10 12.5" fill="none" '
+                'stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    if cat == "mcp":
+        return ('<svg class="pr-ico" viewBox="0 0 16 16" aria-hidden="true">'
+                '<circle cx="3.5" cy="8" r="1.5" fill="currentColor"/>'
+                '<circle cx="12.5" cy="3.5" r="1.5" fill="currentColor"/>'
+                '<circle cx="12.5" cy="12.5" r="1.5" fill="currentColor"/>'
+                '<path d="M5 8h3.2a2.2 2.2 0 0 0 2.2-2.2V5M8.2 8a2.2 2.2 0 0 1 2.2 2.2v1.2" '
+                'fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>')
+    return ('<svg class="pr-ico" viewBox="0 0 16 16" aria-hidden="true">'
+            '<rect x="2" y="3" width="12" height="10" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/>'
+            '<path d="M2 6.2h12" stroke="currentColor" stroke-width="1.4"/></svg>')
+
+
+_SHARE = ('<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" '
+          'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'
+          '<path d="M12 4v10"/><path d="m8 8 4-4 4 4"/><path d="M6 13v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5"/></svg>')
+
+
+def _agent_tags(p):
+    """Category plus up to two named agents from works_with. Skips a catch-all like 'any MCP client'."""
+    names = []
+    for part in p["works_with"].split(","):
+        name = part.strip()
+        if name and not name.lower().startswith("any "):
+            names.append(name)
+    return names[:2]
+
+
 def _card(p):
     slug = p["slug"]
+    chips = (f'<span class="pr-chip cat">{_icon(p["category"])}{esc(CATS[p["category"]][0])}</span>'
+             + "".join(f'<span class="pr-chip">{esc(name)}</span>' for name in _agent_tags(p)))
+    badge = (f'<span class="pr-badge">{esc(p["badge"])}</span>' if p.get("badge") else "")
     return (f'<article class="pr-card" id="{esc(slug)}">'
             f'<div class="pr-lead">'
             f'<img class="pr-thumb" src="../{esc(p["thumb"])}" alt="{esc(THUMB_ALT[slug])}" '
             f'width="1200" height="675" loading="lazy">'
+            f'{badge}'
             f'<h3>{esc(p["title"])}</h3>'
-            f'<p>{esc(p["desc"])}</p>'
+            f'<p class="pr-tags">{chips}</p>'
+            f'<p class="pr-desc">{esc(p["desc"])}</p>'
             f'</div>'
-            f'<p class="pr-meta">Works with: {esc(p["works_with"])}</p>'
-            f'<p class="pr-meta">Use it when: {esc(p["when"])}</p>'
+            f'<p class="pr-when">Use it when: {esc(p["when"])}</p>'
             f'<pre class="pr-code">{esc(p["prompt"])}</pre>'
-            '<button type="button" class="btn pr-copy" data-copy>Copy prompt</button>'
-            '</article>')
+            f'<div class="pr-foot">'
+            f'<button type="button" class="btn pr-copy" data-copy>Copy prompt</button>'
+            f'<button type="button" class="pr-share" data-share="{esc(slug)}" '
+            f'aria-label="Copy link to this prompt">{_SHARE}</button>'
+            f'</div>'
+            f'</article>')
 
 
 def _cta():
@@ -234,7 +300,8 @@ def _assert_cards(html, expected, label):
         src_slug = img.group(1).rsplit("/", 1)[-1].removesuffix(".webp")
         if src_slug != slug:
             raise SystemExit(f"{label}: img {img.group(1)} does not match card {slug}")
-        if not (block.find("<img") < block.find("<h3>") < block.find("<p>")):
+        img_at, h3_at, desc_at = block.find("<img"), block.find("<h3>"), block.find('class="pr-desc"')
+        if not (0 <= img_at < h3_at < desc_at):
             raise SystemExit(f"{label}: {slug} image, title, and description are out of order")
         if f'<h3>{esc(prompt["title"])}</h3>' not in block or esc(prompt["desc"]) not in block:
             raise SystemExit(f"{label}: {slug} title or description missing under the image")
