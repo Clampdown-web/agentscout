@@ -370,6 +370,7 @@ import build_seo_new as _bsn; _bsn.bt_rename(); _bsn.unify_all_nav_and_footer();
 import build_lovable; build_lovable.run()  # after every tools/*.html rewrite: 25 AI Agent Packs on /tools/lovable.html
 import build_status; build_status.apply(t)  # link-check evidence, status.json, best-page dates already in build_aeo
 import build_seo_trim; build_seo_trim.run(t)  # title<=60 / desc<=156 trims, /best/ index Quick answer, Verification card on every listing (owner-approved Oct 29 2026)
+import build_alt; build_alt.run(t)  # descriptive alt text on tool logos (Search Console playbook, Nov 17 2026)
 # Relevance check (Oct 18, 2026): flag any tasks/, s/, for/ or best/ page with >10% off-topic tools; the build exits 1 so nothing gets committed
 import subprocess as _sp, sys as _sys
 import build_counts as _bcounts

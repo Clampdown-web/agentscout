@@ -144,7 +144,7 @@ def packages_grid(t, m=None, on_submit=False):
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Everything in $15 Fast-Track, upgraded to 30 days:</b> Full <b>30-day</b> top category pin + homepage Featured Makers strip</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> placement:</b> Permanent inclusion in our high-intent <a href="best/index.html">/best/*-alternatives</a> and <a href="compare/index.html">/compare/</a> comparison tables</span></li>
           <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Priority AI &amp; MCP weight:</b> Priority recommendation weight in <code style="font-size:12.5px">llms-full.txt</code> and MCP search (<code style="font-size:12.5px">com.agentscouthq/directory</code>)</span></li>
-          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined followers) + Tuesday newsletter highlight</span></li>
+          <li><span class="pkg-chk pkg-chk-pop">★</span><span><b>Dual X spotlight + Newsletter:</b> Dedicated spotlight across <b>both</b> <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined followers) + Wednesday newsletter highlight</span></li>
         </ul>
       </div>
       <div class="pkg-foot">
@@ -165,7 +165,7 @@ def packages_grid(t, m=None, on_submit=False):
         <ul class="pkg-list">
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Everything in $49 Category Pin included:</b> Full 30-day category pin + permanent <code style="font-size:12.5px">/best/</code> &amp; <code style="font-size:12.5px">/compare/</code> tables</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>7-day Sitewide Top Sponsor Bar:</b> Exclusive banner across all <b data-live-pages>{fmt(__import__("build_counts").pitch_pages_floor(m["indexed_pages_count"]))}+</b> pages + homepage <code style="font-size:12.5px">#makers</code> showcase</span></li>
-          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Tuesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
+          <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>Newsletter #1 Top Slot:</b> Primary &ldquo;Sponsored by&rdquo; banner (logo, pitch &amp; CTA) at the top of Wednesday&#x27;s <a href="newsletter.html">AgentScout Weekly</a></span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span><b>2x X Spotlight Threads:</b> Launch-day + weekend spotlight across <a href="{X_CLAMPDOWN}" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="{X_AGENTSCOUT}" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a> (<span data-live-x-followers>{fmt(m["x_combined_followers"])}+</span> combined reach)</span></li>
           <li><span class="pkg-chk pkg-chk-vip">🔥</span><span>{SPONSOR_INCLUDED_LINE}</span></li>
         </ul>
@@ -293,8 +293,22 @@ def build(t):
     title = "Sponsor & Get Featured on AgentScout: AI Agent Launch Packages"
     desc = f"List your AI agent or MCP server free, fast-track it ($15), pin it 30 days with /best/ placement ($49), or sponsor sitewide ($99/wk) across {tools_pitch}."
 
+    # Visible FAQ (the <details> block above) as structured data; keep the two in sync.
+    faq = [
+        ("Is basic listing on AgentScout really 100% free?",
+         "Yes. Submitting a real AI agent tool or MCP server via our submission form is 100% free forever, and profile edits or updates are always free. Paid tiers are strictly optional for makers who want same-day priority review, a 7-day or 30-day featured pin, permanent /best/ & /compare/ table placement, or sitewide & newsletter sponsorship."),
+        ("What is the difference between the $15 Fast-Track and the $49 Category Pin?",
+         "The $15 Fast-Track + 7-Day Launch Boost skips the 5-day queue for same-day review, enriches your page with FAQ Page schema and pros/cons, pins your tool for 7 days on /new.html and your category's New & Featured row, and posts your launch on @AgentScoutHQ. For just $34 more, the $49 30-Day Category Pin + Permanent SEO/AEO Placement upgrades your pin to a full 30 days at the top of your category (4x+ longer than 7 days, while other directories charge $49 for 5-day boosts), adds permanent inclusion in our /best/*-alternatives and /compare/ tables, boosts your priority weight in llms-full.txt and MCP search, and includes a dedicated spotlight across both @clampdown19 and @AgentScoutHQ."),
+        ("What happens right after I pay on Stripe or X Money?",
+         "If your tool isn't listed on AgentScout yet, submit its URL and details on /submit.html (or email support@agentscouthq.com) using the same email address or tool name. We fast-track your listing, apply your Featured pin, and send your live listing link plus scheduled X spotlight details the same day."),
+        ("Do paid placements change organic directory rankings or review scores?",
+         "Never. Featured slots are clearly labeled (Featured or Sponsored with rel=\"sponsored\") and sit above the list; rankings are never paid."),
+    ]
+
     schema = {
         "@context": "https://schema.org",
+        "@graph": [
+        {
         "@type": "WebPage",
         "name": title,
         "url": "https://agentscouthq.com/sponsor.html",
@@ -334,10 +348,13 @@ def build(t):
                     "price": "99",
                     "priceCurrency": "USD",
                     "url": STRIPE_99,
-                    "description": f"Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {fmt(pages)}+ pages, homepage #makers showcase, and the top Sponsored by slot in Tuesday's AgentScout Weekly newsletter. {SPONSOR_INCLUDED_LINE}"
+                    "description": f"Everything in $49, plus 7 days in the exclusive sitewide top sponsor bar across all {fmt(pages)}+ pages, homepage #makers showcase, and the top Sponsored by slot in Wednesday's AgentScout Weekly newsletter. {SPONSOR_INCLUDED_LINE}"
                 }
             ]
         }
+        },
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+        ]
     }
     out = shell("", title, desc, "https://agentscouthq.com/sponsor.html", body, schema)
     open("sponsor.html", "w").write(out)

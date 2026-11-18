@@ -15,14 +15,14 @@ PT = ZoneInfo("America/Los_Angeles")
 TODAY = datetime.datetime.now(PT).date()
 FAST = "https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e"
 NL = ('<section id="nlblock" class="nlwrap"><div class="wrap"><div class="nlbox"><div class="nltxt"><h2>AgentScout Weekly + Free 50 AI Agents &amp; 50 MCP Servers Cheat Sheets</h2>'
-      '<p>Get the 5 best new AI agent tools, copy-paste MCP workflows, and our high-res 50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack free every Tuesday — plus daily founder stack teardowns on X from <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a>.</p></div>'
+      '<p>Get the 5 best new AI agent tools, copy-paste MCP workflows, and our high-res 50 AI Agents &amp; 50 MCP Servers Cheat Sheet Pack free every Wednesday — plus daily founder stack teardowns on X from <a href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer"><b>@clampdown19</b></a> &amp; <a href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer"><b>@AgentScoutHQ</b></a>.</p></div>'
       '<div class="nlgo" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">'
       '<a class="btn primary" href="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&amp;utm_medium=website&amp;utm_campaign=newsletter" target="_blank" rel="noopener noreferrer" data-nl>Get Free 50-Tool Cheat Sheet →</a>'
       '<a class="btn" href="https://x.com/intent/user?screen_name=clampdown19" target="_blank" rel="noopener noreferrer">Follow @clampdown19 on X ↗</a>'
       '<a class="btn" href="https://x.com/intent/user?screen_name=AgentScoutHQ" target="_blank" rel="noopener noreferrer">Follow @AgentScoutHQ ↗</a>'
       '</div></div></div></section>')
 SIGNUP = ('<aside class="nlin" aria-label="Newsletter signup"><h2>Email me maker notes</h2>'
-          '<p>The score stays on this page. Subscribe if you want the Tuesday maker brief. One email. Unsubscribe anytime.</p>'
+          '<p>The score stays on this page. Subscribe if you want the Wednesday maker brief. One email. Unsubscribe anytime.</p>'
           '<form class="nlgo" action="https://agentscout.beehiiv.com/subscribe" method="get" target="_blank" rel="noopener noreferrer" data-nlform>'
           '<input type="hidden" name="utm_source" value="agentscout"><input type="hidden" name="utm_medium" value="roast">'
           '<label class="sr-only" for="nl-roast-email">Email</label>'

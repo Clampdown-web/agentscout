@@ -192,12 +192,28 @@ def write_product_page(doc: dict, sample_slug: str) -> None:
             src,
             count=1,
         )
+    # Visible FAQ (product_main above) as structured data; keep the two in sync.
+    faq = [
+        ("What does the check cover?",
+         "How the site shows up in AI answers such as ChatGPT, Perplexity, and Google AI Overviews, for real buyer questions. Rivals are compared on those questions. The report lists the cited sources and which of them already name the site."),
+        ("What do I get?",
+         "A private branded web page and a downloadable PDF of the same report. The page is noindex. After delivery you get one free retest of the same site within 30 days."),
+        ("What does the intro price cover?",
+         f"{doc['intro']['note']} The check is $79, marked down from $99. The bundle with the MCP server test is $119, marked down from $149."),
+        ("Can I get a refund?",
+         "You get a full refund if you ask before testing starts, or if the site cannot be checked at all. Once the report is delivered, there is no refund. The full rules are on the refund policy."),
+    ]
     ld = {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": title,
-        "description": desc,
-        "url": "https://agentscouthq.com/ai-visibility-check.html",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "name": title,
+                "description": desc,
+                "url": "https://agentscouthq.com/ai-visibility-check.html",
+            },
+            {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ],
     }
     blob = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
 

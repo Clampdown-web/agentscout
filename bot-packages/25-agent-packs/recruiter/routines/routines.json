@@ -14,7 +14,7 @@
     {
       "id": "tuesday-scorecard-calibration",
       "cron": "0 10 * * 2",
-      "title": "Tuesday rubric & scorecard audit",
+      "title": "Wednesday rubric & scorecard audit",
       "prompt": "Run scripts/score_candidate_rubric.py on new applicants for {{YOUR_COMPANY}} and flag any protected-trait notes for human review. Follow skills/candidate-rubric/SKILL.md. Draft only.",
       "requires_approval": true,
       "script": "scripts/score_candidate_rubric.py"

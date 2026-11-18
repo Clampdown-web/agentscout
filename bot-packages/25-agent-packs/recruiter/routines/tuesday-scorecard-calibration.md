@@ -1,4 +1,4 @@
-# Routine: Tuesday rubric & scorecard audit (`tuesday-scorecard-calibration`)
+# Routine: Wednesday rubric & scorecard audit (`tuesday-scorecard-calibration`)
 
 - **Agent:** AgentScout Recruiter Agent (`recruiter`)
 - **Company:** {{YOUR_COMPANY}} (`{{YOUR_DOMAIN}}`)

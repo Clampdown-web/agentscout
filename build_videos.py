@@ -219,7 +219,7 @@ def pages(t):
             "steps": [
                 "Check /leaderboard/ to see top-rated and fastest-growing open-source AI agent repositories updated daily.",
                 "Use the 'Runs locally' filter in AgentScout MCP (runs_locally: 'offline' or 'self_hosted_or_offline') for strict privacy stacks.",
-                "Subscribe to AgentScout Weekly for Tuesday's 6-block visual radar digest and free 50 AI Agents + 50 MCP Cheat Sheets."
+                "Subscribe to AgentScout Weekly for Wednesday's 6-block visual radar digest and free 50 AI Agents + 50 MCP Cheat Sheets."
             ],
             "snippet": "https://agentscouthq.com/leaderboard/",
             "links": [
