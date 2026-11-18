@@ -9076,13 +9076,23 @@
 "agent-frameworks"
 ],
 "a2ui": [
+"browser-automation",
 "agent-frameworks",
 "vfx-compositing"
 ],
 "paradev": [
-"workflow-automation"
+"code-review",
+"parallel-orchestration",
+"browser-automation",
+"computer-use",
+"terminal-agents"
 ],
 "skill-seekers": [
+"notebooks",
+"vector-rag",
+"mcp-servers",
+"terminal-agents",
+"video",
 "rules-config"
 ],
 "quantdinger": [
@@ -9094,20 +9104,28 @@
 "video-editing"
 ],
 "brigade": [
-"multi-agent"
+"agent-memory",
+"multi-agent",
+"local-models"
 ],
 "browser-mcp": [
+"voice-phone",
 "browser-automation",
-"agent-auth"
+"computer-use",
+"mcp-servers",
+"local-models",
+"ide-agents"
 ],
 "agent-substrate": [
 "sandboxes",
 "agent-auth"
 ],
 "oh-story": [
-"research-agents",
+"agent-memory",
 "workflow-automation",
+"terminal-agents",
 "video-editing",
+"images-design",
 "rules-config"
 ],
 "chatlab": [
@@ -9122,6 +9140,7 @@
 ],
 "ccpm": [
 "parallel-orchestration",
+"agent-frameworks",
 "cloud-coding-agents"
 ],
 "maibot": [
@@ -9135,14 +9154,19 @@
 "rules-config"
 ],
 "rllm": [
+"sandboxes",
+"evals",
 "fine-tuning",
-"agent-frameworks"
+"agent-frameworks",
+"local-models",
+"terminal-agents"
 ],
 "waha": [
 "chat-app-agents"
 ],
 "zcf": [
-"workflow-automation"
+"vector-rag",
+"rules-config"
 ],
 "appllama-skills": [
 "mobile",
@@ -9154,7 +9178,10 @@
 "mcp-servers"
 ],
 "lamda": [
+"voice-phone",
 "computer-use",
+"mcp-gateways",
+"images-design",
 "mobile"
 ],
 "firecrawl-mcp-server": [
@@ -20479,5 +20506,251 @@
 "terminal-agents",
 "mobile",
 "rules-config"
+],
+"contextbolt-seo": [
+"marketing-agents",
+"research-agents",
+"observability",
+"mcp-servers"
+],
+"lamp-lampos": [
+"voice-phone",
+"computer-use",
+"local-models",
+"rules-config"
+],
+"zeydo": [
+"voice-phone",
+"sales-agents",
+"computer-use",
+"local-models"
+],
+"photo-to-gif": [],
+"silicon-wage": [
+"agent-wallets",
+"vector-rag",
+"web-scraping"
+],
+"coworkingview-mcp": [
+"mcp-gateways",
+"mcp-servers",
+"ai-dubbing-voices"
+],
+"crealo-ai": [
+"marketing-agents",
+"ai-dubbing-voices",
+"video",
+"images-design"
+],
+"ebookmagic": [
+"planning-tasks",
+"vector-rag",
+"voice-phone",
+"research-agents",
+"agent-auth"
+],
+"insightfuse": [
+"text-to-sql",
+"email-agents",
+"vocal-tuning"
+],
+"govisit-mcp-server": [
+"mcp-servers",
+"rules-config"
+],
+"muze": [
+"voice-phone",
+"email-agents",
+"research-agents",
+"personal-assistants"
+],
+"audiotovideoai": [
+"planning-tasks",
+"voice-phone",
+"video-editing",
+"foley-sfx",
+"ai-dubbing-voices",
+"video",
+"images-design"
+],
+"toolbox-pod": [
+"mcp-servers",
+"images-design"
+],
+"taris": [
+"trading-agents",
+"voice-phone",
+"dialogue-cleanup"
+],
+"removemate": [],
+"photogenerai": [
+"planning-tasks",
+"browser-automation",
+"ide-agents",
+"video-editing",
+"images-design",
+"rules-config"
+],
+"openlinker": [
+"voice-phone",
+"workflow-automation",
+"multi-agent",
+"local-models"
+],
+"adszy": [
+"planning-tasks",
+"token-costs",
+"marketing-agents"
+],
+"nynch": [
+"planning-tasks",
+"voice-phone",
+"email-agents",
+"sales-agents"
+],
+"offloop": [
+"chat-app-agents",
+"email-agents"
+],
+"delectus-ai": [
+"text-to-sql",
+"voice-phone",
+"chat-app-agents",
+"marketing-agents",
+"evals",
+"subtitles-transcripts",
+"rules-config"
+],
+"look-atlas": [
+"planning-tasks",
+"video"
+],
+"task-mafia": [
+"planning-tasks",
+"multi-agent",
+"personal-assistants"
+],
+"clipmivoai": [
+"planning-tasks",
+"marketing-agents",
+"video-editing",
+"video",
+"images-design",
+"rules-config"
+],
+"argent": [
+"code-review",
+"testing-qa",
+"mcp-servers",
+"terminal-agents",
+"images-design",
+"mobile"
+],
+"n8n-skills": [
+"mcp-servers",
+"workflow-automation",
+"local-models",
+"rules-config"
+],
+"codex-ppt-skill": [
+"planning-tasks",
+"local-models",
+"images-design",
+"rules-config"
+],
+"vellum-assistant": [
+"agent-memory",
+"stem-separation",
+"personal-assistants"
+],
+"evo": [
+"parallel-orchestration",
+"codebase-context",
+"observability",
+"evals",
+"multi-agent"
+],
+"open-steps": [
+"terminal-agents",
+"rules-config"
+],
+"ghost-editor": [
+"agent-auth",
+"ide-agents",
+"subtitles-transcripts",
+"video-editing",
+"video"
+],
+"websitebench": [
+"browser-automation",
+"evals"
+],
+"renderlint": [
+"browser-automation",
+"agent-frameworks"
+],
+"papermorph": [
+"text-to-sql",
+"vector-rag",
+"ai-dubbing-voices",
+"images-design"
+],
+"rust-anything": [
+"agent-frameworks",
+"terminal-agents"
+],
+"new-term-radar": [
+"marketing-agents",
+"mcp-servers"
+],
+"computer-repair-skill": [
+"planning-tasks",
+"dialogue-cleanup"
+],
+"underthesea": [
+"voice-phone",
+"agent-frameworks",
+"dialogue-cleanup"
+],
+"agent-scripts": [
+"workflow-automation",
+"local-models",
+"video-editing",
+"rules-config"
+],
+"sand3d": [
+"agent-frameworks"
+],
+"sag-wiki": [
+"vector-rag",
+"voice-phone",
+"research-agents",
+"web-scraping",
+"computer-use",
+"agent-frameworks",
+"local-models"
+],
+"locals": [
+"parallel-orchestration",
+"local-models"
+],
+"papilot": [
+"code-review",
+"vector-rag",
+"research-agents",
+"computer-use",
+"ide-agents",
+"video-editing",
+"images-design"
+],
+"smitline": [
+"voice-phone",
+"mcp-servers",
+"subtitles-transcripts"
+],
+"dossier": [
+"text-to-sql",
+"vector-rag",
+"local-models"
 ]
 }

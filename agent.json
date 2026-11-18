@@ -1,12 +1,12 @@
 {
   "name": "AgentScout",
-  "description": "AgentScout is a read-only directory of 5,855 AI agent tools, including 3,190 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server (https://mcp.agentscouthq.com/mcp).",
+  "description": "AgentScout is a read-only directory of 5,900 AI agent tools, including 3,194 MCP servers, with link checks and pricing as makers state it. It has no chat or task endpoint; read the static JSON feeds below or use the read-only MCP server (https://mcp.agentscouthq.com/mcp).",
   "url": "https://agentscouthq.com/",
   "provider": {
     "organization": "AgentScout",
     "url": "https://agentscouthq.com/"
   },
-  "version": "2026-11-16",
+  "version": "2026-11-18",
   "documentationUrl": "https://agentscouthq.com/llms.txt",
   "contact": "support@agentscouthq.com",
   "capabilities": {

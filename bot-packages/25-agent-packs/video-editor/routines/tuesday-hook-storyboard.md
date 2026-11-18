@@ -1,4 +1,4 @@
-# Routine: Tuesday 3-second hook storyboard (`tuesday-hook-storyboard`)
+# Routine: Wednesday 3-second hook storyboard (`tuesday-hook-storyboard`)
 
 - **Agent:** AgentScout Video Editor Agent (`video-editor`)
 - **Company:** {{YOUR_COMPANY}} (`{{YOUR_DOMAIN}}`)
