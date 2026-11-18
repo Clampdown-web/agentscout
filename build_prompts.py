@@ -73,6 +73,8 @@ THUMB_ALT = {
 
 CSS = """<style id="pr-css">
 main.wrap{max-width:1280px}
+main.wrap>h1{margin:0 0 12px;max-width:none;text-align:left}
+main.wrap>.lede{margin:0 0 18px;max-width:none;text-align:left}
 .pr-nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
 .pr-nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);text-decoration:none;font-size:14px;font-weight:650}
 .pr-nav a[aria-current=page]{background:#4338CA;border-color:#4338CA;color:#fff}
