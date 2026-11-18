@@ -115,6 +115,49 @@ On the machine that builds the site, install the pinned Python deps so Pillow is
 python3 -m pip install -U -r requirements.txt
 ```
 
+## Prompt submissions (`prompt-submit.js`)
+
+The prompt form (`submit.html?type=prompt`, from PR #160) posts
+`type: "prompt"` with an empty website and a prompt category
+(`coding-agents`, `mcp`, `browser-agents`) to `POST /submit`. The current
+worker rejects that: empty website is a 400, those categories are a 400
+("Please pick a category"), and any type other than `"update"` is treated
+as a new tool listing, dropping `prompt` and `works_with`.
+
+`prompt-submit.js` is the branch the worker needs, as a drop-in module
+(the worker source itself is not in this repo). Copy it into the
+agentscout-image project next to its entry file and call it at the top of
+`handleSubmit`, before the tool-only validation, passing the parsed JSON
+body and the same KV binding the worker uses for tool submissions
+(`sub:` keys):
+
+```js
+import { handlePromptSubmit } from "./prompt-submit.js";
+
+// Pass the same KV binding the worker uses for tool submissions (sub: keys).
+const prompt = await handlePromptSubmit(body, env.<submissions-KV-binding>);
+if (prompt.handled) return Response.json(prompt.body, { status: prompt.status });
+```
+
+A valid prompt is stored under a `prompt:<uuid>` key (90-day TTL) with
+`type: "prompt"` and subject `"Prompt submission"`, so it is never a new
+tool listing and the capture/export flow can list prompt submissions
+separately. The worker's email send for it must use the subject line
+`"Prompt submission"`; the form's mailto fallback already does. A prompt
+needs a title, the prompt text (max 2000 chars, matching the form), and a
+prompt category; a website is optional and must be http/https when given.
+Tool (`"new"`) and update submissions return `{ handled: false }` and run
+through the existing validation unchanged — a tool submission without a
+website is still rejected there. A missing KV binding fails closed (503).
+No Turnstile, CORS/Origin, rate-limit, or CSP change: `protect()` already
+gates `POST /submit` before the inner handler runs. Do not deploy this
+from this repository; deploy only `agentscout-image` after the PR merges,
+and only with the owner's separate OK.
+
+```sh
+node --test cloudflare-image-worker-patches/prompt-submit.test.mjs
+```
+
 ## Test the patch before you copy it
 
 From the agentscout repo root:
