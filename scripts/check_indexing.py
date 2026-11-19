@@ -87,7 +87,9 @@ def check_a4():
                 continue
             p = Path(dirpath) / fn
             s = p.read_text(encoding="utf-8", errors="ignore")
-            s = re.sub(r"<script\b.*?</script>", "", s, flags=re.S)
+            # Case-insensitive, and the closing tag may carry whitespace. A case-sensitive
+            # <script> filter misses <SCRIPT> and is the CodeQL bad-tag-filter alert.
+            s = re.sub(r"(?is)<script\b[^>]*>.*?</script\b[^>]*>", "", s)
             s = re.sub(r"<!--.*?-->", "", s, flags=re.S)
             s = re.sub(r'<link[^>]*rel="canonical"[^>]*>', "", s)  # canonicals unchanged by design (A4 is hrefs)
             n += 1
