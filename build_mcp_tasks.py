@@ -119,14 +119,14 @@ def pages(t):
              ("How does AgentScout rank these MCP servers?","By the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come after those with one. There are no paid placements."),
              ("Which apps can use these MCP servers?","Any MCP client: Claude Desktop, Claude Code, Cursor, Codex, VS Code with Copilot, Windsurf and others. Each server's own docs give the exact config; our free MCP config builder can write the JSON for you.")]
         fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(a)}</h3><p style="margin:0">{e(b)}</p>' for a,b in faq)
-        rel=[f'<a href="{a[0]}.html">{e(a[2])}</a>' for a in made if a[0]!=s]+['<a href="index.html">All MCP servers by task</a>']
+        rel=[f'<a href="{a[0]}.html">{e(a[2])}</a>' for a in made if a[0]!=s]+['<a href="./">All MCP servers by task</a>']
         facts=(f'<div class="badges" style="margin:0 0 18px"><span class="b">{n:,} MCP servers</span><span class="b">{osn:,} open source</span>'
                +(f'<span class="b">Most starred: {e(st[0]["name"])} (★ {st[0]["github_stars"]:,})</span>' if st else "")+'</div>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","name":h1,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(it)]},
             {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":B+"mcp/"},{"@type":"ListItem","position":3,"name":h1,"item":canon}]}]}
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">MCP servers by task</a> / {e(lab)}</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h1)} (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">MCP servers by task</a> / {e(lab)}</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">{e(h1)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Here are the {n:,} we list, ranked.</p>{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked them:</strong> each server here is listed in our <a href="../categories/mcp-servers.html">MCP servers category</a> and its listing says it does this job. We order them by the GitHub stars recorded on each listing, then visitor star ratings, then the most recent code push to the repo, then listing maturity. Servers without a tracked public repo come last. Links checked {asof}. No paid placements.</p>'
               f'<h2 {H2}>The {n:,} MCP servers for {e(job)}, ranked</h2>'
@@ -161,7 +161,7 @@ def pages(t):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"hasPart":[{"@type":"WebPage","name":f"Best MCP servers for {a[1]}","url":f"{B}mcp/{a[0]}.html"} for a in made]},
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":a,"acceptedAnswer":{"@type":"Answer","text":b}} for a,b in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best MCP servers by task","item":canon}]},{"@type":"VideoObject","name":"AgentScout MCP Command Center & Live JSON-RPC Stream","description":"Animated terminal and pipeline overview showing how Claude Code, Cursor, and Windsurf query AgentScout's free MCP server (com.agentscouthq/directory).","thumbnailUrl":B+"assets/animations/agentscout-mcp-terminal-poster.png","contentUrl":B+"assets/animations/agentscout-mcp-terminal.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT20S"}]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / MCP servers by task</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">Best MCP servers by task (2026)</h1>'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / MCP servers by task</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left;margin-left:0">Best MCP servers by task (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">MCP (Model Context Protocol) servers plug Claude, Cursor, Codex and other AI clients into your databases, apps and data. Instead of one giant list, start with the job you need done. Each task links to a ranked page with a short guide to choosing.</p>'
           f'<p style="font-size:14px">Use AgentScout from your AI client: <a href="connect.html">connect to the free AgentScout MCP server</a>.</p>'
           f'<p style="font-size:14px">Jump to</p>{jump}'
@@ -174,7 +174,7 @@ def pages(t):
           f'<p class="disclose">Facts come from our directory listings and each project\'s GitHub repo; pricing is as each maker states it and can change. Missing a server? <a href="../submit.html">Submit it free</a>.</p></section>')
     open("mcp/index.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
     # inbound links (idempotent)
-    BB.link_in("index.html",'<a href="s/index.html">Popular lists</a>',' · <a href="mcp/">Best MCP servers by task</a>','href="mcp/"')
+    BB.link_in("index.html",'<a href="s/">Popular lists</a>',' · <a href="mcp/">Best MCP servers by task</a>','href="mcp/"')
     import atexit; atexit.register(_catlink,made)  # category pages are rewritten later in build_site, so link in at exit
     BB.link_in("llms.txt",f"- [Best MCP servers for Codex]({B}best/mcp-servers-for-codex.html)","\n"+f"- [Best MCP servers by task]({B}mcp/)"+"".join(f"\n- [Best MCP servers for {a[1]}]({B}mcp/{a[0]}.html)" for a in made),f"]({B}mcp/)")
     print("mcp task pages:",len(made),[(a[0],len(a[6])) for a in made])

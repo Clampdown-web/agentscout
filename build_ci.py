@@ -107,7 +107,7 @@ def pages(t):
     k=len(rows)
     title=f"Agent Skills with Install Commands ({k} picks) · AgentScout"
     desc=f"{k} agent skills for Claude Code, Codex, Cursor and other coding agents, each with the install command from its official README. Checked {CHECKED}."
-    body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Agent Skills</p><h1>Agent Skills with install commands</h1>'
+    body=(f'<p class="crumb"><a href="../">AgentScout</a> › Agent Skills</p><h1>Agent Skills with install commands</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Agent skills are folders of instructions and scripts (a SKILL.md plus files) that coding agents load when a task needs them. '
           f'Here are {k} skills from the AgentScout directory, each with the install command copied from its official README on {CHECKED}. Anthropic\'s own example skills install in Claude Code with '
           f'<code>/plugin marketplace add anthropics/skills</code> (<a href="https://github.com/anthropics/skills" rel="noopener noreferrer" target="_blank">README</a>).</p>'

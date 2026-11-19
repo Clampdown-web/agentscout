@@ -639,7 +639,7 @@ def write_dashboard(tools):
         qa_bits.append("The MCP link check has no timestamp on file yet.")
     import build_aicite as bac_hs
     handshake_line = bac_hs.handshake_count_html()
-    body = f'''<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../index.html">MCP servers</a> / Status</div>
+    body = f'''<div class="crumb"><a href="../../">AgentScout</a> / <a href="../">MCP servers</a> / Status</div>
 <section class="st-dash sheet">
 <h1 style="text-align:left">MCP server status</h1>
 <p class="lede" style="margin-left:0;text-align:left">Every MCP server in the directory, from the link check stored in <a href="../../status.json">status.json</a>. {VERIFY_CADENCE}. The live count is {live:,} of {checked_n:,} checked servers. A server with no row in the check file, including a catalog-only listing, is listed and not yet checked, and is not part of that percentage. The daily check includes catalog-only servers the next time it runs. Nothing on this page is guessed.</p>
@@ -658,7 +658,7 @@ def write_dashboard(tools):
 <table class="st-table" id="st-table"><thead><tr><th>MCP server</th><th>Status</th><th>Last checked</th><th>HTTP result</th><th>Recent history</th></tr></thead><tbody>
 {"".join(rows)}
 </tbody></table></div>
-<p class="muted" style="margin-top:14px">Up and down are the checked set. Not yet checked, including catalog-only listings the daily check has not opened, are labeled unverified and stay out of the live percentage. Up includes servers whose latest check was OK, and servers that answered but block scripted requests. Down means the check returned an error or no response. See also <a href="../pricing.html">MCP pricing</a> and <a href="../index.html">MCP servers by task</a>.</p>
+<p class="muted" style="margin-top:14px">Up and down are the checked set. Not yet checked, including catalog-only listings the daily check has not opened, are labeled unverified and stay out of the live percentage. Up includes servers whose latest check was OK, and servers that answered but block scripted requests. Down means the check returned an error or no response. See also <a href="../pricing.html">MCP pricing</a> and <a href="../">MCP servers by task</a>.</p>
 </section>
 <script>
 (function(){{

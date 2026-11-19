@@ -85,7 +85,7 @@ def _new_body(t):
     catalog=[x for x in rows if (x.get("added") or "")>=cut and x.get("catalog_only")]
     shown=full[:NEW_CAP]
     seed=[x for x in t if x.get("seed")]; sd=sorted({x["added"] for x in seed if x.get("added")})
-    seednote=(f' The starting catalog of {len(seed):,} tools ({e(datetime.date.fromisoformat(sd[0]).strftime("%b %-d"))}–{e(fmt(sd[-1]))}) is not counted as new. <a href="index.html#feed">Browse all {len(t):,} tools</a>.' if seed and sd else "")
+    seednote=(f' The starting catalog of {len(seed):,} tools ({e(datetime.date.fromisoformat(sd[0]).strftime("%b %-d"))}–{e(fmt(sd[-1]))}) is not counted as new. <a href="./#feed">Browse all {len(t):,} tools</a>.' if seed and sd else "")
     word="tool" if len(full)==1 else "tools"
     lede=f'{len(full):,} full {word} added in the last 30 days, newest first.'
     if len(full)>len(shown): lede+=f' Showing the latest {len(shown):,}.'
@@ -93,10 +93,10 @@ def _new_body(t):
     if catalog:
         cw="listing" if len(catalog)==1 else "listings"
         verb="is" if len(catalog)==1 else "are"
-        lede+=f' {len(catalog):,} catalog-only {cw} added in the same window {verb} not listed here. <a href="index.html#spanel">Search the directory</a>.'
+        lede+=f' {len(catalog):,} catalog-only {cw} added in the same window {verb} not listed here. <a href="./#spanel">Search the directory</a>.'
     days={}
     for x in shown: days.setdefault(x["added"],[]).append(x)
-    body=('<div class="crumb"><a href="index.html">AgentScout</a> / New tools</div><section class="calm">'
+    body=('<div class="crumb"><a href="./">AgentScout</a> / New tools</div><section class="calm">'
           f'<h1 style="text-align:left">New AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">{lede}{seednote}</p>')
     wk=(pt_today()-datetime.timedelta(days=6)).isoformat()
     body+=makers_section(t)  # newest added first; count comes from the flagged rows

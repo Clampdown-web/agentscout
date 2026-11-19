@@ -35,7 +35,7 @@ def wrap(s,h1,lede,inner,faq,js,t):
         {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Free tools","item":B+"free-tools.html"},{"@type":"ListItem","position":3,"name":name,"item":canon}]}]}
     fq="".join(f'<h3 style="font-size:15px;margin:18px 0 4px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / {e(name)}</div><section class="calm prose wide">'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / {e(name)}</div><section class="calm prose wide">'
           f'<h1 style="text-align:left;margin-left:0">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>'
           f'<p class="muted" style="margin:0 0 8px;font-size:13.5px">Free, no sign-up. Runs entirely in your browser: nothing you type is sent to AgentScout or any AI provider.</p>'
           f'{inner}{__import__("build_tasks").ai_ref_cta_html("../")}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}{rel(s)}'
@@ -511,7 +511,7 @@ def bvb(t):
            +_num("hs","Servers or hosting per month ($)",60)+_num("ha","Model API cost per month ($)",80)+_num("hh","Setup hours",40)+_num("hm","Maintenance hours per month",6)+_num("hr","Hourly cost of your time ($)",75)+
            f'</div><div><label {LAB} for="hy">Compare over</label><select id="hy" {INP}><option value="12">12 months</option><option value="24" selected>24 months</option><option value="36">36 months</option></select></div>'
            +ERR("berr")+f'<div id="bres" style="{CARDS}"></div><p id="bver" style="font-weight:600;margin:12px 0 0"></p></div>'
-           '<p class="muted" style="font-size:13px">Need the model API figure? Estimate it with the <a href="agent-run-cost-estimator.html">agent run cost estimator</a>. Looking for open-source options? Browse the <a href="../best/index.html">best-of lists</a> or check a license with the <a href="open-source-license-checker.html">license checker</a>.</p>')
+           '<p class="muted" style="font-size:13px">Need the model API figure? Estimate it with the <a href="agent-run-cost-estimator.html">agent run cost estimator</a>. Looking for open-source options? Browse the <a href="../best/">best-of lists</a> or check a license with the <a href="open-source-license-checker.html">license checker</a>.</p>')
     js=NUMJS+r''';var F=[["bs","Seat price"],["bn","Seats"],["bu","Usage"],["bo","Setup"],["hs","Hosting"],["ha","Model API"],["hh","Setup hours"],["hm","Maintenance hours"],["hr","Hourly cost"]];
 function run(){chkN(F,"berr");var y=+$("hy").value,buyM=v("bs")*v("bn")+v("bu"),buy0=v("bo"),bldM=v("hs")+v("ha")+v("hm")*v("hr"),bld0=v("hh")*v("hr"),B=buy0+buyM*y,S=bld0+bldM*y,be=null;
 for(var m=1;m<=120;m++){if(bld0+bldM*m<=buy0+buyM*m){be=m;break}}
@@ -608,7 +608,7 @@ def cmpcard(t):
            +"".join(f'<div><label {LAB} for="cc{i}">Tool {i+1}{" (optional)" if i==2 else ""}</label><input id="cc{i}" list="ccl" autocomplete="off" placeholder="Start typing a tool name" {INP}></div>' for i in range(3))+
            '</div><datalist id="ccl"></datalist><p id="cerr2" role="alert" style="color:#e5484d;margin:8px 0 0;font-size:13.5px"></p></div><div id="ccout" aria-live="polite"></div>'
            '<p style="margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px"><button class="btn primary" type="button" id="ccpng">Download comparison card (PNG)</button><button class="btn" type="button" id="cclink">Copy link</button><button class="btn" type="button" id="cctxt">Copy as text</button><span id="ccmsg" class="muted" aria-live="polite" style="align-self:center"></span></p>'
-           '<p class="muted" style="font-size:13px">Data comes from the AgentScout directory: pricing as each maker states it, open source as listed, and GitHub stars from our latest snapshot of the repository linked on the tool page. For a written head-to-head, see <a href="../compare/index.html">AgentScout comparisons</a>.</p>')
+           '<p class="muted" style="font-size:13px">Data comes from the AgentScout directory: pricing as each maker states it, open source as listed, and GitHub stars from our latest snapshot of the repository linked on the tool page. For a written head-to-head, see <a href="../compare/">AgentScout comparisons</a>.</p>')
     js=NUMJS+r''';var T=null,BY={},cur=[];function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 var ROWS=[["Category",function(x){return x.category}],["Pricing",function(x){return x.pricing}],["Open source",function(x){return x.open_source?"Yes":"No"}],["Skill level",function(x){return x.skill==="no-code"?"No code needed":"For developers"}],["Platforms",function(x){return(x.platforms||[]).join(", ")||"\u2013"}],["GitHub stars",function(x){return x.github_stars?x.github_stars.toLocaleString():"\u2013"}]];
 function find(n){n=n.trim().toLowerCase();return BY[n]||null}
