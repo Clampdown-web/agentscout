@@ -54,6 +54,7 @@ RECORD_KEYS = (
     "reason",
     "slug",
     "tool_count",
+    "tool_names",
     "transport",
     "ts",
 )
@@ -582,16 +583,21 @@ def _base_result(url: str, transport: str, started: float) -> dict:
         "latency_ms": int((time.perf_counter() - started) * 1000),
         "protocol_version": None,
         "tool_count": None,
+        # First tool names from tools/list, for the tool-page "Our check" block (Nov 18 2026, indexing content).
+        # Rows written before this change have no key; readers treat a missing key as "names not recorded".
+        "tool_names": None,
         "reason": "connection",
     }
 
 
-def _finish(result: dict, *, outcome: str, reason: str | None, status, protocol=None, tools=None, started: float) -> dict:
+def _finish(result: dict, *, outcome: str, reason: str | None, status, protocol=None, tools=None, names=None, started: float) -> dict:
     result["outcome"] = outcome
     result["reason"] = reason
     result["http_status"] = status if isinstance(status, int) and status > 0 else None
     result["protocol_version"] = protocol
     result["tool_count"] = tools
+    if names is not None:
+        result["tool_names"] = [str(n) for n in names][:10]
     result["latency_ms"] = int((time.perf_counter() - started) * 1000)
     return result
 
@@ -717,6 +723,7 @@ def _handshake(session: Session, url: str, result: dict, started: float) -> dict
         status=tstatus,
         protocol=protocol_version,
         tools=len(tools["tools"]),
+        names=[t.get("name") for t in tools["tools"] if isinstance(t, dict) and isinstance(t.get("name"), str)],
         started=started,
     )
 

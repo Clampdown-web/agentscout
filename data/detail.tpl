@@ -26,13 +26,13 @@
       <a class="gencall" href="../generate.html">✨ Try AgentScout's free AI image generator →</a>
       <div class="acts" style="margin-bottom:28px;flex-wrap:wrap;row-gap:8px"><a class="btn primary" href="{{URL}}" target="_blank" rel="noopener noreferrer">Visit {{HOST}} ↗</a>{{GHBTN}}<button class="save " data-save="{{SLUG}}" aria-pressed="false" title="Save to favorites (this device)" aria-label="Save to favorites"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 13.6S2 10.1 2 5.9A3.1 3.1 0 0 1 8 4.3a3.1 3.1 0 0 1 6 1.6c0 4.2-6 7.7-6 7.7z"/></svg><span>Save</span></button><button class="vote " data-vote="{{SLUG}}" aria-pressed="false" title="Upvote (saved on this device)"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3l5 7H3z"/></svg><span>0</span></button><span data-actions="{{SLUG}}" style="display:contents"></span></div>
       <h2 style="font-size:16px;margin-bottom:10px">Use cases</h2><div class="badges" style="margin-bottom:32px">{{UC}}</div>
-      {{MAKER_CTA}}{{ABOUT}}{{CMP}}<h2 style="font-size:16px;margin-bottom:12px">{{NAME}} alternatives</h2><p class="muted" style="margin:0 0 12px">Other {{CAT}} tools in our directory. <a href="../categories/{{CATSLUG}}.html">See all {{CAT}} tools →</a></p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">{{REL}}</div>
+      {{MAKER_CTA}}{{ABOUT}}{{MCPCHECK}}{{CMP}}<h2 style="font-size:16px;margin-bottom:12px">{{NAME}} alternatives</h2><p class="muted" style="margin:0 0 12px">Other {{CAT}} tools in our directory. <a href="../categories/{{CATSLUG}}.html">See all {{CAT}} tools →</a></p><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">{{REL}}</div>
       {{BOTSTORE}}
-      {{BADGE}}
     </div>
     <aside class="panel"><h3 style="margin-bottom:14px">At a glance</h3><dl>{{FACTS}}</dl><p class="disclose">Pricing is as the maker states it. Check the official site before you buy. Saves stay on this device. Upvotes are one per visitor per day.</p></aside>
   </div></section>
 </main>
+<aside class="wrap" aria-label="Badge for makers">{{BADGE}}</aside>
 <footer id="about" class="band footcols" style="border-bottom:0"><div class="wrap">
 <div class="footgrid">
 <div class="footcol"><h2>Browse</h2><a href="../categories/index.html">Categories</a><a href="../tasks/index.html">Tasks</a><a href="../compare/index.html">Compare</a><a href="../new.html">New tools</a></div>
