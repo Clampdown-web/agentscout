@@ -11325,7 +11325,7 @@
     "sources": [
       "https://anamaps.com/"
     ],
-    "updated": "2026-10-18"
+    "updated": "2026-11-19"
   },
   "bruin": {
     "kind": "lite",
@@ -33662,7 +33662,11 @@
       "https://kling.ai/blog/kling-mcp-cinematic-performance-workflow",
       "https://github.com/klingai-tech/claude-plugin",
       "https://github.com/klingai-tech/claude-plugin/blob/main/README.md",
-      "https://github.com/klingai-tech/claude-plugin/blob/main/.mcp.json"
+      "https://github.com/klingai-tech/claude-plugin/blob/main/.mcp.json",
+      "https://www.npmjs.com/package/@klingai/plugin-global",
+      "https://www.npmjs.com/package/@klingai/plugin-cn",
+      "https://www.npmjs.com/package/@klingai/cli-global",
+      "https://www.npmjs.com/package/@klingai/cli-cn"
     ],
     "long": [
       "Kling AI is Kuaishou's video and image generator. Its official MCP and CLI guide documents a remote HTTP server for international accounts at https://kling.ai/mcp. A client adds that URL, the user signs in to a Kling account, and generation spends that account's credits. The official Claude Code plugin is a separate connection to https://kling.ai/mcp/plugin and does not ask for an API key. The plugin README says to keep only one active Kling connection."
@@ -33672,7 +33676,8 @@
       "Kling's MCP and CLI guide, linked from kling.ai, says international accounts use the remote HTTP endpoint https://kling.ai/mcp. In Claude Code, run: claude mcp add --transport http klingai --scope user https://kling.ai/mcp. Then start Claude Code, run /mcp, and complete the Kling sign-in. --scope project shares the connection in the current project; omitting the scope keeps the default local scope, private to you and that project.",
       "For an individual Claude account, the same Kling guide says: open Customize, then Connectors, choose Add custom connector, add https://kling.ai/mcp, authorize the Kling account, and enable the connector in the conversation. Team and Enterprise accounts may depend on organization settings.",
       "The official Claude Code plugin (klingai-tech/claude-plugin) uses a different endpoint, https://kling.ai/mcp/plugin, declared in its .mcp.json as an HTTP server. Install with: claude plugin install kling-ai --marketplace klingai-tech/claude-plugin. Then open /mcp, select kling-ai, and authorize the Global Kling account in the browser. The README says the plugin does not ask for an API key.",
-      "The plugin README says to keep only one active Kling connection. If you still have the old https://klingai.com/mcp session, finish outstanding task checks, disconnect it, then authorize the Global account. The plugin's three Skills are kling-ai (routing, Elements, motion library, uploads, credits and task status), kling-ai-generate-image, and kling-ai-generate-video. Models and tool arguments come from the live connection."
+      "The plugin README says to keep only one active Kling connection. If you still have the old https://klingai.com/mcp session, finish outstanding task checks, disconnect it, then authorize the Global account. The plugin's three Skills are kling-ai (routing, Elements, motion library, uploads, credits and task status), kling-ai-generate-image, and kling-ai-generate-video. Models and tool arguments come from the live connection.",
+      "Kling also publishes regional npm packages that bundle a Skill and a CLI for local assistants. Global (kling.ai) accounts: plugin @klingai/plugin-global and standalone CLI @klingai/cli-global. China-site (klingai.com) accounts: @klingai/plugin-cn and @klingai/cli-cn. Both CLI packages install the same kling command, which signs in with browser OAuth (kling login) and also works from the terminal. All four require Node.js 18 or newer. Global and China-site accounts are separate, and every image or video generation consumes credits on the account you sign in with."
     ],
     "mcp": {
       "endpoint": "https://kling.ai/mcp",
