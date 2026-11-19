@@ -305,7 +305,9 @@ def _sync_index_counts():
         _y,_m,_d = map(int, _lc_raw.split("-"))
         _lc = _dt.date(_y,_m,_d).strftime("%b %-d, %Y")
     except Exception:
-        _lc = _dt.date.today().strftime("%b %-d, %Y")
+        # TASK-22 (Nov 18 2026): the badge date is Pacific time, never the
+        # container's UTC date — an evening-PT build stamped tomorrow's date.
+        _lc = _dt.datetime.now(__import__("zoneinfo").ZoneInfo("America/Los_Angeles")).date().strftime("%b %-d, %Y")
     # TASK-18: the homepage title (and its og/twitter mirrors) carries no catalog total.
     s = re.sub(r"AgentScout: \d[\d,]* AI Agent Tools &amp; MCP Servers \(2026\)", "AgentScout: AI Agent Tools & MCP Servers (2026)", s)
     s = re.sub(r"Directory of \d[\d,]* link-checked", f"Directory of {n:,} link-checked", s)
