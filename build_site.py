@@ -148,6 +148,7 @@ UC_SET={"disconfirmai":["research the web"],  # Nov 14 2026: maker correction. "
 "pragor":["security & governance","build multi-agent systems"],  # Pragor (Oct 19 PT, maker request): coordination and governance layer for people and agents, not an autonomous agent; the keyword guess would add "write code"
 "cosvoice":["voice & phone calls","connect tools via MCP"],  # CosVoice (Oct 20 PT, owner): phone/email for AI assistants; keyword guess would add "write code" (mentions Cursor, repo)
 "mailveri-mcp":["connect tools via MCP"],
+"1lookup":["connect tools via MCP"],  # Nov 19 2026: phone/email/IP validation MCP. "phone" would tag it as voice calls.
 # Oct 20, 2026 PT morning discovery: keyword rules mis-tagged these ("call"/"phone" -> voice, "browser" -> browser automation, "search" -> research), so pinned by hand
 "opcode":["write code"],"memori":["give agents memory","build an agent"],"cloudcli":["write code"],"xerj":["give agents memory","connect tools via MCP"],
 "onlook":["build apps without code","write code"],"agentos":["run code safely","write code"],"agent-sandbox-kubernetes":["run code safely","automate the browser"],
@@ -161,7 +162,7 @@ from zoneinfo import ZoneInfo as _Z
 _c=(_dt.datetime.now(_Z("America/Los_Angeles")).date()-_dt.timedelta(days=13)).isoformat()
 # Slugs that must not follow the display name (Nov 8 2026): MagenticLite keeps its indexed magentic-ui URL (PR #70 renamed the tool);
 # names with accents keep a readable ASCII slug.
-SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots","Sandstorm (formerly forkd)":"forkd","MachGTM":"mach","MausBot (OpenMausBot)":"openmausbot"}  # Nov 15 2026: keep /tools/openmausbot.html after the MausBot rename
+SLUG_PIN={"MagenticLite":"magentic-ui","Está no Ir for Bots":"esta-no-ir-for-bots","Sandstorm (formerly forkd)":"forkd","MachGTM":"mach","MausBot (OpenMausBot)":"openmausbot","1Lookup MCP":"1lookup"}  # Nov 15 2026: keep /tools/openmausbot.html after the MausBot rename. Nov 19 2026: 1Lookup MCP keeps /tools/1lookup.html.
 GH=json.load(open("data/github.json")) if os.path.exists("data/github.json") else {}
 for x in t:
     x["new"]=(not x.get("seed")) and x.get("added","")>=_c and "discontinued" not in x.get("maturity","").lower()  # seed = starting catalog (launch Oct 14 + bulk import Oct 16), never "new"

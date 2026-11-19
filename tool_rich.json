@@ -33681,5 +33681,130 @@
       "config": "{\"mcpServers\": {\"klingai\": {\"url\": \"https://kling.ai/mcp\"}}}",
       "docs": "https://kling.ai/app/mcp/guide"
     }
+  },
+  "1lookup": {
+    "kind": "lite",
+    "src_kind": "site",
+    "updated": "2026-11-18",
+    "cite": true,
+    "sources": [
+      "https://www.1lookup.io/",
+      "https://www.1lookup.io/llms.txt",
+      "https://www.1lookup.io/products/mcp",
+      "https://www.1lookup.io/mcp/claude",
+      "https://www.1lookup.io/mcp/cursor",
+      "https://www.1lookup.io/mcp/oauth",
+      "https://www.1lookup.io/pricing",
+      "https://www.1lookup.io/.well-known/mcp/server-card.json",
+      "https://www.1lookup.io/about"
+    ],
+    "long": [
+      "1Lookup MCP is the hosted MCP server for 1Lookup, a Momentum Labs data-verification product. The maker, Robby Frank (founder, per 1lookup.io/about), describes it as a way for Claude or Cursor to validate phone numbers, emails and IPs: add one URL, sign in, and do not paste an API key. The endpoint 1Lookup publishes is https://app.1lookup.io/api/mcp. Transport is streamable HTTP. SSE is disabled. Auth is OAuth 2.1 with PKCE (S256 required), dynamic client registration and a browser consent screen. The client receives a scoped token, not the account API key.",
+      "The server card and the Claude and Cursor setup pages list five tools. validate_phone confirms a number is real and active and returns line type, carrier, DNC status and a risk level (1 credit). verify_email checks that an address exists and is deliverable, and flags disposable, role-based and risky addresses (1 credit). ip_lookup returns geolocation and connection type, and flags proxy, VPN, Tor and datacenter ranges (1 credit). bulk_verify validates up to 50 phones, emails or IPs of one type in one call and returns a per-item result (1 credit per record). get_account returns the plan, subscription status and remaining credits and spends nothing. 1Lookup's pricing page says the platform has 76 data products on the same credits. Its llms.txt says everything beyond those five tools is on the REST API at https://app.1lookup.io/api/v1, not over MCP.",
+      "Tool calls spend the same universal credits as the REST API. There is no separate MCP fee. On the pricing page, monthly plans are Starter at $99 for 20,000 credits (about $4.95 per 1,000 core lookups), Growth at $299 for 85,000 (about $3.52), Professional at $799 for 250,000 (about $3.20) and Enterprise at $1,999 for 1,000,000 (about $2.00). Annual billing takes the equivalent of two months off. Every plan includes a 7-day trial (Starter includes $5 in credits; Growth and above include $20) and nothing is charged on the day you start. A free-plan account receives HTTP 403 UPGRADE_REQUIRED on every tool call. Identical lookups are served from cache for 7 days. The MCP spec lists a rate limit of 1,000 requests per minute, shared with API keys. Access tokens last one hour. Refresh tokens last 30 days and rotate on use."
+    ],
+    "who": "People running outreach, enrichment or signup agents inside Claude or Cursor who want a phone, an email or an IP checked in the same chat, and who would rather approve a browser sign-in than paste an API key into the client.",
+    "features": [
+      "validate_phone: line type, carrier, Do-Not-Call status and a risk level for one number (1 credit)",
+      "verify_email: deliverability, plus disposable, role-based and risky-address flags (1 credit)",
+      "ip_lookup: geolocation, connection type, and proxy, VPN, Tor and datacenter flags (1 credit)",
+      "bulk_verify: up to 50 phones, emails or IPs of one type, with a result per item (1 credit per record)",
+      "get_account: plan, subscription status and remaining credits, so an agent can pace a run (free)",
+      "OAuth 2.1 with PKCE S256 on a hosted streamable-HTTP endpoint, so the published Claude and Cursor configs contain the URL and no API key"
+    ],
+    "pros": [
+      "The published Claude and Cursor setup is one URL, https://app.1lookup.io/api/mcp, plus a browser approval. The mcp.json entry has no API key.",
+      "Phone, email and IP checks share the same credits as the REST API. 1Lookup documents no separate MCP fee, and get_account is free.",
+      "bulk_verify covers up to 50 values of one type in a single call instead of one lookup per value.",
+      "Identical lookups are cached for 7 days, and the MCP product page says phone and carrier data is refreshed daily.",
+      "When credits run out, the rate limit hits, or the plan is free, 1Lookup says the tool tells the agent the next step (check get_account, retry, or upgrade) rather than only returning a stack trace."
+    ],
+    "cons": [
+      "The MCP server exposes five tools. The pricing page's other products, 76 in total on the same credits, are REST-only at https://app.1lookup.io/api/v1.",
+      "A free-plan account gets HTTP 403 UPGRADE_REQUIRED on every tool call. Testing the tools depends on the 7-day trial or a paid plan.",
+      "SSE is disabled. 1Lookup says a client that only speaks the older SSE transport cannot connect, and it names Claude and Cursor as the verified clients.",
+      "bulk_verify is capped at 50 values and one type per call. The MCP spec lists 1,000 requests per minute, shared with API keys.",
+      "Access tokens last one hour. Refresh tokens last 30 days and rotate on use, so an idle connection has to sign in again after that window."
+    ],
+    "setup": [
+      "Start a paid plan or the 7-day trial at https://www.1lookup.io/pricing. The Claude setup page says programmatic access is a paid feature: a free-plan account receives HTTP 403 UPGRADE_REQUIRED on every tool call.",
+      "Claude, as documented at https://www.1lookup.io/mcp/claude: open Customize, then Connectors, then Add custom connector. Paste https://app.1lookup.io/api/mcp. There is no command, package, API key or environment variable. Sign in in the browser and approve. On Team and Enterprise plans an owner adds it in Organization settings, and members connect afterwards. If you already have an account, open API & MCP in the 1Lookup app and click Connect your AI. That path makes a key and gives you the paste-in link instead of the sign-in window.",
+      "Cursor, as documented at https://www.1lookup.io/mcp/cursor: open .cursor/mcp.json for one project, or ~/.cursor/mcp.json for every project. Add one mcpServers entry named 1lookup whose only field is url set to https://app.1lookup.io/api/mcp. Reload Cursor and approve the browser sign-in. The config block is below.",
+      "1Lookup says any client that supports remote MCP over streamable HTTP can use the same URL. SSE is disabled. The in-app Connect your AI wizard also writes steps for ChatGPT, Grok, Claude Code and VS Code. After the tools appear, ask the agent to check a phone, an email or an IP. Each call bills the plan you approved."
+    ],
+    "mcp": {
+      "endpoint": "https://app.1lookup.io/api/mcp",
+      "transport": "Streamable HTTP (remote, hosted). SSE is disabled.",
+      "auth": "OAuth 2.1 with PKCE (S256 required), dynamic client registration and a browser consent screen. No API key in the published client config. Discovery documents: https://app.1lookup.io/.well-known/oauth-protected-resource and https://app.1lookup.io/.well-known/oauth-authorization-server. Access tokens last 1 hour. Refresh tokens last 30 days and rotate on use.",
+      "tools": [
+        [
+          "validate_phone",
+          "Confirms a number is real and active. Returns line type, carrier, DNC status and a risk level. 1 credit."
+        ],
+        [
+          "verify_email",
+          "Checks that an address exists and is deliverable, and flags disposable, role-based and risky addresses. 1 credit."
+        ],
+        [
+          "ip_lookup",
+          "Geolocation and connection type, plus proxy, VPN, Tor and datacenter flags. 1 credit."
+        ],
+        [
+          "bulk_verify",
+          "Up to 50 phones, emails or IPs of one type in one call, with a result per item. 1 credit per record."
+        ],
+        [
+          "get_account",
+          "Plan, subscription status and remaining credits. Free."
+        ]
+      ],
+      "config": "{\n  \"mcpServers\": {\n    \"1lookup\": {\n      \"url\": \"https://app.1lookup.io/api/mcp\"\n    }\n  }\n}"
+    },
+    "pricing_v": {
+      "checked": "2026-11-18",
+      "src": "https://www.1lookup.io/pricing",
+      "free": false,
+      "note": "Every plan includes a 7-day trial (Starter includes $5 in credits; Growth, Professional and Enterprise include $20) and nothing is charged on the day you start. Annual billing takes the equivalent of two months off. Core phone, email, IP and spam checks are 1 credit each. MCP tool calls use those same credits and have no separate fee. A free-plan account receives HTTP 403 UPGRADE_REQUIRED on every MCP tool call. Unused credits roll over for up to 3 months. Custom plans above 1,000,000 credits start at $2,000/month.",
+      "tiers": [
+        [
+          "Starter",
+          "$99/month",
+          "20,000 credits, about $4.95 per 1,000 core lookups"
+        ],
+        [
+          "Growth",
+          "$299/month",
+          "85,000 credits, about $3.52 per 1,000 core lookups"
+        ],
+        [
+          "Professional",
+          "$799/month",
+          "250,000 credits, about $3.20 per 1,000 core lookups"
+        ],
+        [
+          "Enterprise",
+          "$1,999/month",
+          "1,000,000 credits, about $2.00 per 1,000 core lookups"
+        ]
+      ]
+    },
+    "faq": [
+      [
+        "Which tools does the 1Lookup MCP server expose?",
+        "Five: validate_phone, verify_email, ip_lookup, bulk_verify and get_account. The server card at https://www.1lookup.io/.well-known/mcp/server-card.json and the Claude and Cursor setup pages use those names. 1Lookup's llms.txt says the rest of the catalog is on the REST API at https://app.1lookup.io/api/v1, not over MCP."
+      ],
+      [
+        "Do I paste an API key into Claude or Cursor?",
+        "Not for the setup those pages publish. You add https://app.1lookup.io/api/mcp and approve a browser sign-in. The client gets a scoped token. If you already have an account, API & MCP then Connect your AI makes a key and hands you a personal link instead of the sign-in window."
+      ],
+      [
+        "Will a free 1Lookup plan run these tools?",
+        "No. The Claude and Cursor setup pages say a free-plan account receives HTTP 403 UPGRADE_REQUIRED on every tool call. They point to the 7-day trial for testing the connection."
+      ],
+      [
+        "What does one MCP call cost?",
+        "The same credits as the REST API, with no separate MCP fee. One credit per phone, email or IP lookup, one credit per bulk_verify record, and get_account is free. On the pricing page checked 18 Nov 2026, Starter is $99 a month for 20,000 credits (about $4.95 per 1,000 core lookups), Growth is $299 for 85,000, Professional is $799 for 250,000, and Enterprise is $1,999 for 1,000,000."
+      ]
+    ]
   }
 }
