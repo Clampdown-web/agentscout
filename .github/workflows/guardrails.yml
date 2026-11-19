@@ -1,0 +1,47 @@
+name: guardrails
+
+# Required pull-request check. The job name is `guardrails`.
+# It does not deploy, does not use secrets, and does not rebuild the site.
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: guardrails-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  guardrails:
+    name: guardrails
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Fetch the pull request and recent main
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=200 origin "${{ github.event.pull_request.head.sha }}"
+          git fetch --no-tags --depth=500 origin "+refs/heads/main:refs/remotes/origin/main"
+          if ! git cat-file -e "${{ github.event.pull_request.base.sha }}^{commit}" 2>/dev/null; then
+            git fetch --no-tags --depth=200 origin "${{ github.event.pull_request.base.sha }}"
+          fi
+
+      - name: Unit tests
+        run: python3 scripts/guardrails/test_pr_check.py
+
+      - name: Check this pull request
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          MAIN_REF: origin/main
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python3 scripts/guardrails/pr_check.py
