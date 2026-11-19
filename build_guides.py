@@ -1,6 +1,11 @@
 """How-to guides in guides/. Called from build_extras.build() so the next rebuild keeps the pages.
 
+Guides come from the GUIDES list below: one entry per guide, each with its own
+metadata, body and JSON-LD builders, and contextual-link notes. The workflow
+guide keeps the output it had when it shipped; a new guide adds one entry.
+
 Facts in the workflow guide were checked against vendor docs and pricing pages on 2026-11-16.
+Facts in the crawl guide were checked against vendor docs and pricing pages on 2026-11-18.
 A claim that could not be checked is left out of the page.
 """
 import json, os, re
@@ -18,6 +23,21 @@ H1 = "How to automate workflows with AI agents"
 CHECKED = "2026-11-16"
 CHECKED_LABEL = "November 16, 2026"
 HREF = "../" + GUIDE
+SLUG = "how-to-automate-workflows-with-ai-agents"
+
+CRAWL_GUIDE = "guides/how-to-crawl-websites-for-ai-agents.html"
+CRAWL_SLUG = "how-to-crawl-websites-for-ai-agents"
+CRAWL_CANON = B + CRAWL_GUIDE
+CRAWL_QUERY = "how to crawl websites for AI agents"
+# 64 chars: over the 60-char guard, kept verbatim from the brief because it leads
+# with the top Search Console query ("ai web crawler", 15 impressions Oct 21-Nov 17)
+# and still shows the full target query. The per-guide cap is set in GUIDES.
+CRAWL_TITLE = "AI web crawler: how to crawl websites for AI agents · AgentScout"
+CRAWL_DESC = "How to crawl websites for AI agents: pick the right tool for clean Markdown, JS pages or structured JSON, respect robots.txt, and feed agents safely."
+CRAWL_H1 = "How to crawl websites for AI agents (and pick an AI web crawler)"
+CRAWL_CHECKED = "2026-11-18"
+CRAWL_CHECKED_LABEL = "November 18, 2026"
+CRAWL_HREF = "../" + CRAWL_GUIDE
 
 STEPS = [
     ("Pick one workflow",
@@ -50,6 +70,41 @@ FAQ = [
      "Put a person on the step that sends, pays, deletes, or changes a customer record. n8n can pause before an AI Agent tool runs. Zapier's Human in the Loop step pauses a Zap until someone approves, declines, or changes the data, and Zapier says that step needs a paid account. Dify, Langflow, and Flowise pause on a human-input step. LangGraph's interrupt() and Mastra's suspend() pause code until you resume it. Inngest waits for an approval event without holding the process open. Do not use a sentence in the prompt as the only gate."),
     ("How much does AI workflow automation cost?",
      "It depends on the meter. Zapier charges per successful task. Make charges credits, and most actions use 1 credit. n8n Cloud charges per workflow execution, one run of the whole workflow. Inngest counts the function run plus each step as executions. Trigger.dev charges compute-seconds while a task is executing, plus $0.000025 per run, and does not bill a checkpointed wait as compute. Lindy bills credits per active user, from $29.99 a month. Self-hosting n8n, Activepieces, Dify, Windmill Community Edition, Kestra, or Dagu removes that vendor meter. You still pay for the machine and, where the tool calls one, the model."),
+]
+
+CRAWL_STEPS = [
+    ("Decide the output",
+     "Markdown for RAG or agent context, typed JSON for a database, or actions for a browser agent. The output decides the tool: a Markdown crawler will not give you a typed schema, and a browser agent is slow, expensive bulk crawling."),
+    ("Scope the crawl",
+     "List seed URLs or a sitemap, include-patterns, a depth cap, and a page cap. Then check robots.txt and the site's terms before you fetch anything."),
+    ("Pick the fetch layer",
+     "Plain HTTP is enough for static pages. Reach for a headless browser only when the content needs JavaScript to appear."),
+    ("Pick the tool",
+     "Use the table below. A hosted API fits when you want reliability without running browsers. A local library fits when the crawl is free and yours to run. A browser agent fits only for logged-in or interactive pages."),
+    ("Clean and chunk",
+     "Strip navigation, ads, and boilerplate. Chunk by headings. Keep the URL, the page title, the crawl date, and a content hash with every chunk, so you can trace an answer back to its source."),
+    ("Treat crawled text as untrusted input",
+     "Page text can carry prompt injection: instructions hidden in a page that try to make your agent act. Restrict the seeds you crawl, and never let page text trigger tool calls on its own."),
+    ("Give it to an agent",
+     "Expose the crawler through an MCP server: Firecrawl MCP, ScrapeGraph MCP, or Playwright MCP. Use a search API such as Tavily or Exa when the agent needs to find pages rather than crawl a known site."),
+    ("Recrawl incrementally and spot-check",
+     "Compare content hashes and re-embed only the pages that changed. Then spot-check five pages against their source: a clean-looking crawl can still drop a table or merge two sections."),
+]
+CRAWL_FAQ = [
+    ("What is an AI web crawler?",
+     "An AI web crawler fetches pages, renders JavaScript when needed, and returns clean Markdown or JSON a model can read. It is the step between a website and an agent: the crawler turns pages into text the model can use as context or store for retrieval."),
+    ("Is there a free or open-source AI web crawler?",
+     "Yes. Crawl4AI (Apache-2.0), ScrapeGraphAI (MIT), Scrapling (BSD-3-Clause), and Spider (MIT) are free to run on your own machine. Firecrawl's core is open source under AGPL-3.0 and self-hostable, and its hosted plan starts with 1,000 free credits a month."),
+    ("Is Firecrawl free?",
+     "Firecrawl's hosted Free plan gives you 1,000 credits a month, about 1,000 pages, with no card required. Hobby is $19 a month for 5,000 credits and Standard is $99 a month for 100,000. A scrape or crawl costs 1 credit per page, and the JSON format adds 4 credits per page. Credits do not roll over below the Scale plan."),
+    ("Firecrawl vs Crawl4AI: which should I use?",
+     "Use Firecrawl when you want a hosted API and do not want to run browsers yourself. Use Crawl4AI when you want a free local crawl under the permissive Apache-2.0 license and are happy running Python and Playwright. If you self-host Firecrawl's core and build a closed service on it, read the AGPL-3.0 copyleft terms first."),
+    ("How do I scrape a website with AI?",
+     "Decide the output first: Markdown for reading, typed JSON for a database. Then scope the crawl, check robots.txt and the site's terms, and pick the tool from the table below. Clean and chunk the result, keep the source URL and crawl date, and treat the crawled text as untrusted input before you hand it to an agent."),
+    ("Can an AI agent scrape websites through MCP?",
+     "Yes. Firecrawl MCP, ScrapeGraph MCP, and Playwright MCP expose scrape, crawl, and browser tools to any MCP client, so the agent can fetch a page without you writing the crawler. Use a search API such as Tavily or Exa instead when the agent needs to find pages it does not already know."),
+    ("Is web scraping legal?",
+     "There is no single answer, and this is not legal advice. Scraping public data is the usual starting point, but you should respect robots.txt and the site's terms, and rules on personal data vary by country. When in doubt, check the rules where you operate or ask a lawyer."),
 ]
 
 
@@ -181,7 +236,7 @@ def _body():
         "</ul>"
     )
     return (
-        f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Guides</a> / {e(H1)}</div>'
+        f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Guides</a> / {e(H1)}</div>'
         '<section class="calm">'
         f'<h1 style="text-align:left">{e(H1)}</h1>'
         + answer
@@ -234,20 +289,206 @@ def _ld():
     }
 
 
+# tool pairs, best for, runs where, JS rendering, license or pricing model, agent hookup.
+# Checked 2026-11-18. Firecrawl prices re-checked against firecrawl.dev/pricing that day.
+CRAWL_ROWS = [
+    ([("firecrawl", "Firecrawl")],
+     "Hosted scraping and crawling that returns clean Markdown or JSON, without running browsers.",
+     "Hosted API, or self-host the core with Docker.",
+     "Yes, headless browser rendering.",
+     "Core AGPL-3.0. Hosted Free plan 1,000 credits a month (about 1,000 pages, no card); Hobby $19 a month for 5,000 credits; Standard $99 a month for 100,000. Scrape and crawl cost 1 credit per page; the JSON format adds 4 per page. Credits do not roll over below Scale.",
+     "Firecrawl MCP server, plus SDKs and a REST API."),
+    ([("crawl4ai", "Crawl4AI")],
+     "Free local crawls that turn sites into Markdown for RAG or agent context.",
+     "Your machine, as a Python library or a Docker API.",
+     "Yes, Playwright rendering.",
+     "Apache-2.0. Free to run; you pay only for your machine and, where you use one, the model.",
+     "Import it in Python, or call the Docker API from any runtime."),
+    ([("scrapegraphai", "ScrapeGraphAI"), ("scrapegraph-mcp", "ScrapeGraph MCP")],
+     "LLM-driven extraction to structured output from a prompt or a schema.",
+     "Your machine, as a Python library.",
+     "Yes, through Playwright.",
+     "MIT. Free to run; the model you call is a separate bill.",
+     "ScrapeGraph MCP for agents."),
+    ([("scrapling", "Scrapling")],
+     "Python crawling where pages change markup and selectors keep breaking.",
+     "Your machine, as a Python library.",
+     "Yes, browser fetchers alongside the HTTP fetcher.",
+     "BSD-3-Clause. Free to run.",
+     "Import it in Python; pair it with your own agent code."),
+    ([("spider", "Spider")],
+     "High-speed crawling of many pages.",
+     "Your machine, as a Rust library or binary.",
+     "Yes, optional headless Chrome.",
+     "MIT. Free to run.",
+     "Call it from Rust, or drive it from your agent's code."),
+    ([("browser-use", "Browser Use"), ("stagehand", "Stagehand"), ("playwright-mcp", "Playwright MCP"), ("browserbase", "Browserbase"), ("steel", "Steel")],
+     "Logged-in or interactive pages, where a crawl cannot go. Not bulk crawling.",
+     "Your machine for the libraries; hosted browsers from Browserbase or Steel.",
+     "Yes. That is the point: a real browser.",
+     "Browser Use MIT, Stagehand MIT, Playwright MCP Apache-2.0, Steel Browser Apache-2.0. You pay for the model and, where you use one, the hosted browser.",
+     "Playwright MCP plugs a browser into any MCP client; Browser Use and Stagehand are libraries your agent code calls."),
+    ([("tavily", "Tavily"), ("exa", "Exa")],
+     "Finding pages when the agent does not already know the URL.",
+     "Hosted APIs.",
+     "No. They search and return results; they do not render pages.",
+     "Hosted, freemium. Check the vendor page for the current free allowance.",
+     "REST APIs, and MCP servers for agent clients."),
+]
+
+
+def _crawl_table():
+    body = []
+    for tools, best, runs, js, price, hookup in CRAWL_ROWS:
+        body.append(
+            "<tr>"
+            f"<td>{_links(tools)}</td>"
+            f"<td>{e(best)}</td>"
+            f"<td>{e(runs)}</td>"
+            f"<td>{e(js)}</td>"
+            f"<td>{e(price)}</td>"
+            f"<td>{e(hookup)}</td>"
+            "</tr>"
+        )
+    return (
+        '<div class="cmpwrap"><div class="cmpscroll"><table class="cmptbl">'
+        f'<caption class="muted" style="caption-side:bottom;text-align:left;padding:8px 10px;font-size:12.5px">Checked <time datetime="{CRAWL_CHECKED}">{CRAWL_CHECKED_LABEL}</time>. Pricing models are what each vendor described that day.</caption>'
+        "<thead><tr>"
+        '<th scope="col">Tool</th><th scope="col">Best for</th><th scope="col">Runs where</th>'
+        '<th scope="col">JS rendering</th><th scope="col">License or pricing</th><th scope="col">Agent hookup</th>'
+        "</tr></thead><tbody>"
+        + "".join(body) + "</tbody></table></div></div>"
+    )
+
+
+def _crawl_cta(heading):
+    return (
+        f'<h2 style="font-size:18px;margin:28px 0 8px">{e(heading)}</h2>'
+        '<ul class="guide-list">'
+        '<li><a href="../tasks/web-scraping.html">Browse every web scraping tool</a></li>'
+        '<li><a href="../newsletter.html">Newsletter, every Wednesday</a></li>'
+        '<li><a href="../submit.html">Submit your scraper</a></li>'
+        "</ul>"
+    )
+
+
+def _crawl_body():
+    answer = (
+        "<p class=\"lede\" style=\"margin-left:0;text-align:left;max-width:68ch\">"
+        "An AI web crawler fetches pages, renders JavaScript when needed, and returns clean Markdown or JSON a model can read. "
+        "Pick by job: an open-source library like Crawl4AI for free local crawls, a hosted API like Firecrawl when you want reliability without running browsers, "
+        "and a browser agent like Browser Use or Stagehand only for logged-in or interactive pages."
+        "</p>"
+    )
+    steps = "<ol style=\"margin:0 0 8px;padding-left:1.3em;line-height:1.55;max-width:68ch\">" + "".join(
+        f'<li style="margin:0 0 12px"><strong>{e(name)}.</strong> {e(text)}</li>' for name, text in CRAWL_STEPS
+    ) + "</ol>"
+    checklist = (
+        '<h2 id="checklist" style="font-size:18px;margin:28px 0 8px">Checklist</h2>'
+        '<ul style="margin:0;padding-left:1.2em;line-height:1.55;max-width:68ch">'
+        "<li style=\"margin:0 0 8px\">Output format chosen: Markdown, typed JSON, or actions.</li>"
+        "<li style=\"margin:0 0 8px\">Scope set: seed URLs or sitemap, include-patterns, depth and page caps.</li>"
+        "<li style=\"margin:0 0 8px\">robots.txt and the site's terms checked.</li>"
+        "<li style=\"margin:0 0 8px\">JavaScript rendering only where the content needs it.</li>"
+        "<li style=\"margin:0 0 8px\">Every chunk keeps its URL, title, crawl date, and content hash.</li>"
+        "<li style=\"margin:0 0 8px\">Crawled text treated as untrusted: no tool calls from page text.</li>"
+        "<li style=\"margin:0 0 8px\">Agent hookup chosen: an MCP server, or a search API for finding pages.</li>"
+        "<li style=\"margin:0 0 8px\">Recrawl plan set, and five pages spot-checked against their source.</li>"
+        "</ul>"
+    )
+    faq = '<h2 id="faq" style="font-size:18px;margin:28px 0 8px">FAQ</h2>' + "".join(
+        f'<details style="margin:0 0 10px;max-width:68ch"><summary style="cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center">{e(q)}</summary>'
+        f'<p style="margin:8px 0 0">{e(a)}</p></details>' for q, a in CRAWL_FAQ
+    )
+    more = (
+        '<h2 style="font-size:18px;margin:28px 0 8px">Related reading</h2>'
+        '<ul class="guide-list">'
+        '<li><a href="../tasks/browsing-the-web-web-scraping.html">Scraping and crawling tools for web browsing agents</a></li>'
+        '<li><a href="../s/free-ai-web-scraping-tools.html">Free AI web scraping tools</a></li>'
+        '<li><a href="../mcp/web-search-and-scraping-mcp-servers.html">Best MCP servers for web search and scraping</a></li>'
+        '<li><a href="../guides/how-to-automate-workflows-with-ai-agents.html">How to automate workflows with AI agents</a></li>'
+        f'<li>{_tool_link("scout-outcrawl", "Scout (Outcrawl)")}</li>'
+        f'<li>{_tool_link("n8n", "n8n")}</li>'
+        "</ul>"
+    )
+    return (
+        f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Guides</a> / {e(CRAWL_H1)}</div>'
+        '<section class="calm">'
+        f'<h1 style="text-align:left">{e(CRAWL_H1)}</h1>'
+        + answer
+        + '<h2 style="font-size:18px;margin:8px 0">Steps</h2>'
+        + steps
+        + '<h2 id="which-tool" style="font-size:18px;margin:28px 0 8px">Which tool fits the job</h2>'
+        + '<p style="margin:0 0 12px;max-width:68ch">Most top results for this query are single-tool tutorials: a Crawl4AI quickstart, or a cloud walkthrough. This guide is the tool-agnostic version: pick by the job, the license and cost model, and the safety rules, then hook the result into an agent.</p>'
+        + _crawl_table()
+        + '<p style="margin:0;max-width:68ch">Model API fees are separate wherever the tool calls a model you pay for.</p>'
+        + _crawl_cta("Browse, submit, or subscribe")
+        + checklist + faq + more
+        + _crawl_cta("When you are ready")
+        + f'<p class="disclose">Feature details were checked on each vendor\'s docs or pricing page on <time datetime="{CRAWL_CHECKED}">{CRAWL_CHECKED_LABEL}</time>. Prices change. Read the vendor page before you buy. No vendor paid for a mention.</p>'
+        + "</section>"
+    )
+
+
+def _crawl_ld():
+    return {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "HowTo",
+                "name": CRAWL_H1,
+                "description": CRAWL_DESC,
+                "url": CRAWL_CANON,
+                "datePublished": CRAWL_CHECKED,
+                "dateModified": CRAWL_CHECKED,
+                "step": [
+                    {"@type": "HowToStep", "position": i, "name": name, "text": text}
+                    for i, (name, text) in enumerate(CRAWL_STEPS, 1)
+                ],
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                    for q, a in CRAWL_FAQ
+                ],
+            },
+            {
+                "@type": "Article",
+                "headline": CRAWL_H1,
+                "description": CRAWL_DESC,
+                "url": CRAWL_CANON,
+                "datePublished": CRAWL_CHECKED,
+                "dateModified": CRAWL_CHECKED,
+                "author": {"@type": "Organization", "name": "AgentScout", "url": B},
+                "publisher": {"@type": "Organization", "name": "AgentScout", "url": B},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "AgentScout", "item": B},
+                    {"@type": "ListItem", "position": 2, "name": "Guides", "item": HUB_CANON},
+                    {"@type": "ListItem", "position": 3, "name": CRAWL_H1, "item": CRAWL_CANON},
+                ],
+            },
+        ],
+    }
+
+
 def _hub_body():
     return (
-        '<div class="crumb"><a href="../index.html">AgentScout</a> / Guides</div>'
+        '<div class="crumb"><a href="../">AgentScout</a> / Guides</div>'
         '<section class="calm">'
         '<h1 style="text-align:left">How-to guides</h1>'
         '<p class="lede" style="margin-left:0;text-align:left">Short guides for choosing and running AI agent tools. Each one says what was checked and what was left out.</p>'
         '<ul class="guide-list">'
-        f'<li><a href="how-to-automate-workflows-with-ai-agents.html">{e(H1)}</a></li>'
-        "</ul>"
+        + "".join(f'<li><a href="{g["slug"]}.html">{e(g["h1"])}</a></li>' for g in GUIDES)
+        + "</ul>"
         '<h2 style="font-size:18px;margin:28px 0 8px">Elsewhere on AgentScout</h2>'
         '<ul class="guide-list">'
-        '<li><a href="../best/index.html">Best lists</a></li>'
-        '<li><a href="../compare/index.html">Comparisons</a></li>'
-        '<li><a href="../s/index.html">Popular lists</a></li>'
+        '<li><a href="../best/">Best lists</a></li>'
+        '<li><a href="../compare/">Comparisons</a></li>'
+        '<li><a href="../s/">Popular lists</a></li>'
         '</ul>'
         "</section>"
     )
@@ -260,10 +501,10 @@ def _hub_ld():
             {
                 "@type": "CollectionPage",
                 "name": "How-to guides · AgentScout",
-                "description": "How-to guides from AgentScout, starting with how to automate workflows with AI agents.",
+                "description": "How-to guides from AgentScout: automating workflows with AI agents, and crawling websites for AI agents.",
                 "url": HUB_CANON,
                 "isPartOf": {"@type": "WebSite", "name": "AgentScout", "url": B},
-                "hasPart": [{"@type": "HowTo", "name": H1, "url": CANON}],
+                "hasPart": [{"@type": "HowTo", "name": g["h1"], "url": g["canon"]} for g in GUIDES],
             },
             {
                 "@type": "BreadcrumbList",
@@ -297,22 +538,22 @@ def _finish(html, path):
     return html
 
 
-def _check_lengths():
-    if len(TITLE) > 60:
-        raise SystemExit(f"guide title is {len(TITLE)} chars")
-    if len(DESC) > 156:
-        raise SystemExit(f"guide description is {len(DESC)} chars")
-    q = QUERY.lower()
-    if q not in TITLE.lower() or q not in H1.lower() or q not in DESC.lower():
+def _check_lengths(title, desc, h1, query, max_title=60):
+    if len(title) > max_title:
+        raise SystemExit(f"guide title is {len(title)} chars")
+    if len(desc) > 156:
+        raise SystemExit(f"guide description is {len(desc)} chars")
+    q = query.lower()
+    if q not in title.lower() or q not in h1.lower() or q not in desc.lower():
         raise SystemExit("target query missing from title, H1, or description")
 
 
-def _ensure(path, snippet, anchor, before=False):
+def _ensure(path, snippet, anchor, slug, before=False):
     """Add one contextual link. A later rebuild that already emits the href is left alone."""
     if not os.path.exists(path):
         return
     s = open(path, encoding="utf-8").read()
-    if "guides/how-to-automate-workflows-with-ai-agents.html" in s:
+    if f"guides/{slug}.html" in s:
         return
     if anchor not in s:
         raise SystemExit(f"guide link anchor missing in {path}")
@@ -340,48 +581,107 @@ def _link_existing():
         '<p style="margin:-12px 0 28px">If you are choosing n8n against Zapier, Make, or a code runtime, read '
         f'<a href="{HREF}">how to automate workflows with AI agents</a>.</p>'
     )
-    _ensure("s/free-ai-workflow-automation-tools.html", note_free, "<!--/ci:aeo-->")
-    _ensure("s/open-source-workflow-automation-tools.html", note_os, "<!--/ci:aeo-->")
-    _ensure("compare/n8n-vs-make.html", note_cmp, '<p class="linkpile-label">Related</p>', before=True)
-    _ensure("compare/n8n-vs-zapier-agents.html", note_cmp, '<p class="linkpile-label">Related</p>', before=True)
+    _ensure("s/free-ai-workflow-automation-tools.html", note_free, "<!--/ci:aeo-->", SLUG)
+    _ensure("s/open-source-workflow-automation-tools.html", note_os, "<!--/ci:aeo-->", SLUG)
+    _ensure("compare/n8n-vs-make.html", note_cmp, '<p class="linkpile-label">Related</p>', SLUG, before=True)
+    _ensure("compare/n8n-vs-zapier-agents.html", note_cmp, '<p class="linkpile-label">Related</p>', SLUG, before=True)
     _ensure(
         "best/no-code-ai-agent-builders.html",
         f'<li><a href="{HREF}">How to automate workflows with AI agents</a></li>',
         '<li><a href="../tasks/automating-workflows.html">Automating workflows</a></li>',
+        SLUG,
     )
     _ensure(
         "tools/n8n.html",
         note_n8n,
         'Official site: <a href="https://n8n.io" target="_blank" rel="noopener noreferrer">n8n.io</a>.</p>',
+        SLUG,
+    )
+
+
+def _crawl_link_existing():
+    note_tasks = (
+        "<p>Before you pick a tool, decide the output and the scope. "
+        f'<a href="{CRAWL_HREF}">How to crawl websites for AI agents</a> '
+        "walks through the eight steps, from output format to the recrawl plan.</p>"
+    )
+    note_free = (
+        "<p>Free is one part of the choice. "
+        f'<a href="{CRAWL_HREF}">How to crawl websites for AI agents</a> '
+        "shows which crawlers you can run yourself, and which pricing and license models stay on a hosted plan.</p>"
+    )
+    note_mcp = (
+        "<p>An MCP server is how the crawl reaches the agent. "
+        f'<a href="{CRAWL_HREF}">How to crawl websites for AI agents</a> '
+        "shows which MCP servers fit which job, and when a search API fits better.</p>"
+    )
+    note_firecrawl = (
+        '<p style="margin:-12px 0 28px">If you are choosing Firecrawl against Crawl4AI or a local library, read '
+        f'<a href="{CRAWL_HREF}">how to crawl websites for AI agents</a>.</p>'
+    )
+    note_crawl4ai = (
+        '<p style="margin:-12px 0 28px">If you are choosing Crawl4AI against Firecrawl or a hosted API, read '
+        f'<a href="{CRAWL_HREF}">how to crawl websites for AI agents</a>.</p>'
+    )
+    _ensure("tasks/web-scraping.html", note_tasks, '<p class="updated">', CRAWL_SLUG, before=True)
+    _ensure("tasks/browsing-the-web-web-scraping.html", note_tasks, '<p class="updated">', CRAWL_SLUG, before=True)
+    _ensure("s/free-ai-web-scraping-tools.html", note_free, "<!--/ci:aeo-->", CRAWL_SLUG)
+    _ensure("mcp/web-search-and-scraping-mcp-servers.html", note_mcp, "<!--/ci:aeo-->", CRAWL_SLUG)
+    _ensure(
+        "tools/firecrawl.html",
+        note_firecrawl,
+        'Official site: <a href="https://firecrawl.dev" target="_blank" rel="noopener noreferrer">firecrawl.dev</a>.</p>',
+        CRAWL_SLUG,
+    )
+    _ensure(
+        "tools/crawl4ai.html",
+        note_crawl4ai,
+        'Official site: <a href="https://crawl4ai.com/" target="_blank" rel="noopener noreferrer">crawl4ai.com</a>.</p>',
+        CRAWL_SLUG,
     )
 
 
 def _sitemap(urls):
+    """urls is a list of (canonical URL, lastmod) pairs. Only missing URLs are added."""
     path = "sitemap.xml"
     if not os.path.exists(path):
         return
     sm = open(path, encoding="utf-8").read()
     block = ""
-    for u in urls:
+    for u, lastmod in urls:
         if u not in sm:
-            block += f"  <url><loc>{u}</loc><lastmod>{CHECKED}</lastmod></url>\n"
+            block += f"  <url><loc>{u}</loc><lastmod>{lastmod}</lastmod></url>\n"
     if block:
         sm = sm.replace("</urlset>", block + "</urlset>")
         open(path, "w", encoding="utf-8").write(sm)
 
 
+GUIDES = [
+    {"slug": SLUG, "guide": GUIDE, "canon": CANON, "title": TITLE, "desc": DESC, "h1": H1,
+     "query": QUERY, "checked": CHECKED, "body": _body, "ld": _ld, "links": _link_existing},
+    {"slug": CRAWL_SLUG, "guide": CRAWL_GUIDE, "canon": CRAWL_CANON, "title": CRAWL_TITLE,
+     "desc": CRAWL_DESC, "h1": CRAWL_H1, "query": CRAWL_QUERY, "checked": CRAWL_CHECKED,
+     "body": _crawl_body, "ld": _crawl_ld, "links": _crawl_link_existing, "max_title": 65},
+]
+
+
 def pages():
-    """Write the guide and the guides hub. Return canonical URLs for the sitemap."""
-    _check_lengths()
+    """Write every guide in GUIDES plus the guides hub. Return canonical URLs for the sitemap."""
+    for g in GUIDES:
+        _check_lengths(g["title"], g["desc"], g["h1"], g["query"], max_title=g.get("max_title", 60))
     os.makedirs("guides", exist_ok=True)
     hub_title = "How-to guides · AgentScout"
-    hub_desc = "How-to guides from AgentScout, starting with how to automate workflows with AI agents."
-    article = _finish(X.shell("../", TITLE, DESC, CANON, _body(), _ld()), GUIDE)
+    hub_desc = "How-to guides from AgentScout: automating workflows with AI agents, and crawling websites for AI agents."
+    urls = []
+    for g in GUIDES:
+        html = _finish(X.shell("../", g["title"], g["desc"], g["canon"], g["body"](), g["ld"]()), g["guide"])
+        open(g["guide"], "w", encoding="utf-8").write(html)
+        urls.append(g["canon"])
     hub = _finish(X.shell("../", hub_title, hub_desc, HUB_CANON, _hub_body(), _hub_ld()), HUB)
-    open(GUIDE, "w", encoding="utf-8").write(article)
     open(HUB, "w", encoding="utf-8").write(hub)
-    _link_existing()
-    urls = [CANON, HUB_CANON]
+    for g in GUIDES:
+        g["links"]()
+    urls.append(HUB_CANON)
     print("guides:", len(urls), "pages")
     return urls
 
@@ -390,6 +690,8 @@ if __name__ == "__main__":
     import atexit
     atexit._clear()  # importing build_extras registers site-wide exit hooks
     urls = pages()
-    _sitemap(urls)
+    lastmod = {g["canon"]: g["checked"] for g in GUIDES}
+    lastmod[HUB_CANON] = max(lastmod.values())
+    _sitemap([(u, lastmod.get(u, CHECKED)) for u in urls])
     import build_seo
     build_seo.llms_extra()

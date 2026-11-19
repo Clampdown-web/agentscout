@@ -213,6 +213,19 @@ def ai_ref_cta_html(d="../"):
         + __import__("build_sponsor").pay_note(d) +
         '</div></aside>'
     )
+def _cta_after_main(s, d):
+    """Refresh the ai-ref-cta aside and move it to after </main> (Nov 18 2026, indexing content).
+    The Submit Free / Fast-Track / sponsorship CTA is identical boilerplate on every list page
+    and must not sit inside the main element. Pages without a </main> keep the refreshed
+    aside where it is."""
+    m = re.search(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>', s, flags=re.S)
+    if not m:
+        return s
+    arc = ai_ref_cta_html(d)
+    if "</main>" in s:
+        s = s[:m.start()] + s[m.end():]
+        return s.replace("</main>", "</main>\n" + arc, 1)
+    return s[:m.start()] + arc + s[m.end():]
 def _subpages_write(m):
     urls=[]
     for sl,p_,sub,its in SUBP:
@@ -230,12 +243,12 @@ def _subpages_write(m):
                +(f"The most-starred open repos here are "+", ".join(f'<a href="../tools/{x["slug"]}.html">{e(x["name"])}</a> ({x["github_stars"]:,} stars)' for x in starred)+". " if starred else "")
                +"Most come from the "+", ".join(f'<a href="../categories/{build_extras.catslug(c)}.html">{e(c)}</a> ({k})' for c,k in cats)+" categor"+("ies." if len(cats)>1 else "y."))
         sibs=[(sl2,sub2,its2) for sl2,p2,sub2,its2 in SUBP if p2==p_ and sl2!=sl]
-        sibh=('<h2 style="font-size:16px;margin:32px 0 10px">More from '+e(plabel)+'</h2><div class="badges"><a class="b uc" href="'+p_+'.html">All '+e(plabel)+f' tools ({len(pitems):,})</a>'+"".join(f'<a class="b uc" href="{sl2}.html">{e(_sublabel(sub2).capitalize())} ({len(i2):,})</a>' for sl2,sub2,i2 in sibs)+'<a class="b uc" href="index.html">All tasks →</a></div>')
+        sibh=('<h2 style="font-size:16px;margin:32px 0 10px">More from '+e(plabel)+'</h2><div class="badges"><a class="b uc" href="'+p_+'.html">All '+e(plabel)+f' tools ({len(pitems):,})</a>'+"".join(f'<a class="b uc" href="{sl2}.html">{e(_sublabel(sub2).capitalize())} ({len(i2):,})</a>' for sl2,sub2,i2 in sibs)+'<a class="b uc" href="./">All tasks →</a></div>')
         top=its[:3]
         faq=[(f"What are the best AI tools for {plabel} focused on {lab}?",f"We list {n:,}. The first three by GitHub stars and featured status are "+"; ".join(f"{x['name']}: {x['description']}" for x in top)),
              (f"Are there free or open-source options?",f"Yes: {build_subtasks.price_line(its)}. Pricing is as each maker states it." if any(x["pricing"] in build_subtasks.OPEN|build_subtasks.FREE for x in its) else f"Pricing breakdown: {build_subtasks.price_line(its)}.")]
         faqh='<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>'+"".join(f'<h3 style="font-size:15px;margin:16px 0 6px">{e(q)}</h3><p style="margin:0">{e(a)}</p>' for q,a in faq)
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / <a href="{p_}.html">{e(_cap(plabel))}</a> / {e(_cap(lab))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
+        body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Tasks</a> / <a href="{p_}.html">{e(_cap(plabel))}</a> / {e(_cap(lab))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{intro}</p><div class="grid">{"".join(card(x) for x in its)}</div>{ai_ref_cta_html("../")}{build_subtasks.repo_table(its)}{faqh}{sibh}<p class="disclose">Tools are grouped by what each says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
             {"@type":"ItemList","numberOfItems":n,"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(its)]},
@@ -262,12 +275,12 @@ def pages(t):
         rel=sorted(rel,key=lambda r:-len(set(id(a) for a in m[r[0]][1])&set(id(a) for a in items)))
         if s in ORIG: rel=[r for r in rel if r[0] in ORIG][:8]+[r for r in rel if r[0] not in ORIG][:3]  # original pages keep their related list; newer tasks are appended
         else: rel=rel[:8]
-        relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(_cap(T2[1]))} ({len(m[s2][1])})</a>' for s2,T2 in rel)+'<a class="b uc" href="index.html">All tasks →</a></div>'
+        relh='<h2 style="font-size:16px;margin:32px 0 10px">Related tasks</h2><div class="badges">'+"".join(f'<a class="b uc" href="{s2}.html">{e(_cap(T2[1]))} ({len(m[s2][1])})</a>' for s2,T2 in rel)+'<a class="b uc" href="./">All tasks →</a></div>'
         if s not in ORIG:  # newer task pages also link the categories their tools come from
             from collections import Counter
             cc=Counter(x["category"] for x in items).most_common()
             relh='<h2 style="font-size:16px;margin:32px 0 10px">Browse these categories</h2><div class="badges">'+"".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">{e(c)} ({k})</a>' for c,k in cc)+'</div>'+relh
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Tasks</a> / {e(_cap(label))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
+        body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Tasks</a> / {e(_cap(label))}</div><section class="calm"><h1 style="text-align:left">{e(h1)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We list {n:,} tools for {e(label)} below, each with a link-checked page, pricing as the maker states it and alternatives.</p><p class="tcount" style="margin:0 0 6px;font-size:14px;color:var(--muted)">{n:,} tools: {e(build_subtasks.price_line(items))}.</p>'+(_ang["pointer"] if _ang else "")+_MEDIA_PTR.get(s,"")+
               f'{_grid(items,s)}{ai_ref_cta_html("../")}{build_subtasks.repo_table(items)}{relh}<p class="disclose">Tools are matched to tasks by category, use cases and what each tool says it does. Missing one? <a href="../submit.html">Submit it free</a>.</p></section>')
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":h1,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
@@ -277,7 +290,7 @@ def pages(t):
     canon=B+"tasks/index.html"; title=f"AI Agents by Task: {len(m)} Jobs, Best Tools for Each · AgentScout"
     desc=f"Find the best AI agents for {len(m)} tasks, from writing code and browsing the web to voice agents, research and customer support."[:158]
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(_cap(T[1]))}</h3></div><p>{len(items):,} tools · {e(", ".join(x["name"] for x in items[:3]))}</p></a>' for s,(T,items) in sorted(m.items(),key=lambda kv:kv[1][0][1]))
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / Tasks</div><section class="calm"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-workflow-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-workflow-infographic.mp4" type="video/mp4"></video></figure><div class="grid">{tiles}</div>{_subindex(m)}</section>'
+    body=f'<div class="crumb"><a href="../">AgentScout</a> / Tasks</div><section class="calm"><h1 style="text-align:left">AI agents by task</h1><p class="lede" style="margin-left:0;text-align:left">Start from the job you need done. {len(m)} tasks, each with the agent tools that handle it.</p><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-workflow-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-workflow-infographic.mp4" type="video/mp4"></video></figure><div class="grid">{tiles}</div>{_subindex(m)}</section>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"AI agents by task","description":desc,"url":canon},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Tasks","item":canon}]},{"@type":"VideoObject","name":"3-Stage Autonomous AI Agent & MCP Production Pipeline","description":"Animated architecture breakdown showing how engineering teams chain MCP context servers, coding agents, and browser verification across tasks.","thumbnailUrl":B+"assets/animations/agentscout-workflow-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-workflow-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
     open("tasks/index.html","w").write(shell("../",title,desc,canon,body,ld)); urls.insert(0,canon)
     urls+=_subpages_write(m)
@@ -419,7 +432,7 @@ var bhUrl="https://agentscout.beehiiv.com/subscribe?utm_source=agentscout&utm_me
 if(nlOpt==="yes"){try{fetch(bhUrl,{mode:"no-cors",credentials:"omit"}).catch(function(){})}catch(_e){}}
 postSub(JSON.stringify(PR?{name:n,website:"",github:"",category:v("prcat"),pricing:"Free",desc:(pkTag+d).slice(0,500),prompt:d.slice(0,2000),works_with:v("prworks"),email:m,x:x,newsletter_optin:nlOpt,company:v("company"),type:"prompt",tool:"",how_found:(pkTag+fnd().hf).slice(0,120),found:fnd().wf,found_other:(pkTag+fnd().wo).slice(0,100),turnstileToken:ts}:{name:n,website:w,github:g,category:({"MCP servers":"MCP & infra","agent infra":"MCP & infra"})[v("category")]||v("category"),pricing:v("pricing"),desc:(pkTag+d).slice(0,500),email:m,x:x,newsletter_optin:nlOpt,company:v("company"),type:UPD?"update":"new",tool:UPD||"",how_found:(pkTag+fnd().hf).slice(0,120),found:fnd().wf,found_other:(pkTag+fnd().wo).slice(0,100),turnstileToken:ts})).then(function(j){if(true){f.hidden=true;var sd=document.getElementById("sdone");sd.hidden=false;if(PR){var sm2=document.getElementById("sdone-msg");if(sm2)sm2.textContent="Thanks - your prompt is in our review queue. We check every prompt by hand before it goes live.";}if(nlOpt==="yes"){var snl=document.getElementById("sdone-nl"),snb=document.getElementById("sdone-nl-btn");if(snl)snl.hidden=false;if(snb)snb.href=bhUrl;if(!pc.url){try{window.open(bhUrl,"_blank","noopener")}catch(_e2){}}}if(pc.url){var sp=document.getElementById("sdone-pay"),sb=document.getElementById("sdone-pay-btn"),sm=document.getElementById("sdone-msg");if(sp)sp.hidden=false;if(sb){sb.href=pc.url;sb.textContent="Continue to Stripe Checkout ("+pc.label+") →"}if(sm)sm.textContent="Your tool is in our priority same-day launch queue! Complete your "+pc.label+" checkout below:";window.open(pc.url,"_blank","noopener")}}}).catch(function(e){try{window.AgentScoutTurnstile&&AgentScoutTurnstile.invalidate()}catch(_r){}var msg=window.AgentScoutTurnstile?AgentScoutTurnstile.submitFailureText(e&&e.message):(e&&e.message&&e.message!=="Failed to fetch"?e.message:"We could not send it right now.");er.innerHTML="";er.appendChild(document.createTextNode(msg+" "));var a=document.createElement("a");a.href=mail;a.textContent="Send it by email instead";er.appendChild(a);}).finally(function(){btn.disabled=false;btn.textContent=PR?"Submit prompt for review":(UPD?"Send suggested edit":pc.btn);});})})()</script>"""+build_sponsor.live_metrics_script("", catalog=False)
     tiers=build_sponsor.packages_grid(t,m=m,on_submit=True)
-    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / Submit a tool</div><section class="calm"><h1 style="text-align:left">Submit your AI agent tool</h1>'
+    body=(f'<div class="crumb"><a href="./">AgentScout</a> / Submit a tool</div><section class="calm"><h1 style="text-align:left">Submit your AI agent tool</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Basic community listings on AgentScout ({tools_pitch} across <span data-live-pages>{__import__("build_counts").pitch_pages_floor(m["indexed_pages_count"]):,}+</span> sitemap pages) are 100% free forever. We review every submission, verify links, and write the description in plain words. Want same-day priority review, a 7-day Launch Boost ($15), a 30-day Category Pin + permanent <code style="font-size:13px">/best/</code> &amp; <code style="font-size:13px">/compare/</code> placement ($49), or sitewide sponsorship ($99/wk)? Pick a package below or <a href="sponsor.html">see full sponsor details →</a>.</p>'
           f'{INLINE_NL}'
           f'<div id="spkg-block"><h2 id="packages" style="font-size:19px;margin:22px 0 8px">Listing &amp; launch packages</h2>{tiers}'
@@ -903,16 +916,16 @@ def sitewide(t):
         s=re.sub(r'<section class="nlband".*?</section>\n?',"",s,flags=re.S)  # dark "5 agent tools" strip removed sitewide
         d="/" if f=="404.html" else "../"*f.count("/")
         # Oct 23 2026 (owner: one search only): the /s/ hub is "Popular lists" in menus and footers, never "Searches"/"Popular searches"
-        s=re.sub(r'(<a href="[^"]*s/index\.html">)(?:Searches|Popular searches)</a>',r'\1Popular lists</a>',s)
+        s=re.sub(r'(<a href="[^"]*s/">)(?:Searches|Popular searches)</a>',r'\1Popular lists</a>',s)
         s=re.sub(r'<a([^>]*?) href="https://github\.com/Clampdown-web/agentscout/issues/new\?[^"]*?[Ss]ubmission[^"]*"(?: target="_blank")?(?: rel="noopener(?: noreferrer)?")?',lambda mm:f'<a{mm.group(1)} href="{d}submit.html"',s)
-        s=re.sub(r'(<div class="links"><a href="[^"]*categories/index\.html">Categories</a>)(?!<a href="[^"]*tasks/)',lambda mm:mm.group(1)+f'<a href="{d}tasks/index.html">Tasks</a>',s)
-        s=re.sub(r'(<p><a href="[^"]*categories/index\.html">Categories</a>)(?! · <a href="[^"]*tasks/)',lambda mm:mm.group(1)+f' · <a href="{d}tasks/index.html">AI agents by task</a>',s)
+        s=re.sub(r'(<div class="links"><a href="[^"]*categories/">Categories</a>)(?!<a href="[^"]*tasks/)',lambda mm:mm.group(1)+f'<a href="{d}tasks/">Tasks</a>',s)
+        s=re.sub(r'(<p><a href="[^"]*categories/">Categories</a>)(?! · <a href="[^"]*tasks/)',lambda mm:mm.group(1)+f' · <a href="{d}tasks/">AI agents by task</a>',s)
         s=re.sub(r'<a class="navsrch" href="[^"]*">Search</a>','',s)
-        s=re.sub(r'(<div class="links">)(<a href="[^"]*categories/index\.html">Categories</a>)',lambda mm:mm.group(1)+f'<a class="navsrch" href="{d}index.html#q">Search</a>'+mm.group(2),s,count=1)
+        s=re.sub(r'(<div class="links">)(<a href="[^"]*categories/">Categories</a>)',lambda mm:mm.group(1)+f'<a class="navsrch" href="{d}#q">Search</a>'+mm.group(2),s,count=1)
         # Nav "Best" goes to the best-of hub
-        s=re.sub(r'<a href="[^"]*best/mcp-servers\.html">Best</a>',lambda mm:f'<a href="{d}best/index.html">Best</a>',s)
+        s=re.sub(r'<a href="[^"]*best/mcp-servers\.html">Best</a>',lambda mm:f'<a href="{d}best/">Best</a>',s)
         # "For you" (role hub) and "Searches" (search hub) in the main nav, right after Best (Oct 18 2026)
-        s=re.sub(r'(<a href="([^"]*)best/index\.html">Best</a>)(?!<a href="[^"]*for/index\.html">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/index.html">For you</a><a href="{mm.group(2)}s/index.html">Popular lists</a>',s)
+        s=re.sub(r'(<a href="([^"]*)best/">Best</a>)(?!<a href="[^"]*for/">For you</a>)',lambda mm:mm.group(1)+f'<a href="{mm.group(2)}for/">For you</a><a href="{mm.group(2)}s/">Popular lists</a>',s)
         s=re.sub(r'<a class="navvid" href="[^"]*videos/">[^<]*</a>','',s)
         s=re.sub(r'<a class="navbs" href="[^"]*bot-store/">.*?</a>','',s)  # Bot Store is reinserted as the first neon pill (_cluster_nav)
         s=re.sub(r'(<div class="links">.*?<a href="[^"]*news\.html">News</a>)',lambda mm:mm.group(1)+f'<a class="navvid" href="{d}videos/">🎬 Guides</a>',s,count=1,flags=re.S)
@@ -937,18 +950,18 @@ def sitewide(t):
             if 'sponsor.html">Sponsor / Get Featured</a>' not in fn: fn=re.sub(r'(<a href="[^"]*submit\.html">Submit a tool</a>)',lambda mm:mm.group(1)+f' · <a href="{d}sponsor.html">Sponsor / Get Featured</a>',fn,count=1)
             if 'https://x.com/clampdown19' not in fn: fn=re.sub(r'(<a href="https://x\.com/AgentScoutHQ"[^>]*>X @AgentScoutHQ</a>)',lambda mm:mm.group(1)+' · <a href="https://x.com/clampdown19" target="_blank" rel="noopener noreferrer">@clampdown19</a>',fn,count=1)
             if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*free-tools\.html">Free tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
-            if 's/index.html">Popular lists</a>' not in fn:
-                fn,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular lists</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
-                if not k: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/index.html">Popular lists</a> · <a href="{d}for/index.html">AI agents by role</a>',fn,count=1)
+            if 's/">Popular lists</a>' not in fn:
+                fn,k=re.subn(r'(<a href="[^"]*free-tools\.html">Free tools</a>)(?= · <a href="[^"]*newsletter\.html">Newsletter archive)',lambda mm:mm.group(1)+f' · <a href="{d}s/">Popular lists</a> · <a href="{d}for/">AI agents by role</a>',fn,count=1)
+                if not k: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a href="{d}s/">Popular lists</a> · <a href="{d}for/">AI agents by role</a>',fn,count=1)
             # New tools page (new.html) in every footer, right before Agent news (Oct 18 2026: it was only linked from the homepage)
             if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:f'<a href="{d}new.html">New tools</a> · '+mm.group(1),fn,count=1)
-            if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/index\.html">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}new.html">New tools</a>',fn,count=1)
+            if 'new.html">New tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}new.html">New tools</a>',fn,count=1)
             # Footers that lack the standard Free tools / Newsletter archive / Agent news links (generate.html) get them in the standard order
-            if 'free-tools.html">Free tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*s/index\.html">Popular lists</a>)',lambda mm:f'<a href="{d}free-tools.html">Free tools</a> · '+mm.group(1),fn,count=1)
-            if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/index\.html">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
+            if 'free-tools.html">Free tools</a>' not in fn: fn=re.sub(r'(<a href="[^"]*s/">Popular lists</a>)',lambda mm:f'<a href="{d}free-tools.html">Free tools</a> · '+mm.group(1),fn,count=1)
+            if 'newsletter.html">Newsletter archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*for/">AI agents by role</a>)',lambda mm:mm.group(1)+f' · <a href="{d}newsletter.html">Newsletter archive</a>',fn,count=1)
             if 'news.html">Agent news</a>' not in fn: fn=re.sub(r'(<a href="[^"]*new\.html">New tools</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news.html">Agent news</a>',fn,count=1)
             # News archive (news/) in every footer, right after Agent news (Oct 18 2026: archive was only linked from news.html and story pages)
-            if 'news/index.html">News archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news/index.html">News archive</a>',fn,count=1)
+            if 'news/">News archive</a>' not in fn: fn=re.sub(r'(<a href="[^"]*news\.html">Agent news</a>)',lambda mm:mm.group(1)+f' · <a href="{d}news/">News archive</a>',fn,count=1)
             # Image generator link in every footer, right after Badges (generate.html's own footer lacked it; audit Oct 18 2026)
             if 'class="footgen"' not in fn: fn=re.sub(r'(<a href="[^"]*badges\.html">Badges for makers</a>)',lambda mm:mm.group(1)+f' · <a class="footgen" href="{d}generate.html">✨ Free AI Image Generator</a>',fn,count=1)
             # AgentScout MCP server connect page in every footer, right after Free tools (Oct 23 2026, crawlable link for /mcp/connect.html)
@@ -958,7 +971,7 @@ def sitewide(t):
             if not re.search(r'href="[^"]*bot-store/"', fn): fn=re.sub(r'(<a href="[^"]*videos/">Quick-Start Guides (8)</a>)',lambda mm:mm.group(1)+f' · <a href="{d}bot-store/">Bot Store</a>',fn,count=1)
             # Oct 23 2026 (Ops review): 66 footers (index, saved, quiz, generate, bot-templates/*, some best/*) listed Popular lists and
             # AI agents by role twice; keep the later (standard-position) link and drop the earlier copy
-            for _lk in (r'<a href="[^"]*s/index\.html">Popular lists</a>',r'<a href="[^"]*for/index\.html">AI agents by role</a>'):
+            for _lk in (r'<a href="[^"]*s/">Popular lists</a>',r'<a href="[^"]*for/">AI agents by role</a>'):
                 while len(re.findall(_lk,fn))>1: fn=re.sub(r'(?: · )?'+_lk,'',fn,count=1)
             if fn!=fo: s=s[:fm.start()]+fn+s[fm.end():]
         # Bot templates (launched Oct 19 2026 PT, owner approved): red flame nav link left of Quiz, footer link before Free tools,
@@ -998,13 +1011,11 @@ def sitewide(t):
         if _phase2:
             s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>','',s,count=1,flags=re.S)
         elif 'class="ai-ref-cta"' in s:
-            s=re.sub(r'<aside class="ai-ref-cta"[^>]*>.*?</aside>',lambda mm:ai_ref_cta_html(d),s,count=1,flags=re.S)
+            # Refresh the CTA and move it out of <main> (Nov 18 2026, indexing content).
+            s=_cta_after_main(s,d)
         elif (f.startswith(("best/","compare/","tasks/","s/","for/","free-tools/","videos/","bot-store/")) or f in ("free-tools.html","new.html")) and "<main" in s and 'http-equiv="refresh"' not in s[:4000]:
-            _arc=ai_ref_cta_html(d)
-            if '<p class="disclose">' in s:
-                s=s.replace('<p class="disclose">',_arc+'<p class="disclose">',1)
-            elif "</main>" in s:
-                s=s.replace("</main>",_arc+"</main>",1)
+            # List pages get the CTA after </main>, not before the disclose line inside <main>.
+            s=s.replace("</main>","</main>\n"+ai_ref_cta_html(d),1)
         s=re.sub(r'<section id="nlblock".*?</section>',lambda mm:NL,s,count=1,flags=re.S)  # refresh older signup markup in place
         if 'id="nlblock"' not in s and "<footer" in s: s=s.replace("<footer",NL+"<footer",1)
         if f.startswith("tools/"):
@@ -1089,6 +1100,11 @@ def sitewide(t):
             s=ensure_home_nav_script(s)
         s=stamp(s)
         s=burst_link_piles(s)
+        # Indexing hygiene (Nov 18 2026, A4): no internal href may end in index.html.
+        # Catches stale body crumbs on pages the builders never rewrite (kept
+        # alternatives pages, bot templates) and data-driven links. Segment-aware
+        # (tools/pageindex.html is a tool page) and leaves absolute URLs alone.
+        s=__import__("build_extras").canonical_hrefs(s)
         if s!=o: open(f,"w").write(s)
     import build_lovable; build_lovable.run()
 
@@ -1101,7 +1117,7 @@ def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):
     canon=B+fn
     _alt=["Agent Scout","AgentScoutHQ","agentscouthq.com","com.agentscouthq/directory"]
     _same=["https://x.com/clampdown19","https://x.com/AgentScoutHQ","https://agentscout.beehiiv.com/","https://github.com/clampdown19/agentscout","https://github.com/Clampdown-web/agentscout","https://registry.modelcontextprotocol.io/v0/servers?search=com.agentscouthq/directory","https://glama.ai/mcp/connectors/com.agentscouthq/directory","https://mcpservers.org/servers/agentscouthq-com-mcp-connect-html","https://sourceweft.com/mcp/com.agentscouthq%2Fdirectory","https://protogrid.dev/servers/com.agentscouthq/directory","https://mcpcollection.com/server/agentscout-mcp"]
-    body=(f'<div class="crumb"><a href="index.html">AgentScout</a> / {e(crumb)}</div><section class="calm prose">'
+    body=(f'<div class="crumb"><a href="./">AgentScout</a> / {e(crumb)}</div><section class="calm prose">'
           f'<h1 style="text-align:left">{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{inner}</section>')
     ld={"@context":"https://schema.org","@graph":[{"@type":ld_type,"name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","alternateName":_alt,"url":B,"sameAs":_same},**({"mainEntity":{"@type":"Organization","name":"AgentScout","alternateName":_alt,"url":B,"identifier":"com.agentscouthq/directory","sameAs":_same}} if ld_type=="AboutPage" else {})},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":crumb,"item":canon}]}]}
@@ -1109,7 +1125,7 @@ def _page(fn,crumb,title,desc,h1,lede,inner,ld_type="WebPage"):
 def about_page(t):
     import build_counts
     _c=build_counts.require(t); n=_c["tools"]; nc=_c["categories"]
-    inner=(f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p><h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n:,} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="index.html#directory">directory</a>, <a href="categories/index.html">categories</a> or <a href="tasks/index.html">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p><p><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="https://agentscouthq.com">https://agentscouthq.com</a>, published in the official MCP Registry as <code>com.agentscouthq/directory</code> with SSE endpoint <code>https://mcp.agentscouthq.com/mcp</code> and Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (free, read-only, no API key required; unrelated to the paid x402 npm package). Machine-readable catalogs: <a href="llms.txt">llms.txt</a>, <a href="llms-full.txt">llms-full.txt</a>, and <a href="api/tools.json">api/tools.json</a>.</p>'
+    inner=(f'<p>AgentScout (agentscouthq.com) is not affiliated with other projects named AgentScout.</p><h2 {H2}>What AgentScout is</h2><p>AgentScout is a curated directory of <b>{n:,} AI agents and agent tools</b> in {nc} categories: coding agents, browser and computer use, agent frameworks, MCP servers, voice agents, research, evals, games, crypto and more. Every tool has its own page with a short description we write ourselves, pricing as the maker states it, links and alternatives. It\'s for builders who want parts to build with and for anyone looking for a ready-to-use agent. Browse the <a href="./#directory">directory</a>, <a href="categories/">categories</a> or <a href="tasks/">tasks</a>, or take the <a href="quiz.html">Agent Finder quiz</a>.</p><p><b>Entity note:</b> AgentScout (also searched as Agent Scout or AgentScoutHQ) is the independent AI agent and MCP server directory at <a href="https://agentscouthq.com">https://agentscouthq.com</a>, published in the official MCP Registry as <code>com.agentscouthq/directory</code> with SSE endpoint <code>https://mcp.agentscouthq.com/mcp</code> and Streamable HTTP endpoint <code>https://mcp.agentscouthq.com/mcp</code> (free, read-only, no API key required; unrelated to the paid x402 npm package). Machine-readable catalogs: <a href="llms.txt">llms.txt</a>, <a href="llms-full.txt">llms-full.txt</a>, and <a href="api/tools.json">api/tools.json</a>.</p>'
       f'<h2 {H2}>How tools are picked</h2><p>New tools are found every day. Our main sources are:</p><ul>'
       '<li><b>GitHub</b>: agent-related topics such as ai-agents, agent-framework, mcp-server, coding-agent and browser-agent.</li>'
       '<li><b>The official MCP registry</b>, keeping well-known publishers and popular repositories.</li>'

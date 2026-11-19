@@ -98,13 +98,13 @@ def page(t,P,asof):
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B}},
         {"@type":"ItemList","name":h,"itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":len(items),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(items)]},
         {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Best lists","item":B+"best/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h)}</div><section class="calm"><h1 style="text-align:left">{e(h)} (2026)</h1>'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Best lists</a> / {e(h)}</div><section class="calm"><h1 style="text-align:left">{e(h)} (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} Below are {more} in the AgentScout directory, ranked.</p>'
           f'<p class="muted" style="margin:0 0 18px"><strong>How we ranked:</strong> {method(how,asof)}</p>'
           f'{bar}<ol class="grid"{attr} style="padding:0;margin:0">{"".join(item(i+1,x) for i,x in enumerate(items))}</ol>'
           f'<h2 style="font-size:16px;margin:32px 0 10px">Browse by category</h2><div class="badges">{catl}</div>'
           f'<h2 style="font-size:16px;margin:24px 0 8px">Related</h2><ul class="guide-list">{"".join(f"<li>{a}</li>" for a in related)}</ul>'
-          f'<p style="margin-top:12px"><a href="index.html">All best lists →</a></p>'
+          f'<p style="margin-top:12px"><a href="./">All best lists →</a></p>'
           f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and GitHub stars are as recorded on each listing. Check official sites before you choose.</p></section>')
     open(path,"w").write(X.shell("../",title,desc,canon,body,ld)); return canon,h,len(items)
 def hub(t,made,alt=()):
@@ -114,9 +114,9 @@ def hub(t,made,alt=()):
     old="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>{e(h)}</h3></div><p>Curated list</p></a>' for s,h in OLD)
     old+='<a class="card" href="best-mcp-servers-2026.html"><div class="ct"><h3>Best MCP servers 2026</h3></div><p>Ranked by GitHub stars, live status from status.json</p></a>'
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":u} for u,h,_,_ in made]+[{"@type":"WebPage","name":h,"url":f"{B}best/{s}.html"} for s,h in OLD]},{"@type":"VideoObject","name":"Top 6 Trending AI Agent & MCP Stacks Benchmark Overview","description":"Animated benchmark and adoption overview across coding agents, browser automation and Model Context Protocol (MCP) servers on AgentScout.","thumbnailUrl":B+"assets/animations/agentscout-radar-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-radar-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Best lists</div><section class="calm"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / Best lists</div><section class="calm"><h1 style="text-align:left">Best AI agent tools lists (2026)</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Ranked lists built from the AgentScout directory. Each list says how it is ranked (GitHub stars or listing maturity). We use no invented scores and sell no placements.</p>'
-          f'<ul class="guide-list"><li><a href="../tasks/index.html">AI agents by task</a></li><li><a href="../categories/index.html">All categories</a></li><li><a href="../compare/index.html">Comparisons</a></li></ul>'
+          f'<ul class="guide-list"><li><a href="../tasks/">AI agents by task</a></li><li><a href="../categories/">All categories</a></li><li><a href="../compare/">Comparisons</a></li></ul>'
           f'<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-radar-infographic-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-radar-infographic.mp4" type="video/mp4"></video></figure>'
           f'<h2 style="font-size:16px;margin:24px 0 10px">Ranked lists</h2><div class="grid">{tiles}</div><h2 style="font-size:16px;margin:32px 0 10px">MCP and coding guides</h2><div class="grid">{old}</div>'
           +(f'<h2 id="alternatives" style="font-size:16px;margin:32px 0 10px">Tool alternatives ({len(alt)})</h2><div class="badges">'+"".join(f'<a class="b uc" href="{sl}.html">{e(x["name"])} alternatives</a>' for x,sl,_ in sorted(alt,key=lambda z:z[0]["name"].lower()))+'</div>' if alt else "")
@@ -137,8 +137,8 @@ def pages(t):
     urls=[hub(t,made,ALT)]+[m[0] for m in made]+[f"{B}best/{sl}.html" for _,sl,_ in ALT]
     # link from where best/ pages are already listed (additive)
     # The homepage guide list stays short. Every ranked list is linked from best/index.html.
-    link_in("best/mcp-servers.html",'Guides by client: ','<a href="index.html">All best lists</a> · <a href="open-source-mcp-servers.html">Best open-source MCP servers</a> · ','href="open-source-mcp-servers.html"')
-    link_in("best/cursor-alternatives.html",'<a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>','. More: <a href="ai-coding-agents.html">Best AI coding agents (ranked)</a> · <a href="index.html">All best lists</a>','href="ai-coding-agents.html"')
+    link_in("best/mcp-servers.html",'Guides by client: ','<a href="./">All best lists</a> · <a href="open-source-mcp-servers.html">Best open-source MCP servers</a> · ','href="open-source-mcp-servers.html"')
+    link_in("best/cursor-alternatives.html",'<a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>','. More: <a href="ai-coding-agents.html">Best AI coding agents (ranked)</a> · <a href="./">All best lists</a>','href="ai-coding-agents.html"')
     link_in("llms.txt",f'- [Cursor alternatives 2026]({B}best/cursor-alternatives.html)',"\n"+f"- [All best-of lists]({B}best/)\n"+"\n".join(f"- [{h} 2026]({u})" for u,h,_,_ in made),f"]({B}best/)")
     urls.append(mcp_2026_page(t))
     print("best-of:",len(made),"new ranked pages +hub;",len(glob.glob("best/*.html"))-1,"best pages total")
@@ -223,7 +223,7 @@ def mcp_2026_page(t):
            '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'
            '<path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>Share</button>'
            '<span class="sharecount" hidden></span></span></div>')
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Best lists</a> / {e(h1)}</div>'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Best lists</a> / {e(h1)}</div>'
           f'<section style="padding-top:20px;text-align:left"><h1 style="text-align:left" data-pagefind-weight="10">{e(h1)}</h1>{share}'
           f'<p class="qa"><b>Quick answer:</b> {e(qa)}</p>'
           f'<p class="lede" style="margin-left:0;text-align:left">These are the top {len(ranked):,} of {len(pool):,} MCP servers in the AgentScout directory that also have a row in status.json, ranked.</p>'
@@ -231,7 +231,7 @@ def mcp_2026_page(t):
           f'{verify}'
           f'{_hm.responds_bar()}{_hm.responds_script("../")}<ol class="grid" data-responds-list style="padding:0;margin:0">{"".join(rows)}</ol>'
           f'<h2 style="font-size:16px;margin:32px 0 10px">FAQ</h2>{fq}'
-          f'<p style="margin-top:24px">More</p><ul class="guide-list"><li><a href="index.html">All best lists</a></li><li><a href="../mcp/">MCP servers by task</a></li><li><a href="open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../categories/mcp-servers.html">All MCP servers</a></li></ul>'
+          f'<p style="margin-top:24px">More</p><ul class="guide-list"><li><a href="./">All best lists</a></li><li><a href="../mcp/">MCP servers by task</a></li><li><a href="open-source-mcp-servers.html">Open-source MCP servers</a></li><li><a href="../categories/mcp-servers.html">All MCP servers</a></li></ul>'
           f'<p class="disclose">Stars and pricing come from each AgentScout listing. Status and check times come from status.json. Nothing else on this list is estimated.</p></section>')
     # The quick-answer links were escaped then unescaped via replace of escaped names. Rebuild qa links cleanly.
     linked=e(qa)

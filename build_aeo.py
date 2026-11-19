@@ -364,6 +364,7 @@ def sync_robots():
         lines.extend([f"User-agent: {b}", "Allow: /", ""])
     lines.extend([
         "Sitemap: https://agentscouthq.com/sitemap.xml",
+        "Sitemap: https://agentscouthq.com/sitemap-core.xml",
         "",
         "# LLM discoverability",
         "# https://agentscouthq.com/llms.txt",

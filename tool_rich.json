@@ -33649,5 +33649,37 @@
         "Room sensing: CO2, airborne particles from PM1.0 to PM10, temperature and humidity, which skills can turn into spoken alerts or light cues."
       ]
     ]
+  },
+  "kling-ai": {
+    "kind": "lite",
+    "src_kind": "site",
+    "cite": true,
+    "updated": "2026-11-19",
+    "sources": [
+      "https://kling.ai/app/mcp/guide",
+      "https://kling.ai/blog/claude-code-kling-mcp-food-promo-workflow",
+      "https://kling.ai/blog/claude-kling-mcp-fashion-video-workflow",
+      "https://kling.ai/blog/kling-mcp-cinematic-performance-workflow",
+      "https://github.com/klingai-tech/claude-plugin",
+      "https://github.com/klingai-tech/claude-plugin/blob/main/README.md",
+      "https://github.com/klingai-tech/claude-plugin/blob/main/.mcp.json"
+    ],
+    "long": [
+      "Kling AI is Kuaishou's video and image generator. Its official MCP and CLI guide documents a remote HTTP server for international accounts at https://kling.ai/mcp. A client adds that URL, the user signs in to a Kling account, and generation spends that account's credits. The official Claude Code plugin is a separate connection to https://kling.ai/mcp/plugin and does not ask for an API key. The plugin README says to keep only one active Kling connection."
+    ],
+    "who": "People who already use an MCP client such as Claude or Claude Code and want that assistant to run Kling image and video generation on their Kling account.",
+    "setup": [
+      "Kling's MCP and CLI guide, linked from kling.ai, says international accounts use the remote HTTP endpoint https://kling.ai/mcp. In Claude Code, run: claude mcp add --transport http klingai --scope user https://kling.ai/mcp. Then start Claude Code, run /mcp, and complete the Kling sign-in. --scope project shares the connection in the current project; omitting the scope keeps the default local scope, private to you and that project.",
+      "For an individual Claude account, the same Kling guide says: open Customize, then Connectors, choose Add custom connector, add https://kling.ai/mcp, authorize the Kling account, and enable the connector in the conversation. Team and Enterprise accounts may depend on organization settings.",
+      "The official Claude Code plugin (klingai-tech/claude-plugin) uses a different endpoint, https://kling.ai/mcp/plugin, declared in its .mcp.json as an HTTP server. Install with: claude plugin install kling-ai --marketplace klingai-tech/claude-plugin. Then open /mcp, select kling-ai, and authorize the Global Kling account in the browser. The README says the plugin does not ask for an API key.",
+      "The plugin README says to keep only one active Kling connection. If you still have the old https://klingai.com/mcp session, finish outstanding task checks, disconnect it, then authorize the Global account. The plugin's three Skills are kling-ai (routing, Elements, motion library, uploads, credits and task status), kling-ai-generate-image, and kling-ai-generate-video. Models and tool arguments come from the live connection."
+    ],
+    "mcp": {
+      "endpoint": "https://kling.ai/mcp",
+      "transport": "HTTP (remote)",
+      "auth": "Kling account sign-in. No API key. The Claude Code plugin authorizes a Global Kling account in the browser.",
+      "config": "{\"mcpServers\": {\"klingai\": {\"url\": \"https://kling.ai/mcp\"}}}",
+      "docs": "https://kling.ai/app/mcp/guide"
+    }
   }
 }

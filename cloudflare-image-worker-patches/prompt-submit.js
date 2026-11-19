@@ -34,6 +34,8 @@
 export const PROMPT_CATEGORIES = ["coding-agents", "mcp", "browser-agents"];
 export const PROMPT_SUBJECT = "Prompt submission";
 export const PROMPT_KEY_PREFIX = "prompt:";
+/** The inbox a "Prompt submission" notification goes to, one email per stored prompt. */
+export const PROMPT_NOTIFY_TO = "support@agentscouthq.com";
 /** 90 days, matching the submissions retention the recovery capture expects. */
 export const PROMPT_TTL_SECONDS = 90 * 24 * 60 * 60;
 
@@ -120,6 +122,64 @@ export function promptStorageKey(id) {
   return `${PROMPT_KEY_PREFIX}${id}`;
 }
 
+/**
+ * Notification email for a stored prompt submission.
+ *
+ * The worker source (and its mail binding) is not in this repo, so this
+ * module stays transport-agnostic: handleSubmit passes the SAME send
+ * function the tool-submission flow already uses, as `mailer`. The
+ * deployer wires it in one line at the call site (see handlePromptSubmit);
+ * no new secret, binding, or mail provider is introduced here, and the
+ * module never fetches a mail API itself.
+ *
+ * `mailer` receives one message: { to, subject, text, html }. It is
+ * called once per stored prompt, after the KV write succeeds, and never
+ * for a rejected submission. A mailer failure never loses the stored
+ * prompt or fails the submission: handlePromptSubmit still returns 200
+ * with `emailSent: false`.
+ *
+ * User text is escaped in the HTML part (escapeHtml below); the text
+ * part carries the same fields unescaped, as plain text.
+ */
+export function buildPromptNotificationEmail(record, key) {
+  const lines = [
+    ["Title", record.title],
+    ["Category", record.category],
+    ["Prompt", record.prompt],
+    ["Works with", record.works_with],
+    ["Description", record.desc],
+    ["Website", record.website],
+    ["GitHub", record.github],
+    ["Maker email", record.email],
+    ["X", record.x],
+    ["How found", record.how_found],
+    ["Found", record.found],
+    ["Found (other)", record.found_other],
+    ["Newsletter opt-in", record.newsletter_optin],
+    ["Stored key", key],
+    ["Submitted (unix)", String(record.ts)],
+  ];
+  const text = lines
+    .filter(([, value]) => value !== "" && value !== undefined)
+    .map(([label, value]) => `${label}: ${value}`)
+    .join("\n");
+  const rows = lines
+    .filter(([, value]) => value !== "" && value !== undefined)
+    .map(([label, value]) => `<tr><th align="left">${escapeHtml(label)}</th><td>${escapeHtml(String(value))}</td></tr>`)
+    .join("");
+  const html = `<p>A new prompt was submitted to AgentScout.</p><table>${rows}</table>`;
+  return { to: PROMPT_NOTIFY_TO, subject: PROMPT_SUBJECT, text, html };
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function newId() {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
     return crypto.randomUUID();
@@ -141,19 +201,30 @@ export async function storePromptSubmission(kv, record, id = newId()) {
 
 /**
  * The integration point. Call at the top of handleSubmit, before any
- * tool-only validation, passing the parsed JSON body and the worker's
- * submissions KV binding:
+ * tool-only validation, passing the parsed JSON body, the worker's
+ * submissions KV binding, and the SAME mail send the tool-submission
+ * flow already uses (as a function taking { to, subject, text, html }):
  *
- *   const prompt = await handlePromptSubmit(body, env.SUBMISSIONS);
+ *   const prompt = await handlePromptSubmit(body, env.SUBMISSIONS, Date.now(), sendMail);
  *   if (prompt.handled) return Response.json(prompt.body, { status: prompt.status });
+ *
+ * `sendMail` is the existing helper handleSubmit calls for tool
+ * submissions (same provider, same From, same credentials) — this
+ * module does not invent a second mail path. Pass null/omit it and the
+ * prompt is still stored and accepted, with `emailSent: false` in the
+ * response; wire it and a stored prompt also notifies
+ * support@agentscouthq.com with subject "Prompt submission".
  *
  * Returns { handled: false } for tool and update submissions so the
  * existing paths run unchanged, { handled: true, status: 200, body } for a
  * stored prompt, and { handled: true, status: 400, body: { error } } for
  * an invalid prompt submission. A missing KV binding fails closed (503)
  * rather than dropping the submission or treating it as a tool listing.
+ * A mailer failure after a successful store still returns 200 with
+ * `emailSent: false` — the prompt is kept, the email is not retried
+ * here, and the submission is never failed because a notification failed.
  */
-export async function handlePromptSubmit(body, kv, now = Date.now()) {
+export async function handlePromptSubmit(body, kv, now = Date.now(), mailer = null) {
   if (!isPromptSubmission(body)) return { handled: false };
   const validated = validatePromptSubmission(body, now);
   if (!validated.ok) {
@@ -165,9 +236,18 @@ export async function handlePromptSubmit(body, kv, now = Date.now()) {
   } catch {
     return { handled: true, status: 503, body: { error: "Prompt storage is not configured." } };
   }
+  let emailSent = false;
+  if (typeof mailer === "function") {
+    try {
+      await mailer(buildPromptNotificationEmail(validated.record, key));
+      emailSent = true;
+    } catch {
+      emailSent = false;
+    }
+  }
   return {
     handled: true,
     status: 200,
-    body: { ok: true, type: "prompt", key, title: validated.record.title },
+    body: { ok: true, type: "prompt", key, title: validated.record.title, emailSent },
   };
 }

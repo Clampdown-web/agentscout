@@ -182,7 +182,7 @@ def write_pack_pages() -> list[str]:
         trust_html = '<div class="pack-trust">' + "".join(trust_bits) + "</div>"
         steps = role_steps(agent)
         body = f'''
-<div class="crumb"><a href="../../index.html">AgentScout</a> / <a href="../">Bot Store</a> / {X.e(name)}</div>
+<div class="crumb"><a href="../../">AgentScout</a> / <a href="../">Bot Store</a> / {X.e(name)}</div>
 <article class="pack-page" style="--ap:{X.e(color)}">
 <section class="pack-hero">
 <p class="pack-by">built by <span class="sr-only">AgentScout</span><img class="aswm" src="../../logo-wordmark.svg" alt="" aria-hidden="true" width="168" height="32"><span class="pack-verified">✓ Verified pack</span></p>

@@ -104,7 +104,7 @@ def stats_bar(m):
     s = open("index.html", encoding="utf-8").read()
     bar = (
         f'<div class="stats" id="dir-stats">'
-        f'<a href="categories/index.html"><b id="s-total">{comma(m["tools_count"])}</b> tools</a>'
+        f'<a href="categories/"><b id="s-total">{comma(m["tools_count"])}</b> tools</a>'
         f'<a href="categories/mcp-servers.html"><b id="s-mcp">{comma(m["mcp_servers_count"])}</b> MCP servers</a>'
         f'<a href="mcp/status/">MCP status</a>'
         f'<a href="bot-templates/"><b>{comma(m["templates_count"])}</b> templates</a>'
@@ -127,7 +127,7 @@ def how_it_started(tools, m):
     seed_n, seed_a, seed_b = len(seed), dates[0] if dates else "", dates[-1] if dates else ""
     title = "How AgentScout started · AgentScout"
     desc = "Founder-run, mostly automated with AI agents. @clampdown19 (m lk) makes the calls. Counts come from the directory metrics file."
-    body = f'''<div class="crumb"><a href="index.html">AgentScout</a> / How it started</div>
+    body = f'''<div class="crumb"><a href="./">AgentScout</a> / How it started</div>
 <section class="calm prose">
 <h1 style="text-align:left">How it started</h1>
 <p class="lede" style="margin-left:0;text-align:left">Founder-run, mostly automated with AI agents.</p>
@@ -337,7 +337,7 @@ def launch_page(tools, start, end, wid, current):
             if next_h:
                 bits.append(f'<a class="btn" href="{next_h}" rel="next">Next</a>')
             pager = f'<p class="lb-pager">{"".join(bits)}</p>'
-        body = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="./">Launches</a> / {e(label)}</div>
+        body = f'''<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Launches</a> / {e(label)}</div>
 <section class="lb-board calm">
 <header class="lb-hero">
 <h1 class="lb-title">{e(h1)}</h1>
@@ -481,7 +481,7 @@ def tool_card(slug, name, desc, icon):
 
 def free_tools():
     os.makedirs("free-tools", exist_ok=True)
-    roast_inner = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / Roast My AI Tool Listing</div>
+    roast_inner = f'''<div class="crumb"><a href="../">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / Roast My AI Tool Listing</div>
 <section class="calm prose wide"><h1 style="text-align:left">Roast My AI Tool Listing</h1>
 <p class="lede" style="margin-left:0;text-align:left">Paste a tool URL. We fetch the public page and score the title, one-line pitch, pricing clarity, OG image, JSON-LD, llms.txt, and whether AgentScout already lists it.</p>
 <p class="muted">The URL is sent to the AgentScout worker so it can fetch the page. No paid APIs. Private and local addresses are blocked.</p>
@@ -508,7 +508,7 @@ def free_tools():
         ("roast", "Run Roast My AI Tool Listing on the URL."),
     ]
     lis = "".join(f'<li><label><input type="checkbox" value="{i}"> {e(lab)}</label></li>' for i, lab in check_items)
-    check_inner = f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / Launch day checklist</div>
+    check_inner = f'''<div class="crumb"><a href="../">AgentScout</a> / <a href="../free-tools.html">Free tools</a> / Launch day checklist</div>
 <section class="calm prose wide"><h1 style="text-align:left">AI Tool Launch Day Checklist</h1>
 <p class="lede" style="margin-left:0;text-align:left">Work through launch day. Progress stays in this browser.</p>
 <p id="lprog" style="font-weight:700">0 of {len(check_items)} done</p>

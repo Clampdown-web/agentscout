@@ -24,9 +24,9 @@
       "If you do not know the category, use the quiz, the role pages, or a best-of list. Each of those says how the list was built."
     ],
     "alts": [
-      {"href": "categories/index.html", "label": "All categories"},
-      {"href": "for/index.html", "label": "Browse by role"},
-      {"href": "best/index.html", "label": "Best-of lists"},
+      {"href": "categories/", "label": "All categories"},
+      {"href": "for/", "label": "Browse by role"},
+      {"href": "best/", "label": "Best-of lists"},
       {"href": "free-tools.html", "label": "Free tools"},
       {"href": "bot-templates/", "label": "Bot templates"},
       {"href": "categories/mcp-servers.html", "label": "MCP servers"}
@@ -113,7 +113,7 @@
       {"href": "3d-concept-art.html", "label": "3D and concept art"},
       {"href": "voice.html", "label": "Voice"},
       {"href": "frameworks.html", "label": "Agent frameworks"},
-      {"href": "../tasks/index.html", "label": "Browse by task"}
+      {"href": "../tasks/", "label": "Browse by task"}
     ],
     "faq": [
       ["Is this a ranking of the best AI games?", "No. It is every listing in the games category, {n} tools, with filters and a star sort. We do not score gameplay or art direction."],
@@ -149,7 +149,7 @@
       {"href": "best/free-ai-agents.html", "label": "Best free AI agents"},
       {"href": "s/free-mcp-servers.html", "label": "Free MCP servers"},
       {"href": "s/open-source-browser-agents.html", "label": "Open-source browser agents"},
-      {"href": "categories/index.html", "label": "All categories"},
+      {"href": "categories/", "label": "All categories"},
       {"href": "generate.html", "label": "Free image generator"},
       {"href": "bot-templates/", "label": "Bot templates"}
     ],
@@ -189,7 +189,7 @@
       {"href": "../free-tools/rules-file-generator.html", "label": "Rules file generator"},
       {"href": "../categories/frameworks.html", "label": "Agent frameworks"},
       {"href": "../for/founders.html", "label": "Tools for founders"},
-      {"href": "../index.html", "label": "Full directory"}
+      {"href": "../", "label": "Full directory"}
     ],
     "faq": [
       ["Does AgentScout run these bots?", "No. The index lists them and links to the publisher. Adding a bot happens on Grok, Claude, Codex, OpenClaw, Cursor, n8n, or GitHub, whichever the row names."],

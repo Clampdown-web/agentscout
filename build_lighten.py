@@ -85,7 +85,7 @@ def _write_list_pages(src, slugs, names, title):
         nxt=f"{base}-p{n+1}.html" if i+1<len(chunks) else ""
         items="".join(f'<li><a href="../tools/{x}.html">{html.escape(names.get(x,x))}</a></li>' for x in chunk)
         navp=f'<p class="catpager"><a href="{prev}">← Previous</a>'+(f' · <a rel="next" href="{nxt}">Next →</a>' if nxt else "")+f' · <a href="{base}.html">Back to {html.escape(title)}</a></p>'
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="{base}.html">{html.escape(title)}</a> / Page {n}</div>'
+        body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="{base}.html">{html.escape(title)}</a> / Page {n}</div>'
               f'<section class="calm"><h1 style="text-align:left">More {html.escape(title)}</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">Page {n}. {len(chunk):,} more tools from this category. Every name links to its listing.</p>'
               f'{navp}<ul class="catmore">{items}</ul>{navp}</section>')

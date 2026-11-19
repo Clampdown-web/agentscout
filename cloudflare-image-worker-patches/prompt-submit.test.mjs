@@ -3,7 +3,9 @@ import assert from "node:assert/strict";
 import {
   PROMPT_CATEGORIES,
   PROMPT_KEY_PREFIX,
+  PROMPT_NOTIFY_TO,
   PROMPT_SUBJECT,
+  buildPromptNotificationEmail,
   handlePromptSubmit,
   isPromptSubmission,
   validatePromptSubmission,
@@ -100,6 +102,74 @@ describe("prompt submissions", { concurrency: false }, () => {
       const result = await handlePromptSubmit(promptBody({ category }), kv);
       assert.equal(result.status, 200, category);
     }
+  });
+
+  test("a stored prompt emails support@ once, subject 'Prompt submission', user text escaped", async () => {
+    const kv = fakeKv();
+    const sent = [];
+    const mailer = async (message) => { sent.push(message); };
+    const result = await handlePromptSubmit(
+      promptBody({ name: "Fix <script>alert(1)</script> tests", prompt: "Use <b>bold</b> & quotes \"here\"." }),
+      kv, Date.now(), mailer,
+    );
+    assert.equal(result.status, 200);
+    assert.equal(result.body.emailSent, true);
+    assert.equal(sent.length, 1);
+    const [message] = sent;
+    assert.equal(message.to, PROMPT_NOTIFY_TO);
+    assert.equal(message.subject, PROMPT_SUBJECT);
+    assert.equal(message.subject, "Prompt submission");
+    // HTML part: user markup is escaped, never raw.
+    assert.ok(!message.html.includes("<script>"), message.html);
+    assert.ok(message.html.includes("&lt;script&gt;alert(1)&lt;/script&gt;"), message.html);
+    assert.ok(message.html.includes("&lt;b&gt;bold&lt;/b&gt; &amp; quotes &quot;here&quot;."), message.html);
+    // Text part: same fields, plain text.
+    assert.match(message.text, /Title: Fix <script>alert\(1\)<\/script> tests/);
+    assert.match(message.text, /Stored key: prompt:/);
+    assert.match(message.text, /Category: coding-agents/);
+    // The builder agrees with what the handler sent.
+    const record = JSON.parse([...kv.store.values()][0].value);
+    assert.deepEqual(message, buildPromptNotificationEmail(record, [...kv.store.keys()][0]));
+  });
+
+  test("a rejected prompt sends no email", async () => {
+    const kv = fakeKv();
+    const sent = [];
+    const result = await handlePromptSubmit(promptBody({ prompt: "   " }), kv, Date.now(), async (m) => { sent.push(m); });
+    assert.equal(result.status, 400);
+    assert.equal(sent.length, 0);
+    assert.equal(kv.store.size, 0);
+  });
+
+  test("a mailer failure still stores the prompt and returns 200 with emailSent false", async () => {
+    const kv = fakeKv();
+    const result = await handlePromptSubmit(promptBody(), kv, Date.now(), async () => { throw new Error("mail down"); });
+    assert.equal(result.status, 200);
+    assert.equal(result.body.ok, true);
+    assert.equal(result.body.emailSent, false);
+    assert.equal(kv.store.size, 1);
+  });
+
+  test("no mailer configured: prompt still stored, emailSent false", async () => {
+    const kv = fakeKv();
+    const result = await handlePromptSubmit(promptBody(), kv);
+    assert.equal(result.status, 200);
+    assert.equal(result.body.emailSent, false);
+    assert.equal(kv.store.size, 1);
+  });
+
+  test("tool and update submissions never trigger the prompt email", async () => {
+    const kv = fakeKv();
+    const sent = [];
+    const mailer = async (message) => { sent.push(message); };
+    const tool = await handlePromptSubmit(toolBody({ website: "https://example.com/" }), kv, Date.now(), mailer);
+    assert.equal(tool.handled, false);
+    const update = await handlePromptSubmit(
+      toolBody({ type: "update", tool: "some-tool", website: "https://example.com/" }), kv, Date.now(), mailer,
+    );
+    assert.equal(update.handled, false);
+    assert.equal(sent.length, 0);
+    assert.equal(kv.store.size, 0);
   });
 
   test("bad prompt category rejected with 400 and nothing stored", async () => {

@@ -338,13 +338,13 @@ def search_pages(t,m,asof):
         elif s=="open-source-workflow-automation-tools":
             gnote=('<p>Self-hosting is one part of the choice. <a href="../guides/how-to-automate-workflows-with-ai-agents.html">How to automate workflows with AI agents</a> '
                    'shows which engines you can run yourself, and which approval and pricing models stay on a hosted plan.</p>')
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Popular lists</a> / {e(h)}</div>{_sec}<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Popular lists</a> / {e(h)}</div>{_sec}<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} {"Here are the top "+str(len(items))+" of "+str(n) if n>len(items) else "Here are all "+str(n)} from the AgentScout directory.</p>{gnote}{facts}'
               f'<p class="muted" style="margin:0 0 18px"><strong>How we picked and ranked:</strong> tools are matched by category, the pricing each maker states and what each tool says it does. They are ranked by GitHub stars as recorded on each listing (link checks {asof}); tools without a tracked repo follow, by listing maturity. No paid placements.</p>'
               f'{_bar}<ol class="grid"{_attr} style="padding:0;margin:0">{"".join(BB.item(i+1,x) for i,x in enumerate(items))}</ol>'
               f'{_cta}<h2 style="font-size:18px;margin:36px 0 6px">FAQ</h2>{fq}'
               f'<p style="margin-top:28px">Related: {" · ".join(rel)}</p>'+(f'<p>Similar searches: {sibh}</p>' if sibh else "")+(f'<p>By role: {roleh}</p>' if roleh else "")+
-              f'<p><a href="index.html">All popular searches</a> · <a href="../for/index.html">AI agents by role</a> · <a href="../free-tools.html">Free tools</a></p>'
+              f'<p><a href="./">All popular searches</a> · <a href="../for/">AI agents by role</a> · <a href="../free-tools.html">Free tools</a></p>'
               f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Check official sites before you choose.</p></section>')
         if s in MERGED:
             stat=(f'<div class="badges" style="margin:0 0 18px" aria-label="AgentScout directory stats"><span class="b"><b>{ST["total"]:,}</b>&nbsp;tools tracked</span><span class="b"><b>{ST["categories"]}</b>&nbsp;categories</span><span class="b">Links checked daily</span><span class="b">{len(items)} on this page</span></div>')
@@ -355,15 +355,15 @@ def search_pages(t,m,asof):
             body=body.replace(f'<h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>',f'<h1 style="text-align:left;margin-left:0">{e(h)} and browser automation tools (2026)</h1>',1)
             body=re.sub(r'<p class="lede".*?</p>'+re.escape(facts),lambda _:stat+lede+why+f'<h2 style="font-size:18px;margin:28px 0 6px">The {len(items)} tools</h2>',body,count=1,flags=re.S)
             body=body.replace(f'<p style="margin-top:28px">Related: ',relh+f'<p style="margin-top:20px">Related: ',1)
-            body=body.replace('<p class="disclose">',f'<p style="margin-top:20px">Browser agents are one corner of AgentScout. <a href="../index.html#directory">Browse all {ST["total"]:,} tools across {ST["categories"]} categories</a> to find the rest of your agent stack.</p><p class="disclose">',1)
+            body=body.replace('<p class="disclose">',f'<p style="margin-top:20px">Browser agents are one corner of AgentScout. <a href="../#directory">Browse all {ST["total"]:,} tools across {ST["categories"]} categories</a> to find the rest of your agent stack.</p><p class="disclose">',1)
         open(f"s/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld))
     canon=B+"s/"; title="Popular AI Agent Tool Lists (2026) · AgentScout"
     desc=f"{len(made)} focused lists of AI agent tools: free coding agents, open-source browser agents, Python frameworks, MCP servers, voice and more."[:158]
     tiles="".join(f'<a class="card" href="{a[0]}.html"><div class="ct"><h3>{e(a[1])}</h3></div><p>{a[3]} tools · {e(", ".join(x["name"] for x in a[4][:3]))}</p></a>' for a in made)
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":a[1],"url":f"{B}s/{a[0]}.html"} for a in made]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / Popular lists</div><section class="calm"><h1 style="text-align:left;margin-left:0">Popular AI agent tool lists</h1>'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / Popular lists</div><section class="calm"><h1 style="text-align:left;margin-left:0">Popular AI agent tool lists</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Quick answers to the searches people make most, each built from the AgentScout directory with the ranking method stated.</p><div class="grid">{tiles}</div>'
-          f'<p style="margin-top:24px">See also: <a href="../for/index.html">AI agents by role</a> · <a href="../best/index.html">Best lists</a> · <a href="../tasks/index.html">AI agents by task</a> · <a href="../free-tools.html">Free tools</a></p></section>')
+          f'<p style="margin-top:24px">See also: <a href="../for/">AI agents by role</a> · <a href="../best/">Best lists</a> · <a href="../tasks/">AI agents by task</a> · <a href="../free-tools.html">Free tools</a></p></section>')
     open("s/index.html","w").write(X.shell("../",title,desc,canon,body,ld))
     return [canon]+[f"{B}s/{a[0]}.html" for a in made],made
 # Short commercial-use and copyright note on role pages (Oct 18, 2026); also linked from the art task pages
@@ -391,22 +391,22 @@ def role_pages(t,m,made):
         ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},"audience":{"@type":"Audience","audienceType":who}},
             {"@type":"ItemList","numberOfItems":len(allitems),"itemListElement":[{"@type":"ListItem","position":i+1,"name":x["name"],"url":f"{B}tools/{x['slug']}.html"} for i,x in enumerate(allitems)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"By role","item":B+"for/"},{"@type":"ListItem","position":3,"name":h,"item":canon}]}]}
-        body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">By role</a> / {e(CAP(who))}</div><section class="calm"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
+        body=(f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">By role</a> / {e(CAP(who))}</div><section class="calm"><h1 style="text-align:left;margin-left:0">{e(h)} (2026)</h1>'
               f'<p class="lede" style="margin-left:0;text-align:left">{e(intro)} We picked the top tools for {len(secs)} jobs {e(who)} do every day: {n:,} tools in all, {free_n:,} of them free or with a free tier.</p>'
               f'<p style="font-size:14px">Jump to: {jump}</p>'
               +(f'<p style="font-size:14px">Free tools from AgentScout for {e(who)}: {ft}</p>' if ft else "")+
               f'<p class="muted" style="margin:0 0 6px;font-size:13.5px"><strong>How we picked:</strong> each section takes the tools matched to that task in our directory, putting tools whose category and stated use cases fit the task first, then ordering by tracked GitHub stars. No paid placements.</p>'
               +ROLE_NOTE.get(s,"")+f'{body_s}'+(f'<h2 style="font-size:16px;margin:32px 0 10px">Popular searches for {e(who)}</h2><p>{sr}</p>' if sr else "")+
-              f'<p style="margin-top:24px">Other roles: {oth} · <a href="index.html">All roles</a></p>'
+              f'<p style="margin-top:24px">Other roles: {oth} · <a href="./">All roles</a></p>'
               f'<p class="disclose">Facts come from our directory listings; pricing is as each maker states it and can change. Missing a tool? <a href="../submit.html">Submit it free</a>.</p></section>')
         open(f"for/{s}.html","w").write(X.shell("../",title,desc,canon,body,ld)); urls.append(canon); info.append((s,who,h,n)); DATA.setdefault('roles',[]).append((s,who,h,[b for _,b in secs],[x['slug'] for x in allitems]))
     canon=B+"for/"; title="AI Agents by Role: Tools for Every Team (2026) · AgentScout"
     desc=f"AI agent tools picked for {len(info)} roles: developers, marketers, sales, support, designers, researchers, crypto traders and more."[:158]
     tiles="".join(f'<a class="card" href="{s}.html"><div class="ct"><h3>For {e(who)}</h3></div><p>{n} tools picked</p></a>' for s,who,h,n in info)
     ld={"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","name":h,"url":f"{B}for/{s}.html"} for s,_,h,_ in info]}
-    body=(f'<div class="crumb"><a href="../index.html">AgentScout</a> / By role</div><section class="calm"><h1 style="text-align:left;margin-left:0">AI agents by role</h1>'
+    body=(f'<div class="crumb"><a href="../">AgentScout</a> / By role</div><section class="calm"><h1 style="text-align:left;margin-left:0">AI agents by role</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Pick your job and see the AI agent tools that fit the work you actually do, grouped by task.</p><div class="grid">{tiles}</div>'
-          f'<p style="margin-top:24px">See also: <a href="../s/">Popular lists</a> · <a href="../tasks/index.html">AI agents by task</a> · <a href="../best/index.html">Best lists</a> · <a href="../free-tools.html">Free tools</a></p></section>')
+          f'<p style="margin-top:24px">See also: <a href="../s/">Popular lists</a> · <a href="../tasks/">AI agents by task</a> · <a href="../best/">Best lists</a> · <a href="../free-tools.html">Free tools</a></p></section>')
     open("for/index.html","w").write(X.shell("../",title,desc,canon,body,ld))
     return [canon]+urls,info
 def pages(t):
@@ -417,12 +417,12 @@ def pages(t):
     for f in glob.glob("s/*.html")+glob.glob("for/*.html"):
         if f not in keep: os.remove(f)
     # hub links (additive)
-    BB.link_in("best/index.html",'See also: ','<a href="../s/">Popular lists</a> · <a href="../for/index.html">AI agents by role</a> · ','href="../s/"')
-    BB.link_in("tasks/index.html",'each with the agent tools that handle it.',' Or browse <a href="../for/index.html">by role</a> and <a href="../s/">popular searches</a>.',' Or browse <a href="../for/index.html">by role</a>')
-    BB.link_in("free-tools.html",'grouped by category.</p>',f'<p style="font-size:14px;margin:-6px 0 0">Looking for something specific? Try <a href="s/">popular searches</a> like <a href="s/free-ai-coding-agents.html">free AI coding agents</a> or browse <a href="for/index.html">AI agents by role</a>.</p>','href="s/"')
+    BB.link_in("best/index.html",'See also: ','<a href="../s/">Popular lists</a> · <a href="../for/">AI agents by role</a> · ','href="../s/"')
+    BB.link_in("tasks/index.html",'each with the agent tools that handle it.',' Or browse <a href="../for/">by role</a> and <a href="../s/">popular searches</a>.',' Or browse <a href="../for/">by role</a>')
+    BB.link_in("free-tools.html",'grouped by category.</p>',f'<p style="font-size:14px;margin:-6px 0 0">Looking for something specific? Try <a href="s/">popular searches</a> like <a href="s/free-ai-coding-agents.html">free AI coding agents</a> or browse <a href="for/">AI agents by role</a>.</p>','href="s/"')
     BB.link_in("llms.txt",f"- [All best-of lists]({B}best/)",f"\n- [Popular lists]({B}s/)\n- [AI agents by role]({B}for/)\n- [Free tools: AI cost calculator]({B}free-tools/ai-cost-calculator.html)\n- [Free tools: token counter]({B}free-tools/token-counter.html)\n- [Free tools: prompt builder]({B}free-tools/prompt-builder.html)\n- [Free tools: agent setup generator]({B}free-tools/agent-setup-generator.html)",f"]({B}s/)")
     # Oct 20 2026: inbound links to the merged browser-agents page from the homepage and the MCP servers category
-    BB.link_in("index.html",'<a href="s/index.html">Popular lists</a>',' · <a href="s/open-source-browser-agents.html">Free &amp; open-source browser agents</a>','href="s/open-source-browser-agents.html"')
+    BB.link_in("index.html",'<a href="s/">Popular lists</a>',' · <a href="s/open-source-browser-agents.html">Free &amp; open-source browser agents</a>','href="s/open-source-browser-agents.html"')
     # Oct 20 2026: inbound links from category pages to the matching free calculators/builders (they had none)
     FT={"mcp-servers":[("mcp-config-builder","MCP config builder"),("mcp-server-picker","MCP server picker")],"mcp-infra":[("mcp-config-builder","MCP config builder"),("tool-schema-builder","Tool schema builder")],
         "coding":[("rules-file-generator","Rules file generator"),("token-counter","Token counter"),("context-window-planner","Context window planner")],

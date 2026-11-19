@@ -37,7 +37,7 @@ def pages(t):
             "links": [
                 ("../mcp/connect.html", "Open MCP Server Setup Guide →"),
                 ("../free-tools/mcp-config-builder.html", "Interactive MCP Config Builder →"),
-                ("../mcp/index.html", f"Browse All {n_mcp:,} MCP Servers →"),
+                ("../mcp/", f"Browse All {n_mcp:,} MCP Servers →"),
             ],
         },
         {
@@ -63,7 +63,7 @@ def pages(t):
             "snippet": '{"mcpServers":{"agentscout":{"url":"https://mcp.agentscouthq.com/mcp"}}}',
             "links": [
                 ("../bot-store/", "Shop Pre-Trained Pro Bots ($39 / $59 / $59 / $69 / $149) →"),
-                ("../bot-templates/index.html#bt-featured", f"Browse {n_bt:,} Community Bot Templates →"),
+                ("../bot-templates/#bt-featured", f"Browse {n_bt:,} Community Bot Templates →"),
             ],
         },
         {
@@ -88,8 +88,8 @@ def pages(t):
             ],
             "snippet": "curl -s https://agentscouthq.com/api/tools.json | jq '.tools[] | select(.category==\"coding\") | {name, pricing, github_stars}'",
             "links": [
-                ("../compare/index.html", "Open Head-to-Head VS Comparisons →"),
-                ("../best/index.html", "Browse Ranked Best-Of Guides →"),
+                ("../compare/", "Open Head-to-Head VS Comparisons →"),
+                ("../best/", "Browse Ranked Best-Of Guides →"),
                 ("../free-tools/agent-run-cost-estimator.html", "Run Agent Cost Calculator →"),
             ],
         },
@@ -115,7 +115,7 @@ def pages(t):
             ],
             "snippet": "curl -s https://agentscouthq.com/llms.txt | head -n 35",
             "links": [
-                ("../index.html#directory", f"Search All {n_tools:,} Verified Tools →"),
+                ("../#directory", f"Search All {n_tools:,} Verified Tools →"),
                 ("../mcp/status/", "MCP server status →"),
                 ("../llms.txt", "Read llms.txt Machine Catalog →"),
             ],
@@ -143,7 +143,7 @@ def pages(t):
             "snippet": "npx skills add agentscout/mcp-discovery",
             "links": [
                 ("../free-tools.html", "Launch 19 Free Browser Calculators →"),
-                ("../skills/index.html", "Browse Agent Skills with Install Commands →"),
+                ("../skills/", "Browse Agent Skills with Install Commands →"),
                 ("../quiz.html", "Take the 30-Second Agent Finder Quiz →"),
             ],
         },
@@ -196,7 +196,7 @@ def pages(t):
             ],
             "snippet": 'claude mcp add --transport http agentscout https://mcp.agentscouthq.com/mcp',
             "links": [
-                ("../tasks/index.html", "Browse AI Agents by Task (86 Guides) →"),
+                ("../tasks/", "Browse AI Agents by Task (86 Guides) →"),
                 ("../best/mcp-servers-for-claude-code.html", "Best MCP Servers for Claude Code →"),
                 ("../best/open-source-browser-automation-agents.html", "Best Open-Source Browser Agents →"),
             ],
@@ -223,7 +223,7 @@ def pages(t):
             ],
             "snippet": "https://agentscouthq.com/leaderboard/",
             "links": [
-                ("../leaderboard/index.html", "Open Live GitHub Star Leaderboard →"),
+                ("../leaderboard/", "Open Live GitHub Star Leaderboard →"),
                 ("../best/local-offline-ai-agents.html", "Best Local & Offline AI Agents →"),
                 ("../newsletter.html", "Read AgentScout Weekly Archive →"),
             ],
@@ -363,7 +363,7 @@ pills.forEach(function(btn){
 })();</script>'''
 
     body = (
-        '<div class="crumb"><a href="../index.html">AgentScout</a> / Quick-Start Guides, Walkthroughs &amp; Pro Tips</div>'
+        '<div class="crumb"><a href="../">AgentScout</a> / Quick-Start Guides, Walkthroughs &amp; Pro Tips</div>'
         '<section class="vh-hero">'
         '<span class="vh-eyebrow">20s Step-by-Step · Pause &amp; Scrub Steps 1–3 · Zero Signup</span>'
         f'<h1 data-pagefind-weight="10">Quick-Start Guides, Walkthroughs &amp; Pro Tips ({len(guides)})</h1>'

@@ -184,6 +184,7 @@ import build_counts; build_counts.write(t)  # data/site_counts.json before any p
 os.makedirs("tools",exist_ok=True)
 import csp as _csp
 e=_csp.escape  # maker text and URLs; quote=True so a quote cannot break an attribute
+sponsored_rel=build_extras.sponsored_rel  # rel=sponsored helper (Nov 18 2026, indexing hygiene); implemented in build_extras so tests can import it without running the build
 tpl=open("data/detail.tpl").read()
 SOC=[("x.com","X"),("twitter.com","X"),("discord.gg","Discord"),("discord.com","Discord"),("reddit.com","Reddit"),("github.com","GitHub"),("linkedin.com","LinkedIn"),("youtube.com","YouTube")]
 def soc_lab(u):
@@ -220,7 +221,7 @@ for x in t:
         fh+=f'<dt>Latest release</dt><dd><a href="{e(g.get("release_url") or x["github"].rstrip("/")+"/releases")}" target="_blank" rel="noopener noreferrer" title="{e(g["release_tag"])} · GitHub data fetched {e(g.get("fetched",""))}">{e(_tg)}</a>, {e(_dt.date.fromisoformat(g["release_date"]).strftime("%b %-d, %Y"))}</dd>'
     fh+=f'<dt>Listing</dt><dd><a class="suggestedit" href="../submit.html?type=update&amp;tool={x["slug"]}" rel="nofollow">Suggest an edit</a></dd>'
     if g.get("pushed") and x.get("github"): fh+=f'<dt>Last commit</dt><dd title="GitHub data fetched {e(g.get("fetched",""))}">{e(_dt.date.fromisoformat(g["pushed"]).strftime("%b %-d, %Y"))}</dd>'
-    uc="".join(f'<a class="b uc" href="../index.html?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
+    uc="".join(f'<a class="b uc" rel="nofollow" href="../?uc={e(u)}#directory">{e(u)}</a>' for u in x["use_cases"])
     uc+="".join(f'<a class="b uc" href="../categories/{build_extras.catslug(c)}.html">Also see: {e(c)}</a>' for c in build_extras.media_xlink_cats(x["slug"]))
     prim=build_extras.su(x.get("website") or x["url"])
     host=re.sub(r"^https?://(www\.)?","",prim).split("/")[0]
@@ -233,7 +234,7 @@ for x in t:
     maker_cta='<p class="quiet-feature"><a href="../sponsor.html">Get featured</a></p>'
     botstore=""
     out=tpl.replace("{{META}}",e(build_extras.meta(x))).replace("{{MAKER_CTA}}",maker_cta).replace("{{ABOUT}}",about).replace("{{BOTSTORE}}",botstore).replace("{{CATSLUG}}",build_extras.catslug(x["category"]))
-    for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(build_extras.utm(x.get("visit_url") or prim,x)),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
+    for k,v in {"ICO":build_extras.ico(x,"../","lg"),"NAME":e(x["name"]),"DESC":e(x["description"]),"URL":e(build_extras.utm(x.get("visit_url") or prim,x)),"HOST":e(host),"GHBTN":ghb,"FACTS":fh,"UC":uc,"REL":relh,"SLUG":x["slug"],"CAT":e(x["category"]),"PRICE":e(x["pricing"]),"BADGE":build_extras.badge_html(x),"MCPCHECK":build_extras.mcp_check_html(x),"CMP":build_extras.cmp_links(x,t),"NEW":(('<span class="b new">New</span>' if x["new"] else "")+(f'<span class="b added">Added {_dt.date.fromisoformat(x["added"]).strftime("%b %-d, %Y")}</span>' if x.get("added") else ""))}.items():
         out=out.replace("{{"+k+"}}",v)
     # Archived GitHub repo label (tools.json "repo_archived": true, owner-approved Oct 22 2026)
     if x.get("repo_archived"):
@@ -282,6 +283,7 @@ for x in t:
     out=out.replace("</head>",'<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False).replace("<","\\u003c")+"</script></head>",1)
     import tool_banner
     out=tool_banner.ensure(out)  # Bot Store strip from data/detail.tpl, on every new tool page
+    out=sponsored_rel(out,x["slug"],host)  # rel=sponsored on the tool's own-host links (paid placement)
     open(f"tools/{x['slug']}.html","w").write(out)
     if x["slug"]=="lovable":
         import build_lovable; build_lovable.run()  # packs section, re-applied after later rewrites
@@ -405,7 +407,11 @@ def _unique_words(x,rich):
     return len(re.findall(r"[A-Za-z0-9']+"," ".join(parts)))
 def _has_enrichment(x,rich):
     r=rich.get(x["slug"]) or {}
-    return any(r.get(k) for k in ENRICH_FIELDS)
+    if any(r.get(k) for k in ENRICH_FIELDS): return True
+    # First-party MCP probe (Nov 18 2026, indexing content): a server that responded
+    # to our own handshake counts as enriched. The daily new-page cap still gates
+    # admission in apply_thin_page_rule; this only changes the enriched signal.
+    return build_extras.mcp_responded(x["slug"])
 def _is_thin_tool(x,rich):
     """Short or boilerplate tool copy with no enrichment fields. Enriched pages are not thin."""
     if _has_enrichment(x,rich): return False
@@ -510,6 +516,9 @@ def apply_thin_page_rule(tools):
     if any(_blocked_tool(x) for x in tools):
         raise SystemExit("A takedown listing is still in the catalog")
     print(f"thin-page rule: noindex {len(noindex)} tool pages ({len(queued)} queued by the {NEW_TOOL_CAP}/day cap); sitemap {urls} urls; indexed tools {len(indexed)}")
+    # Core sitemap (Nov 18 2026, indexing hygiene): after the prune, so every core
+    # URL is also in the final sitemap.xml and indexable.
+    build_extras.write_core_sitemap(tools)
     return {"noindex":len(noindex),"queued":queued,"sitemap":urls,"indexed_tools":len(indexed)}
 import atexit as _axq, build_extras as _bxq
 def _quality_finish():
