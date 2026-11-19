@@ -25,7 +25,7 @@ def pay_note(prefix=""):
     """EU/UK immediate-delivery line and the refund policy, placed by a pay button."""
     href = f"{prefix}refunds.html"
     return (
-        '<p class="paynote" style="flex:1 1 100%;min-width:0;max-width:calc(100vw - 48px);width:100%;box-sizing:border-box;'
+        '<p class="paynote" style="flex:1 1 100%;min-width:0;max-width:100%;width:100%;box-sizing:border-box;'
         'margin:8px auto 0;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.45;text-align:center;color:var(--muted)">'
         "EU and UK buyers: paying starts delivery right away, which ends the 14-day cancellation right. "
         f'<a href="{href}">Refund policy</a>.</p>'

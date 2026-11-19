@@ -573,8 +573,18 @@ def stamp_mcp_pages(t=None):
         else:
             m=re.search(r"<h1\b[^>]*>.*?</h1>(\s*<div class=\"shareacts\">.*?</div>)?", s, flags=re.S)
             if m: s=s[:m.end()]+block+s[m.end():]
-            tail=tails.get(path) or (_h1_text(s) or "MCP servers on AgentScout")
-            meta=_fit_desc(sentence+" "+tail)
+            if path=="mcp/pricing.html":
+                # The reachability sentence is the quick answer in the body. It must
+                # not replace the meta description, which describes the pricing table.
+                import build_counts
+                cat=build_counts.metrics_catalog()
+                when=cat.get("updated_display") or cat.get("updated") or ""
+                M=mcp(t)
+                cnt={k:sum(1 for x in M if ptype(x)==k) for k in ("free","freemium","paid","unknown")}
+                meta=pricing_table_description(cnt, when)
+            else:
+                tail=tails.get(path) or (_h1_text(s) or "MCP servers on AgentScout")
+                meta=_fit_desc(sentence+" "+tail)
             s=_set_desc(s, meta)
         s=_patch_graph(s, st, meta, faq, slugs, names, allow_list=path!="mcp/connect.html")
         s=_beside_plain_reach_sentence(s, sentence, hs)
@@ -645,9 +655,18 @@ def hist_html(H):
         r.append(f'<li><b>{e(nice(h["date"]))}</b>: '+" ".join(e(c) for c in ch[:25])+more+"</li>")
     return "".join(r)+"</ul>"
 def tbl(head,rows):
-    return ('<div style="overflow-x:auto;max-width:100%"><table class="cmp-table" style="width:100%;border-collapse:collapse;font-size:14px"><thead><tr>'+
-            "".join(f'<th style="text-align:left;padding:6px 8px;border-bottom:1px solid #ddd">{h}</th>' for h in head)+"</tr></thead><tbody>"+
-            "".join("<tr>"+"".join(f'<td style="padding:6px 8px;border-bottom:1px solid #eee;vertical-align:top;overflow-wrap:anywhere">{c}</td>' for c in r)+"</tr>" for r in rows)+"</tbody></table></div>")
+    # Cell rules live in styles.css (.cmp-pricing). Repeating them on every cell
+    # made /mcp/pricing.html larger than the post-deploy fetch, so </main> never
+    # arrived and the checker reported an empty main.
+    return ('<div class="tablewrap"><table class="cmp-table cmp-pricing"><thead><tr>'+
+            "".join(f"<th>{h}</th>" for h in head)+"</tr></thead><tbody>"+
+            "".join("<tr>"+"".join(f"<td>{c}</td>" for c in r)+"</tr>" for r in rows)+"</tbody></table></div>")
+def pricing_table_description(cnt, when):
+    """Meta description for /mcp/pricing.html. Describes the table. No directory total."""
+    parts=[f"{cnt['free']:,} free", f"{cnt['freemium']:,} free with paid plans", f"{cnt['paid']:,} paid"]
+    if cnt.get("unknown"): parts.append(f"{cnt['unknown']:,} not stated")
+    desc=f"MCP server pricing as of {when}, as each maker states it: {', '.join(parts)}."
+    return _fit_desc(desc)
 def pages(t):
     LSD=json.load(open(LS)) if os.path.exists(LS) else {}
     H=history(t,LSD); M=mcp(t); upd=""
@@ -667,9 +686,8 @@ def pages(t):
     else:
         scope=f"the {len(M):,} MCP servers in this table ({mcp_n:,} in the directory)"
     # pricing. Directory totals come from api/metrics.json, the same file the homepage reads.
-    canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"
-    desc=f"As of {when}, AgentScout lists {tools_n:,} tools and {mcp_n:,} MCP servers. Pricing: {cnt['free']:,} free, {cnt['freemium']:,} free plus paid, {cnt['paid']:,} paid."
-    if len(desc)>158: desc=f"As of {when}: {tools_n:,} tools, {mcp_n:,} MCP servers. {cnt['free']:,} free, {cnt['freemium']:,} freemium, {cnt['paid']:,} paid."[:158]
+    canon=B+"mcp/pricing.html"; title=f"MCP server pricing table ({nice(upd)}) · AgentScout"  # no catalog total in the title
+    desc=pricing_table_description(cnt, when)
     def stars_cell(x):
         n=x.get("github_stars")
         if not n: return "–"

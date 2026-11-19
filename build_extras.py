@@ -93,6 +93,19 @@ def kept_alternatives():
     return _KEPT_ALTS
 _STORY_RE=re.compile(r"^https://agentscouthq\.com/news/\d{4}/\d{2}/[^/]+\.html$")
 _ALT_RE=re.compile(r"^https://agentscouthq\.com/best/([a-z0-9-]+)-alternatives\.html$")
+# Real free-tool pages. They stay indexable, so the sitemap writer has to list
+# them. build_growth appends them, then the next full sitemap rewrite dropped them.
+FREE_TOOL_SITEMAP=["free-tools/ai-tool-launch-day-checklist.html","free-tools/roast-my-ai-tool-listing.html"]
+def indexable_extra_urls():
+    """Canonical URLs of indexable pages the main sitemap loop does not build itself."""
+    import os
+    out=[]
+    for rel in FREE_TOOL_SITEMAP:
+        if not os.path.exists(rel): continue
+        head=open(rel,encoding="utf-8").read(4000)
+        if 'name="robots" content="noindex' in head or 'http-equiv="refresh"' in head: continue
+        out.append(B+rel)
+    return out
 def sitemap_drop(u):
     """True when a URL must not appear in sitemap.xml (TASK-18): news story pages,
     non-kept alternatives pages, and sponsor.html. Monthly news hubs, news.html and
@@ -414,6 +427,7 @@ def build(t):
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
     import build_guides; urls+=build_guides.pages()
     urls=[u for u in urls if not sitemap_drop(u)]  # TASK-18: story pages, non-kept alternatives and sponsor.html leave the sitemap
+    urls+=indexable_extra_urls()  # free tools the growth step publishes; a later full sitemap rewrite used to drop them
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in [B+s for s in SITEMAP_SEED]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         if sitemap_drop(u): continue

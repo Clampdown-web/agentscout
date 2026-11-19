@@ -259,6 +259,38 @@ _PROMPTS_MENU_ROW = (
 )
 
 
+def dedupe_menu_labels(html):
+    """One label per header menu control.
+
+    The drawer row "MCP servers" and the Categories chip used the same words,
+    and both "See all" links did too. morning_audit counts those repeated
+    labels as duplicate header menu buttons. Footer links are outside <nav>
+    and stay as they are. Idempotent.
+    """
+    m = re.search(r"<nav\b[^>]*>.*?</nav>", html, re.S)
+    if not m:
+        return html
+    nav = m.group(0)
+    new = re.sub(
+        r'(href="(?:\.\./|/)*categories/mcp-servers\.html">)MCP servers(</a>)',
+        r"\1All MCP servers\2",
+        nav,
+    )
+    new = re.sub(
+        r'(class="msee" href="(?:\.\./|/)*categories/">)See all(</a>)',
+        r"\1See all categories\2",
+        new,
+    )
+    new = re.sub(
+        r'(class="msee" href="(?:\.\./|/)*best/">)See all(</a>)',
+        r"\1See all guides\2",
+        new,
+    )
+    if new == nav:
+        return html
+    return html[:m.start()] + new + html[m.end():]
+
+
 def ensure_prompts_menu_row(html):
     """Put the Prompts row in the existing Menu drawer, directly after Bot Store.
 
@@ -294,7 +326,7 @@ def canonical_index_html(idx_s=None):
     # Bot Store is a neon pill inside the footer cluster. Only a footer that has no Bot Store link at all gets the plain fallback.
     if foot and 'bot-store/' not in foot.group(0):
         idx_s = idx_s.replace('<a href="bot-templates/">AI bot templates</a> · ', '<a href="bot-templates/">AI bot templates</a> · <a href="bot-store/">Bot Store</a> · ')
-    return ensure_prompts_menu_row(idx_s)
+    return dedupe_menu_labels(ensure_prompts_menu_row(idx_s))
 
 
 def chrome_for(depth_prefix, idx_html=None):
