@@ -75,19 +75,48 @@ class ReachabilityTests(unittest.TestCase):
         card = re.search(r"<!--vs:home-->(.*)<!--/vs:home-->", home, re.S)
         self.assertIsNotNone(card)
         hand = re.search(r'<div class="vs-row vs-hand">.*?</div>', card.group(1), re.S)
-        tally = bac.handshake_tally()
-        self.assertIsNotNone(tally)
         self.assertIsNotNone(hand, "homepage card is missing the handshake running count")
-        self.assertIn(f"<b>{tally['probed']:,} of {tally['remote']:,}</b>", hand.group(0))
-        self.assertIn(f"<b>{tally['responded']:,}</b><span>answered</span>", hand.group(0))
+        # Probe commits update data/mcp-health/summary.json and do not rebuild
+        # index.html. The published row is the builder's rendering of the counts
+        # from the last page build, so it is not pinned to today's summary.
+        shown = re.search(r"<b>([\d,]+) of ([\d,]+)</b>", hand.group(0))
+        self.assertIsNotNone(shown, "homepage handshake row is missing its count")
+        figs = re.findall(r"<b>([\d,]+)</b><span>(answered|asked for auth|failed)</span>", hand.group(0))
+        probed = int(shown.group(1).replace(",", ""))
+        if probed == 0:
+            self.assertEqual(figs, [])
+            by_label = {"answered": 0, "asked for auth": 0, "failed": 0}
+        else:
+            self.assertEqual([label for _, label in figs], ["answered", "asked for auth", "failed"])
+            by_label = {label: int(n.replace(",", "")) for n, label in figs}
+        published = {
+            "remote": int(shown.group(2).replace(",", "")),
+            "local_only": 0,
+            "probed": probed,
+            "responded": by_label["answered"],
+            "needs_auth": by_label["asked for auth"],
+            "failed": by_label["failed"],
+            "complete": "checked so far" not in hand.group(0),
+        }
+        self.assertEqual(
+            by_label["answered"] + by_label["asked for auth"] + by_label["failed"],
+            published["probed"],
+        )
+        self.assertLessEqual(published["probed"], published["remote"])
+        self.assertEqual(hand.group(0), bac.handshake_home_html(published))
         self.assertNotIn("live", hand.group(0).lower())
         self.assertNotIn("reachable", hand.group(0).lower())
         self.assertNotIn(bac.HANDSHAKE_CADENCE, card.group(1))
+        tally = bac.handshake_tally()
+        self.assertIsNotNone(tally)
+        self.assertEqual(tally["responded"] + tally["needs_auth"] + tally["failed"], tally["probed"])
+        self.assertLessEqual(tally["probed"], tally["remote"])
+        rendered = bac.handshake_home_html(tally)
         if tally["complete"]:
-            self.assertNotIn("so far", hand.group(0))
+            self.assertNotIn("so far", rendered)
         else:
-            self.assertIn("checked so far", hand.group(0))
-            self.assertNotIn("%", hand.group(0))
+            self.assertIn("checked so far", rendered)
+            self.assertNotIn("%", rendered)
         extra = int(self.st.get("not_yet_checked") or 0)
         if extra:
             catalog_n = self.st["checked_count"] + extra
