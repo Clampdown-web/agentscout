@@ -95,6 +95,8 @@ def _write_list_pages(src, slugs, names, title):
         page=X.shell("../", f"{title}, page {n} · AgentScout", desc, canon, body, ld)
         if prev: page=page.replace("</head>", f'<link rel="prev" href="{prev}"></head>', 1)
         if nxt: page=page.replace("</head>", f'<link rel="next" href="{nxt}"></head>', 1)
+        import build_tasks
+        page=build_tasks.ensure_shared_scripts(rel, page, "../")
         open(rel,"w",encoding="utf-8").write(page)
     _sitemap_add(rels)
     return rels
