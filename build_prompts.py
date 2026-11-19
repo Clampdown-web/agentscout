@@ -299,21 +299,87 @@ def _related(cat):
             '<a href="../bot-templates/">AI bot templates</a></p>')
 
 
+def _page_for(rel):
+    """Site-relative path of the HTML file a sitemap rel names."""
+    if rel.endswith("/"):
+        return rel + "index.html"
+    return rel
+
+
+def _canonical(path):
+    """Canonical URL from the page head, or None when the file has none."""
+    if not path or not os.path.isfile(path):
+        return None
+    with open(path, encoding="utf-8") as fh:
+        head = fh.read(20000)
+    m = re.search(r'<link rel="canonical" href="([^"]+)"', head)
+    return m.group(1) if m else None
+
+
+def _loc_for(rel):
+    """Sitemap loc is the page canonical.
+
+    A directory index is listed at the URL the page declares. prompts/index.html
+    is served as /prompts/, so the loc is https://agentscouthq.com/prompts/
+    and not .../prompts/index.html.
+    """
+    canon = _canonical(_page_for(rel))
+    if canon:
+        return canon
+    return SITE + "/" + rel
+
+
+def _align_index_html_locs(text):
+    """Rewrite every sitemap loc that ends in /index.html when it is not the page canonical.
+
+    lastmod is kept. The row is dropped only when that canonical is already listed,
+    so a correction does not add a second URL. A loc whose canonical matches
+    (tasks/index.html) is left as it is.
+    """
+    existing = set(re.findall(r"<loc>([^<]+)</loc>", text))
+    out = []
+    for line in text.splitlines(True):
+        m = re.search(r"<loc>([^<]+)</loc>", line)
+        if not m or not m.group(1).endswith("/index.html"):
+            out.append(line)
+            continue
+        loc = m.group(1)
+        rel = loc[len(SITE) + 1:] if loc.startswith(SITE + "/") else ""
+        canon = _canonical(rel) if rel.endswith("/index.html") else None
+        if not canon or canon == loc:
+            out.append(line)
+            continue
+        if canon in existing:
+            existing.discard(loc)
+            continue
+        out.append(line.replace(f"<loc>{loc}</loc>", f"<loc>{canon}</loc>", 1))
+        existing.discard(loc)
+        existing.add(canon)
+    return "".join(out)
+
+
 def _sitemap_add(rels):
-    """Append indexable canonical URLs, same pattern as build_lighten._sitemap_add."""
+    """Append indexable canonical URLs, same pattern as build_lighten._sitemap_add.
+
+    Directory indexes use the page canonical. An older /index.html loc that
+    does not match its page is replaced in place.
+    """
     p = "sitemap.xml"
     if not os.path.exists(p) or not rels:
         return 0
-    s = open(p, encoding="utf-8").read()
+    original = open(p, encoding="utf-8").read()
+    s = _align_index_html_locs(original)
     day = datetime.date.today().isoformat()
     extra = ""
     for rel in rels:
-        loc = SITE + "/" + rel
+        loc = _loc_for(rel)
         if loc in s:
             continue
         extra += f'  <url><loc>{loc}</loc><lastmod>{day}</lastmod></url>\n'
     if extra:
-        open(p, "w", encoding="utf-8").write(s.replace("</urlset>", extra + "</urlset>"))
+        s = s.replace("</urlset>", extra + "</urlset>")
+    if s != original:
+        open(p, "w", encoding="utf-8").write(s)
     return extra.count("<url>")
 
 
@@ -391,7 +457,8 @@ def run():
                   _thumb_url(cover), THUMB_ALT[cover["slug"]])
     checked = _assert_cards(page, prompts, "prompts/index.html")
     open(f"{D}/index.html", "w", encoding="utf-8").write(page)
-    rels.append(f"{D}/index.html")
+    # Canonical is the directory URL (https://agentscouthq.com/prompts/), not the file path.
+    rels.append(f"{D}/")
 
     # One page per category.
     for c in CATS:
