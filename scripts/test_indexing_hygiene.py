@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Indexing hygiene: sitemap seed, canonical hrefs, core sitemap selection (TASK-15, A1/A4/A8).
 
-Pure-function tests; no build needed. Run: python3 scripts/test_indexing_hygiene.py
+Pure-function tests, plus a check that a directory index is listed at its canonical URL.
+No build needed. Run: python3 scripts/test_indexing_hygiene.py
 """
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -61,10 +63,45 @@ def test_core_sitemap_selection():
     assert all(u.endswith(".html") or u.endswith("/") for u in urls)
 
 
+def test_directory_index_sitemap_loc_matches_canonical():
+    """A directory index is listed at its canonical, not the index.html file path."""
+    os.chdir(Path(__file__).resolve().parents[1])
+    import build_prompts as bp
+    canon = "https://agentscouthq.com/prompts/"
+    assert bp._loc_for("prompts/") == canon
+    assert bp._loc_for("prompts/index.html") == canon
+    assert bp._loc_for("prompts/coding-agents.html") == "https://agentscouthq.com/prompts/coding-agents.html"
+    sample = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '  <url><loc>https://agentscouthq.com/prompts/index.html</loc><lastmod>2026-11-18</lastmod></url>\n'
+        '  <url><loc>https://agentscouthq.com/tasks/index.html</loc><lastmod>2026-11-18</lastmod></url>\n'
+        '</urlset>\n'
+    )
+    fixed = bp._align_index_html_locs(sample)
+    assert f"<loc>{canon}</loc>" in fixed
+    assert "prompts/index.html" not in fixed
+    assert "https://agentscouthq.com/tasks/index.html" in fixed
+    assert "<lastmod>2026-11-18</lastmod>" in fixed
+    assert fixed.count("<url>") == sample.count("<url>")
+    both = sample.replace(
+        "</urlset>\n",
+        f'  <url><loc>{canon}</loc><lastmod>2026-11-18</lastmod></url>\n</urlset>\n',
+    )
+    deduped = bp._align_index_html_locs(both)
+    assert deduped.count(f"<loc>{canon}</loc>") == 1
+    assert "prompts/index.html" not in deduped
+    assert deduped.count("<url>") == 2
+    sm = Path("sitemap.xml").read_text(encoding="utf-8")
+    assert f"<loc>{canon}</loc>" in sm
+    assert "/prompts/index.html" not in sm
+
+
 def main():
     test_sitemap_seed()
     test_canonical_hrefs()
     test_core_sitemap_selection()
+    test_directory_index_sitemap_loc_matches_canonical()
     print("indexing hygiene ok: sitemap seed, canonical hrefs, core sitemap selection")
 
 
