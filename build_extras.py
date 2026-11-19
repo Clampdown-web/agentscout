@@ -42,6 +42,56 @@ def su(u):
 
 # Standard outbound tracking on tool-page Visit buttons (owner-approved Oct 20 2026). Official-site links and JSON-LD stay clean.
 # Per-tool opt-out: tools.json "no_utm": true (for sites that break on query params).
+# Sitemap seed (Nov 18 2026, indexing hygiene): HTML pages and directory URLs only.
+# feed.xml, llms.txt and llms-full.txt stay published for readers and AI crawlers
+# but are not sitemap URLs, so every <loc> ends in .html or /.
+SITEMAP_SEED=["","new.html","quiz.html","generate.html","sponsor.html","how-it-started.html","mcp-test-report.html","ai-visibility-check.html","launches/"]
+# Paid placements (Nov 18 2026, indexing hygiene): outbound links to these tools' own
+# hosts carry rel="sponsored" (Google paid-link disclosure). The list lives in
+# data/sponsored_links.json so later tasks can reuse it.
+_SPONSORED=None
+def sponsored_slugs():
+    global _SPONSORED
+    if _SPONSORED is None:
+        try: _SPONSORED=set(json.load(open("data/sponsored_links.json")).get("slugs") or [])
+        except Exception: _SPONSORED=set()
+    return _SPONSORED
+def _host_of(u):
+    h=re.sub(r"^https?://","",str(u or "")).split("/")[0].split("?")[0].lower()
+    return h[4:] if h.startswith("www.") else h
+def sponsored_rel(html,slug,host):
+    """Add rel="sponsored" to outbound links to this tool's own host (listed slugs only).
+
+    Only rewrites rel="noopener noreferrer" anchors whose href host matches the
+    tool's host (www-insensitive); other links and unlisted slugs are untouched.
+    Later passes must not strip it: they rewrite blocks, nav and scripts, never rel.
+    """
+    if slug not in sponsored_slugs() or not host: return html
+    want=_host_of(host)
+    def _fix(m):
+        tag=m.group(0)
+        hm=re.search(r'href="([^"]+)"',tag)
+        if not hm or _host_of(hm.group(1))!=want: return tag
+        if 'rel="noopener noreferrer"' not in tag: return tag
+        return tag.replace('rel="noopener noreferrer"','rel="sponsored noopener noreferrer"',1)
+    return re.sub(r'<a\b[^>]*>',_fix,html)
+def visit_rel(slug):
+    """rel for a tool's outbound Visit link: sponsored for listed slugs, plain otherwise."""
+    return "sponsored noopener noreferrer" if slug in sponsored_slugs() else "noopener noreferrer"
+def canonical_hrefs(page):
+    """Internal links use the directory URL, never .../index.html (Nov 18 2026, indexing hygiene).
+
+    Strips a trailing index.html from relative hrefs, keeping any query/fragment:
+    index.html -> ./, ../index.html -> ../, categories/index.html -> categories/,
+    ../index.html?uc=x#directory -> ../?uc=x#directory. Absolute URLs are untouched.
+    index.html must be a whole final path segment: tools/pageindex.html is a tool
+    page, not an index, and is left alone.
+    """
+    def _fix(m):
+        path,tail=(m.group(2) or ""),m.group(3)
+        if not path and not m.group(1): path="./"  # bare index.html -> ./; ../index.html -> ../
+        return f'href="{m.group(1)}{path}{tail}"'
+    return re.sub(r'href="((?:\.\./)*)((?:[^":]*?/)?)index\.html((?:[?#][^"]*)?)"',_fix,page)
 UTM="utm_source=agentscout&utm_medium=referral&utm_campaign=directory"
 def utm(u,x=None):
     u=su(u)
@@ -136,7 +186,9 @@ def shell(depth,title,desc,canon,body,ld):
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False).replace("</","<\\/")}</script>
 </head>{nav}<main class="wrap">{body}</main>
 {foot}'''
-    return stamp_assets(page)
+    # detail.tpl writes home links as ../ ; a root page (depth "") strips that to an
+    # empty href, so point it at ./ instead. Subdirectory and / depths are unaffected.
+    return canonical_hrefs(stamp_assets(page)).replace('href=""','href="./"')
 def facts(x):
     f=[("Description",x["description"]),("Category",x["category"]),("Audience","For builders" if x["audience"]=="builders" else "Ready to use"),
        ("Pricing (as stated)",(x.get("pricing_detail") or x["pricing"])),("Maturity",x["maturity"]),
@@ -198,13 +250,13 @@ def build(t):
         rows="".join(f"<tr><th>{e(k)}</th><td>{e(va)}</td><td>{e(vb)}</td></tr>" for (k,va),(_,vb) in zip(fa,fb))
         shared=sorted(set(A["use_cases"])&set(Bt["use_cases"]))
         sh=f"Both are listed for: {', '.join(shared)}." if shared else "They're listed under different use cases, so check which fits your job."
-        body=f'''<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Compare</a> / {e(A["name"])} vs {e(Bt["name"])}</div>
+        body=f'''<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Compare</a> / {e(A["name"])} vs {e(Bt["name"])}</div>
 <section class="calm"><h1 style="text-align:left">{e(h1)}</h1>
 <p class="lede" style="margin-left:0;text-align:left">{f"Two closely related {e(A['category'])} tools" if A["category"]==Bt["category"] else f"A {e(A['category'])} tool and a {e(Bt['category'])} tool that overlap"}, side by side. Everything here comes from our directory listing; pricing is as each maker states it. {e(sh)}</p>
 <div class="tablewrap"><table class="cmp"><thead><tr><th><span class="sr">Feature</span></th><th><a class="icol" href="../tools/{a}.html">{ico(A,"../","sm")}{e(A["name"])}</a></th><th><a class="icol" href="../tools/{b}.html">{ico(Bt,"../","sm")}{e(Bt["name"])}</a></th></tr></thead><tbody>{rows}
-<tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="noopener noreferrer">Visit ↗</a></td></tr></tbody></table></div>
+<tr><th>Official site</th><td><a href="{e(A["url"])}" target="_blank" rel="{visit_rel(a)}">Visit ↗</a></td><td><a href="{e(Bt["url"])}" target="_blank" rel="{visit_rel(b)}">Visit ↗</a></td></tr></tbody></table></div>
 <p class="disclose">{"We don't run benchmarks. The recommendation below is based on the listing facts in this table, not on testing." if N else "We don't benchmark tools or rank one above the other here."} Check each official site for current pricing and features before you choose.</p>
-{faqh}{guide}{rel}<p style="margin-top:20px"><a href="index.html">← All comparisons</a></p></section>'''
+{faqh}{guide}{rel}<p style="margin-top:20px"><a href="./">← All comparisons</a></p></section>'''
         ld={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":title,"description":desc,"url":canon,"isPartOf":{"@type":"WebSite","name":"AgentScout","url":B},
             "about":[{"@type":"SoftwareApplication","name":x["name"],"url":x["url"],"applicationCategory":x["category"]} for x in (A,Bt)]},
             {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":B},{"@type":"ListItem","position":2,"name":"Compare","item":B+"compare/"},{"@type":"ListItem","position":3,"name":f"{A['name']} vs {Bt['name']}","item":canon}]}]}
@@ -213,20 +265,20 @@ def build(t):
     cards="".join(f'<a class="card" href="{cslug(a,b)}.html"><div class="ct"><span class="icopair">{ico(bs[a],"../","sm")}{ico(bs[b],"../","sm")}</span><h3 style="flex:1">{e(bs[a]["name"])} vs {e(bs[b]["name"])}</h3></div><p>{e(bs[a]["category"])}: {e(bs[a]["description"])}</p></a>' for a,b in PAIRS)
     canon=B+"compare/"; title="Compare AI agent tools side by side · AgentScout"; desc="Side-by-side comparisons of related AI agent tools: coding agents, frameworks, browser automation, voice, search APIs, no-code builders and observability."
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon,"hasPart":[{"@type":"WebPage","url":f"{B}compare/{cslug(a,b)}.html","name":f"{bs[a]['name']} vs {bs[b]['name']}"} for a,b in PAIRS]},{"@type":"VideoObject","name":"AgentScout Head-to-Head VS Radar & Benchmark Arena","description":"Animated 6-axis capability radar and side-by-side tug-of-war benchmark comparison across leading AI agent tools on AgentScout.","thumbnailUrl":B+"assets/animations/agentscout-vs-arena-poster.png","contentUrl":B+"assets/animations/agentscout-vs-arena.mp4","uploadDate":"2026-10-26T18:00:00-07:00","duration":"PT20S"},{"@type":"VideoObject","name":"3-Stage Autonomous AI Agent & MCP Production Pipeline","description":"Animated architecture breakdown showing how engineering teams chain MCP context servers, coding agents, and browser verification.","thumbnailUrl":B+"assets/animations/agentscout-workflow-infographic-poster.png","contentUrl":B+"assets/animations/agentscout-workflow-infographic.mp4","uploadDate":"2026-10-26T17:00:00-07:00","duration":"PT20S"}]}
-    open("compare/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Compare</div><section class="calm"><h1 style="text-align:left">Compare AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">Closely related tools, side by side, using only facts from our listings.</p><div class="cpick" id="cpick" data-pairs="{",".join(cslug(a,b) for a,b in PAIRS)}"><h2>Compare any two tools</h2><p class="muted" style="margin:0">Pick any two of the {len(t)} tools in the directory and see them side by side.</p><div class="cp-row"><div class="cp-f"><label for="cp-a">Tool A</label><input id="cp-a" type="text" autocomplete="off" placeholder="Type a tool name" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="cp-a-l"><ul class="cp-l" id="cp-a-l" role="listbox" hidden></ul></div><button class="btn cp-swap" id="cp-swap" type="button" title="Swap" aria-label="Swap tools">⇄</button><div class="cp-f"><label for="cp-b">Tool B</label><input id="cp-b" type="text" autocomplete="off" placeholder="Type a tool name" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="cp-b-l"><ul class="cp-l" id="cp-b-l" role="listbox" hidden></ul></div><button class="btn primary" id="cp-go" type="button">Compare</button><button class="btn" id="cp-copy" type="button">Copy link</button></div><div id="cp-res"></div></div><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-vs-arena-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-vs-arena.mp4" type="video/mp4"></video></figure><h2 style="font-size:19px;margin:0 0 14px">Written comparisons</h2><div class="grid">{cards}</div></section><script src="../compare-picker.js?v={__import__("build_tasks").ASSET_V}" defer></script>',ld)); urls.insert(0,canon)
+    open("compare/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../">AgentScout</a> / Compare</div><section class="calm"><h1 style="text-align:left">Compare AI agent tools</h1><p class="lede" style="margin-left:0;text-align:left">Closely related tools, side by side, using only facts from our listings.</p><div class="cpick" id="cpick" data-pairs="{",".join(cslug(a,b) for a,b in PAIRS)}"><h2>Compare any two tools</h2><p class="muted" style="margin:0">Pick any two of the {len(t)} tools in the directory and see them side by side.</p><div class="cp-row"><div class="cp-f"><label for="cp-a">Tool A</label><input id="cp-a" type="text" autocomplete="off" placeholder="Type a tool name" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="cp-a-l"><ul class="cp-l" id="cp-a-l" role="listbox" hidden></ul></div><button class="btn cp-swap" id="cp-swap" type="button" title="Swap" aria-label="Swap tools">⇄</button><div class="cp-f"><label for="cp-b">Tool B</label><input id="cp-b" type="text" autocomplete="off" placeholder="Type a tool name" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="cp-b-l"><ul class="cp-l" id="cp-b-l" role="listbox" hidden></ul></div><button class="btn primary" id="cp-go" type="button">Compare</button><button class="btn" id="cp-copy" type="button">Copy link</button></div><div id="cp-res"></div></div><figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="../assets/animations/agentscout-vs-arena-poster.png" style="display:block;width:100%;height:auto;max-width:100%"><source src="../assets/animations/agentscout-vs-arena.mp4" type="video/mp4"></video></figure><h2 style="font-size:19px;margin:0 0 14px">Written comparisons</h2><div class="grid">{cards}</div></section><script src="../compare-picker.js?v={__import__("build_tasks").ASSET_V}" defer></script>',ld)); urls.insert(0,canon)
     # badges page
     canon=B+"badges.html"; title="AgentScout badges for makers · AgentScout"; desc="Free badges for tools listed or featured on AgentScout. Add one to your README or site; it links back to your tool's page."
     ex=bs["langgraph"]
-    body=f'''<div class="crumb"><a href="index.html">AgentScout</a> / Badges</div><section class="calm"><h1 style="text-align:left">Badges for makers</h1>
+    body=f'''<div class="crumb"><a href="./">AgentScout</a> / Badges</div><section class="calm"><h1 style="text-align:left">Badges for makers</h1>
 <p class="lede" style="margin-left:0;text-align:left">If your tool is on AgentScout, you can show it. Badges are free and link to your tool's page, so readers can see how it compares.</p>
 <div class="embeds"><div class="embed"><img src="badges/listed-light.svg" alt="Listed on AgentScout (light)" width="220" height="54"><img src="badges/listed-dark.svg" alt="Listed on AgentScout (dark)" width="220" height="54"><p><b>Listed</b>: for any tool in the directory.</p></div>
 <div class="embed"><img src="badges/featured-light.svg" alt="Featured on AgentScout (light)" width="220" height="54"><img src="badges/featured-dark.svg" alt="Featured on AgentScout (dark)" width="220" height="54"><p><b>Featured</b>: for tools we've picked as featured.</p></div></div>
-{featured_generic(ex)}<h2 style="font-size:18px;margin:32px 0 8px">How to get your snippet</h2><ol><li>Find your tool in the <a href="index.html#directory">directory</a> and open its page.</li><li>Scroll to "Badge for makers" and copy the HTML or Markdown, in light or dark.</li><li>Paste it into your README, docs or site footer.</li></ol>
+{featured_generic(ex)}<h2 style="font-size:18px;margin:32px 0 8px">How to get your snippet</h2><ol><li>Find your tool in the <a href="./#directory">directory</a> and open its page.</li><li>Scroll to "Badge for makers" and copy the HTML or Markdown, in light or dark.</li><li>Paste it into your README, docs or site footer.</li></ol>
 <p>Not listed yet? <a href="https://github.com/Clampdown-web/agentscout/issues/new?labels=submission&amp;title=Tool%20submission%3A%20" target="_blank" rel="noopener noreferrer">Submit your tool</a>. Example from the {e(ex["name"])} page:</p>
 {badge_html(ex,"").replace('<a href="../badges.html">About badges</a>','')}
 <p class="disclose">Badges are SVG files hosted on this site. Please don't change the wording. Featured placements that are paid are always labeled as sponsored on AgentScout.</p></section>'''
     ld={"@context":"https://schema.org","@type":"WebPage","name":title,"description":desc,"url":canon}
-    open("badges.html","w").write(shell("",title,desc,canon,body,ld).replace('href="index.html#','href="index.html#')); urls.insert(0,canon)
+    open("badges.html","w").write(shell("",title,desc,canon,body,ld)); urls.insert(0,canon)
     import build_news; urls+=build_news.pages(t)  # per-story news pages + archives (before news.html)
     urls+=seo(t,urls)
     import build_tasks; urls+=build_tasks.pages(t)
@@ -246,11 +298,72 @@ def build(t):
     _have=set(urls); urls+=[B+x for x in sorted(_g.glob("best/*-alternatives.html")) if B+x not in _have and 'http-equiv="refresh"' not in open(x).read(4000)]  # kept alternatives pages stay in the sitemap (Oct 20 2026)
     import build_guides; urls+=build_guides.pages()
     sm=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in [B,B+"feed.xml",B+"new.html",B+"quiz.html",B+"llms.txt",B+"llms-full.txt",B+"generate.html",B+"sponsor.html",B+"how-it-started.html",B+"mcp-test-report.html",B+"ai-visibility-check.html",B+"launches/"]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
+    for u in [B+s for s in SITEMAP_SEED]+[f"{B}tools/{x['slug']}.html" for x in t]+urls:
         import build_rich; _r=build_rich.R.get(u.rsplit("/",1)[-1][:-5],{}) if "/tools/" in u else {}
         sm.append(f"  <url><loc>{u}</loc><lastmod>{max(today,_r.get('updated',today))}</lastmod></url>")
     open("sitemap.xml","w").write("\n".join(sm+["</urlset>",""]))
     print(len(PAIRS),"comparisons, badges page, sitemap",len(sm)-2,"urls")
+
+# ---- Core sitemap (Nov 18 2026, indexing hygiene) ----
+# The highest-value indexable pages: home, about, how-it-started, mcp/status,
+# the top categories, the ~20 best-enriched tools per main category, plus every
+# tool with hand-written pros/cons or live MCP probe data. 150-300 URLs.
+CORE_SITEMAP_FIXED=["","about.html","how-it-started.html","mcp/status/"]
+CORE_SITEMAP_CATEGORIES=10
+CORE_SITEMAP_PER_CATEGORY=20
+CORE_SITEMAP_MAX=300
+def _enrich_score(r):
+    fields=sum(1 for k in ("long","who","features","pros","cons","setup","faq","pricing","pricing_v","mcp") if r.get(k))
+    words=0
+    for k in ("long","features","pros","cons"):
+        words+=sum(len(str(p).split()) for p in (r.get(k) or []) if isinstance(p,str))
+    return (fields,words)
+def core_sitemap_urls(t):
+    """URLs for sitemap-core.xml, before intersecting with sitemap.xml. At most CORE_SITEMAP_MAX."""
+    import collections
+    import build_rich
+    R=build_rich.R
+    by={x["slug"]:x for x in t}
+    cats=collections.Counter(x["category"] for x in t)
+    main=[c for c,_ in cats.most_common(CORE_SITEMAP_CATEGORIES)]
+    urls=[B+s for s in CORE_SITEMAP_FIXED]
+    urls+=[B+"categories/"+catslug(c)+".html" for c in main]
+    picked=[]
+    for c in main:
+        items=[x for x in t if x["category"]==c]
+        items.sort(key=lambda x:(_enrich_score(R.get(x["slug"]) or {})+(x["slug"],)),reverse=True)
+        picked+=[f"{B}tools/{x['slug']}.html" for x in items[:CORE_SITEMAP_PER_CATEGORY]]
+    extra=[]
+    for slug,r in R.items():
+        if slug not in by: continue
+        if (r.get("pros") and r.get("cons")) or r.get("mcp"):
+            extra.append(f"{B}tools/{slug}.html")
+    urls+=picked+extra
+    seen=set(); out=[]
+    for u in urls:
+        if u not in seen: seen.add(u); out.append(u)
+    return out[:CORE_SITEMAP_MAX]
+def write_core_sitemap(t):
+    """Write sitemap-core.xml: the core URLs that are also in the final sitemap.xml.
+
+    Runs after the thin-page rule prunes sitemap.xml, so every core URL is
+    indexable. Returns the URL count.
+    """
+    import datetime
+    import build_rich
+    try: sm=open("sitemap.xml",encoding="utf-8").read()
+    except Exception: sm=""
+    have=set(re.findall(r"<loc>([^<]+)</loc>",sm))
+    today=datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    urls=[u for u in core_sitemap_urls(t) if u in have]
+    rows=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for u in urls:
+        slug=u.rsplit("/",1)[-1][:-5] if "/tools/" in u else ""
+        _r=build_rich.R.get(slug,{}) if slug else {}
+        rows.append(f"  <url><loc>{u}</loc><lastmod>{max(today,_r.get('updated',today))}</lastmod></url>")
+    open("sitemap-core.xml","w").write("\n".join(rows+["</urlset>",""]))
+    print("core sitemap",len(urls),"urls")
+    return len(urls)
 
 # ---- SEO pages: categories, best-of guides, 404, llms.txt ----
 CAT_INTRO={  # hand-written intros for categories added Oct 18, 2026 (others use the generic lede)
@@ -377,7 +490,7 @@ def listing_page(path,title,desc,h1,lede,items,crumb,extra="",pre="",more=None):
     _bar = _script = _list = ""
     if _mcp_best:
         _m=_mrr(); _bar=_m.responds_bar(); _script=_m.responds_script("../"); _list=' data-responds-list'
-    body=f'<div class="crumb"><a href="../index.html">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
+    body=f'<div class="crumb"><a href="../">AgentScout</a> / {e(crumb)}</div>{_sec}<h1 style="text-align:left"{' class="has-cico"' if path.startswith("categories/") else ""}>{cico(crumb) if path.startswith("categories/") else ""}{e(h1)}</h1><p class="lede" style="margin-left:0;text-align:left">{lede}</p>{pre}{catbar(len(items), responds=_mcp_cat) if path.startswith("categories/") else ""}{_bar}<div class="grid"{' id="cgrid"' if path.startswith("categories/") else ""}{_list}>{"".join(card(x) for x in agentic_first(path,newfirst(items)))}</div>{extra}{_script}{'<script src="../catfilter.js?v='+_mrr().RESPONDS_JS_V+'" defer></script>' if path.startswith("categories/") else ""}<p class="disclose">Facts come from our directory listings; pricing is as each maker states it. Check official sites before you choose.</p></section>'
     open(path,"w").write(shell("../",title,desc,canon,body,ld)); return canon
 # --- Natural category <title> wording (Oct 18 2026) ---
 _CAT_TT={"app builders":"AI app builders","browser/computer use":"browser and computer use agents","business agents":"AI business agents","coding":"AI coding agents and tools",
@@ -448,7 +561,7 @@ def seo(t,urls):
         out.append(listing_page(f"categories/{catslug(c)}.html",title,desc,({"MCP servers":"MCP servers and MCP tools","agent infra":"AI agent infrastructure tools"}.get(c) or (f"{c[0].upper()+c[1:]} AI tools" if c in LEAD_CATS else f"{c[0].upper()+c[1:]} AI agent tools")),_lede,items,c[0].upper()+c[1:],media_xlink_html(c,t)+_bs.repo_table(items,title=f"Top {c} repos on GitHub")+nav,pre=_pre,more=_more))
     tiles="".join(f'<a class="card" href="{catslug(c)}.html"><div class="ct"><h3 class="has-cico">{cico(c)}{e(c[0].upper()+c[1:])}</h3></div><p>{fmt_n(n)} tool{"s" if n!=1 else ""}</p></a>' for c,n in cats.most_common())
     canon=B+"categories/"; title=f"AI agent tool categories · AgentScout"; desc=f"Browse {fmt_n(len(t))} AI agent tools by category: coding agents, MCP servers and infra, frameworks, browser use, voice, research, evals and more."
-    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../index.html">AgentScout</a> / Categories</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {fmt_n(len(t))} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
+    open("categories/index.html","w").write(shell("../",title,desc,canon,f'<div class="crumb"><a href="../">AgentScout</a> / Categories</div><section class="sheet" style="padding-top:8px;text-align:left"><h1 style="text-align:left">AI agent tool categories</h1><p class="lede" style="margin-left:0;text-align:left">{len(cats)} categories, {fmt_n(len(t))} tools.</p><div class="grid">{tiles}</div></section>',{"@context":"https://schema.org","@type":"CollectionPage","name":title,"description":desc,"url":canon}))
     out.insert(0,canon)
     mcp=[x for x in t if x["category"]=="MCP servers" or "connect tools via MCP" in x["use_cases"]]
     # MCP cluster (Oct 18 2026; Oct 20 split): categories/mcp-servers is the main "MCP servers" page (best/mcp-servers redirects there).
@@ -478,7 +591,7 @@ def seo(t,urls):
         f"Compare {len(alt)} Cursor alternatives in 2026 ({sum(1 for x in alt if x['pricing'].startswith('Open'))} open source), including Windsurf, Claude Code, Cline and GitHub Copilot. Pricing & stars."[:158],
         "Cursor alternatives (2026)",f'{len(alt)} other coding agents and AI editors in the AgentScout directory. See also our <a href="../tools/cursor.html">Cursor listing</a> and <a href="../compare/cursor-vs-windsurf.html">Cursor vs Windsurf</a>.',alt,"Cursor alternatives"))
     # 404
-    s=shell("/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section class="calm"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/index.html#directory">directory</a> or <a href="/categories/index.html">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
+    s=shell("/","Page not found · AgentScout","This page doesn't exist on AgentScout.",B,f'<section class="calm"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. Try the <a href="/#directory">directory</a> or <a href="/categories/">categories</a>.</p></section>',{"@context":"https://schema.org","@type":"WebPage","name":"Not found"})
     open("404.html","w").write(s.replace('<link rel="canonical" href="'+B+'">','<meta name="robots" content="noindex">'))
     # llms.txt
     import build_counts as _bc
@@ -508,7 +621,7 @@ def seo(t,urls):
     f"- [sitemap.xml]({B}sitemap.xml) carries a per-page lastmod.","",
     "## Machine-readable catalog","",f"- [llms-full.txt]({B}llms-full.txt): single-file Markdown context with category comparison tables and all {_nm:,} verified MCP servers (pricing, link status, runs_locally, license, stars, endpoints)",f"- [api/tools.json]({B}api/tools.json): full catalog with counts and check date",f"- [tools.json]({B}tools.json): same tools in the site's internal format",f"- [api/products.json]({B}api/products.json): Stripe Agentic Commerce product feed for maker listing packages ($0, $15, $49, $99/wk) and Made by AgentScout pre-trained bots (also at [.well-known/acp.json]({B}.well-known/acp.json))",f"- [.well-known/ai-plugin.json]({B}.well-known/ai-plugin.json): AI plugin manifest with prompt-engineered model instructions",f"- [openapi.json]({B}openapi.json) & [openapi.yaml]({B}openapi.yaml): OpenAPI 3.1 JSON & YAML descriptions of the feeds under /api/ (also at [.well-known/openapi.json]({B}.well-known/openapi.json) and [.well-known/openapi.yaml]({B}.well-known/openapi.yaml))",f"- [manifest.json]({B}manifest.json): Web app brand manifest with icons and theme colors",f"- [.well-known/mcp.json]({B}.well-known/mcp.json): MCP server card pointing to https://mcp.agentscouthq.com/mcp",f"- [.well-known/agent-card.json]({B}.well-known/agent-card.json): agent card describing this directory (also at /.well-known/agent.json)",f"- [sitemap.xml]({B}sitemap.xml): all public pages",f"- [feed.xml]({B}feed.xml): RSS 2.0 of the latest tools and agent news","",
     "## Key pages","",f"- [MCP server pricing table]({B}mcp/pricing.html): every MCP server's stated pricing, dated, with change history",f"- [MCP server status]({B}mcp/status/): up, down, and not-yet-checked counts from the latest automated link check, with change history",f"- [Link-check status]({B}status.json): last-checked time, live or down status, and check history for every MCP server",f"- [AgentScout MCP server]({B}mcp/connect.html): free, read-only MCP endpoint https://mcp.agentscouthq.com/mcp (Streamable HTTP, no key; also at https://mcp.agentscouthq.com/mcp) with search_tools, get_tool, list_categories, best_for_task and list_packages. Optional runs_locally filter: offline, self_hosted_or_offline or any; locality is inferred from listings, so verify with the vendor before relying on it for compliance",f"- [MCP servers category]({B}categories/mcp-servers.html): {_nm:,} tools",f"- [New tools, last 30 days]({B}new.html)",f"- [AI agent news]({B}news/): daily AI agent and MCP news stories with sources",f"- [Free AI agent tools]({B}free-tools.html): AgentScout's free calculators and builders plus free and open-source tools from the directory",f"- [Free AI image generator]({B}generate.html): no sign-up image generator","",
-    "## Browse","",f"- [Directory]({B}index.html#directory)",f"- [Compare]({B}compare/)",f"- [Leaderboard]({B}leaderboard/): tools ranked by visitor ratings, reviews and GitHub stars",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [Sponsor & Get Featured]({B}sponsor.html): Free Community Listing ($0 forever, 5-day standard review queue at {B}submit.html#free-form), Fast-Track + 7-Day Launch Boost ($15 one-time at https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e), 30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time at https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week at https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01, which includes submissions to about 25 other AI directories and a report of the links) via Stripe or X Money (@clampdown19)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)",f"- [Refund policy]({B}refunds.html): $15 fast-track, sponsorships, and Bot Store downloads. Email support@agentscouthq.com.","","## Categories",""]
+    "## Browse","",f"- [Directory]({B}#directory)",f"- [Compare]({B}compare/)",f"- [Leaderboard]({B}leaderboard/): tools ranked by visitor ratings, reviews and GitHub stars",f"- [Badges]({B}badges.html)",f"- [Submit a tool]({B}submit.html)",f"- [Sponsor & Get Featured]({B}sponsor.html): Free Community Listing ($0 forever, 5-day standard review queue at {B}submit.html#free-form), Fast-Track + 7-Day Launch Boost ($15 one-time at https://buy.stripe.com/3cIaEY6T15hlfJr135e7m0e), 30-Day Category Pin + Permanent SEO/AEO Placement ($49 one-time at https://buy.stripe.com/bJefZi4KT6lp9l3dPRe7m00), and Weekly Sitewide Sponsor + Newsletter Top Slot ($99/week at https://buy.stripe.com/6oU4gA2CL9xB2WFcLNe7m01, which includes submissions to about 25 other AI directories and a report of the links) via Stripe or X Money (@clampdown19)",f"- [About AgentScout]({B}about.html): what AgentScout is, how tools are picked and checked",f"- [Privacy policy]({B}privacy.html)",f"- [Refund policy]({B}refunds.html): $15 fast-track, sponsorships, and Bot Store downloads. Email support@agentscouthq.com.","","## Categories",""]
     L+=[f"- [{c}]({B}categories/{catslug(c)}.html): {n} tool{'s' if n!=1 else ''}" for c,n in cats.most_common()]
     import glob as _gpk
     _packs=sorted(_gpk.glob("bot-store/*/index.html"))
@@ -578,12 +691,12 @@ def news_page(t):
         sm=f'<p class="nsum">{e(x["summary"])}</p>' if x.get("summary") else ""
         h3=f'<a href="{e(x["page"])}">{e(x["title"])}</a>' if x.get("page") and os.path.exists(x["page"]) else f'<a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a>'
         return f'<li class="nitem"><h3>{h3}</h3>{sm}<span class="nm">{e(x["source"])} · <time datetime="{e(x["date"])}">{e(pt_time(x["date"]))}</time> · <a href="{e(su(x["url"]))}" target="_blank" rel="noopener noreferrer">Source ↗</a>{tl}</span></li>'
-    body='<div class="crumb"><a href="index.html">AgentScout</a> / Agent news</div><section class="calm"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(pt_time(arc.get("updated","")))+'.</p>'
+    body='<div class="crumb"><a href="./">AgentScout</a> / Agent news</div><section class="calm"><h1 style="text-align:left">AI agent news today</h1><p class="lede" style="margin-left:0;text-align:left">Daily launches and updates about AI agents, coding agents and MCP, with short summaries in our own words. Updated '+e(pt_time(arc.get("updated","")))+'.</p>'
     for d in sorted(days,reverse=True):
         dd=datetime.date.fromisoformat(d).strftime("%A, %B %-d, %Y")
         body+=f'<h2 class="nday">{dd}</h2><ol class="nlist">'+"".join(item(x) for x in days[d])+'</ol>'
     if not days: body+='<p>No agent news yet.</p>'
-    body+='<p class="disclose">Headlines and summaries are written by AgentScout from each source; follow the source link for the full story. Older stories: <a href="news/index.html">news archive by month</a>.</p></section>'
+    body+='<p class="disclose">Headlines and summaries are written by AgentScout from each source; follow the source link for the full story. Older stories: <a href="news/">news archive by month</a>.</p></section>'
     title="AI Agent News Today: Daily Agent Launches & Updates | AgentScout"
     desc="Daily AI agent news: new agent launches, coding agents, MCP servers and agent frameworks, summarized in plain words with links to the original sources."
     ld={"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":title,"description":desc,"url":canon},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@type":"NewsArticle","headline":x["title"][:110],"datePublished":x["date"],"url":(B+x["page"]) if x.get("page") else x["url"],**({"isBasedOn":x["url"]} if x.get("page") else {}),"description":x.get("summary",x["title"]),"publisher":{"@type":"Organization","name":x["source"]}}} for i,x in enumerate(arc["items"][:50])]}]}
@@ -598,7 +711,7 @@ def newsletter_page():
     iss=sorted(NL_ISSUES,key=lambda x:x["date"],reverse=True)
     li="".join(f'<li class="nitem"><h3><a href="{e(x["url"])}" target="_blank" rel="noopener noreferrer">{e(x["title"])}</a></h3>'+(f'<p class="nsum">{e(x["subtitle"])}</p>' if x.get("subtitle") else "")+f'<span class="nm"><time datetime="{e(x["date"])}">{datetime.date.fromisoformat(x["date"]).strftime("%B %-d, %Y")}</time> · <a href="{e(x["url"])}" target="_blank" rel="noopener noreferrer">Read on Beehiiv ↗</a></span></li>' for x in iss)
     lst=f'<ol class="nlist">{li}</ol>' if iss else '<p>Issues will appear here.</p>'
-    body=('<div class="crumb"><a href="index.html">AgentScout</a> / Newsletter</div><section class="calm"><h1 style="text-align:left">AgentScout Weekly</h1>'
+    body=('<div class="crumb"><a href="./">AgentScout</a> / Newsletter</div><section class="calm"><h1 style="text-align:left">AgentScout Weekly</h1>'
           '<p class="lede" style="margin-left:0;text-align:left">One short email a week with the best new AI agents, launches and what\'s worth trying. Free, unsubscribe anytime. Subscribe below.</p>'
           f'<h2 style="font-size:18px;margin:28px 0 10px">Past issues</h2>{lst}<p style="margin-top:18px;font-size:14px"><a href="https://agentscout.beehiiv.com/archive" target="_blank" rel="noopener noreferrer">Full archive on Beehiiv ↗</a></p>'
           '<p class="disclose">The newsletter is sent with Beehiiv. Issues open on the Beehiiv site. See our <a href="privacy.html">privacy policy</a>.</p></section>')
@@ -638,7 +751,7 @@ def free_tools(t):
         li="".join(f'<li style="margin:0 0 10px"><a href="tools/{x["slug"]}.html" style="display:inline-flex;align-items:center;gap:8px;vertical-align:middle;max-width:100%">{ico24(x)}<b>{e(x["name"])}</b></a> <span class="b" style="font-size:12px">{e(pr(x))}</span><br><span style="color:var(--muted);font-size:14px">{e(x["description"])}</span></li>'
                    for x in sorted([x for x in items if x["category"]==c],key=lambda x:(x.get("slug") in __import__("build_api").HW,-(x.get("github_stars") or 0),x["name"].lower())))
         sec+=f'<h2 id="{catslug(c)}" class="has-cico" style="font-size:18px;margin:32px 0 10px">{cico(c)}{e(c[0].upper()+c[1:])} <span style="color:var(--muted);font-weight:400">({n})</span></h2><p style="margin:0 0 10px;font-size:14px"><a href="categories/{catslug(c)}.html">All {e(c)} tools →</a></p><ul style="list-style:none;padding:0;margin:0">{li}</ul>'
-    body=('<div class="crumb"><a href="index.html">AgentScout</a> / Free tools</div><section class="calm"><h1 style="text-align:left">Free AI agent tools</h1>'
+    body=('<div class="crumb"><a href="./">AgentScout</a> / Free tools</div><section class="calm"><h1 style="text-align:left">Free AI agent tools</h1>'
           f'<p class="lede" style="margin-left:0;text-align:left">Free tools built by AgentScout, plus {n_free} free and open-source AI agent tools from our directory, grouped by category.</p>'
           '<figure style="margin:18px 0 24px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--soft)"><video autoplay loop muted playsinline preload="metadata" poster="assets/animations/agentscout-bot-constellation-poster.png" style="display:block;width:100%;height:auto;max-width:100%;aspect-ratio:1200/640"><source src="assets/animations/agentscout-bot-constellation.mp4" type="video/mp4"></video></figure>'
           '<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'+feat+'<h2 id="agentscout-tools" style="font-size:18px;margin:28px 0 10px">'+BUILT_BY("")+'</h2><p style="font-size:14px;color:var(--muted);margin:0 0 12px">Calculators and generators that run entirely in your browser. No sign-up, no API key, nothing sent to a server.</p><div class="grid">'+__import__("build_free_tools").hub_cards()+'</div>'+
@@ -658,6 +771,8 @@ def free_tools(t):
 import atexit as _atexit, os as _os
 _FEAT_CWD=_os.getcwd()
 def _apply_featured():
+    import sys as _s
+    if _s.argv and 'scripts/' in _s.argv[0]: return  # check/helper scripts must not rewrite generated files at exit
     try:
         _here=_os.getcwd(); _os.chdir(_FEAT_CWD)
         if _os.path.exists("featured.json") and _os.path.exists("index.html"):

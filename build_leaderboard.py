@@ -123,8 +123,8 @@ def pages(t):
             if i<cap: out.append(row(i+1,bs[s],stat(s),arrow(k,s,i+1,prev)))
             elif s in ex: out.append(row(i+1,bs[s],stat(s),"",True))
         return f'<ol class="lbl">{"".join(out)}</ol>' if out else ""
-    fe='<div class="lbe lbf" hidden><p>No ranked tools match these filters yet.</p><p><a class="btn primary" href="../index.html#directory">Browse the directory</a></p></div>'
-    empty=lambda msg,cls="":f'<div class="lbe{cls}"><p>{msg}</p><p><a class="btn primary" href="../index.html#directory">Find a tool you use and rate it</a></p></div>'
+    fe='<div class="lbe lbf" hidden><p>No ranked tools match these filters yet.</p><p><a class="btn primary" href="../#directory">Browse the directory</a></p></div>'
+    empty=lambda msg,cls="":f'<div class="lbe{cls}"><p>{msg}</p><p><a class="btn primary" href="../#directory">Find a tool you use and rate it</a></p></div>'
     p1=(ol("top",top,TOPN,lambda s:both(bs[s],R[s])) if top else empty("No tools have been rated yet. Be the first to rate one."))+fe
     p2=(ol("reviewed",rev,TOPN,lambda s:f'<span><b>{len(R[s]["reviews"])}</b> <span class="muted">review{"s" if len(R[s]["reviews"])!=1 else ""}</span></span>') if rev else "")+(empty("Very few written reviews so far. Approved reviews show up here.") if len(rev)<10 else "")+fe
     p3=ol("loved",lvall,NL,lambda s:both(bs[s],R.get(s)))+fe
@@ -144,7 +144,7 @@ def pages(t):
     ctl=(f'<div class="lbctl" id="lbctl" role="group" aria-label="Filter the leaderboard" hidden><label for="lbcat">Category</label><select id="lbcat" class="ucsel">{opts}</select>'
          f'<label class="fchk"><input type="checkbox" id="lbfree"> Free or free plan</label><label class="fchk"><input type="checkbox" id="lbos"> Open source only</label>'
          f'<span class="lbcount muted" id="lbcount" aria-live="polite"></span></div>'
-         f'<noscript><p class="muted" style="font-size:13px">Browse rankings for one area on its <a href="../categories/index.html">category page</a>.</p></noscript>')
+         f'<noscript><p class="muted" style="font-size:13px">Browse rankings for one area on its <a href="../categories/">category page</a>.</p></noscript>')
     css=("<style>.lbtabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 8px}.lbtabs button{font:inherit;font-size:14px;padding:8px 14px;min-height:44px;border-radius:999px;border:1px solid var(--line,rgba(127,127,127,.35));background:transparent;color:inherit;cursor:pointer}"
          ".lbtabs button[aria-selected=true]{background:#4263eb;border-color:#4263eb;color:#fff}.lb h2{font-size:18px;margin:16px 0 4px}.lbh{font-size:13px;margin:0 0 10px}"
          ".lbctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:8px 0 4px;font-size:14px}.lbctl select{min-height:44px;max-width:100%;font:inherit;font-size:14px}.lbctl .fchk{display:inline-flex;align-items:center;gap:6px;min-height:44px;cursor:pointer}.lbctl .fchk input{width:20px;height:20px;margin:0}.lbcount{font-size:13px}"
@@ -166,7 +166,7 @@ def pages(t):
         '[sel,fr,os].forEach(function(x){x.addEventListener("change",filt)});var h=location.hash.slice(1);go(document.getElementById("lbt-"+h)?h:cur)})();</script>')
     title="AI Agent Tools Leaderboard: Top 100 · AgentScout"  # owner-approved Oct 21 2026
     desc=f"The top 100 AI agent tools, ranked by real visitor ratings, reviews and GitHub stars. Filter by category, free or open source, and rate the tools you use."[:160]
-    body=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › Leaderboard</p><div class="lb calm"><h1>AI Agent Tools Leaderboard: Top&nbsp;{TOPN}</h1>'
+    body=(f'<p class="crumb"><a href="../">AgentScout</a> › Leaderboard</p><div class="lb calm"><h1>AI Agent Tools Leaderboard: Top&nbsp;{TOPN}</h1>'
           f'<p>Rankings from real visitor ratings and reviews on AgentScout, plus GitHub stars for open-source tools. No paid placements. {(f"{nrated} tool" + ("s" if nrated!=1 else "") + f" rated and {nrev} written review" + ("s" if nrev!=1 else "") + " so far" + (f" (updated {when})" if when else "") + ". ") if nrated>=LB_SHOW_COUNT else "Visitor ratings are just getting started. "}'
           f'Used a tool? Tap <b>Rate</b> next to it. Makers: <a href="badges.html">get your “Ranked on AgentScout” badge</a>.</p>'
           f'<div class="lbtabs" role="tablist" aria-label="Leaderboard rankings" data-pagefind-ignore>{tb}</div>{ctl}<div data-pagefind-ignore>{pn}</div>'
@@ -193,7 +193,7 @@ def pages(t):
              f'<label class="sr-only" for="bd-{e(s)}">Badge HTML for {e(x["name"])}</label><textarea id="bd-{e(s)}" readonly rows="3" onclick="this.select()">{e(snip)}</textarea>{cp}</li>')
     bt="Ranked on AgentScout badges for the most loved AI agent tools · AgentScout"; bd="Embeddable “Ranked #N on AgentScout” badges for the top tools on the AgentScout leaderboard. Copy the HTML for your site or README."
     bcss="<style>.bdgl{list-style:none;padding:0;margin:16px 0;display:grid;gap:14px}.bdg{border:1px solid var(--line,rgba(127,127,127,.3));border-radius:12px;padding:14px;min-width:0}.bdg p{margin:0 0 8px}.bdg img{max-width:100%;height:auto;display:block;margin:0 0 8px}.bdg textarea{width:100%;box-sizing:border-box;font:12px ui-monospace,monospace;margin:0 0 8px}.bdg .btn{min-height:44px}</style>"
-    bb=(f'<p class="crumb"><a href="../index.html">AgentScout</a> › <a href="./">Leaderboard</a> › Badges</p><h1>“Ranked on AgentScout” badges</h1>'
+    bb=(f'<p class="crumb"><a href="../">AgentScout</a> › <a href="./">Leaderboard</a> › Badges</p><h1>“Ranked on AgentScout” badges</h1>'
         f'<p>If your tool is in the top {TOPN} of the <a href="./">Most loved leaderboard</a>, add its badge to your site or README. The badge image updates with every daily build, so it always shows the current rank (and switches to “Listed on AgentScout” if the tool leaves the top {TOPN}). Rank comes from real visitor ratings and GitHub stars only.</p>'
         f'<ol class="bdgl">{li}</ol>{bcss}')
     open("leaderboard/badges.html","w",encoding="utf-8").write(X.shell("../",bt,bd,canon+"badges.html",bb,{"@context":"https://schema.org","@type":"CollectionPage","name":bt,"description":bd,"url":canon+"badges.html"}))

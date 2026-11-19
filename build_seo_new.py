@@ -224,8 +224,8 @@ def prefix_rel_links(html_frag, depth_prefix):
         q, url = m.group(1), m.group(2)
         if url.startswith(("http://", "https://", "mailto:", "#", "javascript:", "../", "/")):
             return m.group(0)
-        if url == "./":
-            return f'href={q}{depth_prefix}{q}'
+        if url.startswith("./"):
+            return f'href={q}{depth_prefix}{url[2:]}{q}'
         return f'href={q}{depth_prefix}{url}{q}'
     def repl_src(m):
         q, url = m.group(1), m.group(2)
@@ -357,6 +357,7 @@ def unify_all_nav_and_footer():
 def _canon_chrome(html):
     """Drop relative-depth prefixes so nav/footer from any directory compare equal."""
     html = re.sub(r'(href|src)=(["\'])(?:\.\./)+', r'\1=\2', html)
+    html = re.sub(r'(href|src)=(["\'])\./', r'\1=\2', html)  # ./ home link (indexing hygiene, Nov 18 2026): same as ../
     html = re.sub(r'(href|src)=(["\'])/(?!/)', r'\1=\2', html)
     return re.sub(r'\s+', ' ', html).strip()
 

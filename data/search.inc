@@ -1,4 +1,4 @@
-<div class="crumb"><a href="../index.html">AgentScout</a> / Search</div><section style="padding-top:20px;text-align:left">
+<div class="crumb"><a href="../">AgentScout</a> / Search</div><section style="padding-top:20px;text-align:left">
 <h1 style="text-align:left;margin-left:0">Search AgentScout</h1>
 
 <style>#spanel{scroll-margin-top:12px}.spanel{border:1px solid var(--line,rgba(127,127,127,.25));border-radius:14px;padding:14px;margin:0 0 14px;background:var(--card,transparent)}.sprow{display:flex;gap:8px;margin:0 0 12px}.sprow input{flex:1 1 auto;min-width:0;min-height:48px;font-size:16px;padding:0 14px;border-radius:10px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--bg,#fff);color:var(--text)}.sprow .btn{min-height:48px;flex:0 0 auto}.srl{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:end;margin:0;font-size:13px;color:var(--faint)}.filters .fg{display:flex;flex-direction:column;gap:4px;min-width:0}.spanel .filters select{flex:none;width:100%;min-height:44px;height:44px;font-size:15px}.filters .fchk{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--text);cursor:pointer}.filters .fchk input{width:24px;height:24px;margin:0}.filters #fclear{min-height:44px}#toolf{display:contents}@media(max-width:420px){.spanel{padding:10px}.sprow{margin:0 0 8px}.filters{grid-template-columns:1fr 1fr;gap:8px}}</style><form class="spanel" id="spanel" role="search" aria-label="Search and filter AgentScout" action="./" method="get">
@@ -13,7 +13,7 @@
 <p id="sstat" role="status" aria-live="polite" class="muted" style="min-height:24px;margin:6px 0 10px">Type above or pick a filter to begin.</p>
 <p id="ssugg" role="status" aria-live="polite" style="margin:0 0 10px"></p><div id="sbest"></div><div id="sres"></div>
 <style>#smore[hidden]{display:none!important}</style><p><button type="button" id="smore" class="btn" hidden>Show more results</button></p>
-<noscript><p>Search needs JavaScript. Browse <a href="../categories/index.html">categories</a> or the <a href="../index.html#directory">directory</a> instead.</p></noscript>
+<noscript><p>Search needs JavaScript. Browse <a href="../categories/">categories</a> or the <a href="../#directory">directory</a> instead.</p></noscript>
 </section>
 <script type="module">
 const $0=id=>document.getElementById(id);const $=id=>$0(id==="sf"?"spanel":id);const P=new URLSearchParams(location.search);

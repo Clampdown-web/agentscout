@@ -59,9 +59,9 @@ def home_rows(t, roles):
     cc=collections.Counter(x["category"] for x in t)
     cats=[scard(f"categories/{X.catslug(c)}.html", CAP(c), n, X.CAT_INTRO.get(c,""), c) for c,n in cc.most_common()]
     rcards=[scard(f"for/{r[0]}.html", CAP(r[1]), len(r[4]) if len(r)>4 else None, intros.get(r[0],""), ROLE_ICON.get(r[0])) for r in roles]
-    cats_=(f'<section id="xcats" class="band" aria-labelledby="xcats-h"><div class="wrap"><div class="sh"><div><h2 id="xcats-h">All categories</h2><p>Every AI agent tool category, with its own page. <a href="categories/index.html">All categories →</a></p></div></div>'
+    cats_=(f'<section id="xcats" class="band" aria-labelledby="xcats-h"><div class="wrap"><div class="sh"><div><h2 id="xcats-h">All categories</h2><p>Every AI agent tool category, with its own page. <a href="categories/">All categories →</a></p></div></div>'
            +scrow(cats)+'</div></section>')
-    role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/index.html">All roles →</a></p></div></div>'
+    role=(f'<section id="xroles" class="band" aria-labelledby="xroles-h"><div class="wrap"><div class="sh"><div><h2 id="xroles-h">Browse by role</h2><p>AI agent tools picked for the work you do. <a href="for/">All roles →</a></p></div></div>'
           +scrow(rcards)+'</div></section>')
     return cats_+role
 def guide_rows(items):
@@ -78,8 +78,8 @@ HOME_GUIDES=[
     ("best/mcp-servers-for-codex.html","Best MCP servers for Codex"),
     ("best/ai-coding-agents.html","Best AI coding agents"),
     ("best/free-ai-agents.html","Best free AI agents"),
-    ("best/index.html","All best lists →"),
-    ("categories/index.html","All categories →"),
+    ("best/","All best lists →"),
+    ("categories/","All categories →"),
 ]
 COST_CAT={"models & local runtimes","frameworks"}
 COST_RX=re.compile(r"\bLLMs?\b|\binference\b|model (API|gateway|router|provider)|\bgateway\b|\brouter\b|\btokens?\b|\bmodel APIs?\b",re.I)
@@ -128,7 +128,7 @@ def run(t):
         inb=[k for k,v in BEST.items() if x["slug"] in v[1]][:2]
         catb=[k for k,v in BEST.items() if sum(1 for y in v[1] if bys.get(y,{}).get("category")==x["category"])*2>=max(1,len(v[1]))][:1]
         ranked=[blink(k) for k in inb] if inb else ([blink(catb[0])] if catb else [])
-        ranked.append('<a href="../best/index.html">All best-of lists</a>')
+        ranked.append('<a href="../best/">All best-of lists</a>')
         bl='<p style="margin:10px 0 0;font-size:14px">Ranked in</p>'+guide_html(ranked)
         if inb: stats["tool_ranked_in"]+=1
         # alternatives pages and sub-task guides that list this tool (least-linked first, so every page gets inbound links)
@@ -162,14 +162,14 @@ def run(t):
         if rs: html+=f'<h2 style="font-size:16px;margin:28px 0 10px">Related searches</h2>'+chips([(f"../s/{a[0]}.html",a[1]) for a in rs])
         if ro: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Who uses these</h2>'+chips([(f"../for/{r[0]}.html","For "+r[1]) for r in ro])
         cb=sorted([k for k,v in BEST.items() if v[1] and sum(1 for y in v[1] if bys.get(y,{}).get("category")==c)*2>=len(v[1])],key=lambda k:-len(BEST[k][1]))[:3]
-        html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Best-of lists</h2>'+chips([(f"../best/{k}.html",BEST[k][0]) for k in cb]+[("../best/index.html","All best-of lists")])
+        html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Best-of lists</h2>'+chips([(f"../best/{k}.html",BEST[k][0]) for k in cb]+[("../best/","All best-of lists")])
         ca=sorted([k for k in ALTP if bys.get(k[:-13],{}).get("category")==c],key=lambda k:-(bys[k[:-13]].get("github_stars") or 0))[:8]
         if ca: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Alternatives pages</h2>'+chips([(f"../best/{k}.html",BEST[k][0]) for k in ca]); stats["cat_alt"]+=len(ca)
         cg=sorted([k for k,v in SUB.items() if v[1] and sum(1 for y in v[1] if bys.get(y,{}).get("category")==c)*10>=len(v[1])*4],key=lambda k:-len(SUB[k][1]))[:6]
         if cg: html+=f'<h2 style="font-size:16px;margin:24px 0 10px">Task guides</h2>'+chips([(f"../tasks/{k}.html",SUB[k][0]) for k in cg]); stats["cat_subtask"]+=len(cg)
         if html: stats["cat_rel_s"]+=len(rs); stats["cat_rel_for"]+=len(ro); stats["cat_best"]+=len(cb)
         edit(f"categories/{cs}.html",lambda s,html=html:put(s,"cat",html,'<p class="disclose">'))
-    edit("categories/index.html",lambda s:put(s,"cathub",' Or browse <a href="../for/index.html">by role</a>, <a href="../s/">popular searches</a> or <a href="../best/index.html">best-of lists</a>.',r'<p class="lede"[^>]*>[^<]*(?=</p>)',before=False,regex=True))
+    edit("categories/index.html",lambda s:put(s,"cathub",' Or browse <a href="../for/">by role</a>, <a href="../s/">popular searches</a> or <a href="../best/">best-of lists</a>.',r'<p class="lede"[^>]*>[^<]*(?=</p>)',before=False,regex=True))
     # (5) task pages
     for f in glob.glob("tasks/*.html"):
         k=os.path.basename(f)[:-5]
@@ -209,11 +209,11 @@ def run(t):
     # (A) best-of links on search, role and free-tool pages
     for a in S:
         f=f"s/{a[0]}.html"; bb=[a[7]] if a[7] in BEST else best_for([y["slug"] for y in a[4]],1)
-        html='<p>Best-of lists</p>'+guide_html([blink(k) for k in bb]+['<a href="../best/index.html">All best lists</a>'])
+        html='<p>Best-of lists</p>'+guide_html([blink(k) for k in bb]+['<a href="../best/">All best lists</a>'])
         if not a[7] or a[7] not in BEST: edit(f,lambda s,html=html:put(s,"sbest",html,'<p class="disclose">'))
     for r in RO:
         bb=best_for(r[4],2,2)
-        html=f'<p>Best-of lists for {e(r[1])}</p>'+guide_html([blink(k) for k in bb]+['<a href="../best/index.html">All best lists</a>'])
+        html=f'<p>Best-of lists for {e(r[1])}</p>'+guide_html([blink(k) for k in bb]+['<a href="../best/">All best lists</a>'])
         stats["role_best"]+=len(bb); edit(f"for/{r[0]}.html",lambda s,html=html:put(s,"rbest",html,'<p class="disclose">'))
     def catline(slugs,d="../"):
         cc=collections.Counter(bys[y]["category"] for y in slugs if y in bys)
@@ -225,9 +225,9 @@ def run(t):
         edit(f"for/{r[0]}.html",lambda s,html=catline(r[4]):put(s,"rcat",html,'<p class="disclose">')); stats["role_catline"]+=1
     FB={"ai-cost-calculator":["ai-agent-frameworks","ai-coding-agents"],"token-counter":["ai-agent-frameworks","ai-agent-observability-tools"],"prompt-builder":["ai-productivity-tools","personal-ai-agents"],"agent-setup-generator":["ai-coding-agents","ai-agent-frameworks"]}
     for k,v in FB.items():
-        html='<p>Best-of lists</p>'+guide_html([blink(b) for b in v if b in BEST]+['<a href="../best/index.html">All best lists</a>'])
+        html='<p>Best-of lists</p>'+guide_html([blink(b) for b in v if b in BEST]+['<a href="../best/">All best lists</a>'])
         edit(f"free-tools/{k}.html",lambda s,html=html:put(s,"ftbest",html,'<p class="ftmore">'))
-    edit("free-tools.html",lambda s:put(s,"fthubbest",'<p style="font-size:14px;margin:6px 0 0">Ranked picks</p>'+guide_html([('<a href="best/free-ai-agents.html">Best free AI agents</a>'),('<a href="best/self-hosted-ai-agents.html">Best self-hosted AI agents</a>'),('<a href="best/most-starred-open-source-ai-agents.html">Most-starred open-source projects</a>'),('<a href="best/index.html">All best lists</a>')]),'<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
+    edit("free-tools.html",lambda s:put(s,"fthubbest",'<p style="font-size:14px;margin:6px 0 0">Ranked picks</p>'+guide_html([('<a href="best/free-ai-agents.html">Best free AI agents</a>'),('<a href="best/self-hosted-ai-agents.html">Best self-hosted AI agents</a>'),('<a href="best/most-starred-open-source-ai-agents.html">Most-starred open-source projects</a>'),('<a href="best/">All best lists</a>')]),'<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
     # (8) free-tools.html
     edit("free-tools.html",lambda s:put(s,"ftroles",'<p style="font-size:14px;margin:6px 0 0">Free tools by role</p>'+guide_html([f'<a href="for/{r[0]}.html">{e(CAP(r[1]))}</a>' for r in RO]),'<h2 style="font-size:18px;margin:24px 0 4px">Featured: free from AgentScout</h2>'))
     # (9) static pages

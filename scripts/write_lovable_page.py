@@ -103,7 +103,7 @@ def _shell_page() -> str:
 
     tool = next(x for x in json.load(open("tools.json")) if x["slug"] == "lovable")
     body = f'''
-<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="../categories/app-builders.html">app builders</a> / Lovable</div>
+<div class="crumb"><a href="../">AgentScout</a> / <a href="../categories/app-builders.html">app builders</a> / Lovable</div>
 <section style="padding-top:20px"><div class="detail"><div>
 <div class="badges"><span class="b cat">app builders</span><span class="b">Freemium</span><span class="b new">New</span></div>
 <h1 class="icoh"><span class="ico lg"><img src="../assets/logos/lovable.png" alt="Lovable logo" width="56" height="56"></span><span>Lovable</span></h1>

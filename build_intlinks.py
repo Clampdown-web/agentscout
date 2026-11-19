@@ -19,7 +19,7 @@ def targets(t):
     L = [
         ("categories/mcp-servers.html", f"All {n:,} MCP servers"),
         ("categories/agent-infra.html", f"All {infra:,} agent infra tools"),
-        ("mcp/index.html", "Best MCP servers by task"),
+        ("mcp/", "Best MCP servers by task"),
         ("mcp/pricing.html", "MCP server pricing"),
         ("mcp/status/", "MCP status"),
         ("best/mcp-servers-for-cursor.html", "MCP servers for Cursor"),
@@ -34,7 +34,7 @@ def targets(t):
         ("tasks/phone-calls.html", "AI phone & call agents"),
         ("best/ai-business-agents.html", "AI agents for business"),
         ("best/conductor-alternatives.html", "Conductor alternatives"),
-        ("best/index.html", "All best-of lists"),
+        ("best/", "All best-of lists"),
     ]
     return [(p, l) for p, l in L if os.path.exists(p)]
 
@@ -65,7 +65,7 @@ FOOT_LINKS = [
     ("best/mcp-servers-for-cursor.html", "MCP servers for Cursor"),
     ("best/ai-coding-agents.html", "Best AI coding agents"),
     ("best/ai-browser-agents.html", "Best AI browser agents"),
-    ("best/index.html", "All best-of lists"),
+    ("best/", "All best-of lists"),
 ]
 
 
@@ -147,7 +147,8 @@ def run(t):
         s = open(src).read()
         s = re.sub(r"<!--il:pop-->.*?<!--/il:pop-->", "", s, flags=re.S)
         up = "../" * src.count("/")
-        a = "".join(f'<a {CH} href="{e(up + p)}">{e(l)}</a>' for p, l in T if p != src)
+        src_dir = src[:-len("/index.html")] if src.endswith("/index.html") else src
+        a = "".join(f'<a {CH} href="{e(up + p)}">{e(l)}</a>' for p, l in T if p.rstrip("/") != src_dir)
         b = (
             f'<!--il:pop--><section class="wrap" aria-label="Popular lists" style="margin:24px auto 8px">'
             f'<h2 style="font-size:16px;margin:0 0 4px">Popular lists</h2><div class="chips">{a}</div></section><!--/il:pop-->'

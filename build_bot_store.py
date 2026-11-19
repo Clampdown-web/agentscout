@@ -168,7 +168,7 @@ def pages(t):
 
     body = (
         f'{CSS}'
-        f'<div class="crumb"><a href="../index.html">AgentScout</a> / Bot Store</div>'
+        f'<div class="crumb"><a href="../">AgentScout</a> / Bot Store</div>'
         f'{LEAD}'
         f'<details class="bs-all" id="see-all"><summary><span>See all products<span class="bs-all-hint">Flagship bots, 25 role packs, video, and FAQ</span></span></summary><div class="bs-all-body">'
         f'<section class="bs-hero">'

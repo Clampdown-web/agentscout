@@ -236,7 +236,7 @@ def _body():
         "</ul>"
     )
     return (
-        f'<div class="crumb"><a href="../index.html">AgentScout</a> / <a href="index.html">Guides</a> / {e(H1)}</div>'
+        f'<div class="crumb"><a href="../">AgentScout</a> / <a href="./">Guides</a> / {e(H1)}</div>'
         '<section class="calm">'
         f'<h1 style="text-align:left">{e(H1)}</h1>'
         + answer
@@ -477,7 +477,7 @@ def _crawl_ld():
 
 def _hub_body():
     return (
-        '<div class="crumb"><a href="../index.html">AgentScout</a> / Guides</div>'
+        '<div class="crumb"><a href="../">AgentScout</a> / Guides</div>'
         '<section class="calm">'
         '<h1 style="text-align:left">How-to guides</h1>'
         '<p class="lede" style="margin-left:0;text-align:left">Short guides for choosing and running AI agent tools. Each one says what was checked and what was left out.</p>'
@@ -486,9 +486,9 @@ def _hub_body():
         + "</ul>"
         '<h2 style="font-size:18px;margin:28px 0 8px">Elsewhere on AgentScout</h2>'
         '<ul class="guide-list">'
-        '<li><a href="../best/index.html">Best lists</a></li>'
-        '<li><a href="../compare/index.html">Comparisons</a></li>'
-        '<li><a href="../s/index.html">Popular lists</a></li>'
+        '<li><a href="../best/">Best lists</a></li>'
+        '<li><a href="../compare/">Comparisons</a></li>'
+        '<li><a href="../s/">Popular lists</a></li>'
         '</ul>'
         "</section>"
     )

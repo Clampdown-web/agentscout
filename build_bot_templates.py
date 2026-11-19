@@ -105,7 +105,7 @@ def detail(e,shell,rel):
     h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "CreativeWork".*?</script>',lambda m:cw,h,count=1,flags=re.S)
     bc=ld_script({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AgentScout","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Bot templates","item":f"{SITE}/{D}/"},{"@type":"ListItem","position":3,"name":e["name"],"item":url}]})
     h=re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema.org", "@type": "BreadcrumbList".*?</script>',lambda m:bc,h,count=1,flags=re.S)
-    main=(f'<main class="wrap bt" data-pagefind-body>{MARK}\n<a class="bd-back" href="index.html">← Bot templates</a>\n'
+    main=(f'<main class="wrap bt" data-pagefind-body>{MARK}\n<a class="bd-back" href="./">← Bot templates</a>\n'
       f'<div class="bd-top"><img class="bt-ic big logo" src="icons/creator-{s}.jpg" alt="{nm} logo" width="84" height="84" loading="lazy" data-icon="official"><div><h1 data-pagefind-weight="10">{nm}</h1><div class="bd-meta"><span>by {cr}</span><span class="b">Grok Bot</span></div></div></div>\n'
       f'<p class="bd-long">{esc(e["long"])}</p>\n'
       f'<div class="bd-cta"><a class="btn primary" href="{esc(e["url"])}" target="_blank" rel="noopener noreferrer">Add on x.ai ↗</a><span class="sharewrap">{share(e,"btn sharebtn","Share this page","Share")}<span class="sharecount" hidden></span></span></div>\n'
