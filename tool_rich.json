@@ -33811,5 +33811,95 @@
         "The same credits as the REST API, with no separate MCP fee. One credit per phone, email or IP lookup, one credit per bulk_verify record, and get_account is free. On the pricing page checked 18 Nov 2026, Starter is $99 a month for 20,000 credits (about $4.95 per 1,000 core lookups), Growth is $299 for 85,000, Professional is $799 for 250,000, and Enterprise is $1,999 for 1,000,000."
       ]
     ]
+  },
+  "macswarm": {
+    "kind": "lite",
+    "src_kind": "site",
+    "updated": "2026-11-19",
+    "cite": true,
+    "sources": [
+      "https://macswarm.com/",
+      "https://macswarm.com/pricing/",
+      "https://macswarm.com/docs/"
+    ],
+    "long": [
+      "Macswarm is hosted macOS for AI coding agents. Each developer gets a Pod: one macOS virtual machine on an Apple silicon Mac mini with the latest Xcode, the iOS runtimes, pre-booted Simulators, Claude Code, Codex and XcodeBuildMCP already installed. That developer's agents share the Pod, each in its own Git worktree, so a cloud coding agent that normally runs on Linux can build, test and screenshot an iOS or macOS app and open a pull request without anyone keeping a Mac switched on.",
+      "You connect once and then start sessions from the tools you already use. Claude Code reaches a Pod through a Claude Team or Enterprise self-hosted environment key, started from claude.ai, Claude Desktop or Slack; Codex reaches it through an OpenAI Agents API webhook that makes Macswarm its sandbox. A standard Pod guarantees 2 to 3 active agents, runs two xcodebuild jobs at a time and leases 3 to 4 Simulators. Pods are outbound-only (no inbound ports, SSH or screen sharing), start from a fresh clone of a golden image and are destroyed ten minutes after the last session, with uncommitted work pushed to a rescue branch.",
+      "Billing is per Pod-hour, metered per second, however many agents share the Pod; the ten minutes after the last session are billed. Free gives 3 Pod-hours once with no card. Pro is $99 a month for 300 Pod-hours and up to 4 Pods ($0.40 per extra hour), Team $399 a month for 1,500 Pod-hours and up to 10 Pods ($0.30 per extra hour), and Enterprise starts at $3,000 a month with reserved Macs, SSO and invoicing. Model usage is billed by Anthropic or OpenAI on your own account. Pods run in the EU (Netherlands) or the US."
+    ],
+    "who": "iOS and macOS developers and small app teams who run Claude Code or Codex as cloud agents and need those agents to build and test on real Xcode and iOS Simulators without buying or babysitting Macs.",
+    "features": [
+      "One macOS Pod per developer on Apple silicon, with the latest Xcode, iOS runtimes, pre-booted Simulators, Claude Code, Codex and XcodeBuildMCP preinstalled",
+      "2 to 3 agents per Pod in separate Git worktrees, sharing two parallel xcodebuild slots and 3 to 4 leased Simulators",
+      "Claude Code via a Claude Team or Enterprise self-hosted environment; Codex via an OpenAI Agents API webhook",
+      "Agents open pull requests with Simulator screenshots attached",
+      "Outbound-only network, fresh image per Pod, destroyed 10 minutes after the last session; uncommitted work goes to a rescue branch",
+      "Per-second Pod-hour billing with a monthly cap on extra hours; EU or US regions"
+    ],
+    "pros": [
+      "Lets Linux-based cloud agents do real iOS builds and UI tests, which they otherwise cannot.",
+      "Billed by Pod runtime, not per agent or seat, and 3 free Pod-hours need no card.",
+      "Clear published limits: agents per Pod, build slots, Simulators and shutdown timing."
+    ],
+    "cons": [
+      "Claude Code needs a Claude Team or Enterprise plan for the self-hosted environment route.",
+      "Model tokens are billed separately by Anthropic or OpenAI.",
+      "Free, Pro and Team carry no uptime commitment; an SLA is Enterprise-only.",
+      "Boot and build times on the site are illustrative; measured numbers are still to be published."
+    ],
+    "setup": [
+      "Sign up at macswarm.com (3 free Pod-hours, no card).",
+      "Claude Code: paste the environment key from your Claude Team or Enterprise organization's self-hosted environment into Macswarm, then start a session from claude.ai, Claude Desktop or Slack and pick the Macswarm environment.",
+      "Codex: copy Macswarm's Agents API webhook URL into your OpenAI Agents API environment settings, then start a session from the Codex app or CLI.",
+      "Follow the Claude Code or Codex quickstart at macswarm.com/docs; every docs page is also served as Markdown by adding .md to its address."
+    ]
+  },
+  "solari": {
+    "kind": "lite",
+    "src_kind": "site",
+    "updated": "2026-11-19",
+    "cite": true,
+    "sources": [
+      "https://www.getsolari.com/",
+      "https://www.getsolari.com/pricing",
+      "https://docs.getsolari.com/",
+      "https://docs.getsolari.com/mcp"
+    ],
+    "long": [
+      "Solari is cloud infrastructure for AI agents with three products behind one API key: cloud Chrome browsers an agent drives with Playwright or any CDP client, headless Linux sandboxes for running code and tools, and full Linux desktops (VMs) an agent or a person can watch and control over VNC. All of them run on hardware-isolated Cloud Hypervisor microVMs and start from memory snapshots, so they are live in milliseconds instead of booting. SDKs cover TypeScript, Python, Go, Rust and C++, with a raw HTTP API.",
+      "Browsers come with saved profiles that keep logins across runs, sign-in through 1Password, residential proxies by country, captcha solving, stealth mode and session recordings for replay. Sandboxes and VMs support templates, snapshots you can fork later and persistent volumes. A hosted MCP server at https://mcp.getsolari.com/mcp exposes 49 tools so Claude, Cursor, Windsurf or another MCP client can open a browser or a sandbox directly; it authenticates with a Solari API key sent as a Bearer header, and a local npx server is also available. Migration guides cover Browserbase, E2B, Daytona and Runloop.",
+      "Environments are billed per second while they run. The Free plan includes starter credits, 3 concurrent browsers, 1 sandbox or desktop and 1-hour sessions. Starter is $20 a month (20 browsers, 2 sandboxes, 5-hour sessions, stealth included) and Professional $200 a month (150 browsers, 10 sandboxes, 24-hour sessions); Team and Enterprise are custom, with HIPAA compliance. Solari publishes per-hour comparisons dated October 6, 2026, listing its Team rate at $0.05 per browser hour and $0.114 per 4 vCPU / 8 GB sandbox hour, along with its own latency benchmarks against Browserbase, Steel, Kernel and Hyperbrowser."
+    ],
+    "who": "Developers building agents that need to browse and log in to websites, run untrusted code or operate a full desktop, and who want browsers, sandboxes and VMs from one provider and one bill.",
+    "features": [
+      "Cloud Chrome browsers for Playwright or CDP, with profiles, 1Password sign-in, proxies, captcha solving, stealth and session replay",
+      "Headless Linux sandboxes for running commands and code, with templates, snapshots and volumes",
+      "Full Linux desktops (VMs) controllable over VNC for computer-use agents",
+      "Hardware-isolated microVMs that start from memory snapshots in milliseconds",
+      "Hosted MCP server (https://mcp.getsolari.com/mcp) with 49 tools, plus a local npx server",
+      "SDKs for TypeScript, Python, Go, Rust and C++; migration guides from Browserbase, E2B, Daytona and Runloop"
+    ],
+    "pros": [
+      "One API key and one bill for browsers, sandboxes and desktops.",
+      "Free plan to prototype, then per-second billing with published per-hour rates.",
+      "Hosted MCP connector works from Claude on web and mobile, not just desktop clients."
+    ],
+    "cons": [
+      "Speed and price comparisons are Solari's own measurements and list-price snapshots, not independent benchmarks.",
+      "The hosted MCP connector uses a static API key in a request header; Claude's header option is a per-organization beta, otherwise you run the local npx server.",
+      "Free sessions are capped at one hour and one sandbox or desktop."
+    ],
+    "setup": [
+      "Create a free account at getsolari.com and copy your slr_live_ API key.",
+      "Install the SDK you need: npm install @solarisdk/browser, @solarisdk/desktop or @solarisdk/sandbox (Python, Go, Rust and C++ bindings are listed in the docs).",
+      "For MCP clients, add the hosted endpoint https://mcp.getsolari.com/mcp and send Authorization: Bearer <your key>; in Claude, choose No sign-in and set the authorization request header.",
+      "Optional: append ?defaultProfile=<name> to the MCP URL so new browsers start signed in with a saved profile."
+    ],
+    "mcp": {
+      "endpoint": "https://mcp.getsolari.com/mcp",
+      "transport": "HTTP (remote)",
+      "auth": "Solari API key as a Bearer Authorization header (not OAuth)",
+      "docs": "https://docs.getsolari.com/mcp"
+    }
   }
 }
