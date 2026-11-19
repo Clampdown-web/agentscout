@@ -1,17 +1,17 @@
 {
  "catalog": {
-  "mcp_servers": 3194,
+  "mcp_servers": 3195,
   "live": 3178,
   "down": 16,
   "checked": 3194,
-  "not_yet_checked": 0,
-  "directory_last_checked": "2026-11-19",
+  "not_yet_checked": 1,
+  "directory_last_checked": "2026-11-18",
   "mcp_last_checked": "2026-11-18 07:54",
   "timezone": "America/Los_Angeles",
   "history": [
    {
     "date": "2026-11-18",
-    "note": "3,178 of 3,194 checked servers live, 16 down",
+    "note": "3,178 of 3,194 checked servers live, 16 down, +1 listed, not yet checked",
     "time": "07:54"
    },
    {
@@ -135,6 +135,13 @@
      "time": "07:54"
     }
    ]
+  },
+  {
+   "slug": "1lookup",
+   "name": "1Lookup MCP",
+   "page": "https://agentscouthq.com/tools/1lookup.html",
+   "status": "not yet checked",
+   "unverified": true
   },
   {
    "slug": "1toolring",
